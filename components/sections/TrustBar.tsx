@@ -9,7 +9,7 @@ interface TrustBarProps {
 export default function TrustBar({ lang }: TrustBarProps) {
   const stats = [
     {
-      number: '180,000+',
+      number: '4.2M+',
       label: lang === 'es' ? 'Casos Federales Analizados' : 'Federal Cases Analyzed',
     },
     {

@@ -986,7 +986,7 @@ function Shell({
             <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-8">
               <div className="max-w-sm">
                 <button onClick={reset} className="bg-transparent border-none cursor-pointer mb-3">
-                  <Logo size="sm" />
+                  <Logo size="sm" darkMode={darkMode} />
                 </button>
                 <p className="text-[11px] text-slate-400 leading-relaxed">
                   {lang === 'es'
@@ -2047,14 +2047,17 @@ export default function MyCaseValue() {
           </div>
 
           {/* Dramatic gradient divider */}
-          <div className="my-8 h-1 rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #4040F2 15%, #0D9488 50%, #4040F2 85%, transparent 100%)', boxShadow: '0 4px 20px rgba(64,64,242,0.3), 0 4px 20px rgba(13,148,136,0.2), 0 4px 20px rgba(64,64,242,0.15)' }} />
+          <div className="my-8 h-1 rounded-full" style={{ gridColumn: '1 / -1', background: 'linear-gradient(90deg, transparent 0%, #4040F2 15%, #0D9488 50%, #4040F2 85%, transparent 100%)', boxShadow: '0 4px 20px rgba(64,64,242,0.3), 0 4px 20px rgba(13,148,136,0.2), 0 4px 20px rgba(64,64,242,0.15)' }} />
 
           {/* Trust Bar — Elite Section */}
+          <div style={{ gridColumn: '1 / -1' }}>
           <Reveal delay={180}>
             <TrustBar lang={lang} />
           </Reveal>
+          </div>
 
           {/* Category selector — enhanced */}
+          <div style={{ gridColumn: '1 / -1' }}>
           <Reveal delay={200}>
             <div className="relative">
               {/* Animated SVG scales of justice — decorative */}
@@ -2111,6 +2114,7 @@ export default function MyCaseValue() {
               </Card>
             </div>
           </Reveal>
+          </div>
         </div>
 
         {/* Data Preview Section — Elite Section */}
@@ -2337,7 +2341,7 @@ export default function MyCaseValue() {
                   <div className="flex justify-between mt-2 text-xs text-slate-500">
                     <span>$10K</span>
                     <span className="font-semibold text-slate-700">{calcAmount >= 1000000 ? `$${(calcAmount / 1000000).toFixed(1)}M` : `$${(calcAmount / 1000).toFixed(0)}K`}</span>
-                    <span>$500K</span>
+                    <span>$5M</span>
                   </div>
                 </div>
                 <div className="space-y-3 pt-4 border-t border-slate-100">

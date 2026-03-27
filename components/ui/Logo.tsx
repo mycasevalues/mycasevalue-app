@@ -4,9 +4,10 @@ import React from 'react'
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg'
   showText?: boolean
+  darkMode?: boolean
 }
 
-export function Logo({ size = 'lg', showText = true }: LogoProps) {
+export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoProps) {
   const dim = size === 'sm' ? 32 : size === 'md' ? 38 : 48
   const fontSize = size === 'sm' ? '16px' : size === 'md' ? '19px' : '24px'
   const gap = size === 'sm' ? '8px' : size === 'md' ? '10px' : '12px'
@@ -46,7 +47,7 @@ export function Logo({ size = 'lg', showText = true }: LogoProps) {
             style={{
               fontSize,
               letterSpacing: '-0.8px',
-              color: '#0B1221',
+              color: darkMode ? '#F0F2F5' : '#0B1221',
               lineHeight: 1.1,
             }}
           >
