@@ -1526,6 +1526,24 @@ export default function MyCaseValue() {
               ))}
             </div>
 
+            {/* Secure payments badge */}
+            <div className="flex items-center justify-center gap-3 mt-4 pt-3 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F020' }}>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <span className="text-[10px] font-semibold text-slate-400 tracking-[0.5px]">{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
+                {/* Stripe logo */}
+                <svg width="36" height="15" viewBox="0 0 60 25" fill={darkMode ? '#94A3B8' : '#6772E5'} xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6zM16.1 20.2h4.9V5.8h-4.9zM16.1 4.6h4.9V0h-4.9zM27.2 7.2l-.3-1.4h-4.3v14.4h4.9v-9.8c1.2-1.5 3.1-1.2 3.7-1v-4.5c-.7-.2-3.2-.7-4.3 1.3h.3zM36.4 1.5l-4.8 1v13.3c0 2.4 1.8 4.2 4.3 4.2 1.4 0 2.4-.2 2.9-.5v-3.8c-.5.2-3.1.9-3.1-1.4V9.5h3.1V5.8h-3.1l.7-4.3zM47.3 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8-3.3 0-6 2-6 5 0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z"/>
+                </svg>
+              </div>
+              <div className="flex items-center gap-1.5">
+                {/* Payment method icons */}
+                {['Visa', 'Mastercard', 'Amex', 'PayPal'].map((m, i) => (
+                  <span key={i} className="text-[8px] font-bold px-1.5 py-0.5 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', color: '#94A3B8', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>{m}</span>
+                ))}
+              </div>
+            </div>
+
             {/* Legal links */}
             <div className="flex items-center justify-center gap-4 mt-3 pt-3 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
               <button onClick={() => setLegalPage('terms')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Términos de servicio' : 'Terms of Service'}</button>

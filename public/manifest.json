@@ -4,8 +4,8 @@
   "description": "Real outcomes from 4,000,000+ federal court cases. Free and private.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FDFBF7",
-  "theme_color": "#B8923A",
+  "background_color": "#F5F7FA",
+  "theme_color": "#4040F2",
   "orientation": "portrait-primary",
   "icons": [
     {

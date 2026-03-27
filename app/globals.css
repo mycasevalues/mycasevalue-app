@@ -1304,6 +1304,57 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* ============================================================
+   MOBILE-FIRST OPTIMIZATIONS
+   ============================================================ */
+@media (max-width: 640px) {
+  /* Better text sizing on small screens */
+  .font-display {
+    letter-spacing: -0.5px;
+  }
+
+  /* Ensure cards don't overflow */
+  .card-bg, .data-card-3d {
+    overflow: hidden;
+    word-break: break-word;
+  }
+
+  /* Reduce shadow complexity on mobile for performance */
+  .card-bg {
+    box-shadow: 0 1px 3px rgba(11,18,33,.04);
+  }
+
+  /* Footer payment badges wrap nicely */
+  footer .flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Larger tap targets for select dropdowns */
+  select, input[type="text"], input[type="email"] {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Large screen enhancement */
+@media (min-width: 1280px) {
+  .hero-grid {
+    gap: 4rem !important;
+  }
+}
+
+/* ============================================================
    REDUCED MOTION — Accessibility support
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
