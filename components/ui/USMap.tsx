@@ -166,7 +166,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
         padding: '2px',
       }}>
         <div className="rounded-xl overflow-hidden" style={{ background: '#F8FAFC' }}>
-          <svg ref={svgRef} viewBox="0 0 960 560" className="w-full h-auto" style={{ maxHeight: 360 }}>
+          <svg ref={svgRef} viewBox="0 0 960 560" className="w-full h-auto" style={{ maxHeight: 420 }}>
             <defs>
               <filter id="state-glow">
                 <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="rgba(64,64,242,0.2)" />
@@ -275,12 +275,16 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
       )}
 
       {/* Legend */}
-      <div className="flex items-center justify-center gap-1.5 mt-3">
+      <div className="flex items-center justify-center gap-2 mt-3">
         <span className="text-[9px] text-slate-400 font-semibold">{lang === 'es' ? 'Menor' : 'Lower'}</span>
-        <div className="flex gap-0.5">
-          {['#DC2626', '#E87461', '#D97706', '#4040F2', '#14B8A6', '#0D9488', '#059669'].map((c, i) => (
-            <div key={i} className="w-6 h-2.5 first:rounded-l last:rounded-r" style={{ background: c, opacity: 0.85 }} />
-          ))}
+        <div className="flex h-2 rounded-full overflow-hidden" style={{ width: 120 }}>
+          <div className="flex-1" style={{ background: '#DC2626' }} />
+          <div className="flex-1" style={{ background: '#E87461' }} />
+          <div className="flex-1" style={{ background: '#D97706' }} />
+          <div className="flex-1" style={{ background: '#4040F2' }} />
+          <div className="flex-1" style={{ background: '#14B8A6' }} />
+          <div className="flex-1" style={{ background: '#0D9488' }} />
+          <div className="flex-1" style={{ background: '#059669' }} />
         </div>
         <span className="text-[9px] text-slate-400 font-semibold">{lang === 'es' ? 'Mayor' : 'Higher'}</span>
       </div>

@@ -90,7 +90,7 @@ export function Navbar({
             className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer focus-ring"
             aria-label="MyCaseValue home"
           >
-            <Logo size="sm" />
+            <Logo size="md" />
           </button>
 
           {/* Desktop actions */}

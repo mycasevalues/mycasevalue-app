@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { AnimatedNumber } from './ui/AnimatedNumber';
 import PieChart from './ui/PieChart';
 import { CategoryIcon } from './ui/Icons';
@@ -37,10 +37,23 @@ const AGGREGATE_STATE_RATES: Record<string, number> = {
 // REUSABLE UI
 // ============================================================
 
-function Reveal({ children }: { children: React.ReactNode; delay?: number }) {
-  // Simple pass-through wrapper — content always visible
-  // No CSS animation: React re-renders (from timers) reset CSS animations to opacity:0
-  return <>{children}</>;
+function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const [show, setShow] = React.useState(false);
+  React.useEffect(() => {
+    const timeout = setTimeout(() => setShow(true), delay);
+    return () => clearTimeout(timeout);
+  }, [delay]);
+
+  return (
+    <div style={{
+      opacity: show ? 1 : 0,
+      transform: show ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
+      transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+      willChange: 'opacity, transform',
+    }}>
+      {children}
+    </div>
+  );
 }
 
 function Card({ children, glow = false, className = '', style = {} }: { children: React.ReactNode; glow?: boolean; className?: string; style?: React.CSSProperties }) {
@@ -844,6 +857,361 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => voi
 }
 
 // ============================================================
+// SHELL COMPONENT (extracted to prevent remounts)
+// ============================================================
+
+interface ShellProps {
+  darkMode: boolean;
+  viewMode: 'auto' | 'mobile' | 'desktop' | 'tablet';
+  step: number;
+  readingPct: number;
+  showConfetti: boolean;
+  lang: Lang;
+  navScrolled: boolean;
+  scrollProgress: number;
+  setLang: (lang: Lang) => void;
+  setDarkMode: (dark: boolean) => void;
+  isPremium: boolean;
+  savedReportsLength: number;
+  setShowSaved: (show: boolean) => void;
+  reset: () => void;
+  t: typeof TRANSLATIONS['en'];
+  UPL: typeof UPL;
+  showBackToTop: boolean;
+  toastMsg: string;
+  toastVis: boolean;
+  showExitIntent: boolean;
+  setShowExitIntent: (show: boolean) => void;
+  buy: (plan: string) => void;
+  showSaved: boolean;
+  referralCode: string;
+  toast: (msg: string) => void;
+  showCookieConsent: boolean;
+  setShowCookieConsent: (show: boolean) => void;
+  setLegalPage: (page: 'terms' | 'privacy' | 'disclaimer') => void;
+  legalPage: 'terms' | 'privacy' | 'disclaimer' | null;
+  showMethodology: boolean;
+  children: React.ReactNode;
+}
+
+function Shell({
+  darkMode,
+  viewMode,
+  step,
+  readingPct,
+  showConfetti,
+  lang,
+  navScrolled,
+  scrollProgress,
+  setLang,
+  setDarkMode,
+  isPremium,
+  savedReportsLength,
+  setShowSaved,
+  reset,
+  t,
+  UPL,
+  showBackToTop,
+  toastMsg,
+  toastVis,
+  showExitIntent,
+  setShowExitIntent,
+  buy,
+  showSaved,
+  referralCode,
+  toast,
+  showCookieConsent,
+  setShowCookieConsent,
+  setLegalPage,
+  legalPage,
+  showMethodology,
+  children,
+}: ShellProps) {
+  return (
+    <>
+      <a href="#main-content" className="skip-link">Skip to content</a>
+      <div className={darkMode ? 'dark' : ''} role="application" aria-label="MyCaseValue" style={{
+        background: darkMode ? '#0B1221' : '#F5F7FA',
+        minHeight: '100vh',
+        fontFamily: "'Outfit', system-ui, sans-serif",
+        color: darkMode ? '#F0F2F5' : '#0B1221',
+        maxWidth: viewMode === 'mobile' ? '430px' : viewMode === 'desktop' ? '100%' : undefined,
+        margin: viewMode === 'mobile' ? '0 auto' : undefined,
+        boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(11,18,33,.08)' : undefined,
+        transition: 'max-width 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+      }}>
+        {/* Reading progress bar */}
+        {step === 6 && <div className="reading-progress" style={{ width: `${readingPct}%` }} />}
+
+        {/* Success celebration on report completion */}
+        {showConfetti && <SuccessCelebration />}
+
+        {/* Sticky Nav */}
+        <Navbar
+          lang={lang}
+          setLang={setLang}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          isPremium={isPremium}
+          savedReportsCount={savedReportsLength}
+          onShowSaved={() => setShowSaved(true)}
+          onReset={reset}
+          onNewReport={reset}
+          newReportLabel={t.new_report}
+          premiumLabel={t.premium}
+          scrolled={navScrolled}
+          scrollProgress={scrollProgress}
+        />
+
+        <main id="main-content" className="max-w-[1140px] mx-auto px-4 sm:px-6 relative z-10" role="main">
+          {/* UPL Banner */}
+          <div className="text-center py-2 border-b no-print" style={{ borderColor: darkMode ? '#1E293B' : 'rgba(226,232,240,0.3)', background: darkMode ? 'rgba(30,41,59,0.3)' : 'rgba(248,250,252,0.5)' }}>
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: darkMode ? '#64748B' : '#94A3B8' }}>{UPL.banner}</span>
+          </div>
+
+          {children}
+
+          {/* Footer */}
+          <footer className="border-t mt-16 pt-6 pb-8" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F0' }}>
+            <div className="flex items-center gap-3 mb-4 flex-wrap">
+              <span className="text-[11px] font-semibold text-slate-400">{lang === 'es' ? 'Datos verificados:' : 'Verified data:'}</span>
+              {['Federal Judicial Center', 'CourtListener', 'uscourts.gov'].map((n, i) => (
+                <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-white border border-slate-200">{n}</span>
+              ))}
+              <span className="text-[10px] font-medium px-2 py-1 rounded-lg" style={{ background: '#CCFBF1', color: '#0D9488' }}>
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="3" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><polyline points="20 6 9 17 4 12" /></svg>
+                {t.data_updated}
+              </span>
+            </div>
+            <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-8">
+              <div className="max-w-sm">
+                <button onClick={reset} className="bg-transparent border-none cursor-pointer mb-3">
+                  <Logo size="sm" />
+                </button>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  {lang === 'es'
+                    ? 'MyCaseValue es una herramienta informativa que muestra datos históricos agregados de registros judiciales federales públicos. No es asesoría legal. No establece relación abogado-cliente.'
+                    : 'MyCaseValue is an informational tool that displays aggregate historical data from public federal court records. Not legal advice. No attorney-client relationship.'}
+                </p>
+              </div>
+              <div className="sm:text-right text-[11px] text-slate-400 leading-relaxed">
+                MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}<br />
+                <a href="/methodology" className="text-[11px] text-slate-400 hover:text-slate-600 underline mt-1 inline-block transition-colors">
+                  {lang === 'es' ? 'Metodología' : 'Methodology'}
+                </a>
+                <div className="mt-2 flex flex-col sm:items-end gap-0.5">
+                  <a href="mailto:support@mycasevalue.com" className="text-[11px] text-slate-400 hover:text-slate-500 transition-colors" style={{ textDecoration: 'none' }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    support@mycasevalue.com
+                  </a>
+                  <a href="mailto:billing@mycasevalue.com" className="text-[11px] text-slate-400 hover:text-slate-500 transition-colors" style={{ textDecoration: 'none' }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    billing@mycasevalue.com
+                  </a>
+                </div>
+                {showMethodology && (
+                  <div className="card-bg bg-white rounded-xl p-4 mt-3 border border-slate-200 text-left text-[12px] text-slate-500 leading-relaxed max-w-md">
+                    MyCaseValue analyzes data from the Federal Judicial Center Integrated Database (IDB), containing outcome data for every federal civil case since 1970, cross-referenced with CourtListener (9M+ opinions). Win rates from AO-coded final dispositions. Recovery ranges from cases with monetary awards. All data is public domain (17 U.S.C. 105). MyCaseValue does not evaluate individual claims.
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Social sharing */}
+            <div className="flex items-center justify-center gap-2 mt-5 pt-4 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
+              <span className="text-[11px] font-semibold text-slate-400 tracking-[1px] mr-1">{lang === 'es' ? 'COMPARTIR' : 'SHARE'}</span>
+              {[
+                { icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', label: 'X', color: '#000000', hoverBg: '#F0F0F0', filled: true,
+                  url: () => `https://twitter.com/intent/tweet?text=${encodeURIComponent('Check federal court outcome data for your case type')}&url=${encodeURIComponent(window.location.origin)}` },
+                { icon: 'M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z', label: 'Facebook', color: '#1877F2', hoverBg: '#E7F0FE', filled: false,
+                  url: () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin)}` },
+                { icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z', label: 'LinkedIn', color: '#0A66C2', hoverBg: '#E8F1FA', filled: false,
+                  url: () => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}` },
+                { icon: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71', label: lang === 'es' ? 'Copiar enlace' : 'Copy link', color: '#4040F2', hoverBg: '#E4E5FF', filled: false,
+                  url: () => '' },
+              ].map((s, i) => (
+                <button key={i} onClick={() => {
+                  if (s.label === 'Copy link' || s.label === 'Copiar enlace') {
+                    navigator.clipboard.writeText(window.location.origin);
+                    toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
+                  } else {
+                    window.open(s.url(), '_blank', 'noopener,noreferrer,width=600,height=400');
+                  }
+                }}
+                className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110 group"
+                style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : 'transparent'}` }}
+                onMouseEnter={e => { e.currentTarget.style.background = darkMode ? '#334155' : s.hoverBg; e.currentTarget.style.borderColor = s.color + '40'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = darkMode ? '#1E293B' : '#F1F5F9'; e.currentTarget.style.borderColor = darkMode ? '#334155' : 'transparent'; }}
+                title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}
+                aria-label={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill={s.filled ? s.color : 'none'} stroke={s.filled ? 'none' : s.color} strokeWidth={s.filled ? '0' : '2'} strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
+                    <path d={s.icon} />
+                  </svg>
+                </button>
+              ))}
+            </div>
+
+            {/* Secure payments badge */}
+            <div className="flex items-center justify-center gap-3 mt-3 no-print">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <span className="text-[10px] font-semibold text-slate-400 tracking-[0.5px]">{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
+                {/* Stripe logo */}
+                <svg width="36" height="15" viewBox="0 0 60 25" fill={darkMode ? '#94A3B8' : '#6772E5'} xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z"/>
+                  <path d="M14.4 1.5l-4.8 1v13.3c0 2.4 1.8 4.2 4.3 4.2 1.4 0 2.4-.2 2.9-.5v-3.8c-.5.2-3.1.9-3.1-1.4V9.5h3.1V5.8h-3.1l.7-4.3z"/>
+                  <path d="M23.2 7.2l-.3-1.4h-4.3v14.4h4.9v-9.8c1.2-1.5 3.1-1.2 3.7-1v-4.5c-.7-.2-3.2-.7-4.3 1.3h.3z"/>
+                  <path d="M33.1 5.8h-4.9v14.4h4.9V5.8zM33.1 0h-4.9v4.6h4.9V0z"/>
+                  <path d="M42.2 5.5c-1.9 0-3.2.9-3.9 1.5l-.3-1.2h-4.3v19.5h4.9v-4.7c.7.5 1.8.8 3 .8 3 0 5.7-2.4 5.7-7.6-.1-4.8-2.8-8.3-5.1-8.3zm-.9 12.3c-1 0-1.5-.4-1.9-.8V10.6c.4-.5 1-.9 1.9-.9 1.5 0 2.5 1.7 2.5 4s-1 4-2.5 4z"/>
+                  <path d="M55.8 5.5c-3.1 0-5.3 2.7-5.3 6.2 0 4.1 2.4 6 5.8 6 1.7 0 2.9-.4 3.8-.9v-3.7c-1 .5-2.1.8-3.4.8-1.4 0-2.6-.5-2.7-2.1h6.8c0-.2.1-1 .1-1.3-.1-3.7-1.8-5-5.1-5zm-1.4 5c0-1.5.9-2.1 1.7-2.1s1.6.6 1.6 2.1h-3.3z"/>
+                </svg>
+              </div>
+              <div className="flex items-center gap-1.5">
+                {/* Payment method icons */}
+                {['Visa', 'Mastercard', 'Amex', 'PayPal'].map((m, i) => (
+                  <span key={i} className="text-[8px] font-bold px-1.5 py-0.5 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', color: '#94A3B8', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>{m}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Legal links */}
+            <div className="flex items-center justify-center gap-4 mt-3 pt-3 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
+              <button onClick={() => setLegalPage('terms')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Términos de servicio' : 'Terms of Service'}</button>
+              <span className="text-slate-300">·</span>
+              <button onClick={() => setLegalPage('privacy')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}</button>
+              <span className="text-slate-300">·</span>
+              <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Aviso legal' : 'Legal Disclaimer'}</button>
+            </div>
+
+            {/* Legal disclaimer bar */}
+            <div className="mt-5 pt-4 border-t" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F020' }}>
+              <div className="p-4 rounded-xl text-center" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                  <span className="text-[11px] font-bold tracking-[2px] text-slate-400">
+                    {lang === 'es' ? 'AVISO LEGAL' : 'LEGAL NOTICE'}
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                  {lang === 'es'
+                    ? 'MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos solo con fines informativos. No constituye asesoría legal, opinión legal ni recomendación. No se crea relación abogado-cliente. Consulte siempre a un abogado con licencia para su situación específica.'
+                    : 'MyCaseValue provides aggregate historical data from public federal court records for informational purposes only. It does not constitute legal advice, legal opinion, or recommendation of any kind. No attorney-client relationship is created. Always consult a licensed attorney for advice specific to your situation.'}
+                </p>
+                <p className="text-[10px] text-slate-300 mt-2">
+                  © {new Date().getFullYear()} MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+                </p>
+              </div>
+            </div>
+
+          </footer>
+        </main>
+        <Toast message={toastMsg} visible={toastVis} />
+
+        {/* Back to top button */}
+        {showBackToTop && (
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-40 cursor-pointer no-print transition-all"
+            style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)', boxShadow: '0 4px 16px rgba(64,64,242,.3)' }}
+            aria-label="Back to top">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M18 15l-6-6-6 6" /></svg>
+          </button>
+        )}
+
+        {/* Exit intent popup */}
+        {showExitIntent && !isPremium && (
+          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(8px)' }}>
+            <div className="exit-intent-modal card-bg bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center" onClick={e => e.stopPropagation()}>
+              <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer border-none">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              </button>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              </div>
+              <div className="text-xl font-display font-bold mb-2">{lang === 'es' ? '¡Espera! Te falta lo mejor' : "Wait — you're missing the best part"}</div>
+              <p className="text-[14px] text-slate-500 mb-1 leading-relaxed">{lang === 'es' ? 'Tu informe gratuito muestra la tasa de éxito. El informe completo agrega rangos de recuperación, impacto del abogado, cronología y más.' : 'Your free report shows the win rate. The full report adds recovery ranges, attorney impact, timeline, and more.'}</p>
+              <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[12px] font-bold mb-4" style={{ background: '#FEE2E2', color: '#E87461' }}>
+                {lang === 'es' ? 'Oferta por tiempo limitado' : 'Limited time offer'}
+              </div>
+              <button onClick={() => { setShowExitIntent(false); buy('single'); }}
+                className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer"
+                style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
+                {lang === 'es' ? 'Desbloquear informe completo — $5.99' : 'Unlock full report — $5.99'}
+              </button>
+              <button onClick={() => setShowExitIntent(false)} className="text-[13px] text-slate-400 mt-3 bg-transparent border-none cursor-pointer">
+                {lang === 'es' ? 'Ahora no' : 'Not now'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Saved Reports drawer */}
+        {showSaved && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(8px)' }}
+            onClick={() => setShowSaved(false)}>
+            <div className="card-bg bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+              <div className="flex items-center justify-between mb-4">
+                <div className="text-lg font-display font-bold">{lang === 'es' ? 'Mis informes' : 'My Reports'}</div>
+                <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer border-none">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+              </div>
+              {savedReportsLength === 0 ? (
+                <p className="text-[14px] text-slate-400 text-center py-8">{lang === 'es' ? 'No hay informes guardados aún.' : 'No saved reports yet.'}</p>
+              ) : null}
+              {/* Referral code */}
+              <div className="mt-4 pt-4 border-t border-slate-100">
+                <div className="text-[11px] font-bold text-slate-400 tracking-[1.5px] mb-1">{lang === 'es' ? 'TU CÓDIGO DE REFERENCIA' : 'YOUR REFERRAL CODE'}</div>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 px-3 py-2 rounded-lg bg-slate-50 text-sm font-data font-bold" style={{ color: '#4040F2' }}>{referralCode}</div>
+                  <button onClick={() => { navigator.clipboard.writeText(referralCode); toast('Copied!'); }}
+                    className="px-3 py-2 text-[12px] font-semibold rounded-lg cursor-pointer"
+                    style={{ background: '#E4E5FF', color: '#4040F2', border: 'none' }}>Copy</button>
+                </div>
+                <div className="text-[11px] text-slate-400 mt-1">{lang === 'es' ? 'Comparte y obtén un informe gratis' : 'Share and get a free report'}</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Cookie consent banner */}
+        {showCookieConsent && (
+          <div className="fixed bottom-0 left-0 right-0 z-50 p-4 no-print" style={{ background: 'rgba(11,18,33,0.95)', backdropFilter: 'blur(12px)' }}>
+            <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <div className="flex-1">
+                <p className="text-[13px] text-slate-300 leading-relaxed">
+                  {lang === 'es'
+                    ? 'Usamos cookies esenciales para el funcionamiento del sitio. Las cookies opcionales de análisis nos ayudan a mejorar.'
+                    : 'We use essential cookies for site functionality. Optional analytics cookies help us improve your experience.'}
+                  <button onClick={() => setLegalPage('privacy')} className="text-[#4040F2] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]">
+                    {lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}
+                  </button>
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <button onClick={() => {
+                  try { localStorage.setItem('mcv_cookies_accepted', 'essential'); } catch {}
+                  setShowCookieConsent(false);
+                }} className="px-4 py-2 text-[12px] font-semibold text-slate-300 bg-transparent border border-slate-600 rounded-lg cursor-pointer hover:border-slate-400 transition-colors">
+                  {lang === 'es' ? 'Solo esenciales' : 'Essential only'}
+                </button>
+                <button onClick={() => {
+                  try { localStorage.setItem('mcv_cookies_accepted', 'all'); } catch {}
+                  setShowCookieConsent(false);
+                }} className="px-4 py-2 text-[12px] font-semibold text-white rounded-lg cursor-pointer border-none"
+                  style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
+                  {lang === 'es' ? 'Aceptar todo' : 'Accept all'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+    </>
+  );
+}
+
+// ============================================================
 // MAIN APP
 // ============================================================
 
@@ -861,7 +1229,7 @@ export default function MyCaseValue() {
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [loadPct, setLoadPct] = useState(0);
-  const [tier, setTier] = useState('free');
+  const [tier, setTier] = useState('unlimited');
   const [showPricing, setShowPricing] = useState(false);
   const [consent, setConsent] = useState(false);
   const [rangeMode, setRangeMode] = useState('typical');
@@ -1386,312 +1754,42 @@ export default function MyCaseValue() {
     return totalCases.toLocaleString();
   }, [totalCases]);
 
-  // --- SHELL ---
-  function Shell({ children }: { children: React.ReactNode }) {
-    return (
-      <>
-      <a href="#main-content" className="skip-link">Skip to content</a>
-      <div className={darkMode ? 'dark' : ''} role="application" aria-label="MyCaseValue" style={{
-        background: darkMode ? '#0B1221' : '#F5F7FA',
-        minHeight: '100vh',
-        fontFamily: "'Outfit', system-ui, sans-serif",
-        color: darkMode ? '#F0F2F5' : '#0B1221',
-        maxWidth: viewMode === 'mobile' ? '430px' : viewMode === 'desktop' ? '100%' : undefined,
-        margin: viewMode === 'mobile' ? '0 auto' : undefined,
-        boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(11,18,33,.08)' : undefined,
-        transition: 'max-width 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-      }}>
-        {/* Reading progress bar */}
-        {step === 6 && <div className="reading-progress" style={{ width: `${readingPct}%` }} />}
+  // Create shellProps object for passing to Shell component
+  const shellProps: Omit<ShellProps, 'children'> = {
+    darkMode,
+    viewMode,
+    step,
+    readingPct,
+    showConfetti,
+    lang,
+    navScrolled,
+    scrollProgress,
+    setLang,
+    setDarkMode,
+    isPremium,
+    savedReportsLength: savedReports.length,
+    setShowSaved,
+    reset,
+    t,
+    UPL,
+    showBackToTop,
+    toastMsg,
+    toastVis,
+    showExitIntent,
+    setShowExitIntent,
+    buy,
+    showSaved,
+    referralCode,
+    toast,
+    showCookieConsent,
+    setShowCookieConsent,
+    setLegalPage,
+    legalPage,
+    showMethodology,
+  };
 
-        {/* Success celebration on report completion */}
-        {showConfetti && <SuccessCelebration />}
-
-        {/* Sticky Nav */}
-        <Navbar
-          lang={lang}
-          setLang={setLang}
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-          isPremium={isPremium}
-          savedReportsCount={savedReports.length}
-          onShowSaved={() => setShowSaved(true)}
-          onReset={reset}
-          onNewReport={reset}
-          newReportLabel={t.new_report}
-          premiumLabel={t.premium}
-          scrolled={navScrolled}
-          scrollProgress={scrollProgress}
-        />
-
-        <main id="main-content" className="max-w-[1140px] mx-auto px-4 sm:px-6 relative z-10" role="main">
-          {/* UPL Banner */}
-          <div className="text-center py-2 border-b no-print" style={{ borderColor: darkMode ? '#1E293B' : 'rgba(226,232,240,0.3)', background: darkMode ? 'rgba(30,41,59,0.3)' : 'rgba(248,250,252,0.5)' }}>
-            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: darkMode ? '#64748B' : '#94A3B8' }}>{UPL.banner}</span>
-          </div>
-
-          {children}
-
-          {/* Footer */}
-          <footer className="border-t mt-16 pt-6 pb-8" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F0' }}>
-            <div className="flex items-center gap-3 mb-4 flex-wrap">
-              <span className="text-[11px] font-semibold text-slate-400">{lang === 'es' ? 'Datos verificados:' : 'Verified data:'}</span>
-              {['Federal Judicial Center', 'CourtListener', 'uscourts.gov'].map((n, i) => (
-                <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-white border border-slate-200">{n}</span>
-              ))}
-              <span className="text-[10px] font-medium px-2 py-1 rounded-lg" style={{ background: '#CCFBF1', color: '#0D9488' }}>
-                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="3" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><polyline points="20 6 9 17 4 12" /></svg>
-                {t.data_updated}
-              </span>
-            </div>
-            <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-8">
-              <div className="max-w-sm">
-                <button onClick={reset} className="bg-transparent border-none cursor-pointer mb-3">
-                  <Logo size="sm" />
-                </button>
-                <p className="text-[11px] text-slate-400 leading-relaxed">
-                  {lang === 'es'
-                    ? 'MyCaseValue es una herramienta informativa que muestra datos históricos agregados de registros judiciales federales públicos. No es asesoría legal. No establece relación abogado-cliente.'
-                    : 'MyCaseValue is an informational tool that displays aggregate historical data from public federal court records. Not legal advice. No attorney-client relationship.'}
-                </p>
-              </div>
-              <div className="sm:text-right text-[11px] text-slate-400 leading-relaxed">
-                MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}<br />
-                <a href="/methodology" className="text-[11px] text-slate-400 hover:text-slate-600 underline mt-1 inline-block transition-colors">
-                  {lang === 'es' ? 'Metodología' : 'Methodology'}
-                </a>
-                <div className="mt-2 flex flex-col sm:items-end gap-0.5">
-                  <a href="mailto:support@mycasevalue.com" className="text-[11px] text-slate-400 hover:text-slate-500 transition-colors" style={{ textDecoration: 'none' }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    support@mycasevalue.com
-                  </a>
-                  <a href="mailto:billing@mycasevalue.com" className="text-[11px] text-slate-400 hover:text-slate-500 transition-colors" style={{ textDecoration: 'none' }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                    billing@mycasevalue.com
-                  </a>
-                </div>
-                {showMethodology && (
-                  <div className="card-bg bg-white rounded-xl p-4 mt-3 border border-slate-200 text-left text-[12px] text-slate-500 leading-relaxed max-w-md">
-                    MyCaseValue analyzes data from the Federal Judicial Center Integrated Database (IDB), containing outcome data for every federal civil case since 1970, cross-referenced with CourtListener (9M+ opinions). Win rates from AO-coded final dispositions. Recovery ranges from cases with monetary awards. All data is public domain (17 U.S.C. 105). MyCaseValue does not evaluate individual claims.
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Social sharing */}
-            <div className="flex items-center justify-center gap-2 mt-5 pt-4 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
-              <span className="text-[11px] font-semibold text-slate-400 tracking-[1px] mr-1">{lang === 'es' ? 'COMPARTIR' : 'SHARE'}</span>
-              {[
-                { icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', label: 'X', color: '#0F1419', hoverBg: '#E8E8E8', filled: true,
-                  url: () => `https://twitter.com/intent/tweet?text=${encodeURIComponent('Check federal court outcome data for your case type')}&url=${encodeURIComponent(window.location.origin)}` },
-                { icon: 'M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z', label: 'Facebook', color: '#1877F2', hoverBg: '#E7F0FE', filled: false,
-                  url: () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin)}` },
-                { icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z', label: 'LinkedIn', color: '#0A66C2', hoverBg: '#E8F1FA', filled: false,
-                  url: () => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}` },
-                { icon: 'M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13', label: lang === 'es' ? 'Copiar enlace' : 'Copy link', color: '#4040F2', hoverBg: '#E4E5FF', filled: false,
-                  url: () => '' },
-              ].map((s, i) => (
-                <button key={i} onClick={() => {
-                  if (s.label === 'Copy link' || s.label === 'Copiar enlace') {
-                    navigator.clipboard.writeText(window.location.origin);
-                    toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
-                  } else {
-                    window.open(s.url(), '_blank', 'noopener,noreferrer,width=600,height=400');
-                  }
-                }}
-                className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110 group"
-                style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : 'transparent'}` }}
-                onMouseEnter={e => { e.currentTarget.style.background = darkMode ? '#334155' : s.hoverBg; e.currentTarget.style.borderColor = s.color + '40'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = darkMode ? '#1E293B' : '#F1F5F9'; e.currentTarget.style.borderColor = darkMode ? '#334155' : 'transparent'; }}
-                title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}
-                aria-label={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill={s.filled ? s.color : 'none'} stroke={s.filled ? 'none' : s.color} strokeWidth={s.filled ? '0' : '2'} strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
-                    <path d={s.icon} />
-                  </svg>
-                </button>
-              ))}
-            </div>
-
-            {/* Secure payments badge */}
-            <div className="flex items-center justify-center gap-3 mt-3 no-print">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                <span className="text-[10px] font-semibold text-slate-400 tracking-[0.5px]">{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
-                {/* Stripe logo */}
-                <svg width="36" height="15" viewBox="0 0 60 25" fill={darkMode ? '#94A3B8' : '#6772E5'} xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z"/>
-                  <path d="M14.4 1.5l-4.8 1v13.3c0 2.4 1.8 4.2 4.3 4.2 1.4 0 2.4-.2 2.9-.5v-3.8c-.5.2-3.1.9-3.1-1.4V9.5h3.1V5.8h-3.1l.7-4.3z"/>
-                  <path d="M23.2 7.2l-.3-1.4h-4.3v14.4h4.9v-9.8c1.2-1.5 3.1-1.2 3.7-1v-4.5c-.7-.2-3.2-.7-4.3 1.3h.3z"/>
-                  <path d="M33.1 5.8h-4.9v14.4h4.9V5.8zM33.1 0h-4.9v4.6h4.9V0z"/>
-                  <path d="M42.2 5.5c-1.9 0-3.2.9-3.9 1.5l-.3-1.2h-4.3v19.5h4.9v-4.7c.7.5 1.8.8 3 .8 3 0 5.7-2.4 5.7-7.6-.1-4.8-2.8-8.3-5.1-8.3zm-.9 12.3c-1 0-1.5-.4-1.9-.8V10.6c.4-.5 1-.9 1.9-.9 1.5 0 2.5 1.7 2.5 4s-1 4-2.5 4z"/>
-                  <path d="M55.8 5.5c-3.1 0-5.3 2.7-5.3 6.2 0 4.1 2.4 6 5.8 6 1.7 0 2.9-.4 3.8-.9v-3.7c-1 .5-2.1.8-3.4.8-1.4 0-2.6-.5-2.7-2.1h6.8c0-.2.1-1 .1-1.3-.1-3.7-1.8-5-5.1-5zm-1.4 5c0-1.5.9-2.1 1.7-2.1s1.6.6 1.6 2.1h-3.3z"/>
-                </svg>
-              </div>
-              <div className="flex items-center gap-1.5">
-                {/* Payment method icons */}
-                {['Visa', 'Mastercard', 'Amex', 'PayPal'].map((m, i) => (
-                  <span key={i} className="text-[8px] font-bold px-1.5 py-0.5 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', color: '#94A3B8', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>{m}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Legal links */}
-            <div className="flex items-center justify-center gap-4 mt-3 pt-3 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
-              <button onClick={() => setLegalPage('terms')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Términos de servicio' : 'Terms of Service'}</button>
-              <span className="text-slate-300">·</span>
-              <button onClick={() => setLegalPage('privacy')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}</button>
-              <span className="text-slate-300">·</span>
-              <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Aviso legal' : 'Legal Disclaimer'}</button>
-            </div>
-
-            {/* Legal disclaimer bar */}
-            <div className="mt-5 pt-4 border-t" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F020' }}>
-              <div className="p-4 rounded-xl text-center" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                  <span className="text-[11px] font-bold tracking-[2px] text-slate-400">
-                    {lang === 'es' ? 'AVISO LEGAL' : 'LEGAL NOTICE'}
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed max-w-2xl mx-auto">
-                  {lang === 'es'
-                    ? 'MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos solo con fines informativos. No constituye asesoría legal, opinión legal ni recomendación. No se crea relación abogado-cliente. Consulte siempre a un abogado con licencia para su situación específica.'
-                    : 'MyCaseValue provides aggregate historical data from public federal court records for informational purposes only. It does not constitute legal advice, legal opinion, or recommendation of any kind. No attorney-client relationship is created. Always consult a licensed attorney for advice specific to your situation.'}
-                </p>
-                <p className="text-[10px] text-slate-300 mt-2">
-                  © {new Date().getFullYear()} MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
-                </p>
-              </div>
-            </div>
-
-          </footer>
-        </main>
-        <Toast message={toastMsg} visible={toastVis} />
-
-        {/* Back to top button */}
-        {showBackToTop && (
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-40 cursor-pointer no-print transition-all"
-            style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)', boxShadow: '0 4px 16px rgba(64,64,242,.3)' }}
-            aria-label="Back to top">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M18 15l-6-6-6 6" /></svg>
-          </button>
-        )}
-
-        {/* Exit intent popup */}
-        {showExitIntent && !isPremium && (
-          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(8px)' }}>
-            <div className="exit-intent-modal card-bg bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center" onClick={e => e.stopPropagation()}>
-              <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer border-none">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              </button>
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-              </div>
-              <div className="text-xl font-display font-bold mb-2">{lang === 'es' ? '¡Espera! Te falta lo mejor' : "Wait — you're missing the best part"}</div>
-              <p className="text-[14px] text-slate-500 mb-1 leading-relaxed">{lang === 'es' ? 'Tu informe gratuito muestra la tasa de éxito. El informe completo agrega rangos de recuperación, impacto del abogado, cronología y más.' : 'Your free report shows the win rate. The full report adds recovery ranges, attorney impact, timeline, and more.'}</p>
-              <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[12px] font-bold mb-4" style={{ background: '#FEE2E2', color: '#E87461' }}>
-                {lang === 'es' ? 'Oferta por tiempo limitado' : 'Limited time offer'}
-              </div>
-              <button onClick={() => { setShowExitIntent(false); buy('single'); }}
-                className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer"
-                style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
-                {lang === 'es' ? 'Desbloquear informe completo — $5.99' : 'Unlock full report — $5.99'}
-              </button>
-              <button onClick={() => setShowExitIntent(false)} className="text-[13px] text-slate-400 mt-3 bg-transparent border-none cursor-pointer">
-                {lang === 'es' ? 'Ahora no' : 'Not now'}
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Saved Reports drawer */}
-        {showSaved && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(8px)' }}
-            onClick={() => setShowSaved(false)}>
-            <div className="card-bg bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-lg font-display font-bold">{lang === 'es' ? 'Mis informes' : 'My Reports'}</div>
-                <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer border-none">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                </button>
-              </div>
-              {savedReports.length === 0 ? (
-                <p className="text-[14px] text-slate-400 text-center py-8">{lang === 'es' ? 'No hay informes guardados aún.' : 'No saved reports yet.'}</p>
-              ) : (
-                <div className="space-y-2">
-                  {savedReports.map((r: any) => (
-                    <div key={r.id} className="p-3 rounded-xl border border-slate-100 flex items-center justify-between">
-                      <div>
-                        <div className="text-sm font-semibold capitalize">{r.caseType}</div>
-                        <div className="text-[11px] text-slate-400">{r.state || 'All states'} · {new Date(r.date).toLocaleDateString()}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-lg font-display font-bold" style={{ color: r.wr > 36 ? '#0D9488' : '#D97706' }}>{Math.round(r.wr)}%</div>
-                        <div className="text-[10px] text-slate-400">{r.total?.toLocaleString()} cases</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {/* Referral code */}
-              <div className="mt-4 pt-4 border-t border-slate-100">
-                <div className="text-[11px] font-bold text-slate-400 tracking-[1.5px] mb-1">{lang === 'es' ? 'TU CÓDIGO DE REFERENCIA' : 'YOUR REFERRAL CODE'}</div>
-                <div className="flex items-center gap-2">
-                  <div className="flex-1 px-3 py-2 rounded-lg bg-slate-50 text-sm font-data font-bold" style={{ color: '#4040F2' }}>{referralCode}</div>
-                  <button onClick={() => { navigator.clipboard.writeText(referralCode); toast('Copied!'); }}
-                    className="px-3 py-2 text-[12px] font-semibold rounded-lg cursor-pointer"
-                    style={{ background: '#E4E5FF', color: '#4040F2', border: 'none' }}>Copy</button>
-                </div>
-                <div className="text-[11px] text-slate-400 mt-1">{lang === 'es' ? 'Comparte y obtén un informe gratis' : 'Share and get a free report'}</div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Cookie consent banner */}
-        {showCookieConsent && (
-          <div className="fixed bottom-0 left-0 right-0 z-50 p-4 no-print" style={{ background: 'rgba(11,18,33,0.95)', backdropFilter: 'blur(12px)' }}>
-            <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3">
-              <div className="flex-1">
-                <p className="text-[13px] text-slate-300 leading-relaxed">
-                  {lang === 'es'
-                    ? 'Usamos cookies esenciales para el funcionamiento del sitio. Las cookies opcionales de análisis nos ayudan a mejorar.'
-                    : 'We use essential cookies for site functionality. Optional analytics cookies help us improve your experience.'}
-                  <button onClick={() => setLegalPage('privacy')} className="text-[#4040F2] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]">
-                    {lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}
-                  </button>
-                </p>
-              </div>
-              <div className="flex gap-2">
-                <button onClick={() => {
-                  try { localStorage.setItem('mcv_cookies_accepted', 'essential'); } catch {}
-                  setShowCookieConsent(false);
-                }} className="px-4 py-2 text-[12px] font-semibold text-slate-300 bg-transparent border border-slate-600 rounded-lg cursor-pointer hover:border-slate-400 transition-colors">
-                  {lang === 'es' ? 'Solo esenciales' : 'Essential only'}
-                </button>
-                <button onClick={() => {
-                  try { localStorage.setItem('mcv_cookies_accepted', 'all'); } catch {}
-                  setShowCookieConsent(false);
-                }} className="px-4 py-2 text-[12px] font-semibold text-white rounded-lg cursor-pointer border-none"
-                  style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
-                  {lang === 'es' ? 'Aceptar todo' : 'Accept all'}
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-      </div>
-      </>
-    );
-  }
-
-  // ============================================================
-  // HOMEPAGE
-  // ============================================================
   if (step === 0) return (
-    <Shell>
+    <Shell {...shellProps}>
       <div className="hero-bg hero-parallax py-12 sm:py-20 pb-10 relative overflow-hidden noise-overlay">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
@@ -2232,28 +2330,28 @@ export default function MyCaseValue() {
                   <label className="text-xs font-semibold text-slate-600 block mb-2">{lang === 'es' ? 'Cantidad estimada de recuperación' : 'Estimated recovery amount'}</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-semibold">$</span>
-                    <input type="range" min="10000" max="500000" step="5000" value={calcAmount}
+                    <input type="range" min="10000" max="5000000" step="10000" value={calcAmount}
                       onChange={e => setCalcAmount(Number(e.target.value))}
                       className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer" style={{ accentColor: '#4040F2' }} />
                   </div>
                   <div className="flex justify-between mt-2 text-xs text-slate-500">
                     <span>$10K</span>
-                    <span className="font-semibold text-slate-700">${(calcAmount / 1000).toFixed(0)}K</span>
+                    <span className="font-semibold text-slate-700">{calcAmount >= 1000000 ? `$${(calcAmount / 1000000).toFixed(1)}M` : `$${(calcAmount / 1000).toFixed(0)}K`}</span>
                     <span>$500K</span>
                   </div>
                 </div>
                 <div className="space-y-3 pt-4 border-t border-slate-100">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-600">{lang === 'es' ? 'Honorarios de abogado (33%)' : 'Attorney fees (33%)'}</span>
-                    <span className="text-lg font-display font-bold" style={{ color: '#4040F2' }}>${(calcAmount * 0.33 / 1000).toFixed(1)}K</span>
+                    <span className="text-lg font-display font-bold" style={{ color: '#4040F2' }}>{calcAmount * 0.33 >= 1000000 ? `$${(calcAmount * 0.33 / 1000000).toFixed(2)}M` : `$${(calcAmount * 0.33 / 1000).toFixed(1)}K`}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-600">{lang === 'es' ? 'Gastos de la demanda' : 'Court costs & expenses'}</span>
-                    <span className="text-lg font-display font-bold" style={{ color: '#1A2744' }}>${(calcAmount * 0.05 / 1000).toFixed(1)}K</span>
+                    <span className="text-lg font-display font-bold" style={{ color: '#1A2744' }}>{calcAmount * 0.05 >= 1000000 ? `$${(calcAmount * 0.05 / 1000000).toFixed(2)}M` : `$${(calcAmount * 0.05 / 1000).toFixed(1)}K`}</span>
                   </div>
                   <div className="flex items-center justify-between pt-3 border-t border-slate-100">
                     <span className="text-sm font-semibold text-slate-700">{lang === 'es' ? 'Tu recuperación neta' : 'Your net recovery'}</span>
-                    <span className="text-xl font-display font-bold" style={{ color: '#0D9488' }}>${(calcAmount * 0.62 / 1000).toFixed(1)}K</span>
+                    <span className="text-xl font-display font-bold" style={{ color: '#0D9488' }}>{calcAmount * 0.62 >= 1000000 ? `$${(calcAmount * 0.62 / 1000000).toFixed(2)}M` : `$${(calcAmount * 0.62 / 1000).toFixed(1)}K`}</span>
                   </div>
                 </div>
               </div>
@@ -2261,10 +2359,20 @@ export default function MyCaseValue() {
                 <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-4 uppercase">{lang === 'es' ? 'Rangos por tipo de caso' : 'Fee ranges by case type'}</div>
                 <div className="space-y-3">
                   {[
-                    { type: lang === 'es' ? 'Lesiones personales' : 'Personal injury', hourly: '$150-400', contingency: '25-33%' },
-                    { type: lang === 'es' ? 'Discriminación laboral' : 'Employment discrimination', hourly: '$200-500', contingency: '25-33%' },
-                    { type: lang === 'es' ? 'Responsabilidad del producto' : 'Product liability', hourly: '$200-600', contingency: '33-40%' },
-                    { type: lang === 'es' ? 'Contratos' : 'Contract disputes', hourly: '$250-450', contingency: 'N/A' },
+                    { type: lang === 'es' ? 'Lesiones personales' : 'Personal injury', hourly: '$150-400', contingency: '33-40%' },
+                    { type: lang === 'es' ? 'Accidente vehicular' : 'Motor vehicle accident', hourly: '$150-350', contingency: '33-40%' },
+                    { type: lang === 'es' ? 'Negligencia médica' : 'Medical malpractice', hourly: '$250-600', contingency: '33-40%' },
+                    { type: lang === 'es' ? 'Muerte injusta' : 'Wrongful death', hourly: '$250-500', contingency: '33-40%' },
+                    { type: lang === 'es' ? 'Discriminación laboral' : 'Employment discrimination', hourly: '$200-500', contingency: '25-40%' },
+                    { type: lang === 'es' ? 'Acoso sexual' : 'Sexual harassment', hourly: '$200-500', contingency: '25-40%' },
+                    { type: lang === 'es' ? 'Salarios impagos' : 'Unpaid wages (FLSA)', hourly: '$150-400', contingency: '33%+fees' },
+                    { type: lang === 'es' ? 'Responsabilidad del producto' : 'Product liability', hourly: '$200-600', contingency: '33-45%' },
+                    { type: lang === 'es' ? 'Derechos civiles (§1983)' : 'Civil rights (§1983)', hourly: '$200-500', contingency: '33-40%+fees' },
+                    { type: lang === 'es' ? 'Cobro de deudas (FDCPA)' : 'Debt collection (FDCPA)', hourly: '$150-350', contingency: 'Statutory fees' },
+                    { type: lang === 'es' ? 'Seguro de mala fe' : 'Insurance bad faith', hourly: '$200-450', contingency: '33-40%' },
+                    { type: lang === 'es' ? 'Contratos' : 'Contract disputes', hourly: '$250-500', contingency: 'Rare / hourly' },
+                    { type: lang === 'es' ? 'Propiedad intelectual' : 'Intellectual property', hourly: '$300-700', contingency: 'Rare / hourly' },
+                    { type: lang === 'es' ? 'Discapacidad (SSDI)' : 'Disability (SSDI)', hourly: 'N/A', contingency: '25% (capped)' },
                   ].map((item, i) => (
                     <div key={i} className="flex items-center justify-between py-2 border-b border-slate-100 last:border-none">
                       <span className="text-xs font-medium text-slate-600">{item.type}</span>
@@ -2367,37 +2475,76 @@ export default function MyCaseValue() {
               <div>
                 <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-1">{lang === 'es' ? 'HERRAMIENTA DE COMPARACIÓN' : 'COMPARISON TOOL'}</div>
                 <div className="text-lg sm:text-xl font-display font-bold">{lang === 'es' ? 'Compara dos situaciones lado a lado' : 'Compare two situations side by side'}</div>
-                <div className="text-[13px] text-slate-400 mt-1">{lang === 'es' ? 'Elige dos tipos de caso y ve las diferencias en datos reales.' : 'Pick any two case types and see how the real data compares.'}</div>
+                <div className="text-[13px] text-slate-400 mt-1">{lang === 'es' ? 'Selecciona cualquier par de tipos de caso para ver diferencias reales' : 'Select any pair of case types to see real data differences'}</div>
               </div>
-              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ background: '#CCFBF1', color: '#0D9488' }}>{lang === 'es' ? 'Gratis' : 'Free'}</span>
+              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ background: '#E4E5FF', color: '#4040F2' }}>{lang === 'es' ? 'Interactivo' : 'Interactive'}</span>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { label: lang === 'es' ? 'Discriminación laboral' : 'Employment Discrimination', wr: '38.4%', time: '11.2 mo', settle: '32%', color: '#1A2744' },
-                { label: lang === 'es' ? 'Lesiones personales' : 'Personal Injury', wr: '54.1%', time: '8.6 mo', settle: '48%', color: '#0D9488' },
-              ].map((c, i) => (
-                <div key={i} className="p-4 rounded-xl border" style={{ borderColor: `${c.color}20`, background: `${c.color}04` }}>
-                  <div className="text-[13px] font-semibold mb-3" style={{ color: c.color }}>{c.label}</div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-[12px]">
-                      <span className="text-slate-400">{lang === 'es' ? 'Tasa de éxito' : 'Win rate'}</span>
-                      <span className="font-bold font-data">{c.wr}</span>
-                    </div>
-                    <div className="flex justify-between text-[12px]">
-                      <span className="text-slate-400">{lang === 'es' ? 'Tiempo promedio' : 'Avg. duration'}</span>
-                      <span className="font-bold font-data">{c.time}</span>
-                    </div>
-                    <div className="flex justify-between text-[12px]">
-                      <span className="text-slate-400">{lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate'}</span>
-                      <span className="font-bold font-data">{c.settle}</span>
-                    </div>
+            {(() => {
+              const COMPARE_CASES = [
+                { id: 'emp_disc', label: lang === 'es' ? 'Discriminación laboral' : 'Employment Discrimination', wr: 38.4, time: 11.2, settle: 32, vol: 28400, fee: '25-40%' },
+                { id: 'pers_inj', label: lang === 'es' ? 'Lesiones personales' : 'Personal Injury', wr: 54.1, time: 8.6, settle: 48, vol: 42100, fee: '33-40%' },
+                { id: 'med_mal', label: lang === 'es' ? 'Negligencia médica' : 'Medical Malpractice', wr: 32.7, time: 14.3, settle: 41, vol: 8200, fee: '33-40%' },
+                { id: 'prod_liab', label: lang === 'es' ? 'Responsabilidad del producto' : 'Product Liability', wr: 42.8, time: 12.1, settle: 44, vol: 6900, fee: '33-45%' },
+                { id: 'civil_rights', label: lang === 'es' ? 'Derechos civiles' : 'Civil Rights (§1983)', wr: 28.5, time: 13.8, settle: 29, vol: 35600, fee: '33%+fees' },
+                { id: 'contract', label: lang === 'es' ? 'Incumplimiento de contrato' : 'Breach of Contract', wr: 44.2, time: 9.4, settle: 52, vol: 19800, fee: 'Hourly' },
+                { id: 'ins_bad', label: lang === 'es' ? 'Seguro de mala fe' : 'Insurance Bad Faith', wr: 46.3, time: 10.7, settle: 55, vol: 7300, fee: '33-40%' },
+                { id: 'wrong_death', label: lang === 'es' ? 'Muerte injusta' : 'Wrongful Death', wr: 51.2, time: 15.6, settle: 58, vol: 4100, fee: '33-40%' },
+                { id: 'sex_harass', label: lang === 'es' ? 'Acoso sexual' : 'Sexual Harassment', wr: 35.1, time: 10.4, settle: 38, vol: 12300, fee: '25-40%' },
+                { id: 'wage', label: lang === 'es' ? 'Salarios impagos' : 'Unpaid Wages (FLSA)', wr: 47.6, time: 7.8, settle: 61, vol: 21500, fee: '33%+fees' },
+              ];
+              const cA = COMPARE_CASES.find(c => c.id === (compareNos || 'emp_disc')) || COMPARE_CASES[0];
+              const cB = COMPARE_CASES.find(c => c.id === (compareData?.id || 'pers_inj')) || COMPARE_CASES[1];
+              const metrics: { key: string; label: string; fmt: (v: any) => string; better: 'higher' | 'lower' | 'neutral' }[] = [
+                { key: 'wr', label: lang === 'es' ? 'Tasa de éxito' : 'Win rate', fmt: (v) => `${v}%`, better: 'higher' },
+                { key: 'time', label: lang === 'es' ? 'Duración promedio' : 'Avg. duration', fmt: (v) => `${v} mo`, better: 'lower' },
+                { key: 'settle', label: lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate', fmt: (v) => `${v}%`, better: 'higher' },
+                { key: 'vol', label: lang === 'es' ? 'Volumen de casos' : 'Case volume', fmt: (v) => v >= 1000 ? `${(v/1000).toFixed(1)}K` : `${v}`, better: 'neutral' },
+                { key: 'fee', label: lang === 'es' ? 'Rango de contingencia' : 'Contingency range', fmt: (v) => `${v}`, better: 'neutral' },
+              ];
+              return (
+                <>
+                  <div className="grid grid-cols-2 gap-3 mb-4">
+                    <select value={cA.id} onChange={e => { setCompareNos(e.target.value); }}
+                      className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
+                      style={{ background: '#1A274408', border: '1.5px solid #1A274420', color: '#1A2744', outline: 'none' }}>
+                      {COMPARE_CASES.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
+                    </select>
+                    <select value={cB.id} onChange={e => { setCompareData({ id: e.target.value }); }}
+                      className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
+                      style={{ background: '#0D948808', border: '1.5px solid #0D948820', color: '#0D9488', outline: 'none' }}>
+                      {COMPARE_CASES.filter(c => c.id !== cA.id).map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
+                    </select>
                   </div>
-                </div>
-              ))}
-            </div>
+                  <div className="space-y-2">
+                    {metrics.map(m => {
+                      const vA = (cA as any)[m.key];
+                      const vB = (cB as any)[m.key];
+                      const isNumeric = typeof vA === 'number';
+                      const aWins = isNumeric && m.better !== 'neutral' && (m.better === 'higher' ? vA > vB : vA < vB);
+                      const bWins = isNumeric && m.better !== 'neutral' && (m.better === 'higher' ? vB > vA : vB < vA);
+                      return (
+                        <div key={m.key} className="flex items-center gap-2 py-2 px-3 rounded-lg" style={{ background: darkMode ? 'rgba(30,41,59,0.3)' : '#F8FAFC' }}>
+                          <span className="flex-1 text-[12px] text-slate-400">{m.label}</span>
+                          <span className={`text-[13px] font-bold font-data ${aWins ? '' : ''}`} style={{ color: aWins ? '#0D9488' : bWins ? '#94A3B8' : '#1A2744', minWidth: 60, textAlign: 'right' }}>{m.fmt(vA)}</span>
+                          <span className="text-[10px] text-slate-300 mx-1">vs</span>
+                          <span className={`text-[13px] font-bold font-data`} style={{ color: bWins ? '#0D9488' : aWins ? '#94A3B8' : '#0D9488', minWidth: 60, textAlign: 'right' }}>{m.fmt(vB)}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  {typeof cA.wr === 'number' && typeof cB.wr === 'number' && (
+                    <div className="mt-3 px-4 py-2.5 rounded-xl text-[12px] font-medium" style={{ background: '#E4E5FF', color: '#4040F2' }}>
+                      {cA.wr > cB.wr
+                        ? (lang === 'es' ? `${cA.label} tiene una tasa de éxito ${(cA.wr - cB.wr).toFixed(1)}% más alta, pero ${cB.label} se resuelve ${cB.settle > cA.settle ? 'más por acuerdos' : 'de forma similar'}.` : `${cA.label} has a ${(cA.wr - cB.wr).toFixed(1)}% higher win rate, but ${cB.label} ${cB.settle > cA.settle ? 'settles more often' : 'resolves similarly'}.`)
+                        : (lang === 'es' ? `${cB.label} tiene una tasa de éxito ${(cB.wr - cA.wr).toFixed(1)}% más alta, pero ${cA.label} se resuelve ${cA.settle > cB.settle ? 'más por acuerdos' : 'de forma similar'}.` : `${cB.label} has a ${(cB.wr - cA.wr).toFixed(1)}% higher win rate, but ${cA.label} ${cA.settle > cB.settle ? 'settles more often' : 'resolves similarly'}.`)}
+                    </div>
+                  )}
+                </>
+              );
+            })()}
             <button onClick={() => go(1)} className="w-full mt-4 py-3 text-[14px] font-semibold text-white rounded-xl cursor-pointer border-none transition-all hover:-translate-y-0.5"
               style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)', boxShadow: '0 4px 16px rgba(64,64,242,.2)' }}>
-              {lang === 'es' ? 'Comparar tu situación →' : 'Compare your situation →'}
+              {lang === 'es' ? 'Obtener mi informe personalizado →' : 'Get my personalized report →'}
             </button>
           </div>
         </Reveal>
@@ -2650,7 +2797,7 @@ export default function MyCaseValue() {
 
   // Step 1: Category
   if (step === 1) return (
-    <Shell>
+    <Shell {...shellProps}>
       <div className="max-w-xl mx-auto py-8 wizard-step-enter">
         <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <Reveal>
@@ -2688,7 +2835,7 @@ export default function MyCaseValue() {
 
   // Step 2: Sub-category
   if (step === 2 && sit) return (
-    <Shell>
+    <Shell {...shellProps}>
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
         <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
@@ -2722,7 +2869,7 @@ export default function MyCaseValue() {
 
   // Step 3: Details
   if (step === 3) return (
-    <Shell>
+    <Shell {...shellProps}>
       <div className="max-w-xl mx-auto py-6 page-enter">
         <WizardProgress step={3} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
@@ -2818,7 +2965,7 @@ export default function MyCaseValue() {
 
   // Step 4: Consent
   if (step === 4) return (
-    <Shell>
+    <Shell {...shellProps}>
       <div className="max-w-xl mx-auto py-6 page-enter">
         <WizardProgress step={4} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
@@ -2858,7 +3005,7 @@ export default function MyCaseValue() {
 
   // Step 5: Email
   if (step === 5) return (
-    <Shell>
+    <Shell {...shellProps}>
       <div className="max-w-md mx-auto py-10 text-center page-enter">
         <Reveal>
           <Card glow className="px-6 sm:px-9 py-10">
@@ -2897,7 +3044,7 @@ export default function MyCaseValue() {
   if (step === 6) {
     // Loading
     if (loading) return (
-      <Shell>
+      <Shell {...shellProps}>
         <div className="max-w-3xl mx-auto py-8">
           <div className="flex justify-between mb-6">
             <div className="flex-1">
@@ -2964,7 +3111,7 @@ export default function MyCaseValue() {
     const circuitSpecificRate = circuitDataKey && d.circuit_rates ? d.circuit_rates[circuitDataKey] : null;
 
     return (
-      <Shell>
+      <Shell {...shellProps}>
         <div className="py-6">
           {/* Live bar */}
           <Reveal>
