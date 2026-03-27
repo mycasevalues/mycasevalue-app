@@ -32,24 +32,33 @@ const AGGREGATE_STATE_RATES: Record<string, number> = {
 // ============================================================
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  // IntersectionObserver approach — animates when element scrolls into view
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el) { setVisible(true); return; }
+
+    // Safety fallback — always reveal after 800ms max
+    const fallback = setTimeout(() => setVisible(true), 800);
+
+    if (typeof IntersectionObserver === 'undefined') {
+      setVisible(true);
+      return () => clearTimeout(fallback);
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
           observer.disconnect();
+          clearTimeout(fallback);
         }
       },
-      { threshold: 0.05, rootMargin: '50px' }
+      { threshold: 0.01, rootMargin: '200px' }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => { observer.disconnect(); clearTimeout(fallback); };
   }, []);
 
   return (
