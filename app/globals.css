@@ -404,6 +404,74 @@ h3 {
   color: var(--steel);
 }
 
+/* Enhanced category card interactions */
+.category-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(11, 18, 33, 0.08);
+}
+.category-card:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Outcome cards in report */
+.outcome-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.outcome-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Enhanced animated divider */
+.animated-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 20%, var(--gold-bright) 50%, var(--gold) 80%, transparent 100%);
+  opacity: 0.2;
+  position: relative;
+}
+.animated-divider::after {
+  content: '⬥';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 8px;
+  opacity: 0.5;
+  background: var(--cream);
+  padding: 0 8px;
+}
+.dark .animated-divider::after {
+  background: #131B2E;
+}
+
+/* Smooth number transitions in data */
+.font-data {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Better scroll indicator */
+.scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* Pulse dot animation — refined */
+.pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+}
+
 /* ============================================================
    ANIMATIONS — premium and silky smooth
    ============================================================ */
@@ -972,26 +1040,43 @@ button:active:not(:disabled) {
 }
 
 .dark .card-bg {
-  background: linear-gradient(135deg, rgba(19, 27, 46, 0.8) 0%, rgba(15, 23, 41, 0.9) 100%) !important;
-  border-color: rgba(184, 146, 58, 0.2) !important;
+  background: linear-gradient(135deg, rgba(19, 27, 46, 0.85) 0%, rgba(15, 23, 41, 0.95) 100%) !important;
+  border-color: rgba(184, 146, 58, 0.12) !important;
   color: #F0F2F5;
-  border: 1px solid rgba(184, 146, 58, 0.15);
+  border: 1px solid rgba(184, 146, 58, 0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
-.dark .card-bg input {
-  background: rgba(28, 39, 64, 0.7);
-  border-color: rgba(184, 146, 58, 0.2);
+.dark .card-bg:hover {
+  border-color: rgba(184, 146, 58, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.dark .card-bg input,
+.dark .card-bg select {
+  background: rgba(15, 23, 41, 0.8);
+  border-color: rgba(51, 65, 85, 0.6);
   color: #F0F2F5;
   transition: all 0.3s ease;
 }
 
-.dark .card-bg input::placeholder {
+.dark .card-bg input::placeholder,
+.dark .card-bg select::placeholder {
   color: #5C6B85;
 }
 
-.dark .card-bg input:focus {
-  background: rgba(28, 39, 64, 0.9);
+.dark .card-bg input:focus,
+.dark .card-bg select:focus {
+  background: rgba(15, 23, 41, 0.95);
   border-color: var(--gold-bright);
+}
+
+/* Dark mode dropdown menu */
+.dark .card-bg button[role="option"] {
+  color: #E2E8F0;
+}
+.dark .card-bg button[role="option"]:hover {
+  background: rgba(36, 51, 82, 0.8) !important;
 }
 
 .dark .bg-slate-50,

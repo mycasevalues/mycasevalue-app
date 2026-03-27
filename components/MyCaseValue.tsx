@@ -39,8 +39,8 @@ function Reveal({ children }: { children: React.ReactNode; delay?: number }) {
 
 function Card({ children, glow = false, className = '', style = {} }: { children: React.ReactNode; glow?: boolean; className?: string; style?: React.CSSProperties }) {
   return (
-    <div className={`card-bg bg-white rounded-2xl border border-slate-100 shadow-sm mb-3 p-7 ${glow ? 'animate-glow-pulse' : ''} ${className}`}
-      style={{ boxShadow: glow ? undefined : '0 1px 3px rgba(11,18,33,.03), 0 8px 24px rgba(11,18,33,.04)', ...style }}>
+    <div className={`card-bg bg-white rounded-2xl border border-slate-100 mb-3 p-7 transition-all duration-300 ${glow ? 'animate-glow-pulse' : ''} ${className}`}
+      style={{ boxShadow: glow ? '0 2px 8px rgba(184,146,58,.06), 0 12px 40px rgba(11,18,33,.06)' : '0 1px 3px rgba(11,18,33,.03), 0 8px 24px rgba(11,18,33,.04)', ...style }}>
       {children}
     </div>
   );
@@ -60,19 +60,21 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Stat({ value, label, color, large = false, dark = false }: { value: string; label: string; color: string; large?: boolean; dark?: boolean }) {
   return (
-    <div className="text-center p-4 rounded-xl transition-transform hover:scale-[1.02]" style={{
-      background: dark ? `linear-gradient(180deg, rgba(19,27,46,0.6), ${color}12)` : `linear-gradient(180deg, #fff, ${color}08)`,
-      border: `1px solid ${dark ? `${color}25` : `${color}12`}`,
+    <div className="text-center p-4 rounded-xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-0.5" style={{
+      background: dark ? `linear-gradient(180deg, rgba(19,27,46,0.7), ${color}10)` : `linear-gradient(180deg, #fff, ${color}06)`,
+      border: `1px solid ${dark ? `${color}20` : `${color}10`}`,
+      boxShadow: dark ? `0 2px 12px ${color}08` : `0 2px 12px ${color}06`,
     }}>
       <div className="font-display font-bold" style={{
-        fontSize: large ? 44 : 24,
+        fontSize: large ? 44 : 26,
         color,
         letterSpacing: large ? '-1px' : '-0.5px',
         lineHeight: 1,
+        textShadow: dark ? `0 0 20px ${color}30` : 'none',
       }}>
         {value}
       </div>
-      <div className="text-[11px] mt-1 font-medium" style={{ color: dark ? '#94A3B8' : '#94A3B8' }}>{label}</div>
+      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: dark ? '#8B9AB5' : '#94A3B8', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
     </div>
   );
 }
@@ -86,61 +88,112 @@ function BarLine({ label, pct, max, color, delay = 0 }: { label: string; pct: nu
     return () => clearTimeout(t);
   }, [pct, max, delay]);
   return (
-    <div className="flex items-center gap-3 py-1.5">
-      <span className="text-sm flex-1 truncate">{label}</span>
-      <div className="w-28 h-2 bg-slate-100 rounded-full overflow-hidden flex-shrink-0">
+    <div className="flex items-center gap-3 py-2 group">
+      <span className="text-sm flex-1 truncate font-medium">{label}</span>
+      <div className="w-32 h-2.5 bg-slate-100 rounded-full overflow-hidden flex-shrink-0 transition-all group-hover:h-3">
         <div ref={ref} className="h-full rounded-full" style={{
           width: 0,
-          backgroundColor: color,
+          background: `linear-gradient(90deg, ${color}90, ${color})`,
           transition: 'width 1.2s cubic-bezier(0.16, 1, 0.3, 1)',
         }} />
       </div>
-      <span className="text-sm font-bold text-slate-500 w-12 text-right font-data">{pct}%</span>
+      <span className="text-sm font-bold w-12 text-right font-data" style={{ color }}>{pct}%</span>
     </div>
   );
 }
 
-function Select({ value, options, onChange, placeholder }: { value: string; options: { id: string; label: string }[]; onChange: (v: string) => void; placeholder?: string }) {
+function Select({ value, options, onChange, placeholder, dark = false }: { value: string; options: { id: string; label: string }[]; onChange: (v: string) => void; placeholder?: string; dark?: boolean }) {
   const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState('');
   const ref = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLInputElement>(null);
   const selected = options.find(o => o.id === value);
+  const showSearch = options.length > 6;
 
   useEffect(() => {
-    const handler = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false); };
+    const handler = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) { setOpen(false); setSearch(''); } };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
+  useEffect(() => {
+    if (open && showSearch && searchRef.current) searchRef.current.focus();
+  }, [open, showSearch]);
+
+  const filtered = search ? options.filter(o => o.label.toLowerCase().includes(search.toLowerCase())) : options;
+
   return (
     <div ref={ref} className="relative">
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => { setOpen(!open); setSearch(''); }}
         aria-expanded={open}
         aria-haspopup="listbox"
-        className="w-full px-4 py-3.5 text-[15px] font-medium card-bg bg-white border-[1.5px] rounded-xl cursor-pointer text-left flex justify-between items-center transition-colors"
-        style={{ borderColor: open ? '#B8923A' : '#E2E8F0', color: selected ? '#0B1221' : '#94A3B8' }}>
-        {selected ? selected.label : placeholder || 'Select...'}
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2.5" strokeLinecap="round" style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.2s' }}>
+        className="w-full px-4 py-3.5 text-[15px] font-medium border-[1.5px] rounded-xl cursor-pointer text-left flex justify-between items-center transition-all duration-200"
+        style={{
+          borderColor: open ? '#B8923A' : (dark ? '#334155' : '#E2E8F0'),
+          color: selected ? (dark ? '#F0F2F5' : '#0B1221') : '#94A3B8',
+          background: dark ? '#1A2744' : '#fff',
+          boxShadow: open ? '0 0 0 3px rgba(184,146,58,0.12)' : 'none',
+        }}>
+        <span className="truncate">{selected ? selected.label : placeholder || 'Select...'}</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#B8923A' : '#94A3B8'} strokeWidth="2.5" strokeLinecap="round"
+          style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.2s' }}>
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </button>
-      {open && (
-        <div
-          role="listbox"
-          className="absolute top-full mt-1 left-0 right-0 card-bg bg-white border border-slate-200 rounded-xl shadow-lg z-20 max-h-64 overflow-y-auto p-1"
-          style={{ boxShadow: '0 8px 30px rgba(11,18,33,.1)' }}>
-          {options.map(o => (
+      <div
+        role="listbox"
+        className="absolute top-full mt-1.5 left-0 right-0 rounded-xl z-20 overflow-hidden"
+        style={{
+          background: dark ? '#1A2744' : '#fff',
+          border: open ? `1px solid ${dark ? '#334155' : '#E2E8F0'}` : '1px solid transparent',
+          boxShadow: open ? (dark ? '0 12px 40px rgba(0,0,0,.4)' : '0 12px 40px rgba(11,18,33,.12)') : 'none',
+          maxHeight: open ? '280px' : '0',
+          opacity: open ? 1 : 0,
+          transform: open ? 'translateY(0) scale(1)' : 'translateY(-8px) scale(0.98)',
+          transition: 'max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease',
+          pointerEvents: open ? 'auto' : 'none',
+        }}>
+        {showSearch && (
+          <div className="px-2 pt-2 pb-1">
+            <input ref={searchRef} type="text" value={search} onChange={e => setSearch(e.target.value)}
+              placeholder="Search..."
+              className="w-full px-3 py-2 text-[13px] rounded-lg outline-none transition-colors"
+              style={{
+                background: dark ? '#0F1729' : '#F8FAFC',
+                border: `1px solid ${dark ? '#334155' : '#E2E8F0'}`,
+                color: dark ? '#F0F2F5' : '#0B1221',
+              }} />
+          </div>
+        )}
+        <div className="overflow-y-auto p-1" style={{ maxHeight: showSearch ? '220px' : '260px' }}>
+          {filtered.map((o, idx) => (
             <button key={o.id}
               role="option"
               aria-selected={o.id === value}
-              onClick={() => { onChange(o.id); setOpen(false); }}
-              className="w-full px-4 py-2.5 text-sm text-left rounded-lg cursor-pointer transition-colors hover:bg-slate-50"
-              style={{ fontWeight: o.id === value ? 600 : 400, color: o.id === value ? '#B8923A' : '#0B1221', background: o.id === value ? '#F3EBDA' : 'transparent' }}>
-              {o.label}
+              onClick={() => { onChange(o.id); setOpen(false); setSearch(''); }}
+              className="w-full px-4 py-2.5 text-sm text-left rounded-lg cursor-pointer transition-all duration-150"
+              style={{
+                fontWeight: o.id === value ? 600 : 400,
+                color: o.id === value ? '#B8923A' : (dark ? '#E2E8F0' : '#0B1221'),
+                background: o.id === value ? (dark ? '#B8923A15' : '#F3EBDA') : 'transparent',
+                animationDelay: open ? `${idx * 20}ms` : '0ms',
+              }}
+              onMouseEnter={e => { if (o.id !== value) e.currentTarget.style.background = dark ? '#243352' : '#F8FAFC'; }}
+              onMouseLeave={e => { if (o.id !== value) e.currentTarget.style.background = 'transparent'; }}>
+              <span className="flex items-center gap-2">
+                {o.id === value && (
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B8923A" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
+                )}
+                {o.label}
+              </span>
             </button>
           ))}
+          {filtered.length === 0 && (
+            <div className="px-4 py-3 text-sm text-slate-400 text-center">No results</div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -170,18 +223,28 @@ function LockedPreview({ children, onUnlock, label }: { children: React.ReactNod
 function Collapsible({ title, badge, defaultOpen = false, children }: { title: string; badge?: string | number; defaultOpen?: boolean; children: React.ReactNode }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="card-bg bg-white rounded-2xl border border-slate-100 overflow-hidden mb-3">
-      <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-4 bg-transparent border-none cursor-pointer text-left" aria-expanded={open}>
-        <div className="flex items-center gap-2">
-          <span className="font-semibold text-[15px]">{title}</span>
-          {badge && <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full" style={{ color: '#B8923A', background: '#F3EBDA' }}>{badge}</span>}
+    <div className="card-bg bg-white rounded-2xl border border-slate-100 overflow-hidden mb-3 transition-all duration-300"
+      style={{ boxShadow: open ? '0 4px 20px rgba(11,18,33,.06)' : '0 1px 3px rgba(11,18,33,.03)' }}>
+      <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-4.5 bg-transparent border-none cursor-pointer text-left group" aria-expanded={open}
+        style={{ padding: '18px 24px' }}>
+        <div className="flex items-center gap-2.5">
+          <span className="font-semibold text-[15px] group-hover:text-[#B8923A] transition-colors">{title}</span>
+          {badge && <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: '#B8923A', background: '#F3EBDA' }}>{badge}</span>}
         </div>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.25s' }}>
-          <polyline points="6 9 12 15 18 9" />
-        </svg>
+        <div className="w-6 h-6 rounded-lg flex items-center justify-center transition-all"
+          style={{ background: open ? '#B8923A10' : 'transparent' }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#B8923A' : '#94A3B8'} strokeWidth="2.5"
+            style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.2s' }}>
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
       </button>
-      <div className="overflow-hidden transition-all duration-300" style={{ maxHeight: open ? '2000px' : '0', opacity: open ? 1 : 0 }}>
-        <div className="px-6 pb-5">{children}</div>
+      <div className="overflow-hidden" style={{
+        maxHeight: open ? '2000px' : '0',
+        opacity: open ? 1 : 0,
+        transition: 'max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease',
+      }}>
+        <div className="px-6 pb-5 pt-0">{children}</div>
       </div>
     </div>
   );
@@ -1303,14 +1366,28 @@ export default function MyCaseValue() {
               <span className="text-xl font-display font-bold" style={{ letterSpacing: '-0.3px' }}>MyCaseValue</span>
             </button>
             <div className="flex items-center gap-2 sm:gap-3">
-              {/* Language toggle */}
-              <button onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
-                aria-label={t.lang_label}
-                title={t.lang_label}
-                className="h-8 px-2.5 rounded-lg border cursor-pointer flex items-center justify-center transition-colors text-[12px] font-bold tracking-wide"
-                style={{ background: darkMode ? '#1E293B' : '#fff', borderColor: darkMode ? '#334155' : '#E2E8F0', color: '#B8923A' }}>
-                {t.lang_toggle}
-              </button>
+              {/* Language toggle — pill style */}
+              <div className="h-8 rounded-lg border flex items-center overflow-hidden transition-colors"
+                style={{ background: darkMode ? '#1E293B' : '#F8FAFC', borderColor: darkMode ? '#334155' : '#E2E8F0' }}>
+                <button onClick={() => setLang('en')}
+                  aria-label="English"
+                  className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200"
+                  style={{
+                    background: lang === 'en' ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : 'transparent',
+                    color: lang === 'en' ? '#fff' : '#94A3B8',
+                  }}>
+                  EN
+                </button>
+                <button onClick={() => setLang('es')}
+                  aria-label="Español"
+                  className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200"
+                  style={{
+                    background: lang === 'es' ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : 'transparent',
+                    color: lang === 'es' ? '#fff' : '#94A3B8',
+                  }}>
+                  ES
+                </button>
+              </div>
               {/* My Reports button */}
               {savedReports.length > 0 && (
                 <button onClick={() => setShowSaved(true)}
@@ -1322,11 +1399,18 @@ export default function MyCaseValue() {
               )}
               <button onClick={() => setDarkMode(!darkMode)}
                 aria-label={darkMode ? t.light_mode : t.dark_mode}
-                className="w-8 h-8 rounded-lg border cursor-pointer flex items-center justify-center transition-colors"
-                style={{ background: darkMode ? '#1E293B' : '#fff', borderColor: darkMode ? '#334155' : '#E2E8F0' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={darkMode ? '#FCD34D' : '#94A3B8'} strokeWidth="2">
-                  <path d={darkMode ? "M12 3v1m0 16v1m9-9h-1M4 12H3m15.4 6.4l-.7-.7M6.3 6.3l-.7-.7m12.7 0l-.7.7M6.3 17.7l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z" : "M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"} />
-                </svg>
+                className="w-8 h-8 rounded-lg border cursor-pointer flex items-center justify-center transition-all duration-300 hover:scale-105"
+                style={{
+                  background: darkMode ? 'linear-gradient(135deg, #1A2744, #243352)' : '#fff',
+                  borderColor: darkMode ? '#B8923A30' : '#E2E8F0',
+                  boxShadow: darkMode ? '0 0 12px rgba(252,211,77,0.1)' : 'none',
+                }}>
+                <div style={{ transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)', transform: darkMode ? 'rotate(360deg)' : 'rotate(0deg)' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={darkMode ? '#FCD34D' : '#94A3B8'} strokeWidth="2"
+                    style={{ transition: 'stroke 0.3s ease' }}>
+                    <path d={darkMode ? "M12 3v1m0 16v1m9-9h-1M4 12H3m15.4 6.4l-.7-.7M6.3 6.3l-.7-.7m12.7 0l-.7.7M6.3 17.7l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z" : "M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"} />
+                  </svg>
+                </div>
               </button>
               {isPremium && <span className="text-[11px] font-bold px-3 py-1 rounded-full hidden sm:block" style={{ color: '#B8923A', background: '#F3EBDA' }}>{t.premium}</span>}
               <button onClick={reset} className="text-sm font-semibold px-4 sm:px-5 py-2.5 text-white border-none rounded-full cursor-pointer no-print"
@@ -2519,57 +2603,77 @@ export default function MyCaseValue() {
           <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6">{t.your_details}</h2>
           <div className="space-y-4">
             <div>
-              <label className="text-sm font-semibold block mb-1.5">What state are you in?</label>
-              <Select value={stateCode} options={STATES} onChange={setStateCode} placeholder="Select your state..." />
-              <div className="text-[11px] text-slate-400 mt-1 px-1">This helps us show you results specific to your area.</div>
+              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿En qué estado estás?' : 'What state are you in?'}</label>
+              <Select value={stateCode} options={STATES} onChange={setStateCode} placeholder={lang === 'es' ? 'Selecciona tu estado...' : 'Select your state...'} dark={darkMode} />
+              <div className="text-[11px] text-slate-400 mt-1 px-1">{lang === 'es' ? 'Esto nos ayuda a mostrarte resultados específicos de tu área.' : 'This helps us show you results specific to your area.'}</div>
             </div>
             <div>
-              <label className="text-sm font-semibold block mb-1.5">When did this happen? <span className="text-coral">*</span></label>
-              <Select value={timing} options={TIMING_OPTS} onChange={setTiming} />
+              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuándo ocurrió esto?' : 'When did this happen?'} <span className="text-coral">*</span></label>
+              <Select value={timing} options={TIMING_OPTS} onChange={setTiming} dark={darkMode} />
             </div>
             {timing && (
-              <div className="px-3.5 py-2.5 rounded-lg text-[13px] leading-relaxed animate-fade-in" style={{
+              <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed animate-fade-in" style={{
                 background: timing === 'recent' ? '#CCFBF1' : (timing === '2yr' || timing === 'old') ? '#FEE2E2' : '#EFF6FF',
                 color: timing === 'recent' ? '#0D9488' : (timing === '2yr' || timing === 'old') ? '#DC2626' : '#2563EB',
               }}>
-                {timing === 'recent' ? 'Good news — people who took action within 6 months historically had better outcomes.'
+                {lang === 'es' ? (
+                  timing === 'recent' ? 'Buenas noticias — las personas que actuaron dentro de 6 meses históricamente tuvieron mejores resultados.'
+                  : timing === 'now' ? 'Como esto sigue ocurriendo, actuar pronto ayuda a preservar tus opciones y evidencia.'
+                  : (timing === '2yr' || timing === 'old') ? '⚠ Importante: Podrías estar quedándote sin tiempo. Hay plazos legales que podrían afectar tu caso — habla con un abogado pronto.'
+                  : 'Actuar antes generalmente te da más opciones.'
+                ) : (
+                  timing === 'recent' ? 'Good news — people who took action within 6 months historically had better outcomes.'
                   : timing === 'now' ? 'Since this is still happening, acting soon helps preserve your options and evidence.'
                   : (timing === '2yr' || timing === 'old') ? '⚠ Important: You may be running out of time. There are legal deadlines that could affect your case — speak with a lawyer soon.'
-                  : 'Taking action sooner generally gives you more options.'}
+                  : 'Taking action sooner generally gives you more options.'
+                )}
               </div>
             )}
             <div>
-              <label className="text-sm font-semibold block mb-1.5">How much money is involved? <span className="text-coral">*</span></label>
-              <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} />
+              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuánto dinero está involucrado?' : 'How much money is involved?'} <span className="text-coral">*</span></label>
+              <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} dark={darkMode} />
             </div>
             <div>
-              <label className="text-sm font-semibold block mb-1.5">Do you have a lawyer? <span className="text-coral">*</span></label>
-              <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} />
+              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Tienes abogado?' : 'Do you have a lawyer?'} <span className="text-coral">*</span></label>
+              <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} dark={darkMode} />
             </div>
             <div>
-              <label className="text-sm font-semibold block mb-1.5">Are others affected by the same issue?</label>
-              <Select value={othersAffected} options={[
+              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Hay otros afectados por el mismo problema?' : 'Are others affected by the same issue?'}</label>
+              <Select value={othersAffected} options={lang === 'es' ? [
+                { id: '', label: 'Seleccionar...' },
+                { id: 'no', label: 'No, solo yo' },
+                { id: 'few', label: 'Sí, algunas personas' },
+                { id: 'many', label: 'Sí, muchas personas (40+)' },
+              ] : [
                 { id: '', label: 'Select...' },
                 { id: 'no', label: 'No, just me' },
                 { id: 'few', label: 'Yes, a few people' },
                 { id: 'many', label: 'Yes, many people (40+)' },
-              ]} onChange={setOthersAffected} />
+              ]} onChange={setOthersAffected} dark={darkMode} />
             </div>
             {othersAffected === 'many' && (
               <>
                 <div>
-                  <label className="text-sm font-semibold block mb-1.5">Approximately how many?</label>
-                  <Select value={classSize} options={[
+                  <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Aproximadamente cuántos?' : 'Approximately how many?'}</label>
+                  <Select value={classSize} options={lang === 'es' ? [
+                    { id: '', label: 'Seleccionar...' },
+                    { id: '40-100', label: '40 – 100 personas' },
+                    { id: '100-500', label: '100 – 500 personas' },
+                    { id: '500+', label: '500+ personas' },
+                    { id: 'unsure', label: 'No estoy seguro' },
+                  ] : [
                     { id: '', label: 'Select...' },
                     { id: '40-100', label: '40 – 100 people' },
                     { id: '100-500', label: '100 – 500 people' },
                     { id: '500+', label: '500+ people' },
                     { id: 'unsure', label: 'Not sure' },
-                  ]} onChange={setClassSize} />
+                  ]} onChange={setClassSize} dark={darkMode} />
                 </div>
                 {classSize && (
-                  <div className="px-3.5 py-2.5 rounded-lg text-[13px] leading-relaxed" style={{ background: '#EFF6FF', color: '#2563EB' }}>
-                    Federal class actions under Rule 23 generally require enough affected individuals that individual lawsuits would be impractical. Historically, cases with 40+ affected individuals have met this threshold.
+                  <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed" style={{ background: '#EFF6FF', color: '#2563EB' }}>
+                    {lang === 'es'
+                      ? 'Las acciones colectivas federales bajo la Regla 23 generalmente requieren suficientes individuos afectados para que las demandas individuales sean impracticables. Históricamente, los casos con 40+ individuos afectados han cumplido este umbral.'
+                      : 'Federal class actions under Rule 23 generally require enough affected individuals that individual lawsuits would be impractical. Historically, cases with 40+ affected individuals have met this threshold.'}
                   </div>
                 )}
               </>
@@ -2578,7 +2682,7 @@ export default function MyCaseValue() {
           <button onClick={() => go(4)} disabled={!timing || !amount || !attorney}
             className="w-full mt-7 py-4 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98]"
             style={{ background: (timing && amount && attorney) ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : '#E2E8F0', color: (timing && amount && attorney) ? '#fff' : '#94A3B8' }}>
-            View outcomes
+            {lang === 'es' ? 'Ver resultados' : 'View outcomes'}
           </button>
         </Reveal>
       </div>
@@ -2596,22 +2700,28 @@ export default function MyCaseValue() {
             <div className="inline-block px-3.5 py-1 rounded-lg text-[11px] font-semibold mb-4" style={{ background: '#F3EBDA', color: '#B8923A' }}>{t.one_moment}</div>
             <h2 className="text-2xl font-display font-bold mb-3">{t.before_report}</h2>
             <p className="text-[15px] text-slate-600 leading-relaxed mb-3">
-              You are about to see real data from federal court records. This data shows what happened to other people — it does not predict what will happen to you.
+              {lang === 'es'
+                ? 'Estás a punto de ver datos reales de registros judiciales federales. Estos datos muestran lo que le sucedió a otras personas — no predicen lo que te sucederá a ti.'
+                : 'You are about to see real data from federal court records. This data shows what happened to other people — it does not predict what will happen to you.'}
             </p>
             <p className="text-[13px] text-slate-400 leading-relaxed mb-5">
-              Only a licensed attorney can evaluate your specific facts and circumstances. MyCaseValue is an informational tool, not a legal service.
+              {lang === 'es'
+                ? 'Solo un abogado con licencia puede evaluar tus hechos y circunstancias específicas. MyCaseValue es una herramienta informativa, no un servicio legal.'
+                : 'Only a licensed attorney can evaluate your specific facts and circumstances. MyCaseValue is an informational tool, not a legal service.'}
             </p>
             <label className="flex gap-3 items-start cursor-pointer text-[15px]" onClick={() => setConsent(!consent)}>
               <div className="w-6 h-6 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
                 style={{ borderColor: consent ? '#B8923A' : '#E2E8F0', background: consent ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : '#fff' }}>
                 {consent && <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
               </div>
-              <span className="leading-relaxed">I understand this is historical data only, does not evaluate my situation, and no attorney-client relationship is created.</span>
+              <span className="leading-relaxed">{lang === 'es'
+                ? 'Entiendo que estos son solo datos históricos, no evalúan mi situación, y no se crea ninguna relación abogado-cliente.'
+                : 'I understand this is historical data only, does not evaluate my situation, and no attorney-client relationship is created.'}</span>
             </label>
             <button onClick={() => go(5)} disabled={!consent}
               className="w-full mt-5 py-4 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98]"
               style={{ background: consent ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : '#E2E8F0', color: consent ? '#fff' : '#94A3B8' }}>
-              Generate report
+              {lang === 'es' ? 'Generar informe' : 'Generate report'}
             </button>
           </Card>
         </Reveal>
@@ -2627,7 +2737,7 @@ export default function MyCaseValue() {
           <Card glow className="px-6 sm:px-9 py-10">
             <h2 className="text-2xl font-display font-bold mb-2">{t.data_ready}</h2>
             <p className="text-[15px] text-slate-500 mb-6 leading-relaxed">
-              Save a copy to your email, or skip to view now.
+              {lang === 'es' ? 'Guarda una copia en tu correo, o sáltalo para ver ahora.' : 'Save a copy to your email, or skip to view now.'}
             </p>
             <div className="flex gap-2">
               <input type="email" value={email} onChange={e => setEmail(e.target.value)}
@@ -2642,11 +2752,11 @@ export default function MyCaseValue() {
                 }
               }} className="px-5 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer transition-all active:scale-[0.96]"
                 style={{ background: 'linear-gradient(135deg, #B8923A, #C9A54E)' }}>
-                Send
+                {lang === 'es' ? 'Enviar' : 'Send'}
               </button>
             </div>
             <button onClick={startLoad} className="mt-3 text-sm text-slate-400 bg-transparent border-none cursor-pointer underline hover:text-slate-600 transition-colors">
-              Skip for now
+              {lang === 'es' ? 'Saltar por ahora' : 'Skip for now'}
             </button>
           </Card>
         </Reveal>
@@ -2737,7 +2847,7 @@ export default function MyCaseValue() {
                   <div className="absolute -inset-0.5 rounded-full" style={{ background: '#0D9488', opacity: 0.4, animation: 'pulseGlow 2s infinite' }} />
                 </div>
                 <span className="text-sm text-slate-400">
-                  <strong className="text-slate-600">{liveCount}</strong> checking now · <strong className="text-slate-600">12,847</strong> reports this month
+                  <strong className="text-slate-600">{liveCount}</strong> {lang === 'es' ? 'consultando ahora' : 'checking now'} · <strong className="text-slate-600">12,847</strong> {lang === 'es' ? 'informes este mes' : 'reports this month'}
                 </span>
               </div>
               <div className="flex gap-2">
@@ -2767,7 +2877,7 @@ export default function MyCaseValue() {
           {/* UPL Notice */}
           <Reveal>
             <div className="px-5 py-3 card-bg bg-white rounded-xl border border-slate-100 mb-4 text-[13px] text-slate-400 leading-relaxed">
-              <strong className="text-slate-500">Important:</strong> {UPL.resultsNotice}
+              <strong className="text-slate-500">{lang === 'es' ? 'Importante:' : 'Important:'}</strong> {UPL.resultsNotice}
             </div>
           </Reveal>
 
@@ -2815,9 +2925,9 @@ export default function MyCaseValue() {
 
                   <div className="text-2xl sm:text-3xl font-display font-bold capitalize" style={{ letterSpacing: '-1px' }}>{spec?.d}</div>
                   <div className="text-[14px] sm:text-[15px] text-slate-500 mt-1.5">
-                    Based on <strong className="text-slate-700"><AnimatedNumber value={d.total} /></strong> similar federal cases
+                    {lang === 'es' ? 'Basado en' : 'Based on'} <strong className="text-slate-700"><AnimatedNumber value={d.total} /></strong> {lang === 'es' ? 'casos federales similares' : 'similar federal cases'}
                     {stateCode && circuitName && (
-                      <span className="text-slate-400"> · {circuitName} Circuit</span>
+                      <span className="text-slate-400"> · {lang === 'es' ? 'Circuito' : 'Circuit'} {circuitName}</span>
                     )}
                   </div>
 
@@ -2873,16 +2983,16 @@ export default function MyCaseValue() {
               {!isPremium ? (
                 <div className="text-center py-6">
                   <div className="inline-block px-6 py-3 rounded-xl" style={{ background: '#F3EBDA' }}>
-                    <span className="text-[14px] font-semibold" style={{ color: '#B8923A' }}>Recovery ranges available in full report</span>
+                    <span className="text-[14px] font-semibold" style={{ color: '#B8923A' }}>{lang === 'es' ? 'Rangos de recuperación disponibles en el informe completo' : 'Recovery ranges available in full report'}</span>
                   </div>
                 </div>
               ) : (
                 <>
                   <div className="report-grid grid gap-3 my-7" style={{ gridTemplateColumns: '1fr 1.5fr 1fr' }}>
                     {[
-                      { k: 'conservative', l: 'Lower range', c: '#D97706', val: v.lo },
-                      { k: 'typical', l: 'Typical', c: '#B8923A', val: v.md },
-                      { k: 'optimistic', l: 'Upper range', c: '#0D9488', val: v.hi },
+                      { k: 'conservative', l: lang === 'es' ? 'Rango bajo' : 'Lower range', c: '#D97706', val: v.lo },
+                      { k: 'typical', l: lang === 'es' ? 'Típico' : 'Typical', c: '#B8923A', val: v.md },
+                      { k: 'optimistic', l: lang === 'es' ? 'Rango alto' : 'Upper range', c: '#0D9488', val: v.hi },
                     ].map(t => (
                       <button key={t.k} onClick={() => setRangeMode(t.k)}
                         className="rounded-2xl cursor-pointer text-center transition-all duration-300"
@@ -2908,7 +3018,7 @@ export default function MyCaseValue() {
                       }} />
                   </div>
                   <div className="text-center mt-4 text-[13px] text-slate-400">
-                    National aggregate ranges (in thousands). Outcomes vary by jurisdiction.
+                    {lang === 'es' ? 'Rangos agregados nacionales (en miles). Los resultados varían por jurisdicción.' : 'National aggregate ranges (in thousands). Outcomes vary by jurisdiction.'}
                   </div>
                 </>
               )}
@@ -2983,7 +3093,7 @@ export default function MyCaseValue() {
                       <span className="text-[15px] sm:text-[16px] font-extrabold" style={{ color: '#0D9488' }}>{lang === 'es' ? 'Acuerdos favorables' : 'Settled (with payment)'}</span>
                       <span className="text-2xl sm:text-3xl font-display font-bold" style={{ color: '#0D9488' }}>{od.fav_set}%</span>
                     </div>
-                    <div className="text-[12px] text-slate-400 mt-1">Both sides agreed to a resolution, usually with a payment. Average time: {od.set_mo} months.</div>
+                    <div className="text-[12px] text-slate-400 mt-1">{lang === 'es' ? `Ambas partes acordaron una resolución, generalmente con un pago. Tiempo promedio: ${od.set_mo} meses.` : `Both sides agreed to a resolution, usually with a payment. Average time: ${od.set_mo} months.`}</div>
                   </div>
                   {/* Trial */}
                   <div className="p-3.5 rounded-xl outcome-card" style={{ background: '#6558D510', borderLeft: '4px solid #6558D5' }}>
@@ -2992,10 +3102,10 @@ export default function MyCaseValue() {
                       <span className="text-xl font-display font-bold">{Math.round(od.trial_win + od.trial_loss)}%</span>
                     </div>
                     <div className="flex gap-4 mt-1.5">
-                      <span className="text-[13px] font-semibold" style={{ color: '#0D9488' }}>Won: {od.trial_win}%</span>
-                      <span className="text-[13px] font-semibold" style={{ color: '#E87461' }}>Lost: {od.trial_loss}%</span>
+                      <span className="text-[13px] font-semibold" style={{ color: '#0D9488' }}>{lang === 'es' ? 'Ganó' : 'Won'}: {od.trial_win}%</span>
+                      <span className="text-[13px] font-semibold" style={{ color: '#E87461' }}>{lang === 'es' ? 'Perdió' : 'Lost'}: {od.trial_loss}%</span>
                     </div>
-                    {od.trial_med !== 'N/A' && <div className="text-[12px] text-slate-400 mt-1">Median trial award: {od.trial_med}</div>}
+                    {od.trial_med !== 'N/A' && <div className="text-[12px] text-slate-400 mt-1">{lang === 'es' ? `Premio mediano en juicio: ${od.trial_med}` : `Median trial award: ${od.trial_med}`}</div>}
                   </div>
                   {/* Dismissed */}
                   <div className="p-3.5 rounded-xl bg-slate-50 outcome-card" style={{ borderLeft: '4px solid #CBD5E1' }}>
@@ -3003,7 +3113,7 @@ export default function MyCaseValue() {
                       <span className="text-[14px] sm:text-[15px] font-semibold text-slate-500">{lang === 'es' ? 'Desestimaciones previas al juicio' : 'Case Dismissed'}</span>
                       <span className="text-xl font-display font-bold text-slate-400">{od.dismiss}%</span>
                     </div>
-                    <div className="text-[12px] text-slate-400 mt-1">The judge ended the case before trial — often for technical or evidence reasons</div>
+                    <div className="text-[12px] text-slate-400 mt-1">{lang === 'es' ? 'El juez terminó el caso antes del juicio — generalmente por razones técnicas o de evidencia' : 'The judge ended the case before trial — often for technical or evidence reasons'}</div>
                   </div>
                 </div>
               </div>
@@ -3015,7 +3125,7 @@ export default function MyCaseValue() {
                 </div>
                 <div className="font-display font-bold" style={{ fontSize: 48, color: '#0D9488', letterSpacing: '-1px' }}>{winSettleRate}%</div>
               </div>
-              <div className="text-[11px] text-slate-400 mt-3 italic">Aggregate historical data. Does not predict any individual outcome.</div>
+              <div className="text-[11px] text-slate-400 mt-3 italic">{lang === 'es' ? 'Datos históricos agregados. No predice ningún resultado individual.' : 'Aggregate historical data. Does not predict any individual outcome.'}</div>
             </Card>
           </Reveal>
 
