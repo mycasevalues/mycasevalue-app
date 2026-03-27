@@ -1465,21 +1465,21 @@ export default function MyCaseValue() {
             <div className="flex items-center justify-center gap-3 mt-5 pt-4 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
               <span className="text-[11px] font-semibold text-slate-400 tracking-[1px]">{lang === 'es' ? 'COMPARTIR' : 'SHARE'}</span>
               {[
-                { icon: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7', label: 'Twitter' },
+                { icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', label: 'X' },
                 { icon: 'M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z', label: 'Facebook' },
-                { icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z', label: 'LinkedIn' },
+                { icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z', label: 'LinkedIn' },
               ].map((s, i) => (
                 <button key={i} onClick={() => {
                   const title = 'Check your case with MyCaseValue';
                   const url = window.location.origin;
-                  if (s.label === 'Twitter') window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`);
+                  if (s.label === 'X') window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`);
                   else if (s.label === 'Facebook') window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
                   else if (s.label === 'LinkedIn') window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`);
                 }}
                 className="w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-slate-100"
                 style={{ background: darkMode ? '#1E293B' : '#F1F5F9' }}
                 title={`Share on ${s.label}`}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill={s.label === 'X' ? '#94A3B8' : 'none'} stroke={s.label === 'X' ? 'none' : '#94A3B8'} strokeWidth={s.label === 'X' ? '0' : '2'}>
                     <path d={s.icon} />
                   </svg>
                 </button>
@@ -1487,13 +1487,18 @@ export default function MyCaseValue() {
             </div>
 
             {/* Secure payments badge */}
-            <div className="flex items-center justify-center gap-3 mt-4 pt-3 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F020' }}>
+            <div className="flex items-center justify-center gap-3 mt-3 no-print">
               <div className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                 <span className="text-[10px] font-semibold text-slate-400 tracking-[0.5px]">{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
                 {/* Stripe logo */}
                 <svg width="36" height="15" viewBox="0 0 60 25" fill={darkMode ? '#94A3B8' : '#6772E5'} xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6zM16.1 20.2h4.9V5.8h-4.9zM16.1 4.6h4.9V0h-4.9zM27.2 7.2l-.3-1.4h-4.3v14.4h4.9v-9.8c1.2-1.5 3.1-1.2 3.7-1v-4.5c-.7-.2-3.2-.7-4.3 1.3h.3zM36.4 1.5l-4.8 1v13.3c0 2.4 1.8 4.2 4.3 4.2 1.4 0 2.4-.2 2.9-.5v-3.8c-.5.2-3.1.9-3.1-1.4V9.5h3.1V5.8h-3.1l.7-4.3zM47.3 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8-3.3 0-6 2-6 5 0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z"/>
+                  <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z"/>
+                  <path d="M14.4 1.5l-4.8 1v13.3c0 2.4 1.8 4.2 4.3 4.2 1.4 0 2.4-.2 2.9-.5v-3.8c-.5.2-3.1.9-3.1-1.4V9.5h3.1V5.8h-3.1l.7-4.3z"/>
+                  <path d="M23.2 7.2l-.3-1.4h-4.3v14.4h4.9v-9.8c1.2-1.5 3.1-1.2 3.7-1v-4.5c-.7-.2-3.2-.7-4.3 1.3h.3z"/>
+                  <path d="M33.1 5.8h-4.9v14.4h4.9V5.8zM33.1 0h-4.9v4.6h4.9V0z"/>
+                  <path d="M42.2 5.5c-1.9 0-3.2.9-3.9 1.5l-.3-1.2h-4.3v19.5h4.9v-4.7c.7.5 1.8.8 3 .8 3 0 5.7-2.4 5.7-7.6-.1-4.8-2.8-8.3-5.1-8.3zm-.9 12.3c-1 0-1.5-.4-1.9-.8V10.6c.4-.5 1-.9 1.9-.9 1.5 0 2.5 1.7 2.5 4s-1 4-2.5 4z"/>
+                  <path d="M55.8 5.5c-3.1 0-5.3 2.7-5.3 6.2 0 4.1 2.4 6 5.8 6 1.7 0 2.9-.4 3.8-.9v-3.7c-1 .5-2.1.8-3.4.8-1.4 0-2.6-.5-2.7-2.1h6.8c0-.2.1-1 .1-1.3-.1-3.7-1.8-5-5.1-5zm-1.4 5c0-1.5.9-2.1 1.7-2.1s1.6.6 1.6 2.1h-3.3z"/>
                 </svg>
               </div>
               <div className="flex items-center gap-1.5">
@@ -1686,7 +1691,7 @@ export default function MyCaseValue() {
           } as any} />
         ))}
 
-        <div className="hero-grid grid gap-8 lg:gap-20" style={{ gridTemplateColumns: '1fr 460px' }}>
+        <div className="hero-grid grid gap-8 lg:gap-20" style={{ gridTemplateColumns: '1fr' }}>
           <div className="relative z-10">
             <Reveal>
               {/* Top badges row */}

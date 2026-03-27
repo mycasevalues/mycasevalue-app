@@ -1414,6 +1414,13 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
+/* Desktop hero: two-column layout */
+@media (min-width: 1025px) {
+  .hero-grid {
+    grid-template-columns: 1fr 460px !important;
+  }
+}
+
 /* Large screen enhancement */
 @media (min-width: 1280px) {
   .hero-grid {
