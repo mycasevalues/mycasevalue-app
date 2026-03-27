@@ -201,7 +201,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -358,7 +358,7 @@ h1, h2, h3 {
 }
 
 .card-bg:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border-color: rgba(64, 64, 242, 0.12);
 }

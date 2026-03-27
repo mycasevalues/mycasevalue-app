@@ -1462,24 +1462,33 @@ export default function MyCaseValue() {
             </div>
 
             {/* Social sharing */}
-            <div className="flex items-center justify-center gap-3 mt-5 pt-4 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
-              <span className="text-[11px] font-semibold text-slate-400 tracking-[1px]">{lang === 'es' ? 'COMPARTIR' : 'SHARE'}</span>
+            <div className="flex items-center justify-center gap-2 mt-5 pt-4 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
+              <span className="text-[11px] font-semibold text-slate-400 tracking-[1px] mr-1">{lang === 'es' ? 'COMPARTIR' : 'SHARE'}</span>
               {[
-                { icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', label: 'X' },
-                { icon: 'M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z', label: 'Facebook' },
-                { icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z', label: 'LinkedIn' },
+                { icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', label: 'X', color: '#0F1419', hoverBg: '#E8E8E8', filled: true,
+                  url: () => `https://twitter.com/intent/tweet?text=${encodeURIComponent('Check federal court outcome data for your case type')}&url=${encodeURIComponent(window.location.origin)}` },
+                { icon: 'M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z', label: 'Facebook', color: '#1877F2', hoverBg: '#E7F0FE', filled: false,
+                  url: () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin)}` },
+                { icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z', label: 'LinkedIn', color: '#0A66C2', hoverBg: '#E8F1FA', filled: false,
+                  url: () => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}` },
+                { icon: 'M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13', label: lang === 'es' ? 'Copiar enlace' : 'Copy link', color: '#4040F2', hoverBg: '#E4E5FF', filled: false,
+                  url: () => '' },
               ].map((s, i) => (
                 <button key={i} onClick={() => {
-                  const title = 'Check your case with MyCaseValue';
-                  const url = window.location.origin;
-                  if (s.label === 'X') window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`);
-                  else if (s.label === 'Facebook') window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`);
-                  else if (s.label === 'LinkedIn') window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`);
+                  if (s.label === 'Copy link' || s.label === 'Copiar enlace') {
+                    navigator.clipboard.writeText(window.location.origin);
+                    toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
+                  } else {
+                    window.open(s.url(), '_blank', 'noopener,noreferrer,width=600,height=400');
+                  }
                 }}
-                className="w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-slate-100"
-                style={{ background: darkMode ? '#1E293B' : '#F1F5F9' }}
-                title={`Share on ${s.label}`}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill={s.label === 'X' ? '#94A3B8' : 'none'} stroke={s.label === 'X' ? 'none' : '#94A3B8'} strokeWidth={s.label === 'X' ? '0' : '2'}>
+                className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110 group"
+                style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : 'transparent'}` }}
+                onMouseEnter={e => { e.currentTarget.style.background = darkMode ? '#334155' : s.hoverBg; e.currentTarget.style.borderColor = s.color + '40'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = darkMode ? '#1E293B' : '#F1F5F9'; e.currentTarget.style.borderColor = darkMode ? '#334155' : 'transparent'; }}
+                title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}
+                aria-label={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill={s.filled ? s.color : 'none'} stroke={s.filled ? 'none' : s.color} strokeWidth={s.filled ? '0' : '2'} strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
                     <path d={s.icon} />
                   </svg>
                 </button>

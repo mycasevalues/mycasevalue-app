@@ -23,13 +23,18 @@ export function Navbar({
   newReportLabel, premiumLabel,
 }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
-  // Scroll detection
+  // Scroll detection + progress
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 10);
+    const handler = () => {
+      setScrolled(window.scrollY > 10);
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docH > 0 ? Math.min(window.scrollY / docH, 1) : 0);
+    };
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
   }, []);
@@ -79,6 +84,16 @@ export function Navbar({
         role="navigation"
         aria-label="Main navigation"
       >
+        {/* Scroll progress bar */}
+        {scrolled && scrollProgress > 0 && (
+          <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: darkMode ? 'rgba(255,255,255,0.05)' : 'rgba(226,232,240,0.3)' }}>
+            <div className="h-full transition-none" style={{
+              width: `${scrollProgress * 100}%`,
+              background: 'linear-gradient(90deg, #4040F2, #0D9488)',
+              boxShadow: '0 0 8px rgba(64,64,242,0.3)',
+            }} />
+          </div>
+        )}
         <div className="max-w-[1140px] mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
           {/* Logo */}
           <button

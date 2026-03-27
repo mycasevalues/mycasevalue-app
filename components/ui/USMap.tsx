@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback, useRef } from 'react';
 
 // Simplified US state paths (viewBox 0 0 960 600)
 const STATE_PATHS: Record<string, string> = {
@@ -74,16 +74,38 @@ const STATE_CENTERS: Record<string, [number, number]> = {
   WI: [572, 215], WY: [325, 253], DC: [793, 303],
 };
 
+// Full state names
+const STATE_NAMES: Record<string, string> = {
+  AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',
+  CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',
+  IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',
+  ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',
+  MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',
+  NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',
+  OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',
+  TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',
+  WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC',
+};
+
 const EMPTY_RATES: Record<string, number> = {};
 
 function getHeatColor(rate: number): string {
-  if (rate >= 60) return '#059669';
-  if (rate >= 55) return '#0D9488';
-  if (rate >= 50) return '#34D399';
-  if (rate >= 45) return '#C9A54E';
-  if (rate >= 40) return '#D97706';
-  if (rate >= 35) return '#E87461';
-  return '#DC2626';
+  // Blue-teal palette matching brand
+  if (rate >= 58) return '#059669';  // Emerald
+  if (rate >= 54) return '#0D9488';  // Teal
+  if (rate >= 50) return '#14B8A6';  // Light teal
+  if (rate >= 46) return '#4040F2';  // Brand blue
+  if (rate >= 42) return '#D97706';  // Amber
+  if (rate >= 38) return '#E87461';  // Coral
+  return '#DC2626';                   // Red
+}
+
+function getRateLabel(rate: number): string {
+  if (rate >= 58) return 'Very High';
+  if (rate >= 50) return 'Above Average';
+  if (rate >= 45) return 'Average';
+  if (rate >= 40) return 'Below Average';
+  return 'Low';
 }
 
 interface USMapProps {
@@ -96,8 +118,8 @@ interface USMapProps {
 export default function USMap({ stateRates, selectedState, onStateClick, lang = 'en' }: USMapProps) {
   const [hovered, setHovered] = useState<string | null>(null);
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const svgRef = useRef<SVGSVGElement>(null);
 
-  // Use a stable empty object reference to avoid re-render loops
   const rates = stateRates && typeof stateRates === 'object' ? stateRates : EMPTY_RATES;
 
   const sortedStates = useMemo(() => {
@@ -109,120 +131,191 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
   const vals = useMemo(() => {
     try { return Object.values(rates); } catch { return []; }
   }, [rates]);
-  const maxRate = vals.length > 0 ? Math.max(...vals) : 1;
-  const minRate = vals.length > 0 ? Math.min(...vals) : 0;
+
+  const avgRate = vals.length > 0 ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
+
+  const handleMouseMove = useCallback((e: React.MouseEvent, code: string) => {
+    setHovered(code);
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (rect) {
+      setTooltipPos({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }
+  }, []);
 
   return (
-    <div className="relative">
-      {/* Map */}
-      <svg viewBox="0 0 960 560" className="w-full h-auto" style={{ maxHeight: 340 }}>
-        <defs>
-          <filter id="state-shadow">
-            <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="rgba(0,0,0,0.1)" />
-          </filter>
-        </defs>
-        {Object.entries(STATE_PATHS).map(([code, path]) => {
-          const rate = rates[code];
-          const isHovered = hovered === code;
-          const isSelected = selectedState === code;
-          const fill = rate != null ? getHeatColor(rate) : '#E2E8F0';
-          const opacity = rate != null ? (isHovered || isSelected ? 1 : 0.75) : 0.3;
+    <div className="relative select-none">
+      {/* Header */}
+      {vals.length > 0 && (
+        <div className="flex items-center justify-between mb-3 px-1">
+          <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#94A3B8' }}>
+            {lang === 'es' ? 'MAPA DE TASAS POR ESTADO' : 'WIN RATES BY STATE'}
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="text-[10px] text-slate-400">{lang === 'es' ? 'Promedio nacional' : 'National avg'}:</span>
+            <span className="text-[12px] font-bold font-data" style={{ color: getHeatColor(avgRate) }}>{avgRate.toFixed(1)}%</span>
+          </div>
+        </div>
+      )}
 
-          return (
-            <g key={code}>
-              <path
-                d={path}
-                fill={fill}
-                fillOpacity={opacity}
-                stroke={isSelected ? '#0B1221' : isHovered ? '#B8923A' : '#fff'}
-                strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 0.8}
-                className="cursor-pointer"
-                style={{
-                  transition: 'fill-opacity 0.2s, stroke-width 0.2s, transform 0.15s',
-                  transform: isHovered ? 'scale(1.02)' : 'scale(1)',
-                  transformOrigin: `${STATE_CENTERS[code]?.[0]}px ${STATE_CENTERS[code]?.[1]}px`,
-                  filter: isSelected ? 'url(#state-shadow)' : 'none',
-                }}
-                onMouseEnter={(e) => {
-                  setHovered(code);
-                  const rect = (e.target as SVGElement).closest('svg')?.getBoundingClientRect();
-                  if (rect) {
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    setTooltipPos({ x, y });
-                  }
-                }}
-                onMouseLeave={() => setHovered(null)}
-                onClick={() => onStateClick?.(code)}
-              />
-              {/* State label */}
-              {STATE_CENTERS[code] && rate != null && (
-                <text
-                  x={STATE_CENTERS[code][0]}
-                  y={STATE_CENTERS[code][1]}
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fontSize="9"
-                  fontWeight="700"
-                  fill="#fff"
-                  className="pointer-events-none select-none"
-                  style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
-                >
-                  {code}
-                </text>
-              )}
-            </g>
-          );
-        })}
-      </svg>
+      {/* Map container with gradient border */}
+      <div className="relative rounded-xl overflow-hidden" style={{
+        background: 'linear-gradient(135deg, rgba(64,64,242,0.05), rgba(13,148,136,0.05))',
+        padding: '2px',
+      }}>
+        <div className="rounded-xl overflow-hidden" style={{ background: '#F8FAFC' }}>
+          <svg ref={svgRef} viewBox="0 0 960 560" className="w-full h-auto" style={{ maxHeight: 360 }}>
+            <defs>
+              <filter id="state-glow">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="rgba(64,64,242,0.2)" />
+              </filter>
+              <filter id="state-selected-glow">
+                <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="rgba(64,64,242,0.35)" />
+              </filter>
+              <linearGradient id="empty-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#E2E8F0" />
+                <stop offset="100%" stopColor="#CBD5E1" />
+              </linearGradient>
+            </defs>
+
+            {/* Background water effect */}
+            <rect width="960" height="560" fill="transparent" />
+
+            {Object.entries(STATE_PATHS).map(([code, path]) => {
+              const rate = rates[code];
+              const isHovered = hovered === code;
+              const isSelected = selectedState === code;
+              const hasData = rate != null;
+              const fill = hasData ? getHeatColor(rate) : 'url(#empty-fill)';
+
+              return (
+                <g key={code}>
+                  <path
+                    d={path}
+                    fill={fill}
+                    fillOpacity={hasData ? (isHovered || isSelected ? 1 : 0.8) : 0.25}
+                    stroke={isSelected ? '#4040F2' : isHovered ? '#0F172A' : hasData ? 'rgba(255,255,255,0.6)' : 'rgba(226,232,240,0.5)'}
+                    strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 0.8}
+                    className="cursor-pointer"
+                    style={{
+                      transition: 'all 0.2s ease',
+                      transform: isHovered ? 'scale(1.04)' : isSelected ? 'scale(1.02)' : 'scale(1)',
+                      transformOrigin: `${STATE_CENTERS[code]?.[0]}px ${STATE_CENTERS[code]?.[1]}px`,
+                      filter: isSelected ? 'url(#state-selected-glow)' : isHovered ? 'url(#state-glow)' : 'none',
+                    }}
+                    onMouseMove={(e) => handleMouseMove(e, code)}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={() => onStateClick?.(code)}
+                  />
+                  {/* State label */}
+                  {STATE_CENTERS[code] && hasData && (
+                    <text
+                      x={STATE_CENTERS[code][0]}
+                      y={STATE_CENTERS[code][1]}
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      fontSize={isHovered || isSelected ? '10' : '9'}
+                      fontWeight="700"
+                      fontFamily="'JetBrains Mono', monospace"
+                      fill="#fff"
+                      className="pointer-events-none select-none"
+                      style={{
+                        textShadow: '0 1px 3px rgba(0,0,0,0.4)',
+                        transition: 'font-size 0.2s',
+                      }}
+                    >
+                      {code}
+                    </text>
+                  )}
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+      </div>
 
       {/* Tooltip */}
       {hovered && rates[hovered] != null && (
-        <div className="absolute pointer-events-none z-10 px-3 py-2 rounded-lg text-[12px] font-semibold"
+        <div className="absolute pointer-events-none z-20 rounded-xl"
           style={{
             left: tooltipPos.x,
-            top: tooltipPos.y - 45,
+            top: tooltipPos.y - 70,
             transform: 'translateX(-50%)',
-            background: '#0B1221',
-            color: '#F0F2F5',
-            boxShadow: '0 4px 12px rgba(0,0,0,.2)',
+            background: 'rgba(15,23,42,0.95)',
+            backdropFilter: 'blur(8px)',
+            boxShadow: '0 8px 24px rgba(0,0,0,.25), 0 2px 8px rgba(0,0,0,.15)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            padding: '10px 14px',
           }}>
-          <span className="text-slate-300">{hovered}</span>
-          <span className="mx-1.5">·</span>
-          <span style={{ color: getHeatColor(rates[hovered]) }}>{rates[hovered].toFixed(1)}%</span>
-          <span className="text-slate-400 ml-1">{lang === 'es' ? 'éxito' : 'win'}</span>
+          <div className="flex items-center gap-2 mb-1">
+            <div className="w-2 h-2 rounded-full" style={{ background: getHeatColor(rates[hovered]) }} />
+            <span className="text-[13px] font-bold text-white">{STATE_NAMES[hovered] || hovered}</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div>
+              <div className="text-[18px] font-extrabold font-data" style={{ color: getHeatColor(rates[hovered]), letterSpacing: '-0.5px' }}>
+                {rates[hovered].toFixed(1)}%
+              </div>
+              <div className="text-[9px] text-slate-400 font-semibold">{lang === 'es' ? 'TASA DE ÉXITO' : 'WIN RATE'}</div>
+            </div>
+            <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.1)' }} />
+            <div>
+              <div className="text-[11px] font-semibold" style={{ color: getHeatColor(rates[hovered]) }}>
+                {lang === 'es' ? (rates[hovered] >= 50 ? 'Sobre promedio' : 'Bajo promedio') : getRateLabel(rates[hovered])}
+              </div>
+              <div className="text-[9px] text-slate-400">{lang === 'es' ? 'Clic para seleccionar' : 'Click to select'}</div>
+            </div>
+          </div>
+          {/* Arrow */}
+          <div className="absolute left-1/2 -translate-x-1/2 -bottom-1.5 w-3 h-3 rotate-45"
+            style={{ background: 'rgba(15,23,42,0.95)', borderRight: '1px solid rgba(255,255,255,0.1)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} />
         </div>
       )}
 
       {/* Legend */}
-      <div className="flex items-center justify-center gap-1 mt-2">
-        <span className="text-[9px] text-slate-400">{lang === 'es' ? 'Menor' : 'Lower'}</span>
-        {['#DC2626', '#E87461', '#D97706', '#C9A54E', '#34D399', '#0D9488', '#059669'].map((c, i) => (
-          <div key={i} className="w-5 h-2 rounded-sm" style={{ background: c, opacity: 0.75 }} />
-        ))}
-        <span className="text-[9px] text-slate-400">{lang === 'es' ? 'Mayor' : 'Higher'}</span>
+      <div className="flex items-center justify-center gap-1.5 mt-3">
+        <span className="text-[9px] text-slate-400 font-semibold">{lang === 'es' ? 'Menor' : 'Lower'}</span>
+        <div className="flex gap-0.5">
+          {['#DC2626', '#E87461', '#D97706', '#4040F2', '#14B8A6', '#0D9488', '#059669'].map((c, i) => (
+            <div key={i} className="w-6 h-2.5 first:rounded-l last:rounded-r" style={{ background: c, opacity: 0.85 }} />
+          ))}
+        </div>
+        <span className="text-[9px] text-slate-400 font-semibold">{lang === 'es' ? 'Mayor' : 'Higher'}</span>
       </div>
 
-      {/* Top/Bottom states */}
+      {/* Top/Bottom states with improved layout */}
       {sortedStates.length > 5 && (
-        <div className="flex gap-4 mt-3 justify-center text-[11px]">
-          <div>
-            <span className="font-bold text-slate-400 tracking-[1px]">{lang === 'es' ? 'MEJORES' : 'TOP'}</span>
-            <div className="flex gap-1.5 mt-1">
+        <div className="flex gap-6 mt-4 justify-center">
+          <div className="text-center">
+            <div className="text-[9px] font-bold text-slate-400 tracking-[1.5px] mb-1.5">
+              {lang === 'es' ? '▲ MEJORES' : '▲ HIGHEST'}
+            </div>
+            <div className="flex gap-1">
               {sortedStates.slice(0, 3).map(([code, rate]) => (
-                <span key={code} className="px-2 py-0.5 rounded font-semibold" style={{ background: '#CCFBF1', color: '#059669' }}>
-                  {code} {rate.toFixed(0)}%
-                </span>
+                <button key={code}
+                  onClick={() => onStateClick?.(code)}
+                  className="px-2.5 py-1 rounded-lg font-semibold text-[11px] cursor-pointer border-none transition-all hover:scale-105"
+                  style={{ background: 'rgba(5,150,105,0.1)', color: '#059669', border: '1px solid rgba(5,150,105,0.2)' }}>
+                  <span className="font-data font-bold">{code}</span> <span className="font-data">{rate.toFixed(0)}%</span>
+                </button>
               ))}
             </div>
           </div>
-          <div>
-            <span className="font-bold text-slate-400 tracking-[1px]">{lang === 'es' ? 'MÁS BAJOS' : 'LOWEST'}</span>
-            <div className="flex gap-1.5 mt-1">
+          <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #E2E8F0, transparent)' }} />
+          <div className="text-center">
+            <div className="text-[9px] font-bold text-slate-400 tracking-[1.5px] mb-1.5">
+              {lang === 'es' ? '▼ MÁS BAJOS' : '▼ LOWEST'}
+            </div>
+            <div className="flex gap-1">
               {sortedStates.slice(-3).map(([code, rate]) => (
-                <span key={code} className="px-2 py-0.5 rounded font-semibold" style={{ background: '#FEE2E2', color: '#DC2626' }}>
-                  {code} {rate.toFixed(0)}%
-                </span>
+                <button key={code}
+                  onClick={() => onStateClick?.(code)}
+                  className="px-2.5 py-1 rounded-lg font-semibold text-[11px] cursor-pointer border-none transition-all hover:scale-105"
+                  style={{ background: 'rgba(220,38,38,0.08)', color: '#DC2626', border: '1px solid rgba(220,38,38,0.15)' }}>
+                  <span className="font-data font-bold">{code}</span> <span className="font-data">{rate.toFixed(0)}%</span>
+                </button>
               ))}
             </div>
           </div>
