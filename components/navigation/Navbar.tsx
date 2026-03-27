@@ -15,29 +15,18 @@ interface NavbarProps {
   onNewReport: () => void;
   newReportLabel: string;
   premiumLabel: string;
+  scrolled: boolean;
+  scrollProgress: number;
 }
 
 export function Navbar({
   lang, setLang, darkMode, setDarkMode, isPremium,
   savedReportsCount, onShowSaved, onReset, onNewReport,
-  newReportLabel, premiumLabel,
+  newReportLabel, premiumLabel, scrolled, scrollProgress,
 }: NavbarProps) {
-  const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
-
-  // Scroll detection + progress
-  useEffect(() => {
-    const handler = () => {
-      setScrolled(window.scrollY > 10);
-      const docH = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(docH > 0 ? Math.min(window.scrollY / docH, 1) : 0);
-    };
-    window.addEventListener('scroll', handler, { passive: true });
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
 
   // Focus trap for mobile drawer
   useEffect(() => {

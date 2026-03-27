@@ -889,6 +889,8 @@ export default function MyCaseValue() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [naturalInput, setNaturalInput] = useState('');
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [navScrolled, setNavScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [referralCode, setReferralCode] = useState('');
   const [legalPage, setLegalPage] = useState<'terms' | 'privacy' | 'disclaimer' | null>(null);
   const [carouselIdx, setCarouselIdx] = useState(0);
@@ -972,6 +974,19 @@ export default function MyCaseValue() {
   const prefersReducedMotion = useMemo(() => {
     if (typeof window === 'undefined') return false;
     return window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  }, []);
+
+  // Global scroll tracking for navbar
+  useEffect(() => {
+    const handler = () => {
+      setNavScrolled(window.scrollY > 10);
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docH > 0 ? Math.min(window.scrollY / docH, 1) : 0);
+      setShowBackToTop(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handler, { passive: true });
+    handler(); // Call immediately to set initial state
+    return () => window.removeEventListener('scroll', handler);
   }, []);
 
 
@@ -1405,6 +1420,8 @@ export default function MyCaseValue() {
           onNewReport={reset}
           newReportLabel={t.new_report}
           premiumLabel={t.premium}
+          scrolled={navScrolled}
+          scrollProgress={scrollProgress}
         />
 
         <main id="main-content" className="max-w-[1140px] mx-auto px-4 sm:px-6 relative z-10" role="main">
