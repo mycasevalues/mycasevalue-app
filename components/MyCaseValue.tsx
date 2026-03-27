@@ -307,7 +307,7 @@ function WizardProgress({ step, labels, lang = 'en' }: { step: number; labels?: 
 function Toast({ message, visible }: { message: string; visible: boolean }) {
   if (!visible) return null;
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-medium z-50 text-white"
+    <div role="status" aria-live="polite" className="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-medium z-50 text-white"
       style={{ background: '#0B1221', boxShadow: '0 8px 32px rgba(11,18,33,.2)', animation: 'slideUp 0.3s ease' }}>
       {message}
     </div>
@@ -1418,9 +1418,9 @@ export default function MyCaseValue() {
               </div>
               <div className="sm:text-right text-[11px] text-slate-400 leading-relaxed">
                 MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}<br />
-                <button onClick={() => setShowMethodology(!showMethodology)} className="text-[11px] text-slate-400 bg-transparent border-none cursor-pointer underline mt-1">
+                <a href="/methodology" className="text-[11px] text-slate-400 hover:text-slate-600 underline mt-1 inline-block transition-colors">
                   {lang === 'es' ? 'Metodología' : 'Methodology'}
-                </button>
+                </a>
                 <div className="mt-2 flex flex-col sm:items-end gap-0.5">
                   <a href="mailto:support@mycasevalue.com" className="text-[11px] text-slate-400 hover:text-slate-500 transition-colors" style={{ textDecoration: 'none' }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -2848,16 +2848,16 @@ export default function MyCaseValue() {
         <div className="max-w-3xl mx-auto py-8">
           <div className="flex justify-between mb-6">
             <div className="flex-1">
-              <div className="h-3 w-44 bg-slate-100 rounded-lg" style={{ animation: 'skeletonPulse 1.5s ease infinite' }} />
-              <div className="h-7 w-3/5 bg-slate-100 rounded-lg mt-2.5" style={{ animation: 'skeletonPulse 1.5s ease infinite' }} />
+              <div className="h-3 w-44 rounded-lg skeleton" />
+              <div className="h-7 w-3/5 rounded-lg mt-2.5 skeleton" />
             </div>
-            <div className="h-11 w-24 bg-slate-100 rounded-lg" style={{ animation: 'skeletonPulse 1.5s ease infinite' }} />
+            <div className="h-11 w-24 rounded-lg skeleton" />
           </div>
           <div className="grid grid-cols-3 gap-3 mb-6">
             {[1, 2, 3].map(i => (
               <div key={i} className="p-5 border border-slate-100 rounded-2xl">
-                <div className="h-2.5 w-14 bg-slate-100 rounded" style={{ animation: 'skeletonPulse 1.5s ease infinite' }} />
-                <div className="h-9 w-1/2 bg-slate-100 rounded mt-2.5" style={{ animation: 'skeletonPulse 1.5s ease infinite' }} />
+                <div className="h-2.5 w-14 rounded skeleton" />
+                <div className="h-9 w-1/2 rounded mt-2.5 skeleton" />
               </div>
             ))}
           </div>
