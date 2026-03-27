@@ -309,26 +309,27 @@ function GlossaryTip({ term, children }: { term: string; children: React.ReactNo
 // ============================================================
 
 // Feature Grid: What Your Report Includes (Free vs Premium)
-function ReportFeaturesGrid() {
+function ReportFeaturesGrid({ lang = 'en' }: { lang?: string }) {
+  const es = lang === 'es';
   const features = [
     // Free items
-    { title: 'Win Rate Analysis', desc: 'Historical success rate for your case type', free: true, icon: '📊' },
-    { title: 'Settlement Rate', desc: 'What % of cases settle', free: true, icon: '💰' },
-    { title: 'Median Timeline', desc: 'How long cases typically take', free: true, icon: '⏱️' },
-    { title: 'Case Volume', desc: 'Sample size of analyzed cases', free: true, icon: '📈' },
+    { title: es ? 'Análisis de tasa de éxito' : 'Win Rate Analysis', desc: es ? 'Tasa de éxito histórica para tu tipo de caso' : 'Historical success rate for your case type', free: true, icon: '📊' },
+    { title: es ? 'Tasa de acuerdos' : 'Settlement Rate', desc: es ? 'Qué % de casos llegan a un acuerdo' : 'What % of cases settle', free: true, icon: '💰' },
+    { title: es ? 'Cronología mediana' : 'Median Timeline', desc: es ? 'Cuánto tiempo suelen durar los casos' : 'How long cases typically take', free: true, icon: '⏱️' },
+    { title: es ? 'Volumen de casos' : 'Case Volume', desc: es ? 'Tamaño de la muestra analizada' : 'Sample size of analyzed cases', free: true, icon: '📈' },
     // Premium items
-    { title: 'Recovery Ranges', desc: 'Low, typical, high estimates', free: false, icon: '💵' },
-    { title: 'Judge Analytics', desc: 'How specific judges rule', free: false, icon: '⚖️' },
-    { title: 'Strength Score', desc: 'Your case scored 1-100', free: false, icon: '💪' },
-    { title: 'State Comparison', desc: 'How your state performs', free: false, icon: '🗺️' },
-    { title: 'Attorney Impact', desc: 'With vs without lawyer odds', free: false, icon: '👨‍⚖️' },
-    { title: 'Timeline Predictions', desc: 'Customized for your situation', free: false, icon: '🔮' },
+    { title: es ? 'Rangos de recuperación' : 'Recovery Ranges', desc: es ? 'Estimaciones bajas, típicas y altas' : 'Low, typical, high estimates', free: false, icon: '💵' },
+    { title: es ? 'Análisis de jueces' : 'Judge Analytics', desc: es ? 'Cómo fallan jueces específicos' : 'How specific judges rule', free: false, icon: '⚖️' },
+    { title: es ? 'Puntuación de fortaleza' : 'Strength Score', desc: es ? 'Tu caso puntuado del 1 al 100' : 'Your case scored 1-100', free: false, icon: '💪' },
+    { title: es ? 'Comparación estatal' : 'State Comparison', desc: es ? 'Cómo se desempeña tu estado' : 'How your state performs', free: false, icon: '🗺️' },
+    { title: es ? 'Impacto del abogado' : 'Attorney Impact', desc: es ? 'Probabilidades con vs sin abogado' : 'With vs without lawyer odds', free: false, icon: '👨‍⚖️' },
+    { title: es ? 'Predicciones de cronograma' : 'Timeline Predictions', desc: es ? 'Personalizado para tu situación' : 'Customized for your situation', free: false, icon: '🔮' },
   ];
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
       {features.map((f, i) => (
-        <div key={i} className={`p-5 rounded-2xl border transition-all ${
+        <div key={i} className={`p-5 rounded-2xl border transition-all hover:scale-[1.02] ${
           f.free
             ? 'bg-white border-slate-100 shadow-sm'
             : 'bg-gradient-to-br from-amber-50 to-white border-amber-100 shadow-sm'
@@ -346,12 +347,13 @@ function ReportFeaturesGrid() {
 }
 
 // Interactive Stats by Case Type
-function CaseTypeStatsPreview() {
+function CaseTypeStatsPreview({ lang = 'en' }: { lang?: string }) {
   const [activeType, setActiveType] = useState('work');
+  const es = lang === 'es';
   const stats: Record<string, any> = {
-    work: { wr: 38.4, timeline: '11.2 mo', settle: 32, volume: 287420, label: 'Employment' },
-    injury: { wr: 54.1, timeline: '8.6 mo', settle: 48, volume: 156230, label: 'Injury' },
-    consumer: { wr: 42.3, timeline: '10.4 mo', settle: 41, volume: 412890, label: 'Consumer' },
+    work: { wr: 38.4, timeline: '11.2 mo', settle: 32, volume: 287420, label: es ? 'Empleo' : 'Employment' },
+    injury: { wr: 54.1, timeline: '8.6 mo', settle: 48, volume: 156230, label: es ? 'Lesiones' : 'Injury' },
+    consumer: { wr: 42.3, timeline: '10.4 mo', settle: 41, volume: 412890, label: es ? 'Consumidor' : 'Consumer' },
   };
   const s = stats[activeType];
 
@@ -371,12 +373,12 @@ function CaseTypeStatsPreview() {
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          { l: 'Win Rate', v: `${s.wr}%`, c: '#0D9488' },
-          { l: 'Avg Timeline', v: s.timeline, c: '#2563EB' },
-          { l: 'Settlement %', v: `${s.settle}%`, c: '#B8923A' },
-          { l: 'Cases Analyzed', v: `${(s.volume / 1000).toFixed(0)}K`, c: '#6558D5' },
+          { l: es ? 'Tasa de éxito' : 'Win Rate', v: `${s.wr}%`, c: '#0D9488' },
+          { l: es ? 'Tiempo promedio' : 'Avg Timeline', v: s.timeline, c: '#2563EB' },
+          { l: es ? 'Acuerdos %' : 'Settlement %', v: `${s.settle}%`, c: '#B8923A' },
+          { l: es ? 'Casos analizados' : 'Cases Analyzed', v: `${(s.volume / 1000).toFixed(0)}K`, c: '#6558D5' },
         ].map((stat, i) => (
-          <div key={i} className="text-center p-4 rounded-xl" style={{ background: `${stat.c}08` }}>
+          <div key={i} className="text-center p-4 rounded-xl transition-transform hover:scale-[1.03]" style={{ background: `${stat.c}08` }}>
             <div className="text-2xl font-display font-bold" style={{ color: stat.c, letterSpacing: '-1px' }}>{stat.v}</div>
             <div className="text-[11px] font-medium text-slate-500 mt-1">{stat.l}</div>
           </div>
@@ -387,16 +389,17 @@ function CaseTypeStatsPreview() {
 }
 
 // Legal Cost Reality Check
-function LegalCostComparison() {
+function LegalCostComparison({ lang = 'en' }: { lang?: string }) {
+  const es = lang === 'es';
   const costs = [
-    { path: 'Mediation', min: 3, max: 10, color: '#0D9488' },
-    { path: 'Settlement', min: 15, max: 50, color: '#B8923A' },
-    { path: 'Full Trial', min: 50, max: 200, color: '#E87461' },
+    { path: es ? 'Mediación' : 'Mediation', min: 3, max: 10, color: '#0D9488' },
+    { path: es ? 'Acuerdo' : 'Settlement', min: 15, max: 50, color: '#B8923A' },
+    { path: es ? 'Juicio completo' : 'Full Trial', min: 50, max: 200, color: '#E87461' },
   ];
 
   return (
     <div className="bg-gradient-to-r from-slate-50 to-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-      <div className="text-[11px] font-bold text-slate-400 tracking-[2px] mb-4 uppercase">Average costs of legal paths</div>
+      <div className="text-[11px] font-bold text-slate-400 tracking-[2px] mb-4 uppercase">{es ? 'Costos promedio por vía legal' : 'Average costs of legal paths'}</div>
       <div className="space-y-4">
         {costs.map((c, i) => (
           <div key={i}>
@@ -406,10 +409,9 @@ function LegalCostComparison() {
             </div>
             <div className="h-3 bg-white rounded-full border border-slate-200 overflow-hidden relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="h-full" style={{
-                  width: `${(c.min / 200) * 100}%`,
-                  background: c.color,
-                  opacity: 0.3,
+                <div className="h-full rounded-full transition-all duration-700" style={{
+                  width: `${(c.max / 200) * 100}%`,
+                  background: `linear-gradient(90deg, ${c.color}40, ${c.color})`,
                 }} />
               </div>
             </div>
@@ -417,23 +419,24 @@ function LegalCostComparison() {
         ))}
       </div>
       <div className="mt-4 p-3 rounded-lg bg-amber-50 border border-amber-100">
-        <div className="text-[12px] text-amber-900"><strong>💡 Insight:</strong> 67% of cases settle before trial, often saving time and money.</div>
+        <div className="text-[12px] text-amber-900"><strong>💡 {es ? 'Dato:' : 'Insight:'}</strong> {es ? 'El 67% de los casos se resuelven antes de llegar a juicio, ahorrando tiempo y dinero.' : '67% of cases settle before trial, often saving time and money.'}</div>
       </div>
     </div>
   );
 }
 
 // Plain English Summary Card
-function PlainEnglishSummary({ text }: { text: string }) {
+function PlainEnglishSummary({ text, lang = 'en' }: { text: string; lang?: string }) {
   if (!text) return null;
+  const es = lang === 'es';
   return (
     <div className="bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 p-6 shadow-sm mb-4">
       <div className="flex items-start gap-3">
         <div className="text-3xl">💬</div>
         <div className="flex-1">
-          <div className="text-[10px] font-bold tracking-[1.5px] mb-2" style={{ color: '#B8923A' }}>PLAIN ENGLISH SUMMARY</div>
+          <div className="text-[10px] font-bold tracking-[1.5px] mb-2" style={{ color: '#B8923A' }}>{es ? 'RESUMEN EN LENGUAJE SIMPLE' : 'PLAIN ENGLISH SUMMARY'}</div>
           <p className="text-[14px] leading-relaxed text-slate-600 italic">&ldquo;{text}&rdquo;</p>
-          <div className="text-[10px] text-slate-400 mt-2">Generated from court data, not legal advice.</div>
+          <div className="text-[10px] text-slate-400 mt-2">{es ? 'Generado a partir de datos judiciales, no es asesoría legal.' : 'Generated from court data, not legal advice.'}</div>
         </div>
       </div>
     </div>
@@ -441,8 +444,14 @@ function PlainEnglishSummary({ text }: { text: string }) {
 }
 
 // Did You Know? Educational Cards
-function DidYouKnowFacts({ caseType }: { caseType?: string }) {
-  const facts = [
+function DidYouKnowFacts({ caseType, lang = 'en' }: { caseType?: string; lang?: string }) {
+  const es = lang === 'es';
+  const facts = es ? [
+    'El 67% de los casos de discriminación laboral se resuelven antes del juicio',
+    'El tiempo promedio desde la presentación hasta la resolución es de 10.2 meses',
+    'Tener un abogado aumenta la tasa de éxito ~3.4 veces en promedio',
+    'Los acuerdos ocurren con mayor frecuencia entre los meses 4 y 8 del litigio',
+  ] : [
     '67% of employment discrimination cases settle before trial',
     'The average time from filing to resolution is 10.2 months',
     'Having an attorney increases win rates by ~3.4x on average',
@@ -452,7 +461,7 @@ function DidYouKnowFacts({ caseType }: { caseType?: string }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4">
       {facts.map((fact, i) => (
-        <div key={i} className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-50 border border-blue-100">
+        <div key={i} className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-50 border border-blue-100 transition-transform hover:scale-[1.01]">
           <div className="flex gap-2">
             <span className="text-lg">🎓</span>
             <p className="text-[12px] text-slate-600 leading-relaxed">{fact}</p>
@@ -464,22 +473,23 @@ function DidYouKnowFacts({ caseType }: { caseType?: string }) {
 }
 
 // What People Did Next
-function WhatPeopleDid() {
+function WhatPeopleDid({ lang = 'en' }: { lang?: string }) {
+  const es = lang === 'es';
   const nextSteps = [
-    { action: 'Get a free consultation', pct: 78, icon: '📞' },
-    { action: 'Gather documentation', pct: 92, icon: '📁' },
-    { action: 'File a complaint', pct: 64, icon: '📝' },
+    { action: es ? 'Obtener consulta gratuita' : 'Get a free consultation', pct: 78, icon: '📞' },
+    { action: es ? 'Reunir documentación' : 'Gather documentation', pct: 92, icon: '📁' },
+    { action: es ? 'Presentar una queja' : 'File a complaint', pct: 64, icon: '📝' },
   ];
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
       {nextSteps.map((step, i) => (
-        <div key={i} className="p-5 rounded-xl border border-slate-200 bg-white text-center">
+        <div key={i} className="p-5 rounded-xl border border-slate-200 bg-white text-center transition-transform hover:scale-[1.02]">
           <div className="text-3xl mb-2">{step.icon}</div>
           <div className="text-[13px] font-medium text-slate-700 mb-2">{step.action}</div>
           <div className="flex items-end justify-center gap-1">
             <div className="text-[22px] font-display font-bold" style={{ color: '#B8923A' }}>{step.pct}%</div>
-            <div className="text-[10px] text-slate-400 pb-1">of users</div>
+            <div className="text-[10px] text-slate-400 pb-1">{es ? 'de usuarios' : 'of users'}</div>
           </div>
           <div className="mt-2 h-1.5 bg-slate-100 rounded-full overflow-hidden">
             <div className="h-full rounded-full" style={{
@@ -494,9 +504,16 @@ function WhatPeopleDid() {
 }
 
 // How Your Case Compares Scale
-function CaseComparisonScale({ winRate }: { winRate: number }) {
-  const labels = ['Challenging', 'Average', 'Above Avg', 'Strong'];
+function CaseComparisonScale({ winRate, lang = 'en' }: { winRate: number; lang?: string }) {
+  const es = lang === 'es';
+  const labels = es ? ['Difícil', 'Promedio', 'Sobre prom.', 'Fuerte'] : ['Challenging', 'Average', 'Above Avg', 'Strong'];
   const getLabel = (wr: number) => {
+    if (es) {
+      if (wr < 30) return 'Difícil';
+      if (wr < 40) return 'Promedio';
+      if (wr < 50) return 'Sobre promedio';
+      return 'Fuerte';
+    }
     if (wr < 30) return 'Challenging';
     if (wr < 40) return 'Average';
     if (wr < 50) return 'Above Avg';
@@ -505,7 +522,7 @@ function CaseComparisonScale({ winRate }: { winRate: number }) {
 
   return (
     <div className="p-5 rounded-xl bg-white border border-slate-100 my-4">
-      <div className="text-[11px] font-bold text-slate-400 tracking-[1.5px] mb-4 uppercase">How your case compares</div>
+      <div className="text-[11px] font-bold text-slate-400 tracking-[1.5px] mb-4 uppercase">{es ? 'Cómo se compara tu caso' : 'How your case compares'}</div>
       <div className="relative h-12 bg-gradient-to-r from-red-200 via-amber-200 to-green-200 rounded-full overflow-hidden flex items-center px-2">
         <div className="absolute h-full flex items-center transition-all duration-500"
           style={{
@@ -521,7 +538,7 @@ function CaseComparisonScale({ winRate }: { winRate: number }) {
         ))}
       </div>
       <div className="text-center mt-3 text-sm font-semibold" style={{ color: '#B8923A' }}>
-        Your case: {winRate.toFixed(1)}% win rate — {getLabel(winRate)}
+        {es ? 'Tu caso' : 'Your case'}: {winRate.toFixed(1)}% {es ? 'tasa de éxito' : 'win rate'} — {getLabel(winRate)}
       </div>
     </div>
   );
@@ -1331,7 +1348,7 @@ export default function MyCaseValue() {
           {/* Footer */}
           <footer className="border-t mt-16 pt-6 pb-8" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F0' }}>
             <div className="flex items-center gap-3 mb-4 flex-wrap">
-              <span className="text-[11px] font-semibold text-slate-400">Verified data:</span>
+              <span className="text-[11px] font-semibold text-slate-400">{lang === 'es' ? 'Datos verificados:' : 'Verified data:'}</span>
               {['Federal Judicial Center', 'CourtListener', 'uscourts.gov'].map((n, i) => (
                 <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-white border border-slate-200">{n}</span>
               ))}
@@ -1349,13 +1366,15 @@ export default function MyCaseValue() {
                   <span className="text-base font-display font-bold">MyCaseValue</span>
                 </button>
                 <p className="text-[11px] text-slate-400 leading-relaxed">
-                  MyCaseValue is an informational tool that displays aggregate historical data from public federal court records. Not legal advice. No attorney-client relationship.
+                  {lang === 'es'
+                    ? 'MyCaseValue es una herramienta informativa que muestra datos históricos agregados de registros judiciales federales públicos. No es asesoría legal. No establece relación abogado-cliente.'
+                    : 'MyCaseValue is an informational tool that displays aggregate historical data from public federal court records. Not legal advice. No attorney-client relationship.'}
                 </p>
               </div>
               <div className="sm:text-right text-[11px] text-slate-400 leading-relaxed">
-                MyCaseValue LLC. All rights reserved.<br />
+                MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}<br />
                 <button onClick={() => setShowMethodology(!showMethodology)} className="text-[11px] text-slate-400 bg-transparent border-none cursor-pointer underline mt-1">
-                  Methodology
+                  {lang === 'es' ? 'Metodología' : 'Methodology'}
                 </button>
                 <div className="mt-2 flex flex-col sm:items-end gap-0.5">
                   <a href="mailto:support@mycasevalue.com" className="text-[11px] text-slate-400 hover:text-slate-500 transition-colors" style={{ textDecoration: 'none' }}>
@@ -1377,7 +1396,7 @@ export default function MyCaseValue() {
 
             {/* Social sharing */}
             <div className="flex items-center justify-center gap-3 mt-5 pt-4 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
-              <span className="text-[11px] font-semibold text-slate-400 tracking-[1px]">SHARE</span>
+              <span className="text-[11px] font-semibold text-slate-400 tracking-[1px]">{lang === 'es' ? 'COMPARTIR' : 'SHARE'}</span>
               {[
                 { icon: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7', label: 'Twitter' },
                 { icon: 'M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z', label: 'Facebook' },
@@ -1402,11 +1421,11 @@ export default function MyCaseValue() {
 
             {/* Legal links */}
             <div className="flex items-center justify-center gap-4 mt-3 pt-3 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
-              <button onClick={() => setLegalPage('terms')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">Terms of Service</button>
+              <button onClick={() => setLegalPage('terms')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Términos de servicio' : 'Terms of Service'}</button>
               <span className="text-slate-300">·</span>
-              <button onClick={() => setLegalPage('privacy')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">Privacy Policy</button>
+              <button onClick={() => setLegalPage('privacy')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}</button>
               <span className="text-slate-300">·</span>
-              <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">Legal Disclaimer</button>
+              <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Aviso legal' : 'Legal Disclaimer'}</button>
             </div>
 
             {/* View mode toggle */}
@@ -1643,14 +1662,14 @@ export default function MyCaseValue() {
                   ))}
                 </div>
                 <div className="text-[11px] text-slate-400 leading-tight">
-                  <div className="font-semibold text-slate-500">Win rate by case type</div>
-                  <div>12 categories analyzed</div>
+                  <div className="font-semibold text-slate-500">{lang === 'es' ? 'Tasa de éxito por tipo de caso' : 'Win rate by case type'}</div>
+                  <div>{lang === 'es' ? '12 categorías analizadas' : '12 categories analyzed'}</div>
                 </div>
               </div>
 
               {/* Trusted by — refined */}
               <div className="mb-8">
-                <div className="text-[10px] text-slate-400 font-bold mb-3 tracking-[1.5px] uppercase">Data sourced from</div>
+                <div className="text-[10px] text-slate-400 font-bold mb-3 tracking-[1.5px] uppercase">{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
                 <div className="flex flex-wrap gap-2">
                   {[
                     { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B8923A" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
@@ -1803,7 +1822,7 @@ export default function MyCaseValue() {
                   </div>
                 );
               })}
-              <div className="text-[11px] text-slate-400 mt-2">Federal filings year-over-year</div>
+              <div className="text-[11px] text-slate-400 mt-2">{lang === 'es' ? 'Presentaciones federales año tras año' : 'Federal filings year-over-year'}</div>
             </Card>
             <Card>
               <SectionLabel>{t.circuit_rates}</SectionLabel>
@@ -1821,7 +1840,7 @@ export default function MyCaseValue() {
                 </div>
               ))}
               </div>
-              <div className="text-[11px] text-slate-400 mt-2">Aggregate plaintiff win rates</div>
+              <div className="text-[11px] text-slate-400 mt-2">{lang === 'es' ? 'Tasas de éxito agregadas del demandante' : 'Aggregate plaintiff win rates'}</div>
             </Card>
           </div>
         </Reveal>
@@ -2353,7 +2372,7 @@ export default function MyCaseValue() {
               <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Qué incluye tu informe' : 'What your report includes'}</h2>
               <p className="text-sm text-slate-400 mt-2 max-w-md mx-auto">{lang === 'es' ? 'El informe gratuito te da lo básico. Premium agrega datos detallados de recuperación, comparaciones estatales e impacto del abogado.' : 'Free report gives you the basics. Premium adds detailed recovery data, state comparisons, and attorney impact.'}</p>
             </div>
-            <ReportFeaturesGrid />
+            <ReportFeaturesGrid lang={lang} />
             <div className="text-center">
               <button onClick={() => go(1)} className="px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer border-none"
                 style={{ background: 'linear-gradient(135deg, #B8923A, #C9A54E)' }}>
@@ -2370,7 +2389,7 @@ export default function MyCaseValue() {
               <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'DATOS CLAVE' : 'KNOW BEFORE YOU GO'}</div>
               <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Estadísticas clave por tipo de caso' : 'Key stats by case type'}</h2>
             </div>
-            <CaseTypeStatsPreview />
+            <CaseTypeStatsPreview lang={lang} />
           </div>
         </Reveal>
 
@@ -2381,7 +2400,7 @@ export default function MyCaseValue() {
               <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'REALIDAD FINANCIERA' : 'FINANCIAL REALITY'}</div>
               <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Costos legales: Qué esperar' : 'Legal costs: What to expect'}</h2>
             </div>
-            <LegalCostComparison />
+            <LegalCostComparison lang={lang} />
           </div>
         </Reveal>
 
@@ -3381,25 +3400,25 @@ export default function MyCaseValue() {
 
               {/* Plain English Summary */}
               <Reveal delay={200}>
-                <PlainEnglishSummary text={getCaseSummary(d)} />
+                <PlainEnglishSummary text={getCaseSummary(d)} lang={lang} />
               </Reveal>
 
               {/* Did You Know? */}
               <Reveal delay={210}>
-                <DidYouKnowFacts caseType={spec?.d} />
+                <DidYouKnowFacts caseType={spec?.d} lang={lang} />
               </Reveal>
 
               {/* What People Did Next */}
               <Reveal delay={215}>
                 <Card className="p-6">
                   <SectionLabel>{lang === 'es' ? 'Qué hizo la gente después' : 'What people did next'}</SectionLabel>
-                  <WhatPeopleDid />
+                  <WhatPeopleDid lang={lang} />
                 </Card>
               </Reveal>
 
               {/* How Your Case Compares */}
               <Reveal delay={217}>
-                <CaseComparisonScale winRate={wr} />
+                <CaseComparisonScale winRate={wr} lang={lang} />
               </Reveal>
 
               {/* Deadline — Enhanced */}
