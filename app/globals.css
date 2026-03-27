@@ -84,6 +84,25 @@ body {
 }
 
 /* ============================================================
+   ACCESSIBILITY — focus-visible outlines
+   ============================================================ */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(184, 146, 58, 0.15);
+}
+
+.dark button:focus-visible, .dark a:focus-visible, .dark input:focus-visible {
+  box-shadow: 0 0 0 4px rgba(184, 146, 58, 0.25);
+}
+
+/* ============================================================
    TYPOGRAPHY — refined hierarchy
    ============================================================ */
 .font-display {
@@ -1079,14 +1098,20 @@ button:active:not(:disabled) {
   background: rgba(36, 51, 82, 0.8) !important;
 }
 
-.dark .bg-slate-50,
-.dark .bg-slate-100 {
-  background: rgba(28, 39, 64, 0.6) !important;
+.dark .bg-slate-50 {
+  background-color: #1E293B !important;
 }
 
-.dark .border-slate-100,
+.dark .bg-slate-100 {
+  background-color: #1E293B !important;
+}
+
+.dark .border-slate-100 {
+  border-color: #1E293B !important;
+}
+
 .dark .border-slate-200 {
-  border-color: rgba(184, 146, 58, 0.15) !important;
+  border-color: #334155 !important;
 }
 
 .dark .text-slate-500 {
@@ -1094,11 +1119,20 @@ button:active:not(:disabled) {
 }
 
 .dark .text-slate-600 {
-  color: #B0BED0 !important;
+  color: #94A3B8 !important;
 }
 
 .dark .text-slate-700 {
   color: #D4DDEA !important;
+}
+
+.dark .bg-white {
+  background-color: #0F1729 !important;
+}
+
+.dark body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .dark ::-webkit-scrollbar-thumb {
@@ -2113,4 +2147,29 @@ button:active:not(:disabled) {
     transition-duration: 0.01ms !important;
   }
   .particle, .hero-orb, .hero-mesh-orb { display: none !important; }
+  .card-lift:hover {
+    transform: none;
+  }
+  .card-bg:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   MOBILE — enhanced touch targets & spacing
+   ============================================================ */
+@media (max-width: 640px) {
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-3px);
+  }
+
+  .sticky-nav {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  }
 }
