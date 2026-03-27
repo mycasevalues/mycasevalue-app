@@ -1793,10 +1793,6 @@ input:focus, textarea:focus, select:focus {
 /* ============================================================
    PRINT STYLES
    ============================================================ */
-.no-print {
-  display: initial;
-}
-
 @media print {
   .no-print, nav, footer, .sticky-nav, .skip-link,
   .premium-cta, .cta-glow, .exit-intent-modal {
