@@ -2573,7 +2573,8 @@ export default function MyCaseValue() {
           <div className="space-y-2.5 stagger">
             {SITS.map(si => (
               <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
-                className="category-card flex items-center gap-4 w-full p-4 card-bg bg-white border-[1.5px] border-slate-100 rounded-xl cursor-pointer text-left shadow-sm"
+                className="category-card flex items-center gap-4 w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg group"
+                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(253,251,247,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
                 onMouseLeave={e => e.currentTarget.style.borderColor = '#F1F5F9'}>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform" style={{ background: `${si.color}10` }}>
@@ -2611,7 +2612,8 @@ export default function MyCaseValue() {
           <div className="space-y-2.5 stagger">
             {sit.opts.map((o: any, i: number) => (
               <button key={i} onClick={() => { setSpec(o); go(3); }}
-                className="category-card flex items-center w-full p-4 card-bg bg-white border-[1.5px] border-slate-100 rounded-xl cursor-pointer text-left shadow-sm"
+                className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
+                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(253,251,247,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = sit.color}
                 onMouseLeave={e => e.currentTarget.style.borderColor = '#F1F5F9'}>
                 <div className="w-2 h-2 rounded-full flex-shrink-0 mr-3 transition-transform" style={{ background: sit.color, opacity: 0.5 }} />
@@ -2714,9 +2716,9 @@ export default function MyCaseValue() {
             )}
           </div>
           <button onClick={() => go(4)} disabled={!timing || !amount || !attorney}
-            className="w-full mt-7 py-4 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98]"
-            style={{ background: (timing && amount && attorney) ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : '#E2E8F0', color: (timing && amount && attorney) ? '#fff' : '#94A3B8' }}>
-            {lang === 'es' ? 'Ver resultados' : 'View outcomes'}
+            className="w-full mt-7 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
+            style={{ background: (timing && amount && attorney) ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : '#E2E8F0', color: (timing && amount && attorney) ? '#fff' : '#94A3B8', boxShadow: (timing && amount && attorney) ? '0 4px 20px rgba(184,146,58,.3)' : 'none', padding: '18px' }}>
+            {lang === 'es' ? 'Ver resultados →' : 'View outcomes →'}
           </button>
         </Reveal>
       </div>
@@ -2753,9 +2755,9 @@ export default function MyCaseValue() {
                 : 'I understand this is historical data only, does not evaluate my situation, and no attorney-client relationship is created.'}</span>
             </label>
             <button onClick={() => go(5)} disabled={!consent}
-              className="w-full mt-5 py-4 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98]"
-              style={{ background: consent ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : '#E2E8F0', color: consent ? '#fff' : '#94A3B8' }}>
-              {lang === 'es' ? 'Generar informe' : 'Generate report'}
+              className="w-full mt-6 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
+              style={{ background: consent ? 'linear-gradient(135deg, #B8923A, #C9A54E)' : '#E2E8F0', color: consent ? '#fff' : '#94A3B8', boxShadow: consent ? '0 4px 20px rgba(184,146,58,.3)' : 'none', padding: '18px' }}>
+              {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
             </button>
           </Card>
         </Reveal>
@@ -4508,14 +4510,14 @@ export default function MyCaseValue() {
         {showPricing && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
             onClick={() => setShowPricing(false)}>
-            <div className="card-bg bg-white rounded-3xl p-6 sm:p-10 max-w-lg w-full shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(253,251,247,0.95) 100%)', boxShadow: '0 25px 80px rgba(11,18,33,.2), 0 0 0 1px rgba(184,146,58,0.08), inset 0 1px 0 rgba(255,255,255,0.9)' }} onClick={e => e.stopPropagation()}>
               <div className="text-center mb-7">
                 <div className="text-2xl sm:text-3xl font-display font-bold">{lang === 'es' ? 'Vea el panorama completo' : 'See the complete picture'}</div>
                 <p className="text-[15px] text-slate-500 mt-2">{lang === 'es' ? '8 herramientas de datos para mayor comprensión' : '8 data tools for deeper understanding'}</p>
               </div>
               <div className="text-[11px] text-slate-400 text-center mb-5">{lang === 'es' ? 'Todos los datos son solo informativos. No se crea relación abogado-cliente.' : 'All data is informational only. No attorney-client relationship is created.'}</div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="border-[1.5px] border-slate-200 rounded-2xl p-5 sm:p-6 text-center">
+                <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ border: '1.5px solid rgba(226,232,240,0.8)', background: 'linear-gradient(180deg, #fff 0%, #FAFAF8 100%)' }}>
                   <div className="text-[11px] font-bold text-slate-400 tracking-[2px]">{lang === 'es' ? 'REPORTE INDIVIDUAL' : 'SINGLE REPORT'}</div>
                   <div className="text-3xl sm:text-4xl font-display font-bold my-2"><span className="text-xl">$</span>5.99</div>
                   <div className="text-[12px] text-slate-400 mb-3">{lang === 'es' ? 'Un reporte completo' : 'One complete report'}</div>
@@ -4524,7 +4526,7 @@ export default function MyCaseValue() {
                     {lang === 'es' ? 'Obtener reporte' : 'Get report'}
                   </button>
                 </div>
-                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#B8923A', background: '#FDFBF7' }}>
+                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#B8923A', background: 'linear-gradient(180deg, #FDFBF7 0%, #F3EBDA 100%)', boxShadow: '0 8px 32px rgba(184,146,58,.15), inset 0 1px 0 rgba(255,255,255,0.8)' }}>
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold text-white whitespace-nowrap"
                     style={{ background: 'linear-gradient(135deg, #B8923A, #C9A54E)' }}>
                     {lang === 'es' ? 'MEJOR VALOR' : 'BEST VALUE'}
