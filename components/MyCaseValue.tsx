@@ -398,17 +398,17 @@ function ReportFeaturesGrid({ lang = 'en' }: { lang?: string }) {
   const es = lang === 'es';
   const features = [
     // Free items
-    { title: es ? 'Análisis de tasa de éxito' : 'Win Rate Analysis', desc: es ? 'Tasa de éxito histórica para tu tipo de caso' : 'Historical success rate for your case type', free: true, icon: '📊' },
-    { title: es ? 'Tasa de acuerdos' : 'Settlement Rate', desc: es ? 'Qué % de casos llegan a un acuerdo' : 'What % of cases settle', free: true, icon: '💰' },
-    { title: es ? 'Cronología mediana' : 'Median Timeline', desc: es ? 'Cuánto tiempo suelen durar los casos' : 'How long cases typically take', free: true, icon: '⏱️' },
-    { title: es ? 'Volumen de casos' : 'Case Volume', desc: es ? 'Tamaño de la muestra analizada' : 'Sample size of analyzed cases', free: true, icon: '📈' },
+    { title: es ? 'Análisis de tasa de éxito' : 'Win Rate Analysis', desc: es ? 'Tasa de éxito histórica para tu tipo de caso' : 'Historical success rate for your case type', free: true, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2" strokeLinecap="round"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg> },
+    { title: es ? 'Tasa de acuerdos' : 'Settlement Rate', desc: es ? 'Qué % de casos llegan a un acuerdo' : 'What % of cases settle', free: true, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" strokeLinecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> },
+    { title: es ? 'Cronología mediana' : 'Median Timeline', desc: es ? 'Cuánto tiempo suelen durar los casos' : 'How long cases typically take', free: true, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A2744" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
+    { title: es ? 'Volumen de casos' : 'Case Volume', desc: es ? 'Tamaño de la muestra analizada' : 'Sample size of analyzed cases', free: true, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2" strokeLinecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> },
     // Premium items
-    { title: es ? 'Rangos de recuperación' : 'Recovery Ranges', desc: es ? 'Estimaciones bajas, típicas y altas' : 'Low, typical, high estimates', free: false, icon: '💵' },
-    { title: es ? 'Análisis de jueces' : 'Judge Analytics', desc: es ? 'Cómo fallan jueces específicos' : 'How specific judges rule', free: false, icon: '⚖️' },
-    { title: es ? 'Puntuación de fortaleza' : 'Strength Score', desc: es ? 'Tu caso puntuado del 1 al 100' : 'Your case scored 1-100', free: false, icon: '💪' },
-    { title: es ? 'Comparación estatal' : 'State Comparison', desc: es ? 'Cómo se desempeña tu estado' : 'How your state performs', free: false, icon: '🗺️' },
-    { title: es ? 'Impacto del abogado' : 'Attorney Impact', desc: es ? 'Probabilidades con vs sin abogado' : 'With vs without lawyer odds', free: false, icon: '👨‍⚖️' },
-    { title: es ? 'Predicciones de cronograma' : 'Timeline Predictions', desc: es ? 'Personalizado para tu situación' : 'Customized for your situation', free: false, icon: '🔮' },
+    { title: es ? 'Rangos de recuperación' : 'Recovery Ranges', desc: es ? 'Estimaciones bajas, típicas y altas' : 'Low, typical, high estimates', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2" strokeLinecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> },
+    { title: es ? 'Análisis de jueces' : 'Judge Analytics', desc: es ? 'Cómo fallan jueces específicos' : 'How specific judges rule', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2" strokeLinecap="round"><path d="M3 12l9-9 9 9"/><path d="M12 3v18"/><path d="M3 12h18"/></svg> },
+    { title: es ? 'Puntuación de fortaleza' : 'Strength Score', desc: es ? 'Tu caso puntuado del 1 al 100' : 'Your case scored 1-100', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> },
+    { title: es ? 'Comparación estatal' : 'State Comparison', desc: es ? 'Cómo se desempeña tu estado' : 'How your state performs', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> },
+    { title: es ? 'Impacto del abogado' : 'Attorney Impact', desc: es ? 'Probabilidades con vs sin abogado' : 'With vs without lawyer odds', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2" strokeLinecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> },
+    { title: es ? 'Predicciones de cronograma' : 'Timeline Predictions', desc: es ? 'Personalizado para tu situación' : 'Customized for your situation', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2" strokeLinecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> },
   ];
 
   return (
@@ -417,10 +417,10 @@ function ReportFeaturesGrid({ lang = 'en' }: { lang?: string }) {
         <div key={i} className={`p-5 rounded-2xl border transition-all hover:scale-[1.02] ${
           f.free
             ? 'bg-white border-slate-100 shadow-sm'
-            : 'bg-gradient-to-br from-amber-50 to-white border-amber-100 shadow-sm'
-        }`}>
+            : 'border-slate-100 shadow-sm'
+        }`} style={!f.free ? { background: 'linear-gradient(135deg, #F0F2FF, #FFFFFF)', borderColor: 'rgba(64,64,242,0.12)' } : undefined}>
           <div className="flex items-start justify-between mb-2">
-            <div className="text-2xl">{f.icon}</div>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: f.free ? '#F0F2FF' : '#EEF0FF' }}>{f.icon}</div>
             {!f.free && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2.5"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>}
           </div>
           <div className="text-[14px] font-semibold text-slate-700">{f.title}</div>
@@ -1576,7 +1576,9 @@ export default function MyCaseValue() {
               <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer border-none">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
-              <div className="text-3xl mb-2">🔍</div>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              </div>
               <div className="text-xl font-display font-bold mb-2">{lang === 'es' ? '¡Espera! Te falta lo mejor' : "Wait — you're missing the best part"}</div>
               <p className="text-[14px] text-slate-500 mb-1 leading-relaxed">{lang === 'es' ? 'Tu informe gratuito muestra la tasa de éxito. El informe completo agrega rangos de recuperación, impacto del abogado, cronología y más.' : 'Your free report shows the win rate. The full report adds recovery ranges, attorney impact, timeline, and more.'}</p>
               <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[12px] font-bold mb-4" style={{ background: '#FEE2E2', color: '#E87461' }}>
@@ -2180,15 +2182,15 @@ export default function MyCaseValue() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { num: '01', icon: '💬', title: lang === 'es' ? 'Describe tu situación' : 'Describe your situation', desc: lang === 'es' ? 'Dinos qué pasó en palabras simples. Sin jerga legal necesaria.' : 'Tell us what happened in plain words. No legal jargon needed.', color: '#1A2744' },
-                { num: '02', icon: '🔍', title: lang === 'es' ? 'Analizamos los datos' : 'We crunch the data', desc: lang === 'es' ? 'Comparamos tu situación con millones de casos federales reales.' : 'We match your situation against millions of real federal court outcomes.', color: '#4040F2' },
-                { num: '03', icon: '📊', title: lang === 'es' ? 'Obtén tu informe' : 'Get your report', desc: lang === 'es' ? 'Tasas de éxito, plazos, rangos de recuperación y pasos a seguir.' : 'Win rates, timelines, recovery ranges, and what people did next.', color: '#0D9488' },
+                { num: '01', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>, title: lang === 'es' ? 'Describe tu situación' : 'Describe your situation', desc: lang === 'es' ? 'Dinos qué pasó en palabras simples. Sin jerga legal necesaria.' : 'Tell us what happened in plain words. No legal jargon needed.', color: '#1A2744' },
+                { num: '02', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>, title: lang === 'es' ? 'Analizamos los datos' : 'We crunch the data', desc: lang === 'es' ? 'Comparamos tu situación con millones de casos federales reales.' : 'We match your situation against millions of real federal court outcomes.', color: '#4040F2' },
+                { num: '03', icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>, title: lang === 'es' ? 'Obtén tu informe' : 'Get your report', desc: lang === 'es' ? 'Tasas de éxito, plazos, rangos de recuperación y pasos a seguir.' : 'Win rates, timelines, recovery ranges, and what people did next.', color: '#0D9488' },
               ].map((s, i) => (
                 <div key={i} className="relative p-6 data-card-3d rounded-2xl border-2 shadow-lg group transition-all hover:scale-[1.03] hover:-translate-y-1" style={{ background: `linear-gradient(135deg, ${s.color}18 0%, ${s.color}08 100%)`, borderColor: s.color + '50', borderTop: `3px solid ${s.color}`, boxShadow: `0 8px 32px ${s.color}25` }}>
                   <div className="absolute top-4 right-4 text-[48px] font-display font-bold leading-none" style={{ color: s.color, opacity: 0.08 }}>{s.num}</div>
                   {/* Step number badge */}
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 float-badge" style={{ background: `linear-gradient(135deg, ${s.color}, ${s.color}dd)`, boxShadow: `0 4px 16px ${s.color}30`, animationDelay: `${i * 0.3}s` }}>
-                    <span className="text-2xl">{s.icon}</span>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: `linear-gradient(135deg, ${s.color}, ${s.color}dd)`, boxShadow: `0 4px 16px ${s.color}30` }}>
+                    {s.icon}
                   </div>
                   <div className="text-[11px] font-extrabold tracking-[2.5px] mb-2 uppercase" style={{ color: s.color, textShadow: `0 1px 3px ${s.color}20` }}>Step {s.num}</div>
                   <div className="text-[17px] font-extrabold mb-2 text-slate-800">{s.title}</div>
@@ -2223,7 +2225,7 @@ export default function MyCaseValue() {
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-semibold">$</span>
                     <input type="range" min="10000" max="500000" step="5000" value={calcAmount}
                       onChange={e => setCalcAmount(Number(e.target.value))}
-                      className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-yellow-600" />
+                      className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer" style={{ accentColor: '#4040F2' }} />
                   </div>
                   <div className="flex justify-between mt-2 text-xs text-slate-500">
                     <span>$10K</span>
@@ -3692,13 +3694,13 @@ export default function MyCaseValue() {
                   </div>
                   <div className="space-y-2.5">
                     {[
-                      { icon: '📊', text: lang === 'es' ? `Tu tipo de caso tiene una tasa de éxito del ${wr}%.` : `Cases like yours have a ${wr}% success rate.` },
-                      { icon: '🎯', text: lang === 'es' ? `El ${winSettleRate}% de los casos se resuelven con un acuerdo.` : `${winSettleRate}% of cases settle with a payout.` },
-                      { icon: '⏱️', text: lang === 'es' ? `El tiempo promedio hasta una resolución es ${od.set_mo || '6-12'} meses.` : `Average time to resolution: ${od.set_mo || '6-12'} months.` },
-                      { icon: '⚖️', text: lang === 'es' ? 'Los abogados aumentan las probabilidades de éxito significativamente.' : 'Having an attorney significantly improves your chances.' },
+                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>, text: lang === 'es' ? `Tu tipo de caso tiene una tasa de éxito del ${wr}%.` : `Cases like yours have a ${wr}% success rate.` },
+                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>, text: lang === 'es' ? `El ${winSettleRate}% de los casos se resuelven con un acuerdo.` : `${winSettleRate}% of cases settle with a payout.` },
+                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A2744" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text: lang === 'es' ? `El tiempo promedio hasta una resolución es ${od.set_mo || '6-12'} meses.` : `Average time to resolution: ${od.set_mo || '6-12'} months.` },
+                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text: lang === 'es' ? 'Los abogados aumentan las probabilidades de éxito significativamente.' : 'Having an attorney significantly improves your chances.' },
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3 p-2.5 rounded-lg bg-white/50">
-                        <span className="text-lg flex-shrink-0">{item.icon}</span>
+                        <span className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#F0F2FF' }}>{item.icon}</span>
                         <span className="text-[14px] text-slate-700">{item.text}</span>
                       </div>
                     ))}
@@ -3795,17 +3797,17 @@ export default function MyCaseValue() {
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? 'Tu informe premium incluye:' : 'Your premium report includes:'}</div>
                     <div className="grid grid-cols-2 gap-2">
                       {[
-                        { f: lang === 'es' ? 'Rangos de recuperación' : 'Recovery ranges', icon: '💰' },
-                        { f: lang === 'es' ? 'Distribución de montos' : 'Recovery distribution', icon: '📊' },
-                        { f: lang === 'es' ? 'Impacto del abogado' : 'Attorney impact', icon: '⚖️' },
-                        { f: lang === 'es' ? 'Cronología del caso' : 'Case timeline', icon: '📅' },
-                        { f: lang === 'es' ? 'Casos comparables' : 'Comparable cases', icon: '🔍' },
-                        { f: lang === 'es' ? 'Calendario de acuerdos' : 'Settlement timing', icon: '🤝' },
-                        { f: lang === 'es' ? 'Factores citados' : 'Factors courts cited', icon: '📋' },
-                        { f: lang === 'es' ? 'Pasos a seguir' : 'Action steps', icon: '✅' },
+                        { f: lang === 'es' ? 'Rangos de recuperación' : 'Recovery ranges', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> },
+                        { f: lang === 'es' ? 'Distribución de montos' : 'Recovery distribution', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg> },
+                        { f: lang === 'es' ? 'Impacto del abogado' : 'Attorney impact', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> },
+                        { f: lang === 'es' ? 'Cronología del caso' : 'Case timeline', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
+                        { f: lang === 'es' ? 'Casos comparables' : 'Comparable cases', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> },
+                        { f: lang === 'es' ? 'Calendario de acuerdos' : 'Settlement timing', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> },
+                        { f: lang === 'es' ? 'Factores citados' : 'Factors courts cited', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> },
+                        { f: lang === 'es' ? 'Pasos a seguir' : 'Action steps', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> },
                       ].map((item, i) => (
-                        <div key={i} className="p-2.5 bg-slate-50 rounded-lg text-sm flex items-center gap-2">
-                          <span className="text-base">{item.icon}</span> {item.f}
+                        <div key={i} className="p-2.5 rounded-lg text-sm flex items-center gap-2" style={{ background: '#F8FAFF' }}>
+                          <span className="flex-shrink-0">{item.icon}</span> {item.f}
                         </div>
                       ))}
                     </div>
