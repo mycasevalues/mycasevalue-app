@@ -1,8 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const PRICES: Record<string, { amount: number; name: string }> = {
-  single: { amount: 599, name: 'MyCaseValue — Single Report' },
-  unlimited: { amount: 999, name: 'MyCaseValue — Unlimited Access' },
+const PRICES: Record<string, { amount: number; name: string; description: string }> = {
+  single: {
+    amount: 599,
+    name: 'MyCaseValue — Single Report',
+    description: 'One premium report — recovery ranges, attorney impact, case timeline, and detailed analysis.',
+  },
+  unlimited: {
+    amount: 999,
+    name: 'MyCaseValue — Unlimited Access',
+    description: 'Unlimited premium reports — recovery ranges, judge analytics, state comparisons, and more.',
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -30,18 +38,22 @@ export async function POST(req: NextRequest) {
     const price = PRICES[plan];
     const origin = req.headers.get('origin') || 'https://www.mycasevalues.com';
 
+    // Enable Apple Pay, Google Pay, PayPal, and cards
+    // Apple Pay & Google Pay are automatically available via the 'card' method
+    // when the customer's device supports them (Stripe handles this natively).
+    // PayPal is added as an explicit payment method.
+    const paymentMethodTypes: string[] = ['card', 'paypal'];
+
     const sessionParams: any = {
       mode: 'payment',
-      payment_method_types: ['card'],
+      payment_method_types: paymentMethodTypes,
       line_items: [
         {
           price_data: {
             currency: 'usd',
             product_data: {
               name: price.name,
-              description: plan === 'unlimited'
-                ? 'Unlimited premium reports — recovery ranges, judge analytics, state comparisons, and more.'
-                : 'One premium report — recovery ranges, attorney impact, case timeline, and detailed analysis.',
+              description: price.description,
             },
             unit_amount: price.amount,
           },
@@ -61,6 +73,46 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ url: session.url });
   } catch (err: any) {
     console.error('[Stripe Checkout Error]', err?.message || err);
+
+    // If PayPal isn't enabled on the account, fall back to card-only
+    if (err?.message?.includes('paypal') || err?.code === 'payment_method_not_available') {
+      try {
+        const secretKey = process.env.STRIPE_SECRET_KEY!;
+        const Stripe = (await import('stripe')).default;
+        const stripe = new Stripe(secretKey, { apiVersion: '2024-12-18.acacia' as any });
+
+        const body = await req.clone().json().catch(() => ({}));
+        const { plan = 'single', email: em } = body as any;
+        const price = PRICES[plan] || PRICES.single;
+        const origin = req.headers.get('origin') || 'https://www.mycasevalues.com';
+
+        const fallbackParams: any = {
+          mode: 'payment',
+          payment_method_types: ['card'],
+          line_items: [
+            {
+              price_data: {
+                currency: 'usd',
+                product_data: { name: price.name, description: price.description },
+                unit_amount: price.amount,
+              },
+              quantity: 1,
+            },
+          ],
+          success_url: `${origin}?session_id={CHECKOUT_SESSION_ID}&plan=${plan}`,
+          cancel_url: `${origin}?canceled=true`,
+          metadata: { plan },
+        };
+
+        if (em && em.includes('@')) fallbackParams.customer_email = em;
+
+        const session = await stripe.checkout.sessions.create(fallbackParams);
+        return NextResponse.json({ url: session.url });
+      } catch {
+        // ignore fallback error
+      }
+    }
+
     return NextResponse.json(
       { error: 'Unable to create checkout session. Please try again.' },
       { status: 500 }
