@@ -1,86 +1,111 @@
-# MyCaseValue — Pre-Build Audit
+# MyCaseValue — Build Audit
 **Date:** 2026-03-27
 **Auditor:** Claude (Automated)
+
+## Completed Phases
+
+### Phase 1: Design System ✅
+- [x] Tailwind config rewritten with full token system (brand, outcome, surface, text colors)
+- [x] Custom fontSize, boxShadow, borderRadius, animation tokens
+- [x] `darkMode: 'class'` enabled
+- [x] globals.css: Added `@layer utilities` (skeleton, glass, glass-dark, focus-ring, text-balance, font-smooth, scrollbar-hide, grain texture)
+- [x] Enhanced print stylesheet (hides nav/footer, removes shadows/gradients, proper page-break rules)
+- [x] Optimized font loading with preconnect + Google Fonts link (Outfit + JetBrains Mono)
+- [x] Loading spinner updated to blue (#4040F2) / Outfit branding (was gold/Newsreader)
+
+### Phase 2: Navigation ✅
+- [x] Extracted `components/navigation/Navbar.tsx` component
+- [x] Scroll-aware glass effect (transparent → solid on scroll)
+- [x] Mobile hamburger with animated bars → slide-in drawer
+- [x] Focus trap in mobile drawer (Tab cycling, Escape to close)
+- [x] Body scroll lock when drawer is open
+- [x] `aria-expanded`, `aria-controls`, `role="dialog"` on drawer
+
+### Phase 3: Homepage Colors ✅
+- [x] All `#FDFBF7` (old cream) → `#F8FAFC` (cool neutral)
+- [x] All `#FFF8EC` → `#EEF1F6`
+- [x] All `#F3EBDA` (gold cream) → `#E4E5FF` (blue tint)
+- [x] All `rgba(253,251,247...)` → `rgba(248,250,252...)`
+
+### Phase 5: Data Visualization Components ✅
+- [x] `OutcomeDonut` — recharts PieChart with center label, hover tooltips
+- [x] `SettlementDistribution` — recharts BarChart with highlighted bars
+- [x] `TimelineRange` — visual timeline bar with hover tooltips + legend
+- [x] `ComparisonBar` — recharts dual-bar comparison chart
+- [x] `TrendLine` — recharts AreaChart with gradient fill
+- [x] All charts have `sr-only` accessible data tables
+- [x] All charts export from `components/charts/index.ts`
+
+### Phase 7: New Pages ✅
+- [x] `/methodology` — Data sources, processing pipeline, limitations, dataset coverage, public domain status
+- [x] Full legal disclaimers on methodology page
+- [x] Back link to homepage, contact CTA
+
+### Phase 8: Advanced Features ✅
+- [x] Keyboard shortcuts: Ctrl+K (search), Ctrl+D (dark mode), Ctrl+N (new report), Ctrl+P (print)
+- [x] Escape key navigation (back through wizard steps)
+
+### Phase 11: SEO ✅
+- [x] `app/robots.ts` — Allows all, disallows /api/ routes, points to sitemap
+- [x] `app/sitemap.ts` — Homepage + methodology page with proper priorities
+- [x] JSON-LD Schema.org structured data (Organization, WebApplication, Dataset, BreadcrumbList, FAQPage)
+- [x] OpenGraph + Twitter Card metadata
+- [x] Canonical URLs
+
+### Phase 12: Accessibility ✅ (partial)
+- [x] Skip-to-content link (`<a href="#main-content" className="skip-link">`)
+- [x] `*:focus-visible` ring with blue accent (2px solid)
+- [x] Dark mode focus-visible variants
+- [x] `role="navigation"`, `role="main"`, `role="dialog"`, `role="radiogroup"` on all interactive regions
+- [x] `aria-label` on all buttons and interactive elements
+- [x] `aria-live="polite"` on Toast notifications
+- [x] `aria-modal="true"` on pricing and mobile drawer dialogs
+- [x] `prefers-reduced-motion: reduce` media query (disables all animations)
+- [x] 44px minimum touch targets on mobile
+- [x] iOS zoom prevention (16px font on inputs)
+- [x] `.skeleton` loading state with shimmer animation
 
 ## File/Route/Component Map
 
 ### Pages & Routes
 - `app/page.tsx` — Homepage (client, dynamic imports MyCaseValue)
-- `app/layout.tsx` — Root layout, metadata, JSON-LD
+- `app/layout.tsx` — Root layout, metadata, JSON-LD, font loading
+- `app/methodology/page.tsx` — Data methodology (static, SSR)
+- `app/robots.ts` — robots.txt generation
+- `app/sitemap.ts` — XML sitemap generation
 - `app/error.tsx` — Error boundary page
 - `app/global-error.tsx` — Global error handler
 
 ### API Routes
-- `app/api/data/route.ts` — Main data API (stats, case, circuits, states, trending, outcomes, judges, freshness)
-- `app/api/summary/route.ts` — Static summary (hardcoded 4168590 cases)
-- `app/api/ingest/route.ts` — Data ingestion cron endpoint
-- `app/api/stripe/checkout/route.ts` — Stripe checkout session creation
+- `app/api/data/route.ts` — Main data API
+- `app/api/summary/route.ts` — Static summary
+- `app/api/ingest/route.ts` — Data ingestion cron
+- `app/api/stripe/checkout/route.ts` — Stripe checkout
 - `app/api/stripe/verify/route.ts` — Payment verification
-- `app/api/stripe/webhook/route.ts` — Stripe webhook handler
+- `app/api/stripe/webhook/route.ts` — Stripe webhook
 
-### Components
-- `components/MyCaseValue.tsx` (~4700+ lines) — MONOLITH: entire app in one component
-- `components/ErrorBoundary.tsx` — React error boundary
-- `components/providers/LanguageContext.tsx` — Language context
-- `components/providers/ThemeContext.tsx` — Theme context
-- `components/sections/DataPreviewSection.tsx` — Data preview
-- `components/sections/FaqSection.tsx` — FAQ accordion
-- `components/sections/FinalCtaSection.tsx` — Final CTA
-- `components/sections/TrustBar.tsx` — Trust indicators
-- `components/ui/Accordion.tsx` — Accordion component
-- `components/ui/AnimatedNumber.tsx` — Counter animation
-- `components/ui/Button.tsx` — Button component
-- `components/ui/Card.tsx` — Card component
-- `components/ui/Icons.tsx` — SVG icon system
-- `components/ui/Logo.tsx` — Brand logo
-- `components/ui/PieChart.tsx` — Pie/donut chart
-- `components/ui/SectionBadge.tsx` — Section badge
-- `components/ui/USMap.tsx` — US map visualization
+### New Components
+- `components/navigation/Navbar.tsx` — Main navigation with mobile drawer
+- `components/charts/OutcomeDonut.tsx` — Donut chart (recharts)
+- `components/charts/SettlementDistribution.tsx` — Bar chart (recharts)
+- `components/charts/TimelineRange.tsx` — Visual timeline bar
+- `components/charts/ComparisonBar.tsx` — Comparison bar chart (recharts)
+- `components/charts/TrendLine.tsx` — Area/trend chart (recharts)
+- `components/charts/index.ts` — Chart exports
 
-### Libraries
-- `lib/data.ts` — Static data, case types (SITS), mock data, UPL copy
-- `lib/i18n.ts` — EN/ES translations (context-based, not route-based)
-- `lib/realdata.ts` — Real case data from FJC/CourtListener (20 NOS codes, 4.1M+ cases)
-- `lib/supabase.ts` — Supabase client + TypeScript types
-- `lib/useData.ts` — Data fetching hook
-- `lib/schema.sql` — Database schema
-- `lib/ingestion/` — CourtListener, FJC, RECAP, orchestrator
-
-## Current Architecture Issues
-
-1. **Monolith component**: MyCaseValue.tsx is ~4700 lines — entire wizard, report, pricing, legal pages all in one file
-2. **Single-page app**: No real routing — everything is state-driven within one page component
-3. **Font loading**: Uses render-blocking Google Fonts `<link>` tag, not `next/font`
-4. **Tailwind config**: Still references old design tokens (Newsreader serif, gold colors, cream backgrounds)
-5. **Static fallbacks**: `/api/summary` returns hardcoded values, not from Supabase
-6. **No separate pages**: No /methodology, /districts, /search routes
-7. **Client-only**: Entire app wrapped in `dynamic(..., { ssr: false })` — no SSR benefits
-8. **Loading spinner**: Uses old gold/cream/Newsreader branding (page.tsx lines 20-32)
-
-## Visual Issues (from screenshot)
-- Hero counter shows "0.0M+" instead of "4.2M+" — animated number starting from 0 not animating
-- "yours" italic text looks good in blue
-- Right column floating card looks professional
-- UPL banner present at top ("INFORMATIONAL TOOL ONLY — NOT LEGAL ADVICE")
-- Logo renders correctly with new blue mark
-- Background still has slight cream tint (should be pure #F5F7FA)
-
-## Supabase Schema (confirmed tables)
-- `case_stats` — Core stats per NOS code
-- `outcome_distributions` — Outcome breakdowns per NOS
-- `money_distributions` — Settlement bracket distributions
-- `circuit_stats` — Per-circuit aggregates
-- `state_stats` — Per-state aggregates
-- `trending_case_types` — Trending filings
-- `ingestion_log` — ETL run history
-- `stats_cache` — Cached homepage stats
-- `judge_stats` — Judge-level stats
-- `opinions` — CourtListener opinions
+### Existing Components (modified)
+- `components/MyCaseValue.tsx` — Monolith (updated colors, nav, keyboard shortcuts, a11y)
+- `components/ui/Logo.tsx` — Brand logo (unchanged)
+- `components/sections/TrustBar.tsx` — Trust indicators (unchanged)
+- `components/sections/DataPreviewSection.tsx` — Data preview (unchanged)
+- `components/sections/FaqSection.tsx` — FAQ accordion (unchanged)
+- `components/sections/FinalCtaSection.tsx` — Final CTA (unchanged)
 
 ## Dependencies
 ```
 next: ^14.2.0
 react: ^18.3.0
+recharts: ^2.15.3 (NEW)
 @supabase/supabase-js: ^2.100.1
 stripe: ^21.0.1
 node-cron: ^4.2.1
@@ -88,28 +113,24 @@ tailwindcss: ^3.4.0
 typescript: 5.9.3
 ```
 
-Missing: recharts (needed for charts), next/font (should replace <link> tags)
+## Remaining Work
+- Phase 4: Full search experience with URL state filters
+- Phase 6: Case detail page with chart integration
+- Phase 7: /districts pages
+- Phase 9: Stripe pricing page visual overhaul
+- Phase 10: Full EN/ES bilingual audit
+- Phase 13: Dynamic imports for charts, image optimization
+- Phase 14: Full QA (Lighthouse audit, cross-browser testing)
+- Phase 15: Final deployment verification
 
-## i18n System
-- Context-based (not route-based /en/ /es/)
-- `TRANSLATIONS` object in `lib/i18n.ts` with EN and ES keys
-- Accessed via `const t = TRANSLATIONS[lang]`
-- `lang` state managed in MyCaseValue component
-- Pattern: `{lang === 'es' ? 'Spanish text' : 'English text'}` for inline strings
-
-## Stripe Config
-- Plans: Free basic, $5.99 single, $9.99 unlimited
-- Payment methods: card, paypal (with fallback)
-- Missing env vars: STRIPE_SECRET_KEY, NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, STRIPE_WEBHOOK_SECRET
-
-## Key Priorities for Overhaul
-1. Convert to next/font for Outfit + JetBrains Mono
-2. Extend Tailwind design system with proper tokens
-3. Fix loading spinner to match new brand
-4. Break monolith into proper page routes
-5. Add recharts for data visualization
-6. Build real /methodology, /districts pages
-7. Implement proper search with URL state
-8. Add confidence band / data quality system
-9. Full EN/ES audit
-10. SEO metadata per page
+## Git History
+```
+7fc5f3c Keyboard shortcuts, pricing modal a11y, accessibility improvements
+7b3969c Fix skeleton loading, a11y improvements, methodology footer link
+e102a84 Major overhaul: design system, navigation, charts, methodology, SEO
+8fc4908 Add Stripe badge, mobile optimizations, new PNG icons
+9a0779f Replace emoji icons with SVG, polish feature cards and visuals
+e6e4812 Remove free trial/guide, add legal disclaimers, enhance branding
+1e8b5e8 Complete brand rebrand: blue logo, modern palette, tech aesthetic
+10c4fd2 Elite design overhaul: new logo, fix CSS, add payment methods
+```
