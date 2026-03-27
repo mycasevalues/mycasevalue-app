@@ -1338,22 +1338,10 @@ button:active:not(:disabled) {
 }
 
 /* ============================================================
-   REVEAL-IN ANIMATION — Pure CSS scroll-reveal
+   REVEAL-IN — Content always visible, no animation dependency
    ============================================================ */
-@keyframes revealIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 .reveal-in {
-  animation: revealIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: var(--reveal-delay, 0ms);
+  opacity: 1;
 }
 
 /* ============================================================
@@ -2039,6 +2027,5 @@ button:active:not(:disabled) {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .reveal-in { animation: none !important; opacity: 1 !important; }
   .particle, .hero-orb, .hero-mesh-orb { display: none !important; }
 }

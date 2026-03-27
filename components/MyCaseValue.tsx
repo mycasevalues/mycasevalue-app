@@ -31,14 +31,10 @@ const AGGREGATE_STATE_RATES: Record<string, number> = {
 // REUSABLE UI
 // ============================================================
 
-function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  // Simple wrapper — content always visible, no JS-based reveal
-  // Uses CSS animation for entrance effect without hiding content
-  return (
-    <div className="reveal-in" style={{ animationDelay: `${Math.min(delay, 200)}ms` }}>
-      {children}
-    </div>
-  );
+function Reveal({ children }: { children: React.ReactNode; delay?: number }) {
+  // Simple pass-through wrapper — content always visible
+  // No CSS animation: React re-renders (from timers) reset CSS animations to opacity:0
+  return <>{children}</>;
 }
 
 function Card({ children, glow = false, className = '', style = {} }: { children: React.ReactNode; glow?: boolean; className?: string; style?: React.CSSProperties }) {
