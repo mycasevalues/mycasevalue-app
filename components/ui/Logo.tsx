@@ -24,19 +24,10 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
-          <defs>
-            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#4040F2" />
-              <stop offset="100%" stopColor="#5C5CF5" />
-            </linearGradient>
-          </defs>
-          {/* Rounded square background */}
-          <rect width="48" height="48" rx="12" fill="url(#logo-gradient)" />
-          {/* M + V letterform in white */}
-          <path d="M12 34V18l6 9 6-9v16" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-          <path d="M30 18l5 10 5-10" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.85" />
-          {/* Small dot accent */}
-          <circle cx="40" cy="14" r="2.5" fill="white" opacity="0.6" />
+          {/* Small dot — upper left */}
+          <circle cx="12" cy="9" r="5" fill="#4040F2" />
+          {/* Diagonal capsule / slash */}
+          <line x1="25" y1="43" x2="31" y2="7" stroke="#4040F2" strokeWidth="11" strokeLinecap="round" />
         </svg>
       </div>
 
