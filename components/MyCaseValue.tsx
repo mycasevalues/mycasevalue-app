@@ -2349,9 +2349,9 @@ export default function MyCaseValue() {
         <Reveal delay={680}>
           <div className="mb-6">
             <div className="text-center mb-6">
-              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">REPORT FEATURES</div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>What your report includes</h2>
-              <p className="text-sm text-slate-400 mt-2 max-w-md mx-auto">Free report gives you the basics. Premium adds detailed recovery data, state comparisons, and attorney impact.</p>
+              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'CARACTERÍSTICAS DEL INFORME' : 'REPORT FEATURES'}</div>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Qué incluye tu informe' : 'What your report includes'}</h2>
+              <p className="text-sm text-slate-400 mt-2 max-w-md mx-auto">{lang === 'es' ? 'El informe gratuito te da lo básico. Premium agrega datos detallados de recuperación, comparaciones estatales e impacto del abogado.' : 'Free report gives you the basics. Premium adds detailed recovery data, state comparisons, and attorney impact.'}</p>
             </div>
             <ReportFeaturesGrid />
             <div className="text-center">
@@ -2367,8 +2367,8 @@ export default function MyCaseValue() {
         <Reveal delay={700}>
           <div className="mb-6">
             <div className="text-center mb-6">
-              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">KNOW BEFORE YOU GO</div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>Key stats by case type</h2>
+              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'DATOS CLAVE' : 'KNOW BEFORE YOU GO'}</div>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Estadísticas clave por tipo de caso' : 'Key stats by case type'}</h2>
             </div>
             <CaseTypeStatsPreview />
           </div>
@@ -2378,8 +2378,8 @@ export default function MyCaseValue() {
         <Reveal delay={720}>
           <div className="mb-6">
             <div className="text-center mb-6">
-              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">FINANCIAL REALITY</div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>Legal costs: What to expect</h2>
+              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'REALIDAD FINANCIERA' : 'FINANCIAL REALITY'}</div>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Costos legales: Qué esperar' : 'Legal costs: What to expect'}</h2>
             </div>
             <LegalCostComparison />
           </div>
@@ -2389,9 +2389,9 @@ export default function MyCaseValue() {
         <Reveal delay={740}>
           <div className="mb-6">
             <div className="text-center mb-6">
-              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">STATE DATA</div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>Your state at a glance</h2>
-              <p className="text-sm text-slate-400 mt-2">Click your state to see local insights</p>
+              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'DATOS POR ESTADO' : 'STATE DATA'}</div>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Tu estado de un vistazo' : 'Your state at a glance'}</h2>
+              <p className="text-sm text-slate-400 mt-2">{lang === 'es' ? 'Haz clic en tu estado para ver datos locales' : 'Click your state to see local insights'}</p>
             </div>
             <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm" style={{ maxHeight: '500px', overflow: 'auto' }}>
               <USMap stateRates={AGGREGATE_STATE_RATES} onStateClick={(s) => { setStateCode(s); go(1); }} />
@@ -3757,7 +3757,7 @@ export default function MyCaseValue() {
               {/* Attorney impact */}
               <Reveal delay={220}>
                 <Card>
-                  <SectionLabel>Does having a lawyer help?</SectionLabel>
+                  <SectionLabel>{lang === 'es' ? '¿Ayuda tener abogado?' : 'Does having a lawyer help?'}</SectionLabel>
                   <div className="flex gap-3 mb-3">
                     <div className="flex-1 p-4 rounded-xl text-center" style={{ background: '#CCFBF1' }}>
                       <div className="text-[10px] font-bold" style={{ color: '#0D9488' }}>WITH ATTORNEY</div>
@@ -3826,7 +3826,7 @@ export default function MyCaseValue() {
               {/* Timeline */}
               <Reveal delay={280}>
                 <Card>
-                  <SectionLabel>How long does this usually take?</SectionLabel>
+                  <SectionLabel>{lang === 'es' ? '¿Cuánto tiempo toma normalmente?' : 'How long does this usually take?'}</SectionLabel>
                   {(d.tl || []).map((t: any, i: number) => {
                     const active = i <= timelineStep;
                     return (
@@ -3880,7 +3880,7 @@ export default function MyCaseValue() {
               {/* Outcome distribution */}
               <Reveal delay={340}>
                 <Card>
-                  <SectionLabel>What happened in similar cases</SectionLabel>
+                  <SectionLabel>{lang === 'es' ? 'Qué pasó en casos similares' : 'What happened in similar cases'}</SectionLabel>
                   {[
                     { l: 'Win at trial', p: Math.round(d.wr * 0.4), c: '#0D9488' },
                     { l: 'Settle favorably', p: d.sp, c: '#2563EB' },
@@ -3915,7 +3915,7 @@ export default function MyCaseValue() {
               {/* Settlement timing */}
               <Reveal delay={440}>
                 <Card>
-                  <SectionLabel>When do cases usually settle?</SectionLabel>
+                  <SectionLabel>{lang === 'es' ? '¿Cuándo se resuelven los casos?' : 'When do cases usually settle?'}</SectionLabel>
                   <div className="flex gap-2">
                     {[{ p: 15, l: '0-3' }, { p: 35, l: '3-6' }, { p: 30, l: '6-12' }, { p: 20, l: '12+' }].map((x, i) => (
                       <div key={i} className="flex-1 text-center">
@@ -3954,7 +3954,7 @@ export default function MyCaseValue() {
               {/* Action plan */}
               <Reveal delay={520}>
                 <Card>
-                  <SectionLabel>What most people do next</SectionLabel>
+                  <SectionLabel>{lang === 'es' ? 'Lo que hace la mayoría después' : 'What most people do next'}</SectionLabel>
                   {[
                     { n: 1, t: 'Talked to a lawyer (most offer a free first meeting)' },
                     { n: 2, t: 'Checked if they still had time to file (there are deadlines)' },
@@ -4165,7 +4165,7 @@ export default function MyCaseValue() {
           {/* Poll */}
           <Reveal delay={660}>
             <Card className="p-6">
-              <SectionLabel>What would you do next?</SectionLabel>
+              <SectionLabel>{lang === 'es' ? '¿Qué harías después?' : 'What would you do next?'}</SectionLabel>
               <div className="text-[13px] text-slate-400 mb-3">Anonymous — not stored or linked to you.</div>
               {pollVote ? (
                 <div className="px-5 py-4 rounded-xl text-center" style={{ background: '#CCFBF1' }}>
