@@ -39,21 +39,34 @@ function Reveal({ children }: { children: React.ReactNode; delay?: number }) {
 
 function Card({ children, glow = false, className = '', style = {} }: { children: React.ReactNode; glow?: boolean; className?: string; style?: React.CSSProperties }) {
   return (
-    <div className={`card-bg bg-white rounded-2xl border border-slate-100 mb-3 p-7 transition-all duration-300 ${glow ? 'animate-glow-pulse' : ''} ${className}`}
-      style={{ boxShadow: glow ? '0 2px 8px rgba(184,146,58,.06), 0 12px 40px rgba(11,18,33,.06)' : '0 1px 3px rgba(11,18,33,.03), 0 8px 24px rgba(11,18,33,.04)', ...style }}>
+    <div className={`card-bg rounded-2xl border mb-3 p-7 transition-all duration-300 ${glow ? 'animate-glow-pulse' : ''} ${className}`}
+      style={{
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(253,251,247,0.8) 100%)',
+        borderColor: 'rgba(226,232,240,0.6)',
+        boxShadow: glow
+          ? '0 2px 8px rgba(184,146,58,.08), 0 12px 40px rgba(11,18,33,.06), inset 0 1px 0 rgba(255,255,255,0.8)'
+          : '0 1px 3px rgba(11,18,33,.02), 0 8px 28px rgba(11,18,33,.04), inset 0 1px 0 rgba(255,255,255,0.8)',
+        ...style,
+      }}>
       {children}
     </div>
   );
 }
 
 function GoldRule() {
-  return <div className="gold-rule my-6" />;
+  return (
+    <div className="flex items-center gap-4 my-8">
+      <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(184,146,58,0.3), rgba(184,146,58,0.1))' }} />
+      <div className="w-1.5 h-1.5 rotate-45" style={{ background: '#B8923A', opacity: 0.4 }} />
+      <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, rgba(184,146,58,0.1), rgba(184,146,58,0.3), transparent)' }} />
+    </div>
+  );
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-body text-[11px] font-bold text-slate-400 tracking-[2.5px] uppercase mb-4">
-      {children}
+    <div className="font-body text-[10px] font-bold tracking-[3px] uppercase mb-5" style={{ color: '#94A3B8', letterSpacing: '3px' }}>
+      <span style={{ background: 'linear-gradient(90deg, #94A3B8, #B8923A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{children}</span>
     </div>
   );
 }
@@ -66,7 +79,7 @@ function Stat({ value, label, color, large = false, dark = false }: { value: str
       boxShadow: dark ? `0 2px 12px ${color}08` : `0 2px 12px ${color}06`,
     }}>
       <div className="font-display font-bold" style={{
-        fontSize: large ? 44 : 26,
+        fontSize: large ? 48 : 30,
         color,
         letterSpacing: large ? '-1px' : '-0.5px',
         lineHeight: 1,
@@ -223,8 +236,12 @@ function LockedPreview({ children, onUnlock, label }: { children: React.ReactNod
 function Collapsible({ title, badge, defaultOpen = false, children }: { title: string; badge?: string | number; defaultOpen?: boolean; children: React.ReactNode }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="card-bg bg-white rounded-2xl border border-slate-100 overflow-hidden mb-3 transition-all duration-300"
-      style={{ boxShadow: open ? '0 4px 20px rgba(11,18,33,.06)' : '0 1px 3px rgba(11,18,33,.03)' }}>
+    <div className="card-bg rounded-2xl border overflow-hidden mb-3 transition-all duration-300"
+      style={{
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(253,251,247,0.8) 100%)',
+        borderColor: open ? 'rgba(184,146,58,0.15)' : 'rgba(226,232,240,0.6)',
+        boxShadow: open ? '0 4px 24px rgba(11,18,33,.07), inset 0 1px 0 rgba(255,255,255,0.8)' : '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)',
+      }}>
       <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-4.5 bg-transparent border-none cursor-pointer text-left group" aria-expanded={open}
         style={{ padding: '18px 24px' }}>
         <div className="flex items-center gap-2.5">
@@ -250,12 +267,12 @@ function Collapsible({ title, badge, defaultOpen = false, children }: { title: s
   );
 }
 
-function WizardProgress({ step, labels }: { step: number; labels?: string[] }) {
-  const defaultLabels = labels || ['Situation', 'Details', 'Confirm', 'Email', 'Report'];
+function WizardProgress({ step, labels, lang = 'en' }: { step: number; labels?: string[]; lang?: string }) {
+  const defaultLabels = labels || (lang === 'es' ? ['Situación', 'Detalles', 'Confirmar', 'Correo', 'Informe'] : ['Situation', 'Details', 'Confirm', 'Email', 'Report']);
   return (
     <div className="mb-8 no-print">
       <div className="flex items-center gap-4 mb-2">
-        <span className="text-sm font-bold" style={{ color: '#B8923A' }}>Step {step}/5</span>
+        <span className="text-sm font-bold" style={{ color: '#B8923A' }}>{lang === 'es' ? `Paso ${step}/5` : `Step ${step}/5`}</span>
         <div className="flex gap-1.5 flex-1">
           {[1, 2, 3, 4, 5].map(i => (
             <div key={i} className="flex-1 h-2 rounded-full transition-all duration-500 relative overflow-hidden"
@@ -1419,8 +1436,8 @@ export default function MyCaseValue() {
                 </div>
               </button>
               {isPremium && <span className="text-[11px] font-bold px-3 py-1 rounded-full hidden sm:block" style={{ color: '#B8923A', background: '#F3EBDA' }}>{t.premium}</span>}
-              <button onClick={reset} className="text-sm font-semibold px-4 sm:px-5 py-2.5 text-white border-none rounded-full cursor-pointer no-print"
-                style={{ background: 'linear-gradient(135deg, #B8923A, #C9A54E)' }}>
+              <button onClick={reset} className="text-sm font-semibold px-5 sm:px-6 py-2.5 text-white border-none rounded-full cursor-pointer no-print hover:scale-[1.03] active:scale-[0.97] transition-all duration-200"
+                style={{ background: 'linear-gradient(135deg, #B8923A, #C9A54E)', boxShadow: '0 2px 12px rgba(184,146,58,.25)' }}>
                 {t.new_report}
               </button>
             </div>
@@ -1429,8 +1446,8 @@ export default function MyCaseValue() {
 
         <main id="main-content" className="max-w-[1140px] mx-auto px-4 sm:px-6 relative z-10" role="main">
           {/* UPL Banner */}
-          <div className="text-center py-1.5 border-b no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F020' }}>
-            <span className="text-[10px] sm:text-[11px] font-semibold text-slate-400 tracking-[1.5px]">{UPL.banner}</span>
+          <div className="text-center py-2 border-b no-print" style={{ borderColor: darkMode ? '#1E293B' : 'rgba(226,232,240,0.3)', background: darkMode ? 'rgba(30,41,59,0.3)' : 'rgba(248,250,252,0.5)' }}>
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: darkMode ? '#64748B' : '#94A3B8' }}>{UPL.banner}</span>
           </div>
 
           {children}
@@ -1667,7 +1684,7 @@ export default function MyCaseValue() {
   // ============================================================
   if (step === 0) return (
     <Shell>
-      <div className="hero-bg hero-parallax py-8 sm:py-16 pb-8 relative overflow-hidden">
+      <div className="hero-bg hero-parallax py-12 sm:py-20 pb-10 relative overflow-hidden noise-overlay">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
         <div className="hero-orb hero-orb-2" />
@@ -1692,7 +1709,7 @@ export default function MyCaseValue() {
           } as any} />
         ))}
 
-        <div className="hero-grid grid gap-8 lg:gap-16" style={{ gridTemplateColumns: '1fr 420px' }}>
+        <div className="hero-grid grid gap-8 lg:gap-20" style={{ gridTemplateColumns: '1fr 460px' }}>
           <div className="relative z-10">
             <Reveal>
               {/* Top badges row */}
@@ -1709,7 +1726,7 @@ export default function MyCaseValue() {
                 </div>
               </div>
 
-              <h1 className="font-display text-[40px] sm:text-[50px] lg:text-[60px] leading-[1.0] font-extrabold mb-6" style={{ letterSpacing: '-2.5px' }}>
+              <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[66px] leading-[0.95] font-extrabold mb-8" style={{ letterSpacing: '-3px' }}>
                 {t.hero_title_1}<br />
                 {t.hero_title_2}{' '}
                 <span className="text-shimmer" style={{ fontStyle: 'italic' }}>{t.hero_title_3}</span>
@@ -1719,21 +1736,21 @@ export default function MyCaseValue() {
               {/* Animated hero stats — 3 columns with visual dividers */}
               <div className="flex gap-6 sm:gap-10 mb-8 flex-wrap">
                 <div className="stat-glow" style={{ '--stat-color': '#0B1221' } as any}>
-                  <div className="text-3xl sm:text-4xl font-display font-bold text-slate-700 counter-animate" style={{ letterSpacing: '-1px' }}>
+                  <div className="text-4xl sm:text-5xl font-display font-bold text-slate-700 counter-animate" style={{ letterSpacing: '-1.5px' }}>
                     {heroCounterDone ? <><AnimatedNumber value={4.2} decimals={1} />M+</> : '—'}
                   </div>
                   <div className="text-xs text-slate-500 mt-1.5 font-medium">{lang === 'es' ? 'Casos analizados' : 'Federal cases analyzed'}</div>
                 </div>
                 <div className="w-px self-stretch bg-slate-200" style={{ opacity: 0.5 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
-                  <div className="text-3xl sm:text-4xl font-display font-bold counter-animate" style={{ letterSpacing: '-1px', color: '#0D9488' }}>
+                  <div className="text-4xl sm:text-5xl font-display font-bold counter-animate" style={{ letterSpacing: '-1.5px', color: '#0D9488' }}>
                     {heroCounterDone ? '50+' : '—'}
                   </div>
                   <div className="text-xs text-slate-500 mt-1.5 font-medium">{lang === 'es' ? 'Tipos de caso' : 'Case types covered'}</div>
                 </div>
                 <div className="w-px self-stretch bg-slate-200" style={{ opacity: 0.5 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#6558D5' } as any}>
-                  <div className="text-3xl sm:text-4xl font-display font-bold counter-animate" style={{ letterSpacing: '-1px', color: '#6558D5' }}>
+                  <div className="text-4xl sm:text-5xl font-display font-bold counter-animate" style={{ letterSpacing: '-1.5px', color: '#6558D5' }}>
                     {heroCounterDone ? '2min' : '—'}
                   </div>
                   <div className="text-xs text-slate-500 mt-1.5 font-medium">{lang === 'es' ? 'Para tu informe' : 'To your report'}</div>
@@ -1774,7 +1791,7 @@ export default function MyCaseValue() {
                 </div>
               </div>
 
-              <p className="text-[16px] sm:text-[18px] text-slate-500 max-w-lg leading-relaxed mb-8">
+              <p className="text-[17px] sm:text-[19px] text-slate-500 max-w-xl leading-[1.7] mb-10">
                 {t.hero_sub_pre} <strong className="text-slate-700 font-data">{totalDisplay}</strong> {t.hero_sub_post}
               </p>
 
@@ -1801,8 +1818,8 @@ export default function MyCaseValue() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <button onClick={() => go(1)}
-                  className="cta-glow btn-primary magnetic-btn ripple-effect px-8 py-4 text-[15px] font-semibold text-white border-none rounded-2xl cursor-pointer"
-                  style={{ background: 'linear-gradient(135deg, #B8923A, #C9A54E)', boxShadow: '0 4px 24px rgba(184,146,58,.3)' }}>
+                  className="cta-glow btn-primary magnetic-btn ripple-effect px-10 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform"
+                  style={{ background: 'linear-gradient(135deg, #B8923A, #C9A54E)', boxShadow: '0 4px 24px rgba(184,146,58,.3)', padding: '18px 40px' }}>
                   {t.hero_cta}
                 </button>
                 <button onClick={demo}
@@ -1812,10 +1829,10 @@ export default function MyCaseValue() {
               </div>
 
               {/* Social proof inline */}
-              <div className="flex items-center gap-3 mt-6">
+              <div className="flex items-center gap-3 mt-8">
                 <div className="flex -space-x-2">
                   {['#B8923A', '#0D9488', '#6558D5', '#2563EB', '#E87461'].map((c, i) => (
-                    <div key={i} className="w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-bold text-white border-2 border-white"
+                    <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white border-2 border-white shadow-sm"
                       style={{ background: c, zIndex: 5 - i }}>
                       {['J', 'M', 'K', 'S', 'A'][i]}
                     </div>
@@ -1843,21 +1860,32 @@ export default function MyCaseValue() {
                   <rect x="45" y="85" width="10" height="5" />
                 </svg>
               </div>
-              <Card glow className="relative overflow-hidden">
-                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #B8923A, #0D9488, #6558D5)' }} />
+              <Card glow className="relative overflow-hidden" style={{ padding: '32px' }}>
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #B8923A, #C9A54E, #0D9488, #6558D5, #B8923A)', backgroundSize: '200% 100%', animation: 'shimmerGold 4s ease infinite' }} />
                 <SectionLabel>{t.select_situation}</SectionLabel>
-                <div className="grid grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-2 gap-3">
                   {SITS.map(si => (
                     <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
-                      className="category-card p-4 card-bg bg-white border-[1.5px] border-slate-100 rounded-xl cursor-pointer text-left group"
-                      onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
-                      onMouseLeave={e => e.currentTarget.style.borderColor = '#F1F5F9'}>
-                      <div className="flex items-start gap-3">
-                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110" style={{ background: `${si.color}12` }}>
-                          <CategoryIcon name={si.icon} color={si.color} size={20} />
+                      className="category-card p-5 card-bg rounded-xl cursor-pointer text-left group border-[1.5px] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
+                      style={{
+                        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(253,251,247,0.8) 100%)',
+                        borderColor: si.color + '20',
+                        boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)',
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.borderColor = si.color + '40';
+                        e.currentTarget.style.boxShadow = `0 4px 16px ${si.color}15, inset 0 1px 0 rgba(255,255,255,0.8)`;
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.borderColor = si.color + '20';
+                        e.currentTarget.style.boxShadow = '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)';
+                      }}>
+                      <div className="flex items-start gap-3.5">
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-[1.15] group-hover:rotate-3" style={{ background: `${si.color}15`, boxShadow: `0 2px 8px ${si.color}10` }}>
+                          <CategoryIcon name={si.icon} color={si.color} size={22} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-[14px] truncate">{si.label}</div>
+                          <div className="font-semibold text-[14px] truncate group-hover:text-[15px] transition-all" style={{ color: si.color }}>{si.label}</div>
                           <div className="text-[11px] text-slate-400 mt-0.5 line-clamp-1">{si.sub}</div>
                         </div>
                       </div>
@@ -2533,7 +2561,7 @@ export default function MyCaseValue() {
   if (step === 1) return (
     <Shell>
       <div className="max-w-xl mx-auto py-8 wizard-step-enter">
-        <WizardProgress step={1} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <Reveal>
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(184,146,58,0.1), rgba(201,165,78,0.05))' }}>
@@ -2570,7 +2598,7 @@ export default function MyCaseValue() {
   if (step === 2 && sit) return (
     <Shell>
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={2} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <div className="flex items-center gap-3 mb-2">
@@ -2603,7 +2631,7 @@ export default function MyCaseValue() {
   if (step === 3) return (
     <Shell>
       <div className="max-w-xl mx-auto py-6 page-enter">
-        <WizardProgress step={3} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <WizardProgress step={3} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6">{t.your_details}</h2>
@@ -2699,7 +2727,7 @@ export default function MyCaseValue() {
   if (step === 4) return (
     <Shell>
       <div className="max-w-xl mx-auto py-6 page-enter">
-        <WizardProgress step={4} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <WizardProgress step={4} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <Card glow>

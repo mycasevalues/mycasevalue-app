@@ -68,19 +68,30 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: linear-gradient(180deg,
+    rgba(253,251,247,0) 0%,
+    rgba(184,146,58,0.02) 50%,
+    rgba(253,251,247,0) 100%);
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--gold-bright), var(--gold));
   border-radius: 100px;
   transition: all 0.3s ease;
+  box-shadow: inset 0 0 8px rgba(184, 146, 58, 0.1);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, var(--gold), var(--gold-muted));
-  box-shadow: 0 0 12px rgba(184, 146, 58, 0.3);
+  box-shadow: 0 0 12px rgba(184, 146, 58, 0.3), inset 0 0 8px rgba(184, 146, 58, 0.2);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: linear-gradient(180deg,
+    rgba(11,18,33,0) 0%,
+    rgba(184,146,58,0.03) 50%,
+    rgba(11,18,33,0) 100%);
 }
 
 /* ============================================================
@@ -211,11 +222,19 @@ h3 {
 
 .card-bg {
   position: relative;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  background: linear-gradient(135deg, #FDFBF7 0%, #FEFCF8 100%);
+  border: 1px solid rgba(184, 146, 58, 0.06);
+  box-shadow: 0 2px 8px rgba(11, 18, 33, 0.03),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card-bg:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(11, 18, 33, 0.06), 0 12px 32px rgba(11, 18, 33, 0.04);
+  transform: translateY(-4px);
+  box-shadow: 0 2px 12px rgba(11, 18, 33, 0.04),
+              0 12px 40px rgba(11, 18, 33, 0.08),
+              0 0 0 1px rgba(184, 146, 58, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(184, 146, 58, 0.12);
 }
 
 .dark .card-lift:hover {
@@ -293,11 +312,19 @@ h3 {
    DECORATIVE ELEMENTS & UTILITY CLASSES
    ============================================================ */
 .gold-rule {
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-bright) 50%, var(--gold) 70%, transparent 100%);
-  opacity: 0.4;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(184,146,58,0.2) 15%,
+    var(--gold) 30%,
+    var(--gold-bright) 50%,
+    var(--gold) 70%,
+    rgba(184,146,58,0.2) 85%,
+    transparent 100%);
+  opacity: 0.6;
   animation: shimmerGold 4s ease-in-out infinite;
   position: relative;
+  box-shadow: 0 0 12px rgba(184,146,58,0.12);
 }
 .gold-rule::after {
   content: '';
@@ -375,43 +402,53 @@ h3 {
   background-size: 200px;
 }
 
-/* Hero background glow */
+/* Hero background glow - premium mesh with depth */
 .hero-bg {
   position: relative;
-  background: linear-gradient(180deg,
+  background: linear-gradient(135deg,
     #FDFBF7 0%,
-    #FEF9F0 40%,
-    #FFF8EB 100%);
+    #F8F3E6 25%,
+    #F5EDD8 50%,
+    #FDF7EE 75%,
+    #FDFBF7 100%);
+  background-size: 400% 400%;
+  padding: 80px 0;
+  overflow: hidden;
 }
 .dark .hero-bg {
-  background: linear-gradient(180deg,
+  background: linear-gradient(135deg,
     #0B0F1C 0%,
-    #0F1729 50%,
-    #131B2E 100%);
+    #0F1729 25%,
+    #131B2E 50%,
+    #0D1420 75%,
+    #0B0F1C 100%);
+  background-size: 400% 400%;
 }
 .hero-bg::before {
   content: '';
   position: absolute;
-  top: -80px;
-  right: -100px;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(184,146,58,0.06) 0%, transparent 60%);
+  top: -120px;
+  right: -80px;
+  width: 850px;
+  height: 850px;
+  background: radial-gradient(circle, rgba(184,146,58,0.08) 0%, rgba(184,146,58,0.02) 40%, transparent 70%);
   pointer-events: none;
   z-index: 0;
-  filter: blur(40px);
+  filter: blur(50px);
+  animation: meshDrift 20s ease-in-out infinite;
 }
 .hero-bg::after {
   content: '';
   position: absolute;
-  bottom: -120px;
-  left: -60px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(13,148,136,0.04) 0%, transparent 60%);
+  bottom: -150px;
+  left: -80px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(13,148,136,0.06) 0%, rgba(13,148,136,0.01) 50%, transparent 70%);
   pointer-events: none;
   z-index: 0;
-  filter: blur(40px);
+  filter: blur(50px);
+  animation: meshDrift 25s ease-in-out infinite reverse;
 }
 
 /* Testimonial quote styling */
@@ -687,12 +724,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   box-shadow: 0 0 0 4px rgba(184, 146, 58, 0.1);
 }
 
-/* Primary button with shimmer */
+/* Primary button with premium shimmer and lift */
 /* Primary CTA buttons — shimmer effect (only on gold gradient buttons) */
 .btn-primary {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s var(--transition-smooth);
+  transition: all 0.35s var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(184, 146, 58, 0.15);
 }
 
 .btn-primary::after {
@@ -702,8 +740,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.6s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
 
@@ -712,7 +750,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .btn-primary:hover {
-  box-shadow: 0 8px 24px rgba(184, 146, 58, 0.25);
+  transform: scale(1.02);
+  box-shadow: 0 8px 28px rgba(184, 146, 58, 0.35),
+              0 2px 8px rgba(184, 146, 58, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 /* Form inputs with warm glow */
@@ -832,46 +873,61 @@ button:active:not(:disabled) {
   z-index: 0;
 }
 
-/* Floating orbs — hero decoration (static, no animation for perf) */
+/* Floating orbs — hero decoration with ethereal premium feel */
 .hero-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
+  filter: blur(80px);
   pointer-events: none;
   will-change: auto;
+  opacity: 0.6;
 }
 
 .hero-orb-1 {
-  width: 350px;
-  height: 350px;
-  background: rgba(184, 146, 58, 0.07);
-  top: -120px;
-  right: -60px;
+  width: 480px;
+  height: 480px;
+  background: rgba(184, 146, 58, 0.05);
+  top: -180px;
+  right: -120px;
+  animation: orbFloat 28s ease-in-out infinite;
   animation-delay: 0s;
 }
 
 .hero-orb-2 {
-  width: 220px;
-  height: 220px;
-  background: rgba(13, 148, 136, 0.06);
-  bottom: -60px;
-  left: -60px;
-  animation-delay: -5s;
+  width: 340px;
+  height: 340px;
+  background: rgba(13, 148, 136, 0.04);
+  bottom: -120px;
+  left: -100px;
+  animation: orbFloat 32s ease-in-out infinite;
+  animation-delay: -8s;
 }
 
 .hero-orb-3 {
-  width: 160px;
-  height: 160px;
-  background: rgba(101, 88, 213, 0.04);
-  top: 50%;
-  left: 30%;
-  animation-delay: -10s;
+  width: 280px;
+  height: 280px;
+  background: rgba(101, 88, 213, 0.03);
+  top: 40%;
+  left: 20%;
+  animation: orbFloat 26s ease-in-out infinite;
+  animation-delay: -12s;
+}
+
+.hero-orb-4 {
+  width: 350px;
+  height: 350px;
+  background: rgba(168, 85, 247, 0.04);
+  bottom: 5%;
+  right: 10%;
+  animation: orbFloat 30s ease-in-out infinite;
+  animation-delay: -15s;
 }
 
 @keyframes orbFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(16px, -24px) scale(1.08); }
-  66% { transform: translate(-12px, 12px) scale(0.92); }
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(32px, -40px) scale(1.05) rotate(2deg); }
+  50% { transform: translate(20px, 30px) scale(0.98) rotate(-1deg); }
+  75% { transform: translate(-28px, -20px) scale(1.02) rotate(1deg); }
 }
 
 /* Stagger-in for stat items */
@@ -1050,12 +1106,30 @@ button:active:not(:disabled) {
 }
 
 /* ============================================================
-   DARK MODE — premium deep midnight palette
+   DARK MODE — premium deep midnight palette with mesh gradient
    ============================================================ */
 .dark {
   color: #F0F2F5;
-  background: linear-gradient(135deg, #0A0F1C 0%, #0F1529 50%, #0A0D18 100%);
+  background: linear-gradient(135deg,
+    #0A0F1C 0%,
+    #0F1529 25%,
+    #131E38 50%,
+    #0F1424 75%,
+    #0A0F1C 100%);
+  background-size: 400% 400%;
   background-attachment: fixed;
+  position: relative;
+}
+.dark::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(101,88,213,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(13,148,136,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(184,146,58,0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .dark .card-bg {
@@ -1626,20 +1700,22 @@ button:active:not(:disabled) {
   opacity: 0.3;
 }
 
-/* Category card enhanced hover */
+/* Category card — premium with radial glow */
 .category-card {
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(184, 146, 58, 0.05);
 }
 .category-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(184,146,58,0.06) 0%, transparent 50%);
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(184,146,58,0.08) 0%, transparent 65%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
   pointer-events: none;
+  z-index: 1;
 }
 .category-card:hover::before {
   opacity: 1;
@@ -1712,18 +1788,51 @@ button:active:not(:disabled) {
   transition: width 0s, height 0s, opacity 0s;
 }
 
-/* Glass morphism for feature cards */
+/* Wizard progress labels and steps */
+.wizard-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+  margin-top: 8px;
+}
+.step-label {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  color: var(--steel);
+}
+.step-label.active {
+  color: var(--gold-bright);
+  font-weight: 600;
+}
+
+/* Glass morphism for feature cards - premium frosted effect */
 .glass-feature {
-  background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.3) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.6);
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(253,251,247,0.6) 100%);
+  backdrop-filter: blur(32px) saturate(120%);
+  -webkit-backdrop-filter: blur(32px) saturate(120%);
+  border: 1px solid rgba(184,146,58,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06),
+              0 0 0 1px rgba(184,146,58,0.1),
+              inset 0 1px 0 rgba(255,255,255,0.8),
+              inset 0 0 20px rgba(184,146,58,0.05);
+  overflow: hidden;
+}
+.glass-feature::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(184,146,58,0.02) 0%, transparent 100%);
+  pointer-events: none;
 }
 .dark .glass-feature {
-  background: linear-gradient(135deg, rgba(15,23,41,0.7) 0%, rgba(11,18,33,0.3) 100%);
-  border-color: rgba(184,146,58,0.15);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15), inset 0 1px 0 rgba(184,146,58,0.05);
+  background: linear-gradient(135deg, rgba(15,23,41,0.8) 0%, rgba(11,18,33,0.4) 100%);
+  border-color: rgba(184,146,58,0.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25),
+              0 0 0 1px rgba(184,146,58,0.2),
+              inset 0 1px 0 rgba(184,146,58,0.1),
+              inset 0 0 20px rgba(184,146,58,0.03);
 }
 
 /* Animated border gradient */
@@ -1900,22 +2009,111 @@ button:active:not(:disabled) {
   to { background-position: 200% center; }
 }
 
+/* Premium text gradient shimmer with gold tones */
+.text-shimmer-premium {
+  background: linear-gradient(120deg, #B8923A 0%, #E5C87A 25%, #B8923A 50%, #C9A54E 75%, #B8923A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmerPremium 4s ease-in-out infinite;
+}
+@keyframes textShimmerPremium {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* Noise texture overlay for premium feel */
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.015;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating animation for decorative elements */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(1deg); }
+  75% { transform: translateY(4px) rotate(-0.5deg); }
+}
+.float-gentle {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+/* Enhanced pulse glow for important elements */
+@keyframes pulseGlowPremium {
+  0%, 100% { box-shadow: 0 0 20px rgba(184,146,58,0.1); }
+  50% { box-shadow: 0 0 40px rgba(184,146,58,0.2), 0 0 80px rgba(184,146,58,0.05); }
+}
+.pulse-glow {
+  animation: pulseGlowPremium 3s ease-in-out infinite;
+}
+
+/* Slide up entrance animation */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mesh drift animation for background orbs */
+@keyframes meshDrift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(12px, -16px); }
+}
+
+/* Typewriter cursor animation */
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background: linear-gradient(180deg, #B8923A, #C9A54E);
+  margin-left: 4px;
+  vertical-align: baseline;
+  animation: cursorBlink 1s step-end infinite;
+  border-radius: 2px;
+}
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* ============================================================
    VISUAL ENHANCEMENTS v3.0 — More Graphics & Data Viz
    ============================================================ */
 
-/* Animated mini bar chart for hero section */
+/* Animated mini bar chart for hero section — premium edition */
 .hero-mini-chart {
   display: flex;
   align-items: flex-end;
-  gap: 3px;
-  height: 40px;
+  gap: 4px;
+  height: 60px;
 }
 .hero-mini-chart .bar {
-  width: 6px;
-  border-radius: 3px 3px 1px 1px;
-  animation: heroBarGrow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 7px;
+  border-radius: 4px 4px 2px 2px;
+  animation: heroBarGrow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
+  box-shadow: 0 4px 12px rgba(13,148,136,0.2);
+  transition: box-shadow 0.3s ease;
+}
+.hero-mini-chart .bar:nth-child(1) { animation-delay: 0.1s; }
+.hero-mini-chart .bar:nth-child(2) { animation-delay: 0.2s; }
+.hero-mini-chart .bar:nth-child(3) { animation-delay: 0.3s; }
+.hero-mini-chart .bar:nth-child(4) { animation-delay: 0.4s; }
+.hero-mini-chart .bar:nth-child(5) { animation-delay: 0.5s; }
+.hero-mini-chart .bar.emerald:hover {
+  box-shadow: 0 6px 16px rgba(13,148,136,0.4), 0 0 20px rgba(13,148,136,0.2);
 }
 @keyframes heroBarGrow {
   from { height: 0; opacity: 0; }
