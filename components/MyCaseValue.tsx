@@ -32,44 +32,10 @@ const AGGREGATE_STATE_RATES: Record<string, number> = {
 // ============================================================
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) { setVisible(true); return; }
-
-    // Safety fallback — always reveal after 800ms max
-    const fallback = setTimeout(() => setVisible(true), 800);
-
-    if (typeof IntersectionObserver === 'undefined') {
-      setVisible(true);
-      return () => clearTimeout(fallback);
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-          clearTimeout(fallback);
-        }
-      },
-      { threshold: 0.01, rootMargin: '200px' }
-    );
-    observer.observe(el);
-    return () => { observer.disconnect(); clearTimeout(fallback); };
-  }, []);
-
+  // Simple wrapper — content always visible, no JS-based reveal
+  // Uses CSS animation for entrance effect without hiding content
   return (
-    <div
-      ref={ref}
-      className={visible ? 'reveal-in' : ''}
-      style={{
-        opacity: visible ? undefined : 0,
-        animationDelay: visible ? `${Math.min(delay, 200)}ms` : undefined,
-      }}
-    >
+    <div className="reveal-in" style={{ animationDelay: `${Math.min(delay, 200)}ms` }}>
       {children}
     </div>
   );
