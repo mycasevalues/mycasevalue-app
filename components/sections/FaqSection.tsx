@@ -117,7 +117,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
               key={idx}
               className="border rounded-xl overflow-hidden transition-all duration-200"
               style={{
-                borderColor: openIdx === idx ? '#B8923A' : '#E2E8F0',
+                borderColor: openIdx === idx ? '#4040F2' : '#E2E8F0',
                 background: openIdx === idx ? 'linear-gradient(180deg, #FDFBF7, #fff)' : '#fff',
               }}
             >
@@ -131,7 +131,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                 <h3
                   className="text-base sm:text-lg font-semibold font-display"
                   style={{
-                    color: openIdx === idx ? '#B8923A' : '#0B1221',
+                    color: openIdx === idx ? '#4040F2' : '#0B1221',
                     letterSpacing: '-0.5px',
                   }}
                 >
@@ -142,7 +142,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                   height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke={openIdx === idx ? '#B8923A' : '#94A3B8'}
+                  stroke={openIdx === idx ? '#4040F2' : '#94A3B8'}
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -183,8 +183,8 @@ export default function FaqSection({ lang }: FaqSectionProps) {
           <button
             className="text-sm font-semibold rounded-lg px-5 py-2.5 transition-all hover:scale-105"
             style={{
-              color: '#B8923A',
-              background: '#F3EBDA',
+              color: '#4040F2',
+              background: '#E4E5FF',
             }}
           >
             {lang === 'es' ? 'Contacta soporte' : 'Contact support'}

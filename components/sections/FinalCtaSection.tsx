@@ -22,7 +22,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
       >
         <defs>
           <pattern id="dots" x="24" y="24" width="48" height="48" patternUnits="userSpaceOnUse">
-            <circle cx="24" cy="24" r="2" fill="#B8923A" />
+            <circle cx="24" cy="24" r="2" fill="#4040F2" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#dots)" />
@@ -32,7 +32,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
       <div
         className="absolute top-0 right-0 w-96 h-96 opacity-10"
         style={{
-          background: 'radial-gradient(circle, #B8923A, transparent)',
+          background: 'radial-gradient(circle, #4040F2, transparent)',
           filter: 'blur(80px)',
           pointerEvents: 'none',
         }}
@@ -44,7 +44,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
         <div
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-bold tracking-wider"
           style={{
-            background: 'linear-gradient(135deg, #B8923A, #C9A54E)',
+            background: 'linear-gradient(135deg, #4040F2, #5C5CF5)',
             color: '#0B1221',
           }}
         >
@@ -79,7 +79,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
           onClick={onGetStarted}
           className="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-navy-900 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-100 mb-8"
           style={{
-            background: 'linear-gradient(135deg, #B8923A, #C9A54E)',
+            background: 'linear-gradient(135deg, #4040F2, #5C5CF5)',
             color: '#0B1221',
             boxShadow: '0 8px 32px rgba(184, 146, 58, 0.3)',
           }}
