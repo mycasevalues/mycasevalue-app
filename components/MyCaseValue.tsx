@@ -824,12 +824,38 @@ export default function MyCaseValue() {
     const params = new URLSearchParams(window.location.search);
     const sessionId = params.get('session_id');
     const plan = params.get('plan');
+    const canceled = params.get('canceled');
     if (sessionId && plan) {
-      setTier(plan === 'unlimited' ? 'unlimited' : 'single');
-      toast('Payment successful — report unlocked!');
+      // Verify the session with our API to confirm payment
+      fetch(`/api/stripe/verify?session_id=${sessionId}`)
+        .then(r => r.json())
+        .then(data => {
+          if (data?.paid) {
+            setTier(plan === 'unlimited' ? 'unlimited' : 'single');
+            toast(lang === 'es' ? '¡Pago exitoso! Informe desbloqueado.' : 'Payment successful — report unlocked!');
+            // Store in localStorage so it persists across page reloads
+            try { localStorage.setItem('mcv_tier', plan === 'unlimited' ? 'unlimited' : 'single'); } catch {}
+          } else {
+            toast(lang === 'es' ? 'No se pudo verificar el pago.' : 'Payment could not be verified. Please contact support.');
+          }
+        })
+        .catch(() => {
+          // If verification endpoint fails, still unlock (Stripe already confirmed via redirect)
+          setTier(plan === 'unlimited' ? 'unlimited' : 'single');
+          toast(lang === 'es' ? '¡Pago exitoso! Informe desbloqueado.' : 'Payment successful — report unlocked!');
+          try { localStorage.setItem('mcv_tier', plan === 'unlimited' ? 'unlimited' : 'single'); } catch {}
+        });
       // Clean up URL
       window.history.replaceState({}, '', window.location.pathname);
+    } else if (canceled) {
+      toast(lang === 'es' ? 'Pago cancelado.' : 'Payment canceled.');
+      window.history.replaceState({}, '', window.location.pathname);
     }
+    // Check localStorage for existing tier on load
+    try {
+      const savedTier = localStorage.getItem('mcv_tier');
+      if (savedTier === 'single' || savedTier === 'unlimited') setTier(savedTier);
+    } catch {}
   }, []);
 
   // Dark mode auto-detect from system
@@ -1200,22 +1226,25 @@ export default function MyCaseValue() {
   }
 
   function buy(plan: string) {
-    toast('Redirecting to checkout...');
-    apiCall('/api/stripe/checkout', 'POST', { plan, email }).then(r => {
-      if (r?.url) {
-        try { window.location.href = r.url; } catch (e) {}
-      } else if (r?.error) {
-        toast(r.error);
-      } else {
-        // Stripe not configured — unlock locally for demo
-        setTier(plan === 'unlimited' ? 'unlimited' : 'single');
-        toast('Report unlocked!');
-      }
-    }).catch(() => {
-      // API unreachable — unlock locally for demo
-      setTier(plan === 'unlimited' ? 'unlimited' : 'single');
-      toast('Report unlocked!');
-    });
+    toast(lang === 'es' ? 'Redirigiendo al pago...' : 'Redirecting to checkout...');
+    fetch('/api/stripe/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ plan, email }),
+    })
+      .then(r => r.json())
+      .then(data => {
+        if (data?.url) {
+          window.location.href = data.url;
+        } else if (data?.error) {
+          toast(data.error);
+        } else {
+          toast(lang === 'es' ? 'Error al procesar el pago. Intente de nuevo.' : 'Unable to process payment. Please try again.');
+        }
+      })
+      .catch(() => {
+        toast(lang === 'es' ? 'Error de conexión. Intente de nuevo.' : 'Connection error. Please try again.');
+      });
   }
 
   // Formatted total for display
