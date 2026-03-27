@@ -1,10 +1,15 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import AnimatedNumber from './ui/AnimatedNumber';
+import { AnimatedNumber } from './ui/AnimatedNumber';
 import PieChart from './ui/PieChart';
 import { CategoryIcon } from './ui/Icons';
 import USMap from './ui/USMap';
+import { Logo } from './ui/Logo';
+import TrustBar from './sections/TrustBar';
+import DataPreviewSection from './sections/DataPreviewSection';
+import FaqSection from './sections/FaqSection';
+import FinalCtaSection from './sections/FinalCtaSection';
 import {
   SITS, STATES, TIMING_OPTS, AMOUNT_OPTS, ATTORNEY_OPTS,
   OUTCOME_DATA, CIRCUIT_MAP, CIRCUIT_DATA_KEY, CIRCUIT_WIN_RATES, FEE_INFO,
@@ -1376,11 +1381,7 @@ export default function MyCaseValue() {
         <nav className="sticky-nav no-print" role="navigation" aria-label="Main navigation">
           <div className="max-w-[1140px] mx-auto px-4 sm:px-6 flex items-center justify-between py-4">
             <button onClick={reset} className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer" aria-label="MyCaseValue home">
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #B8923A, #C9A54E)' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round"><polyline points="20 6 9 17 4 12" /></svg>
-              </div>
-              <span className="text-xl font-display font-bold" style={{ letterSpacing: '-0.3px' }}>MyCaseValue</span>
+              <Logo size="sm" />
             </button>
             <div className="flex items-center gap-2 sm:gap-3">
               {/* Language toggle — pill style */}
@@ -1849,6 +1850,11 @@ export default function MyCaseValue() {
           {/* Dramatic gradient divider */}
           <div className="my-8 h-1 rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #B8923A 15%, #0D9488 50%, #6558D5 85%, transparent 100%)', boxShadow: '0 4px 20px rgba(184,146,58,0.3), 0 4px 20px rgba(13,148,136,0.2), 0 4px 20px rgba(101,88,213,0.2)' }} />
 
+          {/* Trust Bar — Elite Section */}
+          <Reveal delay={180}>
+            <TrustBar lang={lang} />
+          </Reveal>
+
           {/* Category selector — enhanced */}
           <Reveal delay={200}>
             <div className="relative">
@@ -1907,6 +1913,11 @@ export default function MyCaseValue() {
             </div>
           </Reveal>
         </div>
+
+        {/* Data Preview Section — Elite Section */}
+        <Reveal delay={300}>
+          <DataPreviewSection lang={lang} />
+        </Reveal>
 
         {/* Stats bar */}
         <Reveal delay={350}>
@@ -2541,6 +2552,16 @@ export default function MyCaseValue() {
               <USMap stateRates={AGGREGATE_STATE_RATES} onStateClick={(s) => { setStateCode(s); go(1); }} />
             </div>
           </div>
+        </Reveal>
+
+        {/* FAQ Section — Elite Section */}
+        <Reveal delay={760}>
+          <FaqSection lang={lang} />
+        </Reveal>
+
+        {/* Final CTA Section — Elite Section */}
+        <Reveal delay={780}>
+          <FinalCtaSection lang={lang} onGetStarted={() => go(1)} />
         </Reveal>
 
       </div>

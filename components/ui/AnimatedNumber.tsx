@@ -1,35 +1,77 @@
-'use client';
+'use client'
+import { useEffect, useRef, useState } from 'react'
 
-import { useEffect, useRef } from 'react';
+interface AnimatedNumberProps {
+  value: number
+  prefix?: string
+  suffix?: string
+  duration?: number
+  decimals?: number
+}
 
-export default function AnimatedNumber({ value, suffix = '', decimals = 0, duration = 1200 }) {
-  const ref = useRef(null);
-  const raf = useRef(null);
+const easeOutCubic = (t: number): number => {
+  return 1 - Math.pow(1 - t, 3)
+}
+
+export function AnimatedNumber({
+  value,
+  prefix = '',
+  suffix = '',
+  duration = 2000,
+  decimals = 0,
+}: AnimatedNumberProps) {
+  const [displayValue, setDisplayValue] = useState(0)
+  const elementRef = useRef<HTMLSpanElement>(null)
+  const animationRef = useRef<number>(0)
 
   useEffect(() => {
-    const target = typeof value === 'number' ? value : parseFloat(value) || 0;
-    let start = null;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            let startTime: number
+            const animate = (currentTime: number) => {
+              if (!startTime) startTime = currentTime
+              const elapsed = currentTime - startTime
+              const progress = Math.min(elapsed / duration, 1)
+              const easedProgress = easeOutCubic(progress)
+              const current = Math.floor(value * easedProgress * Math.pow(10, decimals)) / Math.pow(10, decimals)
 
-    function animate(ts) {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 4); // ease-out quart
-      const current = eased * target;
+              setDisplayValue(current)
 
-      if (ref.current) {
-        ref.current.textContent = decimals > 0
-          ? current.toFixed(decimals) + suffix
-          : Math.round(current).toLocaleString() + suffix;
-      }
+              if (progress < 1) {
+                animationRef.current = requestAnimationFrame(animate)
+              }
+            }
 
-      if (progress < 1) {
-        raf.current = requestAnimationFrame(animate);
-      }
+            animationRef.current = requestAnimationFrame(animate)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current)
     }
 
-    raf.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(raf.current);
-  }, [value, suffix, decimals, duration]);
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+      observer.disconnect()
+    }
+  }, [value, duration, decimals])
 
-  return <span ref={ref}>{'0' + suffix}</span>;
+  return (
+    <span ref={elementRef}>
+      {prefix}
+      {displayValue.toLocaleString('en-US', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      })}
+      {suffix}
+    </span>
+  )
 }
