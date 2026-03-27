@@ -1736,24 +1736,24 @@ export default function MyCaseValue() {
               {/* Animated hero stats — 3 columns with visual dividers */}
               <div className="flex gap-6 sm:gap-10 mb-8 flex-wrap">
                 <div className="stat-glow" style={{ '--stat-color': '#0B1221' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-bold text-slate-700 counter-animate" style={{ letterSpacing: '-1.5px' }}>
+                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#0B1221', textShadow: '0 2px 8px rgba(11,18,33,0.15)' }}>
                     {heroCounterDone ? <><AnimatedNumber value={4.2} decimals={1} />M+</> : '—'}
                   </div>
-                  <div className="text-xs text-slate-500 mt-1.5 font-medium">{lang === 'es' ? 'Casos analizados' : 'Federal cases analyzed'}</div>
+                  <div className="text-xs text-slate-600 mt-1.5 font-semibold">{lang === 'es' ? 'Casos analizados' : 'Federal cases analyzed'}</div>
                 </div>
-                <div className="w-px self-stretch bg-slate-200" style={{ opacity: 0.5 }} />
+                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.6 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-bold counter-animate" style={{ letterSpacing: '-1.5px', color: '#0D9488' }}>
+                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#0D9488', textShadow: '0 2px 12px rgba(13,148,136,0.25)' }}>
                     {heroCounterDone ? '50+' : '—'}
                   </div>
-                  <div className="text-xs text-slate-500 mt-1.5 font-medium">{lang === 'es' ? 'Tipos de caso' : 'Case types covered'}</div>
+                  <div className="text-xs text-slate-600 mt-1.5 font-semibold">{lang === 'es' ? 'Tipos de caso' : 'Case types covered'}</div>
                 </div>
-                <div className="w-px self-stretch bg-slate-200" style={{ opacity: 0.5 }} />
+                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6558D5, transparent)', opacity: 0.6 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#6558D5' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-bold counter-animate" style={{ letterSpacing: '-1.5px', color: '#6558D5' }}>
+                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#6558D5', textShadow: '0 2px 12px rgba(101,88,213,0.25)' }}>
                     {heroCounterDone ? '2min' : '—'}
                   </div>
-                  <div className="text-xs text-slate-500 mt-1.5 font-medium">{lang === 'es' ? 'Para tu informe' : 'To your report'}</div>
+                  <div className="text-xs text-slate-600 mt-1.5 font-semibold">{lang === 'es' ? 'Para tu informe' : 'To your report'}</div>
                 </div>
               </div>
 
@@ -1846,6 +1846,9 @@ export default function MyCaseValue() {
             </Reveal>
           </div>
 
+          {/* Dramatic gradient divider */}
+          <div className="my-8 h-1 rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #B8923A 15%, #0D9488 50%, #6558D5 85%, transparent 100%)', boxShadow: '0 4px 20px rgba(184,146,58,0.3), 0 4px 20px rgba(13,148,136,0.2), 0 4px 20px rgba(101,88,213,0.2)' }} />
+
           {/* Category selector — enhanced */}
           <Reveal delay={200}>
             <div className="relative">
@@ -1868,25 +1871,28 @@ export default function MyCaseValue() {
                     <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
                       className="category-card p-5 card-bg rounded-xl cursor-pointer text-left group border-[1.5px] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
                       style={{
-                        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(253,251,247,0.8) 100%)',
-                        borderColor: si.color + '20',
-                        boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)',
+                        background: `linear-gradient(180deg, ${si.color}20 0%, ${si.color}10 100%)`,
+                        borderColor: si.color + '40',
+                        borderLeft: `3px solid ${si.color}`,
+                        boxShadow: `0 4px 20px ${si.color}20, inset 0 1px 0 rgba(255,255,255,0.8)`,
                       }}
                       onMouseEnter={e => {
-                        e.currentTarget.style.borderColor = si.color + '40';
-                        e.currentTarget.style.boxShadow = `0 4px 16px ${si.color}15, inset 0 1px 0 rgba(255,255,255,0.8)`;
+                        e.currentTarget.style.borderColor = si.color + '60';
+                        e.currentTarget.style.boxShadow = `0 8px 30px ${si.color}30, inset 0 1px 0 rgba(255,255,255,0.8)`;
+                        e.currentTarget.style.background = `linear-gradient(180deg, ${si.color}30 0%, ${si.color}15 100%)`;
                       }}
                       onMouseLeave={e => {
-                        e.currentTarget.style.borderColor = si.color + '20';
-                        e.currentTarget.style.boxShadow = '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)';
+                        e.currentTarget.style.borderColor = si.color + '40';
+                        e.currentTarget.style.boxShadow = `0 4px 20px ${si.color}20, inset 0 1px 0 rgba(255,255,255,0.8)`;
+                        e.currentTarget.style.background = `linear-gradient(180deg, ${si.color}20 0%, ${si.color}10 100%)`;
                       }}>
                       <div className="flex items-start gap-3.5">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-[1.15] group-hover:rotate-3" style={{ background: `${si.color}15`, boxShadow: `0 2px 8px ${si.color}10` }}>
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-[1.15] group-hover:rotate-3" style={{ background: `${si.color}30`, boxShadow: `0 4px 12px ${si.color}25` }}>
                           <CategoryIcon name={si.icon} color={si.color} size={22} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-[14px] truncate group-hover:text-[15px] transition-all" style={{ color: si.color }}>{si.label}</div>
-                          <div className="text-[11px] text-slate-400 mt-0.5 line-clamp-1">{si.sub}</div>
+                          <div className="font-extrabold text-[15px] truncate group-hover:text-[16px] transition-all" style={{ color: si.color, textShadow: `0 1px 3px ${si.color}10` }}>{si.label}</div>
+                          <div className="text-[11px] text-slate-500 mt-0.5 line-clamp-1 font-medium">{si.sub}</div>
                         </div>
                       </div>
                     </button>
@@ -1906,14 +1912,14 @@ export default function MyCaseValue() {
         <Reveal delay={350}>
           <div className="stats-grid grid grid-cols-2 sm:grid-cols-4 gap-3 my-6">
             {[
-              { n: totalDisplay, l: t.stat_outcomes },
-              { n: '20', l: t.stat_types },
-              { n: '50+', l: t.stat_years },
-              { n: lang === 'es' ? 'Gratis' : 'Free', l: t.stat_free },
+              { n: totalDisplay, l: t.stat_outcomes, color: '#B8923A' },
+              { n: '20', l: t.stat_types, color: '#0D9488' },
+              { n: '50+', l: t.stat_years, color: '#2563EB' },
+              { n: lang === 'es' ? 'Gratis' : 'Free', l: t.stat_free, color: '#6558D5' },
             ].map((x, i) => (
-              <div key={i} className="text-center py-4 px-3 card-bg bg-white rounded-xl border border-slate-100 shadow-sm transition-transform hover:scale-[1.02]">
-                <div className="text-xl font-display font-bold">{x.n}</div>
-                <div className="text-[11px] text-slate-400 mt-0.5">{x.l}</div>
+              <div key={i} className="text-center py-5 px-4 card-bg rounded-xl border-2 transition-all hover:scale-[1.05] hover:-translate-y-1" style={{ background: `linear-gradient(180deg, ${x.color}25 0%, ${x.color}10 100%)`, borderColor: x.color + '50', boxShadow: `0 6px 24px ${x.color}25` }}>
+                <div className="text-2xl font-display font-extrabold" style={{ color: x.color, textShadow: `0 2px 8px ${x.color}30` }}>{x.n}</div>
+                <div className="text-[11px] text-slate-600 mt-1.5 font-semibold" style={{ letterSpacing: '0.5px' }}>{x.l}</div>
               </div>
             ))}
           </div>
@@ -1921,62 +1927,63 @@ export default function MyCaseValue() {
 
         {/* Trending + Circuit */}
         <Reveal delay={400}>
-          <div className="report-grid grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-            <Card>
+          <div className="report-grid grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div className="card-bg rounded-2xl border-2 p-7 transition-all" style={{ background: 'linear-gradient(135deg, rgba(13,148,136,0.08) 0%, rgba(13,148,136,0.03) 100%)', borderColor: '#0D948840', boxShadow: '0 8px 32px rgba(13,148,136,0.15)' }}>
               <SectionLabel>{t.trending}</SectionLabel>
               {TRENDING.map((tr, i) => {
                 const pct = parseInt(tr.change.replace(/[^0-9]/g, '')) || 0;
                 const barW = Math.min(pct / 4, 100);
                 return (
-                  <div key={i} className="flex items-center gap-3 py-2.5" style={{ borderBottom: i < TRENDING.length - 1 ? '1px solid #F1F5F9' : 'none' }}>
-                    <span className="text-sm flex-1">{tr.label}</span>
-                    <div className="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden flex-shrink-0">
-                      <div className="h-full rounded-full" style={{ width: `${barW}%`, background: 'linear-gradient(90deg, #0D9488, #14B8A6)', transition: 'width 1s ease' }} />
+                  <div key={i} className="flex items-center gap-3 py-3" style={{ borderBottom: i < TRENDING.length - 1 ? '1px solid rgba(13,148,136,0.1)' : 'none' }}>
+                    <span className="text-sm font-semibold text-slate-700 flex-1">{tr.label}</span>
+                    <div className="w-16 h-2.5 bg-slate-200 rounded-full overflow-hidden flex-shrink-0" style={{ background: 'rgba(13,148,136,0.15)' }}>
+                      <div className="h-full rounded-full" style={{ width: `${barW}%`, background: 'linear-gradient(90deg, #0D9488, #14B8A6)', transition: 'width 1s ease', boxShadow: '0 0 12px rgba(13,148,136,0.4)' }} />
                     </div>
-                    <span className="text-sm font-bold flex-shrink-0 w-14 text-right" style={{ color: '#0D9488' }}>
+                    <span className="text-sm font-extrabold flex-shrink-0 w-14 text-right" style={{ color: '#0D9488', textShadow: '0 1px 4px rgba(13,148,136,0.2)' }}>
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="#0D9488" className="inline mr-0.5 -mt-0.5"><path d="M5 0L9 5H1L5 0Z" /></svg>
                       {tr.change}
                     </span>
                   </div>
                 );
               })}
-              <div className="text-[11px] text-slate-400 mt-2">{lang === 'es' ? 'Presentaciones federales año tras año' : 'Federal filings year-over-year'}</div>
-            </Card>
-            <Card>
+              <div className="text-[11px] text-slate-500 mt-3 font-semibold">{lang === 'es' ? 'Presentaciones federales año tras año' : 'Federal filings year-over-year'}</div>
+            </div>
+            <div className="card-bg rounded-2xl border-2 p-7 transition-all" style={{ background: 'linear-gradient(135deg, rgba(184,146,58,0.08) 0%, rgba(184,146,58,0.03) 100%)', borderColor: '#B8923A40', boxShadow: '0 8px 32px rgba(184,146,58,0.15)' }}>
               <SectionLabel>{t.circuit_rates}</SectionLabel>
               <div className="stagger-list">
               {['9th', '2nd', 'D.C.', '3rd', '7th', '5th'].map((ci, i) => (
-                <div key={i} className="flex items-center gap-2 py-1.5">
-                  <span className="text-xs font-semibold w-9">{ci}</span>
-                  <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div key={i} className="flex items-center gap-2 py-2">
+                  <span className="text-xs font-extrabold w-9 text-slate-700">{ci}</span>
+                  <div className="flex-1 h-2.5 bg-slate-200 rounded-full overflow-hidden" style={{ background: 'rgba(184,146,58,0.15)' }}>
                     <div className="h-full rounded-full transition-all duration-700" style={{
                       width: `${CIRCUIT_WIN_RATES[ci] || 35}%`,
-                      background: (CIRCUIT_WIN_RATES[ci] || 35) > 40 ? '#0D9488' : (CIRCUIT_WIN_RATES[ci] || 35) > 37 ? '#B8923A' : '#E87461',
+                      background: (CIRCUIT_WIN_RATES[ci] || 35) > 40 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : (CIRCUIT_WIN_RATES[ci] || 35) > 37 ? 'linear-gradient(90deg, #B8923A, #C9A54E)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
+                      boxShadow: (CIRCUIT_WIN_RATES[ci] || 35) > 40 ? '0 0 12px rgba(13,148,136,0.4)' : (CIRCUIT_WIN_RATES[ci] || 35) > 37 ? '0 0 12px rgba(184,146,58,0.4)' : '0 0 12px rgba(232,116,97,0.4)',
                     }} />
                   </div>
-                  <span className="text-xs font-semibold w-10 text-right font-data">{CIRCUIT_WIN_RATES[ci]}%</span>
+                  <span className="text-xs font-extrabold w-10 text-right font-data" style={{ color: (CIRCUIT_WIN_RATES[ci] || 35) > 40 ? '#0D9488' : (CIRCUIT_WIN_RATES[ci] || 35) > 37 ? '#B8923A' : '#E87461', textShadow: '0 1px 4px rgba(0,0,0,0.1)' }}>{CIRCUIT_WIN_RATES[ci]}%</span>
                 </div>
               ))}
               </div>
-              <div className="text-[11px] text-slate-400 mt-2">{lang === 'es' ? 'Tasas de éxito agregadas del demandante' : 'Aggregate plaintiff win rates'}</div>
-            </Card>
+              <div className="text-[11px] text-slate-500 mt-3 font-semibold">{lang === 'es' ? 'Tasas de éxito agregadas del demandante' : 'Aggregate plaintiff win rates'}</div>
+            </div>
           </div>
         </Reveal>
 
         {/* Am I Too Late */}
         <Reveal delay={450}>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 p-5 sm:p-6 card-bg bg-white rounded-2xl border border-slate-100 shadow-sm mb-4">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: '#FEE2E2' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E87461" strokeWidth="2" strokeLinecap="round">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 p-6 sm:p-7 rounded-2xl border-2 mb-4 transition-all hover:scale-[1.01]" style={{ background: 'linear-gradient(135deg, rgba(232,116,97,0.15) 0%, rgba(232,116,97,0.08) 100%)', borderColor: '#E8746150', boxShadow: '0 10px 40px rgba(232,116,97,0.25)' }}>
+            <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(135deg, #E87461, #F59E8C)', boxShadow: '0 6px 20px rgba(232,116,97,0.35)' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
                 <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
               </svg>
             </div>
             <div className="flex-1">
-              <div className="text-lg sm:text-xl font-display font-bold">{t.too_late_title}</div>
-              <div className="text-sm text-slate-500 mt-1 leading-relaxed">{t.too_late_sub}</div>
+              <div className="text-lg sm:text-xl font-display font-extrabold text-slate-800">{t.too_late_title}</div>
+              <div className="text-sm text-slate-600 mt-1.5 leading-relaxed font-medium">{t.too_late_sub}</div>
             </div>
-            <button onClick={() => go(1)} className="px-6 py-2.5 text-sm font-semibold text-white rounded-xl cursor-pointer flex-shrink-0 w-full sm:w-auto text-center"
-              style={{ background: '#E87461' }}>
+            <button onClick={() => go(1)} className="px-7 py-3 text-sm font-extrabold text-white rounded-xl cursor-pointer flex-shrink-0 w-full sm:w-auto text-center transition-all hover:scale-[1.05] active:scale-[0.95]"
+              style={{ background: 'linear-gradient(135deg, #E87461, #F59E8C)', boxShadow: '0 6px 20px rgba(232,116,97,0.35)' }}>
               {t.check_deadline}
             </button>
           </div>
@@ -2000,37 +2007,37 @@ export default function MyCaseValue() {
         {/* Testimonials carousel */}
         <Reveal delay={490}>
           <div className="mb-4">
-            <div className="text-center mb-4">
-              <div className="text-[11px] font-bold text-slate-400 tracking-[2px]">{lang === 'es' ? 'LO QUE DICEN LOS USUARIOS' : 'WHAT USERS SAY'}</div>
+            <div className="text-center mb-6">
+              <div className="text-[11px] font-bold text-slate-500 tracking-[3px]" style={{ background: 'linear-gradient(90deg, #B8923A, #0D9488, #6558D5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{lang === 'es' ? 'LO QUE DICEN LOS USUARIOS' : 'WHAT USERS SAY'}</div>
             </div>
             <div className="relative overflow-hidden">
               <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${carouselIdx * 100}%)` }}>
                 {TESTIMONIALS.map((tm, i) => (
                   <div key={i} className="flex-shrink-0 w-full px-2">
-                    <div className="card-bg bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+                    <div className="card-bg rounded-2xl border-2 p-6" style={{ background: `linear-gradient(135deg, ${tm.color}15 0%, ${tm.color}08 100%)`, borderColor: tm.color + '40', boxShadow: `0 8px 32px ${tm.color}20` }}>
                       <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0" style={{ background: tm.color }}>
+                        <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-extrabold text-base flex-shrink-0" style={{ background: tm.color, boxShadow: `0 4px 16px ${tm.color}40` }}>
                           {tm.author.charAt(0)}
                         </div>
                         <div className="flex-1">
-                          <div className="flex mb-1">
+                          <div className="flex mb-2">
                             {[1,2,3,4,5].map(s => (
-                              <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="#B8923A" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                              <svg key={s} width="16" height="16" viewBox="0 0 24 24" fill={tm.color} stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                             ))}
                           </div>
-                          <div className="testimonial-quote text-slate-600">&ldquo;{tm.quote}&rdquo;</div>
-                          <div className="text-[11px] text-slate-400 mt-2 font-medium">{tm.author}</div>
+                          <div className="testimonial-quote text-slate-700 font-medium text-[15px]">&ldquo;{tm.quote}&rdquo;</div>
+                          <div className="text-[12px] text-slate-600 mt-3 font-semibold">{tm.author}</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center gap-1.5 mt-3">
+              <div className="flex justify-center gap-2.5 mt-5">
                 {TESTIMONIALS.map((_, i) => (
                   <button key={i} onClick={() => setCarouselIdx(i)}
-                    className="w-2 h-2 rounded-full border-none cursor-pointer transition-all"
-                    style={{ background: i === carouselIdx ? '#B8923A' : '#CBD5E1', transform: i === carouselIdx ? 'scale(1.3)' : 'scale(1)' }} />
+                    className="border-none cursor-pointer transition-all rounded-full"
+                    style={{ width: i === carouselIdx ? 28 : 8, height: 8, background: i === carouselIdx ? 'linear-gradient(90deg, #B8923A, #0D9488)' : '#CBD5E1', transform: i === carouselIdx ? 'scale(1)' : 'scale(1)', boxShadow: i === carouselIdx ? '0 2px 8px rgba(184,146,58,0.4)' : 'none' }} />
                 ))}
               </div>
             </div>
@@ -2076,19 +2083,19 @@ export default function MyCaseValue() {
                 { num: '02', icon: '🔍', title: lang === 'es' ? 'Analizamos los datos' : 'We crunch the data', desc: lang === 'es' ? 'Comparamos tu situación con millones de casos federales reales.' : 'We match your situation against millions of real federal court outcomes.', color: '#B8923A' },
                 { num: '03', icon: '📊', title: lang === 'es' ? 'Obtén tu informe' : 'Get your report', desc: lang === 'es' ? 'Tasas de éxito, plazos, rangos de recuperación y pasos a seguir.' : 'Win rates, timelines, recovery ranges, and what people did next.', color: '#0D9488' },
               ].map((s, i) => (
-                <div key={i} className="relative p-6 data-card-3d card-bg bg-white rounded-2xl border border-slate-100 shadow-sm group">
-                  <div className="absolute top-4 right-4 text-[48px] font-display font-bold leading-none opacity-[0.04]">{s.num}</div>
+                <div key={i} className="relative p-6 data-card-3d rounded-2xl border-2 shadow-lg group transition-all hover:scale-[1.03] hover:-translate-y-1" style={{ background: `linear-gradient(135deg, ${s.color}18 0%, ${s.color}08 100%)`, borderColor: s.color + '50', borderTop: `3px solid ${s.color}`, boxShadow: `0 8px 32px ${s.color}25` }}>
+                  <div className="absolute top-4 right-4 text-[48px] font-display font-bold leading-none" style={{ color: s.color, opacity: 0.08 }}>{s.num}</div>
                   {/* Step number badge */}
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3 float-badge" style={{ background: `${s.color}12`, animationDelay: `${i * 0.3}s` }}>
-                    <span className="text-lg">{s.icon}</span>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 float-badge" style={{ background: `linear-gradient(135deg, ${s.color}, ${s.color}dd)`, boxShadow: `0 4px 16px ${s.color}30`, animationDelay: `${i * 0.3}s` }}>
+                    <span className="text-2xl">{s.icon}</span>
                   </div>
-                  <div className="text-[10px] font-bold tracking-[2px] mb-1.5" style={{ color: s.color }}>STEP {s.num}</div>
-                  <div className="text-[16px] font-semibold mb-1.5">{s.title}</div>
-                  <div className="text-[13px] text-slate-400 leading-relaxed">{s.desc}</div>
+                  <div className="text-[11px] font-extrabold tracking-[2.5px] mb-2 uppercase" style={{ color: s.color, textShadow: `0 1px 3px ${s.color}20` }}>Step {s.num}</div>
+                  <div className="text-[17px] font-extrabold mb-2 text-slate-800">{s.title}</div>
+                  <div className="text-[13px] text-slate-600 leading-relaxed font-medium">{s.desc}</div>
                   {/* Animated connector arrow */}
                   {i < 2 && <div className="hidden sm:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                    <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: `${s.color}15` }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={s.color} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+                    <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${s.color}, ${s.color}cc)`, boxShadow: `0 4px 12px ${s.color}30` }}>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><polyline points="9 18 15 12 9 6" /></svg>
                     </div>
                   </div>}
                 </div>
