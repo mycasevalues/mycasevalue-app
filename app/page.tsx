@@ -11,21 +11,23 @@ const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      background: '#FDFBF7',
+      background: '#F5F7FA',
       gap: 24,
     }}>
       <div style={{ width: 48, height: 48, position: 'relative' }}>
         <div style={{
           position: 'absolute', inset: 0, borderRadius: '50%',
-          border: '3px solid rgba(184, 146, 58, 0.15)',
-          borderTopColor: '#B8923A',
+          border: '3px solid rgba(64, 64, 242, 0.12)',
+          borderTopColor: '#4040F2',
           animation: 'spin 0.8s linear infinite',
         }} />
       </div>
       <div style={{
-        fontFamily: 'Newsreader, Georgia, serif', fontSize: 18, fontWeight: 600,
+        fontFamily: 'Outfit, system-ui, sans-serif',
+        fontSize: 18,
+        fontWeight: 600,
         letterSpacing: '-0.5px',
-        color: '#B8923A',
+        color: '#0F172A',
         opacity: 0.8,
       }}>
         MyCaseValue

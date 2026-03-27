@@ -6,6 +6,7 @@ import PieChart from './ui/PieChart';
 import { CategoryIcon } from './ui/Icons';
 import USMap from './ui/USMap';
 import { Logo } from './ui/Logo';
+import { Navbar } from './navigation/Navbar';
 import TrustBar from './sections/TrustBar';
 import DataPreviewSection from './sections/DataPreviewSection';
 import FaqSection from './sections/FaqSection';
@@ -46,7 +47,7 @@ function Card({ children, glow = false, className = '', style = {} }: { children
   return (
     <div className={`card-bg rounded-2xl border mb-3 p-7 transition-all duration-300 ${glow ? 'animate-glow-pulse' : ''} ${className}`}
       style={{
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(253,251,247,0.8) 100%)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.8) 100%)',
         borderColor: 'rgba(226,232,240,0.6)',
         boxShadow: glow
           ? '0 2px 8px rgba(64,64,242,.08), 0 12px 40px rgba(11,18,33,.06), inset 0 1px 0 rgba(255,255,255,0.8)'
@@ -194,7 +195,7 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
               style={{
                 fontWeight: o.id === value ? 600 : 400,
                 color: o.id === value ? '#4040F2' : (dark ? '#E2E8F0' : '#0B1221'),
-                background: o.id === value ? (dark ? '#4040F215' : '#F3EBDA') : 'transparent',
+                background: o.id === value ? (dark ? '#4040F215' : '#E4E5FF') : 'transparent',
                 animationDelay: open ? `${idx * 20}ms` : '0ms',
               }}
               onMouseEnter={e => { if (o.id !== value) e.currentTarget.style.background = dark ? '#243352' : '#F8FAFC'; }}
@@ -218,9 +219,9 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
 
 function LockedPreview({ children, onUnlock, label }: { children: React.ReactNode; onUnlock: () => void; label?: string }) {
   return (
-    <div className="relative mb-3 rounded-2xl overflow-hidden border border-amber-200/60" style={{ background: 'linear-gradient(135deg, rgba(253,251,247,0.95) 0%, rgba(255,255,255,0.9) 100%)' }}>
+    <div className="relative mb-3 rounded-2xl overflow-hidden border border-amber-200/60" style={{ background: 'linear-gradient(135deg, rgba(248,250,252,0.95) 0%, rgba(255,255,255,0.9) 100%)' }}>
       <div style={{ filter: 'blur(5px)', pointerEvents: 'none', opacity: 0.45, padding: 24 }}>{children}</div>
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.85) 0%, rgba(253,251,247,0.6) 70%, transparent 100%)' }}>
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.85) 0%, rgba(248,250,252,0.6) 70%, transparent 100%)' }}>
         <div className="w-14 h-14 rounded-full shadow-xl flex items-center justify-center border border-amber-200/50" style={{ background: 'linear-gradient(135deg, #fff 0%, #fdf8ef 100%)' }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2.5">
             <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" />
@@ -243,7 +244,7 @@ function Collapsible({ title, badge, defaultOpen = false, children }: { title: s
   return (
     <div className="card-bg rounded-2xl border overflow-hidden mb-3 transition-all duration-300"
       style={{
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(253,251,247,0.8) 100%)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.8) 100%)',
         borderColor: open ? 'rgba(64,64,242,0.15)' : 'rgba(226,232,240,0.6)',
         boxShadow: open ? '0 4px 24px rgba(11,18,33,.07), inset 0 1px 0 rgba(255,255,255,0.8)' : '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)',
       }}>
@@ -251,7 +252,7 @@ function Collapsible({ title, badge, defaultOpen = false, children }: { title: s
         style={{ padding: '18px 24px' }}>
         <div className="flex items-center gap-2.5">
           <span className="font-semibold text-[15px] group-hover:text-[#4040F2] transition-colors">{title}</span>
-          {badge && <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: '#4040F2', background: '#F3EBDA' }}>{badge}</span>}
+          {badge && <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: '#4040F2', background: '#E4E5FF' }}>{badge}</span>}
         </div>
         <div className="w-6 h-6 rounded-lg flex items-center justify-center transition-all"
           style={{ background: open ? '#4040F210' : 'transparent' }}>
@@ -1241,17 +1242,7 @@ export default function MyCaseValue() {
     return () => { clearInterval(iv); clearTimeout(t); };
   }, [loading]);
 
-  // Sticky nav scroll shadow
-  useEffect(() => {
-    const handler = () => {
-      document.querySelectorAll('.sticky-nav').forEach(nav => {
-        if (window.scrollY > 10) nav.classList.add('scrolled');
-        else nav.classList.remove('scrolled');
-      });
-    };
-    window.addEventListener('scroll', handler, { passive: true });
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
+  // Scroll handler moved to Navbar component
 
   // Keyboard navigation (Escape to go back)
   useEffect(() => {
@@ -1364,7 +1355,7 @@ export default function MyCaseValue() {
       <>
       <a href="#main-content" className="skip-link">Skip to content</a>
       <div className={darkMode ? 'dark' : ''} role="application" aria-label="MyCaseValue" style={{
-        background: darkMode ? '#0B1221' : '#FDFBF7',
+        background: darkMode ? '#0B1221' : '#F5F7FA',
         minHeight: '100vh',
         fontFamily: "'Outfit', system-ui, sans-serif",
         color: darkMode ? '#F0F2F5' : '#0B1221',
@@ -1379,73 +1370,20 @@ export default function MyCaseValue() {
         {/* Success celebration on report completion */}
         {showConfetti && <SuccessCelebration />}
 
-        {/* Sticky Nav — full width */}
-        <nav className="sticky-nav no-print" role="navigation" aria-label="Main navigation">
-          <div className="max-w-[1140px] mx-auto px-4 sm:px-6 flex items-center justify-between py-4">
-            <button onClick={reset} className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer" aria-label="MyCaseValue home">
-              <Logo size="sm" />
-            </button>
-            <div className="flex items-center gap-2 sm:gap-3">
-              {/* Language toggle — pill style */}
-              <div className="h-8 rounded-lg border flex items-center overflow-hidden transition-colors"
-                role="radiogroup"
-                aria-label="Language selection"
-                style={{ background: darkMode ? '#1E293B' : '#F8FAFC', borderColor: darkMode ? '#334155' : '#E2E8F0' }}>
-                <button onClick={() => setLang('en')}
-                  role="radio"
-                  aria-checked={lang === 'en'}
-                  aria-label="English"
-                  className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200"
-                  style={{
-                    background: lang === 'en' ? 'linear-gradient(135deg, #4040F2, #5C5CF5)' : 'transparent',
-                    color: lang === 'en' ? '#fff' : '#94A3B8',
-                  }}>
-                  EN
-                </button>
-                <button onClick={() => setLang('es')}
-                  role="radio"
-                  aria-checked={lang === 'es'}
-                  aria-label="Español"
-                  className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200"
-                  style={{
-                    background: lang === 'es' ? 'linear-gradient(135deg, #4040F2, #5C5CF5)' : 'transparent',
-                    color: lang === 'es' ? '#fff' : '#94A3B8',
-                  }}>
-                  ES
-                </button>
-              </div>
-              {/* My Reports button */}
-              {savedReports.length > 0 && (
-                <button onClick={() => setShowSaved(true)}
-                  className="h-8 px-2.5 rounded-lg border cursor-pointer flex items-center justify-center transition-colors text-[12px] font-bold tracking-wide hidden sm:flex"
-                  style={{ background: darkMode ? '#1E293B' : '#fff', borderColor: darkMode ? '#334155' : '#E2E8F0', color: '#64748B' }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mr-1"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
-                  {savedReports.length}
-                </button>
-              )}
-              <button onClick={() => setDarkMode(!darkMode)}
-                aria-label={darkMode ? (lang === 'es' ? 'Cambiar a modo claro' : 'Switch to light mode') : (lang === 'es' ? 'Cambiar a modo oscuro' : 'Switch to dark mode')}
-                className="w-8 h-8 rounded-lg border cursor-pointer flex items-center justify-center transition-all duration-300 hover:scale-105"
-                style={{
-                  background: darkMode ? 'linear-gradient(135deg, #1A2744, #243352)' : '#fff',
-                  borderColor: darkMode ? '#4040F230' : '#E2E8F0',
-                  boxShadow: darkMode ? '0 0 12px rgba(252,211,77,0.1)' : 'none',
-                }}>
-                <div style={{ transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)', transform: darkMode ? 'rotate(360deg)' : 'rotate(0deg)' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={darkMode ? '#FCD34D' : '#94A3B8'} strokeWidth="2"
-                    style={{ transition: 'stroke 0.3s ease' }}>
-                    <path d={darkMode ? "M12 3v1m0 16v1m9-9h-1M4 12H3m15.4 6.4l-.7-.7M6.3 6.3l-.7-.7m12.7 0l-.7.7M6.3 17.7l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z" : "M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"} />
-                  </svg>
-                </div>
-              </button>
-              {isPremium && <span className="text-[11px] font-bold px-3 py-1 rounded-full hidden sm:block" style={{ color: '#4040F2', background: '#E4E5FF' }}>{t.premium}</span>}
-              <button onClick={reset} className="text-sm font-semibold px-5 sm:px-6 py-2.5 text-white border-none rounded-full cursor-pointer no-print hover:scale-[1.03] active:scale-[0.97] transition-all duration-200"
-                style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)', boxShadow: '0 2px 12px rgba(64,64,242,.25)' }}>
-                {t.new_report}
-              </button>
-            </div>
-          </div>
-        </nav>
+        {/* Sticky Nav */}
+        <Navbar
+          lang={lang}
+          setLang={setLang}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+          isPremium={isPremium}
+          savedReportsCount={savedReports.length}
+          onShowSaved={() => setShowSaved(true)}
+          onReset={reset}
+          onNewReport={reset}
+          newReportLabel={t.new_report}
+          premiumLabel={t.premium}
+        />
 
         <main id="main-content" className="max-w-[1140px] mx-auto px-4 sm:px-6 relative z-10" role="main">
           {/* UPL Banner */}
@@ -1650,7 +1588,7 @@ export default function MyCaseValue() {
                   <div className="flex-1 px-3 py-2 rounded-lg bg-slate-50 text-sm font-data font-bold" style={{ color: '#4040F2' }}>{referralCode}</div>
                   <button onClick={() => { navigator.clipboard.writeText(referralCode); toast('Copied!'); }}
                     className="px-3 py-2 text-[12px] font-semibold rounded-lg cursor-pointer"
-                    style={{ background: '#F3EBDA', color: '#4040F2', border: 'none' }}>Copy</button>
+                    style={{ background: '#E4E5FF', color: '#4040F2', border: 'none' }}>Copy</button>
                 </div>
                 <div className="text-[11px] text-slate-400 mt-1">{lang === 'es' ? 'Comparte y obtén un informe gratis' : 'Share and get a free report'}</div>
               </div>
@@ -1870,7 +1808,7 @@ export default function MyCaseValue() {
             <div className="relative w-full max-w-[420px] float-gentle">
               {/* Main report card */}
               <div className="rounded-2xl overflow-hidden" style={{
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(253,251,247,0.95) 100%)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(248,250,252,0.95) 100%)',
                 border: '1px solid rgba(64,64,242,0.15)',
                 boxShadow: '0 24px 80px rgba(11,18,33,0.12), 0 8px 24px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.9)',
               }}>
@@ -1906,7 +1844,7 @@ export default function MyCaseValue() {
                     { v: '14mo', l: lang === 'es' ? 'Duración media' : 'Avg duration', c: '#0B1221' },
                     { v: '72%', l: lang === 'es' ? 'Se resuelven' : 'Settle rate', c: '#0D9488' },
                   ].map((s, i) => (
-                    <div key={i} className="text-center py-3 px-2" style={{ background: 'rgba(253,251,247,0.9)' }}>
+                    <div key={i} className="text-center py-3 px-2" style={{ background: 'rgba(248,250,252,0.9)' }}>
                       <div className="text-[16px] font-display font-bold" style={{ color: s.c }}>{s.v}</div>
                       <div className="text-[9px] font-semibold text-slate-400 mt-0.5">{s.l}</div>
                     </div>
@@ -1936,7 +1874,7 @@ export default function MyCaseValue() {
 
               {/* Floating accent badges */}
               <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full text-[10px] font-bold glass-feature" style={{
-                background: 'rgba(253,251,247,0.95)',
+                background: 'rgba(248,250,252,0.95)',
                 color: '#0D9488',
                 border: '1px solid rgba(13,148,136,0.2)',
                 boxShadow: '0 4px 16px rgba(13,148,136,0.15)',
@@ -1946,7 +1884,7 @@ export default function MyCaseValue() {
               </div>
 
               <div className="absolute -bottom-2 -left-3 px-3 py-1.5 rounded-full text-[10px] font-bold glass-feature" style={{
-                background: 'rgba(253,251,247,0.95)',
+                background: 'rgba(248,250,252,0.95)',
                 color: '#4040F2',
                 border: '1px solid rgba(64,64,242,0.2)',
                 boxShadow: '0 4px 16px rgba(64,64,242,0.15)',
@@ -2348,7 +2286,7 @@ export default function MyCaseValue() {
                     <div className="text-[10px] font-semibold mt-1" style={{ color: '#D97706' }}>{lang === 'es' ? 'Sin abogado' : 'Self-represented'}</div>
                   </div>
                 </div>
-                <div className="px-3 py-2 rounded-lg text-[12px] font-medium" style={{ background: '#F3EBDA', color: '#4040F2' }}>
+                <div className="px-3 py-2 rounded-lg text-[12px] font-medium" style={{ background: '#E4E5FF', color: '#4040F2' }}>
                   {lang === 'es' ? 'Las personas con abogado ganaron ~3.4x más a menudo' : 'People with attorneys won ~3.4x more often'}
                 </div>
                 <div className="mt-3 text-[10px] font-bold text-slate-400 tracking-[2px] mb-2">{lang === 'es' ? 'TIPOS DE HONORARIOS' : 'FEE TYPES'}</div>
@@ -2445,7 +2383,7 @@ export default function MyCaseValue() {
                 ))}
               </div>
             </div>
-            <div className="mt-6 p-4 rounded-xl" style={{ background: '#F3EBDA' }}>
+            <div className="mt-6 p-4 rounded-xl" style={{ background: '#E4E5FF' }}>
               <div className="text-[12px] text-slate-700"><strong>{lang === 'es' ? 'Nota:' : 'Note:'}</strong> {lang === 'es' ? 'Los plazos varían según el tipo de caso, la jurisdicción y la complejidad. Esto es un promedio basado en datos federales.' : 'Timelines vary by case type, jurisdiction, and complexity. This is an average based on federal data.'}</div>
             </div>
           </div>
@@ -2504,9 +2442,9 @@ export default function MyCaseValue() {
                 </button>
               </div>
               {/* Premium */}
-              <div className="p-6 rounded-2xl border-2 shadow-md relative overflow-hidden" style={{ borderColor: '#4040F230', background: 'linear-gradient(180deg, #FDFBF7, #fff)' }}>
+              <div className="p-6 rounded-2xl border-2 shadow-md relative overflow-hidden" style={{ borderColor: '#4040F230', background: 'linear-gradient(180deg, #F8FAFC, #fff)' }}>
                 <div className="absolute top-0 right-0 px-4 py-1 text-[10px] font-bold text-white rounded-bl-xl" style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>{lang === 'es' ? 'MÁS POPULAR' : 'MOST POPULAR'}</div>
-                <div className="inline-block px-3 py-1 rounded-full text-[11px] font-bold mb-3" style={{ background: '#F3EBDA', color: '#4040F2' }}>PREMIUM</div>
+                <div className="inline-block px-3 py-1 rounded-full text-[11px] font-bold mb-3" style={{ background: '#E4E5FF', color: '#4040F2' }}>PREMIUM</div>
                 <div className="flex items-end gap-1 mb-1">
                   <span className="text-2xl font-display font-bold">$5.99</span>
                   <span className="text-[13px] text-slate-400 mb-0.5">/ report</span>
@@ -2558,7 +2496,7 @@ export default function MyCaseValue() {
                 <div key={i} className="p-3.5 bg-white rounded-xl border border-slate-100">
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="text-[14px] font-semibold text-slate-700">{s.name}</span>
-                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#F3EBDA', color: '#4040F2' }}>{s.badge}</span>
+                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded" style={{ background: '#E4E5FF', color: '#4040F2' }}>{s.badge}</span>
                   </div>
                   <div className="text-[11px] text-slate-400 leading-relaxed">{s.desc}</div>
                 </div>
@@ -2674,7 +2612,7 @@ export default function MyCaseValue() {
             {SITS.map(si => (
               <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
                 className="category-card flex items-center gap-4 w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg group"
-                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(253,251,247,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)' }}
+                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,250,252,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
                 onMouseLeave={e => e.currentTarget.style.borderColor = '#F1F5F9'}>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform" style={{ background: `${si.color}10` }}>
@@ -2713,7 +2651,7 @@ export default function MyCaseValue() {
             {sit.opts.map((o: any, i: number) => (
               <button key={i} onClick={() => { setSpec(o); go(3); }}
                 className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
-                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(253,251,247,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)' }}
+                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,250,252,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = sit.color}
                 onMouseLeave={e => e.currentTarget.style.borderColor = '#F1F5F9'}>
                 <div className="w-2 h-2 rounded-full flex-shrink-0 mr-3 transition-transform" style={{ background: sit.color, opacity: 0.5 }} />
@@ -2833,7 +2771,7 @@ export default function MyCaseValue() {
         <BackButton />
         <Reveal>
           <Card glow>
-            <div className="inline-block px-3.5 py-1 rounded-lg text-[11px] font-semibold mb-4" style={{ background: '#F3EBDA', color: '#4040F2' }}>{t.one_moment}</div>
+            <div className="inline-block px-3.5 py-1 rounded-lg text-[11px] font-semibold mb-4" style={{ background: '#E4E5FF', color: '#4040F2' }}>{t.one_moment}</div>
             <h2 className="text-2xl font-display font-bold mb-3">{t.before_report}</h2>
             <p className="text-[15px] text-slate-600 leading-relaxed mb-3">
               {lang === 'es'
@@ -3020,7 +2958,7 @@ export default function MyCaseValue() {
           {/* AI Case Summary */}
           <Reveal>
             <div className="px-5 py-4 rounded-xl mb-4" style={{
-              background: darkMode ? 'linear-gradient(135deg, #1A2744, #162035)' : 'linear-gradient(135deg, #FDFBF7, #FFF)',
+              background: darkMode ? 'linear-gradient(135deg, #1A2744, #162035)' : 'linear-gradient(135deg, #F8FAFC, #FFF)',
               border: `1px solid ${darkMode ? '#334155' : '#4040F215'}`,
             }}>
               <div className="flex items-start gap-3">
@@ -3118,7 +3056,7 @@ export default function MyCaseValue() {
               {/* Recovery ranges (premium only) */}
               {!isPremium ? (
                 <div className="text-center py-6">
-                  <div className="inline-block px-6 py-3 rounded-xl" style={{ background: '#F3EBDA' }}>
+                  <div className="inline-block px-6 py-3 rounded-xl" style={{ background: '#E4E5FF' }}>
                     <span className="text-[14px] font-semibold" style={{ color: '#4040F2' }}>{lang === 'es' ? 'Rangos de recuperación disponibles en el informe completo' : 'Recovery ranges available in full report'}</span>
                   </div>
                 </div>
@@ -3271,7 +3209,7 @@ export default function MyCaseValue() {
           {/* === WHAT THIS MEANS FOR YOUR SITUATION (personalized) === */}
           <Reveal delay={120}>
             <div className="rounded-2xl overflow-hidden mb-3" style={{
-              background: darkMode ? 'linear-gradient(135deg, #1A2744, #0F1A2E)' : 'linear-gradient(160deg, #FDFBF7 0%, #FFF8EC 40%, #FFFFFF 100%)',
+              background: darkMode ? 'linear-gradient(135deg, #1A2744, #0F1A2E)' : 'linear-gradient(160deg, #F8FAFC 0%, #EEF1F6 40%, #FFFFFF 100%)',
               border: `1.5px solid ${darkMode ? '#334155' : 'rgba(64, 64, 242, 0.15)'}`,
               boxShadow: '0 4px 24px rgba(64, 64, 242, 0.06), 0 1px 3px rgba(11,18,33,0.03)',
             }}>
@@ -3595,7 +3533,7 @@ export default function MyCaseValue() {
                     </div>
                   </div>
                   {d.rr?.wr && d.ps?.wr && (
-                    <div className="px-4 py-2.5 rounded-xl text-[13px] font-medium" style={{ background: '#F3EBDA', color: '#4040F2' }}>
+                    <div className="px-4 py-2.5 rounded-xl text-[13px] font-medium" style={{ background: '#E4E5FF', color: '#4040F2' }}>
                       {lang === 'es'
                         ? `Las personas con abogado ganaron ${Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100)}% más a menudo en casos similares.`
                         : `People with attorneys won ${Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100)}% more often in similar cases.`}
@@ -3762,11 +3700,11 @@ export default function MyCaseValue() {
                     <h3 className="text-lg font-semibold">{lang === 'es' ? 'Escenarios de qué pasaría' : 'What-If Scenarios'}</h3>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4040F2' : '#E2E8F0', background: attorney === 'with' ? '#F3EBDA' : '#F8FAFC', color: attorney === 'with' ? '#4040F2' : '#64748B' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4040F2' : '#E2E8F0', background: attorney === 'with' ? '#E4E5FF' : '#F8FAFC', color: attorney === 'with' ? '#4040F2' : '#64748B' }}
                       onClick={() => setAttorney('with')}>
                       {lang === 'es' ? 'Con abogado' : 'With Attorney'}
                     </button>
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4040F2' : '#E2E8F0', background: attorney === 'without' ? '#F3EBDA' : '#F8FAFC', color: attorney === 'without' ? '#4040F2' : '#64748B' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4040F2' : '#E2E8F0', background: attorney === 'without' ? '#E4E5FF' : '#F8FAFC', color: attorney === 'without' ? '#4040F2' : '#64748B' }}
                       onClick={() => setAttorney('without')}>
                       {lang === 'es' ? 'Sin abogado' : 'Self-Represented'}
                     </button>
@@ -3897,7 +3835,7 @@ export default function MyCaseValue() {
                         { scenario: lang === 'es' ? 'Escenario típico' : 'Typical scenario', amount: '$35K - $65K' },
                         { scenario: lang === 'es' ? 'Escenario alto' : 'High scenario', amount: '$75K - $140K' },
                       ].map((item, i) => (
-                        <div key={i} className="flex items-center justify-between p-3 bg-gradient-to-r rounded-lg" style={{ background: i === 1 ? 'linear-gradient(135deg, #F3EBDA, #FEF9F0)' : '#F8FAFC' }}>
+                        <div key={i} className="flex items-center justify-between p-3 bg-gradient-to-r rounded-lg" style={{ background: i === 1 ? 'linear-gradient(135deg, #E4E5FF, #FEF9F0)' : '#F8FAFC' }}>
                           <span className={`text-sm font-medium ${i === 1 ? 'font-semibold' : ''}`}>{item.scenario}</span>
                           <span className="font-display font-bold" style={{ color: i === 0 ? '#D97706' : i === 1 ? '#4040F2' : '#0D9488' }}>{item.amount}</span>
                         </div>
@@ -4035,7 +3973,7 @@ export default function MyCaseValue() {
                       {d.ps?.total && <div className="text-[11px] text-slate-400 mt-1">{d.ps.total.toLocaleString()} cases</div>}
                     </div>
                   </div>
-                  <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: darkMode ? 'rgba(64,64,242,0.15)' : '#F3EBDA', color: '#4040F2' }}>
+                  <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: darkMode ? 'rgba(64,64,242,0.15)' : '#E4E5FF', color: '#4040F2' }}>
                     {lang === 'es' ? <span>Los abogados ganaron <strong>{d.rr && d.ps ? Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100) : 0}% más a menudo</strong>. Honorario: {d.af}.</span> : <span>Attorneys won <strong>{d.rr && d.ps ? Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100) : 0}% more often</strong>. Fee: {d.af}.</span>}
                   </div>
                   {spec && FEE_INFO[spec.nos] && (
@@ -4104,7 +4042,7 @@ export default function MyCaseValue() {
                           {i < (d.tl || []).length - 1 && <div className="w-0.5 flex-1 mt-0.5 transition-colors" style={{ background: active ? '#4040F225' : '#F1F5F9' }} />}
                         </div>
                         <div className="flex-1 pb-2.5">
-                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#4040F2' : '#94A3B8', background: active ? '#F3EBDA' : '#F1F5F9' }}>
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#4040F2' : '#94A3B8', background: active ? '#E4E5FF' : '#F1F5F9' }}>
                             {lang === 'es' ? `Mes ${t.mo}` : `Month ${t.mo}`}
                           </span>
                           <div className="text-[14px] mt-1 transition-colors" style={{ fontWeight: active ? 600 : 400, color: active ? '#0B1221' : '#94A3B8' }}>{t.ev}</div>
@@ -4195,7 +4133,7 @@ export default function MyCaseValue() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-3 px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: darkMode ? 'rgba(64,64,242,0.15)' : '#F3EBDA', color: '#4040F2' }}>
+                  <div className="mt-3 px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: darkMode ? 'rgba(64,64,242,0.15)' : '#E4E5FF', color: '#4040F2' }}>
                     {lang === 'es' ? 'La mayoría de los acuerdos: 3-6 meses después de la presentación.' : 'Most settlements: 3-6 months after filing.'}
                   </div>
                 </Card>
@@ -4207,7 +4145,7 @@ export default function MyCaseValue() {
                   <div className="text-[13px] text-slate-400 mb-3">{lang === 'es' ? 'Factores que los tribunales federales citaron en casos similares:' : 'Factors federal courts cited in similar cases:'}</div>
                   {(d.factors || []).map((f: string, i: number) => (
                     <div key={i} className="flex gap-2 items-center py-1.5 text-[15px]">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: darkMode ? 'rgba(64,64,242,0.2)' : '#F3EBDA' }}>
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: darkMode ? 'rgba(64,64,242,0.2)' : '#E4E5FF' }}>
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
                       </div>
                       {f}
@@ -4365,7 +4303,7 @@ export default function MyCaseValue() {
                             </div>
                           </div>
                         </div>
-                        <div className="p-3.5 rounded-xl" style={{ background: '#F3EBDA' }}>
+                        <div className="p-3.5 rounded-xl" style={{ background: '#E4E5FF' }}>
                           <div className="flex justify-between items-center">
                             <div>
                               <div className="text-[11px] font-bold tracking-[1px]" style={{ color: '#4040F2' }}>GROSS RECOVERY</div>
@@ -4517,7 +4455,7 @@ export default function MyCaseValue() {
                   <button key={opt.nos} onClick={() => loadComparison(opt.nos)}
                     className="px-3 py-1.5 text-[12px] font-medium rounded-lg cursor-pointer transition-all capitalize"
                     style={{
-                      background: compareNos === opt.nos ? '#F3EBDA' : darkMode ? '#1E293B' : '#F8FAFC',
+                      background: compareNos === opt.nos ? '#E4E5FF' : darkMode ? '#1E293B' : '#F8FAFC',
                       border: compareNos === opt.nos ? '1.5px solid #4040F240' : `1.5px solid ${darkMode ? '#334155' : '#E2E8F0'}`,
                       color: compareNos === opt.nos ? '#4040F2' : darkMode ? '#CBD5E1' : '#64748B',
                     }}>
@@ -4610,7 +4548,7 @@ export default function MyCaseValue() {
         {showPricing && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
             onClick={() => setShowPricing(false)}>
-            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(253,251,247,0.95) 100%)', boxShadow: '0 25px 80px rgba(11,18,33,.2), 0 0 0 1px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.9)' }} onClick={e => e.stopPropagation()}>
+            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.95) 100%)', boxShadow: '0 25px 80px rgba(11,18,33,.2), 0 0 0 1px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.9)' }} onClick={e => e.stopPropagation()}>
               <div className="text-center mb-7">
                 <div className="text-2xl sm:text-3xl font-display font-bold">{lang === 'es' ? 'Vea el panorama completo' : 'See the complete picture'}</div>
                 <p className="text-[15px] text-slate-500 mt-2">{lang === 'es' ? '8 herramientas de datos para mayor comprensión' : '8 data tools for deeper understanding'}</p>
@@ -4626,7 +4564,7 @@ export default function MyCaseValue() {
                     {lang === 'es' ? 'Obtener reporte' : 'Get report'}
                   </button>
                 </div>
-                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#4040F2', background: 'linear-gradient(180deg, #FDFBF7 0%, #F3EBDA 100%)', boxShadow: '0 8px 32px rgba(64,64,242,.15), inset 0 1px 0 rgba(255,255,255,0.8)' }}>
+                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#4040F2', background: 'linear-gradient(180deg, #F8FAFC 0%, #E4E5FF 100%)', boxShadow: '0 8px 32px rgba(64,64,242,.15), inset 0 1px 0 rgba(255,255,255,0.8)' }}>
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold text-white whitespace-nowrap"
                     style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
                     {lang === 'es' ? 'MEJOR VALOR' : 'BEST VALUE'}

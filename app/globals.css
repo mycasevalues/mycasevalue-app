@@ -1,8 +1,75 @@
-/* Fonts loaded via <link> in layout.tsx for non-blocking performance */
+/* Fonts loaded via next/font in layout.tsx — zero render-blocking requests */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ============================================================
+   TAILWIND LAYER UTILITIES
+   ============================================================ */
+@layer utilities {
+  .skeleton {
+    background: linear-gradient(90deg, var(--bg-muted) 25%, rgba(64,64,242,0.06) 50%, var(--bg-muted) 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.8s infinite linear;
+    border-radius: var(--radius-md);
+  }
+
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(13, 17, 23, 0.72);
+    border: 1px solid rgba(64, 64, 242, 0.15);
+  }
+
+  .focus-ring {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grain {
+    position: relative;
+  }
+  .grain::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0.018;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px;
+  }
+}
 
 /* ============================================================
    DESIGN TOKENS — MyCaseValue
@@ -1724,7 +1791,49 @@ input:focus, textarea:focus, select:focus {
 }
 
 @media print {
-  .no-print {
+  .no-print, nav, footer, .sticky-nav, .skip-link,
+  .premium-cta, .cta-glow, .exit-intent-modal {
     display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  .card-bg, .glass-card, .glass-premium {
+    border: 1px solid #ccc !important;
+    background: white !important;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    color: #000 !important;
+  }
+
+  table { page-break-inside: avoid; }
+
+  .text-gradient, .text-gradient-hero, .gradient-text, .text-shimmer {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
   }
 }
