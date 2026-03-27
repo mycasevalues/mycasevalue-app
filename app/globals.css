@@ -164,7 +164,30 @@ body {
 }
 
 /* ============================================================
-   ACCESSIBILITY — Focus states with gold accent
+   SKIP LINK — Screen reader only, visible on focus
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* ============================================================
+   ACCESSIBILITY — Focus states with blue accent
    ============================================================ */
 *:focus-visible {
   outline: 2px solid var(--accent);

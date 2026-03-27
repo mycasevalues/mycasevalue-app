@@ -7,11 +7,12 @@ interface LogoProps {
 }
 
 export function Logo({ size = 'lg', showText = true }: LogoProps) {
-  const dim = size === 'sm' ? 28 : size === 'md' ? 34 : 40
-  const fontSize = size === 'sm' ? '14px' : size === 'md' ? '16px' : '19px'
+  const dim = size === 'sm' ? 36 : size === 'md' ? 42 : 52
+  const fontSize = size === 'sm' ? '17px' : size === 'md' ? '20px' : '24px'
+  const gap = size === 'sm' ? '10px' : size === 'md' ? '12px' : '14px'
 
   return (
-    <div className="flex items-center gap-2.5">
+    <div className="flex items-center" style={{ gap }}>
       {/* MyCaseValue brand mark — dot + diagonal check */}
       <svg
         width={dim}
@@ -37,10 +38,10 @@ export function Logo({ size = 'lg', showText = true }: LogoProps) {
 
       {showText && (
         <span
-          className="font-body font-semibold tracking-tight"
+          className="font-body font-bold tracking-tight"
           style={{
             fontSize,
-            letterSpacing: '-0.4px',
+            letterSpacing: '-0.5px',
             color: '#0B1221',
           }}
         >

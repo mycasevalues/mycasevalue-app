@@ -956,7 +956,9 @@ export default function MyCaseValue() {
     // Check localStorage for existing tier on load
     try {
       const savedTier = localStorage.getItem('mcv_tier');
-      if (savedTier === 'single' || savedTier === 'unlimited') setTier(savedTier);
+      if (savedTier === 'single' || savedTier === 'unlimited') {
+        setTier(savedTier);
+      }
     } catch {}
   }, []);
 
@@ -1436,7 +1438,7 @@ export default function MyCaseValue() {
                   </svg>
                 </div>
               </button>
-              {isPremium && <span className="text-[11px] font-bold px-3 py-1 rounded-full hidden sm:block" style={{ color: '#4040F2', background: '#F3EBDA' }}>{t.premium}</span>}
+              {isPremium && <span className="text-[11px] font-bold px-3 py-1 rounded-full hidden sm:block" style={{ color: '#4040F2', background: '#E4E5FF' }}>{t.premium}</span>}
               <button onClick={reset} className="text-sm font-semibold px-5 sm:px-6 py-2.5 text-white border-none rounded-full cursor-pointer no-print hover:scale-[1.03] active:scale-[0.97] transition-all duration-200"
                 style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)', boxShadow: '0 2px 12px rgba(64,64,242,.25)' }}>
                 {t.new_report}
@@ -1531,6 +1533,26 @@ export default function MyCaseValue() {
               <button onClick={() => setLegalPage('privacy')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}</button>
               <span className="text-slate-300">·</span>
               <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] text-slate-400 hover:text-slate-600 bg-transparent border-none cursor-pointer underline transition-colors">{lang === 'es' ? 'Aviso legal' : 'Legal Disclaimer'}</button>
+            </div>
+
+            {/* Legal disclaimer bar */}
+            <div className="mt-5 pt-4 border-t" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F020' }}>
+              <div className="p-4 rounded-xl text-center" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                  <span className="text-[11px] font-bold tracking-[2px] text-slate-400">
+                    {lang === 'es' ? 'AVISO LEGAL' : 'LEGAL NOTICE'}
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                  {lang === 'es'
+                    ? 'MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos solo con fines informativos. No constituye asesoría legal, opinión legal ni recomendación. No se crea relación abogado-cliente. Consulte siempre a un abogado con licencia para su situación específica.'
+                    : 'MyCaseValue provides aggregate historical data from public federal court records for informational purposes only. It does not constitute legal advice, legal opinion, or recommendation of any kind. No attorney-client relationship is created. Always consult a licensed attorney for advice specific to your situation.'}
+                </p>
+                <p className="text-[10px] text-slate-300 mt-2">
+                  © {new Date().getFullYear()} MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+                </p>
+              </div>
             </div>
 
           </footer>
@@ -1704,8 +1726,7 @@ export default function MyCaseValue() {
               <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[66px] leading-[0.95] font-extrabold mb-8" style={{ letterSpacing: '-3px' }}>
                 {t.hero_title_1}<br />
                 {t.hero_title_2}{' '}
-                <span className="text-shimmer" style={{ fontStyle: 'italic' }}>{t.hero_title_3}</span>
-                <span className="typewriter-cursor" />
+                <span style={{ fontStyle: 'italic', color: '#4040F2' }}>{t.hero_title_3}</span>
               </h1>
 
               {/* Animated hero stats — 3 columns with visual dividers */}
@@ -1815,7 +1836,7 @@ export default function MyCaseValue() {
                 </div>
                 <div className="text-[12px] text-slate-500">
                   <strong className="text-slate-700 font-data">{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 ml-1.5 pulse-dot" style={{ verticalAlign: 'middle' }} />
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 ml-1.5 animate-pulse" style={{ verticalAlign: 'middle' }} />
                 </div>
               </div>
             </Reveal>
@@ -1939,7 +1960,7 @@ export default function MyCaseValue() {
                 </svg>
               </div>
               <Card glow className="relative overflow-hidden" style={{ padding: '32px' }}>
-                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #4040F2, #5C5CF5, #0D9488, #4040F2, #4040F2)', backgroundSize: '200% 100%', animation: 'shimmerGold 4s ease infinite' }} />
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #4040F2, #5C5CF5, #0D9488)' }} />
                 <SectionLabel>{t.select_situation}</SectionLabel>
                 <div className="grid grid-cols-2 gap-3">
                   {SITS.map(si => (
@@ -2529,45 +2550,7 @@ export default function MyCaseValue() {
           </div>
         </Reveal>
 
-        {/* Email capture lead magnet */}
-        <Reveal delay={660}>
-          <div className="p-6 rounded-2xl mb-4 text-center" style={{ background: 'linear-gradient(135deg, #0B1221, #1A2744)' }}>
-            <div className="text-[11px] font-bold tracking-[2px] mb-2" style={{ color: '#4040F2' }}>
-              {lang === 'es' ? 'GUÍA GRATUITA' : 'FREE GUIDE'}
-            </div>
-            <div className="text-lg font-display font-bold text-white mb-2">
-              {lang === 'es' ? '5 errores que arruinan los reclamos legales' : '5 Mistakes That Ruin Legal Claims'}
-            </div>
-            <p className="text-[13px] text-slate-400 mb-4 max-w-sm mx-auto">
-              {lang === 'es' ? 'Descargue nuestra guía gratuita basada en datos de millones de casos federales.' : 'Download our free guide based on data from millions of federal cases.'}
-            </p>
-            {leadCaptureSent ? (
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[14px] font-semibold" style={{ background: '#CCFBF1', color: '#0D9488' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                {lang === 'es' ? '¡Enviado! Revisa tu correo.' : 'Sent! Check your inbox.'}
-              </div>
-            ) : (
-              <div className="flex gap-2 max-w-md mx-auto">
-                <input type="email" value={leadEmail} onChange={e => setLeadEmail(e.target.value)}
-                  placeholder={lang === 'es' ? 'tu@correo.com' : 'you@email.com'}
-                  className="flex-1 px-4 py-3 text-sm border-none rounded-xl outline-none"
-                  style={{ background: 'rgba(255,255,255,0.1)', color: 'white' }} />
-                <button onClick={() => {
-                  if (leadEmail.includes('@') && leadEmail.includes('.')) {
-                    setLeadCaptureSent(true);
-                    apiCall('/api/lead/capture', 'POST', { email: leadEmail, source: 'guide' });
-                    if (typeof window !== 'undefined' && (window as any).mcvAnalytics) (window as any).mcvAnalytics.track('lead_capture', { source: 'guide' });
-                  }
-                }}
-                  className="px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer border-none"
-                  style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }}>
-                  {lang === 'es' ? 'Enviar' : 'Send me the guide'}
-                </button>
-              </div>
-            )}
-            <div className="text-[10px] text-slate-500 mt-2">{lang === 'es' ? 'Sin spam. Cancele en cualquier momento.' : 'No spam. Unsubscribe anytime.'}</div>
-          </div>
-        </Reveal>
+        {/* (Free guide section removed) */}
 
         {/* === WHAT YOUR REPORT INCLUDES === */}
         <Reveal delay={680}>
