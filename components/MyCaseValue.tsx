@@ -1244,18 +1244,40 @@ export default function MyCaseValue() {
 
   // Scroll handler moved to Navbar component
 
-  // Keyboard navigation (Escape to go back)
+  // Keyboard navigation
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      // Escape: go back
       if (e.key === 'Escape') {
         if (step === 6) { setResult(null); go(5); }
         else if (step > 1) go(step - 1);
         else if (step === 1) go(0);
       }
+      // Ctrl/Cmd + K: focus search input (if on homepage)
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const input = document.querySelector<HTMLInputElement>('input[type="text"]');
+        if (input) input.focus();
+      }
+      // Ctrl/Cmd + P: print report (if on report page)
+      if ((e.metaKey || e.ctrlKey) && e.key === 'p' && step === 6 && isPremium) {
+        e.preventDefault();
+        try { window.print(); } catch {}
+      }
+      // Ctrl/Cmd + D: toggle dark mode
+      if ((e.metaKey || e.ctrlKey) && e.key === 'd') {
+        e.preventDefault();
+        setDarkMode(!darkMode);
+      }
+      // Ctrl/Cmd + N: new report
+      if ((e.metaKey || e.ctrlKey) && e.key === 'n' && step !== 0) {
+        e.preventDefault();
+        reset();
+      }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [step]);
+  }, [step, darkMode, isPremium]);
 
   // Live counter
   useEffect(() => {
@@ -4547,8 +4569,13 @@ export default function MyCaseValue() {
         {/* Pricing Modal */}
         {showPricing && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
-            onClick={() => setShowPricing(false)}>
-            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.95) 100%)', boxShadow: '0 25px 80px rgba(11,18,33,.2), 0 0 0 1px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.9)' }} onClick={e => e.stopPropagation()}>
+            onClick={() => setShowPricing(false)}
+            role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
+            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full relative" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.95) 100%)', boxShadow: '0 25px 80px rgba(11,18,33,.2), 0 0 0 1px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.9)' }} onClick={e => e.stopPropagation()}>
+              <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center cursor-pointer border-none transition-colors focus-ring"
+                aria-label="Close pricing">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              </button>
               <div className="text-center mb-7">
                 <div className="text-2xl sm:text-3xl font-display font-bold">{lang === 'es' ? 'Vea el panorama completo' : 'See the complete picture'}</div>
                 <p className="text-[15px] text-slate-500 mt-2">{lang === 'es' ? '8 herramientas de datos para mayor comprensión' : '8 data tools for deeper understanding'}</p>
