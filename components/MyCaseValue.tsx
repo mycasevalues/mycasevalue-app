@@ -5820,7 +5820,7 @@ export default function MyCaseValue() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
             onClick={() => setShowPricing(false)}
             role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
-            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full relative" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.95) 100%)', boxShadow: '0 25px 80px rgba(11,18,33,.2), 0 0 0 1px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
+            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(11,18,33,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(64,64,242,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
               <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#1E293B] hover:bg-[#334155] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring"
                 aria-label="Close pricing">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
