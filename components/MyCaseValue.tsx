@@ -464,7 +464,7 @@ function ReportFeaturesGrid({ lang = 'en' }: { lang?: string }) {
           f.free
             ? 'bg-[#131B2E] border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
             : 'border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
-        }`} style={!f.free ? { background: 'linear-gradient(135deg, rgba(79,70,229,0.08), rgba(99,102,241,0.04))', borderColor: 'rgba(64,64,242,0.12)' } : undefined}>
+        }`} style={!f.free ? { background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(19,27,46,0.9))', borderColor: 'rgba(99,102,241,0.2)' } : undefined}>
           <div className="flex items-start justify-between mb-2">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: f.free ? 'rgba(99,102,241,0.1)' : 'rgba(99,102,241,0.12)' }}>{f.icon}</div>
             {!f.free && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>}
@@ -495,8 +495,8 @@ function CaseTypeStatsPreview({ lang = 'en' }: { lang?: string }) {
           <button key={k} onClick={() => setActiveType(k)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               activeType === k
-                ? 'bg-yellow-100 text-yellow-900 border border-yellow-200'
-                : 'bg-[#1E293B] text-[#94A3B8] border border-[#1E293B] hover:bg-[#1E293B]'
+                ? 'bg-[rgba(79,70,229,0.15)] text-[#A5B4FC] border border-[rgba(99,102,241,0.4)] shadow-[0_0_12px_rgba(99,102,241,0.15)]'
+                : 'bg-[#1E293B] text-[#94A3B8] border border-[#334155] hover:bg-[rgba(99,102,241,0.08)] hover:text-[#CBD5E1]'
             }`}>
             {stats[k].label}
           </button>
@@ -511,7 +511,7 @@ function CaseTypeStatsPreview({ lang = 'en' }: { lang?: string }) {
         ].map((stat, i) => (
           <div key={i} className="text-center p-4 rounded-xl transition-transform hover:scale-[1.03]" style={{ background: `${stat.c}08` }}>
             <div className="text-2xl font-display font-bold" style={{ color: stat.c, letterSpacing: '-1px' }}>{stat.v}</div>
-            <div className="text-[11px] font-medium text-slate-500 mt-1">{stat.l}</div>
+            <div className="text-[11px] font-medium mt-1" style={{ color: '#64748B' }}>{stat.l}</div>
           </div>
         ))}
       </div>
@@ -2225,7 +2225,7 @@ export default function MyCaseValue() {
                 return (
                   <div key={i} className="flex items-center gap-3 py-3" style={{ borderBottom: i < TRENDING.length - 1 ? '1px solid rgba(13,148,136,0.1)' : 'none' }}>
                     <span className="text-sm font-semibold text-[#CBD5E1] flex-1">{tr.label}</span>
-                    <div className="w-16 h-2.5 bg-slate-200 rounded-full overflow-hidden flex-shrink-0" style={{ background: 'rgba(13,148,136,0.15)' }}>
+                    <div className="w-16 h-2.5 rounded-full overflow-hidden flex-shrink-0" style={{ background: 'rgba(13,148,136,0.15)' }}>
                       <div className="h-full rounded-full" style={{ width: `${barW}%`, background: 'linear-gradient(90deg, #0D9488, #14B8A6)', transition: 'width 1s ease', boxShadow: '0 0 12px rgba(13,148,136,0.4)' }} />
                     </div>
                     <span className="text-sm font-extrabold flex-shrink-0 w-14 text-right" style={{ color: '#0D9488', textShadow: '0 1px 4px rgba(13,148,136,0.2)' }}>
@@ -2243,7 +2243,7 @@ export default function MyCaseValue() {
               {['9th', '2nd', 'D.C.', '3rd', '7th', '5th'].map((ci, i) => (
                 <div key={i} className="flex items-center gap-2 py-2">
                   <span className="text-xs font-extrabold w-9 text-[#CBD5E1]">{ci}</span>
-                  <div className="flex-1 h-2.5 bg-slate-200 rounded-full overflow-hidden" style={{ background: 'rgba(64,64,242,0.15)' }}>
+                  <div className="flex-1 h-2.5 rounded-full overflow-hidden" style={{ background: 'rgba(64,64,242,0.15)' }}>
                     <div className="h-full rounded-full transition-all duration-700" style={{
                       width: `${CIRCUIT_WIN_RATES[ci] || 35}%`,
                       background: (CIRCUIT_WIN_RATES[ci] || 35) > 40 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : (CIRCUIT_WIN_RATES[ci] || 35) > 37 ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
@@ -2285,7 +2285,7 @@ export default function MyCaseValue() {
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-[13px] text-slate-500"><strong className="font-data">{liveCounter}</strong> {lang === 'es' ? 'informes generados hoy' : 'reports generated today'}</span>
             </div>
-            <div className="w-px h-4 bg-slate-200" />
+            <div className="w-px h-4" style={{ background: '#334155' }} />
             <div className="flex items-center gap-2">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
               <span className="text-[13px] text-slate-500"><strong className="font-data">{(totalCases / 1000).toFixed(0)}K+</strong> {lang === 'es' ? 'usuarios' : 'users'}</span>
@@ -5124,7 +5124,7 @@ export default function MyCaseValue() {
                     <div className="space-y-2">
                       {[1, 2, 3].map((_, i) => (
                         <div key={i} className="p-3 bg-[#1E293B] rounded-xl flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-[11px] font-bold text-slate-400">#{i+1}</div>
+                          <div className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold" style={{ background: 'rgba(99,102,241,0.15)', color: '#A5B4FC' }}>#{i+1}</div>
                           <div className="flex-1">
                             <div className="text-[12px] font-semibold text-[#94A3B8]">{lang === 'es' ? 'Caso similar redactado' : 'Redacted similar case'}</div>
                             <div className="text-[10px] text-slate-400">{lang === 'es' ? 'Resuelto en' : 'Resolved in'} ?? {lang === 'es' ? 'meses • Acuerdo' : 'months • Settled'}</div>
@@ -5336,7 +5336,7 @@ export default function MyCaseValue() {
                             <div className="text-[11px] text-slate-400">{lang === 'es' ? 'Presentado' : 'Filed'}</div>
                             <div className="text-base font-bold">{months[today.getMonth()]} {today.getFullYear()}</div>
                           </div>
-                          <div className="flex-1 h-[3px] bg-slate-200 rounded-full relative">
+                          <div className="flex-1 h-[3px] rounded-full relative" style={{ background: '#334155' }}>
                             <div className="absolute right-0 top-[-3px] w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
                           </div>
                           <div className="text-center">

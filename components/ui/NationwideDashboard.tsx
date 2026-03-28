@@ -175,7 +175,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
 
       {/* Footer disclaimer */}
       <div className="px-6 py-3" style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-        <div className="text-[10px] text-slate-600 text-center">
+        <div className="text-[10px] text-center" style={{ color: '#64748B' }}>
           {es ? 'Datos de fuentes públicas federales. Actualizado periódicamente.' : 'Data from public federal sources. Updated periodically.'}
         </div>
       </div>

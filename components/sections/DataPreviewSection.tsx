@@ -146,8 +146,8 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
             </div>
 
             <div
-              className="mt-6 p-4 rounded-lg border text-xs text-slate-600"
-              style={{ background: '#E4E5FF20', borderColor: '#4F46E540' }}
+              className="mt-6 p-4 rounded-lg border text-xs"
+              style={{ background: '#E4E5FF20', borderColor: '#4F46E540', color: '#64748B' }}
             >
               {lang === 'es'
                 ? '📊 Estas tasas reflejan todos los casos federales civiles en los últimos 5 años.'
