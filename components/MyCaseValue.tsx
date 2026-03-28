@@ -61,15 +61,19 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-function Card({ children, glow = false, className = '', style = {} }: { children: React.ReactNode; glow?: boolean; className?: string; style?: React.CSSProperties }) {
+function Card({ children, glow = false, premium = false, className = '', style = {} }: { children: React.ReactNode; glow?: boolean; premium?: boolean; className?: string; style?: React.CSSProperties }) {
   return (
-    <div className={`card-bg rounded-2xl border mb-3 p-7 transition-all duration-300 ${glow ? 'animate-glow-pulse' : ''} ${className}`}
+    <div className={`card-bg rounded-2xl border mb-3 p-7 transition-all duration-300 ${glow ? 'animate-glow-pulse' : ''} ${premium ? 'glass-premium aurora-card tilt-hover' : ''} ${className}`}
       style={{
-        background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(11,18,33,0.9) 100%)',
-        borderColor: 'rgba(226,232,240,0.6)',
+        background: premium
+          ? 'linear-gradient(180deg, rgba(15,23,42,0.85) 0%, rgba(11,18,33,0.95) 100%)'
+          : 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(11,18,33,0.9) 100%)',
+        borderColor: premium ? 'rgba(99,102,241,0.15)' : 'rgba(226,232,240,0.6)',
         boxShadow: glow
           ? '0 2px 8px rgba(64,64,242,.08), 0 12px 40px rgba(11,18,33,.06), inset 0 1px 0 rgba(255,255,255,0.03)'
-          : '0 1px 3px rgba(11,18,33,.02), 0 8px 28px rgba(11,18,33,.04), inset 0 1px 0 rgba(255,255,255,0.03)',
+          : premium
+            ? '0 4px 24px rgba(0,0,0,0.3), 0 0 60px rgba(79,70,229,0.04), inset 0 1px 0 rgba(255,255,255,0.04)'
+            : '0 1px 3px rgba(11,18,33,.02), 0 8px 28px rgba(11,18,33,.04), inset 0 1px 0 rgba(255,255,255,0.03)',
         ...style,
       }}>
       {children}
@@ -95,23 +99,23 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Stat({ value, label, color, large = false, dark = false }: { value: string; label: string; color: string; large?: boolean; dark?: boolean }) {
+function Stat({ value, label, color, large = false }: { value: string; label: string; color: string; large?: boolean; dark?: boolean }) {
   return (
-    <div className="text-center p-4 rounded-xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-0.5" style={{
-      background: dark ? `linear-gradient(180deg, rgba(19,27,46,0.7), ${color}10)` : `linear-gradient(180deg, #fff, ${color}06)`,
-      border: `1px solid ${dark ? `${color}20` : `${color}10`}`,
-      boxShadow: dark ? `0 2px 12px ${color}08` : `0 2px 12px ${color}06`,
+    <div className="text-center p-4 rounded-xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-0.5 tilt-hover" style={{
+      background: `linear-gradient(180deg, rgba(19,27,46,0.7), ${color}10)`,
+      border: `1px solid ${color}20`,
+      boxShadow: `0 2px 12px ${color}08`,
     }}>
-      <div className="font-display font-bold" style={{
+      <div className="font-display font-bold neon-text" style={{
         fontSize: large ? 48 : 30,
         color,
         letterSpacing: large ? '-1px' : '-0.5px',
         lineHeight: 1,
-        textShadow: dark ? `0 0 20px ${color}30` : 'none',
+        textShadow: `0 0 20px ${color}30`,
       }}>
         {value}
       </div>
-      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: dark ? '#8B9AB5' : '#94A3B8', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
+      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: '#8B9AB5', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
     </div>
   );
 }
@@ -167,9 +171,9 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
         aria-haspopup="listbox"
         className="w-full px-4 py-3.5 text-[15px] font-medium border-[1.5px] rounded-xl cursor-pointer text-left flex justify-between items-center transition-all duration-200"
         style={{
-          borderColor: open ? '#4F46E5' : (dark ? '#334155' : '#1E293B'),
-          color: selected ? (dark ? '#F0F2F5' : '#0B1221') : '#94A3B8',
-          background: dark ? '#1A2744' : '#fff',
+          borderColor: open ? '#4F46E5' : '#334155',
+          color: selected ? '#F0F2F5' : '#94A3B8',
+          background: '#1A2744',
           boxShadow: open ? '0 0 0 3px rgba(64,64,242,0.12)' : 'none',
         }}>
         <span className="truncate">{selected ? selected.label : placeholder || 'Select...'}</span>
@@ -182,9 +186,9 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
         role="listbox"
         className="absolute top-full mt-1.5 left-0 right-0 rounded-xl z-20 overflow-hidden"
         style={{
-          background: dark ? '#1A2744' : '#fff',
-          border: open ? `1px solid ${dark ? '#334155' : '#1E293B'}` : '1px solid transparent',
-          boxShadow: open ? (dark ? '0 12px 40px rgba(11,18,33,.4)' : '0 12px 40px rgba(11,18,33,.12)') : 'none',
+          background: '#1A2744',
+          border: open ? '1px solid #334155' : '1px solid transparent',
+          boxShadow: open ? '0 12px 40px rgba(11,18,33,.4)' : 'none',
           maxHeight: open ? '280px' : '0',
           opacity: open ? 1 : 0,
           transform: open ? 'translateY(0) scale(1)' : 'translateY(-8px) scale(0.98)',
@@ -257,7 +261,7 @@ function LockedPreview({ children, onUnlock, label }: { children: React.ReactNod
         <div className="text-center max-w-xs">
           <div className="text-[13px] text-[#CBD5E1] font-semibold mb-1">Premium Insight</div>
           <div className="text-[11px] text-slate-400 mb-3">Unlock detailed data that could change your strategy</div>
-          <button onClick={onUnlock} className="premium-cta px-8 py-3.5 text-[14px] font-semibold rounded-xl cursor-pointer text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-95"
+          <button onClick={onUnlock} className="premium-cta magnetic-btn shimmer-sweep px-8 py-3.5 text-[14px] font-semibold rounded-xl cursor-pointer text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-95"
             style={{
               background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
               boxShadow: '0 4px 24px rgba(79,70,229,0.35), 0 0 0 1px rgba(79,70,229,0.1)',
@@ -1828,7 +1832,7 @@ export default function MyCaseValue() {
 
   if (step === 0) return (
     <Shell {...shellProps}>
-      <div className="hero-bg hero-parallax py-12 sm:py-20 pb-10 relative overflow-hidden noise-overlay">
+      <div className="hero-bg hero-parallax mesh-bg py-12 sm:py-20 pb-10 relative overflow-hidden noise-overlay particle-field">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
         <div className="hero-orb hero-orb-2" />
@@ -2015,7 +2019,7 @@ export default function MyCaseValue() {
 
             <div className="relative w-full max-w-[420px] float-gentle">
               {/* Main report card — glass on dark hero */}
-              <div className="rounded-2xl overflow-hidden" style={{
+              <div className="rounded-2xl overflow-hidden glass-premium aurora-card" style={{
                 background: 'linear-gradient(180deg, rgba(20,28,50,0.85) 0%, rgba(15,23,42,0.9) 100%)',
                 border: '1px solid rgba(99,102,241,0.2)',
                 boxShadow: '0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(79,70,229,0.15), inset 0 1px 0 rgba(255,255,255,0.05)',
@@ -2106,6 +2110,13 @@ export default function MyCaseValue() {
             </div>
           </div>
 
+          {/* Scroll indicator */}
+          <div className="flex justify-center scroll-indicator" style={{ gridColumn: '1 / -1' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" opacity="0.5">
+              <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+          </div>
+
           {/* Dramatic gradient divider */}
           <div className="my-8 h-1 rounded-full" style={{ gridColumn: '1 / -1', background: 'linear-gradient(90deg, transparent 0%, #4F46E5 15%, #0D9488 50%, #4F46E5 85%, transparent 100%)', boxShadow: '0 4px 20px rgba(79,70,229,0.4), 0 4px 20px rgba(13,148,136,0.2)' }} />
 
@@ -2134,10 +2145,10 @@ export default function MyCaseValue() {
               <Card glow className="relative overflow-hidden" style={{ padding: '32px' }}>
                 <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #4F46E5, #6366F1, #0D9488)' }} />
                 <SectionLabel>{t.select_situation}</SectionLabel>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3 stagger-in">
                   {SITS.map(si => (
                     <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
-                      className="category-card p-5 card-bg rounded-xl cursor-pointer text-left group border-[1.5px] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
+                      className="category-card p-5 card-bg rounded-xl cursor-pointer text-left group border-[1.5px] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 tilt-hover"
                       style={{
                         background: `linear-gradient(180deg, ${si.color}20 0%, ${si.color}10 100%)`,
                         borderColor: si.color + '40',
@@ -3096,7 +3107,7 @@ export default function MyCaseValue() {
             </p>
             <label className="flex gap-3 items-start cursor-pointer text-[15px]" onClick={() => setConsent(!consent)}>
               <div className="w-6 h-6 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
-                style={{ borderColor: consent ? '#4F46E5' : '#1E293B', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#fff' }}>
+                style={{ borderColor: consent ? '#4F46E5' : '#1E293B', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B' }}>
                 {consent && <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
               </div>
               <span className="leading-relaxed">{lang === 'es'
@@ -3228,7 +3239,7 @@ export default function MyCaseValue() {
           <Reveal>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 no-print">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full relative" style={{ background: '#0D9488' }}>
+                <div className="w-2 h-2 rounded-full relative breathe" style={{ background: '#0D9488' }}>
                   <div className="absolute -inset-0.5 rounded-full" style={{ background: '#0D9488', opacity: 0.4, animation: 'pulseGlow 2s infinite' }} />
                 </div>
                 <span className="text-sm text-slate-400">
@@ -3288,7 +3299,7 @@ export default function MyCaseValue() {
           {/* AI Deep Analysis — Personalized Narrative */}
           {isPremium && (
             <Reveal delay={50}>
-              <Card className="p-6 sm:p-8 gradient-border">
+              <Card premium className="p-6 sm:p-8 gradient-border">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4F46E5, #7C3AED)' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 2a4 4 0 014 4c0 1.95-2 3-2 8h-4c0-5-2-6.05-2-8a4 4 0 014-4z"/><line x1="10" y1="22" x2="14" y2="22"/><line x1="10" y1="18" x2="14" y2="18"/><line x1="9" y1="20" x2="15" y2="20"/></svg>
@@ -3406,9 +3417,9 @@ export default function MyCaseValue() {
           {/* Google Scholar Legal Insights — Premium */}
           {isPremium && (
             <Reveal delay={70}>
-              <Card className="p-6 sm:p-8">
+              <Card premium className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0D948820, #14B8A620)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #0D948820, #14B8A620)' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
                   </div>
                   <div>
@@ -3470,7 +3481,7 @@ export default function MyCaseValue() {
                               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
                             </div>
                             <div className="flex-1">
-                              <div className="text-[13px] font-semibold" style={{ color: '#1E293B' }}>{c.title}</div>
+                              <div className="text-[13px] font-semibold" style={{ color: '#E2E8F0' }}>{c.title}</div>
                               <div className="text-[11px] text-slate-400 mt-0.5">{c.authors} · {c.year} · Cited by {c.cited}</div>
                             </div>
                           </div>
@@ -3507,9 +3518,9 @@ export default function MyCaseValue() {
           {/* Personalized Case Timeline — Visual journey */}
           {isPremium && (
             <Reveal delay={80}>
-              <Card className="p-6 sm:p-8">
+              <Card premium className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
                   </div>
                   <div>
@@ -3547,7 +3558,7 @@ export default function MyCaseValue() {
                             <div className="flex-1">
                               <div className="flex items-center gap-2 flex-wrap">
                                 <span className="text-sm">{phase.icon}</span>
-                                <span className="text-[14px] font-semibold" style={{ color: '#1E293B' }}>{phase.name}</span>
+                                <span className="text-[14px] font-semibold" style={{ color: '#E2E8F0' }}>{phase.name}</span>
                                 <span className="text-[11px] font-medium px-2 py-0.5 rounded-full" style={{ background: '#1E293B', color: '#64748B' }}>{phase.duration}</span>
                               </div>
                               <p className="text-[12px] mt-1 m-0" style={{ color: '#64748B' }}>{phase.desc}</p>
@@ -3570,9 +3581,9 @@ export default function MyCaseValue() {
           {/* Case Strength Radar — Premium */}
           {isPremium && (
             <Reveal delay={90}>
-              <Card className="p-6 sm:p-8">
+              <Card premium className="p-6 sm:p-8 holo-gradient">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #6366F120, #7C3AED20)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #6366F120, #7C3AED20)' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   </div>
                   <div>
@@ -3671,9 +3682,9 @@ export default function MyCaseValue() {
           {/* Settlement Timing Heatmap — Premium */}
           {isPremium && (
             <Reveal delay={95}>
-              <Card className="p-6 sm:p-8">
+              <Card premium className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0D948820, #059F8E20)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #0D948820, #059F8E20)' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   </div>
                   <div>
@@ -4773,7 +4784,7 @@ export default function MyCaseValue() {
               <Reveal delay={100}>
                 <Collapsible title={lang === 'es' ? `Cómo terminaron ${d.total?.toLocaleString() || ''} casos similares` : `How ${d.total?.toLocaleString() || ''} similar cases ended`} badge={lang === 'es' ? `${(d.ends || []).length} formas` : `${(d.ends || []).length} ways`} defaultOpen>
                   <div className="flex gap-5 items-center mb-4">
-                    <div className="w-28 h-28 rounded-full border-4 border-slate-50 flex items-center justify-center flex-shrink-0" style={{ background: '#F8FAF7' }}>
+                    <div className="w-28 h-28 rounded-full border-4 border-[#1E293B] flex items-center justify-center flex-shrink-0" style={{ background: '#131B2E' }}>
                       <PieChart segments={(d.ends || []).slice(0, 6).map((e: any) => ({ pct: e.p, color: e.c }))} size={100} strokeWidth={8} />
                     </div>
                     <div className="flex-1">
