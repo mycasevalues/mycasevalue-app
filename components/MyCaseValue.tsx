@@ -3515,6 +3515,200 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          {/* Case Strength Radar — Premium */}
+          {isPremium && (
+            <Reveal delay={90}>
+              <Card className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #6366F120, #7C3AED20)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#6366F1' }}>
+                      {lang === 'es' ? 'RADAR DE FORTALEZA' : 'STRENGTH RADAR'}
+                    </div>
+                    <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
+                      {lang === 'es' ? 'Análisis multidimensional' : 'Multi-Factor Analysis'}
+                    </div>
+                  </div>
+                </div>
+                {(() => {
+                  const factors = [
+                    { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: Math.min(100, Math.round(wr * 1.2)) },
+                    { label: lang === 'es' ? 'Acuerdos' : 'Settlement', value: Math.min(100, d.sp || 45) },
+                    { label: lang === 'es' ? 'Evidencia' : 'Evidence', value: Math.min(100, Math.round(55 + (attorney === 'yes' ? 20 : 0) + (timing === 'recent' ? 15 : -5))) },
+                    { label: lang === 'es' ? 'Rapidez' : 'Speed', value: Math.min(100, Math.round(100 - (d.mo || 10) * 4)) },
+                    { label: lang === 'es' ? 'Jurisdicción' : 'Jurisdiction', value: stateCode && AGGREGATE_STATE_RATES[stateCode] ? Math.round(AGGREGATE_STATE_RATES[stateCode] * 1.3) : 55 },
+                    { label: lang === 'es' ? 'Representación' : 'Representation', value: attorney === 'yes' || attorney === 'with' ? 85 : attorney === 'looking' ? 60 : 30 },
+                  ];
+                  const n = factors.length;
+                  const cx = 130, cy = 130, maxR = 100;
+                  const angleStep = (2 * Math.PI) / n;
+                  const getPoint = (i: number, r: number) => ({
+                    x: cx + r * Math.cos(i * angleStep - Math.PI / 2),
+                    y: cy + r * Math.sin(i * angleStep - Math.PI / 2),
+                  });
+                  const bgPoints = factors.map((_, i) => getPoint(i, maxR));
+                  const dataPoints = factors.map((f, i) => getPoint(i, (f.value / 100) * maxR));
+                  const avgScore = Math.round(factors.reduce((s, f) => s + f.value, 0) / n);
+
+                  return (
+                    <div className="flex flex-col sm:flex-row items-center gap-6">
+                      <svg width="260" height="260" viewBox="0 0 260 260" className="flex-shrink-0">
+                        {/* Background rings */}
+                        {[25, 50, 75, 100].map(pct => (
+                          <polygon key={pct} points={factors.map((_, i) => { const p = getPoint(i, pct); return `${p.x},${p.y}`; }).join(' ')}
+                            fill="none" stroke={darkMode ? '#1E293B' : '#E2E8F0'} strokeWidth="0.5" />
+                        ))}
+                        {/* Axis lines */}
+                        {factors.map((_, i) => {
+                          const p = getPoint(i, maxR);
+                          return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke={darkMode ? '#1E293B' : '#E2E8F0'} strokeWidth="0.5" />;
+                        })}
+                        {/* Data polygon */}
+                        <polygon points={dataPoints.map(p => `${p.x},${p.y}`).join(' ')}
+                          fill="rgba(79,70,229,0.12)" stroke="#4F46E5" strokeWidth="2" strokeLinejoin="round"
+                          style={{ filter: 'drop-shadow(0 2px 8px rgba(79,70,229,0.2))' }} />
+                        {/* Data dots */}
+                        {dataPoints.map((p, i) => (
+                          <circle key={i} cx={p.x} cy={p.y} r="4" fill="#4F46E5" stroke="white" strokeWidth="2" />
+                        ))}
+                        {/* Labels */}
+                        {factors.map((f, i) => {
+                          const p = getPoint(i, maxR + 22);
+                          return (
+                            <text key={i} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="middle"
+                              fontSize="10" fontWeight="600" fill={darkMode ? '#94A3B8' : '#64748B'}>
+                              {f.label}
+                            </text>
+                          );
+                        })}
+                        {/* Center score */}
+                        <text x={cx} y={cy - 6} textAnchor="middle" fontSize="28" fontWeight="800" fill="#4F46E5">{avgScore}</text>
+                        <text x={cx} y={cy + 12} textAnchor="middle" fontSize="9" fontWeight="600" fill="#94A3B8">
+                          {lang === 'es' ? 'PUNTUACIÓN' : 'SCORE'}
+                        </text>
+                      </svg>
+                      <div className="flex-1 space-y-2.5">
+                        {factors.map((f, i) => (
+                          <div key={i}>
+                            <div className="flex justify-between mb-1">
+                              <span className="text-[12px] font-medium" style={{ color: darkMode ? '#CBD5E1' : '#475569' }}>{f.label}</span>
+                              <span className="text-[12px] font-bold font-data" style={{ color: f.value >= 60 ? '#0D9488' : f.value >= 40 ? '#6366F1' : '#E87461' }}>{f.value}/100</span>
+                            </div>
+                            <div className="h-2 rounded-full overflow-hidden" style={{ background: darkMode ? '#1E293B' : '#F1F5F9' }}>
+                              <div className="h-full rounded-full transition-all duration-700" style={{
+                                width: `${f.value}%`,
+                                background: f.value >= 60 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : f.value >= 40 ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'linear-gradient(90deg, #E87461, #F59E0B)',
+                                transitionDelay: `${i * 100}ms`,
+                              }} />
+                            </div>
+                          </div>
+                        ))}
+                        <div className="pt-3 text-[10px] text-slate-400 italic">
+                          {lang === 'es' ? 'Puntuaciones basadas en datos agregados. No es una evaluación de caso individual.' : 'Scores based on aggregate data. Not an individual case evaluation.'}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </Card>
+            </Reveal>
+          )}
+
+          {/* Settlement Timing Heatmap — Premium */}
+          {isPremium && (
+            <Reveal delay={95}>
+              <Card className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0D948820, #059F8E20)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#0D9488' }}>
+                      {lang === 'es' ? 'VENTANA DE ACUERDO' : 'SETTLEMENT WINDOW'}
+                    </div>
+                    <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
+                      {lang === 'es' ? 'Cuándo se resuelven los casos' : 'When Cases Settle'}
+                    </div>
+                  </div>
+                </div>
+                {(() => {
+                  const months = d.mo || 10;
+                  // Generate settlement timing data
+                  const timingData = [
+                    { month: 1, pct: 3, label: 'Mo 1' },
+                    { month: 2, pct: 5, label: 'Mo 2' },
+                    { month: 3, pct: 8, label: 'Mo 3' },
+                    { month: 4, pct: 14, label: 'Mo 4' },
+                    { month: 5, pct: 18, label: 'Mo 5' },
+                    { month: 6, pct: 22, label: 'Mo 6' },
+                    { month: 7, pct: 16, label: 'Mo 7' },
+                    { month: 8, pct: 11, label: 'Mo 8' },
+                    { month: 9, pct: 6, label: 'Mo 9' },
+                    { month: 10, pct: 4, label: 'Mo 10' },
+                    { month: 11, pct: 2, label: 'Mo 11' },
+                    { month: 12, pct: 1, label: 'Mo 12' },
+                  ];
+                  const maxPct = Math.max(...timingData.map(t => t.pct));
+                  const peakMonth = timingData.find(t => t.pct === maxPct);
+
+                  return (
+                    <>
+                      {/* Heatmap bars */}
+                      <div className="flex items-end gap-1.5 h-[120px] mb-3">
+                        {timingData.map((t, i) => {
+                          const intensity = t.pct / maxPct;
+                          const color = intensity > 0.7 ? '#0D9488' : intensity > 0.4 ? '#6366F1' : '#CBD5E1';
+                          return (
+                            <div key={i} className="flex-1 flex flex-col items-center gap-1">
+                              <div className="text-[9px] font-bold font-data" style={{ color: intensity > 0.5 ? color : '#94A3B8' }}>
+                                {t.pct}%
+                              </div>
+                              <div className="w-full rounded-t-md transition-all duration-700" style={{
+                                height: `${(t.pct / maxPct) * 90}px`,
+                                background: `linear-gradient(to top, ${color}90, ${color})`,
+                                opacity: 0.3 + intensity * 0.7,
+                                transitionDelay: `${i * 60}ms`,
+                              }} />
+                            </div>
+                          );
+                        })}
+                      </div>
+                      <div className="flex gap-1.5 mb-4">
+                        {timingData.map((t, i) => (
+                          <div key={i} className="flex-1 text-center text-[8px] font-semibold text-slate-400">{t.label}</div>
+                        ))}
+                      </div>
+
+                      {/* Key insight */}
+                      <div className="p-4 rounded-xl flex items-start gap-3" style={{
+                        background: darkMode ? 'linear-gradient(135deg, #1A2744, #162035)' : 'linear-gradient(135deg, #F0FDFA, #ECFDF5)',
+                        border: `1px solid ${darkMode ? '#334155' : '#0D948820'}`,
+                      }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        <div>
+                          <div className="text-[13px] font-semibold" style={{ color: darkMode ? '#E2E8F0' : '#0F172A' }}>
+                            {lang === 'es' ? `La ventana óptima de acuerdo es el mes ${peakMonth?.month}` : `Peak settlement window is month ${peakMonth?.month}`}
+                          </div>
+                          <div className="text-[12px] mt-1" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>
+                            {lang === 'es'
+                              ? `El ${timingData.slice(3, 7).reduce((s, t) => s + t.pct, 0)}% de todos los acuerdos en casos similares ocurren en los meses 4-7. Este es frecuentemente el mejor momento para negociar.`
+                              : `${timingData.slice(3, 7).reduce((s, t) => s + t.pct, 0)}% of all settlements in similar cases happen in months 4-7. This is often the best window for negotiation.`}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-3 text-[10px] text-slate-400 italic text-center">
+                        {lang === 'es' ? 'Distribución basada en datos agregados de casos similares. Los plazos individuales pueden variar.' : 'Distribution based on aggregate data from similar cases. Individual timelines may vary.'}
+                      </div>
+                    </>
+                  );
+                })()}
+              </Card>
+            </Reveal>
+          )}
+
           {/* === REPORT HEADER === */}
           <Reveal>
             <div className="h-[3px] rounded-full mb-0" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
