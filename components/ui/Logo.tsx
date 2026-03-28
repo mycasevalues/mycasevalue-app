@@ -14,7 +14,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
 
   return (
     <div className="flex items-center" style={{ gap }}>
-      {/* Official MyCaseValue logo mark — rounded indigo square with dot + slash */}
+      {/* Official MyCaseValue logo mark — matches LinkedIn profile picture */}
       <div className="flex-shrink-0" style={{ width: dim, height: dim }}>
         <svg
           width={dim}
@@ -24,12 +24,22 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
         >
-          {/* Rounded square background */}
-          <rect x="0" y="0" width="120" height="120" rx="26" fill="#4F46E5" />
-          {/* White dot — upper left */}
-          <circle cx="38" cy="34" r="11" fill="white" />
-          {/* White diagonal slash — lower left */}
-          <line x1="34" y1="95" x2="52" y2="52" stroke="white" strokeWidth="16" strokeLinecap="round" />
+          {/* Rounded square — generous radius matching official brand */}
+          <rect x="0" y="0" width="120" height="120" rx="28" fill="#4F46E5" />
+
+          {/* White dot — upper-left quadrant */}
+          <circle cx="39" cy="36" r="13" fill="white" />
+
+          {/* White diagonal slash — thick rounded stroke from lower-left to upper-right area */}
+          <line
+            x1="56"
+            y1="96"
+            x2="78"
+            y2="48"
+            stroke="white"
+            strokeWidth="18"
+            strokeLinecap="round"
+          />
         </svg>
       </div>
 
@@ -40,7 +50,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
             style={{
               fontSize,
               letterSpacing: '-0.5px',
-              color: darkMode ? '#F0F2F5' : '#0F172A',
+              color: darkMode ? '#FFFFFF' : '#0F172A',
             }}
           >
             MyCase
@@ -50,7 +60,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
             style={{
               fontSize,
               letterSpacing: '-0.5px',
-              color: darkMode ? '#94A3B8' : '#9CA3AF',
+              color: darkMode ? '#A5B4FC' : '#9CA3AF',
             }}
           >
             Value

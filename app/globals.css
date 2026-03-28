@@ -1324,6 +1324,69 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* ============================================================
+   HERO — LINKEDIN HEADER STYLE (dark bg, dot grid, accent line)
+   ============================================================ */
+.hero-bg {
+  background: linear-gradient(180deg, #080D1A 0%, #0B1221 40%, #111B30 100%);
+  color: #F0F2F5;
+  position: relative;
+}
+
+/* Dot grid overlay matching LinkedIn header pattern */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(79, 70, 229, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle gradient fade at bottom of hero */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(11, 18, 33, 0.8), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Vertical accent line — matches LinkedIn header brand element */
+.hero-accent-line {
+  width: 3px;
+  height: 64px;
+  background: linear-gradient(180deg, #4F46E5, #6366F1, transparent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Hero tagline styling to match LinkedIn header */
+.hero-tagline-bold {
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.hero-tagline-light {
+  color: rgba(165, 180, 252, 0.7);
+  font-weight: 500;
+}
+
+/* Noise overlay for texture */
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
    RESPONSIVE DESIGN
    ============================================================ */
 

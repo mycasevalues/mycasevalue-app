@@ -1864,47 +1864,51 @@ export default function MyCaseValue() {
         <div className="hero-grid grid gap-8 lg:gap-20" style={{ gridTemplateColumns: '1fr' }}>
           <div className="relative z-10">
             <Reveal>
-              {/* Top badges row */}
+              {/* Top badges row — dark glass on dark hero */}
               <div className="flex flex-wrap items-center gap-2 mb-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold glass-feature"
-                  style={{ color: '#4F46E5', border: '1px solid rgba(64,64,242,0.2)' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
+                  style={{ color: '#A5B4FC', background: 'rgba(79,70,229,0.12)', border: '1px solid rgba(99,102,241,0.2)' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                   {t.hero_badge}
                 </div>
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[11px] font-semibold glass-feature"
-                  style={{ color: '#0D9488', border: '1px solid rgba(13,148,136,0.15)' }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[11px] font-semibold"
+                  style={{ color: '#5EEAD4', background: 'rgba(13,148,136,0.1)', border: '1px solid rgba(13,148,136,0.2)' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                   {t.hero_privacy}
                 </div>
               </div>
 
-              <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[66px] leading-[0.95] font-extrabold mb-8" style={{ letterSpacing: '-3px' }}>
-                {t.hero_title_1}<br />
-                {t.hero_title_2}{' '}
-                <span className="text-shimmer" style={{ fontStyle: 'italic' }}>{t.hero_title_3}</span>
-              </h1>
+              {/* Tagline with vertical accent line — matches LinkedIn header brand */}
+              <div className="flex items-start gap-4 mb-8">
+                <div className="hero-accent-line mt-2 hidden sm:block" />
+                <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[66px] leading-[0.95] font-extrabold" style={{ letterSpacing: '-3px' }}>
+                  <span className="hero-tagline-bold">{t.hero_title_1}</span><br />
+                  <span className="hero-tagline-light">{t.hero_title_2}{' '}</span>
+                  <span className="text-shimmer hero-tagline-light" style={{ fontStyle: 'italic' }}>{t.hero_title_3}</span>
+                </h1>
+              </div>
 
               {/* Animated hero stats — 3 columns with visual dividers */}
               <div className="flex gap-6 sm:gap-10 mb-8 flex-wrap">
-                <div className="stat-glow" style={{ '--stat-color': '#0B1221' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#0B1221', textShadow: '0 2px 8px rgba(11,18,33,0.15)' }}>
+                <div className="stat-glow" style={{ '--stat-color': '#FFFFFF' } as any}>
+                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
                     {heroCounterDone ? <><AnimatedNumber value={4.2} decimals={1} />M+</> : '—'}
                   </div>
-                  <div className="text-xs text-slate-600 mt-1.5 font-semibold">{lang === 'es' ? 'Casos analizados' : 'Federal cases analyzed'}</div>
+                  <div className="text-xs mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Casos analizados' : 'Federal cases analyzed'}</div>
                 </div>
-                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.6 }} />
+                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.4 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#0D9488', textShadow: '0 2px 12px rgba(13,148,136,0.25)' }}>
+                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#0D9488', textShadow: '0 2px 12px rgba(13,148,136,0.3)' }}>
                     {heroCounterDone ? '50+' : '—'}
                   </div>
-                  <div className="text-xs text-slate-600 mt-1.5 font-semibold">{lang === 'es' ? 'Tipos de caso' : 'Case types covered'}</div>
+                  <div className="text-xs mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types covered'}</div>
                 </div>
-                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #4F46E5, transparent)', opacity: 0.6 }} />
-                <div className="stat-glow" style={{ '--stat-color': '#4F46E5' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#4F46E5', textShadow: '0 2px 12px rgba(64,64,242,0.25)' }}>
+                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
+                <div className="stat-glow" style={{ '--stat-color': '#A5B4FC' } as any}>
+                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#A5B4FC', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
                     {heroCounterDone ? '2min' : '—'}
                   </div>
-                  <div className="text-xs text-slate-600 mt-1.5 font-semibold">{lang === 'es' ? 'Para tu informe' : 'To your report'}</div>
+                  <div className="text-xs mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Para tu informe' : 'To your report'}</div>
                 </div>
               </div>
 
@@ -1919,22 +1923,26 @@ export default function MyCaseValue() {
                     }} />
                   ))}
                 </div>
-                <div className="text-[11px] text-slate-400 leading-tight">
-                  <div className="font-semibold text-slate-500">{lang === 'es' ? 'Tasa de éxito por tipo de caso' : 'Win rate by case type'}</div>
+                <div className="text-[11px] leading-tight" style={{ color: '#8B9AB5' }}>
+                  <div className="font-semibold" style={{ color: '#A5B4FC' }}>{lang === 'es' ? 'Tasa de éxito por tipo de caso' : 'Win rate by case type'}</div>
                   <div>{lang === 'es' ? '12 categorías analizadas' : '12 categories analyzed'}</div>
                 </div>
               </div>
 
-              {/* Trusted by — refined */}
+              {/* Trusted by — refined for dark hero */}
               <div className="mb-8">
-                <div className="text-[10px] text-slate-400 font-bold mb-3 tracking-[1.5px] uppercase">{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
+                <div className="text-[10px] font-bold mb-3 tracking-[1.5px] uppercase" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
-                    { name: 'CourtListener', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M9 11L12 14L22 4" /></svg> },
-                    { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
+                    { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
+                    { name: 'CourtListener', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M9 11L12 14L22 4" /></svg> },
+                    { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
                   ].map((s, i) => (
-                    <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold glass-feature transition-all hover:scale-[1.02]" style={{ color: darkMode ? '#E2E8F0' : '#0B1221' }}>
+                    <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all hover:scale-[1.02]" style={{
+                      color: '#C8D3E5',
+                      background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(255,255,255,0.08)',
+                    }}>
                       {s.icon}
                       {s.name}
                     </div>
@@ -1942,8 +1950,8 @@ export default function MyCaseValue() {
                 </div>
               </div>
 
-              <p className="text-[17px] sm:text-[19px] text-slate-500 max-w-xl leading-[1.7] mb-10">
-                {t.hero_sub_pre} <strong className="text-slate-700 font-data">{totalDisplay}</strong> {t.hero_sub_post}
+              <p className="text-[17px] sm:text-[19px] max-w-xl leading-[1.7] mb-10" style={{ color: '#8B9AB5' }}>
+                {t.hero_sub_pre} <strong className="font-data" style={{ color: '#A5B4FC' }}>{totalDisplay}</strong> {t.hero_sub_post}
               </p>
 
               {/* Natural language input — enhanced */}
@@ -1955,8 +1963,14 @@ export default function MyCaseValue() {
                     <input type="text" value={naturalInput} onChange={e => setNaturalInput(e.target.value)}
                       onKeyDown={e => { if (e.key === 'Enter' && naturalInput.trim()) { if (!detectCaseType(naturalInput)) go(1); } }}
                       placeholder={lang === 'es' ? 'Describe tu situación en pocas palabras...' : 'Describe your situation in a few words...'}
-                      className="w-full px-5 py-4.5 pr-14 text-[15px] card-bg bg-white border-[1.5px] border-slate-200 rounded-2xl outline-none focus:border-[#4F46E5] transition-all"
-                      style={{ boxShadow: '0 4px 20px rgba(11,18,33,.05)', padding: '18px 56px 18px 20px' }} />
+                      className="w-full px-5 py-4.5 pr-14 text-[15px] rounded-2xl outline-none transition-all"
+                      style={{
+                        background: 'rgba(255,255,255,0.06)',
+                        border: '1.5px solid rgba(255,255,255,0.12)',
+                        color: '#F0F2F5',
+                        boxShadow: '0 4px 20px rgba(0,0,0,.15)',
+                        padding: '18px 56px 18px 20px',
+                      }} />
                     <button onClick={() => { if (naturalInput.trim()) { if (!detectCaseType(naturalInput)) go(1); } }}
                       className="absolute right-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl flex items-center justify-center cursor-pointer border-none magnetic-btn ripple-effect"
                       style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 2px 10px rgba(64,64,242,.25)' }}>
@@ -1964,7 +1978,7 @@ export default function MyCaseValue() {
                     </button>
                   </div>
                 </div>
-                <div className="text-[11px] text-slate-400 mt-2 px-1">{lang === 'es' ? 'Ej: "Mi jefe me despidió por discriminación" o "Accidente de auto"' : 'E.g. "My boss fired me for discrimination" or "Car accident"'}</div>
+                <div className="text-[11px] mt-2 px-1" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'Ej: "Mi jefe me despidió por discriminación" o "Accidente de auto"' : 'E.g. "My boss fired me for discrimination" or "Car accident"'}</div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -1974,7 +1988,12 @@ export default function MyCaseValue() {
                   {t.hero_cta}
                 </button>
                 <button onClick={demo}
-                  className="magnetic-btn px-7 py-4 text-[15px] font-medium glass-feature border-[1.5px] border-slate-200 rounded-2xl cursor-pointer hover:border-slate-300 transition-all">
+                  className="magnetic-btn px-7 py-4 text-[15px] font-medium rounded-2xl cursor-pointer transition-all"
+                  style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1.5px solid rgba(255,255,255,0.15)',
+                    color: '#C8D3E5',
+                  }}>
                   {t.hero_demo}
                 </button>
               </div>
@@ -1983,14 +2002,14 @@ export default function MyCaseValue() {
               <div className="flex items-center gap-3 mt-8">
                 <div className="flex -space-x-2">
                   {['#4F46E5', '#0D9488', '#1A2744', '#6366F1', '#0D9488'].map((c, i) => (
-                    <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white border-2 border-white shadow-sm"
-                      style={{ background: c, zIndex: 5 - i }}>
+                    <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white shadow-sm"
+                      style={{ background: c, zIndex: 5 - i, border: '2px solid #131D35' }}>
                       {['J', 'M', 'K', 'S', 'A'][i]}
                     </div>
                   ))}
                 </div>
-                <div className="text-[12px] text-slate-500">
-                  <strong className="text-slate-700 font-data">{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
+                <div className="text-[12px]" style={{ color: '#8B9AB5' }}>
+                  <strong className="font-data" style={{ color: '#A5B4FC' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 ml-1.5 animate-pulse" style={{ verticalAlign: 'middle' }} />
                 </div>
               </div>
@@ -2003,20 +2022,21 @@ export default function MyCaseValue() {
             <div className="absolute inset-0 rounded-3xl" style={{ background: 'radial-gradient(ellipse at center, rgba(64,64,242,0.08) 0%, transparent 70%)', filter: 'blur(40px)' }} />
 
             <div className="relative w-full max-w-[420px] float-gentle">
-              {/* Main report card */}
+              {/* Main report card — glass on dark hero */}
               <div className="rounded-2xl overflow-hidden" style={{
-                background: 'linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(248,250,252,0.95) 100%)',
-                border: '1px solid rgba(64,64,242,0.15)',
-                boxShadow: '0 24px 80px rgba(11,18,33,0.12), 0 8px 24px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.9)',
+                background: 'linear-gradient(180deg, rgba(20,28,50,0.85) 0%, rgba(15,23,42,0.9) 100%)',
+                border: '1px solid rgba(99,102,241,0.2)',
+                boxShadow: '0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(79,70,229,0.15), inset 0 1px 0 rgba(255,255,255,0.05)',
+                backdropFilter: 'blur(12px)',
               }}>
                 {/* Top accent bar */}
                 <div className="h-1" style={{ background: 'linear-gradient(90deg, #4F46E5, #0D9488, #4F46E5)' }} />
 
                 {/* Header */}
-                <div className="px-6 pt-5 pb-3 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(226,232,240,0.5)' }}>
+                <div className="px-6 pt-5 pb-3 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <div>
-                    <div className="text-[9px] font-bold tracking-[2px] uppercase" style={{ color: '#94A3B8' }}>CASE ANALYSIS REPORT</div>
-                    <div className="text-[15px] font-display font-bold mt-0.5" style={{ color: '#0B1221' }}>Employment Discrimination</div>
+                    <div className="text-[9px] font-bold tracking-[2px] uppercase" style={{ color: '#6B7A94' }}>CASE ANALYSIS REPORT</div>
+                    <div className="text-[15px] font-display font-bold mt-0.5" style={{ color: '#F0F2F5' }}>Employment Discrimination</div>
                   </div>
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
@@ -2026,74 +2046,76 @@ export default function MyCaseValue() {
                 {/* Win rate */}
                 <div className="px-6 py-4">
                   <div className="flex items-end gap-3 mb-3">
-                    <div className="text-[42px] font-display font-extrabold leading-none" style={{ color: '#0D9488', letterSpacing: '-2px' }}>67%</div>
-                    <div className="text-[12px] font-semibold text-slate-400 pb-1.5">{lang === 'es' ? 'tasa de éxito' : 'win rate'}</div>
+                    <div className="text-[42px] font-display font-extrabold leading-none" style={{ color: '#0D9488', letterSpacing: '-2px', textShadow: '0 0 20px rgba(13,148,136,0.3)' }}>67%</div>
+                    <div className="text-[12px] font-semibold pb-1.5" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'tasa de éxito' : 'win rate'}</div>
                   </div>
-                  <div className="w-full h-2 rounded-full overflow-hidden" style={{ background: '#E2E8F0' }}>
+                  <div className="w-full h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
                     <div className="h-full rounded-full" style={{ width: '67%', background: 'linear-gradient(90deg, #0D9488, #14B8A6)' }} />
                   </div>
                 </div>
 
                 {/* Quick stats grid */}
-                <div className="grid grid-cols-3 gap-px mx-6 mb-4 rounded-xl overflow-hidden" style={{ background: 'rgba(226,232,240,0.4)' }}>
+                <div className="grid grid-cols-3 gap-px mx-6 mb-4 rounded-xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.04)' }}>
                   {[
-                    { v: '$85K', l: lang === 'es' ? 'Recuperación media' : 'Median recovery', c: '#4F46E5' },
-                    { v: '14mo', l: lang === 'es' ? 'Duración media' : 'Avg duration', c: '#0B1221' },
-                    { v: '72%', l: lang === 'es' ? 'Se resuelven' : 'Settle rate', c: '#0D9488' },
+                    { v: '$85K', l: lang === 'es' ? 'Recuperación media' : 'Median recovery', c: '#A5B4FC' },
+                    { v: '14mo', l: lang === 'es' ? 'Duración media' : 'Avg duration', c: '#F0F2F5' },
+                    { v: '72%', l: lang === 'es' ? 'Se resuelven' : 'Settle rate', c: '#5EEAD4' },
                   ].map((s, i) => (
-                    <div key={i} className="text-center py-3 px-2" style={{ background: 'rgba(248,250,252,0.9)' }}>
+                    <div key={i} className="text-center py-3 px-2" style={{ background: 'rgba(11,18,33,0.4)' }}>
                       <div className="text-[16px] font-display font-bold" style={{ color: s.c }}>{s.v}</div>
-                      <div className="text-[9px] font-semibold text-slate-400 mt-0.5">{s.l}</div>
+                      <div className="text-[9px] font-semibold mt-0.5" style={{ color: '#6B7A94' }}>{s.l}</div>
                     </div>
                   ))}
                 </div>
 
                 {/* Mini chart */}
                 <div className="px-6 pb-5">
-                  <div className="text-[9px] font-bold tracking-[1.5px] uppercase text-slate-400 mb-2">{lang === 'es' ? 'DISTRIBUCIÓN DE RESULTADOS' : 'OUTCOME DISTRIBUTION'}</div>
+                  <div className="text-[9px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'DISTRIBUCIÓN DE RESULTADOS' : 'OUTCOME DISTRIBUTION'}</div>
                   <div className="flex gap-1 items-end h-[44px]">
                     {[35, 28, 22, 8, 7].map((h, i) => (
                       <div key={i} className="flex-1 rounded-t" style={{
                         height: `${h * 1.2}px`,
                         background: i === 0 ? 'linear-gradient(to top, #0D9488, #14B8A6)'
                           : i === 1 ? 'linear-gradient(to top, #4F46E5, #6366F1)'
-                          : 'linear-gradient(to top, #CBD5E1, #E2E8F0)',
+                          : 'linear-gradient(to top, rgba(99,102,241,0.25), rgba(99,102,241,0.4))',
                       }} />
                     ))}
                   </div>
                   <div className="flex gap-1 mt-1">
                     {[lang === 'es' ? 'Acuerdo' : 'Settled', lang === 'es' ? 'Victoria' : 'Won', lang === 'es' ? 'Desestimado' : 'Dismissed', lang === 'es' ? 'Juicio' : 'Trial', lang === 'es' ? 'Otro' : 'Other'].map((l, i) => (
-                      <div key={i} className="flex-1 text-[7px] text-slate-400 text-center font-medium">{l}</div>
+                      <div key={i} className="flex-1 text-[7px] text-center font-medium" style={{ color: '#6B7A94' }}>{l}</div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Floating accent badges */}
-              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full text-[10px] font-bold glass-feature" style={{
-                background: 'rgba(248,250,252,0.95)',
-                color: '#0D9488',
-                border: '1px solid rgba(13,148,136,0.2)',
-                boxShadow: '0 4px 16px rgba(13,148,136,0.15)',
+              {/* Floating accent badges — dark glass */}
+              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full text-[10px] font-bold" style={{
+                background: 'rgba(15,23,42,0.85)',
+                color: '#5EEAD4',
+                border: '1px solid rgba(13,148,136,0.25)',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+                backdropFilter: 'blur(8px)',
               }}>
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 pulse-dot" style={{ verticalAlign: 'middle' }} />
                 {lang === 'es' ? 'Datos actualizados' : 'Live data'}
               </div>
 
-              <div className="absolute -bottom-2 -left-3 px-3 py-1.5 rounded-full text-[10px] font-bold glass-feature" style={{
-                background: 'rgba(248,250,252,0.95)',
-                color: '#4F46E5',
-                border: '1px solid rgba(64,64,242,0.2)',
-                boxShadow: '0 4px 16px rgba(64,64,242,0.15)',
+              <div className="absolute -bottom-2 -left-3 px-3 py-1.5 rounded-full text-[10px] font-bold" style={{
+                background: 'rgba(15,23,42,0.85)',
+                color: '#A5B4FC',
+                border: '1px solid rgba(99,102,241,0.25)',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+                backdropFilter: 'blur(8px)',
               }}>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2.5" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                 {lang === 'es' ? 'Análisis en 2 min' : '2-min analysis'}
               </div>
             </div>
           </div>
 
           {/* Dramatic gradient divider */}
-          <div className="my-8 h-1 rounded-full" style={{ gridColumn: '1 / -1', background: 'linear-gradient(90deg, transparent 0%, #4F46E5 15%, #0D9488 50%, #4F46E5 85%, transparent 100%)', boxShadow: '0 4px 20px rgba(64,64,242,0.3), 0 4px 20px rgba(13,148,136,0.2), 0 4px 20px rgba(64,64,242,0.15)' }} />
+          <div className="my-8 h-1 rounded-full" style={{ gridColumn: '1 / -1', background: 'linear-gradient(90deg, transparent 0%, #4F46E5 15%, #0D9488 50%, #4F46E5 85%, transparent 100%)', boxShadow: '0 4px 20px rgba(79,70,229,0.4), 0 4px 20px rgba(13,148,136,0.2)' }} />
 
           {/* Trust Bar — Elite Section */}
           <div style={{ gridColumn: '1 / -1' }}>
