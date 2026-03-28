@@ -419,7 +419,7 @@ function GlossaryTip({ term, children }: { term: string; children: React.ReactNo
       style={{ borderBottom: '1px dashed #4F46E540' }}>
       {children}
       {show && (
-        <span className="absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 rounded-xl text-[12px] leading-relaxed font-normal text-left w-64"
+        <span className="absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 rounded-xl text-[12px] leading-relaxed font-normal text-left w-56 sm:w-64 max-w-[calc(100vw-2rem)]"
           style={{ background: '#0B1221', color: '#E2E8F0', boxShadow: '0 8px 32px rgba(11,18,33,.25)' }}>
           <span className="font-bold text-white block mb-0.5 capitalize">{term}</span>
           {def}
@@ -1983,8 +1983,8 @@ export default function MyCaseValue() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <button onClick={() => go(1)}
-                  className="cta-glow btn-primary magnetic-btn ripple-effect px-10 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform"
-                  style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 24px rgba(64,64,242,.3)', padding: '18px 40px' }}>
+                  className="cta-glow btn-primary magnetic-btn ripple-effect px-6 sm:px-10 py-3.5 sm:py-4.5 text-[15px] sm:text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform w-full sm:w-auto"
+                  style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 24px rgba(64,64,242,.3)' }}>
                   {t.hero_cta}
                 </button>
                 <button onClick={demo}
@@ -2055,7 +2055,7 @@ export default function MyCaseValue() {
                 </div>
 
                 {/* Quick stats grid */}
-                <div className="grid grid-cols-3 gap-px mx-6 mb-4 rounded-xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <div className="grid grid-cols-3 gap-px mx-3 sm:mx-6 mb-4 rounded-xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.04)' }}>
                   {[
                     { v: '$85K', l: lang === 'es' ? 'Recuperación media' : 'Median recovery', c: '#A5B4FC' },
                     { v: '14mo', l: lang === 'es' ? 'Duración media' : 'Avg duration', c: '#F0F2F5' },
@@ -3172,7 +3172,7 @@ export default function MyCaseValue() {
             </div>
             <div className="h-11 w-24 rounded-lg skeleton" />
           </div>
-          <div className="grid grid-cols-3 gap-3 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
             {[1, 2, 3].map(i => (
               <div key={i} className="p-5 border border-slate-100 rounded-2xl">
                 <div className="h-2.5 w-14 rounded skeleton" />
@@ -4526,7 +4526,7 @@ export default function MyCaseValue() {
                 <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear datos de recuperación — $5.99' : 'Unlock recovery data — $5.99'}>
                   <div className="rounded-2xl p-6 border border-slate-100">
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? '¿Cuánto recuperaron personas en situaciones similares?' : 'What did people in similar situations recover?'}</div>
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       {[
                         { label: lang === 'es' ? 'Rango bajo' : 'Lower range', v: '$??K', c: '#D97706' },
                         { label: lang === 'es' ? 'Típico' : 'Typical', v: '$??K', c: '#4F46E5' },
@@ -5264,17 +5264,17 @@ export default function MyCaseValue() {
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-3 mb-5 relative z-10">
-                  <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                    <div className="text-2xl font-display font-bold" style={{ color: wrColor }}>{Math.round(wr)}%</div>
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-5 relative z-10">
+                  <div className="text-center p-2 sm:p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                    <div className="text-xl sm:text-2xl font-display font-bold" style={{ color: wrColor }}>{Math.round(wr)}%</div>
                     <div className="text-[10px] text-slate-400 mt-0.5">{lang === 'es' ? 'Tasa de éxito' : 'Win Rate'}</div>
                   </div>
-                  <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                    <div className="text-2xl font-display font-bold" style={{ color: '#0D9488' }}>{winSettleRate}%</div>
+                  <div className="text-center p-2 sm:p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                    <div className="text-xl sm:text-2xl font-display font-bold" style={{ color: '#0D9488' }}>{winSettleRate}%</div>
                     <div className="text-[10px] text-slate-400 mt-0.5">{lang === 'es' ? 'Éxito+Acuerdo' : 'Win+Settle'}</div>
                   </div>
-                  <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                    <div className="text-2xl font-display font-bold">{d.mo}<span className="text-sm font-normal text-slate-400"> mo</span></div>
+                  <div className="text-center p-2 sm:p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                    <div className="text-xl sm:text-2xl font-display font-bold">{d.mo}<span className="text-sm font-normal text-slate-400"> mo</span></div>
                     <div className="text-[10px] text-slate-400 mt-0.5">{lang === 'es' ? 'Duración' : 'Duration'}</div>
                   </div>
                 </div>
@@ -5413,7 +5413,7 @@ export default function MyCaseValue() {
                 <p className="text-[15px] text-slate-500 mt-2">{lang === 'es' ? '8 herramientas de datos para mayor comprensión' : '8 data tools for deeper understanding'}</p>
               </div>
               <div className="text-[11px] text-slate-400 text-center mb-5">{lang === 'es' ? 'Todos los datos son solo informativos. No se crea relación abogado-cliente.' : 'All data is informational only. No attorney-client relationship is created.'}</div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ border: '1.5px solid rgba(226,232,240,0.8)', background: 'linear-gradient(180deg, #fff 0%, #FAFAF8 100%)' }}>
                   <div className="text-[11px] font-bold text-slate-400 tracking-[2px]">{lang === 'es' ? 'REPORTE INDIVIDUAL' : 'SINGLE REPORT'}</div>
                   <div className="text-3xl sm:text-4xl font-display font-bold my-2"><span className="text-xl">$</span>5.99</div>

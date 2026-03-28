@@ -79,7 +79,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-px p-px" style={{ background: 'rgba(255,255,255,0.04)' }}>
         {METRICS.map((m, i) => (
           <div key={m.key} className="p-4 text-center transition-all hover:bg-white/[0.03]" style={{ background: '#0B1221' }}>
-            <div className="text-[22px] sm:text-[26px] font-display font-extrabold mb-1" style={{
+            <div className="text-[18px] sm:text-[26px] font-display font-extrabold mb-1" style={{
               color: m.color,
               letterSpacing: '-1px',
               textShadow: `0 0 20px ${m.color}30`,

@@ -53,7 +53,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
         {/* Case type selector */}
         <div className="mb-5">
           <div className="text-[11px] font-semibold text-slate-400 mb-2 tracking-wide">{es ? 'TIPO DE CASO' : 'CASE TYPE'}</div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {Object.entries(CASE_DATA).map(([key, val]) => (
               <button
                 key={key}

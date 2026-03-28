@@ -1479,6 +1479,33 @@ input:focus, textarea:focus, select:focus {
   select, input[type="text"], input[type="email"] {
     font-size: 16px; /* Prevents iOS zoom on focus */
   }
+
+  /* Range sliders: larger thumb for touch on mobile */
+  input[type="range"]::-webkit-slider-thumb {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  /* Tighten padding on mobile for content sections */
+  .section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Ensure all images and SVGs respect container */
+  img, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix any absolutely positioned elements that might cause overflow */
+  .relative {
+    overflow: visible;
+  }
 }
 
 /* Tablet optimization */

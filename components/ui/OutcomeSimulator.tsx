@@ -111,7 +111,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left: Sliders */}
           <div className="space-y-5">
             {/* Damage Amount Slider */}
@@ -191,8 +191,8 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                 <div className="text-[10px] font-bold tracking-[2px] uppercase text-slate-500 mb-2">
                   {es ? 'TASA DE ÉXITO PROYECTADA' : 'PROJECTED WIN RATE'}
                 </div>
-                <div className="relative inline-block">
-                  <svg width="140" height="78" viewBox="0 0 140 78">
+                <div className="relative inline-block w-[120px] sm:w-[140px]">
+                  <svg width="100%" height="auto" viewBox="0 0 140 78" preserveAspectRatio="xMidYMid meet">
                     <defs>
                       <linearGradient id="simGauge" x1="0" y1="0" x2="1" y2="0">
                         <stop offset="0%" stopColor="#E87461" />
@@ -228,7 +228,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {[
                   { label: es ? 'Recuperación est.' : 'Est. Recovery', value: formatDollar(projected.recovery), color: '#6366F1' },
                   { label: es ? 'Duración est.' : 'Est. Duration', value: `${projected.timeline}mo`, color: '#94A3B8' },
