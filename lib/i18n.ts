@@ -18,24 +18,24 @@ const EN = {
   upl_banner_prefix: 'INFORMATIONAL ONLY',
 
   // Hero
-  hero_badge: 'Free federal court outcome data',
-  hero_privacy: 'Private — we never store your data',
+  hero_badge: 'Real federal court outcome data — free',
+  hero_privacy: 'Private & encrypted — zero data stored',
   hero_title_1: 'What really happened',
   hero_title_2: 'in cases like',
   hero_title_3: 'yours',
-  hero_sub_pre: 'Real outcomes from',
-  hero_sub_post: 'federal court cases. Not opinions. Not estimates. What actually happened.',
-  hero_cta: 'Check your situation',
-  hero_demo: 'See example report',
+  hero_sub_pre: 'Exposed insights from',
+  hero_sub_post: 'federal court cases. Not opinions. Not estimates. Exposed outcomes, exposed timelines, exposed settlement patterns.',
+  hero_cta: 'Analyze your situation',
+  hero_demo: 'See a sample report',
 
   // Category selector
   select_situation: 'Select your situation',
 
   // Stats bar
-  stat_outcomes: 'Court outcomes',
-  stat_types: 'Federal case types',
-  stat_years: 'Years of records',
-  stat_free: 'No account needed',
+  stat_outcomes: 'Court outcomes analyzed',
+  stat_types: 'Federal case categories',
+  stat_years: 'Years of judicial data',
+  stat_free: 'No account required',
 
   // Trending
   trending: 'Trending case types',
@@ -76,12 +76,12 @@ const EN = {
   how_many: 'Approximately how many?',
 
   // Consent
-  one_moment: 'ONE MOMENT',
+  one_moment: 'IMPORTANT DISCLOSURE',
   before_report: 'Before your report',
-  consent_text_1: 'You are about to see real data from federal court records. This data shows what happened to other people — it does not predict what will happen to you.',
-  consent_text_2: 'Only a licensed attorney can evaluate your specific facts and circumstances. MyCaseValue is an informational tool, not a legal service.',
-  consent_check: 'I understand this is historical data only, does not evaluate my situation, and no attorney-client relationship is created.',
-  generate_report: 'Generate report',
+  consent_text_1: 'You are about to access aggregate data from federal court records. This data reflects what happened in similar cases — it is not a prediction or evaluation of your specific situation.',
+  consent_text_2: 'Only a licensed attorney can evaluate your specific facts and circumstances. MyCaseValue is a research tool providing public court data, not a legal service.',
+  consent_check: 'I understand this is aggregate historical data only, does not evaluate my situation, and no attorney-client relationship is created.',
+  generate_report: 'Generate my report',
 
   // Email step
   data_ready: 'Your data is ready',
@@ -169,13 +169,13 @@ const EN = {
 
   // CTA
   what_worth: 'What could your situation be worth?',
-  cta_sub: 'Your free report shows the win rate, how cases ended, and deadline. The full report adds recovery ranges, comparable outcomes, attorney impact, timeline, and more.',
+  cta_sub: 'Your free report reveals win rates, case resolutions, and filing deadlines. Unlock the full report for recovery ranges, comparable outcomes, attorney impact analysis, jurisdiction breakdown, and predictive timeline.',
   cta_note: 'Aggregate historical data only. Not a case valuation.',
   full_report: 'Full report',
   unlimited: 'Unlimited',
   what_next: 'What many people do next',
-  next_text: 'Many people use this data before consulting with an attorney. Most offer free initial consultations. MyCaseValue does not evaluate claims, recommend attorneys, or provide referrals.',
-  search_attorneys: 'Search for attorneys in your area',
+  next_text: 'Many people use this data when deciding whether to consult with an attorney. Most attorneys offer free initial consultations. MyCaseValue does not evaluate claims, recommend attorneys, or provide referrals.',
+  search_attorneys: 'Find attorneys in your area',
   general_deadline: 'GENERAL FILING DEADLINE',
   deadline_warning: 'Based on your timeline, this deadline may have passed. Consult an attorney immediately.',
   deadline_note: 'Only an attorney can determine your specific deadline.',
@@ -195,14 +195,14 @@ const EN = {
   important_notice: 'IMPORTANT NOTICE',
 
   // Pricing modal
-  see_complete: 'See the complete picture',
-  data_tools: '8 data tools for deeper understanding',
+  see_complete: 'Unlock the full intelligence',
+  data_tools: '8 premium data tools for deeper analysis',
   pricing_note: 'All data is informational only. No attorney-client relationship is created.',
   single_report: 'SINGLE REPORT',
   one_report: 'One complete report',
-  get_report: 'Get report',
+  get_report: 'Get my report',
   best_value: 'BEST VALUE',
-  all_types: 'All case types, forever',
+  all_types: 'All case types, unlimited access',
   card: 'Card',
   apple_pay: 'Apple Pay',
   google_pay: 'Google Pay',
@@ -234,24 +234,24 @@ const ES: typeof EN = {
   upl_banner_prefix: 'SOLO INFORMATIVO',
 
   // Hero
-  hero_badge: 'Datos gratuitos de resultados judiciales federales',
-  hero_privacy: 'Privado — nunca almacenamos tus datos',
+  hero_badge: 'Datos reales de resultados judiciales — gratis',
+  hero_privacy: 'Privado y encriptado — cero datos almacenados',
   hero_title_1: 'Qué pasó realmente',
   hero_title_2: 'en casos como el',
   hero_title_3: 'tuyo',
-  hero_sub_pre: 'Resultados reales de',
-  hero_sub_post: 'casos judiciales federales. No opiniones. No estimaciones. Lo que realmente pasó.',
-  hero_cta: 'Revisa tu situación',
+  hero_sub_pre: 'Datos revelados de',
+  hero_sub_post: 'casos judiciales federales. No opiniones. No estimaciones. Resultados, plazos y patrones de acuerdos expuestos.',
+  hero_cta: 'Analiza tu situación',
   hero_demo: 'Ver informe de ejemplo',
 
   // Category selector
   select_situation: 'Selecciona tu situación',
 
   // Stats bar
-  stat_outcomes: 'Resultados judiciales',
-  stat_types: 'Tipos de casos federales',
-  stat_years: 'Años de registros',
-  stat_free: 'Sin cuenta necesaria',
+  stat_outcomes: 'Resultados analizados',
+  stat_types: 'Categorías de casos federales',
+  stat_years: 'Años de datos judiciales',
+  stat_free: 'Sin cuenta requerida',
 
   // Trending
   trending: 'Casos en tendencia',
