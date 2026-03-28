@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 
 interface AnimatedNumberProps {
   value: number
@@ -9,52 +9,69 @@ interface AnimatedNumberProps {
   decimals?: number
 }
 
-const easeOutCubic = (t: number): number => {
-  return 1 - Math.pow(1 - t, 3)
+const easeOutExpo = (t: number): number => {
+  return t === 1 ? 1 : 1 - Math.pow(2, -10 * t)
 }
 
 export function AnimatedNumber({
   value,
   prefix = '',
   suffix = '',
-  duration = 2000,
+  duration = 1800,
   decimals = 0,
 }: AnimatedNumberProps) {
-  const [displayValue, setDisplayValue] = useState(0)
+  // Start with the target value to prevent flash of "0"
+  const [displayValue, setDisplayValue] = useState(value)
   const elementRef = useRef<HTMLSpanElement>(null)
   const animationRef = useRef<number>(0)
+  const hasAnimated = useRef(false)
+
+  const animate = useCallback(() => {
+    if (hasAnimated.current) return
+    hasAnimated.current = true
+
+    // Reset to 0 then animate up
+    setDisplayValue(0)
+    let startTime: number
+
+    const step = (currentTime: number) => {
+      if (!startTime) startTime = currentTime
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const easedProgress = easeOutExpo(progress)
+      const current = Math.round(value * easedProgress * Math.pow(10, decimals)) / Math.pow(10, decimals)
+
+      setDisplayValue(current)
+
+      if (progress < 1) {
+        animationRef.current = requestAnimationFrame(step)
+      } else {
+        // Ensure final value is exact
+        setDisplayValue(value)
+      }
+    }
+
+    animationRef.current = requestAnimationFrame(step)
+  }, [value, duration, decimals])
 
   useEffect(() => {
+    const el = elementRef.current
+    if (!el) return
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            let startTime: number
-            const animate = (currentTime: number) => {
-              if (!startTime) startTime = currentTime
-              const elapsed = currentTime - startTime
-              const progress = Math.min(elapsed / duration, 1)
-              const easedProgress = easeOutCubic(progress)
-              const current = Math.floor(value * easedProgress * Math.pow(10, decimals)) / Math.pow(10, decimals)
-
-              setDisplayValue(current)
-
-              if (progress < 1) {
-                animationRef.current = requestAnimationFrame(animate)
-              }
-            }
-
-            animationRef.current = requestAnimationFrame(animate)
+            // Small delay for visual effect
+            requestAnimationFrame(() => animate())
             observer.unobserve(entry.target)
           }
         })
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     )
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current)
-    }
+    observer.observe(el)
 
     return () => {
       if (animationRef.current) {
@@ -62,10 +79,10 @@ export function AnimatedNumber({
       }
       observer.disconnect()
     }
-  }, [value, duration, decimals])
+  }, [animate])
 
   return (
-    <span ref={elementRef}>
+    <span ref={elementRef} style={{ fontVariantNumeric: 'tabular-nums' }}>
       {prefix}
       {displayValue.toLocaleString('en-US', {
         minimumFractionDigits: decimals,

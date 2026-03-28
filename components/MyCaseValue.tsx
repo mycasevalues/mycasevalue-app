@@ -1067,10 +1067,22 @@ function Shell({
                 </svg>
               </div>
               <div className="flex items-center gap-1.5">
-                {/* Payment method icons */}
-                {['Visa', 'Mastercard', 'Amex', 'PayPal'].map((m, i) => (
-                  <span key={i} className="text-[8px] font-bold px-1.5 py-0.5 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', color: '#94A3B8', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>{m}</span>
-                ))}
+                {/* Visa */}
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                  <svg width="28" height="10" viewBox="0 0 750 471" fill="none"><path d="M278.198 334.228l33.36-195.763h53.358l-33.384 195.763h-53.334zM524.307 142.687c-10.57-3.966-27.135-8.222-47.822-8.222-52.725 0-89.863 26.551-90.18 64.604-.635 28.109 26.502 43.773 46.754 53.126 20.771 9.574 27.752 15.679 27.654 24.243-.14 13.084-16.598 19.065-31.924 19.065-21.357 0-32.688-2.966-50.205-10.258l-6.875-3.11-7.488 43.823c12.463 5.467 35.508 10.199 59.438 10.445 56.09 0 92.502-26.248 92.916-66.885.2-22.28-14.016-39.215-44.8-53.187-18.65-9.056-30.072-15.099-29.951-24.269 0-8.137 9.668-16.838 30.56-16.838 17.286-.271 29.966 3.439 39.627 7.406l4.8 2.252 7.496-42.395zM661.615 138.464h-41.23c-12.773 0-22.332 3.486-27.94 16.234l-79.244 179.402h56.031s9.159-24.121 11.232-29.418c6.123 0 60.555.084 68.336.084 1.596 6.854 6.492 29.334 6.492 29.334h49.52l-43.197-195.636zm-65.417 126.408c4.414-11.279 21.26-54.724 21.26-54.724-.317.534 4.381-11.329 7.074-18.684l3.606 16.878 12.348 56.53h-44.288zM232.903 138.464L180.664 271.96l-5.565-27.129c-9.726-31.274-40.025-65.157-73.898-82.12l47.767 171.204 56.455-.065 84.004-195.386h-56.524z" fill="#2566AF"/><path d="M131.92 138.464H45.879l-.682 4.073c66.939 16.204 111.232 55.363 129.618 102.415l-18.709-89.96c-3.229-12.396-12.597-16.095-24.186-16.528z" fill="#E6A540"/></svg>
+                </span>
+                {/* Mastercard */}
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                  <svg width="22" height="14" viewBox="0 0 152 100"><circle cx="50" cy="50" r="50" fill="#EB001B"/><circle cx="102" cy="50" r="50" fill="#F79E1B"/><path d="M76 14.8a49.8 49.8 0 000 70.4 49.8 49.8 0 000-70.4z" fill="#FF5F00"/></svg>
+                </span>
+                {/* Amex */}
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                  <svg width="22" height="14" viewBox="0 0 40 26"><rect width="40" height="26" rx="3" fill="#2E77BC"/><text x="20" y="17" textAnchor="middle" fill="white" fontSize="9" fontWeight="800" fontFamily="Arial">AMEX</text></svg>
+                </span>
+                {/* PayPal */}
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                  <svg width="22" height="14" viewBox="0 0 100 32"><path d="M37.8 3.2h-8.5c-.6 0-1.1.4-1.2 1L24.8 25c-.1.4.3.8.7.8h4.1c.6 0 1.1-.4 1.2-1l.9-5.7c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4-1.3-1.4-3.5-2.2-6.3-2.2l-.2-.3z" fill="#253B80"/><path d="M70.3 3.2h-8.5c-.6 0-1.1.4-1.2 1l-3.3 20.8c-.1.4.3.8.7.8h4.3c.4 0 .8-.3.8-.7l.9-5.9c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4-1.3-1.4-3.5-2.2-6.3-2.2v.6z" fill="#179BD7"/><path d="M13.5 3.2H5c-.6 0-1.1.4-1.2 1L.5 25c-.1.4.3.8.7.8h4.1c.6 0 1.1-.4 1.2-1l.9-5.7c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4C18.7 3.4 16.5 3.2 13.5 3.2z" fill="#253B80"/></svg>
+                </span>
               </div>
             </div>
 
