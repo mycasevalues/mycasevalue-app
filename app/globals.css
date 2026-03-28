@@ -1359,10 +1359,13 @@ input:focus, textarea:focus, select:focus {
 /* Vertical accent line — matches LinkedIn header brand element */
 .hero-accent-line {
   width: 3px;
-  height: 64px;
-  background: linear-gradient(180deg, #4F46E5, #6366F1, transparent);
+  min-height: 80px;
+  align-self: stretch;
+  background: linear-gradient(180deg, #6366F1, #4F46E5, rgba(99,102,241,0.2));
   border-radius: 2px;
   flex-shrink: 0;
+  position: relative;
+  z-index: 5;
 }
 
 /* Hero tagline styling to match LinkedIn header */
@@ -2003,15 +2006,15 @@ input:focus, textarea:focus, select:focus {
   66% { transform: translate(-15px, 15px) scale(0.95); }
 }
 
-/* Text shimmer effect for headings */
+/* Text shimmer effect for headings — uses light colors for dark hero bg */
 .text-shimmer {
   background: linear-gradient(
     90deg,
-    #0B1221 0%,
-    #0B1221 40%,
-    #4F46E5 50%,
-    #0B1221 60%,
-    #0B1221 100%
+    rgba(165,180,252,0.7) 0%,
+    rgba(165,180,252,0.7) 35%,
+    #FFFFFF 50%,
+    rgba(165,180,252,0.7) 65%,
+    rgba(165,180,252,0.7) 100%
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;
