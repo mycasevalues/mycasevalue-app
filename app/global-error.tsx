@@ -16,13 +16,13 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
           <div style={{
             maxWidth: 440,
             textAlign: 'center',
-            background: 'white',
+            background: '#131B2E',
             borderRadius: 24,
             padding: '48px 32px',
             boxShadow: '0 4px 24px rgba(11,18,33,0.06)',
           }}>
-            <h2 style={{ fontSize: 22, fontWeight: 700, color: '#1A2744', marginBottom: 8 }}>Something went wrong</h2>
-            <p style={{ fontSize: 14, color: '#64748B', lineHeight: 1.6, marginBottom: 24 }}>
+            <h2 style={{ fontSize: 22, fontWeight: 700, color: '#F0F2F5', marginBottom: 8 }}>Something went wrong</h2>
+            <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.6, marginBottom: 24 }}>
               We encountered an unexpected error. Please try refreshing.
             </p>
             <button

@@ -65,7 +65,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
       <div className="px-6 pt-5 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-[10px] font-bold text-slate-500 tracking-[2px] mb-1">{es ? 'PANEL NACIONAL' : 'NATIONWIDE DASHBOARD'}</div>
+            <div className="text-[10px] font-bold text-[#94A3B8] tracking-[2px] mb-1">{es ? 'PANEL NACIONAL' : 'NATIONWIDE DASHBOARD'}</div>
             <div className="text-[18px] font-display font-bold text-white">{es ? 'Datos federales en tiempo real' : 'Federal Data Overview'}</div>
           </div>
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'rgba(13,148,136,0.12)' }}>

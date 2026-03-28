@@ -39,13 +39,14 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
           <Tooltip
             formatter={(value: number, name: string) => [`${((value / total) * 100).toFixed(1)}%`, name]}
             contentStyle={{
-              background: 'rgba(255,255,255,0.95)',
-              border: '1px solid #E2E8F0',
+              background: 'rgba(15,23,42,0.95)',
+              border: '1px solid #1E293B',
               borderRadius: '10px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',
               fontFamily: 'Outfit, system-ui, sans-serif',
               padding: '8px 14px',
+              color: '#F0F2F5',
             }}
           />
         </PieChart>
@@ -53,7 +54,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
       {(centerLabel || centerValue) && (
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
           {centerValue && (
-            <div className="text-2xl font-display font-extrabold" style={{ color: '#0F172A', letterSpacing: '-1px' }}>
+            <div className="text-2xl font-display font-extrabold" style={{ color: '#F0F2F5', letterSpacing: '-1px' }}>
               {centerValue}
             </div>
           )}

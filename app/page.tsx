@@ -11,7 +11,7 @@ const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      background: '#F5F7FA',
+      background: '#0B1221',
       gap: 24,
     }}>
       <div style={{ width: 48, height: 48, position: 'relative' }}>
@@ -27,7 +27,7 @@ const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
         fontSize: 18,
         fontWeight: 600,
         letterSpacing: '-0.5px',
-        color: '#0F172A',
+        color: '#F0F2F5',
         opacity: 0.8,
       }}>
         MyCaseValue

@@ -34,8 +34,8 @@ export function Accordion({ items }: AccordionProps) {
             className={cn(
               'w-full px-6 py-4 flex items-center justify-between text-left font-medium transition-colors duration-200',
               openId === item.id
-                ? 'bg-navy-50 dark:bg-navy-800 text-gold-500'
-                : 'bg-white dark:bg-navy-900 text-navy-900 dark:text-cream-50 hover:bg-navy-50 dark:hover:bg-navy-800'
+                ? 'bg-[#1E293B] dark:bg-navy-800 text-gold-500'
+                : 'bg-[#131B2E] dark:bg-navy-900 text-[#F0F2F5] dark:text-cream-50 hover:bg-[#1E293B] dark:hover:bg-navy-800'
             )}
           >
             <span>{item.title}</span>

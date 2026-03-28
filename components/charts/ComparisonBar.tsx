@@ -24,11 +24,11 @@ export function ComparisonBar({
     <div className="w-full">
       <ResponsiveContainer width="100%" height={260}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="25%">
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(226,232,240,0.5)" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(30,41,59,0.5)" vertical={false} />
           <XAxis
             dataKey="name"
-            tick={{ fontSize: 11, fill: '#64748B', fontFamily: 'Outfit, system-ui, sans-serif' }}
-            axisLine={{ stroke: '#E2E8F0' }}
+            tick={{ fontSize: 11, fill: '#94A3B8', fontFamily: 'Outfit, system-ui, sans-serif' }}
+            axisLine={{ stroke: '#1E293B' }}
             tickLine={false}
           />
           <YAxis
@@ -40,13 +40,14 @@ export function ComparisonBar({
           <Tooltip
             cursor={{ fill: 'rgba(64,64,242,0.04)' }}
             contentStyle={{
-              background: 'rgba(255,255,255,0.97)',
-              border: '1px solid #E2E8F0',
+              background: 'rgba(15,23,42,0.95)',
+              border: '1px solid #1E293B',
               borderRadius: '10px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',
               fontFamily: 'Outfit, system-ui, sans-serif',
               padding: '8px 14px',
+              color: '#F0F2F5',
             }}
             formatter={(value: number) => [`${value}${unit}`]}
           />

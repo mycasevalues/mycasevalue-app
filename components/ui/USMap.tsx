@@ -165,7 +165,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
         background: 'linear-gradient(135deg, rgba(64,64,242,0.05), rgba(13,148,136,0.05))',
         padding: '2px',
       }}>
-        <div className="rounded-xl overflow-hidden" style={{ background: '#F8FAFC' }}>
+        <div className="rounded-xl overflow-hidden" style={{ background: '#131B2E' }}>
           <svg ref={svgRef} viewBox="0 0 960 560" className="w-full h-auto" style={{ maxHeight: 420 }}>
             <defs>
               <filter id="state-glow">
@@ -175,8 +175,8 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
                 <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="rgba(64,64,242,0.35)" />
               </filter>
               <linearGradient id="empty-fill" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#E2E8F0" />
-                <stop offset="100%" stopColor="#CBD5E1" />
+                <stop offset="0%" stopColor="#1E293B" />
+                <stop offset="100%" stopColor="#0F172A" />
               </linearGradient>
             </defs>
 
@@ -196,7 +196,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
                     d={path}
                     fill={fill}
                     fillOpacity={hasData ? (isHovered || isSelected ? 1 : 0.8) : 0.25}
-                    stroke={isSelected ? '#4F46E5' : isHovered ? '#0F172A' : hasData ? 'rgba(255,255,255,0.6)' : 'rgba(226,232,240,0.5)'}
+                    stroke={isSelected ? '#4F46E5' : isHovered ? '#F0F2F5' : hasData ? 'rgba(255,255,255,0.6)' : 'rgba(30,41,59,0.5)'}
                     strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 0.8}
                     className="cursor-pointer"
                     style={{
@@ -307,7 +307,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
               ))}
             </div>
           </div>
-          <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #E2E8F0, transparent)' }} />
+          <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #1E293B, transparent)' }} />
           <div className="text-center">
             <div className="text-[9px] font-bold text-slate-400 tracking-[1.5px] mb-1.5">
               {lang === 'es' ? '▼ MÁS BAJOS' : '▼ LOWEST'}

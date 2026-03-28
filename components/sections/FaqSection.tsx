@@ -87,7 +87,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
   const faqs = lang === 'es' ? FAQ_ES : FAQ_EN;
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#0B1221]">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
@@ -103,7 +103,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
           >
             {lang === 'es' ? 'Respuestas a tus preguntas' : 'Answers to your questions'}
           </h2>
-          <p className="text-base text-slate-500 max-w-2xl mx-auto">
+          <p className="text-base text-[#94A3B8] max-w-2xl mx-auto">
             {lang === 'es'
               ? 'Todo lo que necesitas saber sobre MyCaseValue, nuestros datos y cómo funciona el informe.'
               : 'Everything you need to know about MyCaseValue, our data, and how reports work.'}
@@ -117,13 +117,13 @@ export default function FaqSection({ lang }: FaqSectionProps) {
               key={idx}
               className="border rounded-xl overflow-hidden transition-all duration-200"
               style={{
-                borderColor: openIdx === idx ? '#4F46E5' : '#E2E8F0',
-                background: openIdx === idx ? 'linear-gradient(180deg, #FDFBF7, #fff)' : '#fff',
+                borderColor: openIdx === idx ? '#4F46E5' : '#1E293B',
+                background: openIdx === idx ? 'linear-gradient(180deg, #1E2941, #131B2E)' : '#131B2E',
               }}
             >
               <button
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                className="w-full px-6 py-4 flex items-start justify-between hover:bg-slate-50 transition-colors text-left"
+                className="w-full px-6 py-4 flex items-start justify-between hover:bg-[#1E293B] transition-colors text-left"
                 style={{
                   background: openIdx === idx ? 'transparent' : 'transparent',
                 }}
@@ -131,7 +131,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                 <h3
                   className="text-base sm:text-lg font-semibold font-display"
                   style={{
-                    color: openIdx === idx ? '#4F46E5' : '#0B1221',
+                    color: openIdx === idx ? '#4F46E5' : '#F0F2F5',
                     letterSpacing: '-0.5px',
                   }}
                 >
@@ -163,8 +163,8 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                   opacity: openIdx === idx ? 1 : 0,
                 }}
               >
-                <div className="px-6 pb-4 border-t" style={{ borderColor: '#E2E8F0' }}>
-                  <p className="text-sm sm:text-base leading-relaxed text-slate-600 font-body">
+                <div className="px-6 pb-4 border-t" style={{ borderColor: '#1E293B' }}>
+                  <p className="text-sm sm:text-base leading-relaxed text-[#94A3B8] font-body">
                     {item.a}
                   </p>
                 </div>
@@ -174,8 +174,8 @@ export default function FaqSection({ lang }: FaqSectionProps) {
         </div>
 
         {/* Footer CTA */}
-        <div className="mt-10 p-6 rounded-xl text-center" style={{ background: '#F8FAFC' }}>
-          <p className="text-sm text-slate-600 mb-3">
+        <div className="mt-10 p-6 rounded-xl text-center" style={{ background: '#131B2E' }}>
+          <p className="text-sm text-[#94A3B8] mb-3">
             {lang === 'es'
               ? '¿No encontraste tu respuesta?'
               : 'Didn\'t find your answer?'}

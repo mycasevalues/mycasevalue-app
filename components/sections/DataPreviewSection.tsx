@@ -26,7 +26,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
   ];
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8" style={{ background: '#F8FAFC' }}>
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8" style={{ background: '#0B1221' }}>
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
@@ -42,7 +42,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
           >
             {lang === 'es' ? 'Lo que realmente sucede' : 'What really happens'}
           </h2>
-          <p className="text-base text-slate-500">
+          <p className="text-base text-[#94A3B8]">
             {lang === 'es'
               ? 'Ejemplos de datos de casos federales reales'
               : 'Sample data from real federal court cases'}
@@ -50,7 +50,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
         </div>
 
         {/* Tab Selector */}
-        <div className="flex gap-2 mb-8 border-b border-slate-200 bg-white rounded-t-xl p-4">
+        <div className="flex gap-2 mb-8 border-b border-[#1E293B] bg-[#131B2E] rounded-t-xl p-4">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -70,14 +70,14 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
 
         {/* Tab Content - Win Rates */}
         {activeTab === 'winrates' && (
-          <div className="bg-white p-8 rounded-b-xl shadow-sm transition-opacity duration-200 fade-in">
+          <div className="bg-[#131B2E] p-8 rounded-b-xl shadow-sm transition-opacity duration-200 fade-in">
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-1">
                 {lang === 'es'
                   ? 'Tasas de Éxito por Tipo de Caso'
                   : 'Win Rates by Case Type'}
               </h3>
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-[#94A3B8]">
                 {lang === 'es'
                   ? 'Porcentaje de casos ganados (datos federales agregados)'
                   : 'Percentage of cases won (aggregate federal data)'}
@@ -99,7 +99,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
               ].map((item, idx) => (
                 <div key={idx}>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-semibold text-slate-700">
+                    <span className="text-sm font-semibold text-[#F0F2F5]">
                       {item.name}
                     </span>
                     <span
@@ -109,7 +109,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                       {item.rate}%
                     </span>
                   </div>
-                  <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                  <div className="w-full h-3 bg-[#1E293B] rounded-full overflow-hidden">
                     <svg
                       width="100%"
                       height="12"
@@ -158,14 +158,14 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
 
         {/* Tab Content - Settlements */}
         {activeTab === 'settlements' && (
-          <div className="bg-white p-8 rounded-b-xl shadow-sm transition-opacity duration-200 fade-in">
+          <div className="bg-[#131B2E] p-8 rounded-b-xl shadow-sm transition-opacity duration-200 fade-in">
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-1">
                 {lang === 'es'
                   ? 'Distribución de Montos de Acuerdo'
                   : 'Settlement Amount Distribution'}
               </h3>
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-[#94A3B8]">
                 {lang === 'es'
                   ? 'Muestra de 5,000+ casos federales con acuerdos reportados'
                   : 'Sample of 5,000+ federal cases with reported settlements'}
@@ -182,9 +182,9 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                 </defs>
 
                 {/* Y-axis */}
-                <line x1="40" y1="240" x2="40" y2="20" stroke="#E2E8F0" strokeWidth="1" />
+                <line x1="40" y1="240" x2="40" y2="20" stroke="#1E293B" strokeWidth="1" />
                 {/* X-axis */}
-                <line x1="40" y1="240" x2="390" y2="240" stroke="#E2E8F0" strokeWidth="1" />
+                <line x1="40" y1="240" x2="390" y2="240" stroke="#1E293B" strokeWidth="1" />
 
                 {/* Grid lines */}
                 {[0, 50, 100, 150, 200, 250].map((y) => (
@@ -194,7 +194,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                     y1={240 - (y / 250) * 220}
                     x2="390"
                     y2={240 - (y / 250) * 220}
-                    stroke="#F1F5F9"
+                    stroke="#1E293B"
                     strokeWidth="1"
                   />
                 ))}
@@ -206,7 +206,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                     x="30"
                     y={240 - (label / 250) * 220 + 4}
                     fontSize="11"
-                    fill="#94A3B8"
+                    fill="#64748B"
                     textAnchor="end"
                   >
                     {label}
@@ -235,7 +235,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                       x={bar.x}
                       y="258"
                       fontSize="10"
-                      fill="#64748B"
+                      fill="#94A3B8"
                       textAnchor="middle"
                     >
                       {bar.label}
@@ -263,12 +263,12 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
 
             <div
               className="p-4 rounded-lg border-l-4 text-sm"
-              style={{ background: '#E4E5FF20', borderColor: '#4F46E5' }}
+              style={{ background: '#4F46E510', borderColor: '#4F46E5' }}
             >
               <div className="font-semibold mb-1" style={{ color: '#4F46E5' }}>
                 {lang === 'es' ? 'Monto Medio: $127,500' : 'Median Settlement: $127,500'}
               </div>
-              <p className="text-slate-600">
+              <p className="text-[#94A3B8]">
                 {lang === 'es'
                   ? 'El 50% de los acuerdos están por debajo de este monto, el 50% por encima.'
                   : '50% of settlements fall below this amount, 50% above.'}
@@ -279,14 +279,14 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
 
         {/* Tab Content - Timelines */}
         {activeTab === 'timelines' && (
-          <div className="bg-white p-8 rounded-b-xl shadow-sm transition-opacity duration-200 fade-in">
+          <div className="bg-[#131B2E] p-8 rounded-b-xl shadow-sm transition-opacity duration-200 fade-in">
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-1">
                 {lang === 'es'
                   ? 'Cronograma Típico del Caso'
                   : 'Typical Case Timeline'}
               </h3>
-              <p className="text-sm text-slate-500">
+              <p className="text-sm text-[#94A3B8]">
                 {lang === 'es'
                   ? 'Fases promedio desde presentación hasta resolución'
                   : 'Average phases from filing to resolution'}
@@ -328,12 +328,12 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
               ].map((item, idx) => (
                 <div key={idx}>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-semibold text-slate-700">
+                    <span className="text-sm font-semibold text-[#F0F2F5]">
                       {item.phase}
                     </span>
-                    <span className="text-xs text-slate-500">{item.duration}</span>
+                    <span className="text-xs text-[#64748B]">{item.duration}</span>
                   </div>
-                  <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                  <div className="w-full h-2.5 bg-[#1E293B] rounded-full overflow-hidden">
                     <div
                       style={{
                         width: `${item.width}%`,
@@ -349,8 +349,8 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
             </div>
 
             <div
-              className="mt-6 p-4 rounded-lg border text-xs text-slate-600"
-              style={{ background: '#E4E5FF20', borderColor: '#4F46E540' }}
+              className="mt-6 p-4 rounded-lg border text-xs text-[#94A3B8]"
+              style={{ background: '#4F46E510', borderColor: '#4F46E540' }}
             >
               {lang === 'es'
                 ? '⏱️ El 67% de los casos se resuelven en la fase de negociación. Los plazos varían según el tipo de caso y la complejidad.'

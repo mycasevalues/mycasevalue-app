@@ -1551,27 +1551,9 @@ input:focus, textarea:focus, select:focus {
    DARK MODE OVERRIDES FOR TAILWIND CLASSES
    ============================================================ */
 
-[data-theme="dark"] .bg-white {
-  background-color: var(--bg) !important;
-}
+/* Dark mode is always on — no data-theme overrides needed */
 
-[data-theme="dark"] .bg-slate-50 {
-  background-color: var(--bg-muted) !important;
-}
-
-[data-theme="dark"] .bg-slate-100 {
-  background-color: #161B22 !important;
-}
-
-[data-theme="dark"] .border-slate-100 {
-  border-color: var(--border) !important;
-}
-
-[data-theme="dark"] .border-slate-200 {
-  border-color: var(--border-muted) !important;
-}
-
-[data-theme="dark"] .text-slate-500 {
+.text-slate-500 {
   color: var(--fg-subtle) !important;
 }
 
@@ -2229,7 +2211,7 @@ input:focus, textarea:focus, select:focus {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #fff 0%, #E2E8F0 100%);
+  background: linear-gradient(135deg, #E2E8F0 0%, #A5B4FC 100%);
   border: 2px solid #4F46E5;
   box-shadow: 0 2px 8px rgba(79,70,229,0.4), 0 0 0 4px rgba(79,70,229,0.1);
   cursor: grab;
@@ -2247,7 +2229,7 @@ input:focus, textarea:focus, select:focus {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #fff 0%, #E2E8F0 100%);
+  background: linear-gradient(135deg, #E2E8F0 0%, #A5B4FC 100%);
   border: 2px solid #4F46E5;
   box-shadow: 0 2px 8px rgba(79,70,229,0.4);
   cursor: grab;
@@ -2551,4 +2533,247 @@ input:focus, textarea:focus, select:focus {
 
 .value-pulse {
   animation: valuePulse 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   PREMIUM DARK TECH AESTHETIC — Advanced Effects
+   ============================================================ */
+
+/* Animated gradient border for premium cards */
+.gradient-border {
+  position: relative;
+  border: none !important;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(13,148,136,0.2), rgba(99,102,241,0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Animated gradient border on hover */
+.gradient-border-animated::before {
+  background: linear-gradient(var(--gradient-angle, 135deg), rgba(99,102,241,0.4), rgba(13,148,136,0.3), rgba(165,180,252,0.3), rgba(99,102,241,0.4));
+  animation: gradientRotate 4s linear infinite;
+}
+@keyframes gradientRotate {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Ambient glow effect — floating orbs behind hero */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+  animation: ambientFloat 12s ease-in-out infinite;
+  pointer-events: none;
+}
+.ambient-glow.indigo {
+  background: #4F46E5;
+  width: 400px;
+  height: 400px;
+}
+.ambient-glow.teal {
+  background: #0D9488;
+  width: 300px;
+  height: 300px;
+  animation-delay: -4s;
+  animation-duration: 15s;
+}
+.ambient-glow.lavender {
+  background: #A5B4FC;
+  width: 250px;
+  height: 250px;
+  animation-delay: -8s;
+  animation-duration: 18s;
+}
+@keyframes ambientFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.05); }
+  50% { transform: translate(-20px, 30px) scale(0.95); }
+  75% { transform: translate(20px, 20px) scale(1.02); }
+}
+
+/* Glassmorphism card — premium frost effect */
+.glass-premium {
+  background: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(99, 102, 241, 0.12) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+.glass-premium:hover {
+  border-color: rgba(99, 102, 241, 0.2) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 40px rgba(99, 102, 241, 0.06);
+}
+
+/* Neon text glow for key metrics */
+.neon-text {
+  text-shadow: 0 0 10px currentColor, 0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+/* Shimmer sweep effect for loading/premium badges */
+.shimmer-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+  animation: shimmerSweep 3s ease-in-out infinite;
+}
+@keyframes shimmerSweep {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* Breathing pulse for live indicators */
+@keyframes breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.92); }
+}
+.breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+/* Magnetic button hover effect */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.magnetic-btn:hover {
+  box-shadow: 0 8px 40px rgba(79, 70, 229, 0.4), 0 0 80px rgba(79, 70, 229, 0.08);
+}
+
+/* Stagger-in animation for grid items */
+.stagger-in > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-in > *:nth-child(2) { animation-delay: 60ms; }
+.stagger-in > *:nth-child(3) { animation-delay: 120ms; }
+.stagger-in > *:nth-child(4) { animation-delay: 180ms; }
+.stagger-in > *:nth-child(5) { animation-delay: 240ms; }
+.stagger-in > *:nth-child(6) { animation-delay: 300ms; }
+
+/* Holographic gradient for premium sections */
+.holo-gradient {
+  background: linear-gradient(135deg,
+    rgba(79,70,229,0.08) 0%,
+    rgba(13,148,136,0.06) 25%,
+    rgba(165,180,252,0.08) 50%,
+    rgba(94,234,212,0.06) 75%,
+    rgba(79,70,229,0.08) 100%
+  );
+  background-size: 400% 400%;
+  animation: holoShift 8s ease-in-out infinite;
+}
+@keyframes holoShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Floating particle dots — CSS-only */
+.particle-field::before,
+.particle-field::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.3);
+  box-shadow:
+    80px 120px 0 rgba(99,102,241,0.2),
+    200px 60px 0 rgba(13,148,136,0.25),
+    350px 180px 0 rgba(165,180,252,0.2),
+    500px 90px 0 rgba(99,102,241,0.15),
+    650px 200px 0 rgba(94,234,212,0.2),
+    120px 250px 0 rgba(99,102,241,0.18),
+    400px 300px 0 rgba(13,148,136,0.22),
+    700px 150px 0 rgba(165,180,252,0.15),
+    250px 40px 0 rgba(99,102,241,0.2),
+    550px 280px 0 rgba(13,148,136,0.2);
+  animation: particleDrift 20s linear infinite;
+  pointer-events: none;
+}
+.particle-field::after {
+  animation-delay: -10s;
+  box-shadow:
+    30px 80px 0 rgba(13,148,136,0.2),
+    160px 200px 0 rgba(99,102,241,0.2),
+    300px 50px 0 rgba(165,180,252,0.25),
+    450px 250px 0 rgba(99,102,241,0.15),
+    600px 100px 0 rgba(13,148,136,0.2),
+    750px 220px 0 rgba(99,102,241,0.18),
+    100px 300px 0 rgba(165,180,252,0.15),
+    500px 30px 0 rgba(13,148,136,0.22),
+    280px 150px 0 rgba(99,102,241,0.2),
+    650px 280px 0 rgba(94,234,212,0.15);
+}
+@keyframes particleDrift {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-100px) translateX(30px); }
+}
+
+/* Premium data card with aurora border */
+.aurora-card {
+  position: relative;
+  overflow: hidden;
+}
+.aurora-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, #4F46E5, #0D9488, #A5B4FC, #5EEAD4, #4F46E5);
+  background-size: 200% 100%;
+  animation: auroraSlide 3s linear infinite;
+  border-radius: inherit;
+}
+@keyframes auroraSlide {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* Smooth scroll indicator pulse */
+@keyframes scrollPulse {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+.scroll-indicator {
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* Interactive tilt on hover — 3D perspective */
+.tilt-hover {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+}
+.tilt-hover:hover {
+  transform: perspective(600px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+}
+
+/* Mesh gradient background for hero */
+.mesh-bg {
+  background:
+    radial-gradient(ellipse at 15% 25%, rgba(79,70,229,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 75%, rgba(13,148,136,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 0%, rgba(165,180,252,0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 100%, rgba(94,234,212,0.06) 0%, transparent 40%);
 }

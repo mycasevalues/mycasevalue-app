@@ -44,20 +44,20 @@ const jsonLd = {
 
 export default function CasesIndexPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#F5F7FA' }}>
+    <div className="min-h-screen" style={{ background: '#0B1221' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: 'white', borderBottom: '1px solid rgba(0,0,0,0.08)', padding: '60px 20px' }}>
+      <div style={{ background: '#131B2E', borderBottom: '1px solid #1E293B', padding: '60px 20px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
-          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 700, color: '#0F172A', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
+          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 700, color: '#F0F2F5', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
             Case Categories
           </h1>
-          <p style={{ fontSize: 18, color: '#64748B', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
+          <p style={{ fontSize: 18, color: '#94A3B8', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
             Research real federal court outcomes across 10 major case categories. Explore win rates, settlements, timelines, and recovery data from 4.2M+ public cases.
           </p>
         </div>
@@ -74,11 +74,11 @@ export default function CasesIndexPage() {
             <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
               <div className="cat-card">
                 <div style={{ fontSize: 40, marginBottom: 16 }}>{categoryIcons[category.id]}</div>
-                <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#0F172A', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#F0F2F5', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
                   {category.label}
                 </h2>
-                <p style={{ fontSize: 14, color: '#64748B', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
-                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid rgba(0,0,0,0.08)', fontSize: 13, color: '#4F46E5', fontWeight: 500 }}>
+                <p style={{ fontSize: 14, color: '#94A3B8', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
+                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #1E293B', fontSize: 13, color: '#4F46E5', fontWeight: 500 }}>
                   {category.opts.length} types covered →
                 </div>
               </div>
@@ -96,14 +96,14 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/#search" style={{ display: 'inline-block', background: 'white', color: '#4F46E5', padding: '14px 36px', borderRadius: 8, fontWeight: 600, fontSize: 16, textDecoration: 'none' }}>
+          <a href="/#search" style={{ display: 'inline-block', background: '#131B2E', color: '#4F46E5', padding: '14px 36px', borderRadius: 8, fontWeight: 600, fontSize: 16, textDecoration: 'none' }}>
             Start Researching →
           </a>
         </div>
       </div>
 
       {/* Footer */}
-      <div style={{ background: '#0F172A', color: '#94A3B8', padding: '40px 20px', fontSize: 14, lineHeight: 1.6 }}>
+      <div style={{ background: '#0B1221', color: '#94A3B8', padding: '40px 20px', fontSize: 14, lineHeight: 1.6 }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0 }}>
             <strong>Legal Disclaimer:</strong> This data is for research purposes only and is not legal advice. MyCaseValue provides historical federal court outcome data from public records. This does not constitute a prediction of any case outcome. Consult a qualified attorney for legal advice. © {new Date().getFullYear()} MyCaseValue LLC.

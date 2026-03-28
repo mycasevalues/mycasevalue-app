@@ -65,11 +65,11 @@ function Card({ children, glow = false, className = '', style = {} }: { children
   return (
     <div className={`card-bg rounded-2xl border mb-3 p-7 transition-all duration-300 ${glow ? 'animate-glow-pulse' : ''} ${className}`}
       style={{
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.8) 100%)',
+        background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(11,18,33,0.9) 100%)',
         borderColor: 'rgba(226,232,240,0.6)',
         boxShadow: glow
-          ? '0 2px 8px rgba(64,64,242,.08), 0 12px 40px rgba(11,18,33,.06), inset 0 1px 0 rgba(255,255,255,0.8)'
-          : '0 1px 3px rgba(11,18,33,.02), 0 8px 28px rgba(11,18,33,.04), inset 0 1px 0 rgba(255,255,255,0.8)',
+          ? '0 2px 8px rgba(64,64,242,.08), 0 12px 40px rgba(11,18,33,.06), inset 0 1px 0 rgba(255,255,255,0.03)'
+          : '0 1px 3px rgba(11,18,33,.02), 0 8px 28px rgba(11,18,33,.04), inset 0 1px 0 rgba(255,255,255,0.03)',
         ...style,
       }}>
       {children}
@@ -127,7 +127,7 @@ function BarLine({ label, pct, max, color, delay = 0 }: { label: string; pct: nu
   return (
     <div className="flex items-center gap-3 py-2 group">
       <span className="text-sm flex-1 truncate font-medium">{label}</span>
-      <div className="w-32 h-2.5 bg-slate-100 rounded-full overflow-hidden flex-shrink-0 transition-all group-hover:h-3">
+      <div className="w-32 h-2.5 bg-[#1E293B] rounded-full overflow-hidden flex-shrink-0 transition-all group-hover:h-3">
         <div ref={ref} className="h-full rounded-full" style={{
           width: 0,
           background: `linear-gradient(90deg, ${color}90, ${color})`,
@@ -167,7 +167,7 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
         aria-haspopup="listbox"
         className="w-full px-4 py-3.5 text-[15px] font-medium border-[1.5px] rounded-xl cursor-pointer text-left flex justify-between items-center transition-all duration-200"
         style={{
-          borderColor: open ? '#4F46E5' : (dark ? '#334155' : '#E2E8F0'),
+          borderColor: open ? '#4F46E5' : (dark ? '#334155' : '#1E293B'),
           color: selected ? (dark ? '#F0F2F5' : '#0B1221') : '#94A3B8',
           background: dark ? '#1A2744' : '#fff',
           boxShadow: open ? '0 0 0 3px rgba(64,64,242,0.12)' : 'none',
@@ -183,7 +183,7 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
         className="absolute top-full mt-1.5 left-0 right-0 rounded-xl z-20 overflow-hidden"
         style={{
           background: dark ? '#1A2744' : '#fff',
-          border: open ? `1px solid ${dark ? '#334155' : '#E2E8F0'}` : '1px solid transparent',
+          border: open ? `1px solid ${dark ? '#334155' : '#1E293B'}` : '1px solid transparent',
           boxShadow: open ? (dark ? '0 12px 40px rgba(11,18,33,.4)' : '0 12px 40px rgba(11,18,33,.12)') : 'none',
           maxHeight: open ? '280px' : '0',
           opacity: open ? 1 : 0,
@@ -198,7 +198,7 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
               className="w-full px-3 py-2 text-[13px] rounded-lg outline-none transition-colors"
               style={{
                 background: dark ? '#0F1729' : '#F8FAFC',
-                border: `1px solid ${dark ? '#334155' : '#E2E8F0'}`,
+                border: `1px solid ${dark ? '#334155' : '#1E293B'}`,
                 color: dark ? '#F0F2F5' : '#0B1221',
               }} />
           </div>
@@ -212,7 +212,7 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
               className="w-full px-4 py-2.5 text-sm text-left rounded-lg cursor-pointer transition-all duration-150"
               style={{
                 fontWeight: o.id === value ? 600 : 400,
-                color: o.id === value ? '#4F46E5' : (dark ? '#E2E8F0' : '#0B1221'),
+                color: o.id === value ? '#4F46E5' : (dark ? '#1E293B' : '#0B1221'),
                 background: o.id === value ? (dark ? '#4F46E515' : 'rgba(99,102,241,0.15)') : 'transparent',
                 animationDelay: open ? `${idx * 20}ms` : '0ms',
               }}
@@ -238,13 +238,13 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
 function LockedPreview({ children, onUnlock, label }: { children: React.ReactNode; onUnlock: () => void; label?: string }) {
   return (
     <div className="relative mb-3 rounded-2xl overflow-hidden locked-shimmer" style={{
-      background: 'linear-gradient(135deg, rgba(248,250,252,0.95) 0%, rgba(255,255,255,0.9) 100%)',
+      background: 'linear-gradient(135deg, rgba(20,28,45,0.95) 0%, rgba(15,23,42,0.9) 100%)',
       border: '1px solid rgba(79,70,229,0.12)',
       boxShadow: '0 4px 24px rgba(79,70,229,0.06)',
     }}>
       <div style={{ filter: 'blur(6px)', pointerEvents: 'none', opacity: 0.35, padding: 24, transform: 'scale(1.02)' }}>{children}</div>
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{
-        background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.92) 0%, rgba(248,250,252,0.7) 50%, rgba(248,250,252,0.5) 100%)',
+        background: 'radial-gradient(ellipse at center, rgba(20,28,45,0.92) 0%, rgba(15,23,42,0.7) 50%, rgba(11,18,33,0.5) 100%)',
       }}>
         {/* Animated lock icon */}
         <div className="premium-badge-glow w-16 h-16 rounded-2xl shadow-xl flex items-center justify-center" style={{
@@ -285,9 +285,9 @@ function Collapsible({ title, badge, defaultOpen = false, children }: { title: s
   return (
     <div className="card-bg rounded-2xl border overflow-hidden mb-3 transition-all duration-300"
       style={{
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.8) 100%)',
+        background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(11,18,33,0.9) 100%)',
         borderColor: open ? 'rgba(64,64,242,0.15)' : 'rgba(226,232,240,0.6)',
-        boxShadow: open ? '0 4px 24px rgba(11,18,33,.07), inset 0 1px 0 rgba(255,255,255,0.8)' : '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)',
+        boxShadow: open ? '0 4px 24px rgba(11,18,33,.07), inset 0 1px 0 rgba(255,255,255,0.03)' : '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)',
       }}>
       <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-4.5 bg-transparent border-none cursor-pointer text-left group" aria-expanded={open}
         style={{ padding: '18px 24px' }}>
@@ -323,9 +323,9 @@ function WizardProgress({ step, labels, lang = 'en' }: { step: number; labels?: 
         <div className="flex gap-1.5 flex-1">
           {[1, 2, 3, 4, 5].map(i => (
             <div key={i} className="flex-1 h-2 rounded-full transition-all duration-500 relative overflow-hidden"
-              style={{ background: i <= step ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#E2E8F0' }}>
+              style={{ background: i <= step ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B' }}>
               {i <= step && (
-                <div className="absolute inset-0 animate-pulse" style={{ background: 'rgba(255,255,255,0.3)' }} />
+                <div className="absolute inset-0 animate-pulse" style={{ background: 'rgba(255,255,255,0.04)' }} />
               )}
             </div>
           ))}
@@ -420,7 +420,7 @@ function GlossaryTip({ term, children }: { term: string; children: React.ReactNo
       {children}
       {show && (
         <span className="absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 rounded-xl text-[12px] leading-relaxed font-normal text-left w-56 sm:w-64 max-w-[calc(100vw-2rem)]"
-          style={{ background: '#0B1221', color: '#E2E8F0', boxShadow: '0 8px 32px rgba(11,18,33,.25)' }}>
+          style={{ background: '#0B1221', color: '#1E293B', boxShadow: '0 8px 32px rgba(11,18,33,.25)' }}>
           <span className="font-bold text-white block mb-0.5 capitalize">{term}</span>
           {def}
           <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-px w-2.5 h-2.5 rotate-45"
@@ -458,8 +458,8 @@ function ReportFeaturesGrid({ lang = 'en' }: { lang?: string }) {
       {features.map((f, i) => (
         <div key={i} className={`p-5 rounded-2xl border transition-all hover:scale-[1.02] ${
           f.free
-            ? 'bg-[#131B2E] border-[#1E293B] shadow-sm'
-            : 'border-[#1E293B] shadow-sm'
+            ? 'bg-[#131B2E] border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
+            : 'border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
         }`} style={!f.free ? { background: 'linear-gradient(135deg, #F0F2FF, #FFFFFF)', borderColor: 'rgba(64,64,242,0.12)' } : undefined}>
           <div className="flex items-start justify-between mb-2">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: f.free ? '#F0F2FF' : '#EEF0FF' }}>{f.icon}</div>
@@ -485,14 +485,14 @@ function CaseTypeStatsPreview({ lang = 'en' }: { lang?: string }) {
   const s = stats[activeType];
 
   return (
-    <div className="bg-[#131B2E] rounded-2xl border border-[#1E293B] p-6 shadow-sm">
+    <div className="bg-[#131B2E] rounded-2xl border border-[#1E293B] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
       <div className="mb-4 flex gap-2 flex-wrap">
         {Object.keys(stats).map(k => (
           <button key={k} onClick={() => setActiveType(k)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               activeType === k
                 ? 'bg-yellow-100 text-yellow-900 border border-yellow-200'
-                : 'bg-[#1E293B] text-[#94A3B8] border border-[#1E293B] hover:bg-slate-100'
+                : 'bg-[#1E293B] text-[#94A3B8] border border-[#1E293B] hover:bg-[#1E293B]'
             }`}>
             {stats[k].label}
           </button>
@@ -525,7 +525,7 @@ function LegalCostComparison({ lang = 'en' }: { lang?: string }) {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-slate-50 to-white rounded-2xl border border-[#1E293B] p-6 shadow-sm">
+    <div className="bg-gradient-to-r from-[#131B2E] to-[#0F172A] rounded-2xl border border-[#1E293B] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
       <div className="text-[11px] font-bold text-slate-400 tracking-[2px] mb-4 uppercase">{es ? 'Costos promedio por vía legal' : 'Average costs of legal paths'}</div>
       <div className="space-y-4">
         {costs.map((c, i) => (
@@ -557,7 +557,7 @@ function PlainEnglishSummary({ text, lang = 'en' }: { text: string; lang?: strin
   if (!text) return null;
   const es = lang === 'es';
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-[#1E293B] p-6 shadow-sm mb-4">
+    <div className="bg-gradient-to-br from-[#131B2E] to-[#0F172A] rounded-2xl border border-[#1E293B] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
       <div className="flex items-start gap-3">
         <div className="text-3xl">💬</div>
         <div className="flex-1">
@@ -618,7 +618,7 @@ function WhatPeopleDid({ lang = 'en' }: { lang?: string }) {
             <div className="text-[22px] font-display font-bold" style={{ color: '#4F46E5' }}>{step.pct}%</div>
             <div className="text-[10px] text-slate-400 pb-1">{es ? 'de usuarios' : 'of users'}</div>
           </div>
-          <div className="mt-2 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+          <div className="mt-2 h-1.5 bg-[#1E293B] rounded-full overflow-hidden">
             <div className="h-full rounded-full" style={{
               width: `${step.pct}%`,
               background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
@@ -656,7 +656,7 @@ function CaseComparisonScale({ winRate, lang = 'en' }: { winRate: number; lang?:
             left: `${(winRate / 100) * 100}%`,
             transform: 'translateX(-50%)',
           }}>
-          <div className="w-6 h-6 bg-[#131B2E] rounded-full shadow-md border-2 border-slate-300" />
+          <div className="w-6 h-6 bg-[#131B2E] rounded-full shadow-md border-2 border-[#334155]" />
         </div>
       </div>
       <div className="flex justify-between mt-2 px-1">
@@ -842,7 +842,7 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => voi
               style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
               Get Full Report
             </button>
-            <button onClick={onClose} className="w-full px-6 py-2 text-sm font-medium card-bg bg-[#1E293B] rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
+            <button onClick={onClose} className="w-full px-6 py-2 text-sm font-medium card-bg bg-[#1E293B] rounded-xl cursor-pointer hover:bg-[#1E293B] transition-colors">
               Close
             </button>
           </div>
@@ -857,7 +857,7 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => voi
         <div className="mb-6">
           <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-3 uppercase">Quick Assessment</div>
           <div className="text-2xl font-display font-bold">{questions[step]}</div>
-          <div className="mt-4 h-1 bg-slate-100 rounded-full overflow-hidden">
+          <div className="mt-4 h-1 bg-[#1E293B] rounded-full overflow-hidden">
             <div className="h-full rounded-full transition-all duration-300" style={{
               width: `${((step + 1) / questions.length) * 100}%`,
               background: 'linear-gradient(135deg, #4F46E5, #6366F1)'
@@ -867,7 +867,7 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => voi
         <div className="flex gap-3">
           <button onClick={() => handleAnswer(false)}
             className="flex-1 px-4 py-3 font-semibold rounded-xl cursor-pointer border-[1.5px] transition-all hover:scale-[1.02]"
-            style={{ borderColor: '#E2E8F0', color: '#64748B', background: '#131B2E' }}>
+            style={{ borderColor: '#1E293B', color: '#64748B', background: '#131B2E' }}>
             No
           </button>
           <button onClick={() => handleAnswer(true)}
@@ -956,11 +956,11 @@ function Shell({
   return (
     <>
       <a href="#main-content" className="skip-link">Skip to content</a>
-      <div className={darkMode ? 'dark' : ''} role="application" aria-label="MyCaseValue" style={{
-        background: darkMode ? '#0B1221' : '#F5F7FA',
+      <div className="dark" role="application" aria-label="MyCaseValue" style={{
+        background: '#0B1221',
         minHeight: '100vh',
         fontFamily: "'Outfit', system-ui, sans-serif",
-        color: darkMode ? '#F0F2F5' : '#0B1221',
+        color: '#F0F2F5',
         maxWidth: viewMode === 'mobile' ? '430px' : viewMode === 'desktop' ? '100%' : undefined,
         margin: viewMode === 'mobile' ? '0 auto' : undefined,
         boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(11,18,33,.08)' : undefined,
@@ -990,14 +990,14 @@ function Shell({
 
         <main id="main-content" className="max-w-[1140px] mx-auto px-4 sm:px-6 relative z-10" role="main">
           {/* UPL Banner */}
-          <div className="text-center py-2 border-b no-print" style={{ borderColor: darkMode ? '#1E293B' : 'rgba(226,232,240,0.3)', background: darkMode ? 'rgba(30,41,59,0.3)' : 'rgba(248,250,252,0.5)' }}>
-            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: darkMode ? '#64748B' : '#94A3B8' }}>{UPL.banner}</span>
+          <div className="text-center py-2 border-b no-print" style={{ borderColor: '#1E293B', background: 'rgba(30,41,59,0.3)' }}>
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: '#64748B' }}>{UPL.banner}</span>
           </div>
 
           {children}
 
           {/* Footer */}
-          <footer className="border-t mt-16 pt-6 pb-8" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F0' }}>
+          <footer className="border-t mt-16 pt-6 pb-8" style={{ borderColor: '#1E293B' }}>
             <div className="flex items-center gap-3 mb-4 flex-wrap">
               <span className="text-[11px] font-semibold text-slate-400">{lang === 'es' ? 'Datos verificados:' : 'Verified data:'}</span>
               {['Federal Judicial Center', 'CourtListener', 'uscourts.gov', 'Google Scholar'].map((n, i) => (
@@ -1043,7 +1043,7 @@ function Shell({
             </div>
 
             {/* Social sharing */}
-            <div className="flex items-center justify-center gap-2 mt-5 pt-4 border-t no-print" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
+            <div className="flex items-center justify-center gap-2 mt-5 pt-4 border-t no-print" style={{ borderColor: '#1E293B' }}>
               <span className="text-[11px] font-semibold text-slate-400 tracking-[1px] mr-1">{lang === 'es' ? 'COMPARTIR' : 'SHARE'}</span>
               {[
                 { icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', label: 'X', color: '#000000', hoverBg: '#F0F0F0', filled: true,
@@ -1064,9 +1064,9 @@ function Shell({
                   }
                 }}
                 className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110 group"
-                style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : 'transparent'}` }}
-                onMouseEnter={e => { e.currentTarget.style.background = darkMode ? '#334155' : s.hoverBg; e.currentTarget.style.borderColor = s.color + '40'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = darkMode ? '#1E293B' : '#F1F5F9'; e.currentTarget.style.borderColor = darkMode ? '#334155' : 'transparent'; }}
+                style={{ background: '#1E293B', border: '1px solid #334155' }}
+                onMouseEnter={e => { e.currentTarget.style.background = '#334155'; e.currentTarget.style.borderColor = s.color + '40'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#1E293B'; e.currentTarget.style.borderColor = '#334155'; }}
                 title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}
                 aria-label={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill={s.filled ? s.color : 'none'} stroke={s.filled ? 'none' : s.color} strokeWidth={s.filled ? '0' : '2'} strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
@@ -1078,11 +1078,11 @@ function Shell({
 
             {/* Secure payments badge */}
             <div className="flex items-center justify-center gap-3 mt-3 no-print">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid #334155' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                 <span className="text-[10px] font-semibold text-slate-400 tracking-[0.5px]">{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
                 {/* Stripe logo */}
-                <svg width="36" height="15" viewBox="0 0 60 25" fill={darkMode ? '#94A3B8' : '#6772E5'} xmlns="http://www.w3.org/2000/svg">
+                <svg width="36" height="15" viewBox="0 0 60 25" fill={'#94A3B8'} xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z"/>
                   <path d="M14.4 1.5l-4.8 1v13.3c0 2.4 1.8 4.2 4.3 4.2 1.4 0 2.4-.2 2.9-.5v-3.8c-.5.2-3.1.9-3.1-1.4V9.5h3.1V5.8h-3.1l.7-4.3z"/>
                   <path d="M23.2 7.2l-.3-1.4h-4.3v14.4h4.9v-9.8c1.2-1.5 3.1-1.2 3.7-1v-4.5c-.7-.2-3.2-.7-4.3 1.3h.3z"/>
@@ -1093,26 +1093,26 @@ function Shell({
               </div>
               <div className="flex items-center gap-1.5">
                 {/* Visa */}
-                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
                   <svg width="28" height="10" viewBox="0 0 750 471" fill="none"><path d="M278.198 334.228l33.36-195.763h53.358l-33.384 195.763h-53.334zM524.307 142.687c-10.57-3.966-27.135-8.222-47.822-8.222-52.725 0-89.863 26.551-90.18 64.604-.635 28.109 26.502 43.773 46.754 53.126 20.771 9.574 27.752 15.679 27.654 24.243-.14 13.084-16.598 19.065-31.924 19.065-21.357 0-32.688-2.966-50.205-10.258l-6.875-3.11-7.488 43.823c12.463 5.467 35.508 10.199 59.438 10.445 56.09 0 92.502-26.248 92.916-66.885.2-22.28-14.016-39.215-44.8-53.187-18.65-9.056-30.072-15.099-29.951-24.269 0-8.137 9.668-16.838 30.56-16.838 17.286-.271 29.966 3.439 39.627 7.406l4.8 2.252 7.496-42.395zM661.615 138.464h-41.23c-12.773 0-22.332 3.486-27.94 16.234l-79.244 179.402h56.031s9.159-24.121 11.232-29.418c6.123 0 60.555.084 68.336.084 1.596 6.854 6.492 29.334 6.492 29.334h49.52l-43.197-195.636zm-65.417 126.408c4.414-11.279 21.26-54.724 21.26-54.724-.317.534 4.381-11.329 7.074-18.684l3.606 16.878 12.348 56.53h-44.288zM232.903 138.464L180.664 271.96l-5.565-27.129c-9.726-31.274-40.025-65.157-73.898-82.12l47.767 171.204 56.455-.065 84.004-195.386h-56.524z" fill="#2566AF"/><path d="M131.92 138.464H45.879l-.682 4.073c66.939 16.204 111.232 55.363 129.618 102.415l-18.709-89.96c-3.229-12.396-12.597-16.095-24.186-16.528z" fill="#E6A540"/></svg>
                 </span>
                 {/* Mastercard */}
-                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
                   <svg width="22" height="14" viewBox="0 0 152 100"><circle cx="50" cy="50" r="50" fill="#EB001B"/><circle cx="102" cy="50" r="50" fill="#F79E1B"/><path d="M76 14.8a49.8 49.8 0 000 70.4 49.8 49.8 0 000-70.4z" fill="#FF5F00"/></svg>
                 </span>
                 {/* Amex */}
-                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
                   <svg width="22" height="14" viewBox="0 0 40 26"><rect width="40" height="26" rx="3" fill="#2E77BC"/><text x="20" y="17" textAnchor="middle" fill="white" fontSize="9" fontWeight="800" fontFamily="Arial">AMEX</text></svg>
                 </span>
                 {/* PayPal */}
-                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
                   <svg width="22" height="14" viewBox="0 0 100 32"><path d="M37.8 3.2h-8.5c-.6 0-1.1.4-1.2 1L24.8 25c-.1.4.3.8.7.8h4.1c.6 0 1.1-.4 1.2-1l.9-5.7c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4-1.3-1.4-3.5-2.2-6.3-2.2l-.2-.3z" fill="#253B80"/><path d="M70.3 3.2h-8.5c-.6 0-1.1.4-1.2 1l-3.3 20.8c-.1.4.3.8.7.8h4.3c.4 0 .8-.3.8-.7l.9-5.9c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4-1.3-1.4-3.5-2.2-6.3-2.2v.6z" fill="#179BD7"/><path d="M13.5 3.2H5c-.6 0-1.1.4-1.2 1L.5 25c-.1.4.3.8.7.8h4.1c.6 0 1.1-.4 1.2-1l.9-5.7c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4C18.7 3.4 16.5 3.2 13.5 3.2z" fill="#253B80"/></svg>
                 </span>
               </div>
             </div>
 
             {/* Navigation links */}
-            <div className="flex items-center justify-center gap-3 mt-3 pt-3 border-t no-print flex-wrap" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F040' }}>
+            <div className="flex items-center justify-center gap-3 mt-3 pt-3 border-t no-print flex-wrap" style={{ borderColor: '#1E293B' }}>
               <a href="/about" className="text-[11px] text-slate-400 hover:text-[#94A3B8] transition-colors" style={{ textDecoration: 'none' }}>{lang === 'es' ? 'Acerca de' : 'About'}</a>
               <span className="text-slate-300">·</span>
               <a href="/cases" className="text-[11px] text-slate-400 hover:text-[#94A3B8] transition-colors" style={{ textDecoration: 'none' }}>{lang === 'es' ? 'Categorías' : 'Case Categories'}</a>
@@ -1127,8 +1127,8 @@ function Shell({
             </div>
 
             {/* Legal disclaimer bar */}
-            <div className="mt-5 pt-4 border-t" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F020' }}>
-              <div className="p-4 rounded-xl text-center" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', border: `1px solid ${darkMode ? '#334155' : '#E2E8F0'}` }}>
+            <div className="mt-5 pt-4 border-t" style={{ borderColor: '#1E293B' }}>
+              <div className="p-4 rounded-xl text-center" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid #334155' }}>
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                   <span className="text-[11px] font-bold tracking-[2px] text-slate-400">
@@ -1164,7 +1164,7 @@ function Shell({
         {showExitIntent && !isPremium && (
           <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(8px)' }}>
             <div className="exit-intent-modal card-bg bg-[#131B2E] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center" onClick={e => e.stopPropagation()}>
-              <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer border-none">
+              <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#1E293B] flex items-center justify-center cursor-pointer border-none">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
@@ -1194,7 +1194,7 @@ function Shell({
             <div className="card-bg bg-[#131B2E] rounded-2xl p-6 max-w-md w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between mb-4">
                 <div className="text-lg font-display font-bold">{lang === 'es' ? 'Mis informes' : 'My Reports'}</div>
-                <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center cursor-pointer border-none">
+                <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-[#1E293B] flex items-center justify-center cursor-pointer border-none">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
               </div>
@@ -1994,7 +1994,7 @@ export default function MyCaseValue() {
               <div className="flex items-center gap-3 mt-8">
                 <div className="flex -space-x-2">
                   {['#4F46E5', '#0D9488', '#1A2744', '#6366F1', '#0D9488'].map((c, i) => (
-                    <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white shadow-sm"
+                    <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
                       style={{ background: c, zIndex: 5 - i, border: '2px solid #131D35' }}>
                       {['J', 'M', 'K', 'S', 'A'][i]}
                     </div>
@@ -2142,16 +2142,16 @@ export default function MyCaseValue() {
                         background: `linear-gradient(180deg, ${si.color}20 0%, ${si.color}10 100%)`,
                         borderColor: si.color + '40',
                         borderLeft: `3px solid ${si.color}`,
-                        boxShadow: `0 4px 20px ${si.color}20, inset 0 1px 0 rgba(255,255,255,0.8)`,
+                        boxShadow: `0 4px 20px ${si.color}20, inset 0 1px 0 rgba(255,255,255,0.03)`,
                       }}
                       onMouseEnter={e => {
                         e.currentTarget.style.borderColor = si.color + '60';
-                        e.currentTarget.style.boxShadow = `0 8px 30px ${si.color}30, inset 0 1px 0 rgba(255,255,255,0.8)`;
+                        e.currentTarget.style.boxShadow = `0 8px 30px ${si.color}30, inset 0 1px 0 rgba(255,255,255,0.03)`;
                         e.currentTarget.style.background = `linear-gradient(180deg, ${si.color}30 0%, ${si.color}15 100%)`;
                       }}
                       onMouseLeave={e => {
                         e.currentTarget.style.borderColor = si.color + '40';
-                        e.currentTarget.style.boxShadow = `0 4px 20px ${si.color}20, inset 0 1px 0 rgba(255,255,255,0.8)`;
+                        e.currentTarget.style.boxShadow = `0 4px 20px ${si.color}20, inset 0 1px 0 rgba(255,255,255,0.03)`;
                         e.currentTarget.style.background = `linear-gradient(180deg, ${si.color}20 0%, ${si.color}10 100%)`;
                       }}>
                       <div className="flex items-start gap-3.5">
@@ -2276,7 +2276,7 @@ export default function MyCaseValue() {
 
         {/* Social proof counter */}
         <Reveal delay={470}>
-          <div className="flex items-center justify-center gap-6 py-4 px-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm mb-4">
+          <div className="flex items-center justify-center gap-6 py-4 px-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-[13px] text-slate-500"><strong className="font-data">{liveCounter}</strong> {lang === 'es' ? 'informes generados hoy' : 'reports generated today'}</span>
@@ -2411,7 +2411,7 @@ export default function MyCaseValue() {
               </h2>
             </div>
             <div className="report-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm p-6">
+              <div className="card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)] p-6">
                 <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-4 uppercase">{lang === 'es' ? 'Calculadora de contingencia' : 'Contingency Fee Calculator'}</div>
                 <div className="mb-4">
                   <label className="text-xs font-semibold text-[#94A3B8] block mb-2">{lang === 'es' ? 'Cantidad estimada de recuperación' : 'Estimated recovery amount'}</label>
@@ -2419,7 +2419,7 @@ export default function MyCaseValue() {
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-semibold">$</span>
                     <input type="range" min="10000" max="5000000" step="10000" value={calcAmount}
                       onChange={e => setCalcAmount(Number(e.target.value))}
-                      className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer" style={{ accentColor: '#4F46E5' }} />
+                      className="w-full h-2 bg-[#1E293B] rounded-lg appearance-none cursor-pointer" style={{ accentColor: '#4F46E5' }} />
                   </div>
                   <div className="flex justify-between mt-2 text-xs text-slate-500">
                     <span>$10K</span>
@@ -2442,7 +2442,7 @@ export default function MyCaseValue() {
                   </div>
                 </div>
               </div>
-              <div className="card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm p-6">
+              <div className="card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)] p-6">
                 <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-4 uppercase">{lang === 'es' ? 'Rangos por tipo de caso' : 'Fee ranges by case type'}</div>
                 <div className="space-y-3">
                   {[
@@ -2493,7 +2493,7 @@ export default function MyCaseValue() {
                 { value: '$47K', label: lang === 'es' ? 'Mediana de recuperación' : 'Median plaintiff recovery', sub: lang === 'es' ? 'Casos con pago' : 'In cases with payout', color: '#4F46E5' },
                 { value: '67%', label: lang === 'es' ? 'Casos que se resuelven' : 'Cases that settle', sub: lang === 'es' ? 'Antes de llegar a juicio' : 'Before reaching trial', color: '#4F46E5' },
               ].map((d, i) => (
-                <div key={i} className="p-4 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm text-center transition-transform hover:scale-[1.02]">
+                <div key={i} className="p-4 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)] text-center transition-transform hover:scale-[1.02]">
                   <div className="text-2xl sm:text-3xl font-display font-bold" style={{ color: d.color, letterSpacing: '-1px' }}>{d.value}</div>
                   <div className="text-[12px] font-semibold text-[#94A3B8] mt-1.5">{d.label}</div>
                   <div className="text-[10px] text-slate-400 mt-0.5">{d.sub}</div>
@@ -2503,7 +2503,7 @@ export default function MyCaseValue() {
 
             {/* Mini outcome breakdown */}
             <div className="report-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm">
+              <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                 <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-3">{lang === 'es' ? 'RESULTADOS MÁS COMUNES' : 'MOST COMMON OUTCOMES'}</div>
                 {[
                   { l: lang === 'es' ? 'Acuerdo con pago' : 'Settlement (with payment)', p: 34, c: '#0D9488' },
@@ -2515,14 +2515,14 @@ export default function MyCaseValue() {
                   <div key={i} className="flex items-center gap-2 py-1.5">
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: o.c }} />
                     <span className="text-[12px] flex-1 text-[#94A3B8]">{o.l}</span>
-                    <div className="w-20 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="w-20 h-1.5 bg-[#1E293B] rounded-full overflow-hidden">
                       <div className="h-full rounded-full" style={{ width: `${o.p}%`, background: o.c, transition: 'width 1s ease' }} />
                     </div>
                     <span className="text-[12px] font-bold font-data w-8 text-right" style={{ color: o.c }}>{o.p}%</span>
                   </div>
                 ))}
               </div>
-              <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm">
+              <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                 <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-3">{lang === 'es' ? 'ABOGADO VS. SIN ABOGADO' : 'ATTORNEY VS. NO ATTORNEY'}</div>
                 <div className="flex gap-3 mb-3">
                   <div className="flex-1 p-3 rounded-xl text-center" style={{ background: 'rgba(13,148,136,0.15)' }}>
@@ -2557,7 +2557,7 @@ export default function MyCaseValue() {
 
         {/* === COMPARISON TOOL PREVIEW === */}
         <Reveal delay={580}>
-          <div className="p-6 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm mb-4">
+          <div className="p-6 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
               <div>
                 <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-1">{lang === 'es' ? 'HERRAMIENTA DE COMPARACIÓN' : 'COMPARISON TOOL'}</div>
@@ -2610,7 +2610,7 @@ export default function MyCaseValue() {
                       const aWins = isNumeric && m.better !== 'neutral' && (m.better === 'higher' ? vA > vB : vA < vB);
                       const bWins = isNumeric && m.better !== 'neutral' && (m.better === 'higher' ? vB > vA : vB < vA);
                       return (
-                        <div key={m.key} className="flex items-center gap-2 py-2 px-3 rounded-lg" style={{ background: darkMode ? 'rgba(30,41,59,0.3)' : '#F8FAFC' }}>
+                        <div key={m.key} className="flex items-center gap-2 py-2 px-3 rounded-lg" style={{ background: 'rgba(30,41,59,0.3)' }}>
                           <span className="flex-1 text-[12px] text-slate-400">{m.label}</span>
                           <span className={`text-[13px] font-bold font-data ${aWins ? '' : ''}`} style={{ color: aWins ? '#0D9488' : bWins ? '#94A3B8' : '#1A2744', minWidth: 60, textAlign: 'right' }}>{m.fmt(vA)}</span>
                           <span className="text-[10px] text-slate-300 mx-1">vs</span>
@@ -2663,7 +2663,7 @@ export default function MyCaseValue() {
                     </div>
                     <div className="pb-4 flex-1">
                       <div className="text-[10px] font-bold tracking-[1.5px] mb-1" style={{ color: '#4F46E5' }}>{stage.month} months</div>
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: darkMode ? '#E2E8F0' : '#1E293B' }}>{stage.title}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>{stage.title}</div>
                       <div className="text-[13px] text-slate-500">{stage.desc}</div>
                     </div>
                   </div>
@@ -2678,7 +2678,7 @@ export default function MyCaseValue() {
 
         {/* === LEGAL GLOSSARY PREVIEW === */}
         <Reveal delay={600}>
-          <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm mb-4">
+          <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
             <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-3">{lang === 'es' ? 'GLOSARIO LEGAL SIMPLIFICADO' : 'LEGAL TERMS — SIMPLIFIED'}</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {Object.entries(LEGAL_GLOSSARY).slice(0, 6).map(([term, def], i) => (
@@ -2703,7 +2703,7 @@ export default function MyCaseValue() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Free */}
-              <div className="p-6 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-sm">
+              <div className="p-6 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                 <div className="inline-block px-3 py-1 rounded-full text-[11px] font-bold mb-3" style={{ background: '#1E293B', color: '#64748B' }}>{lang === 'es' ? 'GRATIS' : 'FREE'}</div>
                 <div className="text-2xl font-display font-bold mb-1">$0</div>
                 <div className="text-[12px] text-slate-400 mb-4">{lang === 'es' ? 'Perfecto para empezar' : 'Perfect to get started'}</div>
@@ -2724,12 +2724,12 @@ export default function MyCaseValue() {
                     </div>
                   ))}
                 </div>
-                <button onClick={() => go(1)} className="w-full mt-5 py-3 text-[14px] font-semibold text-[#94A3B8] bg-[#1E293B] border border-[#1E293B] rounded-xl cursor-pointer transition-colors hover:bg-slate-100">
+                <button onClick={() => go(1)} className="w-full mt-5 py-3 text-[14px] font-semibold text-[#94A3B8] bg-[#1E293B] border border-[#1E293B] rounded-xl cursor-pointer transition-colors hover:bg-[#1E293B]">
                   {lang === 'es' ? 'Comenzar gratis' : 'Start for free'}
                 </button>
               </div>
               {/* Premium */}
-              <div className="p-6 rounded-2xl border-2 shadow-md relative overflow-hidden" style={{ borderColor: '#4F46E530', background: 'linear-gradient(180deg, #F8FAFC, #fff)' }}>
+              <div className="p-6 rounded-2xl border-2 shadow-md relative overflow-hidden" style={{ borderColor: '#4F46E530', background: 'linear-gradient(180deg, #131B2E, #0F172A)' }}>
                 <div className="absolute top-0 right-0 px-4 py-1 text-[10px] font-bold text-white rounded-bl-xl" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>{lang === 'es' ? 'MÁS POPULAR' : 'MOST POPULAR'}</div>
                 <div className="inline-block px-3 py-1 rounded-full text-[11px] font-bold mb-3" style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>PREMIUM</div>
                 <div className="flex items-end gap-1 mb-1">
@@ -2793,7 +2793,7 @@ export default function MyCaseValue() {
 
         {/* === DATA SOURCES & TRUST === */}
         <Reveal delay={640}>
-          <div className="p-5 rounded-2xl mb-4" style={{ background: 'linear-gradient(135deg, #F8FAFC, #EFF6FF)' }}>
+          <div className="p-5 rounded-2xl mb-4" style={{ background: 'linear-gradient(135deg, #131B2E, rgba(99,102,241,0.08))' }}>
             <div className="text-center mb-4">
               <div className="text-[10px] font-bold text-slate-400 tracking-[2px] mb-1">{lang === 'es' ? 'FUENTES DE DATOS' : 'DATA SOURCES'}</div>
               <div className="text-[15px] font-semibold text-[#CBD5E1]">{lang === 'es' ? 'Construido sobre datos públicos federales' : 'Built on public federal court data'}</div>
@@ -2869,7 +2869,7 @@ export default function MyCaseValue() {
               <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Tu estado de un vistazo' : 'Your state at a glance'}</h2>
               <p className="text-sm text-slate-400 mt-2">{lang === 'es' ? 'Haz clic en tu estado para ver datos locales' : 'Click your state to see local insights'}</p>
             </div>
-            <div className="bg-[#131B2E] rounded-2xl border border-[#1E293B] p-6 shadow-sm" style={{ maxHeight: '500px', overflow: 'auto' }}>
+            <div className="bg-[#131B2E] rounded-2xl border border-[#1E293B] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]" style={{ maxHeight: '500px', overflow: 'auto' }}>
               <USMap stateRates={AGGREGATE_STATE_RATES} onStateClick={(s) => { setStateCode(s); go(1); }} />
             </div>
           </div>
@@ -2923,9 +2923,9 @@ export default function MyCaseValue() {
             {SITS.map(si => (
               <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
                 className="category-card flex items-center gap-4 w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg group"
-                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,250,252,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)' }}
+                style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
-                onMouseLeave={e => e.currentTarget.style.borderColor = '#F1F5F9'}>
+                onMouseLeave={e => e.currentTarget.style.borderColor = '#1E293B'}>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform" style={{ background: `${si.color}10` }}>
                   <CategoryIcon name={si.icon} color={si.color} size={22} />
                 </div>
@@ -2962,9 +2962,9 @@ export default function MyCaseValue() {
             {sit.opts.map((o: any, i: number) => (
               <button key={i} onClick={() => { setSpec(o); go(3); }}
                 className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
-                style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,250,252,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.8)' }}
+                style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = sit.color}
-                onMouseLeave={e => e.currentTarget.style.borderColor = '#F1F5F9'}>
+                onMouseLeave={e => e.currentTarget.style.borderColor = '#1E293B'}>
                 <div className="w-2 h-2 rounded-full flex-shrink-0 mr-3 transition-transform" style={{ background: sit.color, opacity: 0.5 }} />
                 <span className="flex-1 text-[15px]">{o.label}</span>
                 <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sit.color}08` }}>
@@ -3066,7 +3066,7 @@ export default function MyCaseValue() {
           </div>
           <button onClick={() => go(4)} disabled={!timing || !amount || !attorney}
             className="w-full mt-7 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-            style={{ background: (timing && amount && attorney) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#E2E8F0', color: (timing && amount && attorney) ? '#fff' : '#94A3B8', boxShadow: (timing && amount && attorney) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
+            style={{ background: (timing && amount && attorney) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && amount && attorney) ? '#fff' : '#94A3B8', boxShadow: (timing && amount && attorney) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
             {lang === 'es' ? 'Ver resultados →' : 'View outcomes →'}
           </button>
         </Reveal>
@@ -3096,7 +3096,7 @@ export default function MyCaseValue() {
             </p>
             <label className="flex gap-3 items-start cursor-pointer text-[15px]" onClick={() => setConsent(!consent)}>
               <div className="w-6 h-6 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
-                style={{ borderColor: consent ? '#4F46E5' : '#E2E8F0', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#fff' }}>
+                style={{ borderColor: consent ? '#4F46E5' : '#1E293B', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#fff' }}>
                 {consent && <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
               </div>
               <span className="leading-relaxed">{lang === 'es'
@@ -3105,7 +3105,7 @@ export default function MyCaseValue() {
             </label>
             <button onClick={() => go(5)} disabled={!consent}
               className="w-full mt-6 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-              style={{ background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#E2E8F0', color: consent ? '#fff' : '#94A3B8', boxShadow: consent ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
+              style={{ background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: consent ? '#fff' : '#94A3B8', boxShadow: consent ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
               {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
             </button>
           </Card>
@@ -3172,7 +3172,7 @@ export default function MyCaseValue() {
               </div>
             ))}
           </div>
-          <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden mb-3">
+          <div className="w-full h-1.5 bg-[#1E293B] rounded-full overflow-hidden mb-3">
             <div className="h-full rounded-full transition-all duration-300" style={{ width: `${loadPct}%`, background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
           </div>
           <div className="flex flex-col items-center">
@@ -3269,8 +3269,8 @@ export default function MyCaseValue() {
           {/* AI Case Summary */}
           <Reveal>
             <div className="px-5 py-4 rounded-xl mb-4" style={{
-              background: darkMode ? 'linear-gradient(135deg, #1A2744, #162035)' : 'linear-gradient(135deg, #F8FAFC, #FFF)',
-              border: `1px solid ${darkMode ? '#334155' : '#4F46E515'}`,
+              background: 'linear-gradient(135deg, #1A2744, #162035)',
+              border: '1px solid #334155',
             }}>
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)' }}>
@@ -3339,7 +3339,7 @@ export default function MyCaseValue() {
                       {/* Strength indicator */}
                       <div className="flex items-center gap-2 mb-4">
                         <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ background: sc.bg, color: sc.text }}>{sc.label}</span>
-                        <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: darkMode ? '#1E293B' : '#F1F5F9' }}>
+                        <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: '#1E293B' }}>
                           <div className="h-full rounded-full transition-all duration-1000" style={{
                             width: `${wr}%`,
                             background: `linear-gradient(135deg, ${sc.text}, ${sc.text}90)`,
@@ -3348,7 +3348,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Summary narrative */}
-                      <p className="text-[14px] leading-relaxed mb-5" style={{ color: darkMode ? '#CBD5E1' : '#475569' }}>
+                      <p className="text-[14px] leading-relaxed mb-5" style={{ color: '#CBD5E1' }}>
                         {narrative.summary}
                       </p>
 
@@ -3357,26 +3357,26 @@ export default function MyCaseValue() {
                         <div className="text-[11px] font-bold tracking-[1.5px] text-slate-400 mb-3">{lang === 'es' ? 'OBSERVACIONES CLAVE' : 'KEY INSIGHTS'}</div>
                         <div className="space-y-3">
                           {narrative.keyInsights.map((insight, i) => (
-                            <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC' }}>
+                            <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: 'rgba(30,41,59,0.5)' }}>
                               <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 text-[11px] font-bold" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)', color: '#4F46E5' }}>
                                 {i + 1}
                               </div>
-                              <p className="text-[13px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{insight}</p>
+                              <p className="text-[13px] leading-relaxed m-0" style={{ color: '#94A3B8' }}>{insight}</p>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       {/* Timeline narrative */}
-                      <div className="mb-5 p-4 rounded-xl border" style={{ borderColor: darkMode ? '#334155' : '#E2E8F0', background: darkMode ? 'rgba(30,41,59,0.3)' : 'rgba(248,250,252,0.5)' }}>
+                      <div className="mb-5 p-4 rounded-xl border" style={{ borderColor: '#334155', background: 'rgba(30,41,59,0.3)' }}>
                         <div className="text-[11px] font-bold tracking-[1.5px] text-slate-400 mb-2">{lang === 'es' ? 'ANÁLISIS DE CRONOLOGÍA' : 'TIMELINE ANALYSIS'}</div>
-                        <p className="text-[13px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{narrative.timelineNarrative}</p>
+                        <p className="text-[13px] leading-relaxed m-0" style={{ color: '#94A3B8' }}>{narrative.timelineNarrative}</p>
                       </div>
 
                       {/* Comparison */}
-                      <div className="mb-5 p-4 rounded-xl" style={{ background: darkMode ? 'linear-gradient(135deg, #1A2744, #162035)' : 'linear-gradient(135deg, #EEF2FF, #F5F3FF)' }}>
+                      <div className="mb-5 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #162035)' }}>
                         <div className="text-[11px] font-bold tracking-[1.5px] mb-2" style={{ color: '#4F46E5' }}>{lang === 'es' ? 'COMPARACIÓN JURISDICCIONAL' : 'JURISDICTION COMPARISON'}</div>
-                        <p className="text-[13px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{narrative.comparisonNote}</p>
+                        <p className="text-[13px] leading-relaxed m-0" style={{ color: '#94A3B8' }}>{narrative.comparisonNote}</p>
                       </div>
 
                       {/* Next steps */}
@@ -3386,14 +3386,14 @@ export default function MyCaseValue() {
                           {narrative.nextSteps.map((step, i) => (
                             <div key={i} className="flex items-start gap-2.5">
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5" className="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12" /></svg>
-                              <p className="text-[13px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{step}</p>
+                              <p className="text-[13px] leading-relaxed m-0" style={{ color: '#94A3B8' }}>{step}</p>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       {/* Disclaimer */}
-                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : 'rgba(217,119,6,0.12)', color: darkMode ? '#64748B' : '#92400E' }}>
+                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic" style={{ background: 'rgba(30,41,59,0.5)', color: '#64748B' }}>
                         {narrative.disclaimer}
                       </div>
                     </>
@@ -3465,12 +3465,12 @@ export default function MyCaseValue() {
                       {/* Top Citations */}
                       <div className="space-y-2 mb-5">
                         {catData.citations.map((c, i) => (
-                          <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F0FDFA' }}>
+                          <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: 'rgba(30,41,59,0.5)' }}>
                             <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: '#0D948815' }}>
                               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
                             </div>
                             <div className="flex-1">
-                              <div className="text-[13px] font-semibold" style={{ color: darkMode ? '#E2E8F0' : '#0F172A' }}>{c.title}</div>
+                              <div className="text-[13px] font-semibold" style={{ color: '#1E293B' }}>{c.title}</div>
                               <div className="text-[11px] text-slate-400 mt-0.5">{c.authors} · {c.year} · Cited by {c.cited}</div>
                             </div>
                           </div>
@@ -3482,17 +3482,17 @@ export default function MyCaseValue() {
                         <div className="text-[10px] font-bold tracking-[1.5px] text-slate-400 mb-2">{lang === 'es' ? 'ESTATUTOS CLAVE' : 'KEY STATUTES'}</div>
                         <div className="flex flex-wrap gap-1.5">
                           {catData.statutes.map((s, i) => (
-                            <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg" style={{ background: darkMode ? '#1E293B' : 'rgba(99,102,241,0.1)', color: darkMode ? '#A5B4FC' : '#4F46E5', border: `1px solid ${darkMode ? '#334155' : '#4F46E515'}` }}>{s}</span>
+                            <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg" style={{ background: '#1E293B', color: '#A5B4FC', border: '1px solid #334155' }}>{s}</span>
                           ))}
                         </div>
                       </div>
 
                       {/* Emerging Trend */}
-                      <div className="p-3 rounded-xl flex items-start gap-2.5" style={{ background: darkMode ? 'linear-gradient(135deg, #1A2744, #162035)' : 'linear-gradient(135deg, #F0FDFA, #ECFDF5)' }}>
+                      <div className="p-3 rounded-xl flex items-start gap-2.5" style={{ background: 'linear-gradient(135deg, #1A2744, #162035)' }}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         <div>
                           <div className="text-[10px] font-bold tracking-[1px] mb-1" style={{ color: '#0D9488' }}>{lang === 'es' ? 'TENDENCIA EMERGENTE' : 'EMERGING TREND'}</div>
-                          <p className="text-[12px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{catData.trend}</p>
+                          <p className="text-[12px] leading-relaxed m-0" style={{ color: '#94A3B8' }}>{catData.trend}</p>
                         </div>
                       </div>
 
@@ -3530,15 +3530,15 @@ export default function MyCaseValue() {
                   return (
                     <div className="relative">
                       {/* Progress bar */}
-                      <div className="absolute left-5 top-0 bottom-0 w-0.5" style={{ background: darkMode ? '#1E293B' : '#E2E8F0' }}>
+                      <div className="absolute left-5 top-0 bottom-0 w-0.5" style={{ background: '#1E293B' }}>
                         <div className="w-full rounded-full" style={{ height: '100%', background: 'linear-gradient(180deg, #4F46E5, #0D9488)' }} />
                       </div>
                       <div className="space-y-1">
                         {phases.map((phase, i) => (
                           <div key={i} className="flex items-start gap-4 pl-10 relative py-3">
                             <div className="absolute left-3 w-5 h-5 rounded-full flex items-center justify-center text-[10px] z-10" style={{
-                              background: i <= 3 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : darkMode ? '#1E293B' : '#F1F5F9',
-                              border: i > 3 ? `2px solid ${darkMode ? '#334155' : '#CBD5E1'}` : 'none',
+                              background: i <= 3 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B',
+                              border: i > 3 ? '2px solid #334155' : 'none',
                               color: i <= 3 ? 'white' : '#94A3B8',
                               boxShadow: i <= 3 ? '0 2px 8px rgba(64,64,242,0.3)' : 'none',
                             }}>
@@ -3547,15 +3547,15 @@ export default function MyCaseValue() {
                             <div className="flex-1">
                               <div className="flex items-center gap-2 flex-wrap">
                                 <span className="text-sm">{phase.icon}</span>
-                                <span className="text-[14px] font-semibold" style={{ color: darkMode ? '#E2E8F0' : '#0F172A' }}>{phase.name}</span>
-                                <span className="text-[11px] font-medium px-2 py-0.5 rounded-full" style={{ background: darkMode ? '#1E293B' : '#F1F5F9', color: '#64748B' }}>{phase.duration}</span>
+                                <span className="text-[14px] font-semibold" style={{ color: '#1E293B' }}>{phase.name}</span>
+                                <span className="text-[11px] font-medium px-2 py-0.5 rounded-full" style={{ background: '#1E293B', color: '#64748B' }}>{phase.duration}</span>
                               </div>
-                              <p className="text-[12px] mt-1 m-0" style={{ color: darkMode ? '#64748B' : '#94A3B8' }}>{phase.desc}</p>
+                              <p className="text-[12px] mt-1 m-0" style={{ color: '#64748B' }}>{phase.desc}</p>
                             </div>
                           </div>
                         ))}
                       </div>
-                      <div className="mt-4 p-3 rounded-lg text-[11px] text-center" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC', color: '#64748B' }}>
+                      <div className="mt-4 p-3 rounded-lg text-[11px] text-center" style={{ background: 'rgba(30,41,59,0.5)', color: '#64748B' }}>
                         {lang === 'es'
                           ? `⏱ Duración estimada basada en ${d.total?.toLocaleString() || '0'} casos similares: ~${months} meses promedio`
                           : `⏱ Estimated duration based on ${d.total?.toLocaleString() || '0'} similar cases: ~${months} months average`}
@@ -3610,12 +3610,12 @@ export default function MyCaseValue() {
                         {/* Background rings */}
                         {[25, 50, 75, 100].map(pct => (
                           <polygon key={pct} points={factors.map((_, i) => { const p = getPoint(i, pct); return `${p.x},${p.y}`; }).join(' ')}
-                            fill="none" stroke={darkMode ? '#1E293B' : '#E2E8F0'} strokeWidth="0.5" />
+                            fill="none" stroke={'#1E293B'} strokeWidth="0.5" />
                         ))}
                         {/* Axis lines */}
                         {factors.map((_, i) => {
                           const p = getPoint(i, maxR);
-                          return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke={darkMode ? '#1E293B' : '#E2E8F0'} strokeWidth="0.5" />;
+                          return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke={'#1E293B'} strokeWidth="0.5" />;
                         })}
                         {/* Data polygon */}
                         <polygon points={dataPoints.map(p => `${p.x},${p.y}`).join(' ')}
@@ -3630,7 +3630,7 @@ export default function MyCaseValue() {
                           const p = getPoint(i, maxR + 22);
                           return (
                             <text key={i} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="middle"
-                              fontSize="10" fontWeight="600" fill={darkMode ? '#94A3B8' : '#64748B'}>
+                              fontSize="10" fontWeight="600" fill={'#94A3B8'}>
                               {f.label}
                             </text>
                           );
@@ -3645,10 +3645,10 @@ export default function MyCaseValue() {
                         {factors.map((f, i) => (
                           <div key={i}>
                             <div className="flex justify-between mb-1">
-                              <span className="text-[12px] font-medium" style={{ color: darkMode ? '#CBD5E1' : '#475569' }}>{f.label}</span>
+                              <span className="text-[12px] font-medium" style={{ color: '#CBD5E1' }}>{f.label}</span>
                               <span className="text-[12px] font-bold font-data" style={{ color: f.value >= 60 ? '#0D9488' : f.value >= 40 ? '#6366F1' : '#E87461' }}>{f.value}/100</span>
                             </div>
-                            <div className="h-2 rounded-full overflow-hidden" style={{ background: darkMode ? '#1E293B' : '#F1F5F9' }}>
+                            <div className="h-2 rounded-full overflow-hidden" style={{ background: '#1E293B' }}>
                               <div className="h-full rounded-full transition-all duration-700" style={{
                                 width: `${f.value}%`,
                                 background: f.value >= 60 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : f.value >= 40 ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'linear-gradient(90deg, #E87461, #F59E0B)',
@@ -3735,15 +3735,15 @@ export default function MyCaseValue() {
 
                       {/* Key insight */}
                       <div className="p-4 rounded-xl flex items-start gap-3" style={{
-                        background: darkMode ? 'linear-gradient(135deg, #1A2744, #162035)' : 'linear-gradient(135deg, #F0FDFA, #ECFDF5)',
-                        border: `1px solid ${darkMode ? '#334155' : '#0D948820'}`,
+                        background: 'linear-gradient(135deg, #1A2744, #162035)',
+                        border: '1px solid #334155',
                       }}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         <div>
-                          <div className="text-[13px] font-semibold" style={{ color: darkMode ? '#E2E8F0' : '#0F172A' }}>
+                          <div className="text-[13px] font-semibold" style={{ color: '#1E293B' }}>
                             {lang === 'es' ? `La ventana óptima de acuerdo es el mes ${peakMonth?.month}` : `Peak settlement window is month ${peakMonth?.month}`}
                           </div>
-                          <div className="text-[12px] mt-1" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>
+                          <div className="text-[12px] mt-1" style={{ color: '#94A3B8' }}>
                             {lang === 'es'
                               ? `El ${timingData.slice(3, 7).reduce((s, t) => s + t.pct, 0)}% de todos los acuerdos en casos similares ocurren en los meses 4-7. Este es frecuentemente el mejor momento para negociar.`
                               : `${timingData.slice(3, 7).reduce((s, t) => s + t.pct, 0)}% of all settlements in similar cases happen in months 4-7. This is often the best window for negotiation.`}
@@ -3831,7 +3831,7 @@ export default function MyCaseValue() {
                     <div className="flex gap-0.5 mt-2 sm:justify-end">
                       {[1, 2, 3, 4, 5].map(i => (
                         <div key={i} className="w-4 h-1.5 rounded-full transition-all duration-500" style={{
-                          background: i <= Math.ceil(wr / 20) ? wrColor : '#E2E8F0',
+                          background: i <= Math.ceil(wr / 20) ? wrColor : '#1E293B',
                           transitionDelay: `${i * 100}ms`,
                         }} />
                       ))}
@@ -3868,7 +3868,7 @@ export default function MyCaseValue() {
                       </button>
                     ))}
                   </div>
-                  <div className="relative h-2 bg-slate-100 rounded-full">
+                  <div className="relative h-2 bg-[#1E293B] rounded-full">
                     <div className="absolute rounded-full opacity-25" style={{ left: '10%', right: '10%', top: 0, bottom: 0, background: 'linear-gradient(90deg, #D97706, #4F46E5, #0D9488)' }} />
                     <div className="absolute top-[-6px] w-5 h-5 rounded-full bg-[#131B2E] transition-all duration-500"
                       style={{
@@ -3887,7 +3887,7 @@ export default function MyCaseValue() {
               {/* Quick stats */}
               <div className="stats-grid stagger-in grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-6">
                 <Stat value={`${Math.round(wr)}%`} label={lang === 'es' ? 'Tasa de éxito' : 'Win rate'} color={wrColor} dark={darkMode} />
-                <Stat value={`${d.mo} mo`} label={lang === 'es' ? 'Duración mediana' : 'Median duration'} color={darkMode ? '#94A3B8' : '#0B1221'} dark={darkMode} />
+                <Stat value={`${d.mo} mo`} label={lang === 'es' ? 'Duración mediana' : 'Median duration'} color={'#94A3B8'} dark={true} />
                 <Stat value={`${winSettleRate}%`} label={lang === 'es' ? 'Éxito+Acuerdo' : 'Win+Settle'} color="#0D9488" dark={darkMode} />
                 <Stat value={`${d.sp}%`} label={lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate'} color="#1A2744" dark={darkMode} />
               </div>
@@ -3917,7 +3917,7 @@ export default function MyCaseValue() {
                   ].map((bar, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <span className="text-[11px] text-slate-500 w-28 sm:w-32 truncate">{bar.label}</span>
-                      <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="flex-1 h-1.5 bg-[#1E293B] rounded-full overflow-hidden">
                         <div className="h-full rounded-full" style={{
                           width: `${bar.pct}%`,
                           background: bar.color,
@@ -3943,7 +3943,7 @@ export default function MyCaseValue() {
                   segments={[
                     { pct: od.fav_set, color: '#0D9488', winRatio: 0 },
                     { pct: od.trial_win + od.trial_loss, color: '#4F46E5', winRatio: od.trial_win / Math.max(od.trial_win + od.trial_loss, 1) },
-                    { pct: od.dismiss, color: '#E2E8F0', winRatio: 0 },
+                    { pct: od.dismiss, color: '#1E293B', winRatio: 0 },
                   ]}
                   size={200}
                 />
@@ -3996,8 +3996,8 @@ export default function MyCaseValue() {
           {/* === WHAT THIS MEANS FOR YOUR SITUATION (personalized) === */}
           <Reveal delay={120}>
             <div className="rounded-2xl overflow-hidden mb-3" style={{
-              background: darkMode ? 'linear-gradient(135deg, #1A2744, #0F1A2E)' : 'linear-gradient(160deg, #F8FAFC 0%, #EEF1F6 40%, #FFFFFF 100%)',
-              border: `1.5px solid ${darkMode ? '#334155' : 'rgba(64, 64, 242, 0.15)'}`,
+              background: 'linear-gradient(135deg, #1A2744, #0F1A2E)',
+              border: '1.5px solid #334155',
               boxShadow: '0 4px 24px rgba(64, 64, 242, 0.06), 0 1px 3px rgba(11,18,33,0.03)',
             }}>
               {/* Header accent bar */}
@@ -4046,7 +4046,7 @@ export default function MyCaseValue() {
                   {/* Settlement insight — tied to their data */}
                   {d.sp > 25 && (
                     <div className="flex gap-3 items-start px-4 py-3.5 rounded-xl" style={{
-                      background: darkMode ? 'rgba(13, 148, 136, 0.08)' : 'rgba(13, 148, 136, 0.04)',
+                      background: 'rgba(13, 148, 136, 0.08)',
                       borderLeft: '3px solid #0D9488',
                     }}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="mt-0.5 flex-shrink-0">
@@ -4125,7 +4125,7 @@ export default function MyCaseValue() {
                   )}
                 </div>
 
-                <div className="mt-5 pt-4" style={{ borderTop: `1px solid ${darkMode ? '#1E293B' : 'rgba(64, 64, 242, 0.1)'}` }}>
+                <div className="mt-5 pt-4" style={{ borderTop: '1px solid #1E293B' }}>
                   <div className="text-[11px] text-slate-400 italic leading-relaxed">
                     {lang === 'es'
                       ? 'Esta interpretación se basa en datos agregados de casos similares. No es una predicción ni constituye asesoramiento legal. Cada caso es único — consulta con un abogado para asesoramiento sobre tu situación específica.'
@@ -4167,10 +4167,10 @@ export default function MyCaseValue() {
                   <div className="flex gap-4 items-start pb-5 relative">
                     <div className="flex flex-col items-center">
                       <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #0D9488, #14B8A6)' }}>1</div>
-                      <div className="w-px flex-1 mt-2" style={{ background: darkMode ? '#334155' : '#E2E8F0' }} />
+                      <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: darkMode ? '#E2E8F0' : '#1E293B' }}>{lang === 'es' ? 'Guarda este informe' : 'Save this report'}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>{lang === 'es' ? 'Guarda este informe' : 'Save this report'}</div>
                       <p className="text-[13px] text-slate-500 leading-relaxed">
                         {lang === 'es'
                           ? 'Guárdalo o compártelo para que puedas consultarlo más tarde o mostrárselo a un abogado.'
@@ -4206,10 +4206,10 @@ export default function MyCaseValue() {
                   <div className="flex gap-4 items-start pb-5 relative">
                     <div className="flex flex-col items-center">
                       <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>2</div>
-                      <div className="w-px flex-1 mt-2" style={{ background: darkMode ? '#334155' : '#E2E8F0' }} />
+                      <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: darkMode ? '#E2E8F0' : '#1E293B' }}>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>
                         {attorney === 'have'
                           ? (lang === 'es' ? 'Comparte los datos con tu abogado' : 'Share the data with your attorney')
                           : attorney === 'self'
@@ -4249,10 +4249,10 @@ export default function MyCaseValue() {
                         background: (timing === '2yr' || timing === 'old') ? 'linear-gradient(135deg, #E87461, #F09483)' : 'linear-gradient(135deg, #4F46E5, #6366F1)',
                         color: 'white',
                       }}>3</div>
-                      <div className="w-px flex-1 mt-2" style={{ background: darkMode ? '#334155' : '#E2E8F0' }} />
+                      <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: darkMode ? '#E2E8F0' : '#1E293B' }}>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>
                         {(timing === '2yr' || timing === 'old')
                           ? (lang === 'es' ? 'Actúa sobre los plazos ahora' : 'Act on deadlines now')
                           : (lang === 'es' ? 'Conoce tus plazos' : 'Know your deadlines')}
@@ -4275,7 +4275,7 @@ export default function MyCaseValue() {
                       <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #64748B, #94A3B8)' }}>4</div>
                     </div>
                     <div className="flex-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: darkMode ? '#E2E8F0' : '#1E293B' }}>{lang === 'es' ? 'Reúne tu documentación' : 'Gather your documentation'}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>{lang === 'es' ? 'Reúne tu documentación' : 'Gather your documentation'}</div>
                       <p className="text-[13px] text-slate-500 leading-relaxed">
                         {lang === 'es'
                           ? 'Reúne cualquier documento, correo electrónico, foto o registro relevante. Si consultas a un abogado, esto hará que la conversación sea más productiva.'
@@ -4287,7 +4287,7 @@ export default function MyCaseValue() {
               </div>
 
               {/* Bottom disclaimer */}
-              <div className="px-6 sm:px-8 py-3.5" style={{ background: darkMode ? '#0B1221' : '#F8FAFC', borderTop: `1px solid ${darkMode ? '#1E293B' : '#F1F5F9'}` }}>
+              <div className="px-6 sm:px-8 py-3.5" style={{ background: '#0B1221', borderTop: '1px solid #1E293B' }}>
                 <div className="text-[11px] text-slate-400 italic leading-relaxed">
                   {lang === 'es'
                     ? 'Estos pasos son sugerencias generales basadas en datos agregados. No constituyen asesoramiento legal. Consulta con un abogado licenciado antes de tomar decisiones legales.'
@@ -4465,12 +4465,12 @@ export default function MyCaseValue() {
                       { outcome: lang === 'es' ? 'Acuerdo de $52K' : 'Settlement: $52K', time: '7 months', desc: lang === 'es' ? 'Caso de discriminación similar, con pruebas sólidas' : 'Similar discrimination case, strong evidence' },
                       { outcome: lang === 'es' ? 'Acuerdo de $38K' : 'Settlement: $38K', time: '9 months', desc: lang === 'es' ? 'Situación comparable, resuelta en acuerdo' : 'Comparable situation, settled before trial' },
                     ].map((item, i) => (
-                      <div key={i} className="p-3.5 rounded-lg border transition-colors" style={{ borderColor: darkMode ? '#334155' : '#E2E8F0', background: darkMode ? '#1E293B' : '#fff' }}>
+                      <div key={i} className="p-3.5 rounded-lg border transition-colors" style={{ borderColor: '#334155', background: '#1E293B' }}>
                         <div className="flex items-start justify-between mb-1.5">
                           <div className="font-semibold text-[14px]" style={{ color: '#0D9488' }}>{item.outcome}</div>
                           <div className="text-[11px] font-medium text-slate-400">{lang === 'es' ? item.time.replace('months', 'meses') : item.time}</div>
                         </div>
-                        <div className="text-[13px]" style={{ color: darkMode ? '#94A3B8' : '#475569' }}>{item.desc}</div>
+                        <div className="text-[13px]" style={{ color: '#94A3B8' }}>{item.desc}</div>
                       </div>
                     ))}
                   </div>
@@ -4487,23 +4487,23 @@ export default function MyCaseValue() {
                     <h3 className="text-lg font-semibold">{lang === 'es' ? 'Escenarios de qué pasaría' : 'What-If Scenarios'}</h3>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4F46E5' : '#E2E8F0', background: attorney === 'with' ? 'rgba(99,102,241,0.15)' : '#F8FAFC', color: attorney === 'with' ? '#4F46E5' : '#64748B' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4F46E5' : '#1E293B', background: attorney === 'with' ? 'rgba(99,102,241,0.15)' : '#F8FAFC', color: attorney === 'with' ? '#4F46E5' : '#64748B' }}
                       onClick={() => setAttorney('with')}>
                       {lang === 'es' ? 'Con abogado' : 'With Attorney'}
                     </button>
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4F46E5' : '#E2E8F0', background: attorney === 'without' ? 'rgba(99,102,241,0.15)' : '#F8FAFC', color: attorney === 'without' ? '#4F46E5' : '#64748B' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4F46E5' : '#1E293B', background: attorney === 'without' ? 'rgba(99,102,241,0.15)' : '#F8FAFC', color: attorney === 'without' ? '#4F46E5' : '#64748B' }}
                       onClick={() => setAttorney('without')}>
                       {lang === 'es' ? 'Sin abogado' : 'Self-Represented'}
                     </button>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="p-3.5 rounded-lg text-center" style={{ background: darkMode ? '#1E293B' : '#F8FAFC' }}>
+                    <div className="p-3.5 rounded-lg text-center" style={{ background: '#1E293B' }}>
                       <div className="text-[11px] font-bold text-slate-400 tracking-[1px] mb-2 uppercase">{lang === 'es' ? 'Probabilidad de éxito' : 'Win Rate'}</div>
                       <div className="text-3xl font-display font-bold" style={{ color: attorney === 'with' ? '#0D9488' : '#D97706' }}>
                         {attorney === 'with' ? '41%' : '12%'}
                       </div>
                     </div>
-                    <div className="p-3.5 rounded-lg text-center" style={{ background: darkMode ? '#1E293B' : '#F8FAFC' }}>
+                    <div className="p-3.5 rounded-lg text-center" style={{ background: '#1E293B' }}>
                       <div className="text-[11px] font-bold text-slate-400 tracking-[1px] mb-2 uppercase">{lang === 'es' ? 'Cambio en potencial' : 'Improvement'}</div>
                       <div className="text-3xl font-display font-bold" style={{ color: '#94A3B8' }}>
                         +29%
@@ -4726,7 +4726,7 @@ export default function MyCaseValue() {
                       style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
                       {lang === 'es' ? '$5.99 — Informe completo' : '$5.99 — Full report'}
                     </button>
-                    <button onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#131B2E] border-[1.5px] border-[#1E293B] rounded-xl cursor-pointer hover:border-slate-300 transition-colors">
+                    <button onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#131B2E] border-[1.5px] border-[#1E293B] rounded-xl cursor-pointer hover:border-[#334155] transition-colors">
                       {lang === 'es' ? '$9.99 — Ilimitado' : '$9.99 — Unlimited'}
                     </button>
                   </div>
@@ -4808,18 +4808,18 @@ export default function MyCaseValue() {
                 <Card>
                   <SectionLabel>{lang === 'es' ? '¿Ayuda tener abogado?' : 'Does having a lawyer help?'}</SectionLabel>
                   <div className="flex gap-3 mb-3">
-                    <div className="flex-1 p-4 rounded-xl text-center" style={{ background: darkMode ? 'rgba(13,148,136,0.15)' : 'rgba(13,148,136,0.15)' }}>
+                    <div className="flex-1 p-4 rounded-xl text-center" style={{ background: 'rgba(13,148,136,0.15)' }}>
                       <div className="text-[10px] font-bold" style={{ color: '#0D9488' }}>{lang === 'es' ? 'CON ABOGADO' : 'WITH ATTORNEY'}</div>
                       <div className="text-3xl font-display font-bold mt-1">{d.rr?.wr ?? '--'}%</div>
                       {d.rr?.total && <div className="text-[11px] text-slate-400 mt-1">{d.rr.total.toLocaleString()} cases</div>}
                     </div>
-                    <div className="flex-1 p-4 rounded-xl text-center" style={{ background: darkMode ? 'rgba(217,119,6,0.15)' : 'rgba(217,119,6,0.12)' }}>
+                    <div className="flex-1 p-4 rounded-xl text-center" style={{ background: 'rgba(217,119,6,0.15)' }}>
                       <div className="text-[10px] font-bold" style={{ color: '#D97706' }}>{lang === 'es' ? 'SIN ABOGADO' : 'SELF-REPRESENTED'}</div>
                       <div className="text-3xl font-display font-bold mt-1">{d.ps?.wr ?? '--'}%</div>
                       {d.ps?.total && <div className="text-[11px] text-slate-400 mt-1">{d.ps.total.toLocaleString()} cases</div>}
                     </div>
                   </div>
-                  <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: darkMode ? 'rgba(64,64,242,0.15)' : 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
+                  <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(64,64,242,0.15)', color: '#4F46E5' }}>
                     {lang === 'es' ? <span>Los abogados ganaron <strong>{d.rr && d.ps ? Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100) : 0}% más a menudo</strong>. Honorario: {d.af}.</span> : <span>Attorneys won <strong>{d.rr && d.ps ? Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100) : 0}% more often</strong>. Fee: {d.af}.</span>}
                   </div>
                   {spec && FEE_INFO[spec.nos] && (
@@ -4857,7 +4857,7 @@ export default function MyCaseValue() {
                         return (
                           <div key={i} className="flex items-center gap-2 py-1.5">
                             <span className={`text-xs font-semibold w-10 ${isYours ? 'text-gold' : ''}`}>{circLabel}{isYours ? ' *' : ''}</span>
-                            <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                            <div className="flex-1 h-2 bg-[#1E293B] rounded-full overflow-hidden">
                               <div className="h-full rounded-full transition-all duration-700" style={{
                                 width: `${rate}%`,
                                 background: isYours ? '#4F46E5' : rate > 55 ? '#0D9488' : rate > 45 ? '#D97706' : '#E87461',
@@ -4882,13 +4882,13 @@ export default function MyCaseValue() {
                       <div key={i} className="flex gap-3 cursor-pointer py-1" onClick={() => setTimelineStep(i)}>
                         <div className="flex flex-col items-center w-6">
                           <div className="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center transition-all"
-                            style={{ background: active ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#F1F5F9', border: active ? 'none' : '2px solid #CBD5E1' }}>
+                            style={{ background: active ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', border: active ? 'none' : '2px solid #CBD5E1' }}>
                             {active && <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
                           </div>
-                          {i < (d.tl || []).length - 1 && <div className="w-0.5 flex-1 mt-0.5 transition-colors" style={{ background: active ? '#4F46E525' : '#F1F5F9' }} />}
+                          {i < (d.tl || []).length - 1 && <div className="w-0.5 flex-1 mt-0.5 transition-colors" style={{ background: active ? '#4F46E525' : '#1E293B' }} />}
                         </div>
                         <div className="flex-1 pb-2.5">
-                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#4F46E5' : '#94A3B8', background: active ? 'rgba(99,102,241,0.15)' : '#F1F5F9' }}>
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#4F46E5' : '#94A3B8', background: active ? 'rgba(99,102,241,0.15)' : '#1E293B' }}>
                             {lang === 'es' ? `Mes ${t.mo}` : `Month ${t.mo}`}
                           </span>
                           <div className="text-[14px] mt-1 transition-colors" style={{ fontWeight: active ? 600 : 400, color: active ? '#0B1221' : '#94A3B8' }}>{t.ev}</div>
@@ -4898,7 +4898,7 @@ export default function MyCaseValue() {
                     );
                   })}
                   {/* If Filed Today */}
-                  <div className="mt-4 p-4 rounded-xl" style={{ background: darkMode ? '#1E293B' : '#F8FAFC' }}>
+                  <div className="mt-4 p-4 rounded-xl" style={{ background: '#1E293B' }}>
                     <div className="text-[11px] font-bold text-slate-400 tracking-[2px] mb-2">{lang === 'es' ? 'SI SE PRESENTA HOY' : 'IF FILED TODAY'}</div>
                     {(() => {
                       const today = new Date();
@@ -4948,12 +4948,12 @@ export default function MyCaseValue() {
                   <div className="text-[13px] text-slate-400 mb-3">{lang === 'es' ? 'Ejemplos anónimos de registros judiciales públicos:' : 'Anonymized examples from public court records:'}</div>
                   {(d.comps || []).map((c: any, i: number) => (
                     <div key={i} className="p-4 rounded-xl mb-2 transition-transform hover:scale-[1.01]" style={{
-                      background: c.w ? (darkMode ? 'rgba(13,148,136,0.1)' : '#CCFBF110') : (darkMode ? 'rgba(232,116,97,0.1)' : '#FEE2E210'),
+                      background: c.w ? 'rgba(13,148,136,0.1)' : 'rgba(232,116,97,0.1)',
                       borderLeft: `4px solid ${c.w ? '#0D9488' : '#E87461'}`,
                     }}>
                       <div className="flex justify-between items-center">
                         <span className="text-xl font-display font-bold">{c.v}</span>
-                        <span className="text-[11px] font-semibold text-slate-400 card-bg px-2.5 py-0.5 rounded-lg" style={{ background: darkMode ? '#1E293B' : '#fff' }}>{c.mo} {lang === 'es' ? 'meses' : 'months'}</span>
+                        <span className="text-[11px] font-semibold text-slate-400 card-bg px-2.5 py-0.5 rounded-lg" style={{ background: '#1E293B' }}>{c.mo} {lang === 'es' ? 'meses' : 'months'}</span>
                       </div>
                       <div className="text-[13px] text-slate-500 mt-1.5 leading-relaxed">{c.d}</div>
                     </div>
@@ -4971,7 +4971,7 @@ export default function MyCaseValue() {
                         <div className="h-20 flex items-end justify-center mb-1.5">
                           <div className="w-full rounded-t-lg transition-all duration-700" style={{
                             height: `${x.p * 2}%`,
-                            background: i === 1 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : darkMode ? 'rgba(64,64,242,0.2)' : '#4F46E525',
+                            background: i === 1 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(64,64,242,0.2)',
                           }} />
                         </div>
                         <div className="text-[13px] font-bold" style={{ color: i === 1 ? '#4F46E5' : '#94A3B8' }}>{x.p}%</div>
@@ -4979,7 +4979,7 @@ export default function MyCaseValue() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-3 px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: darkMode ? 'rgba(64,64,242,0.15)' : 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
+                  <div className="mt-3 px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(64,64,242,0.15)', color: '#4F46E5' }}>
                     {lang === 'es' ? 'La mayoría de los acuerdos: 3-6 meses después de la presentación.' : 'Most settlements: 3-6 months after filing.'}
                   </div>
                 </Card>
@@ -4991,7 +4991,7 @@ export default function MyCaseValue() {
                   <div className="text-[13px] text-slate-400 mb-3">{lang === 'es' ? 'Factores que los tribunales federales citaron en casos similares:' : 'Factors federal courts cited in similar cases:'}</div>
                   {(d.factors || []).map((f: string, i: number) => (
                     <div key={i} className="flex gap-2 items-center py-1.5 text-[15px]">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: darkMode ? 'rgba(64,64,242,0.2)' : 'rgba(99,102,241,0.15)' }}>
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(64,64,242,0.2)' }}>
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
                       </div>
                       {f}
@@ -5010,8 +5010,8 @@ export default function MyCaseValue() {
                     { n: 3, t: lang === 'es' ? 'Presentó una queja ante la agencia gubernamental correspondiente' : 'Filed a complaint with the right government agency' },
                     { n: 4, t: lang === 'es' ? 'Escribió una cronología de todo lo que sucedió' : 'Wrote down a timeline of everything that happened' },
                   ].map((s, i) => (
-                    <div key={i} className="flex gap-3 p-3 card-bg border rounded-xl mb-1.5" style={{ background: darkMode ? '#131B2E' : '#fff', borderColor: darkMode ? '#1E293B' : '#F1F5F9' }}>
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: darkMode ? '#1E293B' : '#F1F5F9' }}>
+                    <div key={i} className="flex gap-3 p-3 card-bg border rounded-xl mb-1.5" style={{ background: '#131B2E', borderColor: '#1E293B' }}>
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: '#1E293B' }}>
                         <span className="text-[11px] font-bold text-slate-400">{s.n}</span>
                       </div>
                       <span className="text-[13px] text-[#94A3B8]">{s.t}</span>
@@ -5023,7 +5023,7 @@ export default function MyCaseValue() {
               {/* Deadline */}
               <Reveal delay={560}>
                 <div className="rounded-2xl p-5 mb-3" style={{
-                  background: (timing === '2yr' || timing === 'old') ? (darkMode ? 'rgba(232,116,97,0.15)' : 'rgba(232,116,97,0.12)') : (darkMode ? 'rgba(217,119,6,0.15)' : 'rgba(217,119,6,0.12)'),
+                  background: (timing === '2yr' || timing === 'old') ? 'rgba(232,116,97,0.15)' : 'rgba(217,119,6,0.15)',
                 }}>
                   <div className="text-[11px] font-bold tracking-[1.5px] mb-1" style={{ color: (timing === '2yr' || timing === 'old') ? '#E87461' : '#D97706' }}>
                     {lang === 'es' ? 'PLAZO GENERAL DE PRESENTACIÓN' : 'GENERAL FILING DEADLINE'}
@@ -5039,7 +5039,7 @@ export default function MyCaseValue() {
                   <div className="text-[11px] font-bold text-slate-400 tracking-[2px] mb-1">{lang === 'es' ? 'MANTENERSE ACTUALIZADO' : 'STAY UPDATED'}</div>
                   <div className="text-[12px] text-slate-500 mb-3">{lang === 'es' ? 'Recibe notificaciones cuando se publiquen nuevas opiniones judiciales que coincidan con tu tipo de caso.' : 'Get notified when new court opinions matching your case type are published.'}</div>
                   {notifySent ? (
-                    <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: darkMode ? 'rgba(13,148,136,0.15)' : 'rgba(13,148,136,0.15)', color: '#0D9488' }}>{lang === 'es' ? 'Se te notificará.' : 'You will be notified.'}</div>
+                    <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(13,148,136,0.15)', color: '#0D9488' }}>{lang === 'es' ? 'Se te notificará.' : 'You will be notified.'}</div>
                   ) : (
                     <div className="flex gap-2">
                       <input type="email" value={notifyEmail} onChange={e => setNotifyEmail(e.target.value)}
@@ -5100,7 +5100,7 @@ export default function MyCaseValue() {
                           {sol.urgent && <div className="text-[11px] text-red-500 font-semibold mt-1">{lang === 'es' ? 'Consulte un abogado de inmediato' : 'Consult an attorney immediately'}</div>}
                         </div>
                       </div>
-                      <div className="mt-3 h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="mt-3 h-2 bg-[#1E293B] rounded-full overflow-hidden">
                         <div className="h-full rounded-full transition-all duration-1000" style={{
                           width: `${Math.max(5, Math.min(95, ((d.sol ? parseInt(d.sol) * 12 : 24) - sol.remaining) / (d.sol ? parseInt(d.sol) * 12 : 24) * 100))}%`,
                           background: sol.urgent ? '#E87461' : 'linear-gradient(90deg, #0D9488, #D97706)',
@@ -5275,7 +5275,7 @@ export default function MyCaseValue() {
                   <span>mycasevalue.com</span>
                 </div>
               </div>
-              <div className="flex items-center justify-center gap-3 py-3 no-print" style={{ background: darkMode ? '#1E293B' : '#F8FAFC' }}>
+              <div className="flex items-center justify-center gap-3 py-3 no-print" style={{ background: '#1E293B' }}>
                 <span className="text-[11px] text-slate-400 font-medium">{lang === 'es' ? 'Compartir como imagen' : 'Share as image'}</span>
                 <button onClick={() => {
                   try {
@@ -5284,7 +5284,7 @@ export default function MyCaseValue() {
                     toast(lang === 'es' ? 'Copiado al portapapeles' : 'Copied to clipboard!');
                   } catch { toast('Could not copy'); }
                 }} className="text-[12px] font-semibold px-4 py-1.5 rounded-lg cursor-pointer transition-all"
-                  style={{ background: darkMode ? '#334155' : '#fff', border: `1px solid ${darkMode ? '#475569' : '#E2E8F0'}`, color: '#4F46E5' }}>
+                  style={{ background: '#334155', border: '1px solid #475569', color: '#4F46E5' }}>
                   {lang === 'es' ? 'Copiar texto' : 'Copy text'}
                 </button>
               </div>
@@ -5301,19 +5301,19 @@ export default function MyCaseValue() {
                   <button key={opt.nos} onClick={() => loadComparison(opt.nos)}
                     className="px-3 py-1.5 text-[12px] font-medium rounded-lg cursor-pointer transition-all capitalize"
                     style={{
-                      background: compareNos === opt.nos ? 'rgba(99,102,241,0.15)' : darkMode ? '#1E293B' : '#F8FAFC',
-                      border: compareNos === opt.nos ? '1.5px solid #4F46E540' : `1.5px solid ${darkMode ? '#334155' : '#E2E8F0'}`,
-                      color: compareNos === opt.nos ? '#4F46E5' : darkMode ? '#CBD5E1' : '#64748B',
+                      background: compareNos === opt.nos ? 'rgba(99,102,241,0.15)' : '#1E293B',
+                      border: compareNos === opt.nos ? '1.5px solid #4F46E540' : '1.5px solid #334155',
+                      color: compareNos === opt.nos ? '#4F46E5' : '#CBD5E1',
                     }}>
                     {opt.label}
                   </button>
                 ))}
               </div>
               {compareMode && compareData && (
-                <div className="rounded-xl overflow-hidden page-enter" style={{ border: `1px solid ${darkMode ? '#1E293B' : '#E2E8F0'}` }}>
+                <div className="rounded-xl overflow-hidden page-enter" style={{ border: '1px solid #1E293B' }}>
                   <div className="grid grid-cols-2">
                     {/* Current case */}
-                    <div className="p-5 text-center" style={{ borderRight: `1px solid ${darkMode ? '#1E293B' : '#E2E8F0'}` }}>
+                    <div className="p-5 text-center" style={{ borderRight: '1px solid #1E293B' }}>
                       <div className="text-[10px] font-bold tracking-[1.5px] text-slate-400 mb-1">{lang === 'es' ? 'TU CASO' : 'YOUR CASE'}</div>
                       <div className="text-sm font-semibold capitalize mb-3">{spec?.d}</div>
                       <div className="space-y-3">
@@ -5336,7 +5336,7 @@ export default function MyCaseValue() {
                       </div>
                     </div>
                     {/* Comparison case */}
-                    <div className="p-5 text-center" style={{ background: darkMode ? '#162035' : '#FAFAF8' }}>
+                    <div className="p-5 text-center" style={{ background: '#162035' }}>
                       <div className="text-[10px] font-bold tracking-[1.5px] mb-1" style={{ color: '#4F46E5' }}>{lang === 'es' ? 'COMPARAR' : 'COMPARE'}</div>
                       <div className="text-sm font-semibold capitalize mb-3">{comparisonOptions.find((o: any) => o.nos === compareNos)?.label}</div>
                       <div className="space-y-3">
@@ -5382,7 +5382,7 @@ export default function MyCaseValue() {
           <Reveal delay={720}>
             <div className="mt-4 p-6 rounded-2xl text-center" style={{ background: '#0B1221' }}>
               <div className="text-[11px] font-bold text-white tracking-[1.5px] mb-2">{lang === 'es' ? 'AVISO IMPORTANTE' : 'IMPORTANT NOTICE'}</div>
-              <div className="w-10 h-0.5 rounded-full mx-auto mb-3" style={{ background: 'rgba(255,255,255,0.15)' }} />
+              <div className="w-10 h-0.5 rounded-full mx-auto mb-3" style={{ background: 'rgba(255,255,255,0.04)' }} />
               <p className="text-[13px] text-slate-400 leading-relaxed max-w-2xl mx-auto">
                 {UPL.finalNotice}
               </p>
@@ -5395,8 +5395,8 @@ export default function MyCaseValue() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
             onClick={() => setShowPricing(false)}
             role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
-            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full relative" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.95) 100%)', boxShadow: '0 25px 80px rgba(11,18,33,.2), 0 0 0 1px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.9)' }} onClick={e => e.stopPropagation()}>
-              <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center cursor-pointer border-none transition-colors focus-ring"
+            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full relative" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.95) 100%)', boxShadow: '0 25px 80px rgba(11,18,33,.2), 0 0 0 1px rgba(64,64,242,0.08), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
+              <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#1E293B] hover:bg-[#334155] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring"
                 aria-label="Close pricing">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
@@ -5406,16 +5406,16 @@ export default function MyCaseValue() {
               </div>
               <div className="text-[11px] text-slate-400 text-center mb-5">{lang === 'es' ? 'Todos los datos son solo informativos. No se crea relación abogado-cliente.' : 'All data is informational only. No attorney-client relationship is created.'}</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ border: '1.5px solid rgba(226,232,240,0.8)', background: 'linear-gradient(180deg, #fff 0%, #FAFAF8 100%)' }}>
+                <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ border: '1.5px solid rgba(226,232,240,0.8)', background: 'linear-gradient(180deg, #131B2E 0%, #0F172A 100%)' }}>
                   <div className="text-[11px] font-bold text-slate-400 tracking-[2px]">{lang === 'es' ? 'REPORTE INDIVIDUAL' : 'SINGLE REPORT'}</div>
                   <div className="text-3xl sm:text-4xl font-display font-bold my-2"><span className="text-xl">$</span>5.99</div>
                   <div className="text-[12px] text-slate-400 mb-3">{lang === 'es' ? 'Un reporte completo' : 'One complete report'}</div>
                   <button onClick={() => { buy('single'); setShowPricing(false); }}
-                    className="w-full py-3 text-sm font-semibold card-bg bg-[#131B2E] border-[1.5px] border-[#1E293B] rounded-xl cursor-pointer hover:border-slate-300 transition-colors">
+                    className="w-full py-3 text-sm font-semibold card-bg bg-[#131B2E] border-[1.5px] border-[#1E293B] rounded-xl cursor-pointer hover:border-[#334155] transition-colors">
                     {lang === 'es' ? 'Obtener reporte' : 'Get report'}
                   </button>
                 </div>
-                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#4F46E5', background: 'linear-gradient(180deg, #F8FAFC 0%, #E4E5FF 100%)', boxShadow: '0 8px 32px rgba(64,64,242,.15), inset 0 1px 0 rgba(255,255,255,0.8)' }}>
+                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#4F46E5', background: 'linear-gradient(180deg, #F8FAFC 0%, #E4E5FF 100%)', boxShadow: '0 8px 32px rgba(64,64,242,.15), inset 0 1px 0 rgba(255,255,255,0.03)' }}>
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold text-white whitespace-nowrap"
                     style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
                     {lang === 'es' ? 'MEJOR VALOR' : 'BEST VALUE'}
@@ -5460,7 +5460,7 @@ export default function MyCaseValue() {
                 <h2 className="text-lg font-display font-bold">
                   {legalPage === 'terms' ? 'Terms of Service' : legalPage === 'privacy' ? 'Privacy Policy' : 'Legal Disclaimer'}
                 </h2>
-                <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-slate-100 hover:bg-slate-200 border-none cursor-pointer transition-colors">
+                <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[#1E293B] hover:bg-[#334155] border-none cursor-pointer transition-colors">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
                 </button>
               </div>
