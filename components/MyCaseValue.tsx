@@ -68,7 +68,7 @@ function Card({ children, glow = false, premium = false, className = '', style =
         background: premium
           ? 'linear-gradient(180deg, rgba(15,23,42,0.85) 0%, rgba(11,18,33,0.95) 100%)'
           : 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(11,18,33,0.9) 100%)',
-        borderColor: premium ? 'rgba(99,102,241,0.15)' : 'rgba(226,232,240,0.6)',
+        borderColor: premium ? 'rgba(99,102,241,0.15)' : 'rgba(51,65,85,0.4)',
         boxShadow: glow
           ? '0 2px 8px rgba(64,64,242,.08), 0 12px 40px rgba(11,18,33,.06), inset 0 1px 0 rgba(255,255,255,0.03)'
           : premium
@@ -290,7 +290,7 @@ function Collapsible({ title, badge, defaultOpen = false, children }: { title: s
     <div className="card-bg rounded-2xl border overflow-hidden mb-3 transition-all duration-300"
       style={{
         background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(11,18,33,0.9) 100%)',
-        borderColor: open ? 'rgba(64,64,242,0.15)' : 'rgba(226,232,240,0.6)',
+        borderColor: open ? 'rgba(64,64,242,0.15)' : 'rgba(51,65,85,0.6)',
         boxShadow: open ? '0 4px 24px rgba(11,18,33,.07), inset 0 1px 0 rgba(255,255,255,0.03)' : '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)',
       }}>
       <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-4.5 bg-transparent border-none cursor-pointer text-left group" aria-expanded={open}
@@ -787,8 +787,8 @@ function CompareChip({ label, value, color, active, onClick }: {
     <button onClick={onClick}
       className="flex flex-col items-center px-4 py-3 rounded-xl cursor-pointer transition-all text-center"
       style={{
-        background: active ? `${color}12` : '#F8FAFC',
-        border: active ? `2px solid ${color}30` : '1.5px solid #F1F5F9',
+        background: active ? `${color}12` : '#1E293B',
+        border: active ? `2px solid ${color}30` : '1.5px solid #334155',
         transform: active ? 'scale(1.03)' : 'scale(1)',
         minWidth: 90,
       }}>
@@ -840,7 +840,7 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => voi
           <div className="text-center">
             <div className="text-5xl font-display font-bold mb-3" style={{ color: strengthColor }}>{Math.round(score)}</div>
             <div className="text-xl font-semibold mb-2" style={{ color: strengthColor }}>{strengthLabel}</div>
-            <p className="text-sm text-slate-500 mb-6">Based on your answers, here's your case strength estimate.</p>
+            <p className="text-sm text-slate-500 mb-6">Based on your answers, here&apos;s your case strength estimate.</p>
             <button onClick={onStartAssessment}
               className="w-full px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer mb-2"
               style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
@@ -1168,7 +1168,7 @@ function Shell({
         {showExitIntent && !isPremium && (
           <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(8px)' }}>
             <div className="exit-intent-modal card-bg bg-[#131B2E] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center" onClick={e => e.stopPropagation()}>
-              <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#1E293B] flex items-center justify-center cursor-pointer border-none">
+              <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#1E293B] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
@@ -1198,7 +1198,7 @@ function Shell({
             <div className="card-bg bg-[#131B2E] rounded-2xl p-6 max-w-md w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between mb-4">
                 <div className="text-lg font-display font-bold">{lang === 'es' ? 'Mis informes' : 'My Reports'}</div>
-                <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-[#1E293B] flex items-center justify-center cursor-pointer border-none">
+                <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-[#1E293B] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
               </div>
@@ -1832,7 +1832,7 @@ export default function MyCaseValue() {
 
   if (step === 0) return (
     <Shell {...shellProps}>
-      <div className="hero-bg hero-parallax mesh-bg py-12 sm:py-20 pb-10 relative overflow-hidden noise-overlay particle-field">
+      <div className="hero-bg hero-parallax mesh-bg py-12 sm:py-20 pb-10 relative overflow-hidden noise-overlay particle-field cinematic-enter">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
         <div className="hero-orb hero-orb-2" />
@@ -1885,7 +1885,7 @@ export default function MyCaseValue() {
               </div>
 
               {/* Animated hero stats — 3 columns with visual dividers */}
-              <div className="flex gap-6 sm:gap-10 mb-8 flex-wrap">
+              <div className="flex gap-6 sm:gap-10 mb-8 flex-wrap data-grid-stagger">
                 <div className="stat-glow" style={{ '--stat-color': '#FFFFFF' } as any}>
                   <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
                     {heroCounterDone ? <><AnimatedNumber value={4.2} decimals={1} />M+</> : '—'}
@@ -1934,7 +1934,7 @@ export default function MyCaseValue() {
                     { name: 'CourtListener', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M9 11L12 14L22 4" /></svg> },
                     { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
                   ].map((s, i) => (
-                    <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all hover:scale-[1.02]" style={{
+                    <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all hover:scale-[1.02] spotlight-card stat-underline" style={{
                       color: '#C8D3E5',
                       background: 'rgba(255,255,255,0.05)',
                       border: '1px solid rgba(255,255,255,0.08)',
@@ -1959,10 +1959,8 @@ export default function MyCaseValue() {
                     <input type="text" value={naturalInput} onChange={e => setNaturalInput(e.target.value)}
                       onKeyDown={e => { if (e.key === 'Enter' && naturalInput.trim()) { if (!detectCaseType(naturalInput)) go(1); } }}
                       placeholder={lang === 'es' ? 'Describe tu situación en pocas palabras...' : 'Describe your situation in a few words...'}
-                      className="w-full px-5 py-4.5 pr-14 text-[15px] rounded-2xl outline-none transition-all"
+                      className="w-full px-5 py-4.5 pr-14 text-[15px] rounded-2xl transition-all input-frosted focus-ring-premium"
                       style={{
-                        background: 'rgba(255,255,255,0.06)',
-                        border: '1.5px solid rgba(255,255,255,0.12)',
                         color: '#F0F2F5',
                         boxShadow: '0 4px 20px rgba(0,0,0,.15)',
                         padding: '18px 56px 18px 20px',
@@ -2006,7 +2004,7 @@ export default function MyCaseValue() {
                 </div>
                 <div className="text-[12px]" style={{ color: '#8B9AB5' }}>
                   <strong className="font-data" style={{ color: '#A5B4FC' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 ml-1.5 data-pulse" style={{ verticalAlign: 'middle' }} />
+                  <span className="live-beacon ml-1.5" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
                 </div>
               </div>
             </Reveal>
@@ -2017,16 +2015,11 @@ export default function MyCaseValue() {
             {/* Glowing backdrop */}
             <div className="absolute inset-0 rounded-3xl" style={{ background: 'radial-gradient(ellipse at center, rgba(64,64,242,0.08) 0%, transparent 70%)', filter: 'blur(40px)' }} />
 
-            <div className="relative w-full max-w-[420px] float-gentle">
-              {/* Main report card — glass on dark hero */}
-              <div className="rounded-2xl overflow-hidden glass-premium aurora-card" style={{
-                background: 'linear-gradient(180deg, rgba(20,28,50,0.85) 0%, rgba(15,23,42,0.9) 100%)',
-                border: '1px solid rgba(99,102,241,0.2)',
-                boxShadow: '0 24px 80px rgba(0,0,0,0.3), 0 8px 24px rgba(79,70,229,0.15), inset 0 1px 0 rgba(255,255,255,0.05)',
-                backdropFilter: 'blur(12px)',
-              }}>
+            <div className="relative w-full max-w-[420px] gentle-float">
+              {/* Main report card — glass ultra premium */}
+              <div className="rounded-2xl overflow-hidden glass-ultra liquid-border gpu-accelerate">
                 {/* Top accent bar */}
-                <div className="h-1" style={{ background: 'linear-gradient(90deg, #4F46E5, #0D9488, #4F46E5)' }} />
+                <div className="h-1 progress-animated" />
 
                 {/* Header */}
                 <div className="px-6 pt-5 pb-3 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
@@ -2118,7 +2111,7 @@ export default function MyCaseValue() {
           </div>
 
           {/* Dramatic gradient divider */}
-          <div className="my-8 h-1 rounded-full" style={{ gridColumn: '1 / -1', background: 'linear-gradient(90deg, transparent 0%, #4F46E5 15%, #0D9488 50%, #4F46E5 85%, transparent 100%)', boxShadow: '0 4px 20px rgba(79,70,229,0.4), 0 4px 20px rgba(13,148,136,0.2)' }} />
+          <div className="separator-gradient" style={{ gridColumn: '1 / -1', height: '2px', boxShadow: '0 4px 20px rgba(79,70,229,0.3), 0 4px 20px rgba(13,148,136,0.15)' }} />
 
           {/* Trust Bar — Elite Section */}
           <div style={{ gridColumn: '1 / -1' }}>
@@ -2193,7 +2186,7 @@ export default function MyCaseValue() {
           <div className="mb-6" style={{ gridColumn: '1 / -1' }}>
             <div className="text-center mb-6">
               <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'DATOS NACIONALES' : 'NATIONWIDE DATA'}</div>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Panel de datos en tiempo real' : 'Real-time data dashboard'}</h2>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold text-gradient-premium" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Panel de datos en tiempo real' : 'Real-time data dashboard'}</h2>
             </div>
             <NationwideDashboard lang={lang} />
           </div>
@@ -2934,7 +2927,7 @@ export default function MyCaseValue() {
             {SITS.map(si => (
               <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
                 className="category-card flex items-center gap-4 w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg group"
-                style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
+                style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(51,65,85,0.5)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
                 onMouseLeave={e => e.currentTarget.style.borderColor = '#1E293B'}>
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform" style={{ background: `${si.color}10` }}>
@@ -2973,7 +2966,7 @@ export default function MyCaseValue() {
             {sit.opts.map((o: any, i: number) => (
               <button key={i} onClick={() => { setSpec(o); go(3); }}
                 className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
-                style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(226,232,240,0.6)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
+                style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(51,65,85,0.5)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = sit.color}
                 onMouseLeave={e => e.currentTarget.style.borderColor = '#1E293B'}>
                 <div className="w-2 h-2 rounded-full flex-shrink-0 mr-3 transition-transform" style={{ background: sit.color, opacity: 0.5 }} />
@@ -3198,9 +3191,8 @@ export default function MyCaseValue() {
 
           {/* Main progress bar with glow */}
           <div className="w-full h-2 bg-[#1E293B] rounded-full overflow-hidden mb-4 relative">
-            <div className="h-full rounded-full transition-all duration-300" style={{
+            <div className="h-full rounded-full transition-all duration-300 progress-animated" style={{
               width: `${loadPct}%`,
-              background: 'linear-gradient(135deg, #4F46E5, #6366F1, #0D9488)',
               boxShadow: '0 0 20px rgba(79,70,229,0.4)',
             }} />
           </div>
@@ -3282,14 +3274,29 @@ export default function MyCaseValue() {
 
     return (
       <Shell {...shellProps}>
-        <div className="py-6">
+        <div className="py-6 cinematic-enter">
+          {/* Quick-glance metrics strip */}
+          <Reveal>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 data-grid-stagger">
+              {[
+                { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: `${wr}%`, color: wrColor, icon: '⚖️' },
+                { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: d.total ? d.total.toLocaleString() : '—', color: '#6366F1', icon: '📊' },
+                { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: `${d.mo || '—'}mo`, color: '#A5B4FC', icon: '⏱' },
+                { label: lang === 'es' ? 'Acuerdo + Victoria' : 'Settle + Win', value: `${winSettleRate}%`, color: '#5EEAD4', icon: '✓' },
+              ].map((m, i) => (
+                <div key={i} className="glass-ultra rounded-xl p-4 text-center spotlight-card gpu-accelerate">
+                  <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#64748B' }}>{m.icon} {m.label}</div>
+                  <div className="text-2xl sm:text-3xl font-display font-extrabold spring-count" style={{ color: m.color, animationDelay: `${i * 100}ms`, letterSpacing: '-1px' }}>{m.value}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
           {/* Live bar */}
           <Reveal>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 no-print">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full relative breathe" style={{ background: '#0D9488' }}>
-                  <div className="absolute -inset-0.5 rounded-full" style={{ background: '#0D9488', opacity: 0.4, animation: 'pulseGlow 2s infinite' }} />
-                </div>
+                <span className="live-beacon" />
                 <span className="text-sm text-slate-400">
                   <strong className="text-[#94A3B8]">{liveCount}</strong> {lang === 'es' ? 'consultando ahora' : 'checking now'} · <strong className="text-[#94A3B8]">12,847</strong> {lang === 'es' ? 'informes este mes' : 'reports this month'}
                 </span>
@@ -3327,16 +3334,13 @@ export default function MyCaseValue() {
 
           {/* AI Case Summary */}
           <Reveal>
-            <div className="px-5 py-4 rounded-xl mb-4" style={{
-              background: 'linear-gradient(135deg, #1A2744, #162035)',
-              border: '1px solid #334155',
-            }}>
+            <div className="px-5 py-4 rounded-xl mb-4 glass-ultra depth-3">
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 icon-glow" style={{ background: 'linear-gradient(135deg, rgba(79,70,229,0.15), rgba(99,102,241,0.1))', borderRadius: '10px' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                 </div>
                 <div className="flex-1">
-                  <div className="text-[10px] font-bold tracking-[1.5px] mb-1" style={{ color: '#4F46E5' }}>{lang === 'es' ? 'RESUMEN DE DATOS' : 'DATA SUMMARY'}</div>
+                  <div className="text-[10px] font-bold tracking-[1.5px] mb-1 text-gradient-premium">{lang === 'es' ? 'RESUMEN DE DATOS' : 'DATA SUMMARY'}</div>
                   <p className="text-[13px] leading-relaxed text-slate-500">{getCaseSummary(d)}</p>
                   <div className="text-[10px] text-slate-400 mt-1 italic">{lang === 'es' ? 'Generado a partir de datos históricos agregados. No es asesoramiento legal.' : 'Generated from aggregate historical data. Not legal advice.'}</div>
                 </div>
@@ -4864,7 +4868,7 @@ export default function MyCaseValue() {
                       { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text: lang === 'es' ? 'Los abogados aumentan las probabilidades de éxito significativamente.' : 'Having an attorney significantly improves your chances.' },
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3 p-2.5 rounded-lg bg-[#131B2E]/50">
-                        <span className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#F0F2FF' }}>{item.icon}</span>
+                        <span className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'rgba(99,102,241,0.12)' }}>{item.icon}</span>
                         <span className="text-[14px] text-[#CBD5E1]">{item.text}</span>
                       </div>
                     ))}
@@ -4902,17 +4906,17 @@ export default function MyCaseValue() {
               <Reveal delay={270}>
                 <Card className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: '#DBEAFE' }}>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)' }}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M9.5 1h5v22h-5z"/><path d="M4 12h16" stroke="#94A3B8"/></svg>
                     </div>
                     <h3 className="text-lg font-semibold">{lang === 'es' ? 'Escenarios de qué pasaría' : 'What-If Scenarios'}</h3>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4F46E5' : '#1E293B', background: attorney === 'with' ? 'rgba(99,102,241,0.15)' : '#F8FAFC', color: attorney === 'with' ? '#4F46E5' : '#64748B' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4F46E5' : '#1E293B', background: attorney === 'with' ? 'rgba(99,102,241,0.15)' : '#1E293B', color: attorney === 'with' ? '#4F46E5' : '#64748B' }}
                       onClick={() => setAttorney('with')}>
                       {lang === 'es' ? 'Con abogado' : 'With Attorney'}
                     </button>
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4F46E5' : '#1E293B', background: attorney === 'without' ? 'rgba(99,102,241,0.15)' : '#F8FAFC', color: attorney === 'without' ? '#4F46E5' : '#64748B' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4F46E5' : '#1E293B', background: attorney === 'without' ? 'rgba(99,102,241,0.15)' : '#1E293B', color: attorney === 'without' ? '#4F46E5' : '#64748B' }}
                       onClick={() => setAttorney('without')}>
                       {lang === 'es' ? 'Sin abogado' : 'Self-Represented'}
                     </button>
@@ -4970,7 +4974,7 @@ export default function MyCaseValue() {
                         { f: lang === 'es' ? 'Factores citados' : 'Factors courts cited', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> },
                         { f: lang === 'es' ? 'Pasos a seguir' : 'Action steps', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> },
                       ].map((item, i) => (
-                        <div key={i} className="p-2.5 rounded-lg text-sm flex items-center gap-2" style={{ background: '#F8FAFF' }}>
+                        <div key={i} className="p-2.5 rounded-lg text-sm flex items-center gap-2" style={{ background: 'rgba(99,102,241,0.08)' }}>
                           <span className="flex-shrink-0">{item.icon}</span> {item.f}
                         </div>
                       ))}
@@ -5827,7 +5831,7 @@ export default function MyCaseValue() {
               </div>
               <div className="text-[11px] text-slate-400 text-center mb-5">{lang === 'es' ? 'Todos los datos son solo informativos. No se crea relación abogado-cliente.' : 'All data is informational only. No attorney-client relationship is created.'}</div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ border: '1.5px solid rgba(226,232,240,0.8)', background: 'linear-gradient(180deg, #131B2E 0%, #0F172A 100%)' }}>
+                <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ border: '1.5px solid rgba(51,65,85,0.5)', background: 'linear-gradient(180deg, #131B2E 0%, #0F172A 100%)' }}>
                   <div className="text-[11px] font-bold text-slate-400 tracking-[2px]">{lang === 'es' ? 'REPORTE INDIVIDUAL' : 'SINGLE REPORT'}</div>
                   <div className="text-3xl sm:text-4xl font-display font-bold my-2"><span className="text-xl">$</span>5.99</div>
                   <div className="text-[12px] text-slate-400 mb-3">{lang === 'es' ? 'Un reporte completo' : 'One complete report'}</div>

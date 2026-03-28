@@ -8,7 +8,7 @@ interface Segment {
   winRatio?: number;
 }
 
-export default function PieChart({ segments, size = 200, strokeWidth = 14 }: { segments: Segment[]; size?: number; strokeWidth?: number }) {
+export default function PieChart({ segments, size = 200, strokeWidth = 14, lang = 'en' }: { segments: Segment[]; size?: number; strokeWidth?: number; lang?: string }) {
   const ref = useRef<SVGSVGElement>(null);
   const cx = size / 2;
   const cy = size / 2;
@@ -99,7 +99,7 @@ export default function PieChart({ segments, size = 200, strokeWidth = 14 }: { s
           letterSpacing: '0.05em',
           marginTop: 2,
         }}>
-          WIN + SETTLE
+          {lang === 'es' ? 'GANAR + ACUERDO' : 'WIN + SETTLE'}
         </div>
       </div>
     </div>
