@@ -2276,4 +2276,60 @@ input:focus, textarea:focus, select:focus {
   .card-3d:hover { transform: none; }
   .data-card:hover { transform: none; }
   .reveal-stagger > * { opacity: 1; transform: none; }
+  .feed-item-enter { animation: none !important; }
+  .value-counter { animation: none !important; }
+  .dashboard-bar { animation: none !important; }
+}
+
+/* ============================================================
+   LIVE CASE FEED ANIMATIONS
+   ============================================================ */
+@keyframes feedPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.feed-highlight {
+  animation: feedPulse 2s ease-in-out infinite;
+}
+
+/* Dashboard metric counter animation */
+@keyframes counterGlow {
+  0%, 100% { text-shadow: 0 0 10px rgba(79,70,229,0); }
+  50% { text-shadow: 0 0 20px rgba(79,70,229,0.3); }
+}
+
+.metric-glow {
+  animation: counterGlow 3s ease-in-out infinite;
+}
+
+/* Value Calculator ROI emphasis */
+@keyframes roiPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.roi-highlight {
+  animation: roiPulse 2s ease-in-out infinite;
+}
+
+/* Smooth number counting animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.count-enter {
+  animation: countUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Premium badge pulse for value calculator */
+@keyframes valuePulse {
+  0% { box-shadow: 0 4px 24px rgba(79,70,229,0.2); }
+  50% { box-shadow: 0 4px 32px rgba(79,70,229,0.4), 0 0 60px rgba(79,70,229,0.1); }
+  100% { box-shadow: 0 4px 24px rgba(79,70,229,0.2); }
+}
+
+.value-pulse {
+  animation: valuePulse 3s ease-in-out infinite;
 }

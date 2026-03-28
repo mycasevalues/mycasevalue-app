@@ -12,6 +12,9 @@ import DataPreviewSection from './sections/DataPreviewSection';
 import FaqSection from './sections/FaqSection';
 import FinalCtaSection from './sections/FinalCtaSection';
 import OutcomeSimulator from './ui/OutcomeSimulator';
+import LiveCaseFeed from './ui/LiveCaseFeed';
+import PremiumValueCalculator from './ui/PremiumValueCalculator';
+import NationwideDashboard from './ui/NationwideDashboard';
 import {
   SITS, STATES, TIMING_OPTS, AMOUNT_OPTS, ATTORNEY_OPTS,
   OUTCOME_DATA, CIRCUIT_MAP, CIRCUIT_DATA_KEY, CIRCUIT_WIN_RATES, FEE_INFO,
@@ -2160,6 +2163,17 @@ export default function MyCaseValue() {
           </div>
         </div>
 
+        {/* === NATIONWIDE DATA DASHBOARD === */}
+        <Reveal delay={280}>
+          <div className="mb-6" style={{ gridColumn: '1 / -1' }}>
+            <div className="text-center mb-6">
+              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'DATOS NACIONALES' : 'NATIONWIDE DATA'}</div>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Panel de datos en tiempo real' : 'Real-time data dashboard'}</h2>
+            </div>
+            <NationwideDashboard lang={lang} />
+          </div>
+        </Reveal>
+
         {/* Data Preview Section — Elite Section */}
         <Reveal delay={300}>
           <DataPreviewSection lang={lang} />
@@ -2258,6 +2272,18 @@ export default function MyCaseValue() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
               <span className="text-[13px] text-slate-500"><strong className="font-data">{(totalCases / 1000).toFixed(0)}K+</strong> {lang === 'es' ? 'usuarios' : 'users'}</span>
             </div>
+          </div>
+        </Reveal>
+
+        {/* === LIVE CASE FEED === */}
+        <Reveal delay={485}>
+          <div className="mb-4">
+            <div className="text-center mb-5">
+              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'ACTIVIDAD RECIENTE' : 'RECENT ACTIVITY'}</div>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Casos resueltos recientemente' : 'Recently resolved cases'}</h2>
+              <p className="text-sm text-slate-400 mt-2">{lang === 'es' ? 'Datos agregados de resultados reales de casos federales' : 'Aggregate data from real federal case outcomes'}</p>
+            </div>
+            <LiveCaseFeed lang={lang} />
           </div>
         </Reveal>
 
@@ -2736,6 +2762,18 @@ export default function MyCaseValue() {
               <p className="text-sm text-slate-400 mt-2 max-w-lg mx-auto">{lang === 'es' ? 'Ajusta los controles para ver cómo diferentes factores afectan los resultados de los casos' : 'Adjust the controls to see how different factors affect case outcomes'}</p>
             </div>
             <OutcomeSimulator lang={lang} onGetStarted={() => go(1)} />
+          </div>
+        </Reveal>
+
+        {/* === PREMIUM VALUE CALCULATOR === */}
+        <Reveal delay={630}>
+          <div className="mb-6">
+            <div className="text-center mb-6">
+              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'CALCULA TU AHORRO' : 'CALCULATE YOUR SAVINGS'}</div>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? '¿Cuánto vale esta información?' : 'What is this data worth to you?'}</h2>
+              <p className="text-sm text-slate-400 mt-2 max-w-md mx-auto">{lang === 'es' ? 'Compara el costo de nuestro informe premium con las alternativas' : 'Compare the cost of our premium report vs. the alternatives'}</p>
+            </div>
+            <PremiumValueCalculator lang={lang} onUnlock={() => setShowPricing(true)} />
           </div>
         </Reveal>
 
@@ -4598,6 +4636,65 @@ export default function MyCaseValue() {
                         </div>
                       ))}
                     </div>
+                  </div>
+                </LockedPreview>
+              </Reveal>
+
+              {/* Premium locked section: Case Strength Radar */}
+              <Reveal delay={350}>
+                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver radar de fortaleza del caso' : 'View case strength radar'}>
+                  <div className="rounded-2xl p-6 border border-slate-100">
+                    <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Radar de fortaleza del caso' : 'Case strength radar'}</div>
+                    <div className="flex items-center gap-6">
+                      {/* Fake radar chart preview */}
+                      <svg width="120" height="120" viewBox="0 0 120 120">
+                        <polygon points="60,15 98,35 98,85 60,105 22,85 22,35" fill="none" stroke="#E2E8F0" strokeWidth="1" />
+                        <polygon points="60,30 85,42 85,78 60,90 35,78 35,42" fill="none" stroke="#E2E8F0" strokeWidth="1" />
+                        <polygon points="60,45 72,51 72,69 60,75 48,69 48,51" fill="none" stroke="#E2E8F0" strokeWidth="1" />
+                        <polygon points="60,25 90,40 82,80 60,95 38,80 30,40" fill="rgba(79,70,229,0.15)" stroke="#4F46E5" strokeWidth="2" />
+                      </svg>
+                      <div className="flex-1 space-y-2">
+                        {[
+                          { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', score: '??/100' },
+                          { label: lang === 'es' ? 'Acuerdos' : 'Settlement', score: '??/100' },
+                          { label: lang === 'es' ? 'Evidencia' : 'Evidence', score: '??/100' },
+                          { label: lang === 'es' ? 'Velocidad' : 'Speed', score: '??/100' },
+                          { label: lang === 'es' ? 'Jurisdicción' : 'Jurisdiction', score: '??/100' },
+                          { label: lang === 'es' ? 'Representación' : 'Representation', score: '??/100' },
+                        ].map((f, i) => (
+                          <div key={i} className="flex items-center justify-between text-[12px]">
+                            <span className="text-slate-500">{f.label}</span>
+                            <span className="font-bold text-slate-400">{f.score}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="mt-4 text-center">
+                      <div className="text-[32px] font-display font-extrabold" style={{ color: '#4F46E5' }}>??</div>
+                      <div className="text-[11px] text-slate-400">{lang === 'es' ? 'Puntuación general de fortaleza' : 'Overall strength score'}</div>
+                    </div>
+                  </div>
+                </LockedPreview>
+              </Reveal>
+
+              {/* Premium locked section: Similar Cases Near You */}
+              <Reveal delay={355}>
+                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver casos similares cerca' : 'View similar cases near you'}>
+                  <div className="rounded-2xl p-6 border border-slate-100">
+                    <div className="text-sm font-semibold mb-3">{lang === 'es' ? 'Casos similares en tu área' : 'Similar cases in your area'}</div>
+                    <div className="space-y-2">
+                      {[1, 2, 3].map((_, i) => (
+                        <div key={i} className="p-3 bg-slate-50 rounded-xl flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-[11px] font-bold text-slate-400">#{i+1}</div>
+                          <div className="flex-1">
+                            <div className="text-[12px] font-semibold text-slate-600">{lang === 'es' ? 'Caso similar redactado' : 'Redacted similar case'}</div>
+                            <div className="text-[10px] text-slate-400">{lang === 'es' ? 'Resuelto en' : 'Resolved in'} ?? {lang === 'es' ? 'meses • Acuerdo' : 'months • Settled'}</div>
+                          </div>
+                          <div className="text-[14px] font-bold text-slate-400">$??K</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="text-[10px] text-slate-400 mt-2 text-center">{lang === 'es' ? 'Todos los datos están anonimizados y son de fuentes públicas' : 'All data is anonymized and from public sources'}</div>
                   </div>
                 </LockedPreview>
               </Reveal>
