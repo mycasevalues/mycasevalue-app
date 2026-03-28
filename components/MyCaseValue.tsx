@@ -1880,7 +1880,7 @@ export default function MyCaseValue() {
                 <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[66px] leading-[0.95] font-extrabold" style={{ letterSpacing: '-3px' }}>
                   <span className="hero-tagline-bold">{t.hero_title_1}</span><br />
                   <span className="hero-tagline-light">{t.hero_title_2}{' '}</span>
-                  <span className="text-shimmer hero-tagline-light" style={{ fontStyle: 'italic' }}>{t.hero_title_3}</span>
+                  <span className="text-shimmer hero-tagline-light gradient-text-animated" style={{ fontStyle: 'italic' }}>{t.hero_title_3}</span>
                 </h1>
               </div>
 
@@ -2006,7 +2006,7 @@ export default function MyCaseValue() {
                 </div>
                 <div className="text-[12px]" style={{ color: '#8B9AB5' }}>
                   <strong className="font-data" style={{ color: '#A5B4FC' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 ml-1.5 animate-pulse" style={{ verticalAlign: 'middle' }} />
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 ml-1.5 data-pulse" style={{ verticalAlign: 'middle' }} />
                 </div>
               </div>
             </Reveal>
@@ -2086,18 +2086,18 @@ export default function MyCaseValue() {
               </div>
 
               {/* Floating accent badges — dark glass */}
-              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full text-[10px] font-bold" style={{
+              <div className="absolute -top-3 -right-3 px-3 py-1.5 rounded-full text-[10px] font-bold float-tag" style={{
                 background: 'rgba(15,23,42,0.85)',
                 color: '#5EEAD4',
                 border: '1px solid rgba(13,148,136,0.25)',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
                 backdropFilter: 'blur(8px)',
               }}>
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 pulse-dot" style={{ verticalAlign: 'middle' }} />
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 data-pulse" style={{ verticalAlign: 'middle' }} />
                 {lang === 'es' ? 'Datos actualizados' : 'Live data'}
               </div>
 
-              <div className="absolute -bottom-2 -left-3 px-3 py-1.5 rounded-full text-[10px] font-bold" style={{
+              <div className="absolute -bottom-2 -left-3 px-3 py-1.5 rounded-full text-[10px] font-bold float-tag" style={{
                 background: 'rgba(15,23,42,0.85)',
                 color: '#A5B4FC',
                 border: '1px solid rgba(99,102,241,0.25)',
@@ -4014,7 +4014,7 @@ export default function MyCaseValue() {
           {/* === REPORT HEADER === */}
           <Reveal>
             <div className="h-[3px] rounded-full mb-0" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
-            <Card glow className="p-6 sm:p-8 data-card">
+            <Card glow className="p-6 sm:p-8 data-card card-glow">
               <div className="flex flex-col sm:flex-row justify-between items-start gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2 flex-wrap">
