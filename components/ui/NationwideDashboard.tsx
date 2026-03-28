@@ -96,7 +96,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
       {/* Year-over-year trend chart */}
       <div className="px-6 py-5">
         <div className="text-[10px] font-bold text-slate-500 tracking-[1.5px] mb-3">{es ? 'TENDENCIA ANUAL DE CASOS' : 'YEARLY CASE TREND'}</div>
-        <div className="flex items-end gap-2 h-[100px]">
+        <div className="flex items-end gap-1.5 sm:gap-2 h-[80px] sm:h-[100px]">
           {YEAR_DATA.map((d, i) => {
             const h = (d.cases / maxCases) * 100;
             const isHovered = hoveredYear === d.year;
