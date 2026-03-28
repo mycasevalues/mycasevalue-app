@@ -424,7 +424,7 @@ function GlossaryTip({ term, children }: { term: string; children: React.ReactNo
       {children}
       {show && (
         <span className="absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 rounded-xl text-[12px] leading-relaxed font-normal text-left w-56 sm:w-64 max-w-[calc(100vw-2rem)]"
-          style={{ background: '#0B1221', color: '#1E293B', boxShadow: '0 8px 32px rgba(11,18,33,.25)' }}>
+          style={{ background: '#0B1221', color: '#E2E8F0', boxShadow: '0 8px 32px rgba(11,18,33,.25)' }}>
           <span className="font-bold text-white block mb-0.5 capitalize">{term}</span>
           {def}
           <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-px w-2.5 h-2.5 rotate-45"
@@ -2674,7 +2674,7 @@ export default function MyCaseValue() {
                     </div>
                     <div className="pb-4 flex-1">
                       <div className="text-[10px] font-bold tracking-[1.5px] mb-1" style={{ color: '#4F46E5' }}>{stage.month} months</div>
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>{stage.title}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{stage.title}</div>
                       <div className="text-[13px] text-slate-500">{stage.desc}</div>
                     </div>
                   </div>
@@ -3751,7 +3751,7 @@ export default function MyCaseValue() {
                       }}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         <div>
-                          <div className="text-[13px] font-semibold" style={{ color: '#1E293B' }}>
+                          <div className="text-[13px] font-semibold" style={{ color: '#E2E8F0' }}>
                             {lang === 'es' ? `La ventana óptima de acuerdo es el mes ${peakMonth?.month}` : `Peak settlement window is month ${peakMonth?.month}`}
                           </div>
                           <div className="text-[12px] mt-1" style={{ color: '#94A3B8' }}>
@@ -3764,6 +3764,135 @@ export default function MyCaseValue() {
 
                       <div className="mt-3 text-[10px] text-slate-400 italic text-center">
                         {lang === 'es' ? 'Distribución basada en datos agregados de casos similares. Los plazos individuales pueden variar.' : 'Distribution based on aggregate data from similar cases. Individual timelines may vary.'}
+                      </div>
+                    </>
+                  );
+                })()}
+              </Card>
+            </Reveal>
+          )}
+
+          {/* Jurisdiction Intelligence — Interactive state comparison */}
+          {isPremium && stateCode && (
+            <Reveal delay={100}>
+              <Card premium className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #4F46E520, #0D948820)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#4F46E5' }}>
+                      {lang === 'es' ? 'INTELIGENCIA JURISDICCIONAL' : 'JURISDICTION INTELLIGENCE'}
+                    </div>
+                    <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
+                      {lang === 'es' ? `Comparación: ${stateCode} vs. Promedio Nacional` : `${stateCode} vs. National Benchmark`}
+                    </div>
+                  </div>
+                </div>
+                {(() => {
+                  const stateRate = AGGREGATE_STATE_RATES[stateCode] || 50;
+                  const nationalAvg = 50.2;
+                  const topStates = Object.entries(AGGREGATE_STATE_RATES)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 5);
+                  const bottomStates = Object.entries(AGGREGATE_STATE_RATES)
+                    .sort((a, b) => a[1] - b[1])
+                    .slice(0, 5);
+                  const stateRank = Object.entries(AGGREGATE_STATE_RATES)
+                    .sort((a, b) => b[1] - a[1])
+                    .findIndex(([k]) => k === stateCode) + 1;
+                  const neighborStates: string[] = [];
+                  const allEntries = Object.entries(AGGREGATE_STATE_RATES).sort((a, b) => b[1] - a[1]);
+                  const idx = allEntries.findIndex(([k]) => k === stateCode);
+                  if (idx > 0) neighborStates.push(allEntries[idx - 1][0]);
+                  neighborStates.push(stateCode);
+                  if (idx < allEntries.length - 1) neighborStates.push(allEntries[idx + 1][0]);
+
+                  return (
+                    <>
+                      {/* Key metrics row */}
+                      <div className="grid grid-cols-3 gap-3 mb-6">
+                        <div className="text-center p-4 rounded-xl" style={{ background: 'rgba(79,70,229,0.08)', border: '1px solid rgba(79,70,229,0.15)' }}>
+                          <div className="text-2xl font-display font-bold neon-text" style={{ color: '#4F46E5' }}>{stateRate.toFixed(1)}%</div>
+                          <div className="text-[10px] font-semibold mt-1" style={{ color: '#94A3B8' }}>{stateCode} {lang === 'es' ? 'Tasa' : 'Rate'}</div>
+                        </div>
+                        <div className="text-center p-4 rounded-xl" style={{ background: 'rgba(13,148,136,0.08)', border: '1px solid rgba(13,148,136,0.15)' }}>
+                          <div className="text-2xl font-display font-bold" style={{ color: '#0D9488' }}>#{stateRank}</div>
+                          <div className="text-[10px] font-semibold mt-1" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'de 50 estados' : 'of 50 states'}</div>
+                        </div>
+                        <div className="text-center p-4 rounded-xl" style={{ background: stateRate > nationalAvg ? 'rgba(13,148,136,0.08)' : 'rgba(217,119,6,0.08)', border: `1px solid ${stateRate > nationalAvg ? 'rgba(13,148,136,0.15)' : 'rgba(217,119,6,0.15)'}` }}>
+                          <div className="text-2xl font-display font-bold" style={{ color: stateRate > nationalAvg ? '#0D9488' : '#D97706' }}>
+                            {stateRate > nationalAvg ? '+' : ''}{(stateRate - nationalAvg).toFixed(1)}%
+                          </div>
+                          <div className="text-[10px] font-semibold mt-1" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'vs. Nacional' : 'vs. National'}</div>
+                        </div>
+                      </div>
+
+                      {/* Visual comparison bar */}
+                      <div className="mb-6">
+                        <div className="text-[11px] font-bold tracking-[1.5px] text-slate-400 mb-3">
+                          {lang === 'es' ? 'COMPARACIÓN VISUAL' : 'VISUAL COMPARISON'}
+                        </div>
+                        <div className="space-y-3">
+                          <div>
+                            <div className="flex justify-between mb-1">
+                              <span className="text-[12px] font-semibold" style={{ color: '#E2E8F0' }}>{stateCode}</span>
+                              <span className="text-[12px] font-bold font-data" style={{ color: '#4F46E5' }}>{stateRate.toFixed(1)}%</span>
+                            </div>
+                            <div className="h-3 rounded-full overflow-hidden" style={{ background: '#1E293B' }}>
+                              <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${stateRate}%`, background: 'linear-gradient(90deg, #4F46E5, #6366F1)', boxShadow: '0 0 12px rgba(79,70,229,0.3)' }} />
+                            </div>
+                          </div>
+                          <div>
+                            <div className="flex justify-between mb-1">
+                              <span className="text-[12px] font-medium" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'Promedio Nacional' : 'National Average'}</span>
+                              <span className="text-[12px] font-bold font-data" style={{ color: '#94A3B8' }}>{nationalAvg}%</span>
+                            </div>
+                            <div className="h-3 rounded-full overflow-hidden" style={{ background: '#1E293B' }}>
+                              <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${nationalAvg}%`, background: 'linear-gradient(90deg, #64748B, #94A3B8)' }} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Top 5 jurisdictions */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                        <div className="p-4 rounded-xl" style={{ background: 'rgba(13,148,136,0.06)', border: '1px solid rgba(13,148,136,0.12)' }}>
+                          <div className="text-[10px] font-bold tracking-[1.5px] mb-3" style={{ color: '#0D9488' }}>
+                            {lang === 'es' ? 'TOP 5 JURISDICCIONES' : 'TOP 5 JURISDICTIONS'}
+                          </div>
+                          {topStates.map(([st, rate], i) => (
+                            <div key={st} className="flex items-center gap-2 mb-1.5">
+                              <span className="text-[10px] font-bold w-4" style={{ color: '#64748B' }}>{i + 1}</span>
+                              <span className={`text-[12px] font-semibold ${st === stateCode ? 'neon-text' : ''}`} style={{ color: st === stateCode ? '#4F46E5' : '#CBD5E1' }}>{st}</span>
+                              <div className="flex-1 h-1.5 rounded-full overflow-hidden mx-1" style={{ background: '#1E293B' }}>
+                                <div className="h-full rounded-full" style={{ width: `${rate}%`, background: st === stateCode ? '#4F46E5' : '#0D9488' }} />
+                              </div>
+                              <span className="text-[11px] font-data font-bold" style={{ color: st === stateCode ? '#4F46E5' : '#0D9488' }}>{rate.toFixed(1)}%</span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="p-4 rounded-xl" style={{ background: 'rgba(232,116,97,0.06)', border: '1px solid rgba(232,116,97,0.12)' }}>
+                          <div className="text-[10px] font-bold tracking-[1.5px] mb-3" style={{ color: '#E87461' }}>
+                            {lang === 'es' ? 'BOTTOM 5 JURISDICCIONES' : 'BOTTOM 5 JURISDICTIONS'}
+                          </div>
+                          {bottomStates.map(([st, rate], i) => (
+                            <div key={st} className="flex items-center gap-2 mb-1.5">
+                              <span className="text-[10px] font-bold w-4" style={{ color: '#64748B' }}>{50 - i}</span>
+                              <span className={`text-[12px] font-semibold ${st === stateCode ? 'neon-text' : ''}`} style={{ color: st === stateCode ? '#E87461' : '#CBD5E1' }}>{st}</span>
+                              <div className="flex-1 h-1.5 rounded-full overflow-hidden mx-1" style={{ background: '#1E293B' }}>
+                                <div className="h-full rounded-full" style={{ width: `${rate}%`, background: st === stateCode ? '#E87461' : '#D97706' }} />
+                              </div>
+                              <span className="text-[11px] font-data font-bold" style={{ color: st === stateCode ? '#E87461' : '#D97706' }}>{rate.toFixed(1)}%</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic text-center" style={{ background: 'rgba(30,41,59,0.5)', color: '#64748B' }}>
+                        {lang === 'es'
+                          ? 'Las tasas de victoria se calculan a partir de datos agregados de todos los tipos de casos federales en cada estado. No es una garantía de resultados.'
+                          : 'Win rates are computed from aggregate data across all federal case types in each state. Not a guarantee of outcomes.'}
                       </div>
                     </>
                   );
@@ -3954,7 +4083,7 @@ export default function MyCaseValue() {
                   segments={[
                     { pct: od.fav_set, color: '#0D9488', winRatio: 0 },
                     { pct: od.trial_win + od.trial_loss, color: '#4F46E5', winRatio: od.trial_win / Math.max(od.trial_win + od.trial_loss, 1) },
-                    { pct: od.dismiss, color: '#1E293B', winRatio: 0 },
+                    { pct: od.dismiss, color: '#334155', winRatio: 0 },
                   ]}
                   size={200}
                 />
@@ -4181,7 +4310,7 @@ export default function MyCaseValue() {
                       <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>{lang === 'es' ? 'Guarda este informe' : 'Save this report'}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{lang === 'es' ? 'Guarda este informe' : 'Save this report'}</div>
                       <p className="text-[13px] text-slate-500 leading-relaxed">
                         {lang === 'es'
                           ? 'Guárdalo o compártelo para que puedas consultarlo más tarde o mostrárselo a un abogado.'
@@ -4220,7 +4349,7 @@ export default function MyCaseValue() {
                       <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>
                         {attorney === 'have'
                           ? (lang === 'es' ? 'Comparte los datos con tu abogado' : 'Share the data with your attorney')
                           : attorney === 'self'
@@ -4263,7 +4392,7 @@ export default function MyCaseValue() {
                       <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>
                         {(timing === '2yr' || timing === 'old')
                           ? (lang === 'es' ? 'Actúa sobre los plazos ahora' : 'Act on deadlines now')
                           : (lang === 'es' ? 'Conoce tus plazos' : 'Know your deadlines')}
@@ -4286,7 +4415,7 @@ export default function MyCaseValue() {
                       <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #64748B, #94A3B8)' }}>4</div>
                     </div>
                     <div className="flex-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#1E293B' }}>{lang === 'es' ? 'Reúne tu documentación' : 'Gather your documentation'}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{lang === 'es' ? 'Reúne tu documentación' : 'Gather your documentation'}</div>
                       <p className="text-[13px] text-slate-500 leading-relaxed">
                         {lang === 'es'
                           ? 'Reúne cualquier documento, correo electrónico, foto o registro relevante. Si consultas a un abogado, esto hará que la conversación sea más productiva.'
