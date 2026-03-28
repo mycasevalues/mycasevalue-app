@@ -61,7 +61,7 @@ export default function AboutPage() {
             Back to MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E4E5FF', color: '#4F46E5' }}>
+            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             ABOUT US
           </div>

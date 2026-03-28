@@ -14,12 +14,12 @@ export function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const base = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
+  const base = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6366F1] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
 
   const variants: Record<string, string> = {
-    primary: 'bg-gradient-to-r from-[#D97706] to-[#FBBF24] text-white rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]',
-    secondary: 'bg-transparent border-2 border-[#1E293B] text-[#1E293B] rounded-xl hover:bg-[#1E293B] hover:text-white hover:-translate-y-0.5 active:scale-[0.98]',
-    ghost: 'bg-transparent text-[#334155] hover:bg-[#F4F0E8] rounded-lg active:scale-[0.98]',
+    primary: 'bg-gradient-to-r from-[#4F46E5] to-[#6366F1] text-white rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]',
+    secondary: 'bg-transparent border-2 border-[#334155] text-[#E2E8F0] rounded-xl hover:bg-[#1E293B] hover:text-white hover:-translate-y-0.5 active:scale-[0.98]',
+    ghost: 'bg-transparent text-[#94A3B8] hover:bg-[#1E293B] rounded-lg active:scale-[0.98]',
   }
 
   const sizes: Record<string, string> = {

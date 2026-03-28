@@ -201,9 +201,9 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
               placeholder="Search..."
               className="w-full px-3 py-2 text-[13px] rounded-lg outline-none transition-colors"
               style={{
-                background: dark ? '#0F1729' : '#F8FAFC',
-                border: `1px solid ${dark ? '#334155' : '#1E293B'}`,
-                color: dark ? '#F0F2F5' : '#0B1221',
+                background: '#0F1729',
+                border: '1px solid #334155',
+                color: '#F0F2F5',
               }} />
           </div>
         )}
@@ -216,11 +216,11 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
               className="w-full px-4 py-2.5 text-sm text-left rounded-lg cursor-pointer transition-all duration-150"
               style={{
                 fontWeight: o.id === value ? 600 : 400,
-                color: o.id === value ? '#4F46E5' : (dark ? '#1E293B' : '#0B1221'),
-                background: o.id === value ? (dark ? '#4F46E515' : 'rgba(99,102,241,0.15)') : 'transparent',
+                color: o.id === value ? '#4F46E5' : '#E2E8F0',
+                background: o.id === value ? 'rgba(99,102,241,0.08)' : 'transparent',
                 animationDelay: open ? `${idx * 20}ms` : '0ms',
               }}
-              onMouseEnter={e => { if (o.id !== value) e.currentTarget.style.background = dark ? '#243352' : '#F8FAFC'; }}
+              onMouseEnter={e => { if (o.id !== value) e.currentTarget.style.background = '#243352'; }}
               onMouseLeave={e => { if (o.id !== value) e.currentTarget.style.background = 'transparent'; }}>
               <span className="flex items-center gap-2">
                 {o.id === value && (
@@ -464,9 +464,9 @@ function ReportFeaturesGrid({ lang = 'en' }: { lang?: string }) {
           f.free
             ? 'bg-[#131B2E] border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
             : 'border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)]'
-        }`} style={!f.free ? { background: 'linear-gradient(135deg, #F0F2FF, #FFFFFF)', borderColor: 'rgba(64,64,242,0.12)' } : undefined}>
+        }`} style={!f.free ? { background: 'linear-gradient(135deg, rgba(79,70,229,0.08), rgba(99,102,241,0.04))', borderColor: 'rgba(64,64,242,0.12)' } : undefined}>
           <div className="flex items-start justify-between mb-2">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: f.free ? '#F0F2FF' : '#EEF0FF' }}>{f.icon}</div>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: f.free ? 'rgba(99,102,241,0.1)' : 'rgba(99,102,241,0.12)' }}>{f.icon}</div>
             {!f.free && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>}
           </div>
           <div className="text-[14px] font-semibold text-[#CBD5E1]">{f.title}</div>
@@ -5043,7 +5043,7 @@ export default function MyCaseValue() {
                         { scenario: lang === 'es' ? 'Escenario típico' : 'Typical scenario', amount: '$35K - $65K' },
                         { scenario: lang === 'es' ? 'Escenario alto' : 'High scenario', amount: '$75K - $140K' },
                       ].map((item, i) => (
-                        <div key={i} className="flex items-center justify-between p-3 bg-gradient-to-r rounded-lg" style={{ background: i === 1 ? 'linear-gradient(135deg, #E4E5FF, #FEF9F0)' : '#F8FAFC' }}>
+                        <div key={i} className="flex items-center justify-between p-3 bg-gradient-to-r rounded-lg" style={{ background: i === 1 ? 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(217,119,6,0.06))' : 'rgba(255,255,255,0.03)' }}>
                           <span className={`text-sm font-medium ${i === 1 ? 'font-semibold' : ''}`}>{item.scenario}</span>
                           <span className="font-display font-bold" style={{ color: i === 0 ? '#D97706' : i === 1 ? '#4F46E5' : '#0D9488' }}>{item.amount}</span>
                         </div>
@@ -5836,14 +5836,14 @@ export default function MyCaseValue() {
                     {lang === 'es' ? 'Obtener reporte' : 'Get report'}
                   </button>
                 </div>
-                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#4F46E5', background: 'linear-gradient(180deg, #F8FAFC 0%, #E4E5FF 100%)', boxShadow: '0 8px 32px rgba(64,64,242,.15), inset 0 1px 0 rgba(255,255,255,0.03)' }}>
+                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#4F46E5', background: 'linear-gradient(180deg, rgba(19,27,46,0.95) 0%, rgba(79,70,229,0.15) 100%)', boxShadow: '0 8px 32px rgba(64,64,242,.15), inset 0 1px 0 rgba(255,255,255,0.03)' }}>
                   <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold text-white whitespace-nowrap"
                     style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
                     {lang === 'es' ? 'MEJOR VALOR' : 'BEST VALUE'}
                   </div>
-                  <div className="text-[11px] font-bold tracking-[2px]" style={{ color: '#4F46E5' }}>{lang === 'es' ? 'ILIMITADO' : 'UNLIMITED'}</div>
-                  <div className="text-3xl sm:text-4xl font-display font-bold my-2"><span className="text-xl">$</span>9.99</div>
-                  <div className="text-[12px] mb-3" style={{ color: '#4F46E5' }}>{lang === 'es' ? 'Todos los tipos de caso, para siempre' : 'All case types, forever'}</div>
+                  <div className="text-[11px] font-bold tracking-[2px]" style={{ color: '#A5B4FC' }}>{lang === 'es' ? 'ILIMITADO' : 'UNLIMITED'}</div>
+                  <div className="text-3xl sm:text-4xl font-display font-bold my-2 text-white"><span className="text-xl">$</span>9.99</div>
+                  <div className="text-[12px] mb-3" style={{ color: '#A5B4FC' }}>{lang === 'es' ? 'Todos los tipos de caso, para siempre' : 'All case types, forever'}</div>
                   <button onClick={() => { buy('unlimited'); setShowPricing(false); }}
                     className="w-full py-3 text-sm font-semibold text-white rounded-xl cursor-pointer transition-all active:scale-[0.96]"
                     style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>

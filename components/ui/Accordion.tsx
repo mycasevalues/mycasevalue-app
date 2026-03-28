@@ -27,22 +27,26 @@ export function Accordion({ items }: AccordionProps) {
       {items.map((item) => (
         <div
           key={item.id}
-          className="border border-navy-100 dark:border-navy-700 rounded-lg overflow-hidden"
+          className="rounded-lg overflow-hidden"
+          style={{ border: '1px solid #334155' }}
         >
           <button
             onClick={() => toggleAccordion(item.id)}
             className={cn(
               'w-full px-6 py-4 flex items-center justify-between text-left font-medium transition-colors duration-200',
               openId === item.id
-                ? 'bg-[#1E293B] dark:bg-navy-800 text-gold-500'
-                : 'bg-[#131B2E] dark:bg-navy-900 text-[#F0F2F5] dark:text-cream-50 hover:bg-[#1E293B] dark:hover:bg-navy-800'
+                ? 'text-[#A5B4FC]'
+                : 'text-[#F0F2F5] hover:bg-[#1E293B]'
             )}
+            style={{
+              background: openId === item.id ? '#1E293B' : '#131B2E',
+            }}
           >
             <span>{item.title}</span>
             <span
               className={cn(
                 'text-xl font-light transition-transform duration-300',
-                openId === item.id ? 'text-gold-500 rotate-0' : 'text-navy-400 dark:text-navy-500 rotate-45'
+                openId === item.id ? 'text-[#A5B4FC] rotate-0' : 'text-[#64748B] rotate-45'
               )}
             >
               {openId === item.id ? '×' : '+'}
@@ -57,7 +61,10 @@ export function Accordion({ items }: AccordionProps) {
             }}
           >
             <div className="overflow-hidden">
-              <div className="px-6 py-4 bg-navy-50 dark:bg-navy-900/50 text-navy-700 dark:text-cream-100 leading-relaxed">
+              <div className="px-6 py-4 leading-relaxed" style={{
+                background: 'rgba(19,27,46,0.5)',
+                color: '#CBD5E1',
+              }}>
                 {item.content}
               </div>
             </div>

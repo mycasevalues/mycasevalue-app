@@ -324,7 +324,7 @@ export default function FAQPage() {
             Back to MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E4E5FF', color: '#4F46E5' }}>
+            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             FAQ
           </div>
@@ -394,7 +394,7 @@ export default function FAQPage() {
           </p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-            style={{ background: '#131B2E', border: '1px solid #E2E8F0', color: '#4F46E5' }}>
+            style={{ background: '#131B2E', border: '1px solid #334155', color: '#4F46E5' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

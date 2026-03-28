@@ -184,7 +184,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
             className="text-sm font-semibold rounded-lg px-5 py-2.5 transition-all hover:scale-105"
             style={{
               color: '#4F46E5',
-              background: '#E4E5FF',
+              background: 'rgba(99,102,241,0.15)',
             }}
           >
             {lang === 'es' ? 'Contacta soporte' : 'Contact support'}

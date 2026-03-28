@@ -174,7 +174,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                 style={{
                   background: hasAttorney ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(255,255,255,0.12)',
                 }}>
-                <div className="absolute top-0.5 w-6 h-6 rounded-full bg-[#E2E8F0] shadow-lg transition-all duration-300"
+                <div className="absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-lg transition-all duration-300"
                   style={{ left: hasAttorney ? 'calc(100% - 26px)' : '2px' }} />
               </button>
             </div>

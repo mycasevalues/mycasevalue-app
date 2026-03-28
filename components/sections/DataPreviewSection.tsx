@@ -58,7 +58,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
               className="px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200"
               style={{
                 color: activeTab === tab.id ? '#4F46E5' : '#94A3B8',
-                background: activeTab === tab.id ? '#E4E5FF' : 'transparent',
+                background: activeTab === tab.id ? 'rgba(99,102,241,0.15)' : 'transparent',
                 borderBottom:
                   activeTab === tab.id ? '2px solid #4F46E5' : 'none',
               }}

@@ -9,7 +9,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#FAF7F0',
+          background: '#0B1221',
           fontFamily: 'Outfit, system-ui, sans-serif',
           padding: 24,
         }}>
