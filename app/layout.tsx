@@ -1,5 +1,6 @@
 import './globals.css';
 import ErrorBoundary from '../components/ErrorBoundary';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'MyCaseValue — Federal Court Outcome Data | Win Rates, Settlements & Timelines',
@@ -170,6 +171,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
+        <Analytics />
         <script dangerouslySetInnerHTML={{ __html: `
           window.mcvAnalytics = {
             track: function(event, props) {
