@@ -11,6 +11,7 @@ import TrustBar from './sections/TrustBar';
 import DataPreviewSection from './sections/DataPreviewSection';
 import FaqSection from './sections/FaqSection';
 import FinalCtaSection from './sections/FinalCtaSection';
+import OutcomeSimulator from './ui/OutcomeSimulator';
 import {
   SITS, STATES, TIMING_OPTS, AMOUNT_OPTS, ATTORNEY_OPTS,
   OUTCOME_DATA, CIRCUIT_MAP, CIRCUIT_DATA_KEY, CIRCUIT_WIN_RATES, FEE_INFO,
@@ -233,20 +234,43 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
 
 function LockedPreview({ children, onUnlock, label }: { children: React.ReactNode; onUnlock: () => void; label?: string }) {
   return (
-    <div className="relative mb-3 rounded-2xl overflow-hidden border border-amber-200/60" style={{ background: 'linear-gradient(135deg, rgba(248,250,252,0.95) 0%, rgba(255,255,255,0.9) 100%)' }}>
-      <div style={{ filter: 'blur(5px)', pointerEvents: 'none', opacity: 0.45, padding: 24 }}>{children}</div>
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.85) 0%, rgba(248,250,252,0.6) 70%, transparent 100%)' }}>
-        <div className="w-14 h-14 rounded-full shadow-xl flex items-center justify-center border border-amber-200/50" style={{ background: 'linear-gradient(135deg, #fff 0%, #fdf8ef 100%)' }}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5">
+    <div className="relative mb-3 rounded-2xl overflow-hidden locked-shimmer" style={{
+      background: 'linear-gradient(135deg, rgba(248,250,252,0.95) 0%, rgba(255,255,255,0.9) 100%)',
+      border: '1px solid rgba(79,70,229,0.12)',
+      boxShadow: '0 4px 24px rgba(79,70,229,0.06)',
+    }}>
+      <div style={{ filter: 'blur(6px)', pointerEvents: 'none', opacity: 0.35, padding: 24, transform: 'scale(1.02)' }}>{children}</div>
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{
+        background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.92) 0%, rgba(248,250,252,0.7) 50%, rgba(248,250,252,0.5) 100%)',
+      }}>
+        {/* Animated lock icon */}
+        <div className="premium-badge-glow w-16 h-16 rounded-2xl shadow-xl flex items-center justify-center" style={{
+          background: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
+        }}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
             <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" />
           </svg>
         </div>
-        <div className="text-center">
-          <div className="text-sm text-slate-600 font-medium mb-2">Premium feature</div>
-          <button onClick={onUnlock} className="premium-cta px-7 py-3 text-sm font-semibold rounded-xl cursor-pointer text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-95"
-            style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 16px rgba(64,64,242,.25)' }}>
+        <div className="text-center max-w-xs">
+          <div className="text-[13px] text-slate-700 font-semibold mb-1">Premium Insight</div>
+          <div className="text-[11px] text-slate-400 mb-3">Unlock detailed data that could change your strategy</div>
+          <button onClick={onUnlock} className="premium-cta px-8 py-3.5 text-[14px] font-semibold rounded-xl cursor-pointer text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-95"
+            style={{
+              background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
+              boxShadow: '0 4px 24px rgba(79,70,229,0.35), 0 0 0 1px rgba(79,70,229,0.1)',
+            }}>
             {label || 'Unlock — $5.99'}
           </button>
+          <div className="flex items-center justify-center gap-3 mt-3">
+            <div className="flex items-center gap-1 text-[10px] text-slate-400">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              Secure checkout
+            </div>
+            <div className="flex items-center gap-1 text-[10px] text-slate-400">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Instant access
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -2700,6 +2724,18 @@ export default function MyCaseValue() {
                 </button>
               </div>
             </div>
+          </div>
+        </Reveal>
+
+        {/* === INTERACTIVE OUTCOME SIMULATOR === */}
+        <Reveal delay={620}>
+          <div className="mb-8">
+            <div className="text-center mb-6">
+              <div className="text-[11px] font-bold text-slate-400 tracking-[2.5px] mb-2">{lang === 'es' ? 'PRUEBA INTERACTIVA' : 'TRY IT YOURSELF'}</div>
+              <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Simula tu resultado' : 'Simulate your outcome'}</h2>
+              <p className="text-sm text-slate-400 mt-2 max-w-lg mx-auto">{lang === 'es' ? 'Ajusta los controles para ver cómo diferentes factores afectan los resultados de los casos' : 'Adjust the controls to see how different factors affect case outcomes'}</p>
+            </div>
+            <OutcomeSimulator lang={lang} onGetStarted={() => go(1)} />
           </div>
         </Reveal>
 
