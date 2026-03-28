@@ -7,7 +7,6 @@ interface NavbarProps {
   lang: 'en' | 'es';
   setLang: (l: 'en' | 'es') => void;
   darkMode: boolean;
-  setDarkMode: (d: boolean) => void;
   isPremium: boolean;
   savedReportsCount: number;
   onShowSaved: () => void;
@@ -20,7 +19,7 @@ interface NavbarProps {
 }
 
 export function Navbar({
-  lang, setLang, darkMode, setDarkMode, isPremium,
+  lang, setLang, darkMode, isPremium,
   savedReportsCount, onShowSaved, onReset, onNewReport,
   newReportLabel, premiumLabel, scrolled, scrollProgress,
 }: NavbarProps) {
@@ -42,7 +41,7 @@ export function Navbar({
     first?.focus();
 
     const trap = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { setMobileOpen(false); triggerRef.current?.focus(); return; }
+      if (e.key === 'Escape') { e.preventDefault(); setMobileOpen(false); triggerRef.current?.focus(); return; }
       if (e.key !== 'Tab') return;
       if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last?.focus(); } }
       else { if (document.activeElement === last) { e.preventDefault(); first?.focus(); } }
@@ -66,16 +65,20 @@ export function Navbar({
     <>
       <nav
         className={`sticky top-0 z-50 no-print transition-all duration-300 ${
-          scrolled
-            ? 'glass shadow-card border-b border-surface-border'
-            : 'bg-transparent'
-        } ${darkMode ? 'glass-dark' : ''}`}
+          scrolled ? 'shadow-card border-b' : 'bg-transparent'
+        }`}
+        style={{
+          background: scrolled ? 'rgba(11,18,33,0.85)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'none',
+          WebkitBackdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'none',
+          borderColor: scrolled ? '#1E293B' : 'transparent',
+        }}
         role="navigation"
         aria-label="Main navigation"
       >
         {/* Scroll progress bar */}
         {scrolled && scrollProgress > 0 && (
-          <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: darkMode ? 'rgba(255,255,255,0.05)' : 'rgba(226,232,240,0.3)' }}>
+          <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: 'rgba(255,255,255,0.05)' }}>
             <div className="h-full transition-none" style={{
               width: `${scrollProgress * 100}%`,
               background: 'linear-gradient(90deg, #4F46E5, #0D9488)',
@@ -90,13 +93,13 @@ export function Navbar({
             className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer focus-ring"
             aria-label="MyCaseValue home"
           >
-            <Logo size="md" darkMode={darkMode} />
+            <Logo size="md" darkMode={true} />
           </button>
 
           {/* Desktop actions */}
           <div className="hidden sm:flex items-center gap-2.5">
             {/* Language toggle */}
-            <LanguageToggle lang={lang} setLang={setLang} darkMode={darkMode} />
+            <LanguageToggle lang={lang} setLang={setLang} />
 
             {/* Saved reports */}
             {savedReportsCount > 0 && (
@@ -104,9 +107,9 @@ export function Navbar({
                 onClick={onShowSaved}
                 className="h-8 px-2.5 rounded-lg border cursor-pointer flex items-center justify-center transition-colors text-[12px] font-bold tracking-wide focus-ring"
                 style={{
-                  background: darkMode ? '#1E293B' : '#fff',
-                  borderColor: darkMode ? '#334155' : '#E2E8F0',
-                  color: '#64748B',
+                  background: '#1E293B',
+                  borderColor: '#334155',
+                  color: '#94A3B8',
                 }}
                 aria-label={`${savedReportsCount} saved report${savedReportsCount !== 1 ? 's' : ''}`}
               >
@@ -117,12 +120,9 @@ export function Navbar({
               </button>
             )}
 
-            {/* Dark mode */}
-            <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode} lang={lang} />
-
             {/* Premium badge */}
             {isPremium && (
-              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#4F46E5', background: '#E4E5FF' }}>
+              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#A5B4FC', background: 'rgba(99,102,241,0.15)' }}>
                 {premiumLabel}
               </span>
             )}
@@ -147,27 +147,12 @@ export function Navbar({
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
             <div className="flex flex-col gap-[5px] w-5">
-              <span
-                className="h-[2px] rounded-full transition-all duration-300"
-                style={{
-                  background: darkMode ? '#E2E8F0' : '#0F172A',
-                  transform: mobileOpen ? 'rotate(45deg) translateY(7px)' : 'none',
-                }}
-              />
-              <span
-                className="h-[2px] rounded-full transition-all duration-300"
-                style={{
-                  background: darkMode ? '#E2E8F0' : '#0F172A',
-                  opacity: mobileOpen ? 0 : 1,
-                }}
-              />
-              <span
-                className="h-[2px] rounded-full transition-all duration-300"
-                style={{
-                  background: darkMode ? '#E2E8F0' : '#0F172A',
-                  transform: mobileOpen ? 'rotate(-45deg) translateY(-7px)' : 'none',
-                }}
-              />
+              <span className="h-[2px] rounded-full transition-all duration-300"
+                style={{ background: '#E2E8F0', transform: mobileOpen ? 'rotate(45deg) translateY(7px)' : 'none' }} />
+              <span className="h-[2px] rounded-full transition-all duration-300"
+                style={{ background: '#E2E8F0', opacity: mobileOpen ? 0 : 1 }} />
+              <span className="h-[2px] rounded-full transition-all duration-300"
+                style={{ background: '#E2E8F0', transform: mobileOpen ? 'rotate(-45deg) translateY(-7px)' : 'none' }} />
             </div>
           </button>
         </div>
@@ -177,7 +162,7 @@ export function Navbar({
       {mobileOpen && (
         <div
           className="fixed inset-0 z-40 sm:hidden"
-          style={{ background: 'rgba(15,31,61,0.5)', backdropFilter: 'blur(4px)' }}
+          style={{ background: 'rgba(11,18,33,0.7)', backdropFilter: 'blur(4px)' }}
           onClick={closeMobile}
           aria-hidden="true"
         />
@@ -195,18 +180,18 @@ export function Navbar({
         }`}
         style={{
           height: 'calc(100vh - 4rem)',
-          background: darkMode ? '#0D1117' : '#FFFFFF',
-          borderLeft: `1px solid ${darkMode ? '#1E293B' : '#E2E8F0'}`,
-          boxShadow: '-8px 0 32px rgba(0,0,0,0.12)',
+          background: '#0D1117',
+          borderLeft: '1px solid #1E293B',
+          boxShadow: '-8px 0 32px rgba(0,0,0,0.3)',
         }}
       >
         <div className="flex flex-col gap-3 p-5 h-full overflow-y-auto">
           {/* Language */}
-          <div className="pb-3 border-b" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F0' }}>
-            <span className="text-[10px] font-bold tracking-[2px] uppercase mb-2 block" style={{ color: '#94A3B8' }}>
+          <div className="pb-3 border-b" style={{ borderColor: '#1E293B' }}>
+            <span className="text-[10px] font-bold tracking-[2px] uppercase mb-2 block" style={{ color: '#64748B' }}>
               {lang === 'es' ? 'Idioma' : 'Language'}
             </span>
-            <LanguageToggle lang={lang} setLang={(l) => { setLang(l); }} darkMode={darkMode} />
+            <LanguageToggle lang={lang} setLang={setLang} />
           </div>
 
           {/* Actions */}
@@ -215,47 +200,24 @@ export function Navbar({
               <button
                 onClick={() => { closeMobile(); onShowSaved(); }}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors text-sm font-medium focus-ring"
-                style={{
-                  background: darkMode ? '#161B22' : '#F8FAFC',
-                  color: darkMode ? '#E2E8F0' : '#334155',
-                }}
+                style={{ background: '#161B22', color: '#E2E8F0' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
                 </svg>
                 {lang === 'es' ? 'Mis informes' : 'My Reports'}
-                <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: '#E4E5FF', color: '#4F46E5' }}>
+                <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: 'rgba(99,102,241,0.15)', color: '#A5B4FC' }}>
                   {savedReportsCount}
                 </span>
               </button>
             )}
-
-            <button
-              onClick={() => { closeMobile(); setDarkMode(!darkMode); }}
-              className="flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors text-sm font-medium focus-ring"
-              style={{
-                background: darkMode ? '#161B22' : '#F8FAFC',
-                color: darkMode ? '#E2E8F0' : '#334155',
-              }}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d={darkMode
-                  ? "M12 3v1m0 16v1m9-9h-1M4 12H3m15.4 6.4l-.7-.7M6.3 6.3l-.7-.7m12.7 0l-.7.7M6.3 17.7l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                  : "M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"
-                } />
-              </svg>
-              {darkMode
-                ? (lang === 'es' ? 'Modo claro' : 'Light mode')
-                : (lang === 'es' ? 'Modo oscuro' : 'Dark mode')
-              }
-            </button>
           </div>
 
           {/* CTA */}
-          <div className="mt-auto pt-4 border-t" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F0' }}>
+          <div className="mt-auto pt-4 border-t" style={{ borderColor: '#1E293B' }}>
             {isPremium && (
               <div className="text-center mb-3">
-                <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#4F46E5', background: '#E4E5FF' }}>
+                <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#A5B4FC', background: 'rgba(99,102,241,0.15)' }}>
                   {premiumLabel}
                 </span>
               </div>
@@ -276,13 +238,13 @@ export function Navbar({
 
 /* --- Sub-components --- */
 
-function LanguageToggle({ lang, setLang, darkMode }: { lang: 'en' | 'es'; setLang: (l: 'en' | 'es') => void; darkMode: boolean }) {
+function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en' | 'es') => void }) {
   return (
     <div
       className="h-8 rounded-lg border flex items-center overflow-hidden transition-colors"
       role="radiogroup"
       aria-label="Language selection"
-      style={{ background: darkMode ? '#1E293B' : '#F8FAFC', borderColor: darkMode ? '#334155' : '#E2E8F0' }}
+      style={{ background: '#1E293B', borderColor: '#334155' }}
     >
       <button
         onClick={() => setLang('en')}
@@ -311,33 +273,5 @@ function LanguageToggle({ lang, setLang, darkMode }: { lang: 'en' | 'es'; setLan
         ES
       </button>
     </div>
-  );
-}
-
-function DarkModeToggle({ darkMode, setDarkMode, lang }: { darkMode: boolean; setDarkMode: (d: boolean) => void; lang: string }) {
-  return (
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      aria-label={darkMode
-        ? (lang === 'es' ? 'Cambiar a modo claro' : 'Switch to light mode')
-        : (lang === 'es' ? 'Cambiar a modo oscuro' : 'Switch to dark mode')
-      }
-      className="w-8 h-8 rounded-lg border cursor-pointer flex items-center justify-center transition-all duration-300 hover:scale-105 focus-ring"
-      style={{
-        background: darkMode ? 'linear-gradient(135deg, #1A2744, #243352)' : '#fff',
-        borderColor: darkMode ? 'rgba(64,64,242,0.19)' : '#E2E8F0',
-        boxShadow: darkMode ? '0 0 12px rgba(252,211,77,0.1)' : 'none',
-      }}
-    >
-      <div style={{ transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)', transform: darkMode ? 'rotate(360deg)' : 'rotate(0deg)' }}>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={darkMode ? '#FCD34D' : '#94A3B8'} strokeWidth="2" aria-hidden="true"
-          style={{ transition: 'stroke 0.3s ease' }}>
-          <path d={darkMode
-            ? "M12 3v1m0 16v1m9-9h-1M4 12H3m15.4 6.4l-.7-.7M6.3 6.3l-.7-.7m12.7 0l-.7.7M6.3 17.7l-.7.7M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-            : "M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"
-          } />
-        </svg>
-      </div>
-    </button>
   );
 }

@@ -50,7 +50,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
             style={{
               fontSize,
               letterSpacing: '-0.5px',
-              color: darkMode ? '#FFFFFF' : '#0F172A',
+              color: '#FFFFFF',
             }}
           >
             MyCase
@@ -60,7 +60,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
             style={{
               fontSize,
               letterSpacing: '-0.5px',
-              color: darkMode ? '#A5B4FC' : '#9CA3AF',
+              color: '#A5B4FC',
             }}
           >
             Value

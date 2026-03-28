@@ -55,7 +55,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#F5F7FA',
+  themeColor: '#0B1221',
 };
 
 // Schema.org structured data
@@ -144,7 +144,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         {/* Optimized font loading: preconnect + display=swap for non-blocking */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -162,14 +162,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="MyCaseValue" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="grain" suppressHydrationWarning>
+      <body className="grain dark" style={{ background: '#0B1221', color: '#F0F2F5' }} suppressHydrationWarning>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <ErrorBoundary>
           {children}
