@@ -22,15 +22,15 @@ export interface CaseNarrative {
 
 const categoryLabels: Record<string, string> = {
   work: 'Employment',
-  personal: 'Personal Injury',
-  contract: 'Contract Dispute',
-  property: 'Property',
-  consumer: 'Consumer Law',
+  injury: 'Personal Injury',
+  consumer: 'Consumer Protection',
+  rights: 'Civil Rights',
+  money: 'Business & Contract',
+  housing: 'Housing & Property',
+  medical: 'Healthcare & Benefits',
   family: 'Family Law',
-  ip: 'Intellectual Property',
-  criminal: 'Criminal',
-  civil_rights: 'Civil Rights',
-  tax: 'Tax Law',
+  gov: 'Government & Administrative',
+  education: 'Education',
 };
 
 const strengthPhrases = {

@@ -18,6 +18,7 @@ import {
   apiCall, formatRecoveryValue, getMockData,
 } from '../lib/data';
 import { TRANSLATIONS, Lang } from '../lib/i18n';
+import { generateCaseNarrative } from '../lib/ai-narrative';
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
@@ -975,7 +976,7 @@ function Shell({
           <footer className="border-t mt-16 pt-6 pb-8" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F0' }}>
             <div className="flex items-center gap-3 mb-4 flex-wrap">
               <span className="text-[11px] font-semibold text-slate-400">{lang === 'es' ? 'Datos verificados:' : 'Verified data:'}</span>
-              {['Federal Judicial Center', 'CourtListener', 'uscourts.gov'].map((n, i) => (
+              {['Federal Judicial Center', 'CourtListener', 'uscourts.gov', 'Google Scholar'].map((n, i) => (
                 <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-white border border-slate-200">{n}</span>
               ))}
               <span className="text-[10px] font-medium px-2 py-1 rounded-lg" style={{ background: '#CCFBF1', color: '#0D9488' }}>
@@ -3190,10 +3191,128 @@ export default function MyCaseValue() {
             </div>
           </Reveal>
 
+          {/* AI Deep Analysis — Personalized Narrative */}
+          {isPremium && (
+            <Reveal delay={50}>
+              <Card className="p-6 sm:p-8 gradient-border">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4040F2, #7C3AED)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 2a4 4 0 014 4c0 1.95-2 3-2 8h-4c0-5-2-6.05-2-8a4 4 0 014-4z"/><line x1="10" y1="22" x2="14" y2="22"/><line x1="10" y1="18" x2="14" y2="18"/><line x1="9" y1="20" x2="15" y2="20"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#7C3AED' }}>
+                      {lang === 'es' ? 'ANÁLISIS PERSONALIZADO' : 'PERSONALIZED ANALYSIS'}
+                    </div>
+                    <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
+                      {(() => {
+                        const narrative = generateCaseNarrative({
+                          category: sit?.id || 'work',
+                          subType: spec?.d || '',
+                          state: stateCode || 'US',
+                          timing: timing,
+                          amount: amount,
+                          attorney: attorney,
+                          winRate: wr / 100,
+                          medianTimeline: `${d.mo || 10} months`,
+                        });
+                        return narrative.headline;
+                      })()}
+                    </div>
+                  </div>
+                </div>
+
+                {(() => {
+                  const narrative = generateCaseNarrative({
+                    category: sit?.id || 'work',
+                    subType: spec?.d || '',
+                    state: stateCode || 'US',
+                    timing: timing,
+                    amount: amount,
+                    attorney: attorney,
+                    winRate: wr / 100,
+                    medianTimeline: `${d.mo || 10} months`,
+                  });
+
+                  const strengthColors = {
+                    strong: { bg: '#CCFBF1', text: '#0D9488', label: lang === 'es' ? 'Patrones favorables' : 'Favorable Patterns' },
+                    moderate: { bg: '#FEF3C7', text: '#D97706', label: lang === 'es' ? 'Patrones mixtos' : 'Mixed Patterns' },
+                    challenging: { bg: '#FEE2E2', text: '#E87461', label: lang === 'es' ? 'Patrones desafiantes' : 'Challenging Patterns' },
+                  };
+                  const sc = strengthColors[narrative.strengthIndicator];
+
+                  return (
+                    <>
+                      {/* Strength indicator */}
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ background: sc.bg, color: sc.text }}>{sc.label}</span>
+                        <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: darkMode ? '#1E293B' : '#F1F5F9' }}>
+                          <div className="h-full rounded-full transition-all duration-1000" style={{
+                            width: `${wr}%`,
+                            background: `linear-gradient(135deg, ${sc.text}, ${sc.text}90)`,
+                          }} />
+                        </div>
+                      </div>
+
+                      {/* Summary narrative */}
+                      <p className="text-[14px] leading-relaxed mb-5" style={{ color: darkMode ? '#CBD5E1' : '#475569' }}>
+                        {narrative.summary}
+                      </p>
+
+                      {/* Key insights */}
+                      <div className="mb-5">
+                        <div className="text-[11px] font-bold tracking-[1.5px] text-slate-400 mb-3">{lang === 'es' ? 'OBSERVACIONES CLAVE' : 'KEY INSIGHTS'}</div>
+                        <div className="space-y-3">
+                          {narrative.keyInsights.map((insight, i) => (
+                            <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#F8FAFC' }}>
+                              <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 text-[11px] font-bold" style={{ background: 'linear-gradient(135deg, #4040F220, #5C5CF520)', color: '#4040F2' }}>
+                                {i + 1}
+                              </div>
+                              <p className="text-[13px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{insight}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Timeline narrative */}
+                      <div className="mb-5 p-4 rounded-xl border" style={{ borderColor: darkMode ? '#334155' : '#E2E8F0', background: darkMode ? 'rgba(30,41,59,0.3)' : 'rgba(248,250,252,0.5)' }}>
+                        <div className="text-[11px] font-bold tracking-[1.5px] text-slate-400 mb-2">{lang === 'es' ? 'ANÁLISIS DE CRONOLOGÍA' : 'TIMELINE ANALYSIS'}</div>
+                        <p className="text-[13px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{narrative.timelineNarrative}</p>
+                      </div>
+
+                      {/* Comparison */}
+                      <div className="mb-5 p-4 rounded-xl" style={{ background: darkMode ? 'linear-gradient(135deg, #1A2744, #162035)' : 'linear-gradient(135deg, #EEF2FF, #F5F3FF)' }}>
+                        <div className="text-[11px] font-bold tracking-[1.5px] mb-2" style={{ color: '#4040F2' }}>{lang === 'es' ? 'COMPARACIÓN JURISDICCIONAL' : 'JURISDICTION COMPARISON'}</div>
+                        <p className="text-[13px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{narrative.comparisonNote}</p>
+                      </div>
+
+                      {/* Next steps */}
+                      <div className="mb-4">
+                        <div className="text-[11px] font-bold tracking-[1.5px] text-slate-400 mb-3">{lang === 'es' ? 'PASOS RECOMENDADOS' : 'RECOMMENDED NEXT STEPS'}</div>
+                        <div className="space-y-2">
+                          {narrative.nextSteps.map((step, i) => (
+                            <div key={i} className="flex items-start gap-2.5">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5" className="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12" /></svg>
+                              <p className="text-[13px] leading-relaxed m-0" style={{ color: darkMode ? '#94A3B8' : '#64748B' }}>{step}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Disclaimer */}
+                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic" style={{ background: darkMode ? 'rgba(30,41,59,0.5)' : '#FEF3C7', color: darkMode ? '#64748B' : '#92400E' }}>
+                        {narrative.disclaimer}
+                      </div>
+                    </>
+                  );
+                })()}
+              </Card>
+            </Reveal>
+          )}
+
           {/* === REPORT HEADER === */}
           <Reveal>
             <div className="h-[3px] rounded-full mb-0" style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)' }} />
-            <Card glow className="p-6 sm:p-8">
+            <Card glow className="p-6 sm:p-8 data-card">
               <div className="flex flex-col sm:flex-row justify-between items-start gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2 flex-wrap">

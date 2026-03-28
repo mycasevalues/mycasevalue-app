@@ -89,7 +89,7 @@ const jsonLd = {
     {
       '@type': 'Dataset',
       name: 'Federal Court Outcome Data',
-      description: 'Aggregate historical outcome data from 4.2M+ federal civil cases, sourced from the Federal Judicial Center Integrated Database and CourtListener.',
+      description: 'Aggregate historical outcome data from 4.2M+ federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and Google Scholar for legal scholarship context.',
       url: 'https://mycasevalues.com',
       license: 'https://www.usa.gov/government-copyright',
       creator: { '@type': 'Organization', name: 'Federal Judicial Center' },
@@ -98,6 +98,10 @@ const jsonLd = {
         encodingFormat: 'text/html',
         contentUrl: 'https://mycasevalues.com',
       },
+      spatialCoverage: 'United States Federal Courts',
+      temporalCoverage: '1970-present',
+      inLanguage: 'en',
+      isAccessibleForFree: true,
     },
     {
       '@type': 'BreadcrumbList',

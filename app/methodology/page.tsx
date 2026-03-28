@@ -56,6 +56,12 @@ export default function MethodologyPage() {
                   badge: 'Reference',
                   color: '#64748B',
                 },
+                {
+                  name: 'Google Scholar',
+                  description: 'MyCaseValue cross-references legal scholarship from Google Scholar to provide context on legal trends, key precedents, and scholarly analysis relevant to each case category. This supplementary source enriches case data with academic and expert perspectives.',
+                  badge: 'Supplementary',
+                  color: '#0D9488',
+                },
               ].map((source, i) => (
                 <div key={i} className="p-5 rounded-xl border" style={{ borderColor: '#E2E8F0', background: '#FFFFFF' }}>
                   <div className="flex items-start gap-3 mb-2">
