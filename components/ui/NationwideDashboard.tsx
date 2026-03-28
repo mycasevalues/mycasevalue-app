@@ -9,7 +9,7 @@ const METRICS = [
   { key: 'total', value: 4217834, label: 'Total Cases Analyzed', labelEs: 'Casos Analizados', color: '#4F46E5', icon: 'database' },
   { key: 'settled', value: 67, label: 'Settlement Rate', labelEs: 'Tasa de Acuerdos', color: '#0D9488', icon: 'handshake', suffix: '%' },
   { key: 'median', value: 85, label: 'Median Recovery ($K)', labelEs: 'Recuperación Mediana ($K)', color: '#D97706', icon: 'dollar', prefix: '$', suffix: 'K' },
-  { key: 'duration', value: 11.2, label: 'Avg Duration (months)', labelEs: 'Duración Promedio (meses)', color: '#1A2744', icon: 'clock', suffix: ' mo' },
+  { key: 'duration', value: 11.2, label: 'Avg Duration (months)', labelEs: 'Duración Promedio (meses)', color: '#A5B4FC', icon: 'clock', suffix: ' mo' },
 ];
 
 const YEAR_DATA = [
@@ -121,7 +121,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
                       ? 'linear-gradient(to top, #4F46E5, #6366F1)'
                       : i === YEAR_DATA.length - 1
                         ? 'linear-gradient(to top, #0D9488, #14B8A6)'
-                        : 'linear-gradient(to top, rgba(99,102,241,0.4), rgba(99,102,241,0.6))',
+                        : 'linear-gradient(to top, rgba(99,102,241,0.6), rgba(99,102,241,0.85))',
                     boxShadow: isHovered ? '0 0 20px rgba(79,70,229,0.4)' : 'none',
                     transform: isHovered ? 'scaleX(1.1)' : 'scaleX(1)',
                   }}
