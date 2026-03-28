@@ -57,10 +57,10 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
               onClick={() => setActiveTab(tab.id as any)}
               className="px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200"
               style={{
-                color: activeTab === tab.id ? '#4040F2' : '#94A3B8',
+                color: activeTab === tab.id ? '#4F46E5' : '#94A3B8',
                 background: activeTab === tab.id ? '#E4E5FF' : 'transparent',
                 borderBottom:
-                  activeTab === tab.id ? '2px solid #4040F2' : 'none',
+                  activeTab === tab.id ? '2px solid #4F46E5' : 'none',
               }}
             >
               {tab.label}
@@ -104,7 +104,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                     </span>
                     <span
                       className="text-sm font-bold"
-                      style={{ color: '#4040F2' }}
+                      style={{ color: '#4F46E5' }}
                     >
                       {item.rate}%
                     </span>
@@ -124,10 +124,10 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                           x2="100%"
                           y2="0%"
                         >
-                          <stop offset="0%" style={{ stopColor: '#4040F2', stopOpacity: 0.8 }} />
+                          <stop offset="0%" style={{ stopColor: '#4F46E5', stopOpacity: 0.8 }} />
                           <stop
                             offset="100%"
-                            style={{ stopColor: '#5C5CF5', stopOpacity: 1 }}
+                            style={{ stopColor: '#6366F1', stopOpacity: 1 }}
                           />
                         </linearGradient>
                       </defs>
@@ -147,7 +147,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
 
             <div
               className="mt-6 p-4 rounded-lg border text-xs text-slate-600"
-              style={{ background: '#E4E5FF20', borderColor: '#4040F240' }}
+              style={{ background: '#E4E5FF20', borderColor: '#4F46E540' }}
             >
               {lang === 'es'
                 ? '📊 Estas tasas reflejan todos los casos federales civiles en los últimos 5 años.'
@@ -176,8 +176,8 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
               <svg width="100%" height="280" viewBox="0 0 400 280">
                 <defs>
                   <linearGradient id="settlementGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                    <stop offset="0%" style={{ stopColor: '#4040F2', stopOpacity: 0.4 }} />
-                    <stop offset="100%" style={{ stopColor: '#4040F2', stopOpacity: 0.8 }} />
+                    <stop offset="0%" style={{ stopColor: '#4F46E5', stopOpacity: 0.4 }} />
+                    <stop offset="100%" style={{ stopColor: '#4F46E5', stopOpacity: 0.8 }} />
                   </linearGradient>
                 </defs>
 
@@ -249,13 +249,13 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                   y1="240"
                   x2="150"
                   y2="30"
-                  stroke="#4040F2"
+                  stroke="#4F46E5"
                   strokeWidth="2"
                   strokeDasharray="4 2"
                   opacity="0.5"
                 />
-                <circle cx="150" cy="25" r="3" fill="#4040F2" />
-                <text x="150" y="15" fontSize="11" fill="#4040F2" textAnchor="middle" fontWeight="600">
+                <circle cx="150" cy="25" r="3" fill="#4F46E5" />
+                <text x="150" y="15" fontSize="11" fill="#4F46E5" textAnchor="middle" fontWeight="600">
                   {lang === 'es' ? 'Mediana' : 'Median'}
                 </text>
               </svg>
@@ -263,9 +263,9 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
 
             <div
               className="p-4 rounded-lg border-l-4 text-sm"
-              style={{ background: '#E4E5FF20', borderColor: '#4040F2' }}
+              style={{ background: '#E4E5FF20', borderColor: '#4F46E5' }}
             >
-              <div className="font-semibold mb-1" style={{ color: '#4040F2' }}>
+              <div className="font-semibold mb-1" style={{ color: '#4F46E5' }}>
                 {lang === 'es' ? 'Monto Medio: $127,500' : 'Median Settlement: $127,500'}
               </div>
               <p className="text-slate-600">
@@ -305,19 +305,19 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                   phase: lang === 'es' ? 'Presentación' : 'Filing & Investigation',
                   duration: '1-3 meses',
                   width: 16,
-                  color: '#4040F2',
+                  color: '#4F46E5',
                 },
                 {
                   phase: lang === 'es' ? 'Descubrimiento' : 'Discovery',
                   duration: '3-8 meses',
                   width: 40,
-                  color: '#4040F2',
+                  color: '#4F46E5',
                 },
                 {
                   phase: lang === 'es' ? 'Negociación' : 'Settlement Negotiation',
                   duration: '8-12 meses',
                   width: 32,
-                  color: '#5C5CF5',
+                  color: '#6366F1',
                 },
                 {
                   phase: lang === 'es' ? 'Juicio (si aplica)' : 'Trial (if needed)',
@@ -350,7 +350,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
 
             <div
               className="mt-6 p-4 rounded-lg border text-xs text-slate-600"
-              style={{ background: '#E4E5FF20', borderColor: '#4040F240' }}
+              style={{ background: '#E4E5FF20', borderColor: '#4F46E540' }}
             >
               {lang === 'es'
                 ? '⏱️ El 67% de los casos se resuelven en la fase de negociación. Los plazos varían según el tipo de caso y la complejidad.'

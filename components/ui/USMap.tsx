@@ -94,7 +94,7 @@ function getHeatColor(rate: number): string {
   if (rate >= 58) return '#059669';  // Emerald
   if (rate >= 54) return '#0D9488';  // Teal
   if (rate >= 50) return '#14B8A6';  // Light teal
-  if (rate >= 46) return '#4040F2';  // Brand blue
+  if (rate >= 46) return '#4F46E5';  // Brand blue
   if (rate >= 42) return '#D97706';  // Amber
   if (rate >= 38) return '#E87461';  // Coral
   return '#DC2626';                   // Red
@@ -196,7 +196,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
                     d={path}
                     fill={fill}
                     fillOpacity={hasData ? (isHovered || isSelected ? 1 : 0.8) : 0.25}
-                    stroke={isSelected ? '#4040F2' : isHovered ? '#0F172A' : hasData ? 'rgba(255,255,255,0.6)' : 'rgba(226,232,240,0.5)'}
+                    stroke={isSelected ? '#4F46E5' : isHovered ? '#0F172A' : hasData ? 'rgba(255,255,255,0.6)' : 'rgba(226,232,240,0.5)'}
                     strokeWidth={isSelected ? 2.5 : isHovered ? 2 : 0.8}
                     className="cursor-pointer"
                     style={{
@@ -281,7 +281,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
           <div className="flex-1" style={{ background: '#DC2626' }} />
           <div className="flex-1" style={{ background: '#E87461' }} />
           <div className="flex-1" style={{ background: '#D97706' }} />
-          <div className="flex-1" style={{ background: '#4040F2' }} />
+          <div className="flex-1" style={{ background: '#4F46E5' }} />
           <div className="flex-1" style={{ background: '#14B8A6' }} />
           <div className="flex-1" style={{ background: '#0D9488' }} />
           <div className="flex-1" style={{ background: '#059669' }} />

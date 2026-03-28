@@ -12,13 +12,13 @@ export default function MethodologyPage() {
       {/* Header */}
       <div className="border-b" style={{ borderColor: '#E2E8F0', background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4040F2' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E4E5FF', color: '#4040F2' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: '#E4E5FF', color: '#4F46E5' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             TRANSPARENCY
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#0F172A', letterSpacing: '-1.5px' }}>
@@ -42,7 +42,7 @@ export default function MethodologyPage() {
                   name: 'Federal Judicial Center — Integrated Database (IDB)',
                   description: 'The IDB contains case-level data for every federal civil case filed since 1970, maintained by the Federal Judicial Center as a public statistical resource. It includes case type (Nature of Suit code), final disposition, procedural progress, jurisdiction basis, and case duration.',
                   badge: 'Primary Source',
-                  color: '#4040F2',
+                  color: '#4F46E5',
                 },
                 {
                   name: 'CourtListener (Free Law Project)',
@@ -89,7 +89,7 @@ export default function MethodologyPage() {
               ].map((s, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-sm font-data font-bold"
-                    style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)', color: '#fff' }}>
+                    style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', color: '#fff' }}>
                     {s.step}
                   </div>
                   <div>
@@ -120,7 +120,7 @@ export default function MethodologyPage() {
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#0F172A' }}>Dataset Coverage</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '4.2M+', l: 'Federal cases', c: '#4040F2' },
+                { v: '4.2M+', l: 'Federal cases', c: '#4F46E5' },
                 { v: '50+', l: 'Years of data', c: '#0D9488' },
                 { v: '20+', l: 'Case categories', c: '#1A3260' },
                 { v: '94', l: 'Federal districts', c: '#64748B' },
@@ -146,7 +146,7 @@ export default function MethodologyPage() {
             <p className="text-sm text-slate-400 mb-4">Questions about our methodology?</p>
             <a href="mailto:support@mycasevalue.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-              style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', color: '#4040F2' }}>
+              style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', color: '#4F46E5' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Contact Us
             </a>

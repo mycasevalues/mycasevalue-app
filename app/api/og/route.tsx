@@ -60,14 +60,14 @@ export async function GET(request: Request) {
               xmlns="http://www.w3.org/2000/svg"
             >
               {/* Dot */}
-              <circle cx="8" cy="14" r="4.5" fill="#4040F2" />
+              <circle cx="8" cy="14" r="4.5" fill="#4F46E5" />
               {/* Slash */}
               <line
                 x1="18"
                 y1="6"
                 x2="10"
                 y2="22"
-                stroke="#4040F2"
+                stroke="#4F46E5"
                 strokeWidth="3"
                 strokeLinecap="round"
               />
@@ -133,17 +133,17 @@ export async function GET(request: Request) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#4040F2', fontWeight: '700' }}>4.2M+</span>
+              <span style={{ color: '#4F46E5', fontWeight: '700' }}>4.2M+</span>
               <span style={{ color: '#a0a9d4' }}>Cases</span>
             </div>
-            <div style={{ color: '#4040F2' }}>•</div>
+            <div style={{ color: '#4F46E5' }}>•</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#4040F2', fontWeight: '700' }}>50+</span>
+              <span style={{ color: '#4F46E5', fontWeight: '700' }}>50+</span>
               <span style={{ color: '#a0a9d4' }}>Years</span>
             </div>
-            <div style={{ color: '#4040F2' }}>•</div>
+            <div style={{ color: '#4F46E5' }}>•</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#4040F2', fontWeight: '700' }}>94</span>
+              <span style={{ color: '#4F46E5', fontWeight: '700' }}>94</span>
               <span style={{ color: '#a0a9d4' }}>Districts</span>
             </div>
           </div>
@@ -153,7 +153,7 @@ export async function GET(request: Request) {
             style={{
               width: '100px',
               height: '3px',
-              background: 'linear-gradient(90deg, #4040F2 0%, transparent 100%)',
+              background: 'linear-gradient(90deg, #4F46E5 0%, transparent 100%)',
               marginTop: '32px',
               position: 'relative',
               zIndex: 1,

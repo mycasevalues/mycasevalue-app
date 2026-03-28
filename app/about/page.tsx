@@ -56,13 +56,13 @@ export default function AboutPage() {
       {/* Header */}
       <div className="border-b" style={{ borderColor: '#E2E8F0', background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4040F2' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E4E5FF', color: '#4040F2' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: '#E4E5FF', color: '#4F46E5' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             ABOUT US
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#0F172A', letterSpacing: '-1.5px' }}>
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 {
                   name: 'Federal Judicial Center (FJC) Integrated Database',
                   description: 'The official source for federal civil case statistics since 1970. Covers case type, disposition, and duration for every federal civil case.',
-                  color: '#4040F2',
+                  color: '#4F46E5',
                 },
                 {
                   name: 'CourtListener (Free Law Project)',
@@ -203,7 +203,7 @@ export default function AboutPage() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '4.2M+', l: 'Federal cases', c: '#4040F2' },
+                { v: '4.2M+', l: 'Federal cases', c: '#4F46E5' },
                 { v: '50+', l: 'Case types', c: '#0D9488' },
                 { v: '94', l: 'Federal districts', c: '#1A3260' },
                 { v: '50+ yrs', l: 'Historical data', c: '#64748B' },
@@ -226,7 +226,7 @@ export default function AboutPage() {
             </p>
             <a href="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#4040F2', color: '#FFFFFF' }}>
+              style={{ background: '#4F46E5', color: '#FFFFFF' }}>
               Start Researching
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>

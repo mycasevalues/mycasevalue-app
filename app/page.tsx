@@ -18,7 +18,7 @@ const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
         <div style={{
           position: 'absolute', inset: 0, borderRadius: '50%',
           border: '3px solid rgba(64, 64, 242, 0.12)',
-          borderTopColor: '#4040F2',
+          borderTopColor: '#4F46E5',
           animation: 'spin 0.8s linear infinite',
         }} />
       </div>

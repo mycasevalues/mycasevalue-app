@@ -50,7 +50,7 @@ export default function CasesIndexPage() {
       {/* Header */}
       <div style={{ background: 'white', borderBottom: '1px solid rgba(0,0,0,0.08)', padding: '60px 20px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4040F2' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
@@ -67,7 +67,7 @@ export default function CasesIndexPage() {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '60px 20px' }}>
         <style dangerouslySetInnerHTML={{ __html: `
           .cat-card { background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 32px; transition: all 0.3s ease; height: 100%; }
-          .cat-card:hover { transform: translateY(-4px); box-shadow: 0 4px 20px rgba(64,64,242,0.12); border-color: #4040F2; }
+          .cat-card:hover { transform: translateY(-4px); box-shadow: 0 4px 20px rgba(64,64,242,0.12); border-color: #4F46E5; }
         `}} />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
           {SITS.map((category) => (
@@ -78,7 +78,7 @@ export default function CasesIndexPage() {
                   {category.label}
                 </h2>
                 <p style={{ fontSize: 14, color: '#64748B', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
-                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid rgba(0,0,0,0.08)', fontSize: 13, color: '#4040F2', fontWeight: 500 }}>
+                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid rgba(0,0,0,0.08)', fontSize: 13, color: '#4F46E5', fontWeight: 500 }}>
                   {category.opts.length} types covered →
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* CTA */}
-      <div style={{ background: 'linear-gradient(135deg, #4040F2, #7C3AED)', padding: '60px 20px', textAlign: 'center' }}>
+      <div style={{ background: 'linear-gradient(135deg, #4F46E5, #7C3AED)', padding: '60px 20px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 className="font-display" style={{ fontSize: 32, fontWeight: 700, color: 'white', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
@@ -96,7 +96,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/#search" style={{ display: 'inline-block', background: 'white', color: '#4040F2', padding: '14px 36px', borderRadius: 8, fontWeight: 600, fontSize: 16, textDecoration: 'none' }}>
+          <a href="/#search" style={{ display: 'inline-block', background: 'white', color: '#4F46E5', padding: '14px 36px', borderRadius: 8, fontWeight: 600, fontSize: 16, textDecoration: 'none' }}>
             Start Researching →
           </a>
         </div>

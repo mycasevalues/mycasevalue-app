@@ -319,13 +319,13 @@ export default function FAQPage() {
       {/* Header */}
       <div className="border-b" style={{ borderColor: '#E2E8F0', background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4040F2' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E4E5FF', color: '#4040F2' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4040F2" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: '#E4E5FF', color: '#4F46E5' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             FAQ
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#0F172A', letterSpacing: '-1.5px' }}>
@@ -367,7 +367,7 @@ export default function FAQPage() {
                         stroke="currentColor"
                         strokeWidth="2"
                         className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        style={{ color: '#4040F2', marginTop: '2px' }}
+                        style={{ color: '#4F46E5', marginTop: '2px' }}
                       >
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
@@ -394,7 +394,7 @@ export default function FAQPage() {
           </p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-            style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', color: '#4040F2' }}>
+            style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', color: '#4F46E5' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

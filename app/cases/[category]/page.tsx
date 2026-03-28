@@ -379,11 +379,11 @@ async function CategoryPage({
           color: '#64748B',
           fontFamily: 'Outfit, system-ui, sans-serif',
         }}>
-          <Link href="/" style={{ color: '#4040F2', textDecoration: 'none' }}>
+          <Link href="/" style={{ color: '#4F46E5', textDecoration: 'none' }}>
             Home
           </Link>
           {' / '}
-          <Link href="/cases" style={{ color: '#4040F2', textDecoration: 'none' }}>
+          <Link href="/cases" style={{ color: '#4F46E5', textDecoration: 'none' }}>
             Cases
           </Link>
           {' / '}

@@ -1,6 +1,5 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Small dot — upper left -->
-  <circle cx="12" cy="9" r="5" fill="#4040F2"/>
-  <!-- Diagonal capsule / slash -->
-  <line x1="25" y1="43" x2="31" y2="7" stroke="#4040F2" stroke-width="11" stroke-linecap="round"/>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="120" height="120" rx="26" fill="#4F46E5"/>
+  <circle cx="38" cy="34" r="11" fill="white"/>
+  <line x1="34" y1="95" x2="52" y2="52" stroke="white" stroke-width="16" stroke-linecap="round"/>
 </svg>

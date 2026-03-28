@@ -40,7 +40,7 @@ export default function TrustBar({ lang }: TrustBarProps) {
                 className="text-3xl sm:text-4xl font-bold mb-2"
                 style={{
                   fontFamily: '"JetBrains Mono", "Courier New", monospace',
-                  color: '#4040F2',
+                  color: '#4F46E5',
                   letterSpacing: '-0.5px',
                 }}
               >

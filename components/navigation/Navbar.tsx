@@ -78,7 +78,7 @@ export function Navbar({
           <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: darkMode ? 'rgba(255,255,255,0.05)' : 'rgba(226,232,240,0.3)' }}>
             <div className="h-full transition-none" style={{
               width: `${scrollProgress * 100}%`,
-              background: 'linear-gradient(90deg, #4040F2, #0D9488)',
+              background: 'linear-gradient(90deg, #4F46E5, #0D9488)',
               boxShadow: '0 0 8px rgba(64,64,242,0.3)',
             }} />
           </div>
@@ -122,7 +122,7 @@ export function Navbar({
 
             {/* Premium badge */}
             {isPremium && (
-              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#4040F2', background: '#E4E5FF' }}>
+              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#4F46E5', background: '#E4E5FF' }}>
                 {premiumLabel}
               </span>
             )}
@@ -131,7 +131,7 @@ export function Navbar({
             <button
               onClick={onNewReport}
               className="text-sm font-semibold px-5 py-2.5 text-white border-none rounded-full cursor-pointer no-print hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 focus-ring"
-              style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)', boxShadow: '0 2px 12px rgba(64,64,242,.25)' }}
+              style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 2px 12px rgba(64,64,242,.25)' }}
             >
               {newReportLabel}
             </button>
@@ -224,7 +224,7 @@ export function Navbar({
                   <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
                 </svg>
                 {lang === 'es' ? 'Mis informes' : 'My Reports'}
-                <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: '#E4E5FF', color: '#4040F2' }}>
+                <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: '#E4E5FF', color: '#4F46E5' }}>
                   {savedReportsCount}
                 </span>
               </button>
@@ -255,7 +255,7 @@ export function Navbar({
           <div className="mt-auto pt-4 border-t" style={{ borderColor: darkMode ? '#1E293B' : '#E2E8F0' }}>
             {isPremium && (
               <div className="text-center mb-3">
-                <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#4040F2', background: '#E4E5FF' }}>
+                <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#4F46E5', background: '#E4E5FF' }}>
                   {premiumLabel}
                 </span>
               </div>
@@ -263,7 +263,7 @@ export function Navbar({
             <button
               onClick={() => { closeMobile(); onNewReport(); }}
               className="w-full py-3 text-sm font-semibold text-white border-none rounded-xl cursor-pointer transition-all focus-ring"
-              style={{ background: 'linear-gradient(135deg, #4040F2, #5C5CF5)', boxShadow: '0 2px 12px rgba(64,64,242,.25)' }}
+              style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 2px 12px rgba(64,64,242,.25)' }}
             >
               {newReportLabel}
             </button>
@@ -291,7 +291,7 @@ function LanguageToggle({ lang, setLang, darkMode }: { lang: 'en' | 'es'; setLan
         aria-label="English"
         className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200 focus-ring"
         style={{
-          background: lang === 'en' ? 'linear-gradient(135deg, #4040F2, #5C5CF5)' : 'transparent',
+          background: lang === 'en' ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent',
           color: lang === 'en' ? '#fff' : '#94A3B8',
         }}
       >
@@ -304,7 +304,7 @@ function LanguageToggle({ lang, setLang, darkMode }: { lang: 'en' | 'es'; setLan
         aria-label="Español"
         className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200 focus-ring"
         style={{
-          background: lang === 'es' ? 'linear-gradient(135deg, #4040F2, #5C5CF5)' : 'transparent',
+          background: lang === 'es' ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent',
           color: lang === 'es' ? '#fff' : '#94A3B8',
         }}
       >
