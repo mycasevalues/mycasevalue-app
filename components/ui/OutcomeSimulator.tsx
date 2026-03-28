@@ -129,8 +129,8 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                 className="simulator-slider w-full"
                 style={{ '--slider-pct': `${damageAmount}%` } as any} />
               <div className="flex justify-between mt-1">
-                <span className="text-[10px] text-slate-500">{formatDollar(Math.round(ct.baseMd * 0.3))}</span>
-                <span className="text-[10px] text-slate-500">{formatDollar(Math.round(ct.baseMd * 2.7))}</span>
+                <span className="text-[10px] text-[#94A3B8]">{formatDollar(Math.round(ct.baseMd * 0.3))}</span>
+                <span className="text-[10px] text-[#94A3B8]">{formatDollar(Math.round(ct.baseMd * 2.7))}</span>
               </div>
             </div>
 
@@ -149,8 +149,8 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                 className="simulator-slider w-full"
                 style={{ '--slider-pct': `${jurisdiction}%` } as any} />
               <div className="flex justify-between mt-1">
-                <span className="text-[10px] text-slate-500">{es ? 'Menos favorable' : 'Less favorable'}</span>
-                <span className="text-[10px] text-slate-500">{es ? 'Más favorable' : 'More favorable'}</span>
+                <span className="text-[10px] text-[#94A3B8]">{es ? 'Menos favorable' : 'Less favorable'}</span>
+                <span className="text-[10px] text-[#94A3B8]">{es ? 'Más favorable' : 'More favorable'}</span>
               </div>
             </div>
 
@@ -163,7 +163,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                 <div className="text-[13px] font-semibold text-slate-200">
                   {es ? 'Representación legal' : 'Attorney Representation'}
                 </div>
-                <div className="text-[11px] text-slate-500 mt-0.5">
+                <div className="text-[11px] text-[#94A3B8] mt-0.5">
                   {hasAttorney
                     ? (es ? 'Abogados aumentan las tasas de éxito ~3.4x' : 'Attorneys increase win rates ~3.4x')
                     : (es ? 'Autrepresentación (pro se)' : 'Self-representation (pro se)')}
@@ -188,7 +188,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             }}>
               {/* Projected Win Rate — large gauge */}
               <div className="text-center mb-5">
-                <div className="text-[10px] font-bold tracking-[2px] uppercase text-slate-500 mb-2">
+                <div className="text-[10px] font-bold tracking-[2px] uppercase text-[#94A3B8] mb-2">
                   {es ? 'TASA DE ÉXITO PROYECTADA' : 'PROJECTED WIN RATE'}
                 </div>
                 <div className="relative inline-block w-[120px] sm:w-[140px]">
@@ -241,7 +241,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                     <div className="text-[16px] font-display font-bold" style={{ color: s.color, transition: 'all 0.4s ease' }}>
                       {s.value}
                     </div>
-                    <div className="text-[9px] font-semibold text-slate-500 mt-0.5">{s.label}</div>
+                    <div className="text-[9px] font-semibold text-[#94A3B8] mt-0.5">{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -254,7 +254,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                   { label: es ? 'Desestimado' : 'Dismissed', pct: Math.round(100 - projected.wr - projected.settlePct * 0.5), color: '#E87461' },
                 ].map((bar, i) => (
                   <div key={i} className="flex items-center gap-2">
-                    <span className="text-[10px] text-slate-500 w-20 text-right">{bar.label}</span>
+                    <span className="text-[10px] text-[#94A3B8] w-20 text-right">{bar.label}</span>
                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
                       <div className="h-full rounded-full" style={{
                         width: `${Math.max(5, Math.min(95, bar.pct))}%`,
@@ -279,7 +279,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             </button>
 
             <div className="text-center mt-2">
-              <span className="text-[10px] text-slate-500">
+              <span className="text-[10px] text-[#94A3B8]">
                 {es ? 'Basado en 4M+ casos federales · No es asesoría legal' : 'Based on 4M+ federal cases · Not legal advice'}
               </span>
             </div>

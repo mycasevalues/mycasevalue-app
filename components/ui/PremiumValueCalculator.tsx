@@ -82,7 +82,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
                 </div>
                 <div>
                   <div className="text-[12px] font-semibold text-[#CBD5E1]">{es ? 'Ahorro en consulta legal' : 'Legal consultation savings'}</div>
-                  <div className="text-[10px] text-slate-500">{es ? 'vs. consulta inicial con abogado' : 'vs. initial attorney consultation'}</div>
+                  <div className="text-[10px] text-[#94A3B8]">{es ? 'vs. consulta inicial con abogado' : 'vs. initial attorney consultation'}</div>
                 </div>
               </div>
               <div className="text-[15px] font-bold font-mono" style={{ color: '#0D9488' }}>
@@ -98,7 +98,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
               </div>
               <div>
                 <div className="text-[12px] font-semibold text-[#CBD5E1]">{es ? 'Valor de los datos de recuperación' : 'Recovery data insight value'}</div>
-                <div className="text-[10px] text-slate-500">{es ? 'Conocer los rangos típicos de tu caso' : 'Knowing typical ranges for your case'}</div>
+                <div className="text-[10px] text-[#94A3B8]">{es ? 'Conocer los rangos típicos de tu caso' : 'Knowing typical ranges for your case'}</div>
               </div>
             </div>
             <div className="text-[15px] font-bold font-mono" style={{ color: '#6366F1' }}>
@@ -113,7 +113,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
               </div>
               <div>
                 <div className="text-[12px] font-semibold text-[#CBD5E1]">{es ? 'Mejora en tasa de éxito' : 'Informed decision advantage'}</div>
-                <div className="text-[10px] text-slate-500">{es ? 'Personas informadas toman mejores decisiones' : 'Informed people make better choices'}</div>
+                <div className="text-[10px] text-[#94A3B8]">{es ? 'Personas informadas toman mejores decisiones' : 'Informed people make better choices'}</div>
               </div>
             </div>
             <div className="text-[15px] font-bold font-mono" style={{ color: '#D97706' }}>
@@ -139,7 +139,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
           </div>
           <div className="mt-3 pt-3" style={{ borderTop: '1px solid rgba(79,70,229,0.15)' }}>
             <div className="flex items-center justify-between">
-              <span className="text-[12px] font-bold text-slate-500">{es ? 'Retorno de inversión' : 'Return on investment'}</span>
+              <span className="text-[12px] font-bold text-[#94A3B8]">{es ? 'Retorno de inversión' : 'Return on investment'}</span>
               <div className="flex items-center gap-2">
                 <span className="text-[18px] font-display font-extrabold" style={{ color: '#5EEAD4' }}>
                   {savings.roi.toLocaleString()}x

@@ -62,7 +62,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
           <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           <span className="text-[13px] font-semibold text-white">{es ? 'Actividad en tiempo real' : 'Live Case Activity'}</span>
         </div>
-        <div className="text-[11px] text-slate-500 font-mono">
+        <div className="text-[11px] text-[#94A3B8] font-mono">
           {es ? 'Actualizado cada 30s' : 'Updates every 30s'}
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
                   }}>
                     {isWon ? (es ? 'Ganado' : 'Won') : (es ? 'Acuerdo' : 'Settled')}
                   </span>
-                  <span className="text-[10px] text-slate-500">{ev.state}</span>
+                  <span className="text-[10px] text-[#94A3B8]">{ev.state}</span>
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
                 <div className="text-[14px] font-bold font-mono" style={{ color: isWon ? '#0D9488' : '#6366F1' }}>
                   {ev.amount}
                 </div>
-                <div className="text-[10px] text-slate-500">{ev.time}</div>
+                <div className="text-[10px] text-[#94A3B8]">{ev.time}</div>
               </div>
             </div>
           );
