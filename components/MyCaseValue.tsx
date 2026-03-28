@@ -3167,7 +3167,8 @@ export default function MyCaseValue() {
     // Loading
     if (loading) return (
       <Shell {...shellProps}>
-        <div className="max-w-3xl mx-auto py-8">
+        <div className="max-w-3xl mx-auto py-8 relative scan-line">
+          {/* Animated header skeleton */}
           <div className="flex justify-between mb-6">
             <div className="flex-1">
               <div className="h-3 w-44 rounded-lg skeleton" />
@@ -3175,40 +3176,87 @@ export default function MyCaseValue() {
             </div>
             <div className="h-11 w-24 rounded-lg skeleton" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-            {[1, 2, 3].map(i => (
-              <div key={i} className="p-5 border border-[#1E293B] rounded-2xl">
-                <div className="h-2.5 w-14 rounded skeleton" />
-                <div className="h-9 w-1/2 rounded mt-2.5 skeleton" />
+
+          {/* Animated metric cards with stagger */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 stagger-in">
+            {[
+              { label: lang === 'es' ? 'Registros' : 'Records', color: '#4F46E5' },
+              { label: lang === 'es' ? 'Comparando' : 'Matching', color: '#0D9488' },
+              { label: lang === 'es' ? 'Analizando' : 'Analyzing', color: '#A5B4FC' },
+            ].map((item, i) => (
+              <div key={i} className="p-5 border border-[#1E293B] rounded-2xl glass-premium" style={{ animationDelay: `${i * 100}ms` }}>
+                <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: item.color }}>{item.label}</div>
+                <div className="h-8 w-2/3 rounded skeleton" />
+                {loadPct > (i + 1) * 25 && (
+                  <div className="mt-2 h-1.5 rounded-full overflow-hidden" style={{ background: '#1E293B' }}>
+                    <div className="h-full rounded-full transition-all duration-500" style={{ width: '100%', background: `linear-gradient(90deg, ${item.color}, ${item.color}80)` }} />
+                  </div>
+                )}
               </div>
             ))}
           </div>
-          <div className="w-full h-1.5 bg-[#1E293B] rounded-full overflow-hidden mb-3">
-            <div className="h-full rounded-full transition-all duration-300" style={{ width: `${loadPct}%`, background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
+
+          {/* Main progress bar with glow */}
+          <div className="w-full h-2 bg-[#1E293B] rounded-full overflow-hidden mb-4 relative">
+            <div className="h-full rounded-full transition-all duration-300" style={{
+              width: `${loadPct}%`,
+              background: 'linear-gradient(135deg, #4F46E5, #6366F1, #0D9488)',
+              boxShadow: '0 0 20px rgba(79,70,229,0.4)',
+            }} />
           </div>
+
+          {/* Progress ring + status */}
           <div className="flex flex-col items-center">
-            <div className="mb-3">
-              <ProgressRing pct={loadPct} size={56} />
+            <div className="mb-3 relative">
+              <ProgressRing pct={loadPct} size={64} />
+              <div className="absolute inset-0 rounded-full morph-blob" style={{ background: 'radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%)', transform: 'scale(2)' }} />
             </div>
-            <div className="text-[15px] text-[#94A3B8] mb-2 text-center">
+            <div className="text-[15px] text-[#CBD5E1] mb-2 text-center font-medium">
               {lang === 'es' ? (
                 loadPct < 15 ? `Buscando en ${totalDisplay} registros judiciales...`
                 : loadPct < 30 ? `Coincidiendo ${spec?.d || 'tu situación'} en la base de datos...`
                 : loadPct < 50 ? 'Cruzando datos con CourtListener...'
                 : loadPct < 70 ? 'Agregando resultados históricos...'
                 : loadPct < 85 ? `Analizando ${(spec && MOCK_DATA[spec.nos]) ? MOCK_DATA[spec.nos].total.toLocaleString() : '287,420'} casos similares...`
-                : 'Casi listo...'
+                : 'Generando tu informe personalizado...'
               ) : (
                 loadPct < 15 ? `Searching ${totalDisplay} court records...`
                 : loadPct < 30 ? `Matching ${spec?.d || 'your situation'} in the database...`
                 : loadPct < 50 ? 'Cross-referencing CourtListener...'
                 : loadPct < 70 ? 'Aggregating historical outcomes...'
                 : loadPct < 85 ? `Analyzing ${(spec && MOCK_DATA[spec.nos]) ? MOCK_DATA[spec.nos].total.toLocaleString() : '287,420'} similar cases...`
-                : 'Almost there...'
+                : 'Generating your personalized report...'
               )}
             </div>
+
+            {/* Data source badges */}
+            {loadPct > 20 && (
+              <div className="flex flex-wrap gap-2 mt-3 justify-center">
+                {[
+                  { name: 'Federal Judicial Center', done: loadPct > 30 },
+                  { name: 'CourtListener', done: loadPct > 50 },
+                  { name: 'PACER Records', done: loadPct > 70 },
+                ].map((src, i) => (
+                  <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-all" style={{
+                    background: src.done ? 'rgba(13,148,136,0.1)' : 'rgba(255,255,255,0.03)',
+                    border: `1px solid ${src.done ? 'rgba(13,148,136,0.2)' : '#1E293B'}`,
+                    color: src.done ? '#0D9488' : '#64748B',
+                  }}>
+                    {src.done ? (
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                    ) : (
+                      <div className="w-2.5 h-2.5 rounded-full border border-[#334155] breathe" />
+                    )}
+                    {src.name}
+                  </div>
+                ))}
+              </div>
+            )}
+
             {loadPct > 30 && loadPct < 90 && (
-              <div className="text-[13px] text-slate-400 mt-1 text-center">{lang === 'es' ? 'Los tribunales federales resolvieron más de 400,000 casos civiles el año pasado.' : 'Federal courts resolved over 400,000 civil cases last year.'}</div>
+              <div className="text-[12px] text-slate-400 mt-3 text-center max-w-md">
+                {lang === 'es' ? 'Los tribunales federales resolvieron más de 400,000 casos civiles el año pasado.' : 'Federal courts resolved over 400,000 civil cases last year.'}
+              </div>
             )}
           </div>
         </div>
@@ -4003,6 +4051,129 @@ export default function MyCaseValue() {
                         {lang === 'es'
                           ? 'Datos agregados de representación. Los resultados individuales varían según las circunstancias específicas del caso.'
                           : 'Aggregate representation data. Individual outcomes vary based on case-specific circumstances.'}
+                      </div>
+                    </>
+                  );
+                })()}
+              </Card>
+            </Reveal>
+          )}
+
+          {/* Outcome Probability Matrix — Premium */}
+          {isPremium && (
+            <Reveal delay={110}>
+              <Card premium className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #4F46E520, #0D948820)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#4F46E5' }}>
+                      {lang === 'es' ? 'MATRIZ DE PROBABILIDAD' : 'PROBABILITY MATRIX'}
+                    </div>
+                    <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
+                      {lang === 'es' ? 'Riesgo vs. Resultado' : 'Risk vs. Outcome Analysis'}
+                    </div>
+                  </div>
+                </div>
+                {(() => {
+                  const winPct = wr;
+                  const settlePct = d.sp || 45;
+                  const dismissPct = od.dismiss || 40;
+                  const trialWinPct = od.trial_win || 12;
+                  const favorableTotal = winSettleRate;
+                  const riskLevel = dismissPct > 50 ? 'high' : dismissPct > 35 ? 'moderate' : 'low';
+                  const rewardLevel = favorableTotal > 55 ? 'high' : favorableTotal > 35 ? 'moderate' : 'low';
+
+                  return (
+                    <>
+                      {/* 2x2 Quadrant Grid */}
+                      <div className="relative mb-6">
+                        {/* Axis labels */}
+                        <div className="flex justify-between mb-2">
+                          <span className="text-[10px] font-bold tracking-[1px] uppercase" style={{ color: '#64748B' }}>
+                            {lang === 'es' ? 'RIESGO →' : 'RISK →'}
+                          </span>
+                          <span className="text-[10px] font-bold tracking-[1px] uppercase" style={{ color: '#64748B' }}>
+                            {lang === 'es' ? 'RESULTADO ↑' : 'OUTCOME ↑'}
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                          {/* Top-left: Low Risk, High Reward (Best) */}
+                          <div className={`p-4 rounded-xl border text-center ${riskLevel === 'low' && rewardLevel === 'high' ? 'border-[#0D9488] ring-2 ring-[#0D948830]' : 'border-[#1E293B]'}`}
+                            style={{ background: riskLevel === 'low' && rewardLevel === 'high' ? 'rgba(13,148,136,0.08)' : 'rgba(255,255,255,0.02)' }}>
+                            <div className="text-[22px] mb-1">🎯</div>
+                            <div className="text-[11px] font-bold" style={{ color: '#0D9488' }}>{lang === 'es' ? 'Favorable' : 'Favorable'}</div>
+                            <div className="text-[10px] mt-1" style={{ color: '#64748B' }}>{lang === 'es' ? 'Bajo riesgo, alto resultado' : 'Low risk, high outcome'}</div>
+                            {riskLevel === 'low' && rewardLevel === 'high' && (
+                              <div className="mt-2 text-[10px] font-bold px-2 py-0.5 rounded-full inline-block" style={{ color: '#0D9488', background: 'rgba(13,148,136,0.15)' }}>
+                                {lang === 'es' ? 'TU POSICIÓN' : 'YOUR POSITION'}
+                              </div>
+                            )}
+                          </div>
+                          {/* Top-right: High Risk, High Reward */}
+                          <div className={`p-4 rounded-xl border text-center ${riskLevel !== 'low' && rewardLevel === 'high' ? 'border-[#D97706] ring-2 ring-[#D9770630]' : 'border-[#1E293B]'}`}
+                            style={{ background: riskLevel !== 'low' && rewardLevel === 'high' ? 'rgba(217,119,6,0.06)' : 'rgba(255,255,255,0.02)' }}>
+                            <div className="text-[22px] mb-1">⚡</div>
+                            <div className="text-[11px] font-bold" style={{ color: '#D97706' }}>{lang === 'es' ? 'Alto potencial' : 'High Potential'}</div>
+                            <div className="text-[10px] mt-1" style={{ color: '#64748B' }}>{lang === 'es' ? 'Alto riesgo, alto resultado' : 'High risk, high outcome'}</div>
+                            {riskLevel !== 'low' && rewardLevel === 'high' && (
+                              <div className="mt-2 text-[10px] font-bold px-2 py-0.5 rounded-full inline-block" style={{ color: '#D97706', background: 'rgba(217,119,6,0.12)' }}>
+                                {lang === 'es' ? 'TU POSICIÓN' : 'YOUR POSITION'}
+                              </div>
+                            )}
+                          </div>
+                          {/* Bottom-left: Low Risk, Low Reward */}
+                          <div className={`p-4 rounded-xl border text-center ${riskLevel === 'low' && rewardLevel !== 'high' ? 'border-[#4F46E5] ring-2 ring-[#4F46E530]' : 'border-[#1E293B]'}`}
+                            style={{ background: riskLevel === 'low' && rewardLevel !== 'high' ? 'rgba(79,70,229,0.06)' : 'rgba(255,255,255,0.02)' }}>
+                            <div className="text-[22px] mb-1">📊</div>
+                            <div className="text-[11px] font-bold" style={{ color: '#4F46E5' }}>{lang === 'es' ? 'Conservador' : 'Conservative'}</div>
+                            <div className="text-[10px] mt-1" style={{ color: '#64748B' }}>{lang === 'es' ? 'Bajo riesgo, resultado moderado' : 'Low risk, moderate outcome'}</div>
+                            {riskLevel === 'low' && rewardLevel !== 'high' && (
+                              <div className="mt-2 text-[10px] font-bold px-2 py-0.5 rounded-full inline-block" style={{ color: '#4F46E5', background: 'rgba(79,70,229,0.1)' }}>
+                                {lang === 'es' ? 'TU POSICIÓN' : 'YOUR POSITION'}
+                              </div>
+                            )}
+                          </div>
+                          {/* Bottom-right: High Risk, Low Reward */}
+                          <div className={`p-4 rounded-xl border text-center ${riskLevel !== 'low' && rewardLevel !== 'high' ? 'border-[#E87461] ring-2 ring-[#E8746130]' : 'border-[#1E293B]'}`}
+                            style={{ background: riskLevel !== 'low' && rewardLevel !== 'high' ? 'rgba(232,116,97,0.06)' : 'rgba(255,255,255,0.02)' }}>
+                            <div className="text-[22px] mb-1">⚠️</div>
+                            <div className="text-[11px] font-bold" style={{ color: '#E87461' }}>{lang === 'es' ? 'Desafiante' : 'Challenging'}</div>
+                            <div className="text-[10px] mt-1" style={{ color: '#64748B' }}>{lang === 'es' ? 'Alto riesgo, resultado moderado' : 'High risk, moderate outcome'}</div>
+                            {riskLevel !== 'low' && rewardLevel !== 'high' && (
+                              <div className="mt-2 text-[10px] font-bold px-2 py-0.5 rounded-full inline-block" style={{ color: '#E87461', background: 'rgba(232,116,97,0.1)' }}>
+                                {lang === 'es' ? 'TU POSICIÓN' : 'YOUR POSITION'}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Probability breakdown */}
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                        <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(13,148,136,0.06)', border: '1px solid rgba(13,148,136,0.1)' }}>
+                          <div className="text-xl font-display font-bold neon-text" style={{ color: '#0D9488' }}>{settlePct}%</div>
+                          <div className="text-[10px] font-semibold mt-0.5" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'Acuerdo' : 'Settlement'}</div>
+                        </div>
+                        <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(79,70,229,0.06)', border: '1px solid rgba(79,70,229,0.1)' }}>
+                          <div className="text-xl font-display font-bold neon-text" style={{ color: '#4F46E5' }}>{trialWinPct}%</div>
+                          <div className="text-[10px] font-semibold mt-0.5" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'Victoria' : 'Trial Win'}</div>
+                        </div>
+                        <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(217,119,6,0.06)', border: '1px solid rgba(217,119,6,0.1)' }}>
+                          <div className="text-xl font-display font-bold" style={{ color: '#D97706' }}>{dismissPct}%</div>
+                          <div className="text-[10px] font-semibold mt-0.5" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'Desestimación' : 'Dismissal'}</div>
+                        </div>
+                        <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(232,116,97,0.06)', border: '1px solid rgba(232,116,97,0.1)' }}>
+                          <div className="text-xl font-display font-bold" style={{ color: '#E87461' }}>{od.trial_loss || 7}%</div>
+                          <div className="text-[10px] font-semibold mt-0.5" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'Derrota' : 'Trial Loss'}</div>
+                        </div>
+                      </div>
+
+                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic text-center" style={{ background: 'rgba(30,41,59,0.5)', color: '#64748B' }}>
+                        {lang === 'es'
+                          ? 'La posición de la matriz se basa en tasas agregadas. Cada caso es único. Esto no es una evaluación de su caso específico.'
+                          : 'Matrix position is based on aggregate rates. Every case is unique. This is not an evaluation of your specific case.'}
                       </div>
                     </>
                   );
