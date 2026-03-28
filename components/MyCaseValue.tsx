@@ -2967,7 +2967,7 @@ export default function MyCaseValue() {
   // Step 3: Details
   if (step === 3) return (
     <Shell {...shellProps}>
-      <div className="max-w-xl mx-auto py-6 page-enter">
+      <div className="max-w-xl mx-auto py-6 wizard-step-enter">
         <WizardProgress step={3} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
         <Reveal>
@@ -3063,7 +3063,7 @@ export default function MyCaseValue() {
   // Step 4: Consent
   if (step === 4) return (
     <Shell {...shellProps}>
-      <div className="max-w-xl mx-auto py-6 page-enter">
+      <div className="max-w-xl mx-auto py-6 wizard-step-enter">
         <WizardProgress step={4} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
         <Reveal>
