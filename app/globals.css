@@ -1879,15 +1879,20 @@ input:focus, textarea:focus, select:focus {
    ============================================================ */
 @media print {
   .no-print, nav, footer, .sticky-nav, .skip-link,
-  .premium-cta, .cta-glow, .exit-intent-modal {
+  .premium-cta, .cta-glow, .exit-intent-modal,
+  .cookie-consent, .mobile-bottom-nav, .scroll-indicator,
+  .reading-progress, .back-to-top, .hero-orb,
+  .particle, .live-beacon {
     display: none !important;
   }
 
   body {
     background: white !important;
-    color: #000 !important;
-    font-size: 12pt;
-    line-height: 1.5;
+    color: #1a1a1a !important;
+    font-size: 11pt;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   * {
@@ -1896,7 +1901,12 @@ input:focus, textarea:focus, select:focus {
     filter: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    animation: none !important;
+    transition: none !important;
   }
+
+  /* Ensure SVG charts print with color */
+  svg { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
   a[href]::after {
     content: " (" attr(href) ")";
@@ -1904,24 +1914,44 @@ input:focus, textarea:focus, select:focus {
     color: #666;
   }
 
-  .card-bg, .glass-card, .glass-premium {
-    border: 1px solid #ccc !important;
-    background: white !important;
+  .card-bg, .glass-card, .glass-premium, .glass-ultra {
+    border: 1px solid #ddd !important;
+    background: #fafafa !important;
     page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   h1, h2, h3, h4 {
     page-break-after: avoid;
-    color: #000 !important;
+    break-after: avoid;
+    color: #1a1a1a !important;
   }
 
-  table { page-break-inside: avoid; }
+  table { page-break-inside: avoid; break-inside: avoid; }
 
-  .text-gradient, .text-gradient-hero, .gradient-text, .text-shimmer {
+  .text-gradient, .text-gradient-hero, .gradient-text, .text-shimmer, .text-gradient-premium, .gradient-text-animated {
     background: none !important;
     -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: #000 !important;
-    color: #000 !important;
+    -webkit-text-fill-color: #1a1a1a !important;
+    color: #1a1a1a !important;
+  }
+
+  /* Print header with brand */
+  @page {
+    margin: 1.5cm 2cm;
+    @top-center { content: "MyCaseValue — Federal Court Outcome Data"; font-size: 8pt; color: #999; }
+    @bottom-center { content: "Page " counter(page) " of " counter(pages); font-size: 8pt; color: #999; }
+  }
+
+  /* Make the quick-glance metrics readable in print */
+  .spring-count, .stat-glow, .counter-animate {
+    color: #1a1a1a !important;
+  }
+
+  /* Ensure chart bars are visible */
+  [style*="background: linear-gradient"] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 
