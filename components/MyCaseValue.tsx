@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { AnimatedNumber } from './ui/AnimatedNumber';
 import PieChart from './ui/PieChart';
 import { CategoryIcon } from './ui/Icons';
@@ -11,10 +12,6 @@ import TrustBar from './sections/TrustBar';
 import DataPreviewSection from './sections/DataPreviewSection';
 import FaqSection from './sections/FaqSection';
 import FinalCtaSection from './sections/FinalCtaSection';
-import OutcomeSimulator from './ui/OutcomeSimulator';
-import LiveCaseFeed from './ui/LiveCaseFeed';
-import PremiumValueCalculator from './ui/PremiumValueCalculator';
-import NationwideDashboard from './ui/NationwideDashboard';
 import {
   SITS, STATES, TIMING_OPTS, AMOUNT_OPTS, ATTORNEY_OPTS,
   OUTCOME_DATA, CIRCUIT_MAP, CIRCUIT_DATA_KEY, CIRCUIT_WIN_RATES, FEE_INFO,
@@ -24,19 +21,28 @@ import {
 import { TRANSLATIONS, Lang } from '../lib/i18n';
 import { generateCaseNarrative } from '../lib/ai-narrative';
 import EnhancedSearch from './ui/EnhancedSearch';
-import TrendChart, { generateDemoData } from './ui/TrendChart';
-import ComparisonPanel from './ui/ComparisonPanel';
-import SettlementHistogram from './ui/SettlementHistogram';
 import SocialProofBar from './ui/SocialProofBar';
 import MobileBottomNav from './ui/MobileBottomNav';
 import DataFreshness from './ui/DataFreshness';
-import UpgradeTable from './ui/UpgradeTable';
 import HeroStats from './ui/HeroStats';
-import ScrollReveal from './ui/ScrollReveal';
 import KeyboardShortcuts from './ui/KeyboardShortcuts';
-import ConfidenceRing from './ui/ConfidenceRing';
-import CaseTimeline from './ui/CaseTimeline';
-import AttorneyImpact from './ui/AttorneyImpact';
+
+// Import generateDemoData directly (small function, used inline)
+import { generateDemoData } from './ui/TrendChart';
+
+// Lazy-load heavy components only needed in report/premium views
+const TrendChart = dynamic(() => import('./ui/TrendChart'), { ssr: false });
+const ComparisonPanel = dynamic(() => import('./ui/ComparisonPanel'), { ssr: false });
+const SettlementHistogram = dynamic(() => import('./ui/SettlementHistogram'), { ssr: false });
+const UpgradeTable = dynamic(() => import('./ui/UpgradeTable'), { ssr: false });
+const ConfidenceRing = dynamic(() => import('./ui/ConfidenceRing'), { ssr: false });
+const CaseTimeline = dynamic(() => import('./ui/CaseTimeline'), { ssr: false });
+const AttorneyImpact = dynamic(() => import('./ui/AttorneyImpact'), { ssr: false });
+const OutcomeSimulator = dynamic(() => import('./ui/OutcomeSimulator'), { ssr: false });
+const LiveCaseFeed = dynamic(() => import('./ui/LiveCaseFeed'), { ssr: false });
+const PremiumValueCalculator = dynamic(() => import('./ui/PremiumValueCalculator'), { ssr: false });
+const NationwideDashboard = dynamic(() => import('./ui/NationwideDashboard'), { ssr: false });
+const ScrollReveal = dynamic(() => import('./ui/ScrollReveal'), { ssr: false });
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
