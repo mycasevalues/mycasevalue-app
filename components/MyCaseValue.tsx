@@ -34,6 +34,8 @@ import UpgradeTable from './ui/UpgradeTable';
 import HeroStats from './ui/HeroStats';
 import ScrollReveal from './ui/ScrollReveal';
 import KeyboardShortcuts from './ui/KeyboardShortcuts';
+import ConfidenceRing from './ui/ConfidenceRing';
+import CaseTimeline from './ui/CaseTimeline';
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
@@ -3395,6 +3397,18 @@ export default function MyCaseValue() {
           <Reveal>
             <div className="px-5 py-3 card-bg bg-[#131B2E] rounded-xl border border-[#1E293B] mb-4 text-[13px] text-[#94A3B8] leading-relaxed">
               <strong className="text-[#94A3B8]">{lang === 'es' ? 'Importante:' : 'Important:'}</strong> {UPL.resultsNotice}
+            </div>
+          </Reveal>
+
+          {/* Confidence Score & Case Timeline */}
+          <Reveal delay={20}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <Card className="flex items-center justify-center p-6">
+                <ConfidenceRing score={ccScore} lang={lang} sublabel={lang === 'es' ? 'Basado en datos históricos' : 'Based on historical data'} />
+              </Card>
+              <Card className="p-5">
+                <CaseTimeline medianMonths={d.mo || 10} caseType={spec?.d} lang={lang} />
+              </Card>
             </div>
           </Reveal>
 
