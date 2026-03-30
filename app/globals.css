@@ -3101,6 +3101,32 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 0 2px #0B1221, 0 0 0 4px rgba(99,102,241,0.5);
 }
 
+/* Global accessible focus for all interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid rgba(99,102,241,0.6);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Uniform button press feedback */
+button:active:not(:disabled),
+[role="button"]:active:not(:disabled) {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* Disabled state consistency */
+button:disabled,
+[role="button"][aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* Stat card with animated underline accent */
 .stat-underline {
   position: relative;

@@ -30,18 +30,23 @@ import KeyboardShortcuts from './ui/KeyboardShortcuts';
 // Import generateDemoData directly (small function, used inline)
 import { generateDemoData } from './ui/TrendChart';
 
+// Shimmer loading placeholder for lazy components
+const ChunkLoader = () => (
+  <div className="skeleton-premium" style={{ height: '120px', borderRadius: '16px', margin: '8px 0' }} />
+);
+
 // Lazy-load heavy components only needed in report/premium views
-const TrendChart = dynamic(() => import('./ui/TrendChart'), { ssr: false });
-const ComparisonPanel = dynamic(() => import('./ui/ComparisonPanel'), { ssr: false });
-const SettlementHistogram = dynamic(() => import('./ui/SettlementHistogram'), { ssr: false });
-const UpgradeTable = dynamic(() => import('./ui/UpgradeTable'), { ssr: false });
-const ConfidenceRing = dynamic(() => import('./ui/ConfidenceRing'), { ssr: false });
-const CaseTimeline = dynamic(() => import('./ui/CaseTimeline'), { ssr: false });
-const AttorneyImpact = dynamic(() => import('./ui/AttorneyImpact'), { ssr: false });
-const OutcomeSimulator = dynamic(() => import('./ui/OutcomeSimulator'), { ssr: false });
-const LiveCaseFeed = dynamic(() => import('./ui/LiveCaseFeed'), { ssr: false });
-const PremiumValueCalculator = dynamic(() => import('./ui/PremiumValueCalculator'), { ssr: false });
-const NationwideDashboard = dynamic(() => import('./ui/NationwideDashboard'), { ssr: false });
+const TrendChart = dynamic(() => import('./ui/TrendChart'), { ssr: false, loading: ChunkLoader });
+const ComparisonPanel = dynamic(() => import('./ui/ComparisonPanel'), { ssr: false, loading: ChunkLoader });
+const SettlementHistogram = dynamic(() => import('./ui/SettlementHistogram'), { ssr: false, loading: ChunkLoader });
+const UpgradeTable = dynamic(() => import('./ui/UpgradeTable'), { ssr: false, loading: ChunkLoader });
+const ConfidenceRing = dynamic(() => import('./ui/ConfidenceRing'), { ssr: false, loading: ChunkLoader });
+const CaseTimeline = dynamic(() => import('./ui/CaseTimeline'), { ssr: false, loading: ChunkLoader });
+const AttorneyImpact = dynamic(() => import('./ui/AttorneyImpact'), { ssr: false, loading: ChunkLoader });
+const OutcomeSimulator = dynamic(() => import('./ui/OutcomeSimulator'), { ssr: false, loading: ChunkLoader });
+const LiveCaseFeed = dynamic(() => import('./ui/LiveCaseFeed'), { ssr: false, loading: ChunkLoader });
+const PremiumValueCalculator = dynamic(() => import('./ui/PremiumValueCalculator'), { ssr: false, loading: ChunkLoader });
+const NationwideDashboard = dynamic(() => import('./ui/NationwideDashboard'), { ssr: false, loading: ChunkLoader });
 const ScrollReveal = dynamic(() => import('./ui/ScrollReveal'), { ssr: false });
 
 // ============================================================

@@ -10,6 +10,8 @@
  *   { "mode": "full" | "incremental" }
  */
 
+export const dynamic = 'force-dynamic';
+
 import { NextRequest, NextResponse } from 'next/server'
 import { runFullIngestion, runIncrementalIngestion } from '../../../lib/ingestion/orchestrator'
 

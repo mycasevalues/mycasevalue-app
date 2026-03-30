@@ -9,6 +9,8 @@
  * Includes 24-hour caching and in-memory rate limiting
  */
 
+export const dynamic = 'force-dynamic';
+
 import { NextRequest, NextResponse } from "next/server";
 import { fetchScholarInsights } from "../../../lib/google-scholar";
 

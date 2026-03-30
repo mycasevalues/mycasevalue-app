@@ -13,6 +13,8 @@
  *   ?type=freshness     → Data freshness info
  */
 
+export const dynamic = 'force-dynamic';
+
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 

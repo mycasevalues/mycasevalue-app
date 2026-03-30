@@ -59,7 +59,7 @@ export default function NOSIndexPage() {
       <header className="border-b border-[#1E2749] py-12 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-blue-500 hover:text-blue-400 transition text-sm mb-4 inline-block"
+          className="text-[#A5B4FC] hover:text-[#A5B4FC] transition text-sm mb-4 inline-block"
         >
           ← Back to Home
         </Link>
@@ -86,16 +86,16 @@ export default function NOSIndexPage() {
                 <Link
                   key={item.code}
                   href={`/nos/${item.code}`}
-                  className="group bg-[#131B2E] rounded-lg p-6 border border-[#1E2749] hover:border-blue-500 hover:shadow-lg transition-all"
+                  className="group bg-[#131B2E] rounded-lg p-6 border border-[#1E2749] hover:border-[#4F46E5] hover:shadow-lg transition-all"
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-lg group-hover:text-blue-400 transition">
+                      <h3 className="font-semibold text-lg group-hover:text-[#A5B4FC] transition">
                         {item.label}
                       </h3>
                       <p className="text-[#94A3B8] text-sm">NOS Code: {item.code}</p>
                     </div>
-                    <span className="text-blue-400 text-xl group-hover:translate-x-1 transition">
+                    <span className="text-[#A5B4FC] text-xl group-hover:translate-x-1 transition">
                       →
                     </span>
                   </div>
