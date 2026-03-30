@@ -920,8 +920,8 @@ interface ShellProps {
   toast: (msg: string) => void;
   showCookieConsent: boolean;
   setShowCookieConsent: (show: boolean) => void;
-  setLegalPage: (page: 'terms' | 'privacy' | 'disclaimer') => void;
-  legalPage: 'terms' | 'privacy' | 'disclaimer' | null;
+  setLegalPage: (page: 'terms' | 'privacy' | 'cookies' | 'disclaimer') => void;
+  legalPage: 'terms' | 'privacy' | 'cookies' | 'disclaimer' | null;
   showMethodology: boolean;
   children: React.ReactNode;
 }
@@ -993,7 +993,7 @@ function Shell({
           scrollProgress={scrollProgress}
         />
 
-        <main id="main-content" className="max-w-[1140px] mx-auto px-4 sm:px-6 relative z-10" role="main">
+        <main id="main-content" className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10" role="main">
           {/* UPL Banner */}
           <div className="text-center py-2 border-b no-print" style={{ borderColor: '#1E293B', background: 'rgba(30,41,59,0.3)' }}>
             <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: '#64748B' }}>{UPL.banner}</span>
@@ -1082,10 +1082,10 @@ function Shell({
             </div>
 
             {/* Secure payments badge */}
-            <div className="flex items-center justify-center gap-3 mt-3 no-print">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid #334155' }}>
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-3 no-print">
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid #334155' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                <span className="text-[10px] font-semibold text-slate-400 tracking-[0.5px]">{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
+                <span className="text-[11px] font-semibold tracking-[0.5px]" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
                 {/* Stripe logo */}
                 <svg width="36" height="15" viewBox="0 0 60 25" fill={'#94A3B8'} xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z"/>
@@ -1096,17 +1096,17 @@ function Shell({
                   <path d="M55.8 5.5c-3.1 0-5.3 2.7-5.3 6.2 0 4.1 2.4 6 5.8 6 1.7 0 2.9-.4 3.8-.9v-3.7c-1 .5-2.1.8-3.4.8-1.4 0-2.6-.5-2.7-2.1h6.8c0-.2.1-1 .1-1.3-.1-3.7-1.8-5-5.1-5zm-1.4 5c0-1.5.9-2.1 1.7-2.1s1.6.6 1.6 2.1h-3.3z"/>
                 </svg>
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-2">
                 {/* Visa */}
-                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
+                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
                   <svg width="28" height="10" viewBox="0 0 750 471" fill="none"><path d="M278.198 334.228l33.36-195.763h53.358l-33.384 195.763h-53.334zM524.307 142.687c-10.57-3.966-27.135-8.222-47.822-8.222-52.725 0-89.863 26.551-90.18 64.604-.635 28.109 26.502 43.773 46.754 53.126 20.771 9.574 27.752 15.679 27.654 24.243-.14 13.084-16.598 19.065-31.924 19.065-21.357 0-32.688-2.966-50.205-10.258l-6.875-3.11-7.488 43.823c12.463 5.467 35.508 10.199 59.438 10.445 56.09 0 92.502-26.248 92.916-66.885.2-22.28-14.016-39.215-44.8-53.187-18.65-9.056-30.072-15.099-29.951-24.269 0-8.137 9.668-16.838 30.56-16.838 17.286-.271 29.966 3.439 39.627 7.406l4.8 2.252 7.496-42.395zM661.615 138.464h-41.23c-12.773 0-22.332 3.486-27.94 16.234l-79.244 179.402h56.031s9.159-24.121 11.232-29.418c6.123 0 60.555.084 68.336.084 1.596 6.854 6.492 29.334 6.492 29.334h49.52l-43.197-195.636zm-65.417 126.408c4.414-11.279 21.26-54.724 21.26-54.724-.317.534 4.381-11.329 7.074-18.684l3.606 16.878 12.348 56.53h-44.288zM232.903 138.464L180.664 271.96l-5.565-27.129c-9.726-31.274-40.025-65.157-73.898-82.12l47.767 171.204 56.455-.065 84.004-195.386h-56.524z" fill="#2566AF"/><path d="M131.92 138.464H45.879l-.682 4.073c66.939 16.204 111.232 55.363 129.618 102.415l-18.709-89.96c-3.229-12.396-12.597-16.095-24.186-16.528z" fill="#E6A540"/></svg>
                 </span>
                 {/* Mastercard */}
-                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
+                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
                   <svg width="22" height="14" viewBox="0 0 152 100"><circle cx="50" cy="50" r="50" fill="#EB001B"/><circle cx="102" cy="50" r="50" fill="#F79E1B"/><path d="M76 14.8a49.8 49.8 0 000 70.4 49.8 49.8 0 000-70.4z" fill="#FF5F00"/></svg>
                 </span>
                 {/* Amex */}
-                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
+                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: '#1E293B', border: '1px solid #334155' }}>
                   <svg width="22" height="14" viewBox="0 0 40 26"><rect width="40" height="26" rx="3" fill="#2E77BC"/><text x="20" y="17" textAnchor="middle" fill="white" fontSize="9" fontWeight="800" fontFamily="Arial">AMEX</text></svg>
                 </span>
                 {/* PayPal */}
@@ -1118,17 +1118,19 @@ function Shell({
 
             {/* Navigation links */}
             <div className="flex items-center justify-center gap-3 mt-3 pt-3 border-t no-print flex-wrap" style={{ borderColor: '#1E293B' }}>
-              <a href="/about" className="text-[11px] text-slate-400 hover:text-[#94A3B8] transition-colors" style={{ textDecoration: 'none' }}>{lang === 'es' ? 'Acerca de' : 'About'}</a>
-              <span className="text-slate-300">·</span>
-              <a href="/cases" className="text-[11px] text-slate-400 hover:text-[#94A3B8] transition-colors" style={{ textDecoration: 'none' }}>{lang === 'es' ? 'Categorías' : 'Case Categories'}</a>
-              <span className="text-slate-300">·</span>
-              <a href="/faq" className="text-[11px] text-slate-400 hover:text-[#94A3B8] transition-colors" style={{ textDecoration: 'none' }}>FAQ</a>
-              <span className="text-slate-300">·</span>
-              <a href="/terms" className="text-[11px] text-slate-400 hover:text-[#94A3B8] transition-colors" style={{ textDecoration: 'none' }}>{lang === 'es' ? 'Términos' : 'Terms'}</a>
-              <span className="text-slate-300">·</span>
-              <a href="/privacy" className="text-[11px] text-slate-400 hover:text-[#94A3B8] transition-colors" style={{ textDecoration: 'none' }}>{lang === 'es' ? 'Privacidad' : 'Privacy'}</a>
-              <span className="text-slate-300">·</span>
-              <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] text-slate-400 hover:text-[#94A3B8] bg-transparent border-none cursor-pointer transition-colors">{lang === 'es' ? 'Aviso legal' : 'Disclaimer'}</button>
+              <a href="/about" className="text-[11px] transition-colors" style={{ textDecoration: 'none', color: '#64748B' }}>{lang === 'es' ? 'Acerca de' : 'About'}</a>
+              <span style={{ color: '#334155' }}>·</span>
+              <a href="/cases" className="text-[11px] transition-colors" style={{ textDecoration: 'none', color: '#64748B' }}>{lang === 'es' ? 'Categorías' : 'Case Categories'}</a>
+              <span style={{ color: '#334155' }}>·</span>
+              <a href="/faq" className="text-[11px] transition-colors" style={{ textDecoration: 'none', color: '#64748B' }}>FAQ</a>
+              <span style={{ color: '#334155' }}>·</span>
+              <button onClick={() => setLegalPage('terms')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: '#64748B' }}>{lang === 'es' ? 'Términos' : 'Terms'}</button>
+              <span style={{ color: '#334155' }}>·</span>
+              <button onClick={() => setLegalPage('privacy')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: '#64748B' }}>{lang === 'es' ? 'Privacidad' : 'Privacy'}</button>
+              <span style={{ color: '#334155' }}>·</span>
+              <button onClick={() => setLegalPage('cookies')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: '#64748B' }}>{lang === 'es' ? 'Cookies' : 'Cookies'}</button>
+              <span style={{ color: '#334155' }}>·</span>
+              <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: '#64748B' }}>{lang === 'es' ? 'Aviso legal' : 'Disclaimer'}</button>
             </div>
 
             {/* Legal disclaimer bar */}
@@ -1136,16 +1138,16 @@ function Shell({
               <div className="p-4 rounded-xl text-center" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid #334155' }}>
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                  <span className="text-[11px] font-bold tracking-[2px] text-slate-400">
+                  <span className="text-[11px] font-bold tracking-[2px]" style={{ color: '#64748B' }}>
                     {lang === 'es' ? 'AVISO LEGAL' : 'LEGAL NOTICE'}
                   </span>
                 </div>
-                <p className="text-[11px] text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                <p className="text-[11px] leading-relaxed max-w-2xl mx-auto" style={{ color: '#64748B' }}>
                   {lang === 'es'
                     ? 'MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos solo con fines informativos. No constituye asesoría legal, opinión legal ni recomendación. No se crea relación abogado-cliente. Consulte siempre a un abogado con licencia para su situación específica.'
                     : 'MyCaseValue provides aggregate historical data from public federal court records for informational purposes only. It does not constitute legal advice, legal opinion, or recommendation of any kind. No attorney-client relationship is created. Always consult a licensed attorney for advice specific to your situation.'}
                 </p>
-                <p className="text-[10px] text-slate-300 mt-2">
+                <p className="text-[10px] mt-2" style={{ color: '#475569' }}>
                   © {new Date().getFullYear()} MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
                 </p>
               </div>
@@ -1226,7 +1228,7 @@ function Shell({
           <div className="fixed bottom-0 left-0 right-0 z-50 p-4 no-print" style={{ background: 'rgba(11,18,33,0.95)', backdropFilter: 'blur(12px)' }}>
             <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3">
               <div className="flex-1">
-                <p className="text-[13px] text-slate-300 leading-relaxed">
+                <p className="text-[13px] leading-relaxed" style={{ color: '#CBD5E1' }}>
                   {lang === 'es'
                     ? 'Usamos cookies esenciales para el funcionamiento del sitio. Las cookies opcionales de análisis nos ayudan a mejorar.'
                     : 'We use essential cookies for site functionality. Optional analytics cookies help us improve your experience.'}
@@ -1239,7 +1241,7 @@ function Shell({
                 <button onClick={() => {
                   try { localStorage.setItem('mcv_cookies_accepted', 'essential'); } catch {}
                   setShowCookieConsent(false);
-                }} className="px-4 py-2 text-[12px] font-semibold text-slate-300 bg-transparent border border-slate-600 rounded-lg cursor-pointer hover:border-slate-400 transition-colors">
+                }} className="px-4 py-2 text-[12px] font-semibold bg-transparent rounded-lg cursor-pointer transition-colors" style={{ color: '#CBD5E1', border: '1px solid #475569' }}>
                   {lang === 'es' ? 'Solo esenciales' : 'Essential only'}
                 </button>
                 <button onClick={() => {
@@ -1308,7 +1310,7 @@ export default function MyCaseValue() {
   const [navScrolled, setNavScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [referralCode, setReferralCode] = useState('');
-  const [legalPage, setLegalPage] = useState<'terms' | 'privacy' | 'disclaimer' | null>(null);
+  const [legalPage, setLegalPage] = useState<'terms' | 'privacy' | 'cookies' | 'disclaimer' | null>(null);
   const [carouselIdx, setCarouselIdx] = useState(0);
   const [leadEmail, setLeadEmail] = useState('');
   const [leadCaptureSent, setLeadCaptureSent] = useState(false);
@@ -1876,7 +1878,7 @@ export default function MyCaseValue() {
               {/* Tagline with vertical accent line — matches LinkedIn header brand */}
               <div className="flex items-start gap-4 mb-8">
                 <div className="hero-accent-line mt-2 hidden sm:block" />
-                <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[66px] leading-[0.95] font-extrabold" style={{ letterSpacing: '-3px' }}>
+                <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[66px] leading-[1.1] font-extrabold" style={{ letterSpacing: '-3px' }}>
                   <span className="hero-tagline-bold">{t.hero_title_1}</span><br />
                   <span className="hero-tagline-light">{t.hero_title_2}{' '}</span>
                   <span className="text-shimmer hero-tagline-light gradient-text-animated" style={{ fontStyle: 'italic' }}>{t.hero_title_3}</span>
@@ -5883,7 +5885,7 @@ export default function MyCaseValue() {
             <div className="card-bg bg-[#131B2E] rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
               <div className="sticky top-0 card-bg bg-[#131B2E] rounded-t-3xl px-6 pt-6 pb-3 border-b border-[#1E293B] flex items-center justify-between z-10">
                 <h2 className="text-lg font-display font-bold">
-                  {legalPage === 'terms' ? 'Terms of Service' : legalPage === 'privacy' ? 'Privacy Policy' : 'Legal Disclaimer'}
+                  {legalPage === 'terms' ? 'Terms of Service' : legalPage === 'privacy' ? 'Privacy Policy' : legalPage === 'cookies' ? 'Cookie Policy' : 'Legal Disclaimer'}
                 </h2>
                 <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[#1E293B] hover:bg-[#334155] border-none cursor-pointer transition-colors">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
@@ -5921,6 +5923,20 @@ export default function MyCaseValue() {
                   <p><strong>10. Security.</strong> We implement industry-standard security measures including encryption in transit (TLS/SSL), secure payment processing via Stripe (PCI-DSS compliant), and access controls. However, no method of electronic transmission or storage is 100% secure.</p>
                   <p><strong>11. Changes to Policy.</strong> We may update this Privacy Policy periodically. We will notify users of material changes via the Service or email.</p>
                   <p><strong>12. Contact.</strong> For privacy inquiries or data requests: privacy@mycasevalue.com.</p>
+                </>)}
+
+                {legalPage === 'cookies' && (<>
+                  <p><strong>1. What Are Cookies.</strong> Cookies are small text files stored on your device when you visit a website. They help us provide a better experience by remembering your preferences and understanding how you use our Service.</p>
+                  <p><strong>2. Essential Cookies.</strong> These cookies are strictly necessary for MyCaseValue to function. They enable core features like session management, security, and accessibility settings. You cannot disable these cookies without breaking core functionality.</p>
+                  <p><strong>3. Analytics Cookies.</strong> We use optional analytics cookies to understand how visitors interact with MyCaseValue, which pages are most popular, and where users encounter issues. This data is aggregated and anonymized. Analytics cookies are only set if you click &ldquo;Accept all&rdquo; on our cookie banner.</p>
+                  <p><strong>4. Preference Cookies.</strong> These cookies remember your preferences such as language selection (English/Spanish), dark mode settings, and previously viewed case types so you don&apos;t have to set them again on each visit.</p>
+                  <p><strong>5. Payment Cookies.</strong> When you make a purchase, our payment processor Stripe may set cookies necessary to complete the transaction securely. These cookies are governed by Stripe&apos;s privacy policy.</p>
+                  <p><strong>6. Cookies We Do NOT Use.</strong> MyCaseValue does NOT use: advertising or retargeting cookies, cross-site tracking cookies, social media tracking pixels, or cookies that sell or share your data with third-party advertisers.</p>
+                  <p><strong>7. Managing Cookies.</strong> You can control cookies through: (a) our cookie consent banner when you first visit, (b) your browser settings (most browsers let you block or delete cookies), (c) contacting us at privacy@mycasevalue.com. Note that disabling essential cookies may impair site functionality.</p>
+                  <p><strong>8. Third-Party Cookies.</strong> The only third-party cookies on MyCaseValue come from Stripe (payment processing) and our hosting/analytics infrastructure. We do not allow any advertising networks or data brokers to place cookies on our site.</p>
+                  <p><strong>9. Data Retention.</strong> Essential and preference cookies expire after 12 months. Analytics cookies expire after 90 days. Session cookies are deleted when you close your browser.</p>
+                  <p><strong>10. Updates.</strong> We may update this Cookie Policy periodically. Changes will be reflected on this page with an updated date. Continued use of MyCaseValue constitutes acceptance.</p>
+                  <p><strong>11. Contact.</strong> For questions about our cookie practices: privacy@mycasevalue.com.</p>
                 </>)}
 
                 {legalPage === 'disclaimer' && (<>
