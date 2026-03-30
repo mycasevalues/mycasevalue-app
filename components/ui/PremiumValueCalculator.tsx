@@ -46,13 +46,13 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
           </div>
           <div>
             <div className="text-[15px] font-bold text-[#E2E8F0]">{es ? 'Calculadora de valor' : 'Value Calculator'}</div>
-            <div className="text-[11px] text-slate-400">{es ? '¿Cuánto podrías ahorrar?' : 'How much could you save?'}</div>
+            <div className="text-[11px] text-[#94A3B8]">{es ? '¿Cuánto podrías ahorrar?' : 'How much could you save?'}</div>
           </div>
         </div>
 
         {/* Case type selector */}
         <div className="mb-5">
-          <div className="text-[11px] font-semibold text-slate-400 mb-2 tracking-wide">{es ? 'TIPO DE CASO' : 'CASE TYPE'}</div>
+          <div className="text-[11px] font-semibold text-[#94A3B8] mb-2 tracking-wide">{es ? 'TIPO DE CASO' : 'CASE TYPE'}</div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {Object.entries(CASE_DATA).map(([key, val]) => (
               <button
@@ -161,7 +161,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
         >
           {es ? `Desbloquear por $5.99 (valor de $${savings.totalValue.toLocaleString()})` : `Unlock for $5.99 ($${savings.totalValue.toLocaleString()} value)`}
         </button>
-        <div className="text-center mt-2.5 text-[10px] text-slate-400">
+        <div className="text-center mt-2.5 text-[10px] text-[#94A3B8]">
           {es ? 'Satisfacción garantizada • Pagos seguros' : 'Satisfaction guaranteed • Secure payment'}
         </div>
       </div>

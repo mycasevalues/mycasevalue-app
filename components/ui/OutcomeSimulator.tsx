@@ -117,7 +117,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             {/* Damage Amount Slider */}
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-[12px] font-semibold text-slate-300">
+                <label className="text-[12px] font-semibold text-[#CBD5E1]">
                   {es ? 'Monto en disputa' : 'Amount in Dispute'}
                 </label>
                 <span className="text-[13px] font-bold font-data" style={{ color: '#6366F1' }}>
@@ -137,7 +137,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             {/* Jurisdiction Slider */}
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-[12px] font-semibold text-slate-300">
+                <label className="text-[12px] font-semibold text-[#CBD5E1]">
                   {es ? 'Factor de jurisdicción' : 'Jurisdiction Factor'}
                 </label>
                 <span className="text-[13px] font-bold font-data" style={{ color: jurisdiction > 60 ? '#0D9488' : jurisdiction > 35 ? '#6366F1' : '#E87461' }}>
@@ -160,7 +160,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               border: '1px solid rgba(255,255,255,0.08)',
             }}>
               <div>
-                <div className="text-[13px] font-semibold text-slate-200">
+                <div className="text-[13px] font-semibold text-[#E2E8F0]">
                   {es ? 'Representación legal' : 'Attorney Representation'}
                 </div>
                 <div className="text-[11px] text-[#94A3B8] mt-0.5">

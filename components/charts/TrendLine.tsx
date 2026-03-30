@@ -19,7 +19,7 @@ export function TrendLine({
   return (
     <div className="w-full">
       {label && (
-        <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-slate-400 mb-3">{label}</div>
+        <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#94A3B8] mb-3">{label}</div>
       )}
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }}>

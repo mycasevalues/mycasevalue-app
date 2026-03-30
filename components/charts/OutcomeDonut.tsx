@@ -59,7 +59,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
             </div>
           )}
           {centerLabel && (
-            <div className="text-[11px] font-semibold text-slate-400 mt-0.5">{centerLabel}</div>
+            <div className="text-[11px] font-semibold text-[#94A3B8] mt-0.5">{centerLabel}</div>
           )}
         </div>
       )}

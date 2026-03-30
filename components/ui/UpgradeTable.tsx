@@ -54,8 +54,6 @@ const labels = {
   },
 };
 
-const t = labels[labels.hasOwnProperty(labels[0]) ? 'en' : 'en'];
-
 export default function UpgradeTable({
   onBuy,
   lang = 'en',

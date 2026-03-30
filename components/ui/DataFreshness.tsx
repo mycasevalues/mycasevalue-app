@@ -85,17 +85,6 @@ const getOverallStatus = (sources: DataSource[]): 'live' | 'synced' | 'stale' =>
   return 'synced';
 };
 
-const getStatusColor = (status: 'live' | 'synced' | 'stale'): string => {
-  switch (status) {
-    case 'live':
-      return 'bg-teal-500';
-    case 'synced':
-      return 'bg-emerald-500';
-    case 'stale':
-      return 'bg-yellow-500';
-  }
-};
-
 const getStatusDotColor = (status: 'live' | 'synced' | 'stale'): string => {
   switch (status) {
     case 'live':

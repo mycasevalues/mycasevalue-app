@@ -109,7 +109,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
               >
                 {/* Tooltip */}
                 {isHovered && (
-                  <div className="text-[10px] font-mono text-white bg-slate-800 px-2 py-1 rounded mb-1 whitespace-nowrap" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
+                  <div className="text-[10px] font-mono text-white bg-[#1E293B] px-2 py-1 rounded mb-1 whitespace-nowrap" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
                     {(d.cases / 1000).toFixed(0)}K • {d.wr}%
                   </div>
                 )}

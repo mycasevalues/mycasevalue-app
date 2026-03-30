@@ -94,7 +94,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
 
               {/* Info */}
               <div className="flex-1 min-w-0">
-                <div className="text-[13px] font-medium text-slate-200 truncate">
+                <div className="text-[13px] font-medium text-[#E2E8F0] truncate">
                   {es ? ES_TYPES[ev.type] || ev.type : ev.type}
                 </div>
                 <div className="flex items-center gap-2 mt-0.5">
@@ -122,7 +122,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
 
       {/* Footer */}
       <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(79,70,229,0.04)' }}>
-        <div className="text-[11px] text-slate-400">
+        <div className="text-[11px] text-[#94A3B8]">
           {es ? 'Basado en datos agregados de casos federales' : 'Based on aggregate federal case data'}
         </div>
         {visibleCount < CASE_EVENTS.length && (

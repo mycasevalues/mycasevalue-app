@@ -2,6 +2,9 @@ import { MetadataRoute } from 'next';
 
 const CATEGORY_IDS = ['work', 'injury', 'consumer', 'rights', 'money', 'housing', 'medical', 'family', 'gov', 'education'];
 
+// All unique NOS codes used in the app
+const NOS_CODES = ['110', '152', '190', '195', '240', '290', '310', '340', '350', '360', '362', '365', '368', '370', '371', '375', '440', '442', '445', '530', '550', '710', '791', '820', '830', '840', '850', '864', '870', '890'];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://mycasevalues.com';
   const now = new Date().toISOString();
@@ -11,6 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
+  }));
+
+  const nosUrls: MetadataRoute.Sitemap = NOS_CODES.map((code) => ({
+    url: `${baseUrl}/nos/${code}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }));
 
   return [
@@ -33,6 +43,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...categoryUrls,
+    {
+      url: `${baseUrl}/nos`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    ...nosUrls,
     {
       url: `${baseUrl}/methodology`,
       lastModified: now,
