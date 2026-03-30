@@ -144,16 +144,24 @@ export default function SocialProofBar({
 
         .metrics-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1.5rem;
-          padding: 2rem;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+          padding: 1.5rem;
         }
 
         @media (max-width: 768px) {
           .metrics-grid {
+            grid-template-columns: repeat(3, 1fr);
+            padding: 1rem;
+            gap: 0.75rem;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .metrics-grid {
             grid-template-columns: 1fr;
-            padding: 1.5rem;
-            gap: 1rem;
+            padding: 1rem;
+            gap: 0.75rem;
           }
         }
 
@@ -161,7 +169,7 @@ export default function SocialProofBar({
           background-color: #131B2E;
           border: 1px solid #1E293B;
           border-radius: 0.75rem;
-          padding: 1.5rem;
+          padding: 1.25rem;
           transition: all 0.3s ease;
           cursor: pointer;
         }
@@ -195,16 +203,16 @@ export default function SocialProofBar({
         .press-section {
           border-top: 1px solid #1E293B;
           border-bottom: 1px solid #1E293B;
-          padding: 2rem;
+          padding: 1.25rem;
           background-color: #0B1221;
         }
 
         .press-label {
-          font-size: 0.875rem;
+          font-size: 0.75rem;
           color: #94A3B8;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
           font-weight: 600;
         }
 
@@ -249,16 +257,16 @@ export default function SocialProofBar({
         }
 
         .verification-section {
-          padding: 2rem;
+          padding: 1.25rem;
           background-color: #0B1221;
         }
 
         .verification-label {
-          font-size: 0.875rem;
+          font-size: 0.75rem;
           color: #94A3B8;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
           font-weight: 600;
         }
 

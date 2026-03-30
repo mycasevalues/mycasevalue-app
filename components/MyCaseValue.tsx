@@ -68,18 +68,38 @@ const AGGREGATE_STATE_RATES: Record<string, number> = {
 // ============================================================
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const ref = React.useRef<HTMLDivElement>(null);
   const [show, setShow] = React.useState(false);
+
   React.useEffect(() => {
-    const timeout = setTimeout(() => setShow(true), delay);
-    return () => clearTimeout(timeout);
+    const el = ref.current;
+    if (!el) return;
+
+    // Use IntersectionObserver for scroll-based reveal
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Small stagger delay for grouped elements
+          const stagger = Math.min(delay, 200);
+          if (stagger > 0) {
+            setTimeout(() => setShow(true), stagger);
+          } else {
+            setShow(true);
+          }
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.05, rootMargin: '0px 0px -30px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [delay]);
 
   return (
-    <div style={{
+    <div ref={ref} style={{
       opacity: show ? 1 : 0,
-      transform: show ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.98)',
-      transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-      willChange: 'opacity, transform',
+      transform: show ? 'translateY(0) scale(1)' : 'translateY(16px) scale(0.99)',
+      transition: 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
     }}>
       {children}
     </div>
@@ -895,10 +915,14 @@ function ProgressRing({ pct, size = 64 }: { pct: number; size?: number }) {
 }
 
 // Risk Assessment Quiz Component
-function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => void; onStartAssessment: () => void }) {
+function RiskAssessmentQuiz({ onClose, onStartAssessment, lang = 'en' }: { onClose: () => void; onStartAssessment: () => void; lang?: string }) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<boolean[]>([]);
-  const questions = [
+  const questions = lang === 'es' ? [
+    '¿Esto sucedió en los últimos 2 años?',
+    '¿Tienes documentos o evidencia?',
+    '¿Hubo testigos u otras personas afectadas?'
+  ] : [
     'Did this happen in the last 2 years?',
     'Do you have documents or evidence?',
     'Were there witnesses or others affected?'
@@ -911,7 +935,9 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => voi
     }
   };
   const score = (answers.filter(Boolean).length / questions.length) * 100;
-  const strengthLabel = score >= 67 ? 'Strong' : score >= 34 ? 'Moderate' : 'Needs Review';
+  const strengthLabel = lang === 'es'
+    ? (score >= 67 ? 'Fuerte' : score >= 34 ? 'Moderado' : 'Necesita revisión')
+    : (score >= 67 ? 'Strong' : score >= 34 ? 'Moderate' : 'Needs Review');
   const strengthColor = score >= 67 ? '#0D9488' : score >= 34 ? '#6366F1' : '#E87461';
 
   if (answers.length === questions.length) {
@@ -921,14 +947,14 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => voi
           <div className="text-center">
             <div className="text-5xl font-display font-bold mb-3" style={{ color: strengthColor }}>{Math.round(score)}</div>
             <div className="text-xl font-semibold mb-2" style={{ color: strengthColor }}>{strengthLabel}</div>
-            <p className="text-sm text-[#94A3B8] mb-6">Based on your answers, here&apos;s your case strength estimate.</p>
+            <p className="text-sm text-[#94A3B8] mb-6">{lang === 'es' ? 'Basado en tus respuestas, aquí está tu estimación de fortaleza del caso.' : 'Based on your answers, here\u0027s your case strength estimate.'}</p>
             <button onClick={onStartAssessment}
               className="w-full px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer mb-2"
               style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
-              Get Full Report
+              {lang === 'es' ? 'Obtener informe completo' : 'Get Full Report'}
             </button>
             <button onClick={onClose} className="w-full px-6 py-2 text-sm font-medium card-bg bg-[#1E293B] rounded-xl cursor-pointer hover:bg-[#1E293B] transition-colors">
-              Close
+              {lang === 'es' ? 'Cerrar' : 'Close'}
             </button>
           </div>
         </div>
@@ -940,7 +966,7 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment }: { onClose: () => voi
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
       <div className="card-bg bg-[#131B2E] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
         <div className="mb-6">
-          <div className="text-[11px] font-bold text-[#94A3B8] tracking-[2.5px] mb-3 uppercase">Quick Assessment</div>
+          <div className="text-[11px] font-bold text-[#94A3B8] tracking-[2.5px] mb-3 uppercase">{lang === 'es' ? 'EVALUACIÓN RÁPIDA' : 'Quick Assessment'}</div>
           <div className="text-2xl font-display font-bold">{questions[step]}</div>
           <div className="mt-4 h-1 bg-[#1E293B] rounded-full overflow-hidden">
             <div className="h-full rounded-full transition-all duration-300" style={{
@@ -1936,7 +1962,7 @@ export default function MyCaseValue() {
   if (step === 0) return (
     <Shell {...shellProps}>
       {keyboardShortcutsEl}
-      <div className="hero-bg hero-parallax mesh-bg py-12 sm:py-20 pb-10 relative overflow-hidden noise-overlay particle-field cinematic-enter">
+      <div className="hero-bg hero-parallax mesh-bg py-10 sm:py-16 pb-8 relative overflow-hidden noise-overlay particle-field cinematic-enter">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
         <div className="hero-orb hero-orb-2" />
@@ -1961,7 +1987,7 @@ export default function MyCaseValue() {
           } as any} />
         ))}
 
-        <div className="hero-grid grid gap-8 lg:gap-20" style={{ gridTemplateColumns: '1fr' }}>
+        <div className="hero-grid grid gap-6 lg:gap-10" style={{ gridTemplateColumns: '1fr' }}>
           <div className="relative z-10">
             <Reveal>
               {/* Top badges row — dark glass on dark hero */}
@@ -2218,32 +2244,20 @@ export default function MyCaseValue() {
           {/* Dramatic gradient divider */}
           <div className="separator-gradient" style={{ gridColumn: '1 / -1', height: '2px', boxShadow: '0 4px 20px rgba(79,70,229,0.3), 0 4px 20px rgba(13,148,136,0.15)' }} />
 
-          {/* Trust Bar — Elite Section */}
-          <div style={{ gridColumn: '1 / -1' }}>
-          <Reveal delay={180}>
-            <TrustBar lang={lang} />
-          </Reveal>
-          </div>
-
-          {/* Social Proof & Live Activity */}
-          <div style={{ gridColumn: '1 / -1' }}>
-          <Reveal delay={190}>
-            <SocialProofBar totalCases={totalCases} lang={lang} />
-          </Reveal>
-          </div>
-
-          {/* Data Freshness Indicator */}
-          <div style={{ gridColumn: '1 / -1' }}>
-          <Reveal delay={195}>
-            <DataFreshness compact lang={lang} totalCases={totalCases} />
-          </Reveal>
-          </div>
-
-          {/* Hero Stats Counters */}
-          <div style={{ gridColumn: '1 / -1' }}>
-          <Reveal delay={210}>
-            <HeroStats lang={lang} />
-          </Reveal>
+          {/* Trust + Social Proof + Data + Stats — tighter spacing */}
+          <div style={{ gridColumn: '1 / -1', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <Reveal delay={180}>
+              <TrustBar lang={lang} />
+            </Reveal>
+            <Reveal delay={190}>
+              <SocialProofBar totalCases={totalCases} lang={lang} />
+            </Reveal>
+            <Reveal delay={195}>
+              <DataFreshness compact lang={lang} totalCases={totalCases} />
+            </Reveal>
+            <Reveal delay={210}>
+              <HeroStats lang={lang} />
+            </Reveal>
           </div>
 
           {/* Category selector — enhanced */}
@@ -2486,7 +2500,7 @@ export default function MyCaseValue() {
               <div className="p-6 sm:p-8">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                   <div>
-                    <div className="text-[11px] font-bold text-[#94A3B8] tracking-[2.5px] mb-2 uppercase">Quick Assessment</div>
+                    <div className="text-[11px] font-bold text-[#94A3B8] tracking-[2.5px] mb-2 uppercase">{lang === 'es' ? 'EVALUACIÓN RÁPIDA' : 'Quick Assessment'}</div>
                     <h3 className="text-2xl sm:text-3xl font-display font-bold mb-2" style={{ letterSpacing: '-1px' }}>
                       {lang === 'es' ? 'Evaluación de riesgo en 30 segundos' : 'Risk Assessment in 30 seconds'}
                     </h3>
@@ -2524,7 +2538,7 @@ export default function MyCaseValue() {
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: `linear-gradient(135deg, ${s.color}, ${s.color}dd)`, boxShadow: `0 4px 16px ${s.color}30` }}>
                     {s.icon}
                   </div>
-                  <div className="text-[11px] font-extrabold tracking-[2.5px] mb-2 uppercase" style={{ color: s.color, textShadow: `0 1px 3px ${s.color}20` }}>Step {s.num}</div>
+                  <div className="text-[11px] font-extrabold tracking-[2.5px] mb-2 uppercase" style={{ color: s.color, textShadow: `0 1px 3px ${s.color}20` }}>{lang === 'es' ? 'Paso' : 'Step'} {s.num}</div>
                   <div className="text-[17px] font-extrabold mb-2 text-[#E2E8F0]">{s.title}</div>
                   <div className="text-[13px] text-[#94A3B8] leading-relaxed font-medium">{s.desc}</div>
                   {/* Animated connector arrow */}
@@ -2800,7 +2814,7 @@ export default function MyCaseValue() {
                       </div>
                     </div>
                     <div className="pb-4 flex-1">
-                      <div className="text-[10px] font-bold tracking-[1.5px] mb-1" style={{ color: '#4F46E5' }}>{stage.month} months</div>
+                      <div className="text-[10px] font-bold tracking-[1.5px] mb-1" style={{ color: '#4F46E5' }}>{stage.month} {lang === 'es' ? 'meses' : 'months'}</div>
                       <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{stage.title}</div>
                       <div className="text-[13px] text-[#94A3B8]">{stage.desc}</div>
                     </div>
@@ -2872,7 +2886,7 @@ export default function MyCaseValue() {
                 <div className="inline-block px-3 py-1 rounded-full text-[11px] font-bold mb-3" style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>PREMIUM</div>
                 <div className="flex items-end gap-1 mb-1">
                   <span className="text-2xl font-display font-bold">$5.99</span>
-                  <span className="text-[13px] text-[#94A3B8] mb-0.5">/ report</span>
+                  <span className="text-[13px] text-[#94A3B8] mb-0.5">/ {lang === 'es' ? 'informe' : 'report'}</span>
                 </div>
                 <div className="text-[12px] text-[#94A3B8] mb-4">{lang === 'es' ? 'O $9.99 para acceso ilimitado' : 'Or $9.99 for unlimited access'}</div>
                 <div className="space-y-2">
@@ -3024,7 +3038,7 @@ export default function MyCaseValue() {
         </Reveal>
 
       </div>
-      {showQuiz && <RiskAssessmentQuiz onClose={() => setShowQuiz(false)} onStartAssessment={() => { setShowQuiz(false); go(1); }} />}
+      {showQuiz && <RiskAssessmentQuiz onClose={() => setShowQuiz(false)} onStartAssessment={() => { setShowQuiz(false); go(1); }} lang={lang} />}
     </Shell>
   );
 

@@ -142,8 +142,10 @@ export default function ConfidenceRing({
             fontSize: size * 0.22, fontWeight: 800,
             color: color, lineHeight: 1,
             textShadow: `0 0 20px ${color}40`,
+            opacity: (!animated || isVisible) ? 1 : 0,
+            transition: 'opacity 0.3s ease',
           }}>
-            {animatedScore}
+            {animated && !isVisible ? '' : animatedScore}
           </div>
           <div style={{
             fontSize: Math.max(size * 0.065, 8),
