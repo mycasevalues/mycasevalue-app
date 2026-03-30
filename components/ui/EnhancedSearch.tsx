@@ -34,13 +34,22 @@ interface PopularItem {
   trending: boolean;
 }
 
-const POPULAR_SEARCHES: PopularItem[] = [
+const POPULAR_SEARCHES_EN: PopularItem[] = [
   { label: 'Employment Discrimination', trending: true },
   { label: 'Vehicle Accident', trending: true },
   { label: 'Medical Malpractice', trending: false },
   { label: 'Debt Collection', trending: false },
   { label: 'Data Breach', trending: false },
   { label: 'Slip and Fall', trending: false },
+];
+
+const POPULAR_SEARCHES_ES: PopularItem[] = [
+  { label: 'Discriminación Laboral', trending: true },
+  { label: 'Accidente de Vehículo', trending: true },
+  { label: 'Negligencia Médica', trending: false },
+  { label: 'Cobro de Deudas', trending: false },
+  { label: 'Violación de Datos', trending: false },
+  { label: 'Caída y Lesión', trending: false },
 ];
 
 const fuzzyMatch = (query: string, text: string): number => {
@@ -72,6 +81,7 @@ const fuzzyMatch = (query: string, text: string): number => {
 };
 
 const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang }) => {
+  const POPULAR_SEARCHES = lang === 'es' ? POPULAR_SEARCHES_ES : POPULAR_SEARCHES_EN;
   const [input, setInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -396,7 +406,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                               fontFamily: '"JetBrains Mono", monospace',
                             }}
                           >
-                            in {category.label}
+                            {lang === 'es' ? 'en' : 'in'} {category.label}
                           </div>
                         </div>
                       );
@@ -418,7 +428,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                   letterSpacing: '0.5px',
                 }}
               >
-                Popular Searches
+                {lang === 'es' ? 'Búsquedas populares' : 'Popular Searches'}
               </div>
               {displayPopular.map((popular, idx) => {
                 const isSelected = selectedIndex === idx;
@@ -461,7 +471,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                           letterSpacing: '0.3px',
                         }}
                       >
-                        Trending
+                        {lang === 'es' ? 'Tendencia' : 'Trending'}
                       </div>
                     )}
                   </div>

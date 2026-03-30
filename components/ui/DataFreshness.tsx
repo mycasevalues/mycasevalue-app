@@ -53,7 +53,7 @@ const TRANSLATIONS = {
   },
 };
 
-const formatDate = (dateString: string): string => {
+const formatDate = (dateString: string, lang: string = 'en'): string => {
   const date = new Date(dateString);
   const today = new Date();
   const yesterday = new Date(today);
@@ -62,11 +62,12 @@ const formatDate = (dateString: string): string => {
   const isToday = date.toDateString() === today.toDateString();
   const isYesterday = date.toDateString() === yesterday.toDateString();
 
-  if (isToday) return 'Today';
-  if (isYesterday) return 'Yesterday';
+  if (isToday) return lang === 'es' ? 'Hoy' : 'Today';
+  if (isYesterday) return lang === 'es' ? 'Ayer' : 'Yesterday';
 
+  const locale = lang === 'es' ? 'es-ES' : 'en-US';
   const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
-  return date.toLocaleDateString('en-US', options);
+  return date.toLocaleDateString(locale, options);
 };
 
 const formatCaseNumber = (num: number): string => {
@@ -123,7 +124,7 @@ export default function DataFreshness({
     return () => clearInterval(interval);
   }, [totalCases]);
 
-  const formattedDate = formatDate(lastUpdated);
+  const formattedDate = formatDate(lastUpdated, lang);
   const formattedCases = formatCaseNumber(totalCases);
 
   if (compact) {
@@ -167,7 +168,7 @@ export default function DataFreshness({
               {t.dataPipelineStatus}
             </div>
             <div style={{ color: '#94A3B8' }} className="text-sm">
-              Last updated {formattedDate}
+              {lang === 'es' ? 'Última actualización' : 'Last updated'} {formattedDate}
             </div>
           </div>
         </div>
@@ -196,7 +197,7 @@ export default function DataFreshness({
                   </div>
                   {source.lastSync && (
                     <div style={{ color: '#94A3B8' }} className="text-xs mt-1">
-                      {t.lastSync}: {formatDate(source.lastSync)}
+                      {t.lastSync}: {formatDate(source.lastSync, lang)}
                     </div>
                   )}
                 </div>
@@ -259,17 +260,34 @@ export default function DataFreshness({
               className="mt-3 p-3 rounded text-sm leading-relaxed space-y-2"
               style={{ backgroundColor: '#1E293B', color: '#94A3B8' }}
             >
-              <p>
-                We aggregate case data from three primary sources: the Federal Judicial Center's
-                Integrated Database (IDB) for comprehensive historical records, the CourtListener API
-                for real-time updates on filed cases, and PACER records for detailed case documents
-                and filings.
-              </p>
-              <p>
-                Data is continuously synchronized and validated to ensure accuracy. Live sources update
-                automatically, while synced sources are refreshed daily. All data is deduplicated and
-                cross-referenced to prevent double-counting.
-              </p>
+              {lang === 'es' ? (
+                <>
+                  <p>
+                    Agregamos datos de tres fuentes principales: la Base de Datos Integrada (IDB) del Centro
+                    Judicial Federal para registros históricos completos, la API de CourtListener para
+                    actualizaciones en tiempo real, y registros de PACER para documentos detallados de casos.
+                  </p>
+                  <p>
+                    Los datos se sincronizan y validan continuamente para garantizar su precisión. Las fuentes
+                    en vivo se actualizan automáticamente, mientras que las fuentes sincronizadas se actualizan
+                    diariamente. Todos los datos se deduplicán y cruzan para evitar conteos dobles.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    We aggregate case data from three primary sources: the Federal Judicial Center&apos;s
+                    Integrated Database (IDB) for comprehensive historical records, the CourtListener API
+                    for real-time updates on filed cases, and PACER records for detailed case documents
+                    and filings.
+                  </p>
+                  <p>
+                    Data is continuously synchronized and validated to ensure accuracy. Live sources update
+                    automatically, while synced sources are refreshed daily. All data is deduplicated and
+                    cross-referenced to prevent double-counting.
+                  </p>
+                </>
+              )}
             </div>
           </details>
         </div>

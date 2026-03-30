@@ -100,78 +100,149 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
         </div>
       )}
 
-      <div style={{ position: 'relative' }}>
-        {/* Background line */}
-        <div style={{
-          position: 'absolute', top: '20px', left: '20px', right: '20px',
-          height: '3px', background: '#1E293B', borderRadius: '2px',
-        }} />
+      {/* Desktop horizontal timeline */}
+      <div className="timeline-horizontal">
+        <div style={{ position: 'relative' }}>
+          {/* Background line */}
+          <div style={{
+            position: 'absolute', top: '20px', left: '20px', right: '20px',
+            height: '3px', background: '#1E293B', borderRadius: '2px',
+          }} />
 
-        {/* Progress line */}
-        <div style={{
-          position: 'absolute', top: '20px', left: '20px',
-          height: '3px', borderRadius: '2px',
-          background: 'linear-gradient(90deg, #6366F1, #5EEAD4, #0D9488, #F472B6)',
-          width: isVisible ? `calc(100% - 40px)` : '0%',
-          transition: 'width 2s cubic-bezier(0.16, 1, 0.3, 1)',
-        }} />
+          {/* Progress line */}
+          <div style={{
+            position: 'absolute', top: '20px', left: '20px',
+            height: '3px', borderRadius: '2px',
+            background: 'linear-gradient(90deg, #6366F1, #5EEAD4, #0D9488, #F472B6)',
+            width: isVisible ? `calc(100% - 40px)` : '0%',
+            transition: 'width 2s cubic-bezier(0.16, 1, 0.3, 1)',
+          }} />
 
-        {/* Timeline nodes */}
-        <div style={{
-          display: 'flex', justifyContent: 'space-between',
-          position: 'relative', zIndex: 1,
-        }}>
+          {/* Timeline nodes */}
+          <div style={{
+            display: 'flex', justifyContent: 'space-between',
+            position: 'relative', zIndex: 1,
+          }}>
+            {events.map((event, i) => (
+              <div key={i} style={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center',
+                flex: 1, minWidth: 0,
+                opacity: i <= activeIdx ? 1 : 0.3,
+                transform: i <= activeIdx ? 'translateY(0) scale(1)' : 'translateY(8px) scale(0.9)',
+                transition: `all 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${i * 100}ms`,
+              }}>
+                {/* Node circle */}
+                <div style={{
+                  width: '40px', height: '40px', borderRadius: '50%',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  background: i <= activeIdx ? `${event.color}20` : '#131B2E',
+                  border: `2px solid ${i <= activeIdx ? event.color : '#1E293B'}`,
+                  fontSize: '16px',
+                  boxShadow: i <= activeIdx ? `0 0 16px ${event.color}30` : 'none',
+                  transition: 'all 0.5s ease',
+                  flexShrink: 0,
+                }}>
+                  {event.icon}
+                </div>
+
+                {/* Label */}
+                <div style={{
+                  fontSize: '11px', fontWeight: 600,
+                  color: i <= activeIdx ? '#F0F2F5' : '#475569',
+                  marginTop: '8px', textAlign: 'center',
+                  whiteSpace: 'nowrap',
+                }}>
+                  {event.label}
+                </div>
+
+                {/* Month marker */}
+                <div style={{
+                  fontSize: '10px', fontWeight: 500,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  color: i <= activeIdx ? event.color : '#334155',
+                  marginTop: '2px',
+                }}>
+                  {event.months === 0 ? (lang === 'es' ? 'Día 1' : 'Day 1') : `${event.months}mo`}
+                </div>
+
+                {/* Description */}
+                {event.description && i <= activeIdx && (
+                  <div style={{
+                    fontSize: '9px', color: '#64748B',
+                    marginTop: '4px', textAlign: 'center',
+                    maxWidth: '80px', lineHeight: 1.3,
+                  }}>
+                    {event.description}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile vertical timeline */}
+      <div className="timeline-vertical">
+        <div style={{ position: 'relative', paddingLeft: '32px' }}>
+          {/* Vertical line */}
+          <div style={{
+            position: 'absolute', top: '8px', left: '15px', bottom: '8px',
+            width: '3px', borderRadius: '2px',
+            background: isVisible
+              ? 'linear-gradient(180deg, #6366F1, #5EEAD4, #0D9488, #F472B6)'
+              : '#1E293B',
+            transition: 'background 2s ease',
+          }} />
+
           {events.map((event, i) => (
             <div key={i} style={{
-              display: 'flex', flexDirection: 'column', alignItems: 'center',
-              flex: 1, minWidth: 0,
+              display: 'flex', alignItems: 'flex-start', gap: '12px',
+              marginBottom: i < events.length - 1 ? '20px' : '0',
               opacity: i <= activeIdx ? 1 : 0.3,
-              transform: i <= activeIdx ? 'translateY(0) scale(1)' : 'translateY(8px) scale(0.9)',
+              transform: i <= activeIdx ? 'translateX(0)' : 'translateX(-8px)',
               transition: `all 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${i * 100}ms`,
             }}>
-              {/* Node circle */}
+              {/* Node circle - absolutely positioned on the line */}
               <div style={{
-                width: '40px', height: '40px', borderRadius: '50%',
+                position: 'absolute', left: '4px',
+                width: '26px', height: '26px', borderRadius: '50%',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 background: i <= activeIdx ? `${event.color}20` : '#131B2E',
                 border: `2px solid ${i <= activeIdx ? event.color : '#1E293B'}`,
-                fontSize: '16px',
-                boxShadow: i <= activeIdx ? `0 0 16px ${event.color}30` : 'none',
+                fontSize: '12px',
+                boxShadow: i <= activeIdx ? `0 0 12px ${event.color}30` : 'none',
                 transition: 'all 0.5s ease',
+                flexShrink: 0,
               }}>
                 {event.icon}
               </div>
 
-              {/* Label */}
-              <div style={{
-                fontSize: '11px', fontWeight: 600,
-                color: i <= activeIdx ? '#F0F2F5' : '#475569',
-                marginTop: '8px', textAlign: 'center',
-                whiteSpace: 'nowrap',
-              }}>
-                {event.label}
-              </div>
-
-              {/* Month marker */}
-              <div style={{
-                fontSize: '10px', fontWeight: 500,
-                fontFamily: "'JetBrains Mono', monospace",
-                color: i <= activeIdx ? event.color : '#334155',
-                marginTop: '2px',
-              }}>
-                {event.months === 0 ? (lang === 'es' ? 'Día 1' : 'Day 1') : `${event.months}mo`}
-              </div>
-
-              {/* Description (on hover or always for last) */}
-              {event.description && i <= activeIdx && (
-                <div style={{
-                  fontSize: '9px', color: '#64748B',
-                  marginTop: '4px', textAlign: 'center',
-                  maxWidth: '80px', lineHeight: 1.3,
-                }}>
-                  {event.description}
+              {/* Content */}
+              <div style={{ paddingTop: '2px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{
+                    fontSize: '13px', fontWeight: 600,
+                    color: i <= activeIdx ? '#F0F2F5' : '#475569',
+                  }}>
+                    {event.label}
+                  </span>
+                  <span style={{
+                    fontSize: '11px', fontWeight: 500,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    color: i <= activeIdx ? event.color : '#334155',
+                  }}>
+                    {event.months === 0 ? (lang === 'es' ? 'Día 1' : 'Day 1') : `${event.months}mo`}
+                  </span>
                 </div>
-              )}
+                {event.description && i <= activeIdx && (
+                  <div style={{
+                    fontSize: '11px', color: '#64748B',
+                    marginTop: '2px', lineHeight: 1.4,
+                  }}>
+                    {event.description}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -190,7 +261,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
           width: '32px', height: '32px', borderRadius: '8px',
           background: 'rgba(99,102,241,0.12)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '14px',
+          fontSize: '14px', flexShrink: 0,
         }}>⏱</div>
         <div>
           <div style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>
@@ -201,6 +272,15 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
           </div>
         </div>
       </div>
+
+      <style>{`
+        .timeline-vertical { display: none; }
+        .timeline-horizontal { display: block; }
+        @media (max-width: 580px) {
+          .timeline-horizontal { display: none; }
+          .timeline-vertical { display: block; }
+        }
+      `}</style>
     </div>
   );
 }

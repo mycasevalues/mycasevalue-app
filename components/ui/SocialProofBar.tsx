@@ -38,19 +38,16 @@ const ACTIVITY_ENTRIES_ES = [
   'Alguien en Colorado analizó caso de Negligencia Profesional',
 ];
 
-const TIME_STAMPS = [
-  '2 min ago',
-  '5 min ago',
-  '8 min ago',
-  '12 min ago',
-  '15 min ago',
-  '18 min ago',
-  '22 min ago',
-  '25 min ago',
-  '28 min ago',
-  '31 min ago',
-  '35 min ago',
-  '38 min ago',
+const TIME_STAMPS_EN = [
+  '2 min ago', '5 min ago', '8 min ago', '12 min ago',
+  '15 min ago', '18 min ago', '22 min ago', '25 min ago',
+  '28 min ago', '31 min ago', '35 min ago', '38 min ago',
+];
+
+const TIME_STAMPS_ES = [
+  'hace 2 min', 'hace 5 min', 'hace 8 min', 'hace 12 min',
+  'hace 15 min', 'hace 18 min', 'hace 22 min', 'hace 25 min',
+  'hace 28 min', 'hace 31 min', 'hace 35 min', 'hace 38 min',
 ];
 
 export default function SocialProofBar({
@@ -61,13 +58,14 @@ export default function SocialProofBar({
   const [tickerKey, setTickerKey] = useState(0);
 
   const activityEntries = lang === 'es' ? ACTIVITY_ENTRIES_ES : ACTIVITY_ENTRIES_EN;
+  const timeStamps = lang === 'es' ? TIME_STAMPS_ES : TIME_STAMPS_EN;
 
   useEffect(() => {
     // Generate initial activity list with unique IDs
     const initial = activityEntries.map((entry, index) => ({
       id: index,
       text: entry,
-      time: TIME_STAMPS[index],
+      time: timeStamps[index],
     }));
     setActivityList(initial);
   }, [lang]);
@@ -355,11 +353,11 @@ export default function SocialProofBar({
           {lang === 'es' ? 'Destacado en' : 'As featured in'}
         </p>
         <div className="press-logos">
-          <div className="press-badge">LegalTech News</div>
-          <div className="press-badge">ABA Journal</div>
-          <div className="press-badge">TechCrunch</div>
-          <div className="press-badge">Law.com</div>
-          <div className="press-badge">Bloomberg Law</div>
+          <div className="press-badge">{lang === 'es' ? 'LegalTech News' : 'LegalTech News'}</div>
+          <div className="press-badge">{lang === 'es' ? 'ABA Journal' : 'ABA Journal'}</div>
+          <div className="press-badge">{lang === 'es' ? 'TechCrunch' : 'TechCrunch'}</div>
+          <div className="press-badge">{lang === 'es' ? 'Law.com' : 'Law.com'}</div>
+          <div className="press-badge">{lang === 'es' ? 'Bloomberg Law' : 'Bloomberg Law'}</div>
         </div>
       </div>
 
@@ -371,7 +369,7 @@ export default function SocialProofBar({
         <div className="verification-badges">
           <div className="verification-badge">
             <span className="checkmark-icon">✓</span>
-            FJC Verified
+            {lang === 'es' ? 'FJC Verificado' : 'FJC Verified'}
           </div>
           <div className="verification-badge">
             <span className="checkmark-icon">✓</span>

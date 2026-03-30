@@ -74,7 +74,7 @@ export default function AttorneyImpact({
           width: '32px', height: '32px', borderRadius: '10px',
           background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(13,148,136,0.1))',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontSize: '16px',
+          fontSize: '16px', flexShrink: 0,
         }}>⚖️</div>
         <div>
           <div style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
@@ -113,8 +113,8 @@ export default function AttorneyImpact({
         </div>
       </div>
 
-      {/* Recovery Comparison */}
-      <div style={{
+      {/* Recovery Comparison — responsive grid */}
+      <div className="attorney-recovery-grid" style={{
         display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px',
       }}>
         <div style={{
@@ -127,7 +127,7 @@ export default function AttorneyImpact({
             👤 {isEs ? 'Recuperación con abogado' : 'Attorney Recovery'}
           </div>
           <div style={{
-            fontSize: '20px', fontWeight: 800, color: '#0D9488',
+            fontSize: '18px', fontWeight: 800, color: '#0D9488',
             fontFamily: "'JetBrains Mono', monospace",
           }}>
             {withAttorneyRecovery}
@@ -143,7 +143,7 @@ export default function AttorneyImpact({
             🙋 {isEs ? 'Recuperación Pro Se' : 'Pro Se Recovery'}
           </div>
           <div style={{
-            fontSize: '20px', fontWeight: 800, color: '#94A3B8',
+            fontSize: '18px', fontWeight: 800, color: '#94A3B8',
             fontFamily: "'JetBrains Mono', monospace",
           }}>
             {withoutAttorneyRecovery}
@@ -162,7 +162,7 @@ export default function AttorneyImpact({
           transition: 'opacity 0.8s ease 1s',
         }}>
           <div style={{
-            fontSize: '22px', lineHeight: 1,
+            fontSize: '22px', lineHeight: 1, flexShrink: 0,
           }}>📈</div>
           <div>
             <div style={{ fontSize: '13px', fontWeight: 700, color: '#0D9488' }}>
@@ -182,6 +182,14 @@ export default function AttorneyImpact({
           ? '* Basado en datos agregados. Los resultados individuales varían. Esto no es asesoramiento legal.'
           : '* Based on aggregate data. Individual results vary. This is not legal advice.'}
       </div>
+
+      <style>{`
+        @media (max-width: 480px) {
+          .attorney-recovery-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

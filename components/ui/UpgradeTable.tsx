@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface UpgradeTableProps {
   onBuy: (plan: string) => void;
@@ -8,7 +8,7 @@ interface UpgradeTableProps {
   currentTier?: string;
 }
 
-const features = [
+const features_en = [
   { name: 'Basic case type overview', free: true, single: true, unlimited: true },
   { name: 'Win rate data', free: true, single: true, unlimited: true },
   { name: 'State-specific analysis', free: false, single: true, unlimited: true },
@@ -21,6 +21,21 @@ const features = [
   { name: 'Case comparison tool', free: false, single: false, unlimited: true },
   { name: 'Unlimited reports', free: false, single: false, unlimited: true },
   { name: 'Priority support', free: false, single: false, unlimited: true },
+];
+
+const features_es = [
+  { name: 'Resumen básico del caso', free: true, single: true, unlimited: true },
+  { name: 'Datos de tasa de éxito', free: true, single: true, unlimited: true },
+  { name: 'Análisis por estado', free: false, single: true, unlimited: true },
+  { name: 'Gráficos de tendencias', free: false, single: true, unlimited: true },
+  { name: 'Distribución de acuerdos', free: false, single: true, unlimited: true },
+  { name: 'Radar de fortaleza del caso', free: false, single: true, unlimited: true },
+  { name: 'Comparación abogado vs Pro Se', free: false, single: true, unlimited: true },
+  { name: 'Inteligencia jurisdiccional', free: false, single: true, unlimited: true },
+  { name: 'Matriz de probabilidad', free: false, single: false, unlimited: true },
+  { name: 'Herramienta de comparación', free: false, single: false, unlimited: true },
+  { name: 'Reportes ilimitados', free: false, single: false, unlimited: true },
+  { name: 'Soporte prioritario', free: false, single: false, unlimited: true },
 ];
 
 const labels = {
@@ -37,6 +52,7 @@ const labels = {
     go_unlimited: 'Go Unlimited',
     most_popular: 'Most Popular',
     best_value: 'Best Value',
+    features: 'Features',
   },
   es: {
     free: 'Gratis',
@@ -51,6 +67,7 @@ const labels = {
     go_unlimited: 'Ir a Ilimitado',
     most_popular: 'Más Popular',
     best_value: 'Mejor Valor',
+    features: 'Características',
   },
 };
 
@@ -59,10 +76,19 @@ export default function UpgradeTable({
   lang = 'en',
   currentTier = 'free',
 }: UpgradeTableProps) {
-  const [mobileView, setMobileView] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState('free');
+  const [isMobile, setIsMobile] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState('single');
 
   const currentLabels = labels[lang] || labels['en'];
+  const features = lang === 'es' ? features_es : features_en;
+
+  // Auto-detect mobile
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const colors = {
     bg: '#131B2E',
@@ -74,125 +100,54 @@ export default function UpgradeTable({
   };
 
   const CheckIcon = () => (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M16.5 5L8 13.5L3.5 9"
-        stroke={colors.teal}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.5 5L8 13.5L3.5 9" stroke={colors.teal} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 
   const XIcon = () => (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M15 5L5 15M5 5L15 15"
-        stroke={colors.muted}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15 5L5 15M5 5L15 15" stroke={colors.muted} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 
-  const isDesktop = !mobileView;
-
-  if (!isDesktop) {
+  if (isMobile) {
     return (
-      <div
-        style={{
-          backgroundColor: colors.bg,
-          color: colors.text,
-          padding: '32px 16px',
-          borderRadius: '8px',
-          border: `1px solid ${colors.border}`,
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            gap: '12px',
-            marginBottom: '24px',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-          }}
-        >
+      <div style={{
+        backgroundColor: colors.bg, color: colors.text,
+        padding: '24px 16px', borderRadius: '8px',
+        border: `1px solid ${colors.border}`,
+      }}>
+        <div style={{
+          display: 'flex', gap: '8px', marginBottom: '24px',
+          justifyContent: 'center', flexWrap: 'wrap',
+        }}>
           {['free', 'single', 'unlimited'].map((plan) => (
-            <button
-              key={plan}
-              onClick={() => setSelectedPlan(plan)}
+            <button key={plan} onClick={() => setSelectedPlan(plan)}
               style={{
-                padding: '8px 16px',
-                borderRadius: '6px',
+                padding: '8px 14px', borderRadius: '6px',
                 border: `1px solid ${selectedPlan === plan ? colors.accent : colors.border}`,
-                backgroundColor:
-                  selectedPlan === plan ? colors.accent : 'transparent',
-                color: colors.text,
-                cursor: 'pointer',
-                fontSize: '14px',
-                fontWeight: selectedPlan === plan ? '600' : '500',
-              }}
-            >
-              {plan === 'free'
-                ? currentLabels.free
-                : plan === 'single'
-                  ? currentLabels.single
-                  : currentLabels.unlimited}
+                backgroundColor: selectedPlan === plan ? colors.accent : 'transparent',
+                color: colors.text, cursor: 'pointer',
+                fontSize: '13px', fontWeight: selectedPlan === plan ? 600 : 500,
+              }}>
+              {plan === 'free' ? currentLabels.free : plan === 'single' ? currentLabels.single : currentLabels.unlimited}
             </button>
           ))}
         </div>
 
         <div style={{ marginBottom: '24px' }}>
-          <h3
-            style={{
-              fontSize: '20px',
-              fontWeight: '700',
-              marginBottom: '8px',
-            }}
-          >
-            {selectedPlan === 'free'
-              ? currentLabels.free
-              : selectedPlan === 'single'
-                ? currentLabels.single
-                : currentLabels.unlimited}
+          <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '8px', margin: 0 }}>
+            {selectedPlan === 'free' ? currentLabels.free : selectedPlan === 'single' ? currentLabels.single : currentLabels.unlimited}
           </h3>
           {selectedPlan !== 'free' && (
-            <div style={{ marginBottom: '12px' }}>
+            <div style={{ marginTop: '8px', marginBottom: '12px' }}>
               <p style={{ color: colors.muted, fontSize: '14px', margin: 0 }}>
-                <span
-                  style={{
-                    textDecoration: 'line-through',
-                    marginRight: '8px',
-                  }}
-                >
-                  {selectedPlan === 'single'
-                    ? currentLabels.original_single
-                    : currentLabels.original_unlimited}
+                <span style={{ textDecoration: 'line-through', marginRight: '8px' }}>
+                  {selectedPlan === 'single' ? currentLabels.original_single : currentLabels.original_unlimited}
                 </span>
-                <span
-                  style={{
-                    fontSize: '24px',
-                    fontWeight: '700',
-                    color: colors.teal,
-                  }}
-                >
-                  {selectedPlan === 'single'
-                    ? currentLabels.price_single
-                    : currentLabels.price_unlimited}
+                <span style={{ fontSize: '22px', fontWeight: 700, color: colors.teal }}>
+                  {selectedPlan === 'single' ? currentLabels.price_single : currentLabels.price_unlimited}
                 </span>
               </p>
             </div>
@@ -201,28 +156,18 @@ export default function UpgradeTable({
 
         <div style={{ marginBottom: '24px' }}>
           {features.map((feature, idx) => {
-            const hasFeature =
-              selectedPlan === 'free'
-                ? feature.free
-                : selectedPlan === 'single'
-                  ? feature.single
-                  : feature.unlimited;
-
+            const hasFeature = selectedPlan === 'free' ? feature.free
+              : selectedPlan === 'single' ? feature.single : feature.unlimited;
             return (
-              <div
-                key={idx}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  paddingBottom: '12px',
-                  marginBottom: '12px',
-                  borderBottom: `1px solid ${colors.border}`,
-                }}
-              >
-                <div style={{ marginRight: '12px' }}>
+              <div key={idx} style={{
+                display: 'flex', alignItems: 'center',
+                paddingBottom: '10px', marginBottom: '10px',
+                borderBottom: `1px solid ${colors.border}`,
+              }}>
+                <div style={{ marginRight: '10px', flexShrink: 0 }}>
                   {hasFeature ? <CheckIcon /> : <XIcon />}
                 </div>
-                <span style={{ color: hasFeature ? colors.text : colors.muted }}>
+                <span style={{ color: hasFeature ? colors.text : colors.muted, fontSize: '13px' }}>
                   {feature.name}
                 </span>
               </div>
@@ -230,197 +175,81 @@ export default function UpgradeTable({
           })}
         </div>
 
-        <button
-          onClick={() => onBuy(selectedPlan)}
+        <button onClick={() => onBuy(selectedPlan)}
           disabled={selectedPlan === 'free' || currentTier === selectedPlan}
           style={{
-            width: '100%',
-            padding: '12px 16px',
-            borderRadius: '6px',
+            width: '100%', padding: '14px 16px', borderRadius: '8px',
             border: 'none',
-            backgroundColor:
-              selectedPlan === 'free'
-                ? colors.border
-                : selectedPlan === 'single'
-                  ? colors.accent
-                  : `linear-gradient(135deg, ${colors.teal} 0%, ${colors.accent} 100%)`,
-            color: colors.text,
-            fontSize: '14px',
-            fontWeight: '600',
-            cursor:
-              selectedPlan === 'free' || currentTier === selectedPlan
-                ? 'not-allowed'
-                : 'pointer',
-            opacity:
-              selectedPlan === 'free' || currentTier === selectedPlan ? 0.5 : 1,
-          }}
-        >
-          {currentTier === selectedPlan
-            ? currentLabels.current
-            : selectedPlan === 'single'
-              ? currentLabels.get_report
-              : currentLabels.go_unlimited}
+            background: selectedPlan === 'free' ? colors.border
+              : selectedPlan === 'unlimited'
+                ? `linear-gradient(135deg, ${colors.teal} 0%, ${colors.accent} 100%)`
+                : colors.accent,
+            color: colors.text, fontSize: '15px', fontWeight: 600,
+            cursor: selectedPlan === 'free' || currentTier === selectedPlan ? 'not-allowed' : 'pointer',
+            opacity: selectedPlan === 'free' || currentTier === selectedPlan ? 0.5 : 1,
+          }}>
+          {currentTier === selectedPlan ? currentLabels.current
+            : selectedPlan === 'single' ? currentLabels.get_report : currentLabels.go_unlimited}
         </button>
       </div>
     );
   }
 
   return (
-    <div
-      style={{
-        backgroundColor: colors.bg,
-        color: colors.text,
-        padding: '40px',
-        borderRadius: '12px',
-        border: `1px solid ${colors.border}`,
-        overflowX: 'auto',
-      }}
-    >
-      <table
-        style={{
-          width: '100%',
-          borderCollapse: 'collapse',
-          minWidth: '900px',
-        }}
-      >
+    <div style={{
+      backgroundColor: colors.bg, color: colors.text,
+      padding: '32px 24px', borderRadius: '12px',
+      border: `1px solid ${colors.border}`,
+      overflowX: 'auto',
+    }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '640px' }}>
         <thead>
           <tr style={{ borderBottom: `2px solid ${colors.border}` }}>
-            <th
-              style={{
-                padding: '24px 16px',
-                textAlign: 'left',
-                fontWeight: '600',
-                fontSize: '14px',
-                color: colors.muted,
-              }}
-            >
-              Features
+            <th style={{ padding: '20px 12px', textAlign: 'left', fontWeight: 600, fontSize: '14px', color: colors.muted }}>
+              {currentLabels.features}
             </th>
-            <th
-              style={{
-                padding: '24px 16px',
-                textAlign: 'center',
-                position: 'relative',
-              }}
-            >
-              <div style={{ fontSize: '18px', fontWeight: '700' }}>
-                {currentLabels.free}
-              </div>
-              <div
-                style={{
-                  fontSize: '24px',
-                  fontWeight: '700',
-                  marginTop: '8px',
-                  color: colors.teal,
-                }}
-              >
-                Free
-              </div>
+            <th style={{ padding: '20px 12px', textAlign: 'center', position: 'relative' }}>
+              <div style={{ fontSize: '16px', fontWeight: 700 }}>{currentLabels.free}</div>
+              <div style={{ fontSize: '22px', fontWeight: 700, marginTop: '6px', color: colors.teal }}>Free</div>
             </th>
-            <th
-              style={{
-                padding: '24px 16px',
-                textAlign: 'center',
-                position: 'relative',
-                backgroundColor:
-                  currentTier === 'single' ? colors.border : 'transparent',
-                borderRadius: '8px',
-              }}
-            >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '-12px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  backgroundColor: colors.accent,
-                  color: colors.text,
-                  padding: '4px 12px',
-                  borderRadius: '4px',
-                  fontSize: '12px',
-                  fontWeight: '700',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {currentLabels.most_popular}
-              </div>
-              <div style={{ fontSize: '18px', fontWeight: '700' }}>
-                {currentLabels.single}
-              </div>
-              <div style={{ marginTop: '8px' }}>
-                <p
-                  style={{
-                    margin: 0,
-                    color: colors.muted,
-                    fontSize: '14px',
-                  }}
-                >
-                  <span style={{ textDecoration: 'line-through' }}>
-                    {currentLabels.original_single}
-                  </span>
+            <th style={{
+              padding: '20px 12px', textAlign: 'center', position: 'relative',
+              backgroundColor: currentTier === 'single' ? colors.border : 'transparent',
+              borderRadius: '8px',
+            }}>
+              <div style={{
+                position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)',
+                backgroundColor: colors.accent, color: colors.text,
+                padding: '4px 12px', borderRadius: '4px',
+                fontSize: '11px', fontWeight: 700, whiteSpace: 'nowrap',
+              }}>{currentLabels.most_popular}</div>
+              <div style={{ fontSize: '16px', fontWeight: 700 }}>{currentLabels.single}</div>
+              <div style={{ marginTop: '6px' }}>
+                <p style={{ margin: 0, color: colors.muted, fontSize: '13px' }}>
+                  <span style={{ textDecoration: 'line-through' }}>{currentLabels.original_single}</span>
                 </p>
-                <div
-                  style={{
-                    fontSize: '24px',
-                    fontWeight: '700',
-                    color: colors.teal,
-                    marginTop: '4px',
-                  }}
-                >
+                <div style={{ fontSize: '22px', fontWeight: 700, color: colors.teal, marginTop: '2px' }}>
                   {currentLabels.price_single}
                 </div>
               </div>
             </th>
-            <th
-              style={{
-                padding: '24px 16px',
-                textAlign: 'center',
-                position: 'relative',
-                backgroundColor:
-                  currentTier === 'unlimited' ? colors.border : 'transparent',
-                borderRadius: '8px',
-              }}
-            >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '-12px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  backgroundColor: colors.teal,
-                  color: colors.bg,
-                  padding: '4px 12px',
-                  borderRadius: '4px',
-                  fontSize: '12px',
-                  fontWeight: '700',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {currentLabels.best_value}
-              </div>
-              <div style={{ fontSize: '18px', fontWeight: '700' }}>
-                {currentLabels.unlimited}
-              </div>
-              <div style={{ marginTop: '8px' }}>
-                <p
-                  style={{
-                    margin: 0,
-                    color: colors.muted,
-                    fontSize: '14px',
-                  }}
-                >
-                  <span style={{ textDecoration: 'line-through' }}>
-                    {currentLabels.original_unlimited}
-                  </span>
+            <th style={{
+              padding: '20px 12px', textAlign: 'center', position: 'relative',
+              backgroundColor: currentTier === 'unlimited' ? colors.border : 'transparent',
+              borderRadius: '8px',
+            }}>
+              <div style={{
+                position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)',
+                backgroundColor: colors.teal, color: colors.bg,
+                padding: '4px 12px', borderRadius: '4px',
+                fontSize: '11px', fontWeight: 700, whiteSpace: 'nowrap',
+              }}>{currentLabels.best_value}</div>
+              <div style={{ fontSize: '16px', fontWeight: 700 }}>{currentLabels.unlimited}</div>
+              <div style={{ marginTop: '6px' }}>
+                <p style={{ margin: 0, color: colors.muted, fontSize: '13px' }}>
+                  <span style={{ textDecoration: 'line-through' }}>{currentLabels.original_unlimited}</span>
                 </p>
-                <div
-                  style={{
-                    fontSize: '24px',
-                    fontWeight: '700',
-                    color: colors.teal,
-                    marginTop: '4px',
-                  }}
-                >
+                <div style={{ fontSize: '22px', fontWeight: 700, color: colors.teal, marginTop: '2px' }}>
                   {currentLabels.price_unlimited}
                 </div>
               </div>
@@ -429,181 +258,65 @@ export default function UpgradeTable({
         </thead>
         <tbody>
           {features.map((feature, idx) => (
-            <tr
-              key={idx}
-              style={{
-                borderBottom: `1px solid ${colors.border}`,
-                transition: 'background-color 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = colors.border;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
-            >
-              <td
-                style={{
-                  padding: '16px',
-                  fontSize: '14px',
-                  color: colors.text,
-                }}
-              >
-                {feature.name}
-              </td>
-              <td
-                style={{
-                  padding: '16px',
-                  textAlign: 'center',
-                }}
-              >
-                {feature.free ? <CheckIcon /> : <XIcon />}
-              </td>
-              <td
-                style={{
-                  padding: '16px',
-                  textAlign: 'center',
-                  backgroundColor:
-                    currentTier === 'single' ? colors.border : 'transparent',
-                  borderRadius: '8px',
-                }}
-              >
-                {feature.single ? <CheckIcon /> : <XIcon />}
-              </td>
-              <td
-                style={{
-                  padding: '16px',
-                  textAlign: 'center',
-                  backgroundColor:
-                    currentTier === 'unlimited' ? colors.border : 'transparent',
-                  borderRadius: '8px',
-                }}
-              >
-                {feature.unlimited ? <CheckIcon /> : <XIcon />}
-              </td>
+            <tr key={idx} style={{ borderBottom: `1px solid ${colors.border}`, transition: 'background-color 0.2s ease' }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = colors.border; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}>
+              <td style={{ padding: '14px 12px', fontSize: '13px', color: colors.text }}>{feature.name}</td>
+              <td style={{ padding: '14px 12px', textAlign: 'center' }}>{feature.free ? <CheckIcon /> : <XIcon />}</td>
+              <td style={{
+                padding: '14px 12px', textAlign: 'center',
+                backgroundColor: currentTier === 'single' ? colors.border : 'transparent',
+                borderRadius: '8px',
+              }}>{feature.single ? <CheckIcon /> : <XIcon />}</td>
+              <td style={{
+                padding: '14px 12px', textAlign: 'center',
+                backgroundColor: currentTier === 'unlimited' ? colors.border : 'transparent',
+                borderRadius: '8px',
+              }}>{feature.unlimited ? <CheckIcon /> : <XIcon />}</td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '24px',
-          marginTop: '40px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <button
-            onClick={() => onBuy('free')}
-            disabled
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginTop: '32px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button onClick={() => onBuy('free')} disabled
             style={{
-              width: '100%',
-              maxWidth: '200px',
-              padding: '12px 24px',
-              borderRadius: '6px',
-              border: `1px solid ${colors.border}`,
-              backgroundColor: 'transparent',
-              color: colors.muted,
-              fontSize: '14px',
-              fontWeight: '600',
-              cursor: 'not-allowed',
-              opacity: 0.5,
-            }}
-          >
-            {currentLabels.current}
-          </button>
+              width: '100%', maxWidth: '180px', padding: '12px 20px', borderRadius: '6px',
+              border: `1px solid ${colors.border}`, backgroundColor: 'transparent',
+              color: colors.muted, fontSize: '14px', fontWeight: 600,
+              cursor: 'not-allowed', opacity: 0.5,
+            }}>{currentLabels.current}</button>
         </div>
-
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <button
-            onClick={() => onBuy('single')}
-            disabled={currentTier === 'single'}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button onClick={() => onBuy('single')} disabled={currentTier === 'single'}
             style={{
-              width: '100%',
-              maxWidth: '200px',
-              padding: '12px 24px',
-              borderRadius: '6px',
-              border: 'none',
-              backgroundColor:
-                currentTier === 'single' ? colors.border : colors.accent,
-              color: colors.text,
-              fontSize: '14px',
-              fontWeight: '600',
-              cursor:
-                currentTier === 'single' ? 'not-allowed' : 'pointer',
+              width: '100%', maxWidth: '180px', padding: '12px 20px', borderRadius: '6px',
+              border: 'none', backgroundColor: currentTier === 'single' ? colors.border : colors.accent,
+              color: colors.text, fontSize: '14px', fontWeight: 600,
+              cursor: currentTier === 'single' ? 'not-allowed' : 'pointer',
               opacity: currentTier === 'single' ? 0.7 : 1,
               transition: 'background-color 0.2s ease',
             }}
-            onMouseEnter={(e) => {
-              if (currentTier !== 'single') {
-                e.currentTarget.style.backgroundColor = '#6366F1';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (currentTier !== 'single') {
-                e.currentTarget.style.backgroundColor = colors.accent;
-              }
-            }}
-          >
-            {currentTier === 'single'
-              ? currentLabels.current
-              : currentLabels.get_report}
+            onMouseEnter={(e) => { if (currentTier !== 'single') e.currentTarget.style.backgroundColor = '#6366F1'; }}
+            onMouseLeave={(e) => { if (currentTier !== 'single') e.currentTarget.style.backgroundColor = colors.accent; }}>
+            {currentTier === 'single' ? currentLabels.current : currentLabels.get_report}
           </button>
         </div>
-
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <button
-            onClick={() => onBuy('unlimited')}
-            disabled={currentTier === 'unlimited'}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button onClick={() => onBuy('unlimited')} disabled={currentTier === 'unlimited'}
             style={{
-              width: '100%',
-              maxWidth: '200px',
-              padding: '12px 24px',
-              borderRadius: '6px',
+              width: '100%', maxWidth: '180px', padding: '12px 20px', borderRadius: '6px',
               border: 'none',
-              background:
-                currentTier === 'unlimited'
-                  ? colors.border
-                  : `linear-gradient(135deg, ${colors.teal} 0%, ${colors.accent} 100%)`,
-              color: colors.text,
-              fontSize: '14px',
-              fontWeight: '600',
-              cursor:
-                currentTier === 'unlimited' ? 'not-allowed' : 'pointer',
+              background: currentTier === 'unlimited' ? colors.border : `linear-gradient(135deg, ${colors.teal} 0%, ${colors.accent} 100%)`,
+              color: colors.text, fontSize: '14px', fontWeight: 600,
+              cursor: currentTier === 'unlimited' ? 'not-allowed' : 'pointer',
               opacity: currentTier === 'unlimited' ? 0.7 : 1,
               transition: 'opacity 0.2s ease',
             }}
-            onMouseEnter={(e) => {
-              if (currentTier !== 'unlimited') {
-                e.currentTarget.style.opacity = '0.9';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (currentTier !== 'unlimited') {
-                e.currentTarget.style.opacity = '1';
-              }
-            }}
-          >
-            {currentTier === 'unlimited'
-              ? currentLabels.current
-              : currentLabels.go_unlimited}
+            onMouseEnter={(e) => { if (currentTier !== 'unlimited') e.currentTarget.style.opacity = '0.9'; }}
+            onMouseLeave={(e) => { if (currentTier !== 'unlimited') e.currentTarget.style.opacity = '1'; }}>
+            {currentTier === 'unlimited' ? currentLabels.current : currentLabels.go_unlimited}
           </button>
         </div>
       </div>

@@ -34,8 +34,8 @@ function getScoreLabel(score: number, lang: string): string {
 
 export default function ConfidenceRing({
   score,
-  size = 160,
-  strokeWidth = 10,
+  size: propSize = 160,
+  strokeWidth: propStrokeWidth = 10,
   label,
   sublabel,
   lang = 'en',
@@ -44,6 +44,24 @@ export default function ConfidenceRing({
   const ref = useRef<HTMLDivElement>(null);
   const [animatedScore, setAnimatedScore] = useState(animated ? 0 : score);
   const [isVisible, setIsVisible] = useState(!animated);
+  const [responsiveSize, setResponsiveSize] = useState(propSize);
+
+  // Responsive size based on container
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const updateSize = () => {
+      const containerWidth = el.parentElement?.clientWidth || 300;
+      // On very small screens, cap the ring at 75% of container width
+      const maxSize = Math.min(propSize, containerWidth * 0.75);
+      setResponsiveSize(Math.max(100, maxSize)); // minimum 100px
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, [propSize]);
 
   useEffect(() => {
     if (!animated) return;
@@ -75,6 +93,8 @@ export default function ConfidenceRing({
     requestAnimationFrame(animate);
   }, [isVisible, score, animated]);
 
+  const size = responsiveSize;
+  const strokeWidth = propStrokeWidth * (size / propSize); // scale stroke proportionally
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (animatedScore / 100) * circumference;
@@ -126,7 +146,7 @@ export default function ConfidenceRing({
             {animatedScore}
           </div>
           <div style={{
-            fontSize: size * 0.065,
+            fontSize: Math.max(size * 0.065, 8),
             fontWeight: 600, color: '#64748B',
             textTransform: 'uppercase',
             letterSpacing: '1.5px',

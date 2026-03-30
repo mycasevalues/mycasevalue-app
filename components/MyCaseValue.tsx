@@ -265,7 +265,7 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
   );
 }
 
-function LockedPreview({ children, onUnlock, label }: { children: React.ReactNode; onUnlock: () => void; label?: string }) {
+function LockedPreview({ children, onUnlock, label, lang = 'en' }: { children: React.ReactNode; onUnlock: () => void; label?: string; lang?: string }) {
   return (
     <div className="relative mb-3 rounded-2xl overflow-hidden locked-shimmer" style={{
       background: 'linear-gradient(135deg, rgba(20,28,45,0.95) 0%, rgba(15,23,42,0.9) 100%)',
@@ -285,8 +285,8 @@ function LockedPreview({ children, onUnlock, label }: { children: React.ReactNod
           </svg>
         </div>
         <div className="text-center max-w-xs">
-          <div className="text-[13px] text-[#CBD5E1] font-semibold mb-1">Premium Insight</div>
-          <div className="text-[11px] text-[#94A3B8] mb-3">Unlock detailed data that could change your strategy</div>
+          <div className="text-[13px] text-[#CBD5E1] font-semibold mb-1">{lang === 'es' ? 'Información Premium' : 'Premium Insight'}</div>
+          <div className="text-[11px] text-[#94A3B8] mb-3">{lang === 'es' ? 'Desbloquea datos detallados que podrían cambiar tu estrategia' : 'Unlock detailed data that could change your strategy'}</div>
           <button onClick={onUnlock} className="premium-cta magnetic-btn shimmer-sweep px-8 py-3.5 text-[14px] font-semibold rounded-xl cursor-pointer text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-95"
             style={{
               background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
@@ -297,11 +297,11 @@ function LockedPreview({ children, onUnlock, label }: { children: React.ReactNod
           <div className="flex items-center justify-center gap-3 mt-3">
             <div className="flex items-center gap-1 text-[10px] text-[#94A3B8]">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-              Secure checkout
+              {lang === 'es' ? 'Pago seguro' : 'Secure checkout'}
             </div>
             <div className="flex items-center gap-1 text-[10px] text-[#94A3B8]">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Instant access
+              {lang === 'es' ? 'Acceso instantáneo' : 'Instant access'}
             </div>
           </div>
         </div>
@@ -417,32 +417,87 @@ function StateWinRate({ stateCode, stateRates }: { stateCode: string; stateRates
 }
 
 // Legal glossary tooltip
-const LEGAL_GLOSSARY: Record<string, string> = {
-  'win rate': 'How often people in similar situations got a favorable result in court.',
-  'settlement': 'When both sides agree to resolve the case (usually with a payment) without going to trial.',
-  'dismissal': 'When a judge ends a case before it goes to trial, often because of a technicality or lack of evidence.',
-  'summary judgment': 'When a judge decides the case without a full trial because the key facts aren\'t in dispute.',
-  'statute of limitations': 'The legal deadline to file your case. If you miss it, you generally can\'t sue — even if you have a strong case.',
-  'contingency fee': 'A payment arrangement where your lawyer only gets paid if you win (usually 33-40% of what you recover).',
-  'plaintiff': 'The person filing the lawsuit — that could be you.',
-  'defendant': 'The person or company being sued.',
-  'circuit': 'A regional group of federal courts. The U.S. has 13, and outcomes can vary significantly between them.',
-  'discovery': 'The phase before trial where both sides must share evidence and information with each other.',
-  'deposition': 'When a witness answers questions under oath outside of court, typically recorded for later use.',
-  'mediation': 'A meeting where a neutral person helps both sides try to reach an agreement without going to trial.',
-  'class action': 'A single lawsuit filed on behalf of a large group of people who were all affected by the same thing.',
-  'jurisdiction': 'Which court has the authority to hear your type of case.',
-  'filing': 'Officially submitting your lawsuit paperwork to the court to start your case.',
-  'appeal': 'Asking a higher court to review the decision if you disagree with the outcome.',
-  'damages': 'The money you\'re asking for to compensate you for what happened.',
-  'pro se': 'Representing yourself in court without a lawyer.',
+const LEGAL_GLOSSARY: Record<string, { en: string; es: string }> = {
+  'win rate': {
+    en: 'How often people in similar situations got a favorable result in court.',
+    es: 'Con qué frecuencia las personas en situaciones similares obtienen un resultado favorable en la corte.'
+  },
+  'settlement': {
+    en: 'When both sides agree to resolve the case (usually with a payment) without going to trial.',
+    es: 'Cuando ambas partes acuerdan resolver el caso (generalmente con un pago) sin ir a juicio.'
+  },
+  'dismissal': {
+    en: 'When a judge ends a case before it goes to trial, often because of a technicality or lack of evidence.',
+    es: 'Cuando un juez termina un caso antes de que vaya a juicio, a menudo por una tecnicidad o falta de evidencia.'
+  },
+  'summary judgment': {
+    en: 'When a judge decides the case without a full trial because the key facts aren\'t in dispute.',
+    es: 'Cuando un juez decide el caso sin un juicio completo porque los hechos clave no están en disputa.'
+  },
+  'statute of limitations': {
+    en: 'The legal deadline to file your case. If you miss it, you generally can\'t sue — even if you have a strong case.',
+    es: 'El plazo legal para presentar tu demanda. Si lo pierdes, generalmente no puedes demandar, incluso si tienes un caso sólido.'
+  },
+  'contingency fee': {
+    en: 'A payment arrangement where your lawyer only gets paid if you win (usually 33-40% of what you recover).',
+    es: 'Un acuerdo de pago en el que tu abogado solo recibe dinero si ganas (generalmente 33-40% de lo que recuperes).'
+  },
+  'plaintiff': {
+    en: 'The person filing the lawsuit — that could be you.',
+    es: 'La persona que presenta la demanda, que podrías ser tú.'
+  },
+  'defendant': {
+    en: 'The person or company being sued.',
+    es: 'La persona o empresa que está siendo demandada.'
+  },
+  'circuit': {
+    en: 'A regional group of federal courts. The U.S. has 13, and outcomes can vary significantly between them.',
+    es: 'Un grupo regional de cortes federales. EE.UU. tiene 13, y los resultados pueden variar significativamente entre ellas.'
+  },
+  'discovery': {
+    en: 'The phase before trial where both sides must share evidence and information with each other.',
+    es: 'La fase antes del juicio en la que ambas partes deben compartir evidencia e información entre sí.'
+  },
+  'deposition': {
+    en: 'When a witness answers questions under oath outside of court, typically recorded for later use.',
+    es: 'Cuando un testigo responde preguntas bajo juramento fuera de la corte, típicamente grabado para uso posterior.'
+  },
+  'mediation': {
+    en: 'A meeting where a neutral person helps both sides try to reach an agreement without going to trial.',
+    es: 'Una reunión donde una persona neutral ayuda a ambas partes a intentar llegar a un acuerdo sin ir a juicio.'
+  },
+  'class action': {
+    en: 'A single lawsuit filed on behalf of a large group of people who were all affected by the same thing.',
+    es: 'Una demanda única presentada en nombre de un gran grupo de personas que fueron afectadas por lo mismo.'
+  },
+  'jurisdiction': {
+    en: 'Which court has the authority to hear your type of case.',
+    es: 'Qué corte tiene la autoridad para escuchar tu tipo de caso.'
+  },
+  'filing': {
+    en: 'Officially submitting your lawsuit paperwork to the court to start your case.',
+    es: 'Presentar oficialmente tus documentos de demanda a la corte para comenzar tu caso.'
+  },
+  'appeal': {
+    en: 'Asking a higher court to review the decision if you disagree with the outcome.',
+    es: 'Pedirle a una corte superior que revise la decisión si no estás de acuerdo con el resultado.'
+  },
+  'damages': {
+    en: 'The money you\'re asking for to compensate you for what happened.',
+    es: 'El dinero que estás pidiendo para compensarte por lo que sucedió.'
+  },
+  'pro se': {
+    en: 'Representing yourself in court without a lawyer.',
+    es: 'Representarte a ti mismo en la corte sin un abogado.'
+  },
 };
 
 
-function GlossaryTip({ term, children }: { term: string; children: React.ReactNode }) {
+function GlossaryTip({ term, children, lang = 'en' }: { term: string; children: React.ReactNode; lang?: string }) {
   const [show, setShow] = useState(false);
   const def = LEGAL_GLOSSARY[term.toLowerCase()];
   if (!def) return <>{children}</>;
+  const displayDef = lang === 'es' ? def.es : def.en;
   return (
     <span className="relative inline-block cursor-help"
       onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}
@@ -452,7 +507,7 @@ function GlossaryTip({ term, children }: { term: string; children: React.ReactNo
         <span className="absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 rounded-xl text-[12px] leading-relaxed font-normal text-left w-56 sm:w-64 max-w-[calc(100vw-2rem)]"
           style={{ background: '#0B1221', color: '#E2E8F0', boxShadow: '0 8px 32px rgba(11,18,33,.25)' }}>
           <span className="font-bold text-white block mb-0.5 capitalize">{term}</span>
-          {def}
+          {displayDef}
           <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-px w-2.5 h-2.5 rotate-45"
             style={{ background: '#0B1221' }} />
         </span>
@@ -985,7 +1040,7 @@ function Shell({
 }: ShellProps) {
   return (
     <>
-      <a href="#main-content" className="skip-link">Skip to content</a>
+      <a href="#main-content" className="skip-link">{lang === 'es' ? 'Ir al contenido' : 'Skip to content'}</a>
       <div className="dark" role="application" aria-label="MyCaseValue" style={{
         background: '#0B1221',
         minHeight: '100vh',
@@ -2074,8 +2129,8 @@ export default function MyCaseValue() {
                 {/* Header */}
                 <div className="px-6 pt-5 pb-3 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <div>
-                    <div className="text-[9px] font-bold tracking-[2px] uppercase" style={{ color: '#6B7A94' }}>CASE ANALYSIS REPORT</div>
-                    <div className="text-[15px] font-display font-bold mt-0.5" style={{ color: '#F0F2F5' }}>Employment Discrimination</div>
+                    <div className="text-[9px] font-bold tracking-[2px] uppercase" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'INFORME DE ANÁLISIS DE CASO' : 'CASE ANALYSIS REPORT'}</div>
+                    <div className="text-[15px] font-display font-bold mt-0.5" style={{ color: '#F0F2F5' }}>{lang === 'es' ? 'Discriminación Laboral' : 'Employment Discrimination'}</div>
                   </div>
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
@@ -2767,7 +2822,7 @@ export default function MyCaseValue() {
               {Object.entries(LEGAL_GLOSSARY).slice(0, 6).map(([term, def], i) => (
                 <div key={i} className="p-3 rounded-xl bg-[#1E293B] border border-[#1E293B]">
                   <div className="text-[13px] font-semibold capitalize" style={{ color: '#4F46E5' }}>{term}</div>
-                  <div className="text-[11px] text-[#94A3B8] mt-0.5 leading-relaxed">{def}</div>
+                  <div className="text-[11px] text-[#94A3B8] mt-0.5 leading-relaxed">{lang === 'es' ? def.es : def.en}</div>
                 </div>
               ))}
             </div>
@@ -5124,7 +5179,7 @@ export default function MyCaseValue() {
 
               {/* Locked previews */}
               <Reveal delay={280}>
-                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear datos de recuperación — $5.99' : 'Unlock recovery data — $5.99'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear datos de recuperación — $5.99' : 'Unlock recovery data — $5.99'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? '¿Cuánto recuperaron personas en situaciones similares?' : 'What did people in similar situations recover?'}</div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -5144,7 +5199,7 @@ export default function MyCaseValue() {
               </Reveal>
 
               <Reveal delay={300}>
-                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear informe completo' : 'Unlock full report'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear informe completo' : 'Unlock full report'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? 'Tu informe premium incluye:' : 'Your premium report includes:'}</div>
                     <div className="grid grid-cols-2 gap-2">
@@ -5169,7 +5224,7 @@ export default function MyCaseValue() {
 
               {/* Premium locked section: Case Strength Score Breakdown */}
               <Reveal delay={310}>
-                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear análisis completo' : 'Unlock full analysis'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear análisis completo' : 'Unlock full analysis'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Desglose de la fortaleza de tu caso' : 'Your case strength score breakdown'}</div>
                     <div className="flex items-center justify-center mb-4">
@@ -5198,7 +5253,7 @@ export default function MyCaseValue() {
 
               {/* Premium locked section: Predicted Timeline */}
               <Reveal delay={320}>
-                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver cronograma predicho' : 'View predicted timeline'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver cronograma predicho' : 'View predicted timeline'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Cronograma predicho para tu caso' : 'Predicted timeline for your case'}</div>
                     <div className="space-y-2">
@@ -5222,7 +5277,7 @@ export default function MyCaseValue() {
 
               {/* Premium locked section: Recovery Calculator */}
               <Reveal delay={330}>
-                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver calculadora de recuperación' : 'View recovery calculator'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver calculadora de recuperación' : 'View recovery calculator'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Calculadora de recuperación esperada' : 'Expected recovery calculator'}</div>
                     <div className="space-y-2.5">
@@ -5243,7 +5298,7 @@ export default function MyCaseValue() {
 
               {/* Premium locked section: Judge & Jurisdiction Analysis */}
               <Reveal delay={340}>
-                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver análisis de jurisdicción' : 'View jurisdiction analysis'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver análisis de jurisdicción' : 'View jurisdiction analysis'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Análisis de juez y jurisdicción' : 'Judge & jurisdiction analysis'}</div>
                     <div className="grid grid-cols-2 gap-2">
@@ -5265,7 +5320,7 @@ export default function MyCaseValue() {
 
               {/* Premium locked section: Case Strength Radar */}
               <Reveal delay={350}>
-                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver radar de fortaleza del caso' : 'View case strength radar'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver radar de fortaleza del caso' : 'View case strength radar'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Radar de fortaleza del caso' : 'Case strength radar'}</div>
                     <div className="flex items-center gap-6">
@@ -5302,7 +5357,7 @@ export default function MyCaseValue() {
 
               {/* Premium locked section: Similar Cases Near You */}
               <Reveal delay={355}>
-                <LockedPreview onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver casos similares cerca' : 'View similar cases near you'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver casos similares cerca' : 'View similar cases near you'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? 'Casos similares en tu área' : 'Similar cases in your area'}</div>
                     <div className="space-y-2">
@@ -6043,16 +6098,30 @@ export default function MyCaseValue() {
             <div className="card-bg bg-[#131B2E] rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
               <div className="sticky top-0 card-bg bg-[#131B2E] rounded-t-3xl px-6 pt-6 pb-3 border-b border-[#1E293B] flex items-center justify-between z-10">
                 <h2 className="text-lg font-display font-bold">
-                  {legalPage === 'terms' ? 'Terms of Service' : legalPage === 'privacy' ? 'Privacy Policy' : legalPage === 'cookies' ? 'Cookie Policy' : 'Legal Disclaimer'}
+                  {legalPage === 'terms' ? (lang === 'es' ? 'Términos de Servicio' : 'Terms of Service') : legalPage === 'privacy' ? (lang === 'es' ? 'Política de Privacidad' : 'Privacy Policy') : legalPage === 'cookies' ? (lang === 'es' ? 'Política de Cookies' : 'Cookie Policy') : (lang === 'es' ? 'Descargo de Responsabilidad' : 'Legal Disclaimer')}
                 </h2>
                 <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[#1E293B] hover:bg-[#334155] border-none cursor-pointer transition-colors">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
                 </button>
               </div>
               <div className="px-6 py-5 text-[13px] text-[#94A3B8] leading-relaxed space-y-4">
-                <p className="text-[11px] text-[#94A3B8] italic">Last updated: March 25, 2026</p>
+                <p className="text-[11px] text-[#94A3B8] italic">{lang === 'es' ? 'Última actualización: 25 de marzo de 2026' : 'Last updated: March 25, 2026'}</p>
 
-                {legalPage === 'terms' && (<>
+                {legalPage === 'terms' && (lang === 'es' ? (<>
+                  <p><strong>1. Aceptación de los Términos.</strong> Al acceder o utilizar MyCaseValue (&ldquo;Servicio&rdquo;), aceptas estar vinculado por estos Términos de Servicio. Si no estás de acuerdo, no utilices el Servicio.</p>
+                  <p><strong>2. Naturaleza del Servicio.</strong> MyCaseValue es una herramienta informativa que muestra datos históricos agregados derivados de registros públicos de cortes federales. El Servicio NO proporciona asesoramiento legal, opiniones legales, representación legal o recomendaciones de ningún tipo. El uso de este Servicio no crea una relación abogado-cliente. MyCaseValue no es un despacho de abogados y no ejerce la abogacía.</p>
+                  <p><strong>3. No Constituye Asesoramiento Legal.</strong> Nada en este sitio web constituye asesoramiento legal. La información presentada refleja resultados históricos agregados y no predice, estima o evalúa ningún caso individual, demanda o asunto legal. Debes consultar con un abogado con licencia para obtener asesoramiento específico de tu situación.</p>
+                  <p><strong>4. Sin Garantía de Exactitud.</strong> Aunque nos esforzamos por proporcionar datos precisos derivados de registros públicos (Federal Judicial Center Integrated Database, CourtListener, uscourts.gov), no hacemos ninguna garantía con respecto a la exactitud, integridad, oportunidad o confiabilidad de ninguna información. Los datos pueden contener errores, omisiones o retrasos.</p>
+                  <p><strong>5. Limitación de Responsabilidad.</strong> EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY, MYCASEVALUE LLC, SUS FUNCIONARIOS, DIRECTORES, EMPLEADOS Y AGENTES NO SERÁN RESPONSABLES POR NINGÚN DAÑO INDIRECTO, INCIDENTAL, ESPECIAL, CONSECUENTE O PUNITIVO, O CUALQUIER PÉRDIDA DE GANANCIAS O INGRESOS, YA SEA INCURRIDO DIRECTAMENTE O INDIRECTAMENTE, QUE SURJA DE TU USO DEL SERVICIO. EN NINGÚN CASO NUESTRA RESPONSABILIDAD TOTAL SUPERARÁ LA CANTIDAD QUE PAGASTE EN LOS 12 MESES ANTERIORES A LA RECLAMACIÓN.</p>
+                  <p><strong>6. Renuncia de Garantías.</strong> EL SERVICIO SE PROPORCIONA &ldquo;TAL CUAL&rdquo; Y &ldquo;SEGÚN DISPONIBILIDAD&rdquo; SIN GARANTÍAS DE NINGÚN TIPO, EXPRESAS O IMPLÍCITAS, INCLUYENDO PERO NO LIMITADO A GARANTÍAS IMPLÍCITAS DE COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN.</p>
+                  <p><strong>7. Responsabilidades del Usuario.</strong> Aceptas utilizar el Servicio solo para propósitos lícitos y en cumplimiento de todas las leyes aplicables. No debes tergiversar la información obtenida de MyCaseValue como asesoramiento legal u opinión legal.</p>
+                  <p><strong>8. Pagos y Reembolsos.</strong> Los pagos se procesan a través de Stripe. Todas las ventas son finales. Si experimentas problemas técnicos que impidan el acceso a un informe pagado, contacta support@mycasevalue.com dentro de 7 días para obtener asistencia.</p>
+                  <p><strong>9. Propiedad Intelectual.</strong> Todo el contenido, diseño y código de MyCaseValue son propiedad de MyCaseValue LLC. Los datos subyacentes de la corte son de dominio público (17 U.S.C. &sect; 105). No puedes reproducir, distribuir o crear trabajos derivados de nuestros materiales propietarios sin permiso escrito.</p>
+                  <p><strong>10. Resolución de Disputas y Arbitraje.</strong> Cualquier disputa que surja de o se relacione con estos Términos o el Servicio será resuelta a través de arbitraje vinculante administrado por la American Arbitration Association de acuerdo con sus Reglas de Arbitraje del Consumidor, excepto que cualquiera de las partes puede buscar medidas cautelares en una corte de jurisdicción competente. ACEPTAS RENUNCIAR A TU DERECHO A UN JUICIO CON JURADO Y A PARTICIPAR EN UNA DEMANDA COLECTIVA.</p>
+                  <p><strong>11. Ley Aplicable.</strong> Estos Términos se regirán por las leyes del Estado de Delaware, sin consideración de los principios de conflicto de leyes.</p>
+                  <p><strong>12. Cambios en los Términos.</strong> Podemos actualizar estos Términos en cualquier momento. El uso continuado del Servicio constituye la aceptación de los Términos actualizados.</p>
+                  <p><strong>13. Contacto.</strong> Las preguntas sobre estos Términos pueden dirigirse a legal@mycasevalue.com.</p>
+                </>) : (<>
                   <p><strong>1. Acceptance of Terms.</strong> By accessing or using MyCaseValue (&ldquo;Service&rdquo;), you agree to be bound by these Terms of Service. If you do not agree, do not use the Service.</p>
                   <p><strong>2. Nature of Service.</strong> MyCaseValue is an informational tool that displays aggregate historical data derived from public federal court records. The Service does NOT provide legal advice, legal opinions, legal representation, or recommendations of any kind. No attorney-client relationship is created by using this Service. MyCaseValue is not a law firm and does not practice law.</p>
                   <p><strong>3. Not Legal Advice.</strong> Nothing on this website constitutes legal advice. The information presented reflects historical aggregate outcomes and does not predict, estimate, or evaluate any individual case, claim, or legal matter. You should consult a licensed attorney for advice specific to your situation.</p>
@@ -6066,9 +6135,22 @@ export default function MyCaseValue() {
                   <p><strong>11. Governing Law.</strong> These Terms shall be governed by the laws of the State of Delaware, without regard to conflict of law principles.</p>
                   <p><strong>12. Changes to Terms.</strong> We may update these Terms at any time. Continued use of the Service constitutes acceptance of the updated Terms.</p>
                   <p><strong>13. Contact.</strong> Questions about these Terms may be directed to legal@mycasevalue.com.</p>
-                </>)}
+                </>))}
 
-                {legalPage === 'privacy' && (<>
+                {legalPage === 'privacy' && (lang === 'es' ? (<>
+                  <p><strong>1. Información que Recopilamos.</strong> Recopilamos información que proporcionas voluntariamente (selección de estado, tipo de caso, correo electrónico para características de cuenta) y datos recopilados automáticamente (dirección IP, tipo de navegador, información del dispositivo, análisis de uso a través de cookies).</p>
+                  <p><strong>2. Cómo Usamos la Información.</strong> Usamos la información recopilada para: proporcionar y mejorar el Servicio, procesar pagos a través de Stripe, enviar comunicaciones a las que te has suscrito, analizar patrones de uso para mejorar la experiencia del usuario y cumplir con obligaciones legales.</p>
+                  <p><strong>3. Compartir Información.</strong> No vendemos tu información personal. Podemos compartir información con: Stripe (procesamiento de pagos), proveedores de análisis (datos de uso anonimizados) y cumplimiento de la ley (cuando lo requiera la ley, citación o orden judicial).</p>
+                  <p><strong>4. Retención de Datos.</strong> Retenemos datos personales solo durante el tiempo necesario para cumplir los propósitos descritos en esta política, típicamente no más de 24 meses para cuentas inactivas. Los registros de pago se retienen según lo requieren las leyes fiscales y financieras aplicables.</p>
+                  <p><strong>5. Cookies y Seguimiento.</strong> Usamos cookies esenciales para la funcionalidad del sitio y cookies de análisis opcionales para entender los patrones de uso. Puedes desactivar cookies no esenciales a través de la configuración de tu navegador.</p>
+                  <p><strong>6. Tus Derechos.</strong> Dependiendo de tu jurisdicción, puedes tener derechos bajo GDPR, CCPA/CPRA u otras leyes de privacidad, incluyendo: acceso a tus datos, corrección de datos inexactos, eliminación de tus datos, portabilidad de datos, optar por no participar en ventas de datos (no vendemos datos) y optar por no participar en publicidad dirigida.</p>
+                  <p><strong>7. Residentes de California (CCPA/CPRA).</strong> Los residentes de California tienen derechos adicionales bajo la Ley de Privacidad del Consumidor de California. No vendemos información personal. Puedes solicitar la divulgación de categorías y piezas específicas de información personal recopilada. Contacta privacy@mycasevalue.com para ejercer tus derechos.</p>
+                  <p><strong>8. Usuarios Europeos (GDPR).</strong> Si te encuentras en el Área Económica Europea, nuestra base legal para procesar tus datos es tu consentimiento y nuestros intereses legítimos en proporcionar el Servicio. Puedes retirar tu consentimiento en cualquier momento contactándonos.</p>
+                  <p><strong>9. Privacidad de Menores.</strong> El Servicio no está destinado a menores de 13 años. No recopilamos información knowingly de menores de 13 años. Si nos enteramos de que hemos recopilado información de un menor de 13 años, la eliminaremos promptly.</p>
+                  <p><strong>10. Seguridad.</strong> Implementamos medidas de seguridad estándar de la industria incluyendo encriptación en tránsito (TLS/SSL), procesamiento seguro de pagos a través de Stripe (compatible con PCI-DSS) y controles de acceso. Sin embargo, ningún método de transmisión o almacenamiento electrónico es 100% seguro.</p>
+                  <p><strong>11. Cambios en la Política.</strong> Podemos actualizar esta Política de Privacidad periódicamente. Notificaremos a los usuarios de cambios materiales a través del Servicio o correo electrónico.</p>
+                  <p><strong>12. Contacto.</strong> Para consultas de privacidad o solicitudes de datos: privacy@mycasevalue.com.</p>
+                </>) : (<>
                   <p><strong>1. Information We Collect.</strong> We collect information you voluntarily provide (state selection, case type, email for account features) and automatically collected data (IP address, browser type, device information, usage analytics via cookies).</p>
                   <p><strong>2. How We Use Information.</strong> We use collected information to: provide and improve the Service, process payments via Stripe, send communications you have opted into, analyze usage patterns to improve user experience, and comply with legal obligations.</p>
                   <p><strong>3. Information Sharing.</strong> We do not sell your personal information. We may share information with: Stripe (payment processing), analytics providers (anonymized usage data), and law enforcement (when required by law, subpoena, or court order).</p>
@@ -6081,9 +6163,21 @@ export default function MyCaseValue() {
                   <p><strong>10. Security.</strong> We implement industry-standard security measures including encryption in transit (TLS/SSL), secure payment processing via Stripe (PCI-DSS compliant), and access controls. However, no method of electronic transmission or storage is 100% secure.</p>
                   <p><strong>11. Changes to Policy.</strong> We may update this Privacy Policy periodically. We will notify users of material changes via the Service or email.</p>
                   <p><strong>12. Contact.</strong> For privacy inquiries or data requests: privacy@mycasevalue.com.</p>
-                </>)}
+                </>))}
 
-                {legalPage === 'cookies' && (<>
+                {legalPage === 'cookies' && (lang === 'es' ? (<>
+                  <p><strong>1. Qué Son las Cookies.</strong> Las cookies son pequeños archivos de texto almacenados en tu dispositivo cuando visitas un sitio web. Nos ayudan a proporcionar una mejor experiencia recordando tus preferencias y entendiendo cómo utilizas nuestro Servicio.</p>
+                  <p><strong>2. Cookies Esenciales.</strong> Estas cookies son estrictamente necesarias para que MyCaseValue funcione. Habilitan características principales como la gestión de sesiones, seguridad y configuración de accesibilidad. No puedes desactivar estas cookies sin romper la funcionalidad principal.</p>
+                  <p><strong>3. Cookies de Análisis.</strong> Usamos cookies de análisis opcionales para entender cómo los visitantes interactúan con MyCaseValue, qué páginas son más populares y dónde los usuarios encuentran problemas. Estos datos se agregan y se anonimizar. Las cookies de análisis solo se establecen si haces clic en &ldquo;Aceptar todo&rdquo; en nuestro banner de cookies.</p>
+                  <p><strong>4. Cookies de Preferencia.</strong> Estas cookies recuerdan tus preferencias como selección de idioma (inglés/español), configuración de modo oscuro y tipos de caso vistos anteriormente para que no tengas que establecerlos nuevamente en cada visita.</p>
+                  <p><strong>5. Cookies de Pago.</strong> Cuando realiza una compra, nuestro procesador de pagos Stripe puede establecer cookies necesarias para completar la transacción de forma segura. Estas cookies se rigen por la política de privacidad de Stripe.</p>
+                  <p><strong>6. Cookies que NO Usamos.</strong> MyCaseValue NO utiliza: cookies de publicidad o retargeting, cookies de seguimiento entre sitios, píxeles de seguimiento de redes sociales o cookies que venden o comparten tus datos con anunciantes terceros.</p>
+                  <p><strong>7. Gestionar Cookies.</strong> Puedes controlar las cookies a través de: (a) nuestro banner de consentimiento de cookies cuando visitas por primera vez, (b) la configuración de tu navegador (la mayoría de los navegadores te permiten bloquear o eliminar cookies), (c) contactándonos en privacy@mycasevalue.com. Ten en cuenta que desactivar cookies esenciales puede afectar la funcionalidad del sitio.</p>
+                  <p><strong>8. Cookies de Terceros.</strong> Las únicas cookies de terceros en MyCaseValue provienen de Stripe (procesamiento de pagos) y nuestra infraestructura de alojamiento/análisis. No permitimos que ninguna red de publicidad o corredor de datos coloque cookies en nuestro sitio.</p>
+                  <p><strong>9. Retención de Datos.</strong> Las cookies esenciales y de preferencia expiran después de 12 meses. Las cookies de análisis expiran después de 90 días. Las cookies de sesión se eliminan cuando cierras tu navegador.</p>
+                  <p><strong>10. Actualizaciones.</strong> Podemos actualizar esta Política de Cookies periódicamente. Los cambios se reflejarán en esta página con una fecha actualizada. El uso continuado de MyCaseValue constituye aceptación.</p>
+                  <p><strong>11. Contacto.</strong> Para preguntas sobre nuestras prácticas de cookies: privacy@mycasevalue.com.</p>
+                </>) : (<>
                   <p><strong>1. What Are Cookies.</strong> Cookies are small text files stored on your device when you visit a website. They help us provide a better experience by remembering your preferences and understanding how you use our Service.</p>
                   <p><strong>2. Essential Cookies.</strong> These cookies are strictly necessary for MyCaseValue to function. They enable core features like session management, security, and accessibility settings. You cannot disable these cookies without breaking core functionality.</p>
                   <p><strong>3. Analytics Cookies.</strong> We use optional analytics cookies to understand how visitors interact with MyCaseValue, which pages are most popular, and where users encounter issues. This data is aggregated and anonymized. Analytics cookies are only set if you click &ldquo;Accept all&rdquo; on our cookie banner.</p>
@@ -6095,9 +6189,20 @@ export default function MyCaseValue() {
                   <p><strong>9. Data Retention.</strong> Essential and preference cookies expire after 12 months. Analytics cookies expire after 90 days. Session cookies are deleted when you close your browser.</p>
                   <p><strong>10. Updates.</strong> We may update this Cookie Policy periodically. Changes will be reflected on this page with an updated date. Continued use of MyCaseValue constitutes acceptance.</p>
                   <p><strong>11. Contact.</strong> For questions about our cookie practices: privacy@mycasevalue.com.</p>
-                </>)}
+                </>))}
 
-                {legalPage === 'disclaimer' && (<>
+                {legalPage === 'disclaimer' && (lang === 'es' ? (<>
+                  <p><strong>No Constituye Asesoramiento Legal.</strong> MyCaseValue proporciona datos históricos agregados de registros públicos de cortes federales únicamente para propósitos informativos generales. NADA en este sitio web constituye asesoramiento legal, una opinión legal o una recomendación con respecto a ningún asunto legal individual.</p>
+                  <p><strong>Sin Relación Abogado-Cliente.</strong> El uso de MyCaseValue no crea una relación abogado-cliente entre tú y MyCaseValue LLC o ninguno de sus afiliados, funcionarios, empleados o agentes. MyCaseValue NO es un despacho de abogados, NO ejerce la abogacía y NO proporciona servicios legales.</p>
+                  <p><strong>Sin Evaluación de Caso.</strong> Los datos, estadísticas, tasas de éxito, rangos de recuperación y cualquier otra información presentada por MyCaseValue reflejan resultados históricos agregados y NO deben interpretarse como una evaluación, predicción o evaluación de ningún caso individual. Cada asunto legal es único y depende de hechos y circunstancias no reflejados en datos agregados.</p>
+                  <p><strong>Consulta a un Abogado.</strong> Si tienes un asunto legal, debes consultar con un abogado licenciado en tu jurisdicción que pueda evaluar los hechos y circunstancias específicas de tu situación. Muchos abogados ofrecen consultas iniciales gratuitas. Puedes encontrar recursos de asistencia legal en lawhelp.org o a través de tu colegio de abogados local.</p>
+                  <p><strong>Limitaciones de Datos.</strong> Nuestros datos se derivan de registros públicos de cortes federales disponibles públicamente (Federal Judicial Center Integrated Database y CourtListener). Estos datos: (a) cubren solo cortes federales y no incluyen casos de cortes estatales, (b) pueden no reflejar acuerdos alcanzados fuera de los registros judiciales, (c) pueden contener errores de codificación de la fuente original, (d) reflejan resultados históricos que pueden no predecir resultados futuros, (e) usa códigos Nature of Suit (NOS) que pueden no coincidir precisamente con tu situación legal específica.</p>
+                  <p><strong>Sin Respaldo.</strong> Las referencias a conceptos legales, estatutos o procedimientos son únicamente para propósitos informativos y no constituyen respaldo o recomendación de ninguna estrategia legal particular.</p>
+                  <p><strong>Cumplimiento de Práctica No Autorizada de Ley (UPL).</strong> MyCaseValue está diseñado para cumplir con los estatutos de práctica no autorizada de la ley en todas las jurisdicciones de EE.UU. Si crees que algún contenido en este sitio cruza la línea hacia asesoramiento legal, contactenos inmediatamente en legal@mycasevalue.com.</p>
+                  <p><strong>Sin Garantías.</strong> TODA LA INFORMACIÓN SE PROPORCIONA &ldquo;TAL CUAL&rdquo; SIN GARANTÍA DE NINGÚN TIPO. RECHAZAMOS TODAS LAS GARANTÍAS, EXPRESAS O IMPLÍCITAS, INCLUYENDO PERO NO LIMITADO A GARANTÍAS DE COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO PARTICULAR, EXACTITUD O INTEGRIDAD.</p>
+                  <p><strong>Indemnización.</strong> Al usar MyCaseValue, aceptas indemnizar y mantener indemne a MyCaseValue LLC y sus afiliados de cualesquiera reclamaciones, daños, pérdidas o gastos que surjan de tu uso del Servicio o confianza en la información proporcionada.</p>
+                  <p><strong>Descargo de Responsabilidad Médico/Financiero.</strong> Algunos tipos de casos pueden involucrar asuntos médicos o financieros. MyCaseValue no proporciona asesoramiento médico, asesoramiento financiero o asesoramiento fiscal. Consulta a los profesionales licenciados apropiados para tales asuntos.</p>
+                </>) : (<>
                   <p><strong>No Legal Advice.</strong> MyCaseValue provides aggregate historical data from public federal court records for general informational purposes only. NOTHING on this website constitutes legal advice, a legal opinion, or a recommendation regarding any individual legal matter.</p>
                   <p><strong>No Attorney-Client Relationship.</strong> Use of MyCaseValue does not create an attorney-client relationship between you and MyCaseValue LLC or any of its affiliates, officers, employees, or agents. MyCaseValue is NOT a law firm, does NOT practice law, and does NOT provide legal services.</p>
                   <p><strong>No Case Evaluation.</strong> The data, statistics, win rates, recovery ranges, and any other information presented by MyCaseValue reflect aggregate historical outcomes and should NOT be interpreted as an evaluation, prediction, or assessment of any individual case. Every legal matter is unique and depends on facts and circumstances not reflected in aggregate data.</p>
@@ -6108,7 +6213,7 @@ export default function MyCaseValue() {
                   <p><strong>No Warranties.</strong> ALL INFORMATION IS PROVIDED &ldquo;AS IS&rdquo; WITHOUT WARRANTY OF ANY KIND. WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, OR COMPLETENESS.</p>
                   <p><strong>Indemnification.</strong> By using MyCaseValue, you agree to indemnify and hold harmless MyCaseValue LLC and its affiliates from any claims, damages, losses, or expenses arising from your use of the Service or reliance on information provided.</p>
                   <p><strong>Medical/Financial Disclaimer.</strong> Some case types may involve medical or financial matters. MyCaseValue does not provide medical advice, financial advice, or tax advice. Consult appropriate licensed professionals for such matters.</p>
-                </>)}
+                </>))}
               </div>
             </div>
           </div>
