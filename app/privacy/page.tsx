@@ -54,7 +54,7 @@ export default function PrivacyPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-slate max-w-none space-y-8 text-[#94A3B8] text-sm leading-relaxed">
+        <div className="prose prose-invert max-w-none space-y-8 text-[#94A3B8] text-sm leading-relaxed">
 
           <section>
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>

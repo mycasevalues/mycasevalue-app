@@ -3281,6 +3281,48 @@ input:focus, textarea:focus, select:focus {
   transform: translateZ(0);
 }
 
+/* Skeleton loading shimmer */
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Scroll-triggered number counter glow */
+@keyframes stat-glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(99,102,241,0.15); }
+  50% { text-shadow: 0 0 40px rgba(99,102,241,0.3), 0 0 60px rgba(99,102,241,0.1); }
+}
+.stat-glow { animation: stat-glow 3s ease-in-out infinite; }
+
+/* Smooth scroll indicator bounce */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+.scroll-indicator { animation: scroll-bounce 2s ease-in-out infinite; }
+
+/* Animated gradient text */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-text-animated {
+  background: linear-gradient(135deg, #A5B4FC, #5EEAD4, #A5B4FC, #818CF8);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 6s ease-in-out infinite;
+}
+
+/* Typewriter cursor blink */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typewriter-cursor { animation: blink-cursor 0.8s step-end infinite; }
+
 /* Reduce motion — respect user preference */
 @media (prefers-reduced-motion: reduce) {
   .cinematic-enter,
@@ -3288,6 +3330,10 @@ input:focus, textarea:focus, select:focus {
   .spring-count,
   .ticker-slide,
   .gentle-float,
+  .stat-glow,
+  .scroll-indicator,
+  .gradient-text-animated,
+  .typewriter-cursor,
   .data-grid-stagger > * {
     animation: none !important;
     opacity: 1 !important;

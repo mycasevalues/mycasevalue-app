@@ -31,6 +31,9 @@ import SocialProofBar from './ui/SocialProofBar';
 import MobileBottomNav from './ui/MobileBottomNav';
 import DataFreshness from './ui/DataFreshness';
 import UpgradeTable from './ui/UpgradeTable';
+import HeroStats from './ui/HeroStats';
+import ScrollReveal from './ui/ScrollReveal';
+import KeyboardShortcuts from './ui/KeyboardShortcuts';
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
@@ -1850,8 +1853,20 @@ export default function MyCaseValue() {
     showMethodology,
   };
 
+  // Keyboard shortcuts
+  const keyboardShortcuts = useMemo(() => [
+    { key: 'h', label: 'H', description: lang === 'es' ? 'Ir al inicio' : 'Go to home', action: () => reset() },
+    { key: 's', label: 'S', description: lang === 'es' ? 'Buscar' : 'Search cases', action: () => { if (step !== 1) reset(); } },
+    { key: 'l', label: 'L', description: lang === 'es' ? 'Cambiar idioma' : 'Toggle language', action: () => setLang(lang === 'en' ? 'es' : 'en') },
+    { key: 'p', label: 'P', description: lang === 'es' ? 'Ver precios' : 'View pricing', action: () => setShowPricing(true) },
+    { key: 't', label: 'T', description: lang === 'es' ? 'Ir arriba' : 'Scroll to top', action: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
+  ], [lang, step, reset, setLang, setShowPricing]);
+
+  const keyboardShortcutsEl = <KeyboardShortcuts shortcuts={keyboardShortcuts} lang={lang} />;
+
   if (step === 0) return (
     <Shell {...shellProps}>
+      {keyboardShortcutsEl}
       <div className="hero-bg hero-parallax mesh-bg py-12 sm:py-20 pb-10 relative overflow-hidden noise-overlay particle-field cinematic-enter">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
@@ -2152,6 +2167,13 @@ export default function MyCaseValue() {
           <div style={{ gridColumn: '1 / -1' }}>
           <Reveal delay={195}>
             <DataFreshness compact lang={lang} totalCases={totalCases} />
+          </Reveal>
+          </div>
+
+          {/* Hero Stats Counters */}
+          <div style={{ gridColumn: '1 / -1' }}>
+          <Reveal delay={210}>
+            <HeroStats lang={lang} />
           </Reveal>
           </div>
 
@@ -2956,6 +2978,7 @@ export default function MyCaseValue() {
   // Step 1: Category
   if (step === 1) return (
     <Shell {...shellProps}>
+      {keyboardShortcutsEl}
       <div className="max-w-xl mx-auto py-8 wizard-step-enter">
         <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <Reveal>

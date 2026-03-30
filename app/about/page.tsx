@@ -76,7 +76,7 @@ export default function AboutPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-slate max-w-none space-y-12">
+        <div className="prose prose-invert max-w-none space-y-12">
 
           {/* Mission Section */}
           <section>
