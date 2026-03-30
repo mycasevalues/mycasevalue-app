@@ -483,11 +483,45 @@ export async function apiCall(endpoint: string, method = "GET", body: any = null
 }
 
 // NOS code fallback map - maps missing codes to closest available
+// Category-aware fallback: maps NOS codes to the closest matching MOCK_DATA entry
+// Employment: 442 | Wages: 710 | Debt/consumer: 870 | Civil rights: 400 | Contracts: 190
 export const NOS_FALLBACK: Record<string, string> = {
-  "445": "442", "350": "190", "362": "190", "365": "190",
-  "360": "190", "370": "190", "440": "870", "443": "400",
-  "110": "190", "230": "870", "220": "190", "195": "190",
-  "863": "870", "950": "400",
+  // Employment-related → 442
+  "445": "442",   // ADA discrimination → employment
+  "791": "442",   // ERISA → employment
+
+  // Personal injury / tort → 190 (closest: contract/general civil — no PI-specific mock)
+  "350": "190",   // Motor vehicle accident
+  "362": "190",   // Medical malpractice
+  "365": "190",   // Product liability
+  "360": "190",   // Other personal injury
+  "370": "190",   // Fraud/consumer/other torts
+  "385": "190",   // Property damage
+
+  // Civil rights → 400
+  "440": "400",   // Civil rights: §1983 (was incorrectly → 870)
+  "441": "400",   // Voting rights → civil rights
+  "443": "400",   // Housing discrimination → civil rights
+  "550": "400",   // Prison conditions → civil rights
+  "950": "400",   // Constitutional violations → civil rights
+
+  // Insurance / contract-adjacent → 190
+  "110": "190",   // Insurance
+  "195": "190",   // Construction defect
+  "220": "190",   // Foreclosure
+
+  // Housing/landlord → 190 (general civil, was incorrectly → 870)
+  "230": "190",   // Rent/lease/eviction
+
+  // Government benefits → 400 (closest: civil rights/government, was incorrectly → 870)
+  "863": "400",   // Disability benefits (SSDI)
+  "900": "190",   // Eminent domain
+
+  // IP → 190
+  "820": "190",   // Copyright
+  "830": "190",   // Patent
+  "840": "190",   // Trademark
+  "850": "190",   // Securities
 };
 
 export function getMockData(nos: string) {

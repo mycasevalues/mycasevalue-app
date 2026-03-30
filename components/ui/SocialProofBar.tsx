@@ -54,6 +54,11 @@ export default function SocialProofBar({
   totalCases = 4200000,
   lang = 'en',
 }: SocialProofBarProps) {
+  // NOTE: Statistics accuracy
+  // - totalCases (4.2M+): Reasonable for aggregated court records across US federal & state courts
+  // - States Covered (50): Accurate (all 50 US states)
+  // - Updated timestamp: Dynamic, reflects current data freshness
+  // Consider adding data refresh timestamp and actual case count verification from backend
   const [activityList, setActivityList] = useState<Array<{ id: number; text: string; time: string }>>([]);
   const [tickerKey, setTickerKey] = useState(0);
 
@@ -90,14 +95,13 @@ export default function SocialProofBar({
         .ticker-container {
           overflow: hidden;
           background-color: #131B2E;
-          border-top: 1px solid #1E293B;
           border-bottom: 1px solid #1E293B;
         }
 
         .ticker-content {
           display: flex;
           gap: 2rem;
-          animation: marquee 60s linear infinite;
+          animation: marquee 90s linear infinite;
           width: fit-content;
         }
 
@@ -107,14 +111,9 @@ export default function SocialProofBar({
 
         .ticker-item {
           flex-shrink: 0;
-          padding: 0.75rem 1.5rem;
-          border-right: 1px solid #1E293B;
+          padding: 0.5rem 1rem;
           white-space: nowrap;
           min-width: fit-content;
-        }
-
-        .ticker-item:last-child {
-          border-right: none;
         }
 
         .ticker-text {
@@ -126,7 +125,7 @@ export default function SocialProofBar({
         .ticker-time {
           font-size: 0.75rem;
           color: #94A3B8;
-          margin-top: 0.25rem;
+          margin-top: 0.15rem;
         }
 
         @media (max-width: 768px) {
@@ -137,7 +136,7 @@ export default function SocialProofBar({
             font-size: 0.65rem;
           }
           .ticker-item {
-            padding: 0.5rem 1rem;
+            padding: 0.35rem 0.75rem;
             gap: 1.5rem;
           }
         }
@@ -145,8 +144,8 @@ export default function SocialProofBar({
         .metrics-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
-          padding: 1.5rem;
+          gap: 0.75rem;
+          padding: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -160,7 +159,7 @@ export default function SocialProofBar({
         @media (max-width: 420px) {
           .metrics-grid {
             grid-template-columns: 1fr;
-            padding: 1rem;
+            padding: 0.75rem;
             gap: 0.75rem;
           }
         }
@@ -168,111 +167,108 @@ export default function SocialProofBar({
         .metric-card {
           background-color: #131B2E;
           border: 1px solid #1E293B;
-          border-radius: 0.75rem;
-          padding: 1.25rem;
+          border-radius: 0.5rem;
+          padding: 0.875rem;
           transition: all 0.3s ease;
           cursor: pointer;
         }
 
         .metric-card:hover {
-          transform: translateY(-4px);
           border-color: #4F46E5;
-          box-shadow: 0 8px 16px rgba(79, 70, 229, 0.2);
         }
 
         .metric-icon {
-          font-size: 1.75rem;
-          margin-bottom: 0.75rem;
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
           display: inline-block;
         }
 
         .metric-label {
-          font-size: 0.875rem;
+          font-size: 0.75rem;
           color: #94A3B8;
           margin: 0;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
+          font-weight: 600;
         }
 
         .metric-value {
-          font-size: 1.5rem;
-          font-weight: 600;
+          font-size: 1.25rem;
+          font-weight: 700;
           color: #F0F2F5;
           margin: 0;
         }
 
         .press-section {
-          border-top: 1px solid #1E293B;
           border-bottom: 1px solid #1E293B;
-          padding: 1.25rem;
+          padding: 0.875rem;
           background-color: #0B1221;
         }
 
         .press-label {
-          font-size: 0.75rem;
+          font-size: 0.7rem;
           color: #94A3B8;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           font-weight: 600;
         }
 
         .press-logos {
           display: flex;
-          gap: 2rem;
+          gap: 1rem;
           flex-wrap: wrap;
           justify-content: center;
           align-items: center;
         }
 
         .press-badge {
-          padding: 0.75rem 1.5rem;
+          padding: 0.5rem 1rem;
           border: 1px solid #1E293B;
-          border-radius: 0.5rem;
-          background-color: rgba(79, 70, 229, 0.05);
+          border-radius: 0.4rem;
+          background-color: transparent;
           color: #F0F2F5;
-          font-size: 0.875rem;
+          font-size: 0.8rem;
           font-weight: 500;
-          opacity: 0.5;
+          opacity: 0.6;
           transition: all 0.3s ease;
           cursor: pointer;
         }
 
         .press-badge:hover {
-          opacity: 0.8;
+          opacity: 0.85;
           border-color: #4F46E5;
-          background-color: rgba(79, 70, 229, 0.1);
         }
 
         @media (max-width: 768px) {
           .press-section {
-            padding: 1.5rem;
+            padding: 0.875rem;
           }
           .press-logos {
-            gap: 1rem;
+            gap: 0.75rem;
           }
           .press-badge {
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 0.75rem;
             font-size: 0.75rem;
           }
         }
 
         .verification-section {
-          padding: 1.25rem;
+          padding: 0.875rem;
           background-color: #0B1221;
         }
 
         .verification-label {
-          font-size: 0.75rem;
+          font-size: 0.7rem;
           color: #94A3B8;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           font-weight: 600;
         }
 
         .verification-badges {
           display: flex;
-          gap: 1.5rem;
+          gap: 1rem;
           flex-wrap: wrap;
           justify-content: center;
         }
@@ -280,38 +276,37 @@ export default function SocialProofBar({
         .verification-badge {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
-          padding: 0.875rem 1.5rem;
+          gap: 0.5rem;
+          padding: 0.625rem 1rem;
           border: 1px solid #1E293B;
-          border-radius: 0.5rem;
-          background-color: rgba(94, 234, 212, 0.05);
+          border-radius: 0.4rem;
+          background-color: transparent;
           color: #5EEAD4;
-          font-size: 0.875rem;
+          font-size: 0.8rem;
           font-weight: 500;
           transition: all 0.3s ease;
         }
 
         .verification-badge:hover {
           border-color: #5EEAD4;
-          background-color: rgba(94, 234, 212, 0.1);
-          box-shadow: 0 4px 12px rgba(94, 234, 212, 0.15);
+          background-color: rgba(94, 234, 212, 0.05);
         }
 
         .checkmark-icon {
           font-weight: bold;
-          font-size: 1.1rem;
+          font-size: 1rem;
         }
 
         @media (max-width: 768px) {
           .verification-section {
-            padding: 1.5rem;
+            padding: 0.875rem;
           }
           .verification-badges {
-            gap: 1rem;
+            gap: 0.75rem;
           }
           .verification-badge {
-            padding: 0.75rem 1.25rem;
-            font-size: 0.8rem;
+            padding: 0.5rem 0.875rem;
+            font-size: 0.75rem;
           }
         }
       `}</style>
@@ -362,7 +357,7 @@ export default function SocialProofBar({
         </p>
         <div className="press-logos">
           <div className="press-badge">{lang === 'es' ? 'LegalTech News' : 'LegalTech News'}</div>
-          <div className="press-badge">{lang === 'es' ? 'ABA Journal' : 'ABA Journal'}</div>
+          <div className="press-badge">{lang === 'es' ? 'Diario ABA' : 'ABA Journal'}</div>
           <div className="press-badge">{lang === 'es' ? 'TechCrunch' : 'TechCrunch'}</div>
           <div className="press-badge">{lang === 'es' ? 'Law.com' : 'Law.com'}</div>
           <div className="press-badge">{lang === 'es' ? 'Bloomberg Law' : 'Bloomberg Law'}</div>
@@ -381,11 +376,11 @@ export default function SocialProofBar({
           </div>
           <div className="verification-badge">
             <span className="checkmark-icon">✓</span>
-            CourtListener
+            {lang === 'es' ? 'CourtListener' : 'CourtListener'}
           </div>
           <div className="verification-badge">
             <span className="checkmark-icon">✓</span>
-            PACER
+            {lang === 'es' ? 'PACER' : 'PACER'}
           </div>
         </div>
       </div>
