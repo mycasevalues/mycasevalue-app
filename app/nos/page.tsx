@@ -1,0 +1,162 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { SITS } from '../../lib/data';
+
+export const metadata: Metadata = {
+  title: 'All Federal Case Types — MyCaseValue',
+  description:
+    'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
+  alternates: { canonical: 'https://mycasevalue.com/nos' },
+  openGraph: {
+    title: 'All Federal Case Types — MyCaseValue',
+    description:
+      'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
+    url: 'https://mycasevalue.com/nos',
+    type: 'website',
+  },
+};
+
+// Helper to get all unique NOS codes and their details
+interface NOSDetail {
+  code: string;
+  label: string;
+  category: string;
+  categoryColor?: string;
+}
+
+function getAllNOSDetails(): { byCategory: Record<string, NOSDetail[]> } {
+  const byCategory: Record<string, NOSDetail[]> = {};
+
+  SITS.forEach((category) => {
+    const categoryKey = category.label;
+    byCategory[categoryKey] = [];
+
+    const seenCodes = new Set<string>();
+
+    category.opts.forEach((option) => {
+      if (!seenCodes.has(option.nos)) {
+        seenCodes.add(option.nos);
+        byCategory[categoryKey].push({
+          code: option.nos,
+          label: option.label,
+          category: category.label,
+          categoryColor: category.color,
+        });
+      }
+    });
+  });
+
+  return { byCategory };
+}
+
+export default function NOSIndexPage() {
+  const { byCategory } = getAllNOSDetails();
+  const categories = Object.keys(byCategory).sort();
+
+  return (
+    <div className="min-h-screen bg-[#0B1221] text-[#F0F2F5]">
+      {/* Header */}
+      <header className="border-b border-[#1E2749] py-12 px-4 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="text-blue-500 hover:text-blue-400 transition text-sm mb-4 inline-block"
+        >
+          ← Back to Home
+        </Link>
+        <h1 className="text-4xl sm:text-5xl font-bold mt-4">
+          Federal Case Types Directory
+        </h1>
+        <p className="text-[#94A3B8] text-lg mt-2 max-w-2xl">
+          Explore all case types in our federal court database. Each case type includes real statistics
+          on win rates, case duration, and outcomes based on actual court records.
+        </p>
+      </header>
+
+      {/* Categories */}
+      <main className="px-4 sm:px-6 lg:px-8 py-12">
+        {categories.map((categoryName) => (
+          <section key={categoryName} className="mb-16">
+            <h2 className="text-2xl font-bold mb-6 flex items-center">
+              <span className="text-xl mr-3">📂</span>
+              {categoryName}
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {byCategory[categoryName].map((item) => (
+                <Link
+                  key={item.code}
+                  href={`/nos/${item.code}`}
+                  className="group bg-[#131B2E] rounded-lg p-6 border border-[#1E2749] hover:border-blue-500 hover:shadow-lg transition-all"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg group-hover:text-blue-400 transition">
+                        {item.label}
+                      </h3>
+                      <p className="text-[#94A3B8] text-sm">NOS Code: {item.code}</p>
+                    </div>
+                    <span className="text-blue-400 text-xl group-hover:translate-x-1 transition">
+                      →
+                    </span>
+                  </div>
+                  <p className="text-[#94A3B8] text-sm">
+                    View court statistics and case outcomes for this type
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ))}
+      </main>
+
+      {/* Info Section */}
+      <section className="border-t border-[#1E2749] px-4 sm:px-6 lg:px-8 py-12 bg-[#131B2E]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4">What are NOS Codes?</h2>
+          <p className="text-[#94A3B8] mb-4">
+            Nature of Suit (NOS) codes are standardized federal court classifications that categorize
+            cases by their legal nature. Each code corresponds to a specific type of civil case filed in
+            U.S. District Courts.
+          </p>
+          <p className="text-[#94A3B8] mb-4">
+            The statistics on these pages are derived from actual federal court data, including case
+            outcomes, settlement rates, and case duration. This information can help you understand
+            how similar cases have performed in federal court.
+          </p>
+          <p className="text-[#94A3B8]">
+            For legal advice specific to your situation, please consult with a qualified attorney in
+            your jurisdiction.
+          </p>
+        </div>
+      </section>
+
+      {/* Structured Data - JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Federal Case Types Directory',
+            description:
+              'Browse all federal case types with real court statistics and outcomes.',
+            url: 'https://mycasevalue.com/nos',
+            mainEntity: {
+              '@type': 'ItemList',
+              itemListElement: Object.entries(byCategory)
+                .flatMap(([categoryName, items]) =>
+                  items.map((item, idx) => ({
+                    '@type': 'ListItem',
+                    position: idx + 1,
+                    name: item.label,
+                    url: `https://mycasevalue.com/nos/${item.code}`,
+                    description: `Federal court statistics for ${item.label} cases`,
+                  }))
+                ),
+            },
+          }),
+        }}
+      />
+    </div>
+  );
+}

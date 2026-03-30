@@ -161,6 +161,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="canonical" href="https://mycasevalues.com" />
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#4F46E5" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="MyCaseValue" />
@@ -168,6 +169,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script dangerouslySetInnerHTML={{ __html: `
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+          }
+        ` }} />
       </head>
       <body className="grain dark" style={{ background: '#0B1221', color: '#F0F2F5' }} suppressHydrationWarning>
         <a href="#main-content" className="skip-link">Skip to main content</a>

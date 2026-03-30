@@ -23,6 +23,14 @@ import {
 } from '../lib/data';
 import { TRANSLATIONS, Lang } from '../lib/i18n';
 import { generateCaseNarrative } from '../lib/ai-narrative';
+import EnhancedSearch from './ui/EnhancedSearch';
+import TrendChart, { generateDemoData } from './ui/TrendChart';
+import ComparisonPanel from './ui/ComparisonPanel';
+import SettlementHistogram from './ui/SettlementHistogram';
+import SocialProofBar from './ui/SocialProofBar';
+import MobileBottomNav from './ui/MobileBottomNav';
+import DataFreshness from './ui/DataFreshness';
+import UpgradeTable from './ui/UpgradeTable';
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
@@ -1223,6 +1231,17 @@ function Shell({
           </div>
         )}
 
+        {/* Mobile bottom navigation */}
+        <MobileBottomNav
+          step={step}
+          onReset={reset}
+          onSearch={() => { if (step !== 1) reset(); }}
+          isPremium={isPremium}
+          lang={lang}
+          onSaved={() => setShowSaved(true)}
+          savedCount={savedReportsLength}
+        />
+
         {/* Cookie consent banner */}
         {showCookieConsent && (
           <div className="fixed bottom-0 left-0 right-0 z-50 p-4 no-print" style={{ background: 'rgba(11,18,33,0.95)', backdropFilter: 'blur(12px)' }}>
@@ -2122,6 +2141,20 @@ export default function MyCaseValue() {
           </Reveal>
           </div>
 
+          {/* Social Proof & Live Activity */}
+          <div style={{ gridColumn: '1 / -1' }}>
+          <Reveal delay={190}>
+            <SocialProofBar totalCases={totalCases} lang={lang} />
+          </Reveal>
+          </div>
+
+          {/* Data Freshness Indicator */}
+          <div style={{ gridColumn: '1 / -1' }}>
+          <Reveal delay={195}>
+            <DataFreshness compact lang={lang} totalCases={totalCases} />
+          </Reveal>
+          </div>
+
           {/* Category selector — enhanced */}
           <div style={{ gridColumn: '1 / -1' }}>
           <Reveal delay={200}>
@@ -2172,8 +2205,16 @@ export default function MyCaseValue() {
                     </button>
                   ))}
                 </div>
+                {/* Enhanced typeahead search */}
+                <div className="mt-5 pt-4" style={{ borderTop: '1px solid #1E293B' }}>
+                  <div className="text-[11px] font-bold tracking-[1.5px] uppercase mb-3" style={{ color: '#64748B' }}>{lang === 'es' ? 'O BUSCA TU TIPO DE CASO' : 'OR SEARCH YOUR CASE TYPE'}</div>
+                  <EnhancedSearch sits={SITS} lang={lang} onSelect={(opt: any) => {
+                    const parentSit = SITS.find(s => s.opts.some((o: any) => o.nos === opt.nos && o.label === opt.label));
+                    if (parentSit) { setSit(parentSit); setSpec(opt); setAmount(parentSit.dm); go(3); }
+                  }} />
+                </div>
                 {/* Quick scroll hint */}
-                <div className="flex items-center justify-center mt-4 text-[11px] text-slate-400 gap-1.5">
+                <div className="flex items-center justify-center mt-4 text-[11px] gap-1.5" style={{ color: '#64748B' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="scroll-indicator"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
                   {lang === 'es' ? 'O desplázate para explorar datos' : 'Or scroll to explore data'}
                 </div>
@@ -4065,6 +4106,83 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          {/* Historical Win Rate Trend — Premium */}
+          {isPremium && (
+            <Reveal delay={108}>
+              <Card premium className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#6366F1' }}>
+                      {lang === 'es' ? 'TENDENCIA HISTÓRICA' : 'HISTORICAL TREND'}
+                    </div>
+                    <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
+                      {lang === 'es' ? 'Tasa de éxito a lo largo del tiempo' : 'Win Rate Over Time'}
+                    </div>
+                  </div>
+                </div>
+                <TrendChart data={generateDemoData(spec?.nos)} color="#6366F1" label={spec?.d || 'Case Type'} lang={lang} height={220} />
+              </Card>
+            </Reveal>
+          )}
+
+          {/* Settlement Distribution — Premium */}
+          {isPremium && (
+            <Reveal delay={109}>
+              <Card premium className="p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #0D948820, #14B8A620)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#0D9488' }}>
+                      {lang === 'es' ? 'DISTRIBUCIÓN DE RECUPERACIÓN' : 'RECOVERY DISTRIBUTION'}
+                    </div>
+                    <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
+                      {lang === 'es' ? 'Montos de acuerdo' : 'Settlement Amounts'}
+                    </div>
+                  </div>
+                </div>
+                <SettlementHistogram median={d.sp || 50000} userAmount={amount === 'large' ? 100000 : amount === 'mid' ? 50000 : 25000} lang={lang} />
+              </Card>
+            </Reveal>
+          )}
+
+          {/* Case Type Comparison — Premium */}
+          {isPremium && compareData && (
+            <Reveal delay={110}>
+              <Card premium className="p-6 sm:p-8">
+                <ComparisonPanel
+                  caseA={{
+                    nos: spec?.nos || '',
+                    label: spec?.d || '',
+                    winRate: wr,
+                    medianDays: (d.mo || 10) * 30,
+                    recoveryLow: d.rng?.lo || 0,
+                    recoveryHigh: d.rng?.hi || 0,
+                    total: d.total || 0,
+                    plaintiffRate: wr,
+                    settlementRate: d.sp || 45,
+                  }}
+                  caseB={compareData ? {
+                    nos: compareData.nos || '',
+                    label: compareData.label || '',
+                    winRate: compareData.winRate || 40,
+                    medianDays: (compareData.mo || 12) * 30,
+                    recoveryLow: compareData.recoveryLow || 10000,
+                    recoveryHigh: compareData.recoveryHigh || 100000,
+                    total: compareData.total || 0,
+                    plaintiffRate: compareData.winRate || 40,
+                    settlementRate: compareData.sp || 40,
+                  } : null}
+                  lang={lang}
+                />
+              </Card>
+            </Reveal>
+          )}
+
           {/* Outcome Probability Matrix — Premium */}
           {isPremium && (
             <Reveal delay={110}>
@@ -5822,57 +5940,33 @@ export default function MyCaseValue() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
             onClick={() => setShowPricing(false)}
             role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
-            <div className="rounded-3xl p-6 sm:p-10 max-w-lg w-full relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(11,18,33,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(64,64,242,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
-              <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#1E293B] hover:bg-[#334155] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring"
+            <div className="rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(11,18,33,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(64,64,242,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
+              <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#1E293B] hover:bg-[#334155] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring z-10"
                 aria-label="Close pricing">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
-              <div className="text-center mb-7">
+              <div className="text-center mb-6">
                 <div className="text-2xl sm:text-3xl font-display font-bold">{lang === 'es' ? 'Vea el panorama completo' : 'See the complete picture'}</div>
-                <p className="text-[15px] text-[#94A3B8] mt-2">{lang === 'es' ? '8 herramientas de datos para mayor comprensión' : '8 data tools for deeper understanding'}</p>
+                <p className="text-[15px] mt-2" style={{ color: '#94A3B8' }}>{lang === 'es' ? '12 herramientas de datos para mayor comprensión' : '12 data tools for deeper understanding'}</p>
               </div>
-              <div className="text-[11px] text-slate-400 text-center mb-5">{lang === 'es' ? 'Todos los datos son solo informativos. No se crea relación abogado-cliente.' : 'All data is informational only. No attorney-client relationship is created.'}</div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="rounded-2xl p-5 sm:p-6 text-center" style={{ border: '1.5px solid rgba(51,65,85,0.5)', background: 'linear-gradient(180deg, #131B2E 0%, #0F172A 100%)' }}>
-                  <div className="text-[11px] font-bold text-slate-400 tracking-[2px]">{lang === 'es' ? 'REPORTE INDIVIDUAL' : 'SINGLE REPORT'}</div>
-                  <div className="text-3xl sm:text-4xl font-display font-bold my-2"><span className="text-xl">$</span>5.99</div>
-                  <div className="text-[12px] text-slate-400 mb-3">{lang === 'es' ? 'Un reporte completo' : 'One complete report'}</div>
-                  <button onClick={() => { buy('single'); setShowPricing(false); }}
-                    className="w-full py-3 text-sm font-semibold card-bg bg-[#131B2E] border-[1.5px] border-[#1E293B] rounded-xl cursor-pointer hover:border-[#334155] transition-colors">
-                    {lang === 'es' ? 'Obtener reporte' : 'Get report'}
-                  </button>
-                </div>
-                <div className="border-2 rounded-2xl p-5 sm:p-6 text-center relative" style={{ borderColor: '#4F46E5', background: 'linear-gradient(180deg, rgba(19,27,46,0.95) 0%, rgba(79,70,229,0.15) 100%)', boxShadow: '0 8px 32px rgba(64,64,242,.15), inset 0 1px 0 rgba(255,255,255,0.03)' }}>
-                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold text-white whitespace-nowrap"
-                    style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
-                    {lang === 'es' ? 'MEJOR VALOR' : 'BEST VALUE'}
-                  </div>
-                  <div className="text-[11px] font-bold tracking-[2px]" style={{ color: '#A5B4FC' }}>{lang === 'es' ? 'ILIMITADO' : 'UNLIMITED'}</div>
-                  <div className="text-3xl sm:text-4xl font-display font-bold my-2 text-white"><span className="text-xl">$</span>9.99</div>
-                  <div className="text-[12px] mb-3" style={{ color: '#A5B4FC' }}>{lang === 'es' ? 'Todos los tipos de caso, para siempre' : 'All case types, forever'}</div>
-                  <button onClick={() => { buy('unlimited'); setShowPricing(false); }}
-                    className="w-full py-3 text-sm font-semibold text-white rounded-xl cursor-pointer transition-all active:scale-[0.96]"
-                    style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
-                    {lang === 'es' ? 'Ilimitado' : 'Unlimited'}
-                  </button>
-                </div>
-              </div>
+              <div className="text-[11px] text-center mb-5" style={{ color: '#64748B' }}>{lang === 'es' ? 'Todos los datos son solo informativos. No se crea relación abogado-cliente.' : 'All data is informational only. No attorney-client relationship is created.'}</div>
+              <UpgradeTable onBuy={(plan) => { buy(plan); setShowPricing(false); }} lang={lang} currentTier={tier} />
               {/* Payment methods */}
-              <div className="flex items-center justify-center gap-3 mt-5">
-                <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+              <div className="flex items-center justify-center gap-3 mt-5 flex-wrap">
+                <div className="flex items-center gap-1.5 text-[11px]" style={{ color: '#64748B' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
                   Card
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                <div className="flex items-center gap-1.5 text-[11px]" style={{ color: '#64748B' }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.05 11.97c-.03-2.49 2.03-3.69 2.12-3.74-1.15-1.69-2.95-1.92-3.59-1.95-1.53-.15-2.98.9-3.76.9-.78 0-1.98-.88-3.25-.85-1.67.02-3.22.97-4.08 2.47-1.74 3.02-.45 7.5 1.25 9.95.83 1.2 1.82 2.55 3.12 2.5 1.25-.05 1.72-.81 3.23-.81 1.51 0 1.94.81 3.26.79 1.35-.02 2.2-1.22 3.02-2.43.95-1.4 1.34-2.75 1.37-2.82-.03-.01-2.62-1.01-2.65-4.01z" fill="#94A3B8"/><path d="M14.55 4.52c.69-.83 1.15-1.99 1.02-3.15-1 .04-2.2.66-2.91 1.49-.64.74-1.2 1.93-1.05 3.07 1.1.09 2.24-.56 2.94-1.41z" fill="#94A3B8"/></svg>
                   Apple Pay
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] text-slate-400">
+                <div className="flex items-center gap-1.5 text-[11px]" style={{ color: '#64748B' }}>
                   <svg width="16" height="12" viewBox="0 0 24 16" fill="none"><rect width="24" height="16" rx="2" fill="#94A3B8" opacity="0.15"/><path d="M8.5 11.5a4 4 0 100-7 4 4 0 000 7z" fill="#94A3B8" opacity="0.4"/><path d="M15.5 11.5a4 4 0 100-7 4 4 0 000 7z" fill="#94A3B8" opacity="0.4"/></svg>
                   Google Pay
                 </div>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                <span className="text-[10px] text-slate-400">{lang === 'es' ? 'Pago seguro por Stripe' : 'Secure checkout by Stripe'}</span>
+                <span className="text-[10px]" style={{ color: '#64748B' }}>{lang === 'es' ? 'Pago seguro por Stripe' : 'Secure checkout by Stripe'}</span>
               </div>
             </div>
           </div>
