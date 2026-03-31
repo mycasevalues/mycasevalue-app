@@ -68,6 +68,9 @@ const BottomNav = dynamic(() => import('./navigation/BottomNav'), { ssr: false }
 const CommandPalette = dynamic(() => import('./ui/CommandPalette'), { ssr: false });
 const VerdictTicker = dynamic(() => import('./sections/VerdictTicker'), { ssr: false });
 const TrustSourceBar = dynamic(() => import('./sections/TrustSourceBar'), { ssr: false });
+const SettlementEvaluator = dynamic(() => import('./sections/SettlementEvaluator'), { ssr: false });
+const CompetitorTable = dynamic(() => import('./sections/CompetitorTable'), { ssr: false });
+const TheProblem = dynamic(() => import('./sections/TheProblem'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -2494,6 +2497,13 @@ export default function MyCaseValue() {
             <VerdictTicker lang={lang} />
           </div>
 
+          {/* The Problem — information gap visualization */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={175}>
+              <TheProblem lang={lang} />
+            </Reveal>
+          </div>
+
           {/* Trust + Social Proof + Data + Stats — tighter spacing */}
           <div style={{ gridColumn: '1 / -1', display: 'flex', flexDirection: 'column', gap: '12px', minWidth: 0, overflow: 'hidden' }}>
             <Reveal delay={180}>
@@ -2514,6 +2524,20 @@ export default function MyCaseValue() {
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={220}>
               <TrustSourceBar lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Settlement Offer Evaluator — interactive percentile tool */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={230}>
+              <SettlementEvaluator lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Competitor Comparison Table */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={240}>
+              <CompetitorTable lang={lang} />
             </Reveal>
           </div>
 
