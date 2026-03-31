@@ -516,6 +516,70 @@ const LEGAL_GLOSSARY: Record<string, { en: string; es: string }> = {
     en: 'Representing yourself in court without a lawyer.',
     es: 'Representarte a ti mismo en la corte sin un abogado.'
   },
+  'burden of proof': {
+    en: 'The responsibility to prove your claims are true. In civil cases, you usually need to show your side is "more likely than not."',
+    es: 'La responsabilidad de probar que tus afirmaciones son ciertas. En casos civiles, generalmente necesitas demostrar que tu versión es "más probable que no."'
+  },
+  'motion to dismiss': {
+    en: 'A request asking the judge to throw out a case early — usually because of a legal technicality or insufficient evidence.',
+    es: 'Una solicitud pidiéndole al juez que desestime un caso tempranamente, generalmente por una tecnicidad legal o evidencia insuficiente.'
+  },
+  'injunction': {
+    en: 'A court order telling someone to stop doing something (or requiring them to do something) while the case is ongoing.',
+    es: 'Una orden judicial que le dice a alguien que deje de hacer algo (o que haga algo) mientras el caso está en curso.'
+  },
+  'tort': {
+    en: 'A wrongful act (other than breaking a contract) that causes harm and allows you to sue for compensation.',
+    es: 'Un acto ilícito (diferente a romper un contrato) que causa daño y te permite demandar por compensación.'
+  },
+  'punitive damages': {
+    en: 'Extra money awarded to punish the defendant for especially bad behavior — on top of what covers your actual losses.',
+    es: 'Dinero adicional otorgado para castigar al demandado por conducta especialmente mala, además de lo que cubre tus pérdidas reales.'
+  },
+  'compensatory damages': {
+    en: 'Money meant to cover your actual losses — like medical bills, lost wages, and pain and suffering.',
+    es: 'Dinero destinado a cubrir tus pérdidas reales, como gastos médicos, salarios perdidos y dolor y sufrimiento.'
+  },
+  'default judgment': {
+    en: 'When one side wins automatically because the other side didn\'t respond to the lawsuit in time.',
+    es: 'Cuando una parte gana automáticamente porque la otra parte no respondió a la demanda a tiempo.'
+  },
+  'interrogatories': {
+    en: 'Written questions one side sends to the other that must be answered under oath during discovery.',
+    es: 'Preguntas escritas que una parte envía a la otra y que deben responderse bajo juramento durante el descubrimiento.'
+  },
+  'subpoena': {
+    en: 'A legal order requiring someone to appear in court or provide documents. Ignoring it can result in penalties.',
+    es: 'Una orden legal que requiere que alguien se presente en la corte o proporcione documentos. Ignorarla puede resultar en sanciones.'
+  },
+  'precedent': {
+    en: 'A past court decision that judges may follow when deciding similar cases in the future.',
+    es: 'Una decisión judicial pasada que los jueces pueden seguir al decidir casos similares en el futuro.'
+  },
+  'voir dire': {
+    en: 'The jury selection process where lawyers ask potential jurors questions to determine if they can be fair and impartial.',
+    es: 'El proceso de selección del jurado donde los abogados hacen preguntas a posibles jurados para determinar si pueden ser justos e imparciales.'
+  },
+  'retainer': {
+    en: 'An upfront payment to hire a lawyer. Think of it like a deposit that the lawyer draws from as they work on your case.',
+    es: 'Un pago anticipado para contratar a un abogado. Es como un depósito del cual el abogado va descontando mientras trabaja en tu caso.'
+  },
+  'arbitration': {
+    en: 'A private process where a neutral third party (not a judge) hears both sides and makes a binding decision.',
+    es: 'Un proceso privado donde un tercero neutral (no un juez) escucha ambas partes y toma una decisión vinculante.'
+  },
+  'liable': {
+    en: 'Legally responsible. If someone is found liable in a civil case, they typically must pay damages.',
+    es: 'Legalmente responsable. Si alguien es encontrado responsable en un caso civil, generalmente debe pagar daños.'
+  },
+  'brief': {
+    en: 'A written document submitted to the court that argues your side of the case, citing laws and evidence.',
+    es: 'Un documento escrito presentado a la corte que argumenta tu versión del caso, citando leyes y evidencia.'
+  },
+  'counsel': {
+    en: 'A lawyer or team of lawyers representing you. "Of counsel" means an attorney affiliated with a firm but not a partner.',
+    es: 'Un abogado o equipo de abogados que te representan. "Of counsel" significa un abogado afiliado a una firma pero que no es socio.'
+  },
 };
 
 
@@ -1433,6 +1497,7 @@ export default function MyCaseValue() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [circuitView, setCircuitView] = useState<'bars' | 'table'>('bars');
   const [expandedCircuit, setExpandedCircuit] = useState<string | null>(null);
+  const [glossaryExpanded, setGlossaryExpanded] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -2876,74 +2941,173 @@ export default function MyCaseValue() {
         {/* === COMPARISON TOOL PREVIEW === */}
         <Reveal delay={580}>
           <div className="p-6 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
               <div>
                 <div className="text-[10px] font-bold text-[#94A3B8] tracking-[2px] mb-1">{lang === 'es' ? 'HERRAMIENTA DE COMPARACIÓN' : 'COMPARISON TOOL'}</div>
                 <div className="text-lg sm:text-xl font-display font-bold">{lang === 'es' ? 'Compara dos situaciones lado a lado' : 'Compare two situations side by side'}</div>
                 <div className="text-[13px] text-[#94A3B8] mt-1">{lang === 'es' ? 'Selecciona cualquier par de tipos de caso para ver diferencias reales' : 'Select any pair of case types to see real data differences'}</div>
               </div>
-              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>{lang === 'es' ? 'Interactivo' : 'Interactive'}</span>
+              <span className="text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5" style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M16 3h5v5M8 3H3v5M3 16v5h5M21 16v5h-5"/></svg>
+                {lang === 'es' ? 'Interactivo' : 'Interactive'}
+              </span>
             </div>
             {(() => {
               const COMPARE_CASES = [
-                { id: 'emp_disc', label: lang === 'es' ? 'Discriminación laboral' : 'Employment Discrimination', wr: 38.4, time: 11.2, settle: 32, vol: 28400, fee: '25-40%' },
-                { id: 'pers_inj', label: lang === 'es' ? 'Lesiones personales' : 'Personal Injury', wr: 54.1, time: 8.6, settle: 48, vol: 42100, fee: '33-40%' },
-                { id: 'med_mal', label: lang === 'es' ? 'Negligencia médica' : 'Medical Malpractice', wr: 32.7, time: 14.3, settle: 41, vol: 8200, fee: '33-40%' },
-                { id: 'prod_liab', label: lang === 'es' ? 'Responsabilidad del producto' : 'Product Liability', wr: 42.8, time: 12.1, settle: 44, vol: 6900, fee: '33-45%' },
-                { id: 'civil_rights', label: lang === 'es' ? 'Derechos civiles' : 'Civil Rights (§1983)', wr: 28.5, time: 13.8, settle: 29, vol: 35600, fee: '33%+fees' },
-                { id: 'contract', label: lang === 'es' ? 'Incumplimiento de contrato' : 'Breach of Contract', wr: 44.2, time: 9.4, settle: 52, vol: 19800, fee: 'Hourly' },
-                { id: 'ins_bad', label: lang === 'es' ? 'Seguro de mala fe' : 'Insurance Bad Faith', wr: 46.3, time: 10.7, settle: 55, vol: 7300, fee: '33-40%' },
-                { id: 'wrong_death', label: lang === 'es' ? 'Muerte injusta' : 'Wrongful Death', wr: 51.2, time: 15.6, settle: 58, vol: 4100, fee: '33-40%' },
-                { id: 'sex_harass', label: lang === 'es' ? 'Acoso sexual' : 'Sexual Harassment', wr: 35.1, time: 10.4, settle: 38, vol: 12300, fee: '25-40%' },
-                { id: 'wage', label: lang === 'es' ? 'Salarios impagos' : 'Unpaid Wages (FLSA)', wr: 47.6, time: 7.8, settle: 61, vol: 21500, fee: '33%+fees' },
+                { id: 'emp_disc', label: lang === 'es' ? 'Discriminación laboral' : 'Employment Discrimination', wr: 38.4, time: 11.2, settle: 32, vol: 28400, fee: '25-40%', icon: '⚖️' },
+                { id: 'pers_inj', label: lang === 'es' ? 'Lesiones personales' : 'Personal Injury', wr: 54.1, time: 8.6, settle: 48, vol: 42100, fee: '33-40%', icon: '🏥' },
+                { id: 'med_mal', label: lang === 'es' ? 'Negligencia médica' : 'Medical Malpractice', wr: 32.7, time: 14.3, settle: 41, vol: 8200, fee: '33-40%', icon: '💊' },
+                { id: 'prod_liab', label: lang === 'es' ? 'Responsabilidad del producto' : 'Product Liability', wr: 42.8, time: 12.1, settle: 44, vol: 6900, fee: '33-45%', icon: '📦' },
+                { id: 'civil_rights', label: lang === 'es' ? 'Derechos civiles' : 'Civil Rights (§1983)', wr: 28.5, time: 13.8, settle: 29, vol: 35600, fee: '33%+fees', icon: '🗽' },
+                { id: 'contract', label: lang === 'es' ? 'Incumplimiento de contrato' : 'Breach of Contract', wr: 44.2, time: 9.4, settle: 52, vol: 19800, fee: 'Hourly', icon: '📝' },
+                { id: 'ins_bad', label: lang === 'es' ? 'Seguro de mala fe' : 'Insurance Bad Faith', wr: 46.3, time: 10.7, settle: 55, vol: 7300, fee: '33-40%', icon: '🛡️' },
+                { id: 'wrong_death', label: lang === 'es' ? 'Muerte injusta' : 'Wrongful Death', wr: 51.2, time: 15.6, settle: 58, vol: 4100, fee: '33-40%', icon: '🕊️' },
+                { id: 'sex_harass', label: lang === 'es' ? 'Acoso sexual' : 'Sexual Harassment', wr: 35.1, time: 10.4, settle: 38, vol: 12300, fee: '25-40%', icon: '🚫' },
+                { id: 'wage', label: lang === 'es' ? 'Salarios impagos' : 'Unpaid Wages (FLSA)', wr: 47.6, time: 7.8, settle: 61, vol: 21500, fee: '33%+fees', icon: '💰' },
               ];
               const cA = COMPARE_CASES.find(c => c.id === (compareNos || 'emp_disc')) || COMPARE_CASES[0];
               const cB = COMPARE_CASES.find(c => c.id === (compareData?.id || 'pers_inj')) || COMPARE_CASES[1];
-              const metrics: { key: string; label: string; fmt: (v: any) => string; better: 'higher' | 'lower' | 'neutral' }[] = [
-                { key: 'wr', label: lang === 'es' ? 'Tasa de éxito' : 'Win rate', fmt: (v) => `${v}%`, better: 'higher' },
-                { key: 'time', label: lang === 'es' ? 'Duración promedio' : 'Avg. duration', fmt: (v) => `${v} mo`, better: 'lower' },
-                { key: 'settle', label: lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate', fmt: (v) => `${v}%`, better: 'higher' },
-                { key: 'vol', label: lang === 'es' ? 'Volumen de casos' : 'Case volume', fmt: (v) => v >= 1000 ? `${(v/1000).toFixed(1)}K` : `${v}`, better: 'neutral' },
-                { key: 'fee', label: lang === 'es' ? 'Rango de contingencia' : 'Contingency range', fmt: (v) => `${v}`, better: 'neutral' },
+              const metrics: { key: string; label: string; fmt: (v: any) => string; better: 'higher' | 'lower' | 'neutral'; max?: number; unit?: string }[] = [
+                { key: 'wr', label: lang === 'es' ? 'Tasa de éxito' : 'Win rate', fmt: (v) => `${v}%`, better: 'higher', max: 70, unit: '%' },
+                { key: 'time', label: lang === 'es' ? 'Duración promedio' : 'Avg. duration', fmt: (v) => `${v} ${lang === 'es' ? 'meses' : 'mo'}`, better: 'lower', max: 20, unit: 'mo' },
+                { key: 'settle', label: lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate', fmt: (v) => `${v}%`, better: 'higher', max: 70, unit: '%' },
+                { key: 'vol', label: lang === 'es' ? 'Volumen anual' : 'Annual volume', fmt: (v) => v >= 1000 ? `${(v/1000).toFixed(1)}K` : `${v}`, better: 'neutral', max: 50000 },
+                { key: 'fee', label: lang === 'es' ? 'Rango de honorarios' : 'Fee range', fmt: (v) => `${v}`, better: 'neutral' },
               ];
+              // Count wins for summary
+              let aScore = 0; let bScore = 0;
+              metrics.forEach(m => {
+                const vA = (cA as any)[m.key]; const vB = (cB as any)[m.key];
+                if (typeof vA === 'number' && m.better !== 'neutral') {
+                  if (m.better === 'higher' ? vA > vB : vA < vB) aScore++; else if (m.better === 'higher' ? vB > vA : vB < vA) bScore++;
+                }
+              });
               return (
                 <>
-                  <div className="grid grid-cols-2 gap-3 mb-4">
-                    <select value={cA.id} onChange={e => { setCompareNos(e.target.value); }}
-                      className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
-                      style={{ background: '#1A274408', border: '1.5px solid #1A274420', color: '#94A3B8', outline: 'none' }}>
-                      {COMPARE_CASES.map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
-                    </select>
-                    <select value={cB.id} onChange={e => { setCompareData({ id: e.target.value }); }}
-                      className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
-                      style={{ background: '#0D948808', border: '1.5px solid #0D948820', color: '#0D9488', outline: 'none' }}>
-                      {COMPARE_CASES.filter(c => c.id !== cA.id).map(c => <option key={c.id} value={c.id}>{c.label}</option>)}
-                    </select>
+                  {/* Selector row with colored labels */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+                    <div>
+                      <div className="text-[10px] font-bold tracking-[2px] mb-1.5" style={{ color: '#6366F1' }}>
+                        {cA.icon} {lang === 'es' ? 'CASO A' : 'CASE A'}
+                      </div>
+                      <select value={cA.id} onChange={e => { setCompareNos(e.target.value); }}
+                        className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
+                        style={{ background: 'rgba(99,102,241,0.08)', border: '1.5px solid rgba(99,102,241,0.25)', color: '#A5B4FC', outline: 'none' }}>
+                        {COMPARE_CASES.map(c => <option key={c.id} value={c.id}>{c.icon} {c.label}</option>)}
+                      </select>
+                    </div>
+                    <div>
+                      <div className="text-[10px] font-bold tracking-[2px] mb-1.5" style={{ color: '#0D9488' }}>
+                        {cB.icon} {lang === 'es' ? 'CASO B' : 'CASE B'}
+                      </div>
+                      <select value={cB.id} onChange={e => { setCompareData({ id: e.target.value }); }}
+                        className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
+                        style={{ background: 'rgba(13,148,136,0.08)', border: '1.5px solid rgba(13,148,136,0.25)', color: '#5EEAD4', outline: 'none' }}>
+                        {COMPARE_CASES.filter(c => c.id !== cA.id).map(c => <option key={c.id} value={c.id}>{c.icon} {c.label}</option>)}
+                      </select>
+                    </div>
                   </div>
-                  <div className="space-y-2">
+
+                  {/* Legend row */}
+                  <div className="flex items-center gap-4 mb-3 px-1">
+                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-sm" style={{ background: '#6366F1' }} /><span className="text-[11px] text-[#94A3B8]">{cA.label.split(' ').slice(0, 2).join(' ')}</span></div>
+                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-sm" style={{ background: '#0D9488' }} /><span className="text-[11px] text-[#94A3B8]">{cB.label.split(' ').slice(0, 2).join(' ')}</span></div>
+                    <div className="flex items-center gap-1.5 ml-auto"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><span className="text-[11px] text-[#64748B]">{lang === 'es' ? 'Mejor en esta métrica' : 'Better metric'}</span></div>
+                  </div>
+
+                  {/* Visual comparison bars */}
+                  <div className="space-y-3">
                     {metrics.map(m => {
                       const vA = (cA as any)[m.key];
                       const vB = (cB as any)[m.key];
                       const isNumeric = typeof vA === 'number';
                       const aWins = isNumeric && m.better !== 'neutral' && (m.better === 'higher' ? vA > vB : vA < vB);
                       const bWins = isNumeric && m.better !== 'neutral' && (m.better === 'higher' ? vB > vA : vB < vA);
+                      const maxVal = m.max || 100;
                       return (
-                        <div key={m.key} className="flex items-center gap-2 py-2 px-3 rounded-lg" style={{ background: 'rgba(30,41,59,0.3)' }}>
-                          <span className="flex-1 text-[12px] text-[#94A3B8]">{m.label}</span>
-                          <span className={`text-[13px] font-bold font-data ${aWins ? '' : ''}`} style={{ color: aWins ? '#0D9488' : bWins ? '#94A3B8' : '#1A2744', minWidth: 60, textAlign: 'right' }}>{m.fmt(vA)}</span>
-                          <span className="text-[10px] text-[#CBD5E1] mx-1">vs</span>
-                          <span className={`text-[13px] font-bold font-data`} style={{ color: bWins ? '#0D9488' : aWins ? '#94A3B8' : '#0D9488', minWidth: 60, textAlign: 'right' }}>{m.fmt(vB)}</span>
+                        <div key={m.key} className="py-3 px-4 rounded-xl" style={{ background: 'rgba(30,41,59,0.35)' }}>
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-[12px] font-semibold text-[#CBD5E1]">{m.label}</span>
+                            {(aWins || bWins) && (
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: aWins ? 'rgba(99,102,241,0.15)' : 'rgba(13,148,136,0.15)', color: aWins ? '#A5B4FC' : '#5EEAD4' }}>
+                                ★ {aWins ? (lang === 'es' ? 'Caso A' : 'Case A') : (lang === 'es' ? 'Caso B' : 'Case B')}
+                              </span>
+                            )}
+                          </div>
+                          {isNumeric && m.max ? (
+                            <div className="space-y-1.5">
+                              <div className="flex items-center gap-2">
+                                <div className="flex-1 h-5 rounded-md overflow-hidden" style={{ background: 'rgba(30,41,59,0.6)' }}>
+                                  <div className="h-full rounded-md flex items-center justify-end px-2 transition-all duration-500" style={{ width: `${Math.min((vA / maxVal) * 100, 100)}%`, background: aWins ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'rgba(99,102,241,0.3)' }}>
+                                    <span className="text-[11px] font-bold font-data text-white">{m.fmt(vA)}</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <div className="flex-1 h-5 rounded-md overflow-hidden" style={{ background: 'rgba(30,41,59,0.6)' }}>
+                                  <div className="h-full rounded-md flex items-center justify-end px-2 transition-all duration-500" style={{ width: `${Math.min((vB / maxVal) * 100, 100)}%`, background: bWins ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : 'rgba(13,148,136,0.3)' }}>
+                                    <span className="text-[11px] font-bold font-data text-white">{m.fmt(vB)}</span>
+                                  </div>
+                                </div>
+                              </div>
+                              {isNumeric && m.better !== 'neutral' && (
+                                <div className="text-[10px] text-[#64748B] mt-0.5">
+                                  {lang === 'es' ? 'Diferencia' : 'Difference'}: <span style={{ color: '#A5B4FC' }}>{Math.abs(vA - vB).toFixed(1)}{m.unit || ''}</span>
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="flex items-center gap-3">
+                              <span className="text-[14px] font-bold font-data" style={{ color: '#A5B4FC' }}>{m.fmt(vA)}</span>
+                              <span className="text-[10px] text-[#64748B]">vs</span>
+                              <span className="text-[14px] font-bold font-data" style={{ color: '#5EEAD4' }}>{m.fmt(vB)}</span>
+                            </div>
+                          )}
                         </div>
                       );
                     })}
                   </div>
-                  {typeof cA.wr === 'number' && typeof cB.wr === 'number' && (
-                    <div className="mt-3 px-4 py-2.5 rounded-xl text-[12px] font-medium" style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
-                      {cA.wr > cB.wr
-                        ? (lang === 'es' ? `${cA.label} tiene una tasa de éxito ${(cA.wr - cB.wr).toFixed(1)}% más alta, pero ${cB.label} se resuelve ${cB.settle > cA.settle ? 'más por acuerdos' : 'de forma similar'}.` : `${cA.label} has a ${(cA.wr - cB.wr).toFixed(1)}% higher win rate, but ${cB.label} ${cB.settle > cA.settle ? 'settles more often' : 'resolves similarly'}.`)
-                        : (lang === 'es' ? `${cB.label} tiene una tasa de éxito ${(cB.wr - cA.wr).toFixed(1)}% más alta, pero ${cA.label} se resuelve ${cA.settle > cB.settle ? 'más por acuerdos' : 'de forma similar'}.` : `${cB.label} has a ${(cB.wr - cA.wr).toFixed(1)}% higher win rate, but ${cA.label} ${cA.settle > cB.settle ? 'settles more often' : 'resolves similarly'}.`)}
+
+                  {/* Summary insight card */}
+                  <div className="mt-4 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(13,148,136,0.1))', border: '1px solid rgba(99,102,241,0.15)' }}>
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(99,102,241,0.2)' }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2" strokeLinecap="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 16v-4M12 8h.01"/></svg>
+                      </div>
+                      <div>
+                        <div className="text-[11px] font-bold tracking-[2px] mb-1" style={{ color: '#A5B4FC' }}>{lang === 'es' ? 'ANÁLISIS' : 'INSIGHT'}</div>
+                        <div className="text-[13px] text-[#CBD5E1] leading-relaxed">
+                          {aScore > bScore
+                            ? (lang === 'es'
+                              ? `${cA.label} muestra datos más favorables en ${aScore} de ${aScore + bScore} métricas comparables. ${cA.wr > cB.wr ? `Con una tasa de éxito del ${cA.wr}%` : `Con un tiempo de resolución de ${cA.time} meses`}, puede ofrecer perspectivas más alentadoras.`
+                              : `${cA.label} shows more favorable data in ${aScore} of ${aScore + bScore} comparable metrics. ${cA.wr > cB.wr ? `With a ${cA.wr}% win rate` : `With a ${cA.time}-month resolution time`}, it may offer more encouraging prospects.`)
+                            : aScore < bScore
+                            ? (lang === 'es'
+                              ? `${cB.label} muestra datos más favorables en ${bScore} de ${aScore + bScore} métricas comparables. ${cB.wr > cA.wr ? `Con una tasa de éxito del ${cB.wr}%` : `Con un tiempo de resolución de ${cB.time} meses`}, puede ofrecer perspectivas más alentadoras.`
+                              : `${cB.label} shows more favorable data in ${bScore} of ${aScore + bScore} comparable metrics. ${cB.wr > cA.wr ? `With a ${cB.wr}% win rate` : `With a ${cB.time}-month resolution time`}, it may offer more encouraging prospects.`)
+                            : (lang === 'es'
+                              ? `Ambos tipos de caso muestran métricas equilibradas. ${cA.label} tiene una tasa de éxito del ${cA.wr}% mientras que ${cB.label} tiene ${cB.wr}%.`
+                              : `Both case types show balanced metrics. ${cA.label} has a ${cA.wr}% win rate while ${cB.label} has ${cB.wr}%.`)}
+                        </div>
+                      </div>
                     </div>
-                  )}
+                  </div>
+
+                  {/* Scorecard */}
+                  <div className="grid grid-cols-3 gap-2 mt-4">
+                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: aScore > bScore ? 'rgba(99,102,241,0.12)' : 'rgba(30,41,59,0.3)' }}>
+                      <div className="text-[20px] font-bold font-data" style={{ color: '#6366F1' }}>{aScore}</div>
+                      <div className="text-[10px] text-[#94A3B8]">{lang === 'es' ? 'Caso A gana' : 'Case A wins'}</div>
+                    </div>
+                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: 'rgba(30,41,59,0.3)' }}>
+                      <div className="text-[20px] font-bold font-data" style={{ color: '#64748B' }}>{metrics.filter(m => typeof (cA as any)[m.key] === 'number' && m.better !== 'neutral').length - aScore - bScore}</div>
+                      <div className="text-[10px] text-[#94A3B8]">{lang === 'es' ? 'Empate' : 'Tied'}</div>
+                    </div>
+                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: bScore > aScore ? 'rgba(13,148,136,0.12)' : 'rgba(30,41,59,0.3)' }}>
+                      <div className="text-[20px] font-bold font-data" style={{ color: '#0D9488' }}>{bScore}</div>
+                      <div className="text-[10px] text-[#94A3B8]">{lang === 'es' ? 'Caso B gana' : 'Case B wins'}</div>
+                    </div>
+                  </div>
                 </>
               );
             })()}
@@ -2997,18 +3161,35 @@ export default function MyCaseValue() {
         {/* === LEGAL GLOSSARY PREVIEW === */}
         <Reveal delay={600}>
           <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[#1E293B] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
-            <div className="text-[10px] font-bold text-[#94A3B8] tracking-[2px] mb-3">{lang === 'es' ? 'GLOSARIO LEGAL SIMPLIFICADO' : 'LEGAL TERMS — SIMPLIFIED'}</div>
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <div className="text-[10px] font-bold text-[#94A3B8] tracking-[2px] mb-1">{lang === 'es' ? 'GLOSARIO LEGAL SIMPLIFICADO' : 'LEGAL TERMS — SIMPLIFIED'}</div>
+                <div className="text-[14px] text-[#CBD5E1]">{lang === 'es' ? `${Object.keys(LEGAL_GLOSSARY).length} términos explicados en lenguaje sencillo` : `${Object.keys(LEGAL_GLOSSARY).length} terms explained in plain language`}</div>
+              </div>
+              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full" style={{ background: 'rgba(99,102,241,0.12)' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2" strokeLinecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                <span className="text-[11px] font-bold" style={{ color: '#6366F1' }}>{Object.keys(LEGAL_GLOSSARY).length}</span>
+              </div>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {Object.entries(LEGAL_GLOSSARY).slice(0, 6).map(([term, def], i) => (
-                <div key={i} className="p-3 rounded-xl bg-[#1E293B] border border-[#1E293B]">
-                  <div className="text-[13px] font-semibold capitalize" style={{ color: '#4F46E5' }}>{term}</div>
-                  <div className="text-[11px] text-[#94A3B8] mt-0.5 leading-relaxed">{lang === 'es' ? def.es : def.en}</div>
+              {Object.entries(LEGAL_GLOSSARY).slice(0, glossaryExpanded ? Object.keys(LEGAL_GLOSSARY).length : 8).map(([term, def], i) => (
+                <div key={i} className="p-3 rounded-xl border transition-all hover:border-[#4F46E5]/30" style={{ background: 'rgba(30,41,59,0.4)', borderColor: '#1E293B' }}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: '#6366F1' }}>{(term[0] || '').toUpperCase()}</div>
+                    <div className="text-[13px] font-semibold capitalize" style={{ color: '#A5B4FC' }}>{term}</div>
+                  </div>
+                  <div className="text-[11px] text-[#94A3B8] leading-relaxed pl-7">{lang === 'es' ? def.es : def.en}</div>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-3">
-              <span className="text-[12px] text-[#94A3B8]">{lang === 'es' ? `+ ${Object.keys(LEGAL_GLOSSARY).length - 6} más términos en tu informe` : `+ ${Object.keys(LEGAL_GLOSSARY).length - 6} more terms available in your report`}</span>
-            </div>
+            <button
+              onClick={() => setGlossaryExpanded(!glossaryExpanded)}
+              className="w-full mt-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer border-none transition-all"
+              style={{ background: 'rgba(99,102,241,0.1)', color: '#A5B4FC' }}>
+              {glossaryExpanded
+                ? (lang === 'es' ? 'Mostrar menos ▲' : 'Show less ▲')
+                : (lang === 'es' ? `Mostrar los ${Object.keys(LEGAL_GLOSSARY).length - 8} términos restantes ▼` : `Show all ${Object.keys(LEGAL_GLOSSARY).length - 8} remaining terms ▼`)}
+            </button>
           </div>
         </Reveal>
 

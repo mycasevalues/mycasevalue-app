@@ -357,11 +357,11 @@ export default function SocialProofBar({
           {lang === 'es' ? 'Destacado en' : 'As featured in'}
         </p>
         <div className="press-logos">
-          <div className="press-badge">{lang === 'es' ? 'LegalTech News' : 'LegalTech News'}</div>
-          <div className="press-badge">{lang === 'es' ? 'Diario ABA' : 'ABA Journal'}</div>
-          <div className="press-badge">{lang === 'es' ? 'TechCrunch' : 'TechCrunch'}</div>
-          <div className="press-badge">{lang === 'es' ? 'Law.com' : 'Law.com'}</div>
-          <div className="press-badge">{lang === 'es' ? 'Bloomberg Law' : 'Bloomberg Law'}</div>
+          <div className="press-badge">LegalTech News</div>
+          <div className="press-badge">ABA Journal</div>
+          <div className="press-badge">TechCrunch</div>
+          <div className="press-badge">Law.com</div>
+          <div className="press-badge">Bloomberg Law</div>
         </div>
       </div>
 

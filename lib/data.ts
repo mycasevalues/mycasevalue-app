@@ -160,6 +160,9 @@ export const STATES = [
   { id: "TN", label: "Tennessee" }, { id: "TX", label: "Texas" }, { id: "UT", label: "Utah" },
   { id: "VT", label: "Vermont" }, { id: "VA", label: "Virginia" }, { id: "WA", label: "Washington" },
   { id: "WV", label: "West Virginia" }, { id: "WI", label: "Wisconsin" }, { id: "WY", label: "Wyoming" },
+  // US Territories
+  { id: "PR", label: "Puerto Rico" }, { id: "GU", label: "Guam" }, { id: "VI", label: "U.S. Virgin Islands" },
+  { id: "AS", label: "American Samoa" }, { id: "MP", label: "Northern Mariana Islands" },
 ];
 
 export const TIMING_OPTS = [
@@ -203,7 +206,7 @@ export const CIRCUIT_MAP: Record<string, string> = {
   KY: "6th", MI: "6th", OH: "6th", TN: "6th",
   IL: "7th", IN: "7th", WI: "7th",
   AR: "8th", IA: "8th", MN: "8th", MO: "8th", NE: "8th", ND: "8th", SD: "8th",
-  AK: "9th", AZ: "9th", CA: "9th", HI: "9th", ID: "9th", MT: "9th", NV: "9th", OR: "9th", WA: "9th", GU: "9th",
+  AK: "9th", AZ: "9th", CA: "9th", HI: "9th", ID: "9th", MT: "9th", NV: "9th", OR: "9th", WA: "9th", GU: "9th", AS: "9th", MP: "9th",
   CO: "10th", KS: "10th", NM: "10th", OK: "10th", UT: "10th", WY: "10th",
   AL: "11th", FL: "11th", GA: "11th",
   DC: "D.C.",
@@ -248,7 +251,7 @@ export const CIRCUIT_DETAIL: Record<string, { states: string[]; judges: number; 
   "8th":  { states: ["AR","IA","MN","MO","NE","ND","SD"], judges: 11, caseload: "2,800/yr", median_mo: 8.9, types: [
     { type: "Employment", rate: 35.4, vol: "840" }, { type: "Contract", rate: 42.8, vol: "620" }, { type: "Civil Rights", rate: 29.6, vol: "440" }, { type: "Personal Injury", rate: 39.1, vol: "380" }, { type: "Farm / Ag", rate: 44.2, vol: "240" }
   ]},
-  "9th":  { states: ["AK","AZ","CA","HI","ID","MT","NV","OR","WA","GU"], judges: 29, caseload: "12,400/yr", median_mo: 12.1, types: [
+  "9th":  { states: ["AK","AZ","CA","HI","ID","MT","NV","OR","WA","GU","AS","MP"], judges: 29, caseload: "12,400/yr", median_mo: 12.1, types: [
     { type: "Employment", rate: 41.6, vol: "3,680" }, { type: "Immigration", rate: 48.2, vol: "2,840" }, { type: "Civil Rights", rate: 36.4, vol: "1,920" }, { type: "Contract", rate: 47.8, vol: "1,640" }, { type: "Environmental", rate: 52.1, vol: "680" }
   ]},
   "10th": { states: ["CO","KS","NM","OK","UT","WY"], judges: 12, caseload: "2,600/yr", median_mo: 9.6, types: [
