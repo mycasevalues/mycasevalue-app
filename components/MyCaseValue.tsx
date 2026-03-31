@@ -5932,12 +5932,12 @@ export default function MyCaseValue() {
                     <div className="flex-1 p-4 rounded-xl text-center" style={{ background: 'rgba(13,148,136,0.15)' }}>
                       <div className="text-[10px] font-bold" style={{ color: '#0D9488' }}>{lang === 'es' ? 'CON ABOGADO' : 'WITH ATTORNEY'}</div>
                       <div className="text-3xl font-display font-bold mt-1">{d.rr?.wr ?? '--'}%</div>
-                      {d.rr?.total && <div className="text-[11px] text-[#94A3B8] mt-1">{d.rr.total.toLocaleString()} cases</div>}
+                      {d.rr?.total && <div className="text-[11px] text-[#94A3B8] mt-1">{d.rr.total.toLocaleString()} {lang === 'es' ? 'casos' : 'cases'}</div>}
                     </div>
                     <div className="flex-1 p-4 rounded-xl text-center" style={{ background: 'rgba(217,119,6,0.15)' }}>
                       <div className="text-[10px] font-bold" style={{ color: '#D97706' }}>{lang === 'es' ? 'SIN ABOGADO' : 'SELF-REPRESENTED'}</div>
                       <div className="text-3xl font-display font-bold mt-1">{d.ps?.wr ?? '--'}%</div>
-                      {d.ps?.total && <div className="text-[11px] text-[#94A3B8] mt-1">{d.ps.total.toLocaleString()} cases</div>}
+                      {d.ps?.total && <div className="text-[11px] text-[#94A3B8] mt-1">{d.ps.total.toLocaleString()} {lang === 'es' ? 'casos' : 'cases'}</div>}
                     </div>
                   </div>
                   <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(64,64,242,0.15)', color: '#4F46E5' }}>

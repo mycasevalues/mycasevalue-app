@@ -57,14 +57,15 @@ const TrendChart: React.FC<TrendChartProps> = ({
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(
     null
   );
+  const gradientId = useMemo(() => `chartGradient-${Math.random().toString(36).slice(2, 8)}`, []);
 
   const chartData = useMemo(
     () => data && data.length > 0 ? data : generateDemoData(),
     [data]
   );
 
-  const padding = { top: 20, right: 20, bottom: 40, left: 50 };
-  const chartWidth = 100;
+  const padding = { top: 20, right: 30, bottom: 40, left: 55 };
+  const chartWidth = 500;
   const chartHeight = height - padding.top - padding.bottom;
 
   const minYear = Math.min(...chartData.map((d) => d.year));
@@ -104,7 +105,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
   };
 
   const linePath = generateSmoothPath(points);
-  const pathLength = 300; // Approximate for animation
+  const pathLength = 800; // Approximate for animation
 
   // Fill path (area under the line)
   const fillPath = linePath + ` L ${points[points.length - 1].x} ${chartHeight} L ${points[0].x} ${chartHeight} Z`;
@@ -121,8 +122,8 @@ const TrendChart: React.FC<TrendChartProps> = ({
         x2={chartWidth}
         y2={y}
         stroke={darkModeColors.border}
-        strokeWidth="0.5"
-        strokeDasharray="2,2"
+        strokeWidth="1"
+        strokeDasharray="4,4"
         opacity="0.5"
       />
     );
@@ -135,11 +136,11 @@ const TrendChart: React.FC<TrendChartProps> = ({
     return (
       <text
         key={`y-label-${percent}`}
-        x="-5"
+        x="-8"
         y={y}
         textAnchor="end"
         dominantBaseline="middle"
-        fontSize="12"
+        fontSize="13"
         fill={darkModeColors.muted}
       >
         {percent}%
@@ -152,9 +153,9 @@ const TrendChart: React.FC<TrendChartProps> = ({
     <text
       key={`x-label-${point.year}`}
       x={point.x}
-      y={chartHeight + 5}
+      y={chartHeight + 18}
       textAnchor="middle"
-      fontSize="12"
+      fontSize="13"
       fill={darkModeColors.muted}
     >
       {point.year}
@@ -243,7 +244,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
           x2={padding.left}
           y2={padding.top + chartHeight}
           stroke={darkModeColors.border}
-          strokeWidth="1"
+          strokeWidth="1.5"
         />
 
         {/* X-axis */}
@@ -253,7 +254,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
           x2={padding.left + chartWidth}
           y2={padding.top + chartHeight}
           stroke={darkModeColors.border}
-          strokeWidth="1"
+          strokeWidth="1.5"
         />
 
         {/* Grid lines */}
@@ -273,7 +274,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
 
         {/* Gradient definition */}
         <defs>
-          <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
             <stop
               offset="0%"
               stopColor={color}
@@ -291,7 +292,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
         <g transform={`translate(${padding.left}, ${padding.top})`}>
           <path
             d={fillPath}
-            fill="url(#chartGradient)"
+            fill={`url(#${gradientId})`}
             stroke="none"
           />
         </g>
@@ -302,7 +303,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
             d={linePath}
             fill="none"
             stroke={color}
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
             style={{
