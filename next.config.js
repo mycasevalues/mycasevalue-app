@@ -55,6 +55,10 @@ const nextConfig = {
   },
   // Compression
   compress: true,
+  // Performance: enable powered-by suppression
+  poweredByHeader: false,
+  // Performance: enable SWC minification (default in Next 14+)
+  swcMinify: true,
 };
 
 module.exports = nextConfig;
