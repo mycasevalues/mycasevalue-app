@@ -202,6 +202,52 @@ body {
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   overflow-x: hidden;
   letter-spacing: -0.01em;
+  cursor: default;
+}
+
+/* ============================================================
+   CURSOR STYLING — hand on interactive, arrow everywhere else
+   ============================================================ */
+button,
+a,
+[role="button"],
+[role="tab"],
+[role="link"],
+label[for],
+select,
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+.category-card,
+.magnetic-btn,
+.tilt-hover,
+.cursor-pointer,
+summary {
+  cursor: pointer !important;
+}
+
+/* Override cursor for non-interactive elements that might inherit pointer */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+textarea {
+  cursor: text !important;
+}
+
+/* Ensure non-clickable elements stay as default arrow */
+div:not([role="button"]):not(.cursor-pointer),
+span:not([role="button"]),
+p, h1, h2, h3, h4, h5, h6,
+section, article, header, footer, main, nav {
+  cursor: default;
+}
+
+/* Full-screen optimization: ensure content fills viewport on all devices */
+html, body {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  width: 100%;
+  max-width: 100vw;
 }
 
 ::selection {

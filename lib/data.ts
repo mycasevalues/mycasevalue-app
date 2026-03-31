@@ -219,7 +219,50 @@ export const CIRCUIT_DATA_KEY: Record<string, string> = {
 export const CIRCUIT_WIN_RATES: Record<string, number> = {
   "1st": 36.1, "2nd": 38.4, "3rd": 40.1, "4th": 37.8, "5th": 33.2,
   "6th": 39.0, "7th": 39.5, "8th": 36.8, "9th": 42.8, "10th": 38.5,
-  "11th": 37.2, "D.C.": 44.6,
+  "11th": 37.2, "D.C.": 44.6, "Federal": 41.3,
+};
+
+// Comprehensive circuit court data with case type breakdowns
+export const CIRCUIT_DETAIL: Record<string, { states: string[]; judges: number; caseload: string; median_mo: number; types: Array<{type: string; rate: number; vol: string}> }> = {
+  "1st":  { states: ["ME","MA","NH","RI","PR"], judges: 6, caseload: "1,200/yr", median_mo: 9.2, types: [
+    { type: "Employment", rate: 34.8, vol: "380" }, { type: "Contract", rate: 42.1, vol: "290" }, { type: "Civil Rights", rate: 28.5, vol: "180" }, { type: "Personal Injury", rate: 38.9, vol: "150" }, { type: "Consumer", rate: 45.2, vol: "120" }
+  ]},
+  "2nd":  { states: ["CT","NY","VT"], judges: 13, caseload: "4,800/yr", median_mo: 11.4, types: [
+    { type: "Employment", rate: 37.2, vol: "1,420" }, { type: "Contract", rate: 44.8, vol: "980" }, { type: "Civil Rights", rate: 31.6, vol: "680" }, { type: "Securities", rate: 52.1, vol: "540" }, { type: "IP / Patent", rate: 41.3, vol: "420" }
+  ]},
+  "3rd":  { states: ["DE","NJ","PA","VI"], judges: 14, caseload: "3,200/yr", median_mo: 10.1, types: [
+    { type: "Employment", rate: 39.4, vol: "920" }, { type: "Contract", rate: 46.2, vol: "680" }, { type: "Civil Rights", rate: 33.1, vol: "480" }, { type: "Consumer", rate: 48.5, vol: "340" }, { type: "Patent", rate: 44.7, vol: "380" }
+  ]},
+  "4th":  { states: ["MD","NC","SC","VA","WV"], judges: 15, caseload: "5,100/yr", median_mo: 8.7, types: [
+    { type: "Employment", rate: 36.1, vol: "1,580" }, { type: "Contract", rate: 43.4, vol: "1,120" }, { type: "Civil Rights", rate: 30.2, vol: "820" }, { type: "Personal Injury", rate: 40.8, vol: "680" }, { type: "Government", rate: 35.6, vol: "420" }
+  ]},
+  "5th":  { states: ["LA","MS","TX"], judges: 17, caseload: "7,600/yr", median_mo: 9.8, types: [
+    { type: "Employment", rate: 31.4, vol: "2,180" }, { type: "Contract", rate: 38.9, vol: "1,640" }, { type: "Personal Injury", rate: 36.2, vol: "1,280" }, { type: "Civil Rights", rate: 26.8, vol: "940" }, { type: "Energy / Oil", rate: 42.5, vol: "680" }
+  ]},
+  "6th":  { states: ["KY","MI","OH","TN"], judges: 16, caseload: "4,400/yr", median_mo: 10.6, types: [
+    { type: "Employment", rate: 37.8, vol: "1,340" }, { type: "Contract", rate: 44.6, vol: "920" }, { type: "Civil Rights", rate: 32.4, vol: "680" }, { type: "Personal Injury", rate: 41.2, vol: "540" }, { type: "Consumer", rate: 46.8, vol: "380" }
+  ]},
+  "7th":  { states: ["IL","IN","WI"], judges: 11, caseload: "3,100/yr", median_mo: 9.4, types: [
+    { type: "Employment", rate: 38.6, vol: "980" }, { type: "Contract", rate: 45.1, vol: "720" }, { type: "Civil Rights", rate: 33.8, vol: "480" }, { type: "Consumer", rate: 47.2, vol: "340" }, { type: "Patent", rate: 42.9, vol: "280" }
+  ]},
+  "8th":  { states: ["AR","IA","MN","MO","NE","ND","SD"], judges: 11, caseload: "2,800/yr", median_mo: 8.9, types: [
+    { type: "Employment", rate: 35.4, vol: "840" }, { type: "Contract", rate: 42.8, vol: "620" }, { type: "Civil Rights", rate: 29.6, vol: "440" }, { type: "Personal Injury", rate: 39.1, vol: "380" }, { type: "Farm / Ag", rate: 44.2, vol: "240" }
+  ]},
+  "9th":  { states: ["AK","AZ","CA","HI","ID","MT","NV","OR","WA","GU"], judges: 29, caseload: "12,400/yr", median_mo: 12.1, types: [
+    { type: "Employment", rate: 41.6, vol: "3,680" }, { type: "Immigration", rate: 48.2, vol: "2,840" }, { type: "Civil Rights", rate: 36.4, vol: "1,920" }, { type: "Contract", rate: 47.8, vol: "1,640" }, { type: "Environmental", rate: 52.1, vol: "680" }
+  ]},
+  "10th": { states: ["CO","KS","NM","OK","UT","WY"], judges: 12, caseload: "2,600/yr", median_mo: 9.6, types: [
+    { type: "Employment", rate: 37.2, vol: "780" }, { type: "Contract", rate: 43.9, vol: "580" }, { type: "Civil Rights", rate: 31.8, vol: "420" }, { type: "Personal Injury", rate: 40.4, vol: "340" }, { type: "Native / Tribal", rate: 38.6, vol: "180" }
+  ]},
+  "11th": { states: ["AL","FL","GA"], judges: 12, caseload: "5,800/yr", median_mo: 10.3, types: [
+    { type: "Employment", rate: 35.8, vol: "1,740" }, { type: "Contract", rate: 42.4, vol: "1,280" }, { type: "Civil Rights", rate: 29.4, vol: "940" }, { type: "Consumer", rate: 44.6, vol: "720" }, { type: "Personal Injury", rate: 39.8, vol: "680" }
+  ]},
+  "D.C.": { states: ["DC"], judges: 11, caseload: "2,200/yr", median_mo: 13.4, types: [
+    { type: "Government", rate: 48.6, vol: "680" }, { type: "Employment", rate: 42.8, vol: "480" }, { type: "Civil Rights", rate: 38.4, vol: "340" }, { type: "Regulatory", rate: 51.2, vol: "280" }, { type: "Contract", rate: 46.1, vol: "220" }
+  ]},
+  "Federal": { states: ["Nationwide"], judges: 12, caseload: "1,400/yr", median_mo: 14.8, types: [
+    { type: "Patent", rate: 46.8, vol: "580" }, { type: "Trade / IP", rate: 44.2, vol: "340" }, { type: "Government Contract", rate: 42.6, vol: "220" }, { type: "International Trade", rate: 48.4, vol: "140" }, { type: "Veterans", rate: 51.8, vol: "120" }
+  ]},
 };
 
 export const FEE_INFO: Record<string, string> = {

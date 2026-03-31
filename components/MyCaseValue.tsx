@@ -14,7 +14,7 @@ import FaqSection from './sections/FaqSection';
 import FinalCtaSection from './sections/FinalCtaSection';
 import {
   SITS, STATES, TIMING_OPTS, AMOUNT_OPTS, ATTORNEY_OPTS,
-  OUTCOME_DATA, CIRCUIT_MAP, CIRCUIT_DATA_KEY, CIRCUIT_WIN_RATES, FEE_INFO,
+  OUTCOME_DATA, CIRCUIT_MAP, CIRCUIT_DATA_KEY, CIRCUIT_WIN_RATES, CIRCUIT_DETAIL, FEE_INFO,
   LEGAL_AID, TRENDING, TESTIMONIALS, MOCK_DATA, UPL, NOS_FALLBACK,
   apiCall, formatRecoveryValue, getMockData,
 } from '../lib/data';
@@ -312,7 +312,7 @@ function LockedPreview({ children, onUnlock, label, lang = 'en' }: { children: R
         </div>
         <div className="text-center max-w-xs">
           <div className="text-[13px] text-[#CBD5E1] font-semibold mb-1">{lang === 'es' ? 'Información Premium' : 'Premium Insight'}</div>
-          <div className="text-[11px] text-[#94A3B8] mb-3">{lang === 'es' ? 'Desbloquea datos detallados que podrían cambiar tu estrategia' : 'Unlock detailed data that could change your strategy'}</div>
+          <div className="text-[11px] text-[#94A3B8] mb-3">{lang === 'es' ? 'Desbloquea datos detallados que podrían cambiar tu estrategia' : 'Unlock detailed data that could change your strategy.'}</div>
           <button onClick={onUnlock} className="premium-cta magnetic-btn shimmer-sweep px-8 py-3.5 text-[14px] font-semibold rounded-xl cursor-pointer text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-95"
             style={{
               background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
@@ -1114,11 +1114,11 @@ function Shell({
           {children}
 
           {/* Footer */}
-          <footer className="border-t mt-16 pt-6 pb-8" style={{ borderColor: '#1E293B' }}>
-            <div className="flex items-center gap-3 mb-4 flex-wrap">
+          <footer className="border-t mt-16 pt-8 pb-10" style={{ borderColor: '#1E293B' }}>
+            <div className="flex items-center gap-2.5 mb-5 flex-wrap justify-center sm:justify-start">
               <span className="text-[11px] font-semibold text-[#94A3B8]">{lang === 'es' ? 'Datos verificados:' : 'Verified data:'}</span>
               {['Federal Judicial Center', 'CourtListener', 'uscourts.gov', 'Google Scholar'].map((n, i) => (
-                <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-[#131B2E] border border-[#1E293B]">{n}</span>
+                <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-[#131B2E] border border-[#1E293B]" style={{ color: '#CBD5E1' }}>{n}</span>
               ))}
               <span className="text-[10px] font-medium px-2 py-1 rounded-lg" style={{ background: 'rgba(13,148,136,0.15)', color: '#0D9488' }}>
                 <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="3" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><polyline points="20 6 9 17 4 12" /></svg>
@@ -1127,17 +1127,17 @@ function Shell({
             </div>
             <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-8">
               <div className="max-w-sm">
-                <button onClick={reset} className="bg-transparent border-none cursor-pointer mb-3">
+                <button onClick={reset} className="bg-transparent border-none mb-4 flex items-center gap-3" style={{ cursor: 'pointer' }}>
                   <Logo size="sm" darkMode={darkMode} />
                 </button>
-                <p className="text-[11px] text-[#94A3B8] leading-relaxed">
+                <p className="text-[12px] text-[#94A3B8] leading-relaxed">
                   {lang === 'es'
-                    ? 'MyCaseValue es una herramienta informativa que muestra datos históricos agregados de registros judiciales federales públicos. No es asesoría legal. No establece relación abogado-cliente.'
-                    : 'MyCaseValue is an informational tool that displays aggregate historical data from public federal court records. Not legal advice. No attorney-client relationship.'}
+                    ? 'MyCaseValue es una herramienta informativa que muestra datos históricos agregados de registros judiciales federales públicos. No constituye asesoría legal. No establece relación abogado-cliente.'
+                    : 'MyCaseValue is an informational tool that displays aggregate historical data from public federal court records. It does not constitute legal advice and does not establish an attorney-client relationship.'}
                 </p>
               </div>
-              <div className="sm:text-right text-[11px] text-[#94A3B8] leading-relaxed">
-                MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}<br />
+              <div className="sm:text-right text-[12px] text-[#94A3B8] leading-relaxed">
+                {'\u00A9'} {new Date().getFullYear()} MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}<br />
                 <a href="/methodology" className="text-[11px] text-[#94A3B8] hover:text-[#94A3B8] underline mt-1 inline-block transition-colors">
                   {lang === 'es' ? 'Metodología' : 'Methodology'}
                 </a>
@@ -1429,6 +1429,10 @@ export default function MyCaseValue() {
   const [readingPct, setReadingPct] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [naturalInput, setNaturalInput] = useState('');
+  const [aiSuggestions, setAiSuggestions] = useState<Array<{sit: any; opt: any; score: number}>>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [circuitView, setCircuitView] = useState<'bars' | 'table'>('bars');
+  const [expandedCircuit, setExpandedCircuit] = useState<string | null>(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -1709,6 +1713,45 @@ export default function MyCaseValue() {
     }
     return false;
   }, [lang, toast]);
+
+  // AI-powered real-time suggestions as user types
+  const computeSuggestions = useCallback((input: string) => {
+    if (!input || input.trim().length < 2) { setAiSuggestions([]); setShowSuggestions(false); return; }
+    const lower = input.toLowerCase().trim();
+    const words = lower.split(/\s+/);
+    const results: Array<{sit: any; opt: any; score: number}> = [];
+
+    SITS.forEach((sit: any) => {
+      (sit.opts || []).forEach((opt: any) => {
+        let score = 0;
+        const optLower = (opt.label + ' ' + opt.d + ' ' + (sit.sub || '')).toLowerCase();
+        // Exact phrase match (highest priority)
+        if (optLower.includes(lower)) score += 10;
+        // Word-by-word matching
+        words.forEach((w: string) => {
+          if (w.length < 2) return;
+          if (optLower.includes(w)) score += 3;
+          // Fuzzy: partial word match
+          const optWords = optLower.split(/[\s,/]+/);
+          optWords.forEach((ow: string) => { if (ow.startsWith(w) || w.startsWith(ow.slice(0, 3))) score += 1; });
+        });
+        // Boost for category match
+        if (sit.label.toLowerCase().includes(lower) || (sit.sub || '').toLowerCase().includes(lower)) score += 5;
+        if (score > 0) results.push({ sit, opt, score });
+      });
+    });
+
+    results.sort((a, b) => b.score - a.score);
+    const top = results.slice(0, 6);
+    setAiSuggestions(top);
+    setShowSuggestions(top.length > 0);
+  }, []);
+
+  // Debounced suggestion trigger
+  useEffect(() => {
+    const timer = setTimeout(() => computeSuggestions(naturalInput), 150);
+    return () => clearTimeout(timer);
+  }, [naturalInput, computeSuggestions]);
 
   // Generate AI-style case strength summary
   const getCaseSummary = useCallback((d: any) => {
@@ -2086,30 +2129,99 @@ export default function MyCaseValue() {
                 {t.hero_sub_pre} <strong className="font-data" style={{ color: '#A5B4FC' }}>{totalDisplay}</strong> {t.hero_sub_post}
               </p>
 
-              {/* Natural language input — enhanced */}
-              <div className="mb-6 max-w-lg">
+              {/* AI-integrated natural language input with smart suggestions */}
+              <div className="mb-6 max-w-lg relative" style={{ zIndex: 20 }}>
                 <div className="relative group">
                   <div className="absolute -inset-0.5 rounded-2xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"
                     style={{ background: 'linear-gradient(135deg, rgba(64,64,242,0.2), rgba(13,148,136,0.1), rgba(64,64,242,0.2))', filter: 'blur(8px)' }} />
                   <div className="relative">
-                    <input type="text" value={naturalInput} onChange={e => setNaturalInput(e.target.value)}
-                      onKeyDown={e => { if (e.key === 'Enter' && naturalInput.trim()) { if (!detectCaseType(naturalInput)) go(1); } }}
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-1.5" style={{ pointerEvents: 'none' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/><path d="M10 20h4"/></svg>
+                      <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#6366F1' }}>AI</span>
+                    </div>
+                    <input type="text" value={naturalInput}
+                      onChange={e => setNaturalInput(e.target.value)}
+                      onFocus={() => { if (aiSuggestions.length > 0) setShowSuggestions(true); }}
+                      onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                      onKeyDown={e => {
+                        if (e.key === 'Enter' && naturalInput.trim()) {
+                          setShowSuggestions(false);
+                          if (aiSuggestions.length > 0) {
+                            const top = aiSuggestions[0];
+                            setSit(top.sit); setSpec(top.opt); setAmount(top.sit.dm); go(2);
+                            toast(lang === 'es' ? `Detectado: ${top.opt.d}` : `Matched: ${top.opt.d}`);
+                          } else {
+                            if (!detectCaseType(naturalInput)) go(1);
+                          }
+                        }
+                        if (e.key === 'Escape') setShowSuggestions(false);
+                      }}
                       placeholder={lang === 'es' ? 'Describe tu situación en pocas palabras...' : 'Describe your situation in a few words...'}
-                      className="w-full px-5 py-4.5 pr-14 text-[15px] rounded-2xl transition-all input-frosted focus-ring-premium"
+                      className="w-full text-[15px] rounded-2xl transition-all input-frosted focus-ring-premium"
                       style={{
                         color: '#F0F2F5',
                         boxShadow: '0 4px 20px rgba(0,0,0,.15)',
-                        padding: '18px 56px 18px 20px',
+                        padding: '18px 56px 18px 58px',
                       }} />
-                    <button onClick={() => { if (naturalInput.trim()) { if (!detectCaseType(naturalInput)) go(1); } }}
-                      className="absolute right-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl flex items-center justify-center cursor-pointer border-none magnetic-btn ripple-effect"
+                    <button onClick={() => {
+                        if (naturalInput.trim()) {
+                          setShowSuggestions(false);
+                          if (aiSuggestions.length > 0) {
+                            const top = aiSuggestions[0];
+                            setSit(top.sit); setSpec(top.opt); setAmount(top.sit.dm); go(2);
+                            toast(lang === 'es' ? `Detectado: ${top.opt.d}` : `Matched: ${top.opt.d}`);
+                          } else { if (!detectCaseType(naturalInput)) go(1); }
+                        }
+                      }}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl flex items-center justify-center border-none magnetic-btn ripple-effect"
                       aria-label={lang === 'es' ? 'Buscar' : 'Search'}
                       style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 2px 10px rgba(64,64,242,.25)' }}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     </button>
                   </div>
+
+                  {/* AI suggestion dropdown */}
+                  {showSuggestions && aiSuggestions.length > 0 && (
+                    <div className="absolute left-0 right-0 top-full mt-2 rounded-2xl overflow-hidden border shadow-2xl"
+                      style={{ background: '#131B2E', borderColor: 'rgba(99,102,241,0.2)', boxShadow: '0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(99,102,241,0.1)', zIndex: 50 }}>
+                      <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ borderColor: 'rgba(99,102,241,0.1)', background: 'rgba(99,102,241,0.05)' }}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
+                        <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#A5B4FC' }}>
+                          {lang === 'es' ? 'COINCIDENCIAS INTELIGENTES' : 'SMART MATCHES'}
+                        </span>
+                        <span className="text-[10px] ml-auto" style={{ color: '#64748B' }}>
+                          {lang === 'es' ? 'Presiona Enter para seleccionar' : 'Press Enter to select top match'}
+                        </span>
+                      </div>
+                      {aiSuggestions.map((s, i) => (
+                        <button key={i}
+                          onMouseDown={(e) => { e.preventDefault(); setSit(s.sit); setSpec(s.opt); setAmount(s.sit.dm); go(2); setShowSuggestions(false); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
+                          className="w-full flex items-center gap-3 px-4 py-3 text-left transition-all border-none bg-transparent"
+                          style={{ borderBottom: i < aiSuggestions.length - 1 ? '1px solid rgba(30,41,59,0.5)' : 'none' }}
+                          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(99,102,241,0.08)'; }}
+                          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}>
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${s.sit.color}20`, border: `1px solid ${s.sit.color}30` }}>
+                            <CategoryIcon name={s.sit.icon} size={14} color={s.sit.color} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-[13px] font-semibold truncate" style={{ color: '#E2E8F0' }}>{s.opt.label}</div>
+                            <div className="text-[11px] truncate" style={{ color: '#64748B' }}>{s.sit.label} · {s.opt.d}</div>
+                          </div>
+                          {i === 0 && (
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: '#A5B4FC' }}>
+                              {lang === 'es' ? 'Mejor' : 'Best match'}
+                            </span>
+                          )}
+                          <span className="text-[11px] font-data flex-shrink-0" style={{ color: '#64748B' }}>{Math.min(Math.round(s.score * 8), 99)}%</span>
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <div className="text-[11px] mt-2 px-1" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'Ej: "Mi jefe me despidió por discriminación" o "Accidente de auto"' : 'E.g. "My boss fired me for discrimination" or "Car accident"'}</div>
+                <div className="text-[11px] mt-2 px-1 flex items-center gap-1.5" style={{ color: '#6B7A94' }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7A94" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
+                  {lang === 'es' ? 'AI detecta automáticamente tu tipo de caso mientras escribes' : 'AI automatically detects your case type as you type'}
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -2393,22 +2505,70 @@ export default function MyCaseValue() {
             </div>
             <div className="card-bg rounded-2xl border-2 p-7 transition-all" style={{ background: 'linear-gradient(135deg, rgba(64,64,242,0.08) 0%, rgba(64,64,242,0.03) 100%)', borderColor: '#4F46E540', boxShadow: '0 8px 32px rgba(64,64,242,0.15)' }}>
               <SectionLabel>{t.circuit_rates}</SectionLabel>
-              <div className="stagger-list">
-              {['9th', '2nd', 'D.C.', '3rd', '7th', '5th'].map((ci, i) => (
-                <div key={i} className="flex items-center gap-2 py-2">
-                  <span className="text-xs font-extrabold w-9 text-[#CBD5E1]">{ci}</span>
-                  <div className="flex-1 h-2.5 rounded-full overflow-hidden" style={{ background: 'rgba(64,64,242,0.15)' }}>
-                    <div className="h-full rounded-full transition-all duration-700" style={{
-                      width: `${CIRCUIT_WIN_RATES[ci] || 35}%`,
-                      background: (CIRCUIT_WIN_RATES[ci] || 35) > 40 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : (CIRCUIT_WIN_RATES[ci] || 35) > 37 ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
-                      boxShadow: (CIRCUIT_WIN_RATES[ci] || 35) > 40 ? '0 0 12px rgba(13,148,136,0.4)' : (CIRCUIT_WIN_RATES[ci] || 35) > 37 ? '0 0 12px rgba(64,64,242,0.4)' : '0 0 12px rgba(232,116,97,0.4)',
-                    }} />
-                  </div>
-                  <span className="text-xs font-extrabold w-10 text-right font-data" style={{ color: (CIRCUIT_WIN_RATES[ci] || 35) > 40 ? '#0D9488' : (CIRCUIT_WIN_RATES[ci] || 35) > 37 ? '#4F46E5' : '#E87461', textShadow: '0 1px 4px rgba(11,18,33,0.1)' }}>{CIRCUIT_WIN_RATES[ci]}%</span>
-                </div>
-              ))}
+              {/* Toggle: bar chart vs. expanded table */}
+              <div className="flex gap-2 mb-3">
+                <button onClick={() => setCircuitView('bars')} className="text-[10px] font-bold px-2.5 py-1 rounded-lg border-none transition-all"
+                  style={{ background: circuitView === 'bars' ? 'rgba(99,102,241,0.2)' : 'transparent', color: circuitView === 'bars' ? '#A5B4FC' : '#64748B' }}>
+                  {lang === 'es' ? 'Barras' : 'Chart'}
+                </button>
+                <button onClick={() => setCircuitView('table')} className="text-[10px] font-bold px-2.5 py-1 rounded-lg border-none transition-all"
+                  style={{ background: circuitView === 'table' ? 'rgba(99,102,241,0.2)' : 'transparent', color: circuitView === 'table' ? '#A5B4FC' : '#64748B' }}>
+                  {lang === 'es' ? 'Detalle' : 'Details'}
+                </button>
               </div>
-              <div className="text-[11px] text-[#94A3B8] mt-3 font-semibold">{lang === 'es' ? 'Tasas de éxito agregadas del demandante' : 'Aggregate plaintiff win rates'}</div>
+
+              {circuitView === 'bars' ? (
+                <div className="stagger-list" style={{ maxHeight: '320px', overflowY: 'auto' }}>
+                  {Object.entries(CIRCUIT_WIN_RATES).sort(([,a], [,b]) => b - a).map(([ci, rate], i) => (
+                    <div key={i} className="flex items-center gap-2 py-1.5 transition-all" style={{ cursor: 'pointer' }}
+                      onClick={() => setExpandedCircuit(expandedCircuit === ci ? null : ci)}>
+                      <span className="text-[11px] font-extrabold w-14 text-[#CBD5E1]">{ci}</span>
+                      <div className="flex-1 h-2.5 rounded-full overflow-hidden" style={{ background: 'rgba(64,64,242,0.15)' }}>
+                        <div className="h-full rounded-full transition-all duration-700" style={{
+                          width: `${rate}%`,
+                          background: rate > 40 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : rate > 37 ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
+                        }} />
+                      </div>
+                      <span className="text-[11px] font-extrabold w-10 text-right font-data" style={{ color: rate > 40 ? '#0D9488' : rate > 37 ? '#4F46E5' : '#E87461' }}>{rate}%</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div style={{ maxHeight: '320px', overflowY: 'auto' }}>
+                  {Object.entries(CIRCUIT_WIN_RATES).sort(([,a], [,b]) => b - a).map(([ci, rate], i) => {
+                    const detail = CIRCUIT_DETAIL[ci];
+                    const isExp = expandedCircuit === ci;
+                    return (
+                      <div key={i} className="border-b transition-all" style={{ borderColor: 'rgba(30,41,59,0.3)' }}>
+                        <div className="flex items-center gap-2 py-2 transition-all" style={{ cursor: 'pointer' }}
+                          onClick={() => setExpandedCircuit(isExp ? null : ci)}>
+                          <span className="text-[11px] font-extrabold w-14" style={{ color: rate > 40 ? '#0D9488' : rate > 37 ? '#A5B4FC' : '#E87461' }}>{ci}</span>
+                          <span className="text-[11px] font-data font-bold" style={{ color: '#CBD5E1' }}>{rate}%</span>
+                          {detail && <span className="text-[10px] ml-auto" style={{ color: '#64748B' }}>{detail.caseload}</span>}
+                          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" style={{ transform: isExp ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}><path d="M6 9l6 6 6-6"/></svg>
+                        </div>
+                        {isExp && detail && (
+                          <div className="pb-3 pl-2">
+                            <div className="text-[10px] mb-2" style={{ color: '#64748B' }}>
+                              {detail.states.join(', ')} · {detail.judges} judges · {detail.median_mo}mo median
+                            </div>
+                            <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(30,41,59,0.4)' }}>
+                              {detail.types.map((t, j) => (
+                                <div key={j} className="flex items-center gap-2 px-2.5 py-1.5" style={{ background: j % 2 === 0 ? 'rgba(19,27,46,0.5)' : 'transparent', borderBottom: j < detail.types.length - 1 ? '1px solid rgba(30,41,59,0.2)' : 'none' }}>
+                                  <span className="text-[10px] font-semibold flex-1" style={{ color: '#94A3B8' }}>{t.type}</span>
+                                  <span className="text-[10px] font-data font-bold" style={{ color: t.rate > 45 ? '#0D9488' : t.rate > 35 ? '#A5B4FC' : '#E87461' }}>{t.rate}%</span>
+                                  <span className="text-[10px] font-data w-12 text-right" style={{ color: '#4B5563' }}>{t.vol}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+              <div className="text-[11px] text-[#94A3B8] mt-3 font-semibold">{lang === 'es' ? 'Todas las 13 cortes de circuito federales' : 'All 13 federal circuit courts'}</div>
             </div>
           </div>
         </Reveal>
