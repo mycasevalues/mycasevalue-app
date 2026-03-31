@@ -310,51 +310,6 @@ function Select({ value, options, onChange, placeholder, dark = false, lang = 'e
   );
 }
 
-function LockedPreview({ children, onUnlock, label, lang = 'en' }: { children: React.ReactNode; onUnlock: () => void; label?: string; lang?: string }) {
-  return (
-    <div className="relative mb-3 rounded-2xl overflow-hidden locked-shimmer" style={{
-      background: 'linear-gradient(135deg, rgba(20,28,45,0.95) 0%, rgba(15,23,42,0.9) 100%)',
-      border: '1px solid rgba(79,70,229,0.12)',
-      boxShadow: '0 4px 24px rgba(79,70,229,0.06)',
-    }}>
-      <div style={{ filter: 'blur(6px)', pointerEvents: 'none', opacity: 0.35, padding: 24, transform: 'scale(1.02)' }}>{children}</div>
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{
-        background: 'radial-gradient(ellipse at center, rgba(20,28,45,0.92) 0%, rgba(15,23,42,0.7) 50%, rgba(11,18,33,0.5) 100%)',
-      }}>
-        {/* Animated lock icon */}
-        <div className="premium-badge-glow w-16 h-16 rounded-2xl shadow-xl flex items-center justify-center" style={{
-          background: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
-        }}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-            <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" />
-          </svg>
-        </div>
-        <div className="text-center max-w-xs">
-          <div className="text-[13px] text-[#CBD5E1] font-semibold mb-1">{lang === 'es' ? 'Información Premium' : 'Premium Insight'}</div>
-          <div className="text-[11px] text-[#94A3B8] mb-3">{lang === 'es' ? 'Desbloquea datos detallados que podrían cambiar tu estrategia' : 'Unlock detailed data that could change your strategy.'}</div>
-          <button onClick={onUnlock} className="premium-cta magnetic-btn shimmer-sweep px-8 py-3.5 text-[14px] font-semibold rounded-xl cursor-pointer text-white transition-all hover:-translate-y-1 hover:shadow-lg active:scale-95"
-            style={{
-              background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
-              boxShadow: '0 4px 24px rgba(79,70,229,0.35), 0 0 0 1px rgba(79,70,229,0.1)',
-            }}>
-            {label || 'Unlock — $5.99'}
-          </button>
-          <div className="flex items-center justify-center gap-3 mt-3">
-            <div className="flex items-center gap-1 text-[10px] text-[#94A3B8]">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-              {lang === 'es' ? 'Pago seguro' : 'Secure checkout'}
-            </div>
-            <div className="flex items-center gap-1 text-[10px] text-[#94A3B8]">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
-              {lang === 'es' ? 'Acceso instantáneo' : 'Instant access'}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Collapsible({ title, badge, defaultOpen = false, children }: { title: string; badge?: string | number; defaultOpen?: boolean; children: React.ReactNode }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
@@ -1681,6 +1636,12 @@ export default function MyCaseValue() {
   useEffect(() => {
     if (step === 6 && result && !loading) {
       setShowConfetti(true);
+      // Show email gate for non-premium users who haven't captured email
+      if (!emailCaptured && tier !== 'unlimited') {
+        const gateTimer = setTimeout(() => setShowEmailGate(true), 3000);
+        const confettiTimer = setTimeout(() => setShowConfetti(false), 2500);
+        return () => { clearTimeout(gateTimer); clearTimeout(confettiTimer); };
+      }
       const t = setTimeout(() => setShowConfetti(false), 2500);
       return () => clearTimeout(t);
     }
@@ -3906,6 +3867,20 @@ export default function MyCaseValue() {
 
     return (
       <Shell {...shellProps}>
+        {/* Email capture gate — show on first report view for non-premium users */}
+        {showEmailGate && !emailCaptured && !isPremium && (
+          <EmailCaptureGate
+            lang={lang}
+            caseType={spec?.d}
+            onSubmit={(email) => {
+              setEmailCaptured(true);
+              setShowEmailGate(false);
+              try { localStorage.setItem('mcv-email', email); } catch {}
+              apiCall('/api/email/capture', 'POST', { email, source: 'email-gate', nos: spec?.nos });
+            }}
+            onSkip={() => setShowEmailGate(false)}
+          />
+        )}
         <SocialProofToast lang={lang} active={true} />
         {/* Exit intent modal — desktop only, once per session */}
         {!emailCaptured && !isPremium && (
@@ -5781,7 +5756,7 @@ export default function MyCaseValue() {
               </Reveal>
 
               <Reveal delay={300}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear informe completo' : 'Unlock full report'}>
+                <CollapsedPaywall lang={lang} onUnlock={() => setShowPricing(true)} previewRows={2}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? 'Tu informe premium incluye:' : 'Your premium report includes:'}</div>
                     <div className="grid grid-cols-2 gap-2">
@@ -5801,12 +5776,12 @@ export default function MyCaseValue() {
                       ))}
                     </div>
                   </div>
-                </LockedPreview>
+                </CollapsedPaywall>
               </Reveal>
 
               {/* Premium locked section: Case Strength Score Breakdown */}
               <Reveal delay={310}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear análisis completo' : 'Unlock full analysis'}>
+                <CollapsedPaywall lang={lang} onUnlock={() => setShowPricing(true)} previewRows={2}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Desglose de la fortaleza de tu caso' : 'Your case strength score breakdown'}</div>
                     <div className="flex items-center justify-center mb-4">
@@ -5830,12 +5805,12 @@ export default function MyCaseValue() {
                       ))}
                     </div>
                   </div>
-                </LockedPreview>
+                </CollapsedPaywall>
               </Reveal>
 
               {/* Premium locked section: Estimated Timeline */}
               <Reveal delay={320}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver cronograma estimado' : 'View estimated timeline'}>
+                <CollapsedPaywall lang={lang} onUnlock={() => setShowPricing(true)} previewRows={2}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Cronograma estimado para casos similares' : 'Estimated timeline for similar cases'}</div>
                     <div className="space-y-2">
@@ -5854,12 +5829,12 @@ export default function MyCaseValue() {
                       {lang === 'es' ? 'Estimación basada en casos similares. Puede variar significativamente.' : 'Estimate based on similar cases. May vary significantly.'}
                     </div>
                   </div>
-                </LockedPreview>
+                </CollapsedPaywall>
               </Reveal>
 
               {/* Premium locked section: Recovery Calculator */}
               <Reveal delay={330}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver calculadora de recuperación' : 'View recovery calculator'}>
+                <CollapsedPaywall lang={lang} onUnlock={() => setShowPricing(true)} previewRows={2}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Calculadora de recuperación esperada' : 'Expected recovery calculator'}</div>
                     <div className="space-y-2.5">
@@ -5875,12 +5850,12 @@ export default function MyCaseValue() {
                       ))}
                     </div>
                   </div>
-                </LockedPreview>
+                </CollapsedPaywall>
               </Reveal>
 
               {/* Premium locked section: Judge & Jurisdiction Analysis */}
               <Reveal delay={340}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver análisis de jurisdicción' : 'View jurisdiction analysis'}>
+                <CollapsedPaywall lang={lang} onUnlock={() => setShowPricing(true)} previewRows={2}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Análisis de juez y jurisdicción' : 'Judge & jurisdiction analysis'}</div>
                     <div className="grid grid-cols-2 gap-2">
@@ -5897,12 +5872,12 @@ export default function MyCaseValue() {
                       ))}
                     </div>
                   </div>
-                </LockedPreview>
+                </CollapsedPaywall>
               </Reveal>
 
               {/* Premium locked section: Case Strength Radar */}
               <Reveal delay={350}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver radar de fortaleza del caso' : 'View case strength radar'}>
+                <CollapsedPaywall lang={lang} onUnlock={() => setShowPricing(true)} previewRows={2}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Radar de fortaleza del caso' : 'Case strength radar'}</div>
                     <div className="flex items-center gap-6">
@@ -5934,12 +5909,12 @@ export default function MyCaseValue() {
                       <div className="text-[11px] text-[#94A3B8]">{lang === 'es' ? 'Puntuación general de fortaleza' : 'Overall strength score'}</div>
                     </div>
                   </div>
-                </LockedPreview>
+                </CollapsedPaywall>
               </Reveal>
 
               {/* Premium locked section: Similar Cases Near You */}
               <Reveal delay={355}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver casos similares cerca' : 'View similar cases near you'}>
+                <CollapsedPaywall lang={lang} onUnlock={() => setShowPricing(true)} previewRows={2}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? 'Casos similares en tu área' : 'Similar cases in your area'}</div>
                     <div className="space-y-2">
@@ -5956,7 +5931,7 @@ export default function MyCaseValue() {
                     </div>
                     <div className="text-[10px] text-[#94A3B8] mt-2 text-center">{lang === 'es' ? 'Todos los datos están anonimizados y son de fuentes públicas' : 'All data is anonymized and from public sources'}</div>
                   </div>
-                </LockedPreview>
+                </CollapsedPaywall>
               </Reveal>
 
               {/* CTA */}
