@@ -64,6 +64,7 @@ const ReportSidebar = dynamic(() => import('./ui/ReportSidebar'), { ssr: false }
 const EmailCaptureGate = dynamic(() => import('./ui/EmailCaptureGate'), { ssr: false });
 const CollapsedPaywall = dynamic(() => import('./ui/CollapsedPaywall'), { ssr: false });
 const ExitIntentModal = dynamic(() => import('./ui/ExitIntentModal'), { ssr: false });
+const BottomNav = dynamic(() => import('./navigation/BottomNav'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -1144,7 +1145,7 @@ function Shell({
           scrollProgress={scrollProgress}
         />
 
-        <main id="main-content" className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10" role="main">
+        <main id="main-content" className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10" role="main" style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}>
           {/* UPL Banner */}
           <div className="text-center py-2 border-b no-print" style={{ borderColor: '#1E293B', background: 'rgba(30,41,59,0.3)' }}>
             <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'HERRAMIENTA INFORMATIVA SOLAMENTE — NO ES ASESORÍA LEGAL' : UPL.banner}</span>
@@ -1387,6 +1388,18 @@ function Shell({
           lang={lang}
           onSaved={() => setShowSaved(true)}
           savedCount={savedReportsLength}
+        />
+
+        {/* Mobile bottom navigation */}
+        <BottomNav
+          lang={lang}
+          activeTab={step === 0 ? 'home' : step === 6 ? 'reports' : 'search'}
+          onNavigate={(tab) => {
+            if (tab === 'home') reset();
+            if (tab === 'search') { if (step !== 0) reset(); setTimeout(() => { const el = document.querySelector('input[type="search"], input[type="text"]'); if (el) (el as HTMLElement).focus(); }, 100); }
+            if (tab === 'premium') buy('unlimited');
+          }}
+          isPremium={isPremium}
         />
 
         {/* Cookie consent banner */}
