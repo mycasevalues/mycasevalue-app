@@ -173,6 +173,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ` }} />
       </head>
       <body className="grain" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }} suppressHydrationWarning>
+        <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <ErrorBoundary>
           {children}

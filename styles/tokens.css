@@ -121,3 +121,66 @@ html[data-theme="light"] {
   --shadow-md:  0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
   --shadow-lg:  0 16px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.08);
 }
+
+/* ACCESSIBILITY — Minimum tap targets on mobile */
+@media (pointer: coarse) {
+  button,
+  [role="button"],
+  a,
+  input[type="checkbox"],
+  input[type="radio"],
+  select,
+  summary {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* REDUCED MOTION — Honor user preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* iOS ZOOM PREVENTION — 16px minimum font on inputs */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"] {
+    font-size: max(16px, 1em);
+  }
+}
+
+/* FOCUS VISIBLE — Consistent focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* SKIP TO CONTENT — Accessibility landmark */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: var(--z-tooltip);
+  padding: 8px 16px;
+  background: var(--accent-primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-md) 0;
+}
+.skip-to-content:focus {
+  top: 0;
+}

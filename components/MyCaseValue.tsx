@@ -255,7 +255,7 @@ function Select({ value, options, onChange, placeholder, dark = false, lang = 'e
       </button>
       <div
         role="listbox"
-        className="absolute top-full mt-1.5 left-0 right-0 rounded-xl z-20 overflow-hidden"
+        className="absolute top-full mt-1.5 left-0 right-0 rounded-xl z-[var(--z-raised)] overflow-hidden"
         style={{
           background: '#1A2744',
           border: open ? '1px solid #334155' : '1px solid transparent',
@@ -379,7 +379,7 @@ function WizardProgress({ step, labels, lang = 'en' }: { step: number; labels?: 
 function Toast({ message, visible }: { message: string; visible: boolean }) {
   if (!visible) return null;
   return (
-    <div role="status" aria-live="polite" className="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-medium z-50 text-white"
+    <div role="status" aria-live="polite" className="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-medium z-[var(--z-modal)] text-white"
       style={{ background: '#0B1221', boxShadow: '0 8px 32px rgba(11,18,33,.2)', animation: 'slideUp 0.3s ease' }}>
       {message}
     </div>
@@ -569,7 +569,7 @@ function GlossaryTip({ term, children, lang = 'en' }: { term: string; children: 
       style={{ borderBottom: '1px dashed #4F46E540' }}>
       {children}
       {show && (
-        <span className="absolute z-30 bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 rounded-xl text-[12px] leading-relaxed font-normal text-left w-56 sm:w-64 max-w-[calc(100vw-2rem)]"
+        <span className="absolute z-[var(--z-dropdown)] bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 rounded-xl text-[12px] leading-relaxed font-normal text-left w-56 sm:w-64 max-w-[calc(100vw-2rem)]"
           style={{ background: '#0B1221', color: '#E2E8F0', boxShadow: '0 8px 32px rgba(11,18,33,.25)' }}>
           <span className="font-bold text-white block mb-0.5 capitalize">{term}</span>
           {displayDef}
@@ -834,7 +834,7 @@ function SuccessCelebration() {
     })), []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden" aria-hidden="true">
+    <div className="fixed inset-0 pointer-events-none z-[var(--z-modal)] overflow-hidden" aria-hidden="true">
       {/* Center pulse rings */}
       <div className="success-pulse-ring" style={{ animationDelay: '0ms' }} />
       <div className="success-pulse-ring" style={{ animationDelay: '300ms' }} />
@@ -987,7 +987,7 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment, lang = 'en' }: { onClo
 
   if (answers.length === questions.length) {
     return (
-      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-[var(--z-modal)]">
         <div className="card-bg bg-[#131B2E] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
           <div className="text-center">
             <div className="text-5xl font-display font-bold mb-3" style={{ color: strengthColor }}>{Math.round(score)}</div>
@@ -1008,7 +1008,7 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment, lang = 'en' }: { onClo
   }
 
   return (
-    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-[var(--z-modal)]">
       <div className="card-bg bg-[#131B2E] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
         <div className="mb-6">
           <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-3 uppercase">{lang === 'es' ? 'EVALUACIÓN RÁPIDA' : 'Quick Assessment'}</div>
@@ -1311,7 +1311,7 @@ function Shell({
         {/* Back to top button */}
         {showBackToTop && (
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-40 cursor-pointer no-print transition-all"
+            className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-[var(--z-dropdown)] cursor-pointer no-print transition-all"
             style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 16px rgba(64,64,242,.3)' }}
             aria-label="Back to top">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M18 15l-6-6-6 6" /></svg>
@@ -1320,7 +1320,7 @@ function Shell({
 
         {/* Exit intent popup */}
         {showExitIntent && !isPremium && (
-          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(8px)' }}>
+          <div className="fixed inset-0 z-[var(--z-modal)] flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(8px)' }}>
             <div className="exit-intent-modal card-bg bg-[#131B2E] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center" onClick={e => e.stopPropagation()}>
               <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -1347,7 +1347,7 @@ function Shell({
 
         {/* Saved Reports drawer */}
         {showSaved && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(8px)' }}
+          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(8px)' }}
             onClick={() => setShowSaved(false)}>
             <div className="card-bg bg-[#131B2E] rounded-2xl p-6 max-w-lg w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between mb-4">
@@ -1391,7 +1391,7 @@ function Shell({
 
         {/* Cookie consent banner */}
         {showCookieConsent && (
-          <div className="fixed bottom-0 left-0 right-0 z-50 p-4 no-print" style={{ background: 'rgba(11,18,33,0.95)', backdropFilter: 'blur(12px)' }}>
+          <div className="fixed bottom-0 left-0 right-0 z-[var(--z-modal)] p-4 no-print" style={{ background: 'rgba(11,18,33,0.95)', backdropFilter: 'blur(12px)' }}>
             <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3">
               <div className="flex-1">
                 <p className="text-[13px] leading-relaxed" style={{ color: 'var(--fg-secondary)' }}>
@@ -6671,7 +6671,7 @@ export default function MyCaseValue() {
 
         {/* Pricing Modal */}
         {showPricing && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
+          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
             onClick={() => setShowPricing(false)}
             role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
             <div className="rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(11,18,33,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(64,64,242,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
@@ -6710,7 +6710,7 @@ export default function MyCaseValue() {
 
         {/* Legal pages modal */}
         {legalPage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(16px)' }}
+          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(16px)' }}
             onClick={() => setLegalPage(null)}>
             <div className="card-bg bg-[#131B2E] rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
               <div className="sticky top-0 card-bg bg-[#131B2E] rounded-t-3xl px-6 pt-6 pb-3 border-b border-[var(--border-default)] flex items-center justify-between z-10">
