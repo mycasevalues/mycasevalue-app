@@ -52,6 +52,48 @@ const POPULAR_SEARCHES_ES: PopularItem[] = [
   { label: 'Caída y Lesión', trending: false },
 ];
 
+/* ── Synonym map for common legal search terms ───────────────── */
+const SEARCH_SYNONYMS: Record<string, string[]> = {
+  fired: ['wrongful termination', 'terminated', 'let go', 'dismissed', 'employment'],
+  harassed: ['harassment', 'hostile work environment', 'bullying', 'sexual harassment'],
+  accident: ['vehicle', 'car', 'truck', 'motorcycle', 'crash', 'collision', 'motor'],
+  hurt: ['injury', 'injured', 'harm', 'pain', 'damages', 'personal injury'],
+  doctor: ['medical malpractice', 'surgical error', 'misdiagnosis', 'hospital'],
+  police: ['excessive force', 'misconduct', 'wrongful arrest', 'brutality', 'civil rights'],
+  landlord: ['housing', 'eviction', 'rent', 'lease', 'tenant', 'discrimination'],
+  debt: ['collection', 'FDCPA', 'creditor', 'collector', 'debt collector'],
+  scam: ['fraud', 'deceptive', 'false advertising', 'scammer'],
+  slip: ['slip and fall', 'premises liability', 'trip', 'fell'],
+  dog: ['dog bite', 'animal attack'],
+  car: ['vehicle accident', 'auto accident', 'car crash', 'motor vehicle'],
+  wage: ['unpaid wages', 'overtime', 'wage theft', 'FLSA', 'minimum wage'],
+  discrimination: ['bias', 'prejudice', 'unequal treatment', 'discriminated'],
+  disability: ['ADA', 'accommodation', 'disabled', 'handicap'],
+  pregnant: ['pregnancy discrimination', 'maternity', 'FMLA'],
+  insurance: ['bad faith', 'denial', 'claim denied', 'coverage'],
+  contract: ['breach', 'agreement', 'broken promise', 'breach of contract'],
+  robocall: ['TCPA', 'spam', 'telemarketer', 'robo', 'spam text'],
+  death: ['wrongful death', 'fatal', 'deceased', 'killed'],
+  race: ['racial discrimination', 'racial profiling', 'racism'],
+  age: ['age discrimination', 'ADEA', 'ageism'],
+  sue: ['lawsuit', 'legal action', 'litigation'],
+  money: ['settlement', 'compensation', 'damages', 'recovery'],
+};
+
+const expandWithSynonyms = (query: string): string[] => {
+  const lower = query.toLowerCase().trim();
+  const words = lower.split(/\s+/);
+  const expanded = new Set<string>(words);
+  words.forEach((word) => {
+    Object.entries(SEARCH_SYNONYMS).forEach(([key, syns]) => {
+      if (word.includes(key) || key.includes(word)) {
+        syns.forEach((s) => expanded.add(s.toLowerCase()));
+      }
+    });
+  });
+  return Array.from(expanded);
+};
+
 const fuzzyMatch = (query: string, text: string): number => {
   const lowerQuery = query.toLowerCase();
   const lowerText = text.toLowerCase();
@@ -101,15 +143,28 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
     [sits]
   );
 
-  // Fuzzy search with debouncing
+  // Fuzzy search with synonym expansion
   const searchResults = useMemo(() => {
     if (!input.trim()) return [];
 
+    const expandedTerms = expandWithSynonyms(input);
+
     const results: SearchResult[] = allOptions
       .map((item) => {
+        // Direct fuzzy match on original query
         const labelScore = fuzzyMatch(input, item.opt.label);
         const descScore = fuzzyMatch(input, item.opt.d || '');
-        const matchScore = Math.max(labelScore, descScore);
+        let matchScore = Math.max(labelScore, descScore);
+
+        // Synonym expansion boost
+        if (matchScore <= 0) {
+          const haystack = `${item.opt.label} ${item.opt.d || ''}`.toLowerCase();
+          expandedTerms.forEach((term) => {
+            if (haystack.includes(term) && term !== input.toLowerCase()) {
+              matchScore = Math.max(matchScore, 80); // synonym match base score
+            }
+          });
+        }
 
         return {
           ...item,
