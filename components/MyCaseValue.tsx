@@ -47,6 +47,17 @@ const OutcomeSimulator = dynamic(() => import('./ui/OutcomeSimulator'), { ssr: f
 const LiveCaseFeed = dynamic(() => import('./ui/LiveCaseFeed'), { ssr: false, loading: ChunkLoader });
 const PremiumValueCalculator = dynamic(() => import('./ui/PremiumValueCalculator'), { ssr: false, loading: ChunkLoader });
 const NationwideDashboard = dynamic(() => import('./ui/NationwideDashboard'), { ssr: false, loading: ChunkLoader });
+const CaseComparison = dynamic(() => import('./ui/CaseComparison'), { ssr: false, loading: ChunkLoader });
+const WhatIfSimulator = dynamic(() => import('./ui/WhatIfSimulator'), { ssr: false, loading: ChunkLoader });
+const JudgeAnalytics = dynamic(() => import('./ui/JudgeAnalytics'), { ssr: false, loading: ChunkLoader });
+const ReportLoader = dynamic(() => import('./ui/ReportLoader'), { ssr: false });
+const StateDeepDive = dynamic(() => import('./ui/StateDeepDive'), { ssr: false, loading: ChunkLoader });
+const PricingTiers = dynamic(() => import('./ui/PricingTiers'), { ssr: false, loading: ChunkLoader });
+const SavedReports = dynamic(() => import('./ui/SavedReports'), { ssr: false, loading: ChunkLoader });
+const AttorneyReferral = dynamic(() => import('./ui/AttorneyReferral'), { ssr: false, loading: ChunkLoader });
+const SocialProofToast = dynamic(() => import('./ui/SocialProofToast'), { ssr: false });
+const OnboardingTour = dynamic(() => import('./ui/OnboardingTour'), { ssr: false });
+const GlossaryTooltip = dynamic(() => import('./ui/GlossaryTooltip'), { ssr: false });
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
@@ -1376,16 +1387,20 @@ function Shell({
         {showSaved && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(8px)' }}
             onClick={() => setShowSaved(false)}>
-            <div className="card-bg bg-[#131B2E] rounded-2xl p-6 max-w-md w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+            <div className="card-bg bg-[#131B2E] rounded-2xl p-6 max-w-lg w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between mb-4">
                 <div className="text-lg font-display font-bold">{lang === 'es' ? 'Mis informes' : 'My Reports'}</div>
                 <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-[#1E293B] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
               </div>
-              {savedReportsLength === 0 ? (
-                <p className="text-[14px] text-[#94A3B8] text-center py-8">{lang === 'es' ? 'No hay informes guardados aún.' : 'No saved reports yet.'}</p>
-              ) : null}
+              <SavedReports
+                lang={lang}
+                onLoadReport={(report: any) => {
+                  setShowSaved(false);
+                  toast(lang === 'es' ? 'Cargando informe...' : 'Loading report...');
+                }}
+              />
               {/* Referral code */}
               <div className="mt-4 pt-4 border-t border-[#1E293B]">
                 <div className="text-[11px] font-bold text-[#94A3B8] tracking-[2px] mb-1">{lang === 'es' ? 'TU CÓDIGO DE REFERENCIA' : 'YOUR REFERRAL CODE'}</div>
@@ -1491,6 +1506,10 @@ export default function MyCaseValue() {
   const [compareData, setCompareData] = useState<any>(null);
   const [savedReports, setSavedReports] = useState<any[]>([]);
   const [showSaved, setShowSaved] = useState(false);
+  const [showReportLoader, setShowReportLoader] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(true);
+  const [showComparison, setShowComparison] = useState(false);
+  const [showWhatIf, setShowWhatIf] = useState(false);
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [exitIntentShown, setExitIntentShown] = useState(false);
   const [readingPct, setReadingPct] = useState(0);
@@ -1958,7 +1977,7 @@ export default function MyCaseValue() {
   }, [step, result]);
 
   function startLoad() {
-    setLoading(true); go(6);
+    setShowReportLoader(true); setLoading(true); go(6);
     const nos = spec?.nos || '442';
     const fallback = getMockData(nos);
     const ct = spec ? spec.d.replace(/ /g, '_') : 'employment_discrimination';
@@ -2087,6 +2106,8 @@ export default function MyCaseValue() {
   if (step === 0) return (
     <Shell {...shellProps}>
       {keyboardShortcutsEl}
+      {showOnboarding && <OnboardingTour lang={lang} onComplete={() => setShowOnboarding(false)} />}
+      <SocialProofToast lang={lang} active={true} />
       <div className="hero-bg hero-parallax mesh-bg py-8 sm:py-12 pb-6 relative overflow-hidden noise-overlay particle-field cinematic-enter">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
@@ -3749,9 +3770,16 @@ export default function MyCaseValue() {
   // RESULTS
   // ============================================================
   if (step === 6) {
-    // Loading
+    // Loading — premium animated loader overlay
     if (loading) return (
       <Shell {...shellProps}>
+        {showReportLoader && (
+          <ReportLoader
+            lang={lang}
+            caseName={spec?.d || ''}
+            onComplete={() => setShowReportLoader(false)}
+          />
+        )}
         <div className="max-w-3xl mx-auto py-8 relative scan-line">
           {/* Animated header skeleton */}
           <div className="flex justify-between mb-6">
@@ -3866,6 +3894,7 @@ export default function MyCaseValue() {
 
     return (
       <Shell {...shellProps}>
+        <SocialProofToast lang={lang} active={true} />
         <div className="py-6 cinematic-enter">
           {/* Quick-glance metrics strip */}
           <Reveal>
@@ -6315,8 +6344,60 @@ export default function MyCaseValue() {
                 </Reveal>
               )}
 
+              {/* === NEW INTERACTIVE SECTIONS === */}
+
+              {/* What-If Simulator */}
+              <Reveal delay={621}>
+                <WhatIfSimulator
+                  lang={lang}
+                  baseData={{
+                    wr: wr,
+                    sr: d.sp || 30,
+                    mc: d.mo || 12,
+                    sc: 50000,
+                    rr: d.rp || 40,
+                    ps: d.ps?.rate || 60,
+                  }}
+                />
+              </Reveal>
+
+              {/* Judge Analytics (Premium) */}
+              <Reveal delay={622}>
+                <JudgeAnalytics
+                  lang={lang}
+                  nos={spec?.nos || '442'}
+                  caseName={spec?.d || ''}
+                  onUnlock={() => setShowPricing(true)}
+                />
+              </Reveal>
+
+              {/* State Deep Dive */}
+              {stateCode && (
+                <Reveal delay={623}>
+                  <StateDeepDive
+                    lang={lang}
+                    stateCode={stateCode}
+                    nos={spec?.nos || '442'}
+                  />
+                </Reveal>
+              )}
+
+              {/* Case Comparison Tool */}
+              <Reveal delay={624}>
+                <CaseComparison lang={lang} />
+              </Reveal>
+
+              {/* Attorney Referral CTA */}
+              <Reveal delay={625}>
+                <AttorneyReferral
+                  lang={lang}
+                  caseName={spec?.d || ''}
+                  winRate={wr}
+                />
+              </Reveal>
+
               {/* CTA */}
-              <Reveal delay={620}>
+              <Reveal delay={630}>
                 <Card className="p-6">
                   <div className="text-xl font-display font-bold mb-1.5" style={{ color: '#4F46E5' }}>{lang === 'es' ? 'Lo que muchas personas hacen después' : 'What many people do next'}</div>
                   <p className="text-[14px] text-[#94A3B8] leading-relaxed mb-3">
@@ -6526,6 +6607,8 @@ export default function MyCaseValue() {
                 <p className="text-[15px] mt-2" style={{ color: '#94A3B8' }}>{lang === 'es' ? '12 herramientas de datos para mayor comprensión' : '12 data tools for deeper understanding'}</p>
               </div>
               <div className="text-[11px] text-center mb-5" style={{ color: '#64748B' }}>{lang === 'es' ? 'Todos los datos son solo informativos. No se crea relación abogado-cliente.' : 'All data is informational only. No attorney-client relationship is created.'}</div>
+              <PricingTiers lang={lang} onSelectPlan={(plan) => { buy(plan); setShowPricing(false); }} />
+              <div className="my-4 h-px" style={{ background: '#1E293B' }} />
               <UpgradeTable onBuy={(plan) => { buy(plan); setShowPricing(false); }} lang={lang} currentTier={tier} />
               {/* Payment methods */}
               <div className="flex items-center justify-center gap-3 mt-5 flex-wrap">
