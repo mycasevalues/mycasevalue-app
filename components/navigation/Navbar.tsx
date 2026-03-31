@@ -127,6 +127,39 @@ export function Navbar({
               </span>
             )}
 
+            {/* Search shortcut hint — desktop only */}
+            <button
+              onClick={() => {
+                const ev = new KeyboardEvent('keydown', { key: 'k', metaKey: true, ctrlKey: true, bubbles: true });
+                window.dispatchEvent(ev);
+              }}
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border cursor-pointer no-print hover:border-[var(--accent-primary)] transition-colors"
+              style={{
+                background: 'var(--bg-surface)',
+                borderColor: 'var(--border-default)',
+                color: 'var(--fg-muted)',
+                fontSize: 'var(--text-xs)',
+              }}
+              aria-label={lang === 'es' ? 'Buscar (Ctrl+K)' : 'Search (Cmd+K)'}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+              <span>{lang === 'es' ? 'Buscar...' : 'Search...'}</span>
+              <kbd style={{
+                fontSize: '10px',
+                fontWeight: 600,
+                padding: '1px 5px',
+                borderRadius: '4px',
+                background: 'var(--bg-elevated)',
+                border: '1px solid var(--border-default)',
+                fontFamily: 'inherit',
+              }}>
+                ⌘K
+              </kbd>
+            </button>
+
             {/* New Report CTA */}
             <button
               onClick={onNewReport}
