@@ -59,7 +59,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
       {/* Header */}
       <div className="px-5 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="flex items-center gap-2.5">
-          <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+          <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#5EEAD4' }} />
           <span className="text-[13px] font-semibold text-white">{es ? 'Actividad en tiempo real' : 'Live Case Activity'}</span>
         </div>
         <div className="text-[11px] text-[#94A3B8] font-mono">

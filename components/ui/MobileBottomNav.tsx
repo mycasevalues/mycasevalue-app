@@ -61,7 +61,7 @@ export default function MobileBottomNav({
         // You could add a toast notification here if desired
       }
     } catch (error) {
-      console.log('Share failed or cancelled');
+      // Share cancelled or failed — silent
     }
   };
 

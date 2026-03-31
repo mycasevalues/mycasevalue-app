@@ -47,7 +47,6 @@ const OutcomeSimulator = dynamic(() => import('./ui/OutcomeSimulator'), { ssr: f
 const LiveCaseFeed = dynamic(() => import('./ui/LiveCaseFeed'), { ssr: false, loading: ChunkLoader });
 const PremiumValueCalculator = dynamic(() => import('./ui/PremiumValueCalculator'), { ssr: false, loading: ChunkLoader });
 const NationwideDashboard = dynamic(() => import('./ui/NationwideDashboard'), { ssr: false, loading: ChunkLoader });
-const ScrollReveal = dynamic(() => import('./ui/ScrollReveal'), { ssr: false });
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
@@ -1051,16 +1050,16 @@ function RiskAssessmentQuiz({ onClose, onStartAssessment, lang = 'en' }: { onClo
           <button onClick={() => handleAnswer(false)}
             className="flex-1 px-4 py-3 font-semibold rounded-xl cursor-pointer border-[1.5px] transition-all hover:scale-[1.02]"
             style={{ borderColor: '#1E293B', color: '#64748B', background: '#131B2E' }}>
-            No
+            {lang === 'es' ? 'No' : 'No'}
           </button>
           <button onClick={() => handleAnswer(true)}
             className="flex-1 px-4 py-3 font-semibold rounded-xl cursor-pointer text-white transition-all hover:scale-[1.02]"
             style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
-            Yes
+            {lang === 'es' ? 'Sí' : 'Yes'}
           </button>
         </div>
         <button onClick={onClose} className="w-full mt-3 px-4 py-2 text-sm font-medium text-[#94A3B8] rounded-xl cursor-pointer hover:bg-[#1E293B] transition-colors">
-          Skip
+          {lang === 'es' ? 'Omitir' : 'Skip'}
         </button>
       </div>
     </div>
@@ -1391,9 +1390,9 @@ function Shell({
                 <div className="text-[11px] font-bold text-[#94A3B8] tracking-[2px] mb-1">{lang === 'es' ? 'TU CÓDIGO DE REFERENCIA' : 'YOUR REFERRAL CODE'}</div>
                 <div className="flex items-center gap-2">
                   <div className="flex-1 px-3 py-2 rounded-lg bg-[#1E293B] text-sm font-data font-bold" style={{ color: '#4F46E5' }}>{referralCode}</div>
-                  <button onClick={() => { navigator.clipboard.writeText(referralCode); toast('Copied!'); }}
+                  <button onClick={() => { navigator.clipboard.writeText(referralCode); toast(lang === 'es' ? '¡Copiado!' : 'Copied!'); }}
                     className="px-3 py-2 text-[12px] font-semibold rounded-lg cursor-pointer"
-                    style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5', border: 'none' }}>Copy</button>
+                    style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5', border: 'none' }}>{lang === 'es' ? 'Copiar' : 'Copy'}</button>
                 </div>
                 <div className="text-[11px] text-[#94A3B8] mt-1">{lang === 'es' ? 'Comparte y obtén un informe gratis' : 'Share and get a free report'}</div>
               </div>
@@ -2451,51 +2450,6 @@ export default function MyCaseValue() {
               <HeroStats lang={lang} />
             </Reveal>
           </div>
-
-          {/* === HOW IT WORKS — 3-Step Section === */}
-          <Reveal delay={240}>
-            <div style={{ gridColumn: '1 / -1' }}>
-              <div className="text-center mb-6">
-                <div className="text-[10px] font-bold text-[#94A3B8] tracking-[2px] mb-2">{lang === 'es' ? 'PROCESO' : 'HOW IT WORKS'}</div>
-                <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? '3 pasos simples' : '3 simple steps'}</h2>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[
-                  {
-                    step: 1,
-                    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h5"/></svg>,
-                    title: lang === 'es' ? 'Selecciona tu caso' : 'Select Your Case',
-                    desc: lang === 'es' ? 'Elige tu tipo de caso de nuestro catálogo' : 'Choose your case type from our catalog',
-                  },
-                  {
-                    step: 2,
-                    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1"/><circle cx="12" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>,
-                    title: lang === 'es' ? 'Responde preguntas' : 'Answer Questions',
-                    desc: lang === 'es' ? 'Comparte detalles sobre tu situación' : 'Share details about your situation',
-                  },
-                  {
-                    step: 3,
-                    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>,
-                    title: lang === 'es' ? 'Obtén tu informe' : 'Get Your Report',
-                    desc: lang === 'es' ? 'Recibe análisis detallado al instante' : 'Receive detailed analysis instantly',
-                  },
-                ].map((item, i) => (
-                  <div key={i} className="p-6 rounded-2xl border border-[#1E293B] bg-[#131B2E] transition-all hover:border-[#4F46E5]/50 hover:bg-[#0F172A]" style={{ background: 'linear-gradient(180deg, #131B2E, #0B1221)' }}>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
-                        <div className="text-lg font-bold">{item.step}</div>
-                      </div>
-                      <div style={{ color: '#4F46E5' }}>
-                        {item.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-[16px] font-semibold mb-2" style={{ color: '#CBD5E1' }}>{item.title}</h3>
-                    <p className="text-[13px]" style={{ color: '#94A3B8' }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
 
           {/* Category selector — enhanced */}
           <div style={{ gridColumn: '1 / -1' }}>

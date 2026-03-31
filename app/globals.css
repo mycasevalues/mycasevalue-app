@@ -1595,18 +1595,6 @@ input:focus, textarea:focus, select:focus {
 
 /* Dark mode is always on — no data-theme overrides needed */
 
-.text-slate-500 {
-  color: var(--fg-subtle) !important;
-}
-
-[data-theme="dark"] .text-slate-600 {
-  color: var(--fg-muted) !important;
-}
-
-[data-theme="dark"] .text-slate-700 {
-  color: var(--fg) !important;
-}
-
 /* Dark mode is always on — card inputs styled for dark theme */
 .card-bg input,
 .card-bg select {
@@ -2251,11 +2239,6 @@ input[type="range"]::-moz-range-thumb {
   will-change: transform, opacity;
 }
 
-@keyframes countUpScaled {
-  0% { transform: scale(0.85); opacity: 0.6; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
 /* Stat glow effect */
 .stat-glow {
   position: relative;
@@ -2670,16 +2653,6 @@ input[type="range"]::-moz-range-thumb {
   animation: roiPulse 2s ease-in-out infinite;
 }
 
-/* Smooth number counting animation */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.count-enter {
-  animation: countUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
 /* Premium badge pulse for value calculator */
 @keyframes valuePulse {
   0% { box-shadow: 0 4px 24px rgba(79,70,229,0.2); }
@@ -2718,16 +2691,6 @@ input[type="range"]::-moz-range-thumb {
   background: linear-gradient(var(--gradient-angle, 135deg), rgba(99,102,241,0.4), rgba(13,148,136,0.3), rgba(165,180,252,0.3), rgba(99,102,241,0.4));
   animation: gradientRotate 4s linear infinite;
 }
-@keyframes gradientRotate {
-  0% { --gradient-angle: 0deg; }
-  100% { --gradient-angle: 360deg; }
-}
-@property --gradient-angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
 /* Ambient glow effect — floating orbs behind hero */
 .ambient-glow {
   position: absolute;
@@ -2799,15 +2762,6 @@ input[type="range"]::-moz-range-thumb {
 @keyframes shimmerSweep {
   0% { left: -100%; }
   50%, 100% { left: 100%; }
-}
-
-/* Breathing pulse for live indicators */
-@keyframes breathe {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.92); }
-}
-.breathe {
-  animation: breathe 2.5s ease-in-out infinite;
 }
 
 /* Magnetic button hover effect */
@@ -3320,16 +3274,6 @@ button:disabled,
   border-radius: 4px;
 }
 
-/* Subtle parallax floating */
-@keyframes gentleFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-6px) rotate(0.5deg); }
-  66% { transform: translateY(3px) rotate(-0.3deg); }
-}
-.gentle-float {
-  animation: gentleFloat 8s ease-in-out infinite;
-}
-
 /* Premium scrollbar — thinner, indigo accent */
 .premium-scroll::-webkit-scrollbar { width: 4px; }
 .premium-scroll::-webkit-scrollbar-track { background: transparent; }
@@ -3362,18 +3306,6 @@ button:disabled,
   top: var(--ripple-y, 50%);
   left: var(--ripple-x, 50%);
   transform-origin: center;
-}
-
-/* Typing cursor blink */
-@keyframes cursorBlink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-.cursor-blink::after {
-  content: '|';
-  color: #6366F1;
-  animation: cursorBlink 1s step-end infinite;
-  margin-left: 2px;
 }
 
 /* Enhanced tooltips */
@@ -3423,17 +3355,6 @@ button:disabled,
   animation: tickerSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Premium skeleton loading */
-@keyframes skeletonPulse {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-.skeleton-premium {
-  background: linear-gradient(90deg, #131B2E 25%, #1E293B 50%, #131B2E 75%);
-  background-size: 200% 100%;
-  animation: skeletonPulse 1.5s ease-in-out infinite;
-  border-radius: 8px;
-}
 
 /* Frosted glass input */
 .input-frosted {
@@ -3507,6 +3428,37 @@ button:disabled,
   50% { opacity: 0; }
 }
 .typewriter-cursor { animation: blink-cursor 0.8s step-end infinite; }
+
+/* Skeleton premium loading shimmer */
+.skeleton-premium {
+  background: linear-gradient(90deg, #131B2E 25%, #1E293B 50%, #131B2E 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Breathing pulse for live indicators */
+.breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+/* Subtle parallax floating */
+.gentle-float {
+  animation: gentleFloat 8s ease-in-out infinite;
+}
+
+/* Smooth number counting animation */
+.count-enter {
+  animation: countUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Typing cursor blink */
+.cursor-blink::after {
+  content: '|';
+  color: #6366F1;
+  animation: cursorBlink 1s step-end infinite;
+  margin-left: 2px;
+}
 
 /* Reduce motion — respect user preference */
 @media (prefers-reduced-motion: reduce) {
