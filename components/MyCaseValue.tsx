@@ -66,6 +66,8 @@ const CollapsedPaywall = dynamic(() => import('./ui/CollapsedPaywall'), { ssr: f
 const ExitIntentModal = dynamic(() => import('./ui/ExitIntentModal'), { ssr: false });
 const BottomNav = dynamic(() => import('./navigation/BottomNav'), { ssr: false });
 const CommandPalette = dynamic(() => import('./ui/CommandPalette'), { ssr: false });
+const VerdictTicker = dynamic(() => import('./sections/VerdictTicker'), { ssr: false });
+const TrustSourceBar = dynamic(() => import('./sections/TrustSourceBar'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -2174,34 +2176,41 @@ export default function MyCaseValue() {
               {/* Tagline with vertical accent line — matches LinkedIn header brand */}
               <div className="flex items-start gap-4 mb-8">
                 <div className="hero-accent-line mt-2 hidden sm:block" />
-                <h1 className="font-display text-[42px] sm:text-[54px] lg:text-[66px] leading-[1.1] font-extrabold" style={{ letterSpacing: '-3px' }}>
+                <h1 className="font-display text-[36px] sm:text-[48px] lg:text-[58px] leading-[1.1] font-extrabold" style={{ letterSpacing: '-2px' }}>
                   <span className="hero-tagline-bold">{t.hero_title_1}</span><br />
-                  <span className="hero-tagline-light">{t.hero_title_2}{' '}</span>
-                  <span className="text-shimmer hero-tagline-light gradient-text-animated" style={{ fontStyle: 'italic' }}>{t.hero_title_3}</span>
+                  <span className="hero-tagline-bold">{t.hero_title_2}</span><br />
+                  <span className="text-shimmer hero-tagline-light gradient-text-animated">{t.hero_title_3}</span>
                 </h1>
               </div>
 
-              {/* Animated hero stats — 3 columns with visual dividers */}
+              {/* Animated hero stats — 4 columns with visual dividers */}
               <div className="flex gap-4 sm:gap-6 mb-8 flex-wrap data-grid-stagger">
                 <div className="stat-glow" style={{ '--stat-color': '#FFFFFF' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
+                  <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
                     {heroCounterDone ? <><AnimatedNumber value={4.2} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                   </div>
-                  <div className="text-xs mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Casos analizados' : 'Federal cases analyzed'}</div>
+                  <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
                 </div>
                 <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.4 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary)', textShadow: '0 2px 12px rgba(13,148,136,0.3)' }}>
-                    {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                  <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary)', textShadow: '0 2px 12px rgba(13,148,136,0.3)' }}>
+                    {heroCounterDone ? '94' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                   </div>
-                  <div className="text-xs mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types covered'}</div>
+                  <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
                 </div>
                 <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#A5B4FC' } as any}>
-                  <div className="text-4xl sm:text-5xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #A5B4FC)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
-                    {heroCounterDone ? '2min' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                  <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #A5B4FC)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
+                    {heroCounterDone ? '35+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                   </div>
-                  <div className="text-xs mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Para tu informe' : 'To your report'}</div>
+                  <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
+                </div>
+                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
+                <div className="stat-glow" style={{ '--stat-color': '#5EEAD4' } as any}>
+                  <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#5EEAD4', textShadow: '0 2px 12px rgba(94,234,212,0.3)' }}>
+                    {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                  </div>
+                  <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
                 </div>
               </div>
 
@@ -2480,6 +2489,11 @@ export default function MyCaseValue() {
           {/* Dramatic gradient divider */}
           <div className="separator-gradient" style={{ gridColumn: '1 / -1', height: '2px', boxShadow: '0 4px 20px rgba(79,70,229,0.3), 0 4px 20px rgba(13,148,136,0.15)' }} />
 
+          {/* Verdict Ticker — live scrolling court outcomes */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <VerdictTicker lang={lang} />
+          </div>
+
           {/* Trust + Social Proof + Data + Stats — tighter spacing */}
           <div style={{ gridColumn: '1 / -1', display: 'flex', flexDirection: 'column', gap: '12px', minWidth: 0, overflow: 'hidden' }}>
             <Reveal delay={180}>
@@ -2493,6 +2507,13 @@ export default function MyCaseValue() {
             </Reveal>
             <Reveal delay={210}>
               <HeroStats lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Data Source Trust Bar — PACER, FJC, CourtListener, etc. */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={220}>
+              <TrustSourceBar lang={lang} />
             </Reveal>
           </div>
 
