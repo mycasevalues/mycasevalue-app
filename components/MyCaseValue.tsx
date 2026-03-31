@@ -71,6 +71,7 @@ const TrustSourceBar = dynamic(() => import('./sections/TrustSourceBar'), { ssr:
 const SettlementEvaluator = dynamic(() => import('./sections/SettlementEvaluator'), { ssr: false });
 const CompetitorTable = dynamic(() => import('./sections/CompetitorTable'), { ssr: false });
 const TheProblem = dynamic(() => import('./sections/TheProblem'), { ssr: false });
+const AnnouncementBar = dynamic(() => import('./sections/AnnouncementBar'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -1134,6 +1135,9 @@ function Shell({
 
         {/* Success celebration on report completion */}
         {showConfetti && <SuccessCelebration />}
+
+        {/* Announcement Bar — live case count */}
+        <AnnouncementBar lang={lang} />
 
         {/* Sticky Nav */}
         <Navbar
