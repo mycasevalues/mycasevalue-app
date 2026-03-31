@@ -135,6 +135,8 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
               step="50000"
               value={caseAmount}
               onChange={(e) => setCaseAmount(Number(e.target.value))}
+              aria-label={t.caseAmount}
+              aria-valuetext={formatCurrency(caseAmount)}
               className="flex-1 h-2 rounded-lg appearance-none cursor-pointer"
               style={{
                 background: `linear-gradient(to right, #4F46E5, #0D9488)`,
@@ -188,6 +190,8 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
               step="1"
               value={timeline}
               onChange={(e) => setTimeline(Number(e.target.value))}
+              aria-label={t.timeline}
+              aria-valuetext={`${timeline}%`}
               className="flex-1 h-2 rounded-lg appearance-none cursor-pointer"
               style={{
                 background: `linear-gradient(to right, #0D9488, #EF4444)`,
@@ -270,7 +274,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
           </div>
           <div className="flex items-center gap-4">
             <div className="relative w-20 h-20">
-              <svg className="w-full h-full" viewBox="0 0 100 100">
+              <svg className="w-full h-full" viewBox="0 0 100 100" role="img" aria-label={`${t.confidenceScore}: ${displayConfidence}%`}>
                 <circle cx="50" cy="50" r="45" fill="none" stroke="#1E293B" strokeWidth="4" />
                 <circle
                   cx="50"

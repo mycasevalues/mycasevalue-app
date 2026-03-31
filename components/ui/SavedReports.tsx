@@ -122,8 +122,9 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                   className="p-2 rounded hover:opacity-70 transition"
                   style={{ color: '#94A3B8' }}
                   title={t.delete}
+                  aria-label={`${t.delete} ${report.category}`}
                 >
-                  <Trash2 size={18} />
+                  <Trash2 size={18} aria-hidden="true" />
                 </button>
               </div>
 

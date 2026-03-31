@@ -2850,11 +2850,12 @@ export default function MyCaseValue() {
               <div className="card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] p-6">
                 <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-4 uppercase">{lang === 'es' ? 'Calculadora de contingencia' : 'Contingency Fee Calculator'}</div>
                 <div className="mb-4">
-                  <label className="text-xs font-semibold text-[var(--fg-muted)] block mb-2">{lang === 'es' ? 'Cantidad estimada de recuperación' : 'Estimated recovery amount'}</label>
+                  <label htmlFor="calc-amount-range" className="text-xs font-semibold text-[var(--fg-muted)] block mb-2">{lang === 'es' ? 'Cantidad estimada de recuperación' : 'Estimated recovery amount'}</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--fg-muted)] font-semibold">$</span>
-                    <input type="range" min="10000" max="5000000" step="10000" value={calcAmount}
+                    <input id="calc-amount-range" type="range" min="10000" max="5000000" step="10000" value={calcAmount}
                       onChange={e => setCalcAmount(Number(e.target.value))}
+                      aria-valuetext={`$${Number(calcAmount).toLocaleString()}`}
                       className="w-full h-2 bg-[var(--bg-elevated)] rounded-lg appearance-none cursor-pointer" style={{ accentColor: '#4F46E5' }} />
                   </div>
                   <div className="flex justify-between mt-2 text-xs text-[var(--fg-muted)]">
@@ -3104,6 +3105,7 @@ export default function MyCaseValue() {
                         {cA.icon} {lang === 'es' ? 'CASO A' : 'CASE A'}
                       </div>
                       <select value={cA.id} onChange={e => { setCompareNos(e.target.value); }}
+                        aria-label={lang === 'es' ? 'Seleccionar Caso A' : 'Select Case A'}
                         className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
                         style={{ background: 'rgba(99,102,241,0.08)', border: '1.5px solid rgba(99,102,241,0.25)', color: 'var(--accent-secondary, #A5B4FC)', outline: 'none' }}>
                         {COMPARE_CASES.map(c => <option key={c.id} value={c.id}>{c.icon} {c.label}</option>)}
@@ -3114,6 +3116,7 @@ export default function MyCaseValue() {
                         {cB.icon} {lang === 'es' ? 'CASO B' : 'CASE B'}
                       </div>
                       <select value={cB.id} onChange={e => { setCompareData({ id: e.target.value }); }}
+                        aria-label={lang === 'es' ? 'Seleccionar Caso B' : 'Select Case B'}
                         className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
                         style={{ background: 'rgba(13,148,136,0.08)', border: '1.5px solid rgba(13,148,136,0.25)', color: '#5EEAD4', outline: 'none' }}>
                         {COMPARE_CASES.filter(c => c.id !== cA.id).map(c => <option key={c.id} value={c.id}>{c.icon} {c.label}</option>)}
@@ -6155,7 +6158,7 @@ export default function MyCaseValue() {
                   {(d.tl || []).map((t: any, i: number) => {
                     const active = i <= timelineStep;
                     return (
-                      <div key={i} className="flex gap-3 cursor-pointer py-1" onClick={() => setTimelineStep(i)}>
+                      <div key={i} className="flex gap-3 cursor-pointer py-1" role="button" tabIndex={0} onClick={() => setTimelineStep(i)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setTimelineStep(i); } }} aria-label={`Timeline step ${i + 1}: ${t.label || t.l || ''}`}>
                         <div className="flex flex-col items-center w-6">
                           <div className="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center transition-all"
                             style={{ background: active ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', border: active ? 'none' : '2px solid #CBD5E1' }}>
