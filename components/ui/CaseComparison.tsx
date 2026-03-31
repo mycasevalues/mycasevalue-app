@@ -108,7 +108,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
   return (
     <div style={{ backgroundColor: '#0B1221', minHeight: '100vh' }} className="p-6 md:p-8">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+        /* Fonts loaded globally via styles/fonts.css */
 
         .case-comparison-fade-in {
           animation: fadeInUp 0.6s ease-out forwards;

@@ -1,0 +1,123 @@
+/* ============================================================
+   MYCASEVALUE — DESIGN TOKENS
+   Single source of truth. No token may be hardcoded anywhere.
+   ============================================================ */
+
+:root,
+html[data-theme="dark"] {
+  /* BACKGROUNDS */
+  --bg-base:          #0B1221;
+  --bg-surface:       #131B2E;
+  --bg-elevated:      #162035;
+  --bg-overlay:       rgba(11,18,33,0.92);
+
+  /* FOREGROUNDS */
+  --fg-primary:       #F0F2F5;
+  --fg-secondary:     #CBD5E1;
+  --fg-muted:         #94A3B8;
+  --fg-disabled:      #475569;
+
+  /* ACCENTS */
+  --accent-primary:         #4F46E5;
+  --accent-primary-hover:   #4338CA;
+  --accent-primary-subtle:  rgba(79,70,229,0.12);
+  --accent-secondary:       #0D9488;
+  --accent-secondary-hover: #0F766E;
+  --accent-secondary-subtle: rgba(13,148,136,0.12);
+
+  /* SEMANTIC — OUTCOMES (use ONLY as defined) */
+  --outcome-win:          #10B981;
+  --outcome-win-subtle:   rgba(16,185,129,0.12);
+  --outcome-settle:       #F59E0B;
+  --outcome-settle-subtle: rgba(245,158,11,0.12);
+  --outcome-loss:         #EF4444;
+  --outcome-loss-subtle:  rgba(239,68,68,0.12);
+  --outcome-other:        #64748B;
+  --outcome-other-subtle: rgba(100,116,139,0.12);
+
+  /* CATEGORY COLORS */
+  --cat-workplace:    #4338CA;
+  --cat-injury:       #DC2626;
+  --cat-consumer:     #2563EB;
+  --cat-civil-rights: #7C3AED;
+  --cat-business:     #D97706;
+  --cat-housing:      #059669;
+  --cat-healthcare:   #DB2777;
+  --cat-family:       #EC4899;
+  --cat-government:   #475569;
+  --cat-education:    #0891B2;
+
+  /* BORDERS */
+  --border-default:   rgba(30,41,59,1);
+  --border-subtle:    rgba(30,41,59,0.6);
+  --border-emphasis:  rgba(79,70,229,0.3);
+  --border-focus:     #4F46E5;
+
+  /* TYPOGRAPHY SCALE */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.8125rem; /* 13px */
+  --text-base: 0.9375rem; /* 15px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.375rem;  /* 22px */
+  --text-2xl:  1.75rem;   /* 28px */
+  --text-3xl:  2.25rem;   /* 36px */
+  --text-hero: clamp(2.25rem, 5vw, 3.75rem); /* 36px–60px */
+
+  /* SPACING (8pt grid) */
+  --space-1:  4px;   --space-2:  8px;   --space-3:  12px;
+  --space-4:  16px;  --space-5:  20px;  --space-6:  24px;
+  --space-8:  32px;  --space-10: 40px;  --space-12: 48px;
+  --space-16: 64px;  --space-20: 80px;
+
+  /* RADIUS */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* SHADOWS (dark-mode tuned) */
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md:     0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-lg:     0 16px 40px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-accent: 0 4px 20px rgba(79,70,229,0.25);
+
+  /* MOTION */
+  --duration-instant: 80ms;
+  --duration-fast:    150ms;
+  --duration-base:    220ms;
+  --duration-slow:    350ms;
+  --duration-enter:   500ms;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-INDEX ARCHITECTURE */
+  --z-base:       0;
+  --z-raised:     10;
+  --z-dropdown:   40;
+  --z-sticky:     60;
+  --z-bottom-nav: 90;
+  --z-nav:        100;
+  --z-drawer:     200;
+  --z-modal:      300;
+  --z-toast:      400;
+  --z-tooltip:    500;
+}
+
+/* LIGHT MODE OVERRIDES */
+html[data-theme="light"] {
+  --bg-base:          #F8FAFC;
+  --bg-surface:       #FFFFFF;
+  --bg-elevated:      #F1F5F9;
+  --bg-overlay:       rgba(248,250,252,0.95);
+  --fg-primary:       #0F172A;
+  --fg-secondary:     #334155;
+  --fg-muted:         #64748B;
+  --fg-disabled:      #CBD5E1;
+  --border-default:   rgba(226,232,240,1);
+  --border-subtle:    rgba(226,232,240,0.6);
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg:  0 16px 40px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.08);
+}

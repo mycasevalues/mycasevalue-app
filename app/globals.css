@@ -1,8 +1,19 @@
-/* Fonts loaded via next/font in layout.tsx — zero render-blocking requests */
+/* Design system imports — tokens + self-hosted fonts */
+@import '../styles/tokens.css';
+@import '../styles/fonts.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global reduced-motion override — MANDATORY for all animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
 /* ============================================================
    TAILWIND LAYER UTILITIES

@@ -20,8 +20,8 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://www.googletagmanager.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com",
+              "style-src 'self' 'unsafe-inline'",
+              "font-src 'self'",
               "img-src 'self' data: blob: https:",
               "connect-src 'self' https://*.supabase.co https://api.stripe.com https://www.google-analytics.com",
               "frame-src https://js.stripe.com https://hooks.stripe.com",

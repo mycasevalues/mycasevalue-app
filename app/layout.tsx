@@ -144,15 +144,12 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
-        {/* Optimized font loading: preconnect + display=swap for non-blocking */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('mcv-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}})()` }} />
+        {/* Self-hosted fonts — no external CDN, GDPR compliant */}
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-700.woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-500.woff2" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/icon-192.png" />
@@ -175,7 +172,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         ` }} />
       </head>
-      <body className="grain dark" style={{ background: '#0B1221', color: '#F0F2F5' }} suppressHydrationWarning>
+      <body className="grain" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }} suppressHydrationWarning>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <ErrorBoundary>
           {children}
