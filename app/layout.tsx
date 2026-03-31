@@ -49,6 +49,10 @@ export const metadata = {
   },
   verification: {},
   category: 'legal',
+  other: {
+    'google': 'notranslate',
+  },
+  metadataBase: new URL('https://mycasevalues.com'),
 };
 
 export const viewport = {
@@ -104,9 +108,26 @@ const jsonLd = {
       isAccessibleForFree: true,
     },
     {
+      '@type': 'WebSite',
+      url: 'https://mycasevalues.com',
+      name: 'MyCaseValue',
+      description: 'Federal court outcome data for informed research.',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://mycasevalues.com/?q={search_term_string}',
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
+        { '@type': 'ListItem', position: 2, name: 'Case Categories', item: 'https://mycasevalues.com/cases' },
+        { '@type': 'ListItem', position: 3, name: 'FAQ', item: 'https://mycasevalues.com/faq' },
+        { '@type': 'ListItem', position: 4, name: 'Methodology', item: 'https://mycasevalues.com/methodology' },
       ],
     },
     {
@@ -156,6 +177,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
         <link rel="canonical" href="https://mycasevalues.com" />
+        <link rel="alternate" hrefLang="en" href="https://mycasevalues.com" />
+        <link rel="alternate" hrefLang="es" href="https://mycasevalues.com?lang=es" />
+        <link rel="alternate" hrefLang="x-default" href="https://mycasevalues.com" />
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#4F46E5" />
@@ -174,7 +198,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="grain" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }} suppressHydrationWarning>
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
-        <a href="#main-content" className="skip-link">Skip to main content</a>
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
