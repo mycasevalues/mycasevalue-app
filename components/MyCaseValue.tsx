@@ -81,7 +81,8 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
     if (rect.top < window.innerHeight + 1000) {
       const stagger = Math.min(delay, 80);
       if (stagger > 0) {
-        setTimeout(() => setShow(true), stagger);
+        const tid = setTimeout(() => setShow(true), stagger);
+        return () => clearTimeout(tid);
       } else {
         setShow(true);
       }
@@ -195,7 +196,7 @@ function BarLine({ label, pct, max, color, delay = 0 }: { label: string; pct: nu
   );
 }
 
-function Select({ value, options, onChange, placeholder, dark = false }: { value: string; options: { id: string; label: string }[]; onChange: (v: string) => void; placeholder?: string; dark?: boolean }) {
+function Select({ value, options, onChange, placeholder, dark = false, lang = 'en' }: { value: string; options: { id: string; label: string }[]; onChange: (v: string) => void; placeholder?: string; dark?: boolean; lang?: string }) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const ref = useRef<HTMLDivElement>(null);
@@ -250,8 +251,8 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
         {showSearch && (
           <div className="px-2 pt-2 pb-1">
             <input ref={searchRef} type="text" value={search} onChange={e => setSearch(e.target.value)}
-              placeholder="Search..."
-              aria-label="Search case types"
+              placeholder={lang === 'es' ? 'Buscar...' : 'Search...'}
+              aria-label={lang === 'es' ? 'Buscar tipos de caso' : 'Search case types'}
               className="w-full px-3 py-2 text-[13px] rounded-lg outline-none focus:ring-2 focus:ring-[#4F46E5]/40 transition-colors"
               style={{
                 background: '#0F1729',
@@ -284,7 +285,7 @@ function Select({ value, options, onChange, placeholder, dark = false }: { value
             </button>
           ))}
           {filtered.length === 0 && (
-            <div className="px-4 py-3 text-sm text-[#94A3B8] text-center">No results</div>
+            <div className="px-4 py-3 text-sm text-[#94A3B8] text-center">{lang === 'es' ? 'Sin resultados' : 'No results'}</div>
           )}
         </div>
       </div>
@@ -1477,6 +1478,7 @@ export default function MyCaseValue() {
   const [notifySent, setNotifySent] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
   const [toastVis, setToastVis] = useState(false);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [liveCount, setLiveCount] = useState(0);
   const [showMethodology, setShowMethodology] = useState(false);
   const [timelineStep, setTimelineStep] = useState(0);
@@ -1708,9 +1710,10 @@ export default function MyCaseValue() {
 
   // --- Helpers ---
   const toast = useCallback((msg: string) => {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
     setToastMsg(msg);
     setToastVis(true);
-    setTimeout(() => setToastVis(false), 2400);
+    toastTimer.current = setTimeout(() => setToastVis(false), 2400);
   }, []);
 
   const reset = useCallback(() => {
@@ -1740,7 +1743,7 @@ export default function MyCaseValue() {
       localStorage.setItem('mcv_saved', JSON.stringify(updated));
       setSavedReports(updated);
       toast(lang === 'es' ? 'Informe guardado' : 'Report saved!');
-    } catch { toast('Could not save'); }
+    } catch { toast(lang === 'es' ? 'No se pudo guardar' : 'Could not save'); }
   }, [result, spec, stateCode, lang, toast]);
 
   // Auto-detect case type from natural language
@@ -3582,12 +3585,12 @@ export default function MyCaseValue() {
           <div className="space-y-4">
             <div>
               <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿En qué estado estás?' : 'What state are you in?'}</label>
-              <Select value={stateCode} options={STATES} onChange={setStateCode} placeholder={lang === 'es' ? 'Selecciona tu estado...' : 'Select your state...'} dark={darkMode} />
+              <Select value={stateCode} options={STATES} onChange={setStateCode} placeholder={lang === 'es' ? 'Selecciona tu estado...' : 'Select your state...'} dark={darkMode} lang={lang} />
               <div className="text-[11px] text-[#94A3B8] mt-1 px-1">{lang === 'es' ? 'Esto nos ayuda a mostrarte resultados específicos de tu área.' : 'This helps us show you results specific to your area.'}</div>
             </div>
             <div>
               <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuándo ocurrió esto?' : 'When did this happen?'} <span className="text-coral">*</span></label>
-              <Select value={timing} options={TIMING_OPTS} onChange={setTiming} dark={darkMode} />
+              <Select value={timing} options={TIMING_OPTS} onChange={setTiming} dark={darkMode} lang={lang} />
             </div>
             {timing && (
               <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed animate-fade-in" style={{
@@ -3609,11 +3612,11 @@ export default function MyCaseValue() {
             )}
             <div>
               <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuánto dinero está involucrado?' : 'How much money is involved?'} <span className="text-coral">*</span></label>
-              <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} dark={darkMode} />
+              <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} dark={darkMode} lang={lang} />
             </div>
             <div>
               <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Tienes abogado?' : 'Do you have a lawyer?'} <span className="text-coral">*</span></label>
-              <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} dark={darkMode} />
+              <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} dark={darkMode} lang={lang} />
             </div>
             <div>
               <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Hay otros afectados por el mismo problema?' : 'Are others affected by the same issue?'}</label>
@@ -3627,7 +3630,7 @@ export default function MyCaseValue() {
                 { id: 'no', label: 'No, just me' },
                 { id: 'few', label: 'Yes, a few people' },
                 { id: 'many', label: 'Yes, many people (40+)' },
-              ]} onChange={setOthersAffected} dark={darkMode} />
+              ]} onChange={setOthersAffected} dark={darkMode} lang={lang} />
             </div>
             {othersAffected === 'many' && (
               <>
@@ -3645,7 +3648,7 @@ export default function MyCaseValue() {
                     { id: '100-500', label: '100 – 500 people' },
                     { id: '500+', label: '500+ people' },
                     { id: 'unsure', label: 'Not sure' },
-                  ]} onChange={setClassSize} dark={darkMode} />
+                  ]} onChange={setClassSize} dark={darkMode} lang={lang} />
                 </div>
                 {classSize && (
                   <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed" style={{ background: 'rgba(99,102,241,0.08)', color: '#94A3B8' }}>
@@ -3895,8 +3898,8 @@ export default function MyCaseValue() {
                   try {
                     const u = window.location.origin + '#' + btoa(JSON.stringify({ c: spec?.nos, s: stateCode, t: timing }));
                     navigator.clipboard.writeText(u);
-                    toast('Link copied!');
-                  } catch { toast('Could not copy'); }
+                    toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
+                  } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
                 }} className="text-sm font-semibold px-4 py-2 card-bg bg-[#131B2E] border border-[#1E293B] rounded-lg cursor-pointer text-[#94A3B8] hover:text-[#94A3B8] transition-colors">
                   {lang === 'es' ? 'Compartir' : 'Share'}
                 </button>
@@ -5307,8 +5310,8 @@ export default function MyCaseValue() {
                           try {
                             const u = window.location.origin + '#' + btoa(JSON.stringify({ c: spec?.nos, s: stateCode, t: timing }));
                             navigator.clipboard.writeText(u);
-                            toast('Link copied!');
-                          } catch { toast('Could not copy'); }
+                            toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
+                          } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
                         }} className="text-[12px] font-semibold px-3.5 py-1.5 rounded-lg cursor-pointer transition-all hover:scale-[1.02]" style={{
                           background: 'rgba(37, 99, 235, 0.06)',
                           color: '#94A3B8',
@@ -6009,7 +6012,7 @@ export default function MyCaseValue() {
                           <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#4F46E5' : '#94A3B8', background: active ? 'rgba(99,102,241,0.15)' : '#1E293B' }}>
                             {lang === 'es' ? `Mes ${t.mo}` : `Month ${t.mo}`}
                           </span>
-                          <div className="text-[14px] mt-1 transition-colors" style={{ fontWeight: active ? 600 : 400, color: active ? '#0B1221' : '#94A3B8' }}>{t.ev}</div>
+                          <div className="text-[14px] mt-1 transition-colors" style={{ fontWeight: active ? 600 : 400, color: active ? '#E2E8F0' : '#94A3B8' }}>{t.ev}</div>
                           {active && t.d && <div className="text-[12px] text-[#94A3B8] mt-0.5">{t.d}</div>}
                         </div>
                       </div>
@@ -6400,7 +6403,7 @@ export default function MyCaseValue() {
                     const text = `${spec?.d}: ${Math.round(wr)}% win rate based on ${d.total?.toLocaleString()} federal cases — mycasevalue.com`;
                     navigator.clipboard.writeText(text);
                     toast(lang === 'es' ? 'Copiado al portapapeles' : 'Copied to clipboard!');
-                  } catch { toast('Could not copy'); }
+                  } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
                 }} className="text-[12px] font-semibold px-4 py-1.5 rounded-lg cursor-pointer transition-all"
                   style={{ background: '#334155', border: '1px solid #475569', color: '#4F46E5' }}>
                   {lang === 'es' ? 'Copiar texto' : 'Copy text'}

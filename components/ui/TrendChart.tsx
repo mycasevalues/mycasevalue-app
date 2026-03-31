@@ -39,7 +39,7 @@ export const generateDemoData = (nos?: string): TrendDataPoint[] => {
     data.push({
       year,
       winRate: Math.round(winRate * 10) / 10,
-      totalCases: Math.floor(50 + Math.random() * 150),
+      totalCases: Math.floor(80 + ((i * 37 + 13) % 150)),
     });
   }
 
