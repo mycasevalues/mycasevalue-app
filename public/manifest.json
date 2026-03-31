@@ -1,12 +1,30 @@
 {
-  "name": "MyCaseValue",
+  "name": "MyCaseValue — Federal Court Outcome Data",
   "short_name": "MyCaseValue",
-  "description": "Federal court outcome data — win rates, settlements & timelines",
-  "start_url": "/",
+  "description": "Research real outcomes from 4.2M+ federal court cases. Win rates, settlements, timelines, and recovery data for 50+ case types.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#0B1221",
   "theme_color": "#4F46E5",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["legal", "reference", "business"],
+  "prefer_related_applications": false,
   "icons": [
-    { "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "New Report",
+      "short_name": "Report",
+      "description": "Start a new case outcome report",
+      "url": "/?action=new",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
   ]
 }
