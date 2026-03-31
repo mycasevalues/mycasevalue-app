@@ -2252,7 +2252,7 @@ export default function MyCaseValue() {
           <div className="separator-gradient" style={{ gridColumn: '1 / -1', height: '2px', boxShadow: '0 4px 20px rgba(79,70,229,0.3), 0 4px 20px rgba(13,148,136,0.15)' }} />
 
           {/* Trust + Social Proof + Data + Stats — tighter spacing */}
-          <div style={{ gridColumn: '1 / -1', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div style={{ gridColumn: '1 / -1', display: 'flex', flexDirection: 'column', gap: '12px', minWidth: 0, overflow: 'hidden' }}>
             <Reveal delay={180}>
               <TrustBar lang={lang} />
             </Reveal>

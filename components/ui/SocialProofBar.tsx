@@ -81,7 +81,7 @@ export default function SocialProofBar({
   const formattedCases = (totalCases / 1000000).toFixed(1);
 
   return (
-    <div style={{ width: '100%', backgroundColor: '#0B1221' }}>
+    <div style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', backgroundColor: '#0B1221' }}>
       <style>{`
         @keyframes marquee {
           0% {
@@ -225,18 +225,19 @@ export default function SocialProofBar({
           padding: 0.5rem 1rem;
           border: 1px solid #1E293B;
           border-radius: 0.4rem;
-          background-color: transparent;
-          color: #F0F2F5;
+          background-color: #131B2E;
+          color: #94A3B8;
           font-size: 0.8rem;
           font-weight: 500;
-          opacity: 0.6;
+          opacity: 0.8;
           transition: all 0.3s ease;
-          cursor: pointer;
+          cursor: default;
         }
 
         .press-badge:hover {
-          opacity: 0.85;
+          opacity: 1;
           border-color: #4F46E5;
+          color: #F0F2F5;
         }
 
         @media (max-width: 768px) {
@@ -278,9 +279,9 @@ export default function SocialProofBar({
           align-items: center;
           gap: 0.5rem;
           padding: 0.625rem 1rem;
-          border: 1px solid #1E293B;
+          border: 1px solid rgba(94, 234, 212, 0.15);
           border-radius: 0.4rem;
-          background-color: transparent;
+          background-color: rgba(94, 234, 212, 0.05);
           color: #5EEAD4;
           font-size: 0.8rem;
           font-weight: 500;
