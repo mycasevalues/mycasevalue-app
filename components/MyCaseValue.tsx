@@ -1155,7 +1155,7 @@ function Shell({
           {children}
 
           {/* Footer */}
-          <footer className="border-t mt-16 pt-8 pb-10" style={{ borderColor: '#1E293B' }}>
+          <footer className="border-t mt-16 pt-8 pb-10" style={{ borderColor: 'var(--border-default)' }}>
             <div className="flex items-center gap-2.5 mb-5 flex-wrap justify-center sm:justify-start">
               <span className="text-[11px] font-semibold text-[var(--fg-muted)]">{lang === 'es' ? 'Datos verificados:' : 'Verified data:'}</span>
               {['Federal Judicial Center', 'CourtListener', 'uscourts.gov', 'Google Scholar'].map((n, i) => (
@@ -1179,9 +1179,20 @@ function Shell({
               </div>
               <div className="sm:text-right text-[12px] text-[var(--fg-muted)] leading-relaxed">
                 {'\u00A9'} {new Date().getFullYear()} MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}<br />
-                <a href="/methodology" className="text-[11px] text-[var(--fg-muted)] hover:text-[var(--fg-muted)] underline mt-1 inline-block transition-colors">
-                  {lang === 'es' ? 'Metodología' : 'Methodology'}
-                </a>
+                <div className="flex flex-wrap gap-3 mt-1 justify-end">
+                  <a href="/methodology" className="text-[11px] text-[var(--fg-muted)] hover:text-[var(--fg-link)] underline transition-colors">
+                    {lang === 'es' ? 'Metodología' : 'Methodology'}
+                  </a>
+                  <a href="/privacy" className="text-[11px] text-[var(--fg-muted)] hover:text-[var(--fg-link)] underline transition-colors">
+                    {lang === 'es' ? 'Privacidad' : 'Privacy'}
+                  </a>
+                  <a href="/terms" className="text-[11px] text-[var(--fg-muted)] hover:text-[var(--fg-link)] underline transition-colors">
+                    {lang === 'es' ? 'Términos' : 'Terms'}
+                  </a>
+                  <a href="/faq" className="text-[11px] text-[var(--fg-muted)] hover:text-[var(--fg-link)] underline transition-colors">
+                    FAQ
+                  </a>
+                </div>
                 <div className="mt-2 flex flex-col sm:items-end gap-0.5">
                   <a href="mailto:support@mycasevalue.com" className="text-[11px] text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ textDecoration: 'none' }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
