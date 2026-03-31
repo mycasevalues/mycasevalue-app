@@ -1922,6 +1922,72 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* ============================================================
+   ADDITIONAL POLISH
+   ============================================================ */
+
+/* Smooth option hover in selects */
+select option {
+  background: #1A2744;
+  color: #E2E8F0;
+  padding: 8px 12px;
+}
+
+/* Improved focus visibility for accessibility */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smoother scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Touch device optimization */
+@media (hover: none) {
+  .tilt-hover, .category-card, .magnetic-btn {
+    transform: none !important;
+  }
+  .category-card:hover {
+    box-shadow: none !important;
+  }
+}
+
+/* Better range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: #1E293B;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.4);
+  border: 2px solid #0B1221;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.4);
+  border: 2px solid #0B1221;
+}
+
+/* Glossary card hover */
+.glossary-card:hover {
+  border-color: rgba(99,102,241,0.3) !important;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
    PRINT STYLES
    ============================================================ */
 @media print {

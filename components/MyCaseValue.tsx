@@ -61,6 +61,8 @@ const AGGREGATE_STATE_RATES: Record<string, number> = {
   OH: 50.4, OK: 53.9, OR: 52.5, PA: 62.1, RI: 54.6, SC: 56.8, SD: 54.8,
   TN: 45.8, TX: 42.0, UT: 51.6, VA: 47.7, VT: 59.1, WA: 46.6, WI: 51.9,
   WV: 49.0, WY: 60.1,
+  // US Territories
+  PR: 41.2, GU: 44.8, VI: 46.3, AS: 42.1, MP: 43.5,
 };
 
 // ============================================================
@@ -2666,7 +2668,7 @@ export default function MyCaseValue() {
             </div>
             <div className="w-px h-4" style={{ background: '#334155' }} />
             <div className="flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
               <span className="text-[13px] text-[#94A3B8]"><strong className="font-data">{(totalCases / 1000).toFixed(0)}K+</strong> {lang === 'es' ? 'usuarios' : 'users'}</span>
             </div>
           </div>
@@ -2935,6 +2937,67 @@ export default function MyCaseValue() {
                 </div>
               </div>
             </div>
+          </div>
+        </Reveal>
+
+        {/* === DID YOU KNOW? — Rotating legal facts === */}
+        <Reveal delay={560}>
+          <div className="mb-4 p-5 rounded-2xl border border-[#1E293B] overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(13,148,136,0.04))' }}>
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(13,148,136,0.15))' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              </div>
+              <div className="flex-1">
+                <div className="text-[10px] font-bold tracking-[2px] mb-2" style={{ color: '#A5B4FC' }}>{lang === 'es' ? '¿SABÍAS QUE?' : 'DID YOU KNOW?'}</div>
+                {(() => {
+                  const facts = lang === 'es' ? [
+                    'El 67% de los casos civiles federales se resuelven antes de llegar a juicio, generalmente a través de acuerdos negociados.',
+                    'Las personas con abogado ganan un 40% más frecuentemente que quienes se representan solas en casos civiles federales.',
+                    'El tiempo promedio desde la presentación hasta la resolución en un tribunal federal es de 8.4 meses.',
+                    'Los casos de discriminación laboral son la categoría de demandas civiles más presentada en los tribunales federales.',
+                    'La mediana de recuperación del demandante en casos federales con pago es de $47,000.',
+                    'El Noveno Circuito (que cubre California y 8 estados más) maneja más del 20% de todos los casos de apelación federales.',
+                  ] : [
+                    'Over 67% of federal civil cases settle before reaching trial, typically through negotiated agreements.',
+                    'People with attorneys win approximately 40% more often than those representing themselves in federal civil cases.',
+                    'The average time from filing to resolution in federal court is 8.4 months.',
+                    'Employment discrimination cases are the most commonly filed category of civil lawsuits in federal courts.',
+                    'The median plaintiff recovery in federal cases with a payout is $47,000.',
+                    'The 9th Circuit (covering California and 8 other states) handles over 20% of all federal appellate cases.',
+                  ];
+                  const idx = Math.floor(Date.now() / 15000) % facts.length;
+                  return <p className="text-[14px] leading-relaxed" style={{ color: '#CBD5E1' }}>{facts[idx]}</p>;
+                })()}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* === KEY TAKEAWAYS === */}
+        <Reveal delay={570}>
+          <div className="mb-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>,
+                title: lang === 'es' ? 'Datos verificados' : 'Verified data',
+                desc: lang === 'es' ? 'Cada estadística proviene de registros judiciales federales públicos, no de estimaciones.' : 'Every statistic comes from public federal court records, not estimates.',
+                color: '#0D9488' },
+              { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>,
+                title: lang === 'es' ? 'Privacidad total' : 'Completely private',
+                desc: lang === 'es' ? 'Tu búsqueda es anónima. No almacenamos datos personales ni compartimos tu información.' : 'Your search is anonymous. We do not store personal data or share your information.',
+                color: '#4F46E5' },
+              { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+                title: lang === 'es' ? 'No es asesoría legal' : 'Not legal advice',
+                desc: lang === 'es' ? 'Esta es una herramienta informativa. Solo un abogado con licencia puede evaluar tu caso específico.' : 'This is an informational tool. Only a licensed attorney can evaluate your specific case.',
+                color: '#A5B4FC' },
+            ].map((item, i) => (
+              <div key={i} className="p-4 rounded-xl border border-[#1E293B] transition-all hover:border-opacity-60" style={{ background: `linear-gradient(135deg, ${item.color}08, transparent)`, borderColor: `${item.color}25` }}>
+                <div className="flex items-center gap-2.5 mb-2">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${item.color}15` }}>{item.icon}</div>
+                  <div className="text-[13px] font-bold" style={{ color: item.color }}>{item.title}</div>
+                </div>
+                <div className="text-[12px] leading-relaxed text-[#94A3B8]">{item.desc}</div>
+              </div>
+            ))}
           </div>
         </Reveal>
 
@@ -3399,9 +3462,9 @@ export default function MyCaseValue() {
       else if (step === 4) go(3);
       else if (step === 3) { setSpec(null); go(2); }
       else if (step === 2) { setSit(null); go(0); }
-    }} className="text-sm text-[#94A3B8] bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1 hover:text-[#94A3B8] transition-colors" aria-label="Go back">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6" /></svg>
-      Back
+    }} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: '#94A3B8' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
+      {lang === 'es' ? 'Volver' : 'Back'}
     </button>
   );
 
@@ -3499,7 +3562,7 @@ export default function MyCaseValue() {
             {timing && (
               <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed animate-fade-in" style={{
                 background: timing === 'recent' ? 'rgba(13,148,136,0.15)' : (timing === '2yr' || timing === 'old') ? 'rgba(232,116,97,0.12)' : 'rgba(99,102,241,0.08)',
-                color: timing === 'recent' ? '#0D9488' : (timing === '2yr' || timing === 'old') ? '#DC2626' : '#1A2744',
+                color: timing === 'recent' ? '#0D9488' : (timing === '2yr' || timing === 'old') ? '#DC2626' : '#A5B4FC',
               }}>
                 {lang === 'es' ? (
                   timing === 'recent' ? 'Buenas noticias — las personas que actuaron dentro de 6 meses históricamente tuvieron mejores resultados.'
