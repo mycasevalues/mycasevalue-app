@@ -1770,6 +1770,24 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
+/* CTA pulse animation */
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(79, 70, 229, 0.25); }
+  50% { box-shadow: 0 4px 24px rgba(79, 70, 229, 0.45), 0 0 40px rgba(79, 70, 229, 0.15); }
+}
+.cta-pulse {
+  animation: cta-pulse 3s ease-in-out infinite;
+}
+
+/* Did You Know rotation */
+@keyframes fact-fade {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 1; }
+  50% { opacity: 0; }
+  55% { opacity: 0; }
+  60% { opacity: 1; }
+}
+
 /* ============================================================
    GLASS FEATURE — Frosted glass badges with smooth transitions
    ============================================================ */

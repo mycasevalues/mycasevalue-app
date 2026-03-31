@@ -1174,7 +1174,7 @@ function Shell({
         <main id="main-content" className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10" role="main">
           {/* UPL Banner */}
           <div className="text-center py-2 border-b no-print" style={{ borderColor: '#1E293B', background: 'rgba(30,41,59,0.3)' }}>
-            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: '#64748B' }}>{UPL.banner}</span>
+            <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: '#64748B' }}>{lang === 'es' ? 'HERRAMIENTA INFORMATIVA SOLAMENTE — NO ES ASESORÍA LEGAL' : UPL.banner}</span>
           </div>
 
           {children}
@@ -1500,6 +1500,8 @@ export default function MyCaseValue() {
   const [circuitView, setCircuitView] = useState<'bars' | 'table'>('bars');
   const [expandedCircuit, setExpandedCircuit] = useState<string | null>(null);
   const [glossaryExpanded, setGlossaryExpanded] = useState(false);
+  const [glossarySearch, setGlossarySearch] = useState('');
+  const [factIndex, setFactIndex] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -1599,6 +1601,11 @@ export default function MyCaseValue() {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
+  // Did You Know facts rotation
+  useEffect(() => {
+    const timer = setInterval(() => setFactIndex(i => (i + 1) % 6), 10000);
+    return () => clearInterval(timer);
+  }, []);
 
   // Reading progress bar on report page
   useEffect(() => {
@@ -2293,7 +2300,7 @@ export default function MyCaseValue() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <button onClick={() => go(1)}
-                  className="cta-glow btn-primary magnetic-btn ripple-effect px-8 sm:px-8 py-3.5 sm:py-4.5 text-[15px] sm:text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform w-full sm:w-auto"
+                  className="cta-glow cta-pulse btn-primary magnetic-btn ripple-effect px-8 sm:px-8 py-3.5 sm:py-4.5 text-[15px] sm:text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform w-full sm:w-auto"
                   style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 24px rgba(64,64,242,.3)' }}>
                   {t.hero_cta}
                 </button>
@@ -2444,6 +2451,51 @@ export default function MyCaseValue() {
               <HeroStats lang={lang} />
             </Reveal>
           </div>
+
+          {/* === HOW IT WORKS — 3-Step Section === */}
+          <Reveal delay={240}>
+            <div style={{ gridColumn: '1 / -1' }}>
+              <div className="text-center mb-6">
+                <div className="text-[10px] font-bold text-[#94A3B8] tracking-[2px] mb-2">{lang === 'es' ? 'PROCESO' : 'HOW IT WORKS'}</div>
+                <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? '3 pasos simples' : '3 simple steps'}</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  {
+                    step: 1,
+                    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h5"/></svg>,
+                    title: lang === 'es' ? 'Selecciona tu caso' : 'Select Your Case',
+                    desc: lang === 'es' ? 'Elige tu tipo de caso de nuestro catálogo' : 'Choose your case type from our catalog',
+                  },
+                  {
+                    step: 2,
+                    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1"/><circle cx="12" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg>,
+                    title: lang === 'es' ? 'Responde preguntas' : 'Answer Questions',
+                    desc: lang === 'es' ? 'Comparte detalles sobre tu situación' : 'Share details about your situation',
+                  },
+                  {
+                    step: 3,
+                    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>,
+                    title: lang === 'es' ? 'Obtén tu informe' : 'Get Your Report',
+                    desc: lang === 'es' ? 'Recibe análisis detallado al instante' : 'Receive detailed analysis instantly',
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="p-6 rounded-2xl border border-[#1E293B] bg-[#131B2E] transition-all hover:border-[#4F46E5]/50 hover:bg-[#0F172A]" style={{ background: 'linear-gradient(180deg, #131B2E, #0B1221)' }}>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
+                        <div className="text-lg font-bold">{item.step}</div>
+                      </div>
+                      <div style={{ color: '#4F46E5' }}>
+                        {item.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-[16px] font-semibold mb-2" style={{ color: '#CBD5E1' }}>{item.title}</h3>
+                    <p className="text-[13px]" style={{ color: '#94A3B8' }}>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
 
           {/* Category selector — enhanced */}
           <div style={{ gridColumn: '1 / -1' }}>
@@ -2965,8 +3017,7 @@ export default function MyCaseValue() {
                     'The median plaintiff recovery in federal cases with a payout is $47,000.',
                     'The 9th Circuit (covering California and 8 other states) handles over 20% of all federal appellate cases.',
                   ];
-                  const idx = Math.floor(Date.now() / 15000) % facts.length;
-                  return <p className="text-[14px] leading-relaxed" style={{ color: '#CBD5E1' }}>{facts[idx]}</p>;
+                  return <p className="text-[14px] leading-relaxed transition-opacity duration-500" style={{ color: '#CBD5E1' }}>{facts[factIndex % facts.length]}</p>;
                 })()}
               </div>
             </div>
@@ -3174,7 +3225,7 @@ export default function MyCaseValue() {
                 </>
               );
             })()}
-            <button onClick={() => go(1)} className="w-full mt-4 py-3 text-[14px] font-semibold text-white rounded-xl cursor-pointer border-none transition-all hover:-translate-y-0.5"
+            <button onClick={() => go(1)} className="cta-pulse w-full mt-4 py-3 text-[14px] font-semibold text-white rounded-xl cursor-pointer border-none transition-all hover:-translate-y-0.5"
               style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 16px rgba(64,64,242,.2)' }}>
               {lang === 'es' ? 'Obtener mi informe personalizado →' : 'Get my personalized report →'}
             </button>
@@ -3234,8 +3285,23 @@ export default function MyCaseValue() {
                 <span className="text-[11px] font-bold" style={{ color: '#6366F1' }}>{Object.keys(LEGAL_GLOSSARY).length}</span>
               </div>
             </div>
+            <input
+              type="text"
+              placeholder={lang === 'es' ? 'Buscar término...' : 'Search terms...'}
+              value={glossarySearch}
+              onChange={e => setGlossarySearch(e.target.value)}
+              className="w-full px-4 py-2.5 rounded-xl text-[13px] mb-3 border border-[#1E293B] bg-[#0B1221] focus:outline-none focus:border-[#4F46E5] transition-colors"
+              style={{ color: '#CBD5E1' }}
+            />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {Object.entries(LEGAL_GLOSSARY).slice(0, glossaryExpanded ? Object.keys(LEGAL_GLOSSARY).length : 8).map(([term, def], i) => (
+              {Object.entries(LEGAL_GLOSSARY)
+                .filter(([term, def]) => {
+                  if (!glossarySearch) return true;
+                  const q = glossarySearch.toLowerCase();
+                  return term.toLowerCase().includes(q) ||
+                    (lang === 'es' ? def.es : def.en).toLowerCase().includes(q);
+                })
+                .slice(0, glossaryExpanded ? undefined : 8).map(([term, def], i) => (
                 <div key={i} className="p-3 rounded-xl border transition-all hover:border-[#4F46E5]/30" style={{ background: 'rgba(30,41,59,0.4)', borderColor: '#1E293B' }}>
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: '#6366F1' }}>{(term[0] || '').toUpperCase()}</div>
@@ -3245,14 +3311,24 @@ export default function MyCaseValue() {
                 </div>
               ))}
             </div>
-            <button
-              onClick={() => setGlossaryExpanded(!glossaryExpanded)}
-              className="w-full mt-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer border-none transition-all"
-              style={{ background: 'rgba(99,102,241,0.1)', color: '#A5B4FC' }}>
-              {glossaryExpanded
-                ? (lang === 'es' ? 'Mostrar menos ▲' : 'Show less ▲')
-                : (lang === 'es' ? `Mostrar los ${Object.keys(LEGAL_GLOSSARY).length - 8} términos restantes ▼` : `Show all ${Object.keys(LEGAL_GLOSSARY).length - 8} remaining terms ▼`)}
-            </button>
+            {(() => {
+              const filteredCount = Object.entries(LEGAL_GLOSSARY).filter(([term, def]) => {
+                if (!glossarySearch) return true;
+                const q = glossarySearch.toLowerCase();
+                return term.toLowerCase().includes(q) ||
+                  (lang === 'es' ? def.es : def.en).toLowerCase().includes(q);
+              }).length;
+              return filteredCount > 8 ? (
+                <button
+                  onClick={() => setGlossaryExpanded(!glossaryExpanded)}
+                  className="w-full mt-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer border-none transition-all"
+                  style={{ background: 'rgba(99,102,241,0.1)', color: '#A5B4FC' }}>
+                  {glossaryExpanded
+                    ? (lang === 'es' ? 'Mostrar menos ▲' : 'Show less ▲')
+                    : (lang === 'es' ? `Mostrar los ${filteredCount - 8} términos restantes ▼` : `Show all ${filteredCount - 8} remaining terms ▼`)}
+                </button>
+              ) : null;
+            })()}
           </div>
         </Reveal>
 
