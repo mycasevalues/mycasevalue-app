@@ -249,7 +249,7 @@ function Select({ value, options, onChange, placeholder, dark = false, lang = 'e
         aria-haspopup="listbox"
         className="w-full px-4 py-3.5 text-[15px] font-medium border-[1.5px] rounded-xl cursor-pointer text-left flex justify-between items-center transition-all duration-200"
         style={{
-          borderColor: open ? '#4F46E5' : '#334155',
+          borderColor: open ? '#4F46E5' : 'var(--border-muted)',
           color: selected ? '#F0F2F5' : '#94A3B8',
           background: '#1A2744',
           boxShadow: open ? '0 0 0 3px rgba(64,64,242,0.12)' : 'none',
@@ -265,7 +265,7 @@ function Select({ value, options, onChange, placeholder, dark = false, lang = 'e
         className="absolute top-full mt-1.5 left-0 right-0 rounded-xl z-[var(--z-raised)] overflow-hidden"
         style={{
           background: '#1A2744',
-          border: open ? '1px solid #334155' : '1px solid transparent',
+          border: open ? '1px solid var(--border-muted)' : '1px solid transparent',
           boxShadow: open ? '0 12px 40px rgba(11,18,33,.4)' : 'none',
           maxHeight: open ? '280px' : '0',
           opacity: open ? 1 : 0,
@@ -281,7 +281,7 @@ function Select({ value, options, onChange, placeholder, dark = false, lang = 'e
               className="w-full px-3 py-2 text-[13px] rounded-lg outline-none focus:ring-2 focus:ring-[#4F46E5]/40 transition-colors"
               style={{
                 background: '#0F1729',
-                border: '1px solid #334155',
+                border: '1px solid var(--border-muted)',
                 color: '#F0F2F5',
               }} />
           </div>
@@ -649,7 +649,7 @@ function CaseTypeStatsPreview({ lang = 'en' }: { lang?: string }) {
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               activeType === k
                 ? 'bg-[rgba(79,70,229,0.15)] text-[#A5B4FC] border border-[rgba(99,102,241,0.4)] shadow-[0_0_12px_rgba(99,102,241,0.15)]'
-                : 'bg-[var(--bg-elevated)] text-[var(--fg-muted)] border border-[#334155] hover:bg-[rgba(99,102,241,0.08)] hover:text-[var(--fg-secondary)]'
+                : 'bg-[var(--bg-elevated)] text-[var(--fg-muted)] border border-[var(--border-muted)] hover:bg-[rgba(99,102,241,0.08)] hover:text-[var(--fg-secondary)]'
             }`}>
             {stats[k].label}
           </button>
@@ -813,7 +813,7 @@ function CaseComparisonScale({ winRate, lang = 'en' }: { winRate: number; lang?:
             left: `${(winRate / 100) * 100}%`,
             transform: 'translateX(-50%)',
           }}>
-          <div className="w-6 h-6 bg-[#131B2E] rounded-full shadow-md border-2 border-[#334155]" />
+          <div className="w-6 h-6 bg-[#131B2E] rounded-full shadow-md border-2 border-[var(--border-muted)]" />
         </div>
       </div>
       <div className="flex justify-between mt-2 px-1">
@@ -941,7 +941,7 @@ function CompareChip({ label, value, color, active, onClick }: {
       className="flex flex-col items-center px-4 py-3 rounded-xl cursor-pointer transition-all text-center"
       style={{
         background: active ? `${color}12` : '#1E293B',
-        border: active ? `2px solid ${color}30` : '1.5px solid #334155',
+        border: active ? `2px solid ${color}30` : '1.5px solid var(--border-muted)',
         transform: active ? 'scale(1.03)' : 'scale(1)',
         minWidth: 90,
       }}>
@@ -1238,9 +1238,9 @@ function Shell({
                   }
                 }}
                 className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110 group"
-                style={{ background: 'var(--bg-elevated)', border: '1px solid #334155' }}
-                onMouseEnter={e => { e.currentTarget.style.background = '#334155'; e.currentTarget.style.borderColor = s.color + '40'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = '#1E293B'; e.currentTarget.style.borderColor = '#334155'; }}
+                style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-muted)' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'var(--border-muted)'; e.currentTarget.style.borderColor = s.color + '40'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#1E293B'; e.currentTarget.style.borderColor = 'var(--border-muted)'; }}
                 title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}
                 aria-label={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill={s.filled ? s.color : 'none'} stroke={s.filled ? 'none' : s.color} strokeWidth={s.filled ? '0' : '2'} strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
@@ -1252,7 +1252,7 @@ function Shell({
 
             {/* Secure payments badge */}
             <div className="flex flex-wrap items-center justify-center gap-3 mt-3 no-print">
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid #334155' }}>
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid var(--border-muted)' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                 <span className="text-[11px] font-semibold tracking-[0.5px]" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
                 {/* Stripe logo */}
@@ -1267,19 +1267,19 @@ function Shell({
               </div>
               <div className="flex items-center gap-2">
                 {/* Visa */}
-                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: 'var(--bg-elevated)', border: '1px solid #334155' }}>
+                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-muted)' }}>
                   <svg width="28" height="10" viewBox="0 0 750 471" fill="none"><path d="M278.198 334.228l33.36-195.763h53.358l-33.384 195.763h-53.334zM524.307 142.687c-10.57-3.966-27.135-8.222-47.822-8.222-52.725 0-89.863 26.551-90.18 64.604-.635 28.109 26.502 43.773 46.754 53.126 20.771 9.574 27.752 15.679 27.654 24.243-.14 13.084-16.598 19.065-31.924 19.065-21.357 0-32.688-2.966-50.205-10.258l-6.875-3.11-7.488 43.823c12.463 5.467 35.508 10.199 59.438 10.445 56.09 0 92.502-26.248 92.916-66.885.2-22.28-14.016-39.215-44.8-53.187-18.65-9.056-30.072-15.099-29.951-24.269 0-8.137 9.668-16.838 30.56-16.838 17.286-.271 29.966 3.439 39.627 7.406l4.8 2.252 7.496-42.395zM661.615 138.464h-41.23c-12.773 0-22.332 3.486-27.94 16.234l-79.244 179.402h56.031s9.159-24.121 11.232-29.418c6.123 0 60.555.084 68.336.084 1.596 6.854 6.492 29.334 6.492 29.334h49.52l-43.197-195.636zm-65.417 126.408c4.414-11.279 21.26-54.724 21.26-54.724-.317.534 4.381-11.329 7.074-18.684l3.606 16.878 12.348 56.53h-44.288zM232.903 138.464L180.664 271.96l-5.565-27.129c-9.726-31.274-40.025-65.157-73.898-82.12l47.767 171.204 56.455-.065 84.004-195.386h-56.524z" fill="#2566AF"/><path d="M131.92 138.464H45.879l-.682 4.073c66.939 16.204 111.232 55.363 129.618 102.415l-18.709-89.96c-3.229-12.396-12.597-16.095-24.186-16.528z" fill="#E6A540"/></svg>
                 </span>
                 {/* Mastercard */}
-                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: 'var(--bg-elevated)', border: '1px solid #334155' }}>
+                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-muted)' }}>
                   <svg width="22" height="14" viewBox="0 0 152 100"><circle cx="50" cy="50" r="50" fill="#EB001B"/><circle cx="102" cy="50" r="50" fill="#F79E1B"/><path d="M76 14.8a49.8 49.8 0 000 70.4 49.8 49.8 0 000-70.4z" fill="#FF5F00"/></svg>
                 </span>
                 {/* Amex */}
-                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: 'var(--bg-elevated)', border: '1px solid #334155' }}>
+                <span className="flex items-center justify-center w-10 h-7 rounded" style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-muted)' }}>
                   <svg width="22" height="14" viewBox="0 0 40 26"><rect width="40" height="26" rx="3" fill="#2E77BC"/><text x="20" y="17" textAnchor="middle" fill="white" fontSize="9" fontWeight="800" fontFamily="Arial">AMEX</text></svg>
                 </span>
                 {/* PayPal */}
-                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: 'var(--bg-elevated)', border: '1px solid #334155' }}>
+                <span className="flex items-center justify-center px-1.5 py-1 rounded" style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-muted)' }}>
                   <svg width="22" height="14" viewBox="0 0 100 32"><path d="M37.8 3.2h-8.5c-.6 0-1.1.4-1.2 1L24.8 25c-.1.4.3.8.7.8h4.1c.6 0 1.1-.4 1.2-1l.9-5.7c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4-1.3-1.4-3.5-2.2-6.3-2.2l-.2-.3z" fill="#253B80"/><path d="M70.3 3.2h-8.5c-.6 0-1.1.4-1.2 1l-3.3 20.8c-.1.4.3.8.7.8h4.3c.4 0 .8-.3.8-.7l.9-5.9c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4-1.3-1.4-3.5-2.2-6.3-2.2v.6z" fill="#179BD7"/><path d="M13.5 3.2H5c-.6 0-1.1.4-1.2 1L.5 25c-.1.4.3.8.7.8h4.1c.6 0 1.1-.4 1.2-1l.9-5.7c.1-.6.6-1 1.2-1h2.8c5.6 0 8.8-2.7 9.7-8 .4-2.3 0-4.1-1.1-5.4C18.7 3.4 16.5 3.2 13.5 3.2z" fill="#253B80"/></svg>
                 </span>
               </div>
@@ -1288,23 +1288,23 @@ function Shell({
             {/* Navigation links */}
             <div className="flex items-center justify-center gap-3 mt-3 pt-3 border-t no-print flex-wrap" style={{ borderColor: 'var(--border-default)' }}>
               <a href="/about" className="text-[11px] transition-colors" style={{ textDecoration: 'none', color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Acerca de' : 'About'}</a>
-              <span style={{ color: '#334155' }}>·</span>
+              <span style={{ color: 'var(--border-muted)' }}>·</span>
               <a href="/cases" className="text-[11px] transition-colors" style={{ textDecoration: 'none', color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Categorías' : 'Case Categories'}</a>
-              <span style={{ color: '#334155' }}>·</span>
+              <span style={{ color: 'var(--border-muted)' }}>·</span>
               <a href="/faq" className="text-[11px] transition-colors" style={{ textDecoration: 'none', color: 'var(--fg-muted)' }}>FAQ</a>
-              <span style={{ color: '#334155' }}>·</span>
+              <span style={{ color: 'var(--border-muted)' }}>·</span>
               <button onClick={() => setLegalPage('terms')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Términos' : 'Terms'}</button>
-              <span style={{ color: '#334155' }}>·</span>
+              <span style={{ color: 'var(--border-muted)' }}>·</span>
               <button onClick={() => setLegalPage('privacy')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Privacidad' : 'Privacy'}</button>
-              <span style={{ color: '#334155' }}>·</span>
+              <span style={{ color: 'var(--border-muted)' }}>·</span>
               <button onClick={() => setLegalPage('cookies')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Cookies' : 'Cookies'}</button>
-              <span style={{ color: '#334155' }}>·</span>
+              <span style={{ color: 'var(--border-muted)' }}>·</span>
               <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Aviso legal' : 'Disclaimer'}</button>
             </div>
 
             {/* Legal disclaimer bar */}
             <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-              <div className="p-4 rounded-xl text-center" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid #334155' }}>
+              <div className="p-4 rounded-xl text-center" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid var(--border-muted)' }}>
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                   <span className="text-[11px] font-bold tracking-[2px]" style={{ color: 'var(--fg-muted)' }}>
@@ -2762,7 +2762,7 @@ export default function MyCaseValue() {
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-[13px] text-[var(--fg-muted)]"><strong className="font-data">{liveCounter}</strong> {lang === 'es' ? 'informes generados hoy' : 'reports generated today'}</span>
             </div>
-            <div className="w-px h-4" style={{ background: '#334155' }} />
+            <div className="w-px h-4" style={{ background: 'var(--border-muted)' }} />
             <div className="flex items-center gap-2">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>
               <span className="text-[13px] text-[var(--fg-muted)]"><strong className="font-data">{(totalCases / 1000).toFixed(0)}K+</strong> {lang === 'es' ? 'usuarios' : 'users'}</span>
@@ -2815,7 +2815,7 @@ export default function MyCaseValue() {
                 {TESTIMONIALS.map((_, i) => (
                   <button key={i} onClick={() => setCarouselIdx(i)}
                     className="border-none cursor-pointer transition-all rounded-full"
-                    style={{ width: i === carouselIdx ? 28 : 8, height: 8, background: i === carouselIdx ? 'linear-gradient(90deg, #4F46E5, #0D9488)' : '#334155', transform: i === carouselIdx ? 'scale(1.15)' : 'scale(1)', boxShadow: i === carouselIdx ? '0 2px 8px rgba(64,64,242,0.4)' : 'none' }} />
+                    style={{ width: i === carouselIdx ? 28 : 8, height: 8, background: i === carouselIdx ? 'linear-gradient(90deg, #4F46E5, #0D9488)' : 'var(--border-muted)', transform: i === carouselIdx ? 'scale(1.15)' : 'scale(1)', boxShadow: i === carouselIdx ? '0 2px 8px rgba(64,64,242,0.4)' : 'none' }} />
                 ))}
               </div>
             </div>
@@ -3932,7 +3932,7 @@ export default function MyCaseValue() {
                     {src.done ? (
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                     ) : (
-                      <div className="w-2.5 h-2.5 rounded-full border border-[#334155] breathe" />
+                      <div className="w-2.5 h-2.5 rounded-full border border-[var(--border-muted)] breathe" />
                     )}
                     {src.name}
                   </div>
@@ -4193,7 +4193,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Timeline narrative */}
-                      <div className="mb-5 p-4 rounded-xl border" style={{ borderColor: '#334155', background: 'rgba(30,41,59,0.3)' }}>
+                      <div className="mb-5 p-4 rounded-xl border" style={{ borderColor: 'var(--border-muted)', background: 'rgba(30,41,59,0.3)' }}>
                         <div className="text-[11px] font-bold tracking-[2px] text-[var(--fg-muted)] mb-2">{lang === 'es' ? 'ANÁLISIS DE CRONOLOGÍA' : 'TIMELINE ANALYSIS'}</div>
                         <p className="text-[13px] leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{narrative.timelineNarrative}</p>
                       </div>
@@ -4311,7 +4311,7 @@ export default function MyCaseValue() {
                         <div className="text-[10px] font-bold tracking-[2px] text-[var(--fg-muted)] mb-2">{lang === 'es' ? 'ESTATUTOS CLAVE' : 'KEY STATUTES'}</div>
                         <div className="flex flex-wrap gap-1.5">
                           {catData.statutes.map((s, i) => (
-                            <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg" style={{ background: 'var(--bg-elevated)', color: 'var(--accent-secondary, #A5B4FC)', border: '1px solid #334155' }}>{s}</span>
+                            <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg" style={{ background: 'var(--bg-elevated)', color: 'var(--accent-secondary, #A5B4FC)', border: '1px solid var(--border-muted)' }}>{s}</span>
                           ))}
                         </div>
                       </div>
@@ -4371,7 +4371,7 @@ export default function MyCaseValue() {
                           <div key={i} className="flex items-start gap-4 pl-10 relative py-3">
                             <div className="absolute left-3 w-5 h-5 rounded-full flex items-center justify-center text-[10px] z-10" style={{
                               background: i <= 3 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B',
-                              border: i > 3 ? '2px solid #334155' : 'none',
+                              border: i > 3 ? '2px solid var(--border-muted)' : 'none',
                               color: i <= 3 ? 'white' : '#94A3B8',
                               boxShadow: i <= 3 ? '0 2px 8px rgba(64,64,242,0.3)' : 'none',
                             }}>
@@ -4569,7 +4569,7 @@ export default function MyCaseValue() {
                       {/* Key insight */}
                       <div className="p-4 rounded-xl flex items-start gap-3" style={{
                         background: 'linear-gradient(135deg, #1A2744, #162035)',
-                        border: '1px solid #334155',
+                        border: '1px solid var(--border-muted)',
                       }}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         <div>
@@ -4813,7 +4813,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Key takeaway */}
-                      <div className="p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #162035)', border: '1px solid #334155' }}>
+                      <div className="p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #162035)', border: '1px solid var(--border-muted)' }}>
                         <div className="flex items-start gap-3">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                           <div>
@@ -5261,7 +5261,7 @@ export default function MyCaseValue() {
                   segments={[
                     { pct: od.fav_set, color: 'var(--accent-secondary)', winRatio: 0 },
                     { pct: od.trial_win + od.trial_loss, color: 'var(--accent-primary)', winRatio: od.trial_win / Math.max(od.trial_win + od.trial_loss, 1) },
-                    { pct: od.dismiss, color: '#334155', winRatio: 0 },
+                    { pct: od.dismiss, color: 'var(--border-muted)', winRatio: 0 },
                   ]}
                   size={200}
                 />
@@ -5318,7 +5318,7 @@ export default function MyCaseValue() {
           <Reveal delay={120}>
             <div className="rounded-2xl overflow-hidden mb-3" style={{
               background: 'linear-gradient(135deg, #1A2744, #0F1A2E)',
-              border: '1.5px solid #334155',
+              border: '1.5px solid var(--border-muted)',
               boxShadow: '0 4px 24px rgba(64, 64, 242, 0.06), 0 1px 3px rgba(11,18,33,0.03)',
             }}>
               {/* Header accent bar */}
@@ -5488,7 +5488,7 @@ export default function MyCaseValue() {
                   <div className="flex gap-4 items-start pb-5 relative">
                     <div className="flex flex-col items-center">
                       <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #0D9488, #14B8A6)' }}>1</div>
-                      <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
+                      <div className="w-px flex-1 mt-2" style={{ background: 'var(--border-muted)' }} />
                     </div>
                     <div className="flex-1 pb-1">
                       <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{lang === 'es' ? 'Guarda este informe' : 'Save this report'}</div>
@@ -5527,7 +5527,7 @@ export default function MyCaseValue() {
                   <div className="flex gap-4 items-start pb-5 relative">
                     <div className="flex flex-col items-center">
                       <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>2</div>
-                      <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
+                      <div className="w-px flex-1 mt-2" style={{ background: 'var(--border-muted)' }} />
                     </div>
                     <div className="flex-1 pb-1">
                       <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>
@@ -5570,7 +5570,7 @@ export default function MyCaseValue() {
                         background: (timing === '2yr' || timing === 'old') ? 'linear-gradient(135deg, #E87461, #F09483)' : 'linear-gradient(135deg, #4F46E5, #6366F1)',
                         color: 'white',
                       }}>3</div>
-                      <div className="w-px flex-1 mt-2" style={{ background: '#334155' }} />
+                      <div className="w-px flex-1 mt-2" style={{ background: 'var(--border-muted)' }} />
                     </div>
                     <div className="flex-1 pb-1">
                       <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>
@@ -5789,7 +5789,7 @@ export default function MyCaseValue() {
                       { outcome: lang === 'es' ? 'Acuerdo de $52K' : 'Settlement: $52K', time: '7 months', desc: lang === 'es' ? 'Caso de discriminación similar, con pruebas sólidas' : 'Similar discrimination case, strong evidence' },
                       { outcome: lang === 'es' ? 'Acuerdo de $38K' : 'Settlement: $38K', time: '9 months', desc: lang === 'es' ? 'Situación comparable, resuelta en acuerdo' : 'Comparable situation, settled before trial' },
                     ].map((item, i) => (
-                      <div key={i} className="p-3.5 rounded-lg border transition-colors" style={{ borderColor: '#334155', background: 'var(--bg-elevated)' }}>
+                      <div key={i} className="p-3.5 rounded-lg border transition-colors" style={{ borderColor: 'var(--border-muted)', background: 'var(--bg-elevated)' }}>
                         <div className="flex items-start justify-between mb-1.5">
                           <div className="font-semibold text-[14px]" style={{ color: 'var(--accent-secondary)' }}>{item.outcome}</div>
                           <div className="text-[11px] font-medium text-[var(--fg-muted)]">{lang === 'es' ? item.time.replace('months', 'meses') : item.time}</div>
@@ -6050,7 +6050,7 @@ export default function MyCaseValue() {
                       style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
                       {lang === 'es' ? '$5.99 — Informe completo' : '$5.99 — Full report'}
                     </button>
-                    <button onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#131B2E] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer hover:border-[#334155] transition-colors">
+                    <button onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#131B2E] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer hover:border-[var(--border-muted)] transition-colors">
                       {lang === 'es' ? '$9.99 — Ilimitado' : '$9.99 — Unlimited'}
                     </button>
                   </div>
@@ -6235,7 +6235,7 @@ export default function MyCaseValue() {
                             <div className="text-[11px] text-[var(--fg-muted)]">{lang === 'es' ? 'Presentado' : 'Filed'}</div>
                             <div className="text-base font-bold">{months[today.getMonth()]} {today.getFullYear()}</div>
                           </div>
-                          <div className="flex-1 h-[3px] rounded-full relative" style={{ background: '#334155' }}>
+                          <div className="flex-1 h-[3px] rounded-full relative" style={{ background: 'var(--border-muted)' }}>
                             <div className="absolute right-0 top-[-3px] w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
                           </div>
                           <div className="text-center">
@@ -6665,7 +6665,7 @@ export default function MyCaseValue() {
                     toast(lang === 'es' ? 'Copiado al portapapeles' : 'Copied to clipboard!');
                   } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
                 }} className="text-[12px] font-semibold px-4 py-1.5 rounded-lg cursor-pointer transition-all"
-                  style={{ background: '#334155', border: '1px solid #475569', color: 'var(--accent-primary)' }}>
+                  style={{ background: 'var(--border-muted)', border: '1px solid #475569', color: 'var(--accent-primary)' }}>
                   {lang === 'es' ? 'Copiar texto' : 'Copy text'}
                 </button>
               </div>
@@ -6683,7 +6683,7 @@ export default function MyCaseValue() {
                     className="px-3 py-1.5 text-[12px] font-medium rounded-lg cursor-pointer transition-all capitalize"
                     style={{
                       background: compareNos === opt.nos ? 'rgba(99,102,241,0.15)' : '#1E293B',
-                      border: compareNos === opt.nos ? '1.5px solid #4F46E540' : '1.5px solid #334155',
+                      border: compareNos === opt.nos ? '1.5px solid #4F46E540' : '1.5px solid var(--border-muted)',
                       color: compareNos === opt.nos ? '#4F46E5' : '#CBD5E1',
                     }}>
                     {opt.label}
@@ -6777,7 +6777,7 @@ export default function MyCaseValue() {
             onClick={() => setShowPricing(false)}
             role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
             <div className="rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(11,18,33,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(64,64,242,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
-              <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] hover:bg-[#334155] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring z-10"
+              <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring z-10"
                 aria-label="Close pricing">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
@@ -6819,7 +6819,7 @@ export default function MyCaseValue() {
                 <h2 className="text-lg font-display font-bold">
                   {legalPage === 'terms' ? (lang === 'es' ? 'Términos de Servicio' : 'Terms of Service') : legalPage === 'privacy' ? (lang === 'es' ? 'Política de Privacidad' : 'Privacy Policy') : legalPage === 'cookies' ? (lang === 'es' ? 'Política de Cookies' : 'Cookie Policy') : (lang === 'es' ? 'Descargo de Responsabilidad' : 'Legal Disclaimer')}
                 </h2>
-                <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--bg-elevated)] hover:bg-[#334155] border-none cursor-pointer transition-colors">
+                <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] border-none cursor-pointer transition-colors">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
                 </button>
               </div>
