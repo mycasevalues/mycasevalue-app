@@ -401,7 +401,7 @@ h1, h2, h3 {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientShift 8s ease infinite;
+  /* Static gradient by default — animation opt-in only */
 }
 
 .text-gradient-hero {
@@ -2131,7 +2131,7 @@ input[type="range"]::-moz-range-thumb {
   filter: blur(80px);
   opacity: 0.12;
   pointer-events: none;
-  animation: orbFloat 8s ease-in-out infinite;
+  /* animation: orbFloat 8s ease-in-out infinite — disabled: decorative, >4s */
 }
 
 .orb-bg::before {
@@ -2299,7 +2299,7 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   filter: blur(60px);
   opacity: 0.08;
-  animation: blobMorph 12s ease-in-out infinite;
+  /* animation: blobMorph 12s ease-in-out infinite — disabled: decorative, >4s */
   pointer-events: none;
 }
 
@@ -2708,7 +2708,7 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.12;
-  animation: ambientFloat 12s ease-in-out infinite;
+  /* animation: ambientFloat 12s ease-in-out infinite — disabled: decorative, >4s */
   pointer-events: none;
 }
 .ambient-glow.indigo {
@@ -2801,7 +2801,7 @@ input[type="range"]::-moz-range-thumb {
     rgba(79,70,229,0.08) 100%
   );
   background-size: 400% 400%;
-  animation: holoShift 8s ease-in-out infinite;
+  /* animation: holoShift 8s ease-in-out infinite — disabled: decorative, >4s */
 }
 @keyframes holoShift {
   0%, 100% { background-position: 0% 50%; }
@@ -2828,7 +2828,7 @@ input[type="range"]::-moz-range-thumb {
     700px 150px 0 rgba(165,180,252,0.15),
     250px 40px 0 rgba(99,102,241,0.2),
     550px 280px 0 rgba(13,148,136,0.2);
-  animation: particleDrift 20s linear infinite;
+  /* animation: particleDrift 20s linear infinite — disabled: decorative, >4s */
   pointer-events: none;
 }
 .particle-field::after {
@@ -3002,7 +3002,7 @@ input[type="range"]::-moz-range-thumb {
   75% { border-radius: 60% 40% 60% 30% / 60% 40% 60% 30%; }
 }
 .morph-blob {
-  animation: morphBlob 8s ease-in-out infinite;
+  /* animation: morphBlob 8s ease-in-out infinite — disabled: decorative, >4s */
 }
 
 /* Counter tick animation */
@@ -3122,7 +3122,7 @@ input[type="range"]::-moz-range-thumb {
   padding: 1px;
   background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(13,148,136,0.06), rgba(99,102,241,0.08));
   background-size: 300% 300%;
-  animation: liquidBorder 8s ease infinite;
+  /* animation: liquidBorder 8s ease infinite — disabled: decorative, >4s */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -3430,7 +3430,7 @@ button:disabled,
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: gradient-flow 6s ease-in-out infinite;
+  /* animation: gradient-flow 6s ease-in-out infinite — disabled: decorative, >4s */
 }
 
 /* Typewriter cursor blink */
