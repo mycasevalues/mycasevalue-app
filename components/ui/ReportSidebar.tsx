@@ -35,7 +35,7 @@ export default function ReportSidebar({
     },
     {
       label: lang === 'es' ? 'Duración mediana' : 'Median Duration',
-      value: `${Math.round(medianDays)}mo`,
+      value: `${Math.round(medianDays / 30)}mo`,
       color: 'var(--fg-primary)',
     },
     {

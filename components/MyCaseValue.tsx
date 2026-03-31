@@ -60,6 +60,9 @@ const OnboardingTour = dynamic(() => import('./ui/OnboardingTour'), { ssr: false
 const GlossaryTooltip = dynamic(() => import('./ui/GlossaryTooltip'), { ssr: false });
 const ReportTabs = dynamic(() => import('./ui/ReportTabs'), { ssr: false });
 const ReportSidebar = dynamic(() => import('./ui/ReportSidebar'), { ssr: false });
+const EmailCaptureGate = dynamic(() => import('./ui/EmailCaptureGate'), { ssr: false });
+const CollapsedPaywall = dynamic(() => import('./ui/CollapsedPaywall'), { ssr: false });
+const ExitIntentModal = dynamic(() => import('./ui/ExitIntentModal'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -1511,6 +1514,11 @@ export default function MyCaseValue() {
   const [showSaved, setShowSaved] = useState(false);
   const [showReportLoader, setShowReportLoader] = useState(false);
   const [activeReportTab, setActiveReportTab] = useState('overview');
+  const [emailCaptured, setEmailCaptured] = useState(() => {
+    if (typeof window !== 'undefined') return !!localStorage.getItem('mcv-email');
+    return false;
+  });
+  const [showEmailGate, setShowEmailGate] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(true);
   const [showComparison, setShowComparison] = useState(false);
   const [showWhatIf, setShowWhatIf] = useState(false);
@@ -3899,6 +3907,18 @@ export default function MyCaseValue() {
     return (
       <Shell {...shellProps}>
         <SocialProofToast lang={lang} active={true} />
+        {/* Exit intent modal — desktop only, once per session */}
+        {!emailCaptured && !isPremium && (
+          <ExitIntentModal
+            lang={lang}
+            caseType={spec?.d}
+            onCapture={(email) => {
+              setEmailCaptured(true);
+              try { localStorage.setItem('mcv-email', email); } catch {}
+              apiCall('/api/email/capture', 'POST', { email, source: 'exit-intent', nos: spec?.nos });
+            }}
+          />
+        )}
         <div className="py-6 cinematic-enter">
           {/* Quick-glance metrics strip */}
           <Reveal>
@@ -5739,9 +5759,9 @@ export default function MyCaseValue() {
                 </Card>
               </Reveal>
 
-              {/* Locked previews */}
+              {/* Collapsed paywall — recovery data preview */}
               <Reveal delay={280}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Desbloquear datos de recuperación — $5.99' : 'Unlock recovery data — $5.99'}>
+                <CollapsedPaywall lang={lang} onUnlock={() => setShowPricing(true)} tier="single" previewRows={1}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? '¿Cuánto recuperaron personas en situaciones similares?' : 'What did people in similar situations recover?'}</div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -5757,7 +5777,7 @@ export default function MyCaseValue() {
                       ))}
                     </div>
                   </div>
-                </LockedPreview>
+                </CollapsedPaywall>
               </Reveal>
 
               <Reveal delay={300}>
