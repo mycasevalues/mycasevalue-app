@@ -54,9 +54,9 @@ export default function NOSIndexPage() {
   const categories = Object.keys(byCategory).sort();
 
   return (
-    <div className="min-h-screen bg-[#0B1221] text-[#F0F2F5]">
+    <div className="min-h-screen text-[#F0F2F5]" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }}>
       {/* Header */}
-      <header className="border-b border-[#1E2749] py-12 px-4 sm:px-6 lg:px-8">
+      <header className="py-12 px-4 sm:px-6 lg:px-8" style={{ borderBottom: '1px solid var(--border-default)' }}>
         <Link
           href="/"
           className="text-[#A5B4FC] hover:text-[#A5B4FC] transition text-sm mb-4 inline-block"
@@ -66,7 +66,7 @@ export default function NOSIndexPage() {
         <h1 className="text-4xl sm:text-5xl font-bold mt-4">
           Federal Case Types Directory
         </h1>
-        <p className="text-[#94A3B8] text-lg mt-2 max-w-2xl">
+        <p className="text-lg mt-2 max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
           Explore all case types in our federal court database. Each case type includes real statistics
           on win rates, case duration, and outcomes based on actual court records.
         </p>
@@ -86,20 +86,21 @@ export default function NOSIndexPage() {
                 <Link
                   key={item.code}
                   href={`/nos/${item.code}`}
-                  className="group bg-[#131B2E] rounded-lg p-6 border border-[#1E2749] hover:border-[#4F46E5] hover:shadow-lg transition-all"
+                  className="group bg-[#131B2E] rounded-lg p-6 border hover:border-[#4F46E5] hover:shadow-lg transition-all"
+                  style={{ borderColor: 'var(--border-default)' }}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h3 className="font-semibold text-lg group-hover:text-[#A5B4FC] transition">
                         {item.label}
                       </h3>
-                      <p className="text-[#94A3B8] text-sm">NOS Code: {item.code}</p>
+                      <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>NOS Code: {item.code}</p>
                     </div>
                     <span className="text-[#A5B4FC] text-xl group-hover:translate-x-1 transition">
                       →
                     </span>
                   </div>
-                  <p className="text-[#94A3B8] text-sm">
+                  <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
                     View court statistics and case outcomes for this type
                   </p>
                 </Link>
@@ -110,20 +111,20 @@ export default function NOSIndexPage() {
       </main>
 
       {/* Info Section */}
-      <section className="border-t border-[#1E2749] px-4 sm:px-6 lg:px-8 py-12 bg-[#131B2E]">
+      <section className="px-4 sm:px-6 lg:px-8 py-12 bg-[#131B2E]" style={{ borderTop: '1px solid var(--border-default)' }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">What are NOS Codes?</h2>
-          <p className="text-[#94A3B8] mb-4">
+          <p className="mb-4" style={{ color: 'var(--fg-muted)' }}>
             Nature of Suit (NOS) codes are standardized federal court classifications that categorize
             cases by their legal nature. Each code corresponds to a specific type of civil case filed in
             U.S. District Courts.
           </p>
-          <p className="text-[#94A3B8] mb-4">
+          <p className="mb-4" style={{ color: 'var(--fg-muted)' }}>
             The statistics on these pages are derived from actual federal court data, including case
             outcomes, settlement rates, and case duration. This information can help you understand
             how similar cases have performed in federal court.
           </p>
-          <p className="text-[#94A3B8]">
+          <p style={{ color: 'var(--fg-muted)' }}>
             For legal advice specific to your situation, please consult with a qualified attorney in
             your jurisdiction.
           </p>

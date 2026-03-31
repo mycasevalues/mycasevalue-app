@@ -25,14 +25,14 @@ const jsonLd = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#0B1221' }}>
+    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#1E293B', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -43,10 +43,10 @@ export default function TermsPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             TERMS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
             Terms of Service
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#94A3B8' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
             Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
         </div>
@@ -54,9 +54,9 @@ export default function TermsPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-invert max-w-none space-y-8 text-[#94A3B8] text-sm leading-relaxed">
+        <div className="prose prose-invert max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
 
-          <div className="p-6 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#1E293B' }}>
+          <div className="p-6 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#1E293B', color: 'var(--fg-primary)' }}>
             <p className="m-0 font-semibold" style={{ color: '#D97706' }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.
@@ -64,7 +64,7 @@ export default function TermsPage() {
           </div>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               1. Acceptance of Terms
             </h2>
             <p>
@@ -79,7 +79,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               2. Description of Service
             </h2>
             <p>
@@ -94,7 +94,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               3. NOT Legal Advice — Disclaimer
             </h2>
             <p>
@@ -117,7 +117,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               4. Limitations of Liability
             </h2>
             <p>
@@ -137,7 +137,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               5. Data Accuracy & Disclaimers
             </h2>
             <p>
@@ -156,7 +156,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               6. User Responsibilities
             </h2>
             <p>
@@ -174,7 +174,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               7. Intellectual Property
             </h2>
             <p>
@@ -195,7 +195,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               8. Payment & Refunds
             </h2>
             <p>
@@ -215,7 +215,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               9. Termination of Use
             </h2>
             <p>
@@ -230,7 +230,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               10. Third-Party Links & Services
             </h2>
             <p>
@@ -241,7 +241,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               11. Indemnification
             </h2>
             <p>
@@ -251,7 +251,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               12. Governing Law & Dispute Resolution
             </h2>
             <p>
@@ -264,7 +264,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               13. Privacy
             </h2>
             <p>
@@ -274,13 +274,13 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               14. Contact Us
             </h2>
             <p>
               For questions about these Terms, contact us:
             </p>
-            <div className="mt-4 p-4 rounded-lg" style={{ background: '#131B2E' }}>
+            <div className="mt-4 p-4 rounded-lg" style={{ background: '#131B2E', color: 'var(--fg-primary)' }}>
               <p className="m-0"><strong>Email:</strong> support@mycasevalue.com</p>
               <p className="m-0 mt-2"><strong>Website:</strong> https://mycasevalues.com</p>
             </div>
@@ -290,8 +290,8 @@ export default function TermsPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#1E293B' }}>
-        <p className="text-[11px] text-[#94A3B8] max-w-xl mx-auto px-6">
+      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
           © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
         </p>
       </div>

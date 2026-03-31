@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function MethodologyPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#0B1221' }}>
+    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#1E293B', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -21,10 +21,10 @@ export default function MethodologyPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             TRANSPARENCY
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
             Data Methodology
           </h1>
-          <p className="text-lg text-[#94A3B8] leading-relaxed max-w-2xl">
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
             How MyCaseValue processes and presents aggregate outcome data from public federal court records.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function MethodologyPage() {
         <div className="prose prose-invert max-w-none">
           {/* Section 1 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>Data Sources</h2>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>Data Sources</h2>
             <div className="space-y-4">
               {[
                 {
@@ -63,14 +63,14 @@ export default function MethodologyPage() {
                   color: '#0D9488',
                 },
               ].map((source, i) => (
-                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: '#1E293B', background: '#131B2E' }}>
+                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
                   <div className="flex items-start gap-3 mb-2">
-                    <h3 className="text-base font-semibold m-0" style={{ color: '#F0F2F5' }}>{source.name}</h3>
+                    <h3 className="text-base font-semibold m-0" style={{ color: 'var(--fg-primary)' }}>{source.name}</h3>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: source.color + '15', color: source.color }}>
                       {source.badge}
                     </span>
                   </div>
-                  <p className="text-sm text-[#94A3B8] leading-relaxed m-0">{source.description}</p>
+                  <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{source.description}</p>
                 </div>
               ))}
             </div>
@@ -93,8 +93,8 @@ export default function MethodologyPage() {
                     {s.step}
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold m-0 mb-1" style={{ color: '#F0F2F5' }}>{s.title}</h3>
-                    <p className="text-sm text-[#94A3B8] leading-relaxed m-0">{s.desc}</p>
+                    <h3 className="text-base font-semibold m-0 mb-1" style={{ color: 'var(--fg-primary)' }}>{s.title}</h3>
+                    <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -104,8 +104,8 @@ export default function MethodologyPage() {
           {/* Section 3 */}
           <section className="mb-12">
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>Important Limitations</h2>
-            <div className="p-5 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#1E293B' }}>
-              <ul className="space-y-3 text-sm text-[#94A3B8] leading-relaxed" style={{ margin: 0, paddingLeft: '1rem' }}>
+            <div className="p-5 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#1E293B', color: 'var(--fg-muted)' }}>
+              <ul className="space-y-3 text-sm leading-relaxed" style={{ margin: 0, paddingLeft: '1rem', color: 'var(--fg-muted)' }}>
                 <li>MyCaseValue displays <strong>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
                 <li>Win rates reflect <strong>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
                 <li>Settlement amounts are not systematically reported in federal court records. Recovery ranges are derived from cases where monetary awards were documented.</li>
@@ -125,9 +125,9 @@ export default function MethodologyPage() {
                 { v: '20+', l: 'Case categories', c: '#1A3260' },
                 { v: '94', l: 'Federal districts', c: '#64748B' },
               ].map((s, i) => (
-                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: '#1E293B', background: '#131B2E' }}>
+                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
                   <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>
-                  <div className="text-[11px] text-[#94A3B8] font-semibold mt-1">{s.l}</div>
+                  <div className="text-[11px] font-semibold mt-1" style={{ color: 'var(--fg-muted)' }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -135,15 +135,15 @@ export default function MethodologyPage() {
 
           {/* Section 5 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>Public Domain Status</h2>
-            <p className="text-sm text-[#94A3B8] leading-relaxed">
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>Public Domain Status</h2>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
               All source data used by MyCaseValue is public domain under 17 U.S.C. § 105 (works of the United States government) or made freely available by the Free Law Project under open-access principles. MyCaseValue&apos;s proprietary contribution is in the aggregation, categorization, and presentation of this data — not in the underlying records themselves.
             </p>
           </section>
 
           {/* CTA */}
-          <div className="text-center pt-8 border-t" style={{ borderColor: '#1E293B' }}>
-            <p className="text-sm text-[#94A3B8] mb-4">Questions about our methodology?</p>
+          <div className="text-center pt-8 border-t" style={{ borderColor: 'var(--border-default)' }}>
+            <p className="text-sm mb-4" style={{ color: 'var(--fg-muted)' }}>Questions about our methodology?</p>
             <a href="mailto:support@mycasevalue.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
               style={{ background: '#131B2E', border: '1px solid #334155', color: '#4F46E5' }}>
@@ -155,8 +155,8 @@ export default function MethodologyPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#1E293B' }}>
-        <p className="text-[11px] text-[#94A3B8] max-w-xl mx-auto px-6">
+      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
           MyCaseValue provides aggregate historical data from public federal court records for informational purposes only.
           Not legal advice. No attorney-client relationship. © {new Date().getFullYear()} MyCaseValue LLC.
         </p>

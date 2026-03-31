@@ -359,7 +359,7 @@ async function CategoryPage({
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0B1221' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--bg-base)' }}>
       {/* Schema.org structured data */}
       <script
         type="application/ld+json"
@@ -369,7 +369,7 @@ async function CategoryPage({
       {/* Breadcrumb Navigation */}
       <div style={{
         background: '#131B2E',
-        borderBottom: '1px solid #1E293B',
+        borderBottom: '1px solid var(--border-default)',
         padding: '16px 20px',
       }}>
         <div style={{
@@ -387,7 +387,7 @@ async function CategoryPage({
             Cases
           </Link>
           {' / '}
-          <span style={{ color: '#F0F2F5', fontWeight: 500 }}>{categoryData.label}</span>
+          <span style={{ color: 'var(--fg-primary)', fontWeight: 500 }}>{categoryData.label}</span>
         </div>
       </div>
 
@@ -459,7 +459,7 @@ async function CategoryPage({
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: '#F0F2F5',
+            color: 'var(--fg-primary)',
             margin: '0 0 24px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -468,7 +468,7 @@ async function CategoryPage({
           </h2>
           <p style={{
             fontSize: '16px',
-            color: '#94A3B8',
+            color: 'var(--fg-muted)',
             lineHeight: '1.7',
             maxWidth: '800px',
             margin: 0,
@@ -487,7 +487,7 @@ async function CategoryPage({
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: '#F0F2F5',
+            color: 'var(--fg-primary)',
             margin: '0 0 32px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -504,7 +504,7 @@ async function CategoryPage({
                 key={opt.nos}
                 style={{
                   background: '#131B2E',
-                  border: '1px solid #1E293B',
+                  border: '1px solid var(--border-default)',
                   borderRadius: '10px',
                   padding: '20px',
                   fontFamily: 'Outfit, system-ui, sans-serif',
@@ -513,14 +513,14 @@ async function CategoryPage({
                 <h3 style={{
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: '#F0F2F5',
+                  color: 'var(--fg-primary)',
                   margin: '0 0 8px 0',
                 }}>
                   {opt.label}
                 </h3>
                 <p style={{
                   fontSize: '13px',
-                  color: '#94A3B8',
+                  color: 'var(--fg-muted)',
                   margin: '0 0 12px 0',
                   lineHeight: '1.5',
                 }}>
@@ -528,9 +528,9 @@ async function CategoryPage({
                 </p>
                 <div style={{
                   fontSize: '12px',
-                  color: '#94A3B8',
+                  color: 'var(--fg-muted)',
                   paddingTop: '12px',
-                  borderTop: '1px solid #1E293B',
+                  borderTop: '1px solid var(--border-default)',
                 }}>
                   NOS Code: {opt.nos}
                 </div>
@@ -544,13 +544,13 @@ async function CategoryPage({
       <div style={{
         background: '#131B2E',
         padding: '60px 20px',
-        borderTop: '1px solid #1E293B',
+        borderTop: '1px solid var(--border-default)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: '#F0F2F5',
+            color: 'var(--fg-primary)',
             margin: '0 0 32px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -579,14 +579,14 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#F0F2F5',
+                color: 'var(--fg-primary)',
                 marginBottom: '8px',
               }}>
                 Trial Win Rate
               </div>
               <p style={{
                 fontSize: '14px',
-                color: '#94A3B8',
+                color: 'var(--fg-muted)',
                 margin: 0,
                 lineHeight: '1.5',
               }}>
@@ -611,14 +611,14 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#F0F2F5',
+                color: 'var(--fg-primary)',
                 marginBottom: '8px',
               }}>
                 Average Case Duration
               </div>
               <p style={{
                 fontSize: '14px',
-                color: '#94A3B8',
+                color: 'var(--fg-muted)',
                 margin: 0,
                 lineHeight: '1.5',
               }}>
@@ -643,14 +643,14 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#F0F2F5',
+                color: 'var(--fg-primary)',
                 marginBottom: '8px',
               }}>
                 Favorable Settlement Rate
               </div>
               <p style={{
                 fontSize: '14px',
-                color: '#94A3B8',
+                color: 'var(--fg-muted)',
                 margin: 0,
                 lineHeight: '1.5',
               }}>
@@ -711,8 +711,8 @@ async function CategoryPage({
 
       {/* Footer Disclaimer */}
       <div style={{
-        background: '#0B1221',
-        color: '#94A3B8',
+        background: 'var(--bg-base)',
+        color: 'var(--fg-muted)',
         padding: '40px 20px',
         fontSize: '14px',
         fontFamily: 'Outfit, system-ui, sans-serif',

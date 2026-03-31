@@ -47,14 +47,14 @@ const jsonLd = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#0B1221' }}>
+    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#1E293B', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -65,10 +65,10 @@ export default function AboutPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             ABOUT US
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
             Democratizing Federal Court Data
           </h1>
-          <p className="text-lg text-[#94A3B8] leading-relaxed max-w-2xl">
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
             MyCaseValue puts outcome data from 4.2M+ federal cases at your fingertips, making real court outcomes accessible to everyone.
           </p>
         </div>
@@ -80,14 +80,14 @@ export default function AboutPage() {
 
           {/* Mission Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
               Our Mission
             </h2>
-            <div className="p-6 rounded-xl border" style={{ borderColor: '#1E293B', background: '#131B2E' }}>
-              <p className="text-base leading-relaxed text-[#94A3B8] m-0">
+            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+              <p className="text-base leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>
                 Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys. We believe outcome data—win rates, settlement ranges, timelines, and recovery patterns—should be accessible to everyone making informed decisions about their legal situation.
               </p>
-              <p className="text-base leading-relaxed text-[#94A3B8] m-0 mt-4">
+              <p className="text-base leading-relaxed m-0 mt-4" style={{ color: 'var(--fg-muted)' }}>
                 MyCaseValue makes real federal court outcomes transparent and searchable, so you can base decisions on facts, not fear.
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
 
           {/* How It Works Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
               How It Works
             </h2>
             <div className="space-y-4">
@@ -119,16 +119,16 @@ export default function AboutPage() {
                   icon: '💡',
                 },
               ].map((item) => (
-                <div key={item.step} className="flex gap-4 p-5 rounded-xl border" style={{ borderColor: '#1E293B', background: '#131B2E' }}>
+                <div key={item.step} className="flex gap-4 p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl"
                     style={{ background: '#131B2E' }}>
                     {item.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-base font-semibold m-0 mb-2" style={{ color: '#F0F2F5' }}>
+                    <h3 className="text-base font-semibold m-0 mb-2" style={{ color: 'var(--fg-primary)' }}>
                       {item.step}. {item.title}
                     </h3>
-                    <p className="text-sm text-[#94A3B8] leading-relaxed m-0">
+                    <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>
                       {item.description}
                     </p>
                   </div>
@@ -139,10 +139,10 @@ export default function AboutPage() {
 
           {/* Data Sources Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
               Our Data Sources
             </h2>
-            <p className="text-sm text-[#94A3B8] mb-6 leading-relaxed">
+            <p className="text-sm mb-6 leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
               We aggregate outcome data from official federal court records, ensuring accuracy and transparency.
             </p>
             <div className="space-y-4">
@@ -163,11 +163,11 @@ export default function AboutPage() {
                   color: '#64748B',
                 },
               ].map((source, i) => (
-                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: '#1E293B', background: '#131B2E' }}>
-                  <h3 className="text-base font-semibold m-0 mb-2" style={{ color: '#F0F2F5' }}>
+                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+                  <h3 className="text-base font-semibold m-0 mb-2" style={{ color: 'var(--fg-primary)' }}>
                     {source.name}
                   </h3>
-                  <p className="text-sm text-[#94A3B8] leading-relaxed m-0">
+                  <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>
                     {source.description}
                   </p>
                 </div>
@@ -177,17 +177,17 @@ export default function AboutPage() {
 
           {/* Team Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
               Team & Vision
             </h2>
-            <div className="p-6 rounded-xl border" style={{ borderColor: '#1E293B', background: '#131B2E' }}>
-              <p className="text-base leading-relaxed text-[#94A3B8] m-0">
+            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+              <p className="text-base leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>
                 MyCaseValue is built by legal researchers, data engineers, and technologists who believe transparency drives better decisions. We are not a law firm. We do not provide legal advice. We are a data platform.
               </p>
-              <p className="text-base leading-relaxed text-[#94A3B8] m-0 mt-4">
+              <p className="text-base leading-relaxed m-0 mt-4" style={{ color: 'var(--fg-muted)' }}>
                 Our team is committed to:
               </p>
-              <ul className="mt-4 space-y-2 text-sm text-[#94A3B8]" style={{ paddingLeft: '1.5rem' }}>
+              <ul className="mt-4 space-y-2 text-sm" style={{ paddingLeft: '1.5rem', color: 'var(--fg-muted)' }}>
                 <li><strong>Accuracy:</strong> All data comes from official public records with rigorous quality checks.</li>
                 <li><strong>Transparency:</strong> Our methodology is fully documented and open to scrutiny.</li>
                 <li><strong>Privacy:</strong> We never sell data or track individual research behavior.</li>
@@ -198,7 +198,7 @@ export default function AboutPage() {
 
           {/* Coverage Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
               What We Cover
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -208,20 +208,20 @@ export default function AboutPage() {
                 { v: '94', l: 'Federal districts', c: '#1A3260' },
                 { v: '50+ yrs', l: 'Historical data', c: '#64748B' },
               ].map((s, i) => (
-                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: '#1E293B', background: '#131B2E' }}>
+                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
                   <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>
-                  <div className="text-[11px] text-[#94A3B8] font-semibold mt-1">{s.l}</div>
+                  <div className="text-[11px] font-semibold mt-1" style={{ color: 'var(--fg-muted)' }}>{s.l}</div>
                 </div>
               ))}
             </div>
           </section>
 
           {/* CTA Section */}
-          <section className="text-center p-8 rounded-xl border" style={{ borderColor: '#1E293B', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
-            <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
+          <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+            <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
               Ready to Research Real Case Outcomes?
             </h2>
-            <p className="text-[#94A3B8] mb-6 max-w-xl mx-auto">
+            <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
               Access aggregate federal court data for informed decision-making. Free basic reports, premium analytics available.
             </p>
             <a href="/"
@@ -236,8 +236,8 @@ export default function AboutPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#1E293B' }}>
-        <p className="text-[11px] text-[#94A3B8] max-w-xl mx-auto px-6">
+      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
           MyCaseValue provides aggregate historical data from public federal court records for informational and research purposes only.
           We are not a law firm. This is not legal advice. No attorney-client relationship is created by using this tool.
           © {new Date().getFullYear()} MyCaseValue LLC.

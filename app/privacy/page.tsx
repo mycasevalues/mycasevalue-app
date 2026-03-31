@@ -25,14 +25,14 @@ const jsonLd = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#0B1221' }}>
+    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#1E293B', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -43,10 +43,10 @@ export default function PrivacyPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             PRIVACY
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
             Privacy Policy
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#94A3B8' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
             Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
         </div>
@@ -54,10 +54,10 @@ export default function PrivacyPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-invert max-w-none space-y-8 text-[#94A3B8] text-sm leading-relaxed">
+        <div className="prose prose-invert max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               1. Introduction
             </h2>
             <p>
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               2. Information We Collect
             </h2>
 
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               3. Cookies and Tracking
             </h2>
             <p>
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               4. How We Use Your Information
             </h2>
             <p>
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               5. Third Parties and Data Sharing
             </h2>
             <p>
@@ -180,7 +180,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               6. Data Retention
             </h2>
             <p>
@@ -195,7 +195,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               7. Your Rights and Choices
             </h2>
             <p>
@@ -215,7 +215,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               8. Security
             </h2>
             <p>
@@ -228,7 +228,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               9. Children's Privacy
             </h2>
             <p>
@@ -238,7 +238,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               10. International Users
             </h2>
             <p>
@@ -252,7 +252,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               11. Updates to This Policy
             </h2>
             <p>
@@ -262,13 +262,13 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
               12. Contact Us
             </h2>
             <p>
               If you have questions about this Privacy Policy, your data, or wish to exercise your rights, contact us:
             </p>
-            <div className="mt-4 p-4 rounded-lg" style={{ background: '#131B2E' }}>
+            <div className="mt-4 p-4 rounded-lg" style={{ background: '#131B2E', color: 'var(--fg-primary)' }}>
               <p className="m-0"><strong>Email:</strong> privacy@mycasevalue.com</p>
               <p className="m-0 mt-2"><strong>Website:</strong> https://mycasevalues.com</p>
             </div>
@@ -278,8 +278,8 @@ export default function PrivacyPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#1E293B' }}>
-        <p className="text-[11px] text-[#94A3B8] max-w-xl mx-auto px-6">
+      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
           © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
         </p>
       </div>

@@ -7,7 +7,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: '#0B1221',
+      background: 'var(--bg-base)',
       fontFamily: 'Outfit, system-ui, sans-serif',
       padding: 24,
     }}>
@@ -19,8 +19,8 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
         padding: '48px 32px',
         boxShadow: '0 4px 24px rgba(11,18,33,0.06)',
       }}>
-        <h2 style={{ fontSize: 22, fontWeight: 700, color: '#F0F2F5', marginBottom: 8 }}>Something went wrong</h2>
-        <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.6, marginBottom: 24 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 700, color: 'var(--fg-primary)', marginBottom: 8 }}>Something went wrong</h2>
+        <p style={{ fontSize: 14, color: 'var(--fg-muted)', lineHeight: 1.6, marginBottom: 24 }}>
           We encountered an unexpected error. Please try again.
         </p>
         <button

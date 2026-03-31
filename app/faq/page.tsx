@@ -310,14 +310,14 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#0B1221' }}>
+    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#1E293B', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -328,10 +328,10 @@ export default function FAQPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             FAQ
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
             Frequently Asked Questions
           </h1>
-          <p className="text-lg text-[#94A3B8] leading-relaxed max-w-2xl">
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
             Get answers to common questions about MyCaseValue, federal court data, and how to use outcome statistics.
           </p>
         </div>
@@ -342,7 +342,7 @@ export default function FAQPage() {
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
-              <h2 className="text-xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+              <h2 className="text-xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
                 {section.category}
               </h2>
               <div className="space-y-3">
@@ -351,11 +351,11 @@ export default function FAQPage() {
                     key={qIdx}
                     className="group p-5 rounded-xl border transition-colors cursor-pointer"
                     style={{
-                      borderColor: '#1E293B',
+                      borderColor: 'var(--border-default)',
                       background: '#131B2E',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#F0F2F5' }}>
+                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--fg-primary)' }}>
                       <span className="flex-1 text-base leading-relaxed pr-4">
                         {faq.q}
                       </span>
@@ -372,8 +372,8 @@ export default function FAQPage() {
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
-                    <div className="pt-4 mt-4 border-t" style={{ borderColor: '#1E293B' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: '#94A3B8' }}>
+                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -385,11 +385,11 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: '#1E293B', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
+        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
             Still have questions?
           </h2>
-          <p className="text-[#94A3B8] mb-6">
+          <p className="mb-6" style={{ color: 'var(--fg-muted)' }}>
             Get in touch with our support team.
           </p>
           <a href="mailto:support@mycasevalue.com"
@@ -402,8 +402,8 @@ export default function FAQPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#1E293B' }}>
-        <p className="text-[11px] text-[#94A3B8] max-w-xl mx-auto px-6">
+      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
           MyCaseValue provides aggregate historical data from public federal court records for informational and research purposes only.
           This is not legal advice. No attorney-client relationship is created by using this tool.
           © {new Date().getFullYear()} MyCaseValue LLC.
