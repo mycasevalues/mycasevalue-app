@@ -58,6 +58,9 @@ const AttorneyReferral = dynamic(() => import('./ui/AttorneyReferral'), { ssr: f
 const SocialProofToast = dynamic(() => import('./ui/SocialProofToast'), { ssr: false });
 const OnboardingTour = dynamic(() => import('./ui/OnboardingTour'), { ssr: false });
 const GlossaryTooltip = dynamic(() => import('./ui/GlossaryTooltip'), { ssr: false });
+const ReportTabs = dynamic(() => import('./ui/ReportTabs'), { ssr: false });
+const ReportSidebar = dynamic(() => import('./ui/ReportSidebar'), { ssr: false });
+import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
@@ -1507,6 +1510,7 @@ export default function MyCaseValue() {
   const [savedReports, setSavedReports] = useState<any[]>([]);
   const [showSaved, setShowSaved] = useState(false);
   const [showReportLoader, setShowReportLoader] = useState(false);
+  const [activeReportTab, setActiveReportTab] = useState('overview');
   const [showOnboarding, setShowOnboarding] = useState(true);
   const [showComparison, setShowComparison] = useState(false);
   const [showWhatIf, setShowWhatIf] = useState(false);
@@ -3953,6 +3957,33 @@ export default function MyCaseValue() {
             </div>
           </Reveal>
 
+          {/* === REPORT TABS — Sticky tab bar === */}
+          <ReportTabs lang={lang} activeTab={activeReportTab} onTabChange={setActiveReportTab} />
+
+          {/* === TABBED CONTENT with optional desktop sidebar === */}
+          <div style={{ display: 'flex', gap: 'var(--space-6, 24px)', alignItems: 'flex-start' }}>
+            {/* Desktop sidebar — hidden on mobile */}
+            <div className="hidden lg:block" style={{ flexShrink: 0 }}>
+              <ReportSidebar
+                lang={lang}
+                caseType={spec?.d || ''}
+                category={sit?.label || ''}
+                winRate={wr}
+                medianDays={(d.mo || 10) * 30}
+                settlementRate={d.sp || 0}
+                activeTab={activeReportTab}
+                onTabChange={setActiveReportTab}
+                isPremium={isPremium}
+                onUpgrade={() => setShowPricing(true)}
+              />
+            </div>
+
+            {/* Main content area */}
+            <div style={{ flex: 1, minWidth: 0 }}>
+
+          {/* ====== OVERVIEW TAB ====== */}
+          <TabPanel tabId="overview" activeTab={activeReportTab}>
+
           {/* Confidence Score & Case Timeline */}
           <Reveal delay={20}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -4099,6 +4130,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end overview: AI Deep Analysis */}
+
+          {/* ====== SIMILAR CASES TAB: Google Scholar ====== */}
+          <TabPanel tabId="similar" activeTab={activeReportTab}>
           {/* Google Scholar Legal Insights — Premium */}
           {isPremium && (
             <Reveal delay={70}>
@@ -4200,6 +4235,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end similar: Google Scholar */}
+
+          {/* ====== TIMELINE TAB ====== */}
+          <TabPanel tabId="timeline" activeTab={activeReportTab}>
           {/* Personalized Case Timeline — Visual journey */}
           {isPremium && (
             <Reveal delay={80}>
@@ -4457,6 +4496,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end timeline: Settlement Timing */}
+
+          {/* ====== SIMILAR CASES TAB: Jurisdiction Intelligence ====== */}
+          <TabPanel tabId="similar" activeTab={activeReportTab}>
           {/* Jurisdiction Intelligence — Interactive state comparison */}
           {isPremium && stateCode && (
             <Reveal delay={100}>
@@ -4586,6 +4629,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end similar: Jurisdiction Intelligence */}
+
+          {/* ====== ATTORNEY IMPACT TAB ====== */}
+          <TabPanel tabId="attorney" activeTab={activeReportTab}>
           {/* Attorney Impact Analysis — Premium */}
           {isPremium && (
             <Reveal delay={105}>
@@ -4696,6 +4743,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end attorney: Attorney Impact Analysis + component */}
+
+          {/* ====== WIN RATES TAB ====== */}
+          <TabPanel tabId="win-rates" activeTab={activeReportTab}>
           {/* Historical Win Rate Trend — Premium */}
           {isPremium && (
             <Reveal delay={108}>
@@ -4718,6 +4769,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end win-rates: Historical Trend */}
+
+          {/* ====== SETTLEMENTS TAB ====== */}
+          <TabPanel tabId="settlements" activeTab={activeReportTab}>
           {/* Settlement Distribution — Premium */}
           {isPremium && (
             <Reveal delay={109}>
@@ -4740,6 +4795,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end settlements */}
+
+          {/* ====== ATTORNEY IMPACT TAB: AttorneyImpact component ====== */}
+          <TabPanel tabId="attorney" activeTab={activeReportTab}>
           {/* Attorney Impact — Premium */}
           {isPremium && (
             <Reveal delay={111}>
@@ -4755,6 +4814,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end attorney: AttorneyImpact component */}
+
+          {/* ====== WIN RATES TAB: Case Type Comparison + Probability Matrix ====== */}
+          <TabPanel tabId="win-rates" activeTab={activeReportTab}>
           {/* Case Type Comparison — Premium */}
           {isPremium && compareData && (
             <Reveal delay={112}>
@@ -4911,6 +4974,10 @@ export default function MyCaseValue() {
             </Reveal>
           )}
 
+          </TabPanel>{/* end win-rates: Comparison + Probability */}
+
+          {/* ====== OVERVIEW TAB: Report Header ====== */}
+          <TabPanel tabId="overview" activeTab={activeReportTab}>
           {/* === REPORT HEADER === */}
           <Reveal>
             <div className="h-[3px] rounded-full mb-0" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
@@ -5083,7 +5150,10 @@ export default function MyCaseValue() {
           </Reveal>
 
           <GoldRule />
+          </TabPanel>{/* end overview: Report Header + stats */}
 
+          {/* ====== WIN RATES TAB: Outcome Pie Chart ====== */}
+          <TabPanel tabId="win-rates" activeTab={activeReportTab}>
           {/* === OUTCOME PIE CHART (always shown) === */}
           <Reveal delay={100}>
             <Card glow className="p-6 sm:p-8">
@@ -5142,7 +5212,10 @@ export default function MyCaseValue() {
 
           {/* Animated section divider */}
           <div className="animated-divider my-4" />
+          </TabPanel>{/* end win-rates: Outcome Pie Chart */}
 
+          {/* ====== OVERVIEW TAB: What This Means + Next Steps ====== */}
+          <TabPanel tabId="overview" activeTab={activeReportTab}>
           {/* === WHAT THIS MEANS FOR YOUR SITUATION (personalized) === */}
           <Reveal delay={120}>
             <div className="rounded-2xl overflow-hidden mb-3" style={{
@@ -5448,7 +5521,10 @@ export default function MyCaseValue() {
           </Reveal>
 
           <GoldRule />
+          </TabPanel>{/* end overview: What This Means + Next Steps */}
 
+          {/* ====== OVERVIEW TAB: Free report sections (visible to non-premium users in overview) ====== */}
+          <TabPanel tabId="overview" activeTab={activeReportTab}>
           {/* === FREE REPORT — ENHANCED SECTIONS === */}
           {!isPremium && (
             <>
@@ -6412,6 +6488,11 @@ export default function MyCaseValue() {
               </Reveal>
             </div>
           )}
+
+          </TabPanel>{/* end overview: Free + Premium detailed sections */}
+
+          </div>{/* end main content area */}
+          </div>{/* end flex wrapper (sidebar + main) */}
 
           {/* Poll */}
           <Reveal delay={660}>
