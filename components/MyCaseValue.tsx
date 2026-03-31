@@ -75,11 +75,10 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
     const el = ref.current;
     if (!el) return;
 
-    // Check if element is already in viewport on mount
+    // Check if element is already near viewport on mount (generous 400px buffer)
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 200) {
-      // Already near/in viewport — show with small stagger
-      const stagger = Math.min(delay, 150);
+    if (rect.top < window.innerHeight + 400) {
+      const stagger = Math.min(delay, 120);
       if (stagger > 0) {
         setTimeout(() => setShow(true), stagger);
       } else {
@@ -88,7 +87,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
       return;
     }
 
-    // For elements below the fold, use IntersectionObserver
+    // For elements well below the fold, trigger 400px before they enter viewport
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -96,7 +95,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
           observer.unobserve(el);
         }
       },
-      { threshold: 0.01, rootMargin: '0px 0px 100px 0px' }
+      { threshold: 0.01, rootMargin: '0px 0px 400px 0px' }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -105,8 +104,8 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   return (
     <div ref={ref} style={{
       opacity: show ? 1 : 0,
-      transform: show ? 'translateY(0)' : 'translateY(18px)',
-      transition: 'opacity 0.45s ease-out, transform 0.45s ease-out',
+      transform: show ? 'translateY(0)' : 'translateY(12px)',
+      transition: 'opacity 0.3s ease-out, transform 0.3s ease-out',
     }}>
       {children}
     </div>
@@ -562,7 +561,7 @@ function ReportFeaturesGrid({ lang = 'en' }: { lang?: string }) {
     { title: es ? 'Puntuación de fortaleza' : 'Strength Score', desc: es ? 'Tu caso puntuado del 1 al 100' : 'Your case scored 1-100', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> },
     { title: es ? 'Comparación estatal' : 'State Comparison', desc: es ? 'Cómo se desempeña tu estado' : 'How your state performs', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg> },
     { title: es ? 'Impacto del abogado' : 'Attorney Impact', desc: es ? 'Probabilidades con vs sin abogado' : 'With vs without lawyer odds', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> },
-    { title: es ? 'Predicciones de cronograma' : 'Timeline Predictions', desc: es ? 'Personalizado para tu situación' : 'Customized for your situation', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> },
+    { title: es ? 'Cronograma estimado' : 'Timeline Estimates', desc: es ? 'Personalizado para tu situación' : 'Customized for your situation', free: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> },
   ];
 
   return (
@@ -5272,11 +5271,11 @@ export default function MyCaseValue() {
                 </LockedPreview>
               </Reveal>
 
-              {/* Premium locked section: Predicted Timeline */}
+              {/* Premium locked section: Estimated Timeline */}
               <Reveal delay={320}>
-                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver cronograma predicho' : 'View predicted timeline'}>
+                <LockedPreview lang={lang} onUnlock={() => setShowPricing(true)} label={lang === 'es' ? 'Ver cronograma estimado' : 'View estimated timeline'}>
                   <div className="rounded-2xl p-6 border border-[#1E293B]">
-                    <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Cronograma predicho para tu caso' : 'Predicted timeline for your case'}</div>
+                    <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Cronograma estimado para casos similares' : 'Estimated timeline for similar cases'}</div>
                     <div className="space-y-2">
                       {[
                         { phase: lang === 'es' ? 'Presentación a descubrimiento' : 'Filing to discovery', duration: '3-6 mo' },

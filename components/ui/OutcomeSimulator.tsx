@@ -82,7 +82,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               {es ? 'SIMULADOR INTERACTIVO' : 'INTERACTIVE SIMULATOR'}
             </div>
             <h3 className="text-xl sm:text-2xl font-display font-bold text-white" style={{ letterSpacing: '-0.5px' }}>
-              {es ? 'Proyecta tu resultado' : 'Project Your Outcome'}
+              {es ? 'Explora resultados posibles' : 'Explore Possible Outcomes'}
             </h3>
           </div>
           <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{
@@ -186,10 +186,10 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)',
               border: '1px solid rgba(255,255,255,0.08)',
             }}>
-              {/* Projected Win Rate — large gauge */}
+              {/* Estimated Win Rate — large gauge */}
               <div className="text-center mb-5">
                 <div className="text-[10px] font-bold tracking-[2px] uppercase text-[#94A3B8] mb-2">
-                  {es ? 'TASA DE ÉXITO PROYECTADA' : 'PROJECTED WIN RATE'}
+                  {es ? 'TASA DE ÉXITO ESTIMADA' : 'ESTIMATED WIN RATE'}
                 </div>
                 <div className="relative inline-block w-[120px] sm:w-[140px]">
                   <svg width="100%" height="auto" viewBox="0 0 140 78" preserveAspectRatio="xMidYMid meet">
