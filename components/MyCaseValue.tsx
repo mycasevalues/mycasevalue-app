@@ -65,6 +65,7 @@ const EmailCaptureGate = dynamic(() => import('./ui/EmailCaptureGate'), { ssr: f
 const CollapsedPaywall = dynamic(() => import('./ui/CollapsedPaywall'), { ssr: false });
 const ExitIntentModal = dynamic(() => import('./ui/ExitIntentModal'), { ssr: false });
 const BottomNav = dynamic(() => import('./navigation/BottomNav'), { ssr: false });
+const CommandPalette = dynamic(() => import('./ui/CommandPalette'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -1492,6 +1493,7 @@ export default function MyCaseValue() {
   const [showComparison, setShowComparison] = useState(false);
   const [showWhatIf, setShowWhatIf] = useState(false);
   const [showExitIntent, setShowExitIntent] = useState(false);
+  const [showCommandPalette, setShowCommandPalette] = useState(false);
   const [exitIntentShown, setExitIntentShown] = useState(false);
   const [readingPct, setReadingPct] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -1932,11 +1934,10 @@ export default function MyCaseValue() {
         else if (step > 1) go(step - 1);
         else if (step === 1) go(0);
       }
-      // Ctrl/Cmd + K: focus search input (if on homepage)
+      // Ctrl/Cmd + K: open command palette
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
-        const input = document.querySelector<HTMLInputElement>('input[type="text"]');
-        if (input) input.focus();
+        setShowCommandPalette(prev => !prev);
       }
       // Ctrl/Cmd + P: print report (if on report page)
       if ((e.metaKey || e.ctrlKey) && e.key === 'p' && step === 6 && isPremium) {
@@ -2090,9 +2091,31 @@ export default function MyCaseValue() {
 
   const keyboardShortcutsEl = <KeyboardShortcuts shortcuts={keyboardShortcuts} lang={lang} />;
 
+  const commandPaletteEl = (
+    <CommandPalette
+      lang={lang}
+      isOpen={showCommandPalette}
+      onClose={() => setShowCommandPalette(false)}
+      onSelectCase={(nos, description) => {
+        const sit = SITS.find((s: any) => s.opts?.some((o: any) => o.nos === nos && o.d === description));
+        const opt = sit?.opts?.find((o: any) => o.nos === nos && o.d === description);
+        if (sit && opt) {
+          setSpec({ ...opt, category: sit.id, categoryLabel: sit.label });
+          go(3);
+        }
+      }}
+      onNavigate={(tab) => {
+        if (tab === 'home') reset();
+        if (tab === 'lang') setLang(lang === 'en' ? 'es' : 'en');
+      }}
+      sits={SITS}
+    />
+  );
+
   if (step === 0) return (
     <Shell {...shellProps}>
       {keyboardShortcutsEl}
+      {commandPaletteEl}
       {showOnboarding && <OnboardingTour lang={lang} onComplete={() => setShowOnboarding(false)} />}
       <SocialProofToast lang={lang} active={true} />
       <div className="hero-bg hero-parallax mesh-bg py-8 sm:py-12 pb-6 relative overflow-hidden noise-overlay particle-field cinematic-enter">
@@ -3513,6 +3536,7 @@ export default function MyCaseValue() {
   if (step === 1) return (
     <Shell {...shellProps}>
       {keyboardShortcutsEl}
+      {commandPaletteEl}
       <div className="max-w-xl mx-auto py-8 wizard-step-enter">
         <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <Reveal>
@@ -3551,6 +3575,7 @@ export default function MyCaseValue() {
   // Step 2: Sub-category
   if (step === 2 && sit) return (
     <Shell {...shellProps}>
+      {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
         <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
@@ -3585,6 +3610,7 @@ export default function MyCaseValue() {
   // Step 3: Details
   if (step === 3) return (
     <Shell {...shellProps}>
+      {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
         <WizardProgress step={3} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
@@ -3681,6 +3707,7 @@ export default function MyCaseValue() {
   // Step 4: Consent
   if (step === 4) return (
     <Shell {...shellProps}>
+      {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
         <WizardProgress step={4} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
         <BackButton />
@@ -3721,6 +3748,7 @@ export default function MyCaseValue() {
   // Step 5: Email
   if (step === 5) return (
     <Shell {...shellProps}>
+      {commandPaletteEl}
       <div className="max-w-md mx-auto py-10 text-center page-enter">
         <Reveal>
           <Card glow className="px-6 sm:px-9 py-10">
@@ -3760,6 +3788,7 @@ export default function MyCaseValue() {
     // Loading — premium animated loader overlay
     if (loading) return (
       <Shell {...shellProps}>
+        {commandPaletteEl}
         {showReportLoader && (
           <ReportLoader
             lang={lang}
@@ -3881,6 +3910,7 @@ export default function MyCaseValue() {
 
     return (
       <Shell {...shellProps}>
+        {commandPaletteEl}
         {/* Email capture gate — show on first report view for non-premium users */}
         {showEmailGate && !emailCaptured && !isPremium && (
           <EmailCaptureGate
