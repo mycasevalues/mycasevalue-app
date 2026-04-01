@@ -35,6 +35,7 @@ export default function PasswordGate({ children }: { children: React.ReactNode }
   }, [input]);
 
   if (loading) return null;
+  if (!PASS) return <>{children}</>;
   if (authed) return <>{children}</>;
 
   return (
