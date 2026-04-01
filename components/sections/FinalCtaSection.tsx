@@ -106,46 +106,40 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
           style={{ color: '#8B9AB5' }}
         >
           <div className="flex items-center gap-2">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2">
               <polyline points="20 6 9 17 4 12" />
             </svg>
             {lang === 'es' ? 'Sin crear cuenta' : 'No account required'}
           </div>
           <div className="hidden sm:block w-1 h-1 rounded-full" style={{ background: '#94A3B8' }} />
           <div className="flex items-center gap-2">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2">
               <polyline points="20 6 9 17 4 12" />
             </svg>
             {lang === 'es' ? 'Entrega instantánea' : 'Instant delivery'}
           </div>
           <div className="hidden sm:block w-1 h-1 rounded-full" style={{ background: '#94A3B8' }} />
           <div className="flex items-center gap-2">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2">
               <polyline points="20 6 9 17 4 12" />
             </svg>
             {lang === 'es' ? 'Seguro y privado' : 'Secure & private'}
           </div>
+        </div>
+
+        {/* Data reinforcement */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
+          {[
+            { value: '4.2M+', label: lang === 'es' ? 'casos analizados' : 'cases analyzed' },
+            { value: '94', label: lang === 'es' ? 'distritos federales' : 'federal districts' },
+            { value: '50+', label: lang === 'es' ? 'tipos de caso' : 'case types' },
+            { value: '< 60s', label: lang === 'es' ? 'tiempo de informe' : 'report time' },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-lg font-bold" style={{ color: '#6366F1' }}>{stat.value}</div>
+              <div className="text-[10px]" style={{ color: '#64748B' }}>{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
