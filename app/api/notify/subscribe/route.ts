@@ -1,11 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 
 /**
  * POST /api/notify/subscribe
  * Subscribe to notifications for a specific case type or state.
  */
 export async function POST(request: NextRequest) {
+  // Rate limiting: 20 requests per minute per IP
+  const ip = getClientIp(request.headers);
+  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 20 });
+  if (!success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   try {
     const { email, nos_code, state, frequency } = await request.json();
 

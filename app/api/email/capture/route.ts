@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 
 /**
  * POST /api/email/capture
@@ -9,6 +10,13 @@ import { createClient } from '@supabase/supabase-js';
  * Stores in Supabase `email_leads` table (falls back gracefully if table doesn't exist).
  */
 export async function POST(request: NextRequest) {
+  // Rate limiting: 20 requests per minute per IP
+  const ip = getClientIp(request.headers);
+  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 20 });
+  if (!success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   try {
     const { email, case_type, nos_code, state, source } = await request.json();
 

@@ -1,8 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
+  // Rate limiting: 100 requests per minute per IP (webhooks can have traffic spikes)
+  const ip = getClientIp(req.headers);
+  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 100 });
+  if (!success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   try {
     const secretKey = process.env.STRIPE_SECRET_KEY;
     const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;

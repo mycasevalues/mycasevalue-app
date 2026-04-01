@@ -15,8 +15,8 @@ interface Message {
 
 const MESSAGES: Message[] = [
   {
-    en: '4.2M+ federal court outcomes indexed · Updated quarterly from FJC',
-    es: '4.2M+ resultados de tribunales federales indexados · Actualizado trimestralmente del FJC',
+    en: '5.1M+ federal court outcomes indexed · Updated quarterly from FJC',
+    es: '5.1M+ resultados de tribunales federales indexados · Actualizado trimestralmente del FJC',
   },
   {
     en: 'EEOC recovered $699.6M for discrimination victims in FY2024',
@@ -24,8 +24,8 @@ const MESSAGES: Message[] = [
     highlight: true,
   },
   {
-    en: 'Free access to win rates, settlement ranges & timelines for 50+ case types',
-    es: 'Acceso gratuito a tasas de exito, rangos de acuerdos y tiempos para 50+ tipos de caso',
+    en: 'Free access to win rates, settlement ranges & timelines for 84 case types',
+    es: 'Acceso gratuito a tasas de exito, rangos de acuerdos y tiempos para 84 tipos de caso',
   },
   {
     en: 'New: District Intelligence — explore data across all 94 federal districts',

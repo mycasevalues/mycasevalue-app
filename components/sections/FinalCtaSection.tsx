@@ -130,9 +130,9 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
         {/* Data reinforcement */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
           {[
-            { value: '4.2M+', label: lang === 'es' ? 'casos analizados' : 'cases analyzed' },
+            { value: '5.1M+', label: lang === 'es' ? 'casos analizados' : 'cases analyzed' },
             { value: '94', label: lang === 'es' ? 'distritos federales' : 'federal districts' },
-            { value: '50+', label: lang === 'es' ? 'tipos de caso' : 'case types' },
+            { value: '84', label: lang === 'es' ? 'tipos de caso' : 'case types' },
             { value: '< 60s', label: lang === 'es' ? 'tiempo de informe' : 'report time' },
           ].map((stat, i) => (
             <div key={i} className="text-center">

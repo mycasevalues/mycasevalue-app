@@ -27,7 +27,7 @@ const FAQ_EN: FaqItem[] = [
   },
   {
     q: 'What if my case type isn\'t listed?',
-    a: 'We cover 47 primary federal practice areas and hundreds of subcategories. If your specific case type isn\'t in our system, the closest category will be suggested, and we\'ll explain why. You\'re welcome to contact us for custom analysis of rare case types.',
+    a: 'We cover 84 primary federal practice areas and hundreds of subcategories. If your specific case type isn\'t in our system, the closest category will be suggested, and we\'ll explain why. You\'re welcome to contact us for custom analysis of rare case types.',
   },
   {
     q: 'How quickly do I get my report?',
@@ -86,7 +86,7 @@ const FAQ_ES: FaqItem[] = [
   },
   {
     q: '¿Qué pasa si mi tipo de caso no está en la lista?',
-    a: 'Cubrimos 47 áreas principales de práctica federal y cientos de subcategorías. Si tu tipo de caso específico no está en nuestro sistema, se sugerirá la categoría más cercana y explicaremos por qué. Puedes contactarnos para análisis personalizados de tipos de casos raros.',
+    a: 'Cubrimos 84 áreas principales de práctica federal y cientos de subcategorías. Si tu tipo de caso específico no está en nuestro sistema, se sugerirá la categoría más cercana y explicaremos por qué. Puedes contactarnos para análisis personalizados de tipos de casos raros.',
   },
   {
     q: '¿Qué tan rápido recibo mi informe?',

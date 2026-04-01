@@ -26,7 +26,7 @@ const SOURCES: DataSource[] = [
     abbrev: 'FJC',
     description: 'The definitive source for federal civil case outcomes. Contains every civil case filed in U.S. district courts since 1970 with disposition, judgment, and timeline data.',
     descriptionEs: 'La fuente definitiva para resultados de casos civiles federales. Contiene cada caso civil presentado en tribunales de distrito de EE.UU. desde 1970.',
-    records: '4.2M+ cases',
+    records: '5.1M+ cases',
     updateFreq: 'Quarterly',
     updateFreqEs: 'Trimestral',
     color: '#4F46E5',

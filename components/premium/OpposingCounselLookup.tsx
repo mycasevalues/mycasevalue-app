@@ -118,6 +118,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
           placeholder={t.placeholder}
+          aria-label={lang === 'es' ? 'Buscar abogado contrario' : 'Search opposing counsel'}
           className="flex-1 rounded-lg px-3 py-2.5 text-[13px]"
           style={{ background: 'rgba(15,23,42,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
         />

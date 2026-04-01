@@ -223,6 +223,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
         value={search}
         onChange={e => setSearch(e.target.value)}
         placeholder={t.searchPlaceholder}
+        aria-label={lang === 'es' ? 'Buscar distrito' : 'Search district'}
         className="w-full rounded-lg px-4 py-2.5 text-[13px] mb-4"
         style={{ background: 'rgba(15,23,42,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
       />

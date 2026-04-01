@@ -51,11 +51,11 @@ const TIME_STAMPS_ES = [
 ];
 
 export default function SocialProofBar({
-  totalCases = 4200000,
+  totalCases = 5100000,
   lang = 'en',
 }: SocialProofBarProps) {
   // NOTE: Statistics accuracy
-  // - totalCases (4.2M+): Reasonable for aggregated court records across US federal & state courts
+  // - totalCases (5.1M+): Reasonable for aggregated court records across US federal & state courts
   // - States Covered (50): Accurate (all 50 US states)
   // - Updated timestamp: Dynamic, reflects current data freshness
   // Consider adding data refresh timestamp and actual case count verification from backend

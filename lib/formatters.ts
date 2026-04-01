@@ -8,12 +8,12 @@ export function formatPct(value: number): string {
   return `${Number(value).toFixed(1)}%`;
 }
 
-/** Large case count: comma-separated. e.g. "4,200,000" */
+/** Large case count: comma-separated. e.g. "5,100,000" */
 export function formatCount(value: number): string {
   return Number(value).toLocaleString('en-US');
 }
 
-/** Compact count: short form. e.g. "4.2M" or "12.5K" */
+/** Compact count: short form. e.g. "5.1M" or "12.5K" */
 export function formatCountCompact(value: number): string {
   if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
   if (value >= 1_000) return `${(value / 1_000).toFixed(1)}K`;

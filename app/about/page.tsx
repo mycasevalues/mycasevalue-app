@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About MyCaseValue — Democratizing Federal Court Data',
-  description: 'MyCaseValue is on a mission to democratize access to federal court outcome data. Learn how we aggregate 4.2M+ cases to help you research real case outcomes and timelines.',
+  description: 'MyCaseValue is on a mission to democratize access to federal court outcome data. Learn how we aggregate 5.1M+ cases to help you research real case outcomes and timelines.',
   alternates: { canonical: 'https://mycasevalues.com/about' },
   openGraph: {
     title: 'About MyCaseValue — Democratizing Federal Court Data',
-    description: 'MyCaseValue aggregates 4.2M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
+    description: 'MyCaseValue aggregates 5.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
     type: 'website',
     url: 'https://mycasevalues.com/about',
   },
@@ -20,7 +20,7 @@ const jsonLd = {
       name: 'MyCaseValue',
       url: 'https://mycasevalues.com',
       logo: 'https://mycasevalues.com/icon-512.png',
-      description: 'A platform democratizing access to federal court outcome data from 4.2M+ cases.',
+      description: 'A platform democratizing access to federal court outcome data from 5.1M+ cases.',
       sameAs: [
         'https://twitter.com/mycasevalue',
         'https://linkedin.com/company/mycasevalue',
@@ -69,7 +69,7 @@ export default function AboutPage() {
             Democratizing Federal Court Data
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
-            MyCaseValue puts outcome data from 4.2M+ federal cases at your fingertips, making real court outcomes accessible to everyone.
+            MyCaseValue puts outcome data from 5.1M+ federal cases at your fingertips, making real court outcomes accessible to everyone.
           </p>
         </div>
       </div>

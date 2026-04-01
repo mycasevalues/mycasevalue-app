@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 
 const VALID_VOTES = ['fair', 'low', 'high', 'unsure'];
 
@@ -7,6 +8,13 @@ const VALID_VOTES = ['fair', 'low', 'high', 'unsure'];
  * Records user poll votes with input validation.
  */
 export async function POST(request: NextRequest) {
+  // Rate limiting: 50 requests per minute per IP (high for polls)
+  const ip = getClientIp(request.headers);
+  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 50 });
+  if (!success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   try {
     const body = await request.json();
     const vote = typeof body.vote === 'string' ? body.vote.trim().toLowerCase().slice(0, 20) : '';

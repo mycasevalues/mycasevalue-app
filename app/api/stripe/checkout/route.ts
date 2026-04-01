@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 
 const PRICES: Record<string, { amount: number; name: string; description: string }> = {
   single: {
@@ -16,6 +17,13 @@ const PRICES: Record<string, { amount: number; name: string; description: string
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
+  // Rate limiting: 20 requests per minute per IP
+  const ip = getClientIp(req.headers);
+  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 20 });
+  if (!success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   try {
     const secretKey = process.env.STRIPE_SECRET_KEY;
     if (!secretKey) {

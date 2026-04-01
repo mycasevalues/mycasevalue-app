@@ -299,6 +299,7 @@ export default function CommandPalette({
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={lang === 'es' ? 'Buscar tipo de caso, página o acción...' : 'Search case type, page, or action...'}
+            aria-label={lang === 'es' ? 'Búsqueda de comandos' : 'Command search'}
             style={{
               flex: 1,
               background: 'transparent',

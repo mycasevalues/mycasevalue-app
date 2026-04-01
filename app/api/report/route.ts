@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 
 /**
  * POST /api/report
@@ -9,6 +10,13 @@ import { createClient } from '@supabase/supabase-js';
  * and logs the request for analytics.
  */
 export async function POST(request: NextRequest) {
+  // Rate limiting: 30 requests per minute per IP
+  const ip = getClientIp(request.headers);
+  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 30 });
+  if (!success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   try {
     const body = await request.json();
     const { nos_code, state, lang, email, tier } = body;

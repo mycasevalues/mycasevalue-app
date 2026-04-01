@@ -14,10 +14,18 @@ export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from 'next/server'
 import { runFullIngestion, runIncrementalIngestion } from '../../../lib/ingestion/orchestrator'
+import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 
 export const maxDuration = 300 // Allow 5 minutes for ingestion
 
 export async function POST(request: NextRequest) {
+  // Rate limiting: 5 requests per minute per IP (strict for admin endpoint)
+  const ip = getClientIp(request.headers);
+  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 5 });
+  if (!success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   // Verify API key
   const authHeader = request.headers.get('authorization')
   const expectedKey = process.env.INGEST_API_KEY

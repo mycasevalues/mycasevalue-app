@@ -112,6 +112,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
         <select
           value={filterType}
           onChange={e => setFilterType(e.target.value)}
+          aria-label={lang === 'es' ? 'Filtrar por tipo de caso' : 'Filter by case type'}
           className="rounded-lg px-3 py-2 text-[12px]"
           style={{ background: 'rgba(15,23,42,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
         >

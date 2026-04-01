@@ -9,7 +9,7 @@ const translations = {
     comparing: 'Comparing outcomes across districts...',
     calculating: 'Calculating win rates and settlements...',
     ready: 'Your report is ready',
-    powered: 'Powered by 4.2M+ federal court records',
+    powered: 'Powered by 5.1M+ federal court records',
   },
   es: {
     searching: 'Buscando registros de cortes federales...',
@@ -17,7 +17,7 @@ const translations = {
     comparing: 'Comparando resultados entre distritos...',
     calculating: 'Calculando tasas de victoria y acuerdos...',
     ready: 'Tu informe está listo',
-    powered: 'Impulsado por 4.2M+ registros de cortes federales',
+    powered: 'Impulsado por 5.1M+ registros de cortes federales',
   },
 };
 

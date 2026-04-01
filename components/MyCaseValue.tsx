@@ -2309,6 +2309,7 @@ export default function MyCaseValue() {
                         if (e.key === 'Escape') setShowSuggestions(false);
                       }}
                       placeholder={lang === 'es' ? 'Describe tu situación en pocas palabras...' : 'Describe your situation in a few words...'}
+                      aria-label={lang === 'es' ? 'Descripción AI de su situación' : 'AI case description'}
                       className="w-full text-[15px] rounded-2xl transition-all input-frosted focus-ring-premium"
                       style={{
                         color: '#F0F2F5',
@@ -3500,6 +3501,7 @@ export default function MyCaseValue() {
               placeholder={lang === 'es' ? 'Buscar término...' : 'Search terms...'}
               value={glossarySearch}
               onChange={e => setGlossarySearch(e.target.value)}
+              aria-label={lang === 'es' ? 'Buscar términos legales' : 'Search legal terms'}
               className="w-full px-4 py-2.5 rounded-xl text-[13px] mb-3 border border-[var(--border-default)] bg-[#0B1221] focus:outline-none focus:border-[#4F46E5] transition-colors"
               style={{ color: 'var(--fg-secondary)' }}
             />
@@ -7005,7 +7007,7 @@ export default function MyCaseValue() {
                 <h2 className="text-lg font-display font-bold">
                   {legalPage === 'terms' ? (lang === 'es' ? 'Términos de Servicio' : 'Terms of Service') : legalPage === 'privacy' ? (lang === 'es' ? 'Política de Privacidad' : 'Privacy Policy') : legalPage === 'cookies' ? (lang === 'es' ? 'Política de Cookies' : 'Cookie Policy') : (lang === 'es' ? 'Descargo de Responsabilidad' : 'Legal Disclaimer')}
                 </h2>
-                <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] border-none cursor-pointer transition-colors">
+                <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] border-none cursor-pointer transition-colors" aria-label={lang === 'es' ? 'Cerrar' : 'Close'}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
                 </button>
               </div>
