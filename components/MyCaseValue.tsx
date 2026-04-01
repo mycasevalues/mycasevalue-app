@@ -85,6 +85,8 @@ const HowItWorks = dynamic(() => import('./sections/HowItWorks'), { ssr: false }
 const SampleReportModal = dynamic(() => import('./sections/SampleReportModal'), { ssr: false });
 const AiCaseEvalPreview = dynamic(() => import('./sections/AiCaseEvalPreview'), { ssr: false });
 const AttorneyMatchIntelligence = dynamic(() => import('./sections/AttorneyMatchIntelligence'), { ssr: false });
+const RiskIntelligenceDashboard = dynamic(() => import('./sections/RiskIntelligenceDashboard'), { ssr: false });
+const DataMethodologySection = dynamic(() => import('./sections/DataMethodologySection'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -2655,6 +2657,18 @@ export default function MyCaseValue() {
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={360}>
               <AttorneyMatchIntelligence lang={lang} />
+            </Reveal>
+          </div>
+
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={370}>
+              <RiskIntelligenceDashboard lang={lang} />
+            </Reveal>
+          </div>
+
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={380}>
+              <DataMethodologySection lang={lang} />
             </Reveal>
           </div>
 
