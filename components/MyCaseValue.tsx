@@ -2212,7 +2212,7 @@ export default function MyCaseValue() {
               <div className="flex gap-4 sm:gap-6 mb-8 flex-wrap data-grid-stagger">
                 <div className="stat-glow" style={{ '--stat-color': '#FFFFFF' } as any}>
                   <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
-                    {heroCounterDone ? <><AnimatedNumber value={4.2} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                    {heroCounterDone ? <><AnimatedNumber value={5.1} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                   </div>
                   <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
                 </div>
@@ -2226,14 +2226,14 @@ export default function MyCaseValue() {
                 <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#A5B4FC' } as any}>
                   <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #A5B4FC)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
-                    {heroCounterDone ? '35+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                    {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                   </div>
                   <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
                 </div>
                 <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
                 <div className="stat-glow" style={{ '--stat-color': '#5EEAD4' } as any}>
                   <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#5EEAD4', textShadow: '0 2px 12px rgba(94,234,212,0.3)' }}>
-                    {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                    {heroCounterDone ? '84' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                   </div>
                   <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
                 </div>
