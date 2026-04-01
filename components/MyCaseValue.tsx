@@ -3983,25 +3983,26 @@ export default function MyCaseValue() {
             <p className="text-[15px] text-[var(--fg-muted)] mb-6 leading-relaxed">
               {lang === 'es' ? 'Guarda una copia en tu correo, o sáltalo para ver ahora.' : 'Save a copy to your email, or skip to view now.'}
             </p>
-            <div className="flex gap-2">
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                autoComplete="email"
-                aria-label="Email address"
-                className="flex-1 px-4 py-3 text-[15px] border-[1.5px] border-[var(--border-default)] rounded-xl outline-none focus:border-[#4F46E5] focus:ring-2 focus:ring-[#4F46E5]/20 card-bg bg-[#131B2E] transition-colors" />
-              <button onClick={() => {
+            <form className="flex gap-2" onSubmit={e => {
+                e.preventDefault();
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (emailRegex.test(email)) {
                   setEmailSent(true);
                   apiCall('/api/email/capture', 'POST', { email, case_type: spec?.d });
                   startLoad();
                 }
-              }} className="px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer transition-all active:scale-[0.96]"
+              }}>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                required
+                autoComplete="email"
+                aria-label="Email address"
+                className="flex-1 px-4 py-3 text-[15px] border-[1.5px] border-[var(--border-default)] rounded-xl outline-none focus:border-[#4F46E5] focus:ring-2 focus:ring-[#4F46E5]/20 card-bg bg-[#131B2E] transition-colors" />
+              <button type="submit" className="px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer transition-all active:scale-[0.96]"
                 style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', minWidth: '44px', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {lang === 'es' ? 'Enviar' : 'Send'}
               </button>
-            </div>
+            </form>
             <button onClick={startLoad} className="mt-3 text-sm text-[var(--fg-muted)] bg-transparent border-none cursor-pointer underline hover:text-[var(--fg-muted)] transition-colors">
               {lang === 'es' ? 'Saltar por ahora' : 'Skip for now'}
             </button>
@@ -6556,23 +6557,24 @@ export default function MyCaseValue() {
                   {notifySent ? (
                     <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(13,148,136,0.15)', color: 'var(--accent-secondary)' }}>{lang === 'es' ? 'Se te notificará.' : 'You will be notified.'}</div>
                   ) : (
-                    <div className="flex gap-2">
+                    <form className="flex gap-2" onSubmit={e => {
+                        e.preventDefault();
+                        if (notifyEmail.includes('@') && notifyEmail.includes('.')) {
+                          setNotifySent(true);
+                          apiCall('/api/notify/subscribe', 'POST', { email: notifyEmail, nos_code: spec?.nos });
+                        }
+                      }}>
                       <input type="email" value={notifyEmail} onChange={e => setNotifyEmail(e.target.value)}
                         placeholder="your@email.com"
                         required
                         autoComplete="email"
                         aria-label="Notification email"
                         className="flex-1 px-3.5 py-2.5 text-sm border-[1.5px] border-[var(--border-default)] rounded-lg outline-none focus:border-[#4F46E5] card-bg bg-[#131B2E] transition-colors" />
-                      <button onClick={() => {
-                        if (notifyEmail.includes('@') && notifyEmail.includes('.')) {
-                          setNotifySent(true);
-                          apiCall('/api/notify/subscribe', 'POST', { email: notifyEmail, nos_code: spec?.nos });
-                        }
-                      }} className="px-5 py-2.5 text-sm font-semibold text-white rounded-lg cursor-pointer transition-all active:scale-[0.96]"
+                      <button type="submit" className="px-5 py-2.5 text-sm font-semibold text-white rounded-lg cursor-pointer transition-all active:scale-[0.96]"
                         style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
                         {lang === 'es' ? 'Notificarme' : 'Notify me'}
                       </button>
-                    </div>
+                    </form>
                   )}
                 </Card>
               </Reveal>
