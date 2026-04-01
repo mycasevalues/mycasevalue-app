@@ -161,7 +161,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'What case types does MyCaseValue cover?',
-          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue covers 50+ federal case types including employment discrimination, personal injury, medical malpractice, product liability, civil rights, wrongful termination, contract disputes, FDCPA violations, and more. Data spans all 94 federal districts.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue covers 84 federal case types including employment discrimination, personal injury, medical malpractice, product liability, civil rights, wrongful termination, contract disputes, FDCPA violations, and more. Data spans all 94 federal districts.' },
         },
         {
           '@type': 'Question',

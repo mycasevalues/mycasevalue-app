@@ -6,7 +6,7 @@ interface NationwideDashboardProps {
 }
 
 const METRICS = [
-  { key: 'total', value: 4217834, label: 'Total Cases Analyzed', labelEs: 'Casos Analizados', color: '#4F46E5', icon: 'database' },
+  { key: 'total', value: 5127834, label: 'Total Cases Analyzed', labelEs: 'Casos Analizados', color: '#4F46E5', icon: 'database' },
   { key: 'settled', value: 67, label: 'Settlement Rate', labelEs: 'Tasa de Acuerdos', color: '#0D9488', icon: 'handshake', suffix: '%' },
   { key: 'median', value: 85, label: 'Median Recovery ($K)', labelEs: 'Recuperación Mediana ($K)', color: '#D97706', icon: 'dollar', prefix: '$', suffix: 'K' },
   { key: 'duration', value: 11.2, label: 'Avg Duration (months)', labelEs: 'Duración Promedio (meses)', color: '#A5B4FC', icon: 'clock', suffix: ' mo' },

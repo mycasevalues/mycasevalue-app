@@ -43,7 +43,7 @@ const FAQ_EN: FaqItem[] = [
   },
   {
     q: 'What types of cases does MyCaseValues cover?',
-    a: 'We cover 50+ federal civil case types including employment discrimination (Title VII, ADA, ADEA), personal injury, medical malpractice, product liability, civil rights (§1983), contract disputes, FLSA wage violations, FMLA retaliation, premises liability, wrongful termination, and more. Each maps to a specific federal Nature of Suit (NOS) code.',
+    a: 'We cover 84 federal civil case types including employment discrimination (Title VII, ADA, ADEA), personal injury, medical malpractice, product liability, civil rights (§1983), contract disputes, FLSA wage violations, FMLA retaliation, premises liability, wrongful termination, and more. Each maps to a specific federal Nature of Suit (NOS) code.',
   },
   {
     q: 'How is MyCaseValues different from Westlaw or LexisNexis?',

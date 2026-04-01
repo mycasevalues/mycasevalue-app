@@ -1559,7 +1559,7 @@ export default function MyCaseValue() {
   const [calcAmount, setCalcAmount] = useState(50000);
   const [heroCounterDone, setHeroCounterDone] = useState(false);
   const t = TRANSLATIONS[lang];
-  const [totalCases, setTotalCases] = useState(4168590);
+  const [totalCases, setTotalCases] = useState(5127834);
 
   const isPremium = tier !== 'free';
 
