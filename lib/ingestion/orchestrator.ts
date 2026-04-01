@@ -388,25 +388,35 @@ export async function runIncrementalIngestion(): Promise<IngestionResult[]> {
   const results: IngestionResult[] = []
 
   // Get last successful run timestamp
-  const { data: lastRun } = await getSupabaseAdmin()
-    .from('ingestion_log' as any)
-    .select('completed_at')
-    .eq('status', 'completed')
-    .order('completed_at', { ascending: false })
-    .limit(1)
-    .single()
+  let since = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
+  try {
+    const supabase = getSupabaseAdmin()
+    if (supabase) {
+      const { data: lastRun } = await supabase
+        .from('ingestion_log' as any)
+        .select('completed_at')
+        .eq('status', 'completed')
+        .order('completed_at', { ascending: false })
+        .limit(1)
+        .single()
+      if (lastRun?.completed_at) since = lastRun.completed_at
+    }
+  } catch (e: any) {
+    console.warn('[Orchestrator] Could not get last run timestamp:', e.message)
+  }
 
-  const since = lastRun?.completed_at || new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
   console.log(`[Orchestrator] Running incremental ingestion since ${since}`)
 
   // CourtListener incremental — fetch new opinions since last run
   const clResult = await runSource('courtlistener_incremental', async () => {
     const data: any = await ingestCourtListenerData()
     let inserted = 0
+    const supabase = getSupabaseAdmin()
+    if (!supabase) return { processed: 0, inserted: 0, updated: 0 }
 
-    if (data.opinions) {
-      for (const opinion of data.opinions as any[]) {
-        const { error } = await getSupabaseAdmin()
+    for (const opinion of (data.opinions || []) as any[]) {
+      try {
+        const { error } = await supabase
           .from('opinions' as any)
           .upsert({
             courtlistener_id: opinion.courtlistener_id || opinion.id || String(Math.random()),
@@ -417,6 +427,8 @@ export async function runIncrementalIngestion(): Promise<IngestionResult[]> {
             source: 'courtlistener',
           }, { onConflict: 'courtlistener_id' })
         if (!error) inserted++
+      } catch (e: any) {
+        console.warn('[CL-incremental] Upsert error:', e.message)
       }
     }
 
@@ -425,9 +437,117 @@ export async function runIncrementalIngestion(): Promise<IngestionResult[]> {
   results.push(clResult)
 
   // Refresh cache after incremental
-  await getSupabaseAdmin().rpc('refresh_stats_cache')
+  try {
+    const supabase = getSupabaseAdmin()
+    if (supabase) await supabase.rpc('refresh_stats_cache')
+  } catch (e: any) {
+    console.warn('[Orchestrator] Cache refresh failed:', e.message)
+  }
 
   return results
+}
+
+/**
+ * Run a single named source independently — avoids Vercel function timeout.
+ * Usage: POST /api/ingest { "source": "fjc" }
+ */
+export async function runSingleSource(sourceName: string): Promise<IngestionResult[]> {
+  console.log(`[Orchestrator] Running single source: ${sourceName}`)
+
+  if (sourceName === 'fjc') {
+    const result = await runSource('fjc', async () => {
+      const data = await ingestFJCData()
+      let inserted = 0
+      const supabase = getSupabaseAdmin()
+      if (!supabase) return { processed: data.caseStats?.length || 0, inserted: 0, updated: 0 }
+
+      for (const stat of data.caseStats || []) {
+        try {
+          const { error } = await supabase
+            .from('case_stats' as any)
+            .upsert({
+              nos_code: stat.nosCode || stat.nos_code,
+              label: stat.label,
+              category: stat.category || 'other',
+              total_cases: stat.caseCount || stat.total_cases || 0,
+              win_rate: stat.plaintiffWinRate || stat.win_rate || 0,
+              settlement_rate: stat.settlementRate || stat.settlement_rate || 0,
+              avg_duration_months: stat.avgDuration || stat.avg_duration_months || 0,
+              median_settlement: stat.median_settlement || 0,
+              settlement_lo: stat.settlement_lo || 0,
+              settlement_md: stat.settlement_md || 0,
+              settlement_hi: stat.settlement_hi || 0,
+              represented_win_rate: stat.represented_win_rate || 0,
+              represented_total: stat.represented_total || 0,
+              pro_se_win_rate: stat.pro_se_win_rate || 0,
+              pro_se_total: stat.proseCount || stat.pro_se_total || 0,
+              source: 'fjc',
+              last_updated: new Date().toISOString()
+            }, { onConflict: 'nos_code,source' })
+          if (!error) inserted++
+        } catch (e: any) {
+          console.warn(`[FJC-single] Upsert error:`, e.message)
+        }
+      }
+      return { processed: data.caseStats?.length || 0, inserted, updated: 0 }
+    })
+    return [result]
+  }
+
+  if (sourceName === 'courtlistener') {
+    const result = await runSource('courtlistener', async () => {
+      const data: any = await ingestCourtListenerData()
+      let inserted = 0
+      const supabase = getSupabaseAdmin()
+      if (!supabase) return { processed: 0, inserted: 0, updated: 0 }
+
+      for (const opinion of (data.opinions || []) as any[]) {
+        try {
+          const { error } = await supabase
+            .from('opinions' as any)
+            .upsert({
+              courtlistener_id: opinion.courtlistener_id || opinion.id || String(Math.random()),
+              case_name: opinion.case_name,
+              court: opinion.court,
+              date_filed: opinion.date_filed,
+              citation: opinion.citation,
+              opinion_type: opinion.opinion_type || opinion.document_type,
+              precedential_status: opinion.precedential_status,
+              source: 'courtlistener',
+            }, { onConflict: 'courtlistener_id' })
+          if (!error) inserted++
+        } catch (e: any) {
+          console.warn('[CL-single] Upsert error:', e.message)
+        }
+      }
+      return { processed: data.opinions?.length || 0, inserted, updated: 0 }
+    })
+    return [result]
+  }
+
+  if (sourceName === 'recap') {
+    const result = await runSource('recap', async () => {
+      const data: any = await ingestRECAPData()
+      const processed = Array.isArray(data) ? data.length : (data?.dockets?.length || 0)
+      return { processed, inserted: processed, updated: 0 }
+    })
+    return [result]
+  }
+
+  if (sourceName === 'refresh_cache') {
+    const supabase = getSupabaseAdmin()
+    if (supabase) {
+      try {
+        await supabase.rpc('refresh_stats_cache')
+        console.log('[Orchestrator] Stats cache refreshed')
+      } catch (e: any) {
+        console.warn('[Orchestrator] Cache refresh failed:', e.message)
+      }
+    }
+    return [{ source: 'refresh_cache', status: 'completed', recordsProcessed: 0, recordsInserted: 0, recordsUpdated: 0, duration: 0 }]
+  }
+
+  return [{ source: sourceName, status: 'failed', recordsProcessed: 0, recordsInserted: 0, recordsUpdated: 0, duration: 0, error: `Unknown source: ${sourceName}` }]
 }
 
 /**

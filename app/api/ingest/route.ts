@@ -33,11 +33,16 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json().catch(() => ({}))
     const mode = (body as any)?.mode || 'incremental'
+    const source = (body as any)?.source || null // Optional: 'fjc', 'courtlistener', 'recap'
 
-    console.log(`[Ingest API] Starting ${mode} ingestion...`)
+    console.log(`[Ingest API] Starting ${mode} ingestion...${source ? ` (source: ${source})` : ''}`)
 
     let results
-    if (mode === 'full') {
+    if (source) {
+      // Run a single source only — avoids timeout
+      const { runSingleSource } = await import('../../../lib/ingestion/orchestrator')
+      results = await runSingleSource(source)
+    } else if (mode === 'full') {
       results = await runFullIngestion()
     } else {
       results = await runIncrementalIngestion()
@@ -48,6 +53,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       status: allSucceeded ? 'completed' : 'partial_failure',
       mode,
+      source: source || 'all',
       results,
       timestamp: new Date().toISOString()
     })
