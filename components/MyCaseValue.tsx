@@ -2174,7 +2174,7 @@ export default function MyCaseValue() {
           } as any} />
         ))}
 
-        <div className="hero-grid grid gap-6 lg:gap-10" style={{ gridTemplateColumns: '1fr' }}>
+        <div className="hero-grid grid gap-6 lg:gap-10">
           <div className="relative z-10">
             <Reveal>
               {/* Top badges row — dark glass on dark hero */}
@@ -2908,6 +2908,7 @@ export default function MyCaseValue() {
                           </div>
                           <div className="testimonial-quote text-[var(--fg-secondary)] font-medium text-[15px]">&ldquo;{tm.quote}&rdquo;</div>
                           <div className="text-[12px] text-[var(--fg-muted)] mt-3 font-semibold">{tm.author}</div>
+                          {(tm as any).role && <div className="text-[10px] mt-0.5" style={{ color: tm.color }}>{(tm as any).role}</div>}
                         </div>
                       </div>
                     </div>
