@@ -109,7 +109,7 @@ export default function AboutPage() {
                 {
                   step: '02',
                   title: 'Review',
-                  description: 'Explore win rates, settlement percentages, recovery ranges, and case timelines derived from 4.2M+ real federal cases.',
+                  description: 'Explore win rates, settlement percentages, recovery ranges, and case timelines derived from 5.1M+ real federal cases.',
                   icon: '📊',
                 },
                 {
@@ -203,8 +203,8 @@ export default function AboutPage() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '4.2M+', l: 'Federal cases', c: '#4F46E5' },
-                { v: '50+', l: 'Case types', c: '#0D9488' },
+                { v: '5.1M+', l: 'Federal cases', c: '#4F46E5' },
+                { v: '84', l: 'Case types', c: '#0D9488' },
                 { v: '94', l: 'Federal districts', c: '#1A3260' },
                 { v: '50+ yrs', l: 'Historical data', c: '#64748B' },
               ].map((s, i) => (

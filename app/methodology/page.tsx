@@ -137,7 +137,7 @@ export default function MethodologyPage() {
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>Dataset Coverage</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '4.2M+', l: 'Federal cases', c: '#4F46E5' },
+                { v: '5.1M+', l: 'Federal cases', c: '#4F46E5' },
                 { v: '50+', l: 'Years of data', c: '#0D9488' },
                 { v: '20+', l: 'Case categories', c: '#1A3260' },
                 { v: '94', l: 'Federal districts', c: '#64748B' },
