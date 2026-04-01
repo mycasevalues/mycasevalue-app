@@ -1,14 +1,63 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface AnnouncementBarProps {
   lang?: 'en' | 'es';
   totalCases?: number;
 }
 
-export default function AnnouncementBar({ lang = 'en', totalCases = 4200000 }: AnnouncementBarProps) {
-  const caseCount = (totalCases / 1000000).toFixed(1);
+interface Message {
+  en: string;
+  es: string;
+  highlight?: boolean;
+}
+
+const MESSAGES: Message[] = [
+  {
+    en: '4.2M+ federal court outcomes indexed · Updated quarterly from FJC',
+    es: '4.2M+ resultados de tribunales federales indexados · Actualizado trimestralmente del FJC',
+  },
+  {
+    en: 'EEOC recovered $699.6M for discrimination victims in FY2024',
+    es: 'La EEOC recupero $699.6M para victimas de discriminacion en AF2024',
+    highlight: true,
+  },
+  {
+    en: 'Free access to win rates, settlement ranges & timelines for 50+ case types',
+    es: 'Acceso gratuito a tasas de exito, rangos de acuerdos y tiempos para 50+ tipos de caso',
+  },
+  {
+    en: 'New: District Intelligence — explore data across all 94 federal districts',
+    es: 'Nuevo: Inteligencia de Distritos — explore datos de los 94 distritos federales',
+    highlight: true,
+  },
+  {
+    en: 'Exposed: 97% EEOC litigation success rate — see the data yourself',
+    es: 'Revelado: 97% de exito del EEOC en litigios — vea los datos usted mismo',
+  },
+];
+
+export default function AnnouncementBar({ lang = 'en' }: AnnouncementBarProps) {
+  const [dismissed, setDismissed] = useState(false);
+  const [msgIndex, setMsgIndex] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setMsgIndex(prev => (prev + 1) % MESSAGES.length);
+        setFading(false);
+      }, 300);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (dismissed) return null;
+
+  const msg = MESSAGES[msgIndex];
+  const text = lang === 'es' ? msg.es : msg.en;
 
   return (
     <div
@@ -23,34 +72,49 @@ export default function AnnouncementBar({ lang = 'en', totalCases = 4200000 }: A
         <span
           className="inline-block w-2 h-2 rounded-full flex-shrink-0"
           style={{
-            background: '#10B981',
-            boxShadow: '0 0 6px rgba(16,185,129,0.6)',
+            background: msg.highlight ? '#F59E0B' : '#10B981',
+            boxShadow: msg.highlight ? '0 0 6px rgba(245,158,11,0.6)' : '0 0 6px rgba(16,185,129,0.6)',
             animation: 'livePulse 2s ease-in-out infinite',
           }}
           aria-hidden="true"
         />
 
-        <span className="text-[11px] sm:text-[12px]" style={{ color: 'var(--fg-secondary)' }}>
-          {lang === 'es' ? (
-            <>
-              <span style={{ fontWeight: 600, color: 'var(--fg-primary)' }}>{caseCount}M+</span>
-              {' '}resultados de tribunales federales indexados
-              <span className="hidden sm:inline"> · </span>
-              <span className="hidden sm:inline" style={{ color: 'var(--accent-primary, #6366F1)' }}>
-                Actualizado en tiempo real desde PACER
-              </span>
-            </>
-          ) : (
-            <>
-              <span style={{ fontWeight: 600, color: 'var(--fg-primary)' }}>{caseCount}M+</span>
-              {' '}federal court outcomes indexed
-              <span className="hidden sm:inline"> · </span>
-              <span className="hidden sm:inline" style={{ color: 'var(--accent-primary, #6366F1)' }}>
-                Updated in real-time from PACER
-              </span>
-            </>
-          )}
+        <span
+          className="text-[11px] sm:text-[12px] transition-opacity duration-300"
+          style={{
+            color: 'var(--fg-secondary)',
+            opacity: fading ? 0 : 1,
+          }}
+        >
+          {text}
         </span>
+
+        {/* Progress dots */}
+        <div className="flex items-center gap-1 ml-2 hidden sm:flex">
+          {MESSAGES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => { setFading(true); setTimeout(() => { setMsgIndex(i); setFading(false); }, 200); }}
+              className="w-1.5 h-1.5 rounded-full transition-all"
+              style={{
+                background: i === msgIndex ? '#6366F1' : 'rgba(99,102,241,0.3)',
+                transform: i === msgIndex ? 'scale(1.3)' : 'scale(1)',
+              }}
+              aria-label={`Message ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Dismiss */}
+        <button
+          onClick={() => setDismissed(true)}
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-md transition-colors hover:bg-white/5"
+          aria-label="Dismiss"
+        >
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--fg-subtle)" strokeWidth="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
       </div>
     </div>
   );
