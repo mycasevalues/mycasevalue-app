@@ -168,6 +168,41 @@ const jsonLd = {
           name: 'How is MyCaseValue different from Westlaw or LexisNexis?',
           acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is designed specifically for individuals and small firms, not large law firms. It offers free access to federal court outcome data, transparent pricing, bilingual support (English/Spanish), and plaintiff-focused analytics — all without requiring a legal subscription.' },
         },
+        {
+          '@type': 'Question',
+          name: 'What federal courts does your data cover?',
+          acceptedAnswer: { '@type': 'Answer', text: 'We have comprehensive data from all 13 federal circuit courts, district courts across all 50 states, and historical records dating back to 1970. Our database includes civil cases from federal PACER records and the Federal Judicial Center Integrated Database (IDB).' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is my information kept confidential?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Yes. We do not store, share, or sell your data. All case information you enter is used only to generate your report. We do not track individuals or contact you about your case unless you opt into our mailing list.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How accurate is the data?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Our data comes directly from federal court records (PACER, Federal Judicial Center, CourtListener). We have reported 94% accuracy in case outcome classifications. Data limitations are always noted in your report.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How quickly do I get my report?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Your free report is generated instantly, typically within 60 seconds. Premium reports with detailed settlement data and attorney impact analysis also generate in real time.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Where does the EEOC data come from?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Our EEOC data comes directly from the EEOC Office of General Counsel FY2024 Annual Report and EEOC Charge Statistics (FY1997-FY2023), including total monetary recovery, charges by statute, and litigation success rates.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What do the settlement percentiles mean?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Settlement percentiles show where outcomes fall in the distribution. P10 means 10% of cases settled for less. P50 is the median. P90 means only 10% exceeded that amount. These come from FJC IDB and BJS Civil Trial Statistics.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How often is the data updated?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Core data from the Federal Judicial Center IDB is updated quarterly. EEOC statistics are updated annually. CourtListener opinion data updates daily.' },
+        },
       ],
     },
   ],
