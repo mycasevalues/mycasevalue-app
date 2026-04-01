@@ -449,10 +449,9 @@ async function generateDerivedStats(): Promise<SourceResult> {
       total_cases: circuitCases,
       avg_duration_months: duration,
       settlement_rate: Math.round(circuitSettlementRate * 10) / 10,
-      top_case_types: JSON.stringify((caseStats as any[]).slice(0, 5).map((s: any) => s.label)),
       source: 'derived',
       last_updated: new Date().toISOString(),
-    }, 'circuit_number,source', 'DerivedCircuit')
+    }, 'circuit,source', 'DerivedCircuit')
     if (success) circuitInserted++
   }
 
@@ -506,7 +505,6 @@ async function generateDerivedStats(): Promise<SourceResult> {
     const { success } = await safeUpsert(TABLES.STATE_STATS, {
       state_code: code,
       state_name: name,
-      circuit_number: circuitNum,
       win_rate: Math.round(stateWinRate * 10) / 10,
       total_cases: stateCases,
       avg_duration_months: CIRCUIT_DURATIONS[String(circuitNum)] || 8.5,
