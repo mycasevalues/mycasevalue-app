@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 
-const PASS = 'letsmakemoney123';
+const PASS = process.env.NEXT_PUBLIC_SITE_PASSWORD || '';
 const STORAGE_KEY = 'mcv_auth';
 
 export default function PasswordGate({ children }: { children: React.ReactNode }) {

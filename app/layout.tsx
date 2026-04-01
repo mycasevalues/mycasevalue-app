@@ -87,7 +87,7 @@ const jsonLd = {
       offers: [
         { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free basic case outcome report' },
         { '@type': 'Offer', price: '5.99', priceCurrency: 'USD', description: 'Single premium report with judge analytics' },
-        { '@type': 'Offer', price: '29.99', priceCurrency: 'USD', description: 'Unlimited premium reports, cost calculator, opposing counsel analysis' },
+        { '@type': 'Offer', price: '9.99', priceCurrency: 'USD', description: 'Unlimited premium reports, cost calculator, opposing counsel analysis' },
       ],
     },
     {
@@ -248,7 +248,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="grain" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }} suppressHydrationWarning>
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <ErrorBoundary>
-          {children}
+          <main id="main-content">
+            {children}
+          </main>
         </ErrorBoundary>
         <script dangerouslySetInnerHTML={{ __html: `
           window.mcvAnalytics = {

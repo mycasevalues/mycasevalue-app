@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Federal Court Case Data by Category | MyCaseValue',
-  description: 'Browse real outcome data from 5.1M+ federal court cases. Research win rates, settlements, and timelines across 10 case categories: employment, injury, consumer, civil rights, business, housing, healthcare, family, government, and education.',
+  description: 'Browse outcome data from 5.1M+ federal cases. Win rates, settlements, and timelines across 84 case types including employment, injury, and civil rights.',
   openGraph: {
     title: 'Case Categories — Real Federal Court Data | MyCaseValue',
     description: 'Explore federal court outcomes by case type. Win rates, settlement data, and timelines for workplace, injury, consumer, civil rights, contracts, housing, benefits, family, government, and education cases.',

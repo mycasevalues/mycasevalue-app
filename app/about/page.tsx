@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About MyCaseValue — Democratizing Federal Court Data',
-  description: 'MyCaseValue is on a mission to democratize access to federal court outcome data. Learn how we aggregate 5.1M+ cases to help you research real case outcomes and timelines.',
+  description: 'MyCaseValue democratizes federal court outcome data. Explore aggregate results from 5.1M+ cases for informed legal research.',
   alternates: { canonical: 'https://mycasevalues.com/about' },
   openGraph: {
     title: 'About MyCaseValue — Democratizing Federal Court Data',

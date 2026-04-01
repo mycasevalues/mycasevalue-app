@@ -31,7 +31,10 @@ export function Accordion({ items }: AccordionProps) {
           style={{ border: '1px solid #334155' }}
         >
           <button
+            id={`accordion-btn-${item.id}`}
             onClick={() => toggleAccordion(item.id)}
+            aria-expanded={openId === item.id}
+            aria-controls={`accordion-panel-${item.id}`}
             className={cn(
               'w-full px-6 py-4 flex items-center justify-between text-left font-medium transition-colors duration-200',
               openId === item.id
@@ -54,6 +57,9 @@ export function Accordion({ items }: AccordionProps) {
           </button>
 
           <div
+            id={`accordion-panel-${item.id}`}
+            role="region"
+            aria-labelledby={`accordion-btn-${item.id}`}
             style={{
               gridTemplateRows: openId === item.id ? '1fr' : '0fr',
               display: 'grid',

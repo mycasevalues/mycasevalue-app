@@ -154,6 +154,8 @@ export default function DataFreshness({
     >
       <button
         onClick={() => setIsExpanded(!isExpanded)}
+        aria-expanded={isExpanded}
+        aria-label={isExpanded ? 'Collapse data pipeline status' : 'Expand data pipeline status'}
         className="w-full px-4 py-4 flex items-center justify-between hover:opacity-90 transition-opacity"
       >
         <div className="flex items-center gap-3">

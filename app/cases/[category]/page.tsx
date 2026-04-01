@@ -286,7 +286,9 @@ async function CategoryPage({
   if (!categoryData) {
     return (
       <div style={{ padding: '40px 20px', textAlign: 'center' }}>
-        <h1>Category not found</h1>
+        <h1 className="text-2xl font-bold">Category not found</h1>
+        <p className="mt-4" style={{ color: '#94A3B8' }}>The case category you&apos;re looking for doesn&apos;t exist.</p>
+        <a href="/cases" className="inline-block mt-6 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: '#4F46E5' }}>Browse all categories</a>
       </div>
     );
   }

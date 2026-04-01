@@ -94,7 +94,7 @@ const PLANS: Plan[] = [
       { text: 'Unlimited reports per month', textEs: 'Informes ilimitados por mes', included: true },
       { text: 'Batch case analysis', textEs: 'Análisis de casos en lote', included: true },
       { text: 'Priority support', textEs: 'Soporte prioritario', included: true },
-      { text: 'API access (coming soon)', textEs: 'Acceso API (próximamente)', included: true },
+      { text: 'API access', textEs: 'Acceso API', included: false },
     ],
     highlight: false,
     badge: 'BEST VALUE',

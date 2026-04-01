@@ -125,17 +125,21 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
         <div
           className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4"
           style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(8px)' }}
-          onClick={() => setIsOpen(false)}
+          onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false); }}
+          onKeyDown={(e) => { if (e.key === 'Escape') setIsOpen(false); }}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="sample-report-title"
         >
           <div
-            className="relative w-full max-w-[600px] max-h-[85vh] overflow-y-auto rounded-2xl"
+            className="relative w-full max-w-[600px] max-w-[90vw] max-h-[85vh] overflow-y-auto rounded-2xl"
             style={{ background: 'var(--bg-surface, #131B2E)', border: '1px solid var(--border-default)' }}
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
             <div className="sticky top-0 z-10 flex items-center justify-between p-5" style={{ background: 'var(--bg-surface, #131B2E)', borderBottom: '1px solid var(--border-default)' }}>
               <div>
-                <h3 className="text-base font-display font-extrabold" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
+                <h3 id="sample-report-title" className="text-base font-display font-extrabold" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
                 <p className="text-[11px]" style={{ color: 'var(--fg-subtle)' }}>{t.subtitle}</p>
               </div>
               <button onClick={() => setIsOpen(false)} className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors hover:bg-white/5" style={{ border: '1px solid var(--border-default)' }} aria-label={lang === 'es' ? 'Cerrar modal' : 'Close modal'}>

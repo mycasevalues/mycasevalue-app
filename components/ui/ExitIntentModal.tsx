@@ -187,6 +187,8 @@ export function ExitIntentModal({
               onChange={(e) => setEmail(e.target.value)}
               disabled={isLoading}
               placeholder={t.inputPlaceholder}
+              autoComplete="email"
+              required
               className="w-full h-11 px-4 rounded-lg text-base font-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
               style={{
                 backgroundColor: 'var(--bg-base)',
