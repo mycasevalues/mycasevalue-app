@@ -87,6 +87,8 @@ const AiCaseEvalPreview = dynamic(() => import('./sections/AiCaseEvalPreview'), 
 const AttorneyMatchIntelligence = dynamic(() => import('./sections/AttorneyMatchIntelligence'), { ssr: false });
 const RiskIntelligenceDashboard = dynamic(() => import('./sections/RiskIntelligenceDashboard'), { ssr: false });
 const DataMethodologySection = dynamic(() => import('./sections/DataMethodologySection'), { ssr: false });
+const WhyFreeSection = dynamic(() => import('./sections/WhyFreeSection'), { ssr: false });
+const PricingPreview = dynamic(() => import('./sections/PricingPreview'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -2669,6 +2671,18 @@ export default function MyCaseValue() {
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={380}>
               <DataMethodologySection lang={lang} />
+            </Reveal>
+          </div>
+
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={390}>
+              <WhyFreeSection lang={lang} />
+            </Reveal>
+          </div>
+
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={400}>
+              <PricingPreview lang={lang} />
             </Reveal>
           </div>
 
