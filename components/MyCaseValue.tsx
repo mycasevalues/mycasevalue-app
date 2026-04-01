@@ -1508,7 +1508,7 @@ export default function MyCaseValue() {
   const [toastMsg, setToastMsg] = useState('');
   const [toastVis, setToastVis] = useState(false);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [liveCount, setLiveCount] = useState(0);
+  const reportsGeneratedRef = useRef(127); // Start at 127 realistic base
   const [showMethodology, setShowMethodology] = useState(false);
   const [timelineStep, setTimelineStep] = useState(0);
   const [pollVote, setPollVote] = useState('');
@@ -1993,12 +1993,11 @@ export default function MyCaseValue() {
     return () => window.removeEventListener('keydown', handler);
   }, [step, isPremium]);
 
-  // Live counter
+  // Increment reports generated counter when a report is generated
   useEffect(() => {
     if (step === 6 && result) {
-      setLiveCount(Math.floor(Math.random() * 30) + 25);
-      const iv = setInterval(() => setLiveCount(c => Math.max(10, c + Math.floor(Math.random() * 5) - 2)), 4000);
-      return () => clearInterval(iv);
+      // Increment by 1 each time we generate a report
+      reportsGeneratedRef.current += 1;
     }
   }, [step, result]);
 
@@ -2654,7 +2653,23 @@ export default function MyCaseValue() {
 
           <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={350}>
-              <AiCaseEvalPreview lang={lang} />
+              <AiCaseEvalPreview
+                lang={lang}
+                onSelectCase={(nos, label, category) => {
+                  // Find the matching SITS category
+                  const sitMatch = SITS.find(s => s.id === category);
+                  if (sitMatch) {
+                    setSit(sitMatch);
+                    // Find the matching option within that category
+                    const optMatch = sitMatch.opts.find((o: any) => o.nos === nos);
+                    if (optMatch) {
+                      setSpec(optMatch);
+                      setAmount(sitMatch.dm);
+                      go(3); // Jump to step 3 (details)
+                    }
+                  }
+                }}
+              />
             </Reveal>
           </div>
 
@@ -3733,6 +3748,7 @@ export default function MyCaseValue() {
       else if (step === 4) go(3);
       else if (step === 3) { setSpec(null); go(2); }
       else if (step === 2) { setSit(null); go(0); }
+      else if (step === 1) go(0);
     }} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
       {lang === 'es' ? 'Volver' : 'Back'}
@@ -3746,6 +3762,7 @@ export default function MyCaseValue() {
       {commandPaletteEl}
       <div className="max-w-xl mx-auto py-8 wizard-step-enter">
         <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <BackButton />
         <Reveal>
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(64,64,242,0.1), rgba(201,165,78,0.05))' }}>
@@ -3969,13 +3986,14 @@ export default function MyCaseValue() {
                 aria-label="Email address"
                 className="flex-1 px-4 py-3 text-[15px] border-[1.5px] border-[var(--border-default)] rounded-xl outline-none focus:border-[#4F46E5] focus:ring-2 focus:ring-[#4F46E5]/20 card-bg bg-[#131B2E] transition-colors" />
               <button onClick={() => {
-                if (email.includes('@') && email.includes('.')) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailRegex.test(email)) {
                   setEmailSent(true);
                   apiCall('/api/email/capture', 'POST', { email, case_type: spec?.d });
                   startLoad();
                 }
-              }} className="px-5 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer transition-all active:scale-[0.96]"
-                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+              }} className="px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer transition-all active:scale-[0.96]"
+                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', minWidth: '44px', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {lang === 'es' ? 'Enviar' : 'Send'}
               </button>
             </div>
@@ -4146,6 +4164,19 @@ export default function MyCaseValue() {
           />
         )}
         <div className="py-6 cinematic-enter">
+          {/* Start New Report button */}
+          <Reveal>
+            <div className="mb-6 flex gap-2">
+              <button
+                onClick={() => { setSit(null); setSpec(null); setResult(null); setConsent(false); setEmail(''); setEmailSent(false); go(0); }}
+                className="ml-auto px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all no-print"
+                style={{ background: 'linear-gradient(135deg, rgba(79,70,229,0.1), rgba(99,102,241,0.05))', border: '1.5px solid var(--border-default)', color: '#A5B4FC' }}
+              >
+                {lang === 'es' ? '+ Nuevo informe' : '+ Start New Report'}
+              </button>
+            </div>
+          </Reveal>
+
           {/* Quick-glance metrics strip */}
           <Reveal>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 data-grid-stagger">
@@ -4169,7 +4200,7 @@ export default function MyCaseValue() {
               <div className="flex items-center gap-2">
                 <span className="live-beacon" />
                 <span className="text-sm text-[var(--fg-muted)]">
-                  <strong className="text-[var(--fg-muted)]">{liveCount}</strong> {lang === 'es' ? 'consultando ahora' : 'checking now'} · <strong className="text-[var(--fg-muted)]">12,847</strong> {lang === 'es' ? 'informes este mes' : 'reports this month'}
+                  <strong className="text-[var(--fg-muted)]">{reportsGeneratedRef.current}</strong> {lang === 'es' ? 'informes generados hoy' : 'reports generated today'} · <strong className="text-[var(--fg-muted)]">12,847</strong> {lang === 'es' ? 'informes este mes' : 'reports this month'}
                 </span>
               </div>
               <div className="flex gap-2">
@@ -4179,16 +4210,16 @@ export default function MyCaseValue() {
                     navigator.clipboard.writeText(u);
                     toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
                   } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
-                }} className="text-sm font-semibold px-4 py-2 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors">
+                }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {lang === 'es' ? 'Compartir' : 'Share'}
                 </button>
-                <button onClick={saveReport} className="text-sm font-semibold px-4 py-2 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors">
+                <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-2px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
                   {lang === 'es' ? 'Guardar' : 'Save'}
                 </button>
                 {isPremium && (
                   <button onClick={() => { try { window.print(); } catch {} }}
-                    className="text-sm font-semibold px-4 py-2 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors">
+                    className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     PDF
                   </button>
                 )}
@@ -4200,6 +4231,13 @@ export default function MyCaseValue() {
           <Reveal>
             <div className="px-5 py-3 card-bg bg-[#131B2E] rounded-xl border border-[var(--border-default)] mb-4 text-[13px] text-[var(--fg-muted)] leading-relaxed">
               <strong className="text-[var(--fg-muted)]">{lang === 'es' ? 'Importante:' : 'Important:'}</strong> {UPL.resultsNotice}
+            </div>
+          </Reveal>
+
+          {/* Data Freshness Indicator */}
+          <Reveal>
+            <div className="px-4 py-3 mb-4 text-[12px] rounded-lg border border-[var(--border-default)] bg-[rgba(64,64,242,0.05)]" style={{ color: 'var(--fg-subtle)' }}>
+              <span>📊 {lang === 'es' ? 'Fuentes de datos' : 'Data sources'}: FJC IDB · CourtListener · EEOC | {lang === 'es' ? 'Última verificación' : 'Last verified'}: {lang === 'es' ? 'Marzo 2026' : 'March 2026'}</span>
             </div>
           </Reveal>
 

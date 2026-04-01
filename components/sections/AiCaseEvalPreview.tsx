@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { matchCaseType } from '../../lib/ai-matcher';
 
 interface AiCaseEvalPreviewProps {
   lang?: 'en' | 'es';
+  onSelectCase?: (nos: string, label: string, category: string) => void;
 }
 
 const TYPING_LINES_EN = [
@@ -43,12 +45,13 @@ const RESULT_METRICS = [
   { label: 'Cases Analyzed', labelEs: 'Casos Analizados', value: '12,847', color: '#0D9488' },
 ];
 
-export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProps) {
-  const [phase, setPhase] = useState<'idle' | 'typing' | 'done'>('idle');
+export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseEvalPreviewProps) {
+  const [phase, setPhase] = useState<'idle' | 'typing' | 'done' | 'matched'>('idle');
   const [lineIdx, setLineIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
   const [userInput, setUserInput] = useState('');
   const [placeholderIdx, setPlaceholderIdx] = useState(0);
+  const [matchedCase, setMatchedCase] = useState<any>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const isEs = lang === 'es';
@@ -67,7 +70,14 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
   useEffect(() => {
     if (phase !== 'typing') return;
     if (lineIdx >= lines.length) {
-      setPhase('done');
+      // After all lines are done, try to match the case type
+      const matched = matchCaseType(userInput);
+      if (matched && matched.confidence > 0.3) {
+        setMatchedCase(matched);
+        setPhase('matched');
+      } else {
+        setPhase('done');
+      }
       return;
     }
     const line = lines[lineIdx];
@@ -81,7 +91,7 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
       }, 400);
       return () => clearTimeout(timer);
     }
-  }, [phase, lineIdx, charIdx, lines]);
+  }, [phase, lineIdx, charIdx, lines, userInput]);
 
   function start() {
     if (!userInput.trim()) return;
@@ -95,6 +105,7 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
     setLineIdx(0);
     setCharIdx(0);
     setUserInput('');
+    setMatchedCase(null);
   }
 
   function useExample(text: string) {
@@ -187,13 +198,16 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
                   <button
                     key={i}
                     onClick={() => useExample(ex)}
-                    className="px-3 py-1.5 rounded-lg text-[11px] transition-all hover:scale-[1.02]"
+                    className="px-4 py-2.5 rounded-lg text-[11px] transition-all hover:scale-[1.02]"
                     style={{
                       background: 'rgba(139,92,246,0.08)',
                       border: '1px solid rgba(139,92,246,0.15)',
                       color: '#A78BFA',
                       cursor: 'pointer',
                       textAlign: 'left',
+                      minHeight: '44px',
+                      display: 'flex',
+                      alignItems: 'center',
                     }}
                   >
                     {ex.length > 45 ? ex.slice(0, 45) + '...' : ex}
@@ -226,7 +240,7 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
         )}
 
         {/* Analysis terminal */}
-        {(phase === 'typing' || phase === 'done') && (
+        {(phase === 'typing' || phase === 'done' || phase === 'matched') && (
           <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(139,92,246,0.2)' }}>
             {/* Terminal header */}
             <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: 'rgba(0,0,0,0.3)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
@@ -241,7 +255,7 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
               {phase === 'typing' && (
                 <span className="ml-auto text-[9px] font-mono" style={{ color: '#A78BFA' }}>{t.generating}</span>
               )}
-              {phase === 'done' && (
+              {(phase === 'done' || phase === 'matched') && (
                 <span className="ml-auto text-[9px] font-mono" style={{ color: '#10B981' }}>{t.complete}</span>
               )}
             </div>
@@ -294,15 +308,50 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
 
                   {/* Actions */}
                   <div className="flex gap-2 mt-2">
-                    <button onClick={reset} className="px-3 py-1.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#64748B', cursor: 'pointer' }}>
+                    <button onClick={reset} className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#64748B', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {t.reset}
                     </button>
                     <button
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                      className="px-3 py-1.5 rounded-lg text-[10px] font-semibold transition-all"
-                      style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', color: '#fff', border: 'none', cursor: 'pointer' }}
+                      className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all"
+                      style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', color: '#fff', border: 'none', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
                       {t.tryNow}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {phase === 'matched' && matchedCase && (
+                <div className="space-y-3">
+                  {/* Completed lines */}
+                  <div className="space-y-1 mb-3 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    {lines.map((line, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <span style={{ color: '#10B981' }}>{'\u2713'}</span>
+                        <span style={{ color: '#64748B' }}>{line}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Matched case display */}
+                  <div className="rounded-lg p-3" style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                    <div className="text-[11px] font-bold mb-1" style={{ color: '#10B981' }}>CASE TYPE DETECTED</div>
+                    <div className="text-[14px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{matchedCase.label}</div>
+                    <div className="text-[10px]" style={{ color: '#94A3B8' }}>Confidence: {Math.round(matchedCase.confidence * 100)}%</div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex gap-2 mt-2">
+                    <button onClick={reset} className="flex-1 px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#64748B', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      {t.reset}
+                    </button>
+                    <button
+                      onClick={() => onSelectCase && onSelectCase(matchedCase.nos, matchedCase.label, matchedCase.category)}
+                      className="flex-1 px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all"
+                      style={{ background: 'linear-gradient(135deg, #10B981, #14B8A6)', color: '#fff', border: 'none', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                    >
+                      Get Your Report →
                     </button>
                   </div>
                 </div>
