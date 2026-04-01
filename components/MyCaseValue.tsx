@@ -90,6 +90,7 @@ const DataMethodologySection = dynamic(() => import('./sections/DataMethodologyS
 const WhyFreeSection = dynamic(() => import('./sections/WhyFreeSection'), { ssr: false });
 const PricingPreview = dynamic(() => import('./sections/PricingPreview'), { ssr: false });
 const SectionNav = dynamic(() => import('./navigation/SectionNav'), { ssr: false });
+const LazySection = dynamic(() => import('./ui/LazySection'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -1963,6 +1964,26 @@ export default function MyCaseValue() {
 
   // Scroll handler moved to Navbar component
 
+  // Sync step to URL hash for browser history (back button support)
+  const skipHistoryRef = useRef(false);
+  useEffect(() => {
+    if (skipHistoryRef.current) { skipHistoryRef.current = false; return; }
+    if (step > 0) {
+      window.history.pushState({ step }, '', `#step-${step}`);
+    } else if (window.location.hash) {
+      window.history.replaceState({ step: 0 }, '', window.location.pathname + window.location.search);
+    }
+  }, [step]);
+
+  useEffect(() => {
+    const handlePop = (e: PopStateEvent) => {
+      skipHistoryRef.current = true;
+      go(e.state?.step ?? 0);
+    };
+    window.addEventListener('popstate', handlePop);
+    return () => window.removeEventListener('popstate', handlePop);
+  }, []);
+
   // Keyboard navigation
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -2559,13 +2580,16 @@ export default function MyCaseValue() {
 
           {/* Competitor Comparison Table */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={240}>
               <CompetitorTable lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Premium Features Section — drives conversions */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={400}>
             <Reveal delay={250}>
               <div className="py-8 sm:py-12">
                 <div className="text-center mb-8">
@@ -2587,13 +2611,16 @@ export default function MyCaseValue() {
                 </div>
               </div>
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Litigation Cost Calculator — premium feature */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={260}>
               <LitigationCostCalculator lang={lang} isPremium={isPremium} onUpgrade={() => buy('unlimited')} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* EEOC Data Integration — charge trends by statute */}
@@ -2612,9 +2639,11 @@ export default function MyCaseValue() {
 
           {/* Case Lifecycle Visualizer — vertical timeline */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={290}>
               <CaseLifecycle lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* District Intelligence — 94 federal districts explorer */}
@@ -2633,26 +2662,33 @@ export default function MyCaseValue() {
 
           {/* Comparable Case Finder — verified verdicts table */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={320}>
               <ComparableCaseFinder lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* How It Works — 4-step process */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={330}>
               <HowItWorks lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Sample Report Modal — preview of Case Intelligence Report */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={340}>
               <SampleReportModal lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={400}>
             <Reveal delay={350}>
               <AiCaseEvalPreview
                 lang={lang}
@@ -2672,30 +2708,39 @@ export default function MyCaseValue() {
                 }}
               />
             </Reveal>
+            </LazySection>
           </div>
 
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={360}>
               <AttorneyMatchIntelligence lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={370}>
               <RiskIntelligenceDashboard lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={380}>
               <DataMethodologySection lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={200}>
             <Reveal delay={390}>
               <WhyFreeSection lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           <div id="pricing" style={{ gridColumn: '1 / -1' }}>

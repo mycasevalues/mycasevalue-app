@@ -1,6 +1,6 @@
-const CACHE_NAME = 'mcv-v8';
-const STATIC_CACHE = 'mcv-static-v8';
-const API_CACHE = 'mcv-api-v7';
+const CACHE_NAME = 'mcv-v9';
+const STATIC_CACHE = 'mcv-static-v9';
+const API_CACHE = 'mcv-api-v8';
 
 const STATIC_ASSETS = [
   '/favicon.svg',
