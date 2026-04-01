@@ -104,7 +104,7 @@ export async function logIngestionEvent(
       eventData.error_message = metadata?.errorMessage || event
     }
 
-    await supabase.from('ingestion_log').insert([eventData])
+    await supabase.from('ingestion_log').insert([eventData] as any)
   } catch (error: any) {
     console.error('Error logging ingestion event:', error.message)
   }
@@ -209,10 +209,13 @@ export async function getIngestionStats(): Promise<IngestionStats> {
  */
 async function testCourtListenerReachability(): Promise<boolean> {
   try {
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 5000)
     const response = await fetch('https://www.courtlistener.com/api/v3/', {
       method: 'HEAD',
-      timeout: 5000
+      signal: controller.signal
     })
+    clearTimeout(timeoutId)
     return response.ok || response.status === 405 // 405 = method not allowed, but API is up
   } catch (error) {
     console.error('CourtListener reachability test failed:', error)
