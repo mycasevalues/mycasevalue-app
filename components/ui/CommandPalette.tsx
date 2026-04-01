@@ -97,7 +97,6 @@ export default function CommandPalette({
 
     // Quick actions
     const actions = [
-      { id: 'action-theme', label: lang === 'es' ? 'Cambiar tema' : 'Toggle theme', description: lang === 'es' ? 'Modo claro / oscuro' : 'Switch light / dark mode', category: lang === 'es' ? 'Acciones' : 'Actions' },
       { id: 'action-lang', label: lang === 'es' ? 'English' : 'Español', description: lang === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish', category: lang === 'es' ? 'Acciones' : 'Actions' },
     ];
 
@@ -187,10 +186,7 @@ export default function CommandPalette({
           window.location.href = `/${page}`;
         }
       } else if (item.type === 'action') {
-        if (item.id === 'action-theme') {
-          // Dark-only site — force dark mode always
-          document.documentElement.setAttribute('data-theme', 'dark');
-        } else if (item.id === 'action-lang') {
+        if (item.id === 'action-lang') {
           onNavigate?.('lang');
         }
       }

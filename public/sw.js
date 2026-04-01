@@ -1,9 +1,8 @@
-const CACHE_NAME = 'mcv-v2';
-const STATIC_CACHE = 'mcv-static-v2';
-const API_CACHE = 'mcv-api-v1';
+const CACHE_NAME = 'mcv-v3';
+const STATIC_CACHE = 'mcv-static-v3';
+const API_CACHE = 'mcv-api-v2';
 
 const STATIC_ASSETS = [
-  '/',
   '/favicon.svg',
   '/icon-192.png',
   '/icon-512.png',
@@ -12,7 +11,7 @@ const STATIC_ASSETS = [
   '/fonts/jetbrains-mono-500.woff2',
 ];
 
-// Install: cache static assets
+// Install: cache static assets and activate immediately
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE).then((cache) => {
@@ -22,13 +21,14 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
 
-// Activate: clean old caches
+// Activate: delete ALL old caches to bust stale content
 self.addEventListener('activate', (event) => {
+  const currentCaches = [STATIC_CACHE, API_CACHE, CACHE_NAME];
   event.waitUntil(
     caches.keys().then((keys) => {
       return Promise.all(
         keys
-          .filter((key) => key !== STATIC_CACHE && key !== API_CACHE && key !== CACHE_NAME)
+          .filter((key) => !currentCaches.includes(key))
           .map((key) => caches.delete(key))
       );
     })
@@ -60,7 +60,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // _next/static: cache-first (immutable hashed assets)
+  // _next/static: cache-first (immutable hashed assets — new deploys use new filenames)
   if (url.pathname.startsWith('/_next/static/')) {
     event.respondWith(
       caches.match(request).then((cached) => {
@@ -90,25 +90,24 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // HTML pages: stale-while-revalidate
+  // HTML pages: network-first (always get fresh HTML, fall back to cache offline)
   if (request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
-      caches.match(request).then((cached) => {
-        const fetchPromise = fetch(request).then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          return response;
-        }).catch(() => cached);
-        return cached || fetchPromise;
-      })
+      fetch(request).then((response) => {
+        const clone = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+        return response;
+      }).catch(() => caches.match(request))
     );
     return;
   }
 
-  // Everything else: cache-first
+  // Everything else: network-first with cache fallback
   event.respondWith(
-    caches.match(request).then((cached) => {
-      return cached || fetch(request);
-    })
+    fetch(request).then((response) => {
+      const clone = response.clone();
+      caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+      return response;
+    }).catch(() => caches.match(request))
   );
 });
