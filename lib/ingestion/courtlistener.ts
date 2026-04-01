@@ -19,6 +19,7 @@ let requestCount = 0;
 let requestWindowStart = Date.now();
 const RATE_LIMIT = 5000;
 const WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const DEFAULT_RETRY_DELAY_MS = 5000; // 5 seconds default
 
 /**
  * Interface for CourtListener opinion data
@@ -102,9 +103,49 @@ function enforceRateLimit(): void {
 }
 
 /**
+ * Parse Retry-After header with NaN fallback
+ * @param retryAfterHeader - Value of Retry-After header
+ * @returns Delay in milliseconds
+ */
+function parseRetryAfter(retryAfterHeader: string | null): number {
+  if (!retryAfterHeader) {
+    return DEFAULT_RETRY_DELAY_MS;
+  }
+
+  const delaySeconds = parseInt(retryAfterHeader, 10);
+
+  // Return default if parsing failed (NaN) or if value is invalid
+  if (isNaN(delaySeconds) || delaySeconds < 0) {
+    console.warn(`Invalid Retry-After header: "${retryAfterHeader}", using default delay`);
+    return DEFAULT_RETRY_DELAY_MS;
+  }
+
+  return delaySeconds * 1000;
+}
+
+/**
+ * Validate API response structure
+ * @param data - Response data to validate
+ * @returns true if valid, false otherwise
+ */
+function isValidSearchResponse<T>(data: unknown): data is APISearchResponse<T> {
+  if (!data || typeof data !== 'object') {
+    return false;
+  }
+
+  const obj = data as Record<string, unknown>;
+  return (
+    typeof obj.count === 'number' &&
+    Array.isArray(obj.results) &&
+    (obj.next === null || typeof obj.next === 'string') &&
+    (obj.previous === null || typeof obj.previous === 'string')
+  );
+}
+
+/**
  * Fetch data from CourtListener API with authentication and error handling
  *
- * @param endpoint - API endpoint path (e.g., '/search/')
+ * @param endpoint - API endpoint path (e.g., '/opinions/')
  * @param params - Query parameters
  * @returns Parsed JSON response
  * @throws Error if request fails or API returns error
@@ -138,6 +179,7 @@ async function fetchCourtListenerAPI<T>(
 
   while (retries > 0) {
     try {
+      console.log(`Fetching from CourtListener API: ${endpoint}`);
       const response = await fetch(url.toString(), {
         method: 'GET',
         headers,
@@ -149,7 +191,11 @@ async function fetchCourtListenerAPI<T>(
           throw new Error('Unauthorized: Invalid CourtListener API token');
         }
         if (response.status === 429) {
-          throw new Error('Rate limited by CourtListener API');
+          // Rate limited - check for Retry-After header
+          const retryAfter = response.headers.get('Retry-After');
+          const delayMs = parseRetryAfter(retryAfter);
+          console.warn(`Rate limited by CourtListener API. Retry-After: ${retryAfter || 'not set'}. Waiting ${delayMs}ms`);
+          throw new Error(`Rate limited by CourtListener API (${response.status})`);
         }
         if (response.status >= 500) {
           throw new Error(
@@ -161,13 +207,21 @@ async function fetchCourtListenerAPI<T>(
         );
       }
 
-      const data: T = await response.json();
-      return data;
+      const data: unknown = await response.json();
+
+      // Validate response structure
+      if (!isValidSearchResponse(data)) {
+        console.error('Invalid CourtListener API response structure:', data);
+        throw new Error('Invalid CourtListener API response: missing required fields');
+      }
+
+      return data as T;
     } catch (error) {
       lastError = error instanceof Error ? error : new Error(String(error));
 
       // Don't retry on authentication errors
       if (lastError.message.includes('Unauthorized')) {
+        console.error('Authentication failed:', lastError.message);
         throw lastError;
       }
 
@@ -176,7 +230,10 @@ async function fetchCourtListenerAPI<T>(
       // Exponential backoff
       if (retries > 0) {
         const delayMs = Math.pow(2, 3 - retries) * 1000;
+        console.warn(`Request failed: ${lastError.message}. Retrying in ${delayMs}ms (${retries} retries remaining)`);
         await new Promise((resolve) => setTimeout(resolve, delayMs));
+      } else {
+        console.error(`Request failed after all retries: ${lastError.message}`);
       }
     }
   }
@@ -246,18 +303,16 @@ function normalizeJudge(judge: CourtListenerJudge): {
 }
 
 /**
- * Fetch recent opinions for a specific case type (NOS code)
+ * Fetch opinions with pagination
  *
- * @param nosCode - Nature of Suit code (e.g., 'o' for opinions)
- * @param limit - Maximum number of opinions to fetch (default: 100, max: 10000)
+ * @param limit - Maximum number of opinions to fetch (default: 500 to stay within timeout)
  * @returns Array of normalized opinion data
  *
  * @example
- * const opinions = await fetchRecentOpinions('o', 100);
+ * const opinions = await fetchRecentOpinions(500);
  */
 export async function fetchRecentOpinions(
-  nosCode: string = 'o',
-  limit: number = 100
+  limit: number = 500
 ): Promise<
   Array<{
     id: string;
@@ -270,20 +325,44 @@ export async function fetchRecentOpinions(
     page_count: number | null;
   }>
 > {
+  const opinions: Array<{
+    id: string;
+    case_name: string;
+    court: string;
+    judges: string;
+    date_filed: string;
+    document_type: string;
+    opinion_count: number;
+    page_count: number | null;
+  }> = [];
+
   try {
-    const actualLimit = Math.min(limit, 10000);
+    // Use /opinions/ endpoint (correct v4 API endpoint)
+    const actualLimit = Math.min(limit, 500); // Cap at 500 per run to avoid timeouts
+
+    console.log(`Fetching up to ${actualLimit} recent opinions from CourtListener...`);
+
     const response = await fetchCourtListenerAPI<
       APISearchResponse<CourtListenerOpinion>
-    >('/search/', {
-      type: nosCode,
+    >('/opinions/', {
       order_by: '-date_filed',
       limit: actualLimit,
-      format: 'json',
     });
 
-    return response.results.map(normalizeOpinion);
+    if (!response.results || !Array.isArray(response.results)) {
+      console.error('Invalid response structure for opinions:', response);
+      throw new Error('Invalid response structure: missing results array');
+    }
+
+    const normalized = response.results.map(normalizeOpinion);
+    opinions.push(...normalized);
+
+    console.log(`Successfully fetched ${normalized.length} opinions (API returned ${response.count} total available)`);
+
+    return opinions;
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
+    console.error(`Failed to fetch recent opinions: ${message}`);
     throw new Error(`Failed to fetch recent opinions: ${message}`);
   }
 }
@@ -309,18 +388,29 @@ export async function fetchJudgeData(court: string): Promise<
   }>
 > {
   try {
+    // Use /judges/ endpoint (correct v4 API endpoint)
+    console.log(`Fetching judge data for court: ${court}`);
+
     const response = await fetchCourtListenerAPI<APISearchResponse<CourtListenerJudge>>(
-      '/people/',
+      '/judges/',
       {
         court,
-        limit: 10000,
-        format: 'json',
+        limit: 500, // Fetch in reasonable batches
       }
     );
 
-    return response.results.map(normalizeJudge);
+    if (!response.results || !Array.isArray(response.results)) {
+      console.error(`Invalid response structure for judges in ${court}:`, response);
+      throw new Error('Invalid response structure: missing results array');
+    }
+
+    const normalized = response.results.map(normalizeJudge);
+    console.log(`Fetched ${normalized.length} judges from ${court} (API returned ${response.count} total available)`);
+
+    return normalized;
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
+    console.error(`Failed to fetch judge data for court ${court}: ${message}`);
     throw new Error(`Failed to fetch judge data for court ${court}: ${message}`);
   }
 }
@@ -329,7 +419,7 @@ export async function fetchJudgeData(court: string): Promise<
  * Ingest comprehensive CourtListener data including opinions and judge information
  *
  * This function:
- * 1. Fetches recent opinions across multiple case types
+ * 1. Fetches recent opinions (max 500 per run to avoid timeouts)
  * 2. Fetches judge data for major circuits and courts
  * 3. Normalizes and structures the data for database insertion
  * 4. Returns organized data ready for Supabase
@@ -402,15 +492,23 @@ export async function ingestCourtListenerData(): Promise<{
     'cafc', // Federal Circuit
   ];
 
+  // Validate API token is available
+  if (!API_TOKEN) {
+    const error = new Error('COURTLISTENER_API_TOKEN environment variable is not set');
+    console.error(error.message);
+    throw error;
+  }
+
   // Fetch opinions
-  console.log('Fetching recent opinions from CourtListener...');
+  console.log('Starting CourtListener data ingestion...');
   try {
-    const recentOpinions = await fetchRecentOpinions('o', 1000);
+    const recentOpinions = await fetchRecentOpinions(500); // Max 500 per run
     opinions.push(...recentOpinions);
-    console.log(`Fetched ${recentOpinions.length} opinions`);
+    console.log(`Successfully fetched ${recentOpinions.length} opinions`);
   } catch (error) {
-    console.error('Error fetching opinions:', error);
-    // Continue with other data even if opinions fail
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Error fetching opinions: ${message}`);
+    // Continue with judge data even if opinions fail
   }
 
   // Fetch judge data for each court
@@ -419,19 +517,25 @@ export async function ingestCourtListenerData(): Promise<{
     try {
       const courtJudges = await fetchJudgeData(court);
       judges.push(...courtJudges);
-      console.log(`Fetched ${courtJudges.length} judges from ${court}`);
+      console.log(`Successfully added ${courtJudges.length} judges from ${court} (total: ${judges.length})`);
 
-      // Small delay to respect rate limits
-      await new Promise((resolve) => setTimeout(resolve, 100));
+      // Small delay to respect rate limits and avoid overwhelming the API
+      await new Promise((resolve) => setTimeout(resolve, 200));
     } catch (error) {
-      console.warn(`Error fetching judges for ${court}:`, error);
+      const message = error instanceof Error ? error.message : String(error);
+      console.warn(`Error fetching judges for ${court}: ${message}`);
       // Continue with other courts even if one fails
     }
   }
 
   console.log(
-    `Ingestion complete: ${opinions.length} opinions, ${judges.length} judges`
+    `CourtListener ingestion complete: ${opinions.length} opinions, ${judges.length} judges`
   );
+
+  // Validate we got some data
+  if (opinions.length === 0 && judges.length === 0) {
+    console.warn('Warning: No data was successfully ingested from CourtListener');
+  }
 
   return { opinions, judges };
 }
