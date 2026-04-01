@@ -188,9 +188,8 @@ export default function CommandPalette({
         }
       } else if (item.type === 'action') {
         if (item.id === 'action-theme') {
-          const html = document.documentElement;
-          const current = html.getAttribute('data-theme');
-          html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+          // Dark-only site — force dark mode always
+          document.documentElement.setAttribute('data-theme', 'dark');
         } else if (item.id === 'action-lang') {
           onNavigate?.('lang');
         }

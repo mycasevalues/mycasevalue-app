@@ -89,6 +89,7 @@ const RiskIntelligenceDashboard = dynamic(() => import('./sections/RiskIntellige
 const DataMethodologySection = dynamic(() => import('./sections/DataMethodologySection'), { ssr: false });
 const WhyFreeSection = dynamic(() => import('./sections/WhyFreeSection'), { ssr: false });
 const PricingPreview = dynamic(() => import('./sections/PricingPreview'), { ssr: false });
+const SectionNav = dynamic(() => import('./navigation/SectionNav'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -1172,7 +1173,7 @@ function Shell({
           scrollProgress={scrollProgress}
         />
 
-        <main id="main-content" className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10" role="main" style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}>
+        <main id="main-content" className="w-full relative z-10" role="main" style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}>
           {/* UPL Banner */}
           <div className="text-center py-2 border-b no-print" style={{ borderColor: 'var(--border-default)', background: 'rgba(30,41,59,0.3)' }}>
             <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'HERRAMIENTA INFORMATIVA SOLAMENTE — NO ES ASESORÍA LEGAL' : UPL.banner}</span>
@@ -2155,6 +2156,7 @@ export default function MyCaseValue() {
       {commandPaletteEl}
       {showOnboarding && <OnboardingTour lang={lang} onComplete={() => setShowOnboarding(false)} />}
       <SocialProofToast lang={lang} active={true} />
+      <SectionNav lang={lang} />
       <div className="hero-bg hero-parallax mesh-bg py-8 sm:py-12 pb-6 relative overflow-hidden noise-overlay particle-field cinematic-enter">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
@@ -2514,12 +2516,12 @@ export default function MyCaseValue() {
           <div className="separator-gradient" style={{ gridColumn: '1 / -1', height: '2px', boxShadow: '0 4px 20px rgba(79,70,229,0.3), 0 4px 20px rgba(13,148,136,0.15)' }} />
 
           {/* Verdict Ticker — live scrolling court outcomes */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <VerdictTicker lang={lang} />
           </div>
 
           {/* The Problem — information gap visualization */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={175}>
               <TheProblem lang={lang} />
             </Reveal>
@@ -2542,21 +2544,21 @@ export default function MyCaseValue() {
           </div>
 
           {/* Data Source Trust Bar — PACER, FJC, CourtListener, etc. */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={220}>
               <TrustSourceBar lang={lang} />
             </Reveal>
           </div>
 
           {/* Settlement Offer Evaluator — interactive percentile tool */}
-          <div id="settlement" style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div id="settlement" style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={230}>
               <SettlementEvaluator lang={lang} />
             </Reveal>
           </div>
 
           {/* Competitor Comparison Table */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={240}>
               <CompetitorTable lang={lang} />
             </Reveal>
@@ -2588,99 +2590,99 @@ export default function MyCaseValue() {
           </div>
 
           {/* Litigation Cost Calculator — premium feature */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={260}>
               <LitigationCostCalculator lang={lang} isPremium={isPremium} onUpgrade={() => buy('unlimited')} />
             </Reveal>
           </div>
 
           {/* EEOC Data Integration — charge trends by statute */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={270}>
               <div id="eeoc"><EeocDataPanel lang={lang} /></div>
             </Reveal>
           </div>
 
           {/* Stats Dashboard — 4-tab data panel */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={280}>
               <StatsDashboard lang={lang} />
             </Reveal>
           </div>
 
           {/* Case Lifecycle Visualizer — vertical timeline */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={290}>
               <CaseLifecycle lang={lang} />
             </Reveal>
           </div>
 
           {/* District Intelligence — 94 federal districts explorer */}
-          <div id="districts" style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div id="districts" style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={300}>
               <DistrictIntelligence lang={lang} />
             </Reveal>
           </div>
 
           {/* Statutory Outcomes — Know Your Rights section */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={310}>
               <div id="statutes"><StatutoryOutcomes lang={lang} /></div>
             </Reveal>
           </div>
 
           {/* Comparable Case Finder — verified verdicts table */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={320}>
               <ComparableCaseFinder lang={lang} />
             </Reveal>
           </div>
 
           {/* How It Works — 4-step process */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={330}>
               <HowItWorks lang={lang} />
             </Reveal>
           </div>
 
           {/* Sample Report Modal — preview of Case Intelligence Report */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={340}>
               <SampleReportModal lang={lang} />
             </Reveal>
           </div>
 
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={350}>
               <AiCaseEvalPreview lang={lang} />
             </Reveal>
           </div>
 
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={360}>
               <AttorneyMatchIntelligence lang={lang} />
             </Reveal>
           </div>
 
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={370}>
               <RiskIntelligenceDashboard lang={lang} />
             </Reveal>
           </div>
 
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={380}>
               <DataMethodologySection lang={lang} />
             </Reveal>
           </div>
 
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={390}>
               <WhyFreeSection lang={lang} />
             </Reveal>
           </div>
 
-          <div id="pricing" style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div id="pricing" style={{ gridColumn: '1 / -1' }}>
             <Reveal delay={400}>
               <PricingPreview lang={lang} />
             </Reveal>

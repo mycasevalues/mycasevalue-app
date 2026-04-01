@@ -6,6 +6,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force dark mode — no light mode on this site */
+html, body {
+  background: #0B1221 !important;
+  color: #F0F2F5 !important;
+  color-scheme: dark !important;
+}
+
 /* Global reduced-motion override — MANDATORY for all animations */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

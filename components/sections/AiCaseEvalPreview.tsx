@@ -1,29 +1,43 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface AiCaseEvalPreviewProps {
   lang?: 'en' | 'es';
 }
 
 const TYPING_LINES_EN = [
-  'Analyzing employment discrimination claim...',
+  'Analyzing your case details...',
   'Cross-referencing 4.2M+ federal case outcomes...',
-  'Matching to S.D.N.Y. district patterns...',
+  'Identifying matching district patterns...',
   'Calculating settlement percentile range...',
   'Generating Case Intelligence Report...',
 ];
 
 const TYPING_LINES_ES = [
-  'Analizando reclamo de discriminacion laboral...',
+  'Analizando los detalles de su caso...',
   'Cruzando 4.2M+ resultados de casos federales...',
-  'Comparando con patrones del distrito S.D.N.Y....',
+  'Identificando patrones de distrito coincidentes...',
   'Calculando rango de percentil de acuerdos...',
   'Generando Informe de Inteligencia de Caso...',
 ];
 
+const EXAMPLE_PROMPTS_EN = [
+  'I was fired after filing a harassment complaint at work...',
+  'My landlord refuses to return my security deposit...',
+  'I was injured in a car accident caused by a distracted driver...',
+  'My employer has not paid overtime wages for 6 months...',
+];
+
+const EXAMPLE_PROMPTS_ES = [
+  'Me despidieron después de presentar una queja de acoso...',
+  'Mi arrendador se niega a devolver mi depósito de seguridad...',
+  'Fui herido en un accidente de auto por un conductor distraído...',
+  'Mi empleador no ha pagado horas extras por 6 meses...',
+];
+
 const RESULT_METRICS = [
-  { label: 'Win Rate', labelEs: 'Tasa de Exito', value: '47.6%', color: '#10B981' },
+  { label: 'Win Rate', labelEs: 'Tasa de Éxito', value: '47.6%', color: '#10B981' },
   { label: 'Settlement Range', labelEs: 'Rango de Acuerdo', value: '$75K – $500K', color: '#F59E0B' },
   { label: 'Median Timeline', labelEs: 'Tiempo Medio', value: '8.7 months', color: '#6366F1' },
   { label: 'Cases Analyzed', labelEs: 'Casos Analizados', value: '12,847', color: '#0D9488' },
@@ -33,8 +47,22 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
   const [phase, setPhase] = useState<'idle' | 'typing' | 'done'>('idle');
   const [lineIdx, setLineIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
+  const [userInput, setUserInput] = useState('');
+  const [placeholderIdx, setPlaceholderIdx] = useState(0);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const lines = lang === 'es' ? TYPING_LINES_ES : TYPING_LINES_EN;
+  const isEs = lang === 'es';
+  const lines = isEs ? TYPING_LINES_ES : TYPING_LINES_EN;
+  const examples = isEs ? EXAMPLE_PROMPTS_ES : EXAMPLE_PROMPTS_EN;
+
+  // Rotate placeholder text
+  useEffect(() => {
+    if (phase !== 'idle') return;
+    const timer = setInterval(() => {
+      setPlaceholderIdx(p => (p + 1) % examples.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [phase, examples.length]);
 
   useEffect(() => {
     if (phase !== 'typing') return;
@@ -56,6 +84,7 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
   }, [phase, lineIdx, charIdx, lines]);
 
   function start() {
+    if (!userInput.trim()) return;
     setPhase('typing');
     setLineIdx(0);
     setCharIdx(0);
@@ -65,28 +94,40 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
     setPhase('idle');
     setLineIdx(0);
     setCharIdx(0);
+    setUserInput('');
   }
 
-  const t = lang === 'es' ? {
-    badge: 'EVALUACION CON IA',
-    title: 'Analisis de caso impulsado por inteligencia artificial',
-    sub: 'Vea como nuestro motor de analisis cruza sus detalles contra millones de resultados federales',
-    cta: 'Ejecutar demo en vivo',
+  function useExample(text: string) {
+    setUserInput(text);
+    textareaRef.current?.focus();
+  }
+
+  const t = isEs ? {
+    badge: 'EVALUACIÓN CON IA',
+    title: 'Describa su situación, nosotros analizamos los datos',
+    sub: 'Cuéntenos qué pasó en sus propias palabras. Nuestro motor de análisis cruzará sus detalles contra millones de resultados federales.',
+    placeholder: examples[placeholderIdx],
+    cta: 'Analizar mi caso',
     reset: 'Reiniciar',
-    complete: 'Analisis completo',
+    complete: 'Análisis completo',
     generating: 'Generando...',
-    disclaimer: 'Vista previa del motor de analisis. Los informes reales incluyen datos completos especificos de su caso.',
+    disclaimer: 'Vista previa del motor de análisis. Los informes reales incluyen datos completos específicos de su caso. Esto no es asesoría legal.',
     tryNow: 'Genere su informe gratis',
+    examplesLabel: 'Pruebe un ejemplo:',
+    inputLabel: 'Describa su situación legal',
   } : {
-    badge: 'AI EVALUATION',
-    title: 'AI-powered case analysis engine',
-    sub: 'See how our analysis engine cross-references your details against millions of federal outcomes',
-    cta: 'Run live demo',
+    badge: 'AI CASE EVALUATION',
+    title: 'Describe your situation, we analyze the data',
+    sub: 'Tell us what happened in your own words. Our analysis engine will cross-reference your details against millions of federal outcomes.',
+    placeholder: examples[placeholderIdx],
+    cta: 'Analyze my case',
     reset: 'Reset',
     complete: 'Analysis complete',
     generating: 'Generating...',
-    disclaimer: 'Analysis engine preview. Actual reports include full data specific to your case.',
+    disclaimer: 'Analysis engine preview. Actual reports include full data specific to your case. This is not legal advice.',
     tryNow: 'Generate your free report',
+    examplesLabel: 'Try an example:',
+    inputLabel: 'Describe your legal situation',
   };
 
   return (
@@ -95,7 +136,7 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
       <div className="text-center mb-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[2px] uppercase mb-3"
           style={{ background: 'rgba(139,92,246,0.1)', color: '#A78BFA' }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" strokeWidth="2.5">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" strokeWidth="2.5" aria-hidden="true">
             <path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/><path d="M10 20h4"/>
           </svg>
           {t.badge}
@@ -106,90 +147,169 @@ export default function AiCaseEvalPreview({ lang = 'en' }: AiCaseEvalPreviewProp
         <p className="text-sm max-w-lg mx-auto" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
       </div>
 
-      {/* Terminal / analysis window */}
-      <div className="max-w-[520px] mx-auto rounded-xl overflow-hidden" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(139,92,246,0.2)' }}>
-        {/* Terminal header */}
-        <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: 'rgba(0,0,0,0.3)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-          <div className="flex gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#EF4444' }} />
-            <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#F59E0B' }} />
-            <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#10B981' }} />
-          </div>
-          <span className="text-[10px] font-mono ml-2" style={{ color: 'var(--fg-subtle)' }}>
-            mycasevalues — analysis engine
-          </span>
-          {phase === 'typing' && (
-            <span className="ml-auto text-[9px] font-mono" style={{ color: '#A78BFA' }}>{t.generating}</span>
-          )}
-          {phase === 'done' && (
-            <span className="ml-auto text-[9px] font-mono" style={{ color: '#10B981' }}>{t.complete}</span>
-          )}
-        </div>
+      {/* Input + Analysis area */}
+      <div className="max-w-[560px] mx-auto">
+        {phase === 'idle' && (
+          <div className="space-y-4">
+            {/* Text input area */}
+            <div className="relative">
+              <label htmlFor="ai-case-input" className="sr-only">{t.inputLabel}</label>
+              <textarea
+                ref={textareaRef}
+                id="ai-case-input"
+                value={userInput}
+                onChange={e => setUserInput(e.target.value)}
+                placeholder={t.placeholder}
+                rows={4}
+                className="w-full rounded-xl p-4 text-[14px] leading-relaxed resize-none transition-all focus:outline-none"
+                style={{
+                  background: 'rgba(0,0,0,0.3)',
+                  border: '1px solid rgba(139,92,246,0.2)',
+                  color: '#E2E8F0',
+                  caretColor: '#A78BFA',
+                }}
+                onFocus={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.5)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.1)'; }}
+                onBlur={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.2)'; e.currentTarget.style.boxShadow = 'none'; }}
+                onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); start(); } }}
+              />
+              <div className="absolute bottom-3 right-3 text-[10px]" style={{ color: '#475569' }}>
+                {userInput.length}/500
+              </div>
+            </div>
 
-        {/* Terminal body */}
-        <div className="px-4 py-4 font-mono text-[11px] min-h-[180px]" style={{ color: '#94A3B8' }}>
-          {phase === 'idle' && (
-            <div className="flex flex-col items-center justify-center h-[160px] gap-3">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" strokeWidth="1.5" opacity="0.4">
-                <path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/><path d="M10 20h4"/>
-              </svg>
-              <button
-                onClick={start}
-                className="px-5 py-2.5 rounded-lg text-[12px] font-semibold transition-all hover:scale-[1.02]"
-                style={{ background: 'linear-gradient(135deg, #7C3AED, #A78BFA)', color: '#fff', border: 'none', cursor: 'pointer' }}
-              >
+            {/* Example prompts */}
+            <div>
+              <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#64748B' }}>
+                {t.examplesLabel}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {examples.map((ex, i) => (
+                  <button
+                    key={i}
+                    onClick={() => useExample(ex)}
+                    className="px-3 py-1.5 rounded-lg text-[11px] transition-all hover:scale-[1.02]"
+                    style={{
+                      background: 'rgba(139,92,246,0.08)',
+                      border: '1px solid rgba(139,92,246,0.15)',
+                      color: '#A78BFA',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                    }}
+                  >
+                    {ex.length > 45 ? ex.slice(0, 45) + '...' : ex}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Analyze button */}
+            <button
+              onClick={start}
+              disabled={!userInput.trim()}
+              className="w-full py-3 rounded-xl text-[14px] font-semibold transition-all hover:scale-[1.01]"
+              style={{
+                background: userInput.trim() ? 'linear-gradient(135deg, #7C3AED, #A78BFA)' : 'rgba(139,92,246,0.15)',
+                color: userInput.trim() ? '#fff' : '#64748B',
+                border: 'none',
+                cursor: userInput.trim() ? 'pointer' : 'not-allowed',
+                boxShadow: userInput.trim() ? '0 4px 20px rgba(124,58,237,0.3)' : 'none',
+              }}
+            >
+              <span className="flex items-center justify-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                  <path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/><path d="M10 20h4"/>
+                </svg>
                 {t.cta}
-              </button>
-            </div>
-          )}
+              </span>
+            </button>
+          </div>
+        )}
 
-          {phase === 'typing' && (
-            <div className="space-y-1.5">
-              {lines.slice(0, lineIdx + 1).map((line, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span style={{ color: i < lineIdx ? '#10B981' : '#A78BFA' }}>
-                    {i < lineIdx ? '✓' : '▸'}
-                  </span>
-                  <span style={{ color: i < lineIdx ? '#64748B' : '#E2E8F0' }}>
-                    {i === lineIdx ? line.slice(0, charIdx) : line}
-                    {i === lineIdx && <span className="inline-block w-1.5 h-3.5 ml-0.5" style={{ background: '#A78BFA', animation: 'blink 1s step-end infinite' }} />}
-                  </span>
+        {/* Analysis terminal */}
+        {(phase === 'typing' || phase === 'done') && (
+          <div className="rounded-xl overflow-hidden" style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(139,92,246,0.2)' }}>
+            {/* Terminal header */}
+            <div className="flex items-center gap-2 px-4 py-2.5" style={{ background: 'rgba(0,0,0,0.3)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#EF4444' }} />
+                <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#F59E0B' }} />
+                <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#10B981' }} />
+              </div>
+              <span className="text-[10px] font-mono ml-2" style={{ color: 'var(--fg-subtle)' }}>
+                mycasevalues — analysis engine
+              </span>
+              {phase === 'typing' && (
+                <span className="ml-auto text-[9px] font-mono" style={{ color: '#A78BFA' }}>{t.generating}</span>
+              )}
+              {phase === 'done' && (
+                <span className="ml-auto text-[9px] font-mono" style={{ color: '#10B981' }}>{t.complete}</span>
+              )}
+            </div>
+
+            {/* User input echo */}
+            <div className="px-4 py-2 text-[11px] font-mono" style={{ background: 'rgba(139,92,246,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#A78BFA' }}>
+              <span style={{ color: '#64748B' }}>{'>'} </span>
+              {userInput.length > 100 ? userInput.slice(0, 100) + '...' : userInput}
+            </div>
+
+            {/* Terminal body */}
+            <div className="px-4 py-4 font-mono text-[11px] min-h-[160px]" style={{ color: '#94A3B8' }}>
+              {phase === 'typing' && (
+                <div className="space-y-1.5">
+                  {lines.slice(0, lineIdx + 1).map((line, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      <span style={{ color: i < lineIdx ? '#10B981' : '#A78BFA' }}>
+                        {i < lineIdx ? '\u2713' : '\u25B8'}
+                      </span>
+                      <span style={{ color: i < lineIdx ? '#64748B' : '#E2E8F0' }}>
+                        {i === lineIdx ? line.slice(0, charIdx) : line}
+                        {i === lineIdx && <span className="inline-block w-1.5 h-3.5 ml-0.5" style={{ background: '#A78BFA', animation: 'blink 1s step-end infinite' }} />}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          )}
+              )}
 
-          {phase === 'done' && (
-            <div className="space-y-3">
-              {/* Completed lines */}
-              <div className="space-y-1 mb-3 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                {lines.map((line, i) => (
-                  <div key={i} className="flex items-start gap-2">
-                    <span style={{ color: '#10B981' }}>✓</span>
-                    <span style={{ color: '#64748B' }}>{line}</span>
+              {phase === 'done' && (
+                <div className="space-y-3">
+                  {/* Completed lines */}
+                  <div className="space-y-1 mb-3 pb-3" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    {lines.map((line, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <span style={{ color: '#10B981' }}>{'\u2713'}</span>
+                        <span style={{ color: '#64748B' }}>{line}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              {/* Result metrics */}
-              <div className="grid grid-cols-2 gap-2">
-                {RESULT_METRICS.map((m, i) => (
-                  <div key={i} className="rounded-lg p-2.5" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                    <div className="text-[14px] font-bold" style={{ color: m.color }}>{m.value}</div>
-                    <div className="text-[9px]" style={{ color: '#64748B' }}>{lang === 'es' ? m.labelEs : m.label}</div>
+                  {/* Result metrics */}
+                  <div className="grid grid-cols-2 gap-2">
+                    {RESULT_METRICS.map((m, i) => (
+                      <div key={i} className="rounded-lg p-2.5" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                        <div className="text-[14px] font-bold" style={{ color: m.color }}>{m.value}</div>
+                        <div className="text-[9px]" style={{ color: '#64748B' }}>{isEs ? m.labelEs : m.label}</div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              {/* Reset + CTA */}
-              <div className="flex gap-2 mt-2">
-                <button onClick={reset} className="px-3 py-1.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#64748B', cursor: 'pointer' }}>
-                  {t.reset}
-                </button>
-              </div>
+                  {/* Actions */}
+                  <div className="flex gap-2 mt-2">
+                    <button onClick={reset} className="px-3 py-1.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#64748B', cursor: 'pointer' }}>
+                      {t.reset}
+                    </button>
+                    <button
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      className="px-3 py-1.5 rounded-lg text-[10px] font-semibold transition-all"
+                      style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', color: '#fff', border: 'none', cursor: 'pointer' }}
+                    >
+                      {t.tryNow}
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       {/* Footer */}
