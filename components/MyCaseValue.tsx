@@ -82,6 +82,7 @@ const StatsDashboard = dynamic(() => import('./sections/StatsDashboard'), { ssr:
 const StatutoryOutcomes = dynamic(() => import('./sections/StatutoryOutcomes'), { ssr: false });
 const ComparableCaseFinder = dynamic(() => import('./sections/ComparableCaseFinder'), { ssr: false });
 const HowItWorks = dynamic(() => import('./sections/HowItWorks'), { ssr: false });
+const SampleReportModal = dynamic(() => import('./sections/SampleReportModal'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -2633,6 +2634,13 @@ export default function MyCaseValue() {
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={330}>
               <HowItWorks lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Sample Report Modal — preview of Case Intelligence Report */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={340}>
+              <SampleReportModal lang={lang} />
             </Reveal>
           </div>
 
