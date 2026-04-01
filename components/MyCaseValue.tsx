@@ -79,6 +79,8 @@ const EeocDataPanel = dynamic(() => import('./sections/EeocDataPanel'), { ssr: f
 const DistrictIntelligence = dynamic(() => import('./sections/DistrictIntelligence'), { ssr: false });
 const CaseLifecycle = dynamic(() => import('./sections/CaseLifecycle'), { ssr: false });
 const StatsDashboard = dynamic(() => import('./sections/StatsDashboard'), { ssr: false });
+const StatutoryOutcomes = dynamic(() => import('./sections/StatutoryOutcomes'), { ssr: false });
+const ComparableCaseFinder = dynamic(() => import('./sections/ComparableCaseFinder'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -2609,6 +2611,20 @@ export default function MyCaseValue() {
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={300}>
               <DistrictIntelligence lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Statutory Outcomes — Know Your Rights section */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={310}>
+              <StatutoryOutcomes lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Comparable Case Finder — verified verdicts table */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={320}>
+              <ComparableCaseFinder lang={lang} />
             </Reveal>
           </div>
 
