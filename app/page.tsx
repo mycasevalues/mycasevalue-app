@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import PasswordGate from '../components/PasswordGate';
 
 const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
   ssr: false,
@@ -39,9 +38,5 @@ const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
 });
 
 export default function Page() {
-  return (
-    <PasswordGate>
-      <MyCaseValue />
-    </PasswordGate>
-  );
+  return <MyCaseValue />;
 }
