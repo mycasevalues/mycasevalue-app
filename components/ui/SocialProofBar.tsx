@@ -347,7 +347,7 @@ export default function SocialProofBar({
           <p className="metric-label">
             {lang === 'es' ? 'Actualizado' : 'Updated'}
           </p>
-          <p className="metric-value">Mar 2026</p>
+          <p className="metric-value">{new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</p>
         </div>
       </div>
 

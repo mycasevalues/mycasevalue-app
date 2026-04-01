@@ -170,7 +170,10 @@ export default function FaqSection({ lang }: FaqSectionProps) {
               }}
             >
               <button
+                id={`faq-question-${idx}`}
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                aria-expanded={openIdx === idx}
+                aria-controls={`faq-answer-${idx}`}
                 className="w-full px-6 py-4 flex items-start justify-between hover:bg-[#1E293B] transition-colors text-left"
                 style={{
                   background: openIdx === idx ? 'transparent' : 'transparent',
@@ -205,6 +208,9 @@ export default function FaqSection({ lang }: FaqSectionProps) {
 
               {/* Answer - fade in when open */}
               <div
+                id={`faq-answer-${idx}`}
+                role="region"
+                aria-labelledby={`faq-question-${idx}`}
                 className="overflow-hidden transition-all duration-200"
                 style={{
                   maxHeight: openIdx === idx ? '500px' : '0',

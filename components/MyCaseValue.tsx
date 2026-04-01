@@ -2978,6 +2978,7 @@ export default function MyCaseValue() {
               <div className="flex justify-center gap-2.5 mt-5">
                 {TESTIMONIALS.map((_, i) => (
                   <button key={i} onClick={() => setCarouselIdx(i)}
+                    aria-label={`Go to testimonial ${i + 1}`}
                     className="border-none cursor-pointer transition-all rounded-full"
                     style={{ width: i === carouselIdx ? 28 : 8, height: 8, background: i === carouselIdx ? 'linear-gradient(90deg, #4F46E5, #0D9488)' : 'var(--border-muted)', transform: i === carouselIdx ? 'scale(1.15)' : 'scale(1)', boxShadow: i === carouselIdx ? '0 2px 8px rgba(64,64,242,0.4)' : 'none' }} />
                 ))}
@@ -3985,6 +3986,8 @@ export default function MyCaseValue() {
             <div className="flex gap-2">
               <input type="email" value={email} onChange={e => setEmail(e.target.value)}
                 placeholder="your@email.com"
+                required
+                autoComplete="email"
                 aria-label="Email address"
                 className="flex-1 px-4 py-3 text-[15px] border-[1.5px] border-[var(--border-default)] rounded-xl outline-none focus:border-[#4F46E5] focus:ring-2 focus:ring-[#4F46E5]/20 card-bg bg-[#131B2E] transition-colors" />
               <button onClick={() => {
@@ -6556,6 +6559,8 @@ export default function MyCaseValue() {
                     <div className="flex gap-2">
                       <input type="email" value={notifyEmail} onChange={e => setNotifyEmail(e.target.value)}
                         placeholder="your@email.com"
+                        required
+                        autoComplete="email"
                         aria-label="Notification email"
                         className="flex-1 px-3.5 py-2.5 text-sm border-[1.5px] border-[var(--border-default)] rounded-lg outline-none focus:border-[#4F46E5] card-bg bg-[#131B2E] transition-colors" />
                       <button onClick={() => {

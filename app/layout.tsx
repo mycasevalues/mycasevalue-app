@@ -136,7 +136,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'What is MyCaseValue?',
-          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 4 million public federal court records. It is not legal advice.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It is not legal advice.' },
         },
         {
           '@type': 'Question',

@@ -500,7 +500,9 @@ export const UPL = {
 // API helpers — resilient with retries and meaningful fallback
 export async function apiCall(endpoint: string, method = "GET", body: any = null): Promise<any> {
   if (!API_BASE) {
-    console.warn('[MyCaseValue] No API_BASE configured — using local data');
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('[MyCaseValue] No API_BASE configured — using local data');
+    }
     return null;
   }
   const opts: RequestInit = {

@@ -208,7 +208,7 @@ const EN = {
 
   // Footer
   verified_data: 'Verified data:',
-  data_updated: 'Data updated Mar 2026',
+  data_updated: `Data updated ${new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}`,
   methodology: 'Methodology',
 
   // Wizard labels
@@ -422,7 +422,7 @@ const ES: typeof EN = {
 
   // Footer
   verified_data: 'Datos verificados:',
-  data_updated: 'Datos actualizados Mar 2026',
+  data_updated: `Datos actualizados ${new Date().toLocaleDateString('es-ES', { month: 'short', year: 'numeric' })}`,
   methodology: 'Metodología',
 
   // Wizard labels
