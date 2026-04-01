@@ -2549,7 +2549,7 @@ export default function MyCaseValue() {
           </div>
 
           {/* Settlement Offer Evaluator — interactive percentile tool */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div id="settlement" style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={230}>
               <SettlementEvaluator lang={lang} />
             </Reveal>
@@ -2597,7 +2597,7 @@ export default function MyCaseValue() {
           {/* EEOC Data Integration — charge trends by statute */}
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={270}>
-              <EeocDataPanel lang={lang} />
+              <div id="eeoc"><EeocDataPanel lang={lang} /></div>
             </Reveal>
           </div>
 
@@ -2616,7 +2616,7 @@ export default function MyCaseValue() {
           </div>
 
           {/* District Intelligence — 94 federal districts explorer */}
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div id="districts" style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={300}>
               <DistrictIntelligence lang={lang} />
             </Reveal>
@@ -2625,7 +2625,7 @@ export default function MyCaseValue() {
           {/* Statutory Outcomes — Know Your Rights section */}
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={310}>
-              <StatutoryOutcomes lang={lang} />
+              <div id="statutes"><StatutoryOutcomes lang={lang} /></div>
             </Reveal>
           </div>
 
@@ -2680,7 +2680,7 @@ export default function MyCaseValue() {
             </Reveal>
           </div>
 
-          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+          <div id="pricing" style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={400}>
               <PricingPreview lang={lang} />
             </Reveal>
