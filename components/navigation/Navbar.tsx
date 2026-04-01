@@ -96,6 +96,26 @@ export function Navbar({
             <Logo size="md" darkMode={true} />
           </button>
 
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-1">
+            {[
+              { href: '/cases', label: lang === 'es' ? 'Categorías' : 'Case Types' },
+              { href: '/methodology', label: lang === 'es' ? 'Metodología' : 'Methodology' },
+              { href: '/faq', label: 'FAQ' },
+            ].map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors"
+                style={{ color: '#94A3B8', textDecoration: 'none' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#E2E8F0')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#94A3B8')}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
           {/* Desktop actions */}
           <div className="hidden sm:flex items-center gap-2.5">
             {/* Language toggle */}
@@ -225,6 +245,28 @@ export function Navbar({
               {lang === 'es' ? 'Idioma' : 'Language'}
             </span>
             <LanguageToggle lang={lang} setLang={setLang} />
+          </div>
+
+          {/* Navigation links */}
+          <div className="flex flex-col gap-1 pb-3 border-b" style={{ borderColor: '#1E293B' }}>
+            {[
+              { href: '/cases', label: lang === 'es' ? 'Categorías de Casos' : 'Case Types', icon: 'M4 6h16M4 12h16M4 18h7' },
+              { href: '/methodology', label: lang === 'es' ? 'Metodología' : 'Methodology', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
+              { href: '/faq', label: 'FAQ', icon: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01' },
+            ].map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={closeMobile}
+                className="flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors text-sm font-medium"
+                style={{ background: 'transparent', color: '#E2E8F0', textDecoration: 'none' }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: '#64748B' }}>
+                  <path d={link.icon}/>
+                </svg>
+                {link.label}
+              </a>
+            ))}
           </div>
 
           {/* Actions */}
