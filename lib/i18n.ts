@@ -9,8 +9,6 @@ const EN = {
   // Nav & global
   new_report: 'New report',
   premium: 'PREMIUM',
-  light_mode: 'Switch to light mode',
-  dark_mode: 'Switch to dark mode',
   lang_toggle: 'ES',
   lang_label: 'Ver en español',
 
@@ -225,8 +223,6 @@ const ES: typeof EN = {
   // Nav & global
   new_report: 'Nuevo informe',
   premium: 'PREMIUM',
-  light_mode: 'Cambiar a modo claro',
-  dark_mode: 'Cambiar a modo oscuro',
   lang_toggle: 'EN',
   lang_label: 'View in English',
 
