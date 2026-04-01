@@ -212,7 +212,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){document.documentElement.setAttribute('data-theme','dark')})()` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var d=document.documentElement;d.setAttribute('data-theme','dark');d.classList.add('dark');try{localStorage.removeItem('mcv-theme')}catch(e){}})()` }} />
         {/* Self-hosted fonts — no external CDN, GDPR compliant */}
         <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-700.woff2" crossOrigin="anonymous" />
         <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-500.woff2" crossOrigin="anonymous" />

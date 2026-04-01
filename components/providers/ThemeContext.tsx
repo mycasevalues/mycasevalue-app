@@ -1,5 +1,5 @@
 'use client'
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import { createContext, useContext, useEffect, ReactNode } from 'react'
 
 interface ThemeContextType {
   darkMode: boolean
@@ -7,25 +7,19 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  darkMode: false,
+  darkMode: true,
   setDarkMode: () => {},
 })
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [darkMode, setDarkMode] = useState(false)
-
+  // Dark-only site — always enforce dark mode
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.setAttribute('data-theme', 'dark')
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.removeAttribute('data-theme')
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
+    document.documentElement.setAttribute('data-theme', 'dark')
+    document.documentElement.classList.add('dark')
+  }, [])
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <ThemeContext.Provider value={{ darkMode: true, setDarkMode: () => {} }}>
       {children}
     </ThemeContext.Provider>
   )
