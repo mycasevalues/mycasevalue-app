@@ -18,15 +18,15 @@ const EN = {
   upl_banner_prefix: 'INFORMATIONAL ONLY',
 
   // Hero
-  hero_badge: 'Real federal court outcome data — free',
-  hero_privacy: 'Private & encrypted — zero data stored',
-  hero_title_1: 'What really happened',
-  hero_title_2: 'in cases like',
-  hero_title_3: 'yours',
-  hero_sub_pre: 'Exposed insights from',
-  hero_sub_post: 'federal court cases. Not opinions. Not estimates. Exposed outcomes, exposed timelines, exposed settlement patterns.',
-  hero_cta: 'Analyze your situation',
-  hero_demo: 'See a sample report',
+  hero_badge: 'Built on PACER \u00B7 FJC \u00B7 CourtListener data',
+  hero_privacy: 'Private & encrypted \u2014 zero data stored',
+  hero_title_1: 'The settlement data',
+  hero_title_2: 'the other side already has.',
+  hero_title_3: 'Now you have it too.',
+  hero_sub_pre: 'Research real outcomes from',
+  hero_sub_post: 'federal court cases across 94 districts. Win rates, settlement ranges, timelines, and judge analytics \u2014 sourced from public court records.',
+  hero_cta: 'Check my case type',
+  hero_demo: 'View a sample report',
 
   // Category selector
   select_situation: 'Select your situation',
@@ -234,14 +234,14 @@ const ES: typeof EN = {
   upl_banner_prefix: 'SOLO INFORMATIVO',
 
   // Hero
-  hero_badge: 'Datos reales de resultados judiciales — gratis',
-  hero_privacy: 'Privado y encriptado — cero datos almacenados',
-  hero_title_1: 'Qué pasó realmente',
-  hero_title_2: 'en casos como el',
-  hero_title_3: 'tuyo',
-  hero_sub_pre: 'Datos revelados de',
-  hero_sub_post: 'casos judiciales federales. No opiniones. No estimaciones. Resultados, plazos y patrones de acuerdos expuestos.',
-  hero_cta: 'Analiza tu situación',
+  hero_badge: 'Datos de PACER \u00B7 FJC \u00B7 CourtListener',
+  hero_privacy: 'Privado y encriptado \u2014 cero datos almacenados',
+  hero_title_1: 'Los datos de acuerdos',
+  hero_title_2: 'que la otra parte ya tiene.',
+  hero_title_3: 'Ahora t\u00FA tambi\u00E9n.',
+  hero_sub_pre: 'Investiga resultados reales de',
+  hero_sub_post: 'casos judiciales federales en 94 distritos. Tasas de \u00E9xito, rangos de acuerdos, plazos y an\u00E1lisis de jueces \u2014 de registros p\u00FAblicos.',
+  hero_cta: 'Consultar mi tipo de caso',
   hero_demo: 'Ver informe de ejemplo',
 
   // Category selector

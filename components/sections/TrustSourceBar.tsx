@@ -90,8 +90,8 @@ export default function TrustSourceBar({ lang = 'en' }: TrustSourceBarProps) {
             style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}
           >
             {lang === 'es'
-              ? 'Construido sobre la misma infraestructura que usan Westlaw y LexisNexis'
-              : 'Built on the same court record infrastructure used by Westlaw and LexisNexis'}
+              ? 'Datos directos de fuentes judiciales federales oficiales'
+              : 'Data sourced directly from official federal court systems'}
           </h2>
         </div>
 

@@ -72,6 +72,9 @@ const SettlementEvaluator = dynamic(() => import('./sections/SettlementEvaluator
 const CompetitorTable = dynamic(() => import('./sections/CompetitorTable'), { ssr: false });
 const TheProblem = dynamic(() => import('./sections/TheProblem'), { ssr: false });
 const AnnouncementBar = dynamic(() => import('./sections/AnnouncementBar'), { ssr: false });
+const LitigationCostCalculator = dynamic(() => import('./premium/LitigationCostCalculator'), { ssr: false });
+const CaseRiskScore = dynamic(() => import('./premium/CaseRiskScore'), { ssr: false });
+const OpposingCounselLookup = dynamic(() => import('./premium/OpposingCounselLookup'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -2542,6 +2545,38 @@ export default function MyCaseValue() {
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={240}>
               <CompetitorTable lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Premium Features Section — drives conversions */}
+          <div style={{ gridColumn: '1 / -1' }}>
+            <Reveal delay={250}>
+              <div className="py-8 sm:py-12">
+                <div className="text-center mb-8">
+                  <p className="text-[11px] font-bold tracking-[3px] uppercase mb-3" style={{ color: '#6366F1' }}>
+                    {lang === 'es' ? 'HERRAMIENTAS AVANZADAS' : 'ADVANCED TOOLS'}
+                  </p>
+                  <h2 className="font-display text-xl sm:text-2xl font-bold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+                    {lang === 'es' ? 'Inteligencia de nivel profesional' : 'Professional-grade intelligence'}
+                  </h2>
+                  <p className="text-[13px] max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
+                    {lang === 'es'
+                      ? 'Las mismas herramientas analíticas que utilizan los mejores bufetes de abogados'
+                      : 'The same analytical tools used by top litigation firms'}
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                  <CaseRiskScore lang={lang} isPremium={isPremium} onUpgrade={() => buy('unlimited')} />
+                  <OpposingCounselLookup lang={lang} isPremium={isPremium} onUpgrade={() => buy('unlimited')} />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Litigation Cost Calculator — premium feature */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={260}>
+              <LitigationCostCalculator lang={lang} isPremium={isPremium} onUpgrade={() => buy('unlimited')} />
             </Reveal>
           </div>
 

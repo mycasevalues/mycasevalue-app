@@ -10,7 +10,7 @@ interface VerdictEntry {
   year: string;
 }
 
-/* ── Real public federal court outcomes (sourced from PACER, published verdict reports) ── */
+/* ── Representative federal court outcomes based on published verdict data ranges ── */
 const VERDICTS: VerdictEntry[] = [
   { district: 'S.D.N.Y.', caseType: 'Employment Discrimination', outcome: 'Jury Verdict', amount: '$2.2M', year: '2024' },
   { district: 'N.D. Cal.', caseType: 'Wrongful Termination', outcome: 'Settlement', amount: '$875K', year: '2024' },
@@ -165,8 +165,8 @@ export default function VerdictTicker({ lang = 'en' }: VerdictTickerProps) {
       >
         <span style={{ fontSize: '10px', color: 'var(--fg-subtle)', letterSpacing: '0.5px' }}>
           {lang === 'es'
-            ? 'Resultados recientes de tribunales federales públicos · Fuente: PACER e informes de veredictos publicados'
-            : 'Recent public federal court outcomes · Sourced from PACER and published verdict reports'}
+            ? 'Resultados representativos de tribunales federales · Basado en rangos de datos públicos'
+            : 'Representative federal court outcomes · Based on published public data ranges'}
         </span>
       </div>
 

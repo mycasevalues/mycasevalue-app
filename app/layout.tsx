@@ -85,9 +85,9 @@ const jsonLd = {
       applicationCategory: 'ReferenceApplication',
       operatingSystem: 'All',
       offers: [
-        { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free basic report' },
-        { '@type': 'Offer', price: '5.99', priceCurrency: 'USD', description: 'Single premium report' },
-        { '@type': 'Offer', price: '9.99', priceCurrency: 'USD', description: 'Unlimited reports' },
+        { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free basic case outcome report' },
+        { '@type': 'Offer', price: '9.99', priceCurrency: 'USD', description: 'Single premium report with judge analytics' },
+        { '@type': 'Offer', price: '29.99', priceCurrency: 'USD', description: 'Unlimited premium reports, cost calculator, opposing counsel analysis' },
       ],
     },
     {
@@ -156,7 +156,17 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'How much does it cost?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Basic reports are free. Premium reports with detailed analytics are $5.99 for a single report or $9.99 for unlimited access.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Basic reports are free. Premium reports with judge analytics, litigation cost calculator, and opposing counsel analysis are $9.99 for a single report or $29.99/month for unlimited access.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'What case types does MyCaseValue cover?',
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue covers 50+ federal case types including employment discrimination, personal injury, medical malpractice, product liability, civil rights, wrongful termination, contract disputes, FDCPA violations, and more. Data spans all 94 federal districts.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'How is MyCaseValue different from Westlaw or LexisNexis?',
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is designed specifically for individuals and small firms, not large law firms. It offers free access to federal court outcome data, transparent pricing, bilingual support (English/Spanish), and plaintiff-focused analytics — all without requiring a legal subscription.' },
         },
       ],
     },
@@ -167,7 +177,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('mcv-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}})()` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){document.documentElement.setAttribute('data-theme','dark')})()` }} />
         {/* Self-hosted fonts — no external CDN, GDPR compliant */}
         <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-700.woff2" crossOrigin="anonymous" />
         <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-500.woff2" crossOrigin="anonymous" />
