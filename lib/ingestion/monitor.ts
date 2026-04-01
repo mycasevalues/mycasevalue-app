@@ -104,7 +104,7 @@ export async function logIngestionEvent(
       eventData.error_message = metadata?.errorMessage || event
     }
 
-    await supabase.from('ingestion_log').insert([eventData] as any)
+    await supabase.from('ingestion_log').insert([eventData])
   } catch (error: any) {
     console.error('Error logging ingestion event:', error.message)
   }
