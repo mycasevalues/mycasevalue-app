@@ -41,6 +41,30 @@ const FAQ_EN: FaqItem[] = [
     q: 'What if I\'m not satisfied with my report?',
     a: 'If your free report doesn\'t answer your key questions, we offer a 100% refund on premium reports. We also provide email support to help you interpret your data and answer follow-up questions about your case category.',
   },
+  {
+    q: 'What types of cases does MyCaseValues cover?',
+    a: 'We cover 50+ federal civil case types including employment discrimination (Title VII, ADA, ADEA), personal injury, medical malpractice, product liability, civil rights (§1983), contract disputes, FLSA wage violations, FMLA retaliation, premises liability, wrongful termination, and more. Each maps to a specific federal Nature of Suit (NOS) code.',
+  },
+  {
+    q: 'How is MyCaseValues different from Westlaw or LexisNexis?',
+    a: 'Westlaw and LexisNexis charge $350-400+/month and are designed for attorneys. MyCaseValues is free, requires no login, and is built specifically for plaintiffs and the public. We provide win rates, settlement ranges, judge analytics, and district intelligence — features that overlap with paid services but are accessible to everyone.',
+  },
+  {
+    q: 'Where does the EEOC data come from?',
+    a: 'Our EEOC data comes directly from the EEOC Office of General Counsel FY2024 Annual Report and EEOC Charge Statistics (FY1997-FY2023). This includes total monetary recovery ($699.6M in FY2024), charges by statute, litigation success rates, and statutory damage caps.',
+  },
+  {
+    q: 'What do the settlement percentiles mean?',
+    a: 'Settlement percentiles show where outcomes fall in the distribution. P10 means 10% of cases settled for less than that amount. P50 is the median — half settled above, half below. P90 means only 10% exceeded that amount. These come from FJC IDB and BJS Civil Trial Statistics.',
+  },
+  {
+    q: 'Is MyCaseValues legal advice?',
+    a: 'No. MyCaseValues is a public data research tool that shows historical outcomes in federal civil cases. It is not legal advice, does not predict outcomes, and should not replace consultation with a qualified attorney. We provide information to help you make more informed decisions.',
+  },
+  {
+    q: 'How often is the data updated?',
+    a: 'Our core data from the Federal Judicial Center IDB is updated quarterly. EEOC statistics are updated annually (fiscal year). Administrative Office of U.S. Courts statistical tables are updated annually. CourtListener opinion data updates daily.',
+  },
 ];
 
 const FAQ_ES: FaqItem[] = [
@@ -75,6 +99,30 @@ const FAQ_ES: FaqItem[] = [
   {
     q: '¿Qué pasa si no estoy satisfecho con mi informe?',
     a: 'Si tu informe gratuito no responde tus preguntas clave, ofrecemos un reembolso del 100% en informes premium. También proporcionamos soporte por correo electrónico para ayudarte a interpretar tus datos y responder preguntas de seguimiento sobre tu categoría de caso.',
+  },
+  {
+    q: '¿Qué tipos de casos cubre MyCaseValues?',
+    a: 'Cubrimos más de 50 tipos de casos civiles federales incluyendo discriminación laboral (Título VII, ADA, ADEA), lesiones personales, negligencia médica, responsabilidad de producto, derechos civiles (§1983), disputas contractuales, violaciones salariales FLSA, represalias FMLA, responsabilidad de instalaciones, despido injustificado y más.',
+  },
+  {
+    q: '¿Cómo se diferencia MyCaseValues de Westlaw o LexisNexis?',
+    a: 'Westlaw y LexisNexis cobran $350-400+/mes y están diseñados para abogados. MyCaseValues es gratuito, no requiere registro y está construido específicamente para demandantes y el público. Proporcionamos tasas de éxito, rangos de acuerdos, análisis de jueces e inteligencia de distritos.',
+  },
+  {
+    q: '¿De dónde provienen los datos del EEOC?',
+    a: 'Nuestros datos del EEOC provienen directamente del Informe Anual de la Oficina del Consejero General del EEOC AF2024 y las Estadísticas de Cargos del EEOC (AF1997-AF2023). Esto incluye recuperación monetaria total ($699.6M en AF2024), cargos por estatuto, tasas de éxito en litigios y topes de daños.',
+  },
+  {
+    q: '¿Qué significan los percentiles de acuerdos?',
+    a: 'Los percentiles de acuerdos muestran dónde caen los resultados en la distribución. P10 significa que el 10% de los casos se resolvieron por menos de esa cantidad. P50 es la mediana. P90 significa que solo el 10% superó esa cantidad. Estos provienen del FJC IDB y las Estadísticas de Juicios Civiles del BJS.',
+  },
+  {
+    q: '¿MyCaseValues es asesoría legal?',
+    a: 'No. MyCaseValues es una herramienta de investigación de datos públicos que muestra resultados históricos en casos civiles federales. No es asesoría legal, no predice resultados y no debe reemplazar la consulta con un abogado calificado.',
+  },
+  {
+    q: '¿Con qué frecuencia se actualizan los datos?',
+    a: 'Nuestros datos principales del FJC IDB se actualizan trimestralmente. Las estadísticas del EEOC se actualizan anualmente. Las tablas estadísticas de la Oficina Administrativa se actualizan anualmente. Los datos de opiniones de CourtListener se actualizan diariamente.',
   },
 ];
 
