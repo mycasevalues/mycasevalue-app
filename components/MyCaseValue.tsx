@@ -75,6 +75,10 @@ const AnnouncementBar = dynamic(() => import('./sections/AnnouncementBar'), { ss
 const LitigationCostCalculator = dynamic(() => import('./premium/LitigationCostCalculator'), { ssr: false });
 const CaseRiskScore = dynamic(() => import('./premium/CaseRiskScore'), { ssr: false });
 const OpposingCounselLookup = dynamic(() => import('./premium/OpposingCounselLookup'), { ssr: false });
+const EeocDataPanel = dynamic(() => import('./sections/EeocDataPanel'), { ssr: false });
+const DistrictIntelligence = dynamic(() => import('./sections/DistrictIntelligence'), { ssr: false });
+const CaseLifecycle = dynamic(() => import('./sections/CaseLifecycle'), { ssr: false });
+const StatsDashboard = dynamic(() => import('./sections/StatsDashboard'), { ssr: false });
 import { TabPanel } from './ui/ReportTabs';
 
 // ============================================================
@@ -2577,6 +2581,34 @@ export default function MyCaseValue() {
           <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
             <Reveal delay={260}>
               <LitigationCostCalculator lang={lang} isPremium={isPremium} onUpgrade={() => buy('unlimited')} />
+            </Reveal>
+          </div>
+
+          {/* EEOC Data Integration — charge trends by statute */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={270}>
+              <EeocDataPanel lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Stats Dashboard — 4-tab data panel */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={280}>
+              <StatsDashboard lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* Case Lifecycle Visualizer — vertical timeline */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={290}>
+              <CaseLifecycle lang={lang} />
+            </Reveal>
+          </div>
+
+          {/* District Intelligence — 94 federal districts explorer */}
+          <div style={{ gridColumn: '1 / -1', margin: '0 -16px' }}>
+            <Reveal delay={300}>
+              <DistrictIntelligence lang={lang} />
             </Reveal>
           </div>
 
