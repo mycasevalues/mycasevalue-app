@@ -619,7 +619,10 @@ function generateFJCDataFromRealData(): {
     const stat = {
       nosCode,
       label: caseData.label || `NOS ${nosCode}`,
+      category: (caseData as any).category || 'other',
       caseCount: caseData.total || 0,
+      plaintiffWinRate: caseData.wr || 0,
+      settlementRate: caseData.sr || 0,
       plaintiffWins: 0,
       defendantWins: 0,
       settlements: 0,
@@ -628,7 +631,14 @@ function generateFJCDataFromRealData(): {
       totalDuration: 0,
       avgMonetaryAward: 0,
       totalMonetaryAward: 0,
-      proseCount: 0,
+      median_settlement: caseData.range?.p50 || 0,
+      settlement_lo: caseData.range?.p10 || 0,
+      settlement_md: caseData.range?.p50 || 0,
+      settlement_hi: caseData.range?.p90 || 0,
+      represented_win_rate: (caseData.ps as any)?.repWr || 0,
+      represented_total: (caseData.ps as any)?.repTotal || 0,
+      pro_se_win_rate: (caseData.ps as any)?.psWr || 0,
+      proseCount: caseData.ps?.total || 0,
       outcomeDistribution: {},
     };
 
