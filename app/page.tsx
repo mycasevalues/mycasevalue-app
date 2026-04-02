@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic';
 import ServerHero from '../components/ServerHero';
+import ServerContent from '../components/ServerContent';
 
 const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
   ssr: false,
-  loading: () => null, // ServerHero provides the initial content
+  loading: () => null, // ServerHero + ServerContent provide the initial content
 });
 
 export const metadata = {
@@ -20,6 +21,7 @@ export default function Page() {
     <>
       <div id="ssr-hero" className="ssr-hero-container">
         <ServerHero />
+        <ServerContent />
       </div>
       <MyCaseValue />
     </>
