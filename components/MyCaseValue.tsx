@@ -1989,7 +1989,7 @@ export default function MyCaseValue() {
     const handler = (e: KeyboardEvent) => {
       // Escape: go back
       if (e.key === 'Escape') {
-        if (step === 6) { setResult(null); go(5); }
+        if (step === 6) { setResult(null); go(3); }
         else if (step > 1) go(step - 1);
         else if (step === 1) go(0);
       }
@@ -2229,80 +2229,11 @@ export default function MyCaseValue() {
                 </h1>
               </div>
 
-              {/* Animated hero stats — 4 columns with visual dividers */}
-              <div className="flex gap-4 sm:gap-6 mb-8 flex-wrap data-grid-stagger">
-                <div className="stat-glow" style={{ '--stat-color': '#FFFFFF' } as any}>
-                  <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
-                    {heroCounterDone ? <><AnimatedNumber value={5.1} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
-                  </div>
-                  <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
-                </div>
-                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.4 }} />
-                <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
-                  <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary)', textShadow: '0 2px 12px rgba(13,148,136,0.3)' }}>
-                    {heroCounterDone ? '94' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
-                  </div>
-                  <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
-                </div>
-                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
-                <div className="stat-glow" style={{ '--stat-color': '#A5B4FC' } as any}>
-                  <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #A5B4FC)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
-                    {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
-                  </div>
-                  <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
-                </div>
-                <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
-                <div className="stat-glow" style={{ '--stat-color': '#5EEAD4' } as any}>
-                  <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#5EEAD4', textShadow: '0 2px 12px rgba(94,234,212,0.3)' }}>
-                    {heroCounterDone ? '84' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
-                  </div>
-                  <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
-                </div>
-              </div>
-
-              {/* Mini data visualization — animated bar chart */}
-              <div className="mb-6 flex items-end gap-4">
-                <div className="hero-mini-chart">
-                  {[65, 45, 72, 38, 58, 80, 52, 68, 42, 76, 55, 62].map((h, i) => (
-                    <div key={i} className="bar" style={{
-                      height: `${h * 0.5}px`,
-                      background: h > 60 ? 'linear-gradient(to top, #0D9488, #14B8A6)' : 'linear-gradient(to top, #CBD5E1, #94A3B8)',
-                      animationDelay: `${0.8 + i * 0.06}s`,
-                    }} />
-                  ))}
-                </div>
-                <div className="text-[11px] leading-tight" style={{ color: '#8B9AB5' }}>
-                  <div className="font-semibold" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? 'Tasa de éxito por tipo de caso' : 'Win rate by case type'}</div>
-                  <div>{lang === 'es' ? '12 categorías analizadas' : '12 categories analyzed'}</div>
-                </div>
-              </div>
-
-              {/* Trusted by — refined for dark hero */}
-              <div className="mb-8">
-                <div className="text-[10px] font-bold mb-3 tracking-[2px] uppercase" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
-                    { name: 'CourtListener', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M9 11L12 14L22 4" /></svg> },
-                    { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
-                  ].map((s, i) => (
-                    <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all hover:scale-[1.02] spotlight-card stat-underline" style={{
-                      color: '#C8D3E5',
-                      background: 'rgba(255,255,255,0.05)',
-                      border: '1px solid rgba(255,255,255,0.08)',
-                    }}>
-                      {s.icon}
-                      {s.name}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <p className="text-[17px] sm:text-[19px] max-w-xl leading-[1.7] mb-6" style={{ color: '#8B9AB5' }}>
                 {t.hero_sub_pre} <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{totalDisplay}</strong> {t.hero_sub_post}
               </p>
 
-              {/* AI-integrated natural language input with smart suggestions */}
+              {/* AI-integrated natural language input with smart suggestions — ABOVE FOLD */}
               <div className="mb-6 max-w-lg relative" style={{ zIndex: 20 }}>
                 <div className="relative group">
                   <div className="absolute -inset-0.5 rounded-2xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"
@@ -2416,7 +2347,7 @@ export default function MyCaseValue() {
               </div>
 
               {/* Social proof inline */}
-              <div className="flex items-center gap-3 mt-8">
+              <div className="flex items-center gap-3 mt-6">
                 <div className="flex -space-x-2">
                   {['#4F46E5', '#0D9488', '#1A2744', '#6366F1', '#0D9488'].map((c, i) => (
                     <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
@@ -2428,6 +2359,78 @@ export default function MyCaseValue() {
                 <div className="text-[12px]" style={{ color: '#8B9AB5' }}>
                   <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
                   <span className="live-beacon ml-1.5" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
+                </div>
+              </div>
+
+              {/* Trust signals — below fold, after CTA */}
+              <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                {/* Animated hero stats — 4 columns with visual dividers */}
+                <div className="flex gap-4 sm:gap-6 mb-8 flex-wrap data-grid-stagger">
+                  <div className="stat-glow" style={{ '--stat-color': '#FFFFFF' } as any}>
+                    <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
+                      {heroCounterDone ? <><AnimatedNumber value={5.1} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                    </div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
+                  </div>
+                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.4 }} />
+                  <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
+                    <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary)', textShadow: '0 2px 12px rgba(13,148,136,0.3)' }}>
+                      {heroCounterDone ? '94' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                    </div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
+                  </div>
+                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
+                  <div className="stat-glow" style={{ '--stat-color': '#A5B4FC' } as any}>
+                    <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #A5B4FC)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
+                      {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                    </div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
+                  </div>
+                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
+                  <div className="stat-glow" style={{ '--stat-color': '#5EEAD4' } as any}>
+                    <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#5EEAD4', textShadow: '0 2px 12px rgba(94,234,212,0.3)' }}>
+                      {heroCounterDone ? '84' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                    </div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
+                  </div>
+                </div>
+
+                {/* Mini data visualization — animated bar chart */}
+                <div className="mb-6 flex items-end gap-4">
+                  <div className="hero-mini-chart">
+                    {[65, 45, 72, 38, 58, 80, 52, 68, 42, 76, 55, 62].map((h, i) => (
+                      <div key={i} className="bar" style={{
+                        height: `${h * 0.5}px`,
+                        background: h > 60 ? 'linear-gradient(to top, #0D9488, #14B8A6)' : 'linear-gradient(to top, #CBD5E1, #94A3B8)',
+                        animationDelay: `${0.8 + i * 0.06}s`,
+                      }} />
+                    ))}
+                  </div>
+                  <div className="text-[11px] leading-tight" style={{ color: '#8B9AB5' }}>
+                    <div className="font-semibold" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? 'Tasa de éxito por tipo de caso' : 'Win rate by case type'}</div>
+                    <div>{lang === 'es' ? '12 categorías analizadas' : '12 categories analyzed'}</div>
+                  </div>
+                </div>
+
+                {/* Trusted by — refined for dark hero */}
+                <div>
+                  <div className="text-[10px] font-bold mb-3 tracking-[2px] uppercase" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
+                      { name: 'CourtListener', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M9 11L12 14L22 4" /></svg> },
+                      { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
+                    ].map((s, i) => (
+                      <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all hover:scale-[1.02] spotlight-card stat-underline" style={{
+                        color: '#C8D3E5',
+                        background: 'rgba(255,255,255,0.05)',
+                        border: '1px solid rgba(255,255,255,0.08)',
+                      }}>
+                        {s.icon}
+                        {s.name}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Reveal>
@@ -3791,9 +3794,7 @@ export default function MyCaseValue() {
   // ============================================================
   const BackButton = () => (
     <button onClick={() => {
-      if (step === 6) { setResult(null); go(5); }
-      else if (step === 5) go(4);
-      else if (step === 4) go(3);
+      if (step === 6) { setResult(null); go(3); }
       else if (step === 3) { setSpec(null); go(2); }
       else if (step === 2) { setSit(null); go(0); }
       else if (step === 1) go(0);
@@ -3809,7 +3810,7 @@ export default function MyCaseValue() {
       {keyboardShortcutsEl}
       {commandPaletteEl}
       <div className="max-w-xl mx-auto py-8 wizard-step-enter">
-        <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <div className="flex items-center gap-3 mb-2">
@@ -3849,7 +3850,7 @@ export default function MyCaseValue() {
     <Shell {...shellProps}>
       {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <div className="flex items-center gap-3 mb-2">
@@ -3884,7 +3885,7 @@ export default function MyCaseValue() {
     <Shell {...shellProps}>
       {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={3} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <WizardProgress step={3} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6">{t.your_details}</h2>
@@ -3966,10 +3967,27 @@ export default function MyCaseValue() {
               </>
             )}
           </div>
-          <button onClick={() => go(4)} disabled={!timing || !amount || !attorney}
-            className="w-full mt-7 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-            style={{ background: (timing && amount && attorney) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && amount && attorney) ? '#fff' : '#94A3B8', boxShadow: (timing && amount && attorney) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
-            {lang === 'es' ? 'Ver resultados →' : 'View outcomes →'}
+          {/* Inline consent — previously a separate Step 4 screen */}
+          <div className="mt-6 p-4 rounded-2xl" style={{ background: 'rgba(99,102,241,0.04)', border: '1px solid rgba(99,102,241,0.12)' }}>
+            <p className="text-[13px] text-[var(--fg-muted)] leading-relaxed mb-3">
+              {lang === 'es'
+                ? 'Estás a punto de ver datos reales de registros judiciales federales. Estos datos muestran lo que le sucedió a otras personas — no predicen lo que te sucederá a ti. Solo un abogado con licencia puede evaluar tus hechos específicos.'
+                : 'You are about to see real data from federal court records. This data shows what happened to other people — it does not predict what will happen to you. Only a licensed attorney can evaluate your specific facts.'}
+            </p>
+            <label className="flex gap-3 items-start cursor-pointer text-[14px]" onClick={() => setConsent(!consent)}>
+              <div className="w-5 h-5 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
+                style={{ borderColor: consent ? '#4F46E5' : '#334155', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent' }}>
+                {consent && <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
+              </div>
+              <span className="leading-relaxed text-[var(--fg-muted)]">{lang === 'es'
+                ? 'Entiendo que estos son datos históricos, no evalúan mi situación, y no se crea ninguna relación abogado-cliente.'
+                : 'I understand this is historical data only and no attorney-client relationship is created.'}</span>
+            </label>
+          </div>
+          <button onClick={() => startLoad()} disabled={!timing || !amount || !attorney || !consent}
+            className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
+            style={{ background: (timing && amount && attorney && consent) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && amount && attorney && consent) ? '#fff' : '#94A3B8', boxShadow: (timing && amount && attorney && consent) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
+            {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
           </button>
         </Reveal>
       </div>
@@ -3981,7 +3999,7 @@ export default function MyCaseValue() {
     <Shell {...shellProps}>
       {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={4} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_confirm, t.wiz_email, t.wiz_report]} />
+        <WizardProgress step={4} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <Card glow>
