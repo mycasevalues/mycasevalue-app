@@ -9,6 +9,7 @@ import { CardBg as Card } from '../ui/CardBg';
 import { SectionLabel } from '../ui/SectionLabel';
 import { GlossaryTip } from '../ui/GlossaryTip';
 import EnhancedSearch from '../ui/EnhancedSearch';
+import { HeroWidget } from '../features/HeroWidget';
 import { formatCount } from '../../lib/formatters';
 import { StepHomeProps } from './WizardTypes';
 
@@ -274,6 +275,15 @@ export function StepHome({
               </div>
             </Reveal>
           </div>
+        </div>
+
+        {/* Hero Widget - E1 Interactive Mini-Calculator */}
+        <div style={{ marginTop: '2rem' }}>
+          <Reveal delay={150}>
+            <div className="mb-8">
+              <HeroWidget lang={lang} />
+            </div>
+          </Reveal>
         </div>
 
         {/* Category selector section */}

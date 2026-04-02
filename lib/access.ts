@@ -59,6 +59,7 @@ export type FeatureKey =
   | 'unlimited_lookups'
   | 'trend_data'
   | 'case_comparison'
+  | 'historical_verdicts'
   | 'saved_reports'
   | 'search_history'
   | 'watchlist_alerts'
@@ -110,6 +111,7 @@ const FEATURE_MIN_TIER: Record<FeatureKey, Tier> = {
   unlimited_lookups: 'unlimited',
   trend_data: 'unlimited',
   case_comparison: 'unlimited',
+  historical_verdicts: 'unlimited',
   saved_reports: 'unlimited',
   search_history: 'unlimited',
   watchlist_alerts: 'unlimited',
@@ -260,6 +262,7 @@ export const FEATURE_DESCRIPTIONS: Record<FeatureKey, { en: string; es: string }
   unlimited_lookups: { en: 'Unlimited lookups', es: 'Búsquedas ilimitadas' },
   trend_data: { en: 'Year-over-year trend data', es: 'Datos de tendencia interanual' },
   case_comparison: { en: 'Compare up to 3 cases', es: 'Comparar hasta 3 casos' },
+  historical_verdicts: { en: 'Historical verdict explorer', es: 'Explorador de veredictos históricos' },
   saved_reports: { en: 'Saved reports library', es: 'Biblioteca de informes guardados' },
   search_history: { en: 'Search history (100 searches)', es: 'Historial de búsqueda' },
   watchlist_alerts: { en: 'Watchlist alerts', es: 'Alertas de lista de seguimiento' },
