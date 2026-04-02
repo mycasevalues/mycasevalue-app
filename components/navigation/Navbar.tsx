@@ -107,9 +107,9 @@ export function Navbar({
                 key={link.href}
                 href={link.href}
                 className="px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors"
-                style={{ color: '#94A3B8', textDecoration: 'none' }}
+                style={{ color: '#B0BDD0', textDecoration: 'none' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#E2E8F0')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#94A3B8')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#B0BDD0')}
               >
                 {link.label}
               </a>
@@ -129,7 +129,7 @@ export function Navbar({
                 style={{
                   background: '#1E293B',
                   borderColor: '#334155',
-                  color: '#94A3B8',
+                  color: '#B0BDD0',
                 }}
                 aria-label={`${savedReportsCount} saved report${savedReportsCount !== 1 ? 's' : ''}`}
               >
@@ -329,7 +329,7 @@ function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en
         className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200 focus-ring"
         style={{
           background: lang === 'en' ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent',
-          color: lang === 'en' ? '#fff' : '#94A3B8',
+          color: lang === 'en' ? '#fff' : '#B0BDD0',
         }}
       >
         EN
@@ -342,7 +342,7 @@ function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en
         className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200 focus-ring"
         style={{
           background: lang === 'es' ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent',
-          color: lang === 'es' ? '#fff' : '#94A3B8',
+          color: lang === 'es' ? '#fff' : '#B0BDD0',
         }}
       >
         ES

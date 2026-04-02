@@ -127,8 +127,8 @@ html, body {
   --bg-muted: #1E293B;
   --bg-inverted: var(--color-cream-50);
   --fg: #F0F2F5;
-  --fg-muted: #94A3B8;
-  --fg-subtle: #64748B;
+  --fg-muted: #B0BDD0;
+  --fg-subtle: #8B95A5;
   --fg-inverted: var(--color-navy-900);
   --accent: var(--color-blue-600);
   --accent-mid: var(--color-blue-500);
@@ -1553,10 +1553,7 @@ input:focus, textarea:focus, select:focus {
     height: auto;
   }
 
-  /* Fix any absolutely positioned elements that might cause overflow */
-  .relative {
-    overflow: visible;
-  }
+  /* Removed: .relative { overflow: visible } — was breaking overflow-hidden on VerdictTicker and other components on mobile */
 }
 
 /* Tablet optimization */

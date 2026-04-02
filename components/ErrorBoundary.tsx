@@ -75,7 +75,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
               </svg>
             </div>
             <h2 style={{ fontSize: 22, fontWeight: 700, color: '#F0F2F5', marginBottom: 8 }}>Something went wrong</h2>
-            <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.6, marginBottom: 24 }}>
+            <p style={{ fontSize: 14, color: '#B0BDD0', lineHeight: 1.6, marginBottom: 24 }}>
               We encountered an unexpected error. Your data is safe — please try refreshing the page.
             </p>
             <button

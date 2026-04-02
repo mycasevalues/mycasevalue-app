@@ -213,7 +213,7 @@ function Stat({ value, label, color, large = false }: { value: string; label: st
       }}>
         {value}
       </div>
-      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: '#8B9AB5', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
+      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: '#B0BDD0', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
     </div>
   );
 }
@@ -241,7 +241,7 @@ function BarLine({ label, pct, max, color, delay = 0 }: { label: string; pct: nu
   );
 }
 
-function Select({ value, options, onChange, placeholder, dark = false, lang = 'en' }: { value: string; options: { id: string; label: string }[]; onChange: (v: string) => void; placeholder?: string; dark?: boolean; lang?: string }) {
+function Select({ value, options, onChange, placeholder, dark = false, lang = 'en', labelledBy }: { value: string; options: { id: string; label: string }[]; onChange: (v: string) => void; placeholder?: string; dark?: boolean; lang?: string; labelledBy?: string }) {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const ref = useRef<HTMLDivElement>(null);
@@ -267,10 +267,11 @@ function Select({ value, options, onChange, placeholder, dark = false, lang = 'e
         onClick={() => { setOpen(!open); setSearch(''); }}
         aria-expanded={open}
         aria-haspopup="listbox"
+        {...(labelledBy ? { 'aria-labelledby': labelledBy } : {})}
         className="w-full px-4 py-3.5 text-[15px] font-medium border-[1.5px] rounded-xl cursor-pointer text-left flex justify-between items-center transition-all duration-200"
         style={{
           borderColor: open ? '#4F46E5' : 'var(--border-muted)',
-          color: selected ? '#F0F2F5' : '#94A3B8',
+          color: selected ? '#F0F2F5' : '#B0BDD0',
           background: '#1A2744',
           boxShadow: open ? '0 0 0 3px rgba(64,64,242,0.12)' : 'none',
         }}>
@@ -397,7 +398,7 @@ function WizardProgress({ step, labels, lang = 'en' }: { step: number; labels?: 
           <span key={i} className={`step-label transition-all ${i + 1 <= progressStep ? 'active' : ''}`}
             style={{
               fontWeight: i + 1 <= progressStep ? 600 : 400,
-              color: i + 1 <= progressStep ? '#4F46E5' : '#94A3B8',
+              color: i + 1 <= progressStep ? '#4F46E5' : '#B0BDD0',
               textShadow: i + 1 <= progressStep ? '0 0 12px rgba(64,64,242,0.2)' : 'none',
             }}>{l}</span>
         ))}
@@ -968,8 +969,8 @@ function CompareChip({ label, value, color, active, onClick }: {
         transform: active ? 'scale(1.03)' : 'scale(1)',
         minWidth: 90,
       }}>
-      <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: active ? color : '#94A3B8' }}>{label}</div>
-      <div className="text-lg font-display font-bold mt-0.5" style={{ color: active ? color : '#64748B' }}>{value}</div>
+      <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: active ? color : '#B0BDD0' }}>{label}</div>
+      <div className="text-lg font-display font-bold mt-0.5" style={{ color: active ? color : '#8B95A5' }}>{value}</div>
     </button>
   );
 }
@@ -1533,8 +1534,7 @@ export default function MyCaseValue() {
   });
   const [showEmailGate, setShowEmailGate] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(true);
-  const [showComparison, setShowComparison] = useState(false);
-  const [showWhatIf, setShowWhatIf] = useState(false);
+  // showComparison and showWhatIf removed — unused
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [showCommandPalette, setShowCommandPalette] = useState(false);
   const [exitIntentShown, setExitIntentShown] = useState(false);
@@ -1554,12 +1554,10 @@ export default function MyCaseValue() {
   const [referralCode, setReferralCode] = useState('');
   const [legalPage, setLegalPage] = useState<'terms' | 'privacy' | 'cookies' | 'disclaimer' | null>(null);
   const [carouselIdx, setCarouselIdx] = useState(0);
-  const [leadEmail, setLeadEmail] = useState('');
-  const [leadCaptureSent, setLeadCaptureSent] = useState(false);
+  // leadEmail and leadCaptureSent removed — unused
   const [liveCounter, setLiveCounter] = useState(247);
   const [showCookieConsent, setShowCookieConsent] = useState(false);
-  const [quizStep, setQuizStep] = useState(0);
-  const [quizAnswers, setQuizAnswers] = useState<boolean[]>([]);
+  // quizStep and quizAnswers removed — unused
   const [showQuiz, setShowQuiz] = useState(false);
   const [calcAmount, setCalcAmount] = useState(50000);
   const [heroCounterDone, setHeroCounterDone] = useState(false);
@@ -2233,7 +2231,7 @@ export default function MyCaseValue() {
                 </h1>
               </div>
 
-              <p className="text-[14px] sm:text-[15px] max-w-xl leading-[1.5] mb-3" style={{ color: '#8B9AB5' }}>
+              <p className="text-[14px] sm:text-[15px] max-w-xl leading-[1.5] mb-3" style={{ color: '#B0BDD0' }}>
                 {t.hero_sub_pre} <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{totalDisplay}</strong> {t.hero_sub_post}
               </p>
 
@@ -2327,8 +2325,8 @@ export default function MyCaseValue() {
                     </div>
                   )}
                 </div>
-                <div className="text-[11px] mt-2 px-1 flex items-center gap-1.5" style={{ color: '#6B7A94' }}>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#6B7A94" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
+                <div className="text-[11px] mt-2 px-1 flex items-center gap-1.5" style={{ color: '#9BA8BE' }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9BA8BE" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
                   {lang === 'es' ? 'AI detecta automáticamente tu tipo de caso mientras escribes' : 'AI automatically detects your case type as you type'}
                 </div>
               </div>
@@ -2360,7 +2358,7 @@ export default function MyCaseValue() {
                     </div>
                   ))}
                 </div>
-                <div className="text-[12px]" style={{ color: '#8B9AB5' }}>
+                <div className="text-[12px]" style={{ color: '#B0BDD0' }}>
                   <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
                   <span className="live-beacon ml-1.5" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
                 </div>
@@ -2374,28 +2372,28 @@ export default function MyCaseValue() {
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
                       {heroCounterDone ? <><AnimatedNumber value={5.1} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
                   </div>
                   <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.4 }} />
                   <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary)', textShadow: '0 2px 12px rgba(13,148,136,0.3)' }}>
                       {heroCounterDone ? '94' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
                   </div>
                   <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
                   <div className="stat-glow" style={{ '--stat-color': '#A5B4FC' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #A5B4FC)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
                       {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
                   </div>
                   <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
                   <div className="stat-glow" style={{ '--stat-color': '#5EEAD4' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#5EEAD4', textShadow: '0 2px 12px rgba(94,234,212,0.3)' }}>
                       {heroCounterDone ? '84' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#8B9AB5' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
                   </div>
                 </div>
 
@@ -2410,7 +2408,7 @@ export default function MyCaseValue() {
                       }} />
                     ))}
                   </div>
-                  <div className="text-[11px] leading-tight" style={{ color: '#8B9AB5' }}>
+                  <div className="text-[11px] leading-tight" style={{ color: '#B0BDD0' }}>
                     <div className="font-semibold" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? 'Tasa de éxito por tipo de caso' : 'Win rate by case type'}</div>
                     <div>{lang === 'es' ? '12 categorías analizadas' : '12 categories analyzed'}</div>
                   </div>
@@ -2418,7 +2416,7 @@ export default function MyCaseValue() {
 
                 {/* Trusted by — refined for dark hero */}
                 <div>
-                  <div className="text-[10px] font-bold mb-3 tracking-[2px] uppercase" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
+                  <div className="text-[10px] font-bold mb-3 tracking-[2px] uppercase" style={{ color: '#9BA8BE' }}>{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
                   <div className="flex flex-wrap gap-2">
                     {[
                       { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
@@ -2454,7 +2452,7 @@ export default function MyCaseValue() {
                 {/* Header */}
                 <div className="px-6 pt-5 pb-3 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <div>
-                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'INFORME DE ANÁLISIS DE CASO' : 'CASE ANALYSIS REPORT'}</div>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#9BA8BE' }}>{lang === 'es' ? 'INFORME DE ANÁLISIS DE CASO' : 'CASE ANALYSIS REPORT'}</div>
                     <div className="text-[15px] font-display font-bold mt-0.5" style={{ color: '#F0F2F5' }}>{lang === 'es' ? 'Discriminación Laboral' : 'Employment Discrimination'}</div>
                   </div>
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
@@ -2466,7 +2464,7 @@ export default function MyCaseValue() {
                 <div className="px-6 py-4">
                   <div className="flex items-end gap-3 mb-3">
                     <div className="text-[42px] font-display font-extrabold leading-none" style={{ color: 'var(--accent-secondary)', letterSpacing: '-2px', textShadow: '0 0 20px rgba(13,148,136,0.3)' }}>67%</div>
-                    <div className="text-[12px] font-semibold pb-1.5" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'tasa de éxito' : 'win rate'}</div>
+                    <div className="text-[12px] font-semibold pb-1.5" style={{ color: '#9BA8BE' }}>{lang === 'es' ? 'tasa de éxito' : 'win rate'}</div>
                   </div>
                   <div className="w-full h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
                     <div className="h-full rounded-full" style={{ width: '67%', background: 'linear-gradient(90deg, #0D9488, #14B8A6)' }} />
@@ -2482,14 +2480,14 @@ export default function MyCaseValue() {
                   ].map((s, i) => (
                     <div key={i} className="text-center py-3 px-2" style={{ background: 'rgba(11,18,33,0.4)' }}>
                       <div className="text-[16px] font-display font-bold" style={{ color: s.c }}>{s.v}</div>
-                      <div className="text-[10px] font-semibold mt-0.5" style={{ color: '#6B7A94' }}>{s.l}</div>
+                      <div className="text-[10px] font-semibold mt-0.5" style={{ color: '#9BA8BE' }}>{s.l}</div>
                     </div>
                   ))}
                 </div>
 
                 {/* Mini chart */}
                 <div className="px-6 pb-5">
-                  <div className="text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ color: '#6B7A94' }}>{lang === 'es' ? 'DISTRIBUCIÓN DE RESULTADOS' : 'OUTCOME DISTRIBUTION'}</div>
+                  <div className="text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ color: '#9BA8BE' }}>{lang === 'es' ? 'DISTRIBUCIÓN DE RESULTADOS' : 'OUTCOME DISTRIBUTION'}</div>
                   <div className="flex gap-1 items-end h-[44px]">
                     {[35, 28, 22, 8, 7].map((h, i) => (
                       <div key={i} className="flex-1 rounded-t" style={{
@@ -2502,7 +2500,7 @@ export default function MyCaseValue() {
                   </div>
                   <div className="flex gap-1 mt-1">
                     {[lang === 'es' ? 'Acuerdo' : 'Settled', lang === 'es' ? 'Victoria' : 'Won', lang === 'es' ? 'Desestimado' : 'Dismissed', lang === 'es' ? 'Juicio' : 'Trial', lang === 'es' ? 'Otro' : 'Other'].map((l, i) => (
-                      <div key={i} className="flex-1 text-[10px] text-center font-medium" style={{ color: '#6B7A94' }}>{l}</div>
+                      <div key={i} className="flex-1 text-[10px] text-center font-medium" style={{ color: '#9BA8BE' }}>{l}</div>
                     ))}
                   </div>
                 </div>
@@ -2545,18 +2543,23 @@ export default function MyCaseValue() {
 
           {/* Verdict Ticker — live scrolling court outcomes */}
           <div style={{ gridColumn: '1 / -1' }}>
-            <VerdictTicker lang={lang} />
+            <LazySection minHeight={120}>
+              <VerdictTicker lang={lang} />
+            </LazySection>
           </div>
 
           {/* The Problem — information gap visualization */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={175}>
               <TheProblem lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Trust + Social Proof + Data + Stats — tighter spacing */}
           <div style={{ gridColumn: '1 / -1', display: 'flex', flexDirection: 'column', gap: '12px', minWidth: 0, overflow: 'hidden' }}>
+            <LazySection minHeight={200}>
             <Reveal delay={180}>
               <TrustBar lang={lang} />
             </Reveal>
@@ -2569,20 +2572,25 @@ export default function MyCaseValue() {
             <Reveal delay={210}>
               <HeroStats lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Data Source Trust Bar — PACER, FJC, CourtListener, etc. */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={200}>
             <Reveal delay={220}>
               <TrustSourceBar lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Settlement Offer Evaluator — interactive percentile tool */}
           <div id="settlement" style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={400}>
             <Reveal delay={230}>
               <SettlementEvaluator lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Competitor Comparison Table */}
@@ -2632,16 +2640,20 @@ export default function MyCaseValue() {
 
           {/* EEOC Data Integration — charge trends by statute */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={270}>
               <div id="eeoc"><EeocDataPanel lang={lang} /></div>
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Stats Dashboard — 4-tab data panel */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={280}>
               <StatsDashboard lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Case Lifecycle Visualizer — vertical timeline */}
@@ -2655,16 +2667,20 @@ export default function MyCaseValue() {
 
           {/* District Intelligence — 94 federal districts explorer */}
           <div id="districts" style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={300}>
               <DistrictIntelligence lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Statutory Outcomes — Know Your Rights section */}
           <div style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={310}>
               <div id="statutes"><StatutoryOutcomes lang={lang} /></div>
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Comparable Case Finder — verified verdicts table */}
@@ -2751,9 +2767,11 @@ export default function MyCaseValue() {
           </div>
 
           <div id="pricing" style={{ gridColumn: '1 / -1' }}>
+            <LazySection minHeight={300}>
             <Reveal delay={400}>
               <PricingPreview lang={lang} />
             </Reveal>
+            </LazySection>
           </div>
 
           {/* Category selector — enhanced */}
@@ -2826,6 +2844,7 @@ export default function MyCaseValue() {
         </div>
 
         {/* === NATIONWIDE DATA DASHBOARD === */}
+        <LazySection minHeight={400}>
         <Reveal delay={280}>
           <div className="mb-4" style={{ gridColumn: '1 / -1' }}>
             <div className="text-center mb-4">
@@ -2835,11 +2854,14 @@ export default function MyCaseValue() {
             <NationwideDashboard lang={lang} />
           </div>
         </Reveal>
+        </LazySection>
 
         {/* Data Preview Section — Elite Section */}
+        <LazySection minHeight={300}>
         <Reveal delay={300}>
           <DataPreviewSection lang={lang} />
         </Reveal>
+        </LazySection>
 
         {/* Stats bar */}
         <Reveal delay={350}>
@@ -2935,7 +2957,7 @@ export default function MyCaseValue() {
                                 <div key={j} className="flex items-center gap-2 px-2.5 py-1.5" style={{ background: j % 2 === 0 ? 'rgba(19,27,46,0.5)' : 'transparent', borderBottom: j < detail.types.length - 1 ? '1px solid rgba(30,41,59,0.2)' : 'none' }}>
                                   <span className="text-[10px] font-semibold flex-1" style={{ color: 'var(--fg-muted)' }}>{t.type}</span>
                                   <span className="text-[10px] font-data font-bold" style={{ color: t.rate > 45 ? '#0D9488' : t.rate > 35 ? '#A5B4FC' : '#E87461' }}>{t.rate}%</span>
-                                  <span className="text-[10px] font-data w-12 text-right" style={{ color: '#4B5563' }}>{t.vol}</span>
+                                  <span className="text-[10px] font-data w-12 text-right" style={{ color: '#8B95A5' }}>{t.vol}</span>
                                 </div>
                               ))}
                             </div>
@@ -3902,7 +3924,7 @@ export default function MyCaseValue() {
             )}
           </div>
 
-          <div className="text-[11px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#6B7A94' }}>
+          <div className="text-[11px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#9BA8BE' }}>
             {lang === 'es' ? 'O selecciona abajo' : 'Or select below'}
           </div>
           <div className="space-y-2.5 stagger">
@@ -3944,13 +3966,13 @@ export default function MyCaseValue() {
           <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6">{t.your_details}</h2>
           <div className="space-y-4">
             <div>
-              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿En qué estado estás?' : 'What state are you in?'}</label>
-              <Select value={stateCode} options={STATES} onChange={setStateCode} placeholder={lang === 'es' ? 'Selecciona tu estado...' : 'Select your state...'} dark={darkMode} lang={lang} />
+              <label id="label-state" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿En qué estado estás?' : 'What state are you in?'}</label>
+              <Select value={stateCode} options={STATES} onChange={setStateCode} placeholder={lang === 'es' ? 'Selecciona tu estado...' : 'Select your state...'} dark={darkMode} lang={lang} labelledBy="label-state" />
               <div className="text-[11px] text-[var(--fg-muted)] mt-1 px-1">{lang === 'es' ? 'Esto nos ayuda a mostrarte resultados específicos de tu área.' : 'This helps us show you results specific to your area.'}</div>
             </div>
             <div>
-              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuándo ocurrió esto?' : 'When did this happen?'} <span className="text-coral">*</span></label>
-              <Select value={timing} options={TIMING_OPTS} onChange={setTiming} dark={darkMode} lang={lang} />
+              <label id="label-timing" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuándo ocurrió esto?' : 'When did this happen?'} <span className="text-coral">*</span></label>
+              <Select value={timing} options={TIMING_OPTS} onChange={setTiming} dark={darkMode} lang={lang} labelledBy="label-timing" />
             </div>
             {timing && (
               <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed animate-fade-in" style={{
@@ -3973,13 +3995,13 @@ export default function MyCaseValue() {
             {/* Progressive disclosure — these fields appear after timing is selected */}
             {timing && (<>
             <div className="animate-fade-in">
-              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuánto dinero está involucrado?' : 'How much money is involved?'}</label>
-              <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} dark={darkMode} lang={lang} />
+              <label id="label-amount" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuánto dinero está involucrado?' : 'How much money is involved?'}</label>
+              <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} dark={darkMode} lang={lang} labelledBy="label-amount" />
               <div className="text-[11px] text-[var(--fg-muted)] mt-1 px-1">{lang === 'es' ? 'Selecciona "No estoy seguro" si no lo sabes — estimaremos basándonos en casos similares.' : 'Select "Not sure" if you don\'t know — we\'ll estimate based on similar cases.'}</div>
             </div>
             <div className="animate-fade-in">
-              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Tienes abogado?' : 'Do you have a lawyer?'} <span className="text-coral">*</span></label>
-              <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} dark={darkMode} lang={lang} />
+              <label id="label-attorney" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Tienes abogado?' : 'Do you have a lawyer?'} <span className="text-coral">*</span></label>
+              <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} dark={darkMode} lang={lang} labelledBy="label-attorney" />
             </div>
             <div className="animate-fade-in">
               <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Hay otros afectados por el mismo problema?' : 'Are others affected by the same issue?'}</label>
@@ -4031,8 +4053,8 @@ export default function MyCaseValue() {
                 ? 'Estás a punto de ver datos reales de registros judiciales federales. Estos datos muestran lo que le sucedió a otras personas — no predicen lo que te sucederá a ti. Solo un abogado con licencia puede evaluar tus hechos específicos.'
                 : 'You are about to see real data from federal court records. This data shows what happened to other people — it does not predict what will happen to you. Only a licensed attorney can evaluate your specific facts.'}
             </p>
-            <label className="flex gap-3 items-start cursor-pointer text-[14px]" onClick={() => setConsent(!consent)}>
-              <div className="w-5 h-5 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
+            <label className="flex gap-3 items-start cursor-pointer text-[14px]" role="checkbox" aria-checked={consent} tabIndex={0} onClick={() => setConsent(!consent)} onKeyDown={e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); setConsent(!consent); } }}>
+              <div className="w-5 h-5 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all" aria-hidden="true"
                 style={{ borderColor: consent ? '#4F46E5' : '#334155', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent' }}>
                 {consent && <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
               </div>
@@ -4043,7 +4065,7 @@ export default function MyCaseValue() {
           </div>
           <button onClick={() => startLoad()} disabled={!timing || !attorney || !consent}
             className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-            style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && attorney && consent) ? '#fff' : '#94A3B8', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
+            style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && attorney && consent) ? '#fff' : '#B0BDD0', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
             {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
           </button>
         </Reveal>
@@ -4051,86 +4073,7 @@ export default function MyCaseValue() {
     </Shell>
   );
 
-  // Step 4: Consent
-  if (step === 4) return (
-    <Shell {...shellProps}>
-      {commandPaletteEl}
-      <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={4} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
-        <BackButton />
-        <Reveal>
-          <Card glow>
-            <div className="inline-block px-3.5 py-1 rounded-lg text-[11px] font-semibold mb-4" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-primary)' }}>{t.one_moment}</div>
-            <h2 className="text-2xl font-display font-bold mb-3">{t.before_report}</h2>
-            <p className="text-[15px] text-[var(--fg-muted)] leading-relaxed mb-3">
-              {lang === 'es'
-                ? 'Estás a punto de ver datos reales de registros judiciales federales. Estos datos muestran lo que le sucedió a otras personas — no predicen lo que te sucederá a ti.'
-                : 'You are about to see real data from federal court records. This data shows what happened to other people — it does not predict what will happen to you.'}
-            </p>
-            <p className="text-[13px] text-[var(--fg-muted)] leading-relaxed mb-5">
-              {lang === 'es'
-                ? 'Solo un abogado con licencia puede evaluar tus hechos y circunstancias específicas. MyCaseValue es una herramienta informativa, no un servicio legal.'
-                : 'Only a licensed attorney can evaluate your specific facts and circumstances. MyCaseValue is an informational tool, not a legal service.'}
-            </p>
-            <label className="flex gap-3 items-start cursor-pointer text-[15px]" onClick={() => setConsent(!consent)}>
-              <div className="w-6 h-6 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all"
-                style={{ borderColor: consent ? '#4F46E5' : '#1E293B', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B' }}>
-                {consent && <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
-              </div>
-              <span className="leading-relaxed">{lang === 'es'
-                ? 'Entiendo que estos son solo datos históricos, no evalúan mi situación, y no se crea ninguna relación abogado-cliente.'
-                : 'I understand this is historical data only, does not evaluate my situation, and no attorney-client relationship is created.'}</span>
-            </label>
-            <button onClick={() => go(5)} disabled={!consent}
-              className="w-full mt-6 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-              style={{ background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: consent ? '#fff' : '#94A3B8', boxShadow: consent ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
-              {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
-            </button>
-          </Card>
-        </Reveal>
-      </div>
-    </Shell>
-  );
-
-  // Step 5: Email
-  if (step === 5) return (
-    <Shell {...shellProps}>
-      {commandPaletteEl}
-      <div className="max-w-md mx-auto py-10 text-center page-enter">
-        <Reveal>
-          <Card glow className="px-6 sm:px-9 py-10">
-            <h2 className="text-2xl font-display font-bold mb-2">{t.data_ready}</h2>
-            <p className="text-[15px] text-[var(--fg-muted)] mb-6 leading-relaxed">
-              {lang === 'es' ? 'Guarda una copia en tu correo, o sáltalo para ver ahora.' : 'Save a copy to your email, or skip to view now.'}
-            </p>
-            <form className="flex gap-2" onSubmit={e => {
-                e.preventDefault();
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (emailRegex.test(email)) {
-                  setEmailSent(true);
-                  apiCall('/api/email/capture', 'POST', { email, case_type: spec?.d });
-                  startLoad();
-                }
-              }}>
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-                autoComplete="email"
-                aria-label="Email address"
-                className="flex-1 px-4 py-3 text-[15px] border-[1.5px] border-[var(--border-default)] rounded-xl outline-none focus:border-[#4F46E5] focus:ring-2 focus:ring-[#4F46E5]/20 card-bg bg-[#131B2E] transition-colors" />
-              <button type="submit" className="px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer transition-all active:scale-[0.96]"
-                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', minWidth: '44px', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                {lang === 'es' ? 'Enviar' : 'Send'}
-              </button>
-            </form>
-            <button onClick={startLoad} className="mt-3 text-sm text-[var(--fg-muted)] bg-transparent border-none cursor-pointer underline hover:text-[var(--fg-muted)] transition-colors">
-              {lang === 'es' ? 'Saltar por ahora' : 'Skip for now'}
-            </button>
-          </Card>
-        </Reveal>
-      </div>
-    </Shell>
-  );
+  // Steps 4 & 5 removed — consent is now inline in step 3, email capture is an overlay on step 6
 
   // ============================================================
   // RESULTS
@@ -4320,7 +4263,7 @@ export default function MyCaseValue() {
                 <div className="text-[14px] mb-1" style={{ color: 'var(--fg-muted)' }}>
                   {lang === 'es' ? 'Mediana' : 'Median'}: <strong style={{ color: '#5EEAD4' }}>{v.md}</strong>
                 </div>
-                <div className="text-[12px]" style={{ color: '#6B7A94' }}>
+                <div className="text-[12px]" style={{ color: '#9BA8BE' }}>
                   {lang === 'es'
                     ? `Basado en ${d.total ? d.total.toLocaleString() : '—'} casos similares de ${spec?.d || 'tu tipo de caso'}`
                     : `Based on ${d.total ? d.total.toLocaleString() : '—'} similar ${spec?.d || 'cases'} cases`}
@@ -4710,7 +4653,7 @@ export default function MyCaseValue() {
                             <div className="absolute left-3 w-5 h-5 rounded-full flex items-center justify-center text-[10px] z-10" style={{
                               background: i <= 3 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B',
                               border: i > 3 ? '2px solid var(--border-muted)' : 'none',
-                              color: i <= 3 ? 'white' : '#94A3B8',
+                              color: i <= 3 ? 'white' : '#B0BDD0',
                               boxShadow: i <= 3 ? '0 2px 8px rgba(64,64,242,0.3)' : 'none',
                             }}>
                               {i <= 3 ? '✓' : (i + 1)}
@@ -4801,14 +4744,14 @@ export default function MyCaseValue() {
                           const p = getPoint(i, maxR + 22);
                           return (
                             <text key={i} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="middle"
-                              fontSize="10" fontWeight="600" fill={'#94A3B8'}>
+                              fontSize="10" fontWeight="600" fill={'#B0BDD0'}>
                               {f.label}
                             </text>
                           );
                         })}
                         {/* Center score */}
                         <text x={cx} y={cy - 6} textAnchor="middle" fontSize="28" fontWeight="800" fill="#4F46E5">{avgScore}</text>
-                        <text x={cx} y={cy + 12} textAnchor="middle" fontSize="9" fontWeight="600" fill="#94A3B8">
+                        <text x={cx} y={cy + 12} textAnchor="middle" fontSize="9" fontWeight="600" fill="#B0BDD0">
                           {lang === 'es' ? 'PUNTUACIÓN' : 'SCORE'}
                         </text>
                       </svg>
@@ -4885,7 +4828,7 @@ export default function MyCaseValue() {
                           const color = intensity > 0.7 ? '#0D9488' : intensity > 0.4 ? '#6366F1' : '#CBD5E1';
                           return (
                             <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                              <div className="text-[10px] font-bold font-data" style={{ color: intensity > 0.5 ? color : '#94A3B8' }}>
+                              <div className="text-[10px] font-bold font-data" style={{ color: intensity > 0.5 ? color : '#B0BDD0' }}>
                                 {t.pct}%
                               </div>
                               <div className="w-full rounded-t-md transition-all duration-700" style={{
@@ -5540,7 +5483,7 @@ export default function MyCaseValue() {
               {/* Quick stats */}
               <div className="stats-grid stagger-in grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-6">
                 <Stat value={`${Math.round(wr)}%`} label={lang === 'es' ? 'Tasa de éxito' : 'Win rate'} color={wrColor} dark={darkMode} />
-                <Stat value={`${d.mo} mo`} label={lang === 'es' ? 'Duración mediana' : 'Median duration'} color={'#94A3B8'} dark={true} />
+                <Stat value={`${d.mo} mo`} label={lang === 'es' ? 'Duración mediana' : 'Median duration'} color={'#B0BDD0'} dark={true} />
                 <Stat value={`${winSettleRate}%`} label={lang === 'es' ? 'Éxito+Acuerdo' : 'Win+Settle'} color="#0D9488" dark={darkMode} />
                 <Stat value={`${d.sp}%`} label={lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate'} color="#1A2744" dark={darkMode} />
               </div>
@@ -6550,10 +6493,10 @@ export default function MyCaseValue() {
                           {i < (d.tl || []).length - 1 && <div className="w-0.5 flex-1 mt-0.5 transition-colors" style={{ background: active ? '#4F46E525' : '#1E293B' }} />}
                         </div>
                         <div className="flex-1 pb-2.5">
-                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#4F46E5' : '#94A3B8', background: active ? 'rgba(99,102,241,0.15)' : '#1E293B' }}>
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#4F46E5' : '#B0BDD0', background: active ? 'rgba(99,102,241,0.15)' : '#1E293B' }}>
                             {lang === 'es' ? `Mes ${t.mo}` : `Month ${t.mo}`}
                           </span>
-                          <div className="text-[14px] mt-1 transition-colors" style={{ fontWeight: active ? 600 : 400, color: active ? '#E2E8F0' : '#94A3B8' }}>{t.ev}</div>
+                          <div className="text-[14px] mt-1 transition-colors" style={{ fontWeight: active ? 600 : 400, color: active ? '#E2E8F0' : '#B0BDD0' }}>{t.ev}</div>
                           {active && t.d && <div className="text-[12px] text-[var(--fg-muted)] mt-0.5">{t.d}</div>}
                         </div>
                       </div>
@@ -6636,7 +6579,7 @@ export default function MyCaseValue() {
                             background: i === 1 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(64,64,242,0.2)',
                           }} />
                         </div>
-                        <div className="text-[13px] font-bold" style={{ color: i === 1 ? '#4F46E5' : '#94A3B8' }}>{x.p}%</div>
+                        <div className="text-[13px] font-bold" style={{ color: i === 1 ? '#4F46E5' : '#B0BDD0' }}>{x.p}%</div>
                         <div className="text-[11px] text-[var(--fg-muted)]">{x.l}mo</div>
                       </div>
                     ))}

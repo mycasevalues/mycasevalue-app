@@ -19,8 +19,8 @@ html[data-theme="dark"] {
   /* ── FOREGROUNDS ──────────────────────────────────────── */
   --fg-primary:       #F0F2F5;
   --fg-secondary:     #CBD5E1;
-  --fg-muted:         #94A3B8;
-  --fg-subtle:        #64748B;
+  --fg-muted:         #B0BDD0;
+  --fg-subtle:        #8B95A5;
   --fg-disabled:      #475569;
   --fg-inverse:       #0B1221;
   --fg-link:          #818CF8;

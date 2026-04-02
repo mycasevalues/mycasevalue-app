@@ -5,7 +5,7 @@ export default function CategoryError({ error, reset }: { error: Error; reset: (
     <div className="min-h-screen flex items-center justify-center" style={{ background: '#0B1221' }}>
       <div className="text-center max-w-md mx-auto px-6">
         <h2 className="text-xl font-bold mb-4" style={{ color: '#F0F2F5' }}>Something went wrong</h2>
-        <p className="text-sm mb-6" style={{ color: '#94A3B8' }}>
+        <p className="text-sm mb-6" style={{ color: '#B0BDD0' }}>
           We couldn&apos;t load this case category. Please try again.
         </p>
         <button
