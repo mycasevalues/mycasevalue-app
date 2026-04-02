@@ -373,16 +373,19 @@ function Collapsible({ title, badge, defaultOpen = false, children }: { title: s
 }
 
 function WizardProgress({ step, labels, lang = 'en' }: { step: number; labels?: string[]; lang?: string }) {
-  const defaultLabels = labels || (lang === 'es' ? ['Situación', 'Detalles', 'Confirmar', 'Correo', 'Informe'] : ['Situation', 'Details', 'Confirm', 'Email', 'Report']);
+  const defaultLabels = labels || (lang === 'es' ? ['Situación', 'Detalles', 'Informe'] : ['Situation', 'Details', 'Report']);
+  const total = defaultLabels.length;
+  // Map internal step numbers (1,2,3) to progress positions
+  const progressStep = step <= 2 ? step : Math.min(step, total);
   return (
     <div className="mb-8 no-print">
       <div className="flex items-center gap-4 mb-2">
-        <span className="text-sm font-bold" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? `Paso ${step}/5` : `Step ${step}/5`}</span>
+        <span className="text-sm font-bold" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? `Paso ${progressStep}/${total}` : `Step ${progressStep}/${total}`}</span>
         <div className="flex gap-1.5 flex-1">
-          {[1, 2, 3, 4, 5].map(i => (
+          {defaultLabels.map((_, i) => (
             <div key={i} className="flex-1 h-2 rounded-full transition-all duration-500 relative overflow-hidden"
-              style={{ background: i <= step ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B' }}>
-              {i <= step && (
+              style={{ background: i + 1 <= progressStep ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B' }}>
+              {i + 1 <= progressStep && (
                 <div className="absolute inset-0 animate-pulse" style={{ background: 'rgba(255,255,255,0.04)' }} />
               )}
             </div>
@@ -391,11 +394,11 @@ function WizardProgress({ step, labels, lang = 'en' }: { step: number; labels?: 
       </div>
       <div className="wizard-labels">
         {defaultLabels.map((l, i) => (
-          <span key={i} className={`step-label transition-all ${i + 1 <= step ? 'active' : ''}`}
+          <span key={i} className={`step-label transition-all ${i + 1 <= progressStep ? 'active' : ''}`}
             style={{
-              fontWeight: i + 1 <= step ? 600 : 400,
-              color: i + 1 <= step ? '#4F46E5' : '#94A3B8',
-              textShadow: i + 1 <= step ? '0 0 12px rgba(64,64,242,0.2)' : 'none',
+              fontWeight: i + 1 <= progressStep ? 600 : 400,
+              color: i + 1 <= progressStep ? '#4F46E5' : '#94A3B8',
+              textShadow: i + 1 <= progressStep ? '0 0 12px rgba(64,64,242,0.2)' : 'none',
             }}>{l}</span>
         ))}
       </div>
@@ -3854,7 +3857,7 @@ export default function MyCaseValue() {
     <Shell {...shellProps}>
       {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
+        <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <div className="flex items-center gap-3 mb-2">
@@ -3935,7 +3938,7 @@ export default function MyCaseValue() {
     <Shell {...shellProps}>
       {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={3} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
+        <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
         <BackButton />
         <Reveal>
           <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6">{t.your_details}</h2>
