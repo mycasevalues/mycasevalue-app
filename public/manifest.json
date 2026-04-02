@@ -26,5 +26,6 @@
       "url": "/?action=new",
       "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     }
-  ]
+  ],
+  "gcm_sender_id": "103953800507"
 }

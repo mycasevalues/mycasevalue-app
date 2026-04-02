@@ -37,6 +37,66 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
+// Push notification event: parse data and show notification
+self.addEventListener('push', (event) => {
+  if (!event.data) {
+    console.log('[SW] Push received with no data');
+    return;
+  }
+
+  try {
+    const data = event.data.json();
+    const { title, body, icon, badge, tag, actions, url } = data;
+
+    const notificationOptions = {
+      body: body || '',
+      icon: icon || '/icon-192.png',
+      badge: badge || '/logo.svg',
+      tag: tag || 'default',
+      actions: actions || [],
+      data: { url: url || '/' },
+      requireInteraction: false,
+    };
+
+    event.waitUntil(
+      self.registration.showNotification(title || 'Notification', notificationOptions)
+    );
+  } catch (err) {
+    console.error('[SW] Failed to parse push notification data:', err);
+  }
+});
+
+// Notification click event: handle user interaction
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+
+  const urlToOpen = event.notification.data?.url || '/';
+  const tag = event.notification.tag;
+
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+      // Check if app is already open in a window
+      for (let i = 0; i < clientList.length; i++) {
+        const client = clientList[i];
+        if (client.url === urlToOpen && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      // App not open, open a new window
+      if (clients.openWindow) {
+        return clients.openWindow(urlToOpen);
+      }
+    })
+  );
+});
+
+// Notification close event: track dismissal
+self.addEventListener('notificationclose', (event) => {
+  const { tag, data } = event.notification;
+  console.log('[SW] Notification dismissed:', { tag, url: data?.url });
+  // Could send analytics here if needed
+});
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);

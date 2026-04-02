@@ -1,8 +1,10 @@
 /**
- * Premium access management
+ * Premium access management with Supabase persistence
  * Handles grant, revoke, and check operations for premium plans
- * Uses in-memory storage (production would use a database)
+ * Uses in-memory cache layer for fast reads + Supabase for persistence
  */
+
+import { getSupabaseAdmin } from './supabase';
 
 export type PremiumPlan = 'single' | 'unlimited' | 'attorney';
 
@@ -16,32 +18,143 @@ export interface PremiumSession {
 }
 
 /**
- * In-memory store for premium access
+ * In-memory cache for premium access (fast reads)
  * Key: email address (lowercase)
  * Value: PremiumSession
  */
 export const premiumStore = new Map<string, PremiumSession>();
 
 /**
+ * Check if Supabase is available (wrapped in try/catch for all ops)
+ */
+function isSupabaseAvailable(): boolean {
+  try {
+    getSupabaseAdmin();
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Sync premium session from database into cache
+ * Called on cold cache miss to check DB before returning null
+ * @param email User email address
+ * @returns Premium session if found and active, null otherwise
+ */
+export async function syncPremiumFromDB(email: string): Promise<PremiumSession | null> {
+  const normalizedEmail = email.toLowerCase();
+
+  // Skip if already in cache
+  if (premiumStore.has(normalizedEmail)) {
+    const session = premiumStore.get(normalizedEmail)!;
+    // Check expiration
+    if (session.expiresAt && Date.now() > session.expiresAt) {
+      premiumStore.delete(normalizedEmail);
+      return null;
+    }
+    return session;
+  }
+
+  // Try to fetch from Supabase
+  if (!isSupabaseAvailable()) {
+    return null;
+  }
+
+  try {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from('premium_sessions')
+      .select('*')
+      .eq('email', normalizedEmail)
+      .single();
+
+    if (error) {
+      // No row found is not an error, just return null
+      if (error.code === 'PGRST116') {
+        return null;
+      }
+      throw error;
+    }
+
+    if (!data) {
+      return null;
+    }
+
+    // Check if expired
+    if (data.expires_at && Date.now() > data.expires_at) {
+      return null;
+    }
+
+    // Hydrate cache and return
+    const session: PremiumSession = {
+      email: data.email,
+      plan: data.plan,
+      grantedAt: data.granted_at,
+      expiresAt: data.expires_at,
+      stripeCustomerId: data.stripe_customer_id,
+      stripeSubscriptionId: data.stripe_subscription_id,
+    };
+
+    premiumStore.set(normalizedEmail, session);
+    return session;
+  } catch (err: any) {
+    console.error('[Premium] DB sync error:', err?.message || err);
+    return null;
+  }
+}
+
+/**
  * Grant premium access to a user
+ * Writes to both cache and Supabase
  * @param session Premium session details
  */
-export function grantPremiumAccess(session: PremiumSession): void {
+export async function grantPremiumAccess(session: PremiumSession): Promise<void> {
   const email = session.email.toLowerCase();
-  premiumStore.set(email, {
+  const normalizedSession: PremiumSession = {
     ...session,
-    email: session.email.toLowerCase(),
+    email,
     grantedAt: session.grantedAt || Date.now(),
-  });
+  };
+
+  // Update cache immediately for fast reads
+  premiumStore.set(email, normalizedSession);
+
+  // Write to Supabase if available
+  if (isSupabaseAvailable()) {
+    try {
+      const supabase = getSupabaseAdmin();
+      await supabase
+        .from('premium_sessions')
+        .upsert(
+          {
+            email,
+            plan: normalizedSession.plan,
+            granted_at: normalizedSession.grantedAt,
+            expires_at: normalizedSession.expiresAt,
+            stripe_customer_id: normalizedSession.stripeCustomerId,
+            stripe_subscription_id: normalizedSession.stripeSubscriptionId,
+          },
+          { onConflict: 'email' }
+        )
+        .throwOnError();
+    } catch (err: any) {
+      console.error('[Premium] Failed to persist to DB:', err?.message || err);
+      // Continue anyway - cache is still active
+    }
+  }
+
   console.log(
-    `[Premium] Access granted: ${email} | Plan: ${session.plan} | Expires: ${
-      session.expiresAt ? new Date(session.expiresAt).toISOString() : 'never'
+    `[Premium] Access granted: ${email} | Plan: ${normalizedSession.plan} | Expires: ${
+      normalizedSession.expiresAt ? new Date(normalizedSession.expiresAt).toISOString() : 'never'
     }`
   );
 }
 
 /**
  * Check premium access for a user
+ * Checks cache first, returns null if not found
+ * Note: Call syncPremiumFromDB before checking if you want DB fallback
  * @param email User email address
  * @returns Premium session if active, null if not found or expired
  */
@@ -65,12 +178,31 @@ export function checkPremiumAccess(email: string): PremiumSession | null {
 
 /**
  * Revoke premium access for a user
+ * Removes from cache and Supabase
  * @param email User email address
  */
-export function revokePremiumAccess(email: string): void {
+export async function revokePremiumAccess(email: string): Promise<void> {
   const normalizedEmail = email.toLowerCase();
+
+  // Remove from cache
   const existed = premiumStore.has(normalizedEmail);
   premiumStore.delete(normalizedEmail);
+
+  // Remove from Supabase if available
+  if (isSupabaseAvailable()) {
+    try {
+      const supabase = getSupabaseAdmin();
+      await supabase
+        .from('premium_sessions')
+        .delete()
+        .eq('email', normalizedEmail)
+        .throwOnError();
+    } catch (err: any) {
+      console.error('[Premium] Failed to revoke in DB:', err?.message || err);
+      // Continue anyway - cache is already cleared
+    }
+  }
+
   if (existed) {
     console.log(`[Premium] Access revoked: ${normalizedEmail}`);
   }
@@ -78,6 +210,7 @@ export function revokePremiumAccess(email: string): void {
 
 /**
  * Get all active premium sessions (for debugging/admin purposes)
+ * Returns only cache data (does not query DB)
  */
 export function getAllPremiumSessions(): PremiumSession[] {
   const now = Date.now();
@@ -94,8 +227,9 @@ export function getAllPremiumSessions(): PremiumSession[] {
 
 /**
  * Clean up expired sessions (can be called periodically)
+ * Removes from cache and optionally from Supabase
  */
-export function cleanupExpiredSessions(): number {
+export async function cleanupExpiredSessions(): Promise<number> {
   const now = Date.now();
   const toDelete: string[] = [];
 
@@ -106,6 +240,22 @@ export function cleanupExpiredSessions(): number {
   });
 
   toDelete.forEach(email => premiumStore.delete(email));
+
+  // Also clean up in Supabase if available
+  if (isSupabaseAvailable() && toDelete.length > 0) {
+    try {
+      const supabase = getSupabaseAdmin();
+      await supabase
+        .from('premium_sessions')
+        .delete()
+        .lte('expires_at', now)
+        .not('expires_at', 'is', null)
+        .throwOnError();
+    } catch (err: any) {
+      console.error('[Premium] Failed to cleanup expired in DB:', err?.message || err);
+      // Continue anyway
+    }
+  }
 
   if (toDelete.length > 0) {
     console.log(`[Premium] Cleaned up ${toDelete.length} expired sessions`);

@@ -267,6 +267,22 @@ CREATE POLICY "Service write cache" ON stats_cache FOR INSERT WITH CHECK (true);
 CREATE POLICY "Service update cache" ON stats_cache FOR UPDATE USING (true);
 
 -- ============================================================
+-- PREMIUM SESSIONS (subscription and access management)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS premium_sessions (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  plan TEXT NOT NULL CHECK (plan IN ('single', 'unlimited', 'attorney')),
+  granted_at BIGINT NOT NULL,
+  expires_at BIGINT,
+  stripe_customer_id TEXT,
+  stripe_subscription_id TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+CREATE INDEX IF NOT EXISTS idx_premium_email ON premium_sessions(email);
+
+-- ============================================================
 -- HELPER FUNCTIONS
 -- ============================================================
 

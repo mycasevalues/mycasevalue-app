@@ -1,0 +1,271 @@
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getPostBySlug, getAllPosts, getRelatedPosts } from '../../../lib/blog';
+
+interface BlogPostPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export async function generateMetadata(props: BlogPostPageProps): Promise<Metadata> {
+  const params = await props.params;
+  const post = getPostBySlug(params.slug);
+
+  if (!post) {
+    return {
+      title: 'Not Found',
+    };
+  }
+
+  const url = `https://mycasevalues.com/blog/${post.slug}`;
+
+  return {
+    title: `${post.title} — MyCaseValue`,
+    description: post.description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      url,
+      publishedTime: post.publishedAt.toISOString(),
+      modifiedTime: post.updatedAt.toISOString(),
+      authors: [post.author],
+    },
+    keywords: post.tags.join(', '),
+  };
+}
+
+export default async function BlogPostPage(props: BlogPostPageProps) {
+  const params = await props.params;
+  const post = getPostBySlug(params.slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const relatedPosts = getRelatedPosts(params.slug);
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://mycasevalues.com/blog' },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `https://mycasevalues.com/blog/${post.slug}` },
+        ],
+      },
+      {
+        '@type': 'Article',
+        headline: post.title,
+        description: post.description,
+        image: post.image || 'https://mycasevalues.com/og-image.jpg',
+        datePublished: post.publishedAt.toISOString(),
+        dateModified: post.updatedAt.toISOString(),
+        author: {
+          '@type': 'Organization',
+          name: post.author,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'MyCaseValue',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://mycasevalues.com/logo.svg',
+          },
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://mycasevalues.com/blog/${post.slug}`,
+        },
+      },
+    ],
+  };
+
+  return (
+    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* Header with breadcrumb */}
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+        <div className="max-w-3xl mx-auto px-6 py-12">
+          <a href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to Blog
+          </a>
+
+          {/* Category and meta */}
+          <div className="mb-6">
+            <span
+              className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold"
+              style={{
+                background: 'rgba(99,102,241,0.15)',
+                color: '#4F46E5',
+              }}
+            >
+              {post.category}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold mb-6" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+            {post.title}
+          </h1>
+
+          {/* Description */}
+          <p className="text-lg leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+            {post.description}
+          </p>
+
+          {/* Meta information */}
+          <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t" style={{ borderColor: 'var(--border-default)' }}>
+            <div className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+              <span className="font-medium" style={{ color: 'var(--fg-primary)' }}>{post.author}</span>
+              <span className="mx-2">•</span>
+              <time>{post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+              <span className="mx-2">•</span>
+              <span>{post.readTime} min read</span>
+            </div>
+            {post.updatedAt !== post.publishedAt && (
+              <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+                Updated {post.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Article content */}
+      <article className="max-w-3xl mx-auto px-6 py-16">
+        <div className="prose prose-invert max-w-none" style={{
+          '--tw-prose-body': 'var(--fg-primary)',
+          '--tw-prose-headings': 'var(--fg-primary)',
+          '--tw-prose-lead': 'var(--fg-muted)',
+          '--tw-prose-links': '#4F46E5',
+          '--tw-prose-bold': 'var(--fg-primary)',
+          '--tw-prose-counters': '#4F46E5',
+          '--tw-prose-bullets': '#4F46E5',
+          '--tw-prose-hr': 'var(--border-default)',
+          '--tw-prose-quotes': 'var(--fg-muted)',
+          '--tw-prose-quote-borders': '#4F46E5',
+          '--tw-prose-captions': 'var(--fg-muted)',
+          '--tw-prose-code': '#4F46E5',
+          '--tw-prose-pre-code': '#E2E8F0',
+          '--tw-prose-pre-bg': '#0F172A',
+          '--tw-prose-th-borders': 'var(--border-default)',
+          '--tw-prose-td-borders': 'var(--border-default)',
+        } as any}>
+          {post.content.split('\n\n').map((paragraph, idx) => (
+            <p key={idx} className="text-lg leading-relaxed mb-6" style={{ color: 'var(--fg-muted)' }}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
+        {/* Tags */}
+        <div className="mt-12 pt-8 border-t" style={{ borderColor: 'var(--border-default)' }}>
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
+              <a
+                key={tag}
+                href={`/blog?tag=${encodeURIComponent(tag)}`}
+                className="text-sm font-medium px-3 py-1.5 rounded-full transition-colors"
+                style={{
+                  background: 'rgba(99,102,241,0.08)',
+                  color: '#A5B4FC',
+                }}
+              >
+                #{tag}
+              </a>
+            ))}
+          </div>
+        </div>
+      </article>
+
+      {/* CTA Section */}
+      <div className="max-w-3xl mx-auto px-6 py-12">
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+            See real case data for your situation
+          </h2>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
+            Use the insights from this article to get a personalized analysis of outcomes in cases like yours.
+          </p>
+          <a
+            href="/odds"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
+            style={{ background: '#4F46E5', color: '#131B2E' }}
+          >
+            Check My Case Type
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </section>
+      </div>
+
+      {/* Related posts */}
+      {relatedPosts.length > 0 && (
+        <div className="max-w-5xl mx-auto px-6 py-16 border-t" style={{ borderColor: 'var(--border-default)' }}>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--fg-primary)' }}>
+            Related Articles
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedPosts.map((relatedPost) => (
+              <a
+                key={relatedPost.slug}
+                href={`/blog/${relatedPost.slug}`}
+                className="group rounded-xl border p-6 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10"
+                style={{
+                  borderColor: 'var(--border-default)',
+                  background: 'rgba(25, 32, 56, 0.4)',
+                  backdropFilter: 'blur(10px)',
+                  textDecoration: 'none',
+                }}
+              >
+                <div className="flex flex-col gap-3 h-full">
+                  <span
+                    className="inline-flex items-center w-fit px-2.5 py-1 rounded-full text-xs font-semibold"
+                    style={{
+                      background: 'rgba(99,102,241,0.15)',
+                      color: '#4F46E5',
+                    }}
+                  >
+                    {relatedPost.category}
+                  </span>
+                  <h3 className="text-base font-display font-bold leading-tight group-hover:text-indigo-400 transition-colors" style={{ color: 'var(--fg-primary)' }}>
+                    {relatedPost.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: 'var(--fg-muted)' }}>
+                    {relatedPost.description}
+                  </p>
+                  <div className="text-xs pt-2 border-t" style={{ color: 'var(--fg-muted)', borderColor: 'var(--border-default)' }}>
+                    {relatedPost.readTime} min read
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Footer disclaimer */}
+      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
+          MyCaseValue provides aggregate historical data from public federal court records for informational and research purposes only.
+          We are not a law firm. This is not legal advice. No attorney-client relationship is created by using this tool.
+          © {new Date().getFullYear()} MyCaseValue LLC.
+        </p>
+      </div>
+    </div>
+  );
+}

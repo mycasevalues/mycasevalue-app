@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
               ? Date.now() + SUBSCRIPTION_EXPIRY_MS // Subscriptions expire after 30 days (renew on next billing)
               : null; // One-time purchases don't expire
 
-          grantPremiumAccess({
+          await grantPremiumAccess({
             email,
             plan: plan as 'single' | 'unlimited' | 'attorney',
             grantedAt: Date.now(),
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
           const email = (customer as any).email;
 
           if (email) {
-            grantPremiumAccess({
+            await grantPremiumAccess({
               email,
               plan: 'attorney',
               grantedAt: Date.now(),
@@ -116,7 +116,7 @@ export async function POST(req: NextRequest) {
           const email = (customer as any).email;
 
           if (email) {
-            revokePremiumAccess(email);
+            await revokePremiumAccess(email);
             console.log(`[Stripe] Attorney tier revoked for ${email}`);
           }
         } catch (err: any) {

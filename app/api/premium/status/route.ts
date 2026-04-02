@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
-import { checkPremiumAccess } from '../../../../lib/premium';
+import { checkPremiumAccess, syncPremiumFromDB } from '../../../../lib/premium';
 
 export const dynamic = 'force-dynamic';
 
@@ -26,7 +26,12 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
 
-    const premiumSession = checkPremiumAccess(email);
+    let premiumSession = checkPremiumAccess(email);
+
+    // Cache miss: try to sync from DB
+    if (!premiumSession) {
+      premiumSession = await syncPremiumFromDB(email);
+    }
 
     if (!premiumSession) {
       return NextResponse.json({
