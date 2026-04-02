@@ -75,7 +75,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
         </p>
 
         {/* CTA Button */}
-        <button
+        <button type="button"
           onClick={onGetStarted}
           className="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-navy-900 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-100 mb-8"
           style={{

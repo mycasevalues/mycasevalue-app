@@ -13,7 +13,7 @@ interface TrendLineProps {
 }
 
 export function TrendLine({
-  data, color = '#111111', gradientId = 'trendGrad',
+  data, color = '#8B5CF6', gradientId = 'trendGrad',
   label, unit = '', lang = 'en',
 }: TrendLineProps) {
   return (

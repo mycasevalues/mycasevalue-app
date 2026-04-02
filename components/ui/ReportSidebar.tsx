@@ -126,7 +126,7 @@ export default function ReportSidebar({
           const isActive = tab.id === activeTab;
           const label = lang === 'es' ? tab.labelEs : tab.label;
           return (
-            <button
+            <button type="button"
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
               style={{
@@ -179,7 +179,7 @@ export default function ReportSidebar({
               <li style={{ marginBottom: 4 }}> {lang === 'es' ? 'Análisis de jueces' : 'Judge analytics'}</li>
               <li> {lang === 'es' ? 'Informe PDF descargable' : 'Downloadable PDF report'}</li>
             </ul>
-            <button
+            <button type="button"
               onClick={onUpgrade}
               style={{
                 width: '100%',

@@ -250,7 +250,7 @@ export function Shell({
 
         {/* Back to top button */}
         {showBackToTop && (
-          <button
+          <button type="button"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-[var(--z-dropdown)] cursor-pointer no-print transition-all"
             style={{
@@ -283,7 +283,7 @@ export function Shell({
               className="exit-intent-modal card-bg bg-[#FFFFFF] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
+              <button type="button"
                 onClick={() => setShowExitIntent(false)}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none"
                 aria-label="Close"
@@ -330,7 +330,7 @@ export function Shell({
               >
                 {lang === 'es' ? 'Oferta por tiempo limitado' : 'Limited time offer'}
               </div>
-              <button
+              <button type="button"
                 onClick={() => {
                   setShowExitIntent(false);
                   buy('single');
@@ -340,7 +340,7 @@ export function Shell({
               >
                 {lang === 'es' ? 'Informe Premium — $5.99' : 'Premium Report — $5.99'}
               </button>
-              <button
+              <button type="button"
                 onClick={() => setShowExitIntent(false)}
                 className="text-[13px] text-[var(--fg-muted)] mt-3 bg-transparent border-none cursor-pointer"
               >
@@ -365,7 +365,7 @@ export function Shell({
                 <div className="text-lg font-display font-bold">
                   {lang === 'es' ? 'Mis informes' : 'My Reports'}
                 </div>
-                <button
+                <button type="button"
                   onClick={() => setShowSaved(false)}
                   className="w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none"
                   aria-label="Close"
@@ -401,7 +401,7 @@ export function Shell({
                   >
                     {referralCode}
                   </div>
-                  <button
+                  <button type="button"
                     onClick={() => {
                       navigator.clipboard.writeText(referralCode);
                       toast(lang === 'es' ? '¡Copiado!' : 'Copied!');
@@ -470,7 +470,7 @@ export function Shell({
                   {lang === 'es'
                     ? 'Usamos cookies esenciales para el funcionamiento del sitio. Las cookies opcionales de análisis nos ayudan a mejorar.'
                     : 'We use essential cookies for site functionality. Optional analytics cookies help us improve your experience.'}
-                  <button
+                  <button type="button"
                     onClick={() => setLegalPage('privacy')}
                     className="text-[#111111] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]"
                   >
@@ -479,7 +479,7 @@ export function Shell({
                 </p>
               </div>
               <div className="flex gap-2">
-                <button
+                <button type="button"
                   onClick={() => {
                     try {
                       localStorage.setItem('mcv_cookies_accepted', 'essential');
@@ -491,7 +491,7 @@ export function Shell({
                 >
                   {lang === 'es' ? 'Solo esenciales' : 'Essential only'}
                 </button>
-                <button
+                <button type="button"
                   onClick={() => {
                     try {
                       localStorage.setItem('mcv_cookies_accepted', 'all');
@@ -582,7 +582,7 @@ export function Footer({
 
       <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-8">
         <div className="max-w-sm">
-          <button
+          <button type="button"
             onClick={reset}
             className="bg-transparent border-none mb-4 flex items-center gap-3"
             style={{ cursor: 'pointer' }}
@@ -734,7 +734,7 @@ export function Footer({
             url: () => '',
           },
         ].map((s, i) => (
-          <button
+          <button type="button"
             key={i}
             onClick={() => {
               if (s.label === 'Copy link' || s.label === 'Copiar enlace') {
@@ -889,7 +889,7 @@ export function Footer({
           FAQ
         </a>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button
+        <button type="button"
           onClick={() => setLegalPage('terms')}
           className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
           style={{ color: 'var(--fg-muted)' }}
@@ -897,7 +897,7 @@ export function Footer({
           {lang === 'es' ? 'Términos' : 'Terms'}
         </button>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button
+        <button type="button"
           onClick={() => setLegalPage('privacy')}
           className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
           style={{ color: 'var(--fg-muted)' }}
@@ -905,7 +905,7 @@ export function Footer({
           {lang === 'es' ? 'Privacidad' : 'Privacy'}
         </button>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button
+        <button type="button"
           onClick={() => setLegalPage('cookies')}
           className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
           style={{ color: 'var(--fg-muted)' }}
@@ -913,7 +913,7 @@ export function Footer({
           {lang === 'es' ? 'Cookies' : 'Cookies'}
         </button>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button
+        <button type="button"
           onClick={() => setLegalPage('disclaimer')}
           className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
           style={{ color: 'var(--fg-muted)' }}

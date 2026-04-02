@@ -58,7 +58,7 @@ export function StepSubCategory({
           {naturalInput.trim() && aiSuggestions.filter((s: any) => s.sit.id === sit.id).length > 0 && (
             <div className="mt-2 space-y-1">
               {aiSuggestions.filter((s: any) => s.sit.id === sit.id).slice(0, 3).map((s: any, i: number) => (
-                <button key={i} onClick={() => { setSpec(s.opt); go(3); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
+                <button type="button" key={i} onClick={() => { setSpec(s.opt); go(3); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
                   className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-left text-[13px] transition-all bg-transparent border-none"
                   style={{ color: '#374151' }}
                   onMouseEnter={e => { e.currentTarget.style.background = 'rgba(17,17,17,0.1)'; }}
@@ -77,7 +77,7 @@ export function StepSubCategory({
         </div>
         <div className="space-y-2.5 stagger">
           {(hasMore && !showAllSubcats ? sit.opts.slice(0, INITIAL_SHOW) : sit.opts).map((o: any, i: number) => (
-            <button key={i} onClick={() => { setSpec(o); go(3); }}
+            <button type="button" key={i} onClick={() => { setSpec(o); go(3); }}
               className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
               style={{ background: '#FFFFFF', border: '1.5px solid #E5E0D8', boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = sit.color}
@@ -91,7 +91,7 @@ export function StepSubCategory({
           ))}
         </div>
         {hasMore && !showAllSubcats && (
-          <button onClick={() => setShowAllSubcats(true)}
+          <button type="button" onClick={() => setShowAllSubcats(true)}
             className="w-full mt-3 py-3 text-[14px] font-medium rounded-xl cursor-pointer transition-all bg-transparent border-none"
             style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>
             {lang === 'es' ? `Mostrar ${sit.opts.length - INITIAL_SHOW} más →` : `Show ${sit.opts.length - INITIAL_SHOW} more →`}
@@ -104,7 +104,7 @@ export function StepSubCategory({
 
 function BackButton({ go, lang, sit, setShowAllSubcats }: { go: (step: number) => void; lang: string; sit: any; setShowAllSubcats: (show: boolean) => void }) {
   return (
-    <button onClick={() => { setShowAllSubcats(false); go(0); }} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
+    <button type="button" onClick={() => { setShowAllSubcats(false); go(0); }} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
       {lang === 'es' ? 'Volver' : 'Back'}
     </button>

@@ -48,10 +48,10 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
               <Cell
                 key={index}
                 fill={index === highlightIndex
-                  ? '#111111'
+                  ? '#8B5CF6'
                   : entry.pct === maxPct
-                    ? '#0D9488'
-                    : 'rgba(17,17,17,0.25)'
+                    ? '#8B5CF6'
+                    : 'rgba(139,92,246,0.25)'
                 }
               />
             ))}
@@ -62,8 +62,8 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
       <table className="sr-only" aria-label={lang === 'es' ? 'Distribución de acuerdos' : 'Settlement distribution'}>
         <thead>
           <tr>
-            <th>{lang === 'es' ? 'Rango' : 'Range'}</th>
-            <th>{lang === 'es' ? 'Porcentaje' : 'Percentage'}</th>
+            <th scope="col">{lang === 'es' ? 'Rango' : 'Range'}</th>
+            <th scope="col">{lang === 'es' ? 'Porcentaje' : 'Percentage'}</th>
           </tr>
         </thead>
         <tbody>

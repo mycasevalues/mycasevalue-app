@@ -91,7 +91,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
           <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.locked}</p>
           <h3 className="text-base font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
           <p className="text-[12px] mb-4" style={{ color: 'var(--fg-muted)' }}>{t.unlockMsg}</p>
-          <button
+          <button type="button"
             onClick={onUpgrade}
             className="px-5 py-2 rounded-lg font-semibold text-[12px] text-white transition-all hover:scale-[1.02]"
             style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
@@ -122,7 +122,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
           className="flex-1 rounded-lg px-3 py-2.5 text-[13px]"
           style={{ background: 'rgba(15,23,42,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
         />
-        <button
+        <button type="button"
           className="px-4 py-2.5 rounded-lg font-semibold text-[12px] text-white"
           style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
         >

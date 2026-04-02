@@ -125,7 +125,7 @@ export function CaseCompareTool({
               ))}
             </select>
             {index > 0 && (
-              <button
+              <button type="button"
                 onClick={() => handleRemoveComparison(index)}
                 className="px-4 py-2 rounded-lg text-xs font-medium bg-[#334155] hover:bg-[#4B5563] text-[#111827] transition-colors"
               >
@@ -138,7 +138,7 @@ export function CaseCompareTool({
 
       {/* Add Comparison Button */}
       {selectedCases.length < 3 && (
-        <button
+        <button type="button"
           onClick={handleAddComparison}
           className="mb-8 px-4 py-2 rounded-lg text-sm font-medium bg-[rgba(17,17,17,0.15)] border border-[rgba(17,17,17,0.3)] text-[#8B5CF6] hover:bg-[rgba(17,17,17,0.25)] hover:border-[rgba(17,17,17,0.5)] transition-all"
         >
@@ -152,13 +152,13 @@ export function CaseCompareTool({
           {/* Desktop Table View */}
           <div className="hidden md:block">
             <table className="w-full border-collapse">
-              <thead>
+              <th scope="col"ead>
                 <tr className="border-b border-[rgba(17,17,17,0.2)]">
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#9CA3AF] uppercase tracking-widest">
+                  <th scope="col" className="text-left px-4 py-3 text-xs font-semibold text-[#9CA3AF] uppercase tracking-widest">
                     {t.compare}
                   </th>
                   {comparisons.map((comp) => (
-                    <th key={comp.nos} className="text-center px-4 py-3 text-sm font-semibold text-[#8B5CF6]">
+                    <th scope="col" key={comp.nos} className="text-center px-4 py-3 text-sm font-semibold text-[#8B5CF6]">
                       {comp.label}
                     </th>
                   ))}

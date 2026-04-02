@@ -136,7 +136,7 @@ export default function DataFreshness({
             style={{ backgroundColor: '#10B981' }}
           />
           <span style={{ color: '#111827' }}>
-            {t.dataUpdated} {formattedDate} · {formatCaseNumber(displayCount)}
+            {t.dataUpdated} {formattedDate} · <span className="font-mono">{formatCaseNumber(displayCount)}</span>
             <span style={{ color: '#6B7280' }}>
               {' '}
               {t.cases}
@@ -152,7 +152,7 @@ export default function DataFreshness({
       className="w-full rounded-lg border overflow-hidden"
       style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E0D8' }}
     >
-      <button
+      <button type="button"
         onClick={() => setIsExpanded(!isExpanded)}
         aria-expanded={isExpanded}
         aria-label={isExpanded ? 'Collapse data pipeline status' : 'Expand data pipeline status'}
@@ -242,7 +242,7 @@ export default function DataFreshness({
               <div style={{ color: '#111827' }} className="font-semibold text-sm mb-2">
                 {t.totalCases}
               </div>
-              <div style={{ color: '#5EEAD4' }} className="text-3xl font-bold">
+              <div style={{ color: '#5EEAD4' }} className="text-3xl font-bold font-mono">
                 {formatCaseNumber(displayCount)}
               </div>
             </div>

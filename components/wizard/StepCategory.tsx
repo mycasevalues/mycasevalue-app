@@ -29,7 +29,7 @@ export function StepCategory({
         <p className="text-[var(--fg-muted)] mb-6 ml-[52px]">{t.select_closest}</p>
         <div className="space-y-2.5 stagger">
           {SITS.map(si => (
-            <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
+            <button type="button" key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
               className="category-card flex items-center gap-4 w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg group"
               style={{ background: '#FFFFFF', border: '1.5px solid #E5E0D8', boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
@@ -54,7 +54,7 @@ export function StepCategory({
 
 function BackButton({ go, lang }: { go: (step: number) => void; lang: string }) {
   return (
-    <button onClick={() => go(0)} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
+    <button type="button" onClick={() => go(0)} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
       {lang === 'es' ? 'Volver' : 'Back'}
     </button>

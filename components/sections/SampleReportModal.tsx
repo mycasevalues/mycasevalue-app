@@ -77,7 +77,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
         </p>
 
         {/* Preview card thumbnail */}
-        <button onClick={() => setIsOpen(true)} className="group relative mx-auto block max-w-[400px] rounded-xl overflow-hidden transition-transform hover:scale-[1.02]" style={{ border: '1px solid var(--border-default)' }}>
+        <button type="button" onClick={() => setIsOpen(true)} className="group relative mx-auto block max-w-[400px] rounded-xl overflow-hidden transition-transform hover:scale-[1.02]" style={{ border: '1px solid var(--border-default)' }}>
           <div className="p-5" style={{ background: 'linear-gradient(180deg, rgba(17,17,17,0.08) 0%, rgba(15,23,42,0.8) 100%)' }}>
             {/* Mini report preview */}
             <div className="text-left space-y-2">
@@ -142,7 +142,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
                 <h3 id="sample-report-title" className="text-base font-display font-extrabold" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
                 <p className="text-[11px]" style={{ color: 'var(--fg-subtle)' }}>{t.subtitle}</p>
               </div>
-              <button onClick={() => setIsOpen(false)} className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors hover:bg-white/5" style={{ border: '1px solid var(--border-default)' }} aria-label={lang === 'es' ? 'Cerrar modal' : 'Close modal'}>
+              <button type="button" onClick={() => setIsOpen(false)} className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors hover:bg-white/5" style={{ border: '1px solid var(--border-default)' }} aria-label={lang === 'es' ? 'Cerrar modal' : 'Close modal'}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" strokeWidth="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
             </div>
@@ -244,7 +244,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
 
             {/* Footer CTA */}
             <div className="sticky bottom-0 p-5" style={{ background: 'var(--bg-surface, #FFFFFF)', borderTop: '1px solid var(--border-default)' }}>
-              <button
+              <button type="button"
                 onClick={() => setIsOpen(false)}
                 className="w-full py-3 rounded-xl text-[13px] font-bold transition-all hover:opacity-90"
                 style={{ background: 'linear-gradient(135deg, #111111, #333333)', color: '#fff' }}

@@ -132,7 +132,7 @@ export default function CaseRiskScore({
           <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.locked}</p>
           <h3 className="text-base font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
           <p className="text-[12px] mb-4" style={{ color: 'var(--fg-muted)' }}>{t.unlockMsg}</p>
-          <button
+          <button type="button"
             onClick={onUpgrade}
             className="px-5 py-2 rounded-lg font-semibold text-[12px] text-white transition-all hover:scale-[1.02]"
             style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}

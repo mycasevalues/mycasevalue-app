@@ -92,7 +92,7 @@ export default function AnnouncementBar({ lang = 'en' }: AnnouncementBarProps) {
         {/* Progress dots */}
         <div className="flex items-center gap-1 ml-2 hidden sm:flex">
           {MESSAGES.map((_, i) => (
-            <button
+            <button type="button"
               key={i}
               onClick={() => { setFading(true); setTimeout(() => { setMsgIndex(i); setFading(false); }, 200); }}
               className="w-1.5 h-1.5 rounded-full transition-all"
@@ -106,7 +106,7 @@ export default function AnnouncementBar({ lang = 'en' }: AnnouncementBarProps) {
         </div>
 
         {/* Dismiss */}
-        <button
+        <button type="button"
           onClick={() => setDismissed(true)}
           className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-md transition-colors hover:bg-white/5"
           aria-label="Dismiss"

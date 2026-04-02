@@ -126,7 +126,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
           {es ? 'Basado en datos agregados de casos federales' : 'Based on aggregate federal case data'}
         </div>
         {visibleCount < CASE_EVENTS.length && (
-          <button
+          <button type="button"
             onClick={() => setVisibleCount(Math.min(visibleCount + 3, CASE_EVENTS.length))}
             className="text-[11px] font-semibold border-none bg-transparent cursor-pointer transition-colors"
             style={{ color: '#333333' }}

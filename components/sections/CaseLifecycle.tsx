@@ -185,7 +185,7 @@ export default function CaseLifecycle({ lang = 'en' }: CaseLifecycleProps) {
             <div key={stage.id} className="relative flex gap-4">
               {/* Vertical line + node */}
               <div className="flex flex-col items-center flex-shrink-0">
-                <button
+                <button type="button"
                   onClick={() => setExpandedStage(isExpanded ? null : stage.id)}
                   className="w-10 h-10 rounded-xl flex items-center justify-center relative z-10 transition-all"
                   style={{
@@ -205,7 +205,7 @@ export default function CaseLifecycle({ lang = 'en' }: CaseLifecycleProps) {
 
               {/* Content */}
               <div className="flex-1 pb-6">
-                <button
+                <button type="button"
                   onClick={() => setExpandedStage(isExpanded ? null : stage.id)}
                   className="text-left w-full"
                 >

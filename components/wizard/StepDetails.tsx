@@ -159,7 +159,7 @@ export function StepDetails({
           </label>
           {submitted && !consent && <div className="text-red-500 text-sm mt-3">{lang === 'es' ? 'Este campo es obligatorio' : 'This field is required'}</div>}
         </div>
-        <button onClick={handleGenerateReport}
+        <button type="button" onClick={handleGenerateReport}
           className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer transition-all active:scale-[0.98] hover:scale-[1.01]"
           style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E0D8', color: (timing && attorney && consent) ? '#fff' : '#6B7280', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(17,17,17,.3)' : 'none', padding: '18px', animation: submitted && (!timing || !attorney || !consent) ? 'shake 0.5s ease-in-out' : 'none' }}>
           {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
@@ -178,7 +178,7 @@ export function StepDetails({
 
 function BackButton({ go, lang }: { go: (step: number) => void; lang: string }) {
   return (
-    <button onClick={() => go(2)} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
+    <button type="button" onClick={() => go(2)} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
       {lang === 'es' ? 'Volver' : 'Back'}
     </button>

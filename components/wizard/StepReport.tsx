@@ -155,7 +155,7 @@ export function StepReport({
           )}
 
           {/* Cancel button */}
-          <button
+          <button type="button"
             onClick={() => go(3)}
             className="mt-4 px-4 py-2 text-sm bg-transparent border-none cursor-pointer rounded-lg transition-colors"
             style={{ color: 'var(--fg-muted)' }}
@@ -202,7 +202,7 @@ export function StepReport({
         {/* Start New Report button */}
         <Reveal>
           <div className="mb-6 flex gap-2">
-            <button
+            <button type="button"
               onClick={() => { setResult(null); go(0); }}
               className="ml-auto px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all no-print"
               style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.1), rgba(17,17,17,0.05))', border: '1.5px solid var(--border-default)', color: '#8B5CF6' }}
@@ -262,7 +262,7 @@ export function StepReport({
               </span>
             </div>
             <div className="flex gap-2">
-              <button onClick={() => {
+              <button type="button" onClick={() => {
                 try {
                   const u = window.location.origin;
                   navigator.clipboard.writeText(u);
@@ -271,15 +271,15 @@ export function StepReport({
               }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {lang === 'es' ? 'Compartir' : 'Share'}
               </button>
-              <button onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <button type="button" onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {lang === 'es' ? 'Tarjeta' : 'Card'}
               </button>
-              <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <button type="button" onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-2px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
                 {lang === 'es' ? 'Guardar' : 'Save'}
               </button>
               {isPremium && (
-                <button onClick={() => { try { window.print(); } catch {} }}
+                <button type="button" onClick={() => { try { window.print(); } catch {} }}
                   className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   PDF
                 </button>

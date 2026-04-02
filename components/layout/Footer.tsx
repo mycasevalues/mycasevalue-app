@@ -68,7 +68,7 @@ export function Footer({
 
       <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-8">
         <div className="max-w-sm">
-          <button
+          <button type="button"
             onClick={reset}
             className="bg-transparent border-none mb-4 flex items-center gap-3"
             style={{ cursor: 'pointer' }}
@@ -249,7 +249,7 @@ export function Footer({
             url: () => '',
           },
         ].map((s, i) => (
-          <button
+          <button type="button"
             key={i}
             onClick={() => {
               if (s.label === 'Copy link' || s.label === 'Copiar enlace') {
@@ -404,7 +404,7 @@ export function Footer({
           FAQ
         </a>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button
+        <button type="button"
           onClick={() => setLegalPage('terms')}
           className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
           style={{ color: 'var(--fg-muted)' }}
@@ -412,7 +412,7 @@ export function Footer({
           {lang === 'es' ? 'Términos' : 'Terms'}
         </button>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button
+        <button type="button"
           onClick={() => setLegalPage('privacy')}
           className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
           style={{ color: 'var(--fg-muted)' }}
@@ -420,7 +420,7 @@ export function Footer({
           {lang === 'es' ? 'Privacidad' : 'Privacy'}
         </button>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button
+        <button type="button"
           onClick={() => setLegalPage('cookies')}
           className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
           style={{ color: 'var(--fg-muted)' }}
@@ -428,7 +428,7 @@ export function Footer({
           {lang === 'es' ? 'Cookies' : 'Cookies'}
         </button>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button
+        <button type="button"
           onClick={() => setLegalPage('disclaimer')}
           className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
           style={{ color: 'var(--fg-muted)' }}

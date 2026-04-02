@@ -30,7 +30,7 @@ export function CaseTypeStatsPreview({ lang = 'en' }: CaseTypeStatsPreviewProps)
     <div className="bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
       <div className="mb-4 flex gap-2 flex-wrap">
         {Object.keys(stats).map((k) => (
-          <button
+          <button type="button"
             key={k}
             onClick={() => setActiveType(k)}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${

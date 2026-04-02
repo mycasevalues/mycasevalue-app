@@ -195,7 +195,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
               </div>
               <div className="flex flex-wrap gap-2">
                 {examples.map((ex, i) => (
-                  <button
+                  <button type="button"
                     key={i}
                     onClick={() => useExample(ex)}
                     className="px-4 py-2.5 rounded-lg text-[11px] transition-all hover:scale-[1.02]"
@@ -217,7 +217,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
             </div>
 
             {/* Analyze button */}
-            <button
+            <button type="button"
               onClick={start}
               disabled={!userInput.trim()}
               className="w-full py-3 rounded-xl text-[14px] font-semibold transition-all hover:scale-[1.01]"
@@ -308,10 +308,10 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
 
                   {/* Actions */}
                   <div className="flex gap-2 mt-2">
-                    <button onClick={reset} className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#9CA3AF', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <button type="button" onClick={reset} className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#9CA3AF', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {t.reset}
                     </button>
-                    <button
+                    <button type="button"
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all"
                       style={{ background: 'linear-gradient(135deg, #111111, #333333)', color: '#fff', border: 'none', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
@@ -343,10 +343,10 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
 
                   {/* Actions */}
                   <div className="flex gap-2 mt-2">
-                    <button onClick={reset} className="flex-1 px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#9CA3AF', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <button type="button" onClick={reset} className="flex-1 px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#9CA3AF', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {t.reset}
                     </button>
-                    <button
+                    <button type="button"
                       onClick={() => onSelectCase && onSelectCase(matchedCase.nos, matchedCase.label, matchedCase.category)}
                       className="flex-1 px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all"
                       style={{ background: 'linear-gradient(135deg, #10B981, #14B8A6)', color: '#fff', border: 'none', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}

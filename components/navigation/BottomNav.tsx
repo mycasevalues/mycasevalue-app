@@ -109,7 +109,7 @@ export default function BottomNav({ lang = 'en', activeTab = 'home', onNavigate,
           const label = lang === 'es' ? tab.labelEs : tab.labelEn;
 
           return (
-            <button
+            <button type="button"
               key={tab.id}
               onClick={() => onNavigate?.(tab.id)}
               className="flex flex-col items-center justify-center gap-0.5 relative"

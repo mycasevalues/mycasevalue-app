@@ -129,18 +129,18 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
         <table className="w-full text-[12px]" style={{ borderCollapse: 'collapse' }}>
           <thead>
             <tr style={{ background: 'rgba(15,23,42,0.6)' }}>
-              <th className="text-left px-3 py-2.5 font-semibold" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }}>{t.caseName}</th>
-              <th className="text-left px-3 py-2.5 font-semibold cursor-pointer select-none" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }} onClick={() => toggleSort('district')}>
+              <th scope="col" className="text-left px-3 py-2.5 font-semibold" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }}>{t.caseName}</th>
+              <th scope="col" className="text-left px-3 py-2.5 font-semibold cursor-pointer select-none" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }} onClick={() => toggleSort('district')}>
                 {t.district} <SortIcon active={sortKey === 'district'} asc={sortAsc} />
               </th>
-              <th className="text-left px-3 py-2.5 font-semibold cursor-pointer select-none" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }} onClick={() => toggleSort('caseType')}>
+              <th scope="col" className="text-left px-3 py-2.5 font-semibold cursor-pointer select-none" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }} onClick={() => toggleSort('caseType')}>
                 {t.type} <SortIcon active={sortKey === 'caseType'} asc={sortAsc} />
               </th>
-              <th className="text-right px-3 py-2.5 font-semibold cursor-pointer select-none" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }} onClick={() => toggleSort('amount')}>
+              <th scope="col" className="text-right px-3 py-2.5 font-semibold cursor-pointer select-none" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }} onClick={() => toggleSort('amount')}>
                 {t.amount} <SortIcon active={sortKey === 'amount'} asc={sortAsc} />
               </th>
-              <th className="text-left px-3 py-2.5 font-semibold" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }}>{t.outcome}</th>
-              <th className="text-center px-3 py-2.5 font-semibold cursor-pointer select-none" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }} onClick={() => toggleSort('year')}>
+              <th scope="col" className="text-left px-3 py-2.5 font-semibold" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }}>{t.outcome}</th>
+              <th scope="col" className="text-center px-3 py-2.5 font-semibold cursor-pointer select-none" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)' }} onClick={() => toggleSort('year')}>
                 {t.year} <SortIcon active={sortKey === 'year'} asc={sortAsc} />
               </th>
             </tr>

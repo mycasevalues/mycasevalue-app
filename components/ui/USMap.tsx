@@ -122,7 +122,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
             const bg = hasData ? getHeatColor(rate) : '#E5E0D8';
 
             return (
-              <button
+              <button type="button"
                 key={code}
                 aria-label={`${code}${hasData ? `, ${rate!.toFixed(0)}% win rate` : ', no data'}`}
                 aria-pressed={isSelected}
@@ -211,7 +211,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
             </div>
             <div className="flex gap-1">
               {sortedStates.slice(0, 3).map(([code, rate]) => (
-                <button key={code}
+                <button type="button" key={code}
                   onClick={() => onStateClick?.(code)}
                   className="px-2.5 py-1 rounded-lg font-semibold text-[11px] cursor-pointer border-none transition-all hover:scale-105"
                   style={{ background: 'rgba(5,150,105,0.1)', color: '#059669', border: '1px solid rgba(5,150,105,0.2)' }}>
@@ -227,7 +227,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
             </div>
             <div className="flex gap-1">
               {sortedStates.slice(-3).map(([code, rate]) => (
-                <button key={code}
+                <button type="button" key={code}
                   onClick={() => onStateClick?.(code)}
                   className="px-2.5 py-1 rounded-lg font-semibold text-[11px] cursor-pointer border-none transition-all hover:scale-105"
                   style={{ background: 'rgba(220,38,38,0.08)', color: '#DC2626', border: '1px solid rgba(220,38,38,0.15)' }}>

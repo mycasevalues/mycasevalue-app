@@ -88,7 +88,7 @@ export function Navbar({
         )}
         <div className="max-w-[1140px] mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <button
+          <button type="button"
             onClick={onReset}
             className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer focus-ring"
             aria-label="MyCaseValue home"
@@ -128,7 +128,7 @@ export function Navbar({
 
             {/* Saved reports */}
             {savedReportsCount > 0 && (
-              <button
+              <button type="button"
                 onClick={onShowSaved}
                 className="h-8 px-2.5 rounded-lg border cursor-pointer flex items-center justify-center transition-colors text-[12px] font-bold tracking-wide focus-ring"
                 style={{
@@ -153,7 +153,7 @@ export function Navbar({
             )}
 
             {/* Search shortcut hint — desktop only */}
-            <button
+            <button type="button"
               onClick={() => {
                 const ev = new KeyboardEvent('keydown', { key: 'k', metaKey: true, ctrlKey: true, bubbles: true });
                 window.dispatchEvent(ev);
@@ -186,7 +186,7 @@ export function Navbar({
             </button>
 
             {/* New Report CTA */}
-            <button
+            <button type="button"
               onClick={onNewReport}
               className="text-sm font-semibold px-5 py-2.5 text-white border-none rounded-full cursor-pointer no-print hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 focus-ring"
               style={{ background: '#111111', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
@@ -196,7 +196,7 @@ export function Navbar({
           </div>
 
           {/* Mobile hamburger */}
-          <button
+          <button type="button"
             ref={triggerRef}
             onClick={() => setMobileOpen(!mobileOpen)}
             className="sm:hidden w-10 h-10 flex items-center justify-center rounded-lg border-none bg-transparent cursor-pointer focus-ring"
@@ -282,7 +282,7 @@ export function Navbar({
           {/* Actions */}
           <div className="flex flex-col gap-2">
             {savedReportsCount > 0 && (
-              <button
+              <button type="button"
                 onClick={() => { closeMobile(); onShowSaved(); }}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors text-sm font-medium focus-ring"
                 style={{ background: '#EDE9E3', color: '#374151' }}
@@ -307,7 +307,7 @@ export function Navbar({
                 </span>
               </div>
             )}
-            <button
+            <button type="button"
               onClick={() => { closeMobile(); onNewReport(); }}
               className="w-full py-3 text-sm font-semibold text-white border-none rounded-xl cursor-pointer transition-all focus-ring"
               style={{ background: '#111111', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
@@ -331,7 +331,7 @@ function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en
       aria-label="Language selection"
       style={{ background: '#EDE9E3', borderColor: '#E5E0D8' }}
     >
-      <button
+      <button type="button"
         onClick={() => setLang('en')}
         role="radio"
         aria-checked={lang === 'en'}
@@ -344,7 +344,7 @@ function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en
       >
         EN
       </button>
-      <button
+      <button type="button"
         onClick={() => setLang('es')}
         role="radio"
         aria-checked={lang === 'es'}

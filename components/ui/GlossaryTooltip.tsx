@@ -150,23 +150,23 @@ export default function GlossaryTerm({
             top: `${position.top}px`,
             left: `${position.left}px`,
             zIndex: 50,
-            backgroundColor: '#FFFFFF',
+            backgroundColor: '#111111',
             borderColor: '#111111',
-            color: '#374151',
+            color: '#FFFFFF',
           }}
           className="animate-in fade-in-0 duration-200 rounded-lg border px-3 py-2 max-w-xs"
         >
           <div className="font-semibold">{term}</div>
-          <div className="text-sm mt-1" style={{ color: '#6B7280' }}>
+          <div className="text-sm mt-1" style={{ color: '#F3F4F6' }}>
             {displayDef}
           </div>
-          <div className="text-xs mt-2" style={{ color: '#9CA3AF' }}>
+          <div className="text-xs mt-2" style={{ color: '#D1D5DB' }}>
             Federal legal terminology
           </div>
           <div
             className="absolute w-2 h-2 transform rotate-45"
             style={{
-              backgroundColor: '#FFFFFF',
+              backgroundColor: '#111111',
               borderRight: '1px solid #111111',
               borderBottom: '1px solid #111111',
               bottom: '-5px',

@@ -216,7 +216,7 @@ function JudgeCard({ judge, lang, isLocked, onUpgrade }: JudgeCardProps) {
           onClick={onUpgrade}
         >
           <Lock className="text-white" size={28} />
-          <button className="text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded transition-colors">
+          <button type="button" className="text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded transition-colors">
             {t.unlockPremium}
           </button>
         </div>

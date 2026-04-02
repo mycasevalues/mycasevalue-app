@@ -8,7 +8,7 @@ export default function CategoryError({ error, reset }: { error: Error; reset: (
         <p className="text-sm mb-6" style={{ color: '#6B7280' }}>
           We couldn&apos;t load this case category. Please try again.
         </p>
-        <button
+        <button type="button"
           onClick={reset}
           className="px-6 py-2 rounded-lg text-sm font-medium text-white"
           style={{ background: '#111111' }}

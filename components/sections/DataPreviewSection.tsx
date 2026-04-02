@@ -78,7 +78,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
         {/* Tab Selector */}
         <div className="flex gap-2 mb-0 border-b border-[#E5E0D8] bg-[#FFFFFF] rounded-t-xl p-4">
           {tabs.map((tab) => (
-            <button key={tab.id} onClick={() => setActiveTab(tab.id as any)}
+            <button type="button" key={tab.id} onClick={() => setActiveTab(tab.id as any)}
               className="px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200"
               style={{
                 color: activeTab === tab.id ? '#8B5CF6' : '#6B7280',
@@ -101,11 +101,11 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
               <div className="flex gap-2">
                 {/* View toggle */}
                 <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid #E5E0D8' }}>
-                  <button onClick={() => setViewMode('bars')} className="px-2.5 py-1.5 text-[10px] font-bold border-none transition-all"
+                  <button type="button" onClick={() => setViewMode('bars')} className="px-2.5 py-1.5 text-[10px] font-bold border-none transition-all"
                     style={{ background: viewMode === 'bars' ? 'rgba(17,17,17,0.2)' : 'transparent', color: viewMode === 'bars' ? '#8B5CF6' : '#9CA3AF' }}>
                     {es ? 'Barras' : 'Chart'}
                   </button>
-                  <button onClick={() => setViewMode('table')} className="px-2.5 py-1.5 text-[10px] font-bold border-none transition-all"
+                  <button type="button" onClick={() => setViewMode('table')} className="px-2.5 py-1.5 text-[10px] font-bold border-none transition-all"
                     style={{ background: viewMode === 'table' ? 'rgba(17,17,17,0.2)' : 'transparent', color: viewMode === 'table' ? '#8B5CF6' : '#9CA3AF' }}>
                     {es ? 'Tabla' : 'Table'}
                   </button>
@@ -117,7 +117,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                     { key: 'name' as const, label: es ? 'Nombre' : 'Name' },
                     { key: 'volume' as const, label: es ? 'Vol' : 'Vol' },
                   ].map(s => (
-                    <button key={s.key} onClick={() => toggleSort(s.key)}
+                    <button type="button" key={s.key} onClick={() => toggleSort(s.key)}
                       className="px-2.5 py-1.5 text-[10px] font-bold border-none transition-all"
                       style={{ background: sortBy === s.key ? 'rgba(17,17,17,0.2)' : 'transparent', color: sortBy === s.key ? '#8B5CF6' : '#9CA3AF' }}>
                       {s.label} {sortBy === s.key ? (sortDir === 'desc' ? '↓' : '↑') : ''}
@@ -154,13 +154,13 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
             ) : (
               <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #E5E0D8' }}>
                 <div className="grid grid-cols-4 gap-0 px-4 py-2.5" style={{ background: 'rgba(229,231,235,0.5)' }}>
-                  <button onClick={() => toggleSort('name')} className="text-[10px] font-bold text-left border-none bg-transparent" style={{ color: sortBy === 'name' ? '#8B5CF6' : '#9CA3AF' }}>
+                  <button type="button" onClick={() => toggleSort('name')} className="text-[10px] font-bold text-left border-none bg-transparent" style={{ color: sortBy === 'name' ? '#8B5CF6' : '#9CA3AF' }}>
                     {es ? 'TIPO' : 'TYPE'} {sortBy === 'name' ? (sortDir === 'desc' ? '↓' : '↑') : ''}
                   </button>
-                  <button onClick={() => toggleSort('rate')} className="text-[10px] font-bold text-center border-none bg-transparent" style={{ color: sortBy === 'rate' ? '#8B5CF6' : '#9CA3AF' }}>
+                  <button type="button" onClick={() => toggleSort('rate')} className="text-[10px] font-bold text-center border-none bg-transparent" style={{ color: sortBy === 'rate' ? '#8B5CF6' : '#9CA3AF' }}>
                     {es ? 'TASA' : 'RATE'} {sortBy === 'rate' ? (sortDir === 'desc' ? '↓' : '↑') : ''}
                   </button>
-                  <button onClick={() => toggleSort('volume')} className="text-[10px] font-bold text-center border-none bg-transparent" style={{ color: sortBy === 'volume' ? '#8B5CF6' : '#9CA3AF' }}>
+                  <button type="button" onClick={() => toggleSort('volume')} className="text-[10px] font-bold text-center border-none bg-transparent" style={{ color: sortBy === 'volume' ? '#8B5CF6' : '#9CA3AF' }}>
                     {es ? 'VOLUMEN' : 'VOLUME'} {sortBy === 'volume' ? (sortDir === 'desc' ? '↓' : '↑') : ''}
                   </button>
                   <div className="text-[10px] font-bold text-right" style={{ color: '#9CA3AF' }}>{es ? 'TEND.' : 'TREND'}</div>

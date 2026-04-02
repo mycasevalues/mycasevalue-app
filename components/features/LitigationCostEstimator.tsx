@@ -281,7 +281,7 @@ export function LitigationCostEstimator({
           }}
         >
           {[false, true].map((proseMode) => (
-            <button
+            <button type="button"
               key={proseMode ? 'pro-se' : 'attorney'}
               onClick={() => setIsProSe(proseMode)}
               style={{
@@ -317,7 +317,7 @@ export function LitigationCostEstimator({
             </div>
             <div style={{ display: 'flex', gap: '8px' }}>
               {COMPLEXITY_TIERS.map((tier) => (
-                <button
+                <button type="button"
                   key={tier.id}
                   onClick={() => setComplexity(tier.id)}
                   style={{

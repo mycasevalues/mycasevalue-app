@@ -77,14 +77,14 @@ export function RiskAssessmentQuiz({
                 ? 'Basado en tus respuestas, aquí está tu estimación de fortaleza del caso.'
                 : "Based on your answers, here's your case strength estimate."}
             </p>
-            <button
+            <button type="button"
               onClick={onStartAssessment}
               className="w-full px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer mb-2"
               style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
             >
               {lang === 'es' ? 'Obtener informe completo' : 'Get Full Report'}
             </button>
-            <button
+            <button type="button"
               onClick={onClose}
               className="w-full px-6 py-2 text-sm font-medium card-bg bg-[var(--bg-elevated)] rounded-xl cursor-pointer hover:bg-[var(--bg-elevated)] transition-colors"
             >
@@ -125,7 +125,7 @@ export function RiskAssessmentQuiz({
           </div>
         </div>
         <div className="flex gap-3">
-          <button
+          <button type="button"
             onClick={() => handleAnswer(false)}
             className="flex-1 px-4 py-3 font-semibold rounded-xl cursor-pointer border-[1.5px] transition-all hover:scale-[1.02]"
             style={{
@@ -136,7 +136,7 @@ export function RiskAssessmentQuiz({
           >
             {lang === 'es' ? 'No' : 'No'}
           </button>
-          <button
+          <button type="button"
             onClick={() => handleAnswer(true)}
             className="flex-1 px-4 py-3 font-semibold rounded-xl cursor-pointer text-white transition-all hover:scale-[1.02]"
             style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
@@ -144,7 +144,7 @@ export function RiskAssessmentQuiz({
             {lang === 'es' ? 'Sí' : 'Yes'}
           </button>
         </div>
-        <button
+        <button type="button"
           onClick={onClose}
           className="w-full mt-3 px-4 py-2 text-sm font-medium text-[var(--fg-muted)] rounded-xl cursor-pointer hover:bg-[var(--bg-elevated)] transition-colors"
         >

@@ -212,7 +212,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
             </div>
 
             {/* CTA */}
-            <button
+            <button type="button"
               className="w-full py-2.5 rounded-lg text-[12px] font-semibold transition-all hover:scale-[1.02]"
               style={{
                 background: plan.highlight ? '#111111' : 'transparent',

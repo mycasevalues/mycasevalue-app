@@ -14,7 +14,7 @@ export interface CompareChipProps {
 
 export function CompareChip({ label, value, color, active, onClick }: CompareChipProps) {
   return (
-    <button
+    <button type="button"
       onClick={onClick}
       className="flex flex-col items-center px-4 py-3 rounded-xl cursor-pointer transition-all text-center"
       style={{

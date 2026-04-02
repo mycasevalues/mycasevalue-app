@@ -194,7 +194,7 @@ export default function StatutoryOutcomes({ lang = 'en' }: StatutoryOutcomesProp
       {/* Statute tabs */}
       <div className="flex flex-wrap gap-2 mb-5">
         {STATUTES.map(s => (
-          <button
+          <button type="button"
             key={s.key}
             onClick={() => setSelected(s.key)}
             className="px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all"

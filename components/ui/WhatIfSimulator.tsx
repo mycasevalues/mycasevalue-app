@@ -215,7 +215,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
               { label: t.attorney, value: true },
               { label: t.selfRep, value: false },
             ].map(({ label, value }) => (
-              <button
+              <button type="button"
                 key={String(value)}
                 onClick={() => setIsAttorney(value)}
                 style={{

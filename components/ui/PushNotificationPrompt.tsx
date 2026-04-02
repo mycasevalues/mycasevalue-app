@@ -154,7 +154,7 @@ export function PushNotificationPrompt({
 
       {/* Button Group */}
       <div className="flex gap-2">
-        <button
+        <button type="button"
           onClick={handleEnable}
           disabled={isLoading}
           className="flex-1 h-9 px-3 rounded-lg font-medium text-sm text-white transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed active:scale-[0.98]"
@@ -192,7 +192,7 @@ export function PushNotificationPrompt({
           )}
         </button>
 
-        <button
+        <button type="button"
           onClick={handleDismiss}
           disabled={isLoading}
           className="flex-1 h-9 px-3 rounded-lg font-medium text-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"

@@ -143,7 +143,7 @@ const AttorneyMatchIntelligence: React.FC<AttorneyMatchIntelligenceProps> = ({
 
       {/* CTA Button */}
       <div className="text-center">
-        <button
+        <button type="button"
           className="px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:scale-[1.02]"
           style={{ background: 'linear-gradient(135deg, #7C3AED, #A78BFA)', color: '#fff', border: 'none', cursor: 'pointer' }}
         >

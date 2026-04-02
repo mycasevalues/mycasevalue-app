@@ -144,7 +144,7 @@ export default function SocialProofToast({ lang = 'en', active = true }: SocialP
             />
             <p className="text-sm leading-snug">{message}</p>
           </div>
-          <button
+          <button type="button"
             onClick={handleDismiss}
             className="flex-shrink-0 text-lg leading-none transition-colors"
             style={{ color: '#6B7280' }}

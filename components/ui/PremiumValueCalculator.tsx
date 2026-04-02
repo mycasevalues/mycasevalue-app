@@ -55,7 +55,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
           <div className="text-[11px] font-semibold text-[#6B7280] mb-2 tracking-wide">{es ? 'TIPO DE CASO' : 'CASE TYPE'}</div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {Object.entries(CASE_DATA).map(([key, val]) => (
-              <button
+              <button type="button"
                 key={key}
                 onClick={() => setSelectedCase(key)}
                 className="px-3 py-2 rounded-lg text-[11px] font-medium transition-all border cursor-pointer"
@@ -151,7 +151,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
         </div>
 
         {/* CTA */}
-        <button
+        <button type="button"
           onClick={onUnlock}
           className="w-full py-3.5 text-[14px] font-semibold text-white rounded-xl cursor-pointer border-none transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
           style={{

@@ -150,7 +150,7 @@ export default function JudgeAnalytics({
         {(
           ['winRate', 'cases', 'duration'] as const
         ).map((option) => (
-          <button
+          <button type="button"
             key={option}
             onClick={() => setSortBy(option)}
             className={`px-3 py-2 rounded text-xs font-mono transition-colors ${
@@ -274,7 +274,7 @@ export default function JudgeAnalytics({
               <div className="inline-block bg-[#111111] text-white px-4 py-2 rounded mb-4 font-display font-bold text-sm">
                 {t.premium}
               </div>
-              <button
+              <button type="button"
                 onClick={() => {
                   setIsLocked(false);
                   onUnlock?.();

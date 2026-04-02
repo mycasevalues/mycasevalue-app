@@ -121,7 +121,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
               <p className="text-[13px] mb-5" style={{ color: 'var(--fg-muted)' }}>
                 {t.unlockMsg}
               </p>
-              <button
+              <button type="button"
                 onClick={onUpgrade}
                 className="px-6 py-2.5 rounded-lg font-semibold text-[13px] text-white transition-all hover:scale-[1.02]"
                 style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
@@ -182,7 +182,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
               </span>
               <div className="flex gap-2">
                 {[true, false].map(val => (
-                  <button
+                  <button type="button"
                     key={String(val)}
                     onClick={() => setGoToTrial(val)}
                     className="px-4 py-1.5 rounded-lg text-[12px] font-semibold transition-all"
@@ -203,7 +203,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
               </span>
               <div className="flex gap-2">
                 {[true, false].map(val => (
-                  <button
+                  <button type="button"
                     key={String(val)}
                     onClick={() => setHasExperts(val)}
                     className="px-4 py-1.5 rounded-lg text-[12px] font-semibold transition-all"

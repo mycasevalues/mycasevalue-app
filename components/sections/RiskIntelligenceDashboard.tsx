@@ -179,7 +179,7 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
                   border: `1px solid ${isOpen ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.03)'}`,
                 }}
               >
-                <button
+                <button type="button"
                   onClick={() => setExpandedId(isOpen ? null : factor.id)}
                   className="w-full px-4 py-3 flex items-center gap-3 text-left"
                   style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}

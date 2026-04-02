@@ -58,7 +58,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
       <table className="sr-only">
         <caption>{lang === 'es' ? 'Fases del caso' : 'Case stages'}</caption>
         <thead>
-          <tr><th>{lang === 'es' ? 'Fase' : 'Stage'}</th><th>{lang === 'es' ? 'Duración' : 'Duration'}</th></tr>
+          <tr><th scope="col">{lang === 'es' ? 'Fase' : 'Stage'}</th><th scope="col">{lang === 'es' ? 'Duración' : 'Duration'}</th></tr>
         </thead>
         <tbody>
           {stages.map((s, i) => (

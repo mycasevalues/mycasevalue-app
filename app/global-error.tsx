@@ -81,7 +81,7 @@ export default function GlobalError({
               Please try refreshing the page or contact support.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <button
+              <button type="button"
                 onClick={reset}
                 style={{
                   padding: '12px 32px',

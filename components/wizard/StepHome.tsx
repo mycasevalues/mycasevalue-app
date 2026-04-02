@@ -124,7 +124,7 @@ export function StepHome({
                         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                         padding: '18px 56px 18px 58px',
                       }} />
-                    <button onClick={() => {
+                    <button type="button" onClick={() => {
                         if (naturalInput.trim()) {
                           setShowSuggestions(false);
                           if (aiSuggestions.length > 0) {
@@ -155,7 +155,7 @@ export function StepHome({
                         </span>
                       </div>
                       {aiSuggestions.map((s, i) => (
-                        <button key={i}
+                        <button type="button" key={i}
                           onMouseDown={(e) => { e.preventDefault(); setSit(s.sit); setSpec(s.opt); setAmount(s.sit.dm); go(2); setShowSuggestions(false); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
                           className="w-full flex items-center gap-3 px-4 py-3 text-left transition-all border-none bg-transparent"
                           style={{ borderBottom: i < aiSuggestions.length - 1 ? '1px solid rgba(229,231,235,0.5)' : 'none' }}
@@ -186,12 +186,12 @@ export function StepHome({
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <button onClick={() => go(1)}
+                <button type="button" onClick={() => go(1)}
                   className="px-8 py-4 text-[15px] sm:text-[16px] font-medium text-white border-none rounded-full cursor-pointer hover:opacity-90 active:scale-[0.98] transition-all"
                   style={{ background: '#1A1A1A', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
                   {t.hero_cta}
                 </button>
-                <button onClick={demo}
+                <button type="button" onClick={demo}
                   className="px-8 py-4 text-[15px] font-medium rounded-full cursor-pointer transition-all"
                   style={{
                     background: '#FFFFFF',
@@ -295,7 +295,7 @@ export function StepHome({
                 <SectionLabel>{t.select_situation}</SectionLabel>
                 <div className="grid grid-cols-2 gap-3 stagger-in">
                   {SITS.map(si => (
-                    <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
+                    <button type="button" key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
                       className="category-card p-5 card-bg rounded-xl cursor-pointer text-left group border-[1.5px] transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 tilt-hover"
                       style={{
                         background: `linear-gradient(180deg, ${si.color}20 0%, ${si.color}10 100%)`,
@@ -366,6 +366,19 @@ export function StepHome({
         </Reveal>
         <Reveal delay={210}>
           <HeroStats lang={lang} />
+        </Reveal>
+      </LazySection>
+
+      <LazySection minHeight={200}>
+        <Reveal delay={215}>
+          {/* Legal Disclaimer */}
+          <div className="text-center mt-4 mb-2 px-4">
+            <p className="text-[10px] leading-relaxed" style={{ color: '#9CA3AF', fontFamily: 'Roboto, system-ui, sans-serif' }}>
+              This information is for educational and research purposes only and does not constitute legal advice.
+              Statistics are derived from publicly available federal court records (FJC, PACER, CourtListener).
+              Past case outcomes do not guarantee future results. No attorney-client relationship is created by using this site.
+            </p>
+          </div>
         </Reveal>
       </LazySection>
 

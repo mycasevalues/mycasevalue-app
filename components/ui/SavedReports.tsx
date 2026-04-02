@@ -117,7 +117,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                     {report.category}
                   </p>
                 </div>
-                <button
+                <button type="button"
                   onClick={() => handleDelete(report.id)}
                   className="p-2 rounded hover:opacity-70 transition"
                   style={{ color: '#6B7280' }}
@@ -166,7 +166,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                 </div>
               </div>
 
-              <button
+              <button type="button"
                 onClick={() => onLoadReport(report)}
                 className="w-full py-2 rounded font-medium transition hover:opacity-90"
                 style={{ backgroundColor: '#111111', color: '#FFFFFF' }}

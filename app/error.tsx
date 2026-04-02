@@ -73,7 +73,7 @@ export default function Error({
           Please try again or return to the homepage.
         </p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-          <button
+          <button type="button"
             onClick={reset}
             style={{
               padding: '12px 32px',

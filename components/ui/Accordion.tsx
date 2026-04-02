@@ -30,7 +30,7 @@ export function Accordion({ items }: AccordionProps) {
           className="rounded-lg overflow-hidden"
           style={{ border: '1px solid #334155' }}
         >
-          <button
+          <button type="button"
             id={`accordion-btn-${item.id}`}
             onClick={() => toggleAccordion(item.id)}
             aria-expanded={openId === item.id}

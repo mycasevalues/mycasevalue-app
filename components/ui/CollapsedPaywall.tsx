@@ -144,7 +144,7 @@ export function CollapsedPaywall({
         </div>
 
         {/* Unlock Button */}
-        <button
+        <button type="button"
           onClick={onUnlock}
           className="w-full h-11 rounded-lg font-semibold text-white transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98] hover:-translate-y-0.5"
           style={{

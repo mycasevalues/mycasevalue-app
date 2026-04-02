@@ -214,11 +214,11 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
           <table className="w-full" style={{ borderCollapse: 'separate', borderSpacing: 0, minWidth: 700 }}>
             <thead>
               <tr>
-                <th className="text-left text-[10px] font-semibold py-3 px-3 sticky left-0 z-10" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)', background: 'var(--bg-base, #0B1120)' }}>
+                <th scope="col" className="text-left text-[10px] font-semibold py-3 px-3 sticky left-0 z-10" style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border-default)', background: 'var(--bg-base, #0B1120)' }}>
                   {lang === 'es' ? 'Caracteristica' : 'Feature'}
                 </th>
                 {visibleCompetitors.map((c, i) => (
-                  <th key={i} className="text-center py-3 px-2" style={{
+                  <th key={i} scope="col" className="text-center py-3 px-2" style={{
                     borderBottom: c.highlight ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
                     background: c.highlight ? 'rgba(17,17,17,0.08)' : 'transparent',
                     minWidth: 80,
@@ -274,7 +274,7 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
         {/* Show more / less */}
         {!showAll && (
           <div className="text-center mt-4">
-            <button onClick={() => setShowAll(true)} className="text-[11px] font-semibold px-4 py-2 rounded-lg transition-all" style={{ color: '#333333', border: '1px solid rgba(17,17,17,0.3)', background: 'rgba(17,17,17,0.05)' }}>
+            <button type="button" onClick={() => setShowAll(true)} className="text-[11px] font-semibold px-4 py-2 rounded-lg transition-all" style={{ color: '#333333', border: '1px solid rgba(17,17,17,0.3)', background: 'rgba(17,17,17,0.05)' }}>
               {lang === 'es' ? `Mostrar los 7 competidores` : `Show all 7 competitors`}
             </button>
           </div>

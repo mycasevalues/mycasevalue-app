@@ -20,7 +20,7 @@ export function Collapsible({ title, badge, defaultOpen = false, children }: Col
         borderColor: open ? 'rgba(17,17,17,0.15)' : 'rgba(51,65,85,0.6)',
         boxShadow: open ? '0 4px 24px rgba(255,255,255,.07), inset 0 1px 0 rgba(255,255,255,0.03)' : '0 1px 3px rgba(255,255,255,.02), inset 0 1px 0 rgba(255,255,255,0.03)',
       }}>
-      <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-4.5 bg-transparent border-none cursor-pointer text-left group" aria-expanded={open}
+      <button type="button" onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-4.5 bg-transparent border-none cursor-pointer text-left group" aria-expanded={open}
         style={{ padding: '18px 24px' }}>
         <div className="flex items-center gap-2.5">
           <span className="font-semibold text-[15px] group-hover:text-[#111111] transition-colors">{title}</span>

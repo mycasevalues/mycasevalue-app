@@ -154,7 +154,7 @@ export function ShareCard({
 
       {/* Share Buttons Row */}
       <div className="flex flex-wrap gap-2">
-        <button
+        <button type="button"
           onClick={handleCopyLink}
           className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(17,17,17,0.3)] hover:bg-[rgba(17,17,17,0.1)] hover:border-[rgba(17,17,17,0.5)]"
           style={{ color: '#8B5CF6' }}
@@ -163,7 +163,7 @@ export function ShareCard({
           {copied ? t.copySuccess : t.copyLink}
         </button>
 
-        <button
+        <button type="button"
           onClick={handleShareX}
           className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(17,17,17,0.3)] hover:bg-[rgba(17,17,17,0.1)] hover:border-[rgba(17,17,17,0.5)]"
           style={{ color: '#8B5CF6' }}
@@ -172,7 +172,7 @@ export function ShareCard({
           X
         </button>
 
-        <button
+        <button type="button"
           onClick={handleShareFacebook}
           className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(17,17,17,0.3)] hover:bg-[rgba(17,17,17,0.1)] hover:border-[rgba(17,17,17,0.5)]"
           style={{ color: '#8B5CF6' }}
@@ -181,7 +181,7 @@ export function ShareCard({
           FB
         </button>
 
-        <button
+        <button type="button"
           onClick={handleShareLinkedIn}
           className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(17,17,17,0.3)] hover:bg-[rgba(17,17,17,0.1)] hover:border-[rgba(17,17,17,0.5)]"
           style={{ color: '#8B5CF6' }}

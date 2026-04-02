@@ -160,8 +160,7 @@ export function EmailCaptureBanner({
               disabled={state === 'loading'}
               className="flex-1 px-4 py-3 rounded-lg bg-[#0f1419] border border-gray-700 text-white placeholder-gray-500 outline-none transition focus:border-indigo-500 disabled:opacity-50"
             />
-            <button
-              type="submit"
+            <button type="submit"
               disabled={state === 'loading' || !email.trim()}
               style={{
                 background:

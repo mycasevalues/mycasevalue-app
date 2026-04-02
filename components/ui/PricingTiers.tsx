@@ -184,7 +184,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                   {tier.period && <span className="text-sm ml-1" style={{ color: '#6B7280' }}>{tier.period}</span>}
                 </div>
 
-                <button
+                <button type="button"
                   onClick={() => { if (tier.id !== 'free') onSelectPlan(tier.id); }}
                   disabled={tier.id === 'free'}
                   className="w-full py-3 px-4 font-semibold text-sm transition-all mb-6"

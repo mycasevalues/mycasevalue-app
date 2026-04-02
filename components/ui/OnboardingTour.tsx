@@ -87,7 +87,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: 'rgba(255, 255, 255, 0.85)' }}>
       {/* Close button */}
-      <button
+      <button type="button"
         onClick={handleSkip}
         className="absolute top-8 right-8 p-2 rounded-lg transition-colors hover:bg-indigo-600"
         style={{ color: '#111827' }}
@@ -117,7 +117,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
         {/* Step indicators */}
         <div className="flex gap-2 justify-center mb-8">
           {steps.map((_, index) => (
-            <button
+            <button type="button"
               key={index}
               onClick={() => setCurrentStep(index)}
               className="rounded-full transition-all"
@@ -134,7 +134,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
 
         {/* Buttons */}
         <div className="flex gap-4 justify-between items-center">
-          <button
+          <button type="button"
             onClick={handlePrevious}
             disabled={currentStep === 0}
             className="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors disabled:opacity-50"
@@ -148,7 +148,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
             {t.previous}
           </button>
 
-          <button
+          <button type="button"
             onClick={handleSkip}
             className="px-4 py-2 rounded-lg transition-colors"
             style={{
@@ -161,7 +161,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
           </button>
 
           {currentStep === steps.length - 1 ? (
-            <button
+            <button type="button"
               onClick={handleGetStarted}
               className="flex items-center gap-2 px-6 py-2 rounded-lg font-semibold transition-colors"
               style={{
@@ -172,7 +172,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
               {t.getStarted}
             </button>
           ) : (
-            <button
+            <button type="button"
               onClick={handleNext}
               className="flex items-center gap-2 px-6 py-2 rounded-lg font-semibold transition-colors"
               style={{

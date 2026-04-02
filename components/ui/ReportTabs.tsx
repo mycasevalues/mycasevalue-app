@@ -107,7 +107,7 @@ export default function ReportTabs({ lang = 'en', activeTab, onTabChange }: Repo
           const isActive = active === tab.id;
           const label = lang === 'es' ? tab.labelEs : tab.label;
           return (
-            <button
+            <button type="button"
               key={tab.id}
               ref={(el) => { if (el) tabRefs.current.set(tab.id, el); }}
               role="tab"

@@ -41,7 +41,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
 
   return (
     <div ref={ref} className="relative">
-      <button
+      <button type="button"
         onClick={() => { setOpen(!open); setSearch(''); }}
         aria-expanded={open}
         aria-haspopup="listbox"
@@ -87,7 +87,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
         )}
         <div className="overflow-y-auto p-1" style={{ maxHeight: showSearch ? '220px' : '260px' }}>
           {filtered.map((o, idx) => (
-            <button key={o.id}
+            <button type="button" key={o.id}
               role="option"
               aria-selected={o.id === value}
               onClick={() => { onChange(o.id); setOpen(false); setSearch(''); }}

@@ -87,7 +87,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
       {/* Tabs */}
       <div className="flex gap-1 mb-5 rounded-xl p-1" style={{ background: 'rgba(15,23,42,0.5)' }}>
         {TABS.map(tab => (
-          <button
+          <button type="button"
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
             className="flex-1 py-2 rounded-lg text-[11px] font-semibold transition-all"

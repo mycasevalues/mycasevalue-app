@@ -90,7 +90,7 @@ export default function ServerHero() {
 
           {/* CTA Button */}
           <div className="flex items-center justify-center mb-12 sm:mb-16">
-            <button
+            <button type="button"
               className="px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
               style={{
                 background: 'linear-gradient(135deg, #111111, #3535D0)',

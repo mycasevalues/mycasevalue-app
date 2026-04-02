@@ -123,7 +123,7 @@ export default function UpgradeTable({
           justifyContent: 'center', flexWrap: 'wrap',
         }}>
           {['free', 'single', 'unlimited'].map((plan) => (
-            <button key={plan} onClick={() => setSelectedPlan(plan)}
+            <button type="button" key={plan} onClick={() => setSelectedPlan(plan)}
               style={{
                 padding: '8px 14px', borderRadius: '6px',
                 border: `1px solid ${selectedPlan === plan ? colors.accent : colors.border}`,
@@ -175,7 +175,7 @@ export default function UpgradeTable({
           })}
         </div>
 
-        <button onClick={() => onBuy(selectedPlan)}
+        <button type="button" onClick={() => onBuy(selectedPlan)}
           disabled={selectedPlan === 'free' || currentTier === selectedPlan}
           style={{
             width: '100%', padding: '14px 16px', borderRadius: '8px',
@@ -205,14 +205,14 @@ export default function UpgradeTable({
       <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '640px' }}>
         <thead>
           <tr style={{ borderBottom: `2px solid ${colors.border}` }}>
-            <th style={{ padding: '20px 12px', textAlign: 'left', fontWeight: 600, fontSize: '14px', color: colors.muted }}>
+            <th scope="col" style={{ padding: '20px 12px', textAlign: 'left', fontWeight: 600, fontSize: '14px', color: colors.muted }}>
               {currentLabels.features}
             </th>
-            <th style={{ padding: '20px 12px', textAlign: 'center', position: 'relative' }}>
+            <th scope="col" style={{ padding: '20px 12px', textAlign: 'center', position: 'relative' }}>
               <div style={{ fontSize: '16px', fontWeight: 700 }}>{currentLabels.free}</div>
               <div style={{ fontSize: '22px', fontWeight: 700, marginTop: '6px', color: colors.teal }}>Free</div>
             </th>
-            <th style={{
+            <th scope="col" style={{
               padding: '20px 12px', textAlign: 'center', position: 'relative',
               backgroundColor: currentTier === 'single' ? colors.border : 'transparent',
               borderRadius: '8px',
@@ -233,7 +233,7 @@ export default function UpgradeTable({
                 </div>
               </div>
             </th>
-            <th style={{
+            <th scope="col" style={{
               padding: '20px 12px', textAlign: 'center', position: 'relative',
               backgroundColor: currentTier === 'unlimited' ? colors.border : 'transparent',
               borderRadius: '8px',
@@ -280,7 +280,7 @@ export default function UpgradeTable({
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginTop: '32px' }}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button onClick={() => onBuy('free')} disabled
+          <button type="button" onClick={() => onBuy('free')} disabled
             style={{
               width: '100%', maxWidth: '180px', padding: '12px 20px', borderRadius: '6px',
               border: `1px solid ${colors.border}`, backgroundColor: 'transparent',
@@ -289,7 +289,7 @@ export default function UpgradeTable({
             }}>{currentLabels.current}</button>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button onClick={() => onBuy('single')} disabled={currentTier === 'single'}
+          <button type="button" onClick={() => onBuy('single')} disabled={currentTier === 'single'}
             style={{
               width: '100%', maxWidth: '180px', padding: '12px 20px', borderRadius: '6px',
               border: 'none', backgroundColor: currentTier === 'single' ? colors.border : colors.accent,
@@ -304,7 +304,7 @@ export default function UpgradeTable({
           </button>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button onClick={() => onBuy('unlimited')} disabled={currentTier === 'unlimited'}
+          <button type="button" onClick={() => onBuy('unlimited')} disabled={currentTier === 'unlimited'}
             style={{
               width: '100%', maxWidth: '180px', padding: '12px 20px', borderRadius: '6px',
               border: 'none',

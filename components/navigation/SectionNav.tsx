@@ -79,7 +79,7 @@ export default function SectionNav({ lang }: SectionNavProps) {
         {SECTIONS.map((section) => {
           const isActive = activeId === section.id;
           return (
-            <button
+            <button type="button"
               key={section.id}
               onClick={() => scrollTo(section.id)}
               className="px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 whitespace-nowrap"
@@ -99,7 +99,7 @@ export default function SectionNav({ lang }: SectionNavProps) {
         })}
 
         {/* Back to top */}
-        <button
+        <button type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center justify-center w-11 h-11 rounded-full transition-all duration-200"
           style={{

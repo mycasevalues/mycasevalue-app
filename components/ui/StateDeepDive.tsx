@@ -264,7 +264,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
                 <p style={{ color: '#6B7280' }} className="text-xs mb-1">
                   {t.avgSettlement}
                 </p>
-                <p className="text-sm font-semibold" style={{ color: '#111827' }}>
+                <p className="text-sm font-semibold font-mono" style={{ color: '#111827' }}>
                   ${(district.avgSettlement / 1000).toFixed(0)}K
                 </p>
               </div>

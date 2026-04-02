@@ -15,7 +15,7 @@ interface ComparisonBarProps {
 
 export function ComparisonBar({
   data, primaryLabel, compareLabel,
-  primaryColor = '#111111', compareColor = '#0D9488',
+  primaryColor = '#8B5CF6', compareColor = '#111111',
   unit = '%', lang = 'en',
 }: ComparisonBarProps) {
   const hasCompare = data.some(d => d.compare !== undefined);

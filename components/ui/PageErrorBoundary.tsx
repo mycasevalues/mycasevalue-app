@@ -46,7 +46,7 @@ export class PageErrorBoundary extends React.Component<Props, State> {
               We encountered an error loading this page. Please try again.
             </p>
             <div className="flex flex-col gap-3">
-              <button
+              <button type="button"
                 onClick={() => this.setState({ hasError: false })}
                 className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all hover:shadow-lg"
                 style={{

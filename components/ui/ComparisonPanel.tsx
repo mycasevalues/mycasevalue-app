@@ -105,7 +105,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           <div>
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs text-[#111827] font-semibold">{caseA.label}</span>
-              <span className="text-sm font-bold text-[#111111]">{formatA(valueA)}</span>
+              <span className="text-sm font-bold font-mono text-[#111111]">{formatA(valueA)}</span>
             </div>
             <div className="h-2 bg-[#E5E0D8] rounded-full overflow-hidden">
               <div
@@ -122,7 +122,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
             <div>
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs text-[#111827] font-semibold">{caseB.label}</span>
-                <span className="text-sm font-bold text-[#5EEAD4]">
+                <span className="text-sm font-bold font-mono text-[#5EEAD4]">
                   {formatB ? formatB(valueB!) : formatA(valueB!)}
                 </span>
               </div>
@@ -282,7 +282,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
               : 'Choose a second case type to see detailed comparative analysis'}
           </p>
           {onSelectB && (
-            <button
+            <button type="button"
               onClick={onSelectB}
               className="inline-flex items-center px-4 py-2 bg-[#111111] hover:bg-[#111111]/90 text-[#111827] rounded-lg font-medium text-sm transition-colors duration-200"
             >

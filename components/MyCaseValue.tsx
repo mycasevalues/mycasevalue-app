@@ -288,7 +288,7 @@ function Shell({
             </div>
             <div className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-8">
               <div className="max-w-sm">
-                <button onClick={reset} className="bg-transparent border-none mb-4 flex items-center gap-3" style={{ cursor: 'pointer' }}>
+                <button type="button" onClick={reset} className="bg-transparent border-none mb-4 flex items-center gap-3" style={{ cursor: 'pointer' }}>
                   <Logo size="sm" darkMode={darkMode} />
                 </button>
                 <p className="text-[12px] text-[var(--fg-muted)] leading-relaxed">
@@ -344,7 +344,7 @@ function Shell({
                 { icon: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71', label: lang === 'es' ? 'Copiar enlace' : 'Copy link', color: 'var(--accent-primary)', hoverBg: 'rgba(17,17,17,0.15)', filled: false,
                   url: () => '' },
               ].map((s, i) => (
-                <button key={i} onClick={() => {
+                <button type="button" key={i} onClick={() => {
                   if (s.label === 'Copy link' || s.label === 'Copiar enlace') {
                     navigator.clipboard.writeText(window.location.origin);
                     toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
@@ -408,13 +408,13 @@ function Shell({
               <span style={{ color: 'var(--border-muted)' }}>·</span>
               <a href="/faq" className="text-[11px] transition-colors" style={{ textDecoration: 'none', color: 'var(--fg-muted)' }}>FAQ</a>
               <span style={{ color: 'var(--border-muted)' }}>·</span>
-              <button onClick={() => setLegalPage('terms')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Términos' : 'Terms'}</button>
+              <button type="button" onClick={() => setLegalPage('terms')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Términos' : 'Terms'}</button>
               <span style={{ color: 'var(--border-muted)' }}>·</span>
-              <button onClick={() => setLegalPage('privacy')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Privacidad' : 'Privacy'}</button>
+              <button type="button" onClick={() => setLegalPage('privacy')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Privacidad' : 'Privacy'}</button>
               <span style={{ color: 'var(--border-muted)' }}>·</span>
-              <button onClick={() => setLegalPage('cookies')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Cookies' : 'Cookies'}</button>
+              <button type="button" onClick={() => setLegalPage('cookies')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Cookies' : 'Cookies'}</button>
               <span style={{ color: 'var(--border-muted)' }}>·</span>
-              <button onClick={() => setLegalPage('disclaimer')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Aviso legal' : 'Disclaimer'}</button>
+              <button type="button" onClick={() => setLegalPage('disclaimer')} className="text-[11px] bg-transparent border-none cursor-pointer transition-colors" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Aviso legal' : 'Disclaimer'}</button>
             </div>
 
             {/* Legal disclaimer bar */}
@@ -443,7 +443,7 @@ function Shell({
 
         {/* Back to top button */}
         {showBackToTop && (
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-[var(--z-dropdown)] cursor-pointer no-print transition-all"
             style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 16px rgba(17,17,17,.3)' }}
             aria-label="Back to top">
@@ -455,7 +455,7 @@ function Shell({
         {showExitIntent && !isPremium && (
           <div className="fixed inset-0 z-[var(--z-modal)] flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(255,255,255,.6)', backdropFilter: 'blur(8px)' }}>
             <div className="exit-intent-modal card-bg bg-[#FFFFFF] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center" onClick={e => e.stopPropagation()}>
-              <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
+              <button type="button" onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
@@ -466,12 +466,12 @@ function Shell({
               <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[12px] font-bold mb-4" style={{ background: 'rgba(232,116,97,0.12)', color: '#E87461' }}>
                 {lang === 'es' ? 'Oferta por tiempo limitado' : 'Limited time offer'}
               </div>
-              <button onClick={() => { setShowExitIntent(false); buy('single'); }}
+              <button type="button" onClick={() => { setShowExitIntent(false); buy('single'); }}
                 className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer"
                 style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                 {lang === 'es' ? 'Informe Premium — $5.99' : 'Premium Report — $5.99'}
               </button>
-              <button onClick={() => setShowExitIntent(false)} className="text-[13px] text-[var(--fg-muted)] mt-3 bg-transparent border-none cursor-pointer">
+              <button type="button" onClick={() => setShowExitIntent(false)} className="text-[13px] text-[var(--fg-muted)] mt-3 bg-transparent border-none cursor-pointer">
                 {lang === 'es' ? 'Ahora no' : 'Not now'}
               </button>
             </div>
@@ -485,7 +485,7 @@ function Shell({
             <div className="card-bg bg-[#FFFFFF] rounded-2xl p-6 max-w-lg w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between mb-4">
                 <div className="text-lg font-display font-bold">{lang === 'es' ? 'Mis informes' : 'My Reports'}</div>
-                <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
+                <button type="button" onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
               </div>
@@ -501,7 +501,7 @@ function Shell({
                 <div className="text-[11px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-1">{lang === 'es' ? 'TU CÓDIGO DE REFERENCIA' : 'YOUR REFERRAL CODE'}</div>
                 <div className="flex items-center gap-2">
                   <div className="flex-1 px-3 py-2 rounded-lg bg-[var(--bg-elevated)] text-sm font-data font-bold" style={{ color: 'var(--accent-primary)' }}>{referralCode}</div>
-                  <button onClick={() => { navigator.clipboard.writeText(referralCode); toast(lang === 'es' ? '¡Copiado!' : 'Copied!'); }}
+                  <button type="button" onClick={() => { navigator.clipboard.writeText(referralCode); toast(lang === 'es' ? '¡Copiado!' : 'Copied!'); }}
                     className="px-3 py-2 text-[12px] font-semibold rounded-lg cursor-pointer"
                     style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)', border: 'none' }}>{lang === 'es' ? 'Copiar' : 'Copy'}</button>
                 </div>
@@ -543,19 +543,19 @@ function Shell({
                   {lang === 'es'
                     ? 'Usamos cookies esenciales para el funcionamiento del sitio. Las cookies opcionales de análisis nos ayudan a mejorar.'
                     : 'We use essential cookies for site functionality. Optional analytics cookies help us improve your experience.'}
-                  <button onClick={() => setLegalPage('privacy')} className="text-[#111111] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]">
+                  <button type="button" onClick={() => setLegalPage('privacy')} className="text-[#111111] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]">
                     {lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}
                   </button>
                 </p>
               </div>
               <div className="flex gap-2">
-                <button onClick={() => {
+                <button type="button" onClick={() => {
                   try { localStorage.setItem('mcv_cookies_accepted', 'essential'); } catch {}
                   setShowCookieConsent(false);
                 }} className="px-4 py-2 text-[12px] font-semibold bg-transparent rounded-lg cursor-pointer transition-colors" style={{ color: 'var(--fg-secondary)', border: '1px solid #4B5563' }}>
                   {lang === 'es' ? 'Solo esenciales' : 'Essential only'}
                 </button>
-                <button onClick={() => {
+                <button type="button" onClick={() => {
                   try { localStorage.setItem('mcv_cookies_accepted', 'all'); } catch {}
                   setShowCookieConsent(false);
                 }} className="px-4 py-2 text-[12px] font-semibold text-white rounded-lg cursor-pointer border-none"
@@ -1607,7 +1607,7 @@ export default function MyCaseValue() {
           {/* Start New Report button */}
           <Reveal>
             <div className="mb-6 flex gap-2">
-              <button
+              <button type="button"
                 onClick={() => { setSit(null); setSpec(null); setResult(null); setConsent(false); setEmail(''); setEmailSent(false); go(0); }}
                 className="ml-auto px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all no-print"
                 style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.1), rgba(17,17,17,0.05))', border: '1.5px solid var(--border-default)', color: '#8B5CF6' }}
@@ -1670,7 +1670,7 @@ export default function MyCaseValue() {
                 </span>
               </div>
               <div className="flex gap-2">
-                <button onClick={() => {
+                <button type="button" onClick={() => {
                   try {
                     const u = window.location.origin + '#' + btoa(JSON.stringify({ c: spec?.nos, s: stateCode, t: timing }));
                     navigator.clipboard.writeText(u);
@@ -1679,15 +1679,15 @@ export default function MyCaseValue() {
                 }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {lang === 'es' ? 'Compartir' : 'Share'}
                 </button>
-                <button onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <button type="button" onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {lang === 'es' ? 'Tarjeta' : 'Card'}
                 </button>
-                <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <button type="button" onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-2px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
                   {lang === 'es' ? 'Guardar' : 'Save'}
                 </button>
                 {isPremium && (
-                  <button onClick={() => { try { window.print(); } catch {} }}
+                  <button type="button" onClick={() => { try { window.print(); } catch {} }}
                     className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     PDF
                   </button>
@@ -2865,7 +2865,7 @@ export default function MyCaseValue() {
                       { k: 'typical', l: lang === 'es' ? 'Típico' : 'Typical', c: '#111111', val: v.md },
                       { k: 'optimistic', l: lang === 'es' ? 'Rango alto' : 'Upper range', c: '#0D9488', val: v.hi },
                     ].map(t => (
-                      <button key={t.k} onClick={() => setRangeMode(t.k)}
+                      <button type="button" key={t.k} onClick={() => setRangeMode(t.k)}
                         className="rounded-2xl cursor-pointer text-center transition-all duration-300"
                         style={{
                           padding: t.k === 'typical' ? '28px 20px' : '22px 18px',
@@ -3193,7 +3193,7 @@ export default function MyCaseValue() {
                           : 'Bookmark or save it so you can reference the data later or share it during a consultation.'}
                       </p>
                       <div className="flex gap-2 mt-2.5">
-                        <button onClick={saveReport} className="text-[12px] font-semibold px-3.5 py-1.5 rounded-lg cursor-pointer transition-all hover:scale-[1.02]" style={{
+                        <button type="button" onClick={saveReport} className="text-[12px] font-semibold px-3.5 py-1.5 rounded-lg cursor-pointer transition-all hover:scale-[1.02]" style={{
                           background: 'rgba(13, 148, 136, 0.08)',
                           color: 'var(--accent-secondary)',
                           border: '1px solid rgba(13, 148, 136, 0.15)',
@@ -3201,7 +3201,7 @@ export default function MyCaseValue() {
                           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
                           {lang === 'es' ? 'Guardar' : 'Save report'}
                         </button>
-                        <button onClick={() => {
+                        <button type="button" onClick={() => {
                           try {
                             const u = window.location.origin + '#' + btoa(JSON.stringify({ c: spec?.nos, s: stateCode, t: timing }));
                             navigator.clipboard.writeText(u);
@@ -3246,7 +3246,7 @@ export default function MyCaseValue() {
                             : 'Most attorneys for this type of case offer free initial consultations. You\'re not committing to anything — you\'re just getting a professional opinion on your situation.')}
                       </p>
                       {attorney !== 'have' && (
-                        <button onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney free consultation ' + (stateCode || '')), '_blank'); } catch {} }}
+                        <button type="button" onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney free consultation ' + (stateCode || '')), '_blank'); } catch {} }}
                           className="mt-2.5 text-[12px] font-semibold px-3.5 py-1.5 rounded-lg cursor-pointer transition-all hover:scale-[1.02]" style={{
                             background: 'rgba(64, 64, 242, 0.08)',
                             color: 'var(--accent-primary)',
@@ -3506,11 +3506,11 @@ export default function MyCaseValue() {
                     <h3 className="text-lg font-semibold">{lang === 'es' ? 'Escenarios de qué pasaría' : 'What-If Scenarios'}</h3>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#111111' : '#E5E0D8', background: attorney === 'with' ? 'rgba(17,17,17,0.15)' : '#E5E0D8', color: attorney === 'with' ? '#111111' : '#9CA3AF' }}
+                    <button type="button" className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#111111' : '#E5E0D8', background: attorney === 'with' ? 'rgba(17,17,17,0.15)' : '#E5E0D8', color: attorney === 'with' ? '#111111' : '#9CA3AF' }}
                       onClick={() => setAttorney('with')}>
                       {lang === 'es' ? 'Con abogado' : 'With Attorney'}
                     </button>
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#111111' : '#E5E0D8', background: attorney === 'without' ? 'rgba(17,17,17,0.15)' : '#E5E0D8', color: attorney === 'without' ? '#111111' : '#9CA3AF' }}
+                    <button type="button" className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#111111' : '#E5E0D8', background: attorney === 'without' ? 'rgba(17,17,17,0.15)' : '#E5E0D8', color: attorney === 'without' ? '#111111' : '#9CA3AF' }}
                       onClick={() => setAttorney('without')}>
                       {lang === 'es' ? 'Sin abogado' : 'Self-Represented'}
                     </button>
@@ -3741,11 +3741,11 @@ export default function MyCaseValue() {
                   </p>
                   <p className="text-[13px] text-[var(--fg-muted)] mb-6">{lang === 'es' ? 'Datos históricos agregados únicamente. No es una valoración de caso.' : 'Aggregate historical data only. Not a case valuation.'}</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <button onClick={() => buy('single')} className="px-8 py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
+                    <button type="button" onClick={() => buy('single')} className="px-8 py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
                       style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                       {lang === 'es' ? '$5.99 — Informe Premium' : '$5.99 — Premium Report'}
                     </button>
-                    <button onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#FFFFFF] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer hover:border-[var(--border-muted)] transition-colors">
+                    <button type="button" onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#FFFFFF] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer hover:border-[var(--border-muted)] transition-colors">
                       {lang === 'es' ? 'Ver planes' : 'View plans'}
                     </button>
                   </div>
@@ -3775,7 +3775,7 @@ export default function MyCaseValue() {
                   <p className="text-[14px] text-[var(--fg-muted)] leading-relaxed mb-3">
                     {lang === 'es' ? 'Muchas personas usan estos datos antes de consultar con un abogado. La mayoría ofrece consultas iniciales gratuitas. MyCaseValue no evalúa reclamos, no recomienda abogados ni proporciona referencias.' : 'Many people use this data before consulting with an attorney. Most offer free initial consultations. MyCaseValue does not evaluate claims, recommend attorneys, or provide referrals.'}
                   </p>
-                  <button onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney ' + (stateCode || '')), '_blank'); } catch {} }}
+                  <button type="button" onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney ' + (stateCode || '')), '_blank'); } catch {} }}
                     className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
                     style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                     {lang === 'es' ? 'Buscar abogados en tu área' : 'Search for attorneys in your area'}
@@ -4305,7 +4305,7 @@ export default function MyCaseValue() {
                   <p className="text-[14px] text-[var(--fg-muted)] leading-relaxed mb-3">
                     {lang === 'es' ? 'Muchas personas usan estos datos antes de consultar con un abogado. La mayoría ofrece consultas iniciales gratuitas. MyCaseValue no recomienda abogados ni proporciona referencias.' : 'Many people use this data before consulting with an attorney. Most offer free initial consultations. MyCaseValue does not recommend attorneys or provide referrals.'}
                   </p>
-                  <button onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney ' + (stateCode || '')), '_blank'); } catch {} }}
+                  <button type="button" onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney ' + (stateCode || '')), '_blank'); } catch {} }}
                     className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
                     style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                     {lang === 'es' ? 'Buscar abogados en tu área' : 'Search for attorneys in your area'}
@@ -4338,7 +4338,7 @@ export default function MyCaseValue() {
                     { id: 'wait', l: lang === 'es' ? 'Recopilar más info' : 'Gather more info', c: '#1A2744' },
                     { id: 'move', l: lang === 'es' ? 'Seguir adelante' : 'Move on', c: '#9CA3AF' },
                   ].map(o => (
-                    <button key={o.id} onClick={() => { setPollVote(o.id); apiCall('/api/poll', 'POST', { vote: o.id, nos: spec?.nos }); }}
+                    <button type="button" key={o.id} onClick={() => { setPollVote(o.id); apiCall('/api/poll', 'POST', { vote: o.id, nos: spec?.nos }); }}
                       className="p-3 text-sm font-semibold card-bg bg-[#FFFFFF] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer text-center card-lift">
                       {o.l}
                     </button>
@@ -4386,7 +4386,7 @@ export default function MyCaseValue() {
               </div>
               <div className="flex items-center justify-center gap-3 py-3 no-print" style={{ background: 'var(--bg-elevated)' }}>
                 <span className="text-[11px] text-[var(--fg-muted)] font-medium">{lang === 'es' ? 'Compartir como imagen' : 'Share as image'}</span>
-                <button onClick={() => {
+                <button type="button" onClick={() => {
                   try {
                     const text = `${spec?.d}: ${Math.round(wr)}% win rate based on ${d.total?.toLocaleString()} federal cases — mycasevalue.com`;
                     navigator.clipboard.writeText(text);
@@ -4407,7 +4407,7 @@ export default function MyCaseValue() {
               <p className="text-[13px] text-[var(--fg-muted)] mb-4">{lang === 'es' ? 'Selecciona otro tipo de caso para ver cómo se comparan los resultados.' : 'Select another case type to see how outcomes compare.'}</p>
               <div className="flex gap-2 flex-wrap mb-4">
                 {comparisonOptions.slice(0, 8).map((opt: any) => (
-                  <button key={opt.nos} onClick={() => loadComparison(opt.nos)}
+                  <button type="button" key={opt.nos} onClick={() => loadComparison(opt.nos)}
                     className="px-3 py-1.5 text-[12px] font-medium rounded-lg cursor-pointer transition-all capitalize"
                     style={{
                       background: compareNos === opt.nos ? 'rgba(17,17,17,0.15)' : '#E5E0D8',
@@ -4511,7 +4511,7 @@ export default function MyCaseValue() {
             onClick={() => setShowPricing(false)}
             role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
             <div className="rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(255,255,255,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(17,17,17,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
-              <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring z-10"
+              <button type="button" onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring z-10"
                 aria-label="Close pricing">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
@@ -4553,7 +4553,7 @@ export default function MyCaseValue() {
                 <h2 className="text-lg font-display font-bold">
                   {legalPage === 'terms' ? (lang === 'es' ? 'Términos de Servicio' : 'Terms of Service') : legalPage === 'privacy' ? (lang === 'es' ? 'Política de Privacidad' : 'Privacy Policy') : legalPage === 'cookies' ? (lang === 'es' ? 'Política de Cookies' : 'Cookie Policy') : (lang === 'es' ? 'Descargo de Responsabilidad' : 'Legal Disclaimer')}
                 </h2>
-                <button onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] border-none cursor-pointer transition-colors" aria-label={lang === 'es' ? 'Cerrar' : 'Close'}>
+                <button type="button" onClick={() => setLegalPage(null)} className="w-8 h-8 rounded-full flex items-center justify-center bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] border-none cursor-pointer transition-colors" aria-label={lang === 'es' ? 'Cerrar' : 'Close'}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12" /></svg>
                 </button>
               </div>

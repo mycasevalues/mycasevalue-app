@@ -184,8 +184,7 @@ export function EmailCaptureGate({
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
+          <button type="submit"
             disabled={isLoading}
             className="w-full h-12 px-6 rounded-lg font-semibold text-white transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-70 disabled:pointer-events-none active:scale-[0.98]"
             style={{
@@ -227,7 +226,7 @@ export function EmailCaptureGate({
         {/* Skip Link */}
         {onSkip && (
           <div className="mt-6 text-center">
-            <button
+            <button type="button"
               onClick={onSkip}
               className="text-sm font-medium transition-colors hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded px-2 py-1"
               style={{

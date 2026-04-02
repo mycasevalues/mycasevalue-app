@@ -249,7 +249,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
             </div>
           </div>
 
-          <button
+          <button type="button"
             onClick={handleEvaluate}
             disabled={offerAmount <= 0}
             className="w-full sm:w-auto px-6 py-2.5 rounded-lg font-semibold text-[13px] transition-all"

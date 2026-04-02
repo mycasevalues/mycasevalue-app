@@ -169,7 +169,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                 background: '#FFFFFF',
               }}
             >
-              <button
+              <button type="button"
                 id={`faq-question-${idx}`}
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                 aria-expanded={openIdx === idx}
@@ -234,7 +234,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
               ? '¿No encontraste tu respuesta?'
               : 'Didn\'t find your answer?'}
           </p>
-          <button
+          <button type="button"
             className="text-sm font-semibold rounded-lg px-5 py-2.5 transition-all hover:scale-105"
             style={{
               color: '#111111',

@@ -56,7 +56,7 @@ export function AttorneyReferralInline({
       <p style={{ color: '#374151' }} className="text-sm font-medium">
         {t.inlineMessage}
       </p>
-      <button
+      <button type="button"
         style={{
           backgroundColor: '#111111',
           color: '#FFFFFF',

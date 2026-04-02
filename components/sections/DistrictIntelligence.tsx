@@ -230,7 +230,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
 
       {/* Circuit filter */}
       <div className="flex flex-wrap gap-1.5 mb-5">
-        <button
+        <button type="button"
           onClick={() => setFilterCircuit(null)}
           className="px-2.5 py-1 rounded-md text-[10px] font-semibold transition-all"
           style={{
@@ -244,7 +244,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
         {circuits.map(c => {
           const count = DISTRICTS.filter(d => d.circuit === c).length;
           return (
-            <button
+            <button type="button"
               key={c}
               onClick={() => setFilterCircuit(c)}
               className="px-2.5 py-1 rounded-md text-[10px] font-semibold transition-all"
@@ -265,7 +265,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
         {/* List */}
         <div className="sm:col-span-3 max-h-[360px] overflow-y-auto rounded-xl" style={{ border: '1px solid var(--border-default)' }}>
           {filtered.map((d, i) => (
-            <button
+            <button type="button"
               key={i}
               onClick={() => setSelectedDistrict(d)}
               className="w-full text-left flex items-center justify-between px-4 py-3 transition-colors"

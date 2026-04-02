@@ -226,7 +226,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
       {/* Statute selector */}
       <div className="flex flex-wrap gap-2 mb-5">
         {STATUTES.map(s => (
-          <button
+          <button type="button"
             key={s.key}
             onClick={() => setSelected(s.key)}
             className="px-3 py-1.5 rounded-lg text-[11px] font-semibold transition-all"

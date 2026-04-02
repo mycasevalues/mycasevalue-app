@@ -186,7 +186,7 @@ export default function MobileBottomNav({
       >
         <div className="flex items-center justify-around h-16 px-4">
           {navItems.map((item) => (
-            <button
+            <button type="button"
               key={item.id}
               onClick={item.onClick}
               onMouseDown={() => handlePressDown(item.id)}

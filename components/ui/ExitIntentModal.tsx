@@ -128,7 +128,7 @@ export function ExitIntentModal({
         aria-labelledby="exit-intent-headline"
       >
         {/* Close Button */}
-        <button
+        <button type="button"
           onClick={() => setIsVisible(false)}
           className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200 hover:bg-[#E5E0D8] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
           style={{
@@ -200,8 +200,7 @@ export function ExitIntentModal({
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
+          <button type="submit"
             disabled={isLoading || !email.trim()}
             className="w-full h-11 rounded-lg font-semibold text-white transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-70 disabled:pointer-events-none active:scale-[0.98] hover:-translate-y-0.5"
             style={{

@@ -98,7 +98,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
         {/* Case Type Selector */}
         <div className="flex gap-2 mb-6 flex-wrap">
           {CASE_TYPES.map(c => (
-            <button key={c.id} onClick={() => setCaseType(c.id)}
+            <button type="button" key={c.id} onClick={() => setCaseType(c.id)}
               className="px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all duration-200"
               style={{
                 background: caseType === c.id ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.05)',
@@ -169,7 +169,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                     : (es ? 'Autrepresentación (pro se)' : 'Self-representation (pro se)')}
                 </div>
               </div>
-              <button onClick={() => setHasAttorney(!hasAttorney)}
+              <button type="button" onClick={() => setHasAttorney(!hasAttorney)}
                 className="w-14 h-7 rounded-full relative transition-all duration-300 cursor-pointer border-none"
                 style={{
                   background: hasAttorney ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.12)',
@@ -217,7 +217,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                     })()}
                   </svg>
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-                    <div className="text-3xl font-display font-extrabold" style={{ color: wrColor, transition: 'color 0.3s ease' }}>
+                    <div className="text-3xl font-display font-extrabold font-mono" style={{ color: wrColor, transition: 'color 0.3s ease' }}>
                       {projected.wr}%
                     </div>
                   </div>
@@ -238,7 +238,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                     background: `${s.color}08`,
                     border: `1px solid ${s.color}15`,
                   }}>
-                    <div className="text-[16px] font-display font-bold" style={{ color: s.color, transition: 'all 0.4s ease' }}>
+                    <div className="text-[16px] font-display font-bold font-mono" style={{ color: s.color, transition: 'all 0.4s ease' }}>
                       {s.value}
                     </div>
                     <div className="text-[9px] font-semibold text-[#6B7280] mt-0.5">{s.label}</div>
@@ -269,7 +269,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             </div>
 
             {/* CTA */}
-            <button onClick={onGetStarted}
+            <button type="button" onClick={onGetStarted}
               className="w-full mt-4 py-3.5 text-[14px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98]"
               style={{
                 background: 'linear-gradient(135deg, #111111, #333333)',

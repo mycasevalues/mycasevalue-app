@@ -78,7 +78,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
             <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, marginBottom: 24 }}>
               We encountered an unexpected error. Your data is safe — please try refreshing the page.
             </p>
-            <button
+            <button type="button"
               onClick={() => { this.setState({ hasError: false }); window.location.reload(); }}
               style={{
                 padding: '12px 32px',

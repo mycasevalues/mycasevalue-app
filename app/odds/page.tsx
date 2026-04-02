@@ -190,7 +190,7 @@ export default function OddsPage() {
 
         {/* Search Button */}
         <div className="mb-12 flex justify-center">
-          <button
+          <button type="button"
             onClick={handleSearch}
             disabled={loading || !selectedCaseType}
             className="px-8 py-4 rounded-lg text-base font-semibold transition-all"
@@ -323,6 +323,25 @@ export default function OddsPage() {
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
+            </div>
+
+            {/* Legal Disclaimer */}
+            <div style={{
+              background: 'var(--bg-base)',
+              color: 'var(--fg-muted)',
+              padding: '40px 20px',
+              fontSize: '14px',
+              fontFamily: 'Outfit, system-ui, sans-serif',
+              lineHeight: '1.6',
+            }}>
+              <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+                <p style={{ margin: '0 0 16px 0' }}>
+                  <strong>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
+                </p>
+                <p style={{ margin: 0 }}>
+                  <strong>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
+                </p>
+              </div>
             </div>
           </div>
         )}
