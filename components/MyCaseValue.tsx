@@ -1902,7 +1902,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Comparison */}
-                      <div className="mb-5 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #F5F3EF)' }}>
+                      <div className="mb-5 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #FFFFFF, #F5F3EF)' }}>
                         <div className="text-[11px] font-bold tracking-[2px] mb-2" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'COMPARACIÓN JURISDICCIONAL' : 'JURISDICTION COMPARISON'}</div>
                         <p className="text-[13px] leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{narrative.comparisonNote}</p>
                       </div>
@@ -2020,7 +2020,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Emerging Trend */}
-                      <div className="p-3 rounded-xl flex items-start gap-2.5" style={{ background: 'linear-gradient(135deg, #1A2744, #F5F3EF)' }}>
+                      <div className="p-3 rounded-xl flex items-start gap-2.5" style={{ background: 'linear-gradient(135deg, #FFFFFF, #F5F3EF)' }}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         <div>
                           <div className="text-[10px] font-bold tracking-[2px] mb-1" style={{ color: 'var(--accent-secondary)' }}>{lang === 'es' ? 'TENDENCIA EMERGENTE' : 'EMERGING TREND'}</div>
@@ -2271,7 +2271,7 @@ export default function MyCaseValue() {
 
                       {/* Key insight */}
                       <div className="p-4 rounded-xl flex items-start gap-3" style={{
-                        background: 'linear-gradient(135deg, #1A2744, #F5F3EF)',
+                        background: 'linear-gradient(135deg, #FFFFFF, #F5F3EF)',
                         border: '1px solid var(--border-muted)',
                       }}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -2516,7 +2516,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Key takeaway */}
-                      <div className="p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #F5F3EF)', border: '1px solid var(--border-muted)' }}>
+                      <div className="p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #FFFFFF, #F5F3EF)', border: '1px solid var(--border-muted)' }}>
                         <div className="flex items-start gap-3">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                           <div>
@@ -3020,7 +3020,7 @@ export default function MyCaseValue() {
           {/* === WHAT THIS MEANS FOR YOUR SITUATION (personalized) === */}
           <Reveal delay={120}>
             <div className="rounded-2xl overflow-hidden mb-3" style={{
-              background: 'linear-gradient(135deg, #1A2744, #0F1A2E)',
+              background: 'linear-gradient(135deg, #FFFFFF, #F9F8F6)',
               border: '1.5px solid var(--border-muted)',
               boxShadow: '0 4px 24px rgba(64, 64, 242, 0.06), 0 1px 3px rgba(255,255,255,0.03)',
             }}>
@@ -4360,7 +4360,7 @@ export default function MyCaseValue() {
           <Reveal delay={680}>
             <Card className="p-0 overflow-hidden">
               <div id="share-card" className="relative p-6 sm:p-8" style={{
-                background: 'linear-gradient(135deg, #0F1729 0%, #1A2744 50%, #0F1729 100%)',
+                background: 'linear-gradient(135deg, #F9F8F6 0%, #FFFFFF 50%, #F9F8F6 100%)',
                 color: '#111827',
               }}>
                 <div className="absolute top-0 right-0 w-48 h-48 rounded-full" style={{ background: 'radial-gradient(circle, rgba(17,17,17,0.12) 0%, transparent 70%)' }} />
@@ -4518,7 +4518,7 @@ export default function MyCaseValue() {
           <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(255,255,255,.5)', backdropFilter: 'blur(16px)' }}
             onClick={() => setShowPricing(false)}
             role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
-            <div className="rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(255,255,255,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(17,17,17,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
+            <div className="rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(17,17,17,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
               <button type="button" onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring z-10"
                 aria-label="Close pricing">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>

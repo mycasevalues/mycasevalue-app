@@ -3426,3 +3426,39 @@ button:disabled,
   border-color: #333333 !important;
   transform: translateY(-2px);
 }
+
+/* Auth pages — CSS-only focus/hover for Server Components */
+.auth-input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.auth-input:focus {
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
+  outline: none;
+}
+.auth-btn {
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+.auth-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+.auth-btn:active {
+  transform: scale(0.98) translateY(0);
+}
+.auth-link {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.auth-link:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.district-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.district-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #8B5CF6 !important;
+}

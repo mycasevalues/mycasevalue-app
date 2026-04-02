@@ -125,7 +125,7 @@ export function EmailCaptureBanner({
     <div
       className="w-full rounded-2xl overflow-hidden border transition-all"
       style={{
-        background: 'linear-gradient(135deg, rgba(17,17,17,0.1), rgba(19,27,46,0.95))',
+        background: 'linear-gradient(135deg, rgba(17,17,17,0.1), rgba(249,248,246,0.95))',
         borderColor: 'rgba(17,17,17,0.2)',
       }}
     >

@@ -217,7 +217,7 @@ export default async function NOSPage({ params }: PageProps) {
             { label: 'Outcomes Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#5EEAD4', icon: '' },
           ].map((stat, i) => (
             <div key={i} className="rounded-xl p-5 text-center" style={{
-              background: 'linear-gradient(180deg, rgba(19,27,46,0.9) 0%, rgba(255,255,255,0.95) 100%)',
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%)',
               border: `1px solid ${stat.color}20`,
             }}>
               <div style={{ fontSize: '20px', marginBottom: '6px' }}>{stat.icon}</div>

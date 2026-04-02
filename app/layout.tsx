@@ -8,7 +8,7 @@ export const metadata = {
   description: 'See real outcomes from 5.1M+ federal court cases. Research win rates, settlement data, timelines, and recovery ranges for 84 case types. Free, private, and instant.',
   openGraph: {
     title: 'MyCaseValue — What really happened in cases like yours',
-    description: 'Real outcomes from 4,100,000+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
+    description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
     type: 'website',
     siteName: 'MyCaseValue',
     url: 'https://www.mycasevalues.com',
@@ -89,14 +89,14 @@ const jsonLd = {
       offers: [
         { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free basic case outcome report' },
         { '@type': 'Offer', price: '5.99', priceCurrency: 'USD', description: 'Single Report (one-time)' },
-        { '@type': 'Offer', price: '9.99', priceCurrency: 'USD', description: 'Unlimited Reports (one-time)' },
+        { '@type': 'Offer', price: '9.99', priceCurrency: 'USD', description: 'Unlimited Reports (monthly subscription)' },
         { '@type': 'Offer', price: '29.99', priceCurrency: 'USD', description: 'Attorney Mode (monthly subscription)' },
       ],
     },
     {
       '@type': 'Dataset',
       name: 'Federal Court Outcome Data',
-      description: 'Aggregate historical outcome data from 5.1M+ federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and Google Scholar for legal scholarship context.',
+      description: 'Aggregate historical outcome data from 5,100,000+ federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and Google Scholar for legal scholarship context.',
       url: 'https://www.mycasevalues.com',
       license: 'https://www.usa.gov/government-copyright',
       creator: { '@type': 'Organization', name: 'Federal Judicial Center' },
@@ -139,7 +139,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'What is MyCaseValue?',
-          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 4.1 million public federal court records. It is not legal advice.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It is not legal advice.' },
         },
         {
           '@type': 'Question',
@@ -213,9 +213,8 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){var d=document.documentElement;d.setAttribute('data-theme','dark');d.classList.add('dark');try{localStorage.removeItem('mcv-theme')}catch(e){}})()` }} />
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
         {/* Self-hosted fonts — no external CDN, GDPR compliant */}

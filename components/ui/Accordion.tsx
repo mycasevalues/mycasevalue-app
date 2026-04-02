@@ -68,7 +68,7 @@ export function Accordion({ items }: AccordionProps) {
           >
             <div className="overflow-hidden">
               <div className="px-6 py-4 leading-relaxed" style={{
-                background: 'rgba(19,27,46,0.5)',
+                background: 'rgba(17,24,39,0.04)',
                 color: '#374151',
               }}>
                 {item.content}

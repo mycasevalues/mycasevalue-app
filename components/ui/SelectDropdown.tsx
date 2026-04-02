@@ -50,7 +50,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
         style={{
           borderColor: open ? '#111111' : 'var(--border-muted)',
           color: selected ? '#111827' : '#6B7280',
-          background: '#1A2744',
+          background: '#FFFFFF',
           boxShadow: open ? '0 0 0 3px rgba(17,17,17,0.12)' : 'none',
         }}>
         <span className="truncate">{selected ? selected.label : placeholder || 'Select...'}</span>
@@ -63,9 +63,9 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
         role="listbox"
         className="absolute top-full mt-1.5 left-0 right-0 rounded-xl z-[var(--z-raised)] overflow-hidden"
         style={{
-          background: '#1A2744',
+          background: '#FFFFFF',
           border: open ? '1px solid var(--border-muted)' : '1px solid transparent',
-          boxShadow: open ? '0 12px 40px rgba(255,255,255,.4)' : 'none',
+          boxShadow: open ? '0 12px 40px rgba(0,0,0,.12)' : 'none',
           maxHeight: open ? '280px' : '0',
           opacity: open ? 1 : 0,
           transform: open ? 'translateY(0) scale(1)' : 'translateY(-8px) scale(0.98)',
@@ -79,7 +79,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
               aria-label={lang === 'es' ? 'Buscar tipos de caso' : 'Search case types'}
               className="w-full px-3 py-2 text-[13px] rounded-lg outline-none focus:ring-2 focus:ring-[#111111]/40 transition-colors"
               style={{
-                background: '#0F1729',
+                background: '#F9F8F6',
                 border: '1px solid var(--border-muted)',
                 color: '#111827',
               }} />
@@ -98,7 +98,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
                 background: o.id === value ? 'rgba(17,17,17,0.08)' : 'transparent',
                 animationDelay: open ? `${idx * 20}ms` : '0ms',
               }}
-              onMouseEnter={e => { if (o.id !== value) e.currentTarget.style.background = '#243352'; }}
+              onMouseEnter={e => { if (o.id !== value) e.currentTarget.style.background = '#F2F0EC'; }}
               onMouseLeave={e => { if (o.id !== value) e.currentTarget.style.background = 'transparent'; }}>
               <span className="flex items-center gap-2">
                 {o.id === value && (

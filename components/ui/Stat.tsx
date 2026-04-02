@@ -15,7 +15,7 @@ interface StatProps {
 export function Stat({ value, label, color, large = false }: StatProps) {
   return (
     <div className="text-center p-4 rounded-xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-0.5 tilt-hover" style={{
-      background: `linear-gradient(180deg, rgba(19,27,46,0.7), ${color}10)`,
+      background: `linear-gradient(180deg, rgba(17,24,39,0.04), ${color}10)`,
       border: `1px solid ${color}20`,
       boxShadow: `0 2px 12px ${color}08`,
     }}>

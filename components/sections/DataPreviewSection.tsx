@@ -167,7 +167,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                 </div>
                 {sortedData.map((item, idx) => (
                   <div key={item.key} className="grid grid-cols-4 gap-0 px-4 py-3 transition-all hover:bg-[#E5E0D830]"
-                    style={{ borderTop: '1px solid rgba(229,231,235,0.3)', background: idx % 2 === 0 ? 'rgba(19,27,46,0.5)' : 'transparent' }}>
+                    style={{ borderTop: '1px solid rgba(229,231,235,0.3)', background: idx % 2 === 0 ? 'rgba(17,24,39,0.04)' : 'transparent' }}>
                     <div className="text-[12px] font-semibold" style={{ color: '#374151' }}>{es ? item.es : item.en}</div>
                     <div className="text-[12px] font-data font-bold text-center" style={{ color: item.rate > 50 ? '#0D9488' : item.rate > 40 ? '#8B5CF6' : '#E87461' }}>{item.rate}%</div>
                     <div className="text-[12px] font-data text-center" style={{ color: '#6B7280' }}>{item.vol}</div>

@@ -146,7 +146,7 @@ export function ReportFeaturesGrid({ lang = 'en' }: ReportFeaturesGridProps) {
           style={
             !f.free
               ? {
-                background: 'linear-gradient(135deg, rgba(17,17,17,0.12), rgba(19,27,46,0.9))',
+                background: 'linear-gradient(135deg, rgba(17,17,17,0.12), rgba(249,248,246,0.9))',
                 borderColor: 'rgba(17,17,17,0.2)',
               }
               : undefined

@@ -70,7 +70,7 @@ export async function GET(request: Request) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            background: `linear-gradient(135deg, #0B1221 0%, #131B2E 100%)`,
+            background: `linear-gradient(135deg, #FFFFFF 0%, #F9F8F6 100%)`,
             fontFamily: 'system-ui, -apple-system, sans-serif',
             position: 'relative',
             overflow: 'hidden',
