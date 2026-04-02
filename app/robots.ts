@@ -4,6 +4,11 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
+        userAgent: ['Googlebot', 'Bingbot'],
+        allow: '/',
+        disallow: ['/api/', '/api/stripe/', '/api/ingest'],
+      },
+      {
         userAgent: '*',
         allow: '/',
         disallow: ['/api/', '/api/stripe/', '/api/ingest'],

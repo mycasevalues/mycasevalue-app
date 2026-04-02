@@ -8,6 +8,12 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: 'Privacy Policy — MyCaseValue',
+    description: 'Learn how MyCaseValue collects, uses, and protects your data.',
+    url: 'https://mycasevalues.com/privacy',
+    type: 'website',
+  },
 };
 
 const jsonLd = {

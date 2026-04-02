@@ -1,5 +1,6 @@
 import './globals.css';
 import ErrorBoundary from '../components/ErrorBoundary';
+import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 
 export const metadata = {
   title: 'MyCaseValue — Federal Court Outcome Data | Win Rates, Settlements & Timelines',
@@ -249,9 +250,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="grain" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }} suppressHydrationWarning>
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <ErrorBoundary>
-          <main id="main-content">
-            {children}
-          </main>
+          <AnalyticsProvider>
+            <main id="main-content">
+              {children}
+            </main>
+          </AnalyticsProvider>
         </ErrorBoundary>
         <script dangerouslySetInnerHTML={{ __html: `
           window.mcvAnalytics = {

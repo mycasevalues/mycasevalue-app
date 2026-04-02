@@ -4,6 +4,12 @@ export const metadata: Metadata = {
   title: 'Methodology — MyCaseValue | How We Process Federal Court Data',
   description: 'Learn how MyCaseValue processes data from the Federal Judicial Center Integrated Database and CourtListener to provide aggregate federal court outcome statistics.',
   alternates: { canonical: 'https://mycasevalues.com/methodology' },
+  openGraph: {
+    title: 'Methodology — MyCaseValue',
+    description: 'Learn how MyCaseValue processes and presents aggregate federal court outcome data with transparency.',
+    url: 'https://mycasevalues.com/methodology',
+    type: 'website',
+  },
 };
 
 export default function MethodologyPage() {

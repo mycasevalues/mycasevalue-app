@@ -8,6 +8,12 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: 'Terms of Service — MyCaseValue',
+    description: 'Read MyCaseValue Terms of Service, including our service agreement and user responsibilities.',
+    url: 'https://mycasevalues.com/terms',
+    type: 'website',
+  },
 };
 
 const jsonLd = {

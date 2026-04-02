@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   description: 'Important disclaimer: MyCaseValue is not a law firm and provides data for informational purposes only, not legal advice.',
   alternates: { canonical: 'https://mycasevalues.com/disclaimer' },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Disclaimer — MyCaseValue',
+    description: 'Important disclaimer: MyCaseValue is not a law firm and provides data for informational purposes only, not legal advice.',
+    url: 'https://mycasevalues.com/disclaimer',
+    type: 'website',
+  },
 };
 
 const jsonLd = {
