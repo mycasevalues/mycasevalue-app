@@ -85,12 +85,12 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: 'rgba(11, 18, 33, 0.85)' }}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: 'rgba(255, 255, 255, 0.85)' }}>
       {/* Close button */}
       <button
         onClick={handleSkip}
         className="absolute top-8 right-8 p-2 rounded-lg transition-colors hover:bg-indigo-600"
-        style={{ color: '#E2E8F0' }}
+        style={{ color: '#D1D5DB' }}
         aria-label="Close tour"
       >
         <X size={24} />
@@ -99,18 +99,18 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
       {/* Card */}
       <div
         className="w-full max-w-lg rounded-xl shadow-2xl p-8 relative"
-        style={{ backgroundColor: '#131B2E', borderColor: '#4F46E5', borderWidth: '1px' }}
+        style={{ backgroundColor: '#FFFFFF', borderColor: '#111111', borderWidth: '1px' }}
       >
         {/* Icon */}
         <div className="text-6xl mb-6 text-center">{step.icon}</div>
 
         {/* Title */}
-        <h2 className="text-3xl font-bold mb-4 text-center" style={{ color: '#E2E8F0' }}>
+        <h2 className="text-3xl font-bold mb-4 text-center" style={{ color: '#D1D5DB' }}>
           {step.title}
         </h2>
 
         {/* Description */}
-        <p className="text-lg mb-8 text-center" style={{ color: '#B0BDD0' }}>
+        <p className="text-lg mb-8 text-center" style={{ color: '#6B7280' }}>
           {step.description}
         </p>
 
@@ -124,7 +124,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
               style={{
                 width: index === currentStep ? '32px' : '8px',
                 height: '8px',
-                backgroundColor: index === currentStep ? '#4F46E5' : '#4F46E5',
+                backgroundColor: index === currentStep ? '#111111' : '#111111',
                 opacity: index === currentStep ? 1 : 0.3,
               }}
               aria-label={`Go to step ${index + 1}`}
@@ -139,8 +139,8 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
             disabled={currentStep === 0}
             className="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors disabled:opacity-50"
             style={{
-              color: '#E2E8F0',
-              borderColor: '#4F46E5',
+              color: '#D1D5DB',
+              borderColor: '#111111',
               borderWidth: '1px',
             }}
           >
@@ -152,8 +152,8 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
             onClick={handleSkip}
             className="px-4 py-2 rounded-lg transition-colors"
             style={{
-              color: '#B0BDD0',
-              borderColor: '#4F46E5',
+              color: '#6B7280',
+              borderColor: '#111111',
               borderWidth: '1px',
             }}
           >
@@ -165,8 +165,8 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
               onClick={handleGetStarted}
               className="flex items-center gap-2 px-6 py-2 rounded-lg font-semibold transition-colors"
               style={{
-                backgroundColor: '#4F46E5',
-                color: '#E2E8F0',
+                backgroundColor: '#111111',
+                color: '#D1D5DB',
               }}
             >
               {t.getStarted}
@@ -176,8 +176,8 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
               onClick={handleNext}
               className="flex items-center gap-2 px-6 py-2 rounded-lg font-semibold transition-colors"
               style={{
-                backgroundColor: '#4F46E5',
-                color: '#E2E8F0',
+                backgroundColor: '#111111',
+                color: '#D1D5DB',
               }}
             >
               {t.next}
@@ -187,7 +187,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
         </div>
 
         {/* Step counter */}
-        <p className="text-center mt-4" style={{ color: '#B0BDD0', fontSize: '14px' }}>
+        <p className="text-center mt-4" style={{ color: '#6B7280', fontSize: '14px' }}>
           Step {currentStep + 1} of {steps.length}
         </p>
       </div>

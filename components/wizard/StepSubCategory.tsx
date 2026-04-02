@@ -39,10 +39,10 @@ export function StepSubCategory({
         <p className="text-[var(--fg-muted)] mb-4 ml-[52px]">{t.choose_specific}</p>
 
         {/* AI Helper */}
-        <div className="mb-5 p-4 rounded-2xl" style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.12)' }}>
+        <div className="mb-5 p-4 rounded-2xl" style={{ background: 'rgba(17,17,17,0.06)', border: '1px solid rgba(17,17,17,0.12)' }}>
           <div className="flex items-center gap-2 mb-2">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
-            <span className="text-[13px] font-semibold" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? '¿No estás seguro? Descríbelo' : 'Not sure? Describe it'}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
+            <span className="text-[13px] font-semibold" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{lang === 'es' ? '¿No estás seguro? Descríbelo' : 'Not sure? Describe it'}</span>
           </div>
           <input type="text" value={naturalInput} onChange={e => setNaturalInput(e.target.value)}
             onKeyDown={e => {
@@ -54,14 +54,14 @@ export function StepSubCategory({
             placeholder={lang === 'es' ? `Ej: "me despidieron sin razón"` : `e.g. "I was fired without reason"`}
             className="w-full text-[14px] rounded-xl transition-all input-frosted focus-ring-premium"
             aria-label={lang === 'es' ? 'Describe tu situación' : 'Describe your situation'}
-            style={{ color: '#F0F2F5', padding: '12px 16px' }} />
+            style={{ color: '#111827', padding: '12px 16px' }} />
           {naturalInput.trim() && aiSuggestions.filter((s: any) => s.sit.id === sit.id).length > 0 && (
             <div className="mt-2 space-y-1">
               {aiSuggestions.filter((s: any) => s.sit.id === sit.id).slice(0, 3).map((s: any, i: number) => (
                 <button key={i} onClick={() => { setSpec(s.opt); go(3); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
                   className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-left text-[13px] transition-all bg-transparent border-none"
-                  style={{ color: '#E2E8F0' }}
-                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(99,102,241,0.1)'; }}
+                  style={{ color: '#D1D5DB' }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(17,17,17,0.1)'; }}
                   onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={sit.color} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
                   {s.opt.label}
@@ -79,9 +79,9 @@ export function StepSubCategory({
           {(hasMore && !showAllSubcats ? sit.opts.slice(0, INITIAL_SHOW) : sit.opts).map((o: any, i: number) => (
             <button key={i} onClick={() => { setSpec(o); go(3); }}
               className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
-              style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(51,65,85,0.5)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
+              style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(51,65,85,0.5)', boxShadow: '0 1px 3px rgba(255,255,255,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = sit.color}
-              onMouseLeave={e => e.currentTarget.style.borderColor = '#1E293B'}>
+              onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}>
               <div className="w-2 h-2 rounded-full flex-shrink-0 mr-3 transition-transform" style={{ background: sit.color, opacity: 0.5 }} />
               <span className="flex-1 text-[15px]">{o.label}</span>
               <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sit.color}08` }}>
@@ -93,7 +93,7 @@ export function StepSubCategory({
         {hasMore && !showAllSubcats && (
           <button onClick={() => setShowAllSubcats(true)}
             className="w-full mt-3 py-3 text-[14px] font-medium rounded-xl cursor-pointer transition-all bg-transparent border-none"
-            style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>
+            style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>
             {lang === 'es' ? `Mostrar ${sit.opts.length - INITIAL_SHOW} más →` : `Show ${sit.opts.length - INITIAL_SHOW} more →`}
           </button>
         )}

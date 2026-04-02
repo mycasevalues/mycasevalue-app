@@ -131,9 +131,9 @@ export default function SocialProofToast({ lang = 'en', active = true }: SocialP
       <div
         className="rounded-lg border p-4 shadow-lg"
         style={{
-          backgroundColor: '#131B2E',
-          borderColor: '#1E293B',
-          color: '#E2E8F0'
+          backgroundColor: '#FFFFFF',
+          borderColor: '#E5E7EB',
+          color: '#D1D5DB'
         }}
       >
         <div className="flex items-start justify-between gap-3">
@@ -147,12 +147,12 @@ export default function SocialProofToast({ lang = 'en', active = true }: SocialP
           <button
             onClick={handleDismiss}
             className="flex-shrink-0 text-lg leading-none transition-colors"
-            style={{ color: '#B0BDD0' }}
+            style={{ color: '#6B7280' }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#E2E8F0';
+              e.currentTarget.style.color = '#D1D5DB';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#B0BDD0';
+              e.currentTarget.style.color = '#6B7280';
             }}
           >
             ×

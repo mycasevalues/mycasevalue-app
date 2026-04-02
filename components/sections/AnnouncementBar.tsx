@@ -63,8 +63,8 @@ export default function AnnouncementBar({ lang = 'en' }: AnnouncementBarProps) {
     <div
       className="relative overflow-hidden no-print"
       style={{
-        background: 'linear-gradient(90deg, rgba(79,70,229,0.12) 0%, rgba(13,148,136,0.08) 50%, rgba(79,70,229,0.12) 100%)',
-        borderBottom: '1px solid rgba(79,70,229,0.15)',
+        background: 'linear-gradient(90deg, rgba(17,17,17,0.12) 0%, rgba(13,148,136,0.08) 50%, rgba(17,17,17,0.12) 100%)',
+        borderBottom: '1px solid rgba(17,17,17,0.15)',
       }}
     >
       <div className="max-w-[1200px] mx-auto px-4 py-2 flex items-center justify-center gap-2 text-center">
@@ -97,7 +97,7 @@ export default function AnnouncementBar({ lang = 'en' }: AnnouncementBarProps) {
               onClick={() => { setFading(true); setTimeout(() => { setMsgIndex(i); setFading(false); }, 200); }}
               className="w-1.5 h-1.5 rounded-full transition-all"
               style={{
-                background: i === msgIndex ? '#6366F1' : 'rgba(99,102,241,0.3)',
+                background: i === msgIndex ? '#333333' : 'rgba(17,17,17,0.3)',
                 transform: i === msgIndex ? 'scale(1.3)' : 'scale(1)',
               }}
               aria-label={`Message ${i + 1}`}

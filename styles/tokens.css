@@ -1,74 +1,74 @@
 /* ============================================================
-   MYCASEVALUE — DESIGN TOKENS (COMPLETE)
+   MYCASEVALUE — DESIGN TOKENS (PAPER DESIGN SYSTEM)
+   Light, print-inspired, minimal aesthetic
    Single source of truth. No token may be hardcoded anywhere.
    ============================================================ */
 
-:root,
-html[data-theme="dark"] {
-  /* ── BACKGROUNDS ──────────────────────────────────────── */
-  --bg-base:          #0B1221;
-  --bg-surface:       #131B2E;
-  --bg-elevated:      #162035;
-  --bg-input:         #0F172A;
-  --bg-overlay:       rgba(11,18,33,0.94);
-  --bg-code:          #0D1117;
-  --bg-skeleton:      #1E2A3D;
-  --bg-hover:         rgba(79,70,229,0.06);
-  --bg-selection:     rgba(79,70,229,0.20);
+:root {
+  /* ── BACKGROUNDS (Paper Palette) ──────────────────────── */
+  --bg-base:          #FAFAF8;  /* Warm off-white paper */
+  --bg-surface:       #FFFFFF;  /* Pure white surfaces */
+  --bg-elevated:      #F5F5F0;  /* Subtle elevation */
+  --bg-input:         #FFFFFF;  /* Input backgrounds */
+  --bg-overlay:       rgba(17,24,39,0.6);  /* Dark overlay for light theme */
+  --bg-code:          #F9FAFB;  /* Code background */
+  --bg-skeleton:      #E5E7EB;  /* Skeleton loader */
+  --bg-hover:         rgba(139,92,246,0.06);
+  --bg-selection:     rgba(139,92,246,0.15);
 
-  /* ── FOREGROUNDS ──────────────────────────────────────── */
-  --fg-primary:       #F0F2F5;
-  --fg-secondary:     #CBD5E1;
-  --fg-muted:         #B0BDD0;
-  --fg-subtle:        #8B95A5;
-  --fg-disabled:      #475569;
-  --fg-inverse:       #0B1221;
-  --fg-link:          #818CF8;
-  --fg-link-hover:    #A5B4FC;
+  /* ── FOREGROUNDS (Paper Palette) ──────────────────────── */
+  --fg-primary:       #111827;  /* Deep charcoal text */
+  --fg-secondary:     #374151;  /* Medium gray */
+  --fg-muted:         #6B7280;  /* Muted gray */
+  --fg-subtle:        #9CA3AF;  /* Subtle gray */
+  --fg-disabled:      #D1D5DB;  /* Disabled gray */
+  --fg-inverse:       #FFFFFF;  /* Inverse (white) */
+  --fg-link:          #111111;  /* Primary link */
+  --fg-link-hover:    #333333;  /* Link hover */
 
-  /* ── PRIMARY ACCENT ───────────────────────────────────── */
-  --accent-primary:         #4F46E5;
-  --accent-primary-hover:   #4338CA;
-  --accent-primary-active:  #3730A3;
-  --accent-primary-subtle:  rgba(79,70,229,0.12);
-  --accent-primary-border:  rgba(79,70,229,0.30);
-  --accent-primary-glow:    rgba(79,70,229,0.20);
+  /* ── PRIMARY ACCENT (Paper Black) ─────────────────────── */
+  --accent-primary:         #111111;
+  --accent-primary-hover:   #333333;
+  --accent-primary-active:  #1F2937;
+  --accent-primary-subtle:  rgba(17,17,17,0.08);
+  --accent-primary-border:  rgba(17,17,17,0.20);
+  --accent-primary-glow:    rgba(17,17,17,0.12);
 
-  /* ── SECONDARY ACCENT ─────────────────────────────────── */
-  --accent-secondary:       #0D9488;
-  --accent-secondary-hover: #0F766E;
-  --accent-secondary-subtle: rgba(13,148,136,0.12);
-  --accent-secondary-border: rgba(13,148,136,0.30);
+  /* ── SECONDARY ACCENT (Paper Purple) ──────────────────── */
+  --accent-secondary:       #8B5CF6;
+  --accent-secondary-hover: #7C3AED;
+  --accent-secondary-subtle: rgba(139,92,246,0.10);
+  --accent-secondary-border: rgba(139,92,246,0.25);
 
-  /* ── SEMANTIC — OUTCOMES (RESERVED, NEVER REPURPOSED) ── */
-  --outcome-win:          #10B981;
-  --outcome-win-hover:    #059669;
-  --outcome-win-subtle:   rgba(16,185,129,0.12);
-  --outcome-win-border:   rgba(16,185,129,0.30);
-  --outcome-settle:       #F59E0B;
-  --outcome-settle-hover: #D97706;
-  --outcome-settle-subtle: rgba(245,158,11,0.12);
-  --outcome-settle-border: rgba(245,158,11,0.30);
-  --outcome-loss:         #EF4444;
-  --outcome-loss-hover:   #DC2626;
-  --outcome-loss-subtle:  rgba(239,68,68,0.12);
-  --outcome-loss-border:  rgba(239,68,68,0.30);
-  --outcome-other:        #64748B;
-  --outcome-other-subtle: rgba(100,116,139,0.12);
-  --outcome-other-border: rgba(100,116,139,0.30);
+  /* ── SEMANTIC — OUTCOMES (Lighter tones for light bg) ── */
+  --outcome-win:          #16A34A;
+  --outcome-win-hover:    #15803D;
+  --outcome-win-subtle:   rgba(22,163,74,0.10);
+  --outcome-win-border:   rgba(22,163,74,0.25);
+  --outcome-settle:       #D97706;
+  --outcome-settle-hover: #B45309;
+  --outcome-settle-subtle: rgba(217,119,6,0.10);
+  --outcome-settle-border: rgba(217,119,6,0.25);
+  --outcome-loss:         #DC2626;
+  --outcome-loss-hover:   #B91C1C;
+  --outcome-loss-subtle:  rgba(220,38,38,0.10);
+  --outcome-loss-border:  rgba(220,38,38,0.25);
+  --outcome-other:        #6B7280;
+  --outcome-other-subtle: rgba(107,114,128,0.10);
+  --outcome-other-border: rgba(107,114,128,0.25);
 
   /* ── UI SEMANTIC (STATUS COLORS) ───────────────────────── */
-  --success:              #22C55E;
-  --success-subtle:       rgba(34,197,94,0.12);
-  --warning:              #EAB308;
-  --warning-subtle:       rgba(234,179,8,0.12);
-  --danger:               #EF4444;
-  --danger-subtle:        rgba(239,68,68,0.12);
-  --info:                 #3B82F6;
-  --info-subtle:          rgba(59,130,246,0.12);
+  --success:              #16A34A;
+  --success-subtle:       rgba(22,163,74,0.10);
+  --warning:              #D97706;
+  --warning-subtle:       rgba(217,119,6,0.10);
+  --danger:               #DC2626;
+  --danger-subtle:        rgba(220,38,38,0.10);
+  --info:                 #0891B2;
+  --info-subtle:          rgba(8,145,178,0.10);
 
-  /* ── CATEGORY COLORS ──────────────────────────────────── */
-  --cat-workplace:    #4338CA;
+  /* ── CATEGORY COLORS (Adjusted for light theme) ──────── */
+  --cat-workplace:    #4F46E5;
   --cat-injury:       #DC2626;
   --cat-consumer:     #2563EB;
   --cat-civil-rights: #7C3AED;
@@ -76,16 +76,16 @@ html[data-theme="dark"] {
   --cat-housing:      #059669;
   --cat-healthcare:   #DB2777;
   --cat-family:       #EC4899;
-  --cat-government:   #475569;
+  --cat-government:   #4B5563;
   --cat-education:    #0891B2;
 
-  /* ── BORDERS ──────────────────────────────────────────── */
-  --border-default:   rgba(30,41,59,1);
-  --border-subtle:    rgba(30,41,59,0.5);
-  --border-emphasis:  rgba(79,70,229,0.35);
-  --border-focus:     #4F46E5;
-  --border-error:     #EF4444;
-  --border-success:   #10B981;
+  /* ── BORDERS (Paper Theme) ────────────────────────────── */
+  --border-default:   #E5E7EB;
+  --border-subtle:    #F3F4F6;
+  --border-emphasis:  #111111;
+  --border-focus:     #111111;
+  --border-error:     #DC2626;
+  --border-success:   #16A34A;
 
   /* ── TYPOGRAPHY SCALE ─────────────────────────────────── */
   --text-2xs:  0.6875rem; /* 11px — legal/print only */
@@ -119,15 +119,15 @@ html[data-theme="dark"] {
   --radius-sm: 6px;  --radius-md: 10px;  --radius-lg: 14px;
   --radius-xl: 20px; --radius-full: 9999px;
 
-  /* ── SHADOWS ───────────────────────────────────────────── */
-  --shadow-xs:     0 1px 2px rgba(0,0,0,0.25);
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.20);
-  --shadow-md:     0 4px 12px rgba(0,0,0,0.40), 0 2px 4px rgba(0,0,0,0.25);
-  --shadow-lg:     0 16px 40px rgba(0,0,0,0.50), 0 4px 12px rgba(0,0,0,0.30);
-  --shadow-xl:     0 32px 64px rgba(0,0,0,0.60), 0 8px 24px rgba(0,0,0,0.35);
-  --shadow-accent:    0 4px 20px rgba(79,70,229,0.30);
-  --shadow-accent-lg: 0 8px 40px rgba(79,70,229,0.40);
-  --shadow-inset:  inset 0 1px 0 rgba(255,255,255,0.04);
+  /* ── SHADOWS (Paper Theme — lighter, more subtle) ────── */
+  --shadow-xs:     0 1px 2px rgba(0,0,0,0.08);
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md:     0 4px 12px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+  --shadow-lg:     0 16px 40px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.10);
+  --shadow-xl:     0 32px 64px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-accent:    0 4px 20px rgba(139,92,246,0.15);
+  --shadow-accent-lg: 0 8px 40px rgba(139,92,246,0.20);
+  --shadow-inset:  inset 0 1px 0 rgba(0,0,0,0.04);
 
   /* ── MOTION ────────────────────────────────────────────── */
   --duration-instant: 60ms;
@@ -160,8 +160,6 @@ html[data-theme="dark"] {
   --bp-xs: 320px;  --bp-sm: 480px;  --bp-md: 768px;
   --bp-lg: 1024px; --bp-xl: 1280px; --bp-2xl: 1536px;
 }
-
-/* Light mode removed — dark-only site */
 
 /* ═══════════════════════════════════════════════════════════
    HIGH CONTRAST MODE

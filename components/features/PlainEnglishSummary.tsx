@@ -13,7 +13,7 @@ export function PlainEnglishSummary({ text, lang = 'en' }: PlainEnglishSummaryPr
   if (!text) return null;
   const es = lang === 'es';
   return (
-    <div className="bg-gradient-to-br from-[#131B2E] to-[#0F172A] rounded-2xl border border-[var(--border-default)] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
+    <div className="bg-gradient-to-br from-[#FFFFFF] to-[#FFFFFF] rounded-2xl border border-[var(--border-default)] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
       <div className="flex items-start gap-3">
         <div className="text-3xl" aria-hidden="true">
           💬

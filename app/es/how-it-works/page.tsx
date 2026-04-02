@@ -28,15 +28,15 @@ export default function SpanishHowItWorksPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/es" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
+          <a href="/es" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Volver a MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             CÓMO FUNCIONA
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
@@ -56,7 +56,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#4F46E5', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#111111', color: 'white' }}>
                   <span className="text-lg font-bold">1</span>
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#4F46E5', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#111111', color: 'white' }}>
                   <span className="text-lg font-bold">2</span>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#4F46E5', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#111111', color: 'white' }}>
                   <span className="text-lg font-bold">3</span>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#4F46E5', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#111111', color: 'white' }}>
                   <span className="text-lg font-bold">4</span>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#4F46E5', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#111111', color: 'white' }}>
                   <span className="text-lg font-bold">5</span>
                 </div>
               </div>
@@ -155,9 +155,9 @@ export default function SpanishHowItWorksPage() {
             Principios Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
               <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(79, 70, 229, 0.15)' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </div>
@@ -169,9 +169,9 @@ export default function SpanishHowItWorksPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
               <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(79, 70, 229, 0.15)' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6l4 2"/>
                 </svg>
@@ -184,9 +184,9 @@ export default function SpanishHowItWorksPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
               <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(79, 70, 229, 0.15)' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2">
                   <path d="M9 12l2 2 4-4"/>
                   <circle cx="12" cy="12" r="10"/>
                 </svg>
@@ -202,7 +202,7 @@ export default function SpanishHowItWorksPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
             Listo para comenzar?
           </h2>
@@ -211,7 +211,7 @@ export default function SpanishHowItWorksPage() {
           </p>
           <a href="/es/odds"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#4F46E5', color: '#131B2E' }}>
+            style={{ background: '#111111', color: '#FFFFFF' }}>
             Consultar Mi Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

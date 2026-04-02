@@ -88,14 +88,14 @@ export default function OddsPage() {
         className="border-b py-16 sm:py-24"
         style={{
           borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)',
+          background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)',
         }}
       >
         <div className="max-w-4xl mx-auto px-6">
           <a
             href="/"
             className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80"
-            style={{ color: '#4F46E5' }}
+            style={{ color: '#111111' }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -127,7 +127,7 @@ export default function OddsPage() {
               className="w-full px-4 py-3 rounded-lg border text-sm"
               style={{
                 borderColor: 'var(--border-default)',
-                background: '#131B2E',
+                background: '#FFFFFF',
                 color: 'var(--fg-primary)',
               }}
             >
@@ -151,7 +151,7 @@ export default function OddsPage() {
               className="w-full px-4 py-3 rounded-lg border text-sm"
               style={{
                 borderColor: 'var(--border-default)',
-                background: '#131B2E',
+                background: '#FFFFFF',
                 color: 'var(--fg-primary)',
               }}
             >
@@ -175,7 +175,7 @@ export default function OddsPage() {
               className="w-full px-4 py-3 rounded-lg border text-sm"
               style={{
                 borderColor: 'var(--border-default)',
-                background: '#131B2E',
+                background: '#FFFFFF',
                 color: 'var(--fg-primary)',
               }}
             >
@@ -195,8 +195,8 @@ export default function OddsPage() {
             disabled={loading || !selectedCaseType}
             className="px-8 py-4 rounded-lg text-base font-semibold transition-all"
             style={{
-              background: selectedCaseType ? '#4F46E5' : '#1E293B',
-              color: selectedCaseType ? '#131B2E' : 'var(--fg-muted)',
+              background: selectedCaseType ? '#111111' : '#E5E7EB',
+              color: selectedCaseType ? '#FFFFFF' : 'var(--fg-muted)',
               cursor: selectedCaseType && !loading ? 'pointer' : 'default',
             }}
           >
@@ -227,7 +227,7 @@ export default function OddsPage() {
               className="p-8 rounded-xl border text-center"
               style={{
                 borderColor: 'var(--border-default)',
-                background: '#131B2E',
+                background: '#FFFFFF',
               }}
             >
               <p className="text-sm font-semibold mb-4" style={{ color: 'var(--fg-muted)' }}>
@@ -235,7 +235,7 @@ export default function OddsPage() {
               </p>
               <div
                 className="text-6xl sm:text-7xl font-display font-extrabold"
-                style={{ color: '#4F46E5', letterSpacing: '-2px' }}
+                style={{ color: '#111111', letterSpacing: '-2px' }}
               >
                 {results.winRate}%
               </div>
@@ -249,7 +249,7 @@ export default function OddsPage() {
               className="p-8 rounded-xl border"
               style={{
                 borderColor: 'var(--border-default)',
-                background: '#131B2E',
+                background: '#FFFFFF',
               }}
             >
               <p className="text-sm font-semibold mb-6" style={{ color: 'var(--fg-primary)' }}>
@@ -273,7 +273,7 @@ export default function OddsPage() {
                       </div>
                       <div
                         className="h-3 rounded-full overflow-hidden"
-                        style={{ background: '#0F172A' }}
+                        style={{ background: '#FFFFFF' }}
                       >
                         <div
                           className="h-full transition-all duration-500"
@@ -294,7 +294,7 @@ export default function OddsPage() {
               className="p-8 rounded-xl border"
               style={{
                 borderColor: 'var(--border-default)',
-                background: '#131B2E',
+                background: '#FFFFFF',
               }}
             >
               <p className="text-base leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
@@ -309,14 +309,14 @@ export default function OddsPage() {
             </div>
 
             {/* CTA */}
-            <div className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+            <div className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
               <p className="text-sm mb-4" style={{ color: 'var(--fg-muted)' }}>
                 Want the full picture?
               </p>
               <a
                 href="/"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all"
-                style={{ background: '#4F46E5', color: '#131B2E' }}
+                style={{ background: '#111111', color: '#FFFFFF' }}
               >
                 Get your personalized report — $5.99
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -337,7 +337,7 @@ export default function OddsPage() {
               { v: '100% Free', l: 'No account needed' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="font-display font-extrabold text-lg" style={{ color: '#4F46E5' }}>
+                <div className="font-display font-extrabold text-lg" style={{ color: '#111111' }}>
                   {stat.v}
                 </div>
                 <div className="text-xs mt-1" style={{ color: 'var(--fg-muted)' }}>

@@ -54,12 +54,12 @@ export default function NOSIndexPage() {
   const categories = Object.keys(byCategory).sort();
 
   return (
-    <div className="min-h-screen text-[#F0F2F5]" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }}>
+    <div className="min-h-screen text-[#111827]" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }}>
       {/* Header */}
       <header className="py-12 px-4 sm:px-6 lg:px-8" style={{ borderBottom: '1px solid var(--border-default)' }}>
         <Link
           href="/"
-          className="text-[#A5B4FC] hover:text-[#A5B4FC] transition text-sm mb-4 inline-block"
+          className="text-[#8B5CF6] hover:text-[#8B5CF6] transition text-sm mb-4 inline-block"
         >
           ← Back to Home
         </Link>
@@ -86,17 +86,17 @@ export default function NOSIndexPage() {
                 <Link
                   key={item.code}
                   href={`/nos/${item.code}`}
-                  className="group bg-[#131B2E] rounded-lg p-6 border hover:border-[#4F46E5] hover:shadow-lg transition-all"
+                  className="group bg-[#FFFFFF] rounded-lg p-6 border hover:border-[#111111] hover:shadow-lg transition-all"
                   style={{ borderColor: 'var(--border-default)' }}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-lg group-hover:text-[#A5B4FC] transition">
+                      <h3 className="font-semibold text-lg group-hover:text-[#8B5CF6] transition">
                         {item.label}
                       </h3>
                       <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>NOS Code: {item.code}</p>
                     </div>
-                    <span className="text-[#A5B4FC] text-xl group-hover:translate-x-1 transition">
+                    <span className="text-[#8B5CF6] text-xl group-hover:translate-x-1 transition">
                       →
                     </span>
                   </div>
@@ -111,7 +111,7 @@ export default function NOSIndexPage() {
       </main>
 
       {/* Info Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-12 bg-[#131B2E]" style={{ borderTop: '1px solid var(--border-default)' }}>
+      <section className="px-4 sm:px-6 lg:px-8 py-12 bg-[#FFFFFF]" style={{ borderTop: '1px solid var(--border-default)' }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">What are NOS Codes?</h2>
           <p className="mb-4" style={{ color: 'var(--fg-muted)' }}>

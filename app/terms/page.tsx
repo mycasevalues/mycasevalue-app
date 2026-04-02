@@ -38,15 +38,15 @@ export default function TermsPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             TERMS
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
@@ -62,7 +62,7 @@ export default function TermsPage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <div className="prose prose-invert max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
 
-          <div className="p-6 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#1E293B', color: 'var(--fg-primary)' }}>
+          <div className="p-6 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#E5E7EB', color: 'var(--fg-primary)' }}>
             <p className="m-0 font-semibold" style={{ color: '#D97706' }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.
@@ -287,7 +287,7 @@ export default function TermsPage() {
             <p>
               For questions about these Terms, contact us:
             </p>
-            <div className="mt-4 p-4 rounded-lg" style={{ background: '#131B2E', color: 'var(--fg-primary)' }}>
+            <div className="mt-4 p-4 rounded-lg" style={{ background: '#FFFFFF', color: 'var(--fg-primary)' }}>
               <p className="m-0"><strong>Email:</strong> support@mycasevalue.com</p>
               <p className="m-0 mt-2"><strong>Website:</strong> https://mycasevalues.com</p>
             </div>

@@ -104,9 +104,9 @@ export function CaseCompareTool({
   const bestCaseVolume = findBest('totalCases', true);
 
   return (
-    <div className="w-full rounded-2xl border border-[rgba(99,102,241,0.2)] p-6 md:p-8 shadow-lg" style={{ backgroundColor: '#0B1221' }}>
+    <div className="w-full rounded-2xl border border-[rgba(17,17,17,0.2)] p-6 md:p-8 shadow-lg" style={{ backgroundColor: '#FAFAF8' }}>
       {/* Title */}
-      <h2 className="text-2xl font-display font-bold text-[#F0F2F5] mb-6">{t.compareCases}</h2>
+      <h2 className="text-2xl font-display font-bold text-[#111827] mb-6">{t.compareCases}</h2>
 
       {/* Selectors */}
       <div className="mb-8 space-y-3">
@@ -115,7 +115,7 @@ export function CaseCompareTool({
             <select
               value={selected}
               onChange={(e) => handleSelectChange(index, e.target.value)}
-              className="flex-1 px-4 py-2 rounded-lg text-sm font-medium bg-[#1E293B] border border-[rgba(99,102,241,0.3)] text-[#F0F2F5] hover:border-[rgba(99,102,241,0.5)] focus:outline-none focus:border-[rgba(99,102,241,0.6)]"
+              className="flex-1 px-4 py-2 rounded-lg text-sm font-medium bg-[#E5E7EB] border border-[rgba(17,17,17,0.3)] text-[#111827] hover:border-[rgba(17,17,17,0.5)] focus:outline-none focus:border-[rgba(17,17,17,0.6)]"
             >
               <option value="">{t.selectCaseType}</option>
               {availableCaseTypes.map((ct) => (
@@ -127,7 +127,7 @@ export function CaseCompareTool({
             {index > 0 && (
               <button
                 onClick={() => handleRemoveComparison(index)}
-                className="px-4 py-2 rounded-lg text-xs font-medium bg-[#334155] hover:bg-[#475569] text-[#F0F2F5] transition-colors"
+                className="px-4 py-2 rounded-lg text-xs font-medium bg-[#334155] hover:bg-[#4B5563] text-[#111827] transition-colors"
               >
                 {t.removeComparison}
               </button>
@@ -140,7 +140,7 @@ export function CaseCompareTool({
       {selectedCases.length < 3 && (
         <button
           onClick={handleAddComparison}
-          className="mb-8 px-4 py-2 rounded-lg text-sm font-medium bg-[rgba(99,102,241,0.15)] border border-[rgba(99,102,241,0.3)] text-[#A5B4FC] hover:bg-[rgba(99,102,241,0.25)] hover:border-[rgba(99,102,241,0.5)] transition-all"
+          className="mb-8 px-4 py-2 rounded-lg text-sm font-medium bg-[rgba(17,17,17,0.15)] border border-[rgba(17,17,17,0.3)] text-[#8B5CF6] hover:bg-[rgba(17,17,17,0.25)] hover:border-[rgba(17,17,17,0.5)] transition-all"
         >
           + {t.addComparison}
         </button>
@@ -153,12 +153,12 @@ export function CaseCompareTool({
           <div className="hidden md:block">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b border-[rgba(99,102,241,0.2)]">
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#8B95A5] uppercase tracking-widest">
+                <tr className="border-b border-[rgba(17,17,17,0.2)]">
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-[#9CA3AF] uppercase tracking-widest">
                     {t.compare}
                   </th>
                   {comparisons.map((comp) => (
-                    <th key={comp.nos} className="text-center px-4 py-3 text-sm font-semibold text-[#A5B4FC]">
+                    <th key={comp.nos} className="text-center px-4 py-3 text-sm font-semibold text-[#8B5CF6]">
                       {comp.label}
                     </th>
                   ))}
@@ -166,14 +166,14 @@ export function CaseCompareTool({
               </thead>
               <tbody>
                 {/* Win Rate Row */}
-                <tr className="border-b border-[rgba(99,102,241,0.1)] hover:bg-[rgba(99,102,241,0.05)] transition-colors">
-                  <td className="px-4 py-4 text-sm font-medium text-[#B0BDD0]">{t.winRate}</td>
+                <tr className="border-b border-[rgba(17,17,17,0.1)] hover:bg-[rgba(17,17,17,0.05)] transition-colors">
+                  <td className="px-4 py-4 text-sm font-medium text-[#6B7280]">{t.winRate}</td>
                   {comparisons.map((comp) => (
                     <td key={comp.nos} className="text-center px-4 py-4">
                       <div className="flex flex-col items-center gap-1">
                         <div
                           className="text-lg font-bold font-display"
-                          style={{ color: comp.nos === bestWinRate ? '#0D9488' : '#6366F1' }}
+                          style={{ color: comp.nos === bestWinRate ? '#0D9488' : '#333333' }}
                         >
                           {comp.data.winRate}%
                         </div>
@@ -188,14 +188,14 @@ export function CaseCompareTool({
                 </tr>
 
                 {/* Settlement % Row */}
-                <tr className="border-b border-[rgba(99,102,241,0.1)] hover:bg-[rgba(99,102,241,0.05)] transition-colors">
-                  <td className="px-4 py-4 text-sm font-medium text-[#B0BDD0]">{t.settlementRate}</td>
+                <tr className="border-b border-[rgba(17,17,17,0.1)] hover:bg-[rgba(17,17,17,0.05)] transition-colors">
+                  <td className="px-4 py-4 text-sm font-medium text-[#6B7280]">{t.settlementRate}</td>
                   {comparisons.map((comp) => (
                     <td key={comp.nos} className="text-center px-4 py-4">
                       <div className="flex flex-col items-center gap-1">
                         <div
                           className="text-lg font-bold font-display"
-                          style={{ color: comp.nos === bestSettlement ? '#D97706' : '#6366F1' }}
+                          style={{ color: comp.nos === bestSettlement ? '#D97706' : '#333333' }}
                         >
                           {comp.data.settlementPct}%
                         </div>
@@ -210,14 +210,14 @@ export function CaseCompareTool({
                 </tr>
 
                 {/* Duration Row */}
-                <tr className="border-b border-[rgba(99,102,241,0.1)] hover:bg-[rgba(99,102,241,0.05)] transition-colors">
-                  <td className="px-4 py-4 text-sm font-medium text-[#B0BDD0]">{t.duration}</td>
+                <tr className="border-b border-[rgba(17,17,17,0.1)] hover:bg-[rgba(17,17,17,0.05)] transition-colors">
+                  <td className="px-4 py-4 text-sm font-medium text-[#6B7280]">{t.duration}</td>
                   {comparisons.map((comp) => (
                     <td key={comp.nos} className="text-center px-4 py-4">
                       <div className="flex flex-col items-center gap-1">
                         <div
                           className="text-lg font-bold font-display"
-                          style={{ color: comp.nos === bestDuration ? '#0D9488' : '#6366F1' }}
+                          style={{ color: comp.nos === bestDuration ? '#0D9488' : '#333333' }}
                         >
                           {comp.data.months}
                         </div>
@@ -232,8 +232,8 @@ export function CaseCompareTool({
                 </tr>
 
                 {/* Median Recovery Row */}
-                <tr className="border-b border-[rgba(99,102,241,0.1)] hover:bg-[rgba(99,102,241,0.05)] transition-colors">
-                  <td className="px-4 py-4 text-sm font-medium text-[#B0BDD0]">{t.medianRecovery}</td>
+                <tr className="border-b border-[rgba(17,17,17,0.1)] hover:bg-[rgba(17,17,17,0.05)] transition-colors">
+                  <td className="px-4 py-4 text-sm font-medium text-[#6B7280]">{t.medianRecovery}</td>
                   {comparisons.map((comp) => (
                     <td key={comp.nos} className="text-center px-4 py-4">
                       <div className="text-lg font-bold font-display" style={{ color: '#D97706' }}>
@@ -244,19 +244,19 @@ export function CaseCompareTool({
                 </tr>
 
                 {/* Cases Row */}
-                <tr className="border-b border-[rgba(99,102,241,0.1)] hover:bg-[rgba(99,102,241,0.05)] transition-colors">
-                  <td className="px-4 py-4 text-sm font-medium text-[#B0BDD0]">{t.cases}</td>
+                <tr className="border-b border-[rgba(17,17,17,0.1)] hover:bg-[rgba(17,17,17,0.05)] transition-colors">
+                  <td className="px-4 py-4 text-sm font-medium text-[#6B7280]">{t.cases}</td>
                   {comparisons.map((comp) => (
                     <td key={comp.nos} className="text-center px-4 py-4">
                       <div className="flex flex-col items-center gap-1">
                         <div
                           className="text-lg font-bold font-display"
-                          style={{ color: comp.nos === bestCaseVolume ? '#A5B4FC' : '#6366F1' }}
+                          style={{ color: comp.nos === bestCaseVolume ? '#8B5CF6' : '#333333' }}
                         >
                           {(comp.data.totalCases / 1000).toFixed(0)}K
                         </div>
                         {comp.nos === bestCaseVolume && (
-                          <span className="text-[10px] font-semibold text-[#A5B4FC] bg-[rgba(165,180,252,0.2)] px-2 py-0.5 rounded">
+                          <span className="text-[10px] font-semibold text-[#8B5CF6] bg-[rgba(165,180,252,0.2)] px-2 py-0.5 rounded">
                             {t.best}
                           </span>
                         )}
@@ -271,17 +271,17 @@ export function CaseCompareTool({
           {/* Mobile Card View */}
           <div className="md:hidden space-y-4">
             {comparisons.map((comp) => (
-              <div key={comp.nos} className="border border-[rgba(99,102,241,0.2)] rounded-lg p-4 bg-[#1E293B]">
-                <h3 className="text-lg font-bold text-[#A5B4FC] mb-4 font-display">{comp.label}</h3>
+              <div key={comp.nos} className="border border-[rgba(17,17,17,0.2)] rounded-lg p-4 bg-[#E5E7EB]">
+                <h3 className="text-lg font-bold text-[#8B5CF6] mb-4 font-display">{comp.label}</h3>
 
                 <div className="space-y-3">
                   {/* Win Rate */}
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#B0BDD0]">{t.winRate}</span>
+                    <span className="text-sm text-[#6B7280]">{t.winRate}</span>
                     <div className="flex items-center gap-2">
                       <span
                         className="text-lg font-bold font-display"
-                        style={{ color: comp.nos === bestWinRate ? '#0D9488' : '#6366F1' }}
+                        style={{ color: comp.nos === bestWinRate ? '#0D9488' : '#333333' }}
                       >
                         {comp.data.winRate}%
                       </span>
@@ -295,11 +295,11 @@ export function CaseCompareTool({
 
                   {/* Settlement Rate */}
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#B0BDD0]">{t.settlementRate}</span>
+                    <span className="text-sm text-[#6B7280]">{t.settlementRate}</span>
                     <div className="flex items-center gap-2">
                       <span
                         className="text-lg font-bold font-display"
-                        style={{ color: comp.nos === bestSettlement ? '#D97706' : '#6366F1' }}
+                        style={{ color: comp.nos === bestSettlement ? '#D97706' : '#333333' }}
                       >
                         {comp.data.settlementPct}%
                       </span>
@@ -313,11 +313,11 @@ export function CaseCompareTool({
 
                   {/* Duration */}
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#B0BDD0]">{t.duration}</span>
+                    <span className="text-sm text-[#6B7280]">{t.duration}</span>
                     <div className="flex items-center gap-2">
                       <span
                         className="text-lg font-bold font-display"
-                        style={{ color: comp.nos === bestDuration ? '#0D9488' : '#6366F1' }}
+                        style={{ color: comp.nos === bestDuration ? '#0D9488' : '#333333' }}
                       >
                         {comp.data.months}
                       </span>
@@ -331,7 +331,7 @@ export function CaseCompareTool({
 
                   {/* Median Recovery */}
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#B0BDD0]">{t.medianRecovery}</span>
+                    <span className="text-sm text-[#6B7280]">{t.medianRecovery}</span>
                     <span className="text-lg font-bold font-display" style={{ color: '#D97706' }}>
                       {comp.data.medianRecovery}
                     </span>
@@ -339,16 +339,16 @@ export function CaseCompareTool({
 
                   {/* Cases */}
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#B0BDD0]">{t.cases}</span>
+                    <span className="text-sm text-[#6B7280]">{t.cases}</span>
                     <div className="flex items-center gap-2">
                       <span
                         className="text-lg font-bold font-display"
-                        style={{ color: comp.nos === bestCaseVolume ? '#A5B4FC' : '#6366F1' }}
+                        style={{ color: comp.nos === bestCaseVolume ? '#8B5CF6' : '#333333' }}
                       >
                         {(comp.data.totalCases / 1000).toFixed(0)}K
                       </span>
                       {comp.nos === bestCaseVolume && (
-                        <span className="text-[10px] font-semibold text-[#A5B4FC] bg-[rgba(165,180,252,0.2)] px-2 py-0.5 rounded">
+                        <span className="text-[10px] font-semibold text-[#8B5CF6] bg-[rgba(165,180,252,0.2)] px-2 py-0.5 rounded">
                           {t.best}
                         </span>
                       )}
@@ -361,7 +361,7 @@ export function CaseCompareTool({
         </div>
       ) : (
         <div className="py-8 text-center">
-          <p className="text-[#8B95A5] text-sm">{t.selectCaseType}</p>
+          <p className="text-[#9CA3AF] text-sm">{t.selectCaseType}</p>
         </div>
       )}
     </div>

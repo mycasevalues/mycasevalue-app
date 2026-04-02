@@ -74,7 +74,7 @@ function getTrendData(): TrendEntry[] {
 // Category labels and colors
 const CATEGORY_META: Record<string, { label: string; color: string }> = {
   money: { label: 'Financial', color: '#F59E0B' },
-  work: { label: 'Employment', color: '#4F46E5' },
+  work: { label: 'Employment', color: '#111111' },
   injury: { label: 'Injury', color: '#EF4444' },
   consumer: { label: 'Consumer', color: '#0D9488' },
   rights: { label: 'Civil Rights', color: '#8B5CF6' },
@@ -83,7 +83,7 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
   family: { label: 'Family', color: '#F97316' },
   gov: { label: 'Government', color: '#64748B' },
   ip: { label: 'Intellectual Property', color: '#10B981' },
-  other: { label: 'Other', color: '#94A3B8' },
+  other: { label: 'Other', color: '#9CA3AF' },
 };
 
 export default function TrendsPage() {
@@ -104,7 +104,7 @@ export default function TrendsPage() {
     .map(([cat, agg]) => ({
       cat,
       label: CATEGORY_META[cat]?.label || cat,
-      color: CATEGORY_META[cat]?.color || '#94A3B8',
+      color: CATEGORY_META[cat]?.color || '#9CA3AF',
       total: agg.total,
       avgWinRate: Math.round(agg.wrSum / agg.count),
     }))
@@ -132,14 +132,14 @@ export default function TrendsPage() {
         className="border-b"
         style={{
           borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)',
+          background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)',
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
           <a
             href="/"
             className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80"
-            style={{ color: '#4F46E5' }}
+            style={{ color: '#111111' }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 12H5M12 19l-7-7 7-7" />
@@ -148,9 +148,9 @@ export default function TrendsPage() {
           </a>
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}
+            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
             </svg>
             FEDERAL COURT TRENDS
@@ -180,9 +180,9 @@ export default function TrendsPage() {
               <div
                 key={i}
                 className="text-center p-4 rounded-xl border"
-                style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}
+                style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}
               >
-                <div className="text-2xl font-display font-extrabold" style={{ color: '#4F46E5' }}>
+                <div className="text-2xl font-display font-extrabold" style={{ color: '#111111' }}>
                   {stat.v}
                 </div>
                 <div className="text-[11px] font-semibold mt-2" style={{ color: 'var(--fg-muted)' }}>
@@ -213,7 +213,7 @@ export default function TrendsPage() {
                   className="block p-4 rounded-xl border transition-all hover:shadow-lg hover:shadow-indigo-500/5"
                   style={{
                     borderColor: 'var(--border-default)',
-                    background: '#131B2E',
+                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
@@ -221,7 +221,7 @@ export default function TrendsPage() {
                     <div className="flex items-center gap-3">
                       <span
                         className="text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full"
-                        style={{ background: 'rgba(79,70,229,0.15)', color: '#4F46E5' }}
+                        style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}
                       >
                         {i + 1}
                       </span>
@@ -231,8 +231,8 @@ export default function TrendsPage() {
                       <span
                         className="text-[10px] font-bold px-2 py-0.5 rounded-full"
                         style={{
-                          background: `${CATEGORY_META[t.category]?.color || '#94A3B8'}20`,
-                          color: CATEGORY_META[t.category]?.color || '#94A3B8',
+                          background: `${CATEGORY_META[t.category]?.color || '#9CA3AF'}20`,
+                          color: CATEGORY_META[t.category]?.color || '#9CA3AF',
                         }}
                       >
                         {CATEGORY_META[t.category]?.label || t.category}
@@ -244,12 +244,12 @@ export default function TrendsPage() {
                       <span>{t.months}mo avg</span>
                     </div>
                   </div>
-                  <div className="h-2 rounded-full overflow-hidden" style={{ background: '#0F172A' }}>
+                  <div className="h-2 rounded-full overflow-hidden" style={{ background: '#FFFFFF' }}>
                     <div
                       className="h-full rounded-full"
                       style={{
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, #4F46E5, #6366F1)',
+                        background: 'linear-gradient(90deg, #111111, #333333)',
                       }}
                     />
                   </div>
@@ -274,7 +274,7 @@ export default function TrendsPage() {
                 <div
                   key={c.cat}
                   className="p-5 rounded-xl border"
-                  style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}
+                  style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
@@ -287,7 +287,7 @@ export default function TrendsPage() {
                       {c.total.toLocaleString()} cases
                     </span>
                   </div>
-                  <div className="h-2 rounded-full overflow-hidden mb-2" style={{ background: '#0F172A' }}>
+                  <div className="h-2 rounded-full overflow-hidden mb-2" style={{ background: '#FFFFFF' }}>
                     <div className="h-full rounded-full" style={{ width: `${pct}%`, background: c.color }} />
                   </div>
                   <div className="text-[11px]" style={{ color: 'var(--fg-muted)' }}>
@@ -316,7 +316,7 @@ export default function TrendsPage() {
                   className="flex items-center justify-between p-3 rounded-lg border transition-all hover:border-green-500/30"
                   style={{
                     borderColor: 'var(--border-default)',
-                    background: '#131B2E',
+                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
@@ -341,7 +341,7 @@ export default function TrendsPage() {
                   className="flex items-center justify-between p-3 rounded-lg border transition-all hover:border-red-500/30"
                   style={{
                     borderColor: 'var(--border-default)',
-                    background: '#131B2E',
+                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
@@ -370,7 +370,7 @@ export default function TrendsPage() {
                   className="flex items-center justify-between p-3 rounded-lg border transition-all hover:border-cyan-500/30"
                   style={{
                     borderColor: 'var(--border-default)',
-                    background: '#131B2E',
+                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
@@ -395,7 +395,7 @@ export default function TrendsPage() {
                   className="flex items-center justify-between p-3 rounded-lg border transition-all hover:border-amber-500/30"
                   style={{
                     borderColor: 'var(--border-default)',
-                    background: '#131B2E',
+                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
@@ -429,21 +429,21 @@ export default function TrendsPage() {
               <tbody>
                 {trends.filter(t => t.medianMd > 0).slice(0, 15).map((t) => (
                   <tr key={t.nos}>
-                    <td className="px-4 py-2.5 rounded-l-lg" style={{ background: '#131B2E', color: 'var(--fg-primary)' }}>
+                    <td className="px-4 py-2.5 rounded-l-lg" style={{ background: '#FFFFFF', color: 'var(--fg-primary)' }}>
                       <a href={`/nos/${t.nos}`} style={{ color: 'var(--fg-primary)', textDecoration: 'none' }} className="hover:underline">
                         {t.label}
                       </a>
                     </td>
-                    <td className="px-4 py-2.5 text-right" style={{ background: '#131B2E', color: 'var(--fg-muted)' }}>
+                    <td className="px-4 py-2.5 text-right" style={{ background: '#FFFFFF', color: 'var(--fg-muted)' }}>
                       ${t.medianLo}K
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold" style={{ background: '#131B2E', color: '#F59E0B' }}>
+                    <td className="px-4 py-2.5 text-right font-semibold" style={{ background: '#FFFFFF', color: '#F59E0B' }}>
                       ${t.medianMd}K
                     </td>
-                    <td className="px-4 py-2.5 text-right" style={{ background: '#131B2E', color: 'var(--fg-muted)' }}>
+                    <td className="px-4 py-2.5 text-right" style={{ background: '#FFFFFF', color: 'var(--fg-muted)' }}>
                       ${t.medianHi}K
                     </td>
-                    <td className="px-4 py-2.5 text-right rounded-r-lg font-semibold" style={{ background: '#131B2E', color: '#10B981' }}>
+                    <td className="px-4 py-2.5 text-right rounded-r-lg font-semibold" style={{ background: '#FFFFFF', color: '#10B981' }}>
                       {t.winRate}%
                     </td>
                   </tr>
@@ -458,7 +458,7 @@ export default function TrendsPage() {
           className="text-center p-8 rounded-xl border"
           style={{
             borderColor: 'var(--border-default)',
-            background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)',
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)',
           }}
         >
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
@@ -471,7 +471,7 @@ export default function TrendsPage() {
             <a
               href="/odds"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#4F46E5', color: '#fff' }}
+              style={{ background: '#111111', color: '#fff' }}
             >
               Check My Odds — Free
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

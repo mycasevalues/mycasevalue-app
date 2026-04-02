@@ -6,10 +6,10 @@ interface NationwideDashboardProps {
 }
 
 const METRICS = [
-  { key: 'total', value: 5127834, label: 'Total Cases Analyzed', labelEs: 'Casos Analizados', color: '#4F46E5', icon: 'database' },
+  { key: 'total', value: 5127834, label: 'Total Cases Analyzed', labelEs: 'Casos Analizados', color: '#111111', icon: 'database' },
   { key: 'settled', value: 67, label: 'Settlement Rate', labelEs: 'Tasa de Acuerdos', color: '#0D9488', icon: 'handshake', suffix: '%' },
   { key: 'median', value: 85, label: 'Median Recovery ($K)', labelEs: 'Recuperación Mediana ($K)', color: '#D97706', icon: 'dollar', prefix: '$', suffix: 'K' },
-  { key: 'duration', value: 11.2, label: 'Avg Duration (months)', labelEs: 'Duración Promedio (meses)', color: '#A5B4FC', icon: 'clock', suffix: ' mo' },
+  { key: 'duration', value: 11.2, label: 'Avg Duration (months)', labelEs: 'Duración Promedio (meses)', color: '#8B5CF6', icon: 'clock', suffix: ' mo' },
 ];
 
 const YEAR_DATA = [
@@ -57,15 +57,15 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
 
   return (
     <div className="rounded-2xl overflow-hidden" style={{
-      background: 'linear-gradient(180deg, #0B1221 0%, #131D35 100%)',
-      border: '1px solid rgba(79,70,229,0.12)',
-      boxShadow: '0 12px 48px rgba(11,18,33,0.3)',
+      background: 'linear-gradient(180deg, #FAFAF8 0%, #131D35 100%)',
+      border: '1px solid rgba(17,17,17,0.12)',
+      boxShadow: '0 12px 48px rgba(255,255,255,0.3)',
     }}>
       {/* Header */}
       <div className="px-6 pt-5 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-[10px] font-bold text-[#B0BDD0] tracking-[2px] mb-1">{es ? 'PANEL NACIONAL' : 'NATIONWIDE DASHBOARD'}</div>
+            <div className="text-[10px] font-bold text-[#6B7280] tracking-[2px] mb-1">{es ? 'PANEL NACIONAL' : 'NATIONWIDE DASHBOARD'}</div>
             <div className="text-[18px] font-display font-bold text-white">{es ? 'Datos federales en tiempo real' : 'Federal Data Overview'}</div>
           </div>
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'rgba(13,148,136,0.12)' }}>
@@ -78,7 +78,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
       {/* Metric cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-px p-px" style={{ background: 'rgba(255,255,255,0.04)' }}>
         {METRICS.map((m, i) => (
-          <div key={m.key} className="p-4 text-center transition-all hover:bg-white/[0.03]" style={{ background: '#0B1221' }}>
+          <div key={m.key} className="p-4 text-center transition-all hover:bg-white/[0.03]" style={{ background: '#FAFAF8' }}>
             <div className="text-[18px] sm:text-[26px] font-display font-extrabold mb-1" style={{
               color: m.color,
               letterSpacing: '-1px',
@@ -86,7 +86,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
             }}>
               <AnimCounter end={m.value} prefix={m.key === 'median' ? '$' : ''} suffix={m.suffix || ''} decimals={m.key === 'duration' ? 1 : 0} />
             </div>
-            <div className="text-[10px] font-semibold text-[#B0BDD0] tracking-wide">
+            <div className="text-[10px] font-semibold text-[#6B7280] tracking-wide">
               {es ? m.labelEs : m.label}
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
 
       {/* Year-over-year trend chart */}
       <div className="px-6 py-5">
-        <div className="text-[10px] font-bold text-[#B0BDD0] tracking-[1.5px] mb-3">{es ? 'TENDENCIA ANUAL DE CASOS' : 'YEARLY CASE TREND'}</div>
+        <div className="text-[10px] font-bold text-[#6B7280] tracking-[1.5px] mb-3">{es ? 'TENDENCIA ANUAL DE CASOS' : 'YEARLY CASE TREND'}</div>
         <div className="flex items-end gap-1.5 sm:gap-2 h-[80px] sm:h-[100px]">
           {YEAR_DATA.map((d, i) => {
             const h = (d.cases / maxCases) * 100;
@@ -109,7 +109,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
               >
                 {/* Tooltip */}
                 {isHovered && (
-                  <div className="text-[10px] font-mono text-white bg-[#1E293B] px-2 py-1 rounded mb-1 whitespace-nowrap" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
+                  <div className="text-[10px] font-mono text-white bg-[#E5E7EB] px-2 py-1 rounded mb-1 whitespace-nowrap" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
                     {(d.cases / 1000).toFixed(0)}K • {d.wr}%
                   </div>
                 )}
@@ -118,15 +118,15 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
                   style={{
                     height: `${h}%`,
                     background: isHovered
-                      ? 'linear-gradient(to top, #4F46E5, #6366F1)'
+                      ? 'linear-gradient(to top, #111111, #333333)'
                       : i === YEAR_DATA.length - 1
                         ? 'linear-gradient(to top, #0D9488, #14B8A6)'
-                        : 'linear-gradient(to top, rgba(99,102,241,0.6), rgba(99,102,241,0.85))',
-                    boxShadow: isHovered ? '0 0 20px rgba(79,70,229,0.4)' : 'none',
+                        : 'linear-gradient(to top, rgba(17,17,17,0.6), rgba(17,17,17,0.85))',
+                    boxShadow: isHovered ? '0 0 20px rgba(17,17,17,0.4)' : 'none',
                     transform: isHovered ? 'scaleX(1.1)' : 'scaleX(1)',
                   }}
                 />
-                <span className="text-[9px] text-[#B0BDD0] font-mono">{d.year.slice(2)}</span>
+                <span className="text-[9px] text-[#6B7280] font-mono">{d.year.slice(2)}</span>
               </div>
             );
           })}
@@ -135,7 +135,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
         {/* Win rate trend line */}
         <div className="mt-4 pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[10px] font-bold text-[#B0BDD0] tracking-[1.5px]">{es ? 'EVOLUCIÓN DE TASA DE ÉXITO' : 'WIN RATE EVOLUTION'}</span>
+            <span className="text-[10px] font-bold text-[#6B7280] tracking-[1.5px]">{es ? 'EVOLUCIÓN DE TASA DE ÉXITO' : 'WIN RATE EVOLUTION'}</span>
             <span className="text-[11px] font-mono font-semibold" style={{ color: '#0D9488' }}>
               +{(YEAR_DATA[YEAR_DATA.length - 1].wr - YEAR_DATA[0].wr).toFixed(1)}%
               <svg width="10" height="10" viewBox="0 0 10 10" fill="#0D9488" className="inline ml-1 -mt-0.5"><path d="M5 0L9 5H1L5 0Z" /></svg>
@@ -164,7 +164,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
                   <path d={area} fill="url(#wrGrad)" />
                   <path d={line} fill="none" stroke="#0D9488" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   {pts.map((p, i) => (
-                    <circle key={i} cx={p.x} cy={p.y} r="3" fill="#0D9488" stroke="#0B1221" strokeWidth="1.5" />
+                    <circle key={i} cx={p.x} cy={p.y} r="3" fill="#0D9488" stroke="#FAFAF8" strokeWidth="1.5" />
                   ))}
                 </>
               );
@@ -175,7 +175,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
 
       {/* Footer disclaimer */}
       <div className="px-6 py-3" style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-        <div className="text-[10px] text-center" style={{ color: '#8B95A5' }}>
+        <div className="text-[10px] text-center" style={{ color: '#9CA3AF' }}>
           {es ? 'Datos de fuentes públicas federales. Actualizado periódicamente.' : 'Data from public federal sources. Updated periodically.'}
         </div>
       </div>

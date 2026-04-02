@@ -146,7 +146,7 @@ export default function ReportLoader({
     step <= 4 && step > 0 ? 'opacity-100' : 'opacity-0';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0B1221]/95 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#FAFAF8]/95 backdrop-blur-sm">
       <style>{`
         @keyframes spin {
           from { transform: rotate(0deg); }
@@ -182,7 +182,7 @@ export default function ReportLoader({
                 cy="60"
                 r="45"
                 fill="none"
-                stroke="#1E293B"
+                stroke="#E5E7EB"
                 strokeWidth="2"
               />
               {/* Progress ring */}
@@ -191,7 +191,7 @@ export default function ReportLoader({
                 cy="60"
                 r="45"
                 fill="none"
-                stroke="#4F46E5"
+                stroke="#111111"
                 strokeWidth="2"
                 strokeDasharray={circumference}
                 strokeDashoffset={strokeDashoffset}
@@ -212,9 +212,9 @@ export default function ReportLoader({
         {step === 1 && (
           <div className={`text-center transition-opacity duration-300 ${fadeClass}`}>
             <div className="mb-4 flex justify-center">
-              <div className="w-8 h-8 border-2 border-[#0D9488] border-t-[#4F46E5] rounded-full animate-spin-slow" />
+              <div className="w-8 h-8 border-2 border-[#0D9488] border-t-[#111111] rounded-full animate-spin-slow" />
             </div>
-            <p className="font-mono text-[#E2E8F0]">{t.searching}</p>
+            <p className="font-mono text-[#D1D5DB]">{t.searching}</p>
           </div>
         )}
 
@@ -232,7 +232,7 @@ export default function ReportLoader({
                 ))}
               </div>
             </div>
-            <p className="font-mono text-[#E2E8F0]">
+            <p className="font-mono text-[#D1D5DB]">
               {t.analyzing.replace('{count}', count.toLocaleString())}
             </p>
           </div>
@@ -245,7 +245,7 @@ export default function ReportLoader({
               {[40, 65, 85, 55, 92].map((height, i) => (
                 <div
                   key={i}
-                  className="w-3 bg-[#4F46E5] rounded-t animate-scale-in"
+                  className="w-3 bg-[#111111] rounded-t animate-scale-in"
                   style={{
                     height: `${height}%`,
                     animationDelay: `${i * 0.1}s`,
@@ -253,7 +253,7 @@ export default function ReportLoader({
                 />
               ))}
             </div>
-            <p className="font-mono text-[#E2E8F0]">{t.comparing}</p>
+            <p className="font-mono text-[#D1D5DB]">{t.comparing}</p>
           </div>
         )}
 
@@ -262,19 +262,19 @@ export default function ReportLoader({
           <div className={`text-center transition-opacity duration-300 ${fadeClass}`}>
             <div className="mb-6 space-y-4">
               <div className="animate-slide-up">
-                <p className="text-sm text-[#B0BDD0] mb-1">Win Rate</p>
+                <p className="text-sm text-[#6B7280] mb-1">Win Rate</p>
                 <p className="font-mono text-2xl font-bold text-[#0D9488]">
                   {winRate}%
                 </p>
               </div>
               <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                <p className="text-sm text-[#B0BDD0] mb-1">Avg Settlement</p>
-                <p className="font-mono text-2xl font-bold text-[#4F46E5]">
+                <p className="text-sm text-[#6B7280] mb-1">Avg Settlement</p>
+                <p className="font-mono text-2xl font-bold text-[#111111]">
                   ${(settlementAvg / 1000).toFixed(0)}K
                 </p>
               </div>
             </div>
-            <p className="font-mono text-[#E2E8F0] text-sm">{t.calculating}</p>
+            <p className="font-mono text-[#D1D5DB] text-sm">{t.calculating}</p>
           </div>
         )}
 
@@ -310,7 +310,7 @@ export default function ReportLoader({
 
         {/* Bottom text */}
         <div className="mt-12 text-center">
-          <p className="font-mono text-xs text-[#B0BDD0]">{t.powered}</p>
+          <p className="font-mono text-xs text-[#6B7280]">{t.powered}</p>
         </div>
       </div>
     </div>

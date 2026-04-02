@@ -68,10 +68,10 @@ export function Navbar({
           scrolled ? 'shadow-card border-b' : 'bg-transparent'
         }`}
         style={{
-          background: scrolled ? 'rgba(11,18,33,0.85)' : 'transparent',
+          background: scrolled ? 'rgba(255,255,255,0.85)' : 'transparent',
           backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'none',
-          borderColor: scrolled ? '#1E293B' : 'transparent',
+          borderColor: scrolled ? '#E5E7EB' : 'transparent',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -81,8 +81,8 @@ export function Navbar({
           <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: 'rgba(255,255,255,0.05)' }}>
             <div className="h-full transition-none" style={{
               width: `${scrollProgress * 100}%`,
-              background: 'linear-gradient(90deg, #4F46E5, #0D9488)',
-              boxShadow: '0 0 8px rgba(64,64,242,0.3)',
+              background: 'linear-gradient(90deg, #111111, #0D9488)',
+              boxShadow: '0 0 8px rgba(17,17,17,0.3)',
             }} />
           </div>
         )}
@@ -112,9 +112,9 @@ export function Navbar({
                 key={link.href}
                 href={link.href}
                 className="px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors"
-                style={{ color: '#B0BDD0', textDecoration: 'none' }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#E2E8F0')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#B0BDD0')}
+                style={{ color: '#6B7280', textDecoration: 'none' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#D1D5DB')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
               >
                 {link.label}
               </a>
@@ -132,9 +132,9 @@ export function Navbar({
                 onClick={onShowSaved}
                 className="h-8 px-2.5 rounded-lg border cursor-pointer flex items-center justify-center transition-colors text-[12px] font-bold tracking-wide focus-ring"
                 style={{
-                  background: '#1E293B',
+                  background: '#E5E7EB',
                   borderColor: '#334155',
-                  color: '#B0BDD0',
+                  color: '#6B7280',
                 }}
                 aria-label={`${savedReportsCount} saved report${savedReportsCount !== 1 ? 's' : ''}`}
               >
@@ -147,7 +147,7 @@ export function Navbar({
 
             {/* Premium badge */}
             {isPremium && (
-              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#A5B4FC', background: 'rgba(99,102,241,0.15)' }}>
+              <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#8B5CF6', background: 'rgba(17,17,17,0.15)' }}>
                 {premiumLabel}
               </span>
             )}
@@ -189,7 +189,7 @@ export function Navbar({
             <button
               onClick={onNewReport}
               className="text-sm font-semibold px-5 py-2.5 text-white border-none rounded-full cursor-pointer no-print hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 focus-ring"
-              style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 2px 12px rgba(64,64,242,.25)' }}
+              style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 2px 12px rgba(17,17,17,.25)' }}
             >
               {newReportLabel}
             </button>
@@ -206,11 +206,11 @@ export function Navbar({
           >
             <div className="flex flex-col gap-[5px] w-5">
               <span className="h-[2px] rounded-full transition-all duration-300"
-                style={{ background: '#E2E8F0', transform: mobileOpen ? 'rotate(45deg) translateY(7px)' : 'none' }} />
+                style={{ background: '#D1D5DB', transform: mobileOpen ? 'rotate(45deg) translateY(7px)' : 'none' }} />
               <span className="h-[2px] rounded-full transition-all duration-300"
-                style={{ background: '#E2E8F0', opacity: mobileOpen ? 0 : 1 }} />
+                style={{ background: '#D1D5DB', opacity: mobileOpen ? 0 : 1 }} />
               <span className="h-[2px] rounded-full transition-all duration-300"
-                style={{ background: '#E2E8F0', transform: mobileOpen ? 'rotate(-45deg) translateY(-7px)' : 'none' }} />
+                style={{ background: '#D1D5DB', transform: mobileOpen ? 'rotate(-45deg) translateY(-7px)' : 'none' }} />
             </div>
           </button>
         </div>
@@ -220,7 +220,7 @@ export function Navbar({
       {mobileOpen && (
         <div
           className="fixed inset-0 z-40 sm:hidden"
-          style={{ background: 'rgba(11,18,33,0.7)', backdropFilter: 'blur(4px)' }}
+          style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(4px)' }}
           onClick={closeMobile}
           aria-hidden="true"
         />
@@ -239,21 +239,21 @@ export function Navbar({
         style={{
           height: 'calc(100vh - 4rem)',
           background: '#0D1117',
-          borderLeft: '1px solid #1E293B',
+          borderLeft: '1px solid #E5E7EB',
           boxShadow: '-8px 0 32px rgba(0,0,0,0.3)',
         }}
       >
         <div className="flex flex-col gap-3 p-5 h-full overflow-y-auto">
           {/* Language */}
-          <div className="pb-3 border-b" style={{ borderColor: '#1E293B' }}>
-            <span className="text-[10px] font-bold tracking-[2px] uppercase mb-2 block" style={{ color: '#8B95A5' }}>
+          <div className="pb-3 border-b" style={{ borderColor: '#E5E7EB' }}>
+            <span className="text-[10px] font-bold tracking-[2px] uppercase mb-2 block" style={{ color: '#9CA3AF' }}>
               {lang === 'es' ? 'Idioma' : 'Language'}
             </span>
             <LanguageToggle lang={lang} setLang={setLang} />
           </div>
 
           {/* Navigation links */}
-          <div className="flex flex-col gap-1 pb-3 border-b" style={{ borderColor: '#1E293B' }}>
+          <div className="flex flex-col gap-1 pb-3 border-b" style={{ borderColor: '#E5E7EB' }}>
             {[
               { href: '/how-it-works', label: lang === 'es' ? 'Cómo Funciona' : 'How It Works', icon: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
               { href: '/odds', label: lang === 'es' ? 'Mis Probabilidades' : 'Check My Odds', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
@@ -269,9 +269,9 @@ export function Navbar({
                 href={link.href}
                 onClick={closeMobile}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors text-sm font-medium"
-                style={{ background: 'transparent', color: '#E2E8F0', textDecoration: 'none' }}
+                style={{ background: 'transparent', color: '#D1D5DB', textDecoration: 'none' }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: '#8B95A5' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: '#9CA3AF' }}>
                   <path d={link.icon}/>
                 </svg>
                 {link.label}
@@ -285,13 +285,13 @@ export function Navbar({
               <button
                 onClick={() => { closeMobile(); onShowSaved(); }}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors text-sm font-medium focus-ring"
-                style={{ background: '#161B22', color: '#E2E8F0' }}
+                style={{ background: '#161B22', color: '#D1D5DB' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
                 </svg>
                 {lang === 'es' ? 'Mis informes' : 'My Reports'}
-                <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: 'rgba(99,102,241,0.15)', color: '#A5B4FC' }}>
+                <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: 'rgba(17,17,17,0.15)', color: '#8B5CF6' }}>
                   {savedReportsCount}
                 </span>
               </button>
@@ -299,10 +299,10 @@ export function Navbar({
           </div>
 
           {/* CTA */}
-          <div className="mt-auto pt-4 border-t" style={{ borderColor: '#1E293B' }}>
+          <div className="mt-auto pt-4 border-t" style={{ borderColor: '#E5E7EB' }}>
             {isPremium && (
               <div className="text-center mb-3">
-                <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#A5B4FC', background: 'rgba(99,102,241,0.15)' }}>
+                <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#8B5CF6', background: 'rgba(17,17,17,0.15)' }}>
                   {premiumLabel}
                 </span>
               </div>
@@ -310,7 +310,7 @@ export function Navbar({
             <button
               onClick={() => { closeMobile(); onNewReport(); }}
               className="w-full py-3 text-sm font-semibold text-white border-none rounded-xl cursor-pointer transition-all focus-ring"
-              style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 2px 12px rgba(64,64,242,.25)' }}
+              style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 2px 12px rgba(17,17,17,.25)' }}
             >
               {newReportLabel}
             </button>
@@ -329,7 +329,7 @@ function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en
       className="h-8 rounded-lg border flex items-center overflow-hidden transition-colors"
       role="radiogroup"
       aria-label="Language selection"
-      style={{ background: '#1E293B', borderColor: '#334155' }}
+      style={{ background: '#E5E7EB', borderColor: '#334155' }}
     >
       <button
         onClick={() => setLang('en')}
@@ -338,8 +338,8 @@ function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en
         aria-label="English"
         className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200 focus-ring"
         style={{
-          background: lang === 'en' ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent',
-          color: lang === 'en' ? '#fff' : '#B0BDD0',
+          background: lang === 'en' ? 'linear-gradient(135deg, #111111, #333333)' : 'transparent',
+          color: lang === 'en' ? '#fff' : '#6B7280',
         }}
       >
         EN
@@ -351,8 +351,8 @@ function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en
         aria-label="Español"
         className="h-full px-2.5 text-[11px] font-bold tracking-wide cursor-pointer border-none transition-all duration-200 focus-ring"
         style={{
-          background: lang === 'es' ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent',
-          color: lang === 'es' ? '#fff' : '#B0BDD0',
+          background: lang === 'es' ? 'linear-gradient(135deg, #111111, #333333)' : 'transparent',
+          color: lang === 'es' ? '#fff' : '#6B7280',
         }}
       >
         ES

@@ -200,9 +200,9 @@ export default function LiveFeedWidget({
     <div
       className="rounded-2xl overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #0B1221 0%, #131D35 100%)',
-        border: '1px solid rgba(79,70,229,0.15)',
-        boxShadow: '0 8px 40px rgba(11,18,33,0.3)',
+        background: 'linear-gradient(180deg, #FAFAF8 0%, #131D35 100%)',
+        border: '1px solid rgba(17,17,17,0.15)',
+        boxShadow: '0 8px 40px rgba(255,255,255,0.3)',
       }}
     >
       {/* Header */}
@@ -219,7 +219,7 @@ export default function LiveFeedWidget({
             {es ? 'Actividad en tiempo real' : 'Live Case Activity'}
           </span>
         </div>
-        <div className="text-[11px] text-[#B0BDD0] font-mono">
+        <div className="text-[11px] text-[#6B7280] font-mono">
           {es
             ? isConnected
               ? 'Conectado'
@@ -233,7 +233,7 @@ export default function LiveFeedWidget({
       {/* Feed items */}
       <div className="divide-y divide-white/5 max-h-[500px] overflow-y-auto">
         {items.length === 0 ? (
-          <div className="px-5 py-8 text-center text-[#B0BDD0] text-sm">
+          <div className="px-5 py-8 text-center text-[#6B7280] text-sm">
             {es ? 'Cargando casos...' : 'Loading cases...'}
           </div>
         ) : (
@@ -242,12 +242,12 @@ export default function LiveFeedWidget({
             const outcomeBgColor = isWon
               ? 'rgba(13,148,136,0.15)'
               : item.isSettlement
-              ? 'rgba(79,70,229,0.12)'
+              ? 'rgba(17,17,17,0.12)'
               : 'rgba(220,38,38,0.12)';
             const outcomeTextColor = isWon
               ? '#0D9488'
               : item.isSettlement
-              ? '#6366F1'
+              ? '#333333'
               : '#DC2626';
             const outcomeLabel = isWon
               ? es
@@ -280,7 +280,7 @@ export default function LiveFeedWidget({
 
                 {/* Info */}
                 <div className="flex-1 min-w-0">
-                  <div className="text-[13px] font-medium text-[#E2E8F0] truncate">
+                  <div className="text-[13px] font-medium text-[#D1D5DB] truncate">
                     {item.caseType}
                   </div>
                   <div className="flex items-center gap-2 mt-0.5">
@@ -293,7 +293,7 @@ export default function LiveFeedWidget({
                     >
                       {outcomeLabel}
                     </span>
-                    <span className="text-[10px] text-[#B0BDD0]">{item.district}</span>
+                    <span className="text-[10px] text-[#6B7280]">{item.district}</span>
                   </div>
                 </div>
 
@@ -307,7 +307,7 @@ export default function LiveFeedWidget({
                       {formatAmount(item.amount)}
                     </div>
                   )}
-                  <div className="text-[10px] text-[#B0BDD0]">
+                  <div className="text-[10px] text-[#6B7280]">
                     {getTimeAgo(item.timestamp)}
                   </div>
                 </div>
@@ -322,15 +322,15 @@ export default function LiveFeedWidget({
         className="px-5 py-3 flex items-center justify-between"
         style={{
           borderTop: '1px solid rgba(255,255,255,0.06)',
-          background: 'rgba(79,70,229,0.04)',
+          background: 'rgba(17,17,17,0.04)',
         }}
       >
-        <div className="text-[11px] text-[#B0BDD0]">
+        <div className="text-[11px] text-[#6B7280]">
           {es
             ? 'Basado en simulación realista de datos de casos federales'
             : 'Realistic federal case data simulation'}
         </div>
-        <div className="text-[11px] text-[#B0BDD0]">
+        <div className="text-[11px] text-[#6B7280]">
           {items.length}/{maxItems}
         </div>
       </div>

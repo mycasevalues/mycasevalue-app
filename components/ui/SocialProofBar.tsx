@@ -81,7 +81,7 @@ export default function SocialProofBar({
   const formattedCases = (totalCases / 1000000).toFixed(1);
 
   return (
-    <div style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', backgroundColor: '#0B1221' }}>
+    <div style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', backgroundColor: '#FAFAF8' }}>
       <style>{`
         @keyframes marquee {
           0% {
@@ -94,8 +94,8 @@ export default function SocialProofBar({
 
         .ticker-container {
           overflow: hidden;
-          background-color: #131B2E;
-          border-bottom: 1px solid #1E293B;
+          background-color: #FFFFFF;
+          border-bottom: 1px solid #E5E7EB;
         }
 
         .ticker-content {
@@ -118,13 +118,13 @@ export default function SocialProofBar({
 
         .ticker-text {
           font-size: 0.875rem;
-          color: #F0F2F5;
+          color: #111827;
           margin: 0;
         }
 
         .ticker-time {
           font-size: 0.75rem;
-          color: #B0BDD0;
+          color: #6B7280;
           margin-top: 0.15rem;
         }
 
@@ -165,8 +165,8 @@ export default function SocialProofBar({
         }
 
         .metric-card {
-          background-color: #131B2E;
-          border: 1px solid #1E293B;
+          background-color: #FFFFFF;
+          border: 1px solid #E5E7EB;
           border-radius: 0.5rem;
           padding: 0.875rem;
           transition: all 0.3s ease;
@@ -174,7 +174,7 @@ export default function SocialProofBar({
         }
 
         .metric-card:hover {
-          border-color: #4F46E5;
+          border-color: #111111;
         }
 
         .metric-icon {
@@ -185,7 +185,7 @@ export default function SocialProofBar({
 
         .metric-label {
           font-size: 0.75rem;
-          color: #B0BDD0;
+          color: #6B7280;
           margin: 0;
           margin-bottom: 0.25rem;
           font-weight: 600;
@@ -194,19 +194,19 @@ export default function SocialProofBar({
         .metric-value {
           font-size: 1.25rem;
           font-weight: 700;
-          color: #F0F2F5;
+          color: #111827;
           margin: 0;
         }
 
         .press-section {
-          border-bottom: 1px solid #1E293B;
+          border-bottom: 1px solid #E5E7EB;
           padding: 0.875rem;
-          background-color: #0B1221;
+          background-color: #FAFAF8;
         }
 
         .press-label {
           font-size: 0.7rem;
-          color: #B0BDD0;
+          color: #6B7280;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           margin-bottom: 0.75rem;
@@ -223,10 +223,10 @@ export default function SocialProofBar({
 
         .press-badge {
           padding: 0.5rem 1rem;
-          border: 1px solid #1E293B;
+          border: 1px solid #E5E7EB;
           border-radius: 0.4rem;
-          background-color: #131B2E;
-          color: #B0BDD0;
+          background-color: #FFFFFF;
+          color: #6B7280;
           font-size: 0.8rem;
           font-weight: 500;
           opacity: 0.8;
@@ -236,8 +236,8 @@ export default function SocialProofBar({
 
         .press-badge:hover {
           opacity: 1;
-          border-color: #4F46E5;
-          color: #F0F2F5;
+          border-color: #111111;
+          color: #111827;
         }
 
         @media (max-width: 768px) {
@@ -255,12 +255,12 @@ export default function SocialProofBar({
 
         .verification-section {
           padding: 0.875rem;
-          background-color: #0B1221;
+          background-color: #FAFAF8;
         }
 
         .verification-label {
           font-size: 0.7rem;
-          color: #B0BDD0;
+          color: #6B7280;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           margin-bottom: 0.75rem;

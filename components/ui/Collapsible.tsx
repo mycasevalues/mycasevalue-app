@@ -16,19 +16,19 @@ export function Collapsible({ title, badge, defaultOpen = false, children }: Col
   return (
     <div className="card-bg rounded-2xl border overflow-hidden mb-3 transition-all duration-300"
       style={{
-        background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(11,18,33,0.9) 100%)',
-        borderColor: open ? 'rgba(64,64,242,0.15)' : 'rgba(51,65,85,0.6)',
-        boxShadow: open ? '0 4px 24px rgba(11,18,33,.07), inset 0 1px 0 rgba(255,255,255,0.03)' : '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)',
+        background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(255,255,255,0.9) 100%)',
+        borderColor: open ? 'rgba(17,17,17,0.15)' : 'rgba(51,65,85,0.6)',
+        boxShadow: open ? '0 4px 24px rgba(255,255,255,.07), inset 0 1px 0 rgba(255,255,255,0.03)' : '0 1px 3px rgba(255,255,255,.02), inset 0 1px 0 rgba(255,255,255,0.03)',
       }}>
       <button onClick={() => setOpen(!open)} className="flex items-center justify-between w-full px-6 py-4.5 bg-transparent border-none cursor-pointer text-left group" aria-expanded={open}
         style={{ padding: '18px 24px' }}>
         <div className="flex items-center gap-2.5">
-          <span className="font-semibold text-[15px] group-hover:text-[#4F46E5] transition-colors">{title}</span>
-          {badge && <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: 'var(--accent-primary)', background: 'rgba(99,102,241,0.15)' }}>{badge}</span>}
+          <span className="font-semibold text-[15px] group-hover:text-[#111111] transition-colors">{title}</span>
+          {badge && <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: 'var(--accent-primary)', background: 'rgba(17,17,17,0.15)' }}>{badge}</span>}
         </div>
         <div className="w-6 h-6 rounded-lg flex items-center justify-center transition-all"
-          style={{ background: open ? '#4F46E510' : 'transparent' }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#4F46E5' : '#94A3B8'} strokeWidth="2.5"
+          style={{ background: open ? '#11111110' : 'transparent' }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#111111' : '#9CA3AF'} strokeWidth="2.5"
             aria-hidden="true" style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.2s' }}>
             <polyline points="6 9 12 15 18 9" />
           </svg>

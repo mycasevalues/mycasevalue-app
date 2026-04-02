@@ -29,7 +29,7 @@ export default function TrustBar({ lang }: TrustBarProps) {
   return (
     <div
       className="w-full py-12 px-4 sm:px-6 lg:px-8"
-      style={{ background: '#0B1221' }}
+      style={{ background: '#FAFAF8' }}
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
@@ -40,7 +40,7 @@ export default function TrustBar({ lang }: TrustBarProps) {
                 className="text-3xl sm:text-4xl font-bold mb-2"
                 style={{
                   fontFamily: '"JetBrains Mono", "Courier New", monospace',
-                  color: '#4F46E5',
+                  color: '#111111',
                   letterSpacing: '-0.5px',
                 }}
               >
@@ -51,7 +51,7 @@ export default function TrustBar({ lang }: TrustBarProps) {
                 className="text-xs sm:text-sm font-medium"
                 style={{
                   fontFamily: '"Outfit", sans-serif',
-                  color: '#F0F2F5',
+                  color: '#111827',
                   letterSpacing: '0.5px',
                 }}
               >

@@ -259,7 +259,7 @@ export function LitigationCostEstimator({
           style={{
             fontSize: '11px',
             fontWeight: 700,
-            color: '#8B95A5',
+            color: '#9CA3AF',
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
             marginBottom: '16px',
@@ -275,7 +275,7 @@ export function LitigationCostEstimator({
             gap: '8px',
             marginBottom: '20px',
             padding: '4px',
-            background: '#1E293B',
+            background: '#E5E7EB',
             borderRadius: '8px',
             border: '1px solid #334155',
           }}
@@ -293,8 +293,8 @@ export function LitigationCostEstimator({
                 fontWeight: 600,
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
-                background: isProSe === proseMode ? '#4F46E5' : 'transparent',
-                color: isProSe === proseMode ? '#F0F2F5' : '#8B95A5',
+                background: isProSe === proseMode ? '#111111' : 'transparent',
+                color: isProSe === proseMode ? '#111827' : '#9CA3AF',
               }}
             >
               {proseMode ? getTranslation('pro-se', lang) : getTranslation('with-attorney', lang)}
@@ -309,7 +309,7 @@ export function LitigationCostEstimator({
               style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: '#CBD5E1',
+                color: '#374151',
                 marginBottom: '10px',
               }}
             >
@@ -324,11 +324,11 @@ export function LitigationCostEstimator({
                     flex: 1,
                     padding: '10px 12px',
                     borderRadius: '6px',
-                    border: `2px solid ${complexity === tier.id ? '#4F46E5' : '#334155'}`,
-                    background: complexity === tier.id ? '#4F46E540' : 'transparent',
+                    border: `2px solid ${complexity === tier.id ? '#111111' : '#334155'}`,
+                    background: complexity === tier.id ? '#11111140' : 'transparent',
                     fontSize: '12px',
                     fontWeight: 600,
-                    color: complexity === tier.id ? '#F0F2F5' : '#8B95A5',
+                    color: complexity === tier.id ? '#111827' : '#9CA3AF',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
                   }}
@@ -338,7 +338,7 @@ export function LitigationCostEstimator({
               ))}
             </div>
             {complexityTier && (
-              <div style={{ fontSize: '11px', color: '#8B95A5', marginTop: '8px' }}>
+              <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '8px' }}>
                 {isEs ? complexityTier.descriptionEs : complexityTier.description}
               </div>
             )}
@@ -353,7 +353,7 @@ export function LitigationCostEstimator({
             key={i}
             style={{
               padding: '14px 16px',
-              background: '#1E293B',
+              background: '#E5E7EB',
               border: '1px solid #334155',
               borderRadius: '8px',
               display: 'flex',
@@ -382,7 +382,7 @@ export function LitigationCostEstimator({
                 style={{
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: '#F0F2F5',
+                  color: '#111827',
                   marginBottom: '4px',
                 }}
               >
@@ -391,7 +391,7 @@ export function LitigationCostEstimator({
               <div
                 style={{
                   fontSize: '11px',
-                  color: '#8B95A5',
+                  color: '#9CA3AF',
                   lineHeight: 1.4,
                   marginBottom: '8px',
                 }}
@@ -401,7 +401,7 @@ export function LitigationCostEstimator({
 
               {/* Cost range bar */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{ fontSize: '11px', fontWeight: 600, color: '#CBD5E1', minWidth: '80px' }}>
+                <div style={{ fontSize: '11px', fontWeight: 600, color: '#374151', minWidth: '80px' }}>
                   {formatCurrency(item.min)} – {formatCurrency(item.max)}
                 </div>
 
@@ -419,7 +419,7 @@ export function LitigationCostEstimator({
                   <div
                     style={{
                       height: '100%',
-                      background: 'linear-gradient(90deg, #6366F1, #4F46E5)',
+                      background: 'linear-gradient(90deg, #333333, #111111)',
                       borderRadius: '2px',
                       width: isVisible ? '100%' : '0%',
                       transition: `width 1s cubic-bezier(0.16, 1, 0.3, 1) ${i * 100}ms`,
@@ -436,7 +436,7 @@ export function LitigationCostEstimator({
       <div
         style={{
           padding: '18px 20px',
-          background: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
+          background: 'linear-gradient(135deg, #111111 0%, #333333 100%)',
           border: '2px solid rgba(99, 102, 241, 0.4)',
           borderRadius: '10px',
           marginBottom: '20px',
@@ -462,7 +462,7 @@ export function LitigationCostEstimator({
           style={{
             fontSize: '28px',
             fontWeight: 700,
-            color: '#F0F2F5',
+            color: '#111827',
             fontFamily: "'JetBrains Mono', monospace",
             marginBottom: '8px',
           }}
@@ -542,7 +542,7 @@ export function LitigationCostEstimator({
         style={{
           marginTop: '16px',
           fontSize: '10px',
-          color: '#475569',
+          color: '#4B5563',
           textAlign: 'center',
         }}
       >

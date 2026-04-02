@@ -26,7 +26,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
           >
             {/* Tooltip on hover */}
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
-              style={{ background: '#0F172A', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}>
+              style={{ background: '#FFFFFF', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }}>
               {stage.label}: {stage.duration}
             </div>
           </div>
@@ -39,7 +39,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
           <div key={i} className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-sm flex-shrink-0" style={{ background: stage.color }} />
             <div>
-              <span className="text-[12px] font-semibold text-[#B0BDD0]">{stage.label}</span>
+              <span className="text-[12px] font-semibold text-[#6B7280]">{stage.label}</span>
               <span className="text-[12px] font-data font-bold ml-1.5" style={{ color: stage.color }}>{stage.duration}</span>
             </div>
           </div>
@@ -48,9 +48,9 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
 
       {/* Total */}
       {totalDuration && (
-        <div className="mt-3 pt-3 border-t flex items-center justify-between" style={{ borderColor: '#1E293B' }}>
-          <span className="text-[12px] font-semibold text-[#B0BDD0]">{totalLabel || (lang === 'es' ? 'Duración total media' : 'Median total duration')}</span>
-          <span className="text-lg font-display font-bold" style={{ color: '#F0F2F5' }}>{totalDuration}</span>
+        <div className="mt-3 pt-3 border-t flex items-center justify-between" style={{ borderColor: '#E5E7EB' }}>
+          <span className="text-[12px] font-semibold text-[#6B7280]">{totalLabel || (lang === 'es' ? 'Duración total media' : 'Median total duration')}</span>
+          <span className="text-lg font-display font-bold" style={{ color: '#111827' }}>{totalDuration}</span>
         </div>
       )}
 

@@ -19,7 +19,7 @@ export function ConfidenceMeterInline({ score, size = 140 }: ConfidenceMeterInli
   const r = (size - 16) / 2;
   const circ = Math.PI * r; // half circle
   const offset = circ - (animated / 100) * circ;
-  const color = score >= 60 ? '#0D9488' : score >= 40 ? '#6366F1' : '#E87461';
+  const color = score >= 60 ? '#0D9488' : score >= 40 ? '#333333' : '#E87461';
   const label = score >= 60 ? 'Strong' : score >= 40 ? 'Moderate' : 'Challenging';
 
   return (
@@ -57,7 +57,7 @@ export function ConfidenceMeterInline({ score, size = 140 }: ConfidenceMeterInli
               y1={cy - innerR * Math.sin(angle)}
               x2={cx + outerR * Math.cos(angle)}
               y2={cy - outerR * Math.sin(angle)}
-              stroke="#CBD5E1"
+              stroke="#374151"
               strokeWidth="1.5"
               strokeLinecap="round"
             />
@@ -67,7 +67,7 @@ export function ConfidenceMeterInline({ score, size = 140 }: ConfidenceMeterInli
         <path
           d={`M 8 ${size / 2 + 4} A ${r} ${r} 0 0 1 ${size - 8} ${size / 2 + 4}`}
           fill="none"
-          stroke="#E2E8F0"
+          stroke="#D1D5DB"
           strokeWidth="10"
           strokeLinecap="round"
         />
@@ -92,7 +92,7 @@ export function ConfidenceMeterInline({ score, size = 140 }: ConfidenceMeterInli
           textAnchor="middle"
           fontSize="28"
           fontWeight="800"
-          fontFamily="'Outfit', system-ui, sans-serif"
+          fontFamily="'Roboto', system-ui, sans-serif"
           fill={color}
         >
           {animated}

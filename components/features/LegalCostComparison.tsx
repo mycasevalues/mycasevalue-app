@@ -24,7 +24,7 @@ export function LegalCostComparison({ lang = 'en' }: LegalCostComparisonProps) {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-[#131B2E] to-[#0F172A] rounded-2xl border border-[var(--border-default)] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+    <div className="bg-gradient-to-r from-[#FFFFFF] to-[#FFFFFF] rounded-2xl border border-[var(--border-default)] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
       <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-4 uppercase">
         {es ? 'Costos promedio por vía legal' : 'Average costs of legal paths'}
       </div>
@@ -37,7 +37,7 @@ export function LegalCostComparison({ lang = 'en' }: LegalCostComparisonProps) {
                 ${c.min}K – ${c.max}K+
               </span>
             </div>
-            <div className="h-3 bg-[#131B2E] rounded-full border border-[var(--border-default)] overflow-hidden relative">
+            <div className="h-3 bg-[#FFFFFF] rounded-full border border-[var(--border-default)] overflow-hidden relative">
               <div className="absolute inset-0 flex items-center">
                 <div
                   className="h-full rounded-full transition-all duration-700"

@@ -82,17 +82,17 @@ export function ShareCard({
 
   return (
     <div
-      className="w-full max-w-[480px] mx-auto rounded-2xl border border-[rgba(99,102,241,0.2)] p-8 shadow-lg transition-all hover:shadow-[0_0_24px_rgba(99,102,241,0.15)]"
-      style={{ backgroundColor: '#0B1221' }}
+      className="w-full max-w-[480px] mx-auto rounded-2xl border border-[rgba(17,17,17,0.2)] p-8 shadow-lg transition-all hover:shadow-[0_0_24px_rgba(17,17,17,0.15)]"
+      style={{ backgroundColor: '#FAFAF8' }}
     >
       {/* Header with branding */}
       <div className="mb-6 flex items-center justify-between">
-        <div className="text-lg font-bold text-[#F0F2F5]">MyCaseValue</div>
+        <div className="text-lg font-bold text-[#111827]">MyCaseValue</div>
       </div>
 
       {/* Case Type Headline */}
       <div className="mb-6">
-        <h2 className="text-3xl font-display font-bold text-[#F0F2F5]" style={{ letterSpacing: '-0.5px' }}>
+        <h2 className="text-3xl font-display font-bold text-[#111827]" style={{ letterSpacing: '-0.5px' }}>
           {caseType}
         </h2>
       </div>
@@ -104,17 +104,17 @@ export function ShareCard({
           <div className="text-2xl font-bold font-display" style={{ color: '#0D9488', letterSpacing: '-0.5px' }}>
             {winRate}%
           </div>
-          <div className="text-xs font-medium text-[#B0BDD0] mt-1">
+          <div className="text-xs font-medium text-[#6B7280] mt-1">
             {es ? 'Tasa de éxito' : 'Win Rate'}
           </div>
         </div>
 
         {/* Settlement % - Indigo tint */}
-        <div className="rounded-lg p-4 border border-[rgba(99,102,241,0.3)]" style={{ backgroundColor: 'rgba(99,102,241,0.08)' }}>
-          <div className="text-2xl font-bold font-display" style={{ color: '#6366F1', letterSpacing: '-0.5px' }}>
+        <div className="rounded-lg p-4 border border-[rgba(17,17,17,0.3)]" style={{ backgroundColor: 'rgba(17,17,17,0.08)' }}>
+          <div className="text-2xl font-bold font-display" style={{ color: '#333333', letterSpacing: '-0.5px' }}>
             {settlementPct}%
           </div>
-          <div className="text-xs font-medium text-[#B0BDD0] mt-1">
+          <div className="text-xs font-medium text-[#6B7280] mt-1">
             {es ? 'Acuerdos' : 'Settlement %'}
           </div>
         </div>
@@ -124,40 +124,40 @@ export function ShareCard({
           <div className="text-2xl font-bold font-display" style={{ color: '#D97706', letterSpacing: '-0.5px' }}>
             {medianRecovery}
           </div>
-          <div className="text-xs font-medium text-[#B0BDD0] mt-1">
+          <div className="text-xs font-medium text-[#6B7280] mt-1">
             {es ? 'Recuperación mediana' : 'Median Recovery'}
           </div>
         </div>
 
         {/* Average Duration */}
-        <div className="rounded-lg p-4 border border-[rgba(99,102,241,0.3)]" style={{ backgroundColor: 'rgba(99,102,241,0.08)' }}>
-          <div className="text-2xl font-bold font-display" style={{ color: '#6366F1', letterSpacing: '-0.5px' }}>
+        <div className="rounded-lg p-4 border border-[rgba(17,17,17,0.3)]" style={{ backgroundColor: 'rgba(17,17,17,0.08)' }}>
+          <div className="text-2xl font-bold font-display" style={{ color: '#333333', letterSpacing: '-0.5px' }}>
             {duration}
           </div>
-          <div className="text-xs font-medium text-[#B0BDD0] mt-1">
+          <div className="text-xs font-medium text-[#6B7280] mt-1">
             {es ? 'Duración promedio' : 'Avg Duration'}
           </div>
         </div>
       </div>
 
       {/* Footer: Cases analyzed */}
-      <div className="mb-6 pb-4 border-b border-[rgba(99,102,241,0.15)]">
-        <div className="text-xs font-medium text-[#B0BDD0]">
+      <div className="mb-6 pb-4 border-b border-[rgba(17,17,17,0.15)]">
+        <div className="text-xs font-medium text-[#6B7280]">
           {t.basedOn} {totalCases.toLocaleString()} {t.federalCases}
         </div>
       </div>
 
       {/* URL */}
       <div className="mb-6 text-right">
-        <div className="text-xs font-medium text-[#8B95A5]">{t.url}</div>
+        <div className="text-xs font-medium text-[#9CA3AF]">{t.url}</div>
       </div>
 
       {/* Share Buttons Row */}
       <div className="flex flex-wrap gap-2">
         <button
           onClick={handleCopyLink}
-          className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(99,102,241,0.3)] hover:bg-[rgba(99,102,241,0.1)] hover:border-[rgba(99,102,241,0.5)]"
-          style={{ color: '#A5B4FC' }}
+          className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(17,17,17,0.3)] hover:bg-[rgba(17,17,17,0.1)] hover:border-[rgba(17,17,17,0.5)]"
+          style={{ color: '#8B5CF6' }}
           title={t.copyLink}
         >
           {copied ? t.copySuccess : t.copyLink}
@@ -165,8 +165,8 @@ export function ShareCard({
 
         <button
           onClick={handleShareX}
-          className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(99,102,241,0.3)] hover:bg-[rgba(99,102,241,0.1)] hover:border-[rgba(99,102,241,0.5)]"
-          style={{ color: '#A5B4FC' }}
+          className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(17,17,17,0.3)] hover:bg-[rgba(17,17,17,0.1)] hover:border-[rgba(17,17,17,0.5)]"
+          style={{ color: '#8B5CF6' }}
           title={t.shareOnX}
         >
           X
@@ -174,8 +174,8 @@ export function ShareCard({
 
         <button
           onClick={handleShareFacebook}
-          className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(99,102,241,0.3)] hover:bg-[rgba(99,102,241,0.1)] hover:border-[rgba(99,102,241,0.5)]"
-          style={{ color: '#A5B4FC' }}
+          className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(17,17,17,0.3)] hover:bg-[rgba(17,17,17,0.1)] hover:border-[rgba(17,17,17,0.5)]"
+          style={{ color: '#8B5CF6' }}
           title={t.shareOnFacebook}
         >
           FB
@@ -183,8 +183,8 @@ export function ShareCard({
 
         <button
           onClick={handleShareLinkedIn}
-          className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(99,102,241,0.3)] hover:bg-[rgba(99,102,241,0.1)] hover:border-[rgba(99,102,241,0.5)]"
-          style={{ color: '#A5B4FC' }}
+          className="flex-1 min-w-[100px] px-3 py-2 rounded-lg text-xs font-medium transition-all border border-[rgba(17,17,17,0.3)] hover:bg-[rgba(17,17,17,0.1)] hover:border-[rgba(17,17,17,0.5)]"
+          style={{ color: '#8B5CF6' }}
           title={t.shareOnLinkedIn}
         >
           In

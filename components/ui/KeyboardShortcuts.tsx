@@ -72,7 +72,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
         onClick={e => e.stopPropagation()}
         style={{
           position: 'relative', zIndex: 1,
-          background: 'linear-gradient(180deg, #1E293B, #131B2E)',
+          background: 'linear-gradient(180deg, #E5E7EB, #FFFFFF)',
           border: '1px solid #334155',
           borderRadius: '16px', padding: '28px',
           maxWidth: '440px', width: '90%',
@@ -80,13 +80,13 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
+          <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#111827', margin: 0 }}>
              {lang === 'es' ? 'Atajos de teclado' : 'Keyboard Shortcuts'}
           </h3>
           <button
             onClick={() => setShowPanel(false)}
             style={{
-              background: 'none', border: 'none', color: '#8B95A5',
+              background: 'none', border: 'none', color: '#9CA3AF',
               cursor: 'pointer', fontSize: '18px', padding: '4px',
             }}
           >✕</button>
@@ -99,12 +99,12 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
               padding: '8px 12px', borderRadius: '8px',
               background: 'rgba(15,23,42,0.5)',
             }}>
-              <span style={{ fontSize: '13px', color: '#B0BDD0' }}>{s.description}</span>
+              <span style={{ fontSize: '13px', color: '#6B7280' }}>{s.description}</span>
               <kbd style={{
                 padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
                 fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
-                background: '#0B1221', border: '1px solid #334155',
-                color: '#A5B4FC', minWidth: '28px', textAlign: 'center',
+                background: '#FAFAF8', border: '1px solid #334155',
+                color: '#8B5CF6', minWidth: '28px', textAlign: 'center',
               }}>
                 {s.modifier ? `${s.modifier === 'ctrl' ? 'Ctrl' : s.modifier === 'meta' ? '⌘' : '⇧'}+` : ''}{s.label}
               </kbd>
@@ -116,20 +116,20 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
             padding: '8px 12px', borderRadius: '8px',
             background: 'rgba(15,23,42,0.5)',
           }}>
-            <span style={{ fontSize: '13px', color: '#B0BDD0' }}>
+            <span style={{ fontSize: '13px', color: '#6B7280' }}>
               {lang === 'es' ? 'Mostrar/ocultar atajos' : 'Toggle shortcuts'}
             </span>
             <kbd style={{
               padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
               fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
-              background: '#0B1221', border: '1px solid #334155',
-              color: '#A5B4FC',
+              background: '#FAFAF8', border: '1px solid #334155',
+              color: '#8B5CF6',
             }}>?</kbd>
           </div>
         </div>
 
         <div style={{ marginTop: '16px', textAlign: 'center' }}>
-          <span style={{ fontSize: '11px', color: '#475569' }}>
+          <span style={{ fontSize: '11px', color: '#4B5563' }}>
             {lang === 'es' ? 'Presiona Esc o ? para cerrar' : 'Press Esc or ? to close'}
           </span>
         </div>

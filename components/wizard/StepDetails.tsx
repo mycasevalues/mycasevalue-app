@@ -50,8 +50,8 @@ export function StepDetails({
           </div>
           {timing && (
             <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed animate-fade-in" style={{
-              background: timing === 'recent' ? 'rgba(13,148,136,0.15)' : (timing === '2yr' || timing === 'old') ? 'rgba(232,116,97,0.12)' : 'rgba(99,102,241,0.08)',
-              color: timing === 'recent' ? '#0D9488' : (timing === '2yr' || timing === 'old') ? '#DC2626' : '#A5B4FC',
+              background: timing === 'recent' ? 'rgba(13,148,136,0.15)' : (timing === '2yr' || timing === 'old') ? 'rgba(232,116,97,0.12)' : 'rgba(17,17,17,0.08)',
+              color: timing === 'recent' ? '#0D9488' : (timing === '2yr' || timing === 'old') ? '#DC2626' : '#8B5CF6',
             }}>
               {lang === 'es' ? (
                 timing === 'recent' ? 'Buenas noticias — las personas que actuaron dentro de 6 meses históricamente tuvieron mejores resultados.'
@@ -109,7 +109,7 @@ export function StepDetails({
                 ]} onChange={setClassSize} dark={darkMode} lang={lang} />
               </div>
               {classSize && (
-                <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed" style={{ background: 'rgba(99,102,241,0.08)', color: 'var(--fg-muted)' }}>
+                <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed" style={{ background: 'rgba(17,17,17,0.08)', color: 'var(--fg-muted)' }}>
                   {lang === 'es'
                     ? 'Las acciones colectivas federales bajo la Regla 23 generalmente requieren suficientes individuos afectados para que las demandas individuales sean impracticables. Históricamente, los casos con 40+ individuos afectados han cumplido este umbral.'
                     : 'Federal class actions under Rule 23 generally require enough affected individuals that individual lawsuits would be impractical. Historically, cases with 40+ affected individuals have met this threshold.'}
@@ -120,7 +120,7 @@ export function StepDetails({
           </>)}
         </div>
         {/* Consent */}
-        <div className="mt-6 p-4 rounded-2xl" style={{ background: 'rgba(99,102,241,0.04)', border: '1px solid rgba(99,102,241,0.12)' }}>
+        <div className="mt-6 p-4 rounded-2xl" style={{ background: 'rgba(17,17,17,0.04)', border: '1px solid rgba(17,17,17,0.12)' }}>
           <p className="text-[13px] text-[var(--fg-muted)] leading-relaxed mb-3">
             {lang === 'es'
               ? 'Estás a punto de ver datos reales de registros judiciales federales. Estos datos muestran lo que le sucedió a otras personas — no predicen lo que te sucederá a ti. Solo un abogado con licencia puede evaluar tus hechos específicos.'
@@ -128,7 +128,7 @@ export function StepDetails({
           </p>
           <label className="flex gap-3 items-start cursor-pointer text-[14px]" role="checkbox" aria-checked={consent} tabIndex={0} onClick={() => setConsent(!consent)} onKeyDown={e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); setConsent(!consent); } }}>
             <div className="w-5 h-5 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all" aria-hidden="true"
-              style={{ borderColor: consent ? '#4F46E5' : '#334155', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent' }}>
+              style={{ borderColor: consent ? '#111111' : '#334155', background: consent ? 'linear-gradient(135deg, #111111, #333333)' : 'transparent' }}>
               {consent && <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
             </div>
             <span className="leading-relaxed text-[var(--fg-muted)]">{lang === 'es'
@@ -138,7 +138,7 @@ export function StepDetails({
         </div>
         <button onClick={() => startLoad()} disabled={!timing || !attorney || !consent}
           className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-          style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && attorney && consent) ? '#fff' : '#B0BDD0', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
+          style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E7EB', color: (timing && attorney && consent) ? '#fff' : '#6B7280', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(17,17,17,.3)' : 'none', padding: '18px' }}>
           {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
         </button>
       </Reveal>

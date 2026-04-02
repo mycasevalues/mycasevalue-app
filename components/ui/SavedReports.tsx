@@ -85,18 +85,18 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen p-4 md:p-8" style={{ backgroundColor: '#0B1221' }}>
-      <h1 className="text-3xl font-bold mb-8" style={{ color: '#E2E8F0' }}>
+    <div className="min-h-screen p-4 md:p-8" style={{ backgroundColor: '#FAFAF8' }}>
+      <h1 className="text-3xl font-bold mb-8" style={{ color: '#D1D5DB' }}>
         {t.title}
       </h1>
 
       {reports.length === 0 ? (
         <div
           className="flex flex-col items-center justify-center py-16 rounded-lg border-2 border-dashed"
-          style={{ backgroundColor: '#131B2E', borderColor: '#1E293B' }}
+          style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }}
         >
-          <FileText size={48} style={{ color: '#B0BDD0' }} className="mb-4" />
-          <p style={{ color: '#B0BDD0' }} className="text-center max-w-md">
+          <FileText size={48} style={{ color: '#6B7280' }} className="mb-4" />
+          <p style={{ color: '#6B7280' }} className="text-center max-w-md">
             {t.empty}
           </p>
         </div>
@@ -106,21 +106,21 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
             <div
               key={report.id}
               className="rounded-lg p-6 border transition-all hover:shadow-lg"
-              style={{ backgroundColor: '#131B2E', borderColor: '#1E293B' }}
+              style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }}
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 style={{ color: '#E2E8F0' }} className="font-semibold text-lg">
+                  <h3 style={{ color: '#D1D5DB' }} className="font-semibold text-lg">
                     {report.caseName}
                   </h3>
-                  <p style={{ color: '#B0BDD0' }} className="text-sm">
+                  <p style={{ color: '#6B7280' }} className="text-sm">
                     {report.category}
                   </p>
                 </div>
                 <button
                   onClick={() => handleDelete(report.id)}
                   className="p-2 rounded hover:opacity-70 transition"
-                  style={{ color: '#B0BDD0' }}
+                  style={{ color: '#6B7280' }}
                   title={t.delete}
                   aria-label={`${t.delete} ${report.category}`}
                 >
@@ -128,13 +128,13 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                 </button>
               </div>
 
-              <p style={{ color: '#B0BDD0' }} className="text-sm mb-4">
+              <p style={{ color: '#6B7280' }} className="text-sm mb-4">
                 {t.generated}: {formatDate(report.date)}
               </p>
 
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between items-center">
-                  <span style={{ color: '#B0BDD0' }} className="text-sm">
+                  <span style={{ color: '#6B7280' }} className="text-sm">
                     {t.winRate}:
                   </span>
                   <div className="flex items-center gap-2">
@@ -148,7 +148,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                       style={{
                         backgroundColor:
                           report.winRate > 50 ? '#0D9488' : '#F59E0B',
-                        color: '#0B1221',
+                        color: '#FAFAF8',
                       }}
                     >
                       {Math.round(report.winRate)}%
@@ -157,10 +157,10 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span style={{ color: '#B0BDD0' }} className="text-sm">
+                  <span style={{ color: '#6B7280' }} className="text-sm">
                     {t.settlement}:
                   </span>
-                  <span style={{ color: '#E2E8F0' }} className="font-medium">
+                  <span style={{ color: '#D1D5DB' }} className="font-medium">
                     {report.settlementRange}
                   </span>
                 </div>
@@ -169,7 +169,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
               <button
                 onClick={() => onLoadReport(report)}
                 className="w-full py-2 rounded font-medium transition hover:opacity-90"
-                style={{ backgroundColor: '#4F46E5', color: '#E2E8F0' }}
+                style={{ backgroundColor: '#111111', color: '#D1D5DB' }}
               >
                 {t.viewReport}
               </button>

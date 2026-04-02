@@ -205,7 +205,7 @@ export async function generateMetadata({
 }
 
 const categoryColors: Record<string, string> = {
-  work: '#4338CA',
+  work: '#000000',
   injury: '#DC2626',
   consumer: '#2563EB',
   rights: '#7C3AED',
@@ -213,7 +213,7 @@ const categoryColors: Record<string, string> = {
   housing: '#059669',
   medical: '#DB2777',
   family: '#EC4899',
-  gov: '#475569',
+  gov: '#4B5563',
   education: '#0891B2',
 };
 
@@ -287,8 +287,8 @@ async function CategoryPage({
     return (
       <div style={{ padding: '40px 20px', textAlign: 'center' }}>
         <h1 className="text-2xl font-bold">Category not found</h1>
-        <p className="mt-4" style={{ color: '#B0BDD0' }}>The case category you&apos;re looking for doesn&apos;t exist.</p>
-        <a href="/cases" className="inline-block mt-6 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: '#4F46E5' }}>Browse all categories</a>
+        <p className="mt-4" style={{ color: '#6B7280' }}>The case category you&apos;re looking for doesn&apos;t exist.</p>
+        <a href="/cases" className="inline-block mt-6 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: '#111111' }}>Browse all categories</a>
       </div>
     );
   }
@@ -370,7 +370,7 @@ async function CategoryPage({
 
       {/* Breadcrumb Navigation */}
       <div style={{
-        background: '#131B2E',
+        background: '#FFFFFF',
         borderBottom: '1px solid var(--border-default)',
         padding: '16px 20px',
       }}>
@@ -378,14 +378,14 @@ async function CategoryPage({
           maxWidth: 1200,
           margin: '0 auto',
           fontSize: '14px',
-          color: '#B0BDD0',
+          color: '#6B7280',
           fontFamily: 'Outfit, system-ui, sans-serif',
         }}>
-          <Link href="/" style={{ color: '#4F46E5', textDecoration: 'none' }}>
+          <Link href="/" style={{ color: '#111111', textDecoration: 'none' }}>
             Home
           </Link>
           {' / '}
-          <Link href="/cases" style={{ color: '#4F46E5', textDecoration: 'none' }}>
+          <Link href="/cases" style={{ color: '#111111', textDecoration: 'none' }}>
             Cases
           </Link>
           {' / '}
@@ -453,9 +453,9 @@ async function CategoryPage({
 
       {/* Description Section */}
       <div style={{
-        background: '#131B2E',
+        background: '#FFFFFF',
         padding: '60px 20px',
-        borderBottom: '1px solid #1E293B',
+        borderBottom: '1px solid #E5E7EB',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
@@ -505,7 +505,7 @@ async function CategoryPage({
               <div
                 key={opt.nos}
                 style={{
-                  background: '#131B2E',
+                  background: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '10px',
                   padding: '20px',
@@ -544,7 +544,7 @@ async function CategoryPage({
 
       {/* Stats Section */}
       <div style={{
-        background: '#131B2E',
+        background: '#FFFFFF',
         padding: '60px 20px',
         borderTop: '1px solid var(--border-default)',
       }}>
@@ -565,7 +565,7 @@ async function CategoryPage({
             gap: '24px',
           }}>
             <div style={{
-              background: '#131B2E',
+              background: '#FFFFFF',
               padding: '24px',
               borderRadius: '10px',
               fontFamily: 'Outfit, system-ui, sans-serif',
@@ -597,7 +597,7 @@ async function CategoryPage({
             </div>
 
             <div style={{
-              background: '#131B2E',
+              background: '#FFFFFF',
               padding: '24px',
               borderRadius: '10px',
               fontFamily: 'Outfit, system-ui, sans-serif',
@@ -629,7 +629,7 @@ async function CategoryPage({
             </div>
 
             <div style={{
-              background: '#131B2E',
+              background: '#FFFFFF',
               padding: '24px',
               borderRadius: '10px',
               fontFamily: 'Outfit, system-ui, sans-serif',

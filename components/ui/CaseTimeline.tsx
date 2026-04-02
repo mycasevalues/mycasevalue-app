@@ -24,14 +24,14 @@ function getTimelineEvents(medianMonths: number, lang: string): TimelineEvent[] 
       label: isEs ? 'Presentación' : 'Filing',
       months: 0,
       icon: '📄',
-      color: '#6366F1',
+      color: '#333333',
       description: isEs ? 'Se presenta la demanda' : 'Complaint filed with court',
     },
     {
       label: isEs ? 'Respuesta' : 'Answer',
       months: Math.min(Math.round(m * 0.08), 2),
       icon: '📨',
-      color: '#A5B4FC',
+      color: '#8B5CF6',
       description: isEs ? 'El demandado responde' : 'Defendant responds',
     },
     {
@@ -95,7 +95,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
   return (
     <div ref={ref} style={{ padding: '16px 0' }}>
       {caseType && (
-        <div style={{ fontSize: '11px', fontWeight: 700, color: '#8B95A5', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px' }}>
+        <div style={{ fontSize: '11px', fontWeight: 700, color: '#9CA3AF', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px' }}>
           {lang === 'es' ? 'Línea de tiempo típica' : 'Typical Case Timeline'}
         </div>
       )}
@@ -106,14 +106,14 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
           {/* Background line */}
           <div style={{
             position: 'absolute', top: '20px', left: '20px', right: '20px',
-            height: '3px', background: '#1E293B', borderRadius: '2px',
+            height: '3px', background: '#E5E7EB', borderRadius: '2px',
           }} />
 
           {/* Progress line */}
           <div style={{
             position: 'absolute', top: '20px', left: '20px',
             height: '3px', borderRadius: '2px',
-            background: 'linear-gradient(90deg, #6366F1, #5EEAD4, #0D9488, #F472B6)',
+            background: 'linear-gradient(90deg, #333333, #5EEAD4, #0D9488, #F472B6)',
             width: isVisible ? `calc(100% - 40px)` : '0%',
             transition: 'width 2s cubic-bezier(0.16, 1, 0.3, 1)',
           }} />
@@ -135,8 +135,8 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 <div style={{
                   width: '40px', height: '40px', borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: i <= activeIdx ? `${event.color}20` : '#131B2E',
-                  border: `2px solid ${i <= activeIdx ? event.color : '#1E293B'}`,
+                  background: i <= activeIdx ? `${event.color}20` : '#FFFFFF',
+                  border: `2px solid ${i <= activeIdx ? event.color : '#E5E7EB'}`,
                   fontSize: '16px',
                   boxShadow: i <= activeIdx ? `0 0 16px ${event.color}30` : 'none',
                   transition: 'all 0.5s ease',
@@ -148,7 +148,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 {/* Label */}
                 <div style={{
                   fontSize: '11px', fontWeight: 600,
-                  color: i <= activeIdx ? '#F0F2F5' : '#475569',
+                  color: i <= activeIdx ? '#111827' : '#4B5563',
                   marginTop: '8px', textAlign: 'center',
                   whiteSpace: 'nowrap',
                 }}>
@@ -168,7 +168,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 {/* Description */}
                 {event.description && i <= activeIdx && (
                   <div style={{
-                    fontSize: '9px', color: '#8B95A5',
+                    fontSize: '9px', color: '#9CA3AF',
                     marginTop: '4px', textAlign: 'center',
                     maxWidth: '80px', lineHeight: 1.3,
                   }}>
@@ -189,8 +189,8 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
             position: 'absolute', top: '8px', left: '15px', bottom: '8px',
             width: '3px', borderRadius: '2px',
             background: isVisible
-              ? 'linear-gradient(180deg, #6366F1, #5EEAD4, #0D9488, #F472B6)'
-              : '#1E293B',
+              ? 'linear-gradient(180deg, #333333, #5EEAD4, #0D9488, #F472B6)'
+              : '#E5E7EB',
             transition: 'background 2s ease',
           }} />
 
@@ -207,8 +207,8 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 position: 'absolute', left: '4px',
                 width: '26px', height: '26px', borderRadius: '50%',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: i <= activeIdx ? `${event.color}20` : '#131B2E',
-                border: `2px solid ${i <= activeIdx ? event.color : '#1E293B'}`,
+                background: i <= activeIdx ? `${event.color}20` : '#FFFFFF',
+                border: `2px solid ${i <= activeIdx ? event.color : '#E5E7EB'}`,
                 fontSize: '12px',
                 boxShadow: i <= activeIdx ? `0 0 12px ${event.color}30` : 'none',
                 transition: 'all 0.5s ease',
@@ -222,7 +222,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span style={{
                     fontSize: '13px', fontWeight: 600,
-                    color: i <= activeIdx ? '#F0F2F5' : '#475569',
+                    color: i <= activeIdx ? '#111827' : '#4B5563',
                   }}>
                     {event.label}
                   </span>
@@ -236,7 +236,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 </div>
                 {event.description && i <= activeIdx && (
                   <div style={{
-                    fontSize: '11px', color: '#8B95A5',
+                    fontSize: '11px', color: '#9CA3AF',
                     marginTop: '2px', lineHeight: 1.4,
                   }}>
                     {event.description}
@@ -251,23 +251,23 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
       {/* Duration callout */}
       <div style={{
         marginTop: '20px', padding: '12px 16px',
-        borderRadius: '10px', background: '#131B2E',
-        border: '1px solid #1E293B',
+        borderRadius: '10px', background: '#FFFFFF',
+        border: '1px solid #E5E7EB',
         display: 'flex', alignItems: 'center', gap: '10px',
         opacity: isVisible ? 1 : 0,
         transition: 'opacity 0.8s ease 1.5s',
       }}>
         <div style={{
           width: '32px', height: '32px', borderRadius: '8px',
-          background: 'rgba(99,102,241,0.12)',
+          background: 'rgba(17,17,17,0.12)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontSize: '14px', flexShrink: 0,
         }}></div>
         <div>
-          <div style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>
-            {lang === 'es' ? 'Duración media' : 'Median Duration'}: <span style={{ color: '#6366F1', fontFamily: "'JetBrains Mono', monospace" }}>{medianMonths} {lang === 'es' ? 'meses' : 'months'}</span>
+          <div style={{ fontSize: '13px', fontWeight: 600, color: '#111827' }}>
+            {lang === 'es' ? 'Duración media' : 'Median Duration'}: <span style={{ color: '#333333', fontFamily: "'JetBrains Mono', monospace" }}>{medianMonths} {lang === 'es' ? 'meses' : 'months'}</span>
           </div>
-          <div style={{ fontSize: '11px', color: '#8B95A5' }}>
+          <div style={{ fontSize: '11px', color: '#9CA3AF' }}>
             {lang === 'es' ? 'Basado en datos históricos de casos federales' : 'Based on historical federal case data'}
           </div>
         </div>

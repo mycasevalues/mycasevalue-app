@@ -32,7 +32,7 @@ function getTimelinePhases(durationMonths: number, settlementPct: number, lang: 
       startMonth: 0,
       endMonth: 0,
       icon: '📄',
-      color: '#6366F1',
+      color: '#333333',
       description: isEs ? 'Demanda presentada ante la corte federal' : 'Complaint filed with federal court',
       details: isEs
         ? 'Se completan los documentos iniciales y se paga la cuota de presentación'
@@ -44,7 +44,7 @@ function getTimelinePhases(durationMonths: number, settlementPct: number, lang: 
       startMonth: 1,
       endMonth: 2,
       icon: '📨',
-      color: '#A5B4FC',
+      color: '#8B5CF6',
       description: isEs ? 'El demandado es notificado, presenta respuesta o mociones' : 'Defendant served, answer or motion to dismiss due',
       details: isEs
         ? 'El demandado tiene 21 días para responder. Puede interponer moción para desestimar.'
@@ -216,7 +216,7 @@ export function CaseTimelineSimulator({
           style={{
             fontSize: '11px',
             fontWeight: 700,
-            color: '#8B95A5',
+            color: '#9CA3AF',
             letterSpacing: '1.5px',
             textTransform: 'uppercase',
           }}
@@ -229,7 +229,7 @@ export function CaseTimelineSimulator({
           style={{
             padding: '14px 16px',
             borderRadius: '10px',
-            background: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
+            background: 'linear-gradient(135deg, #111111 0%, #333333 100%)',
             border: '1px solid rgba(99, 102, 241, 0.3)',
             display: 'flex',
             alignItems: 'center',
@@ -252,7 +252,7 @@ export function CaseTimelineSimulator({
             
           </div>
           <div>
-            <div style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>
+            <div style={{ fontSize: '13px', fontWeight: 600, color: '#111827' }}>
               {getTranslation('case-type-avg', lang)} <strong>{durationMonths}</strong> {getTranslation('months-duration', lang)}
             </div>
             <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.8)' }}>
@@ -273,7 +273,7 @@ export function CaseTimelineSimulator({
               left: '0',
               right: '0',
               height: '3px',
-              background: '#1E293B',
+              background: '#E5E7EB',
               borderRadius: '2px',
             }}
           />
@@ -286,7 +286,7 @@ export function CaseTimelineSimulator({
               left: '0',
               height: '3px',
               borderRadius: '2px',
-              background: 'linear-gradient(90deg, #4F46E5, #0D9488, #EF4444)',
+              background: 'linear-gradient(90deg, #111111, #0D9488, #EF4444)',
               width: isVisible ? '100%' : '0%',
               transition: 'width 2.5s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
@@ -328,8 +328,8 @@ export function CaseTimelineSimulator({
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      background: isActive ? `${phase.color}20` : '#131B2E',
-                      border: `${isHighlighted ? 3 : 2}px solid ${isActive ? phase.color : '#1E293B'}`,
+                      background: isActive ? `${phase.color}20` : '#FFFFFF',
+                      border: `${isHighlighted ? 3 : 2}px solid ${isActive ? phase.color : '#E5E7EB'}`,
                       fontSize: isHighlighted ? '18px' : '16px',
                       boxShadow: isActive ? `0 0 20px ${phase.color}40` : 'none',
                       transition: 'all 0.5s ease',
@@ -368,7 +368,7 @@ export function CaseTimelineSimulator({
                     style={{
                       fontSize: '11px',
                       fontWeight: 600,
-                      color: isActive ? '#F0F2F5' : '#475569',
+                      color: isActive ? '#111827' : '#4B5563',
                       marginTop: '10px',
                       textAlign: 'center',
                       whiteSpace: 'nowrap',
@@ -402,7 +402,7 @@ export function CaseTimelineSimulator({
                         top: '70px',
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        background: '#1E293B',
+                        background: '#E5E7EB',
                         border: `1px solid ${phase.color}40`,
                         borderRadius: '8px',
                         padding: '12px',
@@ -414,7 +414,7 @@ export function CaseTimelineSimulator({
                       <div style={{ fontSize: '11px', fontWeight: 600, color: phase.color, marginBottom: '6px' }}>
                         {phase.description}
                       </div>
-                      <div style={{ fontSize: '10px', color: '#8B95A5', lineHeight: 1.4 }}>
+                      <div style={{ fontSize: '10px', color: '#9CA3AF', lineHeight: 1.4 }}>
                         {phase.details}
                       </div>
                     </div>
@@ -439,8 +439,8 @@ export function CaseTimelineSimulator({
               width: '3px',
               borderRadius: '2px',
               background: isVisible
-                ? 'linear-gradient(180deg, #4F46E5, #0D9488, #EF4444)'
-                : '#1E293B',
+                ? 'linear-gradient(180deg, #111111, #0D9488, #EF4444)'
+                : '#E5E7EB',
               transition: 'background 2.5s ease',
             }}
           />
@@ -473,8 +473,8 @@ export function CaseTimelineSimulator({
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    background: isActive ? `${phase.color}20` : '#131B2E',
-                    border: `${isHighlighted ? 3 : 2}px solid ${isActive ? phase.color : '#1E293B'}`,
+                    background: isActive ? `${phase.color}20` : '#FFFFFF',
+                    border: `${isHighlighted ? 3 : 2}px solid ${isActive ? phase.color : '#E5E7EB'}`,
                     fontSize: isHighlighted ? '14px' : '12px',
                     boxShadow: isActive ? `0 0 16px ${phase.color}40` : 'none',
                     transition: 'all 0.5s ease',
@@ -510,7 +510,7 @@ export function CaseTimelineSimulator({
                 {/* Content */}
                 <div style={{ paddingTop: '2px', flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                    <span style={{ fontSize: '13px', fontWeight: 600, color: isActive ? '#F0F2F5' : '#475569' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 600, color: isActive ? '#111827' : '#4B5563' }}>
                       {phase.label}
                     </span>
                     {isHighlighted && (
@@ -521,13 +521,13 @@ export function CaseTimelineSimulator({
                   </div>
 
                   {phase.startMonth !== phase.endMonth && (
-                    <div style={{ fontSize: '11px', color: '#8B95A5', marginBottom: '6px' }}>
+                    <div style={{ fontSize: '11px', color: '#9CA3AF', marginBottom: '6px' }}>
                       {lang === 'es' ? 'Mes' : 'Month'} {phase.startMonth}-{phase.endMonth}
                     </div>
                   )}
 
                   {/* Expandable description */}
-                  <div style={{ fontSize: '11px', color: '#8B95A5', marginBottom: '8px', lineHeight: 1.4 }}>
+                  <div style={{ fontSize: '11px', color: '#9CA3AF', marginBottom: '8px', lineHeight: 1.4 }}>
                     {phase.description}
                   </div>
 
@@ -535,11 +535,11 @@ export function CaseTimelineSimulator({
                     <div
                       style={{
                         padding: '10px',
-                        background: '#1E293B',
+                        background: '#E5E7EB',
                         border: `1px solid ${phase.color}40`,
                         borderRadius: '6px',
                         fontSize: '10px',
-                        color: '#CBD5E1',
+                        color: '#374151',
                         lineHeight: 1.5,
                         marginTop: '8px',
                       }}
@@ -576,7 +576,7 @@ export function CaseTimelineSimulator({
           marginTop: '24px',
           padding: '14px 16px',
           borderRadius: '10px',
-          background: '#131B2E',
+          background: '#FFFFFF',
           border: `2px solid ${likelyOutcomePhase === 'mediation' ? '#0D9488' : '#EF4444'}40`,
           display: 'flex',
           alignItems: 'center',
@@ -612,7 +612,7 @@ export function CaseTimelineSimulator({
               ? getTranslation('settlement-likely', lang)
               : getTranslation('trial-possible', lang)}
           </div>
-          <div style={{ fontSize: '11px', color: '#8B95A5' }}>
+          <div style={{ fontSize: '11px', color: '#9CA3AF' }}>
             {settlementPct}% {lang === 'es' ? 'de probabilidad de acuerdo' : 'settlement probability'}
           </div>
         </div>

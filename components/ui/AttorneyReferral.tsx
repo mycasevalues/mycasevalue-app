@@ -51,15 +51,15 @@ export function AttorneyReferralInline({
   return (
     <div
       className="w-full px-6 py-5 rounded-lg flex items-center justify-between"
-      style={{ backgroundColor: '#131B2E', borderColor: '#1E293B', borderWidth: '1px' }}
+      style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB', borderWidth: '1px' }}
     >
-      <p style={{ color: '#E2E8F0' }} className="text-sm font-medium">
+      <p style={{ color: '#D1D5DB' }} className="text-sm font-medium">
         {t.inlineMessage}
       </p>
       <button
         style={{
-          backgroundColor: '#4F46E5',
-          color: '#E2E8F0',
+          backgroundColor: '#111111',
+          color: '#D1D5DB',
         }}
         className="px-4 py-2 rounded font-medium text-sm hover:opacity-90 transition-opacity whitespace-nowrap ml-4"
       >
@@ -82,16 +82,16 @@ export default function AttorneyReferral({
     <div
       className="w-full rounded-lg p-8 relative overflow-hidden"
       style={{
-        backgroundColor: '#131B2E',
+        backgroundColor: '#FFFFFF',
         borderWidth: '1px',
-        borderColor: '#1E293B',
+        borderColor: '#E5E7EB',
       }}
     >
       {/* Gradient border accent */}
       <div
         className="absolute inset-0 rounded-lg pointer-events-none"
         style={{
-          background: 'linear-gradient(135deg, #0D9488 0%, #4F46E5 100%)',
+          background: 'linear-gradient(135deg, #0D9488 0%, #111111 100%)',
           padding: '1px',
           WebkitMask:
             'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
@@ -103,13 +103,13 @@ export default function AttorneyReferral({
       <div className="relative z-10">
         <h3
           className="text-2xl font-bold mb-2"
-          style={{ color: '#E2E8F0' }}
+          style={{ color: '#D1D5DB' }}
         >
           {t.headline}
         </h3>
         <p
           className="text-base mb-6"
-          style={{ color: '#B0BDD0' }}
+          style={{ color: '#6B7280' }}
         >
           {t.subtext.replace('{caseName}', caseNameText)}
         </p>
@@ -132,7 +132,7 @@ export default function AttorneyReferral({
               >
                 
               </span>
-              <span style={{ color: '#E2E8F0' }} className="text-sm">
+              <span style={{ color: '#D1D5DB' }} className="text-sm">
                 {item}
               </span>
             </li>
@@ -144,8 +144,8 @@ export default function AttorneyReferral({
           href="#attorney-network"
           className="inline-block px-6 py-3 rounded font-semibold text-base transition-opacity hover:opacity-90"
           style={{
-            backgroundColor: '#4F46E5',
-            color: '#E2E8F0',
+            backgroundColor: '#111111',
+            color: '#D1D5DB',
           }}
         >
           {t.findAttorneyNear}
@@ -161,7 +161,7 @@ export default function AttorneyReferral({
               >
                 ★
               </span>
-              <span className="text-xs font-medium" style={{ color: '#B0BDD0' }}>
+              <span className="text-xs font-medium" style={{ color: '#6B7280' }}>
                 {badge}
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function AttorneyReferral({
         {/* Disclaimer */}
         <p
           className="text-xs mt-6 leading-relaxed"
-          style={{ color: '#8B95A5' }}
+          style={{ color: '#9CA3AF' }}
         >
           {t.disclaimer}
         </p>

@@ -177,9 +177,9 @@ export default function MobileBottomNav({
       <nav
         className="mobile-bottom-nav fixed bottom-0 left-0 right-0 z-40"
         style={{
-          backgroundColor: 'rgba(11, 18, 33, 0.8)',
+          backgroundColor: 'rgba(255, 255, 255, 0.8)',
           backdropFilter: 'blur(12px)',
-          borderTop: '1px solid #1E293B',
+          borderTop: '1px solid #E5E7EB',
           paddingBottom: 'max(1rem, env(safe-area-inset-bottom))',
           height: '64px',
         }}
@@ -196,7 +196,7 @@ export default function MobileBottomNav({
               onTouchEnd={handlePressUp}
               className="relative flex flex-col items-center justify-center transition-all duration-200 focus:outline-none"
               style={{
-                color: item.isActive ? '#4F46E5' : '#8B95A5',
+                color: item.isActive ? '#111111' : '#9CA3AF',
                 transform: isPressed === item.id ? 'scale(0.92)' : 'scale(1)',
               }}
               aria-label={item.label}
@@ -210,7 +210,7 @@ export default function MobileBottomNav({
                 {item.badge && (
                   <div
                     className="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center text-xs font-semibold text-white"
-                    style={{ backgroundColor: '#4F46E5' }}
+                    style={{ backgroundColor: '#111111' }}
                   >
                     {item.badge}
                   </div>
@@ -221,7 +221,7 @@ export default function MobileBottomNav({
               {item.isActive && (
                 <div
                   className="mt-1 w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: '#4F46E5' }}
+                  style={{ backgroundColor: '#111111' }}
                 />
               )}
             </button>

@@ -27,7 +27,7 @@ export function WhatPeopleDid({ lang = 'en' }: WhatPeopleDidProps) {
       {nextSteps.map((step, i) => (
         <div
           key={i}
-          className="p-5 rounded-xl border border-[var(--border-default)] bg-[#131B2E] text-center transition-transform hover:scale-[1.02]"
+          className="p-5 rounded-xl border border-[var(--border-default)] bg-[#FFFFFF] text-center transition-transform hover:scale-[1.02]"
         >
           <div className="text-3xl mb-2" aria-hidden="true">
             {step.icon}
@@ -44,7 +44,7 @@ export function WhatPeopleDid({ lang = 'en' }: WhatPeopleDidProps) {
               className="h-full rounded-full"
               style={{
                 width: `${step.pct}%`,
-                background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
+                background: 'linear-gradient(135deg, #111111, #333333)',
               }}
               role="progressbar"
               aria-valuenow={step.pct}

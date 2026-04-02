@@ -52,9 +52,9 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
 
   return (
     <div className="rounded-2xl overflow-hidden" style={{
-      background: 'linear-gradient(180deg, #0B1221 0%, #131D35 100%)',
-      border: '1px solid rgba(79,70,229,0.15)',
-      boxShadow: '0 8px 40px rgba(11,18,33,0.3)',
+      background: 'linear-gradient(180deg, #FAFAF8 0%, #131D35 100%)',
+      border: '1px solid rgba(17,17,17,0.15)',
+      boxShadow: '0 8px 40px rgba(255,255,255,0.3)',
     }}>
       {/* Header */}
       <div className="px-5 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
@@ -62,7 +62,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
           <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#5EEAD4' }} />
           <span className="text-[13px] font-semibold text-white">{es ? 'Actividad en tiempo real' : 'Live Case Activity'}</span>
         </div>
-        <div className="text-[11px] text-[#B0BDD0] font-mono">
+        <div className="text-[11px] text-[#6B7280] font-mono">
           {es ? 'Actualizado cada 30s' : 'Updates every 30s'}
         </div>
       </div>
@@ -77,43 +77,43 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
               key={i}
               className="px-5 py-3.5 flex items-center gap-3 transition-all duration-500"
               style={{
-                background: isActive ? 'rgba(79,70,229,0.06)' : 'transparent',
-                borderLeft: isActive ? '3px solid #4F46E5' : '3px solid transparent',
+                background: isActive ? 'rgba(17,17,17,0.06)' : 'transparent',
+                borderLeft: isActive ? '3px solid #111111' : '3px solid transparent',
               }}
             >
               {/* Outcome icon */}
               <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{
-                background: isWon ? 'rgba(13,148,136,0.15)' : 'rgba(79,70,229,0.12)',
+                background: isWon ? 'rgba(13,148,136,0.15)' : 'rgba(17,17,17,0.12)',
               }}>
                 {isWon ? (
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                 ) : (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" /></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" /></svg>
                 )}
               </div>
 
               {/* Info */}
               <div className="flex-1 min-w-0">
-                <div className="text-[13px] font-medium text-[#E2E8F0] truncate">
+                <div className="text-[13px] font-medium text-[#D1D5DB] truncate">
                   {es ? ES_TYPES[ev.type] || ev.type : ev.type}
                 </div>
                 <div className="flex items-center gap-2 mt-0.5">
                   <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{
-                    background: isWon ? 'rgba(13,148,136,0.15)' : 'rgba(79,70,229,0.12)',
-                    color: isWon ? '#0D9488' : '#6366F1',
+                    background: isWon ? 'rgba(13,148,136,0.15)' : 'rgba(17,17,17,0.12)',
+                    color: isWon ? '#0D9488' : '#333333',
                   }}>
                     {isWon ? (es ? 'Ganado' : 'Won') : (es ? 'Acuerdo' : 'Settled')}
                   </span>
-                  <span className="text-[10px] text-[#B0BDD0]">{ev.state}</span>
+                  <span className="text-[10px] text-[#6B7280]">{ev.state}</span>
                 </div>
               </div>
 
               {/* Amount + time */}
               <div className="text-right flex-shrink-0">
-                <div className="text-[14px] font-bold font-mono" style={{ color: isWon ? '#0D9488' : '#6366F1' }}>
+                <div className="text-[14px] font-bold font-mono" style={{ color: isWon ? '#0D9488' : '#333333' }}>
                   {ev.amount}
                 </div>
-                <div className="text-[10px] text-[#B0BDD0]">{ev.time}</div>
+                <div className="text-[10px] text-[#6B7280]">{ev.time}</div>
               </div>
             </div>
           );
@@ -121,15 +121,15 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
       </div>
 
       {/* Footer */}
-      <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(79,70,229,0.04)' }}>
-        <div className="text-[11px] text-[#B0BDD0]">
+      <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(17,17,17,0.04)' }}>
+        <div className="text-[11px] text-[#6B7280]">
           {es ? 'Basado en datos agregados de casos federales' : 'Based on aggregate federal case data'}
         </div>
         {visibleCount < CASE_EVENTS.length && (
           <button
             onClick={() => setVisibleCount(Math.min(visibleCount + 3, CASE_EVENTS.length))}
             className="text-[11px] font-semibold border-none bg-transparent cursor-pointer transition-colors"
-            style={{ color: '#6366F1' }}
+            style={{ color: '#333333' }}
           >
             {es ? 'Ver más ↓' : 'Show more ↓'}
           </button>

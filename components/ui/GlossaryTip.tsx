@@ -159,7 +159,7 @@ export function GlossaryTip({ term, children, lang = 'en' }: GlossaryTipProps) {
       className="relative inline-block cursor-help"
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
-      style={{ borderBottom: '1px dashed #4F46E540' }}
+      style={{ borderBottom: '1px dashed #11111140' }}
       role="tooltip"
       aria-label={displayDef}
     >
@@ -167,14 +167,14 @@ export function GlossaryTip({ term, children, lang = 'en' }: GlossaryTipProps) {
       {show && (
         <span
           className="absolute z-[var(--z-dropdown)] bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 rounded-xl text-[12px] leading-relaxed font-normal text-left w-56 sm:w-64 max-w-[calc(100vw-2rem)]"
-          style={{ background: '#0B1221', color: '#E2E8F0', boxShadow: '0 8px 32px rgba(11,18,33,.25)' }}
+          style={{ background: '#FAFAF8', color: '#D1D5DB', boxShadow: '0 8px 32px rgba(255,255,255,.25)' }}
           role="tooltip"
         >
           <span className="font-bold text-white block mb-0.5 capitalize">{term}</span>
           {displayDef}
           <span
             className="absolute top-full left-1/2 -translate-x-1/2 -mt-px w-2.5 h-2.5 rotate-45"
-            style={{ background: '#0B1221' }}
+            style={{ background: '#FAFAF8' }}
             aria-hidden="true"
           />
         </span>

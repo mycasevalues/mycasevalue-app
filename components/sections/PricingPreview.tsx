@@ -134,7 +134,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
       {/* Header */}
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[2px] uppercase mb-3"
-          style={{ background: 'rgba(99,102,241,0.1)', color: '#818CF8' }}>
+          style={{ background: 'rgba(17,17,17,0.1)', color: '#818CF8' }}>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#818CF8" strokeWidth="2.5" aria-hidden="true">
             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
           </svg>
@@ -157,15 +157,15 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
             key={plan.id}
             className="relative rounded-xl p-4 flex flex-col"
             style={{
-              background: plan.highlight ? 'rgba(99,102,241,0.05)' : 'rgba(255,255,255,0.01)',
-              border: `1px solid ${plan.highlight ? 'rgba(99,102,241,0.3)' : 'rgba(255,255,255,0.05)'}`,
+              background: plan.highlight ? 'rgba(17,17,17,0.05)' : 'rgba(255,255,255,0.01)',
+              border: `1px solid ${plan.highlight ? 'rgba(17,17,17,0.3)' : 'rgba(255,255,255,0.05)'}`,
             }}
           >
             {/* Badge */}
             {plan.badge && (
               <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-[8px] font-bold tracking-[1.5px]"
                 style={{
-                  background: plan.highlight ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(245,158,11,0.15)',
+                  background: plan.highlight ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(245,158,11,0.15)',
                   color: plan.highlight ? '#fff' : '#F59E0B',
                 }}>
                 {isEs ? plan.badgeEs : plan.badge}
@@ -174,18 +174,18 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
 
             {/* Plan name & price */}
             <div className="mb-3 mt-1">
-              <h3 className="text-sm font-bold mb-1" style={{ color: '#E2E8F0' }}>
+              <h3 className="text-sm font-bold mb-1" style={{ color: '#D1D5DB' }}>
                 {isEs ? plan.nameEs : plan.name}
               </h3>
               <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-extrabold" style={{ color: plan.highlight ? '#818CF8' : '#E2E8F0' }}>
+                <span className="text-2xl font-extrabold" style={{ color: plan.highlight ? '#818CF8' : '#D1D5DB' }}>
                   {plan.price}
                 </span>
-                <span className="text-[10px]" style={{ color: '#8B95A5' }}>
+                <span className="text-[10px]" style={{ color: '#9CA3AF' }}>
                   {isEs ? plan.periodEs : plan.period}
                 </span>
               </div>
-              <p className="text-[10px] mt-1" style={{ color: '#8B95A5' }}>
+              <p className="text-[10px] mt-1" style={{ color: '#9CA3AF' }}>
                 {isEs ? plan.descriptionEs : plan.description}
               </p>
             </div>
@@ -203,7 +203,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
                       <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
                     </svg>
                   )}
-                  <span className="text-[11px]" style={{ color: f.included ? '#B0BDD0' : '#475569' }}>
+                  <span className="text-[11px]" style={{ color: f.included ? '#6B7280' : '#4B5563' }}>
                     {isEs ? f.textEs : f.text}
                   </span>
                 </div>
@@ -214,8 +214,8 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
             <button
               className="w-full py-2.5 rounded-lg text-[12px] font-semibold transition-all hover:scale-[1.02]"
               style={{
-                background: plan.highlight ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(255,255,255,0.05)',
-                color: plan.highlight ? '#fff' : '#B0BDD0',
+                background: plan.highlight ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.05)',
+                color: plan.highlight ? '#fff' : '#6B7280',
                 border: plan.highlight ? 'none' : '1px solid rgba(255,255,255,0.08)',
                 cursor: 'pointer',
               }}
@@ -228,7 +228,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
 
       {/* Guarantee bar */}
       <div className="text-center mt-6">
-        <div className="inline-flex items-center gap-2 text-[11px]" style={{ color: '#8B95A5' }}>
+        <div className="inline-flex items-center gap-2 text-[11px]" style={{ color: '#9CA3AF' }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" aria-hidden="true">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>

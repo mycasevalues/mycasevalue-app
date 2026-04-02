@@ -96,18 +96,18 @@ export default function SettlementHistogram({
   const userX = userPercent ? padding + (userPercent / 100) * (chartWidth - padding * 2) : null;
 
   return (
-    <div className="w-full rounded-lg p-6" style={{ backgroundColor: '#131B2E' }}>
+    <div className="w-full rounded-lg p-6" style={{ backgroundColor: '#FFFFFF' }}>
       {/* Header */}
       <div className="mb-6">
         <h3
           className="text-lg font-semibold"
-          style={{ color: '#F0F2F5' }}
+          style={{ color: '#111827' }}
         >
           {lang === 'en' ? 'Settlement Distribution' : 'Distribución de Acuerdos'}
         </h3>
         <p
           className="text-sm mt-1"
-          style={{ color: '#B0BDD0' }}
+          style={{ color: '#6B7280' }}
         >
           {lang === 'en'
             ? `Median settlement: ${formatCurrency(median)}`
@@ -128,7 +128,7 @@ export default function SettlementHistogram({
             y1={padding}
             x2={padding}
             y2={chartHeight + padding}
-            stroke="#1E293B"
+            stroke="#E5E7EB"
             strokeWidth={2}
           />
 
@@ -138,7 +138,7 @@ export default function SettlementHistogram({
             y1={chartHeight + padding}
             x2={chartWidth + padding}
             y2={chartHeight + padding}
-            stroke="#1E293B"
+            stroke="#E5E7EB"
             strokeWidth={2}
           />
 
@@ -152,7 +152,7 @@ export default function SettlementHistogram({
                   y1={y}
                   x2={padding}
                   y2={y}
-                  stroke="#1E293B"
+                  stroke="#E5E7EB"
                   strokeWidth={1}
                 />
                 <text
@@ -160,7 +160,7 @@ export default function SettlementHistogram({
                   y={y + 4}
                   textAnchor="end"
                   fontSize={12}
-                  fill="#B0BDD0"
+                  fill="#6B7280"
                 >
                   {percent}%
                 </text>
@@ -206,8 +206,8 @@ export default function SettlementHistogram({
                       y={y - 50}
                       width={100}
                       height={40}
-                      fill="#0F172A"
-                      stroke="#1E293B"
+                      fill="#FFFFFF"
+                      stroke="#E5E7EB"
                       strokeWidth={1}
                       rx={4}
                     />
@@ -217,7 +217,7 @@ export default function SettlementHistogram({
                       textAnchor="middle"
                       fontSize={12}
                       fontWeight="bold"
-                      fill="#F0F2F5"
+                      fill="#111827"
                     >
                       {range.count}
                     </text>
@@ -226,7 +226,7 @@ export default function SettlementHistogram({
                       y={y - 14}
                       textAnchor="middle"
                       fontSize={11}
-                      fill="#B0BDD0"
+                      fill="#6B7280"
                     >
                       {range.percentage}%
                     </text>
@@ -294,7 +294,7 @@ export default function SettlementHistogram({
                 y={chartHeight + padding + 25}
                 textAnchor="middle"
                 fontSize={11}
-                fill="#B0BDD0"
+                fill="#6B7280"
               >
                 {range.label}
               </text>
@@ -310,7 +310,7 @@ export default function SettlementHistogram({
             className="w-3 h-3 rounded-full"
             style={{ backgroundColor: '#10B981' }}
           />
-          <span className="text-sm" style={{ color: '#B0BDD0' }}>
+          <span className="text-sm" style={{ color: '#6B7280' }}>
             {lang === 'en' ? 'Median' : 'Mediana'}
           </span>
         </div>
@@ -320,7 +320,7 @@ export default function SettlementHistogram({
               className="w-3 h-3 rounded-full"
               style={{ backgroundColor: '#F59E0B' }}
             />
-            <span className="text-sm" style={{ color: '#B0BDD0' }}>
+            <span className="text-sm" style={{ color: '#6B7280' }}>
               {lang === 'en' ? 'Your Amount' : 'Tu Cantidad'}
             </span>
           </div>

@@ -17,16 +17,16 @@ interface HeroStatsProps {
 }
 
 const STATS_EN: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#6366F1' },
+  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#333333' },
   { value: 94, suffix: '%', label: 'Data Coverage', sublabel: 'All districts', icon: '', color: '#5EEAD4' },
-  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '📁', color: '#A5B4FC' },
+  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '📁', color: '#8B5CF6' },
   { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '📅', color: '#F472B6' },
 ];
 
 const STATS_ES: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#6366F1' },
+  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#333333' },
   { value: 94, suffix: '%', label: 'Cobertura', sublabel: 'Todos los distritos', icon: '', color: '#5EEAD4' },
-  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '📁', color: '#A5B4FC' },
+  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '📁', color: '#8B5CF6' },
   { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '📅', color: '#F472B6' },
 ];
 
@@ -66,7 +66,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
       style={{
         padding: '20px 16px',
         borderRadius: '16px',
-        background: 'linear-gradient(180deg, rgba(19,27,46,0.9) 0%, rgba(11,18,33,0.95) 100%)',
+        background: 'linear-gradient(180deg, rgba(19,27,46,0.9) 0%, rgba(255,255,255,0.95) 100%)',
         border: `1px solid ${stat.color}20`,
         position: 'relative',
         overflow: 'hidden',
@@ -91,11 +91,11 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         }}>
           {stat.prefix}{stat.value % 1 !== 0 ? count.toFixed(1) : count}{stat.suffix}
         </div>
-        <div style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5', marginTop: '6px' }}>
+        <div style={{ fontSize: '13px', fontWeight: 600, color: '#111827', marginTop: '6px' }}>
           {stat.label}
         </div>
         {stat.sublabel && (
-          <div style={{ fontSize: '11px', color: '#8B95A5', marginTop: '2px' }}>
+          <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px' }}>
             {stat.sublabel}
           </div>
         )}

@@ -38,18 +38,18 @@ export function Accordion({ items }: AccordionProps) {
             className={cn(
               'w-full px-6 py-4 flex items-center justify-between text-left font-medium transition-colors duration-200',
               openId === item.id
-                ? 'text-[#A5B4FC]'
-                : 'text-[#F0F2F5] hover:bg-[#1E293B]'
+                ? 'text-[#8B5CF6]'
+                : 'text-[#111827] hover:bg-[#E5E7EB]'
             )}
             style={{
-              background: openId === item.id ? '#1E293B' : '#131B2E',
+              background: openId === item.id ? '#E5E7EB' : '#FFFFFF',
             }}
           >
             <span>{item.title}</span>
             <span
               className={cn(
                 'text-xl font-light transition-transform duration-300',
-                openId === item.id ? 'text-[#A5B4FC] rotate-0' : 'text-[#8B95A5] rotate-45'
+                openId === item.id ? 'text-[#8B5CF6] rotate-0' : 'text-[#9CA3AF] rotate-45'
               )}
             >
               {openId === item.id ? '×' : '+'}
@@ -69,7 +69,7 @@ export function Accordion({ items }: AccordionProps) {
             <div className="overflow-hidden">
               <div className="px-6 py-4 leading-relaxed" style={{
                 background: 'rgba(19,27,46,0.5)',
-                color: '#CBD5E1',
+                color: '#374151',
               }}>
                 {item.content}
               </div>

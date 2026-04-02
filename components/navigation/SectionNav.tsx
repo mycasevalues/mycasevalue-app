@@ -73,7 +73,7 @@ export default function SectionNav({ lang }: SectionNavProps) {
           backdropFilter: 'blur(20px) saturate(180%)',
           WebkitBackdropFilter: 'blur(20px) saturate(180%)',
           border: '1px solid rgba(99, 102, 241, 0.2)',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(99,102,241,0.1)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(17,17,17,0.1)',
         }}
       >
         {SECTIONS.map((section) => {
@@ -84,8 +84,8 @@ export default function SectionNav({ lang }: SectionNavProps) {
               onClick={() => scrollTo(section.id)}
               className="px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 whitespace-nowrap"
               style={{
-                background: isActive ? 'rgba(99,102,241,0.2)' : 'transparent',
-                color: isActive ? '#A5B4FC' : '#8B95A5',
+                background: isActive ? 'rgba(17,17,17,0.2)' : 'transparent',
+                color: isActive ? '#8B5CF6' : '#9CA3AF',
                 border: 'none',
                 cursor: 'pointer',
                 minHeight: '44px',
@@ -104,7 +104,7 @@ export default function SectionNav({ lang }: SectionNavProps) {
           className="flex items-center justify-center w-11 h-11 rounded-full transition-all duration-200"
           style={{
             background: 'rgba(255,255,255,0.05)',
-            color: '#8B95A5',
+            color: '#9CA3AF',
             border: 'none',
             cursor: 'pointer',
             minHeight: '44px',

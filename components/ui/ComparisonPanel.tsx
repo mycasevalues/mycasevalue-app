@@ -87,12 +87,12 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
     return (
       <div
         key={metricKey}
-        className="mb-6 pb-6 border-b border-[#1E293B]"
+        className="mb-6 pb-6 border-b border-[#E5E7EB]"
         onMouseEnter={() => setHoveredMetric(metricKey)}
         onMouseLeave={() => setHoveredMetric(null)}
       >
         <div className="mb-3 flex items-center justify-between">
-          <label className="text-sm font-medium text-[#B0BDD0]">{label}</label>
+          <label className="text-sm font-medium text-[#6B7280]">{label}</label>
           {caseB && winner && (
             <span className="text-xs text-[#5EEAD4] font-semibold">
                {winner === 'A' ? 'Case A' : 'Case B'} wins
@@ -104,13 +104,13 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           {/* Case A */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs text-[#F0F2F5] font-semibold">{caseA.label}</span>
-              <span className="text-sm font-bold text-[#4F46E5]">{formatA(valueA)}</span>
+              <span className="text-xs text-[#111827] font-semibold">{caseA.label}</span>
+              <span className="text-sm font-bold text-[#111111]">{formatA(valueA)}</span>
             </div>
-            <div className="h-2 bg-[#1E293B] rounded-full overflow-hidden">
+            <div className="h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
               <div
-                className={`h-full bg-[#4F46E5] rounded-full transition-all duration-500 ease-out ${
-                  hoveredMetric === metricKey ? 'shadow-lg shadow-[#4F46E5]/50' : ''
+                className={`h-full bg-[#111111] rounded-full transition-all duration-500 ease-out ${
+                  hoveredMetric === metricKey ? 'shadow-lg shadow-[#111111]/50' : ''
                 }`}
                 style={{ width: `${barWidthA}%` }}
               />
@@ -121,12 +121,12 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           {caseB && (
             <div>
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs text-[#F0F2F5] font-semibold">{caseB.label}</span>
+                <span className="text-xs text-[#111827] font-semibold">{caseB.label}</span>
                 <span className="text-sm font-bold text-[#5EEAD4]">
                   {formatB ? formatB(valueB!) : formatA(valueB!)}
                 </span>
               </div>
-              <div className="h-2 bg-[#1E293B] rounded-full overflow-hidden">
+              <div className="h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
                 <div
                   className={`h-full bg-[#5EEAD4] rounded-full transition-all duration-500 ease-out ${
                     hoveredMetric === metricKey ? 'shadow-lg shadow-[#5EEAD4]/50' : ''
@@ -188,12 +188,12 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
   return (
     <div className="w-full">
       {caseB ? (
-        <div className="bg-[#131B2E] border border-[#1E293B] rounded-lg p-6 md:p-8">
+        <div className="bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg p-6 md:p-8">
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-[#F0F2F5] mb-2">
+            <h2 className="text-2xl font-bold text-[#111827] mb-2">
               {lang === 'es' ? 'Comparación de casos' : 'Case Comparison'}
             </h2>
-            <p className="text-sm text-[#B0BDD0]">
+            <p className="text-sm text-[#6B7280]">
               {lang === 'es'
                 ? 'Analiza las métricas clave lado a lado'
                 : 'Analyze key metrics side by side'}
@@ -249,18 +249,18 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           </div>
 
           {/* Verdict Summary */}
-          <div className="bg-[#1E293B] border-l-4 border-[#5EEAD4] rounded px-4 py-3">
-            <p className="text-sm text-[#F0F2F5]">
+          <div className="bg-[#E5E7EB] border-l-4 border-[#5EEAD4] rounded px-4 py-3">
+            <p className="text-sm text-[#111827]">
               <span className="font-semibold text-[#5EEAD4]">Verdict: </span>
               {generateVerdict()}
             </p>
           </div>
         </div>
       ) : (
-        <div className="bg-[#131B2E] border-2 border-dashed border-[#1E293B] rounded-lg p-8 md:p-12 text-center">
+        <div className="bg-[#FFFFFF] border-2 border-dashed border-[#E5E7EB] rounded-lg p-8 md:p-12 text-center">
           <div className="mb-4">
             <svg
-              className="w-12 h-12 mx-auto text-[#B0BDD0] mb-4"
+              className="w-12 h-12 mx-auto text-[#6B7280] mb-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -273,10 +273,10 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
               />
             </svg>
           </div>
-          <h3 className="text-lg font-semibold text-[#F0F2F5] mb-2">
+          <h3 className="text-lg font-semibold text-[#111827] mb-2">
             {lang === 'es' ? 'Selecciona un caso para comparar' : 'Select a case to compare'}
           </h3>
-          <p className="text-sm text-[#B0BDD0] mb-6">
+          <p className="text-sm text-[#6B7280] mb-6">
             {lang === 'es'
               ? 'Elige un segundo tipo de caso para ver un análisis comparativo detallado'
               : 'Choose a second case type to see detailed comparative analysis'}
@@ -284,7 +284,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           {onSelectB && (
             <button
               onClick={onSelectB}
-              className="inline-flex items-center px-4 py-2 bg-[#4F46E5] hover:bg-[#4F46E5]/90 text-[#F0F2F5] rounded-lg font-medium text-sm transition-colors duration-200"
+              className="inline-flex items-center px-4 py-2 bg-[#111111] hover:bg-[#111111]/90 text-[#111827] rounded-lg font-medium text-sm transition-colors duration-200"
             >
               {lang === 'es' ? 'Seleccionar caso' : 'Select Case'}
             </button>

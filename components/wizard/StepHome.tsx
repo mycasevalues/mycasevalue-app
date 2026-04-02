@@ -85,8 +85,8 @@ export function StepHome({
               {/* Top badges row */}
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
-                  style={{ color: 'var(--accent-secondary, #A5B4FC)', background: 'rgba(79,70,229,0.12)', border: '1px solid rgba(99,102,241,0.2)' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                  style={{ color: 'var(--accent-secondary, #8B5CF6)', background: 'rgba(17,17,17,0.12)', border: '1px solid rgba(17,17,17,0.2)' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                   {t.hero_badge}
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[11px] font-semibold"
@@ -106,19 +106,19 @@ export function StepHome({
                 </h1>
               </div>
 
-              <p className="text-[14px] sm:text-[15px] max-w-xl leading-[1.5] mb-3" style={{ color: '#B0BDD0' }}>
-                {t.hero_sub_pre} <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{totalDisplay}</strong> {t.hero_sub_post}
+              <p className="text-[14px] sm:text-[15px] max-w-xl leading-[1.5] mb-3" style={{ color: '#6B7280' }}>
+                {t.hero_sub_pre} <strong className="font-data" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{totalDisplay}</strong> {t.hero_sub_post}
               </p>
 
               {/* AI Input */}
               <div className="mb-3 max-w-lg relative" style={{ zIndex: 20 }}>
                 <div className="relative group">
                   <div className="absolute -inset-0.5 rounded-2xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"
-                    style={{ background: 'linear-gradient(135deg, rgba(64,64,242,0.2), rgba(13,148,136,0.1), rgba(64,64,242,0.2))', filter: 'blur(8px)' }} />
+                    style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.2), rgba(13,148,136,0.1), rgba(17,17,17,0.2))', filter: 'blur(8px)' }} />
                   <div className="relative">
                     <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-1.5" style={{ pointerEvents: 'none' }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/><path d="M10 20h4"/></svg>
-                      <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#6366F1' }}>AI</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/><path d="M10 20h4"/></svg>
+                      <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#333333' }}>AI</span>
                     </div>
                     <input type="text" value={naturalInput}
                       onChange={e => setNaturalInput(e.target.value)}
@@ -141,7 +141,7 @@ export function StepHome({
                       aria-label={lang === 'es' ? 'Descripción AI de su situación' : 'AI case description'}
                       className="w-full text-[15px] rounded-2xl transition-all input-frosted focus-ring-premium"
                       style={{
-                        color: '#F0F2F5',
+                        color: '#111827',
                         boxShadow: '0 4px 20px rgba(0,0,0,.15)',
                         padding: '18px 56px 18px 58px',
                       }} />
@@ -157,7 +157,7 @@ export function StepHome({
                       }}
                       className="absolute right-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl flex items-center justify-center border-none magnetic-btn ripple-effect"
                       aria-label={lang === 'es' ? 'Buscar' : 'Search'}
-                      style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 2px 10px rgba(64,64,242,.25)' }}>
+                      style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 2px 10px rgba(17,17,17,.25)' }}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     </button>
                   </div>
@@ -165,10 +165,10 @@ export function StepHome({
                   {/* AI suggestions */}
                   {showSuggestions && aiSuggestions.length > 0 && (
                     <div className="absolute left-0 right-0 top-full mt-2 rounded-2xl overflow-hidden border shadow-2xl"
-                      style={{ background: '#131B2E', borderColor: 'rgba(99,102,241,0.2)', boxShadow: '0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(99,102,241,0.1)', zIndex: 50 }}>
-                      <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ borderColor: 'rgba(99,102,241,0.1)', background: 'rgba(99,102,241,0.05)' }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
-                        <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>
+                      style={{ background: '#FFFFFF', borderColor: 'rgba(17,17,17,0.2)', boxShadow: '0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(17,17,17,0.1)', zIndex: 50 }}>
+                      <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ borderColor: 'rgba(17,17,17,0.1)', background: 'rgba(17,17,17,0.05)' }}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
+                        <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>
                           {lang === 'es' ? 'COINCIDENCIAS INTELIGENTES' : 'SMART MATCHES'}
                         </span>
                         <span className="text-[10px] ml-auto" style={{ color: 'var(--fg-muted)' }}>
@@ -179,18 +179,18 @@ export function StepHome({
                         <button key={i}
                           onMouseDown={(e) => { e.preventDefault(); setSit(s.sit); setSpec(s.opt); setAmount(s.sit.dm); go(2); setShowSuggestions(false); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
                           className="w-full flex items-center gap-3 px-4 py-3 text-left transition-all border-none bg-transparent"
-                          style={{ borderBottom: i < aiSuggestions.length - 1 ? '1px solid rgba(30,41,59,0.5)' : 'none' }}
-                          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(99,102,241,0.08)'; }}
+                          style={{ borderBottom: i < aiSuggestions.length - 1 ? '1px solid rgba(229,231,235,0.5)' : 'none' }}
+                          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(17,17,17,0.08)'; }}
                           onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}>
                           <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${s.sit.color}20`, border: `1px solid ${s.sit.color}30` }}>
                             <CategoryIcon name={s.sit.icon} size={14} color={s.sit.color} />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-[13px] font-semibold truncate" style={{ color: '#E2E8F0' }}>{s.opt.label}</div>
+                            <div className="text-[13px] font-semibold truncate" style={{ color: '#D1D5DB' }}>{s.opt.label}</div>
                             <div className="text-[11px] truncate" style={{ color: 'var(--fg-muted)' }}>{s.sit.label} · {s.opt.d}</div>
                           </div>
                           {i === 0 && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-secondary, #A5B4FC)' }}>
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-secondary, #8B5CF6)' }}>
                               {lang === 'es' ? 'Mejor' : 'Best match'}
                             </span>
                           )}
@@ -209,7 +209,7 @@ export function StepHome({
               <div className="flex flex-col sm:flex-row gap-3">
                 <button onClick={() => go(1)}
                   className="cta-glow cta-pulse btn-primary magnetic-btn ripple-effect px-8 sm:px-8 py-3.5 sm:py-4.5 text-[15px] sm:text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform w-full sm:w-auto"
-                  style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 24px rgba(64,64,242,.3)' }}>
+                  style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 24px rgba(17,17,17,.3)' }}>
                   {t.hero_cta}
                 </button>
                 <button onClick={demo}
@@ -226,15 +226,15 @@ export function StepHome({
               {/* Social proof */}
               <div className="flex items-center gap-3 mt-6">
                 <div className="flex -space-x-2">
-                  {['#4F46E5', '#0D9488', '#1A2744', '#6366F1', '#0D9488'].map((c, i) => (
+                  {['#111111', '#0D9488', '#1A2744', '#333333', '#0D9488'].map((c, i) => (
                     <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
                       style={{ background: c, zIndex: 5 - i, border: '2px solid #131D35' }}>
                       {['J', 'M', 'K', 'S', 'A'][i]}
                     </div>
                   ))}
                 </div>
-                <div className="text-[12px]" style={{ color: '#B0BDD0' }}>
-                  <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
+                <div className="text-[12px]" style={{ color: '#6B7280' }}>
+                  <strong className="font-data" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
                   <span className="live-beacon ml-1.5" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
                 </div>
               </div>
@@ -247,28 +247,28 @@ export function StepHome({
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
                       {heroCounterDone ? <><AnimatedNumber value={5.1} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
                   </div>
                   <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.4 }} />
                   <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary)', textShadow: '0 2px 12px rgba(13,148,136,0.3)' }}>
                       {heroCounterDone ? '94' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
                   </div>
-                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
-                  <div className="stat-glow" style={{ '--stat-color': '#A5B4FC' } as any}>
-                    <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #A5B4FC)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
+                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #333333, transparent)', opacity: 0.4 }} />
+                  <div className="stat-glow" style={{ '--stat-color': '#8B5CF6' } as any}>
+                    <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #8B5CF6)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
                       {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
                   </div>
-                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
+                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #333333, transparent)', opacity: 0.4 }} />
                   <div className="stat-glow" style={{ '--stat-color': '#5EEAD4' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#5EEAD4', textShadow: '0 2px 12px rgba(94,234,212,0.3)' }}>
                       {heroCounterDone ? '84' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
                   </div>
                 </div>
 
@@ -277,9 +277,9 @@ export function StepHome({
                   <div className="text-[10px] font-bold mb-3 tracking-[2px] uppercase" style={{ color: '#9BA8BE' }}>{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
                   <div className="flex flex-wrap gap-2">
                     {[
-                      { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
+                      { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
                       { name: 'CourtListener', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M9 11L12 14L22 4" /></svg> },
-                      { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
+                      { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
                     ].map((s, i) => (
                       <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all hover:scale-[1.02] spotlight-card stat-underline" style={{
                         color: '#C8D3E5',
@@ -312,7 +312,7 @@ export function StepHome({
                 </svg>
               </div>
               <Card glow className="relative overflow-hidden" style={{ padding: '32px' }}>
-                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #4F46E5, #6366F1, #0D9488)' }} />
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #111111, #333333, #0D9488)' }} />
                 <SectionLabel>{t.select_situation}</SectionLabel>
                 <div className="grid grid-cols-2 gap-3 stagger-in">
                   {SITS.map(si => (

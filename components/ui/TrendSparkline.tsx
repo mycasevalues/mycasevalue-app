@@ -22,7 +22,7 @@ export function TrendSparkline({ data, width = 120, height = 32 }: TrendSparklin
   ).join(' ');
   return (
     <svg width={width} height={height} className="inline-block">
-      <polyline points={points} fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points={points} fill="none" stroke="#111111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

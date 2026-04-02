@@ -30,10 +30,10 @@ const STAGES: LifecycleStage[] = [
     durationEs: 'Dia 1',
     description: 'Complaint filed in federal district court. Court assigns case number, judge, and magistrate.',
     descriptionEs: 'La demanda se presenta en el tribunal federal de distrito. El tribunal asigna numero de caso, juez y magistrado.',
-    color: '#6366F1',
+    color: '#333333',
     icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z',
     exitPaths: [
-      { label: 'Proceeds to service', labelEs: 'Procede a notificacion', pct: 100, color: '#6366F1' },
+      { label: 'Proceeds to service', labelEs: 'Procede a notificacion', pct: 100, color: '#333333' },
     ],
   },
   {

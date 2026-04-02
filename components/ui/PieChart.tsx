@@ -47,7 +47,7 @@ export default function PieChart({ segments, size = 200, strokeWidth = 14, lang 
         <circle
           cx={cx} cy={cy} r={r}
           fill="none"
-          stroke="#1E293B"
+          stroke="#E5E7EB"
           strokeWidth={strokeWidth - 4}
         />
         {/* Segments */}
@@ -85,7 +85,7 @@ export default function PieChart({ segments, size = 200, strokeWidth = 14, lang 
       }}>
         <div style={{
           fontSize: size * 0.18,
-          fontFamily: "'Outfit', system-ui, sans-serif",
+          fontFamily: "'Roboto', system-ui, sans-serif",
           fontWeight: 700,
           color: segments[0]?.color || '#0D9488',
           lineHeight: 1,
@@ -94,7 +94,7 @@ export default function PieChart({ segments, size = 200, strokeWidth = 14, lang 
         </div>
         <div style={{
           fontSize: size * 0.055,
-          color: '#B0BDD0',
+          color: '#6B7280',
           fontWeight: 600,
           letterSpacing: '0.05em',
           marginTop: 2,

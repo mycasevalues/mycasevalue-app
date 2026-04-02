@@ -21,7 +21,7 @@ function SkeletonPulse({ width = '100%', height = '16px', borderRadius = '8px', 
         width,
         height,
         borderRadius,
-        background: 'linear-gradient(90deg, #1E293B 25%, #2D3A4F 50%, #1E293B 75%)',
+        background: 'linear-gradient(90deg, #E5E7EB 25%, #2D3A4F 50%, #E5E7EB 75%)',
         backgroundSize: '200% 100%',
         animation: 'skeleton-shimmer 1.8s ease-in-out infinite',
       }}
@@ -49,7 +49,7 @@ export function SkeletonChart({ height = '200px', className = '' }: { height?: s
     <div className={className} style={{ height, position: 'relative', overflow: 'hidden' }}>
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(180deg, #1E293B 0%, #131B2E 100%)',
+        background: 'linear-gradient(180deg, #E5E7EB 0%, #FFFFFF 100%)',
         borderRadius: '12px',
       }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', height: '100%', padding: '20px', gap: '8px' }}>
@@ -58,7 +58,7 @@ export function SkeletonChart({ height = '200px', className = '' }: { height?: s
               flex: 1,
               height: `${h}%`,
               borderRadius: '4px 4px 0 0',
-              background: 'linear-gradient(90deg, #1E293B 25%, #2D3A4F 50%, #1E293B 75%)',
+              background: 'linear-gradient(90deg, #E5E7EB 25%, #2D3A4F 50%, #E5E7EB 75%)',
               backgroundSize: '200% 100%',
               animation: `skeleton-shimmer 1.8s ease-in-out ${i * 0.1}s infinite`,
             }} />
@@ -74,7 +74,7 @@ export function SkeletonCard({ className = '' }: { className?: string }) {
     <div className={className} style={{
       padding: '24px',
       borderRadius: '16px',
-      background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(11,18,33,0.9) 100%)',
+      background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(255,255,255,0.9) 100%)',
       border: '1px solid rgba(51,65,85,0.4)',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
@@ -97,8 +97,8 @@ export function SkeletonStatRow({ count = 4, className = '' }: { count?: number;
         <div key={i} style={{
           padding: '16px',
           borderRadius: '12px',
-          background: '#131B2E',
-          border: '1px solid #1E293B',
+          background: '#FFFFFF',
+          border: '1px solid #E5E7EB',
           textAlign: 'center',
         }}>
           <SkeletonPulse width="50%" height="28px" borderRadius="8px" className="mx-auto" />

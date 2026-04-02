@@ -44,11 +44,11 @@ export default function BlogPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
+            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
             INSIGHTS & ANALYSIS
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
@@ -80,8 +80,8 @@ export default function BlogPage() {
                   <span
                     className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold"
                     style={{
-                      background: 'rgba(99,102,241,0.15)',
-                      color: '#4F46E5',
+                      background: 'rgba(17,17,17,0.15)',
+                      color: '#111111',
                     }}
                   >
                     {post.category}
@@ -120,8 +120,8 @@ export default function BlogPage() {
                       href={`/blog/${post.slug}`}
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all"
                       style={{
-                        background: 'rgba(99,102,241,0.1)',
-                        color: '#4F46E5',
+                        background: 'rgba(17,17,17,0.1)',
+                        color: '#111111',
                       }}
                     >
                       Read Article
@@ -138,8 +138,8 @@ export default function BlogPage() {
                       href={`/blog?tag=${encodeURIComponent(tag)}`}
                       className="text-xs font-medium px-2.5 py-1 rounded-full transition-colors"
                       style={{
-                        background: 'rgba(99,102,241,0.08)',
-                        color: '#A5B4FC',
+                        background: 'rgba(17,17,17,0.08)',
+                        color: '#8B5CF6',
                       }}
                     >
                       #{tag}
@@ -154,7 +154,7 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
             Ready to analyze your case?
           </h2>
@@ -164,7 +164,7 @@ export default function BlogPage() {
           <a
             href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#4F46E5', color: '#131B2E' }}
+            style={{ background: '#111111', color: '#FFFFFF' }}
           >
             Check My Case Type
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

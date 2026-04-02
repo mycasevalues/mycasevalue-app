@@ -10,7 +10,7 @@ interface EeocDataPanelProps {
 type Statute = 'titleVII' | 'adea' | 'ada' | 'epa' | 'gina';
 
 const STATUTES: { key: Statute; label: string; labelEs: string; color: string }[] = [
-  { key: 'titleVII', label: 'Title VII', labelEs: 'Titulo VII', color: '#6366F1' },
+  { key: 'titleVII', label: 'Title VII', labelEs: 'Titulo VII', color: '#333333' },
   { key: 'adea', label: 'ADEA', labelEs: 'ADEA', color: '#0D9488' },
   { key: 'ada', label: 'ADA', labelEs: 'ADA', color: '#F59E0B' },
   { key: 'epa', label: 'Equal Pay Act', labelEs: 'Ley de Igualdad Salarial', color: '#EF4444' },
@@ -108,12 +108,12 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
 
     // Center text
     const selectedTotal = (statuteData as Record<string, number>).fy2023 || 0;
-    ctx.fillStyle = '#F0F2F5';
+    ctx.fillStyle = '#111827';
     ctx.font = 'bold 22px system-ui, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(fmt(selectedTotal), cx, cy - 8);
-    ctx.fillStyle = '#B0BDD0';
+    ctx.fillStyle = '#6B7280';
     ctx.font = '11px system-ui, sans-serif';
     ctx.fillText('FY2023', cx, cy + 12);
   }, [selected, statuteData]);
@@ -141,7 +141,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
     const barW = chartW / values.length - 8;
 
     // Y-axis labels
-    ctx.fillStyle = '#8B95A5';
+    ctx.fillStyle = '#9CA3AF';
     ctx.font = '10px system-ui, sans-serif';
     ctx.textAlign = 'right';
     const steps = 4;
@@ -150,7 +150,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
       const y = padding.top + chartH - (chartH * (i / steps));
       ctx.fillText(fmt(val), padding.left - 6, y + 3);
       // Grid line
-      ctx.strokeStyle = 'rgba(148,163,184,0.1)';
+      ctx.strokeStyle = 'rgba(156,163,175,0.1)';
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(padding.left, y);
@@ -159,7 +159,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
     }
 
     // Bars
-    const color = STATUTES.find(s => s.key === selected)?.color || '#6366F1';
+    const color = STATUTES.find(s => s.key === selected)?.color || '#333333';
     values.forEach((val, i) => {
       const x = padding.left + (chartW / values.length) * i + 4;
       const barH = (val / maxVal) * chartH;
@@ -175,7 +175,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
       ctx.fill();
 
       // X-axis label
-      ctx.fillStyle = '#B0BDD0';
+      ctx.fillStyle = '#6B7280';
       ctx.font = '10px system-ui, sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(FY_LABELS[i], x + barW / 2, h - 8);
@@ -200,8 +200,8 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
     <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-default)' }}>
       {/* Badge + Header */}
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[2px] uppercase mb-3"
-        style={{ background: 'rgba(99,102,241,0.1)', color: '#6366F1' }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2.5"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+        style={{ background: 'rgba(17,17,17,0.1)', color: '#333333' }}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2.5"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
         {t.badge}
       </div>
       <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
@@ -213,7 +213,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
       <div className="grid grid-cols-3 gap-3 mb-6">
         {[
           { label: t.recovery, value: fmt(EEOC_DATA.totalMonetaryRecovery), color: '#10B981' },
-          { label: t.charges, value: fmt(EEOC_DATA.newChargesReceived), color: '#6366F1' },
+          { label: t.charges, value: fmt(EEOC_DATA.newChargesReceived), color: '#333333' },
           { label: t.successRate, value: `${EEOC_DATA.litigationSuccessRate}%`, color: '#F59E0B' },
         ].map((m, i) => (
           <div key={i} className="text-center p-3 rounded-xl" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
@@ -271,14 +271,14 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
 
       {/* Statutory damages caps (show for Title VII / ADA) */}
       {(selected === 'titleVII' || selected === 'ada') && (
-        <div className="rounded-xl p-4 mb-4" style={{ background: 'rgba(99,102,241,0.05)', border: '1px solid rgba(99,102,241,0.15)' }}>
-          <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#A5B4FC' }}>
+        <div className="rounded-xl p-4 mb-4" style={{ background: 'rgba(17,17,17,0.05)', border: '1px solid rgba(17,17,17,0.15)' }}>
+          <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#8B5CF6' }}>
             {lang === 'es' ? 'TOPES DE INDEMNIZACION POR LEY' : 'STATUTORY DAMAGE CAPS'} — 42 U.S.C. &sect; 1981a(b)(3)
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {EEOC_DATA.damageCaps.tiers.map((tier, i) => (
               <div key={i} className="text-center p-2 rounded-lg" style={{ background: 'rgba(15,23,42,0.5)' }}>
-                <div className="text-sm font-bold font-mono" style={{ color: '#6366F1' }}>${(tier.cap / 1000)}K</div>
+                <div className="text-sm font-bold font-mono" style={{ color: '#333333' }}>${(tier.cap / 1000)}K</div>
                 <div className="text-[9px] mt-0.5" style={{ color: 'var(--fg-subtle)' }}>{tier.employees} {lang === 'es' ? 'empleados' : 'employees'}</div>
               </div>
             ))}

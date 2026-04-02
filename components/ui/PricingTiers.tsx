@@ -163,14 +163,14 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
   };
 
   return (
-    <div className="w-full py-16" style={{ backgroundColor: '#0B1221' }}>
+    <div className="w-full py-16" style={{ backgroundColor: '#FAFAF8' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: '#E2E8F0' }}>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: '#D1D5DB' }}>
             Simple, Transparent Pricing
           </h2>
-          <p className="text-lg mb-8" style={{ color: '#B0BDD0' }}>
+          <p className="text-lg mb-8" style={{ color: '#6B7280' }}>
             Choose the plan that works for you
           </p>
 
@@ -178,7 +178,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
           <div className="flex items-center justify-center gap-4">
             <span
               style={{
-                color: !isAnnual ? '#E2E8F0' : '#B0BDD0',
+                color: !isAnnual ? '#D1D5DB' : '#6B7280',
               }}
             >
               {t.monthly}
@@ -187,7 +187,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
               onClick={() => setIsAnnual(!isAnnual)}
               className="relative inline-flex h-8 w-14 items-center rounded-full transition-colors"
               style={{
-                backgroundColor: isAnnual ? '#4F46E5' : '#1E293B',
+                backgroundColor: isAnnual ? '#111111' : '#E5E7EB',
               }}
             >
               <span
@@ -199,7 +199,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
             </button>
             <span
               style={{
-                color: isAnnual ? '#E2E8F0' : '#B0BDD0',
+                color: isAnnual ? '#D1D5DB' : '#6B7280',
               }}
             >
               {t.annual}
@@ -233,12 +233,12 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                 <div
                   className="absolute inset-0 rounded-lg p-[2px]"
                   style={{
-                    background: 'linear-gradient(135deg, #4F46E5 0%, #0D9488 100%)',
+                    background: 'linear-gradient(135deg, #111111 0%, #0D9488 100%)',
                   }}
                 >
                   <div
                     className="absolute inset-[2px] rounded-lg"
-                    style={{ backgroundColor: '#131B2E' }}
+                    style={{ backgroundColor: '#FFFFFF' }}
                   />
                 </div>
               )}
@@ -247,8 +247,8 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
               <div
                 className="relative h-full p-8 flex flex-col"
                 style={{
-                  backgroundColor: '#131B2E',
-                  border: `1px solid ${tier.popular ? 'transparent' : '#1E293B'}`,
+                  backgroundColor: '#FFFFFF',
+                  border: `1px solid ${tier.popular ? 'transparent' : '#E5E7EB'}`,
                 }}
               >
                 {/* Popular Badge */}
@@ -257,7 +257,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                     <span
                       className="px-4 py-1 rounded-full text-xs font-bold"
                       style={{
-                        backgroundColor: '#4F46E5',
+                        backgroundColor: '#111111',
                         color: '#ffffff',
                       }}
                     >
@@ -269,7 +269,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                 {/* Tier Name */}
                 <h3
                   className="text-2xl font-bold mb-2"
-                  style={{ color: '#E2E8F0' }}
+                  style={{ color: '#D1D5DB' }}
                 >
                   {getTierName(tier.id)}
                 </h3>
@@ -277,7 +277,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                 {/* Subtitle */}
                 <p
                   className="text-sm mb-6"
-                  style={{ color: '#B0BDD0' }}
+                  style={{ color: '#6B7280' }}
                 >
                   {String(t[tier.subtitle as keyof typeof t] || '')}
                 </p>
@@ -286,14 +286,14 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                 <div className="mb-8">
                   <span
                     className="text-4xl font-bold"
-                    style={{ color: '#E2E8F0' }}
+                    style={{ color: '#D1D5DB' }}
                   >
                     {getPrice(tier)}
                   </span>
                   {tier.id === 'unlimited' && (
                     <span
                       className="text-sm ml-2"
-                      style={{ color: '#B0BDD0' }}
+                      style={{ color: '#6B7280' }}
                     >
                       {isAnnual ? '/year' : '/month'}
                     </span>
@@ -312,9 +312,9 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                   style={{
                     backgroundColor:
                       tier.id === 'free'
-                        ? '#1E293B'
+                        ? '#E5E7EB'
                         : tier.popular
-                          ? '#4F46E5'
+                          ? '#111111'
                           : '#0D9488',
                     color: '#ffffff',
                     opacity: tier.id === 'free' ? 0.6 : 1,
@@ -332,7 +332,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                         size={20}
                         style={{ color: '#0D9488', flexShrink: 0, marginTop: '2px' }}
                       />
-                      <span style={{ color: '#E2E8F0' }}>
+                      <span style={{ color: '#D1D5DB' }}>
                         {t.features[feature as keyof typeof t.features]}
                       </span>
                     </div>
@@ -347,13 +347,13 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
         <div
           className="text-center py-6 px-6 rounded-lg"
           style={{
-            backgroundColor: '#131B2E',
-            border: '1px solid #1E293B',
+            backgroundColor: '#FFFFFF',
+            border: '1px solid #E5E7EB',
           }}
         >
           <p
             className="text-sm font-semibold"
-            style={{ color: '#E2E8F0' }}
+            style={{ color: '#D1D5DB' }}
           >
              {t.moneyBack}
           </p>

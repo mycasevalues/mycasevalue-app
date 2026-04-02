@@ -130,7 +130,7 @@ export function ExitIntentModal({
         {/* Close Button */}
         <button
           onClick={() => setIsVisible(false)}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200 hover:bg-[#1E293B] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200 hover:bg-[#E5E7EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
           style={{
           }}
           aria-label={t.closeAriaLabel}
@@ -154,7 +154,7 @@ export function ExitIntentModal({
         {/* Headline */}
         <h2
           id="exit-intent-headline"
-          className="text-xl font-bold font-['Outfit'] mb-2"
+          className="text-xl font-bold font-['Roboto'] mb-2"
           style={{ color: 'var(--fg-primary)' }}
         >
           {t.headline}
@@ -207,7 +207,7 @@ export function ExitIntentModal({
             style={{
               background: isLoading
                 ? 'var(--accent-primary-hover)'
-                : 'linear-gradient(135deg, var(--accent-primary), #6366F1)',
+                : 'linear-gradient(135deg, var(--accent-primary), #333333)',
             }}
             aria-busy={isLoading}
           >

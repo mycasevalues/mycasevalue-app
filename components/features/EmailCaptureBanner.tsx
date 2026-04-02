@@ -125,8 +125,8 @@ export function EmailCaptureBanner({
     <div
       className="w-full rounded-2xl overflow-hidden border transition-all"
       style={{
-        background: 'linear-gradient(135deg, rgba(79,70,229,0.1), rgba(19,27,46,0.95))',
-        borderColor: 'rgba(99,102,241,0.2)',
+        background: 'linear-gradient(135deg, rgba(17,17,17,0.1), rgba(19,27,46,0.95))',
+        borderColor: 'rgba(17,17,17,0.2)',
       }}
     >
       <div className="px-6 py-8 sm:px-8">
@@ -166,8 +166,8 @@ export function EmailCaptureBanner({
               style={{
                 background:
                   state === 'loading' || !email.trim()
-                    ? 'rgba(99,102,241,0.5)'
-                    : 'linear-gradient(135deg, #4F46E5, #6366F1)',
+                    ? 'rgba(17,17,17,0.5)'
+                    : 'linear-gradient(135deg, #111111, #333333)',
               }}
               className="px-6 py-3 rounded-lg font-semibold text-white transition-all hover:shadow-lg disabled:cursor-not-allowed whitespace-nowrap"
             >

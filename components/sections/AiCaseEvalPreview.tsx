@@ -41,7 +41,7 @@ const EXAMPLE_PROMPTS_ES = [
 const RESULT_METRICS = [
   { label: 'Win Rate', labelEs: 'Tasa de Éxito', value: '47.6%', color: '#10B981' },
   { label: 'Settlement Range', labelEs: 'Rango de Acuerdo', value: '$75K – $500K', color: '#F59E0B' },
-  { label: 'Median Timeline', labelEs: 'Tiempo Medio', value: '8.7 months', color: '#6366F1' },
+  { label: 'Median Timeline', labelEs: 'Tiempo Medio', value: '8.7 months', color: '#333333' },
   { label: 'Cases Analyzed', labelEs: 'Casos Analizados', value: '12,847', color: '#0D9488' },
 ];
 
@@ -176,21 +176,21 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                 style={{
                   background: 'rgba(0,0,0,0.3)',
                   border: '1px solid rgba(139,92,246,0.2)',
-                  color: '#E2E8F0',
+                  color: '#D1D5DB',
                   caretColor: '#A78BFA',
                 }}
                 onFocus={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.5)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.1)'; }}
                 onBlur={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.2)'; e.currentTarget.style.boxShadow = 'none'; }}
                 onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); start(); } }}
               />
-              <div className="absolute bottom-3 right-3 text-[10px]" style={{ color: '#475569' }}>
+              <div className="absolute bottom-3 right-3 text-[10px]" style={{ color: '#4B5563' }}>
                 {userInput.length}/500
               </div>
             </div>
 
             {/* Example prompts */}
             <div>
-              <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#8B95A5' }}>
+              <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#9CA3AF' }}>
                 {t.examplesLabel}
               </div>
               <div className="flex flex-wrap gap-2">
@@ -223,7 +223,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
               className="w-full py-3 rounded-xl text-[14px] font-semibold transition-all hover:scale-[1.01]"
               style={{
                 background: userInput.trim() ? 'linear-gradient(135deg, #7C3AED, #A78BFA)' : 'rgba(139,92,246,0.15)',
-                color: userInput.trim() ? '#fff' : '#8B95A5',
+                color: userInput.trim() ? '#fff' : '#9CA3AF',
                 border: 'none',
                 cursor: userInput.trim() ? 'pointer' : 'not-allowed',
                 boxShadow: userInput.trim() ? '0 4px 20px rgba(124,58,237,0.3)' : 'none',
@@ -262,12 +262,12 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
 
             {/* User input echo */}
             <div className="px-4 py-2 text-[11px] font-mono" style={{ background: 'rgba(139,92,246,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#A78BFA' }}>
-              <span style={{ color: '#8B95A5' }}>{'>'} </span>
+              <span style={{ color: '#9CA3AF' }}>{'>'} </span>
               {userInput.length > 100 ? userInput.slice(0, 100) + '...' : userInput}
             </div>
 
             {/* Terminal body */}
-            <div className="px-4 py-4 font-mono text-[11px] min-h-[160px]" style={{ color: '#B0BDD0' }}>
+            <div className="px-4 py-4 font-mono text-[11px] min-h-[160px]" style={{ color: '#6B7280' }}>
               {phase === 'typing' && (
                 <div className="space-y-1.5">
                   {lines.slice(0, lineIdx + 1).map((line, i) => (
@@ -275,7 +275,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                       <span style={{ color: i < lineIdx ? '#10B981' : '#A78BFA' }}>
                         {i < lineIdx ? '\u2713' : '\u25B8'}
                       </span>
-                      <span style={{ color: i < lineIdx ? '#8B95A5' : '#E2E8F0' }}>
+                      <span style={{ color: i < lineIdx ? '#9CA3AF' : '#D1D5DB' }}>
                         {i === lineIdx ? line.slice(0, charIdx) : line}
                         {i === lineIdx && <span className="inline-block w-1.5 h-3.5 ml-0.5" style={{ background: '#A78BFA', animation: 'blink 1s step-end infinite' }} />}
                       </span>
@@ -291,7 +291,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                     {lines.map((line, i) => (
                       <div key={i} className="flex items-start gap-2">
                         <span style={{ color: '#10B981' }}>{'\u2713'}</span>
-                        <span style={{ color: '#8B95A5' }}>{line}</span>
+                        <span style={{ color: '#9CA3AF' }}>{line}</span>
                       </div>
                     ))}
                   </div>
@@ -301,20 +301,20 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                     {RESULT_METRICS.map((m, i) => (
                       <div key={i} className="rounded-lg p-2.5" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
                         <div className="text-[14px] font-bold" style={{ color: m.color }}>{m.value}</div>
-                        <div className="text-[9px]" style={{ color: '#8B95A5' }}>{isEs ? m.labelEs : m.label}</div>
+                        <div className="text-[9px]" style={{ color: '#9CA3AF' }}>{isEs ? m.labelEs : m.label}</div>
                       </div>
                     ))}
                   </div>
 
                   {/* Actions */}
                   <div className="flex gap-2 mt-2">
-                    <button onClick={reset} className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#8B95A5', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <button onClick={reset} className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#9CA3AF', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {t.reset}
                     </button>
                     <button
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all"
-                      style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', color: '#fff', border: 'none', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                      style={{ background: 'linear-gradient(135deg, #111111, #333333)', color: '#fff', border: 'none', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
                       {t.tryNow}
                     </button>
@@ -329,7 +329,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                     {lines.map((line, i) => (
                       <div key={i} className="flex items-start gap-2">
                         <span style={{ color: '#10B981' }}>{'\u2713'}</span>
-                        <span style={{ color: '#8B95A5' }}>{line}</span>
+                        <span style={{ color: '#9CA3AF' }}>{line}</span>
                       </div>
                     ))}
                   </div>
@@ -337,13 +337,13 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                   {/* Matched case display */}
                   <div className="rounded-lg p-3" style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
                     <div className="text-[11px] font-bold mb-1" style={{ color: '#10B981' }}>CASE TYPE DETECTED</div>
-                    <div className="text-[14px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{matchedCase.label}</div>
-                    <div className="text-[10px]" style={{ color: '#B0BDD0' }}>Confidence: {Math.round(matchedCase.confidence * 100)}%</div>
+                    <div className="text-[14px] font-semibold mb-1" style={{ color: '#D1D5DB' }}>{matchedCase.label}</div>
+                    <div className="text-[10px]" style={{ color: '#6B7280' }}>Confidence: {Math.round(matchedCase.confidence * 100)}%</div>
                   </div>
 
                   {/* Actions */}
                   <div className="flex gap-2 mt-2">
-                    <button onClick={reset} className="flex-1 px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#8B95A5', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <button onClick={reset} className="flex-1 px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#9CA3AF', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {t.reset}
                     </button>
                     <button

@@ -31,7 +31,7 @@ const AttorneyMatchIntelligence: React.FC<AttorneyMatchIntelligenceProps> = ({
       { label: 'Won', pct: 42, color: '#10B981' },
       { label: 'Settled', pct: 35, color: '#F59E0B' },
       { label: 'Lost', pct: 15, color: '#EF4444' },
-      { label: 'Dismissed', pct: 8, color: '#8B95A5' },
+      { label: 'Dismissed', pct: 8, color: '#9CA3AF' },
     ],
     disclaimer: isES
       ? 'Datos de abogados obtenidos de registros judicales federales públicos (PACER, CourtListener). Este es un perfil de demostración — los informes reales muestran datos de abogados oponentes reales para su caso específico.'
@@ -102,10 +102,10 @@ const AttorneyMatchIntelligence: React.FC<AttorneyMatchIntelligenceProps> = ({
         <div className="mb-8 grid grid-cols-2 gap-4 md:gap-6">
           {content.stats.map((stat) => (
             <div key={stat.label} className="rounded-lg p-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <p className="mb-1 text-[9px] font-bold uppercase tracking-[1.5px]" style={{ color: '#8B95A5' }}>
+              <p className="mb-1 text-[9px] font-bold uppercase tracking-[1.5px]" style={{ color: '#9CA3AF' }}>
                 {stat.label}
               </p>
-              <p className="text-lg font-bold" style={{ color: '#E2E8F0' }}>{stat.value}</p>
+              <p className="text-lg font-bold" style={{ color: '#D1D5DB' }}>{stat.value}</p>
             </div>
           ))}
         </div>

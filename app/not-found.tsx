@@ -16,9 +16,9 @@ export default function NotFound() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '24px',
-        background: '#0B1221',
-        color: '#F0F2F5',
-        fontFamily: "'Outfit', system-ui, sans-serif",
+        background: '#FAFAF8',
+        color: '#111827',
+        fontFamily: "'Roboto', system-ui, sans-serif",
         textAlign: 'center',
       }}
     >
@@ -26,7 +26,7 @@ export default function NotFound() {
       <style>{`
         .nf-btn-home {
           display: inline-flex; align-items: center; gap: 8px;
-          padding: 12px 24px; background: linear-gradient(135deg, #4F46E5, #6366F1);
+          padding: 12px 24px; background: linear-gradient(135deg, #111111, #333333);
           color: #FFFFFF; border-radius: 12px; font-weight: 600; font-size: 14px;
           text-decoration: none; transition: all 200ms;
           box-shadow: 0 4px 14px rgba(64, 64, 242, 0.22);
@@ -37,12 +37,12 @@ export default function NotFound() {
         }
         .nf-btn-cases {
           display: inline-flex; align-items: center; gap: 8px;
-          padding: 12px 24px; background: transparent; color: #B0BDD0;
+          padding: 12px 24px; background: transparent; color: #6B7280;
           border-radius: 12px; font-weight: 600; font-size: 14px;
-          text-decoration: none; border: 1px solid #1E293B; transition: all 200ms;
+          text-decoration: none; border: 1px solid #E5E7EB; transition: all 200ms;
         }
         .nf-btn-cases:hover {
-          border-color: #4F46E5; color: #F0F2F5;
+          border-color: #111111; color: #111827;
           background: rgba(79, 70, 229, 0.08);
         }
       `}</style>
@@ -53,7 +53,7 @@ export default function NotFound() {
           fontWeight: 800,
           letterSpacing: '-3px',
           lineHeight: 1,
-          background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
+          background: 'linear-gradient(135deg, #111111, #333333)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
@@ -68,7 +68,7 @@ export default function NotFound() {
           fontSize: '28px',
           fontWeight: 700,
           marginBottom: '12px',
-          color: '#F0F2F5',
+          color: '#111827',
         }}
       >
         Page not found
@@ -77,7 +77,7 @@ export default function NotFound() {
       <p
         style={{
           fontSize: '16px',
-          color: '#B0BDD0',
+          color: '#6B7280',
           maxWidth: '420px',
           lineHeight: 1.6,
           marginBottom: '32px',
@@ -104,7 +104,7 @@ export default function NotFound() {
       <p
         style={{
           fontSize: '12px',
-          color: '#8B95A5',
+          color: '#9CA3AF',
           marginTop: '48px',
           maxWidth: '320px',
         }}

@@ -22,7 +22,7 @@ export function WizardProgress({ step, labels, lang = 'en' }: WizardProgressProp
         <div className="flex gap-1.5 flex-1">
           {defaultLabels.map((_, i) => (
             <div key={i} className="flex-1 h-2 rounded-full transition-all duration-500 relative overflow-hidden"
-              style={{ background: i + 1 <= progressStep ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B' }}>
+              style={{ background: i + 1 <= progressStep ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E7EB' }}>
               {i + 1 <= progressStep && (
                 <div className="absolute inset-0 animate-pulse" style={{ background: 'rgba(255,255,255,0.04)' }} />
               )}
@@ -35,8 +35,8 @@ export function WizardProgress({ step, labels, lang = 'en' }: WizardProgressProp
           <span key={i} className={`step-label transition-all ${i + 1 <= progressStep ? 'active' : ''}`}
             style={{
               fontWeight: i + 1 <= progressStep ? 600 : 400,
-              color: i + 1 <= progressStep ? '#4F46E5' : '#B0BDD0',
-              textShadow: i + 1 <= progressStep ? '0 0 12px rgba(64,64,242,0.2)' : 'none',
+              color: i + 1 <= progressStep ? '#111111' : '#6B7280',
+              textShadow: i + 1 <= progressStep ? '0 0 12px rgba(17,17,17,0.2)' : 'none',
             }}>{l}</span>
         ))}
       </div>

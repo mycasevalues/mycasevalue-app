@@ -108,12 +108,12 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
   const formatPercent = (val: number) => `${Math.round(val * 100)}%`;
 
   return (
-    <div style={{ backgroundColor: '#0B1221', color: '#E2E8F0' }} className="w-full max-w-2xl mx-auto p-6 rounded-lg">
+    <div style={{ backgroundColor: '#FAFAF8', color: '#D1D5DB' }} className="w-full max-w-2xl mx-auto p-6 rounded-lg">
       {/* Header */}
       <h2 style={{ fontFamily: 'var(--font-display)' }} className="text-2xl font-bold mb-2">
         {t.title}
       </h2>
-      <p style={{ color: '#B0BDD0' }} className="text-sm mb-8">
+      <p style={{ color: '#6B7280' }} className="text-sm mb-8">
         {t.disclaimer}
       </p>
 
@@ -125,7 +125,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
             {t.caseAmount}
           </label>
           <div className="flex items-center gap-4 mb-2">
-            <span style={{ color: '#B0BDD0', fontFamily: 'var(--font-mono)' }} className="text-xs">
+            <span style={{ color: '#6B7280', fontFamily: 'var(--font-mono)' }} className="text-xs">
               $10K
             </span>
             <input
@@ -139,16 +139,16 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
               aria-valuetext={formatCurrency(caseAmount)}
               className="flex-1 h-2 rounded-lg appearance-none cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #4F46E5, #0D9488)`,
+                background: `linear-gradient(to right, #111111, #0D9488)`,
                 WebkitAppearance: 'none',
                 outline: 'none',
               }}
             />
-            <span style={{ color: '#B0BDD0', fontFamily: 'var(--font-mono)' }} className="text-xs">
+            <span style={{ color: '#6B7280', fontFamily: 'var(--font-mono)' }} className="text-xs">
               $5M
             </span>
           </div>
-          <div style={{ fontFamily: 'var(--font-mono)', color: '#4F46E5' }} className="text-lg font-semibold">
+          <div style={{ fontFamily: 'var(--font-mono)', color: '#111111' }} className="text-lg font-semibold">
             {formatCurrency(caseAmount)}
           </div>
           <style>{`
@@ -157,7 +157,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
               width: 20px;
               height: 20px;
               border-radius: 50%;
-              background: #4F46E5;
+              background: #111111;
               cursor: pointer;
               box-shadow: 0 0 12px rgba(79, 70, 229, 0.6);
               border: 2px solid #0D9488;
@@ -166,7 +166,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
               width: 20px;
               height: 20px;
               border-radius: 50%;
-              background: #4F46E5;
+              background: #111111;
               cursor: pointer;
               box-shadow: 0 0 12px rgba(79, 70, 229, 0.6);
               border: 2px solid #0D9488;
@@ -180,7 +180,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
             {t.timeline}
           </label>
           <div className="flex items-center gap-4 mb-2">
-            <span style={{ color: '#B0BDD0', fontFamily: 'var(--font-mono)' }} className="text-xs">
+            <span style={{ color: '#6B7280', fontFamily: 'var(--font-mono)' }} className="text-xs">
               {t.within3}
             </span>
             <input
@@ -199,7 +199,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
                 outline: 'none',
               }}
             />
-            <span style={{ color: '#B0BDD0', fontFamily: 'var(--font-mono)' }} className="text-xs">
+            <span style={{ color: '#6B7280', fontFamily: 'var(--font-mono)' }} className="text-xs">
               {t.over3}
             </span>
           </div>
@@ -219,9 +219,9 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
                 key={String(value)}
                 onClick={() => setIsAttorney(value)}
                 style={{
-                  backgroundColor: isAttorney === value ? '#4F46E5' : '#1E293B',
-                  borderColor: '#1E293B',
-                  color: '#E2E8F0',
+                  backgroundColor: isAttorney === value ? '#111111' : '#E5E7EB',
+                  borderColor: '#E5E7EB',
+                  color: '#D1D5DB',
                 }}
                 className="px-4 py-2 rounded border transition-all"
               >
@@ -233,10 +233,10 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
       </div>
 
       {/* Results Panel */}
-      <div style={{ backgroundColor: '#131B2E', borderColor: '#1E293B' }} className="border rounded-lg p-6 space-y-6">
+      <div style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }} className="border rounded-lg p-6 space-y-6">
         {/* Projected Win Rate */}
         <div>
-          <div style={{ color: '#B0BDD0' }} className="text-xs font-semibold mb-2">
+          <div style={{ color: '#6B7280' }} className="text-xs font-semibold mb-2">
             {t.projectedWinRate}
           </div>
           <div style={{ fontFamily: 'var(--font-mono)', color: '#0D9488' }} className="text-3xl font-bold">
@@ -246,17 +246,17 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
 
         {/* Estimated Recovery Range */}
         <div>
-          <div style={{ color: '#B0BDD0' }} className="text-xs font-semibold mb-3">
+          <div style={{ color: '#6B7280' }} className="text-xs font-semibold mb-3">
             {t.estimatedRecovery}
           </div>
           <div className="grid grid-cols-3 gap-3">
             {[
               { label: t.low, val: lowRecovery, color: '#EF4444' },
-              { label: t.typical, val: typicalRecovery, color: '#4F46E5' },
+              { label: t.typical, val: typicalRecovery, color: '#111111' },
               { label: t.high, val: highRecovery, color: '#0D9488' },
             ].map(({ label, val, color }) => (
-              <div key={label} style={{ backgroundColor: '#0B1221', borderColor: '#1E293B' }} className="border rounded p-3">
-                <div style={{ color: '#B0BDD0' }} className="text-xs mb-1">
+              <div key={label} style={{ backgroundColor: '#FAFAF8', borderColor: '#E5E7EB' }} className="border rounded p-3">
+                <div style={{ color: '#6B7280' }} className="text-xs mb-1">
                   {label}
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', color }} className="text-lg font-bold">
@@ -269,19 +269,19 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
 
         {/* Confidence Score */}
         <div>
-          <div style={{ color: '#B0BDD0' }} className="text-xs font-semibold mb-3">
+          <div style={{ color: '#6B7280' }} className="text-xs font-semibold mb-3">
             {t.confidenceScore}
           </div>
           <div className="flex items-center gap-4">
             <div className="relative w-20 h-20">
               <svg className="w-full h-full" viewBox="0 0 100 100" role="img" aria-label={`${t.confidenceScore}: ${displayConfidence}%`}>
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#1E293B" strokeWidth="4" />
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#E5E7EB" strokeWidth="4" />
                 <circle
                   cx="50"
                   cy="50"
                   r="45"
                   fill="none"
-                  stroke="#4F46E5"
+                  stroke="#111111"
                   strokeWidth="4"
                   strokeDasharray={`${(displayConfidence / 100) * 283} 283`}
                   strokeLinecap="round"
@@ -289,13 +289,13 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
                 />
               </svg>
               <div
-                style={{ fontFamily: 'var(--font-mono)', color: '#4F46E5' }}
+                style={{ fontFamily: 'var(--font-mono)', color: '#111111' }}
                 className="absolute inset-0 flex items-center justify-center text-sm font-bold"
               >
                 {displayConfidence}
               </div>
             </div>
-            <div style={{ color: '#B0BDD0' }} className="text-sm">
+            <div style={{ color: '#6B7280' }} className="text-sm">
               {displayConfidence > 80 ? 'High' : displayConfidence > 50 ? 'Moderate' : 'Moderate-Low'}
             </div>
           </div>
@@ -303,11 +303,11 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
 
         {/* Settlement Likelihood */}
         <div>
-          <div style={{ color: '#B0BDD0' }} className="text-xs font-semibold mb-2">
+          <div style={{ color: '#6B7280' }} className="text-xs font-semibold mb-2">
             {t.settlementLikelihood}
           </div>
           <div className="flex items-center gap-3">
-            <div className="flex-1 h-2 bg-[#1E293B] rounded-full overflow-hidden">
+            <div className="flex-1 h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
               <div
                 style={{
                   backgroundColor: '#0D9488',

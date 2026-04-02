@@ -11,7 +11,7 @@ export default function ServerHero() {
       <div
         className="hero-container py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
         style={{
-          background: '#0B1221',
+          background: '#FAFAF8',
         }}
       >
         <div className="max-w-4xl mx-auto">
@@ -27,7 +27,7 @@ export default function ServerHero() {
               <span
                 className="text-xs sm:text-sm font-medium tracking-wide"
                 style={{
-                  color: '#4F46E5',
+                  color: '#111111',
                   letterSpacing: '0.5px',
                 }}
               >
@@ -41,7 +41,7 @@ export default function ServerHero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-6 leading-tight"
             style={{
               fontFamily: '"Outfit", system-ui, sans-serif',
-              color: '#F0F2F5',
+              color: '#111827',
             }}
           >
             <span>The settlement data</span>
@@ -50,7 +50,7 @@ export default function ServerHero() {
             <br />
             <span
               style={{
-                background: 'linear-gradient(135deg, #4F46E5, #A5B4FC)',
+                background: 'linear-gradient(135deg, #111111, #8B5CF6)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -64,7 +64,7 @@ export default function ServerHero() {
           <p
             className="text-lg sm:text-xl text-center mx-auto mb-10 sm:mb-12 max-w-2xl"
             style={{
-              color: '#B0BDD0',
+              color: '#6B7280',
               fontFamily: '"Outfit", system-ui, sans-serif',
               lineHeight: '1.6',
             }}
@@ -93,8 +93,8 @@ export default function ServerHero() {
             <button
               className="px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
               style={{
-                background: 'linear-gradient(135deg, #4F46E5, #3535D0)',
-                color: '#F0F2F5',
+                background: 'linear-gradient(135deg, #111111, #3535D0)',
+                color: '#111827',
                 borderRadius: '12px',
                 fontFamily: '"Outfit", system-ui, sans-serif',
                 cursor: 'pointer',
@@ -111,7 +111,7 @@ export default function ServerHero() {
       <div
         className="trust-bar-wrapper"
         style={{
-          background: '#0B1221',
+          background: '#FAFAF8',
           borderTop: '1px solid rgba(51, 65, 85, 0.4)',
           borderBottom: '1px solid rgba(51, 65, 85, 0.4)',
         }}
@@ -124,7 +124,7 @@ export default function ServerHero() {
                 className="text-3xl sm:text-4xl font-bold mb-2"
                 style={{
                   fontFamily: '"JetBrains Mono", "Courier New", monospace',
-                  color: '#4F46E5',
+                  color: '#111111',
                   letterSpacing: '-0.5px',
                 }}
               >
@@ -134,7 +134,7 @@ export default function ServerHero() {
                 className="text-xs sm:text-sm font-medium"
                 style={{
                   fontFamily: '"Outfit", system-ui, sans-serif',
-                  color: '#B0BDD0',
+                  color: '#6B7280',
                   letterSpacing: '0.5px',
                 }}
               >
@@ -148,7 +148,7 @@ export default function ServerHero() {
                 className="text-3xl sm:text-4xl font-bold mb-2"
                 style={{
                   fontFamily: '"JetBrains Mono", "Courier New", monospace',
-                  color: '#4F46E5',
+                  color: '#111111',
                   letterSpacing: '-0.5px',
                 }}
               >
@@ -158,7 +158,7 @@ export default function ServerHero() {
                 className="text-xs sm:text-sm font-medium"
                 style={{
                   fontFamily: '"Outfit", system-ui, sans-serif',
-                  color: '#B0BDD0',
+                  color: '#6B7280',
                   letterSpacing: '0.5px',
                 }}
               >
@@ -172,7 +172,7 @@ export default function ServerHero() {
                 className="text-3xl sm:text-4xl font-bold mb-2"
                 style={{
                   fontFamily: '"JetBrains Mono", "Courier New", monospace',
-                  color: '#4F46E5',
+                  color: '#111111',
                   letterSpacing: '-0.5px',
                 }}
               >
@@ -182,7 +182,7 @@ export default function ServerHero() {
                 className="text-xs sm:text-sm font-medium"
                 style={{
                   fontFamily: '"Outfit", system-ui, sans-serif',
-                  color: '#B0BDD0',
+                  color: '#6B7280',
                   letterSpacing: '0.5px',
                 }}
               >
@@ -196,7 +196,7 @@ export default function ServerHero() {
                 className="text-3xl sm:text-4xl font-bold mb-2"
                 style={{
                   fontFamily: '"JetBrains Mono", "Courier New", monospace',
-                  color: '#4F46E5',
+                  color: '#111111',
                   letterSpacing: '-0.5px',
                 }}
               >
@@ -206,7 +206,7 @@ export default function ServerHero() {
                 className="text-xs sm:text-sm font-medium"
                 style={{
                   fontFamily: '"Outfit", system-ui, sans-serif',
-                  color: '#B0BDD0',
+                  color: '#6B7280',
                   letterSpacing: '0.5px',
                 }}
               >
@@ -221,14 +221,14 @@ export default function ServerHero() {
       <div
         className="sources-section py-8 sm:py-10 px-4 sm:px-6 lg:px-8"
         style={{
-          background: '#0B1221',
+          background: '#FAFAF8',
         }}
       >
         <div className="max-w-4xl mx-auto">
           <div
             className="text-center text-xs sm:text-sm"
             style={{
-              color: '#8B95A5',
+              color: '#9CA3AF',
             }}
           >
             <p className="mb-3">
@@ -239,7 +239,7 @@ export default function ServerHero() {
               <a
                 href="#methodology"
                 style={{
-                  color: '#4F46E5',
+                  color: '#111111',
                   textDecoration: 'underline',
                 }}
               >
@@ -253,7 +253,7 @@ export default function ServerHero() {
 
       {/* Accessibility & Semantic Enhancement */}
       <noscript>
-        <p style={{ color: '#B0BDD0', textAlign: 'center', padding: '20px' }}>
+        <p style={{ color: '#6B7280', textAlign: 'center', padding: '20px' }}>
           Please enable JavaScript to use MyCaseValue. Our interactive features require JavaScript to function properly.
         </p>
       </noscript>

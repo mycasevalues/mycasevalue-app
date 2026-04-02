@@ -98,9 +98,9 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       />
 
       {/* Header with breadcrumb */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12">
-          <a href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
+          <a href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to Blog
           </a>
@@ -110,8 +110,8 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
             <span
               className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold"
               style={{
-                background: 'rgba(99,102,241,0.15)',
-                color: '#4F46E5',
+                background: 'rgba(17,17,17,0.15)',
+                color: '#111111',
               }}
             >
               {post.category}
@@ -152,17 +152,17 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           '--tw-prose-body': 'var(--fg-primary)',
           '--tw-prose-headings': 'var(--fg-primary)',
           '--tw-prose-lead': 'var(--fg-muted)',
-          '--tw-prose-links': '#4F46E5',
+          '--tw-prose-links': '#111111',
           '--tw-prose-bold': 'var(--fg-primary)',
-          '--tw-prose-counters': '#4F46E5',
-          '--tw-prose-bullets': '#4F46E5',
+          '--tw-prose-counters': '#111111',
+          '--tw-prose-bullets': '#111111',
           '--tw-prose-hr': 'var(--border-default)',
           '--tw-prose-quotes': 'var(--fg-muted)',
-          '--tw-prose-quote-borders': '#4F46E5',
+          '--tw-prose-quote-borders': '#111111',
           '--tw-prose-captions': 'var(--fg-muted)',
-          '--tw-prose-code': '#4F46E5',
-          '--tw-prose-pre-code': '#E2E8F0',
-          '--tw-prose-pre-bg': '#0F172A',
+          '--tw-prose-code': '#111111',
+          '--tw-prose-pre-code': '#D1D5DB',
+          '--tw-prose-pre-bg': '#FFFFFF',
           '--tw-prose-th-borders': 'var(--border-default)',
           '--tw-prose-td-borders': 'var(--border-default)',
         } as any}>
@@ -182,8 +182,8 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                 href={`/blog?tag=${encodeURIComponent(tag)}`}
                 className="text-sm font-medium px-3 py-1.5 rounded-full transition-colors"
                 style={{
-                  background: 'rgba(99,102,241,0.08)',
-                  color: '#A5B4FC',
+                  background: 'rgba(17,17,17,0.08)',
+                  color: '#8B5CF6',
                 }}
               >
                 #{tag}
@@ -195,7 +195,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
       {/* CTA Section */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
             See real case data for your situation
           </h2>
@@ -205,7 +205,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           <a
             href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#4F46E5', color: '#131B2E' }}
+            style={{ background: '#111111', color: '#FFFFFF' }}
           >
             Check My Case Type
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -236,8 +236,8 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                   <span
                     className="inline-flex items-center w-fit px-2.5 py-1 rounded-full text-xs font-semibold"
                     style={{
-                      background: 'rgba(99,102,241,0.15)',
-                      color: '#4F46E5',
+                      background: 'rgba(17,17,17,0.15)',
+                      color: '#111111',
                     }}
                   >
                     {relatedPost.category}

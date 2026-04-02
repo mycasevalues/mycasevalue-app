@@ -81,15 +81,15 @@ export default function SpanishPricingPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/es" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
+          <a href="/es" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Volver a MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             PRECIOS
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
@@ -117,7 +117,7 @@ export default function SpanishPricingPage() {
                 Informe Individual
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: '#4F46E5', fontFamily: 'JetBrains Mono' }}>
+                <span className="text-4xl font-extrabold" style={{ color: '#111111', fontFamily: 'JetBrains Mono' }}>
                   $5.99
                 </span>
                 <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
@@ -148,7 +148,7 @@ export default function SpanishPricingPage() {
 
             <a href="/es/odds"
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#4F46E5', color: '#131B2E' }}>
+              style={{ background: '#111111', color: '#FFFFFF' }}>
               Obtener Informe
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -201,7 +201,7 @@ export default function SpanishPricingPage() {
 
             <a href="/es/odds"
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#F59E0B', color: '#131B2E' }}>
+              style={{ background: '#F59E0B', color: '#FFFFFF' }}>
               Obtener Ilimitado
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -261,7 +261,7 @@ export default function SpanishPricingPage() {
         </div>
 
         {/* Plan Notes */}
-        <div className="text-center p-6 rounded-xl mb-12" style={{ background: '#131B2E', borderColor: 'var(--border-default)', border: '1px solid var(--border-default)' }}>
+        <div className="text-center p-6 rounded-xl mb-12" style={{ background: '#FFFFFF', borderColor: 'var(--border-default)', border: '1px solid var(--border-default)' }}>
           <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
             Todos los planes incluyen citas de fuentes, soporte bilingüe (inglés/español) y un aviso de "no es asesoramiento legal".
           </p>
@@ -279,7 +279,7 @@ export default function SpanishPricingPage() {
                 className="group p-5 rounded-xl border transition-colors cursor-pointer"
                 style={{
                   borderColor: 'var(--border-default)',
-                  background: '#131B2E',
+                  background: '#FFFFFF',
                 }}
               >
                 <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--fg-primary)' }}>
@@ -294,7 +294,7 @@ export default function SpanishPricingPage() {
                     stroke="currentColor"
                     strokeWidth="2"
                     className="flex-shrink-0 transition-transform group-open:rotate-180"
-                    style={{ color: '#4F46E5', marginTop: '2px' }}
+                    style={{ color: '#111111', marginTop: '2px' }}
                   >
                     <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
@@ -310,7 +310,7 @@ export default function SpanishPricingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
@@ -319,7 +319,7 @@ export default function SpanishPricingPage() {
           </p>
           <a href="/es/odds"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#4F46E5', color: '#131B2E' }}>
+            style={{ background: '#111111', color: '#FFFFFF' }}>
             Consultar Mi Tipo de Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

@@ -161,7 +161,7 @@ export function PushNotificationPrompt({
           style={{
             background: isLoading
               ? 'var(--accent-primary-hover)'
-              : 'linear-gradient(135deg, var(--accent-primary), #6366F1)',
+              : 'linear-gradient(135deg, var(--accent-primary), #333333)',
           }}
           aria-busy={isLoading}
         >

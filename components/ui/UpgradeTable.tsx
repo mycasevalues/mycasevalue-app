@@ -91,11 +91,11 @@ export default function UpgradeTable({
   }, []);
 
   const colors = {
-    bg: '#131B2E',
-    border: '#1E293B',
-    text: '#F0F2F5',
-    muted: '#B0BDD0',
-    accent: '#4F46E5',
+    bg: '#FFFFFF',
+    border: '#E5E7EB',
+    text: '#111827',
+    muted: '#6B7280',
+    accent: '#111111',
     teal: '#5EEAD4',
   };
 
@@ -298,7 +298,7 @@ export default function UpgradeTable({
               opacity: currentTier === 'single' ? 0.7 : 1,
               transition: 'background-color 0.2s ease',
             }}
-            onMouseEnter={(e) => { if (currentTier !== 'single') e.currentTarget.style.backgroundColor = '#6366F1'; }}
+            onMouseEnter={(e) => { if (currentTier !== 'single') e.currentTarget.style.backgroundColor = '#333333'; }}
             onMouseLeave={(e) => { if (currentTier !== 'single') e.currentTarget.style.backgroundColor = colors.accent; }}>
             {currentTier === 'single' ? currentLabels.current : currentLabels.get_report}
           </button>

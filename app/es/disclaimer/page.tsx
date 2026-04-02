@@ -92,7 +92,7 @@ export default function SpanishDisclaimerPage() {
             <p>
               La información que proporciones (tipo de caso, estado, etc.) se usa únicamente para generar tu informe. No almacenamos tus datos de forma permanente ni los compartimos con terceros. Consulta nuestra política de privacidad completa en:
             </p>
-            <p className="font-semibold" style={{ color: '#4F46E5' }}>
+            <p className="font-semibold" style={{ color: '#111111' }}>
               https://mycasevalues.com/privacy
             </p>
           </section>
@@ -113,7 +113,7 @@ export default function SpanishDisclaimerPage() {
             <p>
               Si tienes preguntas sobre este descargo de responsabilidad, contáctanos en:
             </p>
-            <p className="font-semibold" style={{ color: '#4F46E5' }}>
+            <p className="font-semibold" style={{ color: '#111111' }}>
               support@mycasevalue.com
             </p>
           </section>

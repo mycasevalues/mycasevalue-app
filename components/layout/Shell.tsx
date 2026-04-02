@@ -57,8 +57,8 @@ function Toast({ message, visible }: { message: string; visible: boolean }) {
       aria-live="polite"
       className="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-medium z-[var(--z-modal)] text-white"
       style={{
-        background: '#0B1221',
-        boxShadow: '0 8px 32px rgba(11,18,33,.2)',
+        background: '#FAFAF8',
+        boxShadow: '0 8px 32px rgba(255,255,255,.2)',
         animation: 'slideUp 0.3s ease',
       }}
     >
@@ -102,8 +102,8 @@ function SuccessCelebration() {
             width: s.size,
             height: s.size,
             borderRadius: '50%',
-            background: `radial-gradient(circle, #6366F1, #4F46E5)`,
-            boxShadow: `0 0 ${s.size * 2}px #4F46E588`,
+            background: `radial-gradient(circle, #333333, #111111)`,
+            boxShadow: `0 0 ${s.size * 2}px #11111188`,
             opacity: s.opacity,
             animation: `sparkleRise ${s.duration}ms ${s.delay}ms ease-out forwards`,
           }}
@@ -112,10 +112,10 @@ function SuccessCelebration() {
       {/* Center checkmark burst */}
       <div className="success-check-burst">
         <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-          <circle cx="32" cy="32" r="30" stroke="#4F46E5" strokeWidth="2" opacity="0.3" />
+          <circle cx="32" cy="32" r="30" stroke="#111111" strokeWidth="2" opacity="0.3" />
           <path
             d="M20 33 L28 41 L44 23"
-            stroke="#4F46E5"
+            stroke="#111111"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -172,12 +172,12 @@ export function Shell({
         style={{
           background: 'var(--bg-base)',
           minHeight: '100vh',
-          fontFamily: "'Outfit', system-ui, sans-serif",
+          fontFamily: "'Roboto', system-ui, sans-serif",
           color: 'var(--fg-primary)',
           maxWidth:
             viewMode === 'mobile' ? '430px' : viewMode === 'desktop' ? '100%' : undefined,
           margin: viewMode === 'mobile' ? '0 auto' : undefined,
-          boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(11,18,33,.08)' : undefined,
+          boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(255,255,255,.08)' : undefined,
           transition: 'max-width 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
@@ -219,7 +219,7 @@ export function Shell({
             className="text-center py-2 border-b no-print"
             style={{
               borderColor: 'var(--border-default)',
-              background: 'rgba(30,41,59,0.3)',
+              background: 'rgba(229,231,235,0.3)',
             }}
           >
             <span
@@ -254,8 +254,8 @@ export function Shell({
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-[var(--z-dropdown)] cursor-pointer no-print transition-all"
             style={{
-              background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
-              boxShadow: '0 4px 16px rgba(64,64,242,.3)',
+              background: 'linear-gradient(135deg, #111111, #333333)',
+              boxShadow: '0 4px 16px rgba(17,17,17,.3)',
             }}
             aria-label="Back to top"
           >
@@ -277,10 +277,10 @@ export function Shell({
         {showExitIntent && !isPremium && (
           <div
             className="fixed inset-0 z-[var(--z-modal)] flex items-end sm:items-center justify-center p-4"
-            style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(8px)' }}
+            style={{ background: 'rgba(255,255,255,.6)', backdropFilter: 'blur(8px)' }}
           >
             <div
-              className="exit-intent-modal card-bg bg-[#131B2E] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center"
+              className="exit-intent-modal card-bg bg-[#FFFFFF] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -293,7 +293,7 @@ export function Shell({
                   height="14"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#94A3B8"
+                  stroke="#9CA3AF"
                   strokeWidth="2"
                 >
                   <path d="M18 6L6 18M6 6l12 12" />
@@ -301,7 +301,7 @@ export function Shell({
               </button>
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto"
-                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
               >
                 <svg
                   width="24"
@@ -336,7 +336,7 @@ export function Shell({
                   buy('single');
                 }}
                 className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer"
-                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
               >
                 {lang === 'es' ? 'Informe Premium — $5.99' : 'Premium Report — $5.99'}
               </button>
@@ -354,11 +354,11 @@ export function Shell({
         {showSaved && (
           <div
             className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4"
-            style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(8px)' }}
+            style={{ background: 'rgba(255,255,255,.5)', backdropFilter: 'blur(8px)' }}
             onClick={() => setShowSaved(false)}
           >
             <div
-              className="card-bg bg-[#131B2E] rounded-2xl p-6 max-w-lg w-full shadow-2xl max-h-[80vh] overflow-y-auto"
+              className="card-bg bg-[#FFFFFF] rounded-2xl p-6 max-w-lg w-full shadow-2xl max-h-[80vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between mb-4">
@@ -375,7 +375,7 @@ export function Shell({
                     height="14"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#94A3B8"
+                    stroke="#9CA3AF"
                     strokeWidth="2"
                   >
                     <path d="M18 6L6 18M6 6l12 12" />
@@ -408,7 +408,7 @@ export function Shell({
                     }}
                     className="px-3 py-2 text-[12px] font-semibold rounded-lg cursor-pointer"
                     style={{
-                      background: 'rgba(99,102,241,0.15)',
+                      background: 'rgba(17,17,17,0.15)',
                       color: 'var(--accent-primary)',
                       border: 'none',
                     }}
@@ -460,7 +460,7 @@ export function Shell({
           <div
             className="fixed bottom-0 left-0 right-0 z-[var(--z-modal)] p-4 no-print"
             style={{
-              background: 'rgba(11,18,33,0.95)',
+              background: 'rgba(255,255,255,0.95)',
               backdropFilter: 'blur(12px)',
             }}
           >
@@ -472,7 +472,7 @@ export function Shell({
                     : 'We use essential cookies for site functionality. Optional analytics cookies help us improve your experience.'}
                   <button
                     onClick={() => setLegalPage('privacy')}
-                    className="text-[#4F46E5] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]"
+                    className="text-[#111111] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]"
                   >
                     {lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}
                   </button>
@@ -487,7 +487,7 @@ export function Shell({
                     setShowCookieConsent(false);
                   }}
                   className="px-4 py-2 text-[12px] font-semibold bg-transparent rounded-lg cursor-pointer transition-colors"
-                  style={{ color: 'var(--fg-secondary)', border: '1px solid #475569' }}
+                  style={{ color: 'var(--fg-secondary)', border: '1px solid #4B5563' }}
                 >
                   {lang === 'es' ? 'Solo esenciales' : 'Essential only'}
                 </button>
@@ -499,7 +499,7 @@ export function Shell({
                     setShowCookieConsent(false);
                   }}
                   className="px-4 py-2 text-[12px] font-semibold text-white rounded-lg cursor-pointer border-none"
-                  style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+                  style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
                 >
                   {lang === 'es' ? 'Aceptar todo' : 'Accept all'}
                 </button>
@@ -550,7 +550,7 @@ export function Footer({
           (n, i) => (
             <span
               key={i}
-              className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-[#131B2E] border border-[var(--border-default)]"
+              className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-[#FFFFFF] border border-[var(--border-default)]"
               style={{ color: 'var(--fg-secondary)' }}
             >
               {n}
@@ -670,7 +670,7 @@ export function Footer({
           </div>
           {showMethodology && (
             <div
-              className="card-bg bg-[#131B2E] rounded-xl p-4 mt-3 border border-[var(--border-default)] text-left text-[12px] text-[var(--fg-muted)] leading-relaxed max-w-md"
+              className="card-bg bg-[#FFFFFF] rounded-xl p-4 mt-3 border border-[var(--border-default)] text-left text-[12px] text-[var(--fg-muted)] leading-relaxed max-w-md"
               style={{}}
             >
               MyCaseValue analyzes data from the Federal Judicial Center Integrated Database
@@ -729,7 +729,7 @@ export function Footer({
             icon: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71',
             label: lang === 'es' ? 'Copiar enlace' : 'Copy link',
             color: 'var(--accent-primary)',
-            hoverBg: 'rgba(99,102,241,0.15)',
+            hoverBg: 'rgba(17,17,17,0.15)',
             filled: false,
             url: () => '',
           },
@@ -751,7 +751,7 @@ export function Footer({
               e.currentTarget.style.borderColor = s.color + '40';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#1E293B';
+              e.currentTarget.style.background = '#E5E7EB';
               e.currentTarget.style.borderColor = 'var(--border-muted)';
             }}
             title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}
@@ -778,9 +778,9 @@ export function Footer({
       <div className="flex flex-wrap items-center justify-center gap-3 mt-3 no-print">
         <div
           className="flex items-center gap-2 px-4 py-2.5 rounded-lg"
-          style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid var(--border-muted)' }}
+          style={{ background: 'rgba(229,231,235,0.5)', border: '1px solid var(--border-muted)' }}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2">
             <rect x="3" y="11" width="18" height="11" rx="2" />
             <path d="M7 11V7a5 5 0 0110 0v4" />
           </svg>
@@ -788,7 +788,7 @@ export function Footer({
             {lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}
           </span>
           {/* Stripe logo */}
-          <svg width="36" height="15" viewBox="0 0 60 25" fill={'#94A3B8'} xmlns="http://www.w3.org/2000/svg">
+          <svg width="36" height="15" viewBox="0 0 60 25" fill={'#9CA3AF'} xmlns="http://www.w3.org/2000/svg">
             <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z" />
             <path d="M14.4 1.5l-4.8 1v13.3c0 2.4 1.8 4.2 4.3 4.2 1.4 0 2.4-.2 2.9-.5v-3.8c-.5.2-3.1.9-3.1-1.4V9.5h3.1V5.8h-3.1l.7-4.3z" />
             <path d="M23.2 7.2l-.3-1.4h-4.3v14.4h4.9v-9.8c1.2-1.5 3.1-1.2 3.7-1v-4.5c-.7-.2-3.2-.7-4.3 1.3h.3z" />
@@ -930,12 +930,12 @@ export function Footer({
         <div
           className="p-4 rounded-xl text-center"
           style={{
-            background: 'rgba(30,41,59,0.5)',
+            background: 'rgba(229,231,235,0.5)',
             border: '1px solid var(--border-muted)',
           }}
         >
           <div className="flex items-center justify-center gap-2 mb-2">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
             <span
@@ -953,7 +953,7 @@ export function Footer({
               ? 'MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos solo con fines informativos. No constituye asesoría legal, opinión legal ni recomendación. No se crea relación abogado-cliente. Consulte siempre a un abogado con licencia para su situación específica.'
               : 'MyCaseValue provides aggregate historical data from public federal court records for informational purposes only. It does not constitute legal advice, legal opinion, or recommendation of any kind. No attorney-client relationship is created. Always consult a licensed attorney for advice specific to your situation.'}
           </p>
-          <p className="text-[10px] mt-2" style={{ color: '#475569' }}>
+          <p className="text-[10px] mt-2" style={{ color: '#4B5563' }}>
             © {new Date().getFullYear()} MyCaseValue LLC.{' '}
             {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
           </p>

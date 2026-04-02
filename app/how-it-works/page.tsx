@@ -59,7 +59,7 @@ const steps = [
     title: 'Tell us your situation',
     description: 'Select your case type and federal district. No legal jargon needed — we use plain English labels.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="1.5">
         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
       </svg>
@@ -107,15 +107,15 @@ export default function HowItWorksPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             HOW IT WORKS
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
@@ -148,8 +148,8 @@ export default function HowItWorksPage() {
                   {/* Step number circle */}
                   <div className="inline-flex items-center justify-center w-14 h-14 rounded-full font-display font-extrabold text-lg mb-6"
                     style={{
-                      background: ['rgba(79,70,229,0.15)', 'rgba(13,148,136,0.15)', 'rgba(245,158,11,0.15)'][idx],
-                      color: ['#4F46E5', '#0D9488', '#F59E0B'][idx],
+                      background: ['rgba(17,17,17,0.15)', 'rgba(13,148,136,0.15)', 'rgba(245,158,11,0.15)'][idx],
+                      color: ['#111111', '#0D9488', '#F59E0B'][idx],
                     }}>
                     {step.number}
                   </div>
@@ -184,8 +184,8 @@ export default function HowItWorksPage() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
-              <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
-                <div className="text-2xl font-display font-extrabold" style={{ color: '#4F46E5' }}>
+              <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
+                <div className="text-2xl font-display font-extrabold" style={{ color: '#111111' }}>
                   {stat.value}
                 </div>
                 <div className="text-[11px] font-semibold mt-2" style={{ color: 'var(--fg-muted)' }}>
@@ -222,7 +222,7 @@ export default function HowItWorksPage() {
                 description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
               },
             ].map((source, i) => (
-              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
                   {source.title}
                 </h3>
@@ -274,7 +274,7 @@ export default function HowItWorksPage() {
                 description: 'No legal jargon. Results explained in language everyone can understand.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
                   {item.title}
@@ -290,7 +290,7 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
             Ready to see your odds?
           </h2>
@@ -299,7 +299,7 @@ export default function HowItWorksPage() {
           </p>
           <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#4F46E5', color: '#131B2E' }}>
+            style={{ background: '#111111', color: '#FFFFFF' }}>
             Check My Case Type
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

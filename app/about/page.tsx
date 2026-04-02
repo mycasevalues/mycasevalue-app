@@ -54,15 +54,15 @@ export default function AboutPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#4F46E5' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(99,102,241,0.15)', color: '#4F46E5' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             ABOUT US
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
@@ -83,7 +83,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
               Our Mission
             </h2>
-            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
               <p className="text-base leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>
                 Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys. We believe outcome data—win rates, settlement ranges, timelines, and recovery patterns—should be accessible to everyone making informed decisions about their legal situation.
               </p>
@@ -119,9 +119,9 @@ export default function AboutPage() {
                   icon: '',
                 },
               ].map((item) => (
-                <div key={item.step} className="flex gap-4 p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+                <div key={item.step} className="flex gap-4 p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl"
-                    style={{ background: '#131B2E' }}>
+                    style={{ background: '#FFFFFF' }}>
                     {item.icon}
                   </div>
                   <div className="flex-1">
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 {
                   name: 'Federal Judicial Center (FJC) Integrated Database',
                   description: 'The official source for federal civil case statistics since 1970. Covers case type, disposition, and duration for every federal civil case.',
-                  color: '#4F46E5',
+                  color: '#111111',
                 },
                 {
                   name: 'CourtListener (Free Law Project)',
@@ -160,10 +160,10 @@ export default function AboutPage() {
                 {
                   name: 'PACER (Public Access to Court Electronic Records)',
                   description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
-                  color: '#8B95A5',
+                  color: '#9CA3AF',
                 },
               ].map((source, i) => (
-                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
                   <h3 className="text-base font-semibold m-0 mb-2" style={{ color: 'var(--fg-primary)' }}>
                     {source.name}
                   </h3>
@@ -180,7 +180,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
               Team & Vision
             </h2>
-            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+            <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
               <p className="text-base leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>
                 MyCaseValue is built by legal researchers, data engineers, and technologists who believe transparency drives better decisions. We are not a law firm. We do not provide legal advice. We are a data platform.
               </p>
@@ -203,12 +203,12 @@ export default function AboutPage() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '5.1M+', l: 'Federal cases', c: '#4F46E5' },
+                { v: '5.1M+', l: 'Federal cases', c: '#111111' },
                 { v: '84', l: 'Case types', c: '#0D9488' },
                 { v: '94', l: 'Federal districts', c: '#1A3260' },
-                { v: '50+ yrs', l: 'Historical data', c: '#8B95A5' },
+                { v: '50+ yrs', l: 'Historical data', c: '#9CA3AF' },
               ].map((s, i) => (
-                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
                   <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>
                   <div className="text-[11px] font-semibold mt-1" style={{ color: 'var(--fg-muted)' }}>{s.l}</div>
                 </div>
@@ -217,7 +217,7 @@ export default function AboutPage() {
           </section>
 
           {/* CTA Section */}
-          <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #131B2E 0%, #0F172A 100%)' }}>
+          <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
             <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
               Ready to Research Real Case Outcomes?
             </h2>
@@ -226,7 +226,7 @@ export default function AboutPage() {
             </p>
             <a href="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#4F46E5', color: '#131B2E' }}>
+              style={{ background: '#111111', color: '#FFFFFF' }}>
               Start Researching
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>

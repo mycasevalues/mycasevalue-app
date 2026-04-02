@@ -52,21 +52,21 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#0B1221',
+          background: '#FAFAF8',
           fontFamily: 'Outfit, system-ui, sans-serif',
           padding: 24,
         }}>
           <div style={{
             maxWidth: 440,
             textAlign: 'center',
-            background: '#131B2E',
+            background: '#FFFFFF',
             borderRadius: 24,
             padding: '48px 32px',
-            boxShadow: '0 4px 24px rgba(11,18,33,0.4)',
+            boxShadow: '0 4px 24px rgba(255,255,255,0.4)',
           }}>
             <div style={{
               width: 64, height: 64, borderRadius: '50%',
-              background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
+              background: 'linear-gradient(135deg, #111111, #333333)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               margin: '0 auto 20px',
             }}>
@@ -74,15 +74,15 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
                 <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
               </svg>
             </div>
-            <h2 style={{ fontSize: 22, fontWeight: 700, color: '#F0F2F5', marginBottom: 8 }}>Something went wrong</h2>
-            <p style={{ fontSize: 14, color: '#B0BDD0', lineHeight: 1.6, marginBottom: 24 }}>
+            <h2 style={{ fontSize: 22, fontWeight: 700, color: '#111827', marginBottom: 8 }}>Something went wrong</h2>
+            <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, marginBottom: 24 }}>
               We encountered an unexpected error. Your data is safe — please try refreshing the page.
             </p>
             <button
               onClick={() => { this.setState({ hasError: false }); window.location.reload(); }}
               style={{
                 padding: '12px 32px',
-                background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
+                background: 'linear-gradient(135deg, #111111, #333333)',
                 color: 'white',
                 border: 'none',
                 borderRadius: 12,
@@ -93,7 +93,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
             >
               Refresh page
             </button>
-            <p style={{ fontSize: 11, color: '#8B95A5', marginTop: 16 }}>
+            <p style={{ fontSize: 11, color: '#9CA3AF', marginTop: 16 }}>
               If this persists, contact support@mycasevalue.com
             </p>
           </div>

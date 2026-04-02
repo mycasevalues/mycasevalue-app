@@ -29,7 +29,7 @@ function PanelCard({ children, title, isLocked = false }: PanelCardProps) {
     <div
       className={`rounded-lg border p-6 ${isLocked ? 'relative opacity-60' : ''}`}
       style={{
-        backgroundColor: '#131B2E',
+        backgroundColor: '#FFFFFF',
         borderColor: 'var(--border-default, #2d3748)',
       }}
     >
@@ -478,7 +478,7 @@ export function AttorneyModePanel({
           <div
             className="rounded-lg border blur-sm opacity-40"
             style={{
-              backgroundColor: '#131B2E',
+              backgroundColor: '#FFFFFF',
               borderColor: 'var(--border-default, #2d3748)',
             }}
           >

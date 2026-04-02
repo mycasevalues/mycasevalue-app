@@ -51,7 +51,7 @@ export function RiskAssessmentQuiz({
         : score >= 34
           ? 'Moderate'
           : 'Needs Review';
-  const strengthColor = score >= 67 ? '#0D9488' : score >= 34 ? '#6366F1' : '#E87461';
+  const strengthColor = score >= 67 ? '#0D9488' : score >= 34 ? '#333333' : '#E87461';
 
   if (answers.length === questions.length) {
     return (
@@ -60,7 +60,7 @@ export function RiskAssessmentQuiz({
         role="dialog"
         aria-labelledby="quiz-results-title"
       >
-        <div className="card-bg bg-[#131B2E] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
+        <div className="card-bg bg-[#FFFFFF] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
           <div className="text-center">
             <div
               className="text-5xl font-display font-bold mb-3"
@@ -80,7 +80,7 @@ export function RiskAssessmentQuiz({
             <button
               onClick={onStartAssessment}
               className="w-full px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer mb-2"
-              style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+              style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
             >
               {lang === 'es' ? 'Obtener informe completo' : 'Get Full Report'}
             </button>
@@ -102,7 +102,7 @@ export function RiskAssessmentQuiz({
       role="dialog"
       aria-labelledby="quiz-title"
     >
-      <div className="card-bg bg-[#131B2E] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
+      <div className="card-bg bg-[#FFFFFF] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
         <div className="mb-6">
           <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-3 uppercase">
             {lang === 'es' ? 'EVALUACIÓN RÁPIDA' : 'Quick Assessment'}
@@ -115,7 +115,7 @@ export function RiskAssessmentQuiz({
               className="h-full rounded-full transition-all duration-300"
               style={{
                 width: `${((step + 1) / questions.length) * 100}%`,
-                background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
+                background: 'linear-gradient(135deg, #111111, #333333)',
               }}
               role="progressbar"
               aria-valuenow={step + 1}
@@ -131,7 +131,7 @@ export function RiskAssessmentQuiz({
             style={{
               borderColor: 'var(--border-default)',
               color: 'var(--fg-muted)',
-              background: '#131B2E',
+              background: '#FFFFFF',
             }}
           >
             {lang === 'es' ? 'No' : 'No'}
@@ -139,7 +139,7 @@ export function RiskAssessmentQuiz({
           <button
             onClick={() => handleAnswer(true)}
             className="flex-1 px-4 py-3 font-semibold rounded-xl cursor-pointer text-white transition-all hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+            style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
           >
             {lang === 'es' ? 'Sí' : 'Yes'}
           </button>

@@ -48,13 +48,13 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
         {...(labelledBy ? { 'aria-labelledby': labelledBy } : {})}
         className="w-full px-4 py-3.5 text-[15px] font-medium border-[1.5px] rounded-xl cursor-pointer text-left flex justify-between items-center transition-all duration-200"
         style={{
-          borderColor: open ? '#4F46E5' : 'var(--border-muted)',
-          color: selected ? '#F0F2F5' : '#B0BDD0',
+          borderColor: open ? '#111111' : 'var(--border-muted)',
+          color: selected ? '#111827' : '#6B7280',
           background: '#1A2744',
-          boxShadow: open ? '0 0 0 3px rgba(64,64,242,0.12)' : 'none',
+          boxShadow: open ? '0 0 0 3px rgba(17,17,17,0.12)' : 'none',
         }}>
         <span className="truncate">{selected ? selected.label : placeholder || 'Select...'}</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#4F46E5' : '#94A3B8'} strokeWidth="2.5" strokeLinecap="round"
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#111111' : '#9CA3AF'} strokeWidth="2.5" strokeLinecap="round"
           aria-hidden="true" style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.2s' }}>
           <polyline points="6 9 12 15 18 9" />
         </svg>
@@ -65,7 +65,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
         style={{
           background: '#1A2744',
           border: open ? '1px solid var(--border-muted)' : '1px solid transparent',
-          boxShadow: open ? '0 12px 40px rgba(11,18,33,.4)' : 'none',
+          boxShadow: open ? '0 12px 40px rgba(255,255,255,.4)' : 'none',
           maxHeight: open ? '280px' : '0',
           opacity: open ? 1 : 0,
           transform: open ? 'translateY(0) scale(1)' : 'translateY(-8px) scale(0.98)',
@@ -77,11 +77,11 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
             <input ref={searchRef} type="text" value={search} onChange={e => setSearch(e.target.value)}
               placeholder={lang === 'es' ? 'Buscar...' : 'Search...'}
               aria-label={lang === 'es' ? 'Buscar tipos de caso' : 'Search case types'}
-              className="w-full px-3 py-2 text-[13px] rounded-lg outline-none focus:ring-2 focus:ring-[#4F46E5]/40 transition-colors"
+              className="w-full px-3 py-2 text-[13px] rounded-lg outline-none focus:ring-2 focus:ring-[#111111]/40 transition-colors"
               style={{
                 background: '#0F1729',
                 border: '1px solid var(--border-muted)',
-                color: '#F0F2F5',
+                color: '#111827',
               }} />
           </div>
         )}
@@ -94,15 +94,15 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
               className="w-full px-4 py-2.5 text-sm text-left rounded-lg cursor-pointer transition-all duration-150"
               style={{
                 fontWeight: o.id === value ? 600 : 400,
-                color: o.id === value ? '#4F46E5' : '#E2E8F0',
-                background: o.id === value ? 'rgba(99,102,241,0.08)' : 'transparent',
+                color: o.id === value ? '#111111' : '#D1D5DB',
+                background: o.id === value ? 'rgba(17,17,17,0.08)' : 'transparent',
                 animationDelay: open ? `${idx * 20}ms` : '0ms',
               }}
               onMouseEnter={e => { if (o.id !== value) e.currentTarget.style.background = '#243352'; }}
               onMouseLeave={e => { if (o.id !== value) e.currentTarget.style.background = 'transparent'; }}>
               <span className="flex items-center gap-2">
                 {o.id === value && (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
                 )}
                 {o.label}
               </span>

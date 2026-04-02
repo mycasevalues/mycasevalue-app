@@ -48,8 +48,8 @@ export function SuccessCelebration({}: SuccessCelebrationProps) {
             width: s.size,
             height: s.size,
             borderRadius: '50%',
-            background: `radial-gradient(circle, #6366F1, #4F46E5)`,
-            boxShadow: `0 0 ${s.size * 2}px #4F46E588`,
+            background: `radial-gradient(circle, #333333, #111111)`,
+            boxShadow: `0 0 ${s.size * 2}px #11111188`,
             opacity: s.opacity,
             animation: `sparkleRise ${s.duration}ms ${s.delay}ms ease-out forwards`,
           }}
@@ -59,10 +59,10 @@ export function SuccessCelebration({}: SuccessCelebrationProps) {
       {/* Center checkmark burst */}
       <div className="success-check-burst">
         <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-          <circle cx="32" cy="32" r="30" stroke="#4F46E5" strokeWidth="2" opacity="0.3" />
+          <circle cx="32" cy="32" r="30" stroke="#111111" strokeWidth="2" opacity="0.3" />
           <path
             d="M20 33 L28 41 L44 23"
-            stroke="#4F46E5"
+            stroke="#111111"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"

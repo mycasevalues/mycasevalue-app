@@ -297,13 +297,13 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
         style={{
           display: 'flex',
           alignItems: 'center',
-          backgroundColor: '#131B2E',
-          border: '1px solid #1E293B',
+          backgroundColor: '#FFFFFF',
+          border: '1px solid #E5E7EB',
           borderRadius: '8px',
           padding: '10px 14px',
           gap: '10px',
           transition: 'all 0.3s ease',
-          borderColor: isOpen ? '#4F46E5' : '#1E293B',
+          borderColor: isOpen ? '#111111' : '#E5E7EB',
         }}
       >
         <svg
@@ -311,7 +311,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#B0BDD0"
+          stroke="#6B7280"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -336,7 +336,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
             backgroundColor: 'transparent',
             border: 'none',
             outline: 'none',
-            color: '#F0F2F5',
+            color: '#111827',
             fontSize: '14px',
             fontWeight: '500',
           }}
@@ -352,8 +352,8 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
             left: 0,
             right: 0,
             marginTop: '8px',
-            backgroundColor: '#0B1221',
-            border: '1px solid #1E293B',
+            backgroundColor: '#FAFAF8',
+            border: '1px solid #E5E7EB',
             borderRadius: '8px',
             boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
             zIndex: 50,
@@ -390,7 +390,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                         padding: '10px 14px 6px',
                         fontSize: '11px',
                         fontWeight: '600',
-                        color: '#B0BDD0',
+                        color: '#6B7280',
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px',
                       }}
@@ -421,7 +421,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                           style={{
                             padding: '10px 14px',
                             cursor: 'pointer',
-                            backgroundColor: isSelected ? '#1E293B' : 'transparent',
+                            backgroundColor: isSelected ? '#E5E7EB' : 'transparent',
                             borderLeft: isSelected ? `3px solid ${category.color}` : '3px solid transparent',
                             transition: 'all 0.15s ease',
                             display: 'flex',
@@ -434,7 +434,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                               style={{
                                 fontSize: '14px',
                                 fontWeight: '500',
-                                color: '#F0F2F5',
+                                color: '#111827',
                                 marginBottom: '2px',
                               }}
                             >
@@ -444,7 +444,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                               <div
                                 style={{
                                   fontSize: '12px',
-                                  color: '#8B95A5',
+                                  color: '#9CA3AF',
                                   marginTop: '2px',
                                 }}
                               >
@@ -455,7 +455,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                           <div
                             style={{
                               fontSize: '11px',
-                              color: '#B0BDD0',
+                              color: '#6B7280',
                               marginLeft: '12px',
                               whiteSpace: 'nowrap',
                               fontFamily: '"JetBrains Mono", monospace',
@@ -478,7 +478,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                   padding: '12px 14px 8px',
                   fontSize: '11px',
                   fontWeight: '600',
-                  color: '#B0BDD0',
+                  color: '#6B7280',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                 }}
@@ -496,8 +496,8 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                     style={{
                       padding: '10px 14px',
                       cursor: 'pointer',
-                      backgroundColor: isSelected ? '#1E293B' : 'transparent',
-                      borderLeft: isSelected ? '3px solid #4F46E5' : '3px solid transparent',
+                      backgroundColor: isSelected ? '#E5E7EB' : 'transparent',
+                      borderLeft: isSelected ? '3px solid #111111' : '3px solid transparent',
                       transition: 'all 0.15s ease',
                       display: 'flex',
                       alignItems: 'center',
@@ -508,7 +508,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                       style={{
                         fontSize: '14px',
                         fontWeight: '500',
-                        color: '#F0F2F5',
+                        color: '#111827',
                       }}
                     >
                       {popular.label}
@@ -519,7 +519,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                           fontSize: '10px',
                           fontWeight: '600',
                           color: '#FFFFFF',
-                          backgroundColor: '#4F46E5',
+                          backgroundColor: '#111111',
                           padding: '2px 8px',
                           borderRadius: '12px',
                           textTransform: 'uppercase',
@@ -539,7 +539,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
               style={{
                 padding: '20px 14px',
                 textAlign: 'center',
-                color: '#B0BDD0',
+                color: '#6B7280',
                 fontSize: '14px',
               }}
             >

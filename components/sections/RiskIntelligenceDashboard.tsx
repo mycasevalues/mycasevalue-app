@@ -146,13 +146,13 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-2xl font-bold" style={{ color: '#E2E8F0' }}>{compositeScore}</span>
-              <span className="text-[9px]" style={{ color: '#8B95A5' }}>{t.outOf}</span>
+              <span className="text-2xl font-bold" style={{ color: '#D1D5DB' }}>{compositeScore}</span>
+              <span className="text-[9px]" style={{ color: '#9CA3AF' }}>{t.outOf}</span>
             </div>
           </div>
           <div>
-            <div className="text-sm font-bold mb-1" style={{ color: '#E2E8F0' }}>{t.composite}</div>
-            <div className="text-xs" style={{ color: '#8B95A5' }}>
+            <div className="text-sm font-bold mb-1" style={{ color: '#D1D5DB' }}>{t.composite}</div>
+            <div className="text-xs" style={{ color: '#9CA3AF' }}>
               {compositeScore >= 70
                 ? (isEs ? 'Complejidad alta — considere consultar abogado' : 'High complexity — consider attorney consultation')
                 : compositeScore >= 50
@@ -164,7 +164,7 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
         </div>
 
         {/* Risk factors list */}
-        <div className="text-[10px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#8B95A5' }}>
+        <div className="text-[10px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#9CA3AF' }}>
           {t.factors}
         </div>
         <div className="space-y-2">
@@ -191,7 +191,7 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
                       background: impactColors[factor.impact],
                     }} />
                   </div>
-                  <span className="text-sm font-medium flex-1" style={{ color: '#E2E8F0' }}>
+                  <span className="text-sm font-medium flex-1" style={{ color: '#D1D5DB' }}>
                     {isEs ? factor.labelEs : factor.label}
                   </span>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{
@@ -202,7 +202,7 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
                   </span>
                   <svg
                     width="14" height="14" viewBox="0 0 24 24" fill="none"
-                    stroke="#8B95A5" strokeWidth="2" strokeLinecap="round"
+                    stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round"
                     className="flex-shrink-0 transition-transform duration-200"
                     style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0)' }}
                   >
@@ -221,7 +221,7 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
                         {impactLabels[factor.impact][isEs ? 'es' : 'en']}
                       </span>
                     </div>
-                    <p className="text-xs leading-relaxed" style={{ color: '#B0BDD0' }}>
+                    <p className="text-xs leading-relaxed" style={{ color: '#6B7280' }}>
                       {isEs ? factor.descriptionEs : factor.description}
                     </p>
                     {/* Full bar */}
@@ -232,8 +232,8 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
                       }} />
                     </div>
                     <div className="flex justify-between mt-1">
-                      <span className="text-[9px]" style={{ color: '#8B95A5' }}>{isEs ? 'Bajo' : 'Low'}</span>
-                      <span className="text-[9px]" style={{ color: '#8B95A5' }}>{isEs ? 'Alto' : 'High'}</span>
+                      <span className="text-[9px]" style={{ color: '#9CA3AF' }}>{isEs ? 'Bajo' : 'Low'}</span>
+                      <span className="text-[9px]" style={{ color: '#9CA3AF' }}>{isEs ? 'Alto' : 'High'}</span>
                     </div>
                   </div>
                 </div>

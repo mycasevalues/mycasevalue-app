@@ -129,15 +129,15 @@ export default function DataFreshness({
 
   if (compact) {
     return (
-      <div className="flex items-center gap-2 px-3 py-2 rounded text-sm" style={{ backgroundColor: '#131B2E' }}>
+      <div className="flex items-center gap-2 px-3 py-2 rounded text-sm" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="flex items-center gap-1.5">
           <div
             className="w-2 h-2 rounded-full"
             style={{ backgroundColor: '#10B981' }}
           />
-          <span style={{ color: '#F0F2F5' }}>
+          <span style={{ color: '#111827' }}>
             {t.dataUpdated} {formattedDate} · {formatCaseNumber(displayCount)}
-            <span style={{ color: '#B0BDD0' }}>
+            <span style={{ color: '#6B7280' }}>
               {' '}
               {t.cases}
             </span>
@@ -150,7 +150,7 @@ export default function DataFreshness({
   return (
     <div
       className="w-full rounded-lg border overflow-hidden"
-      style={{ backgroundColor: '#131B2E', borderColor: '#1E293B' }}
+      style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }}
     >
       <button
         onClick={() => setIsExpanded(!isExpanded)}
@@ -166,17 +166,17 @@ export default function DataFreshness({
             style={{ backgroundColor: getStatusDotColor(overallStatus) }}
           />
           <div className="text-left">
-            <div style={{ color: '#F0F2F5' }} className="font-medium">
+            <div style={{ color: '#111827' }} className="font-medium">
               {t.dataPipelineStatus}
             </div>
-            <div style={{ color: '#B0BDD0' }} className="text-sm">
+            <div style={{ color: '#6B7280' }} className="text-sm">
               {lang === 'es' ? 'Última actualización' : 'Last updated'} {formattedDate}
             </div>
           </div>
         </div>
         <svg
           className={`w-5 h-5 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
-          style={{ color: '#B0BDD0' }}
+          style={{ color: '#6B7280' }}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -188,17 +188,17 @@ export default function DataFreshness({
       {isExpanded && (
         <div
           className="border-t px-4 py-4 space-y-4"
-          style={{ borderColor: '#1E293B' }}
+          style={{ borderColor: '#E5E7EB' }}
         >
           <div className="space-y-3">
             {sources.map((source, idx) => (
-              <div key={idx} className="flex items-center justify-between pb-3" style={{ borderBottom: '1px solid #1E293B' }}>
+              <div key={idx} className="flex items-center justify-between pb-3" style={{ borderBottom: '1px solid #E5E7EB' }}>
                 <div className="flex-1">
-                  <div style={{ color: '#F0F2F5' }} className="text-sm font-medium">
+                  <div style={{ color: '#111827' }} className="text-sm font-medium">
                     {source.name}
                   </div>
                   {source.lastSync && (
-                    <div style={{ color: '#B0BDD0' }} className="text-xs mt-1">
+                    <div style={{ color: '#6B7280' }} className="text-xs mt-1">
                       {t.lastSync}: {formatDate(source.lastSync, lang)}
                     </div>
                   )}
@@ -237,9 +237,9 @@ export default function DataFreshness({
           <div className="pt-2">
             <div
               className="p-4 rounded"
-              style={{ backgroundColor: '#1E293B' }}
+              style={{ backgroundColor: '#E5E7EB' }}
             >
-              <div style={{ color: '#F0F2F5' }} className="font-semibold text-sm mb-2">
+              <div style={{ color: '#111827' }} className="font-semibold text-sm mb-2">
                 {t.totalCases}
               </div>
               <div style={{ color: '#5EEAD4' }} className="text-3xl font-bold">
@@ -251,7 +251,7 @@ export default function DataFreshness({
           <details className="pt-2">
             <summary
               className="cursor-pointer flex items-center gap-2 text-sm font-medium hover:opacity-80 transition-opacity"
-              style={{ color: '#4F46E5' }}
+              style={{ color: '#111111' }}
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0zM8 8a1 1 0 000 2h6a1 1 0 000-2H8zm0 3a1 1 0 000 2h3a1 1 0 000-2H8z" clipRule="evenodd" />
@@ -260,7 +260,7 @@ export default function DataFreshness({
             </summary>
             <div
               className="mt-3 p-3 rounded text-sm leading-relaxed space-y-2"
-              style={{ backgroundColor: '#1E293B', color: '#B0BDD0' }}
+              style={{ backgroundColor: '#E5E7EB', color: '#6B7280' }}
             >
               {lang === 'es' ? (
                 <>

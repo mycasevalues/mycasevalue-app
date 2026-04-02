@@ -125,7 +125,7 @@ export function EmailCaptureGate({
         {/* Headline */}
         <h2
           id="email-gate-headline"
-          className="text-center text-2xl font-bold font-['Outfit'] mb-3"
+          className="text-center text-2xl font-bold font-['Roboto'] mb-3"
           style={{ color: 'var(--fg-primary)' }}
         >
           {t.headline}
@@ -191,7 +191,7 @@ export function EmailCaptureGate({
             style={{
               background: isLoading
                 ? 'var(--accent-primary-hover)'
-                : 'linear-gradient(135deg, var(--accent-primary), #6366F1)',
+                : 'linear-gradient(135deg, var(--accent-primary), #333333)',
             }}
             aria-busy={isLoading}
           >

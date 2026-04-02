@@ -3,7 +3,7 @@
 
 const s = { fill: 'none', strokeWidth: 1.8, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
 
-export function BriefcaseIcon({ color = '#4338CA', size = 24 }: { color?: string; size?: number }) {
+export function BriefcaseIcon({ color = '#000000', size = 24 }: { color?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" stroke={color} {...s}>
       <rect x="2" y="7" width="20" height="14" rx="2" />
@@ -73,7 +73,7 @@ export function MedicalIcon({ color = '#DB2777', size = 24 }: { color?: string; 
   );
 }
 
-export function BuildingIcon({ color = '#475569', size = 24 }: { color?: string; size?: number }) {
+export function BuildingIcon({ color = '#4B5563', size = 24 }: { color?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" stroke={color} {...s}>
       <rect x="4" y="2" width="16" height="20" rx="1" />

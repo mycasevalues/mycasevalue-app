@@ -67,7 +67,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
   const TABS: { key: Tab; label: string; color: string }[] = [
     { key: 'winRates', label: t.tabs.winRates, color: '#10B981' },
     { key: 'settlements', label: t.tabs.settlements, color: '#F59E0B' },
-    { key: 'timelines', label: t.tabs.timelines, color: '#6366F1' },
+    { key: 'timelines', label: t.tabs.timelines, color: '#333333' },
     { key: 'eeoc', label: t.tabs.eeoc, color: '#EF4444' },
   ];
 
@@ -202,9 +202,9 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
         {/* TIMELINES */}
         {activeTab === 'timelines' && (
           <div>
-            <div className="rounded-lg p-4 mb-4" style={{ background: 'rgba(99,102,241,0.05)', border: '1px solid rgba(99,102,241,0.15)' }}>
+            <div className="rounded-lg p-4 mb-4" style={{ background: 'rgba(17,17,17,0.05)', border: '1px solid rgba(17,17,17,0.15)' }}>
               <div className="text-center">
-                <div className="text-3xl font-display font-extrabold" style={{ color: '#6366F1' }}>{AO_DATA.medianDispositionMonths}</div>
+                <div className="text-3xl font-display font-extrabold" style={{ color: '#333333' }}>{AO_DATA.medianDispositionMonths}</div>
                 <div className="text-[11px] mt-1" style={{ color: 'var(--fg-muted)' }}>
                   {lang === 'es' ? 'Mediana nacional de meses a resolucion' : 'National median months to disposition'}
                 </div>
@@ -247,7 +247,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
                 <div className="text-[9px]" style={{ color: 'var(--fg-subtle)' }}>{t.recovery} FY2024</div>
               </div>
               <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
-                <div className="text-lg font-display font-extrabold" style={{ color: '#6366F1' }}>{EEOC_DATA.newChargesReceived.toLocaleString()}</div>
+                <div className="text-lg font-display font-extrabold" style={{ color: '#333333' }}>{EEOC_DATA.newChargesReceived.toLocaleString()}</div>
                 <div className="text-[9px]" style={{ color: 'var(--fg-subtle)' }}>{t.chargesFiled} FY2024</div>
               </div>
               <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
@@ -260,7 +260,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
             <div className="space-y-2">
               {[
                 { label: 'ADA', fy23: EEOC_DATA.chargesByStatute.ada.fy2023, fy22: EEOC_DATA.chargesByStatute.ada.fy2022, color: '#F59E0B' },
-                { label: 'Title VII', fy23: EEOC_DATA.chargesByStatute.titleVII.fy2023, fy22: EEOC_DATA.chargesByStatute.titleVII.fy2022, color: '#6366F1' },
+                { label: 'Title VII', fy23: EEOC_DATA.chargesByStatute.titleVII.fy2023, fy22: EEOC_DATA.chargesByStatute.titleVII.fy2022, color: '#333333' },
                 { label: 'ADEA', fy23: EEOC_DATA.chargesByStatute.adea.fy2023, fy22: EEOC_DATA.chargesByStatute.adea.fy2022, color: '#0D9488' },
                 { label: 'EPA', fy23: EEOC_DATA.chargesByStatute.epa.fy2023, fy22: EEOC_DATA.chargesByStatute.epa.fy2022, color: '#EF4444' },
                 { label: 'GINA', fy23: EEOC_DATA.chargesByStatute.gina.fy2023, fy22: EEOC_DATA.chargesByStatute.gina.fy2022, color: '#A78BFA' },

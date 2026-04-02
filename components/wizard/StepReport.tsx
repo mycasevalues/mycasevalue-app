@@ -78,7 +78,7 @@ export function StepReport({
           {[
             { label: lang === 'es' ? 'Registros' : 'Records', color: 'var(--accent-primary)' },
             { label: lang === 'es' ? 'Comparando' : 'Matching', color: 'var(--accent-secondary)' },
-            { label: lang === 'es' ? 'Analizando' : 'Analyzing', color: 'var(--accent-secondary, #A5B4FC)' },
+            { label: lang === 'es' ? 'Analizando' : 'Analyzing', color: 'var(--accent-secondary, #8B5CF6)' },
           ].map((item, i) => (
             <div key={i} className="p-5 border border-[var(--border-default)] rounded-2xl glass-premium" style={{ animationDelay: `${i * 100}ms` }}>
               <div className="text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ color: item.color }}>{item.label}</div>
@@ -96,7 +96,7 @@ export function StepReport({
         <div className="w-full h-2 bg-[var(--bg-elevated)] rounded-full overflow-hidden mb-4 relative">
           <div className="h-full rounded-full transition-all duration-300 progress-animated" style={{
             width: `${loadPct}%`,
-            boxShadow: '0 0 20px rgba(79,70,229,0.4)',
+            boxShadow: '0 0 20px rgba(17,17,17,0.4)',
           }} />
         </div>
 
@@ -104,7 +104,7 @@ export function StepReport({
         <div className="flex flex-col items-center">
           <div className="mb-3 relative">
             <ProgressRing pct={loadPct} size={64} />
-            <div className="absolute inset-0 rounded-full morph-blob" style={{ background: 'radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%)', transform: 'scale(2)' }} />
+            <div className="absolute inset-0 rounded-full morph-blob" style={{ background: 'radial-gradient(circle, rgba(17,17,17,0.06) 0%, transparent 70%)', transform: 'scale(2)' }} />
           </div>
           <div className="text-[15px] text-[var(--fg-secondary)] mb-2 text-center font-medium">
             {lang === 'es' ? (
@@ -134,8 +134,8 @@ export function StepReport({
               ].map((src, i) => (
                 <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-all" style={{
                   background: src.done ? 'rgba(13,148,136,0.1)' : 'rgba(255,255,255,0.03)',
-                  border: `1px solid ${src.done ? 'rgba(13,148,136,0.2)' : '#1E293B'}`,
-                  color: src.done ? '#0D9488' : '#8B95A5',
+                  border: `1px solid ${src.done ? 'rgba(13,148,136,0.2)' : '#E5E7EB'}`,
+                  color: src.done ? '#0D9488' : '#9CA3AF',
                 }}>
                   {src.done ? (
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -194,7 +194,7 @@ export function StepReport({
             <button
               onClick={() => { setResult(null); go(0); }}
               className="ml-auto px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all no-print"
-              style={{ background: 'linear-gradient(135deg, rgba(79,70,229,0.1), rgba(99,102,241,0.05))', border: '1.5px solid var(--border-default)', color: '#A5B4FC' }}
+              style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.1), rgba(17,17,17,0.05))', border: '1.5px solid var(--border-default)', color: '#8B5CF6' }}
             >
               {lang === 'es' ? '+ Nuevo informe' : '+ Start New Report'}
             </button>
@@ -204,15 +204,15 @@ export function StepReport({
         {/* Report header - case value estimate */}
         <Reveal>
           <div className="mb-6 p-6 sm:p-8 rounded-2xl text-center relative overflow-hidden" style={{
-            background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(13,148,136,0.08))',
-            border: '1.5px solid rgba(99,102,241,0.2)',
+            background: 'linear-gradient(135deg, rgba(17,17,17,0.12), rgba(13,148,136,0.08))',
+            border: '1.5px solid rgba(17,17,17,0.2)',
           }}>
-            <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(ellipse at top, rgba(99,102,241,0.08) 0%, transparent 60%)' }} />
+            <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(ellipse at top, rgba(17,17,17,0.08) 0%, transparent 60%)' }} />
             <div className="relative">
-              <div className="text-[11px] font-bold tracking-[2px] uppercase mb-2" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>
+              <div className="text-[11px] font-bold tracking-[2px] uppercase mb-2" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>
                 {lang === 'es' ? 'Valor estimado de su caso' : 'Your Estimated Case Value'}
               </div>
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold mb-2" style={{ letterSpacing: '-2px', color: '#FFFFFF', textShadow: '0 2px 20px rgba(99,102,241,0.3)' }}>
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold mb-2" style={{ letterSpacing: '-2px', color: '#FFFFFF', textShadow: '0 2px 20px rgba(17,17,17,0.3)' }}>
                 N/A
               </div>
               <div className="text-[12px]" style={{ color: '#9BA8BE' }}>
@@ -228,9 +228,9 @@ export function StepReport({
         <Reveal>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 data-grid-stagger">
             {[
-              { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: '—', color: '#6366F1' },
-              { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: '—', color: '#6366F1' },
-              { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: '—', color: 'var(--accent-secondary, #A5B4FC)' },
+              { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: '—', color: '#333333' },
+              { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: '—', color: '#333333' },
+              { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: '—', color: 'var(--accent-secondary, #8B5CF6)' },
               { label: lang === 'es' ? 'Acuerdo + Victoria' : 'Settle + Win', value: '—', color: '#5EEAD4' },
             ].map((m, i) => (
               <div key={i} className="glass-ultra rounded-xl p-4 text-center spotlight-card gpu-accelerate">
@@ -257,19 +257,19 @@ export function StepReport({
                   navigator.clipboard.writeText(u);
                   toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
                 } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
-              }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {lang === 'es' ? 'Compartir' : 'Share'}
               </button>
-              <button onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <button onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {lang === 'es' ? 'Tarjeta' : 'Card'}
               </button>
-              <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-2px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
                 {lang === 'es' ? 'Guardar' : 'Save'}
               </button>
               {isPremium && (
                 <button onClick={() => { try { window.print(); } catch {} }}
-                  className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   PDF
                 </button>
               )}

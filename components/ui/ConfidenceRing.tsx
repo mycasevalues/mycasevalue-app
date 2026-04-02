@@ -14,7 +14,7 @@ interface ConfidenceRingProps {
 
 function getScoreColor(score: number): string {
   if (score >= 70) return '#0D9488';
-  if (score >= 50) return '#6366F1';
+  if (score >= 50) return '#333333';
   if (score >= 30) return '#F59E0B';
   return '#EF4444';
 }
@@ -108,7 +108,7 @@ export default function ConfidenceRing({
           {/* Background track */}
           <circle
             cx={size / 2} cy={size / 2} r={radius}
-            fill="none" stroke="#1E293B" strokeWidth={strokeWidth}
+            fill="none" stroke="#E5E7EB" strokeWidth={strokeWidth}
           />
           {/* Progress arc */}
           <circle
@@ -149,7 +149,7 @@ export default function ConfidenceRing({
           </div>
           <div style={{
             fontSize: Math.max(size * 0.065, 8),
-            fontWeight: 600, color: '#8B95A5',
+            fontWeight: 600, color: '#9CA3AF',
             textTransform: 'uppercase',
             letterSpacing: '1.5px',
             marginTop: '4px',
@@ -173,7 +173,7 @@ export default function ConfidenceRing({
           {scoreLabel}
         </div>
         {sublabel && (
-          <div style={{ fontSize: '11px', color: '#8B95A5', marginTop: '2px' }}>
+          <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px' }}>
             {sublabel}
           </div>
         )}

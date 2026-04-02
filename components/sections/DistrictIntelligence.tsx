@@ -333,7 +333,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
                   {selectedDistrict.annualFilings && (
                     <div className="rounded-lg p-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-default)' }}>
                       <div className="text-[10px] mb-1" style={{ color: 'var(--fg-subtle)' }}>{t.annualFilings}</div>
-                      <div className="text-2xl font-display font-extrabold" style={{ color: '#6366F1' }}>
+                      <div className="text-2xl font-display font-extrabold" style={{ color: '#333333' }}>
                         {fmtFilings(selectedDistrict.annualFilings)}
                       </div>
                     </div>

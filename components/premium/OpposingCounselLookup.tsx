@@ -78,23 +78,23 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
     return (
       <div
         className="rounded-xl p-8 text-center relative overflow-hidden"
-        style={{ background: 'rgba(99,102,241,0.05)', border: '1px solid rgba(99,102,241,0.2)' }}
+        style={{ background: 'rgba(17,17,17,0.05)', border: '1px solid rgba(17,17,17,0.2)' }}
       >
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.03) 0%, rgba(13,148,136,0.03) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.03) 0%, rgba(13,148,136,0.03) 100%)' }} />
         <div className="relative">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="1.5" className="mx-auto mb-3" strokeLinecap="round">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="1.5" className="mx-auto mb-3" strokeLinecap="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
             <circle cx="9" cy="7" r="4" />
             <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
           </svg>
-          <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#6366F1' }}>{t.locked}</p>
+          <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.locked}</p>
           <h3 className="text-base font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
           <p className="text-[12px] mb-4" style={{ color: 'var(--fg-muted)' }}>{t.unlockMsg}</p>
           <button
             onClick={onUpgrade}
             className="px-5 py-2 rounded-lg font-semibold text-[12px] text-white transition-all hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+            style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
           >
             {t.upgrade}
           </button>
@@ -107,7 +107,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
 
   return (
     <div className="rounded-xl p-6" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-default)' }}>
-      <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#6366F1' }}>{t.label}</p>
+      <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.label}</p>
       <h3 className="text-base font-bold mb-1" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
       <p className="text-[12px] mb-4" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
 
@@ -124,22 +124,22 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
         />
         <button
           className="px-4 py-2.5 rounded-lg font-semibold text-[12px] text-white"
-          style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+          style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
         >
           {t.search}
         </button>
       </div>
 
       {/* Coming Soon Notice */}
-      <div className="rounded-lg px-4 py-3 mb-4 text-center" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)' }}>
-        <span className="text-[12px] font-medium" style={{ color: '#A5B4FC' }}>{t.comingSoon}</span>
+      <div className="rounded-lg px-4 py-3 mb-4 text-center" style={{ background: 'rgba(17,17,17,0.08)', border: '1px solid rgba(17,17,17,0.15)' }}>
+        <span className="text-[12px] font-medium" style={{ color: '#8B5CF6' }}>{t.comingSoon}</span>
       </div>
 
       {/* Sample Profile Preview */}
       <div className="rounded-lg p-4" style={{ background: 'rgba(15,23,42,0.4)', border: '1px solid var(--border-default)' }}>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'rgba(99,102,241,0.15)' }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="1.5"><circle cx="12" cy="8" r="4" /><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /></svg>
+          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'rgba(17,17,17,0.15)' }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="1.5"><circle cx="12" cy="8" r="4" /><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /></svg>
           </div>
           <div>
             <div className="text-[13px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{profile.name}</div>
@@ -152,7 +152,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
             { label: t.cases, value: profile.cases.toString(), color: 'var(--fg-primary)' },
             { label: t.winRate, value: `${profile.winRate}%`, color: '#10B981' },
             { label: t.settleRate, value: `${profile.settlementRate}%`, color: '#F59E0B' },
-            { label: t.avgTime, value: `${profile.avgSettlementMonths} ${t.months}`, color: '#6366F1' },
+            { label: t.avgTime, value: `${profile.avgSettlementMonths} ${t.months}`, color: '#333333' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-[18px] font-bold font-mono" style={{ color: stat.color }}>{stat.value}</div>
@@ -164,7 +164,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
         <div className="text-[11px] mb-1" style={{ color: 'var(--fg-subtle)' }}>{t.topTypes}</div>
         <div className="flex gap-1.5 mb-2">
           {profile.topCaseTypes.map((ct, i) => (
-            <span key={i} className="px-2 py-0.5 rounded-full text-[10px] font-medium" style={{ background: 'rgba(99,102,241,0.1)', color: '#A5B4FC' }}>
+            <span key={i} className="px-2 py-0.5 rounded-full text-[10px] font-medium" style={{ background: 'rgba(17,17,17,0.1)', color: '#8B5CF6' }}>
               {ct}
             </span>
           ))}

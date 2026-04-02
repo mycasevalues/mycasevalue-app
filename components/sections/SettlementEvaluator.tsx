@@ -98,7 +98,7 @@ function getVerdict(percentile: number, lang: string): { label: string; color: s
   };
   return {
     label: lang === 'es' ? 'Resultado excepcionalmente alto' : 'Exceptionally high outcome',
-    color: '#6366F1', icon: ''
+    color: '#333333', icon: ''
   };
 }
 
@@ -254,7 +254,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
             disabled={offerAmount <= 0}
             className="w-full sm:w-auto px-6 py-2.5 rounded-lg font-semibold text-[13px] transition-all"
             style={{
-              background: offerAmount > 0 ? 'var(--accent-primary)' : 'rgba(100,116,139,0.3)',
+              background: offerAmount > 0 ? 'var(--accent-primary)' : 'rgba(107,114,128,0.3)',
               color: offerAmount > 0 ? '#FFFFFF' : 'var(--fg-subtle)',
               cursor: offerAmount > 0 ? 'pointer' : 'not-allowed',
             }}
@@ -291,7 +291,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
                   <div style={{ width: '25%', background: 'rgba(239,68,68,0.15)' }} />
                   <div style={{ width: '25%', background: 'rgba(245,158,11,0.12)' }} />
                   <div style={{ width: '25%', background: 'rgba(16,185,129,0.12)' }} />
-                  <div style={{ width: '25%', background: 'rgba(99,102,241,0.15)' }} />
+                  <div style={{ width: '25%', background: 'rgba(17,17,17,0.15)' }} />
                 </div>
 
                 {/* Indicator */}

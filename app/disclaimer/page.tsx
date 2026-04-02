@@ -34,7 +34,7 @@ export default function DisclaimerPage() {
       <div className="border-b py-4" style={{ borderColor: 'var(--border-default)' }}>
         <div className="max-w-3xl mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm" style={{ color: 'var(--fg-muted)' }}>
-            <a href="/" className="hover:opacity-80 transition-opacity" style={{ color: '#4F46E5' }}>
+            <a href="/" className="hover:opacity-80 transition-opacity" style={{ color: '#111111' }}>
               Home
             </a>
             <span>/</span>
@@ -48,7 +48,7 @@ export default function DisclaimerPage() {
         className="border-b py-16 sm:py-20"
         style={{
           borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #131B2E 0%, #0B1221 100%)',
+          background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-6">
@@ -150,7 +150,7 @@ export default function DisclaimerPage() {
               Privacy & Data Handling
             </h2>
             <p className="text-base leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
-              We respect your privacy. We do not store information about the cases you research or the queries you make. All searches are performed privately and encrypted. We do not sell, trade, or share your research data with third parties. For complete details on our privacy practices, please see our <a href="/privacy" style={{ color: '#4F46E5', textDecoration: 'underline' }}>Privacy Policy</a>.
+              We respect your privacy. We do not store information about the cases you research or the queries you make. All searches are performed privately and encrypted. We do not sell, trade, or share your research data with third parties. For complete details on our privacy practices, please see our <a href="/privacy" style={{ color: '#111111', textDecoration: 'underline' }}>Privacy Policy</a>.
             </p>
           </section>
 
@@ -170,12 +170,12 @@ export default function DisclaimerPage() {
               Questions?
             </h2>
             <p className="text-base leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
-              If you have questions about this disclaimer or how MyCaseValue works, please contact us at <a href="mailto:support@mycasevalue.com" style={{ color: '#4F46E5', textDecoration: 'underline' }}>support@mycasevalue.com</a>.
+              If you have questions about this disclaimer or how MyCaseValue works, please contact us at <a href="mailto:support@mycasevalue.com" style={{ color: '#111111', textDecoration: 'underline' }}>support@mycasevalue.com</a>.
             </p>
           </section>
 
           {/* Acknowledgment */}
-          <section className="p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
+          <section className="p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
             <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>
               By using MyCaseValue, you acknowledge that you have read this disclaimer, understand it, and agree to be bound by it. If you do not agree with any part of this disclaimer, you should not use MyCaseValue.
             </p>

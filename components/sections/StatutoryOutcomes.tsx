@@ -36,7 +36,7 @@ const STATUTES: StatuteInfo[] = [
     labelEs: 'Titulo VII',
     fullName: 'Civil Rights Act of 1964, Title VII',
     fullNameEs: 'Ley de Derechos Civiles de 1964, Titulo VII',
-    color: '#6366F1',
+    color: '#333333',
     citation: '42 U.S.C. §§ 2000e et seq.',
     protects: 'Race, color, religion, sex (including pregnancy, sexual orientation, gender identity), national origin',
     protectsEs: 'Raza, color, religion, sexo (incluyendo embarazo, orientacion sexual, identidad de genero), origen nacional',
@@ -182,8 +182,8 @@ export default function StatutoryOutcomes({ lang = 'en' }: StatutoryOutcomesProp
     <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-default)' }}>
       {/* Header */}
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[2px] uppercase mb-3"
-        style={{ background: 'rgba(99,102,241,0.1)', color: '#6366F1' }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        style={{ background: 'rgba(17,17,17,0.1)', color: '#333333' }}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         {t.badge}
       </div>
       <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>

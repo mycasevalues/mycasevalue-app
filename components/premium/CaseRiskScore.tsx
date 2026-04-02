@@ -121,21 +121,21 @@ export default function CaseRiskScore({
     return (
       <div
         className="rounded-xl p-8 text-center relative overflow-hidden"
-        style={{ background: 'rgba(99,102,241,0.05)', border: '1px solid rgba(99,102,241,0.2)' }}
+        style={{ background: 'rgba(17,17,17,0.05)', border: '1px solid rgba(17,17,17,0.2)' }}
       >
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.03) 0%, rgba(13,148,136,0.03) 100%)' }} />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.03) 0%, rgba(13,148,136,0.03) 100%)' }} />
         <div className="relative">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="1.5" className="mx-auto mb-3" strokeLinecap="round">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="1.5" className="mx-auto mb-3" strokeLinecap="round">
             <rect x="3" y="11" width="18" height="11" rx="2" />
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
-          <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#6366F1' }}>{t.locked}</p>
+          <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.locked}</p>
           <h3 className="text-base font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
           <p className="text-[12px] mb-4" style={{ color: 'var(--fg-muted)' }}>{t.unlockMsg}</p>
           <button
             onClick={onUpgrade}
             className="px-5 py-2 rounded-lg font-semibold text-[12px] text-white transition-all hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+            style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
           >
             {t.upgrade}
           </button>
@@ -149,7 +149,7 @@ export default function CaseRiskScore({
 
   return (
     <div className="rounded-xl p-6" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-default)' }}>
-      <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#6366F1' }}>{t.label}</p>
+      <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.label}</p>
       <h3 className="text-base font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
 
       <div className="flex items-center gap-6 mb-5">

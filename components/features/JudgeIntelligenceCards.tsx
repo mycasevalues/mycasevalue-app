@@ -145,7 +145,7 @@ function JudgeCard({ judge, lang, isLocked, onUpgrade }: JudgeCardProps) {
           isLocked ? 'blur-sm opacity-60' : ''
         }`}
         style={{
-          backgroundColor: '#131B2E',
+          backgroundColor: '#FFFFFF',
           borderColor: 'var(--border-default, #2d3748)',
         }}
       >
@@ -153,7 +153,7 @@ function JudgeCard({ judge, lang, isLocked, onUpgrade }: JudgeCardProps) {
         <div className="flex items-start gap-4 mb-4">
           <div
             className="flex items-center justify-center rounded-full h-12 w-12 flex-shrink-0 font-semibold text-white"
-            style={{ backgroundColor: '#4F46E5' }}
+            style={{ backgroundColor: '#111111' }}
           >
             {initials}
           </div>
@@ -201,7 +201,7 @@ function JudgeCard({ judge, lang, isLocked, onUpgrade }: JudgeCardProps) {
         <div className="flex flex-wrap gap-2">
           <span
             className="inline-block px-3 py-1 rounded-full text-xs font-medium text-white"
-            style={{ backgroundColor: '#4F46E5', opacity: 0.8 }}
+            style={{ backgroundColor: '#111111', opacity: 0.8 }}
           >
             {judge.notableTrait}
           </span>

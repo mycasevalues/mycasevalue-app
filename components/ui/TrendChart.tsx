@@ -17,11 +17,11 @@ interface TrendChartProps {
 }
 
 const darkModeColors = {
-  bg: '#131B2E',
-  border: '#1E293B',
-  text: '#F0F2F5',
-  muted: '#B0BDD0',
-  accent: '#4F46E5',
+  bg: '#FFFFFF',
+  border: '#E5E7EB',
+  text: '#111827',
+  muted: '#6B7280',
+  accent: '#111111',
 };
 
 export const generateDemoData = (nos?: string): TrendDataPoint[] => {

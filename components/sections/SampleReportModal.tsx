@@ -63,8 +63,8 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
       {/* Trigger button — rendered inline */}
       <div className="rounded-2xl p-6 sm:p-8 text-center" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-default)' }}>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[2px] uppercase mb-3"
-          style={{ background: 'rgba(99,102,241,0.1)', color: '#6366F1' }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          style={{ background: 'rgba(17,17,17,0.1)', color: '#333333' }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           {lang === 'es' ? 'VISTA PREVIA' : 'PREVIEW'}
         </div>
         <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
@@ -78,20 +78,20 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
 
         {/* Preview card thumbnail */}
         <button onClick={() => setIsOpen(true)} className="group relative mx-auto block max-w-[400px] rounded-xl overflow-hidden transition-transform hover:scale-[1.02]" style={{ border: '1px solid var(--border-default)' }}>
-          <div className="p-5" style={{ background: 'linear-gradient(180deg, rgba(99,102,241,0.08) 0%, rgba(15,23,42,0.8) 100%)' }}>
+          <div className="p-5" style={{ background: 'linear-gradient(180deg, rgba(17,17,17,0.08) 0%, rgba(15,23,42,0.8) 100%)' }}>
             {/* Mini report preview */}
             <div className="text-left space-y-2">
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-6 h-6 rounded bg-indigo-500/20 flex items-center justify-center">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
                 </div>
-                <span className="text-[11px] font-bold" style={{ color: '#6366F1' }}>{t.title}</span>
+                <span className="text-[11px] font-bold" style={{ color: '#333333' }}>{t.title}</span>
               </div>
               {/* Fake sections */}
               {[
                 { label: t.sections.winRate, value: '47.6%', color: '#10B981', free: true },
                 { label: t.sections.settlement, value: '$75K — $500K', color: '#F59E0B', free: true },
-                { label: t.sections.timeline, value: '8.7 months', color: '#6366F1', free: true },
+                { label: t.sections.timeline, value: '8.7 months', color: '#333333', free: true },
                 { label: t.sections.judge, value: '12 metrics', color: '#0D9488', free: false },
                 { label: t.sections.cost, value: '$45K — $263K', color: '#EF4444', free: false },
                 { label: t.sections.risk, value: 'Score: 72/100', color: '#A78BFA', free: false },
@@ -101,8 +101,8 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
                   <div className="flex items-center gap-2">
                     <span className="text-[11px] font-bold font-mono" style={{ color: s.color }}>{s.value}</span>
                     <span className="text-[8px] px-1.5 py-0.5 rounded-full" style={{
-                      background: s.free ? 'rgba(16,185,129,0.1)' : 'rgba(99,102,241,0.1)',
-                      color: s.free ? '#10B981' : '#6366F1',
+                      background: s.free ? 'rgba(16,185,129,0.1)' : 'rgba(17,17,17,0.1)',
+                      color: s.free ? '#10B981' : '#333333',
                     }}>
                       {s.free ? t.free : t.premium}
                     </span>
@@ -113,7 +113,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
           </div>
           {/* Hover overlay */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: 'rgba(0,0,0,0.5)' }}>
-            <span className="px-4 py-2 rounded-lg text-[12px] font-bold" style={{ background: '#6366F1', color: '#fff' }}>
+            <span className="px-4 py-2 rounded-lg text-[12px] font-bold" style={{ background: '#333333', color: '#fff' }}>
               {t.cta}
             </span>
           </div>
@@ -133,11 +133,11 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
         >
           <div
             className="relative w-full max-w-[600px] max-w-[90vw] max-h-[85vh] overflow-y-auto rounded-2xl"
-            style={{ background: 'var(--bg-surface, #131B2E)', border: '1px solid var(--border-default)' }}
+            style={{ background: 'var(--bg-surface, #FFFFFF)', border: '1px solid var(--border-default)' }}
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="sticky top-0 z-10 flex items-center justify-between p-5" style={{ background: 'var(--bg-surface, #131B2E)', borderBottom: '1px solid var(--border-default)' }}>
+            <div className="sticky top-0 z-10 flex items-center justify-between p-5" style={{ background: 'var(--bg-surface, #FFFFFF)', borderBottom: '1px solid var(--border-default)' }}>
               <div>
                 <h3 id="sample-report-title" className="text-base font-display font-extrabold" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
                 <p className="text-[11px]" style={{ color: 'var(--fg-subtle)' }}>{t.subtitle}</p>
@@ -150,7 +150,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
             {/* Report content */}
             <div className="p-5 space-y-4">
               {/* Overview */}
-              <ReportSection title={t.sections.overview} color="#6366F1" free>
+              <ReportSection title={t.sections.overview} color="#333333" free>
                 <div className="grid grid-cols-2 gap-3">
                   <Stat label={lang === 'es' ? 'Tipo de caso' : 'Case Type'} value={lang === 'es' ? 'Discriminacion Laboral' : 'Employment Discrimination'} />
                   <Stat label={lang === 'es' ? 'Estatuto' : 'Statute'} value="Title VII" />
@@ -196,8 +196,8 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
               </ReportSection>
 
               {/* Timeline */}
-              <ReportSection title={t.sections.timeline} color="#6366F1" free>
-                <div className="text-2xl font-display font-extrabold mb-1" style={{ color: '#6366F1' }}>
+              <ReportSection title={t.sections.timeline} color="#333333" free>
+                <div className="text-2xl font-display font-extrabold mb-1" style={{ color: '#333333' }}>
                   8.7 <span className="text-sm font-normal" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'meses (mediana)' : 'months (median)'}</span>
                 </div>
                 <div className="text-[10px]" style={{ color: 'var(--fg-subtle)' }}>
@@ -210,7 +210,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
                 <div className="grid grid-cols-3 gap-2 text-center">
                   <Stat label={lang === 'es' ? 'Casos asignados' : 'Cases assigned'} value="1,247" color="#0D9488" />
                   <Stat label={lang === 'es' ? 'Tasa MSJ' : 'MSJ grant rate'} value="34%" color="#F59E0B" />
-                  <Stat label={lang === 'es' ? 'Mediana a juicio' : 'Median to trial'} value="14.2mo" color="#6366F1" />
+                  <Stat label={lang === 'es' ? 'Mediana a juicio' : 'Median to trial'} value="14.2mo" color="#333333" />
                 </div>
               </ReportSection>
 
@@ -243,11 +243,11 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
             </div>
 
             {/* Footer CTA */}
-            <div className="sticky bottom-0 p-5" style={{ background: 'var(--bg-surface, #131B2E)', borderTop: '1px solid var(--border-default)' }}>
+            <div className="sticky bottom-0 p-5" style={{ background: 'var(--bg-surface, #FFFFFF)', borderTop: '1px solid var(--border-default)' }}>
               <button
                 onClick={() => setIsOpen(false)}
                 className="w-full py-3 rounded-xl text-[13px] font-bold transition-all hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', color: '#fff' }}
+                style={{ background: 'linear-gradient(135deg, #111111, #333333)', color: '#fff' }}
               >
                 {t.getReport}
               </button>
@@ -266,7 +266,7 @@ function ReportSection({ title, color, free, premium, children }: { title: strin
       <div className="flex items-center justify-between mb-3">
         <h4 className="text-[12px] font-bold" style={{ color }}>{title}</h4>
         {free && <span className="text-[8px] px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(16,185,129,0.1)', color: '#10B981' }}>FREE</span>}
-        {premium && <span className="text-[8px] px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(99,102,241,0.1)', color: '#6366F1' }}>PREMIUM</span>}
+        {premium && <span className="text-[8px] px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(17,17,17,0.1)', color: '#333333' }}>PREMIUM</span>}
       </div>
       {children}
     </div>

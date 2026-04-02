@@ -13,13 +13,13 @@ interface TrendLineProps {
 }
 
 export function TrendLine({
-  data, color = '#4F46E5', gradientId = 'trendGrad',
+  data, color = '#111111', gradientId = 'trendGrad',
   label, unit = '', lang = 'en',
 }: TrendLineProps) {
   return (
     <div className="w-full">
       {label && (
-        <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#B0BDD0] mb-3">{label}</div>
+        <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#6B7280] mb-3">{label}</div>
       )}
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }}>
@@ -29,15 +29,15 @@ export function TrendLine({
               <stop offset="95%" stopColor={color} stopOpacity={0.02} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(30,41,59,0.5)" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(229,231,235,0.5)" vertical={false} />
           <XAxis
             dataKey="year"
-            tick={{ fontSize: 10, fill: '#B0BDD0', fontFamily: 'JetBrains Mono, monospace' }}
-            axisLine={{ stroke: '#1E293B' }}
+            tick={{ fontSize: 10, fill: '#6B7280', fontFamily: 'JetBrains Mono, monospace' }}
+            axisLine={{ stroke: '#E5E7EB' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 10, fill: '#B0BDD0' }}
+            tick={{ fontSize: 10, fill: '#6B7280' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}
@@ -45,13 +45,13 @@ export function TrendLine({
           <Tooltip
             contentStyle={{
               background: 'rgba(15,23,42,0.95)',
-              border: '1px solid #1E293B',
+              border: '1px solid #E5E7EB',
               borderRadius: '10px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',
               fontFamily: 'Outfit, system-ui, sans-serif',
               padding: '8px 14px',
-              color: '#F0F2F5',
+              color: '#111827',
             }}
             formatter={(value: number) => [`${value.toLocaleString()}${unit}`, label || (lang === 'es' ? 'Valor' : 'Value')]}
           />

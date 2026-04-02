@@ -102,17 +102,17 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
           <div
             className="rounded-xl p-8 relative overflow-hidden"
             style={{
-              background: 'rgba(99,102,241,0.05)',
-              border: '1px solid rgba(99,102,241,0.2)',
+              background: 'rgba(17,17,17,0.05)',
+              border: '1px solid rgba(17,17,17,0.2)',
             }}
           >
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.03) 0%, rgba(13,148,136,0.03) 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.03) 0%, rgba(13,148,136,0.03) 100%)' }} />
             <div className="relative">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="1.5" className="mx-auto mb-4" strokeLinecap="round">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="1.5" className="mx-auto mb-4" strokeLinecap="round">
                 <rect x="3" y="11" width="18" height="11" rx="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
-              <p className="text-[11px] font-bold tracking-[3px] uppercase mb-2" style={{ color: '#6366F1' }}>
+              <p className="text-[11px] font-bold tracking-[3px] uppercase mb-2" style={{ color: '#333333' }}>
                 {t.locked}
               </p>
               <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>
@@ -124,7 +124,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
               <button
                 onClick={onUpgrade}
                 className="px-6 py-2.5 rounded-lg font-semibold text-[13px] text-white transition-all hover:scale-[1.02]"
-                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}
+                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
               >
                 {t.upgrade}
               </button>
@@ -146,7 +146,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
     >
       <div className="max-w-[700px] mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
-          <p className="text-[11px] font-bold tracking-[3px] uppercase mb-3" style={{ color: '#6366F1' }}>
+          <p className="text-[11px] font-bold tracking-[3px] uppercase mb-3" style={{ color: '#333333' }}>
             PREMIUM
           </p>
           <h2 className="font-display text-xl sm:text-2xl font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>
@@ -187,9 +187,9 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
                     onClick={() => setGoToTrial(val)}
                     className="px-4 py-1.5 rounded-lg text-[12px] font-semibold transition-all"
                     style={{
-                      background: goToTrial === val ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.03)',
-                      border: goToTrial === val ? '1px solid rgba(99,102,241,0.4)' : '1px solid var(--border-default)',
-                      color: goToTrial === val ? '#6366F1' : 'var(--fg-muted)',
+                      background: goToTrial === val ? 'rgba(17,17,17,0.15)' : 'rgba(255,255,255,0.03)',
+                      border: goToTrial === val ? '1px solid rgba(17,17,17,0.4)' : '1px solid var(--border-default)',
+                      color: goToTrial === val ? '#333333' : 'var(--fg-muted)',
                     }}
                   >
                     {val ? t.yes : t.no}
@@ -208,9 +208,9 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
                     onClick={() => setHasExperts(val)}
                     className="px-4 py-1.5 rounded-lg text-[12px] font-semibold transition-all"
                     style={{
-                      background: hasExperts === val ? 'rgba(99,102,241,0.15)' : 'rgba(255,255,255,0.03)',
-                      border: hasExperts === val ? '1px solid rgba(99,102,241,0.4)' : '1px solid var(--border-default)',
-                      color: hasExperts === val ? '#6366F1' : 'var(--fg-muted)',
+                      background: hasExperts === val ? 'rgba(17,17,17,0.15)' : 'rgba(255,255,255,0.03)',
+                      border: hasExperts === val ? '1px solid rgba(17,17,17,0.4)' : '1px solid var(--border-default)',
+                      color: hasExperts === val ? '#333333' : 'var(--fg-muted)',
                     }}
                   >
                     {val ? t.yes : t.no}
@@ -251,7 +251,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
                       className="h-full rounded-full transition-all duration-500"
                       style={{
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, #4F46E5, #6366F1)',
+                        background: 'linear-gradient(90deg, #111111, #333333)',
                       }}
                     />
                   </div>

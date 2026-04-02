@@ -135,13 +135,13 @@ export default function FaqSection({ lang }: FaqSectionProps) {
   const faqs = lang === 'es' ? FAQ_ES : FAQ_EN;
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#0B1221]">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#FAFAF8]">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <div
             className="text-[11px] font-bold tracking-[2.5px] uppercase mb-3"
-            style={{ color: '#B0BDD0' }}
+            style={{ color: '#6B7280' }}
           >
             {lang === 'es' ? 'Preguntas Frecuentes' : 'Frequently Asked Questions'}
           </div>
@@ -151,7 +151,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
           >
             {lang === 'es' ? 'Respuestas a tus preguntas' : 'Answers to your questions'}
           </h2>
-          <p className="text-base text-[#B0BDD0] max-w-2xl mx-auto">
+          <p className="text-base text-[#6B7280] max-w-2xl mx-auto">
             {lang === 'es'
               ? 'Todo lo que necesitas saber sobre MyCaseValue, nuestros datos y cómo funciona el informe.'
               : 'Everything you need to know about MyCaseValue, our data, and how reports work.'}
@@ -165,8 +165,8 @@ export default function FaqSection({ lang }: FaqSectionProps) {
               key={idx}
               className="border rounded-xl overflow-hidden transition-all duration-200"
               style={{
-                borderColor: openIdx === idx ? '#4F46E5' : '#1E293B',
-                background: openIdx === idx ? 'linear-gradient(180deg, #1E2941, #131B2E)' : '#131B2E',
+                borderColor: openIdx === idx ? '#111111' : '#E5E7EB',
+                background: openIdx === idx ? 'linear-gradient(180deg, #1E2941, #FFFFFF)' : '#FFFFFF',
               }}
             >
               <button
@@ -174,7 +174,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                 aria-expanded={openIdx === idx}
                 aria-controls={`faq-answer-${idx}`}
-                className="w-full px-6 py-4 flex items-start justify-between hover:bg-[#1E293B] transition-colors text-left"
+                className="w-full px-6 py-4 flex items-start justify-between hover:bg-[#E5E7EB] transition-colors text-left"
                 style={{
                   background: openIdx === idx ? 'transparent' : 'transparent',
                 }}
@@ -182,7 +182,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                 <h3
                   className="text-base sm:text-lg font-semibold font-display"
                   style={{
-                    color: openIdx === idx ? '#4F46E5' : '#F0F2F5',
+                    color: openIdx === idx ? '#111111' : '#111827',
                     letterSpacing: '-0.5px',
                   }}
                 >
@@ -193,7 +193,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                   height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke={openIdx === idx ? '#4F46E5' : '#B0BDD0'}
+                  stroke={openIdx === idx ? '#111111' : '#6B7280'}
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -217,8 +217,8 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                   opacity: openIdx === idx ? 1 : 0,
                 }}
               >
-                <div className="px-6 pb-4 border-t" style={{ borderColor: '#1E293B' }}>
-                  <p className="text-sm sm:text-base leading-relaxed text-[#B0BDD0] font-body">
+                <div className="px-6 pb-4 border-t" style={{ borderColor: '#E5E7EB' }}>
+                  <p className="text-sm sm:text-base leading-relaxed text-[#6B7280] font-body">
                     {item.a}
                   </p>
                 </div>
@@ -228,8 +228,8 @@ export default function FaqSection({ lang }: FaqSectionProps) {
         </div>
 
         {/* Footer CTA */}
-        <div className="mt-10 p-6 rounded-xl text-center" style={{ background: '#131B2E' }}>
-          <p className="text-sm text-[#B0BDD0] mb-3">
+        <div className="mt-10 p-6 rounded-xl text-center" style={{ background: '#FFFFFF' }}>
+          <p className="text-sm text-[#6B7280] mb-3">
             {lang === 'es'
               ? '¿No encontraste tu respuesta?'
               : 'Didn\'t find your answer?'}
@@ -237,8 +237,8 @@ export default function FaqSection({ lang }: FaqSectionProps) {
           <button
             className="text-sm font-semibold rounded-lg px-5 py-2.5 transition-all hover:scale-105"
             style={{
-              color: '#4F46E5',
-              background: 'rgba(99,102,241,0.15)',
+              color: '#111111',
+              background: 'rgba(17,17,17,0.15)',
             }}
           >
             {lang === 'es' ? 'Contacta soporte' : 'Contact support'}

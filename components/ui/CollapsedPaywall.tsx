@@ -97,7 +97,7 @@ export function CollapsedPaywall({
       >
         {/* Title */}
         <h3
-          className="text-center text-lg font-bold font-['Outfit'] mb-4"
+          className="text-center text-lg font-bold font-['Roboto'] mb-4"
           style={{ color: 'var(--fg-primary)' }}
         >
           {t.unlockTitle}
@@ -148,7 +148,7 @@ export function CollapsedPaywall({
           onClick={onUnlock}
           className="w-full h-11 rounded-lg font-semibold text-white transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98] hover:-translate-y-0.5"
           style={{
-            background: 'linear-gradient(135deg, var(--accent-primary), #6366F1)',
+            background: 'linear-gradient(135deg, var(--accent-primary), #333333)',
           }}
           aria-label={t.ctaButton}
         >

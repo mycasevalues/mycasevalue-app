@@ -79,10 +79,10 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
                 <path d={reason.icon}/>
               </svg>
             </div>
-            <h3 className="text-sm font-bold mb-1.5" style={{ color: '#E2E8F0' }}>
+            <h3 className="text-sm font-bold mb-1.5" style={{ color: '#D1D5DB' }}>
               {isEs ? reason.titleEs : reason.title}
             </h3>
-            <p className="text-xs leading-relaxed" style={{ color: '#B0BDD0' }}>
+            <p className="text-xs leading-relaxed" style={{ color: '#6B7280' }}>
               {isEs ? reason.descEs : reason.desc}
             </p>
           </div>
@@ -92,20 +92,20 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
       {/* Comparison bar */}
       <div className="max-w-[560px] mx-auto mt-6 rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-[10px] font-bold tracking-[1.5px] uppercase" style={{ color: '#8B95A5' }}>
+          <span className="text-[10px] font-bold tracking-[1.5px] uppercase" style={{ color: '#9CA3AF' }}>
             {isEs ? 'Comparación de costos mensuales' : 'Monthly cost comparison'}
           </span>
         </div>
         <div className="space-y-2">
           {[
             { name: 'MyCaseValues', cost: '$0', width: '2%', color: '#10B981', highlight: true },
-            { name: 'CourtListener', cost: '$0', width: '2%', color: '#6366F1', highlight: false },
+            { name: 'CourtListener', cost: '$0', width: '2%', color: '#333333', highlight: false },
             { name: 'PACER', cost: '$0.10/page', width: '15%', color: '#F59E0B', highlight: false },
             { name: 'Westlaw', cost: '$350+/mo', width: '85%', color: '#EF4444', highlight: false },
             { name: 'LexisNexis', cost: '$400+/mo', width: '100%', color: '#EF4444', highlight: false },
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-3">
-              <span className="text-[11px] font-medium w-[100px] flex-shrink-0" style={{ color: item.highlight ? '#10B981' : '#B0BDD0' }}>
+              <span className="text-[11px] font-medium w-[100px] flex-shrink-0" style={{ color: item.highlight ? '#10B981' : '#6B7280' }}>
                 {item.name}
               </span>
               <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.03)' }}>

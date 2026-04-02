@@ -14,22 +14,22 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html style={{ background: '#0B1221' }}>
+    <html style={{ background: '#FAFAF8' }}>
       <head>
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0B1221" />
+        <meta name="theme-color" content="#FAFAF8" />
       </head>
-      <body style={{ margin: 0, padding: 0, background: '#0B1221' }}>
+      <body style={{ margin: 0, padding: 0, background: '#FAFAF8' }}>
         <div
           style={{
             minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#0B1221',
-            fontFamily: "'Outfit', system-ui, sans-serif",
+            background: '#FAFAF8',
+            fontFamily: "'Roboto', system-ui, sans-serif",
             padding: 24,
           }}
         >
@@ -54,7 +54,7 @@ export default function GlobalError({
               style={{
                 fontSize: 22,
                 fontWeight: 700,
-                color: '#F0F2F5',
+                color: '#111827',
                 marginBottom: 8,
               }}
             >
@@ -63,7 +63,7 @@ export default function GlobalError({
             <p
               style={{
                 fontSize: 14,
-                color: '#B0BDD0',
+                color: '#6B7280',
                 lineHeight: 1.6,
                 marginBottom: 12,
               }}
@@ -73,7 +73,7 @@ export default function GlobalError({
             <p
               style={{
                 fontSize: 13,
-                color: '#8B95A5',
+                color: '#9CA3AF',
                 lineHeight: 1.6,
                 marginBottom: 32,
               }}
@@ -85,7 +85,7 @@ export default function GlobalError({
                 onClick={reset}
                 style={{
                   padding: '12px 32px',
-                  background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
+                  background: 'linear-gradient(135deg, #111111, #333333)',
                   color: 'white',
                   border: 'none',
                   borderRadius: 12,
@@ -114,8 +114,8 @@ export default function GlobalError({
                   justifyContent: 'center',
                   padding: '12px 32px',
                   background: 'transparent',
-                  color: '#B0BDD0',
-                  border: '1px solid #1E293B',
+                  color: '#6B7280',
+                  border: '1px solid #E5E7EB',
                   borderRadius: 12,
                   fontSize: 14,
                   fontWeight: 600,
@@ -124,13 +124,13 @@ export default function GlobalError({
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
-                  (e.target as HTMLAnchorElement).style.borderColor = '#4F46E5';
-                  (e.target as HTMLAnchorElement).style.color = '#F0F2F5';
+                  (e.target as HTMLAnchorElement).style.borderColor = '#111111';
+                  (e.target as HTMLAnchorElement).style.color = '#111827';
                   (e.target as HTMLAnchorElement).style.background = 'rgba(79, 70, 229, 0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.target as HTMLAnchorElement).style.borderColor = '#1E293B';
-                  (e.target as HTMLAnchorElement).style.color = '#B0BDD0';
+                  (e.target as HTMLAnchorElement).style.borderColor = '#E5E7EB';
+                  (e.target as HTMLAnchorElement).style.color = '#6B7280';
                   (e.target as HTMLAnchorElement).style.background = 'transparent';
                 }}
               >

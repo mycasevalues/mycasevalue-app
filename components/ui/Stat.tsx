@@ -28,7 +28,7 @@ export function Stat({ value, label, color, large = false }: StatProps) {
       }}>
         {value}
       </div>
-      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: '#B0BDD0', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
+      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: '#6B7280', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
     </div>
   );
 }

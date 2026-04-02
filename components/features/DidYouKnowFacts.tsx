@@ -30,7 +30,7 @@ export function DidYouKnowFacts({ caseType, lang = 'en' }: DidYouKnowFactsProps)
       {facts.map((fact, i) => (
         <div
           key={i}
-          className="p-4 rounded-xl bg-gradient-to-br from-[#162035] to-[#131B2E] border border-[var(--border-default)] transition-transform hover:scale-[1.01]"
+          className="p-4 rounded-xl bg-gradient-to-br from-[#F5F5F0] to-[#FFFFFF] border border-[var(--border-default)] transition-transform hover:scale-[1.01]"
         >
           <div className="flex gap-2">
             <span className="text-lg" aria-hidden="true">

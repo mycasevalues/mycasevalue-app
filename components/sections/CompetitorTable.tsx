@@ -200,8 +200,8 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
         {/* Score bar */}
         <div className="flex flex-wrap justify-center gap-3 mb-6">
           {COMPETITORS.map((c, i) => (
-            <div key={i} className="text-center px-3 py-2 rounded-lg" style={{ background: c.highlight ? 'rgba(99,102,241,0.1)' : 'rgba(15,23,42,0.4)', border: `1px solid ${c.highlight ? '#6366F1' : 'var(--border-default)'}` }}>
-              <div className="text-[11px] font-bold" style={{ color: c.highlight ? '#6366F1' : 'var(--fg-primary)' }}>{c.name}</div>
+            <div key={i} className="text-center px-3 py-2 rounded-lg" style={{ background: c.highlight ? 'rgba(17,17,17,0.1)' : 'rgba(15,23,42,0.4)', border: `1px solid ${c.highlight ? '#333333' : 'var(--border-default)'}` }}>
+              <div className="text-[11px] font-bold" style={{ color: c.highlight ? '#333333' : 'var(--fg-primary)' }}>{c.name}</div>
               <div className="text-[16px] font-display font-extrabold" style={{ color: c.highlight ? '#10B981' : 'var(--fg-muted)' }}>
                 {countFeatures(c).toFixed(0)}/{FEATURES.length}
               </div>
@@ -220,7 +220,7 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
                 {visibleCompetitors.map((c, i) => (
                   <th key={i} className="text-center py-3 px-2" style={{
                     borderBottom: c.highlight ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
-                    background: c.highlight ? 'rgba(99,102,241,0.08)' : 'transparent',
+                    background: c.highlight ? 'rgba(17,17,17,0.08)' : 'transparent',
                     minWidth: 80,
                   }}>
                     <div className="text-[11px] font-bold" style={{ color: c.highlight ? 'var(--accent-primary)' : 'var(--fg-primary)' }}>{c.name}</div>
@@ -258,7 +258,7 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
                       {visibleCompetitors.map((c, ci) => (
                         <td key={ci} className="text-center py-2 px-2" style={{
                           borderBottom: '1px solid rgba(255,255,255,0.03)',
-                          background: c.highlight ? 'rgba(99,102,241,0.04)' : 'transparent',
+                          background: c.highlight ? 'rgba(17,17,17,0.04)' : 'transparent',
                         }}>
                           <div className="flex justify-center"><CellIcon value={c.features[feat.key]} /></div>
                         </td>
@@ -274,7 +274,7 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
         {/* Show more / less */}
         {!showAll && (
           <div className="text-center mt-4">
-            <button onClick={() => setShowAll(true)} className="text-[11px] font-semibold px-4 py-2 rounded-lg transition-all" style={{ color: '#6366F1', border: '1px solid rgba(99,102,241,0.3)', background: 'rgba(99,102,241,0.05)' }}>
+            <button onClick={() => setShowAll(true)} className="text-[11px] font-semibold px-4 py-2 rounded-lg transition-all" style={{ color: '#333333', border: '1px solid rgba(17,17,17,0.3)', background: 'rgba(17,17,17,0.05)' }}>
               {lang === 'es' ? `Mostrar los 7 competidores` : `Show all 7 competitors`}
             </button>
           </div>

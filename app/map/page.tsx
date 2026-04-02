@@ -200,7 +200,7 @@ export default function DistrictHeatmapPage() {
               <a
                 href="/"
                 className="text-sm font-medium hover:opacity-75 transition-opacity"
-                style={{ color: '#4F46E5' }}
+                style={{ color: '#111111' }}
               >
                 &larr; Back to MyCaseValue
               </a>
@@ -224,21 +224,21 @@ export default function DistrictHeatmapPage() {
           >
             <div
               className="p-4 rounded-lg border"
-              style={{ backgroundColor: '#131B2E', borderColor: 'var(--border-default)' }}
+              style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
             >
               <p className="text-sm opacity-60 mb-1">Total States & Territories</p>
               <p className="text-2xl font-bold">{allStates.length}</p>
             </div>
             <div
               className="p-4 rounded-lg border"
-              style={{ backgroundColor: '#131B2E', borderColor: 'var(--border-default)' }}
+              style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
             >
               <p className="text-sm opacity-60 mb-1">National Average</p>
               <p className="text-2xl font-bold">{avgWinRate.toFixed(1)}%</p>
             </div>
             <div
               className="p-4 rounded-lg border"
-              style={{ backgroundColor: '#131B2E', borderColor: 'var(--border-default)' }}
+              style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
             >
               <p className="text-sm opacity-60 mb-1">Highest Rate</p>
               <div>
@@ -248,7 +248,7 @@ export default function DistrictHeatmapPage() {
             </div>
             <div
               className="p-4 rounded-lg border"
-              style={{ backgroundColor: '#131B2E', borderColor: 'var(--border-default)' }}
+              style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
             >
               <p className="text-sm opacity-60 mb-1">Lowest Rate</p>
               <div>
@@ -272,10 +272,10 @@ export default function DistrictHeatmapPage() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-2 rounded-lg border outline-none transition-colors focus:ring-2"
                 style={{
-                  backgroundColor: '#131B2E',
+                  backgroundColor: '#FFFFFF',
                   borderColor: 'var(--border-default)',
                   color: 'inherit',
-                  '--tw-ring-color': '#4F46E5',
+                  '--tw-ring-color': '#111111',
                 } as React.CSSProperties}
               />
             </div>
@@ -290,10 +290,10 @@ export default function DistrictHeatmapPage() {
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
                 className="w-full px-4 py-2 rounded-lg border outline-none transition-colors focus:ring-2"
                 style={{
-                  backgroundColor: '#131B2E',
+                  backgroundColor: '#FFFFFF',
                   borderColor: 'var(--border-default)',
                   color: 'inherit',
-                  '--tw-ring-color': '#4F46E5',
+                  '--tw-ring-color': '#111111',
                 } as React.CSSProperties}
               >
                 <option value="name">Name (A-Z)</option>
@@ -310,14 +310,14 @@ export default function DistrictHeatmapPage() {
                 <div
                   key={state.code}
                   className={`p-4 rounded-lg border transition-all hover:shadow-lg ${getBorderColor(state.winRate)}`}
-                  style={{ backgroundColor: '#131B2E', borderColor: 'var(--border-default)' }}
+                  style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
                 >
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <p className="font-medium text-lg">{state.name}</p>
                       <p
                         className="text-xs opacity-60"
-                        style={{ color: '#4F46E5' }}
+                        style={{ color: '#111111' }}
                       >
                         {state.code}
                       </p>
@@ -353,7 +353,7 @@ export default function DistrictHeatmapPage() {
           {/* CTA Section */}
           <div
             className="rounded-lg border p-8 text-center mb-12"
-            style={{ backgroundColor: '#131B2E', borderColor: 'var(--border-default)' }}
+            style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
           >
             <h2 className="text-2xl font-bold mb-3">Ready to Calculate Your Case Value?</h2>
             <p className="text-lg opacity-70 mb-6">
@@ -363,7 +363,7 @@ export default function DistrictHeatmapPage() {
             <a
               href="/odds"
               className="inline-block px-8 py-3 rounded-lg font-medium text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#4F46E5' }}
+              style={{ backgroundColor: '#111111' }}
             >
               Go to Case Calculator
             </a>

@@ -133,7 +133,7 @@ export default function JudgeAnalytics({
   const t = labels[lang as keyof typeof labels] || labels.en;
 
   return (
-    <div className="w-full bg-[#0B1221] text-[#E2E8F0] py-8">
+    <div className="w-full bg-[#FAFAF8] text-[#D1D5DB] py-8">
       {/* Header */}
       <div className="px-6 mb-8">
         <div className="flex items-center gap-3 mb-2">
@@ -142,7 +142,7 @@ export default function JudgeAnalytics({
             {t.title}
           </h2>
         </div>
-        <p className="text-[#B0BDD0] text-sm">{t.subtitle}</p>
+        <p className="text-[#6B7280] text-sm">{t.subtitle}</p>
       </div>
 
       {/* Sort Controls */}
@@ -155,8 +155,8 @@ export default function JudgeAnalytics({
             onClick={() => setSortBy(option)}
             className={`px-3 py-2 rounded text-xs font-mono transition-colors ${
               sortBy === option
-                ? 'bg-[#4F46E5] text-white'
-                : 'bg-[#131B2E] text-[#B0BDD0] border border-[#1E293B] hover:border-[#4F46E5]'
+                ? 'bg-[#111111] text-white'
+                : 'bg-[#FFFFFF] text-[#6B7280] border border-[#E5E7EB] hover:border-[#111111]'
             }`}
           >
             {option === 'winRate'
@@ -179,19 +179,19 @@ export default function JudgeAnalytics({
             return (
               <div
                 key={judge.id}
-                className="bg-[#131B2E] border border-[#1E293B] rounded-lg p-4 hover:border-[#4F46E5] transition-colors"
+                className="bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg p-4 hover:border-[#111111] transition-colors"
               >
                 <div className="mb-3">
                   <p className="font-display font-semibold text-white text-sm">
                     {judge.name}
                   </p>
-                  <p className="text-xs text-[#B0BDD0]">{judge.district}</p>
+                  <p className="text-xs text-[#6B7280]">{judge.district}</p>
                 </div>
 
                 {/* Win Rate Bar */}
                 <div className="mb-4">
                   <div className="flex justify-between mb-1">
-                    <span className="text-xs font-mono text-[#B0BDD0]">
+                    <span className="text-xs font-mono text-[#6B7280]">
                       {t.winRate}
                     </span>
                     <span
@@ -201,7 +201,7 @@ export default function JudgeAnalytics({
                       {judge.winRate}%
                     </span>
                   </div>
-                  <div className="w-full bg-[#0B1221] rounded h-2 overflow-hidden">
+                  <div className="w-full bg-[#FAFAF8] rounded h-2 overflow-hidden">
                     <div
                       className="h-full transition-all"
                       style={{
@@ -215,19 +215,19 @@ export default function JudgeAnalytics({
                 {/* Stats */}
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
-                    <span className="text-[#B0BDD0]">{t.cases}</span>
+                    <span className="text-[#6B7280]">{t.cases}</span>
                     <span className="font-mono text-white">
                       {judge.casesHandled}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#B0BDD0]">{t.avgDuration}</span>
+                    <span className="text-[#6B7280]">{t.avgDuration}</span>
                     <span className="font-mono text-white">
                       {judge.avgDuration}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#B0BDD0]">{t.settlement}</span>
+                    <span className="text-[#6B7280]">{t.settlement}</span>
                     <span className="font-mono text-white">
                       {judge.settlementRate}%
                     </span>
@@ -243,19 +243,19 @@ export default function JudgeAnalytics({
           <h3 className="text-lg font-display font-bold text-white mb-4">
             {t.topDistricts}
           </h3>
-          <div className="bg-[#131B2E] border border-[#1E293B] rounded-lg p-6">
+          <div className="bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg p-6">
             <div className="space-y-4">
               {topDistricts.map((district) => (
                 <div key={district.district}>
                   <div className="flex justify-between mb-2">
-                    <span className="font-mono text-sm text-[#E2E8F0]">
+                    <span className="font-mono text-sm text-[#D1D5DB]">
                       {district.district}
                     </span>
                     <span className="font-mono text-sm font-bold text-[#0D9488]">
                       {district.winRate}%
                     </span>
                   </div>
-                  <div className="w-full bg-[#0B1221] rounded h-2">
+                  <div className="w-full bg-[#FAFAF8] rounded h-2">
                     <div
                       className="h-full bg-[#0D9488] rounded transition-all"
                       style={{ width: `${district.winRate}%` }}
@@ -271,7 +271,7 @@ export default function JudgeAnalytics({
         {isLocked && (
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-lg flex items-center justify-center">
             <div className="text-center">
-              <div className="inline-block bg-[#4F46E5] text-white px-4 py-2 rounded mb-4 font-display font-bold text-sm">
+              <div className="inline-block bg-[#111111] text-white px-4 py-2 rounded mb-4 font-display font-bold text-sm">
                 {t.premium}
               </div>
               <button
@@ -279,7 +279,7 @@ export default function JudgeAnalytics({
                   setIsLocked(false);
                   onUnlock?.();
                 }}
-                className="mt-4 px-6 py-2 bg-[#4F46E5] hover:bg-[#4F46E5]/90 text-white rounded-lg font-display font-semibold transition-colors"
+                className="mt-4 px-6 py-2 bg-[#111111] hover:bg-[#111111]/90 text-white rounded-lg font-display font-semibold transition-colors"
               >
                 {t.unlock}
               </button>

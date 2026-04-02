@@ -234,11 +234,11 @@ function Shell({
         style={{
           background: 'var(--bg-base)',
           minHeight: '100vh',
-          fontFamily: "'Outfit', system-ui, sans-serif",
+          fontFamily: "'Roboto', system-ui, sans-serif",
           color: 'var(--fg-primary)',
           maxWidth: viewMode === 'mobile' ? '430px' : viewMode === 'desktop' ? '100%' : undefined,
           margin: viewMode === 'mobile' ? '0 auto' : undefined,
-          boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(11,18,33,.08)' : undefined,
+          boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(255,255,255,.08)' : undefined,
           transition: 'max-width 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         }}>
         {/* Reading progress bar */}
@@ -268,7 +268,7 @@ function Shell({
 
         <main id="main-content" className="w-full relative z-10" role="main" style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}>
           {/* UPL Banner */}
-          <div className="text-center py-2 border-b no-print" style={{ borderColor: 'var(--border-default)', background: 'rgba(30,41,59,0.3)' }}>
+          <div className="text-center py-2 border-b no-print" style={{ borderColor: 'var(--border-default)', background: 'rgba(229,231,235,0.3)' }}>
             <span className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'HERRAMIENTA INFORMATIVA SOLAMENTE — NO ES ASESORÍA LEGAL' : UPL.banner}</span>
           </div>
 
@@ -279,7 +279,7 @@ function Shell({
             <div className="flex items-center gap-2.5 mb-5 flex-wrap justify-center sm:justify-start">
               <span className="text-[11px] font-semibold text-[var(--fg-muted)]">{lang === 'es' ? 'Datos verificados:' : 'Verified data:'}</span>
               {['Federal Judicial Center', 'CourtListener', 'uscourts.gov', 'Google Scholar'].map((n, i) => (
-                <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-[#131B2E] border border-[var(--border-default)]" style={{ color: 'var(--fg-secondary)' }}>{n}</span>
+                <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-[#FFFFFF] border border-[var(--border-default)]" style={{ color: 'var(--fg-secondary)' }}>{n}</span>
               ))}
               <span className="text-[10px] font-medium px-2 py-1 rounded-lg" style={{ background: 'rgba(13,148,136,0.15)', color: 'var(--accent-secondary)' }}>
                 <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="3" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><polyline points="20 6 9 17 4 12" /></svg>
@@ -324,7 +324,7 @@ function Shell({
                   </a>
                 </div>
                 {showMethodology && (
-                  <div className="card-bg bg-[#131B2E] rounded-xl p-4 mt-3 border border-[var(--border-default)] text-left text-[12px] text-[var(--fg-muted)] leading-relaxed max-w-md">
+                  <div className="card-bg bg-[#FFFFFF] rounded-xl p-4 mt-3 border border-[var(--border-default)] text-left text-[12px] text-[var(--fg-muted)] leading-relaxed max-w-md">
                     MyCaseValue analyzes data from the Federal Judicial Center Integrated Database (IDB), containing outcome data for every federal civil case since 1970, cross-referenced with CourtListener (9M+ opinions). Win rates from AO-coded final dispositions. Recovery ranges from cases with monetary awards. All data is public domain (17 U.S.C. 105). MyCaseValue does not evaluate individual claims.
                   </div>
                 )}
@@ -341,7 +341,7 @@ function Shell({
                   url: () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.origin)}` },
                 { icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z', label: 'LinkedIn', color: '#0A66C2', hoverBg: '#E8F1FA', filled: false,
                   url: () => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin)}` },
-                { icon: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71', label: lang === 'es' ? 'Copiar enlace' : 'Copy link', color: 'var(--accent-primary)', hoverBg: 'rgba(99,102,241,0.15)', filled: false,
+                { icon: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71', label: lang === 'es' ? 'Copiar enlace' : 'Copy link', color: 'var(--accent-primary)', hoverBg: 'rgba(17,17,17,0.15)', filled: false,
                   url: () => '' },
               ].map((s, i) => (
                 <button key={i} onClick={() => {
@@ -355,7 +355,7 @@ function Shell({
                 className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-110 group"
                 style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-muted)' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'var(--border-muted)'; e.currentTarget.style.borderColor = s.color + '40'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = '#1E293B'; e.currentTarget.style.borderColor = 'var(--border-muted)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = '#E5E7EB'; e.currentTarget.style.borderColor = 'var(--border-muted)'; }}
                 title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}
                 aria-label={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill={s.filled ? s.color : 'none'} stroke={s.filled ? 'none' : s.color} strokeWidth={s.filled ? '0' : '2'} strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
@@ -367,11 +367,11 @@ function Shell({
 
             {/* Secure payments badge */}
             <div className="flex flex-wrap items-center justify-center gap-3 mt-3 no-print">
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid var(--border-muted)' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg" style={{ background: 'rgba(229,231,235,0.5)', border: '1px solid var(--border-muted)' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                 <span className="text-[11px] font-semibold tracking-[0.5px]" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Pagos seguros con' : 'Secure payments by'}</span>
                 {/* Stripe logo */}
-                <svg width="36" height="15" viewBox="0 0 60 25" fill={'#94A3B8'} xmlns="http://www.w3.org/2000/svg">
+                <svg width="36" height="15" viewBox="0 0 60 25" fill={'#9CA3AF'} xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 10.2c0-.7.6-1 1.5-1 1.4 0 3.1.4 4.5 1.2V6.3c-1.5-.6-3-.8-4.5-.8C3.2 5.5.5 7.5.5 10.5c0 4.6 6.3 3.9 6.3 5.9 0 .8-.7 1.1-1.7 1.1-1.5 0-3.4-.6-4.9-1.5v4.2c1.7.7 3.4 1 4.9 1 3.4 0 5.8-1.7 5.8-4.7 0-5-6.3-4.1-6.3-6z"/>
                   <path d="M14.4 1.5l-4.8 1v13.3c0 2.4 1.8 4.2 4.3 4.2 1.4 0 2.4-.2 2.9-.5v-3.8c-.5.2-3.1.9-3.1-1.4V9.5h3.1V5.8h-3.1l.7-4.3z"/>
                   <path d="M23.2 7.2l-.3-1.4h-4.3v14.4h4.9v-9.8c1.2-1.5 3.1-1.2 3.7-1v-4.5c-.7-.2-3.2-.7-4.3 1.3h.3z"/>
@@ -419,9 +419,9 @@ function Shell({
 
             {/* Legal disclaimer bar */}
             <div className="mt-5 pt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-              <div className="p-4 rounded-xl text-center" style={{ background: 'rgba(30,41,59,0.5)', border: '1px solid var(--border-muted)' }}>
+              <div className="p-4 rounded-xl text-center" style={{ background: 'rgba(229,231,235,0.5)', border: '1px solid var(--border-muted)' }}>
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                   <span className="text-[11px] font-bold tracking-[2px]" style={{ color: 'var(--fg-muted)' }}>
                     {lang === 'es' ? 'AVISO LEGAL' : 'LEGAL NOTICE'}
                   </span>
@@ -431,7 +431,7 @@ function Shell({
                     ? 'MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos solo con fines informativos. No constituye asesoría legal, opinión legal ni recomendación. No se crea relación abogado-cliente. Consulte siempre a un abogado con licencia para su situación específica.'
                     : 'MyCaseValue provides aggregate historical data from public federal court records for informational purposes only. It does not constitute legal advice, legal opinion, or recommendation of any kind. No attorney-client relationship is created. Always consult a licensed attorney for advice specific to your situation.'}
                 </p>
-                <p className="text-[10px] mt-2" style={{ color: '#475569' }}>
+                <p className="text-[10px] mt-2" style={{ color: '#4B5563' }}>
                   © {new Date().getFullYear()} MyCaseValue LLC. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
                 </p>
               </div>
@@ -445,7 +445,7 @@ function Shell({
         {showBackToTop && (
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-[var(--z-dropdown)] cursor-pointer no-print transition-all"
-            style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 16px rgba(64,64,242,.3)' }}
+            style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 16px rgba(17,17,17,.3)' }}
             aria-label="Back to top">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M18 15l-6-6-6 6" /></svg>
           </button>
@@ -453,12 +453,12 @@ function Shell({
 
         {/* Exit intent popup */}
         {showExitIntent && !isPremium && (
-          <div className="fixed inset-0 z-[var(--z-modal)] flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(8px)' }}>
-            <div className="exit-intent-modal card-bg bg-[#131B2E] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center" onClick={e => e.stopPropagation()}>
+          <div className="fixed inset-0 z-[var(--z-modal)] flex items-end sm:items-center justify-center p-4" style={{ background: 'rgba(255,255,255,.6)', backdropFilter: 'blur(8px)' }}>
+            <div className="exit-intent-modal card-bg bg-[#FFFFFF] rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center" onClick={e => e.stopPropagation()}>
               <button onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
               </div>
               <div className="text-xl font-display font-bold mb-2">{lang === 'es' ? '¡Espera! Te falta lo mejor' : "Wait — you're missing the best part"}</div>
@@ -468,7 +468,7 @@ function Shell({
               </div>
               <button onClick={() => { setShowExitIntent(false); buy('single'); }}
                 className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer"
-                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                 {lang === 'es' ? 'Informe Premium — $5.99' : 'Premium Report — $5.99'}
               </button>
               <button onClick={() => setShowExitIntent(false)} className="text-[13px] text-[var(--fg-muted)] mt-3 bg-transparent border-none cursor-pointer">
@@ -480,13 +480,13 @@ function Shell({
 
         {/* Saved Reports drawer */}
         {showSaved && (
-          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(8px)' }}
+          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(255,255,255,.5)', backdropFilter: 'blur(8px)' }}
             onClick={() => setShowSaved(false)}>
-            <div className="card-bg bg-[#131B2E] rounded-2xl p-6 max-w-lg w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+            <div className="card-bg bg-[#FFFFFF] rounded-2xl p-6 max-w-lg w-full shadow-2xl max-h-[80vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
               <div className="flex items-center justify-between mb-4">
                 <div className="text-lg font-display font-bold">{lang === 'es' ? 'Mis informes' : 'My Reports'}</div>
                 <button onClick={() => setShowSaved(false)} className="w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
               </div>
               <SavedReports
@@ -503,7 +503,7 @@ function Shell({
                   <div className="flex-1 px-3 py-2 rounded-lg bg-[var(--bg-elevated)] text-sm font-data font-bold" style={{ color: 'var(--accent-primary)' }}>{referralCode}</div>
                   <button onClick={() => { navigator.clipboard.writeText(referralCode); toast(lang === 'es' ? '¡Copiado!' : 'Copied!'); }}
                     className="px-3 py-2 text-[12px] font-semibold rounded-lg cursor-pointer"
-                    style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-primary)', border: 'none' }}>{lang === 'es' ? 'Copiar' : 'Copy'}</button>
+                    style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)', border: 'none' }}>{lang === 'es' ? 'Copiar' : 'Copy'}</button>
                 </div>
                 <div className="text-[11px] text-[var(--fg-muted)] mt-1">{lang === 'es' ? 'Comparte y obtén un informe gratis' : 'Share and get a free report'}</div>
               </div>
@@ -536,14 +536,14 @@ function Shell({
 
         {/* Cookie consent banner */}
         {showCookieConsent && (
-          <div className="fixed bottom-0 left-0 right-0 z-[var(--z-modal)] p-4 no-print" style={{ background: 'rgba(11,18,33,0.95)', backdropFilter: 'blur(12px)' }}>
+          <div className="fixed bottom-0 left-0 right-0 z-[var(--z-modal)] p-4 no-print" style={{ background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(12px)' }}>
             <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3">
               <div className="flex-1">
                 <p className="text-[13px] leading-relaxed" style={{ color: 'var(--fg-secondary)' }}>
                   {lang === 'es'
                     ? 'Usamos cookies esenciales para el funcionamiento del sitio. Las cookies opcionales de análisis nos ayudan a mejorar.'
                     : 'We use essential cookies for site functionality. Optional analytics cookies help us improve your experience.'}
-                  <button onClick={() => setLegalPage('privacy')} className="text-[#4F46E5] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]">
+                  <button onClick={() => setLegalPage('privacy')} className="text-[#111111] underline bg-transparent border-none cursor-pointer ml-1 text-[13px]">
                     {lang === 'es' ? 'Política de privacidad' : 'Privacy Policy'}
                   </button>
                 </p>
@@ -552,14 +552,14 @@ function Shell({
                 <button onClick={() => {
                   try { localStorage.setItem('mcv_cookies_accepted', 'essential'); } catch {}
                   setShowCookieConsent(false);
-                }} className="px-4 py-2 text-[12px] font-semibold bg-transparent rounded-lg cursor-pointer transition-colors" style={{ color: 'var(--fg-secondary)', border: '1px solid #475569' }}>
+                }} className="px-4 py-2 text-[12px] font-semibold bg-transparent rounded-lg cursor-pointer transition-colors" style={{ color: 'var(--fg-secondary)', border: '1px solid #4B5563' }}>
                   {lang === 'es' ? 'Solo esenciales' : 'Essential only'}
                 </button>
                 <button onClick={() => {
                   try { localStorage.setItem('mcv_cookies_accepted', 'all'); } catch {}
                   setShowCookieConsent(false);
                 }} className="px-4 py-2 text-[12px] font-semibold text-white rounded-lg cursor-pointer border-none"
-                  style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                  style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                   {lang === 'es' ? 'Aceptar todo' : 'Accept all'}
                 </button>
               </div>
@@ -995,7 +995,7 @@ export default function MyCaseValue() {
     if (rate >= 60) return { grade: 'A', color: '#059669' };
     if (rate >= 55) return { grade: 'A-', color: 'var(--accent-secondary)' };
     if (rate >= 50) return { grade: 'B+', color: '#34D399' };
-    if (rate >= 45) return { grade: 'B', color: '#6366F1' };
+    if (rate >= 45) return { grade: 'B', color: '#333333' };
     if (rate >= 40) return { grade: 'C+', color: '#D97706' };
     if (rate >= 35) return { grade: 'C', color: '#E87461' };
     if (rate >= 30) return { grade: 'D', color: '#DC2626' };
@@ -1325,8 +1325,8 @@ export default function MyCaseValue() {
               {/* Top badges row — dark glass on dark hero */}
               <div className="flex flex-wrap items-center gap-2 mb-3">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
-                  style={{ color: 'var(--accent-secondary, #A5B4FC)', background: 'rgba(79,70,229,0.12)', border: '1px solid rgba(99,102,241,0.2)' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                  style={{ color: 'var(--accent-secondary, #8B5CF6)', background: 'rgba(17,17,17,0.12)', border: '1px solid rgba(17,17,17,0.2)' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                   {t.hero_badge}
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[11px] font-semibold"
@@ -1346,19 +1346,19 @@ export default function MyCaseValue() {
                 </h1>
               </div>
 
-              <p className="text-[14px] sm:text-[15px] max-w-xl leading-[1.5] mb-3" style={{ color: '#B0BDD0' }}>
-                {t.hero_sub_pre} <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{totalDisplay}</strong> {t.hero_sub_post}
+              <p className="text-[14px] sm:text-[15px] max-w-xl leading-[1.5] mb-3" style={{ color: '#6B7280' }}>
+                {t.hero_sub_pre} <strong className="font-data" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{totalDisplay}</strong> {t.hero_sub_post}
               </p>
 
               {/* AI-integrated natural language input with smart suggestions — ABOVE FOLD */}
               <div className="mb-3 max-w-lg relative" style={{ zIndex: 20 }}>
                 <div className="relative group">
                   <div className="absolute -inset-0.5 rounded-2xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"
-                    style={{ background: 'linear-gradient(135deg, rgba(64,64,242,0.2), rgba(13,148,136,0.1), rgba(64,64,242,0.2))', filter: 'blur(8px)' }} />
+                    style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.2), rgba(13,148,136,0.1), rgba(17,17,17,0.2))', filter: 'blur(8px)' }} />
                   <div className="relative">
                     <div className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-1.5" style={{ pointerEvents: 'none' }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/><path d="M10 20h4"/></svg>
-                      <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#6366F1' }}>AI</span>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/><path d="M10 20h4"/></svg>
+                      <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#333333' }}>AI</span>
                     </div>
                     <input type="text" value={naturalInput}
                       onChange={e => setNaturalInput(e.target.value)}
@@ -1381,7 +1381,7 @@ export default function MyCaseValue() {
                       aria-label={lang === 'es' ? 'Descripción AI de su situación' : 'AI case description'}
                       className="w-full text-[15px] rounded-2xl transition-all input-frosted focus-ring-premium"
                       style={{
-                        color: '#F0F2F5',
+                        color: '#111827',
                         boxShadow: '0 4px 20px rgba(0,0,0,.15)',
                         padding: '18px 56px 18px 58px',
                       }} />
@@ -1397,7 +1397,7 @@ export default function MyCaseValue() {
                       }}
                       className="absolute right-2.5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl flex items-center justify-center border-none magnetic-btn ripple-effect"
                       aria-label={lang === 'es' ? 'Buscar' : 'Search'}
-                      style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 2px 10px rgba(64,64,242,.25)' }}>
+                      style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 2px 10px rgba(17,17,17,.25)' }}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     </button>
                   </div>
@@ -1405,10 +1405,10 @@ export default function MyCaseValue() {
                   {/* AI suggestion dropdown */}
                   {showSuggestions && aiSuggestions.length > 0 && (
                     <div className="absolute left-0 right-0 top-full mt-2 rounded-2xl overflow-hidden border shadow-2xl"
-                      style={{ background: '#131B2E', borderColor: 'rgba(99,102,241,0.2)', boxShadow: '0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(99,102,241,0.1)', zIndex: 50 }}>
-                      <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ borderColor: 'rgba(99,102,241,0.1)', background: 'rgba(99,102,241,0.05)' }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
-                        <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>
+                      style={{ background: '#FFFFFF', borderColor: 'rgba(17,17,17,0.2)', boxShadow: '0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(17,17,17,0.1)', zIndex: 50 }}>
+                      <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ borderColor: 'rgba(17,17,17,0.1)', background: 'rgba(17,17,17,0.05)' }}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
+                        <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>
                           {lang === 'es' ? 'COINCIDENCIAS INTELIGENTES' : 'SMART MATCHES'}
                         </span>
                         <span className="text-[10px] ml-auto" style={{ color: 'var(--fg-muted)' }}>
@@ -1419,18 +1419,18 @@ export default function MyCaseValue() {
                         <button key={i}
                           onMouseDown={(e) => { e.preventDefault(); setSit(s.sit); setSpec(s.opt); setAmount(s.sit.dm); go(2); setShowSuggestions(false); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
                           className="w-full flex items-center gap-3 px-4 py-3 text-left transition-all border-none bg-transparent"
-                          style={{ borderBottom: i < aiSuggestions.length - 1 ? '1px solid rgba(30,41,59,0.5)' : 'none' }}
-                          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(99,102,241,0.08)'; }}
+                          style={{ borderBottom: i < aiSuggestions.length - 1 ? '1px solid rgba(229,231,235,0.5)' : 'none' }}
+                          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(17,17,17,0.08)'; }}
                           onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}>
                           <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${s.sit.color}20`, border: `1px solid ${s.sit.color}30` }}>
                             <CategoryIcon name={s.sit.icon} size={14} color={s.sit.color} />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-[13px] font-semibold truncate" style={{ color: '#E2E8F0' }}>{s.opt.label}</div>
+                            <div className="text-[13px] font-semibold truncate" style={{ color: '#D1D5DB' }}>{s.opt.label}</div>
                             <div className="text-[11px] truncate" style={{ color: 'var(--fg-muted)' }}>{s.sit.label} · {s.opt.d}</div>
                           </div>
                           {i === 0 && (
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-secondary, #A5B4FC)' }}>
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-secondary, #8B5CF6)' }}>
                               {lang === 'es' ? 'Mejor' : 'Best match'}
                             </span>
                           )}
@@ -1449,7 +1449,7 @@ export default function MyCaseValue() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <button onClick={() => go(1)}
                   className="cta-glow cta-pulse btn-primary magnetic-btn ripple-effect px-8 sm:px-8 py-3.5 sm:py-4.5 text-[15px] sm:text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform w-full sm:w-auto"
-                  style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 24px rgba(64,64,242,.3)' }}>
+                  style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 24px rgba(17,17,17,.3)' }}>
                   {t.hero_cta}
                 </button>
                 <button onClick={demo}
@@ -1466,15 +1466,15 @@ export default function MyCaseValue() {
               {/* Social proof inline */}
               <div className="flex items-center gap-3 mt-6">
                 <div className="flex -space-x-2">
-                  {['#4F46E5', '#0D9488', '#1A2744', '#6366F1', '#0D9488'].map((c, i) => (
+                  {['#111111', '#0D9488', '#1A2744', '#333333', '#0D9488'].map((c, i) => (
                     <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
                       style={{ background: c, zIndex: 5 - i, border: '2px solid #131D35' }}>
                       {['J', 'M', 'K', 'S', 'A'][i]}
                     </div>
                   ))}
                 </div>
-                <div className="text-[12px]" style={{ color: '#B0BDD0' }}>
-                  <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
+                <div className="text-[12px]" style={{ color: '#6B7280' }}>
+                  <strong className="font-data" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{liveCounter}+</strong> {lang === 'es' ? 'informes hoy' : 'reports today'}
                   <span className="live-beacon ml-1.5" style={{ display: 'inline-block', verticalAlign: 'middle' }} />
                 </div>
               </div>
@@ -1487,28 +1487,28 @@ export default function MyCaseValue() {
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#FFFFFF', textShadow: '0 2px 12px rgba(255,255,255,0.1)' }}>
                       {heroCounterDone ? <><AnimatedNumber value={5.1} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
                   </div>
                   <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #0D9488, transparent)', opacity: 0.4 }} />
                   <div className="stat-glow" style={{ '--stat-color': '#0D9488' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary)', textShadow: '0 2px 12px rgba(13,148,136,0.3)' }}>
                       {heroCounterDone ? '94' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
                   </div>
-                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
-                  <div className="stat-glow" style={{ '--stat-color': '#A5B4FC' } as any}>
-                    <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #A5B4FC)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
+                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #333333, transparent)', opacity: 0.4 }} />
+                  <div className="stat-glow" style={{ '--stat-color': '#8B5CF6' } as any}>
+                    <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: 'var(--accent-secondary, #8B5CF6)', textShadow: '0 2px 12px rgba(165,180,252,0.3)' }}>
                       {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
                   </div>
-                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #6366F1, transparent)', opacity: 0.4 }} />
+                  <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #333333, transparent)', opacity: 0.4 }} />
                   <div className="stat-glow" style={{ '--stat-color': '#5EEAD4' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#5EEAD4', textShadow: '0 2px 12px rgba(94,234,212,0.3)' }}>
                       {heroCounterDone ? '84' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
-                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
+                    <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Tipos de caso' : 'Case types'}</div>
                   </div>
                 </div>
 
@@ -1518,13 +1518,13 @@ export default function MyCaseValue() {
                     {[65, 45, 72, 38, 58, 80, 52, 68, 42, 76, 55, 62].map((h, i) => (
                       <div key={i} className="bar" style={{
                         height: `${h * 0.5}px`,
-                        background: h > 60 ? 'linear-gradient(to top, #0D9488, #14B8A6)' : 'linear-gradient(to top, #CBD5E1, #94A3B8)',
+                        background: h > 60 ? 'linear-gradient(to top, #0D9488, #14B8A6)' : 'linear-gradient(to top, #374151, #9CA3AF)',
                         animationDelay: `${0.8 + i * 0.06}s`,
                       }} />
                     ))}
                   </div>
-                  <div className="text-[11px] leading-tight" style={{ color: '#B0BDD0' }}>
-                    <div className="font-semibold" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? 'Tasa de éxito por tipo de caso' : 'Win rate by case type'}</div>
+                  <div className="text-[11px] leading-tight" style={{ color: '#6B7280' }}>
+                    <div className="font-semibold" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{lang === 'es' ? 'Tasa de éxito por tipo de caso' : 'Win rate by case type'}</div>
                     <div>{lang === 'es' ? '12 categorías analizadas' : '12 categories analyzed'}</div>
                   </div>
                 </div>
@@ -1534,9 +1534,9 @@ export default function MyCaseValue() {
                   <div className="text-[10px] font-bold mb-3 tracking-[2px] uppercase" style={{ color: '#9BA8BE' }}>{lang === 'es' ? 'Fuente de datos' : 'Data sourced from'}</div>
                   <div className="flex flex-wrap gap-2">
                     {[
-                      { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
+                      { name: 'Federal Judicial Center', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg> },
                       { name: 'CourtListener', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M9 11L12 14L22 4" /></svg> },
-                      { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
+                      { name: 'PACER', icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><circle cx="12" cy="12" r="9" /><polyline points="9 11 12 14 15 10" /></svg> },
                     ].map((s, i) => (
                       <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all hover:scale-[1.02] spotlight-card stat-underline" style={{
                         color: '#C8D3E5',
@@ -1556,7 +1556,7 @@ export default function MyCaseValue() {
           {/* Hero Right Column — Floating Report Preview */}
           <div className="hidden lg:flex flex-col items-center justify-center relative">
             {/* Glowing backdrop */}
-            <div className="absolute inset-0 rounded-3xl" style={{ background: 'radial-gradient(ellipse at center, rgba(64,64,242,0.08) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+            <div className="absolute inset-0 rounded-3xl" style={{ background: 'radial-gradient(ellipse at center, rgba(17,17,17,0.08) 0%, transparent 70%)', filter: 'blur(40px)' }} />
 
             <div className="relative w-full max-w-[420px] gentle-float">
               {/* Main report card — glass ultra premium */}
@@ -1568,9 +1568,9 @@ export default function MyCaseValue() {
                 <div className="px-6 pt-5 pb-3 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <div>
                     <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#9BA8BE' }}>{lang === 'es' ? 'INFORME DE ANÁLISIS DE CASO' : 'CASE ANALYSIS REPORT'}</div>
-                    <div className="text-[15px] font-display font-bold mt-0.5" style={{ color: '#F0F2F5' }}>{lang === 'es' ? 'Discriminación Laboral' : 'Employment Discrimination'}</div>
+                    <div className="text-[15px] font-display font-bold mt-0.5" style={{ color: '#111827' }}>{lang === 'es' ? 'Discriminación Laboral' : 'Employment Discrimination'}</div>
                   </div>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                   </div>
                 </div>
@@ -1589,11 +1589,11 @@ export default function MyCaseValue() {
                 {/* Quick stats grid */}
                 <div className="grid grid-cols-3 gap-px mx-3 sm:mx-6 mb-4 rounded-xl overflow-hidden" style={{ background: 'rgba(255,255,255,0.04)' }}>
                   {[
-                    { v: '$85K', l: lang === 'es' ? 'Recuperación media' : 'Median recovery', c: '#A5B4FC' },
-                    { v: '14mo', l: lang === 'es' ? 'Duración media' : 'Avg duration', c: '#F0F2F5' },
+                    { v: '$85K', l: lang === 'es' ? 'Recuperación media' : 'Median recovery', c: '#8B5CF6' },
+                    { v: '14mo', l: lang === 'es' ? 'Duración media' : 'Avg duration', c: '#111827' },
                     { v: '72%', l: lang === 'es' ? 'Se resuelven' : 'Settle rate', c: '#5EEAD4' },
                   ].map((s, i) => (
-                    <div key={i} className="text-center py-3 px-2" style={{ background: 'rgba(11,18,33,0.4)' }}>
+                    <div key={i} className="text-center py-3 px-2" style={{ background: 'rgba(255,255,255,0.4)' }}>
                       <div className="text-[16px] font-display font-bold" style={{ color: s.c }}>{s.v}</div>
                       <div className="text-[10px] font-semibold mt-0.5" style={{ color: '#9BA8BE' }}>{s.l}</div>
                     </div>
@@ -1608,8 +1608,8 @@ export default function MyCaseValue() {
                       <div key={i} className="flex-1 rounded-t" style={{
                         height: `${h * 1.2}px`,
                         background: i === 0 ? 'linear-gradient(to top, #0D9488, #14B8A6)'
-                          : i === 1 ? 'linear-gradient(to top, #4F46E5, #6366F1)'
-                          : 'linear-gradient(to top, rgba(99,102,241,0.25), rgba(99,102,241,0.4))',
+                          : i === 1 ? 'linear-gradient(to top, #111111, #333333)'
+                          : 'linear-gradient(to top, rgba(17,17,17,0.25), rgba(17,17,17,0.4))',
                       }} />
                     ))}
                   </div>
@@ -1635,12 +1635,12 @@ export default function MyCaseValue() {
 
               <div className="absolute -bottom-2 -left-3 px-3 py-1.5 rounded-full text-[10px] font-bold float-tag" style={{
                 background: 'rgba(15,23,42,0.85)',
-                color: 'var(--accent-secondary, #A5B4FC)',
-                border: '1px solid rgba(99,102,241,0.25)',
+                color: 'var(--accent-secondary, #8B5CF6)',
+                border: '1px solid rgba(17,17,17,0.25)',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
                 backdropFilter: 'blur(8px)',
               }}>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2.5" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5" className="inline-block mr-1" style={{ verticalAlign: '-1px' }}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                 {lang === 'es' ? 'Análisis en 2 min' : '2-min analysis'}
               </div>
             </div>
@@ -1648,13 +1648,13 @@ export default function MyCaseValue() {
 
           {/* Scroll indicator */}
           <div className="flex justify-center scroll-indicator" style={{ gridColumn: '1 / -1' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5" strokeLinecap="round" opacity="0.4">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5" strokeLinecap="round" opacity="0.4">
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
           </div>
 
           {/* Dramatic gradient divider */}
-          <div className="separator-gradient" style={{ gridColumn: '1 / -1', height: '2px', boxShadow: '0 4px 20px rgba(79,70,229,0.3), 0 4px 20px rgba(13,148,136,0.15)' }} />
+          <div className="separator-gradient" style={{ gridColumn: '1 / -1', height: '2px', boxShadow: '0 4px 20px rgba(17,17,17,0.3), 0 4px 20px rgba(13,148,136,0.15)' }} />
 
           {/* Verdict Ticker — live scrolling court outcomes */}
           <div style={{ gridColumn: '1 / -1' }}>
@@ -1723,7 +1723,7 @@ export default function MyCaseValue() {
             <Reveal delay={250}>
               <div className="py-8 sm:py-12">
                 <div className="text-center mb-8">
-                  <p className="text-[11px] font-bold tracking-[3px] uppercase mb-3" style={{ color: '#6366F1' }}>
+                  <p className="text-[11px] font-bold tracking-[3px] uppercase mb-3" style={{ color: '#333333' }}>
                     {lang === 'es' ? 'HERRAMIENTAS AVANZADAS' : 'ADVANCED TOOLS'}
                   </p>
                   <h2 className="font-display text-xl sm:text-2xl font-bold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
@@ -1905,7 +1905,7 @@ export default function MyCaseValue() {
                 </svg>
               </div>
               <Card glow className="relative overflow-hidden" style={{ padding: '32px' }}>
-                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #4F46E5, #6366F1, #0D9488)' }} />
+                <div className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={{ background: 'linear-gradient(90deg, #111111, #333333, #0D9488)' }} />
                 <SectionLabel>{t.select_situation}</SectionLabel>
                 <div className="grid grid-cols-2 gap-3 stagger-in">
                   {SITS.map(si => (
@@ -2018,16 +2018,16 @@ export default function MyCaseValue() {
               })}
               <div className="text-[11px] text-[var(--fg-muted)] mt-3 font-semibold">{lang === 'es' ? 'Presentaciones federales año tras año' : 'Federal filings year-over-year'}</div>
             </div>
-            <div className="card-bg rounded-2xl border-2 p-7 transition-all" style={{ background: 'linear-gradient(135deg, rgba(64,64,242,0.08) 0%, rgba(64,64,242,0.03) 100%)', borderColor: '#4F46E540', boxShadow: '0 8px 32px rgba(64,64,242,0.15)' }}>
+            <div className="card-bg rounded-2xl border-2 p-7 transition-all" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.08) 0%, rgba(17,17,17,0.03) 100%)', borderColor: '#11111140', boxShadow: '0 8px 32px rgba(17,17,17,0.15)' }}>
               <SectionLabel>{t.circuit_rates}</SectionLabel>
               {/* Toggle: bar chart vs. expanded table */}
               <div className="flex gap-2 mb-3">
                 <button onClick={() => setCircuitView('bars')} className="text-[10px] font-bold px-2.5 py-1 rounded-lg border-none transition-all"
-                  style={{ background: circuitView === 'bars' ? 'rgba(99,102,241,0.2)' : 'transparent', color: circuitView === 'bars' ? '#A5B4FC' : '#8B95A5' }}>
+                  style={{ background: circuitView === 'bars' ? 'rgba(17,17,17,0.2)' : 'transparent', color: circuitView === 'bars' ? '#8B5CF6' : '#9CA3AF' }}>
                   {lang === 'es' ? 'Barras' : 'Chart'}
                 </button>
                 <button onClick={() => setCircuitView('table')} className="text-[10px] font-bold px-2.5 py-1 rounded-lg border-none transition-all"
-                  style={{ background: circuitView === 'table' ? 'rgba(99,102,241,0.2)' : 'transparent', color: circuitView === 'table' ? '#A5B4FC' : '#8B95A5' }}>
+                  style={{ background: circuitView === 'table' ? 'rgba(17,17,17,0.2)' : 'transparent', color: circuitView === 'table' ? '#8B5CF6' : '#9CA3AF' }}>
                   {lang === 'es' ? 'Detalle' : 'Details'}
                 </button>
               </div>
@@ -2038,13 +2038,13 @@ export default function MyCaseValue() {
                     <div key={i} className="flex items-center gap-2 py-1.5 transition-all" style={{ cursor: 'pointer' }}
                       onClick={() => setExpandedCircuit(expandedCircuit === ci ? null : ci)}>
                       <span className="text-[11px] font-extrabold w-14 text-[var(--fg-secondary)]">{ci}</span>
-                      <div className="flex-1 h-2.5 rounded-full overflow-hidden" style={{ background: 'rgba(64,64,242,0.15)' }}>
+                      <div className="flex-1 h-2.5 rounded-full overflow-hidden" style={{ background: 'rgba(17,17,17,0.15)' }}>
                         <div className="h-full rounded-full transition-all duration-700" style={{
                           width: `${rate}%`,
-                          background: rate > 40 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : rate > 37 ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
+                          background: rate > 40 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : rate > 37 ? 'linear-gradient(90deg, #111111, #333333)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
                         }} />
                       </div>
-                      <span className="text-[11px] font-extrabold w-10 text-right font-data" style={{ color: rate > 40 ? '#0D9488' : rate > 37 ? '#4F46E5' : '#E87461' }}>{rate}%</span>
+                      <span className="text-[11px] font-extrabold w-10 text-right font-data" style={{ color: rate > 40 ? '#0D9488' : rate > 37 ? '#111111' : '#E87461' }}>{rate}%</span>
                     </div>
                   ))}
                 </div>
@@ -2054,10 +2054,10 @@ export default function MyCaseValue() {
                     const detail = CIRCUIT_DETAIL[ci];
                     const isExp = expandedCircuit === ci;
                     return (
-                      <div key={i} className="border-b transition-all" style={{ borderColor: 'rgba(30,41,59,0.3)' }}>
+                      <div key={i} className="border-b transition-all" style={{ borderColor: 'rgba(229,231,235,0.3)' }}>
                         <div className="flex items-center gap-2 py-2 transition-all" style={{ cursor: 'pointer' }}
                           onClick={() => setExpandedCircuit(isExp ? null : ci)}>
-                          <span className="text-[11px] font-extrabold w-14" style={{ color: rate > 40 ? '#0D9488' : rate > 37 ? '#A5B4FC' : '#E87461' }}>{ci}</span>
+                          <span className="text-[11px] font-extrabold w-14" style={{ color: rate > 40 ? '#0D9488' : rate > 37 ? '#8B5CF6' : '#E87461' }}>{ci}</span>
                           <span className="text-[11px] font-data font-bold" style={{ color: 'var(--fg-secondary)' }}>{rate}%</span>
                           {detail && <span className="text-[10px] ml-auto" style={{ color: 'var(--fg-muted)' }}>{detail.caseload}</span>}
                           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2" style={{ transform: isExp ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}><path d="M6 9l6 6 6-6"/></svg>
@@ -2067,12 +2067,12 @@ export default function MyCaseValue() {
                             <div className="text-[10px] mb-2" style={{ color: 'var(--fg-muted)' }}>
                               {detail.states.join(', ')} · {detail.judges} judges · {detail.median_mo}mo median
                             </div>
-                            <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(30,41,59,0.4)' }}>
+                            <div className="rounded-lg overflow-hidden" style={{ border: '1px solid rgba(229,231,235,0.4)' }}>
                               {detail.types.map((t, j) => (
-                                <div key={j} className="flex items-center gap-2 px-2.5 py-1.5" style={{ background: j % 2 === 0 ? 'rgba(19,27,46,0.5)' : 'transparent', borderBottom: j < detail.types.length - 1 ? '1px solid rgba(30,41,59,0.2)' : 'none' }}>
+                                <div key={j} className="flex items-center gap-2 px-2.5 py-1.5" style={{ background: j % 2 === 0 ? 'rgba(19,27,46,0.5)' : 'transparent', borderBottom: j < detail.types.length - 1 ? '1px solid rgba(229,231,235,0.2)' : 'none' }}>
                                   <span className="text-[10px] font-semibold flex-1" style={{ color: 'var(--fg-muted)' }}>{t.type}</span>
-                                  <span className="text-[10px] font-data font-bold" style={{ color: t.rate > 45 ? '#0D9488' : t.rate > 35 ? '#A5B4FC' : '#E87461' }}>{t.rate}%</span>
-                                  <span className="text-[10px] font-data w-12 text-right" style={{ color: '#8B95A5' }}>{t.vol}</span>
+                                  <span className="text-[10px] font-data font-bold" style={{ color: t.rate > 45 ? '#0D9488' : t.rate > 35 ? '#8B5CF6' : '#E87461' }}>{t.rate}%</span>
+                                  <span className="text-[10px] font-data w-12 text-right" style={{ color: '#9CA3AF' }}>{t.vol}</span>
                                 </div>
                               ))}
                             </div>
@@ -2097,7 +2097,7 @@ export default function MyCaseValue() {
               </svg>
             </div>
             <div className="flex-1">
-              <div className="text-lg sm:text-xl font-display font-extrabold text-[#E2E8F0]">{t.too_late_title}</div>
+              <div className="text-lg sm:text-xl font-display font-extrabold text-[#D1D5DB]">{t.too_late_title}</div>
               <div className="text-sm text-[var(--fg-muted)] mt-1.5 leading-relaxed font-medium">{t.too_late_sub}</div>
             </div>
             <button onClick={() => go(1)} className="px-7 py-3 text-sm font-extrabold text-white rounded-xl cursor-pointer flex-shrink-0 w-full sm:w-auto text-center transition-all hover:scale-[1.05] active:scale-[0.95]"
@@ -2109,7 +2109,7 @@ export default function MyCaseValue() {
 
         {/* Social proof counter */}
         <Reveal delay={470}>
-          <div className="flex items-center justify-center gap-6 py-4 px-5 card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
+          <div className="flex items-center justify-center gap-6 py-4 px-5 card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               <span className="text-[13px] text-[var(--fg-muted)]"><strong className="font-data">{liveCounter}</strong> {lang === 'es' ? 'informes generados hoy' : 'reports generated today'}</span>
@@ -2138,7 +2138,7 @@ export default function MyCaseValue() {
         <Reveal delay={490}>
           <div className="mb-4">
             <div className="text-center mb-4">
-              <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px]" style={{ background: 'linear-gradient(90deg, #4F46E5, #0D9488, #4F46E5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{lang === 'es' ? 'LO QUE DICEN LOS USUARIOS' : 'WHAT USERS SAY'}</div>
+              <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px]" style={{ background: 'linear-gradient(90deg, #111111, #0D9488, #111111)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{lang === 'es' ? 'LO QUE DICEN LOS USUARIOS' : 'WHAT USERS SAY'}</div>
             </div>
             <div className="relative overflow-hidden">
               <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${carouselIdx * 100}%)` }}>
@@ -2169,7 +2169,7 @@ export default function MyCaseValue() {
                   <button key={i} onClick={() => setCarouselIdx(i)}
                     aria-label={`Go to testimonial ${i + 1}`}
                     className="border-none cursor-pointer transition-all rounded-full"
-                    style={{ width: i === carouselIdx ? 28 : 8, height: 8, background: i === carouselIdx ? 'linear-gradient(90deg, #4F46E5, #0D9488)' : 'var(--border-muted)', transform: i === carouselIdx ? 'scale(1.15)' : 'scale(1)', boxShadow: i === carouselIdx ? '0 2px 8px rgba(64,64,242,0.4)' : 'none' }} />
+                    style={{ width: i === carouselIdx ? 28 : 8, height: 8, background: i === carouselIdx ? 'linear-gradient(90deg, #111111, #0D9488)' : 'var(--border-muted)', transform: i === carouselIdx ? 'scale(1.15)' : 'scale(1)', boxShadow: i === carouselIdx ? '0 2px 8px rgba(17,17,17,0.4)' : 'none' }} />
                 ))}
               </div>
             </div>
@@ -2179,7 +2179,7 @@ export default function MyCaseValue() {
         {/* === RISK ASSESSMENT QUIZ === */}
         <Reveal delay={505}>
           <div className="mb-6">
-            <div className="card-bg bg-gradient-to-br rounded-3xl border border-[var(--border-default)] shadow-md overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(64,64,242,.06) 0%, rgba(13,148,136,.03) 100%)' }}>
+            <div className="card-bg bg-gradient-to-br rounded-3xl border border-[var(--border-default)] shadow-md overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,.06) 0%, rgba(13,148,136,.03) 100%)' }}>
               <div className="p-6 sm:p-8">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
                   <div>
@@ -2191,7 +2191,7 @@ export default function MyCaseValue() {
                   </div>
                   <button onClick={() => setShowQuiz(true)}
                     className="px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer flex-shrink-0 transition-all hover:scale-[1.02] active:scale-[0.98]"
-                    style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                    style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                     {lang === 'es' ? 'Empezar' : 'Start Quiz'}
                   </button>
                 </div>
@@ -2222,7 +2222,7 @@ export default function MyCaseValue() {
                     {s.icon}
                   </div>
                   <div className="text-[10px] font-extrabold tracking-[2px] mb-2 uppercase" style={{ color: s.color, textShadow: `0 1px 3px ${s.color}20` }}>{lang === 'es' ? 'Paso' : 'Step'} {s.num}</div>
-                  <div className="text-[17px] font-extrabold mb-2 text-[#E2E8F0]">{s.title}</div>
+                  <div className="text-[17px] font-extrabold mb-2 text-[#D1D5DB]">{s.title}</div>
                   <div className="text-[13px] text-[var(--fg-muted)] leading-relaxed font-medium">{s.desc}</div>
                   {/* Animated connector arrow */}
                   {i < 2 && <div className="hidden sm:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
@@ -2246,7 +2246,7 @@ export default function MyCaseValue() {
               </h2>
             </div>
             <div className="report-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] p-6">
+              <div className="card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] p-6">
                 <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-4 uppercase">{lang === 'es' ? 'Calculadora de contingencia' : 'Contingency Fee Calculator'}</div>
                 <div className="mb-4">
                   <label htmlFor="calc-amount-range" className="text-xs font-semibold text-[var(--fg-muted)] block mb-2">{lang === 'es' ? 'Cantidad estimada de recuperación' : 'Estimated recovery amount'}</label>
@@ -2255,7 +2255,7 @@ export default function MyCaseValue() {
                     <input id="calc-amount-range" type="range" min="10000" max="5000000" step="10000" value={calcAmount}
                       onChange={e => setCalcAmount(Number(e.target.value))}
                       aria-valuetext={`$${Number(calcAmount).toLocaleString()}`}
-                      className="w-full h-2 bg-[var(--bg-elevated)] rounded-lg appearance-none cursor-pointer" style={{ accentColor: '#4F46E5' }} />
+                      className="w-full h-2 bg-[var(--bg-elevated)] rounded-lg appearance-none cursor-pointer" style={{ accentColor: '#111111' }} />
                   </div>
                   <div className="flex justify-between mt-2 text-xs text-[var(--fg-muted)]">
                     <span>$10K</span>
@@ -2278,7 +2278,7 @@ export default function MyCaseValue() {
                   </div>
                 </div>
               </div>
-              <div className="card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] p-6">
+              <div className="card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] p-6">
                 <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-4 uppercase">{lang === 'es' ? 'Rangos por tipo de caso' : 'Fee ranges by case type'}</div>
                 <div className="space-y-3">
                   {[
@@ -2329,7 +2329,7 @@ export default function MyCaseValue() {
                 { value: '$47K', label: lang === 'es' ? 'Mediana de recuperación' : 'Median plaintiff recovery', sub: lang === 'es' ? 'Casos con pago' : 'In cases with payout', color: 'var(--accent-primary)' },
                 { value: '67%', label: lang === 'es' ? 'Casos que se resuelven' : 'Cases that settle', sub: lang === 'es' ? 'Antes de llegar a juicio' : 'Before reaching trial', color: 'var(--accent-primary)' },
               ].map((d, i) => (
-                <div key={i} className="p-4 card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] text-center transition-transform hover:scale-[1.02]">
+                <div key={i} className="p-4 card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] text-center transition-transform hover:scale-[1.02]">
                   <div className="text-2xl sm:text-3xl font-display font-bold" style={{ color: d.color, letterSpacing: '-1px' }}>{d.value}</div>
                   <div className="text-[12px] font-semibold text-[var(--fg-muted)] mt-1.5">{d.label}</div>
                   <div className="text-[10px] text-[var(--fg-muted)] mt-0.5">{d.sub}</div>
@@ -2339,14 +2339,14 @@ export default function MyCaseValue() {
 
             {/* Mini outcome breakdown */}
             <div className="report-grid grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+              <div className="p-5 card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                 <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-3">{lang === 'es' ? 'RESULTADOS MÁS COMUNES' : 'MOST COMMON OUTCOMES'}</div>
                 {[
                   { l: lang === 'es' ? 'Acuerdo con pago' : 'Settlement (with payment)', p: 34, c: '#0D9488' },
-                  { l: lang === 'es' ? 'Desestimación voluntaria' : 'Voluntary dismissal', p: 28, c: '#4F46E5' },
+                  { l: lang === 'es' ? 'Desestimación voluntaria' : 'Voluntary dismissal', p: 28, c: '#111111' },
                   { l: lang === 'es' ? 'Juicio sumario (defensa)' : 'Summary judgment (defense)', p: 18, c: '#D97706' },
                   { l: lang === 'es' ? 'Victoria en juicio' : 'Trial verdict (plaintiff)', p: 10, c: '#1A2744' },
-                  { l: lang === 'es' ? 'Otros' : 'Other dispositions', p: 10, c: '#94A3B8' },
+                  { l: lang === 'es' ? 'Otros' : 'Other dispositions', p: 10, c: '#9CA3AF' },
                 ].map((o, i) => (
                   <div key={i} className="flex items-center gap-2 py-1.5">
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: o.c }} />
@@ -2358,7 +2358,7 @@ export default function MyCaseValue() {
                   </div>
                 ))}
               </div>
-              <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+              <div className="p-5 card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                 <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-3">{lang === 'es' ? 'ABOGADO VS. SIN ABOGADO' : 'ATTORNEY VS. NO ATTORNEY'}</div>
                 <div className="flex gap-3 mb-3">
                   <div className="flex-1 p-3 rounded-xl text-center" style={{ background: 'rgba(13,148,136,0.15)' }}>
@@ -2370,7 +2370,7 @@ export default function MyCaseValue() {
                     <div className="text-[10px] font-semibold mt-1" style={{ color: '#D97706' }}>{lang === 'es' ? 'Sin abogado' : 'Self-represented'}</div>
                   </div>
                 </div>
-                <div className="px-3 py-2 rounded-lg text-[12px] font-medium" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-primary)' }}>
+                <div className="px-3 py-2 rounded-lg text-[12px] font-medium" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)' }}>
                   {lang === 'es' ? 'Las personas con abogado ganaron ~3.4x más a menudo' : 'People with attorneys won ~3.4x more often'}
                 </div>
                 <div className="mt-3 text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-2">{lang === 'es' ? 'TIPOS DE HONORARIOS' : 'FEE TYPES'}</div>
@@ -2393,13 +2393,13 @@ export default function MyCaseValue() {
 
         {/* === DID YOU KNOW? — Rotating legal facts === */}
         <Reveal delay={560}>
-          <div className="mb-4 p-5 rounded-2xl border border-[var(--border-default)] overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.06), rgba(13,148,136,0.04))' }}>
+          <div className="mb-4 p-5 rounded-2xl border border-[var(--border-default)] overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.06), rgba(13,148,136,0.04))' }}>
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(13,148,136,0.15))' }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.15), rgba(13,148,136,0.15))' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
               </div>
               <div className="flex-1">
-                <div className="text-[10px] font-bold tracking-[2px] mb-2" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? '¿SABÍAS QUE?' : 'DID YOU KNOW?'}</div>
+                <div className="text-[10px] font-bold tracking-[2px] mb-2" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{lang === 'es' ? '¿SABÍAS QUE?' : 'DID YOU KNOW?'}</div>
                 {(() => {
                   const facts = lang === 'es' ? [
                     'El 67% de los casos civiles federales se resuelven antes de llegar a juicio, generalmente a través de acuerdos negociados.',
@@ -2431,14 +2431,14 @@ export default function MyCaseValue() {
                 title: lang === 'es' ? 'Datos verificados' : 'Verified data',
                 desc: lang === 'es' ? 'Cada estadística proviene de registros judiciales federales públicos, no de estimaciones.' : 'Every statistic comes from public federal court records, not estimates.',
                 color: 'var(--accent-secondary)' },
-              { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>,
+              { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>,
                 title: lang === 'es' ? 'Privacidad total' : 'Completely private',
                 desc: lang === 'es' ? 'Tu búsqueda es anónima. No almacenamos datos personales ni compartimos tu información.' : 'Your search is anonymous. We do not store personal data or share your information.',
                 color: 'var(--accent-primary)' },
-              { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
+              { icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
                 title: lang === 'es' ? 'No es asesoría legal' : 'Not legal advice',
                 desc: lang === 'es' ? 'Esta es una herramienta informativa. Solo un abogado con licencia puede evaluar tu caso específico.' : 'This is an informational tool. Only a licensed attorney can evaluate your specific case.',
-                color: 'var(--accent-secondary, #A5B4FC)' },
+                color: 'var(--accent-secondary, #8B5CF6)' },
             ].map((item, i) => (
               <div key={i} className="p-4 rounded-xl border border-[var(--border-default)] transition-all hover:border-opacity-60" style={{ background: `linear-gradient(135deg, ${item.color}08, transparent)`, borderColor: `${item.color}25` }}>
                 <div className="flex items-center gap-2.5 mb-2">
@@ -2453,14 +2453,14 @@ export default function MyCaseValue() {
 
         {/* === COMPARISON TOOL PREVIEW === */}
         <Reveal delay={580}>
-          <div className="p-6 card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
+          <div className="p-6 card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
               <div>
                 <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-1">{lang === 'es' ? 'HERRAMIENTA DE COMPARACIÓN' : 'COMPARISON TOOL'}</div>
                 <div className="text-lg sm:text-xl font-display font-bold">{lang === 'es' ? 'Compara dos situaciones lado a lado' : 'Compare two situations side by side'}</div>
                 <div className="text-[13px] text-[var(--fg-muted)] mt-1">{lang === 'es' ? 'Selecciona cualquier par de tipos de caso para ver diferencias reales' : 'Select any pair of case types to see real data differences'}</div>
               </div>
-              <span className="text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-primary)' }}>
+              <span className="text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M16 3h5v5M8 3H3v5M3 16v5h5M21 16v5h-5"/></svg>
                 {lang === 'es' ? 'Interactivo' : 'Interactive'}
               </span>
@@ -2500,13 +2500,13 @@ export default function MyCaseValue() {
                   {/* Selector row with colored labels */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
                     <div>
-                      <div className="text-[10px] font-bold tracking-[2px] mb-1.5" style={{ color: '#6366F1' }}>
+                      <div className="text-[10px] font-bold tracking-[2px] mb-1.5" style={{ color: '#333333' }}>
                         {cA.icon} {lang === 'es' ? 'CASO A' : 'CASE A'}
                       </div>
                       <select value={cA.id} onChange={e => { setCompareNos(e.target.value); }}
                         aria-label={lang === 'es' ? 'Seleccionar Caso A' : 'Select Case A'}
                         className="w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer appearance-none"
-                        style={{ background: 'rgba(99,102,241,0.08)', border: '1.5px solid rgba(99,102,241,0.25)', color: 'var(--accent-secondary, #A5B4FC)', outline: 'none' }}>
+                        style={{ background: 'rgba(17,17,17,0.08)', border: '1.5px solid rgba(17,17,17,0.25)', color: 'var(--accent-secondary, #8B5CF6)', outline: 'none' }}>
                         {COMPARE_CASES.map(c => <option key={c.id} value={c.id}>{c.icon} {c.label}</option>)}
                       </select>
                     </div>
@@ -2525,9 +2525,9 @@ export default function MyCaseValue() {
 
                   {/* Legend row */}
                   <div className="flex items-center gap-4 mb-3 px-1">
-                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-sm" style={{ background: '#6366F1' }} /><span className="text-[11px] text-[var(--fg-muted)]">{cA.label.split(' ').slice(0, 2).join(' ')}</span></div>
+                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-sm" style={{ background: '#333333' }} /><span className="text-[11px] text-[var(--fg-muted)]">{cA.label.split(' ').slice(0, 2).join(' ')}</span></div>
                     <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-sm" style={{ background: '#0D9488' }} /><span className="text-[11px] text-[var(--fg-muted)]">{cB.label.split(' ').slice(0, 2).join(' ')}</span></div>
-                    <div className="flex items-center gap-1.5 ml-auto"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><span className="text-[11px] text-[#8B95A5]">{lang === 'es' ? 'Mejor en esta métrica' : 'Better metric'}</span></div>
+                    <div className="flex items-center gap-1.5 ml-auto"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><span className="text-[11px] text-[#9CA3AF]">{lang === 'es' ? 'Mejor en esta métrica' : 'Better metric'}</span></div>
                   </div>
 
                   {/* Visual comparison bars */}
@@ -2540,11 +2540,11 @@ export default function MyCaseValue() {
                       const bWins = isNumeric && m.better !== 'neutral' && (m.better === 'higher' ? vB > vA : vB < vA);
                       const maxVal = m.max || 100;
                       return (
-                        <div key={m.key} className="py-3 px-4 rounded-xl" style={{ background: 'rgba(30,41,59,0.35)' }}>
+                        <div key={m.key} className="py-3 px-4 rounded-xl" style={{ background: 'rgba(229,231,235,0.35)' }}>
                           <div className="flex items-center justify-between mb-2">
                             <span className="text-[12px] font-semibold text-[var(--fg-secondary)]">{m.label}</span>
                             {(aWins || bWins) && (
-                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: aWins ? 'rgba(99,102,241,0.15)' : 'rgba(13,148,136,0.15)', color: aWins ? '#A5B4FC' : '#5EEAD4' }}>
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: aWins ? 'rgba(17,17,17,0.15)' : 'rgba(13,148,136,0.15)', color: aWins ? '#8B5CF6' : '#5EEAD4' }}>
                                 ★ {aWins ? (lang === 'es' ? 'Caso A' : 'Case A') : (lang === 'es' ? 'Caso B' : 'Case B')}
                               </span>
                             )}
@@ -2552,29 +2552,29 @@ export default function MyCaseValue() {
                           {isNumeric && m.max ? (
                             <div className="space-y-1.5">
                               <div className="flex items-center gap-2">
-                                <div className="flex-1 h-5 rounded-md overflow-hidden" style={{ background: 'rgba(30,41,59,0.6)' }}>
-                                  <div className="h-full rounded-md flex items-center justify-end px-2 transition-all duration-500" style={{ width: `${Math.min((vA / maxVal) * 100, 100)}%`, background: aWins ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'rgba(99,102,241,0.3)' }}>
+                                <div className="flex-1 h-5 rounded-md overflow-hidden" style={{ background: 'rgba(229,231,235,0.6)' }}>
+                                  <div className="h-full rounded-md flex items-center justify-end px-2 transition-all duration-500" style={{ width: `${Math.min((vA / maxVal) * 100, 100)}%`, background: aWins ? 'linear-gradient(90deg, #111111, #333333)' : 'rgba(17,17,17,0.3)' }}>
                                     <span className="text-[11px] font-bold font-data text-white">{m.fmt(vA)}</span>
                                   </div>
                                 </div>
                               </div>
                               <div className="flex items-center gap-2">
-                                <div className="flex-1 h-5 rounded-md overflow-hidden" style={{ background: 'rgba(30,41,59,0.6)' }}>
+                                <div className="flex-1 h-5 rounded-md overflow-hidden" style={{ background: 'rgba(229,231,235,0.6)' }}>
                                   <div className="h-full rounded-md flex items-center justify-end px-2 transition-all duration-500" style={{ width: `${Math.min((vB / maxVal) * 100, 100)}%`, background: bWins ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : 'rgba(13,148,136,0.3)' }}>
                                     <span className="text-[11px] font-bold font-data text-white">{m.fmt(vB)}</span>
                                   </div>
                                 </div>
                               </div>
                               {isNumeric && m.better !== 'neutral' && (
-                                <div className="text-[10px] text-[#8B95A5] mt-0.5">
-                                  {lang === 'es' ? 'Diferencia' : 'Difference'}: <span style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{Math.abs(vA - vB).toFixed(1)}{m.unit || ''}</span>
+                                <div className="text-[10px] text-[#9CA3AF] mt-0.5">
+                                  {lang === 'es' ? 'Diferencia' : 'Difference'}: <span style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{Math.abs(vA - vB).toFixed(1)}{m.unit || ''}</span>
                                 </div>
                               )}
                             </div>
                           ) : (
                             <div className="flex items-center gap-3">
-                              <span className="text-[14px] font-bold font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{m.fmt(vA)}</span>
-                              <span className="text-[10px] text-[#8B95A5]">vs</span>
+                              <span className="text-[14px] font-bold font-data" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{m.fmt(vA)}</span>
+                              <span className="text-[10px] text-[#9CA3AF]">vs</span>
                               <span className="text-[14px] font-bold font-data" style={{ color: '#5EEAD4' }}>{m.fmt(vB)}</span>
                             </div>
                           )}
@@ -2584,13 +2584,13 @@ export default function MyCaseValue() {
                   </div>
 
                   {/* Summary insight card */}
-                  <div className="mt-4 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.1), rgba(13,148,136,0.1))', border: '1px solid rgba(99,102,241,0.15)' }}>
+                  <div className="mt-4 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.1), rgba(13,148,136,0.1))', border: '1px solid rgba(17,17,17,0.15)' }}>
                     <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(99,102,241,0.2)' }}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2" strokeLinecap="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 16v-4M12 8h.01"/></svg>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(17,17,17,0.2)' }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 16v-4M12 8h.01"/></svg>
                       </div>
                       <div>
-                        <div className="text-[11px] font-bold tracking-[2px] mb-1" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? 'ANÁLISIS' : 'INSIGHT'}</div>
+                        <div className="text-[11px] font-bold tracking-[2px] mb-1" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{lang === 'es' ? 'ANÁLISIS' : 'INSIGHT'}</div>
                         <div className="text-[13px] text-[var(--fg-secondary)] leading-relaxed">
                           {aScore > bScore
                             ? (lang === 'es'
@@ -2610,15 +2610,15 @@ export default function MyCaseValue() {
 
                   {/* Scorecard */}
                   <div className="grid grid-cols-3 gap-2 mt-4">
-                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: aScore > bScore ? 'rgba(99,102,241,0.12)' : 'rgba(30,41,59,0.3)' }}>
-                      <div className="text-[20px] font-bold font-data" style={{ color: '#6366F1' }}>{aScore}</div>
+                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: aScore > bScore ? 'rgba(17,17,17,0.12)' : 'rgba(229,231,235,0.3)' }}>
+                      <div className="text-[20px] font-bold font-data" style={{ color: '#333333' }}>{aScore}</div>
                       <div className="text-[10px] text-[var(--fg-muted)]">{lang === 'es' ? 'Caso A gana' : 'Case A wins'}</div>
                     </div>
-                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: 'rgba(30,41,59,0.3)' }}>
+                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: 'rgba(229,231,235,0.3)' }}>
                       <div className="text-[20px] font-bold font-data" style={{ color: 'var(--fg-muted)' }}>{metrics.filter(m => typeof (cA as any)[m.key] === 'number' && m.better !== 'neutral').length - aScore - bScore}</div>
                       <div className="text-[10px] text-[var(--fg-muted)]">{lang === 'es' ? 'Empate' : 'Tied'}</div>
                     </div>
-                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: bScore > aScore ? 'rgba(13,148,136,0.12)' : 'rgba(30,41,59,0.3)' }}>
+                    <div className="text-center py-2 px-3 rounded-lg" style={{ background: bScore > aScore ? 'rgba(13,148,136,0.12)' : 'rgba(229,231,235,0.3)' }}>
                       <div className="text-[20px] font-bold font-data" style={{ color: 'var(--accent-secondary)' }}>{bScore}</div>
                       <div className="text-[10px] text-[var(--fg-muted)]">{lang === 'es' ? 'Caso B gana' : 'Case B wins'}</div>
                     </div>
@@ -2627,7 +2627,7 @@ export default function MyCaseValue() {
               );
             })()}
             <button onClick={() => go(1)} className="cta-pulse w-full mt-4 py-3 text-[14px] font-semibold text-white rounded-xl cursor-pointer border-none transition-all hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 16px rgba(64,64,242,.2)' }}>
+              style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 16px rgba(17,17,17,.2)' }}>
               {lang === 'es' ? 'Obtener mi informe personalizado →' : 'Get my personalized report →'}
             </button>
           </div>
@@ -2643,7 +2643,7 @@ export default function MyCaseValue() {
               </h2>
             </div>
             <div className="relative">
-              <div className="absolute left-0 top-0 bottom-0 w-1 ml-[17px]" style={{ background: 'linear-gradient(180deg, #4F46E5, #6366F1)' }} />
+              <div className="absolute left-0 top-0 bottom-0 w-1 ml-[17px]" style={{ background: 'linear-gradient(180deg, #111111, #333333)' }} />
               <div className="space-y-6">
                 {[
                   { month: '0-1', title: lang === 'es' ? 'Consulta inicial' : 'Initial Consultation', desc: lang === 'es' ? 'Revisa tu caso con un abogado. Costo: Gratis a $500.' : 'Review your case with an attorney. Cost: Free-$500.' },
@@ -2654,20 +2654,20 @@ export default function MyCaseValue() {
                 ].map((stage, i) => (
                   <div key={i} className="flex gap-4 relative">
                     <div className="flex flex-col items-center">
-                      <div className="w-9 h-9 rounded-full bg-[#131B2E] border-[3px] flex items-center justify-center font-semibold text-sm flex-shrink-0 relative z-10" style={{ borderColor: '#4F46E5', color: 'var(--accent-primary)' }}>
+                      <div className="w-9 h-9 rounded-full bg-[#FFFFFF] border-[3px] flex items-center justify-center font-semibold text-sm flex-shrink-0 relative z-10" style={{ borderColor: '#111111', color: 'var(--accent-primary)' }}>
                         {i + 1}
                       </div>
                     </div>
                     <div className="pb-4 flex-1">
                       <div className="text-[10px] font-bold tracking-[2px] mb-1" style={{ color: 'var(--accent-primary)' }}>{stage.month} {lang === 'es' ? 'meses' : 'months'}</div>
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{stage.title}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#D1D5DB' }}>{stage.title}</div>
                       <div className="text-[13px] text-[var(--fg-muted)]">{stage.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="mt-6 p-4 rounded-xl" style={{ background: 'rgba(99,102,241,0.15)' }}>
+            <div className="mt-6 p-4 rounded-xl" style={{ background: 'rgba(17,17,17,0.15)' }}>
               <div className="text-[12px] text-[var(--fg-secondary)]"><strong>{lang === 'es' ? 'Nota:' : 'Note:'}</strong> {lang === 'es' ? 'Los plazos varían según el tipo de caso, la jurisdicción y la complejidad. Esto es un promedio basado en datos federales.' : 'Timelines vary by case type, jurisdiction, and complexity. This is an average based on federal data.'}</div>
             </div>
           </div>
@@ -2675,15 +2675,15 @@ export default function MyCaseValue() {
 
         {/* === LEGAL GLOSSARY PREVIEW === */}
         <Reveal delay={600}>
-          <div className="p-5 card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
+          <div className="p-5 card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)] mb-4">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-1">{lang === 'es' ? 'GLOSARIO LEGAL SIMPLIFICADO' : 'LEGAL TERMS — SIMPLIFIED'}</div>
                 <div className="text-[14px] text-[var(--fg-secondary)]">{lang === 'es' ? `${Object.keys(LEGAL_GLOSSARY).length} términos explicados en lenguaje sencillo` : `${Object.keys(LEGAL_GLOSSARY).length} terms explained in plain language`}</div>
               </div>
-              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full" style={{ background: 'rgba(99,102,241,0.12)' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2" strokeLinecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-                <span className="text-[11px] font-bold" style={{ color: '#6366F1' }}>{Object.keys(LEGAL_GLOSSARY).length}</span>
+              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full" style={{ background: 'rgba(17,17,17,0.12)' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2" strokeLinecap="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                <span className="text-[11px] font-bold" style={{ color: '#333333' }}>{Object.keys(LEGAL_GLOSSARY).length}</span>
               </div>
             </div>
             <input
@@ -2692,7 +2692,7 @@ export default function MyCaseValue() {
               value={glossarySearch}
               onChange={e => setGlossarySearch(e.target.value)}
               aria-label={lang === 'es' ? 'Buscar términos legales' : 'Search legal terms'}
-              className="w-full px-4 py-2.5 rounded-xl text-[13px] mb-3 border border-[var(--border-default)] bg-[#0B1221] focus:outline-none focus:border-[#4F46E5] transition-colors"
+              className="w-full px-4 py-2.5 rounded-xl text-[13px] mb-3 border border-[var(--border-default)] bg-[#FAFAF8] focus:outline-none focus:border-[#111111] transition-colors"
               style={{ color: 'var(--fg-secondary)' }}
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -2704,10 +2704,10 @@ export default function MyCaseValue() {
                     (lang === 'es' ? def.es : def.en).toLowerCase().includes(q);
                 })
                 .slice(0, glossaryExpanded ? undefined : 8).map(([term, def], i) => (
-                <div key={i} className="p-3 rounded-xl border transition-all hover:border-[#4F46E5]/30" style={{ background: 'rgba(30,41,59,0.4)', borderColor: 'var(--border-default)' }}>
+                <div key={i} className="p-3 rounded-xl border transition-all hover:border-[#111111]/30" style={{ background: 'rgba(229,231,235,0.4)', borderColor: 'var(--border-default)' }}>
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)', color: '#6366F1' }}>{(term[0] || '').toUpperCase()}</div>
-                    <div className="text-[13px] font-semibold capitalize" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{term}</div>
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0" style={{ background: 'rgba(17,17,17,0.15)', color: '#333333' }}>{(term[0] || '').toUpperCase()}</div>
+                    <div className="text-[13px] font-semibold capitalize" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>{term}</div>
                   </div>
                   <div className="text-[11px] text-[var(--fg-muted)] leading-relaxed pl-7">{lang === 'es' ? def.es : def.en}</div>
                 </div>
@@ -2724,7 +2724,7 @@ export default function MyCaseValue() {
                 <button
                   onClick={() => setGlossaryExpanded(!glossaryExpanded)}
                   className="w-full mt-3 py-2.5 rounded-xl text-[13px] font-semibold cursor-pointer border-none transition-all"
-                  style={{ background: 'rgba(99,102,241,0.1)', color: 'var(--accent-secondary, #A5B4FC)' }}>
+                  style={{ background: 'rgba(17,17,17,0.1)', color: 'var(--accent-secondary, #8B5CF6)' }}>
                   {glossaryExpanded
                     ? (lang === 'es' ? 'Mostrar menos ▲' : 'Show less ▲')
                     : (lang === 'es' ? `Mostrar los ${filteredCount - 8} términos restantes ▼` : `Show all ${filteredCount - 8} remaining terms ▼`)}
@@ -2743,7 +2743,7 @@ export default function MyCaseValue() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Free */}
-              <div className="p-6 card-bg bg-[#131B2E] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
+              <div className="p-6 card-bg bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
                 <div className="inline-block px-3 py-1 rounded-full text-[11px] font-bold mb-3" style={{ background: 'var(--bg-elevated)', color: 'var(--fg-muted)' }}>{lang === 'es' ? 'GRATIS' : 'FREE'}</div>
                 <div className="text-2xl font-display font-bold mb-1">$0</div>
                 <div className="text-[12px] text-[var(--fg-muted)] mb-4">{lang === 'es' ? 'Perfecto para empezar' : 'Perfect to get started'}</div>
@@ -2769,9 +2769,9 @@ export default function MyCaseValue() {
                 </button>
               </div>
               {/* Premium */}
-              <div className="p-6 rounded-2xl border-2 shadow-md relative overflow-hidden" style={{ borderColor: '#4F46E530', background: 'linear-gradient(180deg, #131B2E, #0F172A)' }}>
-                <div className="absolute top-0 right-0 px-4 py-1 text-[10px] font-bold text-white rounded-bl-xl" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>{lang === 'es' ? 'MÁS POPULAR' : 'MOST POPULAR'}</div>
-                <div className="inline-block px-3 py-1 rounded-full text-[11px] font-bold mb-3" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-primary)' }}>PREMIUM</div>
+              <div className="p-6 rounded-2xl border-2 shadow-md relative overflow-hidden" style={{ borderColor: '#11111130', background: 'linear-gradient(180deg, #FFFFFF, #FFFFFF)' }}>
+                <div className="absolute top-0 right-0 px-4 py-1 text-[10px] font-bold text-white rounded-bl-xl" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>{lang === 'es' ? 'MÁS POPULAR' : 'MOST POPULAR'}</div>
+                <div className="inline-block px-3 py-1 rounded-full text-[11px] font-bold mb-3" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)' }}>PREMIUM</div>
                 <div className="flex items-end gap-1 mb-1">
                   <span className="text-2xl font-display font-bold">$5.99</span>
                   <span className="text-[13px] text-[var(--fg-muted)] mb-0.5">/ {lang === 'es' ? 'informe' : 'report'}</span>
@@ -2793,13 +2793,13 @@ export default function MyCaseValue() {
                     { text: lang === 'es' ? 'Alertas de nuevos casos' : 'New case alerts', bold: false },
                   ].map((f, i) => (
                     <div key={i} className="flex items-center gap-2 text-[13px]">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                       <span className={f.bold ? 'font-semibold text-[var(--fg-secondary)]' : 'text-[var(--fg-muted)]'}>{f.text}</span>
                     </div>
                   ))}
                 </div>
                 <button onClick={() => setShowPricing(true)} className="w-full mt-5 py-3 text-[14px] font-semibold text-white rounded-xl cursor-pointer border-none transition-all hover:-translate-y-0.5"
-                  style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)', boxShadow: '0 4px 16px rgba(64,64,242,.25)' }}>
+                  style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 16px rgba(17,17,17,.25)' }}>
                   {lang === 'es' ? 'Desbloquear premium' : 'Unlock premium'}
                 </button>
               </div>
@@ -2833,7 +2833,7 @@ export default function MyCaseValue() {
 
         {/* === DATA SOURCES & TRUST === */}
         <Reveal delay={640}>
-          <div className="p-5 rounded-2xl mb-4" style={{ background: 'linear-gradient(135deg, #131B2E, rgba(99,102,241,0.08))' }}>
+          <div className="p-5 rounded-2xl mb-4" style={{ background: 'linear-gradient(135deg, #FFFFFF, rgba(17,17,17,0.08))' }}>
             <div className="text-center mb-4">
               <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-1">{lang === 'es' ? 'FUENTES DE DATOS' : 'DATA SOURCES'}</div>
               <div className="text-[15px] font-semibold text-[var(--fg-secondary)]">{lang === 'es' ? 'Construido sobre datos públicos federales' : 'Built on public federal court data'}</div>
@@ -2844,10 +2844,10 @@ export default function MyCaseValue() {
                 { name: 'CourtListener / RECAP', desc: lang === 'es' ? 'Registros de PACER proporcionados al público' : 'PACER records made freely available to the public', badge: 'Secondary' },
                 { name: 'U.S. Courts (PACER)', desc: lang === 'es' ? 'Documentos y registros judiciales oficiales' : 'Official court filings and docket records', badge: 'Reference' },
               ].map((s, i) => (
-                <div key={i} className="p-3.5 bg-[#131B2E] rounded-xl border border-[var(--border-default)]">
+                <div key={i} className="p-3.5 bg-[#FFFFFF] rounded-xl border border-[var(--border-default)]">
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="text-[14px] font-semibold text-[var(--fg-secondary)]">{s.name}</span>
-                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-primary)' }}>{s.badge}</span>
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)' }}>{s.badge}</span>
                   </div>
                   <div className="text-[11px] text-[var(--fg-muted)] leading-relaxed">{s.desc}</div>
                 </div>
@@ -2872,7 +2872,7 @@ export default function MyCaseValue() {
             <ReportFeaturesGrid lang={lang} />
             <div className="text-center">
               <button onClick={() => go(1)} className="px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer border-none"
-                style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                 {lang === 'es' ? 'Ver tu informe personalizado →' : 'Get your personalized report →'}
               </button>
             </div>
@@ -2909,7 +2909,7 @@ export default function MyCaseValue() {
               <h2 className="text-2xl sm:text-3xl font-display font-bold" style={{ letterSpacing: '-1px' }}>{lang === 'es' ? 'Tu estado de un vistazo' : 'Your state at a glance'}</h2>
               <p className="text-sm text-[var(--fg-muted)] mt-2">{lang === 'es' ? 'Haz clic en tu estado para ver datos locales' : 'Click your state to see local insights'}</p>
             </div>
-            <div className="bg-[#131B2E] rounded-2xl border border-[var(--border-default)] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]" style={{ maxHeight: '500px', overflow: 'auto' }}>
+            <div className="bg-[#FFFFFF] rounded-2xl border border-[var(--border-default)] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]" style={{ maxHeight: '500px', overflow: 'auto' }}>
               <USMap stateRates={AGGREGATE_STATE_RATES} onStateClick={(s) => { setStateCode(s); go(1); }} />
             </div>
           </div>
@@ -3074,7 +3074,7 @@ export default function MyCaseValue() {
             {[
               { label: lang === 'es' ? 'Registros' : 'Records', color: 'var(--accent-primary)' },
               { label: lang === 'es' ? 'Comparando' : 'Matching', color: 'var(--accent-secondary)' },
-              { label: lang === 'es' ? 'Analizando' : 'Analyzing', color: 'var(--accent-secondary, #A5B4FC)' },
+              { label: lang === 'es' ? 'Analizando' : 'Analyzing', color: 'var(--accent-secondary, #8B5CF6)' },
             ].map((item, i) => (
               <div key={i} className="p-5 border border-[var(--border-default)] rounded-2xl glass-premium" style={{ animationDelay: `${i * 100}ms` }}>
                 <div className="text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ color: item.color }}>{item.label}</div>
@@ -3092,7 +3092,7 @@ export default function MyCaseValue() {
           <div className="w-full h-2 bg-[var(--bg-elevated)] rounded-full overflow-hidden mb-4 relative">
             <div className="h-full rounded-full transition-all duration-300 progress-animated" style={{
               width: `${loadPct}%`,
-              boxShadow: '0 0 20px rgba(79,70,229,0.4)',
+              boxShadow: '0 0 20px rgba(17,17,17,0.4)',
             }} />
           </div>
 
@@ -3100,7 +3100,7 @@ export default function MyCaseValue() {
           <div className="flex flex-col items-center">
             <div className="mb-3 relative">
               <ProgressRing pct={loadPct} size={64} />
-              <div className="absolute inset-0 rounded-full morph-blob" style={{ background: 'radial-gradient(circle, rgba(79,70,229,0.06) 0%, transparent 70%)', transform: 'scale(2)' }} />
+              <div className="absolute inset-0 rounded-full morph-blob" style={{ background: 'radial-gradient(circle, rgba(17,17,17,0.06) 0%, transparent 70%)', transform: 'scale(2)' }} />
             </div>
             <div className="text-[15px] text-[var(--fg-secondary)] mb-2 text-center font-medium">
               {lang === 'es' ? (
@@ -3130,8 +3130,8 @@ export default function MyCaseValue() {
                 ].map((src, i) => (
                   <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-all" style={{
                     background: src.done ? 'rgba(13,148,136,0.1)' : 'rgba(255,255,255,0.03)',
-                    border: `1px solid ${src.done ? 'rgba(13,148,136,0.2)' : '#1E293B'}`,
-                    color: src.done ? '#0D9488' : '#8B95A5',
+                    border: `1px solid ${src.done ? 'rgba(13,148,136,0.2)' : '#E5E7EB'}`,
+                    color: src.done ? '#0D9488' : '#9CA3AF',
                   }}>
                     {src.done ? (
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -3208,7 +3208,7 @@ export default function MyCaseValue() {
               <button
                 onClick={() => { setSit(null); setSpec(null); setResult(null); setConsent(false); setEmail(''); setEmailSent(false); go(0); }}
                 className="ml-auto px-5 py-2.5 text-sm font-semibold rounded-lg border transition-all no-print"
-                style={{ background: 'linear-gradient(135deg, rgba(79,70,229,0.1), rgba(99,102,241,0.05))', border: '1.5px solid var(--border-default)', color: '#A5B4FC' }}
+                style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.1), rgba(17,17,17,0.05))', border: '1.5px solid var(--border-default)', color: '#8B5CF6' }}
               >
                 {lang === 'es' ? '+ Nuevo informe' : '+ Start New Report'}
               </button>
@@ -3218,15 +3218,15 @@ export default function MyCaseValue() {
           {/* Bold headline valuation — the first thing users see */}
           <Reveal>
             <div className="mb-6 p-6 sm:p-8 rounded-2xl text-center relative overflow-hidden" style={{
-              background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(13,148,136,0.08))',
-              border: '1.5px solid rgba(99,102,241,0.2)',
+              background: 'linear-gradient(135deg, rgba(17,17,17,0.12), rgba(13,148,136,0.08))',
+              border: '1.5px solid rgba(17,17,17,0.2)',
             }}>
-              <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(ellipse at top, rgba(99,102,241,0.08) 0%, transparent 60%)' }} />
+              <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(ellipse at top, rgba(17,17,17,0.08) 0%, transparent 60%)' }} />
               <div className="relative">
-                <div className="text-[11px] font-bold tracking-[2px] uppercase mb-2" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>
+                <div className="text-[11px] font-bold tracking-[2px] uppercase mb-2" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>
                   {lang === 'es' ? 'Valor estimado de su caso' : 'Your Estimated Case Value'}
                 </div>
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold mb-2 spring-count" style={{ letterSpacing: '-2px', color: '#FFFFFF', textShadow: '0 2px 20px rgba(99,102,241,0.3)' }}>
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold mb-2 spring-count" style={{ letterSpacing: '-2px', color: '#FFFFFF', textShadow: '0 2px 20px rgba(17,17,17,0.3)' }}>
                   {v.lo} – {v.hi}
                 </div>
                 <div className="text-[14px] mb-1" style={{ color: 'var(--fg-muted)' }}>
@@ -3246,8 +3246,8 @@ export default function MyCaseValue() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 data-grid-stagger">
               {[
                 { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: `${wr}%`, color: wrColor, icon: '' },
-                { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: d.total ? d.total.toLocaleString() : '—', color: '#6366F1', icon: '' },
-                { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: `${d.mo || '—'}mo`, color: 'var(--accent-secondary, #A5B4FC)', icon: '' },
+                { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: d.total ? d.total.toLocaleString() : '—', color: '#333333', icon: '' },
+                { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: `${d.mo || '—'}mo`, color: 'var(--accent-secondary, #8B5CF6)', icon: '' },
                 { label: lang === 'es' ? 'Acuerdo + Victoria' : 'Settle + Win', value: `${winSettleRate}%`, color: '#5EEAD4', icon: '' },
               ].map((m, i) => (
                 <div key={i} className="glass-ultra rounded-xl p-4 text-center spotlight-card gpu-accelerate">
@@ -3274,19 +3274,19 @@ export default function MyCaseValue() {
                     navigator.clipboard.writeText(u);
                     toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
                   } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
-                }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {lang === 'es' ? 'Compartir' : 'Share'}
                 </button>
-                <button onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <button onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {lang === 'es' ? 'Tarjeta' : 'Card'}
                 </button>
-                <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-2px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
                   {lang === 'es' ? 'Guardar' : 'Save'}
                 </button>
                 {isPremium && (
                   <button onClick={() => { try { window.print(); } catch {} }}
-                    className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     PDF
                   </button>
                 )}
@@ -3312,14 +3312,14 @@ export default function MyCaseValue() {
 
           {/* UPL Notice */}
           <Reveal>
-            <div className="px-5 py-3 card-bg bg-[#131B2E] rounded-xl border border-[var(--border-default)] mb-4 text-[13px] text-[var(--fg-muted)] leading-relaxed">
+            <div className="px-5 py-3 card-bg bg-[#FFFFFF] rounded-xl border border-[var(--border-default)] mb-4 text-[13px] text-[var(--fg-muted)] leading-relaxed">
               <strong className="text-[var(--fg-muted)]">{lang === 'es' ? 'Importante:' : 'Important:'}</strong> {UPL.resultsNotice}
             </div>
           </Reveal>
 
           {/* Data Freshness Indicator */}
           <Reveal>
-            <div className="px-4 py-3 mb-4 text-[12px] rounded-lg border border-[var(--border-default)] bg-[rgba(64,64,242,0.05)]" style={{ color: 'var(--fg-subtle)' }}>
+            <div className="px-4 py-3 mb-4 text-[12px] rounded-lg border border-[var(--border-default)] bg-[rgba(17,17,17,0.05)]" style={{ color: 'var(--fg-subtle)' }}>
               <span>{lang === 'es' ? 'Fuentes de datos' : 'Data sources'}: FJC IDB · CourtListener · EEOC | {lang === 'es' ? 'Última verificación' : 'Last verified'}: {lang === 'es' ? 'Marzo 2026' : 'March 2026'}</span>
             </div>
           </Reveal>
@@ -3391,8 +3391,8 @@ export default function MyCaseValue() {
           <Reveal>
             <div className="px-5 py-4 rounded-xl mb-4 glass-ultra depth-3">
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 icon-glow" style={{ background: 'linear-gradient(135deg, rgba(79,70,229,0.15), rgba(99,102,241,0.1))', borderRadius: '10px' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 icon-glow" style={{ background: 'linear-gradient(135deg, rgba(17,17,17,0.15), rgba(17,17,17,0.1))', borderRadius: '10px' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                 </div>
                 <div className="flex-1">
                   <div className="text-[10px] font-bold tracking-[2px] mb-1 text-gradient-premium">{lang === 'es' ? 'RESUMEN DE DATOS' : 'DATA SUMMARY'}</div>
@@ -3408,7 +3408,7 @@ export default function MyCaseValue() {
             <Reveal delay={50}>
               <Card premium className="p-6 sm:p-8 gradient-border">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4F46E5, #7C3AED)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #111111, #7C3AED)' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><path d="M12 2a4 4 0 014 4c0 1.95-2 3-2 8h-4c0-5-2-6.05-2-8a4 4 0 014-4z"/><line x1="10" y1="22" x2="14" y2="22"/><line x1="10" y1="18" x2="14" y2="18"/><line x1="9" y1="20" x2="15" y2="20"/></svg>
                   </div>
                   <div>
@@ -3475,8 +3475,8 @@ export default function MyCaseValue() {
                         <div className="text-[11px] font-bold tracking-[2px] text-[var(--fg-muted)] mb-3">{lang === 'es' ? 'OBSERVACIONES CLAVE' : 'KEY INSIGHTS'}</div>
                         <div className="space-y-3">
                           {narrative.keyInsights.map((insight, i) => (
-                            <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: 'rgba(30,41,59,0.5)' }}>
-                              <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 text-[11px] font-bold" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)', color: 'var(--accent-primary)' }}>
+                            <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: 'rgba(229,231,235,0.5)' }}>
+                              <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 text-[11px] font-bold" style={{ background: 'linear-gradient(135deg, #11111120, #33333320)', color: 'var(--accent-primary)' }}>
                                 {i + 1}
                               </div>
                               <p className="text-[13px] leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{insight}</p>
@@ -3486,13 +3486,13 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Timeline narrative */}
-                      <div className="mb-5 p-4 rounded-xl border" style={{ borderColor: 'var(--border-muted)', background: 'rgba(30,41,59,0.3)' }}>
+                      <div className="mb-5 p-4 rounded-xl border" style={{ borderColor: 'var(--border-muted)', background: 'rgba(229,231,235,0.3)' }}>
                         <div className="text-[11px] font-bold tracking-[2px] text-[var(--fg-muted)] mb-2">{lang === 'es' ? 'ANÁLISIS DE CRONOLOGÍA' : 'TIMELINE ANALYSIS'}</div>
                         <p className="text-[13px] leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{narrative.timelineNarrative}</p>
                       </div>
 
                       {/* Comparison */}
-                      <div className="mb-5 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #162035)' }}>
+                      <div className="mb-5 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #F5F5F0)' }}>
                         <div className="text-[11px] font-bold tracking-[2px] mb-2" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'COMPARACIÓN JURISDICCIONAL' : 'JURISDICTION COMPARISON'}</div>
                         <p className="text-[13px] leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{narrative.comparisonNote}</p>
                       </div>
@@ -3511,7 +3511,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Disclaimer */}
-                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic" style={{ background: 'rgba(30,41,59,0.5)', color: 'var(--fg-muted)' }}>
+                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic" style={{ background: 'rgba(229,231,235,0.5)', color: 'var(--fg-muted)' }}>
                         {narrative.disclaimer}
                       </div>
                     </>
@@ -3587,12 +3587,12 @@ export default function MyCaseValue() {
                       {/* Top Citations */}
                       <div className="space-y-2 mb-5">
                         {catData.citations.map((c, i) => (
-                          <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: 'rgba(30,41,59,0.5)' }}>
+                          <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ background: 'rgba(229,231,235,0.5)' }}>
                             <div className="w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: '#0D948815' }}>
                               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
                             </div>
                             <div className="flex-1">
-                              <div className="text-[13px] font-semibold" style={{ color: '#E2E8F0' }}>{c.title}</div>
+                              <div className="text-[13px] font-semibold" style={{ color: '#D1D5DB' }}>{c.title}</div>
                               <div className="text-[11px] text-[var(--fg-muted)] mt-0.5">{c.authors} · {c.year} · Cited by {c.cited}</div>
                             </div>
                           </div>
@@ -3604,13 +3604,13 @@ export default function MyCaseValue() {
                         <div className="text-[10px] font-bold tracking-[2px] text-[var(--fg-muted)] mb-2">{lang === 'es' ? 'ESTATUTOS CLAVE' : 'KEY STATUTES'}</div>
                         <div className="flex flex-wrap gap-1.5">
                           {catData.statutes.map((s, i) => (
-                            <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg" style={{ background: 'var(--bg-elevated)', color: 'var(--accent-secondary, #A5B4FC)', border: '1px solid var(--border-muted)' }}>{s}</span>
+                            <span key={i} className="text-[11px] font-medium px-2.5 py-1 rounded-lg" style={{ background: 'var(--bg-elevated)', color: 'var(--accent-secondary, #8B5CF6)', border: '1px solid var(--border-muted)' }}>{s}</span>
                           ))}
                         </div>
                       </div>
 
                       {/* Emerging Trend */}
-                      <div className="p-3 rounded-xl flex items-start gap-2.5" style={{ background: 'linear-gradient(135deg, #1A2744, #162035)' }}>
+                      <div className="p-3 rounded-xl flex items-start gap-2.5" style={{ background: 'linear-gradient(135deg, #1A2744, #F5F5F0)' }}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         <div>
                           <div className="text-[10px] font-bold tracking-[2px] mb-1" style={{ color: 'var(--accent-secondary)' }}>{lang === 'es' ? 'TENDENCIA EMERGENTE' : 'EMERGING TREND'}</div>
@@ -3635,8 +3635,8 @@ export default function MyCaseValue() {
             <Reveal delay={80}>
               <Card premium className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #11111120, #33333320)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
                   </div>
                   <div>
                     <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'CRONOLOGÍA DE TU CASO' : 'YOUR CASE TIMELINE'}</div>
@@ -3657,23 +3657,23 @@ export default function MyCaseValue() {
                     <div className="relative">
                       {/* Progress bar */}
                       <div className="absolute left-5 top-0 bottom-0 w-0.5" style={{ background: 'var(--bg-elevated)' }}>
-                        <div className="w-full rounded-full" style={{ height: '100%', background: 'linear-gradient(180deg, #4F46E5, #0D9488)' }} />
+                        <div className="w-full rounded-full" style={{ height: '100%', background: 'linear-gradient(180deg, #111111, #0D9488)' }} />
                       </div>
                       <div className="space-y-1">
                         {phases.map((phase, i) => (
                           <div key={i} className="flex items-start gap-4 pl-10 relative py-3">
                             <div className="absolute left-3 w-5 h-5 rounded-full flex items-center justify-center text-[10px] z-10" style={{
-                              background: i <= 3 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B',
+                              background: i <= 3 ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E7EB',
                               border: i > 3 ? '2px solid var(--border-muted)' : 'none',
-                              color: i <= 3 ? 'white' : '#B0BDD0',
-                              boxShadow: i <= 3 ? '0 2px 8px rgba(64,64,242,0.3)' : 'none',
+                              color: i <= 3 ? 'white' : '#6B7280',
+                              boxShadow: i <= 3 ? '0 2px 8px rgba(17,17,17,0.3)' : 'none',
                             }}>
                               {i + 1}
                             </div>
                             <div className="flex-1">
                               <div className="flex items-center gap-2 flex-wrap">
                                 <span className="text-sm">{phase.icon}</span>
-                                <span className="text-[14px] font-semibold" style={{ color: '#E2E8F0' }}>{phase.name}</span>
+                                <span className="text-[14px] font-semibold" style={{ color: '#D1D5DB' }}>{phase.name}</span>
                                 <span className="text-[11px] font-medium px-2 py-0.5 rounded-full" style={{ background: 'var(--bg-elevated)', color: 'var(--fg-muted)' }}>{phase.duration}</span>
                               </div>
                               <p className="text-[12px] mt-1 m-0" style={{ color: 'var(--fg-muted)' }}>{phase.desc}</p>
@@ -3681,7 +3681,7 @@ export default function MyCaseValue() {
                           </div>
                         ))}
                       </div>
-                      <div className="mt-4 p-3 rounded-lg text-[11px] text-center" style={{ background: 'rgba(30,41,59,0.5)', color: 'var(--fg-muted)' }}>
+                      <div className="mt-4 p-3 rounded-lg text-[11px] text-center" style={{ background: 'rgba(229,231,235,0.5)', color: 'var(--fg-muted)' }}>
                         {lang === 'es'
                           ? `Duración estimada basada en ${d.total?.toLocaleString() || '0'} casos similares: ~${months} meses promedio`
                           : `Estimated duration based on ${d.total?.toLocaleString() || '0'} similar cases: ~${months} months average`}
@@ -3698,11 +3698,11 @@ export default function MyCaseValue() {
             <Reveal delay={90}>
               <Card premium className="p-6 sm:p-8 holo-gradient">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #6366F120, #7C3AED20)' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #33333320, #7C3AED20)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#6366F1' }}>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#333333' }}>
                       {lang === 'es' ? 'RADAR DE FORTALEZA' : 'STRENGTH RADAR'}
                     </div>
                     <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
@@ -3736,34 +3736,34 @@ export default function MyCaseValue() {
                         {/* Background rings */}
                         {[25, 50, 75, 100].map(pct => (
                           <polygon key={pct} points={factors.map((_, i) => { const p = getPoint(i, pct); return `${p.x},${p.y}`; }).join(' ')}
-                            fill="none" stroke={'#1E293B'} strokeWidth="0.5" />
+                            fill="none" stroke={'#E5E7EB'} strokeWidth="0.5" />
                         ))}
                         {/* Axis lines */}
                         {factors.map((_, i) => {
                           const p = getPoint(i, maxR);
-                          return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke={'#1E293B'} strokeWidth="0.5" />;
+                          return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke={'#E5E7EB'} strokeWidth="0.5" />;
                         })}
                         {/* Data polygon */}
                         <polygon points={dataPoints.map(p => `${p.x},${p.y}`).join(' ')}
-                          fill="rgba(79,70,229,0.12)" stroke="#4F46E5" strokeWidth="2" strokeLinejoin="round"
-                          style={{ filter: 'drop-shadow(0 2px 8px rgba(79,70,229,0.2))' }} />
+                          fill="rgba(17,17,17,0.12)" stroke="#111111" strokeWidth="2" strokeLinejoin="round"
+                          style={{ filter: 'drop-shadow(0 2px 8px rgba(17,17,17,0.2))' }} />
                         {/* Data dots */}
                         {dataPoints.map((p, i) => (
-                          <circle key={i} cx={p.x} cy={p.y} r="4" fill="#4F46E5" stroke="white" strokeWidth="2" />
+                          <circle key={i} cx={p.x} cy={p.y} r="4" fill="#111111" stroke="white" strokeWidth="2" />
                         ))}
                         {/* Labels */}
                         {factors.map((f, i) => {
                           const p = getPoint(i, maxR + 22);
                           return (
                             <text key={i} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="middle"
-                              fontSize="10" fontWeight="600" fill={'#B0BDD0'}>
+                              fontSize="10" fontWeight="600" fill={'#6B7280'}>
                               {f.label}
                             </text>
                           );
                         })}
                         {/* Center score */}
-                        <text x={cx} y={cy - 6} textAnchor="middle" fontSize="28" fontWeight="800" fill="#4F46E5">{avgScore}</text>
-                        <text x={cx} y={cy + 12} textAnchor="middle" fontSize="9" fontWeight="600" fill="#B0BDD0">
+                        <text x={cx} y={cy - 6} textAnchor="middle" fontSize="28" fontWeight="800" fill="#111111">{avgScore}</text>
+                        <text x={cx} y={cy + 12} textAnchor="middle" fontSize="9" fontWeight="600" fill="#6B7280">
                           {lang === 'es' ? 'PUNTUACIÓN' : 'SCORE'}
                         </text>
                       </svg>
@@ -3772,12 +3772,12 @@ export default function MyCaseValue() {
                           <div key={i}>
                             <div className="flex justify-between mb-1">
                               <span className="text-[12px] font-medium" style={{ color: 'var(--fg-secondary)' }}>{f.label}</span>
-                              <span className="text-[12px] font-bold font-data" style={{ color: f.value >= 60 ? '#0D9488' : f.value >= 40 ? '#6366F1' : '#E87461' }}>{f.value}/100</span>
+                              <span className="text-[12px] font-bold font-data" style={{ color: f.value >= 60 ? '#0D9488' : f.value >= 40 ? '#333333' : '#E87461' }}>{f.value}/100</span>
                             </div>
                             <div className="h-2 rounded-full overflow-hidden" style={{ background: 'var(--bg-elevated)' }}>
                               <div className="h-full rounded-full transition-all duration-700" style={{
                                 width: `${f.value}%`,
-                                background: f.value >= 60 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : f.value >= 40 ? 'linear-gradient(90deg, #4F46E5, #6366F1)' : 'linear-gradient(90deg, #E87461, #F59E0B)',
+                                background: f.value >= 60 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : f.value >= 40 ? 'linear-gradient(90deg, #111111, #333333)' : 'linear-gradient(90deg, #E87461, #F59E0B)',
                                 transitionDelay: `${i * 100}ms`,
                               }} />
                             </div>
@@ -3837,10 +3837,10 @@ export default function MyCaseValue() {
                       <div className="flex items-end gap-1.5 h-[120px] mb-3">
                         {timingData.map((t, i) => {
                           const intensity = t.pct / maxPct;
-                          const color = intensity > 0.7 ? '#0D9488' : intensity > 0.4 ? '#6366F1' : '#CBD5E1';
+                          const color = intensity > 0.7 ? '#0D9488' : intensity > 0.4 ? '#333333' : '#374151';
                           return (
                             <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                              <div className="text-[10px] font-bold font-data" style={{ color: intensity > 0.5 ? color : '#B0BDD0' }}>
+                              <div className="text-[10px] font-bold font-data" style={{ color: intensity > 0.5 ? color : '#6B7280' }}>
                                 {t.pct}%
                               </div>
                               <div className="w-full rounded-t-md transition-all duration-700" style={{
@@ -3861,12 +3861,12 @@ export default function MyCaseValue() {
 
                       {/* Key insight */}
                       <div className="p-4 rounded-xl flex items-start gap-3" style={{
-                        background: 'linear-gradient(135deg, #1A2744, #162035)',
+                        background: 'linear-gradient(135deg, #1A2744, #F5F5F0)',
                         border: '1px solid var(--border-muted)',
                       }}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         <div>
-                          <div className="text-[13px] font-semibold" style={{ color: '#E2E8F0' }}>
+                          <div className="text-[13px] font-semibold" style={{ color: '#D1D5DB' }}>
                             {lang === 'es' ? `La ventana óptima de acuerdo es el mes ${peakMonth?.month}` : `Peak settlement window is month ${peakMonth?.month}`}
                           </div>
                           <div className="text-[12px] mt-1" style={{ color: 'var(--fg-muted)' }}>
@@ -3896,8 +3896,8 @@ export default function MyCaseValue() {
             <Reveal delay={100}>
               <Card premium className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #4F46E520, #0D948820)' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #11111120, #0D948820)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   </div>
                   <div>
                     <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-primary)' }}>
@@ -3931,7 +3931,7 @@ export default function MyCaseValue() {
                     <>
                       {/* Key metrics row */}
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-                        <div className="text-center p-4 rounded-xl" style={{ background: 'rgba(79,70,229,0.08)', border: '1px solid rgba(79,70,229,0.15)' }}>
+                        <div className="text-center p-4 rounded-xl" style={{ background: 'rgba(17,17,17,0.08)', border: '1px solid rgba(17,17,17,0.15)' }}>
                           <div className="text-2xl font-display font-bold neon-text" style={{ color: 'var(--accent-primary)' }}>{stateRate.toFixed(1)}%</div>
                           <div className="text-[10px] font-semibold mt-1" style={{ color: 'var(--fg-muted)' }}>{stateCode} {lang === 'es' ? 'Tasa' : 'Rate'}</div>
                         </div>
@@ -3955,11 +3955,11 @@ export default function MyCaseValue() {
                         <div className="space-y-3">
                           <div>
                             <div className="flex justify-between mb-1">
-                              <span className="text-[12px] font-semibold" style={{ color: '#E2E8F0' }}>{stateCode}</span>
+                              <span className="text-[12px] font-semibold" style={{ color: '#D1D5DB' }}>{stateCode}</span>
                               <span className="text-[12px] font-bold font-data" style={{ color: 'var(--accent-primary)' }}>{stateRate.toFixed(1)}%</span>
                             </div>
                             <div className="h-3 rounded-full overflow-hidden" style={{ background: 'var(--bg-elevated)' }}>
-                              <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${stateRate}%`, background: 'linear-gradient(90deg, #4F46E5, #6366F1)', boxShadow: '0 0 12px rgba(79,70,229,0.3)' }} />
+                              <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${stateRate}%`, background: 'linear-gradient(90deg, #111111, #333333)', boxShadow: '0 0 12px rgba(17,17,17,0.3)' }} />
                             </div>
                           </div>
                           <div>
@@ -3968,7 +3968,7 @@ export default function MyCaseValue() {
                               <span className="text-[12px] font-bold font-data" style={{ color: 'var(--fg-muted)' }}>{nationalAvg}%</span>
                             </div>
                             <div className="h-3 rounded-full overflow-hidden" style={{ background: 'var(--bg-elevated)' }}>
-                              <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${nationalAvg}%`, background: 'linear-gradient(90deg, #64748B, #94A3B8)' }} />
+                              <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${nationalAvg}%`, background: 'linear-gradient(90deg, #64748B, #9CA3AF)' }} />
                             </div>
                           </div>
                         </div>
@@ -3983,11 +3983,11 @@ export default function MyCaseValue() {
                           {topStates.map(([st, rate], i) => (
                             <div key={st} className="flex items-center gap-2 mb-1.5">
                               <span className="text-[10px] font-bold w-4" style={{ color: 'var(--fg-muted)' }}>{i + 1}</span>
-                              <span className={`text-[12px] font-semibold ${st === stateCode ? 'neon-text' : ''}`} style={{ color: st === stateCode ? '#4F46E5' : '#CBD5E1' }}>{st}</span>
+                              <span className={`text-[12px] font-semibold ${st === stateCode ? 'neon-text' : ''}`} style={{ color: st === stateCode ? '#111111' : '#374151' }}>{st}</span>
                               <div className="flex-1 h-1.5 rounded-full overflow-hidden mx-1" style={{ background: 'var(--bg-elevated)' }}>
-                                <div className="h-full rounded-full" style={{ width: `${rate}%`, background: st === stateCode ? '#4F46E5' : '#0D9488' }} />
+                                <div className="h-full rounded-full" style={{ width: `${rate}%`, background: st === stateCode ? '#111111' : '#0D9488' }} />
                               </div>
-                              <span className="text-[11px] font-data font-bold" style={{ color: st === stateCode ? '#4F46E5' : '#0D9488' }}>{rate.toFixed(1)}%</span>
+                              <span className="text-[11px] font-data font-bold" style={{ color: st === stateCode ? '#111111' : '#0D9488' }}>{rate.toFixed(1)}%</span>
                             </div>
                           ))}
                         </div>
@@ -3998,7 +3998,7 @@ export default function MyCaseValue() {
                           {bottomStates.map(([st, rate], i) => (
                             <div key={st} className="flex items-center gap-2 mb-1.5">
                               <span className="text-[10px] font-bold w-4" style={{ color: 'var(--fg-muted)' }}>{50 - i}</span>
-                              <span className={`text-[12px] font-semibold ${st === stateCode ? 'neon-text' : ''}`} style={{ color: st === stateCode ? '#E87461' : '#CBD5E1' }}>{st}</span>
+                              <span className={`text-[12px] font-semibold ${st === stateCode ? 'neon-text' : ''}`} style={{ color: st === stateCode ? '#E87461' : '#374151' }}>{st}</span>
                               <div className="flex-1 h-1.5 rounded-full overflow-hidden mx-1" style={{ background: 'var(--bg-elevated)' }}>
                                 <div className="h-full rounded-full" style={{ width: `${rate}%`, background: st === stateCode ? '#E87461' : '#D97706' }} />
                               </div>
@@ -4008,7 +4008,7 @@ export default function MyCaseValue() {
                         </div>
                       </div>
 
-                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic text-center" style={{ background: 'rgba(30,41,59,0.5)', color: 'var(--fg-muted)' }}>
+                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic text-center" style={{ background: 'rgba(229,231,235,0.5)', color: 'var(--fg-muted)' }}>
                         {lang === 'es'
                           ? 'Las tasas de victoria se calculan a partir de datos agregados de todos los tipos de casos federales en cada estado. No es una garantía de resultados.'
                           : 'Win rates are computed from aggregate data across all federal case types in each state. Not a guarantee of outcomes.'}
@@ -4029,7 +4029,7 @@ export default function MyCaseValue() {
             <Reveal delay={105}>
               <Card premium className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #7C3AED20, #4F46E520)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #7C3AED20, #11111120)' }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
                   </div>
                   <div>
@@ -4106,11 +4106,11 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Key takeaway */}
-                      <div className="p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #162035)', border: '1px solid var(--border-muted)' }}>
+                      <div className="p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #1A2744, #F5F5F0)', border: '1px solid var(--border-muted)' }}>
                         <div className="flex items-start gap-3">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                           <div>
-                            <div className="text-[13px] font-semibold" style={{ color: '#E2E8F0' }}>
+                            <div className="text-[13px] font-semibold" style={{ color: '#D1D5DB' }}>
                               {lang === 'es' ? `Los abogados ganaron ${attyWinRate - proSeWinRate}% más a menudo` : `Attorneys won ${attyWinRate - proSeWinRate}% more often`}
                             </div>
                             <div className="text-[12px] mt-1" style={{ color: 'var(--fg-muted)' }}>
@@ -4143,11 +4143,11 @@ export default function MyCaseValue() {
             <Reveal delay={108}>
               <Card premium className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #4F46E520, #6366F120)' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #11111120, #33333320)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#6366F1' }}>
+                    <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: '#333333' }}>
                       {lang === 'es' ? 'TENDENCIA HISTÓRICA' : 'HISTORICAL TREND'}
                     </div>
                     <div className="text-lg font-display font-bold" style={{ letterSpacing: '-0.5px' }}>
@@ -4155,7 +4155,7 @@ export default function MyCaseValue() {
                     </div>
                   </div>
                 </div>
-                <TrendChart data={generateDemoData(spec?.nos)} color="#6366F1" label={spec?.d || 'Case Type'} lang={lang} height={220} />
+                <TrendChart data={generateDemoData(spec?.nos)} color="#333333" label={spec?.d || 'Case Type'} lang={lang} height={220} />
               </Card>
             </Reveal>
           )}
@@ -4247,8 +4247,8 @@ export default function MyCaseValue() {
             <Reveal delay={110}>
               <Card premium className="p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #4F46E520, #0D948820)' }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shimmer-sweep" style={{ background: 'linear-gradient(135deg, #11111120, #0D948820)' }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                   </div>
                   <div>
                     <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-primary)' }}>
@@ -4307,13 +4307,13 @@ export default function MyCaseValue() {
                             )}
                           </div>
                           {/* Bottom-left: Low Risk, Low Reward */}
-                          <div className={`p-4 rounded-xl border text-center ${riskLevel === 'low' && rewardLevel !== 'high' ? 'border-[#4F46E5] ring-2 ring-[#4F46E530]' : 'border-[var(--border-default)]'}`}
-                            style={{ background: riskLevel === 'low' && rewardLevel !== 'high' ? 'rgba(79,70,229,0.06)' : 'rgba(255,255,255,0.02)' }}>
+                          <div className={`p-4 rounded-xl border text-center ${riskLevel === 'low' && rewardLevel !== 'high' ? 'border-[#111111] ring-2 ring-[#11111130]' : 'border-[var(--border-default)]'}`}
+                            style={{ background: riskLevel === 'low' && rewardLevel !== 'high' ? 'rgba(17,17,17,0.06)' : 'rgba(255,255,255,0.02)' }}>
                             <div className="text-[22px] mb-1"></div>
                             <div className="text-[11px] font-bold" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'Conservador' : 'Conservative'}</div>
                             <div className="text-[10px] mt-1" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Bajo riesgo, resultado moderado' : 'Low risk, moderate outcome'}</div>
                             {riskLevel === 'low' && rewardLevel !== 'high' && (
-                              <div className="mt-2 text-[10px] font-bold px-2 py-0.5 rounded-full inline-block" style={{ color: 'var(--accent-primary)', background: 'rgba(79,70,229,0.1)' }}>
+                              <div className="mt-2 text-[10px] font-bold px-2 py-0.5 rounded-full inline-block" style={{ color: 'var(--accent-primary)', background: 'rgba(17,17,17,0.1)' }}>
                                 {lang === 'es' ? 'TU POSICIÓN' : 'YOUR POSITION'}
                               </div>
                             )}
@@ -4339,7 +4339,7 @@ export default function MyCaseValue() {
                           <div className="text-xl font-display font-bold neon-text" style={{ color: 'var(--accent-secondary)' }}>{settlePct}%</div>
                           <div className="text-[10px] font-semibold mt-0.5" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Acuerdo' : 'Settlement'}</div>
                         </div>
-                        <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(79,70,229,0.06)', border: '1px solid rgba(79,70,229,0.1)' }}>
+                        <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(17,17,17,0.06)', border: '1px solid rgba(17,17,17,0.1)' }}>
                           <div className="text-xl font-display font-bold neon-text" style={{ color: 'var(--accent-primary)' }}>{trialWinPct}%</div>
                           <div className="text-[10px] font-semibold mt-0.5" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Victoria' : 'Trial Win'}</div>
                         </div>
@@ -4353,7 +4353,7 @@ export default function MyCaseValue() {
                         </div>
                       </div>
 
-                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic text-center" style={{ background: 'rgba(30,41,59,0.5)', color: 'var(--fg-muted)' }}>
+                      <div className="p-3 rounded-lg text-[10px] leading-relaxed italic text-center" style={{ background: 'rgba(229,231,235,0.5)', color: 'var(--fg-muted)' }}>
                         {lang === 'es'
                           ? 'La posición de la matriz se basa en tasas agregadas. Cada caso es único. Esto no es una evaluación de su caso específico.'
                           : 'Matrix position is based on aggregate rates. Every case is unique. This is not an evaluation of your specific case.'}
@@ -4371,7 +4371,7 @@ export default function MyCaseValue() {
           <TabPanel tabId="overview" activeTab={activeReportTab}>
           {/* === REPORT HEADER === */}
           <Reveal>
-            <div className="h-[3px] rounded-full mb-0" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
+            <div className="h-[3px] rounded-full mb-0" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }} />
             <Card glow className="p-6 sm:p-8 data-card card-glow">
               <div className="flex flex-col sm:flex-row justify-between items-start gap-6">
                 <div className="flex-1">
@@ -4439,7 +4439,7 @@ export default function MyCaseValue() {
                     <div className="flex gap-0.5 mt-2 sm:justify-end">
                       {[1, 2, 3, 4, 5].map(i => (
                         <div key={i} className="w-4 h-1.5 rounded-full transition-all duration-500" style={{
-                          background: i <= Math.ceil(wr / 20) ? wrColor : '#1E293B',
+                          background: i <= Math.ceil(wr / 20) ? wrColor : '#E5E7EB',
                           transitionDelay: `${i * 100}ms`,
                         }} />
                       ))}
@@ -4451,7 +4451,7 @@ export default function MyCaseValue() {
               {/* Recovery ranges (premium only) */}
               {!isPremium ? (
                 <div className="text-center py-6">
-                  <div className="inline-block px-6 py-3 rounded-xl" style={{ background: 'rgba(99,102,241,0.15)' }}>
+                  <div className="inline-block px-6 py-3 rounded-xl" style={{ background: 'rgba(17,17,17,0.15)' }}>
                     <span className="text-[14px] font-semibold" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'Rangos de recuperación disponibles en el informe completo' : 'Recovery ranges available in full report'}</span>
                   </div>
                 </div>
@@ -4460,14 +4460,14 @@ export default function MyCaseValue() {
                   <div className="report-grid grid gap-3 my-7" style={{ gridTemplateColumns: '1fr 1.5fr 1fr' }}>
                     {[
                       { k: 'conservative', l: lang === 'es' ? 'Rango bajo' : 'Lower range', c: '#D97706', val: v.lo },
-                      { k: 'typical', l: lang === 'es' ? 'Típico' : 'Typical', c: '#4F46E5', val: v.md },
+                      { k: 'typical', l: lang === 'es' ? 'Típico' : 'Typical', c: '#111111', val: v.md },
                       { k: 'optimistic', l: lang === 'es' ? 'Rango alto' : 'Upper range', c: '#0D9488', val: v.hi },
                     ].map(t => (
                       <button key={t.k} onClick={() => setRangeMode(t.k)}
                         className="rounded-2xl cursor-pointer text-center transition-all duration-300"
                         style={{
                           padding: t.k === 'typical' ? '28px 20px' : '22px 18px',
-                          background: '#131B2E',
+                          background: '#FFFFFF',
                           border: rangeMode === t.k ? `2px solid ${t.c}40` : '1.5px solid #F1F5F9',
                           transform: rangeMode === t.k ? 'scale(1.02)' : 'scale(1)',
                         }}>
@@ -4477,13 +4477,13 @@ export default function MyCaseValue() {
                     ))}
                   </div>
                   <div className="relative h-2 bg-[var(--bg-elevated)] rounded-full">
-                    <div className="absolute rounded-full opacity-25" style={{ left: '10%', right: '10%', top: 0, bottom: 0, background: 'linear-gradient(90deg, #D97706, #4F46E5, #0D9488)' }} />
-                    <div className="absolute top-[-6px] w-5 h-5 rounded-full bg-[#131B2E] transition-all duration-500"
+                    <div className="absolute rounded-full opacity-25" style={{ left: '10%', right: '10%', top: 0, bottom: 0, background: 'linear-gradient(90deg, #D97706, #111111, #0D9488)' }} />
+                    <div className="absolute top-[-6px] w-5 h-5 rounded-full bg-[#FFFFFF] transition-all duration-500"
                       style={{
                         left: rangeMode === 'conservative' ? '10%' : rangeMode === 'typical' ? '50%' : '90%',
-                        border: `3px solid ${rangeMode === 'conservative' ? '#D97706' : rangeMode === 'typical' ? '#4F46E5' : '#0D9488'}`,
+                        border: `3px solid ${rangeMode === 'conservative' ? '#D97706' : rangeMode === 'typical' ? '#111111' : '#0D9488'}`,
                         transform: 'translateX(-50%)',
-                        boxShadow: '0 2px 10px rgba(11,18,33,.12)',
+                        boxShadow: '0 2px 10px rgba(255,255,255,.12)',
                       }} />
                   </div>
                   <div className="text-center mt-4 text-[13px] text-[var(--fg-muted)]">
@@ -4495,7 +4495,7 @@ export default function MyCaseValue() {
               {/* Quick stats */}
               <div className="stats-grid stagger-in grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-6">
                 <Stat value={`${Math.round(wr)}%`} label={lang === 'es' ? 'Tasa de éxito' : 'Win rate'} color={wrColor} dark={darkMode} />
-                <Stat value={`${d.mo} mo`} label={lang === 'es' ? 'Duración mediana' : 'Median duration'} color={'#B0BDD0'} dark={true} />
+                <Stat value={`${d.mo} mo`} label={lang === 'es' ? 'Duración mediana' : 'Median duration'} color={'#6B7280'} dark={true} />
                 <Stat value={`${winSettleRate}%`} label={lang === 'es' ? 'Éxito+Acuerdo' : 'Win+Settle'} color="#0D9488" dark={darkMode} />
                 <Stat value={`${d.sp}%`} label={lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate'} color="#1A2744" dark={darkMode} />
               </div>
@@ -4505,7 +4505,7 @@ export default function MyCaseValue() {
                 <span className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mr-1">{lang === 'es' ? 'COMPARAR' : 'COMPARE'}</span>
                 <CompareChip label={lang === 'es' ? 'Con abogado' : 'With attorney'} value={`${d.rr?.wr ?? Math.round(wr * 1.12)}%`} color="#0D9488" active={compareMode} onClick={() => setCompareMode(!compareMode)} />
                 <CompareChip label={lang === 'es' ? 'Sin abogado' : 'No attorney'} value={`${d.rr?.sr ?? Math.round(wr * 0.65)}%`} color="#E87461" />
-                <CompareChip label={lang === 'es' ? 'Juicio' : 'Trial'} value={`${od.trial_win}%`} color="#4F46E5" />
+                <CompareChip label={lang === 'es' ? 'Juicio' : 'Trial'} value={`${od.trial_win}%`} color="#111111" />
                 <CompareChip label={lang === 'es' ? 'Acuerdo' : 'Settlement'} value={`${d.sp}%`} color="#1A2744" />
               </div>
 
@@ -4568,7 +4568,7 @@ export default function MyCaseValue() {
                     <div className="text-[12px] text-[var(--fg-muted)] mt-1">{lang === 'es' ? `Ambas partes acordaron una resolución, generalmente con un pago. Tiempo promedio: ${od.set_mo} meses.` : `Both sides agreed to a resolution, usually with a payment. Average time: ${od.set_mo} months.`}</div>
                   </div>
                   {/* Trial */}
-                  <div className="p-3.5 rounded-xl outcome-card" style={{ background: '#4F46E510', borderLeft: '4px solid #4F46E5' }}>
+                  <div className="p-3.5 rounded-xl outcome-card" style={{ background: '#11111110', borderLeft: '4px solid #111111' }}>
                     <div className="flex justify-between items-center">
                       <span className="text-[14px] sm:text-[15px] font-semibold" style={{ color: '#3730A3' }}>{lang === 'es' ? 'Resultados de juicio' : 'Went to Trial'}</span>
                       <span className="text-xl font-display font-bold">{Math.round(od.trial_win + od.trial_loss)}%</span>
@@ -4580,7 +4580,7 @@ export default function MyCaseValue() {
                     {od.trial_med !== 'N/A' && <div className="text-[12px] text-[var(--fg-muted)] mt-1">{lang === 'es' ? `Premio mediano en juicio: ${od.trial_med}` : `Median trial award: ${od.trial_med}`}</div>}
                   </div>
                   {/* Dismissed */}
-                  <div className="p-3.5 rounded-xl bg-[var(--bg-elevated)] outcome-card" style={{ borderLeft: '4px solid #CBD5E1' }}>
+                  <div className="p-3.5 rounded-xl bg-[var(--bg-elevated)] outcome-card" style={{ borderLeft: '4px solid #374151' }}>
                     <div className="flex justify-between items-center">
                       <span className="text-[14px] sm:text-[15px] font-semibold text-[var(--fg-muted)]">{lang === 'es' ? 'Desestimaciones previas al juicio' : 'Case Dismissed'}</span>
                       <span className="text-xl font-display font-bold text-[var(--fg-muted)]">{od.dismiss}%</span>
@@ -4612,17 +4612,17 @@ export default function MyCaseValue() {
             <div className="rounded-2xl overflow-hidden mb-3" style={{
               background: 'linear-gradient(135deg, #1A2744, #0F1A2E)',
               border: '1.5px solid var(--border-muted)',
-              boxShadow: '0 4px 24px rgba(64, 64, 242, 0.06), 0 1px 3px rgba(11,18,33,0.03)',
+              boxShadow: '0 4px 24px rgba(64, 64, 242, 0.06), 0 1px 3px rgba(255,255,255,0.03)',
             }}>
               {/* Header accent bar */}
-              <div style={{ height: 3, background: 'linear-gradient(90deg, #4F46E5, #D4B85A, #4F46E5)' }} />
+              <div style={{ height: 3, background: 'linear-gradient(90deg, #111111, #D4B85A, #111111)' }} />
               <div className="p-6 sm:p-8">
                 <div className="flex items-start gap-3.5 mb-5">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{
                     background: 'linear-gradient(135deg, rgba(64, 64, 242, 0.12), rgba(201, 165, 78, 0.08))',
                     border: '1px solid rgba(64, 64, 242, 0.15)',
                   }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
                     </svg>
                   </div>
@@ -4637,7 +4637,7 @@ export default function MyCaseValue() {
                 {/* Personalized narrative paragraphs */}
                 <div className="space-y-4">
                   {/* Opening — personalized to their case type + win rate */}
-                  <p className="text-[15px] leading-[1.75] text-[var(--fg-secondary)]" style={{ fontFamily: "'Outfit', system-ui, sans-serif" }}>
+                  <p className="text-[15px] leading-[1.75] text-[var(--fg-secondary)]" style={{ fontFamily: "'Roboto', system-ui, sans-serif" }}>
                     {(() => {
                       const stateName = STATES.find(s => s.id === stateCode)?.label;
                       const roundedWr = Math.round(wr);
@@ -4784,7 +4784,7 @@ export default function MyCaseValue() {
                       <div className="w-px flex-1 mt-2" style={{ background: 'var(--border-muted)' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{lang === 'es' ? 'Guarda este informe' : 'Save this report'}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#D1D5DB' }}>{lang === 'es' ? 'Guarda este informe' : 'Save this report'}</div>
                       <p className="text-[13px] text-[var(--fg-muted)] leading-relaxed">
                         {lang === 'es'
                           ? 'Guárdalo o compártelo para que puedas consultarlo más tarde o mostrárselo a un abogado.'
@@ -4819,11 +4819,11 @@ export default function MyCaseValue() {
                   {/* Step 2: Attorney-specific */}
                   <div className="flex gap-4 items-start pb-5 relative">
                     <div className="flex flex-col items-center">
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>2</div>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>2</div>
                       <div className="w-px flex-1 mt-2" style={{ background: 'var(--border-muted)' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#D1D5DB' }}>
                         {attorney === 'have'
                           ? (lang === 'es' ? 'Comparte los datos con tu abogado' : 'Share the data with your attorney')
                           : attorney === 'self'
@@ -4860,13 +4860,13 @@ export default function MyCaseValue() {
                   <div className="flex gap-4 items-start pb-5 relative">
                     <div className="flex flex-col items-center">
                       <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold" style={{
-                        background: (timing === '2yr' || timing === 'old') ? 'linear-gradient(135deg, #E87461, #F09483)' : 'linear-gradient(135deg, #4F46E5, #6366F1)',
+                        background: (timing === '2yr' || timing === 'old') ? 'linear-gradient(135deg, #E87461, #F09483)' : 'linear-gradient(135deg, #111111, #333333)',
                         color: 'white',
                       }}>3</div>
                       <div className="w-px flex-1 mt-2" style={{ background: 'var(--border-muted)' }} />
                     </div>
                     <div className="flex-1 pb-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#D1D5DB' }}>
                         {(timing === '2yr' || timing === 'old')
                           ? (lang === 'es' ? 'Actúa sobre los plazos ahora' : 'Act on deadlines now')
                           : (lang === 'es' ? 'Conoce tus plazos' : 'Know your deadlines')}
@@ -4886,10 +4886,10 @@ export default function MyCaseValue() {
                   {/* Step 4: Gather documentation */}
                   <div className="flex gap-4 items-start relative">
                     <div className="flex flex-col items-center">
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #64748B, #94A3B8)' }}>4</div>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #64748B, #9CA3AF)' }}>4</div>
                     </div>
                     <div className="flex-1">
-                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#E2E8F0' }}>{lang === 'es' ? 'Reúne tu documentación' : 'Gather your documentation'}</div>
+                      <div className="text-[15px] font-semibold mb-1" style={{ color: '#D1D5DB' }}>{lang === 'es' ? 'Reúne tu documentación' : 'Gather your documentation'}</div>
                       <p className="text-[13px] text-[var(--fg-muted)] leading-relaxed">
                         {lang === 'es'
                           ? 'Reúne cualquier documento, correo electrónico, foto o registro relevante. Si consultas a un abogado, esto hará que la conversación sea más productiva.'
@@ -4901,7 +4901,7 @@ export default function MyCaseValue() {
               </div>
 
               {/* Bottom disclaimer */}
-              <div className="px-6 sm:px-8 py-3.5" style={{ background: '#0B1221', borderTop: '1px solid var(--border-default)' }}>
+              <div className="px-6 sm:px-8 py-3.5" style={{ background: '#FAFAF8', borderTop: '1px solid var(--border-default)' }}>
                 <div className="text-[11px] text-[var(--fg-muted)] italic leading-relaxed">
                   {lang === 'es'
                     ? 'Estos pasos son sugerencias generales basadas en datos agregados. No constituyen asesoramiento legal. Consulta con un abogado licenciado antes de tomar decisiones legales.'
@@ -4937,7 +4937,7 @@ export default function MyCaseValue() {
                     </div>
                   </div>
                   {d.rr?.wr && d.ps?.wr && (
-                    <div className="px-4 py-2.5 rounded-xl text-[13px] font-medium" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-primary)' }}>
+                    <div className="px-4 py-2.5 rounded-xl text-[13px] font-medium" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)' }}>
                       {lang === 'es'
                         ? `Las personas con abogado ganaron ${Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100)}% más a menudo en casos similares.`
                         : `People with attorneys won ${Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100)}% more often in similar cases.`}
@@ -5045,7 +5045,7 @@ export default function MyCaseValue() {
 
               {/* Key Takeaways */}
               <Reveal delay={250}>
-                <Card className="p-6 bg-gradient-to-br" style={{ background: 'linear-gradient(135deg, rgba(13,148,136,.04) 0%, rgba(64,64,242,.02) 100%)' }}>
+                <Card className="p-6 bg-gradient-to-br" style={{ background: 'linear-gradient(135deg, rgba(13,148,136,.04) 0%, rgba(17,17,17,.02) 100%)' }}>
                   <div className="flex items-start gap-3 mb-4">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(13,148,136,0.15)' }}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -5054,13 +5054,13 @@ export default function MyCaseValue() {
                   </div>
                   <div className="space-y-2.5">
                     {[
-                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>, text: lang === 'es' ? `Tu tipo de caso tiene una tasa de éxito del ${wr}%.` : `Cases like yours have a ${wr}% success rate.` },
+                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>, text: lang === 'es' ? `Tu tipo de caso tiene una tasa de éxito del ${wr}%.` : `Cases like yours have a ${wr}% success rate.` },
                       { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>, text: lang === 'es' ? `El ${winSettleRate}% de los casos se resuelven con un acuerdo.` : `${winSettleRate}% of cases settle with a payout.` },
-                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text: lang === 'es' ? `El tiempo promedio hasta una resolución es ${od.set_mo || '6-12'} meses.` : `Average time to resolution: ${od.set_mo || '6-12'} months.` },
-                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text: lang === 'es' ? 'Los abogados aumentan las probabilidades de éxito significativamente.' : 'Having an attorney significantly improves your chances.' },
+                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text: lang === 'es' ? `El tiempo promedio hasta una resolución es ${od.set_mo || '6-12'} meses.` : `Average time to resolution: ${od.set_mo || '6-12'} months.` },
+                      { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text: lang === 'es' ? 'Los abogados aumentan las probabilidades de éxito significativamente.' : 'Having an attorney significantly improves your chances.' },
                     ].map((item, i) => (
-                      <div key={i} className="flex items-start gap-3 p-2.5 rounded-lg bg-[#131B2E]/50">
-                        <span className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'rgba(99,102,241,0.12)' }}>{item.icon}</span>
+                      <div key={i} className="flex items-start gap-3 p-2.5 rounded-lg bg-[#FFFFFF]/50">
+                        <span className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'rgba(17,17,17,0.12)' }}>{item.icon}</span>
                         <span className="text-[14px] text-[var(--fg-secondary)]">{item.text}</span>
                       </div>
                     ))}
@@ -5098,17 +5098,17 @@ export default function MyCaseValue() {
               <Reveal delay={270}>
                 <Card className="p-6">
                   <div className="flex items-start gap-3 mb-4">
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(99,102,241,0.15)' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><path d="M9.5 1h5v22h-5z"/><path d="M4 12h16" stroke="#94A3B8"/></svg>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(17,17,17,0.15)' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><path d="M9.5 1h5v22h-5z"/><path d="M4 12h16" stroke="#9CA3AF"/></svg>
                     </div>
                     <h3 className="text-lg font-semibold">{lang === 'es' ? 'Escenarios de qué pasaría' : 'What-If Scenarios'}</h3>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4F46E5' : '#1E293B', background: attorney === 'with' ? 'rgba(99,102,241,0.15)' : '#1E293B', color: attorney === 'with' ? '#4F46E5' : '#8B95A5' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#111111' : '#E5E7EB', background: attorney === 'with' ? 'rgba(17,17,17,0.15)' : '#E5E7EB', color: attorney === 'with' ? '#111111' : '#9CA3AF' }}
                       onClick={() => setAttorney('with')}>
                       {lang === 'es' ? 'Con abogado' : 'With Attorney'}
                     </button>
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4F46E5' : '#1E293B', background: attorney === 'without' ? 'rgba(99,102,241,0.15)' : '#1E293B', color: attorney === 'without' ? '#4F46E5' : '#8B95A5' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#111111' : '#E5E7EB', background: attorney === 'without' ? 'rgba(17,17,17,0.15)' : '#E5E7EB', color: attorney === 'without' ? '#111111' : '#9CA3AF' }}
                       onClick={() => setAttorney('without')}>
                       {lang === 'es' ? 'Sin abogado' : 'Self-Represented'}
                     </button>
@@ -5138,7 +5138,7 @@ export default function MyCaseValue() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       {[
                         { label: lang === 'es' ? 'Rango bajo' : 'Lower range', v: '$??K', c: '#D97706' },
-                        { label: lang === 'es' ? 'Típico' : 'Typical', v: '$??K', c: '#4F46E5' },
+                        { label: lang === 'es' ? 'Típico' : 'Typical', v: '$??K', c: '#111111' },
                         { label: lang === 'es' ? 'Rango alto' : 'Upper range', v: '$??K', c: '#0D9488' },
                       ].map((x, i) => (
                         <div key={i} className="p-4 rounded-xl text-center bg-[var(--bg-elevated)]">
@@ -5157,16 +5157,16 @@ export default function MyCaseValue() {
                     <div className="text-sm font-semibold mb-3">{lang === 'es' ? 'Tu informe premium incluye:' : 'Your premium report includes:'}</div>
                     <div className="grid grid-cols-2 gap-2">
                       {[
-                        { f: lang === 'es' ? 'Rangos de recuperación' : 'Recovery ranges', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> },
-                        { f: lang === 'es' ? 'Distribución de montos' : 'Recovery distribution', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg> },
-                        { f: lang === 'es' ? 'Impacto del abogado' : 'Attorney impact', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> },
-                        { f: lang === 'es' ? 'Cronología del caso' : 'Case timeline', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-                        { f: lang === 'es' ? 'Casos comparables' : 'Comparable cases', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> },
-                        { f: lang === 'es' ? 'Calendario de acuerdos' : 'Settlement timing', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> },
-                        { f: lang === 'es' ? 'Factores citados' : 'Factors courts cited', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> },
+                        { f: lang === 'es' ? 'Rangos de recuperación' : 'Recovery ranges', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> },
+                        { f: lang === 'es' ? 'Distribución de montos' : 'Recovery distribution', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="8" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg> },
+                        { f: lang === 'es' ? 'Impacto del abogado' : 'Attorney impact', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> },
+                        { f: lang === 'es' ? 'Cronología del caso' : 'Case timeline', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
+                        { f: lang === 'es' ? 'Casos comparables' : 'Comparable cases', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> },
+                        { f: lang === 'es' ? 'Calendario de acuerdos' : 'Settlement timing', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> },
+                        { f: lang === 'es' ? 'Factores citados' : 'Factors courts cited', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> },
                         { f: lang === 'es' ? 'Pasos a seguir' : 'Action steps', icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg> },
                       ].map((item, i) => (
-                        <div key={i} className="p-2.5 rounded-lg text-sm flex items-center gap-2" style={{ background: 'rgba(99,102,241,0.08)' }}>
+                        <div key={i} className="p-2.5 rounded-lg text-sm flex items-center gap-2" style={{ background: 'rgba(17,17,17,0.08)' }}>
                           <span className="flex-shrink-0">{item.icon}</span> {item.f}
                         </div>
                       ))}
@@ -5182,10 +5182,10 @@ export default function MyCaseValue() {
                     <div className="text-sm font-semibold mb-4">{lang === 'es' ? 'Desglose de la fortaleza de tu caso' : 'Your case strength score breakdown'}</div>
                     <div className="flex items-center justify-center mb-4">
                       <svg width="150" height="150" viewBox="0 0 150 150">
-                        <circle cx="75" cy="75" r="65" fill="none" stroke="#E2E8F0" strokeWidth="12" />
-                        <circle cx="75" cy="75" r="65" fill="none" stroke="#4F46E5" strokeWidth="12" strokeDasharray="200" strokeDashoffset="80" strokeLinecap="round" />
-                        <text x="75" y="75" textAnchor="middle" dy="0.3em" fontSize="32" fontWeight="800" fill="#4F46E5">68</text>
-                        <text x="75" y="95" textAnchor="middle" fontSize="14" fill="#8B95A5">{lang === 'es' ? 'Total' : 'Overall'}</text>
+                        <circle cx="75" cy="75" r="65" fill="none" stroke="#D1D5DB" strokeWidth="12" />
+                        <circle cx="75" cy="75" r="65" fill="none" stroke="#111111" strokeWidth="12" strokeDasharray="200" strokeDashoffset="80" strokeLinecap="round" />
+                        <text x="75" y="75" textAnchor="middle" dy="0.3em" fontSize="32" fontWeight="800" fill="#111111">68</text>
+                        <text x="75" y="95" textAnchor="middle" fontSize="14" fill="#9CA3AF">{lang === 'es' ? 'Total' : 'Overall'}</text>
                       </svg>
                     </div>
                     <div className="space-y-2">
@@ -5239,9 +5239,9 @@ export default function MyCaseValue() {
                         { scenario: lang === 'es' ? 'Escenario típico' : 'Typical scenario', amount: '$35K - $65K' },
                         { scenario: lang === 'es' ? 'Escenario alto' : 'High scenario', amount: '$75K - $140K' },
                       ].map((item, i) => (
-                        <div key={i} className="flex items-center justify-between p-3 bg-gradient-to-r rounded-lg" style={{ background: i === 1 ? 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(217,119,6,0.06))' : 'rgba(255,255,255,0.03)' }}>
+                        <div key={i} className="flex items-center justify-between p-3 bg-gradient-to-r rounded-lg" style={{ background: i === 1 ? 'linear-gradient(135deg, rgba(17,17,17,0.12), rgba(217,119,6,0.06))' : 'rgba(255,255,255,0.03)' }}>
                           <span className={`text-sm font-medium ${i === 1 ? 'font-semibold' : ''}`}>{item.scenario}</span>
-                          <span className="font-display font-bold" style={{ color: i === 0 ? '#D97706' : i === 1 ? '#4F46E5' : '#0D9488' }}>{item.amount}</span>
+                          <span className="font-display font-bold" style={{ color: i === 0 ? '#D97706' : i === 1 ? '#111111' : '#0D9488' }}>{item.amount}</span>
                         </div>
                       ))}
                     </div>
@@ -5279,10 +5279,10 @@ export default function MyCaseValue() {
                     <div className="flex items-center gap-6">
                       {/* Fake radar chart preview */}
                       <svg width="120" height="120" viewBox="0 0 120 120">
-                        <polygon points="60,15 98,35 98,85 60,105 22,85 22,35" fill="none" stroke="#E2E8F0" strokeWidth="1" />
-                        <polygon points="60,30 85,42 85,78 60,90 35,78 35,42" fill="none" stroke="#E2E8F0" strokeWidth="1" />
-                        <polygon points="60,45 72,51 72,69 60,75 48,69 48,51" fill="none" stroke="#E2E8F0" strokeWidth="1" />
-                        <polygon points="60,25 90,40 82,80 60,95 38,80 30,40" fill="rgba(79,70,229,0.15)" stroke="#4F46E5" strokeWidth="2" />
+                        <polygon points="60,15 98,35 98,85 60,105 22,85 22,35" fill="none" stroke="#D1D5DB" strokeWidth="1" />
+                        <polygon points="60,30 85,42 85,78 60,90 35,78 35,42" fill="none" stroke="#D1D5DB" strokeWidth="1" />
+                        <polygon points="60,45 72,51 72,69 60,75 48,69 48,51" fill="none" stroke="#D1D5DB" strokeWidth="1" />
+                        <polygon points="60,25 90,40 82,80 60,95 38,80 30,40" fill="rgba(17,17,17,0.15)" stroke="#111111" strokeWidth="2" />
                       </svg>
                       <div className="flex-1 space-y-2">
                         {[
@@ -5316,7 +5316,7 @@ export default function MyCaseValue() {
                     <div className="space-y-2">
                       {[1, 2, 3].map((_, i) => (
                         <div key={i} className="p-3 bg-[var(--bg-elevated)] rounded-xl flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold" style={{ background: 'rgba(99,102,241,0.15)', color: 'var(--accent-secondary, #A5B4FC)' }}>#{i+1}</div>
+                          <div className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-secondary, #8B5CF6)' }}>#{i+1}</div>
                           <div className="flex-1">
                             <div className="text-[12px] font-semibold text-[var(--fg-muted)]">{lang === 'es' ? 'Caso similar redactado' : 'Redacted similar case'}</div>
                             <div className="text-[10px] text-[var(--fg-muted)]">{lang === 'es' ? 'Resuelto en' : 'Resolved in'} ?? {lang === 'es' ? 'meses • Acuerdo' : 'months • Settled'}</div>
@@ -5332,7 +5332,7 @@ export default function MyCaseValue() {
 
               {/* CTA */}
               <Reveal delay={360}>
-                <div className="rounded-2xl p-6 sm:p-9 text-center card-bg bg-[#131B2E] border-[1.5px] shadow-md" style={{ borderColor: '#4F46E515', animation: 'pulseGlow 4s ease infinite' }}>
+                <div className="rounded-2xl p-6 sm:p-9 text-center card-bg bg-[#FFFFFF] border-[1.5px] shadow-md" style={{ borderColor: '#11111115', animation: 'pulseGlow 4s ease infinite' }}>
                   <div className="text-2xl sm:text-3xl font-display font-bold mb-2">{lang === 'es' ? '¿Cuánto podría valer tu situación?' : 'What could your situation be worth?'}</div>
                   <p className="text-[15px] text-[var(--fg-muted)] max-w-md mx-auto mb-2 leading-relaxed">
                     {lang === 'es' ? 'Tu informe gratuito muestra la tasa de éxito, cómo terminaron los casos y el plazo. El informe completo agrega rangos de recuperación, resultados comparables, impacto del abogado, cronología y más.' : 'Your free report shows the win rate, how cases ended, and deadline. The full report adds recovery ranges, comparable outcomes, attorney impact, timeline, and more.'}
@@ -5340,10 +5340,10 @@ export default function MyCaseValue() {
                   <p className="text-[13px] text-[var(--fg-muted)] mb-6">{lang === 'es' ? 'Datos históricos agregados únicamente. No es una valoración de caso.' : 'Aggregate historical data only. Not a case valuation.'}</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <button onClick={() => buy('single')} className="px-8 py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
-                      style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                      style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                       {lang === 'es' ? '$5.99 — Informe Premium' : '$5.99 — Premium Report'}
                     </button>
-                    <button onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#131B2E] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer hover:border-[var(--border-muted)] transition-colors">
+                    <button onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#FFFFFF] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer hover:border-[var(--border-muted)] transition-colors">
                       {lang === 'es' ? 'Ver planes' : 'View plans'}
                     </button>
                   </div>
@@ -5375,7 +5375,7 @@ export default function MyCaseValue() {
                   </p>
                   <button onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney ' + (stateCode || '')), '_blank'); } catch {} }}
                     className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
-                    style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                    style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                     {lang === 'es' ? 'Buscar abogados en tu área' : 'Search for attorneys in your area'}
                   </button>
                 </Card>
@@ -5390,7 +5390,7 @@ export default function MyCaseValue() {
               <Reveal delay={100}>
                 <Collapsible title={lang === 'es' ? `Cómo terminaron ${d.total?.toLocaleString() || ''} casos similares` : `How ${d.total?.toLocaleString() || ''} similar cases ended`} badge={lang === 'es' ? `${(d.ends || []).length} formas` : `${(d.ends || []).length} ways`} defaultOpen>
                   <div className="flex gap-5 items-center mb-4">
-                    <div className="w-28 h-28 rounded-full border-4 border-[var(--border-default)] flex items-center justify-center flex-shrink-0" style={{ background: '#131B2E' }}>
+                    <div className="w-28 h-28 rounded-full border-4 border-[var(--border-default)] flex items-center justify-center flex-shrink-0" style={{ background: '#FFFFFF' }}>
                       <PieChart segments={(d.ends || []).slice(0, 6).map((e: any) => ({ pct: e.p, color: e.c }))} size={100} strokeWidth={8} />
                     </div>
                     <div className="flex-1">
@@ -5414,7 +5414,7 @@ export default function MyCaseValue() {
                 <Collapsible title={lang === 'es' ? 'Distribución de recuperación' : 'Recovery distribution'}>
                   {(d.money || []).map((m: any, i: number) => (
                     <BarLine key={i} label={m.l} pct={m.p} max={maxMoney}
-                      color={['#CBD5E1', '#6EE7B7', '#34D399', '#10B981', '#059669', '#047857', '#065F46'][Math.min(m.t, 6)]}
+                      color={['#374151', '#6EE7B7', '#34D399', '#10B981', '#059669', '#047857', '#065F46'][Math.min(m.t, 6)]}
                       delay={i * 50} />
                   ))}
                 </Collapsible>
@@ -5436,7 +5436,7 @@ export default function MyCaseValue() {
                       {d.ps?.total && <div className="text-[11px] text-[var(--fg-muted)] mt-1">{d.ps.total.toLocaleString()} {lang === 'es' ? 'casos' : 'cases'}</div>}
                     </div>
                   </div>
-                  <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(64,64,242,0.15)', color: 'var(--accent-primary)' }}>
+                  <div className="px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)' }}>
                     {lang === 'es' ? <span>Los abogados ganaron <strong>{d.rr && d.ps ? Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100) : 0}% más a menudo</strong>. Honorario: {d.af}.</span> : <span>Attorneys won <strong>{d.rr && d.ps ? Math.round((d.rr.wr / Math.max(d.ps.wr, 1) - 1) * 100) : 0}% more often</strong>. Fee: {d.af}.</span>}
                   </div>
                   {spec && FEE_INFO[spec.nos] && (
@@ -5477,7 +5477,7 @@ export default function MyCaseValue() {
                             <div className="flex-1 h-2 bg-[var(--bg-elevated)] rounded-full overflow-hidden">
                               <div className="h-full rounded-full transition-all duration-700" style={{
                                 width: `${rate}%`,
-                                background: isYours ? '#4F46E5' : rate > 55 ? '#0D9488' : rate > 45 ? '#D97706' : '#E87461',
+                                background: isYours ? '#111111' : rate > 55 ? '#0D9488' : rate > 45 ? '#D97706' : '#E87461',
                               }} />
                             </div>
                             <span className="text-xs font-semibold w-12 text-right font-data">{rate.toFixed(1)}%</span>
@@ -5499,16 +5499,16 @@ export default function MyCaseValue() {
                       <div key={i} className="flex gap-3 cursor-pointer py-1" role="button" tabIndex={0} onClick={() => setTimelineStep(i)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setTimelineStep(i); } }} aria-label={`Timeline step ${i + 1}: ${t.label || t.l || ''}`}>
                         <div className="flex flex-col items-center w-6">
                           <div className="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center transition-all"
-                            style={{ background: active ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', border: active ? 'none' : '2px solid #CBD5E1' }}>
+                            style={{ background: active ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E7EB', border: active ? 'none' : '2px solid #374151' }}>
                             {active && <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
                           </div>
-                          {i < (d.tl || []).length - 1 && <div className="w-0.5 flex-1 mt-0.5 transition-colors" style={{ background: active ? '#4F46E525' : '#1E293B' }} />}
+                          {i < (d.tl || []).length - 1 && <div className="w-0.5 flex-1 mt-0.5 transition-colors" style={{ background: active ? '#11111125' : '#E5E7EB' }} />}
                         </div>
                         <div className="flex-1 pb-2.5">
-                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#4F46E5' : '#B0BDD0', background: active ? 'rgba(99,102,241,0.15)' : '#1E293B' }}>
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full transition-colors" style={{ color: active ? '#111111' : '#6B7280', background: active ? 'rgba(17,17,17,0.15)' : '#E5E7EB' }}>
                             {lang === 'es' ? `Mes ${t.mo}` : `Month ${t.mo}`}
                           </span>
-                          <div className="text-[14px] mt-1 transition-colors" style={{ fontWeight: active ? 600 : 400, color: active ? '#E2E8F0' : '#B0BDD0' }}>{t.ev}</div>
+                          <div className="text-[14px] mt-1 transition-colors" style={{ fontWeight: active ? 600 : 400, color: active ? '#D1D5DB' : '#6B7280' }}>{t.ev}</div>
                           {active && t.d && <div className="text-[12px] text-[var(--fg-muted)] mt-0.5">{t.d}</div>}
                         </div>
                       </div>
@@ -5529,7 +5529,7 @@ export default function MyCaseValue() {
                             <div className="text-base font-bold">{months[today.getMonth()]} {today.getFullYear()}</div>
                           </div>
                           <div className="flex-1 h-[3px] rounded-full relative" style={{ background: 'var(--border-muted)' }}>
-                            <div className="absolute right-0 top-[-3px] w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }} />
+                            <div className="absolute right-0 top-[-3px] w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }} />
                           </div>
                           <div className="text-center">
                             <div className="text-[11px] text-[var(--fg-muted)]">{lang === 'es' ? 'Resolución est.' : 'Est. resolution'}</div>
@@ -5588,15 +5588,15 @@ export default function MyCaseValue() {
                         <div className="h-20 flex items-end justify-center mb-1.5">
                           <div className="w-full rounded-t-lg transition-all duration-700" style={{
                             height: `${x.p * 2}%`,
-                            background: i === 1 ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(64,64,242,0.2)',
+                            background: i === 1 ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(17,17,17,0.2)',
                           }} />
                         </div>
-                        <div className="text-[13px] font-bold" style={{ color: i === 1 ? '#4F46E5' : '#B0BDD0' }}>{x.p}%</div>
+                        <div className="text-[13px] font-bold" style={{ color: i === 1 ? '#111111' : '#6B7280' }}>{x.p}%</div>
                         <div className="text-[11px] text-[var(--fg-muted)]">{x.l}mo</div>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-3 px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(64,64,242,0.15)', color: 'var(--accent-primary)' }}>
+                  <div className="mt-3 px-3.5 py-2.5 rounded-lg text-[13px]" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-primary)' }}>
                     {lang === 'es' ? 'La mayoría de los acuerdos: 3-6 meses después de la presentación.' : 'Most settlements: 3-6 months after filing.'}
                   </div>
                 </Card>
@@ -5608,8 +5608,8 @@ export default function MyCaseValue() {
                   <div className="text-[13px] text-[var(--fg-muted)] mb-3">{lang === 'es' ? 'Factores que los tribunales federales citaron en casos similares:' : 'Factors federal courts cited in similar cases:'}</div>
                   {(d.factors || []).map((f: string, i: number) => (
                     <div key={i} className="flex gap-2 items-center py-1.5 text-[15px]">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(64,64,242,0.2)' }}>
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(17,17,17,0.2)' }}>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
                       </div>
                       {f}
                     </div>
@@ -5627,7 +5627,7 @@ export default function MyCaseValue() {
                     { n: 3, t: lang === 'es' ? 'Presentó una queja ante la agencia gubernamental correspondiente' : 'Filed a complaint with the right government agency' },
                     { n: 4, t: lang === 'es' ? 'Escribió una cronología de todo lo que sucedió' : 'Wrote down a timeline of everything that happened' },
                   ].map((s, i) => (
-                    <div key={i} className="flex gap-3 p-3 card-bg border rounded-xl mb-1.5" style={{ background: '#131B2E', borderColor: 'var(--border-default)' }}>
+                    <div key={i} className="flex gap-3 p-3 card-bg border rounded-xl mb-1.5" style={{ background: '#FFFFFF', borderColor: 'var(--border-default)' }}>
                       <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'var(--bg-elevated)' }}>
                         <span className="text-[11px] font-bold text-[var(--fg-muted)]">{s.n}</span>
                       </div>
@@ -5670,9 +5670,9 @@ export default function MyCaseValue() {
                         required
                         autoComplete="email"
                         aria-label="Notification email"
-                        className="flex-1 px-3.5 py-2.5 text-sm border-[1.5px] border-[var(--border-default)] rounded-lg outline-none focus:border-[#4F46E5] card-bg bg-[#131B2E] transition-colors" />
+                        className="flex-1 px-3.5 py-2.5 text-sm border-[1.5px] border-[var(--border-default)] rounded-lg outline-none focus:border-[#111111] card-bg bg-[#FFFFFF] transition-colors" />
                       <button type="submit" className="px-5 py-2.5 text-sm font-semibold text-white rounded-lg cursor-pointer transition-all active:scale-[0.96]"
-                        style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                        style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                         {lang === 'es' ? 'Notificarme' : 'Notify me'}
                       </button>
                     </form>
@@ -5769,7 +5769,7 @@ export default function MyCaseValue() {
                             </div>
                           </div>
                         </div>
-                        <div className="p-3.5 rounded-xl" style={{ background: 'rgba(99,102,241,0.15)' }}>
+                        <div className="p-3.5 rounded-xl" style={{ background: 'rgba(17,17,17,0.15)' }}>
                           <div className="flex justify-between items-center">
                             <div>
                               <div className="text-[11px] font-bold tracking-[2px]" style={{ color: 'var(--accent-primary)' }}>GROSS RECOVERY</div>
@@ -5905,7 +5905,7 @@ export default function MyCaseValue() {
                   </p>
                   <button onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney ' + (stateCode || '')), '_blank'); } catch {} }}
                     className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
-                    style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                    style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                     {lang === 'es' ? 'Buscar abogados en tu área' : 'Search for attorneys in your area'}
                   </button>
                 </Card>
@@ -5932,12 +5932,12 @@ export default function MyCaseValue() {
                 <div className="grid grid-cols-2 gap-2">
                   {[
                     { id: 'atty', l: lang === 'es' ? 'Consultar a un abogado' : 'Consult an attorney', c: '#0D9488' },
-                    { id: 'file', l: lang === 'es' ? 'Presentar queja yo mismo' : 'File a complaint myself', c: '#4F46E5' },
+                    { id: 'file', l: lang === 'es' ? 'Presentar queja yo mismo' : 'File a complaint myself', c: '#111111' },
                     { id: 'wait', l: lang === 'es' ? 'Recopilar más info' : 'Gather more info', c: '#1A2744' },
-                    { id: 'move', l: lang === 'es' ? 'Seguir adelante' : 'Move on', c: '#94A3B8' },
+                    { id: 'move', l: lang === 'es' ? 'Seguir adelante' : 'Move on', c: '#9CA3AF' },
                   ].map(o => (
                     <button key={o.id} onClick={() => { setPollVote(o.id); apiCall('/api/poll', 'POST', { vote: o.id, nos: spec?.nos }); }}
-                      className="p-3 text-sm font-semibold card-bg bg-[#131B2E] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer text-center card-lift">
+                      className="p-3 text-sm font-semibold card-bg bg-[#FFFFFF] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer text-center card-lift">
                       {o.l}
                     </button>
                   ))}
@@ -5951,15 +5951,15 @@ export default function MyCaseValue() {
             <Card className="p-0 overflow-hidden">
               <div id="share-card" className="relative p-6 sm:p-8" style={{
                 background: 'linear-gradient(135deg, #0F1729 0%, #1A2744 50%, #0F1729 100%)',
-                color: '#F0F2F5',
+                color: '#111827',
               }}>
-                <div className="absolute top-0 right-0 w-48 h-48 rounded-full" style={{ background: 'radial-gradient(circle, rgba(64,64,242,0.12) 0%, transparent 70%)' }} />
+                <div className="absolute top-0 right-0 w-48 h-48 rounded-full" style={{ background: 'radial-gradient(circle, rgba(17,17,17,0.12) 0%, transparent 70%)' }} />
                 <div className="flex justify-between items-start mb-5 relative z-10">
                   <div>
                     <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-primary)' }}>MyCaseValue Report</div>
                     <div className="text-xl sm:text-2xl font-display font-bold mt-1 capitalize">{spec?.d}</div>
                   </div>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
                   </div>
                 </div>
@@ -5991,7 +5991,7 @@ export default function MyCaseValue() {
                     toast(lang === 'es' ? 'Copiado al portapapeles' : 'Copied to clipboard!');
                   } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
                 }} className="text-[12px] font-semibold px-4 py-1.5 rounded-lg cursor-pointer transition-all"
-                  style={{ background: 'var(--border-muted)', border: '1px solid #475569', color: 'var(--accent-primary)' }}>
+                  style={{ background: 'var(--border-muted)', border: '1px solid #4B5563', color: 'var(--accent-primary)' }}>
                   {lang === 'es' ? 'Copiar texto' : 'Copy text'}
                 </button>
               </div>
@@ -6008,9 +6008,9 @@ export default function MyCaseValue() {
                   <button key={opt.nos} onClick={() => loadComparison(opt.nos)}
                     className="px-3 py-1.5 text-[12px] font-medium rounded-lg cursor-pointer transition-all capitalize"
                     style={{
-                      background: compareNos === opt.nos ? 'rgba(99,102,241,0.15)' : '#1E293B',
-                      border: compareNos === opt.nos ? '1.5px solid #4F46E540' : '1.5px solid var(--border-muted)',
-                      color: compareNos === opt.nos ? '#4F46E5' : '#CBD5E1',
+                      background: compareNos === opt.nos ? 'rgba(17,17,17,0.15)' : '#E5E7EB',
+                      border: compareNos === opt.nos ? '1.5px solid #11111140' : '1.5px solid var(--border-muted)',
+                      color: compareNos === opt.nos ? '#111111' : '#374151',
                     }}>
                     {opt.label}
                   </button>
@@ -6020,7 +6020,7 @@ export default function MyCaseValue() {
                 <div className="rounded-xl overflow-hidden page-enter" style={{ border: '1px solid var(--border-default)' }}>
                   <div className="grid grid-cols-2">
                     {/* Current case */}
-                    <div className="p-5 text-center" style={{ borderRight: '1px solid #1E293B' }}>
+                    <div className="p-5 text-center" style={{ borderRight: '1px solid #E5E7EB' }}>
                       <div className="text-[10px] font-bold tracking-[2px] text-[var(--fg-muted)] mb-1">{lang === 'es' ? 'TU CASO' : 'YOUR CASE'}</div>
                       <div className="text-sm font-semibold capitalize mb-3">{spec?.d}</div>
                       <div className="space-y-3">
@@ -6043,7 +6043,7 @@ export default function MyCaseValue() {
                       </div>
                     </div>
                     {/* Comparison case */}
-                    <div className="p-5 text-center" style={{ background: '#162035' }}>
+                    <div className="p-5 text-center" style={{ background: '#F5F5F0' }}>
                       <div className="text-[10px] font-bold tracking-[2px] mb-1" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'COMPARAR' : 'COMPARE'}</div>
                       <div className="text-sm font-semibold capitalize mb-3">{comparisonOptions.find((o: any) => o.nos === compareNos)?.label}</div>
                       <div className="space-y-3">
@@ -6093,7 +6093,7 @@ export default function MyCaseValue() {
 
           {/* Final disclaimer */}
           <Reveal delay={720}>
-            <div className="mt-4 p-6 rounded-2xl text-center" style={{ background: '#0B1221' }}>
+            <div className="mt-4 p-6 rounded-2xl text-center" style={{ background: '#FAFAF8' }}>
               <div className="text-[11px] font-bold text-white tracking-[2px] mb-2">{lang === 'es' ? 'AVISO IMPORTANTE' : 'IMPORTANT NOTICE'}</div>
               <div className="w-10 h-0.5 rounded-full mx-auto mb-3" style={{ background: 'rgba(255,255,255,0.04)' }} />
               <p className="text-[13px] text-[var(--fg-muted)] leading-relaxed max-w-2xl mx-auto">
@@ -6105,10 +6105,10 @@ export default function MyCaseValue() {
 
         {/* Pricing Modal */}
         {showPricing && (
-          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.5)', backdropFilter: 'blur(16px)' }}
+          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(255,255,255,.5)', backdropFilter: 'blur(16px)' }}
             onClick={() => setShowPricing(false)}
             role="dialog" aria-modal="true" aria-label={lang === 'es' ? 'Opciones de precios' : 'Pricing options'}>
-            <div className="rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(11,18,33,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(64,64,242,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
+            <div className="rounded-3xl p-6 sm:p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative" style={{ background: 'linear-gradient(180deg, rgba(19,27,46,0.98) 0%, rgba(255,255,255,0.95) 100%)', boxShadow: '0 25px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(17,17,17,0.15), inset 0 1px 0 rgba(255,255,255,0.03)' }} onClick={e => e.stopPropagation()}>
               <button onClick={() => setShowPricing(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] hover:bg-[var(--border-muted)] flex items-center justify-center cursor-pointer border-none transition-colors focus-ring z-10"
                 aria-label="Close pricing">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748B" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -6124,15 +6124,15 @@ export default function MyCaseValue() {
               {/* Payment methods */}
               <div className="flex items-center justify-center gap-3 mt-5 flex-wrap">
                 <div className="flex items-center gap-1.5 text-[11px]" style={{ color: 'var(--fg-muted)' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
                   Card
                 </div>
                 <div className="flex items-center gap-1.5 text-[11px]" style={{ color: 'var(--fg-muted)' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.05 11.97c-.03-2.49 2.03-3.69 2.12-3.74-1.15-1.69-2.95-1.92-3.59-1.95-1.53-.15-2.98.9-3.76.9-.78 0-1.98-.88-3.25-.85-1.67.02-3.22.97-4.08 2.47-1.74 3.02-.45 7.5 1.25 9.95.83 1.2 1.82 2.55 3.12 2.5 1.25-.05 1.72-.81 3.23-.81 1.51 0 1.94.81 3.26.79 1.35-.02 2.2-1.22 3.02-2.43.95-1.4 1.34-2.75 1.37-2.82-.03-.01-2.62-1.01-2.65-4.01z" fill="#94A3B8"/><path d="M14.55 4.52c.69-.83 1.15-1.99 1.02-3.15-1 .04-2.2.66-2.91 1.49-.64.74-1.2 1.93-1.05 3.07 1.1.09 2.24-.56 2.94-1.41z" fill="#94A3B8"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.05 11.97c-.03-2.49 2.03-3.69 2.12-3.74-1.15-1.69-2.95-1.92-3.59-1.95-1.53-.15-2.98.9-3.76.9-.78 0-1.98-.88-3.25-.85-1.67.02-3.22.97-4.08 2.47-1.74 3.02-.45 7.5 1.25 9.95.83 1.2 1.82 2.55 3.12 2.5 1.25-.05 1.72-.81 3.23-.81 1.51 0 1.94.81 3.26.79 1.35-.02 2.2-1.22 3.02-2.43.95-1.4 1.34-2.75 1.37-2.82-.03-.01-2.62-1.01-2.65-4.01z" fill="#9CA3AF"/><path d="M14.55 4.52c.69-.83 1.15-1.99 1.02-3.15-1 .04-2.2.66-2.91 1.49-.64.74-1.2 1.93-1.05 3.07 1.1.09 2.24-.56 2.94-1.41z" fill="#9CA3AF"/></svg>
                   Apple Pay
                 </div>
                 <div className="flex items-center gap-1.5 text-[11px]" style={{ color: 'var(--fg-muted)' }}>
-                  <svg width="16" height="12" viewBox="0 0 24 16" fill="none"><rect width="24" height="16" rx="2" fill="#94A3B8" opacity="0.15"/><path d="M8.5 11.5a4 4 0 100-7 4 4 0 000 7z" fill="#94A3B8" opacity="0.4"/><path d="M15.5 11.5a4 4 0 100-7 4 4 0 000 7z" fill="#94A3B8" opacity="0.4"/></svg>
+                  <svg width="16" height="12" viewBox="0 0 24 16" fill="none"><rect width="24" height="16" rx="2" fill="#9CA3AF" opacity="0.15"/><path d="M8.5 11.5a4 4 0 100-7 4 4 0 000 7z" fill="#9CA3AF" opacity="0.4"/><path d="M15.5 11.5a4 4 0 100-7 4 4 0 000 7z" fill="#9CA3AF" opacity="0.4"/></svg>
                   Google Pay
                 </div>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
@@ -6144,10 +6144,10 @@ export default function MyCaseValue() {
 
         {/* Legal pages modal */}
         {legalPage && (
-          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(11,18,33,.6)', backdropFilter: 'blur(16px)' }}
+          <div className="fixed inset-0 z-[var(--z-modal)] flex items-center justify-center p-4" style={{ background: 'rgba(255,255,255,.6)', backdropFilter: 'blur(16px)' }}
             onClick={() => setLegalPage(null)}>
-            <div className="card-bg bg-[#131B2E] rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
-              <div className="sticky top-0 card-bg bg-[#131B2E] rounded-t-3xl px-6 pt-6 pb-3 border-b border-[var(--border-default)] flex items-center justify-between z-10">
+            <div className="card-bg bg-[#FFFFFF] rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto shadow-2xl" onClick={e => e.stopPropagation()}>
+              <div className="sticky top-0 card-bg bg-[#FFFFFF] rounded-t-3xl px-6 pt-6 pb-3 border-b border-[var(--border-default)] flex items-center justify-between z-10">
                 <h2 className="text-lg font-display font-bold">
                   {legalPage === 'terms' ? (lang === 'es' ? 'Términos de Servicio' : 'Terms of Service') : legalPage === 'privacy' ? (lang === 'es' ? 'Política de Privacidad' : 'Privacy Policy') : legalPage === 'cookies' ? (lang === 'es' ? 'Política de Cookies' : 'Cookie Policy') : (lang === 'es' ? 'Descargo de Responsabilidad' : 'Legal Disclaimer')}
                 </h2>

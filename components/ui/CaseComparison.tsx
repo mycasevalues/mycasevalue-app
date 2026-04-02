@@ -106,7 +106,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
   const activeCount = selectedCases.filter(c => c !== null).length;
 
   return (
-    <div style={{ backgroundColor: '#0B1221', minHeight: '100vh' }} className="p-6 md:p-8">
+    <div style={{ backgroundColor: '#FAFAF8', minHeight: '100vh' }} className="p-6 md:p-8">
       <style>{`
         /* Fonts loaded globally via styles/fonts.css */
 
@@ -126,28 +126,28 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         }
 
         .metric-card {
-          background: linear-gradient(135deg, #131B2E 0%, #1a2847 100%);
-          border: 1px solid #1E293B;
+          background: linear-gradient(135deg, #FFFFFF 0%, #1a2847 100%);
+          border: 1px solid #E5E7EB;
           border-radius: 12px;
           padding: 20px;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .metric-card:hover {
-          border-color: #4F46E5;
+          border-color: #111111;
           box-shadow: 0 0 20px rgba(79, 70, 229, 0.15);
         }
 
         .selector-card {
-          background: #131B2E;
-          border: 2px solid #1E293B;
+          background: #FFFFFF;
+          border: 2px solid #E5E7EB;
           border-radius: 10px;
           padding: 16px;
           transition: all 0.3s ease;
         }
 
         .selector-card:hover {
-          border-color: #4F46E5;
+          border-color: #111111;
         }
 
         .bar-container {
@@ -161,7 +161,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
 
         .bar-fill {
           height: 100%;
-          background: linear-gradient(90deg, #4F46E5 0%, #6366F1 100%);
+          background: linear-gradient(90deg, #111111 0%, #333333 100%);
           transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
           display: flex;
           align-items: center;
@@ -178,12 +178,12 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         }
 
         select {
-          background: #0B1221;
-          color: #E2E8F0;
-          border: 2px solid #1E293B;
+          background: #FAFAF8;
+          color: #D1D5DB;
+          border: 2px solid #E5E7EB;
           border-radius: 8px;
           padding: 10px 12px;
-          font-family: 'Outfit', sans-serif;
+          font-family: 'Roboto', sans-serif;
           font-size: 14px;
           transition: all 0.2s;
           cursor: pointer;
@@ -191,33 +191,33 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         }
 
         select:hover {
-          border-color: #4F46E5;
+          border-color: #111111;
         }
 
         select:focus {
           outline: none;
-          border-color: #4F46E5;
+          border-color: #111111;
           box-shadow: 0 0 12px rgba(79, 70, 229, 0.2);
         }
 
         select option {
-          background: #131B2E;
-          color: #E2E8F0;
+          background: #FFFFFF;
+          color: #D1D5DB;
         }
 
         .section-title {
-          font-family: 'Outfit', sans-serif;
+          font-family: 'Roboto', sans-serif;
           font-weight: 700;
           font-size: 20px;
-          color: #E2E8F0;
+          color: #D1D5DB;
           margin-bottom: 24px;
         }
 
         .metric-label {
-          font-family: 'Outfit', sans-serif;
+          font-family: 'Roboto', sans-serif;
           font-weight: 600;
           font-size: 14px;
-          color: #B0BDD0;
+          color: #6B7280;
           text-transform: uppercase;
           letter-spacing: 0.5px;
           margin-bottom: 8px;
@@ -227,11 +227,11 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
           font-family: 'JetBrains Mono', monospace;
           font-weight: 600;
           font-size: 16px;
-          color: #E2E8F0;
+          color: #D1D5DB;
         }
 
         .no-selection {
-          color: #8B95A5;
+          color: #9CA3AF;
           font-size: 13px;
           padding: 24px 16px;
           text-align: center;
@@ -242,7 +242,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         {/* Header */}
         <div style={{ marginBottom: '40px' }}>
           <h1 className="section-title">{t.title}</h1>
-          <p style={{ color: '#B0BDD0', fontSize: '14px', marginBottom: '24px' }}>
+          <p style={{ color: '#6B7280', fontSize: '14px', marginBottom: '24px' }}>
             {t.subtitle}
           </p>
         </div>
@@ -251,7 +251,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '40px' }}>
           {[0, 1, 2].map(index => (
             <div key={index} className="selector-card">
-              <label style={{ display: 'block', color: '#8B95A5', fontSize: '12px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <label style={{ display: 'block', color: '#9CA3AF', fontSize: '12px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 {t.selectCase} {index + 1}
               </label>
               <select
@@ -303,7 +303,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
 
                     return (
                       <div key={idx}>
-                        <div style={{ color: '#B0BDD0', fontSize: '12px', marginBottom: '8px' }}>
+                        <div style={{ color: '#6B7280', fontSize: '12px', marginBottom: '8px' }}>
                           {caseItem.label}
                         </div>
                         <div className="metric-value">{metric.format(value as string | null)}</div>

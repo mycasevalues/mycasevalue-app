@@ -54,18 +54,18 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
     return { wr, recovery, timeline, settlePct };
   }, [caseType, damageAmount, hasAttorney, jurisdiction, ct]);
 
-  const wrColor = projected.wr >= 55 ? '#0D9488' : projected.wr >= 40 ? '#6366F1' : '#E87461';
+  const wrColor = projected.wr >= 55 ? '#0D9488' : projected.wr >= 40 ? '#333333' : '#E87461';
   const strengthLabel = projected.wr >= 55 ? (es ? 'Fuerte' : 'Strong') : projected.wr >= 40 ? (es ? 'Moderado' : 'Moderate') : (es ? 'Difícil' : 'Challenging');
 
   return (
     <div className="relative overflow-hidden rounded-3xl" style={{
-      background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%)',
-      border: '1px solid rgba(99,102,241,0.2)',
-      boxShadow: '0 24px 80px rgba(11,18,33,0.4), inset 0 1px 0 rgba(255,255,255,0.05)',
+      background: 'linear-gradient(135deg, #FFFFFF 0%, #E5E7EB 50%, #FFFFFF 100%)',
+      border: '1px solid rgba(17,17,17,0.2)',
+      boxShadow: '0 24px 80px rgba(255,255,255,0.4), inset 0 1px 0 rgba(255,255,255,0.05)',
     }}>
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 opacity-30" style={{
-        background: 'radial-gradient(ellipse at 30% 20%, rgba(99,102,241,0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(13,148,136,0.2) 0%, transparent 60%)',
+        background: 'radial-gradient(ellipse at 30% 20%, rgba(17,17,17,0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(13,148,136,0.2) 0%, transparent 60%)',
       }} />
 
       {/* Grid pattern overlay */}
@@ -78,7 +78,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <div className="text-[10px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#6366F1' }}>
+            <div className="text-[10px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>
               {es ? 'SIMULADOR INTERACTIVO' : 'INTERACTIVE SIMULATOR'}
             </div>
             <h3 className="text-xl sm:text-2xl font-display font-bold text-white" style={{ letterSpacing: '-0.5px' }}>
@@ -86,10 +86,10 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             </h3>
           </div>
           <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{
-            background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(13,148,136,0.2))',
-            border: '1px solid rgba(99,102,241,0.3)',
+            background: 'linear-gradient(135deg, rgba(17,17,17,0.2), rgba(13,148,136,0.2))',
+            border: '1px solid rgba(17,17,17,0.3)',
           }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2" strokeLinecap="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2" strokeLinecap="round">
               <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
             </svg>
           </div>
@@ -101,9 +101,9 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             <button key={c.id} onClick={() => setCaseType(c.id)}
               className="px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all duration-200"
               style={{
-                background: caseType === c.id ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(255,255,255,0.05)',
-                color: caseType === c.id ? '#fff' : '#B0BDD0',
-                border: `1px solid ${caseType === c.id ? 'rgba(99,102,241,0.5)' : 'rgba(255,255,255,0.08)'}`,
+                background: caseType === c.id ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.05)',
+                color: caseType === c.id ? '#fff' : '#6B7280',
+                border: `1px solid ${caseType === c.id ? 'rgba(17,17,17,0.5)' : 'rgba(255,255,255,0.08)'}`,
                 transform: caseType === c.id ? 'scale(1.05)' : 'scale(1)',
               }}>
               {es ? c.labelEs : c.label}
@@ -117,10 +117,10 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             {/* Damage Amount Slider */}
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-[12px] font-semibold text-[#CBD5E1]">
+                <label className="text-[12px] font-semibold text-[#374151]">
                   {es ? 'Monto en disputa' : 'Amount in Dispute'}
                 </label>
-                <span className="text-[13px] font-bold font-data" style={{ color: '#6366F1' }}>
+                <span className="text-[13px] font-bold font-data" style={{ color: '#333333' }}>
                   {formatDollar(Math.round(ct.baseMd * (0.3 + (damageAmount / 100) * 2.4)))}
                 </span>
               </div>
@@ -129,18 +129,18 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                 className="simulator-slider w-full"
                 style={{ '--slider-pct': `${damageAmount}%` } as any} />
               <div className="flex justify-between mt-1">
-                <span className="text-[10px] text-[#B0BDD0]">{formatDollar(Math.round(ct.baseMd * 0.3))}</span>
-                <span className="text-[10px] text-[#B0BDD0]">{formatDollar(Math.round(ct.baseMd * 2.7))}</span>
+                <span className="text-[10px] text-[#6B7280]">{formatDollar(Math.round(ct.baseMd * 0.3))}</span>
+                <span className="text-[10px] text-[#6B7280]">{formatDollar(Math.round(ct.baseMd * 2.7))}</span>
               </div>
             </div>
 
             {/* Jurisdiction Slider */}
             <div>
               <div className="flex justify-between mb-2">
-                <label className="text-[12px] font-semibold text-[#CBD5E1]">
+                <label className="text-[12px] font-semibold text-[#374151]">
                   {es ? 'Factor de jurisdicción' : 'Jurisdiction Factor'}
                 </label>
-                <span className="text-[13px] font-bold font-data" style={{ color: jurisdiction > 60 ? '#0D9488' : jurisdiction > 35 ? '#6366F1' : '#E87461' }}>
+                <span className="text-[13px] font-bold font-data" style={{ color: jurisdiction > 60 ? '#0D9488' : jurisdiction > 35 ? '#333333' : '#E87461' }}>
                   {jurisdiction > 60 ? (es ? 'Favorable' : 'Favorable') : jurisdiction > 35 ? (es ? 'Promedio' : 'Average') : (es ? 'Desfavorable' : 'Unfavorable')}
                 </span>
               </div>
@@ -149,8 +149,8 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                 className="simulator-slider w-full"
                 style={{ '--slider-pct': `${jurisdiction}%` } as any} />
               <div className="flex justify-between mt-1">
-                <span className="text-[10px] text-[#B0BDD0]">{es ? 'Menos favorable' : 'Less favorable'}</span>
-                <span className="text-[10px] text-[#B0BDD0]">{es ? 'Más favorable' : 'More favorable'}</span>
+                <span className="text-[10px] text-[#6B7280]">{es ? 'Menos favorable' : 'Less favorable'}</span>
+                <span className="text-[10px] text-[#6B7280]">{es ? 'Más favorable' : 'More favorable'}</span>
               </div>
             </div>
 
@@ -160,10 +160,10 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               border: '1px solid rgba(255,255,255,0.08)',
             }}>
               <div>
-                <div className="text-[13px] font-semibold text-[#E2E8F0]">
+                <div className="text-[13px] font-semibold text-[#D1D5DB]">
                   {es ? 'Representación legal' : 'Attorney Representation'}
                 </div>
-                <div className="text-[11px] text-[#B0BDD0] mt-0.5">
+                <div className="text-[11px] text-[#6B7280] mt-0.5">
                   {hasAttorney
                     ? (es ? 'Abogados aumentan las tasas de éxito ~3.4x' : 'Attorneys increase win rates ~3.4x')
                     : (es ? 'Autrepresentación (pro se)' : 'Self-representation (pro se)')}
@@ -172,7 +172,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               <button onClick={() => setHasAttorney(!hasAttorney)}
                 className="w-14 h-7 rounded-full relative transition-all duration-300 cursor-pointer border-none"
                 style={{
-                  background: hasAttorney ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(255,255,255,0.12)',
+                  background: hasAttorney ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.12)',
                 }}>
                 <div className="absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-lg transition-all duration-300"
                   style={{ left: hasAttorney ? 'calc(100% - 26px)' : '2px' }} />
@@ -188,7 +188,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             }}>
               {/* Estimated Win Rate — large gauge */}
               <div className="text-center mb-5">
-                <div className="text-[10px] font-bold tracking-[2px] uppercase text-[#B0BDD0] mb-2">
+                <div className="text-[10px] font-bold tracking-[2px] uppercase text-[#6B7280] mb-2">
                   {es ? 'TASA DE ÉXITO ESTIMADA' : 'ESTIMATED WIN RATE'}
                 </div>
                 <div className="relative inline-block w-[120px] sm:w-[140px]">
@@ -196,7 +196,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                     <defs>
                       <linearGradient id="simGauge" x1="0" y1="0" x2="1" y2="0">
                         <stop offset="0%" stopColor="#E87461" />
-                        <stop offset="50%" stopColor="#6366F1" />
+                        <stop offset="50%" stopColor="#333333" />
                         <stop offset="100%" stopColor="#0D9488" />
                       </linearGradient>
                     </defs>
@@ -230,8 +230,8 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               {/* Stats Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {[
-                  { label: es ? 'Recuperación est.' : 'Est. Recovery', value: formatDollar(projected.recovery), color: '#6366F1' },
-                  { label: es ? 'Duración est.' : 'Est. Duration', value: `${projected.timeline}mo`, color: '#B0BDD0' },
+                  { label: es ? 'Recuperación est.' : 'Est. Recovery', value: formatDollar(projected.recovery), color: '#333333' },
+                  { label: es ? 'Duración est.' : 'Est. Duration', value: `${projected.timeline}mo`, color: '#6B7280' },
                   { label: es ? 'Tasa de acuerdo' : 'Settlement Rate', value: `${projected.settlePct}%`, color: '#0D9488' },
                 ].map((s, i) => (
                   <div key={i} className="text-center p-3 rounded-xl" style={{
@@ -241,7 +241,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
                     <div className="text-[16px] font-display font-bold" style={{ color: s.color, transition: 'all 0.4s ease' }}>
                       {s.value}
                     </div>
-                    <div className="text-[9px] font-semibold text-[#B0BDD0] mt-0.5">{s.label}</div>
+                    <div className="text-[9px] font-semibold text-[#6B7280] mt-0.5">{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -250,11 +250,11 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               <div className="mt-4 space-y-2">
                 {[
                   { label: es ? 'Acuerdo' : 'Settlement', pct: projected.settlePct, color: '#0D9488' },
-                  { label: es ? 'Victoria en juicio' : 'Trial Win', pct: Math.round(projected.wr * 0.3), color: '#6366F1' },
+                  { label: es ? 'Victoria en juicio' : 'Trial Win', pct: Math.round(projected.wr * 0.3), color: '#333333' },
                   { label: es ? 'Desestimado' : 'Dismissed', pct: Math.round(100 - projected.wr - projected.settlePct * 0.5), color: '#E87461' },
                 ].map((bar, i) => (
                   <div key={i} className="flex items-center gap-2">
-                    <span className="text-[10px] text-[#B0BDD0] w-20 text-right">{bar.label}</span>
+                    <span className="text-[10px] text-[#6B7280] w-20 text-right">{bar.label}</span>
                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
                       <div className="h-full rounded-full" style={{
                         width: `${Math.max(5, Math.min(95, bar.pct))}%`,
@@ -272,14 +272,14 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             <button onClick={onGetStarted}
               className="w-full mt-4 py-3.5 text-[14px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98]"
               style={{
-                background: 'linear-gradient(135deg, #4F46E5, #6366F1)',
-                boxShadow: '0 4px 24px rgba(99,102,241,0.4)',
+                background: 'linear-gradient(135deg, #111111, #333333)',
+                boxShadow: '0 4px 24px rgba(17,17,17,0.4)',
               }}>
               {es ? 'Obtener tu informe personalizado →' : 'Get your personalized report →'}
             </button>
 
             <div className="text-center mt-2">
-              <span className="text-[10px] text-[#B0BDD0]">
+              <span className="text-[10px] text-[#6B7280]">
                 {es ? 'Basado en 4M+ casos federales · No es asesoría legal' : 'Based on 4M+ federal cases · Not legal advice'}
               </span>
             </div>

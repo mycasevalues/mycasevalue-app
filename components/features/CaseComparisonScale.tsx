@@ -26,7 +26,7 @@ export function CaseComparisonScale({ winRate, lang = 'en' }: CaseComparisonScal
   };
 
   return (
-    <div className="p-5 rounded-xl bg-[#131B2E] border border-[var(--border-default)] my-4">
+    <div className="p-5 rounded-xl bg-[#FFFFFF] border border-[var(--border-default)] my-4">
       <div className="text-[11px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-4 uppercase">
         {es ? 'Cómo se compara tu caso' : 'How your case compares'}
       </div>
@@ -42,7 +42,7 @@ export function CaseComparisonScale({ winRate, lang = 'en' }: CaseComparisonScal
           aria-valuemin={0}
           aria-valuemax={100}
         >
-          <div className="w-6 h-6 bg-[#131B2E] rounded-full shadow-md border-2 border-[var(--border-muted)]" />
+          <div className="w-6 h-6 bg-[#FFFFFF] rounded-full shadow-md border-2 border-[var(--border-muted)]" />
         </div>
       </div>
       <div className="flex justify-between mt-2 px-1">
