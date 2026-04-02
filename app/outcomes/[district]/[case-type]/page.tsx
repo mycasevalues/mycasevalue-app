@@ -347,7 +347,7 @@ export default async function OutcomesPage({
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '20px',
           }}>
-            <Link href={`/cases/${category.id}`} style={{
+            <Link href={`/cases/${category.id}`} className="outcome-nav-card" style={{
               background: '#FFFFFF',
               border: '1px solid var(--border-default)',
               borderRadius: '10px',
@@ -355,12 +355,6 @@ export default async function OutcomesPage({
               textDecoration: 'none',
               display: 'block',
               transition: 'all 0.2s ease',
-            }} onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = '#333333';
-              (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-            }} onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-default)';
-              (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
             }}>
               <div style={{
                 fontSize: '12px',
@@ -381,7 +375,7 @@ export default async function OutcomesPage({
               </div>
             </Link>
 
-            <Link href={`/nos/${option.nos}`} style={{
+            <Link href={`/nos/${option.nos}`} className="outcome-nav-card" style={{
               background: '#FFFFFF',
               border: '1px solid var(--border-default)',
               borderRadius: '10px',
@@ -389,12 +383,6 @@ export default async function OutcomesPage({
               textDecoration: 'none',
               display: 'block',
               transition: 'all 0.2s ease',
-            }} onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = '#333333';
-              (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-            }} onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-default)';
-              (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
             }}>
               <div style={{
                 fontSize: '12px',
