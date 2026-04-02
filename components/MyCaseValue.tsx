@@ -172,6 +172,7 @@ interface ShellProps {
   setLegalPage: (page: 'terms' | 'privacy' | 'cookies' | 'disclaimer') => void;
   legalPage: 'terms' | 'privacy' | 'cookies' | 'disclaimer' | null;
   showMethodology: boolean;
+  prefersReducedMotion: boolean;
   children: React.ReactNode;
 }
 
@@ -205,6 +206,7 @@ function Shell({
   setLegalPage,
   legalPage,
   showMethodology,
+  prefersReducedMotion,
   children,
 }: ShellProps) {
   return (
@@ -228,8 +230,8 @@ function Shell({
         {/* Reading progress bar */}
         {step === 6 && <div className="reading-progress" style={{ width: `${readingPct}%` }} />}
 
-        {/* Success celebration on report completion */}
-        {showConfetti && <SuccessCelebration />}
+        {/* Success celebration on report completion (respects reduced motion) */}
+        {showConfetti && !prefersReducedMotion && <SuccessCelebration />}
 
         {/* Announcement Bar — live case count */}
         <AnnouncementBar lang={lang} />
@@ -1215,6 +1217,7 @@ export default function MyCaseValue() {
     setLegalPage,
     legalPage,
     showMethodology,
+    prefersReducedMotion,
   };
 
   // Keyboard shortcuts
