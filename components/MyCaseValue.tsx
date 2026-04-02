@@ -277,7 +277,7 @@ function Select({ value, options, onChange, placeholder, dark = false, lang = 'e
         }}>
         <span className="truncate">{selected ? selected.label : placeholder || 'Select...'}</span>
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#4F46E5' : '#94A3B8'} strokeWidth="2.5" strokeLinecap="round"
-          style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.2s' }}>
+          aria-hidden="true" style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.2s' }}>
           <polyline points="6 9 12 15 18 9" />
         </svg>
       </button>
@@ -357,7 +357,7 @@ function Collapsible({ title, badge, defaultOpen = false, children }: { title: s
         <div className="w-6 h-6 rounded-lg flex items-center justify-center transition-all"
           style={{ background: open ? '#4F46E510' : 'transparent' }}>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={open ? '#4F46E5' : '#94A3B8'} strokeWidth="2.5"
-            style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.2s' }}>
+            aria-hidden="true" style={{ transform: open ? 'rotate(180deg)' : '', transition: 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), stroke 0.2s' }}>
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </div>
