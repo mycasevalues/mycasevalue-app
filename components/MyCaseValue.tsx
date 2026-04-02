@@ -2913,11 +2913,11 @@ export default function MyCaseValue() {
               {/* Toggle: bar chart vs. expanded table */}
               <div className="flex gap-2 mb-3">
                 <button onClick={() => setCircuitView('bars')} className="text-[10px] font-bold px-2.5 py-1 rounded-lg border-none transition-all"
-                  style={{ background: circuitView === 'bars' ? 'rgba(99,102,241,0.2)' : 'transparent', color: circuitView === 'bars' ? '#A5B4FC' : '#64748B' }}>
+                  style={{ background: circuitView === 'bars' ? 'rgba(99,102,241,0.2)' : 'transparent', color: circuitView === 'bars' ? '#A5B4FC' : '#8B95A5' }}>
                   {lang === 'es' ? 'Barras' : 'Chart'}
                 </button>
                 <button onClick={() => setCircuitView('table')} className="text-[10px] font-bold px-2.5 py-1 rounded-lg border-none transition-all"
-                  style={{ background: circuitView === 'table' ? 'rgba(99,102,241,0.2)' : 'transparent', color: circuitView === 'table' ? '#A5B4FC' : '#64748B' }}>
+                  style={{ background: circuitView === 'table' ? 'rgba(99,102,241,0.2)' : 'transparent', color: circuitView === 'table' ? '#A5B4FC' : '#8B95A5' }}>
                   {lang === 'es' ? 'Detalle' : 'Details'}
                 </button>
               </div>
@@ -3417,7 +3417,7 @@ export default function MyCaseValue() {
                   <div className="flex items-center gap-4 mb-3 px-1">
                     <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-sm" style={{ background: '#6366F1' }} /><span className="text-[11px] text-[var(--fg-muted)]">{cA.label.split(' ').slice(0, 2).join(' ')}</span></div>
                     <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-sm" style={{ background: '#0D9488' }} /><span className="text-[11px] text-[var(--fg-muted)]">{cB.label.split(' ').slice(0, 2).join(' ')}</span></div>
-                    <div className="flex items-center gap-1.5 ml-auto"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><span className="text-[11px] text-[#64748B]">{lang === 'es' ? 'Mejor en esta métrica' : 'Better metric'}</span></div>
+                    <div className="flex items-center gap-1.5 ml-auto"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg><span className="text-[11px] text-[#8B95A5]">{lang === 'es' ? 'Mejor en esta métrica' : 'Better metric'}</span></div>
                   </div>
 
                   {/* Visual comparison bars */}
@@ -3456,7 +3456,7 @@ export default function MyCaseValue() {
                                 </div>
                               </div>
                               {isNumeric && m.better !== 'neutral' && (
-                                <div className="text-[10px] text-[#64748B] mt-0.5">
+                                <div className="text-[10px] text-[#8B95A5] mt-0.5">
                                   {lang === 'es' ? 'Diferencia' : 'Difference'}: <span style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{Math.abs(vA - vB).toFixed(1)}{m.unit || ''}</span>
                                 </div>
                               )}
@@ -3464,7 +3464,7 @@ export default function MyCaseValue() {
                           ) : (
                             <div className="flex items-center gap-3">
                               <span className="text-[14px] font-bold font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{m.fmt(vA)}</span>
-                              <span className="text-[10px] text-[#64748B]">vs</span>
+                              <span className="text-[10px] text-[#8B95A5]">vs</span>
                               <span className="text-[14px] font-bold font-data" style={{ color: '#5EEAD4' }}>{m.fmt(vB)}</span>
                             </div>
                           )}
@@ -4167,7 +4167,7 @@ export default function MyCaseValue() {
                   <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-all" style={{
                     background: src.done ? 'rgba(13,148,136,0.1)' : 'rgba(255,255,255,0.03)',
                     border: `1px solid ${src.done ? 'rgba(13,148,136,0.2)' : '#1E293B'}`,
-                    color: src.done ? '#0D9488' : '#64748B',
+                    color: src.done ? '#0D9488' : '#8B95A5',
                   }}>
                     {src.done ? (
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -6097,11 +6097,11 @@ export default function MyCaseValue() {
                     <h3 className="text-lg font-semibold">{lang === 'es' ? 'Escenarios de qué pasaría' : 'What-If Scenarios'}</h3>
                   </div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4F46E5' : '#1E293B', background: attorney === 'with' ? 'rgba(99,102,241,0.15)' : '#1E293B', color: attorney === 'with' ? '#4F46E5' : '#64748B' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'with' ? '#4F46E5' : '#1E293B', background: attorney === 'with' ? 'rgba(99,102,241,0.15)' : '#1E293B', color: attorney === 'with' ? '#4F46E5' : '#8B95A5' }}
                       onClick={() => setAttorney('with')}>
                       {lang === 'es' ? 'Con abogado' : 'With Attorney'}
                     </button>
-                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4F46E5' : '#1E293B', background: attorney === 'without' ? 'rgba(99,102,241,0.15)' : '#1E293B', color: attorney === 'without' ? '#4F46E5' : '#64748B' }}
+                    <button className="px-4 py-3 text-sm font-semibold rounded-lg cursor-pointer transition-all border-[1.5px]" style={{ borderColor: attorney === 'without' ? '#4F46E5' : '#1E293B', background: attorney === 'without' ? 'rgba(99,102,241,0.15)' : '#1E293B', color: attorney === 'without' ? '#4F46E5' : '#8B95A5' }}
                       onClick={() => setAttorney('without')}>
                       {lang === 'es' ? 'Sin abogado' : 'Self-Represented'}
                     </button>
@@ -6178,7 +6178,7 @@ export default function MyCaseValue() {
                         <circle cx="75" cy="75" r="65" fill="none" stroke="#E2E8F0" strokeWidth="12" />
                         <circle cx="75" cy="75" r="65" fill="none" stroke="#4F46E5" strokeWidth="12" strokeDasharray="200" strokeDashoffset="80" strokeLinecap="round" />
                         <text x="75" y="75" textAnchor="middle" dy="0.3em" fontSize="32" fontWeight="800" fill="#4F46E5">68</text>
-                        <text x="75" y="95" textAnchor="middle" fontSize="14" fill="#64748B">{lang === 'es' ? 'Total' : 'Overall'}</text>
+                        <text x="75" y="95" textAnchor="middle" fontSize="14" fill="#8B95A5">{lang === 'es' ? 'Total' : 'Overall'}</text>
                       </svg>
                     </div>
                     <div className="space-y-2">

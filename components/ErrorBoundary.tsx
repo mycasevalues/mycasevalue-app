@@ -93,7 +93,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
             >
               Refresh page
             </button>
-            <p style={{ fontSize: 11, color: '#64748B', marginTop: 16 }}>
+            <p style={{ fontSize: 11, color: '#8B95A5', marginTop: 16 }}>
               If this persists, contact support@mycasevalue.com
             </p>
           </div>
