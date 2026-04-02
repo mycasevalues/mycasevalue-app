@@ -75,7 +75,7 @@ export function StepHome({
             '--dy3': `${-20 - i * 5}px`,
             width: `${3 + (i % 3)}px`,
             height: `${3 + (i % 3)}px`,
-            background: i % 3 === 0 ? 'rgba(64, 64, 242, 0.4)' : i % 3 === 1 ? 'rgba(13, 148, 136, 0.3)' : 'rgba(64, 64, 242, 0.2)',
+            background: i % 3 === 0 ? 'rgba(17, 17, 17, 0.06)' : i % 3 === 1 ? 'rgba(139, 92, 246, 0.04)' : 'rgba(17, 17, 17, 0.03)',
           } as any} />
         ))}
 
@@ -90,8 +90,8 @@ export function StepHome({
                   {t.hero_badge}
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-[11px] font-semibold"
-                  style={{ color: '#5EEAD4', background: 'rgba(13,148,136,0.1)', border: '1px solid rgba(13,148,136,0.2)' }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                  style={{ color: '#8B5CF6', background: 'rgba(17,17,17,0.12)', border: '1px solid rgba(17,17,17,0.2)' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                   {t.hero_privacy}
                 </div>
               </div>
@@ -208,12 +208,12 @@ export function StepHome({
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <button onClick={() => go(1)}
-                  className="cta-glow cta-pulse btn-primary magnetic-btn ripple-effect px-8 sm:px-8 py-3.5 sm:py-4.5 text-[15px] sm:text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform w-full sm:w-auto"
+                  className="cta-glow cta-pulse btn-primary magnetic-btn ripple-effect px-8 sm:px-8 py-3.5 sm:py-4.5 text-[15px] sm:text-[16px] font-semibold text-white border-none rounded-full cursor-pointer hover:scale-[1.02] active:scale-[0.98] transition-transform w-full sm:w-auto"
                   style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 24px rgba(17,17,17,.3)' }}>
                   {t.hero_cta}
                 </button>
                 <button onClick={demo}
-                  className="magnetic-btn px-8 py-3.5 sm:py-4.5 text-[15px] font-medium rounded-2xl cursor-pointer transition-all"
+                  className="magnetic-btn px-8 py-3.5 sm:py-4.5 text-[15px] font-medium rounded-full cursor-pointer transition-all"
                   style={{
                     background: 'rgba(255,255,255,0.06)',
                     border: '1.5px solid rgba(255,255,255,0.15)',

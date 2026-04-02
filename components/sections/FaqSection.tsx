@@ -165,8 +165,8 @@ export default function FaqSection({ lang }: FaqSectionProps) {
               key={idx}
               className="border rounded-xl overflow-hidden transition-all duration-200"
               style={{
-                borderColor: openIdx === idx ? '#111111' : '#E5E7EB',
-                background: openIdx === idx ? 'linear-gradient(180deg, #1E2941, #FFFFFF)' : '#FFFFFF',
+                borderColor: '#E5E7EB',
+                background: '#FFFFFF',
               }}
             >
               <button
@@ -174,9 +174,9 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                 aria-expanded={openIdx === idx}
                 aria-controls={`faq-answer-${idx}`}
-                className="w-full px-6 py-4 flex items-start justify-between hover:bg-[#E5E7EB] transition-colors text-left"
+                className="w-full px-6 py-4 flex items-start justify-between hover:bg-[#F9FAFB] transition-colors text-left"
                 style={{
-                  background: openIdx === idx ? 'transparent' : 'transparent',
+                  background: 'transparent',
                 }}
               >
                 <h3

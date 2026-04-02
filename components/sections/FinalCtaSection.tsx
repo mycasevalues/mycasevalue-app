@@ -44,8 +44,8 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
         <div
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-bold tracking-wider"
           style={{
-            background: 'linear-gradient(135deg, #111111, #333333)',
-            color: '#FAFAF8',
+            background: '#111111',
+            color: '#FFFFFF',
           }}
         >
           <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#FAFAF8', opacity: 0.5 }} />
@@ -67,7 +67,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
         {/* Subtext */}
         <p
           className="text-lg sm:text-xl mb-10 max-w-2xl mx-auto"
-          style={{ color: '#B0B9C8' }}
+          style={{ color: '#6B7280' }}
         >
           {lang === 'es'
             ? 'En menos de 60 segundos, descubre qué sucedió en casos como el tuyo. Sin crear cuenta. Sin guardar datos. Solo respuestas.'
@@ -77,11 +77,11 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
         {/* CTA Button */}
         <button
           onClick={onGetStarted}
-          className="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-navy-900 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-100 mb-8"
+          className="inline-flex items-center justify-center px-8 py-4 text-base sm:text-lg font-semibold text-navy-900 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-100 mb-8"
           style={{
-            background: 'linear-gradient(135deg, #111111, #333333)',
-            color: '#FAFAF8',
-            boxShadow: '0 8px 32px rgba(184, 146, 58, 0.3)',
+            background: '#111111',
+            color: '#FFFFFF',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
           }}
         >
           {lang === 'es' ? 'Generar mi informe' : 'Generate my report'}
@@ -103,7 +103,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
         {/* Trust signals */}
         <div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm font-medium"
-          style={{ color: '#6B7280' }}
+          style={{ color: '#6B7280', fontWeight: 400 }}
         >
           <div className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2">
@@ -136,8 +136,8 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
             { value: '< 60s', label: lang === 'es' ? 'tiempo de informe' : 'report time' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-lg font-bold" style={{ color: '#333333' }}>{stat.value}</div>
-              <div className="text-[10px]" style={{ color: '#9CA3AF' }}>{stat.label}</div>
+              <div className="text-lg font-bold" style={{ color: '#111111' }}>{stat.value}</div>
+              <div className="text-[10px]" style={{ color: '#6B7280' }}>{stat.label}</div>
             </div>
           ))}
         </div>
