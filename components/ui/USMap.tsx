@@ -122,9 +122,11 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
             const bg = hasData ? getHeatColor(rate) : '#1E293B';
 
             return (
-              <div
+              <button
                 key={code}
-                className="absolute cursor-pointer rounded-md flex flex-col items-center justify-center transition-all duration-150"
+                aria-label={`${code}${hasData ? `, ${rate!.toFixed(0)}% win rate` : ', no data'}`}
+                aria-pressed={isSelected}
+                className="absolute cursor-pointer rounded-md flex flex-col items-center justify-center transition-all duration-150 focus-ring"
                 style={{
                   left: col * step,
                   top: row * step,
@@ -136,16 +138,19 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
                   transform: isHovered ? 'scale(1.12)' : isSelected ? 'scale(1.05)' : 'scale(1)',
                   zIndex: isHovered ? 10 : isSelected ? 5 : 1,
                   boxShadow: isHovered ? '0 4px 16px rgba(0,0,0,.3)' : isSelected ? '0 2px 8px rgba(79,70,229,0.3)' : 'none',
+                  padding: 0,
                 }}
                 onMouseEnter={() => setHovered(code)}
                 onMouseLeave={() => setHovered(null)}
+                onFocus={() => setHovered(code)}
+                onBlur={() => setHovered(null)}
                 onClick={() => onStateClick?.(code)}
               >
                 <span className="font-bold text-white leading-none" style={{ fontSize, textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>{code}</span>
                 {hasData && (
                   <span className="font-data text-white/80 leading-none mt-0.5" style={{ fontSize: rateFontSize }}>{rate.toFixed(0)}%</span>
                 )}
-              </div>
+              </button>
             );
           })}
         </div>

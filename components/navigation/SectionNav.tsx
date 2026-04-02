@@ -85,10 +85,10 @@ export default function SectionNav({ lang }: SectionNavProps) {
               className="px-3 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 whitespace-nowrap"
               style={{
                 background: isActive ? 'rgba(99,102,241,0.2)' : 'transparent',
-                color: isActive ? '#A5B4FC' : '#64748B',
+                color: isActive ? '#A5B4FC' : '#8B95A5',
                 border: 'none',
                 cursor: 'pointer',
-                minHeight: '32px',
+                minHeight: '44px',
                 minWidth: '44px',
               }}
               aria-current={isActive ? 'true' : undefined}
@@ -101,14 +101,14 @@ export default function SectionNav({ lang }: SectionNavProps) {
         {/* Back to top */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center justify-center w-8 h-8 rounded-full transition-all duration-200"
+          className="flex items-center justify-center w-11 h-11 rounded-full transition-all duration-200"
           style={{
             background: 'rgba(255,255,255,0.05)',
-            color: '#64748B',
+            color: '#8B95A5',
             border: 'none',
             cursor: 'pointer',
-            minHeight: '32px',
-            minWidth: '32px',
+            minHeight: '44px',
+            minWidth: '44px',
           }}
           aria-label={lang === 'es' ? 'Volver arriba' : 'Back to top'}
         >

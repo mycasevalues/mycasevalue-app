@@ -256,7 +256,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           window.mcvAnalytics = {
             track: function(event, props) {
               if (window.gtag) window.gtag('event', event, props);
-              console.debug('[MCV Analytics]', event, props);
             }
           };
         ` }} />

@@ -1582,6 +1582,11 @@ export default function MyCaseValue() {
     }
   }, [step]);
 
+  // Sync HTML lang attribute when language changes (WCAG 3.1.2)
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   // Handle return from Stripe checkout
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
