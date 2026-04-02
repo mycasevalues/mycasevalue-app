@@ -15,8 +15,8 @@ interface Message {
 
 const MESSAGES: Message[] = [
   {
-    en: '4.1M+ federal court outcomes indexed · Updated quarterly from FJC',
-    es: '4.1M+ resultados de tribunales federales indexados · Actualizado trimestralmente del FJC',
+    en: '5.1M+ federal court outcomes indexed · Updated quarterly from FJC',
+    es: '5.1M+ resultados de tribunales federales indexados · Actualizado trimestralmente del FJC',
   },
   {
     en: 'EEOC recovered $699.6M for discrimination victims in FY2024',

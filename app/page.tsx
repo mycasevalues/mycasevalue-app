@@ -8,7 +8,7 @@ const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
 
 export const metadata = {
   title: 'MyCaseValue - Federal Case Settlement Data & Win Rates',
-  description: 'Research real outcomes from 4.1M+ federal court cases across 94 districts. Get win rates, settlement ranges, timelines, and judge analytics sourced from public court records. No account required.',
+  description: 'Research real outcomes from 5.1M+ federal court cases across 94 districts. Get win rates, settlement ranges, timelines, and judge analytics sourced from public court records. No account required.',
   keywords: 'federal court case data, settlement database, win rates, legal research, court records, case outcomes',
   alternates: {
     canonical: 'https://www.mycasevalues.com',

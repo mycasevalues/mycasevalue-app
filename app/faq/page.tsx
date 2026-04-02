@@ -31,7 +31,7 @@ const jsonLd = {
           name: 'What is MyCaseValue?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'MyCaseValue is a research platform that aggregates historical outcome data from 4.1M+ federal civil court cases. It provides win rates, settlement percentages, case timelines, and recovery ranges across 84 case types. It is not legal advice.',
+            text: 'MyCaseValue is a research platform that aggregates historical outcome data from 5.1M+ federal civil court cases. It provides win rates, settlement percentages, case timelines, and recovery ranges across 84 case types. It is not legal advice.',
           },
         },
         {
@@ -189,7 +189,7 @@ const faqs = [
     questions: [
       {
         q: 'What is MyCaseValue?',
-        a: 'MyCaseValue is a research platform that aggregates historical outcome data from 4.1M+ federal civil court cases. It provides win rates, settlement percentages, case timelines, and recovery ranges across 84 case types. It is not legal advice.',
+        a: 'MyCaseValue is a research platform that aggregates historical outcome data from 5.1M+ federal civil court cases. It provides win rates, settlement percentages, case timelines, and recovery ranges across 84 case types. It is not legal advice.',
       },
       {
         q: 'How does MyCaseValue work?',

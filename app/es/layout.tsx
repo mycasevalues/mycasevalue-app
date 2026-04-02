@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'MyCaseValue en Español',
-  description: 'Datos de resultados de casos federales en español. Tasas de victoria, acuerdos y cronogramas de 4.1M+ casos judiciales federales.',
+  description: 'Datos de resultados de casos federales en español. Tasas de victoria, acuerdos y cronogramas de 5.1M+ casos judiciales federales.',
   openGraph: {
     locale: 'es_ES',
   },

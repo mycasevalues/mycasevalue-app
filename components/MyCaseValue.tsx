@@ -227,7 +227,7 @@ function Shell({
     <>
       <a href="#main-content" className="skip-link">{lang === 'es' ? 'Ir al contenido' : 'Skip to content'}</a>
       <div
-        className="dark"
+        className=""
         role="application"
         aria-label="MyCaseValue"
         data-mcv-loaded="true"
@@ -605,7 +605,7 @@ export default function MyCaseValue() {
   const [showMethodology, setShowMethodology] = useState(false);
   const [timelineStep, setTimelineStep] = useState(0);
   const [pollVote, setPollVote] = useState('');
-  const darkMode = true; // Always dark mode — matches brand identity
+  const darkMode = false; // Paper design — light theme
   const [lang, setLang] = useState<Lang>('en');
   const [viewMode, setViewMode] = useState<'auto' | 'mobile' | 'desktop'>('auto');
   const [compareMode, setCompareMode] = useState(false);
@@ -654,6 +654,14 @@ export default function MyCaseValue() {
   const [totalCases, setTotalCases] = useState(5127834);
 
   const isPremium = tier !== 'free';
+
+  // Hide SSR hero once client app mounts
+  useEffect(() => {
+    const ssrHero = document.getElementById('ssr-hero');
+    if (ssrHero) {
+      ssrHero.setAttribute('data-mcv-loaded', 'true');
+    }
+  }, []);
 
   // Restore draft from localStorage on mount
   useEffect(() => {

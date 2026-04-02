@@ -3,7 +3,7 @@ import { getAllPosts } from '../../lib/blog';
 
 export const metadata: Metadata = {
   title: 'Blog — MyCaseValue | Federal Court Data & Legal Insights',
-  description: 'Research-backed articles about federal court outcomes, case statistics, settlement data, win rates, and litigation strategy based on 4.1M+ cases.',
+  description: 'Research-backed articles about federal court outcomes, case statistics, settlement data, win rates, and litigation strategy based on 5.1M+ cases.',
   alternates: { canonical: 'https://mycasevalues.com/blog' },
   openGraph: {
     title: 'Blog — MyCaseValue',
@@ -55,7 +55,7 @@ export default function BlogPage() {
             Federal Court Data & Litigation Insights
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
-            Research-backed articles analyzing real outcomes from 4.1M+ federal cases. Understand win rates, settlement data, timelines, and what affects your case.
+            Research-backed articles analyzing real outcomes from 5.1M+ federal cases. Understand win rates, settlement data, timelines, and what affects your case.
           </p>
         </div>
       </div>

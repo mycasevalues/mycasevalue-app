@@ -55,7 +55,7 @@ export default function SocialProofBar({
   lang = 'en',
 }: SocialProofBarProps) {
   // NOTE: Statistics accuracy
-  // - totalCases (4.1M+): Reasonable for aggregated court records across US federal & state courts
+  // - totalCases (5.1M+): Reasonable for aggregated court records across US federal & state courts
   // - States Covered (50): Accurate (all 50 US states)
   // - Updated timestamp: Dynamic, reflects current data freshness
   // Consider adding data refresh timestamp and actual case count verification from backend

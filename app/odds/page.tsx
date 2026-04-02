@@ -350,7 +350,7 @@ export default function OddsPage() {
         <div className="mt-16 pt-8 border-t" style={{ borderColor: 'var(--border-default)' }}>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[
-              { v: '4.1M+', l: 'Cases analyzed' },
+              { v: '5.1M+', l: 'Cases analyzed' },
               { v: '94', l: 'Federal districts' },
               { v: '84', l: 'Case types' },
               { v: '100% Free', l: 'No account needed' },

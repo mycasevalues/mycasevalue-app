@@ -43,7 +43,7 @@ const faqs = [
     questions: [
       {
         q: '¿Qué es MyCaseValue?',
-        a: 'MyCaseValue es una plataforma de investigación que agrega datos de resultados históricos de 4.1M+ casos civiles federales. Proporciona tasas de victoria, porcentajes de acuerdos, cronogramas de casos y rangos de recuperación en 84 tipos de casos. No es asesoramiento legal.',
+        a: 'MyCaseValue es una plataforma de investigación que agrega datos de resultados históricos de 5.1M+ casos civiles federales. Proporciona tasas de victoria, porcentajes de acuerdos, cronogramas de casos y rangos de recuperación en 84 tipos de casos. No es asesoramiento legal.',
       },
       {
         q: '¿Cómo funciona MyCaseValue?',

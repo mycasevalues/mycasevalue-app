@@ -13,7 +13,7 @@ import EnglishPage from '../page';
 
 export const metadata: Metadata = {
   title: 'MyCaseValue en Español - Datos de Casos Federales',
-  description: 'Investiga resultados reales de 4.1M+ casos judiciales federales. Tasas de éxito, rangos de acuerdos, plazos y análisis de jueces. Gratuito, privado e instantáneo.',
+  description: 'Investiga resultados reales de 5.1M+ casos judiciales federales. Tasas de éxito, rangos de acuerdos, plazos y análisis de jueces. Gratuito, privado e instantáneo.',
   alternates: {
     canonical: 'https://mycasevalues.com/es',
     languages: {

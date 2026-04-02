@@ -17,17 +17,17 @@ interface HeroStatsProps {
 }
 
 const STATS_EN: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#333333' },
-  { value: 94, suffix: '%', label: 'Data Coverage', sublabel: 'All districts', icon: '', color: '#5EEAD4' },
+  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '⚖️', color: '#111111' },
+  { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '🏛️', color: '#111111' },
   { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '📁', color: '#8B5CF6' },
-  { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '📅', color: '#F472B6' },
+  { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '📅', color: '#111111' },
 ];
 
 const STATS_ES: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#333333' },
-  { value: 94, suffix: '%', label: 'Cobertura', sublabel: 'Todos los distritos', icon: '', color: '#5EEAD4' },
+  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '⚖️', color: '#111111' },
+  { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '🏛️', color: '#111111' },
   { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '📁', color: '#8B5CF6' },
-  { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '📅', color: '#F472B6' },
+  { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '📅', color: '#111111' },
 ];
 
 function useCountUp(target: number, duration: number = 2000, shouldStart: boolean = false): number {
@@ -66,7 +66,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
       style={{
         padding: '20px 16px',
         borderRadius: '16px',
-        background: 'linear-gradient(180deg, rgba(19,27,46,0.9) 0%, rgba(255,255,255,0.95) 100%)',
+        background: '#FFFFFF',
         border: `1px solid ${stat.color}20`,
         position: 'relative',
         overflow: 'hidden',

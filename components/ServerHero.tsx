@@ -69,7 +69,7 @@ export default function ServerHero() {
               lineHeight: '1.6',
             }}
           >
-            Research real outcomes from <strong>4.1M+ federal court cases</strong> across 94 districts. Win rates, settlement ranges,
+            Research real outcomes from <strong>5.1M+ federal court cases</strong> across all 94 US districts. Win rates, settlement ranges,
             timelines, and judge analytics — sourced from public court records.
           </p>
 
@@ -93,15 +93,15 @@ export default function ServerHero() {
             <button type="button"
               className="px-8 sm:px-10 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
               style={{
-                background: 'linear-gradient(135deg, #111111, #3535D0)',
-                color: '#111827',
+                background: '#111111',
+                color: '#FFFFFF',
                 borderRadius: '12px',
-                fontFamily: '"Outfit", system-ui, sans-serif',
+                fontFamily: '"Montserrat", system-ui, sans-serif',
                 cursor: 'pointer',
               }}
               disabled
             >
-              Calculate Your Case Value
+              Check My Case Type
             </button>
           </div>
         </div>
@@ -128,12 +128,12 @@ export default function ServerHero() {
                   letterSpacing: '-0.5px',
                 }}
               >
-                4.1M+
+                5.1M+
               </div>
               <div
                 className="text-xs sm:text-sm font-medium"
                 style={{
-                  fontFamily: '"Outfit", system-ui, sans-serif',
+                  fontFamily: '"Montserrat", system-ui, sans-serif',
                   color: '#6B7280',
                   letterSpacing: '0.5px',
                 }}

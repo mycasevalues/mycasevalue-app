@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'How It Works — MyCaseValue | 3 Simple Steps',
-  description: 'Tell us your situation → We search 4.1M+ federal court cases → Get your personalized report with real outcomes, win rates, and timelines.',
+  description: 'Tell us your situation → We search 5.1M+ federal court cases → Get your personalized report with real outcomes, win rates, and timelines.',
   alternates: { canonical: 'https://mycasevalues.com/how-it-works' },
   openGraph: {
     title: 'How It Works — MyCaseValue',
-    description: 'Three simple steps to research real federal court outcomes. Select your case type, we analyze 4.1M+ cases, you get a personalized report.',
+    description: 'Three simple steps to research real federal court outcomes. Select your case type, we analyze 5.1M+ cases, you get a personalized report.',
     type: 'website',
     url: 'https://mycasevalues.com/how-it-works',
   },
@@ -25,7 +25,7 @@ const jsonLd = {
     {
       '@type': 'HowTo',
       name: 'How to Research Federal Court Case Outcomes with MyCaseValue',
-      description: 'A three-step process to research real outcomes from 4.1M+ federal cases.',
+      description: 'A three-step process to research real outcomes from 5.1M+ federal cases.',
       step: [
         {
           '@type': 'HowToStep',
@@ -38,7 +38,7 @@ const jsonLd = {
           '@type': 'HowToStep',
           position: 2,
           name: 'We search 54 years of data',
-          text: 'Our system analyzes 4.1M+ federal court cases from the FJC Integrated Database, PACER, and CourtListener to find cases matching your situation.',
+          text: 'Our system analyzes 5.1M+ federal court cases from the FJC Integrated Database, PACER, and CourtListener to find cases matching your situation.',
           image: 'https://mycasevalues.com/step-2-icon.svg',
         },
         {
@@ -68,7 +68,7 @@ const steps = [
   {
     number: '2',
     title: 'We search 54 years of data',
-    description: 'Our system analyzes 4.1M+ federal court cases from the FJC Integrated Database, PACER, and CourtListener to find cases matching your situation.',
+    description: 'Our system analyzes 5.1M+ federal court cases from the FJC Integrated Database, PACER, and CourtListener to find cases matching your situation.',
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="1.5">
         <circle cx="11" cy="11" r="8"/>
@@ -92,7 +92,7 @@ const steps = [
 ];
 
 const trustStats = [
-  { value: '4.1M+', label: 'Federal cases analyzed' },
+  { value: '5.1M+', label: 'Federal cases analyzed' },
   { value: '94', label: 'Federal districts covered' },
   { value: '54', label: 'Years of judicial data' },
   { value: '84', label: 'Case types supported' },
@@ -246,7 +246,7 @@ export default function HowItWorksPage() {
               {
                 icon: '⚡',
                 title: 'Instant Results',
-                description: 'Get your report in seconds, not weeks. Real-time analysis of 4.1M+ cases.',
+                description: 'Get your report in seconds, not weeks. Real-time analysis of 5.1M+ cases.',
               },
               {
                 icon: '',
