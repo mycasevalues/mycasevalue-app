@@ -1517,6 +1517,7 @@ export default function MyCaseValue() {
   const [lang, setLang] = useState<Lang>('en');
   const [viewMode, setViewMode] = useState<'auto' | 'mobile' | 'desktop'>('auto');
   const [compareMode, setCompareMode] = useState(false);
+  const [showAllSubcats, setShowAllSubcats] = useState(false);
   const [compareNos, setCompareNos] = useState<string | null>(null);
   const [compareData, setCompareData] = useState<any>(null);
   const [savedReports, setSavedReports] = useState<any[]>([]);
@@ -3796,7 +3797,7 @@ export default function MyCaseValue() {
     <button onClick={() => {
       if (step === 6) { setResult(null); go(3); }
       else if (step === 3) { setSpec(null); go(2); }
-      else if (step === 2) { setSit(null); go(0); }
+      else if (step === 2) { setSit(null); setShowAllSubcats(false); go(0); }
       else if (step === 1) go(0);
     }} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
@@ -3845,8 +3846,11 @@ export default function MyCaseValue() {
     </Shell>
   );
 
-  // Step 2: Sub-category
-  if (step === 2 && sit) return (
+  // Step 2: Sub-category (with "show more" for 10+ options and "Not sure?" helper)
+  if (step === 2 && sit) {
+    const INITIAL_SHOW = 8;
+    const hasMore = sit.opts.length > INITIAL_SHOW;
+    return (
     <Shell {...shellProps}>
       {commandPaletteEl}
       <div className="max-w-xl mx-auto py-6 wizard-step-enter">
@@ -3859,9 +3863,47 @@ export default function MyCaseValue() {
             </div>
             <h2 className="text-2xl sm:text-3xl font-display font-bold">{sit.q}</h2>
           </div>
-          <p className="text-[var(--fg-muted)] mb-6 ml-[52px]">{t.choose_specific}</p>
+          <p className="text-[var(--fg-muted)] mb-4 ml-[52px]">{t.choose_specific}</p>
+
+          {/* "Not sure?" helper — AI text match within this category */}
+          <div className="mb-5 p-4 rounded-2xl" style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.12)' }}>
+            <div className="flex items-center gap-2 mb-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
+              <span className="text-[13px] font-semibold" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? '¿No estás seguro? Descríbelo' : 'Not sure? Describe it'}</span>
+            </div>
+            <input type="text" value={naturalInput} onChange={e => setNaturalInput(e.target.value)}
+              onKeyDown={e => {
+                if (e.key === 'Enter' && naturalInput.trim()) {
+                  const matched = aiSuggestions.find((s: any) => s.sit.id === sit.id);
+                  if (matched) { setSpec(matched.opt); go(3); toast(lang === 'es' ? `Detectado: ${matched.opt.d}` : `Matched: ${matched.opt.d}`); }
+                }
+              }}
+              placeholder={lang === 'es' ? `Ej: "me despidieron sin razón"` : `e.g. "I was fired without reason"`}
+              className="w-full text-[14px] rounded-xl transition-all input-frosted focus-ring-premium"
+              aria-label={lang === 'es' ? 'Describe tu situación' : 'Describe your situation'}
+              style={{ color: '#F0F2F5', padding: '12px 16px' }} />
+            {naturalInput.trim() && aiSuggestions.filter((s: any) => s.sit.id === sit.id).length > 0 && (
+              <div className="mt-2 space-y-1">
+                {aiSuggestions.filter((s: any) => s.sit.id === sit.id).slice(0, 3).map((s: any, i: number) => (
+                  <button key={i} onClick={() => { setSpec(s.opt); go(3); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
+                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-left text-[13px] transition-all bg-transparent border-none"
+                    style={{ color: '#E2E8F0' }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(99,102,241,0.1)'; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}>
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={sit.color} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+                    {s.opt.label}
+                    <span className="ml-auto text-[11px]" style={{ color: 'var(--fg-muted)' }}>{Math.min(Math.round(s.score * 8), 99)}%</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="text-[11px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#6B7A94' }}>
+            {lang === 'es' ? 'O selecciona abajo' : 'Or select below'}
+          </div>
           <div className="space-y-2.5 stagger">
-            {sit.opts.map((o: any, i: number) => (
+            {(hasMore && !showAllSubcats ? sit.opts.slice(0, INITIAL_SHOW) : sit.opts).map((o: any, i: number) => (
               <button key={i} onClick={() => { setSpec(o); go(3); }}
                 className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
                 style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(51,65,85,0.5)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
@@ -3875,10 +3917,18 @@ export default function MyCaseValue() {
               </button>
             ))}
           </div>
+          {hasMore && !showAllSubcats && (
+            <button onClick={() => setShowAllSubcats(true)}
+              className="w-full mt-3 py-3 text-[14px] font-medium rounded-xl cursor-pointer transition-all bg-transparent border-none"
+              style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>
+              {lang === 'es' ? `Mostrar ${sit.opts.length - INITIAL_SHOW} más →` : `Show ${sit.opts.length - INITIAL_SHOW} more →`}
+            </button>
+          )}
         </Reveal>
       </div>
     </Shell>
-  );
+    );
+  }
 
   // Step 3: Details
   if (step === 3) return (
@@ -3917,15 +3967,18 @@ export default function MyCaseValue() {
                 )}
               </div>
             )}
-            <div>
-              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuánto dinero está involucrado?' : 'How much money is involved?'} <span className="text-coral">*</span></label>
+            {/* Progressive disclosure — these fields appear after timing is selected */}
+            {timing && (<>
+            <div className="animate-fade-in">
+              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuánto dinero está involucrado?' : 'How much money is involved?'}</label>
               <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} dark={darkMode} lang={lang} />
+              <div className="text-[11px] text-[var(--fg-muted)] mt-1 px-1">{lang === 'es' ? 'Selecciona "No estoy seguro" si no lo sabes — estimaremos basándonos en casos similares.' : 'Select "Not sure" if you don\'t know — we\'ll estimate based on similar cases.'}</div>
             </div>
-            <div>
+            <div className="animate-fade-in">
               <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Tienes abogado?' : 'Do you have a lawyer?'} <span className="text-coral">*</span></label>
               <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} dark={darkMode} lang={lang} />
             </div>
-            <div>
+            <div className="animate-fade-in">
               <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Hay otros afectados por el mismo problema?' : 'Are others affected by the same issue?'}</label>
               <Select value={othersAffected} options={lang === 'es' ? [
                 { id: '', label: 'Seleccionar...' },
@@ -3966,6 +4019,7 @@ export default function MyCaseValue() {
                 )}
               </>
             )}
+            </>)}
           </div>
           {/* Inline consent — previously a separate Step 4 screen */}
           <div className="mt-6 p-4 rounded-2xl" style={{ background: 'rgba(99,102,241,0.04)', border: '1px solid rgba(99,102,241,0.12)' }}>
@@ -3984,9 +4038,9 @@ export default function MyCaseValue() {
                 : 'I understand this is historical data only and no attorney-client relationship is created.'}</span>
             </label>
           </div>
-          <button onClick={() => startLoad()} disabled={!timing || !amount || !attorney || !consent}
+          <button onClick={() => startLoad()} disabled={!timing || !attorney || !consent}
             className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-            style={{ background: (timing && amount && attorney && consent) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && amount && attorney && consent) ? '#fff' : '#94A3B8', boxShadow: (timing && amount && attorney && consent) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
+            style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && attorney && consent) ? '#fff' : '#94A3B8', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
             {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
           </button>
         </Reveal>
@@ -4243,6 +4297,32 @@ export default function MyCaseValue() {
               >
                 {lang === 'es' ? '+ Nuevo informe' : '+ Start New Report'}
               </button>
+            </div>
+          </Reveal>
+
+          {/* Bold headline valuation — the first thing users see */}
+          <Reveal>
+            <div className="mb-6 p-6 sm:p-8 rounded-2xl text-center relative overflow-hidden" style={{
+              background: 'linear-gradient(135deg, rgba(79,70,229,0.12), rgba(13,148,136,0.08))',
+              border: '1.5px solid rgba(99,102,241,0.2)',
+            }}>
+              <div className="absolute inset-0 rounded-2xl" style={{ background: 'radial-gradient(ellipse at top, rgba(99,102,241,0.08) 0%, transparent 60%)' }} />
+              <div className="relative">
+                <div className="text-[11px] font-bold tracking-[2px] uppercase mb-2" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>
+                  {lang === 'es' ? 'Valor estimado de su caso' : 'Your Estimated Case Value'}
+                </div>
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold mb-2 spring-count" style={{ letterSpacing: '-2px', color: '#FFFFFF', textShadow: '0 2px 20px rgba(99,102,241,0.3)' }}>
+                  {v.lo} – {v.hi}
+                </div>
+                <div className="text-[14px] mb-1" style={{ color: 'var(--fg-muted)' }}>
+                  {lang === 'es' ? 'Mediana' : 'Median'}: <strong style={{ color: '#5EEAD4' }}>{v.md}</strong>
+                </div>
+                <div className="text-[12px]" style={{ color: '#6B7A94' }}>
+                  {lang === 'es'
+                    ? `Basado en ${d.total ? d.total.toLocaleString() : '—'} casos similares de ${spec?.d || 'tu tipo de caso'}`
+                    : `Based on ${d.total ? d.total.toLocaleString() : '—'} similar ${spec?.d || 'cases'} cases`}
+                </div>
+              </div>
             </div>
           </Reveal>
 
