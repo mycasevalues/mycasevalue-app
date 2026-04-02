@@ -40,8 +40,8 @@ const REASONS: Reason[] = [
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     title: 'Premium funds the mission',
     titleEs: 'Premium financia la misión',
-    desc: 'Free reports cover the essentials. Premium reports ($9.99 single / $29.99/mo unlimited) add judge analytics, opposing counsel data, and litigation cost modeling — revenue that keeps the free tier free.',
-    descEs: 'Los informes gratuitos cubren lo esencial. Los informes premium ($9.99 individual / $29.99/mes ilimitado) agregan análisis de jueces, datos de abogados oponentes y modelado de costos — ingresos que mantienen el nivel gratuito libre.',
+    desc: 'Free reports cover the essentials. Premium reports ($5.99 single / $9.99 unlimited / $29.99/mo Attorney Mode) add judge analytics, opposing counsel data, and litigation cost modeling — revenue that keeps the free tier free.',
+    descEs: 'Los informes gratuitos cubren lo esencial. Los informes premium ($5.99 individual / $9.99 ilimitado / $29.99/mes Modo Abogado) agregan análisis de jueces, datos de abogados oponentes y modelado de costos — ingresos que mantienen el nivel gratuito libre.',
   },
 ];
 

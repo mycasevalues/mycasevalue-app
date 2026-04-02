@@ -1,16 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 
-const PRICES: Record<string, { amount: number; name: string; description: string }> = {
+const PRICES: Record<string, { amount: number; name: string; description: string; recurring?: boolean }> = {
   single: {
     amount: 599,
     name: 'MyCaseValue — Single Report',
     description: 'One premium report — recovery ranges, attorney impact, case timeline, and detailed analysis.',
+    recurring: false,
   },
   unlimited: {
     amount: 999,
-    name: 'MyCaseValue — Unlimited Access',
-    description: 'Unlimited premium reports — recovery ranges, judge analytics, state comparisons, and more.',
+    name: 'MyCaseValue — Unlimited Reports',
+    description: 'Unlimited one-time access — recovery ranges, judge analytics, state comparisons, and more.',
+    recurring: false,
+  },
+  attorney: {
+    amount: 2999,
+    name: 'MyCaseValue — Attorney Mode',
+    description: 'Unlimited monthly access — recovery ranges, judge analytics, state comparisons, and more.',
+    recurring: true,
   },
 };
 
@@ -45,6 +53,7 @@ export async function POST(req: NextRequest) {
 
     const price = PRICES[plan];
     const origin = req.headers.get('origin') || 'https://www.mycasevalues.com';
+    const isRecurring = price.recurring === true;
 
     // Enable Apple Pay, Google Pay, PayPal, and cards
     // Apple Pay & Google Pay are automatically available via the 'card' method
@@ -53,7 +62,7 @@ export async function POST(req: NextRequest) {
     const paymentMethodTypes: string[] = ['card', 'paypal'];
 
     const sessionParams: any = {
-      mode: 'payment',
+      mode: isRecurring ? 'subscription' : 'payment',
       payment_method_types: paymentMethodTypes,
       line_items: [
         {
@@ -64,6 +73,7 @@ export async function POST(req: NextRequest) {
               description: price.description,
             },
             unit_amount: price.amount,
+            ...(isRecurring && { recurring: { interval: 'month' } }),
           },
           quantity: 1,
         },
@@ -93,9 +103,10 @@ export async function POST(req: NextRequest) {
         const { plan = 'single', email: em } = body as any;
         const price = PRICES[plan] || PRICES.single;
         const origin = req.headers.get('origin') || 'https://www.mycasevalues.com';
+        const isRecurring = price.recurring === true;
 
         const fallbackParams: any = {
-          mode: 'payment',
+          mode: isRecurring ? 'subscription' : 'payment',
           payment_method_types: ['card'],
           line_items: [
             {
@@ -103,6 +114,7 @@ export async function POST(req: NextRequest) {
                 currency: 'usd',
                 product_data: { name: price.name, description: price.description },
                 unit_amount: price.amount,
+                ...(isRecurring && { recurring: { interval: 'month' } }),
               },
               quantity: 1,
             },

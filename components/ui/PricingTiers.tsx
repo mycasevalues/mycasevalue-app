@@ -89,7 +89,7 @@ const tiers = [
   },
   {
     id: 'single',
-    price: 9.99,
+    price: 5.99,
     billing: '',
     subtitle: 'fullAnalysis',
     features: [
@@ -152,7 +152,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
   };
 
   const getPrice = (tier: (typeof tiers)[0]) => {
-    if (tier.id === 'single') return '$9.99';
+    if (tier.id === 'single') return '$5.99';
     if (tier.id === 'unlimited' && isAnnual) {
       return `$${tier.annualPrice}`;
     }

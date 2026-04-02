@@ -17,6 +17,7 @@ export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { rateLimit, getClientIp } from '../../../lib/rate-limit'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
@@ -27,6 +28,13 @@ function getSupabase() {
 }
 
 export async function GET(request: NextRequest) {
+  // Apply rate limiting: 60 req/min (read-heavy public endpoint)
+  const clientIp = getClientIp(request.headers);
+  const rateLimitResult = rateLimit(clientIp, { windowMs: 60000, maxRequests: 60 });
+  if (!rateLimitResult.success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   const { searchParams } = new URL(request.url)
   const type = searchParams.get('type') || 'stats'
   const nos = searchParams.get('nos')

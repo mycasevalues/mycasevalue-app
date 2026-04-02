@@ -57,7 +57,7 @@ casecheck-next/
 - Filing deadline with countdown
 - CaseCheck Score (10-99)
 
-### Premium Report ($9.99 single / $15.99 unlimited)
+### Premium Report ($5.99 single / $9.99 unlimited / $29.99/mo Attorney Mode)
 - Recovery ranges (Lower/Typical/Upper)
 - Resolution type breakdown with donut chart
 - Recovery distribution

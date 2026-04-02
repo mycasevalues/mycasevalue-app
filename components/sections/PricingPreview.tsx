@@ -56,9 +56,9 @@ const PLANS: Plan[] = [
   },
   {
     id: 'single',
-    name: 'Premium Report',
-    nameEs: 'Informe Premium',
-    price: '$9.99',
+    name: 'Single Report',
+    nameEs: 'Informe Único',
+    price: '$5.99',
     period: 'one-time',
     periodEs: 'pago único',
     description: 'Complete case intelligence with advanced analytics',
@@ -77,30 +77,52 @@ const PLANS: Plan[] = [
     highlight: true,
     badge: 'MOST POPULAR',
     badgeEs: 'MÁS POPULAR',
-    cta: 'Get premium report',
-    ctaEs: 'Obtener informe premium',
+    cta: 'Get this report',
+    ctaEs: 'Obtener este informe',
   },
   {
     id: 'unlimited',
-    name: 'Unlimited',
-    nameEs: 'Ilimitado',
+    name: 'Unlimited Reports',
+    nameEs: 'Informes Ilimitados',
+    price: '$9.99',
+    period: 'one-time',
+    periodEs: 'pago único',
+    description: 'Lifetime access to unlimited report generations',
+    descriptionEs: 'Acceso de por vida a generación ilimitada de informes',
+    features: [
+      { text: 'Everything in Single Report', textEs: 'Todo en Informe Único', included: true },
+      { text: 'Unlimited report generations', textEs: 'Generaciones ilimitadas de informes', included: true },
+      { text: 'Lifetime access', textEs: 'Acceso de por vida', included: true },
+      { text: 'Priority support', textEs: 'Soporte prioritario', included: false },
+      { text: 'API access', textEs: 'Acceso API', included: false },
+    ],
+    highlight: false,
+    badge: 'ONE-TIME',
+    badgeEs: 'PAGO ÚNICO',
+    cta: 'Get unlimited',
+    ctaEs: 'Obtener ilimitado',
+  },
+  {
+    id: 'attorney',
+    name: 'Attorney Mode',
+    nameEs: 'Modo Abogado',
     price: '$29.99',
     period: '/month',
     periodEs: '/mes',
     description: 'For attorneys and frequent users who need ongoing access',
     descriptionEs: 'Para abogados y usuarios frecuentes que necesitan acceso continuo',
     features: [
-      { text: 'Everything in Premium', textEs: 'Todo lo incluido en Premium', included: true },
+      { text: 'Everything in Single Report', textEs: 'Todo en Informe Único', included: true },
       { text: 'Unlimited reports per month', textEs: 'Informes ilimitados por mes', included: true },
       { text: 'Batch case analysis', textEs: 'Análisis de casos en lote', included: true },
       { text: 'Priority support', textEs: 'Soporte prioritario', included: true },
-      { text: 'API access', textEs: 'Acceso API', included: false },
+      { text: 'API access (coming soon)', textEs: 'Acceso API (próximamente)', included: false },
     ],
     highlight: false,
     badge: 'BEST VALUE',
     badgeEs: 'MEJOR VALOR',
-    cta: 'Start unlimited',
-    ctaEs: 'Comenzar ilimitado',
+    cta: 'Subscribe now',
+    ctaEs: 'Suscribirse ahora',
   },
 ];
 
@@ -129,7 +151,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
       </div>
 
       {/* Plans grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-[720px] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
         {PLANS.map(plan => (
           <div
             key={plan.id}

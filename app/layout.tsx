@@ -86,8 +86,9 @@ const jsonLd = {
       operatingSystem: 'All',
       offers: [
         { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free basic case outcome report' },
-        { '@type': 'Offer', price: '5.99', priceCurrency: 'USD', description: 'Single premium report with judge analytics' },
-        { '@type': 'Offer', price: '9.99', priceCurrency: 'USD', description: 'Unlimited premium reports, cost calculator, opposing counsel analysis' },
+        { '@type': 'Offer', price: '5.99', priceCurrency: 'USD', description: 'Single Report (one-time)' },
+        { '@type': 'Offer', price: '9.99', priceCurrency: 'USD', description: 'Unlimited Reports (one-time)' },
+        { '@type': 'Offer', price: '29.99', priceCurrency: 'USD', description: 'Attorney Mode (monthly subscription)' },
       ],
     },
     {
@@ -156,7 +157,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'How much does it cost?',
-          acceptedAnswer: { '@type': 'Answer', text: 'Basic reports are free. Premium reports with judge analytics, litigation cost calculator, and opposing counsel analysis are $9.99 for a single report or $29.99/month for unlimited access.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'Basic reports are free. Premium reports with judge analytics, litigation cost calculator, and opposing counsel analysis are $5.99 for a single report, $9.99 for unlimited one-time access, or $29.99/month for Attorney Mode.' },
         },
         {
           '@type': 'Question',

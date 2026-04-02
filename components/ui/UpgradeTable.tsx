@@ -42,8 +42,8 @@ const labels = {
   en: {
     free: 'Free',
     single: 'Single Report',
-    unlimited: 'Unlimited',
-    price_single: '$9.99',
+    unlimited: 'Attorney Mode',
+    price_single: '$5.99',
     original_single: '$19.99',
     price_unlimited: '$29.99/mo',
     original_unlimited: '$59.99',
@@ -57,8 +57,8 @@ const labels = {
   es: {
     free: 'Gratis',
     single: 'Reporte Único',
-    unlimited: 'Ilimitado',
-    price_single: '$9.99',
+    unlimited: 'Modo Abogado',
+    price_single: '$5.99',
     original_single: '$19.99',
     price_unlimited: '$29.99/mes',
     original_unlimited: '$59.99',

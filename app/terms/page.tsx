@@ -202,8 +202,9 @@ export default function TermsPage() {
               MyCaseValue offers free basic reports and premium paid reports.
             </p>
             <ul className="mt-2 space-y-2" style={{ paddingLeft: '1.5rem' }}>
-              <li><strong>Single reports:</strong> $5.99 per report (non-refundable after delivery)</li>
-              <li><strong>Subscription:</strong> $9.99/month for unlimited premium reports (cancellable anytime)</li>
+              <li><strong>Single Report:</strong> $5.99 (one-time)</li>
+              <li><strong>Unlimited Reports:</strong> $9.99 (one-time)</li>
+              <li><strong>Attorney Mode:</strong> $29.99/month (recurring)</li>
             </ul>
             <p className="mt-4">
               <strong>Refund Policy:</strong> Reports are delivered immediately upon purchase and are non-refundable unless there is a technical error.

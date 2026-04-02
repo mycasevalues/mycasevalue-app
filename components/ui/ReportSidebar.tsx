@@ -193,7 +193,7 @@ export default function ReportSidebar({
                 cursor: 'pointer',
               }}
             >
-              {lang === 'es' ? 'Ver Informe Completo $5.99' : 'Get Full Report $5.99'}
+              {lang === 'es' ? 'Informe Premium $5.99' : 'Premium Report $5.99'}
             </button>
           </div>
         </>

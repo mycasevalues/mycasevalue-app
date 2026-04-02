@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 
 /**
  * GET /api/nos/[code]
@@ -11,6 +12,13 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { code: string } }
 ) {
+  // Apply rate limiting: 60 req/min
+  const clientIp = getClientIp(request.headers);
+  const rateLimitResult = rateLimit(clientIp, { windowMs: 60000, maxRequests: 60 });
+  if (!rateLimitResult.success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   const nos = params.code;
 
   // Validate NOS code: must be 1-4 digits only

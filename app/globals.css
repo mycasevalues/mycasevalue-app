@@ -3534,3 +3534,17 @@ button:disabled,
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
+
+/* ============================================================
+   SERVER-SIDE RENDERING HERO — hidden once client loads
+   ============================================================ */
+.ssr-hero-container {
+  display: block;
+  transition: opacity 0.3s ease-out, display 0.3s ease-out;
+}
+
+/* Hide SSR hero when client MyCaseValue component mounts */
+.ssr-hero-container[data-mcv-loaded] {
+  display: none;
+  opacity: 0;
+}

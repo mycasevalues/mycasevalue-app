@@ -79,7 +79,7 @@ const jsonLd = {
           name: 'How much does MyCaseValue cost?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Basic reports are completely free. Premium reports with detailed analytics, breakdowns by circuit/judge, and comparison tools cost $5.99 for a single report or $9.99/month for unlimited access.',
+            text: 'Basic reports are completely free. Premium reports with detailed analytics, breakdowns by circuit/judge, and comparison tools cost $5.99 for a single report or $29.99/month for unlimited access.',
           },
         },
         {
@@ -269,7 +269,7 @@ const faqs = [
     questions: [
       {
         q: 'How much does MyCaseValue cost?',
-        a: 'Basic reports are completely free. Premium reports with detailed analytics, breakdowns by circuit/judge, and comparison tools cost $5.99 for a single report or $9.99/month for unlimited access.',
+        a: 'Basic reports are completely free. Premium reports with detailed analytics, breakdowns by circuit/judge, and comparison tools cost $5.99 for a single report or $29.99/month for unlimited access.',
       },
       {
         q: 'Do I need to create an account?',

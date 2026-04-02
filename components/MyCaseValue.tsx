@@ -1143,16 +1143,21 @@ function Shell({
   return (
     <>
       <a href="#main-content" className="skip-link">{lang === 'es' ? 'Ir al contenido' : 'Skip to content'}</a>
-      <div className="dark" role="application" aria-label="MyCaseValue" style={{
-        background: 'var(--bg-base)',
-        minHeight: '100vh',
-        fontFamily: "'Outfit', system-ui, sans-serif",
-        color: 'var(--fg-primary)',
-        maxWidth: viewMode === 'mobile' ? '430px' : viewMode === 'desktop' ? '100%' : undefined,
-        margin: viewMode === 'mobile' ? '0 auto' : undefined,
-        boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(11,18,33,.08)' : undefined,
-        transition: 'max-width 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-      }}>
+      <div
+        className="dark"
+        role="application"
+        aria-label="MyCaseValue"
+        data-mcv-loaded="true"
+        style={{
+          background: 'var(--bg-base)',
+          minHeight: '100vh',
+          fontFamily: "'Outfit', system-ui, sans-serif",
+          color: 'var(--fg-primary)',
+          maxWidth: viewMode === 'mobile' ? '430px' : viewMode === 'desktop' ? '100%' : undefined,
+          margin: viewMode === 'mobile' ? '0 auto' : undefined,
+          boxShadow: viewMode === 'mobile' ? '0 0 40px rgba(11,18,33,.08)' : undefined,
+          transition: 'max-width 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}>
         {/* Reading progress bar */}
         {step === 6 && <div className="reading-progress" style={{ width: `${readingPct}%` }} />}
 
@@ -1381,7 +1386,7 @@ function Shell({
               <button onClick={() => { setShowExitIntent(false); buy('single'); }}
                 className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer"
                 style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
-                {lang === 'es' ? 'Desbloquear informe completo — $5.99' : 'Unlock full report — $5.99'}
+                {lang === 'es' ? 'Informe Premium — $5.99' : 'Premium Report — $5.99'}
               </button>
               <button onClick={() => setShowExitIntent(false)} className="text-[13px] text-[var(--fg-muted)] mt-3 bg-transparent border-none cursor-pointer">
                 {lang === 'es' ? 'Ahora no' : 'Not now'}
@@ -3666,7 +3671,7 @@ export default function MyCaseValue() {
                   <span className="text-2xl font-display font-bold">$5.99</span>
                   <span className="text-[13px] text-[var(--fg-muted)] mb-0.5">/ {lang === 'es' ? 'informe' : 'report'}</span>
                 </div>
-                <div className="text-[12px] text-[var(--fg-muted)] mb-4">{lang === 'es' ? 'O $9.99 para acceso ilimitado' : 'Or $9.99 for unlimited access'}</div>
+                <div className="text-[12px] text-[var(--fg-muted)] mb-4">{lang === 'es' ? 'O $29.99/mes para Modo Abogado' : 'Or $29.99/mo for Attorney Mode'}</div>
                 <div className="space-y-2">
                   {[
                     { text: lang === 'es' ? 'Todo lo del plan gratuito' : 'Everything in Free', bold: true },
@@ -6334,10 +6339,10 @@ export default function MyCaseValue() {
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <button onClick={() => buy('single')} className="px-8 py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
                       style={{ background: 'linear-gradient(135deg, #4F46E5, #6366F1)' }}>
-                      {lang === 'es' ? '$5.99 — Informe completo' : '$5.99 — Full report'}
+                      {lang === 'es' ? '$5.99 — Informe Premium' : '$5.99 — Premium Report'}
                     </button>
                     <button onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#131B2E] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer hover:border-[var(--border-muted)] transition-colors">
-                      {lang === 'es' ? '$9.99 — Ilimitado' : '$9.99 — Unlimited'}
+                      {lang === 'es' ? 'Ver planes' : 'View plans'}
                     </button>
                   </div>
                 </div>
