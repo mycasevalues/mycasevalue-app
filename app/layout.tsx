@@ -1,6 +1,7 @@
 import './globals.css';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
+import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 
 export const metadata = {
   title: 'MyCaseValue — Federal Court Outcome Data | Win Rates, Settlements & Timelines',
@@ -215,6 +216,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `(function(){var d=document.documentElement;d.setAttribute('data-theme','dark');d.classList.add('dark');try{localStorage.removeItem('mcv-theme')}catch(e){}})()` }} />
+        {/* Google Analytics 4 */}
+        <GoogleAnalytics />
         {/* Self-hosted fonts — no external CDN, GDPR compliant */}
         <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-700.woff2" crossOrigin="anonymous" />
         <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-500.woff2" crossOrigin="anonymous" />
@@ -229,7 +232,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
         <link rel="canonical" href="https://mycasevalues.com" />
         <link rel="alternate" hrefLang="en" href="https://mycasevalues.com" />
-        <link rel="alternate" hrefLang="es" href="https://mycasevalues.com?lang=es" />
+        <link rel="alternate" hrefLang="es" href="https://mycasevalues.com/es" />
         <link rel="alternate" hrefLang="x-default" href="https://mycasevalues.com" />
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />

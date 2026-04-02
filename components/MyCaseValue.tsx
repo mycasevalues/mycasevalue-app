@@ -129,6 +129,13 @@ import { CaseTimelineSimulator } from './features/CaseTimelineSimulator';
 import { LitigationCostEstimator } from './features/LitigationCostEstimator';
 import { EmailCaptureBanner } from './features/EmailCaptureBanner';
 
+// Wizard components
+import { StepHome } from './wizard/StepHome';
+import { StepCategory } from './wizard/StepCategory';
+import { StepSubCategory } from './wizard/StepSubCategory';
+import { StepDetails } from './wizard/StepDetails';
+import { StepReport } from './wizard/StepReport';
+
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
 // ============================================================
@@ -1264,9 +1271,29 @@ export default function MyCaseValue() {
     <Shell {...shellProps}>
       {keyboardShortcutsEl}
       {commandPaletteEl}
-      {showOnboarding && <OnboardingTour lang={lang} onComplete={() => setShowOnboarding(false)} />}
       <SocialProofToast lang={lang} active={true} />
-      <SectionNav lang={lang} />
+      <StepHome
+        lang={lang}
+        t={t}
+        toast={toast}
+        go={go}
+        demo={demo}
+        naturalInput={naturalInput}
+        setNaturalInput={setNaturalInput}
+        showSuggestions={showSuggestions}
+        setShowSuggestions={setShowSuggestions}
+        aiSuggestions={aiSuggestions}
+        setSit={setSit}
+        setSpec={setSpec}
+        setAmount={setAmount}
+        detectCaseType={detectCaseType}
+        SITS={SITS}
+        totalDisplay={totalDisplay}
+        liveCounter={liveCounter}
+        heroCounterDone={heroCounterDone}
+        showOnboarding={showOnboarding}
+        setShowOnboarding={setShowOnboarding}
+      />
       <div className="hero-bg hero-parallax mesh-bg py-4 sm:py-6 pb-6 relative overflow-hidden noise-overlay particle-field cinematic-enter">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
@@ -2904,260 +2931,76 @@ export default function MyCaseValue() {
   );
 
   // ============================================================
-  // WIZARD STEPS
+  // WIZARD STEPS (now use extracted components)
   // ============================================================
-  const BackButton = () => (
-    <button onClick={() => {
-      if (step === 6) { setResult(null); go(3); }
-      else if (step === 3) { setSpec(null); go(2); }
-      else if (step === 2) { setSit(null); setShowAllSubcats(false); go(0); }
-      else if (step === 1) go(0);
-    }} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
-      {lang === 'es' ? 'Volver' : 'Back'}
-    </button>
-  );
 
   // Step 1: Category
   if (step === 1) return (
     <Shell {...shellProps}>
       {keyboardShortcutsEl}
       {commandPaletteEl}
-      <div className="max-w-xl mx-auto py-8 wizard-step-enter">
-        <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
-        <BackButton />
-        <Reveal>
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(64,64,242,0.1), rgba(201,165,78,0.05))' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10" /><path d="M12 8v4l2 2" /></svg>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-display font-bold">{t.what_happened}</h2>
-          </div>
-          <p className="text-[var(--fg-muted)] mb-6 ml-[52px]">{t.select_closest}</p>
-          <div className="space-y-2.5 stagger">
-            {SITS.map(si => (
-              <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
-                className="category-card flex items-center gap-4 w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg group"
-                style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(51,65,85,0.5)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
-                onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
-                onMouseLeave={e => e.currentTarget.style.borderColor = '#1E293B'}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform" style={{ background: `${si.color}10` }}>
-                  <CategoryIcon name={si.icon} color={si.color} size={22} />
-                </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-[15px]">{si.label}</div>
-                  <div className="text-[13px] text-[var(--fg-muted)] mt-0.5">{si.sub}</div>
-                </div>
-                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all" style={{ background: `${si.color}08` }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={si.color} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-                </div>
-              </button>
-            ))}
-          </div>
-        </Reveal>
-      </div>
+      <StepCategory
+        lang={lang}
+        t={t}
+        toast={toast}
+        go={go}
+        setSit={setSit}
+        setAmount={setAmount}
+        SITS={SITS}
+      />
     </Shell>
   );
 
-  // Step 2: Sub-category (with "show more" for 10+ options and "Not sure?" helper)
-  if (step === 2 && sit) {
-    const INITIAL_SHOW = 8;
-    const hasMore = sit.opts.length > INITIAL_SHOW;
-    return (
+  // Step 2: Sub-category
+  if (step === 2 && sit) return (
     <Shell {...shellProps}>
       {commandPaletteEl}
-      <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
-        <BackButton />
-        <Reveal>
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: `${sit.color}12` }}>
-              <CategoryIcon name={sit.icon} color={sit.color} size={20} />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-display font-bold">{sit.q}</h2>
-          </div>
-          <p className="text-[var(--fg-muted)] mb-4 ml-[52px]">{t.choose_specific}</p>
-
-          {/* "Not sure?" helper — AI text match within this category */}
-          <div className="mb-5 p-4 rounded-2xl" style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.12)' }}>
-            <div className="flex items-center gap-2 mb-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366F1" strokeWidth="2"><path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z"/><path d="M10 17h4"/></svg>
-              <span className="text-[13px] font-semibold" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{lang === 'es' ? '¿No estás seguro? Descríbelo' : 'Not sure? Describe it'}</span>
-            </div>
-            <input type="text" value={naturalInput} onChange={e => setNaturalInput(e.target.value)}
-              onKeyDown={e => {
-                if (e.key === 'Enter' && naturalInput.trim()) {
-                  const matched = aiSuggestions.find((s: any) => s.sit.id === sit.id);
-                  if (matched) { setSpec(matched.opt); go(3); toast(lang === 'es' ? `Detectado: ${matched.opt.d}` : `Matched: ${matched.opt.d}`); }
-                }
-              }}
-              placeholder={lang === 'es' ? `Ej: "me despidieron sin razón"` : `e.g. "I was fired without reason"`}
-              className="w-full text-[14px] rounded-xl transition-all input-frosted focus-ring-premium"
-              aria-label={lang === 'es' ? 'Describe tu situación' : 'Describe your situation'}
-              style={{ color: '#F0F2F5', padding: '12px 16px' }} />
-            {naturalInput.trim() && aiSuggestions.filter((s: any) => s.sit.id === sit.id).length > 0 && (
-              <div className="mt-2 space-y-1">
-                {aiSuggestions.filter((s: any) => s.sit.id === sit.id).slice(0, 3).map((s: any, i: number) => (
-                  <button key={i} onClick={() => { setSpec(s.opt); go(3); toast(lang === 'es' ? `Seleccionado: ${s.opt.d}` : `Selected: ${s.opt.d}`); }}
-                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-left text-[13px] transition-all bg-transparent border-none"
-                    style={{ color: '#E2E8F0' }}
-                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(99,102,241,0.1)'; }}
-                    onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={sit.color} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-                    {s.opt.label}
-                    <span className="ml-auto text-[11px]" style={{ color: 'var(--fg-muted)' }}>{Math.min(Math.round(s.score * 8), 99)}%</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="text-[11px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#9BA8BE' }}>
-            {lang === 'es' ? 'O selecciona abajo' : 'Or select below'}
-          </div>
-          <div className="space-y-2.5 stagger">
-            {(hasMore && !showAllSubcats ? sit.opts.slice(0, INITIAL_SHOW) : sit.opts).map((o: any, i: number) => (
-              <button key={i} onClick={() => { setSpec(o); go(3); }}
-                className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
-                style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(51,65,85,0.5)', boxShadow: '0 1px 3px rgba(11,18,33,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
-                onMouseEnter={e => e.currentTarget.style.borderColor = sit.color}
-                onMouseLeave={e => e.currentTarget.style.borderColor = '#1E293B'}>
-                <div className="w-2 h-2 rounded-full flex-shrink-0 mr-3 transition-transform" style={{ background: sit.color, opacity: 0.5 }} />
-                <span className="flex-1 text-[15px]">{o.label}</span>
-                <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sit.color}08` }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={sit.color} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-                </div>
-              </button>
-            ))}
-          </div>
-          {hasMore && !showAllSubcats && (
-            <button onClick={() => setShowAllSubcats(true)}
-              className="w-full mt-3 py-3 text-[14px] font-medium rounded-xl cursor-pointer transition-all bg-transparent border-none"
-              style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>
-              {lang === 'es' ? `Mostrar ${sit.opts.length - INITIAL_SHOW} más →` : `Show ${sit.opts.length - INITIAL_SHOW} more →`}
-            </button>
-          )}
-        </Reveal>
-      </div>
+      <StepSubCategory
+        lang={lang}
+        t={t}
+        toast={toast}
+        go={go}
+        sit={sit}
+        setSpec={setSpec}
+        naturalInput={naturalInput}
+        setNaturalInput={setNaturalInput}
+        aiSuggestions={aiSuggestions}
+        showAllSubcats={showAllSubcats}
+        setShowAllSubcats={setShowAllSubcats}
+      />
     </Shell>
-    );
-  }
+  );
 
   // Step 3: Details
   if (step === 3) return (
     <Shell {...shellProps}>
       {commandPaletteEl}
-      <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-        <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
-        <BackButton />
-        <Reveal>
-          <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6">{t.your_details}</h2>
-          <div className="space-y-4">
-            <div>
-              <label id="label-state" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿En qué estado estás?' : 'What state are you in?'}</label>
-              <Select value={stateCode} options={STATES} onChange={setStateCode} placeholder={lang === 'es' ? 'Selecciona tu estado...' : 'Select your state...'} dark={darkMode} lang={lang} labelledBy="label-state" />
-              <div className="text-[11px] text-[var(--fg-muted)] mt-1 px-1">{lang === 'es' ? 'Esto nos ayuda a mostrarte resultados específicos de tu área.' : 'This helps us show you results specific to your area.'}</div>
-            </div>
-            <div>
-              <label id="label-timing" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuándo ocurrió esto?' : 'When did this happen?'} <span className="text-coral">*</span></label>
-              <Select value={timing} options={TIMING_OPTS} onChange={setTiming} dark={darkMode} lang={lang} labelledBy="label-timing" />
-            </div>
-            {timing && (
-              <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed animate-fade-in" style={{
-                background: timing === 'recent' ? 'rgba(13,148,136,0.15)' : (timing === '2yr' || timing === 'old') ? 'rgba(232,116,97,0.12)' : 'rgba(99,102,241,0.08)',
-                color: timing === 'recent' ? '#0D9488' : (timing === '2yr' || timing === 'old') ? '#DC2626' : '#A5B4FC',
-              }}>
-                {lang === 'es' ? (
-                  timing === 'recent' ? 'Buenas noticias — las personas que actuaron dentro de 6 meses históricamente tuvieron mejores resultados.'
-                  : timing === 'now' ? 'Como esto sigue ocurriendo, actuar pronto ayuda a preservar tus opciones y evidencia.'
-                  : (timing === '2yr' || timing === 'old') ? '⚠ Importante: Podrías estar quedándote sin tiempo. Hay plazos legales que podrían afectar tu caso — habla con un abogado pronto.'
-                  : 'Actuar antes generalmente te da más opciones.'
-                ) : (
-                  timing === 'recent' ? 'Good news — people who took action within 6 months historically had better outcomes.'
-                  : timing === 'now' ? 'Since this is still happening, acting soon helps preserve your options and evidence.'
-                  : (timing === '2yr' || timing === 'old') ? '⚠ Important: You may be running out of time. There are legal deadlines that could affect your case — speak with a lawyer soon.'
-                  : 'Taking action sooner generally gives you more options.'
-                )}
-              </div>
-            )}
-            {/* Progressive disclosure — these fields appear after timing is selected */}
-            {timing && (<>
-            <div className="animate-fade-in">
-              <label id="label-amount" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuánto dinero está involucrado?' : 'How much money is involved?'}</label>
-              <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} dark={darkMode} lang={lang} labelledBy="label-amount" />
-              <div className="text-[11px] text-[var(--fg-muted)] mt-1 px-1">{lang === 'es' ? 'Selecciona "No estoy seguro" si no lo sabes — estimaremos basándonos en casos similares.' : 'Select "Not sure" if you don\'t know — we\'ll estimate based on similar cases.'}</div>
-            </div>
-            <div className="animate-fade-in">
-              <label id="label-attorney" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Tienes abogado?' : 'Do you have a lawyer?'} <span className="text-coral">*</span></label>
-              <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} dark={darkMode} lang={lang} labelledBy="label-attorney" />
-            </div>
-            <div className="animate-fade-in">
-              <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Hay otros afectados por el mismo problema?' : 'Are others affected by the same issue?'}</label>
-              <Select value={othersAffected} options={lang === 'es' ? [
-                { id: '', label: 'Seleccionar...' },
-                { id: 'no', label: 'No, solo yo' },
-                { id: 'few', label: 'Sí, algunas personas' },
-                { id: 'many', label: 'Sí, muchas personas (40+)' },
-              ] : [
-                { id: '', label: 'Select...' },
-                { id: 'no', label: 'No, just me' },
-                { id: 'few', label: 'Yes, a few people' },
-                { id: 'many', label: 'Yes, many people (40+)' },
-              ]} onChange={setOthersAffected} dark={darkMode} lang={lang} />
-            </div>
-            {othersAffected === 'many' && (
-              <>
-                <div>
-                  <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Aproximadamente cuántos?' : 'Approximately how many?'}</label>
-                  <Select value={classSize} options={lang === 'es' ? [
-                    { id: '', label: 'Seleccionar...' },
-                    { id: '40-100', label: '40 – 100 personas' },
-                    { id: '100-500', label: '100 – 500 personas' },
-                    { id: '500+', label: '500+ personas' },
-                    { id: 'unsure', label: 'No estoy seguro' },
-                  ] : [
-                    { id: '', label: 'Select...' },
-                    { id: '40-100', label: '40 – 100 people' },
-                    { id: '100-500', label: '100 – 500 people' },
-                    { id: '500+', label: '500+ people' },
-                    { id: 'unsure', label: 'Not sure' },
-                  ]} onChange={setClassSize} dark={darkMode} lang={lang} />
-                </div>
-                {classSize && (
-                  <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed" style={{ background: 'rgba(99,102,241,0.08)', color: 'var(--fg-muted)' }}>
-                    {lang === 'es'
-                      ? 'Las acciones colectivas federales bajo la Regla 23 generalmente requieren suficientes individuos afectados para que las demandas individuales sean impracticables. Históricamente, los casos con 40+ individuos afectados han cumplido este umbral.'
-                      : 'Federal class actions under Rule 23 generally require enough affected individuals that individual lawsuits would be impractical. Historically, cases with 40+ affected individuals have met this threshold.'}
-                  </div>
-                )}
-              </>
-            )}
-            </>)}
-          </div>
-          {/* Inline consent — previously a separate Step 4 screen */}
-          <div className="mt-6 p-4 rounded-2xl" style={{ background: 'rgba(99,102,241,0.04)', border: '1px solid rgba(99,102,241,0.12)' }}>
-            <p className="text-[13px] text-[var(--fg-muted)] leading-relaxed mb-3">
-              {lang === 'es'
-                ? 'Estás a punto de ver datos reales de registros judiciales federales. Estos datos muestran lo que le sucedió a otras personas — no predicen lo que te sucederá a ti. Solo un abogado con licencia puede evaluar tus hechos específicos.'
-                : 'You are about to see real data from federal court records. This data shows what happened to other people — it does not predict what will happen to you. Only a licensed attorney can evaluate your specific facts.'}
-            </p>
-            <label className="flex gap-3 items-start cursor-pointer text-[14px]" role="checkbox" aria-checked={consent} tabIndex={0} onClick={() => setConsent(!consent)} onKeyDown={e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); setConsent(!consent); } }}>
-              <div className="w-5 h-5 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all" aria-hidden="true"
-                style={{ borderColor: consent ? '#4F46E5' : '#334155', background: consent ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'transparent' }}>
-                {consent && <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
-              </div>
-              <span className="leading-relaxed text-[var(--fg-muted)]">{lang === 'es'
-                ? 'Entiendo que estos son datos históricos, no evalúan mi situación, y no se crea ninguna relación abogado-cliente.'
-                : 'I understand this is historical data only and no attorney-client relationship is created.'}</span>
-            </label>
-          </div>
-          <button onClick={() => startLoad()} disabled={!timing || !attorney || !consent}
-            className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-            style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : '#1E293B', color: (timing && attorney && consent) ? '#fff' : '#B0BDD0', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(64,64,242,.3)' : 'none', padding: '18px' }}>
-            {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
-          </button>
-        </Reveal>
-      </div>
+      <StepDetails
+        lang={lang}
+        t={t}
+        toast={toast}
+        go={go}
+        stateCode={stateCode}
+        setStateCode={setStateCode}
+        timing={timing}
+        setTiming={setTiming}
+        amount={amount}
+        setAmount={setAmount}
+        attorney={attorney}
+        setAttorney={setAttorney}
+        othersAffected={othersAffected}
+        setOthersAffected={setOthersAffected}
+        classSize={classSize}
+        setClassSize={setClassSize}
+        consent={consent}
+        setConsent={setConsent}
+        startLoad={startLoad}
+        STATES={STATES}
+        TIMING_OPTS={TIMING_OPTS}
+        AMOUNT_OPTS={AMOUNT_OPTS}
+        ATTORNEY_OPTS={ATTORNEY_OPTS}
+        darkMode={darkMode}
+      />
     </Shell>
   );
 
@@ -3167,8 +3010,46 @@ export default function MyCaseValue() {
   // RESULTS
   // ============================================================
   if (step === 6) {
-    // Loading — premium animated loader overlay
-    if (loading) return (
+    return (
+      <Shell {...shellProps}>
+        {commandPaletteEl}
+        <StepReport
+          lang={lang}
+          t={t}
+          toast={toast}
+          go={go}
+          loading={loading}
+          loadPct={loadPct}
+          showReportLoader={showReportLoader}
+          setShowReportLoader={setShowReportLoader}
+          result={result}
+          setResult={setResult}
+          spec={spec}
+          sit={sit}
+          stateCode={stateCode}
+          timing={timing}
+          amount={amount}
+          attorney={attorney}
+          isPremium={isPremium}
+          darkMode={darkMode}
+          emailCaptured={emailCaptured}
+          showEmailGate={showEmailGate}
+          setShowEmailGate={setShowEmailGate}
+          setEmailCaptured={setEmailCaptured}
+          activeReportTab={activeReportTab}
+          setActiveReportTab={setActiveReportTab}
+          showShareCard={showShareCard}
+          setShowShareCard={setShowShareCard}
+          saveReport={saveReport}
+          reportsGeneratedRef={reportsGeneratedRef}
+          buy={buy}
+          setShowPricing={setShowPricing}
+        />
+      </Shell>
+    );
+
+    // Old report code below (not used) - can be removed
+    if (false && loading) return (
       <Shell {...shellProps}>
         {commandPaletteEl}
         {showReportLoader && (
