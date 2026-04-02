@@ -89,7 +89,7 @@ export default function TermsPage() {
               2. Description of Service
             </h2>
             <p>
-              MyCaseValue is a research tool that aggregates and displays historical outcome data from 5.1M+ federal civil court cases.
+              MyCaseValue is a research tool that aggregates and displays historical outcome data from 4.1M+ federal civil court cases.
               The Service provides aggregate statistics on case outcomes, win rates, settlement percentages, timelines, and recovery ranges
               by case type, circuit, and jurisdiction.
             </p>

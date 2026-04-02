@@ -5,10 +5,10 @@ import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 
 export const metadata = {
   title: 'MyCaseValue — Federal Court Outcome Data | Win Rates, Settlements & Timelines',
-  description: 'See real outcomes from 5.1M+ federal court cases. Research win rates, settlement data, timelines, and recovery ranges for 84 case types. Free, private, and instant.',
+  description: 'See real outcomes from 4.1M+ federal court cases. Research win rates, settlement data, timelines, and recovery ranges for 84 case types. Free, private, and instant.',
   openGraph: {
     title: 'MyCaseValue — What really happened in cases like yours',
-    description: 'Real outcomes from 5,100,000+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
+    description: 'Real outcomes from 4,100,000+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
     type: 'website',
     siteName: 'MyCaseValue',
     url: 'https://www.mycasevalues.com',
@@ -25,7 +25,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image' as const,
     title: 'MyCaseValue — Federal Court Outcome Data',
-    description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, recovery ranges. Free and private.',
+    description: 'Real outcomes from 4.1M+ federal court cases. Win rates, timelines, recovery ranges. Free and private.',
     images: ['https://www.mycasevalues.com/og-image.png'],
   },
   alternates: {
@@ -96,7 +96,7 @@ const jsonLd = {
     {
       '@type': 'Dataset',
       name: 'Federal Court Outcome Data',
-      description: 'Aggregate historical outcome data from 5.1M+ federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and Google Scholar for legal scholarship context.',
+      description: 'Aggregate historical outcome data from 4.1M+ federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and Google Scholar for legal scholarship context.',
       url: 'https://www.mycasevalues.com',
       license: 'https://www.usa.gov/government-copyright',
       creator: { '@type': 'Organization', name: 'Federal Judicial Center' },
@@ -139,7 +139,7 @@ const jsonLd = {
         {
           '@type': 'Question',
           name: 'What is MyCaseValue?',
-          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It is not legal advice.' },
+          acceptedAnswer: { '@type': 'Answer', text: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 4.1 million public federal court records. It is not legal advice.' },
         },
         {
           '@type': 'Question',

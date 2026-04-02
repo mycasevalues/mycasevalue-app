@@ -46,7 +46,7 @@ export default function MethodologyPage() {
               {[
                 {
                   name: 'Federal Judicial Center — Integrated Database (IDB)',
-                  description: 'The IDB contains case-level data for every federal civil case filed since 1970, maintained by the Federal Judicial Center as a public statistical resource. It includes case type (Nature of Suit code), final disposition, procedural progress, jurisdiction basis, and case duration. Currently contains 5.1M+ cases.',
+                  description: 'The IDB contains case-level data for every federal civil case filed since 1970, maintained by the Federal Judicial Center as a public statistical resource. It includes case type (Nature of Suit code), final disposition, procedural progress, jurisdiction basis, and case duration. Currently contains 4.1M+ cases.',
                   badge: 'Primary Source',
                   color: '#111111',
                   url: 'https://www.fjc.gov/research/idb',
@@ -143,7 +143,7 @@ export default function MethodologyPage() {
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#111827' }}>Dataset Coverage</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '5.1M+', l: 'Federal cases', c: '#111111' },
+                { v: '4.1M+', l: 'Federal cases', c: '#111111' },
                 { v: '50+', l: 'Years of data', c: '#0D9488' },
                 { v: '20+', l: 'Case categories', c: '#1A3260' },
                 { v: '94', l: 'Federal districts', c: '#9CA3AF' },

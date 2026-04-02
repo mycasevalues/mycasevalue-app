@@ -225,7 +225,7 @@ export function StepHome({
                 <div className="flex gap-4 sm:gap-6 mb-8 flex-wrap data-grid-stagger">
                   <div className="stat-glow" style={{ '--stat-color': '#111111' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#111827' }}>
-                      {heroCounterDone ? <><AnimatedNumber value={5.1} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
+                      {heroCounterDone ? <><AnimatedNumber value={4.1} decimals={1} />M+</> : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
                     <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
                   </div>
@@ -369,10 +369,10 @@ export function StepHome({
           <TrustBar lang={lang} />
         </Reveal>
         <Reveal delay={190}>
-          <SocialProofBar totalCases={5100000} lang={lang} />
+          <SocialProofBar totalCases={4100000} lang={lang} />
         </Reveal>
         <Reveal delay={195}>
-          <DataFreshness compact lang={lang} totalCases={5100000} />
+          <DataFreshness compact lang={lang} totalCases={4100000} />
         </Reveal>
         <Reveal delay={210}>
           <HeroStats lang={lang} />

@@ -69,7 +69,7 @@ export default function ServerHero() {
               lineHeight: '1.6',
             }}
           >
-            Research real outcomes from <strong>5.1M+ federal court cases</strong> across 94 districts. Win rates, settlement ranges,
+            Research real outcomes from <strong>4.1M+ federal court cases</strong> across 94 districts. Win rates, settlement ranges,
             timelines, and judge analytics — sourced from public court records.
           </p>
 
@@ -128,7 +128,7 @@ export default function ServerHero() {
                   letterSpacing: '-0.5px',
                 }}
               >
-                5.1M+
+                4.1M+
               </div>
               <div
                 className="text-xs sm:text-sm font-medium"

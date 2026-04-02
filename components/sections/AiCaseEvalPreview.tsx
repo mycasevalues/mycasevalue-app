@@ -10,7 +10,7 @@ interface AiCaseEvalPreviewProps {
 
 const TYPING_LINES_EN = [
   'Analyzing your case details...',
-  'Cross-referencing 5.1M+ federal case outcomes...',
+  'Cross-referencing 4.1M+ federal case outcomes...',
   'Identifying matching district patterns...',
   'Calculating settlement percentile range...',
   'Generating Case Intelligence Report...',
@@ -18,7 +18,7 @@ const TYPING_LINES_EN = [
 
 const TYPING_LINES_ES = [
   'Analizando los detalles de su caso...',
-  'Cruzando 5.1M+ resultados de casos federales...',
+  'Cruzando 4.1M+ resultados de casos federales...',
   'Identificando patrones de distrito coincidentes...',
   'Calculando rango de percentil de acuerdos...',
   'Generando Informe de Inteligencia de Caso...',

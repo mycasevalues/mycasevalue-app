@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Cómo Funciona — MyCaseValue',
-  description: 'Cómo MyCaseValue analiza 5.1M+ casos federales para mostrar tasas de victoria, acuerdos, cronogramas y análisis de jueces.',
+  description: 'Cómo MyCaseValue analiza 4.1M+ casos federales para mostrar tasas de victoria, acuerdos, cronogramas y análisis de jueces.',
   alternates: {
     canonical: 'https://mycasevalues.com/es/how-it-works',
     languages: {
@@ -103,7 +103,7 @@ export default function SpanishHowItWorksPage() {
                   Obtenemos Datos
                 </h2>
                 <p style={{ color: 'var(--fg-muted)' }} className="text-lg leading-relaxed">
-                  Nuestro sistema busca en 5.1M+ casos federales del Centro Judicial Federal, CourtListener y PACER para encontrar casos similares al tuyo.
+                  Nuestro sistema busca en 4.1M+ casos federales del Centro Judicial Federal, CourtListener y PACER para encontrar casos similares al tuyo.
                 </p>
               </div>
             </div>

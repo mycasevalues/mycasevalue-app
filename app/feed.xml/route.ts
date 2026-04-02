@@ -44,7 +44,7 @@ export async function GET() {
     <title>MyCaseValue Blog - Federal Court Data &amp; Litigation Insights</title>
     <link>${baseUrl}/blog</link>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
-    <description>Research-backed articles analyzing real outcomes from 5.1M+ federal cases. Understand win rates, settlement data, timelines, and what affects your case.</description>
+    <description>Research-backed articles analyzing real outcomes from 4.1M+ federal cases. Understand win rates, settlement data, timelines, and what affects your case.</description>
     <language>en-us</language>
     <copyright>© ${new Date().getFullYear()} MyCaseValue LLC. All rights reserved.</copyright>
     <managingEditor>info@mycasevalues.com (MyCaseValue Research Team)</managingEditor>

@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
   }
 
   return NextResponse.json({
-    total_cases: 5100000,
+    total_cases: 4100000,
     last_updated: '2026-03-15',
   });
 }

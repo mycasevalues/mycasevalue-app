@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About MyCaseValue — Democratizing Federal Court Data',
-  description: 'MyCaseValue democratizes federal court outcome data. Explore aggregate results from 5.1M+ cases for informed legal research.',
+  description: 'MyCaseValue democratizes federal court outcome data. Explore aggregate results from 4.1M+ cases for informed legal research.',
   alternates: { canonical: 'https://mycasevalues.com/about' },
   openGraph: {
     title: 'About MyCaseValue — Democratizing Federal Court Data',
-    description: 'MyCaseValue aggregates 5.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
+    description: 'MyCaseValue aggregates 4.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
     type: 'website',
     url: 'https://mycasevalues.com/about',
   },
@@ -20,7 +20,7 @@ const jsonLd = {
       name: 'MyCaseValue',
       url: 'https://mycasevalues.com',
       logo: 'https://mycasevalues.com/icon-512.png',
-      description: 'A platform democratizing access to federal court outcome data from 5.1M+ cases.',
+      description: 'A platform democratizing access to federal court outcome data from 4.1M+ cases.',
       sameAs: [
         'https://twitter.com/mycasevalue',
         'https://linkedin.com/company/mycasevalue',
@@ -69,7 +69,7 @@ export default function AboutPage() {
             Democratizing Federal Court Data
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
-            MyCaseValue puts outcome data from 5.1M+ federal cases at your fingertips, making real court outcomes accessible to everyone.
+            MyCaseValue puts outcome data from 4.1M+ federal cases at your fingertips, making real court outcomes accessible to everyone.
           </p>
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
                 {
                   step: '02',
                   title: 'Review',
-                  description: 'Explore win rates, settlement percentages, recovery ranges, and case timelines derived from 5.1M+ real federal cases.',
+                  description: 'Explore win rates, settlement percentages, recovery ranges, and case timelines derived from 4.1M+ real federal cases.',
                   icon: '',
                 },
                 {
@@ -203,7 +203,7 @@ export default function AboutPage() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '5.1M+', l: 'Federal cases', c: '#111111' },
+                { v: '4.1M+', l: 'Federal cases', c: '#111111' },
                 { v: '84', l: 'Case types', c: '#0D9488' },
                 { v: '94', l: 'Federal districts', c: '#1A3260' },
                 { v: '50+ yrs', l: 'Historical data', c: '#9CA3AF' },

@@ -16,8 +16,8 @@ const blogPosts: BlogPost[] = [
   {
     slug: 'federal-court-win-rates-data',
     title: 'Understanding Federal Court Win Rates: What the Data Actually Shows',
-    description: 'Analysis of 5.1M+ federal cases reveals surprising patterns in win rates across case types, districts, and judicial outcomes. Learn what the data really says about your chances.',
-    content: `Federal court win rates are one of the most misunderstood statistics in litigation. Our analysis of over 5.1 million federal civil cases reveals patterns that challenge conventional assumptions about courtroom success.
+    description: 'Analysis of 4.1M+ federal cases reveals surprising patterns in win rates across case types, districts, and judicial outcomes. Learn what the data really says about your chances.',
+    content: `Federal court win rates are one of the most misunderstood statistics in litigation. Our analysis of over 4.1 million federal civil cases reveals patterns that challenge conventional assumptions about courtroom success.
 
 The overall win rate for plaintiffs in federal court is approximately 37%, but this masks enormous variation. Employment discrimination cases settle or go to judgment at dramatically different rates than personal injury cases. Civil rights cases show a 34% plaintiff win rate, while contract disputes reach 42%. These differences aren't random—they reflect the complexity of legal claims, the strength of evidence typically available, and the way juries and judges evaluate different types of disputes.
 
@@ -84,7 +84,7 @@ Budget accordingly: plan for 18 months minimum, 24 months typical, 36+ months fo
   {
     slug: 'attorney-vs-self-represented-outcomes',
     title: 'Attorney vs. Self-Represented: How Representation Affects Case Outcomes',
-    description: 'Data from 5.1M federal cases shows dramatic differences in outcomes between represented and pro se litigants. The numbers may surprise you.',
+    description: 'Data from 4.1M federal cases shows dramatic differences in outcomes between represented and pro se litigants. The numbers may surprise you.',
     content: `The decision to hire an attorney is one of the most significant choices in litigation. Our analysis of federal court data provides concrete numbers about how representation affects outcomes.
 
 The data is striking: parties represented by attorneys win at trial approximately 42% of the time. Pro se (self-represented) litigants win approximately 12% of the time. This 30-percentage-point gap is consistent across case types, districts, and time periods. The difference reflects several factors working together.

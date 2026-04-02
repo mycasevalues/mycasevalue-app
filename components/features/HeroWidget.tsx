@@ -349,7 +349,7 @@ export function HeroWidget({ lang = 'en' }: HeroWidgetProps) {
               color: '#9CA3AF',
             }}
           >
-            {t.basedOn} 5,100,000+ {t.casesCited}
+            {t.basedOn} 4,100,000+ {t.casesCited}
           </p>
         </div>
       )}

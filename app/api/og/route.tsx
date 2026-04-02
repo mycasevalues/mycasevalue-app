@@ -185,7 +185,7 @@ export async function GET(request: Request) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#4F46E5', fontWeight: '700' }}>5.1M+</span>
+              <span style={{ color: '#4F46E5', fontWeight: '700' }}>4.1M+</span>
               <span style={{ color: '#a0a9d4' }}>Cases</span>
             </div>
             <div style={{ color: '#4F46E5' }}>•</div>

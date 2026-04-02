@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://mycasevalues.com/odds' },
   openGraph: {
     title: 'Check My Odds - Federal Case Analysis',
-    description: 'Analyze your federal case against 5.1M+ real outcomes. See win rates and settlement data for your specific case type and district.',
+    description: 'Analyze your federal case against 4.1M+ real outcomes. See win rates and settlement data for your specific case type and district.',
     url: 'https://mycasevalues.com/odds',
     type: 'website',
   },

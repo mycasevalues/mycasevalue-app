@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://mycasevalues.com/trends' },
   openGraph: {
     title: 'Federal Court Trends — MyCaseValue',
-    description: 'Explore 5.1M+ federal court cases: filing volumes, win rates, settlement patterns, and duration trends across 84 case types.',
+    description: 'Explore 4.1M+ federal court cases: filing volumes, win rates, settlement patterns, and duration trends across 84 case types.',
     type: 'website',
     url: 'https://mycasevalues.com/trends',
   },
