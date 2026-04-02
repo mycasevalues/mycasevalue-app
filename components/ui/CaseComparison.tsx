@@ -224,7 +224,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         }
 
         .metric-value {
-          font-family: 'JetBrains Mono', monospace;
+          font-family: 'PT Mono', monospace;
           font-weight: 600;
           font-size: 16px;
           color: #374151;

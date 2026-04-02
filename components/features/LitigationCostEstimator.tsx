@@ -463,7 +463,7 @@ export function LitigationCostEstimator({
             fontSize: '28px',
             fontWeight: 700,
             color: '#111827',
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: "'PT Mono', monospace",
             marginBottom: '8px',
           }}
         >
@@ -479,7 +479,7 @@ export function LitigationCostEstimator({
             gap: '4px',
           }}
         >
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 600 }}>
+          <span style={{ fontFamily: "'PT Mono', monospace", fontWeight: 600 }}>
             {lang === 'es' ? 'Promedio: ' : 'Average: '}
             {formatCurrency(totalAvg)}
           </span>

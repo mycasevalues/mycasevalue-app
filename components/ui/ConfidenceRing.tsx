@@ -138,7 +138,7 @@ export default function ConfidenceRing({
           alignItems: 'center', justifyContent: 'center',
         }}>
           <div style={{
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: "'PT Mono', monospace",
             fontSize: size * 0.22, fontWeight: 800,
             color: color, lineHeight: 1,
             textShadow: `0 0 20px ${color}40`,

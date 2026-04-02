@@ -85,7 +85,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
         <div style={{ fontSize: '20px', marginBottom: '8px' }}>{stat.icon}</div>
         <div className="stat-glow" style={{
-          fontFamily: "'JetBrains Mono', monospace",
+          fontFamily: "'PT Mono', monospace",
           fontSize: '28px', fontWeight: 700, color: stat.color,
           lineHeight: 1.1,
         }}>

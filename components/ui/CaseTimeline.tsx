@@ -158,7 +158,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 {/* Month marker */}
                 <div style={{
                   fontSize: '10px', fontWeight: 500,
-                  fontFamily: "'JetBrains Mono', monospace",
+                  fontFamily: "'PT Mono', monospace",
                   color: i <= activeIdx ? event.color : '#E5E0D8',
                   marginTop: '2px',
                 }}>
@@ -228,7 +228,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                   </span>
                   <span style={{
                     fontSize: '11px', fontWeight: 500,
-                    fontFamily: "'JetBrains Mono', monospace",
+                    fontFamily: "'PT Mono', monospace",
                     color: i <= activeIdx ? event.color : '#E5E0D8',
                   }}>
                     {event.months === 0 ? (lang === 'es' ? 'Día 1' : 'Day 1') : `${event.months}mo`}
@@ -265,7 +265,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
         }}></div>
         <div>
           <div style={{ fontSize: '13px', fontWeight: 600, color: '#111827' }}>
-            {lang === 'es' ? 'Duración media' : 'Median Duration'}: <span style={{ color: '#333333', fontFamily: "'JetBrains Mono', monospace" }}>{medianMonths} {lang === 'es' ? 'meses' : 'months'}</span>
+            {lang === 'es' ? 'Duración media' : 'Median Duration'}: <span style={{ color: '#333333', fontFamily: "'PT Mono', monospace" }}>{medianMonths} {lang === 'es' ? 'meses' : 'months'}</span>
           </div>
           <div style={{ fontSize: '11px', color: '#9CA3AF' }}>
             {lang === 'es' ? 'Basado en datos históricos de casos federales' : 'Based on historical federal case data'}

@@ -102,7 +102,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
               <span style={{ fontSize: '13px', color: '#6B7280' }}>{s.description}</span>
               <kbd style={{
                 padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
-                fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
+                fontFamily: "'PT Mono', monospace", fontWeight: 600,
                 background: '#F9F8F6', border: '1px solid #E5E0D8',
                 color: '#8B5CF6', minWidth: '28px', textAlign: 'center',
               }}>
@@ -121,7 +121,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
             </span>
             <kbd style={{
               padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
-              fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
+              fontFamily: "'PT Mono', monospace", fontWeight: 600,
               background: '#F9F8F6', border: '1px solid #E5E0D8',
               color: '#8B5CF6',
             }}>?</kbd>

@@ -289,7 +289,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
       style={{
         position: 'relative',
         width: '100%',
-        fontFamily: '"Outfit", sans-serif',
+        fontFamily: '"Montserrat", system-ui, sans-serif',
       }}
     >
       {/* Search Input */}
@@ -458,7 +458,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                               color: '#6B7280',
                               marginLeft: '12px',
                               whiteSpace: 'nowrap',
-                              fontFamily: '"JetBrains Mono", monospace',
+                              fontFamily: '"PT Mono", monospace',
                             }}
                           >
                             {lang === 'es' ? 'en' : 'in'} {category.label}

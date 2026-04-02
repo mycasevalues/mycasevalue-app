@@ -221,7 +221,7 @@ export default async function NOSPage({ params }: PageProps) {
               border: `1px solid ${stat.color}20`,
             }}>
               <div style={{ fontSize: '20px', marginBottom: '6px' }}>{stat.icon}</div>
-              <div style={{ fontSize: '28px', fontWeight: 800, color: stat.color, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>
+              <div style={{ fontSize: '28px', fontWeight: 800, color: stat.color, fontFamily: "'PT Mono', monospace", letterSpacing: '-1px' }}>
                 {stat.value}
               </div>
               <div style={{ fontSize: '11px', fontWeight: 600, color: '#9CA3AF', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '1px' }}>
@@ -242,7 +242,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
                     <span style={{ fontSize: '13px', fontWeight: 600, color: '#111827' }}>{o.label}</span>
-                    <span style={{ fontSize: '13px', fontWeight: 700, color: o.color, fontFamily: "'JetBrains Mono', monospace" }}>
+                    <span style={{ fontSize: '13px', fontWeight: 700, color: o.color, fontFamily: "'PT Mono', monospace" }}>
                       {o.value}%
                     </span>
                   </div>

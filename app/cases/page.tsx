@@ -48,9 +48,9 @@ export default function CasesIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid var(--border-default)', padding: '60px 20px' }}>
+      <div style={{ background: 'var(--bg-surface)', borderBottom: '1px solid var(--border-default)', padding: '60px 20px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: 'var(--fg-primary)' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
@@ -78,7 +78,7 @@ export default function CasesIndexPage() {
                   {category.label}
                 </h2>
                 <p style={{ fontSize: 14, color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
-                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #E5E0D8', fontSize: 13, color: '#111111', fontWeight: 500 }}>
+                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid var(--border-default)', fontSize: 13, color: 'var(--fg-primary)', fontWeight: 500 }}>
                   {category.opts.length} types covered →
                 </div>
               </div>

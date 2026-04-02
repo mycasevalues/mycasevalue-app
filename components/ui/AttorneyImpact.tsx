@@ -30,7 +30,7 @@ function AnimatedBar({ value, maxValue, color, delay, isVisible }: {
       }}>
         <span style={{
           fontSize: '12px', fontWeight: 700, color: 'white',
-          fontFamily: "'JetBrains Mono', monospace",
+          fontFamily: "'PT Mono', monospace",
           textShadow: '0 1px 4px rgba(0,0,0,0.3)',
         }}>
           {value}%
@@ -128,7 +128,7 @@ export default function AttorneyImpact({
           </div>
           <div style={{
             fontSize: '18px', fontWeight: 800, color: '#0D9488',
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: "'PT Mono', monospace",
           }}>
             {withAttorneyRecovery}
           </div>
@@ -144,7 +144,7 @@ export default function AttorneyImpact({
           </div>
           <div style={{
             fontSize: '18px', fontWeight: 800, color: '#6B7280',
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: "'PT Mono', monospace",
           }}>
             {withoutAttorneyRecovery}
           </div>

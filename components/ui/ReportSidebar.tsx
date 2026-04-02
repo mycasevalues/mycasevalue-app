@@ -105,7 +105,7 @@ export default function ReportSidebar({
               {s.label}
             </div>
             <div style={{
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: "'PT Mono', monospace",
               fontSize: 20,
               fontWeight: 600,
               color: s.color,

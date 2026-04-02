@@ -35,11 +35,11 @@ export default function TrustBar({ lang }: TrustBarProps) {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((stat, idx) => (
             <div key={idx} className="text-center">
-              {/* Number in JetBrains Mono */}
+              {/* Number in PT Mono */}
               <div
                 className="text-3xl sm:text-4xl font-bold mb-2"
                 style={{
-                  fontFamily: '"JetBrains Mono", "Courier New", monospace',
+                  fontFamily: '"PT Mono", "Courier New", monospace',
                   color: '#111111',
                   letterSpacing: '-0.5px',
                 }}
@@ -50,7 +50,7 @@ export default function TrustBar({ lang }: TrustBarProps) {
               <div
                 className="text-xs sm:text-sm font-medium"
                 style={{
-                  fontFamily: '"Outfit", sans-serif',
+                  fontFamily: '"Montserrat", system-ui, sans-serif',
                   color: '#111827',
                   letterSpacing: '0.5px',
                 }}

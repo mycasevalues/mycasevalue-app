@@ -167,7 +167,7 @@ export default async function OutcomesPage({
 
       {/* Breadcrumb */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--bg-surface)',
         borderBottom: '1px solid var(--border-default)',
         padding: '16px 20px',
       }}>
@@ -176,7 +176,7 @@ export default async function OutcomesPage({
           margin: '0 auto',
           fontSize: '14px',
           color: '#6B7280',
-          fontFamily: 'Outfit, system-ui, sans-serif',
+          fontFamily: 'var(--font-body)',
         }}>
           <Link href="/" style={{ color: '#111111', textDecoration: 'none' }}>
             Home
@@ -209,7 +209,7 @@ export default async function OutcomesPage({
             fontSize: '44px',
             fontWeight: 700,
             margin: '0 0 16px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-body)',
             letterSpacing: '-0.5px',
           }}>
             {option.label} Cases in {stateName}
@@ -217,7 +217,7 @@ export default async function OutcomesPage({
           <p style={{
             fontSize: '18px',
             margin: '0 0 32px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-body)',
             opacity: 0.95,
             maxWidth: '600px',
             lineHeight: '1.6',
@@ -266,7 +266,7 @@ export default async function OutcomesPage({
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{
-            background: '#FFFFFF',
+            background: 'var(--bg-surface)',
             border: '1px solid var(--border-default)',
             borderRadius: '10px',
             padding: '32px',
@@ -276,7 +276,7 @@ export default async function OutcomesPage({
               fontWeight: 600,
               color: 'var(--fg-primary)',
               margin: '0 0 32px 0',
-              fontFamily: 'Outfit, system-ui, sans-serif',
+              fontFamily: 'var(--font-body)',
             }}>
               Outcome Distribution
             </h2>
@@ -300,7 +300,7 @@ export default async function OutcomesPage({
                       fontSize: '16px',
                       fontWeight: 700,
                       color: outcome.color,
-                      fontFamily: "'JetBrains Mono', monospace",
+                      fontFamily: "'PT Mono', monospace",
                     }}>
                       {outcome.value}%
                     </span>
@@ -327,7 +327,7 @@ export default async function OutcomesPage({
 
       {/* Related Links Section */}
       <div style={{
-        background: '#FFFFFF',
+        background: 'var(--bg-surface)',
         padding: '60px 20px',
         borderTop: '1px solid var(--border-default)',
       }}>
@@ -337,7 +337,7 @@ export default async function OutcomesPage({
             fontWeight: 600,
             color: 'var(--fg-primary)',
             margin: '0 0 32px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-body)',
           }}>
             Explore More
           </h2>
@@ -348,7 +348,7 @@ export default async function OutcomesPage({
             gap: '20px',
           }}>
             <Link href={`/cases/${category.id}`} className="outcome-nav-card" style={{
-              background: '#FFFFFF',
+              background: 'var(--bg-surface)',
               border: '1px solid var(--border-default)',
               borderRadius: '10px',
               padding: '20px',
@@ -376,7 +376,7 @@ export default async function OutcomesPage({
             </Link>
 
             <Link href={`/nos/${option.nos}`} className="outcome-nav-card" style={{
-              background: '#FFFFFF',
+              background: 'var(--bg-surface)',
               border: '1px solid var(--border-default)',
               borderRadius: '10px',
               padding: '20px',
@@ -412,7 +412,7 @@ export default async function OutcomesPage({
         color: 'var(--fg-muted)',
         padding: '40px 20px',
         fontSize: '14px',
-        fontFamily: 'Outfit, system-ui, sans-serif',
+        fontFamily: 'var(--font-body)',
         lineHeight: '1.6',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
