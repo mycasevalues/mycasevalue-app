@@ -3045,9 +3045,9 @@ input[type="range"]::-moz-range-thumb {
 
 /* Cinematic page entrance */
 @keyframes cinematicReveal {
-  0% { opacity: 0; transform: translateY(24px) scale(0.98); filter: blur(8px); }
+  0% { opacity: 0; transform: translateY(24px); filter: blur(8px); }
   60% { opacity: 1; filter: blur(0); }
-  100% { transform: translateY(0) scale(1); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
 .cinematic-enter {
   animation: cinematicReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;

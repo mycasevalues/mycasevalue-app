@@ -2181,7 +2181,7 @@ export default function MyCaseValue() {
       {showOnboarding && <OnboardingTour lang={lang} onComplete={() => setShowOnboarding(false)} />}
       <SocialProofToast lang={lang} active={true} />
       <SectionNav lang={lang} />
-      <div className="hero-bg hero-parallax mesh-bg py-6 sm:py-8 pb-6 relative overflow-hidden noise-overlay particle-field cinematic-enter">
+      <div className="hero-bg hero-parallax mesh-bg py-4 sm:py-6 pb-6 relative overflow-hidden noise-overlay particle-field cinematic-enter">
         {/* Animated floating orbs */}
         <div className="hero-orb hero-orb-1" />
         <div className="hero-orb hero-orb-2" />
@@ -2210,7 +2210,7 @@ export default function MyCaseValue() {
           <div className="relative z-10">
             <Reveal>
               {/* Top badges row — dark glass on dark hero */}
-              <div className="flex flex-wrap items-center gap-2 mb-4">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
                   style={{ color: 'var(--accent-secondary, #A5B4FC)', background: 'rgba(79,70,229,0.12)', border: '1px solid rgba(99,102,241,0.2)' }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
@@ -2224,21 +2224,21 @@ export default function MyCaseValue() {
               </div>
 
               {/* Tagline with vertical accent line — matches LinkedIn header brand */}
-              <div className="flex items-start gap-4 mb-5">
+              <div className="flex items-start gap-4 mb-3">
                 <div className="hero-accent-line mt-2 hidden sm:block" />
-                <h1 className="font-display text-[36px] sm:text-[48px] lg:text-[58px] leading-[1.1] font-extrabold" style={{ letterSpacing: '-2px' }}>
+                <h1 className="font-display text-[32px] sm:text-[44px] lg:text-[54px] leading-[1.1] font-extrabold" style={{ letterSpacing: '-2px' }}>
                   <span className="hero-tagline-bold">{t.hero_title_1}</span><br />
                   <span className="hero-tagline-bold">{t.hero_title_2}</span><br />
                   <span className="text-shimmer hero-tagline-light gradient-text-animated">{t.hero_title_3}</span>
                 </h1>
               </div>
 
-              <p className="text-[15px] sm:text-[16px] max-w-xl leading-[1.6] mb-4" style={{ color: '#8B9AB5' }}>
+              <p className="text-[14px] sm:text-[15px] max-w-xl leading-[1.5] mb-3" style={{ color: '#8B9AB5' }}>
                 {t.hero_sub_pre} <strong className="font-data" style={{ color: 'var(--accent-secondary, #A5B4FC)' }}>{totalDisplay}</strong> {t.hero_sub_post}
               </p>
 
               {/* AI-integrated natural language input with smart suggestions — ABOVE FOLD */}
-              <div className="mb-4 max-w-lg relative" style={{ zIndex: 20 }}>
+              <div className="mb-3 max-w-lg relative" style={{ zIndex: 20 }}>
                 <div className="relative group">
                   <div className="absolute -inset-0.5 rounded-2xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"
                     style={{ background: 'linear-gradient(135deg, rgba(64,64,242,0.2), rgba(13,148,136,0.1), rgba(64,64,242,0.2))', filter: 'blur(8px)' }} />
