@@ -59,6 +59,10 @@ const nextConfig = {
   poweredByHeader: false,
   // Performance: enable SWC minification (default in Next 14+)
   swcMinify: true,
+  // Redirect non-www to www
+  redirects: async () => [
+    { source: '/:path*', has: [{ type: 'host', value: 'mycasevalues.com' }], destination: 'https://www.mycasevalues.com/:path*', permanent: true }
+  ],
 };
 
 module.exports = nextConfig;

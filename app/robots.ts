@@ -4,16 +4,11 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: ['Googlebot', 'Bingbot'],
-        allow: '/',
-        disallow: ['/api/', '/api/stripe/', '/api/ingest'],
-      },
-      {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/api/stripe/', '/api/ingest'],
+        disallow: ['/api/', '/dashboard/', '/account/', '/admin/'],
       },
     ],
-    sitemap: 'https://mycasevalues.com/sitemap.xml',
+    sitemap: 'https://www.mycasevalues.com/sitemap.xml',
   };
 }

@@ -7,7 +7,7 @@ const CATEGORY_IDS = ['work', 'injury', 'consumer', 'rights', 'money', 'housing'
 const NOS_CODES = ['110', '152', '190', '195', '240', '290', '310', '340', '350', '360', '362', '365', '368', '370', '371', '375', '440', '442', '445', '530', '550', '710', '791', '820', '830', '840', '850', '864', '870', '890'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mycasevalues.com';
+  const baseUrl = 'https://www.mycasevalues.com';
   const now = new Date().toISOString();
 
   const categoryUrls: MetadataRoute.Sitemap = CATEGORY_IDS.map((id) => ({

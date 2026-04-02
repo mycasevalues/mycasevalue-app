@@ -11,11 +11,11 @@ export const metadata = {
     description: 'Real outcomes from 5,100,000+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
     type: 'website',
     siteName: 'MyCaseValue',
-    url: 'https://mycasevalues.com',
+    url: 'https://www.mycasevalues.com',
     locale: 'en_US',
     images: [
       {
-        url: 'https://mycasevalues.com/og-image.png',
+        url: 'https://www.mycasevalues.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'MyCaseValue — Federal Court Outcome Data',
@@ -26,10 +26,10 @@ export const metadata = {
     card: 'summary_large_image' as const,
     title: 'MyCaseValue — Federal Court Outcome Data',
     description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, recovery ranges. Free and private.',
-    images: ['https://mycasevalues.com/og-image.png'],
+    images: ['https://www.mycasevalues.com/og-image.png'],
   },
   alternates: {
-    canonical: 'https://mycasevalues.com',
+    canonical: 'https://www.mycasevalues.com',
   },
   keywords: [
     'federal court outcomes', 'case outcome data', 'lawsuit win rate', 'settlement data',
@@ -54,7 +54,7 @@ export const metadata = {
   other: {
     'google': 'notranslate',
   },
-  metadataBase: new URL('https://mycasevalues.com'),
+  metadataBase: new URL('https://www.mycasevalues.com'),
 };
 
 export const viewport = {
@@ -71,8 +71,8 @@ const jsonLd = {
     {
       '@type': 'Organization',
       name: 'MyCaseValue',
-      url: 'https://mycasevalues.com',
-      logo: 'https://mycasevalues.com/icon-512.png',
+      url: 'https://www.mycasevalues.com',
+      logo: 'https://www.mycasevalues.com/icon-512.png',
       description: 'Federal court outcome data for informed research.',
       contactPoint: {
         '@type': 'ContactPoint',
@@ -83,7 +83,7 @@ const jsonLd = {
     {
       '@type': 'WebApplication',
       name: 'MyCaseValue',
-      url: 'https://mycasevalues.com',
+      url: 'https://www.mycasevalues.com',
       applicationCategory: 'ReferenceApplication',
       operatingSystem: 'All',
       offers: [
@@ -97,13 +97,13 @@ const jsonLd = {
       '@type': 'Dataset',
       name: 'Federal Court Outcome Data',
       description: 'Aggregate historical outcome data from 5.1M+ federal civil cases, sourced from the Federal Judicial Center Integrated Database, CourtListener, and Google Scholar for legal scholarship context.',
-      url: 'https://mycasevalues.com',
+      url: 'https://www.mycasevalues.com',
       license: 'https://www.usa.gov/government-copyright',
       creator: { '@type': 'Organization', name: 'Federal Judicial Center' },
       distribution: {
         '@type': 'DataDownload',
         encodingFormat: 'text/html',
-        contentUrl: 'https://mycasevalues.com',
+        contentUrl: 'https://www.mycasevalues.com',
       },
       spatialCoverage: 'United States Federal Courts',
       temporalCoverage: '1970-present',
@@ -112,14 +112,14 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      url: 'https://mycasevalues.com',
+      url: 'https://www.mycasevalues.com',
       name: 'MyCaseValue',
       description: 'Federal court outcome data for informed research.',
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://mycasevalues.com/?q={search_term_string}',
+          urlTemplate: 'https://www.mycasevalues.com/?q={search_term_string}',
         },
         'query-input': 'required name=search_term_string',
       },
@@ -127,10 +127,10 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Case Categories', item: 'https://mycasevalues.com/cases' },
-        { '@type': 'ListItem', position: 3, name: 'FAQ', item: 'https://mycasevalues.com/faq' },
-        { '@type': 'ListItem', position: 4, name: 'Methodology', item: 'https://mycasevalues.com/methodology' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
+        { '@type': 'ListItem', position: 2, name: 'Case Categories', item: 'https://www.mycasevalues.com/cases' },
+        { '@type': 'ListItem', position: 3, name: 'FAQ', item: 'https://www.mycasevalues.com/faq' },
+        { '@type': 'ListItem', position: 4, name: 'Methodology', item: 'https://www.mycasevalues.com/methodology' },
       ],
     },
     {
@@ -230,10 +230,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-        <link rel="canonical" href="https://mycasevalues.com" />
-        <link rel="alternate" hrefLang="en" href="https://mycasevalues.com" />
-        <link rel="alternate" hrefLang="es" href="https://mycasevalues.com/es" />
-        <link rel="alternate" hrefLang="x-default" href="https://mycasevalues.com" />
+        <link rel="canonical" href="https://www.mycasevalues.com" />
+        <link rel="alternate" hrefLang="en" href="https://www.mycasevalues.com" />
+        <link rel="alternate" hrefLang="es" href="https://www.mycasevalues.com/es" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.mycasevalues.com" />
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#FAFAF8" />

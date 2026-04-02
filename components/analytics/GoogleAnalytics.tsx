@@ -53,12 +53,12 @@ export default function GoogleAnalytics(): React.ReactElement | null {
       {/* Load gtag script */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       {/* Initialize gtag with GA4 config */}
       <Script
         id="ga-init"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
