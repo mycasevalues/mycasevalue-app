@@ -91,6 +91,8 @@ const WhyFreeSection = dynamic(() => import('./sections/WhyFreeSection'), { ssr:
 const PricingPreview = dynamic(() => import('./sections/PricingPreview'), { ssr: false });
 const SectionNav = dynamic(() => import('./navigation/SectionNav'), { ssr: false });
 const LazySection = dynamic(() => import('./ui/LazySection'), { ssr: false });
+const JudgeIntelligenceCards = dynamic(() => import('./features/JudgeIntelligenceCards').then(m => ({ default: m.JudgeIntelligenceCards })), { ssr: false, loading: ChunkLoader });
+const AttorneyModePanel = dynamic(() => import('./features/AttorneyModePanel').then(m => ({ default: m.AttorneyModePanel })), { ssr: false, loading: ChunkLoader });
 import { TabPanel } from './ui/ReportTabs';
 
 // Extracted UI components
@@ -121,6 +123,11 @@ import { CaseComparisonScale } from './features/CaseComparisonScale';
 import { SuccessCelebration } from './features/SuccessCelebration';
 import { ConfidenceMeterInline as ConfidenceMeter } from './features/ConfidenceMeterInline';
 import { RiskAssessmentQuiz } from './features/RiskAssessmentQuiz';
+import { ShareCard } from './features/ShareCard';
+import { CaseCompareTool } from './features/CaseCompareTool';
+import { CaseTimelineSimulator } from './features/CaseTimelineSimulator';
+import { LitigationCostEstimator } from './features/LitigationCostEstimator';
+import { EmailCaptureBanner } from './features/EmailCaptureBanner';
 
 // ============================================================
 // REAL AGGREGATE STATE WIN RATES (computed from CourtListener data across all case types)
@@ -635,6 +642,7 @@ export default function MyCaseValue() {
   const [showQuiz, setShowQuiz] = useState(false);
   const [calcAmount, setCalcAmount] = useState(50000);
   const [heroCounterDone, setHeroCounterDone] = useState(false);
+  const [showShareCard, setShowShareCard] = useState(false);
   const t = TRANSLATIONS[lang];
   const [totalCases, setTotalCases] = useState(5127834);
 
@@ -3388,6 +3396,9 @@ export default function MyCaseValue() {
                 }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {lang === 'es' ? 'Compartir' : 'Share'}
                 </button>
+                <button onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  📸 {lang === 'es' ? 'Tarjeta' : 'Card'}
+                </button>
                 <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-2px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
                   {lang === 'es' ? 'Guardar' : 'Save'}
@@ -3401,6 +3412,22 @@ export default function MyCaseValue() {
               </div>
             </div>
           </Reveal>
+
+          {showShareCard && (
+            <Reveal>
+              <div className="mb-4">
+                <ShareCard
+                  lang={lang}
+                  caseType={spec?.d || ''}
+                  winRate={wr}
+                  settlementPct={d.sp || 0}
+                  medianRecovery={v.md}
+                  duration={`${d.mo || '—'} months`}
+                  totalCases={d.total || 0}
+                />
+              </div>
+            </Reveal>
+          )}
 
           {/* UPL Notice */}
           <Reveal>
@@ -3452,6 +3479,30 @@ export default function MyCaseValue() {
               <Card className="p-5">
                 <CaseTimeline medianMonths={d.mo || 10} caseType={spec?.d} lang={lang} />
               </Card>
+            </div>
+          </Reveal>
+
+          <Reveal delay={30}>
+            <div className="mb-4">
+              <CaseTimelineSimulator
+                lang={lang}
+                caseType={spec?.d || ''}
+                durationMonths={d.mo || 10}
+                settlementPct={d.sp || 47}
+                winRate={wr}
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={40}>
+            <div className="mb-4">
+              <LitigationCostEstimator
+                lang={lang}
+                caseType={spec?.d || ''}
+                attorneyFeeRange={d.af || '$250-500/hr'}
+                durationMonths={d.mo || 10}
+                isProSe={attorney === 'no'}
+              />
             </div>
           </Reveal>
 
@@ -6122,6 +6173,12 @@ export default function MyCaseValue() {
           </Reveal>
 
           <GoldRule />
+
+          <Reveal>
+            <div className="mt-6 mb-4">
+              <EmailCaptureBanner lang={lang} context="report" />
+            </div>
+          </Reveal>
 
           {/* Final disclaimer */}
           <Reveal delay={720}>
