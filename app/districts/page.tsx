@@ -31,7 +31,7 @@ export default function DistrictsPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             DISTRICTS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: '#111111', fontFamily: 'Montserrat', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: '#111111', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}>
             Federal Court Outcomes by District
           </h1>
           <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'var(--fg-muted)' }}>

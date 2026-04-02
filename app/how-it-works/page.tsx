@@ -160,9 +160,9 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+                  <h2 className="text-xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
                     {step.title}
-                  </h3>
+                  </h2>
                   <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
                     {step.description}
                   </p>

@@ -1855,8 +1855,8 @@ input:focus, textarea:focus, select:focus {
 
 /* Smooth option hover in selects */
 select option {
-  background: #1A2744;
-  color: #E2E8F0;
+  background: #FFFFFF;
+  color: #111111;
   padding: 8px 12px;
 }
 

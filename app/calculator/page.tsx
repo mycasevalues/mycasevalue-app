@@ -185,9 +185,9 @@ export default function CalculatorPage() {
 
         {/* Legal Disclaimer */}
         <div className="mt-8 p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-surface)' }}>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
             Important Disclaimer
-          </h3>
+          </h2>
           <p className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-muted)', fontFamily: 'var(--font-body)' }}>
             The Settlement Calculator provides estimates based on historical aggregate data from federal court records. These are statistical approximations and not predictions. Actual settlement amounts vary significantly based on case facts, legal representation, evidence quality, and many other factors. This calculator is not legal advice. Do not rely on these estimates as a substitute for consulting with a qualified attorney. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>

@@ -57,7 +57,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
 
   return (
     <div className="rounded-2xl overflow-hidden" style={{
-      background: 'linear-gradient(180deg, #F9F8F6 0%, #131D35 100%)',
+      background: 'linear-gradient(180deg, #F9F8F6 0%, #EDEAE4 100%)',
       border: '1px solid rgba(17,17,17,0.12)',
       boxShadow: '0 12px 48px rgba(255,255,255,0.3)',
     }}>

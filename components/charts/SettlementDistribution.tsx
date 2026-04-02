@@ -37,7 +37,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
               borderRadius: '10px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',
-              fontFamily: 'Outfit, system-ui, sans-serif',
+              fontFamily: 'var(--font-body)',
               padding: '8px 14px',
               color: '#111827',
             }}

@@ -52,7 +52,7 @@ export default function SignUpPage() {
             textAlign: 'center',
           }}
         >
-          <h2
+          <p
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: '24px',
@@ -63,7 +63,7 @@ export default function SignUpPage() {
             }}
           >
             MyCaseValue
-          </h2>
+          </p>
         </div>
 
         {/* Heading */}

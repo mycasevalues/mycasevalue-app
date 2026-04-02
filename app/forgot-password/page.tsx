@@ -52,7 +52,7 @@ export default function ForgotPasswordPage() {
             textAlign: 'center',
           }}
         >
-          <h2
+          <p
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: '24px',
@@ -63,7 +63,7 @@ export default function ForgotPasswordPage() {
             }}
           >
             MyCaseValue
-          </h2>
+          </p>
         </div>
 
         {/* Heading */}

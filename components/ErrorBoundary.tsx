@@ -53,7 +53,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
           alignItems: 'center',
           justifyContent: 'center',
           background: '#F9F8F6',
-          fontFamily: 'Outfit, system-ui, sans-serif',
+          fontFamily: 'var(--font-body)',
           padding: 24,
         }}>
           <div style={{
