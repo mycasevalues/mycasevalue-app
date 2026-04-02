@@ -86,7 +86,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
           <button
             onClick={() => setShowPanel(false)}
             style={{
-              background: 'none', border: 'none', color: '#64748B',
+              background: 'none', border: 'none', color: '#8B95A5',
               cursor: 'pointer', fontSize: '18px', padding: '4px',
             }}
           >✕</button>
@@ -99,7 +99,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
               padding: '8px 12px', borderRadius: '8px',
               background: 'rgba(15,23,42,0.5)',
             }}>
-              <span style={{ fontSize: '13px', color: '#94A3B8' }}>{s.description}</span>
+              <span style={{ fontSize: '13px', color: '#B0BDD0' }}>{s.description}</span>
               <kbd style={{
                 padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
                 fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
@@ -116,7 +116,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
             padding: '8px 12px', borderRadius: '8px',
             background: 'rgba(15,23,42,0.5)',
           }}>
-            <span style={{ fontSize: '13px', color: '#94A3B8' }}>
+            <span style={{ fontSize: '13px', color: '#B0BDD0' }}>
               {lang === 'es' ? 'Mostrar/ocultar atajos' : 'Toggle shortcuts'}
             </span>
             <kbd style={{

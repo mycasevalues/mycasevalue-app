@@ -49,7 +49,7 @@ export function Accordion({ items }: AccordionProps) {
             <span
               className={cn(
                 'text-xl font-light transition-transform duration-300',
-                openId === item.id ? 'text-[#A5B4FC] rotate-0' : 'text-[#64748B] rotate-45'
+                openId === item.id ? 'text-[#A5B4FC] rotate-0' : 'text-[#8B95A5] rotate-45'
               )}
             >
               {openId === item.id ? '×' : '+'}

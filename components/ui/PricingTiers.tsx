@@ -170,7 +170,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
           <h2 className="text-4xl font-bold mb-4" style={{ color: '#E2E8F0' }}>
             Simple, Transparent Pricing
           </h2>
-          <p className="text-lg mb-8" style={{ color: '#94A3B8' }}>
+          <p className="text-lg mb-8" style={{ color: '#B0BDD0' }}>
             Choose the plan that works for you
           </p>
 
@@ -178,7 +178,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
           <div className="flex items-center justify-center gap-4">
             <span
               style={{
-                color: !isAnnual ? '#E2E8F0' : '#94A3B8',
+                color: !isAnnual ? '#E2E8F0' : '#B0BDD0',
               }}
             >
               {t.monthly}
@@ -199,7 +199,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
             </button>
             <span
               style={{
-                color: isAnnual ? '#E2E8F0' : '#94A3B8',
+                color: isAnnual ? '#E2E8F0' : '#B0BDD0',
               }}
             >
               {t.annual}
@@ -277,7 +277,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                 {/* Subtitle */}
                 <p
                   className="text-sm mb-6"
-                  style={{ color: '#94A3B8' }}
+                  style={{ color: '#B0BDD0' }}
                 >
                   {String(t[tier.subtitle as keyof typeof t] || '')}
                 </p>
@@ -293,7 +293,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
                   {tier.id === 'unlimited' && (
                     <span
                       className="text-sm ml-2"
-                      style={{ color: '#94A3B8' }}
+                      style={{ color: '#B0BDD0' }}
                     >
                       {isAnnual ? '/year' : '/month'}
                     </span>

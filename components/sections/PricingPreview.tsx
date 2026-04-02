@@ -159,11 +159,11 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
                 <span className="text-2xl font-extrabold" style={{ color: plan.highlight ? '#818CF8' : '#E2E8F0' }}>
                   {plan.price}
                 </span>
-                <span className="text-[10px]" style={{ color: '#64748B' }}>
+                <span className="text-[10px]" style={{ color: '#8B95A5' }}>
                   {isEs ? plan.periodEs : plan.period}
                 </span>
               </div>
-              <p className="text-[10px] mt-1" style={{ color: '#64748B' }}>
+              <p className="text-[10px] mt-1" style={{ color: '#8B95A5' }}>
                 {isEs ? plan.descriptionEs : plan.description}
               </p>
             </div>
@@ -181,7 +181,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
                       <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
                     </svg>
                   )}
-                  <span className="text-[11px]" style={{ color: f.included ? '#94A3B8' : '#475569' }}>
+                  <span className="text-[11px]" style={{ color: f.included ? '#B0BDD0' : '#475569' }}>
                     {isEs ? f.textEs : f.text}
                   </span>
                 </div>
@@ -193,7 +193,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
               className="w-full py-2.5 rounded-lg text-[12px] font-semibold transition-all hover:scale-[1.02]"
               style={{
                 background: plan.highlight ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(255,255,255,0.05)',
-                color: plan.highlight ? '#fff' : '#94A3B8',
+                color: plan.highlight ? '#fff' : '#B0BDD0',
                 border: plan.highlight ? 'none' : '1px solid rgba(255,255,255,0.08)',
                 cursor: 'pointer',
               }}
@@ -206,7 +206,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
 
       {/* Guarantee bar */}
       <div className="text-center mt-6">
-        <div className="inline-flex items-center gap-2 text-[11px]" style={{ color: '#64748B' }}>
+        <div className="inline-flex items-center gap-2 text-[11px]" style={{ color: '#8B95A5' }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" aria-hidden="true">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
           </svg>

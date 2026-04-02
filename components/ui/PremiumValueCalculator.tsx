@@ -46,13 +46,13 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
           </div>
           <div>
             <div className="text-[15px] font-bold text-[#E2E8F0]">{es ? 'Calculadora de valor' : 'Value Calculator'}</div>
-            <div className="text-[11px] text-[#94A3B8]">{es ? '¿Cuánto podrías ahorrar?' : 'How much could you save?'}</div>
+            <div className="text-[11px] text-[#B0BDD0]">{es ? '¿Cuánto podrías ahorrar?' : 'How much could you save?'}</div>
           </div>
         </div>
 
         {/* Case type selector */}
         <div className="mb-5">
-          <div className="text-[11px] font-semibold text-[#94A3B8] mb-2 tracking-wide">{es ? 'TIPO DE CASO' : 'CASE TYPE'}</div>
+          <div className="text-[11px] font-semibold text-[#B0BDD0] mb-2 tracking-wide">{es ? 'TIPO DE CASO' : 'CASE TYPE'}</div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {Object.entries(CASE_DATA).map(([key, val]) => (
               <button
@@ -61,7 +61,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
                 className="px-3 py-2 rounded-lg text-[11px] font-medium transition-all border cursor-pointer"
                 style={{
                   background: selectedCase === key ? 'linear-gradient(135deg, #4F46E5, #6366F1)' : 'rgba(255,255,255,0.05)',
-                  color: selectedCase === key ? 'white' : '#94A3B8',
+                  color: selectedCase === key ? 'white' : '#B0BDD0',
                   borderColor: selectedCase === key ? '#4F46E5' : '#334155',
                   boxShadow: selectedCase === key ? '0 2px 8px rgba(79,70,229,0.25)' : 'none',
                 }}
@@ -82,7 +82,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
                 </div>
                 <div>
                   <div className="text-[12px] font-semibold text-[#CBD5E1]">{es ? 'Ahorro en consulta legal' : 'Legal consultation savings'}</div>
-                  <div className="text-[10px] text-[#94A3B8]">{es ? 'vs. consulta inicial con abogado' : 'vs. initial attorney consultation'}</div>
+                  <div className="text-[10px] text-[#B0BDD0]">{es ? 'vs. consulta inicial con abogado' : 'vs. initial attorney consultation'}</div>
                 </div>
               </div>
               <div className="text-[15px] font-bold font-mono" style={{ color: '#0D9488' }}>
@@ -98,7 +98,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
               </div>
               <div>
                 <div className="text-[12px] font-semibold text-[#CBD5E1]">{es ? 'Valor de los datos de recuperación' : 'Recovery data insight value'}</div>
-                <div className="text-[10px] text-[#94A3B8]">{es ? 'Conocer los rangos típicos de tu caso' : 'Knowing typical ranges for your case'}</div>
+                <div className="text-[10px] text-[#B0BDD0]">{es ? 'Conocer los rangos típicos de tu caso' : 'Knowing typical ranges for your case'}</div>
               </div>
             </div>
             <div className="text-[15px] font-bold font-mono" style={{ color: '#6366F1' }}>
@@ -113,7 +113,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
               </div>
               <div>
                 <div className="text-[12px] font-semibold text-[#CBD5E1]">{es ? 'Mejora en tasa de éxito' : 'Informed decision advantage'}</div>
-                <div className="text-[10px] text-[#94A3B8]">{es ? 'Personas informadas toman mejores decisiones' : 'Informed people make better choices'}</div>
+                <div className="text-[10px] text-[#B0BDD0]">{es ? 'Personas informadas toman mejores decisiones' : 'Informed people make better choices'}</div>
               </div>
             </div>
             <div className="text-[15px] font-bold font-mono" style={{ color: '#D97706' }}>
@@ -128,18 +128,18 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
           border: '1px solid rgba(79,70,229,0.2)',
         }}>
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[13px] font-semibold text-[#94A3B8]">{es ? 'Valor total estimado' : 'Total estimated value'}</span>
+            <span className="text-[13px] font-semibold text-[#B0BDD0]">{es ? 'Valor total estimado' : 'Total estimated value'}</span>
             <span className="text-[22px] font-display font-extrabold" style={{ color: '#0D9488', letterSpacing: '-1px' }}>
               ${savings.totalValue.toLocaleString()}
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-[13px] font-semibold text-[#94A3B8]">{es ? 'Costo premium' : 'Premium cost'}</span>
+            <span className="text-[13px] font-semibold text-[#B0BDD0]">{es ? 'Costo premium' : 'Premium cost'}</span>
             <span className="text-[18px] font-display font-bold" style={{ color: '#A5B4FC' }}>$5.99</span>
           </div>
           <div className="mt-3 pt-3" style={{ borderTop: '1px solid rgba(79,70,229,0.15)' }}>
             <div className="flex items-center justify-between">
-              <span className="text-[12px] font-bold text-[#94A3B8]">{es ? 'Retorno de inversión' : 'Return on investment'}</span>
+              <span className="text-[12px] font-bold text-[#B0BDD0]">{es ? 'Retorno de inversión' : 'Return on investment'}</span>
               <div className="flex items-center gap-2">
                 <span className="text-[18px] font-display font-extrabold" style={{ color: '#5EEAD4' }}>
                   {savings.roi.toLocaleString()}x
@@ -161,7 +161,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
         >
           {es ? `Desbloquear por $5.99 (valor de $${savings.totalValue.toLocaleString()})` : `Unlock for $5.99 ($${savings.totalValue.toLocaleString()} value)`}
         </button>
-        <div className="text-center mt-2.5 text-[10px] text-[#94A3B8]">
+        <div className="text-center mt-2.5 text-[10px] text-[#B0BDD0]">
           {es ? 'Satisfacción garantizada • Pagos seguros' : 'Satisfaction guaranteed • Secure payment'}
         </div>
       </div>

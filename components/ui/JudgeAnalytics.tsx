@@ -142,7 +142,7 @@ export default function JudgeAnalytics({
             {t.title}
           </h2>
         </div>
-        <p className="text-[#94A3B8] text-sm">{t.subtitle}</p>
+        <p className="text-[#B0BDD0] text-sm">{t.subtitle}</p>
       </div>
 
       {/* Sort Controls */}
@@ -156,7 +156,7 @@ export default function JudgeAnalytics({
             className={`px-3 py-2 rounded text-xs font-mono transition-colors ${
               sortBy === option
                 ? 'bg-[#4F46E5] text-white'
-                : 'bg-[#131B2E] text-[#94A3B8] border border-[#1E293B] hover:border-[#4F46E5]'
+                : 'bg-[#131B2E] text-[#B0BDD0] border border-[#1E293B] hover:border-[#4F46E5]'
             }`}
           >
             {option === 'winRate'
@@ -185,13 +185,13 @@ export default function JudgeAnalytics({
                   <p className="font-display font-semibold text-white text-sm">
                     {judge.name}
                   </p>
-                  <p className="text-xs text-[#94A3B8]">{judge.district}</p>
+                  <p className="text-xs text-[#B0BDD0]">{judge.district}</p>
                 </div>
 
                 {/* Win Rate Bar */}
                 <div className="mb-4">
                   <div className="flex justify-between mb-1">
-                    <span className="text-xs font-mono text-[#94A3B8]">
+                    <span className="text-xs font-mono text-[#B0BDD0]">
                       {t.winRate}
                     </span>
                     <span
@@ -215,19 +215,19 @@ export default function JudgeAnalytics({
                 {/* Stats */}
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
-                    <span className="text-[#94A3B8]">{t.cases}</span>
+                    <span className="text-[#B0BDD0]">{t.cases}</span>
                     <span className="font-mono text-white">
                       {judge.casesHandled}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#94A3B8]">{t.avgDuration}</span>
+                    <span className="text-[#B0BDD0]">{t.avgDuration}</span>
                     <span className="font-mono text-white">
                       {judge.avgDuration}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#94A3B8]">{t.settlement}</span>
+                    <span className="text-[#B0BDD0]">{t.settlement}</span>
                     <span className="font-mono text-white">
                       {judge.settlementRate}%
                     </span>

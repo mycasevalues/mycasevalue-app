@@ -109,7 +109,7 @@ export default function AttorneyReferral({
         </h3>
         <p
           className="text-base mb-6"
-          style={{ color: '#94A3B8' }}
+          style={{ color: '#B0BDD0' }}
         >
           {t.subtext.replace('{caseName}', caseNameText)}
         </p>
@@ -161,7 +161,7 @@ export default function AttorneyReferral({
               >
                 ★
               </span>
-              <span className="text-xs font-medium" style={{ color: '#94A3B8' }}>
+              <span className="text-xs font-medium" style={{ color: '#B0BDD0' }}>
                 {badge}
               </span>
             </div>
@@ -171,7 +171,7 @@ export default function AttorneyReferral({
         {/* Disclaimer */}
         <p
           className="text-xs mt-6 leading-relaxed"
-          style={{ color: '#64748B' }}
+          style={{ color: '#8B95A5' }}
         >
           {t.disclaimer}
         </p>

@@ -113,7 +113,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(fmt(selectedTotal), cx, cy - 8);
-    ctx.fillStyle = '#94A3B8';
+    ctx.fillStyle = '#B0BDD0';
     ctx.font = '11px system-ui, sans-serif';
     ctx.fillText('FY2023', cx, cy + 12);
   }, [selected, statuteData]);
@@ -141,7 +141,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
     const barW = chartW / values.length - 8;
 
     // Y-axis labels
-    ctx.fillStyle = '#64748B';
+    ctx.fillStyle = '#8B95A5';
     ctx.font = '10px system-ui, sans-serif';
     ctx.textAlign = 'right';
     const steps = 4;
@@ -175,7 +175,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
       ctx.fill();
 
       // X-axis label
-      ctx.fillStyle = '#94A3B8';
+      ctx.fillStyle = '#B0BDD0';
       ctx.font = '10px system-ui, sans-serif';
       ctx.textAlign = 'center';
       ctx.fillText(FY_LABELS[i], x + barW / 2, h - 8);

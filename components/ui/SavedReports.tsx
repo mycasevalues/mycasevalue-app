@@ -95,8 +95,8 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
           className="flex flex-col items-center justify-center py-16 rounded-lg border-2 border-dashed"
           style={{ backgroundColor: '#131B2E', borderColor: '#1E293B' }}
         >
-          <FileText size={48} style={{ color: '#94A3B8' }} className="mb-4" />
-          <p style={{ color: '#94A3B8' }} className="text-center max-w-md">
+          <FileText size={48} style={{ color: '#B0BDD0' }} className="mb-4" />
+          <p style={{ color: '#B0BDD0' }} className="text-center max-w-md">
             {t.empty}
           </p>
         </div>
@@ -113,14 +113,14 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                   <h3 style={{ color: '#E2E8F0' }} className="font-semibold text-lg">
                     {report.caseName}
                   </h3>
-                  <p style={{ color: '#94A3B8' }} className="text-sm">
+                  <p style={{ color: '#B0BDD0' }} className="text-sm">
                     {report.category}
                   </p>
                 </div>
                 <button
                   onClick={() => handleDelete(report.id)}
                   className="p-2 rounded hover:opacity-70 transition"
-                  style={{ color: '#94A3B8' }}
+                  style={{ color: '#B0BDD0' }}
                   title={t.delete}
                   aria-label={`${t.delete} ${report.category}`}
                 >
@@ -128,13 +128,13 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                 </button>
               </div>
 
-              <p style={{ color: '#94A3B8' }} className="text-sm mb-4">
+              <p style={{ color: '#B0BDD0' }} className="text-sm mb-4">
                 {t.generated}: {formatDate(report.date)}
               </p>
 
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between items-center">
-                  <span style={{ color: '#94A3B8' }} className="text-sm">
+                  <span style={{ color: '#B0BDD0' }} className="text-sm">
                     {t.winRate}:
                   </span>
                   <div className="flex items-center gap-2">
@@ -157,7 +157,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                 </div>
 
                 <div className="flex justify-between items-center">
-                  <span style={{ color: '#94A3B8' }} className="text-sm">
+                  <span style={{ color: '#B0BDD0' }} className="text-sm">
                     {t.settlement}:
                   </span>
                   <span style={{ color: '#E2E8F0' }} className="font-medium">

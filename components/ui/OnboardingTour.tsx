@@ -110,7 +110,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
         </h2>
 
         {/* Description */}
-        <p className="text-lg mb-8 text-center" style={{ color: '#94A3B8' }}>
+        <p className="text-lg mb-8 text-center" style={{ color: '#B0BDD0' }}>
           {step.description}
         </p>
 
@@ -152,7 +152,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
             onClick={handleSkip}
             className="px-4 py-2 rounded-lg transition-colors"
             style={{
-              color: '#94A3B8',
+              color: '#B0BDD0',
               borderColor: '#4F46E5',
               borderWidth: '1px',
             }}
@@ -187,7 +187,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
         </div>
 
         {/* Step counter */}
-        <p className="text-center mt-4" style={{ color: '#94A3B8', fontSize: '14px' }}>
+        <p className="text-center mt-4" style={{ color: '#B0BDD0', fontSize: '14px' }}>
           Step {currentStep + 1} of {steps.length}
         </p>
       </div>

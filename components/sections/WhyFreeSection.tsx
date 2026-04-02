@@ -82,7 +82,7 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
             <h3 className="text-sm font-bold mb-1.5" style={{ color: '#E2E8F0' }}>
               {isEs ? reason.titleEs : reason.title}
             </h3>
-            <p className="text-xs leading-relaxed" style={{ color: '#94A3B8' }}>
+            <p className="text-xs leading-relaxed" style={{ color: '#B0BDD0' }}>
               {isEs ? reason.descEs : reason.desc}
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
       {/* Comparison bar */}
       <div className="max-w-[560px] mx-auto mt-6 rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-[10px] font-bold tracking-[1.5px] uppercase" style={{ color: '#64748B' }}>
+          <span className="text-[10px] font-bold tracking-[1.5px] uppercase" style={{ color: '#8B95A5' }}>
             {isEs ? 'Comparación de costos mensuales' : 'Monthly cost comparison'}
           </span>
         </div>
@@ -105,7 +105,7 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
             { name: 'LexisNexis', cost: '$400+/mo', width: '100%', color: '#EF4444', highlight: false },
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-3">
-              <span className="text-[11px] font-medium w-[100px] flex-shrink-0" style={{ color: item.highlight ? '#10B981' : '#94A3B8' }}>
+              <span className="text-[11px] font-medium w-[100px] flex-shrink-0" style={{ color: item.highlight ? '#10B981' : '#B0BDD0' }}>
                 {item.name}
               </span>
               <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.03)' }}>

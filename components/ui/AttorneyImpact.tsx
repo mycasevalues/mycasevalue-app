@@ -77,7 +77,7 @@ export default function AttorneyImpact({
           fontSize: '16px', flexShrink: 0,
         }}>⚖️</div>
         <div>
-          <div style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
+          <div style={{ fontSize: '11px', fontWeight: 700, color: '#8B95A5', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
             {isEs ? 'Impacto del abogado' : 'Attorney Impact'}
           </div>
           <div style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>
@@ -88,7 +88,7 @@ export default function AttorneyImpact({
 
       {/* Win Rate Comparison */}
       <div style={{ marginBottom: '20px' }}>
-        <div style={{ fontSize: '11px', fontWeight: 600, color: '#94A3B8', marginBottom: '8px' }}>
+        <div style={{ fontSize: '11px', fontWeight: 600, color: '#B0BDD0', marginBottom: '8px' }}>
           {isEs ? 'Tasa de éxito' : 'Win Rate'}
         </div>
 
@@ -104,11 +104,11 @@ export default function AttorneyImpact({
 
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-              <span style={{ fontSize: '12px', fontWeight: 600, color: '#94A3B8' }}>
+              <span style={{ fontSize: '12px', fontWeight: 600, color: '#B0BDD0' }}>
                 🙋 {isEs ? 'Sin abogado (Pro Se)' : 'Self-Represented (Pro Se)'}
               </span>
             </div>
-            <AnimatedBar value={withoutAttorneyWinRate} maxValue={maxWR} color="#64748B" delay={500} isVisible={isVisible} />
+            <AnimatedBar value={withoutAttorneyWinRate} maxValue={maxWR} color="#8B95A5" delay={500} isVisible={isVisible} />
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function AttorneyImpact({
           border: '1px solid rgba(13,148,136,0.15)',
           textAlign: 'center',
         }}>
-          <div style={{ fontSize: '10px', fontWeight: 600, color: '#64748B', marginBottom: '4px' }}>
+          <div style={{ fontSize: '10px', fontWeight: 600, color: '#8B95A5', marginBottom: '4px' }}>
             👤 {isEs ? 'Recuperación con abogado' : 'Attorney Recovery'}
           </div>
           <div style={{
@@ -139,11 +139,11 @@ export default function AttorneyImpact({
           border: '1px solid rgba(100,116,139,0.15)',
           textAlign: 'center',
         }}>
-          <div style={{ fontSize: '10px', fontWeight: 600, color: '#64748B', marginBottom: '4px' }}>
+          <div style={{ fontSize: '10px', fontWeight: 600, color: '#8B95A5', marginBottom: '4px' }}>
             🙋 {isEs ? 'Recuperación Pro Se' : 'Pro Se Recovery'}
           </div>
           <div style={{
-            fontSize: '18px', fontWeight: 800, color: '#94A3B8',
+            fontSize: '18px', fontWeight: 800, color: '#B0BDD0',
             fontFamily: "'JetBrains Mono', monospace",
           }}>
             {withoutAttorneyRecovery}
@@ -168,7 +168,7 @@ export default function AttorneyImpact({
             <div style={{ fontSize: '13px', fontWeight: 700, color: '#0D9488' }}>
               +{diff} {isEs ? 'puntos porcentuales' : 'percentage points'}
             </div>
-            <div style={{ fontSize: '11px', color: '#64748B' }}>
+            <div style={{ fontSize: '11px', color: '#8B95A5' }}>
               {isEs
                 ? 'Diferencia en tasa de éxito con representación legal'
                 : 'Win rate difference with legal representation'}

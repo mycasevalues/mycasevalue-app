@@ -65,7 +65,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
       <div className="px-6 pt-5 pb-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-[10px] font-bold text-[#94A3B8] tracking-[2px] mb-1">{es ? 'PANEL NACIONAL' : 'NATIONWIDE DASHBOARD'}</div>
+            <div className="text-[10px] font-bold text-[#B0BDD0] tracking-[2px] mb-1">{es ? 'PANEL NACIONAL' : 'NATIONWIDE DASHBOARD'}</div>
             <div className="text-[18px] font-display font-bold text-white">{es ? 'Datos federales en tiempo real' : 'Federal Data Overview'}</div>
           </div>
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full" style={{ background: 'rgba(13,148,136,0.12)' }}>
@@ -86,7 +86,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
             }}>
               <AnimCounter end={m.value} prefix={m.key === 'median' ? '$' : ''} suffix={m.suffix || ''} decimals={m.key === 'duration' ? 1 : 0} />
             </div>
-            <div className="text-[10px] font-semibold text-[#94A3B8] tracking-wide">
+            <div className="text-[10px] font-semibold text-[#B0BDD0] tracking-wide">
               {es ? m.labelEs : m.label}
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
 
       {/* Year-over-year trend chart */}
       <div className="px-6 py-5">
-        <div className="text-[10px] font-bold text-[#94A3B8] tracking-[1.5px] mb-3">{es ? 'TENDENCIA ANUAL DE CASOS' : 'YEARLY CASE TREND'}</div>
+        <div className="text-[10px] font-bold text-[#B0BDD0] tracking-[1.5px] mb-3">{es ? 'TENDENCIA ANUAL DE CASOS' : 'YEARLY CASE TREND'}</div>
         <div className="flex items-end gap-1.5 sm:gap-2 h-[80px] sm:h-[100px]">
           {YEAR_DATA.map((d, i) => {
             const h = (d.cases / maxCases) * 100;
@@ -126,7 +126,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
                     transform: isHovered ? 'scaleX(1.1)' : 'scaleX(1)',
                   }}
                 />
-                <span className="text-[9px] text-[#94A3B8] font-mono">{d.year.slice(2)}</span>
+                <span className="text-[9px] text-[#B0BDD0] font-mono">{d.year.slice(2)}</span>
               </div>
             );
           })}
@@ -135,7 +135,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
         {/* Win rate trend line */}
         <div className="mt-4 pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[10px] font-bold text-[#94A3B8] tracking-[1.5px]">{es ? 'EVOLUCIÓN DE TASA DE ÉXITO' : 'WIN RATE EVOLUTION'}</span>
+            <span className="text-[10px] font-bold text-[#B0BDD0] tracking-[1.5px]">{es ? 'EVOLUCIÓN DE TASA DE ÉXITO' : 'WIN RATE EVOLUTION'}</span>
             <span className="text-[11px] font-mono font-semibold" style={{ color: '#0D9488' }}>
               +{(YEAR_DATA[YEAR_DATA.length - 1].wr - YEAR_DATA[0].wr).toFixed(1)}%
               <svg width="10" height="10" viewBox="0 0 10 10" fill="#0D9488" className="inline ml-1 -mt-0.5"><path d="M5 0L9 5H1L5 0Z" /></svg>
@@ -175,7 +175,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
 
       {/* Footer disclaimer */}
       <div className="px-6 py-3" style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-        <div className="text-[10px] text-center" style={{ color: '#64748B' }}>
+        <div className="text-[10px] text-center" style={{ color: '#8B95A5' }}>
           {es ? 'Datos de fuentes públicas federales. Actualizado periódicamente.' : 'Data from public federal sources. Updated periodically.'}
         </div>
       </div>

@@ -109,7 +109,7 @@ export default async function NOSPage({ params }: PageProps) {
   // Outcome bars for visual chart
   const outcomes = [
     { label: 'Settled', value: outcomeData.fav_set || 30, color: '#0D9488' },
-    { label: 'Dismissed', value: outcomeData.dismiss || 53, color: '#64748B' },
+    { label: 'Dismissed', value: outcomeData.dismiss || 53, color: '#8B95A5' },
     { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#6366F1' },
     { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: '#EF4444' },
   ];
@@ -180,7 +180,7 @@ export default async function NOSPage({ params }: PageProps) {
             ← MyCaseValue
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/nos" className="text-[13px] font-medium transition hover:opacity-80" style={{ color: '#94A3B8' }}>
+            <Link href="/nos" className="text-[13px] font-medium transition hover:opacity-80" style={{ color: '#B0BDD0' }}>
               All Case Types
             </Link>
           </div>
@@ -201,7 +201,7 @@ export default async function NOSPage({ params }: PageProps) {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4" style={{ letterSpacing: '-2px', lineHeight: 1.1 }}>
             {nosInfo.label}
           </h1>
-          <p className="text-lg sm:text-xl max-w-2xl" style={{ color: '#8B9AB5', lineHeight: 1.7 }}>
+          <p className="text-lg sm:text-xl max-w-2xl" style={{ color: '#B0BDD0', lineHeight: 1.7 }}>
             Federal court outcome data for {nosInfo.label} cases. Win rates, timelines, settlement percentages, and outcome distributions from public court records.
           </p>
         </div>
@@ -224,7 +224,7 @@ export default async function NOSPage({ params }: PageProps) {
               <div style={{ fontSize: '28px', fontWeight: 800, color: stat.color, fontFamily: "'JetBrains Mono', monospace", letterSpacing: '-1px' }}>
                 {stat.value}
               </div>
-              <div style={{ fontSize: '11px', fontWeight: 600, color: '#64748B', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 600, color: '#8B95A5', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '1px' }}>
                 {stat.label}
               </div>
             </div>
@@ -266,7 +266,7 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-5xl mx-auto">
           <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#131B2E', border: '1px solid #1E293B' }}>
             <h2 className="text-xl font-bold mb-4">What You Should Know</h2>
-            <div className="space-y-4" style={{ fontSize: '14px', color: '#94A3B8', lineHeight: 1.8 }}>
+            <div className="space-y-4" style={{ fontSize: '14px', color: '#B0BDD0', lineHeight: 1.8 }}>
               <p>
                 {nosInfo.label} cases (NOS code {code}) fall under the <strong style={{ color: '#F0F2F5' }}>{nosInfo.category}</strong> category in federal court.
                 The data shown here represents aggregate historical outcomes and should be used for research purposes only.
@@ -294,7 +294,7 @@ export default async function NOSPage({ params }: PageProps) {
                 <Link key={rel.code} href={`/nos/${rel.code}`}
                   className="rounded-xl p-4 transition-all hover:scale-[1.02]"
                   style={{ background: '#131B2E', border: '1px solid #1E293B' }}>
-                  <span className="text-[11px] font-bold" style={{ color: '#64748B' }}>NOS {rel.code}</span>
+                  <span className="text-[11px] font-bold" style={{ color: '#8B95A5' }}>NOS {rel.code}</span>
                   <div className="text-[14px] font-semibold mt-1" style={{ color: '#F0F2F5' }}>{rel.label}</div>
                 </Link>
               ))}
@@ -306,7 +306,7 @@ export default async function NOSPage({ params }: PageProps) {
       {/* CTA */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 text-center">
         <h2 className="text-3xl font-bold mb-4">Get Your Detailed Report</h2>
-        <p className="text-[#94A3B8] mb-8 max-w-2xl mx-auto">
+        <p className="text-[#B0BDD0] mb-8 max-w-2xl mx-auto">
           Use our interactive research tool to explore detailed outcomes, recovery ranges, and timeline data for {nosInfo.label} cases.
         </p>
         <Link href="/" className="inline-block px-10 py-4 rounded-xl font-semibold text-lg text-white transition hover:scale-[1.02]"
@@ -319,7 +319,7 @@ export default async function NOSPage({ params }: PageProps) {
       <section className="border-t px-4 sm:px-6 lg:px-8 py-12" style={{ borderColor: '#1E293B', background: '#131B2E' }}>
         <div className="max-w-3xl mx-auto">
           <h3 className="font-semibold mb-4 text-[14px]" style={{ color: '#F0F2F5' }}>Legal Disclaimer</h3>
-          <p className="text-[13px] leading-relaxed" style={{ color: '#64748B' }}>
+          <p className="text-[13px] leading-relaxed" style={{ color: '#8B95A5' }}>
             This information is provided for educational and research purposes only and does not constitute legal advice.
             The statistics presented are based on publicly available federal court data and should not be used
             as the sole basis for legal decisions. Actual case outcomes depend on specific facts, jurisdiction,

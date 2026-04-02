@@ -149,7 +149,7 @@ export default function ConfidenceRing({
           </div>
           <div style={{
             fontSize: Math.max(size * 0.065, 8),
-            fontWeight: 600, color: '#64748B',
+            fontWeight: 600, color: '#8B95A5',
             textTransform: 'uppercase',
             letterSpacing: '1.5px',
             marginTop: '4px',
@@ -173,7 +173,7 @@ export default function ConfidenceRing({
           {scoreLabel}
         </div>
         {sublabel && (
-          <div style={{ fontSize: '11px', color: '#64748B', marginTop: '2px' }}>
+          <div style={{ fontSize: '11px', color: '#8B95A5', marginTop: '2px' }}>
             {sublabel}
           </div>
         )}

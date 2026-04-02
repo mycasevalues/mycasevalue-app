@@ -124,7 +124,7 @@ export default function SocialProofBar({
 
         .ticker-time {
           font-size: 0.75rem;
-          color: #94A3B8;
+          color: #B0BDD0;
           margin-top: 0.15rem;
         }
 
@@ -185,7 +185,7 @@ export default function SocialProofBar({
 
         .metric-label {
           font-size: 0.75rem;
-          color: #94A3B8;
+          color: #B0BDD0;
           margin: 0;
           margin-bottom: 0.25rem;
           font-weight: 600;
@@ -206,7 +206,7 @@ export default function SocialProofBar({
 
         .press-label {
           font-size: 0.7rem;
-          color: #94A3B8;
+          color: #B0BDD0;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           margin-bottom: 0.75rem;
@@ -226,7 +226,7 @@ export default function SocialProofBar({
           border: 1px solid #1E293B;
           border-radius: 0.4rem;
           background-color: #131B2E;
-          color: #94A3B8;
+          color: #B0BDD0;
           font-size: 0.8rem;
           font-weight: 500;
           opacity: 0.8;
@@ -260,7 +260,7 @@ export default function SocialProofBar({
 
         .verification-label {
           font-size: 0.7rem;
-          color: #94A3B8;
+          color: #B0BDD0;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           margin-bottom: 0.75rem;

@@ -92,7 +92,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
         onMouseLeave={() => setHoveredMetric(null)}
       >
         <div className="mb-3 flex items-center justify-between">
-          <label className="text-sm font-medium text-[#94A3B8]">{label}</label>
+          <label className="text-sm font-medium text-[#B0BDD0]">{label}</label>
           {caseB && winner && (
             <span className="text-xs text-[#5EEAD4] font-semibold">
               ✓ {winner === 'A' ? 'Case A' : 'Case B'} wins
@@ -193,7 +193,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
             <h2 className="text-2xl font-bold text-[#F0F2F5] mb-2">
               {lang === 'es' ? 'Comparación de casos' : 'Case Comparison'}
             </h2>
-            <p className="text-sm text-[#94A3B8]">
+            <p className="text-sm text-[#B0BDD0]">
               {lang === 'es'
                 ? 'Analiza las métricas clave lado a lado'
                 : 'Analyze key metrics side by side'}
@@ -260,7 +260,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
         <div className="bg-[#131B2E] border-2 border-dashed border-[#1E293B] rounded-lg p-8 md:p-12 text-center">
           <div className="mb-4">
             <svg
-              className="w-12 h-12 mx-auto text-[#94A3B8] mb-4"
+              className="w-12 h-12 mx-auto text-[#B0BDD0] mb-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -276,7 +276,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           <h3 className="text-lg font-semibold text-[#F0F2F5] mb-2">
             {lang === 'es' ? 'Selecciona un caso para comparar' : 'Select a case to compare'}
           </h3>
-          <p className="text-sm text-[#94A3B8] mb-6">
+          <p className="text-sm text-[#B0BDD0] mb-6">
             {lang === 'es'
               ? 'Elige un segundo tipo de caso para ver un análisis comparativo detallado'
               : 'Choose a second case type to see detailed comparative analysis'}

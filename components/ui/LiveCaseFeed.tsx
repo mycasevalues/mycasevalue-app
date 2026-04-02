@@ -62,7 +62,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
           <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: '#5EEAD4' }} />
           <span className="text-[13px] font-semibold text-white">{es ? 'Actividad en tiempo real' : 'Live Case Activity'}</span>
         </div>
-        <div className="text-[11px] text-[#94A3B8] font-mono">
+        <div className="text-[11px] text-[#B0BDD0] font-mono">
           {es ? 'Actualizado cada 30s' : 'Updates every 30s'}
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
                   }}>
                     {isWon ? (es ? 'Ganado' : 'Won') : (es ? 'Acuerdo' : 'Settled')}
                   </span>
-                  <span className="text-[10px] text-[#94A3B8]">{ev.state}</span>
+                  <span className="text-[10px] text-[#B0BDD0]">{ev.state}</span>
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
                 <div className="text-[14px] font-bold font-mono" style={{ color: isWon ? '#0D9488' : '#6366F1' }}>
                   {ev.amount}
                 </div>
-                <div className="text-[10px] text-[#94A3B8]">{ev.time}</div>
+                <div className="text-[10px] text-[#B0BDD0]">{ev.time}</div>
               </div>
             </div>
           );
@@ -122,7 +122,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
 
       {/* Footer */}
       <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(79,70,229,0.04)' }}>
-        <div className="text-[11px] text-[#94A3B8]">
+        <div className="text-[11px] text-[#B0BDD0]">
           {es ? 'Basado en datos agregados de casos federales' : 'Based on aggregate federal case data'}
         </div>
         {visibleCount < CASE_EVENTS.length && (

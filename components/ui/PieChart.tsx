@@ -94,7 +94,7 @@ export default function PieChart({ segments, size = 200, strokeWidth = 14, lang 
         </div>
         <div style={{
           fontSize: size * 0.055,
-          color: '#94A3B8',
+          color: '#B0BDD0',
           fontWeight: 600,
           letterSpacing: '0.05em',
           marginTop: 2,

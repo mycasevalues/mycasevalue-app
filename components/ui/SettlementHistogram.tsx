@@ -107,7 +107,7 @@ export default function SettlementHistogram({
         </h3>
         <p
           className="text-sm mt-1"
-          style={{ color: '#94A3B8' }}
+          style={{ color: '#B0BDD0' }}
         >
           {lang === 'en'
             ? `Median settlement: ${formatCurrency(median)}`
@@ -160,7 +160,7 @@ export default function SettlementHistogram({
                   y={y + 4}
                   textAnchor="end"
                   fontSize={12}
-                  fill="#94A3B8"
+                  fill="#B0BDD0"
                 >
                   {percent}%
                 </text>
@@ -226,7 +226,7 @@ export default function SettlementHistogram({
                       y={y - 14}
                       textAnchor="middle"
                       fontSize={11}
-                      fill="#94A3B8"
+                      fill="#B0BDD0"
                     >
                       {range.percentage}%
                     </text>
@@ -294,7 +294,7 @@ export default function SettlementHistogram({
                 y={chartHeight + padding + 25}
                 textAnchor="middle"
                 fontSize={11}
-                fill="#94A3B8"
+                fill="#B0BDD0"
               >
                 {range.label}
               </text>
@@ -310,7 +310,7 @@ export default function SettlementHistogram({
             className="w-3 h-3 rounded-full"
             style={{ backgroundColor: '#10B981' }}
           />
-          <span className="text-sm" style={{ color: '#94A3B8' }}>
+          <span className="text-sm" style={{ color: '#B0BDD0' }}>
             {lang === 'en' ? 'Median' : 'Mediana'}
           </span>
         </div>
@@ -320,7 +320,7 @@ export default function SettlementHistogram({
               className="w-3 h-3 rounded-full"
               style={{ backgroundColor: '#F59E0B' }}
             />
-            <span className="text-sm" style={{ color: '#94A3B8' }}>
+            <span className="text-sm" style={{ color: '#B0BDD0' }}>
               {lang === 'en' ? 'Your Amount' : 'Tu Cantidad'}
             </span>
           </div>

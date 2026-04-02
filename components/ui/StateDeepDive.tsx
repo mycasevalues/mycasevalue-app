@@ -178,7 +178,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
   if (!stateCode || !STATE_DATA[stateCode]) {
     return (
       <div className="p-8 text-center rounded-lg" style={{ backgroundColor: '#0B1221' }}>
-        <p style={{ color: '#94A3B8' }}>{t.selectState}</p>
+        <p style={{ color: '#B0BDD0' }}>{t.selectState}</p>
       </div>
     );
   }
@@ -197,13 +197,13 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
         <h2 className="text-2xl font-bold mb-2" style={{ color: '#E2E8F0' }}>
           {state.name} {t.title}
         </h2>
-        <p style={{ color: '#94A3B8' }}>District-level litigation analytics</p>
+        <p style={{ color: '#B0BDD0' }}>District-level litigation analytics</p>
       </div>
 
       {/* State Summary */}
       <div className="grid grid-cols-3 gap-4">
         <div className="p-4 rounded-lg" style={{ backgroundColor: '#131B2E', borderColor: '#1E293B', borderWidth: 1 }}>
-          <p style={{ color: '#94A3B8' }} className="text-sm mb-1">
+          <p style={{ color: '#B0BDD0' }} className="text-sm mb-1">
             {t.totalCases}
           </p>
           <p className="text-2xl font-bold" style={{ color: '#4F46E5' }}>
@@ -211,7 +211,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
           </p>
         </div>
         <div className="p-4 rounded-lg" style={{ backgroundColor: '#131B2E', borderColor: '#1E293B', borderWidth: 1 }}>
-          <p style={{ color: '#94A3B8' }} className="text-sm mb-1">
+          <p style={{ color: '#B0BDD0' }} className="text-sm mb-1">
             {t.overallWinRate}
           </p>
           <p className="text-2xl font-bold" style={{ color: '#0D9488' }}>
@@ -222,7 +222,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
           </p>
         </div>
         <div className="p-4 rounded-lg" style={{ backgroundColor: '#131B2E', borderColor: '#1E293B', borderWidth: 1 }}>
-          <p style={{ color: '#94A3B8' }} className="text-sm mb-1">
+          <p style={{ color: '#B0BDD0' }} className="text-sm mb-1">
             {t.sol}
           </p>
           <p className="text-2xl font-bold" style={{ color: '#E2E8F0' }}>
@@ -243,7 +243,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
             </h3>
             <div className="grid grid-cols-2 gap-4 mb-3">
               <div>
-                <p style={{ color: '#94A3B8' }} className="text-xs mb-1">
+                <p style={{ color: '#B0BDD0' }} className="text-xs mb-1">
                   {t.totalCases}
                 </p>
                 <p className="text-lg font-bold" style={{ color: '#4F46E5' }}>
@@ -251,7 +251,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
                 </p>
               </div>
               <div>
-                <p style={{ color: '#94A3B8' }} className="text-xs mb-1">
+                <p style={{ color: '#B0BDD0' }} className="text-xs mb-1">
                   {t.winRate}
                 </p>
                 <p className="text-lg font-bold" style={{ color: '#0D9488' }}>
@@ -261,7 +261,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p style={{ color: '#94A3B8' }} className="text-xs mb-1">
+                <p style={{ color: '#B0BDD0' }} className="text-xs mb-1">
                   {t.avgSettlement}
                 </p>
                 <p className="text-sm font-semibold" style={{ color: '#E2E8F0' }}>
@@ -269,7 +269,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
                 </p>
               </div>
               <div>
-                <p style={{ color: '#94A3B8' }} className="text-xs mb-1">
+                <p style={{ color: '#B0BDD0' }} className="text-xs mb-1">
                   {t.avgDuration}
                 </p>
                 <p className="text-sm font-semibold" style={{ color: '#E2E8F0' }}>
@@ -284,7 +284,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
       {/* Statute of Limitations Timer */}
       {timeRemaining && (
         <div className="p-4 rounded-lg" style={{ backgroundColor: '#131B2E', borderColor: '#0D9488', borderWidth: 2 }}>
-          <p style={{ color: '#94A3B8' }} className="text-sm mb-2">
+          <p style={{ color: '#B0BDD0' }} className="text-sm mb-2">
             ⏱ {t.sol} Countdown
           </p>
           <p className="text-xl font-bold" style={{ color: '#0D9488' }}>

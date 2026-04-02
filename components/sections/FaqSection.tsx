@@ -141,7 +141,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
         <div className="text-center mb-10">
           <div
             className="text-[11px] font-bold tracking-[2.5px] uppercase mb-3"
-            style={{ color: '#94A3B8' }}
+            style={{ color: '#B0BDD0' }}
           >
             {lang === 'es' ? 'Preguntas Frecuentes' : 'Frequently Asked Questions'}
           </div>
@@ -151,7 +151,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
           >
             {lang === 'es' ? 'Respuestas a tus preguntas' : 'Answers to your questions'}
           </h2>
-          <p className="text-base text-[#94A3B8] max-w-2xl mx-auto">
+          <p className="text-base text-[#B0BDD0] max-w-2xl mx-auto">
             {lang === 'es'
               ? 'Todo lo que necesitas saber sobre MyCaseValue, nuestros datos y cómo funciona el informe.'
               : 'Everything you need to know about MyCaseValue, our data, and how reports work.'}
@@ -193,7 +193,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                   height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke={openIdx === idx ? '#4F46E5' : '#94A3B8'}
+                  stroke={openIdx === idx ? '#4F46E5' : '#B0BDD0'}
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -218,7 +218,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                 }}
               >
                 <div className="px-6 pb-4 border-t" style={{ borderColor: '#1E293B' }}>
-                  <p className="text-sm sm:text-base leading-relaxed text-[#94A3B8] font-body">
+                  <p className="text-sm sm:text-base leading-relaxed text-[#B0BDD0] font-body">
                     {item.a}
                   </p>
                 </div>
@@ -229,7 +229,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
 
         {/* Footer CTA */}
         <div className="mt-10 p-6 rounded-xl text-center" style={{ background: '#131B2E' }}>
-          <p className="text-sm text-[#94A3B8] mb-3">
+          <p className="text-sm text-[#B0BDD0] mb-3">
             {lang === 'es'
               ? '¿No encontraste tu respuesta?'
               : 'Didn\'t find your answer?'}

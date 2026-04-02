@@ -147,12 +147,12 @@ export default function SocialProofToast({ lang = 'en', active = true }: SocialP
           <button
             onClick={handleDismiss}
             className="flex-shrink-0 text-lg leading-none transition-colors"
-            style={{ color: '#94A3B8' }}
+            style={{ color: '#B0BDD0' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = '#E2E8F0';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = '#94A3B8';
+              e.currentTarget.style.color = '#B0BDD0';
             }}
           >
             ×

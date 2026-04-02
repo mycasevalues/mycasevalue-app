@@ -241,7 +241,7 @@ export function Navbar({
         <div className="flex flex-col gap-3 p-5 h-full overflow-y-auto">
           {/* Language */}
           <div className="pb-3 border-b" style={{ borderColor: '#1E293B' }}>
-            <span className="text-[10px] font-bold tracking-[2px] uppercase mb-2 block" style={{ color: '#64748B' }}>
+            <span className="text-[10px] font-bold tracking-[2px] uppercase mb-2 block" style={{ color: '#8B95A5' }}>
               {lang === 'es' ? 'Idioma' : 'Language'}
             </span>
             <LanguageToggle lang={lang} setLang={setLang} />
@@ -261,7 +261,7 @@ export function Navbar({
                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors text-sm font-medium"
                 style={{ background: 'transparent', color: '#E2E8F0', textDecoration: 'none' }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: '#64748B' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: '#8B95A5' }}>
                   <path d={link.icon}/>
                 </svg>
                 {link.label}

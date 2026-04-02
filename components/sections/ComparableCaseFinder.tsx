@@ -89,7 +89,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
   }
 
   const SortIcon = ({ active, asc }: { active: boolean; asc: boolean }) => (
-    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={active ? '#6366F1' : '#64748B'} strokeWidth="2.5" style={{ display: 'inline-block', marginLeft: 2 }}>
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={active ? '#6366F1' : '#8B95A5'} strokeWidth="2.5" style={{ display: 'inline-block', marginLeft: 2 }}>
       <path d={asc ? 'M12 19V5M5 12l7-7 7 7' : 'M12 5v14M5 12l7 7 7-7'} />
     </svg>
   );
@@ -162,7 +162,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
                   {fmtAmount(v.amount)}
                 </td>
                 <td className="px-3 py-2.5" style={{ borderBottom: '1px solid var(--border-default)' }}>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold" style={{ background: (OUTCOME_COLORS[v.outcome] || '#64748B') + '15', color: OUTCOME_COLORS[v.outcome] || '#64748B' }}>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold" style={{ background: (OUTCOME_COLORS[v.outcome] || '#8B95A5') + '15', color: OUTCOME_COLORS[v.outcome] || '#8B95A5' }}>
                     {v.outcome}
                   </span>
                 </td>
@@ -188,7 +188,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
             </div>
             <div className="flex flex-wrap gap-1.5">
               <span className="px-2 py-0.5 rounded-full text-[10px] font-medium" style={{ background: 'rgba(99,102,241,0.1)', color: '#A5B4FC' }}>{v.caseType}</span>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold" style={{ background: (OUTCOME_COLORS[v.outcome] || '#64748B') + '15', color: OUTCOME_COLORS[v.outcome] || '#64748B' }}>{v.outcome}</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold" style={{ background: (OUTCOME_COLORS[v.outcome] || '#8B95A5') + '15', color: OUTCOME_COLORS[v.outcome] || '#8B95A5' }}>{v.outcome}</span>
             </div>
             <div className="text-[9px] mt-2" style={{ color: 'var(--fg-subtle)' }}>{t.source}: {v.source}</div>
           </div>

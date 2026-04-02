@@ -103,7 +103,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
         {/* Trust signals */}
         <div
           className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm font-medium"
-          style={{ color: '#8B9AB5' }}
+          style={{ color: '#B0BDD0' }}
         >
           <div className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2">
@@ -111,14 +111,14 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
             </svg>
             {lang === 'es' ? 'Sin crear cuenta' : 'No account required'}
           </div>
-          <div className="hidden sm:block w-1 h-1 rounded-full" style={{ background: '#94A3B8' }} />
+          <div className="hidden sm:block w-1 h-1 rounded-full" style={{ background: '#B0BDD0' }} />
           <div className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2">
               <polyline points="20 6 9 17 4 12" />
             </svg>
             {lang === 'es' ? 'Entrega instantánea' : 'Instant delivery'}
           </div>
-          <div className="hidden sm:block w-1 h-1 rounded-full" style={{ background: '#94A3B8' }} />
+          <div className="hidden sm:block w-1 h-1 rounded-full" style={{ background: '#B0BDD0' }} />
           <div className="flex items-center gap-2">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2">
               <polyline points="20 6 9 17 4 12" />
@@ -137,7 +137,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-lg font-bold" style={{ color: '#6366F1' }}>{stat.value}</div>
-              <div className="text-[10px]" style={{ color: '#64748B' }}>{stat.label}</div>
+              <div className="text-[10px]" style={{ color: '#8B95A5' }}>{stat.label}</div>
             </div>
           ))}
         </div>

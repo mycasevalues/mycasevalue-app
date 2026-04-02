@@ -20,7 +20,7 @@ const darkModeColors = {
   bg: '#131B2E',
   border: '#1E293B',
   text: '#F0F2F5',
-  muted: '#94A3B8',
+  muted: '#B0BDD0',
   accent: '#4F46E5',
 };
 

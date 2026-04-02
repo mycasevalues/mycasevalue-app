@@ -149,7 +149,7 @@ export default function DataMethodologySection({ lang = 'en' }: DataMethodologyS
 
       {/* Data Pipeline visualization */}
       <div className="max-w-[520px] mx-auto mb-8">
-        <div className="text-[10px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#64748B' }}>
+        <div className="text-[10px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#8B95A5' }}>
           {t.pipelineTitle}
         </div>
         <div className="flex items-center justify-between">
@@ -163,7 +163,7 @@ export default function DataMethodologySection({ lang = 'en' }: DataMethodologyS
                 <span className="text-[10px] font-bold" style={{ color: '#E2E8F0' }}>
                   {isEs ? step.labelEs : step.label}
                 </span>
-                <span className="text-[8px] text-center max-w-[80px] hidden sm:block" style={{ color: '#64748B' }}>
+                <span className="text-[8px] text-center max-w-[80px] hidden sm:block" style={{ color: '#8B95A5' }}>
                   {isEs ? step.descEs : step.desc}
                 </span>
               </div>
@@ -177,7 +177,7 @@ export default function DataMethodologySection({ lang = 'en' }: DataMethodologyS
 
       {/* Source selector + detail */}
       <div className="max-w-[520px] mx-auto">
-        <div className="text-[10px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#64748B' }}>
+        <div className="text-[10px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#8B95A5' }}>
           {t.sourcesTitle}
         </div>
 
@@ -190,7 +190,7 @@ export default function DataMethodologySection({ lang = 'en' }: DataMethodologyS
               className="px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all"
               style={{
                 background: activeSource === s.id ? `${s.color}20` : 'rgba(255,255,255,0.02)',
-                color: activeSource === s.id ? s.color : '#64748B',
+                color: activeSource === s.id ? s.color : '#8B95A5',
                 border: `1px solid ${activeSource === s.id ? `${s.color}40` : 'rgba(255,255,255,0.05)'}`,
                 cursor: 'pointer',
               }}
@@ -206,10 +206,10 @@ export default function DataMethodologySection({ lang = 'en' }: DataMethodologyS
             <div>
               <h3 className="text-sm font-bold" style={{ color: '#E2E8F0' }}>{active.name}</h3>
               <div className="flex gap-3 mt-1">
-                <span className="text-[10px]" style={{ color: '#64748B' }}>
+                <span className="text-[10px]" style={{ color: '#8B95A5' }}>
                   {t.records}: <span style={{ color: active.color }}>{active.records}</span>
                 </span>
-                <span className="text-[10px]" style={{ color: '#64748B' }}>
+                <span className="text-[10px]" style={{ color: '#8B95A5' }}>
                   {t.updates}: <span style={{ color: active.color }}>{isEs ? active.updateFreqEs : active.updateFreq}</span>
                 </span>
               </div>
@@ -227,7 +227,7 @@ export default function DataMethodologySection({ lang = 'en' }: DataMethodologyS
               </svg>
             </a>
           </div>
-          <p className="text-xs leading-relaxed" style={{ color: '#94A3B8' }}>
+          <p className="text-xs leading-relaxed" style={{ color: '#B0BDD0' }}>
             {isEs ? active.descriptionEs : active.description}
           </p>
         </div>

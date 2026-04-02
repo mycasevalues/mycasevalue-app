@@ -19,7 +19,7 @@ export function Button({
   const variants: Record<string, string> = {
     primary: 'bg-gradient-to-r from-[#4F46E5] to-[#6366F1] text-white rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]',
     secondary: 'bg-transparent border-2 border-[#334155] text-[#E2E8F0] rounded-xl hover:bg-[#1E293B] hover:text-white hover:-translate-y-0.5 active:scale-[0.98]',
-    ghost: 'bg-transparent text-[#94A3B8] hover:bg-[#1E293B] rounded-lg active:scale-[0.98]',
+    ghost: 'bg-transparent text-[#B0BDD0] hover:bg-[#1E293B] rounded-lg active:scale-[0.98]',
   }
 
   const sizes: Record<string, string> = {

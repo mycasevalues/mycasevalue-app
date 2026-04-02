@@ -160,7 +160,7 @@ export default function AboutPage() {
                 {
                   name: 'PACER (Public Access to Court Electronic Records)',
                   description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
-                  color: '#64748B',
+                  color: '#8B95A5',
                 },
               ].map((source, i) => (
                 <div key={i} className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
@@ -206,7 +206,7 @@ export default function AboutPage() {
                 { v: '5.1M+', l: 'Federal cases', c: '#4F46E5' },
                 { v: '84', l: 'Case types', c: '#0D9488' },
                 { v: '94', l: 'Federal districts', c: '#1A3260' },
-                { v: '50+ yrs', l: 'Historical data', c: '#64748B' },
+                { v: '50+ yrs', l: 'Historical data', c: '#8B95A5' },
               ].map((s, i) => (
                 <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
                   <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>

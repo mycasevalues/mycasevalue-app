@@ -217,7 +217,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
           font-family: 'Outfit', sans-serif;
           font-weight: 600;
           font-size: 14px;
-          color: #94A3B8;
+          color: #B0BDD0;
           text-transform: uppercase;
           letter-spacing: 0.5px;
           margin-bottom: 8px;
@@ -231,7 +231,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         }
 
         .no-selection {
-          color: #64748B;
+          color: #8B95A5;
           font-size: 13px;
           padding: 24px 16px;
           text-align: center;
@@ -242,7 +242,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         {/* Header */}
         <div style={{ marginBottom: '40px' }}>
           <h1 className="section-title">{t.title}</h1>
-          <p style={{ color: '#94A3B8', fontSize: '14px', marginBottom: '24px' }}>
+          <p style={{ color: '#B0BDD0', fontSize: '14px', marginBottom: '24px' }}>
             {t.subtitle}
           </p>
         </div>
@@ -251,7 +251,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '40px' }}>
           {[0, 1, 2].map(index => (
             <div key={index} className="selector-card">
-              <label style={{ display: 'block', color: '#64748B', fontSize: '12px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+              <label style={{ display: 'block', color: '#8B95A5', fontSize: '12px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 {t.selectCase} {index + 1}
               </label>
               <select
@@ -303,7 +303,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
 
                     return (
                       <div key={idx}>
-                        <div style={{ color: '#94A3B8', fontSize: '12px', marginBottom: '8px' }}>
+                        <div style={{ color: '#B0BDD0', fontSize: '12px', marginBottom: '8px' }}>
                           {caseItem.label}
                         </div>
                         <div className="metric-value">{metric.format(value as string | null)}</div>

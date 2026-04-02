@@ -98,11 +98,11 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
       {/* Header */}
       {vals.length > 0 && (
         <div className="flex items-center justify-between mb-3 px-1 flex-wrap gap-1">
-          <div className="font-bold tracking-[2px] uppercase" style={{ color: '#94A3B8', fontSize: Math.max(8, fontSize) }}>
+          <div className="font-bold tracking-[2px] uppercase" style={{ color: '#B0BDD0', fontSize: Math.max(8, fontSize) }}>
             {lang === 'es' ? 'MAPA DE TASAS POR ESTADO' : 'WIN RATES BY STATE'}
           </div>
           <div className="flex items-center gap-1.5">
-            <span style={{ color: '#94A3B8', fontSize: Math.max(8, fontSize) }}>{lang === 'es' ? 'Promedio nacional' : 'National avg'}:</span>
+            <span style={{ color: '#B0BDD0', fontSize: Math.max(8, fontSize) }}>{lang === 'es' ? 'Promedio nacional' : 'National avg'}:</span>
             <span className="font-bold font-data" style={{ color: getHeatColor(avgRate), fontSize: Math.max(10, fontSize + 2) }}>{avgRate.toFixed(1)}%</span>
           </div>
         </div>
@@ -189,7 +189,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
 
       {/* Legend */}
       <div className="flex items-center justify-center gap-2 mt-3">
-        <span className="text-[9px] font-semibold" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'Menor' : 'Lower'}</span>
+        <span className="text-[9px] font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Menor' : 'Lower'}</span>
         <div className="flex h-2 rounded-full overflow-hidden" style={{ width: 120 }}>
           <div className="flex-1" style={{ background: '#DC2626' }} />
           <div className="flex-1" style={{ background: '#E87461' }} />
@@ -199,14 +199,14 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
           <div className="flex-1" style={{ background: '#0D9488' }} />
           <div className="flex-1" style={{ background: '#059669' }} />
         </div>
-        <span className="text-[9px] font-semibold" style={{ color: '#94A3B8' }}>{lang === 'es' ? 'Mayor' : 'Higher'}</span>
+        <span className="text-[9px] font-semibold" style={{ color: '#B0BDD0' }}>{lang === 'es' ? 'Mayor' : 'Higher'}</span>
       </div>
 
       {/* Top/Bottom states */}
       {sortedStates.length > 5 && (
         <div className="flex gap-6 mt-4 justify-center">
           <div className="text-center">
-            <div className="text-[9px] font-bold tracking-[1.5px] mb-1.5" style={{ color: '#94A3B8' }}>
+            <div className="text-[9px] font-bold tracking-[1.5px] mb-1.5" style={{ color: '#B0BDD0' }}>
               {lang === 'es' ? '▲ MEJORES' : '▲ HIGHEST'}
             </div>
             <div className="flex gap-1">
@@ -222,7 +222,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
           </div>
           <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #1E293B, transparent)' }} />
           <div className="text-center">
-            <div className="text-[9px] font-bold tracking-[1.5px] mb-1.5" style={{ color: '#94A3B8' }}>
+            <div className="text-[9px] font-bold tracking-[1.5px] mb-1.5" style={{ color: '#B0BDD0' }}>
               {lang === 'es' ? '▼ MÁS BAJOS' : '▼ LOWEST'}
             </div>
             <div className="flex gap-1">

@@ -95,7 +95,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
   return (
     <div ref={ref} style={{ padding: '16px 0' }}>
       {caseType && (
-        <div style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px' }}>
+        <div style={{ fontSize: '11px', fontWeight: 700, color: '#8B95A5', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px' }}>
           {lang === 'es' ? 'Línea de tiempo típica' : 'Typical Case Timeline'}
         </div>
       )}
@@ -168,7 +168,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 {/* Description */}
                 {event.description && i <= activeIdx && (
                   <div style={{
-                    fontSize: '9px', color: '#64748B',
+                    fontSize: '9px', color: '#8B95A5',
                     marginTop: '4px', textAlign: 'center',
                     maxWidth: '80px', lineHeight: 1.3,
                   }}>
@@ -236,7 +236,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 </div>
                 {event.description && i <= activeIdx && (
                   <div style={{
-                    fontSize: '11px', color: '#64748B',
+                    fontSize: '11px', color: '#8B95A5',
                     marginTop: '2px', lineHeight: 1.4,
                   }}>
                     {event.description}
@@ -267,7 +267,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
           <div style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>
             {lang === 'es' ? 'Duración media' : 'Median Duration'}: <span style={{ color: '#6366F1', fontFamily: "'JetBrains Mono', monospace" }}>{medianMonths} {lang === 'es' ? 'meses' : 'months'}</span>
           </div>
-          <div style={{ fontSize: '11px', color: '#64748B' }}>
+          <div style={{ fontSize: '11px', color: '#8B95A5' }}>
             {lang === 'es' ? 'Basado en datos históricos de casos federales' : 'Based on historical federal case data'}
           </div>
         </div>

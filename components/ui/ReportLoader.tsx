@@ -262,13 +262,13 @@ export default function ReportLoader({
           <div className={`text-center transition-opacity duration-300 ${fadeClass}`}>
             <div className="mb-6 space-y-4">
               <div className="animate-slide-up">
-                <p className="text-sm text-[#94A3B8] mb-1">Win Rate</p>
+                <p className="text-sm text-[#B0BDD0] mb-1">Win Rate</p>
                 <p className="font-mono text-2xl font-bold text-[#0D9488]">
                   {winRate}%
                 </p>
               </div>
               <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                <p className="text-sm text-[#94A3B8] mb-1">Avg Settlement</p>
+                <p className="text-sm text-[#B0BDD0] mb-1">Avg Settlement</p>
                 <p className="font-mono text-2xl font-bold text-[#4F46E5]">
                   ${(settlementAvg / 1000).toFixed(0)}K
                 </p>
@@ -310,7 +310,7 @@ export default function ReportLoader({
 
         {/* Bottom text */}
         <div className="mt-12 text-center">
-          <p className="font-mono text-xs text-[#94A3B8]">{t.powered}</p>
+          <p className="font-mono text-xs text-[#B0BDD0]">{t.powered}</p>
         </div>
       </div>
     </div>

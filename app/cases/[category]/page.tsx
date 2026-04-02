@@ -287,7 +287,7 @@ async function CategoryPage({
     return (
       <div style={{ padding: '40px 20px', textAlign: 'center' }}>
         <h1 className="text-2xl font-bold">Category not found</h1>
-        <p className="mt-4" style={{ color: '#94A3B8' }}>The case category you&apos;re looking for doesn&apos;t exist.</p>
+        <p className="mt-4" style={{ color: '#B0BDD0' }}>The case category you&apos;re looking for doesn&apos;t exist.</p>
         <a href="/cases" className="inline-block mt-6 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: '#4F46E5' }}>Browse all categories</a>
       </div>
     );
@@ -378,7 +378,7 @@ async function CategoryPage({
           maxWidth: 1200,
           margin: '0 auto',
           fontSize: '14px',
-          color: '#94A3B8',
+          color: '#B0BDD0',
           fontFamily: 'Outfit, system-ui, sans-serif',
         }}>
           <Link href="/" style={{ color: '#4F46E5', textDecoration: 'none' }}>

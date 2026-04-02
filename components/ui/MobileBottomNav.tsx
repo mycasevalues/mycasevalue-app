@@ -196,7 +196,7 @@ export default function MobileBottomNav({
               onTouchEnd={handlePressUp}
               className="relative flex flex-col items-center justify-center transition-all duration-200 focus:outline-none"
               style={{
-                color: item.isActive ? '#4F46E5' : '#64748B',
+                color: item.isActive ? '#4F46E5' : '#8B95A5',
                 transform: isPressed === item.id ? 'scale(0.92)' : 'scale(1)',
               }}
               aria-label={item.label}

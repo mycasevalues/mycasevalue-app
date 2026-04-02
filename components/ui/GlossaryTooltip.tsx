@@ -157,10 +157,10 @@ export default function GlossaryTerm({
           className="animate-in fade-in-0 duration-200 rounded-lg border px-3 py-2 max-w-xs"
         >
           <div className="font-semibold">{term}</div>
-          <div className="text-sm mt-1" style={{ color: '#94A3B8' }}>
+          <div className="text-sm mt-1" style={{ color: '#B0BDD0' }}>
             {displayDef}
           </div>
-          <div className="text-xs mt-2" style={{ color: '#64748B' }}>
+          <div className="text-xs mt-2" style={{ color: '#8B95A5' }}>
             Federal legal terminology
           </div>
           <div

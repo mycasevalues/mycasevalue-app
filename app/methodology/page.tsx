@@ -56,7 +56,7 @@ export default function MethodologyPage() {
                   name: 'PACER (Public Access to Court Electronic Records)',
                   description: 'PACER is the federal judiciary\'s official electronic records system. Court filings, docket sheets, and case documents referenced in our dataset originate from PACER.',
                   badge: 'Reference',
-                  color: '#64748B',
+                  color: '#8B95A5',
                   url: 'https://pacer.uscourts.gov/',
                 },
                 {
@@ -140,7 +140,7 @@ export default function MethodologyPage() {
                 { v: '5.1M+', l: 'Federal cases', c: '#4F46E5' },
                 { v: '50+', l: 'Years of data', c: '#0D9488' },
                 { v: '20+', l: 'Case categories', c: '#1A3260' },
-                { v: '94', l: 'Federal districts', c: '#64748B' },
+                { v: '94', l: 'Federal districts', c: '#8B95A5' },
               ].map((s, i) => (
                 <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>
                   <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>
