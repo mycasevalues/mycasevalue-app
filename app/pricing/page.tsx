@@ -1,18 +1,9 @@
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Pricing — MyCaseValue | Reports Starting at $5.99',
-  description: 'Affordable federal court outcome reports. Choose from Single Report ($5.99), Unlimited Reports ($9.99), or Attorney Mode ($29.99/mo). All plans include source citations and bilingual support.',
-  alternates: { canonical: 'https://mycasevalues.com/pricing' },
-  openGraph: {
-    title: 'Pricing — MyCaseValue | Federal Court Data Plans',
-    description: 'Transparent, affordable pricing for federal court outcome data. Single reports, unlimited access, or attorney analytics dashboard.',
-    type: 'website',
-    url: 'https://mycasevalues.com/pricing',
-  },
-};
+import { useState } from 'react';
 
-const jsonLd = {
+// SSR-safe JSON-LD schema
+const getJsonLd = () => ({
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -25,43 +16,39 @@ const jsonLd = {
     {
       '@type': 'Product',
       name: 'MyCaseValue Pricing Plans',
-      description: 'Federal court outcome data with three transparent pricing tiers.',
+      description: 'Federal court outcome data with transparent pricing tiers.',
       offers: [
+        {
+          '@type': 'Offer',
+          name: 'FREE Plan',
+          price: '0',
+          priceCurrency: 'USD',
+          url: 'https://mycasevalues.com/pricing',
+          availability: 'https://schema.org/InStock',
+          description: 'Basic court outcome report with essential case data.',
+        },
         {
           '@type': 'Offer',
           name: 'Single Report',
           price: '5.99',
           priceCurrency: 'USD',
-          priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
           url: 'https://mycasevalues.com/pricing',
           availability: 'https://schema.org/InStock',
-          description: 'One complete federal court outcome report with judge data and case analysis.',
+          description: 'One premium report with judge data and detailed analysis.',
         },
         {
           '@type': 'Offer',
           name: 'Unlimited Reports',
           price: '9.99',
           priceCurrency: 'USD',
-          priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
           url: 'https://mycasevalues.com/pricing',
           availability: 'https://schema.org/InStock',
-          description: 'Unlimited reports for all case types and districts with comparison tools.',
-        },
-        {
-          '@type': 'Offer',
-          name: 'Attorney Mode',
-          price: '29.99',
-          priceCurrency: 'USD',
-          priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
-          url: 'https://mycasevalues.com/pricing',
-          availability: 'https://schema.org/InStock',
-          description: 'Professional analytics dashboard with judge predictor, bulk queries, and white-label options.',
-          billingIncrement: 'P1M',
+          description: 'Unlimited reports for all case types and districts.',
         },
       ],
     },
   ],
-};
+});
 
 const pricingFaqs = [
   {
@@ -82,15 +69,11 @@ const pricingFaqs = [
   },
   {
     q: 'Is there a free trial?',
-    a: 'Yes. You can generate a free basic report without purchasing anything. Premium features require a one-time payment or monthly subscription.',
+    a: 'Yes. The FREE plan lets you generate one basic report without payment. Premium plans unlock unlimited access and advanced features.',
   },
   {
-    q: 'What is included in "Attorney Mode"?',
-    a: 'Attorney Mode includes unlimited reports, judge analytics dashboard, motion predictor, bulk query capability, brief export (PDF/DOCX), embeddable widgets, affiliate program access, and white-label options for firms.',
-  },
-  {
-    q: 'Can I cancel my Attorney Mode subscription?',
-    a: 'Yes, you can cancel anytime. Your subscription continues until the end of your billing cycle, then stops. No long-term commitment required.',
+    q: 'What is included in each plan?',
+    a: 'FREE: basic court data. Single Report: premium analysis with judge impact. Unlimited: all features plus comparison tools and priority support.',
   },
   {
     q: 'Do you offer educational or non-profit discounts?',
@@ -98,218 +81,380 @@ const pricingFaqs = [
   },
 ];
 
-export default function PricingPage() {
+interface PricingCardProps {
+  name: string;
+  monthlyPrice?: string;
+  annualPrice?: string;
+  badge?: string;
+  isFeatured?: boolean;
+  features: string[];
+  ctaText: string;
+  ctaPlan?: string;
+  onCta: () => void;
+}
+
+function PricingCard({
+  name,
+  monthlyPrice,
+  annualPrice,
+  badge,
+  isFeatured,
+  features,
+  ctaText,
+  ctaPlan,
+  onCta,
+}: PricingCardProps) {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div
+      className={`relative rounded-card border transition-all duration-200 ${
+        isFeatured ? 'md:scale-105 shadow-card-elevated' : 'shadow-card hover:shadow-card-hover'
+      }`}
+      style={{
+        borderColor: isFeatured ? 'var(--accent-primary)' : 'var(--border-default)',
+        background: 'var(--bg-surface)',
+        borderWidth: isFeatured ? '2px' : '1px',
+      }}
+    >
+      {/* Badge */}
+      {badge && (
+        <div
+          className="absolute -top-3 left-1/2 transform -translate-x-1/2 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase"
+          style={{
+            background: 'var(--accent-primary)',
+            color: 'var(--fg-inverse)',
+          }}
+        >
+          {badge}
+        </div>
+      )}
+
+      {/* Content */}
+      <div className={`p-8 flex flex-col h-full ${badge ? 'pt-10' : ''}`}>
+        {/* Title & Price */}
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--fg-primary)', fontFamily: 'Montserrat' }}>
+            {name}
+          </h3>
+          <div className="flex items-baseline gap-2 mb-1">
+            <span
+              className="text-5xl font-bold"
+              style={{ color: isFeatured ? 'var(--accent-primary)' : 'var(--fg-primary)', fontFamily: 'PT Mono' }}
+            >
+              {monthlyPrice || annualPrice || '0'}
+            </span>
+            {monthlyPrice && <span style={{ color: 'var(--fg-muted)' }}>USD</span>}
+          </div>
+          {monthlyPrice && annualPrice && (
+            <div className="text-xs mt-2 space-y-1">
+              <p style={{ color: 'var(--fg-muted)' }}>
+                Monthly <span style={{ textDecoration: 'line-through', color: 'var(--fg-subtle)' }}>${monthlyPrice}</span>
+              </p>
+              <p style={{ color: 'var(--fg-primary)', fontWeight: 600 }}>
+                Annual ${annualPrice} (save 20%)
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Features */}
+        <ul className="space-y-3 mb-8 flex-grow">
+          {features.map((feature, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke={isFeatured ? 'var(--accent-primary)' : 'var(--success)'}
+                strokeWidth="2.5"
+                className="flex-shrink-0 mt-0.5"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              <span className="text-sm" style={{ color: 'var(--fg-secondary)' }}>
+                {feature}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA Button */}
+        <button
+          onClick={onCta}
+          className={`w-full px-6 py-3 rounded-full text-sm font-semibold transition-all ${
+            isFeatured
+              ? 'hover:opacity-90'
+              : 'border hover:bg-gray-50'
+          }`}
+          style={
+            isFeatured
+              ? {
+                  background: 'var(--accent-primary)',
+                  color: 'var(--fg-inverse)',
+                }
+              : {
+                  borderColor: 'var(--border-default)',
+                  color: 'var(--fg-primary)',
+                }
+          }
+        >
+          {ctaText}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default function PricingPage() {
+  const [isAnnual, setIsAnnual] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleCheckout = async (plan: string) => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan }),
+      });
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert('Failed to initiate checkout. Please try again.');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGetStarted = () => {
+    window.location.href = '/odds';
+  };
+
+  return (
+    <div style={{ background: 'var(--bg-base)' }}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd()) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
+      <div
+        className="border-b"
+        style={{ borderColor: 'var(--border-default)', background: 'var(--bg-surface)' }}
+      >
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Back to MyCaseValue
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 text-sm font-semibold mb-8 transition-colors hover:opacity-70"
+            style={{ color: 'var(--fg-primary)' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back
           </a>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            PRICING
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+
+          <h1
+            className="text-4xl sm:text-5xl font-bold mb-4"
+            style={{ color: 'var(--fg-primary)', fontFamily: 'Montserrat', letterSpacing: '-0.02em' }}
+          >
             Simple, Transparent Pricing
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
-            Access federal court outcome data starting at just $5.99. No hidden fees. No subscriptions required (unless you want unlimited access).
+            Start free. Pay only for what you need. Federal court outcome data with no hidden fees or long-term commitments.
           </p>
         </div>
       </div>
 
-      {/* Pricing Cards */}
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-6 py-20">
+        {/* Pricing Cards */}
+        <div className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <PricingCard
+              name="FREE"
+              monthlyPrice="0"
+              features={[
+                'Basic court outcome report',
+                'Case timeline data',
+                'One report per month',
+                'PACER-verified data',
+                'Plain English summary',
+              ]}
+              ctaText="Get Started Free"
+              onCta={handleGetStarted}
+            />
 
-          {/* Single Report Card */}
-          <div className="rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
-            style={{
-              borderColor: 'var(--border-default)',
-              background: 'rgba(25, 32, 56, 0.4)',
-              backdropFilter: 'blur(10px)',
-            }}>
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
-                Single Report
-              </h3>
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: '#111111', fontFamily: 'JetBrains Mono' }}>
-                  $5.99
-                </span>
-                <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-                  one-time
-                </span>
-              </div>
-            </div>
-
-            <ul className="space-y-3 mb-8">
-              {[
-                '1 full report with judge data',
-                'Case timeline analysis',
+            <PricingCard
+              name="SINGLE REPORT"
+              monthlyPrice="5.99"
+              isFeatured={true}
+              badge="MOST POPULAR"
+              features={[
+                'One complete premium report',
+                'Judge impact analysis',
                 'Case comparisons',
-                'Share card',
-                'Plain English explanation',
-                'Source citations',
-              ].map((feature, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5" className="flex-shrink-0 mt-1">
-                    <path d="M20 6L9 17l-5-5"/>
-                  </svg>
-                  <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-                    {feature}
-                  </span>
-                </li>
-              ))}
-            </ul>
+                'Recovery range estimates',
+                'Export & share options',
+                'Priority email support',
+              ]}
+              ctaText="Buy Report"
+              ctaPlan="single"
+              onCta={() => handleCheckout('single')}
+            />
 
-            <a href="/odds"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#111111', color: '#FFFFFF' }}>
-              Get Report
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          {/* Unlimited Reports Card — Middle, Larger, Gold Border */}
-          <div className="rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-lg md:scale-105 hover:shadow-amber-500/30"
-            style={{
-              borderColor: '#F59E0B',
-              background: 'rgba(25, 32, 56, 0.6)',
-              backdropFilter: 'blur(10px)',
-            }}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: 'rgba(245,158,11,0.15)', color: '#F59E0B' }}>
-              BEST VALUE
-            </div>
-
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
-                Unlimited Reports
-              </h3>
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: '#F59E0B', fontFamily: 'JetBrains Mono' }}>
-                  $9.99
-                </span>
-                <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-                  one-time
-                </span>
-              </div>
-            </div>
-
-            <ul className="space-y-3 mb-8">
-              {[
-                'Everything in Single Report',
-                'Unlimited reports for all case types & districts',
-                'Compare tool',
-                'Cost estimator',
-                'Priority support',
-              ].map((feature, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2.5" className="flex-shrink-0 mt-1">
-                    <path d="M20 6L9 17l-5-5"/>
-                  </svg>
-                  <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-                    {feature}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <a href="/odds"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#F59E0B', color: '#FFFFFF' }}>
-              Get Unlimited
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          {/* Attorney Mode Card */}
-          <div className="rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
-            style={{
-              borderColor: 'var(--border-default)',
-              background: 'rgba(25, 32, 56, 0.4)',
-              backdropFilter: 'blur(10px)',
-            }}>
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
-                Attorney Mode
-              </h3>
-              <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: '#8B5CF6', fontFamily: 'JetBrains Mono' }}>
-                  $29.99
-                </span>
-                <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-                  /month
-                </span>
-              </div>
-            </div>
-
-            <ul className="space-y-3 mb-8">
-              {[
-                'Everything in Unlimited',
+            <PricingCard
+              name="UNLIMITED"
+              monthlyPrice="9.99"
+              features={[
+                'Unlimited reports forever',
+                'All case types & districts',
                 'Judge analytics dashboard',
-                'Motion predictor',
-                'Brief export (PDF/DOCX)',
-                'Bulk queries',
-                'Embeddable widgets',
-                'Affiliate program',
-                'White-label options',
-              ].map((feature, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5" className="flex-shrink-0 mt-1">
-                    <path d="M20 6L9 17l-5-5"/>
-                  </svg>
-                  <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-                    {feature}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <a href="/odds"
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#8B5CF6', color: 'white' }}>
-              Start Attorney Mode
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+                'Cost estimator tool',
+                'Comparison reports',
+                'Priority support',
+              ]}
+              ctaText="Start Unlimited"
+              ctaPlan="unlimited"
+              onCta={() => handleCheckout('unlimited')}
+            />
           </div>
-
         </div>
 
-        {/* Plan Notes */}
-        <div className="text-center p-6 rounded-xl mb-12" style={{ background: '#FFFFFF', borderColor: 'var(--border-default)', border: '1px solid var(--border-default)' }}>
-          <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-            All plans include source citations, bilingual support (English/Spanish), and a "not legal advice" disclaimer.
-          </p>
+        {/* Included in All Plans */}
+        <div
+          className="rounded-card border p-8 text-center mb-20"
+          style={{
+            borderColor: 'var(--border-default)',
+            background: 'var(--bg-elevated)',
+          }}
+        >
+          <h3
+            className="text-base font-semibold mb-4"
+            style={{ color: 'var(--fg-primary)', fontFamily: 'Montserrat' }}
+          >
+            All plans include
+          </h3>
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span style={{ color: 'var(--fg-secondary)' }}>PACER-verified data</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+              <span style={{ color: 'var(--fg-secondary)' }}>WCAG AA accessible</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span style={{ color: 'var(--fg-secondary)' }}>Updated April 2026</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span style={{ color: 'var(--fg-secondary)' }}>GDPR-ready</span>
+            </div>
+          </div>
         </div>
 
-        {/* Pricing FAQ */}
-        <section>
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: 'var(--fg-primary)' }}>
-            Pricing Questions
+        {/* Trust & Security */}
+        <div className="mb-20">
+          <h2
+            className="text-2xl font-bold text-center mb-12"
+            style={{ color: 'var(--fg-primary)', fontFamily: 'Montserrat' }}
+          >
+            Why trust MyCaseValue?
           </h2>
-          <div className="space-y-3 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              { icon: 'lock', label: 'Encrypted', desc: 'Bank-grade SSL encryption' },
+              { icon: 'scale', label: 'Court-verified', desc: 'PACER federal court data' },
+              { icon: 'clock', label: 'Real-time', desc: 'Updated daily from courts' },
+              { icon: 'shield', label: 'GDPR-ready', desc: 'Full data privacy compliance' },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="text-center p-6 rounded-card border"
+                style={{
+                  borderColor: 'var(--border-default)',
+                  background: 'var(--bg-surface)',
+                }}
+              >
+                <div className="mb-3 flex justify-center">
+                  {item.icon === 'lock' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                  )}
+                  {item.icon === 'scale' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                      <circle cx="12" cy="5" r="3" />
+                      <line x1="12" y1="8" x2="12" y2="21" />
+                      <line x1="3" y1="18" x2="21" y2="18" />
+                      <line x1="6" y1="18" x2="3" y2="12" />
+                      <line x1="18" y1="18" x2="21" y2="12" />
+                    </svg>
+                  )}
+                  {item.icon === 'clock' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                  )}
+                  {item.icon === 'shield' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  )}
+                </div>
+                <h3 className="font-semibold mb-1" style={{ color: 'var(--fg-primary)', fontFamily: 'Montserrat' }}>
+                  {item.label}
+                </h3>
+                <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ */}
+        <div className="mb-20">
+          <h2
+            className="text-2xl font-bold text-center mb-12"
+            style={{ color: 'var(--fg-primary)', fontFamily: 'Montserrat' }}
+          >
+            Frequently asked questions
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-3">
             {pricingFaqs.map((faq, idx) => (
               <details
                 key={idx}
-                className="group p-5 rounded-xl border transition-colors cursor-pointer"
+                className="group p-5 rounded-card border cursor-pointer transition-colors"
                 style={{
                   borderColor: 'var(--border-default)',
-                  background: '#FFFFFF',
+                  background: 'var(--bg-surface)',
                 }}
               >
-                <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--fg-primary)' }}>
-                  <span className="flex-1 text-base leading-relaxed pr-4">
+                <summary
+                  className="flex items-start justify-between font-semibold select-none"
+                  style={{ color: 'var(--fg-primary)' }}
+                >
+                  <span className="flex-1 text-sm leading-relaxed pr-4">
                     {faq.q}
                   </span>
                   <svg
@@ -320,9 +465,9 @@ export default function PricingPage() {
                     stroke="currentColor"
                     strokeWidth="2"
                     className="flex-shrink-0 transition-transform group-open:rotate-180"
-                    style={{ color: '#111111', marginTop: '2px' }}
+                    style={{ color: 'var(--accent-primary)' }}
                   >
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </summary>
                 <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
@@ -333,32 +478,53 @@ export default function PricingPage() {
               </details>
             ))}
           </div>
-        </section>
+        </div>
 
-        {/* CTA Section */}
-        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
-            Ready to see your case odds?
+        {/* Final CTA */}
+        <div
+          className="text-center p-10 rounded-card border"
+          style={{
+            borderColor: 'var(--border-default)',
+            background: 'var(--bg-elevated)',
+          }}
+        >
+          <h2
+            className="text-2xl font-bold mb-3"
+            style={{ color: 'var(--fg-primary)', fontFamily: 'Montserrat' }}
+          >
+            Ready to start?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
-            Generate your free basic report instantly, then upgrade to premium features if you want deeper analysis.
+          <p className="mb-8 max-w-xl mx-auto text-sm" style={{ color: 'var(--fg-muted)' }}>
+            Get your first court outcome report free. Upgrade anytime if you need more. No credit card required.
           </p>
-          <a href="/odds"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#111111', color: '#FFFFFF' }}>
-            Check My Case Type
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </section>
-
+          <button
+            onClick={handleGetStarted}
+            disabled={loading}
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-semibold transition-all hover:opacity-90 disabled:opacity-50"
+            style={{
+              background: 'var(--accent-primary)',
+              color: 'var(--fg-inverse)',
+            }}
+          >
+            Get Your Free Report
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
-          MyCaseValue provides aggregate historical data from public federal court records for informational and research purposes only.
-          We are not a law firm. This is not legal advice. No attorney-client relationship is created by using this tool.
-          © {new Date().getFullYear()} MyCaseValue LLC.
+      {/* Footer */}
+      <div
+        className="border-t py-8 text-center"
+        style={{
+          borderColor: 'var(--border-default)',
+          background: 'var(--bg-surface)',
+        }}
+      >
+        <p className="text-xs max-w-2xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
+          MyCaseValue provides federal court outcome data for informational purposes. Not legal advice. No attorney-client relationship.
+          © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
         </p>
       </div>
     </div>

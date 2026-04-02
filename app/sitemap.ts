@@ -6,6 +6,10 @@ const CATEGORY_IDS = ['work', 'injury', 'consumer', 'rights', 'money', 'housing'
 // All unique NOS codes used in the app
 const NOS_CODES = ['110', '152', '190', '195', '240', '290', '310', '340', '350', '360', '362', '365', '368', '370', '371', '375', '440', '442', '445', '530', '550', '710', '791', '820', '830', '840', '850', '864', '870', '890'];
 
+// Top districts and case types for programmatic SEO pages
+const TOP_DISTRICTS = ['CA', 'NY', 'TX', 'FL', 'IL', 'PA', 'OH', 'GA', 'NC', 'MI'];
+const TOP_CASE_TYPES = ['employment-discrimination', 'breach-of-contract', 'personal-injury', 'wrongful-termination', 'medical-malpractice'];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.mycasevalues.com';
   const now = new Date().toISOString();
@@ -23,6 +27,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
+
+  const outcomesUrls: MetadataRoute.Sitemap = [];
+  TOP_DISTRICTS.forEach((district) => {
+    TOP_CASE_TYPES.forEach((caseType) => {
+      outcomesUrls.push({
+        url: `${baseUrl}/outcomes/${district}/${caseType}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      });
+    });
+  });
 
   const blogPosts = getAllPosts();
   const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -66,6 +82,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...nosUrls,
+    {
+      url: `${baseUrl}/outcomes`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    ...outcomesUrls,
     {
       url: `${baseUrl}/methodology`,
       lastModified: now,

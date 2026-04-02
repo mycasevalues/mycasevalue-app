@@ -82,6 +82,35 @@ export function Footer({
           </p>
         </div>
 
+        {/* Popular Outcomes */}
+        <div className="max-w-sm">
+          <h3 className="text-[12px] font-semibold text-[var(--fg-primary)] mb-3 uppercase tracking-[1px]">
+            {lang === 'es' ? 'Resultados Populares' : 'Popular Outcomes'}
+          </h3>
+          <div className="grid grid-cols-2 gap-2 text-[11px]">
+            {[
+              { district: 'CA', caseType: 'employment-discrimination', label: 'Employment (CA)' },
+              { district: 'NY', caseType: 'breach-of-contract', label: 'Contract (NY)' },
+              { district: 'TX', caseType: 'personal-injury', label: 'Injury (TX)' },
+              { district: 'FL', caseType: 'wrongful-termination', label: 'Termination (FL)' },
+              { district: 'IL', caseType: 'medical-malpractice', label: 'Malpractice (IL)' },
+              { district: 'PA', caseType: 'breach-of-contract', label: 'Contract (PA)' },
+              { district: 'OH', caseType: 'personal-injury', label: 'Injury (OH)' },
+              { district: 'GA', caseType: 'employment-discrimination', label: 'Employment (GA)' },
+              { district: 'NC', caseType: 'wrongful-termination', label: 'Termination (NC)' },
+              { district: 'MI', caseType: 'medical-malpractice', label: 'Malpractice (MI)' },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={`/outcomes/${item.district}/${item.caseType}`}
+                className="text-[var(--fg-muted)] hover:text-[var(--fg-link)] transition-colors underline"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div className="sm:text-right text-[12px] text-[var(--fg-muted)] leading-relaxed">
           {'\u00A9'} {new Date().getFullYear()} MyCaseValue LLC.{' '}
           {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
