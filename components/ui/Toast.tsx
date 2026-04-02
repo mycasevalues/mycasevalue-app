@@ -13,7 +13,7 @@ export function Toast({ message, visible }: ToastProps) {
   if (!visible) return null;
   return (
     <div role="status" aria-live="polite" className="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-medium z-[var(--z-modal)] text-white"
-      style={{ background: '#FAFAF8', boxShadow: '0 8px 32px rgba(255,255,255,.2)', animation: 'slideUp 0.3s ease' }}>
+      style={{ background: '#F9F8F6', boxShadow: '0 8px 32px rgba(255,255,255,.2)', animation: 'slideUp 0.3s ease' }}>
       {message}
     </div>
   );

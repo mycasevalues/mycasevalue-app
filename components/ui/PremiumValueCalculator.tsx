@@ -45,7 +45,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
             </svg>
           </div>
           <div>
-            <div className="text-[15px] font-bold text-[#D1D5DB]">{es ? 'Calculadora de valor' : 'Value Calculator'}</div>
+            <div className="text-[15px] font-bold text-[#374151]">{es ? 'Calculadora de valor' : 'Value Calculator'}</div>
             <div className="text-[11px] text-[#6B7280]">{es ? '¿Cuánto podrías ahorrar?' : 'How much could you save?'}</div>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
         {/* Value breakdown */}
         <div className="space-y-3 mb-5">
           {savings.consultSavings > 0 && (
-            <div className="flex items-center justify-between p-3 rounded-xl border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: '#E5E7EB' }}>
+            <div className="flex items-center justify-between p-3 rounded-xl border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: '#E5E0D8' }}>
               <div className="flex items-center gap-2.5">
                 <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'rgba(13,148,136,0.15)' }}>
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
@@ -91,7 +91,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
             </div>
           )}
 
-          <div className="flex items-center justify-between p-3 rounded-xl border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: '#E5E7EB' }}>
+          <div className="flex items-center justify-between p-3 rounded-xl border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: '#E5E0D8' }}>
             <div className="flex items-center gap-2.5">
               <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'rgba(17,17,17,0.15)' }}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2"><rect x="3" y="12" width="4" height="9" rx="1" /><rect x="10" y="8" width="4" height="13" rx="1" /><rect x="17" y="3" width="4" height="18" rx="1" /></svg>
@@ -106,7 +106,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
             </div>
           </div>
 
-          <div className="flex items-center justify-between p-3 rounded-xl border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: '#E5E7EB' }}>
+          <div className="flex items-center justify-between p-3 rounded-xl border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: '#E5E0D8' }}>
             <div className="flex items-center gap-2.5">
               <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'rgba(217,119,6,0.15)' }}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>

@@ -94,7 +94,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
               className="w-full px-4 py-2.5 text-sm text-left rounded-lg cursor-pointer transition-all duration-150"
               style={{
                 fontWeight: o.id === value ? 600 : 400,
-                color: o.id === value ? '#111111' : '#D1D5DB',
+                color: o.id === value ? '#111111' : '#374151',
                 background: o.id === value ? 'rgba(17,17,17,0.08)' : 'transparent',
                 animationDelay: open ? `${idx * 20}ms` : '0ms',
               }}

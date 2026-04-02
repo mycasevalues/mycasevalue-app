@@ -61,7 +61,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
   ];
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8" style={{ background: '#FAFAF8' }}>
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8" style={{ background: '#F9F8F6' }}>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <div className="text-[11px] font-bold tracking-[2.5px] uppercase mb-3" style={{ color: '#6B7280' }}>
@@ -76,7 +76,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
         </div>
 
         {/* Tab Selector */}
-        <div className="flex gap-2 mb-0 border-b border-[#E5E7EB] bg-[#FFFFFF] rounded-t-xl p-4">
+        <div className="flex gap-2 mb-0 border-b border-[#E5E0D8] bg-[#FFFFFF] rounded-t-xl p-4">
           {tabs.map((tab) => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id as any)}
               className="px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200"
@@ -100,7 +100,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
               </div>
               <div className="flex gap-2">
                 {/* View toggle */}
-                <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid #E5E7EB' }}>
+                <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid #E5E0D8' }}>
                   <button onClick={() => setViewMode('bars')} className="px-2.5 py-1.5 text-[10px] font-bold border-none transition-all"
                     style={{ background: viewMode === 'bars' ? 'rgba(17,17,17,0.2)' : 'transparent', color: viewMode === 'bars' ? '#8B5CF6' : '#9CA3AF' }}>
                     {es ? 'Barras' : 'Chart'}
@@ -111,7 +111,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                   </button>
                 </div>
                 {/* Sort options */}
-                <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid #E5E7EB' }}>
+                <div className="flex rounded-lg overflow-hidden" style={{ border: '1px solid #E5E0D8' }}>
                   {[
                     { key: 'rate' as const, label: es ? 'Tasa' : 'Rate' },
                     { key: 'name' as const, label: es ? 'Nombre' : 'Name' },
@@ -140,7 +140,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                         <span className="text-sm font-bold font-data" style={{ color: item.rate > 50 ? '#0D9488' : item.rate > 40 ? '#8B5CF6' : '#E87461' }}>{item.rate}%</span>
                       </div>
                     </div>
-                    <div className="w-full h-3 bg-[#E5E7EB] rounded-full overflow-hidden">
+                    <div className="w-full h-3 bg-[#E5E0D8] rounded-full overflow-hidden">
                       <div style={{
                         width: `${item.rate}%`, height: '100%', borderRadius: '9999px',
                         background: item.rate > 50 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : item.rate > 40 ? 'linear-gradient(90deg, #111111, #333333)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
@@ -152,7 +152,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                 ))}
               </div>
             ) : (
-              <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #E5E7EB' }}>
+              <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #E5E0D8' }}>
                 <div className="grid grid-cols-4 gap-0 px-4 py-2.5" style={{ background: 'rgba(229,231,235,0.5)' }}>
                   <button onClick={() => toggleSort('name')} className="text-[10px] font-bold text-left border-none bg-transparent" style={{ color: sortBy === 'name' ? '#8B5CF6' : '#9CA3AF' }}>
                     {es ? 'TIPO' : 'TYPE'} {sortBy === 'name' ? (sortDir === 'desc' ? '↓' : '↑') : ''}
@@ -166,9 +166,9 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                   <div className="text-[10px] font-bold text-right" style={{ color: '#9CA3AF' }}>{es ? 'TEND.' : 'TREND'}</div>
                 </div>
                 {sortedData.map((item, idx) => (
-                  <div key={item.key} className="grid grid-cols-4 gap-0 px-4 py-3 transition-all hover:bg-[#E5E7EB30]"
+                  <div key={item.key} className="grid grid-cols-4 gap-0 px-4 py-3 transition-all hover:bg-[#E5E0D830]"
                     style={{ borderTop: '1px solid rgba(229,231,235,0.3)', background: idx % 2 === 0 ? 'rgba(19,27,46,0.5)' : 'transparent' }}>
-                    <div className="text-[12px] font-semibold" style={{ color: '#D1D5DB' }}>{es ? item.es : item.en}</div>
+                    <div className="text-[12px] font-semibold" style={{ color: '#374151' }}>{es ? item.es : item.en}</div>
                     <div className="text-[12px] font-data font-bold text-center" style={{ color: item.rate > 50 ? '#0D9488' : item.rate > 40 ? '#8B5CF6' : '#E87461' }}>{item.rate}%</div>
                     <div className="text-[12px] font-data text-center" style={{ color: '#6B7280' }}>{item.vol}</div>
                     <div className="text-[12px] font-bold font-data text-right" style={{ color: item.trend.startsWith('+') ? '#0D9488' : '#E87461' }}>{item.trend}</div>
@@ -246,7 +246,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                       <span className="text-xs text-[#6B7280]">{item.duration}</span>
                     </div>
                   </div>
-                  <div className="w-full h-2.5 bg-[#E5E7EB] rounded-full overflow-hidden">
+                  <div className="w-full h-2.5 bg-[#E5E0D8] rounded-full overflow-hidden">
                     <div style={{
                       width: `${item.width}%`, height: '100%', borderRadius: '9999px',
                       background: `linear-gradient(90deg, ${item.color}80, ${item.color})`,

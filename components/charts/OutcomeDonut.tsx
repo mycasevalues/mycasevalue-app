@@ -40,7 +40,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
             formatter={(value: number, name: string) => [`${((value / total) * 100).toFixed(1)}%`, name]}
             contentStyle={{
               background: 'rgba(15,23,42,0.95)',
-              border: '1px solid #E5E7EB',
+              border: '1px solid #E5E0D8',
               borderRadius: '10px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',

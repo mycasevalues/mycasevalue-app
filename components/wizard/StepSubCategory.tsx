@@ -79,9 +79,9 @@ export function StepSubCategory({
           {(hasMore && !showAllSubcats ? sit.opts.slice(0, INITIAL_SHOW) : sit.opts).map((o: any, i: number) => (
             <button key={i} onClick={() => { setSpec(o); go(3); }}
               className="category-card flex items-center w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg"
-              style={{ background: '#FFFFFF', border: '1.5px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)' }}
+              style={{ background: '#FFFFFF', border: '1.5px solid #E5E0D8', boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = sit.color}
-              onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}>
+              onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E0D8'}>
               <div className="w-2 h-2 rounded-full flex-shrink-0 mr-3 transition-transform" style={{ background: sit.color, opacity: 0.5 }} />
               <span className="flex-1 text-[15px]">{o.label}</span>
               <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `${sit.color}08` }}>

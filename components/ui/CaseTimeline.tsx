@@ -106,7 +106,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
           {/* Background line */}
           <div style={{
             position: 'absolute', top: '20px', left: '20px', right: '20px',
-            height: '3px', background: '#E5E7EB', borderRadius: '2px',
+            height: '3px', background: '#E5E0D8', borderRadius: '2px',
           }} />
 
           {/* Progress line */}
@@ -136,7 +136,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                   width: '40px', height: '40px', borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   background: i <= activeIdx ? `${event.color}20` : '#FFFFFF',
-                  border: `2px solid ${i <= activeIdx ? event.color : '#E5E7EB'}`,
+                  border: `2px solid ${i <= activeIdx ? event.color : '#E5E0D8'}`,
                   fontSize: '16px',
                   boxShadow: i <= activeIdx ? `0 0 16px ${event.color}30` : 'none',
                   transition: 'all 0.5s ease',
@@ -190,7 +190,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
             width: '3px', borderRadius: '2px',
             background: isVisible
               ? 'linear-gradient(180deg, #333333, #5EEAD4, #0D9488, #F472B6)'
-              : '#E5E7EB',
+              : '#E5E0D8',
             transition: 'background 2s ease',
           }} />
 
@@ -208,7 +208,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 width: '26px', height: '26px', borderRadius: '50%',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 background: i <= activeIdx ? `${event.color}20` : '#FFFFFF',
-                border: `2px solid ${i <= activeIdx ? event.color : '#E5E7EB'}`,
+                border: `2px solid ${i <= activeIdx ? event.color : '#E5E0D8'}`,
                 fontSize: '12px',
                 boxShadow: i <= activeIdx ? `0 0 12px ${event.color}30` : 'none',
                 transition: 'all 0.5s ease',
@@ -252,7 +252,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
       <div style={{
         marginTop: '20px', padding: '12px 16px',
         borderRadius: '10px', background: '#FFFFFF',
-        border: '1px solid #E5E7EB',
+        border: '1px solid #E5E0D8',
         display: 'flex', alignItems: 'center', gap: '10px',
         opacity: isVisible ? 1 : 0,
         transition: 'opacity 0.8s ease 1.5s',

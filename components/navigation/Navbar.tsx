@@ -71,7 +71,7 @@ export function Navbar({
           background: scrolled ? '#FFFFFF' : 'transparent',
           backdropFilter: 'none',
           WebkitBackdropFilter: 'none',
-          borderColor: scrolled ? '#E5E7EB' : 'transparent',
+          borderColor: scrolled ? '#E5E0D8' : 'transparent',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -132,7 +132,7 @@ export function Navbar({
                 onClick={onShowSaved}
                 className="h-8 px-2.5 rounded-lg border cursor-pointer flex items-center justify-center transition-colors text-[12px] font-bold tracking-wide focus-ring"
                 style={{
-                  background: '#E5E7EB',
+                  background: '#E5E0D8',
                   borderColor: '#334155',
                   color: '#6B7280',
                 }}
@@ -206,11 +206,11 @@ export function Navbar({
           >
             <div className="flex flex-col gap-[5px] w-5">
               <span className="h-[2px] rounded-full transition-all duration-300"
-                style={{ background: '#D1D5DB', transform: mobileOpen ? 'rotate(45deg) translateY(7px)' : 'none' }} />
+                style={{ background: '#9CA3AF', transform: mobileOpen ? 'rotate(45deg) translateY(7px)' : 'none' }} />
               <span className="h-[2px] rounded-full transition-all duration-300"
-                style={{ background: '#D1D5DB', opacity: mobileOpen ? 0 : 1 }} />
+                style={{ background: '#9CA3AF', opacity: mobileOpen ? 0 : 1 }} />
               <span className="h-[2px] rounded-full transition-all duration-300"
-                style={{ background: '#D1D5DB', transform: mobileOpen ? 'rotate(-45deg) translateY(-7px)' : 'none' }} />
+                style={{ background: '#9CA3AF', transform: mobileOpen ? 'rotate(-45deg) translateY(-7px)' : 'none' }} />
             </div>
           </button>
         </div>
@@ -239,13 +239,13 @@ export function Navbar({
         style={{
           height: 'calc(100vh - 4rem)',
           background: '#FFFFFF',
-          borderLeft: '1px solid #E5E7EB',
+          borderLeft: '1px solid #E5E0D8',
           boxShadow: '-8px 0 32px rgba(0,0,0,0.1)',
         }}
       >
         <div className="flex flex-col gap-3 p-5 h-full overflow-y-auto">
           {/* Language */}
-          <div className="pb-3 border-b" style={{ borderColor: '#E5E7EB' }}>
+          <div className="pb-3 border-b" style={{ borderColor: '#E5E0D8' }}>
             <span className="text-[10px] font-bold tracking-[2px] uppercase mb-2 block" style={{ color: '#6B7280' }}>
               {lang === 'es' ? 'Idioma' : 'Language'}
             </span>
@@ -253,7 +253,7 @@ export function Navbar({
           </div>
 
           {/* Navigation links */}
-          <div className="flex flex-col gap-1 pb-3 border-b" style={{ borderColor: '#E5E7EB' }}>
+          <div className="flex flex-col gap-1 pb-3 border-b" style={{ borderColor: '#E5E0D8' }}>
             {[
               { href: '/how-it-works', label: lang === 'es' ? 'Cómo Funciona' : 'How It Works', icon: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
               { href: '/odds', label: lang === 'es' ? 'Mis Probabilidades' : 'Check My Odds', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z' },
@@ -285,7 +285,7 @@ export function Navbar({
               <button
                 onClick={() => { closeMobile(); onShowSaved(); }}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors text-sm font-medium focus-ring"
-                style={{ background: '#F3F4F6', color: '#374151' }}
+                style={{ background: '#EDE9E3', color: '#374151' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/>
@@ -299,7 +299,7 @@ export function Navbar({
           </div>
 
           {/* CTA */}
-          <div className="mt-auto pt-4 border-t" style={{ borderColor: '#E5E7EB' }}>
+          <div className="mt-auto pt-4 border-t" style={{ borderColor: '#E5E0D8' }}>
             {isPremium && (
               <div className="text-center mb-3">
                 <span className="text-[11px] font-bold px-3 py-1 rounded-full" style={{ color: '#111111', background: 'rgba(17,17,17,0.1)' }}>
@@ -329,7 +329,7 @@ function LanguageToggle({ lang, setLang }: { lang: 'en' | 'es'; setLang: (l: 'en
       className="h-8 rounded-lg border flex items-center overflow-hidden transition-colors"
       role="radiogroup"
       aria-label="Language selection"
-      style={{ background: '#F3F4F6', borderColor: '#E5E7EB' }}
+      style={{ background: '#EDE9E3', borderColor: '#E5E0D8' }}
     >
       <button
         onClick={() => setLang('en')}

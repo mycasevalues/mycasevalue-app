@@ -31,9 +31,9 @@ export function StepCategory({
           {SITS.map(si => (
             <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
               className="category-card flex items-center gap-4 w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg group"
-              style={{ background: '#FFFFFF', border: '1.5px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)' }}
+              style={{ background: '#FFFFFF', border: '1.5px solid #E5E0D8', boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
-              onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}>
+              onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E0D8'}>
               <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform" style={{ background: `${si.color}10` }}>
                 <CategoryIcon name={si.icon} color={si.color} size={22} />
               </div>

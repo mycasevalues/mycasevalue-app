@@ -17,7 +17,7 @@ function AnimatedBar({ value, maxValue, color, delay, isVisible }: {
   return (
     <div style={{
       height: '28px', borderRadius: '8px',
-      background: '#E5E7EB', overflow: 'hidden',
+      background: '#E5E0D8', overflow: 'hidden',
       position: 'relative',
     }}>
       <div style={{

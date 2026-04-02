@@ -150,7 +150,7 @@ export default function DataFreshness({
   return (
     <div
       className="w-full rounded-lg border overflow-hidden"
-      style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }}
+      style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E0D8' }}
     >
       <button
         onClick={() => setIsExpanded(!isExpanded)}
@@ -188,11 +188,11 @@ export default function DataFreshness({
       {isExpanded && (
         <div
           className="border-t px-4 py-4 space-y-4"
-          style={{ borderColor: '#E5E7EB' }}
+          style={{ borderColor: '#E5E0D8' }}
         >
           <div className="space-y-3">
             {sources.map((source, idx) => (
-              <div key={idx} className="flex items-center justify-between pb-3" style={{ borderBottom: '1px solid #E5E7EB' }}>
+              <div key={idx} className="flex items-center justify-between pb-3" style={{ borderBottom: '1px solid #E5E0D8' }}>
                 <div className="flex-1">
                   <div style={{ color: '#111827' }} className="text-sm font-medium">
                     {source.name}
@@ -237,7 +237,7 @@ export default function DataFreshness({
           <div className="pt-2">
             <div
               className="p-4 rounded"
-              style={{ backgroundColor: '#E5E7EB' }}
+              style={{ backgroundColor: '#E5E0D8' }}
             >
               <div style={{ color: '#111827' }} className="font-semibold text-sm mb-2">
                 {t.totalCases}
@@ -260,7 +260,7 @@ export default function DataFreshness({
             </summary>
             <div
               className="mt-3 p-3 rounded text-sm leading-relaxed space-y-2"
-              style={{ backgroundColor: '#E5E7EB', color: '#6B7280' }}
+              style={{ backgroundColor: '#E5E0D8', color: '#6B7280' }}
             >
               {lang === 'es' ? (
                 <>

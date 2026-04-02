@@ -106,7 +106,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
   const activeCount = selectedCases.filter(c => c !== null).length;
 
   return (
-    <div style={{ backgroundColor: '#FAFAF8', minHeight: '100vh' }} className="p-6 md:p-8">
+    <div style={{ backgroundColor: '#F9F8F6', minHeight: '100vh' }} className="p-6 md:p-8">
       <style>{`
         /* Fonts loaded globally via styles/fonts.css */
 
@@ -127,7 +127,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
 
         .metric-card {
           background: linear-gradient(135deg, #FFFFFF 0%, #1a2847 100%);
-          border: 1px solid #E5E7EB;
+          border: 1px solid #E5E0D8;
           border-radius: 12px;
           padding: 20px;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,7 +140,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
 
         .selector-card {
           background: #FFFFFF;
-          border: 2px solid #E5E7EB;
+          border: 2px solid #E5E0D8;
           border-radius: 10px;
           padding: 16px;
           transition: all 0.3s ease;
@@ -178,9 +178,9 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
         }
 
         select {
-          background: #FAFAF8;
-          color: #D1D5DB;
-          border: 2px solid #E5E7EB;
+          background: #F9F8F6;
+          color: #374151;
+          border: 2px solid #E5E0D8;
           border-radius: 8px;
           padding: 10px 12px;
           font-family: 'Roboto', sans-serif;
@@ -202,14 +202,14 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
 
         select option {
           background: #FFFFFF;
-          color: #D1D5DB;
+          color: #374151;
         }
 
         .section-title {
           font-family: 'Roboto', sans-serif;
           font-weight: 700;
           font-size: 20px;
-          color: #D1D5DB;
+          color: #111827;
           margin-bottom: 24px;
         }
 
@@ -227,7 +227,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
           font-family: 'JetBrains Mono', monospace;
           font-weight: 600;
           font-size: 16px;
-          color: #D1D5DB;
+          color: #374151;
         }
 
         .no-selection {

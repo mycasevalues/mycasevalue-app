@@ -128,7 +128,7 @@ export default function SettlementHistogram({
             y1={padding}
             x2={padding}
             y2={chartHeight + padding}
-            stroke="#E5E7EB"
+            stroke="#E5E0D8"
             strokeWidth={2}
           />
 
@@ -138,7 +138,7 @@ export default function SettlementHistogram({
             y1={chartHeight + padding}
             x2={chartWidth + padding}
             y2={chartHeight + padding}
-            stroke="#E5E7EB"
+            stroke="#E5E0D8"
             strokeWidth={2}
           />
 
@@ -152,7 +152,7 @@ export default function SettlementHistogram({
                   y1={y}
                   x2={padding}
                   y2={y}
-                  stroke="#E5E7EB"
+                  stroke="#E5E0D8"
                   strokeWidth={1}
                 />
                 <text
@@ -207,7 +207,7 @@ export default function SettlementHistogram({
                       width={100}
                       height={40}
                       fill="#FFFFFF"
-                      stroke="#E5E7EB"
+                      stroke="#E5E0D8"
                       strokeWidth={1}
                       rx={4}
                     />

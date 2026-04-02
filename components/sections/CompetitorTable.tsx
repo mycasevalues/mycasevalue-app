@@ -39,7 +39,7 @@ const FEATURES = [
 
 const COMPETITORS: Competitor[] = [
   {
-    name: 'MyCaseValues',
+    name: 'MyCaseValue',
     price_en: 'Free',
     price_es: 'Gratis',
     audience: 'Plaintiffs & public',

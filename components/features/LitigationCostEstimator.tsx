@@ -275,7 +275,7 @@ export function LitigationCostEstimator({
             gap: '8px',
             marginBottom: '20px',
             padding: '4px',
-            background: '#E5E7EB',
+            background: '#E5E0D8',
             borderRadius: '8px',
             border: '1px solid #334155',
           }}
@@ -353,7 +353,7 @@ export function LitigationCostEstimator({
             key={i}
             style={{
               padding: '14px 16px',
-              background: '#E5E7EB',
+              background: '#E5E0D8',
               border: '1px solid #334155',
               borderRadius: '8px',
               display: 'flex',

@@ -105,7 +105,7 @@ const AttorneyMatchIntelligence: React.FC<AttorneyMatchIntelligenceProps> = ({
               <p className="mb-1 text-[9px] font-bold uppercase tracking-[1.5px]" style={{ color: '#9CA3AF' }}>
                 {stat.label}
               </p>
-              <p className="text-lg font-bold" style={{ color: '#D1D5DB' }}>{stat.value}</p>
+              <p className="text-lg font-bold" style={{ color: '#374151' }}>{stat.value}</p>
             </div>
           ))}
         </div>

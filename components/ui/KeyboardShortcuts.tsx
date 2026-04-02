@@ -72,7 +72,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
         onClick={e => e.stopPropagation()}
         style={{
           position: 'relative', zIndex: 1,
-          background: 'linear-gradient(180deg, #E5E7EB, #FFFFFF)',
+          background: 'linear-gradient(180deg, #E5E0D8, #FFFFFF)',
           border: '1px solid #334155',
           borderRadius: '16px', padding: '28px',
           maxWidth: '440px', width: '90%',
@@ -103,7 +103,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
               <kbd style={{
                 padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
                 fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
-                background: '#FAFAF8', border: '1px solid #334155',
+                background: '#F9F8F6', border: '1px solid #334155',
                 color: '#8B5CF6', minWidth: '28px', textAlign: 'center',
               }}>
                 {s.modifier ? `${s.modifier === 'ctrl' ? 'Ctrl' : s.modifier === 'meta' ? '⌘' : '⇧'}+` : ''}{s.label}
@@ -122,7 +122,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
             <kbd style={{
               padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
               fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
-              background: '#FAFAF8', border: '1px solid #334155',
+              background: '#F9F8F6', border: '1px solid #334155',
               color: '#8B5CF6',
             }}>?</kbd>
           </div>

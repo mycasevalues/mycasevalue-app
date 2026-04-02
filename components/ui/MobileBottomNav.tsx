@@ -179,7 +179,7 @@ export default function MobileBottomNav({
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           backdropFilter: 'blur(12px)',
-          borderTop: '1px solid #E5E7EB',
+          borderTop: '1px solid #E5E0D8',
           paddingBottom: 'max(1rem, env(safe-area-inset-bottom))',
           height: '64px',
         }}

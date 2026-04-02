@@ -104,7 +104,7 @@ export function CaseCompareTool({
   const bestCaseVolume = findBest('totalCases', true);
 
   return (
-    <div className="w-full rounded-2xl border border-[rgba(17,17,17,0.2)] p-6 md:p-8 shadow-lg" style={{ backgroundColor: '#FAFAF8' }}>
+    <div className="w-full rounded-2xl border border-[rgba(17,17,17,0.2)] p-6 md:p-8 shadow-lg" style={{ backgroundColor: '#F9F8F6' }}>
       {/* Title */}
       <h2 className="text-2xl font-display font-bold text-[#111827] mb-6">{t.compareCases}</h2>
 
@@ -115,7 +115,7 @@ export function CaseCompareTool({
             <select
               value={selected}
               onChange={(e) => handleSelectChange(index, e.target.value)}
-              className="flex-1 px-4 py-2 rounded-lg text-sm font-medium bg-[#E5E7EB] border border-[rgba(17,17,17,0.3)] text-[#111827] hover:border-[rgba(17,17,17,0.5)] focus:outline-none focus:border-[rgba(17,17,17,0.6)]"
+              className="flex-1 px-4 py-2 rounded-lg text-sm font-medium bg-[#E5E0D8] border border-[rgba(17,17,17,0.3)] text-[#111827] hover:border-[rgba(17,17,17,0.5)] focus:outline-none focus:border-[rgba(17,17,17,0.6)]"
             >
               <option value="">{t.selectCaseType}</option>
               {availableCaseTypes.map((ct) => (
@@ -271,7 +271,7 @@ export function CaseCompareTool({
           {/* Mobile Card View */}
           <div className="md:hidden space-y-4">
             {comparisons.map((comp) => (
-              <div key={comp.nos} className="border border-[rgba(17,17,17,0.2)] rounded-lg p-4 bg-[#E5E7EB]">
+              <div key={comp.nos} className="border border-[rgba(17,17,17,0.2)] rounded-lg p-4 bg-[#E5E0D8]">
                 <h3 className="text-lg font-bold text-[#8B5CF6] mb-4 font-display">{comp.label}</h3>
 
                 <div className="space-y-3">

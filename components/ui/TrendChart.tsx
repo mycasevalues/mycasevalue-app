@@ -18,7 +18,7 @@ interface TrendChartProps {
 
 const darkModeColors = {
   bg: '#FFFFFF',
-  border: '#E5E7EB',
+  border: '#E5E0D8',
   text: '#111827',
   muted: '#6B7280',
   accent: '#111111',

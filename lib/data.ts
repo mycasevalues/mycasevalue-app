@@ -318,7 +318,7 @@ export const TESTIMONIALS = [
   { quote: "Knowing the jury win rate was only 9% for med mal cases changed my entire strategy. We settled for $180K instead of risking trial.", author: "James T.", role: "Medical malpractice plaintiff", color: "#0D9488" },
   { quote: "The district timeline data showed my judge's median was 14 months. I planned my finances accordingly. No other free tool gives you that.", author: "Sarah K.", role: "Wrongful termination plaintiff", color: "#E87461" },
   { quote: "I didn't even know what NOS code my case fell under. This site mapped everything out and showed me what similar cases were worth.", author: "David L.", role: "Civil rights plaintiff", color: "#6366F1" },
-  { quote: "As a Spanish speaker, finding bilingual legal data was impossible until MyCaseValues. Finally, information I can actually use.", author: "Ana G.", role: "ADA discrimination plaintiff", color: "#A78BFA" },
+  { quote: "As a Spanish speaker, finding bilingual legal data was impossible until MyCaseValue. Finally, information I can actually use.", author: "Ana G.", role: "ADA discrimination plaintiff", color: "#A78BFA" },
   { quote: "The EEOC charge data alone is worth it. I showed my attorney the 97% litigation success rate and it changed the conversation.", author: "Michael P.", role: "Title VII plaintiff", color: "#F59E0B" },
 ];
 

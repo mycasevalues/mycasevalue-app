@@ -83,7 +83,7 @@ export function ShareCard({
   return (
     <div
       className="w-full max-w-[480px] mx-auto rounded-2xl border border-[rgba(17,17,17,0.2)] p-8 shadow-lg transition-all hover:shadow-[0_0_24px_rgba(17,17,17,0.15)]"
-      style={{ backgroundColor: '#FAFAF8' }}
+      style={{ backgroundColor: '#F9F8F6' }}
     >
       {/* Header with branding */}
       <div className="mb-6 flex items-center justify-between">

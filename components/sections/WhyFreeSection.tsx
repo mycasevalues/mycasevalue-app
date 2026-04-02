@@ -49,7 +49,7 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
   const isEs = lang === 'es';
 
   return (
-    <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-default)' }}>
+    <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#FFFFFF', border: '1px solid #E5E0D8' }}>
       {/* Header */}
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[2px] uppercase mb-3"
@@ -72,14 +72,14 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
       {/* Reasons grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[560px] mx-auto">
         {REASONS.map((reason, i) => (
-          <div key={i} className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div key={i} className="rounded-xl p-4" style={{ background: '#F9F8F6', border: '1px solid #E5E0D8' }}>
             <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
               style={{ background: 'rgba(16,185,129,0.1)' }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d={reason.icon}/>
               </svg>
             </div>
-            <h3 className="text-sm font-bold mb-1.5" style={{ color: '#D1D5DB' }}>
+            <h3 className="text-sm font-bold mb-1.5" style={{ color: '#111827' }}>
               {isEs ? reason.titleEs : reason.title}
             </h3>
             <p className="text-xs leading-relaxed" style={{ color: '#6B7280' }}>
@@ -90,7 +90,7 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
       </div>
 
       {/* Comparison bar */}
-      <div className="max-w-[560px] mx-auto mt-6 rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
+      <div className="max-w-[560px] mx-auto mt-6 rounded-xl p-4" style={{ background: '#F9F8F6', border: '1px solid #E5E0D8' }}>
         <div className="flex items-center justify-between mb-2">
           <span className="text-[10px] font-bold tracking-[1.5px] uppercase" style={{ color: '#9CA3AF' }}>
             {isEs ? 'Comparación de costos mensuales' : 'Monthly cost comparison'}
@@ -98,7 +98,7 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
         </div>
         <div className="space-y-2">
           {[
-            { name: 'MyCaseValues', cost: '$0', width: '2%', color: '#10B981', highlight: true },
+            { name: 'MyCaseValue', cost: '$0', width: '2%', color: '#10B981', highlight: true },
             { name: 'CourtListener', cost: '$0', width: '2%', color: '#333333', highlight: false },
             { name: 'PACER', cost: '$0.10/page', width: '15%', color: '#F59E0B', highlight: false },
             { name: 'Westlaw', cost: '$350+/mo', width: '85%', color: '#EF4444', highlight: false },
@@ -108,7 +108,7 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
               <span className="text-[11px] font-medium w-[100px] flex-shrink-0" style={{ color: item.highlight ? '#10B981' : '#6B7280' }}>
                 {item.name}
               </span>
-              <div className="flex-1 h-2 rounded-full" style={{ background: 'rgba(255,255,255,0.03)' }}>
+              <div className="flex-1 h-2 rounded-full" style={{ background: '#E5E0D8' }}>
                 <div className="h-full rounded-full" style={{ width: item.width, background: item.color, minWidth: '4px' }} />
               </div>
               <span className="text-[10px] font-bold w-[80px] text-right" style={{ color: item.color }}>

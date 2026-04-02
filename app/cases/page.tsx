@@ -78,7 +78,7 @@ export default function CasesIndexPage() {
                   {category.label}
                 </h2>
                 <p style={{ fontSize: 14, color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
-                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #E5E7EB', fontSize: 13, color: '#111111', fontWeight: 500 }}>
+                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #E5E0D8', fontSize: 13, color: '#111111', fontWeight: 500 }}>
                   {category.opts.length} types covered →
                 </div>
               </div>

@@ -134,7 +134,7 @@ export function StepReport({
               ].map((src, i) => (
                 <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-medium transition-all" style={{
                   background: src.done ? 'rgba(13,148,136,0.1)' : 'rgba(255,255,255,0.03)',
-                  border: `1px solid ${src.done ? 'rgba(13,148,136,0.2)' : '#E5E7EB'}`,
+                  border: `1px solid ${src.done ? 'rgba(13,148,136,0.2)' : '#E5E0D8'}`,
                   color: src.done ? '#0D9488' : '#9CA3AF',
                 }}>
                   {src.done ? (

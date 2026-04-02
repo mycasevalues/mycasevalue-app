@@ -11,7 +11,7 @@ export default function ServerHero() {
       <div
         className="hero-container py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
         style={{
-          background: '#FAFAF8',
+          background: '#F9F8F6',
         }}
       >
         <div className="max-w-4xl mx-auto">
@@ -111,7 +111,7 @@ export default function ServerHero() {
       <div
         className="trust-bar-wrapper"
         style={{
-          background: '#FAFAF8',
+          background: '#F9F8F6',
           borderTop: '1px solid rgba(51, 65, 85, 0.4)',
           borderBottom: '1px solid rgba(51, 65, 85, 0.4)',
         }}
@@ -221,7 +221,7 @@ export default function ServerHero() {
       <div
         className="sources-section py-8 sm:py-10 px-4 sm:px-6 lg:px-8"
         style={{
-          background: '#FAFAF8',
+          background: '#F9F8F6',
         }}
       >
         <div className="max-w-4xl mx-auto">

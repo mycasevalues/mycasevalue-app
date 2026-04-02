@@ -160,7 +160,7 @@ export default function DataMethodologySection({ lang = 'en' }: DataMethodologyS
                   style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   {step.icon}
                 </div>
-                <span className="text-[10px] font-bold" style={{ color: '#D1D5DB' }}>
+                <span className="text-[10px] font-bold" style={{ color: '#6B7280' }}>
                   {isEs ? step.labelEs : step.label}
                 </span>
                 <span className="text-[8px] text-center max-w-[80px] hidden sm:block" style={{ color: '#9CA3AF' }}>
@@ -204,7 +204,7 @@ export default function DataMethodologySection({ lang = 'en' }: DataMethodologyS
         <div className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.02)', border: `1px solid ${active.color}30` }}>
           <div className="flex items-start justify-between mb-3">
             <div>
-              <h3 className="text-sm font-bold" style={{ color: '#D1D5DB' }}>{active.name}</h3>
+              <h3 className="text-sm font-bold" style={{ color: '#374151' }}>{active.name}</h3>
               <div className="flex gap-3 mt-1">
                 <span className="text-[10px]" style={{ color: '#9CA3AF' }}>
                   {t.records}: <span style={{ color: active.color }}>{active.records}</span>

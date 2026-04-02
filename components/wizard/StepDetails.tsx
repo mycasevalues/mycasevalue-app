@@ -161,7 +161,7 @@ export function StepDetails({
         </div>
         <button onClick={handleGenerateReport}
           className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer transition-all active:scale-[0.98] hover:scale-[1.01]"
-          style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E7EB', color: (timing && attorney && consent) ? '#fff' : '#6B7280', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(17,17,17,.3)' : 'none', padding: '18px', animation: submitted && (!timing || !attorney || !consent) ? 'shake 0.5s ease-in-out' : 'none' }}>
+          style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E0D8', color: (timing && attorney && consent) ? '#fff' : '#6B7280', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(17,17,17,.3)' : 'none', padding: '18px', animation: submitted && (!timing || !attorney || !consent) ? 'shake 0.5s ease-in-out' : 'none' }}>
           {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
         </button>
         <style>{`

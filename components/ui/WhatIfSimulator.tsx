@@ -108,7 +108,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
   const formatPercent = (val: number) => `${Math.round(val * 100)}%`;
 
   return (
-    <div style={{ backgroundColor: '#FAFAF8', color: '#D1D5DB' }} className="w-full max-w-2xl mx-auto p-6 rounded-lg">
+    <div style={{ backgroundColor: '#F9F8F6', color: '#374151' }} className="w-full max-w-2xl mx-auto p-6 rounded-lg">
       {/* Header */}
       <h2 style={{ fontFamily: 'var(--font-display)' }} className="text-2xl font-bold mb-2">
         {t.title}
@@ -219,9 +219,9 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
                 key={String(value)}
                 onClick={() => setIsAttorney(value)}
                 style={{
-                  backgroundColor: isAttorney === value ? '#111111' : '#E5E7EB',
-                  borderColor: '#E5E7EB',
-                  color: '#D1D5DB',
+                  backgroundColor: isAttorney === value ? '#111111' : '#E5E0D8',
+                  borderColor: '#E5E0D8',
+                  color: isAttorney === value ? '#FFFFFF' : '#374151',
                 }}
                 className="px-4 py-2 rounded border transition-all"
               >
@@ -233,7 +233,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
       </div>
 
       {/* Results Panel */}
-      <div style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }} className="border rounded-lg p-6 space-y-6">
+      <div style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E0D8' }} className="border rounded-lg p-6 space-y-6">
         {/* Projected Win Rate */}
         <div>
           <div style={{ color: '#6B7280' }} className="text-xs font-semibold mb-2">
@@ -255,7 +255,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
               { label: t.typical, val: typicalRecovery, color: '#111111' },
               { label: t.high, val: highRecovery, color: '#0D9488' },
             ].map(({ label, val, color }) => (
-              <div key={label} style={{ backgroundColor: '#FAFAF8', borderColor: '#E5E7EB' }} className="border rounded p-3">
+              <div key={label} style={{ backgroundColor: '#F9F8F6', borderColor: '#E5E0D8' }} className="border rounded p-3">
                 <div style={{ color: '#6B7280' }} className="text-xs mb-1">
                   {label}
                 </div>
@@ -275,7 +275,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
           <div className="flex items-center gap-4">
             <div className="relative w-20 h-20">
               <svg className="w-full h-full" viewBox="0 0 100 100" role="img" aria-label={`${t.confidenceScore}: ${displayConfidence}%`}>
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#E5E7EB" strokeWidth="4" />
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#E5E0D8" strokeWidth="4" />
                 <circle
                   cx="50"
                   cy="50"
@@ -307,7 +307,7 @@ export default function WhatIfSimulator({ lang = 'en', baseData = DEFAULT_BASE_D
             {t.settlementLikelihood}
           </div>
           <div className="flex items-center gap-3">
-            <div className="flex-1 h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
+            <div className="flex-1 h-2 bg-[#E5E0D8] rounded-full overflow-hidden">
               <div
                 style={{
                   backgroundColor: '#0D9488',

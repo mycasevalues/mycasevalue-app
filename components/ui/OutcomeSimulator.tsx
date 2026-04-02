@@ -59,7 +59,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
 
   return (
     <div className="relative overflow-hidden rounded-3xl" style={{
-      background: 'linear-gradient(135deg, #FFFFFF 0%, #E5E7EB 50%, #FFFFFF 100%)',
+      background: 'linear-gradient(135deg, #FFFFFF 0%, #E5E0D8 50%, #FFFFFF 100%)',
       border: '1px solid rgba(17,17,17,0.2)',
       boxShadow: '0 24px 80px rgba(255,255,255,0.4), inset 0 1px 0 rgba(255,255,255,0.05)',
     }}>
@@ -160,7 +160,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               border: '1px solid rgba(255,255,255,0.08)',
             }}>
               <div>
-                <div className="text-[13px] font-semibold text-[#D1D5DB]">
+                <div className="text-[13px] font-semibold text-[#374151]">
                   {es ? 'Representación legal' : 'Attorney Representation'}
                 </div>
                 <div className="text-[11px] text-[#6B7280] mt-0.5">

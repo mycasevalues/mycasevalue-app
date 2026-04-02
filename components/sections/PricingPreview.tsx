@@ -130,7 +130,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
   const isEs = lang === 'es';
 
   return (
-    <div className="rounded-2xl p-6 sm:p-8" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-default)' }}>
+    <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#FFFFFF', border: '1px solid #E5E0D8' }}>
       {/* Header */}
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold tracking-[2px] uppercase mb-3"
@@ -151,14 +151,15 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
       </div>
 
       {/* Plans grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto">
         {PLANS.map(plan => (
           <div
             key={plan.id}
             className="relative rounded-xl p-4 flex flex-col"
             style={{
-              background: plan.highlight ? 'rgba(17,17,17,0.05)' : 'rgba(255,255,255,0.01)',
-              border: `1px solid ${plan.highlight ? 'rgba(17,17,17,0.3)' : 'rgba(255,255,255,0.05)'}`,
+              background: plan.highlight ? 'rgba(17,17,17,0.03)' : '#FFFFFF',
+              border: `1px solid ${plan.highlight ? '#111111' : '#E5E0D8'}`,
+              borderRadius: '12px',
             }}
           >
             {/* Badge */}
@@ -174,11 +175,11 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
 
             {/* Plan name & price */}
             <div className="mb-3 mt-1">
-              <h3 className="text-sm font-bold mb-1" style={{ color: '#D1D5DB' }}>
+              <h3 className="text-sm font-bold mb-1" style={{ color: '#111827' }}>
                 {isEs ? plan.nameEs : plan.name}
               </h3>
               <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-extrabold" style={{ color: plan.highlight ? '#818CF8' : '#D1D5DB' }}>
+                <span className="text-2xl font-extrabold" style={{ color: plan.highlight ? '#818CF8' : '#374151' }}>
                   {plan.price}
                 </span>
                 <span className="text-[10px]" style={{ color: '#9CA3AF' }}>
@@ -199,11 +200,11 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
                       <polyline points="20 6 9 17 4 12"/>
                     </svg>
                   ) : (
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#334155" strokeWidth="2" className="flex-shrink-0 mt-0.5" aria-hidden="true">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" className="flex-shrink-0 mt-0.5" aria-hidden="true">
                       <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
                     </svg>
                   )}
-                  <span className="text-[11px]" style={{ color: f.included ? '#6B7280' : '#4B5563' }}>
+                  <span className="text-[11px]" style={{ color: f.included ? '#374151' : '#9CA3AF' }}>
                     {isEs ? f.textEs : f.text}
                   </span>
                 </div>
@@ -214,9 +215,10 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
             <button
               className="w-full py-2.5 rounded-lg text-[12px] font-semibold transition-all hover:scale-[1.02]"
               style={{
-                background: plan.highlight ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.05)',
-                color: plan.highlight ? '#fff' : '#6B7280',
-                border: plan.highlight ? 'none' : '1px solid rgba(255,255,255,0.08)',
+                background: plan.highlight ? '#111111' : 'transparent',
+                color: plan.highlight ? '#fff' : '#111827',
+                border: plan.highlight ? 'none' : '1px solid #E5E0D8',
+                borderRadius: '9999px',
                 cursor: 'pointer',
               }}
             >

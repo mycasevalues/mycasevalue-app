@@ -9,12 +9,12 @@ module.exports = {
     extend: {
       colors: {
         // Legacy (keep for existing code compatibility) - updated to Paper palette
-        midnight: { DEFAULT: '#FAFAF8', 50: '#FFFFFF', 100: '#F5F5F0', 200: '#E5E7EB', 800: '#374151', 900: '#111827' },
-        cream: { DEFAULT: '#FFFFFF', 100: '#FAFAF8', 200: '#F5F5F0' },
+        midnight: { DEFAULT: '#F9F8F6', 50: '#FFFFFF', 100: '#F5F3EF', 200: '#E5E0D8', 800: '#374151', 900: '#111827' },
+        cream: { DEFAULT: '#FFFFFF', 100: '#F9F8F6', 200: '#F5F3EF' },
         gold: { DEFAULT: '#D97706', light: '#FEF3C7', dark: '#92400E' },
         emerald: { DEFAULT: '#16A34A', light: '#DCFCE7', dark: '#15803D' },
         coral: { DEFAULT: '#DC2626', light: '#FEE2E2', dark: '#991B1B' },
-        steel: { DEFAULT: '#6B7280', light: '#F3F4F6', dark: '#374151' },
+        steel: { DEFAULT: '#6B7280', light: '#EDE9E3', dark: '#374151' },
 
         // Paper design system
         brand: {
@@ -39,12 +39,12 @@ module.exports = {
           'mixed-border': '#FEF08A',
           neutral: '#6B7280',
           'neutral-bg': '#F9FAFB',
-          'neutral-border': '#E5E7EB',
+          'neutral-border': '#E5E0D8',
         },
         surface: {
-          base: '#FAFAF8',
+          base: '#F9F8F6',
           card: '#FFFFFF',
-          border: '#E5E7EB',
+          border: '#E5E0D8',
           'border-strong': '#D1D5DB',
           overlay: 'rgba(17,24,39,0.6)',
         },
@@ -82,8 +82,8 @@ module.exports = {
         'inner-sm': 'inset 0 1px 2px rgba(0,0,0,0.06)',
       },
       borderRadius: {
-        card: '32px',
-        'card-sm': '20px',
+        card: '12px',
+        'card-sm': '10px',
         badge: '6px',
         pill: '9999px',
       },

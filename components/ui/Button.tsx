@@ -18,8 +18,8 @@ export function Button({
 
   const variants: Record<string, string> = {
     primary: 'bg-gradient-to-r from-[#111111] to-[#333333] text-white rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]',
-    secondary: 'bg-transparent border-2 border-[#334155] text-[#D1D5DB] rounded-xl hover:bg-[#E5E7EB] hover:text-white hover:-translate-y-0.5 active:scale-[0.98]',
-    ghost: 'bg-transparent text-[#6B7280] hover:bg-[#E5E7EB] rounded-lg active:scale-[0.98]',
+    secondary: 'bg-transparent border-2 border-[#334155] text-[#374151] rounded-xl hover:bg-[#E5E0D8] hover:text-white hover:-translate-y-0.5 active:scale-[0.98]',
+    ghost: 'bg-transparent text-[#6B7280] hover:bg-[#E5E0D8] rounded-lg active:scale-[0.98]',
   }
 
   const sizes: Record<string, string> = {

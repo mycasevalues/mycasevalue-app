@@ -30,7 +30,7 @@ export class PageErrorBoundary extends React.Component<Props, State> {
       return (
         <div
           className="min-h-screen flex items-center justify-center px-6"
-          style={{ background: '#FAFAF8', fontFamily: "'Roboto', system-ui, sans-serif" }}
+          style={{ background: '#F9F8F6', fontFamily: "'Roboto', system-ui, sans-serif" }}
         >
           <div className="text-center max-w-md">
             <div
@@ -61,7 +61,7 @@ export class PageErrorBoundary extends React.Component<Props, State> {
                 className="px-6 py-3 rounded-xl text-sm font-semibold text-center transition-all"
                 style={{
                   color: '#6B7280',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid #E5E0D8',
                   background: 'transparent',
                 }}
               >

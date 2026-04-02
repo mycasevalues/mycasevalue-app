@@ -48,7 +48,7 @@ export default function DisclaimerPage() {
         className="border-b py-16 sm:py-20"
         style={{
           borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)',
+          background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-6">

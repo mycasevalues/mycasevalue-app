@@ -88,7 +88,7 @@ export default function OddsPage() {
         className="border-b py-16 sm:py-24"
         style={{
           borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)',
+          background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)',
         }}
       >
         <div className="max-w-4xl mx-auto px-6">
@@ -195,7 +195,7 @@ export default function OddsPage() {
             disabled={loading || !selectedCaseType}
             className="px-8 py-4 rounded-lg text-base font-semibold transition-all"
             style={{
-              background: selectedCaseType ? '#111111' : '#E5E7EB',
+              background: selectedCaseType ? '#111111' : '#E5E0D8',
               color: selectedCaseType ? '#FFFFFF' : 'var(--fg-muted)',
               cursor: selectedCaseType && !loading ? 'pointer' : 'default',
             }}

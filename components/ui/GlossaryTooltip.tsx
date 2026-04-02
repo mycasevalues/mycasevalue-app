@@ -152,7 +152,7 @@ export default function GlossaryTerm({
             zIndex: 50,
             backgroundColor: '#FFFFFF',
             borderColor: '#111111',
-            color: '#D1D5DB',
+            color: '#374151',
           }}
           className="animate-in fade-in-0 duration-200 rounded-lg border px-3 py-2 max-w-xs"
         >

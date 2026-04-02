@@ -266,7 +266,7 @@ export function Footer({
               e.currentTarget.style.borderColor = s.color + '40';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#E5E7EB';
+              e.currentTarget.style.background = '#E5E0D8';
               e.currentTarget.style.borderColor = 'var(--border-muted)';
             }}
             title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}

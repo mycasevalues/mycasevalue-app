@@ -16,7 +16,7 @@ export default function MethodologyPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -127,7 +127,7 @@ export default function MethodologyPage() {
           {/* Section 3 */}
           <section className="mb-12">
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#111827' }}>Important Limitations</h2>
-            <div className="p-5 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#E5E7EB', color: 'var(--fg-muted)' }}>
+            <div className="p-5 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#E5E0D8', color: 'var(--fg-muted)' }}>
               <ul className="space-y-3 text-sm leading-relaxed" style={{ margin: 0, paddingLeft: '1rem', color: 'var(--fg-muted)' }}>
                 <li>MyCaseValue displays <strong>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
                 <li>Win rates reflect <strong>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>

@@ -28,10 +28,10 @@ const COLORS = {
   primary: '#111111',
   text: '#111827',
   muted: '#6B7280',
-  bg: '#FAFAF8',
+  bg: '#F9F8F6',
   accentSecondary: '#8B5CF6',
   border: '#D1D5DB',
-  lightBg: '#F3F4F6',
+  lightBg: '#EDE9E3',
 };
 
 function mapLegacyStep(oldStep: number): number {
@@ -96,7 +96,7 @@ export function WizardProgress({
                           ? 'bg-[#111111] text-white'
                           : isCurrent
                             ? 'text-[#111111]'
-                            : 'bg-[#D1D5DB] text-[#9CA3AF]'
+                            : 'bg-[#E5E0D8] text-[#9CA3AF]'
                       }
                     `}
                     style={{
@@ -177,7 +177,7 @@ export function WizardProgress({
             {breadcrumbItems.map((item, idx) => (
               <React.Fragment key={idx}>
                 {idx > 0 && (
-                  <span className="text-[#D1D5DB] text-xs">→</span>
+                  <span className="text-[#6B7280] text-xs">→</span>
                 )}
                 <div
                   className="px-3 py-1 rounded-full text-xs font-medium transition-colors"

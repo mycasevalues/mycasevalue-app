@@ -52,7 +52,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
 
   return (
     <div className="rounded-2xl overflow-hidden" style={{
-      background: 'linear-gradient(180deg, #FAFAF8 0%, #131D35 100%)',
+      background: 'linear-gradient(180deg, #F9F8F6 0%, #131D35 100%)',
       border: '1px solid rgba(17,17,17,0.15)',
       boxShadow: '0 8px 40px rgba(255,255,255,0.3)',
     }}>
@@ -94,7 +94,7 @@ export default function LiveCaseFeed({ lang = 'en' }: LiveCaseFeedProps) {
 
               {/* Info */}
               <div className="flex-1 min-w-0">
-                <div className="text-[13px] font-medium text-[#D1D5DB] truncate">
+                <div className="text-[13px] font-medium text-[#374151] truncate">
                   {es ? ES_TYPES[ev.type] || ev.type : ev.type}
                 </div>
                 <div className="flex items-center gap-2 mt-0.5">

@@ -81,7 +81,7 @@ export default function SocialProofBar({
   const formattedCases = (totalCases / 1000000).toFixed(1);
 
   return (
-    <div style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', backgroundColor: '#FAFAF8' }}>
+    <div style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', backgroundColor: '#F9F8F6' }}>
       <style>{`
         @keyframes marquee {
           0% {
@@ -95,7 +95,7 @@ export default function SocialProofBar({
         .ticker-container {
           overflow: hidden;
           background-color: #FFFFFF;
-          border-bottom: 1px solid #E5E7EB;
+          border-bottom: 1px solid #E5E0D8;
         }
 
         .ticker-content {
@@ -166,7 +166,7 @@ export default function SocialProofBar({
 
         .metric-card {
           background-color: #FFFFFF;
-          border: 1px solid #E5E7EB;
+          border: 1px solid #E5E0D8;
           border-radius: 0.5rem;
           padding: 0.875rem;
           transition: all 0.3s ease;
@@ -199,9 +199,9 @@ export default function SocialProofBar({
         }
 
         .press-section {
-          border-bottom: 1px solid #E5E7EB;
+          border-bottom: 1px solid #E5E0D8;
           padding: 0.875rem;
-          background-color: #FAFAF8;
+          background-color: #F9F8F6;
         }
 
         .press-label {
@@ -223,7 +223,7 @@ export default function SocialProofBar({
 
         .press-badge {
           padding: 0.5rem 1rem;
-          border: 1px solid #E5E7EB;
+          border: 1px solid #E5E0D8;
           border-radius: 0.4rem;
           background-color: #FFFFFF;
           color: #6B7280;
@@ -255,7 +255,7 @@ export default function SocialProofBar({
 
         .verification-section {
           padding: 0.875rem;
-          background-color: #FAFAF8;
+          background-color: #F9F8F6;
         }
 
         .verification-label {

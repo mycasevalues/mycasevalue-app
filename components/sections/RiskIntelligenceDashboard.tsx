@@ -146,12 +146,12 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-2xl font-bold" style={{ color: '#D1D5DB' }}>{compositeScore}</span>
+              <span className="text-2xl font-bold" style={{ color: '#374151' }}>{compositeScore}</span>
               <span className="text-[9px]" style={{ color: '#9CA3AF' }}>{t.outOf}</span>
             </div>
           </div>
           <div>
-            <div className="text-sm font-bold mb-1" style={{ color: '#D1D5DB' }}>{t.composite}</div>
+            <div className="text-sm font-bold mb-1" style={{ color: '#374151' }}>{t.composite}</div>
             <div className="text-xs" style={{ color: '#9CA3AF' }}>
               {compositeScore >= 70
                 ? (isEs ? 'Complejidad alta — considere consultar abogado' : 'High complexity — consider attorney consultation')
@@ -191,7 +191,7 @@ export default function RiskIntelligenceDashboard({ lang = 'en' }: RiskIntellige
                       background: impactColors[factor.impact],
                     }} />
                   </div>
-                  <span className="text-sm font-medium flex-1" style={{ color: '#D1D5DB' }}>
+                  <span className="text-sm font-medium flex-1" style={{ color: '#374151' }}>
                     {isEs ? factor.labelEs : factor.label}
                   </span>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{

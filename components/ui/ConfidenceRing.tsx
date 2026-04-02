@@ -108,7 +108,7 @@ export default function ConfidenceRing({
           {/* Background track */}
           <circle
             cx={size / 2} cy={size / 2} r={radius}
-            fill="none" stroke="#E5E7EB" strokeWidth={strokeWidth}
+            fill="none" stroke="#E5E0D8" strokeWidth={strokeWidth}
           />
           {/* Progress arc */}
           <circle

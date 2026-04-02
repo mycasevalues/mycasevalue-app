@@ -16,7 +16,7 @@ export default function NotFound() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '24px',
-        background: '#FAFAF8',
+        background: '#F9F8F6',
         color: '#111827',
         fontFamily: "'Roboto', system-ui, sans-serif",
         textAlign: 'center',
@@ -39,7 +39,7 @@ export default function NotFound() {
           display: inline-flex; align-items: center; gap: 8px;
           padding: 12px 24px; background: transparent; color: #6B7280;
           border-radius: 12px; font-weight: 600; font-size: 14px;
-          text-decoration: none; border: 1px solid #E5E7EB; transition: all 200ms;
+          text-decoration: none; border: 1px solid #E5E0D8; transition: all 200ms;
         }
         .nf-btn-cases:hover {
           border-color: #111111; color: #111827;

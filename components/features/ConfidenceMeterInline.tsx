@@ -67,7 +67,7 @@ export function ConfidenceMeterInline({ score, size = 140 }: ConfidenceMeterInli
         <path
           d={`M 8 ${size / 2 + 4} A ${r} ${r} 0 0 1 ${size - 8} ${size / 2 + 4}`}
           fill="none"
-          stroke="#D1D5DB"
+          stroke="#9CA3AF"
           strokeWidth="10"
           strokeLinecap="round"
         />

@@ -12,7 +12,7 @@ export default function TheProblem({ lang = 'en' }: TheProblemProps) {
     heading: 'Usted está negociando a ciegas',
     sub: 'Las compañías de seguros tienen acceso a cada veredicto, cada acuerdo, cada resultado judicial. Usted no. Hasta ahora.',
     without: 'Sin datos',
-    withData: 'Con MyCaseValues',
+    withData: 'Con MyCaseValue',
     items_without: [
       { icon: '', text: '¿Mi caso vale algo?' },
       { icon: '', text: '¿Esta oferta es justa?' },
@@ -30,7 +30,7 @@ export default function TheProblem({ lang = 'en' }: TheProblemProps) {
     heading: 'You\'re negotiating blind',
     sub: 'Insurance companies have access to every verdict, every settlement, every court outcome. You don\'t. Until now.',
     without: 'Without data',
-    withData: 'With MyCaseValues',
+    withData: 'With MyCaseValue',
     items_without: [
       { icon: '', text: 'Is my case worth anything?' },
       { icon: '', text: 'Is this offer fair?' },

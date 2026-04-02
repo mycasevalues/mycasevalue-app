@@ -39,10 +39,10 @@ export function Accordion({ items }: AccordionProps) {
               'w-full px-6 py-4 flex items-center justify-between text-left font-medium transition-colors duration-200',
               openId === item.id
                 ? 'text-[#8B5CF6]'
-                : 'text-[#111827] hover:bg-[#E5E7EB]'
+                : 'text-[#111827] hover:bg-[#E5E0D8]'
             )}
             style={{
-              background: openId === item.id ? '#E5E7EB' : '#FFFFFF',
+              background: openId === item.id ? '#E5E0D8' : '#FFFFFF',
             }}
           >
             <span>{item.title}</span>

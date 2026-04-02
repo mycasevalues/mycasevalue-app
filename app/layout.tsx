@@ -61,7 +61,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#FAFAF8',
+  themeColor: '#F9F8F6',
 };
 
 // Schema.org structured data
@@ -236,7 +236,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" hrefLang="x-default" href="https://www.mycasevalues.com" />
         <meta name="author" content="MyCaseValue LLC" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="theme-color" content="#FAFAF8" />
+        <meta name="theme-color" content="#F9F8F6" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="MyCaseValue" />

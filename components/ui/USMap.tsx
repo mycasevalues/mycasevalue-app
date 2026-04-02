@@ -119,7 +119,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
             const hasData = rate != null;
             const isHovered = hovered === code;
             const isSelected = selectedState === code;
-            const bg = hasData ? getHeatColor(rate) : '#E5E7EB';
+            const bg = hasData ? getHeatColor(rate) : '#E5E0D8';
 
             return (
               <button
@@ -220,7 +220,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
               ))}
             </div>
           </div>
-          <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #E5E7EB, transparent)' }} />
+          <div className="w-px self-stretch" style={{ background: 'linear-gradient(180deg, transparent, #E5E0D8, transparent)' }} />
           <div className="text-center">
             <div className="text-[9px] font-bold tracking-[1.5px] mb-1.5" style={{ color: '#6B7280' }}>
               {lang === 'es' ? '▼ MÁS BAJOS' : '▼ LOWEST'}

@@ -57,7 +57,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
 
   return (
     <div className="rounded-2xl overflow-hidden" style={{
-      background: 'linear-gradient(180deg, #FAFAF8 0%, #131D35 100%)',
+      background: 'linear-gradient(180deg, #F9F8F6 0%, #131D35 100%)',
       border: '1px solid rgba(17,17,17,0.12)',
       boxShadow: '0 12px 48px rgba(255,255,255,0.3)',
     }}>
@@ -78,7 +78,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
       {/* Metric cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-px p-px" style={{ background: 'rgba(255,255,255,0.04)' }}>
         {METRICS.map((m, i) => (
-          <div key={m.key} className="p-4 text-center transition-all hover:bg-white/[0.03]" style={{ background: '#FAFAF8' }}>
+          <div key={m.key} className="p-4 text-center transition-all hover:bg-white/[0.03]" style={{ background: '#F9F8F6' }}>
             <div className="text-[18px] sm:text-[26px] font-display font-extrabold mb-1" style={{
               color: m.color,
               letterSpacing: '-1px',
@@ -109,7 +109,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
               >
                 {/* Tooltip */}
                 {isHovered && (
-                  <div className="text-[10px] font-mono text-white bg-[#E5E7EB] px-2 py-1 rounded mb-1 whitespace-nowrap" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
+                  <div className="text-[10px] font-mono text-white bg-[#E5E0D8] px-2 py-1 rounded mb-1 whitespace-nowrap" style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}>
                     {(d.cases / 1000).toFixed(0)}K • {d.wr}%
                   </div>
                 )}
@@ -164,7 +164,7 @@ export default function NationwideDashboard({ lang = 'en' }: NationwideDashboard
                   <path d={area} fill="url(#wrGrad)" />
                   <path d={line} fill="none" stroke="#0D9488" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   {pts.map((p, i) => (
-                    <circle key={i} cx={p.x} cy={p.y} r="3" fill="#0D9488" stroke="#FAFAF8" strokeWidth="1.5" />
+                    <circle key={i} cx={p.x} cy={p.y} r="3" fill="#0D9488" stroke="#F9F8F6" strokeWidth="1.5" />
                   ))}
                 </>
               );

@@ -195,7 +195,7 @@ export function StepHome({
                   className="px-8 py-4 text-[15px] font-medium rounded-full cursor-pointer transition-all"
                   style={{
                     background: '#FFFFFF',
-                    border: '1px solid #E5E7EB',
+                    border: '1px solid #E5E0D8',
                     color: '#1A1A1A',
                   }}>
                   {t.hero_demo}
@@ -219,7 +219,7 @@ export function StepHome({
               </div>
 
               {/* Trust signals */}
-              <div className="mt-10 pt-8" style={{ borderTop: '1px solid #E5E7EB' }}>
+              <div className="mt-10 pt-8" style={{ borderTop: '1px solid #E5E0D8' }}>
                 {/* Hero stats */}
                 <div className="flex gap-4 sm:gap-6 mb-8 flex-wrap data-grid-stagger">
                   <div className="stat-glow" style={{ '--stat-color': '#111111' } as any}>
@@ -228,21 +228,21 @@ export function StepHome({
                     </div>
                     <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Casos federales' : 'Federal cases'}</div>
                   </div>
-                  <div className="w-px self-stretch" style={{ background: '#E5E7EB' }} />
+                  <div className="w-px self-stretch" style={{ background: '#E5E0D8' }} />
                   <div className="stat-glow" style={{ '--stat-color': '#111111' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#111827' }}>
                       {heroCounterDone ? '94' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
                     <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Distritos federales' : 'Federal districts'}</div>
                   </div>
-                  <div className="w-px self-stretch" style={{ background: '#E5E7EB' }} />
+                  <div className="w-px self-stretch" style={{ background: '#E5E0D8' }} />
                   <div className="stat-glow" style={{ '--stat-color': '#111111' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#111827' }}>
                       {heroCounterDone ? '50+' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
                     </div>
                     <div className="text-[11px] mt-1.5 font-semibold" style={{ color: '#6B7280' }}>{lang === 'es' ? 'Años de datos' : 'Years of data'}</div>
                   </div>
-                  <div className="w-px self-stretch" style={{ background: '#E5E7EB' }} />
+                  <div className="w-px self-stretch" style={{ background: '#E5E0D8' }} />
                   <div className="stat-glow" style={{ '--stat-color': '#111111' } as any}>
                     <div className="text-3xl sm:text-4xl font-display font-extrabold counter-animate" style={{ letterSpacing: '-1.5px', color: '#111827' }}>
                       {heroCounterDone ? '84' : <span className="inline-block w-12 h-8 rounded skeleton-premium" />}
@@ -262,8 +262,8 @@ export function StepHome({
                     ].map((s, i) => (
                       <div key={i} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all hover:scale-[1.02]" style={{
                         color: '#374151',
-                        background: '#F3F4F6',
-                        border: '1px solid #E5E7EB',
+                        background: '#EDE9E3',
+                        border: '1px solid #E5E0D8',
                       }}>
                         {s.icon}
                         {s.name}

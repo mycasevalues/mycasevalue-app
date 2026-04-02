@@ -130,7 +130,7 @@ export function ExitIntentModal({
         {/* Close Button */}
         <button
           onClick={() => setIsVisible(false)}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200 hover:bg-[#E5E7EB] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-200 hover:bg-[#E5E0D8] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
           style={{
           }}
           aria-label={t.closeAriaLabel}

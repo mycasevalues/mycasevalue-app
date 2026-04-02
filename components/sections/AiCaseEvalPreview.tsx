@@ -176,7 +176,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                 style={{
                   background: 'rgba(0,0,0,0.3)',
                   border: '1px solid rgba(139,92,246,0.2)',
-                  color: '#D1D5DB',
+                  color: '#374151',
                   caretColor: '#A78BFA',
                 }}
                 onFocus={e => { e.currentTarget.style.borderColor = 'rgba(139,92,246,0.5)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(139,92,246,0.1)'; }}
@@ -275,7 +275,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                       <span style={{ color: i < lineIdx ? '#10B981' : '#A78BFA' }}>
                         {i < lineIdx ? '\u2713' : '\u25B8'}
                       </span>
-                      <span style={{ color: i < lineIdx ? '#9CA3AF' : '#D1D5DB' }}>
+                      <span style={{ color: i < lineIdx ? '#9CA3AF' : '#374151' }}>
                         {i === lineIdx ? line.slice(0, charIdx) : line}
                         {i === lineIdx && <span className="inline-block w-1.5 h-3.5 ml-0.5" style={{ background: '#A78BFA', animation: 'blink 1s step-end infinite' }} />}
                       </span>
@@ -337,7 +337,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                   {/* Matched case display */}
                   <div className="rounded-lg p-3" style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
                     <div className="text-[11px] font-bold mb-1" style={{ color: '#10B981' }}>CASE TYPE DETECTED</div>
-                    <div className="text-[14px] font-semibold mb-1" style={{ color: '#D1D5DB' }}>{matchedCase.label}</div>
+                    <div className="text-[14px] font-semibold mb-1" style={{ color: '#374151' }}>{matchedCase.label}</div>
                     <div className="text-[10px]" style={{ color: '#6B7280' }}>Confidence: {Math.round(matchedCase.confidence * 100)}%</div>
                   </div>
 

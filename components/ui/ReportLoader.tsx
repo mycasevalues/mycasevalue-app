@@ -146,7 +146,7 @@ export default function ReportLoader({
     step <= 4 && step > 0 ? 'opacity-100' : 'opacity-0';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#FAFAF8]/95 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#F9F8F6]/95 backdrop-blur-sm">
       <style>{`
         @keyframes spin {
           from { transform: rotate(0deg); }
@@ -182,7 +182,7 @@ export default function ReportLoader({
                 cy="60"
                 r="45"
                 fill="none"
-                stroke="#E5E7EB"
+                stroke="#E5E0D8"
                 strokeWidth="2"
               />
               {/* Progress ring */}
@@ -214,7 +214,7 @@ export default function ReportLoader({
             <div className="mb-4 flex justify-center">
               <div className="w-8 h-8 border-2 border-[#0D9488] border-t-[#111111] rounded-full animate-spin-slow" />
             </div>
-            <p className="font-mono text-[#D1D5DB]">{t.searching}</p>
+            <p className="font-mono text-[#374151]">{t.searching}</p>
           </div>
         )}
 
@@ -232,7 +232,7 @@ export default function ReportLoader({
                 ))}
               </div>
             </div>
-            <p className="font-mono text-[#D1D5DB]">
+            <p className="font-mono text-[#374151]">
               {t.analyzing.replace('{count}', count.toLocaleString())}
             </p>
           </div>
@@ -253,7 +253,7 @@ export default function ReportLoader({
                 />
               ))}
             </div>
-            <p className="font-mono text-[#D1D5DB]">{t.comparing}</p>
+            <p className="font-mono text-[#374151]">{t.comparing}</p>
           </div>
         )}
 
@@ -274,7 +274,7 @@ export default function ReportLoader({
                 </p>
               </div>
             </div>
-            <p className="font-mono text-[#D1D5DB] text-sm">{t.calculating}</p>
+            <p className="font-mono text-[#374151] text-sm">{t.calculating}</p>
           </div>
         )}
 

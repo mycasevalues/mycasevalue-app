@@ -273,7 +273,7 @@ export function CaseTimelineSimulator({
               left: '0',
               right: '0',
               height: '3px',
-              background: '#E5E7EB',
+              background: '#E5E0D8',
               borderRadius: '2px',
             }}
           />
@@ -329,7 +329,7 @@ export function CaseTimelineSimulator({
                       alignItems: 'center',
                       justifyContent: 'center',
                       background: isActive ? `${phase.color}20` : '#FFFFFF',
-                      border: `${isHighlighted ? 3 : 2}px solid ${isActive ? phase.color : '#E5E7EB'}`,
+                      border: `${isHighlighted ? 3 : 2}px solid ${isActive ? phase.color : '#E5E0D8'}`,
                       fontSize: isHighlighted ? '18px' : '16px',
                       boxShadow: isActive ? `0 0 20px ${phase.color}40` : 'none',
                       transition: 'all 0.5s ease',
@@ -402,7 +402,7 @@ export function CaseTimelineSimulator({
                         top: '70px',
                         left: '50%',
                         transform: 'translateX(-50%)',
-                        background: '#E5E7EB',
+                        background: '#E5E0D8',
                         border: `1px solid ${phase.color}40`,
                         borderRadius: '8px',
                         padding: '12px',
@@ -440,7 +440,7 @@ export function CaseTimelineSimulator({
               borderRadius: '2px',
               background: isVisible
                 ? 'linear-gradient(180deg, #111111, #0D9488, #EF4444)'
-                : '#E5E7EB',
+                : '#E5E0D8',
               transition: 'background 2.5s ease',
             }}
           />
@@ -474,7 +474,7 @@ export function CaseTimelineSimulator({
                     alignItems: 'center',
                     justifyContent: 'center',
                     background: isActive ? `${phase.color}20` : '#FFFFFF',
-                    border: `${isHighlighted ? 3 : 2}px solid ${isActive ? phase.color : '#E5E7EB'}`,
+                    border: `${isHighlighted ? 3 : 2}px solid ${isActive ? phase.color : '#E5E0D8'}`,
                     fontSize: isHighlighted ? '14px' : '12px',
                     boxShadow: isActive ? `0 0 16px ${phase.color}40` : 'none',
                     transition: 'all 0.5s ease',
@@ -535,7 +535,7 @@ export function CaseTimelineSimulator({
                     <div
                       style={{
                         padding: '10px',
-                        background: '#E5E7EB',
+                        background: '#E5E0D8',
                         border: `1px solid ${phase.color}40`,
                         borderRadius: '6px',
                         fontSize: '10px',

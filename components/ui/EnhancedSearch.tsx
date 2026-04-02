@@ -298,12 +298,12 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
           display: 'flex',
           alignItems: 'center',
           backgroundColor: '#FFFFFF',
-          border: '1px solid #E5E7EB',
+          border: '1px solid #E5E0D8',
           borderRadius: '8px',
           padding: '10px 14px',
           gap: '10px',
           transition: 'all 0.3s ease',
-          borderColor: isOpen ? '#111111' : '#E5E7EB',
+          borderColor: isOpen ? '#111111' : '#E5E0D8',
         }}
       >
         <svg
@@ -352,8 +352,8 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
             left: 0,
             right: 0,
             marginTop: '8px',
-            backgroundColor: '#FAFAF8',
-            border: '1px solid #E5E7EB',
+            backgroundColor: '#F9F8F6',
+            border: '1px solid #E5E0D8',
             borderRadius: '8px',
             boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
             zIndex: 50,
@@ -421,7 +421,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                           style={{
                             padding: '10px 14px',
                             cursor: 'pointer',
-                            backgroundColor: isSelected ? '#E5E7EB' : 'transparent',
+                            backgroundColor: isSelected ? '#E5E0D8' : 'transparent',
                             borderLeft: isSelected ? `3px solid ${category.color}` : '3px solid transparent',
                             transition: 'all 0.15s ease',
                             display: 'flex',
@@ -496,7 +496,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
                     style={{
                       padding: '10px 14px',
                       cursor: 'pointer',
-                      backgroundColor: isSelected ? '#E5E7EB' : 'transparent',
+                      backgroundColor: isSelected ? '#E5E0D8' : 'transparent',
                       borderLeft: isSelected ? '3px solid #111111' : '3px solid transparent',
                       transition: 'all 0.15s ease',
                       display: 'flex',

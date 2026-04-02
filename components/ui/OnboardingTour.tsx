@@ -90,7 +90,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
       <button
         onClick={handleSkip}
         className="absolute top-8 right-8 p-2 rounded-lg transition-colors hover:bg-indigo-600"
-        style={{ color: '#D1D5DB' }}
+        style={{ color: '#111827' }}
         aria-label="Close tour"
       >
         <X size={24} />
@@ -105,7 +105,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
         <div className="text-6xl mb-6 text-center">{step.icon}</div>
 
         {/* Title */}
-        <h2 className="text-3xl font-bold mb-4 text-center" style={{ color: '#D1D5DB' }}>
+        <h2 className="text-3xl font-bold mb-4 text-center" style={{ color: '#111827' }}>
           {step.title}
         </h2>
 
@@ -139,7 +139,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
             disabled={currentStep === 0}
             className="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors disabled:opacity-50"
             style={{
-              color: '#D1D5DB',
+              color: '#374151',
               borderColor: '#111111',
               borderWidth: '1px',
             }}
@@ -166,7 +166,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
               className="flex items-center gap-2 px-6 py-2 rounded-lg font-semibold transition-colors"
               style={{
                 backgroundColor: '#111111',
-                color: '#D1D5DB',
+                color: '#FFFFFF',
               }}
             >
               {t.getStarted}
@@ -177,7 +177,7 @@ export default function OnboardingTour({ lang = 'en', onComplete }: Props) {
               className="flex items-center gap-2 px-6 py-2 rounded-lg font-semibold transition-colors"
               style={{
                 backgroundColor: '#111111',
-                color: '#D1D5DB',
+                color: '#FFFFFF',
               }}
             >
               {t.next}

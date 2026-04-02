@@ -9,9 +9,9 @@ interface CardProps {
 
 export function Card({ variant = 'default', children, className = '' }: CardProps) {
   const variants: Record<string, string> = {
-    default: 'bg-[#FFFFFF] border border-[#E5E7EB] rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg',
+    default: 'bg-[#FFFFFF] border border-[#E5E0D8] rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg',
     elevated: 'bg-[#FFFFFF] rounded-xl p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-xl',
-    glass: 'bg-[#FFFFFF]/60 backdrop-blur-xl border border-[#E5E7EB]/20 rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg',
+    glass: 'bg-[#FFFFFF]/60 backdrop-blur-xl border border-[#E5E0D8]/20 rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg',
   }
 
   return (

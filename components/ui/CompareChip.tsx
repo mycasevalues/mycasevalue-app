@@ -18,7 +18,7 @@ export function CompareChip({ label, value, color, active, onClick }: CompareChi
       onClick={onClick}
       className="flex flex-col items-center px-4 py-3 rounded-xl cursor-pointer transition-all text-center"
       style={{
-        background: active ? `${color}12` : '#E5E7EB',
+        background: active ? `${color}12` : '#E5E0D8',
         border: active ? `2px solid ${color}30` : '1.5px solid var(--border-muted)',
         transform: active ? 'scale(1.03)' : 'scale(1)',
         minWidth: 90,

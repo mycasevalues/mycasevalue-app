@@ -98,7 +98,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       />
 
       {/* Header with breadcrumb */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12">
           <a href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -161,7 +161,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           '--tw-prose-quote-borders': '#111111',
           '--tw-prose-captions': 'var(--fg-muted)',
           '--tw-prose-code': '#111111',
-          '--tw-prose-pre-code': '#D1D5DB',
+          '--tw-prose-pre-code': '#374151',
           '--tw-prose-pre-bg': '#FFFFFF',
           '--tw-prose-th-borders': 'var(--border-default)',
           '--tw-prose-td-borders': 'var(--border-default)',

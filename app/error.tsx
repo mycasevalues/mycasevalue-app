@@ -20,7 +20,7 @@ export default function Error({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#FAFAF8',
+        background: '#F9F8F6',
         fontFamily: "'Roboto', system-ui, sans-serif",
         padding: 24,
       }}
@@ -107,7 +107,7 @@ export default function Error({
               padding: '12px 32px',
               background: 'transparent',
               color: '#6B7280',
-              border: '1px solid #E5E7EB',
+              border: '1px solid #E5E0D8',
               borderRadius: 12,
               fontSize: 14,
               fontWeight: 600,
@@ -121,7 +121,7 @@ export default function Error({
               (e.target as HTMLAnchorElement).style.background = 'rgba(79, 70, 229, 0.08)';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLAnchorElement).style.borderColor = '#E5E7EB';
+              (e.target as HTMLAnchorElement).style.borderColor = '#E5E0D8';
               (e.target as HTMLAnchorElement).style.color = '#6B7280';
               (e.target as HTMLAnchorElement).style.background = 'transparent';
             }}

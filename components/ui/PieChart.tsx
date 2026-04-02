@@ -47,7 +47,7 @@ export default function PieChart({ segments, size = 200, strokeWidth = 14, lang 
         <circle
           cx={cx} cy={cy} r={r}
           fill="none"
-          stroke="#E5E7EB"
+          stroke="#E5E0D8"
           strokeWidth={strokeWidth - 4}
         />
         {/* Segments */}

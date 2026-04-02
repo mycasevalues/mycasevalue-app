@@ -85,15 +85,15 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen p-4 md:p-8" style={{ backgroundColor: '#FAFAF8' }}>
-      <h1 className="text-3xl font-bold mb-8" style={{ color: '#D1D5DB' }}>
+    <div className="min-h-screen p-4 md:p-8" style={{ backgroundColor: '#F9F8F6' }}>
+      <h1 className="text-3xl font-bold mb-8" style={{ color: '#111827' }}>
         {t.title}
       </h1>
 
       {reports.length === 0 ? (
         <div
           className="flex flex-col items-center justify-center py-16 rounded-lg border-2 border-dashed"
-          style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }}
+          style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E0D8' }}
         >
           <FileText size={48} style={{ color: '#6B7280' }} className="mb-4" />
           <p style={{ color: '#6B7280' }} className="text-center max-w-md">
@@ -106,11 +106,11 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
             <div
               key={report.id}
               className="rounded-lg p-6 border transition-all hover:shadow-lg"
-              style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB' }}
+              style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E0D8' }}
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 style={{ color: '#D1D5DB' }} className="font-semibold text-lg">
+                  <h3 style={{ color: '#111827' }} className="font-semibold text-lg">
                     {report.caseName}
                   </h3>
                   <p style={{ color: '#6B7280' }} className="text-sm">
@@ -148,7 +148,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                       style={{
                         backgroundColor:
                           report.winRate > 50 ? '#0D9488' : '#F59E0B',
-                        color: '#FAFAF8',
+                        color: '#F9F8F6',
                       }}
                     >
                       {Math.round(report.winRate)}%
@@ -160,7 +160,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
                   <span style={{ color: '#6B7280' }} className="text-sm">
                     {t.settlement}:
                   </span>
-                  <span style={{ color: '#D1D5DB' }} className="font-medium">
+                  <span style={{ color: '#374151' }} className="font-medium">
                     {report.settlementRange}
                   </span>
                 </div>
@@ -169,7 +169,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
               <button
                 onClick={() => onLoadReport(report)}
                 className="w-full py-2 rounded font-medium transition hover:opacity-90"
-                style={{ backgroundColor: '#111111', color: '#D1D5DB' }}
+                style={{ backgroundColor: '#111111', color: '#FFFFFF' }}
               >
                 {t.viewReport}
               </button>

@@ -57,7 +57,7 @@ function Toast({ message, visible }: { message: string; visible: boolean }) {
       aria-live="polite"
       className="fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-medium z-[var(--z-modal)] text-white"
       style={{
-        background: '#FAFAF8',
+        background: '#F9F8F6',
         boxShadow: '0 8px 32px rgba(255,255,255,.2)',
         animation: 'slideUp 0.3s ease',
       }}
@@ -751,7 +751,7 @@ export function Footer({
               e.currentTarget.style.borderColor = s.color + '40';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#E5E7EB';
+              e.currentTarget.style.background = '#E5E0D8';
               e.currentTarget.style.borderColor = 'var(--border-muted)';
             }}
             title={`${lang === 'es' ? 'Compartir en' : 'Share on'} ${s.label}`}

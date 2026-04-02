@@ -38,7 +38,7 @@ export default function TermsPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -62,7 +62,7 @@ export default function TermsPage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <div className="prose prose-invert max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
 
-          <div className="p-6 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#E5E7EB', color: 'var(--fg-primary)' }}>
+          <div className="p-6 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#E5E0D8', color: 'var(--fg-primary)' }}>
             <p className="m-0 font-semibold" style={{ color: '#D97706' }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.

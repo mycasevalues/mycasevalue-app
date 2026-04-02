@@ -455,7 +455,7 @@ async function CategoryPage({
       <div style={{
         background: '#FFFFFF',
         padding: '60px 20px',
-        borderBottom: '1px solid #E5E7EB',
+        borderBottom: '1px solid #E5E0D8',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{

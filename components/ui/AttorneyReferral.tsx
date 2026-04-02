@@ -51,15 +51,15 @@ export function AttorneyReferralInline({
   return (
     <div
       className="w-full px-6 py-5 rounded-lg flex items-center justify-between"
-      style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E7EB', borderWidth: '1px' }}
+      style={{ backgroundColor: '#FFFFFF', borderColor: '#E5E0D8', borderWidth: '1px' }}
     >
-      <p style={{ color: '#D1D5DB' }} className="text-sm font-medium">
+      <p style={{ color: '#374151' }} className="text-sm font-medium">
         {t.inlineMessage}
       </p>
       <button
         style={{
           backgroundColor: '#111111',
-          color: '#D1D5DB',
+          color: '#FFFFFF',
         }}
         className="px-4 py-2 rounded font-medium text-sm hover:opacity-90 transition-opacity whitespace-nowrap ml-4"
       >
@@ -84,7 +84,7 @@ export default function AttorneyReferral({
       style={{
         backgroundColor: '#FFFFFF',
         borderWidth: '1px',
-        borderColor: '#E5E7EB',
+        borderColor: '#E5E0D8',
       }}
     >
       {/* Gradient border accent */}
@@ -103,7 +103,7 @@ export default function AttorneyReferral({
       <div className="relative z-10">
         <h3
           className="text-2xl font-bold mb-2"
-          style={{ color: '#D1D5DB' }}
+          style={{ color: '#111827' }}
         >
           {t.headline}
         </h3>
@@ -132,7 +132,7 @@ export default function AttorneyReferral({
               >
                 
               </span>
-              <span style={{ color: '#D1D5DB' }} className="text-sm">
+              <span style={{ color: '#374151' }} className="text-sm">
                 {item}
               </span>
             </li>
@@ -145,7 +145,7 @@ export default function AttorneyReferral({
           className="inline-block px-6 py-3 rounded font-semibold text-base transition-opacity hover:opacity-90"
           style={{
             backgroundColor: '#111111',
-            color: '#D1D5DB',
+            color: '#FFFFFF',
           }}
         >
           {t.findAttorneyNear}

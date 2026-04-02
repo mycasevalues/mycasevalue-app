@@ -11,7 +11,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
   return (
     <div
       className="w-full py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
-      style={{ background: '#FAFAF8' }}
+      style={{ background: '#F9F8F6' }}
     >
       {/* Dot pattern background */}
       <svg
@@ -48,7 +48,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
             color: '#FFFFFF',
           }}
         >
-          <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#FAFAF8', opacity: 0.5 }} />
+          <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#F9F8F6', opacity: 0.5 }} />
           {lang === 'es' ? 'COMENZAR' : 'GET STARTED'}
         </div>
 

@@ -87,7 +87,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
     return (
       <div
         key={metricKey}
-        className="mb-6 pb-6 border-b border-[#E5E7EB]"
+        className="mb-6 pb-6 border-b border-[#E5E0D8]"
         onMouseEnter={() => setHoveredMetric(metricKey)}
         onMouseLeave={() => setHoveredMetric(null)}
       >
@@ -107,7 +107,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
               <span className="text-xs text-[#111827] font-semibold">{caseA.label}</span>
               <span className="text-sm font-bold text-[#111111]">{formatA(valueA)}</span>
             </div>
-            <div className="h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
+            <div className="h-2 bg-[#E5E0D8] rounded-full overflow-hidden">
               <div
                 className={`h-full bg-[#111111] rounded-full transition-all duration-500 ease-out ${
                   hoveredMetric === metricKey ? 'shadow-lg shadow-[#111111]/50' : ''
@@ -126,7 +126,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
                   {formatB ? formatB(valueB!) : formatA(valueB!)}
                 </span>
               </div>
-              <div className="h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
+              <div className="h-2 bg-[#E5E0D8] rounded-full overflow-hidden">
                 <div
                   className={`h-full bg-[#5EEAD4] rounded-full transition-all duration-500 ease-out ${
                     hoveredMetric === metricKey ? 'shadow-lg shadow-[#5EEAD4]/50' : ''
@@ -188,7 +188,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
   return (
     <div className="w-full">
       {caseB ? (
-        <div className="bg-[#FFFFFF] border border-[#E5E7EB] rounded-lg p-6 md:p-8">
+        <div className="bg-[#FFFFFF] border border-[#E5E0D8] rounded-lg p-6 md:p-8">
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-[#111827] mb-2">
               {lang === 'es' ? 'Comparación de casos' : 'Case Comparison'}
@@ -249,7 +249,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           </div>
 
           {/* Verdict Summary */}
-          <div className="bg-[#E5E7EB] border-l-4 border-[#5EEAD4] rounded px-4 py-3">
+          <div className="bg-[#E5E0D8] border-l-4 border-[#5EEAD4] rounded px-4 py-3">
             <p className="text-sm text-[#111827]">
               <span className="font-semibold text-[#5EEAD4]">Verdict: </span>
               {generateVerdict()}
@@ -257,7 +257,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           </div>
         </div>
       ) : (
-        <div className="bg-[#FFFFFF] border-2 border-dashed border-[#E5E7EB] rounded-lg p-8 md:p-12 text-center">
+        <div className="bg-[#FFFFFF] border-2 border-dashed border-[#E5E0D8] rounded-lg p-8 md:p-12 text-center">
           <div className="mb-4">
             <svg
               className="w-12 h-12 mx-auto text-[#6B7280] mb-4"

@@ -42,12 +42,12 @@ const FAQ_EN: FaqItem[] = [
     a: 'If your free report doesn\'t answer your key questions, we offer a 100% refund on premium reports. We also provide email support to help you interpret your data and answer follow-up questions about your case category.',
   },
   {
-    q: 'What types of cases does MyCaseValues cover?',
+    q: 'What types of cases does MyCaseValue cover?',
     a: 'We cover 84 federal civil case types including employment discrimination (Title VII, ADA, ADEA), personal injury, medical malpractice, product liability, civil rights (§1983), contract disputes, FLSA wage violations, FMLA retaliation, premises liability, wrongful termination, and more. Each maps to a specific federal Nature of Suit (NOS) code.',
   },
   {
-    q: 'How is MyCaseValues different from Westlaw or LexisNexis?',
-    a: 'Westlaw and LexisNexis charge $350-400+/month and are designed for attorneys. MyCaseValues is free, requires no login, and is built specifically for plaintiffs and the public. We provide win rates, settlement ranges, judge analytics, and district intelligence — features that overlap with paid services but are accessible to everyone.',
+    q: 'How is MyCaseValue different from Westlaw or LexisNexis?',
+    a: 'Westlaw and LexisNexis charge $350-400+/month and are designed for attorneys. MyCaseValue is free, requires no login, and is built specifically for plaintiffs and the public. We provide win rates, settlement ranges, judge analytics, and district intelligence — features that overlap with paid services but are accessible to everyone.',
   },
   {
     q: 'Where does the EEOC data come from?',
@@ -58,8 +58,8 @@ const FAQ_EN: FaqItem[] = [
     a: 'Settlement percentiles show where outcomes fall in the distribution. P10 means 10% of cases settled for less than that amount. P50 is the median — half settled above, half below. P90 means only 10% exceeded that amount. These come from FJC IDB and BJS Civil Trial Statistics.',
   },
   {
-    q: 'Is MyCaseValues legal advice?',
-    a: 'No. MyCaseValues is a public data research tool that shows historical outcomes in federal civil cases. It is not legal advice, does not predict outcomes, and should not replace consultation with a qualified attorney. We provide information to help you make more informed decisions.',
+    q: 'Is MyCaseValue legal advice?',
+    a: 'No. MyCaseValue is a public data research tool that shows historical outcomes in federal civil cases. It is not legal advice, does not predict outcomes, and should not replace consultation with a qualified attorney. We provide information to help you make more informed decisions.',
   },
   {
     q: 'How often is the data updated?',
@@ -101,12 +101,12 @@ const FAQ_ES: FaqItem[] = [
     a: 'Si tu informe gratuito no responde tus preguntas clave, ofrecemos un reembolso del 100% en informes premium. También proporcionamos soporte por correo electrónico para ayudarte a interpretar tus datos y responder preguntas de seguimiento sobre tu categoría de caso.',
   },
   {
-    q: '¿Qué tipos de casos cubre MyCaseValues?',
+    q: '¿Qué tipos de casos cubre MyCaseValue?',
     a: 'Cubrimos más de 50 tipos de casos civiles federales incluyendo discriminación laboral (Título VII, ADA, ADEA), lesiones personales, negligencia médica, responsabilidad de producto, derechos civiles (§1983), disputas contractuales, violaciones salariales FLSA, represalias FMLA, responsabilidad de instalaciones, despido injustificado y más.',
   },
   {
-    q: '¿Cómo se diferencia MyCaseValues de Westlaw o LexisNexis?',
-    a: 'Westlaw y LexisNexis cobran $350-400+/mes y están diseñados para abogados. MyCaseValues es gratuito, no requiere registro y está construido específicamente para demandantes y el público. Proporcionamos tasas de éxito, rangos de acuerdos, análisis de jueces e inteligencia de distritos.',
+    q: '¿Cómo se diferencia MyCaseValue de Westlaw o LexisNexis?',
+    a: 'Westlaw y LexisNexis cobran $350-400+/mes y están diseñados para abogados. MyCaseValue es gratuito, no requiere registro y está construido específicamente para demandantes y el público. Proporcionamos tasas de éxito, rangos de acuerdos, análisis de jueces e inteligencia de distritos.',
   },
   {
     q: '¿De dónde provienen los datos del EEOC?',
@@ -117,8 +117,8 @@ const FAQ_ES: FaqItem[] = [
     a: 'Los percentiles de acuerdos muestran dónde caen los resultados en la distribución. P10 significa que el 10% de los casos se resolvieron por menos de esa cantidad. P50 es la mediana. P90 significa que solo el 10% superó esa cantidad. Estos provienen del FJC IDB y las Estadísticas de Juicios Civiles del BJS.',
   },
   {
-    q: '¿MyCaseValues es asesoría legal?',
-    a: 'No. MyCaseValues es una herramienta de investigación de datos públicos que muestra resultados históricos en casos civiles federales. No es asesoría legal, no predice resultados y no debe reemplazar la consulta con un abogado calificado.',
+    q: '¿MyCaseValue es asesoría legal?',
+    a: 'No. MyCaseValue es una herramienta de investigación de datos públicos que muestra resultados históricos en casos civiles federales. No es asesoría legal, no predice resultados y no debe reemplazar la consulta con un abogado calificado.',
   },
   {
     q: '¿Con qué frecuencia se actualizan los datos?',
@@ -135,7 +135,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
   const faqs = lang === 'es' ? FAQ_ES : FAQ_EN;
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#FAFAF8]">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#F9F8F6]">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
@@ -165,7 +165,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
               key={idx}
               className="border rounded-xl overflow-hidden transition-all duration-200"
               style={{
-                borderColor: '#E5E7EB',
+                borderColor: '#E5E0D8',
                 background: '#FFFFFF',
               }}
             >
@@ -217,7 +217,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
                   opacity: openIdx === idx ? 1 : 0,
                 }}
               >
-                <div className="px-6 pb-4 border-t" style={{ borderColor: '#E5E7EB' }}>
+                <div className="px-6 pb-4 border-t" style={{ borderColor: '#E5E0D8' }}>
                   <p className="text-sm sm:text-base leading-relaxed text-[#6B7280] font-body">
                     {item.a}
                   </p>
