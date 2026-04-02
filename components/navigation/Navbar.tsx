@@ -104,7 +104,7 @@ export function Navbar({
               { href: '/blog', label: lang === 'es' ? 'Blog' : 'Blog' },
               { href: '/pricing', label: lang === 'es' ? 'Precios' : 'Pricing' },
               { href: '/trends', label: lang === 'es' ? 'Tendencias' : 'Trends' },
-              { href: '/map', label: lang === 'es' ? 'Mapa' : 'Map' },
+              { href: '/map', label: lang === 'es' ? 'Mapa de Distritos' : 'District Map' },
               { href: '/cases', label: lang === 'es' ? 'Categorías' : 'Case Types' },
               { href: '/faq', label: 'FAQ' },
             ].map(link => (

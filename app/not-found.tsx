@@ -71,7 +71,7 @@ export default function NotFound() {
           color: '#111827',
         }}
       >
-        Page not found
+        Page Not Found
       </h1>
 
       <p

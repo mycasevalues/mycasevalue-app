@@ -152,7 +152,7 @@ export function CaseCompareTool({
           {/* Desktop Table View */}
           <div className="hidden md:block">
             <table className="w-full border-collapse">
-              <th scope="col"ead>
+              <thead>
                 <tr className="border-b border-[rgba(17,17,17,0.2)]">
                   <th scope="col" className="text-left px-4 py-3 text-xs font-semibold text-[#9CA3AF] uppercase tracking-widest">
                     {t.compare}

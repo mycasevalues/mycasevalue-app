@@ -58,7 +58,7 @@ export default function GlobalError({
                 marginBottom: 8,
               }}
             >
-              Something went wrong
+              Something Went Wrong
             </h2>
             <p
               style={{

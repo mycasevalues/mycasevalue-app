@@ -50,7 +50,7 @@ export default function Error({
             marginBottom: 8,
           }}
         >
-          Something went wrong
+          Something Went Wrong
         </h2>
         <p
           style={{

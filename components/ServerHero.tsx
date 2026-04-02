@@ -101,7 +101,7 @@ export default function ServerHero() {
               }}
               disabled
             >
-              Check my case type
+              Calculate Your Case Value
             </button>
           </div>
         </div>

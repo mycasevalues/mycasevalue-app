@@ -250,7 +250,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                 <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#10B981' }} />
               </div>
               <span className="text-[10px] font-mono ml-2" style={{ color: 'var(--fg-subtle)' }}>
-                mycasevalues — analysis engine
+                MyCaseValue — analysis engine
               </span>
               {phase === 'typing' && (
                 <span className="ml-auto text-[9px] font-mono" style={{ color: '#A78BFA' }}>{t.generating}</span>
