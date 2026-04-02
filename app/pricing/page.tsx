@@ -310,14 +310,7 @@ function PricingCard({ plan }: { plan: PlanCard }) {
             cursor: 'pointer',
             opacity: 1,
           }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.opacity = '0.9';
-            (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.opacity = '1';
-            (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-          }}
+          className="pricing-cta-link"
         >
           {plan.ctaText}
         </Link>
@@ -423,6 +416,11 @@ function PricingCard({ plan }: { plan: PlanCard }) {
 export default function PricingPage() {
   return (
     <div style={{ background: 'var(--bg-base)' }}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .pricing-cta-link:hover { opacity: 0.9 !important; transform: translateY(-2px); }
+        .pricing-back-link:hover { opacity: 0.7 !important; }
+        .pricing-enterprise-link:hover { opacity: 0.9 !important; }
+      `}} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd()) }}
@@ -461,12 +459,7 @@ export default function PricingPage() {
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
             }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.opacity = '0.7';
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.opacity = '1';
-            }}
+            className="pricing-back-link"
           >
             <svg
               width="16"
@@ -779,12 +772,7 @@ export default function PricingPage() {
               transition: 'opacity 200ms ease',
               cursor: 'pointer',
             }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.opacity = '0.9';
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.opacity = '1';
-            }}
+            className="pricing-enterprise-link"
           >
             Talk to Us{' '}
             <svg

@@ -38,18 +38,7 @@ const FeatureCard = ({
       transition: 'all 0.3s ease',
       cursor: 'pointer',
     }}
-    onMouseEnter={(e) => {
-      const el = e.currentTarget;
-      el.style.borderColor = 'var(--accent-primary)';
-      el.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.12)';
-      el.style.transform = 'translateY(-4px)';
-    }}
-    onMouseLeave={(e) => {
-      const el = e.currentTarget;
-      el.style.borderColor = 'var(--border-default)';
-      el.style.boxShadow = 'none';
-      el.style.transform = 'translateY(0)';
-    }}
+    className="attorney-feature-card"
   >
     <div style={{ fontSize: '32px' }}>{icon}</div>
     <div>
@@ -170,6 +159,10 @@ export default function AttorneyPage() {
         minHeight: '100vh',
       }}
     >
+      <style dangerouslySetInnerHTML={{ __html: `
+        .attorney-feature-card:hover { border-color: var(--accent-primary) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.12); transform: translateY(-4px); }
+        .attorney-cta-link:hover { background-color: var(--accent-secondary) !important; box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important; transform: translateY(-2px); }
+      `}} />
       {/* Header Section */}
       <section
         style={{
@@ -398,16 +391,7 @@ export default function AttorneyPage() {
               transition: 'all 0.3s ease',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--accent-secondary)';
-              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.2)';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--accent-primary)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
+            className="attorney-cta-link"
           >
             Start 14-day Free Trial
           </Link>
