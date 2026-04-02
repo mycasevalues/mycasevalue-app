@@ -55,9 +55,9 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
   };
 
   const tabs = [
-    { id: 'winrates', label: es ? 'Tasas de Éxito' : 'Win Rates', icon: '📊' },
-    { id: 'settlements', label: es ? 'Acuerdos' : 'Settlements', icon: '💰' },
-    { id: 'timelines', label: es ? 'Cronogramas' : 'Timelines', icon: '⏱️' },
+    { id: 'winrates', label: es ? 'Tasas de Éxito' : 'Win Rates', icon: '' },
+    { id: 'settlements', label: es ? 'Acuerdos' : 'Settlements', icon: '' },
+    { id: 'timelines', label: es ? 'Cronogramas' : 'Timelines', icon: '️' },
   ];
 
   return (

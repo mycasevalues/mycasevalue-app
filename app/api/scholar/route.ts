@@ -13,49 +13,14 @@ export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from "next/server";
 import { fetchScholarInsights } from "../../../lib/google-scholar";
-
-// Simple in-memory rate limiting with cleanup to prevent memory leaks
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const RATE_LIMIT_MAX = 30; // 30 requests per minute per IP
-const MAX_RATE_LIMIT_ENTRIES = 10000; // Prevent unbounded growth
-
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(ip);
-
-  // Clean up expired entries periodically (every 100th check or when map is too large)
-  if (rateLimitMap.size > MAX_RATE_LIMIT_ENTRIES || Math.random() < 0.01) {
-    const keysToDelete: string[] = [];
-    rateLimitMap.forEach((val, key) => {
-      if (now > val.resetAt) keysToDelete.push(key);
-    });
-    keysToDelete.forEach(k => rateLimitMap.delete(k));
-  }
-
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW });
-    return true;
-  }
-
-  if (entry.count >= RATE_LIMIT_MAX) {
-    return false;
-  }
-
-  entry.count++;
-  return true;
-}
+import { rateLimit, getClientIp } from "../../../lib/rate-limit";
 
 export async function GET(request: NextRequest) {
   try {
-    // Get client IP for rate limiting
-    const ip =
-      request.headers.get("x-forwarded-for") ||
-      request.headers.get("x-real-ip") ||
-      "unknown";
-
-    // Check rate limit
-    if (!checkRateLimit(ip)) {
+    // Rate limit: 30 req/min
+    const clientIp = getClientIp(request.headers);
+    const rl = rateLimit(clientIp, { windowMs: 60000, maxRequests: 30 });
+    if (!rl.success) {
       return NextResponse.json(
         { error: "Rate limit exceeded" },
         { status: 429, headers: { "Retry-After": "60" } }

@@ -512,7 +512,7 @@ export function AttorneyModePanel({
               <ul className="space-y-2 mb-6">
                 {t.features.map((feature, idx) => (
                   <li key={idx} className="flex gap-3 text-sm text-gray-300">
-                    <span className="text-indigo-400 flex-shrink-0">✓</span>
+                    <span className="text-indigo-400 flex-shrink-0"></span>
                     {feature}
                   </li>
                 ))}

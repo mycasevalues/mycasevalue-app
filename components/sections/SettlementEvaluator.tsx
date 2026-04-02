@@ -82,23 +82,23 @@ function getPercentile(amount: number, dist: DistributionData): number {
 function getVerdict(percentile: number, lang: string): { label: string; color: string; icon: string } {
   if (percentile <= 20) return {
     label: lang === 'es' ? 'Muy por debajo del rango típico' : 'Well below typical range',
-    color: '#EF4444', icon: '⚠️'
+    color: '#EF4444', icon: ''
   };
   if (percentile <= 40) return {
     label: lang === 'es' ? 'Por debajo del promedio' : 'Below average',
-    color: '#F59E0B', icon: '📉'
+    color: '#F59E0B', icon: ''
   };
   if (percentile <= 60) return {
     label: lang === 'es' ? 'Dentro del rango típico' : 'Within typical range',
-    color: '#10B981', icon: '✓'
+    color: '#10B981', icon: ''
   };
   if (percentile <= 80) return {
     label: lang === 'es' ? 'Por encima del promedio' : 'Above average',
-    color: '#10B981', icon: '📈'
+    color: '#10B981', icon: ''
   };
   return {
     label: lang === 'es' ? 'Resultado excepcionalmente alto' : 'Exceptionally high outcome',
-    color: '#6366F1', icon: '🏆'
+    color: '#6366F1', icon: ''
   };
 }
 

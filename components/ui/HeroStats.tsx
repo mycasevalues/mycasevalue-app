@@ -17,15 +17,15 @@ interface HeroStatsProps {
 }
 
 const STATS_EN: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '📊', color: '#6366F1' },
-  { value: 94, suffix: '%', label: 'Data Coverage', sublabel: 'All districts', icon: '🎯', color: '#5EEAD4' },
+  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#6366F1' },
+  { value: 94, suffix: '%', label: 'Data Coverage', sublabel: 'All districts', icon: '', color: '#5EEAD4' },
   { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '📁', color: '#A5B4FC' },
   { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '📅', color: '#F472B6' },
 ];
 
 const STATS_ES: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '📊', color: '#6366F1' },
-  { value: 94, suffix: '%', label: 'Cobertura', sublabel: 'Todos los distritos', icon: '🎯', color: '#5EEAD4' },
+  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#6366F1' },
+  { value: 94, suffix: '%', label: 'Cobertura', sublabel: 'Todos los distritos', icon: '', color: '#5EEAD4' },
   { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '📁', color: '#A5B4FC' },
   { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '📅', color: '#F472B6' },
 ];

@@ -285,7 +285,7 @@ const StateDeepDive: React.FC<StateDeepDiveProps> = ({ lang = 'en', stateCode, n
       {timeRemaining && (
         <div className="p-4 rounded-lg" style={{ backgroundColor: '#131B2E', borderColor: '#0D9488', borderWidth: 2 }}>
           <p style={{ color: '#B0BDD0' }} className="text-sm mb-2">
-            ⏱ {t.sol} Countdown
+             {t.sol} Countdown
           </p>
           <p className="text-xl font-bold" style={{ color: '#0D9488' }}>
             {timeRemaining}

@@ -211,10 +211,10 @@ export default async function NOSPage({ params }: PageProps) {
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { label: 'Win + Settle Rate', value: `${winRate}%`, color: '#0D9488', icon: '⚖️' },
-            { label: 'Median Duration', value: `${medianDuration}mo`, color: '#6366F1', icon: '⏱' },
-            { label: 'Settlement Rate', value: `${settleRate}%`, color: '#A5B4FC', icon: '🤝' },
-            { label: 'Outcomes Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#5EEAD4', icon: '📊' },
+            { label: 'Win + Settle Rate', value: `${winRate}%`, color: '#0D9488', icon: '' },
+            { label: 'Median Duration', value: `${medianDuration}mo`, color: '#6366F1', icon: '' },
+            { label: 'Settlement Rate', value: `${settleRate}%`, color: '#A5B4FC', icon: '' },
+            { label: 'Outcomes Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#5EEAD4', icon: '' },
           ].map((stat, i) => (
             <div key={i} className="rounded-xl p-5 text-center" style={{
               background: 'linear-gradient(180deg, rgba(19,27,46,0.9) 0%, rgba(11,18,33,0.95) 100%)',

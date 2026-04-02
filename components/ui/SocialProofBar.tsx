@@ -327,7 +327,7 @@ export default function SocialProofBar({
       {/* Trust Metrics Row */}
       <div className="metrics-grid">
         <div className="metric-card">
-          <div className="metric-icon">📊</div>
+          <div className="metric-icon"></div>
           <p className="metric-label">
             {lang === 'es' ? 'Casos Analizados' : 'Cases Analyzed'}
           </p>
@@ -372,15 +372,15 @@ export default function SocialProofBar({
         </p>
         <div className="verification-badges">
           <div className="verification-badge">
-            <span className="checkmark-icon">✓</span>
+            <span className="checkmark-icon"></span>
             {lang === 'es' ? 'FJC Verificado' : 'FJC Verified'}
           </div>
           <div className="verification-badge">
-            <span className="checkmark-icon">✓</span>
+            <span className="checkmark-icon"></span>
             {lang === 'es' ? 'CourtListener' : 'CourtListener'}
           </div>
           <div className="verification-badge">
-            <span className="checkmark-icon">✓</span>
+            <span className="checkmark-icon"></span>
             {lang === 'es' ? 'PACER' : 'PACER'}
           </div>
         </div>

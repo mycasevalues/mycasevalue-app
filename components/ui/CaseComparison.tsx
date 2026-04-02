@@ -313,7 +313,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
                               className={`bar-fill ${isBest ? 'best' : ''}`}
                               style={{ width: `${percentage}%` }}
                             >
-                              {isBest && percentage > 15 && <span>✓</span>}
+                              {isBest && percentage > 15 && <span></span>}
                             </div>
                           </div>
                         )}

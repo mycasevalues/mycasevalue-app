@@ -53,7 +53,7 @@ export function LegalCostComparison({ lang = 'en' }: LegalCostComparisonProps) {
       </div>
       <div className="mt-4 p-3 rounded-lg bg-amber-50 border border-amber-100">
         <div className="text-[12px] text-amber-900">
-          <strong>💡 {es ? 'Dato:' : 'Insight:'}</strong>{' '}
+          <strong> {es ? 'Dato:' : 'Insight:'}</strong>{' '}
           {es
             ? 'El 67% de los casos se resuelven antes de llegar a juicio, ahorrando tiempo y dinero.'
             : '67% of cases settle before trial, often saving time and money.'}

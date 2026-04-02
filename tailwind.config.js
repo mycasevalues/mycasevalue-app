@@ -57,7 +57,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'Outfit', 'system-ui', 'sans-serif'],
         body: ['var(--font-outfit)', 'Outfit', 'system-ui', 'sans-serif'],
         data: ['var(--font-jetbrains)', 'JetBrains Mono', 'monospace'],
         mono: ['var(--font-jetbrains)', 'JetBrains Mono', 'monospace'],

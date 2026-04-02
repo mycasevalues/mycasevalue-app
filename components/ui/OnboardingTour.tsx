@@ -12,22 +12,22 @@ const steps = [
   {
     title: 'Welcome to MyCaseValue',
     description: 'See real federal court outcomes for cases like yours. 100% free, no account needed.',
-    icon: '⚖️',
+    icon: '',
   },
   {
     title: 'Choose Your Situation',
     description: 'Select from 12 categories and 100+ specific case types to get relevant data.',
-    icon: '🔍',
+    icon: '',
   },
   {
     title: 'Get Your Report',
     description: 'See win rates, settlement amounts, timelines, and attorney impact — all from real court records.',
-    icon: '📊',
+    icon: '',
   },
   {
     title: 'Premium Insights',
     description: 'Unlock judge analytics, state comparisons, and downloadable PDF reports.',
-    icon: '⭐',
+    icon: '',
   },
 ];
 

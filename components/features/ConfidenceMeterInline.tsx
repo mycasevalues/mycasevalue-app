@@ -92,7 +92,7 @@ export function ConfidenceMeterInline({ score, size = 140 }: ConfidenceMeterInli
           textAnchor="middle"
           fontSize="28"
           fontWeight="800"
-          fontFamily="'Newsreader', Georgia, serif"
+          fontFamily="'Outfit', system-ui, sans-serif"
           fill={color}
         >
           {animated}

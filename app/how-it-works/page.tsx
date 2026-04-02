@@ -249,12 +249,12 @@ export default function HowItWorksPage() {
                 description: 'Get your report in seconds, not weeks. Real-time analysis of 5.1M+ cases.',
               },
               {
-                icon: '🔒',
+                icon: '',
                 title: 'Private & Secure',
                 description: 'Your searches are anonymous. We don\'t track, sell, or share your data.',
               },
               {
-                icon: '💰',
+                icon: '',
                 title: 'Affordable',
                 description: 'Start free, or upgrade to premium features for $5.99–$29.99. No surprise fees.',
               },
@@ -264,7 +264,7 @@ export default function HowItWorksPage() {
                 description: 'Available in English and Spanish. Accessible to everyone.',
               },
               {
-                icon: '📊',
+                icon: '',
                 title: 'Data-Driven',
                 description: 'Every statistic comes from official federal court records with documented sources.',
               },

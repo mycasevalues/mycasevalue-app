@@ -176,8 +176,8 @@ export default function ReportSidebar({
               fontSize: 'var(--text-xs)',
               color: 'var(--fg-muted)',
             }}>
-              <li style={{ marginBottom: 4 }}>✓ {lang === 'es' ? 'Análisis de jueces' : 'Judge analytics'}</li>
-              <li>✓ {lang === 'es' ? 'Informe PDF descargable' : 'Downloadable PDF report'}</li>
+              <li style={{ marginBottom: 4 }}> {lang === 'es' ? 'Análisis de jueces' : 'Judge analytics'}</li>
+              <li> {lang === 'es' ? 'Informe PDF descargable' : 'Downloadable PDF report'}</li>
             </ul>
             <button
               onClick={onUpgrade}

@@ -95,7 +95,7 @@ const ComparisonPanel: React.FC<ComparisonPanelProps> = ({
           <label className="text-sm font-medium text-[#B0BDD0]">{label}</label>
           {caseB && winner && (
             <span className="text-xs text-[#5EEAD4] font-semibold">
-              ✓ {winner === 'A' ? 'Case A' : 'Case B'} wins
+               {winner === 'A' ? 'Case A' : 'Case B'} wins
             </span>
           )}
         </div>

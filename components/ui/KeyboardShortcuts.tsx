@@ -81,7 +81,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
-            ⌨️ {lang === 'es' ? 'Atajos de teclado' : 'Keyboard Shortcuts'}
+             {lang === 'es' ? 'Atajos de teclado' : 'Keyboard Shortcuts'}
           </h3>
           <button
             onClick={() => setShowPanel(false)}

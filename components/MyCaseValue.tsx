@@ -2440,16 +2440,16 @@ export default function MyCaseValue() {
             </div>
             {(() => {
               const COMPARE_CASES = [
-                { id: 'emp_disc', label: lang === 'es' ? 'Discriminación laboral' : 'Employment Discrimination', wr: 38.4, time: 11.2, settle: 32, vol: 28400, fee: '25-40%', icon: '⚖️' },
-                { id: 'pers_inj', label: lang === 'es' ? 'Lesiones personales' : 'Personal Injury', wr: 54.1, time: 8.6, settle: 48, vol: 42100, fee: '33-40%', icon: '🏥' },
-                { id: 'med_mal', label: lang === 'es' ? 'Negligencia médica' : 'Medical Malpractice', wr: 32.7, time: 14.3, settle: 41, vol: 8200, fee: '33-40%', icon: '💊' },
-                { id: 'prod_liab', label: lang === 'es' ? 'Responsabilidad del producto' : 'Product Liability', wr: 42.8, time: 12.1, settle: 44, vol: 6900, fee: '33-45%', icon: '📦' },
-                { id: 'civil_rights', label: lang === 'es' ? 'Derechos civiles' : 'Civil Rights (§1983)', wr: 28.5, time: 13.8, settle: 29, vol: 35600, fee: '33%+fees', icon: '🗽' },
-                { id: 'contract', label: lang === 'es' ? 'Incumplimiento de contrato' : 'Breach of Contract', wr: 44.2, time: 9.4, settle: 52, vol: 19800, fee: 'Hourly', icon: '📝' },
-                { id: 'ins_bad', label: lang === 'es' ? 'Seguro de mala fe' : 'Insurance Bad Faith', wr: 46.3, time: 10.7, settle: 55, vol: 7300, fee: '33-40%', icon: '🛡️' },
-                { id: 'wrong_death', label: lang === 'es' ? 'Muerte injusta' : 'Wrongful Death', wr: 51.2, time: 15.6, settle: 58, vol: 4100, fee: '33-40%', icon: '🕊️' },
-                { id: 'sex_harass', label: lang === 'es' ? 'Acoso sexual' : 'Sexual Harassment', wr: 35.1, time: 10.4, settle: 38, vol: 12300, fee: '25-40%', icon: '🚫' },
-                { id: 'wage', label: lang === 'es' ? 'Salarios impagos' : 'Unpaid Wages (FLSA)', wr: 47.6, time: 7.8, settle: 61, vol: 21500, fee: '33%+fees', icon: '💰' },
+                { id: 'emp_disc', label: lang === 'es' ? 'Discriminación laboral' : 'Employment Discrimination', wr: 38.4, time: 11.2, settle: 32, vol: 28400, fee: '25-40%', icon: '' },
+                { id: 'pers_inj', label: lang === 'es' ? 'Lesiones personales' : 'Personal Injury', wr: 54.1, time: 8.6, settle: 48, vol: 42100, fee: '33-40%', icon: '' },
+                { id: 'med_mal', label: lang === 'es' ? 'Negligencia médica' : 'Medical Malpractice', wr: 32.7, time: 14.3, settle: 41, vol: 8200, fee: '33-40%', icon: '' },
+                { id: 'prod_liab', label: lang === 'es' ? 'Responsabilidad del producto' : 'Product Liability', wr: 42.8, time: 12.1, settle: 44, vol: 6900, fee: '33-45%', icon: '' },
+                { id: 'civil_rights', label: lang === 'es' ? 'Derechos civiles' : 'Civil Rights (§1983)', wr: 28.5, time: 13.8, settle: 29, vol: 35600, fee: '33%+fees', icon: '' },
+                { id: 'contract', label: lang === 'es' ? 'Incumplimiento de contrato' : 'Breach of Contract', wr: 44.2, time: 9.4, settle: 52, vol: 19800, fee: 'Hourly', icon: '' },
+                { id: 'ins_bad', label: lang === 'es' ? 'Seguro de mala fe' : 'Insurance Bad Faith', wr: 46.3, time: 10.7, settle: 55, vol: 7300, fee: '33-40%', icon: '' },
+                { id: 'wrong_death', label: lang === 'es' ? 'Muerte injusta' : 'Wrongful Death', wr: 51.2, time: 15.6, settle: 58, vol: 4100, fee: '33-40%', icon: '' },
+                { id: 'sex_harass', label: lang === 'es' ? 'Acoso sexual' : 'Sexual Harassment', wr: 35.1, time: 10.4, settle: 38, vol: 12300, fee: '25-40%', icon: '' },
+                { id: 'wage', label: lang === 'es' ? 'Salarios impagos' : 'Unpaid Wages (FLSA)', wr: 47.6, time: 7.8, settle: 61, vol: 21500, fee: '33%+fees', icon: '' },
               ];
               const cA = COMPARE_CASES.find(c => c.id === (compareNos || 'emp_disc')) || COMPARE_CASES[0];
               const cB = COMPARE_CASES.find(c => c.id === (compareData?.id || 'pers_inj')) || COMPARE_CASES[1];
@@ -3364,10 +3364,10 @@ export default function MyCaseValue() {
           <Reveal>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 data-grid-stagger">
               {[
-                { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: `${wr}%`, color: wrColor, icon: '⚖️' },
-                { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: d.total ? d.total.toLocaleString() : '—', color: '#6366F1', icon: '📊' },
-                { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: `${d.mo || '—'}mo`, color: 'var(--accent-secondary, #A5B4FC)', icon: '⏱' },
-                { label: lang === 'es' ? 'Acuerdo + Victoria' : 'Settle + Win', value: `${winSettleRate}%`, color: '#5EEAD4', icon: '✓' },
+                { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: `${wr}%`, color: wrColor, icon: '' },
+                { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: d.total ? d.total.toLocaleString() : '—', color: '#6366F1', icon: '' },
+                { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: `${d.mo || '—'}mo`, color: 'var(--accent-secondary, #A5B4FC)', icon: '' },
+                { label: lang === 'es' ? 'Acuerdo + Victoria' : 'Settle + Win', value: `${winSettleRate}%`, color: '#5EEAD4', icon: '' },
               ].map((m, i) => (
                 <div key={i} className="glass-ultra rounded-xl p-4 text-center spotlight-card gpu-accelerate">
                   <div className="text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ color: 'var(--fg-muted)' }}>{m.icon} {m.label}</div>
@@ -3397,7 +3397,7 @@ export default function MyCaseValue() {
                   {lang === 'es' ? 'Compartir' : 'Share'}
                 </button>
                 <button onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  📸 {lang === 'es' ? 'Tarjeta' : 'Card'}
+                  {lang === 'es' ? 'Tarjeta' : 'Card'}
                 </button>
                 <button onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#131B2E] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-2px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
@@ -3439,7 +3439,7 @@ export default function MyCaseValue() {
           {/* Data Freshness Indicator */}
           <Reveal>
             <div className="px-4 py-3 mb-4 text-[12px] rounded-lg border border-[var(--border-default)] bg-[rgba(64,64,242,0.05)]" style={{ color: 'var(--fg-subtle)' }}>
-              <span>📊 {lang === 'es' ? 'Fuentes de datos' : 'Data sources'}: FJC IDB · CourtListener · EEOC | {lang === 'es' ? 'Última verificación' : 'Last verified'}: {lang === 'es' ? 'Marzo 2026' : 'March 2026'}</span>
+              <span>{lang === 'es' ? 'Fuentes de datos' : 'Data sources'}: FJC IDB · CourtListener · EEOC | {lang === 'es' ? 'Última verificación' : 'Last verified'}: {lang === 'es' ? 'Marzo 2026' : 'March 2026'}</span>
             </div>
           </Reveal>
 
@@ -3765,12 +3765,12 @@ export default function MyCaseValue() {
                 {(() => {
                   const months = d.mo || 10;
                   const phases = [
-                    { name: lang === 'es' ? 'Presentación' : 'Filing & Service', pct: 5, icon: '📋', duration: lang === 'es' ? '1-2 meses' : '1-2 months', desc: lang === 'es' ? 'Presentación de la demanda, notificación al demandado' : 'Complaint filed, defendant served with summons' },
-                    { name: lang === 'es' ? 'Descubrimiento' : 'Discovery', pct: 35, icon: '🔍', duration: lang === 'es' ? `${Math.round(months * 0.35)}-${Math.round(months * 0.5)} meses` : `${Math.round(months * 0.35)}-${Math.round(months * 0.5)} months`, desc: lang === 'es' ? 'Interrogatorios, deposiciones, solicitudes de documentos' : 'Interrogatories, depositions, document requests' },
-                    { name: lang === 'es' ? 'Mociones' : 'Motions', pct: 55, icon: '⚖️', duration: lang === 'es' ? `${Math.round(months * 0.5)}-${Math.round(months * 0.65)} meses` : `${Math.round(months * 0.5)}-${Math.round(months * 0.65)} months`, desc: lang === 'es' ? 'Moción de sentencia sumaria, mociones in limine' : 'Summary judgment motions, motions in limine' },
-                    { name: lang === 'es' ? 'Mediación' : 'Settlement / Mediation', pct: 70, icon: '🤝', duration: lang === 'es' ? `${Math.round(months * 0.6)}-${Math.round(months * 0.75)} meses` : `${Math.round(months * 0.6)}-${Math.round(months * 0.75)} months`, desc: lang === 'es' ? `${d.sp || 45}% de los casos se resuelven en esta etapa` : `${d.sp || 45}% of cases resolve at this stage` },
-                    { name: lang === 'es' ? 'Juicio' : 'Trial', pct: 90, icon: '🏛️', duration: lang === 'es' ? `${Math.round(months * 0.85)}-${months} meses` : `${Math.round(months * 0.85)}-${months} months`, desc: lang === 'es' ? 'Solo ~5% de los casos llegan a juicio' : 'Only ~5% of cases proceed to trial' },
-                    { name: lang === 'es' ? 'Resolución' : 'Resolution', pct: 100, icon: '✅', duration: lang === 'es' ? `~${months} meses` : `~${months} months`, desc: lang === 'es' ? 'Sentencia, acuerdo final, o desestimación' : 'Judgment, final settlement, or dismissal' },
+                    { name: lang === 'es' ? 'Presentación' : 'Filing & Service', pct: 5, icon: '', duration: lang === 'es' ? '1-2 meses' : '1-2 months', desc: lang === 'es' ? 'Presentación de la demanda, notificación al demandado' : 'Complaint filed, defendant served with summons' },
+                    { name: lang === 'es' ? 'Descubrimiento' : 'Discovery', pct: 35, icon: '', duration: lang === 'es' ? `${Math.round(months * 0.35)}-${Math.round(months * 0.5)} meses` : `${Math.round(months * 0.35)}-${Math.round(months * 0.5)} months`, desc: lang === 'es' ? 'Interrogatorios, deposiciones, solicitudes de documentos' : 'Interrogatories, depositions, document requests' },
+                    { name: lang === 'es' ? 'Mociones' : 'Motions', pct: 55, icon: '', duration: lang === 'es' ? `${Math.round(months * 0.5)}-${Math.round(months * 0.65)} meses` : `${Math.round(months * 0.5)}-${Math.round(months * 0.65)} months`, desc: lang === 'es' ? 'Moción de sentencia sumaria, mociones in limine' : 'Summary judgment motions, motions in limine' },
+                    { name: lang === 'es' ? 'Mediación' : 'Settlement / Mediation', pct: 70, icon: '', duration: lang === 'es' ? `${Math.round(months * 0.6)}-${Math.round(months * 0.75)} meses` : `${Math.round(months * 0.6)}-${Math.round(months * 0.75)} months`, desc: lang === 'es' ? `${d.sp || 45}% de los casos se resuelven en esta etapa` : `${d.sp || 45}% of cases resolve at this stage` },
+                    { name: lang === 'es' ? 'Juicio' : 'Trial', pct: 90, icon: '', duration: lang === 'es' ? `${Math.round(months * 0.85)}-${months} meses` : `${Math.round(months * 0.85)}-${months} months`, desc: lang === 'es' ? 'Solo ~5% de los casos llegan a juicio' : 'Only ~5% of cases proceed to trial' },
+                    { name: lang === 'es' ? 'Resolución' : 'Resolution', pct: 100, icon: '', duration: lang === 'es' ? `~${months} meses` : `~${months} months`, desc: lang === 'es' ? 'Sentencia, acuerdo final, o desestimación' : 'Judgment, final settlement, or dismissal' },
                   ];
                   return (
                     <div className="relative">
@@ -3787,7 +3787,7 @@ export default function MyCaseValue() {
                               color: i <= 3 ? 'white' : '#B0BDD0',
                               boxShadow: i <= 3 ? '0 2px 8px rgba(64,64,242,0.3)' : 'none',
                             }}>
-                              {i <= 3 ? '✓' : (i + 1)}
+                              {i + 1}
                             </div>
                             <div className="flex-1">
                               <div className="flex items-center gap-2 flex-wrap">
@@ -3802,8 +3802,8 @@ export default function MyCaseValue() {
                       </div>
                       <div className="mt-4 p-3 rounded-lg text-[11px] text-center" style={{ background: 'rgba(30,41,59,0.5)', color: 'var(--fg-muted)' }}>
                         {lang === 'es'
-                          ? `⏱ Duración estimada basada en ${d.total?.toLocaleString() || '0'} casos similares: ~${months} meses promedio`
-                          : `⏱ Estimated duration based on ${d.total?.toLocaleString() || '0'} similar cases: ~${months} months average`}
+                          ? `Duración estimada basada en ${d.total?.toLocaleString() || '0'} casos similares: ~${months} meses promedio`
+                          : `Estimated duration based on ${d.total?.toLocaleString() || '0'} similar cases: ~${months} months average`}
                       </div>
                     </div>
                   );
@@ -4404,7 +4404,7 @@ export default function MyCaseValue() {
                           {/* Top-left: Low Risk, High Reward (Best) */}
                           <div className={`p-4 rounded-xl border text-center ${riskLevel === 'low' && rewardLevel === 'high' ? 'border-[#0D9488] ring-2 ring-[#0D948830]' : 'border-[var(--border-default)]'}`}
                             style={{ background: riskLevel === 'low' && rewardLevel === 'high' ? 'rgba(13,148,136,0.08)' : 'rgba(255,255,255,0.02)' }}>
-                            <div className="text-[22px] mb-1">🎯</div>
+                            <div className="text-[22px] mb-1"></div>
                             <div className="text-[11px] font-bold" style={{ color: 'var(--accent-secondary)' }}>{lang === 'es' ? 'Favorable' : 'Favorable'}</div>
                             <div className="text-[10px] mt-1" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Bajo riesgo, alto resultado' : 'Low risk, high outcome'}</div>
                             {riskLevel === 'low' && rewardLevel === 'high' && (
@@ -4428,7 +4428,7 @@ export default function MyCaseValue() {
                           {/* Bottom-left: Low Risk, Low Reward */}
                           <div className={`p-4 rounded-xl border text-center ${riskLevel === 'low' && rewardLevel !== 'high' ? 'border-[#4F46E5] ring-2 ring-[#4F46E530]' : 'border-[var(--border-default)]'}`}
                             style={{ background: riskLevel === 'low' && rewardLevel !== 'high' ? 'rgba(79,70,229,0.06)' : 'rgba(255,255,255,0.02)' }}>
-                            <div className="text-[22px] mb-1">📊</div>
+                            <div className="text-[22px] mb-1"></div>
                             <div className="text-[11px] font-bold" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'Conservador' : 'Conservative'}</div>
                             <div className="text-[10px] mt-1" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Bajo riesgo, resultado moderado' : 'Low risk, moderate outcome'}</div>
                             {riskLevel === 'low' && rewardLevel !== 'high' && (
@@ -4440,7 +4440,7 @@ export default function MyCaseValue() {
                           {/* Bottom-right: High Risk, Low Reward */}
                           <div className={`p-4 rounded-xl border text-center ${riskLevel !== 'low' && rewardLevel !== 'high' ? 'border-[#E87461] ring-2 ring-[#E8746130]' : 'border-[var(--border-default)]'}`}
                             style={{ background: riskLevel !== 'low' && rewardLevel !== 'high' ? 'rgba(232,116,97,0.06)' : 'rgba(255,255,255,0.02)' }}>
-                            <div className="text-[22px] mb-1">⚠️</div>
+                            <div className="text-[22px] mb-1"></div>
                             <div className="text-[11px] font-bold" style={{ color: '#E87461' }}>{lang === 'es' ? 'Desafiante' : 'Challenging'}</div>
                             <div className="text-[10px] mt-1" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Alto riesgo, resultado moderado' : 'High risk, moderate outcome'}</div>
                             {riskLevel !== 'low' && rewardLevel !== 'high' && (
@@ -4756,7 +4756,7 @@ export default function MyCaseValue() {
                 {/* Personalized narrative paragraphs */}
                 <div className="space-y-4">
                   {/* Opening — personalized to their case type + win rate */}
-                  <p className="text-[15px] leading-[1.75] text-[var(--fg-secondary)]" style={{ fontFamily: 'Newsreader, Georgia, serif' }}>
+                  <p className="text-[15px] leading-[1.75] text-[var(--fg-secondary)]" style={{ fontFamily: "'Outfit', system-ui, sans-serif" }}>
                     {(() => {
                       const stateName = STATES.find(s => s.id === stateCode)?.label;
                       const roundedWr = Math.round(wr);
@@ -5960,6 +5960,18 @@ export default function MyCaseValue() {
                 />
               </Reveal>
 
+              {/* Judge Intelligence Cards — enhanced district-level judge data */}
+              <Reveal delay={623}>
+                <JudgeIntelligenceCards
+                  lang={lang}
+                  caseType={spec?.d || ''}
+                  nosCode={spec?.nos || '442'}
+                  stateCode={stateCode || undefined}
+                  isPremium={isPremium}
+                  onUpgrade={() => setShowPricing(true)}
+                />
+              </Reveal>
+
               {/* State Deep Dive */}
               {stateCode && (
                 <Reveal delay={623}>
@@ -5976,8 +5988,26 @@ export default function MyCaseValue() {
                 <CaseComparison lang={lang} />
               </Reveal>
 
-              {/* Attorney Referral CTA */}
+              {/* Attorney Mode Dashboard — $29.99/mo tier */}
               <Reveal delay={625}>
+                <AttorneyModePanel
+                  lang={lang}
+                  caseType={spec?.d || ''}
+                  nosCode={spec?.nos || '442'}
+                  stateCode={stateCode || undefined}
+                  winRate={wr}
+                  settlementPct={d.sp || 47}
+                  medianRecovery={v.md}
+                  totalCases={d.total || 0}
+                  durationMonths={d.mo || 10}
+                  isPremium={isPremium}
+                  tier={tier}
+                  onUpgrade={() => setShowPricing(true)}
+                />
+              </Reveal>
+
+              {/* Attorney Referral CTA */}
+              <Reveal delay={626}>
                 <AttorneyReferral
                   lang={lang}
                   caseName={spec?.d || ''}

@@ -75,7 +75,7 @@ export default function AttorneyImpact({
           background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(13,148,136,0.1))',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontSize: '16px', flexShrink: 0,
-        }}>⚖️</div>
+        }}></div>
         <div>
           <div style={{ fontSize: '11px', fontWeight: 700, color: '#8B95A5', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
             {isEs ? 'Impacto del abogado' : 'Attorney Impact'}
@@ -163,7 +163,7 @@ export default function AttorneyImpact({
         }}>
           <div style={{
             fontSize: '22px', lineHeight: 1, flexShrink: 0,
-          }}>📈</div>
+          }}></div>
           <div>
             <div style={{ fontSize: '13px', fontWeight: 700, color: '#0D9488' }}>
               +{diff} {isEs ? 'puntos porcentuales' : 'percentage points'}

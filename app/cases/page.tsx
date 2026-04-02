@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 };
 
 const categoryIcons: Record<string, string> = {
-  work: '💼', injury: '❤️', consumer: '🛡️', rights: '⚖️', money: '💰',
-  housing: '🏠', medical: '🏥', family: '👨‍👩‍👧‍👦', gov: '🏛️', education: '🎓',
+  work: '', injury: '', consumer: '', rights: '', money: '',
+  housing: '', medical: '', family: '‍👩‍👧‍👦', gov: '', education: '',
 };
 
 const jsonLd = {

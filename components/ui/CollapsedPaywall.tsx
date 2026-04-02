@@ -160,7 +160,7 @@ export function CollapsedPaywall({
           className="mt-4 text-center text-xs font-medium"
           style={{ color: 'var(--fg-muted)' }}
         >
-          ✓ {t.trustBadge}
+           {t.trustBadge}
         </p>
       </div>
 

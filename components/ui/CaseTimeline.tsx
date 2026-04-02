@@ -37,21 +37,21 @@ function getTimelineEvents(medianMonths: number, lang: string): TimelineEvent[] 
     {
       label: isEs ? 'Descubrimiento' : 'Discovery',
       months: Math.round(m * 0.35),
-      icon: '🔍',
+      icon: '',
       color: '#5EEAD4',
       description: isEs ? 'Intercambio de pruebas' : 'Evidence exchange period',
     },
     {
       label: isEs ? 'Mediación' : 'Mediation',
       months: Math.round(m * 0.55),
-      icon: '🤝',
+      icon: '',
       color: '#0D9488',
       description: isEs ? 'Negociación de acuerdo' : 'Settlement negotiation',
     },
     {
       label: isEs ? 'Juicio/Resolución' : 'Trial / Resolution',
       months: m,
-      icon: '⚖️',
+      icon: '',
       color: '#F472B6',
       description: isEs ? `Duración media: ${m} meses` : `Median duration: ${m} months`,
     },
@@ -262,7 +262,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
           background: 'rgba(99,102,241,0.12)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontSize: '14px', flexShrink: 0,
-        }}>⏱</div>
+        }}></div>
         <div>
           <div style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>
             {lang === 'es' ? 'Duración media' : 'Median Duration'}: <span style={{ color: '#6366F1', fontFamily: "'JetBrains Mono', monospace" }}>{medianMonths} {lang === 'es' ? 'meses' : 'months'}</span>

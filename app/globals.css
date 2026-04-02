@@ -1,5 +1,4 @@
 /* Design system imports — tokens + self-hosted fonts */
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700&display=swap');
 @import '../styles/tokens.css';
 @import '../styles/fonts.css';
 
@@ -67,7 +66,7 @@ html, body {
   }
 
   .font-display {
-    font-family: var(--font-display), Georgia, 'Times New Roman', serif;
+    font-family: var(--font-display), system-ui, -apple-system, sans-serif;
   }
 
   .scrollbar-hide {
@@ -148,7 +147,7 @@ html, body {
   --gradient-accent-h: linear-gradient(135deg, var(--color-blue-700), var(--color-blue-500));
 
   /* TYPOGRAPHY */
-  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
   --font-body: 'Outfit', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 

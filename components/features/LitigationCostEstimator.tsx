@@ -83,7 +83,7 @@ function getCostBreakdown(
         min: 500,
         max: 2000,
         description: isEs ? 'Servicios de entrega, copias, búsqueda de registros' : 'Service of process, copies, records search',
-        icon: '📋',
+        icon: '',
       },
       {
         category: isEs ? 'Gastos de Viaje' : 'Travel Expenses',
@@ -120,7 +120,7 @@ function getCostBreakdown(
       description: isEs
         ? `${complexity.estimatedHours} horas estimadas × ${attorneyHourlyMin}-${attorneyHourlyMax}/hora`
         : `${complexity.estimatedHours} estimated hours × $${attorneyHourlyMin}-$${attorneyHourlyMax}/hr`,
-      icon: '⚖️',
+      icon: '',
     },
     {
       category: isEs ? 'Costos de Descubrimiento' : 'Discovery Costs',
@@ -129,14 +129,14 @@ function getCostBreakdown(
       description: isEs
         ? 'Intercambio de documentos, deposiciones, interrogatorios'
         : 'Document exchanges, depositions, interrogatories',
-      icon: '🔍',
+      icon: '',
     },
     {
       category: isEs ? 'Peritos' : 'Expert Witnesses',
       min: complexity.id === 'simple' ? 0 : 10000,
       max: complexity.id === 'complex' ? 50000 : 30000,
       description: isEs ? 'Testigos expertos técnicos, médicos, etc.' : 'Technical, medical, or other expert witnesses',
-      icon: '👨‍🔬',
+      icon: '‍🔬',
     },
     {
       category: isEs ? 'Gastos Misceláneos' : 'Miscellaneous',
@@ -507,7 +507,7 @@ export function LitigationCostEstimator({
               alignItems: 'flex-start',
             }}
           >
-            <span style={{ fontSize: '14px', flexShrink: 0 }}>⚠️</span>
+            <span style={{ fontSize: '14px', flexShrink: 0 }}></span>
             <span>{getTranslation('pro-se-warning', lang)}</span>
           </div>
         </div>
@@ -532,7 +532,7 @@ export function LitigationCostEstimator({
             alignItems: 'flex-start',
           }}
         >
-          <span style={{ fontSize: '14px', flexShrink: 0 }}>💡</span>
+          <span style={{ fontSize: '14px', flexShrink: 0 }}></span>
           <span>{getTranslation('contingency-tip', lang)}</span>
         </div>
       </div>

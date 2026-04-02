@@ -55,7 +55,7 @@ function getTimelinePhases(durationMonths: number, settlementPct: number, lang: 
       label: isEs ? 'Descubrimiento' : 'Discovery',
       startMonth: 2,
       endMonth: 8,
-      icon: '🔍',
+      icon: '',
       color: '#5EEAD4',
       description: isEs ? 'Intercambio de documentos, deposiciones, interrogatorios' : 'Document exchanges, depositions, interrogatories',
       details: isEs
@@ -67,7 +67,7 @@ function getTimelinePhases(durationMonths: number, settlementPct: number, lang: 
       label: isEs ? 'Mediación/Conferencia' : 'Mediation/Settlement Conf.',
       startMonth: 6,
       endMonth: 10,
-      icon: '🤝',
+      icon: '',
       color: '#0D9488',
       description: isEs
         ? `${settlementPct}% de los casos como el suyo se resuelven aquí`
@@ -81,7 +81,7 @@ function getTimelinePhases(durationMonths: number, settlementPct: number, lang: 
       label: isEs ? 'Mociones Previas al Juicio' : 'Pre-Trial Motions',
       startMonth: 8,
       endMonth: 12,
-      icon: '⚖️',
+      icon: '',
       color: '#F59E0B',
       description: isEs ? 'Mociones de sentencia sumaria, mociones Daubert' : 'Summary judgment, Daubert motions',
       details: isEs
@@ -105,7 +105,7 @@ function getTimelinePhases(durationMonths: number, settlementPct: number, lang: 
       label: isEs ? 'Resolución' : 'Resolution',
       startMonth: durationMonths,
       endMonth: durationMonths,
-      icon: '✓',
+      icon: '',
       color: '#10B981',
       description: isEs
         ? `Resolución media: ${durationMonths} meses para este tipo de caso`
@@ -249,7 +249,7 @@ export function CaseTimelineSimulator({
               flexShrink: 0,
             }}
           >
-            📊
+            
           </div>
           <div>
             <div style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>
@@ -598,7 +598,7 @@ export function CaseTimelineSimulator({
             flexShrink: 0,
           }}
         >
-          {likelyOutcomePhase === 'mediation' ? '🤝' : '⚖️'}
+          {likelyOutcomePhase === 'mediation' ? '' : ''}
         </div>
         <div>
           <div

@@ -97,9 +97,9 @@ const SOURCES: DataSource[] = [
 const PIPELINE_STEPS = [
   { icon: '⬇', label: 'Ingest', labelEs: 'Ingesta', desc: 'Pull raw data from 6 verified sources', descEs: 'Extracción de datos de 6 fuentes verificadas' },
   { icon: '🔄', label: 'Normalize', labelEs: 'Normalizar', desc: 'Standardize NOS codes, dates, and outcomes', descEs: 'Estandarizar códigos NOS, fechas y resultados' },
-  { icon: '✓', label: 'Validate', labelEs: 'Validar', desc: '94% accuracy in outcome classification', descEs: '94% precisión en clasificación de resultados' },
-  { icon: '📊', label: 'Analyze', labelEs: 'Analizar', desc: 'Compute percentiles, trends, win rates', descEs: 'Calcular percentiles, tendencias, tasas de éxito' },
-  { icon: '📋', label: 'Report', labelEs: 'Informe', desc: 'Generate your case intelligence report', descEs: 'Generar su informe de inteligencia de caso' },
+  { icon: '', label: 'Validate', labelEs: 'Validar', desc: '94% accuracy in outcome classification', descEs: '94% precisión en clasificación de resultados' },
+  { icon: '', label: 'Analyze', labelEs: 'Analizar', desc: 'Compute percentiles, trends, win rates', descEs: 'Calcular percentiles, tendencias, tasas de éxito' },
+  { icon: '', label: 'Report', labelEs: 'Informe', desc: 'Generate your case intelligence report', descEs: 'Generar su informe de inteligencia de caso' },
 ];
 
 export default function DataMethodologySection({ lang = 'en' }: DataMethodologySectionProps) {

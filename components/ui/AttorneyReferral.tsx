@@ -130,7 +130,7 @@ export default function AttorneyReferral({
                 className="mr-3 font-bold text-lg"
                 style={{ color: '#D97706' }}
               >
-                ✓
+                
               </span>
               <span style={{ color: '#E2E8F0' }} className="text-sm">
                 {item}

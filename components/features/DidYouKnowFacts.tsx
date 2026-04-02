@@ -34,7 +34,7 @@ export function DidYouKnowFacts({ caseType, lang = 'en' }: DidYouKnowFactsProps)
         >
           <div className="flex gap-2">
             <span className="text-lg" aria-hidden="true">
-              🎓
+              
             </span>
             <p className="text-[12px] text-[var(--fg-muted)] leading-relaxed">{fact}</p>
           </div>

@@ -85,7 +85,7 @@ export default function PieChart({ segments, size = 200, strokeWidth = 14, lang 
       }}>
         <div style={{
           fontSize: size * 0.18,
-          fontFamily: "'Newsreader', Georgia, serif",
+          fontFamily: "'Outfit', system-ui, sans-serif",
           fontWeight: 700,
           color: segments[0]?.color || '#0D9488',
           lineHeight: 1,

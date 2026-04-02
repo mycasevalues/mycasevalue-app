@@ -355,7 +355,7 @@ export default function PricingTiers({ lang = 'en', onSelectPlan }: PricingTiers
             className="text-sm font-semibold"
             style={{ color: '#E2E8F0' }}
           >
-            ✓ {t.moneyBack}
+             {t.moneyBack}
           </p>
         </div>
       </div>

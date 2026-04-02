@@ -261,7 +261,7 @@ export function JudgeIntelligenceCards({
     <div className="w-full">
       {/* Header */}
       <div className="flex items-center gap-2 mb-6">
-        <div className="text-2xl">⚖️</div>
+        <div className="text-2xl"></div>
         <h2 className="text-2xl font-bold text-white">{t.heading}</h2>
       </div>
 

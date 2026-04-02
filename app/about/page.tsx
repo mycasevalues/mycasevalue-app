@@ -104,19 +104,19 @@ export default function AboutPage() {
                   step: '01',
                   title: 'Search',
                   description: 'Select your case type from 84 federal case categories. Get instant access to historical outcome data specific to your legal scenario.',
-                  icon: '🔍',
+                  icon: '',
                 },
                 {
                   step: '02',
                   title: 'Review',
                   description: 'Explore win rates, settlement percentages, recovery ranges, and case timelines derived from 5.1M+ real federal cases.',
-                  icon: '📊',
+                  icon: '',
                 },
                 {
                   step: '03',
                   title: 'Research',
                   description: 'Use data-driven insights to make informed decisions. Share findings with attorneys or use them for your own evaluation.',
-                  icon: '💡',
+                  icon: '',
                 },
               ].map((item) => (
                 <div key={item.step} className="flex gap-4 p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#131B2E' }}>

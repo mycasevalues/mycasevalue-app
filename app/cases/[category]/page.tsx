@@ -218,16 +218,16 @@ const categoryColors: Record<string, string> = {
 };
 
 const categoryIcons: Record<string, string> = {
-  work: '💼',
-  injury: '❤️',
-  consumer: '🛡️',
-  rights: '⚖️',
-  money: '💰',
-  housing: '🏠',
-  medical: '🏥',
-  family: '👨‍👩‍👧‍👦',
-  gov: '🏛️',
-  education: '🎓',
+  work: '',
+  injury: '',
+  consumer: '',
+  rights: '',
+  money: '',
+  housing: '',
+  medical: '',
+  family: '‍👩‍👧‍👦',
+  gov: '',
+  education: '',
 };
 
 function getAverageStats(category: string): {
