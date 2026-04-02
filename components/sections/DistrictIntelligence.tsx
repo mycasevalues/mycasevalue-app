@@ -225,7 +225,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
         placeholder={t.searchPlaceholder}
         aria-label={lang === 'es' ? 'Buscar distrito' : 'Search district'}
         className="w-full rounded-lg px-4 py-2.5 text-[13px] mb-4"
-        style={{ background: 'rgba(15,23,42,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
+        style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
       />
 
       {/* Circuit filter */}
@@ -295,7 +295,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
         </div>
 
         {/* Detail card */}
-        <div className="sm:col-span-2 rounded-xl p-5" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
+        <div className="sm:col-span-2 rounded-xl p-5" style={{ background: 'rgba(245,243,239,0.5)', border: '1px solid var(--border-default)' }}>
           {selectedDistrict ? (
             <>
               <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#0D9488' }}>
@@ -347,7 +347,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
             </>
           ) : (
             <div className="flex flex-col items-center justify-center h-full text-center py-8">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#334155" strokeWidth="1.5" className="mb-3">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E5E0D8" strokeWidth="1.5" className="mb-3">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
               </svg>
               <p className="text-[12px]" style={{ color: 'var(--fg-subtle)' }}>{t.selectPrompt}</p>

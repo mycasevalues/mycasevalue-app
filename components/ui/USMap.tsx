@@ -166,7 +166,7 @@ export default function USMap({ stateRates, selectedState, onStateClick, lang = 
                 left: x,
                 top: y - 8,
                 transform: 'translate(-50%, -100%)',
-                background: 'rgba(15,23,42,0.95)',
+                background: 'rgba(255,255,255,0.95)',
                 backdropFilter: 'blur(8px)',
                 boxShadow: '0 8px 24px rgba(0,0,0,.3)',
                 border: '1px solid rgba(255,255,255,0.1)',

@@ -18,11 +18,11 @@ export default function DistrictsPage() {
   const stateList = STATES.filter(s => s.id !== '');
 
   return (
-    <div className="min-h-screen" style={{ background: '#F9F8F6' }}>
+    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E0D8', background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)' }}>
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
+          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: 'var(--fg-primary)' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to MyCaseValue
           </a>
@@ -34,7 +34,7 @@ export default function DistrictsPage() {
           <h1 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: '#111111', fontFamily: 'Montserrat', letterSpacing: '-1.5px' }}>
             Federal Court Outcomes by District
           </h1>
-          <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: '#666666' }}>
+          <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'var(--fg-muted)' }}>
             The federal court system is divided into 94 judicial districts spanning all 50 states, Washington D.C., and U.S. territories. Each district has its own judges, caseload, and outcome patterns. Explore outcomes across districts to understand regional variations in case results and settlement patterns.
           </p>
         </div>
@@ -49,16 +49,16 @@ export default function DistrictsPage() {
               href={`/outcomes/${state.id}/employment-discrimination`}
               className="group p-5 rounded-xl border transition-all hover:shadow-md hover:border-opacity-100"
               style={{
-                borderColor: '#E5E0D8',
-                background: '#FFFFFF',
+                borderColor: 'var(--border-default)',
+                background: 'var(--bg-surface)',
               }}
             >
               <div className="flex items-start justify-between mb-3">
                 <div>
-                  <h3 className="text-sm font-semibold" style={{ color: '#111111' }}>
+                  <h3 className="text-sm font-semibold" style={{ color: 'var(--fg-primary)' }}>
                     {state.label}
                   </h3>
-                  <p className="text-[11px] mt-1" style={{ color: '#999999' }}>
+                  <p className="text-[11px] mt-1" style={{ color: 'var(--fg-subtle)' }}>
                     {state.id}
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export default function DistrictsPage() {
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </div>
-              <p className="text-[11px] leading-relaxed" style={{ color: '#999999' }}>
+              <p className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-subtle)' }}>
                 Employment discrimination outcomes
               </p>
             </a>
@@ -75,8 +75,8 @@ export default function DistrictsPage() {
       </div>
 
       {/* Footer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#E5E0D8' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#999999' }}>
+      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-subtle)' }}>
           MyCaseValue provides aggregate historical data from public federal court records for informational and research purposes only.
           We are not a law firm. This is not legal advice. © {new Date().getFullYear()} MyCaseValue LLC.
         </p>

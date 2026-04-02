@@ -11,7 +11,7 @@ export default function AccountPage() {
     <div
       style={{
         minHeight: '100vh',
-        backgroundColor: '#F9F8F6',
+        backgroundColor: 'var(--bg-base)',
         padding: '40px 20px',
       }}
     >
@@ -20,10 +20,10 @@ export default function AccountPage() {
         <div style={{ marginBottom: '40px' }}>
           <h1
             style={{
-              fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '32px',
               fontWeight: 700,
-              color: '#111111',
+              color: 'var(--fg-primary)',
               margin: '0 0 8px 0',
               lineHeight: 1.2,
             }}
@@ -32,9 +32,9 @@ export default function AccountPage() {
           </h1>
           <p
             style={{
-              fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#8B5CF6',
+              color: 'var(--accent-secondary)',
               margin: 0,
             }}
           >
@@ -45,20 +45,20 @@ export default function AccountPage() {
         {/* Profile Info Card */}
         <div
           style={{
-            backgroundColor: '#FFFFFF',
+            backgroundColor: 'var(--bg-surface)',
             borderRadius: '12px',
             padding: '32px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04)',
-            border: '1px solid #E5E0D8',
+            boxShadow: 'var(--shadow-sm)',
+            border: `1px solid var(--border-default)`,
             marginBottom: '24px',
           }}
         >
           <h2
             style={{
-              fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '18px',
               fontWeight: 700,
-              color: '#111111',
+              color: 'var(--fg-primary)',
               margin: '0 0 24px 0',
             }}
           >
@@ -72,10 +72,10 @@ export default function AccountPage() {
                 htmlFor="name"
                 style={{
                   display: 'block',
-                  fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '14px',
                   fontWeight: 500,
-                  color: '#111111',
+                  color: 'var(--fg-primary)',
                   marginBottom: '8px',
                 }}
               >
@@ -89,12 +89,12 @@ export default function AccountPage() {
                 style={{
                   width: '100%',
                   padding: '10px 12px',
-                  border: '1px solid #E5E0D8',
+                  border: `1px solid var(--border-default)`,
                   borderRadius: '8px',
-                  fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#111111',
-                  backgroundColor: '#FFFFFF',
+                  color: 'var(--fg-primary)',
+                  backgroundColor: 'var(--bg-surface)',
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s, box-shadow 0.2s',
                 }}
@@ -107,10 +107,10 @@ export default function AccountPage() {
                 htmlFor="email"
                 style={{
                   display: 'block',
-                  fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '14px',
                   fontWeight: 500,
-                  color: '#111111',
+                  color: 'var(--fg-primary)',
                   marginBottom: '8px',
                 }}
               >
@@ -124,12 +124,12 @@ export default function AccountPage() {
                 style={{
                   width: '100%',
                   padding: '10px 12px',
-                  border: '1px solid #E5E0D8',
+                  border: `1px solid var(--border-default)`,
                   borderRadius: '8px',
-                  fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+                  fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#111111',
-                  backgroundColor: '#FFFFFF',
+                  color: 'var(--fg-primary)',
+                  backgroundColor: 'var(--bg-surface)',
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s, box-shadow 0.2s',
                 }}
@@ -142,11 +142,11 @@ export default function AccountPage() {
               className="auth-btn"
               style={{
                 padding: '10px 20px',
-                backgroundColor: '#111111',
-                color: '#FFFFFF',
+                backgroundColor: 'var(--fg-primary)',
+                color: 'var(--bg-surface)',
                 border: 'none',
                 borderRadius: '8px',
-                fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+                fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -161,20 +161,20 @@ export default function AccountPage() {
         {/* Subscription Tier Card */}
         <div
           style={{
-            backgroundColor: '#FFFFFF',
+            backgroundColor: 'var(--bg-surface)',
             borderRadius: '12px',
             padding: '32px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04)',
-            border: '1px solid #E5E0D8',
+            boxShadow: 'var(--shadow-sm)',
+            border: `1px solid var(--border-default)`,
             marginBottom: '24px',
           }}
         >
           <h2
             style={{
-              fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '18px',
               fontWeight: 700,
-              color: '#111111',
+              color: 'var(--fg-primary)',
               margin: '0 0 24px 0',
             }}
           >
@@ -184,9 +184,9 @@ export default function AccountPage() {
           <div style={{ marginBottom: '20px' }}>
             <p
               style={{
-                fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+                fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#8B5CF6',
+                color: 'var(--accent-secondary)',
                 margin: '0 0 8px 0',
                 fontWeight: 500,
               }}
@@ -195,10 +195,10 @@ export default function AccountPage() {
             </p>
             <p
               style={{
-                fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+                fontFamily: 'var(--font-display)',
                 fontSize: '20px',
                 fontWeight: 700,
-                color: '#111111',
+                color: 'var(--fg-primary)',
                 margin: 0,
               }}
             >
@@ -208,9 +208,9 @@ export default function AccountPage() {
 
           <p
             style={{
-              fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#8B5CF6',
+              color: 'var(--accent-secondary)',
               margin: '0 0 24px 0',
               lineHeight: 1.5,
             }}
@@ -222,11 +222,11 @@ export default function AccountPage() {
             className="auth-btn"
             style={{
               padding: '10px 20px',
-              backgroundColor: '#8B5CF6',
-              color: '#FFFFFF',
+              backgroundColor: 'var(--accent-secondary)',
+              color: 'var(--bg-surface)',
               border: 'none',
               borderRadius: '8px',
-              fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
@@ -240,20 +240,20 @@ export default function AccountPage() {
         {/* Billing Card */}
         <div
           style={{
-            backgroundColor: '#FFFFFF',
+            backgroundColor: 'var(--bg-surface)',
             borderRadius: '12px',
             padding: '32px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04)',
-            border: '1px solid #E5E0D8',
+            boxShadow: 'var(--shadow-sm)',
+            border: `1px solid var(--border-default)`,
             marginBottom: '24px',
           }}
         >
           <h2
             style={{
-              fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '18px',
               fontWeight: 700,
-              color: '#111111',
+              color: 'var(--fg-primary)',
               margin: '0 0 24px 0',
             }}
           >
@@ -262,9 +262,9 @@ export default function AccountPage() {
 
           <p
             style={{
-              fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#8B5CF6',
+              color: 'var(--accent-secondary)',
               margin: '0 0 24px 0',
               lineHeight: 1.5,
             }}
@@ -276,11 +276,11 @@ export default function AccountPage() {
             className="auth-btn"
             style={{
               padding: '10px 20px',
-              backgroundColor: '#111111',
-              color: '#FFFFFF',
+              backgroundColor: 'var(--fg-primary)',
+              color: 'var(--bg-surface)',
               border: 'none',
               borderRadius: '8px',
-              fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
@@ -294,16 +294,16 @@ export default function AccountPage() {
         {/* Danger Zone Card */}
         <div
           style={{
-            backgroundColor: '#FFFFFF',
+            backgroundColor: 'var(--bg-surface)',
             borderRadius: '12px',
             padding: '32px',
-            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04)',
+            boxShadow: 'var(--shadow-sm)',
             border: '2px solid #DC2626',
           }}
         >
           <h2
             style={{
-              fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '18px',
               fontWeight: 700,
               color: '#DC2626',
@@ -316,10 +316,10 @@ export default function AccountPage() {
           <div style={{ marginBottom: '24px' }}>
             <h3
               style={{
-                fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
+                fontFamily: 'var(--font-display)',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: '#111111',
+                color: 'var(--fg-primary)',
                 margin: '0 0 8px 0',
               }}
             >
@@ -327,9 +327,9 @@ export default function AccountPage() {
             </h3>
             <p
               style={{
-                fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+                fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#8B5CF6',
+                color: 'var(--accent-secondary)',
                 margin: '0 0 16px 0',
                 lineHeight: 1.5,
               }}
@@ -341,10 +341,10 @@ export default function AccountPage() {
               style={{
                 padding: '10px 20px',
                 backgroundColor: '#DC2626',
-                color: '#FFFFFF',
+                color: 'var(--bg-surface)',
                 border: 'none',
                 borderRadius: '8px',
-                fontFamily: 'Roboto, system-ui, -apple-system, sans-serif',
+                fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',

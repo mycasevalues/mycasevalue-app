@@ -72,7 +72,7 @@ export default function TrustSourceBar({ lang = 'en' }: TrustSourceBarProps) {
     <section
       className="py-12 sm:py-16 cinematic-enter"
       style={{
-        background: 'rgba(15,23,42,0.4)',
+        background: 'rgba(245,243,239,0.4)',
         borderTop: '1px solid var(--border-default)',
         borderBottom: '1px solid var(--border-default)',
       }}

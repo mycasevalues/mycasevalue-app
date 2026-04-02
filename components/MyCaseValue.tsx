@@ -2907,7 +2907,7 @@ export default function MyCaseValue() {
                 <Stat value={`${Math.round(wr)}%`} label={lang === 'es' ? 'Tasa de éxito' : 'Win rate'} color={wrColor} dark={darkMode} />
                 <Stat value={`${d.mo} mo`} label={lang === 'es' ? 'Duración mediana' : 'Median duration'} color={'#6B7280'} dark={true} />
                 <Stat value={`${winSettleRate}%`} label={lang === 'es' ? 'Éxito+Acuerdo' : 'Win+Settle'} color="#0D9488" dark={darkMode} />
-                <Stat value={`${d.sp}%`} label={lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate'} color="#1A2744" dark={darkMode} />
+                <Stat value={`${d.sp}%`} label={lang === 'es' ? 'Tasa de acuerdos' : 'Settlement rate'} color="#FFFFFF" dark={darkMode} />
               </div>
 
               {/* Scenario comparison chips */}
@@ -2916,7 +2916,7 @@ export default function MyCaseValue() {
                 <CompareChip label={lang === 'es' ? 'Con abogado' : 'With attorney'} value={`${d.rr?.wr ?? Math.round(wr * 1.12)}%`} color="#0D9488" active={compareMode} onClick={() => setCompareMode(!compareMode)} />
                 <CompareChip label={lang === 'es' ? 'Sin abogado' : 'No attorney'} value={`${d.rr?.sr ?? Math.round(wr * 0.65)}%`} color="#E87461" />
                 <CompareChip label={lang === 'es' ? 'Juicio' : 'Trial'} value={`${od.trial_win}%`} color="#111111" />
-                <CompareChip label={lang === 'es' ? 'Acuerdo' : 'Settlement'} value={`${d.sp}%`} color="#1A2744" />
+                <CompareChip label={lang === 'es' ? 'Acuerdo' : 'Settlement'} value={`${d.sp}%`} color="#FFFFFF" />
               </div>
 
               <div className="text-[11px] text-[var(--fg-muted)] text-center mt-4">{UPL.disclaimer}</div>
@@ -3123,9 +3123,9 @@ export default function MyCaseValue() {
                   {attorney && (
                     <div className="flex gap-3 items-start px-4 py-3.5 rounded-xl" style={{
                       background: attorney === 'have' ? 'rgba(13, 148, 136, 0.04)' : 'rgba(37, 99, 235, 0.04)',
-                      borderLeft: `3px solid ${attorney === 'have' ? '#0D9488' : '#1A2744'}`,
+                      borderLeft: `3px solid ${attorney === 'have' ? '#0D9488' : '#FFFFFF'}`,
                     }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={attorney === 'have' ? '#0D9488' : '#1A2744'} strokeWidth="2" className="mt-0.5 flex-shrink-0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={attorney === 'have' ? '#0D9488' : '#FFFFFF'} strokeWidth="2" className="mt-0.5 flex-shrink-0">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
                       </svg>
                       <p className="text-[14px] leading-[1.7] text-[var(--fg-muted)]">
@@ -3959,7 +3959,7 @@ export default function MyCaseValue() {
                   <SectionLabel>{lang === 'es' ? 'Qué pasó en casos similares' : 'What happened in similar cases'}</SectionLabel>
                   {[
                     { l: lang === 'es' ? 'Ganar en juicio' : 'Win at trial', p: Math.round(d.wr * 0.4), c: '#0D9488' },
-                    { l: lang === 'es' ? 'Acuerdo favorable' : 'Settle favorably', p: d.sp, c: '#1A2744' },
+                    { l: lang === 'es' ? 'Acuerdo favorable' : 'Settle favorably', p: d.sp, c: '#FFFFFF' },
                     { l: lang === 'es' ? 'Desestimado' : 'Dismissed', p: Math.round(100 - d.wr - d.sp), c: '#D97706' },
                     { l: lang === 'es' ? 'Perder en juicio' : 'Lose at trial', p: Math.round((100 - d.wr) * 0.3), c: '#E87461' },
                   ].map((r, i) => (
@@ -4343,7 +4343,7 @@ export default function MyCaseValue() {
                   {[
                     { id: 'atty', l: lang === 'es' ? 'Consultar a un abogado' : 'Consult an attorney', c: '#0D9488' },
                     { id: 'file', l: lang === 'es' ? 'Presentar queja yo mismo' : 'File a complaint myself', c: '#111111' },
-                    { id: 'wait', l: lang === 'es' ? 'Recopilar más info' : 'Gather more info', c: '#1A2744' },
+                    { id: 'wait', l: lang === 'es' ? 'Recopilar más info' : 'Gather more info', c: '#FFFFFF' },
                     { id: 'move', l: lang === 'es' ? 'Seguir adelante' : 'Move on', c: '#9CA3AF' },
                   ].map(o => (
                     <button type="button" key={o.id} onClick={() => { setPollVote(o.id); apiCall('/api/poll', 'POST', { vote: o.id, nos: spec?.nos }); }}

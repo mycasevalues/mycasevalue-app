@@ -133,7 +133,7 @@ export function Navbar({
                 className="h-8 px-2.5 rounded-lg border cursor-pointer flex items-center justify-center transition-colors text-[12px] font-bold tracking-wide focus-ring"
                 style={{
                   background: '#E5E0D8',
-                  borderColor: '#334155',
+                  borderColor: '#E5E0D8',
                   color: '#6B7280',
                 }}
                 aria-label={`${savedReportsCount} saved report${savedReportsCount !== 1 ? 's' : ''}`}

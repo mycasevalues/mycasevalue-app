@@ -62,7 +62,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
                 style={{
                   background: selectedCase === key ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.05)',
                   color: selectedCase === key ? 'white' : '#6B7280',
-                  borderColor: selectedCase === key ? '#111111' : '#334155',
+                  borderColor: selectedCase === key ? '#111111' : '#E5E0D8',
                   boxShadow: selectedCase === key ? '0 2px 8px rgba(17,17,17,0.25)' : 'none',
                 }}
               >

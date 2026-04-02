@@ -44,7 +44,7 @@ export function TrendLine({
           />
           <Tooltip
             contentStyle={{
-              background: 'rgba(15,23,42,0.95)',
+              background: 'rgba(255,255,255,0.95)',
               border: '1px solid #E5E0D8',
               borderRadius: '10px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.3)',

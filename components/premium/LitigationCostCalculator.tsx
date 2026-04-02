@@ -139,7 +139,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
     <section
       className="py-12 sm:py-16"
       style={{
-        background: 'rgba(15,23,42,0.3)',
+        background: 'rgba(245,243,239,0.3)',
         borderTop: '1px solid var(--border-default)',
         borderBottom: '1px solid var(--border-default)',
       }}
@@ -166,7 +166,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
               value={complexity}
               onChange={e => setComplexity(e.target.value)}
               className="w-full rounded-lg px-3 py-2.5 text-[13px]"
-              style={{ background: 'rgba(15,23,42,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
+              style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
             >
               {CASE_COMPLEXITY.map(c => (
                 <option key={c.key} value={c.key}>{lang === 'es' ? c.es : c.en}</option>
@@ -246,7 +246,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
                       {formatCost(phase.low)} – {formatCost(phase.high)}
                     </span>
                   </div>
-                  <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(15,23,42,0.6)' }}>
+                  <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.6)' }}>
                     <div
                       className="h-full rounded-full transition-all duration-500"
                       style={{

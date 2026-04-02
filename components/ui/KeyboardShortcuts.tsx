@@ -73,7 +73,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
         style={{
           position: 'relative', zIndex: 1,
           background: 'linear-gradient(180deg, #E5E0D8, #FFFFFF)',
-          border: '1px solid #334155',
+          border: '1px solid #E5E0D8',
           borderRadius: '16px', padding: '28px',
           maxWidth: '440px', width: '90%',
           boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
@@ -97,13 +97,13 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
             <div key={i} style={{
               display: 'flex', justifyContent: 'space-between', alignItems: 'center',
               padding: '8px 12px', borderRadius: '8px',
-              background: 'rgba(15,23,42,0.5)',
+              background: 'rgba(245,243,239,0.5)',
             }}>
               <span style={{ fontSize: '13px', color: '#6B7280' }}>{s.description}</span>
               <kbd style={{
                 padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
                 fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
-                background: '#F9F8F6', border: '1px solid #334155',
+                background: '#F9F8F6', border: '1px solid #E5E0D8',
                 color: '#8B5CF6', minWidth: '28px', textAlign: 'center',
               }}>
                 {s.modifier ? `${s.modifier === 'ctrl' ? 'Ctrl' : s.modifier === 'meta' ? '⌘' : '⇧'}+` : ''}{s.label}
@@ -114,7 +114,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
           <div style={{
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
             padding: '8px 12px', borderRadius: '8px',
-            background: 'rgba(15,23,42,0.5)',
+            background: 'rgba(245,243,239,0.5)',
           }}>
             <span style={{ fontSize: '13px', color: '#6B7280' }}>
               {lang === 'es' ? 'Mostrar/ocultar atajos' : 'Toggle shortcuts'}
@@ -122,7 +122,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
             <kbd style={{
               padding: '3px 8px', borderRadius: '6px', fontSize: '12px',
               fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
-              background: '#F9F8F6', border: '1px solid #334155',
+              background: '#F9F8F6', border: '1px solid #E5E0D8',
               color: '#8B5CF6',
             }}>?</kbd>
           </div>

@@ -221,7 +221,7 @@ export default function CaseLifecycle({ lang = 'en' }: CaseLifecycleProps) {
 
                 {/* Expanded detail */}
                 {isExpanded && (
-                  <div className="mt-2 rounded-xl p-4 transition-all" style={{ background: 'rgba(15,23,42,0.5)', border: `1px solid ${stage.color}30` }}>
+                  <div className="mt-2 rounded-xl p-4 transition-all" style={{ background: 'rgba(245,243,239,0.5)', border: `1px solid ${stage.color}30` }}>
                     <p className="text-[12px] leading-relaxed mb-3" style={{ color: 'var(--fg-muted)' }}>
                       {lang === 'es' ? stage.descriptionEs : stage.description}
                     </p>

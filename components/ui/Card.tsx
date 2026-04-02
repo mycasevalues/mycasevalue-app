@@ -1,24 +1,56 @@
-'use client'
-import React from 'react'
+'use client';
+
+import React from 'react';
 
 interface CardProps {
-  variant?: 'default' | 'elevated' | 'glass'
-  children: React.ReactNode
-  className?: string
+  variant?: 'default' | 'elevated' | 'outlined' | 'interactive' | 'accent';
+  padding?: 'none' | 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+  className?: string;
+  as?: 'div' | 'article' | 'section';
+  onClick?: () => void;
 }
 
-export function Card({ variant = 'default', children, className = '' }: CardProps) {
-  const variants: Record<string, string> = {
-    default: 'bg-[#FFFFFF] border border-[#E5E0D8] rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg',
-    elevated: 'bg-[#FFFFFF] rounded-xl p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-xl',
-    glass: 'bg-[#FFFFFF]/60 backdrop-blur-xl border border-[#E5E0D8]/20 rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg',
-  }
+const paddingMap: Record<string, string> = {
+  none: '',
+  sm: 'p-4',
+  md: 'p-6',
+  lg: 'p-8',
+};
 
+export function Card({
+  variant = 'default',
+  padding = 'md',
+  children,
+  className = '',
+  as: Component = 'div',
+  onClick,
+}: CardProps) {
   return (
-    <div className={`${variants[variant]} ${className}`}>
+    <Component
+      className={`mcv-card mcv-card--${variant} ${paddingMap[padding]} ${className}`}
+      onClick={onClick}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={onClick ? (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); }
+      } : undefined}
+    >
       {children}
-    </div>
-  )
+    </Component>
+  );
 }
 
-export default Card
+export function CardHeader({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <div className={`mcv-card__header ${className}`}>{children}</div>;
+}
+
+export function CardBody({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <div className={`mcv-card__body ${className}`}>{children}</div>;
+}
+
+export function CardFooter({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <div className={`mcv-card__footer ${className}`}>{children}</div>;
+}
+
+export default Card;

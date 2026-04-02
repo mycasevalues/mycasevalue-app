@@ -277,7 +277,7 @@ export function LitigationCostEstimator({
             padding: '4px',
             background: '#E5E0D8',
             borderRadius: '8px',
-            border: '1px solid #334155',
+            border: '1px solid #E5E0D8',
           }}
         >
           {[false, true].map((proseMode) => (
@@ -324,7 +324,7 @@ export function LitigationCostEstimator({
                     flex: 1,
                     padding: '10px 12px',
                     borderRadius: '6px',
-                    border: `2px solid ${complexity === tier.id ? '#111111' : '#334155'}`,
+                    border: `2px solid ${complexity === tier.id ? '#111111' : '#E5E0D8'}`,
                     background: complexity === tier.id ? '#11111140' : 'transparent',
                     fontSize: '12px',
                     fontWeight: 600,
@@ -354,7 +354,7 @@ export function LitigationCostEstimator({
             style={{
               padding: '14px 16px',
               background: '#E5E0D8',
-              border: '1px solid #334155',
+              border: '1px solid #E5E0D8',
               borderRadius: '8px',
               display: 'flex',
               alignItems: 'flex-start',
@@ -410,7 +410,7 @@ export function LitigationCostEstimator({
                   style={{
                     flex: 1,
                     height: '4px',
-                    background: '#334155',
+                    background: '#E5E0D8',
                     borderRadius: '2px',
                     overflow: 'hidden',
                     position: 'relative',

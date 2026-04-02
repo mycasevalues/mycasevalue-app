@@ -47,7 +47,7 @@ export function CaseTypeStatsPreview({ lang = 'en' }: CaseTypeStatsPreviewProps)
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
           { l: es ? 'Tasa de éxito' : 'Win Rate', v: `${s.wr}%`, c: '#0D9488' },
-          { l: es ? 'Tiempo promedio' : 'Avg Timeline', v: s.timeline, c: '#1A2744' },
+          { l: es ? 'Tiempo promedio' : 'Avg Timeline', v: s.timeline, c: '#FFFFFF' },
           { l: es ? 'Acuerdos %' : 'Settlement %', v: `${s.settle}%`, c: '#111111' },
           { l: es ? 'Casos analizados' : 'Cases Analyzed', v: `${(s.volume / 1000).toFixed(0)}K`, c: '#111111' },
         ].map((stat, i) => (

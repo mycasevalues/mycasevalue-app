@@ -216,7 +216,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
           { label: t.charges, value: fmt(EEOC_DATA.newChargesReceived), color: '#333333' },
           { label: t.successRate, value: `${EEOC_DATA.litigationSuccessRate}%`, color: '#F59E0B' },
         ].map((m, i) => (
-          <div key={i} className="text-center p-3 rounded-xl" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
+          <div key={i} className="text-center p-3 rounded-xl" style={{ background: 'rgba(245,243,239,0.5)', border: '1px solid var(--border-default)' }}>
             <div className="text-lg sm:text-xl font-display font-extrabold" style={{ color: m.color }}>{m.value}</div>
             <div className="text-[10px] font-semibold mt-0.5" style={{ color: 'var(--fg-subtle)' }}>{m.label}</div>
           </div>
@@ -244,7 +244,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
       {/* Charts row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
         {/* Doughnut */}
-        <div className="flex flex-col items-center p-4 rounded-xl" style={{ background: 'rgba(15,23,42,0.4)', border: '1px solid var(--border-default)' }}>
+        <div className="flex flex-col items-center p-4 rounded-xl" style={{ background: 'rgba(245,243,239,0.4)', border: '1px solid var(--border-default)' }}>
           <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-3" style={{ color: 'var(--fg-subtle)' }}>
             {t.chargesLabel} — FY2023
           </div>
@@ -261,7 +261,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
         </div>
 
         {/* Bar chart */}
-        <div className="p-4 rounded-xl" style={{ background: 'rgba(15,23,42,0.4)', border: '1px solid var(--border-default)' }}>
+        <div className="p-4 rounded-xl" style={{ background: 'rgba(245,243,239,0.4)', border: '1px solid var(--border-default)' }}>
           <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-3" style={{ color: 'var(--fg-subtle)' }}>
             {t.trendLabel} — {STATUTES.find(s => s.key === selected)?.[lang === 'es' ? 'labelEs' : 'label']}
           </div>
@@ -277,7 +277,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {EEOC_DATA.damageCaps.tiers.map((tier, i) => (
-              <div key={i} className="text-center p-2 rounded-lg" style={{ background: 'rgba(15,23,42,0.5)' }}>
+              <div key={i} className="text-center p-2 rounded-lg" style={{ background: 'rgba(245,243,239,0.5)' }}>
                 <div className="text-sm font-bold font-mono" style={{ color: '#333333' }}>${(tier.cap / 1000)}K</div>
                 <div className="text-[9px] mt-0.5" style={{ color: 'var(--fg-subtle)' }}>{tier.employees} {lang === 'es' ? 'empleados' : 'employees'}</div>
               </div>

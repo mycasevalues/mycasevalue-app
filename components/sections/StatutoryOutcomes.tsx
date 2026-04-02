@@ -210,7 +210,7 @@ export default function StatutoryOutcomes({ lang = 'en' }: StatutoryOutcomesProp
       </div>
 
       {/* Statute detail card */}
-      <div className="rounded-xl p-5" style={{ background: 'rgba(15,23,42,0.5)', border: `1px solid ${statute.color}30` }}>
+      <div className="rounded-xl p-5" style={{ background: 'rgba(245,243,239,0.5)', border: `1px solid ${statute.color}30` }}>
         {/* Name + citation */}
         <div className="mb-4">
           <h3 className="text-base font-bold" style={{ color: statute.color }}>

@@ -28,7 +28,7 @@ export function Accordion({ items }: AccordionProps) {
         <div
           key={item.id}
           className="rounded-lg overflow-hidden"
-          style={{ border: '1px solid #334155' }}
+          style={{ border: '1px solid #E5E0D8' }}
         >
           <button type="button"
             id={`accordion-btn-${item.id}`}

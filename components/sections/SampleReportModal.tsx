@@ -78,7 +78,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
 
         {/* Preview card thumbnail */}
         <button type="button" onClick={() => setIsOpen(true)} className="group relative mx-auto block max-w-[400px] rounded-xl overflow-hidden transition-transform hover:scale-[1.02]" style={{ border: '1px solid var(--border-default)' }}>
-          <div className="p-5" style={{ background: 'linear-gradient(180deg, rgba(17,17,17,0.08) 0%, rgba(15,23,42,0.8) 100%)' }}>
+          <div className="p-5" style={{ background: 'linear-gradient(180deg, rgba(17,17,17,0.08) 0%, rgba(255,255,255,0.8) 100%)' }}>
             {/* Mini report preview */}
             <div className="text-left space-y-2">
               <div className="flex items-center gap-2 mb-3">
@@ -96,7 +96,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
                 { label: t.sections.cost, value: '$45K — $263K', color: '#EF4444', free: false },
                 { label: t.sections.risk, value: 'Score: 72/100', color: '#A78BFA', free: false },
               ].map((s, i) => (
-                <div key={i} className="flex items-center justify-between rounded-lg px-3 py-1.5" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
+                <div key={i} className="flex items-center justify-between rounded-lg px-3 py-1.5" style={{ background: 'rgba(245,243,239,0.5)', border: '1px solid var(--border-default)' }}>
                   <span className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{s.label}</span>
                   <div className="flex items-center gap-2">
                     <span className="text-[11px] font-bold font-mono" style={{ color: s.color }}>{s.value}</span>
@@ -262,7 +262,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
 
 function ReportSection({ title, color, free, premium, children }: { title: string; color: string; free?: boolean; premium?: boolean; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl p-4" style={{ background: 'rgba(15,23,42,0.5)', border: `1px solid ${color}20` }}>
+    <div className="rounded-xl p-4" style={{ background: 'rgba(245,243,239,0.5)', border: `1px solid ${color}20` }}>
       <div className="flex items-center justify-between mb-3">
         <h4 className="text-[12px] font-bold" style={{ color }}>{title}</h4>
         {free && <span className="text-[8px] px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(16,185,129,0.1)', color: '#10B981' }}>FREE</span>}

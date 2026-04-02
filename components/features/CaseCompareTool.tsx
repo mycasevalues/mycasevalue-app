@@ -127,7 +127,7 @@ export function CaseCompareTool({
             {index > 0 && (
               <button type="button"
                 onClick={() => handleRemoveComparison(index)}
-                className="px-4 py-2 rounded-lg text-xs font-medium bg-[#334155] hover:bg-[#4B5563] text-[#111827] transition-colors"
+                className="px-4 py-2 rounded-lg text-xs font-medium bg-[#E5E0D8] hover:bg-[#4B5563] text-[#111827] transition-colors"
               >
                 {t.removeComparison}
               </button>

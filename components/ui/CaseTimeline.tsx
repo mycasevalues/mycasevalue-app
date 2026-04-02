@@ -159,7 +159,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                 <div style={{
                   fontSize: '10px', fontWeight: 500,
                   fontFamily: "'JetBrains Mono', monospace",
-                  color: i <= activeIdx ? event.color : '#334155',
+                  color: i <= activeIdx ? event.color : '#E5E0D8',
                   marginTop: '2px',
                 }}>
                   {event.months === 0 ? (lang === 'es' ? 'Día 1' : 'Day 1') : `${event.months}mo`}
@@ -229,7 +229,7 @@ export default function CaseTimeline({ medianMonths, caseType, lang = 'en' }: Ca
                   <span style={{
                     fontSize: '11px', fontWeight: 500,
                     fontFamily: "'JetBrains Mono', monospace",
-                    color: i <= activeIdx ? event.color : '#334155',
+                    color: i <= activeIdx ? event.color : '#E5E0D8',
                   }}>
                     {event.months === 0 ? (lang === 'es' ? 'Día 1' : 'Day 1') : `${event.months}mo`}
                   </span>

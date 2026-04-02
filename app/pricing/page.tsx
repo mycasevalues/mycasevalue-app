@@ -1,6 +1,15 @@
-'use client';
+import { Metadata } from 'next';
+import Link from 'next/link';
 
-import { useState } from 'react';
+export const metadata: Metadata = {
+  title: 'Pricing | MyCaseValue',
+  description: 'Simple, transparent pricing for federal court outcome data. Free plan, single report purchase, unlimited reports, or attorney mode.',
+  openGraph: {
+    title: 'Pricing | MyCaseValue',
+    description: 'Simple, transparent pricing for federal court outcome data.',
+    type: 'website',
+  },
+};
 
 const getJsonLd = () => ({
   '@context': 'https://schema.org',
@@ -39,19 +48,35 @@ const pricingFaqs = [
   { q: 'What is the refund policy?', a: 'Single Report purchases are refundable within 24 hours if the report has not been downloaded. Subscription plans (Unlimited and Attorney Mode) can be cancelled anytime. No partial-month refunds on monthly plans.' },
 ];
 
-interface FeatureItem { text: string; included: boolean; }
+interface FeatureItem {
+  text: string;
+  included: boolean;
+}
 
 interface PlanCard {
-  id: string; name: string; tagline: string; price: string; period: string;
-  sectionLabel: string; features: FeatureItem[]; ctaText: string; ctaSubtext: string;
-  ctaStyle: 'ghost' | 'primary' | 'accent'; badge?: string; badgeStyle?: 'accent' | 'primary';
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  period: string;
+  description: string;
+  sectionLabel: string;
+  features: FeatureItem[];
+  ctaText: string;
+  ctaSubtext: string;
+  badge?: string;
   featured?: boolean;
 }
 
 const PLANS: PlanCard[] = [
   {
-    id: 'free', name: 'Free', tagline: 'For anyone researching a case',
-    price: '$0', period: 'forever', sectionLabel: 'Includes:',
+    id: 'free',
+    name: 'Free',
+    tagline: 'For anyone researching a case',
+    price: '$0',
+    period: 'forever',
+    description: 'Start your research with essential case data and win rate analysis.',
+    sectionLabel: 'Includes:',
     features: [
       { text: 'Win rate percentage for any case + district', included: true },
       { text: 'Median settlement amount (national average)', included: true },
@@ -64,11 +89,17 @@ const PLANS: PlanCard[] = [
       { text: 'Judge profiles', included: false },
       { text: 'PDF export', included: false },
     ],
-    ctaText: 'Get Started Free', ctaSubtext: 'No account required', ctaStyle: 'ghost',
+    ctaText: 'Get Started Free',
+    ctaSubtext: 'No account required',
   },
   {
-    id: 'single_report', name: 'Single Report', tagline: 'For one specific case',
-    price: '$5.99', period: 'one-time', sectionLabel: 'Includes:',
+    id: 'single_report',
+    name: 'Single Report',
+    tagline: 'For one specific case',
+    price: '$5.99',
+    period: 'one-time',
+    description: 'Deep dive into a single case with full settlement ranges and judge data.',
+    sectionLabel: 'Includes:',
     features: [
       { text: 'One full case outcome report (any case type + district)', included: true },
       { text: 'Full settlement range — 10th through 90th percentile', included: true },
@@ -84,12 +115,17 @@ const PLANS: PlanCard[] = [
       { text: 'Judge intelligence profiles', included: false },
       { text: 'Attorney Mode features', included: false },
     ],
-    ctaText: 'Buy a Report', ctaSubtext: 'Access for 90 days · No subscription', ctaStyle: 'primary',
+    ctaText: 'Buy a Report',
+    ctaSubtext: 'Access for 90 days · No subscription',
   },
   {
-    id: 'unlimited', name: 'Unlimited Reports', tagline: 'For ongoing case research',
-    price: '$9.99', period: '/mo', sectionLabel: 'Everything in Single Report, plus:',
-    badge: 'BEST VALUE', badgeStyle: 'primary',
+    id: 'unlimited',
+    name: 'Unlimited Reports',
+    tagline: 'For ongoing case research',
+    price: '$9.99',
+    period: '/mo',
+    description: 'Unlimited lookups across all case types and districts with trend analysis.',
+    sectionLabel: 'Everything in Single Report, plus:',
     features: [
       { text: 'Unlimited case type + district lookups', included: true },
       { text: 'All 84 case types · all 94 districts', included: true },
@@ -108,12 +144,19 @@ const PLANS: PlanCard[] = [
       { text: 'Opposing counsel research', included: false },
       { text: 'Attorney Mode features', included: false },
     ],
-    ctaText: 'Start Unlimited', ctaSubtext: 'Cancel anytime', ctaStyle: 'accent',
+    ctaText: 'Start Unlimited',
+    ctaSubtext: 'Cancel anytime',
   },
   {
-    id: 'attorney', name: 'Attorney Mode', tagline: 'For legal professionals',
-    price: '$29.99', period: '/mo', sectionLabel: 'Everything in Unlimited Reports, plus:',
-    badge: 'MOST POPULAR', badgeStyle: 'accent', featured: true,
+    id: 'attorney',
+    name: 'Attorney Mode',
+    tagline: 'For legal professionals',
+    price: '$29.99',
+    period: '/mo',
+    description: 'Advanced tools for law firms: AI predictions, bulk analysis, API access, and team collaboration.',
+    sectionLabel: 'Everything in Unlimited Reports, plus:',
+    badge: 'MOST POPULAR',
+    featured: true,
     features: [
       { text: 'Advanced judge intelligence (motion rates, bias trends, behavioral patterns)', included: true },
       { text: 'AI case outcome predictor', included: true },
@@ -135,51 +178,240 @@ const PLANS: PlanCard[] = [
       { text: 'Daily data refresh (vs. weekly on Unlimited)', included: true },
       { text: 'Priority support — 24-hour response', included: true },
     ],
-    ctaText: 'Start Attorney Mode', ctaSubtext: 'Cancel anytime · Team seats included', ctaStyle: 'primary',
+    ctaText: 'Start Attorney Mode',
+    ctaSubtext: 'Cancel anytime · Team seats included',
   },
 ];
 
-function Card({ plan, onCta }: { plan: PlanCard; onCta: (id: string) => void }) {
+function PricingCard({ plan }: { plan: PlanCard }) {
   const f = plan.featured;
-  const ctaBg = plan.ctaStyle === 'primary' ? '#111111' : plan.ctaStyle === 'accent' ? '#8B5CF6' : 'transparent';
-  const ctaColor = plan.ctaStyle === 'ghost' ? '#111827' : '#FFFFFF';
-  const ctaBorder = plan.ctaStyle === 'ghost' ? '1px solid #E5E0D8' : 'none';
 
   return (
-    <div className="relative flex flex-col h-full" style={{
-      borderRadius: '12px', border: f ? '2px solid #8B5CF6' : '1px solid #E5E0D8', background: '#FFFFFF',
-      boxShadow: f ? '0 32px 64px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
-    }}>
+    <div
+      style={{
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        borderRadius: '12px',
+        border: f ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
+        background: 'var(--bg-surface)',
+        boxShadow: f ? '0 32px 64px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
+      }}
+    >
       {plan.badge && (
-        <div className="absolute text-[10px] font-semibold uppercase tracking-wider" style={{
-          top: '-8px', right: f ? '-8px' : '50%', transform: f ? 'none' : 'translateX(50%)',
-          borderRadius: '9999px', padding: '4px 12px',
-          background: plan.badgeStyle === 'accent' ? '#8B5CF6' : '#111111', color: '#FFFFFF',
-          fontFamily: 'Roboto, system-ui, sans-serif',
-        }}>{plan.badge}</div>
-      )}
-      <div className={`p-6 flex flex-col h-full ${plan.badge ? 'pt-8' : ''}`}>
-        <h3 className="text-xl font-black mb-1" style={{ color: '#111111', fontFamily: 'Montserrat, system-ui, sans-serif' }}>{plan.name}</h3>
-        <p className="text-[13px] mb-5" style={{ color: '#6B7280', fontFamily: 'Roboto, system-ui, sans-serif' }}>{plan.tagline}</p>
-        <div className="mb-1">
-          <span className="text-[48px] leading-none font-extrabold" style={{ color: '#111111', fontFamily: 'Montserrat, system-ui, sans-serif' }}>{plan.price}</span>
+        <div
+          style={{
+            position: 'absolute',
+            top: '-8px',
+            right: f ? '-8px' : '50%',
+            transform: f ? 'none' : 'translateX(50%)',
+            borderRadius: '9999px',
+            padding: '4px 12px',
+            background: 'var(--accent-primary)',
+            color: '#FFFFFF',
+            fontSize: '10px',
+            fontWeight: '600',
+            letterSpacing: '0.12em',
+            fontFamily: 'var(--font-body)',
+            textTransform: 'uppercase',
+          }}
+        >
+          {plan.badge}
         </div>
-        <p className="text-sm mb-6" style={{ color: '#9CA3AF', fontFamily: 'Roboto, system-ui, sans-serif' }}>{plan.period}</p>
-        <button type="button" onClick={() => onCta(plan.id)} className="w-full py-3 px-4 text-sm font-semibold transition-all hover:opacity-90 hover:-translate-y-px mb-2" style={{
-          borderRadius: '9999px', background: ctaBg, color: ctaColor, border: ctaBorder, cursor: 'pointer', fontFamily: 'Roboto, system-ui, sans-serif',
-        }}>{plan.ctaText}</button>
-        <p className="text-xs text-center mb-6" style={{ color: '#9CA3AF', fontFamily: 'Roboto, system-ui, sans-serif' }}>{plan.ctaSubtext}</p>
-        <div className="mb-5" style={{ height: '1px', background: '#E5E0D8' }} />
-        <p className="text-[11px] font-semibold uppercase tracking-wider mb-4" style={{ color: '#9CA3AF', fontFamily: 'Roboto, system-ui, sans-serif', letterSpacing: '0.08em' }}>{plan.sectionLabel}</p>
-        <div className="space-y-3 flex-grow">
+      )}
+
+      <div
+        style={{
+          padding: '24px',
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+          paddingTop: plan.badge ? '32px' : '24px',
+        }}
+      >
+        <h3
+          style={{
+            fontSize: '20px',
+            fontWeight: '900',
+            marginBottom: '4px',
+            color: 'var(--fg-primary)',
+            fontFamily: 'var(--font-display)',
+          }}
+        >
+          {plan.name}
+        </h3>
+
+        <p
+          style={{
+            fontSize: '13px',
+            marginBottom: '20px',
+            color: 'var(--fg-muted)',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          {plan.tagline}
+        </p>
+
+        <div style={{ marginBottom: '4px' }}>
+          <span
+            style={{
+              fontSize: '48px',
+              lineHeight: '1',
+              fontWeight: '800',
+              color: 'var(--fg-primary)',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            {plan.price}
+          </span>
+        </div>
+
+        <p
+          style={{
+            fontSize: '14px',
+            marginBottom: '24px',
+            color: 'var(--fg-muted)',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          {plan.period}
+        </p>
+
+        <p
+          style={{
+            fontSize: '13px',
+            marginBottom: '24px',
+            color: 'var(--fg-muted)',
+            fontFamily: 'var(--font-body)',
+            lineHeight: '1.5',
+          }}
+        >
+          {plan.description}
+        </p>
+
+        <Link
+          href="/sign-up"
+          style={{
+            width: '100%',
+            padding: '12px 16px',
+            fontSize: '14px',
+            fontWeight: '600',
+            borderRadius: '9999px',
+            border: 'none',
+            background: f ? 'var(--accent-primary)' : 'var(--accent-primary)',
+            color: '#FFFFFF',
+            textDecoration: 'none',
+            textAlign: 'center',
+            fontFamily: 'var(--font-body)',
+            transition: 'all 200ms ease',
+            display: 'inline-block',
+            marginBottom: '8px',
+            cursor: 'pointer',
+            opacity: 1,
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLElement).style.opacity = '0.9';
+            (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLElement).style.opacity = '1';
+            (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+          }}
+        >
+          {plan.ctaText}
+        </Link>
+
+        <p
+          style={{
+            fontSize: '12px',
+            textAlign: 'center',
+            marginBottom: '24px',
+            color: 'var(--fg-muted)',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          {plan.ctaSubtext}
+        </p>
+
+        <div
+          style={{
+            marginBottom: '20px',
+            height: '1px',
+            background: 'var(--border-default)',
+          }}
+        />
+
+        <p
+          style={{
+            fontSize: '11px',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            marginBottom: '16px',
+            color: 'var(--fg-muted)',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          {plan.sectionLabel}
+        </p>
+
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '12px',
+            flexGrow: 1,
+          }}
+        >
           {plan.features.map((feat, i) => (
-            <div key={i} className="flex items-start gap-2.5">
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '10px',
+              }}
+            >
               {feat.included ? (
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" strokeWidth="2.5" className="flex-shrink-0 mt-0.5"><path d="M20 6L9 17l-5-5" /></svg>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#16A34A"
+                  strokeWidth="2.5"
+                  style={{
+                    flexShrink: 0,
+                    marginTop: '2px',
+                  }}
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
               ) : (
-                <span className="flex-shrink-0 mt-0.5 w-[14px] text-center text-sm leading-none" style={{ color: '#9CA3AF' }}>—</span>
+                <span
+                  style={{
+                    flexShrink: 0,
+                    marginTop: '2px',
+                    width: '14px',
+                    textAlign: 'center',
+                    fontSize: '14px',
+                    lineHeight: '1',
+                    color: 'var(--fg-muted)',
+                  }}
+                >
+                  —
+                </span>
               )}
-              <span className="text-sm" style={{ color: feat.included ? '#111827' : '#9CA3AF', fontFamily: 'Roboto, system-ui, sans-serif' }}>{feat.text}</span>
+              <span
+                style={{
+                  fontSize: '14px',
+                  color: feat.included ? 'var(--fg-primary)' : 'var(--fg-muted)',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                {feat.text}
+              </span>
             </div>
           ))}
         </div>
@@ -189,86 +421,407 @@ function Card({ plan, onCta }: { plan: PlanCard; onCta: (id: string) => void }) 
 }
 
 export default function PricingPage() {
-  const [loading, setLoading] = useState(false);
-
-  const handleCta = async (planId: string) => {
-    if (planId === 'free') { window.location.href = '/odds'; return; }
-    setLoading(true);
-    try {
-      const res = await fetch('/api/stripe/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ plan: planId }) });
-      const data = await res.json();
-      if (data.url) { window.location.href = data.url; } else { alert('Something went wrong on our end. Please try again in a moment.'); }
-    } catch { alert('Something went wrong on our end. Please try again in a moment.'); } finally { setLoading(false); }
-  };
-
   return (
-    <div style={{ background: '#F9F8F6' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd()) }} />
+    <div style={{ background: 'var(--bg-base)' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd()) }}
+      />
 
       {/* Header */}
-      <div style={{ borderBottom: '1px solid #E5E0D8', background: '#FFFFFF' }}>
-        <div className="max-w-6xl mx-auto px-6 py-16 sm:py-20 text-center">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-semibold mb-8 transition-colors hover:opacity-70" style={{ color: '#111827' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+      <div
+        style={{
+          borderBottom: '1px solid var(--border-default)',
+          background: 'var(--bg-surface)',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1440px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            paddingTop: '64px',
+            paddingBottom: '80px',
+            textAlign: 'center',
+          }}
+        >
+          <Link
+            href="/"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontSize: '14px',
+              fontWeight: '600',
+              marginBottom: '32px',
+              transition: 'opacity 200ms ease',
+              color: 'var(--fg-primary)',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = '0.7';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = '1';
+            }}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
             Back
-          </a>
-          <p className="text-[11px] font-semibold uppercase mb-4" style={{ color: '#8B5CF6', letterSpacing: '0.12em', fontFamily: 'Roboto, system-ui, sans-serif' }}>PRICING</p>
-          <h1 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: '#111111', fontFamily: 'Montserrat, system-ui, sans-serif', letterSpacing: '-0.02em' }}>Simple, transparent pricing.</h1>
-          <p className="text-lg max-w-md mx-auto mb-8" style={{ color: '#6B7280', fontFamily: 'Roboto, system-ui, sans-serif' }}>Start free. Buy one report. Or go unlimited.</p>
+          </Link>
+
+          <p
+            style={{
+              fontSize: '11px',
+              fontWeight: '600',
+              textTransform: 'uppercase',
+              marginBottom: '16px',
+              color: 'var(--accent-primary)',
+              letterSpacing: '0.12em',
+              fontFamily: 'var(--font-body)',
+            }}
+          >
+            PRICING
+          </p>
+
+          <h1
+            style={{
+              fontSize: 'clamp(32px, 8vw, 56px)',
+              fontWeight: '900',
+              marginBottom: '16px',
+              color: 'var(--fg-primary)',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Simple, transparent pricing.
+          </h1>
+
+          <p
+            style={{
+              fontSize: '18px',
+              maxWidth: '448px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginBottom: '32px',
+              color: 'var(--fg-muted)',
+              fontFamily: 'var(--font-body)',
+            }}
+          >
+            Start free. Buy one report. Or go unlimited.
+          </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {PLANS.map((plan) => <Card key={plan.id} plan={plan} onCta={handleCta} />)}
+      <div
+        style={{
+          maxWidth: '1344px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          paddingLeft: '24px',
+          paddingRight: '24px',
+          paddingTop: '64px',
+        }}
+      >
+        {/* Pricing Cards Grid */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px',
+            marginBottom: '64px',
+          }}
+        >
+          {PLANS.map((plan) => (
+            <PricingCard key={plan.id} plan={plan} />
+          ))}
         </div>
 
-        <p className="text-center text-[13px] mb-12" style={{ color: '#9CA3AF', fontFamily: 'Roboto, system-ui, sans-serif' }}>
+        <p
+          style={{
+            textAlign: 'center',
+            fontSize: '13px',
+            marginBottom: '48px',
+            color: 'var(--fg-muted)',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
           All plans · PACER-verified data · WCAG AA accessible · No case data stored · Cancel subscriptions anytime
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6 mb-20">
+        {/* Trust Badges */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '24px',
+            marginBottom: '80px',
+          }}
+        >
           {[
-            { icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', label: 'Encrypted', desc: 'Bank-grade SSL' },
-            { icon: 'M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z', label: 'Court-verified', desc: 'PACER data' },
-            { icon: 'M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z', label: 'Updated regularly', desc: 'Daily to monthly' },
-            { icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10', label: 'English & Spanish', desc: 'Full bilingual' },
+            {
+              icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+              label: 'Encrypted',
+              desc: 'Bank-grade SSL',
+            },
+            {
+              icon: 'M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3z',
+              label: 'Court-verified',
+              desc: 'PACER data',
+            },
+            {
+              icon: 'M12 6v6l4 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+              label: 'Updated regularly',
+              desc: 'Daily to monthly',
+            },
+            {
+              icon: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10',
+              label: 'English & Spanish',
+              desc: 'Full bilingual',
+            },
           ].map((item, i) => (
-            <div key={i} className="text-center p-6 w-[200px]" style={{ borderRadius: '12px', border: '1px solid #E5E0D8', background: '#FFFFFF' }}>
-              <div className="flex justify-center mb-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg></div>
-              <h3 className="font-semibold text-sm mb-1" style={{ color: '#111827', fontFamily: 'Montserrat, system-ui, sans-serif' }}>{item.label}</h3>
-              <p className="text-xs" style={{ color: '#6B7280', fontFamily: 'Roboto, system-ui, sans-serif' }}>{item.desc}</p>
+            <div
+              key={i}
+              style={{
+                textAlign: 'center',
+                padding: '24px',
+                width: '200px',
+                borderRadius: '12px',
+                border: '1px solid var(--border-default)',
+                background: 'var(--bg-surface)',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }}>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="var(--fg-primary)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d={item.icon} />
+                </svg>
+              </div>
+              <h3
+                style={{
+                  fontWeight: '600',
+                  fontSize: '14px',
+                  marginBottom: '4px',
+                  color: 'var(--fg-primary)',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                {item.label}
+              </h3>
+              <p
+                style={{
+                  fontSize: '12px',
+                  color: 'var(--fg-muted)',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="mb-20">
-          <h2 className="text-2xl font-bold text-center mb-12" style={{ color: '#111827', fontFamily: 'Montserrat, system-ui, sans-serif' }}>Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-3">
+        {/* FAQ Section */}
+        <div style={{ marginBottom: '80px' }}>
+          <h2
+            style={{
+              fontSize: '28px',
+              fontWeight: '700',
+              textAlign: 'center',
+              marginBottom: '48px',
+              color: 'var(--fg-primary)',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            Frequently Asked Questions
+          </h2>
+
+          <div
+            style={{
+              maxWidth: '768px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px',
+            }}
+          >
             {pricingFaqs.map((faq, idx) => (
-              <details key={idx} className="group p-5 cursor-pointer" style={{ borderRadius: '12px', border: '1px solid #E5E0D8', background: '#FFFFFF' }}>
-                <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#111827', fontFamily: 'Roboto, system-ui, sans-serif' }}>
-                  <span className="flex-1 text-sm leading-relaxed pr-4">{faq.q}</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-open:rotate-180" style={{ color: '#111111' }}><polyline points="6 9 12 15 18 9" /></svg>
+              <details
+                key={idx}
+                style={{
+                  padding: '20px',
+                  borderRadius: '12px',
+                  border: '1px solid var(--border-default)',
+                  background: 'var(--bg-surface)',
+                  cursor: 'pointer',
+                }}
+              >
+                <summary
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    justifyContent: 'space-between',
+                    fontWeight: '600',
+                    userSelect: 'none',
+                    color: 'var(--fg-primary)',
+                    fontFamily: 'var(--font-body)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <span
+                    style={{
+                      flex: 1,
+                      fontSize: '14px',
+                      lineHeight: '1.5',
+                      paddingRight: '16px',
+                    }}
+                  >
+                    {faq.q}
+                  </span>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    style={{
+                      flexShrink: 0,
+                      transition: 'transform 200ms ease',
+                      color: 'var(--fg-primary)',
+                    }}
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
                 </summary>
-                <div className="pt-4 mt-4" style={{ borderTop: '1px solid #E5E0D8' }}>
-                  <p className="text-sm leading-relaxed" style={{ color: '#6B7280', fontFamily: 'Roboto, system-ui, sans-serif' }}>{faq.a}</p>
+                <div
+                  style={{
+                    paddingTop: '16px',
+                    marginTop: '16px',
+                    borderTop: '1px solid var(--border-default)',
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: '14px',
+                      lineHeight: '1.6',
+                      color: 'var(--fg-muted)',
+                      fontFamily: 'var(--font-body)',
+                    }}
+                  >
+                    {faq.a}
+                  </p>
                 </div>
               </details>
             ))}
           </div>
         </div>
 
-        <div className="text-center p-10 mb-16" style={{ borderRadius: '12px', border: '1px solid #E5E0D8', background: '#F5F3EF' }}>
-          <p className="text-base mb-4" style={{ color: '#374151', fontFamily: 'Roboto, system-ui, sans-serif' }}>Need custom data access, more than 5 team seats, or a white-label integration?</p>
-          <a href="mailto:enterprise@mycasevalue.com" className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all hover:opacity-90" style={{ borderRadius: '9999px', border: '1px solid #E5E0D8', color: '#111827', textDecoration: 'none', fontFamily: 'Roboto, system-ui, sans-serif' }}>
-            Talk to Us <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+        {/* Enterprise CTA */}
+        <div
+          style={{
+            textAlign: 'center',
+            padding: '40px',
+            marginBottom: '64px',
+            borderRadius: '12px',
+            border: '1px solid var(--border-default)',
+            background: 'var(--bg-surface)',
+          }}
+        >
+          <p
+            style={{
+              fontSize: '16px',
+              marginBottom: '16px',
+              color: 'var(--fg-primary)',
+              fontFamily: 'var(--font-body)',
+            }}
+          >
+            Need custom data access, more than 5 team seats, or a white-label integration?
+          </p>
+          <a
+            href="mailto:enterprise@mycasevalue.com"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              paddingLeft: '24px',
+              paddingRight: '24px',
+              paddingTop: '12px',
+              paddingBottom: '12px',
+              fontSize: '14px',
+              fontWeight: '600',
+              borderRadius: '9999px',
+              border: '1px solid var(--border-default)',
+              color: 'var(--fg-primary)',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              transition: 'opacity 200ms ease',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = '0.9';
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.opacity = '1';
+            }}
+          >
+            Talk to Us{' '}
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </a>
         </div>
       </div>
 
-      <div style={{ borderTop: '1px solid #E5E0D8', background: '#FFFFFF', padding: '32px 0', textAlign: 'center' }}>
-        <p className="text-xs max-w-2xl mx-auto px-6" style={{ color: '#6B7280', fontFamily: 'Roboto, system-ui, sans-serif' }}>
+      {/* Footer */}
+      <div
+        style={{
+          borderTop: '1px solid var(--border-default)',
+          background: 'var(--bg-surface)',
+          padding: '32px 0',
+          textAlign: 'center',
+        }}
+      >
+        <p
+          style={{
+            fontSize: '12px',
+            maxWidth: '768px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            color: 'var(--fg-muted)',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
           For informational purposes only. Not legal advice. No attorney-client relationship. © {new Date().getFullYear()} MyCaseValue. All rights reserved.
         </p>
       </div>

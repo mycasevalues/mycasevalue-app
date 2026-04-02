@@ -85,7 +85,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
       <p className="text-sm mb-5" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
 
       {/* Tabs */}
-      <div className="flex gap-1 mb-5 rounded-xl p-1" style={{ background: 'rgba(15,23,42,0.5)' }}>
+      <div className="flex gap-1 mb-5 rounded-xl p-1" style={{ background: 'rgba(245,243,239,0.5)' }}>
         {TABS.map(tab => (
           <button type="button"
             key={tab.key}
@@ -117,7 +117,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
               { label: lang === 'es' ? 'Responsabilidad de Producto' : 'Product Liability', bench: null, jury: BJS_DATA.plaintiffWinRates.productLiabilityJury },
               { label: lang === 'es' ? 'Responsabilidad de Instalaciones' : 'Premises Liability', bench: null, jury: BJS_DATA.plaintiffWinRates.premisesLiabilityJury },
             ].map((row, i) => (
-              <div key={i} className="rounded-lg p-3 flex items-center justify-between" style={{ background: 'rgba(15,23,42,0.4)', border: '1px solid var(--border-default)' }}>
+              <div key={i} className="rounded-lg p-3 flex items-center justify-between" style={{ background: 'rgba(245,243,239,0.4)', border: '1px solid var(--border-default)' }}>
                 <div className="text-[12px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{row.label}</div>
                 <div className="flex items-center gap-3">
                   {row.bench !== null && (
@@ -156,7 +156,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
                 wrongfulTermination: lang === 'es' ? 'Despido Injustificado' : 'Wrongful Termination',
               };
               return (
-                <div key={key} className="rounded-lg p-3" style={{ background: 'rgba(15,23,42,0.4)', border: '1px solid var(--border-default)' }}>
+                <div key={key} className="rounded-lg p-3" style={{ background: 'rgba(245,243,239,0.4)', border: '1px solid var(--border-default)' }}>
                   <div className="flex items-center justify-between mb-2">
                     <div className="text-[12px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{labels[key] || key}</div>
                     <div className="text-[13px] font-bold font-mono" style={{ color: '#F59E0B' }}>
@@ -214,7 +214,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
               {Object.entries(AO_DATA.districtTimelines)
                 .sort(([, a], [, b]) => a.medianMonths - b.medianMonths)
                 .map(([district, data]) => (
-                  <div key={district} className="flex items-center gap-3 rounded-lg px-3 py-2" style={{ background: 'rgba(15,23,42,0.4)', border: '1px solid var(--border-default)' }}>
+                  <div key={district} className="flex items-center gap-3 rounded-lg px-3 py-2" style={{ background: 'rgba(245,243,239,0.4)', border: '1px solid var(--border-default)' }}>
                     <div className="text-[11px] font-semibold w-24 flex-shrink-0" style={{ color: 'var(--fg-primary)' }}>{district}</div>
                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.05)' }}>
                       <div className="h-full rounded-full transition-all" style={{
@@ -242,15 +242,15 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
           <div>
             {/* Top stats */}
             <div className="grid grid-cols-3 gap-3 mb-4">
-              <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
+              <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(245,243,239,0.5)', border: '1px solid var(--border-default)' }}>
                 <div className="text-lg font-display font-extrabold" style={{ color: '#10B981' }}>{fmt(EEOC_DATA.totalMonetaryRecovery)}</div>
                 <div className="text-[9px]" style={{ color: 'var(--fg-subtle)' }}>{t.recovery} FY2024</div>
               </div>
-              <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
+              <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(245,243,239,0.5)', border: '1px solid var(--border-default)' }}>
                 <div className="text-lg font-display font-extrabold" style={{ color: '#333333' }}>{EEOC_DATA.newChargesReceived.toLocaleString()}</div>
                 <div className="text-[9px]" style={{ color: 'var(--fg-subtle)' }}>{t.chargesFiled} FY2024</div>
               </div>
-              <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(15,23,42,0.5)', border: '1px solid var(--border-default)' }}>
+              <div className="text-center p-3 rounded-xl" style={{ background: 'rgba(245,243,239,0.5)', border: '1px solid var(--border-default)' }}>
                 <div className="text-lg font-display font-extrabold" style={{ color: '#F59E0B' }}>{EEOC_DATA.litigationSuccessRate}%</div>
                 <div className="text-[9px]" style={{ color: 'var(--fg-subtle)' }}>{lang === 'es' ? 'Exito en Litigio' : 'Litigation Success'}</div>
               </div>
@@ -268,7 +268,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
                 const change = ((row.fy23 - row.fy22) / row.fy22 * 100).toFixed(1);
                 const isUp = row.fy23 > row.fy22;
                 return (
-                  <div key={row.label} className="flex items-center gap-3 rounded-lg px-3 py-2.5" style={{ background: 'rgba(15,23,42,0.4)', border: '1px solid var(--border-default)' }}>
+                  <div key={row.label} className="flex items-center gap-3 rounded-lg px-3 py-2.5" style={{ background: 'rgba(245,243,239,0.4)', border: '1px solid var(--border-default)' }}>
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: row.color }} />
                     <div className="text-[12px] font-semibold w-20" style={{ color: 'var(--fg-primary)' }}>{row.label}</div>
                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.05)' }}>

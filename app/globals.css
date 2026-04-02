@@ -1,6 +1,7 @@
-/* Design system imports — tokens + self-hosted fonts */
+/* Design system imports — tokens + self-hosted fonts + component library */
 @import '../styles/tokens.css';
 @import '../styles/fonts.css';
+@import '../styles/components.css';
 
 @tailwind base;
 @tailwind components;

@@ -16,7 +16,7 @@ export function Collapsible({ title, badge, defaultOpen = false, children }: Col
   return (
     <div className="card-bg rounded-2xl border overflow-hidden mb-3 transition-all duration-300"
       style={{
-        background: 'linear-gradient(180deg, rgba(15,23,42,0.95) 0%, rgba(255,255,255,0.9) 100%)',
+        background: 'linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%)',
         borderColor: open ? 'rgba(17,17,17,0.15)' : 'rgba(51,65,85,0.6)',
         boxShadow: open ? '0 4px 24px rgba(255,255,255,.07), inset 0 1px 0 rgba(255,255,255,0.03)' : '0 1px 3px rgba(255,255,255,.02), inset 0 1px 0 rgba(255,255,255,0.03)',
       }}>

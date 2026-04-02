@@ -158,7 +158,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
     <section
       className="py-12 sm:py-16 cinematic-enter"
       style={{
-        background: 'rgba(15,23,42,0.3)',
+        background: 'rgba(245,243,239,0.3)',
         borderTop: '1px solid var(--border-default)',
         borderBottom: '1px solid var(--border-default)',
       }}
@@ -207,7 +207,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
                 onChange={e => { setCaseType(e.target.value); setShowResult(false); }}
                 className="w-full rounded-lg px-3 py-2.5 text-[13px]"
                 style={{
-                  background: 'rgba(15,23,42,0.6)',
+                  background: 'rgba(255,255,255,0.6)',
                   border: '1px solid var(--border-default)',
                   color: 'var(--fg-primary)',
                   outline: 'none',
@@ -240,7 +240,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
                 placeholder={t.offerPlaceholder}
                 className="w-full rounded-lg px-3 py-2.5 text-[13px]"
                 style={{
-                  background: 'rgba(15,23,42,0.6)',
+                  background: 'rgba(255,255,255,0.6)',
                   border: '1px solid var(--border-default)',
                   color: 'var(--fg-primary)',
                   outline: 'none',
@@ -285,7 +285,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
               </div>
 
               {/* Visual bar */}
-              <div className="relative h-8 rounded-full overflow-hidden" style={{ background: 'rgba(15,23,42,0.6)' }}>
+              <div className="relative h-8 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.6)' }}>
                 {/* Percentile zones */}
                 <div className="absolute inset-0 flex">
                   <div style={{ width: '25%', background: 'rgba(239,68,68,0.15)' }} />

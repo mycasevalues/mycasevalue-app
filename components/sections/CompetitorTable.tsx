@@ -179,7 +179,7 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
     <section
       className="py-12 sm:py-16 cinematic-enter"
       style={{
-        background: 'rgba(15,23,42,0.2)',
+        background: 'rgba(245,243,239,0.2)',
         borderTop: '1px solid var(--border-default)',
         borderBottom: '1px solid var(--border-default)',
       }}
@@ -200,7 +200,7 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
         {/* Score bar */}
         <div className="flex flex-wrap justify-center gap-3 mb-6">
           {COMPETITORS.map((c, i) => (
-            <div key={i} className="text-center px-3 py-2 rounded-lg" style={{ background: c.highlight ? 'rgba(17,17,17,0.1)' : 'rgba(15,23,42,0.4)', border: `1px solid ${c.highlight ? '#333333' : 'var(--border-default)'}` }}>
+            <div key={i} className="text-center px-3 py-2 rounded-lg" style={{ background: c.highlight ? 'rgba(17,17,17,0.1)' : 'rgba(245,243,239,0.4)', border: `1px solid ${c.highlight ? '#333333' : 'var(--border-default)'}` }}>
               <div className="text-[11px] font-bold" style={{ color: c.highlight ? '#333333' : 'var(--fg-primary)' }}>{c.name}</div>
               <div className="text-[16px] font-display font-extrabold" style={{ color: c.highlight ? '#10B981' : 'var(--fg-muted)' }}>
                 {countFeatures(c).toFixed(0)}/{FEATURES.length}
@@ -244,7 +244,7 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
                   <React.Fragment key={feat.key}>
                     {showCatHeader && (
                       <tr>
-                        <td colSpan={visibleCompetitors.length + 1} className="py-1.5 px-3" style={{ background: 'rgba(15,23,42,0.6)', borderBottom: '1px solid var(--border-default)' }}>
+                        <td colSpan={visibleCompetitors.length + 1} className="py-1.5 px-3" style={{ background: 'rgba(255,255,255,0.6)', borderBottom: '1px solid var(--border-default)' }}>
                           <span className="text-[9px] font-bold tracking-[2px]" style={{ color: 'var(--fg-subtle)' }}>
                             {lang === 'es' ? catLabels[feat.category]?.es : catLabels[feat.category]?.en}
                           </span>

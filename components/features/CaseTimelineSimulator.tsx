@@ -386,7 +386,7 @@ export function CaseTimelineSimulator({
                       style={{
                         fontSize: '9px',
                         fontFamily: "'JetBrains Mono', monospace",
-                        color: isActive ? phase.color : '#334155',
+                        color: isActive ? phase.color : '#E5E0D8',
                         marginTop: '4px',
                       }}
                     >

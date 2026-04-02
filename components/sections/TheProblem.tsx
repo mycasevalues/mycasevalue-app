@@ -49,7 +49,7 @@ export default function TheProblem({ lang = 'en' }: TheProblemProps) {
     <section
       className="py-12 sm:py-16 cinematic-enter"
       style={{
-        background: 'rgba(15,23,42,0.3)',
+        background: 'rgba(245,243,239,0.3)',
         borderTop: '1px solid var(--border-default)',
         borderBottom: '1px solid var(--border-default)',
       }}

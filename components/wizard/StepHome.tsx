@@ -206,7 +206,7 @@ export function StepHome({
               {/* Social proof */}
               <div className="flex items-center justify-center gap-3 mt-6">
                 <div className="flex -space-x-2">
-                  {['#111111', '#0D9488', '#1A2744', '#333333', '#0D9488'].map((c, i) => (
+                  {['#111111', '#0D9488', '#FFFFFF', '#333333', '#0D9488'].map((c, i) => (
                     <div key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold text-white shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
                       style={{ background: c, zIndex: 5 - i, border: '2px solid #FFFFFF' }}>
                       {['J', 'M', 'K', 'S', 'A'][i]}

@@ -1,41 +1,53 @@
-'use client'
-import React from 'react'
+'use client';
+
+import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost'
-  size?: 'sm' | 'md' | 'lg'
-  children: React.ReactNode
+  variant?: 'primary' | 'secondary' | 'ghost' | 'accent' | 'danger';
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  fullWidth?: boolean;
+  loading?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
+  children: React.ReactNode;
 }
 
 export function Button({
   variant = 'primary',
   size = 'md',
+  fullWidth = false,
+  loading = false,
+  icon,
+  iconPosition = 'left',
   children,
   className = '',
+  disabled,
   ...props
 }: ButtonProps) {
-  const base = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#333333] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
-
-  const variants: Record<string, string> = {
-    primary: 'bg-gradient-to-r from-[#111111] to-[#333333] text-white rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98]',
-    secondary: 'bg-transparent border-2 border-[#334155] text-[#374151] rounded-xl hover:bg-[#E5E0D8] hover:text-white hover:-translate-y-0.5 active:scale-[0.98]',
-    ghost: 'bg-transparent text-[#6B7280] hover:bg-[#E5E0D8] rounded-lg active:scale-[0.98]',
-  }
-
-  const sizes: Record<string, string> = {
-    sm: 'h-9 px-4 text-sm',
-    md: 'h-11 px-6 text-base',
-    lg: 'h-14 px-8 text-lg',
-  }
+  const isDisabled = disabled || loading;
 
   return (
-    <button type="button"
-      className={`${base} ${variants[variant]} ${sizes[size]} ${className}`}
+    <button
+      type="button"
+      className={`mcv-btn mcv-btn--${variant} mcv-btn--${size} ${fullWidth ? 'mcv-btn--full' : ''} ${loading ? 'mcv-btn--loading' : ''} ${className}`}
+      disabled={isDisabled}
+      aria-busy={loading || undefined}
       {...props}
     >
-      {children}
+      {loading && (
+        <svg className="mcv-btn__spinner" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeDasharray="31.4 31.4" />
+        </svg>
+      )}
+      {icon && iconPosition === 'left' && !loading && (
+        <span className="mcv-btn__icon" aria-hidden="true">{icon}</span>
+      )}
+      <span>{children}</span>
+      {icon && iconPosition === 'right' && !loading && (
+        <span className="mcv-btn__icon" aria-hidden="true">{icon}</span>
+      )}
     </button>
-  )
+  );
 }
 
-export default Button
+export default Button;
