@@ -655,6 +655,33 @@ export default function MyCaseValue() {
 
   const isPremium = tier !== 'free';
 
+  // Restore draft from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('mcv-wizard-draft');
+      if (saved) {
+        const d = JSON.parse(saved);
+        if (d.stateCode) setStateCode(d.stateCode);
+        if (d.timing) setTiming(d.timing);
+        if (d.amount) setAmount(d.amount);
+        if (d.attorney) setAttorney(d.attorney);
+        if (d.othersAffected) setOthersAffected(d.othersAffected);
+        if (d.classSize) setClassSize(d.classSize);
+      }
+    } catch {}
+  }, []);
+
+  // Save draft to localStorage on changes (debounced)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      try {
+        localStorage.setItem('mcv-wizard-draft', JSON.stringify({
+          stateCode, timing, amount, attorney, othersAffected, classSize,
+        }));
+      } catch {}
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [stateCode, timing, amount, attorney, othersAffected, classSize]);
 
   // Fetch total case count from API on mount
   useEffect(() => {
@@ -865,6 +892,7 @@ export default function MyCaseValue() {
     setResult(null); setLoading(false); setConsent(false); setRangeMode('typical');
     setEmail(''); setEmailSent(false); setNotifyEmail(''); setNotifySent(false);
     setTimelineStep(0); setPollVote('');
+    localStorage.removeItem('mcv-wizard-draft');
   }, []);
 
   const saveReport = useCallback(() => {

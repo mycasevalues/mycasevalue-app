@@ -153,6 +153,17 @@ export function StepReport({
               {lang === 'es' ? 'Los tribunales federales resolvieron más de 400,000 casos civiles el año pasado.' : 'Federal courts resolved over 400,000 civil cases last year.'}
             </div>
           )}
+
+          {/* Cancel button */}
+          <button
+            onClick={() => go(3)}
+            className="mt-4 px-4 py-2 text-sm bg-transparent border-none cursor-pointer rounded-lg transition-colors"
+            style={{ color: 'var(--fg-muted)' }}
+            onMouseEnter={e => e.currentTarget.style.color = '#111827'}
+            onMouseLeave={e => e.currentTarget.style.color = 'var(--fg-muted)'}
+          >
+            {lang === 'es' ? 'Cancelar' : 'Cancel'}
+          </button>
         </div>
       </div>
     );

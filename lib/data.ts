@@ -166,11 +166,10 @@ export const STATES = [
 ];
 
 export const TIMING_OPTS = [
-  { id: "recent", label: "Within 6 months" },
-  { id: "year", label: "6-12 months ago" },
-  { id: "2yr", label: "1-2 years ago" },
-  { id: "old", label: "Over 2 years ago" },
-  { id: "now", label: "Still happening" },
+  { id: "now", label: "Happening now (ongoing)" },
+  { id: "recent", label: "Within the last 6 months" },
+  { id: "2yr", label: "6 months to 2 years ago" },
+  { id: "old", label: "More than 2 years ago" },
 ];
 
 export const AMOUNT_OPTS = [

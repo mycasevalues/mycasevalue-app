@@ -17,7 +17,7 @@ export function StepCategory({
 }: StepCategoryProps) {
   return (
     <div className="max-w-xl mx-auto py-8 wizard-step-enter">
-      <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
+      <WizardProgress step={1} lang={lang} labels={[t.wiz_situation, t.wiz_specifics || (lang === 'es' ? 'Específicos' : 'Specifics'), t.wiz_details, t.wiz_report]} />
       <BackButton go={go} lang={lang} />
       <Reveal>
         <div className="flex items-center gap-3 mb-2">
@@ -31,7 +31,7 @@ export function StepCategory({
           {SITS.map(si => (
             <button key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
               className="category-card flex items-center gap-4 w-full p-5 rounded-2xl cursor-pointer text-left transition-all duration-300 hover:shadow-lg group"
-              style={{ background: 'linear-gradient(135deg, rgba(20,28,45,0.9), rgba(15,23,42,0.8))', border: '1.5px solid rgba(51,65,85,0.5)', boxShadow: '0 1px 3px rgba(255,255,255,.02), inset 0 1px 0 rgba(255,255,255,0.03)' }}
+              style={{ background: '#FFFFFF', border: '1.5px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = si.color}
               onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}>
               <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform" style={{ background: `${si.color}10` }}>

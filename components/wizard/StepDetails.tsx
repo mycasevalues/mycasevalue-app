@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Reveal } from '../ui/Reveal';
 import { WizardProgress } from '../ui/WizardProgress';
 import { Select } from '../ui/SelectDropdown';
@@ -32,9 +32,19 @@ export function StepDetails({
   ATTORNEY_OPTS,
   darkMode,
 }: StepDetailsProps) {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleGenerateReport = () => {
+    if (!timing || !attorney || !consent) {
+      setSubmitted(true);
+      return;
+    }
+    startLoad();
+  };
+
   return (
     <div className="max-w-xl mx-auto py-6 wizard-step-enter">
-      <WizardProgress step={2} lang={lang} labels={[t.wiz_situation, t.wiz_details, t.wiz_report]} />
+      <WizardProgress step={3} lang={lang} labels={[t.wiz_situation, t.wiz_specifics || (lang === 'es' ? 'Específicos' : 'Specifics'), t.wiz_details, t.wiz_report]} />
       <BackButton go={go} lang={lang} />
       <Reveal>
         <h2 className="text-2xl sm:text-3xl font-display font-bold mb-6">{t.your_details}</h2>
@@ -46,7 +56,18 @@ export function StepDetails({
           </div>
           <div>
             <label id="label-timing" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuándo ocurrió esto?' : 'When did this happen?'} <span className="text-coral">*</span></label>
-            <Select value={timing} options={TIMING_OPTS} onChange={setTiming} dark={darkMode} lang={lang} labelledBy="label-timing" />
+            <Select value={timing} options={lang === 'es' ? [
+              { id: 'now', label: 'Ocurriendo ahora (en curso)' },
+              { id: 'recent', label: 'En los últimos 6 meses' },
+              { id: '2yr', label: 'Hace 6 meses a 2 años' },
+              { id: 'old', label: 'Hace más de 2 años' },
+            ] : [
+              { id: 'now', label: 'Happening now (ongoing)' },
+              { id: 'recent', label: 'Within the last 6 months' },
+              { id: '2yr', label: '6 months to 2 years ago' },
+              { id: 'old', label: 'More than 2 years ago' },
+            ]} onChange={setTiming} dark={darkMode} lang={lang} labelledBy="label-timing" />
+            {submitted && !timing && <div className="text-red-500 text-sm mt-1">{lang === 'es' ? 'Este campo es obligatorio' : 'This field is required'}</div>}
           </div>
           {timing && (
             <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed animate-fade-in" style={{
@@ -75,6 +96,7 @@ export function StepDetails({
           <div className="animate-fade-in">
             <label id="label-attorney" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Tienes abogado?' : 'Do you have a lawyer?'} <span className="text-coral">*</span></label>
             <Select value={attorney} options={ATTORNEY_OPTS} onChange={setAttorney} dark={darkMode} lang={lang} labelledBy="label-attorney" />
+            {submitted && !attorney && <div className="text-red-500 text-sm mt-1">{lang === 'es' ? 'Este campo es obligatorio' : 'This field is required'}</div>}
           </div>
           <div className="animate-fade-in">
             <label className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Hay otros afectados por el mismo problema?' : 'Are others affected by the same issue?'}</label>
@@ -135,12 +157,20 @@ export function StepDetails({
               ? 'Entiendo que estos son datos históricos, no evalúan mi situación, y no se crea ninguna relación abogado-cliente.'
               : 'I understand this is historical data only and no attorney-client relationship is created.'}</span>
           </label>
+          {submitted && !consent && <div className="text-red-500 text-sm mt-3">{lang === 'es' ? 'Este campo es obligatorio' : 'This field is required'}</div>}
         </div>
-        <button onClick={() => startLoad()} disabled={!timing || !attorney || !consent}
-          className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer disabled:cursor-default disabled:opacity-40 transition-all active:scale-[0.98] hover:scale-[1.01]"
-          style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E7EB', color: (timing && attorney && consent) ? '#fff' : '#6B7280', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(17,17,17,.3)' : 'none', padding: '18px' }}>
+        <button onClick={handleGenerateReport}
+          className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer transition-all active:scale-[0.98] hover:scale-[1.01]"
+          style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E7EB', color: (timing && attorney && consent) ? '#fff' : '#6B7280', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(17,17,17,.3)' : 'none', padding: '18px', animation: submitted && (!timing || !attorney || !consent) ? 'shake 0.5s ease-in-out' : 'none' }}>
           {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
         </button>
+        <style>{`
+          @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+          }
+        `}</style>
       </Reveal>
     </div>
   );
