@@ -125,8 +125,7 @@ export default async function DashboardPage() {
 
   // ── Fetch recent saved reports ──────────────────────────────────
   let recentReports: { category: string; district: string; viewed_at: string }[] = [];
-  // TODO: Re-enable tier gating after site is complete
-  if (userEmail) { // was: if (userEmail && isPaid)
+  if (userEmail && isPaid) {
     try {
       const adminDb = getSupabaseAdmin();
       const { data } = await adminDb
@@ -144,8 +143,7 @@ export default async function DashboardPage() {
   // ── Fetch search history for Unlimited+ users ─────────────────
   let searchHistory: { query: string; category: string | null; searched_at: string }[] = [];
   const isUnlimitedPlus = userPlan === 'unlimited' || userPlan === 'attorney';
-  // TODO: Re-enable tier gating after site is complete
-  if (userEmail) { // was: if (userEmail && isUnlimitedPlus && !isExpired)
+  if (userEmail && isUnlimitedPlus && !isExpired) {
     try {
       const adminDb = getSupabaseAdmin();
       const { data } = await adminDb

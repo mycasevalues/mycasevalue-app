@@ -92,8 +92,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
   };
 
   // Locked state for non-premium
-  // TODO: Re-enable tier gating after site is complete
-  if (false && !isPremium) { // was: if (!isPremium)
+  if (!isPremium) {
     return (
       <section
         className="py-12 sm:py-16"

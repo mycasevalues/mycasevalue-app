@@ -117,8 +117,7 @@ export default function CaseRiskScore({
     negative: 'Unfavorable',
   };
 
-  // TODO: Re-enable tier gating after site is complete
-  if (false && !isPremium) { // was: if (!isPremium)
+  if (!isPremium) {
     return (
       <div
         className="rounded-xl p-8 text-center relative overflow-hidden"

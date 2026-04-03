@@ -234,9 +234,7 @@ export function JudgeIntelligenceCards({
   onUpgrade,
 }: JudgeIntelligenceCardsProps) {
   const judges = useMemo(() => {
-    // Temporarily unlock all tiers — lock after site completion
-    // TODO: Re-enable tier gating after site is complete
-    const numJudges = 4; // was: isPremium ? 4 : 2
+    const numJudges = isPremium ? 4 : 2;
     const judgeList: JudgeData[] = [];
     for (let i = 0; i < numJudges; i++) {
       judgeList.push(generateJudgeData(nosCode, stateCode, i));
@@ -270,8 +268,7 @@ export function JudgeIntelligenceCards({
       {/* Judge Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-6">
         {judges.map((judge, idx) => {
-          // TODO: Re-enable tier gating after site is complete
-          const isLocked = false; // was: !isPremium && idx >= 2
+          const isLocked = !isPremium && idx >= 2;
           return (
             <JudgeCard
               key={idx}
