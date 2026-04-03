@@ -191,7 +191,7 @@ export async function generateMetadata({
       title: `${categoryNames[category]} — Real Federal Court Data`,
       description,
       type: 'website',
-      url: `https://mycasevalues.com/cases/${category}`,
+      url: `https://www.mycasevalues.com/cases/${category}`,
       images: [
         {
           url: 'https://www.mycasevalues.com/og-image.png',
@@ -202,7 +202,7 @@ export async function generateMetadata({
       ],
     },
     alternates: {
-      canonical: `https://mycasevalues.com/cases/${category}`,
+      canonical: `https://www.mycasevalues.com/cases/${category}`,
     },
   };
 }
@@ -321,7 +321,7 @@ async function CategoryPage({
         '@type': 'WebPage',
         name: `${categoryData.label} Case Data & Federal Court Outcomes`,
         description: categoryLongDescriptions[category],
-        url: `https://mycasevalues.com/cases/${category}`,
+        url: `https://www.mycasevalues.com/cases/${category}`,
         publisher: {
           '@type': 'Organization',
           name: 'MyCaseValue',
@@ -347,7 +347,7 @@ async function CategoryPage({
             '@type': 'ListItem',
             position: 3,
             name: categoryData.label,
-            item: `https://mycasevalues.com/cases/${category}`,
+            item: `https://www.mycasevalues.com/cases/${category}`,
           },
         ],
       },
@@ -355,11 +355,11 @@ async function CategoryPage({
         '@type': 'DataSet',
         name: `${categoryData.label} Federal Court Outcomes`,
         description: `Real outcome data from federal court cases involving ${categoryData.label.toLowerCase()}. Includes win rates, settlement percentages, timelines, and recovery data from public federal court records.`,
-        url: `https://mycasevalues.com/cases/${category}`,
+        url: `https://www.mycasevalues.com/cases/${category}`,
         distribution: {
           '@type': 'DataDownload',
           encodingFormat: 'text/html',
-          contentUrl: `https://mycasevalues.com/cases/${category}`,
+          contentUrl: `https://www.mycasevalues.com/cases/${category}`,
         },
       },
     ],

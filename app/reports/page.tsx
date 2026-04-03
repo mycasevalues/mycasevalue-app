@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'My Reports | MyCaseValue',
   description: 'View and manage your saved case research reports.',
+  robots: { index: false, follow: false },
 };
 
 export default function ReportsPage() {

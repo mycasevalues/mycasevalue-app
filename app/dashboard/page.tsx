@@ -7,6 +7,7 @@ import { createServerClient } from '@supabase/ssr';
 export const metadata: Metadata = {
   title: 'Dashboard | MyCaseValue',
   description: 'Your MyCaseValue dashboard with case reports, research activity, and subscription information.',
+  robots: { index: false, follow: false },
 };
 
 export const dynamic = 'force-dynamic';

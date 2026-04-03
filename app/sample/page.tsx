@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     title: 'Employment Discrimination Sample Report — S.D.N.Y. | MyCaseValue',
     description:
       'Explore sample analytics for employment discrimination cases in the Southern District of New York.',
-    url: 'https://mycasevalue.com/sample',
+    url: 'https://www.mycasevalues.com/sample',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://mycasevalue.com/sample',
+    canonical: 'https://www.mycasevalues.com/sample',
   },
 };
 
@@ -29,16 +29,16 @@ export default function SampleReportPage() {
             name: 'Employment Discrimination Cases — S.D.N.Y.',
             description:
               'Sample dataset of 2,847 federal employment discrimination cases in the Southern District of New York with outcomes, settlements, and judge analytics.',
-            url: 'https://mycasevalue.com/sample',
+            url: 'https://www.mycasevalues.com/sample',
             distribution: {
               '@type': 'DataDownload',
               encodingFormat: 'JSON',
-              contentUrl: 'https://mycasevalue.com/api/sample',
+              contentUrl: 'https://www.mycasevalues.com/api/sample',
             },
             author: {
               '@type': 'Organization',
               name: 'MyCaseValue',
-              url: 'https://mycasevalue.com',
+              url: 'https://www.mycasevalues.com',
             },
             datePublished: '2026-04-02',
           }),
@@ -61,7 +61,7 @@ export default function SampleReportPage() {
             isPartOf: {
               '@type': 'WebSite',
               name: 'MyCaseValue',
-              url: 'https://mycasevalue.com',
+              url: 'https://www.mycasevalues.com',
             },
           }),
         }}

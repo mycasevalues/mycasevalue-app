@@ -57,7 +57,7 @@ export const metadata = {
     },
   },
   verification: {
-    google: 'ADD_YOUR_GOOGLE_SEARCH_CONSOLE_CODE_HERE',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
   },
   category: 'legal',
   other: {

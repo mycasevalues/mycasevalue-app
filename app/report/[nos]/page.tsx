@@ -59,6 +59,7 @@ export async function generateMetadata({
   return {
     title: `${label} Report | MyCaseValue`,
     description: `Federal court outcome report for ${label} cases. Win rates, settlement data, timelines, and more.`,
+    alternates: { canonical: `https://www.mycasevalues.com/report/${nos}` },
   };
 }
 

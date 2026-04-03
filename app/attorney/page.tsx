@@ -7,6 +7,7 @@ export const revalidate = 0;
 export const metadata: Metadata = {
   title: 'Attorney Mode - Professional Legal Intelligence Suite | MyCaseValue',
   description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, and more.',
+  alternates: { canonical: 'https://www.mycasevalues.com/attorney' },
   keywords: [
     'legal intelligence',
     'case prediction',

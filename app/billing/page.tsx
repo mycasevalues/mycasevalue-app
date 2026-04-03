@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Billing | MyCaseValue',
   description: 'Manage your billing information and view invoices.',
+  robots: { index: false, follow: false },
 };
 
 export default function BillingPage() {

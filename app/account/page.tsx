@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Account Settings | MyCaseValue',
   description: 'Manage your MyCaseValue account settings, subscription, and billing information.',
+  robots: { index: false, follow: false },
 };
 
 export default function AccountPage() {
