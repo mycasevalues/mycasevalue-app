@@ -5,6 +5,7 @@ import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 import SiteNav from '../components/layout/SiteNav';
 import SiteFooter from '../components/layout/SiteFooter';
+import CookieConsent from '../components/CookieConsent';
 
 export const metadata = {
   title: {
@@ -270,6 +271,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SiteFooter />
           </AnalyticsProvider>
         </ErrorBoundary>
+        <CookieConsent />
         <script dangerouslySetInnerHTML={{ __html: `
           window.mcvAnalytics = {
             track: function(event, props) {
