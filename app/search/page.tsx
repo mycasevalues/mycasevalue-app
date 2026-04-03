@@ -21,6 +21,16 @@ const saveToRecent = (item: { label: string; nos: string; category: string }) =>
   } catch {
     // localStorage unavailable
   }
+  // Also save to server for Unlimited+ users (fire-and-forget)
+  try {
+    fetch('/api/user/history', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: item.label, category: item.category }),
+    }).catch(() => {});
+  } catch {
+    // Non-critical
+  }
 };
 
 export default function SearchPage() {

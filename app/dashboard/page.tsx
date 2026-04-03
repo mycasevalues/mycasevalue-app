@@ -139,6 +139,24 @@ export default async function DashboardPage() {
     }
   }
 
+  // ── Fetch search history for Unlimited+ users ─────────────────
+  let searchHistory: { query: string; category: string | null; searched_at: string }[] = [];
+  const isUnlimitedPlus = userPlan === 'unlimited' || userPlan === 'attorney';
+  if (userEmail && isUnlimitedPlus && !isExpired) {
+    try {
+      const adminDb = getSupabaseAdmin();
+      const { data } = await adminDb
+        .from('search_history')
+        .select('query, category, searched_at')
+        .eq('user_email', userEmail.toLowerCase())
+        .order('searched_at', { ascending: false })
+        .limit(10);
+      if (data) searchHistory = data;
+    } catch {
+      // Non-critical
+    }
+  }
+
   return (
     <div
       style={{
@@ -296,6 +314,26 @@ export default async function DashboardPage() {
               }}>
                 See Pricing →
               </Link>
+            </div>
+          )}
+
+          {/* Search History — Unlimited+ only */}
+          {isUnlimitedPlus && !isExpired && searchHistory.length > 0 && (
+            <div style={{ backgroundColor: 'var(--bg-surface)', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: 'var(--fg-primary)', margin: '0 0 24px' }}>
+                Search History
+              </h2>
+              <div>
+                {searchHistory.map((s, i) => (
+                  <div key={i} style={{ padding: '10px 0', borderBottom: i < searchHistory.length - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--fg-primary)' }}>{s.query}</p>
+                      <p style={{ fontSize: '12px', color: 'var(--fg-muted)', margin: 0 }}>{s.category ? `${s.category} · ` : ''}{new Date(s.searched_at).toLocaleDateString()}</p>
+                    </div>
+                    <Link href={`/search`} style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none' }}>Search again →</Link>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

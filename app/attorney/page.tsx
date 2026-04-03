@@ -92,77 +92,92 @@ const FeatureCard = ({
   title,
   description,
   badge,
+  href,
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   badge: 'coming-soon' | 'available';
-}) => (
-  <div
-    style={{
-      backgroundColor: 'var(--bg-surface)',
-      border: '1px solid var(--border-default)',
-      borderRadius: '12px',
-      padding: '24px',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '16px',
-      transition: 'all 0.3s ease',
-      cursor: 'pointer',
-    }}
-    className="attorney-feature-card"
-  >
-    <div style={{ fontSize: '32px', color: 'var(--accent-primary)' }}>{icon}</div>
-    <div>
-      <h3
-        style={{
-          margin: '0 0 8px 0',
-          fontSize: '18px',
-          fontWeight: '600',
-          fontFamily: 'var(--font-display)',
-          color: 'var(--fg-primary)',
-        }}
-      >
-        {title}
-      </h3>
-      <p
-        style={{
-          margin: 0,
-          fontSize: '14px',
-          color: 'var(--fg-muted)',
-          lineHeight: '1.5',
-          fontFamily: 'var(--font-body)',
-        }}
-      >
-        {description}
-      </p>
+  href?: string;
+}) => {
+  const content = (
+    <div
+      style={{
+        backgroundColor: 'var(--bg-surface)',
+        border: '1px solid var(--border-default)',
+        borderRadius: '12px',
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px',
+        transition: 'all 0.3s ease',
+        cursor: 'pointer',
+        textDecoration: 'none',
+        color: 'inherit',
+      }}
+      className="attorney-feature-card"
+    >
+      <div style={{ fontSize: '32px', color: 'var(--accent-primary)' }}>{icon}</div>
+      <div>
+        <h3
+          style={{
+            margin: '0 0 8px 0',
+            fontSize: '18px',
+            fontWeight: '600',
+            fontFamily: 'var(--font-display)',
+            color: 'var(--fg-primary)',
+          }}
+        >
+          {title}
+        </h3>
+        <p
+          style={{
+            margin: 0,
+            fontSize: '14px',
+            color: 'var(--fg-muted)',
+            lineHeight: '1.5',
+            fontFamily: 'var(--font-body)',
+          }}
+        >
+          {description}
+        </p>
+      </div>
+      <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <span
+          style={{
+            display: 'inline-block',
+            padding: '6px 12px',
+            borderRadius: '6px',
+            fontSize: '12px',
+            fontWeight: '600',
+            textTransform: 'uppercase',
+            letterSpacing: '0.5px',
+            backgroundColor:
+              badge === 'available' ? 'var(--accent-primary)' : 'var(--bg-base)',
+            color: badge === 'available' ? '#ffffff' : 'var(--fg-muted)',
+            border:
+              badge === 'available'
+                ? 'none'
+                : '1px solid var(--border-default)',
+          }}
+        >
+          {badge === 'available' ? 'Available' : 'Expected Q3 2026'}
+        </span>
+        {href && (
+          <span style={{ fontSize: '13px', color: 'var(--accent-primary)', fontWeight: 600 }}>
+            Try it →
+          </span>
+        )}
+      </div>
     </div>
-    <div style={{ marginTop: 'auto' }}>
-      <span
-        style={{
-          display: 'inline-block',
-          padding: '6px 12px',
-          borderRadius: '6px',
-          fontSize: '12px',
-          fontWeight: '600',
-          textTransform: 'uppercase',
-          letterSpacing: '0.5px',
-          backgroundColor:
-            badge === 'available' ? 'var(--accent-primary)' : 'var(--bg-base)',
-          color: badge === 'available' ? '#ffffff' : 'var(--fg-muted)',
-          border:
-            badge === 'available'
-              ? 'none'
-              : '1px solid var(--border-default)',
-        }}
-      >
-        {badge === 'available' ? 'Available' : 'Expected Q3 2026'}
-      </span>
-    </div>
-  </div>
-);
+  );
+  if (href) {
+    return <Link href={href} style={{ textDecoration: 'none', color: 'inherit' }}>{content}</Link>;
+  }
+  return content;
+};
 
-const features = [
+const features: { icon: React.ReactNode; title: string; description: string; badge: 'coming-soon' | 'available'; href?: string }[] = [
   {
     icon: <AIIcon />,
     title: 'AI Case Predictor',
@@ -176,6 +191,7 @@ const features = [
     description:
       'Upload and analyze legal documents with AI insights, risk assessment, and compliance checking.',
     badge: 'available' as const,
+    href: '/attorney/document-intelligence',
   },
   {
     icon: <SearchIcon />,
@@ -376,7 +392,7 @@ export default function AttorneyPage() {
               }}
             >
               {features.filter((f) => f.badge === 'available').map((feature, index) => (
-                <FeatureCard key={index} {...feature} />
+                <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} badge={feature.badge} href={feature.href} />
               ))}
             </div>
           </div>
@@ -402,7 +418,7 @@ export default function AttorneyPage() {
               }}
             >
               {features.filter((f) => f.badge === 'coming-soon').map((feature, index) => (
-                <FeatureCard key={index} {...feature} />
+                <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} badge={feature.badge} href={feature.href} />
               ))}
             </div>
           </div>
