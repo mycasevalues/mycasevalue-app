@@ -2,6 +2,8 @@ import dynamic from 'next/dynamic';
 import ServerHero from '../components/ServerHero';
 import ServerContent from '../components/ServerContent';
 
+export const revalidate = 0;
+
 const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
   ssr: false,
   loading: () => null, // ServerHero + ServerContent provide the initial content
