@@ -146,28 +146,31 @@ export default async function ReportPage({
     // Supabase not configured or auth failed — default to free
   }
 
-  const isPremium = tier === 'single_report' || tier === 'unlimited' || tier === 'attorney';
+  // Temporarily unlock all tiers — lock after site completion
+  // TODO: Re-enable tier gating after site is complete
+  const isPremium = true; // was: tier === 'single_report' || tier === 'unlimited' || tier === 'attorney'
 
-  // ─── Rate Limit for Free Users (3/day) ────────────────────────
-  if (!isPremium) {
-    try {
-      const headerStore = await headers();
-      const ip = headerStore.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous';
-      const { allowed } = await checkFreeRateLimit(ip);
-      if (!allowed) {
-        return (
-          <main style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
-            <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: 'var(--fg-primary)' }}>Daily limit reached</h1>
-            <p style={{ color: 'var(--fg-muted)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
-            <a href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
-            <p style={{ fontSize: '12px', color: 'var(--fg-muted)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
-          </main>
-        );
-      }
-    } catch {
-      // Rate limit check failed — allow access
-    }
-  }
+  // Temporarily disabled — re-enable after site completion
+  // TODO: Re-enable rate limiting after site is complete
+  // if (!isPremium) {
+  //   try {
+  //     const headerStore = await headers();
+  //     const ip = headerStore.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous';
+  //     const { allowed } = await checkFreeRateLimit(ip);
+  //     if (!allowed) {
+  //       return (
+  //         <main style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
+  //           <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: 'var(--fg-primary)' }}>Daily limit reached</h1>
+  //           <p style={{ color: 'var(--fg-muted)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
+  //           <a href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
+  //           <p style={{ fontSize: '12px', color: 'var(--fg-muted)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
+  //         </main>
+  //       );
+  //     }
+  //   } catch {
+  //     // Rate limit check failed — allow access
+  //   }
+  // }
 
   // Merge DB stats with static fallback
   const { outcome, real } = data || { outcome: OUTCOME_DATA._default, real: null };

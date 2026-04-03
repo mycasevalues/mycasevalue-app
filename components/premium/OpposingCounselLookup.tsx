@@ -74,7 +74,8 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
     months: 'months',
   };
 
-  if (!isPremium) {
+  // TODO: Re-enable tier gating after site is complete
+  if (false && !isPremium) { // was: if (!isPremium)
     return (
       <div
         className="rounded-xl p-8 text-center relative overflow-hidden"

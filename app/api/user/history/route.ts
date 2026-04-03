@@ -15,8 +15,11 @@ export async function POST(req: NextRequest) {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user?.email) return NextResponse.json({ ok: false });
 
-    const tier = await getUserTier(user.email);
-    if (tier === 'free' || tier === 'single_report') return NextResponse.json({ ok: false });
+    // Temporarily unlock all tiers — lock after site completion
+    // TODO: Re-enable tier gating after site is complete
+    // const tier = await getUserTier(user.email);
+    // if (tier === 'free' || tier === 'single_report') return NextResponse.json({ ok: false });
+    void getUserTier; // keep import to avoid unused warning
 
     const adminSupabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,

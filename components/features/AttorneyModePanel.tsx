@@ -432,7 +432,9 @@ export function AttorneyModePanel({
   tier,
   onUpgrade,
 }: AttorneyModePanelProps) {
-  const isAttorneyTier = tier === 'attorney';
+  // Temporarily unlock all tiers — lock after site completion
+  // TODO: Re-enable tier gating after site is complete
+  const isAttorneyTier = true; // was: tier === 'attorney'
 
   const translations = {
     en: {

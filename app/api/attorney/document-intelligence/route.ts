@@ -20,8 +20,11 @@ export async function POST(req: Request) {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user?.email) return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
 
-    const tier = await getUserTier(user.email);
-    if (tier !== 'attorney') return NextResponse.json({ error: 'Attorney Mode subscription required' }, { status: 403 });
+    // Temporarily unlock all tiers — lock after site completion
+    // TODO: Re-enable tier gating after site is complete
+    // const tier = await getUserTier(user.email);
+    // if (tier !== 'attorney') return NextResponse.json({ error: 'Attorney Mode subscription required' }, { status: 403 });
+    void getUserTier; // keep import to avoid unused warning
 
     const formData = await req.formData();
     const file = formData.get('file') as File;

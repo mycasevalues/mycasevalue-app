@@ -472,7 +472,9 @@ export default function MyCaseValue() {
   const t = TRANSLATIONS[lang];
   const [totalCases, setTotalCases] = useState(5127834);
 
-  const isPremium = tier !== 'free';
+  // Temporarily unlock all tiers — lock after site completion
+  // TODO: Re-enable tier gating after site is complete
+  const isPremium = true; // was: tier !== 'free'
 
 
   // Restore draft from localStorage on mount
