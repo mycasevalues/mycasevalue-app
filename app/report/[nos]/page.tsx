@@ -1,0 +1,277 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { SITS, OUTCOME_DATA } from '../../../lib/data';
+import { REAL_DATA } from '../../../lib/realdata';
+
+// Find a label for a NOS code by searching SITS
+function getNosLabel(nos: string): string {
+  for (const cat of SITS) {
+    for (const opt of cat.opts) {
+      if (opt.nos === nos) return opt.label;
+    }
+  }
+  // Check if it's a category ID instead of a NOS code
+  const cat = SITS.find(c => c.id === nos);
+  if (cat) return cat.label;
+  return `Case Type ${nos}`;
+}
+
+// Find category label for a NOS code
+function getCategoryLabel(nos: string): string {
+  for (const cat of SITS) {
+    for (const opt of cat.opts) {
+      if (opt.nos === nos) return cat.label;
+    }
+  }
+  return '';
+}
+
+// Get the best available data for this NOS code or category ID
+function getReportData(nos: string) {
+  // First check if it's a direct NOS code
+  if (OUTCOME_DATA[nos]) {
+    return { outcome: OUTCOME_DATA[nos], real: REAL_DATA[nos] || null };
+  }
+  // Check if it's a SITS category ID (e.g. "work", "injury")
+  const cat = SITS.find(c => c.id === nos);
+  if (cat && cat.opts.length > 0) {
+    const firstNos = cat.opts[0].nos;
+    return { outcome: OUTCOME_DATA[firstNos] || OUTCOME_DATA._default, real: REAL_DATA[firstNos] || null };
+  }
+  return null;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ nos: string }>;
+}): Promise<Metadata> {
+  const { nos } = await params;
+  const label = getNosLabel(nos);
+  return {
+    title: `${label} Report | MyCaseValue`,
+    description: `Federal court outcome report for ${label} cases. Win rates, settlement data, timelines, and more.`,
+  };
+}
+
+export default async function ReportPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ nos: string }>;
+  searchParams: Promise<{ district?: string }>;
+}) {
+  const { nos } = await params;
+  const { district } = await searchParams;
+  const districtLabel = district || 'National Average';
+  const data = getReportData(nos);
+
+  if (!data) {
+    return (
+      <div style={{ minHeight: '100vh', background: 'var(--bg-base)', padding: '64px 24px', textAlign: 'center' }}>
+        <p style={{ fontSize: 18, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)', fontWeight: 600, marginBottom: 12 }}>
+          No data found for this case type.
+        </p>
+        <p style={{ fontSize: 14, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', marginBottom: 24 }}>
+          We don&apos;t have outcome data for code &ldquo;{nos}&rdquo; yet.
+        </p>
+        <Link href="/cases" style={{ fontSize: 14, color: 'var(--accent-secondary)', textDecoration: 'none', fontWeight: 500, fontFamily: 'var(--font-body)' }}>
+          ← Back to case types
+        </Link>
+      </div>
+    );
+  }
+
+  const { outcome, real } = data;
+  const label = getNosLabel(nos);
+  const categoryLabel = getCategoryLabel(nos);
+  const totalCases = real?.total || null;
+  const settlementRange = real?.rng || null;
+  const medianDuration = real?.mo || outcome.set_mo || 14;
+  const trialMedian = outcome.trial_med || 'N/A';
+
+  return (
+    <div style={{ minHeight: '100vh', background: 'var(--bg-base)' }}>
+      {/* Header */}
+      <div style={{ background: 'var(--bg-surface)', borderBottom: '1px solid var(--border-default)' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
+          <Link href="/cases" style={{ fontSize: 14, color: 'var(--fg-muted)', textDecoration: 'none', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
+            ← Back to case types
+          </Link>
+
+          <h1 style={{
+            fontSize: 28,
+            fontWeight: 700,
+            margin: '24px 0 8px',
+            color: 'var(--fg-primary)',
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '-0.5px',
+          }}>
+            {label} Report
+          </h1>
+
+          <p style={{ color: 'var(--fg-muted)', fontSize: 14, fontFamily: 'var(--font-body)', margin: '0 0 4px' }}>
+            {districtLabel} · Based on federal court records
+            {categoryLabel ? ` · ${categoryLabel}` : ''}
+          </p>
+
+          {totalCases && (
+            <p style={{ color: 'var(--fg-muted)', fontSize: 13, fontFamily: 'var(--font-mono)', margin: 0 }}>
+              {totalCases.toLocaleString()} cases analyzed
+            </p>
+          )}
+        </div>
+      </div>
+
+      <main style={{ maxWidth: 900, margin: '0 auto', padding: '32px 24px' }}>
+        {/* Win Rate Analysis */}
+        <section style={{
+          background: 'var(--bg-surface)',
+          border: '1px solid var(--border-default)',
+          borderRadius: 12,
+          padding: 24,
+          marginBottom: 16,
+        }}>
+          <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+            Win Rate Analysis
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                {outcome.trial_win}%
+              </p>
+              <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Plaintiff win rate</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                {outcome.fav_set}%
+              </p>
+              <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Settlement rate</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                {outcome.dismiss}%
+              </p>
+              <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Dismissal rate</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Settlement Range */}
+        {settlementRange && (
+          <section style={{
+            background: 'var(--bg-surface)',
+            border: '1px solid var(--border-default)',
+            borderRadius: 12,
+            padding: 24,
+            marginBottom: 16,
+          }}>
+            <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+              Settlement Range
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+              <div style={{ textAlign: 'center' }}>
+                <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: '#DC2626', margin: '0 0 8px' }}>
+                  25th Percentile
+                </p>
+                <p style={{ fontSize: 28, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                  ${settlementRange.lo}K
+                </p>
+                <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: 0 }}>Conservative</p>
+              </div>
+              <div style={{ textAlign: 'center', background: 'rgba(129,140,248,0.06)', borderRadius: 8, padding: '12px 8px' }}>
+                <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: '#818CF8', margin: '0 0 8px' }}>
+                  Median
+                </p>
+                <p style={{ fontSize: 28, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                  ${settlementRange.md}K
+                </p>
+                <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: 0 }}>Typical</p>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: '#10B981', margin: '0 0 8px' }}>
+                  75th Percentile
+                </p>
+                <p style={{ fontSize: 28, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                  ${(settlementRange.hi >= 1000 ? (settlementRange.hi / 1000).toFixed(1) + 'M' : settlementRange.hi + 'K')}
+                </p>
+                <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: 0 }}>Favorable</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Case Timeline */}
+        <section style={{
+          background: 'var(--bg-surface)',
+          border: '1px solid var(--border-default)',
+          borderRadius: 12,
+          padding: 24,
+          marginBottom: 16,
+        }}>
+          <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+            Case Timeline
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                {medianDuration} months
+              </p>
+              <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Median time from filing to resolution</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                {trialMedian}
+              </p>
+              <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Median trial award</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Representation Impact */}
+        {real?.ps && real?.rr && (
+          <section style={{
+            background: 'var(--bg-surface)',
+            border: '1px solid var(--border-default)',
+            borderRadius: 12,
+            padding: 24,
+            marginBottom: 16,
+          }}>
+            <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+              Representation Impact
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
+              <div style={{ textAlign: 'center', padding: 16, background: 'var(--bg-base)', borderRadius: 8, border: '1px solid var(--border-default)' }}>
+                <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--fg-muted)', margin: '0 0 8px' }}>
+                  Self-Represented (Pro Se)
+                </p>
+                <p style={{ fontSize: 28, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                  {real.ps.wr}%
+                </p>
+                <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: 0 }}>
+                  win rate · {real.ps.total.toLocaleString()} cases
+                </p>
+              </div>
+              <div style={{ textAlign: 'center', padding: 16, background: 'var(--bg-base)', borderRadius: 8, border: '1px solid var(--border-default)' }}>
+                <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--fg-muted)', margin: '0 0 8px' }}>
+                  Attorney Represented
+                </p>
+                <p style={{ fontSize: 28, fontWeight: 700, color: '#10B981', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+                  {real.rr.wr}%
+                </p>
+                <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: 0 }}>
+                  win rate · {real.rr.total.toLocaleString()} cases
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Disclaimer */}
+        <p style={{ fontSize: 12, color: 'var(--fg-muted)', textAlign: 'center', marginTop: 32, fontStyle: 'italic', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
+          This report shows aggregate historical data from public federal court records. Not legal advice. Results vary by individual case facts, evidence, representation, and jurisdiction. © {new Date().getFullYear()} MyCaseValue LLC.
+        </p>
+      </main>
+    </div>
+  );
+}

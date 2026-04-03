@@ -1,26 +1,8 @@
-import { SITS } from '../../lib/data';
-import { Metadata } from 'next';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Federal Court Case Data by Category | MyCaseValue',
-  description: 'Browse outcome data from 5.1M+ federal cases. Win rates, settlements, and timelines across 84 case types including employment, injury, and civil rights.',
-  openGraph: {
-    title: 'Case Categories — Real Federal Court Data | MyCaseValue',
-    description: 'Explore federal court outcomes by case type. Win rates, settlement data, and timelines for workplace, injury, consumer, civil rights, contracts, housing, benefits, family, government, and education cases.',
-    type: 'website',
-    url: 'https://www.mycasevalues.com/cases',
-    images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630, alt: 'MyCaseValue Case Categories' }],
-  },
-  keywords: [
-    'federal court cases by category', 'case outcome data', 'lawsuit win rates', 'settlement data',
-    'federal court statistics', 'employment case data', 'personal injury statistics',
-    'consumer protection cases', 'civil rights outcomes', 'contract dispute data',
-    'housing case outcomes', 'healthcare benefits cases', 'family law statistics',
-    'government benefits cases', 'education law outcomes',
-  ].join(', '),
-  alternates: { canonical: 'https://www.mycasevalues.com/cases' },
-};
+import { useState } from 'react';
+import Link from 'next/link';
+import { SITS } from '../../lib/data';
 
 const categoryIcons: Record<string, string> = {
   work: '', injury: '', consumer: '', rights: '', money: '',
@@ -43,6 +25,14 @@ const jsonLd = {
 };
 
 export default function CasesIndexPage() {
+  const [search, setSearch] = useState('');
+
+  const filtered = SITS.filter(cat =>
+    cat.label.toLowerCase().includes(search.toLowerCase()) ||
+    cat.sub.toLowerCase().includes(search.toLowerCase()) ||
+    cat.opts.some(opt => opt.label.toLowerCase().includes(search.toLowerCase()))
+  );
+
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -65,26 +55,76 @@ export default function CasesIndexPage() {
 
       {/* Categories Grid */}
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '60px 20px' }}>
+        {/* Search Input */}
+        <input
+          type="text"
+          placeholder="Search case types... (e.g. wrongful termination, medical malpractice)"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          style={{
+            width: '100%',
+            maxWidth: '480px',
+            padding: '12px 16px',
+            fontSize: '15px',
+            border: '1px solid var(--border-default)',
+            borderRadius: '8px',
+            background: 'var(--bg-surface)',
+            color: 'var(--fg-primary)',
+            fontFamily: 'var(--font-body)',
+            marginBottom: '32px',
+            display: 'block',
+            boxSizing: 'border-box',
+            transition: 'border-color 0.2s, box-shadow 0.2s',
+            outline: 'none',
+          }}
+        />
+
         <style dangerouslySetInnerHTML={{ __html: `
           .cat-card { background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 32px; transition: all 0.3s ease; height: 100%; }
           .cat-card:hover { transform: translateY(-4px); box-shadow: 0 4px 20px rgba(17,17,17,0.12); border-color: #111111; }
         `}} />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
-          {SITS.map((category) => (
-            <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
-              <div className="cat-card">
-                <div style={{ fontSize: 40, marginBottom: 16 }}>{categoryIcons[category.id]}</div>
-                <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--fg-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
-                  {category.label}
-                </h2>
-                <p style={{ fontSize: 14, color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
-                <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid var(--border-default)', fontSize: 13, color: 'var(--fg-primary)', fontWeight: 500 }}>
-                  {category.opts.length} types covered →
+
+        {filtered.length === 0 ? (
+          <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+            <p style={{ fontSize: 18, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)' }}>
+              No case types match &ldquo;{search}&rdquo;
+            </p>
+            <button
+              onClick={() => setSearch('')}
+              style={{
+                marginTop: 16,
+                padding: '10px 24px',
+                fontSize: 14,
+                fontWeight: 600,
+                border: '1px solid var(--border-default)',
+                borderRadius: 8,
+                background: 'var(--bg-surface)',
+                color: 'var(--fg-primary)',
+                fontFamily: 'var(--font-body)',
+                cursor: 'pointer',
+              }}
+            >
+              Clear search
+            </button>
+          </div>
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
+            {filtered.map((category) => (
+              <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
+                <div className="cat-card">
+                  <div style={{ fontSize: 40, marginBottom: 16 }}>{categoryIcons[category.id]}</div>
+                  <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--fg-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                    {category.label}
+                  </h2>
+                  <p style={{ fontSize: 14, color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
+                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid var(--border-default)', fontSize: 13, color: 'var(--fg-primary)', fontWeight: 500 }}>
+                    {category.opts.length} types covered →
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* CTA */}

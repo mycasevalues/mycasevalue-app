@@ -78,8 +78,8 @@ export async function POST(req: NextRequest) {
           quantity: 1,
         },
       ],
-      success_url: `${origin}?session_id={CHECKOUT_SESSION_ID}&plan=${plan}`,
-      cancel_url: `${origin}?canceled=true`,
+      success_url: `${origin}/payment-success?plan=${plan}`,
+      cancel_url: `${origin}/pricing`,
       metadata: { plan },
     };
 
@@ -119,8 +119,8 @@ export async function POST(req: NextRequest) {
               quantity: 1,
             },
           ],
-          success_url: `${origin}?session_id={CHECKOUT_SESSION_ID}&plan=${plan}`,
-          cancel_url: `${origin}?canceled=true`,
+          success_url: `${origin}/payment-success?plan=${plan}`,
+          cancel_url: `${origin}/pricing`,
           metadata: { plan },
         };
 
