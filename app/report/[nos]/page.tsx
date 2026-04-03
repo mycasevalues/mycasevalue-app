@@ -157,7 +157,7 @@ export default async function ReportPage({
   const trialMedian = outcome.trial_med || 'N/A';
   const winRate = dbStats?.win_rate ?? outcome.trial_win;
   const settlementRate = dbStats?.settlement_rate ?? outcome.fav_set;
-  const dismissRate = outcome.dismiss ?? (100 - (winRate + settlementRate));
+  const dismissRate = outcome.dismiss ?? Math.max(0, 100 - (winRate + settlementRate));
   const proSeWinRate = dbStats?.pro_se_win_rate ?? real?.ps?.wr ?? null;
   const representedWinRate = dbStats?.represented_win_rate ?? real?.rr?.wr ?? null;
 

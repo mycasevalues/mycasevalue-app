@@ -37,7 +37,14 @@ export async function searchOpinions(
     });
     if (!res.ok) return [];
     const data = await res.json();
-    return (data.results || []).slice(0, limit);
+    return (data.results || []).slice(0, limit).map((r: any) => ({
+      ...r,
+      caseName: r.caseName || r.case_name || r.caseNameFull || r.case_name_full || '',
+      dateFiled: r.dateFiled || r.date_filed || '',
+      absolute_url: r.absolute_url || '',
+      court: r.court || r.court_id || '',
+      status: r.status || '',
+    }));
   } catch {
     return [];
   }
@@ -61,7 +68,14 @@ export async function searchRECAPDockets(query: string, limit = 5) {
     });
     if (!res.ok) return [];
     const data = await res.json();
-    return (data.results || []).slice(0, limit);
+    return (data.results || []).slice(0, limit).map((r: any) => ({
+      ...r,
+      caseName: r.caseName || r.case_name || r.caseNameFull || r.case_name_full || '',
+      dateFiled: r.dateFiled || r.date_filed || '',
+      absolute_url: r.absolute_url || '',
+      court: r.court || r.court_id || '',
+      docketNumber: r.docketNumber || r.docket_number || r.docketNumberCore || '',
+    }));
   } catch {
     return [];
   }

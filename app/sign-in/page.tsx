@@ -1,16 +1,25 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: 'var(--bg-base)' }} />}>
+      <SignInForm />
+    </Suspense>
+  );
+}
+
+function SignInForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
   function getSupabase() {
     return createBrowserClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -35,7 +44,8 @@ export default function SignInPage() {
       return;
     }
 
-    router.push('/dashboard');
+    const redirectTo = searchParams?.get('redirect') || '/dashboard';
+    router.push(redirectTo);
     router.refresh();
   }
 

@@ -9,7 +9,8 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { createBrowserClient } from '@supabase/ssr';
 
 const NAV_LINKS = [
   { href: '/search', label: 'Search' },
@@ -23,9 +24,41 @@ const NAV_LINKS = [
 
 export default function SiteNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
+
+  // Check auth state
+  useEffect(() => {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !key) return;
+
+    const supabase = createBrowserClient(url, key);
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUserEmail(user?.email ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUserEmail(session?.user?.email ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!url || !key) return;
+
+    const supabase = createBrowserClient(url, key);
+    await supabase.auth.signOut();
+    setUserEmail(null);
+    router.push('/');
+    router.refresh();
+  };
 
   // Close on Escape key
   useEffect(() => {
@@ -157,39 +190,81 @@ export default function SiteNav() {
                 gap: '8px',
               }}
             >
-              <Link
-                href="/sign-in"
-                className="site-nav-link"
-                style={{
-                  padding: '8px 16px',
-                  fontSize: '14px',
-                  fontWeight: 500,
-                  color: 'var(--fg-muted)',
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
-                  borderRadius: 'var(--r-md)',
-                  border: '1.5px solid var(--border-default)',
-                  transition: 'all var(--duration-base) ease',
-                }}
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/cases"
-                style={{
-                  padding: '8px 20px',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--fg-inverse)',
-                  background: 'var(--accent-primary)',
-                  borderRadius: 'var(--r-md)',
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
-                  transition: 'all var(--duration-base) ease',
-                }}
-              >
-                Get Started Free
-              </Link>
+              {userEmail ? (
+                <>
+                  <Link
+                    href="/dashboard"
+                    className="site-nav-link"
+                    style={{
+                      padding: '8px 16px',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      color: 'var(--fg-muted)',
+                      textDecoration: 'none',
+                      fontFamily: 'var(--font-body)',
+                      borderRadius: 'var(--r-md)',
+                      border: '1.5px solid var(--border-default)',
+                      transition: 'all var(--duration-base) ease',
+                    }}
+                  >
+                    Dashboard
+                  </Link>
+                  <button
+                    onClick={handleSignOut}
+                    className="site-nav-link"
+                    style={{
+                      padding: '8px 20px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      color: 'var(--fg-inverse)',
+                      background: 'var(--accent-primary)',
+                      borderRadius: 'var(--r-md)',
+                      fontFamily: 'var(--font-body)',
+                      border: 'none',
+                      cursor: 'pointer',
+                      transition: 'all var(--duration-base) ease',
+                    }}
+                  >
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/sign-in"
+                    className="site-nav-link"
+                    style={{
+                      padding: '8px 16px',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      color: 'var(--fg-muted)',
+                      textDecoration: 'none',
+                      fontFamily: 'var(--font-body)',
+                      borderRadius: 'var(--r-md)',
+                      border: '1.5px solid var(--border-default)',
+                      transition: 'all var(--duration-base) ease',
+                    }}
+                  >
+                    Sign In
+                  </Link>
+                  <Link
+                    href="/cases"
+                    style={{
+                      padding: '8px 20px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      color: 'var(--fg-inverse)',
+                      background: 'var(--accent-primary)',
+                      borderRadius: 'var(--r-md)',
+                      textDecoration: 'none',
+                      fontFamily: 'var(--font-body)',
+                      transition: 'all var(--duration-base) ease',
+                    }}
+                  >
+                    Get Started Free
+                  </Link>
+                </>
+              )}
             </div>
 
             {/* Mobile hamburger button */}
@@ -308,44 +383,90 @@ export default function SiteNav() {
         ))}
 
         <div style={{ borderTop: '1px solid var(--border-default)', margin: '12px 0', padding: '12px 0' }}>
-          <Link
-            href="/sign-in"
-            onClick={() => setMobileOpen(false)}
-            style={{
-              display: 'block',
-              padding: '14px 16px',
-              borderRadius: 'var(--r-md)',
-              fontSize: '16px',
-              fontWeight: 500,
-              color: 'var(--fg-primary)',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
-              minHeight: '44px',
-            }}
-            className="site-nav-mobile-link"
-          >
-            Sign In
-          </Link>
-          <Link
-            href="/cases"
-            onClick={() => setMobileOpen(false)}
-            style={{
-              display: 'block',
-              padding: '14px 16px',
-              borderRadius: 'var(--r-md)',
-              fontSize: '16px',
-              fontWeight: 600,
-              color: 'var(--fg-inverse)',
-              background: 'var(--accent-primary)',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
-              textAlign: 'center',
-              minHeight: '44px',
-              marginTop: '8px',
-            }}
-          >
-            Get Started Free
-          </Link>
+          {userEmail ? (
+            <>
+              <Link
+                href="/dashboard"
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  display: 'block',
+                  padding: '14px 16px',
+                  borderRadius: 'var(--r-md)',
+                  fontSize: '16px',
+                  fontWeight: 500,
+                  color: 'var(--fg-primary)',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-body)',
+                  minHeight: '44px',
+                }}
+                className="site-nav-mobile-link"
+              >
+                Dashboard
+              </Link>
+              <button
+                onClick={() => { setMobileOpen(false); handleSignOut(); }}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '14px 16px',
+                  borderRadius: 'var(--r-md)',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  color: 'var(--fg-inverse)',
+                  background: 'var(--accent-primary)',
+                  fontFamily: 'var(--font-body)',
+                  textAlign: 'center',
+                  minHeight: '44px',
+                  marginTop: '8px',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                href="/sign-in"
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  display: 'block',
+                  padding: '14px 16px',
+                  borderRadius: 'var(--r-md)',
+                  fontSize: '16px',
+                  fontWeight: 500,
+                  color: 'var(--fg-primary)',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-body)',
+                  minHeight: '44px',
+                }}
+                className="site-nav-mobile-link"
+              >
+                Sign In
+              </Link>
+              <Link
+                href="/cases"
+                onClick={() => setMobileOpen(false)}
+                style={{
+                  display: 'block',
+                  padding: '14px 16px',
+                  borderRadius: 'var(--r-md)',
+                  fontSize: '16px',
+                  fontWeight: 600,
+                  color: 'var(--fg-inverse)',
+                  background: 'var(--accent-primary)',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-body)',
+                  textAlign: 'center',
+                  minHeight: '44px',
+                  marginTop: '8px',
+                }}
+              >
+                Get Started Free
+              </Link>
+            </>
+          )}
         </div>
       </div>
 

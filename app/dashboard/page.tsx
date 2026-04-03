@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { createServerClient } from '@supabase/ssr';
+import { getSupabaseAdmin } from '../../lib/supabase';
 
 export const metadata: Metadata = {
   title: 'Dashboard | MyCaseValue',
@@ -76,10 +77,11 @@ export default async function DashboardPage() {
     userEmail = user.email ?? '';
     userCreatedAt = user.created_at ?? '';
 
-    // Query premium_sessions for this user's plan
+    // Query premium_sessions for this user's plan (use admin client to bypass RLS)
     if (userEmail) {
       try {
-        const { data: session } = await supabase
+        const adminDb = getSupabaseAdmin();
+        const { data: session } = await adminDb
           .from('premium_sessions')
           .select('plan, granted_at, expires_at')
           .eq('email', userEmail.toLowerCase())

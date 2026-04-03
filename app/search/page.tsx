@@ -71,7 +71,7 @@ export default function SearchPage() {
             {recentItems.map((item, i) => (
               <Link
                 key={i}
-                href={`/report/${item.category}?type=${item.nos}`}
+                href={`/report/${item.nos}`}
                 style={{
                   padding: '6px 14px',
                   background: 'var(--bg-surface)',
@@ -121,7 +121,7 @@ export default function SearchPage() {
       {results.map((r, i) => (
         <Link
           key={i}
-          href={`/report/${r.category}?type=${r.nos}`}
+          href={`/report/${r.nos}`}
           onClick={() => saveToRecent({ label: r.label, nos: r.nos, category: r.category })}
           style={{
             display: 'block',

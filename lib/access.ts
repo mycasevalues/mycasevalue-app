@@ -6,7 +6,7 @@
  * Client-side checks are UX only — never for data security.
  */
 
-import { getSupabase } from './supabase';
+import { getSupabaseAdmin } from './supabase';
 
 // ─── Tier Definitions ─────────────────────────────────────────────
 export type Tier = 'free' | 'single_report' | 'unlimited' | 'attorney';
@@ -164,7 +164,7 @@ export async function getUserTier(email: string | null): Promise<Tier> {
   if (!email) return 'free';
 
   try {
-    const supabase = getSupabase();
+    const supabase = getSupabaseAdmin();
     const { data, error } = await supabase
       .from('premium_sessions')
       .select('plan, expires_at')
