@@ -6,10 +6,10 @@ import { locales, defaultLocale, type Locale } from './lib/i18n-config';
 /**
  * Middleware for MyCaseValue
  * 1. i18n locale routing (English/Spanish)
- * 2. Auth protection for /dashboard and /report routes
+ * 2. Auth protection for /dashboard routes
  */
 
-const PROTECTED_PREFIXES = ['/dashboard', '/report'];
+const PROTECTED_PREFIXES = ['/dashboard'];
 
 function isProtectedRoute(pathname: string): boolean {
   return PROTECTED_PREFIXES.some(
