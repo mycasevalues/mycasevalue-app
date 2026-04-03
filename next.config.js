@@ -51,6 +51,13 @@ const nextConfig = {
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
       },
+      {
+        // Force no-cache on homepage to prevent stale HTML
+        source: '/',
+        headers: [
+          { key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' },
+        ],
+      },
     ];
   },
   // Compression

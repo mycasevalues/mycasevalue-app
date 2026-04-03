@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { unstable_noStore as noStore } from 'next/cache';
 import ServerHero from '../components/ServerHero';
 import ServerContent from '../components/ServerContent';
 
@@ -19,6 +20,7 @@ export const metadata = {
 };
 
 export default function Page() {
+  noStore();
   return (
     <>
       <div id="ssr-hero" className="ssr-hero-container">
