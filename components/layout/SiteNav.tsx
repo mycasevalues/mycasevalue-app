@@ -139,7 +139,7 @@ export default function SiteNav() {
               fontFamily: 'var(--font-display)',
               fontSize: '20px',
               fontWeight: 900,
-              color: 'var(--accent-primary)',
+              color: '#111111',
               textDecoration: 'none',
               letterSpacing: '-0.5px',
             }}

@@ -37,7 +37,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
         {/* Header */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{
-            background: 'linear-gradient(135deg, #111111, #333333)',
+            background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
             boxShadow: '0 4px 12px rgba(17,17,17,0.3)',
           }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
@@ -60,7 +60,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
                 onClick={() => setSelectedCase(key)}
                 className="px-3 py-2 rounded-lg text-[11px] font-medium transition-all border cursor-pointer"
                 style={{
-                  background: selectedCase === key ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.05)',
+                  background: selectedCase === key ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : 'rgba(255,255,255,0.05)',
                   color: selectedCase === key ? 'white' : '#6B7280',
                   borderColor: selectedCase === key ? '#111111' : '#E5E0D8',
                   boxShadow: selectedCase === key ? '0 2px 8px rgba(17,17,17,0.25)' : 'none',
@@ -155,7 +155,7 @@ export default function PremiumValueCalculator({ lang = 'en', onUnlock }: Premiu
           onClick={onUnlock}
           className="w-full py-3.5 text-[14px] font-semibold text-white rounded-xl cursor-pointer border-none transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
           style={{
-            background: 'linear-gradient(135deg, #111111, #333333)',
+            background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
             boxShadow: '0 4px 24px rgba(17,17,17,0.35)',
           }}
         >

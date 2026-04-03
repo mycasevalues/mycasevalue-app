@@ -150,7 +150,7 @@ export function StepDetails({
           </p>
           <label className="flex gap-3 items-start cursor-pointer text-[14px]" role="checkbox" aria-checked={consent} tabIndex={0} onClick={() => setConsent(!consent)} onKeyDown={e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); setConsent(!consent); } }}>
             <div className="w-5 h-5 rounded-lg border-2 flex items-center justify-center flex-shrink-0 mt-0.5 transition-all" aria-hidden="true"
-              style={{ borderColor: consent ? '#111111' : '#E5E0D8', background: consent ? 'linear-gradient(135deg, #111111, #333333)' : 'transparent' }}>
+              style={{ borderColor: consent ? '#111111' : '#E5E0D8', background: consent ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : 'transparent' }}>
               {consent && <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
             </div>
             <span className="leading-relaxed text-[var(--fg-muted)]">{lang === 'es'
@@ -161,7 +161,7 @@ export function StepDetails({
         </div>
         <button type="button" onClick={handleGenerateReport}
           className="w-full mt-5 py-4.5 text-[16px] font-semibold text-white border-none rounded-2xl cursor-pointer transition-all active:scale-[0.98] hover:scale-[1.01]"
-          style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E0D8', color: (timing && attorney && consent) ? '#fff' : '#6B7280', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(17,17,17,.3)' : 'none', padding: '18px', animation: submitted && (!timing || !attorney || !consent) ? 'shake 0.5s ease-in-out' : 'none' }}>
+          style={{ background: (timing && attorney && consent) ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : '#E5E0D8', color: (timing && attorney && consent) ? '#fff' : '#6B7280', boxShadow: (timing && attorney && consent) ? '0 4px 20px rgba(17,17,17,.3)' : 'none', padding: '18px', animation: submitted && (!timing || !attorney || !consent) ? 'shake 0.5s ease-in-out' : 'none' }}>
           {lang === 'es' ? 'Generar informe →' : 'Generate report →'}
         </button>
         <style>{`

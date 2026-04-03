@@ -166,7 +166,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
             {plan.badge && (
               <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-[8px] font-bold tracking-[1.5px]"
                 style={{
-                  background: plan.highlight ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(245,158,11,0.15)',
+                  background: plan.highlight ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : 'rgba(245,158,11,0.15)',
                   color: plan.highlight ? '#fff' : '#F59E0B',
                 }}>
                 {isEs ? plan.badgeEs : plan.badge}
@@ -215,7 +215,7 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
             <button type="button"
               className="w-full py-2.5 rounded-lg text-[12px] font-semibold transition-all hover:scale-[1.02]"
               style={{
-                background: plan.highlight ? '#111111' : 'transparent',
+                background: plan.highlight ? '#8B5CF6' : 'transparent',
                 color: plan.highlight ? '#fff' : '#111827',
                 border: plan.highlight ? 'none' : '1px solid #E5E0D8',
                 borderRadius: '9999px',

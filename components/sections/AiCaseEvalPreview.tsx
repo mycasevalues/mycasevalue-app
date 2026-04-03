@@ -314,7 +314,7 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
                     <button type="button"
                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                       className="px-4 py-2.5 rounded-lg text-[10px] font-semibold transition-all"
-                      style={{ background: 'linear-gradient(135deg, #111111, #333333)', color: '#fff', border: 'none', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                      style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', color: '#fff', border: 'none', cursor: 'pointer', minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
                       {t.tryNow}
                     </button>

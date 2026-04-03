@@ -166,7 +166,7 @@ export function EmailCaptureBanner({
                 background:
                   state === 'loading' || !email.trim()
                     ? 'rgba(17,17,17,0.5)'
-                    : 'linear-gradient(135deg, #111111, #333333)',
+                    : 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
               }}
               className="px-6 py-3 rounded-lg font-semibold text-white transition-all hover:shadow-lg disabled:cursor-not-allowed whitespace-nowrap"
             >

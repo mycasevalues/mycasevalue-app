@@ -264,7 +264,7 @@ function Shell({
         {showBackToTop && (
           <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-[var(--z-dropdown)] cursor-pointer no-print transition-all"
-            style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 16px rgba(17,17,17,.3)' }}
+            style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', boxShadow: '0 4px 16px rgba(17,17,17,.3)' }}
             aria-label="Back to top">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M18 15l-6-6-6 6" /></svg>
           </button>
@@ -277,7 +277,7 @@ function Shell({
               <button type="button" onClick={() => setShowExitIntent(false)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center cursor-pointer border-none" aria-label="Close">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
               </div>
               <div className="text-xl font-display font-bold mb-2">{lang === 'es' ? '¡Espera! Te falta lo mejor' : "Wait — you're missing the best part"}</div>
@@ -287,7 +287,7 @@ function Shell({
               </div>
               <button type="button" onClick={() => { setShowExitIntent(false); buy('single'); }}
                 className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer"
-                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>
                 {lang === 'es' ? 'Informe Premium — $5.99' : 'Premium Report — $5.99'}
               </button>
               <button type="button" onClick={() => setShowExitIntent(false)} className="text-[13px] text-[var(--fg-muted)] mt-3 bg-transparent border-none cursor-pointer">
@@ -378,7 +378,7 @@ function Shell({
                   try { localStorage.setItem('mcv_cookies_accepted', 'all'); } catch {}
                   setShowCookieConsent(false);
                 }} className="px-4 py-2 text-[12px] font-semibold text-white rounded-lg cursor-pointer border-none"
-                  style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
+                  style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>
                   {lang === 'es' ? 'Aceptar todo' : 'Accept all'}
                 </button>
               </div>
@@ -1884,7 +1884,7 @@ export default function MyCaseValue() {
                         {phases.map((phase, i) => (
                           <div key={i} className="flex items-start gap-4 pl-10 relative py-3">
                             <div className="absolute left-3 w-5 h-5 rounded-full flex items-center justify-center text-[10px] z-10" style={{
-                              background: i <= 3 ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E0D8',
+                              background: i <= 3 ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : '#E5E0D8',
                               border: i > 3 ? '2px solid var(--border-muted)' : 'none',
                               color: i <= 3 ? 'white' : '#6B7280',
                               boxShadow: i <= 3 ? '0 2px 8px rgba(17,17,17,0.3)' : 'none',
@@ -1998,7 +1998,7 @@ export default function MyCaseValue() {
                             <div className="h-2 rounded-full overflow-hidden" style={{ background: 'var(--bg-elevated)' }}>
                               <div className="h-full rounded-full transition-all duration-700" style={{
                                 width: `${f.value}%`,
-                                background: f.value >= 60 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : f.value >= 40 ? 'linear-gradient(90deg, #111111, #333333)' : 'linear-gradient(90deg, #E87461, #F59E0B)',
+                                background: f.value >= 60 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : f.value >= 40 ? 'linear-gradient(90deg, #8B5CF6, #7C3AED)' : 'linear-gradient(90deg, #E87461, #F59E0B)',
                                 transitionDelay: `${i * 100}ms`,
                               }} />
                             </div>
@@ -2180,7 +2180,7 @@ export default function MyCaseValue() {
                               <span className="text-[12px] font-bold font-data" style={{ color: 'var(--accent-primary)' }}>{stateRate.toFixed(1)}%</span>
                             </div>
                             <div className="h-3 rounded-full overflow-hidden" style={{ background: 'var(--bg-elevated)' }}>
-                              <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${stateRate}%`, background: 'linear-gradient(90deg, #111111, #333333)', boxShadow: '0 0 12px rgba(17,17,17,0.3)' }} />
+                              <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${stateRate}%`, background: 'linear-gradient(90deg, #8B5CF6, #7C3AED)', boxShadow: '0 0 12px rgba(17,17,17,0.3)' }} />
                             </div>
                           </div>
                           <div>
@@ -2592,7 +2592,7 @@ export default function MyCaseValue() {
           <TabPanel tabId="overview" activeTab={activeReportTab}>
           {/* === REPORT HEADER === */}
           <Reveal>
-            <div className="h-[3px] rounded-full mb-0" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }} />
+            <div className="h-[3px] rounded-full mb-0" style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }} />
             <Card glow className="p-6 sm:p-8 data-card card-glow">
               <div className="flex flex-col sm:flex-row justify-between items-start gap-6">
                 <div className="flex-1">
@@ -3040,7 +3040,7 @@ export default function MyCaseValue() {
                   {/* Step 2: Attorney-specific */}
                   <div className="flex gap-4 items-start pb-5 relative">
                     <div className="flex flex-col items-center">
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>2</div>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold text-white" style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>2</div>
                       <div className="w-px flex-1 mt-2" style={{ background: 'var(--border-muted)' }} />
                     </div>
                     <div className="flex-1 pb-1">
@@ -3081,7 +3081,7 @@ export default function MyCaseValue() {
                   <div className="flex gap-4 items-start pb-5 relative">
                     <div className="flex flex-col items-center">
                       <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-[13px] font-bold" style={{
-                        background: (timing === '2yr' || timing === 'old') ? 'linear-gradient(135deg, #E87461, #F09483)' : 'linear-gradient(135deg, #111111, #333333)',
+                        background: (timing === '2yr' || timing === 'old') ? 'linear-gradient(135deg, #E87461, #F09483)' : 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
                         color: 'white',
                       }}>3</div>
                       <div className="w-px flex-1 mt-2" style={{ background: 'var(--border-muted)' }} />
@@ -3561,7 +3561,7 @@ export default function MyCaseValue() {
                   <p className="text-[13px] text-[var(--fg-muted)] mb-6">{lang === 'es' ? 'Datos históricos agregados únicamente. No es una valoración de caso.' : 'Aggregate historical data only. Not a case valuation.'}</p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <button type="button" onClick={() => buy('single')} className="px-8 py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
-                      style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
+                      style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>
                       {lang === 'es' ? '$5.99 — Informe Premium' : '$5.99 — Premium Report'}
                     </button>
                     <button type="button" onClick={() => setShowPricing(true)} className="px-7 py-3.5 text-[15px] font-medium card-bg bg-[#FFFFFF] border-[1.5px] border-[var(--border-default)] rounded-xl cursor-pointer hover:border-[var(--border-muted)] transition-colors">
@@ -3596,7 +3596,7 @@ export default function MyCaseValue() {
                   </p>
                   <button type="button" onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney ' + (stateCode || '')), '_blank'); } catch {} }}
                     className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
-                    style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
+                    style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>
                     {lang === 'es' ? 'Buscar abogados en tu área' : 'Search for attorneys in your area'}
                   </button>
                 </Card>
@@ -3720,7 +3720,7 @@ export default function MyCaseValue() {
                       <div key={i} className="flex gap-3 cursor-pointer py-1" role="button" tabIndex={0} onClick={() => setTimelineStep(i)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setTimelineStep(i); } }} aria-label={`Timeline step ${i + 1}: ${t.label || t.l || ''}`}>
                         <div className="flex flex-col items-center w-6">
                           <div className="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center transition-all"
-                            style={{ background: active ? 'linear-gradient(135deg, #111111, #333333)' : '#E5E0D8', border: active ? 'none' : '2px solid #374151' }}>
+                            style={{ background: active ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : '#E5E0D8', border: active ? 'none' : '2px solid #374151' }}>
                             {active && <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
                           </div>
                           {i < (d.tl || []).length - 1 && <div className="w-0.5 flex-1 mt-0.5 transition-colors" style={{ background: active ? '#11111125' : '#E5E0D8' }} />}
@@ -3750,7 +3750,7 @@ export default function MyCaseValue() {
                             <div className="text-base font-bold">{months[today.getMonth()]} {today.getFullYear()}</div>
                           </div>
                           <div className="flex-1 h-[3px] rounded-full relative" style={{ background: 'var(--border-muted)' }}>
-                            <div className="absolute right-0 top-[-3px] w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }} />
+                            <div className="absolute right-0 top-[-3px] w-2 h-2 rounded-full" style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }} />
                           </div>
                           <div className="text-center">
                             <div className="text-[11px] text-[var(--fg-muted)]">{lang === 'es' ? 'Resolución est.' : 'Est. resolution'}</div>
@@ -3809,7 +3809,7 @@ export default function MyCaseValue() {
                         <div className="h-20 flex items-end justify-center mb-1.5">
                           <div className="w-full rounded-t-lg transition-all duration-700" style={{
                             height: `${x.p * 2}%`,
-                            background: i === 1 ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(17,17,17,0.2)',
+                            background: i === 1 ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : 'rgba(17,17,17,0.2)',
                           }} />
                         </div>
                         <div className="text-[13px] font-bold" style={{ color: i === 1 ? '#111111' : '#6B7280' }}>{x.p}%</div>
@@ -3893,7 +3893,7 @@ export default function MyCaseValue() {
                         aria-label="Notification email"
                         className="flex-1 px-3.5 py-2.5 text-sm border-[1.5px] border-[var(--border-default)] rounded-lg outline-none focus:border-[#111111] card-bg bg-[#FFFFFF] transition-colors" />
                       <button type="submit" className="px-5 py-2.5 text-sm font-semibold text-white rounded-lg cursor-pointer transition-all active:scale-[0.96]"
-                        style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
+                        style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>
                         {lang === 'es' ? 'Notificarme' : 'Notify me'}
                       </button>
                     </form>
@@ -4126,7 +4126,7 @@ export default function MyCaseValue() {
                   </p>
                   <button type="button" onClick={() => { try { window.open('https://www.google.com/search?q=' + encodeURIComponent((spec?.d || 'attorney') + ' attorney ' + (stateCode || '')), '_blank'); } catch {} }}
                     className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all active:scale-[0.98]"
-                    style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
+                    style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>
                     {lang === 'es' ? 'Buscar abogados en tu área' : 'Search for attorneys in your area'}
                   </button>
                 </Card>
@@ -4180,7 +4180,7 @@ export default function MyCaseValue() {
                     <div className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-primary)' }}>MyCaseValue Report</div>
                     <div className="text-xl sm:text-2xl font-display font-bold mt-1 capitalize">{spec?.d}</div>
                   </div>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
                   </div>
                 </div>

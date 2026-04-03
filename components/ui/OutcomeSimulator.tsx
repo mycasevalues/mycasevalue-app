@@ -101,7 +101,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             <button type="button" key={c.id} onClick={() => setCaseType(c.id)}
               className="px-3.5 py-2 rounded-xl text-[12px] font-semibold transition-all duration-200"
               style={{
-                background: caseType === c.id ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.05)',
+                background: caseType === c.id ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : 'rgba(255,255,255,0.05)',
                 color: caseType === c.id ? '#fff' : '#6B7280',
                 border: `1px solid ${caseType === c.id ? 'rgba(17,17,17,0.5)' : 'rgba(255,255,255,0.08)'}`,
                 transform: caseType === c.id ? 'scale(1.05)' : 'scale(1)',
@@ -172,7 +172,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               <button type="button" onClick={() => setHasAttorney(!hasAttorney)}
                 className="w-14 h-7 rounded-full relative transition-all duration-300 cursor-pointer border-none"
                 style={{
-                  background: hasAttorney ? 'linear-gradient(135deg, #111111, #333333)' : 'rgba(255,255,255,0.12)',
+                  background: hasAttorney ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : 'rgba(255,255,255,0.12)',
                 }}>
                 <div className="absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-lg transition-all duration-300"
                   style={{ left: hasAttorney ? 'calc(100% - 26px)' : '2px' }} />
@@ -272,7 +272,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
             <button type="button" onClick={onGetStarted}
               className="w-full mt-4 py-3.5 text-[14px] font-semibold text-white border-none rounded-xl cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98]"
               style={{
-                background: 'linear-gradient(135deg, #111111, #333333)',
+                background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
                 boxShadow: '0 4px 24px rgba(17,17,17,0.4)',
               }}>
               {es ? 'Obtener tu informe personalizado →' : 'Get your personalized report →'}

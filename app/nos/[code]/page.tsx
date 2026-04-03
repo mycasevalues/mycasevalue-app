@@ -310,7 +310,7 @@ export default async function NOSPage({ params }: PageProps) {
           Use our interactive research tool to explore detailed outcomes, recovery ranges, and timeline data for {nosInfo.label} cases.
         </p>
         <Link href="/" className="inline-block px-10 py-4 rounded-xl font-semibold text-lg text-white transition hover:scale-[1.02]"
-          style={{ background: 'linear-gradient(135deg, #111111, #333333)', boxShadow: '0 4px 24px rgba(17,17,17,0.3)' }}>
+          style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', boxShadow: '0 4px 24px rgba(17,17,17,0.3)' }}>
           Start Your Research — Free
         </Link>
       </section>

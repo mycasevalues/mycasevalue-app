@@ -124,7 +124,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
               <button type="button"
                 onClick={onUpgrade}
                 className="px-6 py-2.5 rounded-lg font-semibold text-[13px] text-white transition-all hover:scale-[1.02]"
-                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
               >
                 {t.upgrade}
               </button>
@@ -251,7 +251,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
                       className="h-full rounded-full transition-all duration-500"
                       style={{
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, #111111, #333333)',
+                        background: 'linear-gradient(90deg, #8B5CF6, #7C3AED)',
                       }}
                     />
                   </div>

@@ -94,7 +94,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
           <button type="button"
             onClick={onUpgrade}
             className="px-5 py-2 rounded-lg font-semibold text-[12px] text-white transition-all hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+            style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
           >
             {t.upgrade}
           </button>
@@ -124,7 +124,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
         />
         <button type="button"
           className="px-4 py-2.5 rounded-lg font-semibold text-[12px] text-white"
-          style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+          style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
         >
           {t.search}
         </button>

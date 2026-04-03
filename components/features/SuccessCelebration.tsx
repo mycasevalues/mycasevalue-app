@@ -48,7 +48,7 @@ export function SuccessCelebration({}: SuccessCelebrationProps) {
             width: s.size,
             height: s.size,
             borderRadius: '50%',
-            background: `radial-gradient(circle, #333333, #111111)`,
+            background: `radial-gradient(circle, #7C3AED, #8B5CF6)`,
             boxShadow: `0 0 ${s.size * 2}px #11111188`,
             opacity: s.opacity,
             animation: `sparkleRise ${s.duration}ms ${s.delay}ms ease-out forwards`,

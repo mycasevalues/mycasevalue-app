@@ -80,7 +80,7 @@ export function RiskAssessmentQuiz({
             <button type="button"
               onClick={onStartAssessment}
               className="w-full px-6 py-3 text-sm font-semibold text-white rounded-xl cursor-pointer mb-2"
-              style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+              style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
             >
               {lang === 'es' ? 'Obtener informe completo' : 'Get Full Report'}
             </button>
@@ -115,7 +115,7 @@ export function RiskAssessmentQuiz({
               className="h-full rounded-full transition-all duration-300"
               style={{
                 width: `${((step + 1) / questions.length) * 100}%`,
-                background: 'linear-gradient(135deg, #111111, #333333)',
+                background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
               }}
               role="progressbar"
               aria-valuenow={step + 1}
@@ -139,7 +139,7 @@ export function RiskAssessmentQuiz({
           <button type="button"
             onClick={() => handleAnswer(true)}
             className="flex-1 px-4 py-3 font-semibold rounded-xl cursor-pointer text-white transition-all hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+            style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
           >
             {lang === 'es' ? 'Sí' : 'Yes'}
           </button>

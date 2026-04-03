@@ -143,7 +143,7 @@ export default function DataPreviewSection({ lang }: DataPreviewSectionProps) {
                     <div className="w-full h-3 bg-[#E5E0D8] rounded-full overflow-hidden">
                       <div style={{
                         width: `${item.rate}%`, height: '100%', borderRadius: '9999px',
-                        background: item.rate > 50 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : item.rate > 40 ? 'linear-gradient(90deg, #111111, #333333)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
+                        background: item.rate > 50 ? 'linear-gradient(90deg, #0D9488, #14B8A6)' : item.rate > 40 ? 'linear-gradient(90deg, #8B5CF6, #7C3AED)' : 'linear-gradient(90deg, #E87461, #F59E8C)',
                         transition: 'width 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
                         boxShadow: highlightedBar === idx ? '0 0 12px rgba(17,17,17,0.4)' : 'none',
                       }} />

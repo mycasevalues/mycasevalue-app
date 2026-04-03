@@ -70,7 +70,7 @@ export default function ServerHero() {
                 <span
                   style={{
                     display: 'block',
-                    background: 'linear-gradient(135deg, #111111, #8B5CF6)',
+                    background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',

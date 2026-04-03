@@ -44,7 +44,7 @@ export function WhatPeopleDid({ lang = 'en' }: WhatPeopleDidProps) {
               className="h-full rounded-full"
               style={{
                 width: `${step.pct}%`,
-                background: 'linear-gradient(135deg, #111111, #333333)',
+                background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
               }}
               role="progressbar"
               aria-valuenow={step.pct}

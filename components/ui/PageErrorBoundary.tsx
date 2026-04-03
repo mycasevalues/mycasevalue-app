@@ -50,7 +50,7 @@ export class PageErrorBoundary extends React.Component<Props, State> {
                 onClick={() => this.setState({ hasError: false })}
                 className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all hover:shadow-lg"
                 style={{
-                  background: 'linear-gradient(135deg, #111111, #333333)',
+                  background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
                   boxShadow: '0 4px 14px rgba(64, 64, 242, 0.22)',
                 }}
               >

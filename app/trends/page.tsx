@@ -239,7 +239,7 @@ export default function TrendsPage() {
                       className="h-full rounded-full"
                       style={{
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, #111111, #333333)',
+                        background: 'linear-gradient(90deg, #8B5CF6, #7C3AED)',
                       }}
                     />
                   </div>

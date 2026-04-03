@@ -102,7 +102,7 @@ function SuccessCelebration() {
             width: s.size,
             height: s.size,
             borderRadius: '50%',
-            background: `radial-gradient(circle, #333333, #111111)`,
+            background: `radial-gradient(circle, #7C3AED, #8B5CF6)`,
             boxShadow: `0 0 ${s.size * 2}px #11111188`,
             opacity: s.opacity,
             animation: `sparkleRise ${s.duration}ms ${s.delay}ms ease-out forwards`,
@@ -243,7 +243,7 @@ export function Shell({
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="fixed bottom-6 right-6 w-10 h-10 rounded-full flex items-center justify-center z-[var(--z-dropdown)] cursor-pointer no-print transition-all"
             style={{
-              background: 'linear-gradient(135deg, #111111, #333333)',
+              background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
               boxShadow: '0 4px 16px rgba(17,17,17,.3)',
             }}
             aria-label="Back to top"
@@ -290,7 +290,7 @@ export function Shell({
               </button>
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 mx-auto"
-                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
               >
                 <svg
                   width="24"
@@ -325,7 +325,7 @@ export function Shell({
                   buy('single');
                 }}
                 className="w-full py-3.5 text-[15px] font-semibold text-white border-none rounded-xl cursor-pointer"
-                style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
               >
                 {lang === 'es' ? 'Informe Premium — $5.99' : 'Premium Report — $5.99'}
               </button>
@@ -488,7 +488,7 @@ export function Shell({
                     setShowCookieConsent(false);
                   }}
                   className="px-4 py-2 text-[12px] font-semibold text-white rounded-lg cursor-pointer border-none"
-                  style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+                  style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
                 >
                   {lang === 'es' ? 'Aceptar todo' : 'Accept all'}
                 </button>

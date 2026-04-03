@@ -247,7 +247,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
               <button type="button"
                 onClick={() => setIsOpen(false)}
                 className="w-full py-3 rounded-xl text-[13px] font-bold transition-all hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #111111, #333333)', color: '#fff' }}
+                style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', color: '#fff' }}
               >
                 {t.getReport}
               </button>

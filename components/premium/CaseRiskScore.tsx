@@ -135,7 +135,7 @@ export default function CaseRiskScore({
           <button type="button"
             onClick={onUpgrade}
             className="px-5 py-2 rounded-lg font-semibold text-[12px] text-white transition-all hover:scale-[1.02]"
-            style={{ background: 'linear-gradient(135deg, #111111, #333333)' }}
+            style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
           >
             {t.upgrade}
           </button>

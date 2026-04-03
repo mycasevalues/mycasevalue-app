@@ -32,7 +32,7 @@ export default function FinalCtaSection({ lang, onGetStarted }: FinalCtaSectionP
       <div
         className="absolute top-0 right-0 w-96 h-96 opacity-10"
         style={{
-          background: 'radial-gradient(circle, #111111, transparent)',
+          background: 'radial-gradient(circle, rgba(139,92,246,0.3), transparent)',
           filter: 'blur(80px)',
           pointerEvents: 'none',
         }}

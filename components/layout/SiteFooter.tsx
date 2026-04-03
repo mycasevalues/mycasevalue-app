@@ -12,7 +12,7 @@ export default function SiteFooter() {
     <footer
       className="site-footer"
       style={{
-        background: 'var(--accent-primary)',
+        background: '#111111',
         borderTop: '1px solid rgba(255,255,255,0.08)',
         padding: '64px 24px 32px',
         color: 'rgba(255,255,255,0.6)',
