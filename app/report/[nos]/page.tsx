@@ -6,6 +6,7 @@ import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { getUserTier } from '../../../lib/access';
 import { getSupabaseAdmin, CaseStats } from '../../../lib/supabase';
+import { getOpinionsByType, getRECAPByType } from '../../../lib/courtlistener';
 import ReportPDFButton from './ReportPDFButton';
 
 export const revalidate = 0;
@@ -158,6 +159,15 @@ export default async function ReportPage({
   const proSeWinRate = dbStats?.pro_se_win_rate ?? real?.ps?.wr ?? null;
   const representedWinRate = dbStats?.represented_win_rate ?? real?.rr?.wr ?? null;
 
+  // ─── CourtListener: opinions + RECAP dockets ──────────────────
+  const [opinions, recapDockets] = await Promise.allSettled([
+    getOpinionsByType(label, 3),
+    getRECAPByType(label, 3),
+  ]);
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  const opinionResults: any[] = opinions.status === 'fulfilled' ? opinions.value : [];
+  const recapResults: any[] = recapDockets.status === 'fulfilled' ? recapDockets.value : [];
+
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-base)' }}>
       {/* Header */}
@@ -184,10 +194,22 @@ export default async function ReportPage({
           </p>
 
           {totalCases && (
-            <p style={{ color: 'var(--fg-muted)', fontSize: 13, fontFamily: 'var(--font-mono)', margin: 0 }}>
+            <p style={{ color: 'var(--fg-muted)', fontSize: 13, fontFamily: 'var(--font-mono)', margin: '0 0 12px' }}>
               {totalCases.toLocaleString()} cases analyzed
             </p>
           )}
+
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--fg-muted)' }}>
+              FJC IDB · Updated quarterly
+            </span>
+            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--fg-muted)' }}>
+              CourtListener · Live
+            </span>
+            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--fg-muted)' }}>
+              RECAP Archive · Live
+            </span>
+          </div>
         </div>
       </div>
 
@@ -407,6 +429,92 @@ export default async function ReportPage({
             }}>
               See Pricing →
             </a>
+          </section>
+        )}
+
+        {/* ═══ Related Court Records (CourtListener + RECAP) ═══ */}
+        {(opinionResults.length > 0 || recapResults.length > 0) && (
+          <section style={{
+            background: 'var(--bg-surface)',
+            border: '1px solid var(--border-default)',
+            borderRadius: 12,
+            padding: 24,
+            marginTop: 16,
+          }}>
+            <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 4, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+              Related Court Records
+            </h2>
+            <p style={{ fontSize: 12, color: 'var(--fg-muted)', marginBottom: 20, fontFamily: 'var(--font-body)' }}>
+              Live from CourtListener · RECAP Archive · Public federal court records
+            </p>
+
+            {opinionResults.length > 0 && (
+              <>
+                <p style={{ fontSize: 12, fontWeight: 600, color: 'var(--fg-secondary)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'var(--font-body)' }}>
+                  Federal Opinions
+                </p>
+                {opinionResults.map((op: any, i: number) => (
+                  <div key={i} style={{
+                    padding: '12px 0',
+                    borderBottom: i < opinionResults.length - 1 ? '1px solid var(--border-default)' : 'none',
+                  }}>
+                    <a
+                      href={op.absolute_url ? `https://www.courtlistener.com${op.absolute_url}` : '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ fontSize: 14, fontWeight: 500, color: 'var(--accent-primary)', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
+                    >
+                      {op.caseName || 'Federal Court Opinion'}
+                    </a>
+                    <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
+                      {op.court || ''}{op.dateFiled ? ` · ${new Date(op.dateFiled).getFullYear()}` : ''}
+                      {op.status ? ` · ${op.status}` : ''}
+                    </p>
+                  </div>
+                ))}
+              </>
+            )}
+
+            {recapResults.length > 0 && (
+              <>
+                <p style={{
+                  fontSize: 12,
+                  fontWeight: 600,
+                  color: 'var(--fg-secondary)',
+                  marginBottom: 12,
+                  marginTop: opinionResults.length > 0 ? 20 : 0,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  fontFamily: 'var(--font-body)',
+                }}>
+                  RECAP Dockets
+                </p>
+                {recapResults.map((doc: any, i: number) => (
+                  <div key={i} style={{
+                    padding: '12px 0',
+                    borderBottom: i < recapResults.length - 1 ? '1px solid var(--border-default)' : 'none',
+                  }}>
+                    <a
+                      href={doc.absolute_url ? `https://www.courtlistener.com${doc.absolute_url}` : '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ fontSize: 14, fontWeight: 500, color: 'var(--accent-primary)', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
+                    >
+                      {doc.caseName || doc.docketNumber || 'Federal Court Docket'}
+                    </a>
+                    <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
+                      {doc.court || ''}{doc.dateFiled ? ` · ${new Date(doc.dateFiled).getFullYear()}` : ''}
+                      {doc.docketNumber ? ` · ${doc.docketNumber}` : ''}
+                    </p>
+                  </div>
+                ))}
+              </>
+            )}
+
+            <p style={{ fontSize: 11, color: 'var(--fg-muted)', marginTop: 16, fontStyle: 'italic', fontFamily: 'var(--font-body)' }}>
+              Court records provided by CourtListener.com and the RECAP Archive under open access principles.
+              All documents are public federal court records.
+            </p>
           </section>
         )}
 

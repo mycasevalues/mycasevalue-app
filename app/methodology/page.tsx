@@ -51,7 +51,7 @@ export default function MethodologyPage() {
                 },
                 {
                   name: 'CourtListener (Free Law Project)',
-                  description: 'CourtListener aggregates judicial opinions, oral arguments, and PACER data into an open, searchable database covering 471 jurisdictions with 10M+ opinions. We use opinion data for supplementary analysis.',
+                  description: 'We query the CourtListener API and RECAP Archive in real time to surface related federal court opinions and docket records alongside our aggregate outcome data. CourtListener covers 471 jurisdictions with 10M+ opinions and provides free access to PACER documents through the RECAP Archive.',
                   badge: 'Supplementary',
                   color: '#0D9488',
                   url: 'https://www.courtlistener.com/',
