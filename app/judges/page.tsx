@@ -389,27 +389,7 @@ export default function JudgesPage() {
         </section>
       </div>
 
-      {/* Footer Disclaimer */}
-      <div
-        style={{
-          borderTop: '1px solid var(--border-default)',
-          padding: '24px',
-          textAlign: 'center',
-        }}
-      >
-        <p
-          style={{
-            fontSize: '11px',
-            maxWidth: '640px',
-            margin: '0 auto',
-            color: 'var(--fg-muted)',
-            fontFamily: 'var(--font-body)',
-            lineHeight: '1.6',
-          }}
-        >
-          Judge data is sourced from official federal court records and judicial opinions. Judge Intelligence is designed for research and case strategy purposes only. This information is not legal advice and should not be relied upon as a substitute for professional legal counsel. © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
-        </p>
-      </div>
+
     </div>
   );
 }

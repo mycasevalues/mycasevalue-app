@@ -1223,22 +1223,7 @@ export default function SampleReportPage() {
             </div>
           </section>
 
-          {/* Footer Disclaimer */}
-          <footer
-            style={{
-              borderTop: '1px solid var(--border-default)',
-              paddingTop: '32px',
-              marginTop: '32px',
-              fontSize: '12px',
-              color: 'var(--fg-muted)',
-              lineHeight: 1.6,
-            }}
-          >
-            <p style={{ margin: 0 }}>
-              MyCaseValue provides aggregate data from public federal court records for
-              informational purposes only. This is not legal advice.
-            </p>
-          </footer>
+
         </main>
       </div>
       {/* Hover styles (CSS-only, no event handlers needed in Server Component) */}

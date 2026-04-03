@@ -854,30 +854,7 @@ export default function PricingPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div
-        style={{
-          borderTop: '1px solid var(--border-default)',
-          background: 'var(--bg-surface)',
-          padding: '32px 0',
-          textAlign: 'center',
-        }}
-      >
-        <p
-          style={{
-            fontSize: '12px',
-            maxWidth: '768px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            paddingLeft: '24px',
-            paddingRight: '24px',
-            color: 'var(--fg-muted)',
-            fontFamily: 'var(--font-body)',
-          }}
-        >
-          For informational purposes only. Not legal advice. No attorney-client relationship. © {new Date().getFullYear()} MyCaseValue. All rights reserved.
-        </p>
-      </div>
+
     </div>
   );
 }

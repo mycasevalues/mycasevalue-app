@@ -313,13 +313,7 @@ export default function CalculatorPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="border-t py-6 text-center mt-12" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)', fontFamily: 'var(--font-body)' }}>
-          This calculator uses aggregate federal court data for educational purposes only.
-          This is not legal advice. © {new Date().getFullYear()} MyCaseValue LLC.
-        </p>
-      </div>
+
     </div>
   );
 }

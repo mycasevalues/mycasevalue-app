@@ -70,13 +70,7 @@ export default function DistrictsPage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-subtle)' }}>
-          MyCaseValue provides aggregate historical data from public federal court records for informational and research purposes only.
-          We are not a law firm. This is not legal advice. © {new Date().getFullYear()} MyCaseValue LLC.
-        </p>
-      </div>
+
     </div>
   );
 }
