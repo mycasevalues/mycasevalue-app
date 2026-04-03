@@ -422,13 +422,6 @@ export default function ServerHero() {
         </div>
       </div>
 
-      {/* Noscript fallback */}
-      <noscript>
-        <p style={{ color: 'var(--fg-muted)', textAlign: 'center', padding: '20px' }}>
-          Please enable JavaScript to use MyCaseValue interactive features.
-        </p>
-      </noscript>
-
       {/* Responsive grid overrides */}
       <style dangerouslySetInnerHTML={{ __html: `
         @media (min-width: 768px) {
