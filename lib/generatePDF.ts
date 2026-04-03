@@ -10,88 +10,87 @@ export interface ReportPDFData {
   settlementMedian: number;
   timeline: number;
   tier: string;
+  totalCases?: number;
+  settleRate?: number;
+  dismissRate?: number;
 }
 
 export async function generateReportPDF(data: ReportPDFData) {
   const { jsPDF } = await import('jspdf');
-  const doc = new jsPDF();
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+  const w = doc.internal.pageSize.getWidth();
 
-  // ─── Header ──────────────────────────────────────────
-  doc.setFillColor(17, 17, 17);
-  doc.rect(0, 0, 210, 40, 'F');
-
+  // ─── Header bar ──────────────────────────────────────
+  doc.setFillColor(79, 70, 229);
+  doc.rect(0, 0, w, 25, 'F');
   doc.setTextColor(255, 255, 255);
-  doc.setFontSize(22);
+  doc.setFontSize(14);
   doc.setFont('helvetica', 'bold');
-  doc.text('MyCaseValue', 20, 18);
-
-  doc.setFontSize(11);
-  doc.setFont('helvetica', 'normal');
-  doc.text('Federal Court Outcome Report', 20, 28);
-
+  doc.text('MyCaseValue', 15, 10);
   doc.setFontSize(9);
-  doc.text(`Generated ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`, 20, 35);
+  doc.setFont('helvetica', 'normal');
+  doc.text('Federal Court Outcome Report', 15, 17);
+  doc.text(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }), w - 15, 17, { align: 'right' });
 
-  // ─── Case Info ───────────────────────────────────────
-  doc.setTextColor(17, 17, 17);
-  doc.setFontSize(16);
+  // ─── Title ───────────────────────────────────────────
+  doc.setTextColor(20, 20, 20);
+  doc.setFontSize(18);
   doc.setFont('helvetica', 'bold');
-  doc.text(data.category, 20, 56);
-
+  doc.text(`${data.category} Cases`, 15, 40);
   doc.setFontSize(11);
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(100, 100, 100);
-  doc.text(`District: ${data.district}`, 20, 64);
-  doc.text(`Tier: ${data.tier.charAt(0).toUpperCase() + data.tier.slice(1)}`, 20, 71);
+  doc.text(`${data.district} · Based on ${data.totalCases ? data.totalCases.toLocaleString() : 'thousands of'} federal cases`, 15, 48);
 
-  // ─── Divider ─────────────────────────────────────────
-  doc.setDrawColor(200, 200, 200);
-  doc.line(20, 78, 190, 78);
-
-  // ─── Key Statistics ──────────────────────────────────
-  doc.setTextColor(17, 17, 17);
-  doc.setFontSize(14);
-  doc.setFont('helvetica', 'bold');
-  doc.text('Key Statistics', 20, 90);
-
-  doc.setFontSize(11);
-  doc.setFont('helvetica', 'normal');
-
+  // ─── Stats boxes ─────────────────────────────────────
   const stats = [
-    { label: 'Plaintiff Win Rate', value: `${data.winRate}%` },
-    { label: 'Median Settlement', value: data.settlementMedian > 0 ? `$${data.settlementMedian.toLocaleString()}K` : 'N/A' },
-    { label: 'Typical Timeline', value: `${data.timeline} months` },
+    { label: 'Plaintiff win rate', value: `${data.winRate}%` },
+    { label: 'Settlement rate', value: data.settleRate !== undefined ? `${data.settleRate}%` : 'N/A' },
+    { label: 'Dismissal rate', value: data.dismissRate !== undefined ? `${data.dismissRate}%` : 'N/A' },
+    { label: 'Median timeline', value: `${data.timeline} mo` },
   ];
 
-  let y = 100;
-  for (const stat of stats) {
-    doc.setFont('helvetica', 'bold');
-    doc.setTextColor(67, 56, 202); // accent color
-    doc.text(stat.value, 20, y);
-    doc.setFont('helvetica', 'normal');
+  doc.setFillColor(248, 249, 250);
+  stats.forEach((s, i) => {
+    const x = 15 + (i % 2) * 90;
+    const y = 60 + Math.floor(i / 2) * 30;
+    doc.rect(x, y, 85, 25, 'F');
+    doc.setFontSize(9);
     doc.setTextColor(100, 100, 100);
-    doc.text(stat.label, 70, y);
-    y += 10;
+    doc.setFont('helvetica', 'normal');
+    doc.text(s.label, x + 5, y + 9);
+    doc.setFontSize(16);
+    doc.setTextColor(79, 70, 229);
+    doc.setFont('helvetica', 'bold');
+    doc.text(s.value, x + 5, y + 20);
+  });
+
+  // ─── Settlement line ─────────────────────────────────
+  if (data.settlementMedian > 0) {
+    doc.setTextColor(20, 20, 20);
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Median Settlement', 15, 132);
+    doc.setFontSize(16);
+    doc.setTextColor(79, 70, 229);
+    doc.text(`$${data.settlementMedian.toLocaleString()}K`, 70, 132);
   }
 
   // ─── Disclaimer ──────────────────────────────────────
-  doc.setDrawColor(200, 200, 200);
-  doc.line(20, 260, 190, 260);
-
+  const disclaimer = 'This report contains aggregate historical data from public federal court records (FJC IDB, PACER, CourtListener). Not legal advice. Individual case outcomes vary. Always consult a licensed attorney. \u00A9 2026 MyCaseValue LLC.';
   doc.setFontSize(8);
   doc.setTextColor(150, 150, 150);
   doc.setFont('helvetica', 'normal');
-  doc.text(
-    'Not legal advice. MyCaseValue provides aggregate public federal court data for informational purposes only.',
-    20,
-    268,
-    { maxWidth: 170 }
-  );
-  doc.text(
-    `© ${new Date().getFullYear()} MyCaseValue LLC. All rights reserved.`,
-    20,
-    276
-  );
+  const lines = doc.splitTextToSize(disclaimer, w - 30);
+  doc.text(lines, 15, 270);
+
+  // ─── Footer line ─────────────────────────────────────
+  doc.setDrawColor(79, 70, 229);
+  doc.line(15, 265, w - 15, 265);
+  doc.setTextColor(79, 70, 229);
+  doc.setFontSize(9);
+  doc.setFont('helvetica', 'normal');
+  doc.text('mycasevalues.com', w / 2, 268, { align: 'center' });
 
   return doc;
 }

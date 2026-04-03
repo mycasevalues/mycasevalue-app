@@ -9,6 +9,9 @@ interface ReportPDFButtonProps {
   settlementMedian: number;
   timeline: number;
   tier: string;
+  totalCases?: number;
+  settleRate?: number;
+  dismissRate?: number;
 }
 
 export default function ReportPDFButton(props: ReportPDFButtonProps) {

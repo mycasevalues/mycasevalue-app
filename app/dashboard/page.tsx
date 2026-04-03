@@ -122,6 +122,23 @@ export default async function DashboardPage() {
   const tierKey = userPlan === 'single_report' ? 'single' : userPlan;
   const features = TIER_INCLUDES[tierKey] || TIER_INCLUDES.free;
 
+  // ── Fetch recent saved reports ──────────────────────────────────
+  let recentReports: { category: string; district: string; viewed_at: string }[] = [];
+  if (userEmail && isPaid) {
+    try {
+      const adminDb = getSupabaseAdmin();
+      const { data } = await adminDb
+        .from('saved_reports')
+        .select('category, district, viewed_at')
+        .eq('user_email', userEmail.toLowerCase())
+        .order('viewed_at', { ascending: false })
+        .limit(10);
+      if (data) recentReports = data;
+    } catch {
+      // Non-critical
+    }
+  }
+
   return (
     <div
       style={{
@@ -287,28 +304,29 @@ export default async function DashboardPage() {
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: 'var(--fg-primary)', margin: '0 0 24px' }}>
               Recent Activity
             </h2>
-            <div style={{ textAlign: 'center', padding: '40px 0' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" strokeWidth="1.5" style={{ marginBottom: '16px' }}>
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
-              <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--fg-primary)', margin: '0 0 8px' }}>
-                Your recent lookups will appear here as you research cases
-              </p>
-              <Link href="/cases" style={{
-                display: 'inline-block',
-                marginTop: '16px',
-                padding: '10px 20px',
-                background: 'var(--fg-primary)',
-                color: 'var(--bg-surface)',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                fontSize: '14px',
-                fontWeight: 600,
-              }}>
-                Browse Cases →
-              </Link>
-            </div>
+            {recentReports.length > 0 ? (
+              <div>
+                {recentReports.map((r, i) => (
+                  <div key={i} style={{ padding: '10px 0', borderBottom: i < recentReports.length - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--fg-primary)' }}>{r.category} · {r.district}</p>
+                      <p style={{ fontSize: '12px', color: 'var(--fg-muted)', margin: 0 }}>{new Date(r.viewed_at).toLocaleDateString()}</p>
+                    </div>
+                    <Link href={`/report/${r.category}`} style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none' }}>View →</Link>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" strokeWidth="1.5" style={{ marginBottom: '16px' }}>
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.35-4.35" />
+                </svg>
+                <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--fg-primary)', margin: '0 0 8px' }}>
+                  No reports yet. <Link href="/search" style={{ color: 'var(--accent-primary)' }}>Start researching →</Link>
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </main>

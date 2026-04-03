@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { getUserTier } from '../../../lib/access';
 import { getSupabaseAdmin, CaseStats } from '../../../lib/supabase';
 import { getOpinionsByType, getRECAPByType } from '../../../lib/courtlistener';
+import { checkFreeRateLimit } from '../../../lib/rateLimit';
 import ReportPDFButton from './ReportPDFButton';
 import ShareButtons from '../../../components/ui/ShareButtons';
 
@@ -122,6 +123,7 @@ export default async function ReportPage({
 
   // ─── Tier Check ────────────────────────────────────────────────
   let tier: 'free' | 'single_report' | 'unlimited' | 'attorney' = 'free';
+  let userEmail: string | null = null;
   try {
     const cookieStore = await cookies();
     const supabase = createServerClient(
@@ -137,6 +139,7 @@ export default async function ReportPage({
     );
     const { data: { user } } = await supabase.auth.getUser();
     if (user?.email) {
+      userEmail = user.email;
       tier = await getUserTier(user.email);
     }
   } catch {
@@ -144,6 +147,27 @@ export default async function ReportPage({
   }
 
   const isPremium = tier === 'single_report' || tier === 'unlimited' || tier === 'attorney';
+
+  // ─── Rate Limit for Free Users (3/day) ────────────────────────
+  if (!isPremium) {
+    try {
+      const headerStore = await headers();
+      const ip = headerStore.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous';
+      const { allowed } = await checkFreeRateLimit(ip);
+      if (!allowed) {
+        return (
+          <main style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
+            <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: 'var(--fg-primary)' }}>Daily limit reached</h1>
+            <p style={{ color: 'var(--fg-muted)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
+            <a href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
+            <p style={{ fontSize: '12px', color: 'var(--fg-muted)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
+          </main>
+        );
+      }
+    } catch {
+      // Rate limit check failed — allow access
+    }
+  }
 
   // Merge DB stats with static fallback
   const { outcome, real } = data || { outcome: OUTCOME_DATA._default, real: null };
@@ -160,6 +184,20 @@ export default async function ReportPage({
   const dismissRate = outcome.dismiss ?? Math.max(0, 100 - (winRate + settlementRate));
   const proSeWinRate = dbStats?.pro_se_win_rate ?? real?.ps?.wr ?? null;
   const representedWinRate = dbStats?.represented_win_rate ?? real?.rr?.wr ?? null;
+
+  // ─── Save report view for premium users ────────────────────────
+  if (isPremium && userEmail) {
+    try {
+      const adminDb = getSupabaseAdmin();
+      await adminDb.from('saved_reports').insert({
+        user_email: userEmail.toLowerCase(),
+        category: nos,
+        district: district || 'national',
+      });
+    } catch {
+      // Non-critical — don't block page render
+    }
+  }
 
   // ─── CourtListener: opinions + RECAP dockets ──────────────────
   const [opinions, recapDockets] = await Promise.allSettled([
@@ -247,6 +285,9 @@ export default async function ReportPage({
               <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Dismissal rate</p>
             </div>
           </div>
+          <p style={{ fontSize: '12px', color: 'var(--fg-muted)', marginTop: '12px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
+            Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases
+          </p>
         </section>
 
         {/* ═══ FREE: Case Timeline ═══ */}
@@ -320,6 +361,10 @@ export default async function ReportPage({
                     <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: 0 }}>Favorable</p>
                   </div>
                 </div>
+                <p style={{ fontSize: '12px', color: 'var(--fg-muted)', marginTop: '8px', fontFamily: 'var(--font-body)' }}>
+                  95% confidence interval: ±{Math.round((settlementRate || 50) * 0.08)}% based on sample size of {totalCases?.toLocaleString() || 'N/A'} cases.
+                  {(totalCases || 0) < 500 && ' Limited sample — interpret with caution.'}
+                </p>
               </section>
             )}
 
@@ -371,6 +416,9 @@ export default async function ReportPage({
                 settlementMedian={settlementRange?.md || 0}
                 timeline={medianDuration}
                 tier={tier}
+                totalCases={totalCases || undefined}
+                settleRate={settlementRate}
+                dismissRate={dismissRate}
               />
             </div>
           </>
