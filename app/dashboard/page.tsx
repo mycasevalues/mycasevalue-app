@@ -261,7 +261,7 @@ export default async function DashboardPage() {
                 Upgrade to unlock more
               </h3>
               <p style={{ fontSize: '14px', color: 'var(--fg-muted)', margin: '0 0 20px', lineHeight: 1.6 }}>
-                Get settlement ranges, judge analytics, representation impact data, and PDF export starting at $5.99.
+                Upgrade to unlock settlement ranges, judge analytics, and PDF export.
               </p>
               <Link href="/pricing" style={{
                 display: 'inline-block',
@@ -290,7 +290,7 @@ export default async function DashboardPage() {
                 <path d="m21 21-4.35-4.35" />
               </svg>
               <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--fg-primary)', margin: '0 0 8px' }}>
-                {isPaid ? 'Your recent lookups will appear here as you research cases' : 'Start researching to see your activity here'}
+                Your recent lookups will appear here as you research cases
               </p>
               <Link href="/cases" style={{
                 display: 'inline-block',
