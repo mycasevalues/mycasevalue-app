@@ -295,7 +295,7 @@ export default function HowItWorksPage() {
           <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
             In three simple steps, discover what happened in cases like yours.
           </p>
-          <a href="/odds"
+          <a href="/search"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
             style={{ background: '#111111', color: '#FFFFFF' }}>
             Check My Case Type

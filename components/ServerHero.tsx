@@ -114,7 +114,7 @@ export default function ServerHero() {
               {/* CTA */}
               <div>
                 <a
-                  href="/cases"
+                  href="/search"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',

@@ -203,7 +203,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
             Use the insights from this article to get a personalized analysis of outcomes in cases like yours.
           </p>
           <a
-            href="/odds"
+            href="/search"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
             style={{ background: '#111111', color: '#FFFFFF' }}
           >

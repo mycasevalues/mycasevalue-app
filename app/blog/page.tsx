@@ -162,7 +162,7 @@ export default function BlogPage() {
             Use the data you just learned to get a personalized analysis of real outcomes in cases like yours.
           </p>
           <a
-            href="/odds"
+            href="/search"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
             style={{ background: '#111111', color: '#FFFFFF' }}
           >

@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
+  { href: '/search', label: 'Search' },
   { href: '/districts', label: 'Districts' },
   { href: '/judges', label: 'Judges' },
   { href: '/calculator', label: 'Calculator' },
