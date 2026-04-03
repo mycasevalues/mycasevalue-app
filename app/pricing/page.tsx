@@ -480,7 +480,6 @@ export default function PricingPage() {
     <div style={{ background: 'var(--bg-base)' }}>
       <style dangerouslySetInnerHTML={{ __html: `
         .pricing-cta-link:hover { opacity: 0.9 !important; transform: translateY(-2px); }
-        .pricing-back-link:hover { opacity: 0.7 !important; }
         .pricing-enterprise-link:hover { opacity: 0.9 !important; }
       `}} />
       <script
@@ -507,35 +506,6 @@ export default function PricingPage() {
             textAlign: 'center',
           }}
         >
-          <Link
-            href="/"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontSize: '14px',
-              fontWeight: '600',
-              marginBottom: '32px',
-              transition: 'opacity 200ms ease',
-              color: 'var(--fg-primary)',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
-            }}
-            className="pricing-back-link"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Back
-          </Link>
-
           <p
             style={{
               fontSize: '11px',
