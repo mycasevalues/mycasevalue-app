@@ -1,15 +1,7 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Pricing | MyCaseValue',
-  description: 'Simple, transparent pricing for federal court outcome data. Free plan, single report purchase, unlimited reports, or attorney mode.',
-  openGraph: {
-    title: 'Pricing | MyCaseValue',
-    description: 'Simple, transparent pricing for federal court outcome data.',
-    type: 'website',
-  },
-};
+import { useState } from 'react';
+import Link from 'next/link';
 
 const getJsonLd = () => ({
   '@context': 'https://schema.org',
@@ -66,6 +58,7 @@ interface PlanCard {
   ctaSubtext: string;
   badge?: string;
   featured?: boolean;
+  stripePlan?: 'single' | 'unlimited' | 'attorney';
 }
 
 const PLANS: PlanCard[] = [
@@ -100,6 +93,7 @@ const PLANS: PlanCard[] = [
     period: 'one-time',
     description: 'Deep dive into a single case with full settlement ranges and judge data.',
     sectionLabel: 'Includes:',
+    stripePlan: 'single',
     features: [
       { text: 'One full case outcome report (any case type + district)', included: true },
       { text: 'Full settlement range — 10th through 90th percentile', included: true },
@@ -128,6 +122,7 @@ const PLANS: PlanCard[] = [
     sectionLabel: 'Everything in Single Report, plus:',
     badge: 'MOST POPULAR',
     featured: true,
+    stripePlan: 'unlimited',
     features: [
       { text: 'Unlimited case type + district lookups', included: true },
       { text: 'All 84 case types · all 94 districts', included: true },
@@ -157,6 +152,7 @@ const PLANS: PlanCard[] = [
     period: '/mo',
     description: 'Advanced tools for law firms: AI predictions, bulk analysis, API access, and team collaboration.',
     sectionLabel: 'Everything in Unlimited Reports, plus:',
+    stripePlan: 'attorney',
     features: [
       { text: 'Advanced judge intelligence (motion rates, bias trends, behavioral patterns)', included: true },
       { text: 'AI case outcome predictor', included: true },
@@ -183,8 +179,18 @@ const PLANS: PlanCard[] = [
   },
 ];
 
-function PricingCard({ plan }: { plan: PlanCard }) {
+function PricingCard({
+  plan,
+  loadingPlan,
+  onCheckout,
+}: {
+  plan: PlanCard;
+  loadingPlan: string | null;
+  onCheckout: (stripePlan: 'single' | 'unlimited' | 'attorney') => void;
+}) {
   const f = plan.featured;
+  const isLoading = loadingPlan === plan.stripePlan;
+  const anyLoading = loadingPlan !== null;
 
   return (
     <div
@@ -290,30 +296,58 @@ function PricingCard({ plan }: { plan: PlanCard }) {
           {plan.description}
         </p>
 
-        <Link
-          href="/sign-up"
-          style={{
-            width: '100%',
-            padding: '12px 16px',
-            fontSize: '14px',
-            fontWeight: '600',
-            borderRadius: '9999px',
-            border: 'none',
-            background: f ? 'var(--accent-primary)' : 'var(--accent-primary)',
-            color: 'var(--fg-inverse)',
-            textDecoration: 'none',
-            textAlign: 'center',
-            fontFamily: 'var(--font-body)',
-            transition: 'all 200ms ease',
-            display: 'inline-block',
-            marginBottom: '8px',
-            cursor: 'pointer',
-            opacity: 1,
-          }}
-          className="pricing-cta-link"
-        >
-          {plan.ctaText}
-        </Link>
+        {/* CTA Button */}
+        {plan.stripePlan ? (
+          <button
+            onClick={() => onCheckout(plan.stripePlan!)}
+            disabled={anyLoading}
+            style={{
+              width: '100%',
+              padding: '12px 16px',
+              fontSize: '14px',
+              fontWeight: '600',
+              borderRadius: '9999px',
+              border: 'none',
+              background: 'var(--accent-primary)',
+              color: 'var(--fg-inverse)',
+              textAlign: 'center',
+              fontFamily: 'var(--font-body)',
+              transition: 'all 200ms ease',
+              display: 'inline-block',
+              marginBottom: '8px',
+              cursor: anyLoading ? 'not-allowed' : 'pointer',
+              opacity: anyLoading && !isLoading ? 0.5 : 1,
+            }}
+            className="pricing-cta-link"
+          >
+            {isLoading ? 'Redirecting...' : plan.ctaText}
+          </button>
+        ) : (
+          <Link
+            href="/cases"
+            style={{
+              width: '100%',
+              padding: '12px 16px',
+              fontSize: '14px',
+              fontWeight: '600',
+              borderRadius: '9999px',
+              border: 'none',
+              background: 'var(--accent-primary)',
+              color: 'var(--fg-inverse)',
+              textDecoration: 'none',
+              textAlign: 'center',
+              fontFamily: 'var(--font-body)',
+              transition: 'all 200ms ease',
+              display: 'inline-block',
+              marginBottom: '8px',
+              cursor: 'pointer',
+              opacity: 1,
+            }}
+            className="pricing-cta-link"
+          >
+            {plan.ctaText}
+          </Link>
+        )}
 
         <p
           style={{
@@ -414,6 +448,34 @@ function PricingCard({ plan }: { plan: PlanCard }) {
 }
 
 export default function PricingPage() {
+  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const [error, setError] = useState('');
+
+  async function handleCheckout(plan: 'single' | 'unlimited' | 'attorney') {
+    setLoadingPlan(plan);
+    setError('');
+
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan }),
+      });
+
+      const data = await res.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setError(data.error || 'Something went wrong. Please try again.');
+        setLoadingPlan(null);
+      }
+    } catch {
+      setError('Unable to connect to payment system. Please try again.');
+      setLoadingPlan(null);
+    }
+  }
+
   return (
     <div style={{ background: 'var(--bg-base)' }}>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -527,6 +589,32 @@ export default function PricingPage() {
           paddingTop: '64px',
         }}
       >
+        {/* Error Banner */}
+        {error && (
+          <div
+            style={{
+              maxWidth: '600px',
+              margin: '0 auto 24px',
+              padding: '12px 16px',
+              backgroundColor: '#FEF2F2',
+              border: '1px solid #FECACA',
+              borderRadius: '8px',
+              textAlign: 'center',
+            }}
+          >
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '13px',
+                color: '#DC2626',
+                margin: 0,
+              }}
+            >
+              {error}
+            </p>
+          </div>
+        )}
+
         {/* Pricing Cards Grid */}
         <div
           style={{
@@ -537,7 +625,12 @@ export default function PricingPage() {
           }}
         >
           {PLANS.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} />
+            <PricingCard
+              key={plan.id}
+              plan={plan}
+              loadingPlan={loadingPlan}
+              onCheckout={handleCheckout}
+            />
           ))}
         </div>
 
