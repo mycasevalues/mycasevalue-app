@@ -7,7 +7,6 @@ import PieChart from './ui/PieChart';
 import { CategoryIcon } from './ui/Icons';
 import USMap from './ui/USMap';
 import { Logo } from './ui/Logo';
-import { Navbar } from './navigation/Navbar';
 import { formatPct, formatCount, formatCountCompact, formatDollar, formatMonths } from '../lib/formatters';
 import TrustBar from './sections/TrustBar';
 import DataPreviewSection from './sections/DataPreviewSection';
@@ -230,7 +229,6 @@ function Shell({
         className=""
         role="application"
         aria-label="MyCaseValue"
-        data-mcv-loaded="true"
         style={{
           background: 'var(--bg-base)',
           minHeight: '100vh',
@@ -250,21 +248,6 @@ function Shell({
         {/* Announcement Bar — live case count */}
         <AnnouncementBar lang={lang} />
 
-        {/* Sticky Nav */}
-        <Navbar
-          lang={lang}
-          setLang={setLang}
-          darkMode={darkMode}
-          isPremium={isPremium}
-          savedReportsCount={savedReportsLength}
-          onShowSaved={() => setShowSaved(true)}
-          onReset={reset}
-          onNewReport={reset}
-          newReportLabel={t.new_report}
-          premiumLabel={t.premium}
-          scrolled={navScrolled}
-          scrollProgress={scrollProgress}
-        />
 
         <main id="main-content" className="w-full relative z-10" role="main" style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}>
           {/* UPL Banner */}
@@ -655,13 +638,6 @@ export default function MyCaseValue() {
 
   const isPremium = tier !== 'free';
 
-  // Hide SSR hero once client app mounts
-  useEffect(() => {
-    const ssrHero = document.getElementById('ssr-hero');
-    if (ssrHero) {
-      ssrHero.setAttribute('data-mcv-loaded', 'true');
-    }
-  }, []);
 
   // Restore draft from localStorage on mount
   useEffect(() => {
@@ -1094,7 +1070,6 @@ export default function MyCaseValue() {
     return () => { clearInterval(iv); clearTimeout(t); };
   }, [loading]);
 
-  // Scroll handler moved to Navbar component
 
   // Sync step to URL hash for browser history (back button support)
   const skipHistoryRef = useRef(false);
