@@ -102,8 +102,8 @@ const tiers = [
     subtitle: 'fullAnalysis' as const,
     features: ['winRate', 'settlementRate', 'caseVolume', 'medianTimeline', 'judgeAnalytics', 'stateComparisons', 'fullOutcome', 'pdfExport', 'attorneyImpact'],
     button: 'getReport' as const,
-    popular: true,
-    badge: 'mostPopular' as const,
+    popular: false,
+    badge: null as string | null,
   },
   {
     id: 'unlimited',
@@ -113,8 +113,8 @@ const tiers = [
     subtitle: 'unlimitedAccess' as const,
     features: ['winRate', 'settlementRate', 'caseVolume', 'medianTimeline', 'judgeAnalytics', 'stateComparisons', 'fullOutcome', 'pdfExport', 'attorneyImpact', 'unlimitedReports', 'priorityUpdates', 'caseComparison', 'opposingCounsel', 'savedReports'],
     button: 'goUnlimited' as const,
-    popular: false,
-    badge: 'bestValue' as const,
+    popular: true,
+    badge: 'mostPopular' as const,
   },
   {
     id: 'attorney',
