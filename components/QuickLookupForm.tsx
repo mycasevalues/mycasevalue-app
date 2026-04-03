@@ -1,10 +1,35 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { SITS, STATES } from '../lib/data';
 
+// Build a lookup: option "d" value → SITS category id
+const OPT_TO_CATEGORY: Record<string, string> = {};
+for (const cat of SITS) {
+  for (const opt of cat.opts) {
+    OPT_TO_CATEGORY[opt.d] = cat.id;
+  }
+}
+
 export default function QuickLookupForm() {
+  const router = useRouter();
+  const [caseType, setCaseType] = useState('');
+  const [district, setDistrict] = useState('');
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!caseType) return;
+    const category = OPT_TO_CATEGORY[caseType] || 'work';
+    const params = new URLSearchParams();
+    if (district) params.set('district', district);
+    const qs = params.toString();
+    router.push(`/report/${category}${qs ? `?${qs}` : ''}`);
+  }
+
   return (
     <form
-      method="get"
-      action="/cases"
+      onSubmit={handleSubmit}
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -13,7 +38,8 @@ export default function QuickLookupForm() {
     >
       {/* Case Type Select */}
       <select
-        name="type"
+        value={caseType}
+        onChange={(e) => setCaseType(e.target.value)}
         style={{
           height: '48px',
           padding: '12px 16px',
@@ -34,100 +60,21 @@ export default function QuickLookupForm() {
       >
         <option value="">Select case type</option>
 
-        {/* Workplace & Employment */}
-        <optgroup label="Workplace & Employment">
-          {SITS[0].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Injury */}
-        <optgroup label="Injury">
-          {SITS[1].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Consumer */}
-        <optgroup label="Consumer">
-          {SITS[2].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Civil Rights */}
-        <optgroup label="Civil Rights">
-          {SITS[3].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Money & Business */}
-        <optgroup label="Money & Business">
-          {SITS[4].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Housing & Property */}
-        <optgroup label="Housing & Property">
-          {SITS[5].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Family & Estate */}
-        <optgroup label="Family & Estate">
-          {SITS[6].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Immigration */}
-        <optgroup label="Immigration">
-          {SITS[7].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Bankruptcy & Debt */}
-        <optgroup label="Bankruptcy & Debt">
-          {SITS[8].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
-
-        {/* Criminal & Traffic */}
-        <optgroup label="Criminal & Traffic">
-          {SITS[9].opts.map((opt) => (
-            <option key={opt.d} value={opt.d}>
-              {opt.label}
-            </option>
-          ))}
-        </optgroup>
+        {SITS.map((cat) => (
+          <optgroup key={cat.id} label={cat.label}>
+            {cat.opts.map((opt) => (
+              <option key={opt.d} value={opt.d}>
+                {opt.label}
+              </option>
+            ))}
+          </optgroup>
+        ))}
       </select>
 
       {/* District/State Select */}
       <select
-        name="district"
+        value={district}
+        onChange={(e) => setDistrict(e.target.value)}
         style={{
           height: '48px',
           padding: '12px 16px',
