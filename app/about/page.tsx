@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'About MyCaseValue — Democratizing Federal Court Data',
   description: 'MyCaseValue democratizes federal court outcome data. Explore aggregate results from 5.1M+ cases for informed legal research.',
@@ -231,14 +233,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
-          MyCaseValue provides aggregate historical data from public federal court records for informational and research purposes only.
-          We are not a law firm. This is not legal advice. No attorney-client relationship is created by using this tool.
-          © {new Date().getFullYear()} MyCaseValue LLC.
-        </p>
-      </div>
     </div>
   );
 }
