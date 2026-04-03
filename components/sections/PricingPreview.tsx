@@ -99,8 +99,6 @@ const PLANS: Plan[] = [
     highlight: true,
     badge: 'MOST POPULAR',
     badgeEs: 'MÁS POPULAR',
-    badge: 'ONE-TIME',
-    badgeEs: 'PAGO ÚNICO',
     cta: 'Get unlimited',
     ctaEs: 'Obtener ilimitado',
   },
