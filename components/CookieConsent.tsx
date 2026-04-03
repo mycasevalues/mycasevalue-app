@@ -13,30 +13,27 @@ export default function CookieConsent() {
       .find((row) => row.startsWith('consent_status='));
 
     if (!consentStatus) {
-      setIsVisible(true);
+      // Delay slightly so it doesn't flash on first paint
+      const timer = setTimeout(() => setIsVisible(true), 800);
+      return () => clearTimeout(timer);
     }
   }, []);
 
   const setCookie = (value: string) => {
     const date = new Date();
-    date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000); // 365 days
+    date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
     const expires = `expires=${date.toUTCString()}`;
-    document.cookie = `consent_status=${value}; ${expires}; path=/`;
+    document.cookie = `consent_status=${value}; ${expires}; path=/; SameSite=Lax`;
     setIsVisible(false);
-  };
-
-  const handleAcceptAll = () => {
-    setCookie('accepted');
-  };
-
-  const handleRejectNonEssential = () => {
-    setCookie('rejected');
   };
 
   if (!isVisible) return null;
 
   return (
     <div
+      className="cookie-banner"
+      role="dialog"
+      aria-label="Cookie consent"
       style={{
         position: 'fixed',
         bottom: 0,
@@ -45,11 +42,13 @@ export default function CookieConsent() {
         zIndex: 9999,
         background: 'var(--bg-surface)',
         borderTop: '1px solid var(--border-default)',
-        boxShadow: 'var(--shadow-lg)',
+        boxShadow: '0 -4px 24px rgba(0,0,0,0.08)',
         fontFamily: 'var(--font-body)',
+        animation: 'slideUp 300ms ease-out',
       }}
     >
       <div
+        className="cookie-inner"
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
@@ -57,110 +56,111 @@ export default function CookieConsent() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: '24px',
+          gap: '20px',
         }}
       >
-        <p
-          style={{
-            margin: 0,
-            fontSize: '14px',
-            lineHeight: '1.5',
-            color: 'var(--fg-primary)',
-            flex: 1,
-          }}
-        >
-          We use cookies to improve your experience and analyze site usage.{' '}
-          <Link
-            href="/privacy"
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', flex: 1 }}>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="var(--fg-muted)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            style={{ flexShrink: 0, marginTop: '2px' }}
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          <p
             style={{
-              color: 'var(--accent-secondary)',
-              textDecoration: 'none',
-              fontWeight: '500',
+              margin: 0,
+              fontSize: '14px',
+              lineHeight: '1.5',
+              color: 'var(--fg-primary)',
             }}
           >
-            Learn more
-          </Link>
-        </p>
+            We use cookies for analytics and to improve your experience.{' '}
+            <Link
+              href="/privacy"
+              style={{
+                color: 'var(--accent-primary)',
+                textDecoration: 'underline',
+                textUnderlineOffset: '2px',
+                fontWeight: 500,
+              }}
+            >
+              Privacy policy
+            </Link>
+          </p>
+        </div>
 
         <div
+          className="cookie-buttons"
           style={{
             display: 'flex',
-            gap: '12px',
+            gap: '8px',
             flexShrink: 0,
           }}
         >
           <button
-            onClick={handleRejectNonEssential}
+            onClick={() => setCookie('rejected')}
             style={{
-              minHeight: '44px',
-              paddingLeft: '24px',
-              paddingRight: '24px',
-              paddingTop: '8px',
-              paddingBottom: '8px',
-              borderRadius: '8px',
-              fontWeight: '600',
-              fontSize: '14px',
+              padding: '10px 20px',
+              borderRadius: '10px',
+              fontWeight: 600,
+              fontSize: '13px',
               fontFamily: 'var(--font-body)',
               border: '1px solid var(--border-default)',
               background: 'transparent',
-              color: 'var(--fg-primary)',
+              color: 'var(--fg-muted)',
               cursor: 'pointer',
-              transition: 'all 0.2s ease-in-out',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--bg-hover)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'transparent';
+              transition: 'all 200ms',
+              whiteSpace: 'nowrap',
             }}
           >
-            Reject non-essential
+            Decline
           </button>
 
           <button
-            onClick={handleAcceptAll}
+            onClick={() => setCookie('accepted')}
             style={{
-              minHeight: '44px',
-              paddingLeft: '24px',
-              paddingRight: '24px',
-              paddingTop: '8px',
-              paddingBottom: '8px',
-              borderRadius: '8px',
-              fontWeight: '600',
-              fontSize: '14px',
-              fontFamily: 'var(--font-body)',
+              padding: '10px 20px',
+              borderRadius: '10px',
+              fontWeight: 700,
+              fontSize: '13px',
+              fontFamily: 'Montserrat, system-ui, sans-serif',
               border: 'none',
               background: 'var(--accent-primary)',
-              color: 'var(--fg-inverse)',
+              color: '#FFFFFF',
               cursor: 'pointer',
-              transition: 'all 0.2s ease-in-out',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = '0.9';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = '1';
+              transition: 'all 200ms',
+              whiteSpace: 'nowrap',
             }}
           >
-            Accept all
+            Accept
           </button>
         </div>
       </div>
 
       <style>{`
+        @keyframes slideUp {
+          from { transform: translateY(100%); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
         @media (max-width: 640px) {
-          [data-cookie-consent] {
+          .cookie-inner {
             flex-direction: column !important;
-            align-items: flex-start !important;
+            align-items: stretch !important;
+            gap: 12px !important;
           }
-
-          [data-cookie-consent-buttons] {
-            flex-direction: column !important;
+          .cookie-buttons {
             width: 100%;
           }
-
-          [data-cookie-consent-buttons] button {
-            width: 100%;
+          .cookie-buttons button {
+            flex: 1;
           }
         }
       `}</style>

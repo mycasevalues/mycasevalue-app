@@ -16,86 +16,127 @@ export default function Error({
   return (
     <div
       style={{
-        minHeight: '100vh',
+        minHeight: 'calc(100vh - 160px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#F9F8F6',
-        fontFamily: "'Roboto', system-ui, sans-serif",
-        padding: 24,
+        background: 'var(--bg-base)',
+        fontFamily: 'Roboto, system-ui, sans-serif',
+        padding: '48px 24px',
       }}
     >
       <div
         style={{
-          maxWidth: 440,
+          maxWidth: 480,
           textAlign: 'center',
-          padding: '48px 32px',
         }}
       >
+        {/* Icon */}
         <div
           style={{
-            fontSize: 56,
-            fontWeight: 700,
-            marginBottom: 16,
-            color: '#EF4444',
+            width: 72,
+            height: 72,
+            borderRadius: 18,
+            background: 'rgba(239, 68, 68, 0.08)',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: 24,
           }}
         >
-          Error
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#EF4444" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
         </div>
-        <h2
+
+        {/* Error badge */}
+        <div
           style={{
-            fontSize: 22,
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 6,
+            padding: '4px 14px',
+            borderRadius: 9999,
+            background: 'rgba(239, 68, 68, 0.08)',
+            border: '1px solid rgba(239, 68, 68, 0.15)',
+            marginBottom: 16,
+            fontSize: 12,
             fontWeight: 700,
-            color: '#111827',
-            marginBottom: 8,
+            color: '#EF4444',
+            fontFamily: '"PT Mono", monospace',
+            letterSpacing: '0.05em',
           }}
         >
-          Something Went Wrong
-        </h2>
+          SOMETHING WENT WRONG
+        </div>
+
+        <h1
+          style={{
+            fontFamily: 'Montserrat, system-ui, sans-serif',
+            fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+            fontWeight: 800,
+            color: 'var(--fg-primary)',
+            letterSpacing: '-0.02em',
+            margin: '0 0 12px',
+          }}
+        >
+          Unexpected error
+        </h1>
         <p
           style={{
-            fontSize: 14,
-            color: '#6B7280',
+            fontSize: 15,
+            color: 'var(--fg-muted)',
             lineHeight: 1.6,
-            marginBottom: 12,
+            margin: '0 0 8px',
+            maxWidth: 400,
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         >
-          We encountered an unexpected error.
+          We hit an issue loading this page. This is usually temporary.
         </p>
-        <p
-          style={{
-            fontSize: 13,
-            color: '#9CA3AF',
-            lineHeight: 1.6,
-            marginBottom: 32,
-          }}
-        >
-          Please try again or return to the homepage.
-        </p>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-          <button type="button"
-            onClick={reset}
+        {error.digest && (
+          <p
             style={{
-              padding: '12px 32px',
-              background: 'linear-gradient(135deg, #111111, #333333)',
-              color: 'white',
-              border: 'none',
-              borderRadius: 12,
-              fontSize: 14,
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 200ms',
-              boxShadow: '0 4px 14px rgba(64, 64, 242, 0.22)',
-            }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLButtonElement).style.boxShadow = '0 8px 28px rgba(64, 64, 242, 0.28)';
-              (e.target as HTMLButtonElement).style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLButtonElement).style.boxShadow = '0 4px 14px rgba(64, 64, 242, 0.22)';
-              (e.target as HTMLButtonElement).style.transform = 'translateY(0)';
+              fontFamily: '"PT Mono", monospace',
+              fontSize: 12,
+              color: 'var(--fg-subtle)',
+              margin: '0 0 28px',
             }}
           >
+            Error ID: {error.digest}
+          </p>
+        )}
+        {!error.digest && <div style={{ height: 20 }} />}
+
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+          <button
+            type="button"
+            onClick={reset}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '14px 28px',
+              background: 'var(--accent-primary)',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: 12,
+              fontFamily: 'Montserrat, system-ui, sans-serif',
+              fontSize: 15,
+              fontWeight: 700,
+              cursor: 'pointer',
+              transition: 'all 200ms',
+              boxShadow: 'var(--shadow-sm)',
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M23 4v6h-6" />
+              <path d="M1 20v-6h6" />
+              <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+            </svg>
             Try Again
           </button>
           <a
@@ -103,32 +144,37 @@ export default function Error({
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              padding: '12px 32px',
+              gap: 8,
+              padding: '14px 28px',
               background: 'transparent',
-              color: '#6B7280',
-              border: '1px solid #E5E0D8',
+              color: 'var(--fg-muted)',
+              border: '1px solid var(--border-default)',
               borderRadius: 12,
+              fontFamily: 'Roboto, system-ui, sans-serif',
               fontSize: 14,
               fontWeight: 600,
               textDecoration: 'none',
               transition: 'all 200ms',
               cursor: 'pointer',
             }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLAnchorElement).style.borderColor = '#111111';
-              (e.target as HTMLAnchorElement).style.color = '#111827';
-              (e.target as HTMLAnchorElement).style.background = 'rgba(79, 70, 229, 0.08)';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLAnchorElement).style.borderColor = '#E5E0D8';
-              (e.target as HTMLAnchorElement).style.color = '#6B7280';
-              (e.target as HTMLAnchorElement).style.background = 'transparent';
-            }}
           >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
             Go Home
           </a>
         </div>
+
+        <p
+          style={{
+            fontSize: 12,
+            color: 'var(--fg-subtle)',
+            marginTop: 40,
+          }}
+        >
+          If this keeps happening, please <a href="/contact" style={{ color: 'var(--accent-primary)', textDecoration: 'underline' }}>contact support</a>.
+        </p>
       </div>
     </div>
   );

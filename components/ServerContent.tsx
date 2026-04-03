@@ -5,6 +5,8 @@
  * No 'use client' directive — this is a pure Server Component.
  */
 
+import NewsletterSignup from './ui/NewsletterSignup';
+
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
   { q: 'Where does the data come from?', a: 'All data is sourced from three official public federal court record systems: the Federal Judicial Center Integrated Database (FJCID), PACER (Public Access to Court Electronic Records), and CourtListener. We do not create or estimate any data.' },
@@ -829,6 +831,18 @@ export default function ServerContent() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── NEWSLETTER ─────────────────────────────────────── */}
+      <section
+        style={{
+          background: 'var(--bg-base)',
+          padding: '64px 24px 0',
+        }}
+      >
+        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <NewsletterSignup />
         </div>
       </section>
 

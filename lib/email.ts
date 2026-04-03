@@ -237,6 +237,123 @@ export async function sendReportEmail(
 /**
  * Send payment confirmation email
  */
+/**
+ * Send password reset email
+ */
+export async function sendPasswordResetEmail(
+  email: string,
+  resetUrl: string,
+  lang: EmailLanguage = 'en'
+): Promise<{ success: boolean; error?: string }> {
+  if (!isValidEmail(email)) {
+    return { success: false, error: 'Invalid email address' };
+  }
+
+  if (lang === 'es') {
+    return sendEmail({
+      to: email,
+      subject: 'Restablecer tu contraseña — MyCaseValue',
+      html: `
+        <html>
+          <body style="font-family: Arial, sans-serif; color: #333; max-width: 560px; margin: 0 auto;">
+            <div style="padding: 32px 0; text-align: center;">
+              <h2 style="margin: 0 0 8px; font-size: 22px; color: #111827;">Restablecer contraseña</h2>
+              <p style="color: #6B7280; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">
+                Recibimos una solicitud para restablecer tu contraseña. Haz clic en el botón a continuación para crear una nueva.
+              </p>
+              <a href="${resetUrl}" style="display: inline-block; background: #111111; color: #ffffff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">Restablecer contraseña</a>
+              <p style="color: #9CA3AF; font-size: 13px; margin: 24px 0 0; line-height: 1.5;">
+                Si no solicitaste esto, puedes ignorar este correo. El enlace expira en 1 hora.
+              </p>
+            </div>
+          </body>
+        </html>
+      `,
+      text: `Restablecer contraseña\n\nHaz clic aquí para restablecer tu contraseña: ${resetUrl}\n\nSi no solicitaste esto, ignora este correo.`,
+    });
+  }
+
+  return sendEmail({
+    to: email,
+    subject: 'Reset your password — MyCaseValue',
+    html: `
+      <html>
+        <body style="font-family: Arial, sans-serif; color: #333; max-width: 560px; margin: 0 auto;">
+          <div style="padding: 32px 0; text-align: center;">
+            <h2 style="margin: 0 0 8px; font-size: 22px; color: #111827;">Reset your password</h2>
+            <p style="color: #6B7280; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">
+              We received a request to reset your password. Click the button below to create a new one.
+            </p>
+            <a href="${resetUrl}" style="display: inline-block; background: #111111; color: #ffffff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">Reset Password</a>
+            <p style="color: #9CA3AF; font-size: 13px; margin: 24px 0 0; line-height: 1.5;">
+              If you didn&rsquo;t request this, you can safely ignore this email. The link expires in 1 hour.
+            </p>
+          </div>
+        </body>
+      </html>
+    `,
+    text: `Reset your password\n\nClick here to reset your password: ${resetUrl}\n\nIf you didn't request this, you can safely ignore this email.`,
+  });
+}
+
+/**
+ * Send report ready notification email
+ */
+export async function sendReportReadyEmail(
+  email: string,
+  reportData: { caseType: string; nos: string },
+  lang: EmailLanguage = 'en'
+): Promise<{ success: boolean; error?: string }> {
+  if (!isValidEmail(email)) {
+    return { success: false, error: 'Invalid email address' };
+  }
+
+  const reportUrl = `https://www.mycasevalues.com/report/${reportData.nos}`;
+
+  if (lang === 'es') {
+    return sendEmail({
+      to: email,
+      subject: `Tu informe está listo — ${reportData.caseType}`,
+      html: `
+        <html>
+          <body style="font-family: Arial, sans-serif; color: #333; max-width: 560px; margin: 0 auto;">
+            <div style="padding: 32px 0; text-align: center;">
+              <h2 style="margin: 0 0 8px; font-size: 22px; color: #111827;">Tu informe está listo</h2>
+              <p style="color: #6B7280; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">
+                Tu informe de resultados para <strong>${reportData.caseType}</strong> está listo para ver.
+              </p>
+              <a href="${reportUrl}" style="display: inline-block; background: #111111; color: #ffffff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">Ver informe</a>
+            </div>
+          </body>
+        </html>
+      `,
+      text: `Tu informe de resultados para ${reportData.caseType} está listo: ${reportUrl}`,
+    });
+  }
+
+  return sendEmail({
+    to: email,
+    subject: `Your report is ready — ${reportData.caseType}`,
+    html: `
+      <html>
+        <body style="font-family: Arial, sans-serif; color: #333; max-width: 560px; margin: 0 auto;">
+          <div style="padding: 32px 0; text-align: center;">
+            <h2 style="margin: 0 0 8px; font-size: 22px; color: #111827;">Your report is ready</h2>
+            <p style="color: #6B7280; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">
+              Your outcome report for <strong>${reportData.caseType}</strong> is ready to view.
+            </p>
+            <a href="${reportUrl}" style="display: inline-block; background: #111111; color: #ffffff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">View Report</a>
+          </div>
+        </body>
+      </html>
+    `,
+    text: `Your outcome report for ${reportData.caseType} is ready: ${reportUrl}`,
+  });
+}
+
+/**
+ * Send payment confirmation email
+ */
 export async function sendPaymentConfirmation(
   email: string,
   plan: string,
