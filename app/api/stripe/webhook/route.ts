@@ -5,8 +5,8 @@ import { sendPaymentConfirmation, sendWelcomeEmail } from '../../../../lib/email
 
 export const dynamic = 'force-dynamic';
 
-// Subscription expiry defaults (30 days for subscriptions in milliseconds)
-const SUBSCRIPTION_EXPIRY_MS = 30 * 24 * 60 * 60 * 1000;
+// Single Report: 90-day access window
+const SINGLE_REPORT_EXPIRY_MS = 90 * 24 * 60 * 60 * 1000;
 
 export async function POST(req: NextRequest) {
   // Rate limiting: 100 requests per minute per IP (webhooks can have traffic spikes)
@@ -47,10 +47,11 @@ export async function POST(req: NextRequest) {
 
         if (email) {
           // Grant premium access
+          // single = 90-day access window, unlimited & attorney = null (subscription-managed)
           const expiresAt =
-            plan === 'attorney'
-              ? Date.now() + SUBSCRIPTION_EXPIRY_MS // Subscriptions expire after 30 days (renew on next billing)
-              : null; // One-time purchases don't expire
+            plan === 'single' || plan === 'single_report'
+              ? Date.now() + SINGLE_REPORT_EXPIRY_MS
+              : null;
 
           await grantPremiumAccess({
             email,
@@ -91,7 +92,7 @@ export async function POST(req: NextRequest) {
               email,
               plan: 'attorney',
               grantedAt: Date.now(),
-              expiresAt: Date.now() + SUBSCRIPTION_EXPIRY_MS,
+              expiresAt: null, // Subscription-managed — revoked on subscription.deleted
               stripeCustomerId: customerId,
               stripeSubscriptionId: subscription.id,
             });
