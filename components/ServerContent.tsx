@@ -575,17 +575,6 @@ export default function ServerContent() {
               textAlign: 'center',
             }}
           >
-            <p
-              style={{
-                fontFamily: 'Roboto, system-ui, sans-serif',
-                fontSize: '13px',
-                color: 'var(--fg-muted)',
-                margin: '0 0 12px 0',
-                lineHeight: 1.5,
-              }}
-            >
-              Your actual data will reflect your specific case type, district, and circumstances.
-            </p>
             <a
               href="/cases"
               style={{
