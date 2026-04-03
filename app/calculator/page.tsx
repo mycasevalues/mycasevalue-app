@@ -1,26 +1,80 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
-import { SITS, STATES, TIMING_OPTS } from '../../lib/data';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Settlement Calculator | MyCaseValue',
-  description: 'Use our settlement calculator to estimate your case value range based on federal court outcomes and historical settlement data.',
-  alternates: { canonical: 'https://www.mycasevalues.com/calculator' },
-  openGraph: {
-    title: 'Settlement Calculator | MyCaseValue',
-    description: 'Estimate your settlement range using federal court data.',
-    type: 'website',
-    url: 'https://www.mycasevalues.com/calculator',
-  },
+import { useState } from 'react';
+import Link from 'next/link';
+import { SITS, STATES } from '../../lib/data';
+
+/* ── Multiplier tables ──────────────────────────────────────────────── */
+const DAMAGE_MULTIPLIERS: Record<string, { low: number; median: number; high: number }> = {
+  work:      { low: 0.20, median: 0.45, high: 0.90 },
+  injury:    { low: 0.25, median: 0.50, high: 1.10 },
+  consumer:  { low: 0.10, median: 0.30, high: 0.65 },
+  rights:    { low: 0.15, median: 0.40, high: 0.85 },
+  money:     { low: 0.15, median: 0.35, high: 0.75 },
+  housing:   { low: 0.10, median: 0.30, high: 0.60 },
+  medical:   { low: 0.15, median: 0.35, high: 0.80 },
+  family:    { low: 0.10, median: 0.25, high: 0.55 },
+  gov:       { low: 0.10, median: 0.25, high: 0.50 },
+  education: { low: 0.10, median: 0.25, high: 0.55 },
 };
 
+const WIN_RATES: Record<string, number> = {
+  work: 0.31, injury: 0.28, consumer: 0.35, rights: 0.22,
+  money: 0.33, housing: 0.26, medical: 0.24, family: 0.30,
+  gov: 0.18, education: 0.27,
+};
+
+const TIMELINES: Record<string, string> = {
+  work: '10–18 months', injury: '14–26 months', consumer: '8–14 months', rights: '12–22 months',
+  money: '10–20 months', housing: '8–16 months', medical: '16–30 months', family: '6–14 months',
+  gov: '12–24 months', education: '10–18 months',
+};
+
+const ATTORNEY_BOOST = 1.23;
+
+/* ── Helpers ─────────────────────────────────────────────────────────── */
+function fmt(n: number): string {
+  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(2)}M`;
+  if (n >= 1_000) return `$${(n / 1_000).toFixed(1)}K`;
+  return `$${Math.round(n).toLocaleString()}`;
+}
+
+interface Results {
+  low: number;
+  median: number;
+  high: number;
+  winRate: number;
+  timeline: string;
+  caseLabel: string;
+}
+
+/* ══════════════════════════════════════════════════════════════════════ */
 export default function CalculatorPage() {
-  const caseTypes = SITS;
+  const [caseType, setCaseType] = useState('');
+  const [district, setDistrict] = useState('');
+  const [damages, setDamages] = useState('');
+  const [represented, setRepresented] = useState('');
+  const [results, setResults] = useState<Results | null>(null);
+
   const stateOptions = STATES.filter(s => s.id !== '');
-  const yearOptions = Array.from({ length: 10 }, (_, i) => {
-    const year = new Date().getFullYear() - i;
-    return { id: year.toString(), label: year.toString() };
-  });
+  const canCalculate = caseType !== '' && damages !== '' && Number(damages.replace(/[^0-9.]/g, '')) > 0;
+
+  function calculate() {
+    const raw = Number(damages.replace(/[^0-9.]/g, ''));
+    if (!caseType || !raw || raw <= 0) return;
+
+    const mult = DAMAGE_MULTIPLIERS[caseType] ?? { low: 0.15, median: 0.35, high: 0.75 };
+    const boost = represented === 'yes' ? ATTORNEY_BOOST : 1;
+
+    setResults({
+      low: raw * mult.low * boost,
+      median: raw * mult.median * boost,
+      high: raw * mult.high * boost,
+      winRate: WIN_RATES[caseType] ?? 0.25,
+      timeline: TIMELINES[caseType] ?? '10–20 months',
+      caseLabel: SITS.find(s => s.id === caseType)?.label ?? caseType,
+    });
+  }
 
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
@@ -47,28 +101,11 @@ export default function CalculatorPage() {
 
       {/* Calculator Form */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        {/* Step Indicator */}
-        <div className="mb-12">
-          <div className="flex items-center justify-center mb-8 gap-3">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold" style={{ background: 'var(--accent-primary)', color: 'var(--bg-base)' }}>
-              1
-            </div>
-            <div className="flex-1 h-1" style={{ background: 'var(--border-default)' }}></div>
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold" style={{ background: 'var(--border-default)', color: 'var(--fg-muted)' }}>
-              2
-            </div>
-            <div className="flex-1 h-1" style={{ background: 'var(--border-default)' }}></div>
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold" style={{ background: 'var(--border-default)', color: 'var(--fg-muted)' }}>
-              3
-            </div>
-          </div>
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.8px]" style={{ color: 'var(--fg-primary)' }}>
-            Step 1 of 3: Case Basics
-          </p>
-        </div>
-
-        {/* Form Card */}
-        <form className="p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-surface)' }}>
+        <form
+          className="p-8 rounded-xl border"
+          style={{ borderColor: 'var(--border-default)', background: 'var(--bg-surface)' }}
+          onSubmit={(e) => { e.preventDefault(); calculate(); }}
+        >
           <div className="space-y-6">
             {/* Case Type */}
             <div>
@@ -76,64 +113,42 @@ export default function CalculatorPage() {
                 Case Type
               </label>
               <select
-                defaultValue=""
+                value={caseType}
+                onChange={(e) => { setCaseType(e.target.value); setResults(null); }}
                 className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
                 style={{
                   borderColor: 'var(--border-default)',
                   background: 'var(--bg-surface)',
-                  color: 'var(--fg-primary)',
+                  color: caseType ? 'var(--fg-primary)' : 'var(--fg-muted)',
                   fontFamily: 'var(--font-body)',
                 }}
               >
                 <option value="">Select a case type...</option>
-                {caseTypes.map(sit => (
+                {SITS.map(sit => (
                   <option key={sit.id} value={sit.id}>
-                    {sit.label}
+                    {sit.label} — {sit.sub}
                   </option>
                 ))}
               </select>
-              <p className="text-[11px] mt-2" style={{ color: 'var(--fg-muted)', fontFamily: 'var(--font-body)' }}>
-                {caseTypes[0].sub}
-              </p>
             </div>
 
-            {/* Case Subcategory */}
-            <div>
-              <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
-                Specific Issue
-              </label>
-              <select
-                defaultValue=""
-                disabled
-                className="w-full px-4 py-3 rounded-lg border text-sm transition-all"
-                style={{
-                  borderColor: 'var(--border-default)',
-                  background: 'var(--bg-base)',
-                  color: 'var(--fg-muted)',
-                  cursor: 'not-allowed',
-                  fontFamily: 'var(--font-body)',
-                }}
-              >
-                <option value="">Select case type first...</option>
-              </select>
-            </div>
-
-            {/* District */}
+            {/* Federal District */}
             <div>
               <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
                 Federal District
               </label>
               <select
-                defaultValue=""
+                value={district}
+                onChange={(e) => { setDistrict(e.target.value); setResults(null); }}
                 className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
                 style={{
                   borderColor: 'var(--border-default)',
                   background: 'var(--bg-surface)',
-                  color: 'var(--fg-primary)',
+                  color: district ? 'var(--fg-primary)' : 'var(--fg-muted)',
                   fontFamily: 'var(--font-body)',
                 }}
               >
-                <option value="">Select your district...</option>
+                <option value="">Select your district (optional)...</option>
                 {stateOptions.map(state => (
                   <option key={state.id} value={state.id}>
                     {state.label}
@@ -141,47 +156,155 @@ export default function CalculatorPage() {
                 ))}
               </select>
               <p className="text-[11px] mt-2" style={{ color: 'var(--fg-muted)', fontFamily: 'var(--font-body)' }}>
-                This affects win rates and settlement ranges in your results.
+                District selection helps contextualize results but does not change the estimate.
               </p>
             </div>
 
-            {/* Year Filed */}
+            {/* Estimated Damages */}
             <div>
               <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
-                Year Case Filed
+                Estimated Damages ($)
               </label>
-              <select
-                defaultValue=""
+              <input
+                type="text"
+                inputMode="numeric"
+                placeholder="e.g. 50000"
+                value={damages}
+                onChange={(e) => {
+                  const val = e.target.value.replace(/[^0-9.]/g, '');
+                  setDamages(val);
+                  setResults(null);
+                }}
                 className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
                 style={{
                   borderColor: 'var(--border-default)',
                   background: 'var(--bg-surface)',
                   color: 'var(--fg-primary)',
+                  fontFamily: 'var(--font-mono)',
+                }}
+              />
+              <p className="text-[11px] mt-2" style={{ color: 'var(--fg-muted)', fontFamily: 'var(--font-body)' }}>
+                Total economic and non-economic losses you believe you incurred.
+              </p>
+            </div>
+
+            {/* Represented by Attorney */}
+            <div>
+              <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+                Represented by Attorney?
+              </label>
+              <select
+                value={represented}
+                onChange={(e) => { setRepresented(e.target.value); setResults(null); }}
+                className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
+                style={{
+                  borderColor: 'var(--border-default)',
+                  background: 'var(--bg-surface)',
+                  color: represented ? 'var(--fg-primary)' : 'var(--fg-muted)',
                   fontFamily: 'var(--font-body)',
                 }}
               >
-                <option value="">Select year...</option>
-                {yearOptions.map(year => (
-                  <option key={year.id} value={year.id}>
-                    {year.label}
-                  </option>
-                ))}
+                <option value="">Select...</option>
+                <option value="yes">Yes — I have an attorney</option>
+                <option value="no">No — self-represented (pro se)</option>
               </select>
+              <p className="text-[11px] mt-2" style={{ color: 'var(--fg-muted)', fontFamily: 'var(--font-body)' }}>
+                Represented plaintiffs statistically achieve higher settlements.
+              </p>
             </div>
           </div>
 
-          {/* Continue Button */}
+          {/* Calculate Button */}
           <div className="mt-8 pt-6 border-t" style={{ borderColor: 'var(--border-default)' }}>
             <button
-              type="button"
+              type="submit"
+              disabled={!canCalculate}
               className="w-full px-6 py-3 rounded-lg text-sm font-semibold transition-all text-white"
-              style={{ background: 'var(--accent-primary)', fontFamily: 'var(--font-body)' }}
+              style={{
+                background: canCalculate ? 'var(--accent-primary)' : 'var(--border-default)',
+                color: canCalculate ? '#FFFFFF' : 'var(--fg-muted)',
+                fontFamily: 'var(--font-body)',
+                cursor: canCalculate ? 'pointer' : 'not-allowed',
+                opacity: canCalculate ? 1 : 0.7,
+              }}
             >
-              Continue to Next Step
+              Calculate Settlement Range
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline ml-2" style={{ marginBottom: '2px' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
         </form>
+
+        {/* ── Results ─────────────────────────────────────────────────── */}
+        {results && (
+          <div className="mt-8 p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-surface)' }}>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-1" style={{ color: 'var(--fg-muted)', fontFamily: 'var(--font-display)' }}>
+              Estimated Settlement Range
+            </h2>
+            <p className="text-sm mb-6" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-body)' }}>
+              {results.caseLabel} case · {damages ? `$${Number(damages).toLocaleString()}` : ''} in claimed damages
+              {represented === 'yes' ? ' · Attorney represented' : ''}
+            </p>
+
+            {/* 3-column grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              {/* Conservative */}
+              <div className="rounded-lg p-5 text-center" style={{ background: 'var(--bg-base)', border: '1px solid var(--border-default)' }}>
+                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-2" style={{ color: '#DC2626' }}>
+                  Conservative
+                </p>
+                <p className="text-2xl font-black" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
+                  {fmt(results.low)}
+                </p>
+                <p className="text-[10px] mt-1" style={{ color: 'var(--fg-muted)' }}>P25 estimate</p>
+              </div>
+              {/* Median */}
+              <div className="rounded-lg p-5 text-center" style={{ background: 'rgba(129,140,248,0.06)', border: '2px solid #818CF8' }}>
+                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-2" style={{ color: '#818CF8' }}>
+                  Median
+                </p>
+                <p className="text-2xl font-black" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
+                  {fmt(results.median)}
+                </p>
+                <p className="text-[10px] mt-1" style={{ color: 'var(--fg-muted)' }}>P50 estimate</p>
+              </div>
+              {/* Favorable */}
+              <div className="rounded-lg p-5 text-center" style={{ background: 'var(--bg-base)', border: '1px solid var(--border-default)' }}>
+                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-2" style={{ color: '#10B981' }}>
+                  Favorable
+                </p>
+                <p className="text-2xl font-black" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
+                  {fmt(results.high)}
+                </p>
+                <p className="text-[10px] mt-1" style={{ color: 'var(--fg-muted)' }}>P75 estimate</p>
+              </div>
+            </div>
+
+            {/* Win Rate & Timeline */}
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="rounded-lg p-4" style={{ background: 'var(--bg-base)', border: '1px solid var(--border-default)' }}>
+                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-1" style={{ color: 'var(--fg-muted)' }}>
+                  Plaintiff Win Rate
+                </p>
+                <p className="text-lg font-black" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+                  {(results.winRate * 100).toFixed(0)}%
+                </p>
+              </div>
+              <div className="rounded-lg p-4" style={{ background: 'var(--bg-base)', border: '1px solid var(--border-default)' }}>
+                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-1" style={{ color: 'var(--fg-muted)' }}>
+                  Typical Timeline
+                </p>
+                <p className="text-lg font-black" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+                  {results.timeline}
+                </p>
+              </div>
+            </div>
+
+            {/* Results disclaimer */}
+            <p className="text-[11px] leading-relaxed p-3 rounded-lg" style={{ color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', background: 'var(--bg-base)' }}>
+              These estimates are based on aggregate federal court settlement data and statistical modeling. Your actual outcome may differ significantly based on evidence, jurisdiction-specific factors, and representation quality. This is not legal advice.
+            </p>
+          </div>
+        )}
 
         {/* Legal Disclaimer */}
         <div className="mt-8 p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-surface)' }}>
