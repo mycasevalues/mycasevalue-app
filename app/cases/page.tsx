@@ -6,7 +6,7 @@ import { SITS } from '../../lib/data';
 
 const categoryIcons: Record<string, string> = {
   work: '', injury: '', consumer: '', rights: '', money: '',
-  housing: '', medical: '', family: '‍👩‍👧‍👦', gov: '', education: '',
+  housing: '', medical: '', family: '', gov: '', education: '',
 };
 
 const jsonLd = {
@@ -136,7 +136,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.9)', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/#search" style={{ display: 'inline-block', background: '#FFFFFF', color: '#111111', padding: '14px 36px', borderRadius: 8, fontWeight: 600, fontSize: 16, textDecoration: 'none' }}>
+          <a href="/cases" style={{ display: 'inline-block', background: '#FFFFFF', color: '#111111', padding: '14px 36px', borderRadius: 8, fontWeight: 600, fontSize: 16, textDecoration: 'none' }}>
             Start Researching →
           </a>
         </div>

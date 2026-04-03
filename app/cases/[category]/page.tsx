@@ -1,4 +1,5 @@
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
+import { REAL_DATA } from '../../../lib/realdata';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -225,7 +226,7 @@ const categoryIcons: Record<string, string> = {
   money: '',
   housing: '',
   medical: '',
-  family: '‍👩‍👧‍👦',
+  family: '',
   gov: '',
   education: '',
 };
@@ -244,22 +245,24 @@ function getAverageStats(category: string): {
     new Set(categoryData.opts.map((opt) => opt.nos))
   );
 
-  let totalWinRate = 0;
-  let totalSettleRate = 0;
-  let totalTimelineMonths = 0;
-  let count = 0;
+  let totalWeightedWinRate = 0;
+  let totalWeightedSettleRate = 0;
+  let totalWeightedTimelineMonths = 0;
+  let totalCases = 0;
 
   nosCodesInCategory.forEach((nos) => {
     const data = OUTCOME_DATA[nos];
-    if (data && data.trial_win !== undefined) {
-      totalWinRate += data.trial_win || 10;
-      totalSettleRate += data.fav_set || 22;
-      totalTimelineMonths += data.set_mo || 6;
-      count++;
+    const realData = REAL_DATA[nos];
+    if (data && data.trial_win !== undefined && realData && realData.total) {
+      const weight = realData.total;
+      totalWeightedWinRate += (data.trial_win || 10) * weight;
+      totalWeightedSettleRate += (data.fav_set || 22) * weight;
+      totalWeightedTimelineMonths += (data.set_mo || 6) * weight;
+      totalCases += weight;
     }
   });
 
-  if (count === 0) {
+  if (totalCases === 0) {
     const defaults = OUTCOME_DATA._default;
     return {
       avgWinRate: defaults.trial_win,
@@ -269,9 +272,9 @@ function getAverageStats(category: string): {
   }
 
   return {
-    avgWinRate: Math.round(totalWinRate / count * 10) / 10,
-    avgSettleRate: Math.round(totalSettleRate / count * 10) / 10,
-    avgTimelineMonths: Math.round(totalTimelineMonths / count),
+    avgWinRate: Math.round(totalWeightedWinRate / totalCases * 10) / 10,
+    avgSettleRate: Math.round(totalWeightedSettleRate / totalCases * 10) / 10,
+    avgTimelineMonths: Math.round(totalWeightedTimelineMonths / totalCases),
   };
 }
 
@@ -690,7 +693,7 @@ async function CategoryPage({
             Use our interactive tool to find real federal court outcome data for cases like yours.
           </p>
           <a
-            href="/#search"
+            href="/cases"
             style={{
               display: 'inline-block',
               background: 'white',
