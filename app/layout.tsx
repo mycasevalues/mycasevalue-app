@@ -255,12 +255,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ` }} />
       </head>
       <body className="grain" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }} suppressHydrationWarning>
-        <noscript>
-          <div style={{ padding: '24px', textAlign: 'center', background: '#111', color: '#f5f5f5', fontFamily: 'system-ui, sans-serif' }}>
-            <p style={{ margin: '0 0 8px' }}>MyCaseValue works best with JavaScript enabled.</p>
-            <p style={{ margin: 0 }}>You can still <a href="/cases" style={{ color: '#8B5CF6', textDecoration: 'underline' }}>browse case types</a> without it.</p>
-          </div>
-        </noscript>
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <ErrorBoundary>
           <AnalyticsProvider>
