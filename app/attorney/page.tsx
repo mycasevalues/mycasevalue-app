@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Attorney Mode - Professional Legal Intelligence Suite | MyCaseValue',
@@ -15,13 +16,81 @@ export const metadata: Metadata = {
   ],
 };
 
+// SVG Icon Components
+const AIIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M8 10h.01M16 10h.01" />
+    <path d="M9 16c1-1 3-1 6 0" />
+  </svg>
+);
+
+const DocumentIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+    <polyline points="13 2 13 9 20 9" />
+  </svg>
+);
+
+const SearchIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <circle cx="11" cy="11" r="8" />
+    <path d="m21 21-4.35-4.35" />
+  </svg>
+);
+
+const TargetIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>
+);
+
+const ScalesIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
+    <line x1="12" y1="10" x2="12" y2="18" />
+  </svg>
+);
+
+const ChartIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <line x1="12" y1="20" x2="12" y2="10" />
+    <line x1="18" y1="20" x2="18" y2="4" />
+    <line x1="6" y1="20" x2="6" y2="14" />
+  </svg>
+);
+
+const PeopleIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
+
+const APIIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
+    <path d="M10 12l2 2 4-4" />
+  </svg>
+);
+
+const CheckIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
 const FeatureCard = ({
   icon,
   title,
   description,
   badge,
 }: {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
   badge: 'coming-soon' | 'available';
@@ -40,7 +109,7 @@ const FeatureCard = ({
     }}
     className="attorney-feature-card"
   >
-    <div style={{ fontSize: '32px' }}>{icon}</div>
+    <div style={{ fontSize: '32px', color: 'var(--accent-primary)' }}>{icon}</div>
     <div>
       <h3
         style={{
@@ -92,56 +161,56 @@ const FeatureCard = ({
 
 const features = [
   {
-    icon: '🤖',
+    icon: <AIIcon />,
     title: 'AI Case Predictor',
     description:
       'Machine learning outcome predictions based on case factors, historical data, and legal precedents.',
     badge: 'coming-soon' as const,
   },
   {
-    icon: '📄',
+    icon: <DocumentIcon />,
     title: 'Document Intelligence',
     description:
       'Upload and analyze legal documents with AI insights, risk assessment, and compliance checking.',
     badge: 'available' as const,
   },
   {
-    icon: '🔍',
+    icon: <SearchIcon />,
     title: 'Opposing Counsel Analysis',
     description:
       'Research opposing counsel\'s track record, strategies, and settlement patterns instantly.',
     badge: 'coming-soon' as const,
   },
   {
-    icon: '🎯',
+    icon: <TargetIcon />,
     title: 'Venue Optimizer',
     description:
       'Find the optimal filing district based on case type, judge data, and success rates.',
     badge: 'coming-soon' as const,
   },
   {
-    icon: '⚖️',
+    icon: <ScalesIcon />,
     title: 'PACER Monitoring',
     description:
       'Real-time alerts on case developments, filings, and motions across federal courts.',
     badge: 'coming-soon' as const,
   },
   {
-    icon: '📊',
+    icon: <ChartIcon />,
     title: 'Bulk Case Analysis',
     description:
       'Analyze portfolios of cases for pattern recognition, risk clustering, and outcome trends.',
     badge: 'coming-soon' as const,
   },
   {
-    icon: '👥',
+    icon: <PeopleIcon />,
     title: 'Team Workspace',
     description:
       'Collaborate with colleagues, share reports, annotations, and case insights seamlessly.',
     badge: 'coming-soon' as const,
   },
   {
-    icon: '⚙️',
+    icon: <APIIcon />,
     title: 'API Access',
     description:
       'Programmatic access to MyCaseValue data via REST API for custom integrations.',
@@ -197,7 +266,7 @@ export default function AttorneyPage() {
                 fontFamily: 'var(--font-mono)',
               }}
             >
-              ⚡ Attorney Mode
+              Attorney Mode
             </span>
           </div>
 
@@ -283,48 +352,57 @@ export default function AttorneyPage() {
             </p>
           </div>
 
-          {/* Features Grid */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px',
-            }}
-          >
-            {features.map((feature, index) => (
-              <FeatureCard key={index} {...feature} />
-            ))}
+          {/* Available Now Features */}
+          <div>
+            <h3
+              style={{
+                margin: '0 0 24px 0',
+                fontSize: '20px',
+                fontWeight: '600',
+                fontFamily: 'var(--font-display)',
+                color: 'var(--fg-primary)',
+              }}
+            >
+              Available Now
+            </h3>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '24px',
+              }}
+            >
+              {features.filter((f) => f.badge === 'available').map((feature, index) => (
+                <FeatureCard key={index} {...feature} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Trust Bar */}
-      <section
-        style={{
-          padding: '32px 20px',
-          backgroundColor: 'var(--bg-surface)',
-          borderTop: '1px solid var(--border-default)',
-          borderBottom: '1px solid var(--border-default)',
-          textAlign: 'center',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1200px',
-            margin: '0 auto',
-          }}
-        >
-          <p
-            style={{
-              margin: 0,
-              fontSize: '14px',
-              color: 'var(--fg-muted)',
-              fontWeight: '500',
-              fontFamily: 'var(--font-body)',
-            }}
-          >
-            ✓ Trusted by attorneys in all 94 federal districts
-          </p>
+          {/* In Development Features */}
+          <div>
+            <h3
+              style={{
+                margin: '0 0 24px 0',
+                fontSize: '20px',
+                fontWeight: '600',
+                fontFamily: 'var(--font-display)',
+                color: 'var(--fg-primary)',
+              }}
+            >
+              In Development
+            </h3>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '24px',
+              }}
+            >
+              {features.filter((f) => f.badge === 'coming-soon').map((feature, index) => (
+                <FeatureCard key={index} {...feature} />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

@@ -7,8 +7,9 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
   { href: '/districts', label: 'Districts' },
@@ -20,6 +21,54 @@ const NAV_LINKS = [
 
 export default function SiteNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        hamburgerRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [mobileOpen]);
+
+  // Focus trap inside mobile drawer
+  useEffect(() => {
+    if (!mobileOpen || !drawerRef.current) return;
+    const drawer = drawerRef.current;
+    const focusable = drawer.querySelectorAll<HTMLElement>(
+      'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    const trapFocus = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+    drawer.addEventListener('keydown', trapFocus);
+    first.focus();
+    return () => drawer.removeEventListener('keydown', trapFocus);
+  }, [mobileOpen]);
+
+  // Close drawer on route change
+  useEffect(() => { setMobileOpen(false); }, [pathname]);
+
+  const isActive = useCallback((href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
+  }, [pathname]);
 
   return (
     <>
@@ -35,7 +84,7 @@ export default function SiteNav() {
           boxShadow: 'var(--shadow-xs)',
         }}
         role="navigation"
-        aria-label="Site navigation"
+        aria-label="Main navigation"
       >
         <div
           style={{
@@ -82,12 +131,14 @@ export default function SiteNav() {
                   padding: '8px 14px',
                   borderRadius: 'var(--r-md)',
                   fontSize: '14px',
-                  fontWeight: 500,
-                  color: 'var(--fg-muted)',
+                  fontWeight: isActive(link.href) ? 600 : 500,
+                  color: isActive(link.href) ? 'var(--accent-primary)' : 'var(--fg-muted)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
-                  transition: 'color var(--duration-normal) var(--ease-out)',
+                  transition: 'color var(--duration-base) ease',
+                  borderBottom: isActive(link.href) ? '2px solid var(--accent-primary)' : '2px solid transparent',
                 }}
+                aria-current={isActive(link.href) ? 'page' : undefined}
               >
                 {link.label}
               </Link>
@@ -116,13 +167,13 @@ export default function SiteNav() {
                   fontFamily: 'var(--font-body)',
                   borderRadius: 'var(--r-md)',
                   border: '1.5px solid var(--border-default)',
-                  transition: 'all var(--duration-normal) var(--ease-out)',
+                  transition: 'all var(--duration-base) ease',
                 }}
               >
                 Sign In
               </Link>
               <Link
-                href="/"
+                href="/cases"
                 style={{
                   padding: '8px 20px',
                   fontSize: '14px',
@@ -132,7 +183,7 @@ export default function SiteNav() {
                   borderRadius: 'var(--r-md)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
-                  transition: 'all var(--duration-normal) var(--ease-out)',
+                  transition: 'all var(--duration-base) ease',
                 }}
               >
                 Get Started Free
@@ -141,6 +192,7 @@ export default function SiteNav() {
 
             {/* Mobile hamburger button */}
             <button
+              ref={hamburgerRef}
               className="site-nav-hamburger"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
@@ -196,15 +248,16 @@ export default function SiteNav() {
             inset: 0,
             top: '64px',
             zIndex: 199,
-            background: 'rgba(0,0,0,0.3)',
+            background: 'rgba(30,20,10,0.3)',
           }}
-          onClick={() => setMobileOpen(false)}
+          onClick={() => { setMobileOpen(false); hamburgerRef.current?.focus(); }}
           aria-hidden="true"
         />
       )}
 
       {/* Mobile drawer */}
       <div
+        ref={drawerRef}
         className="site-nav-mobile-drawer"
         style={{
           position: 'fixed',
@@ -226,6 +279,7 @@ export default function SiteNav() {
         }}
         role="dialog"
         aria-label="Mobile navigation"
+        aria-modal={mobileOpen ? true : undefined}
       >
         {NAV_LINKS.map((link) => (
           <Link
@@ -237,13 +291,15 @@ export default function SiteNav() {
               padding: '14px 16px',
               borderRadius: 'var(--r-md)',
               fontSize: '16px',
-              fontWeight: 500,
-              color: 'var(--fg-primary)',
+              fontWeight: isActive(link.href) ? 600 : 500,
+              color: isActive(link.href) ? 'var(--accent-primary)' : 'var(--fg-primary)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               minHeight: '44px',
+              background: isActive(link.href) ? 'var(--bg-elevated)' : 'transparent',
             }}
             className="site-nav-mobile-link"
+            aria-current={isActive(link.href) ? 'page' : undefined}
           >
             {link.label}
           </Link>
@@ -269,7 +325,7 @@ export default function SiteNav() {
             Sign In
           </Link>
           <Link
-            href="/"
+            href="/cases"
             onClick={() => setMobileOpen(false)}
             style={{
               display: 'block',

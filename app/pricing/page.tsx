@@ -116,7 +116,7 @@ const PLANS: PlanCard[] = [
       { text: 'Attorney Mode features', included: false },
     ],
     ctaText: 'Buy a Report',
-    ctaSubtext: 'Access for 90 days · No subscription',
+    ctaSubtext: 'Save and revisit for 90 days · No subscription',
   },
   {
     id: 'unlimited',
@@ -126,6 +126,8 @@ const PLANS: PlanCard[] = [
     period: '/mo',
     description: 'Unlimited lookups across all case types and districts with trend analysis.',
     sectionLabel: 'Everything in Single Report, plus:',
+    badge: 'MOST POPULAR',
+    featured: true,
     features: [
       { text: 'Unlimited case type + district lookups', included: true },
       { text: 'All 84 case types · all 94 districts', included: true },
@@ -155,8 +157,6 @@ const PLANS: PlanCard[] = [
     period: '/mo',
     description: 'Advanced tools for law firms: AI predictions, bulk analysis, API access, and team collaboration.',
     sectionLabel: 'Everything in Unlimited Reports, plus:',
-    badge: 'MOST POPULAR',
-    featured: true,
     features: [
       { text: 'Advanced judge intelligence (motion rates, bias trends, behavioral patterns)', included: true },
       { text: 'AI case outcome predictor', included: true },

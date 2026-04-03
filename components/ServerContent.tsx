@@ -253,6 +253,27 @@ export default function ServerContent() {
             </p>
           </div>
 
+          <div
+            style={{
+              marginBottom: '12px',
+            }}
+          >
+            <span
+              style={{
+                display: 'inline-block',
+                fontFamily: '"PT Mono", monospace',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '1.5px',
+                textTransform: 'uppercase',
+                color: 'var(--fg-muted)',
+                marginBottom: '16px',
+              }}
+            >
+              Sample data — Employment Discrimination, S.D.N.Y.
+            </span>
+          </div>
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {[
               {
@@ -331,6 +352,37 @@ export default function ServerContent() {
               </div>
             ))}
           </div>
+
+          <div
+            style={{
+              marginTop: '24px',
+              textAlign: 'center',
+            }}
+          >
+            <p
+              style={{
+                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontSize: '13px',
+                color: 'var(--fg-muted)',
+                margin: '0 0 12px 0',
+                lineHeight: 1.5,
+              }}
+            >
+              Your actual data will reflect your specific case type, district, and circumstances.
+            </p>
+            <a
+              href="/cases"
+              style={{
+                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontSize: '13px',
+                fontWeight: 600,
+                color: 'var(--accent-secondary)',
+                textDecoration: 'none',
+              }}
+            >
+              See real data for your case →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -381,8 +433,8 @@ export default function ServerContent() {
             {[
               { name: 'Free', price: '$0', period: 'forever', desc: 'Basic win rates and case type data', cta: 'Get Started', featured: false },
               { name: 'Single Report', price: '$5.99', period: 'one-time', desc: 'Full settlement ranges, judge data, and trends', cta: 'Buy Report', featured: false },
-              { name: 'Unlimited', price: '$9.99', period: '/month', desc: 'Unlimited reports, saved history, and export', cta: 'Subscribe', featured: false },
-              { name: 'Attorney Mode', price: '$29.99', period: '/month', desc: 'AI predictions, opposing counsel, API access', cta: 'Start Trial', featured: true },
+              { name: 'Unlimited Reports', price: '$9.99', period: '/month', desc: 'Unlimited reports, saved history, and export', cta: 'Subscribe', featured: true },
+              { name: 'Attorney Mode', price: '$29.99', period: '/month', desc: 'AI predictions, opposing counsel, API access', cta: 'Start Trial', featured: false },
             ].map((plan, i) => (
               <div
                 key={i}
