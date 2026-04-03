@@ -119,7 +119,7 @@ export default async function DashboardPage() {
     ? new Date(userCreatedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
     : 'N/A';
 
-  const isPaid = userPlan !== 'free' && !isExpired;
+  const isPaid = true; // DEV MODE: All features unlocked — Stripe integration pending
   const tierKey = userPlan === 'single_report' ? 'single' : userPlan;
   const features = TIER_INCLUDES[tierKey] || TIER_INCLUDES.free;
 
@@ -142,7 +142,7 @@ export default async function DashboardPage() {
 
   // ── Fetch search history for Unlimited+ users ─────────────────
   let searchHistory: { query: string; category: string | null; searched_at: string }[] = [];
-  const isUnlimitedPlus = userPlan === 'unlimited' || userPlan === 'attorney';
+  const isUnlimitedPlus = true; // DEV MODE: All features unlocked — Stripe integration pending
   if (userEmail && isUnlimitedPlus && !isExpired) {
     try {
       const adminDb = getSupabaseAdmin();

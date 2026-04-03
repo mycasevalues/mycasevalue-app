@@ -424,7 +424,7 @@ export default function MyCaseValue() {
   const [showMethodology, setShowMethodology] = useState(false);
   const [timelineStep, setTimelineStep] = useState(0);
   const [pollVote, setPollVote] = useState('');
-  const darkMode = false; // Paper design — light theme
+  const darkMode = false; // PAPER DESIGN SYSTEM — light mode locked
   const [lang, setLang] = useState<Lang>('en');
   const [viewMode, setViewMode] = useState<'auto' | 'mobile' | 'desktop'>('auto');
   const [compareMode, setCompareMode] = useState(false);
@@ -472,7 +472,7 @@ export default function MyCaseValue() {
   const t = TRANSLATIONS[lang];
   const [totalCases, setTotalCases] = useState(5127834);
 
-  const isPremium = tier !== 'free';
+  const isPremium = true; // DEV MODE: All features unlocked
 
 
   // Restore draft from localStorage on mount
@@ -523,36 +523,9 @@ export default function MyCaseValue() {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  // Handle return from Stripe checkout
+  // Handle payment verification (coming soon)
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const sessionId = params.get('session_id');
-    const plan = params.get('plan');
-    const canceled = params.get('canceled');
-    if (sessionId && plan) {
-      // Verify the session with our API to confirm payment
-      fetch(`/api/stripe/verify?session_id=${sessionId}`)
-        .then(r => r.json())
-        .then(data => {
-          if (data?.paid) {
-            setTier(plan === 'unlimited' ? 'unlimited' : 'single');
-            toast(lang === 'es' ? '¡Pago exitoso! Informe desbloqueado.' : 'Payment successful — report unlocked!');
-            // Store in localStorage so it persists across page reloads
-            try { localStorage.setItem('mcv_tier', plan === 'unlimited' ? 'unlimited' : 'single'); } catch {}
-          } else {
-            toast(lang === 'es' ? 'No se pudo verificar el pago.' : 'Payment could not be verified. Please contact support.');
-          }
-        })
-        .catch(() => {
-          // Verification endpoint failed — don't unlock without confirmation
-          toast(lang === 'es' ? 'Error de verificación. Por favor contacte soporte.' : 'Verification error. Please contact support@mycasevalue.com if your payment was charged.');
-        });
-      // Clean up URL
-      window.history.replaceState({}, '', window.location.pathname);
-    } else if (canceled) {
-      toast(lang === 'es' ? 'Pago cancelado.' : 'Payment canceled.');
-      window.history.replaceState({}, '', window.location.pathname);
-    }
+    // Payment integration to be re-added later
     // Check localStorage for existing tier on load
     try {
       const savedTier = localStorage.getItem('mcv_tier');
@@ -1020,25 +993,8 @@ export default function MyCaseValue() {
   }
 
   function buy(plan: string) {
-    toast(lang === 'es' ? 'Redirigiendo al pago...' : 'Redirecting to checkout...');
-    fetch('/api/stripe/checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ plan, email }),
-    })
-      .then(r => r.json())
-      .then(data => {
-        if (data?.url) {
-          window.location.href = data.url;
-        } else if (data?.error) {
-          toast(data.error);
-        } else {
-          toast(lang === 'es' ? 'Error al procesar el pago. Intente de nuevo.' : 'Unable to process payment. Please try again.');
-        }
-      })
-      .catch(() => {
-        toast(lang === 'es' ? 'Error de conexión. Intente de nuevo.' : 'Connection error. Please try again.');
-      });
+    // Payment integration coming soon
+    toast(lang === 'es' ? 'Los pagos estarán disponibles pronto.' : 'Payments coming soon.');
   }
 
   // Formatted total for display
@@ -4387,7 +4343,7 @@ export default function MyCaseValue() {
                   <p><strong>5. Limitación de Responsabilidad.</strong> EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY, MYCASEVALUE LLC, SUS FUNCIONARIOS, DIRECTORES, EMPLEADOS Y AGENTES NO SERÁN RESPONSABLES POR NINGÚN DAÑO INDIRECTO, INCIDENTAL, ESPECIAL, CONSECUENTE O PUNITIVO, O CUALQUIER PÉRDIDA DE GANANCIAS O INGRESOS, YA SEA INCURRIDO DIRECTAMENTE O INDIRECTAMENTE, QUE SURJA DE TU USO DEL SERVICIO. EN NINGÚN CASO NUESTRA RESPONSABILIDAD TOTAL SUPERARÁ LA CANTIDAD QUE PAGASTE EN LOS 12 MESES ANTERIORES A LA RECLAMACIÓN.</p>
                   <p><strong>6. Renuncia de Garantías.</strong> EL SERVICIO SE PROPORCIONA &ldquo;TAL CUAL&rdquo; Y &ldquo;SEGÚN DISPONIBILIDAD&rdquo; SIN GARANTÍAS DE NINGÚN TIPO, EXPRESAS O IMPLÍCITAS, INCLUYENDO PERO NO LIMITADO A GARANTÍAS IMPLÍCITAS DE COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN.</p>
                   <p><strong>7. Responsabilidades del Usuario.</strong> Aceptas utilizar el Servicio solo para propósitos lícitos y en cumplimiento de todas las leyes aplicables. No debes tergiversar la información obtenida de MyCaseValue como asesoramiento legal u opinión legal.</p>
-                  <p><strong>8. Pagos y Reembolsos.</strong> Los pagos se procesan a través de Stripe. Todas las ventas son finales. Si experimentas problemas técnicos que impidan el acceso a un informe pagado, contacta support@mycasevalue.com dentro de 7 días para obtener asistencia.</p>
+                  <p><strong>8. Pagos y Reembolsos.</strong> El procesamiento de pagos estará disponible próximamente. Cuando estén disponibles, se revelan detalles específicos sobre reembolsos.</p>
                   <p><strong>9. Propiedad Intelectual.</strong> Todo el contenido, diseño y código de MyCaseValue son propiedad de MyCaseValue LLC. Los datos subyacentes de la corte son de dominio público (17 U.S.C. &sect; 105). No puedes reproducir, distribuir o crear trabajos derivados de nuestros materiales propietarios sin permiso escrito.</p>
                   <p><strong>10. Resolución de Disputas y Arbitraje.</strong> Cualquier disputa que surja de o se relacione con estos Términos o el Servicio será resuelta a través de arbitraje vinculante administrado por la American Arbitration Association de acuerdo con sus Reglas de Arbitraje del Consumidor, excepto que cualquiera de las partes puede buscar medidas cautelares en una corte de jurisdicción competente. ACEPTAS RENUNCIAR A TU DERECHO A UN JUICIO CON JURADO Y A PARTICIPAR EN UNA DEMANDA COLECTIVA.</p>
                   <p><strong>11. Ley Aplicable.</strong> Estos Términos se regirán por las leyes del Estado de Delaware, sin consideración de los principios de conflicto de leyes.</p>
@@ -4401,7 +4357,7 @@ export default function MyCaseValue() {
                   <p><strong>5. Limitation of Liability.</strong> TO THE MAXIMUM EXTENT PERMITTED BY LAW, MYCASEVALUE LLC, ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, ARISING FROM YOUR USE OF THE SERVICE. IN NO EVENT SHALL OUR TOTAL LIABILITY EXCEED THE AMOUNT YOU PAID TO US IN THE 12 MONTHS PRECEDING THE CLAIM.</p>
                   <p><strong>6. Disclaimer of Warranties.</strong> THE SERVICE IS PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
                   <p><strong>7. User Responsibilities.</strong> You agree to use the Service only for lawful purposes and in compliance with all applicable laws. You shall not misrepresent information obtained from MyCaseValue as legal advice or a legal opinion.</p>
-                  <p><strong>8. Payments &amp; Refunds.</strong> Purchases are processed through Stripe. All sales are final. If you experience technical issues preventing access to a paid report, contact support@mycasevalue.com within 7 days for assistance.</p>
+                  <p><strong>8. Payments &amp; Refunds.</strong> Payment processing will be available soon. Specific refund details will be revealed when payments become available.</p>
                   <p><strong>9. Intellectual Property.</strong> All content, design, and code of MyCaseValue are owned by MyCaseValue LLC. Underlying court data is public domain (17 U.S.C. &sect; 105). You may not reproduce, distribute, or create derivative works from our proprietary materials without written permission.</p>
                   <p><strong>10. Dispute Resolution &amp; Arbitration.</strong> Any dispute arising from or relating to these Terms or the Service shall be resolved through binding arbitration administered by the American Arbitration Association in accordance with its Consumer Arbitration Rules, except that either party may seek injunctive relief in a court of competent jurisdiction. YOU AGREE TO WAIVE YOUR RIGHT TO A JURY TRIAL AND TO PARTICIPATE IN A CLASS ACTION.</p>
                   <p><strong>11. Governing Law.</strong> These Terms shall be governed by the laws of the State of Delaware, without regard to conflict of law principles.</p>
@@ -4411,28 +4367,28 @@ export default function MyCaseValue() {
 
                 {legalPage === 'privacy' && (lang === 'es' ? (<>
                   <p><strong>1. Información que Recopilamos.</strong> Recopilamos información que proporcionas voluntariamente (selección de estado, tipo de caso, correo electrónico para características de cuenta) y datos recopilados automáticamente (dirección IP, tipo de navegador, información del dispositivo, análisis de uso a través de cookies).</p>
-                  <p><strong>2. Cómo Usamos la Información.</strong> Usamos la información recopilada para: proporcionar y mejorar el Servicio, procesar pagos a través de Stripe, enviar comunicaciones a las que te has suscrito, analizar patrones de uso para mejorar la experiencia del usuario y cumplir con obligaciones legales.</p>
-                  <p><strong>3. Compartir Información.</strong> No vendemos tu información personal. Podemos compartir información con: Stripe (procesamiento de pagos), proveedores de análisis (datos de uso anonimizados) y cumplimiento de la ley (cuando lo requiera la ley, citación o orden judicial).</p>
+                  <p><strong>2. Cómo Usamos la Información.</strong> Usamos la información recopilada para: proporcionar y mejorar el Servicio, enviar comunicaciones a las que te has suscrito, analizar patrones de uso para mejorar la experiencia del usuario y cumplir con obligaciones legales.</p>
+                  <p><strong>3. Compartir Información.</strong> No vendemos tu información personal. Podemos compartir información con: proveedores de análisis (datos de uso anonimizados) y cumplimiento de la ley (cuando lo requiera la ley, citación o orden judicial).</p>
                   <p><strong>4. Retención de Datos.</strong> Retenemos datos personales solo durante el tiempo necesario para cumplir los propósitos descritos en esta política, típicamente no más de 24 meses para cuentas inactivas. Los registros de pago se retienen según lo requieren las leyes fiscales y financieras aplicables.</p>
                   <p><strong>5. Cookies y Seguimiento.</strong> Usamos cookies esenciales para la funcionalidad del sitio y cookies de análisis opcionales para entender los patrones de uso. Puedes desactivar cookies no esenciales a través de la configuración de tu navegador.</p>
                   <p><strong>6. Tus Derechos.</strong> Dependiendo de tu jurisdicción, puedes tener derechos bajo GDPR, CCPA/CPRA u otras leyes de privacidad, incluyendo: acceso a tus datos, corrección de datos inexactos, eliminación de tus datos, portabilidad de datos, optar por no participar en ventas de datos (no vendemos datos) y optar por no participar en publicidad dirigida.</p>
                   <p><strong>7. Residentes de California (CCPA/CPRA).</strong> Los residentes de California tienen derechos adicionales bajo la Ley de Privacidad del Consumidor de California. No vendemos información personal. Puedes solicitar la divulgación de categorías y piezas específicas de información personal recopilada. Contacta privacy@mycasevalue.com para ejercer tus derechos.</p>
                   <p><strong>8. Usuarios Europeos (GDPR).</strong> Si te encuentras en el Área Económica Europea, nuestra base legal para procesar tus datos es tu consentimiento y nuestros intereses legítimos en proporcionar el Servicio. Puedes retirar tu consentimiento en cualquier momento contactándonos.</p>
                   <p><strong>9. Privacidad de Menores.</strong> El Servicio no está destinado a menores de 13 años. No recopilamos información knowingly de menores de 13 años. Si nos enteramos de que hemos recopilado información de un menor de 13 años, la eliminaremos promptly.</p>
-                  <p><strong>10. Seguridad.</strong> Implementamos medidas de seguridad estándar de la industria incluyendo encriptación en tránsito (TLS/SSL), procesamiento seguro de pagos a través de Stripe (compatible con PCI-DSS) y controles de acceso. Sin embargo, ningún método de transmisión o almacenamiento electrónico es 100% seguro.</p>
+                  <p><strong>10. Seguridad.</strong> Implementamos medidas de seguridad estándar de la industria incluyendo encriptación en tránsito (TLS/SSL) y controles de acceso. Sin embargo, ningún método de transmisión o almacenamiento electrónico es 100% seguro.</p>
                   <p><strong>11. Cambios en la Política.</strong> Podemos actualizar esta Política de Privacidad periódicamente. Notificaremos a los usuarios de cambios materiales a través del Servicio o correo electrónico.</p>
                   <p><strong>12. Contacto.</strong> Para consultas de privacidad o solicitudes de datos: privacy@mycasevalue.com.</p>
                 </>) : (<>
                   <p><strong>1. Information We Collect.</strong> We collect information you voluntarily provide (state selection, case type, email for account features) and automatically collected data (IP address, browser type, device information, usage analytics via cookies).</p>
-                  <p><strong>2. How We Use Information.</strong> We use collected information to: provide and improve the Service, process payments via Stripe, send communications you have opted into, analyze usage patterns to improve user experience, and comply with legal obligations.</p>
-                  <p><strong>3. Information Sharing.</strong> We do not sell your personal information. We may share information with: Stripe (payment processing), analytics providers (anonymized usage data), and law enforcement (when required by law, subpoena, or court order).</p>
+                  <p><strong>2. How We Use Information.</strong> We use collected information to: provide and improve the Service, send communications you have opted into, analyze usage patterns to improve user experience, and comply with legal obligations.</p>
+                  <p><strong>3. Information Sharing.</strong> We do not sell your personal information. We may share information with: analytics providers (anonymized usage data), and law enforcement (when required by law, subpoena, or court order).</p>
                   <p><strong>4. Data Retention.</strong> We retain personal data only as long as necessary to fulfill the purposes outlined in this policy, typically no longer than 24 months for inactive accounts. Payment records are retained as required by applicable tax and financial regulations.</p>
                   <p><strong>5. Cookies &amp; Tracking.</strong> We use essential cookies for site functionality and optional analytics cookies to understand usage patterns. You can disable non-essential cookies through your browser settings.</p>
                   <p><strong>6. Your Rights.</strong> Depending on your jurisdiction, you may have rights under GDPR, CCPA/CPRA, or other privacy laws, including: access to your data, correction of inaccurate data, deletion of your data, data portability, opting out of data sales (we do not sell data), and opting out of targeted advertising.</p>
                   <p><strong>7. California Residents (CCPA/CPRA).</strong> California residents have additional rights under the California Consumer Privacy Act. We do not sell personal information. You may request disclosure of categories and specific pieces of personal information collected. Contact privacy@mycasevalue.com to exercise your rights.</p>
                   <p><strong>8. European Users (GDPR).</strong> If you are in the European Economic Area, our legal basis for processing your data is your consent and our legitimate interests in providing the Service. You may withdraw consent at any time by contacting us.</p>
                   <p><strong>9. Children&apos;s Privacy.</strong> The Service is not intended for children under 13. We do not knowingly collect information from children under 13. If we learn that we have collected information from a child under 13, we will delete it promptly.</p>
-                  <p><strong>10. Security.</strong> We implement industry-standard security measures including encryption in transit (TLS/SSL), secure payment processing via Stripe (PCI-DSS compliant), and access controls. However, no method of electronic transmission or storage is 100% secure.</p>
+                  <p><strong>10. Security.</strong> We implement industry-standard security measures including encryption in transit (TLS/SSL) and access controls. However, no method of electronic transmission or storage is 100% secure.</p>
                   <p><strong>11. Changes to Policy.</strong> We may update this Privacy Policy periodically. We will notify users of material changes via the Service or email.</p>
                   <p><strong>12. Contact.</strong> For privacy inquiries or data requests: privacy@mycasevalue.com.</p>
                 </>))}
@@ -4442,10 +4398,10 @@ export default function MyCaseValue() {
                   <p><strong>2. Cookies Esenciales.</strong> Estas cookies son estrictamente necesarias para que MyCaseValue funcione. Habilitan características principales como la gestión de sesiones, seguridad y configuración de accesibilidad. No puedes desactivar estas cookies sin romper la funcionalidad principal.</p>
                   <p><strong>3. Cookies de Análisis.</strong> Usamos cookies de análisis opcionales para entender cómo los visitantes interactúan con MyCaseValue, qué páginas son más populares y dónde los usuarios encuentran problemas. Estos datos se agregan y se anonimizar. Las cookies de análisis solo se establecen si haces clic en &ldquo;Aceptar todo&rdquo; en nuestro banner de cookies.</p>
                   <p><strong>4. Cookies de Preferencia.</strong> Estas cookies recuerdan tus preferencias como selección de idioma (inglés/español), configuración de modo oscuro y tipos de caso vistos anteriormente para que no tengas que establecerlos nuevamente en cada visita.</p>
-                  <p><strong>5. Cookies de Pago.</strong> Cuando realiza una compra, nuestro procesador de pagos Stripe puede establecer cookies necesarias para completar la transacción de forma segura. Estas cookies se rigen por la política de privacidad de Stripe.</p>
+                  <p><strong>5. Cookies de Pago.</strong> Cuando los pagos estén disponibles, los proveedores de pago pueden establecer cookies necesarias para completar transacciones de forma segura.</p>
                   <p><strong>6. Cookies que NO Usamos.</strong> MyCaseValue NO utiliza: cookies de publicidad o retargeting, cookies de seguimiento entre sitios, píxeles de seguimiento de redes sociales o cookies que venden o comparten tus datos con anunciantes terceros.</p>
                   <p><strong>7. Gestionar Cookies.</strong> Puedes controlar las cookies a través de: (a) nuestro banner de consentimiento de cookies cuando visitas por primera vez, (b) la configuración de tu navegador (la mayoría de los navegadores te permiten bloquear o eliminar cookies), (c) contactándonos en privacy@mycasevalue.com. Ten en cuenta que desactivar cookies esenciales puede afectar la funcionalidad del sitio.</p>
-                  <p><strong>8. Cookies de Terceros.</strong> Las únicas cookies de terceros en MyCaseValue provienen de Stripe (procesamiento de pagos) y nuestra infraestructura de alojamiento/análisis. No permitimos que ninguna red de publicidad o corredor de datos coloque cookies en nuestro sitio.</p>
+                  <p><strong>8. Cookies de Terceros.</strong> Las únicas cookies de terceros en MyCaseValue provienen de nuestra infraestructura de alojamiento/análisis. No permitimos que ninguna red de publicidad o corredor de datos coloque cookies en nuestro sitio.</p>
                   <p><strong>9. Retención de Datos.</strong> Las cookies esenciales y de preferencia expiran después de 12 meses. Las cookies de análisis expiran después de 90 días. Las cookies de sesión se eliminan cuando cierras tu navegador.</p>
                   <p><strong>10. Actualizaciones.</strong> Podemos actualizar esta Política de Cookies periódicamente. Los cambios se reflejarán en esta página con una fecha actualizada. El uso continuado de MyCaseValue constituye aceptación.</p>
                   <p><strong>11. Contacto.</strong> Para preguntas sobre nuestras prácticas de cookies: privacy@mycasevalue.com.</p>
@@ -4454,10 +4410,10 @@ export default function MyCaseValue() {
                   <p><strong>2. Essential Cookies.</strong> These cookies are strictly necessary for MyCaseValue to function. They enable core features like session management, security, and accessibility settings. You cannot disable these cookies without breaking core functionality.</p>
                   <p><strong>3. Analytics Cookies.</strong> We use optional analytics cookies to understand how visitors interact with MyCaseValue, which pages are most popular, and where users encounter issues. This data is aggregated and anonymized. Analytics cookies are only set if you click &ldquo;Accept all&rdquo; on our cookie banner.</p>
                   <p><strong>4. Preference Cookies.</strong> These cookies remember your preferences such as language selection (English/Spanish), dark mode settings, and previously viewed case types so you don&apos;t have to set them again on each visit.</p>
-                  <p><strong>5. Payment Cookies.</strong> When you make a purchase, our payment processor Stripe may set cookies necessary to complete the transaction securely. These cookies are governed by Stripe&apos;s privacy policy.</p>
+                  <p><strong>5. Payment Cookies.</strong> When payment processing becomes available, payment providers may set cookies necessary to complete transactions securely.</p>
                   <p><strong>6. Cookies We Do NOT Use.</strong> MyCaseValue does NOT use: advertising or retargeting cookies, cross-site tracking cookies, social media tracking pixels, or cookies that sell or share your data with third-party advertisers.</p>
                   <p><strong>7. Managing Cookies.</strong> You can control cookies through: (a) our cookie consent banner when you first visit, (b) your browser settings (most browsers let you block or delete cookies), (c) contacting us at privacy@mycasevalue.com. Note that disabling essential cookies may impair site functionality.</p>
-                  <p><strong>8. Third-Party Cookies.</strong> The only third-party cookies on MyCaseValue come from Stripe (payment processing) and our hosting/analytics infrastructure. We do not allow any advertising networks or data brokers to place cookies on our site.</p>
+                  <p><strong>8. Third-Party Cookies.</strong> The only third-party cookies on MyCaseValue come from our hosting/analytics infrastructure. We do not allow any advertising networks or data brokers to place cookies on our site.</p>
                   <p><strong>9. Data Retention.</strong> Essential and preference cookies expire after 12 months. Analytics cookies expire after 90 days. Session cookies are deleted when you close your browser.</p>
                   <p><strong>10. Updates.</strong> We may update this Cookie Policy periodically. Changes will be reflected on this page with an updated date. Continued use of MyCaseValue constitutes acceptance.</p>
                   <p><strong>11. Contact.</strong> For questions about our cookie practices: privacy@mycasevalue.com.</p>

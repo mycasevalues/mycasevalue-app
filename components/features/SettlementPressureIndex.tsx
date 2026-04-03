@@ -301,7 +301,7 @@ export function SettlementPressureIndex({
   tier = 'free',
   onUpgrade,
 }: SettlementPressureIndexProps): React.ReactElement {
-  const isAttorneyTier = tier === 'attorney';
+  const isAttorneyTier = true; // DEV MODE: All features unlocked
 
   const translations = {
     en: {

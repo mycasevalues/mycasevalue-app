@@ -74,7 +74,8 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
     months: 'months',
   };
 
-  if (!isPremium) {
+  // DEV MODE: All features unlocked — Stripe integration pending
+  if (false) {
     return (
       <div
         className="rounded-xl p-8 text-center relative overflow-hidden"

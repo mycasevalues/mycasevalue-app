@@ -1,24 +1,19 @@
-'use client'
-import { createContext, useContext, useEffect, ReactNode } from 'react'
+'use client';
+import { createContext, useContext, ReactNode } from 'react';
 
-interface ThemeContextType {
-  darkMode: boolean
-  setDarkMode: (d: boolean) => void
-}
-
-const ThemeContext = createContext<ThemeContextType>({
-  darkMode: true,
-  setDarkMode: () => {},
-})
+// PAPER DESIGN SYSTEM — Light mode only, no theme switching
+const ThemeContext = createContext({ darkMode: false });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   return (
-    <ThemeContext.Provider value={{ darkMode: true, setDarkMode: () => {} }}>
+    <ThemeContext.Provider value={{ darkMode: false }}>
       {children}
     </ThemeContext.Provider>
-  )
+  );
 }
 
 export function useTheme() {
-  return useContext(ThemeContext)
+  return useContext(ThemeContext);
 }
+
+export default ThemeContext;

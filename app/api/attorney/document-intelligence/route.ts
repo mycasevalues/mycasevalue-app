@@ -21,7 +21,8 @@ export async function POST(req: Request) {
     if (!user?.email) return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
 
     const tier = await getUserTier(user.email);
-    if (tier !== 'attorney') return NextResponse.json({ error: 'Attorney Mode subscription required' }, { status: 403 });
+    // DEV MODE: All features unlocked — Stripe integration pending
+    // if (tier !== 'attorney') return NextResponse.json({ error: 'Attorney Mode subscription required' }, { status: 403 });
 
     const formData = await req.formData();
     const file = formData.get('file') as File;

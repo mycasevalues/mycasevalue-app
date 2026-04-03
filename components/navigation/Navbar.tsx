@@ -93,7 +93,7 @@ export function Navbar({
             className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer focus-ring"
             aria-label="MyCaseValue home"
           >
-            <Logo size="md" darkMode={true} />
+            <Logo size="md" darkMode={false} />
           </button>
 
           {/* Desktop nav links */}

@@ -146,12 +146,12 @@ export default function SpanishPricingPage() {
               ))}
             </ul>
 
-            <a href="/es/odds"
+            <button
+              disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#111111', color: '#FFFFFF' }}>
-              Obtener Informe
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+              style={{ background: '#111111', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
+              Próximamente
+            </button>
           </div>
 
           {/* Unlimited Reports Card */}
@@ -199,12 +199,12 @@ export default function SpanishPricingPage() {
               ))}
             </ul>
 
-            <a href="/es/odds"
+            <button
+              disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#F59E0B', color: '#FFFFFF' }}>
-              Obtener Ilimitado
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+              style={{ background: '#F59E0B', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
+              Próximamente
+            </button>
           </div>
 
           {/* Attorney Mode Card */}
@@ -250,12 +250,12 @@ export default function SpanishPricingPage() {
               ))}
             </ul>
 
-            <a href="/es/odds"
+            <button
+              disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#8B5CF6', color: 'white' }}>
-              Iniciar Modo Abogado
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+              style={{ background: '#8B5CF6', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
+              Próximamente
+            </button>
           </div>
 
         </div>

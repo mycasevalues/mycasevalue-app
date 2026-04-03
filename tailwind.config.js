@@ -4,7 +4,8 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  // PAPER DESIGN SYSTEM — Light mode only, dark mode disabled
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {

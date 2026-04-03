@@ -3,7 +3,6 @@ import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 import {
   sendWelcomeEmail,
   sendReportEmail,
-  sendPaymentConfirmation,
   EmailLanguage,
   EmailType,
 } from '../../../lib/email';
@@ -65,19 +64,9 @@ export async function POST(req: NextRequest) {
         result = await sendReportEmail(to, data, lang);
         break;
 
-      case 'payment':
-        if (!data?.plan || typeof data?.amount !== 'number') {
-          return NextResponse.json(
-            { error: 'Missing or invalid plan/amount in data for payment email' },
-            { status: 400 }
-          );
-        }
-        result = await sendPaymentConfirmation(to, data.plan, data.amount, lang);
-        break;
-
       default:
         return NextResponse.json(
-          { error: 'Invalid email type. Use "welcome", "report", or "payment"' },
+          { error: 'Invalid email type. Use "welcome" or "report"' },
           { status: 400 }
         );
     }

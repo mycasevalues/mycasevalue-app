@@ -201,10 +201,6 @@ const EN = {
   get_report: 'Get my report',
   best_value: 'BEST VALUE',
   all_types: 'All case types, unlimited access',
-  card: 'Card',
-  apple_pay: 'Apple Pay',
-  google_pay: 'Google Pay',
-  secure_stripe: 'Secure checkout by Stripe',
 
   // Footer
   verified_data: 'Verified data:',
@@ -415,10 +411,6 @@ const ES: typeof EN = {
   get_report: 'Obtener informe',
   best_value: 'MEJOR VALOR',
   all_types: 'Todos los tipos de casos, para siempre',
-  card: 'Tarjeta',
-  apple_pay: 'Apple Pay',
-  google_pay: 'Google Pay',
-  secure_stripe: 'Pago seguro por Stripe',
 
   // Footer
   verified_data: 'Datos verificados:',

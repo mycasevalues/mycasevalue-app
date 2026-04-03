@@ -301,8 +301,7 @@ function PricingCard({
         {/* CTA Button */}
         {plan.stripePlan ? (
           <button
-            onClick={() => onCheckout(plan.stripePlan!)}
-            disabled={anyLoading}
+            disabled={true}
             style={{
               width: '100%',
               padding: '12px 16px',
@@ -317,12 +316,12 @@ function PricingCard({
               transition: 'all 200ms ease',
               display: 'inline-block',
               marginBottom: '8px',
-              cursor: anyLoading ? 'not-allowed' : 'pointer',
-              opacity: anyLoading && !isLoading ? 0.5 : 1,
+              cursor: 'not-allowed',
+              opacity: 0.5,
             }}
             className="pricing-cta-link"
           >
-            {isLoading ? 'Redirecting...' : plan.ctaText}
+            Coming Soon
           </button>
         ) : (
           <Link
@@ -454,28 +453,8 @@ export default function PricingPage() {
   const [error, setError] = useState('');
 
   async function handleCheckout(plan: 'single' | 'unlimited' | 'attorney') {
-    setLoadingPlan(plan);
+    // Payments coming soon
     setError('');
-
-    try {
-      const res = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan }),
-      });
-
-      const data = await res.json();
-
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        setError(data.error || 'Something went wrong. Please try again.');
-        setLoadingPlan(null);
-      }
-    } catch {
-      setError('Unable to connect to payment system. Please try again.');
-      setLoadingPlan(null);
-    }
   }
 
   return (

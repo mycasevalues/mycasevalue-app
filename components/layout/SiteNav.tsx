@@ -17,8 +17,8 @@ const NAV_LINKS = [
   { href: '/districts', label: 'Districts' },
   { href: '/judges', label: 'Judges' },
   { href: '/calculator', label: 'Calculator' },
-  { href: '/blog', label: 'Resources' },
-  { href: '/pricing', label: 'Pricing' },
+  { href: '/how-it-works', label: 'How It Works' },
+  { href: '/blog', label: 'Blog' },
   { href: '/attorney', label: 'Attorney Mode' },
 ];
 
@@ -261,7 +261,7 @@ export default function SiteNav() {
                       transition: 'all var(--duration-base) ease',
                     }}
                   >
-                    Get Started Free
+                    Search Cases
                   </Link>
                 </>
               )}

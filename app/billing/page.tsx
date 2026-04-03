@@ -37,7 +37,7 @@ export default function BillingPage() {
             margin: '0 0 12px 0',
           }}
         >
-          Billing
+          Billing — Coming Soon
         </h1>
         <p
           style={{
@@ -48,7 +48,7 @@ export default function BillingPage() {
             margin: '0 0 32px 0',
           }}
         >
-          Your billing history and payment methods will appear here once you upgrade to a paid plan.
+          Billing and payment features will be available soon.
         </p>
         <Link
           href="/pricing"

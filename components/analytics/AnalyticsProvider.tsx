@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
-export type EventType = 'page_view' | 'report_generated' | 'payment_started' | 'share_clicked' | 'search_used';
+export type EventType = 'page_view' | 'report_generated' | 'share_clicked' | 'search_used';
 
 export interface AnalyticsEvent {
   event: EventType;

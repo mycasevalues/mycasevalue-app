@@ -1,7 +1,14 @@
 /* ============================================================
-   MYCASEVALUE — DESIGN TOKENS (PAPER DESIGN SYSTEM)
-   Light, clean, white-paper aesthetic — purple accent
-   Single source of truth. No token may be hardcoded anywhere.
+   PAPER DESIGN SYSTEM — LOCKED
+   ============================================================
+   Light-mode only. Purple accent (#8B5CF6).
+   Montserrat / Roboto / PT Mono typography.
+
+   DO NOT add dark mode variants.
+   DO NOT change accent colors.
+   DO NOT add theme switching.
+
+   This is the final production design system.
    ============================================================ */
 
 :root {

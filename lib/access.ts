@@ -32,12 +32,6 @@ export const TIER_PRICES: Record<Tier, { amount: number; interval: string | null
   attorney: { amount: 29.99, interval: 'month' },
 };
 
-export const TIER_STRIPE_PRICES: Record<Exclude<Tier, 'free'>, string> = {
-  single_report: process.env.NEXT_PUBLIC_STRIPE_PRICE_SINGLE || '',
-  unlimited: process.env.NEXT_PUBLIC_STRIPE_PRICE_UNLIMITED || '',
-  attorney: process.env.NEXT_PUBLIC_STRIPE_PRICE_ATTORNEY || '',
-};
-
 // ─── Feature Keys (Complete Union) ────────────────────────────────
 export type FeatureKey =
   // ── Free Tier ──
@@ -161,41 +155,8 @@ export const TIER_FEATURES: Record<Tier, FeatureKey[]> = {
  * Returns 'free' for unauthenticated or unknown users.
  */
 export async function getUserTier(email: string | null): Promise<Tier> {
-  if (!email) return 'free';
-
-  try {
-    const supabase = getSupabaseAdmin();
-    const { data, error } = await supabase
-      .from('premium_sessions')
-      .select('plan, expires_at')
-      .eq('email', email.toLowerCase())
-      .order('granted_at', { ascending: false })
-      .limit(1)
-      .single();
-
-    if (error || !data) return 'free';
-
-    // Check if subscription/access is still active
-    if (data.expires_at) {
-      const expiresMs = typeof data.expires_at === 'number'
-        ? data.expires_at
-        : new Date(data.expires_at).getTime();
-      if (expiresMs < Date.now()) return 'free'; // Expired
-    }
-
-    // Map plan names to tier IDs
-    const planToTier: Record<string, Tier> = {
-      free: 'free',
-      single: 'single_report',
-      single_report: 'single_report',
-      unlimited: 'unlimited',
-      attorney: 'attorney',
-    };
-
-    return planToTier[data.plan] || 'free';
-  } catch {
-    return 'free';
-  }
+  // DEV MODE: All features unlocked — Stripe integration pending
+  return 'attorney' as Tier;
 }
 
 /**

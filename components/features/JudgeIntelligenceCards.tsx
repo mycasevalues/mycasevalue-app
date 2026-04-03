@@ -234,7 +234,7 @@ export function JudgeIntelligenceCards({
   onUpgrade,
 }: JudgeIntelligenceCardsProps) {
   const judges = useMemo(() => {
-    const numJudges = isPremium ? 4 : 2;
+    const numJudges = 4; // DEV MODE: All features unlocked
     const judgeList: JudgeData[] = [];
     for (let i = 0; i < numJudges; i++) {
       judgeList.push(generateJudgeData(nosCode, stateCode, i));
@@ -268,7 +268,7 @@ export function JudgeIntelligenceCards({
       {/* Judge Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-6">
         {judges.map((judge, idx) => {
-          const isLocked = !isPremium && idx >= 2;
+          const isLocked = false; // DEV MODE: All features unlocked
           return (
             <JudgeCard
               key={idx}

@@ -82,12 +82,12 @@ export default function SiteFooter() {
               Explore
             </p>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <Link href="/search" className="site-footer-link" style={footerLinkStyle}>Search Cases</Link>
               <Link href="/districts" className="site-footer-link" style={footerLinkStyle}>Districts</Link>
-              <Link href="/cases" className="site-footer-link" style={footerLinkStyle}>Case Types</Link>
               <Link href="/judges" className="site-footer-link" style={footerLinkStyle}>Judge Profiles</Link>
+              <Link href="/cases" className="site-footer-link" style={footerLinkStyle}>Case Types</Link>
               <Link href="/calculator" className="site-footer-link" style={footerLinkStyle}>Settlement Calculator</Link>
-              <Link href="/blog" className="site-footer-link" style={footerLinkStyle}>Resources</Link>
-              <Link href="/compare" className="site-footer-link" style={footerLinkStyle}>Compare Cases</Link>
+              <Link href="/trends" className="site-footer-link" style={footerLinkStyle}>Trends</Link>
               <Link href="/attorney" className="site-footer-link" style={footerLinkStyle}>Attorney Mode</Link>
             </nav>
           </div>
@@ -131,11 +131,15 @@ export default function SiteFooter() {
               Company
             </p>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <Link href="/how-it-works" className="site-footer-link" style={footerLinkStyle}>How It Works</Link>
               <Link href="/methodology" className="site-footer-link" style={footerLinkStyle}>Methodology</Link>
               <Link href="/about" className="site-footer-link" style={footerLinkStyle}>About</Link>
               <Link href="/contact" className="site-footer-link" style={footerLinkStyle}>Contact</Link>
+              <Link href="/faq" className="site-footer-link" style={footerLinkStyle}>FAQ</Link>
+              <Link href="/blog" className="site-footer-link" style={footerLinkStyle}>Blog</Link>
               <Link href="/privacy" className="site-footer-link" style={footerLinkStyle}>Privacy Policy</Link>
               <Link href="/terms" className="site-footer-link" style={footerLinkStyle}>Terms of Service</Link>
+              <Link href="/disclaimer" className="site-footer-link" style={footerLinkStyle}>Disclaimer</Link>
             </nav>
           </div>
         </div>

@@ -16,7 +16,8 @@ interface TrendChartProps {
   height?: number;
 }
 
-const darkModeColors = {
+// PAPER DESIGN SYSTEM — Light mode only, no theme switching
+const lightModeColors = {
   bg: '#FFFFFF',
   border: '#E5E0D8',
   text: '#111827',
@@ -48,7 +49,7 @@ export const generateDemoData = (nos?: string): TrendDataPoint[] => {
 
 const TrendChart: React.FC<TrendChartProps> = ({
   data,
-  color = darkModeColors.accent,
+  color = lightModeColors.accent,
   label,
   lang = 'en',
   height = 300,
@@ -121,7 +122,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
         y1={y}
         x2={chartWidth}
         y2={y}
-        stroke={darkModeColors.border}
+        stroke={lightModeColors.border}
         strokeWidth="1"
         strokeDasharray="4,4"
         opacity="0.5"
@@ -141,7 +142,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
         textAnchor="end"
         dominantBaseline="middle"
         fontSize="13"
-        fill={darkModeColors.muted}
+        fill={lightModeColors.muted}
       >
         {percent}%
       </text>
@@ -156,7 +157,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
       y={chartHeight + 18}
       textAnchor="middle"
       fontSize="13"
-      fill={darkModeColors.muted}
+      fill={lightModeColors.muted}
     >
       {point.year}
     </text>
@@ -207,8 +208,8 @@ const TrendChart: React.FC<TrendChartProps> = ({
         position: 'relative',
         width: '100%',
         height: `${height}px`,
-        backgroundColor: darkModeColors.bg,
-        border: `1px solid ${darkModeColors.border}`,
+        backgroundColor: lightModeColors.bg,
+        border: `1px solid ${lightModeColors.border}`,
         borderRadius: '8px',
         padding: '20px',
         boxSizing: 'border-box',
@@ -220,7 +221,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
           style={{
             fontSize: '14px',
             fontWeight: '600',
-            color: darkModeColors.text,
+            color: lightModeColors.text,
             marginBottom: '16px',
           }}
         >
@@ -243,7 +244,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
           y1={padding.top}
           x2={padding.left}
           y2={padding.top + chartHeight}
-          stroke={darkModeColors.border}
+          stroke={lightModeColors.border}
           strokeWidth="1.5"
         />
 
@@ -253,7 +254,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
           y1={padding.top + chartHeight}
           x2={padding.left + chartWidth}
           y2={padding.top + chartHeight}
-          stroke={darkModeColors.border}
+          stroke={lightModeColors.border}
           strokeWidth="1.5"
         />
 
@@ -340,12 +341,12 @@ const TrendChart: React.FC<TrendChartProps> = ({
             position: 'absolute',
             left: `${((tooltipPos.x + padding.left) / (chartWidth + padding.left + padding.right)) * 100}%`,
             top: `${((tooltipPos.y + padding.top) / height) * 100}%`,
-            backgroundColor: darkModeColors.border,
-            border: `1px solid ${darkModeColors.accent}`,
+            backgroundColor: lightModeColors.border,
+            border: `1px solid ${lightModeColors.accent}`,
             borderRadius: '6px',
             padding: '8px 12px',
             fontSize: '12px',
-            color: darkModeColors.text,
+            color: lightModeColors.text,
             pointerEvents: 'none',
             transform: 'translate(-50%, -110%)',
             whiteSpace: 'nowrap',

@@ -432,7 +432,7 @@ export function AttorneyModePanel({
   tier,
   onUpgrade,
 }: AttorneyModePanelProps) {
-  const isAttorneyTier = tier === 'attorney';
+  const isAttorneyTier = true; // DEV MODE: All features unlocked
 
   const translations = {
     en: {

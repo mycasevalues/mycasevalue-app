@@ -46,8 +46,6 @@ export async function GET(req: NextRequest) {
       plan: premiumSession.plan,
       grantedAt: premiumSession.grantedAt,
       expiresAt: premiumSession.expiresAt,
-      stripeCustomerId: premiumSession.stripeCustomerId,
-      stripeSubscriptionId: premiumSession.stripeSubscriptionId,
     });
   } catch (err: any) {
     console.error('[Premium Status Error]', err?.message || err);

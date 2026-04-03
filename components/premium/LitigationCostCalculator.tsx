@@ -91,8 +91,8 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
     upgrade: 'Upgrade to Access',
   };
 
-  // Locked state for non-premium
-  if (!isPremium) {
+  // DEV MODE: All features unlocked — Stripe integration pending
+  if (false) {
     return (
       <section
         className="py-12 sm:py-16"

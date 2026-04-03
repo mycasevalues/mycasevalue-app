@@ -13,8 +13,6 @@ export interface PremiumSession {
   plan: PremiumPlan;
   grantedAt: number;
   expiresAt: number | null; // null for one-time purchases, timestamp for subscriptions
-  stripeCustomerId?: string;
-  stripeSubscriptionId?: string;
 }
 
 /**
@@ -92,8 +90,6 @@ export async function syncPremiumFromDB(email: string): Promise<PremiumSession |
       plan: data.plan,
       grantedAt: data.granted_at,
       expiresAt: data.expires_at,
-      stripeCustomerId: data.stripe_customer_id,
-      stripeSubscriptionId: data.stripe_subscription_id,
     };
 
     premiumStore.set(normalizedEmail, session);
@@ -132,8 +128,6 @@ export async function grantPremiumAccess(session: PremiumSession): Promise<void>
             plan: normalizedSession.plan,
             granted_at: normalizedSession.grantedAt,
             expires_at: normalizedSession.expiresAt,
-            stripe_customer_id: normalizedSession.stripeCustomerId,
-            stripe_subscription_id: normalizedSession.stripeSubscriptionId,
           },
           { onConflict: 'email' }
         )

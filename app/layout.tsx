@@ -228,8 +228,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GoogleAnalytics />
         {/* Self-hosted fonts — no external CDN, GDPR compliant */}
         {/* DNS prefetch & preconnect for third-party services */}
-        <link rel="dns-prefetch" href="https://js.stripe.com" />
-        <link rel="preconnect" href="https://js.stripe.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

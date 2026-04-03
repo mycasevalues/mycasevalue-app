@@ -223,9 +223,6 @@ export async function sendReportEmail(
 }
 
 /**
- * Send payment confirmation email
- */
-/**
  * Send password reset email
  */
 export async function sendPasswordResetEmail(
@@ -339,92 +336,3 @@ export async function sendReportReadyEmail(
   });
 }
 
-/**
- * Send payment confirmation email
- */
-export async function sendPaymentConfirmation(
-  email: string,
-  plan: string,
-  amount: number,
-  lang: EmailLanguage = 'en'
-): Promise<{ success: boolean; error?: string }> {
-  if (!isValidEmail(email)) {
-    return { success: false, error: 'Invalid email address' };
-  }
-
-  const planNames: Record<string, { en: string; es: string }> = {
-    single: { en: 'Single Report', es: 'Informe Único' },
-    unlimited: { en: 'Unlimited Reports', es: 'Informes Ilimitados' },
-    attorney: { en: 'Attorney Mode', es: 'Modo de Abogado' },
-  };
-
-  const planName = planNames[plan]?.[lang] || plan;
-  const amountStr = (amount / 100).toFixed(2);
-
-  if (lang === 'es') {
-    return sendEmail({
-      to: email,
-      subject: 'Confirmación de Pago - MyCaseValue',
-      html: `
-        <html>
-          <body style="font-family: Arial, sans-serif; color: #333;">
-            <h2>Confirmación de Pago</h2>
-            <p>Tu pago ha sido procesado exitosamente.</p>
-            <table style="border-collapse: collapse; width: 100%; margin: 20px 0;">
-              <tr style="background-color: #f5f5f5;">
-                <td style="border: 1px solid #ddd; padding: 10px;"><strong>Plan</strong></td>
-                <td style="border: 1px solid #ddd; padding: 10px;">${planName}</td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;"><strong>Monto</strong></td>
-                <td style="border: 1px solid #ddd; padding: 10px;">$${amountStr} USD</td>
-              </tr>
-              <tr style="background-color: #f5f5f5;">
-                <td style="border: 1px solid #ddd; padding: 10px;"><strong>Fecha</strong></td>
-                <td style="border: 1px solid #ddd; padding: 10px;">${new Date().toLocaleDateString('es-ES')}</td>
-              </tr>
-            </table>
-            <p style="background-color: #d4edda; padding: 10px; border-radius: 5px; color: #155724;">
-              Tu acceso premium está ahora activado. ¡Gracias por tu compra!
-            </p>
-            <p><a href="https://www.mycasevalues.com" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Acceder a MyCaseValue</a></p>
-          </body>
-        </html>
-      `,
-      text: `Confirmación de Pago\n\nPlan: ${planName}\nMonto: $${amountStr} USD\n\nTu acceso premium está ahora activado.`,
-    });
-  }
-
-  // English version
-  return sendEmail({
-    to: email,
-    subject: 'Payment Confirmation - MyCaseValue',
-    html: `
-      <html>
-        <body style="font-family: Arial, sans-serif; color: #333;">
-          <h2>Payment Confirmation</h2>
-          <p>Your payment has been processed successfully.</p>
-          <table style="border-collapse: collapse; width: 100%; margin: 20px 0;">
-            <tr style="background-color: #f5f5f5;">
-              <td style="border: 1px solid #ddd; padding: 10px;"><strong>Plan</strong></td>
-              <td style="border: 1px solid #ddd; padding: 10px;">${planName}</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 10px;"><strong>Amount</strong></td>
-              <td style="border: 1px solid #ddd; padding: 10px;">$${amountStr} USD</td>
-            </tr>
-            <tr style="background-color: #f5f5f5;">
-              <td style="border: 1px solid #ddd; padding: 10px;"><strong>Date</strong></td>
-              <td style="border: 1px solid #ddd; padding: 10px;">${new Date().toLocaleDateString('en-US')}</td>
-            </tr>
-          </table>
-          <p style="background-color: #d4edda; padding: 10px; border-radius: 5px; color: #155724;">
-            Your premium access is now active. Thank you for your purchase!
-          </p>
-          <p><a href="https://www.mycasevalues.com" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Access MyCaseValue</a></p>
-        </body>
-      </html>
-    `,
-    text: `Payment Confirmation\n\nPlan: ${planName}\nAmount: $${amountStr} USD\n\nYour premium access is now active.`,
-  });
-}

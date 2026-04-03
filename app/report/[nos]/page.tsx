@@ -135,8 +135,8 @@ export default async function ReportPage({
 
   const isPremium = tier === 'single_report' || tier === 'unlimited' || tier === 'attorney';
 
-  // Rate-limit free users to 3 lookups/day
-  if (!isPremium) {
+  // DEV MODE: All features unlocked — Stripe integration pending
+  if (false) {
     try {
       const headerStore = await headers();
       const ip = headerStore.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous';
