@@ -455,7 +455,7 @@ export default function AttorneyPage() {
 
           {/* CTA Button */}
           <Link
-            href="/sign-up"
+            href="/pricing#attorney"
             style={{
               display: 'inline-block',
               padding: '16px 40px',
@@ -473,7 +473,7 @@ export default function AttorneyPage() {
             }}
             className="attorney-cta-link"
           >
-            Start 14-day Free Trial
+            See Attorney Mode Pricing →
           </Link>
 
           <p
@@ -489,32 +489,6 @@ export default function AttorneyPage() {
         </div>
       </section>
 
-      {/* Footer Disclaimer */}
-      <footer
-        style={{
-          padding: '40px 20px',
-          backgroundColor: 'var(--bg-surface)',
-          borderTop: '1px solid var(--border-default)',
-          textAlign: 'center',
-          fontSize: '12px',
-          color: 'var(--fg-muted)',
-          fontFamily: 'var(--font-body)',
-        }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', lineHeight: '1.6' }}>
-          <p style={{ margin: '0 0 12px 0' }}>
-            <strong>Disclaimer:</strong> MyCaseValue's AI tools provide analytical insights and
-            information to assist legal professionals in their research and decision-making
-            processes. These tools are not a substitute for professional legal judgment or
-            advice. Always consult with qualified legal counsel and conduct independent
-            verification of all information. Case value and outcome predictions are based on
-            historical data and are subject to change.
-          </p>
-          <p style={{ margin: 0 }}>
-            © 2026 MyCaseValue. All rights reserved. | Attorney Mode is a premium feature.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
