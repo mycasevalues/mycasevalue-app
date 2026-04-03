@@ -6,6 +6,7 @@
  */
 
 import QuickLookupForm from './QuickLookupForm';
+import HeroStats from './ui/HeroStats';
 
 export default function ServerHero() {
   return (
@@ -205,48 +206,7 @@ export default function ServerHero() {
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '32px',
-            }}
-            className="stats-grid"
-          >
-            {[
-              { value: '5.1M+', label: 'Federal Cases Analyzed' },
-              { value: '94', label: 'Federal Districts' },
-              { value: '50+', label: 'Years of Data' },
-              { value: '84', label: 'Case Types Covered' },
-            ].map((stat, i) => (
-              <div key={i} style={{ textAlign: 'center' }}>
-                <div
-                  style={{
-                    fontFamily: '"PT Mono", monospace',
-                    fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
-                    fontWeight: 700,
-                    color: 'var(--fg-primary)',
-                    letterSpacing: '-0.5px',
-                    lineHeight: 1,
-                    marginBottom: '8px',
-                  }}
-                >
-                  {stat.value}
-                </div>
-                <div
-                  style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
-                    fontSize: '13px',
-                    fontWeight: 500,
-                    color: 'var(--fg-muted)',
-                    letterSpacing: '0.02em',
-                  }}
-                >
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+          <HeroStats />
         </div>
       </div>
 

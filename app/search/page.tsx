@@ -1,11 +1,40 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
 
+interface RecentItem {
+  label: string;
+  nos: string;
+  category: string;
+  ts: number;
+}
+
+const saveToRecent = (item: { label: string; nos: string; category: string }) => {
+  if (typeof window === 'undefined') return;
+  try {
+    const recent: RecentItem[] = JSON.parse(localStorage.getItem('mcv_recent') || '[]');
+    const filtered = recent.filter((r) => r.label !== item.label);
+    const updated = [{ ...item, ts: Date.now() }, ...filtered].slice(0, 5);
+    localStorage.setItem('mcv_recent', JSON.stringify(updated));
+  } catch {
+    // localStorage unavailable
+  }
+};
+
 export default function SearchPage() {
   const [query, setQuery] = useState('');
+  const [recentItems, setRecentItems] = useState<RecentItem[]>([]);
+
+  useEffect(() => {
+    try {
+      const stored = JSON.parse(localStorage.getItem('mcv_recent') || '[]');
+      setRecentItems(stored);
+    } catch {
+      // ignore
+    }
+  }, []);
 
   const allTypes = SITS.flatMap(cat =>
     cat.opts.map(opt => ({
@@ -33,6 +62,33 @@ export default function SearchPage() {
       <p style={{ color: 'var(--fg-muted)', fontSize: 15, marginBottom: 32 }}>
         Search across all 84 federal case types to find outcome data for your situation.
       </p>
+
+      {/* Recently viewed */}
+      {query.length === 0 && recentItems.length > 0 && (
+        <div style={{ marginBottom: 24 }}>
+          <p style={{ fontSize: 13, color: 'var(--fg-muted)', marginBottom: 12, fontWeight: 500 }}>Recently viewed:</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {recentItems.map((item, i) => (
+              <Link
+                key={i}
+                href={`/report/${item.category}?type=${item.nos}`}
+                style={{
+                  padding: '6px 14px',
+                  background: 'var(--bg-surface)',
+                  border: '1px solid var(--border-default)',
+                  borderRadius: 20,
+                  fontSize: 13,
+                  color: 'var(--fg-secondary)',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       <input
         type="text"
@@ -65,7 +121,8 @@ export default function SearchPage() {
       {results.map((r, i) => (
         <Link
           key={i}
-          href={`/report/${r.nos}`}
+          href={`/report/${r.category}?type=${r.nos}`}
+          onClick={() => saveToRecent({ label: r.label, nos: r.nos, category: r.category })}
           style={{
             display: 'block',
             padding: 16,
@@ -77,7 +134,20 @@ export default function SearchPage() {
             transition: 'border-color 150ms',
           }}
         >
-          <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--fg-primary)', margin: '0 0 4px' }}>{r.label}</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+            <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--fg-primary)', margin: 0 }}>{r.label}</p>
+            <span style={{
+              fontSize: 11,
+              fontFamily: 'var(--font-mono)',
+              color: 'var(--fg-muted)',
+              background: 'var(--bg-base)',
+              padding: '1px 6px',
+              borderRadius: 4,
+              border: '1px solid var(--border-default)',
+            }}>
+              NOS {r.nos}
+            </span>
+          </div>
           <p style={{ fontSize: 13, color: 'var(--fg-muted)', margin: 0 }}>{r.categoryName}</p>
         </Link>
       ))}

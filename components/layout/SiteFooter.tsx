@@ -86,6 +86,7 @@ export default function SiteFooter() {
               <Link href="/cases" className="site-footer-link" style={footerLinkStyle}>Case Types</Link>
               <Link href="/judges" className="site-footer-link" style={footerLinkStyle}>Judge Profiles</Link>
               <Link href="/calculator" className="site-footer-link" style={footerLinkStyle}>Settlement Calculator</Link>
+              <Link href="/compare" className="site-footer-link" style={footerLinkStyle}>Compare Cases</Link>
               <Link href="/attorney" className="site-footer-link" style={footerLinkStyle}>Attorney Mode</Link>
             </nav>
           </div>

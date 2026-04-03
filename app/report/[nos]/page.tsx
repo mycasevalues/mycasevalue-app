@@ -8,6 +8,7 @@ import { getUserTier } from '../../../lib/access';
 import { getSupabaseAdmin, CaseStats } from '../../../lib/supabase';
 import { getOpinionsByType, getRECAPByType } from '../../../lib/courtlistener';
 import ReportPDFButton from './ReportPDFButton';
+import ShareButtons from '../../../components/ui/ShareButtons';
 
 export const revalidate = 0;
 
@@ -199,6 +200,11 @@ export default async function ReportPage({
               {totalCases.toLocaleString()} cases analyzed
             </p>
           )}
+
+          <ShareButtons
+            url={`https://www.mycasevalues.com/report/${nos}`}
+            title={`${label} — Federal Court Outcome Data | MyCaseValue`}
+          />
 
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--fg-muted)' }}>
