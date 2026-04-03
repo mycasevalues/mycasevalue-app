@@ -56,7 +56,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {},
+  verification: {
+    google: 'ADD_YOUR_GOOGLE_SEARCH_CONSOLE_CODE_HERE',
+  },
   category: 'legal',
   other: {
     'google': 'notranslate',
