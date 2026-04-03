@@ -16,9 +16,9 @@ export default function SiteNav() {
         top: 0,
         zIndex: 200,
         height: '64px',
-        background: '#FFFFFF',
-        borderBottom: '1px solid #E5E0D8',
-        boxShadow: '0 1px 3px rgba(17,24,39,0.04)',
+        background: 'var(--bg-surface)',
+        borderBottom: '1px solid var(--border-default)',
+        boxShadow: 'var(--shadow-xs)',
       }}
       role="navigation"
       aria-label="Site navigation"
@@ -41,7 +41,7 @@ export default function SiteNav() {
             fontFamily: 'var(--font-display)',
             fontSize: '20px',
             fontWeight: 900,
-            color: '#111111',
+            color: 'var(--accent-primary)',
             textDecoration: 'none',
             letterSpacing: '-0.5px',
           }}
@@ -71,13 +71,13 @@ export default function SiteNav() {
               className="site-nav-link"
               style={{
                 padding: '8px 14px',
-                borderRadius: '8px',
+                borderRadius: 'var(--r-md)',
                 fontSize: '14px',
                 fontWeight: 500,
-                color: '#6B7280',
+                color: 'var(--fg-muted)',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
-                transition: 'color 200ms ease',
+                transition: 'color var(--duration-normal) var(--ease-out)',
               }}
             >
               {link.label}
@@ -101,12 +101,12 @@ export default function SiteNav() {
               padding: '8px 16px',
               fontSize: '14px',
               fontWeight: 500,
-              color: '#6B7280',
+              color: 'var(--fg-muted)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
-              borderRadius: '8px',
-              border: '1.5px solid #C9C3BB',
-              transition: 'all 200ms ease',
+              borderRadius: 'var(--r-md)',
+              border: '1.5px solid var(--border-default)',
+              transition: 'all var(--duration-normal) var(--ease-out)',
             }}
           >
             Sign In
@@ -117,12 +117,12 @@ export default function SiteNav() {
               padding: '8px 20px',
               fontSize: '14px',
               fontWeight: 600,
-              color: '#FFFFFF',
-              background: '#111111',
-              borderRadius: '8px',
+              color: 'var(--fg-inverse)',
+              background: 'var(--accent-primary)',
+              borderRadius: 'var(--r-md)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
-              transition: 'all 200ms ease',
+              transition: 'all var(--duration-normal) var(--ease-out)',
             }}
           >
             Get Started Free
@@ -131,7 +131,7 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .site-nav-link:hover { color: #111111 !important; }
+        .site-nav-link:hover { color: var(--accent-primary) !important; }
         @media (max-width: 768px) {
           .site-nav-center { display: none !important; }
           .site-nav-right { display: none !important; }

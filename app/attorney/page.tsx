@@ -380,7 +380,7 @@ export default function AttorneyPage() {
               display: 'inline-block',
               padding: '16px 40px',
               backgroundColor: 'var(--accent-primary)',
-              color: '#ffffff',
+              color: 'var(--fg-inverse)',
               textDecoration: 'none',
               borderRadius: '8px',
               fontWeight: '700',

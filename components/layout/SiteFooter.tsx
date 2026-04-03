@@ -12,7 +12,7 @@ export default function SiteFooter() {
     <footer
       className="site-footer"
       style={{
-        background: '#111111',
+        background: 'var(--accent-primary)',
         borderTop: '1px solid rgba(255,255,255,0.08)',
         padding: '64px 24px 32px',
         color: 'rgba(255,255,255,0.6)',
@@ -36,7 +36,7 @@ export default function SiteFooter() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '20px',
                 fontWeight: 900,
-                color: '#FFFFFF',
+                color: 'var(--fg-inverse)',
                 textDecoration: 'none',
                 letterSpacing: '-0.5px',
               }}
