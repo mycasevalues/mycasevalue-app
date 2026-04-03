@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/map`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/how-it-works`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/calculator`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/disclaimer`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },

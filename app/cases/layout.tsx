@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'Case Categories — Federal Court Data',
   description: 'Browse outcome data from 5.1M+ federal cases. Win rates, settlements, and timelines across 84 case types including employment, injury, and civil rights.',

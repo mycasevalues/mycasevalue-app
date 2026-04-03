@@ -5,7 +5,10 @@ import { createServerClient } from '@supabase/ssr';
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { getUserTier } from '../../../lib/access';
+import { getSupabaseAdmin, CaseStats } from '../../../lib/supabase';
 import ReportPDFButton from './ReportPDFButton';
+
+export const revalidate = 0;
 
 // Find a label for a NOS code by searching SITS
 function getNosLabel(nos: string): string {
@@ -68,9 +71,37 @@ export default async function ReportPage({
   const { nos } = await params;
   const { district } = await searchParams;
   const districtLabel = district || 'National Average';
+
+  // ─── Try Supabase case_stats first, fall back to static data ───
+  let dbStats: CaseStats | null = null;
+  try {
+    const adminDb = getSupabaseAdmin();
+    // Try matching by NOS code first
+    let { data: row } = await adminDb
+      .from('case_stats')
+      .select('*')
+      .eq('nos_code', nos)
+      .single();
+    if (!row) {
+      // Try matching by category (SITS id)
+      const cat = SITS.find(c => c.id === nos);
+      if (cat && cat.opts.length > 0) {
+        const result = await adminDb
+          .from('case_stats')
+          .select('*')
+          .eq('nos_code', cat.opts[0].nos)
+          .single();
+        row = result.data;
+      }
+    }
+    if (row) dbStats = row as CaseStats;
+  } catch {
+    // Supabase unavailable — will use static data
+  }
+
   const data = getReportData(nos);
 
-  if (!data) {
+  if (!data && !dbStats) {
     return (
       <div style={{ minHeight: '100vh', background: 'var(--bg-base)', padding: '64px 24px', textAlign: 'center' }}>
         <p style={{ fontSize: 18, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)', fontWeight: 600, marginBottom: 12 }}>
@@ -111,13 +142,21 @@ export default async function ReportPage({
 
   const isPremium = tier === 'single_report' || tier === 'unlimited' || tier === 'attorney';
 
-  const { outcome, real } = data;
-  const label = getNosLabel(nos);
-  const categoryLabel = getCategoryLabel(nos);
-  const totalCases = real?.total || null;
-  const settlementRange = real?.rng || null;
-  const medianDuration = real?.mo || outcome.set_mo || 14;
+  // Merge DB stats with static fallback
+  const { outcome, real } = data || { outcome: OUTCOME_DATA._default, real: null };
+  const label = dbStats?.label || getNosLabel(nos);
+  const categoryLabel = dbStats?.category || getCategoryLabel(nos);
+  const totalCases = dbStats?.total_cases || real?.total || null;
+  const settlementRange = dbStats
+    ? { lo: dbStats.settlement_lo, md: Math.round(dbStats.median_settlement), hi: dbStats.settlement_hi }
+    : real?.rng || null;
+  const medianDuration = dbStats?.avg_duration_months || real?.mo || outcome.set_mo || 14;
   const trialMedian = outcome.trial_med || 'N/A';
+  const winRate = dbStats?.win_rate ?? outcome.trial_win;
+  const settlementRate = dbStats?.settlement_rate ?? outcome.fav_set;
+  const dismissRate = outcome.dismiss ?? (100 - (winRate + settlementRate));
+  const proSeWinRate = dbStats?.pro_se_win_rate ?? real?.ps?.wr ?? null;
+  const representedWinRate = dbStats?.represented_win_rate ?? real?.rr?.wr ?? null;
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-base)' }}>
@@ -167,19 +206,19 @@ export default async function ReportPage({
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
-                {outcome.trial_win}%
+                {winRate}%
               </p>
               <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Plaintiff win rate</p>
             </div>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
-                {outcome.fav_set}%
+                {settlementRate}%
               </p>
               <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Settlement rate</p>
             </div>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
-                {outcome.dismiss}%
+                {dismissRate}%
               </p>
               <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Dismissal rate</p>
             </div>
@@ -261,7 +300,7 @@ export default async function ReportPage({
             )}
 
             {/* Representation Impact */}
-            {real?.ps && real?.rr && (
+            {(proSeWinRate !== null && representedWinRate !== null) && (
               <section style={{
                 background: 'var(--bg-surface)',
                 border: '1px solid var(--border-default)',
@@ -278,10 +317,10 @@ export default async function ReportPage({
                       Self-Represented (Pro Se)
                     </p>
                     <p style={{ fontSize: 28, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
-                      {real.ps.wr}%
+                      {proSeWinRate}%
                     </p>
                     <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: 0 }}>
-                      win rate · {real.ps.total.toLocaleString()} cases
+                      win rate{real?.ps?.total ? ` · ${real.ps.total.toLocaleString()} cases` : ''}
                     </p>
                   </div>
                   <div style={{ textAlign: 'center', padding: 16, background: 'var(--bg-base)', borderRadius: 8, border: '1px solid var(--border-default)' }}>
@@ -289,10 +328,10 @@ export default async function ReportPage({
                       Attorney Represented
                     </p>
                     <p style={{ fontSize: 28, fontWeight: 700, color: '#10B981', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
-                      {real.rr.wr}%
+                      {representedWinRate}%
                     </p>
                     <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: 0 }}>
-                      win rate · {real.rr.total.toLocaleString()} cases
+                      win rate{real?.rr?.total ? ` · ${real.rr.total.toLocaleString()} cases` : ''}
                     </p>
                   </div>
                 </div>
@@ -304,7 +343,7 @@ export default async function ReportPage({
               <ReportPDFButton
                 category={label}
                 district={districtLabel}
-                winRate={outcome.trial_win}
+                winRate={winRate}
                 settlementMedian={settlementRange?.md || 0}
                 timeline={medianDuration}
                 tier={tier}

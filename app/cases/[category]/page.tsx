@@ -3,6 +3,8 @@ import { REAL_DATA } from '../../../lib/realdata';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+export const revalidate = 0;
+
 // Generate static params for all 10 categories
 export async function generateStaticParams() {
   return SITS.map((category) => ({

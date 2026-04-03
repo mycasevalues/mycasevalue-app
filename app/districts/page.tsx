@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'Federal Court Districts',
   description: 'All 94 federal judicial districts across 13 circuits. Explore case outcomes, win rates, and settlement data by district.',
