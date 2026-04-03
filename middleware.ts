@@ -1,14 +1,23 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { createServerClient } from '@supabase/ssr';
 import { locales, defaultLocale, type Locale } from './lib/i18n-config';
 
 /**
- * i18n middleware for MyCaseValue
- * Routes requests to /es/* as Spanish content
- * Sets lang cookie and x-lang header for components to read
+ * Middleware for MyCaseValue
+ * 1. i18n locale routing (English/Spanish)
+ * 2. Auth protection for /dashboard and /report routes
  */
 
-export function middleware(request: NextRequest) {
+const PROTECTED_PREFIXES = ['/dashboard', '/report'];
+
+function isProtectedRoute(pathname: string): boolean {
+  return PROTECTED_PREFIXES.some(
+    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
+  );
+}
+
+export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Skip middleware for API routes, static files, _next, etc.
@@ -21,7 +30,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check if pathname starts with a locale prefix
+  // ── i18n locale detection ───────────────────────────────────────────
   let locale: Locale = defaultLocale;
   let pathname_without_locale = pathname;
 
@@ -33,12 +42,10 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Create response
+  // Build the base response (rewrite for non-default locale, next() otherwise)
   let response: NextResponse;
 
   if (locale !== defaultLocale) {
-    // For non-English routes, rewrite the URL internally
-    // e.g., /es/pricing -> /pricing but keep /es in the address bar
     response = NextResponse.rewrite(
       new URL(`${pathname_without_locale}${request.nextUrl.search}`, request.url),
       { request }
@@ -53,6 +60,40 @@ export function middleware(request: NextRequest) {
     path: '/',
   });
   response.headers.set('x-lang', locale);
+
+  // ── Auth protection ─────────────────────────────────────────────────
+  if (isProtectedRoute(pathname_without_locale)) {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    // If Supabase isn't configured, let the request through
+    // (avoids breaking builds / local dev without env vars)
+    if (supabaseUrl && supabaseAnonKey) {
+      const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
+        cookies: {
+          getAll() {
+            return request.cookies.getAll();
+          },
+          setAll(cookiesToSet) {
+            for (const { name, value, options } of cookiesToSet) {
+              request.cookies.set(name, value);
+              response.cookies.set(name, value, options);
+            }
+          },
+        },
+      });
+
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (!user) {
+        const signInUrl = new URL('/sign-in', request.url);
+        signInUrl.searchParams.set('redirect', pathname);
+        return NextResponse.redirect(signInUrl);
+      }
+    }
+  }
 
   return response;
 }
