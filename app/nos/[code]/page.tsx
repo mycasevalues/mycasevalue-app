@@ -66,7 +66,7 @@ export async function generateMetadata(
       url: canonical,
       type: 'website',
       siteName: 'MyCaseValue',
-      images: [{ url: 'https://mycasevalues.com/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -135,7 +135,7 @@ export default async function NOSPage({ params }: PageProps) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-          { '@type': 'ListItem', position: 2, name: 'Case Types', item: 'https://mycasevalues.com/nos' },
+          { '@type': 'ListItem', position: 2, name: 'Case Types', item: 'https://www.mycasevalues.com/nos' },
           { '@type': 'ListItem', position: 3, name: nosInfo.label, item: `https://mycasevalues.com/nos/${code}` },
         ],
       },

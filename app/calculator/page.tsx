@@ -5,12 +5,12 @@ import { SITS, STATES, TIMING_OPTS } from '../../lib/data';
 export const metadata: Metadata = {
   title: 'Settlement Calculator | MyCaseValue',
   description: 'Use our settlement calculator to estimate your case value range based on federal court outcomes and historical settlement data.',
-  alternates: { canonical: 'https://mycasevalues.com/calculator' },
+  alternates: { canonical: 'https://www.mycasevalues.com/calculator' },
   openGraph: {
     title: 'Settlement Calculator | MyCaseValue',
     description: 'Estimate your settlement range using federal court data.',
     type: 'website',
-    url: 'https://mycasevalues.com/calculator',
+    url: 'https://www.mycasevalues.com/calculator',
   },
 };
 
@@ -32,7 +32,7 @@ export default function CalculatorPage() {
             Back to MyCaseValue
           </Link>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--fg-primary)' }}>
+            style={{ background: 'var(--accent-primary-subtle)', color: 'var(--fg-primary)' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             CALCULATOR
           </div>

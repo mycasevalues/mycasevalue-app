@@ -300,7 +300,7 @@ export default function AccountPage() {
             borderRadius: '12px',
             padding: '32px',
             boxShadow: 'var(--shadow-sm)',
-            border: '2px solid #DC2626',
+            border: '2px solid var(--semantic-danger)',
           }}
         >
           <h2
@@ -308,7 +308,7 @@ export default function AccountPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '18px',
               fontWeight: 700,
-              color: '#DC2626',
+              color: 'var(--semantic-danger)',
               margin: '0 0 24px 0',
             }}
           >
@@ -342,7 +342,7 @@ export default function AccountPage() {
               disabled
               style={{
                 padding: '10px 20px',
-                backgroundColor: '#DC2626',
+                backgroundColor: 'var(--semantic-danger)',
                 color: 'var(--bg-surface)',
                 border: 'none',
                 borderRadius: '8px',

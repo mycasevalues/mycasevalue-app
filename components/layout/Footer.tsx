@@ -36,7 +36,7 @@ export function Footer({
           (n, i) => (
             <span
               key={i}
-              className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-[#FFFFFF] border border-[var(--border-default)]"
+              className="text-[11px] font-medium px-2.5 py-1 rounded-lg card-bg bg-[var(--bg-surface)] border border-[var(--border-default)]"
               style={{ color: 'var(--fg-secondary)' }}
             >
               {n}
@@ -185,7 +185,7 @@ export function Footer({
           </div>
           {showMethodology && (
             <div
-              className="card-bg bg-[#FFFFFF] rounded-xl p-4 mt-3 border border-[var(--border-default)] text-left text-[12px] text-[var(--fg-muted)] leading-relaxed max-w-md"
+              className="card-bg bg-[var(--bg-surface)] rounded-xl p-4 mt-3 border border-[var(--border-default)] text-left text-[12px] text-[var(--fg-muted)] leading-relaxed max-w-md"
               style={{}}
             >
               MyCaseValue analyzes data from the Federal Judicial Center Integrated Database

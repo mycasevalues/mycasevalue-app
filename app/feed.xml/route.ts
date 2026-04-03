@@ -2,7 +2,7 @@ import { getAllPosts } from '../../lib/blog';
 
 export async function GET() {
   const posts = getAllPosts();
-  const baseUrl = 'https://mycasevalues.com';
+  const baseUrl = 'https://www.mycasevalues.com';
 
   // Escape XML special characters
   const escapeXml = (str: string) => {

@@ -4,12 +4,12 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Case Results | MyCaseValue',
   description: 'View detailed case results and outcomes from the MyCaseValue database.',
-  alternates: { canonical: 'https://mycasevalues.com/results' },
+  alternates: { canonical: 'https://www.mycasevalues.com/results' },
   openGraph: {
     title: 'Case Results | MyCaseValue',
     description: 'View detailed case results and outcomes from the MyCaseValue database.',
     type: 'website',
-    url: 'https://mycasevalues.com/results',
+    url: 'https://www.mycasevalues.com/results',
   },
 };
 

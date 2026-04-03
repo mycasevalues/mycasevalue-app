@@ -59,7 +59,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://mycasevalues.com/blog' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.mycasevalues.com/blog' },
           { '@type': 'ListItem', position: 3, name: post.title, item: `https://mycasevalues.com/blog/${post.slug}` },
         ],
       },
@@ -67,7 +67,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         '@type': 'Article',
         headline: post.title,
         description: post.description,
-        image: post.image || 'https://mycasevalues.com/og-image.jpg',
+        image: post.image || 'https://www.mycasevalues.com/og-image.jpg',
         datePublished: post.publishedAt.toISOString(),
         dateModified: post.updatedAt.toISOString(),
         author: {
@@ -79,7 +79,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           name: 'MyCaseValue',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://mycasevalues.com/logo.svg',
+            url: 'https://www.mycasevalues.com/logo.svg',
           },
         },
         mainEntityOfPage: {

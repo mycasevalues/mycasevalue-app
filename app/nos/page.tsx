@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   title: 'All Federal Case Types — MyCaseValue',
   description:
     'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
-  alternates: { canonical: 'https://mycasevalues.com/nos' },
+  alternates: { canonical: 'https://www.mycasevalues.com/nos' },
   openGraph: {
     title: 'All Federal Case Types — MyCaseValue',
     description:
       'Browse all federal case types with real court statistics. Explore win rates, case duration, and outcomes for employment, injury, consumer, civil rights, and more.',
-    url: 'https://mycasevalues.com/nos',
+    url: 'https://www.mycasevalues.com/nos',
     type: 'website',
   },
 };
@@ -141,7 +141,7 @@ export default function NOSIndexPage() {
             name: 'Federal Case Types Directory',
             description:
               'Browse all federal case types with real court statistics and outcomes.',
-            url: 'https://mycasevalues.com/nos',
+            url: 'https://www.mycasevalues.com/nos',
             mainEntity: {
               '@type': 'ItemList',
               itemListElement: Object.entries(byCategory)

@@ -3,12 +3,12 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Disclaimer — MyCaseValue | Not Legal Advice',
   description: 'Important disclaimer: MyCaseValue is not a law firm and provides data for informational purposes only, not legal advice.',
-  alternates: { canonical: 'https://mycasevalues.com/disclaimer' },
+  alternates: { canonical: 'https://www.mycasevalues.com/disclaimer' },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Disclaimer — MyCaseValue',
     description: 'Important disclaimer: MyCaseValue is not a law firm and provides data for informational purposes only, not legal advice.',
-    url: 'https://mycasevalues.com/disclaimer',
+    url: 'https://www.mycasevalues.com/disclaimer',
     type: 'website',
   },
 };
@@ -18,7 +18,7 @@ const jsonLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-    { '@type': 'ListItem', position: 2, name: 'Disclaimer', item: 'https://mycasevalues.com/disclaimer' },
+    { '@type': 'ListItem', position: 2, name: 'Disclaimer', item: 'https://www.mycasevalues.com/disclaimer' },
   ],
 };
 

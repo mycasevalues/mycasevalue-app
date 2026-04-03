@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   title: 'Preguntas Frecuentes — MyCaseValue',
   description: 'Preguntas frecuentes sobre MyCaseValue: Cómo funciona, fuentes de datos, si es asesoramiento legal, precisión, precios, privacidad y cómo usar datos de resultados judiciales.',
   alternates: {
-    canonical: 'https://mycasevalues.com/es/faq',
+    canonical: 'https://www.mycasevalues.com/es/faq',
     languages: {
-      en: 'https://mycasevalues.com/faq',
-      es: 'https://mycasevalues.com/es/faq',
+      en: 'https://www.mycasevalues.com/faq',
+      es: 'https://www.mycasevalues.com/es/faq',
     },
   },
   openGraph: {
     title: 'Preguntas Frecuentes — MyCaseValue',
     description: 'Obtén respuestas a preguntas frecuentes sobre datos judicales federales, tasas de victoria, rangos de acuerdos y cómo funciona MyCaseValue.',
     type: 'website',
-    url: 'https://mycasevalues.com/es/faq',
+    url: 'https://www.mycasevalues.com/es/faq',
     locale: 'es_ES',
   },
 };
@@ -30,8 +30,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://mycasevalues.com/es' },
-        { '@type': 'ListItem', position: 2, name: 'Preguntas Frecuentes', item: 'https://mycasevalues.com/es/faq' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.mycasevalues.com/es' },
+        { '@type': 'ListItem', position: 2, name: 'Preguntas Frecuentes', item: 'https://www.mycasevalues.com/es/faq' },
       ],
     },
   ],

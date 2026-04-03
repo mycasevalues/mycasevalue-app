@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
   },
   alternates: {
-    canonical: 'https://mycasevalues.com/es',
+    canonical: 'https://www.mycasevalues.com/es',
   },
 };
 

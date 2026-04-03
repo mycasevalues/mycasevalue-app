@@ -4,12 +4,12 @@ import { STATES } from '../../lib/data';
 export const metadata: Metadata = {
   title: 'Federal Court Outcomes by District | MyCaseValue',
   description: 'Explore federal court outcomes across all 94 federal judicial districts. Research case results by district and state.',
-  alternates: { canonical: 'https://mycasevalues.com/districts' },
+  alternates: { canonical: 'https://www.mycasevalues.com/districts' },
   openGraph: {
     title: 'Federal Court Outcomes by District | MyCaseValue',
     description: 'Explore federal court outcomes across all 94 federal judicial districts.',
     type: 'website',
-    url: 'https://mycasevalues.com/districts',
+    url: 'https://www.mycasevalues.com/districts',
   },
 };
 

@@ -4,12 +4,12 @@ import { getAllPosts } from '../../lib/blog';
 export const metadata: Metadata = {
   title: 'Blog — MyCaseValue | Federal Court Data & Legal Insights',
   description: 'Research-backed articles about federal court outcomes, case statistics, settlement data, win rates, and litigation strategy based on 5.1M+ cases.',
-  alternates: { canonical: 'https://mycasevalues.com/blog' },
+  alternates: { canonical: 'https://www.mycasevalues.com/blog' },
   openGraph: {
     title: 'Blog — MyCaseValue',
     description: 'Federal court insights, case data analysis, and litigation strategy based on 54 years of real case outcomes.',
     type: 'website',
-    url: 'https://mycasevalues.com/blog',
+    url: 'https://www.mycasevalues.com/blog',
   },
   keywords: 'federal court data, case outcomes, litigation strategy, win rates, settlement data, legal insights',
 };
@@ -21,14 +21,14 @@ const jsonLd = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://mycasevalues.com/blog' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.mycasevalues.com/blog' },
       ],
     },
     {
       '@type': 'Blog',
       name: 'MyCaseValue Blog',
       description: 'Research-backed articles about federal court outcomes and litigation strategy',
-      url: 'https://mycasevalues.com/blog',
+      url: 'https://www.mycasevalues.com/blog',
     },
   ],
 };

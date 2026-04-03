@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   title: 'Tendencias — MyCaseValue',
   description: 'Tendencias en demandas federales año tras año. Análisis de qué tipos de casos están aumentando en los tribunales federales.',
   alternates: {
-    canonical: 'https://mycasevalues.com/es/trends',
+    canonical: 'https://www.mycasevalues.com/es/trends',
     languages: {
-      en: 'https://mycasevalues.com/trends',
-      es: 'https://mycasevalues.com/es/trends',
+      en: 'https://www.mycasevalues.com/trends',
+      es: 'https://www.mycasevalues.com/es/trends',
     },
   },
   openGraph: {

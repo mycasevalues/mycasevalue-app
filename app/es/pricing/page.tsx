@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   title: 'Precios — MyCaseValue | Informes desde $5.99',
   description: 'Informes asequibles de resultados de casos federales. Elige entre Informe Individual ($5.99), Informes Ilimitados ($9.99) o Modo Abogado ($29.99/mes). Todos los planes incluyen citas de fuentes y soporte bilingüe.',
   alternates: {
-    canonical: 'https://mycasevalues.com/es/pricing',
+    canonical: 'https://www.mycasevalues.com/es/pricing',
     languages: {
-      en: 'https://mycasevalues.com/pricing',
-      es: 'https://mycasevalues.com/es/pricing',
+      en: 'https://www.mycasevalues.com/pricing',
+      es: 'https://www.mycasevalues.com/es/pricing',
     },
   },
   openGraph: {
     title: 'Precios — MyCaseValue | Planes de Datos de Casos Federales',
     description: 'Precios transparentes y asequibles para datos de resultados de casos federales. Informes individuales, acceso ilimitado o panel de análisis de abogados.',
     type: 'website',
-    url: 'https://mycasevalues.com/es/pricing',
+    url: 'https://www.mycasevalues.com/es/pricing',
     locale: 'es_ES',
   },
 };
@@ -30,8 +30,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://mycasevalues.com/es' },
-        { '@type': 'ListItem', position: 2, name: 'Precios', item: 'https://mycasevalues.com/es/pricing' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.mycasevalues.com/es' },
+        { '@type': 'ListItem', position: 2, name: 'Precios', item: 'https://www.mycasevalues.com/es/pricing' },
       ],
     },
   ],

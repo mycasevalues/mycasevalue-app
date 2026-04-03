@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     title: 'Case Categories — Real Federal Court Data | MyCaseValue',
     description: 'Explore federal court outcomes by case type. Win rates, settlement data, and timelines for workplace, injury, consumer, civil rights, contracts, housing, benefits, family, government, and education cases.',
     type: 'website',
-    url: 'https://mycasevalues.com/cases',
-    images: [{ url: 'https://mycasevalues.com/og-image.png', width: 1200, height: 630, alt: 'MyCaseValue Case Categories' }],
+    url: 'https://www.mycasevalues.com/cases',
+    images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630, alt: 'MyCaseValue Case Categories' }],
   },
   keywords: [
     'federal court cases by category', 'case outcome data', 'lawsuit win rates', 'settlement data',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'housing case outcomes', 'healthcare benefits cases', 'family law statistics',
     'government benefits cases', 'education law outcomes',
   ].join(', '),
-  alternates: { canonical: 'https://mycasevalues.com/cases' },
+  alternates: { canonical: 'https://www.mycasevalues.com/cases' },
 };
 
 const categoryIcons: Record<string, string> = {
@@ -32,12 +32,12 @@ const jsonLd = {
   '@type': 'CollectionPage',
   name: 'Federal Court Case Categories',
   description: 'Browse federal court outcome data across 10 major case categories.',
-  url: 'https://mycasevalues.com/cases',
+  url: 'https://www.mycasevalues.com/cases',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-      { '@type': 'ListItem', position: 2, name: 'Case Categories', item: 'https://mycasevalues.com/cases' },
+      { '@type': 'ListItem', position: 2, name: 'Case Categories', item: 'https://www.mycasevalues.com/cases' },
     ],
   },
 };

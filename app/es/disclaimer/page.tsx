@@ -7,10 +7,10 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Descargo de Responsabilidad — MyCaseValue',
   alternates: {
-    canonical: 'https://mycasevalues.com/es/disclaimer',
+    canonical: 'https://www.mycasevalues.com/es/disclaimer',
     languages: {
-      en: 'https://mycasevalues.com/disclaimer',
-      es: 'https://mycasevalues.com/es/disclaimer',
+      en: 'https://www.mycasevalues.com/disclaimer',
+      es: 'https://www.mycasevalues.com/es/disclaimer',
     },
   },
   openGraph: {

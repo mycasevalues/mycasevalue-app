@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   title: 'Cómo Funciona — MyCaseValue',
   description: 'Cómo MyCaseValue analiza 5.1M+ casos federales para mostrar tasas de victoria, acuerdos, cronogramas y análisis de jueces.',
   alternates: {
-    canonical: 'https://mycasevalues.com/es/how-it-works',
+    canonical: 'https://www.mycasevalues.com/es/how-it-works',
     languages: {
-      en: 'https://mycasevalues.com/how-it-works',
-      es: 'https://mycasevalues.com/es/how-it-works',
+      en: 'https://www.mycasevalues.com/how-it-works',
+      es: 'https://www.mycasevalues.com/es/how-it-works',
     },
   },
   openGraph: {
     title: 'Cómo Funciona — MyCaseValue',
     description: 'Cómo MyCaseValue analiza datos de casos federales para revelarte información real sobre resultados legales.',
     type: 'website',
-    url: 'https://mycasevalues.com/es/how-it-works',
+    url: 'https://www.mycasevalues.com/es/how-it-works',
     locale: 'es_ES',
   },
 };

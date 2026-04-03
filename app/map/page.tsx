@@ -164,7 +164,7 @@ export default function DistrictHeatmapPage() {
             '@type': 'ListItem',
             position: 2,
             name: 'District Heatmap',
-            item: 'https://mycasevalues.com/map',
+            item: 'https://www.mycasevalues.com/map',
           },
         ],
       },
@@ -173,7 +173,7 @@ export default function DistrictHeatmapPage() {
         name: 'Federal Court Win Rates by State and District',
         description:
           'Historical federal court win rates aggregated by state and judicial district.',
-        url: 'https://mycasevalues.com/map',
+        url: 'https://www.mycasevalues.com/map',
         creator: {
           '@type': 'Organization',
           name: 'MyCaseValue',

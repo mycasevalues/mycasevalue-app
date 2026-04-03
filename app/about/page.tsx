@@ -3,12 +3,12 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About MyCaseValue — Democratizing Federal Court Data',
   description: 'MyCaseValue democratizes federal court outcome data. Explore aggregate results from 5.1M+ cases for informed legal research.',
-  alternates: { canonical: 'https://mycasevalues.com/about' },
+  alternates: { canonical: 'https://www.mycasevalues.com/about' },
   openGraph: {
     title: 'About MyCaseValue — Democratizing Federal Court Data',
     description: 'MyCaseValue aggregates 5.1M+ federal court cases to help you research real outcomes, win rates, and settlement data.',
     type: 'website',
-    url: 'https://mycasevalues.com/about',
+    url: 'https://www.mycasevalues.com/about',
   },
 };
 
@@ -19,7 +19,7 @@ const jsonLd = {
       '@type': 'Organization',
       name: 'MyCaseValue',
       url: 'https://mycasevalues.com',
-      logo: 'https://mycasevalues.com/icon-512.png',
+      logo: 'https://www.mycasevalues.com/icon-512.png',
       description: 'A platform democratizing access to federal court outcome data from 5.1M+ cases.',
       sameAs: [
         'https://twitter.com/mycasevalue',
@@ -39,7 +39,7 @@ const jsonLd = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'About', item: 'https://mycasevalues.com/about' },
+        { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.mycasevalues.com/about' },
       ],
     },
   ],

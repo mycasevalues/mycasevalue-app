@@ -52,7 +52,7 @@ export function ShareCard({
   const t = text[es ? 'es' : 'en'];
 
   const handleCopyLink = () => {
-    const url = `https://mycasevalues.com`;
+    const url = `https://www.mycasevalues.com`;
     navigator.clipboard.writeText(url).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -63,12 +63,12 @@ export function ShareCard({
     const shareText = es
       ? `${caseType}: ${winRate}% tasa de éxito, ${medianRecovery} recuperación mediana en ${duration} | MyCaseValue`
       : `${caseType}: ${winRate}% win rate, ${medianRecovery} median recovery in ${duration} | MyCaseValue`;
-    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=https://mycasevalues.com`;
+    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=https://www.mycasevalues.com`;
     window.open(url, '_blank');
   };
 
   const handleShareFacebook = () => {
-    const url = `https://www.facebook.com/sharer/sharer.php?u=https://mycasevalues.com`;
+    const url = `https://www.facebook.com/sharer/sharer.php?u=https://www.mycasevalues.com`;
     window.open(url, '_blank');
   };
 
@@ -76,7 +76,7 @@ export function ShareCard({
     const shareText = es
       ? `Descubrí datos de casos federales en MyCaseValue - ${caseType}: ${winRate}% tasa de éxito`
       : `Discovered federal court case data on MyCaseValue - ${caseType}: ${winRate}% win rate`;
-    const url = `https://www.linkedin.com/sharing/share-offsite/?url=https://mycasevalues.com`;
+    const url = `https://www.linkedin.com/sharing/share-offsite/?url=https://www.mycasevalues.com`;
     window.open(url, '_blank');
   };
 

@@ -3,12 +3,12 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'FAQ — MyCaseValue | Federal Court Data Questions Answered',
   description: 'Comprehensive FAQ about MyCaseValue: How it works, data sources, whether it\'s legal advice, accuracy, pricing, privacy, and how to use court outcome data.',
-  alternates: { canonical: 'https://mycasevalues.com/faq' },
+  alternates: { canonical: 'https://www.mycasevalues.com/faq' },
   openGraph: {
     title: 'FAQ — MyCaseValue',
     description: 'Get answers to common questions about federal court data, win rates, settlement ranges, and how MyCaseValue works.',
     type: 'website',
-    url: 'https://mycasevalues.com/faq',
+    url: 'https://www.mycasevalues.com/faq',
   },
   keywords: 'federal court data FAQ, MyCaseValue questions, legal data FAQ, court outcome questions, case statistics',
 };
@@ -20,7 +20,7 @@ const jsonLd = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://mycasevalues.com/faq' },
+        { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://www.mycasevalues.com/faq' },
       ],
     },
     {

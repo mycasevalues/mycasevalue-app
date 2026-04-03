@@ -4,12 +4,12 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Judge Intelligence: Federal Judge Profiles & Analytics | MyCaseValue',
   description: 'Access comprehensive federal judge profiles with ruling patterns, motion grant rates, case duration analysis, and outcome predictions. Unlock Judge Intelligence to make data-driven litigation decisions.',
-  alternates: { canonical: 'https://mycasevalues.com/judges' },
+  alternates: { canonical: 'https://www.mycasevalues.com/judges' },
   openGraph: {
     title: 'Judge Intelligence: Federal Judge Profiles & Analytics | MyCaseValue',
     description: 'Access comprehensive federal judge profiles with ruling patterns, motion grant rates, case duration analysis, and outcome predictions.',
     type: 'website',
-    url: 'https://mycasevalues.com/judges',
+    url: 'https://www.mycasevalues.com/judges',
   },
 };
 
@@ -65,7 +65,7 @@ export default function JudgesPage() {
                 fontWeight: '700',
                 letterSpacing: '1.5px',
                 marginBottom: '16px',
-                background: 'rgba(17, 17, 17, 0.15)',
+                background: 'var(--accent-primary-subtle)',
                 color: 'var(--fg-primary)',
                 textTransform: 'uppercase',
               }}

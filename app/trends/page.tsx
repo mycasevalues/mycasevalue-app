@@ -4,12 +4,12 @@ import { REAL_DATA } from '../../lib/realdata';
 export const metadata: Metadata = {
   title: 'Federal Court Trends — MyCaseValue | Case Filing Data & Statistics',
   description: 'Explore federal court filing trends across 84 case types and 94 districts. See which cases are most common, win rates by category, and how federal litigation has evolved.',
-  alternates: { canonical: 'https://mycasevalues.com/trends' },
+  alternates: { canonical: 'https://www.mycasevalues.com/trends' },
   openGraph: {
     title: 'Federal Court Trends — MyCaseValue',
     description: 'Explore 5.1M+ federal court cases: filing volumes, win rates, settlement patterns, and duration trends across 84 case types.',
     type: 'website',
-    url: 'https://mycasevalues.com/trends',
+    url: 'https://www.mycasevalues.com/trends',
   },
 };
 
@@ -20,7 +20,7 @@ const jsonLd = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Trends', item: 'https://mycasevalues.com/trends' },
+        { '@type': 'ListItem', position: 2, name: 'Trends', item: 'https://www.mycasevalues.com/trends' },
       ],
     },
     {
@@ -31,7 +31,7 @@ const jsonLd = {
       distribution: {
         '@type': 'DataDownload',
         encodingFormat: 'application/json',
-        contentUrl: 'https://mycasevalues.com/api/quick-stats',
+        contentUrl: 'https://www.mycasevalues.com/api/quick-stats',
       },
     },
   ],

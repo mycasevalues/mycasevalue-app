@@ -191,7 +191,7 @@ export async function generateMetadata({
       url: `https://mycasevalues.com/cases/${category}`,
       images: [
         {
-          url: 'https://mycasevalues.com/og-image.png',
+          url: 'https://www.mycasevalues.com/og-image.png',
           width: 1200,
           height: 630,
           alt: `${categoryNames[category]} Case Outcomes`,
@@ -336,7 +336,7 @@ async function CategoryPage({
             '@type': 'ListItem',
             position: 2,
             name: 'Cases',
-            item: 'https://mycasevalues.com/cases',
+            item: 'https://www.mycasevalues.com/cases',
           },
           {
             '@type': 'ListItem',
