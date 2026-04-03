@@ -153,7 +153,7 @@ const FeatureCard = ({
               : '1px solid var(--border-default)',
         }}
       >
-        {badge === 'available' ? 'Available' : 'Coming Soon'}
+        {badge === 'available' ? 'Available' : 'Expected Q3 2026'}
       </span>
     </div>
   </div>
