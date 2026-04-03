@@ -38,11 +38,17 @@
   transform: scale(0.97);
 }
 
-/* Sizes */
+/* Sizes — all meet 44px minimum touch target on coarse pointers */
 .mcv-btn--xs { height: 28px; padding: 0 10px; font-size: 12px; border-radius: var(--r-sm); }
 .mcv-btn--sm { height: 34px; padding: 0 14px; font-size: 13px; border-radius: var(--r-md); }
 .mcv-btn--md { height: 42px; padding: 0 20px; font-size: 15px; border-radius: var(--r-lg); }
 .mcv-btn--lg { height: 50px; padding: 0 28px; font-size: 16px; border-radius: var(--r-xl); letter-spacing: -0.01em; }
+
+@media (pointer: coarse) {
+  .mcv-btn--xs { min-height: 44px; }
+  .mcv-btn--sm { min-height: 44px; }
+  .mcv-btn--md { min-height: 44px; }
+}
 
 .mcv-btn--full { width: 100%; }
 
