@@ -1,12 +1,38 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Sign In | MyCaseValue',
-  description: 'Sign in to your MyCaseValue account to access your case research and reports.',
-};
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 export default function SignInPage() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const supabase = createClientComponentClient();
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError('');
+    setLoading(true);
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      setError('Incorrect email or password. Please try again.');
+      setLoading(false);
+      return;
+    }
+
+    router.push('/dashboard');
+    router.refresh();
+  }
+
   return (
     <div
       style={{
@@ -81,7 +107,7 @@ export default function SignInPage() {
         </h1>
 
         {/* Form */}
-        <form style={{ marginBottom: '24px' }}>
+        <form onSubmit={handleSubmit} style={{ marginBottom: '24px' }}>
           {/* Email Field */}
           <div style={{ marginBottom: '16px' }}>
             <label
@@ -102,6 +128,8 @@ export default function SignInPage() {
               type="email"
               placeholder="you@example.com"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="auth-input"
               style={{
                 width: '100%',
@@ -158,6 +186,8 @@ export default function SignInPage() {
               type="password"
               placeholder="••••••••"
               required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="auth-input"
               style={{
                 width: '100%',
@@ -174,9 +204,28 @@ export default function SignInPage() {
             />
           </div>
 
+          {/* Error Message */}
+          {error && (
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '13px',
+                color: '#DC2626',
+                margin: '0 0 16px 0',
+                padding: '10px 12px',
+                backgroundColor: '#FEF2F2',
+                borderRadius: '8px',
+                border: '1px solid #FECACA',
+              }}
+            >
+              {error}
+            </p>
+          )}
+
           {/* Sign In Button */}
           <button
             type="submit"
+            disabled={loading}
             className="auth-btn"
             style={{
               width: '100%',
@@ -188,11 +237,12 @@ export default function SignInPage() {
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
               fontWeight: 600,
-              cursor: 'pointer',
+              cursor: loading ? 'not-allowed' : 'pointer',
+              opacity: loading ? 0.7 : 1,
               transition: 'background-color 0.2s, transform 0.1s',
             }}
           >
-            Sign In
+            {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
 
@@ -246,7 +296,7 @@ export default function SignInPage() {
               margin: 0,
             }}
           >
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <Link
               href="/sign-up"
               style={{
@@ -256,7 +306,7 @@ export default function SignInPage() {
               }}
               className="auth-link"
             >
-              Create one →
+              Sign up →
             </Link>
           </p>
         </div>
