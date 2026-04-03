@@ -1,6 +1,6 @@
 /**
  * ServerContent.tsx — Server Component
- * Renders SEO-critical content (FAQ, case types, features, CTA, footer)
+ * Renders SEO-critical content (FAQ, case types, features, CTA)
  * as static HTML for crawlers. Hidden when the client-side app mounts.
  * No 'use client' directive — this is a pure Server Component.
  */
