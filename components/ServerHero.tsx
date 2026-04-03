@@ -5,6 +5,8 @@
  * Paper Design System: Montserrat headings, Roboto body, PT Mono data.
  */
 
+import QuickLookupForm from './QuickLookupForm';
+
 export default function ServerHero() {
   return (
     <section className="server-hero-content" aria-label="Hero section">
@@ -136,7 +138,7 @@ export default function ServerHero() {
               </div>
             </div>
 
-            {/* RIGHT — Widget placeholder (replaced by client component) */}
+            {/* RIGHT — Quick Case Lookup (server-rendered form) */}
             <div
               style={{
                 background: 'var(--bg-surface)',
@@ -144,60 +146,49 @@ export default function ServerHero() {
                 borderRadius: '16px',
                 padding: '32px',
                 boxShadow: 'var(--shadow-md)',
-                minHeight: '320px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '16px',
               }}
             >
-              <div
-                style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '12px',
-                  background: 'var(--accent-primary-subtle)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" aria-hidden="true">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="M21 21l-4.35-4.35" />
-                </svg>
+              <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                <div
+                  style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '12px',
+                    background: 'var(--accent-primary-subtle)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '12px',
+                  }}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                  </svg>
+                </div>
+                <p
+                  style={{
+                    fontFamily: 'Montserrat, system-ui, sans-serif',
+                    fontSize: '16px',
+                    fontWeight: 700,
+                    color: 'var(--fg-primary)',
+                    margin: '0 0 4px',
+                  }}
+                >
+                  Quick Case Lookup
+                </p>
+                <p
+                  style={{
+                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontSize: '14px',
+                    color: 'var(--fg-muted)',
+                    margin: 0,
+                  }}
+                >
+                  Select your case type and district to see real outcome data.
+                </p>
               </div>
-              <p
-                style={{
-                  fontFamily: 'Montserrat, system-ui, sans-serif',
-                  fontSize: '16px',
-                  fontWeight: 700,
-                  color: 'var(--fg-primary)',
-                  margin: 0,
-                  textAlign: 'center',
-                }}
-              >
-                Quick Case Lookup
-              </p>
-              <p
-                style={{
-                  fontFamily: 'Roboto, system-ui, sans-serif',
-                  fontSize: '14px',
-                  color: 'var(--fg-muted)',
-                  margin: 0,
-                  textAlign: 'center',
-                  maxWidth: '280px',
-                }}
-              >
-                Select your case type and district to see real outcome data from federal courts.
-              </p>
-              {/* Skeleton inputs */}
-              <div style={{ width: '100%', maxWidth: '320px', display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '8px' }}>
-                <div style={{ height: '44px', borderRadius: '12px', background: 'var(--bg-elevated)', border: '1px solid var(--border-default)' }} />
-                <div style={{ height: '44px', borderRadius: '12px', background: 'var(--bg-elevated)', border: '1px solid var(--border-default)' }} />
-                <div style={{ height: '44px', borderRadius: '12px', background: 'var(--accent-primary)', opacity: 0.3 }} />
-              </div>
+              <QuickLookupForm />
             </div>
           </div>
         </div>
