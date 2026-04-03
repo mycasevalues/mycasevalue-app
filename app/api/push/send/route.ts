@@ -71,9 +71,7 @@ export async function POST(req: NextRequest) {
       const vapidPrivateKey = process.env.VAPID_PRIVATE_KEY;
 
       if (!vapidPrivateKey || !vapidPublicKey) {
-        console.warn('[Push Send] VAPID keys not configured, falling back to logging');
-        // Fall back to console logging
-        console.log('[Push Send] Notification:', { title, body: notificationBody, url, tag });
+        console.error('[Push Send] VAPID keys not configured');
         sentCount = 1; // Pretend we sent it
       } else {
         // Set VAPID details (only needed once, but safe to call multiple times)
@@ -84,26 +82,12 @@ export async function POST(req: NextRequest) {
         );
 
         // TODO: In production, retrieve actual subscriptions from database
-        // and send to each one. For now, just log.
-        console.log('[Push Send] Would send notification via web-push:', {
-          title,
-          body: notificationBody,
-          url,
-          tag,
-          icon,
-        });
-
+        // and send to each one.
         sentCount = 1; // Placeholder
       }
     } catch (importErr: any) {
-      // web-push not installed, use logging fallback
-      console.log('[Push Send] web-push not available, logging notification:', {
-        title,
-        body: notificationBody,
-        url,
-        tag,
-        icon,
-      });
+      // web-push not installed, fallback
+      console.error('[Push Send] web-push not available');
       sentCount = 1;
     }
 

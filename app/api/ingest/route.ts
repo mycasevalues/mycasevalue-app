@@ -43,8 +43,6 @@ export async function POST(request: NextRequest) {
     const mode = (body as any)?.mode || 'incremental'
     const source = (body as any)?.source || null // Optional: 'fjc', 'courtlistener', 'recap'
 
-    console.log(`[Ingest API] Starting ${mode} ingestion...${source ? ` (source: ${source})` : ''}`)
-
     let results
     if (source) {
       // Run a single source only — avoids timeout
@@ -85,7 +83,6 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    console.log('[Ingest API] Cron-triggered incremental ingestion...')
     const results = await runIncrementalIngestion()
 
     return NextResponse.json({

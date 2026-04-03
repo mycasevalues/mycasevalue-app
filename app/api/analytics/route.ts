@@ -147,15 +147,7 @@ export async function POST(
       );
     }
 
-    // Log the event for debugging and future database integration
-    console.log('[Analytics] Event received:', {
-      event: payload.event,
-      sessionId: payload.sessionId,
-      timestamp: new Date(payload.timestamp).toISOString(),
-      pathname: payload.pathname || 'unknown',
-      clientIp,
-      data: payload.data || null,
-    });
+    // Event received (removed console.log for production)
 
     // TODO: Store event in database here
     // For now, this is just logged to console and can be integrated with:

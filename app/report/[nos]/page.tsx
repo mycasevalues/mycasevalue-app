@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { cookies, headers } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
-import { SITS, OUTCOME_DATA } from '../../../lib/data';
+import { SITS, OUTCOME_DATA, getNosLabel } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { getUserTier } from '../../../lib/access';
 import { getSupabaseAdmin, CaseStats } from '../../../lib/supabase';
@@ -12,19 +12,6 @@ import ReportPDFButton from './ReportPDFButton';
 import ShareButtons from '../../../components/ui/ShareButtons';
 
 export const revalidate = 0;
-
-// Find a label for a NOS code by searching SITS
-function getNosLabel(nos: string): string {
-  for (const cat of SITS) {
-    for (const opt of cat.opts) {
-      if (opt.nos === nos) return opt.label;
-    }
-  }
-  // Check if it's a category ID instead of a NOS code
-  const cat = SITS.find(c => c.id === nos);
-  if (cat) return cat.label;
-  return `Case Type ${nos}`;
-}
 
 // Find category label for a NOS code
 function getCategoryLabel(nos: string): string {

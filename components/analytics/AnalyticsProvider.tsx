@@ -71,7 +71,6 @@ function shouldRespectDoNotTrack(): boolean {
 async function sendAnalyticsEvent(event: AnalyticsEvent): Promise<void> {
   // Respect Do Not Track
   if (shouldRespectDoNotTrack()) {
-    console.log('[Analytics] Respecting Do Not Track - event not sent', event);
     return;
   }
 

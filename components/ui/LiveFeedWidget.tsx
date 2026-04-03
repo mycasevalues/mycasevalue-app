@@ -119,7 +119,7 @@ export default function LiveFeedWidget({
           setItems(data.items || []);
         }
       } catch (error) {
-        console.error('[LiveFeedWidget] Failed to fetch initial batch:', error);
+        // Silently fail
       }
     };
 
@@ -131,7 +131,6 @@ export default function LiveFeedWidget({
         const es = new EventSource('/api/feed');
 
         es.onopen = () => {
-          console.log('[LiveFeedWidget] Connected to feed');
           setIsConnected(true);
           setIsPulsing(true);
         };
@@ -141,26 +140,23 @@ export default function LiveFeedWidget({
             const feedItem = JSON.parse(event.data) as FeedItem;
             setItems((prev) => [feedItem, ...prev.slice(0, maxItems - 1)]);
           } catch (error) {
-            console.error('[LiveFeedWidget] Failed to parse feed item:', error);
+            // Silently fail on parse error
           }
         };
 
         es.onerror = (error) => {
-          console.error('[LiveFeedWidget] SSE error:', error);
           setIsConnected(false);
           setIsPulsing(false);
           es.close();
 
           // Attempt reconnection after 5 seconds
           reconnectTimeoutRef.current = setTimeout(() => {
-            console.log('[LiveFeedWidget] Reconnecting to feed...');
             connectSSE();
           }, 5000);
         };
 
         eventSourceRef.current = es;
       } catch (error) {
-        console.error('[LiveFeedWidget] Failed to connect to SSE:', error);
         setIsConnected(false);
 
         // Retry connection

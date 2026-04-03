@@ -80,10 +80,6 @@ export async function POST(request: NextRequest) {
       ip,
     };
 
-    // In development, log to console
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[A/B Test Conversion]', conversionData);
-    }
 
     // In production, you would:
     // 1. Store in a database (e.g., Supabase)

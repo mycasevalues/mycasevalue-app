@@ -96,7 +96,6 @@ export async function GET(request: NextRequest) {
     cancel() {
       // Called when client disconnects
       isClosed = true;
-      console.log('[SSE] Client disconnected');
     },
   });
 

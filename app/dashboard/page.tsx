@@ -4,6 +4,7 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { createServerClient } from '@supabase/ssr';
 import { getSupabaseAdmin } from '../../lib/supabase';
+import { getNosLabel } from '../../lib/data';
 
 export const metadata: Metadata = {
   title: 'Dashboard | MyCaseValue',
@@ -349,7 +350,7 @@ export default async function DashboardPage() {
                 {recentReports.map((r, i) => (
                   <div key={i} style={{ padding: '10px 0', borderBottom: i < recentReports.length - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
-                      <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--fg-primary)' }}>{r.category} · {r.district}</p>
+                      <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: 'var(--fg-primary)' }}>{getNosLabel(r.category)} · {r.district}</p>
                       <p style={{ fontSize: '12px', color: 'var(--fg-muted)', margin: 0 }}>{new Date(r.viewed_at).toLocaleDateString()}</p>
                     </div>
                     <Link href={`/report/${r.category}`} style={{ fontSize: '13px', color: 'var(--accent-primary)', textDecoration: 'none' }}>View →</Link>

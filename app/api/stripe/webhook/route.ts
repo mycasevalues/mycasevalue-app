@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
         const plan = session.metadata?.plan || 'single';
         const customerId = session.customer;
 
-        console.log(`[Stripe] Checkout completed: ${plan} for ${email}`);
+        console.error(`[Stripe] Checkout completed: ${plan} for ${email}`);
 
         if (email) {
           // Grant premium access
@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
         const customerId = subscription.customer;
         const metadata = subscription.metadata || {};
 
-        console.log(`[Stripe] Subscription created: ${customerId}`);
+        console.error(`[Stripe] Subscription created: ${customerId}`);
 
         // We need to get the customer email from Stripe
         try {
@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
               stripeSubscriptionId: subscription.id,
             });
 
-            console.log(`[Stripe] Attorney tier activated for ${email}`);
+            console.error(`[Stripe] Attorney tier activated for ${email}`);
           }
         } catch (err: any) {
           console.error('[Stripe] Failed to get customer for subscription:', err?.message);
@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
         const subscription = event.data.object as any;
         const customerId = subscription.customer;
 
-        console.log(`[Stripe] Subscription deleted: ${customerId}`);
+        console.error(`[Stripe] Subscription deleted: ${customerId}`);
 
         // We need to get the customer email from Stripe
         try {
@@ -118,7 +118,7 @@ export async function POST(req: NextRequest) {
 
           if (email) {
             await revokePremiumAccess(email);
-            console.log(`[Stripe] Attorney tier revoked for ${email}`);
+            console.error(`[Stripe] Attorney tier revoked for ${email}`);
           }
         } catch (err: any) {
           console.error('[Stripe] Failed to get customer for subscription deletion:', err?.message);
@@ -130,7 +130,7 @@ export async function POST(req: NextRequest) {
         const invoice = event.data.object as any;
         const customerId = invoice.customer;
 
-        console.log(`[Stripe] Payment failed for customer: ${customerId}`);
+        console.error(`[Stripe] Payment failed for customer: ${customerId}`);
 
         // Try to get customer email and log the failure
         try {
@@ -150,7 +150,7 @@ export async function POST(req: NextRequest) {
       }
 
       default:
-        console.log(`[Stripe] Unhandled event type: ${event.type}`);
+        console.error(`[Stripe] Unhandled event type: ${event.type}`);
     }
 
     return NextResponse.json({ received: true });

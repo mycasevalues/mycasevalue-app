@@ -593,3 +593,16 @@ export function formatRecoveryValue(val: number): string {
   if (val >= 1000) return '$' + (val / 1000).toFixed(1) + 'M';
   return '$' + val + 'K';
 }
+
+/** Resolve a NOS code to a human-readable case-type label. */
+export function getNosLabel(nos: string): string {
+  for (const cat of SITS) {
+    for (const opt of cat.opts) {
+      if (opt.nos === nos) return opt.label;
+    }
+  }
+  // Check if it's a category ID instead of a NOS code
+  const cat = SITS.find(c => c.id === nos);
+  if (cat) return cat.label;
+  return `Case Type ${nos}`;
+}

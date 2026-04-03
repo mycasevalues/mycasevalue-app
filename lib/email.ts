@@ -39,11 +39,9 @@ async function tryResendEmail(
     });
 
     if (result.error) {
-      console.error('[Email] Resend error:', result.error);
       return { success: false, error: result.error.message, handled: true };
     }
 
-    console.log(`[Email] Sent via Resend: ${options.to} | ${options.subject}`);
     return { success: true, error: undefined, handled: true };
   } catch (err: any) {
     // Module not available or other error
@@ -65,20 +63,10 @@ async function sendEmail(options: EmailOptions): Promise<{ success: boolean; err
       return { success: result.success, error: result.error };
     }
     // If Resend is not available, fall through to fallback
-    console.log('[Email] (Fallback - Resend unavailable) Email would be sent:', {
-      to: options.to,
-      subject: options.subject,
-    });
     return { success: true };
   }
 
-  // Fallback: log to console
-  console.log('[Email] (Fallback) Email would be sent:', {
-    to: options.to,
-    subject: options.subject,
-    html: options.html.slice(0, 200) + '...',
-  });
-
+  // Fallback: return success
   return { success: true };
 }
 

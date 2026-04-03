@@ -143,12 +143,6 @@ export async function grantPremiumAccess(session: PremiumSession): Promise<void>
       // Continue anyway - cache is still active
     }
   }
-
-  console.log(
-    `[Premium] Access granted: ${email} | Plan: ${normalizedSession.plan} | Expires: ${
-      normalizedSession.expiresAt ? new Date(normalizedSession.expiresAt).toISOString() : 'never'
-    }`
-  );
 }
 
 /**
@@ -168,7 +162,6 @@ export function checkPremiumAccess(email: string): PremiumSession | null {
 
   // Check if subscription has expired
   if (session.expiresAt && Date.now() > session.expiresAt) {
-    console.log(`[Premium] Access expired: ${normalizedEmail}`);
     premiumStore.delete(normalizedEmail);
     return null;
   }
@@ -201,10 +194,6 @@ export async function revokePremiumAccess(email: string): Promise<void> {
       console.error('[Premium] Failed to revoke in DB:', err?.message || err);
       // Continue anyway - cache is already cleared
     }
-  }
-
-  if (existed) {
-    console.log(`[Premium] Access revoked: ${normalizedEmail}`);
   }
 }
 
@@ -255,10 +244,6 @@ export async function cleanupExpiredSessions(): Promise<number> {
       console.error('[Premium] Failed to cleanup expired in DB:', err?.message || err);
       // Continue anyway
     }
-  }
-
-  if (toDelete.length > 0) {
-    console.log(`[Premium] Cleaned up ${toDelete.length} expired sessions`);
   }
 
   return toDelete.length;

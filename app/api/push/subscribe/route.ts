@@ -45,10 +45,6 @@ export async function POST(req: NextRequest) {
     // In production, store in Supabase or other database
     subscriptions.set(subscription.endpoint, subscription);
 
-    console.log(
-      `[Push API] Subscription stored. Total subscriptions: ${subscriptions.size}`
-    );
-
     return NextResponse.json(
       {
         success: true,
@@ -96,10 +92,6 @@ export async function DELETE(req: NextRequest) {
         { status: 404 }
       );
     }
-
-    console.log(
-      `[Push API] Subscription removed. Total subscriptions: ${subscriptions.size}`
-    );
 
     return NextResponse.json(
       {

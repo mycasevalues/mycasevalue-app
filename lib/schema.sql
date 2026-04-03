@@ -320,3 +320,60 @@ BEGIN
   DO UPDATE SET data = EXCLUDED.data, computed_at = NOW(), expires_at = NOW() + INTERVAL '6 hours';
 END;
 $$ LANGUAGE plpgsql;
+
+
+-- ============================================================
+-- RATE LIMITING (free-tier daily caps)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS rate_limits (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  identifier TEXT NOT NULL,
+  date DATE NOT NULL DEFAULT CURRENT_DATE,
+  count INTEGER NOT NULL DEFAULT 1,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (identifier, date)
+);
+
+CREATE INDEX IF NOT EXISTS idx_rate_limits_lookup
+  ON rate_limits (identifier, date);
+
+
+-- ============================================================
+-- SAVED REPORTS (premium user report views)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS saved_reports (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_email TEXT NOT NULL,
+  category TEXT NOT NULL,
+  district TEXT DEFAULT 'national',
+  viewed_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_saved_reports_user
+  ON saved_reports (user_email, viewed_at DESC);
+
+
+-- ============================================================
+-- SEARCH HISTORY (unlimited+ user searches)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS search_history (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_email TEXT NOT NULL,
+  query TEXT NOT NULL DEFAULT '',
+  category TEXT,
+  searched_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_search_history_user
+  ON search_history (user_email, searched_at DESC);
+
+
+-- ============================================================
+-- NEWSLETTER SUBSCRIBERS
+-- ============================================================
+CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  subscribed_at TIMESTAMPTZ DEFAULT NOW(),
+  unsubscribed_at TIMESTAMPTZ
+);

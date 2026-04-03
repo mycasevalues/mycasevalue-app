@@ -37,11 +37,8 @@ export async function POST(req: NextRequest) {
         );
 
       if (error) {
-        // Table might not exist yet — log and return success anyway
-        console.warn('[Subscribe] Supabase error (table may not exist):', error.message);
+        // Table might not exist yet — still return success
       }
-    } else {
-      console.log('[Subscribe] No Supabase config — logging signup:', normalized);
     }
 
     return NextResponse.json({ success: true, message: 'Subscribed successfully' });

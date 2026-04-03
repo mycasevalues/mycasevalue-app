@@ -34,10 +34,6 @@ export function trackServerEvent(
   eventName: EventName,
   properties: Record<string, any> = {}
 ): void {
-  if (process.env.NODE_ENV === 'development') {
-    console.log(`[Server Analytics] ${eventName}`, properties);
-  }
-
   // In production, you could send to an analytics API endpoint
   // Example: await fetch('/api/analytics/server-event', { method: 'POST', body: ... })
   // For now, this is a no-op in production (respects privacy)

@@ -63,8 +63,4 @@ setInterval(() => {
   });
 
   keysToDelete.forEach(key => rateLimitMap.delete(key));
-
-  if (keysToDelete.length > 0) {
-    console.log(`[Rate Limit Cleanup] Removed ${keysToDelete.length} expired entries`);
-  }
 }, 60000);

@@ -185,11 +185,9 @@ export function ShareResearch({
   const handleDownloadPdf = () => {
     if (userTier === 'free') {
       // Could show upgrade modal or toast here
-      console.log('User needs to upgrade to download PDF');
       return;
     }
     // In production, trigger actual PDF download
-    console.log('Downloading PDF:', reportTitle);
   };
 
   const isPdfLocked = userTier === 'free';
