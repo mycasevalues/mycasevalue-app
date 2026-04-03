@@ -109,7 +109,7 @@ export default function HowItWorksPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
             style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>

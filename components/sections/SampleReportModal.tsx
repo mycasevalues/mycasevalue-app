@@ -96,7 +96,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
                 { label: t.sections.cost, value: '$45K — $263K', color: '#EF4444', free: false },
                 { label: t.sections.risk, value: 'Score: 72/100', color: '#A78BFA', free: false },
               ].map((s, i) => (
-                <div key={i} className="flex items-center justify-between rounded-lg px-3 py-1.5" style={{ background: 'rgba(245,243,239,0.5)', border: '1px solid var(--border-default)' }}>
+                <div key={i} className="flex items-center justify-between rounded-lg px-3 py-1.5" style={{ background: 'rgba(255,255,255,0.5)', border: '1px solid var(--border-default)' }}>
                   <span className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{s.label}</span>
                   <div className="flex items-center gap-2">
                     <span className="text-[11px] font-bold font-mono" style={{ color: s.color }}>{s.value}</span>
@@ -262,7 +262,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
 
 function ReportSection({ title, color, free, premium, children }: { title: string; color: string; free?: boolean; premium?: boolean; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl p-4" style={{ background: 'rgba(245,243,239,0.5)', border: `1px solid ${color}20` }}>
+    <div className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.5)', border: `1px solid ${color}20` }}>
       <div className="flex items-center justify-between mb-3">
         <h4 className="text-[12px] font-bold" style={{ color }}>{title}</h4>
         {free && <span className="text-[8px] px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(16,185,129,0.1)', color: '#10B981' }}>FREE</span>}

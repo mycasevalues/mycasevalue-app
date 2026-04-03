@@ -79,7 +79,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
               aria-label={lang === 'es' ? 'Buscar tipos de caso' : 'Search case types'}
               className="w-full px-3 py-2 text-[13px] rounded-lg outline-none focus:ring-2 focus:ring-[#111111]/40 transition-colors"
               style={{
-                background: '#F9F8F6',
+                background: '#F9FAFB',
                 border: '1px solid var(--border-muted)',
                 color: '#111827',
               }} />

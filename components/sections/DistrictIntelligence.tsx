@@ -295,7 +295,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
         </div>
 
         {/* Detail card */}
-        <div className="sm:col-span-2 rounded-xl p-5" style={{ background: 'rgba(245,243,239,0.5)', border: '1px solid var(--border-default)' }}>
+        <div className="sm:col-span-2 rounded-xl p-5" style={{ background: 'rgba(255,255,255,0.5)', border: '1px solid var(--border-default)' }}>
           {selectedDistrict ? (
             <>
               <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#0D9488' }}>

@@ -106,7 +106,7 @@ export default function VerdictTicker({ lang = 'en' }: VerdictTickerProps) {
       <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: '80px', background: 'linear-gradient(to left, var(--bg-base), transparent)', pointerEvents: 'none', zIndex: 2 }} />
 
       {/* Caption */}
-      <div className="text-center py-1.5" style={{ borderTop: '1px solid var(--border-default)', background: 'rgba(245,243,239,0.3)' }}>
+      <div className="text-center py-1.5" style={{ borderTop: '1px solid var(--border-default)', background: 'rgba(255,255,255,0.3)' }}>
         <span style={{ fontSize: '10px', color: 'var(--fg-subtle)', letterSpacing: '0.5px' }}>
           {lang === 'es'
             ? 'Resultados de tribunales federales · Datos verificados y rangos representativos'

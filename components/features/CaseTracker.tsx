@@ -137,7 +137,7 @@ export function CaseTracker({
         className="w-full rounded-[12px] border p-6 transition-all"
         style={{
           backgroundColor: '#FFFFFF',
-          borderColor: '#E5E0D8',
+          borderColor: 'var(--border-default)',
         }}
       >
         {/* Header */}
@@ -289,8 +289,8 @@ function CaseItem({ trackedCase, t, es, onRemove, onRefresh, isLast }: CaseItemP
 
   return (
     <div
-      className={`flex items-start justify-between gap-4 rounded-lg bg-[#F9F8F6] p-4 transition-all hover:bg-[#F3F1ED] ${
-        !isLast ? 'border-b border-[#E5E0D8]' : ''
+      className={`flex items-start justify-between gap-4 rounded-lg bg-[var(--bg-base)] p-4 transition-all hover:bg-[#F3F1ED] ${
+        !isLast ? 'border-b border-[var(--border-default)]' : ''
       }`}
     >
       {/* Left: Case info + stats */}

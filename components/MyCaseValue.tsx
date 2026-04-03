@@ -1713,7 +1713,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Comparison */}
-                      <div className="mb-5 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #FFFFFF, #F5F3EF)' }}>
+                      <div className="mb-5 p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #FFFFFF, #FFFFFF)' }}>
                         <div className="text-[11px] font-bold tracking-[2px] mb-2" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'COMPARACIÓN JURISDICCIONAL' : 'JURISDICTION COMPARISON'}</div>
                         <p className="text-[13px] leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{narrative.comparisonNote}</p>
                       </div>
@@ -1831,7 +1831,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Emerging Trend */}
-                      <div className="p-3 rounded-xl flex items-start gap-2.5" style={{ background: 'linear-gradient(135deg, #FFFFFF, #F5F3EF)' }}>
+                      <div className="p-3 rounded-xl flex items-start gap-2.5" style={{ background: 'linear-gradient(135deg, #FFFFFF, #FFFFFF)' }}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                         <div>
                           <div className="text-[10px] font-bold tracking-[2px] mb-1" style={{ color: 'var(--accent-secondary)' }}>{lang === 'es' ? 'TENDENCIA EMERGENTE' : 'EMERGING TREND'}</div>
@@ -2082,7 +2082,7 @@ export default function MyCaseValue() {
 
                       {/* Key insight */}
                       <div className="p-4 rounded-xl flex items-start gap-3" style={{
-                        background: 'linear-gradient(135deg, #FFFFFF, #F5F3EF)',
+                        background: 'linear-gradient(135deg, #FFFFFF, #FFFFFF)',
                         border: '1px solid var(--border-muted)',
                       }}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -2327,7 +2327,7 @@ export default function MyCaseValue() {
                       </div>
 
                       {/* Key takeaway */}
-                      <div className="p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #FFFFFF, #F5F3EF)', border: '1px solid var(--border-muted)' }}>
+                      <div className="p-4 rounded-xl" style={{ background: 'linear-gradient(135deg, #FFFFFF, #FFFFFF)', border: '1px solid var(--border-muted)' }}>
                         <div className="flex items-start gap-3">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" className="flex-shrink-0 mt-0.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                           <div>
@@ -4264,7 +4264,7 @@ export default function MyCaseValue() {
                       </div>
                     </div>
                     {/* Comparison case */}
-                    <div className="p-5 text-center" style={{ background: '#F5F3EF' }}>
+                    <div className="p-5 text-center" style={{ background: '#FFFFFF' }}>
                       <div className="text-[10px] font-bold tracking-[2px] mb-1" style={{ color: 'var(--accent-primary)' }}>{lang === 'es' ? 'COMPARAR' : 'COMPARE'}</div>
                       <div className="text-sm font-semibold capitalize mb-3">{comparisonOptions.find((o: any) => o.nos === compareNos)?.label}</div>
                       <div className="space-y-3">

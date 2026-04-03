@@ -146,7 +146,7 @@ export default function ReportLoader({
     step <= 4 && step > 0 ? 'opacity-100' : 'opacity-0';
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#F9F8F6]/95 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#F9FAFB]/95 backdrop-blur-sm">
       <style>{`
         @keyframes spin {
           from { transform: rotate(0deg); }

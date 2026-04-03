@@ -172,9 +172,9 @@ export default async function NOSPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F8F6] text-[#111827]" style={{ fontFamily: "'Roboto', system-ui, sans-serif" }}>
+    <div className="min-h-screen bg-[#F9FAFB] text-[#111827]" style={{ fontFamily: "'Roboto', system-ui, sans-serif" }}>
       {/* Navigation */}
-      <nav className="border-b px-4 sm:px-6 lg:px-8 py-4" style={{ borderColor: '#E5E0D8', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(12px)' }}>
+      <nav className="border-b px-4 sm:px-6 lg:px-8 py-4" style={{ borderColor: 'var(--border-default)', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(12px)' }}>
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-[14px] font-semibold transition hover:opacity-80" style={{ color: '#8B5CF6' }}>
             ← MyCaseValue

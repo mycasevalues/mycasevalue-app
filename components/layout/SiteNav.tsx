@@ -325,7 +325,7 @@ export default function SiteNav() {
             inset: 0,
             top: '64px',
             zIndex: 199,
-            background: 'rgba(30,20,10,0.3)',
+            background: 'rgba(0,0,0,0.3)',
           }}
           onClick={() => { setMobileOpen(false); hamburgerRef.current?.focus(); }}
           aria-hidden="true"

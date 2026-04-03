@@ -85,7 +85,7 @@ export default function SavedReports({ lang = 'en', onLoadReport }: Props) {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen p-4 md:p-8" style={{ backgroundColor: '#F9F8F6' }}>
+    <div className="min-h-screen p-4 md:p-8" style={{ backgroundColor: '#F9FAFB' }}>
       <h1 className="text-3xl font-bold mb-8" style={{ color: '#111827' }}>
         {t.title}
       </h1>

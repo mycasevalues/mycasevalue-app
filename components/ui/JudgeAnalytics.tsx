@@ -133,7 +133,7 @@ export default function JudgeAnalytics({
   const t = labels[lang as keyof typeof labels] || labels.en;
 
   return (
-    <div className="w-full bg-[#F9F8F6] text-[#374151] py-8">
+    <div className="w-full bg-[var(--bg-base)] text-[#374151] py-8">
       {/* Header */}
       <div className="px-6 mb-8">
         <div className="flex items-center gap-3 mb-2">
@@ -156,7 +156,7 @@ export default function JudgeAnalytics({
             className={`px-3 py-2 rounded text-xs font-mono transition-colors ${
               sortBy === option
                 ? 'bg-[#111111] text-white'
-                : 'bg-[#FFFFFF] text-[#6B7280] border border-[#E5E0D8] hover:border-[#111111]'
+                : 'bg-[#FFFFFF] text-[#6B7280] border border-[var(--border-default)] hover:border-[#111111]'
             }`}
           >
             {option === 'winRate'
@@ -179,7 +179,7 @@ export default function JudgeAnalytics({
             return (
               <div
                 key={judge.id}
-                className="bg-[#FFFFFF] border border-[#E5E0D8] rounded-lg p-4 hover:border-[#111111] transition-colors"
+                className="bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg p-4 hover:border-[#111111] transition-colors"
               >
                 <div className="mb-3">
                   <p className="font-display font-semibold text-white text-sm">
@@ -201,7 +201,7 @@ export default function JudgeAnalytics({
                       {judge.winRate}%
                     </span>
                   </div>
-                  <div className="w-full bg-[#F9F8F6] rounded h-2 overflow-hidden">
+                  <div className="w-full bg-[#F9FAFB] rounded h-2 overflow-hidden">
                     <div
                       className="h-full transition-all"
                       style={{

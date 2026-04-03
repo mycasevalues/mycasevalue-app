@@ -97,7 +97,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
             <div key={i} style={{
               display: 'flex', justifyContent: 'space-between', alignItems: 'center',
               padding: '8px 12px', borderRadius: '8px',
-              background: 'rgba(245,243,239,0.5)',
+              background: 'rgba(255,255,255,0.5)',
             }}>
               <span style={{ fontSize: '13px', color: '#6B7280' }}>{s.description}</span>
               <kbd style={{
@@ -114,7 +114,7 @@ export default function KeyboardShortcuts({ shortcuts, lang = 'en' }: KeyboardSh
           <div style={{
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
             padding: '8px 12px', borderRadius: '8px',
-            background: 'rgba(245,243,239,0.5)',
+            background: 'rgba(255,255,255,0.5)',
           }}>
             <span style={{ fontSize: '13px', color: '#6B7280' }}>
               {lang === 'es' ? 'Mostrar/ocultar atajos' : 'Toggle shortcuts'}

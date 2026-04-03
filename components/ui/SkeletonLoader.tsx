@@ -21,7 +21,7 @@ function SkeletonPulse({ width = '100%', height = '16px', borderRadius = '8px', 
         width,
         height,
         borderRadius,
-        background: 'linear-gradient(90deg, #E5E0D8 25%, #F5F3EF 50%, #E5E0D8 75%)',
+        background: 'linear-gradient(90deg, #E5E0D8 25%, #FFFFFF 50%, #E5E0D8 75%)',
         backgroundSize: '200% 100%',
         animation: 'skeleton-shimmer 1.8s ease-in-out infinite',
       }}
@@ -58,7 +58,7 @@ export function SkeletonChart({ height = '200px', className = '' }: { height?: s
               flex: 1,
               height: `${h}%`,
               borderRadius: '4px 4px 0 0',
-              background: 'linear-gradient(90deg, #E5E0D8 25%, #F5F3EF 50%, #E5E0D8 75%)',
+              background: 'linear-gradient(90deg, #E5E0D8 25%, #FFFFFF 50%, #E5E0D8 75%)',
               backgroundSize: '200% 100%',
               animation: `skeleton-shimmer 1.8s ease-in-out ${i * 0.1}s infinite`,
             }} />

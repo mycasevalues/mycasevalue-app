@@ -14,21 +14,21 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html style={{ background: '#F9F8F6' }}>
+    <html style={{ background: '#F9FAFB' }}>
       <head>
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#F9F8F6" />
+        <meta name="theme-color" content="#F9FAFB" />
       </head>
-      <body style={{ margin: 0, padding: 0, background: '#F9F8F6' }}>
+      <body style={{ margin: 0, padding: 0, background: '#F9FAFB' }}>
         <div
           style={{
             minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#F9F8F6',
+            background: '#F9FAFB',
             fontFamily: "'Roboto', system-ui, sans-serif",
             padding: 24,
           }}
@@ -115,7 +115,7 @@ export default function GlobalError({
                   padding: '12px 32px',
                   background: 'transparent',
                   color: '#6B7280',
-                  border: '1px solid #E5E0D8',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 12,
                   fontSize: 14,
                   fontWeight: 600,
@@ -129,7 +129,7 @@ export default function GlobalError({
                   (e.target as HTMLAnchorElement).style.background = 'rgba(79, 70, 229, 0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.target as HTMLAnchorElement).style.borderColor = '#E5E0D8';
+                  (e.target as HTMLAnchorElement).style.borderColor = 'var(--border-default)';
                   (e.target as HTMLAnchorElement).style.color = '#6B7280';
                   (e.target as HTMLAnchorElement).style.background = 'transparent';
                 }}

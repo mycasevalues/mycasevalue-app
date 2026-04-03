@@ -230,7 +230,7 @@ export function CaseTypePopularityPulse({
           sortedTrends.map((item, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-3 p-3 rounded-lg bg-[#F9FAFB] hover:bg-[#F5F3EF] transition-colors border border-[#E5E0D8]/50"
+              className="flex items-center gap-3 p-3 rounded-lg bg-[#F9FAFB] hover:bg-[#FFFFFF] transition-colors border border-[#E5E0D8]/50"
             >
               {/* Index */}
               <div className="relative">

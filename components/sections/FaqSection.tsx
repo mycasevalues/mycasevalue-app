@@ -135,7 +135,7 @@ export default function FaqSection({ lang }: FaqSectionProps) {
   const faqs = lang === 'es' ? FAQ_ES : FAQ_EN;
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#F9F8F6]">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-base)]">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">

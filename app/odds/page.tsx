@@ -88,7 +88,7 @@ export default function OddsPage() {
         className="border-b py-16 sm:py-24"
         style={{
           borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #FFFFFF 0%, #F9F8F6 100%)',
+          background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)',
         }}
       >
         <div className="max-w-4xl mx-auto px-6">

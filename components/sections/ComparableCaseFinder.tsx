@@ -147,7 +147,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
           </thead>
           <tbody>
             {sorted.map((v, i) => (
-              <tr key={i} className="transition-colors" style={{ background: i % 2 === 0 ? 'transparent' : 'rgba(245,243,239,0.3)' }}>
+              <tr key={i} className="transition-colors" style={{ background: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.3)' }}>
                 <td className="px-3 py-2.5" style={{ color: 'var(--fg-primary)', borderBottom: '1px solid var(--border-default)' }}>
                   <div className="font-semibold">{v.caseName}</div>
                   <div className="text-[10px]" style={{ color: 'var(--fg-subtle)' }}>{v.source}</div>
@@ -176,7 +176,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
       {/* Mobile cards */}
       <div className="sm:hidden space-y-3">
         {sorted.map((v, i) => (
-          <div key={i} className="rounded-xl p-4" style={{ background: 'rgba(245,243,239,0.4)', border: '1px solid var(--border-default)' }}>
+          <div key={i} className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.4)', border: '1px solid var(--border-default)' }}>
             <div className="flex items-start justify-between mb-2">
               <div>
                 <div className="text-[13px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{v.caseName}</div>

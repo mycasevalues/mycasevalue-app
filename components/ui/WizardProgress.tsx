@@ -28,7 +28,7 @@ const COLORS = {
   primary: '#111111',
   text: '#111827',
   muted: '#6B7280',
-  bg: '#F9F8F6',
+  bg: '#F9FAFB',
   accentSecondary: '#8B5CF6',
   border: '#D1D5DB',
   lightBg: '#EDE9E3',

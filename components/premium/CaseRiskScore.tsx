@@ -188,7 +188,7 @@ export default function CaseRiskScore({
       <p className="text-[11px] font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--fg-subtle)' }}>{t.factors}</p>
       <div className="space-y-2">
         {result.factors.map((f, i) => (
-          <div key={i} className="flex items-center justify-between px-3 py-2 rounded-lg" style={{ background: 'rgba(245,243,239,0.4)' }}>
+          <div key={i} className="flex items-center justify-between px-3 py-2 rounded-lg" style={{ background: 'rgba(255,255,255,0.4)' }}>
             <span className="text-[12px]" style={{ color: 'var(--fg-secondary)' }}>
               {lang === 'es' ? f.label_es : f.label}
             </span>

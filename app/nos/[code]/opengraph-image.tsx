@@ -52,7 +52,7 @@ export default async function Image({
             display: 'flex',
             width: '100%',
             height: '100%',
-            background: 'linear-gradient(135deg, #F9F8F6 0%, #1a1f3a 100%)',
+            background: 'linear-gradient(135deg, #F9FAFB 0%, #1a1f3a 100%)',
             color: '#111827',
             fontFamily: 'system-ui, sans-serif',
             alignItems: 'center',

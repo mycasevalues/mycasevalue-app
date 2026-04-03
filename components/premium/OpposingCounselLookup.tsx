@@ -136,7 +136,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
       </div>
 
       {/* Sample Profile Preview */}
-      <div className="rounded-lg p-4" style={{ background: 'rgba(245,243,239,0.4)', border: '1px solid var(--border-default)' }}>
+      <div className="rounded-lg p-4" style={{ background: 'rgba(255,255,255,0.4)', border: '1px solid var(--border-default)' }}>
         <div className="flex items-center gap-3 mb-4">
           <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'rgba(17,17,17,0.15)' }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="1.5"><circle cx="12" cy="8" r="4" /><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /></svg>
