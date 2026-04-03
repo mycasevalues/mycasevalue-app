@@ -4,11 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
 
-const categoryIcons: Record<string, string> = {
-  work: '', injury: '', consumer: '', rights: '', money: '',
-  housing: '', medical: '', family: '', gov: '', education: '',
-};
-
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -108,7 +103,6 @@ export default function CasesIndexPage() {
             {filtered.map((category) => (
               <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
                 <div className="cat-card">
-                  <div style={{ fontSize: 40, marginBottom: 16 }}>{categoryIcons[category.id]}</div>
                   <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--fg-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
                     {category.label}
                   </h2>
