@@ -99,7 +99,7 @@ const getStatusDotColor = (status: 'live' | 'synced' | 'stale'): string => {
 
 export default function DataFreshness({
   lastUpdated = '2026-03-15',
-  totalCases = 4100000,
+  totalCases = 5100000,
   sources = DEFAULT_SOURCES,
   lang = 'en',
   compact = false,

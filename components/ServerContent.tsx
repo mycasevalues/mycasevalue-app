@@ -203,6 +203,304 @@ export default function ServerContent() {
         </div>
       </section>
 
+      {/* ── PLAIN ENGLISH ────────────────────────────────── */}
+      <section
+        style={{
+          background: 'var(--bg-surface)',
+          borderTop: '1px solid var(--border-default)',
+          padding: '64px 24px',
+        }}
+      >
+        <div style={{ maxWidth: '768px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <span
+              style={{
+                display: 'inline-block',
+                fontFamily: '"PT Mono", monospace',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '1.5px',
+                textTransform: 'uppercase',
+                color: 'var(--accent-secondary)',
+                marginBottom: '12px',
+              }}
+            >
+              IN PLAIN ENGLISH
+            </span>
+            <h2
+              style={{
+                fontFamily: 'Montserrat, system-ui, sans-serif',
+                fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
+                fontWeight: 700,
+                color: 'var(--fg-primary)',
+                letterSpacing: '-0.02em',
+                margin: '0 0 16px 0',
+              }}
+            >
+              What this data actually tells you
+            </h2>
+            <p
+              style={{
+                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontSize: '16px',
+                color: 'var(--fg-muted)',
+                lineHeight: 1.7,
+                margin: 0,
+              }}
+            >
+              We take millions of public federal court records and turn them into clear, actionable insights.
+              Here&apos;s what the numbers mean for you.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            {[
+              {
+                label: 'Win Rate',
+                example: '42%',
+                explanation: 'Of cases like yours that went to trial, 42% resulted in a plaintiff verdict. This tells you how often people in similar situations won their case.',
+              },
+              {
+                label: 'Settlement Range',
+                example: '$18K – $145K',
+                explanation: 'The middle 80% of settlements in your case type fell in this range. The median (50th percentile) is the most likely outcome if your case settles.',
+              },
+              {
+                label: 'Timeline',
+                example: '14 months',
+                explanation: 'From filing to resolution, similar cases in your district took about 14 months on average. Cases that settled resolved faster than those that went to trial.',
+              },
+              {
+                label: 'Attorney Impact',
+                example: '+23% win rate',
+                explanation: 'Plaintiffs with attorneys won 23% more often than those who represented themselves. This measures the statistical advantage of legal representation.',
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  background: 'var(--bg-base)',
+                  border: '1px solid var(--border-default)',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  display: 'flex',
+                  gap: '20px',
+                  alignItems: 'flex-start',
+                }}
+              >
+                <div
+                  style={{
+                    flexShrink: 0,
+                    fontFamily: '"PT Mono", monospace',
+                    fontSize: '18px',
+                    fontWeight: 700,
+                    color: 'var(--accent-secondary)',
+                    background: 'var(--bg-hover)',
+                    padding: '8px 14px',
+                    borderRadius: '8px',
+                    minWidth: '90px',
+                    textAlign: 'center',
+                  }}
+                >
+                  {item.example}
+                </div>
+                <div>
+                  <h3
+                    style={{
+                      fontFamily: 'Montserrat, system-ui, sans-serif',
+                      fontSize: '15px',
+                      fontWeight: 700,
+                      color: 'var(--fg-primary)',
+                      margin: '0 0 6px 0',
+                    }}
+                  >
+                    {item.label}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'Roboto, system-ui, sans-serif',
+                      fontSize: '14px',
+                      color: 'var(--fg-muted)',
+                      lineHeight: 1.6,
+                      margin: 0,
+                    }}
+                  >
+                    {item.explanation}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRICING PREVIEW ──────────────────────────────── */}
+      <section
+        style={{
+          background: 'var(--bg-base)',
+          padding: '64px 24px',
+        }}
+      >
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2
+              style={{
+                fontFamily: 'Montserrat, system-ui, sans-serif',
+                fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
+                fontWeight: 700,
+                color: 'var(--fg-primary)',
+                letterSpacing: '-0.02em',
+                margin: '0 0 12px 0',
+              }}
+            >
+              Simple, Transparent Pricing
+            </h2>
+            <p
+              style={{
+                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontSize: '16px',
+                color: 'var(--fg-muted)',
+                maxWidth: '500px',
+                margin: '0 auto',
+                lineHeight: 1.6,
+              }}
+            >
+              Start free. Upgrade when you need deeper data.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '16px',
+              maxWidth: '960px',
+              margin: '0 auto',
+            }}
+          >
+            {[
+              { name: 'Free', price: '$0', period: 'forever', desc: 'Basic win rates and case type data', cta: 'Get Started', featured: false },
+              { name: 'Single Report', price: '$5.99', period: 'one-time', desc: 'Full settlement ranges, judge data, and trends', cta: 'Buy Report', featured: false },
+              { name: 'Unlimited', price: '$9.99', period: '/month', desc: 'Unlimited reports, saved history, and export', cta: 'Subscribe', featured: false },
+              { name: 'Attorney Mode', price: '$29.99', period: '/month', desc: 'AI predictions, opposing counsel, API access', cta: 'Start Trial', featured: true },
+            ].map((plan, i) => (
+              <div
+                key={i}
+                style={{
+                  background: 'var(--bg-surface)',
+                  border: plan.featured ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                }}
+              >
+                {plan.featured && (
+                  <span
+                    style={{
+                      position: 'absolute',
+                      top: '-12px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      fontFamily: '"PT Mono", monospace',
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '1px',
+                      textTransform: 'uppercase',
+                      background: 'var(--accent-primary)',
+                      color: 'var(--fg-inverse)',
+                      padding: '4px 12px',
+                      borderRadius: '20px',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    MOST POPULAR
+                  </span>
+                )}
+                <h3
+                  style={{
+                    fontFamily: 'Montserrat, system-ui, sans-serif',
+                    fontSize: '16px',
+                    fontWeight: 700,
+                    color: 'var(--fg-primary)',
+                    margin: '0 0 8px 0',
+                  }}
+                >
+                  {plan.name}
+                </h3>
+                <div style={{ margin: '0 0 12px 0' }}>
+                  <span
+                    style={{
+                      fontFamily: 'Montserrat, system-ui, sans-serif',
+                      fontSize: '28px',
+                      fontWeight: 800,
+                      color: 'var(--fg-primary)',
+                    }}
+                  >
+                    {plan.price}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'Roboto, system-ui, sans-serif',
+                      fontSize: '14px',
+                      color: 'var(--fg-muted)',
+                      marginLeft: '4px',
+                    }}
+                  >
+                    {plan.period}
+                  </span>
+                </div>
+                <p
+                  style={{
+                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontSize: '14px',
+                    color: 'var(--fg-muted)',
+                    lineHeight: 1.5,
+                    margin: '0 0 16px 0',
+                    flex: 1,
+                  }}
+                >
+                  {plan.desc}
+                </p>
+                <a
+                  href="/pricing"
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    padding: '10px 16px',
+                    borderRadius: '8px',
+                    fontFamily: 'Montserrat, system-ui, sans-serif',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    background: plan.featured ? 'var(--accent-primary)' : 'transparent',
+                    color: plan.featured ? 'var(--fg-inverse)' : 'var(--fg-primary)',
+                    border: plan.featured ? 'none' : '1px solid var(--border-default)',
+                  }}
+                >
+                  {plan.cta}
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <p
+            style={{
+              textAlign: 'center',
+              marginTop: '24px',
+              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontSize: '13px',
+              color: 'var(--fg-muted)',
+            }}
+          >
+            <a href="/pricing" style={{ color: 'var(--fg-primary)', fontWeight: 600, textDecoration: 'none' }}>
+              Compare all features →
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* ── FAQ ────────────────────────────────────────────── */}
       <section
         style={{
@@ -308,7 +606,7 @@ export default function ServerContent() {
               gap: '8px',
               padding: '14px 28px',
               background: 'var(--accent-primary)',
-              color: '#FFFFFF',
+              color: 'var(--fg-inverse)',
               borderRadius: '12px',
               fontFamily: 'Montserrat, system-ui, sans-serif',
               fontSize: '15px',
