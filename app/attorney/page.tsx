@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import React from 'react';
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'Attorney Mode - Professional Legal Intelligence Suite | MyCaseValue',
   description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, and more.',
