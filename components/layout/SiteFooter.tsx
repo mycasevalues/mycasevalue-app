@@ -1,5 +1,6 @@
 /**
- * SiteFooter.tsx — Lightweight site-wide footer (Server Component compatible).
+ * SiteFooter.tsx — Site-wide dark footer (Server Component compatible).
+ * bg #111111 — the ONLY dark element on the entire site per Paper design system.
  * Rendered from app/layout.tsx so every page gets consistent footer.
  * The homepage client component (MyCaseValue) renders its own Footer and hides this via CSS.
  */
@@ -11,31 +12,31 @@ export default function SiteFooter() {
     <footer
       className="site-footer"
       style={{
-        borderTop: '1px solid var(--border-default)',
-        background: 'var(--bg-base)',
-        padding: '40px 24px 24px',
+        background: '#111111',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        padding: '64px 24px 32px',
+        color: 'rgba(255,255,255,0.6)',
       }}
     >
-      <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-        {/* Top row: brand + links */}
+      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        {/* 4-column grid */}
         <div
           style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            gap: '32px',
-            marginBottom: '24px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '40px',
+            marginBottom: '48px',
           }}
         >
-          {/* Brand */}
-          <div style={{ maxWidth: '320px' }}>
+          {/* Col 1: Brand */}
+          <div>
             <Link
               href="/"
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '16px',
+                fontSize: '20px',
                 fontWeight: 900,
-                color: 'var(--fg-primary)',
+                color: '#FFFFFF',
                 textDecoration: 'none',
                 letterSpacing: '-0.5px',
               }}
@@ -45,54 +46,102 @@ export default function SiteFooter() {
             <p
               style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '12px',
-                color: 'var(--fg-muted)',
+                fontSize: '14px',
+                color: 'rgba(255,255,255,0.5)',
                 lineHeight: 1.6,
                 marginTop: '8px',
               }}
             >
-              Aggregate historical data from public federal court records for
-              informational and research purposes only. Not legal advice.
+              What really happened in cases like yours.
+            </p>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '12px',
+                color: 'rgba(255,255,255,0.4)',
+                marginTop: '8px',
+              }}
+            >
+              Built on PACER &middot; FJC &middot; CourtListener data
             </p>
           </div>
 
-          {/* Nav links */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '24px',
-              fontSize: '12px',
-              fontFamily: 'var(--font-body)',
-            }}
-          >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <span style={{ fontWeight: 700, color: 'var(--fg-primary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px' }}>Product</span>
-              <Link href="/how-it-works" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>How It Works</Link>
-              <Link href="/cases" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>Case Types</Link>
-              <Link href="/pricing" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>Pricing</Link>
-              <Link href="/faq" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>FAQ</Link>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <span style={{ fontWeight: 700, color: 'var(--fg-primary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px' }}>Legal</span>
-              <Link href="/terms" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>Terms of Service</Link>
-              <Link href="/privacy" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>Privacy Policy</Link>
-              <Link href="/methodology" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>Methodology</Link>
-              <Link href="/about" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>About</Link>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <span style={{ fontWeight: 700, color: 'var(--fg-primary)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px' }}>Contact</span>
-              <a href="mailto:support@mycasevalue.com" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>support@mycasevalue.com</a>
-              <a href="mailto:billing@mycasevalue.com" style={{ color: 'var(--fg-muted)', textDecoration: 'none' }}>billing@mycasevalue.com</a>
-            </div>
+          {/* Col 2: Explore */}
+          <div>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '11px',
+                fontWeight: 600,
+                color: 'rgba(255,255,255,0.4)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.10em',
+                marginBottom: '16px',
+              }}
+            >
+              Explore
+            </p>
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <Link href="/districts" className="site-footer-link" style={footerLinkStyle}>Districts</Link>
+              <Link href="/cases" className="site-footer-link" style={footerLinkStyle}>Case Types</Link>
+              <Link href="/judges" className="site-footer-link" style={footerLinkStyle}>Judge Profiles</Link>
+              <Link href="/calculator" className="site-footer-link" style={footerLinkStyle}>Settlement Calculator</Link>
+              <Link href="/attorney" className="site-footer-link" style={footerLinkStyle}>Attorney Mode</Link>
+            </nav>
+          </div>
+
+          {/* Col 3: Account */}
+          <div>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '11px',
+                fontWeight: 600,
+                color: 'rgba(255,255,255,0.4)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.10em',
+                marginBottom: '16px',
+              }}
+            >
+              Account
+            </p>
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <Link href="/sign-in" className="site-footer-link" style={footerLinkStyle}>Sign In</Link>
+              <Link href="/sign-up" className="site-footer-link" style={footerLinkStyle}>Create Account</Link>
+              <Link href="/pricing" className="site-footer-link" style={footerLinkStyle}>Pricing</Link>
+              <Link href="/dashboard" className="site-footer-link" style={footerLinkStyle}>Dashboard</Link>
+            </nav>
+          </div>
+
+          {/* Col 4: Company */}
+          <div>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '11px',
+                fontWeight: 600,
+                color: 'rgba(255,255,255,0.4)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.10em',
+                marginBottom: '16px',
+              }}
+            >
+              Company
+            </p>
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <Link href="/methodology" className="site-footer-link" style={footerLinkStyle}>Methodology</Link>
+              <Link href="/about" className="site-footer-link" style={footerLinkStyle}>About</Link>
+              <Link href="/privacy" className="site-footer-link" style={footerLinkStyle}>Privacy Policy</Link>
+              <Link href="/terms" className="site-footer-link" style={footerLinkStyle}>Terms of Service</Link>
+            </nav>
           </div>
         </div>
 
-        {/* Bottom row */}
+        {/* Bottom bar */}
         <div
           style={{
-            borderTop: '1px solid var(--border-default)',
-            paddingTop: '16px',
+            borderTop: '1px solid rgba(255,255,255,0.08)',
+            paddingTop: '24px',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -103,25 +152,37 @@ export default function SiteFooter() {
           <p
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: '11px',
-              color: 'var(--fg-muted)',
+              fontSize: '12px',
+              color: 'rgba(255,255,255,0.4)',
               margin: 0,
             }}
           >
-            © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
+            &copy; {new Date().getFullYear()} MyCaseValue. All rights reserved.
           </p>
           <p
             style={{
               fontFamily: 'var(--font-body)',
-              fontSize: '11px',
-              color: 'var(--fg-muted)',
+              fontSize: '12px',
+              color: 'rgba(255,255,255,0.4)',
               margin: 0,
             }}
           >
-            Data from FJC, PACER, CourtListener
+            For informational purposes only. Not legal advice.
           </p>
         </div>
       </div>
+
+      <style dangerouslySetInnerHTML={{ __html: `
+        .site-footer-link:hover { color: rgba(255,255,255,1) !important; }
+      `}} />
     </footer>
   );
 }
+
+const footerLinkStyle: React.CSSProperties = {
+  fontFamily: 'var(--font-body)',
+  fontSize: '14px',
+  color: 'rgba(255,255,255,0.6)',
+  textDecoration: 'none',
+  transition: 'color 200ms ease',
+};

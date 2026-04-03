@@ -1,4 +1,5 @@
 import './globals.css';
+import '../styles/fonts.css';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';

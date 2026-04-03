@@ -12,12 +12,6 @@ const ThemeContext = createContext<ThemeContextType>({
 })
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Dark-only site — always enforce dark mode
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    document.documentElement.classList.add('dark')
-  }, [])
-
   return (
     <ThemeContext.Provider value={{ darkMode: true, setDarkMode: () => {} }}>
       {children}

@@ -1528,10 +1528,8 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* ============================================================
-   DARK MODE OVERRIDES FOR TAILWIND CLASSES
+   LIGHT MODE STYLING
    ============================================================ */
-
-/* Dark mode is always on — no data-theme overrides needed */
 
 /* Card inputs styled for Paper light theme */
 .card-bg input,

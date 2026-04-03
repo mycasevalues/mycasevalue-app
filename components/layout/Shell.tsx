@@ -165,7 +165,6 @@ export function Shell({
         {lang === 'es' ? 'Ir al contenido' : 'Skip to content'}
       </a>
       <div
-        className="dark"
         role="application"
         aria-label="MyCaseValue"
         data-mcv-loaded="true"
