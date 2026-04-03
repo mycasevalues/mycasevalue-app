@@ -222,7 +222,7 @@ export default function AboutPage() {
             <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
               Access aggregate federal court data for informed decision-making. Free basic reports, premium analytics available.
             </p>
-            <a href="/"
+            <a href="/search"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
               style={{ background: '#111111', color: '#FFFFFF' }}>
               Start Researching

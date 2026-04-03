@@ -248,7 +248,7 @@ export default function SiteNav() {
                     Sign In
                   </Link>
                   <Link
-                    href="/cases"
+                    href="/search"
                     style={{
                       padding: '8px 20px',
                       fontSize: '14px',
@@ -446,7 +446,7 @@ export default function SiteNav() {
                 Sign In
               </Link>
               <Link
-                href="/cases"
+                href="/search"
                 onClick={() => setMobileOpen(false)}
                 style={{
                   display: 'block',
