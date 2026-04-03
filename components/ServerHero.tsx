@@ -137,6 +137,35 @@ export default function ServerHero() {
                   </svg>
                 </a>
               </div>
+
+              {/* Trust pills */}
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '8px',
+                  marginTop: '20px',
+                }}
+              >
+                {['No account required', 'No credit card', '5.1M+ federal cases', 'PACER-verified data', 'Private & encrypted'].map((item, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      fontSize: '12px',
+                      color: 'var(--fg-muted)',
+                      fontFamily: 'Roboto, system-ui, sans-serif',
+                    }}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" strokeWidth="2.5" aria-hidden="true">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {/* RIGHT — Quick Case Lookup (server-rendered form) */}

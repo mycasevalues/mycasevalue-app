@@ -175,31 +175,26 @@ export default async function ReportPage({
       {/* Header */}
       <div style={{ background: 'var(--bg-surface)', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
-          <Link href="/cases" style={{ fontSize: 14, color: 'var(--fg-muted)', textDecoration: 'none', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
-            ← Back to case types
+          <Link href="/search" style={{ fontSize: 13, color: 'var(--fg-muted)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+            ← Search cases
           </Link>
 
           <h1 style={{
             fontSize: 28,
             fontWeight: 700,
-            margin: '24px 0 8px',
+            margin: '0 0 8px',
             color: 'var(--fg-primary)',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-0.5px',
+            lineHeight: 1.2,
           }}>
-            {label} Report
+            {label} — Federal Court Outcomes
           </h1>
 
-          <p style={{ color: 'var(--fg-muted)', fontSize: 14, fontFamily: 'var(--font-body)', margin: '0 0 4px' }}>
-            {districtLabel} · Based on federal court records
+          <p style={{ fontSize: 15, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: '0 0 16px' }}>
+            Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases · {districtLabel} · Public court records
             {categoryLabel ? ` · ${categoryLabel}` : ''}
           </p>
-
-          {totalCases && (
-            <p style={{ color: 'var(--fg-muted)', fontSize: 13, fontFamily: 'var(--font-mono)', margin: '0 0 12px' }}>
-              {totalCases.toLocaleString()} cases analyzed
-            </p>
-          )}
 
           <ShareButtons
             url={`https://www.mycasevalues.com/report/${nos}`}
@@ -524,6 +519,47 @@ export default async function ReportPage({
             </p>
           </section>
         )}
+
+        {/* ═══ Related Case Types ═══ */}
+        {(() => {
+          const parentCat = SITS.find(cat => cat.opts.some(opt => opt.nos === nos)) || SITS.find(cat => cat.id === nos);
+          const related = parentCat?.opts
+            ?.filter((opt: any) => opt.nos !== nos)
+            ?.slice(0, 4)
+            ?.map((opt: any) => ({ label: opt.label, nos: opt.nos })) || [];
+          if (related.length === 0) return null;
+          return (
+            <section style={{
+              background: 'var(--bg-surface)',
+              border: '1px solid var(--border-default)',
+              borderRadius: 12,
+              padding: 24,
+              marginTop: 16,
+            }}>
+              <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 16, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+                Related case types
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+                {related.map((t: any, i: number) => (
+                  <Link
+                    key={i}
+                    href={`/report/${t.nos}`}
+                    style={{
+                      fontSize: 14,
+                      color: 'var(--accent-primary)',
+                      textDecoration: 'none',
+                      padding: '10px 0',
+                      borderBottom: i < related.length - 1 ? '1px solid var(--border-default)' : 'none',
+                      fontFamily: 'var(--font-body)',
+                    }}
+                  >
+                    {t.label} →
+                  </Link>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
 
         {/* Disclaimer */}
         <p style={{ fontSize: 12, color: 'var(--fg-muted)', textAlign: 'center', marginTop: 32, fontStyle: 'italic', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>

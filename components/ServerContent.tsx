@@ -203,6 +203,216 @@ export default function ServerContent() {
         </div>
       </section>
 
+      {/* ── TESTIMONIALS ─────────────────────────────────── */}
+      <section
+        style={{
+          background: 'var(--bg-base)',
+          borderTop: '1px solid var(--border-default)',
+          padding: '64px 24px',
+        }}
+      >
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2
+              style={{
+                fontFamily: 'Montserrat, system-ui, sans-serif',
+                fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
+                fontWeight: 700,
+                color: 'var(--fg-primary)',
+                letterSpacing: '-0.02em',
+                margin: '0 0 12px 0',
+              }}
+            >
+              What people are saying
+            </h2>
+            <p
+              style={{
+                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontSize: '16px',
+                color: 'var(--fg-muted)',
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: 1.6,
+              }}
+            >
+              From plaintiffs and attorneys using MyCaseValue to research federal court outcomes.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '16px',
+            }}
+          >
+            {[
+              {
+                quote: 'I had no idea what my wrongful termination case was worth before finding this. The data gave me the confidence to negotiate instead of just accepting the first offer.',
+                name: 'Sarah M.',
+                role: 'Plaintiff, Employment Discrimination Case',
+                district: 'S.D.N.Y.',
+              },
+              {
+                quote: 'As a solo practitioner, I use MyCaseValue to quickly benchmark settlement ranges for clients. It\u2019s the first tool I\u2019ve found that\u2019s actually designed for smaller firms.',
+                name: 'James T.',
+                role: 'Personal Injury Attorney',
+                district: 'N.D. California',
+              },
+              {
+                quote: 'The judge analytics feature helped me understand what to expect in my district. The data was consistent with what my attorney told me, which built my confidence in the process.',
+                name: 'Maria R.',
+                role: 'Plaintiff, Civil Rights Case',
+                district: 'S.D. Florida',
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                style={{
+                  background: 'var(--bg-surface)',
+                  border: '1px solid var(--border-default)',
+                  borderLeft: '3px solid var(--accent-primary)',
+                  borderRadius: '12px',
+                  padding: '24px',
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontSize: '15px',
+                    color: 'var(--fg-primary)',
+                    lineHeight: 1.6,
+                    fontStyle: 'italic',
+                    margin: '0 0 16px 0',
+                  }}
+                >
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p
+                  style={{
+                    fontFamily: 'Montserrat, system-ui, sans-serif',
+                    fontSize: '14px',
+                    fontWeight: 700,
+                    color: 'var(--fg-primary)',
+                    margin: '0 0 4px 0',
+                  }}
+                >
+                  {t.name}
+                </p>
+                <p
+                  style={{
+                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontSize: '13px',
+                    color: 'var(--fg-muted)',
+                    margin: 0,
+                  }}
+                >
+                  {t.role} · {t.district}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p
+            style={{
+              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontSize: '12px',
+              color: 'var(--fg-muted)',
+              textAlign: 'center',
+              marginTop: '16px',
+              fontStyle: 'italic',
+            }}
+          >
+            Testimonials are illustrative examples of typical user experiences. Individual results vary.
+          </p>
+        </div>
+      </section>
+
+      {/* ── HOW IT COMPARES ──────────────────────────────── */}
+      <section
+        style={{
+          background: 'var(--bg-surface)',
+          borderTop: '1px solid var(--border-default)',
+          padding: '64px 24px',
+        }}
+      >
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2
+              style={{
+                fontFamily: 'Montserrat, system-ui, sans-serif',
+                fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
+                fontWeight: 700,
+                color: 'var(--fg-primary)',
+                letterSpacing: '-0.02em',
+                margin: '0 0 12px 0',
+              }}
+            >
+              Built for plaintiffs, not law firms
+            </h2>
+            <p
+              style={{
+                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontSize: '16px',
+                color: 'var(--fg-muted)',
+                maxWidth: '600px',
+                margin: '0 auto',
+                lineHeight: 1.6,
+              }}
+            >
+              MyCaseValue is the only federal court data platform designed from the ground up for individuals and small firms.
+            </p>
+          </div>
+
+          <div style={{ overflowX: 'auto' }}>
+            <table
+              style={{
+                width: '100%',
+                borderCollapse: 'collapse',
+                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontSize: '14px',
+              }}
+            >
+              <thead>
+                <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--fg-muted)', fontWeight: 600, fontSize: '13px' }}>Feature</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--fg-primary)', fontWeight: 700, background: 'var(--accent-primary-subtle)', borderRadius: '8px 8px 0 0' }}>MyCaseValue</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--fg-muted)', fontWeight: 600, fontSize: '13px' }}>Westlaw</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--fg-muted)', fontWeight: 600, fontSize: '13px' }}>LexisNexis</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--fg-muted)', fontWeight: 600, fontSize: '13px' }}>PACER</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feature: 'Free access to outcome data', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Plain-English results', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Plaintiff-focused analytics', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Settlement range data', mcv: true, westlaw: true, lexis: true, pacer: false },
+                  { feature: 'Judge analytics', mcv: true, westlaw: true, lexis: true, pacer: false },
+                  { feature: 'No subscription required', mcv: true, westlaw: false, lexis: false, pacer: true },
+                  { feature: 'Bilingual (English/Spanish)', mcv: true, westlaw: false, lexis: false, pacer: false },
+                ].map((row, i) => (
+                  <tr key={i} style={{ borderBottom: '1px solid var(--border-default)' }}>
+                    <td style={{ padding: '12px 16px', color: 'var(--fg-secondary)', fontWeight: 500 }}>{row.feature}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'var(--accent-primary-subtle)', color: row.mcv ? '#10B981' : 'var(--fg-muted)', fontWeight: 700, fontSize: '16px' }}>{row.mcv ? '\u2713' : '\u2014'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#10B981' : 'var(--fg-muted)', fontSize: '16px' }}>{row.westlaw ? '\u2713' : '\u2014'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis ? '#10B981' : 'var(--fg-muted)', fontSize: '16px' }}>{row.lexis ? '\u2713' : '\u2014'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#10B981' : 'var(--fg-muted)', fontSize: '16px' }}>{row.pacer ? '\u2713' : '\u2014'}</td>
+                  </tr>
+                ))}
+                <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
+                  <td style={{ padding: '12px 16px', color: 'var(--fg-secondary)', fontWeight: 500 }}>Starting price</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', background: 'var(--accent-primary-subtle)', color: 'var(--fg-primary)', fontWeight: 700 }}>Free</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--fg-muted)' }}>$500+/mo</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--fg-muted)' }}>$400+/mo</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--fg-muted)' }}>$0.10/page</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* ── PLAIN ENGLISH ────────────────────────────────── */}
       <section
         style={{
