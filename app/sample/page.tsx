@@ -109,12 +109,7 @@ export default function SampleReportPage() {
               textDecoration: 'none',
               transition: 'background-color 0.2s',
             }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor = '#f3f4f6')
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor = '#fff')
-            }
+            className="sample-banner-cta"
           >
             Get your real report →
           </a>
@@ -144,12 +139,7 @@ export default function SampleReportPage() {
                 color: 'var(--fg-muted)',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = 'var(--fg-primary)')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = 'var(--fg-muted)')
-              }
+              className="sample-breadcrumb-link"
             >
               Home
             </a>
@@ -347,12 +337,7 @@ export default function SampleReportPage() {
                 color: 'var(--accent-secondary)',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.textDecoration = 'underline')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.textDecoration = 'none')
-              }
+              className="sample-section-link"
             >
               Upgrade to see real data for your case →
             </a>
@@ -463,12 +448,7 @@ export default function SampleReportPage() {
                 color: 'var(--accent-secondary)',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.textDecoration = 'underline')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.textDecoration = 'none')
-              }
+              className="sample-section-link"
             >
               Upgrade to see real data for your case →
             </a>
@@ -628,12 +608,7 @@ export default function SampleReportPage() {
                 color: 'var(--accent-secondary)',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.textDecoration = 'underline')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.textDecoration = 'none')
-              }
+              className="sample-section-link"
             >
               Upgrade to see real data for your case →
             </a>
@@ -849,12 +824,7 @@ export default function SampleReportPage() {
                 color: 'var(--accent-secondary)',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.textDecoration = 'underline')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.textDecoration = 'none')
-              }
+              className="sample-section-link"
             >
               Upgrade to see real data for your case →
             </a>
@@ -1014,12 +984,7 @@ export default function SampleReportPage() {
                 color: 'var(--accent-secondary)',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.textDecoration = 'underline')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.textDecoration = 'none')
-              }
+              className="sample-section-link"
             >
               Upgrade to see real data for your case →
             </a>
@@ -1229,12 +1194,7 @@ export default function SampleReportPage() {
                 color: 'var(--accent-secondary)',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.textDecoration = 'underline')
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.textDecoration = 'none')
-              }
+              className="sample-section-link"
             >
               Upgrade to see real data for your case →
             </a>
@@ -1256,8 +1216,7 @@ export default function SampleReportPage() {
                   textDecoration: 'none',
                   transition: 'opacity 0.2s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+                className="sample-cta-btn"
               >
                 Get my real Employment Discrimination report
               </a>
@@ -1282,6 +1241,13 @@ export default function SampleReportPage() {
           </footer>
         </main>
       </div>
+      {/* Hover styles (CSS-only, no event handlers needed in Server Component) */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        .sample-banner-cta:hover { background-color: #f3f4f6 !important; }
+        .sample-breadcrumb-link:hover { color: var(--fg-primary) !important; }
+        .sample-section-link:hover { text-decoration: underline !important; }
+        .sample-cta-btn:hover { opacity: 0.9; }
+      `}} />
     </>
   );
 }
