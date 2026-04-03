@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Case Data by Category | MyCaseValue',
+  title: 'Case Categories — Federal Court Data',
   description: 'Browse outcome data from 5.1M+ federal cases. Win rates, settlements, and timelines across 84 case types including employment, injury, and civil rights.',
   openGraph: {
     title: 'Case Categories — Real Federal Court Data | MyCaseValue',

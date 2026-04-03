@@ -196,15 +196,6 @@ export default function DistrictHeatmapPage() {
         {/* Header */}
         <header className="border-b" style={{ borderColor: 'var(--border-default)' }}>
           <div className="max-w-6xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-            <div className="mb-4">
-              <a
-                href="/"
-                className="text-sm font-medium hover:opacity-75 transition-opacity"
-                style={{ color: '#111111' }}
-              >
-                &larr; Back to MyCaseValue
-              </a>
-            </div>
             <div>
               <h1 className="text-4xl font-bold mb-2">Federal Court Win Rates</h1>
               <p className="text-lg opacity-70">

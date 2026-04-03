@@ -92,16 +92,6 @@ export default function OddsPage() {
         }}
       >
         <div className="max-w-4xl mx-auto px-6">
-          <a
-            href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80"
-            style={{ color: '#111111' }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Back to MyCaseValue
-          </a>
 
           <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
             Check My Odds

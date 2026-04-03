@@ -34,25 +34,6 @@ export default function JudgesPage() {
       >
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
           <div style={{ paddingTop: '64px', paddingBottom: '96px' }}>
-            <Link
-              href="/"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                fontSize: '14px',
-                fontWeight: '600',
-                marginBottom: '24px',
-                color: 'var(--fg-primary)',
-                textDecoration: 'none',
-                transition: 'opacity 0.2s',
-              }}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M19 12H5M12 19l-7-7 7-7" />
-              </svg>
-              Back to MyCaseValue
-            </Link>
 
             <div
               style={{
