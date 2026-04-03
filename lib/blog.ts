@@ -14,6 +14,152 @@ export interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    slug: 'how-to-read-federal-court-data',
+    title: 'How to Read Federal Court Outcome Data',
+    description: 'A plain-English guide to understanding win rates, settlement percentiles, and case timelines from federal court records.',
+    content: `Federal court outcome data can feel intimidating if you have never encountered it before. This guide breaks down every major metric you will see on MyCaseValue so you can make sense of the numbers.
+
+Win rate is the percentage of cases in which the plaintiff received a favorable judgment at trial. If 100 cases of a given type went to trial and plaintiffs won 38 of them, the win rate is 38 percent. Win rate only counts final judgments. It does not include settlements, voluntary dismissals, or transfers. A low win rate does not necessarily mean a case type is hopeless. It often means that most strong cases settle before trial, leaving a smaller and sometimes weaker pool of cases to be decided by a judge or jury.
+
+Settlement rate measures how often cases end in a negotiated agreement rather than a judgment. A settlement rate of 55 percent means that more than half of all disposed cases in that category were resolved by agreement between the parties. Settlement rates tend to be highest in case types with clear liability and quantifiable damages, such as motor vehicle accidents and contract disputes.
+
+Dismissal rate captures cases that end without a substantive ruling on the merits. Dismissals happen for many reasons: procedural defects, failure to state a claim, voluntary withdrawal, or lack of jurisdiction. A high dismissal rate does not mean you will be dismissed. It means a significant share of filings in that category never reach the merits stage, often because of technical issues rather than the strength of the underlying claim.
+
+Settlement percentiles tell you the distribution of monetary outcomes. P10 means the tenth percentile, or the dollar figure below which ten percent of reported settlements fall. P50, the median, is the middle value: half of settlements are below it, half above. P90 is the ninety-th percentile, meaning only ten percent of settlements exceeded that figure. The median is far more useful than the average because a handful of very large verdicts can pull the average upward dramatically while most cases resolve for much less.
+
+Case duration is measured as the number of months from the filing date to the date of disposition, which is the date the court closes the case. Dispositions include settlements, judgments, dismissals, and transfers. The median duration tells you how long a typical case takes. Duration varies significantly by case type and district.
+
+Attorney impact data compares outcomes for plaintiffs represented by counsel versus those proceeding pro se, meaning without a lawyer. The data consistently shows that represented plaintiffs achieve higher win rates and larger settlements. However, this comparison is not apples to apples. Attorneys tend to take stronger cases, which means the gap partly reflects case quality rather than attorney skill alone. Still, the magnitude of the difference, often thirty or more percentage points in win rate, suggests that representation has a substantial independent effect.
+
+One critical caveat: all of these numbers are aggregate historical statistics. They describe what happened across thousands of past cases. They do not predict what will happen in any individual case. Every lawsuit involves unique facts, unique parties, unique evidence, and unique judicial decisions. Use these statistics to understand the landscape and ask better questions, not to forecast a specific outcome. If you are involved in a legal matter, consult a licensed attorney who can evaluate your specific situation.`,
+    author: 'MyCaseValue Research Team',
+    publishedAt: new Date('2026-04-01'),
+    updatedAt: new Date('2026-04-01'),
+    tags: ['guide', 'data-analysis', 'federal-court', 'win-rates', 'settlements'],
+    category: 'Guide',
+    readTime: 7,
+  },
+  {
+    slug: 'understanding-settlement-percentiles',
+    title: 'Understanding Settlement Percentiles: P10, P50, P90 Explained',
+    description: 'What settlement percentiles mean, how they are calculated from federal court records, and how to use them to evaluate your case.',
+    content: `When you look up a case type on MyCaseValue, you will see settlement data expressed in percentiles. Terms like P10, P50, and P90 appear throughout the reports. This article explains what they mean, why they matter, and how to use them.
+
+A percentile tells you where a particular value falls in a ranked list of all values. If you lined up every reported settlement for a case type from smallest to largest, the tenth percentile (P10) is the value at which ten percent of settlements are below it and ninety percent are above. The fiftieth percentile (P50) is the median, the exact middle. The ninetieth percentile (P90) is the value that only ten percent of settlements exceed.
+
+The median, P50, matters more than the average for legal outcomes. Averages are pulled upward by a small number of very large verdicts or settlements. In personal injury cases, for example, a few multi-million-dollar pharmaceutical settlements can inflate the average to hundreds of thousands of dollars even though most cases resolve for far less. The median gives you a much more realistic picture of what a typical case produces.
+
+P10 represents the low end of the realistic outcome range. In many case types, P10 settlement values are in the single-digit thousands. This does not mean your case will resolve that low. It means that roughly ten percent of all settled cases in that category produced outcomes at or below that figure. These often include nuisance settlements where the defendant pays a small amount to avoid litigation costs, and cases with minimal damages or weak liability.
+
+P90 represents the high end of common outcomes. These are substantial settlements, but they are not outliers. One in ten cases reaches this level. Cases at P90 typically involve clear liability, significant documented damages, experienced counsel, and sometimes class or collective action status. Reaching P90 is realistic but requires strong facts and effective legal strategy.
+
+Federal court records have a significant limitation regarding settlements. Most settlement agreements are confidential. When parties settle, they typically file a stipulated dismissal with the court but do not report the settlement amount. The settlement figures in federal data come from cases where monetary terms were publicly documented, such as consent decrees, court-approved settlements in class actions, and judgments entered after settlement. This means the reported data represents a subset of all settlements, and it may skew toward larger and more formal resolutions.
+
+How should you use percentile data when evaluating a settlement offer? Start by identifying the P10, P50, and P90 for your case type. If an offer falls below P10, it is below what even the lowest-value cases typically receive. If it falls near P50, it is in the middle of the historical range. If it exceeds P90, it is an unusually favorable offer by historical standards. But context matters enormously: your specific damages, liability strength, jurisdiction, and representation all affect where your case falls in the distribution.
+
+Percentiles also help you understand risk. The gap between P10 and P90 tells you how variable outcomes are for a given case type. A narrow range, say thirty thousand to one hundred thousand dollars, suggests relatively predictable outcomes. A wide range, say five thousand to two million dollars, means outcomes are highly variable and depend heavily on case-specific factors.
+
+Remember that percentile data describes past outcomes, not future ones. Settlement values change over time as laws evolve, as courts interpret standards differently, and as economic conditions shift. Use percentiles as a baseline for understanding, not as a ceiling or floor for your situation. A licensed attorney familiar with your case type and jurisdiction can help you interpret these numbers in context.`,
+    author: 'MyCaseValue Research Team',
+    publishedAt: new Date('2026-03-15'),
+    updatedAt: new Date('2026-03-15'),
+    tags: ['guide', 'settlements', 'percentiles', 'data-analysis'],
+    category: 'Guide',
+    readTime: 7,
+  },
+  {
+    slug: 'employment-discrimination-federal-courts',
+    title: 'Employment Discrimination in Federal Courts: What the Data Shows',
+    description: 'An analysis of employment discrimination case outcomes across all 94 federal districts, based on FJC IDB data.',
+    content: `Employment discrimination claims make up one of the largest segments of the federal civil docket. Title VII, the ADA, the ADEA, and Section 1981 drive hundreds of thousands of cases each year. Here is what the outcome data reveals about how these cases actually resolve.
+
+Across all employment discrimination case types, the plaintiff win rate at trial averages approximately 38 percent. But this figure hides meaningful variation. Retaliation claims, which are easier to prove because they require showing a causal connection between protected activity and adverse action, succeed at trial roughly 42 percent of the time. Age discrimination claims under the ADEA, which require showing that age was the but-for cause of the adverse action, succeed at closer to 32 percent.
+
+Settlement patterns tell an equally important story. Roughly 55 to 60 percent of employment discrimination cases settle before reaching trial. The median settlement amount is approximately 50,000 dollars, but the distribution is wide. Cases involving high-level executives or extensive documented harassment can settle for six or seven figures. Cases with limited documentation and ambiguous facts often settle for the cost of defense, sometimes as little as five to fifteen thousand dollars.
+
+District-level variation is substantial. The Northern District of California, which handles many technology-sector discrimination claims, shows different outcome patterns than the Southern District of Mississippi, where case composition and jury pools differ significantly. Plaintiffs in some districts face higher dismissal rates at the summary judgment stage, while other districts allow more cases to reach trial.
+
+Attorney representation has an outsized impact in employment cases. Represented plaintiffs win at trial at more than three times the rate of pro se plaintiffs and settle for meaningfully larger amounts. Employment discrimination law is procedurally complex, with administrative exhaustion requirements, strict filing deadlines, and evidentiary standards that vary by claim type. Early consultation with experienced employment counsel consistently correlates with better outcomes in the data.
+
+The data also shows that multi-plaintiff and class action employment cases produce substantially different outcomes than individual claims. When employees file collectively, defendants face aggregated liability exposure that increases both the likelihood of settlement and the size of the recovery.
+
+These statistics provide context, not predictions. Every employment case turns on its own facts, evidence, and legal arguments. Use this data to understand the landscape and to have informed conversations with your attorney about realistic expectations.`,
+    author: 'MyCaseValue Research Team',
+    publishedAt: new Date('2026-03-01'),
+    updatedAt: new Date('2026-03-01'),
+    tags: ['employment', 'discrimination', 'federal-court', 'data-analysis'],
+    category: 'Research',
+    readTime: 5,
+  },
+  {
+    slug: 'plaintiff-vs-pro-se-outcomes',
+    title: 'Represented vs. Pro Se: What Federal Court Data Says About Attorney Impact',
+    description: 'A data-driven look at how legal representation affects case outcomes across federal civil litigation.',
+    content: `One of the most consistent patterns in federal court data is the gap between outcomes for represented and pro se litigants. Across millions of cases and every major case type, plaintiffs with attorneys achieve substantially better results than those who represent themselves.
+
+The numbers are stark. Represented plaintiffs win at trial approximately 42 percent of the time. Pro se plaintiffs win approximately 12 percent of the time. This thirty-point gap persists across employment discrimination, civil rights, contract disputes, and personal injury cases. It is one of the most robust findings in the federal court data.
+
+Settlement outcomes show a similar pattern. Represented plaintiffs settle at higher rates and for larger amounts. In employment discrimination cases, the median settlement for represented plaintiffs is roughly 55,000 dollars, compared to approximately 15,000 dollars for pro se plaintiffs. In personal injury cases, the gap is even wider. These differences persist even when controlling for case type and district.
+
+Several factors drive this gap. Case selection is part of the story: attorneys screen cases and take those with stronger facts and clearer liability. But case selection alone does not explain the magnitude of the difference. Procedural expertise matters enormously in federal court. Pro se litigants frequently face dismissal for procedural errors like missed deadlines, improper service, or failure to exhaust administrative remedies. These dismissals end cases before the merits are ever evaluated.
+
+Discovery management is another critical factor. Represented plaintiffs conduct more effective discovery, obtain more useful documents and depositions, and present stronger evidentiary records at summary judgment. Courts are less willing to grant summary judgment when the opposing party has built a robust factual record with competent legal guidance.
+
+The data does not suggest that every case requires an attorney. Some disputes involve small amounts where legal fees would exceed the potential recovery. And some pro se litigants with strong facts and procedural knowledge achieve good outcomes. But the aggregate data makes a clear case that in most federal litigation, professional representation produces meaningfully better results.
+
+If cost is a barrier, many employment and civil rights attorneys work on contingency, meaning they only collect fees if they win. Legal aid organizations handle certain case types pro bono. Bar association referral services can connect you with attorneys who offer free consultations. The data suggests that exploring these options is well worth the effort.`,
+    author: 'MyCaseValue Research Team',
+    publishedAt: new Date('2026-02-15'),
+    updatedAt: new Date('2026-02-15'),
+    tags: ['attorney', 'pro-se', 'representation', 'outcomes', 'data-analysis'],
+    category: 'Research',
+    readTime: 5,
+  },
+  {
+    slug: 'how-federal-districts-differ',
+    title: 'How Federal Districts Differ: A Guide to Venue Selection',
+    description: 'Why the district where your case is filed matters, and what the outcome data shows across the 94 federal judicial districts.',
+    content: `The United States has 94 federal judicial districts, and the data shows that outcomes vary meaningfully depending on where a case is filed. Understanding these differences can inform decisions about venue selection, case strategy, and realistic expectations.
+
+Win rates vary significantly by district. Some districts have plaintiff win rates above 45 percent for certain case types, while others hover below 25 percent. The Southern District of New York, one of the busiest commercial litigation districts, has different outcome patterns than the Eastern District of Texas, which is known for active docket management and faster case resolution. These differences are not random. They reflect local judicial culture, the composition of the judge roster, the nature of cases filed in each district, and the demographics of the jury pool.
+
+Case duration also varies by district. The median time from filing to disposition ranges from roughly 14 months in faster districts to over 30 months in districts with heavier caseloads or more complex dockets. Districts with active judicial management and standing orders encouraging early mediation tend to resolve cases faster. If speed matters to your strategy, the district data is worth examining.
+
+Settlement patterns show geographic variation as well. Federal districts in regions with higher costs of living tend to produce larger settlements in personal injury and employment cases. This partly reflects higher medical costs and lost wages in those areas, and partly reflects jury expectations about damage amounts.
+
+Dismissal rates at summary judgment differ across districts and even among individual judges within the same district. Some judges grant summary judgment at rates above 60 percent in certain case types, while others rarely grant it. This variation means that the same case filed before different judges in different districts could take very different paths.
+
+Venue selection is governed by federal rules that generally require cases to be filed where the events occurred or where the defendant resides. But when multiple venues are available, the outcome data can inform strategic choices. Discuss venue options with your attorney early in the process, as the decision affects timelines, costs, and the statistical landscape of your case.`,
+    author: 'MyCaseValue Research Team',
+    publishedAt: new Date('2026-02-01'),
+    updatedAt: new Date('2026-02-01'),
+    tags: ['districts', 'venue', 'federal-court', 'guide'],
+    category: 'Guide',
+    readTime: 5,
+  },
+  {
+    slug: 'medical-malpractice-federal-data',
+    title: 'Medical Malpractice in Federal Courts: Outcomes and Trends',
+    description: 'Win rates, settlement ranges, and timelines for medical malpractice cases in federal court, based on FJC IDB data.',
+    content: `Medical malpractice cases that reach federal court tend to involve larger damages, more complex facts, and longer timelines than their state-court counterparts. Federal jurisdiction usually arises through diversity of citizenship, meaning the plaintiff and defendant are from different states and the amount in controversy exceeds 75,000 dollars. Here is what the federal data shows.
+
+The plaintiff win rate at trial in federal medical malpractice cases is approximately 28 percent, one of the lower win rates across all federal case types. This does not mean these cases lack merit. It reflects the high burden of proof: plaintiffs must establish a standard of care, demonstrate that the provider deviated from it, and prove that the deviation caused the injury. Expert testimony is required at every step, making these cases expensive and technically demanding to litigate.
+
+Settlement rates in medical malpractice are relatively high, around 60 percent. The median settlement is approximately 95,000 dollars, but the P90 can exceed one million dollars for cases involving catastrophic injury, wrongful death, or clear deviation from accepted medical practice. Cases with strong expert support and thorough medical record documentation settle significantly higher.
+
+Case duration in federal medical malpractice averages 30 months, longer than most other case types. The extended timeline reflects the need for expert discovery, medical record review, and often multiple depositions of treating physicians. Cases involving complex causation questions or multiple defendants can take 36 to 48 months.
+
+Geographic variation matters in medical malpractice. Districts with tort reform measures, damage caps, or historically conservative juries tend to produce lower recoveries. Districts in major metropolitan areas with academic medical centers tend to see higher-value cases and larger settlements.
+
+The data reinforces a consistent finding: medical malpractice is among the most difficult and resource-intensive categories of federal litigation. Success correlates strongly with the quality of expert testimony, the thoroughness of medical record analysis, and the experience of counsel in this specific practice area. If you believe you have a medical malpractice claim, consulting an attorney who specializes in this area is critical. The data shows that generalist representation in medical malpractice produces significantly worse outcomes than specialist counsel.`,
+    author: 'MyCaseValue Research Team',
+    publishedAt: new Date('2026-01-15'),
+    updatedAt: new Date('2026-01-15'),
+    tags: ['medical-malpractice', 'outcomes', 'settlements', 'research'],
+    category: 'Research',
+    readTime: 5,
+  },
+  {
     slug: 'federal-court-win-rates-data',
     title: 'Understanding Federal Court Win Rates: What the Data Actually Shows',
     description: 'Analysis of 5.1M+ federal cases reveals surprising patterns in win rates across case types, districts, and judicial outcomes. Learn what the data really says about your chances.',

@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { href: '/districts', label: 'Districts' },
   { href: '/judges', label: 'Judges' },
   { href: '/calculator', label: 'Calculator' },
+  { href: '/blog', label: 'Resources' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/attorney', label: 'Attorney Mode' },
 ];

@@ -180,6 +180,78 @@ const jsonLd = {
             text: 'Currently, MyCaseValue is available through our web platform only. We are exploring API access for research institutions and legal professionals. Contact us at support@mycasevalue.com if you are interested.',
           },
         },
+        {
+          '@type': 'Question',
+          name: 'How does MyCaseValue work?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Search for your case type, instantly view aggregate outcome data including win rates, settlement ranges, and timelines, then download a detailed report. The process takes seconds. No registration required for basic searches.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do I need to create an account?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No. You can search and view basic reports without registering. To purchase premium reports or save searches, you can create a free account.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is my research private?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. We do not identify or track individual users. Your searches are anonymous unless you create an account. We do not sell data to third parties.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Do you use cookies?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We use essential cookies for basic site functionality and optional analytics cookies to understand how our tool is used. You control cookie preferences in your browser settings.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is a NOS code?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'NOS stands for Nature of Suit. It is a three-digit code assigned by the Administrative Office of the U.S. Courts to classify the type of federal civil case being filed. For example, NOS 442 is Employment Discrimination and NOS 350 is Motor Vehicle. MyCaseValue covers 84 NOS codes.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How are settlement percentiles calculated?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Settlement percentiles (P10, P50, P90) are calculated from the distribution of publicly reported monetary outcomes in the Federal Judicial Center database. P50 is the median settlement value. P10 and P90 represent the 10th and 90th percentiles respectively, giving you the range of typical outcomes.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Why are settlement amounts underreported?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Most settlement agreements are confidential. When parties settle, they typically file a stipulated dismissal without reporting the dollar amount. The settlement figures in federal data come from consent decrees, court-approved class action settlements, and judgments entered after settlement. This means the reported figures represent a subset of all settlements.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What does "dismissal rate" mean?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Dismissal rate is the percentage of cases that end without a substantive ruling on the merits. Dismissals can result from procedural defects, failure to state a claim, voluntary withdrawal, or lack of jurisdiction. A high dismissal rate does not mean your case will be dismissed. It often reflects technical issues in filings rather than the strength of underlying claims.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can I compare different case types?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. MyCaseValue offers a Compare Cases tool that lets you view side-by-side outcome data for up to three federal case types. You can compare win rates, settlement rates, dismissal rates, and median duration. Visit mycasevalues.com/compare to use this feature.',
+          },
+        },
       ],
     },
   ],
@@ -250,6 +322,27 @@ const faqs = [
     ],
   },
   {
+    category: 'Technical & Methodology',
+    questions: [
+      {
+        q: 'What is a NOS code?',
+        a: 'NOS stands for Nature of Suit. It is a three-digit code assigned by the Administrative Office of the U.S. Courts to classify the type of federal civil case being filed. For example, NOS 442 is Employment Discrimination and NOS 350 is Motor Vehicle. MyCaseValue covers 84 NOS codes.',
+      },
+      {
+        q: 'How are settlement percentiles calculated?',
+        a: 'Settlement percentiles (P10, P50, P90) are calculated from the distribution of publicly reported monetary outcomes in the Federal Judicial Center database. P50 is the median settlement value. P10 and P90 represent the 10th and 90th percentiles respectively, giving you the range of typical outcomes.',
+      },
+      {
+        q: 'Why are settlement amounts underreported?',
+        a: 'Most settlement agreements are confidential. When parties settle, they typically file a stipulated dismissal without reporting the dollar amount. The settlement figures in federal data come from consent decrees, court-approved class action settlements, and judgments entered after settlement. This means the reported figures represent a subset of all settlements.',
+      },
+      {
+        q: 'What does "dismissal rate" mean?',
+        a: 'Dismissal rate is the percentage of cases that end without a substantive ruling on the merits. Dismissals can result from procedural defects, failure to state a claim, voluntary withdrawal, or lack of jurisdiction. A high dismissal rate does not mean your case will be dismissed — it often reflects technical issues in filings rather than the strength of underlying claims.',
+      },
+    ],
+  },
+  {
     category: 'Coverage & Scope',
     questions: [
       {
@@ -263,6 +356,10 @@ const faqs = [
       {
         q: 'Can I use MyCaseValue data in court?',
         a: 'MyCaseValue data is derived from public federal court records and statistical summaries. Courts may accept aggregate outcome statistics as background evidence in some contexts, but you should consult your attorney about using any research tool data in legal proceedings.',
+      },
+      {
+        q: 'Can I compare different case types?',
+        a: 'Yes. MyCaseValue offers a Compare Cases tool that lets you view side-by-side outcome data for up to three federal case types. You can compare win rates, settlement rates, dismissal rates, and median duration. Visit the Compare page to use this feature.',
       },
     ],
   },
