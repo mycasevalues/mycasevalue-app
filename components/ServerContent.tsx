@@ -253,26 +253,17 @@ export default function ServerContent() {
             </p>
           </div>
 
-          <div
+          <p
             style={{
+              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontSize: '13px',
+              color: 'var(--fg-muted)',
+              textAlign: 'center',
               marginBottom: '12px',
             }}
           >
-            <span
-              style={{
-                display: 'inline-block',
-                fontFamily: '"PT Mono", monospace',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '1.5px',
-                textTransform: 'uppercase',
-                color: 'var(--fg-muted)',
-                marginBottom: '16px',
-              }}
-            >
-              Sample data — Employment Discrimination, S.D.N.Y.
-            </span>
-          </div>
+            Example data — Employment Discrimination, S.D.N.Y.
+          </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {[
@@ -352,6 +343,19 @@ export default function ServerContent() {
               </div>
             ))}
           </div>
+
+          <p
+            style={{
+              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontSize: '12px',
+              color: 'var(--fg-muted)',
+              textAlign: 'center',
+              marginTop: '12px',
+              fontStyle: 'italic',
+            }}
+          >
+            Sample figures only. Your results depend on your specific case type, district, and facts.
+          </p>
 
           <div
             style={{
