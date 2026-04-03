@@ -1,7 +1,7 @@
 /**
  * Google Scholar Integration
  * Provides legal scholarship context for case types using SerpAPI endpoint
- * Falls back to pre-built scholarship data for all main case categories
+ * Falls back to pre-built scholarship data for all main case types
  */
 
 export interface ScholarInsight {
@@ -22,7 +22,7 @@ export interface ScholarInsight {
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 const cache = new Map<string, { data: ScholarInsight; timestamp: number }>();
 
-// Fallback scholarship data for all main case categories
+// Fallback scholarship data for all main case types
 const FALLBACK_SCHOLARSHIP_DATA: Record<string, ScholarInsight> = {
   employment: {
     topCitations: [
@@ -623,7 +623,7 @@ const FALLBACK_SCHOLARSHIP_DATA: Record<string, ScholarInsight> = {
 };
 
 /**
- * Fetch legal scholarship insights for a given case category
+ * Fetch legal scholarship insights for a given case type
  */
 export async function fetchScholarInsights(
   caseType: string,

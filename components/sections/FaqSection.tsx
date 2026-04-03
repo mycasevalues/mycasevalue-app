@@ -39,7 +39,7 @@ const FAQ_EN: FaqItem[] = [
   },
   {
     q: 'What if I\'m not satisfied with my report?',
-    a: 'If your free report doesn\'t answer your key questions, we offer a 100% refund on premium reports. We also provide email support to help you interpret your data and answer follow-up questions about your case category.',
+    a: 'If your free report doesn\'t answer your key questions, we offer a 100% refund on premium reports. We also provide email support to help you interpret your data and answer follow-up questions about your case type.',
   },
   {
     q: 'What types of cases does MyCaseValue cover?',

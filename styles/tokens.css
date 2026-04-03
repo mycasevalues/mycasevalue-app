@@ -121,15 +121,15 @@
   /* Card radius — Paper standard */
   --r-card: 12px;
 
-  /* ── SHADOWS (Paper Theme — lighter, more subtle) ────── */
-  --shadow-xs:     0 1px 2px rgba(0,0,0,0.08);
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-md:     0 4px 12px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
-  --shadow-lg:     0 16px 40px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.10);
-  --shadow-xl:     0 32px 64px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.12);
+  /* ── SHADOWS (Paper Theme — warm-tinted, subtle) ────── */
+  --shadow-xs:     0 1px 2px rgba(30,20,10,0.08);
+  --shadow-sm:     0 1px 3px rgba(30,20,10,0.10), 0 1px 2px rgba(30,20,10,0.06);
+  --shadow-md:     0 4px 12px rgba(30,20,10,0.12), 0 2px 4px rgba(30,20,10,0.08);
+  --shadow-lg:     0 16px 40px rgba(30,20,10,0.15), 0 4px 12px rgba(30,20,10,0.10);
+  --shadow-xl:     0 32px 64px rgba(30,20,10,0.18), 0 8px 24px rgba(30,20,10,0.12);
   --shadow-accent:    0 4px 20px rgba(139,92,246,0.15);
   --shadow-accent-lg: 0 8px 40px rgba(139,92,246,0.20);
-  --shadow-inset:  inset 0 1px 0 rgba(0,0,0,0.04);
+  --shadow-inset:  inset 0 1px 0 rgba(30,20,10,0.04);
 
   /* ── MOTION ────────────────────────────────────────────── */
   --duration-instant: 60ms;

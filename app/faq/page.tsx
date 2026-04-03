@@ -119,7 +119,7 @@ const jsonLd = {
           name: 'What case types does MyCaseValue cover?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'We cover 84 federal case categories including employment discrimination, personal injury, contract disputes, intellectual property, civil rights, securities litigation, product liability, and many more. Visit our case type guide for the complete list.',
+            text: 'We cover 84 federal case types including employment discrimination, personal injury, contract disputes, intellectual property, civil rights, securities litigation, product liability, and many more. Visit our case type guide for the complete list.',
           },
         },
         {
@@ -197,7 +197,7 @@ const faqs = [
       },
       {
         q: 'What case types does MyCaseValue cover?',
-        a: 'We cover 84 federal case categories including employment discrimination, personal injury, contract disputes, intellectual property, civil rights, securities litigation, product liability, consumer protection, and many more. Visit our case type guide for the complete list.',
+        a: 'We cover 84 federal case types including employment discrimination, personal injury, contract disputes, intellectual property, civil rights, securities litigation, product liability, consumer protection, and many more. Visit our case type guide for the complete list.',
       },
     ],
   },

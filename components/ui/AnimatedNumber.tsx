@@ -82,7 +82,7 @@ export function AnimatedNumber({
   }, [animate])
 
   return (
-    <span ref={elementRef} style={{ fontVariantNumeric: 'tabular-nums' }}>
+    <span ref={elementRef} style={{ fontFamily: 'var(--font-mono)', fontVariantNumeric: 'tabular-nums' }}>
       {prefix}
       {displayValue.toLocaleString('en-US', {
         minimumFractionDigits: decimals,

@@ -1,6 +1,6 @@
 /**
  * GET /api/scholar
- * Returns Google Scholar legal insights for a given case category
+ * Returns Google Scholar legal insights for a given case type
  *
  * Query params:
  *   ?category=employment  → Scholar insights for employment law

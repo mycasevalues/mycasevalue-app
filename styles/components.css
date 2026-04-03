@@ -326,7 +326,7 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-default);
   border-radius: var(--r-card);
-  padding: 20px 24px;
+  padding: 24px;
   transition: box-shadow var(--duration-base) ease, transform var(--duration-base) var(--ease-out-expo);
 }
 
@@ -357,7 +357,7 @@
 }
 
 .mcv-stat-card__value {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 32px;
   font-weight: 700;
   color: var(--fg-primary);
@@ -389,7 +389,7 @@
   background: var(--bg-surface);
   border: 2px solid var(--border-default);
   border-radius: var(--r-xl);
-  padding: 28px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;

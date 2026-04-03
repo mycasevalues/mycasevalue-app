@@ -55,9 +55,9 @@ export default function DistrictsPage() {
             >
               <div className="flex items-start justify-between mb-3">
                 <div>
-                  <h3 className="text-sm font-semibold" style={{ color: 'var(--fg-primary)' }}>
+                  <h2 className="text-sm font-semibold" style={{ color: 'var(--fg-primary)' }}>
                     {state.label}
-                  </h3>
+                  </h2>
                   <p className="text-[11px] mt-1" style={{ color: 'var(--fg-subtle)' }}>
                     {state.id}
                   </p>

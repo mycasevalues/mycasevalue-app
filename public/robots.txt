@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://mycasevalues.com/sitemap.xml
+Sitemap: https://www.mycasevalues.com/sitemap.xml
 
 User-agent: GPTBot
 Disallow: /

@@ -215,7 +215,7 @@ export default function SiteNav() {
           zIndex: 200,
           background: 'var(--bg-surface)',
           borderLeft: '1px solid var(--border-default)',
-          boxShadow: '-4px 0 24px rgba(0,0,0,0.12)',
+          boxShadow: 'var(--shadow-lg)',
           transform: mobileOpen ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 250ms ease',
           padding: '24px',

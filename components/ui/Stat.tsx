@@ -19,7 +19,7 @@ export function Stat({ value, label, color, large = false }: StatProps) {
       border: `1px solid ${color}20`,
       boxShadow: `0 2px 12px ${color}08`,
     }}>
-      <div className="font-display font-bold neon-text" style={{
+      <div className="font-mono font-bold neon-text" style={{
         fontSize: large ? 48 : 30,
         color,
         letterSpacing: large ? '-1px' : '-0.5px',
@@ -28,7 +28,7 @@ export function Stat({ value, label, color, large = false }: StatProps) {
       }}>
         {value}
       </div>
-      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: '#6B7280', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
+      <div className="text-[11px] mt-1.5 font-semibold tracking-wide uppercase" style={{ color: 'var(--fg-muted)', fontSize: '10px', letterSpacing: '0.5px' }}>{label}</div>
     </div>
   );
 }

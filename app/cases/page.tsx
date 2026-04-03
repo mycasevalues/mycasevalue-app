@@ -31,7 +31,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Federal Court Case Categories',
-  description: 'Browse federal court outcome data across 10 major case categories.',
+  description: 'Browse federal court outcome data across 10 major case types.',
   url: 'https://www.mycasevalues.com/cases',
   breadcrumb: {
     '@type': 'BreadcrumbList',
@@ -58,7 +58,7 @@ export default function CasesIndexPage() {
             Case Categories
           </h1>
           <p style={{ fontSize: 18, color: 'var(--fg-muted)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
-            Research real federal court outcomes across 10 major case categories. Explore win rates, settlements, timelines, and recovery data from 5.1M+ public cases.
+            Research real federal court outcomes across 10 major case types. Explore win rates, settlements, timelines, and recovery data from 5.1M+ public cases.
           </p>
         </div>
       </div>

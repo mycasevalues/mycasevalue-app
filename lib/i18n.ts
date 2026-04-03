@@ -31,7 +31,7 @@ const EN = {
 
   // Stats bar
   stat_outcomes: 'Court outcomes analyzed',
-  stat_types: 'Federal case categories',
+  stat_types: 'Federal case types',
   stat_years: 'Years of judicial data',
   stat_free: 'No account required',
 

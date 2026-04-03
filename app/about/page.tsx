@@ -103,7 +103,7 @@ export default function AboutPage() {
                 {
                   step: '01',
                   title: 'Search',
-                  description: 'Select your case type from 84 federal case categories. Get instant access to historical outcome data specific to your legal scenario.',
+                  description: 'Select your case type from 84 federal case types. Get instant access to historical outcome data specific to your legal scenario.',
                   icon: '',
                 },
                 {

@@ -312,7 +312,7 @@ export default function ServerHero() {
               {
                 step: '01',
                 title: 'Select your case type',
-                desc: 'Choose from 84 federal case categories — employment, injury, contract, civil rights, and more.',
+                desc: 'Choose from 84 federal case types — employment, injury, contract, civil rights, and more.',
                 icon: 'M4 6h16M4 12h16M4 18h7',
               },
               {
