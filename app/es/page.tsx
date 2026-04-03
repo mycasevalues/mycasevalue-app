@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     locale: 'es_ES',
     title: 'MyCaseValue en Español - Datos Federales de Casos',
-    description: 'Resultados reales de 4,100,000+ casos judiciales federales. Tasas de victoria, plazos, porcentajes de acuerdo, rangos de recuperación y análisis de impacto de abogados.',
+    description: 'Resultados reales de 5,100,000+ casos judiciales federales. Tasas de victoria, plazos, porcentajes de acuerdo, rangos de recuperación y análisis de impacto de abogados.',
     url: 'https://mycasevalues.com/es',
   },
 };

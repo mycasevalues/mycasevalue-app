@@ -3422,6 +3422,13 @@ button:disabled,
   opacity: 0;
 }
 
+/* Hide site-wide nav/footer on homepage when client SPA loads its own */
+.ssr-hero-container[data-mcv-loaded] ~ .site-nav,
+body:has(.ssr-hero-container[data-mcv-loaded]) .site-nav,
+body:has(.ssr-hero-container[data-mcv-loaded]) .site-footer {
+  display: none;
+}
+
 /* Outcome page navigation cards — hover via CSS (server component safe) */
 .outcome-nav-card:hover {
   border-color: #333333 !important;

@@ -14,51 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function JudgesPage() {
-  const featuredJudges = [
-    {
-      name: 'Hon. Sarah Chen',
-      court: 'Southern District of New York (SDNY)',
-      cases: 1248,
-      winRate: 68,
-      avgDuration: '18.5 months',
-    },
-    {
-      name: 'Hon. James Morrison',
-      court: 'Central District of California (C.D. Cal.)',
-      cases: 856,
-      winRate: 72,
-      avgDuration: '16.2 months',
-    },
-    {
-      name: 'Hon. Elizabeth Thompson',
-      court: 'Northern District of Illinois (N.D. Ill.)',
-      cases: 1095,
-      winRate: 65,
-      avgDuration: '19.8 months',
-    },
-    {
-      name: 'Hon. Michael Rodriguez',
-      court: 'District of Texas (D. Tex.)',
-      cases: 942,
-      winRate: 70,
-      avgDuration: '17.3 months',
-    },
-    {
-      name: 'Hon. Patricia Williams',
-      court: 'Eastern District of Pennsylvania (E.D. Pa.)',
-      cases: 1156,
-      winRate: 67,
-      avgDuration: '20.1 months',
-    },
-    {
-      name: 'Hon. David Kumar',
-      court: 'District of Massachusetts (D. Mass.)',
-      cases: 687,
-      winRate: 75,
-      avgDuration: '15.4 months',
-    },
-  ];
-
   const features = [
     'Motion Grant Rates',
     'Case Duration Patterns',
@@ -240,7 +195,7 @@ export default function JudgesPage() {
           </div>
         </section>
 
-        {/* Featured Judges */}
+        {/* Judge Profiles — Coming Soon */}
         <section style={{ marginBottom: '96px' }}>
           <div style={{ marginBottom: '48px' }}>
             <h2
@@ -252,7 +207,7 @@ export default function JudgesPage() {
                 marginBottom: '16px',
               }}
             >
-              Featured Judges
+              Judge Profiles
             </h2>
             <p
               style={{
@@ -261,159 +216,59 @@ export default function JudgesPage() {
                 fontFamily: 'var(--font-body)',
               }}
             >
-              Explore profiles of federal judges with comprehensive case analytics and ruling insights.
+              Detailed federal judge profiles with comprehensive case analytics and ruling insights.
             </p>
           </div>
 
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-              gap: '24px',
+              padding: '48px 32px',
+              borderRadius: '16px',
+              border: '1px solid var(--border-default)',
+              background: 'var(--bg-surface)',
+              textAlign: 'center',
             }}
           >
-            {featuredJudges.map((judge, idx) => (
-              <div
-                key={idx}
-                style={{
-                  padding: '24px',
-                  borderRadius: '12px',
-                  border: '1px solid var(--border-default)',
-                  background: 'var(--bg-surface)',
-                  transition: 'all 0.3s ease',
-                }}
-              >
-                <div style={{ marginBottom: '20px' }}>
-                  <h3
-                    style={{
-                      fontSize: '16px',
-                      fontWeight: '700',
-                      color: 'var(--fg-primary)',
-                      fontFamily: 'var(--font-display)',
-                      marginBottom: '6px',
-                    }}
-                  >
-                    {judge.name}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '12px',
-                      color: 'var(--fg-muted)',
-                      fontFamily: 'var(--font-body)',
-                    }}
-                  >
-                    {judge.court}
-                  </p>
-                </div>
-
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '16px',
-                    marginBottom: '20px',
-                    paddingBottom: '20px',
-                    borderBottom: '1px solid var(--border-default)',
-                  }}
-                >
-                  <div>
-                    <p
-                      style={{
-                        fontSize: '11px',
-                        fontWeight: '600',
-                        color: 'var(--fg-muted)',
-                        fontFamily: 'var(--font-body)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        marginBottom: '6px',
-                      }}
-                    >
-                      Total Cases
-                    </p>
-                    <p
-                      style={{
-                        fontSize: '20px',
-                        fontWeight: '700',
-                        color: 'var(--fg-primary)',
-                        fontFamily: 'var(--font-mono)',
-                      }}
-                    >
-                      {judge.cases.toLocaleString()}
-                    </p>
-                  </div>
-                  <div>
-                    <p
-                      style={{
-                        fontSize: '11px',
-                        fontWeight: '600',
-                        color: 'var(--fg-muted)',
-                        fontFamily: 'var(--font-body)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        marginBottom: '6px',
-                      }}
-                    >
-                      Win Rate
-                    </p>
-                    <p
-                      style={{
-                        fontSize: '20px',
-                        fontWeight: '700',
-                        color: 'var(--accent-primary)',
-                        fontFamily: 'var(--font-mono)',
-                      }}
-                    >
-                      {judge.winRate}%
-                    </p>
-                  </div>
-                </div>
-
-                <div style={{ marginBottom: '20px' }}>
-                  <p
-                    style={{
-                      fontSize: '11px',
-                      fontWeight: '600',
-                      color: 'var(--fg-muted)',
-                      fontFamily: 'var(--font-body)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      marginBottom: '6px',
-                    }}
-                  >
-                    Avg Case Duration
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '16px',
-                      fontWeight: '600',
-                      color: 'var(--fg-primary)',
-                      fontFamily: 'var(--font-body)',
-                    }}
-                  >
-                    {judge.avgDuration}
-                  </p>
-                </div>
-
-                <Link
-                  href="#"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '14px',
-                    fontWeight: '600',
-                    color: 'var(--accent-primary)',
-                    textDecoration: 'none',
-                    transition: 'opacity 0.2s',
-                  }}
-                >
-                  View Profile
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            ))}
+            <div
+              style={{
+                width: '56px',
+                height: '56px',
+                borderRadius: '14px',
+                background: 'var(--accent-primary-subtle)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 20px',
+              }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+            </div>
+            <h3
+              style={{
+                fontSize: '20px',
+                fontWeight: '700',
+                color: 'var(--fg-primary)',
+                fontFamily: 'var(--font-display)',
+                marginBottom: '12px',
+              }}
+            >
+              Coming Soon
+            </h3>
+            <p
+              style={{
+                fontSize: '14px',
+                color: 'var(--fg-muted)',
+                fontFamily: 'var(--font-body)',
+                lineHeight: 1.6,
+                maxWidth: '480px',
+                margin: '0 auto',
+              }}
+            >
+              Individual judge profiles with ruling patterns, motion grant rates, and case outcome data are currently in development. Subscribe to be notified when Judge Intelligence launches.
+            </p>
           </div>
         </section>
 

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Attorney Mode - Professional Legal Intelligence Suite | CaseCheck',
+  title: 'Attorney Mode - Professional Legal Intelligence Suite | MyCaseValue',
   description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, and more.',
   keywords: [
     'legal intelligence',
@@ -423,7 +423,7 @@ export default function AttorneyPage() {
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', lineHeight: '1.6' }}>
           <p style={{ margin: '0 0 12px 0' }}>
-            <strong>Disclaimer:</strong> CaseCheck's AI tools provide analytical insights and
+            <strong>Disclaimer:</strong> MyCaseValue's AI tools provide analytical insights and
             information to assist legal professionals in their research and decision-making
             processes. These tools are not a substitute for professional legal judgment or
             advice. Always consult with qualified legal counsel and conduct independent
@@ -431,7 +431,7 @@ export default function AttorneyPage() {
             historical data and are subject to change.
           </p>
           <p style={{ margin: 0 }}>
-            © 2026 CaseCheck. All rights reserved. | Attorney Mode is a premium feature.
+            © 2026 MyCaseValue. All rights reserved. | Attorney Mode is a premium feature.
           </p>
         </div>
       </footer>

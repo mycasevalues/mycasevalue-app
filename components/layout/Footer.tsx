@@ -404,37 +404,37 @@ export function Footer({
           FAQ
         </a>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button type="button"
-          onClick={() => setLegalPage('terms')}
-          className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
-          style={{ color: 'var(--fg-muted)' }}
+        <a
+          href="/terms"
+          className="text-[11px] transition-colors"
+          style={{ textDecoration: 'none', color: 'var(--fg-muted)' }}
         >
           {lang === 'es' ? 'Términos' : 'Terms'}
-        </button>
+        </a>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button type="button"
-          onClick={() => setLegalPage('privacy')}
-          className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
-          style={{ color: 'var(--fg-muted)' }}
+        <a
+          href="/privacy"
+          className="text-[11px] transition-colors"
+          style={{ textDecoration: 'none', color: 'var(--fg-muted)' }}
         >
           {lang === 'es' ? 'Privacidad' : 'Privacy'}
-        </button>
+        </a>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button type="button"
-          onClick={() => setLegalPage('cookies')}
-          className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
-          style={{ color: 'var(--fg-muted)' }}
+        <a
+          href="/cookies"
+          className="text-[11px] transition-colors"
+          style={{ textDecoration: 'none', color: 'var(--fg-muted)' }}
         >
           {lang === 'es' ? 'Cookies' : 'Cookies'}
-        </button>
+        </a>
         <span style={{ color: 'var(--border-muted)' }}>·</span>
-        <button type="button"
-          onClick={() => setLegalPage('disclaimer')}
-          className="text-[11px] bg-transparent border-none cursor-pointer transition-colors"
-          style={{ color: 'var(--fg-muted)' }}
+        <a
+          href="/disclaimer"
+          className="text-[11px] transition-colors"
+          style={{ textDecoration: 'none', color: 'var(--fg-muted)' }}
         >
           {lang === 'es' ? 'Aviso legal' : 'Disclaimer'}
-        </button>
+        </a>
       </div>
 
       {/* Legal disclaimer bar */}

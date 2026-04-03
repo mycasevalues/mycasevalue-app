@@ -218,9 +218,10 @@ export default function AccountPage() {
             You have full access to basic reports. Upgrade to unlock premium features including detailed settlement data, judge analytics, and litigation cost insights.
           </p>
 
-          <button
-            className="auth-btn"
+          <Link
+            href="/pricing"
             style={{
+              display: 'inline-block',
               padding: '10px 20px',
               backgroundColor: 'var(--accent-secondary)',
               color: 'var(--bg-surface)',
@@ -229,12 +230,12 @@ export default function AccountPage() {
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
               fontWeight: 600,
-              cursor: 'pointer',
+              textDecoration: 'none',
               transition: 'background-color 0.2s',
             }}
           >
             View Plans
-          </button>
+          </Link>
         </div>
 
         {/* Billing Card */}
@@ -272,9 +273,10 @@ export default function AccountPage() {
             Manage your payment methods and billing history. View and download invoices from your billing portal.
           </p>
 
-          <button
-            className="auth-btn"
+          <Link
+            href="/billing"
             style={{
+              display: 'inline-block',
               padding: '10px 20px',
               backgroundColor: 'var(--fg-primary)',
               color: 'var(--bg-surface)',
@@ -283,12 +285,12 @@ export default function AccountPage() {
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
               fontWeight: 600,
-              cursor: 'pointer',
+              textDecoration: 'none',
               transition: 'background-color 0.2s',
             }}
           >
             Manage Billing
-          </button>
+          </Link>
         </div>
 
         {/* Danger Zone Card */}
@@ -337,7 +339,7 @@ export default function AccountPage() {
               Once you delete your account, there is no going back. Please be certain. All your data will be permanently removed.
             </p>
             <button
-              className="auth-btn"
+              disabled
               style={{
                 padding: '10px 20px',
                 backgroundColor: '#DC2626',
@@ -347,12 +349,23 @@ export default function AccountPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 fontWeight: 600,
-                cursor: 'pointer',
+                cursor: 'not-allowed',
+                opacity: 0.5,
                 transition: 'background-color 0.2s',
               }}
             >
               Delete Account
             </button>
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '12px',
+                color: 'var(--fg-muted)',
+                margin: '8px 0 0 0',
+              }}
+            >
+              To delete your account, please contact <a href="mailto:support@mycasevalue.com" style={{ color: 'var(--accent-secondary)', textDecoration: 'none' }}>support@mycasevalue.com</a>.
+            </p>
           </div>
         </div>
       </div>

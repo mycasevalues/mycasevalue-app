@@ -2,6 +2,8 @@ import './globals.css';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
+import SiteNav from '../components/layout/SiteNav';
+import SiteFooter from '../components/layout/SiteFooter';
 
 export const metadata = {
   title: 'MyCaseValue — Federal Court Outcome Data | Win Rates, Settlements & Timelines',
@@ -218,8 +220,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
         {/* Self-hosted fonts — no external CDN, GDPR compliant */}
-        <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-700.woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-500.woff2" crossOrigin="anonymous" />
         {/* DNS prefetch & preconnect for third-party services */}
         <link rel="dns-prefetch" href="https://js.stripe.com" />
         <link rel="preconnect" href="https://js.stripe.com" crossOrigin="anonymous" />
@@ -253,9 +253,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="skip-to-content">Skip to main content</a>
         <ErrorBoundary>
           <AnalyticsProvider>
+            <SiteNav />
             <main id="main-content">
               {children}
             </main>
+            <SiteFooter />
           </AnalyticsProvider>
         </ErrorBoundary>
         <script dangerouslySetInnerHTML={{ __html: `

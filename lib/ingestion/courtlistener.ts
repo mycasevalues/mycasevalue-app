@@ -171,7 +171,7 @@ async function fetchCourtListenerAPI<T>(
 
   const headers: HeadersInit = {
     Authorization: `Token ${API_TOKEN}`,
-    'User-Agent': 'CaseCheck-Ingestion/1.0',
+    'User-Agent': 'MyCaseValue-Ingestion/1.0',
   };
 
   let retries = 3;

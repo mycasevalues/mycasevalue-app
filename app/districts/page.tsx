@@ -46,7 +46,7 @@ export default function DistrictsPage() {
           {stateList.map((state) => (
             <a
               key={state.id}
-              href={`/outcomes/${state.id}/employment-discrimination`}
+              href={`/outcomes/${state.id}`}
               className="group p-5 rounded-xl border transition-all hover:shadow-md hover:border-opacity-100"
               style={{
                 borderColor: 'var(--border-default)',
@@ -67,7 +67,7 @@ export default function DistrictsPage() {
                 </svg>
               </div>
               <p className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-subtle)' }}>
-                Employment discrimination outcomes
+                View federal court outcomes
               </p>
             </a>
           ))}
