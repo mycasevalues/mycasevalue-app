@@ -157,18 +157,19 @@ export const TIER_FEATURES: Record<Tier, FeatureKey[]> = {
 
 /**
  * Get a user's current tier from Supabase.
+ * Queries premium_sessions by email (the unique key in that table).
  * Returns 'free' for unauthenticated or unknown users.
  */
-export async function getUserTier(userId: string | null): Promise<Tier> {
-  if (!userId) return 'free';
+export async function getUserTier(email: string | null): Promise<Tier> {
+  if (!email) return 'free';
 
   try {
     const supabase = getSupabase();
     const { data, error } = await supabase
       .from('premium_sessions')
       .select('plan, expires_at')
-      .eq('user_id', userId)
-      .order('created_at', { ascending: false })
+      .eq('email', email.toLowerCase())
+      .order('granted_at', { ascending: false })
       .limit(1)
       .single();
 
@@ -176,12 +177,15 @@ export async function getUserTier(userId: string | null): Promise<Tier> {
 
     // Check if subscription/access is still active
     if (data.expires_at) {
-      const expiresAt = new Date(data.expires_at);
-      if (expiresAt < new Date()) return 'free'; // Expired
+      const expiresMs = typeof data.expires_at === 'number'
+        ? data.expires_at
+        : new Date(data.expires_at).getTime();
+      if (expiresMs < Date.now()) return 'free'; // Expired
     }
 
     // Map plan names to tier IDs
     const planToTier: Record<string, Tier> = {
+      free: 'free',
       single: 'single_report',
       single_report: 'single_report',
       unlimited: 'unlimited',
@@ -196,13 +200,13 @@ export async function getUserTier(userId: string | null): Promise<Tier> {
 
 /**
  * Server-side async access check.
- * Resolves the user's tier from DB and checks feature access.
+ * Resolves the user's tier from DB (by email) and checks feature access.
  */
 export async function canAccessAsync(
-  userId: string | null,
+  email: string | null,
   feature: FeatureKey
 ): Promise<boolean> {
-  const tier = await getUserTier(userId);
+  const tier = await getUserTier(email);
   return canAccess(tier, feature);
 }
 

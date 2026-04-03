@@ -50,6 +50,18 @@ export default function SignUpPage() {
       return;
     }
 
+    // Create a free-tier record in premium_sessions so the user exists in the system
+    try {
+      await supabase.from('premium_sessions').upsert({
+        email: email.toLowerCase(),
+        plan: 'free',
+        granted_at: Date.now(),
+        expires_at: null,
+      }, { onConflict: 'email' });
+    } catch {
+      // Non-blocking — user is still created even if this fails
+    }
+
     setSuccess(true);
     setLoading(false);
   }
