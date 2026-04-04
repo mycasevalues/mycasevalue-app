@@ -11,6 +11,7 @@ const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar')
 const CookieConsent = dynamic(() => import('../components/ui/CookieConsent'), { ssr: false });
 const GlobalCommandPalette = dynamic(() => import('../components/ui/GlobalCommandPalette'), { ssr: false });
 const ScrollToTop = dynamic(() => import('../components/ui/ScrollToTop'), { ssr: false });
+const BackToTop = dynamic(() => import('../components/BackToTop'), { ssr: false });
 
 export const metadata = {
   title: {
@@ -287,6 +288,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </AnalyticsProvider>
         </ErrorBoundary>
         <ScrollToTop />
+        <BackToTop />
         <CookieConsent />
         <GlobalCommandPalette />
         <script dangerouslySetInnerHTML={{ __html: `

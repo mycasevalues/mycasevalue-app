@@ -83,7 +83,7 @@ export default async function Image({
             width: '100%',
             height: '100%',
             background: 'linear-gradient(135deg, #F9FAFB 0%, #1a1f3a 100%)',
-            color: '#111827',
+            color: '#212529',
             fontFamily: 'system-ui, sans-serif',
             alignItems: 'center',
             justifyContent: 'center',
@@ -110,7 +110,7 @@ export default async function Image({
           width: '100%',
           height: '100%',
           background: 'linear-gradient(135deg, #F9F8F6 0%, #1a1f3a 100%)',
-          color: '#111827',
+          color: '#212529',
           fontFamily: '"Outfit", system-ui, sans-serif',
           padding: '60px',
           boxSizing: 'border-box',
@@ -145,7 +145,7 @@ export default async function Image({
               fontSize: '28px',
               fontWeight: '700',
               letterSpacing: '-0.5px',
-              background: 'linear-gradient(90deg, #111111 0%, #7C3AED 100%)',
+              background: 'linear-gradient(90deg, #111111 0%, #E8171F 100%)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -156,7 +156,7 @@ export default async function Image({
           <div
             style={{
               fontSize: '16px',
-              color: '#9CA3AF',
+              color: '#455A64',
               marginTop: '6px',
               fontWeight: '400',
             }}
@@ -213,7 +213,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#9CA3AF',
+                color: '#455A64',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}
@@ -247,7 +247,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#9CA3AF',
+                color: '#455A64',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}
@@ -281,7 +281,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#9CA3AF',
+                color: '#455A64',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}

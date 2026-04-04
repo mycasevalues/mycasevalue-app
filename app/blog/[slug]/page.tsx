@@ -134,7 +134,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           gap: 12px;
           padding: 16px 20px;
           background: #F8F9FA;
-          border-radius: 8px;
+          border-radius: 4px;
           margin-bottom: 32px;
           border: 1px solid #E8ECEF;
           transition: background-color 0.3s ease;
@@ -159,7 +159,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         .author-meta {
           font-size: 13px;
-          color: #6B7280;
+          color: #455A64;
           font-family: var(--font-body);
         }
 
@@ -192,7 +192,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           padding-left: 20px;
           margin: 2rem 0;
           font-style: italic;
-          color: #6B7280;
+          color: #455A64;
         }
 
         .tag-pill {
@@ -216,7 +216,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         }
 
         .related-card {
-          border-radius: 12px;
+          border-radius: 4px;
           border: 1px solid var(--border-default);
           background: #FFFFFF;
           padding: 24px;
@@ -246,7 +246,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           justify-content: center;
           width: 44px;
           height: 44px;
-          border-radius: 8px;
+          border-radius: 4px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
           color: #212529;
@@ -263,7 +263,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         .breadcrumb {
           font-size: 13px;
-          color: #6B7280;
+          color: #455A64;
           margin-bottom: 24px;
           font-family: var(--font-body);
         }
@@ -359,17 +359,17 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         <div style={{
           '--tw-prose-body': '#212529',
           '--tw-prose-headings': '#1A2B3D',
-          '--tw-prose-lead': '#6B7280',
+          '--tw-prose-lead': '#455A64',
           '--tw-prose-links': '#212529',
           '--tw-prose-bold': '#212529',
           '--tw-prose-counters': '#212529',
           '--tw-prose-bullets': '#212529',
           '--tw-prose-hr': 'var(--border-default)',
-          '--tw-prose-quotes': '#6B7280',
+          '--tw-prose-quotes': '#455A64',
           '--tw-prose-quote-borders': '#E8171F',
-          '--tw-prose-captions': '#6B7280',
+          '--tw-prose-captions': '#455A64',
           '--tw-prose-code': '#212529',
-          '--tw-prose-pre-code': '#6B7280',
+          '--tw-prose-pre-code': '#455A64',
           '--tw-prose-pre-bg': '#FFFFFF',
           '--tw-prose-th-borders': 'var(--border-default)',
           '--tw-prose-td-borders': 'var(--border-default)',
@@ -444,7 +444,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Research your case with real data
           </h2>
-          <p className="mb-8 mx-auto" style={{ color: '#6B7280', maxWidth: '480px', fontFamily: 'var(--font-body)' }}>
+          <p className="mb-8 mx-auto" style={{ color: '#455A64', maxWidth: '480px', fontFamily: 'var(--font-body)' }}>
             Use the insights from this article to get a comprehensive analysis of outcomes in cases like yours.
           </p>
           <a
@@ -486,10 +486,10 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                   <h3 className="text-base font-display font-bold leading-tight" style={{ color: '#212529' }}>
                     {relatedPost.title}
                   </h3>
-                  <p className="text-sm leading-relaxed flex-1" style={{ color: '#6B7280', fontFamily: 'var(--font-body)' }}>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
                     {relatedPost.description}
                   </p>
-                  <div className="text-xs pt-2 border-t" style={{ color: '#9CA3AF', borderColor: 'var(--border-default)', fontFamily: 'var(--font-body)' }}>
+                  <div className="text-xs pt-2 border-t" style={{ color: '#455A64', borderColor: 'var(--border-default)', fontFamily: 'var(--font-body)' }}>
                     {relatedPost.readTime} min read
                   </div>
                 </div>

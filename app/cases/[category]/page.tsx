@@ -212,7 +212,7 @@ const categoryColors: Record<string, string> = {
   work: '#000000',
   injury: '#DC2626',
   consumer: '#2563EB',
-  rights: '#7C3AED',
+  rights: '#E8171F',
   money: '#D97706',
   housing: '#059669',
   medical: '#DB2777',
@@ -293,7 +293,7 @@ async function CategoryPage({
     return (
       <div style={{ padding: '40px 20px', textAlign: 'center' }}>
         <h1 className="text-2xl font-bold">Category not found</h1>
-        <p className="mt-4" style={{ color: '#6B7280' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
+        <p className="mt-4" style={{ color: '#455A64' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
         <a href="/cases" className="inline-block mt-6 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: '#111111' }}>Browse all categories</a>
       </div>
     );
@@ -384,7 +384,7 @@ async function CategoryPage({
           maxWidth: 1200,
           margin: '0 auto',
           fontSize: '14px',
-          color: '#6B7280',
+          color: '#455A64',
           fontFamily: 'Outfit, system-ui, sans-serif',
         }}>
           <Link href="/" style={{ color: '#111111', textDecoration: 'none' }}>
@@ -476,7 +476,7 @@ async function CategoryPage({
           </h2>
           <p style={{
             fontSize: '16px',
-            color: '#6B7280',
+            color: '#455A64',
             lineHeight: '1.7',
             maxWidth: '800px',
             margin: 0,
@@ -529,7 +529,7 @@ async function CategoryPage({
                   style={{
                     background: '#FFFFFF',
                     border: '1px solid var(--border-default)',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     padding: '20px',
                     fontFamily: 'Outfit, system-ui, sans-serif',
                     textDecoration: 'none',
@@ -548,7 +548,7 @@ async function CategoryPage({
                   </h3>
                   <p style={{
                     fontSize: '13px',
-                    color: '#6B7280',
+                    color: '#455A64',
                     margin: '0 0 12px 0',
                     lineHeight: '1.5',
                   }}>
@@ -556,7 +556,7 @@ async function CategoryPage({
                   </p>
                   <div style={{
                     fontSize: '12px',
-                    color: '#6B7280',
+                    color: '#455A64',
                     paddingTop: '12px',
                     borderTop: '1px solid var(--border-default)',
                   }}>
@@ -594,7 +594,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '10px',
+              borderRadius: '4px',
               fontFamily: 'Outfit, system-ui, sans-serif',
             }}>
               <div style={{
@@ -615,7 +615,7 @@ async function CategoryPage({
               </div>
               <p style={{
                 fontSize: '14px',
-                color: '#6B7280',
+                color: '#455A64',
                 margin: 0,
                 lineHeight: '1.5',
               }}>
@@ -626,7 +626,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '10px',
+              borderRadius: '4px',
               fontFamily: 'Outfit, system-ui, sans-serif',
             }}>
               <div style={{
@@ -647,7 +647,7 @@ async function CategoryPage({
               </div>
               <p style={{
                 fontSize: '14px',
-                color: '#6B7280',
+                color: '#455A64',
                 margin: 0,
                 lineHeight: '1.5',
               }}>
@@ -658,7 +658,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '10px',
+              borderRadius: '4px',
               fontFamily: 'Outfit, system-ui, sans-serif',
             }}>
               <div style={{
@@ -679,7 +679,7 @@ async function CategoryPage({
               </div>
               <p style={{
                 fontSize: '14px',
-                color: '#6B7280',
+                color: '#455A64',
                 margin: 0,
                 lineHeight: '1.5',
               }}>
@@ -723,7 +723,7 @@ async function CategoryPage({
               background: 'white',
               color: categoryColors[category],
               padding: '14px 36px',
-              borderRadius: '8px',
+              borderRadius: '4px',
               fontWeight: 600,
               fontSize: '16px',
               textDecoration: 'none',

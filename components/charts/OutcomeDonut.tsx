@@ -46,7 +46,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
               fontSize: '13px',
               fontFamily: 'var(--font-body)',
               padding: '8px 14px',
-              color: '#111827',
+              color: '#212529',
             }}
           />
         </PieChart>
@@ -54,7 +54,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
       {(centerLabel || centerValue) && (
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
           {centerValue && (
-            <div className="text-2xl font-display font-extrabold" style={{ color: '#111827', letterSpacing: '-1px' }}>
+            <div className="text-2xl font-display font-extrabold" style={{ color: '#212529', letterSpacing: '-1px' }}>
               {centerValue}
             </div>
           )}

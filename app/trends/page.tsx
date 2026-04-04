@@ -91,7 +91,7 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
   family: { label: 'Family', color: '#F97316' },
   gov: { label: 'Government', color: '#64748B' },
   ip: { label: 'Intellectual Property', color: '#10B981' },
-  other: { label: 'Other', color: '#9CA3AF' },
+  other: { label: 'Other', color: '#455A64' },
 };
 
 export default function TrendsPage() {
@@ -112,7 +112,7 @@ export default function TrendsPage() {
     .map(([cat, agg]) => ({
       cat,
       label: CATEGORY_META[cat]?.label || cat,
-      color: CATEGORY_META[cat]?.color || '#9CA3AF',
+      color: CATEGORY_META[cat]?.color || '#455A64',
       total: agg.total,
       avgWinRate: Math.round(agg.wrSum / agg.count),
     }))

@@ -4,8 +4,8 @@ export default function NosCodeError({ error, reset }: { error: Error; reset: ()
   return (
     <div className="min-h-screen flex items-center justify-center" style={{ background: '#F9FAFB' }}>
       <div className="text-center max-w-md mx-auto px-6">
-        <h2 className="text-xl font-bold mb-4" style={{ color: '#111827' }}>Something went wrong</h2>
-        <p className="text-sm mb-6" style={{ color: '#6B7280' }}>
+        <h2 className="text-xl font-bold mb-4" style={{ color: '#212529' }}>Something went wrong</h2>
+        <p className="text-sm mb-6" style={{ color: '#455A64' }}>
           We couldn&apos;t load data for this case type. Please try again.
         </p>
         <button type="button"

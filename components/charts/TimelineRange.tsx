@@ -50,7 +50,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
       {totalDuration && (
         <div className="mt-3 pt-3 border-t flex items-center justify-between" style={{ borderColor: 'rgba(255,255,255,0.10)' }}>
           <span className="text-[12px] font-semibold text-[#455A64]">{totalLabel || (lang === 'es' ? 'Duración total media' : 'Median total duration')}</span>
-          <span className="text-lg font-display font-bold" style={{ color: '#111827' }}>{totalDuration}</span>
+          <span className="text-lg font-display font-bold" style={{ color: '#212529' }}>{totalDuration}</span>
         </div>
       )}
 

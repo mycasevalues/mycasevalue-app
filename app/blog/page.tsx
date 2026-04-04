@@ -104,7 +104,7 @@ export default function BlogPage() {
           background: #FFF3F4;
           color: #E8171F;
           padding: 4px 10px;
-          border-radius: 12px;
+          border-radius: 4px;
           font-size: 12px;
           font-weight: 600;
           display: inline-block;

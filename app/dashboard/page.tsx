@@ -57,7 +57,7 @@ export default async function DashboardPage() {
   let userCreatedAt = '';
   let userPlan = 'free';
   let planStatus = 'Free tier';
-  let planStatusColor = '#6B7280';
+  let planStatusColor = '#455A64';
   let isExpired = false;
 
   if (supabaseUrl && supabaseAnonKey) {

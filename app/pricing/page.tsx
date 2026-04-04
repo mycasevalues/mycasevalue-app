@@ -626,7 +626,7 @@ export default function PricingPage() {
               style={{
                 width: '24px',
                 height: '24px',
-                borderRadius: '12px',
+                borderRadius: '4px',
                 background: 'white',
                 transition: 'all 200ms ease',
               }}

@@ -86,7 +86,7 @@ export default async function NOSPage({ params }: PageProps) {
       <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-base)', color: '#111111' }}>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
-          <p className="mb-6" style={{ color: '#6B7280' }}>NOS code {code} does not exist in our database.</p>
+          <p className="mb-6" style={{ color: '#455A64' }}>NOS code {code} does not exist in our database.</p>
           <Link href="/" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
             style={{ background: '#E8171F' }}>
             Return to Home
@@ -109,8 +109,8 @@ export default async function NOSPage({ params }: PageProps) {
   // Outcome bars for visual chart (CSS-based)
   const outcomes = [
     { label: 'Settled', value: outcomeData.fav_set || 30, color: '#10B981' },
-    { label: 'Dismissed', value: outcomeData.dismiss || 53, color: '#9CA3AF' },
-    { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#3B82F6' },
+    { label: 'Dismissed', value: outcomeData.dismiss || 53, color: '#455A64' },
+    { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#006997' },
     { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: '#EF4444' },
   ];
   const totalOutcomesPercentage = outcomes.reduce((sum, o) => sum + o.value, 0);
@@ -176,7 +176,7 @@ export default async function NOSPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: "var(--font-body)", background: '#F3F4F6' }}>
+    <div className="min-h-screen" style={{ fontFamily: "var(--font-body)", background: '#EDEEEE' }}>
       <style>{`
         .nos-header {
           background: #00172E;
@@ -241,7 +241,7 @@ export default async function NOSPage({ params }: PageProps) {
         .stat-label {
           font-size: 12px;
           font-weight: 600;
-          color: #6B7280;
+          color: #455A64;
           text-transform: uppercase;
           letter-spacing: 0.5px;
           font-family: var(--font-body);
@@ -252,7 +252,7 @@ export default async function NOSPage({ params }: PageProps) {
           height: 32px;
           border-radius: 4px;
           overflow: hidden;
-          background: #F3F4F6;
+          background: #EDEEEE;
         }
 
         .outcome-segment {
@@ -311,7 +311,7 @@ export default async function NOSPage({ params }: PageProps) {
         .related-card-code {
           font-size: 11px;
           font-weight: 700;
-          color: #9CA3AF;
+          color: #455A64;
           text-transform: uppercase;
           letter-spacing: 0.5px;
           font-family: var(--font-body);
@@ -327,7 +327,7 @@ export default async function NOSPage({ params }: PageProps) {
 
         .related-card-category {
           font-size: 12px;
-          color: #6B7280;
+          color: #455A64;
           margin-top: 4px;
           font-family: var(--font-body);
         }
@@ -427,7 +427,7 @@ export default async function NOSPage({ params }: PageProps) {
               { label: 'Win Rate', value: `${winRate}%`, color: '#E8171F' },
               { label: 'Median Duration', value: `${medianDuration} mo`, color: '#00172E' },
               { label: 'Settlement Rate', value: `${settleRate}%`, color: '#10B981' },
-              { label: 'Cases Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#3B82F6' },
+              { label: 'Cases Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#006997' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="stat-value" style={{ color: stat.color }}>
@@ -469,7 +469,7 @@ export default async function NOSPage({ params }: PageProps) {
               {outcomePercentages.map((o, i) => (
                 <div key={i} className="legend-item">
                   <div className="legend-color" style={{ background: o.color }}></div>
-                  <span style={{ color: '#6B7280' }}>
+                  <span style={{ color: '#455A64' }}>
                     {o.label}: <strong style={{ color: '#00172E' }}>{o.percentage}%</strong>
                   </span>
                 </div>
@@ -518,7 +518,7 @@ export default async function NOSPage({ params }: PageProps) {
           <h2 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 12px 0', color: '#00172E', fontFamily: 'var(--font-display)' }}>
             Research Your {nosInfo.label} Case
           </h2>
-          <p style={{ fontSize: '15px', color: '#6B7280', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '15px', color: '#455A64', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
             Explore detailed outcomes, recovery ranges, and timeline data with our interactive research tool.
           </p>
           <Link href="/" className="cta-button">

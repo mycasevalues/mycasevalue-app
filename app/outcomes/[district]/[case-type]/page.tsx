@@ -98,7 +98,7 @@ export default async function OutcomesPage({
       <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-base)', color: '#111111' }}>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case outcomes not found</h1>
-          <p className="mb-6" style={{ color: '#6B7280' }}>This case type and district combination does not exist in our database.</p>
+          <p className="mb-6" style={{ color: '#455A64' }}>This case type and district combination does not exist in our database.</p>
           <Link href="/outcomes" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
             style={{ background: '#E8171F' }}>
             Browse all outcomes
@@ -130,7 +130,7 @@ export default async function OutcomesPage({
   // Outcome distribution
   const outcomes = [
     { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: '#0D9488' },
-    { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: '#9CA3AF' },
+    { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: '#455A64' },
     { label: 'Trial Win', value: Math.round(districtWinRate * 0.6), color: '#333333' },
     { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: '#EF4444' },
   ];
@@ -175,7 +175,7 @@ export default async function OutcomesPage({
           maxWidth: 1200,
           margin: '0 auto',
           fontSize: '14px',
-          color: '#6B7280',
+          color: '#455A64',
           fontFamily: 'var(--font-body)',
         }}>
           <Link href="/" style={{ color: '#111111', textDecoration: 'none' }}>
@@ -358,7 +358,7 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontSize: '12px',
-                color: '#6B7280',
+                color: '#455A64',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
                 fontWeight: 600,
@@ -386,7 +386,7 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontSize: '12px',
-                color: '#6B7280',
+                color: '#455A64',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
                 fontWeight: 600,
@@ -409,7 +409,7 @@ export default async function OutcomesPage({
       {/* Disclaimer */}
       <div style={{
         background: 'var(--bg-base)',
-        color: '#6B7280',
+        color: '#455A64',
         padding: '40px 20px',
         fontSize: '14px',
         fontFamily: 'var(--font-body)',

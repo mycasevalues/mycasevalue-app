@@ -242,7 +242,7 @@ export default function SiteFooter() {
             color: 'rgba(255,255,255,0.4)',
             margin: 0,
           }}>
-            &copy; 2025 MyCaseValue LLC. All rights reserved.
+            &copy; 2026 MyCaseValue LLC. All rights reserved.
           </p>
           <p style={{
             fontFamily: 'var(--font-body)',

@@ -103,7 +103,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         }}>
           {stat.prefix}{isVisible ? (stat.value % 1 !== 0 ? count.toFixed(1) : count) : 0}{stat.suffix}
         </div>
-        <div style={{ fontSize: '13px', fontWeight: 600, color: '#111827', marginTop: '6px' }}>
+        <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529', marginTop: '6px' }}>
           {stat.label}
         </div>
         {stat.sublabel && (

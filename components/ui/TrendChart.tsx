@@ -20,7 +20,7 @@ interface TrendChartProps {
 const lightModeColors = {
   bg: '#FFFFFF',
   border: 'rgba(255,255,255,0.10)',
-  text: '#111827',
+  text: '#212529',
   muted: '#455A64',
   accent: '#F0F2F5',
 };

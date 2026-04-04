@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
             width: '1200px',
             height: '630px',
             background: '#F9FAFB',
-            color: '#111827',
+            color: '#212529',
             fontFamily: '"Outfit", system-ui, sans-serif',
             padding: '60px',
             boxSizing: 'border-box',
@@ -89,7 +89,7 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 fontSize: '18px',
-                color: '#9CA3AF',
+                color: '#455A64',
                 marginTop: '8px',
                 fontWeight: '400',
               }}
@@ -146,7 +146,7 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '16px',
-                  color: '#9CA3AF',
+                  color: '#455A64',
                   fontWeight: '500',
                   marginBottom: '12px',
                 }}
@@ -180,7 +180,7 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '16px',
-                  color: '#9CA3AF',
+                  color: '#455A64',
                   fontWeight: '500',
                   marginBottom: '12px',
                 }}
@@ -214,7 +214,7 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '16px',
-                  color: '#9CA3AF',
+                  color: '#455A64',
                   fontWeight: '500',
                   marginBottom: '12px',
                 }}
@@ -299,7 +299,7 @@ export async function GET(request: NextRequest) {
             width: '1200px',
             height: '630px',
             background: '#F9FAFB',
-            color: '#111827',
+            color: '#212529',
             fontFamily: 'system-ui, sans-serif',
             padding: '60px',
             boxSizing: 'border-box',
@@ -311,7 +311,7 @@ export async function GET(request: NextRequest) {
           <div style={{ fontSize: '64px', fontWeight: 'bold', marginBottom: '20px' }}>
             MyCaseValue
           </div>
-          <div style={{ fontSize: '32px', color: '#9CA3AF' }}>
+          <div style={{ fontSize: '32px', color: '#455A64' }}>
             Real Federal Court Data for Your Case
           </div>
           <div style={{ fontSize: '18px', color: '#64748B', marginTop: '40px' }}>

@@ -367,7 +367,7 @@ export default function CasePredictorPage() {
                   </h2>
                   <span style={{
                     padding: '4px 12px',
-                    borderRadius: '0px',
+                    borderRadius: '4px',
                     fontSize: '11px',
                     fontWeight: 700,
                     backgroundColor: p.confidence === 'High' ? 'rgba(7,132,74,0.08)' : p.confidence === 'Moderate' ? 'rgba(184,110,0,0.08)' : 'rgba(204,16,25,0.08)',

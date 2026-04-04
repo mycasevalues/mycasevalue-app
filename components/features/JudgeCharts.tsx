@@ -22,7 +22,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
   const chartStyle = {
     fontFamily: 'var(--font-body)',
     fontSize: '12px',
-    fill: '#111827',
+    fill: '#212529',
   };
 
   const cardStyle = {
@@ -41,7 +41,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           style={{
             fontSize: '16px',
             fontWeight: 700,
-            color: '#111827',
+            color: '#212529',
             marginBottom: '20px',
             marginTop: 0,
             fontFamily: 'var(--font-display)',
@@ -95,7 +95,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           style={{
             fontSize: '16px',
             fontWeight: 700,
-            color: '#111827',
+            color: '#212529',
             marginBottom: '20px',
             marginTop: 0,
             fontFamily: 'var(--font-display)',
@@ -123,7 +123,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               dataKey="label"
               type="category"
               width={190}
-              tick={{ fill: '#111827', fontSize: 12 }}
+              tick={{ fill: '#212529', fontSize: 12 }}
               style={chartStyle}
             />
             <Tooltip

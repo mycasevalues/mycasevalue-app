@@ -36,7 +36,7 @@ export default function ServerHero() {
             fontSize: 'clamp(36px, 5vw, 52px)', fontWeight: 500, color: '#FAFBFC',
             fontFamily: 'var(--font-display)', lineHeight: 1.2, marginBottom: '24px',
           }}>
-            The settlement data the<br />other side already has.
+            The settlement data the other<br />side already has.
           </h1>
           <p style={{
             fontSize: '19px', color: 'rgba(250,251,252,0.70)', fontFamily: 'var(--font-body)',

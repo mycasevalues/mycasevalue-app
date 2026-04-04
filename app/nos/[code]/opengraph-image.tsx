@@ -53,7 +53,7 @@ export default async function Image({
             width: '100%',
             height: '100%',
             background: '#F9FAFB',
-            color: '#111827',
+            color: '#212529',
             fontFamily: 'system-ui, sans-serif',
             alignItems: 'center',
             justifyContent: 'center',
@@ -82,7 +82,7 @@ export default async function Image({
           width: '100%',
           height: '100%',
           background: '#F9FAFB',
-          color: '#111827',
+          color: '#212529',
           fontFamily: '"Outfit", system-ui, sans-serif',
           padding: '60px',
           boxSizing: 'border-box',
@@ -125,7 +125,7 @@ export default async function Image({
           <div
             style={{
               fontSize: '16px',
-              color: '#9CA3AF',
+              color: '#455A64',
               marginTop: '6px',
               fontWeight: '400',
             }}
@@ -182,7 +182,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#9CA3AF',
+                color: '#455A64',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}
@@ -216,7 +216,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#9CA3AF',
+                color: '#455A64',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}
@@ -250,7 +250,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#9CA3AF',
+                color: '#455A64',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}

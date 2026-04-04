@@ -47,7 +47,7 @@ export function ComparisonBar({
               fontSize: '13px',
               fontFamily: 'var(--font-body)',
               padding: '8px 14px',
-              color: '#111827',
+              color: '#212529',
             }}
             formatter={(value: number) => [`${value}${unit}`]}
           />

@@ -11,7 +11,7 @@ interface PageProps {
 // Dynamically import charts component to avoid SSR issues with recharts
 const DistrictCharts = dynamic(() => import('../../../components/features/DistrictCharts'), {
   ssr: false,
-  loading: () => <div style={{ textAlign: 'center', padding: '2rem', color: '#6B7280' }}>Loading charts...</div>,
+  loading: () => <div style={{ textAlign: 'center', padding: '2rem', color: '#455A64' }}>Loading charts...</div>,
 });
 
 // Get all valid state IDs (excluding "All states" which has empty id)
@@ -71,7 +71,7 @@ export default async function DistrictPage({ params }: PageProps) {
       >
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">District not found</h1>
-          <p className="mb-6" style={{ color: '#6B7280' }}>
+          <p className="mb-6" style={{ color: '#455A64' }}>
             The district "{slug}" does not exist in our database.
           </p>
           <Link
