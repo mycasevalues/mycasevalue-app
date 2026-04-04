@@ -7,6 +7,7 @@
 
 import NewsletterSignup from './ui/NewsletterSignup';
 import UpgradeBanner from './UpgradeBanner';
+import FaqAccordion from './FaqAccordion';
 
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
@@ -842,47 +843,7 @@ export default function ServerContent() {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {FAQ_ITEMS.map((faq, i) => (
-              <details
-                key={i}
-                style={{
-                  padding: '20px',
-                  borderRadius: '4px',
-                  border: '1px solid #D5D8DC',
-                  background: '#FFFFFF',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                }}
-              >
-                <summary
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '15px',
-                    fontWeight: 600,
-                    color: '#212529',
-                    cursor: 'pointer',
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {faq.q}
-                </summary>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '14px',
-                    color: '#212529',
-                    lineHeight: 1.7,
-                    marginTop: '16px',
-                    paddingTop: '16px',
-                    borderTop: '1px solid #D5D8DC',
-                    fontWeight: 300,
-                  }}
-                >
-                  {faq.a}
-                </p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion items={FAQ_ITEMS} />
         </div>
       </section>
 
