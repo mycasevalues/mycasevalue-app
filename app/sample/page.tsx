@@ -77,8 +77,8 @@ export default function SampleReportPage() {
         {/* Persistent Banner */}
         <div
           style={{
-            backgroundColor: '#fbbf24',
-            borderBottom: '1px solid #f59e0b',
+            backgroundColor: '#D97706',
+            borderBottom: '1px solid #D97706',
             padding: '16px 24px',
             display: 'flex',
             justifyContent: 'space-between',
@@ -103,9 +103,9 @@ export default function SampleReportPage() {
               fontSize: '14px',
               fontWeight: 600,
               color: '#78350f',
-              backgroundColor: '#fff',
+              backgroundColor: '#FFFFFF',
               padding: '8px 16px',
-              borderRadius: '6px',
+              borderRadius: '8px',
               textDecoration: 'none',
               transition: 'background-color 0.2s',
             }}
@@ -371,7 +371,7 @@ export default function SampleReportPage() {
                   style={{
                     height: '8px',
                     backgroundColor: '#e5e7eb',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     overflow: 'hidden',
                     marginBottom: '16px',
                     position: 'relative',

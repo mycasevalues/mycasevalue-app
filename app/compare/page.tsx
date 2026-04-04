@@ -117,7 +117,7 @@ export default function ComparePage() {
           background: canCompare ? '#8B5CF6' : 'var(--border-default)',
           color: canCompare ? '#fff' : '#6B7280',
           border: 'none',
-          borderRadius: 10,
+          borderRadius: 12,
           fontSize: 15,
           fontWeight: 600,
           cursor: canCompare ? 'pointer' : 'not-allowed',
@@ -142,7 +142,7 @@ export default function ComparePage() {
                 <th style={{ textAlign: 'left', padding: '12px 16px', color: '#6B7280', fontWeight: 600, fontSize: 13 }}>Metric</th>
                 {stats.map(s => (
                   <th key={s.nos} style={{ textAlign: 'center', padding: '12px 16px', color: '#111111', fontWeight: 700 }}>
-                    <Link href={`/report/${s.nos}`} style={{ color: '#111111', textDecoration: 'none' }}>
+                    <Link href={`/report/${s.nos}`} style={{ color: '#8B5CF6', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = '#7C3AED'} onMouseLeave={(e) => e.currentTarget.style.color = '#8B5CF6'}>
                       {s.label}
                     </Link>
                     <span style={{
@@ -220,7 +220,7 @@ export default function ComparePage() {
       <p style={{ fontSize: 12, color: '#6B7280', marginTop: 32, lineHeight: 1.6 }}>
         Data sourced from the Federal Judicial Center Integrated Database. Outcomes are historical averages and do not predict future results.
         This is not legal advice.{' '}
-        <Link href="/methodology" style={{ color: '#8B5CF6', textDecoration: 'none' }}>Learn about our methodology</Link>
+        <Link href="/methodology" style={{ color: '#8B5CF6', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = '#7C3AED'} onMouseLeave={(e) => e.currentTarget.style.color = '#8B5CF6'}>Learn about our methodology</Link>
       </p>
     </main>
   );

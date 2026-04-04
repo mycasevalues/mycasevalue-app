@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { createServerClient } from '@supabase/ssr';
 import { getSupabaseAdmin } from '../../lib/supabase';
 import { getNosLabel } from '../../lib/data';
+import SidebarNav from '../../components/SidebarNav';
 
 export const metadata: Metadata = {
   title: 'Dashboard | MyCaseValue',
@@ -189,33 +190,7 @@ export default async function DashboardPage() {
         </a>
 
         {/* Navigation */}
-        <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          {[
-            { label: 'Dashboard', href: '/dashboard', icon: '⊞' },
-            { label: 'Search cases', href: '/cases', icon: '⌕' },
-            { label: 'Saved reports', href: '/dashboard/reports', icon: '⊡' },
-            { label: 'Billing', href: '/pricing', icon: '◇' },
-            { label: 'Settings', href: '/settings', icon: '⚙' },
-          ].map(item => (
-            <Link key={item.href} href={item.href} style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '10px 12px',
-              borderRadius: '8px',
-              fontSize: '14px',
-              fontWeight: 500,
-              color: '#374151',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
-              marginBottom: '4px',
-              transition: 'background-color 0.2s',
-            }}>
-              <span style={{ fontSize: '16px' }}>{item.icon}</span>
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <SidebarNav />
       </aside>
 
       {/* Main Content */}

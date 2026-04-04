@@ -213,7 +213,7 @@ export default function DistrictsPage() {
           </div>
           <h1
             className="text-3xl sm:text-4xl font-black mb-4"
-            style={{ color: '#8B5CF6', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
+            style={{ color: '#111111', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             Federal Court Districts
           </h1>
@@ -254,6 +254,8 @@ export default function DistrictsPage() {
                     style={{
                       borderColor: 'var(--border-default)',
                       background: '#FFFFFF',
+                      borderRadius: '12px',
+                      transition: 'all 0.15s ease',
                     }}
                   >
                     <div className="flex items-center justify-between">

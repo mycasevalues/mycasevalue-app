@@ -146,7 +146,7 @@ export default function TrendsPage() {
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}
+            style={{ background: 'rgba(0,0,0,0.15)', color: '#111111' }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -168,7 +168,7 @@ export default function TrendsPage() {
       {/* Key Stats Bar */}
       <section className="py-10 border-b" style={{ borderColor: 'var(--border-default)' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { v: totalCases.toLocaleString(), l: 'Total cases analyzed' },
               { v: `${trends.length}`, l: 'Case types tracked' },
@@ -177,8 +177,8 @@ export default function TrendsPage() {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="text-center p-4 rounded-xl border"
-                style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}
+                className="text-center p-4 border"
+                style={{ borderColor: 'var(--border-default)', background: '#FFFFFF', borderRadius: '12px' }}
               >
                 <div className="text-2xl font-display font-extrabold" style={{ color: '#111111' }}>
                   {stat.v}
@@ -219,18 +219,19 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="block p-4 rounded-xl border transition-all hover:shadow-lg hover:shadow-indigo-500/5"
+                  className="block p-4 border transition-all hover:shadow-lg hover:shadow-indigo-500/5"
                   style={{
                     borderColor: 'var(--border-default)',
                     background: '#FFFFFF',
                     textDecoration: 'none',
+                    borderRadius: '12px',
                   }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-3">
                       <span
                         className="text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full"
-                        style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}
+                        style={{ background: 'rgba(0,0,0,0.15)', color: '#111111' }}
                       >
                         {i + 1}
                       </span>
@@ -276,14 +277,14 @@ export default function TrendsPage() {
           <p className="text-sm mb-8" style={{ color: '#6B7280' }}>
             Federal civil cases grouped by legal category.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {catEntries.map((c) => {
               const pct = (c.total / maxCatTotal) * 100;
               return (
                 <div
                   key={c.cat}
-                  className="p-5 rounded-xl border"
-                  style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}
+                  className="p-5 border"
+                  style={{ borderColor: 'var(--border-default)', background: '#FFFFFF', borderRadius: '12px' }}
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
@@ -464,10 +465,11 @@ export default function TrendsPage() {
 
         {/* CTA */}
         <section
-          className="text-center p-8 rounded-xl border"
+          className="text-center p-8 border"
           style={{
             borderColor: 'var(--border-default)',
             background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)',
+            borderRadius: '12px',
           }}
         >
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
@@ -479,8 +481,8 @@ export default function TrendsPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="/odds"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#111111', color: '#fff' }}
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+              style={{ background: '#111111', color: '#fff', borderRadius: '12px' }}
             >
               Check My Odds — Free
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -489,8 +491,8 @@ export default function TrendsPage() {
             </a>
             <a
               href="/pricing"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all border"
-              style={{ borderColor: 'var(--border-default)', color: '#6B7280', background: 'transparent' }}
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all border"
+              style={{ borderColor: 'var(--border-default)', color: '#6B7280', background: 'transparent', borderRadius: '12px' }}
             >
               View Pricing
             </a>

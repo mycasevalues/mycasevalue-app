@@ -230,7 +230,7 @@ export default function JudgesPage() {
                 key={idx}
                 style={{
                   padding: 24,
-                  borderRadius: 10,
+                  borderRadius: 12,
                   border: '1px solid var(--border-default)',
                   background: '#FFFFFF',
                 }}
@@ -381,7 +381,7 @@ export default function JudgesPage() {
               padding: '12px 28px',
               borderRadius: 8,
               background: '#8B5CF6',
-              color: 'var(--bg-base)',
+              color: '#FFFFFF',
               fontSize: 16,
               fontWeight: 600,
               textDecoration: 'none',
