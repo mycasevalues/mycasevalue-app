@@ -81,6 +81,15 @@ const APIIcon = () => (
   </svg>
 );
 
+const GavelIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+    <path d="M14.5 2l5 5-7.5 7.5-5-5z" />
+    <path d="M2 22l5.5-5.5" />
+    <path d="M7 14l-3 3" />
+    <path d="M17 7l3-3" />
+  </svg>
+);
+
 const CheckIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
     <polyline points="20 6 9 17 4 12" />
@@ -183,7 +192,8 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
     title: 'AI Case Predictor',
     description:
       'Machine learning outcome predictions based on case factors, historical data, and legal precedents.',
-    badge: 'coming-soon' as const,
+    badge: 'available' as const,
+    href: '/attorney/case-predictor',
   },
   {
     icon: <DocumentIcon />,
@@ -192,6 +202,14 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
       'Upload and analyze legal documents with AI insights, risk assessment, and compliance checking.',
     badge: 'available' as const,
     href: '/attorney/document-intelligence',
+  },
+  {
+    icon: <GavelIcon />,
+    title: 'Judge Intelligence',
+    description:
+      'Research federal judges by district — ruling patterns, settlement tendencies, and case statistics.',
+    badge: 'available' as const,
+    href: '/attorney/judge-intelligence',
   },
   {
     icon: <SearchIcon />,

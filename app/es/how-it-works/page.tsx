@@ -156,7 +156,7 @@ export default function SpanishHowItWorksPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(79, 70, 229, 0.15)' }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
@@ -170,7 +170,7 @@ export default function SpanishHowItWorksPage() {
             </div>
 
             <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(79, 70, 229, 0.15)' }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6l4 2"/>
@@ -185,7 +185,7 @@ export default function SpanishHowItWorksPage() {
             </div>
 
             <div className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(79, 70, 229, 0.15)' }}>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2">
                   <path d="M9 12l2 2 4-4"/>
                   <circle cx="12" cy="12" r="10"/>
