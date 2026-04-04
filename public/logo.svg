@@ -1,5 +1,38 @@
-<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="120" height="120" rx="28" fill="#4F46E5"/>
-  <circle cx="39" cy="36" r="13" fill="white"/>
-  <line x1="56" y1="96" x2="78" y2="48" stroke="white" stroke-width="18" stroke-linecap="round"/>
+<svg viewBox="0 0 160 34" width="160" height="34" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define gradients for depth -->
+  <defs>
+    <linearGradient id="scaleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8171F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C41218;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Red geometric icon: Rounded square shield -->
+  <rect x="2" y="2" width="30" height="30" rx="4" ry="4" fill="url(#scaleGradient)" />
+
+  <!-- Balance scale of justice inside the shield -->
+  <!-- Center beam -->
+  <rect x="10.5" y="13.5" width="11" height="1.5" fill="white" rx="0.75" ry="0.75" />
+
+  <!-- Pivot point (triangle) -->
+  <polygon points="17,13.5 15.5,11.5 18.5,11.5" fill="white" />
+
+  <!-- Left pan (rectangle) -->
+  <rect x="7" y="17" width="4" height="2.5" fill="white" rx="0.5" ry="0.5" />
+
+  <!-- Right pan (rectangle) -->
+  <rect x="21" y="17" width="4" height="2.5" fill="white" rx="0.5" ry="0.5" />
+
+  <!-- Left chain links -->
+  <line x1="9" y1="17" x2="10" y2="14.5" stroke="white" stroke-width="0.8" stroke-linecap="round" />
+  <line x1="11" y1="17" x2="10.5" y2="14.5" stroke="white" stroke-width="0.8" stroke-linecap="round" />
+
+  <!-- Right chain links -->
+  <line x1="23" y1="17" x2="24" y2="14.5" stroke="white" stroke-width="0.8" stroke-linecap="round" />
+  <line x1="25" y1="17" x2="24.5" y2="14.5" stroke="white" stroke-width="0.8" stroke-linecap="round" />
+
+  <!-- Text: MyCaseValue -->
+  <text x="38" y="23" font-family="Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#212529" letter-spacing="0.2">
+    MyCaseValue
+  </text>
 </svg>

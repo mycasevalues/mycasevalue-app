@@ -116,10 +116,10 @@ export default function HowItWorksPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CC1019" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             HOW IT WORKS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
             3 Simple Steps
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#999999' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
             From selecting your case type to getting a complete analysis of real federal court outcomes — all in minutes.
           </p>
         </div>

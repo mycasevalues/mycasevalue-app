@@ -192,19 +192,19 @@ const totalDistricts = CIRCUITS.reduce((sum, c) => sum + c.districts.length, 0);
 
 export default function DistrictsPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #EDEEEE 0%, #EDEEEE 100%)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       {/* Header */}
       <div
         className="border-b"
         style={{
           borderColor: '#D5D8DC',
-          background: 'linear-gradient(180deg, #FFFFFF 0%, transparent 100%)',
+          background: '#00172E',
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(24, 86, 255, 0.12)', color: '#E8171F' }}
+            style={{ background: 'rgba(255,255,255,0.1)', color: '#E8171F' }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -213,13 +213,13 @@ export default function DistrictsPage() {
           </div>
           <h1
             className="text-3xl sm:text-4xl font-black mb-4"
-            style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
+            style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             Federal Court Districts
           </h1>
           <p
             className="text-base leading-relaxed max-w-2xl sm:text-lg"
-            style={{ color: '#455A64' }}
+            style={{ color: 'rgba(255,255,255,0.7)' }}
           >
             All {totalDistricts} federal judicial districts across {CIRCUITS.length} circuits.
             Each district has its own judges, caseload, and outcome patterns. Explore outcomes

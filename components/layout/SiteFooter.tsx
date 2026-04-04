@@ -45,11 +45,11 @@ export default function SiteFooter() {
       className="site-footer"
       role="contentinfo"
       style={{
-        background: '#FFFFFF',
+        background: '#00172E',
         backdropFilter: undefined,
         WebkitBackdropFilter: undefined,
-        borderTop: '1px solid #E5EBF0',
-        color: '#666666',
+        borderTop: 'none',
+        color: 'rgba(255,255,255,0.7)',
         padding: '64px 24px 32px',
       }}
     >
@@ -66,28 +66,13 @@ export default function SiteFooter() {
         >
           {/* Brand column */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-              <div style={{
-                width: '28px',
-                height: '28px',
-                background: '#E8171F',
-                borderRadius: '4px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-                  <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
-                </svg>
-              </div>
-              <span style={{ fontSize: '18px', fontWeight: 800, color: '#212529', fontFamily: 'var(--font-display)' }}>
-                MyCaseValue
-              </span>
+            <div style={{ marginBottom: '12px' }}>
+              <img src="/logo.svg" alt="MyCaseValue" style={{ height: '26px', width: 'auto', filter: 'brightness(0) invert(1)', marginBottom: '12px' }} />
             </div>
             <p style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#666666',
+              color: 'rgba(255,255,255,0.6)',
               lineHeight: 1.6,
               marginBottom: '8px',
             }}>
@@ -96,7 +81,7 @@ export default function SiteFooter() {
             <p style={{
               fontFamily: 'var(--font-body)',
               fontSize: '12px',
-              color: '#999999',
+              color: 'rgba(255,255,255,0.4)',
             }}>
               Built on PACER &middot; FJC &middot; CourtListener data
             </p>
@@ -109,7 +94,7 @@ export default function SiteFooter() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '11px',
                 fontWeight: 600,
-                color: '#455A64',
+                color: '#FFFFFF',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 marginBottom: '16px',
@@ -124,7 +109,7 @@ export default function SiteFooter() {
                     className="site-footer-link"
                     style={{
                       fontSize: '14px',
-                      color: '#666666',
+                      color: 'rgba(255,255,255,0.7)',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       transition: 'color 150ms',
@@ -138,9 +123,57 @@ export default function SiteFooter() {
           ))}
         </div>
 
+        {/* Follow Us section */}
+        <div style={{
+          borderTop: '1px solid rgba(255,255,255,0.1)',
+          paddingTop: '24px',
+          paddingBottom: '24px',
+        }}>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '11px',
+            fontWeight: 600,
+            color: '#FFFFFF',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            marginBottom: '16px',
+          }}>
+            Follow Us
+          </p>
+          <div style={{ display: 'flex', gap: '24px' }}>
+            <Link href="https://twitter.com/mycasevalue" className="site-footer-link" style={{
+              fontSize: '14px',
+              color: 'rgba(255,255,255,0.7)',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              transition: 'color 150ms',
+            }}>
+              Twitter
+            </Link>
+            <Link href="https://linkedin.com/company/mycasevalue" className="site-footer-link" style={{
+              fontSize: '14px',
+              color: 'rgba(255,255,255,0.7)',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              transition: 'color 150ms',
+            }}>
+              LinkedIn
+            </Link>
+            <Link href="https://facebook.com/mycasevalue" className="site-footer-link" style={{
+              fontSize: '14px',
+              color: 'rgba(255,255,255,0.7)',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              transition: 'color 150ms',
+            }}>
+              Facebook
+            </Link>
+          </div>
+        </div>
+
         {/* Bottom bar */}
         <div style={{
-          borderTop: '1px solid #E5EBF0',
+          borderTop: '1px solid rgba(255,255,255,0.1)',
           paddingTop: '24px',
           display: 'flex',
           justifyContent: 'space-between',
@@ -151,7 +184,7 @@ export default function SiteFooter() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '12px',
-            color: '#999999',
+            color: 'rgba(255,255,255,0.4)',
             margin: 0,
           }}>
             &copy; {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
@@ -159,7 +192,7 @@ export default function SiteFooter() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '12px',
-            color: '#999999',
+            color: 'rgba(255,255,255,0.4)',
             margin: 0,
           }}>
             For informational purposes only. Not legal advice.
@@ -168,7 +201,7 @@ export default function SiteFooter() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .site-footer-link:hover { color: #212529 !important; }
+        .site-footer-link:hover { color: #FFFFFF !important; }
         @media (max-width: 768px) {
           .site-footer-grid { grid-template-columns: 1fr 1fr !important; }
         }

@@ -298,10 +298,120 @@ export default function ServerHero() {
         </div>
       </div>
 
+      {/* ── VISUAL 6: FEATURE HIGHLIGHTS (LexisNexis-style) ── */}
+      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+              Analytics platform
+            </p>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+              More Data, Better Outcomes
+            </h2>
+            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '650px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300, fontStyle: 'italic' }}>
+              Broader coverage and greater depth than any other plaintiff-focused platform.
+            </p>
+          </div>
+
+          {/* Feature bullets */}
+          <div style={{ maxWidth: '720px', margin: '0 auto 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="feature-bullets-grid">
+            {[
+              'Enhanced coverage with data from 5.1M+ federal court cases',
+              'All 94 federal districts with 50+ years of historical data',
+              'High-value analytics for settlements, timing, and outcomes',
+              'Exclusive comparisons via judge and district analytics',
+            ].map((text, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E5EBF0' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span style={{ fontSize: '14px', color: '#212529', fontFamily: 'var(--font-body)', lineHeight: 1.5 }}>{text}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Feature cards - mirroring LexisNexis tabs */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="feature-cards-grid">
+            {[
+              {
+                title: 'Know Your Judge & Court',
+                desc: 'Understand the big-picture background for a judge or court with insights into top case types, filing trends, timing patterns, and outcome distributions.',
+                icon: 'M12 14l9-5-9-5-9 5 9 5zM12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z',
+                details: [
+                  'Judge-specific win rates by case type',
+                  'Motion grant/deny patterns',
+                  'Average case timelines per judge',
+                  'Settlement vs. trial disposition rates',
+                ],
+              },
+              {
+                title: 'Evaluate Your Options',
+                desc: 'Review the experience and past performance of your district with insights into how outcomes compare across similar case types nationwide.',
+                icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+                details: [
+                  'District-by-district outcome comparison',
+                  'Win rate benchmarking across districts',
+                  'Settlement range comparison tools',
+                  'Identify the most favorable venues',
+                ],
+              },
+              {
+                title: 'Understand Your Odds',
+                desc: 'Get data-driven insights into how cases like yours have been resolved, with settlement percentiles and timeline breakdowns from real court records.',
+                icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
+                details: [
+                  'Settlement distribution from P10 to P90',
+                  'Win rate with vs. without attorney',
+                  'Case duration percentiles',
+                  'Historical outcome trend analysis',
+                ],
+              },
+            ].map((card, i) => (
+              <div key={i} style={{
+                background: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '4px',
+                padding: '32px 24px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                transition: 'box-shadow 200ms',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                  <div style={{
+                    width: '44px', height: '44px', borderRadius: '4px',
+                    background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.15)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                  }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d={card.icon} />
+                    </svg>
+                  </div>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 700, color: '#212529', margin: 0 }}>
+                    {card.title}
+                  </h3>
+                </div>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#455A64', lineHeight: 1.6, marginBottom: '16px' }}>
+                  {card.desc}
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {card.details.map((detail, j) => (
+                    <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 0', borderTop: j === 0 ? '1px solid #E5EBF0' : 'none' }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                      <span style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)' }}>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Responsive overrides */}
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .steps-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .feature-bullets-grid { grid-template-columns: 1fr !important; }
+          .feature-cards-grid { grid-template-columns: 1fr !important; }
         }
       `}} />
     </section>

@@ -18,6 +18,8 @@ const NAV_LINKS = [
   { href: '/search', label: 'Search' },
   { href: '/cases', label: 'Cases' },
   { href: '/districts', label: 'Districts' },
+  { href: '/how-it-works', label: 'How It Works' },
+  { href: '/blog', label: 'Blog' },
   { href: '/calculator', label: 'Calculator' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/attorney', label: 'Attorney Mode' },
@@ -146,22 +148,7 @@ export default function SiteNav() {
             }}
             aria-label="MyCaseValue home"
           >
-            <div style={{
-              width: '32px',
-              height: '32px',
-              background: '#E8171F',
-              borderRadius: '4px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-                <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
-              </svg>
-            </div>
-            <span style={{ fontSize: '18px', fontWeight: 800, color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>
-              MyCaseValue
-            </span>
+            <img src="/logo.svg" alt="MyCaseValue" style={{ height: '30px', width: 'auto' }} />
           </Link>
 
           {/* Right: Auth buttons (desktop) + Hamburger (mobile) */}
@@ -246,7 +233,7 @@ export default function SiteNav() {
                       boxShadow: '0 2px 8px rgba(232,23,31,0.20)',
                     }}
                   >
-                    Get started free
+                    Sign Up
                   </Link>
                 </>
               )}
@@ -309,7 +296,7 @@ export default function SiteNav() {
           top: '64px',
           zIndex: 199,
           height: '48px',
-          background: '#00172E',
+          background: 'rgba(0,0,0,0.8)',
           borderBottom: 'none',
           display: 'flex',
           alignItems: 'center',
@@ -340,7 +327,7 @@ export default function SiteNav() {
             whiteSpace: 'nowrap',
             flexShrink: 0,
           }}>
-            MyCaseValue+
+            MyCaseValue+<sup style={{ fontSize: '12px' }}>®</sup>
           </div>
 
           {/* Center-Left: FREE TRIAL button */}

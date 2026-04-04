@@ -233,7 +233,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
               <a
                 key={relatedPost.slug}
                 href={`/blog/${relatedPost.slug}`}
-                className="group rounded-xl border p-6 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10"
+                className="group rounded-xl border p-6 transition-all duration-300 hover:shadow-lg"
                 style={{
                   borderColor: 'var(--border-default)',
                   background: '#FFFFFF',

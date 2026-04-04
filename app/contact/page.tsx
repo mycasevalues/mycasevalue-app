@@ -41,30 +41,35 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div style={{ background: 'var(--bg-base)', minHeight: '100vh' }}>
+        {/* Header Banner */}
+        <div style={{ background: '#00172E', padding: '64px 24px' }}>
+          <div style={{ maxWidth: 720, margin: '0 auto' }}>
+            <h1
+              style={{
+                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontWeight: 800,
+                color: '#FFFFFF',
+                fontFamily: 'var(--font-display)',
+                letterSpacing: '-1px',
+                marginBottom: 12,
+              }}
+            >
+              Contact Us
+            </h1>
+            <p
+              style={{
+                fontSize: 16,
+                color: 'rgba(255,255,255,0.7)',
+                fontFamily: 'var(--font-body)',
+                lineHeight: 1.7,
+              }}
+            >
+              Have a question, need help with your account, or interested in enterprise access? We&apos;re here to help.
+            </p>
+          </div>
+        </div>
+
         <div style={{ maxWidth: 720, margin: '0 auto', padding: '64px 24px' }}>
-        <h1
-          style={{
-            fontSize: 'clamp(28px, 4vw, 40px)',
-            fontWeight: 800,
-            color: '#212529',
-            fontFamily: 'var(--font-display)',
-            letterSpacing: '-1px',
-            marginBottom: 12,
-          }}
-        >
-          Contact Us
-        </h1>
-        <p
-          style={{
-            fontSize: 16,
-            color: '#999999',
-            fontFamily: 'var(--font-body)',
-            lineHeight: 1.7,
-            marginBottom: 48,
-          }}
-        >
-          Have a question, need help with your account, or interested in enterprise access? We&apos;re here to help.
-        </p>
 
         <div style={{ display: 'grid', gap: 24 }}>
           {/* Support */}
