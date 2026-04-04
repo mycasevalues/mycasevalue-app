@@ -210,10 +210,10 @@ export default function ServerHero() {
           <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)', textAlign: 'center' }}>
             Quick lookup
           </p>
-          <h2 style={{ fontSize: '32px', fontWeight: 700, color: 'rgba(250,251,252,0.70)', fontFamily: 'var(--font-display)', textAlign: 'center', marginBottom: '8px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', textAlign: 'center', marginBottom: '8px' }}>
             Find your case data
           </h2>
-          <p style={{ fontSize: '16px', color: 'rgba(250,251,252,0.60)', fontFamily: 'var(--font-body)', textAlign: 'center', marginBottom: '32px' }}>
+          <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', textAlign: 'center', marginBottom: '32px' }}>
             Select a case type and district to see real federal court outcome data instantly.
           </p>
 
@@ -236,7 +236,7 @@ export default function ServerHero() {
             <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               Three steps to real court data
             </h2>
-            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
               Get reliable federal court outcome data in under 60 seconds.
             </p>
           </div>

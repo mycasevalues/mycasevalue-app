@@ -19,7 +19,7 @@ export function TrendLine({
   return (
     <div className="w-full">
       {label && (
-        <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[rgba(240,242,245,0.70)] mb-3">{label}</div>
+        <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#455A64] mb-3">{label}</div>
       )}
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }}>
@@ -32,12 +32,12 @@ export function TrendLine({
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(229,231,235,0.5)" vertical={false} />
           <XAxis
             dataKey="year"
-            tick={{ fontSize: 10, fill: 'rgba(240,242,245,0.70)', fontFamily: 'PT Mono, monospace' }}
+            tick={{ fontSize: 10, fill: '#455A64', fontFamily: 'PT Mono, monospace' }}
             axisLine={{ stroke: 'rgba(255,255,255,0.10)' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 10, fill: 'rgba(240,242,245,0.70)' }}
+            tick={{ fontSize: 10, fill: '#455A64' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}

@@ -27,12 +27,12 @@ export function ComparisonBar({
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(229,231,235,0.5)" vertical={false} />
           <XAxis
             dataKey="name"
-            tick={{ fontSize: 11, fill: 'rgba(240,242,245,0.70)', fontFamily: 'Roboto, system-ui, sans-serif' }}
+            tick={{ fontSize: 11, fill: '#455A64', fontFamily: 'Roboto, system-ui, sans-serif' }}
             axisLine={{ stroke: 'rgba(255,255,255,0.10)' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 10, fill: 'rgba(240,242,245,0.70)' }}
+            tick={{ fontSize: 10, fill: '#455A64' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}

@@ -149,7 +149,7 @@ export default function BulkAnalysisPage() {
           )}
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '13px', color: 'rgba(240,242,245,0.40)' }}>{selectedNos.length} of 20 case types selected</span>
+            <span style={{ fontSize: '13px', color: '#999999' }}>{selectedNos.length} of 20 case types selected</span>
             <button onClick={analyze} disabled={loading || selectedNos.length === 0} style={{ padding: '12px 28px', backgroundColor: loading || selectedNos.length === 0 ? 'rgba(255,255,255,0.10)' : '#1856FF', color: '#FFFFFF', border: 'none', borderRadius: '8px', fontSize: '15px', fontWeight: 700, fontFamily: 'var(--font-display)', cursor: loading || selectedNos.length === 0 ? 'not-allowed' : 'pointer' }}>
               {loading ? 'Analyzing...' : 'Analyze Portfolio'}
             </button>
@@ -175,7 +175,7 @@ export default function BulkAnalysisPage() {
                 { label: 'Total in DB', value: p.totalCasesInDatabase.toLocaleString(), color: '#F0F2F5' },
               ].map((s) => (
                 <div key={s.label} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '20px', border: '1px solid rgba(255,255,255,0.10)', textAlign: 'center' }}>
-                  <p style={{ fontSize: '11px', color: 'rgba(240,242,245,0.40)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
+                  <p style={{ fontSize: '11px', color: '#999999', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
                   <p className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: s.color, margin: 0 }}>{s.value}</p>
                 </div>
               ))}
@@ -204,7 +204,7 @@ export default function BulkAnalysisPage() {
                 {result.insights.map((ins, i) => (
                   <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}><polyline points="20 6 9 17 4 12" /></svg>
-                    <span style={{ fontSize: '14px', color: 'rgba(240,242,245,0.70)', lineHeight: 1.5 }}>{ins}</span>
+                    <span style={{ fontSize: '14px', color: '#455A64', lineHeight: 1.5 }}>{ins}</span>
                   </div>
                 ))}
               </div>
@@ -222,7 +222,7 @@ export default function BulkAnalysisPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                       <div>
                         <span style={{ fontSize: '15px', fontWeight: 600, color: '#F0F2F5' }}>{c.label}</span>
-                        <span style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', marginLeft: '8px' }}>NOS {c.nos} · {c.totalCases.toLocaleString()} cases</span>
+                        <span style={{ fontSize: '12px', color: '#999999', marginLeft: '8px' }}>NOS {c.nos} · {c.totalCases.toLocaleString()} cases</span>
                       </div>
                       <span style={{ fontSize: '11px', fontWeight: 700, padding: '3px 10px', borderRadius: '4px', backgroundColor: rc.bg, color: rc.text }}>{rc.label}</span>
                     </div>
@@ -236,7 +236,7 @@ export default function BulkAnalysisPage() {
                         { label: 'Pro Se', value: `${Math.round(c.proSeWinRate)}%`, color: '#EA2143' },
                       ].map((s) => (
                         <div key={s.label} style={{ padding: '8px', background: 'rgba(255,255,255,0.04)', borderRadius: '6px' }}>
-                          <p style={{ fontSize: '10px', color: 'rgba(240,242,245,0.40)', margin: '0 0 2px', textTransform: 'uppercase' as const }}>{s.label}</p>
+                          <p style={{ fontSize: '10px', color: '#999999', margin: '0 0 2px', textTransform: 'uppercase' as const }}>{s.label}</p>
                           <p className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: s.color, margin: 0 }}>{s.value}</p>
                         </div>
                       ))}
@@ -260,7 +260,7 @@ export default function BulkAnalysisPage() {
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2"><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
             </div>
             <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 12px' }}>Build a Case Portfolio</h2>
-            <p style={{ fontSize: '15px', color: 'rgba(240,242,245,0.40)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
+            <p style={{ fontSize: '15px', color: '#999999', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
               Select multiple case types above to analyze them together. Get risk clustering, outcome trends, and portfolio-level insights.
             </p>
           </div>

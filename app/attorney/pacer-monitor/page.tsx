@@ -74,7 +74,7 @@ export default function PacerMonitorPage() {
               <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>Recent Alerts</h2>
               <div style={{ display: 'flex', gap: '4px', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
-                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '5px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#1856FF' : 'transparent', color: filter === f ? '#FFFFFF' : 'rgba(240,242,245,0.40)', textTransform: 'capitalize' as const }}>
+                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '5px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#1856FF' : 'transparent', color: filter === f ? '#FFFFFF' : '#999999', textTransform: 'capitalize' as const }}>
                     {f}
                   </button>
                 ))}
@@ -89,13 +89,13 @@ export default function PacerMonitorPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                       <div>
                         <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#1856FF' }}>{alert.caseNumber}</span>
-                        <span style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', marginLeft: '8px' }}>{alert.court}</span>
+                        <span style={{ fontSize: '12px', color: '#999999', marginLeft: '8px' }}>{alert.court}</span>
                       </div>
                       <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '4px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
                     </div>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: '#F0F2F5', margin: '0 0 4px' }}>{alert.caseName}</p>
-                    <p style={{ fontSize: '13px', color: 'rgba(240,242,245,0.70)', margin: '0 0 6px', lineHeight: 1.4 }}>{alert.event}</p>
-                    <p style={{ fontSize: '11px', color: 'rgba(240,242,245,0.30)', margin: 0 }}>{new Date(alert.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                    <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 6px', lineHeight: 1.4 }}>{alert.event}</p>
+                    <p style={{ fontSize: '11px', color: '#AAAAAA', margin: 0 }}>{new Date(alert.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                   </div>
                 );
               })}
@@ -121,7 +121,7 @@ export default function PacerMonitorPage() {
                 {watchList.map((c) => (
                   <div key={c} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', backgroundColor: 'rgba(255,255,255,0.04)', borderRadius: '6px' }}>
                     <span className="font-mono" style={{ fontSize: '12px', color: '#F0F2F5' }}>{c}</span>
-                    <button onClick={() => setWatchList(watchList.filter((w) => w !== c))} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(240,242,245,0.30)', fontSize: '14px' }}>&times;</button>
+                    <button onClick={() => setWatchList(watchList.filter((w) => w !== c))} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#AAAAAA', fontSize: '14px' }}>&times;</button>
                   </div>
                 ))}
               </div>
@@ -136,7 +136,7 @@ export default function PacerMonitorPage() {
                 { label: 'High Priority', value: String(alerts.filter((a) => a.priority === 'high').length) },
               ].map((s) => (
                 <div key={s.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <span style={{ fontSize: '13px', color: 'rgba(240,242,245,0.40)' }}>{s.label}</span>
+                  <span style={{ fontSize: '13px', color: '#999999' }}>{s.label}</span>
                   <span className="font-mono" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5' }}>{s.value}</span>
                 </div>
               ))}

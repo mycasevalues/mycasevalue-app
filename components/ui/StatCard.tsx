@@ -19,7 +19,7 @@ export function StatCard({
   color,
   className = '',
 }: StatCardProps) {
-  const trendColor = trend && trend.value > 0 ? 'var(--outcome-win)' : trend && trend.value < 0 ? 'var(--outcome-loss)' : 'rgba(240,242,245,0.70)';
+  const trendColor = trend && trend.value > 0 ? 'var(--outcome-win)' : trend && trend.value < 0 ? 'var(--outcome-loss)' : '#455A64';
   const trendArrow = trend && trend.value > 0 ? '↑' : trend && trend.value < 0 ? '↓' : '→';
 
   return (

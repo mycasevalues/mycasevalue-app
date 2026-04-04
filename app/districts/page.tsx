@@ -219,7 +219,7 @@ export default function DistrictsPage() {
           </h1>
           <p
             className="text-base leading-relaxed max-w-2xl sm:text-lg"
-            style={{ color: 'rgba(240, 242, 245, 0.70)' }}
+            style={{ color: '#455A64' }}
           >
             All {totalDistricts} federal judicial districts across {CIRCUITS.length} circuits.
             Each district has its own judges, caseload, and outcome patterns. Explore outcomes
@@ -250,22 +250,11 @@ export default function DistrictsPage() {
                   <a
                     key={d.slug}
                     href={`/districts/${d.slug}`}
-                    className="group p-4 rounded-xl border transition-all hover:shadow-md"
+                    className="group p-4 border transition-all duration-150 hover:shadow-lg hover:border-red-200"
                     style={{
                       borderColor: '#D5D8DC',
                       background: '#FFFFFF',
                       borderRadius: '4px',
-                      transition: 'all 0.15s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.target as HTMLAnchorElement).style.background = 'rgba(255, 255, 255, 0.12)';
-                      (e.target as HTMLAnchorElement).style.borderColor = 'rgba(24, 86, 255, 0.20)';
-                      (e.target as HTMLAnchorElement).style.boxShadow = '0 8px 32px rgba(24, 86, 255, 0.2)';
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.target as HTMLAnchorElement).style.background = '#FFFFFF';
-                      (e.target as HTMLAnchorElement).style.borderColor = '#D5D8DC';
-                      (e.target as HTMLAnchorElement).style.boxShadow = 'none';
                     }}
                   >
                     <div className="flex items-center justify-between">
@@ -273,7 +262,7 @@ export default function DistrictsPage() {
                         <h3 className="text-sm font-semibold" style={{ color: '#212529' }}>
                           {d.name}
                         </h3>
-                        <p className="text-[11px] mt-1" style={{ color: 'rgba(240, 242, 245, 0.70)' }}>
+                        <p className="text-[11px] mt-1" style={{ color: '#455A64' }}>
                           {d.abbr}
                         </p>
                       </div>

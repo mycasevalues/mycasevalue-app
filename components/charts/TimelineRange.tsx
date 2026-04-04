@@ -39,7 +39,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
           <div key={i} className="flex items-center gap-2">
             <div className="w-3 h-3 rounded-sm flex-shrink-0" style={{ background: stage.color }} />
             <div>
-              <span className="text-[12px] font-semibold text-[rgba(240,242,245,0.70)]">{stage.label}</span>
+              <span className="text-[12px] font-semibold text-[#455A64]">{stage.label}</span>
               <span className="text-[12px] font-data font-bold ml-1.5" style={{ color: stage.color }}>{stage.duration}</span>
             </div>
           </div>
@@ -49,7 +49,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
       {/* Total */}
       {totalDuration && (
         <div className="mt-3 pt-3 border-t flex items-center justify-between" style={{ borderColor: 'rgba(255,255,255,0.10)' }}>
-          <span className="text-[12px] font-semibold text-[rgba(240,242,245,0.70)]">{totalLabel || (lang === 'es' ? 'Duración total media' : 'Median total duration')}</span>
+          <span className="text-[12px] font-semibold text-[#455A64]">{totalLabel || (lang === 'es' ? 'Duración total media' : 'Median total duration')}</span>
           <span className="text-lg font-display font-bold" style={{ color: '#111827' }}>{totalDuration}</span>
         </div>
       )}

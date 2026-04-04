@@ -57,7 +57,7 @@ export default function TeamWorkspacePage() {
         {/* Tabs */}
         <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', background: 'rgba(255,255,255,0.06)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px', width: 'fit-content', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
           {(['reports', 'team'] as const).map((t) => (
-            <button key={t} onClick={() => setTab(t)} style={{ padding: '8px 20px', borderRadius: '6px', border: 'none', fontSize: '14px', fontWeight: 600, cursor: 'pointer', backgroundColor: tab === t ? '#1856FF' : 'transparent', color: tab === t ? '#FFFFFF' : 'rgba(240,242,245,0.40)', textTransform: 'capitalize' as const }}>
+            <button key={t} onClick={() => setTab(t)} style={{ padding: '8px 20px', borderRadius: '6px', border: 'none', fontSize: '14px', fontWeight: 600, cursor: 'pointer', backgroundColor: tab === t ? '#1856FF' : 'transparent', color: tab === t ? '#FFFFFF' : '#999999', textTransform: 'capitalize' as const }}>
               {t === 'reports' ? 'Shared Reports' : 'Team Members'}
             </button>
           ))}
@@ -69,12 +69,12 @@ export default function TeamWorkspacePage() {
               <div key={i} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '10px', padding: '18px 22px', border: '1px solid rgba(255,255,255,0.10)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <p style={{ fontSize: '15px', fontWeight: 600, color: '#F0F2F5', margin: '0 0 4px' }}>{r.title}</p>
-                  <p style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', margin: 0 }}>
+                  <p style={{ fontSize: '12px', color: '#999999', margin: 0 }}>
                     <span style={{ padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(24,86,255,0.12)', color: '#3D72FF', fontSize: '11px', fontWeight: 600, marginRight: '8px' }}>{r.type}</span>
                     Shared by {r.sharedBy} · {new Date(r.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'rgba(240,242,245,0.40)', fontSize: '13px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#999999', fontSize: '13px' }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
                   {r.comments}
                 </div>
@@ -101,10 +101,10 @@ export default function TeamWorkspacePage() {
                   <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(24,86,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 700, color: '#3D72FF', flexShrink: 0 }}>{m.avatar}</div>
                   <div style={{ flex: 1 }}>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: '#F0F2F5', margin: '0 0 2px' }}>{m.name}</p>
-                    <p style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', margin: 0 }}>{m.email}</p>
+                    <p style={{ fontSize: '12px', color: '#999999', margin: 0 }}>{m.email}</p>
                   </div>
                   <span style={{ fontSize: '11px', fontWeight: 700, padding: '3px 10px', borderRadius: '4px', backgroundColor: `${roleColors[m.role]}15`, color: roleColors[m.role] }}>{m.role}</span>
-                  <span style={{ fontSize: '11px', color: 'rgba(240,242,245,0.30)' }}>{m.lastActive}</span>
+                  <span style={{ fontSize: '11px', color: '#AAAAAA' }}>{m.lastActive}</span>
                 </div>
               ))}
             </div>

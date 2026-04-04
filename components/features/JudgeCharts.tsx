@@ -58,12 +58,12 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             />
             <XAxis
               dataKey="year"
-              stroke="rgba(240,242,245,0.70)"
+              stroke="#455A64"
               style={chartStyle}
             />
             <YAxis
               label={{ value: 'Win Rate (%)', angle: -90, position: 'insideLeft' }}
-              stroke="rgba(240,242,245,0.70)"
+              stroke="#455A64"
               style={chartStyle}
               domain={[30, 70]}
             />
@@ -116,7 +116,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             />
             <XAxis
               type="number"
-              stroke="rgba(240,242,245,0.70)"
+              stroke="#455A64"
               style={chartStyle}
             />
             <YAxis

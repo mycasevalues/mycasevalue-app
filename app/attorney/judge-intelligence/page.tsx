@@ -135,7 +135,7 @@ export default function JudgeIntelligencePage() {
         {/* Controls */}
         <div style={{ display: 'flex', gap: '16px', marginBottom: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
           <div style={{ flex: '1 1 240px' }}>
-            <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+            <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#999999', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
               Select District
             </label>
             <select

@@ -194,20 +194,20 @@ export default function VenueOptimizerPage() {
                 <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
                   Venue Rankings — {data.caseType}
                 </h2>
-                <p style={{ fontSize: '13px', color: 'rgba(240,242,245,0.40)', margin: '4px 0 0' }}>
+                <p style={{ fontSize: '13px', color: '#999999', margin: '4px 0 0' }}>
                   {data.venues.length} districts ranked by {prioritize === 'winRate' ? 'plaintiff win rate' : prioritize === 'settlement' ? 'settlement likelihood' : 'case speed'}
                 </p>
               </div>
 
               {/* Table Header */}
               <div style={{ display: 'grid', gridTemplateColumns: '50px 1fr 90px 90px 80px 80px 70px', gap: '8px', padding: '12px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', backgroundColor: 'rgba(255,255,255,0.04)' }}>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const }}>Rank</span>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const }}>District</span>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Win Rate</span>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Settlement</span>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Duration</span>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Advantage</span>
-                <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const, textAlign: 'right' }}>Score</span>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#999999', textTransform: 'uppercase' as const }}>Rank</span>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#999999', textTransform: 'uppercase' as const }}>District</span>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#999999', textTransform: 'uppercase' as const, textAlign: 'right' }}>Win Rate</span>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#999999', textTransform: 'uppercase' as const, textAlign: 'right' }}>Settlement</span>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#999999', textTransform: 'uppercase' as const, textAlign: 'right' }}>Duration</span>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#999999', textTransform: 'uppercase' as const, textAlign: 'right' }}>Advantage</span>
+                <span style={{ fontSize: '11px', fontWeight: 700, color: '#999999', textTransform: 'uppercase' as const, textAlign: 'right' }}>Score</span>
               </div>
 
               {/* Rows */}
@@ -224,7 +224,7 @@ export default function VenueOptimizerPage() {
                     backgroundColor: v.rank <= 3 ? 'rgba(255,255,255,0.04)' : 'transparent',
                   }}
                 >
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: v.rank <= 3 ? '#F0F2F5' : 'rgba(240,242,245,0.40)' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: v.rank <= 3 ? '#F0F2F5' : '#999999' }}>
                     {v.rank <= 3 ? medals[v.rank - 1] : `#${v.rank}`}
                   </span>
                   <span style={{ fontSize: '14px', fontWeight: v.rank <= 3 ? 700 : 500, color: '#F0F2F5' }}>
@@ -243,7 +243,7 @@ export default function VenueOptimizerPage() {
                     fontSize: '13px',
                     fontWeight: 600,
                     textAlign: 'right',
-                    color: v.advantage > 0 ? '#07CA6B' : v.advantage < 0 ? '#EA2143' : 'rgba(240,242,245,0.40)',
+                    color: v.advantage > 0 ? '#07CA6B' : v.advantage < 0 ? '#EA2143' : '#999999',
                   }}>
                     {v.advantage > 0 ? '+' : ''}{v.advantage}%
                   </span>
@@ -293,7 +293,7 @@ export default function VenueOptimizerPage() {
             <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 12px' }}>
               Find Your Optimal Venue
             </h2>
-            <p style={{ fontSize: '15px', color: 'rgba(240,242,245,0.40)', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
+            <p style={{ fontSize: '15px', color: '#999999', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
               Select a case type above to see all federal districts ranked by win rate, settlement likelihood, and case speed. Uses real data from 4.1M+ federal cases.
             </p>
           </div>

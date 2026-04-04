@@ -150,7 +150,7 @@ export default function CommandPalette({
             label: opt.label,
             description: opt.d,
             category: cat.label,
-            categoryColor: cat.color || 'rgba(240,242,245,0.70)',
+            categoryColor: cat.color || '#455A64',
             nos: opt.nos,
             type: 'case',
           });
@@ -456,7 +456,7 @@ export default function CommandPalette({
           }}
         >
           {/* Search icon */}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(240,242,245,0.70)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
             <circle cx="11" cy="11" r="8" />
             <path d="M21 21l-4.35-4.35" />
           </svg>
@@ -514,7 +514,7 @@ export default function CommandPalette({
               style={{
                 padding: '24px',
                 textAlign: 'center',
-                color: 'rgba(240,242,245,0.70)',
+                color: '#455A64',
                 fontSize: 'var(--text-sm)',
               }}
             >
@@ -555,7 +555,7 @@ export default function CommandPalette({
                         borderRadius: 'var(--r-md)',
                         cursor: 'pointer',
                         background: isSelected ? '#1856FF' : 'transparent',
-                        color: isSelected ? 'white' : '#F0F2F5',
+                        color: isSelected ? 'white' : '#455A64',
                         transition: 'all 100ms ease-out',
                       }}
                     >
@@ -569,7 +569,7 @@ export default function CommandPalette({
                             <polyline points="14 2 14 8 20 8" />
                           </svg>
                         ) : item.type === 'page' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : 'rgba(240,242,245,0.70)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#455A64'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
@@ -604,7 +604,7 @@ export default function CommandPalette({
                           <div
                             style={{
                               fontSize: 'var(--text-xs)',
-                              color: isSelected ? 'rgba(255,255,255,0.7)' : 'rgba(240,242,245,0.70)',
+                              color: isSelected ? 'rgba(255,255,255,0.7)' : '#455A64',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
@@ -672,7 +672,7 @@ export default function CommandPalette({
             padding: '10px 16px',
             borderTop: '1px solid var(--border-default)',
             fontSize: 'var(--text-2xs)',
-            color: 'rgba(240,242,245,0.70)',
+            color: '#455A64',
             background: '#FFFFFF',
             fontFamily: 'var(--font-body)',
           }}

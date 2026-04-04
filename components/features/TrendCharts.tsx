@@ -105,7 +105,7 @@ export default function TrendCharts() {
         >
           Federal Filing Trends (2015–2024)
         </h3>
-        <p style={{ color: 'rgba(240,242,245,0.70)', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px' }}>
           Total federal civil case filings over the past decade
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -116,9 +116,9 @@ export default function TrendCharts() {
                 <stop offset="95%" stopColor="#1856FF" stopOpacity={0.1} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-            <XAxis dataKey="year" stroke="rgba(240,242,245,0.70)" />
-            <YAxis stroke="rgba(240,242,245,0.70)" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#E5EBF0" />
+            <XAxis dataKey="year" stroke="#455A64" />
+            <YAxis stroke="#455A64" />
             <Tooltip content={<CustomTooltip />} />
             <Area
               type="monotone"
@@ -150,14 +150,14 @@ export default function TrendCharts() {
         >
           Win Rate Trends by Category (2018–2024)
         </h3>
-        <p style={{ color: 'rgba(240,242,245,0.70)', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px' }}>
           Plaintiff win rate trends across top case categories
         </p>
         <ResponsiveContainer width="100%" height={350}>
           <LineChart data={categoryTrends[0]?.years ? buildCombinedCategoryData(categoryTrends) : []}>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-            <XAxis dataKey="year" stroke="rgba(240,242,245,0.70)" />
-            <YAxis stroke="rgba(240,242,245,0.70)" domain={[0, 100]} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#E5EBF0" />
+            <XAxis dataKey="year" stroke="#455A64" />
+            <YAxis stroke="#455A64" domain={[0, 100]} />
             <Tooltip content={<CustomTooltip />} />
             <Legend />
             {categoryTrends.map((cat, idx) => (
@@ -202,7 +202,7 @@ export default function TrendCharts() {
         >
           Top 15 Case Types by Filing Volume
         </h3>
-        <p style={{ color: 'rgba(240,242,245,0.70)', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px' }}>
           Most frequently filed federal civil case types
         </p>
         <ResponsiveContainer width="100%" height={500}>
@@ -211,9 +211,9 @@ export default function TrendCharts() {
             layout="vertical"
             margin={{ top: 5, right: 30, left: 300, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-            <XAxis type="number" stroke="rgba(240,242,245,0.70)" />
-            <YAxis dataKey="label" type="category" stroke="rgba(240,242,245,0.70)" width={300} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#E5EBF0" />
+            <XAxis type="number" stroke="#455A64" />
+            <YAxis dataKey="label" type="category" stroke="#455A64" width={300} />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="count" fill="#1856FF" radius={[0, 8, 8, 0]} />
           </BarChart>

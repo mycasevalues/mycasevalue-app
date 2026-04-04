@@ -19,12 +19,12 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(229,231,235,0.5)" vertical={false} />
           <XAxis
             dataKey="range"
-            tick={{ fontSize: 10, fill: 'rgba(240,242,245,0.70)', fontFamily: 'PT Mono, monospace' }}
+            tick={{ fontSize: 10, fill: '#455A64', fontFamily: 'PT Mono, monospace' }}
             axisLine={{ stroke: 'rgba(255,255,255,0.10)' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 10, fill: 'rgba(240,242,245,0.70)' }}
+            tick={{ fontSize: 10, fill: '#455A64' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}%`}
