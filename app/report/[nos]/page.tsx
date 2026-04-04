@@ -95,13 +95,13 @@ export default async function ReportPage({
   if (!data && !dbStats) {
     return (
       <div style={{ minHeight: '100vh', background: 'var(--bg-base)', padding: '64px 24px', textAlign: 'center' }}>
-        <p style={{ fontSize: 18, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)', fontWeight: 600, marginBottom: 12 }}>
+        <p style={{ fontSize: 18, color: '#111111', fontFamily: 'var(--font-display)', fontWeight: 600, marginBottom: 12 }}>
           No data found for this case type.
         </p>
-        <p style={{ fontSize: 14, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', marginBottom: 24 }}>
+        <p style={{ fontSize: 14, color: '#6B7280', fontFamily: 'var(--font-body)', marginBottom: 24 }}>
           We don&apos;t have outcome data for code &ldquo;{nos}&rdquo; yet.
         </p>
-        <Link href="/cases" style={{ fontSize: 14, color: 'var(--accent-secondary)', textDecoration: 'none', fontWeight: 500, fontFamily: 'var(--font-body)' }}>
+        <Link href="/cases" style={{ fontSize: 14, color: '#7C3AED', textDecoration: 'none', fontWeight: 500, fontFamily: 'var(--font-body)' }}>
           ← Back to case types
         </Link>
       </div>
@@ -144,10 +144,10 @@ export default async function ReportPage({
       if (!allowed) {
         return (
           <main style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
-            <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: 'var(--fg-primary)' }}>Daily limit reached</h1>
-            <p style={{ color: 'var(--fg-muted)', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
-            <a href="/pricing" style={{ padding: '12px 28px', background: 'var(--accent-primary)', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
-            <p style={{ fontSize: '12px', color: 'var(--fg-muted)', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
+            <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: '#111111' }}>Daily limit reached</h1>
+            <p style={{ color: '#6B7280', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
+            <a href="/pricing" style={{ padding: '12px 28px', background: '#8B5CF6', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
+            <p style={{ fontSize: '12px', color: '#6B7280', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
           </main>
         );
       }
@@ -198,9 +198,9 @@ export default async function ReportPage({
   return (
     <div style={{ minHeight: '100vh', background: '#F9FAFB' }}>
       {/* Header */}
-      <div style={{ background: 'var(--bg-surface)', borderBottom: '1px solid var(--border-default)' }}>
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid var(--border-default)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
-          <Link href="/search" style={{ fontSize: 13, color: 'var(--fg-muted)', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+          <Link href="/search" style={{ fontSize: 13, color: '#6B7280', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
             ← Search cases
           </Link>
 
@@ -208,7 +208,7 @@ export default async function ReportPage({
             fontSize: 28,
             fontWeight: 700,
             margin: '0 0 8px',
-            color: 'var(--fg-primary)',
+            color: '#111111',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-0.5px',
             lineHeight: 1.2,
@@ -216,7 +216,7 @@ export default async function ReportPage({
             {label} — Federal Court Outcomes
           </h1>
 
-          <p style={{ fontSize: 15, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: '0 0 16px' }}>
+          <p style={{ fontSize: 15, color: '#6B7280', fontFamily: 'var(--font-body)', margin: '0 0 16px' }}>
             Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases · {districtLabel} · Public court records
             {categoryLabel ? ` · ${categoryLabel}` : ''}
           </p>
@@ -227,13 +227,13 @@ export default async function ReportPage({
           />
 
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--fg-muted)' }}>
+            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: '#6B7280' }}>
               FJC IDB · Updated quarterly
             </span>
-            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--fg-muted)' }}>
+            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: '#6B7280' }}>
               CourtListener · Live
             </span>
-            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: 'var(--fg-muted)' }}>
+            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: '#6B7280' }}>
               RECAP Archive · Live
             </span>
           </div>
@@ -315,16 +315,16 @@ export default async function ReportPage({
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }} className="timeline-grid">
             <style>{`.timeline-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .timeline-grid { grid-template-columns: 1fr; gap: 12px; } }`}</style>
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: '#8B5CF6', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
                 {medianDuration} months
               </p>
-              <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Median time from filing to resolution</p>
+              <p style={{ fontSize: 13, color: '#6B7280', fontFamily: 'var(--font-body)', margin: 0 }}>Median time from filing to resolution</p>
             </div>
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--fg-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: '#111111', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
                 {trialMedian}
               </p>
-              <p style={{ fontSize: 13, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)', margin: 0 }}>Median trial award</p>
+              <p style={{ fontSize: 13, color: '#6B7280', fontFamily: 'var(--font-body)', margin: 0 }}>Median trial award</p>
             </div>
           </div>
         </section>
@@ -378,7 +378,7 @@ export default async function ReportPage({
                     <p style={{ fontSize: '12px', color: '#9CA3AF', fontFamily: 'var(--font-body)', margin: 0 }}>Favorable</p>
                   </div>
                 </div>
-                <p style={{ fontSize: '12px', color: 'var(--fg-muted)', marginTop: '8px', fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: '12px', color: '#6B7280', marginTop: '8px', fontFamily: 'var(--font-body)' }}>
                   95% confidence interval: ±{Math.round((settlementRate || 50) * 0.08)}% based on sample size of {totalCases?.toLocaleString() || 'N/A'} cases.
                   {(totalCases || 0) < 500 && ' Limited sample — interpret with caution.'}
                 </p>
@@ -447,15 +447,15 @@ export default async function ReportPage({
         ) : (
           /* ═══ PAYWALL: Upsell for free users ═══ */
           <section style={{
-            background: 'var(--bg-surface)',
-            border: '2px solid var(--accent-primary)',
+            background: '#FFFFFF',
+            border: '2px solid #8B5CF6',
             borderRadius: 12,
             padding: '40px 32px',
             textAlign: 'center',
             marginTop: 16,
           }}>
             <div style={{ fontSize: 36, marginBottom: 16 }}>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
@@ -463,14 +463,14 @@ export default async function ReportPage({
             <p style={{
               fontSize: 20,
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               fontFamily: 'var(--font-display)',
               margin: '0 0 8px',
             }}>
               Unlock the full report
             </p>
             <p style={{
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               fontSize: 15,
               fontFamily: 'var(--font-body)',
               margin: '0 0 8px',
@@ -479,17 +479,17 @@ export default async function ReportPage({
               Settlement ranges, attorney impact data, representation analysis, and PDF export.
             </p>
             <p style={{
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               fontSize: 13,
               fontFamily: 'var(--font-body)',
               margin: '0 0 24px',
             }}>
-              Starting at <strong style={{ color: 'var(--fg-primary)' }}>$5.99</strong> for a single report
+              Starting at <strong style={{ color: '#111111' }}>$5.99</strong> for a single report
             </p>
             <a href="/pricing" style={{
               display: 'inline-block',
               padding: '14px 36px',
-              background: 'var(--accent-primary)',
+              background: '#8B5CF6',
               color: '#fff',
               borderRadius: '8px',
               textDecoration: 'none',
@@ -536,11 +536,11 @@ export default async function ReportPage({
                       href={op.absolute_url ? `https://www.courtlistener.com${op.absolute_url}` : '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 14, fontWeight: 500, color: 'var(--accent-primary)', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
+                      style={{ fontSize: 14, fontWeight: 500, color: '#8B5CF6', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
                     >
                       {op.caseName || 'Federal Court Opinion'}
                     </a>
-                    <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: 12, color: '#6B7280', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
                       {op.court || ''}{op.dateFiled ? ` · ${new Date(op.dateFiled).getFullYear()}` : ''}
                       {op.status ? ` · ${op.status}` : ''}
                     </p>
@@ -572,11 +572,11 @@ export default async function ReportPage({
                       href={doc.absolute_url ? `https://www.courtlistener.com${doc.absolute_url}` : '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 14, fontWeight: 500, color: 'var(--accent-primary)', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
+                      style={{ fontSize: 14, fontWeight: 500, color: '#8B5CF6', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
                     >
                       {doc.caseName || doc.docketNumber || 'Federal Court Docket'}
                     </a>
-                    <p style={{ fontSize: 12, color: 'var(--fg-muted)', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
+                    <p style={{ fontSize: 12, color: '#6B7280', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
                       {doc.court || ''}{doc.dateFiled ? ` · ${new Date(doc.dateFiled).getFullYear()}` : ''}
                       {doc.docketNumber ? ` · ${doc.docketNumber}` : ''}
                     </p>
@@ -585,7 +585,7 @@ export default async function ReportPage({
               </>
             )}
 
-            <p style={{ fontSize: 11, color: 'var(--fg-muted)', marginTop: 16, fontStyle: 'italic', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: 11, color: '#6B7280', marginTop: 16, fontStyle: 'italic', fontFamily: 'var(--font-body)' }}>
               Court records provided by CourtListener.com and the RECAP Archive under open access principles.
               All documents are public federal court records.
             </p>
@@ -623,7 +623,7 @@ export default async function ReportPage({
                     href={`/report/${t.nos}`}
                     style={{
                       fontSize: 14,
-                      color: 'var(--accent-primary)',
+                      color: '#8B5CF6',
                       textDecoration: 'none',
                       padding: '10px 0',
                       borderBottom: i < related.length - 1 ? '1px solid var(--border-default)' : 'none',
@@ -639,7 +639,7 @@ export default async function ReportPage({
         })()}
 
         {/* Disclaimer */}
-        <p style={{ fontSize: 12, color: 'var(--fg-muted)', textAlign: 'center', marginTop: 32, fontStyle: 'italic', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
+        <p style={{ fontSize: 12, color: '#6B7280', textAlign: 'center', marginTop: 32, fontStyle: 'italic', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
           This report shows aggregate historical data from public federal court records. Not legal advice. Results vary by individual case facts, evidence, representation, and jurisdiction.
         </p>
       </main>

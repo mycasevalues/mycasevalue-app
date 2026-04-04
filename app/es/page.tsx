@@ -4,12 +4,9 @@
  * Uses dynamic import to prevent SSR and ensure client-side lang handling
  */
 
-import dynamic from 'next/dynamic';
 import ServerHero from '../../components/ServerHero';
+import ServerContent from '../../components/ServerContent';
 import { Metadata } from 'next';
-
-// Import the English page's metadata and component
-import EnglishPage from '../page';
 
 export const metadata: Metadata = {
   title: 'MyCaseValue en Español - Datos de Casos Federales',
@@ -29,18 +26,11 @@ export const metadata: Metadata = {
   },
 };
 
-const MyCaseValue = dynamic(() => import('../../components/MyCaseValue'), {
-  ssr: false,
-  loading: () => null,
-});
-
 export default function SpanishPage() {
   return (
     <>
-      <div id="ssr-hero" className="ssr-hero-container">
-        <ServerHero />
-      </div>
-      <MyCaseValue />
+      <ServerHero />
+      <ServerContent />
     </>
   );
 }

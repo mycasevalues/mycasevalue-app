@@ -140,7 +140,7 @@ export default function JudgesPage() {
       <div
         style={{
           borderBottom: '1px solid var(--border-default)',
-          background: 'linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%)',
+          background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)',
         }}
       >
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
@@ -157,7 +157,7 @@ export default function JudgesPage() {
                 letterSpacing: '1.5px',
                 marginBottom: 16,
                 background: 'var(--accent-primary-subtle)',
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 textTransform: 'uppercase',
               }}
             >
@@ -172,7 +172,7 @@ export default function JudgesPage() {
                 fontSize: 'clamp(28px, 5vw, 44px)',
                 fontWeight: 900,
                 marginBottom: 16,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 letterSpacing: '-1.5px',
                 fontFamily: 'var(--font-display)',
                 lineHeight: 1.2,
@@ -186,7 +186,7 @@ export default function JudgesPage() {
                 fontSize: 'clamp(15px, 2vw, 17px)',
                 lineHeight: 1.6,
                 maxWidth: 640,
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -204,7 +204,7 @@ export default function JudgesPage() {
             style={{
               fontSize: 24,
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               fontFamily: 'var(--font-display)',
               marginBottom: 24,
             }}
@@ -232,14 +232,14 @@ export default function JudgesPage() {
                   padding: 24,
                   borderRadius: 10,
                   border: '1px solid var(--border-default)',
-                  background: 'var(--bg-surface)',
+                  background: '#FFFFFF',
                 }}
               >
                 <h3
                   style={{
                     fontSize: 15,
                     fontWeight: 600,
-                    color: 'var(--fg-primary)',
+                    color: '#111111',
                     fontFamily: 'var(--font-display)',
                     marginBottom: 8,
                   }}
@@ -250,7 +250,7 @@ export default function JudgesPage() {
                   style={{
                     fontSize: 13,
                     lineHeight: 1.6,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     fontFamily: 'var(--font-body)',
                     margin: 0,
                   }}
@@ -268,7 +268,7 @@ export default function JudgesPage() {
             style={{
               fontSize: 24,
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               fontFamily: 'var(--font-display)',
               marginBottom: 32,
             }}
@@ -284,14 +284,14 @@ export default function JudgesPage() {
                   padding: 24,
                   borderRadius: 12,
                   border: '1px solid var(--border-default)',
-                  background: 'var(--bg-surface)',
+                  background: '#FFFFFF',
                 }}
               >
                 <h3
                   style={{
                     fontSize: 17,
                     fontWeight: 700,
-                    color: 'var(--fg-primary)',
+                    color: '#111111',
                     fontFamily: 'var(--font-display)',
                     marginBottom: 16,
                     paddingBottom: 12,
@@ -318,7 +318,7 @@ export default function JudgesPage() {
                         padding: '10px 14px',
                         borderRadius: 8,
                         fontSize: 14,
-                        color: 'var(--fg-primary)',
+                        color: '#111111',
                         textDecoration: 'none',
                         fontFamily: 'var(--font-body)',
                         background: 'var(--bg-base)',
@@ -327,7 +327,7 @@ export default function JudgesPage() {
                       }}
                     >
                       <span>{d.label}</span>
-                      <span style={{ fontSize: 12, color: 'var(--accent-primary)', fontWeight: 500 }}>
+                      <span style={{ fontSize: 12, color: '#8B5CF6', fontWeight: 500 }}>
                         View judges &rarr;
                       </span>
                     </Link>
@@ -343,8 +343,8 @@ export default function JudgesPage() {
           style={{
             padding: '48px 32px',
             borderRadius: 16,
-            border: '2px solid var(--accent-primary)',
-            background: 'var(--bg-surface)',
+            border: '2px solid #8B5CF6',
+            background: '#FFFFFF',
             textAlign: 'center',
             marginBottom: 64,
           }}
@@ -353,7 +353,7 @@ export default function JudgesPage() {
             style={{
               fontSize: 24,
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               fontFamily: 'var(--font-display)',
               marginBottom: 12,
             }}
@@ -363,7 +363,7 @@ export default function JudgesPage() {
           <p
             style={{
               fontSize: 15,
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               fontFamily: 'var(--font-body)',
               maxWidth: 520,
               margin: '0 auto 28px',
@@ -380,7 +380,7 @@ export default function JudgesPage() {
               gap: 8,
               padding: '12px 28px',
               borderRadius: 8,
-              background: 'var(--accent-primary)',
+              background: '#8B5CF6',
               color: 'var(--bg-base)',
               fontSize: 16,
               fontWeight: 600,

@@ -152,10 +152,10 @@ export default function AiCaseEvalPreview({ lang = 'en', onSelectCase }: AiCaseE
           </svg>
           {t.badge}
         </div>
-        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
           {t.title}
         </h2>
-        <p className="text-sm max-w-lg mx-auto" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+        <p className="text-sm max-w-lg mx-auto" style={{ color: '#6B7280' }}>{t.sub}</p>
       </div>
 
       {/* Input + Analysis area */}

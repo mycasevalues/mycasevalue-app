@@ -198,13 +198,13 @@ export default function DistrictsPage() {
         className="border-b"
         style={{
           borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%)',
+          background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)',
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'var(--accent-primary-subtle)', color: 'var(--accent-primary)' }}
+            style={{ background: 'var(--accent-primary-subtle)', color: '#8B5CF6' }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -213,13 +213,13 @@ export default function DistrictsPage() {
           </div>
           <h1
             className="text-3xl sm:text-4xl font-black mb-4"
-            style={{ color: 'var(--accent-primary)', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
+            style={{ color: '#8B5CF6', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             Federal Court Districts
           </h1>
           <p
             className="text-base leading-relaxed max-w-2xl sm:text-lg"
-            style={{ color: 'var(--fg-muted)' }}
+            style={{ color: '#6B7280' }}
           >
             All {totalDistricts} federal judicial districts across {CIRCUITS.length} circuits.
             Each district has its own judges, caseload, and outcome patterns. Explore outcomes
@@ -236,9 +236,9 @@ export default function DistrictsPage() {
               <h2
                 className="text-lg font-bold mb-4"
                 style={{
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   fontFamily: 'var(--font-display)',
-                  borderBottom: '2px solid var(--accent-primary)',
+                  borderBottom: '2px solid #8B5CF6',
                   paddingBottom: '8px',
                   display: 'inline-block',
                 }}
@@ -253,15 +253,15 @@ export default function DistrictsPage() {
                     className="group p-4 rounded-xl border transition-all hover:shadow-md"
                     style={{
                       borderColor: 'var(--border-default)',
-                      background: 'var(--bg-surface)',
+                      background: '#FFFFFF',
                     }}
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className="text-sm font-semibold" style={{ color: 'var(--fg-primary)' }}>
+                        <h3 className="text-sm font-semibold" style={{ color: '#111111' }}>
                           {d.name}
                         </h3>
-                        <p className="text-[11px] mt-1" style={{ color: 'var(--fg-muted)' }}>
+                        <p className="text-[11px] mt-1" style={{ color: '#6B7280' }}>
                           {d.abbr}
                         </p>
                       </div>
@@ -270,7 +270,7 @@ export default function DistrictsPage() {
                         height="16"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="var(--accent-secondary)"
+                        stroke="#7C3AED"
                         strokeWidth="2.5"
                         className="opacity-0 group-hover:opacity-100 transition-opacity"
                       >

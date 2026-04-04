@@ -37,7 +37,7 @@ export default function NewsletterSignup() {
   return (
     <div
       style={{
-        background: 'var(--bg-surface)',
+        background: '#FFFFFF',
         border: '1px solid var(--border-default)',
         borderRadius: '16px',
         padding: '32px',
@@ -58,7 +58,7 @@ export default function NewsletterSignup() {
             marginBottom: '12px',
           }}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7" />
           </svg>
@@ -68,7 +68,7 @@ export default function NewsletterSignup() {
             fontFamily: 'Montserrat, system-ui, sans-serif',
             fontSize: '17px',
             fontWeight: 700,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 4px',
           }}
         >
@@ -78,7 +78,7 @@ export default function NewsletterSignup() {
           style={{
             fontFamily: 'Roboto, system-ui, sans-serif',
             fontSize: '14px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             margin: 0,
             lineHeight: 1.5,
           }}
@@ -134,7 +134,7 @@ export default function NewsletterSignup() {
               background: 'var(--bg-base)',
               fontFamily: 'Roboto, system-ui, sans-serif',
               fontSize: '14px',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               outline: 'none',
               transition: 'border-color 200ms',
             }}
@@ -146,7 +146,7 @@ export default function NewsletterSignup() {
               padding: '12px 20px',
               borderRadius: '10px',
               border: 'none',
-              background: 'var(--accent-primary)',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               fontFamily: 'Montserrat, system-ui, sans-serif',
               fontSize: '14px',

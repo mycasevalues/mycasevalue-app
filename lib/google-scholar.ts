@@ -652,7 +652,6 @@ export async function fetchScholarInsights(
       }
     }
   } catch (error) {
-    console.error("Error fetching from SerpAPI:", error);
     // Fall through to fallback
   }
 
@@ -700,7 +699,6 @@ async function fetchFromSerpAPI(
     );
 
     if (!response.ok) {
-      console.error(`SerpAPI returned status ${response.status}`);
       return null;
     }
 
@@ -733,7 +731,6 @@ async function fetchFromSerpAPI(
       recentDevelopments,
     };
   } catch (error) {
-    console.error("Error in fetchFromSerpAPI:", error);
     return null;
   }
 }

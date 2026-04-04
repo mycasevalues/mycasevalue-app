@@ -39,7 +39,6 @@ export default function GlobalCommandPalette() {
   // Handle navigation and case selection
   const handleSelectCase = useCallback((nos: string, description: string) => {
     // This would typically navigate to the case or update parent state
-    console.log('Selected case:', { nos, description });
   }, []);
 
   const handleNavigate = useCallback((tab: string) => {
@@ -48,7 +47,6 @@ export default function GlobalCommandPalette() {
       window.location.href = '/';
     } else if (tab === 'lang') {
       // Handle language switch
-      console.log('Language switch requested');
     }
   }, []);
 

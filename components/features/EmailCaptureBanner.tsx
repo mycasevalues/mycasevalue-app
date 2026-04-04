@@ -109,7 +109,6 @@ export function EmailCaptureBanner({
         setState('idle');
       }, 5000);
     } catch (error) {
-      console.error('[EmailCaptureBanner] Error:', error);
       setErrorMessage(copy.error);
       setState('error');
 

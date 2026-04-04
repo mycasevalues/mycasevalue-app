@@ -101,7 +101,7 @@ export function ConfidenceMeterInline({ score, size = 140 }: ConfidenceMeterInli
       <div className="text-[11px] font-bold tracking-[2px] -mt-1" style={{ color }}>
         {label.toUpperCase()}
       </div>
-      <div className="text-[10px] text-[var(--fg-muted)] mt-0.5">Historical profile</div>
+      <div className="text-[10px] text-[#6B7280] mt-0.5">Historical profile</div>
     </div>
   );
 }

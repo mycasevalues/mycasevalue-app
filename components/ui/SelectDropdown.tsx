@@ -109,7 +109,7 @@ export function Select({ value, options, onChange, placeholder, dark = false, la
             </button>
           ))}
           {filtered.length === 0 && (
-            <div className="px-4 py-3 text-sm text-[var(--fg-muted)] text-center">{lang === 'es' ? 'Sin resultados' : 'No results'}</div>
+            <div className="px-4 py-3 text-sm text-[#6B7280] text-center">{lang === 'es' ? 'Sin resultados' : 'No results'}</div>
           )}
         </div>
       </div>

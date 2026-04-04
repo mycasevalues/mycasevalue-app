@@ -103,7 +103,7 @@ const FeatureCard = ({
   const content = (
     <div
       style={{
-        backgroundColor: 'var(--bg-surface)',
+        backgroundColor: '#FFFFFF',
         border: '1px solid var(--border-default)',
         borderRadius: '12px',
         padding: '24px',
@@ -117,7 +117,7 @@ const FeatureCard = ({
       }}
       className="attorney-feature-card"
     >
-      <div style={{ fontSize: '32px', color: 'var(--accent-primary)' }}>{icon}</div>
+      <div style={{ fontSize: '32px', color: '#8B5CF6' }}>{icon}</div>
       <div>
         <h3
           style={{
@@ -125,7 +125,7 @@ const FeatureCard = ({
             fontSize: '18px',
             fontWeight: '600',
             fontFamily: 'var(--font-display)',
-            color: 'var(--fg-primary)',
+            color: '#111111',
           }}
         >
           {title}
@@ -134,7 +134,7 @@ const FeatureCard = ({
           style={{
             margin: 0,
             fontSize: '14px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             lineHeight: '1.5',
             fontFamily: 'var(--font-body)',
           }}
@@ -153,8 +153,8 @@ const FeatureCard = ({
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
             backgroundColor:
-              badge === 'available' ? 'var(--accent-primary)' : 'var(--bg-base)',
-            color: badge === 'available' ? '#ffffff' : 'var(--fg-muted)',
+              badge === 'available' ? '#8B5CF6' : 'var(--bg-base)',
+            color: badge === 'available' ? '#ffffff' : '#6B7280',
             border:
               badge === 'available'
                 ? 'none'
@@ -164,7 +164,7 @@ const FeatureCard = ({
           {badge === 'available' ? 'Available' : 'Expected Q3 2026'}
         </span>
         {href && (
-          <span style={{ fontSize: '13px', color: 'var(--accent-primary)', fontWeight: 600 }}>
+          <span style={{ fontSize: '13px', color: '#8B5CF6', fontWeight: 600 }}>
             Try it →
           </span>
         )}
@@ -242,19 +242,19 @@ export default function AttorneyPage() {
     <div
       style={{
         backgroundColor: 'var(--bg-base)',
-        color: 'var(--fg-primary)',
+        color: '#111111',
         fontFamily: 'var(--font-body)',
         minHeight: '100vh',
       }}
     >
       <style dangerouslySetInnerHTML={{ __html: `
-        .attorney-feature-card:hover { border-color: var(--accent-primary) !important; box-shadow: 0 8px 24px rgba(0,0,0,0.12); transform: translateY(-4px); }
-        .attorney-cta-link:hover { background-color: var(--accent-secondary) !important; box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important; transform: translateY(-2px); }
+        .attorney-feature-card:hover { border-color: #8B5CF6 !important; box-shadow: 0 8px 24px rgba(0,0,0,0.12); transform: translateY(-4px); }
+        .attorney-cta-link:hover { background-color: #7C3AED !important; box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important; transform: translateY(-2px); }
       `}} />
       {/* Header Section */}
       <section
         style={{
-          backgroundColor: 'var(--bg-surface)',
+          backgroundColor: '#FFFFFF',
           borderBottom: '1px solid var(--border-default)',
           padding: '48px 20px',
           textAlign: 'center',
@@ -275,8 +275,8 @@ export default function AttorneyPage() {
               style={{
                 display: 'inline-block',
                 padding: '8px 16px',
-                backgroundColor: 'var(--accent-secondary)',
-                color: 'var(--fg-primary)',
+                backgroundColor: '#7C3AED',
+                color: '#111111',
                 borderRadius: '8px',
                 fontSize: '12px',
                 fontWeight: '700',
@@ -297,7 +297,7 @@ export default function AttorneyPage() {
               fontWeight: '800',
               fontFamily: 'var(--font-display)',
               lineHeight: '1.2',
-              color: 'var(--fg-primary)',
+              color: '#111111',
             }}
           >
             Professional Legal Intelligence Suite
@@ -308,7 +308,7 @@ export default function AttorneyPage() {
             style={{
               margin: 0,
               fontSize: 'clamp(16px, 2vw, 20px)',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               lineHeight: '1.6',
               maxWidth: '600px',
               marginLeft: 'auto',
@@ -346,14 +346,14 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '700',
                 fontFamily: 'var(--font-display)',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               Everything in Unlimited,
               <span
                 style={{
                   display: 'block',
-                  color: 'var(--accent-primary)',
+                  color: '#8B5CF6',
                 }}
               >
                 plus:
@@ -363,7 +363,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -379,7 +379,7 @@ export default function AttorneyPage() {
                 fontSize: '20px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               Available Now
@@ -405,7 +405,7 @@ export default function AttorneyPage() {
                 fontSize: '20px',
                 fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               In Development
@@ -449,11 +449,11 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(32px, 4vw, 48px)',
                 fontWeight: '800',
                 fontFamily: 'var(--font-display)',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
-              <span style={{ color: 'var(--accent-primary)' }}>$29.99</span>
-              <span style={{ fontSize: '0.5em', color: 'var(--fg-muted)' }}>
+              <span style={{ color: '#8B5CF6' }}>$29.99</span>
+              <span style={{ fontSize: '0.5em', color: '#6B7280' }}>
                 {' '}
                 / month
               </span>
@@ -462,7 +462,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '16px 0 0 0',
                 fontSize: '16px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -476,8 +476,8 @@ export default function AttorneyPage() {
             style={{
               display: 'inline-block',
               padding: '16px 40px',
-              backgroundColor: 'var(--accent-primary)',
-              color: 'var(--fg-inverse)',
+              backgroundColor: '#8B5CF6',
+              color: '#FFFFFF',
               textDecoration: 'none',
               borderRadius: '8px',
               fontWeight: '700',
@@ -497,7 +497,7 @@ export default function AttorneyPage() {
             style={{
               margin: '8px 0 0 0',
               fontSize: '12px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               fontFamily: 'var(--font-body)',
             }}
           >

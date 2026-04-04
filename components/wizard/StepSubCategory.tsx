@@ -36,7 +36,7 @@ export function StepSubCategory({
           </div>
           <h2 className="text-2xl sm:text-3xl font-display font-bold">{sit.q}</h2>
         </div>
-        <p className="text-[var(--fg-muted)] mb-4 ml-[52px]">{t.choose_specific}</p>
+        <p className="text-[#6B7280] mb-4 ml-[52px]">{t.choose_specific}</p>
 
         {/* AI Helper */}
         <div className="mb-5 p-4 rounded-2xl" style={{ background: 'rgba(17,17,17,0.06)', border: '1px solid rgba(17,17,17,0.12)' }}>
@@ -65,7 +65,7 @@ export function StepSubCategory({
                   onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={sit.color} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
                   {s.opt.label}
-                  <span className="ml-auto text-[11px]" style={{ color: 'var(--fg-muted)' }}>{Math.min(Math.round(s.score * 8), 99)}%</span>
+                  <span className="ml-auto text-[11px]" style={{ color: '#6B7280' }}>{Math.min(Math.round(s.score * 8), 99)}%</span>
                 </button>
               ))}
             </div>
@@ -104,7 +104,7 @@ export function StepSubCategory({
 
 function BackButton({ go, lang, sit, setShowAllSubcats }: { go: (step: number) => void; lang: string; sit: any; setShowAllSubcats: (show: boolean) => void }) {
   return (
-    <button type="button" onClick={() => { setShowAllSubcats(false); go(0); }} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
+    <button type="button" onClick={() => { setShowAllSubcats(false); go(0); }} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: '#6B7280' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
       {lang === 'es' ? 'Volver' : 'Back'}
     </button>

@@ -95,12 +95,12 @@ export default async function OutcomesPage({
 
   if (!option || !category) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-base)', color: '#111111' }}>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case outcomes not found</h1>
-          <p className="mb-6" style={{ color: 'var(--fg-muted)' }}>This case type and district combination does not exist in our database.</p>
+          <p className="mb-6" style={{ color: '#6B7280' }}>This case type and district combination does not exist in our database.</p>
           <Link href="/outcomes" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: 'linear-gradient(135deg, var(--accent-primary), #333333)' }}>
+            style={{ background: 'linear-gradient(135deg, #8B5CF6, #333333)' }}>
             Browse all outcomes
           </Link>
         </div>
@@ -167,7 +167,7 @@ export default async function OutcomesPage({
 
       {/* Breadcrumb */}
       <div style={{
-        background: 'var(--bg-surface)',
+        background: '#FFFFFF',
         borderBottom: '1px solid var(--border-default)',
         padding: '16px 20px',
       }}>
@@ -194,7 +194,7 @@ export default async function OutcomesPage({
             {option.label}
           </Link>
           {' / '}
-          <span style={{ color: 'var(--fg-primary)', fontWeight: 500 }}>{stateName}</span>
+          <span style={{ color: '#111111', fontWeight: 500 }}>{stateName}</span>
         </div>
       </div>
 
@@ -266,7 +266,7 @@ export default async function OutcomesPage({
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{
-            background: 'var(--bg-surface)',
+            background: '#FFFFFF',
             border: '1px solid var(--border-default)',
             borderRadius: '10px',
             padding: '32px',
@@ -274,7 +274,7 @@ export default async function OutcomesPage({
             <h2 style={{
               fontSize: '24px',
               fontWeight: 600,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               margin: '0 0 32px 0',
               fontFamily: 'var(--font-body)',
             }}>
@@ -292,7 +292,7 @@ export default async function OutcomesPage({
                     <span style={{
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: 'var(--fg-primary)',
+                      color: '#111111',
                     }}>
                       {outcome.label}
                     </span>
@@ -327,7 +327,7 @@ export default async function OutcomesPage({
 
       {/* Related Links Section */}
       <div style={{
-        background: 'var(--bg-surface)',
+        background: '#FFFFFF',
         padding: '60px 20px',
         borderTop: '1px solid var(--border-default)',
       }}>
@@ -335,7 +335,7 @@ export default async function OutcomesPage({
           <h2 style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 32px 0',
             fontFamily: 'var(--font-body)',
           }}>
@@ -348,7 +348,7 @@ export default async function OutcomesPage({
             gap: '20px',
           }}>
             <Link href={`/cases/${category.id}`} className="outcome-nav-card" style={{
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
               border: '1px solid var(--border-default)',
               borderRadius: '10px',
               padding: '20px',
@@ -358,7 +358,7 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontSize: '12px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
                 fontWeight: 600,
@@ -369,14 +369,14 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}>
                 All {categoryLabel} Cases
               </div>
             </Link>
 
             <Link href={`/nos/${option.nos}`} className="outcome-nav-card" style={{
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
               border: '1px solid var(--border-default)',
               borderRadius: '10px',
               padding: '20px',
@@ -386,7 +386,7 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontSize: '12px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
                 fontWeight: 600,
@@ -397,7 +397,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}>
                 {option.label} (NOS {option.nos})
               </div>
@@ -409,7 +409,7 @@ export default async function OutcomesPage({
       {/* Disclaimer */}
       <div style={{
         background: 'var(--bg-base)',
-        color: 'var(--fg-muted)',
+        color: '#6B7280',
         padding: '40px 20px',
         fontSize: '14px',
         fontFamily: 'var(--font-body)',

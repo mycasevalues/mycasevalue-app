@@ -102,10 +102,10 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
         {t.badge}
       </div>
-      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
         {t.title}
       </h2>
-      <p className="text-sm mb-5" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+      <p className="text-sm mb-5" style={{ color: '#6B7280' }}>{t.sub}</p>
 
       {/* Filter */}
       <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -114,7 +114,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
           onChange={e => setFilterType(e.target.value)}
           aria-label={lang === 'es' ? 'Filtrar por tipo de caso' : 'Filter by case type'}
           className="rounded-lg px-3 py-2 text-[12px]"
-          style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
+          style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: '#111111', outline: 'none' }}
         >
           <option value="all">{t.allTypes}</option>
           {caseTypes.map(ct => <option key={ct} value={ct}>{ct}</option>)}
@@ -148,11 +148,11 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
           <tbody>
             {sorted.map((v, i) => (
               <tr key={i} className="transition-colors" style={{ background: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.3)' }}>
-                <td className="px-3 py-2.5" style={{ color: 'var(--fg-primary)', borderBottom: '1px solid var(--border-default)' }}>
+                <td className="px-3 py-2.5" style={{ color: '#111111', borderBottom: '1px solid var(--border-default)' }}>
                   <div className="font-semibold">{v.caseName}</div>
                   <div className="text-[10px]" style={{ color: 'var(--fg-subtle)' }}>{v.source}</div>
                 </td>
-                <td className="px-3 py-2.5 font-mono text-[11px]" style={{ color: 'var(--fg-muted)', borderBottom: '1px solid var(--border-default)' }}>{v.district}</td>
+                <td className="px-3 py-2.5 font-mono text-[11px]" style={{ color: '#6B7280', borderBottom: '1px solid var(--border-default)' }}>{v.district}</td>
                 <td className="px-3 py-2.5" style={{ borderBottom: '1px solid var(--border-default)' }}>
                   <span className="px-2 py-0.5 rounded-full text-[10px] font-medium" style={{ background: 'rgba(17,17,17,0.1)', color: '#8B5CF6' }}>
                     {v.caseType}
@@ -166,7 +166,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
                     {v.outcome}
                   </span>
                 </td>
-                <td className="px-3 py-2.5 text-center font-mono" style={{ color: 'var(--fg-muted)', borderBottom: '1px solid var(--border-default)' }}>{v.year}</td>
+                <td className="px-3 py-2.5 text-center font-mono" style={{ color: '#6B7280', borderBottom: '1px solid var(--border-default)' }}>{v.year}</td>
               </tr>
             ))}
           </tbody>
@@ -179,7 +179,7 @@ export default function ComparableCaseFinder({ lang = 'en' }: ComparableCaseFind
           <div key={i} className="rounded-xl p-4" style={{ background: 'rgba(255,255,255,0.4)', border: '1px solid var(--border-default)' }}>
             <div className="flex items-start justify-between mb-2">
               <div>
-                <div className="text-[13px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{v.caseName}</div>
+                <div className="text-[13px] font-semibold" style={{ color: '#111111' }}>{v.caseName}</div>
                 <div className="text-[10px]" style={{ color: 'var(--fg-subtle)' }}>{v.district} &middot; {v.year}</div>
               </div>
               <div className="text-right">

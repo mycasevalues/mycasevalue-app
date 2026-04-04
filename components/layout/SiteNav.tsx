@@ -2,7 +2,6 @@
  * SiteNav.tsx — Site-wide navigation bar with mobile hamburger menu.
  * Height 64px, sticky, white bg, border-bottom.
  * Rendered from app/layout.tsx so every page gets consistent nav.
- * The homepage client component (MyCaseValue) renders its own Navbar and hides this via CSS.
  */
 
 'use client';
@@ -213,7 +212,7 @@ export default function SiteNav() {
                       padding: '8px 16px',
                       fontSize: '14px',
                       fontWeight: 500,
-                      color: 'var(--fg-muted)',
+                      color: '#6B7280',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       borderRadius: 'var(--r-md)',
@@ -230,8 +229,8 @@ export default function SiteNav() {
                       padding: '8px 20px',
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: 'var(--fg-inverse)',
-                      background: 'var(--accent-primary)',
+                      color: '#FFFFFF',
+                      background: '#8B5CF6',
                       borderRadius: 'var(--r-md)',
                       fontFamily: 'var(--font-body)',
                       border: 'none',
@@ -295,7 +294,7 @@ export default function SiteNav() {
                 border: 'none',
                 padding: '10px',
                 cursor: 'pointer',
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 minHeight: '44px',
                 minWidth: '44px',
                 alignItems: 'center',
@@ -358,7 +357,7 @@ export default function SiteNav() {
           bottom: 0,
           width: '280px',
           zIndex: 200,
-          background: 'var(--bg-surface)',
+          background: '#FFFFFF',
           borderLeft: '1px solid var(--border-default)',
           boxShadow: 'var(--shadow-lg)',
           transform: mobileOpen ? 'translateX(0)' : 'translateX(100%)',
@@ -384,7 +383,7 @@ export default function SiteNav() {
               borderRadius: 'var(--r-md)',
               fontSize: '16px',
               fontWeight: isActive(link.href) ? 600 : 500,
-              color: isActive(link.href) ? 'var(--accent-primary)' : 'var(--fg-primary)',
+              color: isActive(link.href) ? '#8B5CF6' : '#111111',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               minHeight: '44px',
@@ -409,7 +408,7 @@ export default function SiteNav() {
                   borderRadius: 'var(--r-md)',
                   fontSize: '16px',
                   fontWeight: 500,
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   minHeight: '44px',
@@ -427,8 +426,8 @@ export default function SiteNav() {
                   borderRadius: 'var(--r-md)',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--fg-inverse)',
-                  background: 'var(--accent-primary)',
+                  color: '#FFFFFF',
+                  background: '#8B5CF6',
                   fontFamily: 'var(--font-body)',
                   textAlign: 'center',
                   minHeight: '44px',
@@ -451,7 +450,7 @@ export default function SiteNav() {
                   borderRadius: 'var(--r-md)',
                   fontSize: '16px',
                   fontWeight: 500,
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   minHeight: '44px',
@@ -469,8 +468,8 @@ export default function SiteNav() {
                   borderRadius: 'var(--r-md)',
                   fontSize: '16px',
                   fontWeight: 600,
-                  color: 'var(--fg-inverse)',
-                  background: 'var(--accent-primary)',
+                  color: '#FFFFFF',
+                  background: '#8B5CF6',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   textAlign: 'center',
@@ -486,7 +485,7 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .site-nav-link:hover { color: var(--accent-primary) !important; }
+        .site-nav-link:hover { color: #8B5CF6 !important; }
         .site-nav-mobile-link:hover { background: var(--bg-elevated) !important; }
         @media (max-width: 768px) {
           .site-nav-center { display: none !important; }

@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('[A/B Test Tracking] Error:', error);
+
 
     // Don't leak error details to client
     return NextResponse.json(

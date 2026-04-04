@@ -19,13 +19,13 @@ export function PlainEnglishSummary({ text, lang = 'en' }: PlainEnglishSummaryPr
           💬
         </div>
         <div className="flex-1">
-          <div className="text-[10px] font-bold tracking-[2px] mb-2" style={{ color: 'var(--accent-primary)' }}>
+          <div className="text-[10px] font-bold tracking-[2px] mb-2" style={{ color: '#8B5CF6' }}>
             {es ? 'RESUMEN EN LENGUAJE SIMPLE' : 'PLAIN ENGLISH SUMMARY'}
           </div>
-          <p className="text-[14px] leading-relaxed text-[var(--fg-muted)] italic">
+          <p className="text-[14px] leading-relaxed text-[#6B7280] italic">
             &ldquo;{text}&rdquo;
           </p>
-          <div className="text-[10px] text-[var(--fg-muted)] mt-2">
+          <div className="text-[10px] text-[#6B7280] mt-2">
             {es ? 'Generado a partir de datos judiciales, no es asesoría legal.' : 'Generated from court data, not legal advice.'}
           </div>
         </div>

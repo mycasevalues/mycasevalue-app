@@ -66,10 +66,10 @@ export default function ComparePage() {
 
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', fontFamily: 'var(--font-body)' }}>
-      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: '#111111', fontFamily: 'var(--font-display)' }}>
         Compare case types
       </h1>
-      <p style={{ color: 'var(--fg-muted)', fontSize: 15, marginBottom: 32 }}>
+      <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32 }}>
         Select up to 3 federal case types to compare outcomes side by side.
       </p>
 
@@ -77,7 +77,7 @@ export default function ComparePage() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 24 }}>
         {[0, 1, 2].map(idx => (
           <div key={idx}>
-            <label style={{ fontSize: 12, fontWeight: 600, color: 'var(--fg-muted)', display: 'block', marginBottom: 6 }}>
+            <label style={{ fontSize: 12, fontWeight: 600, color: '#6B7280', display: 'block', marginBottom: 6 }}>
               Case Type {idx + 1}{idx < 2 ? ' *' : ' (optional)'}
             </label>
             <select
@@ -89,8 +89,8 @@ export default function ComparePage() {
                 fontSize: 14,
                 border: '1.5px solid var(--border-default)',
                 borderRadius: 8,
-                background: 'var(--bg-surface)',
-                color: 'var(--fg-primary)',
+                background: '#FFFFFF',
+                color: '#111111',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -114,8 +114,8 @@ export default function ComparePage() {
         disabled={!canCompare}
         style={{
           padding: '12px 28px',
-          background: canCompare ? 'var(--accent-primary)' : 'var(--border-default)',
-          color: canCompare ? '#fff' : 'var(--fg-muted)',
+          background: canCompare ? '#8B5CF6' : 'var(--border-default)',
+          color: canCompare ? '#fff' : '#6B7280',
           border: 'none',
           borderRadius: 10,
           fontSize: 15,
@@ -139,17 +139,17 @@ export default function ComparePage() {
           }}>
             <thead>
               <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
-                <th style={{ textAlign: 'left', padding: '12px 16px', color: 'var(--fg-muted)', fontWeight: 600, fontSize: 13 }}>Metric</th>
+                <th style={{ textAlign: 'left', padding: '12px 16px', color: '#6B7280', fontWeight: 600, fontSize: 13 }}>Metric</th>
                 {stats.map(s => (
-                  <th key={s.nos} style={{ textAlign: 'center', padding: '12px 16px', color: 'var(--fg-primary)', fontWeight: 700 }}>
-                    <Link href={`/report/${s.nos}`} style={{ color: 'var(--fg-primary)', textDecoration: 'none' }}>
+                  <th key={s.nos} style={{ textAlign: 'center', padding: '12px 16px', color: '#111111', fontWeight: 700 }}>
+                    <Link href={`/report/${s.nos}`} style={{ color: '#111111', textDecoration: 'none' }}>
                       {s.label}
                     </Link>
                     <span style={{
                       display: 'block',
                       fontSize: 11,
                       fontFamily: 'var(--font-mono)',
-                      color: 'var(--fg-muted)',
+                      color: '#6B7280',
                       fontWeight: 400,
                       marginTop: 2,
                     }}>
@@ -184,7 +184,7 @@ export default function ComparePage() {
                 }
 
                 return (
-                  <tr key={row.label} style={{ borderBottom: '1px solid var(--border-default)', background: ri % 2 === 0 ? 'var(--bg-surface)' : 'transparent' }}>
+                  <tr key={row.label} style={{ borderBottom: '1px solid var(--border-default)', background: ri % 2 === 0 ? '#FFFFFF' : 'transparent' }}>
                     <td style={{ padding: '12px 16px', fontWeight: 600, color: 'var(--fg-secondary)' }}>{row.label}</td>
                     {stats.map((s, si) => {
                       const v = values[si];
@@ -200,7 +200,7 @@ export default function ComparePage() {
                         <td key={s.nos} style={{
                           textAlign: 'center',
                           padding: '12px 16px',
-                          color: isBest ? 'var(--accent-primary)' : 'var(--fg-primary)',
+                          color: isBest ? '#8B5CF6' : '#111111',
                           fontWeight: isBest ? 700 : 400,
                           fontFamily: 'var(--font-mono)',
                         }}>
@@ -217,10 +217,10 @@ export default function ComparePage() {
       )}
 
       {/* Disclaimer */}
-      <p style={{ fontSize: 12, color: 'var(--fg-muted)', marginTop: 32, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 12, color: '#6B7280', marginTop: 32, lineHeight: 1.6 }}>
         Data sourced from the Federal Judicial Center Integrated Database. Outcomes are historical averages and do not predict future results.
         This is not legal advice.{' '}
-        <Link href="/methodology" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Learn about our methodology</Link>
+        <Link href="/methodology" style={{ color: '#8B5CF6', textDecoration: 'none' }}>Learn about our methodology</Link>
       </p>
     </main>
   );

@@ -130,26 +130,26 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold mb-6" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold mb-6" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             {post.title}
           </h1>
 
           {/* Description */}
-          <p className="text-lg leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed" style={{ color: '#6B7280' }}>
             {post.description}
           </p>
 
           {/* Meta information */}
           <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t" style={{ borderColor: 'var(--border-default)' }}>
-            <div className="text-sm" style={{ color: 'var(--fg-muted)' }}>
-              <span className="font-medium" style={{ color: 'var(--fg-primary)' }}>{post.author}</span>
+            <div className="text-sm" style={{ color: '#6B7280' }}>
+              <span className="font-medium" style={{ color: '#111111' }}>{post.author}</span>
               <span className="mx-2">•</span>
               <time>{post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
               <span className="mx-2">•</span>
               <span>{post.readTime} min read</span>
             </div>
             {post.updatedAt !== post.publishedAt && (
-              <div className="text-xs" style={{ color: 'var(--fg-muted)' }}>
+              <div className="text-xs" style={{ color: '#6B7280' }}>
                 Updated {post.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
               </div>
             )}
@@ -160,17 +160,17 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       {/* Article content */}
       <article className="max-w-3xl mx-auto px-6 py-16">
         <div className="prose max-w-none" style={{
-          '--tw-prose-body': 'var(--fg-primary)',
-          '--tw-prose-headings': 'var(--fg-primary)',
-          '--tw-prose-lead': 'var(--fg-muted)',
+          '--tw-prose-body': '#111111',
+          '--tw-prose-headings': '#111111',
+          '--tw-prose-lead': '#6B7280',
           '--tw-prose-links': '#111111',
-          '--tw-prose-bold': 'var(--fg-primary)',
+          '--tw-prose-bold': '#111111',
           '--tw-prose-counters': '#111111',
           '--tw-prose-bullets': '#111111',
           '--tw-prose-hr': 'var(--border-default)',
-          '--tw-prose-quotes': 'var(--fg-muted)',
+          '--tw-prose-quotes': '#6B7280',
           '--tw-prose-quote-borders': '#111111',
-          '--tw-prose-captions': 'var(--fg-muted)',
+          '--tw-prose-captions': '#6B7280',
           '--tw-prose-code': '#111111',
           '--tw-prose-pre-code': '#374151',
           '--tw-prose-pre-bg': '#FFFFFF',
@@ -178,7 +178,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           '--tw-prose-td-borders': 'var(--border-default)',
         } as any}>
           {post.content.split('\n\n').map((paragraph, idx) => (
-            <p key={idx} className="text-lg leading-relaxed mb-6" style={{ color: 'var(--fg-muted)' }}>
+            <p key={idx} className="text-lg leading-relaxed mb-6" style={{ color: '#6B7280' }}>
               {paragraph}
             </p>
           ))}
@@ -207,10 +207,10 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       {/* CTA Section */}
       <div className="max-w-3xl mx-auto px-6 py-12">
         <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             See real case data for your situation
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#6B7280' }}>
             Use the insights from this article to get a personalized analysis of outcomes in cases like yours.
           </p>
           <a
@@ -227,7 +227,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       {/* Related posts */}
       {relatedPosts.length > 0 && (
         <div className="max-w-5xl mx-auto px-6 py-16 border-t" style={{ borderColor: 'var(--border-default)' }}>
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#111111' }}>
             Related Articles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -253,13 +253,13 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                   >
                     {relatedPost.category}
                   </span>
-                  <h3 className="text-base font-display font-bold leading-tight group-hover:text-indigo-400 transition-colors" style={{ color: 'var(--fg-primary)' }}>
+                  <h3 className="text-base font-display font-bold leading-tight group-hover:text-indigo-400 transition-colors" style={{ color: '#111111' }}>
                     {relatedPost.title}
                   </h3>
-                  <p className="text-sm leading-relaxed flex-1" style={{ color: 'var(--fg-muted)' }}>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: '#6B7280' }}>
                     {relatedPost.description}
                   </p>
-                  <div className="text-xs pt-2 border-t" style={{ color: 'var(--fg-muted)', borderColor: 'var(--border-default)' }}>
+                  <div className="text-xs pt-2 border-t" style={{ color: '#6B7280', borderColor: 'var(--border-default)' }}>
                     {relatedPost.readTime} min read
                   </div>
                 </div>

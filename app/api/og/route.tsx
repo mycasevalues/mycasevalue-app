@@ -220,7 +220,6 @@ export async function GET(request: Request) {
       },
     );
   } catch (error) {
-    console.error('OG image generation error:', error);
     return new Response('Failed to generate OG image', { status: 500 });
   }
 }

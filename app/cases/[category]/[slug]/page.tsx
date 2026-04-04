@@ -104,19 +104,19 @@ function StatsCard({
       style={{
         padding: '20px',
         borderRadius: '12px',
-        background: 'var(--bg-surface)',
+        background: '#FFFFFF',
         border: '1px solid var(--border-default)',
         textAlign: 'center',
       }}
     >
-      <p style={{ color: 'var(--fg-muted)', fontSize: '14px', margin: '0 0 8px' }}>
+      <p style={{ color: '#6B7280', fontSize: '14px', margin: '0 0 8px' }}>
         {label}
       </p>
       <p
         style={{
           fontSize: '28px',
           fontWeight: 'bold',
-          color: 'var(--accent-primary)',
+          color: '#8B5CF6',
           margin: '0',
           fontFamily: 'var(--font-data)',
         }}
@@ -124,7 +124,7 @@ function StatsCard({
         {value}
       </p>
       {subtitle && (
-        <p style={{ color: 'var(--fg-muted)', fontSize: '12px', margin: '6px 0 0' }}>
+        <p style={{ color: '#6B7280', fontSize: '12px', margin: '6px 0 0' }}>
           {subtitle}
         </p>
       )}
@@ -146,11 +146,11 @@ export default async function CaseTypeDetailPage({
         className="min-h-screen flex items-center justify-center"
         style={{ background: 'var(--bg-base)' }}
       >
-        <div style={{ textAlign: 'center', color: 'var(--fg-primary)' }}>
+        <div style={{ textAlign: 'center', color: '#111111' }}>
           <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: '0 0 16px' }}>
             Case type not found
           </h1>
-          <p style={{ color: 'var(--fg-muted)', margin: '0 0 24px' }}>
+          <p style={{ color: '#6B7280', margin: '0 0 24px' }}>
             This case type does not exist in our database.
           </p>
           <Link
@@ -159,7 +159,7 @@ export default async function CaseTypeDetailPage({
               display: 'inline-block',
               padding: '12px 24px',
               borderRadius: '8px',
-              background: 'var(--accent-primary)',
+              background: '#8B5CF6',
               color: 'white',
               textDecoration: 'none',
               fontWeight: 'bold',
@@ -221,7 +221,7 @@ export default async function CaseTypeDetailPage({
   };
 
   return (
-    <main style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }}>
+    <main style={{ background: 'var(--bg-base)', color: '#111111' }}>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -233,30 +233,30 @@ export default async function CaseTypeDetailPage({
         style={{
           padding: '16px 24px',
           borderBottom: '1px solid var(--border-default)',
-          background: 'var(--bg-surface)',
+          background: '#FFFFFF',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center' }}>
-            <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
+            <Link href="/" style={{ color: '#8B5CF6', textDecoration: 'none' }}>
               Home
             </Link>
-            <span style={{ color: 'var(--fg-muted)' }}>›</span>
+            <span style={{ color: '#6B7280' }}>›</span>
             <Link
               href="/cases"
-              style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}
+              style={{ color: '#8B5CF6', textDecoration: 'none' }}
             >
               Cases
             </Link>
-            <span style={{ color: 'var(--fg-muted)' }}>›</span>
+            <span style={{ color: '#6B7280' }}>›</span>
             <Link
               href={`/cases/${category}`}
-              style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}
+              style={{ color: '#8B5CF6', textDecoration: 'none' }}
             >
               {getCategoryLabel(category)}
             </Link>
-            <span style={{ color: 'var(--fg-muted)' }}>›</span>
-            <span style={{ color: 'var(--fg-primary)' }}>{caseType.label}</span>
+            <span style={{ color: '#6B7280' }}>›</span>
+            <span style={{ color: '#111111' }}>{caseType.label}</span>
           </div>
         </div>
       </nav>
@@ -281,11 +281,11 @@ export default async function CaseTypeDetailPage({
                 display: 'inline-block',
                 padding: '6px 12px',
                 borderRadius: '6px',
-                background: 'var(--bg-surface)',
+                background: '#FFFFFF',
                 border: '1px solid var(--border-default)',
                 fontSize: '12px',
                 fontWeight: '600',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
               }}
             >
               NOS {caseType.nosCode}
@@ -294,7 +294,7 @@ export default async function CaseTypeDetailPage({
           <h2
             style={{
               fontSize: '18px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               margin: '0',
               fontWeight: 'normal',
             }}
@@ -322,7 +322,7 @@ export default async function CaseTypeDetailPage({
         {/* Description Section */}
         <div
           style={{
-            background: 'var(--bg-surface)',
+            background: '#FFFFFF',
             border: '1px solid var(--border-default)',
             borderRadius: '12px',
             padding: '32px',
@@ -342,7 +342,7 @@ export default async function CaseTypeDetailPage({
           <p
             style={{
               lineHeight: '1.6',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               margin: '0',
               fontFamily: 'var(--font-body)',
             }}
@@ -363,7 +363,7 @@ export default async function CaseTypeDetailPage({
           {/* Federal Law */}
           <div
             style={{
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
               border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '24px',
@@ -382,7 +382,7 @@ export default async function CaseTypeDetailPage({
             <p
               style={{
                 fontSize: '15px',
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 margin: '0',
               }}
             >
@@ -393,7 +393,7 @@ export default async function CaseTypeDetailPage({
           {/* Typical Claims */}
           <div
             style={{
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
               border: '1px solid var(--border-default)',
               borderRadius: '12px',
               padding: '24px',
@@ -429,7 +429,7 @@ export default async function CaseTypeDetailPage({
                     style={{
                       position: 'absolute',
                       left: '0',
-                      color: 'var(--accent-primary)',
+                      color: '#8B5CF6',
                     }}
                   >
                     •
@@ -444,7 +444,7 @@ export default async function CaseTypeDetailPage({
         {/* CTA Section */}
         <div
           style={{
-            background: 'linear-gradient(135deg, var(--accent-primary), rgba(51, 51, 51, 0.8))',
+            background: 'linear-gradient(135deg, #8B5CF6, rgba(51, 51, 51, 0.8))',
             color: 'white',
             borderRadius: '12px',
             padding: '40px',
@@ -477,7 +477,7 @@ export default async function CaseTypeDetailPage({
               padding: '12px 32px',
               borderRadius: '8px',
               background: 'white',
-              color: 'var(--accent-primary)',
+              color: '#8B5CF6',
               textDecoration: 'none',
               fontWeight: 'bold',
               fontSize: '16px',
@@ -525,7 +525,7 @@ export default async function CaseTypeDetailPage({
                   style={{
                     padding: '16px',
                     borderRadius: '8px',
-                    background: 'var(--bg-surface)',
+                    background: '#FFFFFF',
                     border: '1px solid var(--border-default)',
                     textDecoration: 'none',
                     color: 'inherit',
@@ -533,19 +533,19 @@ export default async function CaseTypeDetailPage({
                   }}
                   onMouseEnter={(e) => {
                     const target = e.currentTarget as HTMLElement;
-                    target.style.borderColor = 'var(--accent-primary)';
+                    target.style.borderColor = '#8B5CF6';
                     target.style.background = 'var(--bg-base)';
                   }}
                   onMouseLeave={(e) => {
                     const target = e.currentTarget as HTMLElement;
                     target.style.borderColor = 'var(--border-default)';
-                    target.style.background = 'var(--bg-surface)';
+                    target.style.background = '#FFFFFF';
                   }}
                 >
                   <h3 style={{ fontSize: '14px', fontWeight: 'bold', margin: '0' }}>
                     {related.label}
                   </h3>
-                  <p style={{ fontSize: '12px', color: 'var(--fg-muted)', margin: '4px 0 0' }}>
+                  <p style={{ fontSize: '12px', color: '#6B7280', margin: '4px 0 0' }}>
                     NOS {related.nosCode}
                   </p>
                 </Link>

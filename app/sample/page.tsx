@@ -70,7 +70,7 @@ export default function SampleReportPage() {
       <div
         style={{
           backgroundColor: 'var(--bg-base)',
-          color: 'var(--fg-primary)',
+          color: '#111111',
           minHeight: '100vh',
         }}
       >
@@ -130,13 +130,13 @@ export default function SampleReportPage() {
               gap: '8px',
               marginBottom: '32px',
               fontSize: '14px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
             }}
           >
             <a
               href="/"
               style={{
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 textDecoration: 'none',
               }}
               className="sample-breadcrumb-link"
@@ -144,7 +144,7 @@ export default function SampleReportPage() {
               Home
             </a>
             <span>→</span>
-            <span style={{ color: 'var(--fg-primary)' }}>Sample Report</span>
+            <span style={{ color: '#111111' }}>Sample Report</span>
           </nav>
 
           {/* Page Header */}
@@ -163,7 +163,7 @@ export default function SampleReportPage() {
             <p
               style={{
                 fontSize: '18px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 margin: 0,
                 fontFamily: 'var(--font-body)',
               }}
@@ -180,7 +180,7 @@ export default function SampleReportPage() {
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
                 marginBottom: '32px',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               Win Rate Analysis
@@ -195,7 +195,7 @@ export default function SampleReportPage() {
             >
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -205,7 +205,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -227,7 +227,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                     fontFamily: 'var(--font-mono)',
                   }}
@@ -238,7 +238,7 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -248,7 +248,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -270,7 +270,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                   }}
                 >
@@ -280,7 +280,7 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -290,7 +290,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -303,7 +303,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 700,
                     fontFamily: 'var(--font-mono)',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -312,7 +312,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                   }}
                 >
@@ -323,7 +323,7 @@ export default function SampleReportPage() {
             <p
               style={{
                 fontSize: '13px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 margin: '0 0 24px 0',
                 fontFamily: 'var(--font-mono)',
               }}
@@ -334,7 +334,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-secondary)',
+                color: '#7C3AED',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -351,14 +351,14 @@ export default function SampleReportPage() {
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
                 marginBottom: '32px',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               Settlement Range
             </h2>
             <div
               style={{
-                backgroundColor: 'var(--bg-surface)',
+                backgroundColor: '#FFFFFF',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 padding: '32px 24px',
@@ -393,7 +393,7 @@ export default function SampleReportPage() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     fontSize: '12px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                   }}
                 >
                   <div style={{ textAlign: 'center' }}>
@@ -432,7 +432,7 @@ export default function SampleReportPage() {
               <p
                 style={{
                   fontSize: '13px',
-                  color: 'var(--fg-muted)',
+                  color: '#6B7280',
                   margin: 0,
                   lineHeight: 1.5,
                 }}
@@ -445,7 +445,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-secondary)',
+                color: '#7C3AED',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -462,7 +462,7 @@ export default function SampleReportPage() {
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
                 marginBottom: '32px',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               Case Timeline
@@ -477,7 +477,7 @@ export default function SampleReportPage() {
             >
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -487,7 +487,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -500,7 +500,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 700,
                     fontFamily: 'var(--font-mono)',
-                    color: 'var(--fg-primary)',
+                    color: '#111111',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -509,7 +509,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                   }}
                 >
@@ -519,7 +519,7 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -529,7 +529,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -542,7 +542,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 700,
                     fontFamily: 'var(--font-mono)',
-                    color: 'var(--fg-primary)',
+                    color: '#111111',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -551,7 +551,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                   }}
                 >
@@ -561,7 +561,7 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -571,7 +571,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -584,7 +584,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 700,
                     fontFamily: 'var(--font-mono)',
-                    color: 'var(--fg-primary)',
+                    color: '#111111',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -593,7 +593,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                   }}
                 >
@@ -605,7 +605,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-secondary)',
+                color: '#7C3AED',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -622,14 +622,14 @@ export default function SampleReportPage() {
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
                 marginBottom: '32px',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               Judge Analytics — Top 5 S.D.N.Y. Judges
             </h2>
             <div
               style={{
-                backgroundColor: 'var(--bg-surface)',
+                backgroundColor: '#FFFFFF',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 overflow: 'hidden',
@@ -655,7 +655,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'left',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -668,7 +668,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -681,7 +681,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -694,7 +694,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -707,7 +707,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -766,7 +766,7 @@ export default function SampleReportPage() {
                         style={{
                           padding: '16px 24px',
                           fontWeight: 500,
-                          color: 'var(--fg-primary)',
+                          color: '#111111',
                         }}
                       >
                         {judge.name}
@@ -776,7 +776,7 @@ export default function SampleReportPage() {
                           padding: '16px 24px',
                           textAlign: 'center',
                           fontFamily: 'var(--font-mono)',
-                          color: 'var(--fg-muted)',
+                          color: '#6B7280',
                         }}
                       >
                         {judge.appointed}
@@ -797,7 +797,7 @@ export default function SampleReportPage() {
                           padding: '16px 24px',
                           textAlign: 'center',
                           fontFamily: 'var(--font-mono)',
-                          color: 'var(--fg-muted)',
+                          color: '#6B7280',
                         }}
                       >
                         {judge.mgrRate}
@@ -807,7 +807,7 @@ export default function SampleReportPage() {
                           padding: '16px 24px',
                           textAlign: 'center',
                           fontFamily: 'var(--font-mono)',
-                          color: 'var(--fg-muted)',
+                          color: '#6B7280',
                         }}
                       >
                         {judge.duration}
@@ -821,7 +821,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-secondary)',
+                color: '#7C3AED',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -838,7 +838,7 @@ export default function SampleReportPage() {
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
                 marginBottom: '32px',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               Attorney Impact
@@ -853,7 +853,7 @@ export default function SampleReportPage() {
             >
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -863,7 +863,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -885,7 +885,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                   }}
                 >
@@ -895,7 +895,7 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -905,7 +905,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -927,7 +927,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                   }}
                 >
@@ -937,7 +937,7 @@ export default function SampleReportPage() {
 
               <div
                 style={{
-                  backgroundColor: 'var(--bg-surface)',
+                  backgroundColor: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: '12px',
                   padding: '24px',
@@ -947,7 +947,7 @@ export default function SampleReportPage() {
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     margin: '0 0 12px 0',
@@ -960,7 +960,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 700,
                     fontFamily: 'var(--font-mono)',
-                    color: 'var(--accent-primary)',
+                    color: '#8B5CF6',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -969,7 +969,7 @@ export default function SampleReportPage() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: 0,
                   }}
                 >
@@ -981,7 +981,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-secondary)',
+                color: '#7C3AED',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -998,14 +998,14 @@ export default function SampleReportPage() {
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
                 marginBottom: '32px',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               District Comparison
             </h2>
             <div
               style={{
-                backgroundColor: 'var(--bg-surface)',
+                backgroundColor: '#FFFFFF',
                 border: '1px solid var(--border-default)',
                 borderRadius: '12px',
                 overflow: 'hidden',
@@ -1031,7 +1031,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'left',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -1044,7 +1044,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -1057,7 +1057,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -1070,7 +1070,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -1083,7 +1083,7 @@ export default function SampleReportPage() {
                         padding: '16px 24px',
                         textAlign: 'center',
                         fontWeight: 600,
-                        color: 'var(--fg-muted)',
+                        color: '#6B7280',
                         fontSize: '12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
@@ -1136,7 +1136,7 @@ export default function SampleReportPage() {
                         style={{
                           padding: '16px 24px',
                           fontWeight: 500,
-                          color: 'var(--fg-primary)',
+                          color: '#111111',
                         }}
                       >
                         {row.district}
@@ -1157,7 +1157,7 @@ export default function SampleReportPage() {
                           padding: '16px 24px',
                           textAlign: 'center',
                           fontFamily: 'var(--font-mono)',
-                          color: 'var(--fg-muted)',
+                          color: '#6B7280',
                         }}
                       >
                         {row.settlement}
@@ -1167,7 +1167,7 @@ export default function SampleReportPage() {
                           padding: '16px 24px',
                           textAlign: 'center',
                           fontFamily: 'var(--font-mono)',
-                          color: 'var(--fg-muted)',
+                          color: '#6B7280',
                         }}
                       >
                         {row.duration}
@@ -1177,7 +1177,7 @@ export default function SampleReportPage() {
                           padding: '16px 24px',
                           textAlign: 'center',
                           fontFamily: 'var(--font-mono)',
-                          color: 'var(--fg-muted)',
+                          color: '#6B7280',
                         }}
                       >
                         {row.sampleSize}
@@ -1191,7 +1191,7 @@ export default function SampleReportPage() {
               href="/cases"
               style={{
                 fontSize: '13px',
-                color: 'var(--accent-secondary)',
+                color: '#7C3AED',
                 textDecoration: 'none',
               }}
               className="sample-section-link"
@@ -1207,7 +1207,7 @@ export default function SampleReportPage() {
                 href="/cases?category=work"
                 style={{
                   display: 'inline-block',
-                  backgroundColor: 'var(--accent-primary)',
+                  backgroundColor: '#8B5CF6',
                   color: '#fff',
                   padding: '16px 32px',
                   borderRadius: '8px',
@@ -1229,7 +1229,7 @@ export default function SampleReportPage() {
       {/* Hover styles (CSS-only, no event handlers needed in Server Component) */}
       <style dangerouslySetInnerHTML={{ __html: `
         .sample-banner-cta:hover { background-color: #f3f4f6 !important; }
-        .sample-breadcrumb-link:hover { color: var(--fg-primary) !important; }
+        .sample-breadcrumb-link:hover { color: #111111 !important; }
         .sample-section-link:hover { text-decoration: underline !important; }
         .sample-cta-btn:hover { opacity: 0.9; }
       `}} />

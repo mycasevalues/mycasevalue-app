@@ -22,7 +22,7 @@ export class PageErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('PageErrorBoundary caught error:', error, errorInfo);
+    /* silent */
   }
 
   render() {

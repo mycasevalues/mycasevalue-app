@@ -4,11 +4,11 @@ import { useState } from 'react';
 
 const btnStyle: React.CSSProperties = {
   padding: '6px 14px',
-  background: 'var(--bg-surface)',
+  background: '#FFFFFF',
   border: '1px solid var(--border-default)',
   borderRadius: '6px',
   fontSize: '13px',
-  color: 'var(--fg-primary)',
+  color: '#111111',
   textDecoration: 'none',
   cursor: 'pointer',
   fontFamily: 'var(--font-body)',

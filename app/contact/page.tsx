@@ -17,7 +17,7 @@ export default function ContactPage() {
           style={{
             fontSize: 'clamp(28px, 4vw, 40px)',
             fontWeight: 800,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-1px',
             marginBottom: 12,
@@ -28,7 +28,7 @@ export default function ContactPage() {
         <p
           style={{
             fontSize: 16,
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-body)',
             lineHeight: 1.7,
             marginBottom: 48,
@@ -44,14 +44,14 @@ export default function ContactPage() {
               padding: 32,
               borderRadius: 12,
               border: '1px solid var(--border-default)',
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
             }}
           >
             <h2
               style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 8,
               }}
@@ -61,7 +61,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 14,
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 fontFamily: 'var(--font-body)',
                 lineHeight: 1.6,
                 marginBottom: 16,
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 gap: 8,
                 fontSize: 15,
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: '#8B5CF6',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
               }}
@@ -96,14 +96,14 @@ export default function ContactPage() {
               padding: 32,
               borderRadius: 12,
               border: '1px solid var(--border-default)',
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
             }}
           >
             <h2
               style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 8,
               }}
@@ -113,7 +113,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 14,
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 fontFamily: 'var(--font-body)',
                 lineHeight: 1.6,
                 marginBottom: 16,
@@ -129,7 +129,7 @@ export default function ContactPage() {
                 gap: 8,
                 fontSize: 15,
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: '#8B5CF6',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
               }}
@@ -148,14 +148,14 @@ export default function ContactPage() {
               padding: 32,
               borderRadius: 12,
               border: '1px solid var(--border-default)',
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
             }}
           >
             <h2
               style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 8,
               }}
@@ -165,7 +165,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 14,
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 fontFamily: 'var(--font-body)',
                 lineHeight: 1.6,
                 marginBottom: 16,
@@ -181,7 +181,7 @@ export default function ContactPage() {
                 gap: 8,
                 fontSize: 15,
                 fontWeight: 600,
-                color: 'var(--accent-primary)',
+                color: '#8B5CF6',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
               }}
@@ -200,7 +200,7 @@ export default function ContactPage() {
         <p
           style={{
             fontSize: 13,
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-body)',
             textAlign: 'center',
             marginTop: 48,

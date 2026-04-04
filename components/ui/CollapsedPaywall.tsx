@@ -63,7 +63,7 @@ export function CollapsedPaywall({
     <div
       className="relative rounded-xl overflow-hidden"
       style={{
-        backgroundColor: 'var(--bg-surface)',
+        backgroundColor: '#FFFFFF',
         border: '1px solid var(--border-subtle)',
       }}
     >
@@ -83,7 +83,7 @@ export function CollapsedPaywall({
         className="absolute bottom-0 left-0 right-0 pointer-events-none"
         style={{
           height: '100px',
-          background: `linear-gradient(to bottom, transparent 0%, var(--bg-surface) 100%)`,
+          background: `linear-gradient(to bottom, transparent 0%, #FFFFFF 100%)`,
         }}
       />
 
@@ -91,14 +91,14 @@ export function CollapsedPaywall({
       <div
         className="relative px-6 py-8 border-t"
         style={{
-          backgroundColor: 'var(--bg-surface)',
+          backgroundColor: '#FFFFFF',
           borderColor: 'var(--border-subtle)',
         }}
       >
         {/* Title */}
         <h3
           className="text-center text-lg font-bold font-['Roboto'] mb-4"
-          style={{ color: 'var(--fg-primary)' }}
+          style={{ color: '#111111' }}
         >
           {t.unlockTitle}
         </h3>
@@ -118,7 +118,7 @@ export function CollapsedPaywall({
             >
               <svg
                 className="w-4 h-4 flex-shrink-0"
-                style={{ color: 'var(--accent-primary)' }}
+                style={{ color: '#8B5CF6' }}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -136,7 +136,7 @@ export function CollapsedPaywall({
             className="inline-block px-3 py-1 rounded-full text-sm font-bold"
             style={{
               backgroundColor: 'var(--accent-primary-subtle)',
-              color: 'var(--accent-primary)',
+              color: '#8B5CF6',
             }}
           >
             {price}
@@ -148,7 +148,7 @@ export function CollapsedPaywall({
           onClick={onUnlock}
           className="w-full h-11 rounded-lg font-semibold text-white transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 active:scale-[0.98] hover:-translate-y-0.5"
           style={{
-            background: 'linear-gradient(135deg, var(--accent-primary), #333333)',
+            background: 'linear-gradient(135deg, #8B5CF6, #333333)',
           }}
           aria-label={t.ctaButton}
         >
@@ -158,7 +158,7 @@ export function CollapsedPaywall({
         {/* Trust Badge */}
         <p
           className="mt-4 text-center text-xs font-medium"
-          style={{ color: 'var(--fg-muted)' }}
+          style={{ color: '#6B7280' }}
         >
            {t.trustBadge}
         </p>

@@ -54,19 +54,19 @@
 
 /* Variants */
 .mcv-btn--primary {
-  background: var(--accent-primary);
-  color: var(--fg-inverse);
+  background: #8B5CF6;
+  color: #FFFFFF;
   box-shadow: var(--shadow-xs);
 }
 .mcv-btn--primary:hover:not(:disabled) {
   background: var(--accent-primary-hover);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   transform: translateY(-1px);
 }
 
 .mcv-btn--secondary {
-  background: var(--bg-surface);
-  color: var(--fg-primary);
+  background: #FFFFFF;
+  color: #111111;
   border: 1.5px solid var(--border-default);
 }
 .mcv-btn--secondary:hover:not(:disabled) {
@@ -81,11 +81,11 @@
 }
 .mcv-btn--ghost:hover:not(:disabled) {
   background: var(--accent-primary-subtle);
-  color: var(--fg-primary);
+  color: #111111;
 }
 
 .mcv-btn--accent {
-  background: var(--accent-secondary);
+  background: #7C3AED;
   color: #FFFFFF;
   box-shadow: var(--shadow-accent);
 }
@@ -121,7 +121,7 @@
 
 /* ── CARD ────────────────────────────────────────────────── */
 .mcv-card {
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border-radius: var(--r-card);
   transition:
     transform var(--duration-base) var(--ease-out-expo),
@@ -134,12 +134,12 @@
   box-shadow: var(--shadow-xs);
 }
 .mcv-card--default:hover {
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
 .mcv-card--elevated {
   border: 1px solid transparent;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .mcv-card--elevated:hover {
   box-shadow: var(--shadow-lg);
@@ -161,7 +161,7 @@
 }
 .mcv-card--interactive:hover {
   border-color: var(--accent-secondary-border);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transform: translateY(-2px);
 }
 .mcv-card--interactive:active {
@@ -169,7 +169,7 @@
 }
 
 .mcv-card--accent {
-  border: 2px solid var(--accent-secondary);
+  border: 2px solid #7C3AED;
   box-shadow: var(--shadow-accent);
 }
 
@@ -227,7 +227,7 @@
   padding: 0 16px;
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--fg-primary);
+  color: #111111;
   background: var(--bg-input);
   border: 1.5px solid var(--border-default);
   border-radius: var(--r-lg);
@@ -250,7 +250,7 @@
 }
 
 .mcv-input:focus {
-  border-color: var(--accent-primary);
+  border-color: #8B5CF6;
   box-shadow: 0 0 0 3px var(--accent-primary-glow);
 }
 
@@ -278,7 +278,7 @@
 
 .mcv-input__hint {
   font-size: 12px;
-  color: var(--fg-muted);
+  color: #6B7280;
   margin: 0;
 }
 
@@ -317,13 +317,13 @@
 .mcv-badge--warning  { background: var(--warning-subtle); color: var(--warning); }
 .mcv-badge--danger   { background: var(--danger-subtle); color: var(--danger); }
 .mcv-badge--info     { background: var(--info-subtle); color: var(--info); }
-.mcv-badge--accent   { background: var(--accent-secondary-subtle); color: var(--accent-secondary); }
+.mcv-badge--accent   { background: var(--accent-secondary-subtle); color: #7C3AED; }
 .mcv-badge--outline  { background: transparent; color: var(--fg-secondary); border: 1px solid var(--border-default); }
 
 
 /* ── STAT CARD ───────────────────────────────────────────── */
 .mcv-stat-card {
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border: 1px solid var(--border-default);
   border-radius: var(--r-card);
   padding: 24px;
@@ -331,7 +331,7 @@
 }
 
 .mcv-stat-card:hover {
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   transform: translateY(-1px);
 }
 
@@ -351,7 +351,7 @@
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  color: var(--fg-muted);
+  color: #6B7280;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -360,7 +360,7 @@
   font-family: var(--font-mono);
   font-size: 32px;
   font-weight: 700;
-  color: var(--fg-primary);
+  color: #111111;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -380,13 +380,13 @@
 
 .mcv-stat-card__sublabel {
   font-size: 12px;
-  color: var(--fg-muted);
+  color: #6B7280;
 }
 
 
 /* ── GATE CARD (PAYWALL) ─────────────────────────────────── */
 .mcv-gate-card {
-  background: var(--bg-surface);
+  background: #FFFFFF;
   border: 2px solid var(--border-default);
   border-radius: var(--r-xl);
   padding: 24px;
@@ -421,14 +421,14 @@
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 700;
-  color: var(--fg-primary);
+  color: #111111;
   margin: 0;
   letter-spacing: -0.02em;
 }
 
 .mcv-gate-card__desc {
   font-size: 14px;
-  color: var(--fg-muted);
+  color: #6B7280;
   line-height: 1.6;
   margin: 0;
 }
@@ -456,7 +456,7 @@
   overflow-x: auto;
   border: 1px solid var(--border-default);
   border-radius: var(--r-card);
-  background: var(--bg-surface);
+  background: #FFFFFF;
 }
 
 .mcv-table {
@@ -470,7 +470,7 @@
   padding: 12px 16px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--fg-muted);
+  color: #6B7280;
   text-align: left;
   caption-side: top;
 }
@@ -479,7 +479,7 @@
   padding: 12px 16px;
   font-size: 12px;
   font-weight: 700;
-  color: var(--fg-muted);
+  color: #6B7280;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: var(--bg-elevated);
@@ -513,7 +513,7 @@
 
 .mcv-table__td {
   padding: 12px 16px;
-  color: var(--fg-primary);
+  color: #111111;
   border-bottom: 1px solid var(--border-subtle);
   vertical-align: middle;
 }
@@ -542,7 +542,7 @@
 .mcv-table__empty {
   padding: 40px 16px;
   text-align: center;
-  color: var(--fg-muted);
+  color: #6B7280;
   font-style: italic;
 }
 
@@ -569,15 +569,6 @@
 
 
 /* ── SSR HERO CONTAINER ──────────────────────────────────── */
-.ssr-hero-container[data-mcv-loaded] {
-  display: none;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
 
 
 /* ── AUTH PAGE STYLES (Server Component safe) ────────────── */

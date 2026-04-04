@@ -73,7 +73,7 @@ export function RiskAssessmentQuiz({
             <div className="text-xl font-semibold mb-2" style={{ color: strengthColor }}>
               {strengthLabel}
             </div>
-            <p className="text-sm text-[var(--fg-muted)] mb-6">
+            <p className="text-sm text-[#6B7280] mb-6">
               {lang === 'es'
                 ? 'Basado en tus respuestas, aquí está tu estimación de fortaleza del caso.'
                 : "Based on your answers, here's your case strength estimate."}
@@ -106,7 +106,7 @@ export function RiskAssessmentQuiz({
     >
       <div className="card-bg bg-[#FFFFFF] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
         <div className="mb-6">
-          <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-3 uppercase">
+          <div className="text-[10px] font-bold text-[#6B7280] tracking-[2px] mb-3 uppercase">
             {lang === 'es' ? 'EVALUACIÓN RÁPIDA' : 'Quick Assessment'}
           </div>
           <div className="text-2xl font-display font-bold" id="quiz-title">
@@ -132,7 +132,7 @@ export function RiskAssessmentQuiz({
             className="flex-1 px-4 py-3 font-semibold rounded-xl cursor-pointer border-[1.5px] transition-all hover:scale-[1.02]"
             style={{
               borderColor: 'var(--border-default)',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               background: '#FFFFFF',
             }}
           >
@@ -148,7 +148,7 @@ export function RiskAssessmentQuiz({
         </div>
         <button type="button"
           onClick={onClose}
-          className="w-full mt-3 px-4 py-2 text-sm font-medium text-[var(--fg-muted)] rounded-xl cursor-pointer hover:bg-[var(--bg-elevated)] transition-colors"
+          className="w-full mt-3 px-4 py-2 text-sm font-medium text-[#6B7280] rounded-xl cursor-pointer hover:bg-[var(--bg-elevated)] transition-colors"
         >
           {lang === 'es' ? 'Omitir' : 'Skip'}
         </button>

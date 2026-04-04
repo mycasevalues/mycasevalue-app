@@ -112,7 +112,6 @@ export function PushNotificationPrompt({
         setIsVisible(false);
       }
     } catch (err) {
-      console.error('[Push Prompt] Error subscribing:', err);
       setPushDismissCookie(3);
       setIsVisible(false);
     } finally {
@@ -129,7 +128,7 @@ export function PushNotificationPrompt({
     <div
       className="fixed bottom-4 right-4 w-full max-w-sm mx-4 md:mx-0 rounded-lg shadow-lg border p-4 z-50 animate-slide-up"
       style={{
-        backgroundColor: 'var(--bg-surface)',
+        backgroundColor: '#FFFFFF',
         borderColor: 'var(--border-subtle)',
       }}
       role="status"
@@ -139,7 +138,7 @@ export function PushNotificationPrompt({
       {/* Title */}
       <h3
         className="font-semibold text-sm mb-1"
-        style={{ color: 'var(--fg-primary)' }}
+        style={{ color: '#111111' }}
       >
         {t.title}
       </h3>
@@ -161,7 +160,7 @@ export function PushNotificationPrompt({
           style={{
             background: isLoading
               ? 'var(--accent-primary-hover)'
-              : 'linear-gradient(135deg, var(--accent-primary), #333333)',
+              : 'linear-gradient(135deg, #8B5CF6, #333333)',
           }}
           aria-busy={isLoading}
         >
@@ -198,7 +197,7 @@ export function PushNotificationPrompt({
           className="flex-1 h-9 px-3 rounded-lg font-medium text-sm transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
           style={{
             backgroundColor: 'var(--bg-base)',
-            color: 'var(--fg-primary)',
+            color: '#111111',
             border: '1px solid var(--border-default)',
           }}
         >

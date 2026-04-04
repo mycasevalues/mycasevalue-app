@@ -36,7 +36,7 @@ export default function ReportSidebar({
     {
       label: lang === 'es' ? 'Duración mediana' : 'Median Duration',
       value: `${Math.round(medianDays / 30)}mo`,
-      color: 'var(--fg-primary)',
+      color: '#111111',
     },
     {
       label: lang === 'es' ? 'Tasa de acuerdo' : 'Settlement Rate',
@@ -55,9 +55,9 @@ export default function ReportSidebar({
         height: 'fit-content',
         maxHeight: 'calc(100vh - 140px)',
         overflowY: 'auto',
-        background: 'var(--bg-surface)',
+        background: '#FFFFFF',
         border: '1px solid var(--border-default)',
-        borderRadius: 'var(--radius-lg)',
+        borderRadius: '12px',
         padding: 'var(--space-5)',
         flexShrink: 0,
       }}
@@ -67,7 +67,7 @@ export default function ReportSidebar({
         fontFamily: 'Outfit, sans-serif',
         fontSize: 'var(--text-base)',
         fontWeight: 600,
-        color: 'var(--fg-primary)',
+        color: '#111111',
         margin: 0,
         textTransform: 'capitalize',
       }}>
@@ -81,7 +81,7 @@ export default function ReportSidebar({
         padding: '2px 10px',
         fontSize: 'var(--text-xs)',
         fontWeight: 500,
-        color: 'var(--fg-muted)',
+        color: '#6B7280',
         background: 'var(--bg-elevated)',
         borderRadius: 'var(--radius-full)',
       }}>
@@ -97,7 +97,7 @@ export default function ReportSidebar({
           <div key={s.label}>
             <div style={{
               fontSize: 'var(--text-xs)',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               fontWeight: 500,
               letterSpacing: '0.01em',
               marginBottom: 2,
@@ -137,10 +137,10 @@ export default function ReportSidebar({
                 fontSize: 'var(--text-sm)',
                 fontFamily: 'Outfit, sans-serif',
                 fontWeight: isActive ? 600 : 400,
-                color: isActive ? 'var(--accent-primary)' : 'var(--fg-muted)',
+                color: isActive ? '#8B5CF6' : '#6B7280',
                 background: 'transparent',
                 border: 'none',
-                borderLeft: isActive ? '2px solid var(--accent-primary)' : '2px solid transparent',
+                borderLeft: isActive ? '2px solid #8B5CF6' : '2px solid transparent',
                 cursor: 'pointer',
                 borderRadius: 0,
                 transition: 'all var(--duration-fast) var(--ease-out)',
@@ -159,12 +159,12 @@ export default function ReportSidebar({
           <div style={{
             padding: 'var(--space-4)',
             background: 'var(--accent-primary-subtle)',
-            borderRadius: 'var(--radius-md)',
+            borderRadius: '8px',
           }}>
             <div style={{
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               marginBottom: 'var(--space-2)',
             }}>
               {lang === 'es' ? 'Desbloquea datos completos' : 'Unlock full data'}
@@ -174,7 +174,7 @@ export default function ReportSidebar({
               padding: 0,
               margin: '0 0 var(--space-3) 0',
               fontSize: 'var(--text-xs)',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
             }}>
               <li style={{ marginBottom: 4 }}> {lang === 'es' ? 'Análisis de jueces' : 'Judge analytics'}</li>
               <li> {lang === 'es' ? 'Informe PDF descargable' : 'Downloadable PDF report'}</li>
@@ -187,9 +187,9 @@ export default function ReportSidebar({
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
                 color: '#fff',
-                background: 'var(--accent-primary)',
+                background: '#8B5CF6',
                 border: 'none',
-                borderRadius: 'var(--radius-md)',
+                borderRadius: '8px',
                 cursor: 'pointer',
               }}
             >

@@ -158,11 +158,11 @@ export function Navbar({
                 const ev = new KeyboardEvent('keydown', { key: 'k', metaKey: true, ctrlKey: true, bubbles: true });
                 window.dispatchEvent(ev);
               }}
-              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border cursor-pointer no-print hover:border-[var(--accent-primary)] transition-colors"
+              className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border cursor-pointer no-print hover:border-[#8B5CF6] transition-colors"
               style={{
-                background: 'var(--bg-surface)',
+                background: '#FFFFFF',
                 borderColor: 'var(--border-default)',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 fontSize: 'var(--text-xs)',
               }}
               aria-label={lang === 'es' ? 'Buscar (Ctrl+K)' : 'Search (Cmd+K)'}

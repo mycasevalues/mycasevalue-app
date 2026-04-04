@@ -189,10 +189,10 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
           <p className="text-[11px] font-bold tracking-[3px] uppercase mb-3" style={{ color: 'var(--fg-subtle)' }}>
             {lang === 'es' ? 'POR QUE NOSOTROS' : 'WHY US'}
           </p>
-          <h2 className="font-display text-xl sm:text-2xl font-bold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+          <h2 className="font-display text-xl sm:text-2xl font-bold mb-2" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
             {lang === 'es' ? 'Lo que las herramientas de $400/mes no le dicen' : 'What $400/month tools won\'t tell you'}
           </h2>
-          <p className="text-[13px] max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-[13px] max-w-xl mx-auto" style={{ color: '#6B7280' }}>
             {lang === 'es' ? 'Construido para personas reales, no para grandes bufetes' : 'Built for real people, not BigLaw firms'}
           </p>
         </div>
@@ -201,8 +201,8 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
         <div className="flex flex-wrap justify-center gap-3 mb-6">
           {COMPETITORS.map((c, i) => (
             <div key={i} className="text-center px-3 py-2 rounded-lg" style={{ background: c.highlight ? 'rgba(17,17,17,0.1)' : 'rgba(255,255,255,0.4)', border: `1px solid ${c.highlight ? '#333333' : 'var(--border-default)'}` }}>
-              <div className="text-[11px] font-bold" style={{ color: c.highlight ? '#333333' : 'var(--fg-primary)' }}>{c.name}</div>
-              <div className="text-[16px] font-display font-extrabold" style={{ color: c.highlight ? '#10B981' : 'var(--fg-muted)' }}>
+              <div className="text-[11px] font-bold" style={{ color: c.highlight ? '#333333' : '#111111' }}>{c.name}</div>
+              <div className="text-[16px] font-display font-extrabold" style={{ color: c.highlight ? '#10B981' : '#6B7280' }}>
                 {countFeatures(c).toFixed(0)}/{FEATURES.length}
               </div>
             </div>
@@ -219,11 +219,11 @@ export default function CompetitorTable({ lang = 'en' }: CompetitorTableProps) {
                 </th>
                 {visibleCompetitors.map((c, i) => (
                   <th key={i} scope="col" className="text-center py-3 px-2" style={{
-                    borderBottom: c.highlight ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
+                    borderBottom: c.highlight ? '2px solid #8B5CF6' : '1px solid var(--border-default)',
                     background: c.highlight ? 'rgba(17,17,17,0.08)' : 'transparent',
                     minWidth: 80,
                   }}>
-                    <div className="text-[11px] font-bold" style={{ color: c.highlight ? 'var(--accent-primary)' : 'var(--fg-primary)' }}>{c.name}</div>
+                    <div className="text-[11px] font-bold" style={{ color: c.highlight ? '#8B5CF6' : '#111111' }}>{c.name}</div>
                     <div className="text-[9px] mt-0.5" style={{ color: 'var(--fg-subtle)' }}>{lang === 'es' ? c.price_es : c.price_en}</div>
                   </th>
                 ))}

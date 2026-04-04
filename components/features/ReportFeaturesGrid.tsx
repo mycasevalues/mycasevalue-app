@@ -167,7 +167,7 @@ export function ReportFeaturesGrid({ lang = 'en' }: ReportFeaturesGridProps) {
             )}
           </div>
           <div className="text-[14px] font-semibold text-[var(--fg-secondary)]">{f.title}</div>
-          <div className="text-[12px] text-[var(--fg-muted)] mt-1">{f.desc}</div>
+          <div className="text-[12px] text-[#6B7280] mt-1">{f.desc}</div>
         </div>
       ))}
     </div>

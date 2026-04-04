@@ -151,7 +151,7 @@ export function StepHome({
                         <span className="text-[10px] font-bold tracking-[2px] uppercase" style={{ color: 'var(--accent-secondary, #8B5CF6)' }}>
                           {lang === 'es' ? 'COINCIDENCIAS INTELIGENTES' : 'SMART MATCHES'}
                         </span>
-                        <span className="text-[10px] ml-auto" style={{ color: 'var(--fg-muted)' }}>
+                        <span className="text-[10px] ml-auto" style={{ color: '#6B7280' }}>
                           {lang === 'es' ? 'Presiona Enter para seleccionar' : 'Press Enter to select top match'}
                         </span>
                       </div>
@@ -167,14 +167,14 @@ export function StepHome({
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="text-[13px] font-semibold truncate" style={{ color: '#111827' }}>{s.opt.label}</div>
-                            <div className="text-[11px] truncate" style={{ color: 'var(--fg-muted)' }}>{s.sit.label} · {s.opt.d}</div>
+                            <div className="text-[11px] truncate" style={{ color: '#6B7280' }}>{s.sit.label} · {s.opt.d}</div>
                           </div>
                           {i === 0 && (
                             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: 'rgba(17,17,17,0.15)', color: 'var(--accent-secondary, #8B5CF6)' }}>
                               {lang === 'es' ? 'Mejor' : 'Best match'}
                             </span>
                           )}
-                          <span className="text-[11px] font-data flex-shrink-0" style={{ color: 'var(--fg-muted)' }}>{Math.min(Math.round(s.score * 8), 99)}%</span>
+                          <span className="text-[11px] font-data flex-shrink-0" style={{ color: '#6B7280' }}>{Math.min(Math.round(s.score * 8), 99)}%</span>
                         </button>
                       ))}
                     </div>
@@ -329,7 +329,7 @@ export function StepHome({
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="font-extrabold text-[15px] truncate group-hover:text-[16px] transition-all" style={{ color: si.color, textShadow: `0 1px 3px ${si.color}10` }}>{si.label}</div>
-                          <div className="text-[11px] text-[var(--fg-muted)] mt-0.5 line-clamp-1 font-medium">{si.sub}</div>
+                          <div className="text-[11px] text-[#6B7280] mt-0.5 line-clamp-1 font-medium">{si.sub}</div>
                         </div>
                       </div>
                     </button>
@@ -337,13 +337,13 @@ export function StepHome({
                 </div>
                 {/* Search */}
                 <div className="mt-5 pt-4" style={{ borderTop: '1px solid var(--border-default)' }}>
-                  <div className="text-[11px] font-bold tracking-[2px] uppercase mb-3" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'O BUSCA TU TIPO DE CASO' : 'OR SEARCH YOUR CASE TYPE'}</div>
+                  <div className="text-[11px] font-bold tracking-[2px] uppercase mb-3" style={{ color: '#6B7280' }}>{lang === 'es' ? 'O BUSCA TU TIPO DE CASO' : 'OR SEARCH YOUR CASE TYPE'}</div>
                   <EnhancedSearch sits={SITS} lang={lang} onSelect={(opt: any) => {
                     const parentSit = SITS.find(s => s.opts.some((o: any) => o.nos === opt.nos && o.label === opt.label));
                     if (parentSit) { setSit(parentSit); setSpec(opt); setAmount(parentSit.dm); go(3); }
                   }} />
                 </div>
-                <div className="flex items-center justify-center mt-4 text-[11px] gap-1.5" style={{ color: 'var(--fg-muted)' }}>
+                <div className="flex items-center justify-center mt-4 text-[11px] gap-1.5" style={{ color: '#6B7280' }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="scroll-indicator"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
                   {lang === 'es' ? 'O desplázate para explorar datos' : 'Or scroll to explore data'}
                 </div>

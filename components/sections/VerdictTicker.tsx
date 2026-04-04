@@ -141,11 +141,11 @@ function TickerItem({ v }: { v: VerdictEntry }) {
       <span style={{ color: 'var(--border-default)' }}>·</span>
       <span style={{ color: 'var(--fg-secondary)', fontWeight: 500 }}>{v.caseType}</span>
       <span style={{ color: 'var(--border-default)' }}>·</span>
-      <span style={{ color: v.outcome.includes('Verdict') ? 'var(--accent-primary)' : 'var(--accent-secondary)', fontWeight: 600, fontSize: '11px' }}>{v.outcome}</span>
+      <span style={{ color: v.outcome.includes('Verdict') ? '#8B5CF6' : '#7C3AED', fontWeight: 600, fontSize: '11px' }}>{v.outcome}</span>
       <span style={{ color: 'var(--border-default)' }}>·</span>
       <span style={{ color: '#FFFFFF', fontWeight: 700, fontFamily: 'var(--font-mono)' }}>{v.amount}</span>
       <span style={{ color: 'var(--fg-subtle)', fontSize: '10px' }}>{v.year}</span>
-      <span style={{ display: 'inline-block', width: '3px', height: '3px', borderRadius: '50%', background: 'var(--accent-primary)', opacity: 0.4, marginLeft: '8px' }} />
+      <span style={{ display: 'inline-block', width: '3px', height: '3px', borderRadius: '50%', background: '#8B5CF6', opacity: 0.4, marginLeft: '8px' }} />
     </div>
   );
 }

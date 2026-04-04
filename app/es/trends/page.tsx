@@ -24,16 +24,16 @@ export default function SpanishTrendsPage() {
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <div className="max-w-5xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
+          <h1 className="text-4xl font-display font-bold mb-4" style={{ color: '#111111' }}>
             Tendencias en Casos Federales
           </h1>
-          <p className="text-lg" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg" style={{ color: '#6B7280' }}>
             Explora cómo están evolucionando los litigios federales año tras año.
           </p>
         </div>
 
         <div className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-          <p style={{ color: 'var(--fg-muted)' }}>
+          <p style={{ color: '#6B7280' }}>
             Espera a que se carguen los gráficos interactivos...
           </p>
         </div>

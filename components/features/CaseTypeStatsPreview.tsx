@@ -36,7 +36,7 @@ export function CaseTypeStatsPreview({ lang = 'en' }: CaseTypeStatsPreviewProps)
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               activeType === k
                 ? 'bg-[rgba(17,17,17,0.15)] text-[#8B5CF6] border border-[rgba(17,17,17,0.4)] shadow-[0_0_12px_rgba(17,17,17,0.15)]'
-                : 'bg-[var(--bg-elevated)] text-[var(--fg-muted)] border border-[var(--border-muted)] hover:bg-[rgba(17,17,17,0.08)] hover:text-[var(--fg-secondary)]'
+                : 'bg-[var(--bg-elevated)] text-[#6B7280] border border-[var(--border-muted)] hover:bg-[rgba(17,17,17,0.08)] hover:text-[var(--fg-secondary)]'
             }`}
             aria-selected={activeType === k}
           >
@@ -59,7 +59,7 @@ export function CaseTypeStatsPreview({ lang = 'en' }: CaseTypeStatsPreviewProps)
             <div className="text-2xl font-display font-bold" style={{ color: stat.c, letterSpacing: '-1px' }}>
               {stat.v}
             </div>
-            <div className="text-[11px] font-medium mt-1" style={{ color: 'var(--fg-muted)' }}>
+            <div className="text-[11px] font-medium mt-1" style={{ color: '#6B7280' }}>
               {stat.l}
             </div>
           </div>

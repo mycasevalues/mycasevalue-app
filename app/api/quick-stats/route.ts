@@ -261,7 +261,6 @@ export async function GET(
       },
     });
   } catch (error) {
-    console.error('[quick-stats] Error:', error);
     return NextResponse.json(
       {
         error: 'Internal server error',

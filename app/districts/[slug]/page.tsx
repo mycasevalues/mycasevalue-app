@@ -11,7 +11,7 @@ interface PageProps {
 // Dynamically import charts component to avoid SSR issues with recharts
 const DistrictCharts = dynamic(() => import('../../../components/features/DistrictCharts'), {
   ssr: false,
-  loading: () => <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--fg-muted)' }}>Loading charts...</div>,
+  loading: () => <div style={{ textAlign: 'center', padding: '2rem', color: '#6B7280' }}>Loading charts...</div>,
 });
 
 // Get all valid state IDs (excluding "All states" which has empty id)
@@ -67,17 +67,17 @@ export default async function DistrictPage({ params }: PageProps) {
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }}
+        style={{ background: 'var(--bg-base)', color: '#111111' }}
       >
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">District not found</h1>
-          <p className="mb-6" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-6" style={{ color: '#6B7280' }}>
             The district "{slug}" does not exist in our database.
           </p>
           <Link
             href="/districts"
             className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: 'linear-gradient(135deg, var(--accent-primary), #333333)' }}
+            style={{ background: 'linear-gradient(135deg, #8B5CF6, #333333)' }}
           >
             View All Districts
           </Link>
@@ -144,7 +144,7 @@ export default async function DistrictPage({ params }: PageProps) {
       className="min-h-screen"
       style={{
         background: 'var(--bg-base)',
-        color: 'var(--fg-primary)',
+        color: '#111111',
         fontFamily: "'Roboto', system-ui, sans-serif",
       }}
     >
@@ -161,20 +161,20 @@ export default async function DistrictPage({ params }: PageProps) {
           <Link
             href="/"
             className="font-semibold transition hover:opacity-80"
-            style={{ color: 'var(--accent-primary)' }}
+            style={{ color: '#8B5CF6' }}
           >
             Home
           </Link>
-          <span style={{ color: 'var(--fg-muted)' }}>→</span>
+          <span style={{ color: '#6B7280' }}>→</span>
           <Link
             href="/districts"
             className="font-semibold transition hover:opacity-80"
-            style={{ color: 'var(--accent-primary)' }}
+            style={{ color: '#8B5CF6' }}
           >
             Districts
           </Link>
-          <span style={{ color: 'var(--fg-muted)' }}>→</span>
-          <span style={{ color: 'var(--fg-primary)' }}>{state.label}</span>
+          <span style={{ color: '#6B7280' }}>→</span>
+          <span style={{ color: '#111111' }}>{state.label}</span>
         </div>
       </nav>
 
@@ -186,7 +186,7 @@ export default async function DistrictPage({ params }: PageProps) {
               className="px-3 py-1 rounded-full text-xs font-bold"
               style={{
                 background: 'rgba(17,17,17,0.12)',
-                color: 'var(--accent-primary)',
+                color: '#8B5CF6',
                 border: '1px solid rgba(17,17,17,0.2)',
               }}
             >
@@ -212,12 +212,12 @@ export default async function DistrictPage({ params }: PageProps) {
           </h1>
 
           {circuit && (
-            <p className="text-lg sm:text-xl max-w-2xl mb-4" style={{ color: 'var(--fg-muted)', lineHeight: 1.7 }}>
+            <p className="text-lg sm:text-xl max-w-2xl mb-4" style={{ color: '#6B7280', lineHeight: 1.7 }}>
               Part of the <strong>{circuit} Circuit</strong>
             </p>
           )}
 
-          <p className="text-lg sm:text-xl max-w-2xl" style={{ color: 'var(--fg-muted)', lineHeight: 1.7 }}>
+          <p className="text-lg sm:text-xl max-w-2xl" style={{ color: '#6B7280', lineHeight: 1.7 }}>
             Federal court outcome data for cases in {state.label}. Win rates, timelines, settlement percentages, and case
             statistics from public court records.
           </p>
@@ -236,7 +236,7 @@ export default async function DistrictPage({ params }: PageProps) {
             {
               label: 'Top Case Type',
               value: districtStats.topCaseType.split(' ')[0],
-              color: 'var(--accent-primary)',
+              color: '#8B5CF6',
             },
             {
               label: 'Plaintiff Win Rate',
@@ -253,7 +253,7 @@ export default async function DistrictPage({ params }: PageProps) {
               key={i}
               className="rounded-[12px] p-6 text-center"
               style={{
-                background: 'var(--bg-surface)',
+                background: '#FFFFFF',
                 border: '1px solid var(--border-default)',
               }}
             >
@@ -273,7 +273,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 style={{
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--fg-muted)',
+                  color: '#6B7280',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                 }}
@@ -292,16 +292,16 @@ export default async function DistrictPage({ params }: PageProps) {
             <div
               className="rounded-[12px] p-6 sm:p-8"
               style={{
-                background: 'var(--bg-surface)',
+                background: '#FFFFFF',
                 border: '1px solid var(--border-default)',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ color: '#111111' }}>
                 {circuit} Circuit Overview
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
                 <div>
-                  <div style={{ fontSize: '12px', color: 'var(--fg-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
+                  <div style={{ fontSize: '12px', color: '#6B7280', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
                     Active Judges
                   </div>
                   <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: "'PT Mono', monospace" }}>
@@ -309,7 +309,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', color: 'var(--fg-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
+                  <div style={{ fontSize: '12px', color: '#6B7280', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
                     Annual Caseload
                   </div>
                   <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: "'PT Mono', monospace" }}>
@@ -317,7 +317,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', color: 'var(--fg-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
+                  <div style={{ fontSize: '12px', color: '#6B7280', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
                     Median Duration
                   </div>
                   <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: "'PT Mono', monospace" }}>
@@ -328,21 +328,21 @@ export default async function DistrictPage({ params }: PageProps) {
 
               {circuitDetail.types && circuitDetail.types.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>
+                  <h3 className="text-sm font-bold mb-4" style={{ color: '#111111' }}>
                     Common Case Types
                   </h3>
                   <div className="space-y-3">
                     {circuitDetail.types.map((type, i) => (
                       <div key={i}>
                         <div className="flex justify-between mb-1.5">
-                          <span style={{ fontSize: '13px', fontWeight: 600, color: 'var(--fg-primary)' }}>
+                          <span style={{ fontSize: '13px', fontWeight: 600, color: '#111111' }}>
                             {type.type}
                           </span>
                           <span
                             style={{
                               fontSize: '13px',
                               fontWeight: 700,
-                              color: 'var(--accent-primary)',
+                              color: '#8B5CF6',
                               fontFamily: "'PT Mono', monospace",
                             }}
                           >
@@ -361,7 +361,7 @@ export default async function DistrictPage({ params }: PageProps) {
                             style={{
                               height: '100%',
                               width: `${type.rate}%`,
-                              background: 'var(--accent-primary)',
+                              background: '#8B5CF6',
                               borderRadius: '4px',
                             }}
                           />
@@ -379,13 +379,13 @@ export default async function DistrictPage({ params }: PageProps) {
       {/* Top Case Types Section */}
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-[960px] mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: '#111111' }}>
             Top Case Types in {state.label}
           </h2>
           <div
             className="rounded-[12px] p-6 sm:p-8"
             style={{
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
               border: '1px solid var(--border-default)',
             }}
           >
@@ -393,14 +393,14 @@ export default async function DistrictPage({ params }: PageProps) {
               {topCaseTypes.map((caseType, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-2">
-                    <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--fg-primary)' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 600, color: '#111111' }}>
                       {caseType.name}
                     </span>
                     <span
                       style={{
                         fontSize: '14px',
                         fontWeight: 700,
-                        color: 'var(--accent-primary)',
+                        color: '#8B5CF6',
                         fontFamily: "'PT Mono', monospace",
                       }}
                     >
@@ -419,7 +419,7 @@ export default async function DistrictPage({ params }: PageProps) {
                       style={{
                         height: '100%',
                         width: `${caseType.winRate}%`,
-                        background: 'linear-gradient(90deg, var(--accent-primary), #0D9488)',
+                        background: 'linear-gradient(90deg, #8B5CF6, #0D9488)',
                         borderRadius: '4px',
                       }}
                     />
@@ -447,9 +447,9 @@ export default async function DistrictPage({ params }: PageProps) {
             href="/districts"
             className="rounded-[12px] p-6 sm:p-8 text-center font-semibold transition hover:opacity-90"
             style={{
-              background: 'var(--bg-surface)',
+              background: '#FFFFFF',
               border: '1px solid var(--border-default)',
-              color: 'var(--accent-primary)',
+              color: '#8B5CF6',
             }}
           >
             Compare to Other Districts
@@ -458,7 +458,7 @@ export default async function DistrictPage({ params }: PageProps) {
             href="/judges"
             className="rounded-[12px] p-6 sm:p-8 text-center font-semibold text-white transition hover:opacity-90"
             style={{
-              background: 'linear-gradient(135deg, var(--accent-primary), #333333)',
+              background: 'linear-gradient(135deg, #8B5CF6, #333333)',
               color: 'white',
             }}
           >
@@ -475,7 +475,7 @@ export default async function DistrictPage({ params }: PageProps) {
             style={{
               background: 'rgba(59, 130, 246, 0.08)',
               border: '1px solid rgba(59, 130, 246, 0.3)',
-              color: 'var(--fg-primary)',
+              color: '#111111',
             }}
           >
             <strong>Disclaimer:</strong> MyCaseValue provides aggregate data from public federal court records for

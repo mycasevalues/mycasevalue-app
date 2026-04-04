@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
           created_at: new Date().toISOString(),
         }, { onConflict: 'email' });
       } catch (dbError) {
-        console.error('Notify subscribe DB error:', dbError);
+
       }
     }
 

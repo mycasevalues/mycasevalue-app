@@ -68,7 +68,6 @@ export async function GET(request: NextRequest) {
       }
     );
   } catch (error: any) {
-    console.error('[API /feed/batch] Error:', error.message);
     return NextResponse.json(
       {
         success: false,

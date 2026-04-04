@@ -18,14 +18,14 @@ export interface LegalCostComparisonProps {
 export function LegalCostComparison({ lang = 'en' }: LegalCostComparisonProps) {
   const es = lang === 'es';
   const costs: Cost[] = [
-    { path: es ? 'Mediación' : 'Mediation', min: 3, max: 10, color: 'var(--accent-secondary)' },
-    { path: es ? 'Acuerdo' : 'Settlement', min: 15, max: 50, color: 'var(--accent-primary)' },
+    { path: es ? 'Mediación' : 'Mediation', min: 3, max: 10, color: '#7C3AED' },
+    { path: es ? 'Acuerdo' : 'Settlement', min: 15, max: 50, color: '#8B5CF6' },
     { path: es ? 'Juicio completo' : 'Full Trial', min: 50, max: 200, color: '#E87461' },
   ];
 
   return (
     <div className="bg-gradient-to-r from-[#FFFFFF] to-[#FFFFFF] rounded-2xl border border-[var(--border-default)] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.3)]">
-      <div className="text-[10px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-4 uppercase">
+      <div className="text-[10px] font-bold text-[#6B7280] tracking-[2px] mb-4 uppercase">
         {es ? 'Costos promedio por vía legal' : 'Average costs of legal paths'}
       </div>
       <div className="space-y-4">

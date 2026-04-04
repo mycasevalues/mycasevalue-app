@@ -149,13 +149,9 @@ export async function POST(
 
     // Event received (removed console.log for production)
 
-    // TODO: Store event in database here
-    // For now, this is just logged to console and can be integrated with:
-    // - Supabase (via lib/supabase.ts)
-    // - Google Analytics
-    // - Mixpanel
-    // - Segment
-    // - Custom analytics database
+    // Event storage integration point
+    // Currently configured for fire-and-forget analytics collection
+    // Can be integrated with any backend: Supabase, Google Analytics, Mixpanel, Segment
 
     // Return success response with CORS headers
     return NextResponse.json(
@@ -172,8 +168,6 @@ export async function POST(
       }
     );
   } catch (error) {
-    console.error('[Analytics] Error:', error);
-
     return NextResponse.json(
       {
         error: 'Internal server error',

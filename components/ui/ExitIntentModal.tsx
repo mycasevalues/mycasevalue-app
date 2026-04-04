@@ -120,7 +120,7 @@ export function ExitIntentModal({
         ref={dialogRef}
         className="relative w-full max-w-md animate-slide-up rounded-2xl p-8 shadow-lg"
         style={{
-          backgroundColor: 'var(--bg-surface)',
+          backgroundColor: '#FFFFFF',
           border: '1px solid var(--border-subtle)',
         }}
         role="dialog"
@@ -155,7 +155,7 @@ export function ExitIntentModal({
         <h2
           id="exit-intent-headline"
           className="text-xl font-bold font-['Roboto'] mb-2"
-          style={{ color: 'var(--fg-primary)' }}
+          style={{ color: '#111111' }}
         >
           {t.headline}
         </h2>
@@ -175,7 +175,7 @@ export function ExitIntentModal({
             <label
               htmlFor="exit-intent-email"
               className="block text-xs font-medium mb-2 uppercase tracking-wider"
-              style={{ color: 'var(--fg-muted)' }}
+              style={{ color: '#6B7280' }}
             >
               {t.inputLabel}
             </label>
@@ -192,7 +192,7 @@ export function ExitIntentModal({
               className="w-full h-11 px-4 rounded-lg text-base font-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
               style={{
                 backgroundColor: 'var(--bg-base)',
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 borderColor: 'var(--border-default)',
                 border: '1px solid var(--border-default)',
               }}
@@ -206,7 +206,7 @@ export function ExitIntentModal({
             style={{
               background: isLoading
                 ? 'var(--accent-primary-hover)'
-                : 'linear-gradient(135deg, var(--accent-primary), #333333)',
+                : 'linear-gradient(135deg, #8B5CF6, #333333)',
             }}
             aria-busy={isLoading}
           >

@@ -210,10 +210,10 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         {t.badge}
       </div>
-      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
         {t.title}
       </h2>
-      <p className="text-sm mb-5" style={{ color: 'var(--fg-muted)' }}>
+      <p className="text-sm mb-5" style={{ color: '#6B7280' }}>
         {t.sub}
       </p>
 
@@ -225,7 +225,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
         placeholder={t.searchPlaceholder}
         aria-label={lang === 'es' ? 'Buscar distrito' : 'Search district'}
         className="w-full rounded-lg px-4 py-2.5 text-[13px] mb-4"
-        style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
+        style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: '#111111', outline: 'none' }}
       />
 
       {/* Circuit filter */}
@@ -275,7 +275,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
               }}
             >
               <div>
-                <div className="text-[12px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{d.name}</div>
+                <div className="text-[12px] font-semibold" style={{ color: '#111111' }}>{d.name}</div>
                 <div className="text-[10px]" style={{ color: 'var(--fg-subtle)' }}>{d.abbrev} &middot; {CIRCUIT_LABELS[d.circuit]} {t.circuit}</div>
               </div>
               {d.medianMonths && (
@@ -301,7 +301,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
               <div className="text-[10px] font-bold tracking-[1.5px] uppercase mb-2" style={{ color: '#0D9488' }}>
                 {CIRCUIT_LABELS[selectedDistrict.circuit]} {t.circuitLabel}
               </div>
-              <h3 className="text-base font-bold mb-1" style={{ color: 'var(--fg-primary)' }}>{selectedDistrict.name}</h3>
+              <h3 className="text-base font-bold mb-1" style={{ color: '#111111' }}>{selectedDistrict.name}</h3>
               <p className="text-[11px] mb-4" style={{ color: 'var(--fg-subtle)' }}>{selectedDistrict.abbrev} &middot; {selectedDistrict.state}</p>
 
               {selectedDistrict.medianMonths ? (
@@ -310,7 +310,7 @@ export default function DistrictIntelligence({ lang = 'en' }: DistrictIntelligen
                   <div className="rounded-lg p-3" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-default)' }}>
                     <div className="text-[10px] mb-1" style={{ color: 'var(--fg-subtle)' }}>{t.medianTime}</div>
                     <div className="text-2xl font-display font-extrabold" style={{ color: selectedDistrict.medianMonths < nationalAvg ? '#10B981' : '#F59E0B' }}>
-                      {selectedDistrict.medianMonths} <span className="text-sm font-normal" style={{ color: 'var(--fg-muted)' }}>{t.months}</span>
+                      {selectedDistrict.medianMonths} <span className="text-sm font-normal" style={{ color: '#6B7280' }}>{t.months}</span>
                     </div>
                     {/* Comparison bar */}
                     <div className="mt-2">

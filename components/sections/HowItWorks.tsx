@@ -88,10 +88,10 @@ export default function HowItWorks({ lang = 'en' }: HowItWorksProps) {
           style={{ background: 'rgba(16,185,129,0.1)', color: '#10B981' }}>
           {t.badge}
         </div>
-        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
           {t.title}
         </h2>
-        <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+        <p className="text-sm" style={{ color: '#6B7280' }}>{t.sub}</p>
       </div>
 
       {/* Steps */}
@@ -118,10 +118,10 @@ export default function HowItWorks({ lang = 'en' }: HowItWorksProps) {
                 </div>
               </div>
 
-              <h3 className="text-[13px] font-bold mb-1.5" style={{ color: 'var(--fg-primary)' }}>
+              <h3 className="text-[13px] font-bold mb-1.5" style={{ color: '#111111' }}>
                 {lang === 'es' ? step.titleEs : step.title}
               </h3>
-              <p className="text-[11px] leading-relaxed mb-2" style={{ color: 'var(--fg-muted)' }}>
+              <p className="text-[11px] leading-relaxed mb-2" style={{ color: '#6B7280' }}>
                 {lang === 'es' ? step.descriptionEs : step.description}
               </p>
               <span className="text-[9px] font-mono px-2 py-0.5 rounded-full" style={{ background: step.color + '10', color: step.color }}>

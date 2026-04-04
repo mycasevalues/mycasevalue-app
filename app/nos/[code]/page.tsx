@@ -83,12 +83,12 @@ export default async function NOSPage({ params }: PageProps) {
 
   if (!nosInfo) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-base)', color: '#111111' }}>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
-          <p className="mb-6" style={{ color: 'var(--fg-muted)' }}>NOS code {code} does not exist in our database.</p>
+          <p className="mb-6" style={{ color: '#6B7280' }}>NOS code {code} does not exist in our database.</p>
           <Link href="/" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: 'linear-gradient(135deg, var(--accent-primary), #333333)' }}>
+            style={{ background: 'linear-gradient(135deg, #8B5CF6, #333333)' }}>
             Return to Home
           </Link>
         </div>

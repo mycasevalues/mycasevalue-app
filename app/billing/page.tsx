@@ -23,7 +23,7 @@ export default function BillingPage() {
             margin: '0 auto 24px',
           }}
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
             <line x1="1" y1="10" x2="23" y2="10" />
           </svg>
@@ -33,7 +33,7 @@ export default function BillingPage() {
             fontFamily: 'var(--font-display)',
             fontSize: '28px',
             fontWeight: 700,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 12px 0',
           }}
         >
@@ -43,7 +43,7 @@ export default function BillingPage() {
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '15px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             lineHeight: 1.6,
             margin: '0 0 32px 0',
           }}
@@ -57,7 +57,7 @@ export default function BillingPage() {
             alignItems: 'center',
             gap: '8px',
             padding: '12px 24px',
-            background: 'var(--fg-primary)',
+            background: '#111111',
             color: '#FFFFFF',
             borderRadius: '10px',
             fontFamily: 'var(--font-body)',

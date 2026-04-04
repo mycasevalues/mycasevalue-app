@@ -23,7 +23,7 @@ export default function ReportsPage() {
             margin: '0 auto 24px',
           }}
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
             <polyline points="14 2 14 8 20 8" />
             <line x1="12" y1="11" x2="12" y2="17" />
@@ -35,7 +35,7 @@ export default function ReportsPage() {
             fontFamily: 'var(--font-display)',
             fontSize: '28px',
             fontWeight: 700,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 12px 0',
           }}
         >
@@ -45,7 +45,7 @@ export default function ReportsPage() {
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '15px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             lineHeight: 1.6,
             margin: '0 0 32px 0',
           }}
@@ -59,7 +59,7 @@ export default function ReportsPage() {
             alignItems: 'center',
             gap: '8px',
             padding: '12px 24px',
-            background: 'var(--fg-primary)',
+            background: '#111111',
             color: '#FFFFFF',
             borderRadius: '10px',
             fontFamily: 'var(--font-body)',

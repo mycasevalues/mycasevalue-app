@@ -30,7 +30,6 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
   static getDerivedStateFromError(error: Error): State {
     // Don't show error screen for hydration mismatches
     if (isHydrationError(error)) {
-      console.warn('[MyCaseValue] Hydration mismatch ignored:', error.message);
       return { hasError: false };
     }
     return { hasError: true, error };
@@ -38,10 +37,8 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
     if (isHydrationError(error)) {
-      console.warn('[MyCaseValue] Hydration mismatch (benign):', error.message);
       return;
     }
-    console.error('[MyCaseValue] Error caught:', error, info.componentStack);
   }
 
   render() {

@@ -59,10 +59,10 @@ export default function WhyFreeSection({ lang = 'en' }: WhyFreeSectionProps) {
           </svg>
           {isEs ? 'POR QUÉ ES GRATIS' : 'WHY IT\'S FREE'}
         </div>
-        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
           {isEs ? 'Acceso libre a datos judiciales públicos' : 'Free access to public court data'}
         </h2>
-        <p className="text-sm max-w-lg mx-auto" style={{ color: 'var(--fg-muted)' }}>
+        <p className="text-sm max-w-lg mx-auto" style={{ color: '#6B7280' }}>
           {isEs
             ? 'Sin trampas. Sin publicidad. Sin recolección de datos. Así es como funciona.'
             : 'No catch. No ads. No data harvesting. Here\'s how it works.'}

@@ -204,10 +204,10 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2.5"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
         {t.badge}
       </div>
-      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
         {t.title}
       </h2>
-      <p className="text-sm mb-5" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+      <p className="text-sm mb-5" style={{ color: '#6B7280' }}>{t.sub}</p>
 
       {/* Top metrics */}
       <div className="grid grid-cols-3 gap-3 mb-6">
@@ -233,7 +233,7 @@ export default function EeocDataPanel({ lang = 'en' }: EeocDataPanelProps) {
             style={{
               background: selected === s.key ? s.color + '20' : 'transparent',
               border: `1px solid ${selected === s.key ? s.color : 'var(--border-default)'}`,
-              color: selected === s.key ? s.color : 'var(--fg-muted)',
+              color: selected === s.key ? s.color : '#6B7280',
             }}
           >
             {lang === 'es' ? s.labelEs : s.label}

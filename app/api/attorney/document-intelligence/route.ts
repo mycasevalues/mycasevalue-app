@@ -69,7 +69,6 @@ ${text.length > 8000 ? '\n[Document truncated for analysis — showing first 8,0
 
     return NextResponse.json({ analysis });
   } catch (e) {
-    console.error('Document intelligence error:', e);
     return NextResponse.json({ error: 'Analysis failed. Please try again.' }, { status: 500 });
   }
 }

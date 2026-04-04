@@ -50,7 +50,6 @@ function useDataFetch<T>(url: string, fallback: T | null = null): UseDataResult<
       }
     } catch (err: any) {
       // API unreachable — use fallback
-      console.warn(`[useData] Falling back to static data for ${url}:`, err.message)
       setData(fallback)
       setSource('static')
       setError(err.message)

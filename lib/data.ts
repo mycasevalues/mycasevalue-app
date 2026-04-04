@@ -500,7 +500,6 @@ export const UPL = {
 export async function apiCall(endpoint: string, method = "GET", body: any = null): Promise<any> {
   if (!API_BASE) {
     if (process.env.NODE_ENV === 'development') {
-      console.warn('[MyCaseValue] No API_BASE configured — using local data');
     }
     return null;
   }
@@ -516,7 +515,6 @@ export async function apiCall(endpoint: string, method = "GET", body: any = null
     try {
       const resp = await fetch(API_BASE + endpoint, opts);
       if (resp.ok) return await resp.json();
-      console.warn(`[MyCaseValue] API ${resp.status}: ${endpoint}`);
       return null;
     } catch (err: any) {
       const msg = err?.message || String(err);
@@ -525,7 +523,6 @@ export async function apiCall(endpoint: string, method = "GET", body: any = null
         await new Promise(r => setTimeout(r, 500));
         continue;
       }
-      console.warn(`[MyCaseValue] API error (${endpoint}):`, msg);
       return null;
     }
   }

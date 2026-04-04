@@ -79,10 +79,10 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" strokeWidth="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
         {t.badge}
       </div>
-      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
         {t.title}
       </h2>
-      <p className="text-sm mb-5" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+      <p className="text-sm mb-5" style={{ color: '#6B7280' }}>{t.sub}</p>
 
       {/* Tabs */}
       <div className="flex gap-1 mb-5 rounded-xl p-1" style={{ background: 'rgba(255,255,255,0.5)' }}>
@@ -118,7 +118,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
               { label: lang === 'es' ? 'Responsabilidad de Instalaciones' : 'Premises Liability', bench: null, jury: BJS_DATA.plaintiffWinRates.premisesLiabilityJury },
             ].map((row, i) => (
               <div key={i} className="rounded-lg p-3 flex items-center justify-between" style={{ background: 'rgba(255,255,255,0.4)', border: '1px solid var(--border-default)' }}>
-                <div className="text-[12px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{row.label}</div>
+                <div className="text-[12px] font-semibold" style={{ color: '#111111' }}>{row.label}</div>
                 <div className="flex items-center gap-3">
                   {row.bench !== null && (
                     <div className="text-center">
@@ -158,7 +158,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
               return (
                 <div key={key} className="rounded-lg p-3" style={{ background: 'rgba(255,255,255,0.4)', border: '1px solid var(--border-default)' }}>
                   <div className="flex items-center justify-between mb-2">
-                    <div className="text-[12px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{labels[key] || key}</div>
+                    <div className="text-[12px] font-semibold" style={{ color: '#111111' }}>{labels[key] || key}</div>
                     <div className="text-[13px] font-bold font-mono" style={{ color: '#F59E0B' }}>
                       {t.median}: {fmt(data.p50 * 1000)}
                     </div>
@@ -205,7 +205,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
             <div className="rounded-lg p-4 mb-4" style={{ background: 'rgba(17,17,17,0.05)', border: '1px solid rgba(17,17,17,0.15)' }}>
               <div className="text-center">
                 <div className="text-3xl font-display font-extrabold" style={{ color: '#333333' }}>{AO_DATA.medianDispositionMonths}</div>
-                <div className="text-[11px] mt-1" style={{ color: 'var(--fg-muted)' }}>
+                <div className="text-[11px] mt-1" style={{ color: '#6B7280' }}>
                   {lang === 'es' ? 'Mediana nacional de meses a resolucion' : 'National median months to disposition'}
                 </div>
               </div>
@@ -215,7 +215,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
                 .sort(([, a], [, b]) => a.medianMonths - b.medianMonths)
                 .map(([district, data]) => (
                   <div key={district} className="flex items-center gap-3 rounded-lg px-3 py-2" style={{ background: 'rgba(255,255,255,0.4)', border: '1px solid var(--border-default)' }}>
-                    <div className="text-[11px] font-semibold w-24 flex-shrink-0" style={{ color: 'var(--fg-primary)' }}>{district}</div>
+                    <div className="text-[11px] font-semibold w-24 flex-shrink-0" style={{ color: '#111111' }}>{district}</div>
                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.05)' }}>
                       <div className="h-full rounded-full transition-all" style={{
                         width: `${(data.medianMonths / 14) * 100}%`,
@@ -270,7 +270,7 @@ export default function StatsDashboard({ lang = 'en' }: StatsDashboardProps) {
                 return (
                   <div key={row.label} className="flex items-center gap-3 rounded-lg px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.4)', border: '1px solid var(--border-default)' }}>
                     <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: row.color }} />
-                    <div className="text-[12px] font-semibold w-20" style={{ color: 'var(--fg-primary)' }}>{row.label}</div>
+                    <div className="text-[12px] font-semibold w-20" style={{ color: '#111111' }}>{row.label}</div>
                     <div className="flex-1 h-2 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.05)' }}>
                       <div className="h-full rounded-full" style={{ width: `${(row.fy23 / 30000) * 100}%`, background: row.color }} />
                     </div>

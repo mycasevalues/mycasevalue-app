@@ -24,7 +24,7 @@ export function Collapsible({ title, badge, defaultOpen = false, children }: Col
         style={{ padding: '18px 24px' }}>
         <div className="flex items-center gap-2.5">
           <span className="font-semibold text-[15px] group-hover:text-[#111111] transition-colors">{title}</span>
-          {badge && <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: 'var(--accent-primary)', background: 'rgba(17,17,17,0.15)' }}>{badge}</span>}
+          {badge && <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full" style={{ color: '#8B5CF6', background: 'rgba(17,17,17,0.15)' }}>{badge}</span>}
         </div>
         <div className="w-6 h-6 rounded-lg flex items-center justify-center transition-all"
           style={{ background: open ? '#11111110' : 'transparent' }}>

@@ -25,7 +25,7 @@ export default function ReportPDFButton(props: ReportPDFButtonProps) {
       const filename = `MyCaseValue-${props.category.replace(/[^a-zA-Z0-9]/g, '-')}-Report.pdf`;
       doc.save(filename);
     } catch (err) {
-      console.error('PDF generation failed:', err);
+      /* silent */
     } finally {
       setLoading(false);
     }
@@ -40,8 +40,8 @@ export default function ReportPDFButton(props: ReportPDFButtonProps) {
         alignItems: 'center',
         gap: '8px',
         padding: '12px 28px',
-        background: 'var(--fg-primary)',
-        color: 'var(--bg-surface)',
+        background: '#111111',
+        color: '#FFFFFF',
         border: 'none',
         borderRadius: '8px',
         fontSize: '14px',

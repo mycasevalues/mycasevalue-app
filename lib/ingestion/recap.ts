@@ -128,7 +128,6 @@ async function fetchWithRetry(
       if (response.status === 429) {
         const retryAfter = response.headers.get('Retry-After');
         const delay = parseRetryAfter(retryAfter);
-        console.warn(`Rate limited. Retrying after ${delay}ms`);
         await new Promise((resolve) => setTimeout(resolve, delay));
         continue;
       }
@@ -146,7 +145,6 @@ async function fetchWithRetry(
 
       if (attempt < MAX_RETRIES - 1) {
         const delay = INITIAL_BACKOFF * Math.pow(2, attempt);
-        console.error(`Attempt ${attempt + 1} failed, retrying in ${delay}ms:`, lastError.message);
         await new Promise((resolve) => setTimeout(resolve, delay));
       }
     }
@@ -371,7 +369,6 @@ export async function ingestRECAPData(nosCode?: string): Promise<ProcessedDocket
         const data = (await response.json()) as { results: unknown[]; next: string | null };
 
         if (!data.results || data.results.length === 0) {
-          console.log(`No more dockets found at page ${page}`);
           hasMorePages = false;
           break;
         }
@@ -379,7 +376,6 @@ export async function ingestRECAPData(nosCode?: string): Promise<ProcessedDocket
         // Validate and process each docket
         for (const docketData of data.results) {
           if (!validateDocket(docketData)) {
-            console.warn('Invalid docket data received:', docketData);
             continue;
           }
 
@@ -397,7 +393,6 @@ export async function ingestRECAPData(nosCode?: string): Promise<ProcessedDocket
             const entries = (entriesData.results || []).filter(validateDocketEntry);
 
             if (entries.length === 0) {
-              console.warn(`No valid entries found for docket ${docket.id}`);
               continue;
             }
 
@@ -420,7 +415,6 @@ export async function ingestRECAPData(nosCode?: string): Promise<ProcessedDocket
                   );
                 }
               } catch (error) {
-                console.warn(`Error calculating termination days for docket ${docket.id}:`, error);
               }
             }
 
@@ -447,7 +441,6 @@ export async function ingestRECAPData(nosCode?: string): Promise<ProcessedDocket
               last_filing_date: docket.date_last_filing,
             });
           } catch (error) {
-            console.error(`Error processing docket ${docket.id}:`, error);
             // Continue with next docket on error
           }
         }
@@ -455,18 +448,14 @@ export async function ingestRECAPData(nosCode?: string): Promise<ProcessedDocket
         hasMorePages = !!data.next;
         page++;
       } catch (error) {
-        console.error(`Error fetching page ${page}:`, error);
         throw error;
       }
     }
 
     if (page > MAX_PAGES) {
-      console.warn(`Reached maximum page limit (${MAX_PAGES}), stopping ingestion`);
     }
 
-    console.log(`Successfully ingested ${processedDockets.length} dockets`);
   } catch (error) {
-    console.error('Error ingesting RECAP data:', error);
     throw error;
   }
 
@@ -528,7 +517,6 @@ export async function fetchDocketDetails(docketId: string): Promise<{
           );
         }
       } catch (error) {
-        console.warn(`Error calculating termination days for docket ${docketId}:`, error);
       }
     }
 
@@ -560,7 +548,6 @@ export async function fetchDocketDetails(docketId: string): Promise<{
       entries,
     };
   } catch (error) {
-    console.error(`Error fetching docket details for ${docketId}:`, error);
     throw error;
   }
 }
@@ -617,7 +604,6 @@ export async function searchRECAPCases(
         };
 
         if (!data.results || data.results.length === 0) {
-          console.log(`No more search results at page ${page}`);
           hasMorePages = false;
           break;
         }
@@ -625,7 +611,6 @@ export async function searchRECAPCases(
         // Process and validate search results
         for (const docketData of data.results) {
           if (!validateDocket(docketData)) {
-            console.warn('Invalid docket data in search results:', docketData);
             continue;
           }
 
@@ -643,18 +628,14 @@ export async function searchRECAPCases(
         hasMorePages = !!data.next;
         page++;
       } catch (error) {
-        console.error(`Error fetching search results page ${page}:`, error);
         throw error;
       }
     }
 
     if (page > MAX_PAGES) {
-      console.warn(`Reached maximum page limit (${MAX_PAGES}) during search, stopping pagination`);
     }
 
-    console.log(`Search found ${results.length} matching dockets`);
   } catch (error) {
-    console.error('Error searching RECAP cases:', error);
     throw error;
   }
 
@@ -680,14 +661,11 @@ export async function fetchDocketEntryDocuments(
     const documents = (data.results || []).filter(validateDocument);
 
     if (documents.length === 0) {
-      console.warn(`No valid documents found for entry ${entryId}`);
       return [];
     }
 
-    console.log(`Fetched ${documents.length} documents for entry ${entryId}`);
     return documents;
   } catch (error) {
-    console.error(`Error fetching documents for entry ${entryId}:`, error);
     throw error;
   }
 }

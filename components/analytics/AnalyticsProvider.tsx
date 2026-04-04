@@ -82,10 +82,9 @@ async function sendAnalyticsEvent(event: AnalyticsEvent): Promise<void> {
       body: JSON.stringify(event),
     }).catch((error) => {
       // Silently fail - don't block user experience
-      console.error('[Analytics] Failed to send event:', error);
     });
   } catch (error) {
-    console.error('[Analytics] Error sending event:', error);
+    /* silent */
   }
 }
 
@@ -124,7 +123,6 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   // Create track event function
   const trackEvent = (name: EventType, data?: Record<string, any>) => {
     if (!sessionId.current) {
-      console.warn('[Analytics] Session ID not initialized');
       return;
     }
 

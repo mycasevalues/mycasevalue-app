@@ -63,7 +63,6 @@ export function getVariant(experimentId: string, userId?: string): string {
   const experiment = EXPERIMENTS[experimentId as keyof typeof EXPERIMENTS];
 
   if (!experiment) {
-    console.warn(`[A/B Testing] Experiment not found: ${experimentId}`);
     return experiment?.variants[0] || 'control';
   }
 

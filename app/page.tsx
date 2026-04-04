@@ -1,14 +1,8 @@
-import dynamic from 'next/dynamic';
 import { unstable_noStore as noStore } from 'next/cache';
 import ServerHero from '../components/ServerHero';
 import ServerContent from '../components/ServerContent';
 
 export const revalidate = 0;
-
-const MyCaseValue = dynamic(() => import('../components/MyCaseValue'), {
-  ssr: false,
-  loading: () => null, // ServerHero + ServerContent provide the initial content
-});
 
 export const metadata = {
   title: 'MyCaseValue - Federal Case Settlement Data & Win Rates',
@@ -23,11 +17,8 @@ export default function Page() {
   noStore();
   return (
     <>
-      <div id="ssr-hero" className="ssr-hero-container">
-        <ServerHero />
-        <ServerContent />
-      </div>
-      <MyCaseValue />
+      <ServerHero />
+      <ServerContent />
     </>
   );
 }

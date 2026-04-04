@@ -79,7 +79,7 @@ export default function SearchPage() {
       {/* Recently viewed */}
       {query.length === 0 && recentItems.length > 0 && (
         <div style={{ marginBottom: 24 }}>
-          <p style={{ fontSize: 13, color: 'var(--fg-muted)', marginBottom: 12, fontWeight: 500 }}>Recently viewed:</p>
+          <p style={{ fontSize: 13, color: '#6B7280', marginBottom: 12, fontWeight: 500 }}>Recently viewed:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {recentItems.map((item, i) => (
               <Link
@@ -87,7 +87,7 @@ export default function SearchPage() {
                 href={`/report/${item.nos}`}
                 style={{
                   padding: '6px 14px',
-                  background: 'var(--bg-surface)',
+                  background: '#FFFFFF',
                   border: '1px solid var(--border-default)',
                   borderRadius: 20,
                   fontSize: 13,
@@ -133,9 +133,9 @@ export default function SearchPage() {
       </div>
 
       {query.length > 1 && results.length === 0 && (
-        <p style={{ color: 'var(--fg-muted)', fontSize: 14 }}>
+        <p style={{ color: '#6B7280', fontSize: 14 }}>
           No case types found for &ldquo;{query}&rdquo;.{' '}
-          <Link href="/cases" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>Browse all categories &rarr;</Link>
+          <Link href="/cases" style={{ color: '#8B5CF6', textDecoration: 'none' }}>Browse all categories &rarr;</Link>
         </p>
       )}
 
@@ -148,7 +148,7 @@ export default function SearchPage() {
             display: 'block',
             padding: 16,
             marginBottom: 8,
-            background: 'var(--bg-surface)',
+            background: '#FFFFFF',
             border: '1px solid var(--border-default)',
             borderRadius: 10,
             textDecoration: 'none',
@@ -156,11 +156,11 @@ export default function SearchPage() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-            <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--fg-primary)', margin: 0 }}>{r.label}</p>
+            <p style={{ fontSize: 15, fontWeight: 600, color: '#111111', margin: 0 }}>{r.label}</p>
             <span style={{
               fontSize: 11,
               fontFamily: 'var(--font-mono)',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               background: 'var(--bg-base)',
               padding: '1px 6px',
               borderRadius: 4,
@@ -169,18 +169,18 @@ export default function SearchPage() {
               NOS {r.nos}
             </span>
           </div>
-          <p style={{ fontSize: 13, color: 'var(--fg-muted)', margin: 0 }}>{r.categoryName}</p>
+          <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>{r.categoryName}</p>
         </Link>
       ))}
 
       {query.length === 0 && (
         <div style={{ marginTop: 16 }}>
-          <p style={{ fontSize: 13, color: 'var(--fg-muted)', marginBottom: 16 }}>Popular searches:</p>
+          <p style={{ fontSize: 13, color: '#6B7280', marginBottom: 16 }}>Popular searches:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall'].map(s => (
               <button key={s} onClick={() => setQuery(s)} style={{
                 padding: '6px 14px',
-                background: 'var(--bg-surface)',
+                background: '#FFFFFF',
                 border: '1px solid var(--border-default)',
                 borderRadius: 20,
                 fontSize: 13,

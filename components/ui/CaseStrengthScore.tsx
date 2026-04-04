@@ -61,7 +61,7 @@ export function CaseStrengthScore({
         alignItems: 'center',
         gap: '24px',
         padding: '24px',
-        backgroundColor: 'var(--bg-primary)',
+        backgroundColor: '#FFFFFF',
         borderRadius: '12px',
         border: '1px solid var(--border-default)',
       }}
@@ -134,7 +134,7 @@ export function CaseStrengthScore({
             style={{
               fontSize: '11px',
               fontWeight: 600,
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
               fontFamily: 'var(--font-body)',
@@ -151,7 +151,7 @@ export function CaseStrengthScore({
           style={{
             fontSize: '16px',
             fontWeight: 700,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             fontFamily: 'var(--font-body)',
             margin: '0 0 4px 0',
           }}
@@ -161,7 +161,7 @@ export function CaseStrengthScore({
         <div
           style={{
             fontSize: '12px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-body)',
             lineHeight: 1.5,
           }}
@@ -235,7 +235,7 @@ function BreakdownItem({ label, value, max, color }: BreakdownItemProps) {
           style={{
             fontSize: '12px',
             fontWeight: 500,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -245,7 +245,7 @@ function BreakdownItem({ label, value, max, color }: BreakdownItemProps) {
           style={{
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-mono)',
           }}
         >

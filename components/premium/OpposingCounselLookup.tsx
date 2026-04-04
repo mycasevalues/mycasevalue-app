@@ -154,8 +154,8 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
   return (
     <div className="rounded-xl p-6" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-default)' }}>
       <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.label}</p>
-      <h3 className="text-base font-bold mb-1" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
-      <p className="text-[12px] mb-4" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+      <h3 className="text-base font-bold mb-1" style={{ color: '#111111' }}>{t.title}</h3>
+      <p className="text-[12px] mb-4" style={{ color: '#6B7280' }}>{t.sub}</p>
 
       {/* Search bar */}
       <div className="flex gap-2 mb-5">
@@ -166,7 +166,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
           placeholder={t.placeholder}
           aria-label={lang === 'es' ? 'Ingrese abogado contrario' : 'Search opposing counsel'}
           className="flex-1 rounded-lg px-3 py-2.5 text-[13px]"
-          style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
+          style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: '#111111', outline: 'none' }}
         />
         <button type="button"
           className="px-4 py-2.5 rounded-lg font-semibold text-[12px] text-white"
@@ -194,15 +194,15 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
                   </svg>
                 </div>
                 <div>
-                  <div className="text-[13px] font-semibold" style={{ color: 'var(--fg-primary)' }}>{profile.name}</div>
-                  <div className="text-[11px]" style={{ color: 'var(--fg-muted)' }}>{profile.firm}</div>
+                  <div className="text-[13px] font-semibold" style={{ color: '#111111' }}>{profile.name}</div>
+                  <div className="text-[11px]" style={{ color: '#6B7280' }}>{profile.firm}</div>
                 </div>
               </div>
 
               {/* Stats Grid */}
               <div className="grid grid-cols-3 gap-3 mb-3">
                 <div className="text-center">
-                  <div className="text-[16px] font-bold font-mono" style={{ color: 'var(--fg-primary)' }}>
+                  <div className="text-[16px] font-bold font-mono" style={{ color: '#111111' }}>
                     {profile.cases.toLocaleString()}
                   </div>
                   <div className="text-[10px]" style={{ color: 'var(--fg-subtle)' }}>{t.cases}</div>
@@ -240,7 +240,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
               {/* Top Courts */}
               <div className="mb-2">
                 <div className="text-[11px] mb-1" style={{ color: 'var(--fg-subtle)' }}>{t.topCourts}</div>
-                <div className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>
+                <div className="text-[10px]" style={{ color: '#6B7280' }}>
                   {profile.topCourts.join(' • ')}
                 </div>
               </div>
@@ -259,7 +259,7 @@ export default function OpposingCounselLookup({ lang = 'en', isPremium = false, 
           ))
         ) : (
           <div className="rounded-lg p-6 text-center" style={{ background: 'rgba(17,17,17,0.05)', border: '1px solid rgba(17,17,17,0.15)' }}>
-            <p className="text-[12px]" style={{ color: 'var(--fg-muted)' }}>
+            <p className="text-[12px]" style={{ color: '#6B7280' }}>
               {lang === 'es' ? 'Sin resultados encontrados' : 'No results found'}
             </p>
           </div>

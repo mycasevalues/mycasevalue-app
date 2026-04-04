@@ -69,7 +69,6 @@ export async function GET(request: NextRequest) {
             const eventData = `data: ${JSON.stringify(feedItem)}\n\n`;
             controller.enqueue(encoder.encode(eventData));
           } catch (innerError: any) {
-            console.error('[SSE] Error in generator loop:', innerError.message);
             // Try to continue, but if it's a write error, break
             if (innerError.message?.includes('write') || innerError.message?.includes('closed')) {
               isClosed = true;
@@ -84,7 +83,6 @@ export async function GET(request: NextRequest) {
           controller.close();
         }
       } catch (error: any) {
-        console.error('[SSE] Stream error:', error.message);
         try {
           controller.close();
         } catch {

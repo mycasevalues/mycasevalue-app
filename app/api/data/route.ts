@@ -236,7 +236,6 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: `Unknown type: ${type}` }, { status: 400 })
     }
   } catch (error: any) {
-    console.error('[API /data] Error:', error.message)
     return NextResponse.json({
       source: 'static',
       error: error.message,

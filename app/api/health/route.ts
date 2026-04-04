@@ -52,8 +52,6 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(healthReport, { status: statusCode })
   } catch (error: any) {
-    console.error('[API /health] Fatal error:', error.message)
-
     // Check for API key for detailed error info
     const apiKey = request.headers.get('x-api-key');
     const isAuthorized = apiKey && apiKey === process.env.HEALTH_CHECK_API_KEY;

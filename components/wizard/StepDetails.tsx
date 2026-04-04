@@ -52,7 +52,7 @@ export function StepDetails({
           <div>
             <label id="label-state" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿En qué estado estás?' : 'What state are you in?'}</label>
             <Select value={stateCode} options={STATES} onChange={setStateCode} placeholder={lang === 'es' ? 'Selecciona tu estado...' : 'Select your state...'} dark={darkMode} lang={lang} labelledBy="label-state" />
-            <div className="text-[11px] text-[var(--fg-muted)] mt-1 px-1">{lang === 'es' ? 'Esto nos ayuda a mostrarte resultados específicos de tu área.' : 'This helps us show you results specific to your area.'}</div>
+            <div className="text-[11px] text-[#6B7280] mt-1 px-1">{lang === 'es' ? 'Esto nos ayuda a mostrarte resultados específicos de tu área.' : 'This helps us show you results specific to your area.'}</div>
           </div>
           <div>
             <label id="label-timing" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuándo ocurrió esto?' : 'When did this happen?'} <span className="text-coral">*</span></label>
@@ -91,7 +91,7 @@ export function StepDetails({
           <div className="animate-fade-in">
             <label id="label-amount" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Cuánto dinero está involucrado?' : 'How much money is involved?'}</label>
             <Select value={amount} options={AMOUNT_OPTS} onChange={setAmount} dark={darkMode} lang={lang} labelledBy="label-amount" />
-            <div className="text-[11px] text-[var(--fg-muted)] mt-1 px-1">{lang === 'es' ? 'Selecciona "No estoy seguro" si no lo sabes — estimaremos basándonos en casos similares.' : 'Select "Not sure" if you don\'t know — we\'ll estimate based on similar cases.'}</div>
+            <div className="text-[11px] text-[#6B7280] mt-1 px-1">{lang === 'es' ? 'Selecciona "No estoy seguro" si no lo sabes — estimaremos basándonos en casos similares.' : 'Select "Not sure" if you don\'t know — we\'ll estimate based on similar cases.'}</div>
           </div>
           <div className="animate-fade-in">
             <label id="label-attorney" className="text-sm font-semibold block mb-1.5">{lang === 'es' ? '¿Tienes abogado?' : 'Do you have a lawyer?'} <span className="text-coral">*</span></label>
@@ -131,7 +131,7 @@ export function StepDetails({
                 ]} onChange={setClassSize} dark={darkMode} lang={lang} />
               </div>
               {classSize && (
-                <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed" style={{ background: 'rgba(17,17,17,0.08)', color: 'var(--fg-muted)' }}>
+                <div className="px-3.5 py-2.5 rounded-xl text-[13px] leading-relaxed" style={{ background: 'rgba(17,17,17,0.08)', color: '#6B7280' }}>
                   {lang === 'es'
                     ? 'Las acciones colectivas federales bajo la Regla 23 generalmente requieren suficientes individuos afectados para que las demandas individuales sean impracticables. Históricamente, los casos con 40+ individuos afectados han cumplido este umbral.'
                     : 'Federal class actions under Rule 23 generally require enough affected individuals that individual lawsuits would be impractical. Historically, cases with 40+ affected individuals have met this threshold.'}
@@ -143,7 +143,7 @@ export function StepDetails({
         </div>
         {/* Consent */}
         <div className="mt-6 p-4 rounded-2xl" style={{ background: 'rgba(17,17,17,0.04)', border: '1px solid rgba(17,17,17,0.12)' }}>
-          <p className="text-[13px] text-[var(--fg-muted)] leading-relaxed mb-3">
+          <p className="text-[13px] text-[#6B7280] leading-relaxed mb-3">
             {lang === 'es'
               ? 'Estás a punto de ver datos reales de registros judiciales federales. Estos datos muestran lo que le sucedió a otras personas — no predicen lo que te sucederá a ti. Solo un abogado con licencia puede evaluar tus hechos específicos.'
               : 'You are about to see real data from federal court records. This data shows what happened to other people — it does not predict what will happen to you. Only a licensed attorney can evaluate your specific facts.'}
@@ -153,7 +153,7 @@ export function StepDetails({
               style={{ borderColor: consent ? '#111111' : '#E5E0D8', background: consent ? 'linear-gradient(135deg, #8B5CF6, #7C3AED)' : 'transparent' }}>
               {consent && <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>}
             </div>
-            <span className="leading-relaxed text-[var(--fg-muted)]">{lang === 'es'
+            <span className="leading-relaxed text-[#6B7280]">{lang === 'es'
               ? 'Entiendo que estos son datos históricos, no evalúan mi situación, y no se crea ninguna relación abogado-cliente.'
               : 'I understand this is historical data only and no attorney-client relationship is created.'}</span>
           </label>
@@ -178,7 +178,7 @@ export function StepDetails({
 
 function BackButton({ go, lang }: { go: (step: number) => void; lang: string }) {
   return (
-    <button type="button" onClick={() => go(2)} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
+    <button type="button" onClick={() => go(2)} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: '#6B7280' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
       {lang === 'es' ? 'Volver' : 'Back'}
     </button>

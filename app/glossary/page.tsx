@@ -198,10 +198,10 @@ export default function GlossaryPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z"/></svg>
             REFERENCE
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             Legal & Data Glossary
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
             Plain-English definitions of federal court terms, data concepts, and legal statutes used throughout MyCaseValue.
           </p>
         </div>
@@ -209,7 +209,7 @@ export default function GlossaryPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div style={{ background: 'var(--bg-surface)', borderRadius: '12px', border: `1px solid var(--border-default)`, padding: '32px' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: '12px', border: `1px solid var(--border-default)`, padding: '32px' }}>
           {/* Letter-grouped terms */}
           {Array.from(groupedTerms.entries()).map(([letter, terms]) => (
             <div key={letter} className="mb-12">
@@ -218,7 +218,7 @@ export default function GlossaryPage() {
                 fontSize: '18px',
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
-                color: 'var(--accent-primary)',
+                color: '#8B5CF6',
                 marginBottom: '16px',
                 paddingBottom: '8px',
                 borderBottom: `2px solid var(--border-default)`,
@@ -234,7 +234,7 @@ export default function GlossaryPage() {
                       fontSize: '16px',
                       fontWeight: 600,
                       fontFamily: 'var(--font-display)',
-                      color: 'var(--fg-primary)',
+                      color: '#111111',
                       marginBottom: '8px',
                     }}>
                       {term.term}
@@ -242,7 +242,7 @@ export default function GlossaryPage() {
                     <p style={{
                       fontSize: '14px',
                       lineHeight: 1.6,
-                      color: 'var(--fg-muted)',
+                      color: '#6B7280',
                       marginBottom: term.relatedLink ? '12px' : 0,
                     }}>
                       {term.definition}
@@ -254,7 +254,7 @@ export default function GlossaryPage() {
                         gap: '6px',
                         fontSize: '13px',
                         fontWeight: 600,
-                        color: 'var(--accent-primary)',
+                        color: '#8B5CF6',
                         textDecoration: 'none',
                         transition: 'opacity 200ms ease',
                       }} onMouseEnter={(e) => {
@@ -284,7 +284,7 @@ export default function GlossaryPage() {
 
         {/* CTA */}
         <div className="text-center pt-8 border-t" style={{ borderColor: 'var(--border-default)' }}>
-          <p className="text-sm mb-4" style={{ color: 'var(--fg-muted)' }}>Have a term you think should be in this glossary?</p>
+          <p className="text-sm mb-4" style={{ color: '#6B7280' }}>Have a term you think should be in this glossary?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
             style={{ background: '#FFFFFF', border: '1px solid #334155', color: '#111111' }}>

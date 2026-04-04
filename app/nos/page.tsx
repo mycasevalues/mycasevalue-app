@@ -54,7 +54,7 @@ export default function NOSIndexPage() {
   const categories = Object.keys(byCategory).sort();
 
   return (
-    <div className="min-h-screen text-[#111827]" style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }}>
+    <div className="min-h-screen text-[#111827]" style={{ background: 'var(--bg-base)', color: '#111111' }}>
       {/* Header */}
       <header className="py-12 px-4 sm:px-6 lg:px-8" style={{ borderBottom: '1px solid var(--border-default)' }}>
         <Link
@@ -66,7 +66,7 @@ export default function NOSIndexPage() {
         <h1 className="text-4xl sm:text-5xl font-bold mt-4">
           Federal Case Types Directory
         </h1>
-        <p className="text-lg mt-2 max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+        <p className="text-lg mt-2 max-w-2xl" style={{ color: '#6B7280' }}>
           Explore all case types in our federal court database. Each case type includes real statistics
           on win rates, case duration, and outcomes based on actual court records.
         </p>
@@ -94,13 +94,13 @@ export default function NOSIndexPage() {
                       <h3 className="font-semibold text-lg group-hover:text-[#8B5CF6] transition">
                         {item.label}
                       </h3>
-                      <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>NOS Code: {item.code}</p>
+                      <p className="text-sm" style={{ color: '#6B7280' }}>NOS Code: {item.code}</p>
                     </div>
                     <span className="text-[#8B5CF6] text-xl group-hover:translate-x-1 transition">
                       →
                     </span>
                   </div>
-                  <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                  <p className="text-sm" style={{ color: '#6B7280' }}>
                     View court statistics and case outcomes for this type
                   </p>
                 </Link>
@@ -114,17 +114,17 @@ export default function NOSIndexPage() {
       <section className="px-4 sm:px-6 lg:px-8 py-12 bg-[#FFFFFF]" style={{ borderTop: '1px solid var(--border-default)' }}>
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">What are NOS Codes?</h2>
-          <p className="mb-4" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-4" style={{ color: '#6B7280' }}>
             Nature of Suit (NOS) codes are standardized federal court classifications that categorize
             cases by their legal nature. Each code corresponds to a specific type of civil case filed in
             U.S. District Courts.
           </p>
-          <p className="mb-4" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-4" style={{ color: '#6B7280' }}>
             The statistics on these pages are derived from actual federal court data, including case
             outcomes, settlement rates, and case duration. This information can help you understand
             how similar cases have performed in federal court.
           </p>
-          <p style={{ color: 'var(--fg-muted)' }}>
+          <p style={{ color: '#6B7280' }}>
             For legal advice specific to your situation, please consult with a qualified attorney in
             your jurisdiction.
           </p>

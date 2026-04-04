@@ -154,24 +154,24 @@ export default function CaseLifecycle({ lang = 'en' }: CaseLifecycleProps) {
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         {t.badge}
       </div>
-      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
         {t.title}
       </h2>
-      <p className="text-sm mb-2" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+      <p className="text-sm mb-2" style={{ color: '#6B7280' }}>{t.sub}</p>
 
       {/* Quick stat bar */}
       <div className="flex flex-wrap gap-3 mb-6 mt-4">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px]" style={{ background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.2)' }}>
           <span className="font-bold" style={{ color: '#F59E0B' }}>~67%</span>
-          <span style={{ color: 'var(--fg-muted)' }}>{t.settle}</span>
+          <span style={{ color: '#6B7280' }}>{t.settle}</span>
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px]" style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.2)' }}>
           <span className="font-bold" style={{ color: '#EF4444' }}>~31%</span>
-          <span style={{ color: 'var(--fg-muted)' }}>{t.dismiss}</span>
+          <span style={{ color: '#6B7280' }}>{t.dismiss}</span>
         </div>
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px]" style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
           <span className="font-bold" style={{ color: '#10B981' }}>~2%</span>
-          <span style={{ color: 'var(--fg-muted)' }}>{t.trial}</span>
+          <span style={{ color: '#6B7280' }}>{t.trial}</span>
         </div>
       </div>
 
@@ -210,7 +210,7 @@ export default function CaseLifecycle({ lang = 'en' }: CaseLifecycleProps) {
                   className="text-left w-full"
                 >
                   <div className="flex items-center gap-2 mb-0.5">
-                    <h3 className="text-sm font-bold" style={{ color: 'var(--fg-primary)' }}>
+                    <h3 className="text-sm font-bold" style={{ color: '#111111' }}>
                       {lang === 'es' ? stage.labelEs : stage.label}
                     </h3>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded-full" style={{ background: stage.color + '15', color: stage.color }}>
@@ -222,7 +222,7 @@ export default function CaseLifecycle({ lang = 'en' }: CaseLifecycleProps) {
                 {/* Expanded detail */}
                 {isExpanded && (
                   <div className="mt-2 rounded-xl p-4 transition-all" style={{ background: 'rgba(255,255,255,0.5)', border: `1px solid ${stage.color}30` }}>
-                    <p className="text-[12px] leading-relaxed mb-3" style={{ color: 'var(--fg-muted)' }}>
+                    <p className="text-[12px] leading-relaxed mb-3" style={{ color: '#6B7280' }}>
                       {lang === 'es' ? stage.descriptionEs : stage.description}
                     </p>
                     {stage.probability && (
@@ -240,7 +240,7 @@ export default function CaseLifecycle({ lang = 'en' }: CaseLifecycleProps) {
                             <div key={j} className="flex items-center gap-2">
                               <div className="h-1.5 rounded-full" style={{ width: `${ep.pct}%`, maxWidth: '60%', background: ep.color, minWidth: 8 }} />
                               <span className="text-[10px] font-mono font-bold" style={{ color: ep.color }}>{ep.pct}%</span>
-                              <span className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? ep.labelEs : ep.label}</span>
+                              <span className="text-[10px]" style={{ color: '#6B7280' }}>{lang === 'es' ? ep.labelEs : ep.label}</span>
                             </div>
                           ))}
                         </div>

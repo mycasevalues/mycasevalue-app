@@ -249,7 +249,7 @@
 /* Text selection color */
 ::selection {
   background: var(--bg-selection);
-  color: var(--fg-primary);
+  color: #111111;
 }
 
 /* Skip to content */
@@ -259,7 +259,7 @@
   left: 0;
   z-index: var(--z-critical);
   padding: 8px 16px;
-  background: var(--accent-primary);
+  background: #8B5CF6;
   color: #fff;
   font-weight: 600;
   text-decoration: none;

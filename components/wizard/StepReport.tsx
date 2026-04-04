@@ -78,8 +78,8 @@ export function StepReport({
         {/* Animated metric cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 stagger-in">
           {[
-            { label: lang === 'es' ? 'Registros' : 'Records', color: 'var(--accent-primary)' },
-            { label: lang === 'es' ? 'Comparando' : 'Matching', color: 'var(--accent-secondary)' },
+            { label: lang === 'es' ? 'Registros' : 'Records', color: '#8B5CF6' },
+            { label: lang === 'es' ? 'Comparando' : 'Matching', color: '#7C3AED' },
             { label: lang === 'es' ? 'Analizando' : 'Analyzing', color: 'var(--accent-secondary, #8B5CF6)' },
           ].map((item, i) => (
             <div key={i} className="p-5 border border-[var(--border-default)] rounded-2xl glass-premium" style={{ animationDelay: `${i * 100}ms` }}>
@@ -151,7 +151,7 @@ export function StepReport({
           )}
 
           {loadPct > 30 && loadPct < 90 && (
-            <div className="text-[12px] text-[var(--fg-muted)] mt-3 text-center max-w-md">
+            <div className="text-[12px] text-[#6B7280] mt-3 text-center max-w-md">
               {lang === 'es' ? 'Los tribunales federales resolvieron más de 400,000 casos civiles el año pasado.' : 'Federal courts resolved over 400,000 civil cases last year.'}
             </div>
           )}
@@ -160,9 +160,9 @@ export function StepReport({
           <button type="button"
             onClick={() => go(3)}
             className="mt-4 px-4 py-2 text-sm bg-transparent border-none cursor-pointer rounded-lg transition-colors"
-            style={{ color: 'var(--fg-muted)' }}
+            style={{ color: '#6B7280' }}
             onMouseEnter={e => e.currentTarget.style.color = '#111827'}
-            onMouseLeave={e => e.currentTarget.style.color = 'var(--fg-muted)'}
+            onMouseLeave={e => e.currentTarget.style.color = '#6B7280'}
           >
             {lang === 'es' ? 'Cancelar' : 'Cancel'}
           </button>
@@ -247,7 +247,7 @@ export function StepReport({
               { label: lang === 'es' ? 'Acuerdo + Victoria' : 'Settle + Win', value: `${Math.round((result?.sp || 47) + (result?.wr || 47))}%`, color: '#5EEAD4' },
             ].map((m, i) => (
               <div key={i} className="glass-ultra rounded-xl p-4 text-center spotlight-card gpu-accelerate">
-                <div className="text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ color: 'var(--fg-muted)' }}>{m.label}</div>
+                <div className="text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ color: '#6B7280' }}>{m.label}</div>
                 <div className="text-2xl sm:text-3xl font-display font-extrabold" style={{ color: m.color, letterSpacing: '-1px' }}>{m.value}</div>
               </div>
             ))}
@@ -259,8 +259,8 @@ export function StepReport({
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4 no-print">
             <div className="flex items-center gap-2">
               <span className="live-beacon" />
-              <span className="text-sm text-[var(--fg-muted)]">
-                <strong className="text-[var(--fg-muted)]">{reportsGeneratedRef.current}</strong> {lang === 'es' ? 'informes generados hoy' : 'reports generated today'}
+              <span className="text-sm text-[#6B7280]">
+                <strong className="text-[#6B7280]">{reportsGeneratedRef.current}</strong> {lang === 'es' ? 'informes generados hoy' : 'reports generated today'}
               </span>
             </div>
             <div className="flex gap-2">
@@ -270,19 +270,19 @@ export function StepReport({
                   navigator.clipboard.writeText(u);
                   toast(lang === 'es' ? '¡Enlace copiado!' : 'Link copied!');
                 } catch { toast(lang === 'es' ? 'No se pudo copiar' : 'Could not copy'); }
-              }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              }} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[#6B7280] hover:text-[#6B7280] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {lang === 'es' ? 'Compartir' : 'Share'}
               </button>
-              <button type="button" onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <button type="button" onClick={() => setShowShareCard(!showShareCard)} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[#6B7280] hover:text-[#6B7280] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {lang === 'es' ? 'Tarjeta' : 'Card'}
               </button>
-              <button type="button" onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <button type="button" onClick={saveReport} className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[#6B7280] hover:text-[#6B7280] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline-block mr-1" style={{ verticalAlign: '-2px' }}><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
                 {lang === 'es' ? 'Guardar' : 'Save'}
               </button>
               {isPremium && (
                 <button type="button" onClick={() => { try { window.print(); } catch {} }}
-                  className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[var(--fg-muted)] hover:text-[var(--fg-muted)] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  className="text-sm font-semibold px-5 py-2.5 card-bg bg-[#FFFFFF] border border-[var(--border-default)] rounded-lg cursor-pointer text-[#6B7280] hover:text-[#6B7280] transition-colors" style={{ minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   PDF
                 </button>
               )}

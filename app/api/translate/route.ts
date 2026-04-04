@@ -166,7 +166,6 @@ export async function POST(request: NextRequest) {
     try {
       translation = await translateWithClaude(text);
     } catch (apiError) {
-      console.error('Claude API unavailable, using fallback translation:', apiError);
       translation = generateFallbackTranslation(text);
     }
 
@@ -178,8 +177,6 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error: any) {
-    console.error('[API /translate] Error:', error.message);
-
     return NextResponse.json(
       { error: 'An error occurred while translating. Please try again.' },
       { status: 500 }

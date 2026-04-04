@@ -1,17 +1,14 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'Pricing | MyCaseValue',
-  description: 'Choose your pricing plan: Free basic case report, single report access, unlimited reports, or professional attorney mode with bulk case analysis and API.',
-  alternates: { canonical: 'https://www.mycasevalues.com/pricing' },
+  description: 'Simple, transparent pricing for federal court case data reports',
   openGraph: {
-    title: 'Pricing Plans - Transparent Federal Case Data',
-    description: 'Flexible pricing for federal case research. Free, single reports, unlimited reports, or professional attorney tools.',
+    title: 'Pricing | MyCaseValue',
+    description: 'Simple, transparent pricing for federal court case data reports',
     url: 'https://www.mycasevalues.com/pricing',
-    type: 'website',
   },
-  robots: { index: true, follow: true },
 };
 
 export default function PricingLayout({ children }: { children: ReactNode }) {

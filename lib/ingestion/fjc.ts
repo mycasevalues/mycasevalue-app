@@ -363,32 +363,21 @@ export async function ingestFJCData(): Promise<{
   let csvText: string | null = null;
 
   try {
-    console.log('[FJC] Attempting to download FJC IDB data from:', fjcDownloadUrl);
     const response = await fetch(fjcDownloadUrl);
 
     if (!response.ok) {
-      console.warn(
-        `[FJC] Download failed with status ${response.status} ${response.statusText}. ` +
-        `Using fallback static data.`
-      );
     } else {
       // Note: In production, you would unzip the archive and extract the CSV
       // For now, we'll return the fallback data with a note
-      console.log('[FJC] FJC download successful, processing ZIP archive...');
       // TODO: Implement ZIP extraction when needed
       // For now, fall through to fallback
       csvText = null;
     }
   } catch (error) {
-    console.error(
-      `[FJC] Download error: ${error instanceof Error ? error.message : String(error)}. ` +
-      `Falling back to static FJC reference data.`
-    );
   }
 
   // Fallback to static data from realdata.ts
   if (!csvText) {
-    console.log('[FJC] Using static fallback data from realdata.ts');
     return generateFJCDataFromRealData();
   }
 

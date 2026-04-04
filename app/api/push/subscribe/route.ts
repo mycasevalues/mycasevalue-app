@@ -53,7 +53,6 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
   } catch (err: any) {
-    console.error('[Push API] Failed to store subscription:', err?.message || err);
     return NextResponse.json(
       { error: 'Failed to store subscription' },
       { status: 500 }
@@ -101,7 +100,6 @@ export async function DELETE(req: NextRequest) {
       { status: 200 }
     );
   } catch (err: any) {
-    console.error('[Push API] Failed to remove subscription:', err?.message || err);
     return NextResponse.json(
       { error: 'Failed to remove subscription' },
       { status: 500 }

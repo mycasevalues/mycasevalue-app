@@ -26,7 +26,7 @@ export function StepCategory({
           </div>
           <h2 className="text-2xl sm:text-3xl font-display font-bold">{t.what_happened}</h2>
         </div>
-        <p className="text-[var(--fg-muted)] mb-6 ml-[52px]">{t.select_closest}</p>
+        <p className="text-[#6B7280] mb-6 ml-[52px]">{t.select_closest}</p>
         <div className="space-y-2.5 stagger">
           {SITS.map(si => (
             <button type="button" key={si.id} onClick={() => { setSit(si); setAmount(si.dm); go(2); }}
@@ -39,7 +39,7 @@ export function StepCategory({
               </div>
               <div className="flex-1">
                 <div className="font-semibold text-[15px]">{si.label}</div>
-                <div className="text-[13px] text-[var(--fg-muted)] mt-0.5">{si.sub}</div>
+                <div className="text-[13px] text-[#6B7280] mt-0.5">{si.sub}</div>
               </div>
               <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all" style={{ background: `${si.color}08` }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={si.color} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
@@ -54,7 +54,7 @@ export function StepCategory({
 
 function BackButton({ go, lang }: { go: (step: number) => void; lang: string }) {
   return (
-    <button type="button" onClick={() => go(0)} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: 'var(--fg-muted)' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
+    <button type="button" onClick={() => go(0)} className="text-sm bg-transparent border-none cursor-pointer mb-4 flex items-center gap-1.5 transition-all hover:gap-2.5 group" style={{ color: '#6B7280' }} aria-label={lang === 'es' ? 'Volver' : 'Go back'}>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:-translate-x-0.5"><polyline points="15 18 9 12 15 6" /></svg>
       {lang === 'es' ? 'Volver' : 'Back'}
     </button>

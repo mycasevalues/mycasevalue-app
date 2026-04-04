@@ -131,8 +131,8 @@ export default function CaseRiskScore({
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
           <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.locked}</p>
-          <h3 className="text-base font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
-          <p className="text-[12px] mb-4" style={{ color: 'var(--fg-muted)' }}>{t.unlockMsg}</p>
+          <h3 className="text-base font-bold mb-2" style={{ color: '#111111' }}>{t.title}</h3>
+          <p className="text-[12px] mb-4" style={{ color: '#6B7280' }}>{t.unlockMsg}</p>
           <button type="button"
             onClick={onUpgrade}
             className="px-5 py-2 rounded-lg font-semibold text-[12px] text-white transition-all hover:scale-[1.02]"
@@ -151,7 +151,7 @@ export default function CaseRiskScore({
   return (
     <div className="rounded-xl p-6" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-default)' }}>
       <p className="text-[11px] font-bold tracking-[3px] uppercase mb-1" style={{ color: '#333333' }}>{t.label}</p>
-      <h3 className="text-base font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
+      <h3 className="text-base font-bold mb-4" style={{ color: '#111111' }}>{t.title}</h3>
 
       <div className="flex items-center gap-6 mb-5">
         {/* Score ring */}
@@ -179,7 +179,7 @@ export default function CaseRiskScore({
           <div className="text-[14px] font-bold mb-1" style={{ color: result.color }}>
             {lang === 'es' ? result.level_es : result.level}
           </div>
-          <div className="text-[12px]" style={{ color: 'var(--fg-muted)' }}>
+          <div className="text-[12px]" style={{ color: '#6B7280' }}>
             {caseType}
           </div>
         </div>
@@ -194,7 +194,7 @@ export default function CaseRiskScore({
               {lang === 'es' ? f.label_es : f.label}
             </span>
             <div className="flex items-center gap-2">
-              <span className="text-[12px] font-mono font-semibold" style={{ color: 'var(--fg-primary)' }}>{f.value}</span>
+              <span className="text-[12px] font-mono font-semibold" style={{ color: '#111111' }}>{f.value}</span>
               <span
                 className="text-[10px] font-semibold px-2 py-0.5 rounded-full"
                 style={{

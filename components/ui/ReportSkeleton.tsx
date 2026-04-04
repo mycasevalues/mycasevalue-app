@@ -23,7 +23,7 @@ export default function ReportSkeleton() {
           {[1,2,3].map(i => <div key={i} style={{ width: '120px', height: '24px', background: 'var(--bg-elevated)', borderRadius: '4px' }} />)}
         </div>
         {[1,2,3].map(i => (
-          <div key={i} style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div key={i} style={{ background: '#FFFFFF', border: '1px solid var(--border-default)', borderRadius: '12px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {bar('30%', '20px')}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px' }} className="report-skeleton-grid">
               {[1,2,3].map(j => <div key={j} style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>

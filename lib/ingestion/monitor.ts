@@ -106,7 +106,7 @@ export async function logIngestionEvent(
 
     await supabase.from('ingestion_log').insert([eventData])
   } catch (error: any) {
-    console.error('Error logging ingestion event:', error.message)
+    /* silent */
   }
 }
 
@@ -135,7 +135,6 @@ export async function checkDataStaleness(): Promise<number | null> {
 
     return Math.round(hoursSinceCompletion * 10) / 10
   } catch (error: any) {
-    console.error('Error checking data staleness:', error.message)
     return null
   }
 }
@@ -192,7 +191,6 @@ export async function getIngestionStats(): Promise<IngestionStats> {
 
     return stats
   } catch (error: any) {
-    console.error('Error getting ingestion stats:', error.message)
     return {
       totalRuns: 0,
       successfulRuns: 0,
@@ -218,7 +216,6 @@ async function testCourtListenerReachability(): Promise<boolean> {
     clearTimeout(timeoutId)
     return response.ok || response.status === 405 // 405 = method not allowed, but API is up
   } catch (error) {
-    console.error('CourtListener reachability test failed:', error)
     return false
   }
 }
@@ -365,8 +362,6 @@ export async function generateHealthReport(): Promise<HealthReport> {
       overallAssessment: assessment
     }
   } catch (error: any) {
-    console.error('Error generating health report:', error.message)
-
     return {
       status: 'unhealthy',
       timestamp,

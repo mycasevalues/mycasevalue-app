@@ -208,7 +208,7 @@ function PricingCard({
         height: '100%',
         borderRadius: '12px',
         border: f ? '2px solid #8B5CF6' : '1px solid #E5E7EB',
-        background: 'var(--bg-surface)',
+        background: '#FFFFFF',
         boxShadow: f ? '0 4px 24px rgba(139,92,246,0.15)' : '0 1px 3px rgba(0,0,0,0.08)',
       }}
     >
@@ -285,7 +285,7 @@ function PricingCard({
             <span
               style={{
                 fontSize: '14px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 textDecoration: 'line-through',
                 fontFamily: 'var(--font-body)',
               }}
@@ -310,7 +310,7 @@ function PricingCard({
           style={{
             fontSize: '13px',
             marginBottom: '24px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-body)',
             lineHeight: '1.5',
           }}
@@ -376,7 +376,7 @@ function PricingCard({
             fontSize: '12px',
             textAlign: 'center',
             marginBottom: '24px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -500,7 +500,7 @@ export default function PricingPage() {
       <div
         style={{
           borderBottom: '1px solid var(--border-default)',
-          background: 'var(--bg-surface)',
+          background: '#FFFFFF',
         }}
       >
         <div
@@ -534,7 +534,7 @@ export default function PricingPage() {
               fontSize: 'clamp(32px, 8vw, 56px)',
               fontWeight: '900',
               marginBottom: '16px',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               fontFamily: 'var(--font-display)',
               letterSpacing: '-0.02em',
             }}
@@ -549,7 +549,7 @@ export default function PricingPage() {
               marginLeft: 'auto',
               marginRight: 'auto',
               marginBottom: '32px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -582,7 +582,7 @@ export default function PricingPage() {
             style={{
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
-              color: annual ? 'var(--fg-muted)' : 'var(--fg-primary)',
+              color: annual ? '#6B7280' : '#111111',
               fontWeight: annual ? '400' : '500',
             }}
           >
@@ -598,7 +598,7 @@ export default function PricingPage() {
               height: '32px',
               borderRadius: '16px',
               border: 'none',
-              background: annual ? 'var(--accent-primary)' : 'var(--border-default)',
+              background: annual ? '#8B5CF6' : 'var(--border-default)',
               cursor: 'pointer',
               padding: '2px',
               transition: 'background 200ms ease',
@@ -624,7 +624,7 @@ export default function PricingPage() {
               style={{
                 fontSize: '14px',
                 fontFamily: 'var(--font-body)',
-                color: annual ? 'var(--fg-primary)' : 'var(--fg-muted)',
+                color: annual ? '#111111' : '#6B7280',
                 fontWeight: annual ? '500' : '400',
               }}
             >
@@ -637,7 +637,7 @@ export default function PricingPage() {
                   padding: '2px 8px',
                   borderRadius: '4px',
                   background: 'var(--accent-light)',
-                  color: 'var(--accent-primary)',
+                  color: '#8B5CF6',
                   fontSize: '11px',
                   fontWeight: '600',
                   fontFamily: 'var(--font-body)',
@@ -700,7 +700,7 @@ export default function PricingPage() {
             textAlign: 'center',
             fontSize: '13px',
             marginBottom: '48px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -747,7 +747,7 @@ export default function PricingPage() {
                 width: '200px',
                 borderRadius: '12px',
                 border: '1px solid var(--border-default)',
-                background: 'var(--bg-surface)',
+                background: '#FFFFFF',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }}>
@@ -756,7 +756,7 @@ export default function PricingPage() {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="var(--fg-primary)"
+                  stroke="#111111"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -769,7 +769,7 @@ export default function PricingPage() {
                   fontWeight: '600',
                   fontSize: '14px',
                   marginBottom: '4px',
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   fontFamily: 'var(--font-display)',
                 }}
               >
@@ -778,7 +778,7 @@ export default function PricingPage() {
               <p
                 style={{
                   fontSize: '12px',
-                  color: 'var(--fg-muted)',
+                  color: '#6B7280',
                   fontFamily: 'var(--font-body)',
                 }}
               >
@@ -796,7 +796,7 @@ export default function PricingPage() {
               fontWeight: '700',
               textAlign: 'center',
               marginBottom: '48px',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               fontFamily: 'var(--font-display)',
             }}
           >
@@ -820,7 +820,7 @@ export default function PricingPage() {
                   padding: '20px',
                   borderRadius: '12px',
                   border: '1px solid var(--border-default)',
-                  background: 'var(--bg-surface)',
+                  background: '#FFFFFF',
                   cursor: 'pointer',
                 }}
               >
@@ -831,7 +831,7 @@ export default function PricingPage() {
                     justifyContent: 'space-between',
                     fontWeight: '600',
                     userSelect: 'none',
-                    color: 'var(--fg-primary)',
+                    color: '#111111',
                     fontFamily: 'var(--font-body)',
                     cursor: 'pointer',
                   }}
@@ -856,7 +856,7 @@ export default function PricingPage() {
                     style={{
                       flexShrink: 0,
                       transition: 'transform 200ms ease',
-                      color: 'var(--fg-primary)',
+                      color: '#111111',
                     }}
                   >
                     <polyline points="6 9 12 15 18 9" />
@@ -873,7 +873,7 @@ export default function PricingPage() {
                     style={{
                       fontSize: '14px',
                       lineHeight: '1.6',
-                      color: 'var(--fg-muted)',
+                      color: '#6B7280',
                       fontFamily: 'var(--font-body)',
                     }}
                   >
@@ -893,14 +893,14 @@ export default function PricingPage() {
             marginBottom: '64px',
             borderRadius: '12px',
             border: '1px solid var(--border-default)',
-            background: 'var(--bg-surface)',
+            background: '#FFFFFF',
           }}
         >
           <p
             style={{
               fontSize: '16px',
               marginBottom: '16px',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -920,7 +920,7 @@ export default function PricingPage() {
               fontWeight: '600',
               borderRadius: '9999px',
               border: '1px solid var(--border-default)',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               transition: 'opacity 200ms ease',

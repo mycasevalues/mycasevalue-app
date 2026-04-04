@@ -17,7 +17,7 @@ export default function NotFound() {
         justifyContent: 'center',
         padding: '48px 24px',
         background: 'var(--bg-base)',
-        color: 'var(--fg-primary)',
+        color: '#111111',
         fontFamily: 'Roboto, system-ui, sans-serif',
         textAlign: 'center',
       }}
@@ -25,21 +25,21 @@ export default function NotFound() {
       <style>{`
         .nf-btn-home {
           display: inline-flex; align-items: center; gap: 8px;
-          padding: 14px 28px; background: var(--accent-primary);
+          padding: 14px 28px; background: #8B5CF6;
           color: #FFFFFF; border-radius: 12px; font-weight: 700; font-size: 15px;
           font-family: Montserrat, system-ui, sans-serif;
           text-decoration: none; transition: all 200ms;
-          box-shadow: var(--shadow-sm);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
-        .nf-btn-home:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+        .nf-btn-home:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .nf-btn-secondary {
           display: inline-flex; align-items: center; gap: 8px;
-          padding: 14px 28px; background: transparent; color: var(--fg-muted);
+          padding: 14px 28px; background: transparent; color: #6B7280;
           border-radius: 12px; font-weight: 600; font-size: 14px;
           font-family: Roboto, system-ui, sans-serif;
           text-decoration: none; border: 1px solid var(--border-default); transition: all 200ms;
         }
-        .nf-btn-secondary:hover { border-color: var(--fg-muted); color: var(--fg-primary); }
+        .nf-btn-secondary:hover { border-color: #6B7280; color: #111111; }
       `}</style>
 
       {/* Icon */}
@@ -55,7 +55,7 @@ export default function NotFound() {
           marginBottom: '24px',
         }}
       >
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <circle cx="11" cy="11" r="8" />
           <path d="M21 21l-4.35-4.35" />
           <path d="M8 11h6" />
@@ -75,7 +75,7 @@ export default function NotFound() {
           marginBottom: '16px',
           fontSize: '12px',
           fontWeight: 700,
-          color: 'var(--fg-muted)',
+          color: '#6B7280',
           fontFamily: '"PT Mono", monospace',
           letterSpacing: '0.05em',
         }}
@@ -88,7 +88,7 @@ export default function NotFound() {
           fontFamily: 'Montserrat, system-ui, sans-serif',
           fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
           fontWeight: 800,
-          color: 'var(--fg-primary)',
+          color: '#111111',
           letterSpacing: '-0.02em',
           lineHeight: 1.2,
           margin: '0 0 12px',
@@ -100,7 +100,7 @@ export default function NotFound() {
       <p
         style={{
           fontSize: '16px',
-          color: 'var(--fg-muted)',
+          color: '#6B7280',
           maxWidth: '420px',
           lineHeight: 1.6,
           margin: '0 0 32px',
@@ -133,7 +133,7 @@ export default function NotFound() {
         style={{
           marginTop: '48px',
           padding: '24px',
-          background: 'var(--bg-surface)',
+          background: '#FFFFFF',
           border: '1px solid var(--border-default)',
           borderRadius: '16px',
           maxWidth: '440px',
@@ -172,8 +172,8 @@ export default function NotFound() {
               }}
             >
               <div>
-                <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--fg-primary)' }}>{link.label}</span>
-                <span style={{ display: 'block', fontSize: '12px', color: 'var(--fg-muted)', marginTop: '2px' }}>{link.desc}</span>
+                <span style={{ fontSize: '14px', fontWeight: 600, color: '#111111' }}>{link.label}</span>
+                <span style={{ display: 'block', fontSize: '12px', color: '#6B7280', marginTop: '2px' }}>{link.desc}</span>
               </div>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--fg-subtle)" strokeWidth="2" aria-hidden="true">
                 <path d="M9 18l6-6-6-6" />

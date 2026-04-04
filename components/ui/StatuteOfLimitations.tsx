@@ -189,7 +189,7 @@ export function StatuteOfLimitations({ category }: StatuteOfLimitationsProps) {
             fontFamily: 'var(--font-body)',
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 12px 0',
           }}
         >
@@ -240,7 +240,7 @@ export function StatuteOfLimitations({ category }: StatuteOfLimitationsProps) {
           backgroundColor: 'var(--bg-hover)',
           borderRadius: '8px',
           padding: '14px 16px',
-          borderLeft: '3px solid var(--accent-secondary)',
+          borderLeft: '3px solid #7C3AED',
         }}
       >
         <p
@@ -261,7 +261,7 @@ export function StatuteOfLimitations({ category }: StatuteOfLimitationsProps) {
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
-          color: 'var(--fg-muted)',
+          color: '#6B7280',
           lineHeight: 1.6,
           margin: 0,
           fontStyle: 'italic',

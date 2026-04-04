@@ -116,10 +116,10 @@ export default function HowItWorksPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             HOW IT WORKS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             3 Simple Steps
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
             From selecting your case type to getting a complete analysis of real federal court outcomes — all in minutes.
           </p>
         </div>
@@ -158,10 +158,10 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h2 className="text-xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+                  <h2 className="text-xl font-display font-bold mb-3" style={{ color: '#111111' }}>
                     {step.title}
                   </h2>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
                     {step.description}
                   </p>
                 </div>
@@ -177,7 +177,7 @@ export default function HowItWorksPage() {
       {/* Trust Stats Bar */}
       <section className="py-12 border-y" style={{ borderColor: 'var(--border-default)' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <p className="text-center text-sm font-semibold mb-8" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-center text-sm font-semibold mb-8" style={{ color: '#6B7280' }}>
             TRUSTED BY THOUSANDS OF CASE RESEARCHERS
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -186,7 +186,7 @@ export default function HowItWorksPage() {
                 <div className="text-2xl font-display font-extrabold" style={{ color: '#111111' }}>
                   {stat.value}
                 </div>
-                <div className="text-[11px] font-semibold mt-2" style={{ color: 'var(--fg-muted)' }}>
+                <div className="text-[11px] font-semibold mt-2" style={{ color: '#6B7280' }}>
                   {stat.label}
                 </div>
               </div>
@@ -198,10 +198,10 @@ export default function HowItWorksPage() {
       {/* Data Sources Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: '#111111' }}>
             Verified Public Sources
           </h2>
-          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: '#6B7280' }}>
             All data comes from official federal court records, ensuring accuracy and transparency.
           </p>
 
@@ -221,10 +221,10 @@ export default function HowItWorksPage() {
               },
             ].map((source, i) => (
               <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-                <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
+                <h3 className="text-base font-semibold mb-2" style={{ color: '#111111' }}>
                   {source.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
                   {source.description}
                 </p>
               </div>
@@ -236,7 +236,7 @@ export default function HowItWorksPage() {
       {/* Why Choose Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: '#111111' }}>
             Why MyCaseValue Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -273,10 +273,10 @@ export default function HowItWorksPage() {
               },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-                <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
+                <h3 className="text-base font-semibold mb-2" style={{ color: '#111111' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
                   {item.description}
                 </p>
               </div>
@@ -288,10 +288,10 @@ export default function HowItWorksPage() {
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             Ready to see your odds?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#6B7280' }}>
             In three simple steps, discover what happened in cases like yours.
           </p>
           <a href="/search"

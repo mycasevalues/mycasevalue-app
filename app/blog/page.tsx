@@ -51,10 +51,10 @@ export default function BlogPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
             INSIGHTS & ANALYSIS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             Federal Court Data & Litigation Insights
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
             Research-backed articles analyzing real outcomes from 5.1M+ federal cases. Understand win rates, settlement data, timelines, and what affects your case.
           </p>
         </div>
@@ -96,19 +96,19 @@ export default function BlogPage() {
                   >
                     <h2
                       className="text-2xl sm:text-3xl font-display font-bold mb-3 transition-colors group-hover/link:text-indigo-400"
-                      style={{ color: 'var(--fg-primary)' }}
+                      style={{ color: '#111111' }}
                     >
                       {post.title}
                     </h2>
                   </a>
-                  <p className="text-base leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                  <p className="text-base leading-relaxed" style={{ color: '#6B7280' }}>
                     {post.description}
                   </p>
                 </div>
 
                 {/* Meta information */}
                 <div className="flex flex-wrap items-center gap-4 pt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-                  <div className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                  <div className="text-sm" style={{ color: '#6B7280' }}>
                     <span className="font-medium">{post.author}</span>
                     <span className="mx-2">•</span>
                     <time>{post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
@@ -155,10 +155,10 @@ export default function BlogPage() {
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             Ready to analyze your case?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#6B7280' }}>
             Use the data you just learned to get a personalized analysis of real outcomes in cases like yours.
           </p>
           <a

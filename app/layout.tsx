@@ -272,7 +272,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}</style>
       </head>
-      <body style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }} suppressHydrationWarning>
+      <body style={{ background: 'var(--bg-base)', color: '#111111' }} suppressHydrationWarning>
         <RouteLoadingBar />
         <a href="#main-content" className="skip-to-main">
           Skip to main content

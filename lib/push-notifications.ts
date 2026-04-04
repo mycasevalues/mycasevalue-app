@@ -35,7 +35,6 @@ export async function isPushSubscribed(): Promise<boolean> {
     const subscription = await registration.pushManager.getSubscription();
     return !!subscription;
   } catch (err) {
-    console.error('[Push] Failed to check subscription:', err);
     return false;
   }
 }
@@ -50,7 +49,6 @@ export async function getPushSubscription(): Promise<PushSubscription | null> {
     const registration = await navigator.serviceWorker.ready;
     return await registration.pushManager.getSubscription();
   } catch (err) {
-    console.error('[Push] Failed to get subscription:', err);
     return null;
   }
 }
@@ -61,7 +59,6 @@ export async function getPushSubscription(): Promise<PushSubscription | null> {
  */
 export async function subscribeToPush(): Promise<boolean> {
   if (!isPushSupported()) {
-    console.warn('[Push] Push notifications not supported');
     return false;
   }
 
@@ -70,7 +67,6 @@ export async function subscribeToPush(): Promise<boolean> {
     if (Notification.permission !== 'granted') {
       const permission = await Notification.requestPermission();
       if (permission !== 'granted') {
-        console.log('[Push] User denied notification permission');
         return false;
       }
     }
@@ -81,7 +77,6 @@ export async function subscribeToPush(): Promise<boolean> {
     // Check if already subscribed
     const existingSubscription = await registration.pushManager.getSubscription();
     if (existingSubscription) {
-      console.log('[Push] Already subscribed');
       // Send to server anyway in case it's not stored there
       await sendSubscriptionToServer(existingSubscription);
       return true;
@@ -90,7 +85,6 @@ export async function subscribeToPush(): Promise<boolean> {
     // Get VAPID public key from environment
     const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
     if (!vapidPublicKey) {
-      console.warn('[Push] VAPID public key not configured');
       return false;
     }
 
@@ -102,10 +96,8 @@ export async function subscribeToPush(): Promise<boolean> {
 
     // Send subscription to server
     await sendSubscriptionToServer(subscription);
-    console.log('[Push] Successfully subscribed');
     return true;
   } catch (err) {
-    console.error('[Push] Failed to subscribe:', err);
     return false;
   }
 }
@@ -123,7 +115,6 @@ export async function unsubscribeFromPush(): Promise<boolean> {
     // Get current subscription
     const subscription = await getPushSubscription();
     if (!subscription) {
-      console.log('[Push] Not currently subscribed');
       return true;
     }
 
@@ -132,12 +123,8 @@ export async function unsubscribeFromPush(): Promise<boolean> {
 
     // Unsubscribe from push manager
     const success = await subscription.unsubscribe();
-    if (success) {
-      console.log('[Push] Successfully unsubscribed');
-    }
     return success;
   } catch (err) {
-    console.error('[Push] Failed to unsubscribe:', err);
     return false;
   }
 }
@@ -160,10 +147,7 @@ async function sendSubscriptionToServer(
     if (!response.ok) {
       throw new Error(`Server responded with ${response.status}`);
     }
-
-    console.log('[Push] Subscription sent to server');
   } catch (err) {
-    console.error('[Push] Failed to send subscription to server:', err);
     throw err;
   }
 }
@@ -186,10 +170,7 @@ async function removeSubscriptionFromServer(
     if (!response.ok) {
       throw new Error(`Server responded with ${response.status}`);
     }
-
-    console.log('[Push] Subscription removed from server');
   } catch (err) {
-    console.error('[Push] Failed to remove subscription from server:', err);
     throw err;
   }
 }

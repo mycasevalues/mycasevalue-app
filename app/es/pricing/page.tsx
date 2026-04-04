@@ -92,10 +92,10 @@ export default function SpanishPricingPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             PRECIOS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             Precios Simples y Transparentes
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
             Accede a datos de resultados de casos federales desde solo $5.99. Sin tarifas ocultas. Sin suscripciones obligatorias (a menos que quieras acceso ilimitado).
           </p>
         </div>
@@ -113,14 +113,14 @@ export default function SpanishPricingPage() {
               backdropFilter: 'blur(10px)',
             }}>
             <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#111111' }}>
                 Informe Individual
               </h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold" style={{ color: '#111111', fontFamily: 'PT Mono' }}>
                   $5.99
                 </span>
-                <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                <span className="text-sm" style={{ color: '#6B7280' }}>
                   de una sola vez
                 </span>
               </div>
@@ -139,7 +139,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                  <span className="text-sm" style={{ color: '#6B7280' }}>
                     {feature}
                   </span>
                 </li>
@@ -167,14 +167,14 @@ export default function SpanishPricingPage() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#111111' }}>
                 Informes Ilimitados
               </h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold" style={{ color: '#F59E0B', fontFamily: 'PT Mono' }}>
                   $9.99
                 </span>
-                <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                <span className="text-sm" style={{ color: '#6B7280' }}>
                   de una sola vez
                 </span>
               </div>
@@ -192,7 +192,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                  <span className="text-sm" style={{ color: '#6B7280' }}>
                     {feature}
                   </span>
                 </li>
@@ -215,14 +215,14 @@ export default function SpanishPricingPage() {
               backdropFilter: 'blur(10px)',
             }}>
             <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#111111' }}>
                 Modo Abogado
               </h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold" style={{ color: '#8B5CF6', fontFamily: 'PT Mono' }}>
                   $29.99
                 </span>
-                <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                <span className="text-sm" style={{ color: '#6B7280' }}>
                   /mes
                 </span>
               </div>
@@ -243,7 +243,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+                  <span className="text-sm" style={{ color: '#6B7280' }}>
                     {feature}
                   </span>
                 </li>
@@ -262,14 +262,14 @@ export default function SpanishPricingPage() {
 
         {/* Plan Notes */}
         <div className="text-center p-6 rounded-xl mb-12" style={{ background: '#FFFFFF', borderColor: 'var(--border-default)', border: '1px solid var(--border-default)' }}>
-          <p className="text-sm" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-sm" style={{ color: '#6B7280' }}>
             Todos los planes incluyen citas de fuentes, soporte bilingüe (inglés/español) y un aviso de "no es asesoramiento legal".
           </p>
         </div>
 
         {/* Pricing FAQ */}
         <section>
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: '#111111' }}>
             Preguntas sobre Precios
           </h2>
           <div className="space-y-3 max-w-3xl mx-auto">
@@ -282,7 +282,7 @@ export default function SpanishPricingPage() {
                   background: '#FFFFFF',
                 }}
               >
-                <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--fg-primary)' }}>
+                <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#111111' }}>
                   <span className="flex-1 text-base leading-relaxed pr-4">
                     {faq.q}
                   </span>
@@ -300,7 +300,7 @@ export default function SpanishPricingPage() {
                   </svg>
                 </summary>
                 <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
                     {faq.a}
                   </p>
                 </div>
@@ -311,13 +311,13 @@ export default function SpanishPricingPage() {
 
         {/* CTA Section */}
         <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#6B7280' }}>
             Genera tu informe básico gratuito instantáneamente, luego actualiza a características premium si deseas análisis más profundo.
           </p>
-          <a href="/es/odds"
+          <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
             style={{ background: '#111111', color: '#FFFFFF' }}>
             Consultar Mi Tipo de Caso
@@ -329,7 +329,7 @@ export default function SpanishPricingPage() {
 
       {/* Footer disclaimer */}
       <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#6B7280' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente.
           No somos un bufete de abogados. Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

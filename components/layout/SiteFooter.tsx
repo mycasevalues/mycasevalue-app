@@ -2,7 +2,6 @@
  * SiteFooter.tsx — Site-wide dark footer (Server Component compatible).
  * bg #111111 — the ONLY dark element on the entire site per Paper design system.
  * Rendered from app/layout.tsx so every page gets consistent footer.
- * The homepage client component (MyCaseValue) renders its own Footer and hides this via CSS.
  */
 
 import Link from 'next/link';

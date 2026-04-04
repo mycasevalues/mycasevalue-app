@@ -174,11 +174,11 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
           </p>
           <h2
             className="font-display text-xl sm:text-2xl font-bold mb-2"
-            style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}
+            style={{ color: '#111111', letterSpacing: '-0.5px' }}
           >
             {t.heading}
           </h2>
-          <p className="text-[13px]" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-[13px]" style={{ color: '#6B7280' }}>
             {t.subheading}
           </p>
         </div>
@@ -209,7 +209,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
                 style={{
                   background: 'rgba(255,255,255,0.6)',
                   border: '1px solid var(--border-default)',
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   outline: 'none',
                 }}
               >
@@ -242,7 +242,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
                 style={{
                   background: 'rgba(255,255,255,0.6)',
                   border: '1px solid var(--border-default)',
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   outline: 'none',
                 }}
               />
@@ -254,7 +254,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
             disabled={offerAmount <= 0}
             className="w-full sm:w-auto px-6 py-2.5 rounded-lg font-semibold text-[13px] transition-all"
             style={{
-              background: offerAmount > 0 ? 'var(--accent-primary)' : 'rgba(107,114,128,0.3)',
+              background: offerAmount > 0 ? '#8B5CF6' : 'rgba(107,114,128,0.3)',
               color: offerAmount > 0 ? '#FFFFFF' : 'var(--fg-subtle)',
               cursor: offerAmount > 0 ? 'pointer' : 'not-allowed',
             }}
@@ -345,13 +345,13 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
             </div>
 
             {/* Comparison stat */}
-            <p className="text-center text-[13px]" style={{ color: 'var(--fg-muted)' }}>
+            <p className="text-center text-[13px]" style={{ color: '#6B7280' }}>
               {t.offerIs}{' '}
               <span style={{ color: verdict.color, fontWeight: 700 }}>{vsMedian.pct}% {vsMedian.dir}</span>{' '}
               {t.thanMedian}{' '}
-              <span style={{ color: 'var(--fg-primary)', fontWeight: 600 }}>{formatK(medianK)}</span>{' '}
+              <span style={{ color: '#111111', fontWeight: 600 }}>{formatK(medianK)}</span>{' '}
               {t.forCases}{' '}
-              <span style={{ color: 'var(--fg-primary)', fontWeight: 600 }}>
+              <span style={{ color: '#111111', fontWeight: 600 }}>
                 {lang === 'es' ? dist.label_es : dist.label_en}
               </span>
             </p>
@@ -373,7 +373,7 @@ export default function SettlementEvaluator({ lang = 'en' }: SettlementEvaluator
                     <div className="text-[10px] mb-1" style={{ color: 'var(--fg-subtle)' }}>{p.label}</div>
                     <div
                       className="text-[12px] font-bold font-mono"
-                      style={{ color: 'var(--fg-primary)' }}
+                      style={{ color: '#111111' }}
                     >
                       {formatK(p.value)}
                     </div>

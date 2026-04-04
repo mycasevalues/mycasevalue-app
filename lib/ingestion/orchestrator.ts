@@ -71,7 +71,6 @@ const CIRCUIT_DURATIONS: Record<string, number> = {
 function getDB() {
   const supabase = getSupabaseAdmin()
   if (!supabase) {
-    console.warn('[Orchestrator] Supabase not configured')
     return null
   }
   return supabase
@@ -93,12 +92,10 @@ async function safeUpsert(
       .upsert(data, { onConflict })
 
     if (error) {
-      console.warn(`[${label}] Upsert error:`, error.message)
       return { success: false, error: error.message }
     }
     return { success: true }
   } catch (e: any) {
-    console.warn(`[${label}] Exception:`, e.message)
     return { success: false, error: e.message }
   }
 }
@@ -147,7 +144,6 @@ function isValidOpinion(opinion: any): boolean {
  */
 export async function runFullIngestion(): Promise<IngestionResult[]> {
   const results: IngestionResult[] = []
-  console.log('[Orchestrator] Starting full data ingestion pipeline...')
 
   // Log the run
   let logEntry: any = null
@@ -166,7 +162,6 @@ export async function runFullIngestion(): Promise<IngestionResult[]> {
         .single()
       logEntry = result.data
     } catch (e: any) {
-      console.warn('[Orchestrator] Could not create ingestion log:', e.message)
     }
   }
 
@@ -192,14 +187,6 @@ export async function runFullIngestion(): Promise<IngestionResult[]> {
   // ─── Update log ───
   await updateIngestionLog(logEntry, results)
 
-  console.log('[Orchestrator] Pipeline complete:', JSON.stringify(results.map(r => ({
-    source: r.source,
-    status: r.status,
-    processed: r.recordsProcessed,
-    inserted: r.recordsInserted,
-    skipped: r.recordsSkipped,
-    duration: `${(r.duration / 1000).toFixed(1)}s`
-  }))))
   return results
 }
 
@@ -222,11 +209,9 @@ export async function runIncrementalIngestion(): Promise<IngestionResult[]> {
         .single()
       if (lastRun?.completed_at) since = lastRun.completed_at
     } catch (e: any) {
-      console.warn('[Orchestrator] Could not get last run timestamp:', e.message)
     }
   }
 
-  console.log(`[Orchestrator] Incremental ingestion since ${since}`)
 
   const clResult = await runSource('courtlistener_incremental', ingestCourtListenerSource)
   results.push(clResult)
@@ -239,7 +224,6 @@ export async function runIncrementalIngestion(): Promise<IngestionResult[]> {
  * Run a single named source independently.
  */
 export async function runSingleSource(sourceName: string): Promise<IngestionResult[]> {
-  console.log(`[Orchestrator] Running single source: ${sourceName}`)
 
   const sourceMap: Record<string, () => Promise<SourceResult>> = {
     fjc: ingestFJCSource,
@@ -294,7 +278,6 @@ async function ingestFJCSource(): Promise<SourceResult> {
     const row = mapCaseStatToRow(stat)
     if (!isValidCaseStat(row)) {
       skipped++
-      console.warn(`[FJC] Skipping invalid stat: NOS ${row.nos_code}`)
       continue
     }
     const { success } = await safeUpsert(TABLES.CASE_STATS, row, 'nos_code,source', 'FJC')
@@ -317,7 +300,6 @@ async function ingestFJCSource(): Promise<SourceResult> {
     if (success) outcomeCount++
   }
 
-  console.log(`[FJC] Upserted ${inserted} case stats, ${outcomeCount} outcome distributions, skipped ${skipped}`)
 
   return {
     processed: (data.caseStats?.length || 0) + (data.outcomeDistributions?.length || 0),
@@ -333,7 +315,6 @@ async function ingestCourtListenerSource(): Promise<SourceResult> {
   try {
     data = await ingestCourtListenerData()
   } catch (e: any) {
-    console.error('[CourtListener] Ingestion function error:', e.message)
     return { processed: 0, inserted: 0, updated: 0, skipped: 0 }
   }
 
@@ -377,7 +358,6 @@ async function ingestCourtListenerSource(): Promise<SourceResult> {
     if (success) judgesInserted++
   }
 
-  console.log(`[CourtListener] Upserted ${opinionsInserted} opinions, ${judgesInserted} judges, skipped ${skipped}`)
 
   return {
     processed: (data?.opinions?.length || 0) + (data?.judges?.length || 0),
@@ -392,11 +372,9 @@ async function ingestRECAPSource(): Promise<SourceResult> {
   try {
     const data: any = await ingestRECAPData()
     const processed = Array.isArray(data) ? data.length : (data?.dockets?.length || 0)
-    console.log(`[RECAP] Processed ${processed} docket entries`)
     return { processed, inserted: processed, updated: 0, skipped: 0 }
   } catch (e: any) {
     if (e.message?.includes('COURTLISTENER_API_TOKEN') || e.message?.includes('not configured')) {
-      console.warn('[RECAP] API token not configured, skipping')
       return { processed: 0, inserted: 0, updated: 0, skipped: 0 }
     }
     throw e
@@ -418,11 +396,9 @@ async function generateDerivedStats(): Promise<SourceResult> {
     .eq('source', 'fjc')
 
   if (fetchError || !caseStats || caseStats.length === 0) {
-    console.warn('[DerivedStats] No case_stats data available:', fetchError?.message)
     return { processed: 0, inserted: 0, updated: 0, skipped: 0 }
   }
 
-  console.log(`[DerivedStats] Computing circuit/state stats from ${caseStats.length} case types`)
 
   // Compute aggregate stats
   const totalCases = (caseStats as any[]).reduce((sum: number, s: any) => sum + (s.total_cases || 0), 0)
@@ -514,7 +490,6 @@ async function generateDerivedStats(): Promise<SourceResult> {
     if (success) stateInserted++
   }
 
-  console.log(`[DerivedStats] Upserted ${circuitInserted} circuits, ${stateInserted} states`)
 
   return {
     processed: Object.keys(CIRCUITS).length + Object.keys(allStates).length,
@@ -534,12 +509,10 @@ async function runSource(
   fn: () => Promise<SourceResult>
 ): Promise<IngestionResult> {
   const start = Date.now()
-  console.log(`[Orchestrator] Starting ${source} ingestion...`)
 
   try {
     const result = await fn()
     const duration = Date.now() - start
-    console.log(`[Orchestrator] ${source} completed in ${(duration / 1000).toFixed(1)}s — ${result.inserted} inserted, ${result.skipped} skipped`)
 
     return {
       source,
@@ -553,7 +526,6 @@ async function runSource(
     }
   } catch (error: any) {
     const duration = Date.now() - start
-    console.error(`[Orchestrator] ${source} FAILED after ${(duration / 1000).toFixed(1)}s:`, error.message, error.stack?.split('\n').slice(0, 3).join('\n'))
 
     return {
       source,
@@ -569,7 +541,6 @@ async function runSource(
 }
 
 async function refreshStatsCache(): Promise<void> {
-  console.log('[Orchestrator] Refreshing stats cache...')
   const db = getDB()
   if (!db) return
 
@@ -578,12 +549,9 @@ async function refreshStatsCache(): Promise<void> {
     try {
       const { error } = await db.rpc('refresh_stats_cache')
       if (!error) {
-        console.log('[Orchestrator] Stats cache refreshed successfully')
         return
       }
-      console.warn(`[Orchestrator] Cache refresh attempt ${attempt} failed:`, error.message)
     } catch (e: any) {
-      console.warn(`[Orchestrator] Cache refresh attempt ${attempt} exception:`, e.message)
     }
     if (attempt < 2) await new Promise(r => setTimeout(r, 1000))
   }
@@ -617,9 +585,7 @@ async function updateIngestionLog(logEntry: any, results: IngestionResult[]): Pr
         completed_at: new Date().toISOString(),
       })
       .eq('id', logEntry.id)
-    console.log('[Orchestrator] Ingestion log updated')
   } catch (e: any) {
-    console.warn('[Orchestrator] Failed to update ingestion log:', e.message)
   }
 }
 

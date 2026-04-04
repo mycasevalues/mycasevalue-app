@@ -423,10 +423,10 @@ export default function FAQPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             FAQ
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             Frequently Asked Questions
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
             Get answers to common questions about MyCaseValue, federal court data, and how to use outcome statistics.
           </p>
         </div>
@@ -437,7 +437,7 @@ export default function FAQPage() {
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
-              <h2 className="text-xl font-display font-bold mb-6" style={{ color: 'var(--fg-primary)' }}>
+              <h2 className="text-xl font-display font-bold mb-6" style={{ color: '#111111' }}>
                 {section.category}
               </h2>
               <div className="space-y-3">
@@ -450,7 +450,7 @@ export default function FAQPage() {
                       background: '#FFFFFF',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: 'var(--fg-primary)' }}>
+                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#111111' }}>
                       <span className="flex-1 text-base leading-relaxed pr-4">
                         {faq.q}
                       </span>
@@ -468,7 +468,7 @@ export default function FAQPage() {
                       </svg>
                     </summary>
                     <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -481,10 +481,10 @@ export default function FAQPage() {
 
         {/* Still have questions */}
         <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             Still have questions?
           </h2>
-          <p className="mb-6" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-6" style={{ color: '#6B7280' }}>
             Get in touch with our support team.
           </p>
           <a href="mailto:support@mycasevalue.com"

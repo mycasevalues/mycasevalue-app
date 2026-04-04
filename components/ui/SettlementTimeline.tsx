@@ -46,7 +46,7 @@ export function SettlementTimeline({
             fontFamily: 'var(--font-body)',
             fontSize: '14px',
             fontWeight: 600,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 8px 0',
           }}
         >
@@ -56,7 +56,7 @@ export function SettlementTimeline({
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             margin: 0,
           }}
         >
@@ -178,14 +178,14 @@ export function SettlementTimeline({
             backgroundColor: 'var(--bg-hover)',
             borderRadius: '8px',
             padding: '14px 16px',
-            borderLeft: '3px solid var(--accent-secondary)',
+            borderLeft: '3px solid #7C3AED',
           }}
         >
           <p
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '12px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               margin: '0 0 4px 0',
               fontWeight: 500,
             }}
@@ -197,7 +197,7 @@ export function SettlementTimeline({
               fontFamily: 'var(--font-body)',
               fontSize: '18px',
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               margin: 0,
             }}
           >
@@ -207,7 +207,7 @@ export function SettlementTimeline({
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '11px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               margin: '4px 0 0 0',
             }}
           >
@@ -263,14 +263,14 @@ export function SettlementTimeline({
             backgroundColor: 'var(--bg-hover)',
             borderRadius: '8px',
             padding: '14px 16px',
-            borderLeft: '3px solid var(--accent-secondary)',
+            borderLeft: '3px solid #7C3AED',
           }}
         >
           <p
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '12px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               margin: '0 0 4px 0',
               fontWeight: 500,
             }}
@@ -282,7 +282,7 @@ export function SettlementTimeline({
               fontFamily: 'var(--font-body)',
               fontSize: '18px',
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               margin: 0,
             }}
           >
@@ -292,7 +292,7 @@ export function SettlementTimeline({
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '11px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               margin: '4px 0 0 0',
             }}
           >
@@ -306,7 +306,7 @@ export function SettlementTimeline({
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
-          color: 'var(--fg-muted)',
+          color: '#6B7280',
           lineHeight: 1.6,
           margin: 0,
           fontStyle: 'italic',

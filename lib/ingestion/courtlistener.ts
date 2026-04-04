@@ -116,7 +116,6 @@ function parseRetryAfter(retryAfterHeader: string | null): number {
 
   // Return default if parsing failed (NaN) or if value is invalid
   if (isNaN(delaySeconds) || delaySeconds < 0) {
-    console.warn(`Invalid Retry-After header: "${retryAfterHeader}", using default delay`);
     return DEFAULT_RETRY_DELAY_MS;
   }
 
@@ -179,7 +178,6 @@ async function fetchCourtListenerAPI<T>(
 
   while (retries > 0) {
     try {
-      console.log(`Fetching from CourtListener API: ${endpoint}`);
       const response = await fetch(url.toString(), {
         method: 'GET',
         headers,
@@ -194,7 +192,6 @@ async function fetchCourtListenerAPI<T>(
           // Rate limited - check for Retry-After header
           const retryAfter = response.headers.get('Retry-After');
           const delayMs = parseRetryAfter(retryAfter);
-          console.warn(`Rate limited by CourtListener API. Retry-After: ${retryAfter || 'not set'}. Waiting ${delayMs}ms`);
           throw new Error(`Rate limited by CourtListener API (${response.status})`);
         }
         if (response.status >= 500) {
@@ -211,7 +208,6 @@ async function fetchCourtListenerAPI<T>(
 
       // Validate response structure
       if (!isValidSearchResponse(data)) {
-        console.error('Invalid CourtListener API response structure:', data);
         throw new Error('Invalid CourtListener API response: missing required fields');
       }
 
@@ -221,7 +217,6 @@ async function fetchCourtListenerAPI<T>(
 
       // Don't retry on authentication errors
       if (lastError.message.includes('Unauthorized')) {
-        console.error('Authentication failed:', lastError.message);
         throw lastError;
       }
 
@@ -230,10 +225,8 @@ async function fetchCourtListenerAPI<T>(
       // Exponential backoff
       if (retries > 0) {
         const delayMs = Math.pow(2, 3 - retries) * 1000;
-        console.warn(`Request failed: ${lastError.message}. Retrying in ${delayMs}ms (${retries} retries remaining)`);
         await new Promise((resolve) => setTimeout(resolve, delayMs));
       } else {
-        console.error(`Request failed after all retries: ${lastError.message}`);
       }
     }
   }
@@ -340,7 +333,6 @@ export async function fetchRecentOpinions(
     // Use /opinions/ endpoint (correct v4 API endpoint)
     const actualLimit = Math.min(limit, 500); // Cap at 500 per run to avoid timeouts
 
-    console.log(`Fetching up to ${actualLimit} recent opinions from CourtListener...`);
 
     const response = await fetchCourtListenerAPI<
       APISearchResponse<CourtListenerOpinion>
@@ -350,19 +342,16 @@ export async function fetchRecentOpinions(
     });
 
     if (!response.results || !Array.isArray(response.results)) {
-      console.error('Invalid response structure for opinions:', response);
       throw new Error('Invalid response structure: missing results array');
     }
 
     const normalized = response.results.map(normalizeOpinion);
     opinions.push(...normalized);
 
-    console.log(`Successfully fetched ${normalized.length} opinions (API returned ${response.count} total available)`);
 
     return opinions;
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error(`Failed to fetch recent opinions: ${message}`);
     throw new Error(`Failed to fetch recent opinions: ${message}`);
   }
 }
@@ -389,7 +378,6 @@ export async function fetchJudgeData(court: string): Promise<
 > {
   try {
     // Use /judges/ endpoint (correct v4 API endpoint)
-    console.log(`Fetching judge data for court: ${court}`);
 
     const response = await fetchCourtListenerAPI<APISearchResponse<CourtListenerJudge>>(
       '/judges/',
@@ -400,17 +388,14 @@ export async function fetchJudgeData(court: string): Promise<
     );
 
     if (!response.results || !Array.isArray(response.results)) {
-      console.error(`Invalid response structure for judges in ${court}:`, response);
       throw new Error('Invalid response structure: missing results array');
     }
 
     const normalized = response.results.map(normalizeJudge);
-    console.log(`Fetched ${normalized.length} judges from ${court} (API returned ${response.count} total available)`);
 
     return normalized;
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error(`Failed to fetch judge data for court ${court}: ${message}`);
     throw new Error(`Failed to fetch judge data for court ${court}: ${message}`);
   }
 }
@@ -495,46 +480,29 @@ export async function ingestCourtListenerData(): Promise<{
   // Validate API token is available
   if (!API_TOKEN) {
     const error = new Error('COURTLISTENER_API_TOKEN environment variable is not set');
-    console.error(error.message);
     throw error;
   }
 
   // Fetch opinions
-  console.log('Starting CourtListener data ingestion...');
   try {
     const recentOpinions = await fetchRecentOpinions(500); // Max 500 per run
     opinions.push(...recentOpinions);
-    console.log(`Successfully fetched ${recentOpinions.length} opinions`);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    console.error(`Error fetching opinions: ${message}`);
     // Continue with judge data even if opinions fail
   }
 
   // Fetch judge data for each court
-  console.log(`Fetching judge data for ${courts.length} courts...`);
   for (const court of courts) {
     try {
       const courtJudges = await fetchJudgeData(court);
       judges.push(...courtJudges);
-      console.log(`Successfully added ${courtJudges.length} judges from ${court} (total: ${judges.length})`);
 
       // Small delay to respect rate limits and avoid overwhelming the API
       await new Promise((resolve) => setTimeout(resolve, 200));
     } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      console.warn(`Error fetching judges for ${court}: ${message}`);
       // Continue with other courts even if one fails
     }
-  }
-
-  console.log(
-    `CourtListener ingestion complete: ${opinions.length} opinions, ${judges.length} judges`
-  );
-
-  // Validate we got some data
-  if (opinions.length === 0 && judges.length === 0) {
-    console.warn('Warning: No data was successfully ingested from CourtListener');
   }
 
   return { opinions, judges };

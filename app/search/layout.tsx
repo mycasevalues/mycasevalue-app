@@ -1,13 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Search Case Types — MyCaseValue | 84 Federal Case Types',
-  description: 'Search and explore 84 federal case types. Find win rates, settlement data, and timelines for employment, injury, consumer, civil rights, and more.',
-  alternates: { canonical: 'https://www.mycasevalues.com/search' },
+  title: 'Search Cases | MyCaseValue',
+  description: 'Search federal court case types and find outcome data for your case',
   openGraph: {
-    title: 'Search Case Types — MyCaseValue',
-    description: 'Search 84 federal case types for real court outcome data.',
-    type: 'website',
+    title: 'Search Cases | MyCaseValue',
+    description: 'Search federal court case types and find outcome data for your case',
     url: 'https://www.mycasevalues.com/search',
   },
 };

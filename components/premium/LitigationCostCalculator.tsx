@@ -115,10 +115,10 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
               <p className="text-[11px] font-bold tracking-[3px] uppercase mb-2" style={{ color: '#333333' }}>
                 {t.locked}
               </p>
-              <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#111111' }}>
                 {t.title}
               </h3>
-              <p className="text-[13px] mb-5" style={{ color: 'var(--fg-muted)' }}>
+              <p className="text-[13px] mb-5" style={{ color: '#6B7280' }}>
                 {t.unlockMsg}
               </p>
               <button type="button"
@@ -149,10 +149,10 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
           <p className="text-[11px] font-bold tracking-[3px] uppercase mb-3" style={{ color: '#333333' }}>
             PREMIUM
           </p>
-          <h2 className="font-display text-xl sm:text-2xl font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="font-display text-xl sm:text-2xl font-bold mb-2" style={{ color: '#111111' }}>
             {t.title}
           </h2>
-          <p className="text-[13px]" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+          <p className="text-[13px]" style={{ color: '#6B7280' }}>{t.sub}</p>
         </div>
 
         {/* Controls */}
@@ -166,7 +166,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
               value={complexity}
               onChange={e => setComplexity(e.target.value)}
               className="w-full rounded-lg px-3 py-2.5 text-[13px]"
-              style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: 'var(--fg-primary)', outline: 'none' }}
+              style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border-default)', color: '#111111', outline: 'none' }}
             >
               {CASE_COMPLEXITY.map(c => (
                 <option key={c.key} value={c.key}>{lang === 'es' ? c.es : c.en}</option>
@@ -189,7 +189,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
                     style={{
                       background: goToTrial === val ? 'rgba(17,17,17,0.15)' : 'rgba(255,255,255,0.03)',
                       border: goToTrial === val ? '1px solid rgba(17,17,17,0.4)' : '1px solid var(--border-default)',
-                      color: goToTrial === val ? '#333333' : 'var(--fg-muted)',
+                      color: goToTrial === val ? '#333333' : '#6B7280',
                     }}
                   >
                     {val ? t.yes : t.no}
@@ -210,7 +210,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
                     style={{
                       background: hasExperts === val ? 'rgba(17,17,17,0.15)' : 'rgba(255,255,255,0.03)',
                       border: hasExperts === val ? '1px solid rgba(17,17,17,0.4)' : '1px solid var(--border-default)',
-                      color: hasExperts === val ? '#333333' : 'var(--fg-muted)',
+                      color: hasExperts === val ? '#333333' : '#6B7280',
                     }}
                   >
                     {val ? t.yes : t.no}
@@ -242,7 +242,7 @@ export default function LitigationCostCalculator({ lang = 'en', isPremium = fals
                 <div key={phase.key}>
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-[12px]" style={{ color: 'var(--fg-secondary)' }}>{phase.label}</span>
-                    <span className="text-[11px] font-mono font-semibold" style={{ color: 'var(--fg-primary)' }}>
+                    <span className="text-[11px] font-mono font-semibold" style={{ color: '#111111' }}>
                       {formatCost(phase.low)} – {formatCost(phase.high)}
                     </span>
                   </div>

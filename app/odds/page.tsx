@@ -93,10 +93,10 @@ export default function OddsPage() {
       >
         <div className="max-w-4xl mx-auto px-6">
 
-          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             Check My Odds
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
             See real outcomes for cases like yours — free, instant, and private.
           </p>
         </div>
@@ -108,7 +108,7 @@ export default function OddsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
           {/* Case Type Dropdown */}
           <div>
-            <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--fg-primary)' }}>
+            <label className="block text-sm font-semibold mb-3" style={{ color: '#111111' }}>
               Case Type
             </label>
             <select
@@ -118,7 +118,7 @@ export default function OddsPage() {
               style={{
                 borderColor: 'var(--border-default)',
                 background: '#FFFFFF',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               <option value="">Select a case type...</option>
@@ -132,7 +132,7 @@ export default function OddsPage() {
 
           {/* District Dropdown */}
           <div>
-            <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--fg-primary)' }}>
+            <label className="block text-sm font-semibold mb-3" style={{ color: '#111111' }}>
               Federal District
             </label>
             <select
@@ -142,7 +142,7 @@ export default function OddsPage() {
               style={{
                 borderColor: 'var(--border-default)',
                 background: '#FFFFFF',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               <option value="">All districts</option>
@@ -156,7 +156,7 @@ export default function OddsPage() {
 
           {/* Year Range Dropdown */}
           <div>
-            <label className="block text-sm font-semibold mb-3" style={{ color: 'var(--fg-primary)' }}>
+            <label className="block text-sm font-semibold mb-3" style={{ color: '#111111' }}>
               Year Range
             </label>
             <select
@@ -166,7 +166,7 @@ export default function OddsPage() {
               style={{
                 borderColor: 'var(--border-default)',
                 background: '#FFFFFF',
-                color: 'var(--fg-primary)',
+                color: '#111111',
               }}
             >
               {yearRangeOptions.map((opt) => (
@@ -186,7 +186,7 @@ export default function OddsPage() {
             className="px-8 py-4 rounded-lg text-base font-semibold transition-all"
             style={{
               background: selectedCaseType ? '#111111' : '#E5E0D8',
-              color: selectedCaseType ? '#FFFFFF' : 'var(--fg-muted)',
+              color: selectedCaseType ? '#FFFFFF' : '#6B7280',
               cursor: selectedCaseType && !loading ? 'pointer' : 'default',
             }}
           >
@@ -220,7 +220,7 @@ export default function OddsPage() {
                 background: '#FFFFFF',
               }}
             >
-              <p className="text-sm font-semibold mb-4" style={{ color: 'var(--fg-muted)' }}>
+              <p className="text-sm font-semibold mb-4" style={{ color: '#6B7280' }}>
                 Win Rate (at Trial)
               </p>
               <div
@@ -229,7 +229,7 @@ export default function OddsPage() {
               >
                 {results.winRate}%
               </div>
-              <p className="mt-4 text-sm" style={{ color: 'var(--fg-muted)' }}>
+              <p className="mt-4 text-sm" style={{ color: '#6B7280' }}>
                 Based on {results.caseType} cases
               </p>
             </div>
@@ -242,7 +242,7 @@ export default function OddsPage() {
                 background: '#FFFFFF',
               }}
             >
-              <p className="text-sm font-semibold mb-6" style={{ color: 'var(--fg-primary)' }}>
+              <p className="text-sm font-semibold mb-6" style={{ color: '#111111' }}>
                 Case Outcomes Distribution
               </p>
               <div className="space-y-4">
@@ -256,7 +256,7 @@ export default function OddsPage() {
                   return (
                     <div key={outcome.label}>
                       <div className="flex justify-between mb-2">
-                        <span style={{ color: 'var(--fg-primary)' }}>{outcome.label}</span>
+                        <span style={{ color: '#111111' }}>{outcome.label}</span>
                         <span style={{ color: outcome.color, fontWeight: '600' }}>
                           {percentage}%
                         </span>
@@ -287,20 +287,20 @@ export default function OddsPage() {
                 background: '#FFFFFF',
               }}
             >
-              <p className="text-base leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+              <p className="text-base leading-relaxed" style={{ color: '#6B7280' }}>
                 In federal court, {results.caseType} cases go to trial with a {results.winRate}% win rate for plaintiffs.
                 However, most cases settle before trial: {((results.settled / (results.won + results.settled + results.dismissed)) * 100).toFixed(0)}% of cases in this
                 category settle. The remaining cases are dismissed. These figures represent historical aggregate data
                 and do not predict the outcome of your specific case.
               </p>
-              <p className="text-sm mt-4 font-semibold" style={{ color: 'var(--fg-muted)' }}>
+              <p className="text-sm mt-4 font-semibold" style={{ color: '#6B7280' }}>
                 Source: Federal Judicial Center Integrated Database (FJC IDB)
               </p>
             </div>
 
             {/* CTA */}
             <div className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-              <p className="text-sm mb-4" style={{ color: 'var(--fg-muted)' }}>
+              <p className="text-sm mb-4" style={{ color: '#6B7280' }}>
                 Want the full picture?
               </p>
               <a
@@ -318,7 +318,7 @@ export default function OddsPage() {
             {/* Legal Disclaimer */}
             <div style={{
               background: 'var(--bg-base)',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               padding: '40px 20px',
               fontSize: '14px',
               fontFamily: 'Outfit, system-ui, sans-serif',
@@ -349,7 +349,7 @@ export default function OddsPage() {
                 <div className="font-display font-extrabold text-lg" style={{ color: '#111111' }}>
                   {stat.v}
                 </div>
-                <div className="text-xs mt-1" style={{ color: 'var(--fg-muted)' }}>
+                <div className="text-xs mt-1" style={{ color: '#6B7280' }}>
                   {stat.l}
                 </div>
               </div>

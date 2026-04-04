@@ -15,10 +15,10 @@ interface GateCardProps {
 }
 
 const tierColors: Record<string, { border: string; badge: string; badgeText: string }> = {
-  free: { border: 'var(--border-default)', badge: 'var(--accent-primary-subtle)', badgeText: 'var(--accent-primary)' },
-  single: { border: 'var(--accent-secondary-border)', badge: 'var(--accent-secondary-subtle)', badgeText: 'var(--accent-secondary)' },
-  unlimited: { border: 'var(--accent-secondary)', badge: 'var(--accent-secondary)', badgeText: '#FFFFFF' },
-  attorney: { border: 'var(--accent-primary)', badge: 'var(--accent-primary)', badgeText: '#FFFFFF' },
+  free: { border: 'var(--border-default)', badge: 'var(--accent-primary-subtle)', badgeText: '#8B5CF6' },
+  single: { border: 'var(--accent-secondary-border)', badge: 'var(--accent-secondary-subtle)', badgeText: '#7C3AED' },
+  unlimited: { border: '#7C3AED', badge: '#7C3AED', badgeText: '#FFFFFF' },
+  attorney: { border: '#8B5CF6', badge: '#8B5CF6', badgeText: '#FFFFFF' },
 };
 
 const tierLabels: Record<string, string> = {

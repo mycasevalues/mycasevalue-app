@@ -95,7 +95,6 @@ export async function syncPremiumFromDB(email: string): Promise<PremiumSession |
     premiumStore.set(normalizedEmail, session);
     return session;
   } catch (err: any) {
-    console.error('[Premium] DB sync error:', err?.message || err);
     return null;
   }
 }
@@ -133,7 +132,6 @@ export async function grantPremiumAccess(session: PremiumSession): Promise<void>
         )
         .throwOnError();
     } catch (err: any) {
-      console.error('[Premium] Failed to persist to DB:', err?.message || err);
       // Continue anyway - cache is still active
     }
   }
@@ -185,7 +183,6 @@ export async function revokePremiumAccess(email: string): Promise<void> {
         .eq('email', normalizedEmail)
         .throwOnError();
     } catch (err: any) {
-      console.error('[Premium] Failed to revoke in DB:', err?.message || err);
       // Continue anyway - cache is already cleared
     }
   }
@@ -235,7 +232,6 @@ export async function cleanupExpiredSessions(): Promise<number> {
         .not('expires_at', 'is', null)
         .throwOnError();
     } catch (err: any) {
-      console.error('[Premium] Failed to cleanup expired in DB:', err?.message || err);
       // Continue anyway
     }
   }

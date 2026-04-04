@@ -14,7 +14,7 @@
   top: 2px;
   z-index: 10000;
   padding: 8px 16px;
-  background: var(--accent-primary);
+  background: #8B5CF6;
   color: white;
   border-radius: 0 0 8px 0;
   font-family: var(--font-body);
@@ -34,7 +34,7 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.7;
-  color: var(--fg-primary);
+  color: #111111;
   background: var(--bg-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -43,7 +43,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: 1.2;
-  color: var(--fg-primary);
+  color: #111111;
 }
 h1 { font-size: 40px; font-weight: 800; }
 h2 { font-size: 32px; font-weight: 700; }
@@ -66,7 +66,7 @@ p { margin-bottom: 1rem; }
   h4 { font-size: 16px; }
 }
 p:last-child { margin-bottom: 0; }
-a { color: var(--accent-primary); text-decoration: none; }
+a { color: #8B5CF6; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* Touch-friendly form inputs on mobile */
@@ -103,7 +103,7 @@ a:hover { text-decoration: underline; }
     background: linear-gradient(90deg, var(--bg-elevated) 25%, rgba(139,92,246,0.06) 50%, var(--bg-elevated) 75%);
     background-size: 400% 100%;
     animation: shimmer 1.8s infinite linear;
-    border-radius: var(--radius-md);
+    border-radius: 8px;
   }
 
   .glass {
@@ -159,10 +159,10 @@ a:hover { text-decoration: underline; }
   --bg: var(--bg-base);
   --bg-muted: var(--bg-base);
   --bg-inverted: #111827;
-  --fg: var(--fg-primary);
+  --fg: #111111;
   --fg-inverted: #FFFFFF;
-  --accent: var(--accent-primary);
-  --accent-mid: var(--accent-secondary);
+  --accent: #8B5CF6;
+  --accent-mid: #7C3AED;
   --accent-bg: rgba(139,92,246,0.06);
   --accent-border: rgba(139,92,246,0.15);
   --border: var(--border-default);
@@ -237,7 +237,7 @@ html, body {
 
 ::selection {
   background: var(--bg-selection);
-  color: var(--fg-primary);
+  color: #111111;
 }
 
 ::-webkit-scrollbar {
@@ -271,7 +271,7 @@ html, body {
   color: white;
   font-weight: 600;
   font-size: 14px;
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   text-decoration: none;
   box-shadow: var(--shadow-lg);
   transition: top 0.15s ease;
@@ -322,7 +322,7 @@ h1, h2, h3 {
 
 .sticky-nav.scrolled {
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 
@@ -358,7 +358,7 @@ h1, h2, h3 {
   background: #FFFFFF;
   border: 1px solid var(--border-default);
   border-radius: 0.75rem;
-  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255, 255, 255, 1);
   transition: all var(--duration-base) var(--ease-out-expo);
 }
 
@@ -1730,7 +1730,7 @@ input:focus, textarea:focus, select:focus {
   color: white;
   font-weight: 600;
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: 12px;
   padding: 14px 28px;
   cursor: pointer;
   box-shadow: var(--shadow-accent);
@@ -3361,7 +3361,7 @@ button:disabled,
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--fg-muted);
+  color: #6B7280;
 }
 
 .text-value {
@@ -3378,25 +3378,8 @@ button:disabled,
 }
 
 /* ============================================================
-   SERVER-SIDE RENDERING HERO — hidden once client loads
+   SERVER-SIDE RENDERING HERO
    ============================================================ */
-.ssr-hero-container {
-  display: block;
-  transition: opacity 0.3s ease-out, display 0.3s ease-out;
-}
-
-/* Hide SSR hero when client MyCaseValue component mounts */
-.ssr-hero-container[data-mcv-loaded] {
-  display: none;
-  opacity: 0;
-}
-
-/* Hide site-wide nav/footer on homepage when client SPA loads its own */
-.ssr-hero-container[data-mcv-loaded] ~ .site-nav,
-body:has(.ssr-hero-container[data-mcv-loaded]) .site-nav,
-body:has(.ssr-hero-container[data-mcv-loaded]) .site-footer {
-  display: none;
-}
 
 /* Outcome page navigation cards — hover via CSS (server component safe) */
 .outcome-nav-card:hover {

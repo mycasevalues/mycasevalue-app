@@ -237,7 +237,6 @@ export async function getDataCompleteness(): Promise<DataCompletenessMetrics> {
       dataQualityScore: Math.round(dataQualityScore * 10) / 10
     }
   } catch (error: any) {
-    console.error('Error calculating data completeness:', error.message)
     return {
       totalNosCodesWithData: 0,
       nosCodesWithWinRate: 0,

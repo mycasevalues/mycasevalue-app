@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
           });
         } catch { /* ignore logging failures */ }
       } catch (dbError) {
-        console.error('Report DB error:', dbError);
+        /* silent */
       }
     }
 

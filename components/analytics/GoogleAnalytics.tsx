@@ -16,7 +16,6 @@ export function trackEvent(
   }
 
   if (!(window as any).gtag) {
-    console.warn('[GA4] gtag not initialized');
     return;
   }
 

@@ -24,7 +24,7 @@ export default function AccountPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '32px',
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               margin: '0 0 8px 0',
               lineHeight: 1.2,
             }}
@@ -35,7 +35,7 @@ export default function AccountPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: 'var(--accent-secondary)',
+              color: '#7C3AED',
               margin: 0,
             }}
           >
@@ -46,10 +46,10 @@ export default function AccountPage() {
         {/* Profile Info Card */}
         <div
           style={{
-            backgroundColor: 'var(--bg-surface)',
+            backgroundColor: '#FFFFFF',
             borderRadius: '12px',
             padding: '32px',
-            boxShadow: 'var(--shadow-sm)',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             border: `1px solid var(--border-default)`,
             marginBottom: '24px',
           }}
@@ -59,7 +59,7 @@ export default function AccountPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '18px',
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               margin: '0 0 24px 0',
             }}
           >
@@ -76,7 +76,7 @@ export default function AccountPage() {
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
                   fontWeight: 500,
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   marginBottom: '8px',
                 }}
               >
@@ -94,8 +94,8 @@ export default function AccountPage() {
                   borderRadius: '8px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: 'var(--fg-primary)',
-                  backgroundColor: 'var(--bg-surface)',
+                  color: '#111111',
+                  backgroundColor: '#FFFFFF',
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s, box-shadow 0.2s',
                 }}
@@ -111,7 +111,7 @@ export default function AccountPage() {
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
                   fontWeight: 500,
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   marginBottom: '8px',
                 }}
               >
@@ -129,8 +129,8 @@ export default function AccountPage() {
                   borderRadius: '8px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: 'var(--fg-primary)',
-                  backgroundColor: 'var(--bg-surface)',
+                  color: '#111111',
+                  backgroundColor: '#FFFFFF',
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s, box-shadow 0.2s',
                 }}
@@ -143,8 +143,8 @@ export default function AccountPage() {
               className="auth-btn"
               style={{
                 padding: '10px 20px',
-                backgroundColor: 'var(--fg-primary)',
-                color: 'var(--bg-surface)',
+                backgroundColor: '#111111',
+                color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '8px',
                 fontFamily: 'var(--font-body)',
@@ -162,10 +162,10 @@ export default function AccountPage() {
         {/* Subscription Tier Card */}
         <div
           style={{
-            backgroundColor: 'var(--bg-surface)',
+            backgroundColor: '#FFFFFF',
             borderRadius: '12px',
             padding: '32px',
-            boxShadow: 'var(--shadow-sm)',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             border: `1px solid var(--border-default)`,
             marginBottom: '24px',
           }}
@@ -175,7 +175,7 @@ export default function AccountPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '18px',
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               margin: '0 0 24px 0',
             }}
           >
@@ -187,7 +187,7 @@ export default function AccountPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: 'var(--accent-secondary)',
+                color: '#7C3AED',
                 margin: '0 0 8px 0',
                 fontWeight: 500,
               }}
@@ -199,7 +199,7 @@ export default function AccountPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '20px',
                 fontWeight: 700,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 margin: 0,
               }}
             >
@@ -211,7 +211,7 @@ export default function AccountPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: 'var(--accent-secondary)',
+              color: '#7C3AED',
               margin: '0 0 24px 0',
               lineHeight: 1.5,
             }}
@@ -224,8 +224,8 @@ export default function AccountPage() {
             style={{
               display: 'inline-block',
               padding: '10px 20px',
-              backgroundColor: 'var(--accent-secondary)',
-              color: 'var(--bg-surface)',
+              backgroundColor: '#7C3AED',
+              color: '#FFFFFF',
               border: 'none',
               borderRadius: '8px',
               fontFamily: 'var(--font-body)',
@@ -242,10 +242,10 @@ export default function AccountPage() {
         {/* Billing Card */}
         <div
           style={{
-            backgroundColor: 'var(--bg-surface)',
+            backgroundColor: '#FFFFFF',
             borderRadius: '12px',
             padding: '32px',
-            boxShadow: 'var(--shadow-sm)',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             border: `1px solid var(--border-default)`,
             marginBottom: '24px',
           }}
@@ -255,7 +255,7 @@ export default function AccountPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '18px',
               fontWeight: 700,
-              color: 'var(--fg-primary)',
+              color: '#111111',
               margin: '0 0 24px 0',
             }}
           >
@@ -266,7 +266,7 @@ export default function AccountPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: 'var(--accent-secondary)',
+              color: '#7C3AED',
               margin: '0 0 24px 0',
               lineHeight: 1.5,
             }}
@@ -279,8 +279,8 @@ export default function AccountPage() {
             style={{
               display: 'inline-block',
               padding: '10px 20px',
-              backgroundColor: 'var(--fg-primary)',
-              color: 'var(--bg-surface)',
+              backgroundColor: '#111111',
+              color: '#FFFFFF',
               border: 'none',
               borderRadius: '8px',
               fontFamily: 'var(--font-body)',
@@ -297,10 +297,10 @@ export default function AccountPage() {
         {/* Danger Zone Card */}
         <div
           style={{
-            backgroundColor: 'var(--bg-surface)',
+            backgroundColor: '#FFFFFF',
             borderRadius: '12px',
             padding: '32px',
-            boxShadow: 'var(--shadow-sm)',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             border: '2px solid var(--semantic-danger)',
           }}
         >
@@ -322,7 +322,7 @@ export default function AccountPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 margin: '0 0 8px 0',
               }}
             >
@@ -332,7 +332,7 @@ export default function AccountPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: 'var(--accent-secondary)',
+                color: '#7C3AED',
                 margin: '0 0 16px 0',
                 lineHeight: 1.5,
               }}
@@ -344,7 +344,7 @@ export default function AccountPage() {
               style={{
                 padding: '10px 20px',
                 backgroundColor: 'var(--semantic-danger)',
-                color: 'var(--bg-surface)',
+                color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '8px',
                 fontFamily: 'var(--font-body)',
@@ -361,11 +361,11 @@ export default function AccountPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '12px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 margin: '8px 0 0 0',
               }}
             >
-              To delete your account, please contact <a href="mailto:support@mycasevalue.com" style={{ color: 'var(--accent-secondary)', textDecoration: 'none' }}>support@mycasevalue.com</a>.
+              To delete your account, please contact <a href="mailto:support@mycasevalue.com" style={{ color: '#7C3AED', textDecoration: 'none' }}>support@mycasevalue.com</a>.
             </p>
           </div>
         </div>

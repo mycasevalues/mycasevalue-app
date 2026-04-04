@@ -292,8 +292,6 @@ export async function GET(request: NextRequest) {
       }
     );
   } catch (error) {
-    console.error('OG Image generation error:', error);
-
     // Fallback default image
     return new ImageResponse(
       (

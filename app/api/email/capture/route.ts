@@ -53,7 +53,6 @@ export async function POST(request: NextRequest) {
         );
       } catch (dbError) {
         // Don't fail the request if DB write fails — email was still "captured"
-        console.error('Email capture DB error:', dbError);
       }
     }
 

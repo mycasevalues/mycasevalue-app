@@ -39,10 +39,10 @@ export default function SpanishHowItWorksPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             CÓMO FUNCIONA
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             Cómo Funciona MyCaseValue
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
             Te mostramos datos reales de resultados federales en 60 segundos. Sin asesoramiento legal. Sin sorpresas.
           </p>
         </div>
@@ -61,10 +61,10 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
                   Describe Tu Caso
                 </h2>
-                <p style={{ color: 'var(--fg-muted)' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#6B7280' }} className="text-lg leading-relaxed">
                   Responde preguntas sencillas sobre tu situación: tipo de caso, estado, cuándo sucedió, y si otros están afectados. No se requiere información detallada ni personal.
                 </p>
               </div>
@@ -80,10 +80,10 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
                   Aceptas la Divulgación
                 </h2>
-                <p style={{ color: 'var(--fg-muted)' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#6B7280' }} className="text-lg leading-relaxed">
                   Confirmas que entiendes que MyCaseValue muestra datos históricos de casos similares, NO una predicción de tu caso específico. No es asesoramiento legal. No hay relación abogado-cliente.
                 </p>
               </div>
@@ -99,10 +99,10 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
                   Obtenemos Datos
                 </h2>
-                <p style={{ color: 'var(--fg-muted)' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#6B7280' }} className="text-lg leading-relaxed">
                   Nuestro sistema busca en 5.1M+ casos federales del Centro Judicial Federal, CourtListener y PACER para encontrar casos similares al tuyo.
                 </p>
               </div>
@@ -118,10 +118,10 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
                   Analizamos Resultados
                 </h2>
-                <p style={{ color: 'var(--fg-muted)' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#6B7280' }} className="text-lg leading-relaxed">
                   Analizamos cómo terminaron esos casos: tasas de victoria, acuerdos, desestimaciones, cronogramas típicos y factores que los tribunales consideran.
                 </p>
               </div>
@@ -137,10 +137,10 @@ export default function SpanishHowItWorksPage() {
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
                   Tu Informe
                 </h2>
-                <p style={{ color: 'var(--fg-muted)' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#6B7280' }} className="text-lg leading-relaxed">
                   Recibe un informe gratuito que muestra lo que sucedió en casos como el tuyo: números, tasas, cronogramas. Premium desbloqueará análisis de jueces y datos de circuitos.
                 </p>
               </div>
@@ -151,7 +151,7 @@ export default function SpanishHowItWorksPage() {
 
         {/* Key principles */}
         <section className="mt-16">
-          <h2 className="text-3xl font-display font-bold mb-8" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-3xl font-display font-bold mb-8" style={{ color: '#111111' }}>
             Principios Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -161,10 +161,10 @@ export default function SpanishHowItWorksPage() {
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#111111' }}>
                 Privacidad Extrema
               </h3>
-              <p style={{ color: 'var(--fg-muted)' }}>
+              <p style={{ color: '#6B7280' }}>
                 Cero datos almacenados. Tus búsquedas son anónimas. Encriptado de extremo a extremo.
               </p>
             </div>
@@ -176,10 +176,10 @@ export default function SpanishHowItWorksPage() {
                   <path d="M12 6v6l4 2"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#111111' }}>
                 Instantáneo
               </h3>
-              <p style={{ color: 'var(--fg-muted)' }}>
+              <p style={{ color: '#6B7280' }}>
                 Tu informe se genera en 60 segundos. Sin espera. Sin formularios largos.
               </p>
             </div>
@@ -191,10 +191,10 @@ export default function SpanishHowItWorksPage() {
                   <circle cx="12" cy="12" r="10"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#111111' }}>
                 Basado en Hechos
               </h3>
-              <p style={{ color: 'var(--fg-muted)' }}>
+              <p style={{ color: '#6B7280' }}>
                 Todos los datos provienen de registros judiciales federales públicos, no opiniones.
               </p>
             </div>
@@ -203,13 +203,13 @@ export default function SpanishHowItWorksPage() {
 
         {/* CTA Section */}
         <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: 'var(--fg-primary)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             Listo para comenzar?
           </h2>
-          <p className="mb-6" style={{ color: 'var(--fg-muted)' }}>
+          <p className="mb-6" style={{ color: '#6B7280' }}>
             Genera tu informe gratuito en 60 segundos. Sin registro requerido.
           </p>
-          <a href="/es/odds"
+          <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
             style={{ background: '#111111', color: '#FFFFFF' }}>
             Consultar Mi Caso
@@ -221,7 +221,7 @@ export default function SpanishHowItWorksPage() {
 
       {/* Footer disclaimer */}
       <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'var(--fg-muted)' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#6B7280' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente.
           No somos un bufete de abogados. Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

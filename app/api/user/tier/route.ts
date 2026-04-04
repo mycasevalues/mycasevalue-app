@@ -34,7 +34,7 @@ export async function GET() {
 
     return NextResponse.json({ tier, email: user.email }, { status: 200 });
   } catch (err) {
-    console.error('[/api/user/tier] Error:', err);
+
     return NextResponse.json({ tier: 'free', email: null }, { status: 200 });
   }
 }

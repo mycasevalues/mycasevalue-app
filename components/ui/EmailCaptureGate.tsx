@@ -115,7 +115,7 @@ export function EmailCaptureGate({
             : 'scale-95 opacity-0'
         }`}
         style={{
-          backgroundColor: 'var(--bg-surface)',
+          backgroundColor: '#FFFFFF',
           border: '1px solid var(--border-subtle)',
         }}
         role="dialog"
@@ -126,7 +126,7 @@ export function EmailCaptureGate({
         <h2
           id="email-gate-headline"
           className="text-center text-2xl font-bold font-['Roboto'] mb-3"
-          style={{ color: 'var(--fg-primary)' }}
+          style={{ color: '#111111' }}
         >
           {t.headline}
         </h2>
@@ -146,7 +146,7 @@ export function EmailCaptureGate({
             <label
               htmlFor="email-input"
               className="block text-xs font-medium mb-2 uppercase tracking-wider"
-              style={{ color: 'var(--fg-muted)' }}
+              style={{ color: '#6B7280' }}
             >
               {t.inputLabel}
             </label>
@@ -166,7 +166,7 @@ export function EmailCaptureGate({
               className="w-full h-12 px-4 rounded-lg text-base font-normal focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed transition-all"
               style={{
                 backgroundColor: 'var(--bg-base)',
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 border: `1px solid ${error ? '#EF4444' : 'var(--border-default)'}`,
               }}
               aria-invalid={!!error}
@@ -190,7 +190,7 @@ export function EmailCaptureGate({
             style={{
               background: isLoading
                 ? 'var(--accent-primary-hover)'
-                : 'linear-gradient(135deg, var(--accent-primary), #333333)',
+                : 'linear-gradient(135deg, #8B5CF6, #333333)',
             }}
             aria-busy={isLoading}
           >
@@ -230,7 +230,7 @@ export function EmailCaptureGate({
               onClick={onSkip}
               className="text-sm font-medium transition-colors hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded px-2 py-1"
               style={{
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
               }}
             >
               {t.skipLink}
@@ -241,7 +241,7 @@ export function EmailCaptureGate({
         {/* Privacy Notice */}
         <p
           className="mt-6 text-center text-xs"
-          style={{ color: 'var(--fg-muted)' }}
+          style={{ color: '#6B7280' }}
         >
           {t.privacyNotice}
         </p>

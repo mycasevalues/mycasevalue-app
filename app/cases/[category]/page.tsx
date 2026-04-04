@@ -395,7 +395,7 @@ async function CategoryPage({
             Cases
           </Link>
           {' / '}
-          <span style={{ color: 'var(--fg-primary)', fontWeight: 500 }}>{categoryData.label}</span>
+          <span style={{ color: '#111111', fontWeight: 500 }}>{categoryData.label}</span>
         </div>
       </div>
 
@@ -467,7 +467,7 @@ async function CategoryPage({
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 24px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -476,7 +476,7 @@ async function CategoryPage({
           </h2>
           <p style={{
             fontSize: '16px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             lineHeight: '1.7',
             maxWidth: '800px',
             margin: 0,
@@ -495,7 +495,7 @@ async function CategoryPage({
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 32px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -532,7 +532,7 @@ async function CategoryPage({
                   onMouseEnter={(e) => {
                     const elem = e.currentTarget as HTMLElement;
                     elem.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
-                    elem.style.borderColor = 'var(--accent-primary)';
+                    elem.style.borderColor = '#8B5CF6';
                     elem.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
@@ -545,14 +545,14 @@ async function CategoryPage({
                   <h3 style={{
                     fontSize: '16px',
                     fontWeight: 600,
-                    color: 'var(--fg-primary)',
+                    color: '#111111',
                     margin: '0 0 8px 0',
                   }}>
                     {opt.label}
                   </h3>
                   <p style={{
                     fontSize: '13px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     margin: '0 0 12px 0',
                     lineHeight: '1.5',
                   }}>
@@ -560,7 +560,7 @@ async function CategoryPage({
                   </p>
                   <div style={{
                     fontSize: '12px',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     paddingTop: '12px',
                     borderTop: '1px solid var(--border-default)',
                   }}>
@@ -583,7 +583,7 @@ async function CategoryPage({
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             margin: '0 0 32px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -612,14 +612,14 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 marginBottom: '8px',
               }}>
                 Trial Win Rate
               </div>
               <p style={{
                 fontSize: '14px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 margin: 0,
                 lineHeight: '1.5',
               }}>
@@ -644,14 +644,14 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 marginBottom: '8px',
               }}>
                 Average Case Duration
               </div>
               <p style={{
                 fontSize: '14px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 margin: 0,
                 lineHeight: '1.5',
               }}>
@@ -676,14 +676,14 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--fg-primary)',
+                color: '#111111',
                 marginBottom: '8px',
               }}>
                 Favorable Settlement Rate
               </div>
               <p style={{
                 fontSize: '14px',
-                color: 'var(--fg-muted)',
+                color: '#6B7280',
                 margin: 0,
                 lineHeight: '1.5',
               }}>

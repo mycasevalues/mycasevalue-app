@@ -140,10 +140,10 @@ export default function PricingPreview({ lang = 'en' }: PricingPreviewProps) {
           </svg>
           {isEs ? 'PRECIOS' : 'PRICING'}
         </div>
-        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
           {isEs ? 'Precios transparentes, sin sorpresas' : 'Transparent pricing, no surprises'}
         </h2>
-        <p className="text-sm max-w-lg mx-auto" style={{ color: 'var(--fg-muted)' }}>
+        <p className="text-sm max-w-lg mx-auto" style={{ color: '#6B7280' }}>
           {isEs
             ? 'Comience gratis. Actualice solo si necesita análisis avanzados.'
             : 'Start free. Upgrade only if you need advanced analytics.'}

@@ -49,7 +49,7 @@ export async function GET(req: NextRequest) {
       timestamp: new Date().toISOString(),
     });
   } catch (err: any) {
-    console.error('[Admin Stats] Error:', err);
+
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }
 }

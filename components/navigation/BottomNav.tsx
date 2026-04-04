@@ -120,7 +120,7 @@ export default function BottomNav({ lang = 'en', activeTab = 'home', onNavigate,
                 background: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
-                color: isActive ? 'var(--accent-primary)' : 'var(--fg-muted)',
+                color: isActive ? '#8B5CF6' : '#6B7280',
                 transition: 'color 150ms',
               }}
               aria-label={label}
@@ -135,7 +135,7 @@ export default function BottomNav({ lang = 'en', activeTab = 'home', onNavigate,
                     left: '25%',
                     right: '25%',
                     height: '2px',
-                    background: 'var(--accent-primary)',
+                    background: '#8B5CF6',
                     borderRadius: '0 0 2px 2px',
                   }}
                 />

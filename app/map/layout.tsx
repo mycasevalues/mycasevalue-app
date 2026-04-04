@@ -1,17 +1,14 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Federal Court Win Rates by State - MyCaseValue',
-  description: 'Interactive map showing federal court win rates by state. Compare settlement and outcome data across all 50 states and territories.',
-  alternates: { canonical: 'https://www.mycasevalues.com/map' },
+  title: 'Win Rate Map | MyCaseValue',
+  description: 'Interactive map showing aggregate win rates by US state and federal district',
   openGraph: {
-    title: 'Federal Court Win Rates by State',
-    description: 'Explore federal court outcome data by state with our interactive map. Compare win rates across all 50 states and territories.',
+    title: 'Win Rate Map | MyCaseValue',
+    description: 'Interactive map showing aggregate win rates by US state and federal district',
     url: 'https://www.mycasevalues.com/map',
-    type: 'website',
   },
-  robots: { index: true, follow: true },
 };
 
 export default function MapLayout({ children }: { children: ReactNode }) {

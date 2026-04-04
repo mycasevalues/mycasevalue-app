@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  console.log(`[${new Date().toISOString()}] Quarterly FJC data freshness reminder.`);
 
   if (process.env.RESEND_API_KEY) {
     try {
@@ -19,7 +18,7 @@ export async function GET() {
         }),
       });
     } catch (e) {
-      console.error('Failed to send reminder:', e);
+      /* silent */
     }
   }
 

@@ -27,7 +27,7 @@ export function CaseComparisonScale({ winRate, lang = 'en' }: CaseComparisonScal
 
   return (
     <div className="p-5 rounded-xl bg-[#FFFFFF] border border-[var(--border-default)] my-4">
-      <div className="text-[11px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-4 uppercase">
+      <div className="text-[11px] font-bold text-[#6B7280] tracking-[2px] mb-4 uppercase">
         {es ? 'Cómo se compara tu caso' : 'How your case compares'}
       </div>
       <div className="relative h-12 bg-gradient-to-r from-red-200 via-amber-200 to-green-200 rounded-full overflow-hidden flex items-center px-2">
@@ -47,12 +47,12 @@ export function CaseComparisonScale({ winRate, lang = 'en' }: CaseComparisonScal
       </div>
       <div className="flex justify-between mt-2 px-1">
         {labels.map((l, i) => (
-          <div key={i} className="text-[10px] font-medium text-[var(--fg-muted)]">
+          <div key={i} className="text-[10px] font-medium text-[#6B7280]">
             {l}
           </div>
         ))}
       </div>
-      <div className="text-center mt-3 text-sm font-semibold" style={{ color: 'var(--accent-primary)' }}>
+      <div className="text-center mt-3 text-sm font-semibold" style={{ color: '#8B5CF6' }}>
         {es ? 'Tu caso' : 'Your case'}: {winRate.toFixed(1)}% {es ? 'tasa de éxito' : 'win rate'} — {getLabel(winRate)}
       </div>
     </div>

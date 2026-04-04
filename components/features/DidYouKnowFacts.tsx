@@ -36,7 +36,7 @@ export function DidYouKnowFacts({ caseType, lang = 'en' }: DidYouKnowFactsProps)
             <span className="text-lg" aria-hidden="true">
               
             </span>
-            <p className="text-[12px] text-[var(--fg-muted)] leading-relaxed">{fact}</p>
+            <p className="text-[12px] text-[#6B7280] leading-relaxed">{fact}</p>
           </div>
         </div>
       ))}

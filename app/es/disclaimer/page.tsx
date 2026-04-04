@@ -22,13 +22,13 @@ export default function SpanishDisclaimerPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <h1 className="text-4xl font-display font-bold mb-8" style={{ color: 'var(--fg-primary)' }}>
+        <h1 className="text-4xl font-display font-bold mb-8" style={{ color: '#111111' }}>
           Descargo de Responsabilidad
         </h1>
 
-        <div className="prose max-w-none space-y-6" style={{ color: 'var(--fg-muted)' }}>
+        <div className="prose max-w-none space-y-6" style={{ color: '#6B7280' }}>
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--fg-primary)' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#111111' }}>
               Declaración General
             </h2>
             <p>
@@ -37,7 +37,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--fg-primary)' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#111111' }}>
               No es Asesoramiento Legal
             </h2>
             <p>
@@ -56,7 +56,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--fg-primary)' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#111111' }}>
               Limitaciones de Datos
             </h2>
             <p>
@@ -72,7 +72,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--fg-primary)' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#111111' }}>
               Sin Garantía
             </h2>
             <p>
@@ -86,7 +86,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--fg-primary)' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#111111' }}>
               Privacidad de los Datos
             </h2>
             <p>
@@ -98,7 +98,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--fg-primary)' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#111111' }}>
               Limitación de Responsabilidad
             </h2>
             <p>
@@ -107,7 +107,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--fg-primary)' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#111111' }}>
               Contacto
             </h2>
             <p>

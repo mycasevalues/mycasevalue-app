@@ -10,7 +10,7 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('App error:', error);
+    /* silent */
   }, [error]);
 
   return (
@@ -77,7 +77,7 @@ export default function Error({
             fontFamily: 'Montserrat, system-ui, sans-serif',
             fontSize: 'clamp(1.5rem, 4vw, 2rem)',
             fontWeight: 800,
-            color: 'var(--fg-primary)',
+            color: '#111111',
             letterSpacing: '-0.02em',
             margin: '0 0 12px',
           }}
@@ -87,7 +87,7 @@ export default function Error({
         <p
           style={{
             fontSize: 15,
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             lineHeight: 1.6,
             margin: '0 0 8px',
             maxWidth: 400,
@@ -120,7 +120,7 @@ export default function Error({
               alignItems: 'center',
               gap: 8,
               padding: '14px 28px',
-              background: 'var(--accent-primary)',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: 12,
@@ -129,7 +129,7 @@ export default function Error({
               fontWeight: 700,
               cursor: 'pointer',
               transition: 'all 200ms',
-              boxShadow: 'var(--shadow-sm)',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -147,7 +147,7 @@ export default function Error({
               gap: 8,
               padding: '14px 28px',
               background: 'transparent',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               border: '1px solid var(--border-default)',
               borderRadius: 12,
               fontFamily: 'Roboto, system-ui, sans-serif',
@@ -173,7 +173,7 @@ export default function Error({
             marginTop: 40,
           }}
         >
-          If this keeps happening, please <a href="/contact" style={{ color: 'var(--accent-primary)', textDecoration: 'underline' }}>contact support</a>.
+          If this keeps happening, please <a href="/contact" style={{ color: '#8B5CF6', textDecoration: 'underline' }}>contact support</a>.
         </p>
       </div>
     </div>

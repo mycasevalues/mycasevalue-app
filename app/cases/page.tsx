@@ -33,12 +33,12 @@ export default function CasesIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: 'var(--bg-surface)', borderBottom: '1px solid var(--border-default)', padding: '60px 20px' }}>
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid var(--border-default)', padding: '60px 20px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 700, color: 'var(--fg-primary)', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
+          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 700, color: '#111111', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
             Case Categories
           </h1>
-          <p style={{ fontSize: 18, color: 'var(--fg-muted)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
+          <p style={{ fontSize: 18, color: '#6B7280', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
             Research real federal court outcomes across 10 major case types. Explore win rates, settlements, timelines, and recovery data from 5.1M+ public cases.
           </p>
         </div>
@@ -60,8 +60,8 @@ export default function CasesIndexPage() {
             fontSize: '15px',
             border: '1px solid var(--border-default)',
             borderRadius: '8px',
-            background: 'var(--bg-surface)',
-            color: 'var(--fg-primary)',
+            background: '#FFFFFF',
+            color: '#111111',
             fontFamily: 'var(--font-body)',
             marginBottom: '32px',
             display: 'block',
@@ -78,7 +78,7 @@ export default function CasesIndexPage() {
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ fontSize: 18, color: 'var(--fg-muted)', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: 18, color: '#6B7280', fontFamily: 'var(--font-body)' }}>
               No case types match &ldquo;{search}&rdquo;
             </p>
             <button
@@ -90,8 +90,8 @@ export default function CasesIndexPage() {
                 fontWeight: 600,
                 border: '1px solid var(--border-default)',
                 borderRadius: 8,
-                background: 'var(--bg-surface)',
-                color: 'var(--fg-primary)',
+                background: '#FFFFFF',
+                color: '#111111',
                 fontFamily: 'var(--font-body)',
                 cursor: 'pointer',
               }}
@@ -104,11 +104,11 @@ export default function CasesIndexPage() {
             {filtered.map((category) => (
               <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
                 <div className="cat-card">
-                  <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: 'var(--fg-primary)', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                  <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#111111', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
                     {category.label}
                   </h2>
-                  <p style={{ fontSize: 14, color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
-                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid var(--border-default)', fontSize: 13, color: 'var(--fg-primary)', fontWeight: 500 }}>
+                  <p style={{ fontSize: 14, color: '#6B7280', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
+                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid var(--border-default)', fontSize: 13, color: '#111111', fontWeight: 500 }}>
                     {category.opts.length} types covered →
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ background: 'var(--bg-base)', color: 'var(--fg-muted)', padding: '40px 20px', fontSize: 14, lineHeight: 1.6 }}>
+      <div style={{ background: 'var(--bg-base)', color: '#6B7280', padding: '40px 20px', fontSize: 14, lineHeight: 1.6 }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0 }}>
             <strong>Legal Disclaimer:</strong> This data is for research purposes only and is not legal advice. MyCaseValue provides historical federal court outcome data from public records. This does not constitute a prediction of any case outcome. Consult a qualified attorney for legal advice. © {new Date().getFullYear()} MyCaseValue LLC.

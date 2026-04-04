@@ -64,11 +64,11 @@ export default function TheProblem({ lang = 'en' }: TheProblemProps) {
           </p>
           <h2
             className="font-display text-xl sm:text-2xl font-bold mb-3"
-            style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}
+            style={{ color: '#111111', letterSpacing: '-0.5px' }}
           >
             {t.heading}
           </h2>
-          <p className="text-[13px] max-w-xl mx-auto" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-[13px] max-w-xl mx-auto" style={{ color: '#6B7280' }}>
             {t.sub}
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function TheProblem({ lang = 'en' }: TheProblemProps) {
                   }}
                 >
                   <span style={{ fontSize: '14px' }}>{item.icon}</span>
-                  <span className="text-[13px]" style={{ color: 'var(--fg-muted)' }}>
+                  <span className="text-[13px]" style={{ color: '#6B7280' }}>
                     {item.text}
                   </span>
                 </div>
@@ -145,7 +145,7 @@ export default function TheProblem({ lang = 'en' }: TheProblemProps) {
                   >
                     {item.icon}
                   </span>
-                  <span className="text-[13px] font-medium" style={{ color: 'var(--fg-primary)' }}>
+                  <span className="text-[13px] font-medium" style={{ color: '#111111' }}>
                     {item.text}
                   </span>
                 </div>

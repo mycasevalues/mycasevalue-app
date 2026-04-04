@@ -186,10 +186,10 @@ export default function StatutoryOutcomes({ lang = 'en' }: StatutoryOutcomesProp
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         {t.badge}
       </div>
-      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+      <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-1" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
         {t.title}
       </h2>
-      <p className="text-sm mb-5" style={{ color: 'var(--fg-muted)' }}>{t.sub}</p>
+      <p className="text-sm mb-5" style={{ color: '#6B7280' }}>{t.sub}</p>
 
       {/* Statute tabs */}
       <div className="flex flex-wrap gap-2 mb-5">
@@ -240,7 +240,7 @@ export default function StatutoryOutcomes({ lang = 'en' }: StatutoryOutcomesProp
           )}
           {statute.relevantCap && (
             <div className="rounded-lg p-3 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid var(--border-default)' }}>
-              <div className="text-sm font-bold" style={{ color: 'var(--fg-primary)' }}>
+              <div className="text-sm font-bold" style={{ color: '#111111' }}>
                 {statute.relevantCap}
               </div>
               <div className="text-[9px] mt-0.5" style={{ color: 'var(--fg-subtle)' }}>{t.damageCap}</div>
@@ -251,7 +251,7 @@ export default function StatutoryOutcomes({ lang = 'en' }: StatutoryOutcomesProp
         {/* Protected classes */}
         <div className="mb-4">
           <div className="text-[10px] font-bold uppercase tracking-wider mb-1.5" style={{ color: 'var(--fg-subtle)' }}>{t.protectedClass}</div>
-          <p className="text-[12px] leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-[12px] leading-relaxed" style={{ color: '#6B7280' }}>
             {lang === 'es' ? statute.protectsEs : statute.protects}
           </p>
         </div>
@@ -271,7 +271,7 @@ export default function StatutoryOutcomes({ lang = 'en' }: StatutoryOutcomesProp
         {/* Key insight */}
         <div className="rounded-lg p-3" style={{ background: statute.color + '08', border: `1px solid ${statute.color}20` }}>
           <div className="text-[10px] font-bold uppercase tracking-wider mb-1" style={{ color: statute.color }}>{t.keyInsight}</div>
-          <p className="text-[12px]" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-[12px]" style={{ color: '#6B7280' }}>
             {lang === 'es' ? statute.keyFactEs : statute.keyFact}
           </p>
         </div>

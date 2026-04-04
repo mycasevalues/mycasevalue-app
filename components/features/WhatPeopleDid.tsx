@@ -34,10 +34,10 @@ export function WhatPeopleDid({ lang = 'en' }: WhatPeopleDidProps) {
           </div>
           <div className="text-[13px] font-medium text-[var(--fg-secondary)] mb-2">{step.action}</div>
           <div className="flex items-end justify-center gap-1">
-            <div className="text-[22px] font-display font-bold" style={{ color: 'var(--accent-primary)' }}>
+            <div className="text-[22px] font-display font-bold" style={{ color: '#8B5CF6' }}>
               {step.pct}%
             </div>
-            <div className="text-[10px] text-[var(--fg-muted)] pb-1">{es ? 'de usuarios' : 'of users'}</div>
+            <div className="text-[10px] text-[#6B7280] pb-1">{es ? 'de usuarios' : 'of users'}</div>
           </div>
           <div className="mt-2 h-1.5 bg-[var(--bg-elevated)] rounded-full overflow-hidden">
             <div

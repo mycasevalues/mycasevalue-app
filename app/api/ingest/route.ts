@@ -64,7 +64,6 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString()
     })
   } catch (error: any) {
-    console.error('[Ingest API] Fatal error:', error.message)
     return NextResponse.json({
       status: 'failed',
       error: error.message

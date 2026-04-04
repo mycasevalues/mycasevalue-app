@@ -6,7 +6,7 @@ import { getJudgeBySlug, getAllJudges } from '@/lib/judges';
 // Dynamic import for client component
 const JudgeCharts = dynamic(() => import('@/components/features/JudgeCharts'), {
   ssr: false,
-  loading: () => <div style={{ padding: '24px', textAlign: 'center', color: 'var(--fg-muted)' }}>Loading charts...</div>,
+  loading: () => <div style={{ padding: '24px', textAlign: 'center', color: '#6B7280' }}>Loading charts...</div>,
 });
 
 interface PageProps {
@@ -64,7 +64,7 @@ export default async function JudgePage({ params }: PageProps) {
         <div
           style={{
             borderBottom: '1px solid var(--border-default)',
-            background: 'var(--bg-surface)',
+            background: '#FFFFFF',
           }}
         >
           <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 24px' }}>
@@ -77,7 +77,7 @@ export default async function JudgePage({ params }: PageProps) {
                   gap: '8px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   textDecoration: 'none',
                   transition: 'opacity 0.2s',
                 }}
@@ -117,7 +117,7 @@ export default async function JudgePage({ params }: PageProps) {
               height="32"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="var(--accent-primary)"
+              stroke="#8B5CF6"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -131,7 +131,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontSize: '32px',
               fontWeight: '900',
               marginBottom: '16px',
-              color: 'var(--fg-primary)',
+              color: '#111111',
             }}
           >
             Judge Profile
@@ -143,7 +143,7 @@ export default async function JudgePage({ params }: PageProps) {
               lineHeight: '1.6',
               maxWidth: '560px',
               margin: '0 auto 32px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
             }}
           >
             This judge's detailed analytics profile is being compiled. We're processing public court records to build comprehensive profiles for all federal judges.
@@ -157,7 +157,7 @@ export default async function JudgePage({ params }: PageProps) {
               gap: '8px',
               padding: '12px 28px',
               borderRadius: '8px',
-              background: 'var(--accent-primary)',
+              background: '#8B5CF6',
               color: 'var(--bg-base)',
               fontSize: '16px',
               fontWeight: '600',
@@ -174,7 +174,7 @@ export default async function JudgePage({ params }: PageProps) {
           <p
             style={{
               fontSize: '14px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               marginTop: '48px',
             }}
           >
@@ -238,7 +238,7 @@ export default async function JudgePage({ params }: PageProps) {
       <div
         style={{
           borderBottom: '1px solid var(--border-default)',
-          background: 'var(--bg-surface)',
+          background: '#FFFFFF',
         }}
       >
         <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 24px' }}>
@@ -255,7 +255,7 @@ export default async function JudgePage({ params }: PageProps) {
               <Link
                 href="/"
                 style={{
-                  color: 'var(--fg-muted)',
+                  color: '#6B7280',
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                 }}
@@ -266,7 +266,7 @@ export default async function JudgePage({ params }: PageProps) {
               <Link
                 href="/judges"
                 style={{
-                  color: 'var(--fg-muted)',
+                  color: '#6B7280',
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                 }}
@@ -274,7 +274,7 @@ export default async function JudgePage({ params }: PageProps) {
                 Judges
               </Link>
               <span style={{ color: 'var(--border-default)' }}>→</span>
-              <span style={{ color: 'var(--fg-primary)', fontWeight: '600' }}>
+              <span style={{ color: '#111111', fontWeight: '600' }}>
                 {judge.name}
               </span>
             </nav>
@@ -296,7 +296,7 @@ export default async function JudgePage({ params }: PageProps) {
                 fontWeight: '700',
                 letterSpacing: '0.5px',
                 background: 'var(--accent-primary-subtle)',
-                color: 'var(--accent-primary)',
+                color: '#8B5CF6',
               }}
             >
               {judge.district}
@@ -308,7 +308,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontSize: '40px',
               fontWeight: '900',
               marginBottom: '8px',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               letterSpacing: '-0.5px',
             }}
           >
@@ -318,7 +318,7 @@ export default async function JudgePage({ params }: PageProps) {
           <p
             style={{
               fontSize: '16px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               marginBottom: '24px',
             }}
           >
@@ -364,7 +364,7 @@ export default async function JudgePage({ params }: PageProps) {
                 padding: '20px',
                 borderRadius: '12px',
                 border: '1px solid var(--border-default)',
-                background: 'var(--bg-surface)',
+                background: '#FFFFFF',
               }}
             >
               <div
@@ -372,7 +372,7 @@ export default async function JudgePage({ params }: PageProps) {
                   fontSize: '12px',
                   fontWeight: '700',
                   letterSpacing: '0.5px',
-                  color: 'var(--fg-muted)',
+                  color: '#6B7280',
                   marginBottom: '8px',
                   textTransform: 'uppercase',
                 }}
@@ -383,7 +383,7 @@ export default async function JudgePage({ params }: PageProps) {
                 style={{
                   fontSize: '28px',
                   fontWeight: '900',
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   fontFamily: "monospace, 'Courier New'",
                   letterSpacing: '-0.5px',
                 }}
@@ -400,7 +400,7 @@ export default async function JudgePage({ params }: PageProps) {
             padding: '24px',
             borderRadius: '12px',
             border: '1px solid var(--border-default)',
-            background: 'var(--bg-surface)',
+            background: '#FFFFFF',
             marginBottom: '48px',
           }}
         >
@@ -409,7 +409,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontSize: '14px',
               fontWeight: '700',
               letterSpacing: '0.5px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               marginBottom: '12px',
               textTransform: 'uppercase',
             }}
@@ -428,7 +428,7 @@ export default async function JudgePage({ params }: PageProps) {
                 style={{
                   fontSize: '12px',
                   fontWeight: '700',
-                  color: 'var(--fg-muted)',
+                  color: '#6B7280',
                   marginBottom: '4px',
                 }}
               >
@@ -438,7 +438,7 @@ export default async function JudgePage({ params }: PageProps) {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                   fontFamily: "monospace, 'Courier New'",
                 }}
               >
@@ -450,7 +450,7 @@ export default async function JudgePage({ params }: PageProps) {
                 style={{
                   fontSize: '12px',
                   fontWeight: '700',
-                  color: 'var(--fg-muted)',
+                  color: '#6B7280',
                   marginBottom: '4px',
                 }}
               >
@@ -460,7 +460,7 @@ export default async function JudgePage({ params }: PageProps) {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                 }}
               >
                 {judge.appointedBy}
@@ -472,7 +472,7 @@ export default async function JudgePage({ params }: PageProps) {
                   style={{
                     fontSize: '12px',
                     fontWeight: '700',
-                    color: 'var(--fg-muted)',
+                    color: '#6B7280',
                     marginBottom: '4px',
                   }}
                 >
@@ -482,7 +482,7 @@ export default async function JudgePage({ params }: PageProps) {
                   style={{
                     fontSize: '16px',
                     fontWeight: '600',
-                    color: 'var(--accent-primary)',
+                    color: '#8B5CF6',
                   }}
                 >
                   Yes
@@ -498,7 +498,7 @@ export default async function JudgePage({ params }: PageProps) {
             style={{
               fontSize: '16px',
               fontWeight: '700',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               marginBottom: '20px',
             }}
           >
@@ -513,7 +513,7 @@ export default async function JudgePage({ params }: PageProps) {
             padding: '24px',
             borderRadius: '12px',
             border: '1px solid var(--border-default)',
-            background: 'var(--bg-surface)',
+            background: '#FFFFFF',
             marginBottom: '48px',
           }}
         >
@@ -521,7 +521,7 @@ export default async function JudgePage({ params }: PageProps) {
             style={{
               fontSize: '16px',
               fontWeight: '700',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               marginBottom: '16px',
             }}
           >
@@ -530,7 +530,7 @@ export default async function JudgePage({ params }: PageProps) {
           <p
             style={{
               fontSize: '14px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               marginBottom: '16px',
               lineHeight: '1.6',
             }}
@@ -554,7 +554,7 @@ export default async function JudgePage({ params }: PageProps) {
                   alignItems: 'center',
                   gap: '12px',
                   fontSize: '14px',
-                  color: 'var(--fg-primary)',
+                  color: '#111111',
                 }}
               >
                 <span
@@ -565,7 +565,7 @@ export default async function JudgePage({ params }: PageProps) {
                     width: '20px',
                     height: '20px',
                     borderRadius: '4px',
-                    background: 'var(--accent-primary)',
+                    background: '#8B5CF6',
                     color: 'var(--bg-base)',
                     fontWeight: '700',
                     fontSize: '12px',
@@ -585,14 +585,14 @@ export default async function JudgePage({ params }: PageProps) {
             padding: '16px 20px',
             borderRadius: '8px',
             background: 'var(--accent-primary-subtle)',
-            border: '1px solid var(--accent-primary)',
+            border: '1px solid #8B5CF6',
             marginBottom: '48px',
           }}
         >
           <p
             style={{
               fontSize: '13px',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               lineHeight: '1.6',
               margin: 0,
             }}
@@ -607,14 +607,14 @@ export default async function JudgePage({ params }: PageProps) {
             padding: '24px',
             borderRadius: '12px',
             border: '1px solid var(--border-default)',
-            background: 'var(--bg-surface)',
+            background: '#FFFFFF',
           }}
         >
           <h3
             style={{
               fontSize: '14px',
               fontWeight: '700',
-              color: 'var(--fg-primary)',
+              color: '#111111',
               marginBottom: '12px',
             }}
           >
@@ -623,7 +623,7 @@ export default async function JudgePage({ params }: PageProps) {
           <p
             style={{
               fontSize: '13px',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               lineHeight: '1.6',
               margin: 0,
             }}

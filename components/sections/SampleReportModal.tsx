@@ -67,10 +67,10 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           {lang === 'es' ? 'VISTA PREVIA' : 'PREVIEW'}
         </div>
-        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}>
+        <h2 className="text-xl sm:text-2xl font-display font-extrabold mb-2" style={{ color: '#111111', letterSpacing: '-0.5px' }}>
           {lang === 'es' ? 'Vea lo que obtiene antes de comenzar' : 'See what you get before you start'}
         </h2>
-        <p className="text-sm mb-5 max-w-lg mx-auto" style={{ color: 'var(--fg-muted)' }}>
+        <p className="text-sm mb-5 max-w-lg mx-auto" style={{ color: '#6B7280' }}>
           {lang === 'es'
             ? 'Cada informe incluye tasas de exito, rangos de acuerdos, tiempos estimados, analisis de jueces y mas — todo respaldado por datos federales verificados.'
             : 'Every report includes win rates, settlement ranges, timeline estimates, judge analytics, and more — all backed by verified federal data.'}
@@ -97,7 +97,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
                 { label: t.sections.risk, value: 'Score: 72/100', color: '#A78BFA', free: false },
               ].map((s, i) => (
                 <div key={i} className="flex items-center justify-between rounded-lg px-3 py-1.5" style={{ background: 'rgba(255,255,255,0.5)', border: '1px solid var(--border-default)' }}>
-                  <span className="text-[10px]" style={{ color: 'var(--fg-muted)' }}>{s.label}</span>
+                  <span className="text-[10px]" style={{ color: '#6B7280' }}>{s.label}</span>
                   <div className="flex items-center gap-2">
                     <span className="text-[11px] font-bold font-mono" style={{ color: s.color }}>{s.value}</span>
                     <span className="text-[8px] px-1.5 py-0.5 rounded-full" style={{
@@ -139,11 +139,11 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
             {/* Header */}
             <div className="sticky top-0 z-10 flex items-center justify-between p-5" style={{ background: 'var(--bg-surface, #FFFFFF)', borderBottom: '1px solid var(--border-default)' }}>
               <div>
-                <h3 id="sample-report-title" className="text-base font-display font-extrabold" style={{ color: 'var(--fg-primary)' }}>{t.title}</h3>
+                <h3 id="sample-report-title" className="text-base font-display font-extrabold" style={{ color: '#111111' }}>{t.title}</h3>
                 <p className="text-[11px]" style={{ color: 'var(--fg-subtle)' }}>{t.subtitle}</p>
               </div>
               <button type="button" onClick={() => setIsOpen(false)} className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors hover:bg-white/5" style={{ border: '1px solid var(--border-default)' }} aria-label={lang === 'es' ? 'Cerrar modal' : 'Close modal'}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" strokeWidth="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" strokeWidth="2" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
               </button>
             </div>
 
@@ -164,7 +164,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
                 <div className="flex items-center gap-4">
                   <div className="text-3xl font-display font-extrabold" style={{ color: '#10B981' }}>47.6%</div>
                   <div>
-                    <div className="text-[11px]" style={{ color: 'var(--fg-muted)' }}>
+                    <div className="text-[11px]" style={{ color: '#6B7280' }}>
                       {lang === 'es' ? 'Tasa de exito en juicio con jurado' : 'Jury trial win rate'}
                     </div>
                     <div className="text-[10px]" style={{ color: 'var(--fg-subtle)' }}>
@@ -198,7 +198,7 @@ export default function SampleReportModal({ lang = 'en' }: SampleReportModalProp
               {/* Timeline */}
               <ReportSection title={t.sections.timeline} color="#333333" free>
                 <div className="text-2xl font-display font-extrabold mb-1" style={{ color: '#333333' }}>
-                  8.7 <span className="text-sm font-normal" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'meses (mediana)' : 'months (median)'}</span>
+                  8.7 <span className="text-sm font-normal" style={{ color: '#6B7280' }}>{lang === 'es' ? 'meses (mediana)' : 'months (median)'}</span>
                 </div>
                 <div className="text-[10px]" style={{ color: 'var(--fg-subtle)' }}>
                   {lang === 'es' ? 'Basado en S.D.N.Y., Tabla C-4 de la AO' : 'Based on S.D.N.Y., AO Table C-4'}
@@ -276,7 +276,7 @@ function ReportSection({ title, color, free, premium, children }: { title: strin
 function Stat({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
     <div className="rounded-lg p-2" style={{ background: 'rgba(255,255,255,0.03)' }}>
-      <div className="text-[12px] font-bold font-mono" style={{ color: color || 'var(--fg-primary)' }}>{value}</div>
+      <div className="text-[12px] font-bold font-mono" style={{ color: color || '#111111' }}>{value}</div>
       <div className="text-[9px]" style={{ color: 'var(--fg-subtle)' }}>{label}</div>
     </div>
   );

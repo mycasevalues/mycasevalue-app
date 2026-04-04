@@ -25,10 +25,10 @@ export default function MethodologyPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             TRANSPARENCY
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: 'var(--fg-primary)', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
             Data Methodology
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'var(--fg-muted)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
             How MyCaseValue processes and presents aggregate outcome data from public federal court records.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function MethodologyPage() {
         <div className="prose max-w-none">
           {/* Section 1 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>Data Sources</h2>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#111111' }}>Data Sources</h2>
             <div className="space-y-4">
               {[
                 {
@@ -80,12 +80,12 @@ export default function MethodologyPage() {
               ].map((source, i) => (
                 <div key={i} className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
                   <div className="flex items-start gap-3 mb-2">
-                    <h3 className="text-base font-semibold m-0" style={{ color: 'var(--fg-primary)' }}>{source.name}</h3>
+                    <h3 className="text-base font-semibold m-0" style={{ color: '#111111' }}>{source.name}</h3>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: source.color + '15', color: source.color }}>
                       {source.badge}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed m-0 mb-2" style={{ color: 'var(--fg-muted)' }}>{source.description}</p>
+                  <p className="text-sm leading-relaxed m-0 mb-2" style={{ color: '#6B7280' }}>{source.description}</p>
                   {source.url && (
                     <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[11px] font-semibold transition-opacity hover:opacity-80" style={{ color: source.color }}>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -114,8 +114,8 @@ export default function MethodologyPage() {
                     {s.step}
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold m-0 mb-1" style={{ color: 'var(--fg-primary)' }}>{s.title}</h3>
-                    <p className="text-sm leading-relaxed m-0" style={{ color: 'var(--fg-muted)' }}>{s.desc}</p>
+                    <h3 className="text-base font-semibold m-0 mb-1" style={{ color: '#111111' }}>{s.title}</h3>
+                    <p className="text-sm leading-relaxed m-0" style={{ color: '#6B7280' }}>{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -125,8 +125,8 @@ export default function MethodologyPage() {
           {/* Section 3 */}
           <section className="mb-12">
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#111827' }}>Important Limitations</h2>
-            <div className="p-5 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#E5E7EB', color: 'var(--fg-muted)' }}>
-              <ul className="space-y-3 text-sm leading-relaxed" style={{ margin: 0, paddingLeft: '1rem', color: 'var(--fg-muted)' }}>
+            <div className="p-5 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#E5E7EB', color: '#6B7280' }}>
+              <ul className="space-y-3 text-sm leading-relaxed" style={{ margin: 0, paddingLeft: '1rem', color: '#6B7280' }}>
                 <li>MyCaseValue displays <strong>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
                 <li>Win rates reflect <strong>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
                 <li>Settlement amounts are not systematically reported in federal court records. Recovery ranges are derived from cases where monetary awards were documented.</li>
@@ -148,7 +148,7 @@ export default function MethodologyPage() {
               ].map((s, i) => (
                 <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
                   <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>
-                  <div className="text-[11px] font-semibold mt-1" style={{ color: 'var(--fg-muted)' }}>{s.l}</div>
+                  <div className="text-[11px] font-semibold mt-1" style={{ color: '#6B7280' }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -156,15 +156,15 @@ export default function MethodologyPage() {
 
           {/* Section 5 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>Public Domain Status</h2>
-            <p className="text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#111111' }}>Public Domain Status</h2>
+            <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
               All source data used by MyCaseValue is public domain under 17 U.S.C. § 105 (works of the United States government) or made freely available by the Free Law Project under open-access principles. MyCaseValue&apos;s proprietary contribution is in the aggregation, categorization, and presentation of this data — not in the underlying records themselves.
             </p>
           </section>
 
           {/* CTA */}
           <div className="text-center pt-8 border-t" style={{ borderColor: 'var(--border-default)' }}>
-            <p className="text-sm mb-4" style={{ color: 'var(--fg-muted)' }}>Questions about our methodology?</p>
+            <p className="text-sm mb-4" style={{ color: '#6B7280' }}>Questions about our methodology?</p>
             <a href="mailto:support@mycasevalue.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
               style={{ background: '#FFFFFF', border: '1px solid #334155', color: '#111111' }}>

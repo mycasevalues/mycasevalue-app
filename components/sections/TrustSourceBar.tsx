@@ -12,7 +12,7 @@ const SOURCES = [
     desc_en: 'Public Access to Court Electronic Records',
     desc_es: 'Acceso público a registros electrónicos judiciales',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" />
         <path d="M8 21h8" />
         <path d="M12 17v4" />
@@ -24,7 +24,7 @@ const SOURCES = [
     desc_en: 'Integrated Database — civil cases since 1979',
     desc_es: 'Base de datos integrada — casos civiles desde 1979',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
       </svg>
     ),
@@ -87,7 +87,7 @@ export default function TrustSourceBar({ lang = 'en' }: TrustSourceBarProps) {
           </p>
           <h2
             className="font-display text-xl sm:text-2xl font-bold"
-            style={{ color: 'var(--fg-primary)', letterSpacing: '-0.5px' }}
+            style={{ color: '#111111', letterSpacing: '-0.5px' }}
           >
             {lang === 'es'
               ? 'Datos directos de fuentes judiciales federales oficiales'
@@ -108,13 +108,13 @@ export default function TrustSourceBar({ lang = 'en' }: TrustSourceBarProps) {
               <div className="mb-3">{src.icon}</div>
               <div
                 className="text-[13px] font-semibold mb-1"
-                style={{ color: 'var(--fg-primary)' }}
+                style={{ color: '#111111' }}
               >
                 {src.name}
               </div>
               <div
                 className="text-[11px] leading-tight"
-                style={{ color: 'var(--fg-muted)' }}
+                style={{ color: '#6B7280' }}
               >
                 {lang === 'es' ? src.desc_es : src.desc_en}
               </div>
@@ -124,7 +124,7 @@ export default function TrustSourceBar({ lang = 'en' }: TrustSourceBarProps) {
 
         <p
           className="text-center text-[12px] leading-relaxed max-w-2xl mx-auto"
-          style={{ color: 'var(--fg-muted)' }}
+          style={{ color: '#6B7280' }}
         >
           {lang === 'es'
             ? 'No fabricamos ni estimamos datos. Cada número en este sitio se rastrea hasta un registro público específico.'

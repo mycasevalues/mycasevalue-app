@@ -17,7 +17,7 @@ export default function Loading() {
           width: '48px',
           height: '48px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
+          background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
           animation: 'pulse 1.5s ease-in-out infinite',
         }}
       />

@@ -48,7 +48,6 @@ export async function GET(req: NextRequest) {
       expiresAt: premiumSession.expiresAt,
     });
   } catch (err: any) {
-    console.error('[Premium Status Error]', err?.message || err);
     return NextResponse.json(
       { error: 'Failed to check premium status' },
       { status: 500 }

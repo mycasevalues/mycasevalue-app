@@ -41,7 +41,7 @@ export default function CookieConsent() {
         left: 0,
         right: 0,
         zIndex: 9999,
-        background: 'var(--bg-surface)',
+        background: '#FFFFFF',
         borderTop: '1px solid var(--border-default)',
         boxShadow: '0 -4px 24px rgba(0,0,0,0.08)',
         fontFamily: 'var(--font-body)',
@@ -66,7 +66,7 @@ export default function CookieConsent() {
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="var(--fg-muted)"
+            stroke="#6B7280"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -80,14 +80,14 @@ export default function CookieConsent() {
               margin: 0,
               fontSize: '14px',
               lineHeight: '1.5',
-              color: 'var(--fg-primary)',
+              color: '#111111',
             }}
           >
             We use cookies for analytics and to improve your experience.{' '}
             <Link
               href="/privacy"
               style={{
-                color: 'var(--accent-primary)',
+                color: '#8B5CF6',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
                 fontWeight: 500,
@@ -116,7 +116,7 @@ export default function CookieConsent() {
               fontFamily: 'var(--font-body)',
               border: '1px solid var(--border-default)',
               background: 'transparent',
-              color: 'var(--fg-muted)',
+              color: '#6B7280',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',
@@ -134,7 +134,7 @@ export default function CookieConsent() {
               fontSize: '13px',
               fontFamily: 'Montserrat, system-ui, sans-serif',
               border: 'none',
-              background: 'var(--accent-primary)',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               cursor: 'pointer',
               transition: 'all 200ms',

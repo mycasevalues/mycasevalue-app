@@ -172,7 +172,7 @@ export function Shell({
           background: 'var(--bg-base)',
           minHeight: '100vh',
           fontFamily: "'Roboto', system-ui, sans-serif",
-          color: 'var(--fg-primary)',
+          color: '#111111',
           maxWidth:
             viewMode === 'mobile' ? '430px' : viewMode === 'desktop' ? '100%' : undefined,
           margin: viewMode === 'mobile' ? '0 auto' : undefined,
@@ -223,7 +223,7 @@ export function Shell({
           >
             <span
               className="text-[10px] sm:text-[11px] font-semibold tracking-[2px]"
-              style={{ color: 'var(--fg-muted)' }}
+              style={{ color: '#6B7280' }}
             >
               {lang === 'es'
                 ? 'HERRAMIENTA INFORMATIVA SOLAMENTE — NO ES ASESORÍA LEGAL'
@@ -308,7 +308,7 @@ export function Shell({
               <div className="text-xl font-display font-bold mb-2">
                 {lang === 'es' ? '¡Espera! Te falta lo mejor' : "Wait — you're missing the best part"}
               </div>
-              <p className="text-[14px] text-[var(--fg-muted)] mb-1 leading-relaxed">
+              <p className="text-[14px] text-[#6B7280] mb-1 leading-relaxed">
                 {lang === 'es'
                   ? 'Tu informe gratuito muestra la tasa de éxito. El informe completo agrega rangos de recuperación, impacto del abogado, cronología y más.'
                   : 'Your free report shows the win rate. The full report adds recovery ranges, attorney impact, timeline, and more.'}
@@ -331,7 +331,7 @@ export function Shell({
               </button>
               <button type="button"
                 onClick={() => setShowExitIntent(false)}
-                className="text-[13px] text-[var(--fg-muted)] mt-3 bg-transparent border-none cursor-pointer"
+                className="text-[13px] text-[#6B7280] mt-3 bg-transparent border-none cursor-pointer"
               >
                 {lang === 'es' ? 'Ahora no' : 'Not now'}
               </button>
@@ -380,13 +380,13 @@ export function Shell({
               />
               {/* Referral code */}
               <div className="mt-4 pt-4 border-t border-[var(--border-default)]">
-                <div className="text-[11px] font-bold text-[var(--fg-muted)] tracking-[2px] mb-1">
+                <div className="text-[11px] font-bold text-[#6B7280] tracking-[2px] mb-1">
                   {lang === 'es' ? 'TU CÓDIGO DE REFERENCIA' : 'YOUR REFERRAL CODE'}
                 </div>
                 <div className="flex items-center gap-2">
                   <div
                     className="flex-1 px-3 py-2 rounded-lg bg-[var(--bg-elevated)] text-sm font-data font-bold"
-                    style={{ color: 'var(--accent-primary)' }}
+                    style={{ color: '#8B5CF6' }}
                   >
                     {referralCode}
                   </div>
@@ -398,14 +398,14 @@ export function Shell({
                     className="px-3 py-2 text-[12px] font-semibold rounded-lg cursor-pointer"
                     style={{
                       background: 'rgba(17,17,17,0.15)',
-                      color: 'var(--accent-primary)',
+                      color: '#8B5CF6',
                       border: 'none',
                     }}
                   >
                     {lang === 'es' ? 'Copiar' : 'Copy'}
                   </button>
                 </div>
-                <div className="text-[11px] text-[var(--fg-muted)] mt-1">
+                <div className="text-[11px] text-[#6B7280] mt-1">
                   {lang === 'es' ? 'Comparte y obtén un informe gratis' : 'Share and get a free report'}
                 </div>
               </div>
@@ -506,4 +506,3 @@ export default Shell;
 // ============================================================
 // FOOTER COMPONENT
 // ============================================================
-

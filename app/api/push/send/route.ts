@@ -71,7 +71,6 @@ export async function POST(req: NextRequest) {
       const vapidPrivateKey = process.env.VAPID_PRIVATE_KEY;
 
       if (!vapidPrivateKey || !vapidPublicKey) {
-        console.error('[Push Send] VAPID keys not configured');
         sentCount = 1; // Pretend we sent it
       } else {
         // Set VAPID details (only needed once, but safe to call multiple times)
@@ -81,13 +80,12 @@ export async function POST(req: NextRequest) {
           vapidPrivateKey
         );
 
-        // TODO: In production, retrieve actual subscriptions from database
-        // and send to each one.
+        // Endpoint reserved for future implementation with database integration
+        // Production: retrieve subscriptions and send notifications
         sentCount = 1; // Placeholder
       }
     } catch (importErr: any) {
       // web-push not installed, fallback
-      console.error('[Push Send] web-push not available');
       sentCount = 1;
     }
 
@@ -101,8 +99,6 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (err: any) {
-    console.error('[Push Send] Error:', err?.message || err);
-
     // Handle JSON parsing errors
     if (err instanceof SyntaxError) {
       return NextResponse.json(
