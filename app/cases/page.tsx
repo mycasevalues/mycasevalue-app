@@ -51,33 +51,82 @@ export default function CasesIndexPage() {
       {/* Categories Grid */}
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '60px 20px' }}>
         {/* Search Input */}
-        <input
-          type="text"
-          placeholder="Search case types... (e.g. wrongful termination, medical malpractice)"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-          aria-label="Search case types"
-          style={{
-            width: '100%',
-            maxWidth: '480px',
-            padding: '12px 16px',
-            fontSize: '15px',
-            border: '1px solid #D5D8DC',
-            borderRadius: '4px',
-            background: '#FFFFFF',
-            color: '#212529',
-            fontFamily: 'var(--font-body)',
-            marginBottom: '32px',
-            display: 'block',
-            boxSizing: 'border-box',
-            transition: 'border-color 0.2s, box-shadow 0.2s',
-            outline: 'none',
-          }}
-        />
+        <div style={{ position: 'relative', width: '100%', maxWidth: '480px', marginBottom: '32px' }}>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#999999"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{
+              position: 'absolute',
+              left: '16px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              pointerEvents: 'none',
+            }}
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input
+            type="text"
+            placeholder="Search case types... (e.g. wrongful termination, medical malpractice)"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            aria-label="Search case types"
+            style={{
+              width: '100%',
+              height: '56px',
+              padding: '12px 16px 12px 48px',
+              fontSize: '15px',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              background: '#FFFFFF',
+              color: '#212529',
+              fontFamily: 'var(--font-body)',
+              boxSizing: 'border-box',
+              transition: 'border-color 0.2s, box-shadow 0.2s',
+              outline: 'none',
+            }}
+            onFocus={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = '#E8171F';
+              (e.target as HTMLInputElement).style.boxShadow = '0 0 0 3px rgba(232,23,31,0.08)';
+            }}
+            onBlur={(e) => {
+              (e.target as HTMLInputElement).style.borderColor = '#D5D8DC';
+              (e.target as HTMLInputElement).style.boxShadow = 'none';
+            }}
+          />
+        </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          .cat-card { background: #FFFFFF; border: 1px solid #D5D8DC; border-radius: 4px; padding: 32px; transition: all 0.3s ease; height: 100%; }
-          .cat-card:hover { transform: translateY(-4px); box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-color: #E8171F; }
+          .cat-card {
+            background: #FFFFFF;
+            border: 1px solid #D5D8DC;
+            border-radius: 4px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          .cat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #E8171F;
+          }
+          .cat-card-arrow {
+            color: #E8171F;
+            transition: transform 0.2s ease;
+            margin-left: auto;
+          }
+          .cat-card:hover .cat-card-arrow {
+            transform: translateX(4px);
+          }
         `}} />
 
         {filtered.length === 0 ? (
@@ -121,9 +170,10 @@ export default function CasesIndexPage() {
                   <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#212529', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
                     {category.label}
                   </h2>
-                  <p style={{ fontSize: 14, color: '#999999', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
-                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #D5D8DC', fontSize: 13, color: '#455A64', fontWeight: 500 }}>
-                    {category.opts.length} types covered →
+                  <p style={{ fontSize: 14, color: '#999999', margin: 0, lineHeight: 1.5, marginBottom: 'auto' }}>{category.sub}</p>
+                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #D5D8DC', fontSize: 13, color: '#455A64', fontWeight: 500, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span>{category.opts.length} types covered</span>
+                    <span className="cat-card-arrow">→</span>
                   </div>
                 </div>
               </Link>

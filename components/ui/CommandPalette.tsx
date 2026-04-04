@@ -111,22 +111,22 @@ export default function CommandPalette({
     quickLinks.forEach((link) => {
       items.push({
         ...link,
-        categoryColor: '#1856FF',
+        categoryColor: '#006997',
         type: 'quick-link' as const,
       });
     });
 
     // Case categories (from SITS data)
     const caseCategories = [
-      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '👔', color: '#1856FF' },
-      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '⚠️', color: '#1856FF' },
-      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '🛍️', color: '#1856FF' },
-      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '⚖️', color: '#1856FF' },
-      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '💵', color: '#1856FF' },
-      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '🏠', color: '#1856FF' },
-      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '⚕️', color: '#1856FF' },
-      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '👨‍👩‍👧', color: '#1856FF' },
-      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '🏛️', color: '#1856FF' },
+      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '👔', color: '#006997' },
+      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '⚠️', color: '#006997' },
+      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '🛍️', color: '#006997' },
+      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '⚖️', color: '#006997' },
+      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '💵', color: '#006997' },
+      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '🏠', color: '#006997' },
+      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '⚕️', color: '#006997' },
+      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '👨‍👩‍👧', color: '#006997' },
+      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '🏛️', color: '#006997' },
     ];
 
     caseCategories.forEach((cat) => {
@@ -475,7 +475,7 @@ export default function CommandPalette({
               outline: 'none',
               fontSize: 'var(--text-base)',
               color: '#F0F2F5',
-              caretColor: '#1856FF',
+              caretColor: '#006997',
               fontFamily: 'var(--font-body)',
             }}
             autoComplete="off"
@@ -554,7 +554,7 @@ export default function CommandPalette({
                         padding: '11px 12px',
                         borderRadius: 'var(--r-md)',
                         cursor: 'pointer',
-                        background: isSelected ? '#1856FF' : 'transparent',
+                        background: isSelected ? '#006997' : 'transparent',
                         color: isSelected ? 'white' : '#455A64',
                         transition: 'all 100ms ease-out',
                       }}
@@ -574,12 +574,12 @@ export default function CommandPalette({
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
                         ) : item.type === 'quick-link' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#1856FF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#006997'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                           </svg>
                         ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#3D72FF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#3D8FB5'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                           </svg>
                         )}

@@ -23,19 +23,19 @@ import {
   type TopCaseType,
 } from '../../lib/trends';
 
-// Purple palette for categories
+// Teal palette for categories
 const CATEGORY_CHART_COLORS: Record<string, string> = {
-  Financial: '#1856FF',
-  Employment: '#A78BFA',
-  Injury: '#C4B5FD',
-  Consumer: '#DDD6FE',
-  'Civil Rights': 'rgba(24,86,255,0.12)',
-  Housing: '#3D72FF',
-  Medical: '#6D28D9',
-  Family: '#5B21B6',
-  Government: '#4C1D95',
-  'Intellectual Property': '#9F7AEA',
-  Other: '#B794F6',
+  Financial: '#006997',
+  Employment: '#0080B8',
+  Injury: '#00A4D9',
+  Consumer: '#1AA8D1',
+  'Civil Rights': 'rgba(0,105,151,0.12)',
+  Housing: '#3D8FB5',
+  Medical: '#004D6D',
+  Family: '#003A52',
+  Government: '#002838',
+  'Intellectual Property': '#0074A8',
+  Other: '#0094C5',
 };
 
 interface TooltipProps {
@@ -112,8 +112,8 @@ export default function TrendCharts() {
           <AreaChart data={nationalTrends}>
             <defs>
               <linearGradient id="colorFilings" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#1856FF" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#1856FF" stopOpacity={0.1} />
+                <stop offset="5%" stopColor="#006997" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#006997" stopOpacity={0.1} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="#E5EBF0" />
@@ -123,7 +123,7 @@ export default function TrendCharts() {
             <Area
               type="monotone"
               dataKey="totalFilings"
-              stroke="#1856FF"
+              stroke="#006997"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorFilings)"
@@ -167,12 +167,12 @@ export default function TrendCharts() {
                 dataKey={cat.categoryLabel}
                 stroke={
                   [
-                    '#1856FF',
-                    '#3D72FF',
-                    '#EC4899',
-                    '#06B6D4',
-                    '#F59E0B',
-                    '#10B981',
+                    '#006997',
+                    '#3D8FB5',
+                    '#0080B8',
+                    '#00A4D9',
+                    '#1AA8D1',
+                    '#004D6D',
                   ][idx % 6]
                 }
                 strokeWidth={2}
@@ -215,7 +215,7 @@ export default function TrendCharts() {
             <XAxis type="number" stroke="#455A64" />
             <YAxis dataKey="label" type="category" stroke="#455A64" width={300} />
             <Tooltip content={<CustomTooltip />} />
-            <Bar dataKey="count" fill="#1856FF" radius={[0, 8, 8, 0]} />
+            <Bar dataKey="count" fill="#006997" radius={[0, 8, 8, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

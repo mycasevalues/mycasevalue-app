@@ -37,10 +37,10 @@ console.log(data.prediction.predictedWinRate);    // e.g. 67
 console.log(data.prediction.settlementRange);      // { low, median, high }`;
 
 const methodColors: Record<string, string> = {
-  GET: '#07CA6B',
-  POST: '#1856FF',
-  PUT: '#E89558',
-  DELETE: '#EA2143',
+  GET: '#07874A',
+  POST: '#006997',
+  PUT: '#B86E00',
+  DELETE: '#CC1019',
 };
 
 export default function ApiAccessPage() {

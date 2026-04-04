@@ -23,9 +23,9 @@ const DEMO_ALERTS: Alert[] = [
 ];
 
 const priorityColors = {
-  high: { bg: 'rgba(234,33,67,0.12)', text: '#EA2143', dot: '#EA2143' },
-  medium: { bg: 'rgba(232,149,88,0.12)', text: '#E89558', dot: '#E89558' },
-  low: { bg: 'rgba(7,202,107,0.12)', text: '#07CA6B', dot: '#07CA6B' },
+  high: { bg: 'rgba(204,16,25,0.12)', text: '#CC1019', dot: '#CC1019' },
+  medium: { bg: 'rgba(184,110,0,0.12)', text: '#B86E00', dot: '#B86E00' },
+  low: { bg: 'rgba(7,135,74,0.12)', text: '#07874A', dot: '#07874A' },
 };
 
 export default function PacerMonitorPage() {
@@ -93,7 +93,7 @@ export default function PacerMonitorPage() {
                   <div key={alert.id} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '10px', padding: '16px 20px', border: '1px solid rgba(255,255,255,0.10)', borderLeft: `4px solid ${pc.dot}` }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                       <div>
-                        <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#1856FF' }}>{alert.caseNumber}</span>
+                        <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#006997' }}>{alert.caseNumber}</span>
                         <span style={{ fontSize: '12px', color: '#999999', marginLeft: '8px' }}>{alert.court}</span>
                       </div>
                       <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '4px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>

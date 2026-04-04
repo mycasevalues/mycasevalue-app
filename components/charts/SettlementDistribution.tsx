@@ -48,10 +48,10 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
               <Cell
                 key={index}
                 fill={index === highlightIndex
-                  ? '#1856FF'
+                  ? '#006997'
                   : entry.pct === maxPct
-                    ? '#1856FF'
-                    : 'rgba(139,92,246,0.25)'
+                    ? '#006997'
+                    : 'rgba(0,105,151,0.15)'
                 }
               />
             ))}

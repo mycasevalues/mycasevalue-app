@@ -21,10 +21,10 @@ const DEMO_REPORTS: SharedReport[] = [
 ];
 
 const roleColors: Record<string, string> = {
-  Admin: '#3D72FF',
-  Partner: '#07CA6B',
-  Associate: '#1856FF',
-  Paralegal: '#E89558',
+  Admin: '#3D8FB5',
+  Partner: '#07874A',
+  Associate: '#006997',
+  Paralegal: '#B86E00',
 };
 
 export default function TeamWorkspacePage() {

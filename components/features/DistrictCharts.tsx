@@ -18,7 +18,7 @@ interface DistrictChartsProps {
   stats: DistrictStats;
 }
 
-const PURPLE_PALETTE = ['#1856FF', '#3D72FF', '#A78BFA', '#C4B5FD', '#DDD6FE', 'rgba(24,86,255,0.12)', '#6D28D9', '#5B21B6', '#4C1D95', '#F5F3FF', '#818CF8'];
+const PURPLE_PALETTE = ['#006997', '#0080B8', '#00A4D9', '#1AA8D1', '#33AFC8', 'rgba(0,105,151,0.12)', '#004D6D', '#003A52', '#002838', '#E6F3F8', '#3D8FB5'];
 
 export default function DistrictCharts({ stats }: DistrictChartsProps) {
   // Prepare data for top case types chart (take top 8)
@@ -69,7 +69,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                   borderRadius: '8px',
                 }}
               />
-              <Bar dataKey="count" fill="#1856FF" radius={[0, 8, 8, 0]} />
+              <Bar dataKey="count" fill="#006997" radius={[0, 8, 8, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
