@@ -1,7 +1,10 @@
 /**
- * SiteNav.tsx — Frosted glass navigation bar with mobile hamburger menu.
- * Height 64px, sticky, glassmorphism blur, translucent border.
- * Rendered from app/layout.tsx so every page gets consistent nav.
+ * SiteNav.tsx — Two-tier navigation with white top bar and dark navy sub-nav.
+ *
+ * Tier 1 (White, 64px): MyCaseValue logo left, auth buttons right
+ * Tier 2 (Dark navy #00172E, 48px): "MyCaseValue+" text left, FREE TRIAL button, nav links right
+ *
+ * Both sticky; sub-nav hides on mobile (<768px) and shows hamburger menu instead.
  */
 
 'use client';
@@ -105,8 +108,9 @@ export default function SiteNav() {
 
   return (
     <>
+      {/* TIER 1: WHITE TOP NAV (64px) */}
       <nav
-        className="site-nav"
+        className="site-nav-top"
         style={{
           position: 'sticky',
           top: 0,
@@ -160,42 +164,10 @@ export default function SiteNav() {
             </span>
           </Link>
 
-          {/* Center: Desktop nav links */}
-          <div
-            className="site-nav-center"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '2px',
-            }}
-          >
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="site-nav-link"
-                style={{
-                  padding: '6px 14px',
-                  borderRadius: '4px',
-                  fontSize: '14px',
-                  fontWeight: isActive(link.href) ? 600 : 400,
-                  color: isActive(link.href) ? '#212529' : '#666666',
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
-                  transition: 'all 150ms',
-                  background: isActive(link.href) ? 'rgba(0,105,151,0.08)' : 'transparent',
-                }}
-                aria-current={isActive(link.href) ? 'page' : undefined}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
           {/* Right: Auth buttons (desktop) + Hamburger (mobile) */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <div
-              className="site-nav-right"
+              className="site-nav-auth"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -329,6 +301,111 @@ export default function SiteNav() {
         </div>
       </nav>
 
+      {/* TIER 2: DARK NAVY SUB-NAV (48px) */}
+      <nav
+        className="site-nav-sub"
+        style={{
+          position: 'sticky',
+          top: '64px',
+          zIndex: 199,
+          height: '48px',
+          background: '#00172E',
+          borderBottom: 'none',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+        role="navigation"
+        aria-label="Secondary navigation"
+      >
+        <div
+          style={{
+            maxWidth: '1280px',
+            width: '100%',
+            margin: '0 auto',
+            padding: '0 24px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '100%',
+            gap: '24px',
+          }}
+        >
+          {/* Left: MyCaseValue+ brand text */}
+          <div style={{
+            fontSize: '18px',
+            fontWeight: 600,
+            color: '#FFFFFF',
+            fontStyle: 'italic',
+            fontFamily: 'var(--font-display)',
+            whiteSpace: 'nowrap',
+            flexShrink: 0,
+          }}>
+            MyCaseValue+
+          </div>
+
+          {/* Center-Left: FREE TRIAL button */}
+          <button
+            style={{
+              background: '#E8171F',
+              color: '#FFFFFF',
+              fontSize: '12px',
+              fontWeight: 700,
+              letterSpacing: '0.04em',
+              padding: '8px 20px',
+              borderRadius: '4px',
+              border: 'none',
+              cursor: 'pointer',
+              textTransform: 'uppercase',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+              transition: 'all 150ms',
+              fontFamily: 'var(--font-body)',
+            }}
+            onClick={() => router.push('/search')}
+          >
+            FREE TRIAL
+          </button>
+
+          {/* Right: Nav links */}
+          <div
+            className="site-nav-sub-links"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0px',
+              marginLeft: 'auto',
+              flexGrow: 1,
+              justifyContent: 'flex-end',
+            }}
+          >
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="site-nav-sub-link"
+                style={{
+                  padding: '0 16px',
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  color: isActive(link.href) ? '#FFFFFF' : '#E6E6E6',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-body)',
+                  height: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  borderBottom: isActive(link.href) ? '2px solid #E8171F' : '2px solid transparent',
+                  transition: 'all 150ms',
+                  position: 'relative',
+                }}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </nav>
+
       {/* Mobile drawer overlay */}
       {mobileOpen && (
         <div
@@ -337,7 +414,7 @@ export default function SiteNav() {
             position: 'fixed',
             inset: 0,
             top: '64px',
-            zIndex: 199,
+            zIndex: 198,
             background: 'rgba(0,23,46,0.40)',
             backdropFilter: undefined,
             WebkitBackdropFilter: undefined,
@@ -357,7 +434,7 @@ export default function SiteNav() {
           right: 0,
           bottom: 0,
           width: '280px',
-          zIndex: 200,
+          zIndex: 199,
           background: '#FFFFFF',
           backdropFilter: undefined,
           WebkitBackdropFilter: undefined,
@@ -489,10 +566,11 @@ export default function SiteNav() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         .site-nav-link:hover { color: #212529 !important; }
+        .site-nav-sub-link:hover { color: #FFFFFF !important; }
         .site-nav-mobile-link:hover { background: rgba(0,0,0,0.04) !important; }
         @media (max-width: 768px) {
-          .site-nav-center { display: none !important; }
-          .site-nav-right { display: none !important; }
+          .site-nav-sub { display: none !important; }
+          .site-nav-auth { display: none !important; }
           .site-nav-hamburger { display: flex !important; }
           .site-nav-mobile-drawer { display: flex !important; }
         }

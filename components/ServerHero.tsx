@@ -14,7 +14,7 @@ export default function ServerHero() {
       <div style={{
         background: 'linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%)',
         borderBottom: '1px solid #D5D8DC',
-        padding: '80px 24px 64px',
+        padding: '120px 24px 80px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
@@ -30,33 +30,27 @@ export default function ServerHero() {
         }} />
 
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
-          {/* Eyebrow badge */}
-          <div style={{ marginBottom: '24px' }}>
-            <span style={{
-              display: 'inline-block',
-              padding: '6px 16px',
-              background: 'rgba(232,23,31,0.08)',
-              color: '#E8171F',
-              borderRadius: '4px',
-              fontSize: '13px',
-              fontWeight: 600,
-              fontFamily: 'var(--font-body)',
-              letterSpacing: '0.02em',
-              border: '1px solid rgba(232,23,31,0.15)',
-            }}>
-              5.1M+ federal cases analyzed
-            </span>
-          </div>
+          {/* Small subtitle above h1 */}
+          <p style={{
+            fontSize: '18px',
+            fontWeight: 600,
+            color: '#E6E6E6',
+            fontFamily: 'var(--font-body)',
+            marginBottom: '16px',
+            margin: '0 0 16px 0',
+          }}>
+            MyCaseValue Federal Case Outcome Analytics
+          </p>
 
           {/* Headline */}
           <h1 style={{
             fontSize: 'clamp(32px, 5vw, 56px)',
-            fontWeight: 800,
+            fontWeight: 600,
             color: '#FAFBFC',
             fontFamily: 'var(--font-display)',
             lineHeight: 1.15,
             marginBottom: '24px',
-            letterSpacing: '-0.02em',
+            letterSpacing: 'normal',
           }}>
             The settlement data the<br />
             other side already has.
@@ -64,13 +58,15 @@ export default function ServerHero() {
 
           {/* Subheadline */}
           <p style={{
-            fontSize: '20px',
+            fontSize: '19px',
             color: 'rgba(250,251,252,0.70)',
             fontFamily: 'var(--font-body)',
             lineHeight: 1.6,
             marginBottom: '40px',
             maxWidth: '600px',
             margin: '0 auto 40px',
+            fontStyle: 'italic',
+            fontWeight: 300,
           }}>
             Research real outcomes from federal court cases across all 94 US districts.
             Win rates, settlement ranges, timelines — sourced from public court records.
@@ -78,78 +74,51 @@ export default function ServerHero() {
 
           {/* CTA buttons */}
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' }}>
-            <a href="/search" aria-label="Search case types and view federal court data" style={{
+            <a href="/search" aria-label="Start your free trial" style={{
               display: 'inline-block',
-              padding: '14px 32px',
+              padding: '8px 24px',
               background: '#E8171F',
               color: '#FFFFFF',
               borderRadius: '0px',
               fontWeight: 700,
-              fontSize: '16px',
+              fontSize: '14px',
               fontFamily: 'var(--font-display)',
               textDecoration: 'none',
               boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
               textTransform: 'uppercase',
+              letterSpacing: '0.05em',
             }}>
-              Search case types →
+              Free Trial
             </a>
-            <a href="/sample" aria-label="View sample settlement data report" style={{
+            <a href="/sample" aria-label="Sign in to your account" style={{
               display: 'inline-block',
-              padding: '14px 32px',
-              background: 'rgba(250,251,252,0.10)',
-              color: '#FAFBFC',
-              border: '1px solid rgba(250,251,252,0.20)',
+              padding: '8px 24px',
+              background: 'transparent',
+              color: '#FFFFFF',
+              border: '1px solid #FFFFFF',
               borderRadius: '0px',
               fontWeight: 600,
-              fontSize: '16px',
+              fontSize: '14px',
               fontFamily: 'var(--font-display)',
               textDecoration: 'none',
               textTransform: 'uppercase',
+              letterSpacing: '0.05em',
             }}>
-              View sample report
-            </a>
-            <a href="/calculator" aria-label="Estimate your case value with our settlement calculator" style={{
-              display: 'inline-block',
-              padding: '14px 32px',
-              background: 'rgba(250,251,252,0.10)',
-              color: '#FAFBFC',
-              border: '1px solid rgba(250,251,252,0.20)',
-              borderRadius: '0px',
-              fontWeight: 600,
-              fontSize: '16px',
-              fontFamily: 'var(--font-display)',
-              textDecoration: 'none',
-              textTransform: 'uppercase',
-            }}>
-              Calculator
+              Sign In
             </a>
           </div>
 
-          {/* Trust signals */}
-          <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            {[
-              'No account required',
-              'Private & encrypted',
-              'PACER-verified data',
-              '3 free lookups/day',
-            ].map(signal => (
-              <div key={signal} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#07CA6B' }} />
-                <span style={{ fontSize: '13px', color: 'rgba(250,251,252,0.70)', fontFamily: 'var(--font-body)' }}>{signal}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
       {/* ── VISUAL 2: DATA SOURCE ATTRIBUTION BAR ─────────── */}
       <div style={{
-        background: 'rgba(250,251,252,0.05)',
+        background: '#EDEEEE',
         borderBottom: '1px solid #D5D8DC',
         padding: '16px 24px',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '12px', color: 'rgba(250,251,252,0.45)', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
+          <span style={{ fontSize: '12px', color: '#666666', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
           {[
             { name: 'Federal Judicial Center', url: 'https://www.fjc.gov' },
             { name: 'PACER', url: 'https://pacer.uscourts.gov' },
@@ -157,10 +126,10 @@ export default function ServerHero() {
             { name: 'Bureau of Justice Statistics', url: 'https://bjs.ojp.gov' },
           ].map((source, i) => (
             <span key={source.name} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              {i > 0 && <span style={{ color: 'rgba(250,251,252,0.15)' }}>·</span>}
+              {i > 0 && <span style={{ color: '#999999' }}>·</span>}
               <a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`Data sourced from ${source.name} (opens in new window)`} style={{
                 fontSize: '12px',
-                color: 'rgba(250,251,252,0.70)',
+                color: '#006997',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 500,
                 textDecoration: 'none',
@@ -178,7 +147,7 @@ export default function ServerHero() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           gap: '1px',
-          background: 'rgba(250,251,252,0.08)',
+          background: '#EDEEEE',
           border: '1px solid #D5D8DC',
           borderRadius: '4px',
           overflow: 'hidden',
@@ -189,7 +158,7 @@ export default function ServerHero() {
             { value: '50+', label: 'Years of historical data' },
             { value: '84', label: 'Case types covered' },
           ].map(stat => (
-            <div key={stat.label} style={{ background: 'rgba(250,251,252,0.04)', padding: '32px 24px', textAlign: 'center' }}>
+            <div key={stat.label} style={{ background: '#FFFFFF', padding: '32px 24px', textAlign: 'center' }}>
               <p style={{
                 fontSize: '40px',
                 fontWeight: 700,
@@ -198,7 +167,7 @@ export default function ServerHero() {
                 lineHeight: 1,
                 marginBottom: '8px',
               }}>{stat.value}</p>
-              <p style={{ fontSize: '13px', color: 'rgba(250,251,252,0.70)', fontFamily: 'var(--font-body)', lineHeight: 1.4, margin: 0 }}>{stat.label}</p>
+              <p style={{ fontSize: '13px', color: '#666666', fontFamily: 'var(--font-body)', lineHeight: 1.4, margin: 0 }}>{stat.label}</p>
             </div>
           ))}
         </div>
