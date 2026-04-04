@@ -223,7 +223,8 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
     title: 'Venue Optimizer',
     description:
       'Find the optimal filing district based on case type, judge data, and success rates.',
-    badge: 'coming-soon' as const,
+    badge: 'available' as const,
+    href: '/attorney/venue-optimizer',
   },
   {
     icon: <ScalesIcon />,
