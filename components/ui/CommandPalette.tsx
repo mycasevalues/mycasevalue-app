@@ -416,8 +416,6 @@ export default function CommandPalette({
           inset: 0,
           zIndex: 'var(--z-modal)',
           background: 'rgba(0,0,0,0.5)',
-          backdropFilter: 'blur(6px)',
-          WebkitBackdropFilter: 'blur(6px)',
           animation: 'backdropFadeIn 0.2s ease-out',
         } as React.CSSProperties}
         aria-hidden="true"

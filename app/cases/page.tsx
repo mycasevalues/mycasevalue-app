@@ -119,7 +119,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* CTA */}
-      <div style={{ background: 'linear-gradient(135deg, #111111, #7C3AED)', padding: '60px 20px', textAlign: 'center' }}>
+      <div style={{ background: '#111111', padding: '60px 20px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 className="font-display" style={{ fontSize: 32, fontWeight: 700, color: 'white', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
             Ready to research your case?

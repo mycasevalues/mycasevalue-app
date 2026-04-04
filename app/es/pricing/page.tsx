@@ -109,8 +109,7 @@ export default function SpanishPricingPage() {
           <div className="rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
             style={{
               borderColor: 'var(--border-default)',
-              background: 'rgba(25, 32, 56, 0.4)',
-              backdropFilter: 'blur(10px)',
+              background: '#FFFFFF',
             }}>
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-2" style={{ color: '#111111' }}>
@@ -158,8 +157,8 @@ export default function SpanishPricingPage() {
           <div className="rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-lg md:scale-105 hover:shadow-amber-500/30"
             style={{
               borderColor: '#F59E0B',
-              background: 'rgba(25, 32, 56, 0.6)',
-              backdropFilter: 'blur(10px)',
+              background: '#FFFFFF',
+              border: '2px solid #8B5CF6',
             }}>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
               style={{ background: 'rgba(245,158,11,0.15)', color: '#F59E0B' }}>
@@ -211,8 +210,7 @@ export default function SpanishPricingPage() {
           <div className="rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
             style={{
               borderColor: 'var(--border-default)',
-              background: 'rgba(25, 32, 56, 0.4)',
-              backdropFilter: 'blur(10px)',
+              background: '#FFFFFF',
             }}>
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-2" style={{ color: '#111111' }}>

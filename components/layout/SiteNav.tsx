@@ -112,9 +112,7 @@ export default function SiteNav() {
           top: 0,
           zIndex: 200,
           height: '64px',
-          background: 'rgba(255,255,255,0.95)',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
+          background: '#FFFFFF',
           borderBottom: '1px solid #E5E7EB',
           boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
         }}

@@ -52,7 +52,7 @@ export default async function Image({
             display: 'flex',
             width: '100%',
             height: '100%',
-            background: 'linear-gradient(135deg, #F9FAFB 0%, #1a1f3a 100%)',
+            background: '#F9FAFB',
             color: '#111827',
             fontFamily: 'system-ui, sans-serif',
             alignItems: 'center',
@@ -81,7 +81,7 @@ export default async function Image({
           flexDirection: 'column',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(135deg, #F9F8F6 0%, #1a1f3a 100%)',
+          background: '#F9FAFB',
           color: '#111827',
           fontFamily: '"Outfit", system-ui, sans-serif',
           padding: '60px',
@@ -98,7 +98,7 @@ export default async function Image({
             right: '-100px',
             width: '400px',
             height: '400px',
-            background: 'radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%)',
+            background: 'rgba(139, 92, 246, 0.08)',
             borderRadius: '50%',
           }}
         />
@@ -117,10 +117,7 @@ export default async function Image({
               fontSize: '28px',
               fontWeight: '700',
               letterSpacing: '-0.5px',
-              background: 'linear-gradient(90deg, #111111 0%, #7C3AED 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: '#111111',
             }}
           >
             MyCaseValue

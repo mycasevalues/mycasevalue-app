@@ -13,7 +13,7 @@ export function SectionBadge({ label }: SectionBadgeProps) {
     }}>
       <div className="flex items-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full animate-pulse" style={{
-          background: 'linear-gradient(135deg, #333333, #111111)',
+          background: '#8B5CF6',
         }}></span>
         <span className="font-mono text-xs font-bold tracking-[0.15em] uppercase" style={{ color: '#6B7280' }}>
           {label}

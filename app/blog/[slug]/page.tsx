@@ -238,8 +238,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                 className="group rounded-xl border p-6 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10"
                 style={{
                   borderColor: 'var(--border-default)',
-                  background: 'rgba(25, 32, 56, 0.4)',
-                  backdropFilter: 'blur(10px)',
+                  background: '#FFFFFF',
                   textDecoration: 'none',
                 }}
               >

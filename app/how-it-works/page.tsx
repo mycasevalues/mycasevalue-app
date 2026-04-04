@@ -138,8 +138,7 @@ export default function HowItWorksPage() {
                 <div className="rounded-2xl border p-8 h-full transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 animate-in fade-in slide-in-from-bottom-4"
                   style={{
                     borderColor: 'var(--border-default)',
-                    background: 'rgba(25, 32, 56, 0.4)',
-                    backdropFilter: 'blur(10px)',
+                    background: '#FFFFFF',
                     animationDelay: `${idx * 100}ms`,
                   }}>
 

@@ -88,7 +88,7 @@ export default async function NOSPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
           <p className="mb-6" style={{ color: '#6B7280' }}>NOS code {code} does not exist in our database.</p>
           <Link href="/" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: 'linear-gradient(135deg, #8B5CF6, #333333)' }}>
+            style={{ background: '#8B5CF6' }}>
             Return to Home
           </Link>
         </div>
@@ -110,7 +110,7 @@ export default async function NOSPage({ params }: PageProps) {
   const outcomes = [
     { label: 'Settled', value: outcomeData.fav_set || 30, color: '#0D9488' },
     { label: 'Dismissed', value: outcomeData.dismiss || 53, color: '#9CA3AF' },
-    { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#333333' },
+    { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#111111' },
     { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: '#EF4444' },
   ];
   const maxOutcome = Math.max(...outcomes.map(o => o.value));
@@ -174,7 +174,7 @@ export default async function NOSPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-[#F9FAFB] text-[#111827]" style={{ fontFamily: "'Roboto', system-ui, sans-serif" }}>
       {/* Navigation */}
-      <nav className="border-b px-4 sm:px-6 lg:px-8 py-4" style={{ borderColor: 'var(--border-default)', background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(12px)' }}>
+      <nav className="border-b px-4 sm:px-6 lg:px-8 py-4" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-[14px] font-semibold transition hover:opacity-80" style={{ color: '#8B5CF6' }}>
             ← MyCaseValue
@@ -212,12 +212,12 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
             { label: 'Win + Settle Rate', value: `${winRate}%`, color: '#0D9488', icon: '' },
-            { label: 'Median Duration', value: `${medianDuration}mo`, color: '#333333', icon: '' },
+            { label: 'Median Duration', value: `${medianDuration}mo`, color: '#111111', icon: '' },
             { label: 'Settlement Rate', value: `${settleRate}%`, color: '#8B5CF6', icon: '' },
             { label: 'Outcomes Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#5EEAD4', icon: '' },
           ].map((stat, i) => (
             <div key={i} className="rounded-xl p-5 text-center" style={{
-              background: 'linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%)',
+              background: '#FFFFFF',
               border: `1px solid ${stat.color}20`,
             }}>
               <div style={{ fontSize: '20px', marginBottom: '6px' }}>{stat.icon}</div>
@@ -249,7 +249,7 @@ export default async function NOSPage({ params }: PageProps) {
                   <div style={{ height: '24px', borderRadius: '8px', background: '#E5E0D8', overflow: 'hidden' }}>
                     <div style={{
                       height: '100%', borderRadius: '8px',
-                      background: `linear-gradient(90deg, ${o.color}, ${o.color}BB)`,
+                      background: o.color,
                       width: `${(o.value / maxOutcome) * 100}%`,
                       minWidth: '20px',
                     }} />
@@ -310,7 +310,7 @@ export default async function NOSPage({ params }: PageProps) {
           Use our interactive research tool to explore detailed outcomes, recovery ranges, and timeline data for {nosInfo.label} cases.
         </p>
         <Link href="/" className="inline-block px-10 py-4 rounded-xl font-semibold text-lg text-white transition hover:scale-[1.02]"
-          style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', boxShadow: '0 4px 24px rgba(17,17,17,0.3)' }}>
+          style={{ background: '#8B5CF6', boxShadow: '0 4px 12px rgba(139, 92, 246, 0.25)' }}>
           Start Your Research — Free
         </Link>
       </section>

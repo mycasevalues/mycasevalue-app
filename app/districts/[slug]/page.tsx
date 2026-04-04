@@ -77,7 +77,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <Link
             href="/districts"
             className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: 'linear-gradient(135deg, #8B5CF6, #333333)' }}
+            style={{ background: '#8B5CF6' }}
           >
             View All Districts
           </Link>
@@ -153,8 +153,7 @@ export default async function DistrictPage({ params }: PageProps) {
         className="border-b px-4 sm:px-6 lg:px-8 py-4"
         style={{
           borderColor: 'var(--border-default)',
-          background: 'rgba(255,255,255,0.95)',
-          backdropFilter: 'blur(12px)',
+          background: '#FFFFFF',
         }}
       >
         <div className="max-w-[960px] mx-auto flex items-center gap-2 text-sm">
@@ -419,7 +418,7 @@ export default async function DistrictPage({ params }: PageProps) {
                       style={{
                         height: '100%',
                         width: `${caseType.winRate}%`,
-                        background: 'linear-gradient(90deg, #8B5CF6, #0D9488)',
+                        background: '#8B5CF6',
                         borderRadius: '4px',
                       }}
                     />
@@ -458,7 +457,7 @@ export default async function DistrictPage({ params }: PageProps) {
             href="/judges"
             className="rounded-[12px] p-6 sm:p-8 text-center font-semibold text-white transition hover:opacity-90"
             style={{
-              background: 'linear-gradient(135deg, #8B5CF6, #333333)',
+              background: '#8B5CF6',
               color: 'white',
             }}
           >
