@@ -148,137 +148,259 @@ export default async function DistrictPage({ params }: PageProps) {
         fontFamily: 'var(--font-body)',
       }}
     >
-      {/* Breadcrumb Navigation */}
-      <nav
-        className="border-b px-4 sm:px-6 lg:px-8 py-4"
-        style={{
-          borderColor: 'var(--border-default)',
-          background: '#FFFFFF',
-        }}
-      >
-        <div className="max-w-[960px] mx-auto flex items-center gap-2 text-sm">
-          <Link
-            href="/"
-            className="font-semibold transition hover:opacity-80"
-            style={{ color: '#E8171F' }}
-          >
-            Home
-          </Link>
-          <span style={{ color: '#6B7280' }}>→</span>
-          <Link
-            href="/districts"
-            className="font-semibold transition hover:opacity-80"
-            style={{ color: '#E8171F' }}
-          >
-            Districts
-          </Link>
-          <span style={{ color: '#6B7280' }}>→</span>
-          <span style={{ color: '#111111' }}>{state.label}</span>
-        </div>
-      </nav>
+      <style>{`
+        .district-header {
+          background: #00172E;
+          color: white;
+        }
 
-      {/* Hero Section */}
-      <header className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        .district-breadcrumb-link {
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+          transition: color 0.2s ease;
+          font-family: var(--font-body);
+        }
+
+        .district-breadcrumb-link:hover {
+          color: white;
+        }
+
+        .district-breadcrumb-separator {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .stat-card {
+          background: #FFFFFF;
+          border: 1px solid #E0E0E0;
+          border-radius: 4px;
+          padding: 24px;
+          text-align: center;
+          transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .stat-card:hover {
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          transform: translateY(-1px);
+        }
+
+        .stat-number {
+          font-size: 28px;
+          font-weight: 800;
+          color: #E8171F;
+          letter-spacing: -1px;
+          margin-bottom: 6px;
+          font-family: var(--font-display);
+        }
+
+        .stat-label {
+          font-size: 11px;
+          font-weight: 600;
+          color: #455A64;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-family: var(--font-body);
+        }
+
+        .case-table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+
+        .case-table thead {
+          background: #00172E;
+        }
+
+        .case-table thead th {
+          color: white;
+          padding: 16px;
+          text-align: left;
+          font-weight: 600;
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-family: var(--font-body);
+          border: none;
+        }
+
+        .case-table tbody tr {
+          transition: background-color 0.2s ease;
+        }
+
+        .case-table tbody tr:nth-child(odd) {
+          background: #FFFFFF;
+        }
+
+        .case-table tbody tr:nth-child(even) {
+          background: #F8F9FA;
+        }
+
+        .case-table tbody tr:hover {
+          background: #F0F0F0;
+        }
+
+        .case-table tbody td {
+          padding: 16px;
+          border: none;
+          font-size: 14px;
+          color: #111111;
+          font-family: var(--font-body);
+        }
+
+        .related-district-pill {
+          display: inline-block;
+          background: #FFFFFF;
+          border: 1px solid #E0E0E0;
+          border-radius: 20px;
+          padding: 12px 16px;
+          margin: 8px;
+          text-decoration: none;
+          color: #00172E;
+          font-weight: 500;
+          font-size: 14px;
+          transition: all 0.2s ease;
+          font-family: var(--font-body);
+        }
+
+        .related-district-pill:hover {
+          background: #00172E;
+          color: white;
+          border-color: #00172E;
+        }
+
+        .cta-button-primary {
+          background: #E8171F;
+          color: white;
+          padding: 16px 24px;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 16px;
+          display: inline-block;
+          transition: all 0.2s ease;
+          font-family: var(--font-body);
+        }
+
+        .cta-button-primary:hover {
+          background: #CC0000;
+          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.3);
+        }
+      `}</style>
+
+      {/* Dark Navy Header */}
+      <header className="district-header px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-[960px] mx-auto">
-          <div className="flex items-center gap-2 mb-4">
-            <span
-              className="px-3 py-1 rounded-full text-xs font-bold"
+          {/* Breadcrumb */}
+          <nav className="mb-6">
+            <div className="flex items-center gap-2 text-sm">
+              <Link
+                href="/"
+                className="district-breadcrumb-link"
+                style={{ fontFamily: 'var(--font-body)' }}
+              >
+                Home
+              </Link>
+              <span className="district-breadcrumb-separator">›</span>
+              <Link
+                href="/districts"
+                className="district-breadcrumb-link"
+                style={{ fontFamily: 'var(--font-body)' }}
+              >
+                Districts
+              </Link>
+              <span className="district-breadcrumb-separator">›</span>
+              <span style={{ color: 'white', fontFamily: 'var(--font-body)' }}>{state.label}</span>
+            </div>
+          </nav>
+
+          {/* District Name */}
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-2"
+            style={{
+              color: 'white',
+              letterSpacing: '-2px',
+              lineHeight: 1.1,
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            {state.label}
+          </h1>
+
+          {/* Circuit Subtitle */}
+          {circuit && (
+            <p
+              className="text-lg sm:text-xl mb-6"
               style={{
-                background: 'rgba(17,17,17,0.12)',
-                color: '#E8171F',
-                border: '1px solid rgba(17,17,17,0.2)',
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontFamily: 'var(--font-body)',
               }}
             >
-              {circuit ? `${circuit} Circuit` : 'Federal District'}
-            </span>
+              {circuit} Circuit Court
+            </p>
+          )}
+
+          {/* Stats Pills */}
+          <div className="flex flex-wrap gap-3">
             <span
-              className="px-3 py-1 rounded-full text-xs font-bold"
+              className="px-4 py-2 rounded-full text-sm font-semibold"
               style={{
-                background: 'rgba(13,148,136,0.12)',
-                color: '#0D9488',
-                border: '1px solid rgba(13,148,136,0.2)',
+                background: 'rgba(255, 255, 255, 0.15)',
+                color: 'white',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                fontFamily: 'var(--font-body)',
               }}
             >
               {districtStats.totalCases.toLocaleString()} Cases
             </span>
+            <span
+              className="px-4 py-2 rounded-full text-sm font-semibold"
+              style={{
+                background: 'rgba(232, 23, 31, 0.2)',
+                color: '#FFB3B8',
+                border: '1px solid rgba(232, 23, 31, 0.4)',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              {districtStats.winRate}% Win Rate
+            </span>
+            <span
+              className="px-4 py-2 rounded-full text-sm font-semibold"
+              style={{
+                background: 'rgba(255, 255, 255, 0.15)',
+                color: 'white',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              {districtStats.medianDuration}mo Avg Duration
+            </span>
           </div>
-
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4"
-            style={{ letterSpacing: '-2px', lineHeight: 1.1 }}
-          >
-            {state.label} Federal Court Data
-          </h1>
-
-          {circuit && (
-            <p className="text-lg sm:text-xl max-w-2xl mb-4" style={{ color: '#6B7280', lineHeight: 1.7 }}>
-              Part of the <strong>{circuit} Circuit</strong>
-            </p>
-          )}
-
-          <p className="text-lg sm:text-xl max-w-2xl" style={{ color: '#6B7280', lineHeight: 1.7 }}>
-            Federal court outcome data for cases in {state.label}. Win rates, timelines, settlement percentages, and case
-            statistics from public court records.
-          </p>
         </div>
       </header>
 
       {/* Key Stats Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+      <section className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-[960px] mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
             {
               label: 'Total Cases Analyzed',
               value: `${(districtStats.totalCases / 1000).toFixed(1)}k+`,
-              color: '#333333',
             },
             {
               label: 'Top Case Type',
               value: districtStats.topCaseType.split(' ')[0],
-              color: '#E8171F',
             },
             {
               label: 'Plaintiff Win Rate',
               value: `${districtStats.winRate}%`,
-              color: '#0D9488',
             },
             {
               label: 'Median Duration',
-              value: `${districtStats.medianDuration} mo`,
-              color: '#E8171F',
+              value: `${districtStats.medianDuration}mo`,
             },
           ].map((stat, i) => (
-            <div
-              key={i}
-              className="rounded-[12px] p-6 text-center"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--border-default)',
-              }}
-            >
-              <div
-                style={{
-                  fontSize: '28px',
-                  fontWeight: 800,
-                  color: stat.color,
-                  fontFamily: "font-family: 'PT Mono', monospace",
-                  letterSpacing: '-1px',
-                  marginBottom: '6px',
-                }}
-              >
-                {stat.value}
-              </div>
-              <div
-                style={{
-                  fontSize: '11px',
-                  fontWeight: 600,
-                  color: '#6B7280',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                }}
-              >
-                {stat.label}
-              </div>
+            <div key={i} className="stat-card">
+              <div className="stat-number">{stat.value}</div>
+              <div className="stat-label">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -286,63 +408,69 @@ export default async function DistrictPage({ params }: PageProps) {
 
       {/* Circuit Information (if available) */}
       {circuitDetail && (
-        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+        <section className="px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-[960px] mx-auto">
             <div
-              className="rounded-[12px] p-6 sm:p-8"
+              className="rounded-[4px] p-6 sm:p-8"
               style={{
                 background: '#FFFFFF',
-                border: '1px solid var(--border-default)',
+                border: '1px solid #E0E0E0',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ color: '#111111' }}>
+              <h2
+                className="text-2xl font-bold mb-8"
+                style={{
+                  color: '#111111',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
                 {circuit} Circuit Overview
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
                 <div>
-                  <div style={{ fontSize: '12px', color: '#6B7280', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
+                  <div style={{ fontSize: '12px', color: '#455A64', textTransform: 'uppercase', fontWeight: 600, marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                     Active Judges
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: "'PT Mono', monospace" }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#E8171F' }}>
                     {circuitDetail.judges}
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', color: '#6B7280', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
+                  <div style={{ fontSize: '12px', color: '#455A64', textTransform: 'uppercase', fontWeight: 600, marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                     Annual Caseload
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: "'PT Mono', monospace" }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#E8171F' }}>
                     {circuitDetail.caseload}
                   </div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', color: '#6B7280', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>
+                  <div style={{ fontSize: '12px', color: '#455A64', textTransform: 'uppercase', fontWeight: 600, marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                     Median Duration
                   </div>
-                  <div style={{ fontSize: '24px', fontWeight: 800, fontFamily: "'PT Mono', monospace" }}>
+                  <div style={{ fontSize: '28px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#E8171F' }}>
                     {circuitDetail.median_mo}mo
                   </div>
                 </div>
               </div>
 
               {circuitDetail.types && circuitDetail.types.length > 0 && (
-                <div>
-                  <h3 className="text-sm font-bold mb-4" style={{ color: '#111111' }}>
+                <div className="border-t" style={{ borderColor: '#E0E0E0', paddingTop: '24px' }}>
+                  <h3 className="text-lg font-bold mb-6" style={{ color: '#111111', fontFamily: 'var(--font-display)' }}>
                     Common Case Types
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {circuitDetail.types.map((type, i) => (
                       <div key={i}>
-                        <div className="flex justify-between mb-1.5">
-                          <span style={{ fontSize: '13px', fontWeight: 600, color: '#111111' }}>
+                        <div className="flex justify-between mb-2">
+                          <span style={{ fontSize: '14px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-body)' }}>
                             {type.type}
                           </span>
                           <span
                             style={{
-                              fontSize: '13px',
+                              fontSize: '14px',
                               fontWeight: 700,
                               color: '#E8171F',
-                              fontFamily: "'PT Mono', monospace",
+                              fontFamily: 'var(--font-display)',
                             }}
                           >
                             {type.rate}%
@@ -351,8 +479,8 @@ export default async function DistrictPage({ params }: PageProps) {
                         <div
                           style={{
                             height: '6px',
-                            borderRadius: '4px',
-                            background: 'var(--border-default)',
+                            borderRadius: '3px',
+                            background: '#E0E0E0',
                             overflow: 'hidden',
                           }}
                         >
@@ -361,7 +489,7 @@ export default async function DistrictPage({ params }: PageProps) {
                               height: '100%',
                               width: `${type.rate}%`,
                               background: '#E8171F',
-                              borderRadius: '4px',
+                              borderRadius: '3px',
                             }}
                           />
                         </div>
@@ -375,106 +503,172 @@ export default async function DistrictPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* Top Case Types Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+      {/* Top Case Types Section - Table Format */}
+      <section className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-[960px] mx-auto">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: '#111111' }}>
-            Top Case Types in {state.label}
-          </h2>
-          <div
-            className="rounded-[12px] p-6 sm:p-8"
+          <h2
+            className="text-2xl font-bold mb-6"
             style={{
-              background: '#FFFFFF',
-              border: '1px solid var(--border-default)',
+              color: '#111111',
+              fontFamily: 'var(--font-display)',
             }}
           >
-            <div className="space-y-6">
-              {topCaseTypes.map((caseType, i) => (
-                <div key={i}>
-                  <div className="flex justify-between mb-2">
-                    <span style={{ fontSize: '14px', fontWeight: 600, color: '#111111' }}>
-                      {caseType.name}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: '14px',
-                        fontWeight: 700,
-                        color: '#E8171F',
-                        fontFamily: "'PT Mono', monospace",
-                      }}
-                    >
-                      {caseType.winRate}%
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      height: '8px',
-                      borderRadius: '4px',
-                      background: 'var(--border-default)',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <div
-                      style={{
-                        height: '100%',
-                        width: `${caseType.winRate}%`,
-                        background: '#E8171F',
-                        borderRadius: '4px',
-                      }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+            Case Type Breakdown in {state.label}
+          </h2>
+          <div
+            className="rounded-[4px] overflow-hidden"
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #E0E0E0',
+            }}
+          >
+            <table className="case-table">
+              <thead>
+                <tr>
+                  <th>Case Type</th>
+                  <th style={{ textAlign: 'center' }}>Win Rate</th>
+                  <th style={{ textAlign: 'right' }}>Percentage</th>
+                </tr>
+              </thead>
+              <tbody>
+                {topCaseTypes.map((caseType, i) => (
+                  <tr key={i}>
+                    <td style={{ fontWeight: 500 }}>{caseType.name}</td>
+                    <td style={{ textAlign: 'center' }}>
+                      <span
+                        style={{
+                          color: '#E8171F',
+                          fontWeight: 700,
+                          fontFamily: 'var(--font-display)',
+                        }}
+                      >
+                        {caseType.winRate}%
+                      </span>
+                    </td>
+                    <td style={{ textAlign: 'right' }}>
+                      <div
+                        style={{
+                          display: 'inline-block',
+                          width: `${caseType.winRate * 2}px`,
+                          height: '6px',
+                          borderRadius: '3px',
+                          background: '#E8171F',
+                        }}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
       {/* District Charts Section */}
       {libDistrictStats && (
-        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+        <section className="px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-[960px] mx-auto">
-            <DistrictCharts stats={libDistrictStats} />
+            <h2
+              className="text-2xl font-bold mb-6"
+              style={{
+                color: '#111111',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Detailed Analytics
+            </h2>
+            <div
+              className="rounded-[4px] p-6 sm:p-8"
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid #E0E0E0',
+              }}
+            >
+              <DistrictCharts stats={libDistrictStats} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Districts Section */}
+      {circuit && (
+        <section className="px-4 sm:px-6 lg:px-8 py-12">
+          <div className="max-w-[960px] mx-auto">
+            <h2
+              className="text-2xl font-bold mb-8"
+              style={{
+                color: '#111111',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Other Districts in the {circuit} Circuit
+            </h2>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {STATES.filter((s) => s.id && CIRCUIT_MAP[s.id] === circuit && s.id !== slug).map(
+                (relatedState) => (
+                  <Link
+                    key={relatedState.id}
+                    href={`/districts/${relatedState.id}`}
+                    className="related-district-pill"
+                  >
+                    {relatedState.label}
+                  </Link>
+                )
+              )}
+            </div>
           </div>
         </section>
       )}
 
       {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="max-w-[960px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Link
-            href="/districts"
-            className="rounded-[12px] p-6 sm:p-8 text-center font-semibold transition hover:opacity-90"
+      <section className="px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-[960px] mx-auto">
+          <div
+            className="rounded-[4px] p-8 sm:p-12 text-center"
             style={{
-              background: '#FFFFFF',
-              border: '1px solid var(--border-default)',
-              color: '#E8171F',
+              background: '#F8F9FA',
+              border: '1px solid #E0E0E0',
             }}
           >
-            Compare to Other Districts
-          </Link>
-          <Link
-            href="/judges"
-            className="rounded-[12px] p-6 sm:p-8 text-center font-semibold text-white transition hover:opacity-90"
-            style={{
-              background: '#E8171F',
-              color: 'white',
-            }}
-          >
-            See Judges in This District
-          </Link>
+            <h2
+              className="text-2xl sm:text-3xl font-bold mb-4"
+              style={{
+                color: '#00172E',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Calculate Your Case Value in {state.label}
+            </h2>
+            <p
+              className="mb-8 text-lg"
+              style={{
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              Get an instant estimate based on actual court data from {state.label}
+            </p>
+            <Link
+              href="/calculator"
+              className="cta-button-primary"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              Start Case Value Calculator
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Disclaimer */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+      <section className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-[960px] mx-auto">
           <div
-            className="rounded-[12px] p-4 text-sm"
+            className="rounded-[4px] p-6 text-sm"
             style={{
               background: 'rgba(59, 130, 246, 0.08)',
               border: '1px solid rgba(59, 130, 246, 0.3)',
               color: '#111111',
+              fontFamily: 'var(--font-body)',
             }}
           >
             <strong>Disclaimer:</strong> MyCaseValue provides aggregate data from public federal court records for

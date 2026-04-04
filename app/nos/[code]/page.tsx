@@ -106,22 +106,26 @@ export default async function NOSPage({ params }: PageProps) {
     ? Math.round((outcomeData.fav_set || 0) / totalOutcomes * 100)
     : 30;
 
-  // Outcome bars for visual chart
+  // Outcome bars for visual chart (CSS-based)
   const outcomes = [
-    { label: 'Settled', value: outcomeData.fav_set || 30, color: '#0D9488' },
+    { label: 'Settled', value: outcomeData.fav_set || 30, color: '#10B981' },
     { label: 'Dismissed', value: outcomeData.dismiss || 53, color: '#9CA3AF' },
-    { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#111111' },
+    { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#3B82F6' },
     { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: '#EF4444' },
   ];
-  const maxOutcome = Math.max(...outcomes.map(o => o.value));
+  const totalOutcomesPercentage = outcomes.reduce((sum, o) => sum + o.value, 0);
+  const outcomePercentages = outcomes.map(o => ({
+    ...o,
+    percentage: totalOutcomesPercentage > 0 ? Math.round((o.value / totalOutcomesPercentage) * 100) : 0
+  }));
 
   // Related NOS codes in same category
-  const relatedCodes: { code: string; label: string }[] = [];
+  const relatedCodes: { code: string; label: string; category?: string }[] = [];
   SITS.forEach((cat: any) => {
     if (cat.label === nosInfo.category) {
       cat.opts.forEach((opt: any) => {
         if (opt.nos !== code && relatedCodes.length < 6) {
-          relatedCodes.push({ code: opt.nos, label: opt.label });
+          relatedCodes.push({ code: opt.nos, label: opt.label, category: cat.label });
         }
       });
     }
@@ -135,7 +139,7 @@ export default async function NOSPage({ params }: PageProps) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-          { '@type': 'ListItem', position: 2, name: 'Case Types', item: 'https://www.mycasevalues.com/nos' },
+          { '@type': 'ListItem', position: 2, name: 'Cases', item: 'https://www.mycasevalues.com/nos' },
           { '@type': 'ListItem', position: 3, name: nosInfo.label, item: `https://mycasevalues.com/nos/${code}` },
         ],
       },
@@ -172,113 +176,304 @@ export default async function NOSPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9FAFB] text-[#111827]" style={{ fontFamily: "var(--font-body)" }}>
-      {/* Navigation */}
-      <nav className="border-b px-4 sm:px-6 lg:px-8 py-4" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-[14px] font-semibold transition hover:opacity-80" style={{ color: '#E8171F' }}>
-            ← MyCaseValue
-          </Link>
-          <div className="flex items-center gap-3">
-            <Link href="/nos" className="text-[13px] font-medium transition hover:opacity-80" style={{ color: '#6B7280' }}>
-              All Case Types
-            </Link>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen" style={{ fontFamily: "var(--font-body)", background: '#F3F4F6' }}>
+      <style>{`
+        .nos-header {
+          background: #00172E;
+          color: white;
+        }
 
-      {/* Hero */}
-      <header className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="px-3 py-1 rounded-full text-[11px] font-bold" style={{ background: 'rgba(17,17,17,0.12)', color: '#E8171F', border: '1px solid rgba(17,17,17,0.2)' }}>
-              NOS {code}
-            </span>
-            <span className="px-3 py-1 rounded-full text-[11px] font-bold" style={{ background: 'rgba(13,148,136,0.12)', color: '#0D9488', border: '1px solid rgba(13,148,136,0.2)' }}>
-              {nosInfo.category}
-            </span>
+        .breadcrumb {
+          font-size: 13px;
+          font-family: var(--font-body);
+          color: rgba(255, 255, 255, 0.7);
+          margin-bottom: 16px;
+        }
+
+        .breadcrumb a {
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+          color: rgba(255, 255, 255, 1);
+        }
+
+        .breadcrumb-separator {
+          margin: 0 8px;
+        }
+
+        .nos-badge {
+          display: inline-block;
+          padding: 6px 12px;
+          background: rgba(232, 23, 31, 0.15);
+          color: #E8171F;
+          border-radius: 6px;
+          font-size: 12px;
+          font-weight: 700;
+          border: 1px solid rgba(232, 23, 31, 0.3);
+        }
+
+        .stat-card {
+          background: white;
+          border: 1px solid #D5D8DC;
+          border-radius: 4px;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+          transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          transform: translateY(-2px);
+        }
+
+        .stat-value {
+          font-size: 32px;
+          font-weight: 700;
+          font-family: var(--font-display);
+          margin: 12px 0 8px;
+          letter-spacing: -1px;
+        }
+
+        .stat-label {
+          font-size: 12px;
+          font-weight: 600;
+          color: #6B7280;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-family: var(--font-body);
+        }
+
+        .outcome-bar {
+          display: flex;
+          height: 32px;
+          border-radius: 4px;
+          overflow: hidden;
+          background: #F3F4F6;
+        }
+
+        .outcome-segment {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 11px;
+          font-weight: 600;
+          font-family: var(--font-display);
+          transition: opacity 0.2s;
+        }
+
+        .outcome-legend {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 16px;
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid #E5E7EB;
+        }
+
+        .legend-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 13px;
+          font-family: var(--font-body);
+        }
+
+        .legend-color {
+          width: 12px;
+          height: 12px;
+          border-radius: 2px;
+          flex-shrink: 0;
+        }
+
+        .related-card {
+          background: white;
+          border: 1px solid #D5D8DC;
+          border-radius: 4px;
+          padding: 16px;
+          text-decoration: none;
+          color: inherit;
+          transition: all 0.3s ease;
+          display: block;
+          cursor: pointer;
+        }
+
+        .related-card:hover {
+          border-color: #00172E;
+          box-shadow: 0 4px 12px rgba(0, 23, 46, 0.1);
+          transform: translateY(-2px);
+        }
+
+        .related-card-code {
+          font-size: 11px;
+          font-weight: 700;
+          color: #9CA3AF;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-family: var(--font-body);
+        }
+
+        .related-card-name {
+          font-size: 14px;
+          font-weight: 600;
+          color: #00172E;
+          margin-top: 8px;
+          font-family: var(--font-display);
+        }
+
+        .related-card-category {
+          font-size: 12px;
+          color: #6B7280;
+          margin-top: 4px;
+          font-family: var(--font-body);
+        }
+
+        .disclaimer-box {
+          background: #FEF3C7;
+          border: 1px solid #FCD34D;
+          border-radius: 4px;
+          padding: 16px;
+        }
+
+        .disclaimer-box h3 {
+          color: #92400E;
+          font-size: 14px;
+          font-weight: 600;
+          margin: 0 0 8px 0;
+          font-family: var(--font-display);
+        }
+
+        .disclaimer-box p {
+          color: #78350F;
+          font-size: 13px;
+          line-height: 1.6;
+          margin: 0;
+          font-family: var(--font-body);
+        }
+
+        .cta-button {
+          background: #E8171F;
+          color: white;
+          padding: 14px 28px;
+          border-radius: 4px;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: 600;
+          font-family: var(--font-display);
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 8px rgba(232, 23, 31, 0.2);
+        }
+
+        .cta-button:hover {
+          background: #D41515;
+          box-shadow: 0 4px 16px rgba(232, 23, 31, 0.3);
+          transform: translateY(-2px);
+        }
+
+        .section-title {
+          font-size: 20px;
+          font-weight: 700;
+          color: #00172E;
+          margin-bottom: 20px;
+          font-family: var(--font-display);
+        }
+
+        .content-box {
+          background: white;
+          border: 1px solid #D5D8DC;
+          border-radius: 4px;
+          padding: 24px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+      `}</style>
+
+      {/* Dark Navy Header */}
+      <header className="nos-header px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="breadcrumb">
+            <Link href="/">Home</Link>
+            <span className="breadcrumb-separator">/</span>
+            <Link href="/nos">Cases</Link>
+            <span className="breadcrumb-separator">/</span>
+            <span>{nosInfo.label}</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4" style={{ letterSpacing: '-2px', lineHeight: 1.1 }}>
-            {nosInfo.label}
-          </h1>
-          <p className="text-lg sm:text-xl max-w-2xl" style={{ color: '#6B7280', lineHeight: 1.7 }}>
-            Federal court outcome data for {nosInfo.label} cases. Win rates, timelines, settlement percentages, and outcome distributions from public court records.
-          </p>
+
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex-1">
+              <h1 style={{ fontSize: '36px', fontWeight: 700, margin: '0 0 12px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
+                {nosInfo.label}
+              </h1>
+              <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', margin: 0, fontFamily: 'var(--font-body)' }}>
+                {nosInfo.category}
+              </p>
+            </div>
+            <div className="nos-badge">{`NOS ${code}`}</div>
+          </div>
         </div>
       </header>
 
-      {/* Key Stats */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {[
-            { label: 'Win + Settle Rate', value: `${winRate}%`, color: '#0D9488', icon: '' },
-            { label: 'Median Duration', value: `${medianDuration}mo`, color: '#111111', icon: '' },
-            { label: 'Settlement Rate', value: `${settleRate}%`, color: '#E8171F', icon: '' },
-            { label: 'Outcomes Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#0D9488', icon: '' },
-          ].map((stat, i) => (
-            <div key={i} className="rounded-xl p-5 text-center" style={{
-              background: '#FFFFFF',
-              border: `1px solid ${stat.color}20`,
-            }}>
-              <div style={{ fontSize: '20px', marginBottom: '6px' }}>{stat.icon}</div>
-              <div style={{ fontSize: '28px', fontWeight: 800, color: stat.color, fontFamily: "'PT Mono', monospace", letterSpacing: '-1px' }}>
-                {stat.value}
-              </div>
-              <div style={{ fontSize: '11px', fontWeight: 600, color: '#9CA3AF', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Outcome Distribution */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB' }}>
-            <h2 className="text-xl font-bold mb-6">Outcome Distribution</h2>
-            <div className="space-y-4">
-              {outcomes.map((o, i) => (
-                <div key={i}>
-                  <div className="flex justify-between mb-1.5">
-                    <span style={{ fontSize: '13px', fontWeight: 600, color: '#111827' }}>{o.label}</span>
-                    <span style={{ fontSize: '13px', fontWeight: 700, color: o.color, fontFamily: "'PT Mono', monospace" }}>
-                      {o.value}%
-                    </span>
-                  </div>
-                  <div style={{ height: '24px', borderRadius: '8px', background: '#E5E7EB', overflow: 'hidden' }}>
-                    <div style={{
-                      height: '100%', borderRadius: '8px',
-                      background: o.color,
-                      width: `${(o.value / maxOutcome) * 100}%`,
-                      minWidth: '20px',
-                    }} />
-                  </div>
+      {/* Key Stats Cards */}
+      <section className="px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: 'Win Rate', value: `${winRate}%`, color: '#E8171F' },
+              { label: 'Median Duration', value: `${medianDuration} mo`, color: '#00172E' },
+              { label: 'Settlement Rate', value: `${settleRate}%`, color: '#10B981' },
+              { label: 'Cases Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#3B82F6' },
+            ].map((stat, i) => (
+              <div key={i} className="stat-card">
+                <div className="stat-value" style={{ color: stat.color }}>
+                  {stat.value}
                 </div>
-              ))}
-            </div>
+                <div className="stat-label">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* What to know */}
+      {/* Outcome Distribution - CSS-based Chart */}
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB' }}>
-            <h2 className="text-xl font-bold mb-4">What You Should Know</h2>
-            <div className="space-y-4" style={{ fontSize: '14px', color: '#6B7280', lineHeight: 1.8 }}>
-              <p>
-                {nosInfo.label} cases (NOS code {code}) fall under the <strong style={{ color: '#111827' }}>{nosInfo.category}</strong> category in federal court.
-                The data shown here represents aggregate historical outcomes and should be used for research purposes only.
-              </p>
-              <p>
-                The median case duration of <strong style={{ color: '#333333' }}>{medianDuration} months</strong> reflects the time from filing to resolution.
-                Cases that settle tend to resolve faster than those that proceed to trial.
-              </p>
-              <p>
-                Having legal representation significantly impacts outcomes. Federal court data consistently shows that represented plaintiffs
-                achieve more favorable results in {nosInfo.label.toLowerCase()} cases.
-              </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="content-box">
+            <h2 className="section-title">Outcome Distribution</h2>
+
+            <div className="outcome-bar">
+              {outcomePercentages.map((o, i) => (
+                <div
+                  key={i}
+                  className="outcome-segment"
+                  style={{
+                    background: o.color,
+                    width: `${o.percentage}%`,
+                    minWidth: o.percentage > 5 ? 'auto' : '0px',
+                  }}
+                  title={`${o.label}: ${o.percentage}%`}
+                >
+                  {o.percentage > 8 && `${o.percentage}%`}
+                </div>
+              ))}
+            </div>
+
+            <div className="outcome-legend">
+              {outcomePercentages.map((o, i) => (
+                <div key={i} className="legend-item">
+                  <div className="legend-color" style={{ background: o.color }}></div>
+                  <span style={{ color: '#6B7280' }}>
+                    {o.label}: <strong style={{ color: '#00172E' }}>{o.percentage}%</strong>
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -287,15 +482,14 @@ export default async function NOSPage({ params }: PageProps) {
       {/* Related Case Types */}
       {relatedCodes.length > 0 && (
         <section className="px-4 sm:px-6 lg:px-8 pb-12">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-xl font-bold mb-4">Related Case Types</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="section-title">Similar Case Types</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {relatedCodes.map((rel) => (
-                <Link key={rel.code} href={`/nos/${rel.code}`}
-                  className="rounded-xl p-4 transition-all hover:scale-[1.02]"
-                  style={{ background: '#FFFFFF', border: '1px solid #E5E7EB' }}>
-                  <span className="text-[11px] font-bold" style={{ color: '#9CA3AF' }}>NOS {rel.code}</span>
-                  <div className="text-[14px] font-semibold mt-1" style={{ color: '#111827' }}>{rel.label}</div>
+                <Link key={rel.code} href={`/nos/${rel.code}`} className="related-card">
+                  <div className="related-card-code">NOS {rel.code}</div>
+                  <div className="related-card-name">{rel.label}</div>
+                  {rel.category && <div className="related-card-category">{rel.category}</div>}
                 </Link>
               ))}
             </div>
@@ -303,29 +497,33 @@ export default async function NOSPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <h2 className="text-3xl font-bold mb-4">Get Your Detailed Report</h2>
-        <p className="text-[#6B7280] mb-8 max-w-2xl mx-auto">
-          Use our interactive research tool to explore detailed outcomes, recovery ranges, and timeline data for {nosInfo.label} cases.
-        </p>
-        <Link href="/" className="inline-block px-10 py-4 rounded-xl font-semibold text-lg text-white transition hover:scale-[1.02]"
-          style={{ background: '#E8171F', boxShadow: '0 4px 12px rgba(139, 92, 246, 0.25)' }}>
-          Start Your Research — Free
-        </Link>
+      {/* Legal Disclaimer */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="disclaimer-box">
+            <h3>Legal Disclaimer</h3>
+            <p>
+              This information is provided for educational and research purposes only and does not constitute legal advice.
+              The statistics presented are based on publicly available federal court data and should not be used
+              as the sole basis for legal decisions. Actual case outcomes depend on specific facts, jurisdiction,
+              and representation. Please consult with a qualified attorney to discuss your individual case.
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* Disclaimer */}
-      <section className="border-t px-4 sm:px-6 lg:px-8 py-12" style={{ borderColor: '#E5E7EB', background: '#FFFFFF' }}>
-        <div className="max-w-3xl mx-auto">
-          <h3 className="font-semibold mb-4 text-[14px]" style={{ color: '#111827' }}>Legal Disclaimer</h3>
-          <p className="text-[13px] leading-relaxed" style={{ color: '#9CA3AF' }}>
-            This information is provided for educational and research purposes only and does not constitute legal advice.
-            The statistics presented are based on publicly available federal court data and should not be used
-            as the sole basis for legal decisions. Actual case outcomes depend on specific facts, jurisdiction,
-            and representation. Please consult with a qualified attorney to discuss your individual case.
-            MyCaseValue does not predict outcomes or provide case valuations. No attorney-client relationship is created.
+      {/* CTA Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-16 text-center" style={{ background: '#FFFFFF', borderTop: '1px solid #D5D8DC' }}>
+        <div className="max-w-6xl mx-auto">
+          <h2 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 12px 0', color: '#00172E', fontFamily: 'var(--font-display)' }}>
+            Research Your {nosInfo.label} Case
+          </h2>
+          <p style={{ fontSize: '15px', color: '#6B7280', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
+            Explore detailed outcomes, recovery ranges, and timeline data with our interactive research tool.
           </p>
+          <Link href="/" className="cta-button">
+            Start Your Research — Free
+          </Link>
         </div>
       </section>
 
