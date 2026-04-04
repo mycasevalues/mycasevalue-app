@@ -45,8 +45,8 @@ export async function GET(request: NextRequest) {
             flexDirection: 'column',
             width: '1200px',
             height: '630px',
-            background: '#F8F9FA',
-            color: '#212529',
+            background: '#00172E',
+            color: '#ffffff',
             fontFamily: '"Outfit", system-ui, sans-serif',
             padding: '60px',
             boxSizing: 'border-box',
@@ -62,7 +62,7 @@ export async function GET(request: NextRequest) {
               right: '-100px',
               width: '400px',
               height: '400px',
-              background: 'radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(232, 23, 31, 0.15) 0%, transparent 70%)',
               borderRadius: '50%',
             }}
           />
@@ -81,7 +81,7 @@ export async function GET(request: NextRequest) {
                 fontSize: '32px',
                 fontWeight: '700',
                 letterSpacing: '-0.5px',
-                color: '#111111',
+                color: '#ffffff',
               }}
             >
               MyCaseValue
@@ -89,7 +89,7 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 fontSize: '18px',
-                color: '#455A64',
+                color: '#a0a9d4',
                 marginTop: '8px',
                 fontWeight: '400',
               }}
@@ -115,6 +115,7 @@ export async function GET(request: NextRequest) {
                 lineHeight: '1.1',
                 maxWidth: '900px',
                 letterSpacing: '-1px',
+                color: '#ffffff',
               }}
             >
               {decodeURIComponent(type as string)}
@@ -134,8 +135,8 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 flex: 1,
-                background: 'rgba(79, 70, 229, 0.15)',
-                border: '1px solid rgba(79, 70, 229, 0.3)',
+                background: 'rgba(232, 23, 31, 0.1)',
+                border: '1px solid rgba(232, 23, 31, 0.3)',
                 borderRadius: '12px',
                 padding: '20px',
                 display: 'flex',
@@ -146,7 +147,7 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '16px',
-                  color: '#455A64',
+                  color: '#a0a9d4',
                   fontWeight: '500',
                   marginBottom: '12px',
                 }}
@@ -157,7 +158,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '700',
-                  color: '#111111',
+                  color: '#E8171F',
                 }}
               >
                 {winRate}%
@@ -168,8 +169,8 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 flex: 1,
-                background: 'rgba(79, 70, 229, 0.15)',
-                border: '1px solid rgba(79, 70, 229, 0.3)',
+                background: 'rgba(232, 23, 31, 0.1)',
+                border: '1px solid rgba(232, 23, 31, 0.3)',
                 borderRadius: '12px',
                 padding: '20px',
                 display: 'flex',
@@ -180,7 +181,7 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '16px',
-                  color: '#455A64',
+                  color: '#a0a9d4',
                   fontWeight: '500',
                   marginBottom: '12px',
                 }}
@@ -191,7 +192,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '700',
-                  color: '#111111',
+                  color: '#E8171F',
                 }}
               >
                 {parseInt(cases as string).toLocaleString('en-US')}
@@ -202,8 +203,8 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 flex: 1,
-                background: 'rgba(79, 70, 229, 0.15)',
-                border: '1px solid rgba(79, 70, 229, 0.3)',
+                background: 'rgba(232, 23, 31, 0.1)',
+                border: '1px solid rgba(232, 23, 31, 0.3)',
                 borderRadius: '12px',
                 padding: '20px',
                 display: 'flex',
@@ -214,7 +215,7 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '16px',
-                  color: '#455A64',
+                  color: '#a0a9d4',
                   fontWeight: '500',
                   marginBottom: '12px',
                 }}
@@ -225,7 +226,7 @@ export async function GET(request: NextRequest) {
                 style={{
                   fontSize: '48px',
                   fontWeight: '700',
-                  color: '#111111',
+                  color: '#E8171F',
                 }}
               >
                 {decodeURIComponent(recovery as string)}
@@ -240,7 +241,7 @@ export async function GET(request: NextRequest) {
               bottom: '30px',
               left: '60px',
               fontSize: '18px',
-              color: '#64748B',
+              color: '#a0a9d4',
               fontWeight: '500',
               zIndex: 2,
             }}
@@ -298,8 +299,8 @@ export async function GET(request: NextRequest) {
             flexDirection: 'column',
             width: '1200px',
             height: '630px',
-            background: '#F8F9FA',
-            color: '#212529',
+            background: '#00172E',
+            color: '#ffffff',
             fontFamily: 'system-ui, sans-serif',
             padding: '60px',
             boxSizing: 'border-box',
@@ -308,13 +309,13 @@ export async function GET(request: NextRequest) {
             textAlign: 'center',
           }}
         >
-          <div style={{ fontSize: '64px', fontWeight: 'bold', marginBottom: '20px' }}>
+          <div style={{ fontSize: '64px', fontWeight: 'bold', marginBottom: '20px', color: '#ffffff' }}>
             MyCaseValue
           </div>
-          <div style={{ fontSize: '32px', color: '#455A64' }}>
+          <div style={{ fontSize: '32px', color: '#a0a9d4' }}>
             Real Federal Court Data for Your Case
           </div>
-          <div style={{ fontSize: '18px', color: '#64748B', marginTop: '40px' }}>
+          <div style={{ fontSize: '18px', color: '#a0a9d4', marginTop: '40px' }}>
             mycasevalues.com
           </div>
         </div>

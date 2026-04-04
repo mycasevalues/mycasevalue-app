@@ -1,14 +1,4 @@
-export default function ReportSkeleton() {
-  const skelBar = (w: string, h = '16px') => (
-    <div style={{
-      width: w,
-      height: h,
-      background: '#D5D8DC',
-      borderRadius: '4px',
-      animation: 'pulse-skeleton 2s ease-in-out infinite',
-    }} />
-  );
-
+export default function Loading() {
   return (
     <>
       <style>{`
@@ -16,14 +6,14 @@ export default function ReportSkeleton() {
           0%, 100% { opacity: 1; }
           50% { opacity: 0.5; }
         }
-        .report-skeleton-stat-grid {
+        .district-skeleton-stat-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(4, 1fr);
           gap: 20px;
         }
         @media (max-width: 768px) {
-          .report-skeleton-stat-grid {
-            grid-template-columns: 1fr;
+          .district-skeleton-stat-grid {
+            grid-template-columns: repeat(2, 1fr);
             gap: 16px;
           }
         }
@@ -51,13 +41,13 @@ export default function ReportSkeleton() {
               ))}
             </div>
 
-            {/* Title skeleton */}
+            {/* District name skeleton */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
               <div style={{ flex: 1 }}>
                 <div
                   style={{
-                    height: 'clamp(24px, 5vw, 32px)',
-                    width: '60%',
+                    height: 'clamp(24px, 5vw, 36px)',
+                    width: '50%',
                     background: '#1a3a5a',
                     borderRadius: '4px',
                     marginBottom: '12px',
@@ -66,9 +56,9 @@ export default function ReportSkeleton() {
                 />
                 <div
                   style={{
-                    height: '28px',
-                    width: '140px',
-                    background: '#E8171F',
+                    height: '14px',
+                    width: '45%',
+                    background: '#1a3a5a',
                     borderRadius: '4px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -81,28 +71,27 @@ export default function ReportSkeleton() {
         {/* White Subheader Section Skeleton */}
         <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
-            {/* Description line skeleton */}
+            {/* Description lines skeleton */}
             <div style={{ marginBottom: '20px' }}>
-              {skelBar('85%', '14px')}
-              <div style={{ marginTop: '8px' }}>
-                {skelBar('70%', '14px')}
-              </div>
-            </div>
-
-            {/* Share buttons skeleton */}
-            <div style={{ display: 'flex', gap: '12px', marginBottom: '16px' }}>
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  style={{
-                    width: '100px',
-                    height: '36px',
-                    background: '#D5D8DC',
-                    borderRadius: '4px',
-                    animation: 'pulse-skeleton 2s ease-in-out infinite',
-                  }}
-                />
-              ))}
+              <div
+                style={{
+                  height: '14px',
+                  width: '85%',
+                  background: '#D5D8DC',
+                  marginBottom: '8px',
+                  borderRadius: '4px',
+                  animation: 'pulse-skeleton 2s ease-in-out infinite',
+                }}
+              />
+              <div
+                style={{
+                  height: '14px',
+                  width: '75%',
+                  background: '#D5D8DC',
+                  borderRadius: '4px',
+                  animation: 'pulse-skeleton 2s ease-in-out infinite',
+                }}
+              />
             </div>
 
             {/* Data source badges skeleton */}
@@ -126,7 +115,7 @@ export default function ReportSkeleton() {
 
         {/* Main Content Skeleton */}
         <main style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
-          {/* Win Rate Section */}
+          {/* Overview Statistics Section */}
           <section
             style={{
               background: '#FFFFFF',
@@ -138,20 +127,35 @@ export default function ReportSkeleton() {
             }}
           >
             <div style={{ marginBottom: '24px' }}>
-              {skelBar('30%', '18px')}
-              <div style={{ marginTop: '8px' }}>
-                {skelBar('50%', '14px')}
-              </div>
+              <div
+                style={{
+                  height: '18px',
+                  width: '30%',
+                  background: '#D5D8DC',
+                  marginBottom: '8px',
+                  borderRadius: '4px',
+                  animation: 'pulse-skeleton 2s ease-in-out infinite',
+                }}
+              />
+              <div
+                style={{
+                  height: '14px',
+                  width: '50%',
+                  background: '#D5D8DC',
+                  borderRadius: '4px',
+                  animation: 'pulse-skeleton 2s ease-in-out infinite',
+                }}
+              />
             </div>
 
-            {/* Stat cards skeleton (3 in a row) */}
-            <div className="report-skeleton-stat-grid">
-              {[1, 2, 3].map((i) => (
+            {/* Stat cards skeleton (4 in a row) */}
+            <div className="district-skeleton-stat-grid">
+              {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
                   style={{
                     textAlign: 'center',
-                    padding: '28px 20px',
+                    padding: '24px 16px',
                     background: '#F8F9FA',
                     borderRadius: '4px',
                     border: '1px solid #D5D8DC',
@@ -159,8 +163,8 @@ export default function ReportSkeleton() {
                 >
                   <div
                     style={{
-                      height: '40px',
-                      width: '70%',
+                      height: '36px',
+                      width: '65%',
                       background: '#D5D8DC',
                       margin: '0 auto 12px',
                       borderRadius: '4px',
@@ -169,8 +173,8 @@ export default function ReportSkeleton() {
                   />
                   <div
                     style={{
-                      height: '14px',
-                      width: '80%',
+                      height: '12px',
+                      width: '75%',
                       background: '#D5D8DC',
                       margin: '0 auto 8px',
                       borderRadius: '4px',
@@ -179,8 +183,8 @@ export default function ReportSkeleton() {
                   />
                   <div
                     style={{
-                      height: '12px',
-                      width: '70%',
+                      height: '11px',
+                      width: '60%',
                       background: '#D5D8DC',
                       margin: '0 auto',
                       borderRadius: '4px',
@@ -190,21 +194,9 @@ export default function ReportSkeleton() {
                 </div>
               ))}
             </div>
-
-            <div
-              style={{
-                marginTop: '20px',
-                height: '12px',
-                width: '50%',
-                background: '#D5D8DC',
-                margin: '20px auto 0',
-                borderRadius: '4px',
-                animation: 'pulse-skeleton 2s ease-in-out infinite',
-              }}
-            />
           </section>
 
-          {/* Case Timeline Section */}
+          {/* Win Rate by Circuit Section */}
           <section
             style={{
               background: '#FFFFFF',
@@ -216,49 +208,69 @@ export default function ReportSkeleton() {
             }}
           >
             <div style={{ marginBottom: '24px' }}>
-              {skelBar('30%', '18px')}
-              <div style={{ marginTop: '8px' }}>
-                {skelBar('50%', '14px')}
-              </div>
+              <div
+                style={{
+                  height: '18px',
+                  width: '25%',
+                  background: '#D5D8DC',
+                  marginBottom: '8px',
+                  borderRadius: '4px',
+                  animation: 'pulse-skeleton 2s ease-in-out infinite',
+                }}
+              />
             </div>
 
-            {/* Timeline skeleton blocks */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  style={{
-                    padding: '20px',
-                    background: '#F8F9FA',
-                    borderRadius: '4px',
-                    border: '1px solid #D5D8DC',
-                  }}
-                >
-                  <div
-                    style={{
-                      height: '14px',
-                      width: '40%',
-                      background: '#D5D8DC',
-                      marginBottom: '8px',
-                      borderRadius: '4px',
-                      animation: 'pulse-skeleton 2s ease-in-out infinite',
-                    }}
-                  />
-                  <div
-                    style={{
-                      height: '12px',
-                      width: '60%',
-                      background: '#D5D8DC',
-                      borderRadius: '4px',
-                      animation: 'pulse-skeleton 2s ease-in-out infinite',
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
+            {/* Large chart placeholder */}
+            <div
+              style={{
+                height: '300px',
+                width: '100%',
+                background: '#F8F9FA',
+                borderRadius: '4px',
+                border: '1px solid #D5D8DC',
+                animation: 'pulse-skeleton 2s ease-in-out infinite',
+              }}
+            />
           </section>
 
-          {/* Settlement Section */}
+          {/* Case Duration Section */}
+          <section
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '32px',
+              marginBottom: '24px',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            }}
+          >
+            <div style={{ marginBottom: '24px' }}>
+              <div
+                style={{
+                  height: '18px',
+                  width: '28%',
+                  background: '#D5D8DC',
+                  marginBottom: '8px',
+                  borderRadius: '4px',
+                  animation: 'pulse-skeleton 2s ease-in-out infinite',
+                }}
+              />
+            </div>
+
+            {/* Medium chart placeholder */}
+            <div
+              style={{
+                height: '250px',
+                width: '100%',
+                background: '#F8F9FA',
+                borderRadius: '4px',
+                border: '1px solid #D5D8DC',
+                animation: 'pulse-skeleton 2s ease-in-out infinite',
+              }}
+            />
+          </section>
+
+          {/* Additional Info Section */}
           <section
             style={{
               background: '#FFFFFF',
@@ -268,21 +280,27 @@ export default function ReportSkeleton() {
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
           >
-            <div style={{ marginBottom: '24px' }}>
-              {skelBar('30%', '18px')}
-              <div style={{ marginTop: '8px' }}>
-                {skelBar('50%', '14px')}
-              </div>
+            <div style={{ marginBottom: '20px' }}>
+              <div
+                style={{
+                  height: '18px',
+                  width: '25%',
+                  background: '#D5D8DC',
+                  marginBottom: '8px',
+                  borderRadius: '4px',
+                  animation: 'pulse-skeleton 2s ease-in-out infinite',
+                }}
+              />
             </div>
 
-            {/* Content blocks skeleton */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {/* Content skeleton */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
                   style={{
-                    height: '16px',
-                    width: i === 4 ? '30%' : '100%',
+                    height: '14px',
+                    width: i === 4 ? '40%' : '100%',
                     background: '#D5D8DC',
                     borderRadius: '4px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',

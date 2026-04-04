@@ -82,8 +82,8 @@ export default async function Image({
             display: 'flex',
             width: '100%',
             height: '100%',
-            background: 'linear-gradient(135deg, #F8F9FA 0%, #1a1f3a 100%)',
-            color: '#212529',
+            background: '#00172E',
+            color: '#ffffff',
             fontFamily: 'system-ui, sans-serif',
             alignItems: 'center',
             justifyContent: 'center',
@@ -109,8 +109,8 @@ export default async function Image({
           flexDirection: 'column',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(135deg, #F9F8F6 0%, #1a1f3a 100%)',
-          color: '#212529',
+          background: '#00172E',
+          color: '#ffffff',
           fontFamily: '"Outfit", system-ui, sans-serif',
           padding: '60px',
           boxSizing: 'border-box',
@@ -126,7 +126,7 @@ export default async function Image({
             right: '-100px',
             width: '400px',
             height: '400px',
-            background: 'radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(232, 23, 31, 0.15) 0%, transparent 70%)',
             borderRadius: '50%',
           }}
         />
@@ -145,10 +145,7 @@ export default async function Image({
               fontSize: '28px',
               fontWeight: '700',
               letterSpacing: '-0.5px',
-              background: 'linear-gradient(90deg, #111111 0%, #E8171F 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: '#ffffff',
             }}
           >
             MyCaseValue
@@ -156,7 +153,7 @@ export default async function Image({
           <div
             style={{
               fontSize: '16px',
-              color: '#455A64',
+              color: '#a0a9d4',
               marginTop: '6px',
               fontWeight: '400',
             }}
@@ -182,6 +179,7 @@ export default async function Image({
               lineHeight: '1.2',
               maxWidth: '900px',
               letterSpacing: '-1px',
+              color: '#ffffff',
             }}
           >
             {stats.name}
@@ -201,8 +199,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(79, 70, 229, 0.15)',
-              border: '1px solid rgba(79, 70, 229, 0.3)',
+              background: 'rgba(232, 23, 31, 0.1)',
+              border: '1px solid rgba(232, 23, 31, 0.3)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -213,7 +211,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#455A64',
+                color: '#a0a9d4',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}
@@ -224,7 +222,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '700',
-                color: '#111111',
+                color: '#E8171F',
               }}
             >
               {stats.avgWinRate}%
@@ -235,8 +233,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(79, 70, 229, 0.15)',
-              border: '1px solid rgba(79, 70, 229, 0.3)',
+              background: 'rgba(232, 23, 31, 0.1)',
+              border: '1px solid rgba(232, 23, 31, 0.3)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -247,7 +245,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#455A64',
+                color: '#a0a9d4',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}
@@ -258,7 +256,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '700',
-                color: '#111111',
+                color: '#E8171F',
               }}
             >
               {caseCount}
@@ -269,8 +267,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(79, 70, 229, 0.15)',
-              border: '1px solid rgba(79, 70, 229, 0.3)',
+              background: 'rgba(232, 23, 31, 0.1)',
+              border: '1px solid rgba(232, 23, 31, 0.3)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -281,7 +279,7 @@ export default async function Image({
             <div
               style={{
                 fontSize: '14px',
-                color: '#455A64',
+                color: '#a0a9d4',
                 fontWeight: '500',
                 marginBottom: '10px',
               }}
@@ -292,7 +290,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '700',
-                color: '#111111',
+                color: '#E8171F',
               }}
             >
               {stats.caseTypeCount}
@@ -307,7 +305,7 @@ export default async function Image({
             bottom: '30px',
             left: '60px',
             fontSize: '16px',
-            color: '#64748B',
+            color: '#a0a9d4',
             fontWeight: '500',
             zIndex: 2,
           }}

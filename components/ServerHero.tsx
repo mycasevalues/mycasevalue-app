@@ -15,50 +15,158 @@ export default function ServerHero() {
     <section className="server-hero-content" aria-label="Hero section">
       {/* ── VISUAL 1: HERO ─────────────────────────────────── */}
       <div style={{
-        background: 'linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%)',
-        borderBottom: '1px solid #D5D8DC',
-        padding: '100px 24px 80px',
+        background: 'linear-gradient(135deg, #00172E 0%, #001A35 50%, #00172E 100%)',
+        borderBottom: '1px solid rgba(255,255,255,0.05)',
+        padding: 'clamp(60px, 10vw, 120px) 24px clamp(50px, 8vw, 100px)',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Subtle grid background pattern */}
+        {/* Animated gradient overlay for depth */}
         <div style={{
           position: 'absolute', inset: 0,
-          backgroundImage: 'linear-gradient(rgba(250,251,252,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(250,251,252,0.03) 1px, transparent 1px)',
-          backgroundSize: '40px 40px', opacity: 0.2, pointerEvents: 'none',
+          background: 'radial-gradient(circle at 20% 50%, rgba(232,23,31,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 30%, rgba(6,105,151,0.06) 0%, transparent 50%)',
+          pointerEvents: 'none',
         }} />
-        <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
-          <p style={{ fontSize: '16px', fontWeight: 600, color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-body)', marginBottom: '24px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-            MyCaseValue+ Federal Case Analytics
-          </p>
-          <h1 style={{
-            fontSize: 'clamp(36px, 5vw, 52px)', fontWeight: 500, color: '#FAFBFC',
-            fontFamily: 'var(--font-display)', lineHeight: 1.2, marginBottom: '24px',
-          }}>
-            The settlement data the other<br />side already has.
-          </h1>
+
+        {/* Subtle animated grid pattern */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: 'linear-gradient(rgba(250,251,252,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(250,251,252,0.04) 1px, transparent 1px)',
+          backgroundSize: '50px 50px', opacity: 0.15, pointerEvents: 'none',
+          animation: 'grid-drift 20s linear infinite',
+        }} />
+
+        <div style={{ maxWidth: '900px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <p style={{
-            fontSize: '19px', color: 'rgba(250,251,252,0.70)', fontFamily: 'var(--font-body)',
-            lineHeight: 1.6, marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px',
-            fontStyle: 'italic', fontWeight: 300,
+            fontSize: 'clamp(11px, 1.2vw, 13px)',
+            fontWeight: 700,
+            color: 'rgba(232,23,31,0.9)',
+            fontFamily: 'var(--font-body)',
+            marginBottom: 'clamp(16px, 2vw, 24px)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.12em',
+            opacity: 0.95,
           }}>
-            Research real outcomes from federal court cases across all 94 US districts.
-            Win rates, settlement ranges, timelines — sourced from public court records.
+            Trusted Legal Analytics Platform
           </p>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '0' }}>
+
+          <h1 style={{
+            fontSize: 'clamp(42px, 8vw, 72px)',
+            fontWeight: 700,
+            color: '#FAFBFC',
+            fontFamily: 'var(--font-display)',
+            lineHeight: 1.15,
+            marginBottom: 'clamp(16px, 2vw, 24px)',
+            letterSpacing: '-0.02em',
+          }}>
+            Real Case Outcomes.
+            <br />
+            Competitive Edge.
+          </h1>
+
+          <p style={{
+            fontSize: 'clamp(16px, 2vw, 20px)',
+            color: 'rgba(250,251,252,0.85)',
+            fontFamily: 'var(--font-body)',
+            lineHeight: 1.7,
+            marginBottom: 'clamp(24px, 3vw, 32px)',
+            maxWidth: '700px',
+            margin: '0 auto clamp(24px, 3vw, 32px)',
+            fontWeight: 400,
+          }}>
+            Access settlement data, win rates, and judge analytics from 5.1M+ federal cases. Make informed decisions with the intelligence your opposition already has.
+          </p>
+
+          <div style={{ display: 'flex', gap: 'clamp(12px, 2vw, 16px)', justifyContent: 'center', flexWrap: 'wrap', marginBottom: 'clamp(32px, 4vw, 48px)', alignItems: 'center' }}>
             <a href="/search" style={{
-              display: 'inline-block', padding: '12px 32px', background: '#E8171F', color: '#FFFFFF',
-              borderRadius: '4px', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-display)',
-              textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.05em',
-            }}>Start Free Trial</a>
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 'clamp(14px, 1.5vw, 16px) clamp(32px, 4vw, 48px)',
+              background: '#E8171F',
+              color: '#FFFFFF',
+              borderRadius: '6px',
+              fontWeight: 800,
+              fontSize: 'clamp(13px, 1.2vw, 15px)',
+              fontFamily: 'var(--font-display)',
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+              letterSpacing: '0.06em',
+              border: '2px solid #E8171F',
+              transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+              cursor: 'pointer',
+              boxShadow: '0 8px 24px rgba(232,23,31,0.3)',
+              minHeight: '48px',
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#D01018';
+              e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,23,31,0.4)';
+            }} onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#E8171F';
+              e.currentTarget.style.boxShadow = '0 8px 24px rgba(232,23,31,0.3)';
+            }}>
+              Start Free Trial
+            </a>
             <a href="/sign-in" style={{
-              display: 'inline-block', padding: '12px 32px', background: 'transparent', color: '#FFFFFF',
-              border: '1px solid rgba(255,255,255,0.4)', borderRadius: '4px', fontWeight: 600, fontSize: '14px',
-              fontFamily: 'var(--font-display)', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.05em',
-            }}>Sign In</a>
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 'clamp(14px, 1.5vw, 16px) clamp(32px, 4vw, 48px)',
+              background: 'transparent',
+              color: '#FFFFFF',
+              border: '2px solid rgba(255,255,255,0.35)',
+              borderRadius: '6px',
+              fontWeight: 700,
+              fontSize: 'clamp(13px, 1.2vw, 15px)',
+              fontFamily: 'var(--font-display)',
+              textDecoration: 'none',
+              textTransform: 'uppercase',
+              letterSpacing: '0.06em',
+              transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+              cursor: 'pointer',
+              minHeight: '48px',
+            }} onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)';
+            }} onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)';
+            }}>
+              Sign In
+            </a>
+          </div>
+
+          {/* Social Proof */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            fontSize: 'clamp(12px, 1.1vw, 14px)',
+            color: 'rgba(250,251,252,0.7)',
+            fontFamily: 'var(--font-body)',
+          }}>
+            <span style={{ display: 'flex', gap: '4px' }}>
+              <span style={{ color: '#FFB81C' }}>★</span>
+              <span style={{ color: '#FFB81C' }}>★</span>
+              <span style={{ color: '#FFB81C' }}>★</span>
+              <span style={{ color: '#FFB81C' }}>★</span>
+              <span style={{ color: '#FFB81C' }}>★</span>
+            </span>
+            <span>Trusted by 10,000+ legal professionals nationwide</span>
           </div>
         </div>
+
+        {/* CSS Animation for grid drift */}
+        <style>{`
+          @keyframes grid-drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+          }
+          @media (max-width: 768px) {
+            h1 { word-spacing: 9999px; }
+          }
+        `}</style>
       </div>
 
       {/* ── VISUAL 1.5: IN-PAGE ANCHOR NAV (Client Component) ── */}

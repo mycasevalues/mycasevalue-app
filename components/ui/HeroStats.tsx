@@ -76,38 +76,56 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
   return (
     <div
       style={{
-        padding: '20px 16px',
-        borderRadius: '4px',
+        padding: 'clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px)',
+        borderRadius: '8px',
         background: '#FFFFFF',
-        border: `1px solid ${stat.color}20`,
+        border: `2px solid ${stat.color}18`,
         position: 'relative',
         overflow: 'hidden',
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-        transition: `all 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 120}ms`,
+        transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
+        transition: `all 0.7s cubic-bezier(0.16, 1, 0.3, 1) ${index * 120}ms`,
+        backdropFilter: 'blur(10px)',
       }}
     >
-      {/* Subtle glow behind */}
+      {/* Enhanced gradient glow behind */}
       <div style={{
-        position: 'absolute', top: '-20px', right: '-20px',
-        width: '80px', height: '80px', borderRadius: '50%',
-        background: `${stat.color}12`, filter: 'blur(25px)',
+        position: 'absolute', top: '-30px', right: '-30px',
+        width: '100px', height: '100px', borderRadius: '50%',
+        background: `linear-gradient(135deg, ${stat.color}20, ${stat.color}08)`,
+        filter: 'blur(30px)',
+        animation: 'pulse-glow 3s ease-in-out infinite',
       }} />
 
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-        <div style={{ fontSize: '20px', marginBottom: '8px' }}>{stat.icon}</div>
+        <div style={{ fontSize: 'clamp(18px, 2.5vw, 24px)', marginBottom: 'clamp(6px, 1vw, 12px)' }}>{stat.icon}</div>
         <div className="stat-glow" style={{
-          fontFamily: "'PT Mono', monospace",
-          fontSize: '28px', fontWeight: 700, color: stat.color,
+          fontFamily: "'PT Mono', 'Courier New', monospace",
+          fontSize: 'clamp(24px, 4vw, 36px)',
+          fontWeight: 800,
+          color: stat.color,
           lineHeight: 1.1,
+          letterSpacing: '-0.01em',
         }}>
           {stat.prefix}{isVisible ? (stat.value % 1 !== 0 ? count.toFixed(1) : count) : 0}{stat.suffix}
         </div>
-        <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529', marginTop: '6px' }}>
+        <div style={{
+          fontSize: 'clamp(12px, 1.5vw, 14px)',
+          fontWeight: 700,
+          color: '#212529',
+          marginTop: 'clamp(6px, 1vw, 10px)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.03em',
+        }}>
           {stat.label}
         </div>
         {stat.sublabel && (
-          <div style={{ fontSize: '11px', color: '#455A64', marginTop: '2px' }}>
+          <div style={{
+            fontSize: 'clamp(10px, 1.2vw, 12px)',
+            color: '#6B7280',
+            marginTop: '4px',
+            fontWeight: 500,
+          }}>
             {stat.sublabel}
           </div>
         )}
@@ -195,8 +213,8 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
     <div ref={ref} style={{
       display: 'grid',
       gridTemplateColumns: 'repeat(4, 1fr)',
-      gap: '12px',
-      marginTop: '24px',
+      gap: 'clamp(12px, 2vw, 16px)',
+      marginTop: 'clamp(20px, 3vw, 32px)',
       position: 'relative',
     }}
       className="hero-stats-grid"
@@ -208,22 +226,33 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
       {updatedDateText && (
         <div style={{
           position: 'absolute',
-          bottom: '-24px',
+          bottom: 'clamp(-32px, -4vw, -24px)',
           right: 0,
-          fontSize: '11px',
-          color: 'rgba(156, 163, 175, 0.8)',
+          fontSize: 'clamp(10px, 1vw, 12px)',
+          color: 'rgba(107, 114, 128, 0.7)',
           fontStyle: 'italic',
+          fontFamily: 'var(--font-body)',
         }}>
           {updatedDateText}
         </div>
       )}
 
       <style>{`
-        @media (max-width: 768px) {
+        @keyframes pulse-glow {
+          0%, 100% { opacity: 0.6; }
+          50% { opacity: 1; }
+        }
+
+        @media (max-width: 1024px) {
           .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
+
+        @media (max-width: 640px) {
+          .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: clamp(8px, 1.5vw, 12px) !important; }
+        }
+
         @media (max-width: 420px) {
-          .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+          .hero-stats-grid { grid-template-columns: 1fr !important; gap: clamp(8px, 1.5vw, 12px) !important; }
         }
       `}</style>
     </div>
