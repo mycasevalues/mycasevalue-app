@@ -49,7 +49,7 @@ const jsonLd = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <style>{`
         .about-badge {
           display: inline-flex;
@@ -127,6 +127,7 @@ export default function AboutPage() {
           font-size: 1rem;
           margin: 0 auto 1rem;
           box-shadow: 0 2px 8px rgba(232, 23, 31, 0.2);
+          flex-shrink: 0;
         }
 
         .step-title {
@@ -140,7 +141,7 @@ export default function AboutPage() {
         .step-description {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #666666;
+          color: #455A64;
           line-height: 1.6;
         }
 
@@ -158,21 +159,22 @@ export default function AboutPage() {
 
         .source-card {
           padding: 1.5rem;
-          border-radius: 0.75rem;
+          border-radius: 4px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
-          transition: all 0.3s ease;
+          transition: all 0.2s ease;
         }
 
         .source-card:hover {
           border-color: #E8171F;
           box-shadow: 0 4px 12px rgba(232, 23, 31, 0.1);
+          transform: translateY(-2px);
         }
 
         .source-icon {
           width: 48px;
           height: 48px;
-          border-radius: 0.5rem;
+          border-radius: 4px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -191,7 +193,7 @@ export default function AboutPage() {
         .source-description {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #666666;
+          color: #455A64;
           line-height: 1.6;
         }
 
@@ -200,7 +202,7 @@ export default function AboutPage() {
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 1.5rem;
           padding: 2rem;
-          border-radius: 0.75rem;
+          border-radius: 4px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
         }
@@ -230,13 +232,13 @@ export default function AboutPage() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
-          color: #666666;
+          color: #455A64;
           margin-top: 0.75rem;
         }
 
         .team-box {
           padding: 2rem;
-          border-radius: 0.75rem;
+          border-radius: 4px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
         }
@@ -257,7 +259,7 @@ export default function AboutPage() {
         .team-box li {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #666666;
+          color: #455A64;
           line-height: 1.8;
           margin-bottom: 0.75rem;
         }
@@ -270,7 +272,7 @@ export default function AboutPage() {
         .cta-section {
           text-align: center;
           padding: 3rem 2rem;
-          border-radius: 0.75rem;
+          border-radius: 4px;
           border: 1px solid #D5D8DC;
           background: linear-gradient(135deg, #FFFFFF 0%, #F9F9F9 100%);
         }
@@ -286,7 +288,7 @@ export default function AboutPage() {
         .cta-text {
           font-family: var(--font-body);
           font-size: 1rem;
-          color: #666666;
+          color: #455A64;
           margin-bottom: 1.5rem;
           max-width: 28rem;
           margin-left: auto;
@@ -298,14 +300,14 @@ export default function AboutPage() {
           align-items: center;
           gap: 0.5rem;
           padding: 0.75rem 1.5rem;
-          border-radius: 0.75rem;
+          border-radius: 4px;
           font-family: var(--font-body);
           font-size: 0.875rem;
           font-weight: 600;
           background: #E8171F;
           color: #FFFFFF;
           text-decoration: none;
-          transition: all 0.3s ease;
+          transition: all 0.2s ease;
         }
 
         .cta-button:hover {
@@ -325,7 +327,7 @@ export default function AboutPage() {
         .section-description {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #666666;
+          color: #455A64;
           margin-bottom: 1.5rem;
           line-height: 1.6;
         }
@@ -360,23 +362,30 @@ export default function AboutPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
+      <div className="border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.08)', background: '#00172E' }}>
         <div className="max-w-4xl mx-auto px-6 py-12 sm:py-16">
+          <div style={{ marginBottom: '12px' }}>
+            <a href="/" style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontFamily: 'var(--font-body)', transition: 'color 0.2s ease' }}>
+              Home
+            </a>
+            <span style={{ color: 'rgba(255, 255, 255, 0.5)', margin: '0 8px' }}>/</span>
+            <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', fontFamily: 'var(--font-body)' }}>About</span>
+          </div>
           <div className="about-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
-            ABOUT
+            ABOUT US
           </div>
         </div>
       </div>
 
       {/* Mission Hero Section */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#FFFFFF' }}>
+      <div className="border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.08)', background: '#FFFFFF' }}>
         <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
           <div className="mission-hero">
-            <h1>Democratizing Access to Federal Court Data</h1>
-            <p>
+            <h1 style={{ color: '#212529' }}>Democratizing Access to Federal Court Data</h1>
+            <p style={{ color: '#455A64' }}>
               Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys.
               MyCaseValue makes outcome data—win rates, settlement ranges, timelines, and recovery patterns—accessible to everyone making
               informed decisions about their legal situation.
@@ -386,7 +395,7 @@ export default function AboutPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-16">
+      <div className="max-w-4xl mx-auto px-6 py-16" style={{ background: '#EDEEEE' }}>
         <div className="space-y-20">
 
           {/* How It Works Section - Timeline */}
@@ -487,11 +496,11 @@ export default function AboutPage() {
           <section>
             <h2 className="section-heading">Team & Vision</h2>
             <div className="team-box">
-              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#666666', margin: '0 0 1rem 0' }}>
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#455A64', margin: '0 0 1rem 0' }}>
                 MyCaseValue is built by legal researchers, data engineers, and technologists who believe transparency drives better decisions.
                 We are not a law firm. We do not provide legal advice. We are a data platform.
               </p>
-              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#666666', margin: '0 0 1rem 0' }}>
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#455A64', margin: '0 0 1rem 0' }}>
                 Our team is committed to:
               </p>
               <ul>
