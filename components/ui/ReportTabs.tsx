@@ -14,8 +14,8 @@ export const REPORT_TABS: TabConfig[] = [
   { id: 'win-rates',  label: 'Win Rates',       labelEs: 'Tasas de Éxito',    icon: '' },
   { id: 'timeline',   label: 'Timeline',        labelEs: 'Cronología',        icon: '' },
   { id: 'settlements',label: 'Settlements',     labelEs: 'Acuerdos',          icon: '' },
-  { id: 'attorney',   label: 'Attorney Impact', labelEs: 'Impacto del Abogado',icon: '👤' },
-  { id: 'similar',    label: 'Similar Cases',   labelEs: 'Casos Similares',   icon: '🔗' },
+  { id: 'attorney',   label: 'Attorney Impact', labelEs: 'Impacto del Abogado',icon: '' },
+  { id: 'similar',    label: 'Similar Cases',   labelEs: 'Casos Similares',   icon: '' },
 ];
 
 interface ReportTabsProps {

@@ -97,7 +97,7 @@ function getCostBreakdown(
         min: 300,
         max: 800,
         description: isEs ? 'Investigación, impresión, software legal' : 'Research, printing, legal software',
-        icon: '📌',
+        icon: '',
       },
     ];
   }
@@ -145,7 +145,7 @@ function getCostBreakdown(
       description: isEs
         ? 'Investigación, viajes, costos administrativos'
         : 'Research, travel, administrative costs',
-      icon: '📌',
+      icon: '',
     },
   ];
 }

@@ -93,7 +93,7 @@ function getTimelinePhases(durationMonths: number, settlementPct: number, lang: 
       label: isEs ? 'Juicio' : 'Trial',
       startMonth: 12,
       endMonth: durationMonths,
-      icon: '⚡',
+      icon: '',
       color: '#EF4444',
       description: isEs ? 'Solo ~3% de los casos federales llegan a juicio' : 'Only ~3% of federal cases reach trial',
       details: isEs

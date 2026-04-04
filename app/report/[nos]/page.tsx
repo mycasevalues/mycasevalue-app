@@ -133,7 +133,7 @@ export default async function ReportPage({
     // Supabase not configured or auth failed — default to free
   }
 
-  const isPremium = tier === 'single_report' || tier === 'unlimited' || tier === 'attorney';
+  const isPremium = true; // DEV MODE: All features unlocked — Stripe integration pending
 
   // DEV MODE: All features unlocked — Stripe integration pending
   if (false) {

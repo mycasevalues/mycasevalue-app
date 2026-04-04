@@ -242,7 +242,7 @@ export default function HowItWorksPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                icon: '⚡',
+                icon: '',
                 title: 'Instant Results',
                 description: 'Get your report in seconds, not weeks. Real-time analysis of 5.1M+ cases.',
               },
@@ -257,7 +257,7 @@ export default function HowItWorksPage() {
                 description: 'Start free, or upgrade to premium features for $5.99–$29.99. No surprise fees.',
               },
               {
-                icon: '🌐',
+                icon: '',
                 title: 'Bilingual',
                 description: 'Available in English and Spanish. Accessible to everyone.',
               },
@@ -267,13 +267,12 @@ export default function HowItWorksPage() {
                 description: 'Every statistic comes from official federal court records with documented sources.',
               },
               {
-                icon: '📖',
+                icon: '',
                 title: 'Plain English',
                 description: 'No legal jargon. Results explained in language everyone can understand.',
               },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-                <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--fg-primary)' }}>
                   {item.title}
                 </h3>

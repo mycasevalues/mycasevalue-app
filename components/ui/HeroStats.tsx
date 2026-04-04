@@ -17,17 +17,17 @@ interface HeroStatsProps {
 }
 
 const STATS_EN: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '⚖️', color: '#111111' },
-  { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '🏛️', color: '#111111' },
-  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '📁', color: '#8B5CF6' },
-  { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '📅', color: '#111111' },
+  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#111111' },
+  { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#111111' },
+  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: '#8B5CF6' },
+  { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '', color: '#111111' },
 ];
 
 const STATS_ES: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '⚖️', color: '#111111' },
-  { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '🏛️', color: '#111111' },
-  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '📁', color: '#8B5CF6' },
-  { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '📅', color: '#111111' },
+  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#111111' },
+  { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: '#111111' },
+  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: '#8B5CF6' },
+  { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '', color: '#111111' },
 ];
 
 function useCountUp(target: number, duration: number = 2000, shouldStart: boolean = false): number {
@@ -89,7 +89,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
           fontSize: '28px', fontWeight: 700, color: stat.color,
           lineHeight: 1.1,
         }}>
-          {stat.prefix}{stat.value % 1 !== 0 ? count.toFixed(1) : count}{stat.suffix}
+          {stat.prefix}{isVisible ? (stat.value % 1 !== 0 ? count.toFixed(1) : count) : 0}{stat.suffix}
         </div>
         <div style={{ fontSize: '13px', fontWeight: 600, color: '#111827', marginTop: '6px' }}>
           {stat.label}

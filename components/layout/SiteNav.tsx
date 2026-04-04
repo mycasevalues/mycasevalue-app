@@ -463,7 +463,7 @@ export default function SiteNav() {
                   marginTop: '8px',
                 }}
               >
-                Get Started Free
+                Search Cases
               </Link>
             </>
           )}

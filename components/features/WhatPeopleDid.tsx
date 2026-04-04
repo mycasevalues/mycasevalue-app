@@ -17,8 +17,8 @@ export interface WhatPeopleDidProps {
 export function WhatPeopleDid({ lang = 'en' }: WhatPeopleDidProps) {
   const es = lang === 'es';
   const nextSteps: NextStep[] = [
-    { action: es ? 'Obtener consulta gratuita' : 'Get a free consultation', pct: 78, icon: '📞' },
-    { action: es ? 'Reunir documentación' : 'Gather documentation', pct: 92, icon: '📁' },
+    { action: es ? 'Obtener consulta gratuita' : 'Get a free consultation', pct: 78, icon: '' },
+    { action: es ? 'Reunir documentación' : 'Gather documentation', pct: 92, icon: '' },
     { action: es ? 'Presentar una queja' : 'File a complaint', pct: 64, icon: '' },
   ];
 

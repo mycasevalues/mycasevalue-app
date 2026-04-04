@@ -129,7 +129,7 @@ export default function QuickLookupForm() {
           marginTop: '4px',
         }}
       >
-        3 free lookups/day · No account required
+        Free access · No account required
       </div>
     </form>
   );

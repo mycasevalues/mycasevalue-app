@@ -32,7 +32,6 @@ export default function ResultsPage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         {/* Empty State Card */}
         <div className="p-8 rounded-xl border text-center" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-surface)' }}>
-          <div className="text-4xl mb-4" style={{ color: 'var(--accent-secondary)' }}>📊</div>
           <h2 className="text-xl font-semibold mb-3" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
             No Results Selected
           </h2>

@@ -535,7 +535,7 @@ export default async function JudgePage({ params }: PageProps) {
               lineHeight: '1.6',
             }}
           >
-            Judge {judge.name.split(' ')[1]} most frequently hears the following case types:
+            Judge {judge.name.split(' ').slice(1).join(' ')} most frequently hears the following case types:
           </p>
           <ul
             style={{

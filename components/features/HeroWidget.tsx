@@ -273,17 +273,17 @@ export function HeroWidget({ lang = 'en' }: HeroWidgetProps) {
                 {
                   label: t.winRate,
                   value: `${data.winRate}%`,
-                  icon: '📊',
+                  icon: '',
                 },
                 {
                   label: t.medianSettlement,
                   value: data.medianSettlement,
-                  icon: '💰',
+                  icon: '',
                 },
                 {
                   label: t.duration,
                   value: data.medianDuration,
-                  icon: '⏱️',
+                  icon: '',
                 },
               ].map((stat, i) => (
                 <div
@@ -294,14 +294,6 @@ export function HeroWidget({ lang = 'en' }: HeroWidgetProps) {
                     border: '1px solid #E5E0D8',
                   }}
                 >
-                  <div
-                    style={{
-                      fontSize: '20px',
-                      marginBottom: '6px',
-                    }}
-                  >
-                    {stat.icon}
-                  </div>
                   <div
                     className="font-bold mb-1"
                     style={{

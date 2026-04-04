@@ -229,6 +229,7 @@ function Shell({
         className=""
         role="application"
         aria-label="MyCaseValue"
+        data-mcv-loaded="true"
         style={{
           background: 'var(--bg-base)',
           minHeight: '100vh',
@@ -2474,7 +2475,6 @@ export default function MyCaseValue() {
                           {/* Top-right: High Risk, High Reward */}
                           <div className={`p-4 rounded-xl border text-center ${riskLevel !== 'low' && rewardLevel === 'high' ? 'border-[#D97706] ring-2 ring-[#D9770630]' : 'border-[var(--border-default)]'}`}
                             style={{ background: riskLevel !== 'low' && rewardLevel === 'high' ? 'rgba(217,119,6,0.06)' : 'rgba(255,255,255,0.02)' }}>
-                            <div className="text-[22px] mb-1">⚡</div>
                             <div className="text-[11px] font-bold" style={{ color: '#D97706' }}>{lang === 'es' ? 'Alto potencial' : 'High Potential'}</div>
                             <div className="text-[10px] mt-1" style={{ color: 'var(--fg-muted)' }}>{lang === 'es' ? 'Alto riesgo, alto resultado' : 'High risk, high outcome'}</div>
                             {riskLevel !== 'low' && rewardLevel === 'high' && (
