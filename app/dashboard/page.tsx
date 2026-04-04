@@ -120,7 +120,9 @@ export default async function DashboardPage() {
     ? new Date(userCreatedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
     : 'N/A';
 
-  const isPaid = true; // DEV MODE: All features unlocked — Stripe integration pending
+  // Tier logic: in production, isPaid comes from the plan; during beta all features are unlocked
+  const isPaid = userPlan !== 'free' || true; // Beta: all features unlocked — Stripe integration pending
+  const isAttorney = userPlan === 'attorney' || true; // Beta: attorney features unlocked
   const tierKey = userPlan === 'single_report' ? 'single' : userPlan;
   const features = TIER_INCLUDES[tierKey] || TIER_INCLUDES.free;
 
@@ -143,7 +145,7 @@ export default async function DashboardPage() {
 
   // ── Fetch search history for Unlimited+ users ─────────────────
   let searchHistory: { query: string; category: string | null; searched_at: string }[] = [];
-  const isUnlimitedPlus = true; // DEV MODE: All features unlocked — Stripe integration pending
+  const isUnlimitedPlus = ['unlimited', 'attorney'].includes(userPlan) || true; // Beta: unlocked
   if (userEmail && isUnlimitedPlus && !isExpired) {
     try {
       const adminDb = getSupabaseAdmin();
@@ -295,6 +297,48 @@ export default async function DashboardPage() {
               }}>
                 See Pricing →
               </Link>
+            </div>
+          )}
+
+          {/* Attorney Tools — Attorney tier */}
+          {isAttorney && (
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#111111', margin: 0 }}>
+                  Attorney Tools
+                </h2>
+                <Link href="/attorney" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500 }}>
+                  View all →
+                </Link>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+                {[
+                  { label: 'AI Case Predictor', href: '/attorney/case-predictor', desc: 'Predict outcomes', icon: '🧠' },
+                  { label: 'Judge Intelligence', href: '/attorney/judge-intelligence', desc: 'Research judges', icon: '⚖️' },
+                  { label: 'Document Intelligence', href: '/attorney/document-intelligence', desc: 'Analyze documents', icon: '📄' },
+                ].map((tool) => (
+                  <Link
+                    key={tool.href}
+                    href={tool.href}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '14px 16px',
+                      borderRadius: '8px',
+                      border: '1px solid var(--border-default)',
+                      textDecoration: 'none',
+                      transition: 'border-color 0.2s',
+                    }}
+                  >
+                    <span style={{ fontSize: '24px' }}>{tool.icon}</span>
+                    <div>
+                      <div style={{ fontSize: '14px', fontWeight: 600, color: '#111111' }}>{tool.label}</div>
+                      <div style={{ fontSize: '12px', color: '#6B7280' }}>{tool.desc}</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
 

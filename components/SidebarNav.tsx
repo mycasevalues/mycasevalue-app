@@ -7,9 +7,10 @@ export default function SidebarNav() {
   const navItems = [
     { label: 'Dashboard', href: '/dashboard', icon: '⊞' },
     { label: 'Search cases', href: '/cases', icon: '⌕' },
-    { label: 'Saved reports', href: '/dashboard/reports', icon: '⊡' },
-    { label: 'Billing', href: '/pricing', icon: '◇' },
-    { label: 'Settings', href: '/settings', icon: '⚙' },
+    { label: 'Saved reports', href: '/reports', icon: '⊡' },
+    { label: 'Attorney tools', href: '/attorney', icon: '⚖' },
+    { label: 'Account', href: '/account', icon: '⚙' },
+    { label: 'Billing', href: '/billing', icon: '◇' },
   ];
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
