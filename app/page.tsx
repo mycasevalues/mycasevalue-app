@@ -13,10 +13,27 @@ export const metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'MyCaseValue',
+  url: 'https://www.mycasevalues.com',
+  description: 'Research real outcomes from 5.1M+ federal court cases across 94 districts.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://www.mycasevalues.com/search?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
 export default function Page() {
   noStore();
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ServerHero />
       <ServerContent />
     </>

@@ -76,8 +76,27 @@ export default function CalculatorPage() {
     });
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'Case Value Calculator',
+    url: 'https://www.mycasevalues.com/calculator',
+    applicationCategory: 'Legal',
+    description: 'Estimate your case value with damage multipliers based on federal court data.',
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'USD',
+      price: '0',
+      description: 'Free settlement calculator tool',
+    },
+  };
+
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">

@@ -9,10 +9,39 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.mycasevalues.com/contact' },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact MyCaseValue',
+  url: 'https://www.mycasevalues.com/contact',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'MyCaseValue',
+    url: 'https://www.mycasevalues.com',
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'Customer Support',
+        email: 'support@mycasevalue.com',
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'Enterprise & API',
+        email: 'enterprise@mycasevalue.com',
+      },
+    ],
+  },
+};
+
 export default function ContactPage() {
   return (
-    <div style={{ background: 'var(--bg-base)', minHeight: '100vh' }}>
-      <div style={{ maxWidth: 720, margin: '0 auto', padding: '64px 24px' }}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div style={{ background: 'var(--bg-base)', minHeight: '100vh' }}>
+        <div style={{ maxWidth: 720, margin: '0 auto', padding: '64px 24px' }}>
         <h1
           style={{
             fontSize: 'clamp(28px, 4vw, 40px)',
@@ -209,7 +238,8 @@ export default function ContactPage() {
         >
           We typically respond within 1 business day. For urgent account issues, include your account email in your message.
         </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
