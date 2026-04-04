@@ -28,10 +28,13 @@ const NAV_LINKS = [
 export default function SiteNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const pathname = usePathname();
   const router = useRouter();
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // Check auth state
   useEffect(() => {
@@ -103,6 +106,33 @@ export default function SiteNav() {
   // Close drawer on route change
   useEffect(() => { setMobileOpen(false); }, [pathname]);
 
+  // Focus search input when overlay opens
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  // Close search overlay on Escape key
+  useEffect(() => {
+    if (!searchOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSearchOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [searchOpen]);
+
+  const handleSearchSubmit = () => {
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+      setSearchOpen(false);
+      setSearchQuery('');
+    }
+  };
+
   const isActive = useCallback((href: string) => {
     if (href === '/') return pathname === '/';
     return pathname.startsWith(href);
@@ -151,8 +181,43 @@ export default function SiteNav() {
             <img src="/logo.svg" alt="MyCaseValue" style={{ height: '30px', width: 'auto' }} />
           </Link>
 
-          {/* Right: Auth buttons (desktop) + Hamburger (mobile) */}
+          {/* Right: Auth buttons (desktop) + Search + Hamburger (mobile) */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {/* Search icon button */}
+            <button
+              onClick={() => setSearchOpen(!searchOpen)}
+              className="site-nav-search-btn"
+              aria-label="Open search"
+              style={{
+                background: 'none',
+                border: 'none',
+                padding: '8px 12px',
+                cursor: 'pointer',
+                color: '#455A64',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: '44px',
+                minWidth: '44px',
+                transition: 'color 150ms',
+              }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+              </svg>
+            </button>
+
             <div
               className="site-nav-auth"
               style={{
@@ -477,6 +542,128 @@ export default function SiteNav() {
         </div>
       </nav>
 
+      {/* Search overlay */}
+      {searchOpen && (
+        <div
+          className="site-nav-search-overlay"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            top: '64px',
+            zIndex: 197,
+            background: 'rgba(0,0,0,0.30)',
+            backdropFilter: undefined,
+            WebkitBackdropFilter: undefined,
+          }}
+          onClick={() => setSearchOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Search panel — slides down from nav */}
+      <div
+        className="site-nav-search-panel"
+        style={{
+          position: 'fixed',
+          top: '64px',
+          left: 0,
+          right: 0,
+          zIndex: 198,
+          background: '#00172E',
+          borderBottom: '1px solid #D5D8DC',
+          padding: '32px 24px',
+          maxHeight: searchOpen ? '400px' : '0',
+          overflow: 'hidden',
+          transition: 'max-height 300ms ease, padding 300ms ease',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+        }}
+      >
+        <div
+          style={{
+            width: '100%',
+            maxWidth: '1280px',
+            display: 'flex',
+            gap: '12px',
+            alignItems: 'center',
+          }}
+        >
+          {/* Search input */}
+          <input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Search case types, districts, judges..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleSearchSubmit();
+              }
+            }}
+            className="site-nav-search-input"
+            style={{
+              flex: 1,
+              height: '48px',
+              padding: '12px 16px',
+              fontSize: '16px',
+              fontFamily: 'var(--font-body)',
+              background: '#FFFFFF',
+              border: '4px solid #D5D8DC',
+              borderRadius: '4px',
+              transition: 'border-color 150ms',
+              outline: 'none',
+            }}
+          />
+
+          {/* Search button */}
+          <button
+            onClick={handleSearchSubmit}
+            className="site-nav-search-submit"
+            style={{
+              height: '48px',
+              padding: '0 24px',
+              background: '#E8171F',
+              color: '#FFFFFF',
+              fontSize: '14px',
+              fontWeight: 600,
+              fontFamily: 'var(--font-body)',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              transition: 'all 150ms',
+            }}
+          >
+            Search
+          </button>
+
+          {/* Close button */}
+          <button
+            onClick={() => setSearchOpen(false)}
+            className="site-nav-search-close"
+            aria-label="Close search"
+            style={{
+              height: '48px',
+              width: '48px',
+              padding: '0',
+              background: 'transparent',
+              color: '#FFFFFF',
+              fontSize: '24px',
+              fontWeight: 300,
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'color 150ms',
+            }}
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
       {/* Mobile drawer overlay */}
       {mobileOpen && (
         <div
@@ -636,6 +823,10 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
+        .site-nav-search-btn:hover { color: #212529 !important; }
+        .site-nav-search-input:focus { border-color: #E8171F !important; }
+        .site-nav-search-submit:hover { background: #CC1219 !important; }
+        .site-nav-search-close:hover { color: #E8171F !important; }
         .site-nav-link:hover { color: #212529 !important; }
         .site-nav-sub-link:hover { color: #FFFFFF !important; }
         .site-nav-mobile-link:hover { background: rgba(0,0,0,0.04) !important; }

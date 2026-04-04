@@ -10,6 +10,7 @@ import UpgradeBanner from './UpgradeBanner';
 import FaqAccordion from './FaqAccordion';
 import AnimatedCounter from './AnimatedCounter';
 import TestimonialCarousel from './TestimonialCarousel';
+import TrustBadges from './TrustBadges';
 
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
@@ -42,6 +43,9 @@ const CASE_CATEGORIES = [
 export default function ServerContent() {
   return (
     <div className="server-content-seo" aria-label="Additional content">
+      {/* ── TRUST BADGES ──────────────────────────── */}
+      <TrustBadges />
+
       {/* ── TRUSTED CASE INTELLIGENCE ──────────────────────────── */}
       <section id="features" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
