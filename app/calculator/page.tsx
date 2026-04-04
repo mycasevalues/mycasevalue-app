@@ -111,6 +111,7 @@ export default function CalculatorPage() {
               <select
                 value={caseType}
                 onChange={(e) => { setCaseType(e.target.value); setResults(null); }}
+                aria-label="Select a case type"
                 className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
                 style={{
                   borderColor: 'var(--border-default)',
@@ -136,6 +137,7 @@ export default function CalculatorPage() {
               <select
                 value={district}
                 onChange={(e) => { setDistrict(e.target.value); setResults(null); }}
+                aria-label="Select your federal district"
                 className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
                 style={{
                   borderColor: 'var(--border-default)',
@@ -171,6 +173,7 @@ export default function CalculatorPage() {
                   setDamages(val);
                   setResults(null);
                 }}
+                aria-label="Estimated damages in dollars"
                 className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
                 style={{
                   borderColor: 'var(--border-default)',
@@ -192,6 +195,7 @@ export default function CalculatorPage() {
               <select
                 value={represented}
                 onChange={(e) => { setRepresented(e.target.value); setResults(null); }}
+                aria-label="Are you represented by an attorney"
                 className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
                 style={{
                   borderColor: 'var(--border-default)',

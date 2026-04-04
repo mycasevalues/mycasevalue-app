@@ -13,9 +13,9 @@ export default function SiteFooter() {
       className="site-footer"
       style={{
         background: '#111111',
-        borderTop: '1px solid rgba(255,255,255,0.08)',
+        borderTop: '1px solid rgba(255,255,255,0.1)',
         padding: '64px 24px 32px',
-        color: 'rgba(255,255,255,0.6)',
+        color: 'rgba(255,255,255,0.7)',
       }}
     >
       <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
@@ -47,7 +47,7 @@ export default function SiteFooter() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: 'rgba(255,255,255,0.5)',
+                color: 'rgba(255,255,255,0.65)',
                 lineHeight: 1.6,
                 marginTop: '8px',
               }}
@@ -58,7 +58,7 @@ export default function SiteFooter() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '12px',
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.6)',
                 marginTop: '8px',
               }}
             >
@@ -73,7 +73,7 @@ export default function SiteFooter() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '11px',
                 fontWeight: 600,
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.65)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.10em',
                 marginBottom: '16px',
@@ -99,7 +99,7 @@ export default function SiteFooter() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '11px',
                 fontWeight: 600,
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.65)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.10em',
                 marginBottom: '16px',
@@ -122,7 +122,7 @@ export default function SiteFooter() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '11px',
                 fontWeight: 600,
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(255,255,255,0.65)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.10em',
                 marginBottom: '16px',
@@ -160,7 +160,7 @@ export default function SiteFooter() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '12px',
-              color: 'rgba(255,255,255,0.4)',
+              color: 'rgba(255,255,255,0.6)',
               margin: 0,
             }}
           >
@@ -170,7 +170,7 @@ export default function SiteFooter() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '12px',
-              color: 'rgba(255,255,255,0.4)',
+              color: 'rgba(255,255,255,0.6)',
               margin: 0,
             }}
           >
@@ -189,7 +189,7 @@ export default function SiteFooter() {
 const footerLinkStyle: React.CSSProperties = {
   fontFamily: 'var(--font-body)',
   fontSize: '14px',
-  color: 'rgba(255,255,255,0.6)',
+  color: 'rgba(255,255,255,0.75)',
   textDecoration: 'none',
   transition: 'color 200ms ease',
 };

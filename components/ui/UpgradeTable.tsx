@@ -278,7 +278,13 @@ export default function UpgradeTable({
         </tbody>
       </table>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginTop: '32px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginTop: '32px' }} className="pricing-buttons-grid">
+        <style>{`
+          .pricing-buttons-grid { grid-template-columns: repeat(3, 1fr); }
+          @media (max-width: 768px) {
+            .pricing-buttons-grid { grid-template-columns: 1fr; gap: 12px; }
+          }
+        `}</style>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <button type="button" onClick={() => onBuy('free')} disabled
             style={{

@@ -106,6 +106,7 @@ export default function SearchPage() {
         value={query}
         onChange={e => setQuery(e.target.value)}
         autoFocus
+        aria-label="Search case types"
         style={{
           width: '100%',
           padding: '14px 18px',

@@ -58,6 +58,7 @@ export function RiskAssessmentQuiz({
       <div
         className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-[var(--z-modal)]"
         role="dialog"
+        aria-modal="true"
         aria-labelledby="quiz-results-title"
       >
         <div className="card-bg bg-[#FFFFFF] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">
@@ -100,6 +101,7 @@ export function RiskAssessmentQuiz({
     <div
       className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 z-[var(--z-modal)]"
       role="dialog"
+      aria-modal="true"
       aria-labelledby="quiz-title"
     >
       <div className="card-bg bg-[#FFFFFF] rounded-3xl shadow-2xl max-w-md p-8 animate-fade-in">

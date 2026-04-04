@@ -288,6 +288,15 @@ export default function ServerHero() {
             }}
             className="steps-grid"
           >
+            <style>{`
+              .steps-grid { grid-template-columns: repeat(3, 1fr); }
+              @media (max-width: 768px) {
+                .steps-grid {
+                  grid-template-columns: 1fr;
+                  gap: 16px;
+                }
+              }
+            `}</style>
             {[
               {
                 step: '01',

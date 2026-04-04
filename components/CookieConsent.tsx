@@ -33,6 +33,7 @@ export default function CookieConsent() {
     <div
       className="cookie-banner"
       role="dialog"
+      aria-modal="true"
       aria-label="Cookie consent"
       style={{
         position: 'fixed',

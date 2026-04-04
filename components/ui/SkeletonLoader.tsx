@@ -92,7 +92,22 @@ export function SkeletonCard({ className = '' }: { className?: string }) {
 
 export function SkeletonStatRow({ count = 4, className = '' }: { count?: number; className?: string }) {
   return (
-    <div className={className} style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(count, 4)}, 1fr)`, gap: '16px' }}>
+    <div className={`skeleton-stat-row ${className}`} style={{ display: 'grid', gridTemplateColumns: `repeat(${Math.min(count, 4)}, 1fr)`, gap: '16px' }}>
+      <style>{`
+        .skeleton-stat-row { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+        @media (max-width: 768px) {
+          .skeleton-stat-row {
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+            gap: 12px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .skeleton-stat-row {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+            gap: 10px !important;
+          }
+        }
+      `}</style>
       {Array.from({ length: count }).map((_, i) => (
         <div key={i} style={{
           padding: '16px',

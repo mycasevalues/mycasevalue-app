@@ -236,6 +236,32 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
           padding: 24px 16px;
           text-align: center;
         }
+
+        .comparison-metric-grid {
+          display: grid;
+          gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+          .comparison-metric-grid {
+            gap: 12px;
+          }
+          .comparison-metric-2 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .comparison-metric-3 {
+            grid-template-columns: 1fr;
+          }
+          .comparison-metric-1 {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .comparison-metric-2 {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
 
       <div className="max-w-7xl mx-auto case-comparison-fade-in">
@@ -285,7 +311,7 @@ const CaseComparison: React.FC<CaseComparisonProps> = ({ lang = 'en' }) => {
             ].map(metric => (
               <div key={metric.key} className="metric-card">
                 <div className="metric-label">{metric.label}</div>
-                <div style={{ display: 'grid', gridTemplateColumns: `repeat(${activeCount}, 1fr)`, gap: '16px', marginTop: '16px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: `repeat(${activeCount}, 1fr)`, gap: '16px', marginTop: '16px' }} className={`comparison-metric-grid comparison-metric-${activeCount}`}>
                   {selectedCases.map((caseItem, idx) => {
                     if (!caseItem) return null;
                     const metrics = getMetrics(caseItem.nos);

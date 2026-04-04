@@ -40,6 +40,7 @@ export default function QuickLookupForm() {
       <select
         value={caseType}
         onChange={(e) => setCaseType(e.target.value)}
+        aria-label="Select your case type"
         style={{
           height: '48px',
           padding: '12px 16px',
@@ -75,6 +76,7 @@ export default function QuickLookupForm() {
       <select
         value={district}
         onChange={(e) => setDistrict(e.target.value)}
+        aria-label="Select your district or state"
         style={{
           height: '48px',
           padding: '12px 16px',

@@ -252,7 +252,8 @@ export default async function ReportPage({
           <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
             Win Rate Analysis
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="win-rate-grid">
+            <style>{`.win-rate-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 12px; } }`}</style>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
                 {winRate}%
@@ -288,7 +289,8 @@ export default async function ReportPage({
           <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
             Case Timeline
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }} className="timeline-grid">
+            <style>{`.timeline-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .timeline-grid { grid-template-columns: 1fr; gap: 12px; } }`}</style>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontSize: 32, fontWeight: 700, color: 'var(--accent-primary)', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
                 {medianDuration} months
@@ -319,7 +321,8 @@ export default async function ReportPage({
                 <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
                   Settlement Range
                 </h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }} className="settlement-grid">
+                  <style>{`.settlement-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 768px) { .settlement-grid { grid-template-columns: 1fr; gap: 12px; } }`}</style>
                   <div style={{ textAlign: 'center' }}>
                     <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: '#DC2626', margin: '0 0 8px' }}>
                       25th Percentile
@@ -367,7 +370,8 @@ export default async function ReportPage({
                 <h2 style={{ fontSize: 16, fontWeight: 600, marginBottom: 20, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
                   Representation Impact
                 </h2>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }} className="representation-grid">
+                  <style>{`.representation-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .representation-grid { grid-template-columns: 1fr; gap: 12px; } }`}</style>
                   <div style={{ textAlign: 'center', padding: 16, background: 'var(--bg-base)', borderRadius: 8, border: '1px solid var(--border-default)' }}>
                     <p style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--fg-muted)', margin: '0 0 8px' }}>
                       Self-Represented (Pro Se)
