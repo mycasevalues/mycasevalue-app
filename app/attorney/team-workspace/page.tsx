@@ -62,7 +62,7 @@ export default function TeamWorkspacePage() {
         {/* Tabs */}
         <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', background: 'rgba(255,255,255,0.06)', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px', width: 'fit-content', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
           {(['reports', 'team'] as const).map((t) => (
-            <button key={t} onClick={() => setTab(t)} style={{ padding: '8px 20px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, cursor: 'pointer', backgroundColor: tab === t ? '#E8171F' : 'transparent', color: tab === t ? '#FFFFFF' : '#999999', textTransform: 'capitalize' as const, textTransform: 'uppercase', letterSpacing: '0.5px', fontSize: '12px' }}>
+            <button key={t} onClick={() => setTab(t)} style={{ padding: '8px 20px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, cursor: 'pointer', backgroundColor: tab === t ? '#E8171F' : 'transparent', color: tab === t ? '#FFFFFF' : '#999999', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
               {t === 'reports' ? 'Shared Reports' : 'Team Members'}
             </button>
           ))}

@@ -139,7 +139,6 @@ export default function TranslatePage() {
                 color: 'var(--fg-primary)',
                 fontFamily: 'var(--font-body)',
                 minHeight: '140px',
-                focusRing: 'var(--border-focus)',
               }}
             />
             <p className="text-[11px] mt-2" style={{ color: 'var(--fg-secondary)', fontFamily: 'var(--font-body)' }}>

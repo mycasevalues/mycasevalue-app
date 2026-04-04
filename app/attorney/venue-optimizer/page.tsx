@@ -90,7 +90,7 @@ export default function VenueOptimizerPage() {
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <Link href="/attorney" style={{ fontSize: '13px', color: '#E8171F', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-            Home > Attorney Mode > Venue Optimizer
+            Home &gt; Attorney Mode &gt; Venue Optimizer
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

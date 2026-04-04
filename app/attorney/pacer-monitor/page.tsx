@@ -118,7 +118,7 @@ export default function PacerMonitorPage() {
                   value={watchCase}
                   onChange={(e) => setWatchCase(e.target.value)}
                   placeholder="Case number..."
-                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '4px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'rgba(255,255,255,0.04)', color: '#F0F2F5', focus: 'outline-none' }}
+                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '4px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'rgba(255,255,255,0.04)', color: '#F0F2F5', outline: 'none' }}
                   onFocus={(e) => e.target.style.borderColor = '#E8171F'}
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.10)'}
                 />
