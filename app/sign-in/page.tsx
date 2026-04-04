@@ -63,7 +63,7 @@ function SignInForm() {
       <div
         style={{
           width: '100%',
-          maxWidth: '420px',
+          maxWidth: '440px',
           background: '#FFFFFF',
           border: '1px solid #D5D8DC',
           borderRadius: '4px',
@@ -88,25 +88,21 @@ function SignInForm() {
           </Link>
         </div>
 
-        {/* Wordmark */}
+        {/* Logo */}
         <div
           style={{
             marginBottom: '32px',
             textAlign: 'center',
           }}
         >
-          <p
+          <img
+            src="/logo.svg"
+            alt="MyCaseValue"
             style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '24px',
-              fontWeight: 900,
-              color: '#212529',
-              margin: 0,
-              letterSpacing: '-0.5px',
+              height: '30px',
+              marginBottom: '32px',
             }}
-          >
-            MyCaseValue
-          </p>
+          />
         </div>
 
         {/* Heading */}
@@ -120,7 +116,7 @@ function SignInForm() {
             lineHeight: 1.2,
           }}
         >
-          Sign in to MyCaseValue
+          Sign In
         </h1>
 
         {/* Form */}
@@ -150,7 +146,8 @@ function SignInForm() {
               className="auth-input"
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                height: '48px',
+                padding: '12px 14px',
                 border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
@@ -208,7 +205,8 @@ function SignInForm() {
               className="auth-input"
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                height: '48px',
+                padding: '12px 14px',
                 border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
@@ -246,14 +244,16 @@ function SignInForm() {
             className="auth-btn"
             style={{
               width: '100%',
-              padding: '12px 16px',
+              height: '48px',
+              padding: '0 16px',
               backgroundColor: '#E8171F',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '0px',
+              borderRadius: '4px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
-              fontWeight: 600,
+              fontWeight: 700,
+              textTransform: 'uppercase',
               cursor: loading ? 'not-allowed' : 'pointer',
               opacity: loading ? 0.7 : 1,
               transition: 'background-color 0.2s, transform 0.1s',
@@ -269,7 +269,7 @@ function SignInForm() {
               }
             }}
           >
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loading ? 'Signing in...' : 'SIGN IN'}
           </button>
         </form>
 

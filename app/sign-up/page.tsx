@@ -172,23 +172,6 @@ export default function SignUpPage() {
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}
       >
-        {/* Back to Home Link */}
-        <div style={{ marginBottom: '24px' }}>
-          <Link
-            href="/"
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '14px',
-              color: '#006997',
-              textDecoration: 'none',
-              fontWeight: 500,
-            }}
-            className="auth-link"
-          >
-            &larr; Back to home
-          </Link>
-        </div>
-
         {/* Wordmark */}
         <div
           style={{
@@ -251,7 +234,8 @@ export default function SignUpPage() {
               className="auth-input"
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                height: '48px',
+                padding: '12px 16px',
                 border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
@@ -289,7 +273,8 @@ export default function SignUpPage() {
               className="auth-input"
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                height: '48px',
+                padding: '12px 16px',
                 border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
@@ -328,7 +313,8 @@ export default function SignUpPage() {
               className="auth-input"
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                height: '48px',
+                padding: '12px 16px',
                 border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
@@ -377,7 +363,8 @@ export default function SignUpPage() {
               className="auth-input"
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                height: '48px',
+                padding: '12px 16px',
                 border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 fontFamily: 'var(--font-body)',
@@ -499,14 +486,16 @@ export default function SignUpPage() {
             className="auth-btn"
             style={{
               width: '100%',
-              padding: '12px 16px',
+              height: '48px',
+              padding: '0',
               backgroundColor: '#E8171F',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '0px',
+              borderRadius: '4px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
-              fontWeight: 600,
+              fontWeight: 700,
+              textTransform: 'uppercase',
               cursor: loading ? 'not-allowed' : 'pointer',
               opacity: loading ? 0.7 : 1,
               transition: 'background-color 0.2s, transform 0.1s',
@@ -590,6 +579,41 @@ export default function SignUpPage() {
           </p>
         </div>
       </div>
+
+      {/* Privacy/Terms Text Below Card */}
+      <p
+        style={{
+          marginTop: '24px',
+          textAlign: 'center',
+          fontFamily: 'var(--font-body)',
+          fontSize: '12px',
+          color: '#999999',
+        }}
+      >
+        Your privacy is important to us. Read our{' '}
+        <Link
+          href="/privacy"
+          style={{
+            color: '#999999',
+            textDecoration: 'underline',
+          }}
+          className="auth-link"
+        >
+          Privacy Policy
+        </Link>
+        {' '}and{' '}
+        <Link
+          href="/terms"
+          style={{
+            color: '#999999',
+            textDecoration: 'underline',
+          }}
+          className="auth-link"
+        >
+          Terms of Service
+        </Link>
+        .
+      </p>
     </div>
   );
 }
