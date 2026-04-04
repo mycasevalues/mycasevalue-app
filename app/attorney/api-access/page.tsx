@@ -91,7 +91,7 @@ export default function ApiAccessPage() {
         </div>
 
         {/* Usage */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '24px' }}>
           {[
             { label: 'Requests Today', value: '47', limit: '/ 1,000' },
             { label: 'This Month', value: '1,234', limit: '/ 50,000' },
@@ -113,10 +113,12 @@ export default function ApiAccessPage() {
             <h2 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#111111', margin: 0 }}>Available Endpoints</h2>
           </div>
           {API_ENDPOINTS.map((ep, i) => (
-            <div key={i} style={{ padding: '14px 24px', borderBottom: i < API_ENDPOINTS.length - 1 ? '1px solid #F3F4F6' : 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span className="font-mono" style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '4px', backgroundColor: `${methodColors[ep.method]}15`, color: methodColors[ep.method], minWidth: '42px', textAlign: 'center' }}>{ep.method}</span>
-              <code style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: '#111111', flex: 1 }}>{ep.path}</code>
-              <span style={{ fontSize: '12px', color: '#6B7280', flexShrink: 0 }}>{ep.desc}</span>
+            <div key={i} style={{ padding: '14px 24px', borderBottom: i < API_ENDPOINTS.length - 1 ? '1px solid #F3F4F6' : 'none' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                <span className="font-mono" style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '4px', backgroundColor: `${methodColors[ep.method]}15`, color: methodColors[ep.method], minWidth: '42px', textAlign: 'center' }}>{ep.method}</span>
+                <code style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: '#111111', wordBreak: 'break-all' }}>{ep.path}</code>
+              </div>
+              <p style={{ fontSize: '12px', color: '#6B7280', margin: '4px 0 0 54px' }}>{ep.desc}</p>
             </div>
           ))}
         </div>

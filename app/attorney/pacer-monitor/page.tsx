@@ -66,7 +66,8 @@ export default function PacerMonitorPage() {
       </div>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 20px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(260px, 300px)', gap: '24px' }} className="pacer-grid">
+          <style>{`.pacer-grid { grid-template-columns: 1fr !important; } @media (min-width: 768px) { .pacer-grid { grid-template-columns: minmax(0, 1fr) minmax(260px, 300px) !important; } }`}</style>
           {/* Alerts Feed */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
