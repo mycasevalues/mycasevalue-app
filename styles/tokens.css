@@ -14,103 +14,55 @@
 :root {
   /* ── BACKGROUNDS ───────────────────────────────────────── */
   --bg-base:          #F9FAFB;  /* Very light gray page bg */
-  --bg-surface:       #FFFFFF;  /* White card/content bg */
   --bg-elevated:      #FFFFFF;  /* Elevated surfaces */
   --bg-input:         #FFFFFF;  /* Input backgrounds */
-  --bg-overlay:       rgba(17,24,39,0.6);
-  --bg-code:          #F9FAFB;
   --bg-skeleton:      #E5E7EB;
   --bg-hover:         rgba(139,92,246,0.06);
   --bg-selection:     rgba(139,92,246,0.15);
 
   /* ── FOREGROUNDS ───────────────────────────────────────── */
-  --fg-primary:       #111827;
   --fg-secondary:     #374151;
-  --fg-muted:         #6B7280;
   --fg-subtle:        #9CA3AF;
-  --fg-disabled:      #D1D5DB;
-  --fg-inverse:       #FFFFFF;
   --fg-link:          #8B5CF6;
-  --fg-link-hover:    #7C3AED;
 
   /* ── PRIMARY ACCENT (Purple) ───────────────────────────── */
-  --accent-primary:         #8B5CF6;
   --accent-primary-hover:   #7C3AED;
-  --accent-primary-active:  #6D28D9;
   --accent-primary-subtle:  rgba(139,92,246,0.08);
   --accent-primary-border:  rgba(139,92,246,0.25);
   --accent-primary-glow:    rgba(139,92,246,0.12);
   --accent-light:           #EDE9FE;
 
   /* ── SECONDARY ACCENT (Deeper Purple) ──────────────────── */
-  --accent-secondary:       #7C3AED;
   --accent-secondary-hover: #6D28D9;
   --accent-secondary-subtle: rgba(124,58,237,0.10);
   --accent-secondary-border: rgba(124,58,237,0.25);
 
   /* ── SEMANTIC — OUTCOMES ───────────────────────────────── */
   --outcome-win:          #16A34A;
-  --outcome-win-hover:    #15803D;
-  --outcome-win-subtle:   rgba(22,163,74,0.10);
-  --outcome-win-border:   rgba(22,163,74,0.25);
   --outcome-settle:       #D97706;
-  --outcome-settle-hover: #B45309;
-  --outcome-settle-subtle: rgba(217,119,6,0.10);
-  --outcome-settle-border: rgba(217,119,6,0.25);
   --outcome-loss:         #DC2626;
-  --outcome-loss-hover:   #B91C1C;
-  --outcome-loss-subtle:  rgba(220,38,38,0.10);
-  --outcome-loss-border:  rgba(220,38,38,0.25);
-  --outcome-other:        #6B7280;
-  --outcome-other-subtle: rgba(107,114,128,0.10);
-  --outcome-other-border: rgba(107,114,128,0.25);
 
   /* ── UI SEMANTIC (STATUS COLORS) ───────────────────────── */
   --success:              #16A34A;
   --success-subtle:       rgba(22,163,74,0.10);
-  --success-light:        #DCFCE7;
   --warning:              #D97706;
   --warning-subtle:       rgba(217,119,6,0.10);
-  --warning-light:        #FEF3C7;
   --danger:               #DC2626;
   --danger-subtle:        rgba(220,38,38,0.10);
-  --danger-light:         #FEE2E2;
   --info:                 #0891B2;
   --info-subtle:          rgba(8,145,178,0.10);
 
-  /* ── CATEGORY COLORS ───────────────────────────────────── */
-  --cat-workplace:    #4F46E5;
-  --cat-injury:       #DC2626;
-  --cat-consumer:     #2563EB;
-  --cat-civil-rights: #7C3AED;
-  --cat-business:     #D97706;
-  --cat-housing:      #059669;
-  --cat-healthcare:   #DB2777;
-  --cat-family:       #EC4899;
-  --cat-government:   #4B5563;
-  --cat-education:    #0891B2;
 
   /* ── BORDERS ───────────────────────────────────────────── */
   --border-default:   #E5E7EB;
   --border-subtle:    #F3F4F6;
-  --border-strong:    #D1D5DB;
-  --border-emphasis:  #8B5CF6;
   --border-focus:     #8B5CF6;
-  --border-error:     #DC2626;
-  --border-success:   #16A34A;
 
   /* ── TYPOGRAPHY SCALE ──────────────────────────────────── */
   --text-2xs:  0.6875rem; /* 11px */
   --text-xs:   0.75rem;   /* 12px */
   --text-sm:   0.8125rem; /* 13px */
   --text-base: 0.9375rem; /* 15px */
-  --text-md:   1rem;      /* 16px */
-  --text-lg:   1.125rem;  /* 18px */
-  --text-xl:   1.375rem;  /* 22px */
-  --text-2xl:  1.75rem;   /* 28px */
-  --text-3xl:  2.25rem;   /* 36px */
-  --text-4xl:  2.875rem;  /* 46px */
-  --text-hero: clamp(2rem, 5.5vw, 3.875rem);
 
   /* ── FONT FAMILIES ─────────────────────────────────────── */
   --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
@@ -118,65 +70,44 @@
   --font-mono:    'PT Mono', 'Menlo', monospace;
 
   /* ── SPACING (4px grid) ────────────────────────────────── */
-  --sp-px: 1px;  --sp-0: 0px;   --sp-1: 4px;   --sp-2: 8px;
-  --sp-3: 12px;  --sp-4: 16px;  --sp-5: 20px;  --sp-6: 24px;
-  --sp-7: 28px;  --sp-8: 32px;  --sp-9: 36px;  --sp-10: 40px;
-  --sp-11: 44px; --sp-12: 48px; --sp-14: 56px; --sp-16: 64px;
-  --sp-20: 80px; --sp-24: 96px; --sp-32: 128px;
+  --sp-1: 4px;   --sp-2: 8px;
+  --sp-5: 20px;  --sp-6: 24px;
+  --sp-10: 40px; --sp-12: 48px; --sp-14: 56px; --sp-16: 64px;
+  --sp-32: 128px;
   /* Legacy aliases */
-  --space-1: 4px;  --space-2: 8px;  --space-3: 12px;
+  --space-2: 8px;  --space-3: 12px;
   --space-4: 16px; --space-5: 20px; --space-6: 24px;
-  --space-8: 32px; --space-10: 40px; --space-12: 48px;
-  --space-16: 64px; --space-20: 80px;
+  --space-12: 48px;
 
   /* ── BORDER RADIUS ─────────────────────────────────────── */
   --r-xs: 4px;   --r-sm: 4px;   --r-md: 8px;   --r-lg: 12px;
   --r-xl: 16px;  --r-2xl: 20px; --r-full: 9999px;
   /* Legacy aliases */
-  --radius-sm: 6px;  --radius-md: 8px;   --radius-lg: 12px;
+  --radius-lg: 12px;
   --radius-xl: 20px; --radius-full: 9999px;
   --r-card: 12px;
 
   /* ── SHADOWS (Clean, neutral) ──────────────────────────── */
   --shadow-xs:     0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md:     0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
   --shadow-lg:     0 10px 15px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04);
-  --shadow-xl:     0 20px 25px rgba(0,0,0,0.10), 0 8px 10px rgba(0,0,0,0.04);
   --shadow-accent:    0 4px 20px rgba(139,92,246,0.15);
   --shadow-accent-lg: 0 8px 40px rgba(139,92,246,0.20);
-  --shadow-inset:  inset 0 1px 0 rgba(0,0,0,0.04);
 
   /* ── MOTION ────────────────────────────────────────────── */
-  --duration-instant: 60ms;
   --duration-fast:    140ms;
   --duration-base:    200ms;
   --duration-slow:    340ms;
-  --duration-enter:   480ms;
-  --duration-exit:    260ms;
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
   /* ── Z-INDEX ───────────────────────────────────────────── */
-  --z-base:       0;
   --z-raised:     10;
-  --z-float:      20;
   --z-dropdown:   40;
-  --z-sticky:     60;
-  --z-bottom-nav: 90;
-  --z-nav:        100;
-  --z-drawer:     200;
   --z-modal:      300;
-  --z-toast:      400;
-  --z-tooltip:    500;
   --z-critical:   9999;
 
   /* ── BREAKPOINTS (reference) ───────────────────────────── */
-  --bp-xs: 320px;  --bp-sm: 480px;  --bp-md: 768px;
-  --bp-lg: 1024px; --bp-xl: 1280px; --bp-2xl: 1536px;
+  --bp-md: 768px; --bp-2xl: 1536px;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -184,12 +115,9 @@
    ═══════════════════════════════════════════════════════════ */
 @media (prefers-contrast: high) {
   :root {
-    --fg-primary:    #000000;
     --fg-secondary:  #1F2937;
-    --fg-muted:      #374151;
     --border-default: #9CA3AF;
     --border-focus:  #4C1D95;
-    --accent-primary: #6D28D9;
     --outcome-win:   #15803D;
     --outcome-settle: #B45309;
     --outcome-loss:  #B91C1C;
