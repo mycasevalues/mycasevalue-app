@@ -3,6 +3,7 @@
 export const dynamic = 'force-dynamic';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function DocumentIntelligencePage() {
   const [file, setFile] = useState<File | null>(null);
@@ -34,43 +35,71 @@ export default function DocumentIntelligencePage() {
   }
 
   return (
-    <main style={{ maxWidth: '800px', margin: '0 auto', padding: '48px 24px', fontFamily: 'var(--font-body)', minHeight: '100vh', backgroundColor: '#EDEEEE' }}>
-      <a href="/attorney" style={{ fontSize: '13px', color: '#006997', textDecoration: 'none' }}>&larr; Attorney Mode</a>
-      <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '16px 0 8px', color: '#212529', fontFamily: 'var(--font-display)' }}>Document Intelligence</h1>
-      <p style={{ fontSize: '15px', color: '#666666', marginBottom: '32px' }}>
-        Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
-      </p>
-
-      <div style={{ border: '2px dashed #D5D8DC', borderRadius: '4px', padding: '40px', textAlign: 'center', marginBottom: '24px', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-        <input
-          type="file"
-          accept=".pdf,.txt,.doc,.docx"
-          onChange={e => setFile(e.target.files?.[0] || null)}
-          style={{ display: 'block', margin: '0 auto 16px', fontSize: '14px' }}
-        />
-        {file && <p style={{ fontSize: '13px', color: '#666666', marginBottom: '16px' }}>Selected: {file.name} ({(file.size / 1024).toFixed(1)} KB)</p>}
-        <button
-          onClick={handleUpload}
-          disabled={!file || loading}
-          style={{ padding: '10px 28px', background: '#006997', color: '#fff', border: 'none', borderRadius: '0px', fontWeight: 600, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', opacity: !file || loading ? 0.5 : 1 }}
-        >
-          {loading ? 'Analyzing...' : 'Analyze Document'}
-        </button>
-        <p style={{ fontSize: '11px', color: '#666666', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
+    <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
+      <style>{`
+        input:focus { border-color: #E8171F !important; outline: none; }
+        button:hover:not(:disabled) { opacity: 0.9; }
+      `}</style>
+      {/* Header */}
+      <div style={{ background: '#00172E', padding: '32px 20px' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px', opacity: 0.8 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+            Home
+          </Link>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px', opacity: 0.8 }}>
+            Attorney Mode
+          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '4px', background: 'rgba(232,23,31,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+              </svg>
+            </div>
+            <div>
+              <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>Document Intelligence</h1>
+              <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: '4px 0 0 0' }}>AI-powered legal document analysis for case classification and insights</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {error && <div style={{ padding: '12px 16px', background: 'rgba(204,16,25,0.08)', border: '1px solid #D5D8DC', borderRadius: '4px', color: '#CC1019', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
+      <main style={{ maxWidth: '800px', margin: '0 auto', padding: '32px 20px' }}>
+        <p style={{ fontSize: '15px', color: '#666666', marginBottom: '32px' }}>
+          Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
+        </p>
 
-      {analysis && (
-        <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '16px', color: '#212529', fontFamily: 'var(--font-display)' }}>Document Analysis</h2>
-          <div style={{ fontSize: '14px', color: '#212529', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{analysis}</div>
+        <div style={{ border: '2px dashed #D5D8DC', borderRadius: '4px', padding: '40px', textAlign: 'center', marginBottom: '24px', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <input
+            type="file"
+            accept=".pdf,.txt,.doc,.docx"
+            onChange={e => setFile(e.target.files?.[0] || null)}
+            style={{ display: 'block', margin: '0 auto 16px', fontSize: '14px' }}
+          />
+          {file && <p style={{ fontSize: '13px', color: '#666666', marginBottom: '16px' }}>Selected: {file.name} ({(file.size / 1024).toFixed(1)} KB)</p>}
+          <button
+            onClick={handleUpload}
+            disabled={!file || loading}
+            style={{ padding: '0 28px', height: '48px', background: !file || loading ? '#D5D8DC' : '#E8171F', color: '#fff', border: 'none', borderRadius: '4px', fontWeight: 700, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
+          >
+            {loading ? 'Analyzing...' : 'Analyze Document'}
+          </button>
+          <p style={{ fontSize: '11px', color: '#666666', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
         </div>
-      )}
 
-      <p style={{ fontSize: '11px', color: '#666666', marginTop: '24px', fontStyle: 'italic' }}>
-        Document Intelligence uses AI to analyze legal documents. Results are informational only and not legal advice. Documents are processed securely and not stored after analysis.
-      </p>
-    </main>
+        {error && <div style={{ padding: '12px 16px', background: 'rgba(232,23,31,0.12)', border: '1px solid #D5D8DC', borderRadius: '4px', color: '#E8171F', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
+
+        {analysis && (
+          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <h2 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '16px', color: '#212529', fontFamily: 'var(--font-display)' }}>Document Analysis</h2>
+            <div style={{ fontSize: '14px', color: '#212529', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{analysis}</div>
+          </div>
+        )}
+
+        <p style={{ fontSize: '11px', color: '#666666', marginTop: '24px', fontStyle: 'italic' }}>
+          Document Intelligence uses AI to analyze legal documents. Results are informational only and not legal advice. Documents are processed securely and not stored after analysis.
+        </p>
+      </main>
+    </div>
   );
 }

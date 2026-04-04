@@ -47,6 +47,15 @@ const MeterBar = ({ value, max, color, label }: { value: number; max: number; co
 );
 
 export default function JudgeIntelligencePage() {
+  // Inline styles for focus states
+  const focusStyle = `
+    select:focus, input:focus {
+      outline: none;
+      border-color: #E8171F;
+      box-shadow: 0 0 0 2px rgba(232, 23, 31, 0.08);
+    }
+  `;
+
   const [states, setStates] = useState<AvailableState[]>([]);
   const [selectedState, setSelectedState] = useState('');
   const [data, setData] = useState<JudgeResponse | null>(null);
@@ -105,25 +114,26 @@ export default function JudgeIntelligencePage() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
+      <style>{focusStyle}</style>
       {/* Header */}
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '32px 20px' }}>
+      <div style={{ background: '#00172E', borderBottom: '1px solid #D5D8DC', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#006997', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#E8171F', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-            Attorney Mode
+            Home > Attorney Mode > Judge Intelligence
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+            <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
                 <line x1="12" y1="10" x2="12" y2="18" />
               </svg>
             </div>
             <div>
-              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#212529', margin: 0 }}>
+              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>
                 Judge Intelligence
               </h1>
-              <p style={{ fontSize: '14px', color: '#666666', margin: '4px 0 0 0' }}>
+              <p style={{ fontSize: '14px', color: '#B0B5BA', margin: '4px 0 0 0' }}>
                 Research federal judges — ruling patterns, settlement tendencies, and case statistics
               </p>
             </div>
@@ -143,7 +153,8 @@ export default function JudgeIntelligencePage() {
               onChange={(e) => handleStateChange(e.target.value)}
               style={{
                 width: '100%',
-                padding: '10px 12px',
+                padding: '12px 14px',
+                height: '48px',
                 border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 fontSize: '14px',
@@ -151,6 +162,7 @@ export default function JudgeIntelligencePage() {
                 background: '#FFFFFF',
                 cursor: 'pointer',
                 fontFamily: 'var(--font-body)',
+                transition: 'border-color 0.2s',
               }}
             >
               <option value="">Choose a state...</option>
@@ -177,12 +189,14 @@ export default function JudgeIntelligencePage() {
                     onClick={() => setSortBy(opt.key)}
                     style={{
                       padding: '6px 12px',
-                      borderRadius: '0px',
+                      borderRadius: '4px',
                       border: 'none',
                       fontSize: '12px',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       cursor: 'pointer',
-                      backgroundColor: sortBy === opt.key ? '#006997' : 'transparent',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
+                      backgroundColor: sortBy === opt.key ? '#E8171F' : 'transparent',
                       color: sortBy === opt.key ? '#FFFFFF' : '#666666',
                       transition: 'all 0.2s',
                     }}
@@ -198,7 +212,7 @@ export default function JudgeIntelligencePage() {
         {/* Loading */}
         {loading && (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
-            <div style={{ width: 36, height: 36, border: '3px solid #E5EBF0', borderTopColor: '#006997', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
+            <div style={{ width: 36, height: 36, border: '3px solid #E5EBF0', borderTopColor: '#E8171F', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
             <p style={{ fontSize: '14px', color: '#666666' }}>Loading judge data...</p>
           </div>
@@ -215,7 +229,7 @@ export default function JudgeIntelligencePage() {
         {!selectedState && !loading && (
           <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
               </svg>
             </div>
@@ -230,7 +244,7 @@ export default function JudgeIntelligencePage() {
                 <button
                   key={s.id}
                   onClick={() => handleStateChange(s.id)}
-                  style={{ padding: '8px 16px', border: '1px solid #D5D8DC', borderRadius: '0px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: '#FAFBFC', color: '#006997', transition: 'border-color 0.2s' }}
+                  style={{ padding: '8px 16px', border: '1px solid #D5D8DC', borderRadius: '0px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: '#FAFBFC', color: '#E8171F', transition: 'border-color 0.2s' }}
                 >
                   {s.label}
                 </button>
@@ -257,7 +271,7 @@ export default function JudgeIntelligencePage() {
                     style={{
                       background: '#FFFFFF',
                       borderRadius: '4px',
-                      border: isExpanded ? '2px solid #006997' : '1px solid #D5D8DC',
+                      border: isExpanded ? '2px solid #E8171F' : '1px solid #D5D8DC',
                       overflow: 'hidden',
                       transition: 'border-color 0.2s, box-shadow 0.2s',
                       boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)',
@@ -296,7 +310,7 @@ export default function JudgeIntelligencePage() {
                       </div>
 
                       <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexShrink: 0 }}>
-                        <StatBadge label="Win Rate" value={`${judge.plaintiffWinRate}%`} color={judge.plaintiffWinRate >= 55 ? '#07874A' : judge.plaintiffWinRate >= 40 ? '#B86E00' : '#CC1019'} />
+                        <StatBadge label="Win Rate" value={`${judge.plaintiffWinRate}%`} color={judge.plaintiffWinRate >= 55 ? '#07874A' : judge.plaintiffWinRate >= 40 ? '#B86E00' : '#E8171F'} />
                         <StatBadge label="Settlement" value={`${judge.settlementRate}%`} color="#1B7C7D" />
                         <StatBadge label="Duration" value={`${judge.medianDurationMonths}mo`} color="#212529" />
                         <svg
@@ -324,8 +338,8 @@ export default function JudgeIntelligencePage() {
                             </h4>
                             <MeterBar value={judge.plaintiffWinRate} max={100} color="#07874A" label="Plaintiff Win Rate" />
                             <MeterBar value={judge.settlementRate} max={100} color="#1B7C7D" label="Settlement Rate" />
-                            <MeterBar value={judge.dismissalRate} max={100} color="#CC1019" label="Dismissal Rate" />
-                            <MeterBar value={judge.trialRate} max={100} color="#006997" label="Trial Rate" />
+                            <MeterBar value={judge.dismissalRate} max={100} color="#E8171F" label="Dismissal Rate" />
+                            <MeterBar value={judge.trialRate} max={100} color="#00172E" label="Trial Rate" />
                             <MeterBar value={judge.motionGrantRate} max={100} color="#004D80" label="Motion Grant Rate" />
                           </div>
 

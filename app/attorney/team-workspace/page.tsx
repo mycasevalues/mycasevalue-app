@@ -33,31 +33,36 @@ export default function TeamWorkspacePage() {
 
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '32px 20px' }}>
+      <div style={{ background: '#00172E', borderBottom: '1px solid #D5D8DC', padding: '32px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#006997', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#E8171F', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-            Attorney Mode
+            Home
           </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div>
+                <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>Team Workspace</h1>
+              </div>
             </div>
-            <div>
-              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#212529', margin: 0 }}>Team Workspace</h1>
-              <p style={{ fontSize: '14px', color: '#666666', margin: '4px 0 0 0' }}>Collaborate with colleagues — share reports, annotations, and insights</p>
+            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '4px', border: '1px solid #E8171F' }}>
+              <span className="font-display" style={{ fontSize: '12px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Collaboration</span>
             </div>
           </div>
+          <p style={{ fontSize: '14px', color: '#B0B8C0', margin: '4px 0 0 52px' }}>Collaborate with colleagues — share reports, annotations, and insights</p>
         </div>
       </div>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 20px' }}>
         {/* Tabs */}
-        <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', background: 'rgba(255,255,255,0.06)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px', width: 'fit-content', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+        <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', background: 'rgba(255,255,255,0.06)', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px', width: 'fit-content', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
           {(['reports', 'team'] as const).map((t) => (
-            <button key={t} onClick={() => setTab(t)} style={{ padding: '8px 20px', borderRadius: '6px', border: 'none', fontSize: '14px', fontWeight: 600, cursor: 'pointer', backgroundColor: tab === t ? '#1856FF' : 'transparent', color: tab === t ? '#FFFFFF' : '#999999', textTransform: 'capitalize' as const }}>
+            <button key={t} onClick={() => setTab(t)} style={{ padding: '8px 20px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, cursor: 'pointer', backgroundColor: tab === t ? '#E8171F' : 'transparent', color: tab === t ? '#FFFFFF' : '#999999', textTransform: 'capitalize' as const, textTransform: 'uppercase', letterSpacing: '0.5px', fontSize: '12px' }}>
               {t === 'reports' ? 'Shared Reports' : 'Team Members'}
             </button>
           ))}
@@ -66,11 +71,11 @@ export default function TeamWorkspacePage() {
         {tab === 'reports' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {DEMO_REPORTS.map((r, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '10px', padding: '18px 22px', border: '1px solid rgba(255,255,255,0.10)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div key={i} style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '18px 22px', border: '1px solid #D5D8DC', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
                 <div>
-                  <p style={{ fontSize: '15px', fontWeight: 600, color: '#F0F2F5', margin: '0 0 4px' }}>{r.title}</p>
-                  <p style={{ fontSize: '12px', color: '#999999', margin: 0 }}>
-                    <span style={{ padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(24,86,255,0.12)', color: '#3D72FF', fontSize: '11px', fontWeight: 600, marginRight: '8px' }}>{r.type}</span>
+                  <p style={{ fontSize: '15px', fontWeight: 600, color: '#212529', margin: '0 0 4px' }}>{r.title}</p>
+                  <p style={{ fontSize: '12px', color: '#666666', margin: 0 }}>
+                    <span style={{ padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(232,23,31,0.12)', color: '#E8171F', fontSize: '11px', fontWeight: 600, marginRight: '8px' }}>{r.type}</span>
                     Shared by {r.sharedBy} · {new Date(r.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                   </p>
                 </div>
@@ -86,22 +91,25 @@ export default function TeamWorkspacePage() {
         {tab === 'team' && (
           <>
             {/* Invite */}
-            <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '20px', border: '1px solid rgba(255,255,255,0.10)', marginBottom: '24px' }}>
-              <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 12px' }}>Invite Team Member</h3>
+            <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '20px', border: '1px solid #D5D8DC', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+              <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Invite Team Member</h3>
               <div style={{ display: 'flex', gap: '8px' }}>
-                <input type="email" value={inviteEmail} onChange={(e) => setInviteEmail(e.target.value)} placeholder="colleague@firm.com" style={{ flex: 1, padding: '10px 12px', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '8px', fontSize: '14px', fontFamily: 'var(--font-body)', backgroundColor: 'rgba(255,255,255,0.06)', color: '#F0F2F5' }} />
-                <button onClick={() => { setInviteEmail(''); }} style={{ padding: '10px 20px', backgroundColor: '#1856FF', color: '#FFFFFF', border: 'none', borderRadius: '8px', fontSize: '14px', fontWeight: 600, cursor: 'pointer' }}>Invite</button>
+                <input type="email" value={inviteEmail} onChange={(e) => setInviteEmail(e.target.value)} placeholder="colleague@firm.com" style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid #D5D8DC', borderRadius: '4px', fontSize: '14px', fontFamily: 'var(--font-body)', backgroundColor: '#FFFFFF', color: '#212529' }}
+                  onFocus={(e) => e.target.style.borderColor = '#E8171F'}
+                  onBlur={(e) => e.target.style.borderColor = '#D5D8DC'}
+                />
+                <button onClick={() => { setInviteEmail(''); }} style={{ padding: '12px 20px', height: '48px', backgroundColor: '#E8171F', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 700, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Invite</button>
               </div>
             </div>
 
             {/* Members */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {DEMO_TEAM.map((m, i) => (
-                <div key={i} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '10px', padding: '16px 20px', border: '1px solid rgba(255,255,255,0.10)', display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(24,86,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 700, color: '#3D72FF', flexShrink: 0 }}>{m.avatar}</div>
+                <div key={i} style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '16px 20px', border: '1px solid #D5D8DC', display: 'flex', alignItems: 'center', gap: '14px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 700, color: '#E8171F', flexShrink: 0 }}>{m.avatar}</div>
                   <div style={{ flex: 1 }}>
-                    <p style={{ fontSize: '14px', fontWeight: 600, color: '#F0F2F5', margin: '0 0 2px' }}>{m.name}</p>
-                    <p style={{ fontSize: '12px', color: '#999999', margin: 0 }}>{m.email}</p>
+                    <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', margin: '0 0 2px' }}>{m.name}</p>
+                    <p style={{ fontSize: '12px', color: '#666666', margin: 0 }}>{m.email}</p>
                   </div>
                   <span style={{ fontSize: '11px', fontWeight: 700, padding: '3px 10px', borderRadius: '4px', backgroundColor: `${roleColors[m.role]}15`, color: roleColors[m.role] }}>{m.role}</span>
                   <span style={{ fontSize: '11px', color: '#AAAAAA' }}>{m.lastActive}</span>

@@ -42,10 +42,10 @@ export default function CookieConsent() {
         right: 0,
         zIndex: 9999,
         background: '#FFFFFF',
-        borderTop: '1px solid var(--border-default)',
-        boxShadow: '0 -4px 24px rgba(0,0,0,0.08)',
+        borderTop: '1px solid #D5D8DC',
+        boxShadow: '0 -1px 8px rgba(0,0,0,0.06)',
         fontFamily: 'var(--font-body)',
-        animation: 'slideUp 300ms ease-out',
+        animation: 'slideUp 400ms cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
     >
       <div
@@ -66,28 +66,29 @@ export default function CookieConsent() {
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#455A64"
+            stroke="#666666"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"
             style={{ flexShrink: 0, marginTop: '2px' }}
           >
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <circle cx="12" cy="12" r="1" /><path d="M12 1v6m4.22-4.22-4.24 4.24m6 4.22h-6m4.24 4.24-4.24-4.24m6-6-4.24-4.24" />
           </svg>
           <p
             style={{
               margin: 0,
               fontSize: '14px',
               lineHeight: '1.5',
-              color: '#F0F2F5',
+              color: '#212529',
+              fontFamily: 'var(--font-body)',
             }}
           >
             We use cookies for analytics and to improve your experience.{' '}
             <Link
               href="/privacy"
               style={{
-                color: '#1856FF',
+                color: '#006997',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
                 fontWeight: 500,
@@ -110,13 +111,13 @@ export default function CookieConsent() {
             onClick={() => setCookie('rejected')}
             style={{
               padding: '10px 20px',
-              borderRadius: '10px',
+              borderRadius: '4px',
               fontWeight: 600,
-              fontSize: '13px',
+              fontSize: '12px',
               fontFamily: 'var(--font-body)',
-              border: '1px solid var(--border-default)',
+              border: '1px solid #D5D8DC',
               background: 'transparent',
-              color: '#455A64',
+              color: '#666666',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',
@@ -129,16 +130,18 @@ export default function CookieConsent() {
             onClick={() => setCookie('accepted')}
             style={{
               padding: '10px 20px',
-              borderRadius: '10px',
+              borderRadius: '4px',
               fontWeight: 700,
-              fontSize: '13px',
-              fontFamily: 'var(--font-display)',
+              fontSize: '12px',
+              fontFamily: 'var(--font-body)',
               border: 'none',
-              background: '#1856FF',
+              background: '#E8171F',
               color: '#FFFFFF',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
             }}
           >
             Accept
@@ -148,8 +151,14 @@ export default function CookieConsent() {
 
       <style>{`
         @keyframes slideUp {
-          from { transform: translateY(100%); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
+          from {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
         @media (max-width: 640px) {
           .cookie-inner {
