@@ -7,51 +7,47 @@ export default function Loading() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--bg-base)',
-        gap: '20px',
+        background: '#F9FAFB',
+        gap: '24px',
       }}
     >
-      {/* Animated logo pulse */}
+      <style>{`
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+      `}</style>
+
+      {/* Spinner */}
       <div
         style={{
           width: '48px',
           height: '48px',
+          border: '3px solid #E5E7EB',
+          borderTop: '3px solid #8B5CF6',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
-          animation: 'pulse 1.5s ease-in-out infinite',
+          animation: 'spin 1s linear infinite',
         }}
       />
 
-      {/* Skeleton content blocks */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-        <div
-          style={{
-            width: '180px',
-            height: '14px',
-            borderRadius: '7px',
-            background: 'var(--bg-skeleton)',
-            animation: 'pulse 1.5s ease-in-out infinite',
-            animationDelay: '0.1s',
-          }}
-        />
-        <div
-          style={{
-            width: '120px',
-            height: '10px',
-            borderRadius: '5px',
-            background: 'var(--bg-skeleton)',
-            animation: 'pulse 1.5s ease-in-out infinite',
-            animationDelay: '0.2s',
-          }}
-        />
-      </div>
-
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 0.4; }
-          50% { opacity: 1; }
-        }
-      `}</style>
+      {/* Loading text */}
+      <p
+        style={{
+          fontSize: '14px',
+          color: '#6B7280',
+          margin: 0,
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
+        }}
+      >
+        Loading
+        <span style={{ animation: 'pulse 1.5s ease-in-out infinite' }}>.</span>
+        <span style={{ animation: 'pulse 1.5s ease-in-out infinite', animationDelay: '0.2s' }}>.</span>
+        <span style={{ animation: 'pulse 1.5s ease-in-out infinite', animationDelay: '0.4s' }}>.</span>
+      </p>
     </div>
   );
 }

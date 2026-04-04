@@ -470,8 +470,14 @@ export default async function CaseTypeDetailPage({
           >
             Get detailed case outcomes and win rates for your specific federal district
           </p>
+          <style>{`
+            .cta-link:hover {
+              transform: translateY(-2px);
+            }
+          `}</style>
           <Link
             href={`/report/${caseType.nosCode}`}
+            className="cta-link"
             style={{
               display: 'inline-block',
               padding: '12px 32px',
@@ -483,12 +489,6 @@ export default async function CaseTypeDetailPage({
               fontSize: '16px',
               transition: 'transform 0.2s',
             }}
-            onMouseEnter={(e) => {
-              (e.target as HTMLElement).style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              (e.target as HTMLElement).style.transform = 'translateY(0)';
-            }}
           >
             View District Data
           </Link>
@@ -496,6 +496,12 @@ export default async function CaseTypeDetailPage({
 
         {/* Related Case Types */}
         <div style={{ marginTop: '60px' }}>
+          <style>{`
+            .related-case-card:hover {
+              border-color: #8B5CF6;
+              background: var(--bg-base);
+            }
+          `}</style>
           <h2
             style={{
               fontSize: '20px',
@@ -522,6 +528,7 @@ export default async function CaseTypeDetailPage({
                 <Link
                   key={`${related.categorySlug}-${related.slug}`}
                   href={`/cases/${related.categorySlug}/${related.slug}`}
+                  className="related-case-card"
                   style={{
                     padding: '16px',
                     borderRadius: '8px',
@@ -530,16 +537,6 @@ export default async function CaseTypeDetailPage({
                     textDecoration: 'none',
                     color: 'inherit',
                     transition: 'all 0.2s',
-                  }}
-                  onMouseEnter={(e) => {
-                    const target = e.currentTarget as HTMLElement;
-                    target.style.borderColor = '#8B5CF6';
-                    target.style.background = 'var(--bg-base)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const target = e.currentTarget as HTMLElement;
-                    target.style.borderColor = 'var(--border-default)';
-                    target.style.background = '#FFFFFF';
                   }}
                 >
                   <h3 style={{ fontSize: '14px', fontWeight: 'bold', margin: '0' }}>

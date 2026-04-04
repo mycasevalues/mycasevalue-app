@@ -14,14 +14,22 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html style={{ background: '#F9FAFB' }}>
+    <html style={{ background: '#F9FAFB', margin: 0, padding: 0 }}>
       <head>
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#F9FAFB" />
+        <style>{`
+          body {
+            margin: 0;
+            padding: 0;
+            background: #F9FAFB;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+          }
+        `}</style>
       </head>
-      <body style={{ margin: 0, padding: 0, background: '#F9FAFB' }}>
+      <body>
         <div
           style={{
             minHeight: '100vh',
@@ -29,112 +37,134 @@ export default function GlobalError({
             alignItems: 'center',
             justifyContent: 'center',
             background: '#F9FAFB',
-            fontFamily: "'Roboto', system-ui, sans-serif",
-            padding: 24,
+            padding: '24px',
           }}
         >
           <div
             style={{
-              maxWidth: 440,
+              maxWidth: 480,
               textAlign: 'center',
+              background: '#FFFFFF',
+              borderRadius: '12px',
               padding: '48px 32px',
+              boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
             }}
           >
+            {/* Icon */}
             <div
               style={{
-                fontSize: 56,
-                fontWeight: 700,
-                marginBottom: 16,
-                color: '#EF4444',
+                width: 72,
+                height: 72,
+                borderRadius: '50%',
+                background: 'rgba(139, 92, 246, 0.1)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 24,
               }}
             >
-              Error
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
             </div>
+
             <h2
               style={{
-                fontSize: 22,
-                fontWeight: 700,
-                color: '#111827',
-                marginBottom: 8,
+                fontSize: '24px',
+                fontWeight: 600,
+                color: '#111111',
+                margin: '0 0 8px',
+                letterSpacing: '-0.01em',
               }}
             >
-              Something Went Wrong
+              Something went wrong
             </h2>
+
             <p
               style={{
-                fontSize: 14,
+                fontSize: '15px',
                 color: '#6B7280',
                 lineHeight: 1.6,
-                marginBottom: 12,
+                margin: '0 0 12px',
+                maxWidth: 400,
+                marginLeft: 'auto',
+                marginRight: 'auto',
               }}
             >
               We encountered a critical error.
             </p>
+
             <p
               style={{
-                fontSize: 13,
+                fontSize: '14px',
                 color: '#9CA3AF',
                 lineHeight: 1.6,
-                marginBottom: 32,
+                margin: '0 0 28px',
+                maxWidth: 400,
+                marginLeft: 'auto',
+                marginRight: 'auto',
               }}
             >
               Please try refreshing the page or contact support.
             </p>
+
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <button type="button"
+              <button
+                type="button"
                 onClick={reset}
                 style={{
-                  padding: '12px 32px',
-                  background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
-                  color: 'white',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '12px 24px',
+                  background: '#8B5CF6',
+                  color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: 12,
-                  fontSize: 14,
+                  borderRadius: '8px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 200ms',
-                  boxShadow: '0 4px 14px rgba(64, 64, 242, 0.22)',
+                  boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
                 }}
                 onMouseEnter={(e) => {
-                  (e.target as HTMLButtonElement).style.boxShadow = '0 8px 28px rgba(64, 64, 242, 0.28)';
-                  (e.target as HTMLButtonElement).style.transform = 'translateY(-2px)';
+                  (e.target as HTMLButtonElement).style.background = '#7C3AED';
+                  (e.target as HTMLButtonElement).style.boxShadow = '0 4px 12px rgba(139, 92, 246, 0.2)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.target as HTMLButtonElement).style.boxShadow = '0 4px 14px rgba(64, 64, 242, 0.22)';
-                  (e.target as HTMLButtonElement).style.transform = 'translateY(0)';
+                  (e.target as HTMLButtonElement).style.background = '#8B5CF6';
+                  (e.target as HTMLButtonElement).style.boxShadow = '0 1px 2px rgba(0,0,0,0.05)';
                 }}
               >
-                Try Again
+                Try again
               </button>
               <a
                 href="/"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '12px 32px',
-                  background: 'transparent',
-                  color: '#6B7280',
-                  border: '1px solid var(--border-default)',
-                  borderRadius: 12,
-                  fontSize: 14,
+                  gap: 8,
+                  padding: '12px 24px',
+                  background: '#F3F4F6',
+                  color: '#111111',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontSize: '14px',
                   fontWeight: 600,
                   textDecoration: 'none',
                   transition: 'all 200ms',
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
-                  (e.target as HTMLAnchorElement).style.borderColor = '#111111';
-                  (e.target as HTMLAnchorElement).style.color = '#111827';
-                  (e.target as HTMLAnchorElement).style.background = 'rgba(79, 70, 229, 0.08)';
+                  (e.target as HTMLAnchorElement).style.background = '#E5E7EB';
                 }}
                 onMouseLeave={(e) => {
-                  (e.target as HTMLAnchorElement).style.borderColor = 'var(--border-default)';
-                  (e.target as HTMLAnchorElement).style.color = '#6B7280';
-                  (e.target as HTMLAnchorElement).style.background = 'transparent';
+                  (e.target as HTMLAnchorElement).style.background = '#F3F4F6';
                 }}
               >
-                Go Home
+                Go home
               </a>
             </div>
           </div>

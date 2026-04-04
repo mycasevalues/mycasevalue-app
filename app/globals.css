@@ -25,6 +25,17 @@
   left: 0;
 }
 
+/* Global focus-visible style — Purple outline with offset for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid #8B5CF6;
+  outline-offset: 2px;
+}
+
+/* Don't show outline on focus for mouse users (except focus-visible) */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* ============================================================
    PAPER DESIGN SYSTEM — Global typography reset
    ============================================================ */
@@ -672,31 +683,6 @@ input:focus, textarea:focus, select:focus {
 /* ============================================================
    WIZARD & STEP PROGRESS
    ============================================================ */
-.wizard-labels {
-  display: flex;
-  gap: 0;
-}
-
-.wizard-labels .step-label {
-  flex: 1;
-  text-align: center;
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--fg-subtle);
-  letter-spacing: 0.5px;
-  transition: color var(--duration-base) ease, transform var(--duration-base) ease;
-}
-
-.wizard-labels .step-label.active {
-  color: var(--accent);
-  transform: scale(1.04);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wizard-labels .step-label.active {
-    transform: none;
-  }
-}
 
 /* ============================================================
    PIE CHART & SVG ANIMATIONS
@@ -1274,65 +1260,6 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
-/* ============================================================
-   HERO — LINKEDIN HEADER STYLE (dark bg, dot grid, accent line)
-   ============================================================ */
-.hero-bg {
-  background: #FFFFFF;
-  color: #111827;
-  position: relative;
-}
-
-/* Dot grid overlay — disabled for clean Paper design */
-.hero-bg::before {
-  display: none;
-}
-
-/* Subtle gradient fade at bottom of hero */
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, #F9F8F6);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Vertical accent line — subtle gray for Paper design */
-.hero-accent-line {
-  width: 3px;
-  min-height: 80px;
-  align-self: stretch;
-  background: var(--border-default);
-  border-radius: 2px;
-  flex-shrink: 0;
-  position: relative;
-  z-index: 5;
-}
-
-/* Hero tagline styling for Paper design */
-.hero-tagline-bold {
-  color: #111827;
-  font-weight: 400;
-}
-
-.hero-tagline-light {
-  color: #111827;
-  font-weight: 400;
-}
-
-/* Noise overlay for texture */
-.noise-overlay {
-  position: relative;
-}
-
-.noise-overlay > * {
-  position: relative;
-  z-index: 2;
-}
 
 /* ============================================================
    RESPONSIVE DESIGN
@@ -1530,49 +1457,6 @@ input:focus, textarea:focus, select:focus {
 
 
 
-/* ============================================================
-   HERO MINI CHART — Animated bar visualization
-   ============================================================ */
-.hero-mini-chart {
-  display: flex;
-  align-items: flex-end;
-  gap: 3px;
-  height: 40px;
-  padding: 0 2px;
-}
-
-.hero-mini-chart .bar {
-  width: 6px;
-  border-radius: 2px 2px 0 0;
-  transform-origin: bottom;
-  animation: barGrow 0.6s var(--ease-out-expo) forwards;
-  transform: scaleY(0);
-}
-
-.hero-mini-chart .bar:nth-child(1) { animation-delay: 0.8s; }
-.hero-mini-chart .bar:nth-child(2) { animation-delay: 0.86s; }
-.hero-mini-chart .bar:nth-child(3) { animation-delay: 0.92s; }
-.hero-mini-chart .bar:nth-child(4) { animation-delay: 0.98s; }
-.hero-mini-chart .bar:nth-child(5) { animation-delay: 1.04s; }
-.hero-mini-chart .bar:nth-child(6) { animation-delay: 1.1s; }
-.hero-mini-chart .bar:nth-child(7) { animation-delay: 1.16s; }
-.hero-mini-chart .bar:nth-child(8) { animation-delay: 1.22s; }
-.hero-mini-chart .bar:nth-child(9) { animation-delay: 1.28s; }
-.hero-mini-chart .bar:nth-child(10) { animation-delay: 1.34s; }
-.hero-mini-chart .bar:nth-child(11) { animation-delay: 1.4s; }
-.hero-mini-chart .bar:nth-child(12) { animation-delay: 1.46s; }
-
-@keyframes barGrow {
-  from { transform: scaleY(0); }
-  to { transform: scaleY(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-mini-chart .bar {
-    animation: none;
-    transform: scaleY(1);
-  }
-}
 
 /* ============================================================
    STAT GLOW — Subtle hover glow on hero stats
@@ -2350,14 +2234,6 @@ input[type="range"]::-moz-range-thumb {
 /* ============================================================
    WIZARD STEP TRANSITIONS & MICRO-INTERACTIONS
    ============================================================ */
-@keyframes wizardStepEnter {
-  0% { opacity: 0; transform: translateX(30px) scale(0.97); }
-  100% { opacity: 1; transform: translateX(0) scale(1); }
-}
-
-.wizard-step-enter {
-  animation: wizardStepEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
 
 /* Staggered list item entrances */
 @keyframes staggerIn {
@@ -2376,36 +2252,6 @@ input[type="range"]::-moz-range-thumb {
 .stagger > *:nth-child(9) { animation: staggerIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both; }
 .stagger > *:nth-child(10) { animation: staggerIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
 
-/* Category card enhanced hover — 3D tilt effect */
-.category-card {
-  perspective: 600px;
-  transform-style: preserve-3d;
-}
-
-.category-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.05) !important;
-}
-
-/* Wizard progress bar shimmer */
-@keyframes progressShimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-.wizard-labels {
-  display: flex;
-  justify-content: space-between;
-}
-
-.wizard-labels .step-label {
-  font-size: 10px;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-}
-
-.wizard-labels .step-label.active {
-  transform: scale(1.05);
-}
 
 /* Button ripple effect */
 @keyframes rippleEffect {

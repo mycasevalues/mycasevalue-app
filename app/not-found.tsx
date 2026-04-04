@@ -16,183 +16,123 @@ export default function NotFound() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '48px 24px',
-        background: 'var(--bg-base)',
-        color: '#111111',
-        fontFamily: 'Roboto, system-ui, sans-serif',
+        background: '#F9FAFB',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         textAlign: 'center',
       }}
     >
-      <style>{`
-        .nf-btn-home {
-          display: inline-flex; align-items: center; gap: 8px;
-          padding: 14px 28px; background: #8B5CF6;
-          color: #FFFFFF; border-radius: 12px; font-weight: 700; font-size: 15px;
-          font-family: Montserrat, system-ui, sans-serif;
-          text-decoration: none; transition: all 200ms;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-        .nf-btn-home:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .nf-btn-secondary {
-          display: inline-flex; align-items: center; gap: 8px;
-          padding: 14px 28px; background: transparent; color: #6B7280;
-          border-radius: 12px; font-weight: 600; font-size: 14px;
-          font-family: Roboto, system-ui, sans-serif;
-          text-decoration: none; border: 1px solid var(--border-default); transition: all 200ms;
-        }
-        .nf-btn-secondary:hover { border-color: #6B7280; color: #111111; }
-      `}</style>
-
-      {/* Icon */}
       <div
         style={{
-          width: '80px',
-          height: '80px',
-          borderRadius: '20px',
-          background: 'var(--accent-primary-subtle)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginBottom: '24px',
-        }}
-      >
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="8" />
-          <path d="M21 21l-4.35-4.35" />
-          <path d="M8 11h6" />
-        </svg>
-      </div>
-
-      {/* 404 badge */}
-      <div
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '6px',
-          padding: '4px 14px',
-          borderRadius: '9999px',
-          background: 'var(--accent-primary-subtle)',
-          border: '1px solid var(--accent-primary-border)',
-          marginBottom: '16px',
-          fontSize: '12px',
-          fontWeight: 700,
-          color: '#6B7280',
-          fontFamily: '"PT Mono", monospace',
-          letterSpacing: '0.05em',
-        }}
-      >
-        ERROR 404
-      </div>
-
-      <h1
-        style={{
-          fontFamily: 'Montserrat, system-ui, sans-serif',
-          fontSize: 'clamp(1.5rem, 4vw, 2.25rem)',
-          fontWeight: 800,
-          color: '#111111',
-          letterSpacing: '-0.02em',
-          lineHeight: 1.2,
-          margin: '0 0 12px',
-        }}
-      >
-        Page not found
-      </h1>
-
-      <p
-        style={{
-          fontSize: '16px',
-          color: '#6B7280',
-          maxWidth: '420px',
-          lineHeight: 1.6,
-          margin: '0 0 32px',
-        }}
-      >
-        The page you&apos;re looking for doesn&apos;t exist or has been moved.
-        Let&apos;s get you back to researching case data.
-      </p>
-
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Link href="/" className="nf-btn-home">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
-          Go Home
-        </Link>
-
-        <Link href="/search" className="nf-btn-secondary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8" />
-            <path d="M21 21l-4.35-4.35" />
-          </svg>
-          Search Cases
-        </Link>
-      </div>
-
-      {/* Helpful links */}
-      <div
-        style={{
-          marginTop: '48px',
-          padding: '24px',
+          maxWidth: 480,
           background: '#FFFFFF',
-          border: '1px solid var(--border-default)',
-          borderRadius: '16px',
-          maxWidth: '440px',
-          width: '100%',
+          borderRadius: '12px',
+          padding: '48px 32px',
+          boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
         }}
       >
-        <p
+        {/* 404 Number */}
+        <div
           style={{
-            fontFamily: 'Montserrat, system-ui, sans-serif',
-            fontSize: '13px',
+            fontFamily: '"PT Mono", monospace',
+            fontSize: '96px',
             fontWeight: 700,
-            color: 'var(--fg-secondary)',
-            margin: '0 0 12px',
+            color: '#E5E7EB',
+            lineHeight: 1,
+            marginBottom: '16px',
+            letterSpacing: '-0.02em',
           }}
         >
-          Popular pages
+          404
+        </div>
+
+        <h1
+          style={{
+            fontSize: '24px',
+            fontWeight: 600,
+            color: '#111111',
+            margin: '0 0 12px',
+            letterSpacing: '-0.01em',
+          }}
+        >
+          Page not found
+        </h1>
+
+        <p
+          style={{
+            fontSize: '15px',
+            color: '#6B7280',
+            maxWidth: '420px',
+            lineHeight: 1.6,
+            margin: '0 0 32px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+          }}
+        >
+          The page you&apos;re looking for doesn&apos;t exist or has been moved. Let&apos;s get you back to researching case data.
         </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          {[
-            { href: '/cases', label: 'Browse all case types', desc: '84 federal case categories' },
-            { href: '/districts', label: 'Federal districts', desc: 'All 94 US districts' },
-            { href: '/faq', label: 'FAQ', desc: 'Common questions answered' },
-          ].map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '10px 12px',
-                borderRadius: '10px',
-                textDecoration: 'none',
-                transition: 'background 200ms',
-                background: 'transparent',
-              }}
-            >
-              <div>
-                <span style={{ fontSize: '14px', fontWeight: 600, color: '#111111' }}>{link.label}</span>
-                <span style={{ display: 'block', fontSize: '12px', color: '#6B7280', marginTop: '2px' }}>{link.desc}</span>
-              </div>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--fg-subtle)" strokeWidth="2" aria-hidden="true">
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </Link>
-          ))}
+
+        <style>{`
+          .notfound-link-primary:hover {
+            background: #7C3AED;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+          }
+          .notfound-link-secondary:hover {
+            background: #E5E7EB;
+          }
+        `}</style>
+        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <Link
+            href="/"
+            className="notfound-link-primary"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '12px 24px',
+              background: '#8B5CF6',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '14px',
+              fontWeight: 600,
+              textDecoration: 'none',
+              transition: 'all 200ms',
+              boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            Go home
+          </Link>
+
+          <Link
+            href="/search"
+            className="notfound-link-secondary"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              padding: '12px 24px',
+              background: '#F3F4F6',
+              color: '#111111',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '14px',
+              fontWeight: 600,
+              textDecoration: 'none',
+              transition: 'all 200ms',
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+            Search cases
+          </Link>
         </div>
       </div>
-
-      <p
-        style={{
-          fontSize: '12px',
-          color: 'var(--fg-subtle)',
-          marginTop: '32px',
-          maxWidth: '320px',
-        }}
-      >
-        MyCaseValue is an informational tool. Not legal advice.
-      </p>
     </div>
   );
 }

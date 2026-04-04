@@ -44,6 +44,7 @@ export default function SiteFooter() {
   return (
     <footer
       className="site-footer"
+      role="contentinfo"
       style={{
         background: '#111111',
         color: 'rgba(255,255,255,0.6)',

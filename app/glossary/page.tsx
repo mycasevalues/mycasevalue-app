@@ -248,23 +248,26 @@ export default function GlossaryPage() {
                       {term.definition}
                     </p>
                     {term.relatedLink && (
-                      <a href={term.relatedLink} style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        fontSize: '13px',
-                        fontWeight: 600,
-                        color: '#8B5CF6',
-                        textDecoration: 'none',
-                        transition: 'opacity 200ms ease',
-                      }} onMouseEnter={(e) => {
-                        (e.currentTarget as HTMLElement).style.opacity = '0.75';
-                      }} onMouseLeave={(e) => {
-                        (e.currentTarget as HTMLElement).style.opacity = '1';
-                      }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                        {term.relatedLabel}
-                      </a>
+                      <>
+                        <style>{`
+                          .glossary-related-link:hover {
+                            opacity: 0.75;
+                          }
+                        `}</style>
+                        <a href={term.relatedLink} className="glossary-related-link" style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          fontSize: '13px',
+                          fontWeight: 600,
+                          color: '#8B5CF6',
+                          textDecoration: 'none',
+                          transition: 'opacity 200ms ease',
+                        }}>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                          {term.relatedLabel}
+                        </a>
+                      </>
                     )}
                   </div>
                 ))}

@@ -77,7 +77,7 @@ export default function ServerHero() {
 
           {/* CTA buttons */}
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' }}>
-            <a href="/search" style={{
+            <a href="/search" aria-label="Search case types and view federal court data" style={{
               display: 'inline-block',
               padding: '14px 32px',
               background: '#8B5CF6',
@@ -91,7 +91,7 @@ export default function ServerHero() {
             }}>
               Search case types →
             </a>
-            <a href="/sample" style={{
+            <a href="/sample" aria-label="View sample settlement data report" style={{
               display: 'inline-block',
               padding: '14px 32px',
               background: '#FFFFFF',
@@ -140,7 +140,7 @@ export default function ServerHero() {
           ].map((source, i) => (
             <span key={source.name} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               {i > 0 && <span style={{ color: '#D1D5DB' }}>·</span>}
-              <a href={source.url} target="_blank" rel="noopener noreferrer" style={{
+              <a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`Data sourced from ${source.name} (opens in new window)`} style={{
                 fontSize: '12px',
                 color: '#6B7280',
                 fontFamily: 'var(--font-body)',

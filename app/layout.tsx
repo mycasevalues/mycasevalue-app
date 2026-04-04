@@ -280,7 +280,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ErrorBoundary>
           <AnalyticsProvider>
             <SiteNav />
-            <main id="main-content">
+            <main id="main-content" role="main">
               {children}
             </main>
             <SiteFooter />

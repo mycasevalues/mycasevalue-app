@@ -491,6 +491,13 @@ async function CategoryPage({
       <div style={{
         padding: '60px 20px',
       }}>
+        <style>{`
+          .case-type-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: #8B5CF6;
+            transform: translateY(-2px);
+          }
+        `}</style>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '28px',
@@ -518,6 +525,7 @@ async function CategoryPage({
                 <Link
                   key={`${opt.nos}-${opt.d}`}
                   href={href}
+                  className="case-type-card"
                   style={{
                     background: '#FFFFFF',
                     border: '1px solid var(--border-default)',
@@ -528,18 +536,6 @@ async function CategoryPage({
                     color: 'inherit',
                     display: 'block',
                     transition: 'all 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    const elem = e.currentTarget as HTMLElement;
-                    elem.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
-                    elem.style.borderColor = '#8B5CF6';
-                    elem.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const elem = e.currentTarget as HTMLElement;
-                    elem.style.boxShadow = 'none';
-                    elem.style.borderColor = 'var(--border-default)';
-                    elem.style.transform = 'translateY(0)';
                   }}
                 >
                   <h3 style={{
