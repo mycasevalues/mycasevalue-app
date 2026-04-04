@@ -743,6 +743,95 @@ export default function ServerContent() {
         </div>
       </section>
 
+      {/* ── FEDERAL COURT INSIGHTS NEWSLETTER ──────────────────────────────────────────── */}
+      <section
+        style={{
+          background: '#00172E',
+          padding: '64px 24px',
+          textAlign: 'center',
+        }}
+      >
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: 600,
+            color: '#FFFFFF',
+            fontFamily: 'var(--font-display)',
+            marginBottom: '16px',
+            lineHeight: 1.3,
+          }}>
+            Stay Ahead with Federal Court Insights
+          </h2>
+          <p style={{
+            fontSize: '16px',
+            color: '#D5D8DC',
+            fontFamily: 'var(--font-body)',
+            marginBottom: '32px',
+            lineHeight: 1.6,
+            fontWeight: 300,
+          }}>
+            Get weekly case statistics, trend reports, and legal research updates delivered to your inbox.
+          </p>
+
+          <div style={{
+            display: 'flex',
+            gap: '12px',
+            marginBottom: '16px',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+          }}>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              style={{
+                flex: '1 1 280px',
+                minWidth: '280px',
+                maxWidth: '400px',
+                height: '48px',
+                padding: '0 16px',
+                background: '#FFFFFF',
+                border: 'none',
+                borderRadius: '4px',
+                fontSize: '14px',
+                fontFamily: 'var(--font-body)',
+                color: '#212529',
+                outline: 'none',
+              }}
+            />
+            <button
+              style={{
+                height: '48px',
+                padding: '0 32px',
+                background: '#E8171F',
+                color: '#FFFFFF',
+                border: 'none',
+                borderRadius: '4px',
+                fontSize: '14px',
+                fontWeight: 700,
+                fontFamily: 'var(--font-display)',
+                cursor: 'pointer',
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em',
+                transition: 'background-color 0.2s ease',
+              }}
+              className="newsletter-btn"
+            >
+              Subscribe
+            </button>
+          </div>
+
+          <p style={{
+            fontSize: '12px',
+            color: 'rgba(255,255,255,0.5)',
+            fontFamily: 'var(--font-body)',
+            margin: 0,
+            fontWeight: 300,
+          }}>
+            No spam. Unsubscribe anytime.
+          </p>
+        </div>
+      </section>
+
       {/* ── CTA ────────────────────────────────────────────── */}
       <section
         style={{
@@ -810,6 +899,9 @@ export default function ServerContent() {
         .related-card:hover {
           box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
           border-color: #E8171F !important;
+        }
+        .newsletter-btn:hover {
+          background-color: #CC1019 !important;
         }
         @media (max-width: 768px) {
           .trusted-grid { grid-template-columns: 1fr !important; }

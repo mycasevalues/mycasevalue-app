@@ -74,6 +74,10 @@ export default function ComparePage() {
         }
         .lexis-link:hover {
           color: #004a6d;
+          text-decoration: underline;
+        }
+        .lexis-select {
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
         .lexis-select:hover {
           border-color: #006997;
@@ -83,6 +87,9 @@ export default function ComparePage() {
           border-color: #006997;
           box-shadow: 0 0 0 2px rgba(0, 105, 151, 0.1);
         }
+        .lexis-btn {
+          transition: background-color 0.2s ease, opacity 0.2s ease;
+        }
         .lexis-btn:hover:not(:disabled) {
           background-color: #c41419;
           opacity: 0.95;
@@ -90,41 +97,62 @@ export default function ComparePage() {
         .lexis-btn:active:not(:disabled) {
           background-color: #a30f16;
         }
+        @media (max-width: 768px) {
+          .compare-header h1 {
+            font-size: clamp(24px, 6vw, 36px);
+          }
+          .compare-selectors {
+            grid-template-columns: 1fr;
+          }
+          .compare-table {
+            font-size: 12px;
+          }
+          .compare-table th,
+          .compare-table td {
+            padding: 12px 8px !important;
+          }
+        }
       `}</style>
 
       {/* Dark Navy Header */}
       <header style={{
         background: '#00172E',
         color: '#ffffff',
-        padding: '24px 48px',
+        padding: 'clamp(24px, 5vw, 48px)',
         marginBottom: 0,
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 48px)', paddingRight: 'clamp(16px, 3vw, 48px)' }}>
           <div style={{
+            display: 'inline-block',
             fontSize: 11,
             fontWeight: 700,
             letterSpacing: '0.5px',
             marginBottom: 16,
             textTransform: 'uppercase',
-            color: '#E8171F',
+            color: '#ffffff',
+            background: '#E8171F',
+            padding: '4px 12px',
+            borderRadius: 4,
           }}>
             COMPARE
           </div>
-          <h1 style={{
-            fontSize: 36,
+          <h1 className="compare-header" style={{
+            fontSize: 'clamp(28px, 7vw, 40px)',
             fontWeight: 700,
             margin: 0,
-            marginBottom: 8,
+            marginBottom: 12,
             fontFamily: 'var(--font-display)',
             color: '#ffffff',
+            lineHeight: 1.2,
           }}>
             Compare Case Types
           </h1>
           <p style={{
-            fontSize: 15,
+            fontSize: 'clamp(14px, 2vw, 16px)',
             color: '#b8bcc0',
             margin: 0,
             fontFamily: 'var(--font-body)',
+            lineHeight: 1.5,
           }}>
             Select up to 3 federal case types to compare outcomes side by side.
           </p>
@@ -132,29 +160,30 @@ export default function ComparePage() {
       </header>
 
       {/* Breadcrumb */}
-      <div style={{
-        background: '#EDEEEE',
-        padding: '12px 48px',
+      <nav style={{
+        background: '#FFFFFF',
+        padding: '12px 0',
         borderBottom: '1px solid #D5D8DC',
         fontSize: 13,
+        fontFamily: 'var(--font-body)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <Link href="/" className="lexis-link" style={{ marginRight: 6 }}>Home</Link>
-          <span style={{ color: '#455A64', marginRight: 6 }}>/</span>
-          <span style={{ color: '#455A64' }}>Compare</span>
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 48px)', paddingRight: 'clamp(16px, 3vw, 48px)' }}>
+          <Link href="/" className="lexis-link" style={{ marginRight: 8, color: '#006997' }}>Home</Link>
+          <span style={{ color: '#455A64', marginRight: 8 }}>/</span>
+          <span style={{ color: '#212529', fontWeight: 600 }}>Compare Case Types</span>
         </div>
-      </div>
+      </nav>
 
       {/* Main Content */}
       <main style={{
         background: '#EDEEEE',
         minHeight: 'calc(100vh - 200px)',
-        padding: '48px 48px',
+        padding: 'clamp(24px, 5vw, 48px)',
         fontFamily: 'var(--font-body)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', paddingLeft: 'clamp(16px, 3vw, 48px)', paddingRight: 'clamp(16px, 3vw, 48px)' }}>
           {/* Selectors */}
-          <div style={{
+          <div className="compare-selectors" style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
             gap: 16,
@@ -184,10 +213,15 @@ export default function ComparePage() {
                     fontSize: 14,
                     border: '1px solid #D5D8DC',
                     borderRadius: 4,
-                    background: '#ffffff',
+                    background: '#FFFFFF',
                     color: '#212529',
                     fontFamily: 'var(--font-body)',
                     cursor: 'pointer',
+                    appearance: 'none',
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23212529' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 12px center',
+                    paddingRight: 36,
                   }}
                 >
                   <option value="">Select a case type...</option>
@@ -231,14 +265,15 @@ export default function ComparePage() {
 
           {/* Results table */}
           {comparing && stats.length >= 2 && (
-            <div style={{
+            <div className="compare-table-wrapper" style={{
               overflowX: 'auto',
-              background: '#ffffff',
+              background: '#FFFFFF',
               border: '1px solid #D5D8DC',
               borderRadius: 4,
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+              WebkitOverflowScrolling: 'touch',
             }}>
-              <table style={{
+              <table className="compare-table" style={{
                 width: '100%',
                 borderCollapse: 'collapse',
                 fontSize: 14,
@@ -353,19 +388,28 @@ export default function ComparePage() {
           )}
 
           {/* Disclaimer */}
-          <p style={{
-            fontSize: 13,
-            color: '#455A64',
-            marginTop: 40,
-            lineHeight: 1.6,
-            maxWidth: 800,
+          <section style={{
+            marginTop: 48,
+            padding: 'clamp(16px, 4vw, 32px)',
+            background: '#FFFFFF',
+            border: '1px solid #D5D8DC',
+            borderRadius: 4,
+            boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
           }}>
-            Data sourced from the Federal Judicial Center Integrated Database. Outcomes are historical averages and do not predict future results.
-            This is not legal advice.{' '}
-            <Link href="/methodology" className="lexis-link" style={{ textDecoration: 'none' }}>
-              Learn about our methodology
-            </Link>
-          </p>
+            <p style={{
+              fontSize: 13,
+              color: '#455A64',
+              margin: 0,
+              lineHeight: 1.6,
+              maxWidth: 800,
+            }}>
+              Data sourced from the Federal Judicial Center Integrated Database. Outcomes are historical averages and do not predict future results.
+              This is not legal advice.{' '}
+              <Link href="/methodology" className="lexis-link" style={{ textDecoration: 'none' }}>
+                Learn about our methodology
+              </Link>
+            </p>
+          </section>
         </div>
       </main>
     </>
