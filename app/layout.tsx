@@ -275,9 +275,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body style={{ background: 'var(--gradient-page)', color: 'var(--fg-primary)', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
-        <a href="#main-content" className="skip-to-main">
-          Skip to main content
-        </a>
+        <a href="#main-content" className="skip-link" style={{
+          position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px',
+          overflow: 'hidden', zIndex: 9999
+        }}>Skip to main content</a>
         <ErrorBoundary>
           <AnalyticsProvider>
             <SiteNav />

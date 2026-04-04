@@ -65,6 +65,16 @@ export default function TermsPage() {
           font-weight: 600;
         }
 
+        .breadcrumb-home-link {
+          color: #CCCCCC;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+
+        .breadcrumb-home-link:hover {
+          color: #FFFFFF;
+        }
+
         .legal-section-heading {
           font-size: 20px;
           font-weight: 600;
@@ -140,7 +150,7 @@ export default function TermsPage() {
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: '#CCCCCC' }}>
-            <a href="/" style={{ color: '#CCCCCC', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#FFFFFF'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#CCCCCC'}>Home</a>
+            <a href="/" className="breadcrumb-home-link">Home</a>
             <span>/</span>
             <span style={{ color: '#FFFFFF' }}>Terms of Service</span>
           </nav>

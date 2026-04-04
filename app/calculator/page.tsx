@@ -124,13 +124,26 @@ export default function CalculatorPage() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: 'transparent' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <style>{slideUpFadeIn}</style>
       <style>{selectStyles}</style>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* Breadcrumb */}
+      <div className="border-b px-6 py-3" style={{ borderColor: '#D5D8DC', background: '#FFFFFF' }}>
+        <div className="max-w-3xl mx-auto">
+          <nav className="flex items-center gap-2 text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <Link href="/" style={{ color: '#006997', textDecoration: 'none' }} className="hover:underline">
+              Home
+            </Link>
+            <span style={{ color: '#D5D8DC' }}>›</span>
+            <span style={{ color: '#212529', fontWeight: 600 }}>Case Calculator</span>
+          </nav>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E', padding: '64px 24px' }}>
         <div className="max-w-3xl mx-auto">
@@ -150,10 +163,12 @@ export default function CalculatorPage() {
       {/* Calculator Form */}
       <div className="max-w-3xl mx-auto px-6 py-12">
         <form
-          className="p-8 rounded-xl border"
+          className="border"
           style={{
             borderColor: '#D5D8DC',
             background: '#FFFFFF',
+            padding: '32px',
+            borderRadius: '4px',
           }}
           onSubmit={(e) => { e.preventDefault(); calculate(); }}
         >
@@ -330,10 +345,11 @@ export default function CalculatorPage() {
 
         {/* ── Results ─────────────────────────────────────────────────── */}
         {results && (
-          <div className="mt-8 p-8 border" style={{
+          <div className="mt-8 border" style={{
             borderColor: '#D5D8DC',
             background: '#FFFFFF',
             borderRadius: '4px',
+            padding: '32px',
             animation: 'slideUpFadeIn 0.4s ease-out',
           }}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-1" style={{ color: '#455A64', fontFamily: 'var(--font-display)' }}>
@@ -477,10 +493,11 @@ export default function CalculatorPage() {
         )}
 
         {/* Legal Disclaimer */}
-        <div className="mt-8 p-6 border" style={{
+        <div className="mt-8 border" style={{
           borderColor: '#D5D8DC',
           background: '#FFFFFF',
           borderRadius: '4px',
+          padding: '32px',
           borderLeft: '3px solid #F59E0B',
         }}>
           <h2 className="text-xs font-bold uppercase tracking-[0.8px] mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
