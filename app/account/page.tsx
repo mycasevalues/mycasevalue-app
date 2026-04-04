@@ -1,371 +1,327 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useState, useEffect } from 'react';
+import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Account Settings | MyCaseValue',
-  description: 'Manage your MyCaseValue account settings, subscription, and billing information.',
-  robots: { index: false, follow: false },
+function getSupabase() {
+  return createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+}
+
+type PlanInfo = {
+  plan: string;
+  grantedAt: string | null;
+  expiresAt: string | null;
 };
 
 export default function AccountPage() {
+  const [user, setUser] = useState<{ email: string; name: string } | null>(null);
+  const [planInfo, setPlanInfo] = useState<PlanInfo | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  // Profile form
+  const [name, setName] = useState('');
+  const [saving, setSaving] = useState(false);
+  const [profileMsg, setProfileMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  // Password form
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordSaving, setPasswordSaving] = useState(false);
+  const [passwordMsg, setPasswordMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
+  useEffect(() => {
+    async function loadUser() {
+      const { data: { user: authUser } } = await getSupabase().auth.getUser();
+      if (authUser) {
+        const fullName = authUser.user_metadata?.full_name || '';
+        setUser({ email: authUser.email || '', name: fullName });
+        setName(fullName);
+
+        // Fetch plan info
+        try {
+          const res = await fetch(`/api/premium/status?email=${encodeURIComponent(authUser.email || '')}`);
+          if (res.ok) {
+            const data = await res.json();
+            setPlanInfo({
+              plan: data.plan || 'free',
+              grantedAt: data.grantedAt || null,
+              expiresAt: data.expiresAt || null,
+            });
+          }
+        } catch {
+          setPlanInfo({ plan: 'free', grantedAt: null, expiresAt: null });
+        }
+      }
+      setLoading(false);
+    }
+    loadUser();
+  }, []);
+
+  async function handleProfileSave(e: React.FormEvent) {
+    e.preventDefault();
+    setSaving(true);
+    setProfileMsg(null);
+
+    const { error } = await getSupabase().auth.updateUser({
+      data: { full_name: name },
+    });
+
+    if (error) {
+      setProfileMsg({ type: 'error', text: error.message });
+    } else {
+      setProfileMsg({ type: 'success', text: 'Profile updated successfully.' });
+    }
+    setSaving(false);
+  }
+
+  async function handlePasswordChange(e: React.FormEvent) {
+    e.preventDefault();
+    setPasswordSaving(true);
+    setPasswordMsg(null);
+
+    if (newPassword.length < 8) {
+      setPasswordMsg({ type: 'error', text: 'Password must be at least 8 characters.' });
+      setPasswordSaving(false);
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setPasswordMsg({ type: 'error', text: 'Passwords do not match.' });
+      setPasswordSaving(false);
+      return;
+    }
+
+    const { error } = await getSupabase().auth.updateUser({ password: newPassword });
+
+    if (error) {
+      setPasswordMsg({ type: 'error', text: error.message });
+    } else {
+      setPasswordMsg({ type: 'success', text: 'Password updated successfully.' });
+      setNewPassword('');
+      setConfirmPassword('');
+    }
+    setPasswordSaving(false);
+  }
+
+  async function handleSignOut() {
+    await getSupabase().auth.signOut();
+    window.location.href = '/';
+  }
+
+  const planLabels: Record<string, string> = {
+    free: 'Free',
+    single_report: 'Single Report',
+    unlimited: 'Unlimited',
+    attorney: 'Attorney Mode',
+  };
+
+  if (loading) {
+    return (
+      <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
+  }
+
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        backgroundColor: 'var(--bg-base)',
-        padding: '40px 20px',
-      }}
-    >
+    <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', padding: '40px 20px' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ marginBottom: '40px' }}>
-          <h1
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '32px',
-              fontWeight: 700,
-              color: '#111111',
-              margin: '0 0 8px 0',
-              lineHeight: 1.2,
-            }}
-          >
+          <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 700, color: '#111111', margin: '0 0 8px 0' }}>
             Account Settings
           </h1>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '14px',
-              color: '#7C3AED',
-              margin: 0,
-            }}
-          >
-            Manage your profile, subscription, and billing preferences
+          <p style={{ fontSize: '14px', color: '#6B7280', margin: 0 }}>
+            Manage your profile, subscription, and security settings
           </p>
         </div>
 
-        {/* Profile Info Card */}
-        <div
-          style={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: '12px',
-            padding: '32px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-            border: `1px solid var(--border-default)`,
-            marginBottom: '24px',
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '18px',
-              fontWeight: 700,
-              color: '#111111',
-              margin: '0 0 24px 0',
-            }}
-          >
+        {/* Profile Card */}
+        <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 24px 0' }}>
             Profile Information
           </h2>
 
-          <form>
-            {/* Name Field */}
+          <form onSubmit={handleProfileSave}>
             <div style={{ marginBottom: '20px' }}>
-              <label
-                htmlFor="name"
-                style={{
-                  display: 'block',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '14px',
-                  fontWeight: 500,
-                  color: '#111111',
-                  marginBottom: '8px',
-                }}
-              >
+              <label htmlFor="name" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#111111', marginBottom: '8px' }}>
                 Full Name
               </label>
               <input
                 id="name"
                 type="text"
-                placeholder="Your name"
-                className="auth-input"
-                style={{
-                  width: '100%',
-                  padding: '10px 12px',
-                  border: `1px solid var(--border-default)`,
-                  borderRadius: '8px',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '14px',
-                  color: '#111111',
-                  backgroundColor: '#FFFFFF',
-                  boxSizing: 'border-box',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
-                }}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                style={{ width: '100%', padding: '10px 12px', border: '1px solid #E5E7EB', borderRadius: '8px', fontSize: '14px', color: '#111111', backgroundColor: '#FFFFFF', boxSizing: 'border-box' }}
               />
             </div>
 
-            {/* Email Field */}
             <div style={{ marginBottom: '20px' }}>
-              <label
-                htmlFor="email"
-                style={{
-                  display: 'block',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '14px',
-                  fontWeight: 500,
-                  color: '#111111',
-                  marginBottom: '8px',
-                }}
-              >
+              <label htmlFor="email" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#111111', marginBottom: '8px' }}>
                 Email Address
               </label>
               <input
                 id="email"
                 type="email"
-                placeholder="your@email.com"
-                className="auth-input"
-                style={{
-                  width: '100%',
-                  padding: '10px 12px',
-                  border: `1px solid var(--border-default)`,
-                  borderRadius: '8px',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '14px',
-                  color: '#111111',
-                  backgroundColor: '#FFFFFF',
-                  boxSizing: 'border-box',
-                  transition: 'border-color 0.2s, box-shadow 0.2s',
-                }}
+                value={user?.email || ''}
+                disabled
+                style={{ width: '100%', padding: '10px 12px', border: '1px solid #E5E7EB', borderRadius: '8px', fontSize: '14px', color: '#6B7280', backgroundColor: '#F9FAFB', boxSizing: 'border-box', cursor: 'not-allowed' }}
               />
+              <p style={{ fontSize: '12px', color: '#6B7280', marginTop: '4px' }}>
+                Email cannot be changed. Contact support if needed.
+              </p>
             </div>
 
-            {/* Save Button */}
+            {profileMsg && (
+              <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: profileMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: profileMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${profileMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+                {profileMsg.text}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="auth-btn"
-              style={{
-                padding: '10px 20px',
-                backgroundColor: '#111111',
-                color: '#FFFFFF',
-                border: 'none',
-                borderRadius: '8px',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'background-color 0.2s',
-              }}
+              disabled={saving}
+              style={{ padding: '10px 20px', backgroundColor: '#8B5CF6', color: '#FFFFFF', border: 'none', borderRadius: '8px', fontSize: '14px', fontWeight: 600, cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.6 : 1 }}
             >
-              Save Changes
+              {saving ? 'Saving...' : 'Save Changes'}
             </button>
           </form>
         </div>
 
-        {/* Subscription Tier Card */}
-        <div
-          style={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: '12px',
-            padding: '32px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-            border: `1px solid var(--border-default)`,
-            marginBottom: '24px',
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '18px',
-              fontWeight: 700,
-              color: '#111111',
-              margin: '0 0 24px 0',
-            }}
-          >
+        {/* Password Card */}
+        <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 24px 0' }}>
+            Change Password
+          </h2>
+
+          <form onSubmit={handlePasswordChange}>
+            <div style={{ marginBottom: '20px' }}>
+              <label htmlFor="new-password" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#111111', marginBottom: '8px' }}>
+                New Password
+              </label>
+              <input
+                id="new-password"
+                type="password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                placeholder="Minimum 8 characters"
+                style={{ width: '100%', padding: '10px 12px', border: '1px solid #E5E7EB', borderRadius: '8px', fontSize: '14px', color: '#111111', backgroundColor: '#FFFFFF', boxSizing: 'border-box' }}
+              />
+            </div>
+
+            <div style={{ marginBottom: '20px' }}>
+              <label htmlFor="confirm-password" style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: '#111111', marginBottom: '8px' }}>
+                Confirm New Password
+              </label>
+              <input
+                id="confirm-password"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Re-enter your new password"
+                style={{ width: '100%', padding: '10px 12px', border: '1px solid #E5E7EB', borderRadius: '8px', fontSize: '14px', color: '#111111', backgroundColor: '#FFFFFF', boxSizing: 'border-box' }}
+              />
+            </div>
+
+            {passwordMsg && (
+              <div style={{ padding: '10px 14px', borderRadius: '8px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: passwordMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: passwordMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${passwordMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+                {passwordMsg.text}
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={passwordSaving}
+              style={{ padding: '10px 20px', backgroundColor: '#111111', color: '#FFFFFF', border: 'none', borderRadius: '8px', fontSize: '14px', fontWeight: 600, cursor: passwordSaving ? 'not-allowed' : 'pointer', opacity: passwordSaving ? 0.6 : 1 }}
+            >
+              {passwordSaving ? 'Updating...' : 'Update Password'}
+            </button>
+          </form>
+        </div>
+
+        {/* Subscription Card */}
+        <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 24px 0' }}>
             Subscription Plan
           </h2>
 
-          <div style={{ marginBottom: '20px' }}>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                color: '#7C3AED',
-                margin: '0 0 8px 0',
-                fontWeight: 500,
-              }}
-            >
-              Current Plan
-            </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '20px',
-                fontWeight: 700,
-                color: '#111111',
-                margin: 0,
-              }}
-            >
-              Free Tier
-            </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+            <span className="font-display" style={{ fontSize: '20px', fontWeight: 700, color: '#111111' }}>
+              {planLabels[planInfo?.plan || 'free'] || 'Free'}
+            </span>
+            <span style={{ padding: '4px 10px', borderRadius: '20px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? '#F3F4F6' : '#F3E8FF', color: planInfo?.plan === 'free' ? '#6B7280' : '#8B5CF6' }}>
+              {planInfo?.plan === 'free' ? 'Free' : 'Active'}
+            </span>
           </div>
 
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '13px',
-              color: '#7C3AED',
-              margin: '0 0 24px 0',
-              lineHeight: 1.5,
-            }}
-          >
-            You have full access to basic reports. Upgrade to unlock premium features including detailed settlement data, judge analytics, and litigation cost insights.
-          </p>
-
-          <Link
-            href="/pricing"
-            style={{
-              display: 'inline-block',
-              padding: '10px 20px',
-              backgroundColor: '#7C3AED',
-              color: '#FFFFFF',
-              border: 'none',
-              borderRadius: '8px',
-              fontFamily: 'var(--font-body)',
-              fontSize: '14px',
-              fontWeight: 600,
-              textDecoration: 'none',
-              transition: 'background-color 0.2s',
-            }}
-          >
-            View Plans
-          </Link>
-        </div>
-
-        {/* Billing Card */}
-        <div
-          style={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: '12px',
-            padding: '32px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-            border: `1px solid var(--border-default)`,
-            marginBottom: '24px',
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '18px',
-              fontWeight: 700,
-              color: '#111111',
-              margin: '0 0 24px 0',
-            }}
-          >
-            Billing
-          </h2>
-
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '13px',
-              color: '#7C3AED',
-              margin: '0 0 24px 0',
-              lineHeight: 1.5,
-            }}
-          >
-            Manage your payment methods and billing history. View and download invoices from your billing portal.
-          </p>
-
-          <Link
-            href="/billing"
-            style={{
-              display: 'inline-block',
-              padding: '10px 20px',
-              backgroundColor: '#111111',
-              color: '#FFFFFF',
-              border: 'none',
-              borderRadius: '8px',
-              fontFamily: 'var(--font-body)',
-              fontSize: '14px',
-              fontWeight: 600,
-              textDecoration: 'none',
-              transition: 'background-color 0.2s',
-            }}
-          >
-            Manage Billing
-          </Link>
-        </div>
-
-        {/* Danger Zone Card */}
-        <div
-          style={{
-            backgroundColor: '#FFFFFF',
-            borderRadius: '12px',
-            padding: '32px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-            border: '2px solid var(--semantic-danger)',
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '18px',
-              fontWeight: 700,
-              color: 'var(--semantic-danger)',
-              margin: '0 0 24px 0',
-            }}
-          >
-            Danger Zone
-          </h2>
-
-          <div style={{ marginBottom: '24px' }}>
-            <h3
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '14px',
-                fontWeight: 600,
-                color: '#111111',
-                margin: '0 0 8px 0',
-              }}
-            >
-              Delete Account
-            </h3>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                color: '#7C3AED',
-                margin: '0 0 16px 0',
-                lineHeight: 1.5,
-              }}
-            >
-              Once you delete your account, there is no going back. Please be certain. All your data will be permanently removed.
+          {planInfo?.grantedAt && (
+            <p style={{ fontSize: '13px', color: '#6B7280', margin: '0 0 8px 0' }}>
+              Member since {new Date(planInfo.grantedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
             </p>
-            <button
-              disabled
-              style={{
-                padding: '10px 20px',
-                backgroundColor: 'var(--semantic-danger)',
-                color: '#FFFFFF',
-                border: 'none',
-                borderRadius: '8px',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: 'not-allowed',
-                opacity: 0.5,
-                transition: 'background-color 0.2s',
-              }}
-            >
-              Delete Account
-            </button>
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '12px',
-                color: '#6B7280',
-                margin: '8px 0 0 0',
-              }}
-            >
-              To delete your account, please contact <a href="mailto:support@mycasevalue.com" style={{ color: '#7C3AED', textDecoration: 'none' }}>support@mycasevalue.com</a>.
+          )}
+          {planInfo?.expiresAt && (
+            <p style={{ fontSize: '13px', color: '#6B7280', margin: '0 0 16px 0' }}>
+              Renews {new Date(planInfo.expiresAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </p>
+          )}
+
+          <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+            <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#8B5CF6', color: '#FFFFFF', border: 'none', borderRadius: '8px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
+              {planInfo?.plan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
+            </Link>
+            <Link href="/billing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#FFFFFF', color: '#111111', border: '1px solid #E5E7EB', borderRadius: '8px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
+              Billing History
+            </Link>
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 24px 0' }}>
+            Quick Links
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+            {[
+              { label: 'Dashboard', href: '/dashboard', desc: 'View your overview' },
+              { label: 'Saved Reports', href: '/reports', desc: 'View past reports' },
+              { label: 'Search Cases', href: '/', desc: 'Start a new lookup' },
+              { label: 'Attorney Tools', href: '/attorney', desc: 'Professional suite' },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                style={{ display: 'block', padding: '16px', borderRadius: '8px', border: '1px solid #E5E7EB', textDecoration: 'none', transition: 'border-color 0.2s' }}
+              >
+                <div style={{ fontSize: '14px', fontWeight: 600, color: '#111111', marginBottom: '4px' }}>{link.label}</div>
+                <div style={{ fontSize: '12px', color: '#6B7280' }}>{link.desc}</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Sign Out & Danger Zone */}
+        <div style={{ display: 'flex', gap: '24px', flexDirection: 'column' as const }}>
+          <button
+            onClick={handleSignOut}
+            style={{ width: '100%', padding: '12px', backgroundColor: '#FFFFFF', color: '#111111', border: '1px solid #E5E7EB', borderRadius: '8px', fontSize: '14px', fontWeight: 600, cursor: 'pointer' }}
+          >
+            Sign Out
+          </button>
+
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px solid #EF4444' }}>
+            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#EF4444', margin: '0 0 16px 0' }}>
+              Danger Zone
+            </h2>
+            <p style={{ fontSize: '13px', color: '#6B7280', margin: '0 0 16px 0', lineHeight: 1.5 }}>
+              Permanently delete your account and all associated data. This action cannot be undone.
+            </p>
+            <p style={{ fontSize: '12px', color: '#6B7280', margin: 0 }}>
+              To delete your account, contact{' '}
+              <a href="mailto:support@mycasevalues.com" style={{ color: '#8B5CF6', textDecoration: 'none' }}>support@mycasevalues.com</a>.
             </p>
           </div>
         </div>

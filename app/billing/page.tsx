@@ -1,74 +1,175 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useState, useEffect } from 'react';
+import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Billing | MyCaseValue',
-  description: 'Manage your billing information and view invoices.',
-  robots: { index: false, follow: false },
+function getSupabase() {
+  return createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+}
+
+type PlanInfo = {
+  plan: string;
+  grantedAt: string | null;
+  expiresAt: string | null;
+};
+
+const PLAN_DETAILS: Record<string, { name: string; price: string; features: string[] }> = {
+  free: {
+    name: 'Free',
+    price: '$0',
+    features: ['Basic win rates', 'Basic settlement data', 'Basic duration data', '3 lookups per day'],
+  },
+  single_report: {
+    name: 'Single Report',
+    price: '$5.99',
+    features: ['Full settlement range', 'Confidence intervals', 'PDF export', 'District judge overview'],
+  },
+  unlimited: {
+    name: 'Unlimited',
+    price: '$9.99',
+    features: ['Unlimited lookups', 'Trend data', 'Case comparison', 'Saved reports', 'Search history', 'Spanish language'],
+  },
+  attorney: {
+    name: 'Attorney Mode',
+    price: '$29.99/mo',
+    features: ['Judge intelligence', 'Document intelligence', 'AI outcome predictor', 'Venue optimizer', 'PACER monitoring', 'API access', 'Team workspace'],
+  },
 };
 
 export default function BillingPage() {
+  const [planInfo, setPlanInfo] = useState<PlanInfo | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function load() {
+      const { data: { user } } = await getSupabase().auth.getUser();
+      if (user?.email) {
+        try {
+          const res = await fetch(`/api/premium/status?email=${encodeURIComponent(user.email)}`);
+          if (res.ok) {
+            const data = await res.json();
+            setPlanInfo({ plan: data.plan || 'free', grantedAt: data.grantedAt, expiresAt: data.expiresAt });
+          }
+        } catch {
+          setPlanInfo({ plan: 'free', grantedAt: null, expiresAt: null });
+        }
+      }
+      setLoading(false);
+    }
+    load();
+  }, []);
+
+  if (loading) {
+    return (
+      <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+        <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
+  }
+
+  const currentPlan = planInfo?.plan || 'free';
+  const details = PLAN_DETAILS[currentPlan] || PLAN_DETAILS.free;
+
   return (
-    <div style={{ minHeight: '60vh', background: 'var(--bg-base)', padding: '64px 24px' }}>
-      <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-        <div
-          style={{
-            width: '64px',
-            height: '64px',
-            borderRadius: '16px',
-            background: 'var(--accent-primary-subtle)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: '0 auto 24px',
-          }}
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
-            <line x1="1" y1="10" x2="23" y2="10" />
-          </svg>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', padding: '40px 20px' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        {/* Header */}
+        <div style={{ marginBottom: '32px' }}>
+          <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 700, color: '#111111', margin: '0 0 8px 0' }}>
+            Billing
+          </h1>
+          <p style={{ fontSize: '14px', color: '#6B7280', margin: 0 }}>
+            Manage your subscription and billing information
+          </p>
         </div>
-        <h1
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: '28px',
-            fontWeight: 700,
-            color: '#111111',
-            margin: '0 0 12px 0',
-          }}
-        >
-          Billing — Coming Soon
-        </h1>
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '15px',
-            color: '#6B7280',
-            lineHeight: 1.6,
-            margin: '0 0 32px 0',
-          }}
-        >
-          Billing and payment features will be available soon.
-        </p>
-        <Link
-          href="/pricing"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '12px 24px',
-            background: '#111111',
-            color: '#FFFFFF',
-            borderRadius: '10px',
-            fontFamily: 'var(--font-body)',
-            fontSize: '14px',
-            fontWeight: 600,
-            textDecoration: 'none',
-          }}
-        >
-          View Plans
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-        </Link>
+
+        {/* Current Plan Card */}
+        <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
+            <div>
+              <p style={{ fontSize: '12px', fontWeight: 600, color: '#6B7280', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 8px 0' }}>
+                Current Plan
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <span className="font-display" style={{ fontSize: '24px', fontWeight: 700, color: '#111111' }}>
+                  {details.name}
+                </span>
+                <span style={{ padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: 700, backgroundColor: '#F3E8FF', color: '#8B5CF6' }}>
+                  Active
+                </span>
+              </div>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <span className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#111111' }}>
+                {details.price}
+              </span>
+              {currentPlan === 'attorney' && (
+                <p style={{ fontSize: '12px', color: '#6B7280', margin: '4px 0 0 0' }}>per month</p>
+              )}
+            </div>
+          </div>
+
+          {planInfo?.grantedAt && (
+            <p style={{ fontSize: '13px', color: '#6B7280', margin: '16px 0 0 0' }}>
+              Active since {new Date(planInfo.grantedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </p>
+          )}
+          {planInfo?.expiresAt && (
+            <p style={{ fontSize: '13px', color: '#6B7280', margin: '4px 0 0 0' }}>
+              Next billing date: {new Date(planInfo.expiresAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </p>
+          )}
+        </div>
+
+        {/* Plan Features */}
+        <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 20px 0' }}>
+            Your Plan Includes
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px' }}>
+            {details.features.map((feature) => (
+              <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 0' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5" style={{ flexShrink: 0 }}>
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span style={{ fontSize: '14px', color: '#111111' }}>{feature}</span>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #E5E7EB' }}>
+            <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#8B5CF6', color: '#FFFFFF', borderRadius: '8px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>
+              {currentPlan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
+            </Link>
+          </div>
+        </div>
+
+        {/* Payment Method (placeholder for future Stripe) */}
+        <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+          <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 16px 0' }}>
+            Payment Method
+          </h2>
+          <div style={{ backgroundColor: '#F9FAFB', borderRadius: '8px', padding: '24px', border: '1px dashed #E5E7EB', textAlign: 'center' }}>
+            <p style={{ fontSize: '14px', color: '#6B7280', margin: '0 0 4px 0' }}>
+              No payment method on file
+            </p>
+            <p style={{ fontSize: '12px', color: '#9CA3AF', margin: 0 }}>
+              All features are currently free during our beta period
+            </p>
+          </div>
+        </div>
+
+        {/* Back link */}
+        <div style={{ textAlign: 'center' }}>
+          <Link href="/account" style={{ fontSize: '14px', color: '#8B5CF6', textDecoration: 'none' }}>
+            Back to Account Settings
+          </Link>
+        </div>
       </div>
     </div>
   );
