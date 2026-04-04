@@ -315,7 +315,10 @@ export default async function DashboardPage() {
                 {[
                   { label: 'AI Case Predictor', href: '/attorney/case-predictor', desc: 'Predict outcomes', icon: '🧠' },
                   { label: 'Judge Intelligence', href: '/attorney/judge-intelligence', desc: 'Research judges', icon: '⚖️' },
-                  { label: 'Document Intelligence', href: '/attorney/document-intelligence', desc: 'Analyze documents', icon: '📄' },
+                  { label: 'Venue Optimizer', href: '/attorney/venue-optimizer', desc: 'Find best districts', icon: '🎯' },
+                  { label: 'Opposing Counsel', href: '/attorney/opposing-counsel', desc: 'Research counsel', icon: '🔍' },
+                  { label: 'Bulk Analysis', href: '/attorney/bulk-analysis', desc: 'Portfolio analysis', icon: '📊' },
+                  { label: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Case alerts', icon: '📡' },
                 ].map((tool) => (
                   <Link
                     key={tool.href}
