@@ -137,7 +137,7 @@ export default function SiteFooter() {
         <div style={{
           background: 'rgba(255,255,255,0.05)',
           border: '1px solid rgba(255,255,255,0.1)',
-          borderRadius: '8px',
+          borderRadius: '4px',
           padding: '32px 24px',
           marginBottom: '48px',
           display: 'flex',
@@ -159,7 +159,7 @@ export default function SiteFooter() {
             background: '#DC2626',
             color: '#FFFFFF',
             padding: '10px 24px',
-            borderRadius: '6px',
+            borderRadius: '4px',
             textDecoration: 'none',
             fontFamily: 'var(--font-body)',
             fontWeight: 500,

@@ -95,7 +95,7 @@ export default function BillingPage() {
 
           {/* Badge and Title */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
-            <span style={{ padding: '6px 14px', backgroundColor: '#E8171F', color: '#FFFFFF', borderRadius: '20px', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <span style={{ padding: '6px 14px', backgroundColor: '#E8171F', color: '#FFFFFF', borderRadius: '4px', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               BILLING
             </span>
           </div>

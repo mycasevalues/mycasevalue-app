@@ -189,19 +189,26 @@ export default function GlossaryPage() {
   const groupedTerms = groupTermsByLetter(glossaryTerms);
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       {/* Header */}
       <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
+          {/* Breadcrumb */}
+          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: '#FFFFFF' }}>
+            <a href="/" className="hover:opacity-80 transition-opacity">Home</a>
+            <span>/</span>
+            <span>Glossary</span>
+          </nav>
+
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: '#CC1019' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CC1019" strokeWidth="2.5"><path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z"/></svg>
+            style={{ background: '#E8171F', color: '#FFFFFF' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5"><path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z"/></svg>
             REFERENCE
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
             Legal & Data Glossary
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#999999' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#FFFFFF' }}>
             Plain-English definitions of federal court terms, data concepts, and legal statutes used throughout MyCaseValue.
           </p>
         </div>
@@ -218,7 +225,7 @@ export default function GlossaryPage() {
                 fontSize: '18px',
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
-                color: '#CC1019',
+                color: '#E8171F',
                 marginBottom: '16px',
                 paddingBottom: '8px',
                 borderBottom: `2px solid #D5D8DC`,
@@ -242,7 +249,7 @@ export default function GlossaryPage() {
                     <p style={{
                       fontSize: '14px',
                       lineHeight: 1.6,
-                      color: '#999999',
+                      color: '#455A64',
                       marginBottom: term.relatedLink ? '12px' : 0,
                     }}>
                       {term.definition}
@@ -260,7 +267,7 @@ export default function GlossaryPage() {
                           gap: '6px',
                           fontSize: '13px',
                           fontWeight: 600,
-                          color: '#CC1019',
+                          color: '#E8171F',
                           textDecoration: 'none',
                           transition: 'opacity 200ms ease',
                         }}>
@@ -287,10 +294,10 @@ export default function GlossaryPage() {
 
         {/* CTA */}
         <div className="text-center pt-8 border-t" style={{ borderColor: '#D5D8DC' }}>
-          <p className="text-sm mb-4" style={{ color: '#999999' }}>Have a term you think should be in this glossary?</p>
+          <p className="text-sm mb-4" style={{ color: '#455A64' }}>Have a term you think should be in this glossary?</p>
           <a href="mailto:support@mycasevalue.com"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529',  }}>
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
+            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529', borderRadius: '4px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Suggest a Term
           </a>

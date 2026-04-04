@@ -111,7 +111,7 @@ export default function QuickLookupForm() {
           color: '#FFFFFF',
           fontWeight: 600,
           fontSize: '15px',
-          borderRadius: '0px',
+          borderRadius: '4px',
           border: 'none',
           cursor: 'pointer',
           fontFamily: 'var(--font-body)',

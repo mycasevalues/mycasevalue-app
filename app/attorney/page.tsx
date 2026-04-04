@@ -161,7 +161,7 @@ const FeatureCard = ({
           style={{
             display: 'inline-block',
             padding: '6px 12px',
-            borderRadius: '0px',
+            borderRadius: '4px',
             fontSize: '12px',
             fontWeight: '600',
             textTransform: 'uppercase',
@@ -297,6 +297,9 @@ export default function AttorneyPage() {
           box-shadow: 0 8px 24px rgba(232, 23, 31, 0.24) !important;
           transform: translateY(-2px);
         }
+        .attorney-breadcrumb-link:hover {
+          color: #FFFFFF !important;
+        }
       `}} />
       {/* Header Section */}
       <section
@@ -307,7 +310,13 @@ export default function AttorneyPage() {
           textAlign: 'center',
         }}
       >
-        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'left', marginBottom: '16px' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'left', marginBottom: '24px' }}>
+          {/* Breadcrumb Navigation */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
+            <a href="/" className="attorney-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Home</a>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
+            <span style={{ color: '#FFFFFF' }}>Find an Attorney</span>
+          </div>
           <Link href="/dashboard" style={{ fontSize: '13px', color: '#FFFFFF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
             <BackIcon />
             Dashboard
@@ -330,7 +339,7 @@ export default function AttorneyPage() {
                 padding: '8px 16px',
                 backgroundColor: 'rgba(0,105,151,0.15)',
                 color: '#FFFFFF',
-                borderRadius: '0px',
+                borderRadius: '4px',
                 fontSize: '12px',
                 fontWeight: '700',
                 textTransform: 'uppercase',
@@ -343,10 +352,10 @@ export default function AttorneyPage() {
             </span>
           </div>
 
-          {/* Badge before Title */}
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#E8171F', width: 'fit-content' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0121 12.083V17a2 2 0 01-2 2H5a2 2 0 01-2-2v-4.917c0-.767.251-1.521.84-2.505L12 14z"/></svg>
-            ATTORNEY TOOLS
+          {/* Red Accent Badge */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#E8171F', width: 'fit-content' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            ATTORNEY MODE
           </div>
 
           {/* Title */}
@@ -491,7 +500,7 @@ export default function AttorneyPage() {
           </div>
 
           {/* Beta Banner */}
-          <div style={{ padding: '12px 20px', backgroundColor: 'rgba(0,105,151,0.08)', borderRadius: '0px', border: '1px solid #D5D8DC' }}>
+          <div style={{ padding: '12px 20px', backgroundColor: 'rgba(0,105,151,0.08)', borderRadius: '4px', border: '1px solid #D5D8DC' }}>
             <p style={{ margin: 0, fontSize: '14px', color: '#006997', fontWeight: 600 }}>
               Beta Access — All attorney features are currently free during our preview period.
             </p>
@@ -506,7 +515,7 @@ export default function AttorneyPage() {
               backgroundColor: '#E8171F',
               color: '#FFFFFF',
               textDecoration: 'none',
-              borderRadius: '0px',
+              borderRadius: '4px',
               fontWeight: '700',
               fontSize: '16px',
               fontFamily: 'var(--font-display)',

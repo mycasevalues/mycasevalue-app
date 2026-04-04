@@ -42,7 +42,7 @@ export function ComparisonBar({
             contentStyle={{
               background: 'rgba(255,255,255,0.95)',
               border: '1px solid rgba(255,255,255,0.10)',
-              borderRadius: '10px',
+              borderRadius: '4px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',
@@ -60,7 +60,7 @@ export function ComparisonBar({
             dataKey="primary"
             name={primaryLabel}
             fill={primaryColor}
-            radius={[6, 6, 0, 0]}
+            radius={[4, 4, 0, 0]}
             animationDuration={800}
           />
           {hasCompare && (
@@ -68,7 +68,7 @@ export function ComparisonBar({
               dataKey="compare"
               name={compareLabel || ''}
               fill={compareColor}
-              radius={[6, 6, 0, 0]}
+              radius={[4, 4, 0, 0]}
               animationDuration={800}
             />
           )}

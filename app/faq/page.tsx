@@ -409,24 +409,31 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E',  }}>
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
+          {/* Breadcrumb */}
+          <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: '#FFFFFF' }}>
+            <a href="/" className="hover:opacity-80 transition-opacity">Home</a>
+            <span>/</span>
+            <span>FAQ</span>
+          </nav>
+
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: '#E8171F' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: '#E8171F', color: '#FFFFFF' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             FAQ
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
             Frequently Asked Questions
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#999999' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#FFFFFF' }}>
             Get answers to common questions about MyCaseValue, federal court data, and how to use outcome statistics.
           </p>
         </div>
@@ -444,10 +451,11 @@ export default function FAQPage() {
                 {section.questions.map((faq, qIdx) => (
                   <details
                     key={qIdx}
-                    className="group p-5 rounded-xl border transition-colors cursor-pointer"
+                    className="group p-5 border transition-colors cursor-pointer"
                     style={{
                       borderColor: '#D5D8DC',
                       background: '#FFFFFF',
+                      borderRadius: '4px',
                     }}
                   >
                     <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#212529' }}>
@@ -468,7 +476,7 @@ export default function FAQPage() {
                       </svg>
                     </summary>
                     <div className="pt-4 mt-4 border-t" style={{ borderColor: '#D5D8DC' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: '#999999' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -480,16 +488,16 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
+        <div className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Still have questions?
           </h2>
-          <p className="mb-6" style={{ color: '#999999' }}>
+          <p className="mb-6" style={{ color: '#455A64' }}>
             Get in touch with our support team.
           </p>
           <a href="mailto:support@mycasevalue.com"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529' }}>
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
+            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529', borderRadius: '4px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

@@ -44,45 +44,46 @@ export default function DisclaimerPage() {
       <div
         style={{
           backgroundColor: '#00172E',
-          borderBottom: '1px solid #D5D8DC',
-          paddingTop: '3rem',
-          paddingBottom: '3rem',
+          padding: '64px 24px',
         }}
       >
-        <div style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-            <h1 style={{
-              fontSize: '2.25rem',
-              fontFamily: 'var(--font-display)',
-              fontWeight: '700',
-              color: '#FFFFFF',
-              margin: 0,
-              letterSpacing: '-1.5px',
-            }}>
-              DISCLAIMER
-            </h1>
+        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <div style={{ marginBottom: 16 }}>
             <span style={{
+              display: 'inline-block',
+              padding: '6px 12px',
               backgroundColor: '#E8171F',
               color: '#FFFFFF',
-              fontSize: '0.75rem',
-              fontWeight: '600',
-              paddingTop: '0.25rem',
-              paddingBottom: '0.25rem',
-              paddingLeft: '0.75rem',
-              paddingRight: '0.75rem',
+              fontSize: '11px',
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
               borderRadius: '4px',
-              display: 'inline-block',
+              fontFamily: 'var(--font-display)',
             }}>
               LEGAL
             </span>
           </div>
-          <p style={{
-            fontSize: '1rem',
-            lineHeight: '1.5',
-            color: '#D5D8DC',
-            margin: 0,
-            fontFamily: 'var(--font-body)',
-          }}>
+          <h1
+            style={{
+              fontSize: 'clamp(28px, 4vw, 40px)',
+              fontWeight: 800,
+              color: '#FFFFFF',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-1px',
+              marginBottom: 12,
+            }}
+          >
+            Disclaimer
+          </h1>
+          <p
+            style={{
+              fontSize: 16,
+              color: 'rgba(255,255,255,0.7)',
+              fontFamily: 'var(--font-body)',
+              lineHeight: 1.7,
+            }}
+          >
             Please read this disclaimer carefully. By using MyCaseValue, you agree to the terms outlined below.
           </p>
         </div>
@@ -90,7 +91,7 @@ export default function DisclaimerPage() {
 
       {/* Breadcrumb */}
       <div style={{ borderBottom: '1px solid #D5D8DC', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#EDEEEE' }}>
-        <div style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
             <a href="/" data-link-type="teal" style={{ color: '#006997' }}>
               Home
@@ -102,7 +103,7 @@ export default function DisclaimerPage() {
       </div>
 
       {/* Content */}
-      <div style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '1.5rem', paddingRight: '1.5rem', paddingTop: '3rem', paddingBottom: '3rem' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '64px', paddingBottom: '64px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           {/* Not Legal Advice */}
           <section>
@@ -359,7 +360,7 @@ export default function DisclaimerPage() {
 
           {/* Acknowledgment */}
           <section style={{
-            padding: '2rem',
+            padding: '32px',
             borderRadius: '4px',
             border: '1px solid #D5D8DC',
             backgroundColor: '#FFFFFF',

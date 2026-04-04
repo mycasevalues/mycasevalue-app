@@ -51,7 +51,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
         style={{
           background: '#FFFFFF',
           border: '1px solid rgba(255,255,255,0.10)',
-          borderRadius: '8px',
+          borderRadius: '4px',
           padding: '12px 16px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}

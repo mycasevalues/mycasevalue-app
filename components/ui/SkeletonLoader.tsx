@@ -11,7 +11,7 @@ interface SkeletonProps {
   lines?: number;
 }
 
-function SkeletonPulse({ width = '100%', height = '16px', borderRadius = '8px', className = '' }: {
+function SkeletonPulse({ width = '100%', height = '16px', borderRadius = '4px', className = '' }: {
   width?: string; height?: string; borderRadius?: string; className?: string;
 }) {
   return (
@@ -37,7 +37,7 @@ export function SkeletonText({ lines = 3, className = '' }: { lines?: number; cl
           key={i}
           width={i === lines - 1 ? '60%' : '100%'}
           height="14px"
-          borderRadius="6px"
+          borderRadius="4px"
         />
       ))}
     </div>
@@ -50,7 +50,7 @@ export function SkeletonChart({ height = '200px', className = '' }: { height?: s
       <div style={{
         position: 'absolute', inset: 0,
         background: 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, #FFFFFF 100%)',
-        borderRadius: '12px',
+        borderRadius: '4px',
       }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', height: '100%', padding: '20px', gap: '8px' }}>
           {[40, 65, 50, 80, 55, 70, 45, 75, 60, 85, 50, 65].map((h, i) => (
@@ -73,16 +73,16 @@ export function SkeletonCard({ className = '' }: { className?: string }) {
   return (
     <div className={className} style={{
       padding: '24px',
-      borderRadius: '16px',
+      borderRadius: '4px',
       background: '#FFFFFF',
       border: '1px solid rgba(255,255,255,0.10)',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-        <SkeletonPulse width="40px" height="40px" borderRadius="10px" />
+        <SkeletonPulse width="40px" height="40px" borderRadius="4px" />
         <div style={{ flex: 1 }}>
-          <SkeletonPulse width="60%" height="16px" borderRadius="6px" />
+          <SkeletonPulse width="60%" height="16px" borderRadius="4px" />
           <div style={{ height: '8px' }} />
-          <SkeletonPulse width="40%" height="12px" borderRadius="6px" />
+          <SkeletonPulse width="40%" height="12px" borderRadius="4px" />
         </div>
       </div>
       <SkeletonText lines={3} />
@@ -111,14 +111,14 @@ export function SkeletonStatRow({ count = 4, className = '' }: { count?: number;
       {Array.from({ length: count }).map((_, i) => (
         <div key={i} style={{
           padding: '16px',
-          borderRadius: '12px',
+          borderRadius: '4px',
           background: '#FFFFFF',
           border: '1px solid rgba(255,255,255,0.10)',
           textAlign: 'center',
         }}>
-          <SkeletonPulse width="50%" height="28px" borderRadius="8px" className="mx-auto" />
+          <SkeletonPulse width="50%" height="28px" borderRadius="4px" className="mx-auto" />
           <div style={{ height: '8px' }} />
-          <SkeletonPulse width="70%" height="12px" borderRadius="6px" className="mx-auto" />
+          <SkeletonPulse width="70%" height="12px" borderRadius="4px" className="mx-auto" />
         </div>
       ))}
     </div>
@@ -134,7 +134,7 @@ export default function SkeletonLoader({ variant = 'text', lines, width, height,
     case 'circular':
       return <SkeletonPulse width={width || '48px'} height={height || '48px'} borderRadius="50%" className={className} />;
     case 'rectangular':
-      return <SkeletonPulse width={width} height={height || '120px'} borderRadius={borderRadius || '12px'} className={className} />;
+      return <SkeletonPulse width={width} height={height || '120px'} borderRadius={borderRadius || '4px'} className={className} />;
     case 'text':
     default:
       return <SkeletonText lines={lines} className={className} />;

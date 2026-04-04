@@ -98,7 +98,7 @@ export default function UpgradeBanner() {
           {/* Right Side — Prediction Card Mockup */}
           <div>
             <div style={{
-              background: '#FFFFFF', borderRadius: '8px', padding: '32px',
+              background: '#FFFFFF', borderRadius: '4px', padding: '32px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
             }}>
               <div style={{ fontSize: '14px', fontWeight: 700, color: '#212529', marginBottom: '20px', fontFamily: 'var(--font-display)' }}>

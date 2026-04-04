@@ -127,6 +127,13 @@ export default function CasesIndexPage() {
           .cat-card:hover .cat-card-arrow {
             transform: translateX(4px);
           }
+          .clear-search-btn:hover {
+            background: #FAFBFC;
+            border-color: #B5B9BD;
+          }
+          .cta-link:hover {
+            background: #CC1019;
+          }
         `}} />
 
         {filtered.length === 0 ? (
@@ -136,27 +143,20 @@ export default function CasesIndexPage() {
             </p>
             <button
               onClick={() => setSearch('')}
+              className="clear-search-btn"
               style={{
                 marginTop: 16,
                 padding: '10px 24px',
                 fontSize: 14,
                 fontWeight: 600,
                 border: '1px solid #D5D8DC',
-                borderRadius: 0,
+                borderRadius: 4,
                 background: '#FFFFFF',
                 color: '#212529',
                 fontFamily: 'var(--font-body)',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
                 textTransform: 'uppercase',
-              }}
-              onMouseEnter={(e) => {
-                (e.target as HTMLButtonElement).style.background = '#FAFBFC';
-                (e.target as HTMLButtonElement).style.borderColor = '#B5B9BD';
-              }}
-              onMouseLeave={(e) => {
-                (e.target as HTMLButtonElement).style.background = '#FFFFFF';
-                (e.target as HTMLButtonElement).style.borderColor = '#D5D8DC';
               }}
             >
               Clear search
@@ -191,11 +191,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: '#999999', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" style={{ display: 'inline-block', background: '#E8171F', color: '#FFFFFF', padding: '14px 36px', borderRadius: 0, fontWeight: 600, fontSize: 16, textDecoration: 'none', transition: 'all 0.2s', textTransform: 'uppercase' }} onMouseEnter={(e) => {
-            (e.target as HTMLAnchorElement).style.background = '#CC1019';
-          }} onMouseLeave={(e) => {
-            (e.target as HTMLAnchorElement).style.background = '#E8171F';
-          }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-block', background: '#E8171F', color: '#FFFFFF', padding: '14px 36px', borderRadius: 4, fontWeight: 600, fontSize: 16, textDecoration: 'none', transition: 'all 0.2s', textTransform: 'uppercase' }}>
             Start Researching →
           </a>
         </div>

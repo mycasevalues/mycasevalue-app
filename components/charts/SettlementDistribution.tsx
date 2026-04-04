@@ -34,7 +34,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
             contentStyle={{
               background: 'rgba(255,255,255,0.95)',
               border: '1px solid rgba(255,255,255,0.10)',
-              borderRadius: '10px',
+              borderRadius: '4px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',

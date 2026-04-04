@@ -71,7 +71,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               contentStyle={{
                 backgroundColor: 'white',
                 border: '1px solid rgba(255,255,255,0.10)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               }}
               cursor={{ stroke: 'rgba(255,255,255,0.10)' }}
@@ -130,7 +130,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               contentStyle={{
                 backgroundColor: 'white',
                 border: '1px solid rgba(255,255,255,0.10)',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               }}
               cursor={{ fill: 'rgba(139, 92, 246, 0.05)' }}

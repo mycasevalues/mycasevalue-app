@@ -220,7 +220,7 @@ function PricingCard({
             top: '-13px',
             left: '50%',
             transform: 'translateX(-50%)',
-            borderRadius: '0px',
+            borderRadius: '4px',
             padding: '4px 16px',
             background: '#E8171F',
             color: '#FFFFFF',
@@ -502,7 +502,6 @@ export default function PricingPage() {
       {/* Header */}
       <div
         style={{
-          borderBottom: '1px solid #D5D8DC',
           background: '#00172E',
         }}
       >
@@ -524,7 +523,7 @@ export default function PricingPage() {
               alignItems: 'center',
               gap: '8px',
               padding: '6px 14px',
-              background: 'rgba(255,255,255,0.1)',
+              background: 'rgba(232, 23, 31, 0.1)',
               borderRadius: '4px',
               marginBottom: '16px',
             }}
@@ -539,7 +538,7 @@ export default function PricingPage() {
                 fontFamily: 'var(--font-body)',
               }}
             >
-              Pricing Plans
+              PRICING
             </span>
           </div>
 
@@ -569,6 +568,35 @@ export default function PricingPage() {
           >
             Start free. Buy one report. Or go unlimited.
           </p>
+        </div>
+      </div>
+
+      {/* Breadcrumb Navigation */}
+      <div style={{ borderBottom: '1px solid #D5D8DC', background: '#FFFFFF' }}>
+        <div
+          style={{
+            maxWidth: '1440px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            paddingTop: '12px',
+            paddingBottom: '12px',
+          }}
+        >
+          <nav
+            style={{
+              fontSize: '14px',
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+            }}
+          >
+            <Link href="/" style={{ color: '#455A64', textDecoration: 'none' }}>
+              Home
+            </Link>
+            <span style={{ margin: '0 8px', color: '#D5D8DC' }}>›</span>
+            <span>Pricing</span>
+          </nav>
         </div>
       </div>
 
@@ -610,7 +638,7 @@ export default function PricingPage() {
               position: 'relative',
               width: '56px',
               height: '32px',
-              borderRadius: '16px',
+              borderRadius: '4px',
               border: 'none',
               background: annual ? '#E8171F' : '#D5D8DC',
               cursor: 'pointer',
@@ -649,7 +677,7 @@ export default function PricingPage() {
                 style={{
                   display: 'inline-block',
                   padding: '2px 8px',
-                  borderRadius: '0px',
+                  borderRadius: '4px',
                   background: '#FFF3F4',
                   color: '#E8171F',
                   fontSize: '11px',
@@ -673,7 +701,7 @@ export default function PricingPage() {
               padding: '12px 16px',
               backgroundColor: '#FFF3F4',
               border: '1px solid #E8171F',
-              borderRadius: '0px',
+              borderRadius: '4px',
               textAlign: 'center',
             }}
           >

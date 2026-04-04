@@ -103,25 +103,30 @@ const trustStats = [
 export default function HowItWorksPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .hover\\:shadow-md:hover {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+      `}} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
+      <div style={{ background: '#00172E' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(232, 23, 31, 0.1)', color: '#E8171F' }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+            style={{ background: 'rgba(232, 23, 31, 0.1)', color: '#E8171F', borderRadius: '4px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
               <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
               <polyline points="12 12 20 7.5"></polyline>
               <polyline points="12 12 12 21"></polyline>
               <polyline points="12 12 4 7.5"></polyline>
             </svg>
-            PROCESS
+            HOW IT WORKS
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
+          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)' }}>
             How It Works
           </h1>
           <p className="text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -130,17 +135,30 @@ export default function HowItWorksPage() {
         </div>
       </div>
 
+      {/* Breadcrumb Navigation */}
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#FFFFFF' }}>
+        <div className="max-w-5xl mx-auto px-6 py-3">
+          <nav style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <a href="/" style={{ color: '#455A64', textDecoration: 'none' }}>
+              Home
+            </a>
+            <span style={{ margin: '0 8px', color: '#D5D8DC' }}>›</span>
+            <span>How It Works</span>
+          </nav>
+        </div>
+      </div>
+
       {/* Steps Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <div className="relative">
           {/* Desktop vertical line connecting steps */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-24 bottom-0 w-1 bg-gradient-to-b from-transparent via-blue-500/30 to-transparent" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-24 bottom-0 w-1 bg-gradient-to-b from-transparent via-gray-300/30 to-transparent" style={{ background: 'linear-gradient(to bottom, transparent, rgba(213, 216, 220, 0.3), transparent)' }} />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
                 {/* Card */}
-                <div className="border h-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 animate-in fade-in slide-in-from-bottom-4"
+                <div className="border h-full transition-all duration-300 hover:shadow-md animate-in fade-in slide-in-from-bottom-4"
                   style={{
                     borderColor: '#D5D8DC',
                     background: '#FFFFFF',
@@ -159,6 +177,7 @@ export default function HowItWorksPage() {
                       background: '#E8171F',
                       color: '#FFFFFF',
                       fontSize: '18px',
+                      fontFamily: 'var(--font-display)',
                     }}>
                     {step.number}
                   </div>
@@ -169,7 +188,7 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h2 className="font-display font-bold mb-3" style={{ color: '#212529', fontSize: '20px', fontWeight: '700' }}>
+                  <h2 className="font-display font-bold mb-3" style={{ color: '#212529', fontSize: '20px', fontWeight: '700', fontFamily: 'var(--font-display)' }}>
                     {step.title}
                   </h2>
                   <p className="leading-relaxed" style={{ color: '#455A64', fontSize: '15px', fontWeight: '300', lineHeight: '1.7' }}>
@@ -181,14 +200,14 @@ export default function HowItWorksPage() {
           </div>
 
           {/* Mobile connecting line (vertical) */}
-          <div className="md:hidden absolute left-7 top-32 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/30 to-transparent" />
+          <div className="md:hidden absolute left-7 top-32 bottom-0 w-0.5" style={{ background: 'linear-gradient(to bottom, rgba(213, 216, 220, 0.3), transparent)' }} />
         </div>
       </div>
 
       {/* What's in Your Report Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-3 text-center" style={{ color: '#212529' }}>
+          <h2 className="text-2xl font-display font-bold mb-3 text-center" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             What's in Your Report?
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: '#455A64' }}>
@@ -251,7 +270,7 @@ export default function HowItWorksPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
               <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
-                <div className="text-2xl font-display font-extrabold" style={{ color: '#212529' }}>
+                <div className="text-2xl font-display font-extrabold" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
                   {stat.value}
                 </div>
                 <div className="text-[11px] font-semibold mt-2" style={{ color: '#999999' }}>
@@ -266,7 +285,7 @@ export default function HowItWorksPage() {
       {/* Data Sources Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: '#212529' }}>
+          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Verified Public Sources
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: '#999999' }}>
@@ -304,7 +323,7 @@ export default function HowItWorksPage() {
       {/* Why Choose Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: '#212529' }}>
+          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Why MyCaseValue Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -356,7 +375,7 @@ export default function HowItWorksPage() {
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section className="text-center p-12 rounded border" style={{ borderColor: '#D5D8DC', background: '#FFF3F4', borderRadius: '4px' }}>
-          <h2 className="text-3xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+          <h2 className="text-3xl font-display font-bold mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Ready to see your case data?
           </h2>
           <p className="mb-8 max-w-2xl mx-auto text-lg" style={{ color: '#455A64' }}>
@@ -364,7 +383,7 @@ export default function HowItWorksPage() {
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 rounded text-base font-semibold transition-all hover:shadow-lg"
-            style={{ background: '#E8171F', color: '#FFFFFF' }}>
+            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
             Start Free Research
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

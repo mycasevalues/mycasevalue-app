@@ -210,7 +210,7 @@ const TabbedFeatures: React.FC = () => {
                 width: '100%',
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '8px',
+                borderRadius: '4px',
                 padding: '40px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
                 animation: 'fadeIn 0.3s ease-in',
@@ -333,7 +333,7 @@ const SettlementPreview: React.FC = () => (
             padding: '16px',
             backgroundColor: item.label === 'Median' ? '#F0F0F0' : '#FFFFFF',
             border: item.label === 'Median' ? '2px solid #E8171F' : '1px solid #D5D8DC',
-            borderRadius: '6px',
+            borderRadius: '4px',
             textAlign: 'center',
           }}
         >
@@ -414,7 +414,7 @@ const TimelinePreview: React.FC = () => (
             style={{
               height: '6px',
               backgroundColor: '#EDEEEE',
-              borderRadius: '3px',
+              borderRadius: '4px',
               overflow: 'hidden',
             }}
           >
@@ -423,7 +423,7 @@ const TimelinePreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: '#455A64',
                 width: `${(item.months / 30) * 100}%`,
-                borderRadius: '3px',
+                borderRadius: '4px',
               }}
             />
           </div>
@@ -541,7 +541,7 @@ const AIPredictionsPreview: React.FC = () => (
             style={{
               height: '6px',
               backgroundColor: '#EDEEEE',
-              borderRadius: '3px',
+              borderRadius: '4px',
               overflow: 'hidden',
             }}
           >
@@ -550,7 +550,7 @@ const AIPredictionsPreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: item.prob > 50 ? '#E8171F' : item.prob > 25 ? '#455A64' : '#B0BEC5',
                 width: `${item.prob}%`,
-                borderRadius: '3px',
+                borderRadius: '4px',
               }}
             />
           </div>

@@ -66,7 +66,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 contentStyle={{
                   background: '#FFFFFF',
                   border: '1px solid rgba(255,255,255,0.10)',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                 }}
               />
               <Bar dataKey="count" fill="#006997" radius={[0, 8, 8, 0]} />
@@ -112,7 +112,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 contentStyle={{
                   background: '#FFFFFF',
                   border: '1px solid rgba(255,255,255,0.10)',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                 }}
                 formatter={(value: number) => [value.toLocaleString(), 'Cases']}
               />

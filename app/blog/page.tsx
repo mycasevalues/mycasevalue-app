@@ -49,6 +49,9 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       <style>{`
+        .blog-breadcrumb-link:hover {
+          color: #FFFFFF !important;
+        }
         .blog-card {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
@@ -151,7 +154,13 @@ export default function BlogPage() {
       {/* Header */}
       <div style={{ background: '#00172E', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div className="max-w-6xl mx-auto">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#E8171F' }}>
+          {/* Breadcrumb Navigation */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
+            <a href="/" className="blog-breadcrumb-link" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s ease' }}>Home</a>
+            <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
+            <span style={{ color: '#FFFFFF' }}>Blog</span>
+          </div>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#E8171F' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             BLOG
           </div>
