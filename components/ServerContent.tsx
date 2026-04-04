@@ -9,6 +9,7 @@ import NewsletterSignup from './ui/NewsletterSignup';
 import UpgradeBanner from './UpgradeBanner';
 import FaqAccordion from './FaqAccordion';
 import AnimatedCounter from './AnimatedCounter';
+import TestimonialCarousel from './TestimonialCarousel';
 
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
@@ -229,154 +230,8 @@ export default function ServerContent() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ─────────────────────────────────── */}
-      <section
-        id="testimonials"
-        data-section
-        style={{
-          background: '#EDEEEE',
-          borderTop: '1px solid #D5D8DC',
-          padding: '80px 24px',
-        }}
-      >
-        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
-              Testimonials
-            </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
-              What people are saying
-            </h2>
-            <p style={{ fontSize: '19px', color: '#212529', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
-              From plaintiffs and attorneys using MyCaseValue to research federal court outcomes.
-            </p>
-          </div>
-
-          <div
-            style={{
-              display: 'flex',
-              overflowX: 'auto',
-              gap: '16px',
-              paddingLeft: '24px',
-              scrollBehavior: 'smooth',
-              WebkitOverflowScrolling: 'touch',
-            }}
-          >
-            {[
-              {
-                quote: 'I had no idea what my wrongful termination case was worth before finding this. The data gave me the confidence to negotiate instead of just accepting the first offer.',
-                name: 'Sarah M.',
-                role: 'Plaintiff, Employment Discrimination Case',
-                district: 'S.D.N.Y.',
-              },
-              {
-                quote: 'As a solo practitioner, I use MyCaseValue to quickly benchmark settlement ranges for clients. It\u2019s the first tool I\u2019ve found that\u2019s actually designed for smaller firms.',
-                name: 'James T.',
-                role: 'Personal Injury Attorney',
-                district: 'N.D. California',
-              },
-              {
-                quote: 'The judge analytics feature helped me understand what to expect in my district. The data was consistent with what my attorney told me, which built my confidence in the process.',
-                name: 'Maria R.',
-                role: 'Plaintiff, Civil Rights Case',
-                district: 'S.D. Florida',
-              },
-              {
-                quote: 'Before MyCaseValue, I was going into my ADA case completely blind. The data showed me that 38% of similar cases in my district settle between $25K and $85K. That gave me real leverage.',
-                name: 'David K.',
-                role: 'Plaintiff, ADA Discrimination Case',
-                district: 'E.D. Pennsylvania',
-              },
-              {
-                quote: 'I use MyCaseValue+ to prepare for every initial client consultation. Having real outcome data from their specific district makes me look prepared and builds trust immediately.',
-                name: 'Patricia L.',
-                role: 'Family Law Attorney',
-                district: 'M.D. Florida',
-              },
-              {
-                quote: 'The district comparison feature was eye-opening. We were able to show the insurance company that plaintiffs in our district consistently receive higher awards, which moved negotiations forward.',
-                name: 'Robert M.',
-                role: 'Personal Injury Attorney',
-                district: 'N.D. Illinois',
-              },
-            ].map((t, i) => (
-              <div
-                key={i}
-                className="testimonial-card"
-                style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
-                  padding: '24px',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                  minWidth: '380px',
-                  flexShrink: 0,
-                  position: 'relative',
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: '48px',
-                    color: '#E8171F',
-                    margin: '0 0 8px 0',
-                    lineHeight: 1,
-                    fontWeight: 700,
-                  }}
-                >
-                  &ldquo;
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '15px',
-                    color: '#212529',
-                    lineHeight: 1.6,
-                    fontStyle: 'italic',
-                    margin: '0 0 16px 0',
-                    fontWeight: 300,
-                  }}
-                >
-                  {t.quote}
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    color: '#212529',
-                    margin: '0 0 4px 0',
-                  }}
-                >
-                  {t.name}
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '13px',
-                    color: '#455A64',
-                    margin: 0,
-                  }}
-                >
-                  {t.role} · {t.district}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '12px',
-              color: '#455A64',
-              textAlign: 'center',
-              marginTop: '16px',
-              fontStyle: 'italic',
-            }}
-          >
-            Testimonials are illustrative examples of typical user experiences. Individual results vary.
-          </p>
-        </div>
-      </section>
+      {/* ── TESTIMONIALS WITH CAROUSEL ─────────────────────────────────── */}
+      <TestimonialCarousel />
 
       {/* ── WHO IS MYCASEVALUE FOR? ────────────────────────────── */}
       <section id="who" data-section style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
