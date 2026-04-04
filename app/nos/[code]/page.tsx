@@ -88,7 +88,7 @@ export default async function NOSPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
           <p className="mb-6" style={{ color: '#6B7280' }}>NOS code {code} does not exist in our database.</p>
           <Link href="/" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: '#8B5CF6' }}>
+            style={{ background: '#E8171F' }}>
             Return to Home
           </Link>
         </div>
@@ -176,7 +176,7 @@ export default async function NOSPage({ params }: PageProps) {
       {/* Navigation */}
       <nav className="border-b px-4 sm:px-6 lg:px-8 py-4" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
         <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-[14px] font-semibold transition hover:opacity-80" style={{ color: '#8B5CF6' }}>
+          <Link href="/" className="text-[14px] font-semibold transition hover:opacity-80" style={{ color: '#E8171F' }}>
             ← MyCaseValue
           </Link>
           <div className="flex items-center gap-3">
@@ -191,7 +191,7 @@ export default async function NOSPage({ params }: PageProps) {
       <header className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="max-w-5xl mx-auto">
           <div className="flex items-center gap-2 mb-4">
-            <span className="px-3 py-1 rounded-full text-[11px] font-bold" style={{ background: 'rgba(17,17,17,0.12)', color: '#8B5CF6', border: '1px solid rgba(17,17,17,0.2)' }}>
+            <span className="px-3 py-1 rounded-full text-[11px] font-bold" style={{ background: 'rgba(17,17,17,0.12)', color: '#E8171F', border: '1px solid rgba(17,17,17,0.2)' }}>
               NOS {code}
             </span>
             <span className="px-3 py-1 rounded-full text-[11px] font-bold" style={{ background: 'rgba(13,148,136,0.12)', color: '#0D9488', border: '1px solid rgba(13,148,136,0.2)' }}>
@@ -213,7 +213,7 @@ export default async function NOSPage({ params }: PageProps) {
           {[
             { label: 'Win + Settle Rate', value: `${winRate}%`, color: '#0D9488', icon: '' },
             { label: 'Median Duration', value: `${medianDuration}mo`, color: '#111111', icon: '' },
-            { label: 'Settlement Rate', value: `${settleRate}%`, color: '#8B5CF6', icon: '' },
+            { label: 'Settlement Rate', value: `${settleRate}%`, color: '#E8171F', icon: '' },
             { label: 'Outcomes Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#0D9488', icon: '' },
           ].map((stat, i) => (
             <div key={i} className="rounded-xl p-5 text-center" style={{
@@ -310,7 +310,7 @@ export default async function NOSPage({ params }: PageProps) {
           Use our interactive research tool to explore detailed outcomes, recovery ranges, and timeline data for {nosInfo.label} cases.
         </p>
         <Link href="/" className="inline-block px-10 py-4 rounded-xl font-semibold text-lg text-white transition hover:scale-[1.02]"
-          style={{ background: '#8B5CF6', boxShadow: '0 4px 12px rgba(139, 92, 246, 0.25)' }}>
+          style={{ background: '#E8171F', boxShadow: '0 4px 12px rgba(139, 92, 246, 0.25)' }}>
           Start Your Research — Free
         </Link>
       </section>

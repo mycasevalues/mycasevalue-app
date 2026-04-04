@@ -117,7 +117,7 @@ export default async function JudgePage({ params }: PageProps) {
               height="32"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#8B5CF6"
+              stroke="#E8171F"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -157,7 +157,7 @@ export default async function JudgePage({ params }: PageProps) {
               gap: '8px',
               padding: '12px 28px',
               borderRadius: '8px',
-              background: '#8B5CF6',
+              background: '#E8171F',
               color: 'var(--bg-base)',
               fontSize: '16px',
               fontWeight: '600',
@@ -296,7 +296,7 @@ export default async function JudgePage({ params }: PageProps) {
                 fontWeight: '700',
                 letterSpacing: '0.5px',
                 background: 'var(--accent-primary-subtle)',
-                color: '#8B5CF6',
+                color: '#E8171F',
               }}
             >
               {judge.district}
@@ -482,7 +482,7 @@ export default async function JudgePage({ params }: PageProps) {
                   style={{
                     fontSize: '16px',
                     fontWeight: '600',
-                    color: '#8B5CF6',
+                    color: '#E8171F',
                   }}
                 >
                   Yes
@@ -565,7 +565,7 @@ export default async function JudgePage({ params }: PageProps) {
                     width: '20px',
                     height: '20px',
                     borderRadius: '4px',
-                    background: '#8B5CF6',
+                    background: '#E8171F',
                     color: 'var(--bg-base)',
                     fontWeight: '700',
                     fontSize: '12px',
@@ -585,7 +585,7 @@ export default async function JudgePage({ params }: PageProps) {
             padding: '16px 20px',
             borderRadius: '8px',
             background: 'var(--accent-primary-subtle)',
-            border: '1px solid #8B5CF6',
+            border: '1px solid #E8171F',
             marginBottom: '48px',
           }}
         >

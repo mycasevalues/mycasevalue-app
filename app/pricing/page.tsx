@@ -327,8 +327,8 @@ function PricingCard({
               width: '100%',
               padding: '12px 16px',
               fontSize: '15px',
-              fontWeight: 600,
-              borderRadius: '0px',
+              fontWeight: 700,
+              borderRadius: '4px',
               border: f ? 'none' : '1px solid #D5D8DC',
               background: f ? '#E8171F' : '#FFFFFF',
               color: f ? '#FFFFFF' : '#212529',
@@ -352,8 +352,8 @@ function PricingCard({
               width: '100%',
               padding: '12px 16px',
               fontSize: '15px',
-              fontWeight: 600,
-              borderRadius: '0px',
+              fontWeight: 700,
+              borderRadius: '4px',
               border: f ? 'none' : '1px solid #D5D8DC',
               background: f ? '#E8171F' : '#FFFFFF',
               color: f ? '#FFFFFF' : '#212529',
@@ -551,7 +551,7 @@ export default function PricingPage() {
               marginLeft: 'auto',
               marginRight: 'auto',
               marginBottom: '32px',
-              color: '#FFFFFF',
+              color: 'rgba(255,255,255,0.7)',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -758,7 +758,7 @@ export default function PricingPage() {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#212529"
+                  stroke="#E8171F"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"

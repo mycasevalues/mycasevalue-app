@@ -960,7 +960,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 700,
                     fontFamily: 'var(--font-mono)',
-                    color: '#8B5CF6',
+                    color: '#E8171F',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -1207,7 +1207,7 @@ export default function SampleReportPage() {
                 href="/cases?category=work"
                 style={{
                   display: 'inline-block',
-                  backgroundColor: '#8B5CF6',
+                  backgroundColor: '#E8171F',
                   color: '#fff',
                   padding: '16px 32px',
                   borderRadius: '8px',

@@ -77,7 +77,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <Link
             href="/districts"
             className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: '#8B5CF6' }}
+            style={{ background: '#E8171F' }}
           >
             View All Districts
           </Link>
@@ -160,7 +160,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <Link
             href="/"
             className="font-semibold transition hover:opacity-80"
-            style={{ color: '#8B5CF6' }}
+            style={{ color: '#E8171F' }}
           >
             Home
           </Link>
@@ -168,7 +168,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <Link
             href="/districts"
             className="font-semibold transition hover:opacity-80"
-            style={{ color: '#8B5CF6' }}
+            style={{ color: '#E8171F' }}
           >
             Districts
           </Link>
@@ -185,7 +185,7 @@ export default async function DistrictPage({ params }: PageProps) {
               className="px-3 py-1 rounded-full text-xs font-bold"
               style={{
                 background: 'rgba(17,17,17,0.12)',
-                color: '#8B5CF6',
+                color: '#E8171F',
                 border: '1px solid rgba(17,17,17,0.2)',
               }}
             >
@@ -235,7 +235,7 @@ export default async function DistrictPage({ params }: PageProps) {
             {
               label: 'Top Case Type',
               value: districtStats.topCaseType.split(' ')[0],
-              color: '#8B5CF6',
+              color: '#E8171F',
             },
             {
               label: 'Plaintiff Win Rate',
@@ -245,7 +245,7 @@ export default async function DistrictPage({ params }: PageProps) {
             {
               label: 'Median Duration',
               value: `${districtStats.medianDuration} mo`,
-              color: '#8B5CF6',
+              color: '#E8171F',
             },
           ].map((stat, i) => (
             <div
@@ -341,7 +341,7 @@ export default async function DistrictPage({ params }: PageProps) {
                             style={{
                               fontSize: '13px',
                               fontWeight: 700,
-                              color: '#8B5CF6',
+                              color: '#E8171F',
                               fontFamily: "'PT Mono', monospace",
                             }}
                           >
@@ -360,7 +360,7 @@ export default async function DistrictPage({ params }: PageProps) {
                             style={{
                               height: '100%',
                               width: `${type.rate}%`,
-                              background: '#8B5CF6',
+                              background: '#E8171F',
                               borderRadius: '4px',
                             }}
                           />
@@ -399,7 +399,7 @@ export default async function DistrictPage({ params }: PageProps) {
                       style={{
                         fontSize: '14px',
                         fontWeight: 700,
-                        color: '#8B5CF6',
+                        color: '#E8171F',
                         fontFamily: "'PT Mono', monospace",
                       }}
                     >
@@ -418,7 +418,7 @@ export default async function DistrictPage({ params }: PageProps) {
                       style={{
                         height: '100%',
                         width: `${caseType.winRate}%`,
-                        background: '#8B5CF6',
+                        background: '#E8171F',
                         borderRadius: '4px',
                       }}
                     />
@@ -448,7 +448,7 @@ export default async function DistrictPage({ params }: PageProps) {
             style={{
               background: '#FFFFFF',
               border: '1px solid var(--border-default)',
-              color: '#8B5CF6',
+              color: '#E8171F',
             }}
           >
             Compare to Other Districts
@@ -457,7 +457,7 @@ export default async function DistrictPage({ params }: PageProps) {
             href="/judges"
             className="rounded-[12px] p-6 sm:p-8 text-center font-semibold text-white transition hover:opacity-90"
             style={{
-              background: '#8B5CF6',
+              background: '#E8171F',
               color: 'white',
             }}
           >

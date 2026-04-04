@@ -59,7 +59,7 @@ export default function NOSIndexPage() {
       <header className="py-12 px-4 sm:px-6 lg:px-8" style={{ borderBottom: '1px solid var(--border-default)' }}>
         <Link
           href="/"
-          className="text-[#8B5CF6] hover:text-[#8B5CF6] transition text-sm mb-4 inline-block"
+          className="text-[#E8171F] hover:text-[#E8171F] transition text-sm mb-4 inline-block"
         >
           ← Back to Home
         </Link>
@@ -91,12 +91,12 @@ export default function NOSIndexPage() {
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
-                      <h3 className="font-semibold text-lg group-hover:text-[#8B5CF6] transition">
+                      <h3 className="font-semibold text-lg group-hover:text-[#E8171F] transition">
                         {item.label}
                       </h3>
                       <p className="text-sm" style={{ color: '#6B7280' }}>NOS Code: {item.code}</p>
                     </div>
-                    <span className="text-[#8B5CF6] text-xl group-hover:translate-x-1 transition">
+                    <span className="text-[#E8171F] text-xl group-hover:translate-x-1 transition">
                       →
                     </span>
                   </div>

@@ -85,7 +85,7 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
   work: { label: 'Employment', color: '#111111' },
   injury: { label: 'Injury', color: '#EF4444' },
   consumer: { label: 'Consumer', color: '#0D9488' },
-  rights: { label: 'Civil Rights', color: '#8B5CF6' },
+  rights: { label: 'Civil Rights', color: '#E8171F' },
   housing: { label: 'Housing', color: '#06B6D4' },
   medical: { label: 'Medical', color: '#EC4899' },
   family: { label: 'Family', color: '#F97316' },
@@ -259,7 +259,7 @@ export default function TrendsPage() {
                       className="h-full rounded-full"
                       style={{
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, #8B5CF6, #7C3AED)',
+                        background: 'linear-gradient(90deg, #E8171F, #7C3AED)',
                       }}
                     />
                   </div>

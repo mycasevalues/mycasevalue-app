@@ -116,7 +116,7 @@ function StatsCard({
         style={{
           fontSize: '28px',
           fontWeight: 'bold',
-          color: '#8B5CF6',
+          color: '#E8171F',
           margin: '0',
           fontFamily: 'var(--font-data)',
         }}
@@ -159,7 +159,7 @@ export default async function CaseTypeDetailPage({
               display: 'inline-block',
               padding: '12px 24px',
               borderRadius: '8px',
-              background: '#8B5CF6',
+              background: '#E8171F',
               color: 'white',
               textDecoration: 'none',
               fontWeight: 'bold',
@@ -238,20 +238,20 @@ export default async function CaseTypeDetailPage({
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center' }}>
-            <Link href="/" style={{ color: '#8B5CF6', textDecoration: 'none' }}>
+            <Link href="/" style={{ color: '#E8171F', textDecoration: 'none' }}>
               Home
             </Link>
             <span style={{ color: '#6B7280' }}>›</span>
             <Link
               href="/cases"
-              style={{ color: '#8B5CF6', textDecoration: 'none' }}
+              style={{ color: '#E8171F', textDecoration: 'none' }}
             >
               Cases
             </Link>
             <span style={{ color: '#6B7280' }}>›</span>
             <Link
               href={`/cases/${category}`}
-              style={{ color: '#8B5CF6', textDecoration: 'none' }}
+              style={{ color: '#E8171F', textDecoration: 'none' }}
             >
               {getCategoryLabel(category)}
             </Link>
@@ -429,7 +429,7 @@ export default async function CaseTypeDetailPage({
                     style={{
                       position: 'absolute',
                       left: '0',
-                      color: '#8B5CF6',
+                      color: '#E8171F',
                     }}
                   >
                     •
@@ -444,7 +444,7 @@ export default async function CaseTypeDetailPage({
         {/* CTA Section */}
         <div
           style={{
-            background: 'linear-gradient(135deg, #8B5CF6, rgba(51, 51, 51, 0.8))',
+            background: 'linear-gradient(135deg, #E8171F, rgba(51, 51, 51, 0.8))',
             color: 'white',
             borderRadius: '12px',
             padding: '40px',
@@ -483,7 +483,7 @@ export default async function CaseTypeDetailPage({
               padding: '12px 32px',
               borderRadius: '8px',
               background: 'white',
-              color: '#8B5CF6',
+              color: '#E8171F',
               textDecoration: 'none',
               fontWeight: 'bold',
               fontSize: '16px',
@@ -498,7 +498,7 @@ export default async function CaseTypeDetailPage({
         <div style={{ marginTop: '60px' }}>
           <style>{`
             .related-case-card:hover {
-              border-color: #8B5CF6;
+              border-color: #E8171F;
               background: var(--bg-base);
             }
           `}</style>

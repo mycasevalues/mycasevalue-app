@@ -751,72 +751,60 @@ export default function ServerContent() {
       {/* ── CTA ────────────────────────────────────────────── */}
       <section
         style={{
-          background: '#FFFFFF',
+          background: '#00172E',
           padding: '80px 24px',
           textAlign: 'center',
         }}
       >
         <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
-            Get started
-          </p>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
-            Find out where you stand
+          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            Get MyCaseValue+
           </h2>
-          <p style={{ fontSize: '19px', color: '#212529', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, marginBottom: '24px', fontWeight: 300 }}>
-            Get a free outcome report in under 60 seconds. No account required. Research real data from 5.1M+ federal court cases.
+          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, marginBottom: '32px', fontWeight: 300 }}>
+            Start your free trial today. Research real outcomes from 5.1M+ federal court cases.
           </p>
-          <a
-            href="/cases"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '14px 28px',
-              background: '#E8171F',
-              color: '#FFFFFF',
-              borderRadius: '0px',
-              fontFamily: 'Montserrat, system-ui, sans-serif',
-              fontSize: '15px',
-              fontWeight: 700,
-              textDecoration: 'none',
-              boxShadow: '0 2px 8px rgba(232,23,31,0.12)',
-              textTransform: 'uppercase',
-            }}
-          >
-            Generate My Free Report
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '24px',
-              marginTop: '24px',
-              flexWrap: 'wrap',
-            }}
-          >
-            {['No account required', 'Instant delivery', 'Secure & private'].map((item, i) => (
-              <span
-                key={i}
-                style={{
-                  fontFamily: 'Roboto, system-ui, sans-serif',
-                  fontSize: '13px',
-                  color: '#212529',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  fontWeight: 300,
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#07CA6B" strokeWidth="2.5" aria-hidden="true">
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-                {item}
-              </span>
-            ))}
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '24px' }}>
+            <a
+              href="/free-trial"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '14px 32px',
+                background: '#E8171F',
+                color: '#FFFFFF',
+                borderRadius: '0px',
+                fontFamily: 'Montserrat, system-ui, sans-serif',
+                fontSize: '15px',
+                fontWeight: 700,
+                textDecoration: 'none',
+                boxShadow: '0 2px 8px rgba(232,23,31,0.12)',
+                textTransform: 'uppercase',
+                border: 'none',
+              }}
+            >
+              Free Trial
+            </a>
+            <a
+              href="/signin"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '14px 32px',
+                background: 'transparent',
+                color: '#FFFFFF',
+                borderRadius: '0px',
+                fontFamily: 'Montserrat, system-ui, sans-serif',
+                fontSize: '15px',
+                fontWeight: 700,
+                textDecoration: 'none',
+                border: '1px solid #FFFFFF',
+                textTransform: 'uppercase',
+              }}
+            >
+              Sign In
+            </a>
           </div>
         </div>
       </section>

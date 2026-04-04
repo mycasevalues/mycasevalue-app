@@ -100,7 +100,7 @@ export default async function OutcomesPage({
           <h1 className="text-3xl font-bold mb-4">Case outcomes not found</h1>
           <p className="mb-6" style={{ color: '#6B7280' }}>This case type and district combination does not exist in our database.</p>
           <Link href="/outcomes" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: '#8B5CF6' }}>
+            style={{ background: '#E8171F' }}>
             Browse all outcomes
           </Link>
         </div>

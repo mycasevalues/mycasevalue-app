@@ -146,7 +146,7 @@ export default async function ReportPage({
           <main style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
             <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: '#111111' }}>Daily limit reached</h1>
             <p style={{ color: '#6B7280', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
-            <a href="/pricing" style={{ padding: '12px 28px', background: '#8B5CF6', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
+            <a href="/pricing" style={{ padding: '12px 28px', background: '#E8171F', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
             <p style={{ fontSize: '12px', color: '#6B7280', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
           </main>
         );
@@ -259,7 +259,7 @@ export default async function ReportPage({
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px' }} className="win-rate-grid">
             <style>{`.win-rate-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 12px; } }`}</style>
             <div style={{ textAlign: 'center', padding: '20px', background: '#F9FAFB', borderRadius: '8px' }}>
-              <p style={{ fontSize: '36px', fontWeight: 700, color: '#8B5CF6', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '6px' }}>
+              <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '6px' }}>
                 {winRate}%
               </p>
               <p style={{ fontSize: '13px', fontWeight: 500, color: '#111111', fontFamily: 'var(--font-body)', marginBottom: '4px' }}>
@@ -270,7 +270,7 @@ export default async function ReportPage({
               </p>
             </div>
             <div style={{ textAlign: 'center', padding: '20px', background: '#F9FAFB', borderRadius: '8px' }}>
-              <p style={{ fontSize: '36px', fontWeight: 700, color: '#8B5CF6', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '6px' }}>
+              <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '6px' }}>
                 {settlementRate}%
               </p>
               <p style={{ fontSize: '13px', fontWeight: 500, color: '#111111', fontFamily: 'var(--font-body)', marginBottom: '4px' }}>
@@ -281,7 +281,7 @@ export default async function ReportPage({
               </p>
             </div>
             <div style={{ textAlign: 'center', padding: '20px', background: '#F9FAFB', borderRadius: '8px' }}>
-              <p style={{ fontSize: '36px', fontWeight: 700, color: '#8B5CF6', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '6px' }}>
+              <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '6px' }}>
                 {dismissRate}%
               </p>
               <p style={{ fontSize: '13px', fontWeight: 500, color: '#111111', fontFamily: 'var(--font-body)', marginBottom: '4px' }}>
@@ -315,7 +315,7 @@ export default async function ReportPage({
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }} className="timeline-grid">
             <style>{`.timeline-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .timeline-grid { grid-template-columns: 1fr; gap: 12px; } }`}</style>
             <div style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: 32, fontWeight: 700, color: '#8B5CF6', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
+              <p style={{ fontSize: 32, fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', margin: '0 0 4px' }}>
                 {medianDuration} months
               </p>
               <p style={{ fontSize: 13, color: '#6B7280', fontFamily: 'var(--font-body)', margin: 0 }}>Median time from filing to resolution</p>
@@ -363,7 +363,7 @@ export default async function ReportPage({
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#9CA3AF', margin: '0 0 8px' }}>
                       Median
                     </p>
-                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#8B5CF6', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 6px' }}>
+                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 6px' }}>
                       ${settlementRange.md}K
                     </p>
                     <p style={{ fontSize: '12px', color: '#9CA3AF', fontFamily: 'var(--font-body)', margin: 0 }}>Typical</p>
@@ -418,7 +418,7 @@ export default async function ReportPage({
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#9CA3AF', margin: '0 0 8px' }}>
                       Attorney Represented
                     </p>
-                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#8B5CF6', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 6px' }}>
+                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 6px' }}>
                       {representedWinRate}%
                     </p>
                     <p style={{ fontSize: '12px', color: '#9CA3AF', fontFamily: 'var(--font-body)', margin: 0 }}>
@@ -448,14 +448,14 @@ export default async function ReportPage({
           /* ═══ PAYWALL: Upsell for free users ═══ */
           <section style={{
             background: '#FFFFFF',
-            border: '2px solid #8B5CF6',
+            border: '2px solid #E8171F',
             borderRadius: 12,
             padding: '40px 32px',
             textAlign: 'center',
             marginTop: 16,
           }}>
             <div style={{ fontSize: 36, marginBottom: 16 }}>
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
@@ -489,7 +489,7 @@ export default async function ReportPage({
             <a href="/pricing" style={{
               display: 'inline-block',
               padding: '14px 36px',
-              background: '#8B5CF6',
+              background: '#E8171F',
               color: '#fff',
               borderRadius: '8px',
               textDecoration: 'none',
@@ -536,7 +536,7 @@ export default async function ReportPage({
                       href={op.absolute_url ? `https://www.courtlistener.com${op.absolute_url}` : '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 14, fontWeight: 500, color: '#8B5CF6', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
+                      style={{ fontSize: 14, fontWeight: 500, color: '#E8171F', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
                     >
                       {op.caseName || 'Federal Court Opinion'}
                     </a>
@@ -572,7 +572,7 @@ export default async function ReportPage({
                       href={doc.absolute_url ? `https://www.courtlistener.com${doc.absolute_url}` : '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 14, fontWeight: 500, color: '#8B5CF6', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
+                      style={{ fontSize: 14, fontWeight: 500, color: '#E8171F', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
                     >
                       {doc.caseName || doc.docketNumber || 'Federal Court Docket'}
                     </a>
@@ -623,7 +623,7 @@ export default async function ReportPage({
                     href={`/report/${t.nos}`}
                     style={{
                       fontSize: 14,
-                      color: '#8B5CF6',
+                      color: '#E8171F',
                       textDecoration: 'none',
                       padding: '10px 0',
                       borderBottom: i < related.length - 1 ? '1px solid var(--border-default)' : 'none',

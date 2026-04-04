@@ -327,7 +327,7 @@ export default function JudgesPage() {
                       }}
                     >
                       <span>{d.label}</span>
-                      <span style={{ fontSize: 12, color: '#8B5CF6', fontWeight: 500 }}>
+                      <span style={{ fontSize: 12, color: '#E8171F', fontWeight: 500 }}>
                         View judges &rarr;
                       </span>
                     </Link>
@@ -343,7 +343,7 @@ export default function JudgesPage() {
           style={{
             padding: '48px 32px',
             borderRadius: 16,
-            border: '2px solid #8B5CF6',
+            border: '2px solid #E8171F',
             background: '#FFFFFF',
             textAlign: 'center',
             marginBottom: 64,
@@ -380,7 +380,7 @@ export default function JudgesPage() {
               gap: 8,
               padding: '12px 28px',
               borderRadius: 8,
-              background: '#8B5CF6',
+              background: '#E8171F',
               color: '#FFFFFF',
               fontSize: 16,
               fontWeight: 600,

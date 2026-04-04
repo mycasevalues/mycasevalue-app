@@ -112,7 +112,7 @@ export default function TranslatePage() {
                   key={i}
                   className="w-3 h-3 rounded-full"
                   style={{
-                    background: i < remaining ? '#8B5CF6' : 'var(--border-default)',
+                    background: i < remaining ? '#E8171F' : 'var(--border-default)',
                   }}
                 />
               ))}
@@ -164,7 +164,7 @@ export default function TranslatePage() {
               background:
                 !input.trim() || loading || remaining <= 0
                   ? 'var(--border-default)'
-                  : '#8B5CF6',
+                  : '#E8171F',
               color:
                 !input.trim() || loading || remaining <= 0
                   ? '#6B7280'

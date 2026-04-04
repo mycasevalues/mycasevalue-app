@@ -16,6 +16,18 @@ interface HeroStatsProps {
   lang?: 'en' | 'es';
 }
 
+interface ApiStatsResponse {
+  source: 'live' | 'static';
+  cached: boolean;
+  computed_at: string;
+  data: {
+    total_cases: number;
+    case_types: number;
+    avg_win_rate: number;
+    [key: string]: any;
+  };
+}
+
 const STATS_EN: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#F0F2F5' },
   { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#F0F2F5' },
@@ -107,7 +119,44 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
 export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const stats = lang === 'es' ? STATS_ES : STATS_EN;
+  const [stats, setStats] = useState(lang === 'es' ? STATS_ES : STATS_EN);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+
+  // Fetch stats from API on mount
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await fetch('/api/data?type=stats');
+        if (!response.ok) throw new Error(`API error: ${response.status}`);
+        const data: ApiStatsResponse = await response.json();
+
+        if (data.data) {
+          // Map API response to stat values
+          const baseStats = lang === 'es' ? STATS_ES : STATS_EN;
+          const updatedStats = baseStats.map((stat, index) => {
+            let apiValue = stat.value; // fallback to original
+
+            if (index === 0 && data.data.total_cases) {
+              // Convert to millions for display (5100000 -> 5.1)
+              apiValue = parseFloat((data.data.total_cases / 1000000).toFixed(1));
+            } else if (index === 2 && data.data.case_types) {
+              apiValue = data.data.case_types;
+            }
+
+            return { ...stat, value: apiValue };
+          });
+
+          setStats(updatedStats);
+          setLastUpdated(data.computed_at);
+        }
+      } catch (error) {
+        console.error('Failed to fetch stats:', error);
+        // Gracefully fall back to hardcoded values (already set in initial state)
+      }
+    };
+
+    fetchStats();
+  }, [lang]);
 
   useEffect(() => {
     const el = ref.current;
@@ -120,18 +169,54 @@ export default function HeroStats({ lang = 'en' }: HeroStatsProps) {
     return () => observer.disconnect();
   }, []);
 
+  // Format the lastUpdated timestamp for display
+  const formatDate = (isoString: string) => {
+    try {
+      const date = new Date(isoString);
+      const today = new Date();
+      const yesterday = new Date(today);
+      yesterday.setDate(yesterday.getDate() - 1);
+
+      if (date.toDateString() === today.toDateString()) {
+        return `Updated today at ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+      } else if (date.toDateString() === yesterday.toDateString()) {
+        return `Updated yesterday`;
+      } else {
+        return `Updated ${date.toLocaleDateString()}`;
+      }
+    } catch {
+      return null;
+    }
+  };
+
+  const updatedDateText = lastUpdated ? formatDate(lastUpdated) : null;
+
   return (
     <div ref={ref} style={{
       display: 'grid',
       gridTemplateColumns: 'repeat(4, 1fr)',
       gap: '12px',
       marginTop: '24px',
+      position: 'relative',
     }}
       className="hero-stats-grid"
     >
       {stats.map((stat, i) => (
         <StatCard key={i} stat={stat} index={i} isVisible={isVisible} />
       ))}
+
+      {updatedDateText && (
+        <div style={{
+          position: 'absolute',
+          bottom: '-24px',
+          right: 0,
+          fontSize: '11px',
+          color: 'rgba(156, 163, 175, 0.8)',
+          fontStyle: 'italic',
+        }}>
+          {updatedDateText}
+        </div>
+      )}
 
       <style>{`
         @media (max-width: 768px) {
