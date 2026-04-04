@@ -123,15 +123,15 @@ const FeatureCard = ({
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
-        transition: 'all 0.3s ease',
-        cursor: 'pointer',
+        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        cursor: href ? 'pointer' : 'default',
         textDecoration: 'none',
         color: 'inherit',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}
       className="attorney-feature-card"
     >
-      <div style={{ fontSize: '32px', color: '#006997' }}>{icon}</div>
+      <div style={{ fontSize: '32px', color: '#006997', transition: 'color 0.3s ease' }}>{icon}</div>
       <div>
         <h3
           style={{
@@ -173,12 +173,13 @@ const FeatureCard = ({
               badge === 'available'
                 ? 'none'
                 : '1px solid #D5D8DC',
+            transition: 'all 0.3s ease',
           }}
         >
           {badge === 'available' ? 'Available' : 'Expected Q3 2026'}
         </span>
         {href && (
-          <span style={{ fontSize: '13px', color: '#006997', fontWeight: 600 }}>
+          <span style={{ fontSize: '13px', color: '#006997', fontWeight: 600, transition: 'color 0.3s ease' }}>
             Try it →
           </span>
         )}
@@ -277,8 +278,25 @@ export default function AttorneyPage() {
       }}
     >
       <style dangerouslySetInnerHTML={{ __html: `
-        .attorney-feature-card:hover { border-color: #006997 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.12); transform: translateY(-2px); }
-        .attorney-cta-link:hover { background-color: #CC1019 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important; transform: translateY(-2px); }
+        .attorney-feature-card:hover {
+          border-color: #006997 !important;
+          box-shadow: 0 8px 24px rgba(0, 23, 46, 0.12) !important;
+          transform: translateY(-4px);
+        }
+        .attorney-feature-card:hover svg {
+          color: #00172E !important;
+        }
+        .attorney-feature-card:hover h3 {
+          color: #006997 !important;
+        }
+        .attorney-feature-card:hover span {
+          color: #006997 !important;
+        }
+        .attorney-cta-link:hover {
+          background-color: #CC1019 !important;
+          box-shadow: 0 8px 24px rgba(232, 23, 31, 0.24) !important;
+          transform: translateY(-2px);
+        }
       `}} />
       {/* Header Section */}
       <section
@@ -323,6 +341,12 @@ export default function AttorneyPage() {
             >
               Attorney Mode
             </span>
+          </div>
+
+          {/* Badge before Title */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#E8171F', width: 'fit-content' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0121 12.083V17a2 2 0 01-2 2H5a2 2 0 01-2-2v-4.917c0-.767.251-1.521.84-2.505L12 14z"/></svg>
+            ATTORNEY TOOLS
           </div>
 
           {/* Title */}

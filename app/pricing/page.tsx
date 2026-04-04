@@ -207,7 +207,8 @@ function PricingCard({
         flexDirection: 'column',
         height: '100%',
         borderRadius: '4px',
-        border: f ? '2px solid #E8171F' : '1px solid #D5D8DC',
+        border: '1px solid #D5D8DC',
+        borderTop: f ? '4px solid #E8171F' : '1px solid #D5D8DC',
         background: '#FFFFFF',
         boxShadow: f ? '0 1px 3px rgba(0,0,0,0.08)' : '0 1px 3px rgba(0,0,0,0.08)',
       }}
@@ -329,9 +330,9 @@ function PricingCard({
               fontSize: '15px',
               fontWeight: 700,
               borderRadius: '4px',
-              border: f ? 'none' : '1px solid #D5D8DC',
-              background: f ? '#E8171F' : '#FFFFFF',
-              color: f ? '#FFFFFF' : '#212529',
+              border: 'none',
+              background: '#E8171F',
+              color: '#FFFFFF',
               textAlign: 'center',
               fontFamily: 'var(--font-body)',
               transition: 'all 200ms ease',
@@ -354,9 +355,9 @@ function PricingCard({
               fontSize: '15px',
               fontWeight: 700,
               borderRadius: '4px',
-              border: f ? 'none' : '1px solid #D5D8DC',
-              background: f ? '#E8171F' : '#FFFFFF',
-              color: f ? '#FFFFFF' : '#212529',
+              border: 'none',
+              background: '#E8171F',
+              color: '#FFFFFF',
               textDecoration: 'none',
               textAlign: 'center',
               fontFamily: 'var(--font-body)',
@@ -517,19 +518,30 @@ export default function PricingPage() {
             textAlign: 'center',
           }}
         >
-          <p
+          <div
             style={{
-              fontSize: '11px',
-              fontWeight: 600,
-              color: '#E8171F',
-              textTransform: 'uppercase',
-              letterSpacing: '0.08em',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 14px',
+              background: 'rgba(255,255,255,0.1)',
+              borderRadius: '4px',
               marginBottom: '16px',
-              fontFamily: 'var(--font-body)',
             }}
           >
-            Pricing
-          </p>
+            <span
+              style={{
+                fontSize: '11px',
+                fontWeight: 600,
+                color: '#E8171F',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              Pricing Plans
+            </span>
+          </div>
 
           <h1
             style={{
@@ -684,7 +696,7 @@ export default function PricingPage() {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '24px',
-            marginBottom: '64px',
+            marginBottom: '80px',
           }}
         >
           {plans.map((plan) => (
@@ -695,6 +707,121 @@ export default function PricingPage() {
               onCheckout={handleCheckout}
             />
           ))}
+        </div>
+
+        {/* Compare All Features Section */}
+        <div
+          style={{
+            marginBottom: '80px',
+            padding: '40px 24px',
+            borderRadius: '4px',
+            border: '1px solid #D5D8DC',
+            background: '#FFFFFF',
+          }}
+        >
+          <h2
+            style={{
+              fontSize: '24px',
+              fontWeight: '700',
+              textAlign: 'center',
+              marginBottom: '40px',
+              color: '#212529',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            Compare All Features
+          </h2>
+
+          <div style={{ overflowX: 'auto' }}>
+            <table
+              style={{
+                width: '100%',
+                borderCollapse: 'collapse',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              <thead>
+                <tr>
+                  <th
+                    style={{
+                      textAlign: 'left',
+                      padding: '16px',
+                      borderBottom: '2px solid #D5D8DC',
+                      fontSize: '13px',
+                      fontWeight: '600',
+                      color: '#455A64',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.08em',
+                      background: '#F5F5F5',
+                    }}
+                  >
+                    Feature
+                  </th>
+                  {plans.map((plan) => (
+                    <th
+                      key={plan.id}
+                      style={{
+                        textAlign: 'center',
+                        padding: '16px',
+                        borderBottom: '2px solid #D5D8DC',
+                        fontSize: '13px',
+                        fontWeight: '600',
+                        color: '#212529',
+                        background: '#F5F5F5',
+                      }}
+                    >
+                      {plan.name}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {plans[0].features.map((feature, idx) => (
+                  <tr
+                    key={idx}
+                    style={{
+                      borderBottom: '1px solid #D5D8DC',
+                    }}
+                  >
+                    <td
+                      style={{
+                        padding: '14px 16px',
+                        fontSize: '14px',
+                        color: '#212529',
+                        fontWeight: '500',
+                        textAlign: 'left',
+                      }}
+                    >
+                      {feature.text}
+                    </td>
+                    {plans.map((plan) => {
+                      const planFeature = plan.features[idx];
+                      return (
+                        <td
+                          key={plan.id}
+                          style={{
+                            padding: '14px 16px',
+                            textAlign: 'center',
+                            borderLeft: '1px solid #D5D8DC',
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontSize: '14px',
+                              color: planFeature.included ? '#07874A' : '#C0C4C8',
+                              fontWeight: planFeature.included ? '700' : '400',
+                            }}
+                          >
+                            {planFeature.included ? '✓' : '—'}
+                          </span>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <p
@@ -920,9 +1047,10 @@ export default function PricingPage() {
               paddingBottom: '12px',
               fontSize: '14px',
               fontWeight: '600',
-              borderRadius: '0px',
-              border: '1px solid #D5D8DC',
-              color: '#212529',
+              borderRadius: '4px',
+              border: 'none',
+              background: '#E8171F',
+              color: '#FFFFFF',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               transition: 'opacity 200ms ease',
