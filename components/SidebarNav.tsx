@@ -30,7 +30,53 @@ export default function SidebarNav() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+    <nav style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '8px',
+      backgroundColor: '#00172E',
+      padding: '12px',
+      borderRadius: '4px',
+    }}>
+      <style>{`
+        .sidebar-nav-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 14px;
+          border-radius: 4px;
+          font-size: 14px;
+          font-weight: 400;
+          color: #FFFFFF;
+          text-decoration: none;
+          font-family: var(--font-body);
+          transition: all 0.2s ease;
+          position: relative;
+          border-left: 3px solid transparent;
+        }
+        .sidebar-nav-item.active {
+          font-weight: 600;
+          background: rgba(232, 23, 31, 0.12);
+          border-left-color: #E8171F;
+          color: #FFFFFF;
+        }
+        .sidebar-nav-item:hover:not(.active) {
+          background: rgba(255, 255, 255, 0.08);
+          color: #D5D8DC;
+        }
+        .sidebar-nav-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          color: #D5D8DC;
+          flex-shrink: 0;
+        }
+        .sidebar-nav-item.active .sidebar-nav-icon {
+          color: #E8171F;
+        }
+      `}</style>
       {navItems.map((item, idx) => {
         const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname.startsWith(item.href));
         return (
@@ -39,24 +85,10 @@ export default function SidebarNav() {
             href={item.href}
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              padding: '10px 12px',
-              borderRadius: '4px',
-              fontSize: '14px',
-              fontWeight: isActive ? 700 : 400,
-              color: isActive ? '#212529' : '#666666',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
-              marginBottom: '4px',
-              transition: 'all 0.15s ease',
-              background: isActive ? 'rgba(0,105,151,0.08)' : hoveredIndex === idx ? '#F5F6F7' : 'transparent',
-            }}
+            className={`sidebar-nav-item ${isActive ? 'active' : ''}`}
           >
-            <span style={{ display: 'flex', alignItems: 'center', opacity: isActive ? 1 : 0.5 }}>{item.icon}</span>
-            {item.label}
+            <span className="sidebar-nav-icon">{item.icon}</span>
+            <span>{item.label}</span>
           </Link>
         );
       })}

@@ -10,6 +10,7 @@ import UpgradeBanner from './UpgradeBanner';
 import FaqAccordion from './FaqAccordion';
 import TestimonialCarousel from './TestimonialCarousel';
 import TrustBadges from './TrustBadges';
+import ScrollReveal from './ScrollReveal';
 
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
@@ -43,7 +44,9 @@ export default function ServerContent() {
   return (
     <div className="server-content-seo" aria-label="Additional content">
       {/* ── TRUST BADGES ──────────────────────────── */}
-      <TrustBadges />
+      <ScrollReveal delay={0}>
+        <TrustBadges />
+      </ScrollReveal>
 
       {/* ── TRUSTED CASE INTELLIGENCE ──────────────────────────── */}
       <section id="features" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
@@ -194,42 +197,43 @@ export default function ServerContent() {
               { title: 'Attorney Impact', desc: 'How outcomes differ between represented plaintiffs and pro se litigants. Data-driven evidence on the value of legal representation.' },
               { title: 'District Comparison', desc: 'Compare outcomes across all 94 federal districts. See how your district ranks for your case type.' },
             ].map((feat, i) => (
-              <div
-                key={i}
-                className="feature-card"
-                style={{
-                  background: '#FAFBFC',
-                  border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
-                  padding: '24px',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                <h3
+              <ScrollReveal key={i} delay={i * 100} direction="up">
+                <div
+                  className="feature-card"
                   style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '16px',
-                    fontWeight: 700,
-                    color: '#212529',
-                    margin: '0 0 8px 0',
+                    background: '#FAFBFC',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '4px',
+                    padding: '24px',
+                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    transition: 'all 0.2s ease',
                   }}
                 >
-                  {feat.title}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '14px',
-                    color: '#212529',
-                    lineHeight: 1.6,
-                    margin: 0,
-                    fontWeight: 300,
-                  }}
-                >
-                  {feat.desc}
-                </p>
-              </div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '16px',
+                      fontWeight: 700,
+                      color: '#212529',
+                      margin: '0 0 8px 0',
+                    }}
+                  >
+                    {feat.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '14px',
+                      color: '#212529',
+                      lineHeight: 1.6,
+                      margin: 0,
+                      fontWeight: 300,
+                    }}
+                  >
+                    {feat.desc}
+                  </p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -356,85 +360,88 @@ export default function ServerContent() {
                 ),
               },
             ].map((item, i) => (
-              <a
-                key={i}
-                href={`/nos/${item.code}`}
-                style={{ textDecoration: 'none' }}
-              >
-                <div
-                  className="featured-case-card"
-                  style={{
-                    background: '#FFFFFF',
-                    border: '1px solid #D5D8DC',
-                    borderRadius: '4px',
-                    padding: '28px 24px',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}
+              <ScrollReveal key={i} delay={i * 100} direction="up">
+                <a
+                  href={`/nos/${item.code}`}
+                  style={{ textDecoration: 'none' }}
                 >
                   <div
+                    className="featured-case-card"
                     style={{
-                      width: '56px',
-                      height: '56px',
-                      borderRadius: '6px',
-                      background: 'rgba(232, 23, 31, 0.08)',
+                      background: '#FFFFFF',
+                      border: '1px solid #D5D8DC',
+                      borderRadius: '4px',
+                      padding: '28px 24px',
+                      height: '100%',
                       display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '16px',
+                      flexDirection: 'column',
                     }}
                   >
-                    {item.icon}
+                    <div
+                      style={{
+                        width: '56px',
+                        height: '56px',
+                        borderRadius: '6px',
+                        background: 'rgba(232, 23, 31, 0.08)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginBottom: '16px',
+                      }}
+                    >
+                      {item.icon}
+                    </div>
+
+                    <h3
+                      style={{
+                        fontSize: '16px',
+                        fontWeight: 700,
+                        color: '#212529',
+                        fontFamily: 'var(--font-display)',
+                        marginBottom: '8px',
+                        margin: '0 0 8px 0',
+                      }}
+                    >
+                      {item.name}
+                    </h3>
+
+                    <p
+                      style={{
+                        fontSize: '14px',
+                        color: '#455A64',
+                        fontFamily: 'var(--font-body)',
+                        lineHeight: 1.6,
+                        marginBottom: '16px',
+                        margin: '0 0 16px 0',
+                        flex: 1,
+                        fontWeight: 300,
+                      }}
+                    >
+                      {item.desc}
+                    </p>
+
+                    <div
+                      style={{
+                        fontSize: '14px',
+                        color: '#006997',
+                        fontFamily: 'var(--font-body)',
+                        fontWeight: 500,
+                      }}
+                    >
+                      View Statistics →
+                    </div>
                   </div>
-
-                  <h3
-                    style={{
-                      fontSize: '16px',
-                      fontWeight: 700,
-                      color: '#212529',
-                      fontFamily: 'var(--font-display)',
-                      marginBottom: '8px',
-                      margin: '0 0 8px 0',
-                    }}
-                  >
-                    {item.name}
-                  </h3>
-
-                  <p
-                    style={{
-                      fontSize: '14px',
-                      color: '#455A64',
-                      fontFamily: 'var(--font-body)',
-                      lineHeight: 1.6,
-                      marginBottom: '16px',
-                      margin: '0 0 16px 0',
-                      flex: 1,
-                      fontWeight: 300,
-                    }}
-                  >
-                    {item.desc}
-                  </p>
-
-                  <div
-                    style={{
-                      fontSize: '14px',
-                      color: '#006997',
-                      fontFamily: 'var(--font-body)',
-                      fontWeight: 500,
-                    }}
-                  >
-                    View Statistics →
-                  </div>
-                </div>
-              </a>
+                </a>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── TESTIMONIALS WITH CAROUSEL ─────────────────────────────────── */}
-      <TestimonialCarousel />
+      <ScrollReveal delay={0}>
+        <TestimonialCarousel />
+      </ScrollReveal>
 
       {/* ── WHO IS MYCASEVALUE FOR? ────────────────────────────── */}
       <section id="who" data-section style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
@@ -939,7 +946,9 @@ export default function ServerContent() {
         }}
       >
         <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <NewsletterSignup />
+          <ScrollReveal delay={0} direction="up">
+            <NewsletterSignup />
+          </ScrollReveal>
         </div>
       </section>
 

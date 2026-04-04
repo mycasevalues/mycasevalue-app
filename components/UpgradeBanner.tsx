@@ -23,9 +23,34 @@ export default function UpgradeBanner() {
             display: none;
           }
         }
+        .feature-list {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          margin-top: 24px;
+        }
+        .feature-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-size: 14px;
+          color: rgba(255,255,255,0.8);
+          font-family: var(--font-body);
+        }
+        .feature-checkmark {
+          flex-shrink: 0;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #E8171F;
+          font-weight: 700;
+        }
         .upgrade-btn-primary {
           display: inline-block;
           padding: 12px 28px;
+          height: 48px;
           background: #E8171F;
           color: #FFFFFF;
           border-radius: 4px;
@@ -35,9 +60,17 @@ export default function UpgradeBanner() {
           text-decoration: none;
           font-family: var(--font-display);
           letter-spacing: 0.04em;
-          transition: background 200ms;
+          transition: background 200ms, transform 200ms;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          cursor: pointer;
         }
-        .upgrade-btn-primary:hover { background: #E8171F; }
+        .upgrade-btn-primary:hover {
+          background: #CC1218;
+          transform: translateY(-2px);
+        }
         .upgrade-btn-secondary {
           display: inline-block;
           padding: 12px 28px;
@@ -89,9 +122,28 @@ export default function UpgradeBanner() {
               firms already have.
             </p>
 
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
               <a href="/attorney" className="upgrade-btn-primary">Try Attorney Mode</a>
               <a href="/pricing" className="upgrade-btn-secondary">See Pricing</a>
+            </div>
+
+            <div className="feature-list">
+              <div className="feature-item">
+                <div className="feature-checkmark">✓</div>
+                <span>AI-powered case outcome predictions</span>
+              </div>
+              <div className="feature-item">
+                <div className="feature-checkmark">✓</div>
+                <span>Judge and venue intelligence</span>
+              </div>
+              <div className="feature-item">
+                <div className="feature-checkmark">✓</div>
+                <span>Bulk case analysis tools</span>
+              </div>
+              <div className="feature-item">
+                <div className="feature-checkmark">✓</div>
+                <span>Professional legal insights</span>
+              </div>
             </div>
           </div>
 
