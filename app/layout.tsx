@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 
 const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar'), { ssr: false });
 const CookieConsent = dynamic(() => import('../components/ui/CookieConsent'), { ssr: false });
+const GlobalCommandPalette = dynamic(() => import('../components/ui/GlobalCommandPalette'), { ssr: false });
 
 export const metadata = {
   title: {
@@ -285,6 +286,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </AnalyticsProvider>
         </ErrorBoundary>
         <CookieConsent />
+        <GlobalCommandPalette />
         <script dangerouslySetInnerHTML={{ __html: `
           window.mcvAnalytics = {
             track: function(event, props) {

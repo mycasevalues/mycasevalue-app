@@ -1,5 +1,6 @@
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
+import { getAllCaseTypeSEO } from '../../../lib/case-type-seo';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -506,43 +507,68 @@ async function CategoryPage({
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '20px',
           }}>
-            {categoryData.opts.map((opt) => (
-              <div
-                key={opt.nos}
-                style={{
-                  background: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
-                  borderRadius: '10px',
-                  padding: '20px',
-                  fontFamily: 'Outfit, system-ui, sans-serif',
-                }}
-              >
-                <h3 style={{
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  color: 'var(--fg-primary)',
-                  margin: '0 0 8px 0',
-                }}>
-                  {opt.label}
-                </h3>
-                <p style={{
-                  fontSize: '13px',
-                  color: 'var(--fg-muted)',
-                  margin: '0 0 12px 0',
-                  lineHeight: '1.5',
-                }}>
-                  {opt.d}
-                </p>
-                <div style={{
-                  fontSize: '12px',
-                  color: 'var(--fg-muted)',
-                  paddingTop: '12px',
-                  borderTop: '1px solid var(--border-default)',
-                }}>
-                  NOS Code: {opt.nos}
-                </div>
-              </div>
-            ))}
+            {categoryData.opts.map((opt) => {
+              const allCaseTypes = getAllCaseTypeSEO();
+              const caseType = allCaseTypes.find(
+                (ct) => ct.categorySlug === category && ct.nosCode === opt.nos
+              );
+              const href = caseType ? `/cases/${category}/${caseType.slug}` : `#`;
+
+              return (
+                <Link
+                  key={`${opt.nos}-${opt.d}`}
+                  href={href}
+                  style={{
+                    background: '#FFFFFF',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: '10px',
+                    padding: '20px',
+                    fontFamily: 'Outfit, system-ui, sans-serif',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    display: 'block',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    const elem = e.currentTarget as HTMLElement;
+                    elem.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                    elem.style.borderColor = 'var(--accent-primary)';
+                    elem.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const elem = e.currentTarget as HTMLElement;
+                    elem.style.boxShadow = 'none';
+                    elem.style.borderColor = 'var(--border-default)';
+                    elem.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <h3 style={{
+                    fontSize: '16px',
+                    fontWeight: 600,
+                    color: 'var(--fg-primary)',
+                    margin: '0 0 8px 0',
+                  }}>
+                    {opt.label}
+                  </h3>
+                  <p style={{
+                    fontSize: '13px',
+                    color: 'var(--fg-muted)',
+                    margin: '0 0 12px 0',
+                    lineHeight: '1.5',
+                  }}>
+                    {opt.d}
+                  </p>
+                  <div style={{
+                    fontSize: '12px',
+                    color: 'var(--fg-muted)',
+                    paddingTop: '12px',
+                    borderTop: '1px solid var(--border-default)',
+                  }}>
+                    NOS Code: {opt.nos}
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>

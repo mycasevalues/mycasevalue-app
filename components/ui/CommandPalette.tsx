@@ -10,8 +10,10 @@ interface SearchItem {
   category: string;
   categoryColor: string;
   nos?: string;
-  type: 'case' | 'page' | 'action';
+  type: 'case' | 'page' | 'action' | 'quick-link';
   action?: () => void;
+  icon?: string;
+  keyboardHint?: string;
 }
 
 interface CommandPaletteProps {
@@ -67,28 +69,139 @@ export default function CommandPalette({
   const allItems: SearchItem[] = useMemo(() => {
     const items: SearchItem[] = [];
 
-    // Case types from SITS
-    sits.forEach((cat: any) => {
-      cat.opts?.forEach((opt: any) => {
-        items.push({
-          id: `case-${opt.nos}-${opt.d}`,
-          label: opt.label,
-          description: opt.d,
-          category: cat.label,
-          categoryColor: cat.color || 'var(--fg-muted)',
-          nos: opt.nos,
-          type: 'case',
-        });
+    // Quick links (top-level actions)
+    const quickLinks = [
+      {
+        id: 'quick-search',
+        label: lang === 'es' ? 'Buscar casos' : 'Search Cases',
+        description: lang === 'es' ? 'Explorar resultados de casos' : 'Browse case outcomes',
+        category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
+        icon: '🔍',
+      },
+      {
+        id: 'quick-calculator',
+        label: lang === 'es' ? 'Calculadora' : 'Calculator',
+        description: lang === 'es' ? 'Calcular costos y recuperaciones' : 'Calculate recovery and costs',
+        category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
+        icon: '🧮',
+      },
+      {
+        id: 'quick-pricing',
+        label: lang === 'es' ? 'Precios' : 'Pricing',
+        description: lang === 'es' ? 'Ver planes y opciones' : 'View our pricing plans',
+        category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
+        icon: '💰',
+      },
+      {
+        id: 'quick-dashboard',
+        label: lang === 'es' ? 'Panel' : 'Dashboard',
+        description: lang === 'es' ? 'Ver tus reportes guardados' : 'View your saved reports',
+        category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
+        icon: '📊',
+      },
+      {
+        id: 'quick-compare',
+        label: lang === 'es' ? 'Comparar casos' : 'Compare Cases',
+        description: lang === 'es' ? 'Comparar múltiples casos' : 'Compare case outcomes',
+        category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
+        icon: '⚖️',
+      },
+    ];
+
+    quickLinks.forEach((link) => {
+      items.push({
+        ...link,
+        categoryColor: 'var(--accent-primary)',
+        type: 'quick-link' as const,
       });
     });
 
+    // Case categories (from SITS data)
+    const caseCategories = [
+      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '👔', color: 'var(--accent-primary)' },
+      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '⚠️', color: 'var(--accent-primary)' },
+      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '🛍️', color: 'var(--accent-primary)' },
+      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '⚖️', color: 'var(--accent-primary)' },
+      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '💵', color: 'var(--accent-primary)' },
+      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '🏠', color: 'var(--accent-primary)' },
+      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '⚕️', color: 'var(--accent-primary)' },
+      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '👨‍👩‍👧', color: 'var(--accent-primary)' },
+      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '🏛️', color: 'var(--accent-primary)' },
+    ];
+
+    caseCategories.forEach((cat) => {
+      items.push({
+        id: cat.id,
+        label: cat.label,
+        description: cat.description,
+        category: lang === 'es' ? 'Categorías de casos' : 'Case Categories',
+        categoryColor: cat.color,
+        type: 'case' as const,
+        icon: cat.icon,
+      });
+    });
+
+    // Case types from SITS (only if sits data is available)
+    if (sits && sits.length > 0) {
+      sits.forEach((cat: any) => {
+        cat.opts?.forEach((opt: any) => {
+          items.push({
+            id: `case-${opt.nos}-${opt.d}`,
+            label: opt.label,
+            description: opt.d,
+            category: cat.label,
+            categoryColor: cat.color || 'var(--fg-muted)',
+            nos: opt.nos,
+            type: 'case',
+          });
+        });
+      });
+    }
+
     // Static pages
     const pages = [
-      { id: 'page-home', label: lang === 'es' ? 'Inicio' : 'Home', description: lang === 'es' ? 'Volver al inicio' : 'Go to homepage', category: lang === 'es' ? 'Páginas' : 'Pages' },
-      { id: 'page-faq', label: 'FAQ', description: lang === 'es' ? 'Preguntas frecuentes' : 'Frequently asked questions', category: lang === 'es' ? 'Páginas' : 'Pages' },
-      { id: 'page-methodology', label: lang === 'es' ? 'Metodología' : 'Methodology', description: lang === 'es' ? 'Cómo funciona nuestro sistema' : 'How our data system works', category: lang === 'es' ? 'Páginas' : 'Pages' },
-      { id: 'page-privacy', label: lang === 'es' ? 'Privacidad' : 'Privacy', description: lang === 'es' ? 'Política de privacidad' : 'Privacy policy', category: lang === 'es' ? 'Páginas' : 'Pages' },
-      { id: 'page-terms', label: lang === 'es' ? 'Términos' : 'Terms', description: lang === 'es' ? 'Términos de servicio' : 'Terms of service', category: lang === 'es' ? 'Páginas' : 'Pages' },
+      {
+        id: 'page-home',
+        label: lang === 'es' ? 'Inicio' : 'Home',
+        description: lang === 'es' ? 'Volver al inicio' : 'Go to homepage',
+        category: lang === 'es' ? 'Páginas' : 'Pages',
+        icon: '🏠',
+      },
+      {
+        id: 'page-blog',
+        label: lang === 'es' ? 'Blog' : 'Blog',
+        description: lang === 'es' ? 'Artículos y análisis' : 'Articles and insights',
+        category: lang === 'es' ? 'Páginas' : 'Pages',
+        icon: '📰',
+      },
+      {
+        id: 'page-about',
+        label: lang === 'es' ? 'Acerca de' : 'About',
+        description: lang === 'es' ? 'Quiénes somos' : 'About our team',
+        category: lang === 'es' ? 'Páginas' : 'Pages',
+        icon: 'ℹ️',
+      },
+      {
+        id: 'page-how-it-works',
+        label: lang === 'es' ? 'Cómo funciona' : 'How It Works',
+        description: lang === 'es' ? 'Guía paso a paso' : 'Step-by-step guide',
+        category: lang === 'es' ? 'Páginas' : 'Pages',
+        icon: '🔧',
+      },
+      {
+        id: 'page-methodology',
+        label: lang === 'es' ? 'Metodología' : 'Methodology',
+        description: lang === 'es' ? 'Cómo funciona nuestro sistema' : 'How our data works',
+        category: lang === 'es' ? 'Páginas' : 'Pages',
+        icon: '📊',
+      },
+      {
+        id: 'page-glossary',
+        label: lang === 'es' ? 'Glosario' : 'Glossary',
+        description: lang === 'es' ? 'Términos legales explicados' : 'Legal terms explained',
+        category: lang === 'es' ? 'Páginas' : 'Pages',
+        icon: '📚',
+      },
     ];
 
     pages.forEach((p) => {
@@ -97,7 +210,13 @@ export default function CommandPalette({
 
     // Quick actions
     const actions = [
-      { id: 'action-lang', label: lang === 'es' ? 'English' : 'Español', description: lang === 'es' ? 'Cambiar a inglés' : 'Switch to Spanish', category: lang === 'es' ? 'Acciones' : 'Actions' },
+      {
+        id: 'action-lang',
+        label: lang === 'es' ? 'English' : 'Español',
+        description: lang === 'es' ? 'Cambiar idioma' : 'Switch language',
+        category: lang === 'es' ? 'Acciones' : 'Actions',
+        icon: '🌐',
+      },
     ];
 
     actions.forEach((a) => {
@@ -217,17 +336,65 @@ export default function CommandPalette({
     if (el) el.scrollIntoView({ block: 'nearest' });
   }, [selectedIndex]);
 
-  /* ── Trap focus inside modal ───────────────────────────────── */
+  /* ── Global keyboard shortcuts (Cmd+K, Ctrl+K, and / key) ───── */
   useEffect(() => {
-    if (!isOpen) return;
     const handleGlobalKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      // Check if user is typing in an input or textarea
+      const isTypingInInput =
+        document.activeElement instanceof HTMLInputElement ||
+        document.activeElement instanceof HTMLTextAreaElement;
+
+      // Cmd+K / Ctrl+K: toggle command palette
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        // This will be handled by parent component, but we can still trap Escape here
+      }
+
+      // / key: focus search (only when not in input)
+      if (e.key === '/' && !isTypingInInput && isOpen) {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+
+      // Escape: close palette
+      if (e.key === 'Escape' && isOpen) {
+        e.preventDefault();
+        onClose();
+      }
     };
+
     window.addEventListener('keydown', handleGlobalKey);
     return () => window.removeEventListener('keydown', handleGlobalKey);
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
+
+  /* ── Animation styles ──────────────────────────────────────── */
+  const styleSheet = document.createElement('style');
+  if (!document.querySelector('style[data-command-palette-animation]')) {
+    styleSheet.setAttribute('data-command-palette-animation', '');
+    styleSheet.textContent = `
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes backdropFadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+  }
 
   /* ── Group results by type ─────────────────────────────────── */
   const grouped: Record<string, SearchItem[]> = {};
@@ -248,9 +415,10 @@ export default function CommandPalette({
           position: 'fixed',
           inset: 0,
           zIndex: 'var(--z-modal)',
-          background: 'rgba(0,0,0,0.6)',
-          backdropFilter: 'blur(4px)',
-          WebkitBackdropFilter: 'blur(4px)',
+          background: 'rgba(0,0,0,0.5)',
+          backdropFilter: 'blur(6px)',
+          WebkitBackdropFilter: 'blur(6px)',
+          animation: 'backdropFadeIn 0.2s ease-out',
         } as React.CSSProperties}
         aria-hidden="true"
       />
@@ -268,13 +436,14 @@ export default function CommandPalette({
           zIndex: 'var(--z-modal)',
           width: 'min(95vw, 560px)',
           maxHeight: '60vh',
-          background: 'var(--bg-elevated)',
+          background: 'var(--bg-surface)',
           border: '1px solid var(--border-default)',
-          borderRadius: 'var(--r-xl)',
-          boxShadow: 'var(--shadow-xl)',
+          borderRadius: 'var(--r-lg)',
+          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
+          animation: 'fadeIn 0.2s ease-out',
         } as React.CSSProperties}
       >
         {/* Search input */}
@@ -283,8 +452,9 @@ export default function CommandPalette({
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-            padding: '14px 18px',
+            padding: '16px 18px',
             borderBottom: '1px solid var(--border-default)',
+            background: 'var(--bg-surface)',
           }}
         >
           {/* Search icon */}
@@ -298,7 +468,7 @@ export default function CommandPalette({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={lang === 'es' ? 'Buscar tipo de caso, página o acción...' : 'Search case type, page, or action...'}
+            placeholder={lang === 'es' ? 'Buscar casos, páginas...' : 'Search cases, pages...'}
             aria-label={lang === 'es' ? 'Búsqueda de comandos' : 'Command search'}
             style={{
               flex: 1,
@@ -308,6 +478,7 @@ export default function CommandPalette({
               fontSize: 'var(--text-base)',
               color: 'var(--fg-primary)',
               caretColor: 'var(--accent-primary)',
+              fontFamily: 'var(--font-body)',
             }}
             autoComplete="off"
             spellCheck="false"
@@ -382,27 +553,35 @@ export default function CommandPalette({
                         display: 'flex',
                         alignItems: 'center',
                         gap: '12px',
-                        padding: '10px 12px',
+                        padding: '11px 12px',
                         borderRadius: 'var(--r-md)',
                         cursor: 'pointer',
-                        background: isSelected ? 'var(--accent-primary-subtle)' : 'transparent',
-                        transition: 'background 100ms',
+                        background: isSelected ? 'var(--accent-primary)' : 'transparent',
+                        color: isSelected ? 'white' : 'var(--fg-primary)',
+                        transition: 'all 100ms ease-out',
                       }}
                     >
-                      {/* Type icon */}
-                      <span style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-                        {item.type === 'case' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={item.categoryColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      {/* Icon or emoji */}
+                      <span style={{ flexShrink: 0, display: 'flex', alignItems: 'center', fontSize: '18px' }}>
+                        {item.icon ? (
+                          item.icon
+                        ) : item.type === 'case' ? (
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : item.categoryColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                             <polyline points="14 2 14 8 20 8" />
                           </svg>
                         ) : item.type === 'page' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--fg-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : 'var(--fg-muted)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
+                        ) : item.type === 'quick-link' ? (
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : 'var(--accent-primary)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                          </svg>
                         ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : 'var(--accent-secondary)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                           </svg>
                         )}
@@ -414,10 +593,11 @@ export default function CommandPalette({
                           style={{
                             fontSize: 'var(--text-sm)',
                             fontWeight: 500,
-                            color: 'var(--fg-primary)',
+                            color: 'inherit',
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
+                            fontFamily: 'var(--font-body)',
                           }}
                         >
                           {item.label}
@@ -426,10 +606,11 @@ export default function CommandPalette({
                           <div
                             style={{
                               fontSize: 'var(--text-xs)',
-                              color: 'var(--fg-muted)',
+                              color: isSelected ? 'rgba(255,255,255,0.7)' : 'var(--fg-muted)',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
+                              fontFamily: 'var(--font-body)',
                             }}
                           >
                             {item.description}
@@ -438,14 +619,16 @@ export default function CommandPalette({
                       </div>
 
                       {/* Category badge for case types */}
-                      {item.type === 'case' && (
+                      {item.type === 'case' && item.nos && (
                         <span
                           style={{
                             flexShrink: 0,
                             fontSize: 'var(--text-2xs)',
                             fontWeight: 500,
-                            color: item.categoryColor,
-                            background: `color-mix(in srgb, ${item.categoryColor} 12%, transparent)`,
+                            color: isSelected ? 'rgba(255,255,255,0.8)' : item.categoryColor,
+                            background: isSelected
+                              ? 'rgba(255,255,255,0.2)'
+                              : `color-mix(in srgb, ${item.categoryColor} 12%, transparent)`,
                             padding: '2px 8px',
                             borderRadius: 'var(--r-full)',
                             whiteSpace: 'nowrap',
@@ -459,12 +642,12 @@ export default function CommandPalette({
                       {isSelected && (
                         <kbd
                           style={{
-                            fontSize: '10px',
-                            color: 'var(--fg-subtle)',
-                            background: 'var(--bg-surface)',
-                            border: '1px solid var(--border-default)',
+                            fontSize: '11px',
+                            color: 'rgba(255,255,255,0.7)',
+                            background: 'rgba(255,255,255,0.15)',
+                            border: '1px solid rgba(255,255,255,0.2)',
                             borderRadius: '3px',
-                            padding: '1px 5px',
+                            padding: '2px 6px',
                             lineHeight: 1.4,
                             fontFamily: 'inherit',
                             flexShrink: 0,
@@ -487,16 +670,27 @@ export default function CommandPalette({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '16px',
-            padding: '8px 16px',
+            gap: '20px',
+            padding: '10px 16px',
             borderTop: '1px solid var(--border-default)',
             fontSize: 'var(--text-2xs)',
-            color: 'var(--fg-subtle)',
+            color: 'var(--fg-muted)',
+            background: 'var(--bg-surface)',
+            fontFamily: 'var(--font-body)',
           }}
         >
-          <span>↑↓ {lang === 'es' ? 'navegar' : 'navigate'}</span>
-          <span>↵ {lang === 'es' ? 'seleccionar' : 'select'}</span>
-          <span>esc {lang === 'es' ? 'cerrar' : 'close'}</span>
+          <span>
+            <kbd style={{ fontSize: '10px', fontFamily: 'monospace', marginRight: '4px' }}>↑↓</kbd>
+            {lang === 'es' ? 'navegar' : 'navigate'}
+          </span>
+          <span>
+            <kbd style={{ fontSize: '10px', fontFamily: 'monospace', marginRight: '4px' }}>↵</kbd>
+            {lang === 'es' ? 'seleccionar' : 'select'}
+          </span>
+          <span>
+            <kbd style={{ fontSize: '10px', fontFamily: 'monospace', marginRight: '4px' }}>esc</kbd>
+            {lang === 'es' ? 'cerrar' : 'close'}
+          </span>
         </div>
       </div>
     </>

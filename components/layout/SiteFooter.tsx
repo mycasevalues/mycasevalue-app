@@ -133,6 +133,7 @@ export default function SiteFooter() {
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <Link href="/how-it-works" className="site-footer-link" style={footerLinkStyle}>How It Works</Link>
               <Link href="/methodology" className="site-footer-link" style={footerLinkStyle}>Methodology</Link>
+              <Link href="/glossary" className="site-footer-link" style={footerLinkStyle}>Glossary</Link>
               <Link href="/about" className="site-footer-link" style={footerLinkStyle}>About</Link>
               <Link href="/contact" className="site-footer-link" style={footerLinkStyle}>Contact</Link>
               <Link href="/faq" className="site-footer-link" style={footerLinkStyle}>FAQ</Link>
