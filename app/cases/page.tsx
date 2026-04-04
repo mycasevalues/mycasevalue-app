@@ -52,6 +52,7 @@ export default function CasesIndexPage() {
           placeholder="Search case types... (e.g. wrongful termination, medical malpractice)"
           value={search}
           onChange={e => setSearch(e.target.value)}
+          aria-label="Search case types"
           style={{
             width: '100%',
             maxWidth: '480px',

@@ -29,6 +29,128 @@ const getJsonLd = () => ({
   ],
 });
 
+function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
+  return [
+    {
+      id: 'free',
+      name: 'Free',
+      tagline: 'For anyone researching a case',
+      price: '$0',
+      period: 'forever',
+      description: 'Start your research with essential case data and win rate analysis.',
+      sectionLabel: 'Includes:',
+      features: [
+        { text: 'Win rate percentage for any case + district', included: true },
+        { text: 'Median settlement amount (national average)', included: true },
+        { text: 'Median case duration', included: true },
+        { text: 'Sample size with every data point', included: true },
+        { text: 'All 94 district overview pages', included: true },
+        { text: 'All 84 case type pages', included: true },
+        { text: '3 free lookups per day', included: true },
+        { text: 'Settlement range (full percentiles)', included: false },
+        { text: 'Judge profiles', included: false },
+        { text: 'PDF export', included: false },
+      ],
+      ctaText: 'Get Started Free',
+      ctaSubtext: 'No account required',
+    },
+    {
+      id: 'single_report',
+      name: 'Single Report',
+      tagline: 'For one specific case',
+      price: '$5.99',
+      period: 'one-time',
+      description: 'Deep dive into a single case with full settlement ranges and judge data.',
+      sectionLabel: 'Includes:',
+      stripePlan: 'single',
+      features: [
+        { text: 'One full case outcome report (any case type + district)', included: true },
+        { text: 'Full settlement range — 10th through 90th percentile', included: true },
+        { text: 'Confidence intervals', included: true },
+        { text: 'Settlement calculator — full results', included: true },
+        { text: 'Basic judge overview for your district', included: true },
+        { text: 'PDF export — clean, branded', included: true },
+        { text: '90-day report access', included: true },
+        { text: 'Email delivery — no account required', included: true },
+        { text: 'Multiple reports', included: false },
+        { text: 'Trend data (year-over-year)', included: false },
+        { text: 'Saved reports library', included: false },
+        { text: 'Judge intelligence profiles', included: false },
+        { text: 'Attorney Mode features', included: false },
+      ],
+      ctaText: 'Buy a Report',
+      ctaSubtext: 'Save and revisit for 90 days · No subscription',
+    },
+    {
+      id: 'unlimited',
+      name: 'Unlimited Reports',
+      tagline: 'For ongoing case research',
+      price: annual ? '$8.33' : '$9.99',
+      period: annual ? '/mo (billed $99.99/yr)' : '/mo',
+      description: 'Unlimited lookups across all case types and districts with trend analysis.',
+      sectionLabel: 'Everything in Single Report, plus:',
+      badge: 'MOST POPULAR',
+      featured: true,
+      stripePlan: 'unlimited',
+      monthlyPrice: annual ? '$9.99' : undefined,
+      features: [
+        { text: 'Unlimited case type + district lookups', included: true },
+        { text: 'All 84 case types · all 94 districts', included: true },
+        { text: 'Full settlement percentile ranges', included: true },
+        { text: 'Year-over-year trend data (10-year history)', included: true },
+        { text: 'Compare up to 3 cases simultaneously', included: true },
+        { text: 'Save unlimited reports — no expiry', included: true },
+        { text: 'Search history (last 100 searches)', included: true },
+        { text: 'Watchlist alerts for 10 districts or case types', included: true },
+        { text: 'Standard judge profiles', included: true },
+        { text: 'Clean PDF exports — no watermark', included: true },
+        { text: 'Bilingual — English & Spanish', included: true },
+        { text: 'Full account dashboard', included: true },
+        { text: 'Advanced judge intelligence', included: false },
+        { text: 'AI outcome predictor', included: false },
+        { text: 'Opposing counsel research', included: false },
+        { text: 'Attorney Mode features', included: false },
+      ],
+      ctaText: 'Start Unlimited',
+      ctaSubtext: 'Cancel anytime',
+    },
+    {
+      id: 'attorney',
+      name: 'Attorney Mode',
+      tagline: 'For legal professionals',
+      price: annual ? '$24.99' : '$29.99',
+      period: annual ? '/mo (billed $299.88/yr)' : '/mo',
+      description: 'Advanced tools for law firms: AI predictions, bulk analysis, API access, and team collaboration.',
+      sectionLabel: 'Everything in Unlimited Reports, plus:',
+      stripePlan: 'attorney',
+      monthlyPrice: annual ? '$29.99' : undefined,
+      features: [
+        { text: 'Advanced judge intelligence (motion rates, bias trends, behavioral patterns)', included: true },
+        { text: 'AI case outcome predictor', included: true },
+        { text: 'Opposing counsel research', included: true },
+        { text: 'Document intelligence — upload any complaint or motion', included: true },
+        { text: 'Venue selection optimizer (94 districts ranked)', included: true },
+        { text: 'Case trajectory mapper', included: true },
+        { text: 'Appeal probability scorer', included: true },
+        { text: 'Motion success rate database', included: true },
+        { text: 'Negotiation timing intelligence', included: true },
+        { text: 'Expert witness tracker with Daubert risk scores', included: true },
+        { text: 'Real-time PACER monitoring (up to 25 alerts)', included: true },
+        { text: 'Class action intelligence', included: true },
+        { text: 'Bulk analysis — up to 1,000 cases via CSV', included: true },
+        { text: 'Full API access — unlimited calls', included: true },
+        { text: 'Team workspace — 5 seats included', included: true },
+        { text: 'White-label PDF reports — your firm\'s branding', included: true },
+        { text: 'Custom dashboards — shareable with clients', included: true },
+        { text: 'Daily data refresh (vs. weekly on Unlimited)', included: true },
+        { text: 'Priority support — 24-hour response', included: true },
+      ],
+      ctaText: 'Start Attorney Mode',
+      ctaSubtext: 'Cancel anytime · Team seats included',
+    },
+  ];
+}
+
 const pricingFaqs = [
   { q: 'What does "Single Report" mean exactly?', a: 'You select one case type and one district. We generate a complete outcome report for that specific combination. You have 90 days of access to view and download the PDF. No subscription, no recurring charge.' },
   { q: 'Can I upgrade from Single Report to Unlimited later?', a: "Yes. If you upgrade within your 90-day access window, we'll credit the report purchase price toward your first month of Unlimited Reports." },
@@ -61,125 +183,8 @@ interface PlanCard {
   badge?: string;
   featured?: boolean;
   stripePlan?: 'single' | 'unlimited' | 'attorney';
+  monthlyPrice?: string;
 }
-
-const PLANS: PlanCard[] = [
-  {
-    id: 'free',
-    name: 'Free',
-    tagline: 'For anyone researching a case',
-    price: '$0',
-    period: 'forever',
-    description: 'Start your research with essential case data and win rate analysis.',
-    sectionLabel: 'Includes:',
-    features: [
-      { text: 'Win rate percentage for any case + district', included: true },
-      { text: 'Median settlement amount (national average)', included: true },
-      { text: 'Median case duration', included: true },
-      { text: 'Sample size with every data point', included: true },
-      { text: 'All 94 district overview pages', included: true },
-      { text: 'All 84 case type pages', included: true },
-      { text: '3 free lookups per day', included: true },
-      { text: 'Settlement range (full percentiles)', included: false },
-      { text: 'Judge profiles', included: false },
-      { text: 'PDF export', included: false },
-    ],
-    ctaText: 'Get Started Free',
-    ctaSubtext: 'No account required',
-  },
-  {
-    id: 'single_report',
-    name: 'Single Report',
-    tagline: 'For one specific case',
-    price: '$5.99',
-    period: 'one-time',
-    description: 'Deep dive into a single case with full settlement ranges and judge data.',
-    sectionLabel: 'Includes:',
-    stripePlan: 'single',
-    features: [
-      { text: 'One full case outcome report (any case type + district)', included: true },
-      { text: 'Full settlement range — 10th through 90th percentile', included: true },
-      { text: 'Confidence intervals', included: true },
-      { text: 'Settlement calculator — full results', included: true },
-      { text: 'Basic judge overview for your district', included: true },
-      { text: 'PDF export — clean, branded', included: true },
-      { text: '90-day report access', included: true },
-      { text: 'Email delivery — no account required', included: true },
-      { text: 'Multiple reports', included: false },
-      { text: 'Trend data (year-over-year)', included: false },
-      { text: 'Saved reports library', included: false },
-      { text: 'Judge intelligence profiles', included: false },
-      { text: 'Attorney Mode features', included: false },
-    ],
-    ctaText: 'Buy a Report',
-    ctaSubtext: 'Save and revisit for 90 days · No subscription',
-  },
-  {
-    id: 'unlimited',
-    name: 'Unlimited Reports',
-    tagline: 'For ongoing case research',
-    price: '$9.99',
-    period: '/mo',
-    description: 'Unlimited lookups across all case types and districts with trend analysis.',
-    sectionLabel: 'Everything in Single Report, plus:',
-    badge: 'MOST POPULAR',
-    featured: true,
-    stripePlan: 'unlimited',
-    features: [
-      { text: 'Unlimited case type + district lookups', included: true },
-      { text: 'All 84 case types · all 94 districts', included: true },
-      { text: 'Full settlement percentile ranges', included: true },
-      { text: 'Year-over-year trend data (10-year history)', included: true },
-      { text: 'Compare up to 3 cases simultaneously', included: true },
-      { text: 'Save unlimited reports — no expiry', included: true },
-      { text: 'Search history (last 100 searches)', included: true },
-      { text: 'Watchlist alerts for 10 districts or case types', included: true },
-      { text: 'Standard judge profiles', included: true },
-      { text: 'Clean PDF exports — no watermark', included: true },
-      { text: 'Bilingual — English & Spanish', included: true },
-      { text: 'Full account dashboard', included: true },
-      { text: 'Advanced judge intelligence', included: false },
-      { text: 'AI outcome predictor', included: false },
-      { text: 'Opposing counsel research', included: false },
-      { text: 'Attorney Mode features', included: false },
-    ],
-    ctaText: 'Start Unlimited',
-    ctaSubtext: 'Cancel anytime',
-  },
-  {
-    id: 'attorney',
-    name: 'Attorney Mode',
-    tagline: 'For legal professionals',
-    price: '$29.99',
-    period: '/mo',
-    description: 'Advanced tools for law firms: AI predictions, bulk analysis, API access, and team collaboration.',
-    sectionLabel: 'Everything in Unlimited Reports, plus:',
-    stripePlan: 'attorney',
-    features: [
-      { text: 'Advanced judge intelligence (motion rates, bias trends, behavioral patterns)', included: true },
-      { text: 'AI case outcome predictor', included: true },
-      { text: 'Opposing counsel research', included: true },
-      { text: 'Document intelligence — upload any complaint or motion', included: true },
-      { text: 'Venue selection optimizer (94 districts ranked)', included: true },
-      { text: 'Case trajectory mapper', included: true },
-      { text: 'Appeal probability scorer', included: true },
-      { text: 'Motion success rate database', included: true },
-      { text: 'Negotiation timing intelligence', included: true },
-      { text: 'Expert witness tracker with Daubert risk scores', included: true },
-      { text: 'Real-time PACER monitoring (up to 25 alerts)', included: true },
-      { text: 'Class action intelligence', included: true },
-      { text: 'Bulk analysis — up to 1,000 cases via CSV', included: true },
-      { text: 'Full API access — unlimited calls', included: true },
-      { text: 'Team workspace — 5 seats included', included: true },
-      { text: 'White-label PDF reports — your firm\'s branding', included: true },
-      { text: 'Custom dashboards — shareable with clients', included: true },
-      { text: 'Daily data refresh (vs. weekly on Unlimited)', included: true },
-      { text: 'Priority support — 24-hour response', included: true },
-    ],
-    ctaText: 'Start Attorney Mode',
-    ctaSubtext: 'Cancel anytime · Team seats included',
-  },
-];
 
 function PricingCard({
   plan,
@@ -261,7 +266,7 @@ function PricingCard({
           {plan.tagline}
         </p>
 
-        <div style={{ marginBottom: '4px' }}>
+        <div style={{ marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span
             style={{
               fontSize: '48px',
@@ -273,6 +278,18 @@ function PricingCard({
           >
             {plan.price}
           </span>
+          {plan.monthlyPrice && (
+            <span
+              style={{
+                fontSize: '14px',
+                color: 'var(--fg-muted)',
+                textDecoration: 'line-through',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              {plan.monthlyPrice}
+            </span>
+          )}
         </div>
 
         <p
@@ -301,7 +318,8 @@ function PricingCard({
         {/* CTA Button */}
         {plan.stripePlan ? (
           <button
-            disabled={true}
+            onClick={() => onCheckout(plan.stripePlan!)}
+            disabled={loadingPlan === plan.stripePlan}
             style={{
               width: '100%',
               padding: '12px 16px',
@@ -316,16 +334,16 @@ function PricingCard({
               transition: 'all 200ms ease',
               display: 'inline-block',
               marginBottom: '8px',
-              cursor: 'not-allowed',
-              opacity: 0.5,
+              cursor: 'pointer',
+              opacity: 1,
             }}
             className="pricing-cta-link"
           >
-            Coming Soon
+            {loadingPlan === plan.stripePlan ? 'Loading...' : plan.ctaText}
           </button>
         ) : (
           <Link
-            href="/cases"
+            href="/search"
             style={{
               width: '100%',
               padding: '12px 16px',
@@ -449,12 +467,35 @@ function PricingCard({
 }
 
 export default function PricingPage() {
+  const [annual, setAnnual] = useState(false);
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
   const [error, setError] = useState('');
+  const plans = getPlansByBillingPeriod(annual);
 
   async function handleCheckout(plan: 'single' | 'unlimited' | 'attorney') {
-    // Payments coming soon
     setError('');
+    setLoadingPlan(plan);
+    try {
+      // DEV MODE: All features unlocked — Stripe integration pending
+      // When Stripe is re-added, this will create a checkout session
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan }),
+      });
+      if (!res.ok) {
+        // Stripe not configured yet — redirect to sign-in as interim flow
+        window.location.href = '/sign-in?plan=' + plan;
+        return;
+      }
+      const data = await res.json();
+      if (data.url) window.location.href = data.url;
+    } catch {
+      // Stripe not configured — redirect to sign-in as interim
+      window.location.href = '/sign-in?plan=' + plan;
+    } finally {
+      setLoadingPlan(null);
+    }
   }
 
   return (
@@ -540,6 +581,88 @@ export default function PricingPage() {
           paddingTop: '64px',
         }}
       >
+        {/* Billing Toggle */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '16px',
+            marginBottom: '48px',
+          }}
+        >
+          <span
+            style={{
+              fontSize: '14px',
+              fontFamily: 'var(--font-body)',
+              color: annual ? 'var(--fg-muted)' : 'var(--fg-primary)',
+              fontWeight: annual ? '400' : '500',
+            }}
+          >
+            Monthly
+          </span>
+
+          <button
+            onClick={() => setAnnual(!annual)}
+            aria-label={`Switch to ${annual ? 'monthly' : 'annual'} billing`}
+            style={{
+              position: 'relative',
+              width: '56px',
+              height: '32px',
+              borderRadius: '16px',
+              border: 'none',
+              background: annual ? 'var(--accent-primary)' : 'var(--border-default)',
+              cursor: 'pointer',
+              padding: '2px',
+              transition: 'background 200ms ease',
+              display: 'flex',
+              alignItems: 'center',
+              paddingLeft: annual ? '26px' : '4px',
+              paddingRight: annual ? '4px' : '26px',
+            }}
+          >
+            <div
+              style={{
+                width: '24px',
+                height: '24px',
+                borderRadius: '12px',
+                background: 'white',
+                transition: 'all 200ms ease',
+              }}
+            />
+          </button>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <span
+              style={{
+                fontSize: '14px',
+                fontFamily: 'var(--font-body)',
+                color: annual ? 'var(--fg-primary)' : 'var(--fg-muted)',
+                fontWeight: annual ? '500' : '400',
+              }}
+            >
+              Annual
+            </span>
+            {annual && (
+              <span
+                style={{
+                  display: 'inline-block',
+                  padding: '2px 8px',
+                  borderRadius: '4px',
+                  background: 'var(--accent-light)',
+                  color: 'var(--accent-primary)',
+                  fontSize: '11px',
+                  fontWeight: '600',
+                  fontFamily: 'var(--font-body)',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                Save 16%
+              </span>
+            )}
+          </div>
+        </div>
+
         {/* Error Banner */}
         {error && (
           <div
@@ -575,7 +698,7 @@ export default function PricingPage() {
             marginBottom: '64px',
           }}
         >
-          {PLANS.map((plan) => (
+          {plans.map((plan) => (
             <PricingCard
               key={plan.id}
               plan={plan}

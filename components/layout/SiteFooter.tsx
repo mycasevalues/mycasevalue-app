@@ -83,9 +83,9 @@ export default function SiteFooter() {
             </p>
             <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <Link href="/search" className="site-footer-link" style={footerLinkStyle}>Search Cases</Link>
+              <Link href="/cases" className="site-footer-link" style={footerLinkStyle}>Case Types</Link>
               <Link href="/districts" className="site-footer-link" style={footerLinkStyle}>Districts</Link>
               <Link href="/judges" className="site-footer-link" style={footerLinkStyle}>Judge Profiles</Link>
-              <Link href="/cases" className="site-footer-link" style={footerLinkStyle}>Case Types</Link>
               <Link href="/calculator" className="site-footer-link" style={footerLinkStyle}>Settlement Calculator</Link>
               <Link href="/trends" className="site-footer-link" style={footerLinkStyle}>Trends</Link>
               <Link href="/attorney" className="site-footer-link" style={footerLinkStyle}>Attorney Mode</Link>

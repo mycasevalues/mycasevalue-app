@@ -19,11 +19,13 @@ export async function generateMetadata(props: BlogPostPageProps): Promise<Metada
 
   if (!post) {
     return {
-      title: 'Not Found',
+      title: 'Article Not Found — MyCaseValue',
+      description: 'The article you are looking for could not be found.',
     };
   }
 
   const url = `https://mycasevalues.com/blog/${post.slug}`;
+  const baseUrl = new URL(url).origin;
 
   return {
     title: `${post.title} — MyCaseValue`,
@@ -37,8 +39,17 @@ export async function generateMetadata(props: BlogPostPageProps): Promise<Metada
       publishedTime: post.publishedAt.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
       authors: [post.author],
+      images: post.image ? [{ url: post.image, alt: post.title }] : [{ url: `${baseUrl}/og-image.jpg`, alt: 'MyCaseValue' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: post.image ? [post.image] : [`${baseUrl}/og-image.jpg`],
     },
     keywords: post.tags.join(', '),
+    authors: [{ name: post.author }],
+    creator: post.author,
   };
 }
 
@@ -148,7 +159,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
       {/* Article content */}
       <article className="max-w-3xl mx-auto px-6 py-16">
-        <div className="prose prose-invert max-w-none" style={{
+        <div className="prose max-w-none" style={{
           '--tw-prose-body': 'var(--fg-primary)',
           '--tw-prose-headings': 'var(--fg-primary)',
           '--tw-prose-lead': 'var(--fg-muted)',

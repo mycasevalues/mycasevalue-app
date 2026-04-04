@@ -36,7 +36,7 @@ export default function MethodologyPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-invert max-w-none">
+        <div className="prose max-w-none">
           {/* Section 1 */}
           <section className="mb-12">
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>Data Sources</h2>

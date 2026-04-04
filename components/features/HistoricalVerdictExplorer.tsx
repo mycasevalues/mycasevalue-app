@@ -493,6 +493,7 @@ export default function HistoricalVerdictExplorer({
                 setCurrentPage(1);
               }}
               placeholder={yearRange.min.toString()}
+              aria-label="Minimum year"
               style={{
                 padding: '6px 8px',
                 fontSize: '13px',
@@ -513,6 +514,7 @@ export default function HistoricalVerdictExplorer({
                 setCurrentPage(1);
               }}
               placeholder={yearRange.max.toString()}
+              aria-label="Maximum year"
               style={{
                 padding: '6px 8px',
                 fontSize: '13px',
@@ -586,6 +588,7 @@ export default function HistoricalVerdictExplorer({
                 setCurrentPage(1);
               }}
               placeholder="$0"
+              aria-label="Minimum settlement"
               style={{
                 padding: '6px 8px',
                 fontSize: '13px',
@@ -604,6 +607,7 @@ export default function HistoricalVerdictExplorer({
                 setCurrentPage(1);
               }}
               placeholder={`$${settlementRange.max}`}
+              aria-label="Maximum settlement"
               style={{
                 padding: '6px 8px',
                 fontSize: '13px',

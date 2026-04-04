@@ -4,11 +4,11 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { SITS, STATES } from '../lib/data';
 
-// Build a lookup: option "d" value → SITS category id
-const OPT_TO_CATEGORY: Record<string, string> = {};
+// Build a lookup: option "d" value → NOS code for direct report routing
+const OPT_TO_NOS: Record<string, string> = {};
 for (const cat of SITS) {
   for (const opt of cat.opts) {
-    OPT_TO_CATEGORY[opt.d] = cat.id;
+    OPT_TO_NOS[opt.d] = (opt as { nos?: string }).nos || cat.id;
   }
 }
 
@@ -20,11 +20,11 @@ export default function QuickLookupForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!caseType) return;
-    const category = OPT_TO_CATEGORY[caseType] || 'work';
+    const nos = OPT_TO_NOS[caseType] || 'work';
     const params = new URLSearchParams();
     if (district) params.set('district', district);
     const qs = params.toString();
-    router.push(`/report/${category}${qs ? `?${qs}` : ''}`);
+    router.push(`/report/${nos}${qs ? `?${qs}` : ''}`);
   }
 
   return (

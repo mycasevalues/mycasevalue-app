@@ -158,6 +158,7 @@ export function EmailCaptureBanner({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={state === 'loading'}
+              aria-label="Email address"
               className="flex-1 px-4 py-3 rounded-lg bg-[#0f1419] border border-gray-700 text-white placeholder-gray-500 outline-none transition focus:border-indigo-500 disabled:opacity-50"
             />
             <button type="submit"

@@ -26,7 +26,7 @@ export default function SpanishDisclaimerPage() {
           Descargo de Responsabilidad
         </h1>
 
-        <div className="prose prose-invert max-w-none space-y-6" style={{ color: 'var(--fg-muted)' }}>
+        <div className="prose max-w-none space-y-6" style={{ color: 'var(--fg-muted)' }}>
           <section>
             <h2 className="text-2xl font-semibold mb-4" style={{ color: 'var(--fg-primary)' }}>
               Declaración General

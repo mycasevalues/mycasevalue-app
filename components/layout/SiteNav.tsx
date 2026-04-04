@@ -14,11 +14,10 @@ import { createBrowserClient } from '@supabase/ssr';
 
 const NAV_LINKS = [
   { href: '/search', label: 'Search' },
+  { href: '/cases', label: 'Cases' },
   { href: '/districts', label: 'Districts' },
-  { href: '/judges', label: 'Judges' },
   { href: '/calculator', label: 'Calculator' },
-  { href: '/how-it-works', label: 'How It Works' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/attorney', label: 'Attorney Mode' },
 ];
 

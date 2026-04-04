@@ -56,7 +56,7 @@ export default function TermsPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-invert max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+        <div className="prose max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
 
           <div className="p-6 rounded-xl border-l-4" style={{ borderColor: '#D97706', background: '#E5E7EB', color: 'var(--fg-primary)' }}>
             <p className="m-0 font-semibold" style={{ color: '#D97706' }}>

@@ -5,7 +5,10 @@ import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 import SiteNav from '../components/layout/SiteNav';
 import SiteFooter from '../components/layout/SiteFooter';
-import CookieConsent from '../components/CookieConsent';
+import dynamic from 'next/dynamic';
+
+const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar'), { ssr: false });
+const CookieConsent = dynamic(() => import('../components/ui/CookieConsent'), { ssr: false });
 
 export const metadata = {
   title: {
@@ -253,9 +256,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             navigator.serviceWorker.register('/sw.js');
           }
         ` }} />
+        <style>{`
+          @keyframes pageEnter {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          main {
+            animation: pageEnter 0.3s ease-out;
+          }
+        `}</style>
       </head>
       <body style={{ background: 'var(--bg-base)', color: 'var(--fg-primary)' }} suppressHydrationWarning>
-        <a href="#main-content" className="skip-to-content">Skip to main content</a>
+        <RouteLoadingBar />
+        <a href="#main-content" className="skip-to-main">
+          Skip to main content
+        </a>
         <ErrorBoundary>
           <AnalyticsProvider>
             <SiteNav />

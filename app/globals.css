@@ -7,6 +7,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Skip to main content link — accessible, CSS-only */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: 2px;
+  z-index: 10000;
+  padding: 8px 16px;
+  background: var(--accent-primary);
+  color: white;
+  border-radius: 0 0 8px 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  text-decoration: none;
+}
+.skip-to-main:focus {
+  left: 0;
+}
+
 /* ============================================================
    PAPER DESIGN SYSTEM — Global typography reset
    ============================================================ */
@@ -3420,4 +3438,76 @@ body:has(.ssr-hero-container[data-mcv-loaded]) .site-footer {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   border-color: #8B5CF6 !important;
+}
+
+/* ============================================================
+   ENHANCED PRINT STYLES — print-friendly CSS
+   ============================================================ */
+@media print {
+  .site-nav, .site-footer, .site-nav-mobile-overlay, .site-nav-mobile-drawer,
+  .cookie-consent, [data-no-print], button, .no-print,
+  .premium-cta, .cta-glow, .exit-intent-modal,
+  .mobile-bottom-nav, .scroll-indicator,
+  .reading-progress, .back-to-top, .hero-orb,
+  .particle, .live-beacon, .skip-to-content {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt !important;
+    line-height: 1.6 !important;
+  }
+
+  h1 {
+    font-size: 18pt !important;
+    page-break-after: avoid !important;
+  }
+
+  h2 {
+    font-size: 14pt !important;
+    page-break-after: avoid !important;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 12pt !important;
+    page-break-after: avoid !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+
+  .report-section, section {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Preserve table visibility */
+  table, table * {
+    border: 1px solid #000 !important;
+  }
+
+  tr, td, th {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Ensure images print at reasonable size */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+  }
 }

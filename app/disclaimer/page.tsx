@@ -63,7 +63,7 @@ export default function DisclaimerPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-invert max-w-none space-y-8">
+        <div className="prose max-w-none space-y-8">
           {/* Not Legal Advice */}
           <section>
             <h2 className="text-2xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>

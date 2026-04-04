@@ -331,6 +331,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onSelect, sits, lang })
             }
           }}
           placeholder={lang === 'en' ? 'Search case types...' : 'Buscar tipos de casos...'}
+          aria-label={lang === 'en' ? 'Search case types' : 'Buscar tipos de casos'}
           style={{
             flex: 1,
             backgroundColor: 'transparent',

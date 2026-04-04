@@ -126,6 +126,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               </div>
               <input type="range" min="0" max="100" value={damageAmount}
                 onChange={e => setDamageAmount(Number(e.target.value))}
+                aria-label={es ? 'Monto en disputa' : 'Amount in Dispute'}
                 className="simulator-slider w-full"
                 style={{ '--slider-pct': `${damageAmount}%` } as any} />
               <div className="flex justify-between mt-1">
@@ -146,6 +147,7 @@ export default function OutcomeSimulator({ lang = 'en', onGetStarted }: Simulato
               </div>
               <input type="range" min="0" max="100" value={jurisdiction}
                 onChange={e => setJurisdiction(Number(e.target.value))}
+                aria-label={es ? 'Factor de jurisdicción' : 'Jurisdiction Factor'}
                 className="simulator-slider w-full"
                 style={{ '--slider-pct': `${jurisdiction}%` } as any} />
               <div className="flex justify-between mt-1">

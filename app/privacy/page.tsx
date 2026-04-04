@@ -56,7 +56,7 @@ export default function PrivacyPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose prose-invert max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
+        <div className="prose max-w-none space-y-8 text-sm leading-relaxed" style={{ color: 'var(--fg-muted)' }}>
 
           <section>
             <h2 className="text-xl font-display font-bold mb-4" style={{ color: 'var(--fg-primary)' }}>

@@ -221,6 +221,7 @@ export function ShareResearch({
                 type="text"
                 readOnly
                 value={shareableUrl}
+                aria-label="Shareable link"
                 className="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-xs bg-gray-50 text-gray-600 font-mono overflow-hidden text-ellipsis"
               />
               <button

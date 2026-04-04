@@ -16,6 +16,7 @@ interface CaseStats {
   settlementRate: number;
   dismissRate: number;
   medianDuration: number;
+  medianRecovery: number | null;
   totalCases: number | null;
 }
 
@@ -34,6 +35,7 @@ function getStats(nos: string): CaseStats | null {
     settlementRate,
     dismissRate,
     medianDuration: real.mo ?? 0,
+    medianRecovery: real.rng?.md ?? null,
     totalCases: real.total ?? null,
   };
 }
@@ -53,12 +55,13 @@ export default function ComparePage() {
 
   const canCompare = selected.filter(Boolean).length >= 2;
 
-  const rows: { label: string; key: keyof CaseStats; suffix: string; format?: (v: number) => string }[] = [
-    { label: 'Win Rate', key: 'winRate', suffix: '%', format: (v) => v.toFixed(1) },
-    { label: 'Settlement Rate', key: 'settlementRate', suffix: '%', format: (v) => v.toFixed(1) },
-    { label: 'Dismissal Rate', key: 'dismissRate', suffix: '%', format: (v) => v.toFixed(1) },
+  const rows: { label: string; key: keyof CaseStats; suffix: string; format?: (v: number | null) => string }[] = [
+    { label: 'Win Rate', key: 'winRate', suffix: '%', format: (v) => (v !== null ? v.toFixed(1) : 'N/A') },
+    { label: 'Settlement Rate', key: 'settlementRate', suffix: '%', format: (v) => (v !== null ? v.toFixed(1) : 'N/A') },
+    { label: 'Dismissal Rate', key: 'dismissRate', suffix: '%', format: (v) => (v !== null ? v.toFixed(1) : 'N/A') },
     { label: 'Median Duration', key: 'medianDuration', suffix: ' months' },
-    { label: 'Total Cases', key: 'totalCases', suffix: '', format: (v) => v?.toLocaleString() ?? 'N/A' },
+    { label: 'Median Recovery', key: 'medianRecovery', suffix: 'k', format: (v) => (v !== null ? v.toLocaleString() : 'N/A') },
+    { label: 'Sample Size', key: 'totalCases', suffix: '', format: (v) => (v !== null ? v.toLocaleString() : 'N/A') },
   ];
 
   return (
@@ -162,18 +165,37 @@ export default function ComparePage() {
                   const v = s[row.key];
                   return typeof v === 'number' ? v : null;
                 });
-                const best = row.key !== 'medianDuration' && row.key !== 'dismissRate'
-                  ? Math.max(...values.filter((v): v is number => v !== null))
-                  : null;
+                let best: number | null = null;
+                const nonNullValues = values.filter((v): v is number => v !== null);
+
+                if (nonNullValues.length > 0) {
+                  // Lower is better for duration and dismissal rate
+                  if (row.key === 'medianDuration' || row.key === 'dismissRate') {
+                    best = Math.min(...nonNullValues);
+                  }
+                  // Higher is better for rates (win, settlement) and recovery
+                  else if (row.key !== 'totalCases' && row.key !== 'medianRecovery') {
+                    best = Math.max(...nonNullValues);
+                  }
+                  // Higher is better for recovery (explicitly)
+                  else if (row.key === 'medianRecovery') {
+                    best = Math.max(...nonNullValues);
+                  }
+                }
+
                 return (
                   <tr key={row.label} style={{ borderBottom: '1px solid var(--border-default)', background: ri % 2 === 0 ? 'var(--bg-surface)' : 'transparent' }}>
                     <td style={{ padding: '12px 16px', fontWeight: 600, color: 'var(--fg-secondary)' }}>{row.label}</td>
                     {stats.map((s, si) => {
                       const v = values[si];
-                      const formatted = v !== null
-                        ? (row.format ? row.format(v) : `${v}`) + row.suffix
-                        : 'N/A';
-                      const isBest = best !== null && v === best && row.key !== 'totalCases';
+                      let formatted = 'N/A';
+                      if (v !== null) {
+                        formatted = row.format ? row.format(v) : `${v}`;
+                        if (!formatted.includes('N/A')) {
+                          formatted = formatted + row.suffix;
+                        }
+                      }
+                      const isBest = best !== null && v === best;
                       return (
                         <td key={s.nos} style={{
                           textAlign: 'center',
