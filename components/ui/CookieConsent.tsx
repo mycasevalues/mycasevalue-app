@@ -40,11 +40,11 @@ export default function CookieConsent() {
         left: 0,
         right: 0,
         zIndex: 300,
-        padding: '1rem',
-        background: '#FFFFFF',
-        borderTop: '1px solid var(--border-default)',
-        boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.08)',
-        animation: 'slideUp 0.3s ease-out',
+        padding: '1.5rem 1rem',
+        background: '#00172E',
+        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        boxShadow: '0 -4px 12px rgba(0, 23, 46, 0.15)',
+        animation: 'slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
       }}
     >
       <style>{`
@@ -62,30 +62,32 @@ export default function CookieConsent() {
 
       <div
         style={{
-          maxWidth: '600px',
+          maxWidth: '900px',
           margin: '0 auto',
           display: 'flex',
           flexDirection: 'column',
-          gap: '1rem',
+          gap: '1.25rem',
           alignItems: 'flex-start',
         }}
       >
         <p
           style={{
             margin: 0,
-            fontSize: '0.875rem',
-            color: '#212529',
+            fontSize: '0.9375rem',
+            color: '#FFFFFF',
             fontFamily: 'var(--font-body)',
-            lineHeight: '1.5',
+            lineHeight: '1.6',
+            letterSpacing: '0.3px',
           }}
         >
           We use cookies to improve your experience. By continuing to use this site, you agree to our{' '}
           <Link
             href="/privacy"
             style={{
-              color: '#006997',
+              color: '#E8F0F5',
               textDecoration: 'underline',
               fontWeight: 500,
+              transition: 'color 0.2s ease',
             }}
           >
             cookie policy
@@ -96,25 +98,27 @@ export default function CookieConsent() {
         <div
           style={{
             display: 'flex',
-            gap: '0.75rem',
+            gap: '1rem',
             flexWrap: 'wrap',
+            alignItems: 'center',
           }}
         >
           <button
             onClick={handleAccept}
             style={{
-              padding: '0.5rem 1rem',
+              padding: '0.625rem 1.25rem',
               backgroundColor: '#E8171F',
-              color: 'white',
+              color: '#FFFFFF',
               border: 'none',
               borderRadius: '4px',
-              fontSize: '0.875rem',
+              fontSize: '0.9375rem',
               fontFamily: 'var(--font-body)',
-              fontWeight: 500,
+              fontWeight: 600,
               cursor: 'pointer',
-              transition: 'opacity 0.2s ease',
+              transition: 'all 0.2s ease',
+              letterSpacing: '0.2px',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
             Accept
@@ -123,19 +127,26 @@ export default function CookieConsent() {
           <button
             onClick={handleDecline}
             style={{
-              padding: '0.5rem 1rem',
+              padding: '0.625rem 1.25rem',
               backgroundColor: 'transparent',
-              color: '#212529',
-              border: '1px solid var(--border-default)',
+              color: '#FFFFFF',
+              border: '1.5px solid rgba(255, 255, 255, 0.3)',
               borderRadius: '4px',
-              fontSize: '0.875rem',
+              fontSize: '0.9375rem',
               fontFamily: 'var(--font-body)',
-              fontWeight: 500,
+              fontWeight: 600,
               cursor: 'pointer',
-              transition: 'opacity 0.2s ease',
+              transition: 'all 0.2s ease',
+              letterSpacing: '0.2px',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}
           >
             Decline
           </button>

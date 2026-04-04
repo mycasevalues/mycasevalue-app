@@ -1,6 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Metadata } from 'next';
+
+// Note: Metadata cannot be exported from client components
+// For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
+// Metadata content for this page:
+// title: "Federal Court Win Rates by State — District Map | MyCaseValue"
+// description: "Explore federal court win rates by state and judicial district. See which states have the highest and lowest plaintiff success rates across all federal case types."
 
 const AGGREGATE_STATE_RATES: Record<string, number> = {
   AK: 43.7, AL: 40.7, AR: 57.1, AZ: 48.7, CA: 40.9, CO: 53.6, CT: 57.6,
