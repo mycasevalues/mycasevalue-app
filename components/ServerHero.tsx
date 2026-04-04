@@ -105,6 +105,20 @@ export default function ServerHero() {
             }}>
               View sample report
             </a>
+            <a href="/calculator" aria-label="Estimate your case value with our settlement calculator" style={{
+              display: 'inline-block',
+              padding: '14px 32px',
+              background: '#FFFFFF',
+              color: '#111111',
+              border: '1px solid #E5E7EB',
+              borderRadius: '8px',
+              fontWeight: 600,
+              fontSize: '16px',
+              fontFamily: 'var(--font-display)',
+              textDecoration: 'none',
+            }}>
+              Calculator
+            </a>
           </div>
 
           {/* Trust signals */}
