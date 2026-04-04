@@ -8,6 +8,7 @@ import QuickLookupForm from './QuickLookupForm';
 import HeroStats from './ui/HeroStats';
 import AnchorNav from './AnchorNav';
 import TabbedFeatures from './TabbedFeatures';
+import TrustBar from './TrustBar';
 
 export default function ServerHero() {
   return (
@@ -152,6 +153,9 @@ export default function ServerHero() {
           ))}
         </div>
       </div>
+
+      {/* ── TRUST BAR ────────────────────────────────────── */}
+      <TrustBar />
 
       {/* ── VISUAL 3: STATS BAR ────────────────────────────── */}
       <div style={{ background: 'transparent', borderBottom: '1px solid #D5D8DC', padding: '40px 24px' }}>

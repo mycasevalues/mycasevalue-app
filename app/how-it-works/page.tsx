@@ -58,8 +58,8 @@ const jsonLd = {
 const steps = [
   {
     number: '1',
-    title: 'Tell us your situation',
-    description: 'Select your case type and federal district. No legal jargon needed — we use plain English labels.',
+    title: 'Select Your Case Type',
+    description: 'Choose from 84 federal case categories. No legal jargon needed — we use plain English labels to describe every case type.',
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="1.5">
         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
@@ -69,8 +69,8 @@ const steps = [
   },
   {
     number: '2',
-    title: 'We search 54 years of data',
-    description: 'Our system analyzes 5.1M+ federal court cases from the FJC Integrated Database, PACER, and CourtListener to find cases matching your situation.',
+    title: 'Choose Your District',
+    description: 'Pick from 94 federal judicial districts across the United States. We analyze cases from your specific district for maximum relevance.',
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="1.5">
         <circle cx="11" cy="11" r="8"/>
@@ -82,8 +82,8 @@ const steps = [
   },
   {
     number: '3',
-    title: 'Get your personalized report',
-    description: 'See real outcomes: win rates, settlement ranges, timelines, judge analytics, and plain-English explanations. All from verified public records.',
+    title: 'Get Your Report',
+    description: 'Instant results with win rates, settlement ranges, timelines, judge analytics, and plain-English explanations. All from verified public records.',
     icon: (
       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="1.5">
         <line x1="12" y1="2" x2="12" y2="22"/>
@@ -112,15 +112,20 @@ export default function HowItWorksPage() {
       <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: '#CC1019' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CC1019" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            HOW IT WORKS
+            style={{ background: 'rgba(232, 23, 31, 0.1)', color: '#E8171F' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
+              <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
+              <polyline points="12 12 20 7.5"></polyline>
+              <polyline points="12 12 12 21"></polyline>
+              <polyline points="12 12 4 7.5"></polyline>
+            </svg>
+            PROCESS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
-            3 Simple Steps
+          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
+            How It Works
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            From selecting your case type to getting a complete analysis of real federal court outcomes — all in minutes.
+          <p className="text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
+            From selecting your case type to getting a complete analysis of real federal court outcomes across 5.1M+ cases — all in minutes.
           </p>
         </div>
       </div>
@@ -135,19 +140,25 @@ export default function HowItWorksPage() {
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
                 {/* Card */}
-                <div className="rounded-2xl border p-8 h-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 animate-in fade-in slide-in-from-bottom-4"
+                <div className="border h-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 animate-in fade-in slide-in-from-bottom-4"
                   style={{
                     borderColor: '#D5D8DC',
                     background: '#FFFFFF',
+                    borderRadius: '4px',
+                    padding: '32px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                     animationDelay: `${idx * 100}ms`,
                   }}>
 
                   {/* Step number circle */}
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full font-display font-extrabold text-lg mb-6"
+                  <div className="inline-flex items-center justify-center font-display font-bold mb-6"
                     style={{
-                      background: ['#FFF3F4', '#FFF3F4', '#FFF3F4'][idx],
-                      color: ['#CC1019', '#CC1019', '#CC1019'][idx],
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: '50%',
+                      background: '#E8171F',
+                      color: '#FFFFFF',
+                      fontSize: '18px',
                     }}>
                     {step.number}
                   </div>
@@ -158,10 +169,10 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h2 className="text-xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+                  <h2 className="font-display font-bold mb-3" style={{ color: '#212529', fontSize: '20px', fontWeight: '700' }}>
                     {step.title}
                   </h2>
-                  <p className="text-sm leading-relaxed" style={{ color: '#999999' }}>
+                  <p className="leading-relaxed" style={{ color: '#455A64', fontSize: '15px', fontWeight: '300', lineHeight: '1.7' }}>
                     {step.description}
                   </p>
                 </div>
@@ -172,6 +183,63 @@ export default function HowItWorksPage() {
           {/* Mobile connecting line (vertical) */}
           <div className="md:hidden absolute left-7 top-32 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/30 to-transparent" />
         </div>
+      </div>
+
+      {/* What's in Your Report Section */}
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        <section>
+          <h2 className="text-2xl font-display font-bold mb-3 text-center" style={{ color: '#212529' }}>
+            What's in Your Report?
+          </h2>
+          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: '#455A64' }}>
+            Get comprehensive insights from 5.1M+ federal court cases with real data about outcomes, trends, and case analytics.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Win Rate Data',
+                description: 'See the actual percentage of cases won by plaintiffs or defendants in your case category and district.',
+              },
+              {
+                title: 'Settlement Ranges',
+                description: 'Understand settlement patterns with P10-P90 ranges showing typical settlement values for cases like yours.',
+              },
+              {
+                title: 'Timeline Analysis',
+                description: 'Learn how long cases typically take from filing to resolution, broken down by outcome type.',
+              },
+              {
+                title: 'Judge Analytics',
+                description: 'Review statistics on specific judges who would hear your case, including their historical rulings.',
+              },
+              {
+                title: 'District Comparison',
+                description: 'Compare your federal district to others nationwide to understand regional variations in outcomes.',
+              },
+              {
+                title: 'Case Trend Data',
+                description: 'Track how outcomes have changed over time to understand current judicial patterns and trends.',
+              },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF' }}>
+                {/* Red Icon */}
+                <div className="mb-4" style={{ width: '24px', height: '24px' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                </div>
+                <h3 className="font-semibold mb-2" style={{ color: '#212529', fontSize: '15px', fontWeight: '700' }}>
+                  {item.title}
+                </h3>
+                <p className="leading-relaxed" style={{ color: '#455A64', fontSize: '13px' }}>
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
 
       {/* Trust Stats Bar */}
@@ -286,18 +354,18 @@ export default function HowItWorksPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="max-w-5xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFF3F4',  }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
-            Ready to see your odds?
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        <section className="text-center p-12 rounded border" style={{ borderColor: '#D5D8DC', background: '#FFF3F4', borderRadius: '4px' }}>
+          <h2 className="text-3xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+            Ready to see your case data?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#455A64' }}>
-            In three simple steps, discover what happened in cases like yours.
+          <p className="mb-8 max-w-2xl mx-auto text-lg" style={{ color: '#455A64' }}>
+            Start your free research — no account required
           </p>
           <a href="/search"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded text-base font-semibold transition-all hover:shadow-lg"
             style={{ background: '#E8171F', color: '#FFFFFF' }}>
-            Check My Case Type
+            Start Free Research
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </section>

@@ -22,7 +22,7 @@ export default function NewsletterSignup() {
 
       if (res.ok) {
         setStatus('success');
-        setMessage('You\u2019re in! We\u2019ll keep you updated.');
+        setMessage('You\'re subscribed!');
         setEmail('');
       } else {
         setStatus('error');
@@ -38,69 +38,76 @@ export default function NewsletterSignup() {
     <div
       style={{
         background: '#FFFFFF',
-        border: '1px solid var(--border-default)',
+        border: '1px solid #D5D8DC',
         borderRadius: '4px',
         padding: '32px',
-        maxWidth: '520px',
-        margin: '0 auto',
       }}
     >
-      <div style={{ textAlign: 'center', marginBottom: '16px' }}>
-        <div
-          style={{
-            width: '44px',
-            height: '44px',
-            borderRadius: '4px',
-            background: 'var(--accent-primary-subtle)',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '12px',
-          }}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7" />
-          </svg>
-        </div>
-        <p
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: '17px',
-            fontWeight: 700,
-            color: '#212529',
-            margin: '0 0 4px',
-          }}
-        >
-          Stay updated
-        </p>
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: '14px',
-            color: '#455A64',
-            margin: 0,
-            lineHeight: 1.5,
-          }}
-        >
-          Get notified about new case types, features, and federal court data insights.
-        </p>
+      {/* Label */}
+      <div
+        style={{
+          fontSize: '11px',
+          fontWeight: 600,
+          color: '#E8171F',
+          textTransform: 'uppercase',
+          letterSpacing: '0.08em',
+          marginBottom: '8px',
+        }}
+      >
+        Stay Informed
       </div>
 
+      {/* Heading */}
+      <h2
+        style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: '20px',
+          fontWeight: 700,
+          color: '#212529',
+          margin: '0 0 8px',
+          lineHeight: 1.3,
+        }}
+      >
+        Get federal court insights delivered
+      </h2>
+
+      {/* Description */}
+      <p
+        style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '14px',
+          color: '#455A64',
+          margin: '0 0 24px',
+          lineHeight: 1.6,
+        }}
+      >
+        Weekly data-driven analysis of federal court trends, settlement patterns, and litigation insights.
+      </p>
+
       {status === 'success' ? (
+        /* Success State */
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            padding: '14px',
-            borderRadius: '10px',
+            gap: '12px',
+            padding: '16px',
+            borderRadius: '4px',
             background: 'rgba(22, 163, 74, 0.08)',
             border: '1px solid rgba(22, 163, 74, 0.2)',
           }}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" strokeWidth="2.5" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#16A34A"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
             <path d="M20 6L9 17l-5-5" />
           </svg>
           <span
@@ -115,7 +122,15 @@ export default function NewsletterSignup() {
           </span>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '8px' }}>
+        /* Form */
+        <form
+          onSubmit={handleSubmit}
+          style={{
+            display: 'flex',
+            gap: '12px',
+            flexWrap: 'wrap',
+          }}
+        >
           <input
             type="email"
             value={email}
@@ -123,64 +138,72 @@ export default function NewsletterSignup() {
               setEmail(e.target.value);
               if (status === 'error') setStatus('idle');
             }}
-            placeholder="you@example.com"
+            placeholder="Enter your email"
             required
             aria-label="Email address"
             style={{
               flex: 1,
+              minWidth: '200px',
+              height: '48px',
               padding: '12px 16px',
               borderRadius: '4px',
-              border: `1px solid ${status === 'error' ? '#EF4444' : 'var(--border-default)'}`,
+              border: `1px solid ${status === 'error' ? '#EF4444' : '#D5D8DC'}`,
               background: '#FFFFFF',
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
               color: '#212529',
               outline: 'none',
               transition: 'border-color 200ms',
+              boxSizing: 'border-box',
             }}
           />
           <button
             type="submit"
             disabled={status === 'loading'}
             style={{
-              padding: '12px 20px',
-              borderRadius: '0px',
+              height: '48px',
+              padding: '0 24px',
+              borderRadius: '4px',
               border: 'none',
               background: '#E8171F',
               color: '#FFFFFF',
-              fontFamily: 'var(--font-display)',
-              fontSize: '14px',
+              fontFamily: 'var(--font-body)',
+              fontSize: '13px',
               fontWeight: 700,
+              textTransform: 'uppercase',
               cursor: status === 'loading' ? 'wait' : 'pointer',
               opacity: status === 'loading' ? 0.7 : 1,
               transition: 'opacity 200ms',
               whiteSpace: 'nowrap',
             }}
           >
-            {status === 'loading' ? 'Joining\u2026' : 'Subscribe'}
+            {status === 'loading' ? 'Subscribing…' : 'Subscribe'}
           </button>
         </form>
       )}
+
+      {/* Error Message */}
       {status === 'error' && (
         <p
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
             color: '#EF4444',
-            margin: '8px 0 0',
-            textAlign: 'center',
+            margin: '12px 0 0',
           }}
         >
           {message}
         </p>
       )}
+
+      {/* Privacy Text */}
       <p
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
           color: '#999999',
-          textAlign: 'center',
-          margin: '12px 0 0',
+          margin: '16px 0 0',
+          lineHeight: 1.5,
         }}
       >
         No spam. Unsubscribe anytime.
