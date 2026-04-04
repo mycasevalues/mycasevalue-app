@@ -118,12 +118,12 @@ export default function ServerContent() {
           >
             {CASE_CATEGORIES.map((cat, i) => (
               <a key={i} href={`/cases/${cat.id}`} style={{ textDecoration: 'none' }}>
-                <div style={{
+                <div className="category-card" style={{
                   background: '#FFFFFF',
                   border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
-                  transition: 'all 150ms',
+                  transition: 'all 0.2s ease',
                   cursor: 'pointer',
                   height: '100%',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -196,12 +196,14 @@ export default function ServerContent() {
             ].map((feat, i) => (
               <div
                 key={i}
+                className="feature-card"
                 style={{
                   background: '#FAFBFC',
                   border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  transition: 'all 0.2s ease',
                 }}
               >
                 <h3
@@ -259,7 +261,7 @@ export default function ServerContent() {
               { title: 'Legal Aid & Nonprofits', desc: 'Free tier designed for access to justice. Help underrepresented communities understand their legal options with real outcome data.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
               { title: 'Legal Researchers & Academics', desc: 'Access comprehensive federal court statistics spanning 50+ years. Perfect for empirical legal studies and policy analysis.', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
             ].map((item, i) => (
-              <div key={i} style={{ padding: '28px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+              <div key={i} className="who-card" style={{ padding: '28px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
                 <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
                 </div>
@@ -290,7 +292,7 @@ export default function ServerContent() {
               { stat: '94%', label: 'Data accuracy rate', sub: 'Verified outcome classifications' },
               { stat: '50+', label: 'Years of court data', sub: 'Historical records since 1970' },
             ].map((item, i) => (
-              <div key={i} style={{ padding: '32px 20px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+              <div key={i} className="stat-card" style={{ padding: '32px 20px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', transition: 'all 0.2s ease' }}>
                 <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', marginBottom: '8px', lineHeight: 1 }}>{item.stat}</p>
                 <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)', marginBottom: '4px' }}>{item.label}</p>
                 <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>{item.sub}</p>
@@ -896,13 +898,23 @@ export default function ServerContent() {
       <style>{`
         .trusted-grid { gap: 64px; }
         .who-grid, .awards-grid, .related-grid { gap: 24px; }
+
+        /* LexisNexis-style hover effects for all card types */
+        .category-card:hover,
+        .feature-card:hover,
+        .who-card:hover,
+        .stat-card:hover,
         .related-card:hover {
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-          border-color: #E8171F !important;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+          border-left: 3px solid #E8171F !important;
+          padding-left: calc(24px - 2px) !important;
         }
+
         .newsletter-btn:hover {
           background-color: #E8171F !important;
         }
+
         @media (max-width: 768px) {
           .trusted-grid { grid-template-columns: 1fr !important; }
           .who-grid { grid-template-columns: 1fr !important; }
