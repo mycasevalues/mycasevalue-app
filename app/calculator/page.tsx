@@ -4,6 +4,30 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { SITS, STATES } from '../../lib/data';
 
+const slideUpFadeIn = `
+  @keyframes slideUpFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+const selectStyles = `
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23212529' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 20px;
+    padding-right: 40px !important;
+  }
+`;
+
 /* ── Multiplier tables ──────────────────────────────────────────────── */
 const DAMAGE_MULTIPLIERS: Record<string, { low: number; median: number; high: number }> = {
   work:      { low: 0.20, median: 0.45, high: 0.90 },
@@ -56,6 +80,14 @@ export default function CalculatorPage() {
   const [represented, setRepresented] = useState('');
   const [results, setResults] = useState<Results | null>(null);
 
+  function resetForm() {
+    setCaseType('');
+    setDistrict('');
+    setDamages('');
+    setRepresented('');
+    setResults(null);
+  }
+
   const stateOptions = STATES.filter(s => s.id !== '');
   const canCalculate = caseType !== '' && damages !== '' && Number(damages.replace(/[^0-9.]/g, '')) > 0;
 
@@ -93,6 +125,8 @@ export default function CalculatorPage() {
 
   return (
     <div className="min-h-screen" style={{ background: 'transparent' }}>
+      <style>{slideUpFadeIn}</style>
+      <style>{selectStyles}</style>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -126,19 +160,23 @@ export default function CalculatorPage() {
           <div className="space-y-6">
             {/* Case Type */}
             <div>
-              <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+              <label className="block mb-3" title="Select the primary type of legal case" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
                 Case Type
               </label>
               <select
                 value={caseType}
                 onChange={(e) => { setCaseType(e.target.value); setResults(null); }}
                 aria-label="Select a case type"
-                className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  borderColor: '#D5D8DC',
+                  height: '48px',
+                  borderRadius: '4px',
+                  borderColor: caseType === '' ? '#D5D8DC' : '#E8171F',
                   background: '#FAFBFC',
                   color: caseType ? '#212529' : '#999999',
                   fontFamily: 'var(--font-body)',
+                  borderWidth: '1px',
+                  fontSize: '14px',
                 }}
               >
                 <option value="">Select a case type...</option>
@@ -152,19 +190,23 @@ export default function CalculatorPage() {
 
             {/* Federal District */}
             <div>
-              <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+              <label className="block mb-3" title="Your federal district (optional, helps contextualize results)" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
                 Federal District
               </label>
               <select
                 value={district}
                 onChange={(e) => { setDistrict(e.target.value); setResults(null); }}
                 aria-label="Select your federal district"
-                className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  borderColor: '#D5D8DC',
+                  height: '48px',
+                  borderRadius: '4px',
+                  borderColor: district === '' ? '#D5D8DC' : '#E8171F',
                   background: '#FAFBFC',
                   color: district ? '#212529' : '#999999',
                   fontFamily: 'var(--font-body)',
+                  borderWidth: '1px',
+                  fontSize: '14px',
                 }}
               >
                 <option value="">Select your district (optional)...</option>
@@ -181,7 +223,7 @@ export default function CalculatorPage() {
 
             {/* Estimated Damages */}
             <div>
-              <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+              <label className="block mb-3" title="Total economic and non-economic losses you believe you incurred" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
                 Estimated Damages ($)
               </label>
               <input
@@ -195,12 +237,16 @@ export default function CalculatorPage() {
                   setResults(null);
                 }}
                 aria-label="Estimated damages in dollars"
-                className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  borderColor: '#D5D8DC',
+                  height: '48px',
+                  borderRadius: '4px',
+                  borderColor: damages === '' ? '#D5D8DC' : '#E8171F',
                   background: '#FAFBFC',
                   color: '#212529',
-                  fontFamily: 'var(--font-mono)',
+                  fontFamily: 'var(--font-body)',
+                  borderWidth: '1px',
+                  fontSize: '14px',
                 }}
               />
               <p className="text-[11px] mt-2" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>
@@ -210,19 +256,23 @@ export default function CalculatorPage() {
 
             {/* Represented by Attorney */}
             <div>
-              <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+              <label className="block mb-3" title="Whether you have legal representation (impacts settlement outcomes)" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
                 Represented by Attorney?
               </label>
               <select
                 value={represented}
                 onChange={(e) => { setRepresented(e.target.value); setResults(null); }}
                 aria-label="Are you represented by an attorney"
-                className="w-full px-4 py-3 rounded-lg border text-sm transition-all focus:outline-none"
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
-                  borderColor: '#D5D8DC',
+                  height: '48px',
+                  borderRadius: '4px',
+                  borderColor: represented === '' ? '#D5D8DC' : '#E8171F',
                   background: '#FAFBFC',
                   color: represented ? '#212529' : '#999999',
                   fontFamily: 'var(--font-body)',
+                  borderWidth: '1px',
+                  fontSize: '14px',
                 }}
               >
                 <option value="">Select...</option>
@@ -235,32 +285,56 @@ export default function CalculatorPage() {
             </div>
           </div>
 
-          {/* Calculate Button */}
-          <div className="mt-8 pt-6 border-t" style={{ borderColor: '#D5D8DC' }}>
+          {/* Calculate & Reset Buttons */}
+          <div className="mt-8 pt-6 border-t flex gap-4" style={{ borderColor: '#D5D8DC' }}>
             <button
               type="submit"
               disabled={!canCalculate}
-              className="w-full px-6 py-3 rounded-lg text-sm font-semibold transition-all text-white"
+              className="flex-1 px-6 text-white font-bold transition-all"
               style={{
+                height: '48px',
                 background: canCalculate ? '#E8171F' : '#D5D8DC',
                 color: canCalculate ? '#FFFFFF' : '#999999',
-                fontFamily: 'var(--font-body)',
+                fontFamily: 'var(--font-display)',
                 cursor: canCalculate ? 'pointer' : 'not-allowed',
                 opacity: canCalculate ? 1 : 0.7,
                 textTransform: 'uppercase',
+                borderRadius: '4px',
+                fontSize: '14px',
+                letterSpacing: '0.5px',
               }}
             >
-              Calculate Settlement Range
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline ml-2" style={{ marginBottom: '2px' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              Calculate
+            </button>
+            <button
+              type="button"
+              onClick={resetForm}
+              className="flex-1 px-6 font-bold transition-all border"
+              style={{
+                height: '48px',
+                background: '#FFFFFF',
+                color: '#212529',
+                fontFamily: 'var(--font-display)',
+                cursor: 'pointer',
+                borderColor: '#D5D8DC',
+                borderRadius: '4px',
+                fontSize: '14px',
+                letterSpacing: '0.5px',
+                textTransform: 'uppercase',
+              }}
+            >
+              Reset
             </button>
           </div>
         </form>
 
         {/* ── Results ─────────────────────────────────────────────────── */}
         {results && (
-          <div className="mt-8 p-8 rounded-xl border" style={{
+          <div className="mt-8 p-8 border" style={{
             borderColor: '#D5D8DC',
             background: '#FFFFFF',
+            borderRadius: '4px',
+            animation: 'slideUpFadeIn 0.4s ease-out',
           }}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-1" style={{ color: '#999999', fontFamily: 'var(--font-display)' }}>
               Estimated Settlement Range
@@ -273,93 +347,146 @@ export default function CalculatorPage() {
             {/* 3-column grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
               {/* Conservative */}
-              <div className="rounded-lg p-5 text-center" style={{
+              <div className="p-6 text-center" style={{
                 background: '#FAFBFC',
                 border: '1px solid #D5D8DC',
+                borderRadius: '4px',
               }}>
-                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-2" style={{ color: '#CC1019' }}>
+                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>
                   Conservative
                 </p>
-                <p className="text-2xl font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
+                <p className="text-3xl font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1px', marginBottom: '4px' }}>
                   {fmt(results.low)}
                 </p>
-                <p className="text-[10px] mt-1" style={{ color: '#999999' }}>P25 estimate</p>
+                <p className="text-[11px]" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>P25 estimate</p>
               </div>
               {/* Median */}
-              <div className="rounded-lg p-5 text-center" style={{
+              <div className="p-6 text-center transform scale-105" style={{
                 background: '#FFF3F4',
-                border: '2px solid #E8171F',
+                border: '1px solid #E8171F',
+                borderRadius: '4px',
               }}>
-                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-2" style={{ color: '#CC1019' }}>
+                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#E8171F', fontFamily: 'var(--font-body)' }}>
                   Median
                 </p>
-                <p className="text-2xl font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
+                <p className="text-4xl font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1px', marginBottom: '4px' }}>
                   {fmt(results.median)}
                 </p>
-                <p className="text-[10px] mt-1" style={{ color: '#999999' }}>P50 estimate</p>
+                <p className="text-[11px]" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>P50 estimate</p>
               </div>
               {/* Favorable */}
-              <div className="rounded-lg p-5 text-center" style={{
+              <div className="p-6 text-center" style={{
                 background: '#FAFBFC',
                 border: '1px solid #D5D8DC',
+                borderRadius: '4px',
               }}>
-                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-2" style={{ color: '#07874A' }}>
+                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>
                   Favorable
                 </p>
-                <p className="text-2xl font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
+                <p className="text-3xl font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1px', marginBottom: '4px' }}>
                   {fmt(results.high)}
                 </p>
-                <p className="text-[10px] mt-1" style={{ color: '#999999' }}>P75 estimate</p>
+                <p className="text-[11px]" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>P75 estimate</p>
               </div>
             </div>
 
             {/* Win Rate & Timeline */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="rounded-lg p-4" style={{
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              {/* Win Rate Circle */}
+              <div className="p-6 flex flex-col items-center justify-center" style={{
                 background: '#FAFBFC',
                 border: '1px solid #D5D8DC',
+                borderRadius: '4px',
+                minHeight: '200px',
               }}>
-                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-1" style={{ color: '#999999' }}>
+                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>
                   Plaintiff Win Rate
                 </p>
-                <p className="text-lg font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
-                  {(results.winRate * 100).toFixed(0)}%
-                </p>
+                <div style={{
+                  width: '120px',
+                  height: '120px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  background: `conic-gradient(#E8171F 0% ${results.winRate * 100}%, #EDEEEE ${results.winRate * 100}% 100%)`,
+                }}>
+                  <div style={{
+                    width: '108px',
+                    height: '108px',
+                    borderRadius: '50%',
+                    background: '#FFFFFF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexDirection: 'column',
+                    border: '1px solid #D5D8DC',
+                  }}>
+                    <p className="text-3xl font-black" style={{ color: '#E8171F', fontFamily: 'var(--font-display)', marginBottom: '2px' }}>
+                      {(results.winRate * 100).toFixed(0)}%
+                    </p>
+                    <p className="text-[10px]" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>of cases</p>
+                  </div>
+                </div>
               </div>
-              <div className="rounded-lg p-4" style={{
+              {/* Timeline */}
+              <div className="p-6 flex flex-col items-center justify-center" style={{
                 background: '#FAFBFC',
                 border: '1px solid #D5D8DC',
+                borderRadius: '4px',
+                minHeight: '200px',
               }}>
-                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-1" style={{ color: '#999999' }}>
+                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>
                   Typical Timeline
                 </p>
-                <p className="text-lg font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
-                  {results.timeline}
-                </p>
+                <div style={{
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '12px',
+                }}>
+                  <p className="text-2xl font-black" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+                    {results.timeline}
+                  </p>
+                  <div style={{
+                    width: '100%',
+                    height: '4px',
+                    background: '#E8171F',
+                    borderRadius: '2px',
+                  }} />
+                  <p className="text-[11px]" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>from filing to resolution</p>
+                </div>
               </div>
             </div>
 
             {/* Results disclaimer */}
-            <p className="text-[11px] leading-relaxed p-3 rounded-lg" style={{
-              color: '#999999',
+            <div className="p-4 rounded" style={{
+              color: '#92400E',
               fontFamily: 'var(--font-body)',
-              background: '#FAFBFC',
-              border: '1px solid #D5D8DC',
+              background: '#FFFBEB',
+              border: '1px solid #FCD34D',
+              borderLeft: '3px solid #F59E0B',
+              fontSize: '12px',
+              lineHeight: '1.6',
             }}>
               These estimates are based on aggregate federal court settlement data and statistical modeling. Your actual outcome may differ significantly based on evidence, jurisdiction-specific factors, and representation quality. This is not legal advice.
-            </p>
+            </div>
           </div>
         )}
 
         {/* Legal Disclaimer */}
-        <div className="mt-8 p-6 rounded-xl border" style={{
+        <div className="mt-8 p-6 border" style={{
           borderColor: '#D5D8DC',
           background: '#FFFFFF',
+          borderRadius: '4px',
+          borderLeft: '3px solid #F59E0B',
         }}>
-          <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-xs font-bold uppercase tracking-[0.8px] mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Important Disclaimer
           </h2>
-          <p className="text-[11px] leading-relaxed" style={{ color: '#999999', fontFamily: 'var(--font-body)' }}>
+          <p className="text-[12px] leading-relaxed" style={{ color: '#666666', fontFamily: 'var(--font-body)' }}>
             The Settlement Calculator provides estimates based on historical aggregate data from federal court records. These are statistical approximations and not predictions. Actual settlement amounts vary significantly based on case facts, legal representation, evidence quality, and many other factors. This calculator is not legal advice. Do not rely on these estimates as a substitute for consulting with a qualified attorney. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>

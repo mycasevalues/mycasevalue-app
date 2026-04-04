@@ -8,6 +8,7 @@
 import NewsletterSignup from './ui/NewsletterSignup';
 import UpgradeBanner from './UpgradeBanner';
 import FaqAccordion from './FaqAccordion';
+import AnimatedCounter from './AnimatedCounter';
 
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
@@ -432,7 +433,7 @@ export default function ServerContent() {
               { stat: '50+', label: 'Years of court data', sub: 'Historical records since 1970' },
             ].map((item, i) => (
               <div key={i} style={{ padding: '32px 20px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
-                <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', marginBottom: '8px', lineHeight: 1 }}>{item.stat}</p>
+                <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', marginBottom: '8px', lineHeight: 1 }}><AnimatedCounter end={item.stat} /></p>
                 <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)', marginBottom: '4px' }}>{item.label}</p>
                 <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>{item.sub}</p>
               </div>
