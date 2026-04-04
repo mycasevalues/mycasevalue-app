@@ -207,25 +207,25 @@ function PricingCard({
         flexDirection: 'column',
         height: '100%',
         borderRadius: '12px',
-        border: f ? '2px solid var(--accent-primary)' : '1px solid var(--border-default)',
+        border: f ? '2px solid #8B5CF6' : '1px solid #E5E7EB',
         background: 'var(--bg-surface)',
-        boxShadow: f ? '0 32px 64px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)',
+        boxShadow: f ? '0 4px 24px rgba(139,92,246,0.15)' : '0 1px 3px rgba(0,0,0,0.08)',
       }}
     >
       {plan.badge && (
         <div
           style={{
             position: 'absolute',
-            top: '-8px',
-            right: f ? '-8px' : '50%',
-            transform: f ? 'none' : 'translateX(50%)',
-            borderRadius: '9999px',
-            padding: '4px 12px',
-            background: 'var(--accent-primary)',
-            color: 'var(--fg-inverse)',
-            fontSize: '10px',
-            fontWeight: '600',
-            letterSpacing: '0.12em',
+            top: '-13px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            borderRadius: '20px',
+            padding: '4px 16px',
+            background: '#8B5CF6',
+            color: '#FFFFFF',
+            fontSize: '11px',
+            fontWeight: 700,
+            letterSpacing: '0.05em',
             fontFamily: 'var(--font-body)',
             textTransform: 'uppercase',
           }}
@@ -245,10 +245,10 @@ function PricingCard({
       >
         <h3
           style={{
-            fontSize: '20px',
-            fontWeight: '900',
+            fontSize: '18px',
+            fontWeight: 700,
             marginBottom: '4px',
-            color: 'var(--fg-primary)',
+            color: '#111111',
             fontFamily: 'var(--font-display)',
           }}
         >
@@ -257,9 +257,12 @@ function PricingCard({
 
         <p
           style={{
-            fontSize: '13px',
+            fontSize: '11px',
+            fontWeight: 600,
             marginBottom: '20px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -271,9 +274,9 @@ function PricingCard({
             style={{
               fontSize: '48px',
               lineHeight: '1',
-              fontWeight: '800',
-              color: 'var(--fg-primary)',
-              fontFamily: 'var(--font-display)',
+              fontWeight: 800,
+              color: '#111111',
+              fontFamily: 'var(--font-mono)',
             }}
           >
             {plan.price}
@@ -296,7 +299,7 @@ function PricingCard({
           style={{
             fontSize: '14px',
             marginBottom: '24px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -323,12 +326,12 @@ function PricingCard({
             style={{
               width: '100%',
               padding: '12px 16px',
-              fontSize: '14px',
-              fontWeight: '600',
-              borderRadius: '9999px',
-              border: 'none',
-              background: 'var(--accent-primary)',
-              color: 'var(--fg-inverse)',
+              fontSize: '15px',
+              fontWeight: 600,
+              borderRadius: '8px',
+              border: f ? 'none' : '1px solid #E5E7EB',
+              background: f ? '#8B5CF6' : '#F9FAFB',
+              color: f ? '#FFFFFF' : '#111111',
               textAlign: 'center',
               fontFamily: 'var(--font-body)',
               transition: 'all 200ms ease',
@@ -347,12 +350,12 @@ function PricingCard({
             style={{
               width: '100%',
               padding: '12px 16px',
-              fontSize: '14px',
-              fontWeight: '600',
-              borderRadius: '9999px',
-              border: 'none',
-              background: 'var(--accent-primary)',
-              color: 'var(--fg-inverse)',
+              fontSize: '15px',
+              fontWeight: 600,
+              borderRadius: '8px',
+              border: f ? 'none' : '1px solid #E5E7EB',
+              background: f ? '#8B5CF6' : '#F9FAFB',
+              color: f ? '#FFFFFF' : '#111111',
               textDecoration: 'none',
               textAlign: 'center',
               fontFamily: 'var(--font-body)',
@@ -391,11 +394,11 @@ function PricingCard({
         <p
           style={{
             fontSize: '11px',
-            fontWeight: '600',
+            fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             marginBottom: '16px',
-            color: 'var(--fg-muted)',
+            color: '#6B7280',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -419,40 +422,24 @@ function PricingCard({
                 gap: '10px',
               }}
             >
-              {feat.included ? (
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#16A34A"
-                  strokeWidth="2.5"
-                  style={{
-                    flexShrink: 0,
-                    marginTop: '2px',
-                  }}
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-              ) : (
-                <span
-                  style={{
-                    flexShrink: 0,
-                    marginTop: '2px',
-                    width: '14px',
-                    textAlign: 'center',
-                    fontSize: '14px',
-                    lineHeight: '1',
-                    color: 'var(--fg-muted)',
-                  }}
-                >
-                  —
-                </span>
-              )}
+              <span
+                style={{
+                  flexShrink: 0,
+                  marginTop: '2px',
+                  width: '14px',
+                  textAlign: 'center',
+                  fontSize: '14px',
+                  lineHeight: '1',
+                  color: feat.included ? '#16A34A' : '#D1D5DB',
+                  fontWeight: feat.included ? 700 : 400,
+                }}
+              >
+                {feat.included ? '✓' : '—'}
+              </span>
               <span
                 style={{
                   fontSize: '14px',
-                  color: feat.included ? 'var(--fg-primary)' : 'var(--fg-muted)',
+                  color: feat.included ? '#374151' : '#9CA3AF',
                   fontFamily: 'var(--font-body)',
                 }}
               >
@@ -531,15 +518,15 @@ export default function PricingPage() {
           <p
             style={{
               fontSize: '11px',
-              fontWeight: '600',
+              fontWeight: 600,
+              color: '#8B5CF6',
               textTransform: 'uppercase',
+              letterSpacing: '0.08em',
               marginBottom: '16px',
-              color: 'var(--accent-primary)',
-              letterSpacing: '0.12em',
               fontFamily: 'var(--font-body)',
             }}
           >
-            PRICING
+            Pricing
           </p>
 
           <h1

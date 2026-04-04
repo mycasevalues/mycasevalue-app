@@ -10,6 +10,7 @@ import dynamic from 'next/dynamic';
 const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar'), { ssr: false });
 const CookieConsent = dynamic(() => import('../components/ui/CookieConsent'), { ssr: false });
 const GlobalCommandPalette = dynamic(() => import('../components/ui/GlobalCommandPalette'), { ssr: false });
+const ScrollToTop = dynamic(() => import('../components/ui/ScrollToTop'), { ssr: false });
 
 export const metadata = {
   title: {
@@ -285,6 +286,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SiteFooter />
           </AnalyticsProvider>
         </ErrorBoundary>
+        <ScrollToTop />
         <CookieConsent />
         <GlobalCommandPalette />
         <script dangerouslySetInnerHTML={{ __html: `

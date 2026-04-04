@@ -156,18 +156,19 @@ export default function SignUpPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'var(--bg-base)',
-        padding: '20px',
+        background: '#F9FAFB',
+        padding: '48px 24px',
       }}
     >
       <div
         style={{
           width: '100%',
-          maxWidth: '440px',
-          backgroundColor: 'var(--bg-surface)',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04)',
+          maxWidth: '420px',
+          background: '#FFFFFF',
+          border: '1px solid #E5E7EB',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
           borderRadius: '12px',
-          padding: '32px',
+          padding: '40px',
         }}
       >
         {/* Back to Home Link */}

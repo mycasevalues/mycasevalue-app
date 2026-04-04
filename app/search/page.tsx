@@ -65,12 +65,15 @@ export default function SearchPage() {
     : [];
 
   return (
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'var(--font-body)' }}>
-      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
-        Search case types
+    <main style={{ maxWidth: '720px', margin: '0 auto', padding: '64px 24px', fontFamily: 'var(--font-body)' }}>
+      <p style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', textAlign: 'center' }}>
+        Find your case
+      </p>
+      <h1 style={{ fontSize: '40px', fontWeight: 800, color: '#111111', fontFamily: 'var(--font-display)', textAlign: 'center', marginBottom: '8px', letterSpacing: '-0.02em' }}>
+        What happened to you?
       </h1>
-      <p style={{ color: 'var(--fg-muted)', fontSize: 15, marginBottom: 32 }}>
-        Search across all 84 federal case types to find outcome data for your situation.
+      <p style={{ fontSize: '18px', color: '#6B7280', textAlign: 'center', marginBottom: '40px', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+        Search across all 84 federal case types to find real outcome data for your situation.
       </p>
 
       {/* Recently viewed */}
@@ -100,27 +103,34 @@ export default function SearchPage() {
         </div>
       )}
 
-      <input
-        type="text"
-        placeholder="e.g. wrongful termination, car accident, debt collection..."
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        autoFocus
-        aria-label="Search case types"
-        style={{
-          width: '100%',
-          padding: '14px 18px',
-          fontSize: 16,
-          border: '1.5px solid var(--border-default)',
-          borderRadius: 10,
-          background: 'var(--bg-surface)',
-          color: 'var(--fg-primary)',
-          marginBottom: 24,
-          outline: 'none',
-          boxSizing: 'border-box' as const,
-          fontFamily: 'var(--font-body)',
-        }}
-      />
+      <div style={{ position: 'relative', marginBottom: 24 }}>
+        <svg style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#9CA3AF', pointerEvents: 'none' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input
+          type="text"
+          placeholder="e.g. wrongful termination, car accident, debt collection..."
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          autoFocus
+          aria-label="Search case types"
+          style={{
+            width: '100%',
+            height: '56px',
+            paddingLeft: '48px',
+            paddingRight: '16px',
+            fontSize: '16px',
+            border: '1.5px solid #E5E7EB',
+            borderRadius: '12px',
+            background: '#FFFFFF',
+            color: '#111111',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            outline: 'none',
+            boxSizing: 'border-box' as const,
+            fontFamily: 'var(--font-body)',
+          }}
+        />
+      </div>
 
       {query.length > 1 && results.length === 0 && (
         <p style={{ color: 'var(--fg-muted)', fontSize: 14 }}>

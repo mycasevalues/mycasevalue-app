@@ -1,8 +1,7 @@
 /**
- * ServerHero.tsx — Server Component (Phase 4)
- * Two-column hero: text left, live widget placeholder right.
+ * ServerHero.tsx — Server Component
+ * Paper Design System hero with centered layout, grid pattern, stats bar.
  * SEO-friendly SSR content, hidden once the client component loads.
- * Paper Design System: Montserrat headings, Roboto body, PT Mono data.
  */
 
 import QuickLookupForm from './QuickLookupForm';
@@ -11,273 +10,217 @@ import HeroStats from './ui/HeroStats';
 export default function ServerHero() {
   return (
     <section className="server-hero-content" aria-label="Hero section">
-      {/* ── HERO ─────────────────────────────────────────── */}
-      <div
-        style={{
-          background: 'var(--bg-base)',
-          padding: '48px 24px 0',
-        }}
-      >
-        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr',
-              gap: '48px',
-              alignItems: 'center',
-            }}
-            className="hero-grid"
-          >
-            {/* LEFT — Copy */}
-            <div>
-              {/* Trust badge */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '6px 14px',
-                  borderRadius: '9999px',
-                  background: 'var(--accent-primary-subtle)',
-                  border: '1px solid var(--accent-primary-border)',
-                  marginBottom: '24px',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  color: 'var(--fg-secondary)',
-                  letterSpacing: '0.03em',
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2.5" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-                Built on PACER &middot; FJC &middot; CourtListener data
+      {/* ── VISUAL 1: HERO ─────────────────────────────────── */}
+      <div style={{
+        background: '#FFFFFF',
+        borderBottom: '1px solid #E5E7EB',
+        padding: '80px 24px 64px',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        {/* Subtle grid background pattern */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'linear-gradient(#E5E7EB 1px, transparent 1px), linear-gradient(90deg, #E5E7EB 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+          opacity: 0.3,
+          pointerEvents: 'none',
+        }} />
+
+        <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
+          {/* Eyebrow badge */}
+          <div style={{ marginBottom: '24px' }}>
+            <span style={{
+              display: 'inline-block',
+              padding: '6px 16px',
+              background: '#EDE9FE',
+              color: '#7C3AED',
+              borderRadius: '20px',
+              fontSize: '13px',
+              fontWeight: 600,
+              fontFamily: 'var(--font-body)',
+              letterSpacing: '0.02em',
+            }}>
+              5.1M+ federal cases analyzed
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 style={{
+            fontSize: 'clamp(32px, 5vw, 56px)',
+            fontWeight: 800,
+            color: '#111111',
+            fontFamily: 'var(--font-display)',
+            lineHeight: 1.15,
+            marginBottom: '24px',
+            letterSpacing: '-0.02em',
+          }}>
+            The settlement data the<br />
+            other side already has.
+          </h1>
+
+          {/* Subheadline */}
+          <p style={{
+            fontSize: '20px',
+            color: '#6B7280',
+            fontFamily: 'var(--font-body)',
+            lineHeight: 1.6,
+            marginBottom: '40px',
+            maxWidth: '600px',
+            margin: '0 auto 40px',
+          }}>
+            Research real outcomes from federal court cases across all 94 US districts.
+            Win rates, settlement ranges, timelines — sourced from public court records.
+          </p>
+
+          {/* CTA buttons */}
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' }}>
+            <a href="/search" style={{
+              display: 'inline-block',
+              padding: '14px 32px',
+              background: '#8B5CF6',
+              color: '#FFFFFF',
+              borderRadius: '8px',
+              fontWeight: 700,
+              fontSize: '16px',
+              fontFamily: 'var(--font-display)',
+              textDecoration: 'none',
+              boxShadow: '0 4px 12px rgba(139,92,246,0.3)',
+            }}>
+              Search case types →
+            </a>
+            <a href="/sample" style={{
+              display: 'inline-block',
+              padding: '14px 32px',
+              background: '#FFFFFF',
+              color: '#111111',
+              border: '1px solid #E5E7EB',
+              borderRadius: '8px',
+              fontWeight: 600,
+              fontSize: '16px',
+              fontFamily: 'var(--font-display)',
+              textDecoration: 'none',
+            }}>
+              View sample report
+            </a>
+          </div>
+
+          {/* Trust signals */}
+          <div style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            {[
+              'No account required',
+              'Private & encrypted',
+              'PACER-verified data',
+              '3 free lookups/day',
+            ].map(signal => (
+              <div key={signal} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#16A34A' }} />
+                <span style={{ fontSize: '13px', color: '#6B7280', fontFamily: 'var(--font-body)' }}>{signal}</span>
               </div>
-
-              {/* Headline */}
-              <h1
-                style={{
-                  fontFamily: 'Montserrat, system-ui, sans-serif',
-                  fontSize: 'clamp(2rem, 5.5vw, 3.5rem)',
-                  fontWeight: 800,
-                  color: 'var(--fg-primary)',
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.03em',
-                  margin: '0 0 20px 0',
-                }}
-              >
-                The settlement data{' '}
-                <span style={{ display: 'block' }}>the other side already has.</span>
-                <span
-                  style={{
-                    display: 'block',
-                    background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  Now you have it too.
-                </span>
-              </h1>
-
-              {/* Subheading */}
-              <p
-                style={{
-                  fontFamily: 'Roboto, system-ui, sans-serif',
-                  fontSize: '17px',
-                  color: 'var(--fg-muted)',
-                  lineHeight: 1.7,
-                  maxWidth: '520px',
-                  margin: '0 0 28px 0',
-                }}
-              >
-                Research real outcomes from <strong style={{ color: 'var(--fg-primary)' }}>5.1M+ federal court cases</strong> across all 94 US districts.
-                Win rates, settlement ranges, timelines, and judge analytics — sourced from public court records.
-              </p>
-
-              {/* Privacy pill */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  fontSize: '13px',
-                  color: '#0D9488',
-                  marginBottom: '28px',
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-                Private &amp; encrypted — zero data stored
-              </div>
-
-              {/* CTA */}
-              <div>
-                <a
-                  href="/search"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '14px 28px',
-                    background: 'var(--accent-primary)',
-                    color: '#FFFFFF',
-                    borderRadius: '12px',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
-                    fontSize: '15px',
-                    fontWeight: 700,
-                    textDecoration: 'none',
-                    boxShadow: 'var(--shadow-sm)',
-                  }}
-                >
-                  Check My Case Type
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-
-              {/* Trust pills */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '8px',
-                  marginTop: '20px',
-                }}
-              >
-                {['No account required', 'No credit card', '5.1M+ federal cases', 'PACER-verified data', 'Private & encrypted'].map((item, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                      fontSize: '12px',
-                      color: 'var(--fg-muted)',
-                      fontFamily: 'Roboto, system-ui, sans-serif',
-                    }}
-                  >
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" strokeWidth="2.5" aria-hidden="true">
-                      <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* RIGHT — Quick Case Lookup (server-rendered form) */}
-            <div
-              style={{
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--border-default)',
-                borderRadius: '16px',
-                padding: '32px',
-                boxShadow: 'var(--shadow-md)',
-              }}
-            >
-              <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-                <div
-                  style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '12px',
-                    background: 'var(--accent-primary-subtle)',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '12px',
-                  }}
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" aria-hidden="true">
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="M21 21l-4.35-4.35" />
-                  </svg>
-                </div>
-                <p
-                  style={{
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
-                    fontSize: '16px',
-                    fontWeight: 700,
-                    color: 'var(--fg-primary)',
-                    margin: '0 0 4px',
-                  }}
-                >
-                  Quick Case Lookup
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
-                    fontSize: '14px',
-                    color: 'var(--fg-muted)',
-                    margin: 0,
-                  }}
-                >
-                  Select your case type and district to see real outcome data.
-                </p>
-              </div>
-              <QuickLookupForm />
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* ── TRUST STATS BAR ──────────────────────────────── */}
-      <div
-        style={{
-          background: 'var(--bg-surface)',
-          borderTop: '1px solid var(--border-default)',
-          borderBottom: '1px solid var(--border-default)',
-          padding: '40px 24px',
-          marginTop: '48px',
-        }}
-      >
-        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <HeroStats />
+      {/* ── VISUAL 2: DATA SOURCE ATTRIBUTION BAR ─────────── */}
+      <div style={{
+        background: '#F9FAFB',
+        borderBottom: '1px solid #E5E7EB',
+        padding: '16px 24px',
+      }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '12px', color: '#9CA3AF', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
+          {[
+            { name: 'Federal Judicial Center', url: 'https://www.fjc.gov' },
+            { name: 'PACER', url: 'https://pacer.uscourts.gov' },
+            { name: 'CourtListener', url: 'https://www.courtlistener.com' },
+            { name: 'Bureau of Justice Statistics', url: 'https://bjs.ojp.gov' },
+          ].map((source, i) => (
+            <span key={source.name} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              {i > 0 && <span style={{ color: '#D1D5DB' }}>·</span>}
+              <a href={source.url} target="_blank" rel="noopener noreferrer" style={{
+                fontSize: '12px',
+                color: '#6B7280',
+                fontFamily: 'var(--font-body)',
+                fontWeight: 500,
+                textDecoration: 'none',
+              }}>{source.name}</a>
+            </span>
+          ))}
         </div>
       </div>
 
-      {/* ── HOW IT WORKS ─────────────────────────────────── */}
-      <div
-        style={{
-          background: 'var(--bg-base)',
-          padding: '64px 24px',
-        }}
-      >
+      {/* ── VISUAL 3: STATS BAR ────────────────────────────── */}
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '40px 24px' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '1px',
+          background: '#E5E7EB',
+          border: '1px solid #E5E7EB',
+          borderRadius: '12px',
+          overflow: 'hidden',
+        }}>
+          {[
+            { value: '5.1M+', label: 'Federal cases analyzed' },
+            { value: '94', label: 'Federal districts covered' },
+            { value: '50+', label: 'Years of historical data' },
+            { value: '84', label: 'Case types covered' },
+          ].map(stat => (
+            <div key={stat.label} style={{ background: '#FFFFFF', padding: '32px 24px', textAlign: 'center' }}>
+              <p style={{
+                fontSize: '40px',
+                fontWeight: 700,
+                color: '#8B5CF6',
+                fontFamily: 'var(--font-mono)',
+                lineHeight: 1,
+                marginBottom: '8px',
+              }}>{stat.value}</p>
+              <p style={{ fontSize: '13px', color: '#6B7280', fontFamily: 'var(--font-body)', lineHeight: 1.4, margin: 0 }}>{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── VISUAL 4: QUICK CASE LOOKUP ────────────────────── */}
+      <div style={{ background: '#F9FAFB', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+          <p style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)', textAlign: 'center' }}>
+            Quick lookup
+          </p>
+          <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#111111', fontFamily: 'var(--font-display)', textAlign: 'center', marginBottom: '8px' }}>
+            Find your case data
+          </h2>
+          <p style={{ fontSize: '16px', color: '#6B7280', fontFamily: 'var(--font-body)', textAlign: 'center', marginBottom: '32px' }}>
+            Select a case type and district to see real federal court outcome data instantly.
+          </p>
+
+          <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <QuickLookupForm />
+            <p style={{ fontSize: '12px', color: '#9CA3AF', textAlign: 'center', marginTop: '12px', fontFamily: 'var(--font-body)', marginBottom: 0 }}>
+              3 free lookups per day · No account required
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── HOW IT WORKS (VISUAL 5 section header pattern) ── */}
+      <div style={{ background: '#FFFFFF', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '4px 12px',
-                borderRadius: '9999px',
-                background: 'var(--accent-primary-subtle)',
-                fontSize: '11px',
-                fontWeight: 700,
-                color: 'var(--fg-muted)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                marginBottom: '16px',
-              }}
-            >
-              How It Works
-            </div>
-            <h2
-              style={{
-                fontFamily: 'Montserrat, system-ui, sans-serif',
-                fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
-                fontWeight: 700,
-                color: 'var(--fg-primary)',
-                letterSpacing: '-0.02em',
-                margin: 0,
-              }}
-            >
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+              How it works
+            </p>
+            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#111111', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               Three steps to real court data
             </h2>
+            <p style={{ fontSize: '18px', color: '#6B7280', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+              Get reliable federal court outcome data in under 60 seconds.
+            </p>
           </div>
 
           <div
@@ -288,15 +231,6 @@ export default function ServerHero() {
             }}
             className="steps-grid"
           >
-            <style>{`
-              .steps-grid { grid-template-columns: repeat(3, 1fr); }
-              @media (max-width: 768px) {
-                .steps-grid {
-                  grid-template-columns: 1fr;
-                  gap: 16px;
-                }
-              }
-            `}</style>
             {[
               {
                 step: '01',
@@ -320,68 +254,53 @@ export default function ServerHero() {
               <div
                 key={i}
                 style={{
-                  background: 'var(--bg-surface)',
-                  border: '1px solid var(--border-default)',
-                  borderRadius: '16px',
+                  background: '#F9FAFB',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '12px',
                   padding: '28px',
                 }}
               >
-                <div
-                  style={{
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                  <div style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '10px',
+                    background: '#EDE9FE',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '12px',
-                    marginBottom: '16px',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '10px',
-                      background: 'var(--accent-primary-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                  }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d={item.icon} />
                     </svg>
                   </div>
-                  <span
-                    style={{
-                      fontFamily: '"PT Mono", monospace',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      color: 'var(--accent-secondary)',
-                      letterSpacing: '0.05em',
-                    }}
-                  >
+                  <span style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: '#8B5CF6',
+                    letterSpacing: '0.05em',
+                  }}>
                     STEP {item.step}
                   </span>
                 </div>
-                <h3
-                  style={{
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
-                    fontSize: '17px',
-                    fontWeight: 700,
-                    color: 'var(--fg-primary)',
-                    margin: '0 0 8px 0',
-                  }}
-                >
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '17px',
+                  fontWeight: 700,
+                  color: '#111111',
+                  margin: '0 0 8px 0',
+                }}>
                   {item.title}
                 </h3>
-                <p
-                  style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
-                    fontSize: '14px',
-                    color: 'var(--fg-muted)',
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
+                <p style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '14px',
+                  color: '#6B7280',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
                   {item.desc}
                 </p>
               </div>
@@ -390,44 +309,10 @@ export default function ServerHero() {
         </div>
       </div>
 
-      {/* ── DATA SOURCES ─────────────────────────────────── */}
-      <div
-        style={{
-          background: 'var(--bg-base)',
-          padding: '0 24px 48px',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '700px',
-            margin: '0 auto',
-            textAlign: 'center',
-            fontSize: '12px',
-            color: 'var(--fg-subtle)',
-            lineHeight: 1.7,
-          }}
-        >
-          <p style={{ margin: '0 0 8px' }}>
-            <strong style={{ color: 'var(--fg-muted)' }}>Verified Data Sources:</strong> Federal Judicial Center Integrated Database (FJCID),
-            PACER, and CourtListener. All data from public federal court records.
-          </p>
-          <p style={{ margin: 0 }}>
-            Data updated April 2026.{' '}
-            <a href="/methodology" style={{ color: 'var(--accent-primary)', textDecoration: 'underline' }}>
-              Learn about our methodology
-            </a>
-          </p>
-        </div>
-      </div>
-
-      {/* Responsive grid overrides */}
+      {/* Responsive overrides */}
       <style dangerouslySetInnerHTML={{ __html: `
-        @media (min-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr 1fr !important; }
-        }
-        @media (max-width: 767px) {
-          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .steps-grid { grid-template-columns: 1fr !important; }
+        @media (max-width: 768px) {
+          .steps-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
         }
       `}} />
     </section>

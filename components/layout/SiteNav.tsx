@@ -113,9 +113,11 @@ export default function SiteNav() {
           top: 0,
           zIndex: 200,
           height: '64px',
-          background: 'var(--bg-surface)',
-          borderBottom: '1px solid var(--border-default)',
-          boxShadow: 'var(--shadow-xs)',
+          background: 'rgba(255,255,255,0.95)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          borderBottom: '1px solid #E5E7EB',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -135,16 +137,29 @@ export default function SiteNav() {
           <Link
             href="/"
             style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '20px',
-              fontWeight: 900,
-              color: '#111111',
               textDecoration: 'none',
-              letterSpacing: '-0.5px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
             }}
             aria-label="MyCaseValue home"
           >
-            MyCaseValue
+            <div style={{
+              width: '32px',
+              height: '32px',
+              background: '#8B5CF6',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+                <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
+              </svg>
+            </div>
+            <span style={{ fontSize: '18px', fontWeight: 800, color: '#111111', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>
+              MyCaseValue
+            </span>
           </Link>
 
           {/* Center: Desktop nav links */}
@@ -162,15 +177,15 @@ export default function SiteNav() {
                 href={link.href}
                 className="site-nav-link"
                 style={{
-                  padding: '8px 14px',
-                  borderRadius: 'var(--r-md)',
+                  padding: '6px 14px',
+                  borderRadius: '8px',
                   fontSize: '14px',
-                  fontWeight: isActive(link.href) ? 600 : 500,
-                  color: isActive(link.href) ? 'var(--accent-primary)' : 'var(--fg-muted)',
+                  fontWeight: isActive(link.href) ? 600 : 400,
+                  color: isActive(link.href) ? '#8B5CF6' : '#6B7280',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
-                  transition: 'color var(--duration-base) ease',
-                  borderBottom: isActive(link.href) ? '2px solid var(--accent-primary)' : '2px solid transparent',
+                  transition: 'all 150ms',
+                  background: isActive(link.href) ? '#EDE9FE' : 'transparent',
                 }}
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
@@ -236,15 +251,15 @@ export default function SiteNav() {
                       padding: '8px 16px',
                       fontSize: '14px',
                       fontWeight: 500,
-                      color: 'var(--fg-muted)',
+                      color: '#374151',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
-                      borderRadius: 'var(--r-md)',
-                      border: '1.5px solid var(--border-default)',
-                      transition: 'all var(--duration-base) ease',
+                      borderRadius: '8px',
+                      border: '1px solid #E5E7EB',
+                      transition: 'all 150ms',
                     }}
                   >
-                    Sign In
+                    Sign in
                   </Link>
                   <Link
                     href="/search"
@@ -252,15 +267,16 @@ export default function SiteNav() {
                       padding: '8px 20px',
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: 'var(--fg-inverse)',
-                      background: 'var(--accent-primary)',
-                      borderRadius: 'var(--r-md)',
+                      color: '#FFFFFF',
+                      background: '#8B5CF6',
+                      borderRadius: '8px',
                       textDecoration: 'none',
-                      fontFamily: 'var(--font-body)',
-                      transition: 'all var(--duration-base) ease',
+                      fontFamily: 'var(--font-display)',
+                      transition: 'all 150ms',
+                      boxShadow: '0 2px 8px rgba(139,92,246,0.25)',
                     }}
                   >
-                    Search Cases
+                    Get started free
                   </Link>
                 </>
               )}

@@ -161,9 +161,9 @@ export default async function DashboardPage() {
   return (
     <div
       style={{
-        minHeight: '100vh',
-        backgroundColor: 'var(--bg-base)',
         display: 'flex',
+        minHeight: '100vh',
+        background: '#F9FAFB',
         fontFamily: 'var(--font-body)',
       }}
     >
@@ -171,50 +171,55 @@ export default async function DashboardPage() {
       <aside
         style={{
           width: '240px',
-          backgroundColor: 'var(--bg-surface)',
-          borderRight: '1px solid var(--border-default)',
-          padding: '24px 0',
-          position: 'fixed',
-          height: '100vh',
+          background: '#FFFFFF',
+          borderRight: '1px solid #E5E7EB',
+          padding: '24px 16px',
+          flexShrink: 0,
           overflowY: 'auto',
         }}
       >
-        <div style={{ paddingLeft: '24px', paddingRight: '24px' }}>
-          <h1
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '20px',
-              fontWeight: 700,
-              color: 'var(--fg-primary)',
-              margin: '0 0 32px 0',
-            }}
-          >
-            MyCaseValue
-          </h1>
+        {/* Logo */}
+        <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px', padding: '0 8px' }}>
+          <div style={{ width: '28px', height: '28px', background: '#8B5CF6', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+              <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
+            </svg>
+          </div>
+          <span style={{ fontSize: '16px', fontWeight: 800, color: '#111111', fontFamily: 'var(--font-display)' }}>MyCaseValue</span>
+        </a>
 
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <Link href="/dashboard" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', color: 'var(--fg-primary)', fontSize: '14px', fontWeight: 500, background: 'var(--bg-base)' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
-              Dashboard
+        {/* Navigation */}
+        <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+          {[
+            { label: 'Dashboard', href: '/dashboard', icon: '⊞' },
+            { label: 'Search cases', href: '/cases', icon: '⌕' },
+            { label: 'Saved reports', href: '/dashboard/reports', icon: '⊡' },
+            { label: 'Billing', href: '/pricing', icon: '◇' },
+            { label: 'Settings', href: '/settings', icon: '⚙' },
+          ].map(item => (
+            <Link key={item.href} href={item.href} style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              padding: '10px 12px',
+              borderRadius: '8px',
+              fontSize: '14px',
+              fontWeight: 500,
+              color: '#374151',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              marginBottom: '4px',
+              transition: 'background-color 0.2s',
+            }}>
+              <span style={{ fontSize: '16px' }}>{item.icon}</span>
+              {item.label}
             </Link>
-            <Link href="/cases" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', color: 'var(--fg-primary)', fontSize: '14px', fontWeight: 500 }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
-              Browse Cases
-            </Link>
-            <Link href="/pricing" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', color: 'var(--fg-primary)', fontSize: '14px', fontWeight: 500 }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
-              Billing
-            </Link>
-            <Link href="/settings" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none', color: 'var(--fg-primary)', fontSize: '14px', fontWeight: 500 }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3" /><path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m2.97 2.97l4.24 4.24M1 12h6m6 0h6m-16.78 7.78l4.24-4.24m2.97-2.97l4.24-4.24" /></svg>
-              Settings
-            </Link>
-          </nav>
-        </div>
+          ))}
+        </nav>
       </aside>
 
       {/* Main Content */}
-      <main style={{ flex: 1, marginLeft: '240px', padding: '40px 20px', overflow: 'auto' }}>
+      <main style={{ flex: 1, padding: '40px', overflow: 'auto' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           {/* Header */}
           <div style={{ marginBottom: '40px' }}>
