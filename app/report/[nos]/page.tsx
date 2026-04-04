@@ -197,26 +197,41 @@ export default async function ReportPage({
 
   return (
     <div style={{ minHeight: '100vh', background: '#F9FAFB' }}>
-      {/* Header */}
+      {/* Dark Navy Header Banner */}
+      <div style={{ background: '#1A2332', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: '24px 24px' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: 13, color: '#9CA3AF', fontFamily: 'var(--font-body)', marginBottom: '16px' }}>
+            <Link href="/" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Home</Link>
+            <span>/</span>
+            <Link href="/cases" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Cases</Link>
+            <span>/</span>
+            <span style={{ color: '#E8171F' }}>{categoryLabel || label}</span>
+          </nav>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
+            <div>
+              <p style={{ fontSize: 12, fontWeight: 600, color: '#9CA3AF', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'var(--font-body)' }}>
+                NOS Code: {nos}
+              </p>
+              <h1 style={{
+                fontSize: 24,
+                fontWeight: 700,
+                margin: 0,
+                color: '#FFFFFF',
+                fontFamily: 'var(--font-display)',
+                letterSpacing: '-0.5px',
+                lineHeight: 1.2,
+              }}>
+                {label}
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* White Subheader Section */}
       <div style={{ background: '#FFFFFF', borderBottom: '1px solid var(--border-default)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
-          <Link href="/search" style={{ fontSize: 13, color: '#6B7280', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
-            ← Search cases
-          </Link>
-
-          <h1 style={{
-            fontSize: 28,
-            fontWeight: 700,
-            margin: '0 0 8px',
-            color: '#111111',
-            fontFamily: 'var(--font-display)',
-            letterSpacing: '-0.5px',
-            lineHeight: 1.2,
-          }}>
-            {label} — Federal Court Outcomes
-          </h1>
-
-          <p style={{ fontSize: 15, color: '#6B7280', fontFamily: 'var(--font-body)', margin: '0 0 16px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: '24px 24px' }}>
+          <p style={{ fontSize: 14, color: '#455A64', fontFamily: 'var(--font-body)', margin: '0 0 16px', lineHeight: 1.6 }}>
             Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases · {districtLabel} · Public court records
             {categoryLabel ? ` · ${categoryLabel}` : ''}
           </p>
@@ -226,14 +241,14 @@ export default async function ReportPage({
             title={`${label} — Federal Court Outcome Data | MyCaseValue`}
           />
 
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: '#6B7280' }}>
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
+            <span style={{ fontSize: 11, padding: '4px 10px', background: '#F3F4F6', border: '1px solid #D5D8DC', borderRadius: 4, color: '#6B7280', fontFamily: 'var(--font-body)' }}>
               FJC IDB · Updated quarterly
             </span>
-            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: '#6B7280' }}>
+            <span style={{ fontSize: 11, padding: '4px 10px', background: '#F3F4F6', border: '1px solid #D5D8DC', borderRadius: 4, color: '#6B7280', fontFamily: 'var(--font-body)' }}>
               CourtListener · Live
             </span>
-            <span style={{ fontSize: 11, padding: '3px 8px', background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: 4, color: '#6B7280' }}>
+            <span style={{ fontSize: 11, padding: '4px 10px', background: '#F3F4F6', border: '1px solid #D5D8DC', borderRadius: 4, color: '#6B7280', fontFamily: 'var(--font-body)' }}>
               RECAP Archive · Live
             </span>
           </div>
@@ -244,16 +259,16 @@ export default async function ReportPage({
         {/* ═══ FREE: Win Rate Analysis ═══ */}
         <section style={{
           background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
-          borderRadius: '12px',
+          border: '1px solid #D5D8DC',
+          borderRadius: '4px',
           padding: '24px',
           marginBottom: '16px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+          boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
         }}>
-          <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+          <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
             Win Rate Analysis
           </h2>
-          <p style={{ fontSize: '13px', color: '#9CA3AF', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
+          <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
             Overview of case outcomes
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px' }} className="win-rate-grid">
@@ -300,16 +315,16 @@ export default async function ReportPage({
         {/* ═══ FREE: Case Timeline ═══ */}
         <section style={{
           background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
-          borderRadius: '12px',
+          border: '1px solid #D5D8DC',
+          borderRadius: '4px',
           padding: '24px',
           marginBottom: '16px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+          boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
         }}>
-          <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+          <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
             Case Timeline
           </h2>
-          <p style={{ fontSize: '13px', color: '#9CA3AF', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
+          <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
             Time and settlement data
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }} className="timeline-grid">
@@ -336,16 +351,16 @@ export default async function ReportPage({
             {settlementRange && (
               <section style={{
                 background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
-                borderRadius: '12px',
+                border: '1px solid #D5D8DC',
+                borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '16px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
               }}>
-                <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+                <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
                   Settlement Range
                 </h2>
-                <p style={{ fontSize: '13px', color: '#9CA3AF', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
+                <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
                   Distribution of settlement amounts
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px' }} className="settlement-grid">
@@ -389,16 +404,16 @@ export default async function ReportPage({
             {(proSeWinRate !== null && representedWinRate !== null) && (
               <section style={{
                 background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
-                borderRadius: '12px',
+                border: '1px solid #D5D8DC',
+                borderRadius: '4px',
                 padding: '24px',
                 marginBottom: '16px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
               }}>
-                <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+                <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
                   Representation Impact
                 </h2>
-                <p style={{ fontSize: '13px', color: '#9CA3AF', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
+                <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
                   How representation affects outcomes
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '16px' }} className="representation-grid">
@@ -491,14 +506,17 @@ export default async function ReportPage({
               padding: '14px 36px',
               background: '#E8171F',
               color: '#fff',
-              borderRadius: '8px',
+              borderRadius: '4px',
               textDecoration: 'none',
               fontWeight: 700,
               fontSize: '16px',
               fontFamily: 'var(--font-display)',
               transition: 'all 0.2s ease',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-            }}>
+              boxShadow: '0 2px 8px rgba(232, 23, 31, 0.2)',
+            }}
+            onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.background = '#C51118'; (e.target as HTMLAnchorElement).style.boxShadow = '0 4px 12px rgba(232, 23, 31, 0.3)'; }}
+            onMouseLeave={(e) => { (e.target as HTMLAnchorElement).style.background = '#E8171F'; (e.target as HTMLAnchorElement).style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.2)'; }}
+            >
               See Pricing →
             </a>
           </section>
@@ -508,17 +526,17 @@ export default async function ReportPage({
         {(opinionResults.length > 0 || recapResults.length > 0) && (
           <section style={{
             background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
-            borderRadius: '12px',
+            border: '1px solid #D5D8DC',
+            borderRadius: '4px',
             padding: '24px',
             marginBottom: '16px',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
             marginTop: '16px',
           }}>
-            <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+            <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
               Related Court Records
             </h2>
-            <p style={{ fontSize: '13px', color: '#9CA3AF', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
+            <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '20px' }}>
               Live from CourtListener · RECAP Archive · Public federal court records
             </p>
 
@@ -536,7 +554,9 @@ export default async function ReportPage({
                       href={op.absolute_url ? `https://www.courtlistener.com${op.absolute_url}` : '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 14, fontWeight: 500, color: '#E8171F', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
+                      style={{ fontSize: 14, fontWeight: 500, color: '#E8171F', textDecoration: 'none', fontFamily: 'var(--font-body)', transition: 'color 0.2s ease' }}
+                      onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.color = '#C51118'; }}
+                      onMouseLeave={(e) => { (e.target as HTMLAnchorElement).style.color = '#E8171F'; }}
                     >
                       {op.caseName || 'Federal Court Opinion'}
                     </a>
@@ -572,7 +592,9 @@ export default async function ReportPage({
                       href={doc.absolute_url ? `https://www.courtlistener.com${doc.absolute_url}` : '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 14, fontWeight: 500, color: '#E8171F', textDecoration: 'none', fontFamily: 'var(--font-body)' }}
+                      style={{ fontSize: 14, fontWeight: 500, color: '#E8171F', textDecoration: 'none', fontFamily: 'var(--font-body)', transition: 'color 0.2s ease' }}
+                      onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.color = '#C51118'; }}
+                      onMouseLeave={(e) => { (e.target as HTMLAnchorElement).style.color = '#E8171F'; }}
                     >
                       {doc.caseName || doc.docketNumber || 'Federal Court Docket'}
                     </a>
@@ -603,17 +625,17 @@ export default async function ReportPage({
           return (
             <section style={{
               background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
-              borderRadius: '12px',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
               padding: '24px',
               marginBottom: '16px',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
               marginTop: '16px',
             }}>
-              <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+              <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
                 Related case types
               </h2>
-              <p style={{ fontSize: '13px', color: '#9CA3AF', fontFamily: 'var(--font-body)', marginBottom: '16px' }}>
+              <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '16px' }}>
                 Other cases in this category
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
@@ -628,7 +650,10 @@ export default async function ReportPage({
                       padding: '10px 0',
                       borderBottom: i < related.length - 1 ? '1px solid var(--border-default)' : 'none',
                       fontFamily: 'var(--font-body)',
+                      transition: 'color 0.2s ease',
                     }}
+                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = '#C51118'; }}
+                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = '#E8171F'; }}
                   >
                     {t.label} →
                   </Link>
