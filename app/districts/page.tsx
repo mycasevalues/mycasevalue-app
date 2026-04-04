@@ -206,18 +206,32 @@ export default function DistrictsPage() {
         .circuit-label {
           display: inline-flex;
           align-items: center;
-          background: 'rgba(255,255,255,0.1)';
-          color: '#E8171F';
-          font-size: '11px';
+          background: rgba(232,23,31,0.1);
+          color: #E8171F;
+          font-size: 11px;
           font-weight: 700;
           text-transform: uppercase;
-          padding: '6px 12px';
-          border-radius: '4px';
-          margin-bottom: '12px';
-          letter-spacing: '0.08em';
+          padding: 6px 12px;
+          border-radius: 4px;
+          margin-bottom: 12px;
+          letter-spacing: 0.08em;
+          font-family: var(--font-body);
         }
+        a.lex-link { color: #006997; text-decoration: none; }
+        a.lex-link:hover { text-decoration: underline; }
       `}</style>
       {/* Header */}
+      {/* Breadcrumb Bar */}
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '16px 0' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <nav className="flex items-center gap-2 text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <a href="/" className="lex-link" style={{ fontWeight: 500 }}>Home</a>
+            <span style={{ color: '#D5D8DC' }}>›</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Districts</span>
+          </nav>
+        </div>
+      </div>
+
       <div
         className="border-b"
         style={{
@@ -226,21 +240,15 @@ export default function DistrictsPage() {
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
-          {/* Breadcrumb */}
-          <a
-            href="/"
-            className="inline-flex items-center gap-2 text-sm mb-6 transition-colors"
-            style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-body)' }}
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Back to Home
-          </a>
 
           <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(255,255,255,0.1)', color: '#E8171F' }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+            style={{
+              background: '#E8171F',
+              color: '#FFFFFF',
+              borderRadius: '4px',
+              fontFamily: 'var(--font-body)',
+            }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -249,8 +257,14 @@ export default function DistrictsPage() {
             DISTRICTS
           </div>
           <h1
-            className="text-3xl sm:text-4xl font-black mb-6"
-            style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
+            className="font-black mb-6"
+            style={{
+              color: '#FFFFFF',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-1.5px',
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              lineHeight: '1.2',
+            }}
           >
             Federal Court Districts
           </h1>
@@ -323,8 +337,13 @@ export default function DistrictsPage() {
           </div>
 
           <p
-            className="text-base leading-relaxed max-w-2xl sm:text-lg"
-            style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}
+            className="leading-relaxed max-w-2xl"
+            style={{
+              color: 'rgba(255,255,255,0.7)',
+              fontFamily: 'var(--font-body)',
+              fontSize: 'clamp(0.95rem, 2vw, 1.125rem)',
+              lineHeight: '1.6',
+            }}
           >
             All {totalDistricts} federal judicial districts across {CIRCUITS.length} circuits.
             Each district has its own judges, caseload, and outcome patterns. Explore outcomes
@@ -348,13 +367,14 @@ export default function DistrictsPage() {
                 </div>
               </div>
               <h2
-                className="text-lg font-bold mb-6"
+                className="font-bold mb-6"
                 style={{
                   color: '#212529',
                   fontFamily: 'var(--font-display)',
                   borderBottom: '2px solid #E8171F',
                   paddingBottom: '8px',
                   display: 'inline-block',
+                  fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
                 }}
               >
                 {circuit.name}
@@ -384,7 +404,7 @@ export default function DistrictsPage() {
                         height="16"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#CC1019"
+                        stroke="#E8171F"
                         strokeWidth="2.5"
                         className="opacity-0 group-hover:opacity-100 transition-opacity"
                       >

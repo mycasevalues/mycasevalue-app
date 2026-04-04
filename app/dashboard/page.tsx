@@ -286,7 +286,7 @@ export default async function DashboardPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '32px' }}>
             {/* Current Plan */}
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
-              <p style={{ fontSize: '12px', color: '#999999', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '12px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Current Plan
               </p>
               <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: '#212529', margin: 0 }}>
@@ -296,7 +296,7 @@ export default async function DashboardPage() {
 
             {/* Plan Status */}
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
-              <p style={{ fontSize: '12px', color: '#999999', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '12px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Plan Status
               </p>
               <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: planStatus === 'Expired' ? '#E8171F' : planStatus === 'Active' ? '#16A34A' : '#455A64', margin: 0 }}>
@@ -306,7 +306,7 @@ export default async function DashboardPage() {
 
             {/* Member Since */}
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
-              <p style={{ fontSize: '12px', color: '#999999', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '12px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Member Since
               </p>
               <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: '#212529', margin: 0 }}>
@@ -316,7 +316,7 @@ export default async function DashboardPage() {
 
             {/* Quick Action */}
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <p style={{ fontSize: '12px', color: '#999999', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 12px', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '12px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 12px', fontFamily: 'var(--font-body)' }}>
                 Quick Action
               </p>
               <Link href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: '#E8171F', color: '#fff', borderRadius: '4px', textDecoration: 'none', fontSize: '14px', fontWeight: 700, textAlign: 'center', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: 'var(--font-body)' }}>
@@ -407,7 +407,7 @@ export default async function DashboardPage() {
                     </div>
                     <div>
                       <div style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)' }}>{tool.label}</div>
-                      <div style={{ fontSize: '12px', color: '#999999', fontFamily: 'var(--font-body)' }}>{tool.desc}</div>
+                      <div style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)' }}>{tool.desc}</div>
                     </div>
                   </Link>
                 ))}
@@ -426,7 +426,7 @@ export default async function DashboardPage() {
                   <div key={i} style={{ padding: '10px 0', borderBottom: i < searchHistory.length - 1 ? '1px solid #E5EBF0' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: '#212529', fontFamily: 'var(--font-body)' }}>{s.query}</p>
-                      <p style={{ fontSize: '12px', color: '#999999', margin: 0, fontFamily: 'var(--font-body)' }}>{s.category ? `${s.category} · ` : ''}{new Date(s.searched_at).toLocaleDateString()}</p>
+                      <p style={{ fontSize: '12px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>{s.category ? `${s.category} · ` : ''}{new Date(s.searched_at).toLocaleDateString()}</p>
                     </div>
                     <Link href={`/search`} style={{ fontSize: '13px', color: '#006997', textDecoration: 'none', fontFamily: 'var(--font-body)' }}>Search again →</Link>
                   </div>
@@ -446,7 +446,7 @@ export default async function DashboardPage() {
                   <div key={i} style={{ padding: '10px 0', borderBottom: i < recentReports.length - 1 ? '1px solid #E5EBF0' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: '#212529', fontFamily: 'var(--font-body)' }}>{getNosLabel(r.category)} · {r.district}</p>
-                      <p style={{ fontSize: '12px', color: '#999999', margin: 0, fontFamily: 'var(--font-body)' }}>{new Date(r.viewed_at).toLocaleDateString()}</p>
+                      <p style={{ fontSize: '12px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>{new Date(r.viewed_at).toLocaleDateString()}</p>
                     </div>
                     <Link href={`/report/${r.category}`} style={{ fontSize: '13px', color: '#006997', textDecoration: 'none', fontFamily: 'var(--font-body)' }}>View →</Link>
                   </div>
@@ -454,7 +454,7 @@ export default async function DashboardPage() {
               </div>
             ) : (
               <div style={{ textAlign: 'center', padding: '40px 0' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#999999" strokeWidth="1.5" style={{ marginBottom: '16px' }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="1.5" style={{ marginBottom: '16px' }}>
                   <circle cx="11" cy="11" r="8" />
                   <path d="m21 21-4.35-4.35" />
                 </svg>

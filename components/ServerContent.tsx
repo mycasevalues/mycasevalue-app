@@ -901,7 +901,7 @@ export default function ServerContent() {
           border-color: #E8171F !important;
         }
         .newsletter-btn:hover {
-          background-color: #CC1019 !important;
+          background-color: #E8171F !important;
         }
         @media (max-width: 768px) {
           .trusted-grid { grid-template-columns: 1fr !important; }

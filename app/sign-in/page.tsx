@@ -225,7 +225,7 @@ function SignInForm() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#CC1019',
+                color: '#E8171F',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
                 backgroundColor: 'rgba(204,16,25,0.06)',
@@ -260,7 +260,7 @@ function SignInForm() {
             }}
             onMouseEnter={(e) => {
               if (!loading) {
-                (e.target as HTMLButtonElement).style.backgroundColor = '#CC1019';
+                (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
               }
             }}
             onMouseLeave={(e) => {
@@ -293,7 +293,7 @@ function SignInForm() {
               padding: '0 12px',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#999999',
+              color: '#455A64',
               fontWeight: 500,
             }}
           >
@@ -343,7 +343,7 @@ function SignInForm() {
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '12px',
-            color: '#999999',
+            color: '#455A64',
             margin: 0,
             textAlign: 'center',
             lineHeight: 1.5,

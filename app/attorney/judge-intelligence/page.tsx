@@ -145,7 +145,7 @@ export default function JudgeIntelligencePage() {
         {/* Controls */}
         <div style={{ display: 'flex', gap: '16px', marginBottom: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
           <div style={{ flex: '1 1 240px' }}>
-            <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#999999', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+            <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
               Select District
             </label>
             <select
@@ -221,7 +221,7 @@ export default function JudgeIntelligencePage() {
         {/* Error */}
         {error && (
           <div style={{ backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '20px 24px', marginBottom: '24px' }}>
-            <p style={{ fontSize: '14px', color: '#CC1019', margin: 0 }}>{error}</p>
+            <p style={{ fontSize: '14px', color: '#E8171F', margin: 0 }}>{error}</p>
           </div>
         )}
 
@@ -318,7 +318,7 @@ export default function JudgeIntelligencePage() {
                           height="18"
                           viewBox="0 0 24 24"
                           fill="none"
-                          stroke="#999999"
+                          stroke="#455A64"
                           strokeWidth="2"
                           style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
                         >

@@ -9,8 +9,20 @@ export default function Loading() {
         justifyContent: 'center',
         background: '#EDEEEE',
         gap: '24px',
+        position: 'relative',
       }}
     >
+      {/* Dark navy accent bar at top */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '4px',
+          background: '#00172E',
+        }}
+      />
       <style>{`
         @keyframes spin {
           from { transform: rotate(0deg); }

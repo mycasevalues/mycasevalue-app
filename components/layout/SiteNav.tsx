@@ -860,7 +860,7 @@ export default function SiteNav() {
           padding: 4px 20px 12px;
           font-size: 11px;
           font-weight: 700;
-          color: #999999;
+          color: #455A64;
           text-transform: uppercase;
           letter-spacing: 0.08em;
           font-family: var(--font-body);

@@ -40,7 +40,7 @@ const methodColors: Record<string, string> = {
   GET: '#07874A',
   POST: '#006997',
   PUT: '#B86E00',
-  DELETE: '#CC1019',
+  DELETE: '#E8171F',
 };
 
 export default function ApiAccessPage() {
@@ -106,7 +106,7 @@ export default function ApiAccessPage() {
               <p style={{ fontSize: '11px', color: '#666666', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
               <p style={{ margin: 0 }}>
                 <span className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: '#212529' }}>{s.value}</span>
-                <span style={{ fontSize: '13px', color: '#999999', marginLeft: '4px' }}>{s.limit}</span>
+                <span style={{ fontSize: '13px', color: '#455A64', marginLeft: '4px' }}>{s.limit}</span>
               </p>
             </div>
           ))}

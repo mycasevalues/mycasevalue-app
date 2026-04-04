@@ -396,15 +396,15 @@ export default function CasePredictorPage() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                     <div style={{ textAlign: 'center' }}>
                       <div className="font-mono" style={{ fontSize: '14px', color: '#666666' }}>{formatMoney(p.settlementRange.low)}</div>
-                      <div style={{ fontSize: '10px', color: '#999999' }}>25th pctile</div>
+                      <div style={{ fontSize: '10px', color: '#455A64' }}>25th pctile</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <div className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: '#212529' }}>{formatMoney(p.settlementRange.median)}</div>
-                      <div style={{ fontSize: '10px', color: '#999999' }}>Median</div>
+                      <div style={{ fontSize: '10px', color: '#455A64' }}>Median</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
                       <div className="font-mono" style={{ fontSize: '14px', color: '#666666' }}>{formatMoney(p.settlementRange.high)}</div>
-                      <div style={{ fontSize: '10px', color: '#999999' }}>75th pctile</div>
+                      <div style={{ fontSize: '10px', color: '#455A64' }}>75th pctile</div>
                     </div>
                   </div>
                   {/* Range bar */}

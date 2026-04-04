@@ -10,17 +10,30 @@ export default function NotFound() {
   return (
     <div
       style={{
-        minHeight: 'calc(100vh - 160px)',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '48px 24px',
+        padding: '0',
         background: '#EDEEEE',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         textAlign: 'center',
+        position: 'relative',
       }}
     >
+      {/* Dark navy header bar */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '8px',
+          background: '#00172E',
+        }}
+      />
+      <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
       <div
         style={{
           maxWidth: 480,
@@ -37,7 +50,7 @@ export default function NotFound() {
             fontFamily: '"PT Mono", monospace',
             fontSize: '96px',
             fontWeight: 700,
-            color: '#999999',
+            color: '#455A64',
             lineHeight: 1,
             marginBottom: '16px',
             letterSpacing: '-0.02em',
@@ -74,7 +87,7 @@ export default function NotFound() {
 
         <style>{`
           .notfound-link-primary:hover {
-            background: #CC1019;
+            background: #E8171F;
             box-shadow: none;
           }
           .notfound-link-secondary:hover {
@@ -134,6 +147,7 @@ export default function NotFound() {
             Search cases
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );

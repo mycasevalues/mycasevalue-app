@@ -184,11 +184,11 @@ export default function SearchPage() {
       {query.length === 0 && recentItems.length > 0 && (
         <div style={{ marginBottom: '24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#999999', flexShrink: 0 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#455A64', flexShrink: 0 }}>
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <p style={{ fontSize: '13px', color: '#999999', margin: '0', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Recently viewed</p>
+            <p style={{ fontSize: '13px', color: '#455A64', margin: '0', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Recently viewed</p>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {recentItems.map((item, i) => (
@@ -228,7 +228,7 @@ export default function SearchPage() {
 
       <div style={{ display: 'flex', gap: '12px', marginBottom: 24, flexWrap: 'wrap' }}>
         <div style={{ position: 'relative', flex: '1 1 auto', minWidth: '200px' }}>
-          <svg style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#999999', pointerEvents: 'none' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#455A64', pointerEvents: 'none' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <input
@@ -312,7 +312,7 @@ export default function SearchPage() {
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: '#D5D8DC', margin: '0 auto 16px', display: 'block' }}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
-          <p style={{ color: '#999999', fontSize: 16, margin: 0, marginBottom: 8, fontFamily: 'var(--font-body)' }}>
+          <p style={{ color: '#455A64', fontSize: 16, margin: 0, marginBottom: 8, fontFamily: 'var(--font-body)' }}>
             No case types match your search
           </p>
           <p style={{ color: '#AAAAAA', fontSize: 14, margin: 0, marginBottom: 16, fontFamily: 'var(--font-body)' }}>
@@ -366,13 +366,13 @@ export default function SearchPage() {
             </span>
           </div>
           <p style={{ fontSize: '13px', color: '#455A64', margin: '0', fontFamily: 'var(--font-body)', lineHeight: '1.5' }}>{r.categoryName}</p>
-          {r.desc && <p style={{ fontSize: '13px', color: '#999999', margin: '8px 0 0 0', fontFamily: 'var(--font-body)', lineHeight: '1.4' }}>{r.desc}</p>}
+          {r.desc && <p style={{ fontSize: '13px', color: '#455A64', margin: '8px 0 0 0', fontFamily: 'var(--font-body)', lineHeight: '1.4' }}>{r.desc}</p>}
         </Link>
       ))}
 
       {query.length === 0 && (
         <div style={{ marginTop: '24px' }}>
-          <p style={{ fontSize: '13px', color: '#999999', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Popular searches</p>
+          <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Popular searches</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall'].map(s => (
               <button

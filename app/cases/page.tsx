@@ -57,7 +57,7 @@ export default function CasesIndexPage() {
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#999999"
+            stroke="#455A64"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -132,13 +132,13 @@ export default function CasesIndexPage() {
             border-color: #B5B9BD;
           }
           .cta-link:hover {
-            background: #CC1019;
+            background: #E8171F;
           }
         `}} />
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ fontSize: 18, color: '#999999', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: 18, color: '#455A64', fontFamily: 'var(--font-body)' }}>
               No case types match &ldquo;{search}&rdquo;
             </p>
             <button
@@ -170,7 +170,7 @@ export default function CasesIndexPage() {
                   <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#212529', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
                     {category.label}
                   </h2>
-                  <p style={{ fontSize: 14, color: '#999999', margin: 0, lineHeight: 1.5, marginBottom: 'auto' }}>{category.sub}</p>
+                  <p style={{ fontSize: 14, color: '#455A64', margin: 0, lineHeight: 1.5, marginBottom: 'auto' }}>{category.sub}</p>
                   <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #D5D8DC', fontSize: 13, color: '#455A64', fontWeight: 500, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <span>{category.opts.length} types covered</span>
                     <span className="cat-card-arrow">→</span>
@@ -188,7 +188,7 @@ export default function CasesIndexPage() {
           <h2 className="font-display" style={{ fontSize: 32, fontWeight: 700, color: '#212529', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
           </h2>
-          <p style={{ fontSize: 18, color: '#999999', margin: '0 0 32px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: 18, color: '#455A64', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
           <a href="/cases" className="cta-link" style={{ display: 'inline-block', background: '#E8171F', color: '#FFFFFF', padding: '14px 36px', borderRadius: 4, fontWeight: 600, fontSize: 16, textDecoration: 'none', transition: 'all 0.2s', textTransform: 'uppercase' }}>
@@ -198,7 +198,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ background: '#F5F5F5', color: '#999999', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#F5F5F5', color: '#455A64', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0 }}>
             <strong>Legal Disclaimer:</strong> This data is for research purposes only and is not legal advice. MyCaseValue provides historical federal court outcome data from public records. This does not constitute a prediction of any case outcome. Consult a qualified attorney for legal advice. © {new Date().getFullYear()} MyCaseValue LLC.

@@ -198,7 +198,7 @@ export default function BlogPage() {
                   </p>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', color: '#999999', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+                  <div style={{ fontSize: '12px', color: '#455A64', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
                     <span className="font-medium">{featuredPost.author}</span>
                     <span className="mx-2">•</span>
                     <time>{featuredPost.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
@@ -289,7 +289,7 @@ export default function BlogPage() {
                       {post.description}
                     </p>
 
-                    <div style={{ fontSize: '12px', color: '#999999', fontFamily: 'var(--font-body)' }}>
+                    <div style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)' }}>
                       <span className="font-medium">{post.author}</span>
                       <span className="mx-1.5">•</span>
                       <time>{post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>

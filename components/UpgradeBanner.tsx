@@ -37,7 +37,7 @@ export default function UpgradeBanner() {
           letter-spacing: 0.04em;
           transition: background 200ms;
         }
-        .upgrade-btn-primary:hover { background: #CC1019; }
+        .upgrade-btn-primary:hover { background: #E8171F; }
         .upgrade-btn-secondary {
           display: inline-block;
           padding: 12px 28px;

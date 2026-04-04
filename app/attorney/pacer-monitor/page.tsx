@@ -23,7 +23,7 @@ const DEMO_ALERTS: Alert[] = [
 ];
 
 const priorityColors = {
-  high: { bg: 'rgba(204,16,25,0.12)', text: '#CC1019', dot: '#CC1019' },
+  high: { bg: 'rgba(204,16,25,0.12)', text: '#E8171F', dot: '#E8171F' },
   medium: { bg: 'rgba(184,110,0,0.12)', text: '#B86E00', dot: '#B86E00' },
   low: { bg: 'rgba(7,135,74,0.12)', text: '#07874A', dot: '#07874A' },
 };
@@ -79,7 +79,7 @@ export default function PacerMonitorPage() {
               <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>Recent Alerts</h2>
               <div style={{ display: 'flex', gap: '4px', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
-                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '4px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#E8171F' : 'transparent', color: filter === f ? '#FFFFFF' : '#999999', textTransform: 'capitalize' as const }}>
+                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '4px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#E8171F' : 'transparent', color: filter === f ? '#FFFFFF' : '#455A64', textTransform: 'capitalize' as const }}>
                     {f}
                   </button>
                 ))}
@@ -94,7 +94,7 @@ export default function PacerMonitorPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                       <div>
                         <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#006997' }}>{alert.caseNumber}</span>
-                        <span style={{ fontSize: '12px', color: '#999999', marginLeft: '8px' }}>{alert.court}</span>
+                        <span style={{ fontSize: '12px', color: '#455A64', marginLeft: '8px' }}>{alert.court}</span>
                       </div>
                       <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '4px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
                     </div>
@@ -143,7 +143,7 @@ export default function PacerMonitorPage() {
                 { label: 'High Priority', value: String(alerts.filter((a) => a.priority === 'high').length) },
               ].map((s) => (
                 <div key={s.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <span style={{ fontSize: '13px', color: '#999999' }}>{s.label}</span>
+                  <span style={{ fontSize: '13px', color: '#455A64' }}>{s.label}</span>
                   <span className="font-mono" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5' }}>{s.value}</span>
                 </div>
               ))}

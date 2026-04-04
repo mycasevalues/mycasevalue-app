@@ -120,7 +120,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           width: 44px;
           height: 44px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #E8171F 0%, #CC1019 100%);
+          background: linear-gradient(135deg, #E8171F 0%, #E8171F 100%);
           color: white;
           font-weight: 600;
           font-size: 18px;
@@ -478,7 +478,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                     className="inline-flex items-center w-fit px-2.5 py-1 rounded-full text-xs font-semibold"
                     style={{
                       background: '#FFF3F4',
-                      color: '#CC1019',
+                      color: '#E8171F',
                     }}
                   >
                     {relatedPost.category}

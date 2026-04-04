@@ -106,7 +106,7 @@ export default function OpposingCounselPage() {
         <form onSubmit={handleSearch} style={{ marginBottom: '24px' }}>
           <div style={{ display: 'flex', gap: '8px' }}>
             <div style={{ flex: 1, position: 'relative' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999999" strokeWidth="2" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }}>
                 <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
               </svg>
               <input
@@ -156,7 +156,7 @@ export default function OpposingCounselPage() {
                             <div className="font-mono" style={{ fontSize: '20px', fontWeight: 700, color: '#1B7C7D' }}>{p.settlementRate}%</div>
                             <div style={{ fontSize: '10px', color: '#666666', textTransform: 'uppercase' as const }}>Settlement</div>
                           </div>
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999999" strokeWidth="2" style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}>
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}>
                             <polyline points="6 9 12 15 18 9" />
                           </svg>
                         </div>
@@ -250,7 +250,7 @@ export default function OpposingCounselPage() {
             <p style={{ fontSize: '15px', color: '#666666', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
               Search by attorney name or firm to view their litigation track record, settlement patterns, and strategy tendencies.
             </p>
-            <p style={{ fontSize: '13px', color: '#999999' }}>Try: Smith, Johnson, Williams, or Jones</p>
+            <p style={{ fontSize: '13px', color: '#455A64' }}>Try: Smith, Johnson, Williams, or Jones</p>
           </div>
         )}
       </div>

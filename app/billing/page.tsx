@@ -117,7 +117,7 @@ export default function BillingPage() {
           <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #D5D8DC', marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
               <div>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: '#999999', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 8px 0' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 8px 0' }}>
                   Current Plan
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -183,7 +183,7 @@ export default function BillingPage() {
               <p style={{ fontSize: '14px', color: '#455A64', margin: '0 0 4px 0' }}>
                 No payment method on file
               </p>
-              <p style={{ fontSize: '12px', color: '#999999', margin: 0 }}>
+              <p style={{ fontSize: '12px', color: '#455A64', margin: 0 }}>
                 All features are currently free during our beta period
               </p>
             </div>

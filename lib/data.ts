@@ -59,7 +59,7 @@ export const SITS = [
     { label: "Student loan dispute", nos: "370", d: "student loan dispute" },
     { label: "Unfair business practices", nos: "370", d: "unfair business practices" },
   ]},
-  { id: "rights", label: "Civil Rights", sub: "Police, discrimination, voting, free speech", color: "#7C3AED", icon: "scale", q: "What happened?", dm: "large", opts: [
+  { id: "rights", label: "Civil Rights", sub: "Police, discrimination, voting, free speech", color: "#E8171F", icon: "scale", q: "What happened?", dm: "large", opts: [
     { label: "Police excessive force", nos: "440", d: "police misconduct" },
     { label: "Racial discrimination", nos: "440", d: "racial discrimination" },
     { label: "Housing discrimination", nos: "443", d: "housing discrimination" },
@@ -339,7 +339,7 @@ const _LEGACY_MOCK_unused = {
       { l: "Summary judgment", p: 18.2, c: "#D97706" },
       { l: "Dismissed", p: 15.9, c: "#E87461" },
       { l: "Consent", p: 8.6, c: "#2563EB" },
-      { l: "Bench trial", p: 4.2, c: "#7C3AED" },
+      { l: "Bench trial", p: 4.2, c: "#E8171F" },
       { l: "Jury trial", p: 3.1, c: "#DB2777" },
     ],
     money: [
@@ -382,7 +382,7 @@ const _LEGACY_MOCK_unused = {
       { l: "Summary judgment", p: 16.1, c: "#D97706" },
       { l: "Consent", p: 12.2, c: "#2563EB" },
       { l: "Court dismissed", p: 11.4, c: "#E87461" },
-      { l: "Trial", p: 6.0, c: "#7C3AED" },
+      { l: "Trial", p: 6.0, c: "#E8171F" },
     ],
     money: [
       { l: "No recovery", p: 48.2, t: 0 },
@@ -411,7 +411,7 @@ const _LEGACY_MOCK_unused = {
       { l: "Summary judgment", p: 14.8, c: "#D97706" },
       { l: "Dismissed", p: 14.2, c: "#94A3B8" },
       { l: "Court dismissed", p: 12.8, c: "#E87461" },
-      { l: "Trial", p: 4.0, c: "#7C3AED" },
+      { l: "Trial", p: 4.0, c: "#E8171F" },
     ],
     money: [
       { l: "No recovery", p: 38.4, t: 0 },
@@ -438,7 +438,7 @@ const _LEGACY_MOCK_unused = {
       { l: "Summary judgment", p: 24.8, c: "#D97706" },
       { l: "Dismissed", p: 19.2, c: "#94A3B8" },
       { l: "Vol. dismissed", p: 18.6, c: "#E87461" },
-      { l: "Trial", p: 14.4, c: "#7C3AED" },
+      { l: "Trial", p: 14.4, c: "#E8171F" },
     ],
     money: [
       { l: "No recovery", p: 64.2, t: 0 },
@@ -468,7 +468,7 @@ const _LEGACY_MOCK_unused = {
       { l: "Dismissed", p: 22.1, c: "#94A3B8" },
       { l: "Summary judgment", p: 19.4, c: "#D97706" },
       { l: "Court dismissed", p: 16.8, c: "#E87461" },
-      { l: "Trial", p: 13.6, c: "#7C3AED" },
+      { l: "Trial", p: 13.6, c: "#E8171F" },
     ],
     money: [
       { l: "No recovery", p: 55.8, t: 0 },

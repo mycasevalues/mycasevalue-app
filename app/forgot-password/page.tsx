@@ -194,7 +194,7 @@ export default function ForgotPasswordPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#CC1019',
+                    color: '#E8171F',
                     margin: 0,
                   }}
                 >
@@ -264,7 +264,7 @@ export default function ForgotPasswordPage() {
                 }}
                 onMouseEnter={(e) => {
                   if (!loading) {
-                    (e.target as HTMLButtonElement).style.backgroundColor = '#CC1019';
+                    (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
                   }
                 }}
                 onMouseLeave={(e) => {

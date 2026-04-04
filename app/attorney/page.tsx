@@ -293,7 +293,7 @@ export default function AttorneyPage() {
           color: #006997 !important;
         }
         .attorney-cta-link:hover {
-          background-color: #CC1019 !important;
+          background-color: #E8171F !important;
           box-shadow: 0 8px 24px rgba(232, 23, 31, 0.24) !important;
           transform: translateY(-2px);
         }

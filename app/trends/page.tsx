@@ -135,9 +135,11 @@ export default function TrendsPage() {
         a.lex-link:hover { text-decoration: underline; }
         .lex-card { background: #FFFFFF; border: 1px solid #D5D8DC; border-radius: 4px; }
         .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .lex-btn-primary { background: #E8171F; color: white; border: none; border-radius: 4px; font-weight: 600; }
+        .lex-btn-primary { background: #E8171F; color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; }
         .lex-btn-primary:hover { background: #C41219; }
         .lex-badge { background: rgba(232,23,31,0.1); color: #E8171F; border-radius: 4px; }
+        h1 { font-family: var(--font-display); }
+        h2 { font-family: var(--font-display); }
       `}</style>
       <script
         type="application/ld+json"
@@ -145,12 +147,12 @@ export default function TrendsPage() {
       />
 
       {/* Breadcrumb */}
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '12px 0' }}>
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '16px 0' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <nav className="flex items-center gap-2 text-sm" style={{ color: '#455A64' }}>
-            <a href="/" className="lex-link">Home</a>
-            <span>/</span>
-            <span>Trends</span>
+          <nav className="flex items-center gap-2 text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <a href="/" className="lex-link" style={{ fontWeight: 500 }}>Home</a>
+            <span style={{ color: '#D5D8DC' }}>›</span>
+            <span style={{ color: '#212529', fontWeight: 500 }}>Trends</span>
           </nav>
         </div>
       </div>
@@ -165,20 +167,30 @@ export default function TrendsPage() {
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(232,23,31,0.15)', color: '#E8171F' }}
+            style={{
+              background: '#E8171F',
+              color: '#FFFFFF',
+              borderRadius: '4px',
+              fontFamily: 'var(--font-body)',
+            }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
             </svg>
-            FEDERAL COURT TRENDS
+            TRENDS
           </div>
           <h1
-            className="text-3xl sm:text-4xl font-display font-extrabold mb-4"
-            style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}
+            className="font-display font-extrabold mb-4"
+            style={{
+              color: '#FFFFFF',
+              letterSpacing: '-1.5px',
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              lineHeight: '1.2',
+            }}
           >
             Federal Court Filing Trends
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#B0C4DE' }}>
+          <p className="leading-relaxed max-w-2xl" style={{ color: '#B0C4DE', fontFamily: 'var(--font-body)', fontSize: 'clamp(0.95rem, 2vw, 1.125rem)' }}>
             Explore real statistics from {totalCases.toLocaleString()} federal civil cases across {trends.length} case types and 94 federal districts.
           </p>
         </div>
@@ -213,10 +225,10 @@ export default function TrendsPage() {
       <div className="max-w-6xl mx-auto px-6 py-12 space-y-16">
         {/* Interactive Trend Charts */}
         <section className="pt-4">
-          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
             Interactive Visualizations
           </h2>
-          <p className="text-sm mb-8" style={{ color: '#455A64' }}>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
             Explore filing trends, win rates by category, and top case types with interactive charts.
           </p>
           <TrendCharts />
@@ -224,10 +236,10 @@ export default function TrendsPage() {
 
         {/* Top 10 Most Filed Case Types */}
         <section>
-          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
             Most Filed Case Types
           </h2>
-          <p className="text-sm mb-8" style={{ color: '#455A64' }}>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
             The 10 most common federal civil case types by total filings.
           </p>
           <div className="space-y-3">
@@ -282,10 +294,10 @@ export default function TrendsPage() {
 
         {/* Category Breakdown */}
         <section>
-          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
             Cases by Category
           </h2>
-          <p className="text-sm mb-8" style={{ color: '#455A64' }}>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
             Federal civil cases grouped by legal category.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -322,10 +334,10 @@ export default function TrendsPage() {
         {/* Win Rate Extremes */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+            <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}>
               Highest Win Rates
             </h2>
-            <p className="text-xs mb-4" style={{ color: '#455A64' }}>
+            <p className="mb-4" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
               Case types with 1,000+ filings and the highest plaintiff win rates.
             </p>
             <div className="space-y-2">
@@ -345,10 +357,10 @@ export default function TrendsPage() {
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+            <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}>
               Lowest Win Rates
             </h2>
-            <p className="text-xs mb-4" style={{ color: '#455A64' }}>
+            <p className="mb-4" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
               Case types with 1,000+ filings and the lowest plaintiff win rates.
             </p>
             <div className="space-y-2">
@@ -372,10 +384,10 @@ export default function TrendsPage() {
         {/* Duration Extremes */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+            <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}>
               Fastest to Resolve
             </h2>
-            <p className="text-xs mb-4" style={{ color: '#455A64' }}>
+            <p className="mb-4" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
               Case types with the shortest average duration.
             </p>
             <div className="space-y-2">
@@ -395,10 +407,10 @@ export default function TrendsPage() {
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+            <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.25rem, 2.5vw, 1.5rem)' }}>
               Longest to Resolve
             </h2>
-            <p className="text-xs mb-4" style={{ color: '#455A64' }}>
+            <p className="mb-4" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
               Case types with the longest average duration.
             </p>
             <div className="space-y-2">
@@ -421,10 +433,10 @@ export default function TrendsPage() {
 
         {/* Recovery Ranges */}
         <section>
-          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
             Recovery Ranges by Case Type
           </h2>
-          <p className="text-sm mb-8" style={{ color: '#455A64' }}>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
             Typical monetary recovery ranges (25th, 50th, and 75th percentile) for common case types, in thousands.
           </p>
           <div className="overflow-x-auto">
@@ -472,10 +484,10 @@ export default function TrendsPage() {
             background: '#00172E',
           }}
         >
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#FFFFFF' }}>
+          <h2 className="font-display font-bold mb-3" style={{ color: '#FFFFFF', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
             Want details for your specific case?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#B0C4DE' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#B0C4DE', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
             Select your case type and get a personalized analysis with win rates, timelines, and recovery data.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -506,7 +518,7 @@ export default function TrendsPage() {
 
         {/* Data Source Note */}
         <section className="text-center">
-          <p className="text-xs leading-relaxed" style={{ color: '#455A64' }}>
+          <p className="leading-relaxed" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
             All data sourced from the Federal Judicial Center Integrated Database (FJC IDB), PACER, and CourtListener.
             Statistics represent aggregate historical outcomes from 2000–2024 and do not predict future case results.
           </p>

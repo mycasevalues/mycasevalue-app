@@ -65,7 +65,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 2.5,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 13929
       },
       {
@@ -376,7 +376,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 4.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 7052
       },
       {
@@ -705,7 +705,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 2.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 6468
       },
       {
@@ -1034,7 +1034,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 2.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 962
       },
       {
@@ -1350,7 +1350,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 5.7,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 17506
       },
       {
@@ -1673,7 +1673,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.5,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 4232
       },
       {
@@ -1995,7 +1995,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 3.6,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 18890
       },
       {
@@ -2324,7 +2324,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 371
       },
       {
@@ -2651,7 +2651,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 371
       }
     ],
@@ -2961,7 +2961,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 3.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 20073
       },
       {
@@ -3290,7 +3290,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 2.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 1267
       },
       {
@@ -3606,7 +3606,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 2.5,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 304
       },
       {
@@ -3939,7 +3939,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 171
       }
     ],
@@ -4259,7 +4259,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.4,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 2101
       }
     ],
@@ -4582,7 +4582,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 2.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 1381
       }
     ],
@@ -4893,7 +4893,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 7.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 3259
       },
       {
@@ -5222,7 +5222,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 2.4,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 640
       },
       {
@@ -5537,7 +5537,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.5,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 173
       },
       {
@@ -5859,7 +5859,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 6.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 15
       },
       {
@@ -6024,7 +6024,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 349
       },
       {
@@ -6292,7 +6292,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 43
       },
       {
@@ -6615,7 +6615,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 23
       },
       {
@@ -6938,7 +6938,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 30
       },
       {
@@ -7261,7 +7261,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 69
       },
       {
@@ -7584,7 +7584,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 24
       },
       {
@@ -7907,7 +7907,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 49
       },
       {
@@ -8230,7 +8230,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 42
       },
       {
@@ -8553,7 +8553,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 118
       },
       {
@@ -8876,7 +8876,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 57
       },
       {
@@ -9199,7 +9199,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 39
       },
       {
@@ -9522,7 +9522,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 83
       },
       {
@@ -9845,7 +9845,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 42
       },
       {
@@ -10168,7 +10168,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 151
       },
       {
@@ -10491,7 +10491,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.7,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 22
       },
       {
@@ -10814,7 +10814,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 19
       },
       {
@@ -11137,7 +11137,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 70
       },
       {
@@ -11460,7 +11460,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.7,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 27
       },
       {
@@ -11783,7 +11783,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.7,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 17
       },
       {
@@ -12106,7 +12106,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 11
       },
       {
@@ -12429,7 +12429,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.9,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 414
       },
       {
@@ -12752,7 +12752,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 274
       },
       {
@@ -13075,7 +13075,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.6,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 103
       },
       {
@@ -13398,7 +13398,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 39
       },
       {
@@ -13721,7 +13721,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 21
       },
       {
@@ -14044,7 +14044,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 97
       },
       {
@@ -14367,7 +14367,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 230
       },
       {
@@ -14690,7 +14690,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 37
       },
       {
@@ -15013,7 +15013,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 43
       },
       {
@@ -15336,7 +15336,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 26
       },
       {
@@ -15659,7 +15659,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 92
       },
       {
@@ -15982,7 +15982,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 132
       },
       {
@@ -16305,7 +16305,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 250
       },
       {
@@ -16628,7 +16628,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 19
       },
       {
@@ -16951,7 +16951,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.7,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 38
       },
       {
@@ -17274,7 +17274,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.6,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 270
       },
       {
@@ -17597,7 +17597,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 62
       },
       {
@@ -17920,7 +17920,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 97
       },
       {
@@ -18243,7 +18243,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 60
       },
       {
@@ -18566,7 +18566,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 297
       },
       {
@@ -18889,7 +18889,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.8,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 510
       },
       {
@@ -19212,7 +19212,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 24
       },
       {
@@ -19535,7 +19535,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.3,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 368
       },
       {
@@ -19858,7 +19858,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 625
       },
       {
@@ -20181,7 +20181,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 0.9,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 75
       },
       {
@@ -20504,7 +20504,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 133
       },
       {
@@ -20827,7 +20827,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 193
       },
       {
@@ -21150,7 +21150,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 214
       },
       {
@@ -21473,7 +21473,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 56
       },
       {
@@ -21796,7 +21796,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 16
       },
       {
@@ -22119,7 +22119,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 85
       },
       {
@@ -22442,7 +22442,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 252
       },
       {
@@ -22765,7 +22765,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 75
       },
       {
@@ -23088,7 +23088,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 191
       },
       {
@@ -23411,7 +23411,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 493
       },
       {
@@ -23734,7 +23734,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 316
       },
       {
@@ -24057,7 +24057,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 288
       },
       {
@@ -24380,7 +24380,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 981
       },
       {
@@ -24703,7 +24703,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.4,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 173
       },
       {
@@ -25026,7 +25026,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 378
       },
       {
@@ -25349,7 +25349,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.2,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 16
       },
       {
@@ -25672,7 +25672,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 84
       },
       {
@@ -25995,7 +25995,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 37
       },
       {
@@ -26318,7 +26318,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.0,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 122
       },
       {
@@ -26641,7 +26641,7 @@ export const REAL_DATA: Record<string, any> = {
       {
         "l": "Trial",
         "p": 1.1,
-        "c": "#7C3AED",
+        "c": "#E8171F",
         "n": 210
       },
       {

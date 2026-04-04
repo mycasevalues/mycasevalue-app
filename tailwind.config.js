@@ -46,7 +46,7 @@ module.exports = {
           base: '#EDEEEE',
           card: '#FFFFFF',
           border: '#D5D8DC',
-          'border-strong': '#999999',
+          'border-strong': '#455A64',
           overlay: 'rgba(0,23,46,0.60)',
         },
         text: {

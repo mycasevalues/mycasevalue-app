@@ -74,7 +74,7 @@ export default function MethodologyPage() {
           transition: all 0.3s ease;
         }
         .stat-card:hover {
-          border-color: #999999;
+          border-color: #455A64;
           transform: translateY(-2px);
         }
         .limitation-callout {
@@ -95,10 +95,10 @@ export default function MethodologyPage() {
       <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 mb-6 text-[11px]" style={{ color: '#999999' }}>
-            <a href="/" className="transition-colors hover:text-current" style={{ color: '#999999' }}>Home</a>
+          <nav className="flex items-center gap-2 mb-6 text-[11px]" style={{ color: '#455A64' }}>
+            <a href="/" className="transition-colors hover:text-current" style={{ color: '#455A64' }}>Home</a>
             <span>/</span>
-            <a href="/about" className="transition-colors hover:text-current" style={{ color: '#999999' }}>About</a>
+            <a href="/about" className="transition-colors hover:text-current" style={{ color: '#455A64' }}>About</a>
             <span>/</span>
             <span style={{ color: '#CCCCCC' }}>Methodology</span>
           </nav>
@@ -176,7 +176,7 @@ export default function MethodologyPage() {
                 name: 'Bureau of Justice Statistics (BJS)',
                 description: 'The BJS publishes benchmark civil trial statistics including verdict and settlement distributions, trial rates, and case processing times for federal and state courts.',
                 badge: 'Benchmark',
-                color: '#CC1019',
+                color: '#E8171F',
                 url: 'https://bjs.ojp.gov/library/publications/civil-bench-and-jury-trials-state-courts-2005',
                 icon: 'chart'
               },
@@ -224,7 +224,7 @@ export default function MethodologyPage() {
             {[
               { v: '5.1M+', l: 'Federal Cases', c: '#212529' },
               { v: '50+', l: 'Years of Data', c: '#07874A' },
-              { v: '20+', l: 'Case Categories', c: '#CC1019' },
+              { v: '20+', l: 'Case Categories', c: '#E8171F' },
               { v: '94', l: 'Federal Districts', c: '#006997' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">

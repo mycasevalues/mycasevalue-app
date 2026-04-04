@@ -201,7 +201,7 @@ export default function NewsletterSignup() {
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
-          color: '#999999',
+          color: '#455A64',
           margin: '16px 0 0',
           lineHeight: 1.5,
         }}

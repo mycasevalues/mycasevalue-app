@@ -16,15 +16,29 @@ export default function Error({
   return (
     <div
       style={{
-        minHeight: 'calc(100vh - 160px)',
+        minHeight: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         background: '#EDEEEE',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
-        padding: '48px 24px',
+        padding: '0',
+        position: 'relative',
       }}
     >
+      {/* Dark navy header bar */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '8px',
+          background: '#00172E',
+        }}
+      />
+      <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
       <div
         style={{
           maxWidth: 480,
@@ -87,7 +101,7 @@ export default function Error({
             style={{
               fontFamily: '"PT Mono", monospace',
               fontSize: '12px',
-              color: '#999999',
+              color: '#455A64',
               margin: '0 0 24px',
               wordBreak: 'break-all',
             }}
@@ -116,7 +130,7 @@ export default function Error({
               boxShadow: 'none',
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLButtonElement).style.background = '#CC1019';
+              (e.target as HTMLButtonElement).style.background = '#E8171F';
               (e.target as HTMLButtonElement).style.boxShadow = 'none';
             }}
             onMouseLeave={(e) => {
@@ -164,6 +178,7 @@ export default function Error({
             Go home
           </a>
         </div>
+      </div>
       </div>
     </div>
   );

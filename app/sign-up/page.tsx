@@ -329,7 +329,7 @@ export default function SignUpPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '12px',
-                color: '#999999',
+                color: '#455A64',
                 margin: '6px 0 0 0',
               }}
             >
@@ -440,7 +440,7 @@ export default function SignUpPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#CC1019',
+                color: '#E8171F',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
                 backgroundColor: 'rgba(204,16,25,0.06)',
@@ -457,7 +457,7 @@ export default function SignUpPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#CC1019',
+                color: '#E8171F',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
                 backgroundColor: 'rgba(204,16,25,0.06)',
@@ -502,7 +502,7 @@ export default function SignUpPage() {
             }}
             onMouseEnter={(e) => {
               if (!loading) {
-                (e.target as HTMLButtonElement).style.backgroundColor = '#CC1019';
+                (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
               }
             }}
             onMouseLeave={(e) => {
@@ -535,7 +535,7 @@ export default function SignUpPage() {
               padding: '0 12px',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#999999',
+              color: '#455A64',
               fontWeight: 500,
             }}
           >
@@ -587,14 +587,14 @@ export default function SignUpPage() {
           textAlign: 'center',
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
-          color: '#999999',
+          color: '#455A64',
         }}
       >
         Your privacy is important to us. Read our{' '}
         <Link
           href="/privacy"
           style={{
-            color: '#999999',
+            color: '#455A64',
             textDecoration: 'underline',
           }}
           className="auth-link"
@@ -605,7 +605,7 @@ export default function SignUpPage() {
         <Link
           href="/terms"
           style={{
-            color: '#999999',
+            color: '#455A64',
             textDecoration: 'underline',
           }}
           className="auth-link"

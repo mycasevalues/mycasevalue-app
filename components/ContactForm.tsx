@@ -58,7 +58,7 @@ export default function ContactForm() {
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-display); width: 100%;
         }
-        .contact-submit:hover { background: #CC1019; }
+        .contact-submit:hover { background: #E8171F; }
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: '#FFFFFF', border: '1px solid #D5D8DC',

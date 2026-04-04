@@ -141,7 +141,7 @@ export default function ServerHero() {
             { name: 'Bureau of Justice Statistics', url: 'https://bjs.ojp.gov' },
           ].map((source, i) => (
             <span key={source.name} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              {i > 0 && <span style={{ color: '#999999' }}>·</span>}
+              {i > 0 && <span style={{ color: '#455A64' }}>·</span>}
               <a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`Data sourced from ${source.name} (opens in new window)`} style={{
                 fontSize: '12px',
                 color: '#006997',

@@ -303,7 +303,7 @@ export default async function JudgePage({ params }: PageProps) {
             >
               Home
             </Link>
-            <span style={{ color: '#6B7280' }}>›</span>
+            <span style={{ color: '#455A64' }}>›</span>
             <Link
               href="/judges"
               className="judge-breadcrumb-link"
@@ -311,7 +311,7 @@ export default async function JudgePage({ params }: PageProps) {
             >
               Judges
             </Link>
-            <span style={{ color: '#6B7280' }}>›</span>
+            <span style={{ color: '#455A64' }}>›</span>
             <span style={{ color: '#FFFFFF', fontWeight: '600' }}>
               {judge.name}
             </span>

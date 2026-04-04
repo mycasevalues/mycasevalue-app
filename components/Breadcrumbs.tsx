@@ -109,7 +109,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                 <span
                   className="breadcrumbs-separator"
                   style={{
-                    color: '#999999',
+                    color: '#455A64',
                     margin: '0 8px',
                     fontSize: '13px',
                     fontFamily: 'var(--font-body)',

@@ -153,9 +153,9 @@ export default function TermsPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: '#FFF3F4',
-            color: '#CC1019'
+            color: '#E8171F'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CC1019" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5">
               <path d="M7 7h10v10H7z M7 7v3 M7 10h10 M7 13h10 M7 16h10 M17 7v10" />
             </svg>
             TERMS OF SERVICE
@@ -228,7 +228,7 @@ export default function TermsPage() {
             color: '#212529',
             marginBottom: '32px'
           }}>
-            <p style={{ margin: 0, fontWeight: '600', color: '#CC1019', fontSize: '15px', lineHeight: 1.7 }}>
+            <p style={{ margin: 0, fontWeight: '600', color: '#E8171F', fontSize: '15px', lineHeight: 1.7 }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.
             </p>
@@ -454,7 +454,7 @@ export default function TermsPage() {
           margin: '0 auto',
           paddingLeft: '24px',
           paddingRight: '24px',
-          color: '#999999'
+          color: '#455A64'
         }}>
           © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
         </p>

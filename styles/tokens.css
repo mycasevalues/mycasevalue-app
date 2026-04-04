@@ -43,7 +43,7 @@
 
   /* ── PRIMARY ACCENT (LexisNexis Red) ───────────────────── */
   --accent-primary:         #E8171F;
-  --accent-primary-hover:   #CC1019;
+  --accent-primary-hover:   #E8171F;
   --accent-primary-subtle:  rgba(232,23,31,0.08);
   --accent-primary-border:  rgba(232,23,31,0.30);
   --accent-primary-glow:    rgba(232,23,31,0.15);
@@ -62,14 +62,14 @@
   /* ── SEMANTIC — OUTCOMES ───────────────────────────────── */
   --outcome-win:          #07874A;
   --outcome-settle:       #B86E00;
-  --outcome-loss:         #CC1019;
+  --outcome-loss:         #E8171F;
 
   /* ── UI SEMANTIC (STATUS COLORS) ───────────────────────── */
   --success:              #07874A;
   --success-subtle:       rgba(7,135,74,0.08);
   --warning:              #B86E00;
   --warning-subtle:       rgba(184,110,0,0.08);
-  --danger:               #CC1019;
+  --danger:               #E8171F;
   --danger-subtle:        rgba(204,16,25,0.08);
   --info:                 #006997;
   --info-subtle:          rgba(0,105,151,0.08);
@@ -134,7 +134,7 @@
   /* ── GRADIENT BACKGROUNDS ──────────────────────────────── */
   --gradient-page: #EDEEEE;
   --gradient-hero: linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%);
-  --gradient-accent: linear-gradient(135deg, #E8171F 0%, #CC1019 100%);
+  --gradient-accent: linear-gradient(135deg, #E8171F 0%, #E8171F 100%);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -143,7 +143,7 @@
 @media (prefers-contrast: high) {
   :root {
     --fg-secondary:  #333333;
-    --border-default: #999999;
+    --border-default: #455A64;
     --border-focus:  #004466;
     --outcome-win:   #056B3B;
     --outcome-settle: #8B5500;

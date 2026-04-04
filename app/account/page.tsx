@@ -212,7 +212,7 @@ export default function AccountPage() {
                   disabled
                   style={{ width: '100%', height: '48px', padding: '10px 12px', border: '1px solid #D5D8DC', borderRadius: '4px', fontSize: '14px', color: '#455A64', backgroundColor: '#F5F6F7', boxSizing: 'border-box', cursor: 'not-allowed' }}
                 />
-                <p style={{ fontSize: '12px', color: '#999999', marginTop: '4px' }}>
+                <p style={{ fontSize: '12px', color: '#455A64', marginTop: '4px' }}>
                   Email cannot be changed. Contact support if needed.
                 </p>
               </div>
@@ -294,7 +294,7 @@ export default function AccountPage() {
               <span className="font-display" style={{ fontSize: '20px', fontWeight: 700, color: '#212529' }}>
                 {planLabels[planInfo?.plan || 'free'] || 'Free'}
               </span>
-              <span style={{ padding: '4px 10px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? '#FAFBFC' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? '#999999' : '#006997' }}>
+              <span style={{ padding: '4px 10px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', backgroundColor: planInfo?.plan === 'free' ? '#FAFBFC' : 'rgba(0,105,151,0.06)', color: planInfo?.plan === 'free' ? '#455A64' : '#006997' }}>
                 {planInfo?.plan === 'free' ? 'Free' : 'Active'}
               </span>
             </div>
@@ -339,7 +339,7 @@ export default function AccountPage() {
                   style={{ display: 'block', padding: '16px', borderRadius: '4px', border: '1px solid #D5D8DC', textDecoration: 'none', transition: 'all 0.2s' }}
                 >
                   <div style={{ fontSize: '14px', fontWeight: 600, color: '#212529', marginBottom: '4px' }}>{link.label}</div>
-                  <div style={{ fontSize: '12px', color: '#999999' }}>{link.desc}</div>
+                  <div style={{ fontSize: '12px', color: '#455A64' }}>{link.desc}</div>
                 </Link>
               ))}
             </div>
@@ -367,8 +367,8 @@ export default function AccountPage() {
               }
             `}</style>
 
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px solid #CC1019' }}>
-              <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#CC1019', margin: '0 0 16px 0' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px solid #E8171F' }}>
+              <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#E8171F', margin: '0 0 16px 0' }}>
                 Danger Zone
               </h2>
               <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 16px 0', lineHeight: 1.5 }}>

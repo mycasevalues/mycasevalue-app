@@ -100,7 +100,7 @@ export default function GlobalError({
             <p
               style={{
                 fontSize: '14px',
-                color: '#999999',
+                color: '#455A64',
                 lineHeight: 1.6,
                 margin: '0 0 28px',
                 maxWidth: 400,
@@ -131,7 +131,7 @@ export default function GlobalError({
                   boxShadow: 'none',
                 }}
                 onMouseEnter={(e) => {
-                  (e.target as HTMLButtonElement).style.background = '#CC1019';
+                  (e.target as HTMLButtonElement).style.background = '#E8171F';
                   (e.target as HTMLButtonElement).style.boxShadow = 'none';
                 }}
                 onMouseLeave={(e) => {

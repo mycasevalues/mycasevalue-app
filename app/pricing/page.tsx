@@ -286,7 +286,7 @@ function PricingCard({
             <span
               style={{
                 fontSize: '14px',
-                color: '#999999',
+                color: '#455A64',
                 textDecoration: 'line-through',
                 fontFamily: 'var(--font-body)',
               }}
@@ -300,7 +300,7 @@ function PricingCard({
           style={{
             fontSize: '14px',
             marginBottom: '24px',
-            color: '#999999',
+            color: '#455A64',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -311,7 +311,7 @@ function PricingCard({
           style={{
             fontSize: '13px',
             marginBottom: '24px',
-            color: '#999999',
+            color: '#455A64',
             fontFamily: 'var(--font-body)',
             lineHeight: '1.5',
           }}
@@ -379,7 +379,7 @@ function PricingCard({
             fontSize: '12px',
             textAlign: 'center',
             marginBottom: '24px',
-            color: '#999999',
+            color: '#455A64',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -624,7 +624,7 @@ export default function PricingPage() {
             style={{
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
-              color: annual ? '#999999' : '#212529',
+              color: annual ? '#455A64' : '#212529',
               fontWeight: annual ? '400' : '500',
             }}
           >
@@ -666,7 +666,7 @@ export default function PricingPage() {
               style={{
                 fontSize: '14px',
                 fontFamily: 'var(--font-body)',
-                color: annual ? '#212529' : '#999999',
+                color: annual ? '#212529' : '#455A64',
                 fontWeight: annual ? '500' : '400',
               }}
             >
@@ -709,7 +709,7 @@ export default function PricingPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#CC1019',
+                color: '#E8171F',
                 margin: 0,
               }}
             >
@@ -857,7 +857,7 @@ export default function PricingPage() {
             textAlign: 'center',
             fontSize: '13px',
             marginBottom: '48px',
-            color: '#999999',
+            color: '#455A64',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -935,7 +935,7 @@ export default function PricingPage() {
               <p
                 style={{
                   fontSize: '12px',
-                  color: '#999999',
+                  color: '#455A64',
                   fontFamily: 'var(--font-body)',
                 }}
               >
@@ -1030,7 +1030,7 @@ export default function PricingPage() {
                     style={{
                       fontSize: '14px',
                       lineHeight: '1.6',
-                      color: '#999999',
+                      color: '#455A64',
                       fontFamily: 'var(--font-body)',
                     }}
                   >

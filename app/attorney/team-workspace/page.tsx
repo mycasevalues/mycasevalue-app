@@ -62,7 +62,7 @@ export default function TeamWorkspacePage() {
         {/* Tabs */}
         <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', background: 'rgba(255,255,255,0.06)', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px', width: 'fit-content', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
           {(['reports', 'team'] as const).map((t) => (
-            <button key={t} onClick={() => setTab(t)} style={{ padding: '8px 20px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, cursor: 'pointer', backgroundColor: tab === t ? '#E8171F' : 'transparent', color: tab === t ? '#FFFFFF' : '#999999', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
+            <button key={t} onClick={() => setTab(t)} style={{ padding: '8px 20px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, cursor: 'pointer', backgroundColor: tab === t ? '#E8171F' : 'transparent', color: tab === t ? '#FFFFFF' : '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
               {t === 'reports' ? 'Shared Reports' : 'Team Members'}
             </button>
           ))}
@@ -79,7 +79,7 @@ export default function TeamWorkspacePage() {
                     Shared by {r.sharedBy} · {new Date(r.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                   </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#999999', fontSize: '13px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#455A64', fontSize: '13px' }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
                   {r.comments}
                 </div>

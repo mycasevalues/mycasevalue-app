@@ -58,7 +58,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   family: '#F97316',
   gov: '#64748B',
   ip: '#10B981',
-  other: '#9CA3AF',
+  other: '#455A64',
 };
 
 /**

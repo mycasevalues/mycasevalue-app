@@ -153,9 +153,9 @@ export default function PrivacyPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: '#FFF3F4',
-            color: '#CC1019'
+            color: '#E8171F'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CC1019" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
             PRIVACY POLICY
@@ -430,7 +430,7 @@ export default function PrivacyPage() {
           margin: '0 auto',
           paddingLeft: '24px',
           paddingRight: '24px',
-          color: '#999999'
+          color: '#455A64'
         }}>
           © {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
         </p>

@@ -264,7 +264,7 @@ export default function HowItWorksPage() {
       {/* Trust Stats Bar */}
       <section className="py-12 border-y" style={{ borderColor: '#D5D8DC' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <p className="text-center text-sm font-semibold mb-8" style={{ color: '#999999' }}>
+          <p className="text-center text-sm font-semibold mb-8" style={{ color: '#455A64' }}>
             TRUSTED BY THOUSANDS OF CASE RESEARCHERS
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -273,7 +273,7 @@ export default function HowItWorksPage() {
                 <div className="text-2xl font-display font-extrabold" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
                   {stat.value}
                 </div>
-                <div className="text-[11px] font-semibold mt-2" style={{ color: '#999999' }}>
+                <div className="text-[11px] font-semibold mt-2" style={{ color: '#455A64' }}>
                   {stat.label}
                 </div>
               </div>
@@ -288,7 +288,7 @@ export default function HowItWorksPage() {
           <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Verified Public Sources
           </h2>
-          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: '#999999' }}>
+          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: '#455A64' }}>
             All data comes from official federal court records, ensuring accuracy and transparency.
           </p>
 
@@ -311,7 +311,7 @@ export default function HowItWorksPage() {
                 <h3 className="text-base font-semibold mb-2" style={{ color: '#212529' }}>
                   {source.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#999999' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
                   {source.description}
                 </p>
               </div>
@@ -363,7 +363,7 @@ export default function HowItWorksPage() {
                 <h3 className="text-base font-semibold mb-2" style={{ color: '#212529' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#999999' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
                   {item.description}
                 </p>
               </div>

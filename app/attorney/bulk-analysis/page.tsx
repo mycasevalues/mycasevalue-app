@@ -156,7 +156,7 @@ export default function BulkAnalysisPage() {
           )}
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '13px', color: '#999999' }}>{selectedNos.length} of 20 case types selected</span>
+            <span style={{ fontSize: '13px', color: '#455A64' }}>{selectedNos.length} of 20 case types selected</span>
             <button onClick={analyze} disabled={loading || selectedNos.length === 0} style={{ padding: '0 28px', height: '48px', backgroundColor: loading || selectedNos.length === 0 ? '#D5D8DC' : '#E8171F', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 700, fontFamily: 'var(--font-display)', cursor: loading || selectedNos.length === 0 ? 'not-allowed' : 'pointer', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               {loading ? 'Analyzing...' : 'Analyze Portfolio'}
             </button>
@@ -182,7 +182,7 @@ export default function BulkAnalysisPage() {
                 { label: 'Total in DB', value: p.totalCasesInDatabase.toLocaleString(), color: '#212529' },
               ].map((s) => (
                 <div key={s.label} style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                  <p style={{ fontSize: '11px', color: '#999999', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
+                  <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
                   <p className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: s.color, margin: 0 }}>{s.value}</p>
                 </div>
               ))}
@@ -229,7 +229,7 @@ export default function BulkAnalysisPage() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                       <div>
                         <span style={{ fontSize: '15px', fontWeight: 600, color: '#212529' }}>{c.label}</span>
-                        <span style={{ fontSize: '12px', color: '#999999', marginLeft: '8px' }}>NOS {c.nos} · {c.totalCases.toLocaleString()} cases</span>
+                        <span style={{ fontSize: '12px', color: '#455A64', marginLeft: '8px' }}>NOS {c.nos} · {c.totalCases.toLocaleString()} cases</span>
                       </div>
                       <span style={{ fontSize: '11px', fontWeight: 700, padding: '4px 10px', borderRadius: '4px', backgroundColor: rc.bg, color: rc.text }}>{rc.label}</span>
                     </div>
@@ -243,7 +243,7 @@ export default function BulkAnalysisPage() {
                         { label: 'Pro Se', value: `${Math.round(c.proSeWinRate)}%`, color: '#E8171F' },
                       ].map((s) => (
                         <div key={s.label} style={{ padding: '8px', background: '#F5F5F5', borderRadius: '4px' }}>
-                          <p style={{ fontSize: '10px', color: '#999999', margin: '0 0 2px', textTransform: 'uppercase' as const }}>{s.label}</p>
+                          <p style={{ fontSize: '10px', color: '#455A64', margin: '0 0 2px', textTransform: 'uppercase' as const }}>{s.label}</p>
                           <p className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: s.color, margin: 0 }}>{s.value}</p>
                         </div>
                       ))}
