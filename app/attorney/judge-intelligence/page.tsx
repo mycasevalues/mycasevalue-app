@@ -30,17 +30,17 @@ type AvailableState = { id: string; label: string };
 const StatBadge = ({ label, value, color }: { label: string; value: string; color: string }) => (
   <div style={{ textAlign: 'center' }}>
     <div className="font-mono" style={{ fontSize: '22px', fontWeight: 700, color }}>{value}</div>
-    <div style={{ fontSize: '11px', color: 'rgba(240,242,245,0.40)', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '2px' }}>{label}</div>
+    <div style={{ fontSize: '11px', color: '#666666', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '2px' }}>{label}</div>
   </div>
 );
 
 const MeterBar = ({ value, max, color, label }: { value: number; max: number; color: string; label: string }) => (
   <div style={{ marginBottom: '8px' }}>
     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-      <span style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)' }}>{label}</span>
-      <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#F0F2F5' }}>{value}%</span>
+      <span style={{ fontSize: '12px', color: '#666666' }}>{label}</span>
+      <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#212529' }}>{value}%</span>
     </div>
-    <div style={{ height: '6px', background: 'rgba(255,255,255,0.06)', borderRadius: '3px', overflow: 'hidden' }}>
+    <div style={{ height: '6px', background: '#E5EBF0', borderRadius: '3px', overflow: 'hidden' }}>
       <div style={{ height: '100%', width: `${(value / max) * 100}%`, background: color, borderRadius: '3px', transition: 'width 0.5s ease' }} />
     </div>
   </div>
@@ -104,26 +104,26 @@ export default function JudgeIntelligencePage() {
     : [];
 
   return (
-    <div style={{ minHeight: '100vh', background: 'transparent', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
-      <div style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '32px 20px' }}>
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#1856FF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#006997', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Attorney Mode
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(24,86,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2">
+            <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
                 <line x1="12" y1="10" x2="12" y2="18" />
               </svg>
             </div>
             <div>
-              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
+              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#212529', margin: 0 }}>
                 Judge Intelligence
               </h1>
-              <p style={{ fontSize: '14px', color: 'rgba(240,242,245,0.40)', margin: '4px 0 0 0' }}>
+              <p style={{ fontSize: '14px', color: '#666666', margin: '4px 0 0 0' }}>
                 Research federal judges — ruling patterns, settlement tendencies, and case statistics
               </p>
             </div>
@@ -144,13 +144,11 @@ export default function JudgeIntelligencePage() {
               style={{
                 width: '100%',
                 padding: '10px 12px',
-                border: '1px solid rgba(255,255,255,0.10)',
-                borderRadius: '8px',
+                border: '1px solid #D5D8DC',
+                borderRadius: '4px',
                 fontSize: '14px',
-                color: '#F0F2F5',
-                background: 'rgba(255,255,255,0.06)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
+                color: '#212529',
+                background: '#FFFFFF',
                 cursor: 'pointer',
                 fontFamily: 'var(--font-body)',
               }}
@@ -164,10 +162,10 @@ export default function JudgeIntelligencePage() {
 
           {data && (
             <div style={{ flex: '0 0 auto' }}>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#666666', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Sort By
               </label>
-              <div style={{ display: 'flex', gap: '4px', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px' }}>
+              <div style={{ display: 'flex', gap: '4px', background: '#FFFFFF', borderRadius: '4px', border: '1px solid #D5D8DC', padding: '3px' }}>
                 {([
                   { key: 'winRate', label: 'Win Rate' },
                   { key: 'settlementRate', label: 'Settlement' },
@@ -179,13 +177,13 @@ export default function JudgeIntelligencePage() {
                     onClick={() => setSortBy(opt.key)}
                     style={{
                       padding: '6px 12px',
-                      borderRadius: '6px',
+                      borderRadius: '0px',
                       border: 'none',
                       fontSize: '12px',
                       fontWeight: 600,
                       cursor: 'pointer',
-                      backgroundColor: sortBy === opt.key ? '#1856FF' : 'transparent',
-                      color: sortBy === opt.key ? '#FFFFFF' : 'rgba(240,242,245,0.40)',
+                      backgroundColor: sortBy === opt.key ? '#006997' : 'transparent',
+                      color: sortBy === opt.key ? '#FFFFFF' : '#666666',
                       transition: 'all 0.2s',
                     }}
                   >
@@ -200,31 +198,31 @@ export default function JudgeIntelligencePage() {
         {/* Loading */}
         {loading && (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
-            <div style={{ width: 36, height: 36, border: '3px solid rgba(255,255,255,0.10)', borderTopColor: '#1856FF', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
+            <div style={{ width: 36, height: 36, border: '3px solid #E5EBF0', borderTopColor: '#006997', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-            <p style={{ fontSize: '14px', color: 'rgba(240,242,245,0.40)' }}>Loading judge data...</p>
+            <p style={{ fontSize: '14px', color: '#666666' }}>Loading judge data...</p>
           </div>
         )}
 
         {/* Error */}
         {error && (
-          <div style={{ backgroundColor: 'rgba(234,33,67,0.12)', border: '1px solid rgba(234,33,67,0.30)', borderRadius: '12px', padding: '20px 24px', marginBottom: '24px' }}>
-            <p style={{ fontSize: '14px', color: '#EA2143', margin: 0 }}>{error}</p>
+          <div style={{ backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '20px 24px', marginBottom: '24px' }}>
+            <p style={{ fontSize: '14px', color: '#CC1019', margin: 0 }}>{error}</p>
           </div>
         )}
 
         {/* Empty state */}
         {!selectedState && !loading && (
-          <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '12px', padding: '64px 32px', textAlign: 'center' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'rgba(24,86,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2">
+          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
               </svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 12px' }}>
+            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>
               Select a District
             </h2>
-            <p style={{ fontSize: '15px', color: 'rgba(240,242,245,0.40)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>
+            <p style={{ fontSize: '15px', color: '#666666', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>
               Choose a state above to view federal judge statistics, ruling patterns, and case tendencies.
             </p>
             <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '24px', flexWrap: 'wrap' }}>
@@ -232,7 +230,7 @@ export default function JudgeIntelligencePage() {
                 <button
                   key={s.id}
                   onClick={() => handleStateChange(s.id)}
-                  style={{ padding: '8px 16px', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '8px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', color: '#F0F2F5', transition: 'border-color 0.2s' }}
+                  style={{ padding: '8px 16px', border: '1px solid #D5D8DC', borderRadius: '0px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: '#FAFBFC', color: '#006997', transition: 'border-color 0.2s' }}
                 >
                   {s.label}
                 </button>
@@ -245,7 +243,7 @@ export default function JudgeIntelligencePage() {
         {data && sortedJudges.length > 0 && (
           <>
             <div style={{ marginBottom: '16px' }}>
-              <p style={{ fontSize: '13px', color: 'rgba(240,242,245,0.40)' }}>
+              <p style={{ fontSize: '13px', color: '#666666' }}>
                 Showing {sortedJudges.length} federal judges in {data.stateLabel}
               </p>
             </div>
@@ -257,14 +255,12 @@ export default function JudgeIntelligencePage() {
                   <div
                     key={judge.name}
                     style={{
-                      background: 'rgba(255,255,255,0.06)',
-                      backdropFilter: 'blur(12px)',
-                      WebkitBackdropFilter: 'blur(12px)',
-                      borderRadius: '12px',
-                      border: isExpanded ? '2px solid #1856FF' : '1px solid rgba(255,255,255,0.10)',
+                      background: '#FFFFFF',
+                      borderRadius: '4px',
+                      border: isExpanded ? '2px solid #006997' : '1px solid #D5D8DC',
                       overflow: 'hidden',
                       transition: 'border-color 0.2s, box-shadow 0.2s',
-                      boxShadow: isExpanded ? '0 8px 32px rgba(0,0,0,0.30)' : '0 8px 32px rgba(0,0,0,0.30)',
+                      boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)',
                     }}
                   >
                     {/* Judge Header */}
@@ -285,30 +281,30 @@ export default function JudgeIntelligencePage() {
                     >
                       <div style={{ flex: 1 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
-                          <span className="font-display" style={{ fontSize: '17px', fontWeight: 700, color: '#F0F2F5' }}>
+                          <span className="font-display" style={{ fontSize: '17px', fontWeight: 700, color: '#212529' }}>
                             {judge.name}
                           </span>
                           {judge.senior && (
-                            <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(232,149,88,0.12)', color: '#E89558' }}>
+                            <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '0px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00' }}>
                               Senior
                             </span>
                           )}
                         </div>
-                        <p style={{ fontSize: '13px', color: 'rgba(240,242,245,0.40)', margin: 0 }}>
+                        <p style={{ fontSize: '13px', color: '#666666', margin: 0 }}>
                           Appointed {judge.appointed} by {judge.appointedBy} · {judge.casesHandled} cases handled
                         </p>
                       </div>
 
                       <div style={{ display: 'flex', gap: '24px', alignItems: 'center', flexShrink: 0 }}>
-                        <StatBadge label="Win Rate" value={`${judge.plaintiffWinRate}%`} color={judge.plaintiffWinRate >= 55 ? '#07CA6B' : judge.plaintiffWinRate >= 40 ? '#E89558' : '#EA2143'} />
-                        <StatBadge label="Settlement" value={`${judge.settlementRate}%`} color="#0D9488" />
-                        <StatBadge label="Duration" value={`${judge.medianDurationMonths}mo`} color="#F0F2F5" />
+                        <StatBadge label="Win Rate" value={`${judge.plaintiffWinRate}%`} color={judge.plaintiffWinRate >= 55 ? '#07874A' : judge.plaintiffWinRate >= 40 ? '#B86E00' : '#CC1019'} />
+                        <StatBadge label="Settlement" value={`${judge.settlementRate}%`} color="#1B7C7D" />
+                        <StatBadge label="Duration" value={`${judge.medianDurationMonths}mo`} color="#212529" />
                         <svg
                           width="18"
                           height="18"
                           viewBox="0 0 24 24"
                           fill="none"
-                          stroke="rgba(240,242,245,0.30)"
+                          stroke="#999999"
                           strokeWidth="2"
                           style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
                         >
@@ -319,23 +315,23 @@ export default function JudgeIntelligencePage() {
 
                     {/* Expanded Details */}
                     {isExpanded && (
-                      <div style={{ padding: '0 24px 24px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                      <div style={{ padding: '0 24px 24px', borderTop: '1px solid #D5D8DC' }}>
                         <div style={{ paddingTop: '20px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
                           {/* Ruling Patterns */}
                           <div>
-                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
+                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 700, color: '#212529', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
                               Ruling Patterns
                             </h4>
-                            <MeterBar value={judge.plaintiffWinRate} max={100} color="#07CA6B" label="Plaintiff Win Rate" />
-                            <MeterBar value={judge.settlementRate} max={100} color="#0D9488" label="Settlement Rate" />
-                            <MeterBar value={judge.dismissalRate} max={100} color="#EA2143" label="Dismissal Rate" />
-                            <MeterBar value={judge.trialRate} max={100} color="#3D72FF" label="Trial Rate" />
-                            <MeterBar value={judge.motionGrantRate} max={100} color="#2563EB" label="Motion Grant Rate" />
+                            <MeterBar value={judge.plaintiffWinRate} max={100} color="#07874A" label="Plaintiff Win Rate" />
+                            <MeterBar value={judge.settlementRate} max={100} color="#1B7C7D" label="Settlement Rate" />
+                            <MeterBar value={judge.dismissalRate} max={100} color="#CC1019" label="Dismissal Rate" />
+                            <MeterBar value={judge.trialRate} max={100} color="#006997" label="Trial Rate" />
+                            <MeterBar value={judge.motionGrantRate} max={100} color="#004D80" label="Motion Grant Rate" />
                           </div>
 
                           {/* Judge Profile */}
                           <div>
-                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
+                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 700, color: '#212529', margin: '0 0 16px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
                               Profile
                             </h4>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -345,21 +341,21 @@ export default function JudgeIntelligencePage() {
                                 { label: 'Cases Handled', value: judge.casesHandled.toLocaleString() },
                                 { label: 'Median Duration', value: `${judge.medianDurationMonths} months` },
                               ].map((item) => (
-                                <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                                  <span style={{ fontSize: '13px', color: 'rgba(240,242,245,0.40)' }}>{item.label}</span>
-                                  <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>{item.value}</span>
+                                <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #D5D8DC' }}>
+                                  <span style={{ fontSize: '13px', color: '#666666' }}>{item.label}</span>
+                                  <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>{item.value}</span>
                                 </div>
                               ))}
                             </div>
 
-                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 700, color: '#F0F2F5', margin: '20px 0 12px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
+                            <h4 className="font-display" style={{ fontSize: '14px', fontWeight: 700, color: '#212529', margin: '20px 0 12px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
                               Top Case Types
                             </h4>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                               {judge.topCaseTypes.map((ct) => (
                                 <div key={ct.nos} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0' }}>
-                                  <span style={{ fontSize: '13px', color: '#F0F2F5' }}>{ct.label}</span>
-                                  <span className="font-mono" style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)' }}>{ct.count} cases</span>
+                                  <span style={{ fontSize: '13px', color: '#212529' }}>{ct.label}</span>
+                                  <span className="font-mono" style={{ fontSize: '12px', color: '#666666' }}>{ct.count} cases</span>
                                 </div>
                               ))}
                             </div>
@@ -373,8 +369,8 @@ export default function JudgeIntelligencePage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '16px 20px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '8px' }}>
-              <p style={{ fontSize: '12px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
+            <div style={{ marginTop: '24px', padding: '16px 20px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+              <p style={{ fontSize: '12px', color: '#B86E00', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
             </div>

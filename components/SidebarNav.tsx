@@ -44,15 +44,15 @@ export default function SidebarNav() {
               alignItems: 'center',
               gap: '10px',
               padding: '10px 12px',
-              borderRadius: '8px',
+              borderRadius: '4px',
               fontSize: '14px',
-              fontWeight: isActive ? 600 : 500,
-              color: isActive ? '#F0F2F5' : 'rgba(240,242,245,0.50)',
+              fontWeight: isActive ? 700 : 400,
+              color: isActive ? '#212529' : '#666666',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               marginBottom: '4px',
               transition: 'all 0.15s ease',
-              background: isActive ? 'rgba(24,86,255,0.15)' : hoveredIndex === idx ? 'rgba(255,255,255,0.06)' : 'transparent',
+              background: isActive ? 'rgba(0,105,151,0.08)' : hoveredIndex === idx ? '#F5F6F7' : 'transparent',
             }}
           >
             <span style={{ display: 'flex', alignItems: 'center', opacity: isActive ? 1 : 0.5 }}>{item.icon}</span>

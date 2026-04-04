@@ -29,16 +29,16 @@ export default function CasesIndexPage() {
   );
 
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, rgba(5, 15, 30, 0.95) 0%, rgba(10, 20, 40, 0.95) 100%)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: 'rgba(255, 255, 255, 0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255, 255, 255, 0.10)', padding: '60px 20px' }}>
+      <div style={{ background: '#00172E', borderBottom: '1px solid #D5D8DC', padding: '60px 20px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 700, color: '#F0F2F5', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
+          <h1 className="font-display" style={{ fontSize: 44, fontWeight: 700, color: '#FFFFFF', margin: '0 0 16px', letterSpacing: '-0.5px' }}>
             Case Categories
           </h1>
-          <p style={{ fontSize: 18, color: 'rgba(240, 242, 245, 0.70)', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
+          <p style={{ fontSize: 18, color: '#FFFFFF', margin: 0, lineHeight: 1.6, maxWidth: 600 }}>
             Research real federal court outcomes across 10 major case types. Explore win rates, settlements, timelines, and recovery data from 5.1M+ public cases.
           </p>
         </div>
@@ -58,12 +58,10 @@ export default function CasesIndexPage() {
             maxWidth: '480px',
             padding: '12px 16px',
             fontSize: '15px',
-            border: '1px solid rgba(255, 255, 255, 0.10)',
-            borderRadius: '8px',
-            background: 'rgba(255, 255, 255, 0.06)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
-            color: '#F0F2F5',
+            border: '1px solid #D5D8DC',
+            borderRadius: '4px',
+            background: '#FFFFFF',
+            color: '#212529',
             fontFamily: 'var(--font-body)',
             marginBottom: '32px',
             display: 'block',
@@ -74,13 +72,13 @@ export default function CasesIndexPage() {
         />
 
         <style dangerouslySetInnerHTML={{ __html: `
-          .cat-card { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.10); border-radius: 12px; padding: 32px; transition: all 0.3s ease; height: 100%; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-          .cat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(24, 86, 255, 0.2); border-color: rgba(24, 86, 255, 0.20); }
+          .cat-card { background: #FFFFFF; border: 1px solid #D5D8DC; border-radius: 4px; padding: 32px; transition: all 0.3s ease; height: 100%; }
+          .cat-card:hover { transform: translateY(-4px); box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-color: #E8171F; }
         `}} />
 
         {filtered.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-            <p style={{ fontSize: 18, color: 'rgba(240, 242, 245, 0.70)', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: 18, color: '#999999', fontFamily: 'var(--font-body)' }}>
               No case types match &ldquo;{search}&rdquo;
             </p>
             <button
@@ -90,21 +88,22 @@ export default function CasesIndexPage() {
                 padding: '10px 24px',
                 fontSize: 14,
                 fontWeight: 600,
-                border: '1px solid rgba(255, 255, 255, 0.10)',
-                borderRadius: 8,
-                background: 'rgba(255, 255, 255, 0.06)',
-                color: '#F0F2F5',
+                border: '1px solid #D5D8DC',
+                borderRadius: 0,
+                background: '#FFFFFF',
+                color: '#212529',
                 fontFamily: 'var(--font-body)',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
+                textTransform: 'uppercase',
               }}
               onMouseEnter={(e) => {
-                (e.target as HTMLButtonElement).style.background = 'rgba(255, 255, 255, 0.12)';
-                (e.target as HTMLButtonElement).style.borderColor = 'rgba(255, 255, 255, 0.20)';
+                (e.target as HTMLButtonElement).style.background = '#FAFBFC';
+                (e.target as HTMLButtonElement).style.borderColor = '#B5B9BD';
               }}
               onMouseLeave={(e) => {
-                (e.target as HTMLButtonElement).style.background = 'rgba(255, 255, 255, 0.06)';
-                (e.target as HTMLButtonElement).style.borderColor = 'rgba(255, 255, 255, 0.10)';
+                (e.target as HTMLButtonElement).style.background = '#FFFFFF';
+                (e.target as HTMLButtonElement).style.borderColor = '#D5D8DC';
               }}
             >
               Clear search
@@ -115,11 +114,11 @@ export default function CasesIndexPage() {
             {filtered.map((category) => (
               <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
                 <div className="cat-card">
-                  <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#F0F2F5', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                  <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#212529', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
                     {category.label}
                   </h2>
-                  <p style={{ fontSize: 14, color: 'rgba(240, 242, 245, 0.70)', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
-                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid rgba(255, 255, 255, 0.10)', fontSize: 13, color: '#F0F2F5', fontWeight: 500 }}>
+                  <p style={{ fontSize: 14, color: '#999999', margin: 0, lineHeight: 1.5 }}>{category.sub}</p>
+                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #D5D8DC', fontSize: 13, color: '#455A64', fontWeight: 500 }}>
                     {category.opts.length} types covered →
                   </div>
                 </div>
@@ -130,20 +129,18 @@ export default function CasesIndexPage() {
       </div>
 
       {/* CTA */}
-      <div style={{ background: 'rgba(24, 86, 255, 0.10)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(24, 86, 255, 0.20)', padding: '60px 20px', textAlign: 'center' }}>
+      <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', padding: '60px 20px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h2 className="font-display" style={{ fontSize: 32, fontWeight: 700, color: '#F0F2F5', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
+          <h2 className="font-display" style={{ fontSize: 32, fontWeight: 700, color: '#212529', margin: '0 0 16px', letterSpacing: '-0.3px' }}>
             Ready to research your case?
           </h2>
-          <p style={{ fontSize: 18, color: 'rgba(240, 242, 245, 0.70)', margin: '0 0 32px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: 18, color: '#999999', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" style={{ display: 'inline-block', background: '#1856FF', color: '#FFFFFF', padding: '14px 36px', borderRadius: 8, fontWeight: 600, fontSize: 16, textDecoration: 'none', transition: 'all 0.2s', boxShadow: '0 4px 12px rgba(24, 86, 255, 0.3)' }} onMouseEnter={(e) => {
-            (e.target as HTMLAnchorElement).style.background = '#3D72FF';
-            (e.target as HTMLAnchorElement).style.boxShadow = '0 8px 24px rgba(24, 86, 255, 0.4)';
+          <a href="/cases" style={{ display: 'inline-block', background: '#E8171F', color: '#FFFFFF', padding: '14px 36px', borderRadius: 0, fontWeight: 600, fontSize: 16, textDecoration: 'none', transition: 'all 0.2s', textTransform: 'uppercase' }} onMouseEnter={(e) => {
+            (e.target as HTMLAnchorElement).style.background = '#CC1019';
           }} onMouseLeave={(e) => {
-            (e.target as HTMLAnchorElement).style.background = '#1856FF';
-            (e.target as HTMLAnchorElement).style.boxShadow = '0 4px 12px rgba(24, 86, 255, 0.3)';
+            (e.target as HTMLAnchorElement).style.background = '#E8171F';
           }}>
             Start Researching →
           </a>
@@ -151,7 +148,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ background: 'rgba(255, 255, 255, 0.03)', color: 'rgba(240, 242, 245, 0.40)', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid rgba(255, 255, 255, 0.10)' }}>
+      <div style={{ background: '#F5F5F5', color: '#999999', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0 }}>
             <strong>Legal Disclaimer:</strong> This data is for research purposes only and is not legal advice. MyCaseValue provides historical federal court outcome data from public records. This does not constitute a prediction of any case outcome. Consult a qualified attorney for legal advice. © {new Date().getFullYear()} MyCaseValue LLC.

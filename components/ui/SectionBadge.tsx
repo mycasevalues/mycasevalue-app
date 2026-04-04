@@ -8,14 +8,14 @@ interface SectionBadgeProps {
 export function SectionBadge({ label }: SectionBadgeProps) {
   return (
     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{
-      background: 'rgba(17,17,17,0.1)',
-      border: '1px solid rgba(17,17,17,0.2)',
+      background: '#E8171F20',
+      border: '1px solid #E8171F40',
     }}>
       <div className="flex items-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full animate-pulse" style={{
-          background: '#1856FF',
+          background: '#E8171F',
         }}></span>
-        <span className="font-mono text-xs font-bold tracking-[0.15em] uppercase" style={{ color: 'rgba(240,242,245,0.70)' }}>
+        <span className="font-mono text-xs font-bold tracking-[0.15em] uppercase" style={{ color: '#455A64' }}>
           {label}
         </span>
       </div>

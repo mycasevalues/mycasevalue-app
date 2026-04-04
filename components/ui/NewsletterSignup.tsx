@@ -39,7 +39,7 @@ export default function NewsletterSignup() {
       style={{
         background: '#FFFFFF',
         border: '1px solid var(--border-default)',
-        borderRadius: '16px',
+        borderRadius: '4px',
         padding: '32px',
         maxWidth: '520px',
         margin: '0 auto',
@@ -50,7 +50,7 @@ export default function NewsletterSignup() {
           style={{
             width: '44px',
             height: '44px',
-            borderRadius: '12px',
+            borderRadius: '4px',
             background: 'var(--accent-primary-subtle)',
             display: 'inline-flex',
             alignItems: 'center',
@@ -58,7 +58,7 @@ export default function NewsletterSignup() {
             marginBottom: '12px',
           }}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7" />
           </svg>
@@ -68,7 +68,7 @@ export default function NewsletterSignup() {
             fontFamily: 'Montserrat, system-ui, sans-serif',
             fontSize: '17px',
             fontWeight: 700,
-            color: '#F0F2F5',
+            color: '#212529',
             margin: '0 0 4px',
           }}
         >
@@ -78,7 +78,7 @@ export default function NewsletterSignup() {
           style={{
             fontFamily: 'Roboto, system-ui, sans-serif',
             fontSize: '14px',
-            color: 'rgba(240,242,245,0.70)',
+            color: '#455A64',
             margin: 0,
             lineHeight: 1.5,
           }}
@@ -129,12 +129,12 @@ export default function NewsletterSignup() {
             style={{
               flex: 1,
               padding: '12px 16px',
-              borderRadius: '10px',
+              borderRadius: '4px',
               border: `1px solid ${status === 'error' ? '#EF4444' : 'var(--border-default)'}`,
-              background: 'var(--bg-base)',
+              background: '#FFFFFF',
               fontFamily: 'Roboto, system-ui, sans-serif',
               fontSize: '14px',
-              color: '#F0F2F5',
+              color: '#212529',
               outline: 'none',
               transition: 'border-color 200ms',
             }}
@@ -144,9 +144,9 @@ export default function NewsletterSignup() {
             disabled={status === 'loading'}
             style={{
               padding: '12px 20px',
-              borderRadius: '10px',
+              borderRadius: '0px',
               border: 'none',
-              background: '#1856FF',
+              background: '#E8171F',
               color: '#FFFFFF',
               fontFamily: 'Montserrat, system-ui, sans-serif',
               fontSize: '14px',
@@ -178,7 +178,7 @@ export default function NewsletterSignup() {
         style={{
           fontFamily: 'Roboto, system-ui, sans-serif',
           fontSize: '12px',
-          color: 'var(--fg-subtle)',
+          color: '#999999',
           textAlign: 'center',
           margin: '12px 0 0',
         }}

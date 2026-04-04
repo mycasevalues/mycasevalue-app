@@ -1,82 +1,93 @@
 /* ============================================================
-   GLASSMORPHISM DESIGN SYSTEM
+   LEXISNEXIS-INSPIRED DESIGN SYSTEM
    ============================================================
-   Dark-mode glass aesthetic. Electric blue primary (#1856FF).
-   Plus Jakarta Sans / JetBrains Mono typography.
-   Frosted translucent surfaces over rich gradient backgrounds.
+   Corporate legal-tech aesthetic. Deep navy hero (#00172E).
+   LexisNexis red primary (#E8171F), teal secondary (#006997).
+   Lato / JetBrains Mono typography.
+   Light backgrounds, white cards, sharp corners, uppercase CTAs.
    ============================================================ */
 
 :root {
   /* ── BACKGROUNDS ───────────────────────────────────────── */
-  --bg-base:          #0B0E17;  /* Deep dark base */
-  --bg-elevated:      rgba(255,255,255,0.06);  /* Glass surface */
-  --bg-input:         rgba(255,255,255,0.08);  /* Input glass */
-  --bg-skeleton:      rgba(255,255,255,0.08);
-  --bg-hover:         rgba(24,86,255,0.10);
-  --bg-selection:     rgba(24,86,255,0.25);
+  --bg-base:          #EDEEEE;  /* Light gray page background */
+  --bg-elevated:      #FFFFFF;  /* White card surfaces */
+  --bg-input:         #FFFFFF;  /* Input background */
+  --bg-skeleton:      #E5EBF0;
+  --bg-hover:         #F5F6F7;
+  --bg-selection:     rgba(0,105,151,0.15);
+  --bg-dark:          #00172E;  /* Deep navy for hero/dark sections */
+  --bg-dark-alt:      #001A35;
+  --bg-alt:           #FAFBFC;  /* Alternate section background */
 
-  /* ── GLASS SURFACES ────────────────────────────────────── */
-  --glass-light:      rgba(255,255,255,0.06);
-  --glass-medium:     rgba(255,255,255,0.10);
-  --glass-heavy:      rgba(255,255,255,0.14);
-  --glass-border:     rgba(255,255,255,0.12);
-  --glass-border-light: rgba(255,255,255,0.08);
-  --glass-border-focus: rgba(24,86,255,0.50);
+  /* ── SURFACES ──────────────────────────────────────────── */
+  --glass-light:      #FFFFFF;
+  --glass-medium:     #FAFBFC;
+  --glass-heavy:      #F5F6F7;
+  --glass-border:     #D5D8DC;
+  --glass-border-light: #E5EBF0;
+  --glass-border-focus: rgba(0,105,151,0.50);
 
-  /* ── GLASS BLUR VALUES ─────────────────────────────────── */
-  --blur-light:       blur(12px);
-  --blur-medium:      blur(20px);
-  --blur-heavy:       blur(32px);
+  /* ── BLUR VALUES (removed — no glass blur in LexisNexis style) */
+  --blur-light:       none;
+  --blur-medium:      none;
+  --blur-heavy:       none;
 
   /* ── FOREGROUNDS ───────────────────────────────────────── */
-  --fg-primary:       #F0F2F5;  /* Primary text */
-  --fg-secondary:     rgba(240,242,245,0.70);
-  --fg-subtle:        rgba(240,242,245,0.40);
-  --fg-link:          #1856FF;
+  --fg-primary:       #212529;  /* Primary text — near-black */
+  --fg-secondary:     #455A64;  /* Secondary text — blue-gray */
+  --fg-subtle:        #666666;  /* Muted text */
+  --fg-link:          #006997;  /* Teal link color */
+  --fg-on-dark:       #FAFBFC;  /* Text on dark backgrounds */
+  --fg-on-dark-secondary: rgba(250,251,252,0.70);
+  --fg-on-dark-subtle:    rgba(250,251,252,0.45);
 
-  /* ── PRIMARY ACCENT (Electric Blue) ────────────────────── */
-  --accent-primary:         #1856FF;
-  --accent-primary-hover:   #3D72FF;
-  --accent-primary-subtle:  rgba(24,86,255,0.12);
-  --accent-primary-border:  rgba(24,86,255,0.30);
-  --accent-primary-glow:    rgba(24,86,255,0.20);
-  --accent-light:           rgba(24,86,255,0.08);
+  /* ── PRIMARY ACCENT (LexisNexis Red) ───────────────────── */
+  --accent-primary:         #E8171F;
+  --accent-primary-hover:   #CC1019;
+  --accent-primary-subtle:  rgba(232,23,31,0.08);
+  --accent-primary-border:  rgba(232,23,31,0.30);
+  --accent-primary-glow:    rgba(232,23,31,0.15);
+  --accent-light:           rgba(232,23,31,0.06);
 
-  /* ── SECONDARY ACCENT (Muted Plum) ─────────────────────── */
-  --accent-secondary:       #3A344E;
-  --accent-secondary-hover: #4A4360;
-  --accent-secondary-subtle: rgba(58,52,78,0.30);
-  --accent-secondary-border: rgba(58,52,78,0.40);
+  /* ── SECONDARY ACCENT (Teal Blue) ──────────────────────── */
+  --accent-secondary:       #006997;
+  --accent-secondary-hover: #005A82;
+  --accent-secondary-subtle: rgba(0,105,151,0.08);
+  --accent-secondary-border: rgba(0,105,151,0.30);
+
+  /* ── TERTIARY ACCENT (Purple) ──────────────────────────── */
+  --accent-tertiary:        #7549CF;
+  --accent-tertiary-subtle: rgba(117,73,207,0.08);
 
   /* ── SEMANTIC — OUTCOMES ───────────────────────────────── */
-  --outcome-win:          #07CA6B;
-  --outcome-settle:       #E89558;
-  --outcome-loss:         #EA2143;
+  --outcome-win:          #07874A;
+  --outcome-settle:       #B86E00;
+  --outcome-loss:         #CC1019;
 
   /* ── UI SEMANTIC (STATUS COLORS) ───────────────────────── */
-  --success:              #07CA6B;
-  --success-subtle:       rgba(7,202,107,0.12);
-  --warning:              #E89558;
-  --warning-subtle:       rgba(232,149,88,0.12);
-  --danger:               #EA2143;
-  --danger-subtle:        rgba(234,33,67,0.12);
-  --info:                 #1856FF;
-  --info-subtle:          rgba(24,86,255,0.12);
+  --success:              #07874A;
+  --success-subtle:       rgba(7,135,74,0.08);
+  --warning:              #B86E00;
+  --warning-subtle:       rgba(184,110,0,0.08);
+  --danger:               #CC1019;
+  --danger-subtle:        rgba(204,16,25,0.08);
+  --info:                 #006997;
+  --info-subtle:          rgba(0,105,151,0.08);
 
   /* ── BORDERS ───────────────────────────────────────────── */
-  --border-default:   rgba(255,255,255,0.10);
-  --border-subtle:    rgba(255,255,255,0.06);
-  --border-focus:     #1856FF;
+  --border-default:   #D5D8DC;
+  --border-subtle:    #E5EBF0;
+  --border-focus:     #006997;
 
   /* ── TYPOGRAPHY SCALE ──────────────────────────────────── */
   --text-2xs:  0.6875rem; /* 11px */
   --text-xs:   0.75rem;   /* 12px */
   --text-sm:   0.8125rem; /* 13px */
-  --text-base: 0.9375rem; /* 15px */
+  --text-base: 1rem;      /* 16px */
 
   /* ── FONT FAMILIES ─────────────────────────────────────── */
-  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-body:    'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono:    'JetBrains Mono', 'Menlo', monospace;
 
   /* ── SPACING (4px grid) ────────────────────────────────── */
@@ -90,24 +101,24 @@
   --space-12: 48px;
 
   /* ── BORDER RADIUS ─────────────────────────────────────── */
-  --r-xs: 4px;   --r-sm: 6px;   --r-md: 10px;  --r-lg: 14px;
-  --r-xl: 18px;  --r-2xl: 24px; --r-full: 9999px;
+  --r-xs: 2px;   --r-sm: 3px;   --r-md: 4px;  --r-lg: 4px;
+  --r-xl: 6px;   --r-2xl: 8px;  --r-full: 9999px;
   /* Legacy aliases */
-  --radius-lg: 14px;
-  --radius-xl: 24px; --radius-full: 9999px;
-  --r-card: 16px;
+  --radius-lg: 4px;
+  --radius-xl: 8px; --radius-full: 9999px;
+  --r-card: 4px;
 
-  /* ── SHADOWS (Glass-aware) ─────────────────────────────── */
-  --shadow-xs:     0 1px 2px rgba(0,0,0,0.30);
-  --shadow-lg:     0 10px 30px rgba(0,0,0,0.40), 0 4px 8px rgba(0,0,0,0.20);
-  --shadow-accent:    0 4px 24px rgba(24,86,255,0.25);
-  --shadow-accent-lg: 0 8px 48px rgba(24,86,255,0.30);
-  --shadow-glass:     0 8px 32px rgba(0,0,0,0.30);
+  /* ── SHADOWS (Clean corporate) ─────────────────────────── */
+  --shadow-xs:     0 1px 2px rgba(0,0,0,0.06);
+  --shadow-lg:     0 4px 16px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-accent:    0 2px 8px rgba(232,23,31,0.15);
+  --shadow-accent-lg: 0 4px 16px rgba(232,23,31,0.20);
+  --shadow-glass:     0 2px 8px rgba(0,0,0,0.08);
 
   /* ── MOTION ────────────────────────────────────────────── */
-  --duration-fast:    140ms;
+  --duration-fast:    120ms;
   --duration-base:    200ms;
-  --duration-slow:    340ms;
+  --duration-slow:    300ms;
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
@@ -121,9 +132,9 @@
   --bp-md: 768px; --bp-2xl: 1536px;
 
   /* ── GRADIENT BACKGROUNDS ──────────────────────────────── */
-  --gradient-page: linear-gradient(135deg, #0B0E17 0%, #111827 40%, #0F172A 70%, #0B0E17 100%);
-  --gradient-hero: linear-gradient(160deg, #0B0E17 0%, #131B30 30%, #0F1628 60%, #0B0E17 100%);
-  --gradient-accent: linear-gradient(135deg, #1856FF 0%, #3D72FF 100%);
+  --gradient-page: #EDEEEE;
+  --gradient-hero: linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%);
+  --gradient-accent: linear-gradient(135deg, #E8171F 0%, #CC1019 100%);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -131,25 +142,12 @@
    ═══════════════════════════════════════════════════════════ */
 @media (prefers-contrast: high) {
   :root {
-    --fg-secondary:  rgba(255,255,255,0.90);
-    --border-default: rgba(255,255,255,0.30);
-    --border-focus:  #5B9AFF;
-    --outcome-win:   #10E87A;
-    --outcome-settle: #FFB673;
-    --outcome-loss:  #FF4D6A;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════
-   REDUCED TRANSPARENCY
-   ═══════════════════════════════════════════════════════════ */
-@media (prefers-reduced-transparency: reduce) {
-  :root {
-    --glass-light:   rgba(20,24,35,0.95);
-    --glass-medium:  rgba(20,24,35,0.97);
-    --glass-heavy:   rgba(20,24,35,0.98);
-    --bg-elevated:   rgba(20,24,35,0.95);
-    --bg-input:      rgba(20,24,35,0.95);
+    --fg-secondary:  #333333;
+    --border-default: #999999;
+    --border-focus:  #004466;
+    --outcome-win:   #056B3B;
+    --outcome-settle: #8B5500;
+    --outcome-loss:  #990C13;
   }
 }
 
@@ -206,7 +204,7 @@
 /* Text selection color */
 ::selection {
   background: var(--bg-selection);
-  color: #F0F2F5;
+  color: #212529;
 }
 
 /* Skip to content */
@@ -216,9 +214,9 @@
   left: 0;
   z-index: var(--z-critical);
   padding: 8px 16px;
-  background: #1856FF;
+  background: var(--accent-secondary);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   border-radius: 0 0 var(--r-md) 0;
 }

@@ -191,17 +191,17 @@ export default function GlossaryPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, var(--bg-base) 100%)' }}>
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(24,86,255,0.12)', color: '#3D72FF' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3D72FF" strokeWidth="2.5"><path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z"/></svg>
+            style={{ background: '#FFF3F4', color: '#CC1019' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CC1019" strokeWidth="2.5"><path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z"/></svg>
             REFERENCE
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
             Legal & Data Glossary
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(240,242,245,0.40)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#999999' }}>
             Plain-English definitions of federal court terms, data concepts, and legal statutes used throughout MyCaseValue.
           </p>
         </div>
@@ -209,7 +209,7 @@ export default function GlossaryPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '12px', border: `1px solid rgba(255,255,255,0.10)`, padding: '32px', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', boxShadow: '0 8px 32px rgba(0,0,0,0.30)' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: '4px', border: `1px solid #D5D8DC`, padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           {/* Letter-grouped terms */}
           {Array.from(groupedTerms.entries()).map(([letter, terms]) => (
             <div key={letter} className="mb-12">
@@ -218,10 +218,10 @@ export default function GlossaryPage() {
                 fontSize: '18px',
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
-                color: '#3D72FF',
+                color: '#CC1019',
                 marginBottom: '16px',
                 paddingBottom: '8px',
-                borderBottom: `2px solid rgba(255,255,255,0.10)`,
+                borderBottom: `2px solid #D5D8DC`,
               }}>
                 {letter}
               </div>
@@ -234,7 +234,7 @@ export default function GlossaryPage() {
                       fontSize: '16px',
                       fontWeight: 600,
                       fontFamily: 'var(--font-display)',
-                      color: '#F0F2F5',
+                      color: '#212529',
                       marginBottom: '8px',
                     }}>
                       {term.term}
@@ -242,7 +242,7 @@ export default function GlossaryPage() {
                     <p style={{
                       fontSize: '14px',
                       lineHeight: 1.6,
-                      color: 'rgba(240,242,245,0.40)',
+                      color: '#999999',
                       marginBottom: term.relatedLink ? '12px' : 0,
                     }}>
                       {term.definition}
@@ -260,7 +260,7 @@ export default function GlossaryPage() {
                           gap: '6px',
                           fontSize: '13px',
                           fontWeight: 600,
-                          color: '#3D72FF',
+                          color: '#CC1019',
                           textDecoration: 'none',
                           transition: 'opacity 200ms ease',
                         }}>
@@ -276,7 +276,7 @@ export default function GlossaryPage() {
               {/* Divider between letters (except after last) */}
               {letter !== Array.from(groupedTerms.keys()).pop() && (
                 <div style={{
-                  borderBottom: `1px solid rgba(255,255,255,0.10)`,
+                  borderBottom: `1px solid #D5D8DC`,
                   marginTop: '24px',
                   marginBottom: '24px',
                 }} />
@@ -286,11 +286,11 @@ export default function GlossaryPage() {
         </div>
 
         {/* CTA */}
-        <div className="text-center pt-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.10)' }}>
-          <p className="text-sm mb-4" style={{ color: 'rgba(240,242,245,0.40)' }}>Have a term you think should be in this glossary?</p>
+        <div className="text-center pt-8 border-t" style={{ borderColor: '#D5D8DC' }}>
+          <p className="text-sm mb-4" style={{ color: '#999999' }}>Have a term you think should be in this glossary?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', color: '#F0F2F5', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529',  }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Suggest a Term
           </a>

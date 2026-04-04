@@ -56,17 +56,17 @@ export default function AboutPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, var(--bg-base) 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E',  }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(24,86,255,0.12)', color: '#1856FF' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: '#FFF3F4', color: '#E8171F' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             ABOUT US
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
             Democratizing Federal Court Data
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(240,242,245,0.40)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#999999' }}>
             MyCaseValue puts outcome data from 5.1M+ federal cases at your fingertips, making real court outcomes accessible to everyone.
           </p>
         </div>
@@ -78,14 +78,14 @@ export default function AboutPage() {
 
           {/* Mission Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
               Our Mission
             </h2>
-            <div className="p-6 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
-              <p className="text-base leading-relaxed m-0" style={{ color: 'rgba(240,242,245,0.40)' }}>
+            <div className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
+              <p className="text-base leading-relaxed m-0" style={{ color: '#999999' }}>
                 Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys. We believe outcome data—win rates, settlement ranges, timelines, and recovery patterns—should be accessible to everyone making informed decisions about their legal situation.
               </p>
-              <p className="text-base leading-relaxed m-0 mt-4" style={{ color: 'rgba(240,242,245,0.40)' }}>
+              <p className="text-base leading-relaxed m-0 mt-4" style={{ color: '#999999' }}>
                 MyCaseValue makes real federal court outcomes transparent and searchable, so you can base decisions on facts, not fear.
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
 
           {/* How It Works Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
               How It Works
             </h2>
             <div className="space-y-4">
@@ -117,16 +117,16 @@ export default function AboutPage() {
                   icon: '',
                 },
               ].map((item) => (
-                <div key={item.step} className="flex gap-4 p-5 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+                <div key={item.step} className="flex gap-4 p-5 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
                   <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl"
-                    style={{ background: 'rgba(255,255,255,0.06)' }}>
+                    style={{ background: '#FFFFFF' }}>
                     {item.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-base font-semibold m-0 mb-2" style={{ color: '#F0F2F5' }}>
+                    <h3 className="text-base font-semibold m-0 mb-2" style={{ color: '#212529' }}>
                       {item.step}. {item.title}
                     </h3>
-                    <p className="text-sm leading-relaxed m-0" style={{ color: 'rgba(240,242,245,0.40)' }}>
+                    <p className="text-sm leading-relaxed m-0" style={{ color: '#999999' }}>
                       {item.description}
                     </p>
                   </div>
@@ -137,10 +137,10 @@ export default function AboutPage() {
 
           {/* Data Sources Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
               Our Data Sources
             </h2>
-            <p className="text-sm mb-6 leading-relaxed" style={{ color: 'rgba(240,242,245,0.40)' }}>
+            <p className="text-sm mb-6 leading-relaxed" style={{ color: '#999999' }}>
               We aggregate outcome data from official federal court records, ensuring accuracy and transparency.
             </p>
             <div className="space-y-4">
@@ -148,24 +148,24 @@ export default function AboutPage() {
                 {
                   name: 'Federal Judicial Center (FJC) Integrated Database',
                   description: 'The official source for federal civil case statistics since 1970. Covers case type, disposition, and duration for every federal civil case.',
-                  color: '#F0F2F5',
+                  color: '#212529',
                 },
                 {
                   name: 'CourtListener (Free Law Project)',
                   description: 'Aggregates federal judicial opinions, oral arguments, and PACER filings. Provides supplementary data on case outcomes and judicial reasoning.',
-                  color: '#07CA6B',
+                  color: '#07874A',
                 },
                 {
                   name: 'PACER (Public Access to Court Electronic Records)',
                   description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
-                  color: 'rgba(240,242,245,0.30)',
+                  color: '#C0C4C8',
                 },
               ].map((source, i) => (
-                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
-                  <h3 className="text-base font-semibold m-0 mb-2" style={{ color: '#F0F2F5' }}>
+                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
+                  <h3 className="text-base font-semibold m-0 mb-2" style={{ color: '#212529' }}>
                     {source.name}
                   </h3>
-                  <p className="text-sm leading-relaxed m-0" style={{ color: 'rgba(240,242,245,0.40)' }}>
+                  <p className="text-sm leading-relaxed m-0" style={{ color: '#999999' }}>
                     {source.description}
                   </p>
                 </div>
@@ -175,56 +175,56 @@ export default function AboutPage() {
 
           {/* Team Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
               Team & Vision
             </h2>
-            <div className="p-6 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
-              <p className="text-base leading-relaxed m-0" style={{ color: 'rgba(240,242,245,0.40)' }}>
+            <div className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
+              <p className="text-base leading-relaxed m-0" style={{ color: '#999999' }}>
                 MyCaseValue is built by legal researchers, data engineers, and technologists who believe transparency drives better decisions. We are not a law firm. We do not provide legal advice. We are a data platform.
               </p>
-              <p className="text-base leading-relaxed m-0 mt-4" style={{ color: 'rgba(240,242,245,0.40)' }}>
+              <p className="text-base leading-relaxed m-0 mt-4" style={{ color: '#999999' }}>
                 Our team is committed to:
               </p>
-              <ul className="mt-4 space-y-2 text-sm" style={{ paddingLeft: '1.5rem', color: 'rgba(240,242,245,0.40)' }}>
-                <li><strong style={{ color: '#F0F2F5' }}>Accuracy:</strong> All data comes from official public records with rigorous quality checks.</li>
-                <li><strong style={{ color: '#F0F2F5' }}>Transparency:</strong> Our methodology is fully documented and open to scrutiny.</li>
-                <li><strong style={{ color: '#F0F2F5' }}>Privacy:</strong> We never sell data or track individual research behavior.</li>
-                <li><strong style={{ color: '#F0F2F5' }}>Accessibility:</strong> Federal court data belongs to the public; we make it accessible.</li>
+              <ul className="mt-4 space-y-2 text-sm" style={{ paddingLeft: '1.5rem', color: '#999999' }}>
+                <li><strong style={{ color: '#212529' }}>Accuracy:</strong> All data comes from official public records with rigorous quality checks.</li>
+                <li><strong style={{ color: '#212529' }}>Transparency:</strong> Our methodology is fully documented and open to scrutiny.</li>
+                <li><strong style={{ color: '#212529' }}>Privacy:</strong> We never sell data or track individual research behavior.</li>
+                <li><strong style={{ color: '#212529' }}>Accessibility:</strong> Federal court data belongs to the public; we make it accessible.</li>
               </ul>
             </div>
           </section>
 
           {/* Coverage Section */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
               What We Cover
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '5.1M+', l: 'Federal cases', c: '#F0F2F5' },
-                { v: '84', l: 'Case types', c: '#07CA6B' },
-                { v: '94', l: 'Federal districts', c: '#3D72FF' },
-                { v: '50+ yrs', l: 'Historical data', c: 'rgba(240,242,245,0.30)' },
+                { v: '5.1M+', l: 'Federal cases', c: '#212529' },
+                { v: '84', l: 'Case types', c: '#07874A' },
+                { v: '94', l: 'Federal districts', c: '#CC1019' },
+                { v: '50+ yrs', l: 'Historical data', c: '#C0C4C8' },
               ].map((s, i) => (
-                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
                   <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>
-                  <div className="text-[11px] font-semibold mt-1" style={{ color: 'rgba(240,242,245,0.40)' }}>{s.l}</div>
+                  <div className="text-[11px] font-semibold mt-1" style={{ color: '#999999' }}>{s.l}</div>
                 </div>
               ))}
             </div>
           </section>
 
           {/* CTA Section */}
-          <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.06) 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
-            <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
+          <section className="text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)',  }}>
+            <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
               Ready to Research Real Case Outcomes?
             </h2>
-            <p className="mb-6 max-w-xl mx-auto" style={{ color: 'rgba(240,242,245,0.40)' }}>
+            <p className="mb-6 max-w-xl mx-auto" style={{ color: '#999999' }}>
               Access aggregate federal court data for informed decision-making. Free basic reports, premium analytics available.
             </p>
             <a href="/search"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#1856FF', color: '#FFFFFF' }}>
+              style={{ background: '#E8171F', color: '#FFFFFF' }}>
               Start Researching
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>

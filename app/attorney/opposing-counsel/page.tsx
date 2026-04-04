@@ -31,10 +31,10 @@ type SearchResult = {
 const MeterBar = ({ value, max, color, label }: { value: number; max: number; color: string; label: string }) => (
   <div style={{ marginBottom: '10px' }}>
     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-      <span style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)' }}>{label}</span>
-      <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#F0F2F5' }}>{value}%</span>
+      <span style={{ fontSize: '12px', color: '#666666' }}>{label}</span>
+      <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#212529' }}>{value}%</span>
     </div>
-    <div style={{ height: '6px', background: 'rgba(255,255,255,0.06)', borderRadius: '3px', overflow: 'hidden' }}>
+    <div style={{ height: '6px', background: '#E5EBF0', borderRadius: '3px', overflow: 'hidden' }}>
       <div style={{ height: '100%', width: `${(value / max) * 100}%`, background: color, borderRadius: '3px', transition: 'width 0.5s ease' }} />
     </div>
   </div>
@@ -72,23 +72,23 @@ export default function OpposingCounselPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: 'transparent', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
-      <div style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '32px 20px' }}>
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '32px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#1856FF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#006997', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Attorney Mode
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(24,86,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2">
+            <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                 <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
               </svg>
             </div>
             <div>
-              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>Opposing Counsel Analysis</h1>
-              <p style={{ fontSize: '14px', color: 'rgba(240,242,245,0.40)', margin: '4px 0 0 0' }}>Research opposing counsel track record, strategies, and settlement patterns</p>
+              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#212529', margin: 0 }}>Opposing Counsel Analysis</h1>
+              <p style={{ fontSize: '14px', color: '#666666', margin: '4px 0 0 0' }}>Research opposing counsel track record, strategies, and settlement patterns</p>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function OpposingCounselPage() {
         <form onSubmit={handleSearch} style={{ marginBottom: '24px' }}>
           <div style={{ display: 'flex', gap: '8px' }}>
             <div style={{ flex: 1, position: 'relative' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(240,242,245,0.30)" strokeWidth="2" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999999" strokeWidth="2" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }}>
                 <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
               </svg>
               <input
@@ -107,25 +107,25 @@ export default function OpposingCounselPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search by attorney name or firm (e.g. Smith, Johnson, Williams)..."
-                style={{ width: '100%', padding: '12px 12px 12px 42px', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '8px', fontSize: '14px', color: '#F0F2F5', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', fontFamily: 'var(--font-body)' }}
+                style={{ width: '100%', padding: '12px 12px 12px 42px', border: '1px solid #D5D8DC', borderRadius: '4px', fontSize: '14px', color: '#212529', background: '#FFFFFF', fontFamily: 'var(--font-body)' }}
               />
             </div>
-            <button type="submit" disabled={loading} style={{ padding: '12px 24px', backgroundColor: '#1856FF', color: '#FFFFFF', border: 'none', borderRadius: '8px', fontSize: '14px', fontWeight: 600, cursor: 'pointer' }}>
+            <button type="submit" disabled={loading} style={{ padding: '12px 24px', backgroundColor: '#006997', color: '#FFFFFF', border: 'none', borderRadius: '0px', fontSize: '14px', fontWeight: 600, cursor: 'pointer' }}>
               {loading ? 'Searching...' : 'Search'}
             </button>
           </div>
         </form>
 
         {error && (
-          <div style={{ padding: '12px 16px', borderRadius: '8px', backgroundColor: 'rgba(234,33,67,0.12)', border: '1px solid rgba(234,33,67,0.30)', marginBottom: '24px' }}>
-            <p style={{ fontSize: '13px', color: '#EA2143', margin: 0 }}>{error}</p>
+          <div style={{ padding: '12px 16px', borderRadius: '4px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #D5D8DC', marginBottom: '24px' }}>
+            <p style={{ fontSize: '13px', color: '#CC1019', margin: 0 }}>{error}</p>
           </div>
         )}
 
         {/* Results */}
         {result && (
           <>
-            <p style={{ fontSize: '13px', color: 'rgba(240,242,245,0.40)', marginBottom: '16px' }}>
+            <p style={{ fontSize: '13px', color: '#666666', marginBottom: '16px' }}>
               {result.resultCount} result{result.resultCount !== 1 ? 's' : ''} for &quot;{result.query}&quot;
             </p>
 
@@ -133,23 +133,23 @@ export default function OpposingCounselPage() {
               {result.profiles.map((p, i) => {
                 const isExpanded = expandedIndex === i;
                 return (
-                  <div key={i} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', border: isExpanded ? '2px solid #1856FF' : '1px solid rgba(255,255,255,0.10)', overflow: 'hidden', boxShadow: isExpanded ? '0 8px 32px rgba(0,0,0,0.30)' : '0 8px 32px rgba(0,0,0,0.30)' }}>
+                  <div key={i} style={{ background: '#FFFFFF', borderRadius: '4px', border: isExpanded ? '2px solid #006997' : '1px solid #D5D8DC', overflow: 'hidden', boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)' }}>
                     <button onClick={() => setExpandedIndex(isExpanded ? null : i)} style={{ width: '100%', padding: '20px 24px', border: 'none', background: 'none', cursor: 'pointer', textAlign: 'left' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                          <h3 className="font-display" style={{ fontSize: '17px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 4px' }}>{p.name}</h3>
-                          <p style={{ fontSize: '13px', color: 'rgba(240,242,245,0.40)', margin: 0 }}>{p.firm} · {p.city}</p>
+                          <h3 className="font-display" style={{ fontSize: '17px', fontWeight: 700, color: '#212529', margin: '0 0 4px' }}>{p.name}</h3>
+                          <p style={{ fontSize: '13px', color: '#666666', margin: 0 }}>{p.firm} · {p.city}</p>
                         </div>
                         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                           <div style={{ textAlign: 'center' }}>
-                            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 700, color: p.winRate >= 50 ? '#EA2143' : '#07CA6B' }}>{p.winRate}%</div>
-                            <div style={{ fontSize: '10px', color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const }}>Defense Win</div>
+                            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 700, color: p.winRate >= 50 ? '#CC1019' : '#07874A' }}>{p.winRate}%</div>
+                            <div style={{ fontSize: '10px', color: '#666666', textTransform: 'uppercase' as const }}>Defense Win</div>
                           </div>
                           <div style={{ textAlign: 'center' }}>
-                            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 700, color: '#0D9488' }}>{p.settlementRate}%</div>
-                            <div style={{ fontSize: '10px', color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const }}>Settlement</div>
+                            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 700, color: '#1B7C7D' }}>{p.settlementRate}%</div>
+                            <div style={{ fontSize: '10px', color: '#666666', textTransform: 'uppercase' as const }}>Settlement</div>
                           </div>
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(240,242,245,0.30)" strokeWidth="2" style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}>
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#999999" strokeWidth="2" style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}>
                             <polyline points="6 9 12 15 18 9" />
                           </svg>
                         </div>
@@ -157,25 +157,25 @@ export default function OpposingCounselPage() {
                     </button>
 
                     {isExpanded && (
-                      <div style={{ padding: '0 24px 24px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                      <div style={{ padding: '0 24px 24px', borderTop: '1px solid #D5D8DC' }}>
                         <div style={{ paddingTop: '20px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                           {/* Left Column */}
                           <div>
-                            <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 14px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Litigation Profile</h4>
-                            <MeterBar value={p.winRate} max={100} color="#EA2143" label="Defense Win Rate" />
-                            <MeterBar value={p.settlementRate} max={100} color="#0D9488" label="Settlement Rate" />
-                            <MeterBar value={p.motionPractice.motionSuccessRate} max={100} color="#2563EB" label="Motion Success Rate" />
+                            <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#212529', margin: '0 0 14px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Litigation Profile</h4>
+                            <MeterBar value={p.winRate} max={100} color="#CC1019" label="Defense Win Rate" />
+                            <MeterBar value={p.settlementRate} max={100} color="#1B7C7D" label="Settlement Rate" />
+                            <MeterBar value={p.motionPractice.motionSuccessRate} max={100} color="#004D80" label="Motion Success Rate" />
 
-                            <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5', margin: '20px 0 14px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Settlement Timing</h4>
+                            <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#212529', margin: '20px 0 14px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Settlement Timing</h4>
                             <div style={{ display: 'flex', gap: '8px' }}>
                               {[
-                                { label: 'Early', value: p.settlementPatterns.early, color: '#07CA6B' },
-                                { label: 'Mid', value: p.settlementPatterns.mid, color: '#E89558' },
-                                { label: 'Late', value: p.settlementPatterns.late, color: '#EA2143' },
+                                { label: 'Early', value: p.settlementPatterns.early, color: '#07874A' },
+                                { label: 'Mid', value: p.settlementPatterns.mid, color: '#B86E00' },
+                                { label: 'Late', value: p.settlementPatterns.late, color: '#CC1019' },
                               ].map((s) => (
-                                <div key={s.label} style={{ flex: s.value, padding: '8px', borderRadius: '4px', backgroundColor: `rgba(${s.color === '#07CA6B' ? '7,202,107' : s.color === '#E89558' ? '232,149,88' : '234,33,67'},0.12)`, textAlign: 'center' }}>
+                                <div key={s.label} style={{ flex: s.value, padding: '8px', borderRadius: '0px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
                                   <div className="font-mono" style={{ fontSize: '14px', fontWeight: 700, color: s.color }}>{s.value}%</div>
-                                  <div style={{ fontSize: '10px', color: 'rgba(240,242,245,0.40)' }}>{s.label}</div>
+                                  <div style={{ fontSize: '10px', color: '#666666' }}>{s.label}</div>
                                 </div>
                               ))}
                             </div>
@@ -183,7 +183,7 @@ export default function OpposingCounselPage() {
 
                           {/* Right Column */}
                           <div>
-                            <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 14px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Profile</h4>
+                            <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#212529', margin: '0 0 14px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Profile</h4>
                             {[
                               { label: 'Firm', value: p.firm },
                               { label: 'Firm Size', value: p.firmSize },
@@ -193,29 +193,29 @@ export default function OpposingCounselPage() {
                               { label: 'Avg Duration', value: `${p.avgDurationMonths} months` },
                               { label: 'Motions/Case', value: String(p.motionPractice.avgMotionsPerCase) },
                             ].map((item) => (
-                              <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                                <span style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)' }}>{item.label}</span>
-                                <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#F0F2F5' }}>{item.value}</span>
+                              <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #D5D8DC' }}>
+                                <span style={{ fontSize: '12px', color: '#666666' }}>{item.label}</span>
+                                <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#212529' }}>{item.value}</span>
                               </div>
                             ))}
 
-                            <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5', margin: '16px 0 10px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Practice Areas</h4>
+                            <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#212529', margin: '16px 0 10px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Practice Areas</h4>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                               {p.practiceAreas.map((pa) => (
-                                <span key={pa} style={{ padding: '4px 10px', borderRadius: '4px', backgroundColor: 'rgba(24,86,255,0.12)', color: '#3D72FF', fontSize: '11px', fontWeight: 600 }}>{pa}</span>
+                                <span key={pa} style={{ padding: '4px 10px', borderRadius: '0px', backgroundColor: 'rgba(0,105,151,0.08)', color: '#006997', fontSize: '11px', fontWeight: 600 }}>{pa}</span>
                               ))}
                             </div>
                           </div>
                         </div>
 
                         {/* Tendencies */}
-                        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: 'rgba(255,255,255,0.04)', borderRadius: '8px' }}>
-                          <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 12px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Strategy Tendencies</h4>
+                        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#FAFBFC', borderRadius: '0px' }}>
+                          <h4 className="font-display" style={{ fontSize: '13px', fontWeight: 700, color: '#212529', margin: '0 0 12px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Strategy Tendencies</h4>
                           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                             {p.tendencies.map((t, ti) => (
                               <div key={ti} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                                <span style={{ color: '#1856FF', fontSize: '14px', flexShrink: 0, marginTop: '1px' }}>&#x2022;</span>
-                                <span style={{ fontSize: '13px', color: 'rgba(240,242,245,0.70)', lineHeight: 1.5 }}>{t}</span>
+                                <span style={{ color: '#006997', fontSize: '14px', flexShrink: 0, marginTop: '1px' }}>&#x2022;</span>
+                                <span style={{ fontSize: '13px', color: '#455A64', lineHeight: 1.5 }}>{t}</span>
                               </div>
                             ))}
                           </div>
@@ -227,23 +227,23 @@ export default function OpposingCounselPage() {
               })}
             </div>
 
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '8px' }}>
-              <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}><strong>Disclaimer:</strong> {result.disclaimer}</p>
+            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+              <p style={{ fontSize: '11px', color: '#B86E00', margin: 0, lineHeight: 1.5 }}><strong>Disclaimer:</strong> {result.disclaimer}</p>
             </div>
           </>
         )}
 
         {/* Empty state */}
         {!result && !loading && (
-          <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '12px', padding: '64px 32px', textAlign: 'center' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '16px', background: 'rgba(24,86,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
+          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 12px' }}>Research Opposing Counsel</h2>
-            <p style={{ fontSize: '15px', color: 'rgba(240,242,245,0.40)', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
+            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Research Opposing Counsel</h2>
+            <p style={{ fontSize: '15px', color: '#666666', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
               Search by attorney name or firm to view their litigation track record, settlement patterns, and strategy tendencies.
             </p>
-            <p style={{ fontSize: '13px', color: 'rgba(240,242,245,0.30)' }}>Try: Smith, Johnson, Williams, or Jones</p>
+            <p style={{ fontSize: '13px', color: '#999999' }}>Try: Smith, Johnson, Williams, or Jones</p>
           </div>
         )}
       </div>

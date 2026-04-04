@@ -15,9 +15,9 @@ export interface AlertProps {
 
 const variantStyles = {
   info: {
-    borderColor: '#3D72FF',
+    borderColor: '#CC1019',
     background: 'var(--bg-hover)',
-    iconColor: '#3D72FF',
+    iconColor: '#CC1019',
     iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z',
   },
   success: {
@@ -51,7 +51,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
         borderLeft: `4px solid ${styles.borderColor}`,
         background: styles.background,
         padding: '16px 20px',
-        borderRadius: '8px',
+        borderRadius: '4px',
         display: 'flex',
         gap: '12px',
         alignItems: 'flex-start',
@@ -78,7 +78,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
               fontWeight: 600,
-              color: '#F0F2F5',
+              color: '#212529',
               margin: '0 0 4px 0',
             }}
           >
@@ -89,7 +89,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            color: 'rgba(240,242,245,0.70)',
+            color: '#455A64',
             lineHeight: 1.6,
           }}
         >

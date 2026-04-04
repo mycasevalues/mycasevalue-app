@@ -206,12 +206,10 @@ function PricingCard({
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
-        borderRadius: '12px',
-        border: f ? '1px solid rgba(255,255,255,0.10)' : '1px solid rgba(255,255,255,0.10)',
-        background: f ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.06)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        boxShadow: f ? '0 8px 32px rgba(0,0,0,0.30)' : '0 8px 32px rgba(0,0,0,0.30)',
+        borderRadius: '4px',
+        border: f ? '2px solid #E8171F' : '1px solid #D5D8DC',
+        background: '#FFFFFF',
+        boxShadow: f ? '0 1px 3px rgba(0,0,0,0.08)' : '0 1px 3px rgba(0,0,0,0.08)',
       }}
     >
       {plan.badge && (
@@ -221,9 +219,9 @@ function PricingCard({
             top: '-13px',
             left: '50%',
             transform: 'translateX(-50%)',
-            borderRadius: '20px',
+            borderRadius: '0px',
             padding: '4px 16px',
-            background: '#1856FF',
+            background: '#E8171F',
             color: '#FFFFFF',
             fontSize: '11px',
             fontWeight: 700,
@@ -250,7 +248,7 @@ function PricingCard({
             fontSize: '18px',
             fontWeight: 700,
             marginBottom: '4px',
-            color: '#F0F2F5',
+            color: '#212529',
             fontFamily: 'var(--font-display)',
           }}
         >
@@ -262,7 +260,7 @@ function PricingCard({
             fontSize: '11px',
             fontWeight: 600,
             marginBottom: '20px',
-            color: 'rgba(240,242,245,0.70)',
+            color: '#455A64',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             fontFamily: 'var(--font-body)',
@@ -277,7 +275,7 @@ function PricingCard({
               fontSize: '48px',
               lineHeight: '1',
               fontWeight: 800,
-              color: '#F0F2F5',
+              color: '#212529',
               fontFamily: 'var(--font-mono)',
             }}
           >
@@ -287,7 +285,7 @@ function PricingCard({
             <span
               style={{
                 fontSize: '14px',
-                color: 'rgba(240,242,245,0.40)',
+                color: '#999999',
                 textDecoration: 'line-through',
                 fontFamily: 'var(--font-body)',
               }}
@@ -301,7 +299,7 @@ function PricingCard({
           style={{
             fontSize: '14px',
             marginBottom: '24px',
-            color: 'rgba(240,242,245,0.40)',
+            color: '#999999',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -312,7 +310,7 @@ function PricingCard({
           style={{
             fontSize: '13px',
             marginBottom: '24px',
-            color: 'rgba(240,242,245,0.40)',
+            color: '#999999',
             fontFamily: 'var(--font-body)',
             lineHeight: '1.5',
           }}
@@ -330,10 +328,10 @@ function PricingCard({
               padding: '12px 16px',
               fontSize: '15px',
               fontWeight: 600,
-              borderRadius: '8px',
-              border: f ? 'none' : '1px solid rgba(255,255,255,0.10)',
-              background: f ? '#1856FF' : 'rgba(255,255,255,0.06)',
-              color: f ? '#FFFFFF' : '#F0F2F5',
+              borderRadius: '0px',
+              border: f ? 'none' : '1px solid #D5D8DC',
+              background: f ? '#E8171F' : '#FFFFFF',
+              color: f ? '#FFFFFF' : '#212529',
               textAlign: 'center',
               fontFamily: 'var(--font-body)',
               transition: 'all 200ms ease',
@@ -341,6 +339,7 @@ function PricingCard({
               marginBottom: '8px',
               cursor: 'pointer',
               opacity: 1,
+              textTransform: 'uppercase',
             }}
             className="pricing-cta-link"
           >
@@ -354,10 +353,10 @@ function PricingCard({
               padding: '12px 16px',
               fontSize: '15px',
               fontWeight: 600,
-              borderRadius: '8px',
-              border: f ? 'none' : '1px solid rgba(255,255,255,0.10)',
-              background: f ? '#1856FF' : 'rgba(255,255,255,0.06)',
-              color: f ? '#FFFFFF' : '#F0F2F5',
+              borderRadius: '0px',
+              border: f ? 'none' : '1px solid #D5D8DC',
+              background: f ? '#E8171F' : '#FFFFFF',
+              color: f ? '#FFFFFF' : '#212529',
               textDecoration: 'none',
               textAlign: 'center',
               fontFamily: 'var(--font-body)',
@@ -366,6 +365,7 @@ function PricingCard({
               marginBottom: '8px',
               cursor: 'pointer',
               opacity: 1,
+              textTransform: 'uppercase',
             }}
             className="pricing-cta-link"
           >
@@ -378,7 +378,7 @@ function PricingCard({
             fontSize: '12px',
             textAlign: 'center',
             marginBottom: '24px',
-            color: 'rgba(240,242,245,0.40)',
+            color: '#999999',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -389,7 +389,7 @@ function PricingCard({
           style={{
             marginBottom: '20px',
             height: '1px',
-            background: 'rgba(255,255,255,0.10)',
+            background: '#D5D8DC',
           }}
         />
 
@@ -400,7 +400,7 @@ function PricingCard({
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             marginBottom: '16px',
-            color: 'rgba(240,242,245,0.70)',
+            color: '#455A64',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -432,7 +432,7 @@ function PricingCard({
                   textAlign: 'center',
                   fontSize: '14px',
                   lineHeight: '1',
-                  color: feat.included ? '#07CA6B' : 'rgba(240,242,245,0.30)',
+                  color: feat.included ? '#07874A' : '#C0C4C8',
                   fontWeight: feat.included ? 700 : 400,
                 }}
               >
@@ -441,7 +441,7 @@ function PricingCard({
               <span
                 style={{
                   fontSize: '14px',
-                  color: feat.included ? '#F0F2F5' : 'rgba(240,242,245,0.30)',
+                  color: feat.included ? '#212529' : '#C0C4C8',
                   fontFamily: 'var(--font-body)',
                 }}
               >
@@ -501,10 +501,8 @@ export default function PricingPage() {
       {/* Header */}
       <div
         style={{
-          borderBottom: '1px solid rgba(255,255,255,0.10)',
-          background: 'rgba(255,255,255,0.06)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
+          borderBottom: '1px solid #D5D8DC',
+          background: '#00172E',
         }}
       >
         <div
@@ -523,7 +521,7 @@ export default function PricingPage() {
             style={{
               fontSize: '11px',
               fontWeight: 600,
-              color: '#1856FF',
+              color: '#E8171F',
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
               marginBottom: '16px',
@@ -538,7 +536,7 @@ export default function PricingPage() {
               fontSize: 'clamp(32px, 8vw, 56px)',
               fontWeight: '900',
               marginBottom: '16px',
-              color: '#F0F2F5',
+              color: '#FFFFFF',
               fontFamily: 'var(--font-display)',
               letterSpacing: '-0.02em',
             }}
@@ -553,7 +551,7 @@ export default function PricingPage() {
               marginLeft: 'auto',
               marginRight: 'auto',
               marginBottom: '32px',
-              color: 'rgba(240,242,245,0.40)',
+              color: '#FFFFFF',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -586,7 +584,7 @@ export default function PricingPage() {
             style={{
               fontSize: '14px',
               fontFamily: 'var(--font-body)',
-              color: annual ? 'rgba(240,242,245,0.40)' : '#F0F2F5',
+              color: annual ? '#999999' : '#212529',
               fontWeight: annual ? '400' : '500',
             }}
           >
@@ -602,7 +600,7 @@ export default function PricingPage() {
               height: '32px',
               borderRadius: '16px',
               border: 'none',
-              background: annual ? '#1856FF' : 'rgba(255,255,255,0.10)',
+              background: annual ? '#E8171F' : '#D5D8DC',
               cursor: 'pointer',
               padding: '2px',
               transition: 'background 200ms ease',
@@ -628,7 +626,7 @@ export default function PricingPage() {
               style={{
                 fontSize: '14px',
                 fontFamily: 'var(--font-body)',
-                color: annual ? '#F0F2F5' : 'rgba(240,242,245,0.40)',
+                color: annual ? '#212529' : '#999999',
                 fontWeight: annual ? '500' : '400',
               }}
             >
@@ -639,9 +637,9 @@ export default function PricingPage() {
                 style={{
                   display: 'inline-block',
                   padding: '2px 8px',
-                  borderRadius: '4px',
-                  background: 'rgba(24,86,255,0.12)',
-                  color: '#1856FF',
+                  borderRadius: '0px',
+                  background: '#FFF3F4',
+                  color: '#E8171F',
                   fontSize: '11px',
                   fontWeight: '600',
                   fontFamily: 'var(--font-body)',
@@ -661,9 +659,9 @@ export default function PricingPage() {
               maxWidth: '600px',
               margin: '0 auto 24px',
               padding: '12px 16px',
-              backgroundColor: 'rgba(234,33,67,0.12)',
-              border: '1px solid rgba(234,33,67,0.30)',
-              borderRadius: '8px',
+              backgroundColor: '#FFF3F4',
+              border: '1px solid #E8171F',
+              borderRadius: '0px',
               textAlign: 'center',
             }}
           >
@@ -671,7 +669,7 @@ export default function PricingPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#EA2143',
+                color: '#CC1019',
                 margin: 0,
               }}
             >
@@ -704,7 +702,7 @@ export default function PricingPage() {
             textAlign: 'center',
             fontSize: '13px',
             marginBottom: '48px',
-            color: 'rgba(240,242,245,0.40)',
+            color: '#999999',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -749,11 +747,9 @@ export default function PricingPage() {
                 textAlign: 'center',
                 padding: '24px',
                 width: '200px',
-                borderRadius: '12px',
-                border: '1px solid rgba(255,255,255,0.10)',
-                background: 'rgba(255,255,255,0.06)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
+                borderRadius: '4px',
+                border: '1px solid #D5D8DC',
+                background: '#FFFFFF',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '12px' }}>
@@ -762,7 +758,7 @@ export default function PricingPage() {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#F0F2F5"
+                  stroke="#212529"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -775,7 +771,7 @@ export default function PricingPage() {
                   fontWeight: '600',
                   fontSize: '14px',
                   marginBottom: '4px',
-                  color: '#F0F2F5',
+                  color: '#212529',
                   fontFamily: 'var(--font-display)',
                 }}
               >
@@ -784,7 +780,7 @@ export default function PricingPage() {
               <p
                 style={{
                   fontSize: '12px',
-                  color: 'rgba(240,242,245,0.40)',
+                  color: '#999999',
                   fontFamily: 'var(--font-body)',
                 }}
               >
@@ -802,7 +798,7 @@ export default function PricingPage() {
               fontWeight: '700',
               textAlign: 'center',
               marginBottom: '48px',
-              color: '#F0F2F5',
+              color: '#212529',
               fontFamily: 'var(--font-display)',
             }}
           >
@@ -824,11 +820,9 @@ export default function PricingPage() {
                 key={idx}
                 style={{
                   padding: '20px',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                  background: 'rgba(255,255,255,0.06)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
+                  borderRadius: '4px',
+                  border: '1px solid #D5D8DC',
+                  background: '#FFFFFF',
                   cursor: 'pointer',
                 }}
               >
@@ -839,7 +833,7 @@ export default function PricingPage() {
                     justifyContent: 'space-between',
                     fontWeight: '600',
                     userSelect: 'none',
-                    color: '#F0F2F5',
+                    color: '#212529',
                     fontFamily: 'var(--font-body)',
                     cursor: 'pointer',
                   }}
@@ -864,7 +858,7 @@ export default function PricingPage() {
                     style={{
                       flexShrink: 0,
                       transition: 'transform 200ms ease',
-                      color: '#F0F2F5',
+                      color: '#212529',
                     }}
                   >
                     <polyline points="6 9 12 15 18 9" />
@@ -874,14 +868,14 @@ export default function PricingPage() {
                   style={{
                     paddingTop: '16px',
                     marginTop: '16px',
-                    borderTop: '1px solid rgba(255,255,255,0.10)',
+                    borderTop: '1px solid #D5D8DC',
                   }}
                 >
                   <p
                     style={{
                       fontSize: '14px',
                       lineHeight: '1.6',
-                      color: 'rgba(240,242,245,0.40)',
+                      color: '#999999',
                       fontFamily: 'var(--font-body)',
                     }}
                   >
@@ -899,18 +893,16 @@ export default function PricingPage() {
             textAlign: 'center',
             padding: '40px',
             marginBottom: '64px',
-            borderRadius: '12px',
-            border: '1px solid rgba(255,255,255,0.10)',
-            background: 'rgba(255,255,255,0.06)',
-            backdropFilter: 'blur(12px)',
-            WebkitBackdropFilter: 'blur(12px)',
+            borderRadius: '4px',
+            border: '1px solid #D5D8DC',
+            background: '#FFFFFF',
           }}
         >
           <p
             style={{
               fontSize: '16px',
               marginBottom: '16px',
-              color: '#F0F2F5',
+              color: '#212529',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -928,13 +920,14 @@ export default function PricingPage() {
               paddingBottom: '12px',
               fontSize: '14px',
               fontWeight: '600',
-              borderRadius: '9999px',
-              border: '1px solid rgba(255,255,255,0.10)',
-              color: '#F0F2F5',
+              borderRadius: '0px',
+              border: '1px solid #D5D8DC',
+              color: '#212529',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               transition: 'opacity 200ms ease',
               cursor: 'pointer',
+              textTransform: 'uppercase',
             }}
             className="pricing-enterprise-link"
           >

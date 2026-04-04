@@ -7,7 +7,7 @@ export default function Loading() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, rgba(5, 15, 30, 0.95) 0%, rgba(10, 20, 40, 0.95) 100%)',
+        background: '#EDEEEE',
         gap: '24px',
       }}
     >
@@ -27,8 +27,8 @@ export default function Loading() {
         style={{
           width: '48px',
           height: '48px',
-          border: '3px solid rgba(255, 255, 255, 0.10)',
-          borderTop: '3px solid #1856FF',
+          border: '3px solid #D5D8DC',
+          borderTop: '3px solid #006997',
           borderRadius: '50%',
           animation: 'spin 1s linear infinite',
         }}
@@ -38,7 +38,7 @@ export default function Loading() {
       <p
         style={{
           fontSize: '14px',
-          color: 'rgba(240, 242, 245, 0.70)',
+          color: '#455A64',
           margin: 0,
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         }}

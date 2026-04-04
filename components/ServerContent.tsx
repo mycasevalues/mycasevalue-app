@@ -41,20 +41,20 @@ export default function ServerContent() {
       {/* ── CASE CATEGORIES ───────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
-          borderTop: '1px solid rgba(255,255,255,0.10)',
+          background: '#EDEEEE',
+          borderTop: '1px solid #D5D8DC',
           padding: '64px 24px',
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Case types
             </p>
-            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#F0F2F5', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               84 Federal Case Types Covered
             </h2>
-            <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
               Research win rates, settlement ranges, and timelines for any federal case type across all 94 districts.
             </p>
           </div>
@@ -69,38 +69,38 @@ export default function ServerContent() {
             {CASE_CATEGORIES.map((cat, i) => (
               <a key={i} href={`/cases/${cat.id}`} style={{ textDecoration: 'none' }}>
                 <div style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                  borderRadius: '12px',
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '4px',
                   padding: '24px',
                   transition: 'all 150ms',
                   cursor: 'pointer',
                   height: '100%',
-                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#F0F2F5', fontFamily: 'var(--font-display)', margin: 0 }}>
+                    <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', margin: 0 }}>
                       {cat.name}
                     </h3>
                     <span style={{
                       fontSize: '11px',
                       fontWeight: 600,
                       padding: '3px 8px',
-                      background: 'rgba(24,86,255,0.12)',
-                      color: '#3D72FF',
+                      background: 'rgba(232,23,31,0.08)',
+                      color: '#E8171F',
                       borderRadius: '4px',
                       fontFamily: 'var(--font-body)',
                       flexShrink: 0,
                       marginLeft: '8px',
-                      border: '1px solid rgba(24,86,255,0.20)',
+                      border: '1px solid rgba(232,23,31,0.15)',
                     }}>
                       {cat.count} types
                     </span>
                   </div>
-                  <p style={{ fontSize: '14px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>
                     {cat.description}
                   </p>
-                  <p style={{ fontSize: '13px', color: '#3D72FF', fontFamily: 'var(--font-body)', marginTop: '16px', marginBottom: 0, fontWeight: 500 }}>
+                  <p style={{ fontSize: '13px', color: '#006997', fontFamily: 'var(--font-body)', marginTop: '16px', marginBottom: 0, fontWeight: 500 }}>
                     View outcome data →
                   </p>
                 </div>
@@ -113,19 +113,19 @@ export default function ServerContent() {
       {/* ── FEATURES ──────────────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
+          background: '#FFFFFF',
           padding: '64px 24px',
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               What you get
             </p>
-            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#F0F2F5', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               What You Get in Every Report
             </h2>
-            <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
             </p>
           </div>
 
@@ -147,11 +147,11 @@ export default function ServerContent() {
               <div
                 key={i}
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                  borderRadius: '12px',
+                  background: '#FAFBFC',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '4px',
                   padding: '24px',
-                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}
               >
                 <h3
@@ -159,7 +159,7 @@ export default function ServerContent() {
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontSize: '16px',
                     fontWeight: 700,
-                    color: '#F0F2F5',
+                    color: '#212529',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -169,7 +169,7 @@ export default function ServerContent() {
                   style={{
                     fontFamily: 'Roboto, system-ui, sans-serif',
                     fontSize: '14px',
-                    color: 'rgba(240,242,245,0.70)',
+                    color: '#455A64',
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -185,20 +185,20 @@ export default function ServerContent() {
       {/* ── TESTIMONIALS ─────────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
-          borderTop: '1px solid rgba(255,255,255,0.10)',
+          background: '#EDEEEE',
+          borderTop: '1px solid #D5D8DC',
           padding: '64px 24px',
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Testimonials
             </p>
-            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#F0F2F5', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               What people are saying
             </h2>
-            <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
               From plaintiffs and attorneys using MyCaseValue to research federal court outcomes.
             </p>
           </div>
@@ -233,19 +233,19 @@ export default function ServerContent() {
               <div
                 key={i}
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                  borderLeft: '3px solid #1856FF',
-                  borderRadius: '12px',
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderLeft: '3px solid #E8171F',
+                  borderRadius: '4px',
                   padding: '24px',
-                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}
               >
                 <p
                   style={{
                     fontFamily: 'Roboto, system-ui, sans-serif',
                     fontSize: '15px',
-                    color: '#F0F2F5',
+                    color: '#212529',
                     lineHeight: 1.6,
                     fontStyle: 'italic',
                     margin: '0 0 16px 0',
@@ -258,7 +258,7 @@ export default function ServerContent() {
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontSize: '14px',
                     fontWeight: 700,
-                    color: '#F0F2F5',
+                    color: '#212529',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -268,7 +268,7 @@ export default function ServerContent() {
                   style={{
                     fontFamily: 'Roboto, system-ui, sans-serif',
                     fontSize: '13px',
-                    color: 'rgba(240,242,245,0.70)',
+                    color: '#455A64',
                     margin: 0,
                   }}
                 >
@@ -282,7 +282,7 @@ export default function ServerContent() {
             style={{
               fontFamily: 'Roboto, system-ui, sans-serif',
               fontSize: '12px',
-              color: 'rgba(240,242,245,0.70)',
+              color: '#455A64',
               textAlign: 'center',
               marginTop: '16px',
               fontStyle: 'italic',
@@ -296,20 +296,20 @@ export default function ServerContent() {
       {/* ── HOW IT COMPARES ──────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
-          borderTop: '1px solid rgba(255,255,255,0.10)',
+          background: '#FFFFFF',
+          borderTop: '1px solid #D5D8DC',
           padding: '64px 24px',
         }}
       >
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               How we compare
             </p>
-            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#F0F2F5', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               Built for plaintiffs, not law firms
             </h2>
-            <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
               MyCaseValue is the only federal court data platform designed from the ground up for individuals and small firms.
             </p>
           </div>
@@ -324,12 +324,12 @@ export default function ServerContent() {
               }}
             >
               <thead>
-                <tr style={{ borderBottom: '2px solid rgba(255,255,255,0.10)' }}>
-                  <th style={{ textAlign: 'left', padding: '12px 16px', color: 'rgba(240,242,245,0.70)', fontWeight: 600, fontSize: '13px' }}>Feature</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#F0F2F5', fontWeight: 700, background: 'rgba(24,86,255,0.12)', borderRadius: '8px 8px 0 0' }}>MyCaseValue</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'rgba(240,242,245,0.70)', fontWeight: 600, fontSize: '13px' }}>Westlaw</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'rgba(240,242,245,0.70)', fontWeight: 600, fontSize: '13px' }}>LexisNexis</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: 'rgba(240,242,245,0.70)', fontWeight: 600, fontSize: '13px' }}>PACER</th>
+                <tr style={{ borderBottom: '2px solid #D5D8DC' }}>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#455A64', fontWeight: 600, fontSize: '13px' }}>Feature</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#212529', fontWeight: 700, background: 'rgba(232,23,31,0.08)', borderRadius: '4px 4px 0 0' }}>MyCaseValue</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 600, fontSize: '13px' }}>Westlaw</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 600, fontSize: '13px' }}>LexisNexis</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 600, fontSize: '13px' }}>PACER</th>
                 </tr>
               </thead>
               <tbody>
@@ -342,20 +342,20 @@ export default function ServerContent() {
                   { feature: 'No subscription required', mcv: true, westlaw: false, lexis: false, pacer: true },
                   { feature: 'Bilingual (English/Spanish)', mcv: true, westlaw: false, lexis: false, pacer: false },
                 ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.10)' }}>
-                    <td style={{ padding: '12px 16px', color: '#F0F2F5', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(24,86,255,0.12)', color: row.mcv ? '#07CA6B' : 'rgba(240,242,245,0.70)', fontWeight: 700, fontSize: '16px' }}>{row.mcv ? '\u2713' : '\u2014'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#07CA6B' : 'rgba(240,242,245,0.70)', fontSize: '16px' }}>{row.westlaw ? '\u2713' : '\u2014'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis ? '#07CA6B' : 'rgba(240,242,245,0.70)', fontSize: '16px' }}>{row.lexis ? '\u2713' : '\u2014'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#07CA6B' : 'rgba(240,242,245,0.70)', fontSize: '16px' }}>{row.pacer ? '\u2713' : '\u2014'}</td>
+                  <tr key={i} style={{ borderBottom: '1px solid #D5D8DC' }}>
+                    <td style={{ padding: '12px 16px', color: '#212529', fontWeight: 500 }}>{row.feature}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(232,23,31,0.08)', color: row.mcv ? '#07CA6B' : '#455A64', fontWeight: 700, fontSize: '16px' }}>{row.mcv ? '\u2713' : '\u2014'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#07CA6B' : '#455A64', fontSize: '16px' }}>{row.westlaw ? '\u2713' : '\u2014'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis ? '#07CA6B' : '#455A64', fontSize: '16px' }}>{row.lexis ? '\u2713' : '\u2014'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#07CA6B' : '#455A64', fontSize: '16px' }}>{row.pacer ? '\u2713' : '\u2014'}</td>
                   </tr>
                 ))}
-                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.10)' }}>
-                  <td style={{ padding: '12px 16px', color: '#F0F2F5', fontWeight: 500 }}>Starting price</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(24,86,255,0.12)', color: '#F0F2F5', fontWeight: 700 }}>Free</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'rgba(240,242,245,0.70)' }}>$500+/mo</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'rgba(240,242,245,0.70)' }}>$400+/mo</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', color: 'rgba(240,242,245,0.70)' }}>$0.10/page</td>
+                <tr style={{ borderBottom: '1px solid #D5D8DC' }}>
+                  <td style={{ padding: '12px 16px', color: '#212529', fontWeight: 500 }}>Starting price</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(232,23,31,0.08)', color: '#212529', fontWeight: 700 }}>Free</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64' }}>$500+/mo</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64' }}>$400+/mo</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64' }}>$0.10/page</td>
                 </tr>
               </tbody>
             </table>
@@ -366,20 +366,20 @@ export default function ServerContent() {
       {/* ── PLAIN ENGLISH ────────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
-          borderTop: '1px solid rgba(255,255,255,0.10)',
+          background: '#EDEEEE',
+          borderTop: '1px solid #D5D8DC',
           padding: '64px 24px',
         }}
       >
         <div style={{ maxWidth: '768px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               In plain English
             </p>
-            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#F0F2F5', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               What this data actually tells you
             </h2>
-            <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
               We take millions of public federal court records and turn them into clear, actionable insights.
               Here&apos;s what the numbers mean for you.
             </p>
@@ -389,7 +389,7 @@ export default function ServerContent() {
             style={{
               fontFamily: 'Roboto, system-ui, sans-serif',
               fontSize: '13px',
-              color: 'rgba(240,242,245,0.70)',
+              color: '#455A64',
               textAlign: 'center',
               marginBottom: '12px',
             }}
@@ -423,14 +423,14 @@ export default function ServerContent() {
               <div
                 key={i}
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                  borderRadius: '12px',
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '4px',
                   padding: '24px',
                   display: 'flex',
                   gap: '20px',
                   alignItems: 'flex-start',
-                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}
               >
                 <div
@@ -439,13 +439,13 @@ export default function ServerContent() {
                     fontFamily: '"PT Mono", monospace',
                     fontSize: '18px',
                     fontWeight: 700,
-                    color: '#3D72FF',
-                    background: 'rgba(24,86,255,0.12)',
+                    color: '#E8171F',
+                    background: 'rgba(232,23,31,0.08)',
                     padding: '8px 14px',
-                    borderRadius: '8px',
+                    borderRadius: '4px',
                     minWidth: '90px',
                     textAlign: 'center',
-                    border: '1px solid rgba(24,86,255,0.20)',
+                    border: '1px solid rgba(232,23,31,0.15)',
                   }}
                 >
                   {item.example}
@@ -456,7 +456,7 @@ export default function ServerContent() {
                       fontFamily: 'Montserrat, system-ui, sans-serif',
                       fontSize: '15px',
                       fontWeight: 700,
-                      color: '#F0F2F5',
+                      color: '#212529',
                       margin: '0 0 6px 0',
                     }}
                   >
@@ -466,7 +466,7 @@ export default function ServerContent() {
                     style={{
                       fontFamily: 'Roboto, system-ui, sans-serif',
                       fontSize: '14px',
-                      color: 'rgba(240,242,245,0.70)',
+                      color: '#455A64',
                       lineHeight: 1.6,
                       margin: 0,
                     }}
@@ -482,7 +482,7 @@ export default function ServerContent() {
             style={{
               fontFamily: 'Roboto, system-ui, sans-serif',
               fontSize: '12px',
-              color: 'rgba(240,242,245,0.70)',
+              color: '#455A64',
               textAlign: 'center',
               marginTop: '12px',
               fontStyle: 'italic',
@@ -503,7 +503,7 @@ export default function ServerContent() {
                 fontFamily: 'Roboto, system-ui, sans-serif',
                 fontSize: '13px',
                 fontWeight: 600,
-                color: '#3D72FF',
+                color: '#006997',
                 textDecoration: 'none',
               }}
             >
@@ -516,19 +516,19 @@ export default function ServerContent() {
       {/* ── PRICING PREVIEW ──────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
+          background: '#FFFFFF',
           padding: '64px 24px',
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Pricing
             </p>
-            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#F0F2F5', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               Simple, Transparent Pricing
             </h2>
-            <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
               Start free. Upgrade when you need deeper data.
             </p>
           </div>
@@ -551,14 +551,14 @@ export default function ServerContent() {
               <div
                 key={i}
                 style={{
-                  background: 'rgba(255,255,255,0.06)',
-                  border: plan.featured ? '2px solid #1856FF' : '1px solid rgba(255,255,255,0.10)',
-                  borderRadius: '12px',
+                  background: '#FFFFFF',
+                  border: plan.featured ? '2px solid #E8171F' : '1px solid #D5D8DC',
+                  borderRadius: '4px',
                   padding: '24px',
                   display: 'flex',
                   flexDirection: 'column',
                   position: 'relative',
-                  backdropFilter: 'blur(12px)',
+                  boxShadow: plan.featured ? '0 4px 12px rgba(232,23,31,0.15)' : '0 1px 3px rgba(0,0,0,0.08)',
                 }}
               >
                 {plan.featured && (
@@ -573,10 +573,10 @@ export default function ServerContent() {
                       fontWeight: 700,
                       letterSpacing: '1px',
                       textTransform: 'uppercase',
-                      background: '#1856FF',
+                      background: '#E8171F',
                       color: '#FFFFFF',
                       padding: '4px 12px',
-                      borderRadius: '20px',
+                      borderRadius: '4px',
                       whiteSpace: 'nowrap',
                     }}
                   >
@@ -588,7 +588,7 @@ export default function ServerContent() {
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontSize: '16px',
                     fontWeight: 700,
-                    color: '#F0F2F5',
+                    color: '#212529',
                     margin: '0 0 8px 0',
                   }}
                 >
@@ -600,7 +600,7 @@ export default function ServerContent() {
                       fontFamily: 'Montserrat, system-ui, sans-serif',
                       fontSize: '28px',
                       fontWeight: 800,
-                      color: '#F0F2F5',
+                      color: '#212529',
                     }}
                   >
                     {plan.price}
@@ -609,7 +609,7 @@ export default function ServerContent() {
                     style={{
                       fontFamily: 'Roboto, system-ui, sans-serif',
                       fontSize: '14px',
-                      color: 'rgba(240,242,245,0.70)',
+                      color: '#455A64',
                       marginLeft: '4px',
                     }}
                   >
@@ -620,7 +620,7 @@ export default function ServerContent() {
                   style={{
                     fontFamily: 'Roboto, system-ui, sans-serif',
                     fontSize: '14px',
-                    color: 'rgba(240,242,245,0.70)',
+                    color: '#455A64',
                     lineHeight: 1.5,
                     margin: '0 0 16px 0',
                     flex: 1,
@@ -634,15 +634,16 @@ export default function ServerContent() {
                     display: 'block',
                     textAlign: 'center',
                     padding: '10px 16px',
-                    borderRadius: '8px',
+                    borderRadius: '0px',
                     fontFamily: 'Montserrat, system-ui, sans-serif',
                     fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
-                    background: plan.featured ? '#1856FF' : 'transparent',
-                    color: plan.featured ? '#FFFFFF' : '#F0F2F5',
-                    border: plan.featured ? 'none' : '1px solid rgba(255,255,255,0.12)',
-                    boxShadow: plan.featured ? '0 4px 24px rgba(24,86,255,0.30)' : 'none',
+                    background: plan.featured ? '#E8171F' : 'transparent',
+                    color: plan.featured ? '#FFFFFF' : '#212529',
+                    border: plan.featured ? 'none' : '1px solid #D5D8DC',
+                    boxShadow: plan.featured ? '0 2px 8px rgba(232,23,31,0.12)' : 'none',
+                    textTransform: 'uppercase',
                   }}
                 >
                   {plan.cta}
@@ -657,10 +658,10 @@ export default function ServerContent() {
               marginTop: '24px',
               fontFamily: 'Roboto, system-ui, sans-serif',
               fontSize: '13px',
-              color: 'rgba(240,242,245,0.70)',
+              color: '#455A64',
             }}
           >
-            <a href="/pricing" style={{ color: '#3D72FF', fontWeight: 600, textDecoration: 'none' }}>
+            <a href="/pricing" style={{ color: '#006997', fontWeight: 600, textDecoration: 'none' }}>
               Compare all features →
             </a>
           </p>
@@ -670,20 +671,20 @@ export default function ServerContent() {
       {/* ── FAQ ────────────────────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
-          borderTop: '1px solid rgba(255,255,255,0.10)',
+          background: '#EDEEEE',
+          borderTop: '1px solid #D5D8DC',
           padding: '64px 24px',
         }}
       >
         <div style={{ maxWidth: '768px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               FAQ
             </p>
-            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#F0F2F5', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
               Frequently Asked Questions
             </h2>
-            <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
             </p>
           </div>
 
@@ -693,10 +694,10 @@ export default function ServerContent() {
                 key={i}
                 style={{
                   padding: '20px',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(255,255,255,0.10)',
-                  background: 'rgba(255,255,255,0.06)',
-                  backdropFilter: 'blur(12px)',
+                  borderRadius: '4px',
+                  border: '1px solid #D5D8DC',
+                  background: '#FFFFFF',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}
               >
                 <summary
@@ -704,7 +705,7 @@ export default function ServerContent() {
                     fontFamily: 'Roboto, system-ui, sans-serif',
                     fontSize: '15px',
                     fontWeight: 600,
-                    color: '#F0F2F5',
+                    color: '#212529',
                     cursor: 'pointer',
                     lineHeight: 1.5,
                   }}
@@ -715,11 +716,11 @@ export default function ServerContent() {
                   style={{
                     fontFamily: 'Roboto, system-ui, sans-serif',
                     fontSize: '14px',
-                    color: 'rgba(240,242,245,0.70)',
+                    color: '#455A64',
                     lineHeight: 1.7,
                     marginTop: '16px',
                     paddingTop: '16px',
-                    borderTop: '1px solid rgba(255,255,255,0.10)',
+                    borderTop: '1px solid #D5D8DC',
                   }}
                 >
                   {faq.a}
@@ -733,7 +734,7 @@ export default function ServerContent() {
       {/* ── NEWSLETTER ─────────────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
+          background: '#FFFFFF',
           padding: '64px 24px 0',
         }}
       >
@@ -745,19 +746,19 @@ export default function ServerContent() {
       {/* ── CTA ────────────────────────────────────────────── */}
       <section
         style={{
-          background: 'transparent',
+          background: '#FFFFFF',
           padding: '64px 24px',
           textAlign: 'center',
         }}
       >
         <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
             Get started
           </p>
-          <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#F0F2F5', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
             Find out where you stand
           </h2>
-          <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.70)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, marginBottom: '24px' }}>
+          <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, marginBottom: '24px' }}>
             Get a free outcome report in under 60 seconds. No account required. Research real data from 5.1M+ federal court cases.
           </p>
           <a
@@ -767,14 +768,15 @@ export default function ServerContent() {
               alignItems: 'center',
               gap: '8px',
               padding: '14px 28px',
-              background: '#1856FF',
+              background: '#E8171F',
               color: '#FFFFFF',
-              borderRadius: '12px',
+              borderRadius: '0px',
               fontFamily: 'Montserrat, system-ui, sans-serif',
               fontSize: '15px',
               fontWeight: 700,
               textDecoration: 'none',
-              boxShadow: '0 4px 24px rgba(24,86,255,0.30)',
+              boxShadow: '0 2px 8px rgba(232,23,31,0.12)',
+              textTransform: 'uppercase',
             }}
           >
             Generate My Free Report
@@ -797,7 +799,7 @@ export default function ServerContent() {
                 style={{
                   fontFamily: 'Roboto, system-ui, sans-serif',
                   fontSize: '13px',
-                  color: 'rgba(240,242,245,0.70)',
+                  color: '#455A64',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',

@@ -70,7 +70,7 @@ export async function GET(request: Request) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#0B0E17',
+            background: '#00172E',
             fontFamily: 'system-ui, -apple-system, sans-serif',
             position: 'relative',
             overflow: 'hidden',
@@ -85,8 +85,8 @@ export async function GET(request: Request) {
               right: 0,
               bottom: 0,
               backgroundImage: `
-                linear-gradient(rgba(64, 64, 242, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(64, 64, 242, 0.03) 1px, transparent 1px)
+                linear-gradient(rgba(232, 23, 31, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(232, 23, 31, 0.03) 1px, transparent 1px)
               `,
               backgroundSize: '40px 40px',
               pointerEvents: 'none',
@@ -112,14 +112,14 @@ export async function GET(request: Request) {
               xmlns="http://www.w3.org/2000/svg"
             >
               {/* Dot */}
-              <circle cx="8" cy="14" r="4.5" fill="#1856FF" />
+              <circle cx="8" cy="14" r="4.5" fill="#E8171F" />
               {/* Slash */}
               <line
                 x1="18"
                 y1="6"
                 x2="10"
                 y2="22"
-                stroke="#1856FF"
+                stroke="#E8171F"
                 strokeWidth="3"
                 strokeLinecap="round"
               />
@@ -185,17 +185,17 @@ export async function GET(request: Request) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#1856FF', fontWeight: '700' }}>5.1M+</span>
+              <span style={{ color: '#E8171F', fontWeight: '700' }}>5.1M+</span>
               <span style={{ color: '#a0a9d4' }}>Cases</span>
             </div>
-            <div style={{ color: '#1856FF' }}>•</div>
+            <div style={{ color: '#E8171F' }}>•</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#1856FF', fontWeight: '700' }}>84</span>
+              <span style={{ color: '#E8171F', fontWeight: '700' }}>84</span>
               <span style={{ color: '#a0a9d4' }}>Types</span>
             </div>
-            <div style={{ color: '#1856FF' }}>•</div>
+            <div style={{ color: '#E8171F' }}>•</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#1856FF', fontWeight: '700' }}>94</span>
+              <span style={{ color: '#E8171F', fontWeight: '700' }}>94</span>
               <span style={{ color: '#a0a9d4' }}>Districts</span>
             </div>
           </div>
@@ -205,7 +205,7 @@ export async function GET(request: Request) {
             style={{
               width: '100px',
               height: '3px',
-              background: 'linear-gradient(90deg, #1856FF 0%, transparent 100%)',
+              background: 'linear-gradient(90deg, #E8171F 0%, transparent 100%)',
               marginTop: '32px',
               position: 'relative',
               zIndex: 1,

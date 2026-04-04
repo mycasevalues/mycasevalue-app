@@ -65,7 +65,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
     <div
       style={{
         padding: '20px 16px',
-        borderRadius: '16px',
+        borderRadius: '4px',
         background: '#FFFFFF',
         border: `1px solid ${stat.color}20`,
         position: 'relative',
@@ -95,7 +95,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
           {stat.label}
         </div>
         {stat.sublabel && (
-          <div style={{ fontSize: '11px', color: 'rgba(240,242,245,0.40)', marginTop: '2px' }}>
+          <div style={{ fontSize: '11px', color: '#999999', marginTop: '2px' }}>
             {stat.sublabel}
           </div>
         )}

@@ -112,10 +112,10 @@ export default function SiteNav() {
           top: 0,
           zIndex: 200,
           height: '64px',
-          background: 'rgba(11,14,23,0.75)',
-          backdropFilter: 'blur(20px)',
-          WebkitBackdropFilter: 'blur(20px)',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          background: '#FFFFFF',
+          backdropFilter: undefined,
+          WebkitBackdropFilter: undefined,
+          borderBottom: '1px solid #E5EBF0',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -145,8 +145,8 @@ export default function SiteNav() {
             <div style={{
               width: '32px',
               height: '32px',
-              background: '#1856FF',
-              borderRadius: '8px',
+              background: '#E8171F',
+              borderRadius: '4px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -155,7 +155,7 @@ export default function SiteNav() {
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
               </svg>
             </div>
-            <span style={{ fontSize: '18px', fontWeight: 800, color: '#F0F2F5', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>
+            <span style={{ fontSize: '18px', fontWeight: 800, color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>
               MyCaseValue
             </span>
           </Link>
@@ -176,14 +176,14 @@ export default function SiteNav() {
                 className="site-nav-link"
                 style={{
                   padding: '6px 14px',
-                  borderRadius: '8px',
+                  borderRadius: '4px',
                   fontSize: '14px',
                   fontWeight: isActive(link.href) ? 600 : 400,
-                  color: isActive(link.href) ? '#F0F2F5' : 'rgba(240,242,245,0.50)',
+                  color: isActive(link.href) ? '#212529' : '#666666',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   transition: 'all 150ms',
-                  background: isActive(link.href) ? 'rgba(24,86,255,0.15)' : 'transparent',
+                  background: isActive(link.href) ? 'rgba(0,105,151,0.08)' : 'transparent',
                 }}
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
@@ -211,11 +211,11 @@ export default function SiteNav() {
                       padding: '8px 16px',
                       fontSize: '14px',
                       fontWeight: 500,
-                      color: 'rgba(240,242,245,0.70)',
+                      color: '#455A64',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
-                      borderRadius: 'var(--r-md)',
-                      border: '1.5px solid rgba(255,255,255,0.12)',
+                      borderRadius: '4px',
+                      border: '1px solid #D5D8DC',
                       transition: 'all var(--duration-base) ease',
                     }}
                   >
@@ -229,8 +229,8 @@ export default function SiteNav() {
                       fontSize: '14px',
                       fontWeight: 600,
                       color: '#FFFFFF',
-                      background: '#1856FF',
-                      borderRadius: 'var(--r-md)',
+                      background: '#E8171F',
+                      borderRadius: '4px',
                       fontFamily: 'var(--font-body)',
                       border: 'none',
                       cursor: 'pointer',
@@ -249,11 +249,11 @@ export default function SiteNav() {
                       padding: '8px 16px',
                       fontSize: '14px',
                       fontWeight: 500,
-                      color: 'rgba(240,242,245,0.70)',
+                      color: '#455A64',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
-                      borderRadius: '8px',
-                      border: '1px solid rgba(255,255,255,0.12)',
+                      borderRadius: '4px',
+                      border: '1px solid #D5D8DC',
                       transition: 'all 150ms',
                     }}
                   >
@@ -266,12 +266,12 @@ export default function SiteNav() {
                       fontSize: '14px',
                       fontWeight: 600,
                       color: '#FFFFFF',
-                      background: '#1856FF',
-                      borderRadius: '8px',
+                      background: '#E8171F',
+                      borderRadius: '4px',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-display)',
                       transition: 'all 150ms',
-                      boxShadow: '0 2px 8px rgba(24,86,255,0.30)',
+                      boxShadow: '0 2px 8px rgba(232,23,31,0.20)',
                     }}
                   >
                     Get started free
@@ -293,7 +293,7 @@ export default function SiteNav() {
                 border: 'none',
                 padding: '10px',
                 cursor: 'pointer',
-                color: '#F0F2F5',
+                color: '#212529',
                 minHeight: '44px',
                 minWidth: '44px',
                 alignItems: 'center',
@@ -338,9 +338,9 @@ export default function SiteNav() {
             inset: 0,
             top: '64px',
             zIndex: 199,
-            background: 'rgba(0,0,0,0.50)',
-            backdropFilter: 'blur(4px)',
-            WebkitBackdropFilter: 'blur(4px)',
+            background: 'rgba(0,23,46,0.40)',
+            backdropFilter: undefined,
+            WebkitBackdropFilter: undefined,
           }}
           onClick={() => { setMobileOpen(false); hamburgerRef.current?.focus(); }}
           aria-hidden="true"
@@ -358,11 +358,11 @@ export default function SiteNav() {
           bottom: 0,
           width: '280px',
           zIndex: 200,
-          background: 'rgba(11,14,23,0.90)',
-          backdropFilter: 'blur(24px)',
-          WebkitBackdropFilter: 'blur(24px)',
-          borderLeft: '1px solid rgba(255,255,255,0.08)',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.50)',
+          background: '#FFFFFF',
+          backdropFilter: undefined,
+          WebkitBackdropFilter: undefined,
+          borderLeft: '1px solid #E5EBF0',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
           transform: mobileOpen ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 250ms ease',
           padding: '24px',
@@ -383,14 +383,14 @@ export default function SiteNav() {
             style={{
               display: 'block',
               padding: '14px 16px',
-              borderRadius: 'var(--r-md)',
+              borderRadius: '4px',
               fontSize: '16px',
               fontWeight: isActive(link.href) ? 600 : 500,
-              color: isActive(link.href) ? '#F0F2F5' : 'rgba(240,242,245,0.60)',
+              color: isActive(link.href) ? '#212529' : '#666666',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               minHeight: '44px',
-              background: isActive(link.href) ? 'rgba(24,86,255,0.15)' : 'transparent',
+              background: isActive(link.href) ? 'rgba(0,105,151,0.08)' : 'transparent',
             }}
             className="site-nav-mobile-link"
             aria-current={isActive(link.href) ? 'page' : undefined}
@@ -399,7 +399,7 @@ export default function SiteNav() {
           </Link>
         ))}
 
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', margin: '12px 0', padding: '12px 0' }}>
+        <div style={{ borderTop: '1px solid #E5EBF0', margin: '12px 0', padding: '12px 0' }}>
           {userEmail ? (
             <>
               <Link
@@ -408,10 +408,10 @@ export default function SiteNav() {
                 style={{
                   display: 'block',
                   padding: '14px 16px',
-                  borderRadius: 'var(--r-md)',
+                  borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 500,
-                  color: 'rgba(240,242,245,0.70)',
+                  color: '#455A64',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   minHeight: '44px',
@@ -426,11 +426,11 @@ export default function SiteNav() {
                   display: 'block',
                   width: '100%',
                   padding: '14px 16px',
-                  borderRadius: 'var(--r-md)',
+                  borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  background: '#1856FF',
+                  background: '#E8171F',
                   fontFamily: 'var(--font-body)',
                   textAlign: 'center',
                   minHeight: '44px',
@@ -450,10 +450,10 @@ export default function SiteNav() {
                 style={{
                   display: 'block',
                   padding: '14px 16px',
-                  borderRadius: 'var(--r-md)',
+                  borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 500,
-                  color: 'rgba(240,242,245,0.70)',
+                  color: '#455A64',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   minHeight: '44px',
@@ -468,11 +468,11 @@ export default function SiteNav() {
                 style={{
                   display: 'block',
                   padding: '14px 16px',
-                  borderRadius: 'var(--r-md)',
+                  borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  background: '#1856FF',
+                  background: '#E8171F',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   textAlign: 'center',
@@ -488,8 +488,8 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .site-nav-link:hover { color: #F0F2F5 !important; }
-        .site-nav-mobile-link:hover { background: rgba(24,86,255,0.10) !important; }
+        .site-nav-link:hover { color: #212529 !important; }
+        .site-nav-mobile-link:hover { background: rgba(0,0,0,0.04) !important; }
         @media (max-width: 768px) {
           .site-nav-center { display: none !important; }
           .site-nav-right { display: none !important; }

@@ -171,21 +171,21 @@ export default function SpanishFAQPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, var(--bg-base) 100%)' }}>
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#EDEEEE' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/es" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#F0F2F5' }}>
+          <a href="/es" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#006997' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Volver a MyCaseValue
           </a>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(17,17,17,0.15)', color: '#F0F2F5' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F0F2F5" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: '#E5EBF0', color: '#006997' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             PREGUNTAS FRECUENTES
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
             Preguntas Frecuentes
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(240,242,245,0.70)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#666666' }}>
             Obtén respuestas a preguntas frecuentes sobre MyCaseValue, datos judicales federales y cómo usar estadísticas de resultados.
           </p>
         </div>
@@ -196,7 +196,7 @@ export default function SpanishFAQPage() {
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
-              <h2 className="text-xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+              <h2 className="text-xl font-display font-bold mb-6" style={{ color: '#212529' }}>
                 {section.category}
               </h2>
               <div className="space-y-3">
@@ -205,11 +205,11 @@ export default function SpanishFAQPage() {
                     key={qIdx}
                     className="group p-5 rounded-xl border transition-colors cursor-pointer"
                     style={{
-                      borderColor: 'var(--border-default)',
-                      background: 'rgba(255,255,255,0.06)',
+                      borderColor: '#D5D8DC',
+                      background: '#FAFBFC',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#F0F2F5' }}>
+                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#212529' }}>
                       <span className="flex-1 text-base leading-relaxed pr-4">
                         {faq.q}
                       </span>
@@ -221,13 +221,13 @@ export default function SpanishFAQPage() {
                         stroke="currentColor"
                         strokeWidth="2"
                         className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        style={{ color: '#F0F2F5', marginTop: '2px' }}
+                        style={{ color: '#212529', marginTop: '2px' }}
                       >
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
-                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,242,245,0.70)' }}>
+                    <div className="pt-4 mt-4 border-t" style={{ borderColor: '#D5D8DC' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: '#666666' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -239,16 +239,16 @@ export default function SpanishFAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.06) 100%)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
+        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             ¿Aún tienes preguntas?
           </h2>
-          <p className="mb-6" style={{ color: 'rgba(240,242,245,0.70)' }}>
+          <p className="mb-6" style={{ color: '#666666' }}>
             Ponte en contacto con nuestro equipo de soporte.
           </p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid #334155', color: '#F0F2F5' }}>
+            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#006997' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contactar Soporte
           </a>
@@ -256,8 +256,8 @@ export default function SpanishFAQPage() {
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: 'rgba(240,242,245,0.70)' }}>
+      <div className="border-t py-6 text-center" style={{ borderColor: '#D5D8DC' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#666666' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente para fines informativos y de investigación.
           Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

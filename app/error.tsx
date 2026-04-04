@@ -20,7 +20,7 @@ export default function Error({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, rgba(5, 15, 30, 0.95) 0%, rgba(10, 20, 40, 0.95) 100%)',
+        background: '#EDEEEE',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         padding: '48px 24px',
       }}
@@ -29,13 +29,11 @@ export default function Error({
         style={{
           maxWidth: 480,
           textAlign: 'center',
-          background: 'rgba(255, 255, 255, 0.06)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          border: '1px solid rgba(255, 255, 255, 0.10)',
-          borderRadius: '12px',
+          background: '#FFFFFF',
+          border: '1px solid #D5D8DC',
+          borderRadius: '4px',
           padding: '48px 32px',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}
       >
         {/* Icon */}
@@ -44,14 +42,14 @@ export default function Error({
             width: 72,
             height: 72,
             borderRadius: '50%',
-            background: 'rgba(24, 86, 255, 0.12)',
+            background: 'rgba(0,105,151,0.08)',
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
             marginBottom: 24,
           }}
         >
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="10" />
             <line x1="12" y1="8" x2="12" y2="12" />
             <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -62,7 +60,7 @@ export default function Error({
           style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: '#F0F2F5',
+            color: '#212529',
             margin: '0 0 8px',
             letterSpacing: '-0.01em',
           }}
@@ -73,7 +71,7 @@ export default function Error({
         <p
           style={{
             fontSize: '15px',
-            color: 'rgba(240, 242, 245, 0.70)',
+            color: '#455A64',
             lineHeight: 1.6,
             margin: '0 0 24px',
             maxWidth: 400,
@@ -89,7 +87,7 @@ export default function Error({
             style={{
               fontFamily: '"PT Mono", monospace',
               fontSize: '12px',
-              color: 'rgba(240, 242, 245, 0.30)',
+              color: '#999999',
               margin: '0 0 24px',
               wordBreak: 'break-all',
             }}
@@ -107,23 +105,23 @@ export default function Error({
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: '#1856FF',
+              background: '#E8171F',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '0px',
               fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
               transition: 'all 200ms',
-              boxShadow: '0 4px 12px rgba(24, 86, 255, 0.3)',
+              boxShadow: 'none',
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLButtonElement).style.background = '#3D72FF';
-              (e.target as HTMLButtonElement).style.boxShadow = '0 8px 24px rgba(24, 86, 255, 0.4)';
+              (e.target as HTMLButtonElement).style.background = '#CC1019';
+              (e.target as HTMLButtonElement).style.boxShadow = 'none';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLButtonElement).style.background = '#1856FF';
-              (e.target as HTMLButtonElement).style.boxShadow = '0 4px 12px rgba(24, 86, 255, 0.3)';
+              (e.target as HTMLButtonElement).style.background = '#E8171F';
+              (e.target as HTMLButtonElement).style.boxShadow = 'none';
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -140,10 +138,10 @@ export default function Error({
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: 'rgba(255, 255, 255, 0.06)',
-              color: '#F0F2F5',
-              border: '1px solid rgba(255, 255, 255, 0.10)',
-              borderRadius: '8px',
+              background: '#F5F5F5',
+              color: '#212529',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',
@@ -151,12 +149,12 @@ export default function Error({
               cursor: 'pointer',
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLAnchorElement).style.background = 'rgba(255, 255, 255, 0.12)';
-              (e.target as HTMLAnchorElement).style.borderColor = 'rgba(255, 255, 255, 0.20)';
+              (e.target as HTMLAnchorElement).style.background = '#EEEEEE';
+              (e.target as HTMLAnchorElement).style.borderColor = '#D5D8DC';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLAnchorElement).style.background = 'rgba(255, 255, 255, 0.06)';
-              (e.target as HTMLAnchorElement).style.borderColor = 'rgba(255, 255, 255, 0.10)';
+              (e.target as HTMLAnchorElement).style.background = '#F5F5F5';
+              (e.target as HTMLAnchorElement).style.borderColor = '#D5D8DC';
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

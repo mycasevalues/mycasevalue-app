@@ -74,7 +74,7 @@ export default function CookieConsent() {
           style={{
             margin: 0,
             fontSize: '0.875rem',
-            color: '#F0F2F5',
+            color: '#212529',
             fontFamily: 'var(--font-body)',
             lineHeight: '1.5',
           }}
@@ -83,7 +83,7 @@ export default function CookieConsent() {
           <Link
             href="/privacy"
             style={{
-              color: '#1856FF',
+              color: '#006997',
               textDecoration: 'underline',
               fontWeight: 500,
             }}
@@ -104,10 +104,10 @@ export default function CookieConsent() {
             onClick={handleAccept}
             style={{
               padding: '0.5rem 1rem',
-              backgroundColor: '#1856FF',
+              backgroundColor: '#E8171F',
               color: 'white',
               border: 'none',
-              borderRadius: '0.375rem',
+              borderRadius: '0px',
               fontSize: '0.875rem',
               fontFamily: 'var(--font-body)',
               fontWeight: 500,
@@ -125,9 +125,9 @@ export default function CookieConsent() {
             style={{
               padding: '0.5rem 1rem',
               backgroundColor: 'transparent',
-              color: '#F0F2F5',
+              color: '#212529',
               border: '1px solid var(--border-default)',
-              borderRadius: '0.375rem',
+              borderRadius: '0px',
               fontSize: '0.875rem',
               fontFamily: 'var(--font-body)',
               fontWeight: 500,

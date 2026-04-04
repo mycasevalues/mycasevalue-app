@@ -46,7 +46,7 @@ export default function ContactPage() {
           style={{
             fontSize: 'clamp(28px, 4vw, 40px)',
             fontWeight: 800,
-            color: '#F0F2F5',
+            color: '#212529',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-1px',
             marginBottom: 12,
@@ -57,7 +57,7 @@ export default function ContactPage() {
         <p
           style={{
             fontSize: 16,
-            color: 'rgba(240,242,245,0.40)',
+            color: '#999999',
             fontFamily: 'var(--font-body)',
             lineHeight: 1.7,
             marginBottom: 48,
@@ -71,19 +71,17 @@ export default function ContactPage() {
           <div
             style={{
               padding: 32,
-              borderRadius: 12,
-              border: '1px solid rgba(255,255,255,0.10)',
-              background: 'rgba(255,255,255,0.06)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.30)',
+              borderRadius: 4,
+              border: '1px solid #D5D8DC',
+              background: '#FFFFFF',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
           >
             <h2
               style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: '#F0F2F5',
+                color: '#212529',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 8,
               }}
@@ -93,7 +91,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 14,
-                color: 'rgba(240,242,245,0.40)',
+                color: '#999999',
                 fontFamily: 'var(--font-body)',
                 lineHeight: 1.6,
                 marginBottom: 16,
@@ -109,7 +107,7 @@ export default function ContactPage() {
                 gap: 8,
                 fontSize: 15,
                 fontWeight: 600,
-                color: '#3D72FF',
+                color: '#CC1019',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
               }}
@@ -126,19 +124,17 @@ export default function ContactPage() {
           <div
             style={{
               padding: 32,
-              borderRadius: 12,
-              border: '1px solid rgba(255,255,255,0.10)',
-              background: 'rgba(255,255,255,0.06)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.30)',
+              borderRadius: 4,
+              border: '1px solid #D5D8DC',
+              background: '#FFFFFF',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
           >
             <h2
               style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: '#F0F2F5',
+                color: '#212529',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 8,
               }}
@@ -148,7 +144,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 14,
-                color: 'rgba(240,242,245,0.40)',
+                color: '#999999',
                 fontFamily: 'var(--font-body)',
                 lineHeight: 1.6,
                 marginBottom: 16,
@@ -164,7 +160,7 @@ export default function ContactPage() {
                 gap: 8,
                 fontSize: 15,
                 fontWeight: 600,
-                color: '#3D72FF',
+                color: '#CC1019',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
               }}
@@ -181,19 +177,17 @@ export default function ContactPage() {
           <div
             style={{
               padding: 32,
-              borderRadius: 12,
-              border: '1px solid rgba(255,255,255,0.10)',
-              background: 'rgba(255,255,255,0.06)',
-              backdropFilter: 'blur(12px)',
-              WebkitBackdropFilter: 'blur(12px)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.30)',
+              borderRadius: 4,
+              border: '1px solid #D5D8DC',
+              background: '#FFFFFF',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
           >
             <h2
               style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: '#F0F2F5',
+                color: '#212529',
                 fontFamily: 'var(--font-display)',
                 marginBottom: 8,
               }}
@@ -203,7 +197,7 @@ export default function ContactPage() {
             <p
               style={{
                 fontSize: 14,
-                color: 'rgba(240,242,245,0.40)',
+                color: '#999999',
                 fontFamily: 'var(--font-body)',
                 lineHeight: 1.6,
                 marginBottom: 16,
@@ -219,7 +213,7 @@ export default function ContactPage() {
                 gap: 8,
                 fontSize: 15,
                 fontWeight: 600,
-                color: '#3D72FF',
+                color: '#CC1019',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
               }}
@@ -238,7 +232,7 @@ export default function ContactPage() {
         <p
           style={{
             fontSize: 13,
-            color: 'rgba(240,242,245,0.40)',
+            color: '#999999',
             fontFamily: 'var(--font-body)',
             textAlign: 'center',
             marginTop: 48,

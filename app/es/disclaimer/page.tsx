@@ -20,15 +20,15 @@ export const metadata: Metadata = {
 
 export default function SpanishDisclaimerPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <h1 className="text-4xl font-display font-bold mb-8" style={{ color: '#F0F2F5' }}>
+        <h1 className="text-4xl font-display font-bold mb-8" style={{ color: '#212529' }}>
           Descargo de Responsabilidad
         </h1>
 
-        <div className="prose max-w-none space-y-6" style={{ color: 'rgba(240,242,245,0.70)' }}>
+        <div className="prose max-w-none space-y-6" style={{ color: '#455A64' }}>
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#212529' }}>
               Declaración General
             </h2>
             <p>
@@ -37,7 +37,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#212529' }}>
               No es Asesoramiento Legal
             </h2>
             <p>
@@ -56,7 +56,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#212529' }}>
               Limitaciones de Datos
             </h2>
             <p>
@@ -72,7 +72,7 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#212529' }}>
               Sin Garantía
             </h2>
             <p>
@@ -86,19 +86,19 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#212529' }}>
               Privacidad de los Datos
             </h2>
             <p>
               La información que proporciones (tipo de caso, estado, etc.) se usa únicamente para generar tu informe. No almacenamos tus datos de forma permanente ni los compartimos con terceros. Consulta nuestra política de privacidad completa en:
             </p>
-            <p className="font-semibold" style={{ color: '#F0F2F5' }}>
+            <p className="font-semibold" style={{ color: '#212529' }}>
               https://mycasevalues.com/privacy
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#212529' }}>
               Limitación de Responsabilidad
             </h2>
             <p>
@@ -107,13 +107,13 @@ export default function SpanishDisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#F0F2F5' }}>
+            <h2 className="text-2xl font-semibold mb-4" style={{ color: '#212529' }}>
               Contacto
             </h2>
             <p>
               Si tienes preguntas sobre este descargo de responsabilidad, contáctanos en:
             </p>
-            <p className="font-semibold" style={{ color: '#F0F2F5' }}>
+            <p className="font-semibold" style={{ color: '#212529' }}>
               support@mycasevalue.com
             </p>
           </section>

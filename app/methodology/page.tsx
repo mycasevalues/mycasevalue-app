@@ -18,17 +18,17 @@ export default function MethodologyPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, var(--bg-base) 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E',  }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(24,86,255,0.12)', color: '#1856FF' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: '#FFF3F4', color: '#E8171F' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             TRANSPARENCY
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
             Data Methodology
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(240,242,245,0.40)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#999999' }}>
             How MyCaseValue processes and presents aggregate outcome data from public federal court records.
           </p>
         </div>
@@ -39,53 +39,53 @@ export default function MethodologyPage() {
         <div className="prose max-w-none">
           {/* Section 1 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>Data Sources</h2>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#212529' }}>Data Sources</h2>
             <div className="space-y-4">
               {[
                 {
                   name: 'Federal Judicial Center — Integrated Database (IDB)',
                   description: 'The IDB contains case-level data for every federal civil case filed since 1970, maintained by the Federal Judicial Center as a public statistical resource. It includes case type (Nature of Suit code), final disposition, procedural progress, jurisdiction basis, and case duration. Currently contains 5.1M+ cases.',
                   badge: 'Primary Source',
-                  color: '#F0F2F5',
+                  color: '#212529',
                   url: 'https://www.fjc.gov/research/idb',
                 },
                 {
                   name: 'CourtListener (Free Law Project)',
                   description: 'We query the CourtListener API and RECAP Archive in real time to surface related federal court opinions and docket records alongside our aggregate outcome data. CourtListener covers 471 jurisdictions with 10M+ opinions and provides free access to PACER documents through the RECAP Archive.',
                   badge: 'Supplementary',
-                  color: '#07CA6B',
+                  color: '#07874A',
                   url: 'https://www.courtlistener.com/',
                 },
                 {
                   name: 'PACER (Public Access to Court Electronic Records)',
                   description: 'PACER is the federal judiciary\'s official electronic records system. Court filings, docket sheets, and case documents referenced in our dataset originate from PACER.',
                   badge: 'Reference',
-                  color: 'rgba(240,242,245,0.30)',
+                  color: '#C0C4C8',
                   url: 'https://pacer.uscourts.gov/',
                 },
                 {
                   name: 'Bureau of Justice Statistics (BJS)',
                   description: 'The BJS publishes benchmark civil trial statistics including verdict and settlement distributions, trial rates, and case processing times for federal and state courts.',
                   badge: 'Benchmark',
-                  color: '#3D72FF',
+                  color: '#CC1019',
                   url: 'https://bjs.ojp.gov/library/publications/civil-bench-and-jury-trials-state-courts-2005',
                 },
                 {
                   name: 'Administrative Office of U.S. Courts',
                   description: 'The AO publishes annual statistical tables on federal court caseloads, median disposition times, and case processing metrics used for our timeline and volume statistics.',
                   badge: 'Primary Source',
-                  color: '#E89558',
+                  color: '#B86E00',
                   url: 'https://www.uscourts.gov/statistics-reports',
                 },
               ].map((source, i) => (
-                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
                   <div className="flex items-start gap-3 mb-2">
-                    <h3 className="text-base font-semibold m-0" style={{ color: '#F0F2F5' }}>{source.name}</h3>
+                    <h3 className="text-base font-semibold m-0" style={{ color: '#212529' }}>{source.name}</h3>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full flex-shrink-0" style={{ background: source.color.replace(')', ', 0.12)').replace('rgba', 'rgba').replace('#', 'rgba(24, 86, 255'), color: source.color }}>
                       {source.badge}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed m-0 mb-2" style={{ color: 'rgba(240,242,245,0.40)' }}>{source.description}</p>
+                  <p className="text-sm leading-relaxed m-0 mb-2" style={{ color: '#999999' }}>{source.description}</p>
                   {source.url && (
                     <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[11px] font-semibold transition-opacity hover:opacity-80" style={{ color: source.color }}>
                       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -99,7 +99,7 @@ export default function MethodologyPage() {
 
           {/* Section 2 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>How We Process Data</h2>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#212529' }}>How We Process Data</h2>
             <div className="space-y-6">
               {[
                 { step: '01', title: 'Ingestion', desc: 'Raw data is pulled from the FJC IDB (updated quarterly) and CourtListener API. Each record is validated for completeness and coded by Nature of Suit (NOS) classification.' },
@@ -110,12 +110,12 @@ export default function MethodologyPage() {
               ].map((s, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-sm font-data font-bold"
-                    style={{ background: '#1856FF', color: '#fff' }}>
+                    style={{ background: '#E8171F', color: '#fff' }}>
                     {s.step}
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold m-0 mb-1" style={{ color: '#F0F2F5' }}>{s.title}</h3>
-                    <p className="text-sm leading-relaxed m-0" style={{ color: 'rgba(240,242,245,0.40)' }}>{s.desc}</p>
+                    <h3 className="text-base font-semibold m-0 mb-1" style={{ color: '#212529' }}>{s.title}</h3>
+                    <p className="text-sm leading-relaxed m-0" style={{ color: '#999999' }}>{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -124,31 +124,31 @@ export default function MethodologyPage() {
 
           {/* Section 3 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>Important Limitations</h2>
-            <div className="p-5 rounded-xl border-l-4" style={{ borderColor: '#E89558', background: 'rgba(232, 149, 88, 0.12)', color: 'rgba(240,242,245,0.40)' }}>
-              <ul className="space-y-3 text-sm leading-relaxed" style={{ margin: 0, paddingLeft: '1rem', color: 'rgba(240,242,245,0.40)' }}>
-                <li>MyCaseValue displays <strong style={{ color: '#F0F2F5' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
-                <li>Win rates reflect <strong style={{ color: '#F0F2F5' }}>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#212529' }}>Important Limitations</h2>
+            <div className="p-5 rounded-xl border-l-4" style={{ borderColor: '#B86E00', background: 'rgba(232, 149, 88, 0.12)', color: '#999999' }}>
+              <ul className="space-y-3 text-sm leading-relaxed" style={{ margin: 0, paddingLeft: '1rem', color: '#999999' }}>
+                <li>MyCaseValue displays <strong style={{ color: '#212529' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
+                <li>Win rates reflect <strong style={{ color: '#212529' }}>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
                 <li>Settlement amounts are not systematically reported in federal court records. Recovery ranges are derived from cases where monetary awards were documented.</li>
                 <li>Past outcomes do not predict future results. Every case has unique facts, parties, and circumstances.</li>
-                <li>This tool is <strong style={{ color: '#F0F2F5' }}>not legal advice</strong>. It does not create an attorney-client relationship. Always consult a licensed attorney.</li>
+                <li>This tool is <strong style={{ color: '#212529' }}>not legal advice</strong>. It does not create an attorney-client relationship. Always consult a licensed attorney.</li>
               </ul>
             </div>
           </section>
 
           {/* Section 4 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>Dataset Coverage</h2>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#212529' }}>Dataset Coverage</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { v: '5.1M+', l: 'Federal cases', c: '#F0F2F5' },
-                { v: '50+', l: 'Years of data', c: '#07CA6B' },
-                { v: '20+', l: 'Case categories', c: '#3D72FF' },
-                { v: '94', l: 'Federal districts', c: 'rgba(240,242,245,0.30)' },
+                { v: '5.1M+', l: 'Federal cases', c: '#212529' },
+                { v: '50+', l: 'Years of data', c: '#07874A' },
+                { v: '20+', l: 'Case categories', c: '#CC1019' },
+                { v: '94', l: 'Federal districts', c: '#C0C4C8' },
               ].map((s, i) => (
-                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
                   <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>
-                  <div className="text-[11px] font-semibold mt-1" style={{ color: 'rgba(240,242,245,0.40)' }}>{s.l}</div>
+                  <div className="text-[11px] font-semibold mt-1" style={{ color: '#999999' }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -156,18 +156,18 @@ export default function MethodologyPage() {
 
           {/* Section 5 */}
           <section className="mb-12">
-            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#F0F2F5' }}>Public Domain Status</h2>
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,242,245,0.40)' }}>
+            <h2 className="text-xl font-display font-bold mb-4" style={{ color: '#212529' }}>Public Domain Status</h2>
+            <p className="text-sm leading-relaxed" style={{ color: '#999999' }}>
               All source data used by MyCaseValue is public domain under 17 U.S.C. § 105 (works of the United States government) or made freely available by the Free Law Project under open-access principles. MyCaseValue's proprietary contribution is in the aggregation, categorization, and presentation of this data — not in the underlying records themselves.
             </p>
           </section>
 
           {/* CTA */}
-          <div className="text-center pt-8 border-t" style={{ borderColor: 'rgba(255,255,255,0.10)' }}>
-            <p className="text-sm mb-4" style={{ color: 'rgba(240,242,245,0.40)' }}>Questions about our methodology?</p>
+          <div className="text-center pt-8 border-t" style={{ borderColor: '#D5D8DC' }}>
+            <p className="text-sm mb-4" style={{ color: '#999999' }}>Questions about our methodology?</p>
             <a href="mailto:support@mycasevalue.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', color: '#F0F2F5' }}>
+              style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Contact Us
             </a>

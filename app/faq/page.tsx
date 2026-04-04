@@ -416,17 +416,17 @@ export default function FAQPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, var(--bg-base) 100%)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E',  }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(24,86,255,0.12)', color: '#1856FF' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: '#FFF3F4', color: '#E8171F' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             FAQ
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
             Frequently Asked Questions
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(240,242,245,0.40)' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#999999' }}>
             Get answers to common questions about MyCaseValue, federal court data, and how to use outcome statistics.
           </p>
         </div>
@@ -437,7 +437,7 @@ export default function FAQPage() {
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
             <section key={sectionIdx}>
-              <h2 className="text-xl font-display font-bold mb-6" style={{ color: '#F0F2F5' }}>
+              <h2 className="text-xl font-display font-bold mb-6" style={{ color: '#212529' }}>
                 {section.category}
               </h2>
               <div className="space-y-3">
@@ -446,13 +446,11 @@ export default function FAQPage() {
                     key={qIdx}
                     className="group p-5 rounded-xl border transition-colors cursor-pointer"
                     style={{
-                      borderColor: 'rgba(255,255,255,0.10)',
-                      background: 'rgba(255,255,255,0.06)',
-                      backdropFilter: 'blur(12px)',
-                      WebkitBackdropFilter: 'blur(12px)',
+                      borderColor: '#D5D8DC',
+                      background: '#FFFFFF',
                     }}
                   >
-                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#F0F2F5' }}>
+                    <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#212529' }}>
                       <span className="flex-1 text-base leading-relaxed pr-4">
                         {faq.q}
                       </span>
@@ -464,13 +462,13 @@ export default function FAQPage() {
                         stroke="currentColor"
                         strokeWidth="2"
                         className="flex-shrink-0 transition-transform group-open:rotate-180"
-                        style={{ color: '#F0F2F5', marginTop: '2px' }}
+                        style={{ color: '#212529', marginTop: '2px' }}
                       >
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
-                    <div className="pt-4 mt-4 border-t" style={{ borderColor: 'rgba(255,255,255,0.10)' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,242,245,0.40)' }}>
+                    <div className="pt-4 mt-4 border-t" style={{ borderColor: '#D5D8DC' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: '#999999' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -482,16 +480,16 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
+        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Still have questions?
           </h2>
-          <p className="mb-6" style={{ color: 'rgba(240,242,245,0.40)' }}>
+          <p className="mb-6" style={{ color: '#999999' }}>
             Get in touch with our support team.
           </p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', color: '#F0F2F5' }}>
+            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

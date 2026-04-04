@@ -41,7 +41,7 @@ export default function RouteLoadingBar() {
           top: 0;
           left: 0;
           height: 2px;
-          background-color: var(--accent-primary, #1856FF);
+          background-color: var(--accent-primary, #E8171F);
           z-index: 9999;
           pointer-events: none;
         }

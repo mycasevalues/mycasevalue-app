@@ -16,7 +16,7 @@ export default function NotFound() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '48px 24px',
-        background: 'linear-gradient(135deg, rgba(5, 15, 30, 0.95) 0%, rgba(10, 20, 40, 0.95) 100%)',
+        background: '#EDEEEE',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         textAlign: 'center',
       }}
@@ -24,13 +24,11 @@ export default function NotFound() {
       <div
         style={{
           maxWidth: 480,
-          background: 'rgba(255, 255, 255, 0.06)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
-          border: '1px solid rgba(255, 255, 255, 0.10)',
-          borderRadius: '12px',
+          background: '#FFFFFF',
+          border: '1px solid #D5D8DC',
+          borderRadius: '4px',
           padding: '48px 32px',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}
       >
         {/* 404 Number */}
@@ -39,7 +37,7 @@ export default function NotFound() {
             fontFamily: '"PT Mono", monospace',
             fontSize: '96px',
             fontWeight: 700,
-            color: 'rgba(240, 242, 245, 0.40)',
+            color: '#999999',
             lineHeight: 1,
             marginBottom: '16px',
             letterSpacing: '-0.02em',
@@ -52,7 +50,7 @@ export default function NotFound() {
           style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: '#F0F2F5',
+            color: '#212529',
             margin: '0 0 12px',
             letterSpacing: '-0.01em',
           }}
@@ -63,7 +61,7 @@ export default function NotFound() {
         <p
           style={{
             fontSize: '15px',
-            color: 'rgba(240, 242, 245, 0.70)',
+            color: '#455A64',
             maxWidth: '420px',
             lineHeight: 1.6,
             margin: '0 0 32px',
@@ -76,12 +74,12 @@ export default function NotFound() {
 
         <style>{`
           .notfound-link-primary:hover {
-            background: #3D72FF;
-            box-shadow: 0 8px 24px rgba(24, 86, 255, 0.4);
+            background: #CC1019;
+            box-shadow: none;
           }
           .notfound-link-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.20);
+            background: #EEEEEE;
+            border-color: #D5D8DC;
           }
         `}</style>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -93,15 +91,15 @@ export default function NotFound() {
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: '#1856FF',
+              background: '#E8171F',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '0px',
               fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',
               transition: 'all 200ms',
-              boxShadow: '0 4px 12px rgba(24, 86, 255, 0.3)',
+              boxShadow: 'none',
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -119,10 +117,10 @@ export default function NotFound() {
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: 'rgba(255, 255, 255, 0.06)',
-              color: '#F0F2F5',
-              border: '1px solid rgba(255, 255, 255, 0.10)',
-              borderRadius: '8px',
+              background: '#F5F5F5',
+              color: '#212529',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',
