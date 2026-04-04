@@ -277,8 +277,8 @@ export default function CalculatorPage() {
                 <p className="text-[10px] mt-1" style={{ color: '#6B7280' }}>P25 estimate</p>
               </div>
               {/* Median */}
-              <div className="rounded-lg p-5 text-center" style={{ background: 'rgba(129,140,248,0.06)', border: '2px solid #818CF8' }}>
-                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-2" style={{ color: '#818CF8' }}>
+              <div className="rounded-lg p-5 text-center" style={{ background: 'rgba(129,140,248,0.06)', border: '2px solid #8B5CF6' }}>
+                <p className="text-[10px] font-bold uppercase tracking-[1px] mb-2" style={{ color: '#8B5CF6' }}>
                   Median
                 </p>
                 <p className="text-2xl font-black" style={{ color: '#111111', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
