@@ -67,11 +67,11 @@ export default async function DistrictPage({ params }: PageProps) {
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ background: 'var(--bg-base)', color: '#111111' }}
+        style={{ background: '#EDEEEE', color: '#212529' }}
       >
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-4">District not found</h1>
-          <p className="mb-6" style={{ color: '#455A64' }}>
+          <h1 className="text-3xl font-bold mb-4" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>District not found</h1>
+          <p className="mb-6" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
             The district "{slug}" does not exist in our database.
           </p>
           <Link
@@ -143,44 +143,60 @@ export default async function DistrictPage({ params }: PageProps) {
     <div
       className="min-h-screen"
       style={{
-        background: 'var(--bg-base)',
-        color: '#111111',
+        background: '#EDEEEE',
+        color: '#455A64',
         fontFamily: 'var(--font-body)',
       }}
     >
       <style>{`
         .district-header {
           background: #00172E;
-          color: white;
+          color: #FFFFFF;
         }
 
         .district-breadcrumb-link {
-          color: rgba(255, 255, 255, 0.7);
+          color: #D5D8DC;
           text-decoration: none;
           transition: color 0.2s ease;
           font-family: var(--font-body);
         }
 
         .district-breadcrumb-link:hover {
-          color: white;
+          color: #FFFFFF;
         }
 
         .district-breadcrumb-separator {
-          color: rgba(255, 255, 255, 0.5);
+          color: #8B92A1;
+          margin: 0 6px;
+        }
+
+        .district-badge {
+          display: inline-block;
+          background: #E8171F;
+          color: #FFFFFF;
+          padding: 6px 12px;
+          border-radius: 4px;
+          font-size: 11px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-family: var(--font-body);
+          margin-left: 12px;
         }
 
         .stat-card {
           background: #FFFFFF;
-          border: 1px solid #E0E0E0;
+          border: 1px solid #D5D8DC;
           border-radius: 4px;
           padding: 24px;
           text-align: center;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
           transition: box-shadow 0.2s ease, transform 0.2s ease;
         }
 
         .stat-card:hover {
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          transform: translateY(-2px);
         }
 
         .stat-number {
@@ -201,6 +217,13 @@ export default async function DistrictPage({ params }: PageProps) {
           font-family: var(--font-body);
         }
 
+        .card-container {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 4px;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
         .case-table {
           width: 100%;
           border-collapse: collapse;
@@ -211,7 +234,7 @@ export default async function DistrictPage({ params }: PageProps) {
         }
 
         .case-table thead th {
-          color: white;
+          color: #FFFFFF;
           padding: 16px;
           text-align: left;
           font-weight: 600;
@@ -224,6 +247,7 @@ export default async function DistrictPage({ params }: PageProps) {
 
         .case-table tbody tr {
           transition: background-color 0.2s ease;
+          border-bottom: 1px solid #D5D8DC;
         }
 
         .case-table tbody tr:nth-child(odd) {
@@ -235,26 +259,26 @@ export default async function DistrictPage({ params }: PageProps) {
         }
 
         .case-table tbody tr:hover {
-          background: #F0F0F0;
+          background: #F5F6F7;
         }
 
         .case-table tbody td {
           padding: 16px;
           border: none;
           font-size: 14px;
-          color: #111111;
+          color: #455A64;
           font-family: var(--font-body);
         }
 
         .related-district-pill {
           display: inline-block;
           background: #FFFFFF;
-          border: 1px solid #E0E0E0;
+          border: 1px solid #D5D8DC;
           border-radius: 20px;
           padding: 12px 16px;
           margin: 8px;
           text-decoration: none;
-          color: #00172E;
+          color: #006997;
           font-weight: 500;
           font-size: 14px;
           transition: all 0.2s ease;
@@ -263,13 +287,13 @@ export default async function DistrictPage({ params }: PageProps) {
 
         .related-district-pill:hover {
           background: #00172E;
-          color: white;
+          color: #FFFFFF;
           border-color: #00172E;
         }
 
         .cta-button-primary {
           background: #E8171F;
-          color: white;
+          color: #FFFFFF;
           padding: 16px 24px;
           border-radius: 4px;
           text-decoration: none;
@@ -278,11 +302,56 @@ export default async function DistrictPage({ params }: PageProps) {
           display: inline-block;
           transition: all 0.2s ease;
           font-family: var(--font-body);
+          border: none;
+          cursor: pointer;
         }
 
         .cta-button-primary:hover {
           background: #CC0000;
           box-shadow: 0 4px 12px rgba(232, 23, 31, 0.3);
+          transform: translateY(-1px);
+        }
+
+        .section-heading {
+          color: #212529;
+          font-family: var(--font-display);
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 24px;
+        }
+
+        .subsection-heading {
+          color: #212529;
+          font-family: var(--font-display);
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        .body-text {
+          color: #455A64;
+          font-family: var(--font-body);
+        }
+
+        .teal-link {
+          color: #006997;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        .teal-link:hover {
+          color: #005078;
+        }
+
+        .card-section {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 4px;
+          padding: 32px;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .bg-subtle {
+          background: #EDEEEE;
         }
       `}</style>
 
@@ -290,12 +359,11 @@ export default async function DistrictPage({ params }: PageProps) {
       <header className="district-header px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-[960px] mx-auto">
           {/* Breadcrumb */}
-          <nav className="mb-6">
-            <div className="flex items-center gap-2 text-sm">
+          <nav className="mb-8">
+            <div className="flex items-center text-sm">
               <Link
                 href="/"
                 className="district-breadcrumb-link"
-                style={{ fontFamily: 'var(--font-body)' }}
               >
                 Home
               </Link>
@@ -303,34 +371,37 @@ export default async function DistrictPage({ params }: PageProps) {
               <Link
                 href="/districts"
                 className="district-breadcrumb-link"
-                style={{ fontFamily: 'var(--font-body)' }}
               >
                 Districts
               </Link>
               <span className="district-breadcrumb-separator">›</span>
-              <span style={{ color: 'white', fontFamily: 'var(--font-body)' }}>{state.label}</span>
+              <span style={{ color: '#FFFFFF', fontFamily: 'var(--font-body)' }}>{state.label}</span>
             </div>
           </nav>
 
-          {/* District Name */}
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-2"
-            style={{
-              color: 'white',
-              letterSpacing: '-2px',
-              lineHeight: 1.1,
-              fontFamily: 'var(--font-display)',
-            }}
-          >
-            {state.label}
-          </h1>
+          {/* District Name with Badge */}
+          <div className="flex items-center gap-3 flex-wrap mb-2">
+            <h1
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold"
+              style={{
+                color: '#FFFFFF',
+                letterSpacing: '-2px',
+                lineHeight: 1.1,
+                fontFamily: 'var(--font-display)',
+                margin: 0,
+              }}
+            >
+              {state.label}
+            </h1>
+            <span className="district-badge">District</span>
+          </div>
 
-          {/* Circuit Subtitle */}
+          {/* Court Info */}
           {circuit && (
             <p
               className="text-lg sm:text-xl mb-6"
               style={{
-                color: 'rgba(255, 255, 255, 0.7)',
+                color: '#D5D8DC',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -339,13 +410,13 @@ export default async function DistrictPage({ params }: PageProps) {
           )}
 
           {/* Stats Pills */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-4">
             <span
               className="px-4 py-2 rounded-full text-sm font-semibold"
               style={{
-                background: 'rgba(255, 255, 255, 0.15)',
-                color: 'white',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                background: 'rgba(255, 255, 255, 0.12)',
+                color: '#D5D8DC',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -365,9 +436,9 @@ export default async function DistrictPage({ params }: PageProps) {
             <span
               className="px-4 py-2 rounded-full text-sm font-semibold"
               style={{
-                background: 'rgba(255, 255, 255, 0.15)',
-                color: 'white',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                background: 'rgba(255, 255, 255, 0.12)',
+                color: '#D5D8DC',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -410,20 +481,8 @@ export default async function DistrictPage({ params }: PageProps) {
       {circuitDetail && (
         <section className="px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-[960px] mx-auto">
-            <div
-              className="rounded-[4px] p-6 sm:p-8"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid #E0E0E0',
-              }}
-            >
-              <h2
-                className="text-2xl font-bold mb-8"
-                style={{
-                  color: '#111111',
-                  fontFamily: 'var(--font-display)',
-                }}
-              >
+            <div className="card-section">
+              <h2 className="section-heading">
                 {circuit} Circuit Overview
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
@@ -454,8 +513,8 @@ export default async function DistrictPage({ params }: PageProps) {
               </div>
 
               {circuitDetail.types && circuitDetail.types.length > 0 && (
-                <div className="border-t" style={{ borderColor: '#E0E0E0', paddingTop: '24px' }}>
-                  <h3 className="text-lg font-bold mb-6" style={{ color: '#111111', fontFamily: 'var(--font-display)' }}>
+                <div className="border-t" style={{ borderColor: '#D5D8DC', paddingTop: '24px', marginTop: '24px' }}>
+                  <h3 className="subsection-heading mb-6">
                     Common Case Types
                   </h3>
                   <div className="space-y-4">
@@ -506,20 +565,15 @@ export default async function DistrictPage({ params }: PageProps) {
       {/* Top Case Types Section - Table Format */}
       <section className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-[960px] mx-auto">
-          <h2
-            className="text-2xl font-bold mb-6"
-            style={{
-              color: '#111111',
-              fontFamily: 'var(--font-display)',
-            }}
-          >
+          <h2 className="section-heading">
             Case Type Breakdown in {state.label}
           </h2>
           <div
             className="rounded-[4px] overflow-hidden"
             style={{
               background: '#FFFFFF',
-              border: '1px solid #E0E0E0',
+              border: '1px solid #D5D8DC',
+              boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
             }}
           >
             <table className="case-table">
@@ -568,22 +622,10 @@ export default async function DistrictPage({ params }: PageProps) {
       {libDistrictStats && (
         <section className="px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-[960px] mx-auto">
-            <h2
-              className="text-2xl font-bold mb-6"
-              style={{
-                color: '#111111',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
+            <h2 className="section-heading">
               Detailed Analytics
             </h2>
-            <div
-              className="rounded-[4px] p-6 sm:p-8"
-              style={{
-                background: '#FFFFFF',
-                border: '1px solid #E0E0E0',
-              }}
-            >
+            <div className="card-section">
               <DistrictCharts stats={libDistrictStats} />
             </div>
           </div>
@@ -594,13 +636,7 @@ export default async function DistrictPage({ params }: PageProps) {
       {circuit && (
         <section className="px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-[960px] mx-auto">
-            <h2
-              className="text-2xl font-bold mb-8"
-              style={{
-                color: '#111111',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
+            <h2 className="section-heading mb-8">
               Other Districts in the {circuit} Circuit
             </h2>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -626,24 +662,24 @@ export default async function DistrictPage({ params }: PageProps) {
           <div
             className="rounded-[4px] p-8 sm:p-12 text-center"
             style={{
-              background: '#F8F9FA',
-              border: '1px solid #E0E0E0',
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
             }}
           >
             <h2
               className="text-2xl sm:text-3xl font-bold mb-4"
               style={{
-                color: '#00172E',
+                color: '#212529',
                 fontFamily: 'var(--font-display)',
               }}
             >
               Calculate Your Case Value in {state.label}
             </h2>
             <p
-              className="mb-8 text-lg"
+              className="mb-8 text-lg body-text"
               style={{
                 color: '#455A64',
-                fontFamily: 'var(--font-body)',
               }}
             >
               Get an instant estimate based on actual court data from {state.label}
@@ -651,7 +687,6 @@ export default async function DistrictPage({ params }: PageProps) {
             <Link
               href="/calculator"
               className="cta-button-primary"
-              style={{ fontFamily: 'var(--font-body)' }}
             >
               Start Case Value Calculator
             </Link>
@@ -663,15 +698,14 @@ export default async function DistrictPage({ params }: PageProps) {
       <section className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-[960px] mx-auto">
           <div
-            className="rounded-[4px] p-6 text-sm"
+            className="rounded-[4px] p-6 text-sm body-text"
             style={{
-              background: 'rgba(59, 130, 246, 0.08)',
-              border: '1px solid rgba(59, 130, 246, 0.3)',
-              color: '#111111',
-              fontFamily: 'var(--font-body)',
+              background: '#F8F9FA',
+              border: '1px solid #D5D8DC',
+              color: '#455A64',
             }}
           >
-            <strong>Disclaimer:</strong> MyCaseValue provides aggregate data from public federal court records for
+            <strong style={{ color: '#212529' }}>Disclaimer:</strong> MyCaseValue provides aggregate data from public federal court records for
             informational purposes only. This is not legal advice. Actual case outcomes vary significantly based on
             specific facts, jurisdiction, judge, and counsel quality. Always consult with a qualified attorney about
             your specific situation.

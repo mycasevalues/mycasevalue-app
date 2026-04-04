@@ -176,28 +176,28 @@ export default async function NOSPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: "var(--font-body)", background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ fontFamily: 'var(--font-body)', background: '#EDEEEE', color: '#455A64' }}>
       <style>{`
         .nos-header {
           background: #00172E;
-          color: white;
+          color: #FFFFFF;
         }
 
         .breadcrumb {
           font-size: 13px;
           font-family: var(--font-body);
-          color: rgba(255, 255, 255, 0.7);
+          color: #D5D8DC;
           margin-bottom: 16px;
         }
 
         .breadcrumb a {
-          color: rgba(255, 255, 255, 0.7);
+          color: #D5D8DC;
           text-decoration: none;
-          transition: color 0.2s;
+          transition: color 0.2s ease;
         }
 
         .breadcrumb a:hover {
-          color: rgba(255, 255, 255, 1);
+          color: #FFFFFF;
         }
 
         .breadcrumb-separator {
@@ -206,27 +206,29 @@ export default async function NOSPage({ params }: PageProps) {
 
         .nos-badge {
           display: inline-block;
-          padding: 6px 12px;
-          background: rgba(232, 23, 31, 0.15);
-          color: #E8171F;
-          border-radius: 6px;
+          padding: 8px 14px;
+          background: #E8171F;
+          color: #FFFFFF;
+          border-radius: 4px;
           font-size: 12px;
           font-weight: 700;
-          border: 1px solid rgba(232, 23, 31, 0.3);
+          border: none;
+          letter-spacing: 0.5px;
+          font-family: var(--font-display);
         }
 
         .stat-card {
-          background: white;
+          background: #FFFFFF;
           border: 1px solid #D5D8DC;
           border-radius: 4px;
           padding: 20px;
           text-align: center;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-          transition: all 0.3s ease;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+          transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
         .stat-card:hover {
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
           transform: translateY(-2px);
         }
 
@@ -253,25 +255,25 @@ export default async function NOSPage({ params }: PageProps) {
           border-radius: 4px;
           overflow: hidden;
           background: #EDEEEE;
+          margin-bottom: 16px;
         }
 
         .outcome-segment {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: white;
+          color: #FFFFFF;
           font-size: 11px;
           font-weight: 600;
           font-family: var(--font-display);
-          transition: opacity 0.2s;
+          transition: opacity 0.2s ease;
         }
 
         .outcome-legend {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 16px;
-          margin-top: 20px;
-          padding-top: 20px;
+          padding-top: 16px;
           border-top: 1px solid #E5E7EB;
         }
 
@@ -281,6 +283,7 @@ export default async function NOSPage({ params }: PageProps) {
           gap: 8px;
           font-size: 13px;
           font-family: var(--font-body);
+          color: #455A64;
         }
 
         .legend-color {
@@ -291,20 +294,19 @@ export default async function NOSPage({ params }: PageProps) {
         }
 
         .related-card {
-          background: white;
+          background: #FFFFFF;
           border: 1px solid #D5D8DC;
           border-radius: 4px;
           padding: 16px;
           text-decoration: none;
           color: inherit;
-          transition: all 0.3s ease;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
           display: block;
-          cursor: pointer;
         }
 
         .related-card:hover {
-          border-color: #00172E;
-          box-shadow: 0 4px 12px rgba(0, 23, 46, 0.1);
+          border-color: #006997;
+          box-shadow: 0 4px 12px rgba(0, 105, 151, 0.12);
           transform: translateY(-2px);
         }
 
@@ -320,7 +322,7 @@ export default async function NOSPage({ params }: PageProps) {
         .related-card-name {
           font-size: 14px;
           font-weight: 600;
-          color: #00172E;
+          color: #212529;
           margin-top: 8px;
           font-family: var(--font-display);
         }
@@ -357,17 +359,18 @@ export default async function NOSPage({ params }: PageProps) {
 
         .cta-button {
           background: #E8171F;
-          color: white;
+          color: #FFFFFF;
           padding: 14px 28px;
           border-radius: 4px;
           text-decoration: none;
           display: inline-block;
           font-size: 14px;
-          font-weight: 600;
+          font-weight: 700;
           font-family: var(--font-display);
           border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
           box-shadow: 0 2px 8px rgba(232, 23, 31, 0.2);
         }
 
@@ -380,17 +383,17 @@ export default async function NOSPage({ params }: PageProps) {
         .section-title {
           font-size: 20px;
           font-weight: 700;
-          color: #00172E;
+          color: #212529;
           margin-bottom: 20px;
           font-family: var(--font-display);
         }
 
         .content-box {
-          background: white;
+          background: #FFFFFF;
           border: 1px solid #D5D8DC;
           border-radius: 4px;
           padding: 24px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
         }
       `}</style>
 
@@ -400,17 +403,17 @@ export default async function NOSPage({ params }: PageProps) {
           <div className="breadcrumb">
             <Link href="/">Home</Link>
             <span className="breadcrumb-separator">/</span>
-            <Link href="/nos">Cases</Link>
+            <Link href="/nos">Case Types</Link>
             <span className="breadcrumb-separator">/</span>
-            <span>{nosInfo.label}</span>
+            <span style={{ color: '#FFFFFF' }}>{nosInfo.label}</span>
           </div>
 
-          <div className="flex items-start justify-between mb-4">
+          <div className="flex items-start justify-between gap-6">
             <div className="flex-1">
-              <h1 style={{ fontSize: '36px', fontWeight: 700, margin: '0 0 12px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
+              <h1 style={{ fontSize: '36px', fontWeight: 700, margin: '0 0 12px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2, color: '#FFFFFF' }}>
                 {nosInfo.label}
               </h1>
-              <p style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.8)', margin: 0, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '14px', color: '#D5D8DC', margin: 0, fontFamily: 'var(--font-body)' }}>
                 {nosInfo.category}
               </p>
             </div>
@@ -515,7 +518,7 @@ export default async function NOSPage({ params }: PageProps) {
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-16 text-center" style={{ background: '#FFFFFF', borderTop: '1px solid #D5D8DC' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 12px 0', color: '#00172E', fontFamily: 'var(--font-display)' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 12px 0', color: '#212529', fontFamily: 'var(--font-display)' }}>
             Research Your {nosInfo.label} Case
           </h2>
           <p style={{ fontSize: '15px', color: '#455A64', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
