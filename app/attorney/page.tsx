@@ -216,7 +216,8 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
     title: 'Opposing Counsel Analysis',
     description:
       'Research opposing counsel\'s track record, strategies, and settlement patterns instantly.',
-    badge: 'coming-soon' as const,
+    badge: 'available' as const,
+    href: '/attorney/opposing-counsel',
   },
   {
     icon: <TargetIcon />,
@@ -231,28 +232,32 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
     title: 'PACER Monitoring',
     description:
       'Real-time alerts on case developments, filings, and motions across federal courts.',
-    badge: 'coming-soon' as const,
+    badge: 'available' as const,
+    href: '/attorney/pacer-monitor',
   },
   {
     icon: <ChartIcon />,
     title: 'Bulk Case Analysis',
     description:
       'Analyze portfolios of cases for pattern recognition, risk clustering, and outcome trends.',
-    badge: 'coming-soon' as const,
+    badge: 'available' as const,
+    href: '/attorney/bulk-analysis',
   },
   {
     icon: <PeopleIcon />,
     title: 'Team Workspace',
     description:
       'Collaborate with colleagues, share reports, annotations, and case insights seamlessly.',
-    badge: 'coming-soon' as const,
+    badge: 'available' as const,
+    href: '/attorney/team-workspace',
   },
   {
     icon: <APIIcon />,
     title: 'API Access',
     description:
       'Programmatic access to MyCaseValue data via REST API for custom integrations.',
-    badge: 'coming-soon' as const,
+    badge: 'available' as const,
+    href: '/attorney/api-access',
   },
 ];
 
@@ -390,56 +395,17 @@ export default function AttorneyPage() {
             </p>
           </div>
 
-          {/* Available Now Features */}
-          <div>
-            <h3
-              style={{
-                margin: '0 0 24px 0',
-                fontSize: '20px',
-                fontWeight: '600',
-                fontFamily: 'var(--font-display)',
-                color: '#111111',
-              }}
-            >
-              Available Now
-            </h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '24px',
-              }}
-            >
-              {features.filter((f) => f.badge === 'available').map((feature, index) => (
-                <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} badge={feature.badge} href={feature.href} />
-              ))}
-            </div>
-          </div>
-
-          {/* In Development Features */}
-          <div>
-            <h3
-              style={{
-                margin: '0 0 24px 0',
-                fontSize: '20px',
-                fontWeight: '600',
-                fontFamily: 'var(--font-display)',
-                color: '#111111',
-              }}
-            >
-              In Development
-            </h3>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '24px',
-              }}
-            >
-              {features.filter((f) => f.badge === 'coming-soon').map((feature, index) => (
-                <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} badge={feature.badge} href={feature.href} />
-              ))}
-            </div>
+          {/* All Features */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '24px',
+            }}
+          >
+            {features.map((feature, index) => (
+              <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} badge={feature.badge} href={feature.href} />
+            ))}
           </div>
         </div>
       </section>
