@@ -150,13 +150,19 @@ export default function CasePredictorPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
-      <style>{focusStyle}</style>
+      <style>{focusStyle}
+        {`
+        button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
+        `}
+      </style>
       {/* Header */}
       <div style={{ background: '#00172E', borderBottom: '1px solid #D5D8DC', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#E8171F', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/" style={{ fontSize: '13px', color: '#E8171F', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
-            Home &gt; Attorney Mode &gt; Case Predictor
+            Home &gt; Attorney Tools &gt; Case Predictor
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
             <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

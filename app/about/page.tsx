@@ -20,7 +20,7 @@ const jsonLd = {
     {
       '@type': 'Organization',
       name: 'MyCaseValue',
-      url: 'https://mycasevalues.com',
+      url: 'https://www.mycasevalues.com',
       logo: 'https://www.mycasevalues.com/icon-512.png',
       description: 'A platform democratizing access to federal court outcome data from 5.1M+ cases.',
       sameAs: [
@@ -40,7 +40,7 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
         { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.mycasevalues.com/about' },
       ],
     },
