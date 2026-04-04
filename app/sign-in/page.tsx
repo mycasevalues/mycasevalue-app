@@ -78,7 +78,7 @@ function SignInForm() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#7C3AED',
+              color: '#8B5CF6',
               textDecoration: 'none',
               fontWeight: 500,
             }}
@@ -189,7 +189,7 @@ function SignInForm() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#7C3AED',
+                  color: '#8B5CF6',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}
@@ -247,10 +247,10 @@ function SignInForm() {
             style={{
               width: '100%',
               padding: '12px 16px',
-              backgroundColor: '#111111',
+              backgroundColor: '#8B5CF6',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '12px',
+              borderRadius: '8px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
               fontWeight: 600,
@@ -317,7 +317,7 @@ function SignInForm() {
             <Link
               href="/sign-up"
               style={{
-                color: '#7C3AED',
+                color: '#8B5CF6',
                 textDecoration: 'none',
                 fontWeight: 600,
               }}
@@ -343,7 +343,7 @@ function SignInForm() {
           <Link
             href="/terms"
             style={{
-              color: '#7C3AED',
+              color: '#8B5CF6',
               textDecoration: 'none',
             }}
             className="auth-link"
@@ -354,7 +354,7 @@ function SignInForm() {
           <Link
             href="/privacy"
             style={{
-              color: '#7C3AED',
+              color: '#8B5CF6',
               textDecoration: 'none',
             }}
             className="auth-link"

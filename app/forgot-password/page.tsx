@@ -46,7 +46,7 @@ export default function ForgotPasswordPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'var(--bg-base)',
+        background: '#F9FAFB',
         padding: '20px',
       }}
     >
@@ -55,7 +55,7 @@ export default function ForgotPasswordPage() {
           width: '100%',
           maxWidth: '440px',
           backgroundColor: '#FFFFFF',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04)',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
           borderRadius: '12px',
           padding: '32px',
         }}
@@ -67,7 +67,7 @@ export default function ForgotPasswordPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#7C3AED',
+              color: '#8B5CF6',
               textDecoration: 'none',
               fontWeight: 500,
             }}
@@ -140,7 +140,7 @@ export default function ForgotPasswordPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#7C3AED',
+                color: '#8B5CF6',
                 textDecoration: 'none',
                 fontWeight: 500,
               }}
@@ -250,10 +250,10 @@ export default function ForgotPasswordPage() {
                 style={{
                   width: '100%',
                   padding: '12px 16px',
-                  backgroundColor: loading ? '#6B7280' : '#111111',
+                  backgroundColor: '#8B5CF6',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '12px',
+                  borderRadius: '8px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '15px',
                   fontWeight: 600,
@@ -273,7 +273,7 @@ export default function ForgotPasswordPage() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#7C3AED',
+                  color: '#8B5CF6',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}
