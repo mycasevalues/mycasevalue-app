@@ -36,7 +36,7 @@ const ScoreRing = ({ value, label, color, size = 80 }: { value: number; label: s
   return (
     <div style={{ textAlign: 'center' }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#F3F4F6" strokeWidth="6" />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="6" />
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -50,11 +50,11 @@ const ScoreRing = ({ value, label, color, size = 80 }: { value: number; label: s
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
           style={{ transition: 'stroke-dashoffset 0.8s ease' }}
         />
-        <text x={size / 2} y={size / 2 + 1} textAnchor="middle" dominantBaseline="middle" fontSize="18" fontWeight="700" fontFamily="var(--font-mono)" fill="#111111">
+        <text x={size / 2} y={size / 2 + 1} textAnchor="middle" dominantBaseline="middle" fontSize="18" fontWeight="700" fontFamily="var(--font-mono)" fill="#F0F2F5">
           {value}%
         </text>
       </svg>
-      <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>{label}</div>
+      <div style={{ fontSize: '11px', color: 'rgba(240,242,245,0.40)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>{label}</div>
     </div>
   );
 };
@@ -121,11 +121,11 @@ export default function CasePredictorPage() {
   const selectStyle: React.CSSProperties = {
     width: '100%',
     padding: '10px 12px',
-    border: '1px solid #E5E7EB',
+    border: '1px solid rgba(255,255,255,0.10)',
     borderRadius: '8px',
     fontSize: '14px',
-    color: '#111111',
-    backgroundColor: '#FFFFFF',
+    color: '#F0F2F5',
+    backgroundColor: 'rgba(255,255,255,0.06)',
     fontFamily: 'var(--font-body)',
   };
 
@@ -133,32 +133,32 @@ export default function CasePredictorPage() {
     display: 'block',
     fontSize: '13px',
     fontWeight: 600,
-    color: '#111111',
+    color: '#F0F2F5',
     marginBottom: '6px',
   };
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F9FAFB', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: 'transparent', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
-      <div style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
+      <div style={{ background: 'rgba(255,255,255,0.04)', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#1856FF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Attorney Mode
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: '#F3E8FF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2">
+            <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(24,86,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M8 10h.01M16 10h.01" />
                 <path d="M9 16c1-1 3-1 6 0" />
               </svg>
             </div>
             <div>
-              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#111111', margin: 0 }}>
+              <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
                 AI Case Outcome Predictor
               </h1>
-              <p style={{ fontSize: '14px', color: '#6B7280', margin: '4px 0 0 0' }}>
+              <p style={{ fontSize: '14px', color: 'rgba(240,242,245,0.40)', margin: '4px 0 0 0' }}>
                 Predict case outcomes using historical federal court data and AI analysis
               </p>
             </div>
@@ -169,8 +169,8 @@ export default function CasePredictorPage() {
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 20px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: p ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
-            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 24px' }}>
+          <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '28px', border: '1px solid rgba(255,255,255,0.10)' }}>
+            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 24px' }}>
               Case Details
             </h2>
 
@@ -230,9 +230,9 @@ export default function CasePredictorPage() {
                           flex: 1,
                           padding: '10px',
                           borderRadius: '8px',
-                          border: `1px solid ${hasAttorney === opt.val ? '#8B5CF6' : '#E5E7EB'}`,
-                          backgroundColor: hasAttorney === opt.val ? '#F3E8FF' : '#FFFFFF',
-                          color: hasAttorney === opt.val ? '#7C3AED' : '#6B7280',
+                          border: `1px solid ${hasAttorney === opt.val ? '#3D72FF' : 'rgba(255,255,255,0.10)'}`,
+                          backgroundColor: hasAttorney === opt.val ? 'rgba(24,86,255,0.12)' : 'rgba(255,255,255,0.04)',
+                          color: hasAttorney === opt.val ? '#3D72FF' : 'rgba(240,242,245,0.40)',
                           fontSize: '13px',
                           fontWeight: 600,
                           cursor: 'pointer',
@@ -262,9 +262,9 @@ export default function CasePredictorPage() {
                   <label style={labelStyle}>Case Strength Assessment</label>
                   <div style={{ display: 'flex', gap: '8px' }}>
                     {[
-                      { val: 'weak', label: 'Weak', color: '#DC2626' },
-                      { val: 'moderate', label: 'Moderate', color: '#D97706' },
-                      { val: 'strong', label: 'Strong', color: '#16A34A' },
+                      { val: 'weak', label: 'Weak', color: '#EA2143' },
+                      { val: 'moderate', label: 'Moderate', color: '#E89558' },
+                      { val: 'strong', label: 'Strong', color: '#07CA6B' },
                     ].map((opt) => (
                       <button
                         key={opt.val}
@@ -274,9 +274,9 @@ export default function CasePredictorPage() {
                           flex: 1,
                           padding: '10px',
                           borderRadius: '8px',
-                          border: `1px solid ${caseStrength === opt.val ? opt.color : '#E5E7EB'}`,
-                          backgroundColor: caseStrength === opt.val ? `${opt.color}10` : '#FFFFFF',
-                          color: caseStrength === opt.val ? opt.color : '#6B7280',
+                          border: `1px solid ${caseStrength === opt.val ? opt.color : 'rgba(255,255,255,0.10)'}`,
+                          backgroundColor: caseStrength === opt.val ? `${opt.color}20` : 'rgba(255,255,255,0.04)',
+                          color: caseStrength === opt.val ? opt.color : 'rgba(240,242,245,0.40)',
                           fontSize: '13px',
                           fontWeight: 600,
                           cursor: 'pointer',
@@ -291,21 +291,21 @@ export default function CasePredictorPage() {
 
                 {/* Toggles */}
                 <div style={{ display: 'flex', gap: '16px' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#111111', cursor: 'pointer', flex: 1 }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#F0F2F5', cursor: 'pointer', flex: 1 }}>
                     <input
                       type="checkbox"
                       checked={priorOffers}
                       onChange={(e) => setPriorOffers(e.target.checked)}
-                      style={{ width: '16px', height: '16px', accentColor: '#8B5CF6' }}
+                      style={{ width: '16px', height: '16px', accentColor: '#1856FF' }}
                     />
                     Prior settlement offers
                   </label>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#111111', cursor: 'pointer', flex: 1 }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#F0F2F5', cursor: 'pointer', flex: 1 }}>
                     <input
                       type="checkbox"
                       checked={documentedEvidence}
                       onChange={(e) => setDocumentedEvidence(e.target.checked)}
-                      style={{ width: '16px', height: '16px', accentColor: '#8B5CF6' }}
+                      style={{ width: '16px', height: '16px', accentColor: '#1856FF' }}
                     />
                     Documented evidence
                   </label>
@@ -313,8 +313,8 @@ export default function CasePredictorPage() {
 
                 {/* Error */}
                 {error && (
-                  <div style={{ padding: '10px 14px', borderRadius: '8px', backgroundColor: '#FEF2F2', border: '1px solid #FECACA' }}>
-                    <p style={{ fontSize: '13px', color: '#991B1B', margin: 0 }}>{error}</p>
+                  <div style={{ padding: '10px 14px', borderRadius: '8px', backgroundColor: 'rgba(234,33,67,0.12)', border: '1px solid rgba(234,33,67,0.30)' }}>
+                    <p style={{ fontSize: '13px', color: '#EA2143', margin: 0 }}>{error}</p>
                   </div>
                 )}
 
@@ -325,7 +325,7 @@ export default function CasePredictorPage() {
                   style={{
                     width: '100%',
                     padding: '14px',
-                    backgroundColor: loading || !caseType ? '#D1D5DB' : '#8B5CF6',
+                    backgroundColor: loading || !caseType ? 'rgba(255,255,255,0.10)' : '#1856FF',
                     color: '#FFFFFF',
                     border: 'none',
                     borderRadius: '8px',
@@ -346,9 +346,9 @@ export default function CasePredictorPage() {
           {p && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Score Cards */}
-              <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
+              <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '28px', border: '1px solid rgba(255,255,255,0.10)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                  <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#111111', margin: 0 }}>
+                  <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
                     Prediction: {p.caseType}
                   </h2>
                   <span style={{
@@ -356,51 +356,51 @@ export default function CasePredictorPage() {
                     borderRadius: '20px',
                     fontSize: '11px',
                     fontWeight: 700,
-                    backgroundColor: p.confidence === 'High' ? '#ECFDF5' : p.confidence === 'Moderate' ? '#FFFBEB' : '#FEF2F2',
-                    color: p.confidence === 'High' ? '#065F46' : p.confidence === 'Moderate' ? '#92400E' : '#991B1B',
+                    backgroundColor: p.confidence === 'High' ? 'rgba(7,202,107,0.12)' : p.confidence === 'Moderate' ? 'rgba(232,149,88,0.12)' : 'rgba(234,33,67,0.12)',
+                    color: p.confidence === 'High' ? '#07CA6B' : p.confidence === 'Moderate' ? '#E89558' : '#EA2143',
                   }}>
                     {p.confidence} Confidence
                   </span>
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '24px' }}>
-                  <ScoreRing value={p.predictedWinRate} label="Win Rate" color={p.predictedWinRate >= 55 ? '#16A34A' : p.predictedWinRate >= 40 ? '#D97706' : '#DC2626'} />
-                  <ScoreRing value={p.predictedSettlementRate} label="Settlement" color="#0D9488" />
+                  <ScoreRing value={p.predictedWinRate} label="Win Rate" color={p.predictedWinRate >= 55 ? '#07CA6B' : p.predictedWinRate >= 40 ? '#E89558' : '#EA2143'} />
+                  <ScoreRing value={p.predictedSettlementRate} label="Settlement" color="#1856FF" />
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ width: 80, height: 80, borderRadius: '50%', border: '6px solid #8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#111111' }}>{p.predictedDurationMonths}mo</span>
+                    <div style={{ width: 80, height: 80, borderRadius: '50%', border: '6px solid #1856FF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <span className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5' }}>{p.predictedDurationMonths}mo</span>
                     </div>
-                    <div style={{ fontSize: '11px', color: '#6B7280', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
+                    <div style={{ fontSize: '11px', color: 'rgba(240,242,245,0.40)', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
                   </div>
                 </div>
 
                 {/* Settlement Range */}
-                <div style={{ background: '#F9FAFB', borderRadius: '8px', padding: '16px', marginBottom: '16px' }}>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: '#6B7280', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '8px', padding: '16px', marginBottom: '16px' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(240,242,245,0.40)', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 10px' }}>
                     Projected Settlement Range
                   </p>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                     <div style={{ textAlign: 'center' }}>
-                      <div className="font-mono" style={{ fontSize: '14px', color: '#6B7280' }}>{formatMoney(p.settlementRange.low)}</div>
-                      <div style={{ fontSize: '10px', color: '#9CA3AF' }}>25th pctile</div>
+                      <div className="font-mono" style={{ fontSize: '14px', color: 'rgba(240,242,245,0.40)' }}>{formatMoney(p.settlementRange.low)}</div>
+                      <div style={{ fontSize: '10px', color: 'rgba(240,242,245,0.30)' }}>25th pctile</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                      <div className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: '#111111' }}>{formatMoney(p.settlementRange.median)}</div>
-                      <div style={{ fontSize: '10px', color: '#9CA3AF' }}>Median</div>
+                      <div className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: '#F0F2F5' }}>{formatMoney(p.settlementRange.median)}</div>
+                      <div style={{ fontSize: '10px', color: 'rgba(240,242,245,0.30)' }}>Median</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                      <div className="font-mono" style={{ fontSize: '14px', color: '#6B7280' }}>{formatMoney(p.settlementRange.high)}</div>
-                      <div style={{ fontSize: '10px', color: '#9CA3AF' }}>75th pctile</div>
+                      <div className="font-mono" style={{ fontSize: '14px', color: 'rgba(240,242,245,0.40)' }}>{formatMoney(p.settlementRange.high)}</div>
+                      <div style={{ fontSize: '10px', color: 'rgba(240,242,245,0.30)' }}>75th pctile</div>
                     </div>
                   </div>
                   {/* Range bar */}
-                  <div style={{ height: '8px', background: '#E5E7EB', borderRadius: '4px', marginTop: '12px', position: 'relative' }}>
+                  <div style={{ height: '8px', background: 'rgba(255,255,255,0.10)', borderRadius: '4px', marginTop: '12px', position: 'relative' }}>
                     <div style={{
                       position: 'absolute',
                       left: '10%',
                       right: '10%',
                       height: '100%',
-                      background: 'linear-gradient(90deg, #8B5CF6, #0D9488)',
+                      background: 'linear-gradient(90deg, #1856FF, #07CA6B)',
                       borderRadius: '4px',
                     }} />
                   </div>
@@ -408,30 +408,30 @@ export default function CasePredictorPage() {
 
                 {/* Quick Stats */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                  <div style={{ padding: '10px', background: '#F9FAFB', borderRadius: '8px' }}>
-                    <p style={{ fontSize: '11px', color: '#6B7280', margin: '0 0 2px' }}>Statute of Limitations</p>
-                    <p className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#111111', margin: 0 }}>{p.statuteOfLimitations}</p>
+                  <div style={{ padding: '10px', background: 'rgba(255,255,255,0.04)', borderRadius: '8px' }}>
+                    <p style={{ fontSize: '11px', color: 'rgba(240,242,245,0.40)', margin: '0 0 2px' }}>Statute of Limitations</p>
+                    <p className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5', margin: 0 }}>{p.statuteOfLimitations}</p>
                   </div>
-                  <div style={{ padding: '10px', background: '#F9FAFB', borderRadius: '8px' }}>
-                    <p style={{ fontSize: '11px', color: '#6B7280', margin: '0 0 2px' }}>Typical Fee Range</p>
-                    <p className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#111111', margin: 0 }}>{p.typicalFeeRange}</p>
+                  <div style={{ padding: '10px', background: 'rgba(255,255,255,0.04)', borderRadius: '8px' }}>
+                    <p style={{ fontSize: '11px', color: 'rgba(240,242,245,0.40)', margin: '0 0 2px' }}>Typical Fee Range</p>
+                    <p className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5', margin: 0 }}>{p.typicalFeeRange}</p>
                   </div>
                 </div>
               </div>
 
               {/* Outcome Distribution */}
-              <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
-                <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#111111', margin: '0 0 16px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '28px', border: '1px solid rgba(255,255,255,0.10)' }}>
+                <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 16px' }}>
                   Predicted Outcome Distribution
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {p.outcomes.filter((o) => o.percentage > 1).map((o) => (
                     <div key={o.label}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-                        <span style={{ fontSize: '13px', color: '#111111' }}>{o.label}</span>
-                        <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#111111' }}>{o.percentage}%</span>
+                        <span style={{ fontSize: '13px', color: '#F0F2F5' }}>{o.label}</span>
+                        <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#F0F2F5' }}>{o.percentage}%</span>
                       </div>
-                      <div style={{ height: '8px', background: '#F3F4F6', borderRadius: '4px', overflow: 'hidden' }}>
+                      <div style={{ height: '8px', background: 'rgba(255,255,255,0.10)', borderRadius: '4px', overflow: 'hidden' }}>
                         <div style={{ height: '100%', width: `${o.percentage}%`, background: o.color, borderRadius: '4px', transition: 'width 0.5s ease' }} />
                       </div>
                     </div>
@@ -440,25 +440,25 @@ export default function CasePredictorPage() {
               </div>
 
               {/* Key Factors */}
-              <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB' }}>
-                <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#111111', margin: '0 0 16px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '28px', border: '1px solid rgba(255,255,255,0.10)' }}>
+                <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 16px' }}>
                   Key Analysis Factors
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {p.keyFactors.map((f, i) => (
                     <div key={i} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
-                      <span style={{ fontSize: '13px', color: '#374151', lineHeight: 1.5 }}>{f}</span>
+                      <span style={{ fontSize: '13px', color: 'rgba(240,242,245,0.70)', lineHeight: 1.5 }}>{f}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Disclaimer */}
-              <div style={{ padding: '14px 18px', backgroundColor: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: '8px' }}>
-                <p style={{ fontSize: '11px', color: '#92400E', margin: 0, lineHeight: 1.5 }}>
+              <div style={{ padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '8px' }}>
+                <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> {result.disclaimer}
                 </p>
               </div>

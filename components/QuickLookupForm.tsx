@@ -49,7 +49,7 @@ export default function QuickLookupForm() {
           borderRadius: '8px',
           fontFamily: 'var(--font-body)',
           fontSize: '15px',
-          color: '#111111',
+          color: '#F0F2F5',
           width: '100%',
           appearance: 'none',
           backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
@@ -85,7 +85,7 @@ export default function QuickLookupForm() {
           borderRadius: '8px',
           fontFamily: 'var(--font-body)',
           fontSize: '15px',
-          color: '#111111',
+          color: '#F0F2F5',
           width: '100%',
           appearance: 'none',
           backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
@@ -107,7 +107,7 @@ export default function QuickLookupForm() {
         type="submit"
         style={{
           height: '48px',
-          background: '#8B5CF6',
+          background: '#1856FF',
           color: '#FFFFFF',
           fontWeight: 600,
           fontSize: '15px',
@@ -124,7 +124,7 @@ export default function QuickLookupForm() {
       <div
         style={{
           fontSize: '12px',
-          color: '#6B7280',
+          color: 'rgba(240,242,245,0.70)',
           textAlign: 'center',
           marginTop: '4px',
         }}

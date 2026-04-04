@@ -1,62 +1,72 @@
 /* ============================================================
-   PAPER DESIGN SYSTEM — LOCKED
+   GLASSMORPHISM DESIGN SYSTEM
    ============================================================
-   Light-mode only. Purple accent (#8B5CF6).
-   Montserrat / Roboto / PT Mono typography.
-
-   DO NOT add dark mode variants.
-   DO NOT change accent colors.
-   DO NOT add theme switching.
-
-   This is the final production design system.
+   Dark-mode glass aesthetic. Electric blue primary (#1856FF).
+   Plus Jakarta Sans / JetBrains Mono typography.
+   Frosted translucent surfaces over rich gradient backgrounds.
    ============================================================ */
 
 :root {
   /* ── BACKGROUNDS ───────────────────────────────────────── */
-  --bg-base:          #F9FAFB;  /* Very light gray page bg */
-  --bg-elevated:      #FFFFFF;  /* Elevated surfaces */
-  --bg-input:         #FFFFFF;  /* Input backgrounds */
-  --bg-skeleton:      #E5E7EB;
-  --bg-hover:         rgba(139,92,246,0.06);
-  --bg-selection:     rgba(139,92,246,0.15);
+  --bg-base:          #0B0E17;  /* Deep dark base */
+  --bg-elevated:      rgba(255,255,255,0.06);  /* Glass surface */
+  --bg-input:         rgba(255,255,255,0.08);  /* Input glass */
+  --bg-skeleton:      rgba(255,255,255,0.08);
+  --bg-hover:         rgba(24,86,255,0.10);
+  --bg-selection:     rgba(24,86,255,0.25);
+
+  /* ── GLASS SURFACES ────────────────────────────────────── */
+  --glass-light:      rgba(255,255,255,0.06);
+  --glass-medium:     rgba(255,255,255,0.10);
+  --glass-heavy:      rgba(255,255,255,0.14);
+  --glass-border:     rgba(255,255,255,0.12);
+  --glass-border-light: rgba(255,255,255,0.08);
+  --glass-border-focus: rgba(24,86,255,0.50);
+
+  /* ── GLASS BLUR VALUES ─────────────────────────────────── */
+  --blur-light:       blur(12px);
+  --blur-medium:      blur(20px);
+  --blur-heavy:       blur(32px);
 
   /* ── FOREGROUNDS ───────────────────────────────────────── */
-  --fg-secondary:     #374151;
-  --fg-subtle:        #9CA3AF;
-  --fg-link:          #8B5CF6;
+  --fg-primary:       #F0F2F5;  /* Primary text */
+  --fg-secondary:     rgba(240,242,245,0.70);
+  --fg-subtle:        rgba(240,242,245,0.40);
+  --fg-link:          #1856FF;
 
-  /* ── PRIMARY ACCENT (Purple) ───────────────────────────── */
-  --accent-primary-hover:   #7C3AED;
-  --accent-primary-subtle:  rgba(139,92,246,0.08);
-  --accent-primary-border:  rgba(139,92,246,0.25);
-  --accent-primary-glow:    rgba(139,92,246,0.12);
-  --accent-light:           #EDE9FE;
+  /* ── PRIMARY ACCENT (Electric Blue) ────────────────────── */
+  --accent-primary:         #1856FF;
+  --accent-primary-hover:   #3D72FF;
+  --accent-primary-subtle:  rgba(24,86,255,0.12);
+  --accent-primary-border:  rgba(24,86,255,0.30);
+  --accent-primary-glow:    rgba(24,86,255,0.20);
+  --accent-light:           rgba(24,86,255,0.08);
 
-  /* ── SECONDARY ACCENT (Deeper Purple) ──────────────────── */
-  --accent-secondary-hover: #6D28D9;
-  --accent-secondary-subtle: rgba(124,58,237,0.10);
-  --accent-secondary-border: rgba(124,58,237,0.25);
+  /* ── SECONDARY ACCENT (Muted Plum) ─────────────────────── */
+  --accent-secondary:       #3A344E;
+  --accent-secondary-hover: #4A4360;
+  --accent-secondary-subtle: rgba(58,52,78,0.30);
+  --accent-secondary-border: rgba(58,52,78,0.40);
 
   /* ── SEMANTIC — OUTCOMES ───────────────────────────────── */
-  --outcome-win:          #16A34A;
-  --outcome-settle:       #D97706;
-  --outcome-loss:         #DC2626;
+  --outcome-win:          #07CA6B;
+  --outcome-settle:       #E89558;
+  --outcome-loss:         #EA2143;
 
   /* ── UI SEMANTIC (STATUS COLORS) ───────────────────────── */
-  --success:              #16A34A;
-  --success-subtle:       rgba(22,163,74,0.10);
-  --warning:              #D97706;
-  --warning-subtle:       rgba(217,119,6,0.10);
-  --danger:               #DC2626;
-  --danger-subtle:        rgba(220,38,38,0.10);
-  --info:                 #0891B2;
-  --info-subtle:          rgba(8,145,178,0.10);
-
+  --success:              #07CA6B;
+  --success-subtle:       rgba(7,202,107,0.12);
+  --warning:              #E89558;
+  --warning-subtle:       rgba(232,149,88,0.12);
+  --danger:               #EA2143;
+  --danger-subtle:        rgba(234,33,67,0.12);
+  --info:                 #1856FF;
+  --info-subtle:          rgba(24,86,255,0.12);
 
   /* ── BORDERS ───────────────────────────────────────────── */
-  --border-default:   #E5E7EB;
-  --border-subtle:    #F3F4F6;
-  --border-focus:     #8B5CF6;
+  --border-default:   rgba(255,255,255,0.10);
+  --border-subtle:    rgba(255,255,255,0.06);
+  --border-focus:     #1856FF;
 
   /* ── TYPOGRAPHY SCALE ──────────────────────────────────── */
   --text-2xs:  0.6875rem; /* 11px */
@@ -65,9 +75,9 @@
   --text-base: 0.9375rem; /* 15px */
 
   /* ── FONT FAMILIES ─────────────────────────────────────── */
-  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
-  --font-body:    'Roboto', system-ui, -apple-system, sans-serif;
-  --font-mono:    'PT Mono', 'Menlo', monospace;
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Menlo', monospace;
 
   /* ── SPACING (4px grid) ────────────────────────────────── */
   --sp-1: 4px;   --sp-2: 8px;
@@ -80,18 +90,19 @@
   --space-12: 48px;
 
   /* ── BORDER RADIUS ─────────────────────────────────────── */
-  --r-xs: 4px;   --r-sm: 4px;   --r-md: 8px;   --r-lg: 12px;
-  --r-xl: 16px;  --r-2xl: 20px; --r-full: 9999px;
+  --r-xs: 4px;   --r-sm: 6px;   --r-md: 10px;  --r-lg: 14px;
+  --r-xl: 18px;  --r-2xl: 24px; --r-full: 9999px;
   /* Legacy aliases */
-  --radius-lg: 12px;
-  --radius-xl: 20px; --radius-full: 9999px;
-  --r-card: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 24px; --radius-full: 9999px;
+  --r-card: 16px;
 
-  /* ── SHADOWS (Clean, neutral) ──────────────────────────── */
-  --shadow-xs:     0 1px 2px rgba(0,0,0,0.05);
-  --shadow-lg:     0 10px 15px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04);
-  --shadow-accent:    0 4px 20px rgba(139,92,246,0.15);
-  --shadow-accent-lg: 0 8px 40px rgba(139,92,246,0.20);
+  /* ── SHADOWS (Glass-aware) ─────────────────────────────── */
+  --shadow-xs:     0 1px 2px rgba(0,0,0,0.30);
+  --shadow-lg:     0 10px 30px rgba(0,0,0,0.40), 0 4px 8px rgba(0,0,0,0.20);
+  --shadow-accent:    0 4px 24px rgba(24,86,255,0.25);
+  --shadow-accent-lg: 0 8px 48px rgba(24,86,255,0.30);
+  --shadow-glass:     0 8px 32px rgba(0,0,0,0.30);
 
   /* ── MOTION ────────────────────────────────────────────── */
   --duration-fast:    140ms;
@@ -108,6 +119,11 @@
 
   /* ── BREAKPOINTS (reference) ───────────────────────────── */
   --bp-md: 768px; --bp-2xl: 1536px;
+
+  /* ── GRADIENT BACKGROUNDS ──────────────────────────────── */
+  --gradient-page: linear-gradient(135deg, #0B0E17 0%, #111827 40%, #0F172A 70%, #0B0E17 100%);
+  --gradient-hero: linear-gradient(160deg, #0B0E17 0%, #131B30 30%, #0F1628 60%, #0B0E17 100%);
+  --gradient-accent: linear-gradient(135deg, #1856FF 0%, #3D72FF 100%);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -115,12 +131,25 @@
    ═══════════════════════════════════════════════════════════ */
 @media (prefers-contrast: high) {
   :root {
-    --fg-secondary:  #1F2937;
-    --border-default: #9CA3AF;
-    --border-focus:  #4C1D95;
-    --outcome-win:   #15803D;
-    --outcome-settle: #B45309;
-    --outcome-loss:  #B91C1C;
+    --fg-secondary:  rgba(255,255,255,0.90);
+    --border-default: rgba(255,255,255,0.30);
+    --border-focus:  #5B9AFF;
+    --outcome-win:   #10E87A;
+    --outcome-settle: #FFB673;
+    --outcome-loss:  #FF4D6A;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   REDUCED TRANSPARENCY
+   ═══════════════════════════════════════════════════════════ */
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-light:   rgba(20,24,35,0.95);
+    --glass-medium:  rgba(20,24,35,0.97);
+    --glass-heavy:   rgba(20,24,35,0.98);
+    --bg-elevated:   rgba(20,24,35,0.95);
+    --bg-input:      rgba(20,24,35,0.95);
   }
 }
 
@@ -177,7 +206,7 @@
 /* Text selection color */
 ::selection {
   background: var(--bg-selection);
-  color: #111111;
+  color: #F0F2F5;
 }
 
 /* Skip to content */
@@ -187,7 +216,7 @@
   left: 0;
   z-index: var(--z-critical);
   padding: 8px 16px;
-  background: #8B5CF6;
+  background: #1856FF;
   color: #fff;
   font-weight: 600;
   text-decoration: none;

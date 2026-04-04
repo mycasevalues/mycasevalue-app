@@ -74,7 +74,7 @@ export default function SignUpPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#F9FAFB',
+          background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)',
           padding: '20px',
         }}
       >
@@ -82,8 +82,10 @@ export default function SignUpPage() {
           style={{
             width: '100%',
             maxWidth: '440px',
-            backgroundColor: '#FFFFFF',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            backgroundColor: 'rgba(255,255,255,0.06)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255,255,255,0.10)',
             borderRadius: '12px',
             padding: '32px',
             textAlign: 'center',
@@ -94,14 +96,14 @@ export default function SignUpPage() {
               width: '56px',
               height: '56px',
               borderRadius: '50%',
-              backgroundColor: '#F0FDF4',
+              backgroundColor: 'rgba(24,86,255,0.12)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 20px',
             }}
           >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16A34A" strokeWidth="2.5">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1856FF" strokeWidth="2.5">
               <path d="M20 6L9 17l-5-5" />
             </svg>
           </div>
@@ -110,7 +112,7 @@ export default function SignUpPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '22px',
               fontWeight: 700,
-              color: '#111111',
+              color: '#F0F2F5',
               margin: '0 0 12px 0',
             }}
           >
@@ -120,19 +122,19 @@ export default function SignUpPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
-              color: '#6B7280',
+              color: 'rgba(240,242,245,0.70)',
               lineHeight: 1.6,
               margin: '0 0 24px 0',
             }}
           >
-            We sent a confirmation link to <strong style={{ color: '#111111' }}>{email}</strong>. Click the link to activate your account.
+            We sent a confirmation link to <strong style={{ color: '#F0F2F5' }}>{email}</strong>. Click the link to activate your account.
           </p>
           <Link
             href="/sign-in"
             style={{
               display: 'inline-block',
               padding: '12px 24px',
-              backgroundColor: '#8B5CF6',
+              backgroundColor: '#1856FF',
               color: '#FFFFFF',
               borderRadius: '8px',
               fontFamily: 'var(--font-body)',
@@ -156,7 +158,7 @@ export default function SignUpPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#F9FAFB',
+        background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)',
         padding: '48px 24px',
       }}
     >
@@ -164,9 +166,10 @@ export default function SignUpPage() {
         style={{
           width: '100%',
           maxWidth: '420px',
-          background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+          background: 'rgba(255,255,255,0.06)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255,255,255,0.10)',
           borderRadius: '12px',
           padding: '40px',
         }}
@@ -178,7 +181,7 @@ export default function SignUpPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#8B5CF6',
+              color: '#1856FF',
               textDecoration: 'none',
               fontWeight: 500,
             }}
@@ -200,7 +203,7 @@ export default function SignUpPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '24px',
               fontWeight: 900,
-              color: '#111111',
+              color: '#F0F2F5',
               margin: 0,
               letterSpacing: '-0.5px',
             }}
@@ -215,7 +218,7 @@ export default function SignUpPage() {
             fontFamily: 'var(--font-display)',
             fontSize: '24px',
             fontWeight: 700,
-            color: '#111111',
+            color: '#F0F2F5',
             margin: '0 0 24px 0',
             lineHeight: 1.2,
           }}
@@ -234,7 +237,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 fontWeight: 500,
-                color: '#111111',
+                color: '#F0F2F5',
                 marginBottom: '8px',
               }}
             >
@@ -251,12 +254,12 @@ export default function SignUpPage() {
               style={{
                 width: '100%',
                 padding: '10px 12px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid rgba(255,255,255,0.12)',
                 borderRadius: '8px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#111111',
-                backgroundColor: '#FFFFFF',
+                color: '#F0F2F5',
+                backgroundColor: 'rgba(255,255,255,0.08)',
                 boxSizing: 'border-box',
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
@@ -272,7 +275,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 fontWeight: 500,
-                color: '#111111',
+                color: '#F0F2F5',
                 marginBottom: '8px',
               }}
             >
@@ -289,12 +292,12 @@ export default function SignUpPage() {
               style={{
                 width: '100%',
                 padding: '10px 12px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid rgba(255,255,255,0.12)',
                 borderRadius: '8px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#111111',
-                backgroundColor: '#FFFFFF',
+                color: '#F0F2F5',
+                backgroundColor: 'rgba(255,255,255,0.08)',
                 boxSizing: 'border-box',
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
@@ -310,7 +313,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 fontWeight: 500,
-                color: '#111111',
+                color: '#F0F2F5',
                 marginBottom: '8px',
               }}
             >
@@ -328,12 +331,12 @@ export default function SignUpPage() {
               style={{
                 width: '100%',
                 padding: '10px 12px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid rgba(255,255,255,0.12)',
                 borderRadius: '8px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#111111',
-                backgroundColor: '#FFFFFF',
+                color: '#F0F2F5',
+                backgroundColor: 'rgba(255,255,255,0.08)',
                 boxSizing: 'border-box',
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
@@ -342,7 +345,7 @@ export default function SignUpPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '12px',
-                color: '#6B7280',
+                color: 'rgba(240,242,245,0.40)',
                 margin: '6px 0 0 0',
               }}
             >
@@ -359,7 +362,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 fontWeight: 500,
-                color: '#111111',
+                color: '#F0F2F5',
                 marginBottom: '8px',
               }}
             >
@@ -377,12 +380,12 @@ export default function SignUpPage() {
               style={{
                 width: '100%',
                 padding: '10px 12px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid rgba(255,255,255,0.12)',
                 borderRadius: '8px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#111111',
-                backgroundColor: '#FFFFFF',
+                color: '#F0F2F5',
+                backgroundColor: 'rgba(255,255,255,0.08)',
                 boxSizing: 'border-box',
                 transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
@@ -408,7 +411,7 @@ export default function SignUpPage() {
                 minWidth: '18px',
                 marginTop: '2px',
                 cursor: 'pointer',
-                accentColor: '#8B5CF6',
+                accentColor: '#1856FF',
               }}
             />
             <label
@@ -416,7 +419,7 @@ export default function SignUpPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#111111',
+                color: '#F0F2F5',
                 lineHeight: 1.5,
                 cursor: 'pointer',
               }}
@@ -425,7 +428,7 @@ export default function SignUpPage() {
               <Link
                 href="/terms"
                 style={{
-                  color: '#8B5CF6',
+                  color: '#1856FF',
                   textDecoration: 'none',
                 }}
                 className="auth-link"
@@ -436,7 +439,7 @@ export default function SignUpPage() {
               <Link
                 href="/privacy"
                 style={{
-                  color: '#8B5CF6',
+                  color: '#1856FF',
                   textDecoration: 'none',
                 }}
                 className="auth-link"
@@ -452,12 +455,12 @@ export default function SignUpPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#DC2626',
+                color: '#FF6B6B',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
-                backgroundColor: '#FEF2F2',
+                backgroundColor: 'rgba(255,107,107,0.12)',
                 borderRadius: '8px',
-                border: '1px solid #FECACA',
+                border: '1px solid rgba(255,107,107,0.30)',
               }}
             >
               {error}
@@ -469,19 +472,19 @@ export default function SignUpPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#DC2626',
+                color: '#FF6B6B',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
-                backgroundColor: '#FEF2F2',
+                backgroundColor: 'rgba(255,107,107,0.12)',
                 borderRadius: '8px',
-                border: '1px solid #FECACA',
+                border: '1px solid rgba(255,107,107,0.30)',
               }}
             >
               An account with this email already exists.{' '}
               <Link
                 href="/sign-in"
                 style={{
-                  color: '#8B5CF6',
+                  color: '#1856FF',
                   textDecoration: 'none',
                   fontWeight: 600,
                 }}
@@ -499,7 +502,7 @@ export default function SignUpPage() {
             style={{
               width: '100%',
               padding: '12px 16px',
-              backgroundColor: '#8B5CF6',
+              backgroundColor: '#1856FF',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '8px',
@@ -509,6 +512,16 @@ export default function SignUpPage() {
               cursor: loading ? 'not-allowed' : 'pointer',
               opacity: loading ? 0.7 : 1,
               transition: 'background-color 0.2s, transform 0.1s',
+            }}
+            onMouseEnter={(e) => {
+              if (!loading) {
+                (e.target as HTMLButtonElement).style.backgroundColor = '#3D72FF';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!loading) {
+                (e.target as HTMLButtonElement).style.backgroundColor = '#1856FF';
+              }
             }}
           >
             {loading ? 'Creating account...' : 'Create Account'}
@@ -527,7 +540,7 @@ export default function SignUpPage() {
             style={{
               flex: 1,
               height: '1px',
-              backgroundColor: 'var(--border-default)',
+              backgroundColor: 'rgba(255,255,255,0.10)',
             }}
           />
           <span
@@ -535,7 +548,7 @@ export default function SignUpPage() {
               padding: '0 12px',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#6B7280',
+              color: 'rgba(240,242,245,0.40)',
               fontWeight: 500,
             }}
           >
@@ -545,7 +558,7 @@ export default function SignUpPage() {
             style={{
               flex: 1,
               height: '1px',
-              backgroundColor: 'var(--border-default)',
+              backgroundColor: 'rgba(255,255,255,0.10)',
             }}
           />
         </div>
@@ -560,7 +573,7 @@ export default function SignUpPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#111111',
+              color: '#F0F2F5',
               margin: 0,
             }}
           >
@@ -568,7 +581,7 @@ export default function SignUpPage() {
             <Link
               href="/sign-in"
               style={{
-                color: '#8B5CF6',
+                color: '#1856FF',
                 textDecoration: 'none',
                 fontWeight: 600,
               }}

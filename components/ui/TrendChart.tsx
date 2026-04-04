@@ -19,10 +19,10 @@ interface TrendChartProps {
 // PAPER DESIGN SYSTEM — Light mode only, no theme switching
 const lightModeColors = {
   bg: '#FFFFFF',
-  border: '#E5E7EB',
+  border: 'rgba(255,255,255,0.10)',
   text: '#111827',
-  muted: '#6B7280',
-  accent: '#111111',
+  muted: 'rgba(240,242,245,0.70)',
+  accent: '#F0F2F5',
 };
 
 export const generateDemoData = (nos?: string): TrendDataPoint[] => {

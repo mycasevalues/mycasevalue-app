@@ -17,17 +17,17 @@ interface HeroStatsProps {
 }
 
 const STATS_EN: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#111111' },
-  { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#111111' },
-  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: '#8B5CF6' },
-  { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '', color: '#111111' },
+  { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#F0F2F5' },
+  { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#F0F2F5' },
+  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: '#1856FF' },
+  { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '', color: '#F0F2F5' },
 ];
 
 const STATS_ES: StatItem[] = [
-  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#111111' },
-  { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: '#111111' },
-  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: '#8B5CF6' },
-  { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '', color: '#111111' },
+  { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#F0F2F5' },
+  { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: '#F0F2F5' },
+  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: '#1856FF' },
+  { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '', color: '#F0F2F5' },
 ];
 
 function useCountUp(target: number, duration: number = 2000, shouldStart: boolean = false): number {
@@ -95,7 +95,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
           {stat.label}
         </div>
         {stat.sublabel && (
-          <div style={{ fontSize: '11px', color: '#9CA3AF', marginTop: '2px' }}>
+          <div style={{ fontSize: '11px', color: 'rgba(240,242,245,0.40)', marginTop: '2px' }}>
             {stat.sublabel}
           </div>
         )}

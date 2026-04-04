@@ -166,7 +166,7 @@ export default async function DashboardPage() {
       style={{
         display: 'flex',
         minHeight: '100vh',
-        background: '#F9FAFB',
+        background: 'transparent',
         fontFamily: 'var(--font-body)',
       }}
     >
@@ -174,8 +174,10 @@ export default async function DashboardPage() {
       <aside
         style={{
           width: '240px',
-          background: '#FFFFFF',
-          borderRight: '1px solid #E5E7EB',
+          background: 'rgba(255,255,255,0.06)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+          borderRight: '1px solid rgba(255,255,255,0.10)',
           padding: '24px 16px',
           flexShrink: 0,
           overflowY: 'auto',
@@ -183,12 +185,12 @@ export default async function DashboardPage() {
       >
         {/* Logo */}
         <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px', padding: '0 8px' }}>
-          <div style={{ width: '28px', height: '28px', background: '#8B5CF6', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: '28px', height: '28px', background: '#1856FF', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
               <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
             </svg>
           </div>
-          <span style={{ fontSize: '16px', fontWeight: 800, color: '#111111', fontFamily: 'var(--font-display)' }}>MyCaseValue</span>
+          <span style={{ fontSize: '16px', fontWeight: 800, color: '#F0F2F5', fontFamily: 'var(--font-display)' }}>MyCaseValue</span>
         </a>
 
         {/* Navigation */}
@@ -200,10 +202,10 @@ export default async function DashboardPage() {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           {/* Header */}
           <div style={{ marginBottom: '40px' }}>
-            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 700, color: '#111111', margin: '0 0 8px 0' }}>
+            <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 8px 0' }}>
               Dashboard
             </h1>
-            <p style={{ fontSize: '15px', color: '#6B7280', margin: 0 }}>
+            <p style={{ fontSize: '15px', color: 'rgba(240,242,245,0.70)', margin: 0 }}>
               {userEmail ? `Signed in as ${userEmail}` : 'Welcome back'}
             </p>
           </div>
@@ -211,58 +213,58 @@ export default async function DashboardPage() {
           {/* Stats Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '32px' }}>
             {/* Current Plan */}
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)' }}>
-              <p style={{ fontSize: '12px', color: '#6B7280', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px' }}>
+            <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
+              <p style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px' }}>
                 Current Plan
               </p>
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: '#111111', margin: 0 }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
                 {planLabel[userPlan] || 'Free'}
               </p>
             </div>
 
             {/* Plan Status */}
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)' }}>
-              <p style={{ fontSize: '12px', color: '#6B7280', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px' }}>
+            <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
+              <p style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px' }}>
                 Plan Status
               </p>
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: planStatusColor, margin: 0 }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: planStatusColor === '#DC2626' ? '#EA2143' : planStatusColor === '#16A34A' ? '#07CA6B' : planStatusColor, margin: 0 }}>
                 {planStatus}
               </p>
             </div>
 
             {/* Member Since */}
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)' }}>
-              <p style={{ fontSize: '12px', color: '#6B7280', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px' }}>
+            <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)' }}>
+              <p style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 8px' }}>
                 Member Since
               </p>
-              <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: '#111111', margin: 0 }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
                 {memberSince}
               </p>
             </div>
 
             {/* Quick Action */}
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '24px', border: '1px solid var(--border-default)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <p style={{ fontSize: '12px', color: '#6B7280', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 12px' }}>
+            <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '24px', border: '1px solid rgba(255,255,255,0.10)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <p style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 12px' }}>
                 Quick Action
               </p>
-              <Link href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: '#8B5CF6', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', fontWeight: 600, textAlign: 'center' }}>
+              <Link href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: '#1856FF', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontSize: '14px', fontWeight: 600, textAlign: 'center' }}>
                 Browse Cases →
               </Link>
             </div>
           </div>
 
           {/* Your Plan Section */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 20px' }}>
+          <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '32px', border: '1px solid rgba(255,255,255,0.10)', marginBottom: '24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 20px' }}>
               Your Plan Includes
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {features.map((feature, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" strokeWidth="2.5">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#07CA6B" strokeWidth="2.5">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span style={{ fontSize: '14px', color: '#111111' }}>{feature}</span>
+                  <span style={{ fontSize: '14px', color: '#F0F2F5' }}>{feature}</span>
                 </div>
               ))}
             </div>
@@ -271,23 +273,25 @@ export default async function DashboardPage() {
           {/* Upgrade CTA — free users only */}
           {!isPaid && (
             <div style={{
-              backgroundColor: '#FFFFFF',
+              backgroundColor: 'rgba(255,255,255,0.06)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
               borderRadius: '12px',
               padding: '32px',
-              border: '2px solid #8B5CF6',
+              border: '2px solid rgba(24,86,255,0.30)',
               textAlign: 'center',
               marginBottom: '24px',
             }}>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 8px' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 8px' }}>
                 Upgrade to unlock more
               </h3>
-              <p style={{ fontSize: '14px', color: '#6B7280', margin: '0 0 20px', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '14px', color: 'rgba(240,242,245,0.70)', margin: '0 0 20px', lineHeight: 1.6 }}>
                 Upgrade to unlock settlement ranges, judge analytics, and PDF export.
               </p>
               <Link href="/pricing" style={{
                 display: 'inline-block',
                 padding: '12px 32px',
-                background: '#8B5CF6',
+                background: '#1856FF',
                 color: '#fff',
                 borderRadius: '8px',
                 textDecoration: 'none',
@@ -302,23 +306,23 @@ export default async function DashboardPage() {
 
           {/* Attorney Tools — Attorney tier */}
           {isAttorney && (
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
+            <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '32px', border: '1px solid rgba(255,255,255,0.10)', marginBottom: '24px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#111111', margin: 0 }}>
+                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
                   Attorney Tools
                 </h2>
-                <Link href="/attorney" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500 }}>
+                <Link href="/attorney" style={{ fontSize: '13px', color: '#1856FF', textDecoration: 'none', fontWeight: 500 }}>
                   View all →
                 </Link>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
                 {[
-                  { label: 'AI Case Predictor', href: '/attorney/case-predictor', desc: 'Predict outcomes', icon: '🧠' },
-                  { label: 'Judge Intelligence', href: '/attorney/judge-intelligence', desc: 'Research judges', icon: '⚖️' },
-                  { label: 'Venue Optimizer', href: '/attorney/venue-optimizer', desc: 'Find best districts', icon: '🎯' },
-                  { label: 'Opposing Counsel', href: '/attorney/opposing-counsel', desc: 'Research counsel', icon: '🔍' },
-                  { label: 'Bulk Analysis', href: '/attorney/bulk-analysis', desc: 'Portfolio analysis', icon: '📊' },
-                  { label: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Case alerts', icon: '📡' },
+                  { label: 'AI Case Predictor', href: '/attorney/case-predictor', desc: 'Predict outcomes', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> },
+                  { label: 'Judge Intelligence', href: '/attorney/judge-intelligence', desc: 'Research judges', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M6 10h12M6 14h12"/></svg> },
+                  { label: 'Venue Optimizer', href: '/attorney/venue-optimizer', desc: 'Find best districts', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg> },
+                  { label: 'Opposing Counsel', href: '/attorney/opposing-counsel', desc: 'Research counsel', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> },
+                  { label: 'Bulk Analysis', href: '/attorney/bulk-analysis', desc: 'Portfolio analysis', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> },
+                  { label: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Case alerts', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m0 8.48l-4.24 4.24M19.78 4.22l-4.24 4.24m0 8.48l4.24 4.24"/></svg> },
                 ].map((tool) => (
                   <Link
                     key={tool.href}
@@ -329,15 +333,18 @@ export default async function DashboardPage() {
                       gap: '12px',
                       padding: '14px 16px',
                       borderRadius: '8px',
-                      border: '1px solid var(--border-default)',
+                      border: '1px solid rgba(255,255,255,0.10)',
                       textDecoration: 'none',
                       transition: 'border-color 0.2s',
+                      color: '#F0F2F5',
                     }}
                   >
-                    <span style={{ fontSize: '24px' }}>{tool.icon}</span>
+                    <div style={{ width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1856FF' }}>
+                      {tool.icon}
+                    </div>
                     <div>
-                      <div style={{ fontSize: '14px', fontWeight: 600, color: '#111111' }}>{tool.label}</div>
-                      <div style={{ fontSize: '12px', color: '#6B7280' }}>{tool.desc}</div>
+                      <div style={{ fontSize: '14px', fontWeight: 600, color: '#F0F2F5' }}>{tool.label}</div>
+                      <div style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)' }}>{tool.desc}</div>
                     </div>
                   </Link>
                 ))}
@@ -347,18 +354,18 @@ export default async function DashboardPage() {
 
           {/* Search History — Unlimited+ only */}
           {isUnlimitedPlus && !isExpired && searchHistory.length > 0 && (
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)', marginBottom: '24px' }}>
-              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 24px' }}>
+            <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '32px', border: '1px solid rgba(255,255,255,0.10)', marginBottom: '24px' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 24px' }}>
                 Search History
               </h2>
               <div>
                 {searchHistory.map((s, i) => (
-                  <div key={i} style={{ padding: '10px 0', borderBottom: i < searchHistory.length - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div key={i} style={{ padding: '10px 0', borderBottom: i < searchHistory.length - 1 ? '1px solid rgba(255,255,255,0.10)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
-                      <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: '#111111' }}>{s.query}</p>
-                      <p style={{ fontSize: '12px', color: '#6B7280', margin: 0 }}>{s.category ? `${s.category} · ` : ''}{new Date(s.searched_at).toLocaleDateString()}</p>
+                      <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: '#F0F2F5' }}>{s.query}</p>
+                      <p style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', margin: 0 }}>{s.category ? `${s.category} · ` : ''}{new Date(s.searched_at).toLocaleDateString()}</p>
                     </div>
-                    <Link href={`/search`} style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none' }}>Search again →</Link>
+                    <Link href={`/search`} style={{ fontSize: '13px', color: '#1856FF', textDecoration: 'none' }}>Search again →</Link>
                   </div>
                 ))}
               </div>
@@ -366,30 +373,30 @@ export default async function DashboardPage() {
           )}
 
           {/* Recent Activity */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', border: '1px solid var(--border-default)' }}>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#111111', margin: '0 0 24px' }}>
+          <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '12px', padding: '32px', border: '1px solid rgba(255,255,255,0.10)' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 24px' }}>
               Recent Activity
             </h2>
             {recentReports.length > 0 ? (
               <div>
                 {recentReports.map((r, i) => (
-                  <div key={i} style={{ padding: '10px 0', borderBottom: i < recentReports.length - 1 ? '1px solid var(--border-default)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div key={i} style={{ padding: '10px 0', borderBottom: i < recentReports.length - 1 ? '1px solid rgba(255,255,255,0.10)' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
-                      <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: '#111111' }}>{getNosLabel(r.category)} · {r.district}</p>
-                      <p style={{ fontSize: '12px', color: '#6B7280', margin: 0 }}>{new Date(r.viewed_at).toLocaleDateString()}</p>
+                      <p style={{ fontSize: '14px', fontWeight: 500, margin: 0, color: '#F0F2F5' }}>{getNosLabel(r.category)} · {r.district}</p>
+                      <p style={{ fontSize: '12px', color: 'rgba(240,242,245,0.40)', margin: 0 }}>{new Date(r.viewed_at).toLocaleDateString()}</p>
                     </div>
-                    <Link href={`/report/${r.category}`} style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none' }}>View →</Link>
+                    <Link href={`/report/${r.category}`} style={{ fontSize: '13px', color: '#1856FF', textDecoration: 'none' }}>View →</Link>
                   </div>
                 ))}
               </div>
             ) : (
               <div style={{ textAlign: 'center', padding: '40px 0' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6B7280" strokeWidth="1.5" style={{ marginBottom: '16px' }}>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(240,242,245,0.40)" strokeWidth="1.5" style={{ marginBottom: '16px' }}>
                   <circle cx="11" cy="11" r="8" />
                   <path d="m21 21-4.35-4.35" />
                 </svg>
-                <p style={{ fontSize: '15px', fontWeight: 600, color: '#111111', margin: '0 0 8px' }}>
-                  No reports yet. <Link href="/search" style={{ color: '#8B5CF6' }}>Start researching →</Link>
+                <p style={{ fontSize: '15px', fontWeight: 600, color: '#F0F2F5', margin: '0 0 8px' }}>
+                  No reports yet. <Link href="/search" style={{ color: '#1856FF' }}>Start researching →</Link>
                 </p>
               </div>
             )}

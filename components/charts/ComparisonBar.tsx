@@ -15,7 +15,7 @@ interface ComparisonBarProps {
 
 export function ComparisonBar({
   data, primaryLabel, compareLabel,
-  primaryColor = '#8B5CF6', compareColor = '#111111',
+  primaryColor = '#1856FF', compareColor = '#F0F2F5',
   unit = '%', lang = 'en',
 }: ComparisonBarProps) {
   const hasCompare = data.some(d => d.compare !== undefined);
@@ -27,12 +27,12 @@ export function ComparisonBar({
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(229,231,235,0.5)" vertical={false} />
           <XAxis
             dataKey="name"
-            tick={{ fontSize: 11, fill: '#6B7280', fontFamily: 'Roboto, system-ui, sans-serif' }}
-            axisLine={{ stroke: '#E5E7EB' }}
+            tick={{ fontSize: 11, fill: 'rgba(240,242,245,0.70)', fontFamily: 'Roboto, system-ui, sans-serif' }}
+            axisLine={{ stroke: 'rgba(255,255,255,0.10)' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 10, fill: '#6B7280' }}
+            tick={{ fontSize: 10, fill: 'rgba(240,242,245,0.70)' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}
@@ -41,7 +41,7 @@ export function ComparisonBar({
             cursor={{ fill: 'rgba(17,17,17,0.04)' }}
             contentStyle={{
               background: 'rgba(255,255,255,0.95)',
-              border: '1px solid #E5E7EB',
+              border: '1px solid rgba(255,255,255,0.10)',
               borderRadius: '10px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',

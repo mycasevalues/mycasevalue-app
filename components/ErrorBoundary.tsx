@@ -63,7 +63,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
           }}>
             <div style={{
               width: 64, height: 64, borderRadius: '50%',
-              background: '#8B5CF6',
+              background: '#1856FF',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               margin: '0 auto 20px',
             }}>
@@ -72,14 +72,14 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
               </svg>
             </div>
             <h2 style={{ fontSize: 22, fontWeight: 700, color: '#111827', marginBottom: 8 }}>Something went wrong</h2>
-            <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, marginBottom: 24 }}>
+            <p style={{ fontSize: 14, color: 'rgba(240,242,245,0.70)', lineHeight: 1.6, marginBottom: 24 }}>
               We encountered an unexpected error. Your data is safe — please try refreshing the page.
             </p>
             <button type="button"
               onClick={() => { this.setState({ hasError: false }); window.location.reload(); }}
               style={{
                 padding: '12px 32px',
-                background: '#8B5CF6',
+                background: '#1856FF',
                 color: 'white',
                 border: 'none',
                 borderRadius: 12,
@@ -90,7 +90,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
             >
               Refresh page
             </button>
-            <p style={{ fontSize: 11, color: '#9CA3AF', marginTop: 16 }}>
+            <p style={{ fontSize: 11, color: 'rgba(240,242,245,0.40)', marginTop: 16 }}>
               If this persists, contact support@mycasevalue.com
             </p>
           </div>

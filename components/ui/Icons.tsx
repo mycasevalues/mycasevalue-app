@@ -32,7 +32,7 @@ export function ShieldIcon({ color = '#2563EB', size = 24 }: { color?: string; s
   );
 }
 
-export function ScaleIcon({ color = '#7C3AED', size = 24 }: { color?: string; size?: number }) {
+export function ScaleIcon({ color = '#3D72FF', size = 24 }: { color?: string; size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" stroke={color} {...s}>
       <path d="M12 3v18" />

@@ -111,22 +111,22 @@ export default function CommandPalette({
     quickLinks.forEach((link) => {
       items.push({
         ...link,
-        categoryColor: '#8B5CF6',
+        categoryColor: '#1856FF',
         type: 'quick-link' as const,
       });
     });
 
     // Case categories (from SITS data)
     const caseCategories = [
-      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '👔', color: '#8B5CF6' },
-      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '⚠️', color: '#8B5CF6' },
-      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '🛍️', color: '#8B5CF6' },
-      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '⚖️', color: '#8B5CF6' },
-      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '💵', color: '#8B5CF6' },
-      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '🏠', color: '#8B5CF6' },
-      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '⚕️', color: '#8B5CF6' },
-      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '👨‍👩‍👧', color: '#8B5CF6' },
-      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '🏛️', color: '#8B5CF6' },
+      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '👔', color: '#1856FF' },
+      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '⚠️', color: '#1856FF' },
+      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '🛍️', color: '#1856FF' },
+      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '⚖️', color: '#1856FF' },
+      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '💵', color: '#1856FF' },
+      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '🏠', color: '#1856FF' },
+      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '⚕️', color: '#1856FF' },
+      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '👨‍👩‍👧', color: '#1856FF' },
+      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '🏛️', color: '#1856FF' },
     ];
 
     caseCategories.forEach((cat) => {
@@ -150,7 +150,7 @@ export default function CommandPalette({
             label: opt.label,
             description: opt.d,
             category: cat.label,
-            categoryColor: cat.color || '#6B7280',
+            categoryColor: cat.color || 'rgba(240,242,245,0.70)',
             nos: opt.nos,
             type: 'case',
           });
@@ -220,7 +220,7 @@ export default function CommandPalette({
     ];
 
     actions.forEach((a) => {
-      items.push({ ...a, categoryColor: '#7C3AED', type: 'action' as const });
+      items.push({ ...a, categoryColor: '#3D72FF', type: 'action' as const });
     });
 
     return items;
@@ -456,7 +456,7 @@ export default function CommandPalette({
           }}
         >
           {/* Search icon */}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(240,242,245,0.70)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
             <circle cx="11" cy="11" r="8" />
             <path d="M21 21l-4.35-4.35" />
           </svg>
@@ -474,8 +474,8 @@ export default function CommandPalette({
               border: 'none',
               outline: 'none',
               fontSize: 'var(--text-base)',
-              color: '#111111',
-              caretColor: '#8B5CF6',
+              color: '#F0F2F5',
+              caretColor: '#1856FF',
               fontFamily: 'var(--font-body)',
             }}
             autoComplete="off"
@@ -514,7 +514,7 @@ export default function CommandPalette({
               style={{
                 padding: '24px',
                 textAlign: 'center',
-                color: '#6B7280',
+                color: 'rgba(240,242,245,0.70)',
                 fontSize: 'var(--text-sm)',
               }}
             >
@@ -554,8 +554,8 @@ export default function CommandPalette({
                         padding: '11px 12px',
                         borderRadius: 'var(--r-md)',
                         cursor: 'pointer',
-                        background: isSelected ? '#8B5CF6' : 'transparent',
-                        color: isSelected ? 'white' : '#111111',
+                        background: isSelected ? '#1856FF' : 'transparent',
+                        color: isSelected ? 'white' : '#F0F2F5',
                         transition: 'all 100ms ease-out',
                       }}
                     >
@@ -569,17 +569,17 @@ export default function CommandPalette({
                             <polyline points="14 2 14 8 20 8" />
                           </svg>
                         ) : item.type === 'page' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#6B7280'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : 'rgba(240,242,245,0.70)'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
                         ) : item.type === 'quick-link' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#8B5CF6'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#1856FF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                           </svg>
                         ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#7C3AED'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#3D72FF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                           </svg>
                         )}
@@ -604,7 +604,7 @@ export default function CommandPalette({
                           <div
                             style={{
                               fontSize: 'var(--text-xs)',
-                              color: isSelected ? 'rgba(255,255,255,0.7)' : '#6B7280',
+                              color: isSelected ? 'rgba(255,255,255,0.7)' : 'rgba(240,242,245,0.70)',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
@@ -672,7 +672,7 @@ export default function CommandPalette({
             padding: '10px 16px',
             borderTop: '1px solid var(--border-default)',
             fontSize: 'var(--text-2xs)',
-            color: '#6B7280',
+            color: 'rgba(240,242,245,0.70)',
             background: '#FFFFFF',
             fontFamily: 'var(--font-body)',
           }}

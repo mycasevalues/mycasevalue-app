@@ -109,17 +109,17 @@ export default function HowItWorksPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, var(--bg-base) 100%)' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            style={{ background: 'rgba(24,86,255,0.12)', color: '#3D72FF' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3D72FF" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             HOW IT WORKS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
             3 Simple Steps
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(240,242,245,0.40)' }}>
             From selecting your case type to getting a complete analysis of real federal court outcomes — all in minutes.
           </p>
         </div>
@@ -129,24 +129,27 @@ export default function HowItWorksPage() {
       <div className="max-w-5xl mx-auto px-6 py-16">
         <div className="relative">
           {/* Desktop vertical line connecting steps */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-24 bottom-0 w-1 bg-gradient-to-b from-transparent via-violet-500/30 to-transparent" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-24 bottom-0 w-1 bg-gradient-to-b from-transparent via-blue-500/30 to-transparent" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
                 {/* Card */}
-                <div className="rounded-2xl border p-8 h-full transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10 animate-in fade-in slide-in-from-bottom-4"
+                <div className="rounded-2xl border p-8 h-full transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 animate-in fade-in slide-in-from-bottom-4"
                   style={{
-                    borderColor: 'var(--border-default)',
-                    background: '#FFFFFF',
+                    borderColor: 'rgba(255,255,255,0.10)',
+                    background: 'rgba(255,255,255,0.06)',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.30)',
                     animationDelay: `${idx * 100}ms`,
                   }}>
 
                   {/* Step number circle */}
                   <div className="inline-flex items-center justify-center w-14 h-14 rounded-full font-display font-extrabold text-lg mb-6"
                     style={{
-                      background: ['rgba(17,17,17,0.15)', 'rgba(13,148,136,0.15)', 'rgba(245,158,11,0.15)'][idx],
-                      color: ['#111111', '#0D9488', '#F59E0B'][idx],
+                      background: ['rgba(24,86,255,0.12)', 'rgba(24,86,255,0.12)', 'rgba(24,86,255,0.12)'][idx],
+                      color: ['#3D72FF', '#3D72FF', '#3D72FF'][idx],
                     }}>
                     {step.number}
                   </div>
@@ -157,10 +160,10 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h2 className="text-xl font-display font-bold mb-3" style={{ color: '#111111' }}>
+                  <h2 className="text-xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
                     {step.title}
                   </h2>
-                  <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,242,245,0.40)' }}>
                     {step.description}
                   </p>
                 </div>
@@ -169,23 +172,23 @@ export default function HowItWorksPage() {
           </div>
 
           {/* Mobile connecting line (vertical) */}
-          <div className="md:hidden absolute left-7 top-32 bottom-0 w-0.5 bg-gradient-to-b from-violet-500/30 to-transparent" />
+          <div className="md:hidden absolute left-7 top-32 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/30 to-transparent" />
         </div>
       </div>
 
       {/* Trust Stats Bar */}
-      <section className="py-12 border-y" style={{ borderColor: 'var(--border-default)' }}>
+      <section className="py-12 border-y" style={{ borderColor: 'rgba(255,255,255,0.10)' }}>
         <div className="max-w-5xl mx-auto px-6">
-          <p className="text-center text-sm font-semibold mb-8" style={{ color: '#6B7280' }}>
+          <p className="text-center text-sm font-semibold mb-8" style={{ color: 'rgba(240,242,245,0.40)' }}>
             TRUSTED BY THOUSANDS OF CASE RESEARCHERS
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
-              <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-                <div className="text-2xl font-display font-extrabold" style={{ color: '#111111' }}>
+              <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+                <div className="text-2xl font-display font-extrabold" style={{ color: '#F0F2F5' }}>
                   {stat.value}
                 </div>
-                <div className="text-[11px] font-semibold mt-2" style={{ color: '#6B7280' }}>
+                <div className="text-[11px] font-semibold mt-2" style={{ color: 'rgba(240,242,245,0.40)' }}>
                   {stat.label}
                 </div>
               </div>
@@ -197,10 +200,10 @@ export default function HowItWorksPage() {
       {/* Data Sources Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: '#111111' }}>
+          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: '#F0F2F5' }}>
             Verified Public Sources
           </h2>
-          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: '#6B7280' }}>
+          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: 'rgba(240,242,245,0.40)' }}>
             All data comes from official federal court records, ensuring accuracy and transparency.
           </p>
 
@@ -219,11 +222,11 @@ export default function HowItWorksPage() {
                 description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
               },
             ].map((source, i) => (
-              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-                <h3 className="text-base font-semibold mb-2" style={{ color: '#111111' }}>
+              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+                <h3 className="text-base font-semibold mb-2" style={{ color: '#F0F2F5' }}>
                   {source.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,242,245,0.40)' }}>
                   {source.description}
                 </p>
               </div>
@@ -235,7 +238,7 @@ export default function HowItWorksPage() {
       {/* Why Choose Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: '#111111' }}>
+          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: '#F0F2F5' }}>
             Why MyCaseValue Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -271,11 +274,11 @@ export default function HowItWorksPage() {
                 description: 'No legal jargon. Results explained in language everyone can understand.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-                <h3 className="text-base font-semibold mb-2" style={{ color: '#111111' }}>
+              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+                <h3 className="text-base font-semibold mb-2" style={{ color: '#F0F2F5' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,242,245,0.40)' }}>
                   {item.description}
                 </p>
               </div>
@@ -286,16 +289,16 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'rgba(255,255,255,0.10)', background: 'rgba(24,86,255,0.12)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
             Ready to see your odds?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#6B7280' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'rgba(240,242,245,0.70)' }}>
             In three simple steps, discover what happened in cases like yours.
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#111111', color: '#FFFFFF' }}>
+            style={{ background: '#1856FF', color: '#FFFFFF' }}>
             Check My Case Type
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

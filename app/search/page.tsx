@@ -66,20 +66,20 @@ export default function SearchPage() {
 
   return (
     <main style={{ maxWidth: '720px', margin: '0 auto', padding: '64px 24px', fontFamily: 'var(--font-body)' }}>
-      <p style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', textAlign: 'center' }}>
+      <p style={{ fontSize: '11px', fontWeight: 600, color: '#3D72FF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', textAlign: 'center' }}>
         Find your case
       </p>
-      <h1 style={{ fontSize: '40px', fontWeight: 800, color: '#111111', fontFamily: 'var(--font-display)', textAlign: 'center', marginBottom: '8px', letterSpacing: '-0.02em' }}>
+      <h1 style={{ fontSize: '40px', fontWeight: 800, color: '#F0F2F5', fontFamily: 'var(--font-display)', textAlign: 'center', marginBottom: '8px', letterSpacing: '-0.02em' }}>
         What happened to you?
       </h1>
-      <p style={{ fontSize: '18px', color: '#6B7280', textAlign: 'center', marginBottom: '40px', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+      <p style={{ fontSize: '18px', color: 'rgba(240,242,245,0.40)', textAlign: 'center', marginBottom: '40px', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
         Search across all 84 federal case types to find real outcome data for your situation.
       </p>
 
       {/* Recently viewed */}
       {query.length === 0 && recentItems.length > 0 && (
         <div style={{ marginBottom: 24 }}>
-          <p style={{ fontSize: 13, color: '#6B7280', marginBottom: 12, fontWeight: 500 }}>Recently viewed:</p>
+          <p style={{ fontSize: 13, color: 'rgba(240,242,245,0.40)', marginBottom: 12, fontWeight: 500 }}>Recently viewed:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {recentItems.map((item, i) => (
               <Link
@@ -87,13 +87,15 @@ export default function SearchPage() {
                 href={`/report/${item.nos}`}
                 style={{
                   padding: '6px 14px',
-                  background: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.10)',
                   borderRadius: 20,
                   fontSize: 13,
-                  color: 'var(--fg-secondary)',
+                  color: 'rgba(240,242,245,0.70)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
                 }}
               >
                 {item.label}
@@ -104,7 +106,7 @@ export default function SearchPage() {
       )}
 
       <div style={{ position: 'relative', marginBottom: 24 }}>
-        <svg style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#9CA3AF', pointerEvents: 'none' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: 'rgba(240,242,245,0.30)', pointerEvents: 'none' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <input
@@ -120,22 +122,24 @@ export default function SearchPage() {
             paddingLeft: '48px',
             paddingRight: '16px',
             fontSize: '16px',
-            border: '1.5px solid #E5E7EB',
+            border: '1.5px solid rgba(255,255,255,0.12)',
             borderRadius: '12px',
-            background: '#FFFFFF',
-            color: '#111111',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            background: 'rgba(255,255,255,0.08)',
+            color: '#F0F2F5',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.30)',
             outline: 'none',
             boxSizing: 'border-box' as const,
             fontFamily: 'var(--font-body)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
           }}
         />
       </div>
 
       {query.length > 1 && results.length === 0 && (
-        <p style={{ color: '#6B7280', fontSize: 14 }}>
+        <p style={{ color: 'rgba(240,242,245,0.40)', fontSize: 14 }}>
           No case types found for &ldquo;{query}&rdquo;.{' '}
-          <Link href="/cases" style={{ color: '#8B5CF6', textDecoration: 'none' }}>Browse all categories &rarr;</Link>
+          <Link href="/cases" style={{ color: '#3D72FF', textDecoration: 'none' }}>Browse all categories &rarr;</Link>
         </p>
       )}
 
@@ -148,45 +152,51 @@ export default function SearchPage() {
             display: 'block',
             padding: 16,
             marginBottom: 8,
-            background: '#FFFFFF',
-            border: '1px solid var(--border-default)',
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.10)',
             borderRadius: 10,
             textDecoration: 'none',
             transition: 'border-color 150ms',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-            <p style={{ fontSize: 15, fontWeight: 600, color: '#111111', margin: 0 }}>{r.label}</p>
+            <p style={{ fontSize: 15, fontWeight: 600, color: '#F0F2F5', margin: 0 }}>{r.label}</p>
             <span style={{
               fontSize: 11,
               fontFamily: 'var(--font-mono)',
-              color: '#6B7280',
-              background: 'var(--bg-base)',
+              color: 'rgba(240,242,245,0.40)',
+              background: 'rgba(255,255,255,0.06)',
               padding: '1px 6px',
               borderRadius: 4,
-              border: '1px solid var(--border-default)',
+              border: '1px solid rgba(255,255,255,0.10)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
             }}>
               NOS {r.nos}
             </span>
           </div>
-          <p style={{ fontSize: 13, color: '#6B7280', margin: 0 }}>{r.categoryName}</p>
+          <p style={{ fontSize: 13, color: 'rgba(240,242,245,0.40)', margin: 0 }}>{r.categoryName}</p>
         </Link>
       ))}
 
       {query.length === 0 && (
         <div style={{ marginTop: 16 }}>
-          <p style={{ fontSize: 13, color: '#6B7280', marginBottom: 16 }}>Popular searches:</p>
+          <p style={{ fontSize: 13, color: 'rgba(240,242,245,0.40)', marginBottom: 16 }}>Popular searches:</p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall'].map(s => (
               <button key={s} onClick={() => setQuery(s)} style={{
                 padding: '6px 14px',
-                background: '#FFFFFF',
-                border: '1px solid var(--border-default)',
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.10)',
                 borderRadius: 20,
                 fontSize: 13,
-                color: 'var(--fg-secondary)',
+                color: 'rgba(240,242,245,0.70)',
                 cursor: 'pointer',
                 fontFamily: 'var(--font-body)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
               }}>{s}</button>
             ))}
           </div>

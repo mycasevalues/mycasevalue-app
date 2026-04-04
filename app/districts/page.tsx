@@ -192,19 +192,21 @@ const totalDistricts = CIRCUITS.reduce((sum, c) => sum + c.districts.length, 0);
 
 export default function DistrictsPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, rgba(5, 15, 30, 0.95) 0%, rgba(10, 20, 40, 0.95) 100%)' }}>
       {/* Header */}
       <div
         className="border-b"
         style={{
-          borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)',
+          borderColor: 'rgba(255, 255, 255, 0.10)',
+          background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 100%)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'var(--accent-primary-subtle)', color: '#8B5CF6' }}
+            style={{ background: 'rgba(24, 86, 255, 0.12)', color: '#1856FF' }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -213,13 +215,13 @@ export default function DistrictsPage() {
           </div>
           <h1
             className="text-3xl sm:text-4xl font-black mb-4"
-            style={{ color: '#111111', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
+            style={{ color: '#F0F2F5', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             Federal Court Districts
           </h1>
           <p
             className="text-base leading-relaxed max-w-2xl sm:text-lg"
-            style={{ color: '#6B7280' }}
+            style={{ color: 'rgba(240, 242, 245, 0.70)' }}
           >
             All {totalDistricts} federal judicial districts across {CIRCUITS.length} circuits.
             Each district has its own judges, caseload, and outcome patterns. Explore outcomes
@@ -236,9 +238,9 @@ export default function DistrictsPage() {
               <h2
                 className="text-lg font-bold mb-4"
                 style={{
-                  color: '#111111',
+                  color: '#F0F2F5',
                   fontFamily: 'var(--font-display)',
-                  borderBottom: '2px solid #8B5CF6',
+                  borderBottom: '2px solid #1856FF',
                   paddingBottom: '8px',
                   display: 'inline-block',
                 }}
@@ -252,18 +254,30 @@ export default function DistrictsPage() {
                     href={`/districts/${d.slug}`}
                     className="group p-4 rounded-xl border transition-all hover:shadow-md"
                     style={{
-                      borderColor: 'var(--border-default)',
-                      background: '#FFFFFF',
+                      borderColor: 'rgba(255, 255, 255, 0.10)',
+                      background: 'rgba(255, 255, 255, 0.06)',
+                      backdropFilter: 'blur(12px)',
+                      WebkitBackdropFilter: 'blur(12px)',
                       borderRadius: '12px',
                       transition: 'all 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.target as HTMLAnchorElement).style.background = 'rgba(255, 255, 255, 0.12)';
+                      (e.target as HTMLAnchorElement).style.borderColor = 'rgba(24, 86, 255, 0.20)';
+                      (e.target as HTMLAnchorElement).style.boxShadow = '0 8px 32px rgba(24, 86, 255, 0.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.target as HTMLAnchorElement).style.background = 'rgba(255, 255, 255, 0.06)';
+                      (e.target as HTMLAnchorElement).style.borderColor = 'rgba(255, 255, 255, 0.10)';
+                      (e.target as HTMLAnchorElement).style.boxShadow = 'none';
                     }}
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className="text-sm font-semibold" style={{ color: '#111111' }}>
+                        <h3 className="text-sm font-semibold" style={{ color: '#F0F2F5' }}>
                           {d.name}
                         </h3>
-                        <p className="text-[11px] mt-1" style={{ color: '#6B7280' }}>
+                        <p className="text-[11px] mt-1" style={{ color: 'rgba(240, 242, 245, 0.70)' }}>
                           {d.abbr}
                         </p>
                       </div>
@@ -272,7 +286,7 @@ export default function DistrictsPage() {
                         height="16"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#7C3AED"
+                        stroke="#3D72FF"
                         strokeWidth="2.5"
                         className="opacity-0 group-hover:opacity-100 transition-opacity"
                       >

@@ -13,9 +13,9 @@ export function SectionBadge({ label }: SectionBadgeProps) {
     }}>
       <div className="flex items-center gap-2">
         <span className="inline-block w-2 h-2 rounded-full animate-pulse" style={{
-          background: '#8B5CF6',
+          background: '#1856FF',
         }}></span>
-        <span className="font-mono text-xs font-bold tracking-[0.15em] uppercase" style={{ color: '#6B7280' }}>
+        <span className="font-mono text-xs font-bold tracking-[0.15em] uppercase" style={{ color: 'rgba(240,242,245,0.70)' }}>
           {label}
         </span>
       </div>

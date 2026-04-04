@@ -1,6 +1,6 @@
 /**
- * SiteNav.tsx — Site-wide navigation bar with mobile hamburger menu.
- * Height 64px, sticky, white bg, border-bottom.
+ * SiteNav.tsx — Frosted glass navigation bar with mobile hamburger menu.
+ * Height 64px, sticky, glassmorphism blur, translucent border.
  * Rendered from app/layout.tsx so every page gets consistent nav.
  */
 
@@ -112,9 +112,10 @@ export default function SiteNav() {
           top: 0,
           zIndex: 200,
           height: '64px',
-          background: '#FFFFFF',
-          borderBottom: '1px solid #E5E7EB',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+          background: 'rgba(11,14,23,0.75)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -144,7 +145,7 @@ export default function SiteNav() {
             <div style={{
               width: '32px',
               height: '32px',
-              background: '#8B5CF6',
+              background: '#1856FF',
               borderRadius: '8px',
               display: 'flex',
               alignItems: 'center',
@@ -154,7 +155,7 @@ export default function SiteNav() {
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
               </svg>
             </div>
-            <span style={{ fontSize: '18px', fontWeight: 800, color: '#111111', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>
+            <span style={{ fontSize: '18px', fontWeight: 800, color: '#F0F2F5', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em' }}>
               MyCaseValue
             </span>
           </Link>
@@ -178,11 +179,11 @@ export default function SiteNav() {
                   borderRadius: '8px',
                   fontSize: '14px',
                   fontWeight: isActive(link.href) ? 600 : 400,
-                  color: isActive(link.href) ? '#8B5CF6' : '#6B7280',
+                  color: isActive(link.href) ? '#F0F2F5' : 'rgba(240,242,245,0.50)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   transition: 'all 150ms',
-                  background: isActive(link.href) ? '#EDE9FE' : 'transparent',
+                  background: isActive(link.href) ? 'rgba(24,86,255,0.15)' : 'transparent',
                 }}
                 aria-current={isActive(link.href) ? 'page' : undefined}
               >
@@ -210,11 +211,11 @@ export default function SiteNav() {
                       padding: '8px 16px',
                       fontSize: '14px',
                       fontWeight: 500,
-                      color: '#6B7280',
+                      color: 'rgba(240,242,245,0.70)',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       borderRadius: 'var(--r-md)',
-                      border: '1.5px solid var(--border-default)',
+                      border: '1.5px solid rgba(255,255,255,0.12)',
                       transition: 'all var(--duration-base) ease',
                     }}
                   >
@@ -228,7 +229,7 @@ export default function SiteNav() {
                       fontSize: '14px',
                       fontWeight: 600,
                       color: '#FFFFFF',
-                      background: '#8B5CF6',
+                      background: '#1856FF',
                       borderRadius: 'var(--r-md)',
                       fontFamily: 'var(--font-body)',
                       border: 'none',
@@ -248,11 +249,11 @@ export default function SiteNav() {
                       padding: '8px 16px',
                       fontSize: '14px',
                       fontWeight: 500,
-                      color: '#374151',
+                      color: 'rgba(240,242,245,0.70)',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       borderRadius: '8px',
-                      border: '1px solid #E5E7EB',
+                      border: '1px solid rgba(255,255,255,0.12)',
                       transition: 'all 150ms',
                     }}
                   >
@@ -265,12 +266,12 @@ export default function SiteNav() {
                       fontSize: '14px',
                       fontWeight: 600,
                       color: '#FFFFFF',
-                      background: '#8B5CF6',
+                      background: '#1856FF',
                       borderRadius: '8px',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-display)',
                       transition: 'all 150ms',
-                      boxShadow: '0 2px 8px rgba(139,92,246,0.25)',
+                      boxShadow: '0 2px 8px rgba(24,86,255,0.30)',
                     }}
                   >
                     Get started free
@@ -292,7 +293,7 @@ export default function SiteNav() {
                 border: 'none',
                 padding: '10px',
                 cursor: 'pointer',
-                color: '#111111',
+                color: '#F0F2F5',
                 minHeight: '44px',
                 minWidth: '44px',
                 alignItems: 'center',
@@ -337,14 +338,16 @@ export default function SiteNav() {
             inset: 0,
             top: '64px',
             zIndex: 199,
-            background: 'rgba(0,0,0,0.3)',
+            background: 'rgba(0,0,0,0.50)',
+            backdropFilter: 'blur(4px)',
+            WebkitBackdropFilter: 'blur(4px)',
           }}
           onClick={() => { setMobileOpen(false); hamburgerRef.current?.focus(); }}
           aria-hidden="true"
         />
       )}
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — frosted glass */}
       <div
         ref={drawerRef}
         className="site-nav-mobile-drawer"
@@ -355,9 +358,11 @@ export default function SiteNav() {
           bottom: 0,
           width: '280px',
           zIndex: 200,
-          background: '#FFFFFF',
-          borderLeft: '1px solid var(--border-default)',
-          boxShadow: 'var(--shadow-lg)',
+          background: 'rgba(11,14,23,0.90)',
+          backdropFilter: 'blur(24px)',
+          WebkitBackdropFilter: 'blur(24px)',
+          borderLeft: '1px solid rgba(255,255,255,0.08)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.50)',
           transform: mobileOpen ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 250ms ease',
           padding: '24px',
@@ -381,11 +386,11 @@ export default function SiteNav() {
               borderRadius: 'var(--r-md)',
               fontSize: '16px',
               fontWeight: isActive(link.href) ? 600 : 500,
-              color: isActive(link.href) ? '#8B5CF6' : '#111111',
+              color: isActive(link.href) ? '#F0F2F5' : 'rgba(240,242,245,0.60)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               minHeight: '44px',
-              background: isActive(link.href) ? 'var(--bg-elevated)' : 'transparent',
+              background: isActive(link.href) ? 'rgba(24,86,255,0.15)' : 'transparent',
             }}
             className="site-nav-mobile-link"
             aria-current={isActive(link.href) ? 'page' : undefined}
@@ -394,7 +399,7 @@ export default function SiteNav() {
           </Link>
         ))}
 
-        <div style={{ borderTop: '1px solid var(--border-default)', margin: '12px 0', padding: '12px 0' }}>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', margin: '12px 0', padding: '12px 0' }}>
           {userEmail ? (
             <>
               <Link
@@ -406,7 +411,7 @@ export default function SiteNav() {
                   borderRadius: 'var(--r-md)',
                   fontSize: '16px',
                   fontWeight: 500,
-                  color: '#111111',
+                  color: 'rgba(240,242,245,0.70)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   minHeight: '44px',
@@ -425,7 +430,7 @@ export default function SiteNav() {
                   fontSize: '16px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  background: '#8B5CF6',
+                  background: '#1856FF',
                   fontFamily: 'var(--font-body)',
                   textAlign: 'center',
                   minHeight: '44px',
@@ -448,7 +453,7 @@ export default function SiteNav() {
                   borderRadius: 'var(--r-md)',
                   fontSize: '16px',
                   fontWeight: 500,
-                  color: '#111111',
+                  color: 'rgba(240,242,245,0.70)',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   minHeight: '44px',
@@ -467,7 +472,7 @@ export default function SiteNav() {
                   fontSize: '16px',
                   fontWeight: 600,
                   color: '#FFFFFF',
-                  background: '#8B5CF6',
+                  background: '#1856FF',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   textAlign: 'center',
@@ -483,8 +488,8 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .site-nav-link:hover { color: #8B5CF6 !important; }
-        .site-nav-mobile-link:hover { background: var(--bg-elevated) !important; }
+        .site-nav-link:hover { color: #F0F2F5 !important; }
+        .site-nav-mobile-link:hover { background: rgba(24,86,255,0.10) !important; }
         @media (max-width: 768px) {
           .site-nav-center { display: none !important; }
           .site-nav-right { display: none !important; }

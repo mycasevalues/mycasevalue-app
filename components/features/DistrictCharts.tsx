@@ -18,7 +18,7 @@ interface DistrictChartsProps {
   stats: DistrictStats;
 }
 
-const PURPLE_PALETTE = ['#8B5CF6', '#7C3AED', '#A78BFA', '#C4B5FD', '#DDD6FE', '#EDE9FE', '#6D28D9', '#5B21B6', '#4C1D95', '#F5F3FF', '#818CF8'];
+const PURPLE_PALETTE = ['#1856FF', '#3D72FF', '#A78BFA', '#C4B5FD', '#DDD6FE', 'rgba(24,86,255,0.12)', '#6D28D9', '#5B21B6', '#4C1D95', '#F5F3FF', '#818CF8'];
 
 export default function DistrictCharts({ stats }: DistrictChartsProps) {
   // Prepare data for top case types chart (take top 8)
@@ -42,7 +42,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           className="rounded-[12px] p-6 sm:p-8"
           style={{
             background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            border: '1px solid rgba(255,255,255,0.10)',
           }}
         >
           <h3
@@ -65,11 +65,11 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               <Tooltip
                 contentStyle={{
                   background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid rgba(255,255,255,0.10)',
                   borderRadius: '8px',
                 }}
               />
-              <Bar dataKey="count" fill="#8B5CF6" radius={[0, 8, 8, 0]} />
+              <Bar dataKey="count" fill="#1856FF" radius={[0, 8, 8, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -81,7 +81,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           className="rounded-[12px] p-6 sm:p-8"
           style={{
             background: '#FFFFFF',
-            border: '1px solid #E5E7EB',
+            border: '1px solid rgba(255,255,255,0.10)',
           }}
         >
           <h3
@@ -111,7 +111,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               <Tooltip
                 contentStyle={{
                   background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
+                  border: '1px solid rgba(255,255,255,0.10)',
                   borderRadius: '8px',
                 }}
                 formatter={(value: number) => [value.toLocaleString(), 'Cases']}

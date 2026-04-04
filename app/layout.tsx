@@ -75,7 +75,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#F9FAFB',
+  themeColor: '#0B0E17',
 };
 
 // Schema.org structured data
@@ -272,7 +272,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}</style>
       </head>
-      <body style={{ background: 'var(--bg-base)', color: '#111111' }} suppressHydrationWarning>
+      <body style={{ background: 'var(--gradient-page)', color: 'var(--fg-primary)', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
         <a href="#main-content" className="skip-to-main">
           Skip to main content

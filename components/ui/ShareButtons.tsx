@@ -8,7 +8,7 @@ const btnStyle: React.CSSProperties = {
   border: '1px solid var(--border-default)',
   borderRadius: '6px',
   fontSize: '13px',
-  color: '#111111',
+  color: '#F0F2F5',
   textDecoration: 'none',
   cursor: 'pointer',
   fontFamily: 'var(--font-body)',

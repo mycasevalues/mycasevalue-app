@@ -96,6 +96,10 @@ const CheckIcon = () => (
   </svg>
 );
 
+const BackIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+);
+
 const FeatureCard = ({
   icon,
   title,
@@ -112,8 +116,8 @@ const FeatureCard = ({
   const content = (
     <div
       style={{
-        backgroundColor: '#FFFFFF',
-        border: '1px solid var(--border-default)',
+        backgroundColor: 'rgba(255,255,255,0.06)',
+        border: '1px solid rgba(255,255,255,0.10)',
         borderRadius: '12px',
         padding: '24px',
         display: 'flex',
@@ -123,10 +127,11 @@ const FeatureCard = ({
         cursor: 'pointer',
         textDecoration: 'none',
         color: 'inherit',
+        backdropFilter: 'blur(12px)',
       }}
       className="attorney-feature-card"
     >
-      <div style={{ fontSize: '32px', color: '#8B5CF6' }}>{icon}</div>
+      <div style={{ fontSize: '32px', color: '#1856FF' }}>{icon}</div>
       <div>
         <h3
           style={{
@@ -134,7 +139,7 @@ const FeatureCard = ({
             fontSize: '18px',
             fontWeight: '600',
             fontFamily: 'var(--font-display)',
-            color: '#111111',
+            color: '#F0F2F5',
           }}
         >
           {title}
@@ -143,7 +148,7 @@ const FeatureCard = ({
           style={{
             margin: 0,
             fontSize: '14px',
-            color: '#6B7280',
+            color: 'rgba(240,242,245,0.40)',
             lineHeight: '1.5',
             fontFamily: 'var(--font-body)',
           }}
@@ -162,18 +167,18 @@ const FeatureCard = ({
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
             backgroundColor:
-              badge === 'available' ? '#8B5CF6' : 'var(--bg-base)',
-            color: badge === 'available' ? '#ffffff' : '#6B7280',
+              badge === 'available' ? '#1856FF' : 'rgba(24,86,255,0.12)',
+            color: badge === 'available' ? '#ffffff' : '#1856FF',
             border:
               badge === 'available'
                 ? 'none'
-                : '1px solid var(--border-default)',
+                : '1px solid rgba(24,86,255,0.20)',
           }}
         >
           {badge === 'available' ? 'Available' : 'Expected Q3 2026'}
         </span>
         {href && (
-          <span style={{ fontSize: '13px', color: '#8B5CF6', fontWeight: 600 }}>
+          <span style={{ fontSize: '13px', color: '#1856FF', fontWeight: 600 }}>
             Try it →
           </span>
         )}
@@ -265,28 +270,28 @@ export default function AttorneyPage() {
   return (
     <div
       style={{
-        backgroundColor: 'var(--bg-base)',
-        color: '#111111',
+        color: '#F0F2F5',
         fontFamily: 'var(--font-body)',
         minHeight: '100vh',
       }}
     >
       <style dangerouslySetInnerHTML={{ __html: `
-        .attorney-feature-card:hover { border-color: #8B5CF6 !important; box-shadow: 0 8px 24px rgba(0,0,0,0.12); transform: translateY(-4px); }
-        .attorney-cta-link:hover { background-color: #7C3AED !important; box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important; transform: translateY(-2px); }
+        .attorney-feature-card:hover { border-color: #1856FF !important; box-shadow: 0 8px 32px rgba(0,0,0,0.30); transform: translateY(-4px); }
+        .attorney-cta-link:hover { background-color: #3D72FF !important; box-shadow: 0 8px 32px rgba(0,0,0,0.30) !important; transform: translateY(-2px); }
       `}} />
       {/* Header Section */}
       <section
         style={{
-          backgroundColor: '#FFFFFF',
-          borderBottom: '1px solid var(--border-default)',
+          backgroundColor: 'rgba(255,255,255,0.06)',
+          border: '1px solid rgba(255,255,255,0.10)',
           padding: '48px 20px',
           textAlign: 'center',
+          backdropFilter: 'blur(12px)',
         }}
       >
         <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'left', marginBottom: '16px' }}>
-          <Link href="/dashboard" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+          <Link href="/dashboard" style={{ fontSize: '13px', color: '#1856FF', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+            <BackIcon />
             Dashboard
           </Link>
         </div>
@@ -305,14 +310,15 @@ export default function AttorneyPage() {
               style={{
                 display: 'inline-block',
                 padding: '8px 16px',
-                backgroundColor: '#7C3AED',
-                color: '#111111',
+                backgroundColor: 'rgba(24,86,255,0.20)',
+                color: '#1856FF',
                 borderRadius: '8px',
                 fontSize: '12px',
                 fontWeight: '700',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
                 fontFamily: 'var(--font-mono)',
+                border: '1px solid rgba(24,86,255,0.30)',
               }}
             >
               Attorney Mode
@@ -327,7 +333,7 @@ export default function AttorneyPage() {
               fontWeight: '800',
               fontFamily: 'var(--font-display)',
               lineHeight: '1.2',
-              color: '#111111',
+              color: '#F0F2F5',
             }}
           >
             Professional Legal Intelligence Suite
@@ -338,7 +344,7 @@ export default function AttorneyPage() {
             style={{
               margin: 0,
               fontSize: 'clamp(16px, 2vw, 20px)',
-              color: '#6B7280',
+              color: 'rgba(240,242,245,0.40)',
               lineHeight: '1.6',
               maxWidth: '600px',
               marginLeft: 'auto',
@@ -356,7 +362,6 @@ export default function AttorneyPage() {
       <section
         style={{
           padding: '60px 20px',
-          backgroundColor: 'var(--bg-base)',
         }}
       >
         <div
@@ -376,14 +381,14 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(28px, 4vw, 42px)',
                 fontWeight: '700',
                 fontFamily: 'var(--font-display)',
-                color: '#111111',
+                color: '#F0F2F5',
               }}
             >
               Everything in Unlimited,
               <span
                 style={{
                   display: 'block',
-                  color: '#8B5CF6',
+                  color: '#1856FF',
                 }}
               >
                 plus:
@@ -393,7 +398,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#6B7280',
+                color: 'rgba(240,242,245,0.40)',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -420,7 +425,6 @@ export default function AttorneyPage() {
       <section
         style={{
           padding: '60px 20px',
-          backgroundColor: 'var(--bg-base)',
         }}
       >
         <div
@@ -440,11 +444,11 @@ export default function AttorneyPage() {
                 fontSize: 'clamp(32px, 4vw, 48px)',
                 fontWeight: '800',
                 fontFamily: 'var(--font-display)',
-                color: '#111111',
+                color: '#F0F2F5',
               }}
             >
-              <span style={{ color: '#8B5CF6' }}>$29.99</span>
-              <span style={{ fontSize: '0.5em', color: '#6B7280' }}>
+              <span style={{ color: '#1856FF' }}>$29.99</span>
+              <span style={{ fontSize: '0.5em', color: 'rgba(240,242,245,0.40)' }}>
                 {' '}
                 / month
               </span>
@@ -453,7 +457,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '16px 0 0 0',
                 fontSize: '16px',
-                color: '#6B7280',
+                color: 'rgba(240,242,245,0.40)',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -462,8 +466,8 @@ export default function AttorneyPage() {
           </div>
 
           {/* Beta Banner */}
-          <div style={{ padding: '12px 20px', backgroundColor: '#F0FDF4', borderRadius: '8px', border: '1px solid #BBF7D0' }}>
-            <p style={{ margin: 0, fontSize: '14px', color: '#065F46', fontWeight: 600 }}>
+          <div style={{ padding: '12px 20px', backgroundColor: 'rgba(24,86,255,0.12)', borderRadius: '8px', border: '1px solid rgba(24,86,255,0.20)', backdropFilter: 'blur(12px)' }}>
+            <p style={{ margin: 0, fontSize: '14px', color: '#1856FF', fontWeight: 600 }}>
               Beta Access — All attorney features are currently free during our preview period.
             </p>
           </div>
@@ -474,7 +478,7 @@ export default function AttorneyPage() {
             style={{
               display: 'inline-block',
               padding: '16px 40px',
-              backgroundColor: '#8B5CF6',
+              backgroundColor: '#1856FF',
               color: '#FFFFFF',
               textDecoration: 'none',
               borderRadius: '8px',
@@ -484,7 +488,7 @@ export default function AttorneyPage() {
               border: 'none',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.30)',
             }}
             className="attorney-cta-link"
           >
@@ -495,7 +499,7 @@ export default function AttorneyPage() {
             style={{
               margin: '8px 0 0 0',
               fontSize: '12px',
-              color: '#6B7280',
+              color: 'rgba(240,242,245,0.40)',
               fontFamily: 'var(--font-body)',
             }}
           >

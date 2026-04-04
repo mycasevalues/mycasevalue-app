@@ -25,12 +25,12 @@ import {
 
 // Purple palette for categories
 const CATEGORY_CHART_COLORS: Record<string, string> = {
-  Financial: '#8B5CF6',
+  Financial: '#1856FF',
   Employment: '#A78BFA',
   Injury: '#C4B5FD',
   Consumer: '#DDD6FE',
-  'Civil Rights': '#EDE9FE',
-  Housing: '#7C3AED',
+  'Civil Rights': 'rgba(24,86,255,0.12)',
+  Housing: '#3D72FF',
   Medical: '#6D28D9',
   Family: '#5B21B6',
   Government: '#4C1D95',
@@ -50,13 +50,13 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
       <div
         style={{
           background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
+          border: '1px solid rgba(255,255,255,0.10)',
           borderRadius: '8px',
           padding: '12px 16px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}
       >
-        <p style={{ color: '#111111', fontSize: '12px', fontWeight: 600, margin: '0 0 8px 0' }}>
+        <p style={{ color: '#F0F2F5', fontSize: '12px', fontWeight: 600, margin: '0 0 8px 0' }}>
           {label}
         </p>
         {payload.map((entry, index) => (
@@ -92,7 +92,7 @@ export default function TrendCharts() {
         className="p-6 rounded-lg border"
         style={{
           background: '#FFFFFF',
-          borderColor: '#E5E7EB',
+          borderColor: 'rgba(255,255,255,0.10)',
         }}
       >
         <h3
@@ -100,30 +100,30 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'Montserrat',
             fontWeight: 600,
-            color: '#111111',
+            color: '#F0F2F5',
           }}
         >
           Federal Filing Trends (2015–2024)
         </h3>
-        <p style={{ color: '#6B7280', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: 'rgba(240,242,245,0.70)', fontSize: '13px', marginBottom: '16px' }}>
           Total federal civil case filings over the past decade
         </p>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={nationalTrends}>
             <defs>
               <linearGradient id="colorFilings" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8B5CF6" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#8B5CF6" stopOpacity={0.1} />
+                <stop offset="5%" stopColor="#1856FF" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#1856FF" stopOpacity={0.1} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
-            <XAxis dataKey="year" stroke="#6B7280" />
-            <YAxis stroke="#6B7280" />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
+            <XAxis dataKey="year" stroke="rgba(240,242,245,0.70)" />
+            <YAxis stroke="rgba(240,242,245,0.70)" />
             <Tooltip content={<CustomTooltip />} />
             <Area
               type="monotone"
               dataKey="totalFilings"
-              stroke="#8B5CF6"
+              stroke="#1856FF"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorFilings)"
@@ -137,7 +137,7 @@ export default function TrendCharts() {
         className="p-6 rounded-lg border"
         style={{
           background: '#FFFFFF',
-          borderColor: '#E5E7EB',
+          borderColor: 'rgba(255,255,255,0.10)',
         }}
       >
         <h3
@@ -145,19 +145,19 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'Montserrat',
             fontWeight: 600,
-            color: '#111111',
+            color: '#F0F2F5',
           }}
         >
           Win Rate Trends by Category (2018–2024)
         </h3>
-        <p style={{ color: '#6B7280', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: 'rgba(240,242,245,0.70)', fontSize: '13px', marginBottom: '16px' }}>
           Plaintiff win rate trends across top case categories
         </p>
         <ResponsiveContainer width="100%" height={350}>
           <LineChart data={categoryTrends[0]?.years ? buildCombinedCategoryData(categoryTrends) : []}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
-            <XAxis dataKey="year" stroke="#6B7280" />
-            <YAxis stroke="#6B7280" domain={[0, 100]} />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
+            <XAxis dataKey="year" stroke="rgba(240,242,245,0.70)" />
+            <YAxis stroke="rgba(240,242,245,0.70)" domain={[0, 100]} />
             <Tooltip content={<CustomTooltip />} />
             <Legend />
             {categoryTrends.map((cat, idx) => (
@@ -167,8 +167,8 @@ export default function TrendCharts() {
                 dataKey={cat.categoryLabel}
                 stroke={
                   [
-                    '#8B5CF6',
-                    '#7C3AED',
+                    '#1856FF',
+                    '#3D72FF',
                     '#EC4899',
                     '#06B6D4',
                     '#F59E0B',
@@ -189,7 +189,7 @@ export default function TrendCharts() {
         className="p-6 rounded-lg border"
         style={{
           background: '#FFFFFF',
-          borderColor: '#E5E7EB',
+          borderColor: 'rgba(255,255,255,0.10)',
         }}
       >
         <h3
@@ -197,12 +197,12 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'Montserrat',
             fontWeight: 600,
-            color: '#111111',
+            color: '#F0F2F5',
           }}
         >
           Top 15 Case Types by Filing Volume
         </h3>
-        <p style={{ color: '#6B7280', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: 'rgba(240,242,245,0.70)', fontSize: '13px', marginBottom: '16px' }}>
           Most frequently filed federal civil case types
         </p>
         <ResponsiveContainer width="100%" height={500}>
@@ -211,11 +211,11 @@ export default function TrendCharts() {
             layout="vertical"
             margin={{ top: 5, right: 30, left: 300, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
-            <XAxis type="number" stroke="#6B7280" />
-            <YAxis dataKey="label" type="category" stroke="#6B7280" width={300} />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
+            <XAxis type="number" stroke="rgba(240,242,245,0.70)" />
+            <YAxis dataKey="label" type="category" stroke="rgba(240,242,245,0.70)" width={300} />
             <Tooltip content={<CustomTooltip />} />
-            <Bar dataKey="count" fill="#8B5CF6" radius={[0, 8, 8, 0]} />
+            <Bar dataKey="count" fill="#1856FF" radius={[0, 8, 8, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

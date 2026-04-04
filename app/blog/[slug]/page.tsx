@@ -109,9 +109,9 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       />
 
       {/* Header with breadcrumb */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, var(--bg-base) 100%)' }}>
         <div className="max-w-3xl mx-auto px-6 py-12">
-          <a href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#111111' }}>
+          <a href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#F0F2F5' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Back to Blog
           </a>
@@ -121,8 +121,8 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
             <span
               className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold"
               style={{
-                background: 'rgba(17,17,17,0.15)',
-                color: '#111111',
+                background: 'rgba(24,86,255,0.12)',
+                color: '#3D72FF',
               }}
             >
               {post.category}
@@ -130,26 +130,26 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold mb-6" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold mb-6" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
             {post.title}
           </h1>
 
           {/* Description */}
-          <p className="text-lg leading-relaxed" style={{ color: '#6B7280' }}>
+          <p className="text-lg leading-relaxed" style={{ color: 'rgba(240,242,245,0.70)' }}>
             {post.description}
           </p>
 
           {/* Meta information */}
           <div className="flex flex-wrap items-center gap-4 mt-8 pt-6 border-t" style={{ borderColor: 'var(--border-default)' }}>
-            <div className="text-sm" style={{ color: '#6B7280' }}>
-              <span className="font-medium" style={{ color: '#111111' }}>{post.author}</span>
+            <div className="text-sm" style={{ color: 'rgba(240,242,245,0.70)' }}>
+              <span className="font-medium" style={{ color: '#F0F2F5' }}>{post.author}</span>
               <span className="mx-2">•</span>
               <time>{post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
               <span className="mx-2">•</span>
               <span>{post.readTime} min read</span>
             </div>
             {post.updatedAt !== post.publishedAt && (
-              <div className="text-xs" style={{ color: '#6B7280' }}>
+              <div className="text-xs" style={{ color: 'rgba(240,242,245,0.70)' }}>
                 Updated {post.updatedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
               </div>
             )}
@@ -160,25 +160,25 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       {/* Article content */}
       <article className="max-w-3xl mx-auto px-6 py-16">
         <div className="prose max-w-none" style={{
-          '--tw-prose-body': '#111111',
-          '--tw-prose-headings': '#111111',
-          '--tw-prose-lead': '#6B7280',
-          '--tw-prose-links': '#111111',
-          '--tw-prose-bold': '#111111',
-          '--tw-prose-counters': '#111111',
-          '--tw-prose-bullets': '#111111',
+          '--tw-prose-body': '#F0F2F5',
+          '--tw-prose-headings': '#F0F2F5',
+          '--tw-prose-lead': 'rgba(240,242,245,0.70)',
+          '--tw-prose-links': '#F0F2F5',
+          '--tw-prose-bold': '#F0F2F5',
+          '--tw-prose-counters': '#F0F2F5',
+          '--tw-prose-bullets': '#F0F2F5',
           '--tw-prose-hr': 'var(--border-default)',
-          '--tw-prose-quotes': '#6B7280',
-          '--tw-prose-quote-borders': '#111111',
-          '--tw-prose-captions': '#6B7280',
-          '--tw-prose-code': '#111111',
-          '--tw-prose-pre-code': '#374151',
-          '--tw-prose-pre-bg': '#FFFFFF',
+          '--tw-prose-quotes': 'rgba(240,242,245,0.70)',
+          '--tw-prose-quote-borders': '#F0F2F5',
+          '--tw-prose-captions': 'rgba(240,242,245,0.70)',
+          '--tw-prose-code': '#F0F2F5',
+          '--tw-prose-pre-code': 'rgba(240,242,245,0.70)',
+          '--tw-prose-pre-bg': 'rgba(255,255,255,0.06)',
           '--tw-prose-th-borders': 'var(--border-default)',
           '--tw-prose-td-borders': 'var(--border-default)',
         } as any}>
           {post.content.split('\n\n').map((paragraph, idx) => (
-            <p key={idx} className="text-lg leading-relaxed mb-6" style={{ color: '#6B7280' }}>
+            <p key={idx} className="text-lg leading-relaxed mb-6" style={{ color: 'rgba(240,242,245,0.70)' }}>
               {paragraph}
             </p>
           ))}
@@ -193,8 +193,8 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                 href={`/blog?tag=${encodeURIComponent(tag)}`}
                 className="text-sm font-medium px-3 py-1.5 rounded-full transition-colors"
                 style={{
-                  background: 'rgba(17,17,17,0.08)',
-                  color: '#8B5CF6',
+                  background: 'rgba(24,86,255,0.08)',
+                  color: '#3D72FF',
                 }}
               >
                 #{tag}
@@ -206,17 +206,17 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
       {/* CTA Section */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
             See real case data for your situation
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#6B7280' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'rgba(240,242,245,0.70)' }}>
             Use the insights from this article to get a personalized analysis of outcomes in cases like yours.
           </p>
           <a
             href="/search"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#111111', color: '#FFFFFF' }}
+            style={{ background: '#1856FF', color: '#FFFFFF' }}
           >
             Check My Case Type
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -227,7 +227,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       {/* Related posts */}
       {relatedPosts.length > 0 && (
         <div className="max-w-5xl mx-auto px-6 py-16 border-t" style={{ borderColor: 'var(--border-default)' }}>
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#111111' }}>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#F0F2F5' }}>
             Related Articles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -238,7 +238,8 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                 className="group rounded-xl border p-6 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10"
                 style={{
                   borderColor: 'var(--border-default)',
-                  background: '#FFFFFF',
+                  background: 'rgba(255,255,255,0.06)',
+                  backdropFilter: 'blur(12px)',
                   textDecoration: 'none',
                 }}
               >
@@ -246,19 +247,19 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                   <span
                     className="inline-flex items-center w-fit px-2.5 py-1 rounded-full text-xs font-semibold"
                     style={{
-                      background: 'rgba(17,17,17,0.15)',
-                      color: '#111111',
+                      background: 'rgba(24,86,255,0.12)',
+                      color: '#3D72FF',
                     }}
                   >
                     {relatedPost.category}
                   </span>
-                  <h3 className="text-base font-display font-bold leading-tight group-hover:text-violet-500 transition-colors" style={{ color: '#111111' }}>
+                  <h3 className="text-base font-display font-bold leading-tight group-hover:text-blue-400 transition-colors" style={{ color: '#F0F2F5' }}>
                     {relatedPost.title}
                   </h3>
-                  <p className="text-sm leading-relaxed flex-1" style={{ color: '#6B7280' }}>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: 'rgba(240,242,245,0.70)' }}>
                     {relatedPost.description}
                   </p>
-                  <div className="text-xs pt-2 border-t" style={{ color: '#6B7280', borderColor: 'var(--border-default)' }}>
+                  <div className="text-xs pt-2 border-t" style={{ color: 'rgba(240,242,245,0.70)', borderColor: 'var(--border-default)' }}>
                     {relatedPost.readTime} min read
                   </div>
                 </div>

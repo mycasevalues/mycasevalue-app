@@ -44,17 +44,17 @@ export default function BlogPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)' }}>
+      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(180deg, rgba(255,255,255,0.06) 0%, var(--bg-base) 100%)' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(17,17,17,0.15)', color: '#111111' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
+            style={{ background: 'rgba(24,86,255,0.12)', color: '#3D72FF' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3D72FF" strokeWidth="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
             INSIGHTS & ANALYSIS
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#F0F2F5', letterSpacing: '-1.5px' }}>
             Federal Court Data & Litigation Insights
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(240,242,245,0.70)' }}>
             Research-backed articles analyzing real outcomes from 5.1M+ federal cases. Understand win rates, settlement data, timelines, and what affects your case.
           </p>
         </div>
@@ -69,7 +69,8 @@ export default function BlogPage() {
               className="group rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10 animate-in fade-in slide-in-from-bottom-4"
               style={{
                 borderColor: 'var(--border-default)',
-                background: '#FFFFFF',
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(12px)',
                 animationDelay: `${idx * 100}ms`,
               }}
             >
@@ -79,8 +80,8 @@ export default function BlogPage() {
                   <span
                     className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold"
                     style={{
-                      background: 'rgba(17,17,17,0.15)',
-                      color: '#111111',
+                      background: 'rgba(24,86,255,0.12)',
+                      color: '#3D72FF',
                     }}
                   >
                     {post.category}
@@ -94,20 +95,20 @@ export default function BlogPage() {
                     className="block group/link"
                   >
                     <h2
-                      className="text-2xl sm:text-3xl font-display font-bold mb-3 transition-colors group-hover/link:text-violet-500"
-                      style={{ color: '#111111' }}
+                      className="text-2xl sm:text-3xl font-display font-bold mb-3 transition-colors group-hover/link:text-blue-400"
+                      style={{ color: '#F0F2F5' }}
                     >
                       {post.title}
                     </h2>
                   </a>
-                  <p className="text-base leading-relaxed" style={{ color: '#6B7280' }}>
+                  <p className="text-base leading-relaxed" style={{ color: 'rgba(240,242,245,0.70)' }}>
                     {post.description}
                   </p>
                 </div>
 
                 {/* Meta information */}
                 <div className="flex flex-wrap items-center gap-4 pt-4 border-t" style={{ borderColor: 'var(--border-default)' }}>
-                  <div className="text-sm" style={{ color: '#6B7280' }}>
+                  <div className="text-sm" style={{ color: 'rgba(240,242,245,0.70)' }}>
                     <span className="font-medium">{post.author}</span>
                     <span className="mx-2">•</span>
                     <time>{post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
@@ -119,8 +120,8 @@ export default function BlogPage() {
                       href={`/blog/${post.slug}`}
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all"
                       style={{
-                        background: 'rgba(17,17,17,0.1)',
-                        color: '#111111',
+                        background: 'rgba(24,86,255,0.12)',
+                        color: '#3D72FF',
                       }}
                     >
                       Read Article
@@ -137,8 +138,8 @@ export default function BlogPage() {
                       href={`/blog?tag=${encodeURIComponent(tag)}`}
                       className="text-xs font-medium px-2.5 py-1 rounded-full transition-colors"
                       style={{
-                        background: 'rgba(17,17,17,0.08)',
-                        color: '#8B5CF6',
+                        background: 'rgba(24,86,255,0.08)',
+                        color: '#3D72FF',
                       }}
                     >
                       #{tag}
@@ -153,17 +154,17 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#F0F2F5' }}>
             Ready to analyze your case?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#6B7280' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: 'rgba(240,242,245,0.70)' }}>
             Use the data you just learned to get a personalized analysis of real outcomes in cases like yours.
           </p>
           <a
             href="/search"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#111111', color: '#FFFFFF' }}
+            style={{ background: '#1856FF', color: '#FFFFFF' }}
           >
             Check My Case Type
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

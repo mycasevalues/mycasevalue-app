@@ -66,7 +66,7 @@ export default function CookieConsent() {
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#6B7280"
+            stroke="rgba(240,242,245,0.70)"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -80,14 +80,14 @@ export default function CookieConsent() {
               margin: 0,
               fontSize: '14px',
               lineHeight: '1.5',
-              color: '#111111',
+              color: '#F0F2F5',
             }}
           >
             We use cookies for analytics and to improve your experience.{' '}
             <Link
               href="/privacy"
               style={{
-                color: '#8B5CF6',
+                color: '#1856FF',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
                 fontWeight: 500,
@@ -116,7 +116,7 @@ export default function CookieConsent() {
               fontFamily: 'var(--font-body)',
               border: '1px solid var(--border-default)',
               background: 'transparent',
-              color: '#6B7280',
+              color: 'rgba(240,242,245,0.70)',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',
@@ -134,7 +134,7 @@ export default function CookieConsent() {
               fontSize: '13px',
               fontFamily: 'Montserrat, system-ui, sans-serif',
               border: 'none',
-              background: '#8B5CF6',
+              background: '#1856FF',
               color: '#FFFFFF',
               cursor: 'pointer',
               transition: 'all 200ms',

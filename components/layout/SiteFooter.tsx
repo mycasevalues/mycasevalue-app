@@ -1,6 +1,5 @@
 /**
- * SiteFooter.tsx — Site-wide dark footer (Server Component compatible).
- * bg #111111 — the ONLY dark element on the entire site per Paper design system.
+ * SiteFooter.tsx — Glassmorphism footer with subtle glass border.
  * Rendered from app/layout.tsx so every page gets consistent footer.
  */
 
@@ -46,8 +45,11 @@ export default function SiteFooter() {
       className="site-footer"
       role="contentinfo"
       style={{
-        background: '#111111',
-        color: 'rgba(255,255,255,0.6)',
+        background: 'rgba(11,14,23,0.80)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+        color: 'rgba(240,242,245,0.50)',
         padding: '64px 24px 32px',
       }}
     >
@@ -68,7 +70,7 @@ export default function SiteFooter() {
               <div style={{
                 width: '28px',
                 height: '28px',
-                background: '#8B5CF6',
+                background: '#1856FF',
                 borderRadius: '6px',
                 display: 'flex',
                 alignItems: 'center',
@@ -78,14 +80,14 @@ export default function SiteFooter() {
                   <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
                 </svg>
               </div>
-              <span style={{ fontSize: '18px', fontWeight: 800, color: '#FFFFFF', fontFamily: 'var(--font-display)' }}>
+              <span style={{ fontSize: '18px', fontWeight: 800, color: '#F0F2F5', fontFamily: 'var(--font-display)' }}>
                 MyCaseValue
               </span>
             </div>
             <p style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: 'rgba(255,255,255,0.6)',
+              color: 'rgba(240,242,245,0.50)',
               lineHeight: 1.6,
               marginBottom: '8px',
             }}>
@@ -94,7 +96,7 @@ export default function SiteFooter() {
             <p style={{
               fontFamily: 'var(--font-body)',
               fontSize: '12px',
-              color: 'rgba(255,255,255,0.4)',
+              color: 'rgba(240,242,245,0.30)',
             }}>
               Built on PACER &middot; FJC &middot; CourtListener data
             </p>
@@ -107,7 +109,7 @@ export default function SiteFooter() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '11px',
                 fontWeight: 600,
-                color: 'rgba(255,255,255,0.4)',
+                color: 'rgba(240,242,245,0.30)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 marginBottom: '16px',
@@ -122,7 +124,7 @@ export default function SiteFooter() {
                     className="site-footer-link"
                     style={{
                       fontSize: '14px',
-                      color: 'rgba(255,255,255,0.6)',
+                      color: 'rgba(240,242,245,0.50)',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       transition: 'color 150ms',
@@ -138,7 +140,7 @@ export default function SiteFooter() {
 
         {/* Bottom bar */}
         <div style={{
-          borderTop: '1px solid rgba(255,255,255,0.08)',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
           paddingTop: '24px',
           display: 'flex',
           justifyContent: 'space-between',
@@ -149,7 +151,7 @@ export default function SiteFooter() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '12px',
-            color: 'rgba(255,255,255,0.4)',
+            color: 'rgba(240,242,245,0.30)',
             margin: 0,
           }}>
             &copy; {new Date().getFullYear()} MyCaseValue LLC. All rights reserved.
@@ -157,7 +159,7 @@ export default function SiteFooter() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '12px',
-            color: 'rgba(255,255,255,0.4)',
+            color: 'rgba(240,242,245,0.30)',
             margin: 0,
           }}>
             For informational purposes only. Not legal advice.
@@ -166,7 +168,7 @@ export default function SiteFooter() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .site-footer-link:hover { color: rgba(255,255,255,1) !important; }
+        .site-footer-link:hover { color: #F0F2F5 !important; }
         @media (max-width: 768px) {
           .site-footer-grid { grid-template-columns: 1fr 1fr !important; }
         }

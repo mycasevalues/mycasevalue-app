@@ -1,7 +1,6 @@
 /* ============================================================
-   MYCASEVALUE — PAPER DESIGN SYSTEM FONTS
-   Google Fonts: Roboto, Montserrat, PT Mono
-   Loaded via CSS @import (next/font/google not available in this env)
+   MYCASEVALUE — GLASSMORPHISM DESIGN SYSTEM FONTS
+   Google Fonts: Plus Jakarta Sans, JetBrains Mono
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700;800;900&family=PT+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
