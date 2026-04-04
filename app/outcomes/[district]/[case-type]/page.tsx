@@ -95,12 +95,37 @@ export default async function OutcomesPage({
 
   if (!option || !category) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-base)', color: '#111111' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#EDEEEE', color: '#212529' }}>
         <div className="text-center">
-          <h1 className="text-3xl font-bold mb-4">Case outcomes not found</h1>
-          <p className="mb-6" style={{ color: '#455A64' }}>This case type and district combination does not exist in our database.</p>
-          <Link href="/outcomes" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: '#E8171F' }}>
+          <h1 style={{
+            fontSize: '32px',
+            fontWeight: 700,
+            marginBottom: '16px',
+            fontFamily: 'var(--font-display)',
+            color: '#212529',
+          }}>Case outcomes not found</h1>
+          <p style={{
+            marginBottom: '32px',
+            color: '#455A64',
+            fontSize: '16px',
+            fontFamily: 'var(--font-body)',
+            lineHeight: '1.6',
+          }}>This case type and district combination does not exist in our database.</p>
+          <Link href="/outcomes" style={{
+            display: 'inline-block',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            paddingTop: '12px',
+            paddingBottom: '12px',
+            borderRadius: '4px',
+            fontWeight: 600,
+            color: '#FFFFFF',
+            background: '#E8171F',
+            textDecoration: 'none',
+            fontSize: '14px',
+            fontFamily: 'var(--font-body)',
+            transition: 'all 0.3s ease',
+          }}>
             Browse all outcomes
           </Link>
         </div>
@@ -161,100 +186,192 @@ export default async function OutcomesPage({
   };
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       {/* Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Breadcrumb */}
+      {/* Design system styles */}
+      <style>{`
+        .outcome-card-link:hover {
+          border-color: #006997;
+          box-shadow: 0 2px 8px rgba(0, 105, 151, 0.1);
+          transform: translateY(-2px);
+        }
+      `}</style>
+
+      {/* Header Section - Dark Navy */}
       <div style={{
-        background: '#FFFFFF',
-        borderBottom: '1px solid var(--border-default)',
-        padding: '16px 20px',
+        background: '#00172E',
+        padding: '32px 20px',
+        borderBottom: '1px solid #1a2a3a',
       }}>
-        <div style={{
-          maxWidth: 1200,
-          margin: '0 auto',
-          fontSize: '14px',
-          color: '#455A64',
-          fontFamily: 'var(--font-body)',
-        }}>
-          <Link href="/" style={{ color: '#111111', textDecoration: 'none' }}>
-            Home
-          </Link>
-          {' / '}
-          <Link href="/cases" style={{ color: '#111111', textDecoration: 'none' }}>
-            Cases
-          </Link>
-          {' / '}
-          <Link href={`/cases/${category.id}`} style={{ color: '#111111', textDecoration: 'none' }}>
-            {categoryLabel}
-          </Link>
-          {' / '}
-          <Link href={`/nos/${option.nos}`} style={{ color: '#111111', textDecoration: 'none' }}>
-            {option.label}
-          </Link>
-          {' / '}
-          <span style={{ color: '#111111', fontWeight: 500 }}>{stateName}</span>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          {/* Breadcrumb */}
+          <div style={{
+            fontSize: '13px',
+            color: '#D5D8DC',
+            fontFamily: 'var(--font-body)',
+            marginBottom: '16px',
+            letterSpacing: '0.3px',
+          }}>
+            <Link href="/" style={{ color: '#D5D8DC', textDecoration: 'none' }}>
+              Home
+            </Link>
+            <span style={{ margin: '0 8px' }}>›</span>
+            <Link href="/outcomes" style={{ color: '#D5D8DC', textDecoration: 'none' }}>
+              Districts
+            </Link>
+            <span style={{ margin: '0 8px' }}>›</span>
+            <Link href={`/outcomes/${district}`} style={{ color: '#D5D8DC', textDecoration: 'none' }}>
+              {stateName}
+            </Link>
+            <span style={{ margin: '0 8px' }}>›</span>
+            <span style={{ color: '#FFFFFF' }}>{option.label}</span>
+          </div>
+
+          {/* Title with Badge */}
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '8px' }}>
+            <h1 style={{
+              fontSize: '42px',
+              fontWeight: 700,
+              margin: 0,
+              fontFamily: 'var(--font-display)',
+              color: '#FFFFFF',
+              letterSpacing: '-0.5px',
+              flex: 1,
+            }}>
+              {option.label} Cases in {stateName}
+            </h1>
+            <div style={{
+              background: '#E8171F',
+              color: '#FFFFFF',
+              padding: '6px 12px',
+              borderRadius: '4px',
+              fontSize: '11px',
+              fontWeight: 700,
+              letterSpacing: '0.5px',
+              textTransform: 'uppercase',
+              whiteSpace: 'nowrap',
+              marginTop: '4px',
+            }}>
+              OUTCOMES
+            </div>
+          </div>
+
+          {/* Subtitle */}
+          <p style={{
+            fontSize: '16px',
+            margin: '12px 0 0 0',
+            fontFamily: 'var(--font-body)',
+            color: '#D5D8DC',
+            lineHeight: '1.6',
+            maxWidth: '700px',
+          }}>
+            Federal court outcome data for {option.label.toLowerCase()} cases filed in {stateName}.
+            Real win rates, settlement percentages, case timelines, and recovery ranges from public court records.
+          </p>
         </div>
       </div>
 
-      {/* Hero Section */}
+      {/* Key Stats Section */}
       <div style={{
-        background: '#111111',
-        padding: '60px 20px',
-        color: 'white',
+        background: '#FFFFFF',
+        padding: '32px 20px',
+        borderBottom: '1px solid #D5D8DC',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <h1 style={{
-            fontSize: '44px',
-            fontWeight: 700,
-            margin: '0 0 16px 0',
-            fontFamily: 'var(--font-body)',
-            letterSpacing: '-0.5px',
-          }}>
-            {option.label} Cases in {stateName}
-          </h1>
-          <p style={{
-            fontSize: '18px',
-            margin: '0 0 32px 0',
-            fontFamily: 'var(--font-body)',
-            opacity: 0.95,
-            maxWidth: '600px',
-            lineHeight: '1.6',
-          }}>
-            Federal court outcome data for {option.label.toLowerCase()} cases filed in {stateName}.
-            Real win rates, settlement percentages, case timelines, and recovery ranges.
-          </p>
-
-          {/* Key Stats */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '24px',
           }}>
-            <div>
-              <div style={{ fontWeight: 600, fontSize: '32px', marginBottom: '4px' }}>
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '20px',
+            }}>
+              <div style={{
+                fontWeight: 700,
+                fontSize: '36px',
+                marginBottom: '8px',
+                color: '#212529',
+                fontFamily: 'var(--font-display)',
+              }}>
                 {Math.round(districtWinRate)}%
               </div>
-              <div style={{ opacity: 0.9, fontSize: '14px' }}>Win + Settlement Rate</div>
+              <div style={{
+                fontSize: '13px',
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+                fontWeight: 500,
+              }}>Win + Settlement Rate</div>
             </div>
-            <div>
-              <div style={{ fontWeight: 600, fontSize: '32px', marginBottom: '4px' }}>
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '20px',
+            }}>
+              <div style={{
+                fontWeight: 700,
+                fontSize: '36px',
+                marginBottom: '8px',
+                color: '#212529',
+                fontFamily: 'var(--font-display)',
+              }}>
                 {districtDuration} mo
               </div>
-              <div style={{ opacity: 0.9, fontSize: '14px' }}>Median Duration</div>
+              <div style={{
+                fontSize: '13px',
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+                fontWeight: 500,
+              }}>Median Duration</div>
             </div>
-            <div>
-              <div style={{ fontWeight: 600, fontSize: '32px', marginBottom: '4px' }}>
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '20px',
+            }}>
+              <div style={{
+                fontWeight: 700,
+                fontSize: '36px',
+                marginBottom: '8px',
+                color: '#212529',
+                fontFamily: 'var(--font-display)',
+              }}>
                 {Math.round(districtSettleRate)}%
               </div>
-              <div style={{ opacity: 0.9, fontSize: '14px' }}>Settlement Rate</div>
+              <div style={{
+                fontSize: '13px',
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+                fontWeight: 500,
+              }}>Settlement Rate</div>
             </div>
-            <div>
-              <div style={{ fontWeight: 600, fontSize: '32px', marginBottom: '4px' }}>
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '20px',
+            }}>
+              <div style={{
+                fontWeight: 700,
+                fontSize: '36px',
+                marginBottom: '8px',
+                color: '#212529',
+                fontFamily: 'var(--font-display)',
+              }}>
                 {totalOutcomes.toLocaleString()}+
               </div>
-              <div style={{ opacity: 0.9, fontSize: '14px' }}>Cases Tracked</div>
+              <div style={{
+                fontSize: '13px',
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+                fontWeight: 500,
+              }}>Cases Tracked</div>
             </div>
           </div>
         </div>
@@ -262,21 +379,22 @@ export default async function OutcomesPage({
 
       {/* Outcome Distribution */}
       <div style={{
-        padding: '60px 20px',
+        padding: '40px 20px',
+        background: '#EDEEEE',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{
             background: '#FFFFFF',
-            border: '1px solid var(--border-default)',
-            borderRadius: '10px',
+            border: '1px solid #D5D8DC',
+            borderRadius: '4px',
             padding: '32px',
           }}>
             <h2 style={{
-              fontSize: '24px',
-              fontWeight: 600,
-              color: '#111111',
-              margin: '0 0 32px 0',
-              fontFamily: 'var(--font-body)',
+              fontSize: '22px',
+              fontWeight: 700,
+              color: '#212529',
+              margin: '0 0 28px 0',
+              fontFamily: 'var(--font-display)',
             }}>
               Outcome Distribution
             </h2>
@@ -290,9 +408,10 @@ export default async function OutcomesPage({
                     marginBottom: '12px',
                   }}>
                     <span style={{
-                      fontSize: '14px',
+                      fontSize: '13px',
                       fontWeight: 600,
-                      color: '#111111',
+                      color: '#455A64',
+                      fontFamily: 'var(--font-body)',
                     }}>
                       {outcome.label}
                     </span>
@@ -307,7 +426,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     height: '12px',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     background: '#E5E7EB',
                     overflow: 'hidden',
                   }}>
@@ -327,17 +446,16 @@ export default async function OutcomesPage({
 
       {/* Related Links Section */}
       <div style={{
-        background: '#FFFFFF',
-        padding: '60px 20px',
-        borderTop: '1px solid var(--border-default)',
+        background: '#EDEEEE',
+        padding: '40px 20px',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
-            fontSize: '24px',
-            fontWeight: 600,
-            color: '#111111',
-            margin: '0 0 32px 0',
-            fontFamily: 'var(--font-body)',
+            fontSize: '22px',
+            fontWeight: 700,
+            color: '#212529',
+            margin: '0 0 28px 0',
+            fontFamily: 'var(--font-display)',
           }}>
             Explore More
           </h2>
@@ -347,57 +465,61 @@ export default async function OutcomesPage({
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '20px',
           }}>
-            <Link href={`/cases/${category.id}`} className="outcome-nav-card" style={{
+            <Link href={`/cases/${category.id}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
-              border: '1px solid var(--border-default)',
-              borderRadius: '10px',
-              padding: '20px',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '24px',
               textDecoration: 'none',
               display: 'block',
-              transition: 'all 0.2s ease',
+              transition: 'all 0.3s ease',
             }}>
               <div style={{
-                fontSize: '12px',
+                fontSize: '11px',
                 color: '#455A64',
                 textTransform: 'uppercase',
-                letterSpacing: '1px',
-                fontWeight: 600,
-                marginBottom: '8px',
+                letterSpacing: '0.5px',
+                fontWeight: 700,
+                marginBottom: '12px',
+                fontFamily: 'var(--font-body)',
               }}>
                 Category
               </div>
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#111111',
+                color: '#212529',
+                fontFamily: 'var(--font-display)',
               }}>
                 All {categoryLabel} Cases
               </div>
             </Link>
 
-            <Link href={`/nos/${option.nos}`} className="outcome-nav-card" style={{
+            <Link href={`/nos/${option.nos}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
-              border: '1px solid var(--border-default)',
-              borderRadius: '10px',
-              padding: '20px',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '24px',
               textDecoration: 'none',
               display: 'block',
-              transition: 'all 0.2s ease',
+              transition: 'all 0.3s ease',
             }}>
               <div style={{
-                fontSize: '12px',
+                fontSize: '11px',
                 color: '#455A64',
                 textTransform: 'uppercase',
-                letterSpacing: '1px',
-                fontWeight: 600,
-                marginBottom: '8px',
+                letterSpacing: '0.5px',
+                fontWeight: 700,
+                marginBottom: '12px',
+                fontFamily: 'var(--font-body)',
               }}>
                 Case Type
               </div>
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#111111',
+                color: '#212529',
+                fontFamily: 'var(--font-display)',
               }}>
                 {option.label} (NOS {option.nos})
               </div>
@@ -408,19 +530,20 @@ export default async function OutcomesPage({
 
       {/* Disclaimer */}
       <div style={{
-        background: 'var(--bg-base)',
+        background: '#FFFFFF',
         color: '#455A64',
         padding: '40px 20px',
-        fontSize: '14px',
+        fontSize: '13px',
         fontFamily: 'var(--font-body)',
-        lineHeight: '1.6',
+        lineHeight: '1.7',
+        borderTop: '1px solid #D5D8DC',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ margin: '0 0 16px 0' }}>
-            <strong>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
+          <p style={{ margin: '0 0 16px 0', color: '#455A64' }}>
+            <strong style={{ color: '#212529' }}>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
           </p>
-          <p style={{ margin: 0 }}>
-            <strong>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
+          <p style={{ margin: 0, color: '#455A64' }}>
+            <strong style={{ color: '#212529' }}>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
           </p>
         </div>
       </div>

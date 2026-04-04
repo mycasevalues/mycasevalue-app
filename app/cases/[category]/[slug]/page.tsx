@@ -105,11 +105,12 @@ function StatsCard({
         padding: '20px',
         borderRadius: '4px',
         background: '#FFFFFF',
-        border: '1px solid var(--border-default)',
+        border: '1px solid #D5D8DC',
         textAlign: 'center',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
       }}
     >
-      <p style={{ color: '#455A64', fontSize: '14px', margin: '0 0 8px' }}>
+      <p style={{ color: '#455A64', fontSize: '14px', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
         {label}
       </p>
       <p
@@ -124,7 +125,7 @@ function StatsCard({
         {value}
       </p>
       {subtitle && (
-        <p style={{ color: '#455A64', fontSize: '12px', margin: '6px 0 0' }}>
+        <p style={{ color: '#455A64', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-body)' }}>
           {subtitle}
         </p>
       )}
@@ -144,25 +145,28 @@ export default async function CaseTypeDetailPage({
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ background: 'var(--bg-base)' }}
+        style={{ background: '#EDEEEE' }}
       >
-        <div style={{ textAlign: 'center', color: '#111111' }}>
-          <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: '0 0 16px' }}>
+        <div style={{ textAlign: 'center', color: '#212529' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: '0 0 16px', fontFamily: 'var(--font-display)', color: '#212529' }}>
             Case type not found
           </h1>
-          <p style={{ color: '#455A64', margin: '0 0 24px' }}>
+          <p style={{ color: '#455A64', margin: '0 0 24px', fontFamily: 'var(--font-body)' }}>
             This case type does not exist in our database.
           </p>
           <Link
             href={`/cases/${category}`}
             style={{
               display: 'inline-block',
-              padding: '12px 24px',
+              padding: '12px 32px',
               borderRadius: '4px',
               background: '#E8171F',
               color: 'white',
               textDecoration: 'none',
-              fontWeight: 'bold',
+              fontWeight: '700',
+              fontSize: '14px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
             }}
           >
             Back to {getCategoryLabel(category)}
@@ -221,87 +225,93 @@ export default async function CaseTypeDetailPage({
   };
 
   return (
-    <main style={{ background: 'var(--bg-base)', color: '#111111' }}>
+    <main style={{ background: '#EDEEEE', color: '#212529' }}>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Breadcrumb */}
-      <nav
+      {/* Dark Navy Header Section */}
+      <header
         style={{
-          padding: '16px 24px',
-          borderBottom: '1px solid var(--border-default)',
-          background: '#FFFFFF',
+          background: '#00172E',
+          padding: '40px 24px',
+          marginBottom: '40px',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center' }}>
-            <Link href="/" style={{ color: '#E8171F', textDecoration: 'none' }}>
-              Home
-            </Link>
-            <span style={{ color: '#455A64' }}>›</span>
-            <Link
-              href="/cases"
-              style={{ color: '#E8171F', textDecoration: 'none' }}
-            >
-              Cases
-            </Link>
-            <span style={{ color: '#455A64' }}>›</span>
-            <Link
-              href={`/cases/${category}`}
-              style={{ color: '#E8171F', textDecoration: 'none' }}
-            >
-              {getCategoryLabel(category)}
-            </Link>
-            <span style={{ color: '#455A64' }}>›</span>
-            <span style={{ color: '#111111' }}>{caseType.label}</span>
-          </div>
-        </div>
-      </nav>
+          {/* Breadcrumb */}
+          <nav style={{ marginBottom: '24px' }}>
+            <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center' }}>
+              <Link href="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>
+                Home
+              </Link>
+              <span style={{ color: '#D5D8DC' }}>&gt;</span>
+              <Link
+                href="/cases"
+                style={{ color: '#FFFFFF', textDecoration: 'none' }}
+              >
+                Cases
+              </Link>
+              <span style={{ color: '#D5D8DC' }}>&gt;</span>
+              <Link
+                href={`/cases/${category}`}
+                style={{ color: '#FFFFFF', textDecoration: 'none' }}
+              >
+                {getCategoryLabel(category)}
+              </Link>
+              <span style={{ color: '#D5D8DC' }}>&gt;</span>
+              <span style={{ color: '#D5D8DC' }}>{caseType.label}</span>
+            </div>
+          </nav>
 
-      {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
-        {/* Header */}
-        <div style={{ marginBottom: '40px' }}>
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '16px' }}>
-            <h1
-              style={{
-                fontSize: '32px',
-                fontWeight: 'bold',
-                margin: '0',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
-              {caseType.label}
-            </h1>
+          {/* Header Content */}
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '8px' }}>
+            <div style={{ flex: 1 }}>
+              <h1
+                style={{
+                  fontSize: '36px',
+                  fontWeight: 'bold',
+                  margin: '0 0 8px',
+                  fontFamily: 'var(--font-display)',
+                  color: '#FFFFFF',
+                }}
+              >
+                {caseType.label}
+              </h1>
+              <p
+                style={{
+                  fontSize: '16px',
+                  color: '#D5D8DC',
+                  margin: '0',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                Federal Court Outcomes & Win Rates
+              </p>
+            </div>
             <span
               style={{
                 display: 'inline-block',
-                padding: '6px 12px',
-                borderRadius: '6px',
-                background: '#FFFFFF',
-                border: '1px solid var(--border-default)',
+                padding: '8px 16px',
+                borderRadius: '4px',
+                background: '#E8171F',
                 fontSize: '12px',
-                fontWeight: '600',
-                color: '#455A64',
+                fontWeight: '700',
+                color: '#FFFFFF',
+                textTransform: 'uppercase',
+                marginTop: '4px',
               }}
             >
               NOS {caseType.nosCode}
             </span>
           </div>
-          <h2
-            style={{
-              fontSize: '18px',
-              color: '#455A64',
-              margin: '0',
-              fontWeight: 'normal',
-            }}
-          >
-            Federal Court Outcomes & Win Rates
-          </h2>
         </div>
+      </header>
+
+      {/* Main Content */}
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 40px' }}>
 
         {/* Stats Grid */}
         <div
@@ -323,10 +333,11 @@ export default async function CaseTypeDetailPage({
         <div
           style={{
             background: '#FFFFFF',
-            border: '1px solid var(--border-default)',
+            border: '1px solid #D5D8DC',
             borderRadius: '4px',
             padding: '32px',
             marginBottom: '40px',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
           }}
         >
           <h2
@@ -335,6 +346,7 @@ export default async function CaseTypeDetailPage({
               fontWeight: 'bold',
               margin: '0 0 16px',
               fontFamily: 'var(--font-display)',
+              color: '#212529',
             }}
           >
             About {caseType.label}
@@ -342,7 +354,7 @@ export default async function CaseTypeDetailPage({
           <p
             style={{
               lineHeight: '1.6',
-              color: '#111111',
+              color: '#455A64',
               margin: '0',
               fontFamily: 'var(--font-body)',
             }}
@@ -364,9 +376,10 @@ export default async function CaseTypeDetailPage({
           <div
             style={{
               background: '#FFFFFF',
-              border: '1px solid var(--border-default)',
+              border: '1px solid #D5D8DC',
               borderRadius: '4px',
               padding: '24px',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
             }}
           >
             <h3
@@ -375,6 +388,7 @@ export default async function CaseTypeDetailPage({
                 fontWeight: 'bold',
                 margin: '0 0 16px',
                 fontFamily: 'var(--font-display)',
+                color: '#212529',
               }}
             >
               Governing Federal Law
@@ -382,8 +396,9 @@ export default async function CaseTypeDetailPage({
             <p
               style={{
                 fontSize: '15px',
-                color: '#111111',
+                color: '#455A64',
                 margin: '0',
+                fontFamily: 'var(--font-body)',
               }}
             >
               {caseType.federalLaw}
@@ -394,9 +409,10 @@ export default async function CaseTypeDetailPage({
           <div
             style={{
               background: '#FFFFFF',
-              border: '1px solid var(--border-default)',
+              border: '1px solid #D5D8DC',
               borderRadius: '4px',
               padding: '24px',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
             }}
           >
             <h3
@@ -405,6 +421,7 @@ export default async function CaseTypeDetailPage({
                 fontWeight: 'bold',
                 margin: '0 0 16px',
                 fontFamily: 'var(--font-display)',
+                color: '#212529',
               }}
             >
               Typical Claims
@@ -423,6 +440,8 @@ export default async function CaseTypeDetailPage({
                     paddingLeft: '20px',
                     marginBottom: idx < caseType.typicalClaims.length - 1 ? '10px' : '0',
                     position: 'relative',
+                    color: '#455A64',
+                    fontFamily: 'var(--font-body)',
                   }}
                 >
                   <span
@@ -442,21 +461,42 @@ export default async function CaseTypeDetailPage({
         </div>
 
         {/* CTA Section */}
+        <style>{`
+          .cta-button {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 4px;
+            background: #E8171F;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+          }
+          .cta-button:hover {
+            background-color: #c41218;
+            transform: translateY(-1px);
+          }
+        `}</style>
         <div
           style={{
-            background: 'linear-gradient(135deg, #E8171F, rgba(51, 51, 51, 0.8))',
-            color: 'white',
+            background: '#00172E',
+            color: '#FFFFFF',
             borderRadius: '4px',
-            padding: '40px',
+            padding: '48px 40px',
             textAlign: 'center',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
           }}
         >
           <h2
             style={{
-              fontSize: '24px',
+              fontSize: '28px',
               fontWeight: 'bold',
               margin: '0 0 12px',
               fontFamily: 'var(--font-display)',
+              color: '#FFFFFF',
             }}
           >
             Research Your District
@@ -464,31 +504,16 @@ export default async function CaseTypeDetailPage({
           <p
             style={{
               fontSize: '16px',
-              margin: '0 0 24px',
-              opacity: 0.95,
+              margin: '0 0 28px',
+              color: '#D5D8DC',
+              fontFamily: 'var(--font-body)',
             }}
           >
             Get detailed case outcomes and win rates for your specific federal district
           </p>
-          <style>{`
-            .cta-link:hover {
-              transform: translateY(-2px);
-            }
-          `}</style>
           <Link
             href={`/report/${caseType.nosCode}`}
-            className="cta-link"
-            style={{
-              display: 'inline-block',
-              padding: '12px 32px',
-              borderRadius: '4px',
-              background: 'white',
-              color: '#E8171F',
-              textDecoration: 'none',
-              fontWeight: 'bold',
-              fontSize: '16px',
-              transition: 'transform 0.2s',
-            }}
+            className="cta-button"
           >
             View District Data
           </Link>
@@ -497,9 +522,21 @@ export default async function CaseTypeDetailPage({
         {/* Related Case Types */}
         <div style={{ marginTop: '60px' }}>
           <style>{`
+            .related-case-card {
+              padding: 16px;
+              border-radius: 4px;
+              background: #FFFFFF;
+              border: 1px solid #D5D8DC;
+              text-decoration: none;
+              color: inherit;
+              transition: all 0.2s ease;
+              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            }
             .related-case-card:hover {
               border-color: #E8171F;
-              background: var(--bg-base);
+              background: #FFFFFF;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+              transform: translateY(-1px);
             }
           `}</style>
           <h2
@@ -508,6 +545,7 @@ export default async function CaseTypeDetailPage({
               fontWeight: 'bold',
               margin: '0 0 24px',
               fontFamily: 'var(--font-display)',
+              color: '#212529',
             }}
           >
             Related Case Types
@@ -529,20 +567,11 @@ export default async function CaseTypeDetailPage({
                   key={`${related.categorySlug}-${related.slug}`}
                   href={`/cases/${related.categorySlug}/${related.slug}`}
                   className="related-case-card"
-                  style={{
-                    padding: '16px',
-                    borderRadius: '4px',
-                    background: '#FFFFFF',
-                    border: '1px solid var(--border-default)',
-                    textDecoration: 'none',
-                    color: 'inherit',
-                    transition: 'all 0.2s',
-                  }}
                 >
-                  <h3 style={{ fontSize: '14px', fontWeight: 'bold', margin: '0' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 'bold', margin: '0', color: '#212529', fontFamily: 'var(--font-display)' }}>
                     {related.label}
                   </h3>
-                  <p style={{ fontSize: '12px', color: '#455A64', margin: '4px 0 0' }}>
+                  <p style={{ fontSize: '12px', color: '#455A64', margin: '4px 0 0', fontFamily: 'var(--font-body)' }}>
                     NOS {related.nosCode}
                   </p>
                 </Link>

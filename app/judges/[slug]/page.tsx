@@ -59,11 +59,26 @@ export default async function JudgePage({ params }: PageProps) {
   // If judge not found, show coming soon page
   if (!judge) {
     return (
-      <div style={{ background: 'var(--bg-base)', minHeight: '100vh' }}>
+      <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+        <style>{`
+          .judge-coming-soon-link {
+            color: #212529;
+            transition: color 0.2s ease;
+          }
+          .judge-coming-soon-link:hover {
+            color: #006997;
+          }
+          .judge-coming-soon-btn {
+            transition: background-color 0.2s ease;
+          }
+          .judge-coming-soon-btn:hover {
+            background-color: #d00f1a;
+          }
+        `}</style>
         {/* Header */}
         <div
           style={{
-            borderBottom: '1px solid var(--border-default)',
+            borderBottom: '1px solid #D5D8DC',
             background: '#FFFFFF',
           }}
         >
@@ -71,15 +86,14 @@ export default async function JudgePage({ params }: PageProps) {
             <div style={{ paddingTop: '24px', paddingBottom: '24px' }}>
               <Link
                 href="/judges"
+                className="judge-coming-soon-link"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: '#212529',
                   textDecoration: 'none',
-                  transition: 'opacity 0.2s',
                 }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -107,8 +121,8 @@ export default async function JudgePage({ params }: PageProps) {
               justifyContent: 'center',
               width: '64px',
               height: '64px',
-              borderRadius: '16px',
-              background: 'var(--accent-primary-subtle)',
+              borderRadius: '4px',
+              background: '#FCE5E6',
               margin: '0 auto 32px',
             }}
           >
@@ -132,6 +146,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontWeight: '900',
               marginBottom: '16px',
               color: '#212529',
+              fontFamily: 'var(--font-display)',
             }}
           >
             Judge Profile
@@ -144,6 +159,7 @@ export default async function JudgePage({ params }: PageProps) {
               maxWidth: '560px',
               margin: '0 auto 32px',
               color: '#455A64',
+              fontFamily: 'var(--font-body)',
             }}
           >
             This judge's detailed analytics profile is being compiled. We're processing public court records to build comprehensive profiles for all federal judges.
@@ -151,6 +167,7 @@ export default async function JudgePage({ params }: PageProps) {
 
           <Link
             href="/judges"
+            className="judge-coming-soon-btn"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -158,11 +175,10 @@ export default async function JudgePage({ params }: PageProps) {
               padding: '12px 28px',
               borderRadius: '4px',
               background: '#E8171F',
-              color: 'var(--bg-base)',
+              color: '#FFFFFF',
               fontSize: '16px',
               fontWeight: '600',
               textDecoration: 'none',
-              transition: 'all 0.2s',
             }}
           >
             Browse all judges
@@ -176,6 +192,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontSize: '14px',
               color: '#455A64',
               marginTop: '48px',
+              fontFamily: 'var(--font-body)',
             }}
           >
             Check back soon
@@ -233,99 +250,111 @@ export default async function JudgePage({ params }: PageProps) {
   };
 
   return (
-    <div style={{ background: 'var(--bg-base)', minHeight: '100vh' }}>
-      {/* Header */}
+    <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+      <style>{`
+        .judge-breadcrumb-link {
+          color: #455A64;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        .judge-breadcrumb-link:hover {
+          color: #006997;
+        }
+      `}</style>
+
+      {/* Dark Navy Header */}
       <div
         style={{
-          borderBottom: '1px solid var(--border-default)',
-          background: '#FFFFFF',
+          background: '#00172E',
+          color: '#FFFFFF',
+          padding: '24px',
+          marginBottom: '48px',
         }}
       >
-        <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ paddingTop: '24px', paddingBottom: '24px' }}>
-            <nav
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          {/* Breadcrumb */}
+          <nav
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontSize: '14px',
+              marginBottom: '24px',
+              fontFamily: 'var(--font-body)',
+            }}
+          >
+            <Link
+              href="/"
+              className="judge-breadcrumb-link"
+              style={{}}
+            >
+              Home
+            </Link>
+            <span style={{ color: '#6B7280' }}>›</span>
+            <Link
+              href="/judges"
+              className="judge-breadcrumb-link"
+              style={{}}
+            >
+              Judges
+            </Link>
+            <span style={{ color: '#6B7280' }}>›</span>
+            <span style={{ color: '#FFFFFF', fontWeight: '600' }}>
+              {judge.name}
+            </span>
+          </nav>
+
+          {/* Judge Title Section */}
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '24px' }}>
+            <div>
+              <h1
+                style={{
+                  fontSize: '40px',
+                  fontWeight: '900',
+                  marginBottom: '8px',
+                  color: '#FFFFFF',
+                  letterSpacing: '-0.5px',
+                  fontFamily: 'var(--font-display)',
+                  margin: 0,
+                }}
+              >
+                {judge.name}
+              </h1>
+              <p
+                style={{
+                  fontSize: '16px',
+                  color: '#D5D8DC',
+                  marginBottom: 0,
+                  marginTop: '8px',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                {judge.court}
+                {judge.seniorStatus && ' • Senior Judge'}
+              </p>
+            </div>
+            <div
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                fontSize: '14px',
-                marginBottom: '24px',
+                display: 'inline-block',
+                padding: '8px 16px',
+                borderRadius: '4px',
+                fontSize: '12px',
+                fontWeight: '700',
+                letterSpacing: '0.5px',
+                background: '#E8171F',
+                color: '#FFFFFF',
+                whiteSpace: 'nowrap',
+                marginTop: '4px',
               }}
             >
-              <Link
-                href="/"
-                style={{
-                  color: '#455A64',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s',
-                }}
-              >
-                Home
-              </Link>
-              <span style={{ color: 'var(--border-default)' }}>→</span>
-              <Link
-                href="/judges"
-                style={{
-                  color: '#455A64',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s',
-                }}
-              >
-                Judges
-              </Link>
-              <span style={{ color: 'var(--border-default)' }}>→</span>
-              <span style={{ color: '#212529', fontWeight: '600' }}>
-                {judge.name}
-              </span>
-            </nav>
+              JUDGE PROFILE
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '960px', margin: '0 auto', padding: '48px 24px' }}>
-        {/* Judge Header */}
-        <div style={{ marginBottom: '48px' }}>
-          <div style={{ marginBottom: '16px' }}>
-            <span
-              style={{
-                display: 'inline-block',
-                padding: '6px 12px',
-                borderRadius: '9999px',
-                fontSize: '12px',
-                fontWeight: '700',
-                letterSpacing: '0.5px',
-                background: 'var(--accent-primary-subtle)',
-                color: '#E8171F',
-              }}
-            >
-              {judge.district}
-            </span>
-          </div>
-
-          <h1
-            style={{
-              fontSize: '40px',
-              fontWeight: '900',
-              marginBottom: '8px',
-              color: '#212529',
-              letterSpacing: '-0.5px',
-            }}
-          >
-            Judge {judge.name}
-          </h1>
-
-          <p
-            style={{
-              fontSize: '16px',
-              color: '#455A64',
-              marginBottom: '24px',
-            }}
-          >
-            {judge.court}
-            {judge.seniorStatus && ' • Senior Judge'}
-          </p>
-        </div>
+      <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 24px 48px' }}>
 
         {/* Stats Grid */}
         <div
@@ -363,7 +392,7 @@ export default async function JudgePage({ params }: PageProps) {
               style={{
                 padding: '20px',
                 borderRadius: '4px',
-                border: '1px solid var(--border-default)',
+                border: '1px solid #D5D8DC',
                 background: '#FFFFFF',
               }}
             >
@@ -375,6 +404,7 @@ export default async function JudgePage({ params }: PageProps) {
                   color: '#455A64',
                   marginBottom: '8px',
                   textTransform: 'uppercase',
+                  fontFamily: 'var(--font-body)',
                 }}
               >
                 {stat.label}
@@ -399,7 +429,7 @@ export default async function JudgePage({ params }: PageProps) {
           style={{
             padding: '24px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid #D5D8DC',
             background: '#FFFFFF',
             marginBottom: '48px',
           }}
@@ -412,6 +442,7 @@ export default async function JudgePage({ params }: PageProps) {
               color: '#455A64',
               marginBottom: '12px',
               textTransform: 'uppercase',
+              fontFamily: 'var(--font-display)',
             }}
           >
             Appointment
@@ -430,6 +461,7 @@ export default async function JudgePage({ params }: PageProps) {
                   fontWeight: '700',
                   color: '#455A64',
                   marginBottom: '4px',
+                  fontFamily: 'var(--font-body)',
                 }}
               >
                 Appointed
@@ -452,6 +484,7 @@ export default async function JudgePage({ params }: PageProps) {
                   fontWeight: '700',
                   color: '#455A64',
                   marginBottom: '4px',
+                  fontFamily: 'var(--font-body)',
                 }}
               >
                 Appointing President
@@ -461,6 +494,7 @@ export default async function JudgePage({ params }: PageProps) {
                   fontSize: '16px',
                   fontWeight: '600',
                   color: '#212529',
+                  fontFamily: 'var(--font-body)',
                 }}
               >
                 {judge.appointedBy}
@@ -474,6 +508,7 @@ export default async function JudgePage({ params }: PageProps) {
                     fontWeight: '700',
                     color: '#455A64',
                     marginBottom: '4px',
+                    fontFamily: 'var(--font-body)',
                   }}
                 >
                   Chief Judge
@@ -483,6 +518,7 @@ export default async function JudgePage({ params }: PageProps) {
                     fontSize: '16px',
                     fontWeight: '600',
                     color: '#E8171F',
+                    fontFamily: 'var(--font-body)',
                   }}
                 >
                   Yes
@@ -500,6 +536,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontWeight: '700',
               color: '#212529',
               marginBottom: '20px',
+              fontFamily: 'var(--font-display)',
             }}
           >
             Judge Analytics
@@ -512,7 +549,7 @@ export default async function JudgePage({ params }: PageProps) {
           style={{
             padding: '24px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid #D5D8DC',
             background: '#FFFFFF',
             marginBottom: '48px',
           }}
@@ -523,6 +560,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontWeight: '700',
               color: '#212529',
               marginBottom: '16px',
+              fontFamily: 'var(--font-display)',
             }}
           >
             Top Case Types
@@ -533,6 +571,7 @@ export default async function JudgePage({ params }: PageProps) {
               color: '#455A64',
               marginBottom: '16px',
               lineHeight: '1.6',
+              fontFamily: 'var(--font-body)',
             }}
           >
             Judge {judge.name.split(' ').slice(1).join(' ')} most frequently hears the following case types:
@@ -555,6 +594,7 @@ export default async function JudgePage({ params }: PageProps) {
                   gap: '12px',
                   fontSize: '14px',
                   color: '#212529',
+                  fontFamily: 'var(--font-body)',
                 }}
               >
                 <span
@@ -566,7 +606,7 @@ export default async function JudgePage({ params }: PageProps) {
                     height: '20px',
                     borderRadius: '4px',
                     background: '#E8171F',
-                    color: 'var(--bg-base)',
+                    color: '#FFFFFF',
                     fontWeight: '700',
                     fontSize: '12px',
                   }}
@@ -584,7 +624,7 @@ export default async function JudgePage({ params }: PageProps) {
           style={{
             padding: '16px 20px',
             borderRadius: '4px',
-            background: 'var(--accent-primary-subtle)',
+            background: '#FCE5E6',
             border: '1px solid #E8171F',
             marginBottom: '48px',
           }}
@@ -595,6 +635,7 @@ export default async function JudgePage({ params }: PageProps) {
               color: '#212529',
               lineHeight: '1.6',
               margin: 0,
+              fontFamily: 'var(--font-body)',
             }}
           >
             <strong>Data Source:</strong> Based on {judge.stats.totalCases.toLocaleString()} federal cases from public court records, FJC statistics, and CourtListener databases. This profile reflects historical patterns and is intended for research purposes.
@@ -606,7 +647,7 @@ export default async function JudgePage({ params }: PageProps) {
           style={{
             padding: '24px',
             borderRadius: '4px',
-            border: '1px solid var(--border-default)',
+            border: '1px solid #D5D8DC',
             background: '#FFFFFF',
           }}
         >
@@ -616,6 +657,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontWeight: '700',
               color: '#212529',
               marginBottom: '12px',
+              fontFamily: 'var(--font-display)',
             }}
           >
             Legal Disclaimer
@@ -626,6 +668,7 @@ export default async function JudgePage({ params }: PageProps) {
               color: '#455A64',
               lineHeight: '1.6',
               margin: 0,
+              fontFamily: 'var(--font-body)',
             }}
           >
             This judge profile is provided for educational and research purposes only and does not constitute legal advice. The statistics presented are based on publicly available federal court data and should not be used as the sole basis for litigation decisions. Judge rulings depend on specific case facts, applicable law, jurisdiction, and individual circumstances. This profile does not predict outcomes in any specific case. Please consult with a qualified attorney for legal advice regarding your individual case. MyCaseValue does not provide case valuations or legal advice. No attorney-client relationship is created by this information.
@@ -638,6 +681,13 @@ export default async function JudgePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      <style>{`
+        /* Remove hover underline from breadcrumb */
+        a {
+          text-decoration: none;
+        }
+      `}</style>
     </div>
   );
 }
