@@ -49,7 +49,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
             className="text-lg font-bold mb-6"
             style={{
               color: '#1F2937',
-              fontFamily: "'Roboto', system-ui, sans-serif",
+              fontFamily: 'var(--font-body)',
             }}
           >
             Top Case Types by Volume
@@ -88,7 +88,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
             className="text-lg font-bold mb-6"
             style={{
               color: '#1F2937',
-              fontFamily: "'Roboto', system-ui, sans-serif",
+              fontFamily: 'var(--font-body)',
             }}
           >
             Case Distribution by Category

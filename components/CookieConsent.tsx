@@ -132,7 +132,7 @@ export default function CookieConsent() {
               borderRadius: '10px',
               fontWeight: 700,
               fontSize: '13px',
-              fontFamily: 'Montserrat, system-ui, sans-serif',
+              fontFamily: 'var(--font-display)',
               border: 'none',
               background: '#1856FF',
               color: '#FFFFFF',

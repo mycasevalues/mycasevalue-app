@@ -20,7 +20,7 @@ interface JudgeChartsProps {
 
 export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsProps) {
   const chartStyle = {
-    fontFamily: 'var(--font-body, Roboto, sans-serif)',
+    fontFamily: 'var(--font-body)',
     fontSize: '12px',
     fill: '#111827',
   };
@@ -44,7 +44,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             color: '#111827',
             marginBottom: '20px',
             marginTop: 0,
-            fontFamily: 'var(--font-display, Roboto, sans-serif)',
+            fontFamily: 'var(--font-display)',
           }}
         >
           Win Rate Trend (2018–2024)
@@ -98,7 +98,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             color: '#111827',
             marginBottom: '20px',
             marginTop: 0,
-            fontFamily: 'var(--font-display, Roboto, sans-serif)',
+            fontFamily: 'var(--font-display)',
           }}
         >
           Top Case Types

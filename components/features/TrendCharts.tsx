@@ -98,7 +98,7 @@ export default function TrendCharts() {
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'Montserrat',
+            fontFamily: 'var(--font-display)',
             fontWeight: 600,
             color: '#F0F2F5',
           }}
@@ -143,7 +143,7 @@ export default function TrendCharts() {
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'Montserrat',
+            fontFamily: 'var(--font-display)',
             fontWeight: 600,
             color: '#F0F2F5',
           }}
@@ -195,7 +195,7 @@ export default function TrendCharts() {
         <h3
           className="text-lg font-semibold mb-6"
           style={{
-            fontFamily: 'Montserrat',
+            fontFamily: 'var(--font-display)',
             fontWeight: 600,
             color: '#F0F2F5',
           }}

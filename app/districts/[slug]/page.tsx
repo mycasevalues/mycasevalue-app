@@ -145,7 +145,7 @@ export default async function DistrictPage({ params }: PageProps) {
       style={{
         background: 'var(--bg-base)',
         color: '#111111',
-        fontFamily: "'Roboto', system-ui, sans-serif",
+        fontFamily: 'var(--font-body)',
       }}
     >
       {/* Breadcrumb Navigation */}

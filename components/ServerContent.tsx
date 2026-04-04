@@ -200,7 +200,7 @@ export default function ServerContent() {
               >
                 <h3
                   style={{
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '16px',
                     fontWeight: 700,
                     color: '#212529',
@@ -211,7 +211,7 @@ export default function ServerContent() {
                 </h3>
                 <p
                   style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
                     lineHeight: 1.6,
@@ -300,6 +300,7 @@ export default function ServerContent() {
             ].map((t, i) => (
               <div
                 key={i}
+                className="testimonial-card"
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #D5D8DC',
@@ -324,7 +325,7 @@ export default function ServerContent() {
                 </p>
                 <p
                   style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '15px',
                     color: '#212529',
                     lineHeight: 1.6,
@@ -337,7 +338,7 @@ export default function ServerContent() {
                 </p>
                 <p
                   style={{
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '14px',
                     fontWeight: 700,
                     color: '#212529',
@@ -348,7 +349,7 @@ export default function ServerContent() {
                 </p>
                 <p
                   style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '13px',
                     color: '#455A64',
                     margin: 0,
@@ -362,7 +363,7 @@ export default function ServerContent() {
 
           <p
             style={{
-              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '12px',
               color: '#455A64',
               textAlign: 'center',
@@ -465,7 +466,7 @@ export default function ServerContent() {
               style={{
                 width: '100%',
                 borderCollapse: 'collapse',
-                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontFamily: 'var(--font-body)',
                 fontSize: '14px',
               }}
             >
@@ -533,7 +534,7 @@ export default function ServerContent() {
 
           <p
             style={{
-              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '13px',
               color: '#455A64',
               textAlign: 'center',
@@ -599,7 +600,7 @@ export default function ServerContent() {
                 <div>
                   <h3
                     style={{
-                      fontFamily: 'Montserrat, system-ui, sans-serif',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '15px',
                       fontWeight: 700,
                       color: '#212529',
@@ -610,7 +611,7 @@ export default function ServerContent() {
                   </h3>
                   <p
                     style={{
-                      fontFamily: 'Roboto, system-ui, sans-serif',
+                      fontFamily: 'var(--font-body)',
                       fontSize: '14px',
                       color: '#212529',
                       lineHeight: 1.6,
@@ -627,7 +628,7 @@ export default function ServerContent() {
 
           <p
             style={{
-              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '12px',
               color: '#455A64',
               textAlign: 'center',
@@ -647,7 +648,7 @@ export default function ServerContent() {
             <a
               href="/cases"
               style={{
-                fontFamily: 'Roboto, system-ui, sans-serif',
+                fontFamily: 'var(--font-body)',
                 fontSize: '13px',
                 fontWeight: 600,
                 color: '#006997',
@@ -732,7 +733,7 @@ export default function ServerContent() {
                 )}
                 <h3
                   style={{
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '16px',
                     fontWeight: 700,
                     color: '#212529',
@@ -744,7 +745,7 @@ export default function ServerContent() {
                 <div style={{ margin: '0 0 12px 0' }}>
                   <span
                     style={{
-                      fontFamily: 'Montserrat, system-ui, sans-serif',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '28px',
                       fontWeight: 800,
                       color: '#212529',
@@ -754,7 +755,7 @@ export default function ServerContent() {
                   </span>
                   <span
                     style={{
-                      fontFamily: 'Roboto, system-ui, sans-serif',
+                      fontFamily: 'var(--font-body)',
                       fontSize: '14px',
                       color: '#455A64',
                       marginLeft: '4px',
@@ -765,7 +766,7 @@ export default function ServerContent() {
                 </div>
                 <p
                   style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
                     lineHeight: 1.5,
@@ -783,7 +784,7 @@ export default function ServerContent() {
                     textAlign: 'center',
                     padding: '10px 16px',
                     borderRadius: '0px',
-                    fontFamily: 'Montserrat, system-ui, sans-serif',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
@@ -804,7 +805,7 @@ export default function ServerContent() {
             style={{
               textAlign: 'center',
               marginTop: '24px',
-              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '13px',
               color: '#455A64',
             }}
@@ -855,7 +856,7 @@ export default function ServerContent() {
               >
                 <summary
                   style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '15px',
                     fontWeight: 600,
                     color: '#212529',
@@ -867,7 +868,7 @@ export default function ServerContent() {
                 </summary>
                 <p
                   style={{
-                    fontFamily: 'Roboto, system-ui, sans-serif',
+                    fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
                     lineHeight: 1.7,
@@ -948,7 +949,7 @@ export default function ServerContent() {
                 background: '#E8171F',
                 color: '#FFFFFF',
                 borderRadius: '0px',
-                fontFamily: 'Montserrat, system-ui, sans-serif',
+                fontFamily: 'var(--font-display)',
                 fontSize: '15px',
                 fontWeight: 700,
                 textDecoration: 'none',
@@ -969,7 +970,7 @@ export default function ServerContent() {
                 background: 'transparent',
                 color: '#FFFFFF',
                 borderRadius: '0px',
-                fontFamily: 'Montserrat, system-ui, sans-serif',
+                fontFamily: 'var(--font-display)',
                 fontSize: '15px',
                 fontWeight: 700,
                 textDecoration: 'none',

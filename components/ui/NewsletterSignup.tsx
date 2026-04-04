@@ -65,7 +65,7 @@ export default function NewsletterSignup() {
         </div>
         <p
           style={{
-            fontFamily: 'Montserrat, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
             fontSize: '17px',
             fontWeight: 700,
             color: '#212529',
@@ -76,7 +76,7 @@ export default function NewsletterSignup() {
         </p>
         <p
           style={{
-            fontFamily: 'Roboto, system-ui, sans-serif',
+            fontFamily: 'var(--font-body)',
             fontSize: '14px',
             color: '#455A64',
             margin: 0,
@@ -105,7 +105,7 @@ export default function NewsletterSignup() {
           </svg>
           <span
             style={{
-              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '14px',
               fontWeight: 600,
               color: '#16A34A',
@@ -132,7 +132,7 @@ export default function NewsletterSignup() {
               borderRadius: '4px',
               border: `1px solid ${status === 'error' ? '#EF4444' : 'var(--border-default)'}`,
               background: '#FFFFFF',
-              fontFamily: 'Roboto, system-ui, sans-serif',
+              fontFamily: 'var(--font-body)',
               fontSize: '14px',
               color: '#212529',
               outline: 'none',
@@ -148,7 +148,7 @@ export default function NewsletterSignup() {
               border: 'none',
               background: '#E8171F',
               color: '#FFFFFF',
-              fontFamily: 'Montserrat, system-ui, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '14px',
               fontWeight: 700,
               cursor: status === 'loading' ? 'wait' : 'pointer',
@@ -164,7 +164,7 @@ export default function NewsletterSignup() {
       {status === 'error' && (
         <p
           style={{
-            fontFamily: 'Roboto, system-ui, sans-serif',
+            fontFamily: 'var(--font-body)',
             fontSize: '13px',
             color: '#EF4444',
             margin: '8px 0 0',
@@ -176,7 +176,7 @@ export default function NewsletterSignup() {
       )}
       <p
         style={{
-          fontFamily: 'Roboto, system-ui, sans-serif',
+          fontFamily: 'var(--font-body)',
           fontSize: '12px',
           color: '#999999',
           textAlign: 'center',
