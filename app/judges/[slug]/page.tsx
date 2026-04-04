@@ -1,190 +1,25 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+import { getJudgeBySlug, getAllJudges } from '@/lib/judges';
 
-// Judge data with realistic statistics
-const JUDGES: Record<string, {
-  name: string;
-  district: string;
-  court: string;
-  appointedYear: number;
-  appointedBy: string;
-  chiefJudge: boolean;
-  status: 'senior' | 'active';
-  stats: {
-    plaintiffWinRate: number;
-    motionGrantRate: number;
-    medianDuration: number;
-    totalCases: number;
-  };
-}> = {
-  'jed-s-rakoff': {
-    name: 'Jed S. Rakoff',
-    district: 'S.D.N.Y.',
-    court: 'United States District Court, Southern District of New York',
-    appointedYear: 1996,
-    appointedBy: 'President Bill Clinton',
-    chiefJudge: false,
-    status: 'senior',
-    stats: {
-      plaintiffWinRate: 58,
-      motionGrantRate: 47,
-      medianDuration: 22,
-      totalCases: 1247,
-    },
-  },
-  'colleen-mcmahon': {
-    name: 'Colleen McMahon',
-    district: 'S.D.N.Y.',
-    court: 'United States District Court, Southern District of New York',
-    appointedYear: 1998,
-    appointedBy: 'President Bill Clinton',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 52,
-      motionGrantRate: 41,
-      medianDuration: 24,
-      totalCases: 1089,
-    },
-  },
-  'jesse-m-furman': {
-    name: 'Jesse M. Furman',
-    district: 'S.D.N.Y.',
-    court: 'United States District Court, Southern District of New York',
-    appointedYear: 2010,
-    appointedBy: 'President Barack Obama',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 55,
-      motionGrantRate: 45,
-      medianDuration: 20,
-      totalCases: 856,
-    },
-  },
-  'paul-g-gardephe': {
-    name: 'Paul G. Gardephe',
-    district: 'S.D.N.Y.',
-    court: 'United States District Court, Southern District of New York',
-    appointedYear: 2011,
-    appointedBy: 'President Barack Obama',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 49,
-      motionGrantRate: 38,
-      medianDuration: 26,
-      totalCases: 923,
-    },
-  },
-  'vernon-s-broderick': {
-    name: 'Vernon S. Broderick',
-    district: 'S.D.N.Y.',
-    court: 'United States District Court, Southern District of New York',
-    appointedYear: 2011,
-    appointedBy: 'President Barack Obama',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 51,
-      motionGrantRate: 44,
-      medianDuration: 23,
-      totalCases: 734,
-    },
-  },
-  'virginia-kendall': {
-    name: 'Virginia Kendall',
-    district: 'N.D. Ill.',
-    court: 'United States District Court, Northern District of Illinois',
-    appointedYear: 2013,
-    appointedBy: 'President Barack Obama',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 54,
-      motionGrantRate: 43,
-      medianDuration: 21,
-      totalCases: 612,
-    },
-  },
-  'carlton-reeves': {
-    name: 'Carlton Reeves',
-    district: 'S.D. Miss.',
-    court: 'United States District Court, Southern District of Mississippi',
-    appointedYear: 2012,
-    appointedBy: 'President Barack Obama',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 53,
-      motionGrantRate: 46,
-      medianDuration: 25,
-      totalCases: 489,
-    },
-  },
-  'dolly-gee': {
-    name: 'Dolly Gee',
-    district: 'C.D. Cal.',
-    court: 'United States District Court, Central District of California',
-    appointedYear: 2011,
-    appointedBy: 'President Barack Obama',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 56,
-      motionGrantRate: 48,
-      medianDuration: 19,
-      totalCases: 1134,
-    },
-  },
-  'analisa-torres': {
-    name: 'Analisa Torres',
-    district: 'S.D.N.Y.',
-    court: 'United States District Court, Southern District of New York',
-    appointedYear: 2011,
-    appointedBy: 'President Barack Obama',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 50,
-      motionGrantRate: 40,
-      medianDuration: 24,
-      totalCases: 645,
-    },
-  },
-  'lucy-koh': {
-    name: 'Lucy Koh',
-    district: 'N.D. Cal.',
-    court: 'United States District Court, Northern District of California',
-    appointedYear: 2014,
-    appointedBy: 'President Barack Obama',
-    chiefJudge: false,
-    status: 'active',
-    stats: {
-      plaintiffWinRate: 57,
-      motionGrantRate: 49,
-      medianDuration: 18,
-      totalCases: 967,
-    },
-  },
-};
-
-// Get all judge slugs for static generation
-function getAllJudgeSlugs(): string[] {
-  return Object.keys(JUDGES).sort();
-}
+// Dynamic import for client component
+const JudgeCharts = dynamic(() => import('@/components/features/JudgeCharts'), {
+  ssr: false,
+  loading: () => <div style={{ padding: '24px', textAlign: 'center', color: 'var(--fg-muted)' }}>Loading charts...</div>,
+});
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return getAllJudgeSlugs().map((slug) => ({ slug }));
+  return getAllJudges().map((judge) => ({ slug: judge.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const judge = JUDGES[slug];
+  const judge = getJudgeBySlug(slug);
 
   if (!judge) {
     return {
@@ -219,7 +54,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function JudgePage({ params }: PageProps) {
   const { slug } = await params;
-  const judge = JUDGES[slug];
+  const judge = getJudgeBySlug(slug);
 
   // If judge not found, show coming soon page
   if (!judge) {
@@ -351,11 +186,6 @@ export default async function JudgePage({ params }: PageProps) {
   }
 
   // Full judge profile page
-  const topCaseTypes = [
-    'Employment Discrimination',
-    'Contract Disputes',
-    'Securities Litigation',
-  ];
 
   // JSON-LD structured data for known judges
   const jsonLd = {
@@ -396,7 +226,7 @@ export default async function JudgePage({ params }: PageProps) {
           '@type': 'Organization',
           name: `United States District Court, ${judge.district}`,
         },
-        description: `Federal Judge ${judge.name} serves in the ${judge.district}. Appointed in ${judge.appointedYear}. ${judge.status === 'senior' ? 'Senior Judge.' : ''} Based on analysis of ${judge.stats.totalCases}+ federal court cases.`,
+        description: `Federal Judge ${judge.name} serves in the ${judge.district}. Appointed in ${judge.appointedYear}. ${judge.seniorStatus ? 'Senior Judge.' : ''} Based on analysis of ${judge.stats.totalCases}+ federal court cases.`,
         sameAs: [],
       },
     ],
@@ -493,7 +323,7 @@ export default async function JudgePage({ params }: PageProps) {
             }}
           >
             {judge.court}
-            {judge.status === 'senior' && ' • Senior Judge'}
+            {judge.seniorStatus && ' • Senior Judge'}
           </p>
         </div>
 
@@ -517,7 +347,11 @@ export default async function JudgePage({ params }: PageProps) {
             },
             {
               label: 'Median Case Duration',
-              value: `${judge.stats.medianDuration} mo`,
+              value: `${judge.stats.medianDurationMonths} mo`,
+            },
+            {
+              label: 'Settlement Rate',
+              value: `${judge.stats.settlementRate}%`,
             },
             {
               label: 'Total Cases Analyzed',
@@ -658,6 +492,21 @@ export default async function JudgePage({ params }: PageProps) {
           </div>
         </div>
 
+        {/* Judge Analytics Charts */}
+        <div style={{ marginBottom: '48px' }}>
+          <h3
+            style={{
+              fontSize: '16px',
+              fontWeight: '700',
+              color: 'var(--fg-primary)',
+              marginBottom: '20px',
+            }}
+          >
+            Judge Analytics
+          </h3>
+          <JudgeCharts yearlyTrend={judge.yearlyTrend} topCaseTypes={judge.topCaseTypes} />
+        </div>
+
         {/* Cases Before This Judge */}
         <div
           style={{
@@ -676,7 +525,7 @@ export default async function JudgePage({ params }: PageProps) {
               marginBottom: '16px',
             }}
           >
-            Cases Before This Judge
+            Top Case Types
           </h3>
           <p
             style={{
@@ -697,7 +546,7 @@ export default async function JudgePage({ params }: PageProps) {
               gap: '12px',
             }}
           >
-            {topCaseTypes.map((caseType, idx) => (
+            {judge.topCaseTypes.map((caseType, idx) => (
               <li
                 key={idx}
                 style={{
@@ -724,7 +573,7 @@ export default async function JudgePage({ params }: PageProps) {
                 >
                   ✓
                 </span>
-                {caseType}
+                {caseType.label} ({caseType.count} cases, {caseType.winRate}% win rate)
               </li>
             ))}
           </ul>

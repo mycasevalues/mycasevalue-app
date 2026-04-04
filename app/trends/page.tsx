@@ -1,5 +1,15 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { REAL_DATA } from '../../lib/realdata';
+
+const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'), {
+  ssr: false,
+  loading: () => (
+    <div className="p-12 text-center" style={{ color: 'var(--fg-muted)' }}>
+      Loading charts...
+    </div>
+  ),
+});
 
 export const metadata: Metadata = {
   title: 'Federal Court Trends — MyCaseValue | Case Filing Data & Statistics',
@@ -185,6 +195,17 @@ export default function TrendsPage() {
       </section>
 
       <div className="max-w-6xl mx-auto px-6 py-12 space-y-16">
+        {/* Interactive Trend Charts */}
+        <section className="pt-4">
+          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>
+            Interactive Visualizations
+          </h2>
+          <p className="text-sm mb-8" style={{ color: 'var(--fg-muted)' }}>
+            Explore filing trends, win rates by category, and top case types with interactive charts.
+          </p>
+          <TrendCharts />
+        </section>
+
         {/* Top 10 Most Filed Case Types */}
         <section>
           <h2 className="text-2xl font-display font-bold mb-2" style={{ color: 'var(--fg-primary)' }}>

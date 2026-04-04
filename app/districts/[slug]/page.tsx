@@ -1,28 +1,18 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { STATES, CIRCUIT_MAP, CIRCUIT_WIN_RATES, CIRCUIT_DETAIL } from '../../../lib/data';
+import { getDistrictStats } from '../../../lib/districts';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Helper function to generate realistic district stats based on state ID
-function getDistrictStats(stateId: string) {
-  const hash = (stateId.charCodeAt(0) || 0) + (stateId.charCodeAt(1) || 0);
-  const caseTypes = [
-    'Employment Discrimination',
-    'Personal Injury',
-    'Breach of Contract',
-    'Civil Rights',
-    'Consumer Protection',
-  ];
-  return {
-    totalCases: Math.floor(2000 + (hash * 137) % 15000),
-    winRate: 28 + (hash % 20),
-    medianDuration: 10 + (hash % 12),
-    topCaseType: caseTypes[hash % 5],
-  };
-}
+// Dynamically import charts component to avoid SSR issues with recharts
+const DistrictCharts = dynamic(() => import('../../../components/features/DistrictCharts'), {
+  ssr: false,
+  loading: () => <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--fg-muted)' }}>Loading charts...</div>,
+});
 
 // Get all valid state IDs (excluding "All states" which has empty id)
 export async function generateStaticParams() {
@@ -97,9 +87,24 @@ export default async function DistrictPage({ params }: PageProps) {
   }
 
   const circuit = CIRCUIT_MAP[slug];
-  const districtStats = getDistrictStats(slug);
+  const libDistrictStats = getDistrictStats(slug);
   const circuitWinRate = circuit ? CIRCUIT_WIN_RATES[circuit] : 38;
   const circuitDetail = circuit ? CIRCUIT_DETAIL[circuit] : null;
+
+  // Build legacy stats object for backward compatibility with existing display
+  const districtStats = libDistrictStats
+    ? {
+        totalCases: libDistrictStats.totalCases,
+        winRate: Math.round(libDistrictStats.winRate),
+        medianDuration: libDistrictStats.medianDurationMonths,
+        topCaseType: libDistrictStats.topCaseTypes[0]?.label || 'Contract',
+      }
+    : {
+        totalCases: 0,
+        winRate: 50,
+        medianDuration: 12,
+        topCaseType: 'Contract',
+      };
 
   // Top 5 case types with mock win rates
   const topCaseTypes = [
@@ -425,6 +430,15 @@ export default async function DistrictPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* District Charts Section */}
+      {libDistrictStats && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-[960px] mx-auto">
+            <DistrictCharts stats={libDistrictStats} />
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
