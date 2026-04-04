@@ -137,7 +137,13 @@ export default function PrivacyPage() {
 
       {/* Header */}
       <div style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '64px', paddingBottom: '96px' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
+          {/* Breadcrumb Navigation */}
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: '#CCCCCC' }}>
+            <a href="/" style={{ color: '#CCCCCC', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#FFFFFF'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#CCCCCC'}>Home</a>
+            <span>/</span>
+            <span style={{ color: '#FFFFFF' }}>Privacy Policy</span>
+          </nav>
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -158,7 +164,7 @@ export default function PrivacyPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
-            PRIVACY POLICY
+            PRIVACY
           </div>
           <h1 style={{
             fontSize: '32px',

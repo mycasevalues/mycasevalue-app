@@ -95,12 +95,10 @@ export default function MethodologyPage() {
       <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
-          <nav className="flex items-center gap-2 mb-6 text-[11px]" style={{ color: '#455A64' }}>
-            <a href="/" className="transition-colors hover:text-current" style={{ color: '#455A64' }}>Home</a>
+          <nav className="flex items-center gap-2 mb-6 text-[11px]" style={{ color: '#CCCCCC' }}>
+            <a href="/" className="transition-colors hover:text-white" style={{ color: '#CCCCCC' }}>Home</a>
             <span>/</span>
-            <a href="/about" className="transition-colors hover:text-current" style={{ color: '#455A64' }}>About</a>
-            <span>/</span>
-            <span style={{ color: '#CCCCCC' }}>Methodology</span>
+            <span style={{ color: '#FFFFFF' }}>Methodology</span>
           </nav>
 
           {/* Badge and Title */}

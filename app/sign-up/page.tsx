@@ -74,11 +74,39 @@ export default function SignUpPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#EDEEEE',
+          background: '#00172E',
           padding: '20px',
         }}
       >
+        <style>{`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(8px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .auth-card {
+            animation: fadeIn 0.4s ease-out;
+          }
+          .auth-input:focus {
+            border-color: #006997 !important;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 105, 151, 0.1) !important;
+          }
+          .auth-btn:hover:not(:disabled) {
+            background-color: #CC1019 !important;
+            transform: translateY(-1px);
+          }
+          .auth-link:hover {
+            color: #004d6d !important;
+          }
+        `}</style>
         <div
+          className="auth-card"
           style={{
             width: '100%',
             maxWidth: '440px',
@@ -155,13 +183,42 @@ export default function SignUpPage() {
       style={{
         minHeight: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#EDEEEE',
+        background: '#00172E',
         padding: '48px 24px',
       }}
     >
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .auth-card {
+          animation: fadeIn 0.4s ease-out;
+        }
+        .auth-input:focus {
+          border-color: #006997 !important;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(0, 105, 151, 0.1) !important;
+        }
+        .auth-btn:hover:not(:disabled) {
+          background-color: #CC1019 !important;
+          transform: translateY(-1px);
+        }
+        .auth-link:hover {
+          color: #004d6d !important;
+        }
+      `}</style>
       <div
+        className="auth-card"
         style={{
           width: '100%',
           maxWidth: '420px',
@@ -500,16 +557,6 @@ export default function SignUpPage() {
               opacity: loading ? 0.7 : 1,
               transition: 'background-color 0.2s, transform 0.1s',
             }}
-            onMouseEnter={(e) => {
-              if (!loading) {
-                (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!loading) {
-                (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
-              }
-            }}
           >
             {loading ? 'Creating account...' : 'Create Account'}
           </button>
@@ -587,7 +634,8 @@ export default function SignUpPage() {
           textAlign: 'center',
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
-          color: '#455A64',
+          color: '#FFFFFF',
+          opacity: 0.8,
         }}
       >
         Your privacy is important to us. Read our{' '}

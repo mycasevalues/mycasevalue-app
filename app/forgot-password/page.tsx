@@ -46,11 +46,39 @@ export default function ForgotPasswordPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#EDEEEE',
+        background: '#00172E',
         padding: '20px',
       }}
     >
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .auth-card {
+          animation: fadeIn 0.4s ease-out;
+        }
+        .auth-input:focus {
+          border-color: #006997 !important;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(0, 105, 151, 0.1) !important;
+        }
+        .auth-btn:hover:not(:disabled) {
+          background-color: #CC1019 !important;
+          transform: translateY(-1px);
+        }
+        .auth-link:hover {
+          color: #004d6d !important;
+        }
+      `}</style>
       <div
+        className="auth-card"
         style={{
           width: '100%',
           maxWidth: '440px',
@@ -230,7 +258,8 @@ export default function ForgotPasswordPage() {
                   className="auth-input"
                   style={{
                     width: '100%',
-                    padding: '10px 12px',
+                    height: '48px',
+                    padding: '12px 14px',
                     border: '1px solid #D5D8DC',
                     borderRadius: '4px',
                     fontFamily: 'var(--font-body)',
@@ -250,7 +279,8 @@ export default function ForgotPasswordPage() {
                 className="auth-btn"
                 style={{
                   width: '100%',
-                  padding: '12px 16px',
+                  height: '48px',
+                  padding: '0 16px',
                   backgroundColor: '#E8171F',
                   color: '#FFFFFF',
                   border: 'none',
@@ -261,16 +291,6 @@ export default function ForgotPasswordPage() {
                   cursor: loading ? 'not-allowed' : 'pointer',
                   transition: 'background-color 0.2s, transform 0.1s',
                   opacity: loading ? 0.7 : 1,
-                }}
-                onMouseEnter={(e) => {
-                  if (!loading) {
-                    (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!loading) {
-                    (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
-                  }
                 }}
               >
                 {loading ? 'Sending...' : 'Send Reset Link'}

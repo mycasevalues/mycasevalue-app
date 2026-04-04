@@ -7,7 +7,7 @@ import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#EDEEEE' }} />}>
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#00172E' }} />}>
       <SignInForm />
     </Suspense>
   );
@@ -56,11 +56,39 @@ function SignInForm() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#EDEEEE',
+        background: '#00172E',
         padding: '48px 24px',
       }}
     >
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .auth-card {
+          animation: fadeIn 0.4s ease-out;
+        }
+        .auth-input:focus {
+          border-color: #006997 !important;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(0, 105, 151, 0.1) !important;
+        }
+        .auth-btn:hover:not(:disabled) {
+          background-color: #CC1019 !important;
+          transform: translateY(-1px);
+        }
+        .auth-link:hover {
+          color: #004d6d !important;
+        }
+      `}</style>
       <div
+        className="auth-card"
         style={{
           width: '100%',
           maxWidth: '440px',
@@ -257,16 +285,6 @@ function SignInForm() {
               cursor: loading ? 'not-allowed' : 'pointer',
               opacity: loading ? 0.7 : 1,
               transition: 'background-color 0.2s, transform 0.1s',
-            }}
-            onMouseEnter={(e) => {
-              if (!loading) {
-                (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!loading) {
-                (e.target as HTMLButtonElement).style.backgroundColor = '#E8171F';
-              }
             }}
           >
             {loading ? 'Signing in...' : 'SIGN IN'}

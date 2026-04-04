@@ -137,7 +137,13 @@ export default function TermsPage() {
 
       {/* Header */}
       <div style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '64px', paddingBottom: '96px' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
+          {/* Breadcrumb Navigation */}
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: '#CCCCCC' }}>
+            <a href="/" style={{ color: '#CCCCCC', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#FFFFFF'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#CCCCCC'}>Home</a>
+            <span>/</span>
+            <span style={{ color: '#FFFFFF' }}>Terms of Service</span>
+          </nav>
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -158,7 +164,7 @@ export default function TermsPage() {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5">
               <path d="M7 7h10v10H7z M7 7v3 M7 10h10 M7 13h10 M7 16h10 M17 7v10" />
             </svg>
-            TERMS OF SERVICE
+            TERMS
           </div>
           <h1 style={{
             fontSize: '32px',
