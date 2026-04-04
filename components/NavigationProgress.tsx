@@ -5,20 +5,27 @@ import { usePathname } from 'next/navigation';
 
 /**
  * NavigationProgress - Page transition loading bar
- * Displays a thin red progress bar at the top of the page during navigation
+ * Displays a thin red progress bar at the top of the page during navigation.
  *
- * Features:
- * - 3px height bar positioned fixed at top
- * - Red (#E8171F) color
- * - Animates from 0% to ~80% on navigation start
- * - Completes to 100% and fades out when complete
- * - Uses Next.js usePathname() to detect route changes
+ * Design specifications:
+ * - Height: 3px
+ * - Background: #E8171F (red)
+ * - Position: fixed, top: 0, left: 0
+ * - z-index: 9999
+ * - Smooth width transition with CSS animation
+ *
+ * Behavior:
+ * - Animates from 0% to ~80% width on navigation start
+ * - Completes to 100% and fades out when navigation ends
+ * - Detects route changes using Next.js usePathname()
+ * - Auto-completes after a short delay (600ms)
  */
 export default function NavigationProgress() {
   const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    // Start loading animation when pathname changes
     setIsLoading(true);
 
     // Auto-complete after 600ms

@@ -693,17 +693,17 @@ export default function SiteNav() {
           bottom: 0,
           width: '280px',
           zIndex: 199,
-          background: '#FFFFFF',
+          background: '#00172E',
           backdropFilter: undefined,
           WebkitBackdropFilter: undefined,
           borderLeft: '1px solid #E5EBF0',
           boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
           transform: mobileOpen ? 'translateX(0)' : 'translateX(100%)',
-          transition: 'transform 250ms ease',
+          transition: 'transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
           padding: '24px',
           display: 'none',
           flexDirection: 'column',
-          gap: '8px',
+          gap: '16px',
           overflowY: 'auto',
         }}
         role="dialog"
@@ -717,15 +717,16 @@ export default function SiteNav() {
             onClick={() => setMobileOpen(false)}
             style={{
               display: 'block',
-              padding: '14px 16px',
+              padding: '12px 16px',
               borderRadius: '4px',
               fontSize: '16px',
               fontWeight: isActive(link.href) ? 600 : 500,
-              color: isActive(link.href) ? '#212529' : '#666666',
+              color: '#FFFFFF',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               minHeight: '44px',
-              background: isActive(link.href) ? 'rgba(0,105,151,0.08)' : 'transparent',
+              background: isActive(link.href) ? '#E8171F' : 'transparent',
+              transition: 'all 150ms ease',
             }}
             className="site-nav-mobile-link"
             aria-current={isActive(link.href) ? 'page' : undefined}
@@ -734,7 +735,7 @@ export default function SiteNav() {
           </Link>
         ))}
 
-        <div style={{ borderTop: '1px solid #E5EBF0', margin: '12px 0', padding: '12px 0' }}>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.12)', margin: '12px 0', padding: '12px 0' }}>
           {userEmail ? (
             <>
               <Link
@@ -742,14 +743,15 @@ export default function SiteNav() {
                 onClick={() => setMobileOpen(false)}
                 style={{
                   display: 'block',
-                  padding: '14px 16px',
+                  padding: '12px 16px',
                   borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 500,
-                  color: '#455A64',
+                  color: '#FFFFFF',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   minHeight: '44px',
+                  transition: 'all 150ms ease',
                 }}
                 className="site-nav-mobile-link"
               >
@@ -760,7 +762,7 @@ export default function SiteNav() {
                 style={{
                   display: 'block',
                   width: '100%',
-                  padding: '14px 16px',
+                  padding: '12px 16px',
                   borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 600,
@@ -772,6 +774,7 @@ export default function SiteNav() {
                   marginTop: '8px',
                   border: 'none',
                   cursor: 'pointer',
+                  transition: 'all 150ms ease',
                 }}
               >
                 Sign Out
@@ -784,14 +787,15 @@ export default function SiteNav() {
                 onClick={() => setMobileOpen(false)}
                 style={{
                   display: 'block',
-                  padding: '14px 16px',
+                  padding: '12px 16px',
                   borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 500,
-                  color: '#455A64',
+                  color: '#FFFFFF',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   minHeight: '44px',
+                  transition: 'all 150ms ease',
                 }}
                 className="site-nav-mobile-link"
               >
@@ -802,7 +806,7 @@ export default function SiteNav() {
                 onClick={() => setMobileOpen(false)}
                 style={{
                   display: 'block',
-                  padding: '14px 16px',
+                  padding: '12px 16px',
                   borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: 600,
@@ -813,6 +817,7 @@ export default function SiteNav() {
                   textAlign: 'center',
                   minHeight: '44px',
                   marginTop: '8px',
+                  transition: 'all 150ms ease',
                 }}
               >
                 Search Cases
@@ -829,7 +834,7 @@ export default function SiteNav() {
         .site-nav-search-close:hover { color: #E8171F !important; }
         .site-nav-link:hover { color: #212529 !important; }
         .site-nav-sub-link:hover { color: #FFFFFF !important; }
-        .site-nav-mobile-link:hover { background: rgba(0,0,0,0.04) !important; }
+        .site-nav-mobile-link:hover { background: rgba(232,23,31,0.15) !important; }
 
         /* CSS-only dropdown menus */
         .nav-dropdown {
