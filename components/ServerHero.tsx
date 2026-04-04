@@ -14,100 +14,132 @@ export default function ServerHero() {
       <div style={{
         background: 'linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%)',
         borderBottom: '1px solid #D5D8DC',
-        padding: '120px 24px 80px',
+        padding: '100px 24px 80px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}>
         {/* Subtle grid background pattern */}
         <div style={{
-          position: 'absolute',
-          inset: 0,
+          position: 'absolute', inset: 0,
           backgroundImage: 'linear-gradient(rgba(250,251,252,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(250,251,252,0.03) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-          opacity: 0.2,
-          pointerEvents: 'none',
+          backgroundSize: '40px 40px', opacity: 0.2, pointerEvents: 'none',
         }} />
-
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
-          {/* Small subtitle above h1 */}
-          <p style={{
-            fontSize: '18px',
-            fontWeight: 600,
-            color: '#E6E6E6',
-            fontFamily: 'var(--font-body)',
-            marginBottom: '16px',
-            margin: '0 0 16px 0',
-          }}>
-            MyCaseValue Federal Case Outcome Analytics
+          <p style={{ fontSize: '16px', fontWeight: 600, color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-body)', marginBottom: '24px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+            MyCaseValue+ Federal Case Analytics
           </p>
-
-          {/* Headline */}
           <h1 style={{
-            fontSize: 'clamp(32px, 5vw, 56px)',
-            fontWeight: 600,
-            color: '#FAFBFC',
-            fontFamily: 'var(--font-display)',
-            lineHeight: 1.15,
-            marginBottom: '24px',
-            letterSpacing: 'normal',
+            fontSize: 'clamp(36px, 5vw, 52px)', fontWeight: 500, color: '#FAFBFC',
+            fontFamily: 'var(--font-display)', lineHeight: 1.2, marginBottom: '24px',
           }}>
-            The settlement data the<br />
-            other side already has.
+            The settlement data the<br />other side already has.
           </h1>
-
-          {/* Subheadline */}
           <p style={{
-            fontSize: '19px',
-            color: 'rgba(250,251,252,0.70)',
-            fontFamily: 'var(--font-body)',
-            lineHeight: 1.6,
-            marginBottom: '40px',
-            maxWidth: '600px',
-            margin: '0 auto 40px',
-            fontStyle: 'italic',
-            fontWeight: 300,
+            fontSize: '19px', color: 'rgba(250,251,252,0.70)', fontFamily: 'var(--font-body)',
+            lineHeight: 1.6, marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px',
+            fontStyle: 'italic', fontWeight: 300,
           }}>
             Research real outcomes from federal court cases across all 94 US districts.
             Win rates, settlement ranges, timelines — sourced from public court records.
           </p>
-
-          {/* CTA buttons */}
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' }}>
-            <a href="/search" aria-label="Start your free trial" style={{
-              display: 'inline-block',
-              padding: '8px 24px',
-              background: '#E8171F',
-              color: '#FFFFFF',
-              borderRadius: '0px',
-              fontWeight: 700,
-              fontSize: '14px',
-              fontFamily: 'var(--font-display)',
-              textDecoration: 'none',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-            }}>
-              Free Trial
-            </a>
-            <a href="/sample" aria-label="Sign in to your account" style={{
-              display: 'inline-block',
-              padding: '8px 24px',
-              background: 'transparent',
-              color: '#FFFFFF',
-              border: '1px solid #FFFFFF',
-              borderRadius: '0px',
-              fontWeight: 600,
-              fontSize: '14px',
-              fontFamily: 'var(--font-display)',
-              textDecoration: 'none',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-            }}>
-              Sign In
-            </a>
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '0' }}>
+            <a href="/search" style={{
+              display: 'inline-block', padding: '12px 32px', background: '#E8171F', color: '#FFFFFF',
+              borderRadius: '4px', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-display)',
+              textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.05em',
+            }}>Start Free Trial</a>
+            <a href="/sign-in" style={{
+              display: 'inline-block', padding: '12px 32px', background: 'transparent', color: '#FFFFFF',
+              border: '1px solid rgba(255,255,255,0.4)', borderRadius: '4px', fontWeight: 600, fontSize: '14px',
+              fontFamily: 'var(--font-display)', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.05em',
+            }}>Sign In</a>
           </div>
+        </div>
+      </div>
 
+      {/* ── VISUAL 1.5: IN-PAGE ANCHOR NAV ────────────────── */}
+      <div className="anchor-nav" style={{
+        background: '#FFFFFF', borderBottom: '1px solid #D5D8DC',
+        position: 'sticky', top: '112px', zIndex: 50,
+      }}>
+        <div style={{
+          maxWidth: '1280px', margin: '0 auto', padding: '0 24px',
+          display: 'flex', alignItems: 'center', gap: '0', overflowX: 'auto',
+        }}>
+          {[
+            { label: 'Overview', href: '#overview' },
+            { label: 'What is MyCaseValue?', href: '#what-is' },
+            { label: 'Features', href: '#features' },
+            { label: 'Who is it for?', href: '#who' },
+            { label: 'Testimonials', href: '#testimonials' },
+            { label: 'Awards', href: '#awards' },
+            { label: 'FAQ', href: '#faq' },
+            { label: 'Start free trial', href: '/search' },
+          ].map((item, i) => (
+            <a key={i} href={item.href} style={{
+              padding: '14px 20px', fontSize: '13px', fontWeight: 500, color: i === 7 ? '#E8171F' : '#455A64',
+              textDecoration: 'none', fontFamily: 'var(--font-body)', whiteSpace: 'nowrap',
+              borderBottom: '2px solid transparent', transition: 'all 150ms',
+            }} className="anchor-nav-link">{item.label}</a>
+          ))}
+        </div>
+      </div>
+
+      {/* ── VISUAL 1.6: WHAT IS MYCASEVALUE? ───────────────── */}
+      <div id="what-is" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            Overview
+          </p>
+          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '24px' }}>
+            What is MyCaseValue?
+          </h2>
+          <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.7, fontWeight: 300, marginBottom: '16px' }}>
+            MyCaseValue+ is a federal court analytics platform that gives plaintiffs, attorneys, and researchers instant access to real outcome data from over 5.1 million federal court cases. We combine data from the Federal Judicial Center, PACER, and CourtListener to deliver win rates, settlement ranges, timelines, and judge analytics — all in plain English.
+          </p>
+          <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.7, fontWeight: 300 }}>
+            Whether you're evaluating a potential case, preparing for settlement negotiations, or researching judicial behavior, MyCaseValue+ delivers the data-driven insights that were previously only available to large law firms with expensive analytics subscriptions.
+          </p>
+        </div>
+      </div>
+
+      {/* ── VISUAL 1.7: PRODUCT TOOLS SHOWCASE ─────────────── */}
+      <div id="overview" style={{ background: '#EDEEEE', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+              MyCaseValue+ Analytics Tools
+            </h2>
+            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
+              Everything you need to research federal court outcomes in one platform.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px' }} className="tools-grid">
+            {[
+              { title: 'Case Research', desc: 'Search outcomes across 84 case types', href: '/search', icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' },
+              { title: 'Judge Analytics', desc: 'Understand judicial behavior and patterns', href: '/attorney/judge-intelligence', icon: 'M12 14l9-5-9-5-9 5 9 5z' },
+              { title: 'Settlement Data', desc: 'Real settlement ranges from court records', href: '/cases', icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2z' },
+              { title: 'District Comparison', desc: 'Compare outcomes across 94 federal districts', href: '/districts', icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7' },
+              { title: 'AI Case Predictor', desc: 'Data-driven outcome predictions', href: '/attorney/case-predictor', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+            ].map((tool, i) => (
+              <a key={i} href={tool.href} style={{
+                display: 'block', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px',
+                padding: '24px 20px', textDecoration: 'none', textAlign: 'center',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 200ms',
+              }} className="tool-card">
+                <div style={{
+                  width: '48px', height: '48px', borderRadius: '50%', margin: '0 auto 16px',
+                  background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.15)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.icon} /></svg>
+                </div>
+                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '6px' }}>{tool.title}</h3>
+                <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{tool.desc}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -408,11 +440,17 @@ export default function ServerHero() {
 
       {/* Responsive overrides */}
       <style dangerouslySetInnerHTML={{ __html: `
+        .anchor-nav-link:hover { color: #212529 !important; border-bottom-color: #E8171F !important; }
+        .tool-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important; transform: translateY(-2px); }
+        @media (max-width: 1024px) { .tools-grid { grid-template-columns: repeat(3, 1fr) !important; } }
         @media (max-width: 768px) {
+          .tools-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .anchor-nav { display: none !important; }
           .steps-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
           .feature-bullets-grid { grid-template-columns: 1fr !important; }
           .feature-cards-grid { grid-template-columns: 1fr !important; }
         }
+        @media (max-width: 480px) { .tools-grid { grid-template-columns: 1fr !important; } }
       `}} />
     </section>
   );

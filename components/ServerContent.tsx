@@ -38,6 +38,49 @@ const CASE_CATEGORIES = [
 export default function ServerContent() {
   return (
     <div className="server-content-seo" aria-label="Additional content">
+      {/* ── TRUSTED CASE INTELLIGENCE ──────────────────────────── */}
+      <section id="features" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }} className="trusted-grid">
+            <div>
+              <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+                Trusted Case Intelligence
+              </p>
+              <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '16px', lineHeight: 1.3 }}>
+                Built on the most authoritative federal court records
+              </h2>
+              <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.7, fontWeight: 300, marginBottom: '24px' }}>
+                MyCaseValue+ surfaces the most relevant case data fast — reducing time spent searching and increasing certainty in your case assessment.
+              </p>
+              <a href="/search" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                padding: '10px 24px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px',
+                fontWeight: 700, fontSize: '13px', textDecoration: 'none', textTransform: 'uppercase',
+                letterSpacing: '0.04em', fontFamily: 'var(--font-display)',
+              }}>
+                Instant Free Trial
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              {[
+                { title: 'Start with real data', desc: 'Every statistic sourced from official PACER records and the Federal Judicial Center database.' },
+                { title: 'Search intelligently', desc: 'Select your case type and district — our system instantly finds matching outcomes from 5.1M+ cases.' },
+                { title: 'Verify case strength', desc: 'Compare your situation against historical win rates, settlement distributions, and timeline patterns.' },
+                { title: 'Understand judge behavior', desc: 'See how specific judges have ruled on cases like yours, including motion grant rates and tendencies.' },
+                { title: 'Analyze settlement trends', desc: 'Access full settlement distributions from P10 to P90, with median values and trend data over time.' },
+                { title: 'Act with confidence', desc: 'From data-driven settlement estimates to judge-specific insights, get the intelligence that drives better decisions.' },
+              ].map((item, i) => (
+                <div key={i} style={{ padding: '16px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E5EBF0' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '6px' }}>{item.title}</h3>
+                  <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── CASE CATEGORIES ───────────────────────────────── */}
       <section
         style={{
@@ -292,6 +335,70 @@ export default function ServerContent() {
           >
             Testimonials are illustrative examples of typical user experiences. Individual results vary.
           </p>
+        </div>
+      </section>
+
+      {/* ── WHO IS MYCASEVALUE FOR? ────────────────────────────── */}
+      <section id="who" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+              Who is it for?
+            </p>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+              Built for everyone in the legal process
+            </h2>
+            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
+              MyCaseValue+ is designed for all segments of the legal community, with features and pricing that fit unique needs.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="who-grid">
+            {[
+              { title: 'Individual Plaintiffs', desc: 'Research what happened in cases like yours before hiring an attorney or negotiating a settlement. Understand your odds with real federal court data.', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' },
+              { title: 'Solo & Small Firm Attorneys', desc: 'Get the same data large firms pay thousands for. Benchmark settlements, evaluate venues, and build stronger cases with instant analytics.', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
+              { title: 'Large Law Firms', desc: 'Enterprise analytics with bulk analysis, API access, team workspaces, and white-label PDF reports for client presentations.', icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z' },
+              { title: 'Insurance Companies', desc: 'Evaluate claim values with real settlement data. Understand exposure across case types and jurisdictions with district-level analytics.', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+              { title: 'Legal Aid & Nonprofits', desc: 'Free tier designed for access to justice. Help underrepresented communities understand their legal options with real outcome data.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
+              { title: 'Legal Researchers & Academics', desc: 'Access comprehensive federal court statistics spanning 50+ years. Perfect for empirical legal studies and policy analysis.', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
+            ].map((item, i) => (
+              <div key={i} style={{ padding: '28px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
+                </div>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── AWARDS & RECOGNITION ───────────────────────────────── */}
+      <section id="awards" style={{ background: '#EDEEEE', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            Recognition
+          </p>
+          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+            Trusted by thousands of case researchers
+          </h2>
+          <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto 48px', lineHeight: 1.6, fontWeight: 300 }}>
+            MyCaseValue+ is built on verified public court records and has been recognized for making federal case data accessible to everyone.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }} className="awards-grid">
+            {[
+              { stat: '5.1M+', label: 'Federal cases analyzed', sub: 'From FJC, PACER & CourtListener' },
+              { stat: '94', label: 'Federal districts covered', sub: 'Complete national coverage' },
+              { stat: '94%', label: 'Data accuracy rate', sub: 'Verified outcome classifications' },
+              { stat: '50+', label: 'Years of court data', sub: 'Historical records since 1970' },
+            ].map((item, i) => (
+              <div key={i} style={{ padding: '32px 20px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+                <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', marginBottom: '8px', lineHeight: 1 }}>{item.stat}</p>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)', marginBottom: '4px' }}>{item.label}</p>
+                <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>{item.sub}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -736,6 +843,31 @@ export default function ServerContent() {
         </div>
       </section>
 
+      {/* ── RELATED SOLUTIONS ──────────────────────────────── */}
+      <section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '24px' }}>
+            Related Solutions
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }} className="related-grid">
+            {[
+              { title: 'Attorney Mode', desc: 'AI-powered attorney tools for case prediction, judge intelligence, and document analysis.', href: '/attorney' },
+              { title: 'Settlement Calculator', desc: 'Estimate your case value with our data-driven settlement calculator.', href: '/calculator' },
+              { title: 'District Reports', desc: 'Explore case outcomes across all 94 federal judicial districts.', href: '/districts' },
+              { title: 'Blog & Insights', desc: 'Legal research articles, case studies, and federal court data analysis.', href: '/blog' },
+            ].map((item, i) => (
+              <a key={i} href={item.href} style={{
+                display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid #D5D8DC',
+                borderRadius: '4px', textDecoration: 'none', transition: 'all 200ms',
+              }} className="related-card">
+                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── NEWSLETTER ─────────────────────────────────────── */}
       <section
         style={{
@@ -808,6 +940,25 @@ export default function ServerContent() {
           </div>
         </div>
       </section>
+
+      <style>{`
+        .trusted-grid { gap: 64px; }
+        .who-grid, .awards-grid, .related-grid { gap: 24px; }
+        .related-card:hover {
+          box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+          border-color: #E8171F !important;
+        }
+        @media (max-width: 768px) {
+          .trusted-grid { grid-template-columns: 1fr !important; }
+          .who-grid { grid-template-columns: 1fr !important; }
+          .awards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .related-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 480px) {
+          .awards-grid { grid-template-columns: 1fr !important; }
+          .related-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
 
     </div>
   );
