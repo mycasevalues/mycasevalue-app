@@ -13,6 +13,7 @@ const TabbedFeatures: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [nextTab, setNextTab] = useState<number | null>(null);
 
   // Check if mobile on mount and window resize
   useEffect(() => {
@@ -148,32 +149,37 @@ const TabbedFeatures: React.FC = () => {
                 onClick={() => setActiveTab(index)}
                 style={{
                   padding: '20px 24px',
-                  backgroundColor: activeTab === index ? '#FFFFFF' : '#EDEEEE',
-                  borderLeft: activeTab === index ? '3px solid #E8171F' : '3px solid transparent',
-                  border: activeTab === index ? '1px solid #D5D8DC' : '1px solid #D5D8DC',
-                  borderLeftWidth: '3px',
+                  backgroundColor: activeTab === index ? '#FFFFFF' : '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderBottom: activeTab === index ? 'none' : '1px solid #D5D8DC',
+                  borderLeft: 'none',
+                  borderRight: 'none',
+                  borderTop: index === 0 ? '1px solid #D5D8DC' : 'none',
+                  position: 'relative',
                   textAlign: 'left',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
+                  transition: 'background-color 0.2s ease, color 0.2s ease',
                   display: 'block',
                 }}
                 onMouseEnter={(e) => {
                   if (activeTab !== index) {
-                    e.currentTarget.style.backgroundColor = '#F5F5F5';
+                    e.currentTarget.style.backgroundColor = '#F8F8F8';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (activeTab !== index) {
-                    e.currentTarget.style.backgroundColor = '#EDEEEE';
+                    e.currentTarget.style.backgroundColor = '#FFFFFF';
                   }
                 }}
               >
                 <div
                   style={{
                     fontSize: '15px',
-                    fontWeight: 'bold',
-                    color: '#212529',
+                    fontWeight: 600,
+                    color: activeTab === index ? '#E8171F' : '#455A64',
                     margin: '0 0 8px 0',
+                    fontFamily: 'var(--font-display, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
+                    transition: 'color 0.2s ease',
                   }}
                 >
                   {feature.title}
@@ -185,12 +191,25 @@ const TabbedFeatures: React.FC = () => {
                       color: '#455A64',
                       margin: 0,
                       lineHeight: '1.5',
-                      animation: 'fadeIn 0.3s ease-in',
+                      fontFamily: 'var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
+                      animation: 'fadeInTab 0.3s ease-in',
                     }}
                   >
                     {feature.description}
                   </div>
                 )}
+                {/* Animated bottom border indicator */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: activeTab === index ? '3px' : '0px',
+                    backgroundColor: '#E8171F',
+                    transition: 'height 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                  }}
+                />
               </button>
             ))}
           </div>
@@ -213,7 +232,8 @@ const TabbedFeatures: React.FC = () => {
                 borderRadius: '4px',
                 padding: '40px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
-                animation: 'fadeIn 0.3s ease-in',
+                animation: 'fadeInContent 0.4s ease-in 0.05s both',
+                fontFamily: 'var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
               }}
             >
               {currentFeature.preview}
@@ -224,17 +244,36 @@ const TabbedFeatures: React.FC = () => {
 
       {/* Animation styles */}
       <style jsx global>{`
-        @keyframes fadeIn {
+        @keyframes fadeInTab {
           from {
             opacity: 0;
+            transform: translateY(-4px);
           }
           to {
             opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInContent {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
 
         .tabbed-features-grid button {
           font-family: inherit;
+          outline: none;
+        }
+
+        .tabbed-features-grid button:focus-visible {
+          outline: 2px solid #E8171F;
+          outline-offset: -2px;
         }
 
         .tabbed-features-grid button:first-child {
@@ -243,6 +282,7 @@ const TabbedFeatures: React.FC = () => {
 
         .tabbed-features-grid button:last-child {
           border-radius: 0 0 4px 4px;
+          border-bottom: 1px solid #D5D8DC;
         }
 
         @media (max-width: 768px) {
@@ -253,6 +293,10 @@ const TabbedFeatures: React.FC = () => {
           .tabbed-features-grid button {
             border-radius: 4px !important;
             margin-bottom: 8px;
+          }
+
+          .tabbed-features-grid button:last-child {
+            margin-bottom: 0;
           }
         }
       `}</style>

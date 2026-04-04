@@ -235,6 +235,204 @@ export default function ServerContent() {
         </div>
       </section>
 
+      {/* ── FEATURED CASE TYPES ───────────────────────────────────── */}
+      <section
+        style={{
+          background: '#FFFFFF',
+          padding: '80px 24px',
+          borderBottom: '1px solid #D5D8DC',
+        }}
+      >
+        <style>{`
+          .featured-case-card {
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 4px solid transparent;
+          }
+          .featured-case-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+            border-left-color: #E8171F;
+          }
+        `}</style>
+
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <div
+              style={{
+                height: '3px',
+                background: '#E8171F',
+                width: '48px',
+                margin: '0 auto 16px auto',
+              }}
+            />
+            <h2
+              style={{
+                fontSize: '32px',
+                fontWeight: 600,
+                color: '#212529',
+                fontFamily: 'var(--font-display)',
+                marginBottom: '12px',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Explore Popular Case Types
+            </h2>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '24px',
+              gridAutoRows: 'auto',
+            }}
+          >
+            {[
+              {
+                name: 'Employment Discrimination',
+                code: '442',
+                desc: 'Win rates, settlement data, and outcomes',
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                ),
+              },
+              {
+                name: 'Personal Injury',
+                code: '360',
+                desc: 'Accident and injury case statistics',
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z" />
+                  </svg>
+                ),
+              },
+              {
+                name: 'Civil Rights',
+                code: '440',
+                desc: 'Federal civil rights case outcomes',
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
+                    <path d="M10 17l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                  </svg>
+                ),
+              },
+              {
+                name: 'Contract Disputes',
+                code: '190',
+                desc: 'Breach of contract case data',
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="12" y1="11" x2="12" y2="17" />
+                    <line x1="9" y1="14" x2="15" y2="14" />
+                  </svg>
+                ),
+              },
+              {
+                name: 'Insurance',
+                code: '110',
+                desc: 'Insurance dispute statistics',
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2l7 3.46v5.12c0 5.55-3.84 10.74-7 12-3.16-1.26-7-6.45-7-12V5.46L12 2z" />
+                    <path d="M10 14l2 2 4-4" />
+                  </svg>
+                ),
+              },
+              {
+                name: 'FMLA',
+                code: '710',
+                desc: 'Family medical leave case outcomes',
+                icon: (
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7h3v2h-3zm-4 0h3v2H9z" />
+                  </svg>
+                ),
+              },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={`/nos/${item.code}`}
+                style={{ textDecoration: 'none' }}
+              >
+                <div
+                  className="featured-case-card"
+                  style={{
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '4px',
+                    padding: '28px 24px',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '56px',
+                      height: '56px',
+                      borderRadius: '6px',
+                      background: 'rgba(232, 23, 31, 0.08)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '16px',
+                    }}
+                  >
+                    {item.icon}
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: '16px',
+                      fontWeight: 700,
+                      color: '#212529',
+                      fontFamily: 'var(--font-display)',
+                      marginBottom: '8px',
+                      margin: '0 0 8px 0',
+                    }}
+                  >
+                    {item.name}
+                  </h3>
+
+                  <p
+                    style={{
+                      fontSize: '14px',
+                      color: '#455A64',
+                      fontFamily: 'var(--font-body)',
+                      lineHeight: 1.6,
+                      marginBottom: '16px',
+                      margin: '0 0 16px 0',
+                      flex: 1,
+                      fontWeight: 300,
+                    }}
+                  >
+                    {item.desc}
+                  </p>
+
+                  <div
+                    style={{
+                      fontSize: '14px',
+                      color: '#006997',
+                      fontFamily: 'var(--font-body)',
+                      fontWeight: 500,
+                    }}
+                  >
+                    View Statistics →
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── TESTIMONIALS WITH CAROUSEL ─────────────────────────────────── */}
       <TestimonialCarousel />
 

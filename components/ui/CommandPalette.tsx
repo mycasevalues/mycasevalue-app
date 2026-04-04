@@ -377,11 +377,11 @@ export default function CommandPalette({
       @keyframes fadeIn {
         from {
           opacity: 0;
-          transform: translateY(-4px);
+          transform: translateY(-8px) scale(0.96);
         }
         to {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateY(0) scale(1);
         }
       }
       @keyframes backdropFadeIn {
@@ -391,6 +391,10 @@ export default function CommandPalette({
         to {
           opacity: 1;
         }
+      }
+      [data-command-palette-animation] ~ * input:focus {
+        outline: 2px solid #006997;
+        outline-offset: 0;
       }
     `;
     document.head.appendChild(styleSheet);
@@ -415,7 +419,7 @@ export default function CommandPalette({
           position: 'fixed',
           inset: 0,
           zIndex: 'var(--z-modal)',
-          background: 'rgba(0,0,0,0.5)',
+          background: 'rgba(0,23,46,0.6)',
           animation: 'backdropFadeIn 0.2s ease-out',
         } as React.CSSProperties}
         aria-hidden="true"
@@ -435,13 +439,13 @@ export default function CommandPalette({
           width: 'min(95vw, 560px)',
           maxHeight: '60vh',
           background: '#FFFFFF',
-          border: '1px solid var(--border-default)',
-          borderRadius: 'var(--r-lg)',
-          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+          border: '1px solid #D5D8DC',
+          borderRadius: '4px',
+          boxShadow: '0 10px 20px rgba(0, 23, 46, 0.15)',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
-          animation: 'fadeIn 0.2s ease-out',
+          animation: 'fadeIn 0.3s ease-out',
         } as React.CSSProperties}
       >
         {/* Search input */}
@@ -450,8 +454,9 @@ export default function CommandPalette({
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-            padding: '16px 18px',
-            borderBottom: '1px solid var(--border-default)',
+            padding: '0 16px',
+            height: '48px',
+            borderBottom: '1px solid #D5D8DC',
             background: '#FFFFFF',
           }}
         >
@@ -474,9 +479,10 @@ export default function CommandPalette({
               border: 'none',
               outline: 'none',
               fontSize: 'var(--text-base)',
-              color: '#F0F2F5',
+              color: '#212529',
               caretColor: '#006997',
               fontFamily: 'var(--font-body)',
+              height: '100%',
             }}
             autoComplete="off"
             spellCheck="false"
@@ -485,11 +491,11 @@ export default function CommandPalette({
           <kbd
             style={{
               fontSize: 'var(--text-xs)',
-              color: 'var(--fg-subtle)',
-              background: '#FFFFFF',
-              border: '1px solid var(--border-default)',
-              borderRadius: 'var(--r-xs)',
-              padding: '2px 6px',
+              color: '#455A64',
+              background: '#F8F9FA',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '4px 8px',
               lineHeight: 1.4,
               fontFamily: 'inherit',
             }}
@@ -529,10 +535,11 @@ export default function CommandPalette({
                   style={{
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600,
-                    color: 'var(--fg-subtle)',
+                    color: '#212529',
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
                     padding: '8px 10px 4px',
+                    fontFamily: 'var(--font-display)',
                   }}
                 >
                   {groupLabel}
@@ -552,10 +559,11 @@ export default function CommandPalette({
                         alignItems: 'center',
                         gap: '12px',
                         padding: '11px 12px',
-                        borderRadius: 'var(--r-md)',
+                        borderRadius: '4px',
+                        borderLeft: isSelected ? '3px solid #D32F2F' : '3px solid transparent',
                         cursor: 'pointer',
-                        background: isSelected ? '#006997' : 'transparent',
-                        color: isSelected ? 'white' : '#455A64',
+                        background: isSelected ? '#F8F9FA' : 'transparent',
+                        color: isSelected ? '#212529' : '#212529',
                         transition: 'all 100ms ease-out',
                       }}
                     >
@@ -564,22 +572,22 @@ export default function CommandPalette({
                         {item.icon ? (
                           item.icon
                         ) : item.type === 'case' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : item.categoryColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={item.categoryColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                             <polyline points="14 2 14 8 20 8" />
                           </svg>
                         ) : item.type === 'page' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#455A64'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
                         ) : item.type === 'quick-link' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#006997'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                           </svg>
                         ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isSelected ? 'white' : '#3D8FB5'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                           </svg>
                         )}
@@ -591,7 +599,7 @@ export default function CommandPalette({
                           style={{
                             fontSize: 'var(--text-sm)',
                             fontWeight: 500,
-                            color: 'inherit',
+                            color: '#212529',
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
@@ -604,7 +612,7 @@ export default function CommandPalette({
                           <div
                             style={{
                               fontSize: 'var(--text-xs)',
-                              color: isSelected ? 'rgba(255,255,255,0.7)' : '#455A64',
+                              color: '#455A64',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
@@ -623,12 +631,10 @@ export default function CommandPalette({
                             flexShrink: 0,
                             fontSize: 'var(--text-2xs)',
                             fontWeight: 500,
-                            color: isSelected ? 'rgba(255,255,255,0.8)' : item.categoryColor,
-                            background: isSelected
-                              ? 'rgba(255,255,255,0.2)'
-                              : `color-mix(in srgb, ${item.categoryColor} 12%, transparent)`,
-                            padding: '2px 8px',
-                            borderRadius: 'var(--r-full)',
+                            color: item.categoryColor,
+                            background: `color-mix(in srgb, ${item.categoryColor} 12%, transparent)`,
+                            padding: '4px 10px',
+                            borderRadius: '4px',
                             whiteSpace: 'nowrap',
                           }}
                         >
@@ -641,11 +647,11 @@ export default function CommandPalette({
                         <kbd
                           style={{
                             fontSize: '11px',
-                            color: 'rgba(255,255,255,0.7)',
-                            background: 'rgba(255,255,255,0.15)',
-                            border: '1px solid rgba(255,255,255,0.2)',
-                            borderRadius: '3px',
-                            padding: '2px 6px',
+                            color: '#006997',
+                            background: 'transparent',
+                            border: '2px solid #006997',
+                            borderRadius: '4px',
+                            padding: '4px 8px',
                             lineHeight: 1.4,
                             fontFamily: 'inherit',
                             flexShrink: 0,
@@ -670,10 +676,10 @@ export default function CommandPalette({
             justifyContent: 'center',
             gap: '20px',
             padding: '10px 16px',
-            borderTop: '1px solid var(--border-default)',
+            borderTop: '1px solid #D5D8DC',
             fontSize: 'var(--text-2xs)',
             color: '#455A64',
-            background: '#FFFFFF',
+            background: '#F8F9FA',
             fontFamily: 'var(--font-body)',
           }}
         >
