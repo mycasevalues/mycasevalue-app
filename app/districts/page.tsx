@@ -193,6 +193,30 @@ const totalDistricts = CIRCUITS.reduce((sum, c) => sum + c.districts.length, 0);
 export default function DistrictsPage() {
   return (
     <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+      <style>{`
+        .district-card {
+          border-color: #D5D8DC;
+          transition: border-color 150ms, transform 150ms, box-shadow 150ms;
+        }
+        .district-card:hover {
+          border-color: #E8171F;
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .circuit-label {
+          display: inline-flex;
+          align-items: center;
+          background: 'rgba(255,255,255,0.1)';
+          color: '#E8171F';
+          font-size: '11px';
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: '6px 12px';
+          border-radius: '4px';
+          margin-bottom: '12px';
+          letter-spacing: '0.08em';
+        }
+      `}</style>
       {/* Header */}
       <div
         className="border-b"
@@ -202,24 +226,105 @@ export default function DistrictsPage() {
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
+          {/* Breadcrumb */}
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 text-sm mb-6 transition-colors"
+            style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-body)' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back to Home
+          </a>
+
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
             style={{ background: 'rgba(255,255,255,0.1)', color: '#E8171F' }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
             </svg>
             DISTRICTS
           </div>
           <h1
-            className="text-3xl sm:text-4xl font-black mb-4"
+            className="text-3xl sm:text-4xl font-black mb-6"
             style={{ color: '#FFFFFF', fontFamily: 'var(--font-display)', letterSpacing: '-1.5px' }}
           >
             Federal Court Districts
           </h1>
+
+          {/* Stat Counters */}
+          <div className="grid grid-cols-3 gap-4 mb-6 max-w-2xl">
+            <div
+              className="p-4"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '4px',
+              }}
+            >
+              <div
+                className="text-2xl font-black"
+                style={{ color: '#E8171F', fontFamily: 'var(--font-display)' }}
+              >
+                94
+              </div>
+              <div
+                className="text-xs mt-1"
+                style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}
+              >
+                Federal Districts
+              </div>
+            </div>
+            <div
+              className="p-4"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '4px',
+              }}
+            >
+              <div
+                className="text-2xl font-black"
+                style={{ color: '#E8171F', fontFamily: 'var(--font-display)' }}
+              >
+                {CIRCUITS.length}
+              </div>
+              <div
+                className="text-xs mt-1"
+                style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}
+              >
+                Circuits
+              </div>
+            </div>
+            <div
+              className="p-4"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '4px',
+              }}
+            >
+              <div
+                className="text-2xl font-black"
+                style={{ color: '#E8171F', fontFamily: 'var(--font-display)' }}
+              >
+                50
+              </div>
+              <div
+                className="text-xs mt-1"
+                style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}
+              >
+                States
+              </div>
+            </div>
+          </div>
+
           <p
             className="text-base leading-relaxed max-w-2xl sm:text-lg"
-            style={{ color: 'rgba(255,255,255,0.7)' }}
+            style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}
           >
             All {totalDistricts} federal judicial districts across {CIRCUITS.length} circuits.
             Each district has its own judges, caseload, and outcome patterns. Explore outcomes
@@ -233,8 +338,17 @@ export default function DistrictsPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
           {CIRCUITS.map((circuit) => (
             <section key={circuit.name}>
+              <div style={{ marginBottom: '16px' }}>
+                <div className="circuit-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginRight: '6px' }}>
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  Circuit {circuit.name.split(' ').pop()}
+                </div>
+              </div>
               <h2
-                className="text-lg font-bold mb-4"
+                className="text-lg font-bold mb-6"
                 style={{
                   color: '#212529',
                   fontFamily: 'var(--font-display)',
@@ -250,19 +364,18 @@ export default function DistrictsPage() {
                   <a
                     key={d.slug}
                     href={`/districts/${d.slug}`}
-                    className="group p-4 border transition-all duration-150 hover:shadow-lg hover:border-red-200"
+                    className="district-card group p-4 border"
                     style={{
-                      borderColor: '#D5D8DC',
                       background: '#FFFFFF',
                       borderRadius: '4px',
                     }}
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className="text-sm font-semibold" style={{ color: '#212529' }}>
+                        <h3 className="text-sm font-semibold" style={{ color: '#212529', fontFamily: 'var(--font-body)' }}>
                           {d.name}
                         </h3>
-                        <p className="text-[11px] mt-1" style={{ color: '#455A64' }}>
+                        <p className="text-[11px] mt-1" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
                           {d.abbr}
                         </p>
                       </div>
