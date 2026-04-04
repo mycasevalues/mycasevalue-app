@@ -326,21 +326,22 @@ function PricingCard({
             disabled={loadingPlan === plan.stripePlan}
             style={{
               width: '100%',
-              padding: '12px 16px',
-              fontSize: '15px',
+              height: '48px',
+              fontSize: '14px',
               fontWeight: 700,
               borderRadius: '4px',
               border: 'none',
               background: '#E8171F',
               color: '#FFFFFF',
               textAlign: 'center',
-              fontFamily: 'var(--font-body)',
-              transition: 'all 200ms ease',
+              fontFamily: 'var(--font-display)',
+              transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
               display: 'inline-block',
               marginBottom: '8px',
               cursor: 'pointer',
               opacity: 1,
               textTransform: 'uppercase',
+              letterSpacing: '0.04em',
             }}
             className="pricing-cta-link"
           >
@@ -351,8 +352,11 @@ function PricingCard({
             href="/search"
             style={{
               width: '100%',
-              padding: '12px 16px',
-              fontSize: '15px',
+              height: '48px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '14px',
               fontWeight: 700,
               borderRadius: '4px',
               border: 'none',
@@ -360,13 +364,13 @@ function PricingCard({
               color: '#FFFFFF',
               textDecoration: 'none',
               textAlign: 'center',
-              fontFamily: 'var(--font-body)',
-              transition: 'all 200ms ease',
-              display: 'inline-block',
+              fontFamily: 'var(--font-display)',
+              transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
               marginBottom: '8px',
               cursor: 'pointer',
               opacity: 1,
               textTransform: 'uppercase',
+              letterSpacing: '0.04em',
             }}
             className="pricing-cta-link"
           >
@@ -491,7 +495,7 @@ export default function PricingPage() {
   return (
     <div style={{ background: 'var(--bg-base)' }}>
       <style dangerouslySetInnerHTML={{ __html: `
-        .pricing-cta-link:hover { opacity: 0.9 !important; transform: translateY(-2px); }
+        .pricing-cta-link:hover { background: #CC1019 !important; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,23,31,0.3); }
         .pricing-enterprise-link:hover { opacity: 0.9 !important; }
       `}} />
       <script

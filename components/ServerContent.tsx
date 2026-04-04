@@ -59,10 +59,10 @@ export default function ServerContent() {
               <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.7, fontWeight: 300, marginBottom: '24px' }}>
                 MyCaseValue+ surfaces the most relevant case data fast — reducing time spent searching and increasing certainty in your case assessment.
               </p>
-              <a href="/search" style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '10px 24px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px',
-                fontWeight: 700, fontSize: '13px', textDecoration: 'none', textTransform: 'uppercase',
+              <a href="/search" className="cta-btn-primary" style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                height: '48px', padding: '0 32px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px',
+                fontWeight: 700, fontSize: '14px', textDecoration: 'none', textTransform: 'uppercase',
                 letterSpacing: '0.04em', fontFamily: 'var(--font-display)',
               }}>
                 Instant Free Trial
@@ -1035,56 +1035,67 @@ export default function ServerContent() {
       {/* ── CTA ────────────────────────────────────────────── */}
       <section
         style={{
-          background: '#00172E',
-          padding: '80px 24px',
+          background: 'linear-gradient(135deg, #00172E 0%, #0A2847 100%)',
+          padding: '120px 24px',
           textAlign: 'center',
         }}
       >
-        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
-            Get MyCaseValue+
+        <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+          <p style={{ fontSize: '12px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+            Ready to Win Cases with Data
+          </p>
+          <h2 style={{ fontSize: '48px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '20px', letterSpacing: '-0.01em', lineHeight: 1.2 }}>
+            Research Federal Court Outcomes Instantly
           </h2>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, marginBottom: '32px', fontWeight: 300 }}>
-            Start your free trial today. Research real outcomes from 5.1M+ federal court cases.
+          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7, marginBottom: '48px', fontWeight: 300 }}>
+            Access 5.1M+ federal court cases, settlement ranges, judge analytics, and outcome data to make confident case decisions.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '24px' }}>
             <a
               href="/free-trial"
+              className="cta-btn-primary"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '14px 32px',
+                height: '48px',
+                padding: '0 40px',
                 background: '#E8171F',
                 color: '#FFFFFF',
-                borderRadius: '0px',
+                borderRadius: '4px',
                 fontFamily: 'var(--font-display)',
-                fontSize: '15px',
+                fontSize: '16px',
                 fontWeight: 700,
                 textDecoration: 'none',
-                boxShadow: '0 2px 8px rgba(232,23,31,0.12)',
+                boxShadow: '0 4px 12px rgba(232,23,31,0.3)',
                 textTransform: 'uppercase',
                 border: 'none',
+                letterSpacing: '0.04em',
+                transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
               }}
             >
-              Free Trial
+              Start Free Trial
             </a>
             <a
               href="/signin"
+              className="cta-btn-secondary"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '14px 32px',
-                background: 'transparent',
+                height: '48px',
+                padding: '0 40px',
+                background: 'rgba(255,255,255,0.1)',
                 color: '#FFFFFF',
-                borderRadius: '0px',
+                borderRadius: '4px',
                 fontFamily: 'var(--font-display)',
-                fontSize: '15px',
+                fontSize: '16px',
                 fontWeight: 700,
                 textDecoration: 'none',
-                border: '1px solid #FFFFFF',
+                border: '2px solid rgba(255,255,255,0.3)',
                 textTransform: 'uppercase',
+                letterSpacing: '0.04em',
+                transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
               }}
             >
               Sign In
@@ -1111,6 +1122,24 @@ export default function ServerContent() {
 
         .newsletter-btn:hover {
           background-color: #E8171F !important;
+        }
+
+        /* CTA Button Styles */
+        .cta-btn-primary {
+          transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .cta-btn-primary:hover {
+          background: #CC1019 !important;
+          box-shadow: 0 8px 24px rgba(232,23,31,0.4) !important;
+          transform: translateY(-2px) !important;
+        }
+
+        .cta-btn-secondary:hover {
+          background: rgba(255,255,255,0.15) !important;
+          border-color: rgba(255,255,255,0.5) !important;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+          transform: translateY(-2px) !important;
         }
 
         @media (max-width: 768px) {

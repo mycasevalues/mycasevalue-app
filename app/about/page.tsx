@@ -298,22 +298,26 @@ export default function AboutPage() {
         .cta-button {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 0.5rem;
-          padding: 0.75rem 1.5rem;
+          height: 48px;
+          padding: 0 2rem;
           border-radius: 4px;
-          font-family: var(--font-body);
+          font-family: var(--font-display);
           font-size: 0.875rem;
-          font-weight: 600;
+          font-weight: 700;
           background: #E8171F;
           color: #FFFFFF;
           text-decoration: none;
-          transition: all 0.2s ease;
+          transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
         }
 
         .cta-button:hover {
-          background: #C41219;
+          background: #CC1019;
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.3);
+          box-shadow: 0 8px 24px rgba(232, 23, 31, 0.3);
         }
 
         .section-heading {

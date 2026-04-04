@@ -79,30 +79,32 @@ export default function ServerHero() {
           </p>
 
           <div style={{ display: 'flex', gap: 'clamp(12px, 2vw, 16px)', justifyContent: 'center', flexWrap: 'wrap', marginBottom: 'clamp(32px, 4vw, 48px)', alignItems: 'center' }}>
-            <a href="/search" style={{
+            <a href="/search" className="cta-btn-primary" style={{
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
               padding: 'clamp(14px, 1.5vw, 16px) clamp(32px, 4vw, 48px)',
               background: '#E8171F',
               color: '#FFFFFF',
-              borderRadius: '6px',
-              fontWeight: 800,
+              borderRadius: '4px',
+              fontWeight: 700,
               fontSize: 'clamp(13px, 1.2vw, 15px)',
               fontFamily: 'var(--font-display)',
               textDecoration: 'none',
               textTransform: 'uppercase',
-              letterSpacing: '0.06em',
+              letterSpacing: '0.04em',
               border: '2px solid #E8171F',
               transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
               cursor: 'pointer',
               boxShadow: '0 8px 24px rgba(232,23,31,0.3)',
               minHeight: '48px',
             }} onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#D01018';
+              e.currentTarget.style.background = '#CC1019';
+              e.currentTarget.style.borderColor = '#CC1019';
               e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,23,31,0.4)';
             }} onMouseLeave={(e) => {
               e.currentTarget.style.background = '#E8171F';
+              e.currentTarget.style.borderColor = '#E8171F';
               e.currentTarget.style.boxShadow = '0 8px 24px rgba(232,23,31,0.3)';
             }}>
               Start Free Trial
@@ -334,10 +336,10 @@ export default function ServerHero() {
             <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto 16px', lineHeight: 1.6, fontWeight: 300 }}>
               Everything case research touches, connected in one place. Explore outcomes, develop strategy, and make informed decisions without disrupting how you think or work.
             </p>
-            <a href="/search" style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              padding: '10px 24px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px',
-              fontWeight: 700, fontSize: '13px', textDecoration: 'none', textTransform: 'uppercase',
+            <a href="/search" className="cta-btn-primary" style={{
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+              height: '48px', padding: '0 32px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px',
+              fontWeight: 700, fontSize: '14px', textDecoration: 'none', textTransform: 'uppercase',
               letterSpacing: '0.04em', fontFamily: 'var(--font-display)',
             }}>
               Instant Free Trial

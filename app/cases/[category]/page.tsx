@@ -497,6 +497,11 @@ async function CategoryPage({
             border-color: #E8171F;
             transform: translateY(-2px);
           }
+          .cta-btn-category:hover {
+            background: #CC1019;
+            box-shadow: 0 8px 24px rgba(232,23,31,0.3);
+            transform: translateY(-2px);
+          }
         `}</style>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
@@ -718,22 +723,30 @@ async function CategoryPage({
           </p>
           <a
             href="/search"
+            className="cta-btn-category"
             style={{
-              display: 'inline-block',
-              background: 'white',
-              color: categoryColors[category],
-              padding: '14px 36px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              height: '48px',
+              padding: '0 40px',
+              background: '#E8171F',
+              color: '#FFFFFF',
               borderRadius: '4px',
-              fontWeight: 600,
-              fontSize: '16px',
+              fontWeight: 700,
+              fontSize: '14px',
               textDecoration: 'none',
-              fontFamily: 'Outfit, system-ui, sans-serif',
+              fontFamily: 'var(--font-display)',
               border: 'none',
               cursor: 'pointer',
-              transition: 'transform 0.2s ease',
+              transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
             }}
           >
-            Start Researching →
+            Start Researching
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>

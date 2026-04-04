@@ -36,6 +36,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
 
         .faq-item.active {
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          background-color: rgba(232, 23, 31, 0.02);
         }
 
         .faq-question {
@@ -61,19 +62,18 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
         }
       `}</style>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '4px', border: '1px solid #D5D8DC', overflow: 'hidden' }}>
         {items.map((item, index) => {
           const isOpen = openIndex === index;
+          const isLast = index === items.length - 1;
 
           return (
             <div
               key={index}
               className={`faq-item ${isOpen ? 'active' : ''}`}
               style={{
-                border: '1px solid #D5D8DC',
-                borderLeft: isOpen ? '3px solid #E8171F' : '1px solid #D5D8DC',
-                backgroundColor: '#FFFFFF',
-                borderRadius: '4px',
+                borderBottom: isLast ? 'none' : '1px solid #D5D8DC',
+                backgroundColor: isOpen ? 'rgba(232, 23, 31, 0.02)' : '#FFFFFF',
                 overflow: 'hidden',
               }}
             >
@@ -83,18 +83,20 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                 style={{
                   width: '100%',
                   padding: '20px',
-                  backgroundColor: isOpen ? '#FFFFFF' : '#FFFFFF',
+                  backgroundColor: 'transparent',
                   border: 'none',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   gap: '12px',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '15px',
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '16px',
                   fontWeight: 600,
                   color: '#212529',
                   transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+                  borderLeft: isOpen ? '4px solid #E8171F' : '4px solid transparent',
+                  paddingLeft: '16px',
                 }}
                 onMouseEnter={(e) => {
                   if (!isOpen) {
@@ -103,7 +105,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                 }}
                 onMouseLeave={(e) => {
                   if (!isOpen) {
-                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#FFFFFF';
+                    (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'transparent';
                   }
                 }}
               >
@@ -134,12 +136,12 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   className="faq-answer"
                   style={{
                     padding: '0 20px 20px 20px',
-                    paddingTop: '16px',
+                    paddingLeft: '20px',
                     borderTop: '1px solid #D5D8DC',
                     fontFamily: 'var(--font-body)',
-                    fontSize: '14px',
-                    fontWeight: 300,
-                    color: '#212529',
+                    fontSize: '16px',
+                    fontWeight: 400,
+                    color: '#455A64',
                     lineHeight: '1.6',
                   }}
                 >
