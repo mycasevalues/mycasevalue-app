@@ -785,7 +785,7 @@ select option {
 
 /* Improved focus visibility for accessibility */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid #4F46E5;
+  outline: 2px solid #8B5CF6;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -922,45 +922,7 @@ input[type="range"]::-moz-range-thumb {
    CUTTING-EDGE VISUAL ENHANCEMENTS
    ============================================================ */
 
-/* Floating orbs background effect */
-.orb-bg {
-  position: relative;
-  overflow: hidden;
-}
 
-.orb-bg::before,
-.orb-bg::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.12;
-  pointer-events: none;
-  /* animation: orbFloat 8s ease-in-out infinite — disabled: decorative, >4s */
-}
-
-.orb-bg::before {
-  width: 400px;
-  height: 400px;
-  background: #4F46E5;
-  top: -100px;
-  right: -100px;
-}
-
-.orb-bg::after {
-  width: 300px;
-  height: 300px;
-  background: #0D9488;
-  bottom: -80px;
-  left: -80px;
-  animation-delay: -4s;
-}
-
-@keyframes orbFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.02; }
-  33% { transform: translate(8px, -8px) scale(1.01); opacity: 0.025; }
-  66% { transform: translate(-6px, 6px) scale(0.99); opacity: 0.02; }
-}
 
 /* Text shimmer effect for headings — uses light colors for dark hero bg */
 .text-shimmer {
@@ -1017,7 +979,7 @@ input[type="range"]::-moz-range-thumb {
   transform: translateX(-50%);
   width: 60%;
   height: 12px;
-  background: var(--stat-color, #4F46E5);
+  background: var(--stat-color, #8B5CF6);
   filter: blur(16px);
   opacity: 0.15;
   border-radius: 50%;
@@ -1082,64 +1044,9 @@ input[type="range"]::-moz-range-thumb {
 /* ============================================================
    SIMULATOR SLIDERS
    ============================================================ */
-.simulator-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  height: 6px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #4F46E5 0%, #6366F1 var(--slider-pct, 50%), rgba(255,255,255,0.1) var(--slider-pct, 50%));
-  outline: none;
-  cursor: pointer;
-  transition: background 0.1s ease;
-}
-.simulator-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #E2E8F0 0%, #A5B4FC 100%);
-  border: 2px solid #4F46E5;
-  box-shadow: 0 2px 8px rgba(79,70,229,0.4), 0 0 0 4px rgba(79,70,229,0.1);
-  cursor: grab;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-.simulator-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
-  box-shadow: 0 2px 12px rgba(79,70,229,0.6), 0 0 0 6px rgba(79,70,229,0.15);
-}
-.simulator-slider::-webkit-slider-thumb:active {
-  cursor: grabbing;
-  transform: scale(1.1);
-}
-.simulator-slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #E2E8F0 0%, #A5B4FC 100%);
-  border: 2px solid #4F46E5;
-  box-shadow: 0 2px 8px rgba(79,70,229,0.4);
-  cursor: grab;
-}
-
 /* ============================================================
    PREMIUM GLOW BADGE
    ============================================================ */
-.premium-badge-glow {
-  position: relative;
-}
-.premium-badge-glow::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, #4F46E5, #0D9488, #6366F1, #4F46E5);
-  background-size: 300% 300%;
-  animation: premiumGlow 3s ease infinite;
-  z-index: -1;
-  opacity: 0.6;
-  filter: blur(6px);
-}
 @keyframes premiumGlow {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -1188,15 +1095,6 @@ input[type="range"]::-moz-range-thumb {
 /* ============================================================
    VALUE COUNTER FLASH
    ============================================================ */
-@keyframes valueFlash {
-  0% { color: inherit; }
-  15% { color: #4F46E5; text-shadow: 0 0 12px rgba(79,70,229,0.3); }
-  100% { color: inherit; text-shadow: none; }
-}
-.value-flash {
-  animation: valueFlash 0.6s ease;
-}
-
 /* ============================================================
    WIZARD STEP TRANSITIONS & MICRO-INTERACTIONS
    ============================================================ */
@@ -1249,19 +1147,15 @@ input[type="range"]::-moz-range-thumb {
 
 /* Prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .orb-bg::before,
-  .orb-bg::after,
   .text-shimmer,
   .pulse-ring::before,
   .success-check-path,
   .success-check-burst,
-  .premium-badge-glow::before,
   .locked-shimmer::after,
   .float-label,
   .comparison-pulse {
     animation: none !important;
   }
-  .simulator-slider::-webkit-slider-thumb:hover { transform: none; }
   .data-card:hover { transform: none; }
   .reveal-stagger > * { opacity: 1; transform: none; }
   .feed-item-enter { animation: none !important; }
@@ -1315,41 +1209,6 @@ input[type="range"]::-moz-range-thumb {
 /* ============================================================
    PREMIUM DARK TECH AESTHETIC — Advanced Effects
    ============================================================ */
-
-/* Ambient glow effect — floating orbs behind hero */
-.ambient-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.12;
-  /* animation: ambientFloat 12s ease-in-out infinite — disabled: decorative, >4s */
-  pointer-events: none;
-}
-.ambient-glow.indigo {
-  background: #4F46E5;
-  width: 400px;
-  height: 400px;
-}
-.ambient-glow.teal {
-  background: #0D9488;
-  width: 300px;
-  height: 300px;
-  animation-delay: -4s;
-  animation-duration: 15s;
-}
-.ambient-glow.lavender {
-  background: #A5B4FC;
-  width: 250px;
-  height: 250px;
-  animation-delay: -8s;
-  animation-duration: 18s;
-}
-@keyframes ambientFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -20px) scale(1.05); }
-  50% { transform: translate(-20px, 30px) scale(0.95); }
-  75% { transform: translate(20px, 20px) scale(1.02); }
-}
 
 
 /* Stagger-in animation for grid items */
@@ -1490,25 +1349,6 @@ input[type="range"]::-moz-range-thumb {
   animation: springCount 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-/* Premium badge with holographic sheen */
-.holo-badge {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 50%, #0D9488 100%);
-  background-size: 200% 200%;
-  animation: gradientFlow 4s ease infinite;
-}
-.holo-badge::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  animation: shimmerSweep 3s ease-in-out infinite;
-}
-
 /* Data grid — stagger children entrance */
 .data-grid-stagger > * {
   opacity: 0;
@@ -1571,26 +1411,6 @@ button:disabled,
   pointer-events: none;
 }
 
-/* Stat card with animated underline accent */
-.stat-underline {
-  position: relative;
-}
-.stat-underline::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #4F46E5, #0D9488);
-  border-radius: 1px;
-  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.stat-underline:hover::after {
-  width: 60%;
-  left: 20%;
-}
-
 /* Text gradient — indigo to teal premium */
 .text-gradient-premium {
   color: #111827;
@@ -1615,26 +1435,6 @@ button:disabled,
   filter: blur(12px);
   opacity: 0.3;
   z-index: -1;
-}
-
-/* Animated progress bar — data loading */
-@keyframes progressFlow {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-.progress-animated {
-  background: linear-gradient(90deg, #4F46E5, #6366F1, #0D9488, #4F46E5);
-  background-size: 200% 100%;
-  animation: progressFlow 2s linear infinite;
-  border-radius: 4px;
-}
-
-/* Premium scrollbar — thinner, indigo accent */
-.premium-scroll::-webkit-scrollbar { width: 4px; }
-.premium-scroll::-webkit-scrollbar-track { background: transparent; }
-.premium-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #4F46E5, #6366F1);
-  border-radius: 2px;
 }
 
 /* Ripple click effect */
@@ -1745,14 +1545,6 @@ button:disabled,
   animation: countUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Typing cursor blink */
-.cursor-blink::after {
-  content: '|';
-  color: #6366F1;
-  animation: cursorBlink 1s step-end infinite;
-  margin-left: 2px;
-}
-
 /* Reduce motion — respect user preference */
 @media (prefers-reduced-motion: reduce) {
   .cinematic-enter,
@@ -1764,9 +1556,6 @@ button:disabled,
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
-  }
-  .holo-badge::after {
-    animation: none !important;
   }
 }
 
