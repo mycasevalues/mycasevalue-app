@@ -65,18 +65,30 @@ export default function SearchPage() {
     : [];
 
   return (
-    <main style={{ maxWidth: '720px', margin: '0 auto', padding: '64px 24px', fontFamily: 'var(--font-body)' }}>
-      <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', textAlign: 'center' }}>
-        Find your case
-      </p>
-      <h1 style={{ fontSize: '40px', fontWeight: 800, color: '#212529', fontFamily: 'var(--font-display)', textAlign: 'center', marginBottom: '8px', letterSpacing: '-0.02em' }}>
-        What happened to you?
-      </h1>
-      <p style={{ fontSize: '18px', color: '#999999', textAlign: 'center', marginBottom: '40px', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-        Search across all 84 federal case types to find real outcome data for your situation.
-      </p>
+    <main style={{ fontFamily: 'var(--font-body)' }}>
+      {/* Dark Navy Header Banner */}
+      <div style={{ background: '#00172E', borderBottom: '1px solid #D5D8DC', padding: '64px 24px' }}>
+        <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '999px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#E8171F', flexShrink: 0 }}>
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+              Search
+            </span>
+          </div>
+          <h1 style={{ fontSize: '40px', fontWeight: 800, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+            What happened to you?
+          </h1>
+          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+            Search across all 84 federal case types to find real outcome data for your situation.
+          </p>
+        </div>
+      </div>
 
-      {/* Recently viewed */}
+      {/* Content area below header */}
+      <div style={{ maxWidth: '720px', margin: '0 auto', padding: '64px 24px', fontFamily: 'var(--font-body)' }}>
+        {/* Recently viewed */}
       {query.length === 0 && recentItems.length > 0 && (
         <div style={{ marginBottom: 24 }}>
           <p style={{ fontSize: 13, color: '#999999', marginBottom: 12, fontWeight: 500 }}>Recently viewed:</p>
@@ -192,6 +204,7 @@ export default function SearchPage() {
           </div>
         </div>
       )}
+      </div>
     </main>
   );
 }

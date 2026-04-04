@@ -229,6 +229,7 @@ export default function ServerContent() {
       {/* ── TESTIMONIALS ─────────────────────────────────── */}
       <section
         id="testimonials"
+        data-section
         style={{
           background: '#EDEEEE',
           borderTop: '1px solid #D5D8DC',
@@ -374,7 +375,7 @@ export default function ServerContent() {
       </section>
 
       {/* ── WHO IS MYCASEVALUE FOR? ────────────────────────────── */}
-      <section id="who" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <section id="who" data-section style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
@@ -409,7 +410,7 @@ export default function ServerContent() {
       </section>
 
       {/* ── AWARDS & RECOGNITION ───────────────────────────────── */}
-      <section id="awards" style={{ background: '#EDEEEE', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <section id="awards" data-section style={{ background: '#EDEEEE', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
             Recognition
@@ -817,6 +818,7 @@ export default function ServerContent() {
       {/* ── FAQ ────────────────────────────────────────────── */}
       <section
         id="faq"
+        data-section
         style={{
           background: '#EDEEEE',
           borderTop: '1px solid #D5D8DC',

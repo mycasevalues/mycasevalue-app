@@ -6,6 +6,8 @@
 
 import QuickLookupForm from './QuickLookupForm';
 import HeroStats from './ui/HeroStats';
+import AnchorNav from './AnchorNav';
+import TabbedFeatures from './TabbedFeatures';
 
 export default function ServerHero() {
   return (
@@ -58,36 +60,11 @@ export default function ServerHero() {
         </div>
       </div>
 
-      {/* ── VISUAL 1.5: IN-PAGE ANCHOR NAV ────────────────── */}
-      <div className="anchor-nav" style={{
-        background: '#FFFFFF', borderBottom: '1px solid #D5D8DC',
-        position: 'sticky', top: '112px', zIndex: 50,
-      }}>
-        <div style={{
-          maxWidth: '1280px', margin: '0 auto', padding: '0 24px',
-          display: 'flex', alignItems: 'center', gap: '0', overflowX: 'auto',
-        }}>
-          {[
-            { label: 'Overview', href: '#overview' },
-            { label: 'What is MyCaseValue?', href: '#what-is' },
-            { label: 'Features', href: '#features' },
-            { label: 'Who is it for?', href: '#who' },
-            { label: 'Testimonials', href: '#testimonials' },
-            { label: 'Awards', href: '#awards' },
-            { label: 'FAQ', href: '#faq' },
-            { label: 'Start free trial', href: '/search' },
-          ].map((item, i) => (
-            <a key={i} href={item.href} style={{
-              padding: '14px 20px', fontSize: '13px', fontWeight: 500, color: i === 7 ? '#E8171F' : '#455A64',
-              textDecoration: 'none', fontFamily: 'var(--font-body)', whiteSpace: 'nowrap',
-              borderBottom: '2px solid transparent', transition: 'all 150ms',
-            }} className="anchor-nav-link">{item.label}</a>
-          ))}
-        </div>
-      </div>
+      {/* ── VISUAL 1.5: IN-PAGE ANCHOR NAV (Client Component) ── */}
+      <AnchorNav />
 
       {/* ── VISUAL 1.6: WHAT IS MYCASEVALUE? ───────────────── */}
-      <div id="what-is" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div id="what-is" data-section style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
             Overview
@@ -105,7 +82,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 1.7: PRODUCT TOOLS SHOWCASE ─────────────── */}
-      <div id="overview" style={{ background: '#EDEEEE', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div id="overview" data-section style={{ background: '#EDEEEE', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
@@ -141,6 +118,11 @@ export default function ServerHero() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* ── VISUAL 1.8: TABBED FEATURE SHOWCASE (Client) ──── */}
+      <div id="features" data-section>
+        <TabbedFeatures />
       </div>
 
       {/* ── VISUAL 2: DATA SOURCE ATTRIBUTION BAR ─────────── */}
