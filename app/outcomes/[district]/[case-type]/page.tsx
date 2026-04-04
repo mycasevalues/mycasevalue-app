@@ -197,12 +197,27 @@ export default async function OutcomesPage({
           box-shadow: 0 2px 8px rgba(0, 105, 151, 0.1);
           transform: translateY(-2px);
         }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 28px !important;
+          }
+          h2 {
+            font-size: 20px !important;
+          }
+          .stats-cards {
+            grid-template-columns: 1fr;
+          }
+          .outcome-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
 
       {/* Header Section - Dark Navy */}
       <div style={{
         background: '#00172E',
-        padding: '32px 20px',
+        padding: 'clamp(20px, 4vw, 32px) 20px',
         borderBottom: '1px solid #1a2a3a',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -213,6 +228,10 @@ export default async function OutcomesPage({
             fontFamily: 'var(--font-body)',
             marginBottom: '16px',
             letterSpacing: '0.3px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '8px',
+            alignItems: 'center',
           }}>
             <Link href="/" style={{ color: '#D5D8DC', textDecoration: 'none' }}>
               Home
@@ -230,9 +249,9 @@ export default async function OutcomesPage({
           </div>
 
           {/* Title with Badge */}
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '8px' }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '8px', flexWrap: 'wrap' }}>
             <h1 style={{
-              fontSize: '42px',
+              fontSize: 'clamp(28px, 6vw, 42px)',
               fontWeight: 700,
               margin: 0,
               fontFamily: 'var(--font-display)',
@@ -276,7 +295,7 @@ export default async function OutcomesPage({
       {/* Key Stats Section */}
       <div style={{
         background: '#FFFFFF',
-        padding: '32px 20px',
+        padding: 'clamp(20px, 4vw, 32px) 20px',
         borderBottom: '1px solid #D5D8DC',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -284,7 +303,9 @@ export default async function OutcomesPage({
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '24px',
-          }}>
+          }}
+          className="stats-cards"
+          >
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
@@ -379,7 +400,7 @@ export default async function OutcomesPage({
 
       {/* Outcome Distribution */}
       <div style={{
-        padding: '40px 20px',
+        padding: 'clamp(20px, 4vw, 40px) 20px',
         background: '#EDEEEE',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -387,7 +408,7 @@ export default async function OutcomesPage({
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
             borderRadius: '4px',
-            padding: '32px',
+            padding: 'clamp(20px, 4vw, 32px)',
           }}>
             <h2 style={{
               fontSize: '22px',
@@ -399,7 +420,9 @@ export default async function OutcomesPage({
               Outcome Distribution
             </h2>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}
+            className="outcome-grid"
+            >
               {outcomes.map((outcome, i) => (
                 <div key={i}>
                   <div style={{
@@ -447,7 +470,7 @@ export default async function OutcomesPage({
       {/* Related Links Section */}
       <div style={{
         background: '#EDEEEE',
-        padding: '40px 20px',
+        padding: 'clamp(20px, 4vw, 40px) 20px',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
@@ -532,7 +555,7 @@ export default async function OutcomesPage({
       <div style={{
         background: '#FFFFFF',
         color: '#455A64',
-        padding: '40px 20px',
+        padding: 'clamp(20px, 4vw, 40px) 20px',
         fontSize: '13px',
         fontFamily: 'var(--font-body)',
         lineHeight: '1.7',

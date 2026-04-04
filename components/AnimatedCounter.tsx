@@ -3,73 +3,93 @@
 import { useEffect, useRef, useState } from 'react';
 
 interface AnimatedCounterProps {
-  end: string; // e.g., "5.1M+", "94", "94%", "50+"
-  duration?: number;
+  end: number;
+  suffix?: string; // e.g., "+" or "K+"
+  prefix?: string; // e.g., "$"
+  duration?: number; // animation duration in ms, default 2000
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-function parseNumber(s: string): { num: number; prefix: string; suffix: string } {
-  const match = s.match(/^([^0-9]*)([0-9]*\.?[0-9]+)(.*)$/);
-  if (!match) return { num: 0, prefix: '', suffix: s };
-  return { num: parseFloat(match[2]), prefix: match[1], suffix: match[3] };
-}
+// Easing function: easeOutQuart
+const easeOutQuart = (t: number): number => 1 - Math.pow(1 - t, 4);
 
-export default function AnimatedCounter({ end, duration = 2000 }: AnimatedCounterProps) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState('0');
-  const [started, setStarted] = useState(false);
+export default function AnimatedCounter({
+  end,
+  suffix = '',
+  prefix = '',
+  duration = 2000,
+  className = '',
+  style = {},
+}: AnimatedCounterProps) {
+  const [count, setCount] = useState(0);
+  const elementRef = useRef<HTMLDivElement>(null);
+  const hasAnimatedRef = useRef(false);
+  const animationFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    // Check if prefers-reduced-motion is set
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setDisplay(end);
+    if (prefersReducedMotion) {
+      setCount(end);
       return;
     }
 
+    // Create IntersectionObserver to detect when element scrolls into view
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
-          observer.unobserve(el);
+        if (entry.isIntersecting && !hasAnimatedRef.current) {
+          hasAnimatedRef.current = true;
+          startAnimation();
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [end, started]);
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
 
-  useEffect(() => {
-    if (!started) return;
+    const startAnimation = () => {
+      let startTime: number | null = null;
 
-    const { num, prefix, suffix } = parseNumber(end);
-    const startTime = performance.now();
-    const hasDecimal = end.includes('.');
+      const animate = (currentTime: number) => {
+        if (startTime === null) {
+          startTime = currentTime;
+        }
 
-    const animate = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const current = eased * num;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutQuart(progress);
+        const currentCount = Math.floor(end * easedProgress);
 
-      if (hasDecimal) {
-        setDisplay(`${prefix}${current.toFixed(1)}${suffix}`);
-      } else {
-        setDisplay(`${prefix}${Math.floor(current)}${suffix}`);
-      }
+        setCount(currentCount);
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        setDisplay(end);
-      }
+        if (progress < 1) {
+          animationFrameRef.current = requestAnimationFrame(animate);
+        } else {
+          setCount(end);
+        }
+      };
+
+      animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    requestAnimationFrame(animate);
-  }, [started, end, duration]);
+    return () => {
+      observer.disconnect();
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [end, duration]);
 
-  return <span ref={ref}>{display}</span>;
+  return (
+    <div ref={elementRef} className={className} style={style}>
+      {prefix}
+      {count.toLocaleString()}
+      {suffix}
+    </div>
+  );
 }

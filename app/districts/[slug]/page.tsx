@@ -353,10 +353,30 @@ export default async function DistrictPage({ params }: PageProps) {
         .bg-subtle {
           background: #EDEEEE;
         }
+
+        .case-table-wrapper {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 28px !important;
+          }
+          h2 {
+            font-size: 20px !important;
+          }
+          .case-table-wrapper {
+            overflow-x: auto;
+          }
+          .card-section {
+            padding: 24px;
+          }
+        }
       `}</style>
 
       {/* Dark Navy Header */}
-      <header className="district-header px-4 sm:px-6 lg:px-8 py-8">
+      <header className="district-header px-4 sm:px-6 lg:px-8 py-8" style={{ paddingTop: 'clamp(16px, 3vw, 32px)', paddingBottom: 'clamp(16px, 3vw, 32px)' }}>
         <div className="max-w-[960px] mx-auto">
           {/* Breadcrumb */}
           <nav className="mb-8">
@@ -382,8 +402,9 @@ export default async function DistrictPage({ params }: PageProps) {
           {/* District Name with Badge */}
           <div className="flex items-center gap-3 flex-wrap mb-2">
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold"
+              className="font-extrabold"
               style={{
+                fontSize: 'clamp(28px, 8vw, 64px)',
                 color: '#FFFFFF',
                 letterSpacing: '-2px',
                 lineHeight: 1.1,
@@ -576,6 +597,7 @@ export default async function DistrictPage({ params }: PageProps) {
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
             }}
           >
+            <div className="case-table-wrapper">
             <table className="case-table">
               <thead>
                 <tr>
@@ -614,6 +636,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
       </section>

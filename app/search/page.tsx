@@ -8,37 +8,41 @@ import { SITS } from '../../lib/data';
 const SkeletonResultCard = () => (
   <div style={{
     display: 'block',
-    padding: 16,
-    marginBottom: 8,
+    padding: '16px',
+    marginBottom: '12px',
     background: '#FFFFFF',
-    border: '1px solid #D5D8DC',
-    borderRadius: 4,
+    border: '4px solid #D5D8DC',
+    borderRadius: '4px',
     animation: 'shimmer 2s infinite',
   }}>
     <div style={{
       display: 'flex',
       alignItems: 'center',
-      gap: 8,
-      marginBottom: 4,
+      gap: '8px',
+      marginBottom: '8px',
+      flexWrap: 'wrap',
     }}>
       <div style={{
-        height: 20,
+        height: '20px',
         width: '60%',
         background: '#E8EAED',
-        borderRadius: 4,
+        borderRadius: '4px',
+        flex: '1 1 auto',
+        minWidth: '150px',
       }} />
       <div style={{
-        height: 20,
+        height: '20px',
         width: '20%',
         background: '#E8EAED',
-        borderRadius: 4,
+        borderRadius: '4px',
+        minWidth: '50px',
       }} />
     </div>
     <div style={{
-      height: 14,
+      height: '14px',
       width: '40%',
       background: '#E8EAED',
-      borderRadius: 4,
+      borderRadius: '4px',
     }} />
   </div>
 );
@@ -114,7 +118,7 @@ export default function SearchPage() {
     : [];
 
   return (
-    <main style={{ fontFamily: 'var(--font-body)' }}>
+    <main style={{ fontFamily: 'var(--font-body)', background: '#EDEEEE', minHeight: '100vh' }}>
       <style>{`
         @keyframes shimmer {
           0% {
@@ -129,9 +133,24 @@ export default function SearchPage() {
           border-color: #E8171F !important;
           box-shadow: 0 0 0 3px rgba(232, 23, 31, 0.08) !important;
         }
+
+        @media (max-width: 768px) {
+          .search-header {
+            padding: 40px 20px !important;
+          }
+          .search-header h1 {
+            font-size: 28px !important;
+          }
+          .search-header p {
+            font-size: 16px !important;
+          }
+          .search-container {
+            padding: 32px 20px !important;
+          }
+        }
       `}</style>
       {/* Dark Navy Header Banner */}
-      <div style={{ background: '#00172E', borderBottom: '1px solid #D5D8DC', padding: '64px 24px' }}>
+      <div className="search-header" style={{ background: '#00172E', borderBottom: '1px solid #D5D8DC', padding: '64px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '999px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#E8171F', flexShrink: 0 }}>
@@ -141,51 +160,63 @@ export default function SearchPage() {
               Search
             </span>
           </div>
-          <h1 style={{ fontSize: '40px', fontWeight: 800, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+          <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 800, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
             What happened to you?
           </h1>
-          <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+          <p className="search-header" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
             Search across all 84 federal case types to find real outcome data for your situation.
           </p>
+
+          {/* Breadcrumb */}
+          <div style={{ marginTop: '24px', fontSize: '13px', color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-body)' }}>
+            <Link href="/" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', transition: 'color 150ms' }} onMouseEnter={(e) => e.currentTarget.style.color = '#FFFFFF'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}>
+              Home
+            </Link>
+            <span style={{ margin: '0 8px', color: 'rgba(255,255,255,0.5)' }}>/</span>
+            <span style={{ color: 'rgba(255,255,255,0.6)' }}>Search Results</span>
+          </div>
         </div>
       </div>
 
       {/* Content area below header */}
-      <div style={{ maxWidth: '720px', margin: '0 auto', padding: '64px 24px', fontFamily: 'var(--font-body)' }}>
+      <div className="search-container" style={{ maxWidth: '720px', margin: '0 auto', padding: '64px 24px', fontFamily: 'var(--font-body)' }}>
         {/* Recently viewed */}
       {query.length === 0 && recentItems.length > 0 && (
-        <div style={{ marginBottom: 24 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+        <div style={{ marginBottom: '24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#999999', flexShrink: 0 }}>
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <p style={{ fontSize: 13, color: '#999999', margin: 0, fontWeight: 500 }}>Recently viewed</p>
+            <p style={{ fontSize: '13px', color: '#999999', margin: '0', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Recently viewed</p>
           </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {recentItems.map((item, i) => (
               <Link
                 key={i}
                 href={`/report/${item.nos}`}
                 style={{
                   padding: '8px 16px',
-                  background: '#F8F9FA',
-                  border: '1px solid #D5D8DC',
-                  borderRadius: 20,
-                  fontSize: 13,
-                  color: '#455A64',
+                  background: '#FFFFFF',
+                  border: '4px solid #D5D8DC',
+                  borderRadius: '4px',
+                  fontSize: '13px',
+                  color: '#006997',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   transition: 'all 150ms ease-out',
                   cursor: 'pointer',
+                  fontWeight: '500',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#EDEEEE';
-                  e.currentTarget.style.borderColor = '#E8171F';
+                  e.currentTarget.style.background = '#F0F6FB';
+                  e.currentTarget.style.borderColor = '#006997';
+                  e.currentTarget.style.color = '#004D7A';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#F8F9FA';
+                  e.currentTarget.style.background = '#FFFFFF';
                   e.currentTarget.style.borderColor = '#D5D8DC';
+                  e.currentTarget.style.color = '#006997';
                 }}
               >
                 {item.label}
@@ -195,34 +226,75 @@ export default function SearchPage() {
         </div>
       )}
 
-      <div style={{ position: 'relative', marginBottom: 24 }}>
-        <svg style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#999999', pointerEvents: 'none' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-        <input
-          type="text"
-          placeholder="e.g. wrongful termination, car accident, debt collection..."
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-          autoFocus
-          aria-label="Search case types"
-          style={{
-            width: '100%',
-            height: '56px',
-            paddingLeft: '44px',
-            paddingRight: '16px',
-            fontSize: '16px',
-            border: '1.5px solid #D5D8DC',
-            borderRadius: '4px',
-            background: '#FFFFFF',
-            color: '#212529',
-            boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-            outline: 'none',
-            boxSizing: 'border-box' as const,
-            fontFamily: 'var(--font-body)',
-            transition: 'border-color 150ms, box-shadow 150ms',
+      <div style={{ display: 'flex', gap: '12px', marginBottom: 24, flexWrap: 'wrap' }}>
+        <div style={{ position: 'relative', flex: '1 1 auto', minWidth: '200px' }}>
+          <svg style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#999999', pointerEvents: 'none' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input
+            type="text"
+            placeholder="e.g. wrongful termination, car accident, debt collection..."
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            autoFocus
+            aria-label="Search case types"
+            style={{
+              width: '100%',
+              height: '48px',
+              paddingLeft: '44px',
+              paddingRight: '16px',
+              fontSize: '16px',
+              border: '4px solid #D5D8DC',
+              borderRadius: '4px',
+              background: '#FFFFFF',
+              color: '#212529',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              outline: 'none',
+              boxSizing: 'border-box' as const,
+              fontFamily: 'var(--font-body)',
+              transition: 'border-color 150ms, box-shadow 150ms',
+            }}
+          />
+        </div>
+        <button
+          onClick={() => {
+            // Trigger search - query state already updates results
+            if (query.length > 1) {
+              const firstResult = results[0];
+              if (firstResult) {
+                window.location.href = `/report/${firstResult.nos}`;
+              }
+            }
           }}
-        />
+          style={{
+            height: '48px',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            fontSize: '15px',
+            fontWeight: '600',
+            background: '#E8171F',
+            color: '#FFFFFF',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontFamily: 'var(--font-body)',
+            transition: 'all 150ms ease-out',
+            boxShadow: '0 2px 4px rgba(232, 23, 31, 0.2)',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = '#C41119';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(232, 23, 31, 0.3)';
+            e.currentTarget.style.transform = 'translateY(-1px)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = '#E8171F';
+            e.currentTarget.style.boxShadow = '0 2px 4px rgba(232, 23, 31, 0.2)';
+            e.currentTarget.style.transform = 'translateY(0)';
+          }}
+          aria-label="Search"
+        >
+          Search
+        </button>
       </div>
 
       {/* Loading skeleton */}
@@ -257,72 +329,76 @@ export default function SearchPage() {
           onClick={() => saveToRecent({ label: r.label, nos: r.nos, category: r.category })}
           style={{
             display: 'block',
-            padding: 16,
-            marginBottom: 8,
+            padding: '16px',
+            marginBottom: '12px',
             background: '#FFFFFF',
-            border: '1px solid #D5D8DC',
-            borderLeft: '3px solid #D5D8DC',
-            borderRadius: 4,
+            border: '4px solid #D5D8DC',
+            borderRadius: '4px',
             textDecoration: 'none',
             transition: 'all 150ms ease-out',
             cursor: 'pointer',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-1px)';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)';
-            e.currentTarget.style.borderLeftColor = '#E8171F';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
+            e.currentTarget.style.borderColor = '#E8171F';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = 'none';
-            e.currentTarget.style.borderLeftColor = '#D5D8DC';
+            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+            e.currentTarget.style.borderColor = '#D5D8DC';
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-            <p style={{ fontSize: 15, fontWeight: 600, color: '#212529', margin: 0, fontFamily: 'var(--font-display)' }}>{r.label}</p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
+            <h3 style={{ fontSize: '15px', fontWeight: '600', color: '#212529', margin: '0', fontFamily: 'var(--font-display)', flex: '1 1 auto' }}>{r.label}</h3>
             <span style={{
-              fontSize: 12,
-              fontWeight: 600,
+              fontSize: '12px',
+              fontWeight: '600',
               color: '#E8171F',
               background: '#FEE9EB',
-              padding: '4px 8px',
-              borderRadius: 12,
+              padding: '4px 10px',
+              borderRadius: '4px',
               border: 'none',
               fontFamily: 'var(--font-body)',
+              whiteSpace: 'nowrap',
             }}>
               {r.nos}
             </span>
           </div>
-          <p style={{ fontSize: 13, color: '#999999', margin: 0, fontFamily: 'var(--font-body)' }}>{r.categoryName}</p>
+          <p style={{ fontSize: '13px', color: '#455A64', margin: '0', fontFamily: 'var(--font-body)', lineHeight: '1.5' }}>{r.categoryName}</p>
+          {r.desc && <p style={{ fontSize: '13px', color: '#999999', margin: '8px 0 0 0', fontFamily: 'var(--font-body)', lineHeight: '1.4' }}>{r.desc}</p>}
         </Link>
       ))}
 
       {query.length === 0 && (
-        <div style={{ marginTop: 16 }}>
-          <p style={{ fontSize: 13, color: '#999999', marginBottom: 16, fontWeight: 500 }}>Popular searches</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+        <div style={{ marginTop: '24px' }}>
+          <p style={{ fontSize: '13px', color: '#999999', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Popular searches</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall'].map(s => (
               <button
                 key={s}
                 onClick={() => setQuery(s)}
                 style={{
                   padding: '8px 16px',
-                  background: '#F8F9FA',
-                  border: '1px solid #D5D8DC',
-                  borderRadius: 20,
-                  fontSize: 13,
-                  color: '#455A64',
+                  background: '#FFFFFF',
+                  border: '4px solid #D5D8DC',
+                  borderRadius: '4px',
+                  fontSize: '13px',
+                  color: '#006997',
                   cursor: 'pointer',
                   fontFamily: 'var(--font-body)',
                   transition: 'all 150ms ease-out',
+                  fontWeight: '500',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#EDEEEE';
-                  e.currentTarget.style.borderColor = '#E8171F';
+                  e.currentTarget.style.background = '#F0F6FB';
+                  e.currentTarget.style.borderColor = '#006997';
+                  e.currentTarget.style.color = '#004D7A';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#F8F9FA';
+                  e.currentTarget.style.background = '#FFFFFF';
                   e.currentTarget.style.borderColor = '#D5D8DC';
+                  e.currentTarget.style.color = '#006997';
                 }}
               >
                 {s}

@@ -1,13 +1,17 @@
+'use client';
+
 /**
  * TrustBadges.tsx
  * LexisNexis-style trust/credibility badges section for home page
  * Displays key statistics in a responsive grid with dividers
  */
 
+import AnimatedCounter from './AnimatedCounter';
+
 export default function TrustBadges() {
   const badges = [
     {
-      stat: '500K+',
+      stat: <AnimatedCounter end={500} suffix="K+" />,
       label: 'Cases Analyzed',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -19,7 +23,7 @@ export default function TrustBadges() {
       ),
     },
     {
-      stat: '94',
+      stat: <AnimatedCounter end={94} />,
       label: 'Federal Districts Covered',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -30,7 +34,7 @@ export default function TrustBadges() {
       ),
     },
     {
-      stat: '10+',
+      stat: <AnimatedCounter end={10} suffix="+" />,
       label: 'Years of Court Data',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

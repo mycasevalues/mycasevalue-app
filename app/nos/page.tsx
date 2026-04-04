@@ -107,13 +107,27 @@ export default function NOSIndexPage() {
         .nos-breadcrumb-link:hover {
           color: #004A6A;
         }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 28px !important;
+          }
+          h2 {
+            font-size: 20px !important;
+          }
+          .nos-grid {
+            display: grid;
+            gridTemplateColumns: 1fr;
+            gap: 16px;
+          }
+        }
       `}</style>
 
       {/* Header */}
       <header
         style={{
           background: '#00172E',
-          padding: '48px 24px',
+          padding: 'clamp(24px, 5vw, 48px) 24px',
           borderBottom: '1px solid #D5D8DC',
         }}
       >
@@ -126,10 +140,10 @@ export default function NOSIndexPage() {
               ← Back to Home
             </Link>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px', flexWrap: 'wrap' }}>
             <h1
               style={{
-                fontSize: '42px',
+                fontSize: 'clamp(28px, 6vw, 42px)',
                 fontWeight: 'bold',
                 color: '#FFFFFF',
                 margin: 0,
@@ -189,7 +203,7 @@ export default function NOSIndexPage() {
       </div>
 
       {/* Categories */}
-      <main style={{ padding: '48px 24px', maxWidth: '1200px', margin: '0 auto' }}>
+      <main style={{ padding: 'clamp(24px, 5vw, 48px) 24px', maxWidth: '1200px', margin: '0 auto' }}>
         {categories.map((categoryName) => (
           <section key={categoryName} style={{ marginBottom: '64px' }}>
             <h2
@@ -253,7 +267,7 @@ export default function NOSIndexPage() {
       </main>
 
       {/* Info Section */}
-      <section style={{ background: '#FFFFFF', borderTop: '1px solid #D5D8DC', padding: '48px 24px' }}>
+      <section style={{ background: '#FFFFFF', borderTop: '1px solid #D5D8DC', padding: 'clamp(24px, 5vw, 48px) 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div
             style={{

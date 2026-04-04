@@ -380,6 +380,15 @@ export default async function NOSPage({ params }: PageProps) {
           transform: translateY(-2px);
         }
 
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 28px !important;
+          }
+          h2 {
+            font-size: 18px !important;
+          }
+        }
+
         .section-title {
           font-size: 20px;
           font-weight: 700;
@@ -398,7 +407,7 @@ export default async function NOSPage({ params }: PageProps) {
       `}</style>
 
       {/* Dark Navy Header */}
-      <header className="nos-header px-4 sm:px-6 lg:px-8 py-12">
+      <header className="nos-header px-4 sm:px-6 lg:px-8 py-12" style={{ paddingTop: 'clamp(16px, 4vw, 48px)', paddingBottom: 'clamp(16px, 4vw, 48px)' }}>
         <div className="max-w-6xl mx-auto">
           <div className="breadcrumb">
             <Link href="/">Home</Link>
@@ -408,9 +417,9 @@ export default async function NOSPage({ params }: PageProps) {
             <span style={{ color: '#FFFFFF' }}>{nosInfo.label}</span>
           </div>
 
-          <div className="flex items-start justify-between gap-6">
+          <div className="flex items-start justify-between gap-6" style={{ flexWrap: 'wrap' }}>
             <div className="flex-1">
-              <h1 style={{ fontSize: '36px', fontWeight: 700, margin: '0 0 12px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2, color: '#FFFFFF' }}>
+              <h1 style={{ fontSize: 'clamp(28px, 6vw, 36px)', fontWeight: 700, margin: '0 0 12px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2, color: '#FFFFFF' }}>
                 {nosInfo.label}
               </h1>
               <p style={{ fontSize: '14px', color: '#D5D8DC', margin: 0, fontFamily: 'var(--font-body)' }}>

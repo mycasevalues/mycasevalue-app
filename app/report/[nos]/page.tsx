@@ -201,11 +201,20 @@ export default async function ReportPage({
         .report-breadcrumb-link { color: #FFFFFF; text-decoration: none; transition: opacity 0.2s ease; font-weight: 500; }
         .report-breadcrumb-link:hover { opacity: 0.8; }
         .report-nos-badge { display: inline-block; padding: 6px 12px; background: #E8171F; color: #FFFFFF; border-radius: 4px; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-body); margin-top: 8px; }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 24px !important;
+          }
+          h2 {
+            font-size: 16px !important;
+          }
+        }
       `}</style>
 
       {/* Dark Navy Header Banner */}
       <div style={{ background: '#00172E', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 24px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: 13, color: '#B0B8C1', fontFamily: 'var(--font-body)', marginBottom: '20px', letterSpacing: '0.3px' }}>
             <Link href="/" className="report-breadcrumb-link">Home</Link>
             <span>/</span>
@@ -216,7 +225,7 @@ export default async function ReportPage({
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
             <div style={{ flex: 1 }}>
               <h1 style={{
-                fontSize: 32,
+                fontSize: 'clamp(24px, 5vw, 32px)',
                 fontWeight: 800,
                 margin: 0,
                 color: '#FFFFFF',
@@ -237,7 +246,7 @@ export default async function ReportPage({
 
       {/* White Subheader Section */}
       <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '28px 24px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
           <p style={{ fontSize: 14, color: '#455A64', fontFamily: 'var(--font-body)', margin: '0 0 20px', lineHeight: 1.7, fontWeight: 500 }}>
             Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases · {districtLabel} · Public court records
             {categoryLabel ? ` · ${categoryLabel}` : ''}
@@ -262,7 +271,7 @@ export default async function ReportPage({
         </div>
       </div>
 
-      <main style={{ maxWidth: 900, margin: '0 auto', padding: '40px 24px' }}>
+      <main style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
         {/* ═══ FREE: Win Rate Analysis ═══ */}
         <section style={{
           background: '#FFFFFF',

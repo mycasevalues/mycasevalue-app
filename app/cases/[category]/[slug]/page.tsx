@@ -236,14 +236,14 @@ export default async function CaseTypeDetailPage({
       <header
         style={{
           background: '#00172E',
-          padding: '40px 24px',
-          marginBottom: '40px',
+          padding: 'clamp(20px, 4vw, 40px) 24px',
+          marginBottom: 'clamp(20px, 4vw, 40px)',
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <nav style={{ marginBottom: '24px' }}>
-            <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '8px', fontSize: '14px', alignItems: 'center', flexWrap: 'wrap' }}>
               <Link href="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>
                 Home
               </Link>
@@ -267,11 +267,11 @@ export default async function CaseTypeDetailPage({
           </nav>
 
           {/* Header Content */}
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '8px' }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', marginBottom: '8px', flexWrap: 'wrap' }}>
             <div style={{ flex: 1 }}>
               <h1
                 style={{
-                  fontSize: '36px',
+                  fontSize: 'clamp(28px, 6vw, 36px)',
                   fontWeight: 'bold',
                   margin: '0 0 8px',
                   fontFamily: 'var(--font-display)',
@@ -311,7 +311,7 @@ export default async function CaseTypeDetailPage({
       </header>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 40px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(20px, 4vw, 40px) 24px' }}>
 
         {/* Stats Grid */}
         <div
@@ -321,6 +321,7 @@ export default async function CaseTypeDetailPage({
             gap: '16px',
             marginBottom: '40px',
           }}
+          className="stats-grid"
         >
           <StatsCard label="Win Rate" value={`${winRate}%`} subtitle="Favorable outcomes" />
           <StatsCard label="Settlement Rate" value={`${settlementRate}%`} subtitle="Resolved pre-trial" />
@@ -478,6 +479,15 @@ export default async function CaseTypeDetailPage({
           .cta-button:hover {
             background-color: #c41218;
             transform: translateY(-1px);
+          }
+
+          @media (max-width: 768px) {
+            h1 {
+              font-size: 28px !important;
+            }
+            h2 {
+              font-size: 20px !important;
+            }
           }
         `}</style>
         <div

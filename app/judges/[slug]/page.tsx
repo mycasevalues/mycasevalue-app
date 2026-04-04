@@ -260,6 +260,18 @@ export default async function JudgePage({ params }: PageProps) {
         .judge-breadcrumb-link:hover {
           color: #006997;
         }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 28px !important;
+          }
+          h2 {
+            font-size: 18px !important;
+          }
+          .judge-stats-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
 
       {/* Dark Navy Header */}
@@ -267,8 +279,8 @@ export default async function JudgePage({ params }: PageProps) {
         style={{
           background: '#00172E',
           color: '#FFFFFF',
-          padding: '24px',
-          marginBottom: '48px',
+          padding: 'clamp(16px, 3vw, 24px)',
+          marginBottom: 'clamp(24px, 5vw, 48px)',
         }}
       >
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
@@ -281,6 +293,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontSize: '14px',
               marginBottom: '24px',
               fontFamily: 'var(--font-body)',
+              flexWrap: 'wrap',
             }}
           >
             <Link
@@ -305,11 +318,11 @@ export default async function JudgePage({ params }: PageProps) {
           </nav>
 
           {/* Judge Title Section */}
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '24px' }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '24px', flexWrap: 'wrap' }}>
             <div>
               <h1
                 style={{
-                  fontSize: '40px',
+                  fontSize: 'clamp(28px, 6vw, 40px)',
                   fontWeight: '900',
                   marginBottom: '8px',
                   color: '#FFFFFF',
@@ -354,7 +367,7 @@ export default async function JudgePage({ params }: PageProps) {
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 24px 48px' }}>
+      <div style={{ maxWidth: '960px', margin: '0 auto', padding: 'clamp(24px, 5vw, 48px) 24px' }}>
 
         {/* Stats Grid */}
         <div
@@ -364,6 +377,7 @@ export default async function JudgePage({ params }: PageProps) {
             gap: '16px',
             marginBottom: '48px',
           }}
+          className="judge-stats-grid"
         >
           {[
             {
