@@ -134,7 +134,7 @@ export default function ForgotPasswordPage() {
                 lineHeight: 1.5,
               }}
             >
-              We sent a password reset link to <strong style={{ color: '#F0F2F5' }}>{email}</strong>. Click the link in the email to reset your password.
+              We sent a password reset link to <strong style={{ color: '#212529' }}>{email}</strong>. Click the link in the email to reset your password.
             </p>
             <Link
               href="/sign-in"
@@ -254,7 +254,7 @@ export default function ForgotPasswordPage() {
                   backgroundColor: '#E8171F',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '0px',
+                  borderRadius: '4px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '15px',
                   fontWeight: 600,

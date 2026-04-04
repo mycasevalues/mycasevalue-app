@@ -349,7 +349,7 @@ export default function ResetPasswordPage() {
                   backgroundColor: '#E8171F',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '0px',
+                  borderRadius: '4px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '15px',
                   fontWeight: 600,

@@ -86,10 +86,6 @@ export default function DistrictHeatmapPage() {
   const [filteredStates, setFilteredStates] = useState<StateData[]>([]);
 
   useEffect(() => {
-    document.title = 'Federal Court Win Rates by State - MyCaseValue';
-  }, []);
-
-  useEffect(() => {
     let states = Object.entries(AGGREGATE_STATE_RATES).map(([code, winRate]) => ({
       code,
       name: STATE_NAMES[code],
@@ -136,18 +132,6 @@ export default function DistrictHeatmapPage() {
   const highestState = allStates.find((s) => s.winRate === highestRate);
   const lowestState = allStates.find((s) => s.winRate === lowestRate);
 
-  const getColorClass = (rate: number): string => {
-    if (rate < 45) return 'bg-red-900';
-    if (rate <= 52) return 'bg-yellow-700';
-    return 'bg-green-700';
-  };
-
-  const getBorderColor = (rate: number): string => {
-    if (rate < 45) return 'border-red-800';
-    if (rate <= 52) return 'border-yellow-600';
-    return 'border-green-600';
-  };
-
   const schemaData = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -163,7 +147,7 @@ export default function DistrictHeatmapPage() {
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'District Heatmap',
+            name: 'Map',
             item: 'https://www.mycasevalues.com/map',
           },
         ],
@@ -184,21 +168,69 @@ export default function DistrictHeatmapPage() {
 
   return (
     <>
+      <style>{`
+        .state-card {
+          transition: box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .state-card:hover {
+          box-shadow: 0 2px 8px rgba(0, 23, 46, 0.1);
+          border-color: #E8171F;
+        }
+      `}</style>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      <div
-        className="min-h-screen"
-        style={{ backgroundColor: 'var(--bg-base)' }}
-      >
+      <div style={{ backgroundColor: '#EDEEEE', minHeight: '100vh' }}>
         {/* Header */}
-        <header className="border-b" style={{ borderColor: 'var(--border-default)' }}>
-          <div className="max-w-6xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-            <div>
-              <h1 className="text-4xl font-bold mb-2">Federal Court Win Rates</h1>
-              <p className="text-lg opacity-70">
+        <header style={{ backgroundColor: '#00172E', borderBottom: '1px solid #D5D8DC' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '24px 16px' }}>
+            {/* Breadcrumb */}
+            <p style={{ fontSize: '12px', color: '#FFFFFF', marginBottom: '16px', opacity: 0.8 }}>
+              Home &gt; Map
+            </p>
+
+            {/* Badge & Title */}
+            <div style={{ marginBottom: '16px' }}>
+              <span
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: '#E8171F',
+                  color: '#FFFFFF',
+                  padding: '6px 12px',
+                  borderRadius: '24px',
+                  fontSize: '11px',
+                  fontWeight: '600',
+                  letterSpacing: '0.5px',
+                  marginBottom: '12px',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                DISTRICT MAP
+              </span>
+              <h1
+                style={{
+                  fontSize: '36px',
+                  fontWeight: '700',
+                  color: '#FFFFFF',
+                  margin: 0,
+                  marginBottom: '8px',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                Federal Court Win Rates by State
+              </h1>
+              <p
+                style={{
+                  fontSize: '16px',
+                  color: '#FFFFFF',
+                  opacity: 0.85,
+                  margin: 0,
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
                 Explore federal court win rates by state and judicial district. Compare outcomes
                 across different jurisdictions to understand case value drivers.
               </p>
@@ -207,52 +239,130 @@ export default function DistrictHeatmapPage() {
         </header>
 
         {/* Main Content */}
-        <main className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <main style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px' }}>
           {/* Summary Stats */}
           <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
-            style={{ borderColor: 'var(--border-default)' }}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '16px',
+              marginBottom: '32px',
+            }}
           >
             <div
-              className="p-4 rounded-lg border"
-              style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
+              style={{
+                padding: '16px',
+                borderRadius: '4px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+              }}
             >
-              <p className="text-sm opacity-60 mb-1">Total States & Territories</p>
-              <p className="text-2xl font-bold">{allStates.length}</p>
+              <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                Total States & Territories
+              </p>
+              <p
+                style={{
+                  fontSize: '24px',
+                  fontWeight: '700',
+                  color: '#212529',
+                  margin: 0,
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                {allStates.length}
+              </p>
             </div>
             <div
-              className="p-4 rounded-lg border"
-              style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
+              style={{
+                padding: '16px',
+                borderRadius: '4px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+              }}
             >
-              <p className="text-sm opacity-60 mb-1">National Average</p>
-              <p className="text-2xl font-bold">{avgWinRate.toFixed(1)}%</p>
+              <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                National Average
+              </p>
+              <p
+                style={{
+                  fontSize: '24px',
+                  fontWeight: '700',
+                  color: '#212529',
+                  margin: 0,
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                {avgWinRate.toFixed(1)}%
+              </p>
             </div>
             <div
-              className="p-4 rounded-lg border"
-              style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
+              style={{
+                padding: '16px',
+                borderRadius: '4px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+              }}
             >
-              <p className="text-sm opacity-60 mb-1">Highest Rate</p>
-              <div>
-                <p className="text-2xl font-bold">{highestRate.toFixed(1)}%</p>
-                <p className="text-xs opacity-50 mt-1">{highestState?.name}</p>
-              </div>
+              <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                Highest Rate
+              </p>
+              <p
+                style={{
+                  fontSize: '24px',
+                  fontWeight: '700',
+                  color: '#212529',
+                  margin: 0,
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                {highestRate.toFixed(1)}%
+              </p>
+              <p style={{ fontSize: '11px', color: '#455A64', margin: '4px 0 0 0', fontFamily: 'var(--font-body)' }}>
+                {highestState?.name}
+              </p>
             </div>
             <div
-              className="p-4 rounded-lg border"
-              style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
+              style={{
+                padding: '16px',
+                borderRadius: '4px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+              }}
             >
-              <p className="text-sm opacity-60 mb-1">Lowest Rate</p>
-              <div>
-                <p className="text-2xl font-bold">{lowestRate.toFixed(1)}%</p>
-                <p className="text-xs opacity-50 mt-1">{lowestState?.name}</p>
-              </div>
+              <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                Lowest Rate
+              </p>
+              <p
+                style={{
+                  fontSize: '24px',
+                  fontWeight: '700',
+                  color: '#212529',
+                  margin: 0,
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                {lowestRate.toFixed(1)}%
+              </p>
+              <p style={{ fontSize: '11px', color: '#455A64', margin: '4px 0 0 0', fontFamily: 'var(--font-body)' }}>
+                {lowestState?.name}
+              </p>
             </div>
           </div>
 
           {/* Controls */}
-          <div className="mb-8 space-y-4">
-            <div>
-              <label htmlFor="search" className="block text-sm font-medium mb-2">
+          <div style={{ marginBottom: '32px' }}>
+            <div style={{ marginBottom: '16px' }}>
+              <label
+                htmlFor="search"
+                style={{
+                  display: 'block',
+                  fontSize: '13px',
+                  fontWeight: '600',
+                  color: '#212529',
+                  marginBottom: '8px',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
                 Search States & Territories
               </label>
               <input
@@ -261,31 +371,60 @@ export default function DistrictHeatmapPage() {
                 placeholder="Search by state name or code..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg border outline-none transition-colors focus:ring-2"
                 style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  borderRadius: '4px',
+                  border: '1px solid #D5D8DC',
                   backgroundColor: '#FFFFFF',
-                  borderColor: 'var(--border-default)',
-                  color: 'inherit',
-                  '--tw-ring-color': '#111111',
-                } as React.CSSProperties}
+                  color: '#212529',
+                  height: '48px',
+                  fontSize: '14px',
+                  fontFamily: 'var(--font-body)',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                  transition: 'border-color 0.2s ease',
+                }}
+                onFocus={(e) => (e.target.style.borderColor = '#E8171F')}
+                onBlur={(e) => (e.target.style.borderColor = '#D5D8DC')}
               />
             </div>
 
             <div>
-              <label htmlFor="sort" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="sort"
+                style={{
+                  display: 'block',
+                  fontSize: '13px',
+                  fontWeight: '600',
+                  color: '#212529',
+                  marginBottom: '8px',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
                 Sort By
               </label>
               <select
                 id="sort"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortOption)}
-                className="w-full px-4 py-2 rounded-lg border outline-none transition-colors focus:ring-2"
                 style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  borderRadius: '4px',
+                  border: '1px solid #D5D8DC',
                   backgroundColor: '#FFFFFF',
-                  borderColor: 'var(--border-default)',
-                  color: 'inherit',
-                  '--tw-ring-color': '#111111',
-                } as React.CSSProperties}
+                  color: '#212529',
+                  height: '48px',
+                  fontSize: '14px',
+                  fontFamily: 'var(--font-body)',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                  transition: 'border-color 0.2s ease',
+                  cursor: 'pointer',
+                }}
+                onFocus={(e) => (e.currentTarget.style.borderColor = '#E8171F')}
+                onBlur={(e) => (e.currentTarget.style.borderColor = '#D5D8DC')}
               >
                 <option value="name">Name (A-Z)</option>
                 <option value="win-rate-high">Win Rate (Highest First)</option>
@@ -296,34 +435,77 @@ export default function DistrictHeatmapPage() {
 
           {/* States Grid */}
           {filteredStates.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+                gap: '16px',
+                marginBottom: '48px',
+              }}
+            >
               {filteredStates.map((state) => (
                 <div
                   key={state.code}
-                  className={`p-4 rounded-lg border transition-all hover:shadow-lg ${getBorderColor(state.winRate)}`}
-                  style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
+                  className="state-card"
+                  style={{
+                    padding: '16px',
+                    borderRadius: '4px',
+                    border: '1px solid #D5D8DC',
+                    backgroundColor: '#FFFFFF',
+                    boxSizing: 'border-box',
+                  }}
                 >
-                  <div className="flex justify-between items-start mb-3">
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                     <div>
-                      <p className="font-medium text-lg">{state.name}</p>
                       <p
-                        className="text-xs opacity-60"
-                        style={{ color: '#111111' }}
+                        style={{
+                          fontSize: '16px',
+                          fontWeight: '600',
+                          color: '#212529',
+                          margin: 0,
+                          marginBottom: '4px',
+                          fontFamily: 'var(--font-body)',
+                        }}
+                      >
+                        {state.name}
+                      </p>
+                      <p
+                        style={{
+                          fontSize: '11px',
+                          color: '#455A64',
+                          margin: 0,
+                          fontFamily: 'var(--font-mono)',
+                        }}
                       >
                         {state.code}
                       </p>
                     </div>
-                    <p className="text-2xl font-bold">{state.winRate.toFixed(1)}%</p>
+                    <p
+                      style={{
+                        fontSize: '24px',
+                        fontWeight: '700',
+                        color: '#212529',
+                        margin: 0,
+                        fontFamily: 'var(--font-display)',
+                      }}
+                    >
+                      {state.winRate.toFixed(1)}%
+                    </p>
                   </div>
 
-                  <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                  <div style={{ width: '100%', backgroundColor: '#E8E8E8', borderRadius: '4px', height: '8px', overflow: 'hidden', marginBottom: '8px' }}>
                     <div
-                      className={`h-full rounded-full transition-all ${getColorClass(state.winRate)}`}
-                      style={{ width: `${state.winRate}%` }}
+                      style={{
+                        height: '100%',
+                        width: `${state.winRate}%`,
+                        backgroundColor: '#E8171F',
+                        borderRadius: '4px',
+                        transition: 'width 0.3s ease',
+                      }}
                     />
                   </div>
 
-                  <p className="text-xs opacity-50 mt-2">
+                  <p style={{ fontSize: '11px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
                     {state.winRate < 45
                       ? 'Below average'
                       : state.winRate <= 52
@@ -334,8 +516,8 @@ export default function DistrictHeatmapPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <p className="text-lg opacity-60">
+            <div style={{ textAlign: 'center', padding: '48px 16px' }}>
+              <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)' }}>
                 No states found matching "{searchQuery}". Try a different search.
               </p>
             </div>
@@ -343,18 +525,55 @@ export default function DistrictHeatmapPage() {
 
           {/* CTA Section */}
           <div
-            className="rounded-lg border p-8 text-center mb-12"
-            style={{ backgroundColor: '#FFFFFF', borderColor: 'var(--border-default)' }}
+            style={{
+              borderRadius: '4px',
+              border: '1px solid #D5D8DC',
+              padding: '32px',
+              textAlign: 'center',
+              marginBottom: '48px',
+              backgroundColor: '#00172E',
+            }}
           >
-            <h2 className="text-2xl font-bold mb-3">Ready to Calculate Your Case Value?</h2>
-            <p className="text-lg opacity-70 mb-6">
+            <h2
+              style={{
+                fontSize: '24px',
+                fontWeight: '700',
+                color: '#FFFFFF',
+                margin: '0 0 12px 0',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Ready to Calculate Your Case Value?
+            </h2>
+            <p
+              style={{
+                fontSize: '16px',
+                color: '#FFFFFF',
+                opacity: 0.9,
+                marginBottom: '24px',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
               Use our comprehensive odds calculator to estimate case outcomes based on federal court
               data.
             </p>
             <a
               href="/odds"
-              className="inline-block px-8 py-3 rounded-lg font-medium text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#111111' }}
+              style={{
+                display: 'inline-block',
+                padding: '12px 32px',
+                borderRadius: '4px',
+                fontWeight: '600',
+                color: '#FFFFFF',
+                backgroundColor: '#E8171F',
+                textDecoration: 'none',
+                fontSize: '14px',
+                fontFamily: 'var(--font-body)',
+                transition: 'background-color 0.2s ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#D01419')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#E8171F')}
             >
               Go to Case Calculator
             </a>
@@ -363,11 +582,14 @@ export default function DistrictHeatmapPage() {
 
         {/* Footer Disclaimer */}
         <footer
-          className="border-t py-6"
-          style={{ borderColor: 'var(--border-default)' }}
+          style={{
+            borderTop: '1px solid #D5D8DC',
+            padding: '24px 16px',
+            backgroundColor: '#FFFFFF',
+          }}
         >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p className="text-xs opacity-50 text-center">
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <p style={{ fontSize: '11px', color: '#455A64', textAlign: 'center', margin: 0, fontFamily: 'var(--font-body)' }}>
               Disclaimer: The win rate data presented on this page is based on historical federal
               court records and is provided for informational purposes only. This information does
               not constitute legal advice. Actual case outcomes depend on many factors including

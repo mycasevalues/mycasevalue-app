@@ -65,164 +65,309 @@ export default function ComparePage() {
   ];
 
   return (
-    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', fontFamily: 'var(--font-body)' }}>
-      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8, color: '#212529', fontFamily: 'var(--font-display)' }}>
-        Compare case types
-      </h1>
-      <p style={{ color: '#999999', fontSize: 15, marginBottom: 32 }}>
-        Select up to 3 federal case types to compare outcomes side by side.
-      </p>
+    <>
+      <style>{`
+        .lexis-link {
+          color: #006997;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        .lexis-link:hover {
+          color: #004a6d;
+        }
+        .lexis-select:hover {
+          border-color: #006997;
+        }
+        .lexis-select:focus {
+          outline: none;
+          border-color: #006997;
+          box-shadow: 0 0 0 2px rgba(0, 105, 151, 0.1);
+        }
+        .lexis-btn:hover:not(:disabled) {
+          background-color: #c41419;
+          opacity: 0.95;
+        }
+        .lexis-btn:active:not(:disabled) {
+          background-color: #a30f16;
+        }
+      `}</style>
 
-      {/* Selectors */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16, marginBottom: 24 }}>
-        {[0, 1, 2].map(idx => (
-          <div key={idx}>
-            <label style={{ fontSize: 12, fontWeight: 600, color: '#999999', display: 'block', marginBottom: 6 }}>
-              Case Type {idx + 1}{idx < 2 ? ' *' : ' (optional)'}
-            </label>
-            <select
-              value={selected[idx]}
-              onChange={e => handleSelect(idx, e.target.value)}
-              style={{
-                width: '100%',
-                padding: '10px 12px',
-                fontSize: 14,
-                border: '1.5px solid #D5D8DC',
-                borderRadius: 4,
-                background: '#FAFBFC',
-                color: '#212529',
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              <option value="">Select a case type...</option>
-              {SITS.map(cat => (
-                <optgroup key={cat.id} label={cat.label}>
-                  {cat.opts.map(opt => (
-                    <option key={opt.nos} value={opt.nos} disabled={selected.includes(opt.nos) && selected[idx] !== opt.nos}>
-                      {opt.label} (NOS {opt.nos})
-                    </option>
-                  ))}
-                </optgroup>
-              ))}
-            </select>
+      {/* Dark Navy Header */}
+      <header style={{
+        background: '#00172E',
+        color: '#ffffff',
+        padding: '24px 48px',
+        marginBottom: 0,
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div style={{
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: '0.5px',
+            marginBottom: 16,
+            textTransform: 'uppercase',
+            color: '#E8171F',
+          }}>
+            COMPARE
           </div>
-        ))}
-      </div>
-
-      <button
-        onClick={() => setComparing(true)}
-        disabled={!canCompare}
-        style={{
-          padding: '12px 28px',
-          background: canCompare ? '#E8171F' : '#D5D8DC',
-          color: canCompare ? '#fff' : '#999999',
-          border: 'none',
-          borderRadius: 0,
-          fontSize: 15,
-          fontWeight: 600,
-          cursor: canCompare ? 'pointer' : 'not-allowed',
-          fontFamily: 'var(--font-display)',
-          marginBottom: 32,
-          textTransform: 'uppercase',
-        }}
-      >
-        Compare
-      </button>
-
-      {/* Results table */}
-      {comparing && stats.length >= 2 && (
-        <div style={{ overflowX: 'auto' }}>
-          <table style={{
-            width: '100%',
-            borderCollapse: 'collapse',
-            fontSize: 14,
+          <h1 style={{
+            fontSize: 36,
+            fontWeight: 700,
+            margin: 0,
+            marginBottom: 8,
+            fontFamily: 'var(--font-display)',
+            color: '#ffffff',
+          }}>
+            Compare Case Types
+          </h1>
+          <p style={{
+            fontSize: 15,
+            color: '#b8bcc0',
+            margin: 0,
             fontFamily: 'var(--font-body)',
           }}>
-            <thead>
-              <tr style={{ borderBottom: '2px solid #D5D8DC' }}>
-                <th style={{ textAlign: 'left', padding: '12px 16px', color: '#999999', fontWeight: 600, fontSize: 13 }}>Metric</th>
-                {stats.map(s => (
-                  <th key={s.nos} style={{ textAlign: 'center', padding: '12px 16px', color: '#212529', fontWeight: 700 }}>
-                    <Link href={`/report/${s.nos}`} style={{ color: '#006997', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = '#004a6d'} onMouseLeave={(e) => e.currentTarget.style.color = '#006997'}>
-                      {s.label}
-                    </Link>
-                    <span style={{
-                      display: 'block',
-                      fontSize: 11,
-                      fontFamily: 'var(--font-mono)',
-                      color: '#999999',
-                      fontWeight: 400,
-                      marginTop: 2,
-                    }}>
-                      NOS {s.nos}
-                    </span>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, ri) => {
-                const values = stats.map(s => {
-                  const v = s[row.key];
-                  return typeof v === 'number' ? v : null;
-                });
-                let best: number | null = null;
-                const nonNullValues = values.filter((v): v is number => v !== null);
-
-                if (nonNullValues.length > 0) {
-                  // Lower is better for duration and dismissal rate
-                  if (row.key === 'medianDuration' || row.key === 'dismissRate') {
-                    best = Math.min(...nonNullValues);
-                  }
-                  // Higher is better for rates (win, settlement) and recovery
-                  else if (row.key !== 'totalCases' && row.key !== 'medianRecovery') {
-                    best = Math.max(...nonNullValues);
-                  }
-                  // Higher is better for recovery (explicitly)
-                  else if (row.key === 'medianRecovery') {
-                    best = Math.max(...nonNullValues);
-                  }
-                }
-
-                return (
-                  <tr key={row.label} style={{ borderBottom: '1px solid #D5D8DC', background: ri % 2 === 0 ? '#FAFBFC' : '#FFFFFF' }}>
-                    <td style={{ padding: '12px 16px', fontWeight: 600, color: '#455A64' }}>{row.label}</td>
-                    {stats.map((s, si) => {
-                      const v = values[si];
-                      let formatted = 'N/A';
-                      if (v !== null) {
-                        formatted = row.format ? row.format(v) : `${v}`;
-                        if (!formatted.includes('N/A')) {
-                          formatted = formatted + row.suffix;
-                        }
-                      }
-                      const isBest = best !== null && v === best;
-                      return (
-                        <td key={s.nos} style={{
-                          textAlign: 'center',
-                          padding: '12px 16px',
-                          color: isBest ? '#006997' : '#212529',
-                          fontWeight: isBest ? 700 : 400,
-                          fontFamily: 'var(--font-mono)',
-                        }}>
-                          {formatted}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+            Select up to 3 federal case types to compare outcomes side by side.
+          </p>
         </div>
-      )}
+      </header>
 
-      {/* Disclaimer */}
-      <p style={{ fontSize: 12, color: '#999999', marginTop: 32, lineHeight: 1.6 }}>
-        Data sourced from the Federal Judicial Center Integrated Database. Outcomes are historical averages and do not predict future results.
-        This is not legal advice.{' '}
-        <Link href="/methodology" style={{ color: '#006997', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.currentTarget.style.color = '#004a6d'} onMouseLeave={(e) => e.currentTarget.style.color = '#006997'}>Learn about our methodology</Link>
-      </p>
-    </main>
+      {/* Breadcrumb */}
+      <div style={{
+        background: '#EDEEEE',
+        padding: '12px 48px',
+        borderBottom: '1px solid #D5D8DC',
+        fontSize: 13,
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <Link href="/" className="lexis-link" style={{ marginRight: 6 }}>Home</Link>
+          <span style={{ color: '#455A64', marginRight: 6 }}>/</span>
+          <span style={{ color: '#455A64' }}>Compare</span>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main style={{
+        background: '#EDEEEE',
+        minHeight: 'calc(100vh - 200px)',
+        padding: '48px 48px',
+        fontFamily: 'var(--font-body)',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          {/* Selectors */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: 16,
+            marginBottom: 32,
+          }}>
+            {[0, 1, 2].map(idx => (
+              <div key={idx}>
+                <label style={{
+                  fontSize: 12,
+                  fontWeight: 600,
+                  color: '#455A64',
+                  display: 'block',
+                  marginBottom: 8,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.3px',
+                }}>
+                  Case Type {idx + 1}{idx < 2 ? ' *' : ' (optional)'}
+                </label>
+                <select
+                  value={selected[idx]}
+                  onChange={e => handleSelect(idx, e.target.value)}
+                  className="lexis-select"
+                  style={{
+                    width: '100%',
+                    height: 48,
+                    padding: '0 12px',
+                    fontSize: 14,
+                    border: '1px solid #D5D8DC',
+                    borderRadius: 4,
+                    background: '#ffffff',
+                    color: '#212529',
+                    fontFamily: 'var(--font-body)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <option value="">Select a case type...</option>
+                  {SITS.map(cat => (
+                    <optgroup key={cat.id} label={cat.label}>
+                      {cat.opts.map(opt => (
+                        <option key={opt.nos} value={opt.nos} disabled={selected.includes(opt.nos) && selected[idx] !== opt.nos}>
+                          {opt.label} (NOS {opt.nos})
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+              </div>
+            ))}
+          </div>
+
+          {/* Compare Button */}
+          <button
+            onClick={() => setComparing(true)}
+            disabled={!canCompare}
+            className="lexis-btn"
+            style={{
+              padding: '12px 32px',
+              background: canCompare ? '#E8171F' : '#D5D8DC',
+              color: canCompare ? '#ffffff' : '#455A64',
+              border: 'none',
+              borderRadius: 4,
+              fontSize: 14,
+              fontWeight: 700,
+              cursor: canCompare ? 'pointer' : 'not-allowed',
+              fontFamily: 'var(--font-display)',
+              marginBottom: 40,
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              transition: 'background-color 0.2s ease, opacity 0.2s ease',
+            }}
+          >
+            Compare
+          </button>
+
+          {/* Results table */}
+          {comparing && stats.length >= 2 && (
+            <div style={{
+              overflowX: 'auto',
+              background: '#ffffff',
+              border: '1px solid #D5D8DC',
+              borderRadius: 4,
+              boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+            }}>
+              <table style={{
+                width: '100%',
+                borderCollapse: 'collapse',
+                fontSize: 14,
+                fontFamily: 'var(--font-body)',
+              }}>
+                <thead>
+                  <tr style={{ borderBottom: '2px solid #D5D8DC', background: '#F8F9FA' }}>
+                    <th style={{
+                      textAlign: 'left',
+                      padding: '16px 16px',
+                      color: '#455A64',
+                      fontWeight: 700,
+                      fontSize: 13,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      Metric
+                    </th>
+                    {stats.map(s => (
+                      <th key={s.nos} style={{
+                        textAlign: 'center',
+                        padding: '16px 16px',
+                        color: '#212529',
+                        fontWeight: 700,
+                        fontSize: 14,
+                      }}>
+                        <Link href={`/report/${s.nos}`} className="lexis-link" style={{ textDecoration: 'none' }}>
+                          {s.label}
+                        </Link>
+                        <span style={{
+                          display: 'block',
+                          fontSize: 11,
+                          fontFamily: 'var(--font-mono)',
+                          color: '#455A64',
+                          fontWeight: 400,
+                          marginTop: 4,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.2px',
+                        }}>
+                          NOS {s.nos}
+                        </span>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((row, ri) => {
+                    const values = stats.map(s => {
+                      const v = s[row.key];
+                      return typeof v === 'number' ? v : null;
+                    });
+                    let best: number | null = null;
+                    const nonNullValues = values.filter((v): v is number => v !== null);
+
+                    if (nonNullValues.length > 0) {
+                      // Lower is better for duration and dismissal rate
+                      if (row.key === 'medianDuration' || row.key === 'dismissRate') {
+                        best = Math.min(...nonNullValues);
+                      }
+                      // Higher is better for rates (win, settlement) and recovery
+                      else if (row.key !== 'totalCases' && row.key !== 'medianRecovery') {
+                        best = Math.max(...nonNullValues);
+                      }
+                      // Higher is better for recovery (explicitly)
+                      else if (row.key === 'medianRecovery') {
+                        best = Math.max(...nonNullValues);
+                      }
+                    }
+
+                    return (
+                      <tr key={row.label} style={{
+                        borderBottom: '1px solid #D5D8DC',
+                        background: ri % 2 === 0 ? '#F8F9FA' : '#FFFFFF',
+                      }}>
+                        <td style={{
+                          padding: '14px 16px',
+                          fontWeight: 600,
+                          color: '#212529',
+                          fontSize: 14,
+                        }}>
+                          {row.label}
+                        </td>
+                        {stats.map((s, si) => {
+                          const v = values[si];
+                          let formatted = 'N/A';
+                          if (v !== null) {
+                            formatted = row.format ? row.format(v) : `${v}`;
+                            if (!formatted.includes('N/A')) {
+                              formatted = formatted + row.suffix;
+                            }
+                          }
+                          const isBest = best !== null && v === best;
+                          return (
+                            <td key={s.nos} style={{
+                              textAlign: 'center',
+                              padding: '14px 16px',
+                              color: isBest ? '#006997' : '#212529',
+                              fontWeight: isBest ? 700 : 400,
+                              fontFamily: 'var(--font-mono)',
+                              fontSize: 14,
+                            }}>
+                              {formatted}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {/* Disclaimer */}
+          <p style={{
+            fontSize: 13,
+            color: '#455A64',
+            marginTop: 40,
+            lineHeight: 1.6,
+            maxWidth: 800,
+          }}>
+            Data sourced from the Federal Judicial Center Integrated Database. Outcomes are historical averages and do not predict future results.
+            This is not legal advice.{' '}
+            <Link href="/methodology" className="lexis-link" style={{ textDecoration: 'none' }}>
+              Learn about our methodology
+            </Link>
+          </p>
+        </div>
+      </main>
+    </>
   );
 }

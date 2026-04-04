@@ -82,44 +82,149 @@ export default function OddsPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+      <style>{`
+        .ln-select {
+          height: 48px;
+          border: 1px solid #D5D8DC;
+          border-radius: 4px;
+          padding: 0 16px;
+          font: var(--font-body);
+          color: #212529;
+          background: #FFFFFF;
+        }
+        .ln-select:focus {
+          outline: none;
+          border-color: #006997;
+        }
+        .ln-select:hover:not(:disabled) {
+          border-color: #006997;
+        }
+        .ln-button-primary {
+          background: #E8171F;
+          color: #FFFFFF;
+          border: none;
+          border-radius: 4px;
+          padding: 16px 32px;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: background 200ms ease;
+        }
+        .ln-button-primary:hover:not(:disabled) {
+          background: #C41219;
+        }
+        .ln-button-primary:disabled {
+          background: #BDBFC5;
+          cursor: default;
+        }
+        .ln-card {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 4px;
+        }
+        .ln-link {
+          color: #006997;
+          text-decoration: none;
+        }
+        .ln-link:hover {
+          text-decoration: underline;
+        }
+      `}</style>
+
+      {/* Breadcrumb */}
+      <div style={{ background: '#EDEEEE', padding: '12px 24px' }}>
+        <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
+          <a href="/" className="ln-link" style={{ fontSize: '14px' }}>
+            Back to home
+          </a>
+        </div>
+      </div>
+
       {/* Header */}
       <div
-        className="border-b py-16 sm:py-24"
         style={{
-          borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)',
+          background: '#00172E',
+          padding: '48px 24px',
         }}
       >
-        <div className="max-w-4xl mx-auto px-6">
-
-          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: '#111111', letterSpacing: '-1.5px' }}>
-            Check My Odds
+        <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '16px' }}>
+            <span
+              style={{
+                display: 'inline-block',
+                background: '#E8171F',
+                color: '#FFFFFF',
+                padding: '6px 16px',
+                borderRadius: '24px',
+                fontSize: '12px',
+                fontWeight: '600',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Check My Odds
+            </span>
+          </div>
+          <h1
+            className="font-display"
+            style={{
+              color: '#FFFFFF',
+              fontSize: '48px',
+              fontWeight: '700',
+              letterSpacing: '-1.5px',
+              margin: '0 0 12px 0',
+            }}
+          >
+            Predict Your Case Outcome
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
+          <p
+            style={{
+              color: '#E8F0F5',
+              fontSize: '18px',
+              lineHeight: '1.6',
+              margin: 0,
+              maxWidth: '600px',
+            }}
+          >
             See real outcomes for cases like yours — free, instant, and private.
           </p>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div style={{ maxWidth: '1024px', margin: '0 auto', padding: '48px 24px' }}>
         {/* Selection Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '24px',
+            marginBottom: '32px',
+          }}
+        >
           {/* Case Type Dropdown */}
           <div>
-            <label className="block text-sm font-semibold mb-3" style={{ color: '#111111' }}>
+            <label
+              className="font-display"
+              style={{
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: '600',
+                marginBottom: '12px',
+                color: '#212529',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+              }}
+            >
               Case Type
             </label>
             <select
               value={selectedCaseType}
               onChange={(e) => setSelectedCaseType(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border text-sm"
-              style={{
-                borderColor: 'var(--border-default)',
-                background: '#FFFFFF',
-                color: '#111111',
-              }}
+              className="ln-select w-full"
             >
               <option value="">Select a case type...</option>
               {caseTypeOptions.map((opt) => (
@@ -132,18 +237,24 @@ export default function OddsPage() {
 
           {/* District Dropdown */}
           <div>
-            <label className="block text-sm font-semibold mb-3" style={{ color: '#111111' }}>
+            <label
+              className="font-display"
+              style={{
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: '600',
+                marginBottom: '12px',
+                color: '#212529',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+              }}
+            >
               Federal District
             </label>
             <select
               value={selectedDistrict}
               onChange={(e) => setSelectedDistrict(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border text-sm"
-              style={{
-                borderColor: 'var(--border-default)',
-                background: '#FFFFFF',
-                color: '#111111',
-              }}
+              className="ln-select w-full"
             >
               <option value="">All districts</option>
               {districtsByState.map((state) => (
@@ -156,18 +267,24 @@ export default function OddsPage() {
 
           {/* Year Range Dropdown */}
           <div>
-            <label className="block text-sm font-semibold mb-3" style={{ color: '#111111' }}>
+            <label
+              className="font-display"
+              style={{
+                display: 'block',
+                fontSize: '14px',
+                fontWeight: '600',
+                marginBottom: '12px',
+                color: '#212529',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+              }}
+            >
               Year Range
             </label>
             <select
               value={selectedYearRange}
               onChange={(e) => setSelectedYearRange(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border text-sm"
-              style={{
-                borderColor: 'var(--border-default)',
-                background: '#FFFFFF',
-                color: '#111111',
-              }}
+              className="ln-select w-full"
             >
               {yearRangeOptions.map((opt) => (
                 <option key={opt.id} value={opt.id}>
@@ -179,16 +296,12 @@ export default function OddsPage() {
         </div>
 
         {/* Search Button */}
-        <div className="mb-12 flex justify-center">
-          <button type="button"
+        <div style={{ marginBottom: '32px', textAlign: 'center' }}>
+          <button
+            type="button"
             onClick={handleSearch}
             disabled={loading || !selectedCaseType}
-            className="px-8 py-4 rounded-lg text-base font-semibold transition-all"
-            style={{
-              background: selectedCaseType ? '#111111' : '#E5E7EB',
-              color: selectedCaseType ? '#FFFFFF' : '#6B7280',
-              cursor: selectedCaseType && !loading ? 'pointer' : 'default',
-            }}
+            className="ln-button-primary"
           >
             {loading ? 'Loading...' : 'Check My Odds'}
           </button>
@@ -197,55 +310,69 @@ export default function OddsPage() {
         {/* Error Message */}
         {error && (
           <div
-            className="p-4 rounded-lg mb-8 text-sm"
+            className="ln-card"
             style={{
-              background: 'rgba(220, 38, 38, 0.1)',
-              color: '#DC2626',
-              borderColor: '#DC2626',
-              borderWidth: '1px',
+              marginBottom: '24px',
+              padding: '16px',
+              borderColor: '#EF4444',
+              background: '#FEF2F2',
             }}
           >
-            {error}
+            <p style={{ color: '#991B1B', fontSize: '14px', margin: 0 }}>
+              {error}
+            </p>
           </div>
         )}
 
         {/* Results Section */}
         {results && (
-          <div className="space-y-8 animate-fadeIn">
+          <div style={{ display: 'grid', gap: '32px' }}>
             {/* Win Rate Card */}
-            <div
-              className="p-8 rounded-xl border text-center"
-              style={{
-                borderColor: 'var(--border-default)',
-                background: '#FFFFFF',
-              }}
-            >
-              <p className="text-sm font-semibold mb-4" style={{ color: '#6B7280' }}>
+            <div className="ln-card" style={{ padding: '40px', textAlign: 'center' }}>
+              <p
+                style={{
+                  fontSize: '12px',
+                  fontWeight: '600',
+                  color: '#455A64',
+                  margin: '0 0 16px 0',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                }}
+              >
                 Win Rate (at Trial)
               </p>
               <div
-                className="text-6xl sm:text-7xl font-display font-extrabold"
-                style={{ color: '#111111', letterSpacing: '-2px' }}
+                className="font-display"
+                style={{
+                  fontSize: '72px',
+                  fontWeight: '700',
+                  color: '#E8171F',
+                  letterSpacing: '-2px',
+                  margin: '0 0 12px 0',
+                }}
               >
                 {results.winRate}%
               </div>
-              <p className="mt-4 text-sm" style={{ color: '#6B7280' }}>
+              <p style={{ color: '#455A64', fontSize: '14px', margin: 0 }}>
                 Based on {results.caseType} cases
               </p>
             </div>
 
             {/* Outcomes Bar Chart */}
-            <div
-              className="p-8 rounded-xl border"
-              style={{
-                borderColor: 'var(--border-default)',
-                background: '#FFFFFF',
-              }}
-            >
-              <p className="text-sm font-semibold mb-6" style={{ color: '#111111' }}>
+            <div className="ln-card" style={{ padding: '40px' }}>
+              <p
+                style={{
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  color: '#212529',
+                  margin: '0 0 24px 0',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                }}
+              >
                 Case Outcomes Distribution
               </p>
-              <div className="space-y-4">
+              <div style={{ display: 'grid', gap: '24px' }}>
                 {[
                   { label: 'Won', value: results.won, color: '#10B981' },
                   { label: 'Settled', value: results.settled, color: '#F59E0B' },
@@ -255,21 +382,40 @@ export default function OddsPage() {
                   const percentage = ((outcome.value / total) * 100).toFixed(1);
                   return (
                     <div key={outcome.label}>
-                      <div className="flex justify-between mb-2">
-                        <span style={{ color: '#111111' }}>{outcome.label}</span>
-                        <span style={{ color: outcome.color, fontWeight: '600' }}>
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          marginBottom: '8px',
+                        }}
+                      >
+                        <span style={{ color: '#212529', fontSize: '14px', fontWeight: '500' }}>
+                          {outcome.label}
+                        </span>
+                        <span
+                          style={{
+                            color: outcome.color,
+                            fontWeight: '600',
+                            fontSize: '14px',
+                          }}
+                        >
                           {percentage}%
                         </span>
                       </div>
                       <div
-                        className="h-3 rounded-full overflow-hidden"
-                        style={{ background: '#FFFFFF' }}
+                        style={{
+                          height: '12px',
+                          borderRadius: '4px',
+                          background: '#EDEEEE',
+                          overflow: 'hidden',
+                        }}
                       >
                         <div
-                          className="h-full transition-all duration-500"
                           style={{
+                            height: '100%',
                             background: outcome.color,
                             width: `${percentage}%`,
+                            transition: 'width 500ms ease',
                           }}
                         />
                       </div>
@@ -280,35 +426,56 @@ export default function OddsPage() {
             </div>
 
             {/* Narrative */}
-            <div
-              className="p-8 rounded-xl border"
-              style={{
-                borderColor: 'var(--border-default)',
-                background: '#FFFFFF',
-              }}
-            >
-              <p className="text-base leading-relaxed" style={{ color: '#6B7280' }}>
+            <div className="ln-card" style={{ padding: '40px' }}>
+              <p
+                style={{
+                  color: '#455A64',
+                  fontSize: '16px',
+                  lineHeight: '1.6',
+                  margin: '0 0 16px 0',
+                }}
+              >
                 In federal court, {results.caseType} cases go to trial with a {results.winRate}% win rate for plaintiffs.
                 However, most cases settle before trial: {((results.settled / (results.won + results.settled + results.dismissed)) * 100).toFixed(0)}% of cases in this
                 category settle. The remaining cases are dismissed. These figures represent historical aggregate data
                 and do not predict the outcome of your specific case.
               </p>
-              <p className="text-sm mt-4 font-semibold" style={{ color: '#6B7280' }}>
+              <p
+                style={{
+                  color: '#455A64',
+                  fontSize: '12px',
+                  fontWeight: '600',
+                  margin: 0,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                }}
+              >
                 Source: Federal Judicial Center Integrated Database (FJC IDB)
               </p>
             </div>
 
             {/* CTA */}
-            <div className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-              <p className="text-sm mb-4" style={{ color: '#6B7280' }}>
+            <div className="ln-card" style={{ padding: '40px', textAlign: 'center' }}>
+              <p
+                style={{
+                  fontSize: '14px',
+                  color: '#455A64',
+                  margin: '0 0 16px 0',
+                }}
+              >
                 Want the full picture?
               </p>
               <a
                 href="/"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all"
-                style={{ background: '#111111', color: '#FFFFFF' }}
+                className="ln-button-primary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  textDecoration: 'none',
+                }}
               >
-                Get your personalized report — $5.99
+                Get your personalized report
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -316,15 +483,17 @@ export default function OddsPage() {
             </div>
 
             {/* Legal Disclaimer */}
-            <div style={{
-              background: 'var(--bg-base)',
-              color: '#6B7280',
-              padding: '40px 20px',
-              fontSize: '14px',
-              fontFamily: 'Outfit, system-ui, sans-serif',
-              lineHeight: '1.6',
-            }}>
-              <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div
+              style={{
+                background: '#EDEEEE',
+                color: '#455A64',
+                padding: '40px 24px',
+                borderRadius: '4px',
+                fontSize: '14px',
+                lineHeight: '1.6',
+              }}
+            >
+              <div>
                 <p style={{ margin: '0 0 16px 0' }}>
                   <strong>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
                 </p>
@@ -337,19 +506,47 @@ export default function OddsPage() {
         )}
 
         {/* Trust Bar */}
-        <div className="mt-16 pt-8 border-t" style={{ borderColor: 'var(--border-default)' }}>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div
+          style={{
+            marginTop: '64px',
+            paddingTop: '32px',
+            borderTop: '1px solid #D5D8DC',
+          }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+              gap: '24px',
+              textAlign: 'center',
+            }}
+          >
             {[
               { v: '5.1M+', l: 'Cases analyzed' },
               { v: '94', l: 'Federal districts' },
               { v: '84', l: 'Case types' },
               { v: '100% Free', l: 'No account needed' },
             ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="font-display font-extrabold text-lg" style={{ color: '#111111' }}>
+              <div key={i}>
+                <div
+                  className="font-display"
+                  style={{
+                    fontSize: '20px',
+                    fontWeight: '700',
+                    color: '#212529',
+                  }}
+                >
                   {stat.v}
                 </div>
-                <div className="text-xs mt-1" style={{ color: '#6B7280' }}>
+                <div
+                  style={{
+                    fontSize: '12px',
+                    marginTop: '8px',
+                    color: '#455A64',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                  }}
+                >
                   {stat.l}
                 </div>
               </div>

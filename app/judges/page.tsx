@@ -135,12 +135,39 @@ const CIRCUITS: {
 
 export default function JudgesPage() {
   return (
-    <div style={{ background: 'var(--bg-base)', minHeight: '100vh' }}>
+    <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+      <style>{`
+        .judge-district-link {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 14px;
+          border-radius: 4px;
+          font-size: 14px;
+          color: #212529;
+          text-decoration: none;
+          font-family: var(--font-body);
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          transition: all 0.15s ease;
+        }
+        .judge-district-link:hover {
+          background: #F5F6F7;
+          border-color: #006997;
+          color: #006997;
+        }
+        .judge-district-link .arrow {
+          font-size: 12px;
+          color: #006997;
+          font-weight: 500;
+        }
+      `}</style>
+
       {/* Header */}
       <div
         style={{
-          borderBottom: '1px solid var(--border-default)',
-          background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)',
+          borderBottom: '1px solid #D5D8DC',
+          background: '#00172E',
         }}
       >
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
@@ -151,19 +178,16 @@ export default function JudgesPage() {
                 alignItems: 'center',
                 gap: 8,
                 padding: '6px 12px',
-                borderRadius: 9999,
+                borderRadius: 4,
                 fontSize: 11,
                 fontWeight: 700,
                 letterSpacing: '1.5px',
                 marginBottom: 16,
-                background: 'var(--accent-primary-subtle)',
-                color: '#111111',
+                background: '#E8171F',
+                color: '#FFFFFF',
                 textTransform: 'uppercase',
               }}
             >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
               Judge Intelligence
             </div>
 
@@ -172,7 +196,7 @@ export default function JudgesPage() {
                 fontSize: 'clamp(28px, 5vw, 44px)',
                 fontWeight: 900,
                 marginBottom: 16,
-                color: '#111111',
+                color: '#FFFFFF',
                 letterSpacing: '-1.5px',
                 fontFamily: 'var(--font-display)',
                 lineHeight: 1.2,
@@ -186,7 +210,7 @@ export default function JudgesPage() {
                 fontSize: 'clamp(15px, 2vw, 17px)',
                 lineHeight: 1.6,
                 maxWidth: 640,
-                color: '#6B7280',
+                color: '#C7D1D8',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -204,7 +228,7 @@ export default function JudgesPage() {
             style={{
               fontSize: 24,
               fontWeight: 700,
-              color: '#111111',
+              color: '#212529',
               fontFamily: 'var(--font-display)',
               marginBottom: 24,
             }}
@@ -230,8 +254,8 @@ export default function JudgesPage() {
                 key={idx}
                 style={{
                   padding: 24,
-                  borderRadius: 12,
-                  border: '1px solid var(--border-default)',
+                  borderRadius: 4,
+                  border: '1px solid #D5D8DC',
                   background: '#FFFFFF',
                 }}
               >
@@ -239,7 +263,7 @@ export default function JudgesPage() {
                   style={{
                     fontSize: 15,
                     fontWeight: 600,
-                    color: '#111111',
+                    color: '#212529',
                     fontFamily: 'var(--font-display)',
                     marginBottom: 8,
                   }}
@@ -250,7 +274,7 @@ export default function JudgesPage() {
                   style={{
                     fontSize: 13,
                     lineHeight: 1.6,
-                    color: '#6B7280',
+                    color: '#455A64',
                     fontFamily: 'var(--font-body)',
                     margin: 0,
                   }}
@@ -268,7 +292,7 @@ export default function JudgesPage() {
             style={{
               fontSize: 24,
               fontWeight: 700,
-              color: '#111111',
+              color: '#212529',
               fontFamily: 'var(--font-display)',
               marginBottom: 32,
             }}
@@ -282,8 +306,8 @@ export default function JudgesPage() {
                 key={circuit.name}
                 style={{
                   padding: 24,
-                  borderRadius: 12,
-                  border: '1px solid var(--border-default)',
+                  borderRadius: 4,
+                  border: '1px solid #D5D8DC',
                   background: '#FFFFFF',
                 }}
               >
@@ -291,11 +315,11 @@ export default function JudgesPage() {
                   style={{
                     fontSize: 17,
                     fontWeight: 700,
-                    color: '#111111',
+                    color: '#212529',
                     fontFamily: 'var(--font-display)',
                     marginBottom: 16,
                     paddingBottom: 12,
-                    borderBottom: '1px solid var(--border-default)',
+                    borderBottom: '1px solid #D5D8DC',
                   }}
                 >
                   {circuit.name}
@@ -311,23 +335,10 @@ export default function JudgesPage() {
                     <Link
                       key={d.code}
                       href={`/judges/${d.code.toLowerCase()}`}
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        padding: '10px 14px',
-                        borderRadius: 8,
-                        fontSize: 14,
-                        color: '#111111',
-                        textDecoration: 'none',
-                        fontFamily: 'var(--font-body)',
-                        background: 'var(--bg-base)',
-                        border: '1px solid var(--border-default)',
-                        transition: 'all 0.15s ease',
-                      }}
+                      className="judge-district-link"
                     >
                       <span>{d.label}</span>
-                      <span style={{ fontSize: 12, color: '#E8171F', fontWeight: 500 }}>
+                      <span className="arrow">
                         View judges &rarr;
                       </span>
                     </Link>
@@ -342,9 +353,9 @@ export default function JudgesPage() {
         <section
           style={{
             padding: '48px 32px',
-            borderRadius: 16,
-            border: '2px solid #E8171F',
-            background: '#FFFFFF',
+            borderRadius: 4,
+            border: '1px solid #D5D8DC',
+            background: '#00172E',
             textAlign: 'center',
             marginBottom: 64,
           }}
@@ -353,7 +364,7 @@ export default function JudgesPage() {
             style={{
               fontSize: 24,
               fontWeight: 700,
-              color: '#111111',
+              color: '#FFFFFF',
               fontFamily: 'var(--font-display)',
               marginBottom: 12,
             }}
@@ -363,7 +374,7 @@ export default function JudgesPage() {
           <p
             style={{
               fontSize: 15,
-              color: '#6B7280',
+              color: '#C7D1D8',
               fontFamily: 'var(--font-body)',
               maxWidth: 520,
               margin: '0 auto 28px',
@@ -379,7 +390,7 @@ export default function JudgesPage() {
               alignItems: 'center',
               gap: 8,
               padding: '12px 28px',
-              borderRadius: 8,
+              borderRadius: 4,
               background: '#E8171F',
               color: '#FFFFFF',
               fontSize: 16,

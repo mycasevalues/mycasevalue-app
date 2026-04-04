@@ -5,7 +5,7 @@ import { REAL_DATA } from '../../lib/realdata';
 const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'), {
   ssr: false,
   loading: () => (
-    <div className="p-12 text-center" style={{ color: '#6B7280' }}>
+    <div className="p-12 text-center" style={{ color: '#455A64' }}>
       Loading charts...
     </div>
   ),
@@ -82,7 +82,7 @@ function getTrendData(): TrendEntry[] {
 // Category labels and colors
 const CATEGORY_META: Record<string, { label: string; color: string }> = {
   money: { label: 'Financial', color: '#F59E0B' },
-  work: { label: 'Employment', color: '#111111' },
+  work: { label: 'Employment', color: '#212529' },
   injury: { label: 'Injury', color: '#EF4444' },
   consumer: { label: 'Consumer', color: '#0D9488' },
   rights: { label: 'Civil Rights', color: '#E8171F' },
@@ -129,44 +129,63 @@ export default function TrendsPage() {
   const lowWin = [...trends].filter(t => t.total > 1000).sort((a, b) => a.winRate - b.winRate).slice(0, 5);
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+      <style>{`
+        a.lex-link { color: #006997; text-decoration: none; }
+        a.lex-link:hover { text-decoration: underline; }
+        .lex-card { background: #FFFFFF; border: 1px solid #D5D8DC; border-radius: 4px; }
+        .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .lex-btn-primary { background: #E8171F; color: white; border: none; border-radius: 4px; font-weight: 600; }
+        .lex-btn-primary:hover { background: #C41219; }
+        .lex-badge { background: rgba(232,23,31,0.1); color: #E8171F; border-radius: 4px; }
+      `}</style>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
+      {/* Breadcrumb */}
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '12px 0' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <nav className="flex items-center gap-2 text-sm" style={{ color: '#455A64' }}>
+            <a href="/" className="lex-link">Home</a>
+            <span>/</span>
+            <span>Trends</span>
+          </nav>
+        </div>
+      </div>
+
       {/* Header */}
       <div
-        className="border-b"
         style={{
-          borderColor: 'var(--border-default)',
-          background: 'linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)',
+          borderBottom: '1px solid #D5D8DC',
+          background: '#00172E',
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
           <div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(0,0,0,0.15)', color: '#111111' }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+            style={{ background: 'rgba(232,23,31,0.15)', color: '#E8171F' }}
           >
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
             </svg>
             FEDERAL COURT TRENDS
           </div>
           <h1
             className="text-3xl sm:text-4xl font-display font-extrabold mb-4"
-            style={{ color: '#111111', letterSpacing: '-1.5px' }}
+            style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}
           >
             Federal Court Filing Trends
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#6B7280' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#B0C4DE' }}>
             Explore real statistics from {totalCases.toLocaleString()} federal civil cases across {trends.length} case types and 94 federal districts.
           </p>
         </div>
       </div>
 
       {/* Key Stats Bar */}
-      <section className="py-10 border-b" style={{ borderColor: 'var(--border-default)' }}>
+      <section className="py-10 border-b" style={{ borderColor: '#D5D8DC' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
@@ -177,13 +196,12 @@ export default function TrendsPage() {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="text-center p-4 border"
-                style={{ borderColor: 'var(--border-default)', background: '#FFFFFF', borderRadius: '12px' }}
+                className="text-center p-4 lex-card"
               >
-                <div className="text-2xl font-display font-extrabold" style={{ color: '#111111' }}>
+                <div className="text-2xl font-display font-extrabold" style={{ color: '#212529' }}>
                   {stat.v}
                 </div>
-                <div className="text-[11px] font-semibold mt-2" style={{ color: '#6B7280' }}>
+                <div className="text-[11px] font-semibold mt-2" style={{ color: '#455A64' }}>
                   {stat.l}
                 </div>
               </div>
@@ -195,10 +213,10 @@ export default function TrendsPage() {
       <div className="max-w-6xl mx-auto px-6 py-12 space-y-16">
         {/* Interactive Trend Charts */}
         <section className="pt-4">
-          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#111111' }}>
+          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#212529' }}>
             Interactive Visualizations
           </h2>
-          <p className="text-sm mb-8" style={{ color: '#6B7280' }}>
+          <p className="text-sm mb-8" style={{ color: '#455A64' }}>
             Explore filing trends, win rates by category, and top case types with interactive charts.
           </p>
           <TrendCharts />
@@ -206,10 +224,10 @@ export default function TrendsPage() {
 
         {/* Top 10 Most Filed Case Types */}
         <section>
-          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#111111' }}>
+          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#212529' }}>
             Most Filed Case Types
           </h2>
-          <p className="text-sm mb-8" style={{ color: '#6B7280' }}>
+          <p className="text-sm mb-8" style={{ color: '#455A64' }}>
             The 10 most common federal civil case types by total filings.
           </p>
           <div className="space-y-3">
@@ -219,47 +237,40 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="block p-4 border transition-all hover:shadow-lg hover:shadow-violet-500/5"
+                  className="block p-4 lex-card transition-all"
                   style={{
-                    borderColor: 'var(--border-default)',
-                    background: '#FFFFFF',
                     textDecoration: 'none',
-                    borderRadius: '12px',
                   }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-3">
                       <span
-                        className="text-xs font-bold w-6 h-6 flex items-center justify-center rounded-full"
-                        style={{ background: 'rgba(0,0,0,0.15)', color: '#111111' }}
+                        className="text-xs font-bold w-6 h-6 flex items-center justify-center rounded"
+                        style={{ background: '#E8171F', color: '#FFFFFF' }}
                       >
                         {i + 1}
                       </span>
-                      <span className="text-sm font-semibold" style={{ color: '#111111' }}>
+                      <span className="text-sm font-semibold" style={{ color: '#212529' }}>
                         {t.label}
                       </span>
                       <span
-                        className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                        style={{
-                          background: `${CATEGORY_META[t.category]?.color || '#9CA3AF'}20`,
-                          color: CATEGORY_META[t.category]?.color || '#9CA3AF',
-                        }}
+                        className="text-[10px] font-bold px-2 py-0.5 lex-badge"
                       >
                         {CATEGORY_META[t.category]?.label || t.category}
                       </span>
                     </div>
-                    <div className="flex items-center gap-4 text-xs" style={{ color: '#6B7280' }}>
+                    <div className="flex items-center gap-4 text-xs" style={{ color: '#455A64' }}>
                       <span>{t.total.toLocaleString()} cases</span>
-                      <span style={{ color: '#10B981' }}>{t.winRate}% win</span>
+                      <span style={{ color: '#006997' }}>{t.winRate}% win</span>
                       <span>{t.months}mo avg</span>
                     </div>
                   </div>
-                  <div className="h-2 rounded-full overflow-hidden" style={{ background: '#FFFFFF' }}>
+                  <div className="h-2 overflow-hidden" style={{ background: '#EDEEEE', borderRadius: '4px' }}>
                     <div
-                      className="h-full rounded-full"
+                      className="h-full"
                       style={{
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, #E8171F, #7C3AED)',
+                        background: 'linear-gradient(90deg, #E8171F, #006997)',
                       }}
                     />
                   </div>
@@ -271,10 +282,10 @@ export default function TrendsPage() {
 
         {/* Category Breakdown */}
         <section>
-          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#111111' }}>
+          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#212529' }}>
             Cases by Category
           </h2>
-          <p className="text-sm mb-8" style={{ color: '#6B7280' }}>
+          <p className="text-sm mb-8" style={{ color: '#455A64' }}>
             Federal civil cases grouped by legal category.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -283,13 +294,12 @@ export default function TrendsPage() {
               return (
                 <div
                   key={c.cat}
-                  className="p-5 border"
-                  style={{ borderColor: 'var(--border-default)', background: '#FFFFFF', borderRadius: '12px' }}
+                  className="p-5 lex-card"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full" style={{ background: c.color }} />
-                      <span className="text-sm font-semibold" style={{ color: '#111111' }}>
+                      <div className="w-3 h-3 rounded" style={{ background: c.color }} />
+                      <span className="text-sm font-semibold" style={{ color: '#212529' }}>
                         {c.label}
                       </span>
                     </div>
@@ -297,11 +307,11 @@ export default function TrendsPage() {
                       {c.total.toLocaleString()} cases
                     </span>
                   </div>
-                  <div className="h-2 rounded-full overflow-hidden mb-2" style={{ background: '#FFFFFF' }}>
-                    <div className="h-full rounded-full" style={{ width: `${pct}%`, background: c.color }} />
+                  <div className="h-2 mb-2 overflow-hidden" style={{ background: '#EDEEEE', borderRadius: '4px' }}>
+                    <div className="h-full" style={{ width: `${pct}%`, background: c.color }} />
                   </div>
-                  <div className="text-[11px]" style={{ color: '#6B7280' }}>
-                    Avg win rate: <span style={{ color: '#10B981', fontWeight: 600 }}>{c.avgWinRate}%</span>
+                  <div className="text-[11px]" style={{ color: '#455A64' }}>
+                    Avg win rate: <span style={{ color: '#006997', fontWeight: 600 }}>{c.avgWinRate}%</span>
                   </div>
                 </div>
               );
@@ -312,10 +322,10 @@ export default function TrendsPage() {
         {/* Win Rate Extremes */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#111111' }}>
+            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#212529' }}>
               Highest Win Rates
             </h2>
-            <p className="text-xs mb-4" style={{ color: '#6B7280' }}>
+            <p className="text-xs mb-4" style={{ color: '#455A64' }}>
               Case types with 1,000+ filings and the highest plaintiff win rates.
             </p>
             <div className="space-y-2">
@@ -323,24 +333,22 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="flex items-center justify-between p-3 rounded-lg border transition-all hover:border-green-500/30"
+                  className="flex items-center justify-between p-3 lex-card transition-all"
                   style={{
-                    borderColor: 'var(--border-default)',
-                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm" style={{ color: '#111111' }}>{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#10B981' }}>{t.winRate}%</span>
+                  <span className="text-sm lex-link">{t.label}</span>
+                  <span className="text-sm font-bold" style={{ color: '#006997' }}>{t.winRate}%</span>
                 </a>
               ))}
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#111111' }}>
+            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#212529' }}>
               Lowest Win Rates
             </h2>
-            <p className="text-xs mb-4" style={{ color: '#6B7280' }}>
+            <p className="text-xs mb-4" style={{ color: '#455A64' }}>
               Case types with 1,000+ filings and the lowest plaintiff win rates.
             </p>
             <div className="space-y-2">
@@ -348,15 +356,13 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="flex items-center justify-between p-3 rounded-lg border transition-all hover:border-red-500/30"
+                  className="flex items-center justify-between p-3 lex-card transition-all"
                   style={{
-                    borderColor: 'var(--border-default)',
-                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm" style={{ color: '#111111' }}>{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#EF4444' }}>{t.winRate}%</span>
+                  <span className="text-sm lex-link">{t.label}</span>
+                  <span className="text-sm font-bold" style={{ color: '#E8171F' }}>{t.winRate}%</span>
                 </a>
               ))}
             </div>
@@ -366,10 +372,10 @@ export default function TrendsPage() {
         {/* Duration Extremes */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#111111' }}>
+            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#212529' }}>
               Fastest to Resolve
             </h2>
-            <p className="text-xs mb-4" style={{ color: '#6B7280' }}>
+            <p className="text-xs mb-4" style={{ color: '#455A64' }}>
               Case types with the shortest average duration.
             </p>
             <div className="space-y-2">
@@ -377,24 +383,22 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="flex items-center justify-between p-3 rounded-lg border transition-all hover:border-cyan-500/30"
+                  className="flex items-center justify-between p-3 lex-card transition-all"
                   style={{
-                    borderColor: 'var(--border-default)',
-                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm" style={{ color: '#111111' }}>{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#06B6D4' }}>{t.months} months</span>
+                  <span className="text-sm lex-link">{t.label}</span>
+                  <span className="text-sm font-bold" style={{ color: '#006997' }}>{t.months} months</span>
                 </a>
               ))}
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#111111' }}>
+            <h2 className="text-xl font-display font-bold mb-2" style={{ color: '#212529' }}>
               Longest to Resolve
             </h2>
-            <p className="text-xs mb-4" style={{ color: '#6B7280' }}>
+            <p className="text-xs mb-4" style={{ color: '#455A64' }}>
               Case types with the longest average duration.
             </p>
             <div className="space-y-2">
@@ -402,15 +406,13 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="flex items-center justify-between p-3 rounded-lg border transition-all hover:border-amber-500/30"
+                  className="flex items-center justify-between p-3 lex-card transition-all"
                   style={{
-                    borderColor: 'var(--border-default)',
-                    background: '#FFFFFF',
                     textDecoration: 'none',
                   }}
                 >
-                  <span className="text-sm" style={{ color: '#111111' }}>{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#F59E0B' }}>{t.months} months</span>
+                  <span className="text-sm lex-link">{t.label}</span>
+                  <span className="text-sm font-bold" style={{ color: '#E8171F' }}>{t.months} months</span>
                 </a>
               ))}
             </div>
@@ -419,16 +421,16 @@ export default function TrendsPage() {
 
         {/* Recovery Ranges */}
         <section>
-          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#111111' }}>
+          <h2 className="text-2xl font-display font-bold mb-2" style={{ color: '#212529' }}>
             Recovery Ranges by Case Type
           </h2>
-          <p className="text-sm mb-8" style={{ color: '#6B7280' }}>
+          <p className="text-sm mb-8" style={{ color: '#455A64' }}>
             Typical monetary recovery ranges (25th, 50th, and 75th percentile) for common case types, in thousands.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm" style={{ borderCollapse: 'separate', borderSpacing: '0 4px' }}>
               <thead>
-                <tr className="text-left text-[11px] font-bold uppercase tracking-wider" style={{ color: '#6B7280' }}>
+                <tr className="text-left text-[11px] font-bold uppercase tracking-wider" style={{ color: '#455A64' }}>
                   <th className="px-4 py-2">Case Type</th>
                   <th className="px-4 py-2 text-right">25th %ile</th>
                   <th className="px-4 py-2 text-right">Median</th>
@@ -439,21 +441,21 @@ export default function TrendsPage() {
               <tbody>
                 {trends.filter(t => t.medianMd > 0).slice(0, 15).map((t) => (
                   <tr key={t.nos}>
-                    <td className="px-4 py-2.5 rounded-l-lg" style={{ background: '#FFFFFF', color: '#111111' }}>
-                      <a href={`/nos/${t.nos}`} style={{ color: '#111111', textDecoration: 'none' }} className="hover:underline">
+                    <td className="px-4 py-2.5 lex-card" style={{ borderRadius: '4px 0 0 4px' }}>
+                      <a href={`/nos/${t.nos}`} className="lex-link">
                         {t.label}
                       </a>
                     </td>
-                    <td className="px-4 py-2.5 text-right" style={{ background: '#FFFFFF', color: '#6B7280' }}>
+                    <td className="px-4 py-2.5 text-right lex-card" style={{ color: '#455A64' }}>
                       ${t.medianLo}K
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold" style={{ background: '#FFFFFF', color: '#F59E0B' }}>
+                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#E8171F' }}>
                       ${t.medianMd}K
                     </td>
-                    <td className="px-4 py-2.5 text-right" style={{ background: '#FFFFFF', color: '#6B7280' }}>
+                    <td className="px-4 py-2.5 text-right lex-card" style={{ color: '#455A64' }}>
                       ${t.medianHi}K
                     </td>
-                    <td className="px-4 py-2.5 text-right rounded-r-lg font-semibold" style={{ background: '#FFFFFF', color: '#10B981' }}>
+                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#006997', borderRadius: '0 4px 4px 0' }}>
                       {t.winRate}%
                     </td>
                   </tr>
@@ -465,24 +467,21 @@ export default function TrendsPage() {
 
         {/* CTA */}
         <section
-          className="text-center p-8 border"
+          className="text-center p-8 lex-card"
           style={{
-            borderColor: 'var(--border-default)',
-            background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)',
-            borderRadius: '12px',
+            background: '#00172E',
           }}
         >
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#FFFFFF' }}>
             Want details for your specific case?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#6B7280' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#B0C4DE' }}>
             Select your case type and get a personalized analysis with win rates, timelines, and recovery data.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="/odds"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ background: '#111111', color: '#fff', borderRadius: '12px' }}
+              className="lex-btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
             >
               Check My Odds — Free
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -491,8 +490,14 @@ export default function TrendsPage() {
             </a>
             <a
               href="/pricing"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all border"
-              style={{ borderColor: 'var(--border-default)', color: '#6B7280', background: 'transparent', borderRadius: '12px' }}
+              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+              style={{
+                border: '1px solid #D5D8DC',
+                color: '#212529',
+                background: '#FFFFFF',
+                borderRadius: '4px',
+                textDecoration: 'none',
+              }}
             >
               View Pricing
             </a>
@@ -501,7 +506,7 @@ export default function TrendsPage() {
 
         {/* Data Source Note */}
         <section className="text-center">
-          <p className="text-xs leading-relaxed" style={{ color: '#6B7280' }}>
+          <p className="text-xs leading-relaxed" style={{ color: '#455A64' }}>
             All data sourced from the Federal Judicial Center Integrated Database (FJC IDB), PACER, and CourtListener.
             Statistics represent aggregate historical outcomes from 2000–2024 and do not predict future case results.
           </p>

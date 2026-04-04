@@ -54,53 +54,191 @@ export default function NOSIndexPage() {
   const categories = Object.keys(byCategory).sort();
 
   return (
-    <div className="min-h-screen text-[#111827]" style={{ background: 'var(--bg-base)', color: '#111111' }}>
+    <div style={{ minHeight: '100vh', color: '#212529', background: '#EDEEEE' }}>
+      <style>{`
+        .nos-card {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 4px;
+          padding: 24px;
+          transition: all 0.2s ease;
+          text-decoration: none;
+          display: block;
+          cursor: pointer;
+        }
+        .nos-card:hover {
+          border-left: 3px solid #E8171F;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .nos-card h3 {
+          font-weight: 600;
+          font-size: 18px;
+          color: #212529;
+          margin: 0 0 8px 0;
+          transition: color 0.2s ease;
+        }
+        .nos-card:hover h3 {
+          color: #E8171F;
+        }
+        .nos-card-arrow {
+          color: #E8171F;
+          font-size: 20px;
+          transition: transform 0.2s ease;
+        }
+        .nos-card:hover .nos-card-arrow {
+          transform: translateX(4px);
+        }
+      `}</style>
+
       {/* Header */}
-      <header className="py-12 px-4 sm:px-6 lg:px-8" style={{ borderBottom: '1px solid var(--border-default)' }}>
-        <Link
-          href="/"
-          className="text-[#E8171F] hover:text-[#E8171F] transition text-sm mb-4 inline-block"
-        >
-          ← Back to Home
-        </Link>
-        <h1 className="text-4xl sm:text-5xl font-bold mt-4">
-          Federal Case Types Directory
-        </h1>
-        <p className="text-lg mt-2 max-w-2xl" style={{ color: '#6B7280' }}>
-          Explore all case types in our federal court database. Each case type includes real statistics
-          on win rates, case duration, and outcomes based on actual court records.
-        </p>
+      <header
+        style={{
+          background: '#00172E',
+          padding: '48px 24px',
+          borderBottom: '1px solid #D5D8DC',
+        }}
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '32px' }}>
+            <Link
+              href="/"
+              style={{
+                color: '#E8171F',
+                textDecoration: 'none',
+                fontSize: '14px',
+                display: 'inline-block',
+                marginBottom: '16px',
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#C21119')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#E8171F')}
+            >
+              ← Back to Home
+            </Link>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
+            <h1
+              style={{
+                fontSize: '42px',
+                fontWeight: 'bold',
+                color: '#FFFFFF',
+                margin: 0,
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Federal Case Types Directory
+            </h1>
+            <span
+              style={{
+                background: '#E8171F',
+                color: '#FFFFFF',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                fontSize: '12px',
+                fontWeight: '600',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              CASE TYPES
+            </span>
+          </div>
+          <p
+            style={{
+              fontSize: '16px',
+              color: '#D5D8DC',
+              maxWidth: '600px',
+              margin: '0',
+              fontFamily: 'var(--font-body)',
+            }}
+          >
+            Explore all case types in our federal court database. Each case type includes real statistics
+            on win rates, case duration, and outcomes based on actual court records.
+          </p>
+        </div>
       </header>
 
+      {/* Breadcrumb */}
+      <div
+        style={{
+          padding: '16px 24px',
+          background: '#FFFFFF',
+          borderBottom: '1px solid #D5D8DC',
+          fontSize: '14px',
+        }}
+      >
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <Link
+            href="/"
+            style={{
+              color: '#006997',
+              textDecoration: 'none',
+              transition: 'color 0.2s ease',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#004A6A')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#006997')}
+          >
+            Home
+          </Link>
+          <span style={{ color: '#455A64', margin: '0 8px' }}>/</span>
+          <span style={{ color: '#006997', fontWeight: '600' }}>Case Types</span>
+        </div>
+      </div>
+
       {/* Categories */}
-      <main className="px-4 sm:px-6 lg:px-8 py-12">
+      <main style={{ padding: '48px 24px', maxWidth: '1200px', margin: '0 auto' }}>
         {categories.map((categoryName) => (
-          <section key={categoryName} className="mb-16">
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
-              <span className="text-xl mr-3">📂</span>
+          <section key={categoryName} style={{ marginBottom: '64px' }}>
+            <h2
+              style={{
+                fontSize: '24px',
+                fontWeight: 'bold',
+                marginBottom: '24px',
+                color: '#212529',
+                paddingLeft: '16px',
+                borderLeft: '3px solid #E8171F',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
               {categoryName}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gap: '16px',
+              }}
+            >
               {byCategory[categoryName].map((item) => (
                 <Link
                   key={item.code}
                   href={`/nos/${item.code}`}
-                  className="group bg-[#FFFFFF] rounded-lg p-6 border hover:border-[#111111] hover:shadow-lg transition-all"
-                  style={{ borderColor: 'var(--border-default)' }}
+                  className="nos-card"
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-lg group-hover:text-[#E8171F] transition">
-                        {item.label}
-                      </h3>
-                      <p className="text-sm" style={{ color: '#6B7280' }}>NOS Code: {item.code}</p>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '12px' }}>
+                    <div style={{ flex: 1 }}>
+                      <h3>{item.label}</h3>
+                      <p
+                        style={{
+                          fontSize: '13px',
+                          color: '#455A64',
+                          margin: '0',
+                          fontFamily: 'var(--font-mono)',
+                        }}
+                      >
+                        NOS Code: {item.code}
+                      </p>
                     </div>
-                    <span className="text-[#E8171F] text-xl group-hover:translate-x-1 transition">
-                      →
-                    </span>
+                    <span className="nos-card-arrow">→</span>
                   </div>
-                  <p className="text-sm" style={{ color: '#6B7280' }}>
+                  <p
+                    style={{
+                      fontSize: '13px',
+                      color: '#455A64',
+                      margin: '0',
+                      fontFamily: 'var(--font-body)',
+                    }}
+                  >
                     View court statistics and case outcomes for this type
                   </p>
                 </Link>
@@ -111,23 +249,64 @@ export default function NOSIndexPage() {
       </main>
 
       {/* Info Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-12 bg-[#FFFFFF]" style={{ borderTop: '1px solid var(--border-default)' }}>
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4">What are NOS Codes?</h2>
-          <p className="mb-4" style={{ color: '#6B7280' }}>
-            Nature of Suit (NOS) codes are standardized federal court classifications that categorize
-            cases by their legal nature. Each code corresponds to a specific type of civil case filed in
-            U.S. District Courts.
-          </p>
-          <p className="mb-4" style={{ color: '#6B7280' }}>
-            The statistics on these pages are derived from actual federal court data, including case
-            outcomes, settlement rates, and case duration. This information can help you understand
-            how similar cases have performed in federal court.
-          </p>
-          <p style={{ color: '#6B7280' }}>
-            For legal advice specific to your situation, please consult with a qualified attorney in
-            your jurisdiction.
-          </p>
+      <section style={{ background: '#FFFFFF', borderTop: '1px solid #D5D8DC', padding: '48px 24px' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              borderRadius: '4px',
+              padding: '32px',
+          }}
+          >
+            <h2
+              style={{
+                fontSize: '24px',
+                fontWeight: 'bold',
+                marginBottom: '16px',
+                color: '#212529',
+                margin: '0 0 16px 0',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              What are NOS Codes?
+            </h2>
+            <p
+              style={{
+                marginBottom: '16px',
+                color: '#455A64',
+                lineHeight: '1.6',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              Nature of Suit (NOS) codes are standardized federal court classifications that categorize
+              cases by their legal nature. Each code corresponds to a specific type of civil case filed in
+              U.S. District Courts.
+            </p>
+            <p
+              style={{
+                marginBottom: '16px',
+                color: '#455A64',
+                lineHeight: '1.6',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              The statistics on these pages are derived from actual federal court data, including case
+              outcomes, settlement rates, and case duration. This information can help you understand
+              how similar cases have performed in federal court.
+            </p>
+            <p
+              style={{
+                color: '#455A64',
+                lineHeight: '1.6',
+                margin: '0',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              For legal advice specific to your situation, please consult with a qualified attorney in
+              your jurisdiction.
+            </p>
+          </div>
         </div>
       </section>
 

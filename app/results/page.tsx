@@ -15,39 +15,158 @@ export const metadata: Metadata = {
 
 export default function ResultsPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div style={{ minHeight: '100vh', background: '#EDEEEE' }}>
+      <style>{`
+        .cta-button {
+          transition: all 0.2s ease;
+        }
+        .cta-button:hover {
+          background-color: #CC0D14 !important;
+          transform: translateY(-1px);
+        }
+        .secondary-button {
+          transition: all 0.2s ease;
+        }
+        .secondary-button:hover {
+          background-color: #F5F5F5;
+          border-color: #A8ACB1;
+        }
+        .info-card {
+          transition: all 0.2s ease;
+        }
+        .info-card:hover {
+          border-color: #B0B5BA;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+      `}</style>
+
+      {/* Breadcrumb */}
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC', padding: '12px 0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
+          <nav style={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#455A64' }}>
+            <Link href="/" style={{ color: '#006997', textDecoration: 'none' }}>
+              Home
+            </Link>
+            <span style={{ margin: '0 8px', color: '#A8ACB1' }}>&gt;</span>
+            <span style={{ color: '#212529', fontWeight: '600' }}>Case Results</span>
+          </nav>
+        </div>
+      </div>
+
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: `linear-gradient(180deg, #FFFFFF 0%, var(--bg-base) 100%)` }}>
-        <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <h1 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: '#111111', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)' }}>
+      <div style={{ background: '#00172E', paddingTop: '48px', paddingBottom: '48px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
+          <div style={{ marginBottom: '16px' }}>
+            <span style={{
+              display: 'inline-block',
+              background: '#E8171F',
+              color: '#FFFFFF',
+              padding: '6px 12px',
+              borderRadius: '20px',
+              fontSize: '11px',
+              fontWeight: '700',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase'
+            }}>
+              CASE RESULTS
+            </span>
+          </div>
+          <h1 style={{
+            fontSize: '40px',
+            fontWeight: '700',
+            color: '#FFFFFF',
+            margin: '0 0 12px 0',
+            lineHeight: '1.2',
+            fontFamily: 'var(--font-display)'
+          }}>
             Case Results
           </h1>
-          <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: '#6B7280', fontFamily: 'var(--font-body)' }}>
+          <p style={{
+            fontSize: '16px',
+            color: '#D5D8DC',
+            margin: '0',
+            maxWidth: '600px',
+            fontFamily: 'var(--font-body)',
+            lineHeight: '1.6'
+          }}>
             Select a case type and district to see detailed outcome data from federal court records.
           </p>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-3xl mx-auto px-6 py-12">
+      <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
         {/* Empty State Card */}
-        <div className="p-8 rounded-xl border text-center" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-          <h2 className="text-xl font-semibold mb-3" style={{ color: '#111111', fontFamily: 'var(--font-display)' }}>
+        <div style={{
+          padding: '32px',
+          borderRadius: '4px',
+          border: '1px solid #D5D8DC',
+          background: '#FFFFFF',
+          textAlign: 'center'
+        }}>
+          <h2 style={{
+            fontSize: '18px',
+            fontWeight: '600',
+            color: '#212529',
+            margin: '0 0 12px 0',
+            fontFamily: 'var(--font-display)'
+          }}>
             No Results Selected
           </h2>
-          <p className="text-sm mb-6" style={{ color: '#6B7280', fontFamily: 'var(--font-body)' }}>
+          <p style={{
+            fontSize: '14px',
+            color: '#455A64',
+            margin: '0 0 24px 0',
+            lineHeight: '1.6',
+            fontFamily: 'var(--font-body)'
+          }}>
             Select a case type and district to see detailed results including win rates, settlement ranges, average awards, and case timelines.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
             <Link href="/calculator"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all"
-              style={{ background: '#7C3AED', color: '#FFFFFF', fontFamily: 'var(--font-body)' }}>
+              className="cta-button"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                paddingLeft: '24px',
+                paddingRight: '24px',
+                height: '48px',
+                borderRadius: '4px',
+                fontSize: '14px',
+                fontWeight: '600',
+                background: '#E8171F',
+                color: '#FFFFFF',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-body)',
+                border: 'none',
+                cursor: 'pointer'
+              }}>
               Use Settlement Calculator
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
             <Link href="/"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all border"
-              style={{ borderColor: 'var(--border-default)', background: '#FFFFFF', color: '#111111', fontFamily: 'var(--font-body)' }}>
+              className="secondary-button"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                paddingLeft: '24px',
+                paddingRight: '24px',
+                height: '48px',
+                borderRadius: '4px',
+                fontSize: '14px',
+                fontWeight: '600',
+                background: '#FFFFFF',
+                color: '#212529',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-body)',
+                border: '1px solid #D5D8DC',
+                cursor: 'pointer'
+              }}>
               Browse by Type
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
@@ -55,36 +174,112 @@ export default function ResultsPage() {
         </div>
 
         {/* Info Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-          <div className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#111111', fontFamily: 'var(--font-display)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '32px' }}>
+          <div className="info-card" style={{
+            padding: '20px',
+            borderRadius: '4px',
+            border: '1px solid #D5D8DC',
+            background: '#FFFFFF'
+          }}>
+            <h3 style={{
+              fontSize: '11px',
+              fontWeight: '700',
+              color: '#212529',
+              margin: '0 0 8px 0',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase'
+            }}>
               Win Rates & Outcomes
             </h3>
-            <p className="text-[11px] leading-relaxed" style={{ color: '#6B7280', fontFamily: 'var(--font-body)' }}>
+            <p style={{
+              fontSize: '13px',
+              color: '#455A64',
+              margin: '0',
+              lineHeight: '1.5',
+              fontFamily: 'var(--font-body)'
+            }}>
               Percentage of cases won, settled, or dismissed by outcome type.
             </p>
           </div>
-          <div className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#111111', fontFamily: 'var(--font-display)' }}>
+          <div className="info-card" style={{
+            padding: '20px',
+            borderRadius: '4px',
+            border: '1px solid #D5D8DC',
+            background: '#FFFFFF'
+          }}>
+            <h3 style={{
+              fontSize: '11px',
+              fontWeight: '700',
+              color: '#212529',
+              margin: '0 0 8px 0',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase'
+            }}>
               Settlement Ranges
             </h3>
-            <p className="text-[11px] leading-relaxed" style={{ color: '#6B7280', fontFamily: 'var(--font-body)' }}>
+            <p style={{
+              fontSize: '13px',
+              color: '#455A64',
+              margin: '0',
+              lineHeight: '1.5',
+              fontFamily: 'var(--font-body)'
+            }}>
               Median and average settlement amounts for your case type.
             </p>
           </div>
-          <div className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#111111', fontFamily: 'var(--font-display)' }}>
+          <div className="info-card" style={{
+            padding: '20px',
+            borderRadius: '4px',
+            border: '1px solid #D5D8DC',
+            background: '#FFFFFF'
+          }}>
+            <h3 style={{
+              fontSize: '11px',
+              fontWeight: '700',
+              color: '#212529',
+              margin: '0 0 8px 0',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase'
+            }}>
               Case Duration
             </h3>
-            <p className="text-[11px] leading-relaxed" style={{ color: '#6B7280', fontFamily: 'var(--font-body)' }}>
+            <p style={{
+              fontSize: '13px',
+              color: '#455A64',
+              margin: '0',
+              lineHeight: '1.5',
+              fontFamily: 'var(--font-body)'
+            }}>
               Average time from filing to resolution.
             </p>
           </div>
-          <div className="p-5 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#111111', fontFamily: 'var(--font-display)' }}>
+          <div className="info-card" style={{
+            padding: '20px',
+            borderRadius: '4px',
+            border: '1px solid #D5D8DC',
+            background: '#FFFFFF'
+          }}>
+            <h3 style={{
+              fontSize: '11px',
+              fontWeight: '700',
+              color: '#212529',
+              margin: '0 0 8px 0',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase'
+            }}>
               Regional Variation
             </h3>
-            <p className="text-[11px] leading-relaxed" style={{ color: '#6B7280', fontFamily: 'var(--font-body)' }}>
+            <p style={{
+              fontSize: '13px',
+              color: '#455A64',
+              margin: '0',
+              lineHeight: '1.5',
+              fontFamily: 'var(--font-body)'
+            }}>
               How outcomes differ across federal districts.
             </p>
           </div>
@@ -92,8 +287,17 @@ export default function ResultsPage() {
       </div>
 
       {/* Footer */}
-      <div className="border-t py-6 text-center mt-12" style={{ borderColor: 'var(--border-default)' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#6B7280', fontFamily: 'var(--font-body)' }}>
+      <div style={{ borderTop: '1px solid #D5D8DC', paddingTop: '24px', paddingBottom: '24px', textAlign: 'center', marginTop: '48px', background: '#FFFFFF' }}>
+        <p style={{
+          fontSize: '11px',
+          color: '#455A64',
+          maxWidth: '600px',
+          margin: '0 auto',
+          paddingLeft: '24px',
+          paddingRight: '24px',
+          fontFamily: 'var(--font-body)',
+          lineHeight: '1.6'
+        }}>
           All results are based on aggregate data from official federal court records.
           This is not legal advice. © {new Date().getFullYear()} MyCaseValue LLC.
         </p>
