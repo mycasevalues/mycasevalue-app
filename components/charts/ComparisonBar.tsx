@@ -28,7 +28,7 @@ export function ComparisonBar({
           <XAxis
             dataKey="name"
             tick={{ fontSize: 11, fill: '#6B7280', fontFamily: 'Roboto, system-ui, sans-serif' }}
-            axisLine={{ stroke: '#E5E0D8' }}
+            axisLine={{ stroke: '#E5E7EB' }}
             tickLine={false}
           />
           <YAxis
@@ -41,7 +41,7 @@ export function ComparisonBar({
             cursor={{ fill: 'rgba(17,17,17,0.04)' }}
             contentStyle={{
               background: 'rgba(255,255,255,0.95)',
-              border: '1px solid #E5E0D8',
+              border: '1px solid #E5E7EB',
               borderRadius: '10px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               fontSize: '13px',

@@ -185,7 +185,7 @@ export default function OddsPage() {
             disabled={loading || !selectedCaseType}
             className="px-8 py-4 rounded-lg text-base font-semibold transition-all"
             style={{
-              background: selectedCaseType ? '#111111' : '#E5E0D8',
+              background: selectedCaseType ? '#111111' : '#E5E7EB',
               color: selectedCaseType ? '#FFFFFF' : '#6B7280',
               cursor: selectedCaseType && !loading ? 'pointer' : 'default',
             }}

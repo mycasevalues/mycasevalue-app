@@ -66,7 +66,7 @@ export default function BlogPage() {
           {posts.map((post, idx) => (
             <article
               key={post.slug}
-              className="group rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 animate-in fade-in slide-in-from-bottom-4"
+              className="group rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10 animate-in fade-in slide-in-from-bottom-4"
               style={{
                 borderColor: 'var(--border-default)',
                 background: '#FFFFFF',
@@ -94,7 +94,7 @@ export default function BlogPage() {
                     className="block group/link"
                   >
                     <h2
-                      className="text-2xl sm:text-3xl font-display font-bold mb-3 transition-colors group-hover/link:text-indigo-400"
+                      className="text-2xl sm:text-3xl font-display font-bold mb-3 transition-colors group-hover/link:text-violet-500"
                       style={{ color: '#111111' }}
                     >
                       {post.title}
@@ -153,7 +153,7 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             Ready to analyze your case?
           </h2>

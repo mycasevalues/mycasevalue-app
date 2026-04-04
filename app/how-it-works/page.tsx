@@ -129,13 +129,13 @@ export default function HowItWorksPage() {
       <div className="max-w-5xl mx-auto px-6 py-16">
         <div className="relative">
           {/* Desktop vertical line connecting steps */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-24 bottom-0 w-1 bg-gradient-to-b from-transparent via-indigo-500/30 to-transparent" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-24 bottom-0 w-1 bg-gradient-to-b from-transparent via-violet-500/30 to-transparent" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
                 {/* Card */}
-                <div className="rounded-2xl border p-8 h-full transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 animate-in fade-in slide-in-from-bottom-4"
+                <div className="rounded-2xl border p-8 h-full transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10 animate-in fade-in slide-in-from-bottom-4"
                   style={{
                     borderColor: 'var(--border-default)',
                     background: '#FFFFFF',
@@ -169,7 +169,7 @@ export default function HowItWorksPage() {
           </div>
 
           {/* Mobile connecting line (vertical) */}
-          <div className="md:hidden absolute left-7 top-32 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500/30 to-transparent" />
+          <div className="md:hidden absolute left-7 top-32 bottom-0 w-0.5 bg-gradient-to-b from-violet-500/30 to-transparent" />
         </div>
       </div>
 
@@ -286,7 +286,7 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             Ready to see your odds?
           </h2>

@@ -219,7 +219,7 @@ export default function TrendsPage() {
                 <a
                   key={t.nos}
                   href={`/nos/${t.nos}`}
-                  className="block p-4 border transition-all hover:shadow-lg hover:shadow-indigo-500/5"
+                  className="block p-4 border transition-all hover:shadow-lg hover:shadow-violet-500/5"
                   style={{
                     borderColor: 'var(--border-default)',
                     background: '#FFFFFF',

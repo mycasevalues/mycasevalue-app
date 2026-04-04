@@ -63,7 +63,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
           }}>
             <div style={{
               width: 64, height: 64, borderRadius: '50%',
-              background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
+              background: '#8B5CF6',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               margin: '0 auto 20px',
             }}>
@@ -79,7 +79,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
               onClick={() => { this.setState({ hasError: false }); window.location.reload(); }}
               style={{
                 padding: '12px 32px',
-                background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)',
+                background: '#8B5CF6',
                 color: 'white',
                 border: 'none',
                 borderRadius: 12,

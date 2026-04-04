@@ -45,7 +45,7 @@ export async function GET(request: NextRequest) {
             flexDirection: 'column',
             width: '1200px',
             height: '630px',
-            background: 'linear-gradient(135deg, #F9FAFB 0%, #1a1f3a 100%)',
+            background: '#F9FAFB',
             color: '#111827',
             fontFamily: '"Outfit", system-ui, sans-serif',
             padding: '60px',
@@ -81,10 +81,7 @@ export async function GET(request: NextRequest) {
                 fontSize: '32px',
                 fontWeight: '700',
                 letterSpacing: '-0.5px',
-                background: 'linear-gradient(90deg, #111111 0%, #7C3AED 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
+                color: '#111111',
               }}
             >
               MyCaseValue
@@ -301,7 +298,7 @@ export async function GET(request: NextRequest) {
             flexDirection: 'column',
             width: '1200px',
             height: '630px',
-            background: 'linear-gradient(135deg, #F9FAFB 0%, #1a1f3a 100%)',
+            background: '#F9FAFB',
             color: '#111827',
             fontFamily: 'system-ui, sans-serif',
             padding: '60px',

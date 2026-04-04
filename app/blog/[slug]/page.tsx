@@ -206,7 +206,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
       {/* CTA Section */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
+        <section className="text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             See real case data for your situation
           </h2>
@@ -235,7 +235,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
               <a
                 key={relatedPost.slug}
                 href={`/blog/${relatedPost.slug}`}
-                className="group rounded-xl border p-6 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10"
+                className="group rounded-xl border p-6 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/10"
                 style={{
                   borderColor: 'var(--border-default)',
                   background: '#FFFFFF',
@@ -252,7 +252,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                   >
                     {relatedPost.category}
                   </span>
-                  <h3 className="text-base font-display font-bold leading-tight group-hover:text-indigo-400 transition-colors" style={{ color: '#111111' }}>
+                  <h3 className="text-base font-display font-bold leading-tight group-hover:text-violet-500 transition-colors" style={{ color: '#111111' }}>
                     {relatedPost.title}
                   </h3>
                   <p className="text-sm leading-relaxed flex-1" style={{ color: '#6B7280' }}>

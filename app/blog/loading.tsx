@@ -18,7 +18,7 @@ export default function BlogLoading() {
       <div className="max-w-5xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 gap-8">
           {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="rounded-2xl border p-8" style={{ borderColor: 'var(--border-default)', background: 'rgba(25, 32, 56, 0.4)' }}>
+            <div key={i} className="rounded-2xl border p-8" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
               <div className="flex flex-col gap-4">
                 <div className="h-6 w-24 rounded animate-pulse" style={{ background: 'rgba(17,17,17,0.1)' }} />
                 <div className="space-y-2">

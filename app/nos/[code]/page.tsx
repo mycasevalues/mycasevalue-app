@@ -194,7 +194,7 @@ export default async function NOSPage({ params }: PageProps) {
             <span className="px-3 py-1 rounded-full text-[11px] font-bold" style={{ background: 'rgba(17,17,17,0.12)', color: '#8B5CF6', border: '1px solid rgba(17,17,17,0.2)' }}>
               NOS {code}
             </span>
-            <span className="px-3 py-1 rounded-full text-[11px] font-bold" style={{ background: 'rgba(13,148,136,0.12)', color: '#5EEAD4', border: '1px solid rgba(13,148,136,0.2)' }}>
+            <span className="px-3 py-1 rounded-full text-[11px] font-bold" style={{ background: 'rgba(13,148,136,0.12)', color: '#0D9488', border: '1px solid rgba(13,148,136,0.2)' }}>
               {nosInfo.category}
             </span>
           </div>
@@ -214,7 +214,7 @@ export default async function NOSPage({ params }: PageProps) {
             { label: 'Win + Settle Rate', value: `${winRate}%`, color: '#0D9488', icon: '' },
             { label: 'Median Duration', value: `${medianDuration}mo`, color: '#111111', icon: '' },
             { label: 'Settlement Rate', value: `${settleRate}%`, color: '#8B5CF6', icon: '' },
-            { label: 'Outcomes Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#5EEAD4', icon: '' },
+            { label: 'Outcomes Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#0D9488', icon: '' },
           ].map((stat, i) => (
             <div key={i} className="rounded-xl p-5 text-center" style={{
               background: '#FFFFFF',
@@ -235,7 +235,7 @@ export default async function NOSPage({ params }: PageProps) {
       {/* Outcome Distribution */}
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#FFFFFF', border: '1px solid #E5E0D8' }}>
+          <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB' }}>
             <h2 className="text-xl font-bold mb-6">Outcome Distribution</h2>
             <div className="space-y-4">
               {outcomes.map((o, i) => (
@@ -246,7 +246,7 @@ export default async function NOSPage({ params }: PageProps) {
                       {o.value}%
                     </span>
                   </div>
-                  <div style={{ height: '24px', borderRadius: '8px', background: '#E5E0D8', overflow: 'hidden' }}>
+                  <div style={{ height: '24px', borderRadius: '8px', background: '#E5E7EB', overflow: 'hidden' }}>
                     <div style={{
                       height: '100%', borderRadius: '8px',
                       background: o.color,
@@ -264,7 +264,7 @@ export default async function NOSPage({ params }: PageProps) {
       {/* What to know */}
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-5xl mx-auto">
-          <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#FFFFFF', border: '1px solid #E5E0D8' }}>
+          <div className="rounded-2xl p-6 sm:p-8" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB' }}>
             <h2 className="text-xl font-bold mb-4">What You Should Know</h2>
             <div className="space-y-4" style={{ fontSize: '14px', color: '#6B7280', lineHeight: 1.8 }}>
               <p>
@@ -293,7 +293,7 @@ export default async function NOSPage({ params }: PageProps) {
               {relatedCodes.map((rel) => (
                 <Link key={rel.code} href={`/nos/${rel.code}`}
                   className="rounded-xl p-4 transition-all hover:scale-[1.02]"
-                  style={{ background: '#FFFFFF', border: '1px solid #E5E0D8' }}>
+                  style={{ background: '#FFFFFF', border: '1px solid #E5E7EB' }}>
                   <span className="text-[11px] font-bold" style={{ color: '#9CA3AF' }}>NOS {rel.code}</span>
                   <div className="text-[14px] font-semibold mt-1" style={{ color: '#111827' }}>{rel.label}</div>
                 </Link>
@@ -316,7 +316,7 @@ export default async function NOSPage({ params }: PageProps) {
       </section>
 
       {/* Disclaimer */}
-      <section className="border-t px-4 sm:px-6 lg:px-8 py-12" style={{ borderColor: '#E5E0D8', background: '#FFFFFF' }}>
+      <section className="border-t px-4 sm:px-6 lg:px-8 py-12" style={{ borderColor: '#E5E7EB', background: '#FFFFFF' }}>
         <div className="max-w-3xl mx-auto">
           <h3 className="font-semibold mb-4 text-[14px]" style={{ color: '#111827' }}>Legal Disclaimer</h3>
           <p className="text-[13px] leading-relaxed" style={{ color: '#9CA3AF' }}>

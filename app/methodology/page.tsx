@@ -110,7 +110,7 @@ export default function MethodologyPage() {
               ].map((s, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-sm font-data font-bold"
-                    style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)', color: '#fff' }}>
+                    style={{ background: '#8B5CF6', color: '#fff' }}>
                     {s.step}
                   </div>
                   <div>

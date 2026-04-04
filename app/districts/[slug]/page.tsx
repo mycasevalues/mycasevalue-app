@@ -195,7 +195,7 @@ export default async function DistrictPage({ params }: PageProps) {
               className="px-3 py-1 rounded-full text-xs font-bold"
               style={{
                 background: 'rgba(13,148,136,0.12)',
-                color: '#5EEAD4',
+                color: '#0D9488',
                 border: '1px solid rgba(13,148,136,0.2)',
               }}
             >

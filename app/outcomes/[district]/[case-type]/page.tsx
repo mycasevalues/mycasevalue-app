@@ -308,7 +308,7 @@ export default async function OutcomesPage({
                   <div style={{
                     height: '12px',
                     borderRadius: '6px',
-                    background: '#E5E0D8',
+                    background: '#E5E7EB',
                     overflow: 'hidden',
                   }}>
                     <div style={{

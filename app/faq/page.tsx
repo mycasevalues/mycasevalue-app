@@ -480,7 +480,7 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
+        <div className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             Still have questions?
           </h2>

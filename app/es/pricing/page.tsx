@@ -106,7 +106,7 @@ export default function SpanishPricingPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
 
           {/* Single Report Card */}
-          <div className="rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
+          <div className="rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/20"
             style={{
               borderColor: 'var(--border-default)',
               background: '#FFFFFF',
@@ -308,7 +308,7 @@ export default function SpanishPricingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)' }}>
+        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: 'var(--border-default)', background: '#FFFFFF' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#111111' }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
