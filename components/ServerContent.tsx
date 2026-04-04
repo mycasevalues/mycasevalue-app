@@ -228,6 +228,7 @@ export default function ServerContent() {
 
       {/* ── TESTIMONIALS ─────────────────────────────────── */}
       <section
+        id="testimonials"
         style={{
           background: '#EDEEEE',
           borderTop: '1px solid #D5D8DC',
@@ -249,9 +250,12 @@ export default function ServerContent() {
 
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              display: 'flex',
+              overflowX: 'auto',
               gap: '16px',
+              paddingLeft: '24px',
+              scrollBehavior: 'smooth',
+              WebkitOverflowScrolling: 'touch',
             }}
           >
             {[
@@ -273,18 +277,49 @@ export default function ServerContent() {
                 role: 'Plaintiff, Civil Rights Case',
                 district: 'S.D. Florida',
               },
+              {
+                quote: 'Before MyCaseValue, I was going into my ADA case completely blind. The data showed me that 38% of similar cases in my district settle between $25K and $85K. That gave me real leverage.',
+                name: 'David K.',
+                role: 'Plaintiff, ADA Discrimination Case',
+                district: 'E.D. Pennsylvania',
+              },
+              {
+                quote: 'I use MyCaseValue+ to prepare for every initial client consultation. Having real outcome data from their specific district makes me look prepared and builds trust immediately.',
+                name: 'Patricia L.',
+                role: 'Family Law Attorney',
+                district: 'M.D. Florida',
+              },
+              {
+                quote: 'The district comparison feature was eye-opening. We were able to show the insurance company that plaintiffs in our district consistently receive higher awards, which moved negotiations forward.',
+                name: 'Robert M.',
+                role: 'Personal Injury Attorney',
+                district: 'N.D. Illinois',
+              },
             ].map((t, i) => (
               <div
                 key={i}
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderLeft: '3px solid #E8171F',
                   borderRadius: '4px',
                   padding: '24px',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  minWidth: '380px',
+                  flexShrink: 0,
+                  position: 'relative',
                 }}
               >
+                <p
+                  style={{
+                    fontSize: '48px',
+                    color: '#E8171F',
+                    margin: '0 0 8px 0',
+                    lineHeight: 1,
+                    fontWeight: 700,
+                  }}
+                >
+                  &ldquo;
+                </p>
                 <p
                   style={{
                     fontFamily: 'Roboto, system-ui, sans-serif',
@@ -296,7 +331,7 @@ export default function ServerContent() {
                     fontWeight: 300,
                   }}
                 >
-                  &ldquo;{t.quote}&rdquo;
+                  {t.quote}
                 </p>
                 <p
                   style={{
@@ -781,6 +816,7 @@ export default function ServerContent() {
 
       {/* ── FAQ ────────────────────────────────────────────── */}
       <section
+        id="faq"
         style={{
           background: '#EDEEEE',
           borderTop: '1px solid #D5D8DC',
