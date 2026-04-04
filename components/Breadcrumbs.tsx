@@ -85,12 +85,6 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                         color: '#006997',
                         fontFamily: 'var(--font-body)',
                       }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.textDecoration = 'underline';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.textDecoration = 'none';
-                      }}
                       title={item.label}
                       aria-current={isLast ? 'page' : undefined}
                     >
@@ -149,12 +143,6 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                     textDecoration: 'none',
                     fontFamily: 'var(--font-body)',
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.textDecoration = 'underline';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.textDecoration = 'none';
-                  }}
                 >
                   {item.label}
                 </a>
@@ -164,11 +152,10 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         })}
       </nav>
 
-      <style jsx>{`
+      <style>{`
         .breadcrumbs-container {
           font-family: var(--font-body);
         }
-
         .breadcrumbs-link:hover {
           text-decoration: underline;
         }

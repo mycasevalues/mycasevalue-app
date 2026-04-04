@@ -88,6 +88,25 @@ export default function NOSIndexPage() {
         .nos-card:hover .nos-card-arrow {
           transform: translateX(4px);
         }
+        .nos-back-link {
+          color: #E8171F;
+          text-decoration: none;
+          font-size: 14px;
+          display: inline-block;
+          margin-bottom: 16px;
+          transition: color 0.2s ease;
+        }
+        .nos-back-link:hover {
+          color: #C21119;
+        }
+        .nos-breadcrumb-link {
+          color: #006997;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        .nos-breadcrumb-link:hover {
+          color: #004A6A;
+        }
       `}</style>
 
       {/* Header */}
@@ -102,16 +121,7 @@ export default function NOSIndexPage() {
           <div style={{ marginBottom: '32px' }}>
             <Link
               href="/"
-              style={{
-                color: '#E8171F',
-                textDecoration: 'none',
-                fontSize: '14px',
-                display: 'inline-block',
-                marginBottom: '16px',
-                transition: 'color 0.2s ease',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#C21119')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#E8171F')}
+              className="nos-back-link"
             >
               ← Back to Home
             </Link>
@@ -169,13 +179,7 @@ export default function NOSIndexPage() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link
             href="/"
-            style={{
-              color: '#006997',
-              textDecoration: 'none',
-              transition: 'color 0.2s ease',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#004A6A')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#006997')}
+            className="nos-breadcrumb-link"
           >
             Home
           </Link>

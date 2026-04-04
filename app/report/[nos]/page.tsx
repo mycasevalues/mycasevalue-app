@@ -272,7 +272,14 @@ export default async function ReportPage({
             Overview of case outcomes
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px' }} className="win-rate-grid">
-            <style>{`.win-rate-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 12px; } }`}</style>
+            <style>{`
+              .win-rate-grid { grid-template-columns: repeat(3, 1fr); }
+              @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 12px; } }
+              .report-cta-btn { display: inline-block; padding: 14px 36px; background: #E8171F; color: #fff; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 16px; font-family: var(--font-display); transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(232,23,31,0.2); }
+              .report-cta-btn:hover { background: #C51118; box-shadow: 0 4px 12px rgba(232,23,31,0.3); }
+              .report-red-link { font-size: 14px; font-weight: 500; color: #E8171F; text-decoration: none; font-family: var(--font-body); transition: color 0.2s ease; }
+              .report-red-link:hover { color: #C51118; }
+            `}</style>
             <div style={{ textAlign: 'center', padding: '20px', background: '#F9FAFB', borderRadius: '8px' }}>
               <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '6px' }}>
                 {winRate}%
@@ -501,22 +508,7 @@ export default async function ReportPage({
             }}>
               Starting at <strong style={{ color: '#111111' }}>$5.99</strong> for a single report
             </p>
-            <a href="/pricing" style={{
-              display: 'inline-block',
-              padding: '14px 36px',
-              background: '#E8171F',
-              color: '#fff',
-              borderRadius: '4px',
-              textDecoration: 'none',
-              fontWeight: 700,
-              fontSize: '16px',
-              fontFamily: 'var(--font-display)',
-              transition: 'all 0.2s ease',
-              boxShadow: '0 2px 8px rgba(232, 23, 31, 0.2)',
-            }}
-            onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.background = '#C51118'; (e.target as HTMLAnchorElement).style.boxShadow = '0 4px 12px rgba(232, 23, 31, 0.3)'; }}
-            onMouseLeave={(e) => { (e.target as HTMLAnchorElement).style.background = '#E8171F'; (e.target as HTMLAnchorElement).style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.2)'; }}
-            >
+            <a href="/pricing" className="report-cta-btn">
               See Pricing →
             </a>
           </section>
@@ -554,9 +546,7 @@ export default async function ReportPage({
                       href={op.absolute_url ? `https://www.courtlistener.com${op.absolute_url}` : '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 14, fontWeight: 500, color: '#E8171F', textDecoration: 'none', fontFamily: 'var(--font-body)', transition: 'color 0.2s ease' }}
-                      onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.color = '#C51118'; }}
-                      onMouseLeave={(e) => { (e.target as HTMLAnchorElement).style.color = '#E8171F'; }}
+                      className="report-red-link"
                     >
                       {op.caseName || 'Federal Court Opinion'}
                     </a>
@@ -592,9 +582,7 @@ export default async function ReportPage({
                       href={doc.absolute_url ? `https://www.courtlistener.com${doc.absolute_url}` : '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 14, fontWeight: 500, color: '#E8171F', textDecoration: 'none', fontFamily: 'var(--font-body)', transition: 'color 0.2s ease' }}
-                      onMouseEnter={(e) => { (e.target as HTMLAnchorElement).style.color = '#C51118'; }}
-                      onMouseLeave={(e) => { (e.target as HTMLAnchorElement).style.color = '#E8171F'; }}
+                      className="report-red-link"
                     >
                       {doc.caseName || doc.docketNumber || 'Federal Court Docket'}
                     </a>
@@ -643,17 +631,12 @@ export default async function ReportPage({
                   <Link
                     key={i}
                     href={`/report/${t.nos}`}
+                    className="report-red-link"
                     style={{
-                      fontSize: 14,
-                      color: '#E8171F',
-                      textDecoration: 'none',
                       padding: '10px 0',
                       borderBottom: i < related.length - 1 ? '1px solid var(--border-default)' : 'none',
-                      fontFamily: 'var(--font-body)',
-                      transition: 'color 0.2s ease',
+                      display: 'block',
                     }}
-                    onMouseEnter={(e) => { (e.target as HTMLElement).style.color = '#C51118'; }}
-                    onMouseLeave={(e) => { (e.target as HTMLElement).style.color = '#E8171F'; }}
                   >
                     {t.label} →
                   </Link>
