@@ -284,6 +284,12 @@ export default function AttorneyPage() {
           textAlign: 'center',
         }}
       >
+        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'left', marginBottom: '16px' }}>
+          <Link href="/dashboard" style={{ fontSize: '13px', color: '#8B5CF6', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+            Dashboard
+          </Link>
+        </div>
         <div
           style={{
             maxWidth: '1000px',
@@ -455,9 +461,16 @@ export default function AttorneyPage() {
             </p>
           </div>
 
+          {/* Beta Banner */}
+          <div style={{ padding: '12px 20px', backgroundColor: '#F0FDF4', borderRadius: '8px', border: '1px solid #BBF7D0' }}>
+            <p style={{ margin: 0, fontSize: '14px', color: '#065F46', fontWeight: 600 }}>
+              Beta Access — All attorney features are currently free during our preview period.
+            </p>
+          </div>
+
           {/* CTA Button */}
           <Link
-            href="/pricing#attorney"
+            href="/dashboard"
             style={{
               display: 'inline-block',
               padding: '16px 40px',
@@ -475,7 +488,7 @@ export default function AttorneyPage() {
             }}
             className="attorney-cta-link"
           >
-            See Attorney Mode Pricing →
+            Go to Dashboard →
           </Link>
 
           <p
@@ -486,7 +499,7 @@ export default function AttorneyPage() {
               fontFamily: 'var(--font-body)',
             }}
           >
-            No credit card required. Cancel anytime.
+            No credit card required during beta.
           </p>
         </div>
       </section>
