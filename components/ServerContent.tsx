@@ -6,6 +6,7 @@
  */
 
 import NewsletterSignup from './ui/NewsletterSignup';
+import UpgradeBanner from './UpgradeBanner';
 
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
@@ -814,6 +815,9 @@ export default function ServerContent() {
           </p>
         </div>
       </section>
+
+      {/* ── UPGRADE BANNER (Lexis+ Protégé style) ──────────── */}
+      <UpgradeBanner />
 
       {/* ── FAQ ────────────────────────────────────────────── */}
       <section

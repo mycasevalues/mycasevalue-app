@@ -1026,3 +1026,87 @@ button:disabled,
     page-break-inside: avoid !important;
   }
 }
+
+/* ── LEXIS+ STYLE HOVER EFFECTS ───────────────────── */
+.tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border-color: rgba(232,23,31,0.3) !important;
+}
+
+.tool-card {
+  transition: all 200ms ease;
+}
+
+/* Upgrade banner responsive */
+@media (max-width: 768px) {
+  .upgrade-banner-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .upgrade-banner-grid > div:last-child {
+    display: none;
+  }
+}
+
+/* Trusted section responsive */
+@media (max-width: 768px) {
+  .trusted-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Testimonial card hover */
+.testimonial-card {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Link underline animation */
+.nav-link-animated {
+  position: relative;
+}
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #E8171F;
+  transition: all 200ms ease;
+  transform: translateX(-50%);
+}
+.nav-link-animated:hover::after {
+  width: 100%;
+}
+
+/* Button press effect */
+a[style*="background: rgb(232, 23, 31)"]:active,
+a[style*="background: #E8171F"]:active {
+  transform: scale(0.98);
+}
+
+/* Smooth page transitions */
+.server-hero-content section,
+.server-content-seo section {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card entrance animations for intersection observer */
+.card-animate {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.card-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
