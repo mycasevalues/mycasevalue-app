@@ -50,183 +50,470 @@ const jsonLd = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+      <style>{`
+        .about-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.375rem 0.75rem;
+          border-radius: 9999px;
+          font-size: 0.6875rem;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          background: #FFF3F4;
+          color: #E8171F;
+        }
+
+        .mission-hero h1 {
+          font-family: var(--font-display);
+          font-size: clamp(2rem, 4vw, 3rem);
+          font-weight: 700;
+          letter-spacing: -1.5px;
+          color: #212529;
+          line-height: 1.2;
+        }
+
+        .mission-hero p {
+          font-family: var(--font-body);
+          font-size: 1.125rem;
+          color: #666666;
+          line-height: 1.8;
+        }
+
+        .timeline-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          position: relative;
+          padding: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+          .timeline-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+          }
+
+          .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #D5D8DC;
+            z-index: 0;
+          }
+        }
+
+        .timeline-step {
+          position: relative;
+          text-align: center;
+          z-index: 1;
+        }
+
+        .step-number {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: #E8171F;
+          color: #FFFFFF;
+          font-family: var(--font-display);
+          font-weight: 700;
+          font-size: 1rem;
+          margin: 0 auto 1rem;
+          box-shadow: 0 2px 8px rgba(232, 23, 31, 0.2);
+        }
+
+        .step-title {
+          font-family: var(--font-display);
+          font-size: 1rem;
+          font-weight: 600;
+          color: #212529;
+          margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          color: #666666;
+          line-height: 1.6;
+        }
+
+        .data-sources-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .data-sources-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        .source-card {
+          padding: 1.5rem;
+          border-radius: 0.75rem;
+          border: 1px solid #D5D8DC;
+          background: #FFFFFF;
+          transition: all 0.3s ease;
+        }
+
+        .source-card:hover {
+          border-color: #E8171F;
+          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.1);
+        }
+
+        .source-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+          background: #F5F5F5;
+        }
+
+        .source-title {
+          font-family: var(--font-display);
+          font-size: 0.9375rem;
+          font-weight: 600;
+          color: #212529;
+          margin-bottom: 0.5rem;
+        }
+
+        .source-description {
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          color: #666666;
+          line-height: 1.6;
+        }
+
+        .stats-bar {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1.5rem;
+          padding: 2rem;
+          border-radius: 0.75rem;
+          border: 1px solid #D5D8DC;
+          background: #FFFFFF;
+        }
+
+        @media (min-width: 768px) {
+          .stats-bar {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+          }
+        }
+
+        .stat-item {
+          text-align: center;
+        }
+
+        .stat-value {
+          font-family: var(--font-display);
+          font-size: 2rem;
+          font-weight: 700;
+          color: #E8171F;
+          line-height: 1.2;
+        }
+
+        .stat-label {
+          font-family: var(--font-body);
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          color: #666666;
+          margin-top: 0.75rem;
+        }
+
+        .team-box {
+          padding: 2rem;
+          border-radius: 0.75rem;
+          border: 1px solid #D5D8DC;
+          background: #FFFFFF;
+        }
+
+        .team-box h3 {
+          font-family: var(--font-display);
+          font-size: 0.9375rem;
+          font-weight: 600;
+          color: #212529;
+        }
+
+        .team-box ul {
+          list-style: none;
+          padding: 0;
+          margin: 1rem 0 0 0;
+        }
+
+        .team-box li {
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          color: #666666;
+          line-height: 1.8;
+          margin-bottom: 0.75rem;
+        }
+
+        .team-box strong {
+          color: #212529;
+          font-weight: 600;
+        }
+
+        .cta-section {
+          text-align: center;
+          padding: 3rem 2rem;
+          border-radius: 0.75rem;
+          border: 1px solid #D5D8DC;
+          background: linear-gradient(135deg, #FFFFFF 0%, #F9F9F9 100%);
+        }
+
+        .cta-heading {
+          font-family: var(--font-display);
+          font-size: clamp(1.5rem, 3vw, 2rem);
+          font-weight: 700;
+          color: #212529;
+          margin-bottom: 1rem;
+        }
+
+        .cta-text {
+          font-family: var(--font-body);
+          font-size: 1rem;
+          color: #666666;
+          margin-bottom: 1.5rem;
+          max-width: 28rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .cta-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 0.75rem;
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          font-weight: 600;
+          background: #E8171F;
+          color: #FFFFFF;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+          background: #C41219;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.3);
+        }
+
+        .section-heading {
+          font-family: var(--font-display);
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #212529;
+          margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          color: #666666;
+          margin-bottom: 1.5rem;
+          line-height: 1.6;
+        }
+
+        @media (max-width: 640px) {
+          .mission-hero h1 {
+            font-size: 1.75rem;
+          }
+
+          .mission-hero p {
+            font-size: 1rem;
+          }
+
+          .timeline-container {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+
+          .timeline-container::before {
+            display: none;
+          }
+
+          .cta-section {
+            padding: 2rem 1.5rem;
+          }
+        }
+      `}</style>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E',  }}>
-        <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: '#E8171F' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            ABOUT US
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
+        <div className="max-w-4xl mx-auto px-6 py-12 sm:py-16">
+          <div className="about-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            ABOUT
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
-            Democratizing Federal Court Data
-          </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#999999' }}>
-            MyCaseValue puts outcome data from 5.1M+ federal cases at your fingertips, making real court outcomes accessible to everyone.
-          </p>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-3xl mx-auto px-6 py-12">
-        <div className="prose max-w-none space-y-12">
+      {/* Mission Hero Section */}
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#FFFFFF' }}>
+        <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
+          <div className="mission-hero">
+            <h1>Democratizing Access to Federal Court Data</h1>
+            <p>
+              Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys.
+              MyCaseValue makes outcome data—win rates, settlement ranges, timelines, and recovery patterns—accessible to everyone making
+              informed decisions about their legal situation.
+            </p>
+          </div>
+        </div>
+      </div>
 
-          {/* Mission Section */}
-          <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
-              Our Mission
-            </h2>
-            <div className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
-              <p className="text-base leading-relaxed m-0" style={{ color: '#999999' }}>
-                Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys. We believe outcome data—win rates, settlement ranges, timelines, and recovery patterns—should be accessible to everyone making informed decisions about their legal situation.
-              </p>
-              <p className="text-base leading-relaxed m-0 mt-4" style={{ color: '#999999' }}>
-                MyCaseValue makes real federal court outcomes transparent and searchable, so you can base decisions on facts, not fear.
-              </p>
-            </div>
-          </section>
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto px-6 py-16">
+        <div className="space-y-20">
 
-          {/* How It Works Section */}
+          {/* How It Works Section - Timeline */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
-              How It Works
-            </h2>
-            <div className="space-y-4">
+            <h2 className="section-heading">How It Works</h2>
+            <div className="timeline-container">
               {[
                 {
-                  step: '01',
+                  step: '1',
                   title: 'Search',
                   description: 'Select your case type from 84 federal case types. Get instant access to historical outcome data specific to your legal scenario.',
-                  icon: '',
                 },
                 {
-                  step: '02',
+                  step: '2',
                   title: 'Review',
                   description: 'Explore win rates, settlement percentages, recovery ranges, and case timelines derived from 5.1M+ real federal cases.',
-                  icon: '',
                 },
                 {
-                  step: '03',
+                  step: '3',
                   title: 'Research',
                   description: 'Use data-driven insights to make informed decisions. Share findings with attorneys or use them for your own evaluation.',
-                  icon: '',
                 },
               ].map((item) => (
-                <div key={item.step} className="flex gap-4 p-5 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl"
-                    style={{ background: '#FFFFFF' }}>
-                    {item.icon}
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-base font-semibold m-0 mb-2" style={{ color: '#212529' }}>
-                      {item.step}. {item.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed m-0" style={{ color: '#999999' }}>
-                      {item.description}
-                    </p>
-                  </div>
+                <div key={item.step} className="timeline-step">
+                  <div className="step-number">{item.step}</div>
+                  <h3 className="step-title">{item.title}</h3>
+                  <p className="step-description">{item.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Data Sources Section */}
+          {/* Data Sources Section - Cards Grid */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
-              Our Data Sources
-            </h2>
-            <p className="text-sm mb-6 leading-relaxed" style={{ color: '#999999' }}>
+            <h2 className="section-heading">Our Data Sources</h2>
+            <p className="section-description">
               We aggregate outcome data from official federal court records, ensuring accuracy and transparency.
             </p>
-            <div className="space-y-4">
+            <div className="data-sources-grid">
               {[
                 {
-                  name: 'Federal Judicial Center (FJC) Integrated Database',
-                  description: 'The official source for federal civil case statistics since 1970. Covers case type, disposition, and duration for every federal civil case.',
-                  color: '#212529',
+                  name: 'Federal Judicial Center',
+                  description: 'The official source for federal civil case statistics since 1970. Covers case type, disposition, and duration.',
+                  icon: (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#212529" strokeWidth="2">
+                      <path d="M12 3v18M3 12h18M3 6h18M3 18h18M6 3v18M18 3v18"/>
+                    </svg>
+                  ),
                 },
                 {
-                  name: 'CourtListener (Free Law Project)',
-                  description: 'Aggregates federal judicial opinions, oral arguments, and PACER filings. Provides supplementary data on case outcomes and judicial reasoning.',
-                  color: '#07874A',
+                  name: 'CourtListener',
+                  description: 'Aggregates federal judicial opinions, oral arguments, and PACER filings for comprehensive case data.',
+                  icon: (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#07874A" strokeWidth="2">
+                      <path d="M3 12L9 6l6 6 6-6M3 12l6-6 6 6 6-6v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V12z"/>
+                    </svg>
+                  ),
                 },
                 {
-                  name: 'PACER (Public Access to Court Electronic Records)',
-                  description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
-                  color: '#C0C4C8',
+                  name: 'PACER',
+                  description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and filings are sourced from PACER.',
+                  icon: (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#666666" strokeWidth="2">
+                      <path d="M20 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"/>
+                      <path d="M8 9h8M8 13h8"/>
+                    </svg>
+                  ),
                 },
               ].map((source, i) => (
-                <div key={i} className="p-5 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
-                  <h3 className="text-base font-semibold m-0 mb-2" style={{ color: '#212529' }}>
-                    {source.name}
-                  </h3>
-                  <p className="text-sm leading-relaxed m-0" style={{ color: '#999999' }}>
-                    {source.description}
-                  </p>
+                <div key={i} className="source-card">
+                  <div className="source-icon">{source.icon}</div>
+                  <h3 className="source-title">{source.name}</h3>
+                  <p className="source-description">{source.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Team Section */}
+          {/* Coverage Stats */}
           <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
-              Team & Vision
-            </h2>
-            <div className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
-              <p className="text-base leading-relaxed m-0" style={{ color: '#999999' }}>
-                MyCaseValue is built by legal researchers, data engineers, and technologists who believe transparency drives better decisions. We are not a law firm. We do not provide legal advice. We are a data platform.
+            <h2 className="section-heading">What We Cover</h2>
+            <div className="stats-bar">
+              {[
+                { value: '5.1M+', label: 'Federal cases' },
+                { value: '84', label: 'Case types' },
+                { value: '94', label: 'Federal districts' },
+                { value: '50+ yrs', label: 'Historical data' },
+              ].map((stat, i) => (
+                <div key={i} className="stat-item">
+                  <div className="stat-value">{stat.value}</div>
+                  <div className="stat-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Team & Vision Section */}
+          <section>
+            <h2 className="section-heading">Team & Vision</h2>
+            <div className="team-box">
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#666666', margin: '0 0 1rem 0' }}>
+                MyCaseValue is built by legal researchers, data engineers, and technologists who believe transparency drives better decisions.
+                We are not a law firm. We do not provide legal advice. We are a data platform.
               </p>
-              <p className="text-base leading-relaxed m-0 mt-4" style={{ color: '#999999' }}>
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#666666', margin: '0 0 1rem 0' }}>
                 Our team is committed to:
               </p>
-              <ul className="mt-4 space-y-2 text-sm" style={{ paddingLeft: '1.5rem', color: '#999999' }}>
-                <li><strong style={{ color: '#212529' }}>Accuracy:</strong> All data comes from official public records with rigorous quality checks.</li>
-                <li><strong style={{ color: '#212529' }}>Transparency:</strong> Our methodology is fully documented and open to scrutiny.</li>
-                <li><strong style={{ color: '#212529' }}>Privacy:</strong> We never sell data or track individual research behavior.</li>
-                <li><strong style={{ color: '#212529' }}>Accessibility:</strong> Federal court data belongs to the public; we make it accessible.</li>
+              <ul>
+                <li><strong>Accuracy:</strong> All data comes from official public records with rigorous quality checks.</li>
+                <li><strong>Transparency:</strong> Our methodology is fully documented and open to scrutiny.</li>
+                <li><strong>Privacy:</strong> We never sell data or track individual research behavior.</li>
+                <li><strong>Accessibility:</strong> Federal court data belongs to the public; we make it accessible.</li>
               </ul>
             </div>
           </section>
 
-          {/* Coverage Section */}
-          <section>
-            <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
-              What We Cover
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {[
-                { v: '5.1M+', l: 'Federal cases', c: '#212529' },
-                { v: '84', l: 'Case types', c: '#07874A' },
-                { v: '94', l: 'Federal districts', c: '#CC1019' },
-                { v: '50+ yrs', l: 'Historical data', c: '#C0C4C8' },
-              ].map((s, i) => (
-                <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
-                  <div className="text-xl font-display font-extrabold" style={{ color: s.c }}>{s.v}</div>
-                  <div className="text-[11px] font-semibold mt-1" style={{ color: '#999999' }}>{s.l}</div>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* CTA Section */}
-          <section className="text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)',  }}>
-            <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
-              Ready to Research Real Case Outcomes?
-            </h2>
-            <p className="mb-6 max-w-xl mx-auto" style={{ color: '#999999' }}>
-              Access aggregate federal court data for informed decision-making. Free basic reports, premium analytics available.
+          <section className="cta-section">
+            <h2 className="cta-heading">Start Researching Your Case</h2>
+            <p className="cta-text">
+              Access aggregate federal court data for informed decision-making. Free basic reports and premium analytics available.
             </p>
-            <a href="/search"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#E8171F', color: '#FFFFFF' }}>
-              Start Researching
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <a href="/search" className="cta-button">
+              Search Cases
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
             </a>
           </section>
 
