@@ -365,30 +365,114 @@ export default function SiteNav() {
               justifyContent: 'flex-end',
             }}
           >
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="site-nav-sub-link"
-                style={{
-                  padding: '0 16px',
-                  fontSize: '14px',
-                  fontWeight: 400,
-                  color: isActive(link.href) ? '#FFFFFF' : '#E6E6E6',
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
-                  height: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  borderBottom: isActive(link.href) ? '2px solid #E8171F' : '2px solid transparent',
-                  transition: 'all 150ms',
-                  position: 'relative',
-                }}
-                aria-current={isActive(link.href) ? 'page' : undefined}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              // Determine if this link should have a dropdown
+              const hasDropdown = ['Cases', 'Districts', 'Attorney Mode'].includes(link.label);
+
+              if (!hasDropdown) {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="site-nav-sub-link"
+                    style={{
+                      padding: '0 16px',
+                      fontSize: '14px',
+                      fontWeight: 400,
+                      color: isActive(link.href) ? '#FFFFFF' : '#E6E6E6',
+                      textDecoration: 'none',
+                      fontFamily: 'var(--font-body)',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      borderBottom: isActive(link.href) ? '2px solid #E8171F' : '2px solid transparent',
+                      transition: 'all 150ms',
+                      position: 'relative',
+                    }}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+
+              // Render dropdown for Cases, Districts, Attorney Mode
+              let dropdownContent = null;
+              if (link.label === 'Cases') {
+                dropdownContent = (
+                  <>
+                    <div className="nav-dropdown-heading">Browse by Category</div>
+                    <a href="/report/442">Employment</a>
+                    <a href="/report/360">Personal Injury</a>
+                    <a href="/report/440">Civil Rights</a>
+                    <a href="/report/190">Contract</a>
+                    <a href="/report/350">Tort</a>
+                    <div className="nav-dropdown-divider" />
+                    <a href="/cases" className="nav-dropdown-footer">View All Case Types →</a>
+                  </>
+                );
+              } else if (link.label === 'Districts') {
+                dropdownContent = (
+                  <>
+                    <div className="nav-dropdown-heading">Browse by Circuit</div>
+                    <a href="/districts/1st">1st Circuit</a>
+                    <a href="/districts/2nd">2nd Circuit</a>
+                    <a href="/districts/3rd">3rd Circuit</a>
+                    <div className="nav-dropdown-divider" />
+                    <a href="/districts" className="nav-dropdown-footer">View All 94 Districts →</a>
+                  </>
+                );
+              } else if (link.label === 'Attorney Mode') {
+                dropdownContent = (
+                  <>
+                    <div className="nav-dropdown-heading">Attorney Tools</div>
+                    <a href="/attorney/case-predictor">Case Predictor</a>
+                    <a href="/attorney/judge-intelligence">Judge Intelligence</a>
+                    <a href="/attorney/venue-optimizer">Venue Optimizer</a>
+                    <div className="nav-dropdown-divider" />
+                    <a href="/attorney" className="nav-dropdown-footer">View All Tools →</a>
+                  </>
+                );
+              }
+
+              return (
+                <div
+                  key={link.href}
+                  className="nav-dropdown-parent"
+                  style={{
+                    position: 'relative',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Link
+                    href={link.href}
+                    className="site-nav-sub-link"
+                    style={{
+                      padding: '0 16px',
+                      fontSize: '14px',
+                      fontWeight: 400,
+                      color: isActive(link.href) ? '#FFFFFF' : '#E6E6E6',
+                      textDecoration: 'none',
+                      fontFamily: 'var(--font-body)',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      borderBottom: isActive(link.href) ? '2px solid #E8171F' : '2px solid transparent',
+                      transition: 'all 150ms',
+                      position: 'relative',
+                    }}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                  <div className="nav-dropdown">
+                    {dropdownContent}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </nav>
@@ -555,11 +639,59 @@ export default function SiteNav() {
         .site-nav-link:hover { color: #212529 !important; }
         .site-nav-sub-link:hover { color: #FFFFFF !important; }
         .site-nav-mobile-link:hover { background: rgba(0,0,0,0.04) !important; }
+
+        /* CSS-only dropdown menus */
+        .nav-dropdown {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 240px;
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 0 0 4px 4px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+          padding: 16px 0;
+          z-index: 300;
+        }
+        .nav-dropdown-parent:hover .nav-dropdown { display: block; }
+        .nav-dropdown a {
+          display: block;
+          padding: 8px 20px;
+          font-size: 14px;
+          color: #455A64;
+          text-decoration: none;
+          font-family: var(--font-body);
+          transition: all 150ms;
+        }
+        .nav-dropdown a:hover { background: #F8F9FA; color: #212529; }
+        .nav-dropdown-heading {
+          padding: 4px 20px 12px;
+          font-size: 11px;
+          font-weight: 700;
+          color: #999999;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-family: var(--font-body);
+        }
+        .nav-dropdown-divider {
+          height: 1px;
+          background: #D5D8DC;
+          margin: 8px 0;
+        }
+        .nav-dropdown-footer {
+          padding: 12px 20px 4px;
+          font-size: 13px;
+          font-weight: 600;
+          color: #E8171F !important;
+        }
+
         @media (max-width: 768px) {
           .site-nav-sub { display: none !important; }
           .site-nav-auth { display: none !important; }
           .site-nav-hamburger { display: flex !important; }
           .site-nav-mobile-drawer { display: flex !important; }
+          .nav-dropdown { display: none !important; }
         }
       `}} />
     </>
