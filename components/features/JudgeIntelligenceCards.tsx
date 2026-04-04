@@ -2,6 +2,7 @@
 
 import React, { useMemo } from 'react';
 import { Lock } from 'lucide-react';
+import { getAllJudges, type JudgeProfile } from '@/lib/judges';
 
 interface JudgeIntelligenceCardsProps {
   lang: 'en' | 'es';
@@ -21,60 +22,55 @@ interface JudgeData {
   avgTimeToResolutionMonths: number;
   settlementTendency: 'high' | 'medium' | 'low';
   notableTrait: string;
+  district: string;
+  court: string;
 }
 
-// Simple deterministic hash function
-function simpleHash(str: string): number {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    const char = str.charCodeAt(i);
-    hash = (hash << 5) - hash + char;
-    hash = hash & hash; // Convert to 32bit integer
+/**
+ * Convert a JudgeProfile from lib/judges.ts to the JudgeData format used by this component
+ */
+function convertJudgeProfile(judge: JudgeProfile): JudgeData {
+  // Determine settling tendency based on settlement rate
+  let settlementTendency: 'high' | 'medium' | 'low';
+  if (judge.stats.settlementRate >= 65) {
+    settlementTendency = 'high';
+  } else if (judge.stats.settlementRate >= 55) {
+    settlementTendency = 'medium';
+  } else {
+    settlementTendency = 'low';
   }
-  return Math.abs(hash);
-}
 
-// Judge name generation using seed
-const firstNames = [
-  'Margaret', 'Robert', 'Patricia', 'Richard', 'Jennifer', 'Thomas',
-  'Linda', 'James', 'Barbara', 'Michael', 'Elizabeth', 'William',
-  'Susan', 'David', 'Jessica', 'Charles', 'Nancy', 'Joseph',
-  'Karen', 'Christopher', 'Donna', 'Daniel', 'Carol', 'Matthew',
-];
+  // Determine notable trait based on judge characteristics
+  let notableTrait = '';
+  if (judge.stats.plaintiffWinRate > 55) {
+    notableTrait = 'Plaintiff-friendly';
+  } else if (judge.stats.plaintiffWinRate < 50) {
+    notableTrait = 'Defense-leaning';
+  } else if (settlementTendency === 'high') {
+    notableTrait = 'Settlement-focused';
+  } else if (judge.stats.medianDurationMonths <= 20) {
+    notableTrait = 'Expeditious rulings';
+  } else {
+    notableTrait = 'Thorough deliberation';
+  }
 
-const lastNames = [
-  'Anderson', 'Taylor', 'Johnson', 'Williams', 'Brown', 'Miller',
-  'Davis', 'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Gonzalez',
-  'Wilson', 'Moore', 'Jackson', 'Martin', 'Lee', 'Garcia',
-  'Thompson', 'White', 'Harris', 'Sanchez', 'Clark', 'Torres',
-];
-
-function generateJudgeName(seed: number): string {
-  const hash1 = simpleHash(seed.toString() + 'first');
-  const hash2 = simpleHash(seed.toString() + 'last');
-  const firstName = firstNames[hash1 % firstNames.length];
-  const lastName = lastNames[hash2 % lastNames.length];
-  return `Hon. ${firstName} ${lastName}`;
-}
-
-function generateJudgeData(nosCode: string, stateCode: string | undefined, index: number): JudgeData {
-  const seed = simpleHash(nosCode + (stateCode || 'XX') + index.toString());
+  // Determine appointing party from appointedBy string
+  let appointingParty: 'R' | 'D' = 'D'; // default to Democrat
+  if (judge.appointedBy.includes('Reagan') || judge.appointedBy.includes('Bush') || judge.appointedBy.includes('Trump')) {
+    appointingParty = 'R';
+  }
 
   return {
-    name: generateJudgeName(seed),
-    appointmentYear: 1985 + (seed % 40),
-    appointingParty: seed % 2 === 0 ? 'R' : 'D',
-    totalCases: 800 + (seed % 1200),
-    plaintiffWinRate: 30 + (seed % 60),
-    avgTimeToResolutionMonths: 14 + (seed % 28),
-    settlementTendency: ['high', 'medium', 'low'][seed % 3] as 'high' | 'medium' | 'low',
-    notableTrait: [
-      'Plaintiff-friendly',
-      'Defense-leaning',
-      'Settlement-focused',
-      'Trial-oriented',
-      'Expeditious rulings',
-    ][seed % 5],
+    name: judge.name,
+    appointmentYear: judge.appointedYear,
+    appointingParty,
+    totalCases: judge.stats.totalCases,
+    plaintiffWinRate: judge.stats.plaintiffWinRate,
+    avgTimeToResolutionMonths: judge.stats.medianDurationMonths,
+    settlementTendency,
+    notableTrait,
+    district: judge.district,
+    court: judge.court,
   };
 }
 
@@ -234,13 +230,13 @@ export function JudgeIntelligenceCards({
   onUpgrade,
 }: JudgeIntelligenceCardsProps) {
   const judges = useMemo(() => {
-    const numJudges = 4; // DEV MODE: All features unlocked
-    const judgeList: JudgeData[] = [];
-    for (let i = 0; i < numJudges; i++) {
-      judgeList.push(generateJudgeData(nosCode, stateCode, i));
-    }
-    return judgeList;
-  }, [nosCode, stateCode, isPremium]);
+    // Get all real judges and convert to JudgeData format
+    const allRealJudges = getAllJudges();
+    const convertedJudges = allRealJudges.map(convertJudgeProfile);
+
+    // DEV MODE: Show all judges (no locking)
+    return convertedJudges;
+  }, []);
 
   const translations = {
     en: {

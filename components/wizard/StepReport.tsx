@@ -19,6 +19,8 @@ const CaseTimeline = dynamic(() => import('../ui/CaseTimeline'), { ssr: false })
 const CaseTimelineSimulator = dynamic(() => import('../features/CaseTimelineSimulator'), { ssr: false });
 const LitigationCostEstimator = dynamic(() => import('../features/LitigationCostEstimator'), { ssr: false });
 const ShareCard = dynamic(() => import('../features/ShareCard'), { ssr: false });
+const CaseRiskScore = dynamic(() => import('../premium/CaseRiskScore'), { ssr: false });
+const SettlementPressureIndex = dynamic(() => import('../features/SettlementPressureIndex'), { ssr: false });
 
 export function StepReport({
   lang,
@@ -239,10 +241,10 @@ export function StepReport({
         <Reveal>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 data-grid-stagger">
             {[
-              { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: '—', color: '#333333' },
-              { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: '—', color: '#333333' },
-              { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: '—', color: 'var(--accent-secondary, #8B5CF6)' },
-              { label: lang === 'es' ? 'Acuerdo + Victoria' : 'Settle + Win', value: '—', color: '#5EEAD4' },
+              { label: lang === 'es' ? 'Tasa de éxito' : 'Win Rate', value: `${Math.round(result?.wr || 47)}%`, color: '#333333' },
+              { label: lang === 'es' ? 'Casos similares' : 'Similar Cases', value: `${(result?.total || 0).toLocaleString()}`, color: '#333333' },
+              { label: lang === 'es' ? 'Duración típica' : 'Typical Duration', value: `${result?.mo || 10} mo`, color: 'var(--accent-secondary, #8B5CF6)' },
+              { label: lang === 'es' ? 'Acuerdo + Victoria' : 'Settle + Win', value: `${Math.round((result?.sp || 47) + (result?.wr || 47))}%`, color: '#5EEAD4' },
             ].map((m, i) => (
               <div key={i} className="glass-ultra rounded-xl p-4 text-center spotlight-card gpu-accelerate">
                 <div className="text-[10px] font-bold tracking-[2px] uppercase mb-2" style={{ color: 'var(--fg-muted)' }}>{m.label}</div>
@@ -294,11 +296,11 @@ export function StepReport({
               <ShareCard
                 lang={lang}
                 caseType={spec?.d || ''}
-                winRate={50}
-                settlementPct={0}
+                winRate={result?.wr || 50}
+                settlementPct={result?.sp || 0}
                 medianRecovery="—"
-                duration="— months"
-                totalCases={0}
+                duration={`${result?.mo || 10} months`}
+                totalCases={result?.total || 0}
               />
             </div>
           </Reveal>
@@ -314,9 +316,9 @@ export function StepReport({
               lang={lang}
               caseType={spec?.d || ''}
               category={sit?.label || ''}
-              winRate={50}
-              medianDays={300}
-              settlementRate={0}
+              winRate={result?.wr || 50}
+              medianDays={(result?.mo || 10) * 30}
+              settlementRate={result?.sp || 0}
               activeTab={activeReportTab}
               onTabChange={setActiveReportTab}
               isPremium={isPremium}
@@ -327,11 +329,75 @@ export function StepReport({
             <Reveal delay={20}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <Card className="flex items-center justify-center p-6">
-                  <ConfidenceRing score={50} lang={lang} sublabel={lang === 'es' ? 'Basado en datos históricos' : 'Based on historical data'} />
+                  <ConfidenceRing score={result?.wr || 50} lang={lang} sublabel={lang === 'es' ? 'Basado en datos históricos' : 'Based on historical data'} />
                 </Card>
                 <Card className="p-5">
-                  <CaseTimeline medianMonths={10} caseType={spec?.d} lang={lang} />
+                  <CaseTimeline medianMonths={result?.mo || 10} caseType={spec?.d} lang={lang} />
                 </Card>
+              </div>
+            </Reveal>
+
+            {/* Premium Components: CaseRiskScore */}
+            <Reveal delay={40}>
+              <div className="mb-4">
+                <CaseRiskScore
+                  lang={lang as 'en' | 'es'}
+                  isPremium={isPremium}
+                  onUpgrade={() => setShowPricing(true)}
+                  caseType={spec?.d || ''}
+                  winRate={result?.wr || 47}
+                  settlementRate={result?.sp || 47}
+                  medianMonths={result?.mo || 10}
+                />
+              </div>
+            </Reveal>
+
+            {/* Premium Components: SettlementPressureIndex */}
+            <Reveal delay={60}>
+              <div className="mb-4">
+                <SettlementPressureIndex
+                  pressureScore={(() => {
+                    const wr = result?.wr || 47;
+                    const sp = result?.sp || 47;
+                    const mo = result?.mo || 10;
+                    // Calculate pressure score: higher settlement rate and lower timeline = lower pressure
+                    let score = 50;
+                    if (sp >= 60) score -= 20;
+                    else if (sp >= 40) score -= 10;
+                    if (wr >= 50) score -= 15;
+                    else if (wr >= 35) score -= 5;
+                    if (mo <= 6) score -= 10;
+                    else if (mo <= 12) score -= 5;
+                    return Math.max(0, Math.min(100, score));
+                  })()}
+                  factors={[
+                    {
+                      label: 'Settlement Rate',
+                      labelEs: 'Tasa de Acuerdo',
+                      impact: (result?.sp || 47) > 50 ? 'decreases' : 'increases',
+                      weight: result?.sp || 47,
+                    },
+                    {
+                      label: 'Case Duration',
+                      labelEs: 'Duración del Caso',
+                      impact: (result?.mo || 10) > 15 ? 'increases' : 'decreases',
+                      weight: Math.min(100, (result?.mo || 10) * 5),
+                    },
+                    {
+                      label: 'Plaintiff Win Rate',
+                      labelEs: 'Tasa de Éxito del Demandante',
+                      impact: (result?.wr || 47) > 40 ? 'decreases' : 'increases',
+                      weight: result?.wr || 47,
+                    },
+                  ]}
+                  optimalWindow={{
+                    startMonth: Math.floor((result?.mo || 10) / 2),
+                    endMonth: Math.floor((result?.mo || 10) * 0.75) + 6,
+                  }}
+                  lang={lang as 'en' | 'es'}
+                  tier="attorney"
+                  onUpgrade={() => setShowPricing(true)}
+                />
               </div>
             </Reveal>
           </div>
