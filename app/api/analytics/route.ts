@@ -147,11 +147,22 @@ export async function POST(
       );
     }
 
-    // Event received (removed console.log for production)
-
-    // Event storage integration point
-    // Currently configured for fire-and-forget analytics collection
-    // Can be integrated with any backend: Supabase, Google Analytics, Mixpanel, Segment
+    // Store event in Supabase (fire-and-forget)
+    try {
+      const { getSupabaseAdmin } = await import('../../../lib/supabase');
+      const supabase = getSupabaseAdmin();
+      await supabase.from('analytics_events').insert({
+        event: payload.event,
+        session_id: payload.sessionId,
+        properties: payload.data || {},
+        pathname: payload.pathname || null,
+        ip: clientIp,
+        created_at: new Date(payload.timestamp).toISOString(),
+      });
+    } catch (dbErr) {
+      // Analytics storage failure should never block the response
+      console.warn('[api/analytics] DB insert failed:', dbErr instanceof Error ? dbErr.message : dbErr);
+    }
 
     // Return success response with CORS headers
     return NextResponse.json(

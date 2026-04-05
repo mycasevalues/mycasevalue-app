@@ -34,9 +34,27 @@ export function trackServerEvent(
   eventName: EventName,
   properties: Record<string, any> = {}
 ): void {
-  // In production, you could send to an analytics API endpoint
-  // Example: await fetch('/api/analytics/server-event', { method: 'POST', body: ... })
-  // For now, this is a no-op in production (respects privacy)
+  // Fire-and-forget: log to Supabase analytics_events table
+  try {
+    const { getSupabaseAdmin } = require('./supabase');
+    const supabase = getSupabaseAdmin();
+    supabase
+      .from('analytics_events')
+      .insert({
+        event: eventName,
+        properties,
+        created_at: new Date().toISOString(),
+      })
+      .then(() => {})
+      .catch((err: Error) => {
+        // Silent failure — analytics should never break the app
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('[analytics] Failed to track event:', err.message);
+        }
+      });
+  } catch {
+    // Supabase not available — skip silently
+  }
 }
 
 /**
