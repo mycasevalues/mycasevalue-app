@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { REAL_DATA } from '../../../../lib/realdata';
 import { STATES } from '../../../../lib/data';
+import { validateState } from '../../../../lib/sanitize';
 
 // Realistic federal judge names by state (subset for demo — based on public records)
 const JUDGE_POOL: Record<string, { name: string; appointed: number; appointedBy: string; senior: boolean }[]> = {
@@ -120,19 +121,28 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ states: available });
   }
 
-  const judges = generateJudgeStats(state);
+  // Validate state parameter to prevent prototype pollution
+  const validatedState = validateState(state);
+  if (!validatedState) {
+    return NextResponse.json(
+      { error: 'Invalid state code. Provide a valid 2-letter US state code.' },
+      { status: 400 }
+    );
+  }
+
+  const judges = generateJudgeStats(validatedState);
 
   if (judges.length === 0) {
     return NextResponse.json(
-      { error: `No judge data available for ${state}. Try CA, NY, TX, FL, IL, or PA.` },
+      { error: `No judge data available for ${validatedState}. Try CA, NY, TX, FL, IL, or PA.` },
       { status: 404 }
     );
   }
 
-  const stateLabel = STATES.find((s) => s.id === state)?.label || state;
+  const stateLabel = STATES.find((s) => s.id === validatedState)?.label || validatedState;
 
   return NextResponse.json({
-    state,
+    state: validatedState,
     stateLabel,
     judges,
     disclaimer: 'Statistics are derived from public federal court records (FJC IDB). Individual judge metrics are approximations based on district-level data and may not reflect exact judicial records.',

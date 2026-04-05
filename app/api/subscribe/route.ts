@@ -4,8 +4,18 @@
  * Graceful fallback: if the table doesn't exist yet, logs and returns success.
  */
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 
 export async function POST(req: NextRequest) {
+  const clientIp = getClientIp(req.headers);
+  const rateLimitResult = rateLimit(clientIp, { windowMs: 60000, maxRequests: 10 });
+  if (!rateLimitResult.success) {
+    return NextResponse.json(
+      { error: 'Too many requests' },
+      { status: 429, headers: { 'Access-Control-Allow-Origin': '*' } }
+    );
+  }
+
   try {
     const { email } = await req.json();
 

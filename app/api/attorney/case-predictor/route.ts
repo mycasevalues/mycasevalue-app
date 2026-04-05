@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { REAL_DATA } from '../../../../lib/realdata';
+import { validateNOSCode, validateState, validateEnum } from '../../../../lib/sanitize';
 
 /**
  * AI Case Outcome Predictor API
@@ -159,12 +160,42 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Case type (NOS code) is required' }, { status: 400 });
     }
 
+    // Validate caseType (should be valid NOS code or known string)
+    const validatedCaseType = validateNOSCode(caseType);
+    if (!validatedCaseType) {
+      return NextResponse.json(
+        { error: 'Invalid case type. Provide a valid 1-4 digit NOS code.' },
+        { status: 400 }
+      );
+    }
+
+    // Validate state if provided
+    let validatedState = '';
+    if (state) {
+      const validated = validateState(state);
+      if (!validated) {
+        return NextResponse.json(
+          { error: 'Invalid state code. Provide a valid 2-letter US state code.' },
+          { status: 400 }
+        );
+      }
+      validatedState = validated;
+    }
+
+    // Validate damageAmount against allowed values
+    const validDamageAmounts = ['small', 'mid', 'large', 'xlarge', 'huge'] as const;
+    const validatedDamageAmount = validateEnum(damageAmount, validDamageAmounts, 'mid');
+
+    // Validate caseStrength against allowed values
+    const validCaseStrengths = ['weak', 'moderate', 'strong'] as const;
+    const validatedCaseStrength = validateEnum(caseStrength, validCaseStrengths, 'moderate');
+
     const prediction = calculatePrediction({
-      caseType,
-      state: state || '',
+      caseType: validatedCaseType,
+      state: validatedState,
       hasAttorney: !!hasAttorney,
-      damageAmount: damageAmount || 'mid',
-      caseStrength: caseStrength || 'moderate',
+      damageAmount: validatedDamageAmount,
+      caseStrength: validatedCaseStrength,
       priorOffers: !!priorOffers,
       documentedEvidence: !!documentedEvidence,
     });

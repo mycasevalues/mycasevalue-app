@@ -3,6 +3,11 @@ export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 import { REAL_DATA, TOTAL_REAL_CASES, REAL_OUTCOME_DATA } from '../../../lib/realdata';
+import {
+  validateNOSCode,
+  validateDistrict,
+  validateYear,
+} from '../../../lib/sanitize';
 
 /**
  * Federal District Labels for common jurisdictions
@@ -119,12 +124,13 @@ export async function GET(
 
   // Extract query parameters
   const { searchParams } = request.nextUrl;
-  const nosCode = searchParams.get('nos');
-  const district = (searchParams.get('district') || 'all').toLowerCase();
-  const year = searchParams.get('year');
+  const nosCodeParam = searchParams.get('nos');
+  const districtParam = (searchParams.get('district') || 'all').toLowerCase();
+  const yearParam = searchParams.get('year');
 
   // Validate NOS code
-  if (!nosCode || !/^\d{1,4}$/.test(nosCode)) {
+  const nosCode = validateNOSCode(nosCodeParam);
+  if (!nosCode) {
     return NextResponse.json(
       {
         error: 'Invalid NOS code',
@@ -132,6 +138,36 @@ export async function GET(
       },
       { status: 400 }
     );
+  }
+
+  // Validate district (allow 'all' as special case)
+  let district = districtParam;
+  if (districtParam !== 'all') {
+    const validatedDistrict = validateDistrict(districtParam);
+    if (!validatedDistrict) {
+      return NextResponse.json(
+        {
+          error: 'Invalid district',
+          message: 'District must contain only alphanumeric characters, spaces, hyphens, periods, commas, or parentheses',
+        },
+        { status: 400 }
+      );
+    }
+    district = validatedDistrict;
+  }
+
+  // Validate year if provided
+  if (yearParam) {
+    const validatedYear = validateYear(yearParam);
+    if (!validatedYear) {
+      return NextResponse.json(
+        {
+          error: 'Invalid year',
+          message: `Year must be between 1970 and ${new Date().getFullYear() + 1}`,
+        },
+        { status: 400 }
+      );
+    }
   }
 
   try {

@@ -16,6 +16,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { runFullIngestion, runIncrementalIngestion } from '../../../lib/ingestion/orchestrator'
 import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 
+import { secureCompare } from '../../../lib/sanitize';
+
 export const maxDuration = 300 // Allow 5 minutes for ingestion
 
 export async function POST(request: NextRequest) {
@@ -34,7 +36,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'INGEST_API_KEY not configured' }, { status: 500 })
   }
 
-  if (!authHeader || authHeader !== `Bearer ${expectedKey}`) {
+  if (!authHeader || !secureCompare(authHeader, `Bearer ${expectedKey}`)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
@@ -77,7 +79,7 @@ export async function GET(request: NextRequest) {
   const expectedKey = process.env.CRON_SECRET
 
   // Vercel cron sends the CRON_SECRET in Authorization header
-  if (!expectedKey || authHeader !== `Bearer ${expectedKey}`) {
+  if (!expectedKey || !authHeader || !secureCompare(authHeader, `Bearer ${expectedKey}`)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

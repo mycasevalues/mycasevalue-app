@@ -10,7 +10,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    /* silent */
+    console.error('[GlobalError] Critical error:', error?.message || error, error?.digest);
   }, [error]);
 
   return (

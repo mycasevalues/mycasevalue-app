@@ -39,6 +39,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
     if (isHydrationError(error)) {
       return;
     }
+    console.error('[ErrorBoundary] componentDidCatch:', error.message || error, info);
   }
 
   render() {

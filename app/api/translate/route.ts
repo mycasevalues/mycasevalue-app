@@ -15,6 +15,7 @@ export const dynamic = 'force-dynamic';
 
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, getClientIp } from '../../../lib/rate-limit';
+import { sanitizeForPrompt } from '../../../lib/sanitize';
 
 // Legal phrases dictionary for fallback (no API key) mode
 const LEGAL_PHRASES: Record<string, string> = {
@@ -76,6 +77,9 @@ async function translateWithClaude(text: string): Promise<string> {
     throw new Error('ANTHROPIC_API_KEY not configured');
   }
 
+  // Sanitize text before embedding in prompt to prevent prompt injection
+  const sanitizedText = sanitizeForPrompt(text, 3000);
+
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -100,7 +104,7 @@ Your response should be a clear, friendly explanation that helps someone underst
       messages: [
         {
           role: 'user',
-          content: `Please translate this legal text to plain English:\n\n${text}`,
+          content: `Please translate this legal text to plain English:\n\n${sanitizedText}`,
         },
       ],
     }),

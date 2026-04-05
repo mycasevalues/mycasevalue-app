@@ -3,6 +3,13 @@ export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { rateLimit, getClientIp } from '../../../lib/rate-limit';
+import {
+  validateNOSCode,
+  validateState,
+  validateLanguage,
+  validateEmail,
+  validateEnum,
+} from '../../../lib/sanitize';
 
 /**
  * POST /api/report
@@ -21,9 +28,38 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { nos_code, state, lang, email, tier } = body;
 
-    if (!nos_code) {
-      return NextResponse.json({ success: false, error: 'nos_code is required' }, { status: 400 });
+    // Validate NOS code
+    const validatedNosCode = validateNOSCode(nos_code);
+    if (!validatedNosCode) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid NOS code: must be 1-4 digits' },
+        { status: 400 }
+      );
     }
+
+    // Validate optional state
+    const validatedState = state ? validateState(state) : null;
+    if (state && !validatedState) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid state code: must be a 2-letter US state' },
+        { status: 400 }
+      );
+    }
+
+    // Validate optional language
+    const validatedLang = validateLanguage(lang);
+
+    // Validate optional email
+    const validatedEmail = email ? validateEmail(email) : null;
+    if (email && !validatedEmail) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid email address' },
+        { status: 400 }
+      );
+    }
+
+    // Validate optional tier
+    const validatedTier = validateEnum(tier, ['free', 'single_report', 'unlimited'], 'free');
 
     const generatedAt = new Date().toISOString();
     let caseData = null;
@@ -40,7 +76,7 @@ export async function POST(request: NextRequest) {
         const { data: stats } = await supabase
           .from('case_stats')
           .select('*')
-          .eq('nos_code', nos_code)
+          .eq('nos_code', validatedNosCode)
           .single();
 
         if (stats) caseData = stats;
@@ -48,11 +84,11 @@ export async function POST(request: NextRequest) {
         // Log the report generation for analytics
         try {
           await supabase.from('report_logs').insert({
-            nos_code,
-            state: state || null,
-            lang: lang || 'en',
-            email: email || null,
-            tier: tier || 'free',
+            nos_code: validatedNosCode,
+            state: validatedState,
+            lang: validatedLang,
+            email: validatedEmail,
+            tier: validatedTier,
             ip: request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || null,
             generated_at: generatedAt,
           });
@@ -66,9 +102,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      nos_code,
-      state: state || null,
-      lang: lang || 'en',
+      nos_code: validatedNosCode,
+      state: validatedState,
+      lang: validatedLang,
       generated_at: generatedAt,
       data: caseData,
       source: caseData ? 'supabase' : 'static',

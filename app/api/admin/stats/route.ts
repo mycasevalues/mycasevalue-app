@@ -4,6 +4,7 @@
  * Returns user count, subscriber count, and paid session count.
  */
 import { NextRequest, NextResponse } from 'next/server';
+import { secureCompare } from '../../../../lib/sanitize';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,7 +12,7 @@ export async function GET(req: NextRequest) {
   const secret = req.headers.get('x-admin-secret');
   const expected = process.env.ADMIN_SECRET;
 
-  if (!expected || secret !== expected) {
+  if (!expected || !secret || !secureCompare(secret, expected)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

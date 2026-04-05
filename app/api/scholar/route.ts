@@ -17,9 +17,9 @@ import { rateLimit, getClientIp } from "../../../lib/rate-limit";
 
 export async function GET(request: NextRequest) {
   try {
-    // Rate limit: 30 req/min
+    // Rate limit: 15 req/min
     const clientIp = getClientIp(request.headers);
-    const rl = rateLimit(clientIp, { windowMs: 60000, maxRequests: 30 });
+    const rl = rateLimit(clientIp, { windowMs: 60000, maxRequests: 15 });
     if (!rl.success) {
       return NextResponse.json(
         { error: "Rate limit exceeded" },

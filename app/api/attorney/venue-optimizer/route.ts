@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { REAL_DATA } from '../../../../lib/realdata';
 import { STATES } from '../../../../lib/data';
+import { validateNOSCode, validateEnum } from '../../../../lib/sanitize';
 
 /**
  * Venue Optimizer API
@@ -23,7 +24,7 @@ type VenueScore = {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const nos = searchParams.get('nos') || '';
-  const prioritize = searchParams.get('prioritize') || 'winRate'; // winRate | settlement | speed
+  const prioritizeRaw = searchParams.get('prioritize') || 'winRate';
 
   if (!nos) {
     // Return available NOS codes
@@ -34,9 +35,22 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ caseTypes: available });
   }
 
-  const nosData = REAL_DATA[nos];
+  // Validate NOS code
+  const validatedNos = validateNOSCode(nos);
+  if (!validatedNos) {
+    return NextResponse.json(
+      { error: 'Invalid NOS code. Provide a 1-4 digit numeric code.' },
+      { status: 400 }
+    );
+  }
+
+  // Validate prioritize parameter against allowed values
+  const validPrioritizeValues = ['winRate', 'settlement', 'speed'] as const;
+  const prioritize = validateEnum(prioritizeRaw, validPrioritizeValues, 'winRate');
+
+  const nosData = REAL_DATA[validatedNos];
   if (!nosData || !nosData.state_rates) {
-    return NextResponse.json({ error: `No data for NOS code ${nos}` }, { status: 404 });
+    return NextResponse.json({ error: `No data for NOS code ${validatedNos}` }, { status: 404 });
   }
 
   const nationalWinRate = nosData.wr ?? 55;
@@ -111,7 +125,7 @@ export async function GET(req: NextRequest) {
   venues.forEach((v, i) => { v.rank = i + 1; });
 
   return NextResponse.json({
-    nos,
+    nos: validatedNos,
     caseType: nosData.label,
     nationalStats: {
       winRate: nationalWinRate,

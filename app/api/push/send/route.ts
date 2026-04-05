@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { secureCompare } from '../../../../lib/sanitize';
 
 export const dynamic = 'force-dynamic';
 
@@ -24,7 +25,7 @@ interface SendPushRequest {
 export async function POST(req: NextRequest) {
   // Verify API key
   const apiKey = req.headers.get('x-api-key');
-  if (!apiKey || apiKey !== process.env.PUSH_API_KEY) {
+  if (!apiKey || !process.env.PUSH_API_KEY || !secureCompare(apiKey, process.env.PUSH_API_KEY)) {
     return NextResponse.json(
       { error: 'Unauthorized' },
       { status: 401 }

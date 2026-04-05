@@ -17,6 +17,7 @@ export const dynamic = 'force-dynamic'
 import { NextRequest, NextResponse } from 'next/server'
 import { generateHealthReport } from '../../../lib/ingestion/monitor'
 import { rateLimit, getClientIp } from '../../../lib/rate-limit'
+import { secureCompare } from '../../../lib/sanitize'
 
 export async function GET(request: NextRequest) {
   // Apply rate limiting: 10 req/min
@@ -29,7 +30,7 @@ export async function GET(request: NextRequest) {
   try {
     // Check for API key authorization for detailed health info
     const apiKey = request.headers.get('x-api-key');
-    const isAuthorized = apiKey && apiKey === process.env.HEALTH_CHECK_API_KEY;
+    const isAuthorized = apiKey && process.env.HEALTH_CHECK_API_KEY && secureCompare(apiKey, process.env.HEALTH_CHECK_API_KEY);
 
     // Unauthenticated requests get simple status only
     if (!isAuthorized) {
@@ -54,7 +55,7 @@ export async function GET(request: NextRequest) {
   } catch (error: any) {
     // Check for API key for detailed error info
     const apiKey = request.headers.get('x-api-key');
-    const isAuthorized = apiKey && apiKey === process.env.HEALTH_CHECK_API_KEY;
+    const isAuthorized = apiKey && process.env.HEALTH_CHECK_API_KEY && secureCompare(apiKey, process.env.HEALTH_CHECK_API_KEY);
 
     if (!isAuthorized) {
       // Unauthenticated requests get generic error

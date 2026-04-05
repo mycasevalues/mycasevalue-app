@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { REAL_DATA } from '../../../../lib/realdata';
+import { validateNOSCode } from '../../../../lib/sanitize';
 
 /**
  * Bulk Case Analysis API
@@ -18,7 +19,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Maximum 20 case types per analysis' }, { status: 400 });
     }
 
-    const cases = nosCodes
+    // Validate each NOS code and filter out invalid ones
+    const validatedNosCodes = nosCodes
+      .map((nos: unknown) => validateNOSCode(nos))
+      .filter((nos): nos is string => nos !== null);
+
+    if (validatedNosCodes.length === 0) {
+      return NextResponse.json(
+        { error: 'No valid NOS codes provided. Each code must be 1-4 digits.' },
+        { status: 400 }
+      );
+    }
+
+    const cases = validatedNosCodes
       .map((nos: string) => {
         const d = REAL_DATA[nos];
         if (!d) return null;

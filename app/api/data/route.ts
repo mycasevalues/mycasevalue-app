@@ -18,6 +18,11 @@ export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { rateLimit, getClientIp } from '../../../lib/rate-limit'
+import {
+  validateEnum,
+  validateNOSCode,
+  validateDistrict,
+} from '../../../lib/sanitize'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
@@ -36,8 +41,33 @@ export async function GET(request: NextRequest) {
   }
 
   const { searchParams } = new URL(request.url)
-  const type = searchParams.get('type') || 'stats'
-  const nos = searchParams.get('nos')
+  const typeParam = searchParams.get('type') || 'stats'
+  const nosParam = searchParams.get('nos')
+  const courtParam = searchParams.get('court')
+
+  // Validate type against allowed values from switch statement
+  const VALID_TYPES = ['stats', 'case', 'circuits', 'states', 'trending', 'outcomes', 'judges', 'freshness'] as const;
+  const type = validateEnum(typeParam, VALID_TYPES, 'stats');
+
+  // Validate nos when present
+  let nos: string | null = null;
+  if (nosParam) {
+    const validatedNos = validateNOSCode(nosParam);
+    if (!validatedNos) {
+      return NextResponse.json({ error: 'Invalid NOS code: must be 1-4 digits' }, { status: 400 });
+    }
+    nos = validatedNos;
+  }
+
+  // Validate court when present
+  let court: string | null = null;
+  if (courtParam) {
+    const validatedCourt = validateDistrict(courtParam);
+    if (!validatedCourt) {
+      return NextResponse.json({ error: 'Invalid court name' }, { status: 400 });
+    }
+    court = validatedCourt;
+  }
 
   const supabase = getSupabase()
 
@@ -100,7 +130,7 @@ export async function GET(request: NextRequest) {
 
       case 'case': {
         if (!nos) {
-          return NextResponse.json({ error: 'nos parameter required' }, { status: 400 })
+          return NextResponse.json({ error: 'nos parameter required for case type' }, { status: 400 })
         }
 
         const { data: caseData } = await supabase
@@ -178,7 +208,7 @@ export async function GET(request: NextRequest) {
 
       case 'outcomes': {
         if (!nos) {
-          return NextResponse.json({ error: 'nos parameter required' }, { status: 400 })
+          return NextResponse.json({ error: 'nos parameter required for outcomes type' }, { status: 400 })
         }
 
         const { data: outcomes } = await supabase
@@ -196,7 +226,6 @@ export async function GET(request: NextRequest) {
       }
 
       case 'judges': {
-        const court = searchParams.get('court')
         let query = supabase
           .from('judge_stats' as any)
           .select('*')

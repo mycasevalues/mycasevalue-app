@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { sanitizeString } from '../../../../lib/sanitize';
 
 /**
  * Opposing Counsel Analysis API
@@ -92,7 +93,10 @@ function generateProfile(name: string, firmData: { firm: string; city: string; s
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const query = (searchParams.get('q') || '').trim().toLowerCase();
+  const rawQuery = searchParams.get('q') || '';
+
+  // Sanitize query parameter before using as object key lookup
+  const query = sanitizeString(rawQuery, 100).toLowerCase();
 
   if (!query || query.length < 2) {
     return NextResponse.json({ error: 'Search query must be at least 2 characters' }, { status: 400 });

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { getUserTier } from '../../../../lib/access';
+import { sanitizeString } from '../../../../lib/sanitize';
 
 export async function POST(req: NextRequest) {
   try {
@@ -25,10 +26,14 @@ export async function POST(req: NextRequest) {
       { cookies: { get: () => undefined, set: () => {}, remove: () => {} } }
     );
 
+    // Sanitize inputs before DB insert
+    const sanitizedQuery = sanitizeString(query || '', 500);
+    const sanitizedCategory = sanitizeString(category || '', 100);
+
     await adminSupabase.from('search_history').insert({
       user_email: user.email.toLowerCase(),
-      query: query || '',
-      category: category || null,
+      query: sanitizedQuery,
+      category: sanitizedCategory || null,
     });
 
     return NextResponse.json({ ok: true });
