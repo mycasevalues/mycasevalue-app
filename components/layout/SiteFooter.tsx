@@ -1,5 +1,5 @@
 /**
- * SiteFooter.tsx — Glassmorphism footer with subtle glass border.
+ * SiteFooter.tsx — Dark navy footer with LexisNexis-style corporate layout.
  * Rendered from app/layout.tsx so every page gets consistent footer.
  */
 
@@ -165,7 +165,7 @@ export default function SiteFooter() {
             Ready to research your case?
           </p>
           <Link href="/search" style={{
-            background: '#DC2626',
+            background: '#E8171F',
             color: '#FFFFFF',
             padding: '11px 28px',
             borderRadius: '4px',
@@ -332,7 +332,7 @@ export default function SiteFooter() {
           background: rgba(255, 255, 255, 0.1) !important;
         }
         .site-footer-cta-button:hover {
-          background: #B91C1C !important;
+          background: #CC1019 !important;
           transform: translateY(-1px);
         }
         @media (max-width: 768px) {

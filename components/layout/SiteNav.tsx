@@ -241,7 +241,7 @@ export default function SiteNav() {
                       fontFamily: 'var(--font-body)',
                       borderRadius: '4px',
                       border: '1px solid #D5D8DC',
-                      transition: 'all var(--duration-base) ease',
+                      transition: 'all 150ms ease',
                     }}
                   >
                     Dashboard
@@ -259,7 +259,7 @@ export default function SiteNav() {
                       fontFamily: 'var(--font-body)',
                       border: 'none',
                       cursor: 'pointer',
-                      transition: 'all var(--duration-base) ease',
+                      transition: 'all 150ms ease',
                     }}
                   >
                     Sign Out
@@ -362,7 +362,7 @@ export default function SiteNav() {
           top: '64px',
           zIndex: 199,
           height: '48px',
-          background: 'rgba(0,0,0,0.8)',
+          background: '#00172E',
           borderBottom: 'none',
           display: 'flex',
           alignItems: 'center',
@@ -837,7 +837,7 @@ export default function SiteNav() {
         }
         .site-nav-search-btn:hover { color: #212529 !important; }
         .site-nav-search-input:focus { border-color: #E8171F !important; }
-        .site-nav-search-submit:hover { background: #CC1219 !important; }
+        .site-nav-search-submit:hover { background: #CC1019 !important; }
         .site-nav-search-close:hover { color: #E8171F !important; }
         .site-nav-link:hover { color: #212529 !important; }
         .site-nav-sub-link:hover { color: #FFFFFF !important; }

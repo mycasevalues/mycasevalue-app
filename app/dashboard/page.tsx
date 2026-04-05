@@ -100,7 +100,7 @@ export default async function DashboardPage() {
           );
           isExpired = !!expired;
           planStatus = expired ? 'Expired' : 'Active';
-          planStatusColor = expired ? '#DC2626' : '#16A34A';
+          planStatusColor = expired ? '#E8171F' : '#16A34A';
         }
       } catch {
         // No premium record found — stays free
