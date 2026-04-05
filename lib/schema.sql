@@ -377,3 +377,81 @@ CREATE TABLE IF NOT EXISTS newsletter_subscribers (
   subscribed_at TIMESTAMPTZ DEFAULT NOW(),
   unsubscribed_at TIMESTAMPTZ
 );
+
+
+-- ============================================================
+-- ANALYTICS EVENTS (client + server event tracking)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS analytics_events (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  event TEXT NOT NULL,
+  session_id TEXT,
+  properties JSONB DEFAULT '{}',
+  pathname TEXT,
+  ip TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_analytics_event ON analytics_events(event, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_analytics_session ON analytics_events(session_id);
+
+
+-- ============================================================
+-- EMAIL LEADS (captured from report delivery forms)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS email_leads (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  case_type TEXT,
+  nos_code TEXT,
+  state TEXT,
+  source TEXT DEFAULT 'report',
+  ip TEXT,
+  user_agent TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_email_leads_email ON email_leads(email);
+
+
+-- ============================================================
+-- NOTIFICATION SUBSCRIPTIONS (email alerts for case types)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS notification_subscriptions (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  nos_code TEXT,
+  state TEXT,
+  frequency TEXT DEFAULT 'monthly' CHECK (frequency IN ('weekly', 'monthly', 'quarterly')),
+  active BOOLEAN DEFAULT true,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+
+-- ============================================================
+-- POLL VOTES (accuracy feedback from users)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS poll_votes (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  vote TEXT NOT NULL CHECK (vote IN ('fair', 'low', 'high', 'unsure')),
+  nos_code TEXT,
+  ip TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_poll_votes_nos ON poll_votes(nos_code);
+
+
+-- ============================================================
+-- REPORT LOGS (tracks free-tier daily usage)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS report_logs (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT NOT NULL,
+  nos_code TEXT,
+  state TEXT,
+  tier TEXT DEFAULT 'free',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_report_logs_email ON report_logs(email, created_at DESC);

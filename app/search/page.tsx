@@ -109,12 +109,41 @@ export default function SearchPage() {
     }))
   );
 
+  // Scored search: word-boundary matches rank higher, exact NOS code highest
   const results = query.length > 1
-    ? allTypes.filter(t =>
-        t.label.toLowerCase().includes(query.toLowerCase()) ||
-        t.categoryName.toLowerCase().includes(query.toLowerCase()) ||
-        t.desc.toLowerCase().includes(query.toLowerCase())
-      ).slice(0, 20)
+    ? (() => {
+        const q = query.toLowerCase().trim();
+        const words = q.split(/\s+/).filter(w => w.length > 0);
+        const scored = allTypes.map(t => {
+          let score = 0;
+          const label = t.label.toLowerCase();
+          const cat = t.categoryName.toLowerCase();
+          const desc = t.desc.toLowerCase();
+
+          // Exact NOS code match = highest priority
+          if (t.nos === q || t.nos === q.replace(/^0+/, '')) score += 100;
+
+          // Full query substring matches
+          if (label.includes(q)) score += 30;
+          if (cat.includes(q)) score += 15;
+          if (desc.includes(q)) score += 10;
+
+          // Individual word matches (fuzzy multi-word)
+          for (const word of words) {
+            if (label.includes(word)) score += 8;
+            if (cat.includes(word)) score += 4;
+            if (desc.includes(word)) score += 2;
+            // Word-start bonus (e.g., "wrong" matching "Wrongful")
+            if (label.split(/\s+/).some(w => w.startsWith(word))) score += 5;
+          }
+
+          return { ...t, score };
+        })
+          .filter(t => t.score > 0)
+          .sort((a, b) => b.score - a.score)
+          .slice(0, 20);
+        return scored;
+      })()
     : [];
 
   return (
