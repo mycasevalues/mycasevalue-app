@@ -47,12 +47,13 @@ export async function POST(req: NextRequest) {
         );
 
       if (error) {
-        // Table might not exist yet — still return success
+        console.error('[api/subscribe] Supabase upsert failed:', error.message);
       }
     }
 
     return NextResponse.json({ success: true, message: 'Subscribed successfully' });
   } catch (err: any) {
+    console.error('[api/subscribe] Error:', err.message || err);
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
