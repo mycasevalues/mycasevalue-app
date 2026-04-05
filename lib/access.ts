@@ -155,8 +155,36 @@ export const TIER_FEATURES: Record<Tier, FeatureKey[]> = {
  * Returns 'free' for unauthenticated or unknown users.
  */
 export async function getUserTier(email: string | null): Promise<Tier> {
-  // DEV MODE: All features unlocked — Stripe integration pending
-  return 'attorney' as Tier;
+  if (!email) return 'free';
+
+  try {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from('premium_sessions')
+      .select('plan, expires_at')
+      .eq('email', email.toLowerCase().trim())
+      .maybeSingle();
+
+    if (error) {
+      console.error('[access] getUserTier DB error:', error.message);
+      return 'free';
+    }
+
+    if (!data) return 'free';
+
+    // Check if subscription has expired
+    if (data.expires_at && new Date(data.expires_at) < new Date()) {
+      return 'free';
+    }
+
+    // Validate tier value
+    const validTiers: Tier[] = ['free', 'single_report', 'unlimited', 'attorney'];
+    const tier = data.plan as Tier;
+    return validTiers.includes(tier) ? tier : 'free';
+  } catch (err) {
+    console.error('[access] getUserTier error:', err instanceof Error ? err.message : err);
+    return 'free';
+  }
 }
 
 /**

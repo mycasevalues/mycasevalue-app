@@ -34,8 +34,13 @@ export async function GET(
   try {
     const res = await fetch(`${origin}/api/data?type=case&nos=${encodeURIComponent(nos)}`);
     const data = await res.json();
-    return NextResponse.json(data);
-  } catch {
-    return NextResponse.json({ source: 'static', data: null });
+    return NextResponse.json(data, {
+      headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200' }
+    });
+  } catch (fetchError) {
+    console.error('[api/nos] internal data fetch failed:', fetchError instanceof Error ? fetchError.message : fetchError);
+    return NextResponse.json({ source: 'static', data: null }, {
+      headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200' }
+    });
   }
 }

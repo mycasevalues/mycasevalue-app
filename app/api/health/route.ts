@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({
         status: 'ok',
         timestamp: new Date().toISOString()
-      }, { status: 200 });
+      }, { status: 200, headers: { 'Cache-Control': 'no-store' } });
     }
 
     // Authenticated requests get comprehensive health report
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
       statusCode = 200 // Still OK, but with warnings
     }
 
-    return NextResponse.json(healthReport, { status: statusCode })
+    return NextResponse.json(healthReport, { status: statusCode, headers: { 'Cache-Control': 'no-store' } })
   } catch (error: any) {
     // Check for API key for detailed error info
     const apiKey = request.headers.get('x-api-key');
@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({
         status: 'error',
         timestamp: new Date().toISOString()
-      }, { status: 503 });
+      }, { status: 503, headers: { 'Cache-Control': 'no-store' } });
     }
 
     // Authenticated requests get detailed error info
@@ -103,7 +103,7 @@ export async function GET(request: NextRequest) {
         },
         overallAssessment: `Critical system failure: ${error.message}`
       },
-      { status: 503 }
+      { status: 503, headers: { 'Cache-Control': 'no-store' } }
     )
   }
 }

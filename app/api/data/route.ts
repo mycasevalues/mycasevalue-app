@@ -47,6 +47,8 @@ export async function GET(request: NextRequest) {
       source: 'static',
       message: 'Database not configured. Using static data.',
       data: null
+    }, {
+      headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
     })
   }
 
@@ -66,6 +68,8 @@ export async function GET(request: NextRequest) {
             cached: true,
             computed_at: cached.computed_at,
             data: cached.data
+          }, {
+            headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
           })
         }
 
@@ -89,6 +93,8 @@ export async function GET(request: NextRequest) {
             avg_win_rate: Math.round(avgWinRate * 10) / 10,
             last_updated: new Date().toISOString()
           }
+        }, {
+          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
       }
 
@@ -122,6 +128,8 @@ export async function GET(request: NextRequest) {
             outcomes: outcomes || [],
             money_distribution: moneyDist || []
           } : null
+        }, {
+          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
       }
 
@@ -134,6 +142,8 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({
           source: circuits && circuits.length > 0 ? 'live' : 'static',
           data: circuits || []
+        }, {
+          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
       }
 
@@ -146,6 +156,8 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({
           source: states && states.length > 0 ? 'live' : 'static',
           data: states || []
+        }, {
+          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
       }
 
@@ -159,6 +171,8 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({
           source: trending && trending.length > 0 ? 'live' : 'static',
           data: trending || []
+        }, {
+          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
       }
 
@@ -176,6 +190,8 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({
           source: outcomes && outcomes.length > 0 ? 'live' : 'static',
           data: outcomes || []
+        }, {
+          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
       }
 
@@ -194,6 +210,8 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({
           source: judges && judges.length > 0 ? 'live' : 'static',
           data: judges || []
+        }, {
+          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
       }
 
@@ -229,6 +247,8 @@ export async function GET(request: NextRequest) {
               { name: 'RECAP Archive', type: 'REST API', frequency: 'daily' }
             ]
           }
+        }, {
+          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
         })
       }
 
@@ -236,6 +256,7 @@ export async function GET(request: NextRequest) {
         return NextResponse.json({ error: `Unknown type: ${type}` }, { status: 400 })
     }
   } catch (error: any) {
+    console.error('[api/data] query execution failed:', error instanceof Error ? error.message : error);
     return NextResponse.json({
       source: 'static',
       error: error.message,

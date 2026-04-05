@@ -24,8 +24,11 @@ interface UseDataResult<T> {
   refetch: () => void
 }
 
+const MAX_RETRIES = 2
+const RETRY_DELAYS = [1000, 3000] // exponential backoff: 1s, 3s
+
 /**
- * Generic data fetcher with fallback
+ * Generic data fetcher with retry + exponential backoff + static fallback
  */
 function useDataFetch<T>(url: string, fallback: T | null = null): UseDataResult<T> {
   const [data, setData] = useState<T | null>(fallback)
@@ -34,27 +37,48 @@ function useDataFetch<T>(url: string, fallback: T | null = null): UseDataResult<
   const [error, setError] = useState<string | null>(null)
 
   const fetchData = useCallback(async () => {
-    try {
-      setLoading(true)
-      const res = await fetch(url)
-      const json = await res.json()
+    setLoading(true)
 
-      if (json.source === 'live' && json.data) {
-        setData(json.data as T)
-        setSource('live')
-        setError(null)
-      } else {
-        // API available but no live data — use fallback
-        setData(fallback)
-        setSource('static')
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        const controller = new AbortController()
+        const timeout = setTimeout(() => controller.abort(), 8000) // 8s timeout
+
+        const res = await fetch(url, { signal: controller.signal })
+        clearTimeout(timeout)
+
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`)
+        }
+
+        const json = await res.json()
+
+        if (json.source === 'live' && json.data) {
+          setData(json.data as T)
+          setSource('live')
+          setError(null)
+          setLoading(false)
+          return
+        } else {
+          // API available but no live data — use fallback
+          setData(fallback)
+          setSource('static')
+          setLoading(false)
+          return
+        }
+      } catch (err: any) {
+        // If this was the last attempt, fall back to static
+        if (attempt === MAX_RETRIES) {
+          console.warn(`[useData] All ${MAX_RETRIES + 1} attempts failed for ${url}:`, err.message)
+          setData(fallback)
+          setSource('static')
+          setError(err.message)
+          setLoading(false)
+          return
+        }
+        // Wait before retrying (exponential backoff)
+        await new Promise(resolve => setTimeout(resolve, RETRY_DELAYS[attempt]))
       }
-    } catch (err: any) {
-      // API unreachable — use fallback
-      setData(fallback)
-      setSource('static')
-      setError(err.message)
-    } finally {
-      setLoading(false)
     }
   }, [url, fallback])
 

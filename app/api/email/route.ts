@@ -84,6 +84,7 @@ export async function POST(req: NextRequest) {
       type,
     });
   } catch (err: any) {
+    console.error('[api/email] email send failed:', err instanceof Error ? err.message : err);
     return NextResponse.json(
       { error: 'Failed to send email' },
       { status: 500 }

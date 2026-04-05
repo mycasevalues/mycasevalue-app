@@ -56,9 +56,11 @@ export async function POST(request: NextRequest) {
             ip: request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || null,
             generated_at: generatedAt,
           });
-        } catch { /* ignore logging failures */ }
+        } catch (logError) {
+          console.error('[api/report] report_logs insert failed:', logError instanceof Error ? logError.message : logError);
+        }
       } catch (dbError) {
-        /* silent */
+        console.error('[api/report] Supabase query failed:', dbError instanceof Error ? dbError.message : dbError);
       }
     }
 
@@ -71,7 +73,8 @@ export async function POST(request: NextRequest) {
       data: caseData,
       source: caseData ? 'supabase' : 'static',
     });
-  } catch {
+  } catch (err) {
+    console.error('[api/report] request parsing failed:', err instanceof Error ? err.message : err);
     return NextResponse.json({ success: false, error: 'Invalid request' }, { status: 400 });
   }
 }
