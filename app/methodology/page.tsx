@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function MethodologyPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#F8F9FA' }}>
       <style>{`
         .source-card {
           transition: all 0.3s ease;
@@ -68,7 +68,7 @@ export default function MethodologyPage() {
         .stat-card {
           padding: 1.5rem;
           border: 1px solid #D5D8DC;
-          border-radius: 0.75rem;
+          border-radius: 4px;
           background: #FFFFFF;
           text-align: center;
           transition: all 0.3s ease;
@@ -81,13 +81,13 @@ export default function MethodologyPage() {
           border-left: 3px solid #F59E0B;
           background: #FFFBEB;
           padding: 1.5rem;
-          border-radius: 0.75rem;
+          border-radius: 4px;
         }
         .public-domain-callout {
           border-left: 3px solid #006997;
           background: #F0F9FF;
           padding: 1.5rem;
-          border-radius: 0.75rem;
+          border-radius: 4px;
         }
       `}</style>
 

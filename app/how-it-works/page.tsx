@@ -61,7 +61,7 @@ const steps = [
     title: 'Select Your Case Type',
     description: 'Choose from 84 federal case categories. No legal jargon needed — we use plain English labels to describe every case type.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5">
         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
       </svg>
@@ -72,7 +72,7 @@ const steps = [
     title: 'Choose Your District',
     description: 'Pick from 94 federal judicial districts across the United States. We analyze cases from your specific district for maximum relevance.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5">
         <circle cx="11" cy="11" r="8"/>
         <path d="m21 21-4.35-4.35"/>
         <circle cx="8" cy="8" r="1"/>
@@ -85,7 +85,7 @@ const steps = [
     title: 'Get Your Report',
     description: 'Instant results with win rates, settlement ranges, timelines, judge analytics, and plain-English explanations. All from verified public records.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5">
         <line x1="12" y1="2" x2="12" y2="22"/>
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
       </svg>
@@ -102,7 +102,7 @@ const trustStats = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <style dangerouslySetInnerHTML={{ __html: `
         .hover\\:shadow-md:hover {
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -126,7 +126,7 @@ export default function HowItWorksPage() {
             </svg>
             HOW IT WORKS
           </div>
-          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-4xl sm:text-5xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
             How It Works
           </h1>
           <p className="text-lg leading-relaxed max-w-3xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -138,7 +138,7 @@ export default function HowItWorksPage() {
       {/* Breadcrumb Navigation */}
       <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#FFFFFF' }}>
         <div className="max-w-5xl mx-auto px-6 py-3">
-          <nav style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)' }}>
+          <nav style={{ fontSize: '14px', color: '#455A64' }}>
             <a href="/" style={{ color: '#455A64', textDecoration: 'none' }}>
               Home
             </a>
@@ -177,7 +177,6 @@ export default function HowItWorksPage() {
                       background: '#E8171F',
                       color: '#FFFFFF',
                       fontSize: '18px',
-                      fontFamily: 'var(--font-display)',
                     }}>
                     {step.number}
                   </div>
@@ -188,7 +187,7 @@ export default function HowItWorksPage() {
                   </div>
 
                   {/* Content */}
-                  <h2 className="font-display font-bold mb-3" style={{ color: '#212529', fontSize: '20px', fontWeight: '700', fontFamily: 'var(--font-display)' }}>
+                  <h2 className="font-display font-bold mb-3" style={{ color: '#212529', fontSize: '20px', fontWeight: '700' }}>
                     {step.title}
                   </h2>
                   <p className="leading-relaxed" style={{ color: '#455A64', fontSize: '15px', fontWeight: '300', lineHeight: '1.7' }}>
@@ -207,7 +206,7 @@ export default function HowItWorksPage() {
       {/* What's in Your Report Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-3 text-center" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-2xl font-display font-bold mb-3 text-center" style={{ color: '#212529' }}>
             What's in Your Report?
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: '#455A64' }}>
@@ -270,7 +269,7 @@ export default function HowItWorksPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
               <div key={i} className="text-center p-4 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
-                <div className="text-2xl font-display font-extrabold" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+                <div className="text-2xl font-display font-extrabold" style={{ color: '#212529' }}>
                   {stat.value}
                 </div>
                 <div className="text-[11px] font-semibold mt-2" style={{ color: '#455A64' }}>
@@ -285,7 +284,7 @@ export default function HowItWorksPage() {
       {/* Data Sources Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-2xl font-display font-bold mb-6 text-center" style={{ color: '#212529' }}>
             Verified Public Sources
           </h2>
           <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-8" style={{ color: '#455A64' }}>
@@ -323,7 +322,7 @@ export default function HowItWorksPage() {
       {/* Why Choose Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <section>
-          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-2xl font-display font-bold mb-8 text-center" style={{ color: '#212529' }}>
             Why MyCaseValue Works
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -375,7 +374,7 @@ export default function HowItWorksPage() {
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
         <section className="text-center p-12 border" style={{ borderColor: '#D5D8DC', background: '#FFF3F4', borderRadius: '4px' }}>
-          <h2 className="text-3xl font-display font-bold mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-3xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Ready to see your case data?
           </h2>
           <p className="mb-8 max-w-2xl mx-auto text-lg" style={{ color: '#455A64' }}>

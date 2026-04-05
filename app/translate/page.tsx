@@ -74,35 +74,45 @@ export default function TranslatePage() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#F8F9FA' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-dark)' }}>
-        <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'var(--accent-primary)', color: 'var(--fg-on-dark)', borderRadius: '9999px' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            TRANSLATE
+      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          {/* Breadcrumb Navigation */}
+          <div className="flex items-center gap-2 mb-12 text-sm" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
+            <Link href="/" className="hover:opacity-100 opacity-80 transition-opacity">Home</Link>
+            <span>/</span>
+            <span style={{ color: '#FFFFFF' }}>Translate</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: 'var(--fg-on-dark)', letterSpacing: '-2px', fontFamily: 'var(--font-display)' }}>
-            Legal Jargon Translator
-          </h1>
-          <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'var(--fg-on-dark-secondary)', fontFamily: 'var(--font-body)' }}>
-            Paste any legal text from a federal court document and get an instant plain-English explanation. Free translations every day.
-          </p>
+
+          {/* Header Content */}
+          <div className="pb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+              style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              TRANSLATE
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-black mb-4" style={{ color: '#FFFFFF', letterSpacing: '-2px', fontFamily: 'var(--font-display)' }}>
+              Legal Jargon Translator
+            </h1>
+            <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
+              Paste any legal text from a federal court document and get an instant plain-English explanation. Free translations every day.
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Translator Form */}
-        <div className="p-6 sm:p-8 border" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-elevated)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
+        <div className="p-6 sm:p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
           {/* Daily Limit Counter */}
-          <div className="mb-8 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ background: 'var(--bg-base)', border: '1px solid var(--border-default)', borderRadius: '4px' }}>
+          <div className="mb-8 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ background: '#F8F9FA', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.8px]" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+              <p className="text-xs font-semibold uppercase tracking-[0.8px]" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
                 Free Translations Today
               </p>
-              <p className="text-sm mt-1" style={{ color: 'var(--fg-secondary)', fontFamily: 'var(--font-body)' }}>
+              <p className="text-sm mt-1" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
                 {remaining} remaining
               </p>
             </div>
@@ -113,7 +123,7 @@ export default function TranslatePage() {
                   className="w-3 h-3 transition-colors"
                   style={{
                     borderRadius: '50%',
-                    background: i < remaining ? 'var(--accent-primary)' : 'var(--border-default)',
+                    background: i < remaining ? '#E8171F' : '#D5D8DC',
                   }}
                 />
               ))}
@@ -122,7 +132,7 @@ export default function TranslatePage() {
 
           {/* Text Area */}
           <div className="mb-6">
-            <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+            <label className="block text-xs font-semibold mb-3 uppercase tracking-[0.8px]" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Legal Text to Translate
             </label>
             <textarea
@@ -136,22 +146,22 @@ export default function TranslatePage() {
               className="w-full px-4 py-4 border text-sm transition-all focus:outline-none focus:ring-2 resize-none"
               style={{
                 borderRadius: '4px',
-                borderColor: 'var(--border-default)',
-                background: 'var(--bg-base)',
-                color: 'var(--fg-primary)',
+                borderColor: '#D5D8DC',
+                background: '#F8F9FA',
+                color: '#212529',
                 fontFamily: 'var(--font-body)',
                 minHeight: '140px',
               }}
             />
-            <p className="text-[11px] mt-2" style={{ color: 'var(--fg-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-[11px] mt-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
               Minimum 10 characters, maximum 3,000 characters.
             </p>
           </div>
 
           {/* Error Display */}
           {error && (
-            <div className="mb-6 p-4" style={{ background: 'var(--danger-subtle)', border: '1px solid var(--danger)', borderRadius: '4px' }}>
-              <p className="text-sm" style={{ color: 'var(--danger)', fontFamily: 'var(--font-body)' }}>
+            <div className="mb-6 p-4" style={{ background: 'rgba(232,23,31,0.06)', border: '1px solid #E8171F', borderRadius: '4px' }}>
+              <p className="text-sm" style={{ color: '#E8171F', fontFamily: 'var(--font-body)' }}>
                 {error}
               </p>
             </div>
@@ -161,16 +171,16 @@ export default function TranslatePage() {
           <button
             onClick={handleTranslate}
             disabled={!input.trim() || loading || remaining <= 0}
-            className="w-full px-6 py-3 text-sm font-semibold transition-all text-white hover:shadow-lg active:scale-[0.99]"
+            className="w-full px-6 py-3 text-sm font-semibold transition-all hover:shadow-lg active:scale-[0.99]"
             style={{
               borderRadius: '4px',
               background:
                 !input.trim() || loading || remaining <= 0
-                  ? 'var(--border-default)'
-                  : 'var(--accent-primary)',
+                  ? '#D5D8DC'
+                  : '#E8171F',
               color:
                 !input.trim() || loading || remaining <= 0
-                  ? 'var(--fg-secondary)'
+                  ? '#455A64'
                   : '#FFFFFF',
               fontFamily: 'var(--font-body)',
               cursor:
@@ -199,19 +209,19 @@ export default function TranslatePage() {
 
         {/* Translation Result */}
         {translation && (
-          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: 'var(--accent-primary-border)', background: 'var(--bg-elevated)', boxShadow: 'var(--shadow-xs)', borderLeft: '4px solid var(--accent-primary)', borderRadius: '4px' }}>
-            <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#E8171F', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #E8171F', borderRadius: '4px' }}>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Plain English Translation
             </h2>
             <div className="prose prose-sm max-w-none"
               style={{
-                color: 'var(--fg-primary)',
+                color: '#212529',
                 fontFamily: 'var(--font-body)',
                 lineHeight: '1.6',
               }}>
               <p className="whitespace-pre-wrap">{translation}</p>
             </div>
-            <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: 'var(--fg-secondary)', fontFamily: 'var(--font-body)', borderColor: 'var(--border-default)' }}>
+            <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: '#455A64', fontFamily: 'var(--font-body)', borderColor: '#D5D8DC' }}>
               Have more legal text to translate? You have {remaining - 1} free translations left today.
             </p>
           </div>
@@ -219,7 +229,7 @@ export default function TranslatePage() {
 
         {/* Example Phrases Section */}
         <div className="mt-12">
-          <h2 className="text-sm font-semibold mb-4" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-sm font-semibold mb-4" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Try These Examples
           </h2>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -230,9 +240,9 @@ export default function TranslatePage() {
                 className="p-4 border text-left transition-all hover:border-2 hover:shadow-sm active:scale-[0.98]"
                 style={{
                   borderRadius: '4px',
-                  borderColor: 'var(--border-default)',
-                  background: 'var(--bg-elevated)',
-                  color: 'var(--fg-primary)',
+                  borderColor: '#D5D8DC',
+                  background: '#FFFFFF',
+                  color: '#212529',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',
                   lineHeight: '1.5',
@@ -251,15 +261,15 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '4px',
-              borderColor: 'var(--border-default)',
-              background: 'var(--bg-elevated)',
-              boxShadow: 'var(--shadow-xs)',
+              borderColor: '#D5D8DC',
+              background: '#FFFFFF',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Case Search
             </p>
-            <p className="text-sm" style={{ color: 'var(--fg-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
               Search federal court cases by nature of suit or keyword.
             </p>
           </Link>
@@ -268,26 +278,26 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '4px',
-              borderColor: 'var(--border-default)',
-              background: 'var(--bg-elevated)',
-              boxShadow: 'var(--shadow-xs)',
+              borderColor: '#D5D8DC',
+              background: '#FFFFFF',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Settlement Calculator
             </p>
-            <p className="text-sm" style={{ color: 'var(--fg-secondary)', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
               Estimate settlement ranges based on case data.
             </p>
           </Link>
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 p-6 border" style={{ borderColor: 'var(--border-default)', background: 'var(--bg-elevated)', boxShadow: 'var(--shadow-xs)', borderRadius: '4px' }}>
-          <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: 'var(--fg-primary)', fontFamily: 'var(--font-display)' }}>
+        <div className="mt-8 p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
+          <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Important Disclaimer
           </h2>
-          <p className="text-[11px] leading-relaxed" style={{ color: 'var(--fg-secondary)', fontFamily: 'var(--font-body)' }}>
+          <p className="text-[11px] leading-relaxed" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
             This translator provides informal explanations of legal terminology and should not be considered legal advice. Legal language can have nuanced meanings depending on context, jurisdiction, and specific case facts. Always consult with a qualified attorney for authoritative interpretations of legal documents. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>
