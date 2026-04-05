@@ -16,8 +16,9 @@ export async function POST(req: NextRequest) {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user?.email) return NextResponse.json({ ok: false });
 
-    const tier = await getUserTier(user.email);
-    if (tier === 'free') return NextResponse.json({ ok: false, error: 'Search history requires a paid plan' });
+    // All features open to all users for now
+    // const tier = await getUserTier(user.email);
+    // if (tier === 'free') return NextResponse.json({ ok: false, error: 'Search history requires a paid plan' });
 
     const adminSupabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
