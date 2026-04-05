@@ -16,8 +16,9 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
   const total = data.reduce((s, d) => s + d.value, 0);
 
   return (
-    <div className="relative" style={{ width: size, height: size }}>
-      <ResponsiveContainer width="100%" height="100%">
+    <div className="relative p-6 rounded-[4px]" style={{ width: size + 48, height: size + 48, background: '#FFFFFF', border: '1px solid #D5D8DC' }}>
+      <div style={{ width: size, height: size }}>
+        <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
             data={data}
@@ -39,10 +40,10 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
           <Tooltip
             formatter={(value: number, name: string) => [`${((value / total) * 100).toFixed(1)}%`, name]}
             contentStyle={{
-              background: 'rgba(255,255,255,0.95)',
-              border: '1px solid rgba(255,255,255,0.10)',
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
               borderRadius: '4px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',
               padding: '8px 14px',
@@ -51,6 +52,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
           />
         </PieChart>
       </ResponsiveContainer>
+      </div>
       {(centerLabel || centerValue) && (
         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
           {centerValue && (

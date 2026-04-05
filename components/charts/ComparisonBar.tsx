@@ -21,18 +21,18 @@ export function ComparisonBar({
   const hasCompare = data.some(d => d.compare !== undefined);
 
   return (
-    <div className="w-full">
+    <div className="w-full p-6 rounded-[4px]" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC' }}>
       <ResponsiveContainer width="100%" height={260}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="25%">
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(229,231,235,0.5)" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
           <XAxis
             dataKey="name"
-            tick={{ fontSize: 11, fill: '#455A64', fontFamily: 'var(--font-body)' }}
-            axisLine={{ stroke: 'rgba(255,255,255,0.10)' }}
+            tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }}
+            axisLine={{ stroke: '#D5D8DC' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 10, fill: '#455A64' }}
+            tick={{ fontSize: 12, fill: '#455A64' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}
@@ -40,10 +40,10 @@ export function ComparisonBar({
           <Tooltip
             cursor={{ fill: 'rgba(17,17,17,0.04)' }}
             contentStyle={{
-              background: 'rgba(255,255,255,0.95)',
-              border: '1px solid rgba(255,255,255,0.10)',
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
               borderRadius: '4px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',
               padding: '8px 14px',
@@ -53,7 +53,7 @@ export function ComparisonBar({
           />
           {hasCompare && (
             <Legend
-              wrapperStyle={{ fontSize: '12px', fontFamily: 'var(--font-body)' }}
+              wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#455A64' }}
             />
           )}
           <Bar

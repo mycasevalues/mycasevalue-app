@@ -23,19 +23,19 @@ import {
   type TopCaseType,
 } from '../../lib/trends';
 
-// Teal palette for categories
+// LexisNexis color palette for categories
 const CATEGORY_CHART_COLORS: Record<string, string> = {
-  Financial: '#006997',
-  Employment: '#0080B8',
-  Injury: '#00A4D9',
-  Consumer: '#1AA8D1',
-  'Civil Rights': 'rgba(0,105,151,0.12)',
-  Housing: '#3D8FB5',
-  Medical: '#004D6D',
-  Family: '#003A52',
-  Government: '#002838',
-  'Intellectual Property': '#0074A8',
-  Other: '#0094C5',
+  Financial: '#E8171F',
+  Employment: '#00172E',
+  Injury: '#006997',
+  Consumer: '#455A64',
+  'Civil Rights': '#D5D8DC',
+  Housing: '#0080B8',
+  Medical: '#00A4D9',
+  Family: '#1AA8D1',
+  Government: '#004D6D',
+  'Intellectual Property': '#003A52',
+  Other: '#002838',
 };
 
 interface TooltipProps {
@@ -50,17 +50,17 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
       <div
         style={{
           background: '#FFFFFF',
-          border: '1px solid rgba(255,255,255,0.10)',
+          border: '1px solid #D5D8DC',
           borderRadius: '4px',
           padding: '12px 16px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
       >
-        <p style={{ color: '#F0F2F5', fontSize: '12px', fontWeight: 600, margin: '0 0 8px 0' }}>
+        <p style={{ color: '#212529', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
           {label}
         </p>
         {payload.map((entry, index) => (
-          <p key={index} style={{ color: entry.color, fontSize: '12px', margin: '4px 0' }}>
+          <p key={index} style={{ color: entry.color, fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
             {entry.name}: {typeof entry.value === 'number' ? entry.value.toLocaleString() : entry.value}
           </p>
         ))}
@@ -89,10 +89,10 @@ export default function TrendCharts() {
     <div className="space-y-10">
       {/* National Filing Trends - Area Chart */}
       <div
-        className="p-6 rounded-lg border"
+        className="p-6 rounded-[4px] border"
         style={{
           background: '#FFFFFF',
-          borderColor: 'rgba(255,255,255,0.10)',
+          borderColor: '#D5D8DC',
         }}
       >
         <h3
@@ -100,12 +100,12 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#F0F2F5',
+            color: '#212529',
           }}
         >
           Federal Filing Trends (2015–2024)
         </h3>
-        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
           Total federal civil case filings over the past decade
         </p>
         <ResponsiveContainer width="100%" height={300}>
@@ -116,9 +116,9 @@ export default function TrendCharts() {
                 <stop offset="95%" stopColor="#006997" stopOpacity={0.1} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#E5EBF0" />
-            <XAxis dataKey="year" stroke="#455A64" />
-            <YAxis stroke="#455A64" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" />
+            <XAxis dataKey="year" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <YAxis stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />
             <Area
               type="monotone"
@@ -134,10 +134,10 @@ export default function TrendCharts() {
 
       {/* Win Rate by Category - Multi-line Chart */}
       <div
-        className="p-6 rounded-lg border"
+        className="p-6 rounded-[4px] border"
         style={{
           background: '#FFFFFF',
-          borderColor: 'rgba(255,255,255,0.10)',
+          borderColor: '#D5D8DC',
         }}
       >
         <h3
@@ -145,21 +145,21 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#F0F2F5',
+            color: '#212529',
           }}
         >
           Win Rate Trends by Category (2018–2024)
         </h3>
-        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
           Plaintiff win rate trends across top case categories
         </p>
         <ResponsiveContainer width="100%" height={350}>
           <LineChart data={categoryTrends[0]?.years ? buildCombinedCategoryData(categoryTrends) : []}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#E5EBF0" />
-            <XAxis dataKey="year" stroke="#455A64" />
-            <YAxis stroke="#455A64" domain={[0, 100]} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" />
+            <XAxis dataKey="year" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <YAxis stroke="#455A64" domain={[0, 100]} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />
-            <Legend />
+            <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#455A64' }} />
             {categoryTrends.map((cat, idx) => (
               <Line
                 key={cat.category}
@@ -167,12 +167,12 @@ export default function TrendCharts() {
                 dataKey={cat.categoryLabel}
                 stroke={
                   [
+                    '#E8171F',
+                    '#00172E',
                     '#006997',
-                    '#3D8FB5',
+                    '#455A64',
+                    '#D5D8DC',
                     '#0080B8',
-                    '#00A4D9',
-                    '#1AA8D1',
-                    '#004D6D',
                   ][idx % 6]
                 }
                 strokeWidth={2}
@@ -186,10 +186,10 @@ export default function TrendCharts() {
 
       {/* Top Case Types by Volume - Horizontal Bar Chart */}
       <div
-        className="p-6 rounded-lg border"
+        className="p-6 rounded-[4px] border"
         style={{
           background: '#FFFFFF',
-          borderColor: 'rgba(255,255,255,0.10)',
+          borderColor: '#D5D8DC',
         }}
       >
         <h3
@@ -197,12 +197,12 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#F0F2F5',
+            color: '#212529',
           }}
         >
           Top 15 Case Types by Filing Volume
         </h3>
-        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px' }}>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
           Most frequently filed federal civil case types
         </p>
         <ResponsiveContainer width="100%" height={500}>
@@ -211,9 +211,9 @@ export default function TrendCharts() {
             layout="vertical"
             margin={{ top: 5, right: 30, left: 300, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="#E5EBF0" />
-            <XAxis type="number" stroke="#455A64" />
-            <YAxis dataKey="label" type="category" stroke="#455A64" width={300} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" />
+            <XAxis type="number" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <YAxis dataKey="label" type="category" stroke="#455A64" width={300} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="count" fill="#006997" radius={[0, 8, 8, 0]} />
           </BarChart>

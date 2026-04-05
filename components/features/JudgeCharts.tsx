@@ -26,10 +26,10 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
   };
 
   const cardStyle = {
-    background: 'white',
-    borderRadius: '12px',
-    border: '1px solid var(--border-default, rgba(255,255,255,0.10))',
-    padding: '24px',
+    background: '#FFFFFF',
+    borderRadius: '4px',
+    border: '1px solid #D5D8DC',
+    padding: '32px',
     marginBottom: '24px',
   };
 
@@ -53,28 +53,31 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           <LineChart data={yearlyTrend}>
             <CartesianGrid
               strokeDasharray="3 3"
-              stroke="rgba(255,255,255,0.10)"
+              stroke="#EDEEEE"
               vertical={false}
             />
             <XAxis
               dataKey="year"
               stroke="#455A64"
-              style={chartStyle}
+              tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }}
             />
             <YAxis
               label={{ value: 'Win Rate (%)', angle: -90, position: 'insideLeft' }}
               stroke="#455A64"
-              style={chartStyle}
+              tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }}
               domain={[30, 70]}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: 'white',
-                border: '1px solid rgba(255,255,255,0.10)',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid #D5D8DC',
                 borderRadius: '4px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                color: '#212529',
+                fontFamily: 'var(--font-body)',
+                fontSize: '13px',
               }}
-              cursor={{ stroke: 'rgba(255,255,255,0.10)' }}
+              cursor={{ stroke: '#EDEEEE' }}
             />
             <Line
               type="monotone"
@@ -111,29 +114,31 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           >
             <CartesianGrid
               strokeDasharray="3 3"
-              stroke="rgba(255,255,255,0.10)"
+              stroke="#EDEEEE"
               horizontal={false}
             />
             <XAxis
               type="number"
               stroke="#455A64"
-              style={chartStyle}
+              tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }}
             />
             <YAxis
               dataKey="label"
               type="category"
               width={190}
-              tick={{ fill: '#212529', fontSize: 12 }}
-              style={chartStyle}
+              tick={{ fill: '#455A64', fontSize: 12, fontFamily: 'var(--font-body)' }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: 'white',
-                border: '1px solid rgba(255,255,255,0.10)',
+                backgroundColor: '#FFFFFF',
+                border: '1px solid #D5D8DC',
                 borderRadius: '4px',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                color: '#212529',
+                fontFamily: 'var(--font-body)',
+                fontSize: '13px',
               }}
-              cursor={{ fill: 'rgba(139, 92, 246, 0.05)' }}
+              cursor={{ fill: 'rgba(0, 105, 151, 0.05)' }}
             />
             <Bar
               dataKey="count"

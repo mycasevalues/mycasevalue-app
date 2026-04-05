@@ -18,7 +18,7 @@ interface DistrictChartsProps {
   stats: DistrictStats;
 }
 
-const PURPLE_PALETTE = ['#006997', '#0080B8', '#00A4D9', '#1AA8D1', '#33AFC8', 'rgba(0,105,151,0.12)', '#004D6D', '#003A52', '#002838', '#E6F3F8', '#3D8FB5'];
+const PURPLE_PALETTE = ['#E8171F', '#00172E', '#006997', '#455A64', '#D5D8DC', '#0080B8', '#00A4D9', '#1AA8D1', '#004D6D', '#003A52', '#002838'];
 
 export default function DistrictCharts({ stats }: DistrictChartsProps) {
   // Prepare data for top case types chart (take top 8)
@@ -39,17 +39,17 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
       {/* Top Case Types Bar Chart */}
       {topCaseTypesData.length > 0 && (
         <div
-          className="rounded-[12px] p-6 sm:p-8"
+          className="rounded-[4px] p-6 sm:p-8"
           style={{
             background: '#FFFFFF',
-            border: '1px solid rgba(255,255,255,0.10)',
+            border: '1px solid #D5D8DC',
           }}
         >
           <h3
             className="text-lg font-bold mb-6"
             style={{
-              color: '#1F2937',
-              fontFamily: 'var(--font-body)',
+              color: '#212529',
+              fontFamily: 'var(--font-display)',
             }}
           >
             Top Case Types by Volume
@@ -60,13 +60,16 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               layout="vertical"
               margin={{ top: 5, right: 30, left: 200, bottom: 5 }}
             >
-              <XAxis type="number" />
-              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12 }} />
+              <XAxis type="number" stroke="#455A64" />
+              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
               <Tooltip
                 contentStyle={{
                   background: '#FFFFFF',
-                  border: '1px solid rgba(255,255,255,0.10)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
+                  color: '#212529',
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '13px',
                 }}
               />
               <Bar dataKey="count" fill="#006997" radius={[0, 8, 8, 0]} />
@@ -78,17 +81,17 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
       {/* Category Breakdown Pie Chart */}
       {categoryData.length > 0 && (
         <div
-          className="rounded-[12px] p-6 sm:p-8"
+          className="rounded-[4px] p-6 sm:p-8"
           style={{
             background: '#FFFFFF',
-            border: '1px solid rgba(255,255,255,0.10)',
+            border: '1px solid #D5D8DC',
           }}
         >
           <h3
             className="text-lg font-bold mb-6"
             style={{
-              color: '#1F2937',
-              fontFamily: 'var(--font-body)',
+              color: '#212529',
+              fontFamily: 'var(--font-display)',
             }}
           >
             Case Distribution by Category
@@ -111,14 +114,18 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               <Tooltip
                 contentStyle={{
                   background: '#FFFFFF',
-                  border: '1px solid rgba(255,255,255,0.10)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
+                  color: '#212529',
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '13px',
                 }}
                 formatter={(value: number) => [value.toLocaleString(), 'Cases']}
               />
               <Legend
                 verticalAlign="bottom"
                 height={36}
+                wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#455A64' }}
                 formatter={(value) => value}
               />
             </PieChart>

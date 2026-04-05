@@ -79,7 +79,7 @@ export default function ServerHero() {
           </p>
 
           <div style={{ display: 'flex', gap: 'clamp(12px, 2vw, 16px)', justifyContent: 'center', flexWrap: 'wrap', marginBottom: 'clamp(32px, 4vw, 48px)', alignItems: 'center' }}>
-            <a href="/search" className="cta-btn-primary" style={{
+            <a href="/search" className="hero-cta-primary" style={{
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -98,14 +98,6 @@ export default function ServerHero() {
               cursor: 'pointer',
               boxShadow: '0 8px 24px rgba(232,23,31,0.3)',
               minHeight: '48px',
-            }} onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#CC1019';
-              e.currentTarget.style.borderColor = '#CC1019';
-              e.currentTarget.style.boxShadow = '0 12px 32px rgba(232,23,31,0.4)';
-            }} onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#E8171F';
-              e.currentTarget.style.borderColor = '#E8171F';
-              e.currentTarget.style.boxShadow = '0 8px 24px rgba(232,23,31,0.3)';
             }}>
               Start Free Trial
             </a>
@@ -117,7 +109,7 @@ export default function ServerHero() {
               background: 'transparent',
               color: '#FFFFFF',
               border: '2px solid rgba(255,255,255,0.35)',
-              borderRadius: '6px',
+              borderRadius: '4px',
               fontWeight: 700,
               fontSize: 'clamp(13px, 1.2vw, 15px)',
               fontFamily: 'var(--font-display)',
@@ -127,13 +119,7 @@ export default function ServerHero() {
               transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
               cursor: 'pointer',
               minHeight: '48px',
-            }} onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)';
-            }} onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)';
-            }}>
+            }} className="hero-cta-secondary">
               Sign In
             </a>
           </div>
@@ -164,6 +150,15 @@ export default function ServerHero() {
           @keyframes grid-drift {
             0% { transform: translate(0, 0); }
             100% { transform: translate(50px, 50px); }
+          }
+          .hero-cta-primary:hover {
+            background: #CC1019 !important;
+            border-color: #CC1019 !important;
+            box-shadow: 0 12px 32px rgba(232,23,31,0.4) !important;
+          }
+          .hero-cta-secondary:hover {
+            background: rgba(255,255,255,0.08) !important;
+            border-color: rgba(255,255,255,0.6) !important;
           }
           @media (max-width: 768px) {
             h1 { word-spacing: 9999px; }

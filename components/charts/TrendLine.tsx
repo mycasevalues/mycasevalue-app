@@ -17,9 +17,9 @@ export function TrendLine({
   label, unit = '', lang = 'en',
 }: TrendLineProps) {
   return (
-    <div className="w-full">
+    <div className="w-full p-6 rounded-[4px]" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC' }}>
       {label && (
-        <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#455A64] mb-3">{label}</div>
+        <div className="text-[13px] font-bold tracking-[0.5px] text-[#455A64] mb-4" style={{ fontFamily: 'var(--font-display)' }}>{label}</div>
       )}
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }}>
@@ -29,25 +29,25 @@ export function TrendLine({
               <stop offset="95%" stopColor={color} stopOpacity={0.02} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(229,231,235,0.5)" vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
           <XAxis
             dataKey="year"
-            tick={{ fontSize: 10, fill: '#455A64', fontFamily: 'PT Mono, monospace' }}
-            axisLine={{ stroke: 'rgba(255,255,255,0.10)' }}
+            tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }}
+            axisLine={{ stroke: '#D5D8DC' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 10, fill: '#455A64' }}
+            tick={{ fontSize: 12, fill: '#455A64' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}
           />
           <Tooltip
             contentStyle={{
-              background: 'rgba(255,255,255,0.95)',
-              border: '1px solid rgba(255,255,255,0.10)',
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
               borderRadius: '4px',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',
               padding: '8px 14px',

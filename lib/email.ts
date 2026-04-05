@@ -104,17 +104,45 @@ export async function sendWelcomeEmail(
       subject: 'Bienvenido a MyCaseValue',
       html: `
         <html>
-          <body style="font-family: Arial, sans-serif; color: #333;">
-            <h2>¡Bienvenido a MyCaseValue!</h2>
-            <p>Gracias por comprar <strong>${planName}</strong>.</p>
-            <p>Tu acceso premium está activado. Ahora puedes:</p>
-            <ul>
-              <li>Acceder a análisis de casos detallados</li>
-              <li>Ver rangos de recuperación por estado</li>
-              <li>Analizar patrones de jueces</li>
-            </ul>
-            <p><a href="https://www.mycasevalues.com" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Ir a MyCaseValue</a></p>
-            <p>¿Preguntas? Contáctanos en support@mycasevalues.com</p>
+          <head>
+            <meta charset="UTF-8">
+            <style>
+              body { margin: 0; padding: 0; }
+              .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+              .header { background-color: #00172E; color: white; padding: 24px; text-align: center; }
+              .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+              .body-content { background-color: white; padding: 32px 24px; }
+              .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+              .body-content p { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+              .body-content ul { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+              .body-content a { color: #006997; text-decoration: none; }
+              .cta-button { background-color: #E8171F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .footer { background-color: #F8F9FA; color: #455A64; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+              .footer p { margin: 8px 0; }
+            </style>
+          </head>
+          <body>
+            <div class="email-container">
+              <div class="header">
+                <div class="header-text">MyCaseValue</div>
+              </div>
+              <div class="body-content">
+                <h2>¡Bienvenido a MyCaseValue!</h2>
+                <p>Gracias por comprar <strong>${planName}</strong>.</p>
+                <p>Tu acceso premium está activado. Ahora puedes:</p>
+                <ul>
+                  <li>Acceder a análisis de casos detallados</li>
+                  <li>Ver rangos de recuperación por estado</li>
+                  <li>Analizar patrones de jueces</li>
+                </ul>
+                <p><a href="https://www.mycasevalues.com" class="cta-button">Ir a MyCaseValue</a></p>
+                <p>¿Preguntas? Contáctanos en <a href="mailto:support@mycasevalues.com">support@mycasevalues.com</a></p>
+              </div>
+              <div class="footer">
+                <p>&copy; 2026 MyCaseValue. Todos los derechos reservados.</p>
+                <p>Este correo fue enviado a ${email}. Información legal y privacidad de LexisNexis.</p>
+              </div>
+            </div>
           </body>
         </html>
       `,
@@ -128,17 +156,45 @@ export async function sendWelcomeEmail(
     subject: 'Welcome to MyCaseValue',
     html: `
       <html>
-        <body style="font-family: Arial, sans-serif; color: #333;">
-          <h2>Welcome to MyCaseValue!</h2>
-          <p>Thank you for purchasing <strong>${planName}</strong>.</p>
-          <p>Your premium access is now active. You can now:</p>
-          <ul>
-            <li>Access detailed case analysis</li>
-            <li>View recovery ranges by state</li>
-            <li>Analyze judge patterns</li>
-          </ul>
-          <p><a href="https://www.mycasevalues.com" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Go to MyCaseValue</a></p>
-          <p>Questions? Contact us at support@mycasevalues.com</p>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { margin: 0; padding: 0; }
+            .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+            .header { background-color: #00172E; color: white; padding: 24px; text-align: center; }
+            .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+            .body-content { background-color: white; padding: 32px 24px; }
+            .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+            .body-content p { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+            .body-content ul { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+            .body-content a { color: #006997; text-decoration: none; }
+            .cta-button { background-color: #E8171F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .footer { background-color: #F8F9FA; color: #455A64; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+            .footer p { margin: 8px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="header">
+              <div class="header-text">MyCaseValue</div>
+            </div>
+            <div class="body-content">
+              <h2>Welcome to MyCaseValue!</h2>
+              <p>Thank you for purchasing <strong>${planName}</strong>.</p>
+              <p>Your premium access is now active. You can now:</p>
+              <ul>
+                <li>Access detailed case analysis</li>
+                <li>View recovery ranges by state</li>
+                <li>Analyze judge patterns</li>
+              </ul>
+              <p><a href="https://www.mycasevalues.com" class="cta-button">Go to MyCaseValue</a></p>
+              <p>Questions? Contact us at <a href="mailto:support@mycasevalues.com">support@mycasevalues.com</a></p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2026 MyCaseValue. All rights reserved.</p>
+              <p>This email was sent to ${email}. LexisNexis legal and privacy information.</p>
+            </div>
+          </div>
         </body>
       </html>
     `,
@@ -166,24 +222,55 @@ export async function sendReportEmail(
       subject: `Tu Informe de Caso - ${caseNumber || 'MyCaseValue'}`,
       html: `
         <html>
-          <body style="font-family: Arial, sans-serif; color: #333;">
-            <h2>Tu Informe de Caso</h2>
-            <p>Aquí está tu informe detallado:</p>
-            <table style="border-collapse: collapse; width: 100%; margin: 20px 0;">
-              <tr style="background-color: #f5f5f5;">
-                <td style="border: 1px solid #ddd; padding: 10px;"><strong>Número de Caso</strong></td>
-                <td style="border: 1px solid #ddd; padding: 10px;">${caseNumber || 'N/A'}</td>
-              </tr>
-              <tr>
-                <td style="border: 1px solid #ddd; padding: 10px;"><strong>Jurisdicción</strong></td>
-                <td style="border: 1px solid #ddd; padding: 10px;">${jurisdiction || 'N/A'}</td>
-              </tr>
-              <tr style="background-color: #f5f5f5;">
-                <td style="border: 1px solid #ddd; padding: 10px;"><strong>Rango de Recuperación</strong></td>
-                <td style="border: 1px solid #ddd; padding: 10px;">${caseValue || 'N/A'}</td>
-              </tr>
-            </table>
-            <p><a href="https://www.mycasevalues.com" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Ver Informe Completo</a></p>
+          <head>
+            <meta charset="UTF-8">
+            <style>
+              body { margin: 0; padding: 0; }
+              .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+              .header { background-color: #00172E; color: white; padding: 24px; text-align: center; }
+              .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+              .body-content { background-color: white; padding: 32px 24px; }
+              .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+              .body-content p { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+              .body-content a { color: #006997; text-decoration: none; }
+              .cta-button { background-color: #E8171F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .report-table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+              .report-table td { border: 1px solid #ddd; padding: 12px; color: #455A64; font-size: 15px; }
+              .report-table strong { color: #212529; }
+              .report-table tr:nth-child(odd) { background-color: #F8F9FA; }
+              .footer { background-color: #F8F9FA; color: #455A64; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+              .footer p { margin: 8px 0; }
+            </style>
+          </head>
+          <body>
+            <div class="email-container">
+              <div class="header">
+                <div class="header-text">MyCaseValue</div>
+              </div>
+              <div class="body-content">
+                <h2>Tu Informe de Caso</h2>
+                <p>Aquí está tu informe detallado:</p>
+                <table class="report-table">
+                  <tr>
+                    <td><strong>Número de Caso</strong></td>
+                    <td>${caseNumber || 'N/A'}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Jurisdicción</strong></td>
+                    <td>${jurisdiction || 'N/A'}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Rango de Recuperación</strong></td>
+                    <td>${caseValue || 'N/A'}</td>
+                  </tr>
+                </table>
+                <p><a href="https://www.mycasevalues.com" class="cta-button">Ver Informe Completo</a></p>
+              </div>
+              <div class="footer">
+                <p>&copy; 2026 MyCaseValue. Todos los derechos reservados.</p>
+                <p>Este correo fue enviado a ${email}. Información legal y privacidad de LexisNexis.</p>
+              </div>
+            </div>
           </body>
         </html>
       `,
@@ -197,24 +284,55 @@ export async function sendReportEmail(
     subject: `Your Case Report - ${caseNumber || 'MyCaseValue'}`,
     html: `
       <html>
-        <body style="font-family: Arial, sans-serif; color: #333;">
-          <h2>Your Case Report</h2>
-          <p>Here is your detailed case analysis:</p>
-          <table style="border-collapse: collapse; width: 100%; margin: 20px 0;">
-            <tr style="background-color: #f5f5f5;">
-              <td style="border: 1px solid #ddd; padding: 10px;"><strong>Case Number</strong></td>
-              <td style="border: 1px solid #ddd; padding: 10px;">${caseNumber || 'N/A'}</td>
-            </tr>
-            <tr>
-              <td style="border: 1px solid #ddd; padding: 10px;"><strong>Jurisdiction</strong></td>
-              <td style="border: 1px solid #ddd; padding: 10px;">${jurisdiction || 'N/A'}</td>
-            </tr>
-            <tr style="background-color: #f5f5f5;">
-              <td style="border: 1px solid #ddd; padding: 10px;"><strong>Recovery Range</strong></td>
-              <td style="border: 1px solid #ddd; padding: 10px;">${caseValue || 'N/A'}</td>
-            </tr>
-          </table>
-          <p><a href="https://www.mycasevalues.com" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">View Full Report</a></p>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { margin: 0; padding: 0; }
+            .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+            .header { background-color: #00172E; color: white; padding: 24px; text-align: center; }
+            .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+            .body-content { background-color: white; padding: 32px 24px; }
+            .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+            .body-content p { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+            .body-content a { color: #006997; text-decoration: none; }
+            .cta-button { background-color: #E8171F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .report-table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+            .report-table td { border: 1px solid #ddd; padding: 12px; color: #455A64; font-size: 15px; }
+            .report-table strong { color: #212529; }
+            .report-table tr:nth-child(odd) { background-color: #F8F9FA; }
+            .footer { background-color: #F8F9FA; color: #455A64; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+            .footer p { margin: 8px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="header">
+              <div class="header-text">MyCaseValue</div>
+            </div>
+            <div class="body-content">
+              <h2>Your Case Report</h2>
+              <p>Here is your detailed case analysis:</p>
+              <table class="report-table">
+                <tr>
+                  <td><strong>Case Number</strong></td>
+                  <td>${caseNumber || 'N/A'}</td>
+                </tr>
+                <tr>
+                  <td><strong>Jurisdiction</strong></td>
+                  <td>${jurisdiction || 'N/A'}</td>
+                </tr>
+                <tr>
+                  <td><strong>Recovery Range</strong></td>
+                  <td>${caseValue || 'N/A'}</td>
+                </tr>
+              </table>
+              <p><a href="https://www.mycasevalues.com" class="cta-button">View Full Report</a></p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2026 MyCaseValue. All rights reserved.</p>
+              <p>This email was sent to ${email}. LexisNexis legal and privacy information.</p>
+            </div>
+          </div>
         </body>
       </html>
     `,
@@ -240,16 +358,39 @@ export async function sendPasswordResetEmail(
       subject: 'Restablecer tu contraseña — MyCaseValue',
       html: `
         <html>
-          <body style="font-family: Arial, sans-serif; color: #333; max-width: 560px; margin: 0 auto;">
-            <div style="padding: 32px 0; text-align: center;">
-              <h2 style="margin: 0 0 8px; font-size: 22px; color: #212529;">Restablecer contraseña</h2>
-              <p style="color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">
-                Recibimos una solicitud para restablecer tu contraseña. Haz clic en el botón a continuación para crear una nueva.
-              </p>
-              <a href="${resetUrl}" style="display: inline-block; background: #111111; color: #ffffff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">Restablecer contraseña</a>
-              <p style="color: #455A64; font-size: 13px; margin: 24px 0 0; line-height: 1.5;">
-                Si no solicitaste esto, puedes ignorar este correo. El enlace expira en 1 hora.
-              </p>
+          <head>
+            <meta charset="UTF-8">
+            <style>
+              body { margin: 0; padding: 0; }
+              .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+              .header { background-color: #00172E; color: white; padding: 24px; text-align: center; }
+              .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+              .body-content { background-color: white; padding: 32px 24px; text-align: center; }
+              .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+              .body-content p { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+              .body-content a { color: #006997; text-decoration: none; }
+              .cta-button { background-color: #E8171F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .footer { background-color: #F8F9FA; color: #455A64; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+              .footer p { margin: 8px 0; }
+            </style>
+          </head>
+          <body>
+            <div class="email-container">
+              <div class="header">
+                <div class="header-text">MyCaseValue</div>
+              </div>
+              <div class="body-content">
+                <h2>Restablecer contraseña</h2>
+                <p>Recibimos una solicitud para restablecer tu contraseña. Haz clic en el botón a continuación para crear una nueva.</p>
+                <p><a href="${resetUrl}" class="cta-button">Restablecer contraseña</a></p>
+                <p style="margin-top: 24px; font-size: 13px;">
+                  Si no solicitaste esto, puedes ignorar este correo. El enlace expira en 1 hora.
+                </p>
+              </div>
+              <div class="footer">
+                <p>&copy; 2026 MyCaseValue. Todos los derechos reservados.</p>
+                <p>Este correo fue enviado a ${email}. Información legal y privacidad de LexisNexis.</p>
+              </div>
             </div>
           </body>
         </html>
@@ -263,16 +404,39 @@ export async function sendPasswordResetEmail(
     subject: 'Reset your password — MyCaseValue',
     html: `
       <html>
-        <body style="font-family: Arial, sans-serif; color: #333; max-width: 560px; margin: 0 auto;">
-          <div style="padding: 32px 0; text-align: center;">
-            <h2 style="margin: 0 0 8px; font-size: 22px; color: #212529;">Reset your password</h2>
-            <p style="color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">
-              We received a request to reset your password. Click the button below to create a new one.
-            </p>
-            <a href="${resetUrl}" style="display: inline-block; background: #111111; color: #ffffff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">Reset Password</a>
-            <p style="color: #455A64; font-size: 13px; margin: 24px 0 0; line-height: 1.5;">
-              If you didn&rsquo;t request this, you can safely ignore this email. The link expires in 1 hour.
-            </p>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { margin: 0; padding: 0; }
+            .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+            .header { background-color: #00172E; color: white; padding: 24px; text-align: center; }
+            .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+            .body-content { background-color: white; padding: 32px 24px; text-align: center; }
+            .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+            .body-content p { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+            .body-content a { color: #006997; text-decoration: none; }
+            .cta-button { background-color: #E8171F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .footer { background-color: #F8F9FA; color: #455A64; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+            .footer p { margin: 8px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="header">
+              <div class="header-text">MyCaseValue</div>
+            </div>
+            <div class="body-content">
+              <h2>Reset your password</h2>
+              <p>We received a request to reset your password. Click the button below to create a new one.</p>
+              <p><a href="${resetUrl}" class="cta-button">Reset Password</a></p>
+              <p style="margin-top: 24px; font-size: 13px;">
+                If you didn&rsquo;t request this, you can safely ignore this email. The link expires in 1 hour.
+              </p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2026 MyCaseValue. All rights reserved.</p>
+              <p>This email was sent to ${email}. LexisNexis legal and privacy information.</p>
+            </div>
           </div>
         </body>
       </html>
@@ -301,13 +465,36 @@ export async function sendReportReadyEmail(
       subject: `Tu informe está listo — ${reportData.caseType}`,
       html: `
         <html>
-          <body style="font-family: Arial, sans-serif; color: #333; max-width: 560px; margin: 0 auto;">
-            <div style="padding: 32px 0; text-align: center;">
-              <h2 style="margin: 0 0 8px; font-size: 22px; color: #212529;">Tu informe está listo</h2>
-              <p style="color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">
-                Tu informe de resultados para <strong>${reportData.caseType}</strong> está listo para ver.
-              </p>
-              <a href="${reportUrl}" style="display: inline-block; background: #111111; color: #ffffff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">Ver informe</a>
+          <head>
+            <meta charset="UTF-8">
+            <style>
+              body { margin: 0; padding: 0; }
+              .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+              .header { background-color: #00172E; color: white; padding: 24px; text-align: center; }
+              .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+              .body-content { background-color: white; padding: 32px 24px; text-align: center; }
+              .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+              .body-content p { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+              .body-content a { color: #006997; text-decoration: none; }
+              .cta-button { background-color: #E8171F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .footer { background-color: #F8F9FA; color: #455A64; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+              .footer p { margin: 8px 0; }
+            </style>
+          </head>
+          <body>
+            <div class="email-container">
+              <div class="header">
+                <div class="header-text">MyCaseValue</div>
+              </div>
+              <div class="body-content">
+                <h2>Tu informe está listo</h2>
+                <p>Tu informe de resultados para <strong>${reportData.caseType}</strong> está listo para ver.</p>
+                <p><a href="${reportUrl}" class="cta-button">Ver informe</a></p>
+              </div>
+              <div class="footer">
+                <p>&copy; 2026 MyCaseValue. Todos los derechos reservados.</p>
+                <p>Este correo fue enviado a ${email}. Información legal y privacidad de LexisNexis.</p>
+              </div>
             </div>
           </body>
         </html>
@@ -321,13 +508,36 @@ export async function sendReportReadyEmail(
     subject: `Your report is ready — ${reportData.caseType}`,
     html: `
       <html>
-        <body style="font-family: Arial, sans-serif; color: #333; max-width: 560px; margin: 0 auto;">
-          <div style="padding: 32px 0; text-align: center;">
-            <h2 style="margin: 0 0 8px; font-size: 22px; color: #212529;">Your report is ready</h2>
-            <p style="color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">
-              Your outcome report for <strong>${reportData.caseType}</strong> is ready to view.
-            </p>
-            <a href="${reportUrl}" style="display: inline-block; background: #111111; color: #ffffff; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px;">View Report</a>
+        <head>
+          <meta charset="UTF-8">
+          <style>
+            body { margin: 0; padding: 0; }
+            .email-container { max-width: 600px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif; }
+            .header { background-color: #00172E; color: white; padding: 24px; text-align: center; }
+            .header-text { font-size: 24px; font-weight: bold; margin: 0; }
+            .body-content { background-color: white; padding: 32px 24px; text-align: center; }
+            .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
+            .body-content p { color: #455A64; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
+            .body-content a { color: #006997; text-decoration: none; }
+            .cta-button { background-color: #E8171F; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .footer { background-color: #F8F9FA; color: #455A64; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
+            .footer p { margin: 8px 0; }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="header">
+              <div class="header-text">MyCaseValue</div>
+            </div>
+            <div class="body-content">
+              <h2>Your report is ready</h2>
+              <p>Your outcome report for <strong>${reportData.caseType}</strong> is ready to view.</p>
+              <p><a href="${reportUrl}" class="cta-button">View Report</a></p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2026 MyCaseValue. All rights reserved.</p>
+              <p>This email was sent to ${email}. LexisNexis legal and privacy information.</p>
+            </div>
           </div>
         </body>
       </html>
