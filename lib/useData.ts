@@ -27,6 +27,13 @@ interface UseDataResult<T> {
 const MAX_RETRIES = 2
 const RETRY_DELAYS = [1000, 3000] // exponential backoff: 1s, 3s
 
+// ─── Request deduplication + stale cache ────────────────────────
+// Prevents multiple components from firing identical requests,
+// and serves stale data while revalidating in the background.
+const inflight = new Map<string, Promise<any>>()
+const staleCache = new Map<string, { data: any; source: DataSource; ts: number }>()
+const STALE_TTL = 5 * 60 * 1000 // 5 minutes
+
 /**
  * Generic data fetcher with retry + exponential backoff + static fallback
  */
@@ -37,48 +44,65 @@ function useDataFetch<T>(url: string, fallback: T | null = null): UseDataResult<
   const [error, setError] = useState<string | null>(null)
 
   const fetchData = useCallback(async () => {
-    setLoading(true)
+    // Serve stale data immediately while revalidating
+    const cached = staleCache.get(url)
+    if (cached && Date.now() - cached.ts < STALE_TTL) {
+      setData(cached.data as T)
+      setSource(cached.source)
+      setLoading(false)
+      // Still revalidate in the background (don't return yet)
+    } else {
+      setLoading(true)
+    }
 
-    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-      try {
-        const controller = new AbortController()
-        const timeout = setTimeout(() => controller.abort(), 8000) // 8s timeout
+    // Request deduplication: if another component already fired this request, reuse it
+    const doFetch = async () => {
+      for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+        try {
+          const controller = new AbortController()
+          const timeout = setTimeout(() => controller.abort(), 8000) // 8s timeout
 
-        const res = await fetch(url, { signal: controller.signal })
-        clearTimeout(timeout)
+          const res = await fetch(url, { signal: controller.signal })
+          clearTimeout(timeout)
 
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status}`)
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}`)
+          }
+
+          const json = await res.json()
+
+          if (json.source === 'live' && json.data) {
+            staleCache.set(url, { data: json.data, source: 'live', ts: Date.now() })
+            return { data: json.data, source: 'live' as DataSource, error: null }
+          } else {
+            return { data: fallback, source: 'static' as DataSource, error: null }
+          }
+        } catch (err: any) {
+          if (attempt === MAX_RETRIES) {
+            console.warn(`[useData] All ${MAX_RETRIES + 1} attempts failed for ${url}:`, err.message)
+            return { data: fallback, source: 'static' as DataSource, error: err.message }
+          }
+          await new Promise(resolve => setTimeout(resolve, RETRY_DELAYS[attempt]))
         }
-
-        const json = await res.json()
-
-        if (json.source === 'live' && json.data) {
-          setData(json.data as T)
-          setSource('live')
-          setError(null)
-          setLoading(false)
-          return
-        } else {
-          // API available but no live data — use fallback
-          setData(fallback)
-          setSource('static')
-          setLoading(false)
-          return
-        }
-      } catch (err: any) {
-        // If this was the last attempt, fall back to static
-        if (attempt === MAX_RETRIES) {
-          console.warn(`[useData] All ${MAX_RETRIES + 1} attempts failed for ${url}:`, err.message)
-          setData(fallback)
-          setSource('static')
-          setError(err.message)
-          setLoading(false)
-          return
-        }
-        // Wait before retrying (exponential backoff)
-        await new Promise(resolve => setTimeout(resolve, RETRY_DELAYS[attempt]))
       }
+      return { data: fallback, source: 'static' as DataSource, error: 'Unknown error' }
+    }
+
+    // Deduplicate: reuse inflight request if one exists for this URL
+    let promise = inflight.get(url)
+    if (!promise) {
+      promise = doFetch()
+      inflight.set(url, promise)
+    }
+
+    try {
+      const result = await promise
+      setData(result.data as T)
+      setSource(result.source)
+      setError(result.error)
+    } finally {
+      inflight.delete(url)
+      setLoading(false)
     }
   }, [url, fallback])
 
