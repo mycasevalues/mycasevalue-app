@@ -196,9 +196,9 @@ export default function ServerHero() {
 
       {/* ── VISUAL 2: DATA SOURCE ATTRIBUTION BAR ─────────── */}
       <div style={{
-        background: '#EDEEEE',
+        background: '#FFFFFF',
         borderBottom: '1px solid #D5D8DC',
-        padding: '16px 24px',
+        padding: '14px 24px',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
@@ -265,106 +265,68 @@ export default function ServerHero() {
 
       {/* Quick Lookup is now embedded in the hero card above */}
 
-      {/* ── VISUAL 7: INTEGRATED CASE RESEARCH ─────────────────────────────── */}
-      <div style={{ background: '#EDEEEE', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
-        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
-              Integrated case research
-            </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
-              From research to action — without friction
-            </h2>
-            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto 16px', lineHeight: 1.6, fontWeight: 300 }}>
-              Everything case research touches, connected in one place. Explore outcomes, develop strategy, and make informed decisions without disrupting how you think or work.
-            </p>
-            <a href="/search" className="cta-btn-primary" style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-              height: '48px', padding: '0 32px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px',
-              fontWeight: 700, fontSize: '14px', textDecoration: 'none', textTransform: 'uppercase',
-              letterSpacing: '0.04em', fontFamily: 'var(--font-display)',
-            }}>
-              Instant Free Trial
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
+      {/* ── VISUAL 7: INTEGRATED CASE RESEARCH ─────────────── */}
+      <div style={{ background: '#00172E', padding: '64px 24px', borderBottom: '3px solid #E8171F' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>
+            From research to action — without friction
+          </h2>
+          <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto 28px', lineHeight: 1.7 }}>
+            Everything case research touches, connected in one place. Explore outcomes, develop strategy, and make informed decisions.
+          </p>
+          <a href="/search" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            padding: '14px 32px', background: '#E8171F', color: '#FFFFFF', borderRadius: '2px',
+            fontWeight: 700, fontSize: '14px', textDecoration: 'none', textTransform: 'uppercase',
+            letterSpacing: '0.04em', fontFamily: 'var(--font-display)', transition: 'background 200ms',
+          }}>
+            Start Researching
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
 
-      {/* ── VISUAL 8: PRODUCTIVITY FEATURES ────────────────────────────────── */}
-      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      {/* ── VISUAL 8: PRODUCTIVITY FEATURES ────────────────── */}
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
-              Productivity features
-            </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
-              Work faster with smart analytics tools
-            </h2>
+          <div style={{ marginBottom: '40px' }}>
+            <div style={{ borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', margin: 0 }}>
+                Work Faster With Smart Analytics
+              </h2>
+            </div>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="productivity-grid">
             {[
-              {
-                title: 'Get straight to the data',
-                desc: 'Select your case type and district — your outcome report generates in under 60 seconds with real federal court statistics.',
-                icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-              },
-              {
-                title: 'Visualize settlement ranges',
-                desc: 'See full settlement distributions from P10 to P90 at a glance. Understand where your case falls in the spectrum of outcomes.',
-                icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-              },
-              {
-                title: 'Spot patterns fast',
-                desc: 'Judge analytics surface behavioral patterns and motion grant rates so you can anticipate outcomes before they happen.',
-                icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
-              },
-              {
-                title: 'Access the most complete data',
-                desc: 'Over 5.1 million federal court cases from FJC, PACER, and CourtListener — the most comprehensive plaintiff-focused dataset available.',
-                icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4',
-              },
-              {
-                title: 'Compare across districts',
-                desc: 'Side-by-side district comparisons reveal where your case type has the strongest outcomes. Identify favorable venues instantly.',
-                icon: 'M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4',
-              },
-              {
-                title: 'Export and share',
-                desc: 'Generate PDF reports with full analytics for client presentations, settlement negotiations, or case evaluation meetings.',
-                icon: 'M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-              },
+              { title: 'Get straight to the data', desc: 'Select your case type and district — your outcome report generates in under 60 seconds with real federal court statistics.' },
+              { title: 'Visualize settlement ranges', desc: 'See full settlement distributions from P10 to P90 at a glance. Understand where your case falls in the spectrum of outcomes.' },
+              { title: 'Spot patterns fast', desc: 'Judge analytics surface behavioral patterns and motion grant rates so you can anticipate outcomes before they happen.' },
+              { title: 'Access the most complete data', desc: 'Over 5.1 million federal court cases from FJC, PACER, and CourtListener — the most comprehensive plaintiff-focused dataset available.' },
+              { title: 'Compare across districts', desc: 'Side-by-side district comparisons reveal where your case type has the strongest outcomes. Identify favorable venues instantly.' },
+              { title: 'Export and share', desc: 'Generate PDF reports with full analytics for client presentations, settlement negotiations, or case evaluation meetings.' },
             ].map((item, i) => (
               <div key={i} style={{
-                padding: '24px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
+                padding: '24px', background: '#F5F6F7', border: '1px solid #D5D8DC',
+                borderTop: '2px solid #00172E',
               }}>
-                <div style={{
-                  width: '40px', height: '40px', borderRadius: '4px',
-                  background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.12)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px',
-                }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
-                </div>
-                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
-                <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0, fontWeight: 300 }}>{item.desc}</p>
+                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* ── HOW IT WORKS (VISUAL 5 section header pattern) ── */}
-      <div style={{ background: '#FFFFFF', padding: '64px 24px' }}>
+      {/* ── HOW IT WORKS ── */}
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
-              How it works
-            </p>
-            <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
-              Three steps to real court data
-            </h2>
-            <p style={{ fontSize: '18px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
+          <div style={{ marginBottom: '40px' }}>
+            <div style={{ borderLeft: '3px solid #E8171F', paddingLeft: '20px', marginBottom: '8px' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', margin: 0 }}>
+                How It Works
+              </h2>
+            </div>
+            <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '500px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '23px' }}>
               Get reliable federal court outcome data in under 60 seconds.
             </p>
           </div>
@@ -382,55 +344,35 @@ export default function ServerHero() {
                 step: '01',
                 title: 'Select your case type',
                 desc: 'Choose from 84 federal case types — employment, injury, contract, civil rights, and more.',
-                icon: 'M4 6h16M4 12h16M4 18h7',
               },
               {
                 step: '02',
                 title: 'Choose your district',
                 desc: 'Pick the federal district where your case is filed or would be filed. All 94 districts covered.',
-                icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z',
               },
               {
                 step: '03',
                 title: 'Get your report',
                 desc: 'Instant results: win rates, settlement ranges, timelines, and judge analytics from public records.',
-                icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
               },
             ].map((item, i) => (
               <div
                 key={i}
                 style={{
-                  background: '#FFFFFF',
+                  background: '#F5F6F7',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
                   padding: '28px',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '4px',
-                    background: 'rgba(232,23,31,0.08)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    border: '1px solid rgba(232,23,31,0.15)',
-                  }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d={item.icon} />
-                    </svg>
-                  </div>
+                <div style={{ marginBottom: '16px' }}>
                   <span style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '12px',
+                    fontSize: '28px',
                     fontWeight: 700,
-                    color: '#E8171F',
-                    letterSpacing: '0.05em',
+                    color: '#00172E',
+                    lineHeight: 1,
                   }}>
-                    STEP {item.step}
+                    {item.step}
                   </span>
                 </div>
                 <h3 style={{
