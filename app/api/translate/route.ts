@@ -80,8 +80,13 @@ async function translateWithClaude(text: string): Promise<string> {
   // Sanitize text before embedding in prompt to prevent prompt injection
   const sanitizedText = sanitizeForPrompt(text, 3000);
 
+  // 15-second timeout to prevent hanging requests
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 15000);
+
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
+    signal: controller.signal,
     headers: {
       'x-api-key': apiKey,
       'anthropic-version': '2023-06-01',
@@ -109,6 +114,8 @@ Your response should be a clear, friendly explanation that helps someone underst
       ],
     }),
   });
+
+  clearTimeout(timeoutId);
 
   if (!response.ok) {
     const error = await response.json();

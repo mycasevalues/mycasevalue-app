@@ -5,10 +5,18 @@
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { secureCompare } from '../../../../lib/sanitize';
+import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET(req: NextRequest) {
+  // Strict rate limiting to prevent brute-force attacks on admin secret
+  const ip = getClientIp(req.headers);
+  const { success: rateLimitOk } = rateLimit(ip, { windowMs: 60000, maxRequests: 5 });
+  if (!rateLimitOk) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   const secret = req.headers.get('x-admin-secret');
   const expected = process.env.ADMIN_SECRET;
 

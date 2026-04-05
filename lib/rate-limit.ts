@@ -1,13 +1,50 @@
 /**
  * Simple in-memory rate limiter for API routes
- * Uses a sliding window approach with automatic cleanup
+ * Uses a sliding window approach with automatic cleanup.
+ * Includes a max map size cap to prevent unbounded memory growth
+ * from large numbers of unique IPs (e.g., DDoS or scan attacks).
  */
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
+/** Maximum number of tracked IPs. Beyond this, oldest entries are evicted. */
+const MAX_MAP_SIZE = 50_000;
+
 export interface RateLimitConfig {
   windowMs: number; // Time window in milliseconds
   maxRequests: number; // Max requests per window
+}
+
+/**
+ * Evict expired entries; if still over MAX_MAP_SIZE, evict oldest first.
+ * Called when the map grows past the cap.
+ */
+function evictIfNeeded(): void {
+  if (rateLimitMap.size <= MAX_MAP_SIZE) return;
+
+  const now = Date.now();
+  // First pass: remove expired entries
+  const expiredKeys: string[] = [];
+  rateLimitMap.forEach((value, key) => {
+    if (now > value.resetTime) {
+      expiredKeys.push(key);
+    }
+  });
+  expiredKeys.forEach(key => rateLimitMap.delete(key));
+
+  // Second pass: if still over cap, delete oldest entries (Map iterates in insertion order)
+  if (rateLimitMap.size > MAX_MAP_SIZE) {
+    const toDelete = rateLimitMap.size - MAX_MAP_SIZE;
+    let deleted = 0;
+    const keysToEvict: string[] = [];
+    rateLimitMap.forEach((_, key) => {
+      if (deleted < toDelete) {
+        keysToEvict.push(key);
+        deleted++;
+      }
+    });
+    keysToEvict.forEach(key => rateLimitMap.delete(key));
+  }
 }
 
 /**
@@ -26,6 +63,7 @@ export function rateLimit(
   // If no record exists or window has expired, create new record
   if (!record || now > record.resetTime) {
     rateLimitMap.set(identifier, { count: 1, resetTime: now + config.windowMs });
+    evictIfNeeded();
     return { success: true, remaining: config.maxRequests - 1 };
   }
 
