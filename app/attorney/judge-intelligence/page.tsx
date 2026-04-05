@@ -250,7 +250,7 @@ export default function JudgeIntelligencePage() {
                 <button
                   key={s.id}
                   onClick={() => handleStateChange(s.id)}
-                  style={{ padding: '8px 16px', border: '1px solid #D5D8DC', borderRadius: '0px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: '#FAFBFC', color: '#E8171F', transition: 'border-color 0.2s' }}
+                  style={{ padding: '8px 16px', border: '1px solid #D5D8DC', borderRadius: '4px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: '#FAFBFC', color: '#E8171F', transition: 'border-color 0.2s' }}
                 >
                   {s.label}
                 </button>
@@ -305,7 +305,7 @@ export default function JudgeIntelligencePage() {
                             {judge.name}
                           </span>
                           {judge.senior && (
-                            <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '0px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00' }}>
+                            <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00' }}>
                               Senior
                             </span>
                           )}

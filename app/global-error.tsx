@@ -19,7 +19,7 @@ export default function GlobalError({
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0a0e27" />
+        <meta name="theme-color" content="#00172E" />
         <style>{`
           body {
             margin: 0;
@@ -56,7 +56,7 @@ export default function GlobalError({
               style={{
                 width: 72,
                 height: 72,
-                borderRadius: '50%',
+                borderRadius: '4px',
                 background: 'rgba(0,105,151,0.08)',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -123,7 +123,7 @@ export default function GlobalError({
                   background: '#E8171F',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '0px',
+                  borderRadius: '4px',
                   fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',

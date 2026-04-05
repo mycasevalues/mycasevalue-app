@@ -163,7 +163,7 @@ export default function SignUpPage() {
               padding: '12px 24px',
               backgroundColor: '#E8171F',
               color: '#FFFFFF',
-              borderRadius: '0px',
+              borderRadius: '4px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
               fontWeight: 600,

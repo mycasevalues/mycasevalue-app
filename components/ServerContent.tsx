@@ -843,7 +843,7 @@ export default function ServerContent() {
                     display: 'block',
                     textAlign: 'center',
                     padding: '10px 16px',
-                    borderRadius: '0px',
+                    borderRadius: '4px',
                     fontFamily: 'var(--font-display)',
                     fontSize: '14px',
                     fontWeight: 600,

@@ -224,7 +224,7 @@ export default async function DashboardPage() {
       >
         {/* Logo */}
         <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px', padding: '0 8px' }}>
-          <div style={{ width: '28px', height: '28px', background: '#E8171F', borderRadius: '0px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: '28px', height: '28px', background: '#E8171F', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
               <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
             </svg>

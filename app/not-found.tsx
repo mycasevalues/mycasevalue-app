@@ -107,7 +107,7 @@ export default function NotFound() {
               background: '#E8171F',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '0px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',

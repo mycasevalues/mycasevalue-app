@@ -55,7 +55,7 @@ export default function Error({
           style={{
             width: 72,
             height: 72,
-            borderRadius: '50%',
+            borderRadius: '4px',
             background: 'rgba(0,105,151,0.08)',
             display: 'inline-flex',
             alignItems: 'center',
@@ -122,7 +122,7 @@ export default function Error({
               background: '#E8171F',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '0px',
+              borderRadius: '4px',
               fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
