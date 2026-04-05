@@ -43,7 +43,7 @@ export default function ReportPDFButton(props: ReportPDFButtonProps) {
         background: '#111111',
         color: '#FFFFFF',
         border: 'none',
-        borderRadius: '8px',
+        borderRadius: '4px',
         fontSize: '14px',
         fontWeight: 600,
         fontFamily: 'var(--font-body)',

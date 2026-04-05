@@ -134,7 +134,7 @@ export default function MethodologyPage() {
                 <div className="timeline-number">{s.step}</div>
                 <div className="pt-0.5">
                   <h3 className="text-base font-display font-semibold mb-2" style={{ color: '#212529' }}>{s.title}</h3>
-                  <p className="text-sm leading-relaxed m-0" style={{ color: '#666666' }}>{s.desc}</p>
+                  <p className="text-sm leading-relaxed m-0" style={{ color: '#455A64' }}>{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -203,7 +203,7 @@ export default function MethodologyPage() {
                     </span>
                   </div>
                 </div>
-                <p className="text-xs leading-relaxed m-0 mb-3" style={{ color: '#666666' }}>{source.description}</p>
+                <p className="text-xs leading-relaxed m-0 mb-3" style={{ color: '#455A64' }}>{source.description}</p>
                 {source.url && (
                   <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[11px] font-semibold transition-opacity hover:opacity-70" style={{ color: source.color }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -227,7 +227,7 @@ export default function MethodologyPage() {
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="text-3xl sm:text-4xl font-display font-extrabold mb-2" style={{ color: stat.c }}>{stat.v}</div>
-                <div className="text-sm font-semibold" style={{ color: '#666666' }}>{stat.l}</div>
+                <div className="text-sm font-semibold" style={{ color: '#455A64' }}>{stat.l}</div>
               </div>
             ))}
           </div>
@@ -237,7 +237,7 @@ export default function MethodologyPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>Important Limitations</h2>
           <div className="limitation-callout">
-            <ul className="space-y-3 text-sm leading-relaxed m-0 pl-4" style={{ color: '#666666' }}>
+            <ul className="space-y-3 text-sm leading-relaxed m-0 pl-4" style={{ color: '#455A64' }}>
               <li>MyCaseValue displays <strong style={{ color: '#212529' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
               <li>Win rates reflect <strong style={{ color: '#212529' }}>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
               <li>Settlement amounts are not systematically reported in federal court records. Recovery ranges are derived from cases where monetary awards were documented.</li>
@@ -259,7 +259,7 @@ export default function MethodologyPage() {
 
         {/* CTA */}
         <div className="text-center pt-12 border-t" style={{ borderColor: '#D5D8DC' }}>
-          <p className="text-sm mb-6" style={{ color: '#666666' }}>Questions about our methodology?</p>
+          <p className="text-sm mb-6" style={{ color: '#455A64' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
             style={{ borderRadius: '4px', background: '#E8171F', color: '#FFFFFF', border: '1px solid #E8171F' }}>

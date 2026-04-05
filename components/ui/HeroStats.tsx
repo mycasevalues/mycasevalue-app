@@ -77,7 +77,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
     <div
       style={{
         padding: 'clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px)',
-        borderRadius: '8px',
+        borderRadius: '4px',
         background: '#FFFFFF',
         border: `2px solid ${stat.color}18`,
         position: 'relative',
@@ -122,7 +122,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         {stat.sublabel && (
           <div style={{
             fontSize: 'clamp(10px, 1.2vw, 12px)',
-            color: '#6B7280',
+            color: '#455A64',
             marginTop: '4px',
             fontWeight: 500,
           }}>

@@ -98,7 +98,7 @@ export default function ApiAccessPage() {
               {copied ? 'Copied!' : 'Copy'}
             </button>
           </div>
-          <p style={{ fontSize: '12px', color: '#666666', margin: '10px 0 0' }}>Include this key in the Authorization header: <code style={{ fontFamily: 'var(--font-mono)', backgroundColor: '#F8F9FA', padding: '2px 6px', borderRadius: '3px', color: '#212529' }}>Bearer YOUR_API_KEY</code></p>
+          <p style={{ fontSize: '12px', color: '#455A64', margin: '10px 0 0' }}>Include this key in the Authorization header: <code style={{ fontFamily: 'var(--font-mono)', backgroundColor: '#F8F9FA', padding: '2px 6px', borderRadius: '3px', color: '#212529' }}>Bearer YOUR_API_KEY</code></p>
         </div>
 
         {/* Usage */}
@@ -109,7 +109,7 @@ export default function ApiAccessPage() {
             { label: 'Rate Limit', value: '60', limit: 'req/min' },
           ].map((s) => (
             <div key={s.label} style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '20px', border: '1px solid #D5D8DC', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
-              <p style={{ fontSize: '11px', color: '#666666', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
+              <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
               <p style={{ margin: 0 }}>
                 <span className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: '#212529' }}>{s.value}</span>
                 <span style={{ fontSize: '13px', color: '#455A64', marginLeft: '4px' }}>{s.limit}</span>
@@ -129,7 +129,7 @@ export default function ApiAccessPage() {
                 <span className="font-mono" style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '4px', backgroundColor: `${methodColors[ep.method]}20`, color: methodColors[ep.method], minWidth: '42px', textAlign: 'center' }}>{ep.method}</span>
                 <code style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: '#212529', wordBreak: 'break-all' }}>{ep.path}</code>
               </div>
-              <p style={{ fontSize: '12px', color: '#666666', margin: '4px 0 0 54px' }}>{ep.desc}</p>
+              <p style={{ fontSize: '12px', color: '#455A64', margin: '4px 0 0 54px' }}>{ep.desc}</p>
             </div>
           ))}
         </div>
@@ -138,7 +138,7 @@ export default function ApiAccessPage() {
         <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', border: '1px solid #D5D8DC', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
           <div style={{ padding: '16px 24px', borderBottom: '1px solid #E8EAE D', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h2 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: 0 }}>Quick Start Example</h2>
-            <span style={{ fontSize: '11px', color: '#666666', fontWeight: 600, padding: '3px 10px', borderRadius: '4px', backgroundColor: '#F8F9FA' }}>JavaScript</span>
+            <span style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, padding: '3px 10px', borderRadius: '4px', backgroundColor: '#F8F9FA' }}>JavaScript</span>
           </div>
           <pre style={{ margin: 0, padding: '20px 24px', backgroundColor: 'rgba(0,0,0,0.40)', color: '#D4D4D4', fontSize: '13px', lineHeight: 1.6, fontFamily: 'var(--font-mono)', overflowX: 'auto' }}>
             {CODE_EXAMPLE}

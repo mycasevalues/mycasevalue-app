@@ -89,7 +89,7 @@ export default function AttorneyToolsNav() {
                 padding: '10px 12px',
                 fontSize: '12px',
                 fontWeight: isActive ? 700 : 500,
-                color: isActive ? '#212529' : '#666666',
+                color: isActive ? '#212529' : '#455A64',
                 textDecoration: 'none',
                 borderBottom: isActive ? '2px solid #E8171F' : '2px solid transparent',
                 whiteSpace: 'nowrap',

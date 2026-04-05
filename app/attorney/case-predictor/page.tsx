@@ -54,7 +54,7 @@ const ScoreRing = ({ value, label, color, size = 80 }: { value: number; label: s
           {value}%
         </text>
       </svg>
-      <div style={{ fontSize: '11px', color: '#666666', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>{label}</div>
+      <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>{label}</div>
     </div>
   );
 };
@@ -250,7 +250,7 @@ export default function CasePredictorPage() {
                           borderRadius: '4px',
                           border: `1px solid ${hasAttorney === opt.val ? '#E8171F' : '#D5D8DC'}`,
                           backgroundColor: hasAttorney === opt.val ? 'rgba(232,23,31,0.08)' : '#FAFBFC',
-                          color: hasAttorney === opt.val ? '#E8171F' : '#666666',
+                          color: hasAttorney === opt.val ? '#E8171F' : '#455A64',
                           fontSize: '13px',
                           fontWeight: 600,
                           cursor: 'pointer',
@@ -294,7 +294,7 @@ export default function CasePredictorPage() {
                           borderRadius: '4px',
                           border: `1px solid ${caseStrength === opt.val ? opt.color : '#D5D8DC'}`,
                           backgroundColor: caseStrength === opt.val ? `${opt.color}15` : '#FAFBFC',
-                          color: caseStrength === opt.val ? opt.color === '#EA2143' ? '#E8171F' : opt.color === '#E89558' ? '#B86E00' : '#07874A' : '#666666',
+                          color: caseStrength === opt.val ? opt.color === '#EA2143' ? '#E8171F' : opt.color === '#E89558' ? '#B86E00' : '#07874A' : '#455A64',
                           fontSize: '13px',
                           fontWeight: 600,
                           cursor: 'pointer',
@@ -390,18 +390,18 @@ export default function CasePredictorPage() {
                     <div style={{ width: 80, height: 80, borderRadius: '50%', border: '6px solid #E8171F', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <span className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#212529' }}>{p.predictedDurationMonths}mo</span>
                     </div>
-                    <div style={{ fontSize: '11px', color: '#666666', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
+                    <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '4px' }}>Duration</div>
                   </div>
                 </div>
 
                 {/* Settlement Range */}
                 <div style={{ background: '#FAFBFC', borderRadius: '4px', padding: '16px', marginBottom: '16px' }}>
-                  <p style={{ fontSize: '12px', fontWeight: 600, color: '#666666', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 10px' }}>
+                  <p style={{ fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 10px' }}>
                     Projected Settlement Range
                   </p>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                     <div style={{ textAlign: 'center' }}>
-                      <div className="font-mono" style={{ fontSize: '14px', color: '#666666' }}>{formatMoney(p.settlementRange.low)}</div>
+                      <div className="font-mono" style={{ fontSize: '14px', color: '#455A64' }}>{formatMoney(p.settlementRange.low)}</div>
                       <div style={{ fontSize: '10px', color: '#455A64' }}>25th pctile</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
@@ -409,7 +409,7 @@ export default function CasePredictorPage() {
                       <div style={{ fontSize: '10px', color: '#455A64' }}>Median</div>
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                      <div className="font-mono" style={{ fontSize: '14px', color: '#666666' }}>{formatMoney(p.settlementRange.high)}</div>
+                      <div className="font-mono" style={{ fontSize: '14px', color: '#455A64' }}>{formatMoney(p.settlementRange.high)}</div>
                       <div style={{ fontSize: '10px', color: '#455A64' }}>75th pctile</div>
                     </div>
                   </div>
@@ -429,11 +429,11 @@ export default function CasePredictorPage() {
                 {/* Quick Stats */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                   <div style={{ padding: '10px', background: '#FAFBFC', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '11px', color: '#666666', margin: '0 0 2px' }}>Statute of Limitations</p>
+                    <p style={{ fontSize: '11px', color: '#455A64', margin: '0 0 2px' }}>Statute of Limitations</p>
                     <p className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#212529', margin: 0 }}>{p.statuteOfLimitations}</p>
                   </div>
                   <div style={{ padding: '10px', background: '#FAFBFC', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '11px', color: '#666666', margin: '0 0 2px' }}>Typical Fee Range</p>
+                    <p style={{ fontSize: '11px', color: '#455A64', margin: '0 0 2px' }}>Typical Fee Range</p>
                     <p className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#212529', margin: 0 }}>{p.typicalFeeRange}</p>
                   </div>
                 </div>

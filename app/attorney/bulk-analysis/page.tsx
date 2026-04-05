@@ -266,7 +266,7 @@ export default function BulkAnalysisPage() {
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2"><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
             </div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Build a Case Portfolio</h2>
-            <p style={{ fontSize: '15px', color: '#666666', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
+            <p style={{ fontSize: '15px', color: '#455A64', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
               Select multiple case types above to analyze them together. Get risk clustering, outcome trends, and portfolio-level insights.
             </p>
           </div>

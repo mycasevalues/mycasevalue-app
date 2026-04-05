@@ -30,14 +30,14 @@ type AvailableState = { id: string; label: string };
 const StatBadge = ({ label, value, color }: { label: string; value: string; color: string }) => (
   <div style={{ textAlign: 'center' }}>
     <div className="font-mono" style={{ fontSize: '22px', fontWeight: 700, color }}>{value}</div>
-    <div style={{ fontSize: '11px', color: '#666666', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '2px' }}>{label}</div>
+    <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 500, textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginTop: '2px' }}>{label}</div>
   </div>
 );
 
 const MeterBar = ({ value, max, color, label }: { value: number; max: number; color: string; label: string }) => (
   <div style={{ marginBottom: '8px' }}>
     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-      <span style={{ fontSize: '12px', color: '#666666' }}>{label}</span>
+      <span style={{ fontSize: '12px', color: '#455A64' }}>{label}</span>
       <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#212529' }}>{value}%</span>
     </div>
     <div style={{ height: '6px', background: '#E5EBF0', borderRadius: '3px', overflow: 'hidden' }}>
@@ -180,7 +180,7 @@ export default function JudgeIntelligencePage() {
 
           {data && (
             <div style={{ flex: '0 0 auto' }}>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#666666', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Sort By
               </label>
               <div style={{ display: 'flex', gap: '4px', background: '#FFFFFF', borderRadius: '4px', border: '1px solid #D5D8DC', padding: '3px' }}>
@@ -203,7 +203,7 @@ export default function JudgeIntelligencePage() {
                       textTransform: 'uppercase',
                       letterSpacing: '0.04em',
                       backgroundColor: sortBy === opt.key ? '#E8171F' : 'transparent',
-                      color: sortBy === opt.key ? '#FFFFFF' : '#666666',
+                      color: sortBy === opt.key ? '#FFFFFF' : '#455A64',
                       transition: 'all 0.2s',
                     }}
                   >
@@ -220,7 +220,7 @@ export default function JudgeIntelligencePage() {
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
             <div style={{ width: 36, height: 36, border: '3px solid #E5EBF0', borderTopColor: '#E8171F', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-            <p style={{ fontSize: '14px', color: '#666666' }}>Loading judge data...</p>
+            <p style={{ fontSize: '14px', color: '#455A64' }}>Loading judge data...</p>
           </div>
         )}
 
@@ -242,7 +242,7 @@ export default function JudgeIntelligencePage() {
             <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>
               Select a District
             </h2>
-            <p style={{ fontSize: '15px', color: '#666666', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>
+            <p style={{ fontSize: '15px', color: '#455A64', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto' }}>
               Choose a state above to view federal judge statistics, ruling patterns, and case tendencies.
             </p>
             <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '24px', flexWrap: 'wrap' }}>
@@ -263,7 +263,7 @@ export default function JudgeIntelligencePage() {
         {data && sortedJudges.length > 0 && (
           <>
             <div style={{ marginBottom: '16px' }}>
-              <p style={{ fontSize: '13px', color: '#666666' }}>
+              <p style={{ fontSize: '13px', color: '#455A64' }}>
                 Showing {sortedJudges.length} federal judges in {data.stateLabel}
               </p>
             </div>
@@ -310,7 +310,7 @@ export default function JudgeIntelligencePage() {
                             </span>
                           )}
                         </div>
-                        <p style={{ fontSize: '13px', color: '#666666', margin: 0 }}>
+                        <p style={{ fontSize: '13px', color: '#455A64', margin: 0 }}>
                           Appointed {judge.appointed} by {judge.appointedBy} · {judge.casesHandled} cases handled
                         </p>
                       </div>
@@ -362,7 +362,7 @@ export default function JudgeIntelligencePage() {
                                 { label: 'Median Duration', value: `${judge.medianDurationMonths} months` },
                               ].map((item) => (
                                 <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #D5D8DC' }}>
-                                  <span style={{ fontSize: '13px', color: '#666666' }}>{item.label}</span>
+                                  <span style={{ fontSize: '13px', color: '#455A64' }}>{item.label}</span>
                                   <span className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>{item.value}</span>
                                 </div>
                               ))}
@@ -375,7 +375,7 @@ export default function JudgeIntelligencePage() {
                               {judge.topCaseTypes.map((ct) => (
                                 <div key={ct.nos} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0' }}>
                                   <span style={{ fontSize: '13px', color: '#212529' }}>{ct.label}</span>
-                                  <span className="font-mono" style={{ fontSize: '12px', color: '#666666' }}>{ct.count} cases</span>
+                                  <span className="font-mono" style={{ fontSize: '12px', color: '#455A64' }}>{ct.count} cases</span>
                                 </div>
                               ))}
                             </div>

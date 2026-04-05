@@ -31,7 +31,7 @@ type SearchResult = {
 const MeterBar = ({ value, max, color, label }: { value: number; max: number; color: string; label: string }) => (
   <div style={{ marginBottom: '10px' }}>
     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-      <span style={{ fontSize: '12px', color: '#666666' }}>{label}</span>
+      <span style={{ fontSize: '12px', color: '#455A64' }}>{label}</span>
       <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#212529' }}>{value}%</span>
     </div>
     <div style={{ height: '6px', background: '#E5EBF0', borderRadius: '3px', overflow: 'hidden' }}>
@@ -131,7 +131,7 @@ export default function OpposingCounselPage() {
         {/* Results */}
         {result && (
           <>
-            <p style={{ fontSize: '13px', color: '#666666', marginBottom: '16px' }}>
+            <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '16px' }}>
               {result.resultCount} result{result.resultCount !== 1 ? 's' : ''} for &quot;{result.query}&quot;
             </p>
 
@@ -144,16 +144,16 @@ export default function OpposingCounselPage() {
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
                           <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '17px', fontWeight: 700, color: '#212529', margin: '0 0 4px' }}>{p.name}</h3>
-                          <p style={{ fontSize: '13px', color: '#666666', margin: 0 }}>{p.firm} · {p.city}</p>
+                          <p style={{ fontSize: '13px', color: '#455A64', margin: 0 }}>{p.firm} · {p.city}</p>
                         </div>
                         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                           <div style={{ textAlign: 'center' }}>
                             <div className="font-mono" style={{ fontSize: '20px', fontWeight: 700, color: p.winRate >= 50 ? '#E8171F' : '#07874A' }}>{p.winRate}%</div>
-                            <div style={{ fontSize: '10px', color: '#666666', textTransform: 'uppercase' as const }}>Defense Win</div>
+                            <div style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase' as const }}>Defense Win</div>
                           </div>
                           <div style={{ textAlign: 'center' }}>
                             <div className="font-mono" style={{ fontSize: '20px', fontWeight: 700, color: '#1B7C7D' }}>{p.settlementRate}%</div>
-                            <div style={{ fontSize: '10px', color: '#666666', textTransform: 'uppercase' as const }}>Settlement</div>
+                            <div style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase' as const }}>Settlement</div>
                           </div>
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.2s' }}>
                             <polyline points="6 9 12 15 18 9" />
@@ -181,7 +181,7 @@ export default function OpposingCounselPage() {
                               ].map((s) => (
                                 <div key={s.label} style={{ flex: s.value, padding: '8px', borderRadius: '4px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
                                   <div className="font-mono" style={{ fontSize: '14px', fontWeight: 700, color: s.color }}>{s.value}%</div>
-                                  <div style={{ fontSize: '10px', color: '#666666' }}>{s.label}</div>
+                                  <div style={{ fontSize: '10px', color: '#455A64' }}>{s.label}</div>
                                 </div>
                               ))}
                             </div>
@@ -200,7 +200,7 @@ export default function OpposingCounselPage() {
                               { label: 'Motions/Case', value: String(p.motionPractice.avgMotionsPerCase) },
                             ].map((item) => (
                               <div key={item.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #D5D8DC' }}>
-                                <span style={{ fontSize: '12px', color: '#666666' }}>{item.label}</span>
+                                <span style={{ fontSize: '12px', color: '#455A64' }}>{item.label}</span>
                                 <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#212529' }}>{item.value}</span>
                               </div>
                             ))}
@@ -246,7 +246,7 @@ export default function OpposingCounselPage() {
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
             </div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Research Opposing Counsel</h2>
-            <p style={{ fontSize: '15px', color: '#666666', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
+            <p style={{ fontSize: '15px', color: '#455A64', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 20px' }}>
               Search by attorney name or firm to view their litigation track record, settlement patterns, and strategy tendencies.
             </p>
             <p style={{ fontSize: '13px', color: '#455A64' }}>Try: Smith, Johnson, Williams, or Jones</p>

@@ -238,7 +238,7 @@ export default function TermsPage() {
             paddingRight: '16px',
             paddingTop: '16px',
             paddingBottom: '16px',
-            borderRadius: '8px',
+            borderRadius: '4px',
             borderLeft: '4px solid #D97706',
             background: '#FFF3F4',
             color: '#212529',
@@ -446,7 +446,7 @@ export default function TermsPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '8px',
+              borderRadius: '4px',
               background: '#FFFFFF',
               color: '#212529',
               border: '1px solid #D5D8DC'

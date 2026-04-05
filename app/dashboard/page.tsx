@@ -356,7 +356,7 @@ export default async function DashboardPage() {
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 8px' }}>
                 Upgrade to unlock more
               </h3>
-              <p style={{ fontSize: '14px', color: '#666666', margin: '0 0 20px', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '14px', color: '#455A64', margin: '0 0 20px', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                 Upgrade to unlock settlement ranges, judge analytics, and PDF export.
               </p>
               <Link href="/pricing" style={{

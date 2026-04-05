@@ -64,7 +64,7 @@ export default function DocumentIntelligencePage() {
       </div>
 
       <main style={{ maxWidth: '800px', margin: '0 auto', padding: '32px 20px' }}>
-        <p style={{ fontSize: '15px', color: '#666666', marginBottom: '32px' }}>
+        <p style={{ fontSize: '15px', color: '#455A64', marginBottom: '32px' }}>
           Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
         </p>
 
@@ -75,7 +75,7 @@ export default function DocumentIntelligencePage() {
             onChange={e => setFile(e.target.files?.[0] || null)}
             style={{ display: 'block', margin: '0 auto 16px', fontSize: '14px' }}
           />
-          {file && <p style={{ fontSize: '13px', color: '#666666', marginBottom: '16px' }}>Selected: {file.name} ({(file.size / 1024).toFixed(1)} KB)</p>}
+          {file && <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '16px' }}>Selected: {file.name} ({(file.size / 1024).toFixed(1)} KB)</p>}
           <button
             onClick={handleUpload}
             disabled={!file || loading}
@@ -83,7 +83,7 @@ export default function DocumentIntelligencePage() {
           >
             {loading ? 'Analyzing...' : 'Analyze Document'}
           </button>
-          <p style={{ fontSize: '11px', color: '#666666', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
+          <p style={{ fontSize: '11px', color: '#455A64', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
         </div>
 
         {error && <div style={{ padding: '12px 16px', background: 'rgba(232,23,31,0.12)', border: '1px solid #D5D8DC', borderRadius: '4px', color: '#E8171F', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
@@ -95,7 +95,7 @@ export default function DocumentIntelligencePage() {
           </div>
         )}
 
-        <p style={{ fontSize: '11px', color: '#666666', marginTop: '24px', fontStyle: 'italic' }}>
+        <p style={{ fontSize: '11px', color: '#455A64', marginTop: '24px', fontStyle: 'italic' }}>
           Document Intelligence uses AI to analyze legal documents. Results are informational only and not legal advice. Documents are processed securely and not stored after analysis.
         </p>
       </main>

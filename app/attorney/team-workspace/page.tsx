@@ -80,7 +80,7 @@ export default function TeamWorkspacePage() {
               <div key={i} style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '18px 22px', border: '1px solid #D5D8DC', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
                 <div>
                   <p style={{ fontSize: '15px', fontWeight: 600, color: '#212529', margin: '0 0 4px' }}>{r.title}</p>
-                  <p style={{ fontSize: '12px', color: '#666666', margin: 0 }}>
+                  <p style={{ fontSize: '12px', color: '#455A64', margin: 0 }}>
                     <span style={{ padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(232,23,31,0.12)', color: '#E8171F', fontSize: '11px', fontWeight: 600, marginRight: '8px' }}>{r.type}</span>
                     Shared by {r.sharedBy} · {new Date(r.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
                   </p>
@@ -115,7 +115,7 @@ export default function TeamWorkspacePage() {
                   <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: 700, color: '#E8171F', flexShrink: 0 }}>{m.avatar}</div>
                   <div style={{ flex: 1 }}>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', margin: '0 0 2px' }}>{m.name}</p>
-                    <p style={{ fontSize: '12px', color: '#666666', margin: 0 }}>{m.email}</p>
+                    <p style={{ fontSize: '12px', color: '#455A64', margin: 0 }}>{m.email}</p>
                   </div>
                   <span style={{ fontSize: '11px', fontWeight: 700, padding: '3px 10px', borderRadius: '4px', backgroundColor: `${roleColors[m.role]}15`, color: roleColors[m.role] }}>{m.role}</span>
                   <span style={{ fontSize: '11px', color: '#AAAAAA' }}>{m.lastActive}</span>

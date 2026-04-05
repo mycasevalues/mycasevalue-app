@@ -123,7 +123,7 @@ export default function VenueOptimizerPage() {
         <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '24px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'flex-end' }}>
             <div style={{ flex: '1 1 300px' }}>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#666666', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Case Type
               </label>
               <select
@@ -141,7 +141,7 @@ export default function VenueOptimizerPage() {
             </div>
 
             <div style={{ flex: '0 0 auto' }}>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#666666', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Prioritize
               </label>
               <div style={{ display: 'flex', gap: '4px', background: '#FFFFFF', borderRadius: '4px', border: '1px solid #D5D8DC', padding: '3px' }}>
@@ -163,7 +163,7 @@ export default function VenueOptimizerPage() {
                       letterSpacing: '0.04em',
                       cursor: 'pointer',
                       backgroundColor: prioritize === opt.key ? '#E8171F' : 'transparent',
-                      color: prioritize === opt.key ? '#FFFFFF' : '#666666',
+                      color: prioritize === opt.key ? '#FFFFFF' : '#455A64',
                       transition: 'all 0.2s',
                     }}
                   >
@@ -180,7 +180,7 @@ export default function VenueOptimizerPage() {
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
             <div style={{ width: 36, height: 36, border: '3px solid #E5EBF0', borderTopColor: '#E8171F', borderRadius: '50%', animation: 'spin 0.6s linear infinite', margin: '0 auto 16px' }} />
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
-            <p style={{ fontSize: '14px', color: '#666666' }}>Analyzing venues...</p>
+            <p style={{ fontSize: '14px', color: '#455A64' }}>Analyzing venues...</p>
           </div>
         )}
 
@@ -189,19 +189,19 @@ export default function VenueOptimizerPage() {
           <>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '24px' }}>
               <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <p style={{ fontSize: '11px', color: '#666666', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>National Win Rate</p>
+                <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>National Win Rate</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#212529', margin: 0 }}>{data.nationalStats.winRate}%</p>
               </div>
               <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <p style={{ fontSize: '11px', color: '#666666', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Settlement Rate</p>
+                <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Settlement Rate</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#1B7C7D', margin: 0 }}>{data.nationalStats.settlementRate}%</p>
               </div>
               <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <p style={{ fontSize: '11px', color: '#666666', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>
+                <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Median Duration</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#E8171F', margin: 0 }}>{data.nationalStats.medianDurationMonths}mo</p>
               </div>
               <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '20px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                <p style={{ fontSize: '11px', color: '#666666', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Total Cases</p>
+                <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>Total Cases</p>
                 <p className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#212529', margin: 0 }}>{data.nationalStats.totalCases.toLocaleString()}</p>
               </div>
             </div>

@@ -77,7 +77,7 @@ export default function AboutPage() {
         .mission-hero p {
           font-family: var(--font-body);
           font-size: 1.125rem;
-          color: #666666;
+          color: #455A64;
           line-height: 1.8;
         }
 
@@ -462,7 +462,7 @@ export default function AboutPage() {
                   name: 'PACER',
                   description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and filings are sourced from PACER.',
                   icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#666666" strokeWidth="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2">
                       <path d="M20 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"/>
                       <path d="M8 9h8M8 13h8"/>
                     </svg>

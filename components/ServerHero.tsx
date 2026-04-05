@@ -238,7 +238,7 @@ export default function ServerHero() {
         padding: '16px 24px',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '12px', color: '#666666', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
+          <span style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
           {[
             { name: 'Federal Judicial Center', url: 'https://www.fjc.gov' },
             { name: 'PACER', url: 'https://pacer.uscourts.gov' },
@@ -290,7 +290,7 @@ export default function ServerHero() {
                 lineHeight: 1,
                 marginBottom: '8px',
               }}>{stat.value}</p>
-              <p style={{ fontSize: '13px', color: '#666666', fontFamily: 'var(--font-body)', lineHeight: 1.4, margin: 0 }}>{stat.label}</p>
+              <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.4, margin: 0 }}>{stat.label}</p>
             </div>
           ))}
         </div>

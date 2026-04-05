@@ -148,7 +148,7 @@ const FeatureCard = ({
           style={{
             margin: 0,
             fontSize: '14px',
-            color: '#666666',
+            color: '#455A64',
             lineHeight: '1.5',
             fontFamily: 'var(--font-body)',
           }}
@@ -431,7 +431,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '12px 0 0 0',
                 fontSize: '16px',
-                color: '#666666',
+                color: '#455A64',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -482,7 +482,7 @@ export default function AttorneyPage() {
               }}
             >
               <span style={{ color: '#E8171F' }}>$29.99</span>
-              <span style={{ fontSize: '0.5em', color: '#666666' }}>
+              <span style={{ fontSize: '0.5em', color: '#455A64' }}>
                 {' '}
                 / month
               </span>
@@ -491,7 +491,7 @@ export default function AttorneyPage() {
               style={{
                 margin: '16px 0 0 0',
                 fontSize: '16px',
-                color: '#666666',
+                color: '#455A64',
                 fontFamily: 'var(--font-body)',
               }}
             >
@@ -533,7 +533,7 @@ export default function AttorneyPage() {
             style={{
               margin: '8px 0 0 0',
               fontSize: '12px',
-              color: '#666666',
+              color: '#455A64',
               fontFamily: 'var(--font-body)',
             }}
           >

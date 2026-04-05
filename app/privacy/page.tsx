@@ -422,7 +422,7 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '8px',
+              borderRadius: '4px',
               background: '#FFFFFF',
               color: '#212529',
               border: '1px solid #D5D8DC'
