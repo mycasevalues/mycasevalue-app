@@ -17,8 +17,7 @@ export async function POST(req: NextRequest) {
     if (!user?.email) return NextResponse.json({ ok: false });
 
     const tier = await getUserTier(user.email);
-    // DEV MODE: All features unlocked — Stripe integration pending
-    // if (tier === 'free' || tier === 'single_report') return NextResponse.json({ ok: false });
+    if (tier === 'free') return NextResponse.json({ ok: false, error: 'Search history requires a paid plan' });
 
     const adminSupabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,

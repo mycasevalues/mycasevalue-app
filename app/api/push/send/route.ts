@@ -62,32 +62,47 @@ export async function POST(req: NextRequest) {
     let sentCount = 0;
     let failedCount = 0;
 
+    // Check VAPID configuration
+    const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+    const vapidPrivateKey = process.env.VAPID_PRIVATE_KEY;
+
+    if (!vapidPrivateKey || !vapidPublicKey) {
+      console.warn('[api/push/send] VAPID keys not configured — push notifications disabled');
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Push notifications not configured (VAPID keys missing)',
+          sent: 0,
+          failed: 0,
+        },
+        { status: 503 }
+      );
+    }
+
     try {
-      // This will fail gracefully if web-push is not installed
       // @ts-ignore - web-push is an optional dependency
       const webpush = await import(/* webpackIgnore: true */ 'web-push') as any;
+      webpush.setVapidDetails(
+        process.env.VAPID_SUBJECT || 'mailto:support@mycasevalues.com',
+        vapidPublicKey,
+        vapidPrivateKey
+      );
 
-      // Get VAPID keys from environment
-      const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
-      const vapidPrivateKey = process.env.VAPID_PRIVATE_KEY;
-
-      if (!vapidPrivateKey || !vapidPublicKey) {
-        sentCount = 1; // Pretend we sent it
-      } else {
-        // Set VAPID details (only needed once, but safe to call multiple times)
-        webpush.setVapidDetails(
-          process.env.VAPID_SUBJECT || 'mailto:push@example.com',
-          vapidPublicKey,
-          vapidPrivateKey
-        );
-
-        // Endpoint reserved for future implementation with database integration
-        // Production: retrieve subscriptions and send notifications
-        sentCount = 1; // Placeholder
-      }
+      // TODO: Retrieve subscriptions from Supabase push_subscriptions table
+      // and send to each subscriber. For now, log the intent.
+      console.info('[api/push/send] Push send requested:', { title, url, tag });
+      sentCount = 0;
     } catch (importErr: any) {
-      // web-push not installed, fallback
-      sentCount = 1;
+      console.warn('[api/push/send] web-push not available:', importErr.message);
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Push notification service unavailable (web-push not installed)',
+          sent: 0,
+          failed: 0,
+        },
+        { status: 503 }
+      );
     }
 
     return NextResponse.json(

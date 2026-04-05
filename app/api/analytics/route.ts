@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 
-export type EventType = 'page_view' | 'report_generated' | 'payment_started' | 'share_clicked' | 'search_used';
+export type EventType = 'page_view' | 'report_generated' | 'payment_started' | 'share_clicked' | 'search_used' | 'error_caught';
 
 export interface AnalyticsEventPayload {
   event: EventType;
@@ -132,6 +132,7 @@ export async function POST(
       'payment_started',
       'share_clicked',
       'search_used',
+      'error_caught',
     ];
 
     if (!validEvents.includes(payload.event as EventType)) {

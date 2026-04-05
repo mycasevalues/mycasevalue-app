@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, getClientIp } from '../../../lib/rate-limit';
+import { getSupabaseAdmin } from '../../../lib/supabase';
 
 const VALID_VOTES = ['fair', 'low', 'high', 'unsure'];
 
@@ -32,6 +33,19 @@ export async function POST(request: NextRequest) {
         { success: false, error: 'Invalid NOS code' },
         { status: 400 }
       );
+    }
+
+    // Persist vote to Supabase (fire-and-forget)
+    try {
+      const supabase = getSupabaseAdmin();
+      await supabase.from('poll_votes').insert({
+        vote,
+        nos_code: nos || null,
+        ip: ip,
+        created_at: new Date().toISOString(),
+      });
+    } catch (dbErr) {
+      console.warn('[api/poll] DB insert failed:', dbErr instanceof Error ? dbErr.message : dbErr);
     }
 
     return NextResponse.json({ success: true, vote, nos });

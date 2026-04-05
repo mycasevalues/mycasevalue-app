@@ -39,8 +39,11 @@ export async function POST(request: NextRequest) {
           created_at: new Date().toISOString(),
         }, { onConflict: 'email' });
       } catch (dbError) {
-
+        console.error('[api/notify/subscribe] DB upsert failed:', dbError instanceof Error ? dbError.message : dbError);
+        return NextResponse.json({ success: false, error: 'Failed to save subscription' }, { status: 500 });
       }
+    } else {
+      console.warn('[api/notify/subscribe] Supabase not configured, subscription not persisted');
     }
 
     return NextResponse.json({

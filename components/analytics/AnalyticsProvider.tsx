@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
-export type EventType = 'page_view' | 'report_generated' | 'share_clicked' | 'search_used';
+export type EventType = 'page_view' | 'report_generated' | 'share_clicked' | 'search_used' | 'error_caught' | 'payment_started';
 
 export interface AnalyticsEvent {
   event: EventType;
@@ -101,6 +101,48 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     sessionId.current = getOrCreateSessionId();
   }, []);
+
+  // Global error tracking: catch unhandled errors and promise rejections
+  useEffect(() => {
+    if (typeof window === 'undefined' || !sessionId.current) return;
+
+    const handleError = (event: ErrorEvent) => {
+      sendAnalyticsEvent({
+        event: 'error_caught',
+        sessionId: sessionId.current,
+        timestamp: Date.now(),
+        pathname,
+        data: {
+          type: 'uncaught',
+          message: event.message?.slice(0, 500),
+          source: event.filename,
+          line: event.lineno,
+          col: event.colno,
+        },
+      });
+    };
+
+    const handleRejection = (event: PromiseRejectionEvent) => {
+      const reason = event.reason;
+      sendAnalyticsEvent({
+        event: 'error_caught',
+        sessionId: sessionId.current,
+        timestamp: Date.now(),
+        pathname,
+        data: {
+          type: 'unhandled_rejection',
+          message: (reason?.message || String(reason))?.slice(0, 500),
+        },
+      });
+    };
+
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', handleRejection);
+    return () => {
+      window.removeEventListener('error', handleError);
+      window.removeEventListener('unhandledrejection', handleRejection);
+    };
+  }, [pathname]);
 
   // Track page views when pathname changes
   useEffect(() => {

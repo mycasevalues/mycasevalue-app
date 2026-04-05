@@ -40,6 +40,28 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
       return;
     }
     console.error('[ErrorBoundary] componentDidCatch:', error.message || error, info);
+
+    // Send error to analytics (fire-and-forget)
+    try {
+      fetch('/api/analytics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'error_caught',
+          sessionId: typeof sessionStorage !== 'undefined'
+            ? sessionStorage.getItem('__analytics_session_id') || 'unknown'
+            : 'unknown',
+          timestamp: Date.now(),
+          pathname: typeof window !== 'undefined' ? window.location.pathname : undefined,
+          data: {
+            type: 'react_boundary',
+            message: error.message?.slice(0, 500),
+            stack: error.stack?.slice(0, 1000),
+            componentStack: info.componentStack?.slice(0, 500),
+          },
+        }),
+      }).catch(() => {});
+    } catch { /* silent */ }
   }
 
   render() {
