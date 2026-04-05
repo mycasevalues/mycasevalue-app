@@ -70,19 +70,19 @@ export default function ContactForm() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div>
-            <label style={labelStyle}>Full Name</label>
-            <input className="contact-input" style={inputStyle} type="text" placeholder="Your name" required
+            <label htmlFor="contact-name" style={labelStyle}>Full Name</label>
+            <input id="contact-name" className="contact-input" style={inputStyle} type="text" placeholder="Your name" required
               value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
           </div>
           <div>
-            <label style={labelStyle}>Email Address</label>
-            <input className="contact-input" style={inputStyle} type="email" placeholder="you@example.com" required
+            <label htmlFor="contact-email" style={labelStyle}>Email Address</label>
+            <input id="contact-email" className="contact-input" style={inputStyle} type="email" placeholder="you@example.com" required
               value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
           </div>
         </div>
         <div>
-          <label style={labelStyle}>Subject</label>
-          <select className="contact-input" style={{...inputStyle, appearance: 'auto' as any}}
+          <label htmlFor="contact-subject" style={labelStyle}>Subject</label>
+          <select id="contact-subject" className="contact-input" style={{...inputStyle, appearance: 'auto' as any}}
             value={formData.subject} onChange={e => setFormData({...formData, subject: e.target.value})}>
             <option value="general">General Inquiry</option>
             <option value="support">Account Support</option>
@@ -93,8 +93,8 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label style={labelStyle}>Message</label>
-          <textarea className="contact-input" style={{...inputStyle, height: '140px', resize: 'vertical'}} placeholder="How can we help?"
+          <label htmlFor="contact-message" style={labelStyle}>Message</label>
+          <textarea id="contact-message" className="contact-input" style={{...inputStyle, height: '140px', resize: 'vertical'}} placeholder="How can we help?"
             required value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} />
         </div>
         <button type="submit" className="contact-submit">Send Message</button>

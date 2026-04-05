@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Case Value Calculator | MyCaseValue',
-  description: 'Estimate your case value with our damage multiplier calculator based on federal court data',
+  title: 'Settlement Calculator — Estimate Case Value | MyCaseValue',
+  description: 'Free federal court settlement calculator. Estimate your case value based on 5.1M+ real outcomes, case type, district, and damage amount. Instant results.',
   openGraph: {
-    title: 'Case Value Calculator | MyCaseValue',
-    description: 'Estimate your case value with our damage multiplier calculator based on federal court data',
+    title: 'Settlement Calculator — Estimate Case Value | MyCaseValue',
+    description: 'Free federal court settlement calculator. Estimate your case value based on 5.1M+ real outcomes, case type, district, and damage amount.',
     url: 'https://www.mycasevalues.com/calculator',
+  },
+  alternates: {
+    canonical: 'https://www.mycasevalues.com/calculator',
   },
 };
 

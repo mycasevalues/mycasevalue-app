@@ -80,6 +80,9 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
               <button
                 className="faq-question"
                 onClick={() => toggleItem(index)}
+                aria-expanded={isOpen}
+                aria-controls={`faq-answer-${index}`}
+                id={`faq-question-${index}`}
                 style={{
                   width: '100%',
                   padding: '20px',
@@ -128,6 +131,9 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
 
               <div
                 className="faq-answer-container"
+                id={`faq-answer-${index}`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
                 style={{
                   maxHeight: isOpen ? '1000px' : '0px',
                 }}

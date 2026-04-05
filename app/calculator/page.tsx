@@ -182,13 +182,13 @@ export default function CalculatorPage() {
           <div className="space-y-6">
             {/* Case Type */}
             <div>
-              <label className="block mb-3" title="Select the primary type of legal case" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-case-type" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
                 Case Type
               </label>
               <select
+                id="calc-case-type"
                 value={caseType}
                 onChange={(e) => { setCaseType(e.target.value); setResults(null); }}
-                aria-label="Select a case type"
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
@@ -212,13 +212,13 @@ export default function CalculatorPage() {
 
             {/* Federal District */}
             <div>
-              <label className="block mb-3" title="Your federal district (optional, helps contextualize results)" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-district" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
                 Federal District
               </label>
               <select
+                id="calc-district"
                 value={district}
                 onChange={(e) => { setDistrict(e.target.value); setResults(null); }}
-                aria-label="Select your federal district"
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
@@ -245,10 +245,11 @@ export default function CalculatorPage() {
 
             {/* Estimated Damages */}
             <div>
-              <label className="block mb-3" title="Total economic and non-economic losses you believe you incurred" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-damages" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
                 Estimated Damages ($)
               </label>
               <input
+                id="calc-damages"
                 type="text"
                 inputMode="numeric"
                 placeholder="e.g. 50000"
@@ -258,7 +259,6 @@ export default function CalculatorPage() {
                   setDamages(val);
                   setResults(null);
                 }}
-                aria-label="Estimated damages in dollars"
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
@@ -278,13 +278,13 @@ export default function CalculatorPage() {
 
             {/* Represented by Attorney */}
             <div>
-              <label className="block mb-3" title="Whether you have legal representation (impacts settlement outcomes)" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+              <label htmlFor="calc-represented" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
                 Represented by Attorney?
               </label>
               <select
+                id="calc-represented"
                 value={represented}
                 onChange={(e) => { setRepresented(e.target.value); setResults(null); }}
-                aria-label="Are you represented by an attorney"
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
