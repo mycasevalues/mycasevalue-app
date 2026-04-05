@@ -57,6 +57,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
             maxWidth: 440,
             textAlign: 'center',
             background: '#FFFFFF',
+            border: '1px solid #D5D8DC',
             borderRadius: 4,
             padding: '48px 32px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -71,18 +72,19 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
                 <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
               </svg>
             </div>
-            <h2 style={{ fontSize: 22, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Something went wrong</h2>
+            <h2 style={{ fontSize: 22, fontWeight: 700, color: '#212529', marginBottom: 8, fontFamily: 'var(--font-display)' }}>Something went wrong</h2>
             <p style={{ fontSize: 14, color: '#455A64', lineHeight: 1.6, marginBottom: 24 }}>
               We encountered an unexpected error. Your data is safe — please try refreshing the page.
             </p>
             <button type="button"
               onClick={() => { this.setState({ hasError: false }); window.location.reload(); }}
               style={{
-                padding: '12px 32px',
+                padding: '0 32px',
+                height: '48px',
                 background: '#E8171F',
                 color: 'white',
                 border: 'none',
-                borderRadius: 0,
+                borderRadius: 4,
                 fontSize: 15,
                 fontWeight: 600,
                 cursor: 'pointer',

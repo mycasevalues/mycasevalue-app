@@ -38,27 +38,27 @@ export default function ContactForm() {
     background: '#FFFFFF', outline: 'none',
     transition: 'border-color 200ms',
     height: '48px',
+    boxSizing: 'border-box' as any,
   } as React.CSSProperties;
 
   const labelStyle = {
-    display: 'block', fontSize: '13px', fontWeight: 600,
+    display: 'block', fontSize: '14px', fontWeight: 600,
     color: '#212529', fontFamily: 'var(--font-body)',
-    marginBottom: '6px',
+    marginBottom: '8px',
   } as React.CSSProperties;
 
   return (
     <>
       <style>{`
-        .contact-input:focus { border-color: #E8171F !important; }
+        .contact-input:focus { border-color: #006997 !important; outline: none; }
         .contact-submit {
-          display: inline-block; padding: 14px 32px;
+          display: block; padding: 0 32px; height: 48px;
           background: #E8171F; color: #FFFFFF; border: none;
-          border-radius: 4px; font-size: 13px; font-weight: 700;
-          text-transform: uppercase; letter-spacing: 0.04em;
+          border-radius: 4px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
-          font-family: var(--font-display); width: 100%;
+          font-family: var(--font-body); width: 100%;
         }
-        .contact-submit:hover { background: #E8171F; }
+        .contact-submit:hover { background: #D61219; }
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: '#FFFFFF', border: '1px solid #D5D8DC',

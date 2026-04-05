@@ -147,7 +147,7 @@ export default function NewsletterSignup() {
               height: '48px',
               padding: '12px 16px',
               borderRadius: '4px',
-              border: `1px solid ${status === 'error' ? '#EF4444' : '#D5D8DC'}`,
+              border: `4px solid ${status === 'error' ? '#E8171F' : '#D5D8DC'}`,
               background: '#FFFFFF',
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
@@ -160,6 +160,14 @@ export default function NewsletterSignup() {
           <button
             type="submit"
             disabled={status === 'loading'}
+            onMouseEnter={(e) => {
+              if (status !== 'loading') {
+                e.currentTarget.style.background = '#CC1019';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#E8171F';
+            }}
             style={{
               height: '48px',
               padding: '0 24px',
@@ -173,7 +181,7 @@ export default function NewsletterSignup() {
               textTransform: 'uppercase',
               cursor: status === 'loading' ? 'wait' : 'pointer',
               opacity: status === 'loading' ? 0.7 : 1,
-              transition: 'opacity 200ms',
+              transition: 'background 200ms',
               whiteSpace: 'nowrap',
             }}
           >
@@ -188,7 +196,7 @@ export default function NewsletterSignup() {
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            color: '#EF4444',
+            color: '#E8171F',
             margin: '12px 0 0',
           }}
         >

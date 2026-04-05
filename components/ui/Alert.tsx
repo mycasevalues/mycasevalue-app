@@ -15,27 +15,27 @@ export interface AlertProps {
 
 const variantStyles = {
   info: {
-    borderColor: '#E8171F',
-    background: 'var(--bg-hover)',
-    iconColor: '#E8171F',
+    borderColor: '#006997',
+    background: 'rgba(0,105,151,0.05)',
+    iconColor: '#006997',
     iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z',
   },
   success: {
-    borderColor: 'var(--outcome-win)',
-    background: 'var(--outcome-win-bg)',
-    iconColor: 'var(--outcome-win)',
+    borderColor: '#07874A',
+    background: 'rgba(7,135,74,0.05)',
+    iconColor: '#07874A',
     iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
   },
   warning: {
-    borderColor: 'var(--outcome-settle)',
-    background: 'var(--outcome-settle-bg)',
-    iconColor: 'var(--outcome-settle)',
+    borderColor: '#E8AA0B',
+    background: 'rgba(232,170,11,0.05)',
+    iconColor: '#E8AA0B',
     iconPath: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
   },
   danger: {
-    borderColor: 'var(--outcome-loss)',
-    background: 'var(--outcome-loss-bg)',
-    iconColor: 'var(--outcome-loss)',
+    borderColor: '#E8171F',
+    background: 'rgba(232,23,31,0.05)',
+    iconColor: '#E8171F',
     iconPath: 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z',
   },
 };
