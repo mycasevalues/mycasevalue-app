@@ -1,0 +1,34 @@
+export default function DashboardLoading() {
+  return (
+    <div style={{ minHeight: '100vh', background: '#F5F6F7' }}>
+      {/* Header skeleton */}
+      <div style={{ background: '#00172E', padding: '48px 24px', borderBottom: '3px solid #E8171F' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ height: '32px', width: '200px', background: 'rgba(255,255,255,0.1)', borderRadius: '4px', marginBottom: '8px' }} />
+          <div style={{ height: '16px', width: '300px', background: 'rgba(255,255,255,0.08)', borderRadius: '4px' }} />
+        </div>
+      </div>
+      {/* Dashboard grid skeleton */}
+      <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '32px 24px' }}>
+        {/* Stats row */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
+          {[1, 2, 3, 4].map(i => (
+            <div key={i} style={{
+              background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '24px',
+            }}>
+              <div style={{ height: '14px', width: '60%', background: '#E5EBF0', borderRadius: '4px', marginBottom: '12px' }} />
+              <div style={{ height: '28px', width: '40%', background: '#F0F1F2', borderRadius: '4px' }} />
+            </div>
+          ))}
+        </div>
+        {/* Content area */}
+        <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '32px', height: '400px' }}>
+          <div style={{ height: '20px', width: '30%', background: '#E5EBF0', borderRadius: '4px', marginBottom: '24px' }} />
+          {[1, 2, 3].map(i => (
+            <div key={i} style={{ height: '60px', background: '#FAFBFC', borderRadius: '4px', marginBottom: '12px' }} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
