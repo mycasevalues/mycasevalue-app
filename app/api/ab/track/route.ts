@@ -81,16 +81,20 @@ export async function POST(request: NextRequest) {
     };
 
 
-    // In production, you would:
-    // 1. Store in a database (e.g., Supabase)
-    // 2. Send to analytics platform (e.g., Mixpanel, Amplitude)
-    // 3. Integrate with GA4 via enhanced ecommerce tracking
-    // Example:
-    // await supabase.from('ab_conversions').insert([conversionData]);
-    // OR
-    // await sendToAnalyticsPlatform(conversionData);
-
-    // For now, return success (privacy-first approach)
+    // Store in analytics_events table (fire-and-forget)
+    try {
+      const { getSupabaseAdmin } = await import('../../../../lib/supabase');
+      const supabase = getSupabaseAdmin();
+      await supabase.from('analytics_events').insert({
+        event: `ab_${event}`,
+        session_id: experimentId,
+        properties: { variant, metadata: body.metadata || {} },
+        ip,
+        created_at: conversionData.timestamp,
+      });
+    } catch (dbErr) {
+      console.warn('[api/ab/track] DB insert failed:', dbErr instanceof Error ? dbErr.message : dbErr);
+    }
     return NextResponse.json(
       {
         success: true,
@@ -99,8 +103,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-
-
+    console.error('[api/ab/track] Error:', error instanceof Error ? error.message : error);
     // Don't leak error details to client
     return NextResponse.json(
       { error: 'Failed to track conversion' },

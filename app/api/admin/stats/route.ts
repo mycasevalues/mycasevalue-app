@@ -32,25 +32,39 @@ export async function GET(req: NextRequest) {
     const { createClient } = await import('@supabase/supabase-js');
     const supabase = createClient(url, key);
 
-    // Run queries in parallel
-    const [usersRes, subscribersRes, sessionsRes] = await Promise.allSettled([
-      supabase.from('auth_users_view').select('*', { count: 'exact', head: true }),
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayISO = today.toISOString();
+    const last7d = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+
+    // Run queries in parallel for comprehensive dashboard
+    const [subscribersRes, sessionsRes, leadsRes, reportsRes, analyticsRes, pollsRes] = await Promise.allSettled([
       supabase.from('newsletter_subscribers').select('*', { count: 'exact', head: true }),
-      supabase.from('paid_sessions').select('*', { count: 'exact', head: true }),
+      supabase.from('premium_sessions').select('*', { count: 'exact', head: true }),
+      supabase.from('email_leads').select('*', { count: 'exact', head: true }),
+      supabase.from('report_logs').select('*', { count: 'exact', head: true }).gte('created_at', todayISO),
+      supabase.from('analytics_events').select('*', { count: 'exact', head: true }).gte('created_at', last7d),
+      supabase.from('poll_votes').select('*', { count: 'exact', head: true }),
     ]);
 
-    const users = usersRes.status === 'fulfilled' ? (usersRes.value.count ?? 0) : 0;
     const subscribers = subscribersRes.status === 'fulfilled' ? (subscribersRes.value.count ?? 0) : 0;
     const paid_sessions = sessionsRes.status === 'fulfilled' ? (sessionsRes.value.count ?? 0) : 0;
+    const email_leads = leadsRes.status === 'fulfilled' ? (leadsRes.value.count ?? 0) : 0;
+    const reports_today = reportsRes.status === 'fulfilled' ? (reportsRes.value.count ?? 0) : 0;
+    const events_7d = analyticsRes.status === 'fulfilled' ? (analyticsRes.value.count ?? 0) : 0;
+    const total_polls = pollsRes.status === 'fulfilled' ? (pollsRes.value.count ?? 0) : 0;
 
     return NextResponse.json({
-      users,
       subscribers,
       paid_sessions,
+      email_leads,
+      reports_today,
+      events_7d,
+      total_polls,
       timestamp: new Date().toISOString(),
     });
   } catch (err: any) {
-
+    console.error('[api/admin/stats] Error:', err.message || err);
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }
 }
