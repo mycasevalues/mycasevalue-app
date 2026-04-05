@@ -1,7 +1,6 @@
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import { apiHandler } from '../../../../lib/api-middleware';
 import { apiBadRequest } from '../../../../lib/api-response';
 import { validateEmail, validateNOSCode, validateState, sanitizeString } from '../../../../lib/sanitize';
@@ -36,12 +35,16 @@ export const POST = apiHandler(
     log.info('Email lead captured', { nos: cleanNos, source: cleanSource });
 
     // Attempt to store in Supabase
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    let supabase: any = null;
+    try {
+      const { getSupabaseAdmin } = await import('../../../../lib/supabase');
+      supabase = getSupabaseAdmin();
+    } catch {
+      // Supabase not configured
+    }
 
-    if (supabaseUrl && supabaseKey) {
+    if (supabase) {
       try {
-        const supabase = createClient(supabaseUrl, supabaseKey);
         const { error } = await supabase.from('email_leads').upsert(
           {
             email: cleanEmail,

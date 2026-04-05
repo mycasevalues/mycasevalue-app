@@ -1,7 +1,6 @@
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import { apiHandler } from '../../../lib/api-middleware';
 import { apiBadRequest } from '../../../lib/api-response';
 import {
@@ -64,12 +63,16 @@ export const POST = apiHandler(
     let moneyDist: any[] = [];
 
     // ── Supabase queries (parallel) ──────────────────────────
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    let supabase: ReturnType<typeof import('../../../lib/supabase').getSupabaseAdmin> | null = null;
+    try {
+      const { getSupabaseAdmin } = await import('../../../lib/supabase');
+      supabase = getSupabaseAdmin();
+    } catch {
+      // Supabase not configured
+    }
 
-    if (supabaseUrl && supabaseKey) {
+    if (supabase) {
       try {
-        const supabase = createClient(supabaseUrl, supabaseKey);
 
         // Run all queries in parallel for faster report generation
         const [statsResult, outcomesResult, moneyResult] = await Promise.allSettled([
