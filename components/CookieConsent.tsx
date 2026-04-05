@@ -66,7 +66,7 @@ export default function CookieConsent() {
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#666666"
+            stroke="#455A64"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -117,7 +117,7 @@ export default function CookieConsent() {
               fontFamily: 'var(--font-body)',
               border: '1px solid #D5D8DC',
               background: 'transparent',
-              color: '#666666',
+              color: '#455A64',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',

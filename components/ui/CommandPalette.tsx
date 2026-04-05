@@ -205,7 +205,7 @@ export default function CommandPalette({
     ];
 
     pages.forEach((p) => {
-      items.push({ ...p, categoryColor: 'var(--fg-subtle)', type: 'page' as const });
+      items.push({ ...p, categoryColor: '#455A64', type: 'page' as const });
     });
 
     // Quick actions
@@ -418,7 +418,7 @@ export default function CommandPalette({
         style={{
           position: 'fixed',
           inset: 0,
-          zIndex: 'var(--z-modal)',
+          zIndex: 9999,
           background: 'rgba(0,23,46,0.6)',
           animation: 'backdropFadeIn 0.2s ease-out',
         } as React.CSSProperties}
@@ -435,7 +435,7 @@ export default function CommandPalette({
           top: 'min(20vh, 160px)',
           left: '50%',
           transform: 'translateX(-50%)',
-          zIndex: 'var(--z-modal)',
+          zIndex: 9999,
           width: 'min(95vw, 560px)',
           maxHeight: '60vh',
           background: '#FFFFFF',
@@ -478,7 +478,7 @@ export default function CommandPalette({
               background: 'transparent',
               border: 'none',
               outline: 'none',
-              fontSize: 'var(--text-base)',
+              fontSize: '15px',
               color: '#212529',
               caretColor: '#006997',
               fontFamily: 'var(--font-body)',
@@ -490,7 +490,7 @@ export default function CommandPalette({
           {/* Escape hint */}
           <kbd
             style={{
-              fontSize: 'var(--text-xs)',
+              fontSize: '11px',
               color: '#455A64',
               background: '#F8F9FA',
               border: '1px solid #D5D8DC',
@@ -521,7 +521,7 @@ export default function CommandPalette({
                 padding: '24px',
                 textAlign: 'center',
                 color: '#455A64',
-                fontSize: 'var(--text-sm)',
+                fontSize: '13px',
               }}
             >
               {lang === 'es'
@@ -533,7 +533,7 @@ export default function CommandPalette({
               <div key={groupLabel}>
                 <div
                   style={{
-                    fontSize: 'var(--text-xs)',
+                    fontSize: '11px',
                     fontWeight: 600,
                     color: '#212529',
                     textTransform: 'uppercase',
@@ -560,7 +560,7 @@ export default function CommandPalette({
                         gap: '12px',
                         padding: '11px 12px',
                         borderRadius: '4px',
-                        borderLeft: isSelected ? '3px solid #D32F2F' : '3px solid transparent',
+                        borderLeft: isSelected ? '3px solid #E8171F' : '3px solid transparent',
                         cursor: 'pointer',
                         background: isSelected ? '#F8F9FA' : 'transparent',
                         color: isSelected ? '#212529' : '#212529',
@@ -597,7 +597,7 @@ export default function CommandPalette({
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div
                           style={{
-                            fontSize: 'var(--text-sm)',
+                            fontSize: '13px',
                             fontWeight: 500,
                             color: '#212529',
                             whiteSpace: 'nowrap',
@@ -611,7 +611,7 @@ export default function CommandPalette({
                         {item.description && (
                           <div
                             style={{
-                              fontSize: 'var(--text-xs)',
+                              fontSize: '11px',
                               color: '#455A64',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
@@ -629,7 +629,7 @@ export default function CommandPalette({
                         <span
                           style={{
                             flexShrink: 0,
-                            fontSize: 'var(--text-2xs)',
+                            fontSize: '10px',
                             fontWeight: 500,
                             color: item.categoryColor,
                             background: `color-mix(in srgb, ${item.categoryColor} 12%, transparent)`,
@@ -677,7 +677,7 @@ export default function CommandPalette({
             gap: '20px',
             padding: '10px 16px',
             borderTop: '1px solid #D5D8DC',
-            fontSize: 'var(--text-2xs)',
+            fontSize: '10px',
             color: '#455A64',
             background: '#F8F9FA',
             fontFamily: 'var(--font-body)',

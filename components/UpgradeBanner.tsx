@@ -68,7 +68,7 @@ export default function UpgradeBanner() {
           cursor: pointer;
         }
         .upgrade-btn-primary:hover {
-          background: #CC1218;
+          background: #CC1019;
           transform: translateY(-2px);
         }
         .upgrade-btn-secondary {

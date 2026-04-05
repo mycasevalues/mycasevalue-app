@@ -176,7 +176,7 @@ export default function QuickLookupForm() {
           border-color: #E8171F !important;
         }
         .quick-lookup-submit:hover {
-          background: #CC1219 !important;
+          background: #CC1019 !important;
         }
         .quick-lookup-submit:active {
           transform: scale(0.98);

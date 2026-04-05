@@ -539,7 +539,7 @@ const AIPredictionsPreview: React.FC = () => (
       style={{
         padding: '20px',
         backgroundColor: '#F0F0F0',
-        borderRadius: '8px',
+        borderRadius: '4px',
         marginBottom: '20px',
       }}
     >
