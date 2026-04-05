@@ -28,7 +28,8 @@ import { getSupabaseAdmin } from '../../../lib/supabase'
 function getSupabase() {
   try {
     return getSupabaseAdmin()
-  } catch {
+  } catch (err: unknown) {
+    console.warn('[api/data] Failed to initialize Supabase:', err instanceof Error ? err.message : err);
     return null
   }
 }

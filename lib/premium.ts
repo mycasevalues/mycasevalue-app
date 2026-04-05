@@ -94,8 +94,8 @@ export async function syncPremiumFromDB(email: string): Promise<PremiumSession |
 
     premiumStore.set(normalizedEmail, session);
     return session;
-  } catch (err: any) {
-    console.warn('[premium] syncPremiumFromDB failed:', err.message || err);
+  } catch (err: unknown) {
+    console.warn('[premium] syncPremiumFromDB failed:', err instanceof Error ? err.message : String(err));
     return null;
   }
 }
@@ -132,8 +132,8 @@ export async function grantPremiumAccess(session: PremiumSession): Promise<void>
           { onConflict: 'email' }
         )
         .throwOnError();
-    } catch (err: any) {
-      console.error('[premium] grantPremiumAccess DB write failed:', err.message || err);
+    } catch (err: unknown) {
+      console.error('[premium] grantPremiumAccess DB write failed:', err instanceof Error ? err.message : String(err));
     }
   }
 }
@@ -183,8 +183,8 @@ export async function revokePremiumAccess(email: string): Promise<void> {
         .delete()
         .eq('email', normalizedEmail)
         .throwOnError();
-    } catch (err: any) {
-      console.error('[premium] revokePremiumAccess DB delete failed:', err.message || err);
+    } catch (err: unknown) {
+      console.error('[premium] revokePremiumAccess DB delete failed:', err instanceof Error ? err.message : String(err));
     }
   }
 }
@@ -232,8 +232,8 @@ export async function cleanupExpiredSessions(): Promise<number> {
         .lte('expires_at', now)
         .not('expires_at', 'is', null)
         .throwOnError();
-    } catch (err: any) {
-      console.error('[premium] cleanupExpiredSessions DB delete failed:', err.message || err);
+    } catch (err: unknown) {
+      console.error('[premium] cleanupExpiredSessions DB delete failed:', err instanceof Error ? err.message : String(err));
     }
   }
 

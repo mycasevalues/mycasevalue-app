@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '../lib/blog';
+import { SITE_URL } from '../lib/site-config';
 
 const CATEGORY_IDS = ['work', 'injury', 'consumer', 'rights', 'money', 'housing', 'medical', 'family', 'gov', 'education'];
 
@@ -23,7 +24,7 @@ const TOP_CASE_TYPES = ['employment-discrimination', 'breach-of-contract', 'pers
 const TOP_DISTRICTS = ['CA', 'NY', 'TX', 'FL', 'IL', 'PA', 'OH', 'GA', 'NC', 'MI'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.mycasevalues.com';
+  const baseUrl = SITE_URL;
   const now = new Date().toISOString();
 
   // ── Static pages ──────────────────────────────────────

@@ -3,6 +3,8 @@
  * Supports Resend integration with graceful fallback
  */
 
+import { SITE_URL } from './site-config';
+
 export type EmailLanguage = 'en' | 'es';
 export type EmailType = 'welcome' | 'report' | 'payment';
 
@@ -135,7 +137,7 @@ export async function sendWelcomeEmail(
                   <li>Ver rangos de recuperación por estado</li>
                   <li>Analizar patrones de jueces</li>
                 </ul>
-                <p><a href="https://www.mycasevalues.com" class="cta-button">Ir a MyCaseValue</a></p>
+                <p><a href="${SITE_URL}" class="cta-button">Ir a MyCaseValue</a></p>
                 <p>¿Preguntas? Contáctanos en <a href="mailto:support@mycasevalues.com">support@mycasevalues.com</a></p>
               </div>
               <div class="footer">
@@ -187,7 +189,7 @@ export async function sendWelcomeEmail(
                 <li>View recovery ranges by state</li>
                 <li>Analyze judge patterns</li>
               </ul>
-              <p><a href="https://www.mycasevalues.com" class="cta-button">Go to MyCaseValue</a></p>
+              <p><a href="${SITE_URL}" class="cta-button">Go to MyCaseValue</a></p>
               <p>Questions? Contact us at <a href="mailto:support@mycasevalues.com">support@mycasevalues.com</a></p>
             </div>
             <div class="footer">
@@ -264,7 +266,7 @@ export async function sendReportEmail(
                     <td>${caseValue || 'N/A'}</td>
                   </tr>
                 </table>
-                <p><a href="https://www.mycasevalues.com" class="cta-button">Ver Informe Completo</a></p>
+                <p><a href="${SITE_URL}" class="cta-button">Ver Informe Completo</a></p>
               </div>
               <div class="footer">
                 <p>&copy; 2026 MyCaseValue. Todos los derechos reservados.</p>
@@ -326,7 +328,7 @@ export async function sendReportEmail(
                   <td>${caseValue || 'N/A'}</td>
                 </tr>
               </table>
-              <p><a href="https://www.mycasevalues.com" class="cta-button">View Full Report</a></p>
+              <p><a href="${SITE_URL}" class="cta-button">View Full Report</a></p>
             </div>
             <div class="footer">
               <p>&copy; 2026 MyCaseValue. All rights reserved.</p>
@@ -457,7 +459,7 @@ export async function sendReportReadyEmail(
     return { success: false, error: 'Invalid email address' };
   }
 
-  const reportUrl = `https://www.mycasevalues.com/report/${reportData.nos}`;
+  const reportUrl = `${SITE_URL}/report/${reportData.nos}`;
 
   if (lang === 'es') {
     return sendEmail({

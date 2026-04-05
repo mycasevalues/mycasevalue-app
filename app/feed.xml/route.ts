@@ -1,8 +1,9 @@
 import { getAllPosts } from '../../lib/blog';
+import { SITE_URL } from '../../lib/site-config';
 
 export async function GET() {
   const posts = getAllPosts();
-  const baseUrl = 'https://www.mycasevalues.com';
+  const baseUrl = SITE_URL;
 
   // Escape XML special characters
   const escapeXml = (str: string) => {

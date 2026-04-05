@@ -516,8 +516,8 @@ export async function apiCall(endpoint: string, method = "GET", body: any = null
       const resp = await fetch(API_BASE + endpoint, opts);
       if (resp.ok) return await resp.json();
       return null;
-    } catch (err: any) {
-      const msg = err?.message || String(err);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err);
       if (attempt === 0 && (msg.includes('ECONNRESET') || msg.includes('ECONNREFUSED') || msg.includes('fetch failed'))) {
         // Wait 500ms and retry once
         await new Promise(r => setTimeout(r, 500));

@@ -8,6 +8,7 @@ import SiteNav from '../components/layout/SiteNav';
 import SiteFooter from '../components/layout/SiteFooter';
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
+import { SITE_URL, SITE_NAME } from '../lib/site-config';
 
 // Dynamic imports for client-side only components to improve initial page load
 // These components are non-critical and loaded after hydration
@@ -77,7 +78,7 @@ export const metadata = {
   other: {
     'google': 'notranslate',
   },
-  metadataBase: new URL('https://www.mycasevalues.com'),
+  metadataBase: new URL(SITE_URL),
 };
 
 export const viewport = {

@@ -52,7 +52,8 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(healthReport, { status: statusCode, headers: { 'Cache-Control': 'no-store' } })
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : 'Unknown error';
     // Check for API key for detailed error info
     const apiKey = request.headers.get('x-api-key');
     const isAuthorized = apiKey && process.env.HEALTH_CHECK_API_KEY && secureCompare(apiKey, process.env.HEALTH_CHECK_API_KEY);
@@ -70,11 +71,11 @@ export async function GET(request: NextRequest) {
       {
         status: 'unhealthy',
         timestamp: new Date().toISOString(),
-        error: error.message,
+        error: errMsg,
         checks: {
           databaseConnectivity: {
             status: 'unhealthy',
-            message: `System error: ${error.message}`
+            message: `System error: ${errMsg}`
           },
           dataFreshness: {
             status: 'unhealthy',
@@ -102,7 +103,7 @@ export async function GET(request: NextRequest) {
             courtlistenerReachable: false
           }
         },
-        overallAssessment: `Critical system failure: ${error.message}`
+        overallAssessment: `Critical system failure: ${errMsg}`
       },
       { status: 503, headers: { 'Cache-Control': 'no-store' } }
     )

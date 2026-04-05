@@ -6,8 +6,8 @@ import { SITS, OUTCOME_DATA } from '../../../lib/data';
 function getNOSMap(): Record<string, { label: string; category: string; description?: string }> {
   const nosMap: Record<string, { label: string; category: string; description?: string }> = {};
 
-  SITS.forEach((category: any) => {
-    category.opts.forEach((option: any) => {
+  SITS.forEach((category) => {
+    category.opts.forEach((option) => {
       const key = option.nos;
       if (!nosMap[key]) {
         nosMap[key] = { label: option.label, category: category.label, description: option.d };
@@ -21,8 +21,8 @@ function getNOSMap(): Record<string, { label: string; category: string; descript
 // Get all unique NOS codes for static generation
 function getAllNOSCodes(): string[] {
   const nosSet = new Set<string>();
-  SITS.forEach((category: any) => {
-    category.opts.forEach((option: any) => {
+  SITS.forEach((category) => {
+    category.opts.forEach((option) => {
       nosSet.add(option.nos);
     });
   });

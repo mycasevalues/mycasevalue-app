@@ -3,6 +3,7 @@
 import { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
@@ -122,11 +123,12 @@ function SignInForm() {
 
         {/* Logo */}
         <div className="auth-logo">
-          <img
+          <Image
             src="/logo.svg"
             alt="MyCaseValue"
             width={120}
             height={30}
+            priority
             style={{ display: 'block' }}
           />
         </div>

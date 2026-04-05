@@ -33,8 +33,8 @@ export async function GET() {
     const tier = await getUserTier(user.email);
 
     return NextResponse.json({ tier, email: user.email }, { status: 200 });
-  } catch (err) {
-
+  } catch (err: unknown) {
+    console.error('[api/user/tier] Error fetching tier:', err instanceof Error ? err.message : err);
     return NextResponse.json({ tier: 'free', email: null }, { status: 200 });
   }
 }

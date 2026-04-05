@@ -58,7 +58,8 @@ export async function POST(req: NextRequest) {
       },
       { status: 201 }
     );
-  } catch (err: any) {
+  } catch (err: unknown) {
+    console.error('[api/push/subscribe] Failed to store subscription:', err instanceof Error ? err.message : err);
     return NextResponse.json(
       { error: 'Failed to store subscription' },
       { status: 500 }

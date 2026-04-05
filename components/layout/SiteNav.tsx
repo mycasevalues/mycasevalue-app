@@ -11,6 +11,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
 
@@ -173,11 +174,12 @@ export default function SiteNav() {
             className="site-nav-logo-link"
             aria-label="MyCaseValue home"
           >
-            <img
+            <Image
               src="/logo.svg"
               alt="MyCaseValue"
               width={120}
               height={30}
+              priority
               style={{ display: 'block' }}
             />
           </Link>

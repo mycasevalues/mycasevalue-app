@@ -1,6 +1,7 @@
 import { unstable_noStore as noStore } from 'next/cache';
 import ServerHero from '../components/ServerHero';
 import ServerContent from '../components/ServerContent';
+import { SITE_URL } from '../lib/site-config';
 
 export const revalidate = 0;
 
@@ -39,11 +40,11 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'MyCaseValue',
-  url: 'https://www.mycasevalues.com',
+  url: SITE_URL,
   description: 'Research real outcomes from 5.1M+ federal court cases across 94 districts.',
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://www.mycasevalues.com/search?q={search_term_string}',
+    target: `${SITE_URL}/search?q={search_term_string}`,
     'query-input': 'required name=search_term_string',
   },
 };
