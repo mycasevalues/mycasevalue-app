@@ -28,9 +28,19 @@ export const metadata: Metadata = {
 
 export default function SpanishPage() {
   return (
-    <>
+    <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+      {/* Breadcrumb Navigation Header */}
+      <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC', padding: '12px 24px' }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <nav className="flex items-center gap-2 text-sm">
+            <span style={{ color: '#FFFFFF' }} className="opacity-80">Inicio</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Hero and Content */}
       <ServerHero />
       <ServerContent />
-    </>
+    </div>
   );
 }

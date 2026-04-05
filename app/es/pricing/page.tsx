@@ -74,28 +74,34 @@ const pricingFaqs = [
 
 export default function SpanishPricingPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#EDEEEE' }}>
-        <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/es" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#006997' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Volver a MyCaseValue
-          </a>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E5EBF0', color: '#006997', borderRadius: '9999px' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            PRECIOS
+      {/* Header with Dark Navy Background */}
+      <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC' }}>
+        <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center gap-2 mb-8 text-sm">
+            <a href="/es" style={{ color: '#FFFFFF' }} className="hover:opacity-80 transition-opacity">
+              Inicio
+            </a>
+            <span style={{ color: '#FFFFFF' }} className="opacity-60">/</span>
+            <span style={{ color: '#FFFFFF' }} className="opacity-80">Precios</span>
+          </nav>
+
+          {/* Red Accent Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
+            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+            OPCIONES DE PAGO
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
+
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF' }}>
             Precios Simples y Transparentes
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#666666' }}>
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#FFFFFF', opacity: 0.9 }}>
             Accede a datos de resultados de casos federales desde solo $5.99. Sin tarifas ocultas. Sin suscripciones obligatorias (a menos que quieras acceso ilimitado).
           </p>
         </div>
@@ -110,17 +116,17 @@ export default function SpanishPricingPage() {
             style={{
               borderRadius: '4px',
               borderColor: '#D5D8DC',
-              background: '#FAFBFC',
+              background: '#FFFFFF',
             }}>
             <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: '#212529' }}>
+              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
                 Informe Individual
               </h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold" style={{ color: '#212529', fontFamily: 'PT Mono' }}>
                   $5.99
                 </span>
-                <span className="text-sm" style={{ color: '#666666' }}>
+                <span className="text-sm" style={{ color: '#455A64' }}>
                   de una sola vez
                 </span>
               </div>
@@ -139,7 +145,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: '#666666' }}>
+                  <span className="text-sm" style={{ color: '#455A64' }}>
                     {feature}
                   </span>
                 </li>
@@ -159,23 +165,22 @@ export default function SpanishPricingPage() {
             style={{
               borderRadius: '4px',
               borderColor: '#E8171F',
-              background: '#FAFBFC',
-              border: '2px solid #E8171F',
+              background: '#FFFFFF',
             }}>
             <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ borderRadius: '9999px', background: '#FCE7E8', color: '#E8171F' }}>
+              style={{ borderRadius: '4px', background: '#FCE7E8', color: '#E8171F' }}>
               MEJOR VALOR
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: '#212529' }}>
+              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
                 Informes Ilimitados
               </h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold" style={{ color: '#E8171F', fontFamily: 'PT Mono' }}>
                   $9.99
                 </span>
-                <span className="text-sm" style={{ color: '#666666' }}>
+                <span className="text-sm" style={{ color: '#455A64' }}>
                   de una sola vez
                 </span>
               </div>
@@ -193,7 +198,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: '#666666' }}>
+                  <span className="text-sm" style={{ color: '#455A64' }}>
                     {feature}
                   </span>
                 </li>
@@ -213,17 +218,17 @@ export default function SpanishPricingPage() {
             style={{
               borderRadius: '4px',
               borderColor: '#D5D8DC',
-              background: '#FAFBFC',
+              background: '#FFFFFF',
             }}>
             <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2" style={{ color: '#212529' }}>
+              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
                 Modo Abogado
               </h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold" style={{ color: '#006997', fontFamily: 'PT Mono' }}>
                   $29.99
                 </span>
-                <span className="text-sm" style={{ color: '#666666' }}>
+                <span className="text-sm" style={{ color: '#455A64' }}>
                   /mes
                 </span>
               </div>
@@ -244,7 +249,7 @@ export default function SpanishPricingPage() {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: '#666666' }}>
+                  <span className="text-sm" style={{ color: '#455A64' }}>
                     {feature}
                   </span>
                 </li>
@@ -262,8 +267,8 @@ export default function SpanishPricingPage() {
         </div>
 
         {/* Plan Notes */}
-        <div className="text-center p-6 mb-12" style={{ background: '#FAFBFC', borderColor: '#D5D8DC', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
-          <p className="text-sm" style={{ color: '#666666' }}>
+        <div className="text-center p-6 mb-12" style={{ background: '#FFFFFF', borderColor: '#D5D8DC', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+          <p className="text-sm" style={{ color: '#455A64' }}>
             Todos los planes incluyen citas de fuentes, soporte bilingüe (inglés/español) y un aviso de "no es asesoramiento legal".
           </p>
         </div>
@@ -281,7 +286,7 @@ export default function SpanishPricingPage() {
                 style={{
                   borderRadius: '4px',
                   borderColor: '#D5D8DC',
-                  background: '#FAFBFC',
+                  background: '#FFFFFF',
                 }}
               >
                 <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#212529' }}>
@@ -302,7 +307,7 @@ export default function SpanishPricingPage() {
                   </svg>
                 </summary>
                 <div className="pt-4 mt-4 border-t" style={{ borderColor: '#D5D8DC' }}>
-                  <p className="text-sm leading-relaxed" style={{ color: '#666666' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
                     {faq.a}
                   </p>
                 </div>
@@ -312,11 +317,11 @@ export default function SpanishPricingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC', borderRadius: '4px' }}>
+        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#666666' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#455A64' }}>
             Genera tu informe básico gratuito instantáneamente, luego actualiza a características premium si deseas análisis más profundo.
           </p>
           <a href="/odds"
@@ -331,7 +336,7 @@ export default function SpanishPricingPage() {
 
       {/* Footer disclaimer */}
       <div className="border-t py-6 text-center" style={{ borderColor: '#D5D8DC' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#666666' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#455A64' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente.
           No somos un bufete de abogados. Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

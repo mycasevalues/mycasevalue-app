@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Preguntas Frecuentes — MyCaseValue',
-    description: 'Obtén respuestas a preguntas frecuentes sobre datos judicales federales, tasas de victoria, rangos de acuerdos y cómo funciona MyCaseValue.',
+    description: 'Obtén respuestas a preguntas frecuentes sobre datos judiciales federales, tasas de victoria, rangos de acuerdos y cómo funciona MyCaseValue.',
     type: 'website',
     url: 'https://www.mycasevalues.com/es/faq',
     locale: 'es_ES',
@@ -164,29 +164,35 @@ const faqs = [
 
 export default function SpanishFAQPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#EDEEEE' }}>
-        <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-          <a href="/es" className="inline-flex items-center gap-2 text-sm font-semibold mb-6 transition-colors hover:opacity-80" style={{ color: '#006997' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Volver a MyCaseValue
-          </a>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E5EBF0', color: '#006997', borderRadius: '9999px' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            PREGUNTAS FRECUENTES
+      {/* Header with Dark Navy Background */}
+      <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC' }}>
+        <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
+          {/* Breadcrumb Navigation */}
+          <nav className="flex items-center gap-2 mb-8 text-sm">
+            <a href="/es" style={{ color: '#FFFFFF' }} className="hover:opacity-80 transition-opacity">
+              Inicio
+            </a>
+            <span style={{ color: '#FFFFFF' }} className="opacity-60">/</span>
+            <span style={{ color: '#FFFFFF' }} className="opacity-80">Preguntas Frecuentes</span>
+          </nav>
+
+          {/* Red Accent Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
+            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+            AYUDA
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#212529', letterSpacing: '-1.5px' }}>
+
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF' }}>
             Preguntas Frecuentes
           </h1>
-          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#666666' }}>
-            Obtén respuestas a preguntas frecuentes sobre MyCaseValue, datos judicales federales y cómo usar estadísticas de resultados.
+          <p className="text-lg leading-relaxed max-w-2xl" style={{ color: '#FFFFFF', opacity: 0.9 }}>
+            Obtén respuestas a preguntas frecuentes sobre MyCaseValue, datos judiciales federales y cómo usar estadísticas de resultados.
           </p>
         </div>
       </div>
@@ -207,7 +213,7 @@ export default function SpanishFAQPage() {
                     style={{
                       borderRadius: '4px',
                       borderColor: '#D5D8DC',
-                      background: '#FAFBFC',
+                      background: '#FFFFFF',
                     }}
                   >
                     <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#212529' }}>
@@ -228,7 +234,7 @@ export default function SpanishFAQPage() {
                       </svg>
                     </summary>
                     <div className="pt-4 mt-4 border-t" style={{ borderColor: '#D5D8DC' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: '#666666' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -240,11 +246,11 @@ export default function SpanishFAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC', borderRadius: '4px' }}>
+        <div className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             ¿Aún tienes preguntas?
           </h2>
-          <p className="mb-6" style={{ color: '#666666' }}>
+          <p className="mb-6" style={{ color: '#455A64' }}>
             Ponte en contacto con nuestro equipo de soporte.
           </p>
           <a href="mailto:support@mycasevalue.com"
@@ -258,7 +264,7 @@ export default function SpanishFAQPage() {
 
       {/* Footer disclaimer */}
       <div className="border-t py-6 text-center" style={{ borderColor: '#D5D8DC' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#666666' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#455A64' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente para fines informativos y de investigación.
           Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

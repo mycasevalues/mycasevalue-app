@@ -4,7 +4,6 @@
  */
 
 import Link from 'next/link';
-import Image from 'next/image';
 
 const FOOTER_COLUMNS = [
   {
@@ -77,11 +76,12 @@ export default function SiteFooter() {
           {/* Brand column */}
           <div>
             <div className="site-footer-logo">
-              <Image
+              <img
                 src="/logo.svg"
                 alt="MyCaseValue"
                 width={112}
                 height={28}
+                style={{ display: 'block' }}
               />
             </div>
             <p style={{
