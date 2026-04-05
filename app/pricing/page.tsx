@@ -437,7 +437,7 @@ function PricingCard({
                   textAlign: 'center',
                   fontSize: '14px',
                   lineHeight: '1',
-                  color: feat.included ? '#07874A' : '#C0C4C8',
+                  color: feat.included ? '#E8171F' : '#C0C4C8',
                   fontWeight: feat.included ? 700 : 400,
                 }}
               >
@@ -493,7 +493,7 @@ export default function PricingPage() {
   }
 
   return (
-    <div style={{ background: 'var(--bg-base)' }}>
+    <div style={{ background: '#EDEEEE' }}>
       <style dangerouslySetInnerHTML={{ __html: `
         .pricing-cta-link:hover { background: #CC1019 !important; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,23,31,0.3); }
         .pricing-enterprise-link:hover { opacity: 0.9 !important; }
@@ -595,11 +595,11 @@ export default function PricingPage() {
               fontFamily: 'var(--font-body)',
             }}
           >
-            <Link href="/" style={{ color: '#455A64', textDecoration: 'none' }}>
+            <Link href="/" style={{ color: '#006997', textDecoration: 'none' }}>
               Home
             </Link>
-            <span style={{ margin: '0 8px', color: '#D5D8DC' }}>›</span>
-            <span>Pricing</span>
+            <span style={{ margin: '0 8px', color: '#455A64' }}>/</span>
+            <span style={{ color: '#212529' }}>Pricing</span>
           </nav>
         </div>
       </div>
@@ -784,7 +784,7 @@ export default function PricingPage() {
                       color: '#455A64',
                       textTransform: 'uppercase',
                       letterSpacing: '0.08em',
-                      background: '#F5F5F5',
+                      background: '#F8F9FA',
                     }}
                   >
                     Feature
@@ -799,7 +799,7 @@ export default function PricingPage() {
                         fontSize: '13px',
                         fontWeight: '600',
                         color: '#212529',
-                        background: '#F5F5F5',
+                        background: '#F8F9FA',
                       }}
                     >
                       {plan.name}
@@ -840,7 +840,7 @@ export default function PricingPage() {
                           <span
                             style={{
                               fontSize: '14px',
-                              color: planFeature.included ? '#07874A' : '#C0C4C8',
+                              color: planFeature.included ? '#E8171F' : '#C0C4C8',
                               fontWeight: planFeature.included ? '700' : '400',
                             }}
                           >

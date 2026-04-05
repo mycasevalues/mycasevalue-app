@@ -47,7 +47,7 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <style>{`
         .blog-breadcrumb-link:hover {
           color: #FFFFFF !important;

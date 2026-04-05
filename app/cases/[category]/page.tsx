@@ -367,7 +367,7 @@ async function CategoryPage({
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg-base)' }}>
+    <div style={{ minHeight: '100vh', background: '#EDEEEE' }}>
       {/* Schema.org structured data */}
       <script
         type="application/ld+json"
@@ -377,7 +377,7 @@ async function CategoryPage({
       {/* Breadcrumb Navigation */}
       <div style={{
         background: '#FFFFFF',
-        borderBottom: '1px solid var(--border-default)',
+        borderBottom: '1px solid #D5D8DC',
         padding: '16px 20px',
       }}>
         <div style={{
@@ -533,7 +533,7 @@ async function CategoryPage({
                   className="case-type-card"
                   style={{
                     background: '#FFFFFF',
-                    border: '1px solid var(--border-default)',
+                    border: '1px solid #D5D8DC',
                     borderRadius: '4px',
                     padding: '20px',
                     fontFamily: 'Outfit, system-ui, sans-serif',
@@ -563,7 +563,7 @@ async function CategoryPage({
                     fontSize: '12px',
                     color: '#455A64',
                     paddingTop: '12px',
-                    borderTop: '1px solid var(--border-default)',
+                    borderTop: '1px solid #D5D8DC',
                   }}>
                     NOS Code: {opt.nos}
                   </div>
@@ -578,7 +578,7 @@ async function CategoryPage({
       <div style={{
         background: '#FFFFFF',
         padding: '60px 20px',
-        borderTop: '1px solid var(--border-default)',
+        borderTop: '1px solid #D5D8DC',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{

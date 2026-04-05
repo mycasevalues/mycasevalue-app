@@ -50,7 +50,7 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div style={{ background: 'var(--bg-base)', minHeight: '100vh' }}>
+      <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{ background: '#00172E', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>

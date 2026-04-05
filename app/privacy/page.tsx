@@ -31,7 +31,7 @@ const jsonLd = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-base)' }}>
+    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
       <style>{`
         .legal-toc {
           position: sticky;

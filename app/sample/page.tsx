@@ -69,7 +69,7 @@ export default function SampleReportPage() {
 
       <div
         style={{
-          backgroundColor: 'var(--bg-base)',
+          backgroundColor: '#EDEEEE',
           color: '#212529',
           minHeight: '100vh',
         }}
@@ -196,7 +196,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -239,7 +239,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -281,7 +281,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -359,7 +359,7 @@ export default function SampleReportPage() {
             <div
               style={{
                 backgroundColor: '#FFFFFF',
-                border: '1px solid var(--border-default)',
+                border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 padding: '32px 24px',
                 marginBottom: '16px',
@@ -478,7 +478,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -520,7 +520,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -562,7 +562,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -630,7 +630,7 @@ export default function SampleReportPage() {
             <div
               style={{
                 backgroundColor: '#FFFFFF',
-                border: '1px solid var(--border-default)',
+                border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 overflow: 'hidden',
                 marginBottom: '24px',
@@ -646,8 +646,8 @@ export default function SampleReportPage() {
                 <thead>
                   <tr
                     style={{
-                      backgroundColor: 'var(--bg-base)',
-                      borderBottom: '1px solid var(--border-default)',
+                      backgroundColor: '#EDEEEE',
+                      borderBottom: '1px solid #D5D8DC',
                     }}
                   >
                     <th
@@ -759,7 +759,7 @@ export default function SampleReportPage() {
                       key={idx}
                       style={{
                         borderBottom:
-                          idx < 4 ? '1px solid var(--border-default)' : 'none',
+                          idx < 4 ? '1px solid #D5D8DC' : 'none',
                       }}
                     >
                       <td
@@ -854,7 +854,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -896,7 +896,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -938,7 +938,7 @@ export default function SampleReportPage() {
               <div
                 style={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid var(--border-default)',
+                  border: '1px solid #D5D8DC',
                   borderRadius: '4px',
                   padding: '24px',
                 }}
@@ -1006,7 +1006,7 @@ export default function SampleReportPage() {
             <div
               style={{
                 backgroundColor: '#FFFFFF',
-                border: '1px solid var(--border-default)',
+                border: '1px solid #D5D8DC',
                 borderRadius: '4px',
                 overflow: 'hidden',
                 marginBottom: '24px',
@@ -1022,8 +1022,8 @@ export default function SampleReportPage() {
                 <thead>
                   <tr
                     style={{
-                      backgroundColor: 'var(--bg-base)',
-                      borderBottom: '1px solid var(--border-default)',
+                      backgroundColor: '#EDEEEE',
+                      borderBottom: '1px solid #D5D8DC',
                     }}
                   >
                     <th
@@ -1128,7 +1128,7 @@ export default function SampleReportPage() {
                       key={idx}
                       style={{
                         borderBottom:
-                          idx < 3 ? '1px solid var(--border-default)' : 'none',
+                          idx < 3 ? '1px solid #D5D8DC' : 'none',
                         backgroundColor: idx === 0 ? 'rgba(232,23,31,0.04)' : 'transparent',
                       }}
                     >

@@ -118,7 +118,7 @@ export default async function ReportPage({
 
   if (!data && !dbStats) {
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--bg-base)', padding: '64px 24px', textAlign: 'center' }}>
+      <div style={{ minHeight: '100vh', background: '#EDEEEE', padding: '64px 24px', textAlign: 'center' }}>
         <p style={{ fontSize: 18, color: '#111111', fontFamily: 'var(--font-display)', fontWeight: 600, marginBottom: 12 }}>
           No data found for this case type.
         </p>
@@ -692,13 +692,13 @@ export default async function ReportPage({
 
             {opinionResults.length > 0 && (
               <>
-                <p style={{ fontSize: 12, fontWeight: 600, color: 'var(--fg-secondary)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: 12, fontWeight: 600, color: '#455A64', marginBottom: 12, textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'var(--font-body)' }}>
                   Federal Opinions
                 </p>
                 {opinionResults.map((op: any, i: number) => (
                   <div key={i} style={{
                     padding: '12px 0',
-                    borderBottom: i < opinionResults.length - 1 ? '1px solid var(--border-default)' : 'none',
+                    borderBottom: i < opinionResults.length - 1 ? '1px solid #D5D8DC' : 'none',
                   }}>
                     <a
                       href={op.absolute_url ? `https://www.courtlistener.com${op.absolute_url}` : '#'}
@@ -722,7 +722,7 @@ export default async function ReportPage({
                 <p style={{
                   fontSize: 12,
                   fontWeight: 600,
-                  color: 'var(--fg-secondary)',
+                  color: '#455A64',
                   marginBottom: 12,
                   marginTop: opinionResults.length > 0 ? 20 : 0,
                   textTransform: 'uppercase',
@@ -734,7 +734,7 @@ export default async function ReportPage({
                 {recapResults.map((doc: any, i: number) => (
                   <div key={i} style={{
                     padding: '12px 0',
-                    borderBottom: i < recapResults.length - 1 ? '1px solid var(--border-default)' : 'none',
+                    borderBottom: i < recapResults.length - 1 ? '1px solid #D5D8DC' : 'none',
                   }}>
                     <a
                       href={doc.absolute_url ? `https://www.courtlistener.com${doc.absolute_url}` : '#'}

@@ -292,7 +292,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}</style>
       </head>
-      <body style={{ background: 'var(--gradient-page)', color: 'var(--fg-primary)', minHeight: '100vh' }} suppressHydrationWarning>
+      <body style={{ background: '#EDEEEE', color: '#212529', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
         <a href="#main-content" className="skip-link" style={{
           position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px',
