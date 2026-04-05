@@ -1,8 +1,9 @@
 export const dynamic = 'force-dynamic';
 
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
+import { apiHandler } from '../../../../lib/api-middleware';
+import { apiBadRequest } from '../../../../lib/api-response';
 import { validateEmail, validateNOSCode, validateState, sanitizeString } from '../../../../lib/sanitize';
 
 /**
@@ -10,27 +11,29 @@ import { validateEmail, validateNOSCode, validateState, sanitizeString } from '.
  * Captures email leads for report delivery and marketing.
  * Stores in Supabase `email_leads` table (falls back gracefully if table doesn't exist).
  */
-export async function POST(request: NextRequest) {
-  // Rate limiting: 20 requests per minute per IP
-  const ip = getClientIp(request.headers);
-  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 20 });
-  if (!success) {
-    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
-  }
+export const POST = apiHandler(
+  { rateLimit: { windowMs: 60000, maxRequests: 20 } },
+  async (request, { log, clientIp }) => {
+    let body: any;
+    try {
+      body = await request.json();
+    } catch {
+      return apiBadRequest('Invalid JSON body');
+    }
 
-  try {
-    const { email, case_type, nos_code, state, source } = await request.json();
+    const { email, case_type, nos_code, state, source } = body;
 
     const cleanEmail = validateEmail(email);
     if (!cleanEmail) {
-      return NextResponse.json({ success: false, error: 'Invalid email' }, { status: 400 });
+      return apiBadRequest('Invalid email address');
     }
 
-    // Sanitize all inputs
     const cleanCaseType = sanitizeString(case_type, 100);
     const cleanNos = nos_code ? validateNOSCode(nos_code) || '' : '';
     const cleanState = state ? validateState(state) || '' : '';
     const cleanSource = sanitizeString(source || 'report', 50);
+
+    log.info('Email lead captured', { nos: cleanNos, source: cleanSource });
 
     // Attempt to store in Supabase
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -39,21 +42,24 @@ export async function POST(request: NextRequest) {
     if (supabaseUrl && supabaseKey) {
       try {
         const supabase = createClient(supabaseUrl, supabaseKey);
-        await supabase.from('email_leads').upsert(
+        const { error } = await supabase.from('email_leads').upsert(
           {
             email: cleanEmail,
             case_type: cleanCaseType,
             nos_code: cleanNos,
             state: cleanState,
             source: cleanSource,
-            ip: request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || null,
+            ip: clientIp,
             user_agent: request.headers.get('user-agent')?.slice(0, 500) || null,
             created_at: new Date().toISOString(),
           },
           { onConflict: 'email' }
         );
-      } catch (dbError) {
-        // Don't fail the request if DB write fails — email was still "captured"
+        if (error) {
+          log.warn('email_leads upsert failed', { error: error.message });
+        }
+      } catch (dbError: any) {
+        log.warn('email_leads DB error', { error: dbError.message || dbError });
       }
     }
 
@@ -61,7 +67,5 @@ export async function POST(request: NextRequest) {
       success: true,
       message: 'Email captured successfully',
     });
-  } catch {
-    return NextResponse.json({ success: false, error: 'Invalid request' }, { status: 400 });
   }
-}
+);

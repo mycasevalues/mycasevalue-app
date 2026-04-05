@@ -1,8 +1,9 @@
 export const dynamic = 'force-dynamic';
 
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { rateLimit, getClientIp } from '../../../lib/rate-limit';
+import { apiHandler } from '../../../lib/api-middleware';
+import { apiBadRequest } from '../../../lib/api-response';
 import {
   validateNOSCode,
   validateState,
@@ -15,56 +16,54 @@ import {
  * POST /api/report
  * Generates a case report. Queries Supabase for case-specific data
  * and logs the request for analytics.
+ *
+ * Uses apiHandler for structured logging, timing, rate limiting, and error handling.
  */
-export async function POST(request: NextRequest) {
-  // Rate limiting: 30 requests per minute per IP
-  const ip = getClientIp(request.headers);
-  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 30 });
-  if (!success) {
-    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
-  }
+export const POST = apiHandler(
+  { rateLimit: { windowMs: 60000, maxRequests: 30 } },
+  async (request, { log, requestId, clientIp }) => {
+    let body: any;
+    try {
+      body = await request.json();
+    } catch {
+      return apiBadRequest('Invalid JSON body');
+    }
 
-  try {
-    const body = await request.json();
     const { nos_code, state, lang, email, tier } = body;
 
-    // Validate NOS code
+    // ── Input validation ─────────────────────────────────────
     const validatedNosCode = validateNOSCode(nos_code);
     if (!validatedNosCode) {
-      return NextResponse.json(
-        { success: false, error: 'Invalid NOS code: must be 1-4 digits' },
-        { status: 400 }
-      );
+      return apiBadRequest('Invalid NOS code: must be 1-4 digits');
     }
 
-    // Validate optional state
     const validatedState = state ? validateState(state) : null;
     if (state && !validatedState) {
-      return NextResponse.json(
-        { success: false, error: 'Invalid state code: must be a 2-letter US state' },
-        { status: 400 }
-      );
+      return apiBadRequest('Invalid state code: must be a 2-letter US state');
     }
 
-    // Validate optional language
     const validatedLang = validateLanguage(lang);
 
-    // Validate optional email
     const validatedEmail = email ? validateEmail(email) : null;
     if (email && !validatedEmail) {
-      return NextResponse.json(
-        { success: false, error: 'Invalid email address' },
-        { status: 400 }
-      );
+      return apiBadRequest('Invalid email address');
     }
 
-    // Validate optional tier
-    const validatedTier = validateEnum(tier, ['free', 'single_report', 'unlimited'], 'free');
+    const validatedTier = validateEnum(tier, ['free', 'single_report', 'unlimited', 'attorney'], 'free');
+
+    log.info('Generating report', {
+      nos: validatedNosCode,
+      state: validatedState,
+      tier: validatedTier,
+      lang: validatedLang,
+    });
 
     const generatedAt = new Date().toISOString();
     let caseData = null;
+    let outcomes: any[] = [];
+    let moneyDist: any[] = [];
 
-    // Try to fetch real data from Supabase
+    // ── Supabase queries (parallel) ──────────────────────────
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -72,45 +71,68 @@ export async function POST(request: NextRequest) {
       try {
         const supabase = createClient(supabaseUrl, supabaseKey);
 
-        // Fetch case stats
-        const { data: stats } = await supabase
-          .from('case_stats')
-          .select('*')
-          .eq('nos_code', validatedNosCode)
-          .single();
+        // Run all queries in parallel for faster report generation
+        const [statsResult, outcomesResult, moneyResult] = await Promise.allSettled([
+          supabase
+            .from('case_stats')
+            .select('*')
+            .eq('nos_code', validatedNosCode)
+            .single(),
+          supabase
+            .from('outcome_distributions')
+            .select('*')
+            .eq('nos_code', validatedNosCode)
+            .order('percentage', { ascending: false }),
+          supabase
+            .from('money_distributions')
+            .select('*')
+            .eq('nos_code', validatedNosCode)
+            .order('bracket_tier', { ascending: true }),
+        ]);
 
-        if (stats) caseData = stats;
-
-        // Log the report generation for analytics
-        try {
-          await supabase.from('report_logs').insert({
-            nos_code: validatedNosCode,
-            state: validatedState,
-            lang: validatedLang,
-            email: validatedEmail,
-            tier: validatedTier,
-            ip: request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || null,
-            generated_at: generatedAt,
-          });
-        } catch (logError) {
-          console.error('[api/report] report_logs insert failed:', logError instanceof Error ? logError.message : logError);
+        if (statsResult.status === 'fulfilled' && statsResult.value.data) {
+          caseData = statsResult.value.data;
         }
-      } catch (dbError) {
-        console.error('[api/report] Supabase query failed:', dbError instanceof Error ? dbError.message : dbError);
+        if (outcomesResult.status === 'fulfilled' && outcomesResult.value.data) {
+          outcomes = outcomesResult.value.data;
+        }
+        if (moneyResult.status === 'fulfilled' && moneyResult.value.data) {
+          moneyDist = moneyResult.value.data;
+        }
+
+        // Fire-and-forget: log the report generation for analytics
+        supabase.from('report_logs').insert({
+          nos_code: validatedNosCode,
+          state: validatedState,
+          lang: validatedLang,
+          email: validatedEmail,
+          tier: validatedTier,
+          ip: clientIp,
+          request_id: requestId,
+          generated_at: generatedAt,
+        }).then(({ error }) => {
+          if (error) log.warn('report_logs insert failed', { error: error.message });
+        });
+      } catch (dbError: any) {
+        log.error('Supabase query failed', { error: dbError.message || dbError });
       }
     }
 
+    const source = caseData ? 'supabase' : 'static';
+    log.info('Report generated', { nos: validatedNosCode, source });
+
     return NextResponse.json({
       success: true,
+      request_id: requestId,
       nos_code: validatedNosCode,
       state: validatedState,
       lang: validatedLang,
+      tier: validatedTier,
       generated_at: generatedAt,
       data: caseData,
-      source: caseData ? 'supabase' : 'static',
+      outcomes,
+      money_distribution: moneyDist,
+      source,
     });
-  } catch (err) {
-    console.error('[api/report] request parsing failed:', err instanceof Error ? err.message : err);
-    return NextResponse.json({ success: false, error: 'Invalid request' }, { status: 400 });
   }
-}
+);
