@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
+import { validateEmail, validateNOSCode, validateState, sanitizeString } from '../../../../lib/sanitize';
 
 /**
  * POST /api/email/capture
@@ -20,16 +21,16 @@ export async function POST(request: NextRequest) {
   try {
     const { email, case_type, nos_code, state, source } = await request.json();
 
-    if (!email || !email.includes('@') || email.length < 5) {
+    const cleanEmail = validateEmail(email);
+    if (!cleanEmail) {
       return NextResponse.json({ success: false, error: 'Invalid email' }, { status: 400 });
     }
 
-    // Sanitize
-    const cleanEmail = email.toLowerCase().trim().slice(0, 255);
-    const cleanCaseType = (case_type || '').slice(0, 100);
-    const cleanNos = (nos_code || '').slice(0, 10);
-    const cleanState = (state || '').slice(0, 2).toUpperCase();
-    const cleanSource = (source || 'report').slice(0, 50);
+    // Sanitize all inputs
+    const cleanCaseType = sanitizeString(case_type, 100);
+    const cleanNos = nos_code ? validateNOSCode(nos_code) || '' : '';
+    const cleanState = state ? validateState(state) || '' : '';
+    const cleanSource = sanitizeString(source || 'report', 50);
 
     // Attempt to store in Supabase
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;

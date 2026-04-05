@@ -89,7 +89,12 @@ export async function middleware(request: NextRequest) {
 
       if (!user) {
         const signInUrl = new URL('/sign-in', request.url);
-        signInUrl.searchParams.set('redirect', pathname);
+        // Validate redirect to prevent open-redirect attacks:
+        // only allow relative paths that start with / (not //)
+        const safeRedirect = pathname.startsWith('/') && !pathname.startsWith('//')
+          ? pathname
+          : '/';
+        signInUrl.searchParams.set('redirect', safeRedirect);
         return NextResponse.redirect(signInUrl);
       }
     }

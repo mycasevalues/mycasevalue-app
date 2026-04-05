@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
+import { secureCompare, sanitizeString } from '../../../../lib/sanitize';
 
 export const dynamic = 'force-dynamic';
 
@@ -33,8 +34,13 @@ export async function POST(req: NextRequest) {
   try {
     const subscription: PushSubscriptionJSON = await req.json();
 
-    // Validate subscription structure
-    if (!subscription.endpoint || !subscription.keys?.auth || !subscription.keys?.p256dh) {
+    // Validate subscription structure and endpoint URL
+    if (
+      !subscription.endpoint ||
+      !subscription.keys?.auth ||
+      !subscription.keys?.p256dh ||
+      !subscription.endpoint.startsWith('https://')
+    ) {
       return NextResponse.json(
         { error: 'Invalid subscription format' },
         { status: 400 }
@@ -116,7 +122,7 @@ export async function GET(req: NextRequest) {
   // Only allow in development or with valid API key
   if (process.env.NODE_ENV === 'production') {
     const apiKey = req.headers.get('x-api-key');
-    if (apiKey !== process.env.PUSH_API_KEY) {
+    if (!process.env.PUSH_API_KEY || !apiKey || !secureCompare(apiKey, process.env.PUSH_API_KEY)) {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
