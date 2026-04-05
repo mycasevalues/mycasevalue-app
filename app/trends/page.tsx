@@ -129,7 +129,7 @@ export default function TrendsPage() {
   const lowWin = [...trends].filter(t => t.total > 1000).sort((a, b) => a.winRate - b.winRate).slice(0, 5);
 
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <style>{`
         a.lex-link { color: #006997; text-decoration: none; }
         a.lex-link:hover { text-decoration: underline; }
@@ -277,7 +277,7 @@ export default function TrendsPage() {
                       <span>{t.months}mo avg</span>
                     </div>
                   </div>
-                  <div className="h-2 overflow-hidden" style={{ background: '#EDEEEE', borderRadius: '4px' }}>
+                  <div className="h-2 overflow-hidden" style={{ background: '#F5F6F7', borderRadius: '4px' }}>
                     <div
                       className="h-full"
                       style={{
@@ -319,7 +319,7 @@ export default function TrendsPage() {
                       {c.total.toLocaleString()} cases
                     </span>
                   </div>
-                  <div className="h-2 mb-2 overflow-hidden" style={{ background: '#EDEEEE', borderRadius: '4px' }}>
+                  <div className="h-2 mb-2 overflow-hidden" style={{ background: '#F5F6F7', borderRadius: '4px' }}>
                     <div className="h-full" style={{ width: `${pct}%`, background: c.color }} />
                   </div>
                   <div className="text-[11px]" style={{ color: '#455A64' }}>

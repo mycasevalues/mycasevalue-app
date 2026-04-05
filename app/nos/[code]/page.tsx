@@ -91,7 +91,7 @@ export default async function NOSPage({ params }: PageProps) {
 
   if (!nosInfo) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: '#EDEEEE', color: '#111111' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F5F6F7', color: '#111111' }}>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
           <p className="mb-6" style={{ color: '#455A64' }}>NOS code {code} does not exist in our database.</p>
@@ -249,7 +249,7 @@ export default async function NOSPage({ params }: PageProps) {
   };
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: 'var(--font-body)', background: '#EDEEEE', color: '#455A64' }}>
+    <div className="min-h-screen" style={{ fontFamily: 'var(--font-body)', background: '#F5F6F7', color: '#455A64' }}>
       <style>{`
         .nos-header {
           background: #00172E;
@@ -327,7 +327,7 @@ export default async function NOSPage({ params }: PageProps) {
           height: 32px;
           border-radius: 4px;
           overflow: hidden;
-          background: #EDEEEE;
+          background: #F5F6F7;
           margin-bottom: 16px;
         }
 

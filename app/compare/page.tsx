@@ -183,7 +183,7 @@ export default function ComparePage() {
 
       {/* Main Content */}
       <main style={{
-        background: '#EDEEEE',
+        background: '#F5F6F7',
         minHeight: 'calc(100vh - 200px)',
         padding: 'clamp(24px, 5vw, 48px)',
         fontFamily: 'var(--font-body)',

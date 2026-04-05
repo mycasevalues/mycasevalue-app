@@ -31,7 +31,7 @@ const jsonLd = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <style>{`
         .legal-toc {
           position: sticky;

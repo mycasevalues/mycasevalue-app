@@ -164,7 +164,7 @@ const faqs = [
 
 export default function SpanishFAQPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -7,7 +7,7 @@ export default function Loading() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#EDEEEE',
+        background: '#F5F6F7',
         gap: '24px',
         position: 'relative',
       }}

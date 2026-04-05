@@ -16,7 +16,7 @@ export default function NotFound() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '0',
-        background: '#EDEEEE',
+        background: '#F5F6F7',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         textAlign: 'center',
         position: 'relative',

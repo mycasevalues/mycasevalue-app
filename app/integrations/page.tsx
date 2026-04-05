@@ -126,7 +126,7 @@ const INTEGRATIONS = [
 
 export default function IntegrationsPage() {
   return (
-    <div style={{ minHeight: '100vh', background: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: '#F5F6F7', fontFamily: 'var(--font-body)' }}>
       <style>{`
         .integration-card {
           background: #FFFFFF;

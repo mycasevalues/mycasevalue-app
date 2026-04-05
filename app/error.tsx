@@ -21,7 +21,7 @@ export default function Error({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#EDEEEE',
+        background: '#F5F6F7',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         padding: '0',
         position: 'relative',

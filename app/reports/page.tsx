@@ -63,7 +63,7 @@ export default function ReportsPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ width: 32, height: 32, border: '3px solid #D5D8DC', borderTopColor: '#E8171F', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
@@ -73,7 +73,7 @@ export default function ReportsPage() {
   const hasData = reports.length > 0 || searches.length > 0;
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7' }}>
       {/* Dark Navy Header */}
       <div style={{ backgroundColor: '#00172E', padding: '40px 20px', marginBottom: '32px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>

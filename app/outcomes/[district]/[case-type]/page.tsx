@@ -95,7 +95,7 @@ export default async function OutcomesPage({
 
   if (!option || !category) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: '#EDEEEE', color: '#212529' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F5F6F7', color: '#212529' }}>
         <div className="text-center">
           <h1 style={{
             fontSize: '32px',
@@ -186,7 +186,7 @@ export default async function OutcomesPage({
   };
 
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       {/* Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
@@ -401,7 +401,7 @@ export default async function OutcomesPage({
       {/* Outcome Distribution */}
       <div style={{
         padding: 'clamp(20px, 4vw, 40px) 20px',
-        background: '#EDEEEE',
+        background: '#F5F6F7',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{
@@ -469,7 +469,7 @@ export default async function OutcomesPage({
 
       {/* Related Links Section */}
       <div style={{
-        background: '#EDEEEE',
+        background: '#F5F6F7',
         padding: 'clamp(20px, 4vw, 40px) 20px',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>

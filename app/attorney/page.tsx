@@ -274,7 +274,7 @@ export default function AttorneyPage() {
         color: '#212529',
         fontFamily: 'var(--font-body)',
         minHeight: '100vh',
-        backgroundColor: '#EDEEEE',
+        backgroundColor: '#F5F6F7',
       }}
     >
       <style dangerouslySetInnerHTML={{ __html: `

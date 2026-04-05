@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function SpanishTrendsPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       {/* Header with Dark Navy Background */}
       <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">

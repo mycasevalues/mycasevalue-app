@@ -192,7 +192,7 @@ const totalDistricts = CIRCUITS.reduce((sum, c) => sum + c.districts.length, 0);
 
 export default function DistrictsPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <style>{`
         .district-card {
           border-color: #D5D8DC;

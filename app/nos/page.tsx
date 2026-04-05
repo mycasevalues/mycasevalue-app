@@ -54,7 +54,7 @@ export default function NOSIndexPage() {
   const categories = Object.keys(byCategory).sort();
 
   return (
-    <div style={{ minHeight: '100vh', color: '#212529', background: '#EDEEEE' }}>
+    <div style={{ minHeight: '100vh', color: '#212529', background: '#F5F6F7' }}>
       <style>{`
         .nos-card {
           background: #FFFFFF;

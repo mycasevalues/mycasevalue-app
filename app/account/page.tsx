@@ -120,7 +120,7 @@ export default function AccountPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE' }}>
+      <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7' }}>
         {/* Header */}
         <div style={{ backgroundColor: '#00172E', padding: '24px 20px' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -154,7 +154,7 @@ export default function AccountPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7' }}>
       {/* Dark Navy Header */}
       <div style={{ backgroundColor: '#00172E', padding: '24px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>

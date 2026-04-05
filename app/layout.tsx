@@ -248,8 +248,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
         {/* Supabase API endpoint */}
-        <link rel="dns-prefetch" href="https://your-project.supabase.co" />
-        <link rel="preconnect" href="https://your-project.supabase.co" crossOrigin="anonymous" />
+        {process.env.NEXT_PUBLIC_SUPABASE_URL && (
+          <>
+            <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL} />
+            <link rel="preconnect" href={process.env.NEXT_PUBLIC_SUPABASE_URL} crossOrigin="anonymous" />
+          </>
+        )}
 
         {/* Preload critical static assets */}
         <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />

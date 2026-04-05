@@ -49,7 +49,7 @@ const jsonLd = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <style>{`
         .about-badge {
           display: inline-flex;
@@ -399,7 +399,7 @@ export default function AboutPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-16" style={{ background: '#EDEEEE' }}>
+      <div className="max-w-4xl mx-auto px-6 py-16" style={{ background: '#F5F6F7' }}>
         <div className="space-y-20">
 
           {/* How It Works Section - Timeline */}

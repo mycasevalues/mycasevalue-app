@@ -29,7 +29,7 @@ export default function ReportSkeleton() {
         }
       `}</style>
 
-      <div style={{ minHeight: '100vh', background: '#EDEEEE' }}>
+      <div style={{ minHeight: '100vh', background: '#F5F6F7' }}>
         {/* Dark Navy Header Skeleton */}
         <div style={{ background: '#00172E', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px' }}>

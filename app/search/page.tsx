@@ -147,7 +147,7 @@ export default function SearchPage() {
     : [];
 
   return (
-    <main style={{ fontFamily: 'var(--font-body)', background: '#EDEEEE', minHeight: '100vh' }}>
+    <main style={{ fontFamily: 'var(--font-body)', background: '#F5F6F7', minHeight: '100vh' }}>
       <style>{`
         @keyframes shimmer {
           0% {

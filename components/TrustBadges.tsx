@@ -61,7 +61,7 @@ export default function TrustBadges() {
   return (
     <section
       style={{
-        background: '#F8F9FA',
+        background: '#F5F6F7',
         padding: '48px 24px',
         borderBottom: '1px solid #D5D8DC',
       }}

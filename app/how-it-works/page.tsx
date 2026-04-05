@@ -102,7 +102,7 @@ const trustStats = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <style dangerouslySetInnerHTML={{ __html: `
         .hover\\:shadow-md:hover {
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);

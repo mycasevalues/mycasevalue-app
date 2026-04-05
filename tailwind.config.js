@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         // LexisNexis-inspired palette
         midnight: { DEFAULT: '#00172E', 50: '#001A35', 100: '#00203F', 200: '#002A4F', 800: '#FAFBFC', 900: '#FFFFFF' },
-        cream: { DEFAULT: '#EDEEEE', 100: '#F5F6F7', 200: '#FAFBFC' },
+        cream: { DEFAULT: '#F5F6F7', 100: '#F5F6F7', 200: '#FAFBFC' },
         gold: { DEFAULT: '#B86E00', light: 'rgba(184,110,0,0.08)', dark: '#8B5500' },
         emerald: { DEFAULT: '#07874A', light: 'rgba(7,135,74,0.08)', dark: '#056B3B' },
         coral: { DEFAULT: '#CC1019', light: 'rgba(204,16,25,0.08)', dark: '#990C13' },
@@ -43,7 +43,7 @@ module.exports = {
           'neutral-border': '#D5D8DC',
         },
         surface: {
-          base: '#EDEEEE',
+          base: '#F5F6F7',
           card: '#FFFFFF',
           border: '#D5D8DC',
           'border-strong': '#455A64',

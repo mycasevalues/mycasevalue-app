@@ -59,7 +59,7 @@ export default async function JudgePage({ params }: PageProps) {
   // If judge not found, show coming soon page
   if (!judge) {
     return (
-      <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+      <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
         <style>{`
           .judge-coming-soon-link {
             color: #212529;
@@ -270,7 +270,7 @@ export default async function JudgePage({ params }: PageProps) {
   };
 
   return (
-    <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+    <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
       <style>{`
         .judge-breadcrumb-link {
           color: #455A64;

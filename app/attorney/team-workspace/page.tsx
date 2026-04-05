@@ -32,7 +32,7 @@ export default function TeamWorkspacePage() {
   const [tab, setTab] = useState<'reports' | 'team'>('reports');
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7', fontFamily: 'var(--font-body)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }

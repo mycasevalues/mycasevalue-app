@@ -53,7 +53,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           <LineChart data={yearlyTrend}>
             <CartesianGrid
               strokeDasharray="3 3"
-              stroke="#EDEEEE"
+              stroke="#F5F6F7"
               vertical={false}
             />
             <XAxis
@@ -77,7 +77,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
               }}
-              cursor={{ stroke: '#EDEEEE' }}
+              cursor={{ stroke: '#F5F6F7' }}
             />
             <Line
               type="monotone"
@@ -114,7 +114,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
           >
             <CartesianGrid
               strokeDasharray="3 3"
-              stroke="#EDEEEE"
+              stroke="#F5F6F7"
               horizontal={false}
             />
             <XAxis

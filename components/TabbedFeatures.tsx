@@ -332,7 +332,7 @@ const WinRatePreview: React.FC = () => (
           <div
             style={{
               height: '8px',
-              backgroundColor: '#EDEEEE',
+              backgroundColor: '#F5F6F7',
               borderRadius: '4px',
               overflow: 'hidden',
             }}
@@ -457,7 +457,7 @@ const TimelinePreview: React.FC = () => (
           <div
             style={{
               height: '6px',
-              backgroundColor: '#EDEEEE',
+              backgroundColor: '#F5F6F7',
               borderRadius: '4px',
               overflow: 'hidden',
             }}
@@ -584,7 +584,7 @@ const AIPredictionsPreview: React.FC = () => (
           <div
             style={{
               height: '6px',
-              backgroundColor: '#EDEEEE',
+              backgroundColor: '#F5F6F7',
               borderRadius: '4px',
               overflow: 'hidden',
             }}

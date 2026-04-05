@@ -493,7 +493,7 @@ export default function PricingPage() {
   }
 
   return (
-    <div style={{ background: '#EDEEEE' }}>
+    <div style={{ background: '#F5F6F7' }}>
       <style dangerouslySetInnerHTML={{ __html: `
         .pricing-cta-link:hover { background: #CC1019 !important; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,23,31,0.3); }
         .pricing-enterprise-link:hover { opacity: 0.9 !important; }

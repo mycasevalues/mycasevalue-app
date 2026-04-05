@@ -67,7 +67,7 @@ export default async function DistrictPage({ params }: PageProps) {
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ background: '#EDEEEE', color: '#212529' }}
+        style={{ background: '#F5F6F7', color: '#212529' }}
       >
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>District not found</h1>
@@ -222,7 +222,7 @@ export default async function DistrictPage({ params }: PageProps) {
     <div
       className="min-h-screen"
       style={{
-        background: '#EDEEEE',
+        background: '#F5F6F7',
         color: '#455A64',
         fontFamily: 'var(--font-body)',
       }}
@@ -430,7 +430,7 @@ export default async function DistrictPage({ params }: PageProps) {
         }
 
         .bg-subtle {
-          background: #EDEEEE;
+          background: #F5F6F7;
         }
 
         .case-table-wrapper {

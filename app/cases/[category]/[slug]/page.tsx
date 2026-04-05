@@ -145,7 +145,7 @@ export default async function CaseTypeDetailPage({
     return (
       <div
         className="min-h-screen flex items-center justify-center"
-        style={{ background: '#EDEEEE' }}
+        style={{ background: '#F5F6F7' }}
       >
         <div style={{ textAlign: 'center', color: '#212529' }}>
           <h1 style={{ fontSize: '28px', fontWeight: 'bold', margin: '0 0 16px', fontFamily: 'var(--font-display)', color: '#212529' }}>
@@ -225,7 +225,7 @@ export default async function CaseTypeDetailPage({
   };
 
   return (
-    <main style={{ background: '#EDEEEE', color: '#212529' }}>
+    <main style={{ background: '#F5F6F7', color: '#212529' }}>
       {/* JSON-LD */}
       <script
         type="application/ld+json"

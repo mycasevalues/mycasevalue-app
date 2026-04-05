@@ -190,7 +190,7 @@ export default function DistrictHeatmapPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      <div style={{ backgroundColor: '#EDEEEE', minHeight: '100vh' }}>
+      <div style={{ backgroundColor: '#F5F6F7', minHeight: '100vh' }}>
         {/* Header */}
         <header style={{ backgroundColor: '#00172E', borderBottom: '1px solid #D5D8DC' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '48px 24px' }}>

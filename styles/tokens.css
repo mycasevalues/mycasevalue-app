@@ -16,12 +16,12 @@
   --color-text-primary:     #212529;  /* Primary text */
   --color-text-secondary:   #455A64;  /* Secondary text */
   --color-border:           #D5D8DC;  /* Default border */
-  --color-bg-light:         #EDEEEE;  /* Light background */
+  --color-bg-light:         #F5F6F7;  /* Light background */
   --color-bg-alt:           #F8F9FA;  /* Alternate background */
   --color-white:            #FFFFFF;  /* Pure white */
 
   /* ── BACKGROUNDS ───────────────────────────────────────── */
-  --bg-base:          #EDEEEE;  /* Light gray page background */
+  --bg-base:          #F5F6F7;  /* Light gray page background */
   --bg-elevated:      #FFFFFF;  /* White card surfaces */
   --bg-input:         #FFFFFF;  /* Input background */
   --bg-skeleton:      #E5EBF0;
@@ -169,7 +169,7 @@
   --bp-md: 768px; --bp-2xl: 1536px;
 
   /* ── GRADIENT BACKGROUNDS ──────────────────────────────── */
-  --gradient-page: #EDEEEE;
+  --gradient-page: #F5F6F7;
   --gradient-hero: linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%);
   --gradient-accent: linear-gradient(135deg, #E8171F 0%, #E8171F 100%);
 }

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ResultsPage() {
   return (
-    <div style={{ minHeight: '100vh', background: '#EDEEEE' }}>
+    <div style={{ minHeight: '100vh', background: '#F5F6F7' }}>
       <style>{`
         .cta-button {
           transition: all 0.2s ease;

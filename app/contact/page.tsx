@@ -50,7 +50,7 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+      <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
         {/* Header Banner */}
         <div style={{ background: '#00172E', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
@@ -96,7 +96,7 @@ export default function ContactPage() {
         </div>
 
         {/* Breadcrumb Navigation */}
-        <div style={{ borderBottom: '1px solid #D5D8DC', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#EDEEEE' }}>
+        <div style={{ borderBottom: '1px solid #D5D8DC', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#F5F6F7' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
             <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
               <Link href="/" style={{ color: '#006997', textDecoration: 'none' }}>

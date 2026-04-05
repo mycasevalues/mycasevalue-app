@@ -117,7 +117,7 @@ export default function TrendCharts() {
                 <stop offset="95%" stopColor="#006997" stopOpacity={0.1} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#F5F6F7" />
             <XAxis dataKey="year" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <YAxis stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />
@@ -157,7 +157,7 @@ export default function TrendCharts() {
         </p>
         <ResponsiveContainer width="100%" height={350}>
           <LineChart data={categoryTrends[0]?.years ? buildCombinedCategoryData(categoryTrends) : []}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#F5F6F7" />
             <XAxis dataKey="year" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <YAxis stroke="#455A64" domain={[0, 100]} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />
@@ -214,7 +214,7 @@ export default function TrendCharts() {
             layout="vertical"
             margin={{ top: 5, right: 30, left: 300, bottom: 5 }}
           >
-            <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#F5F6F7" />
             <XAxis type="number" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <YAxis dataKey="label" type="category" stroke="#455A64" width={300} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />

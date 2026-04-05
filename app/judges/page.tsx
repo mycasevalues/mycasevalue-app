@@ -135,7 +135,7 @@ const CIRCUITS: {
 
 export default function JudgesPage() {
   return (
-    <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+    <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
       <style>{`
         .judge-district-link {
           display: flex;

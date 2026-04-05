@@ -14,7 +14,7 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <html style={{ background: '#EDEEEE', margin: 0, padding: 0 }}>
+    <html style={{ background: '#F5F6F7', margin: 0, padding: 0 }}>
       <head>
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
@@ -24,7 +24,7 @@ export default function GlobalError({
           body {
             margin: 0;
             padding: 0;
-            background: #EDEEEE;
+            background: #F5F6F7;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
           }
         `}</style>
@@ -36,7 +36,7 @@ export default function GlobalError({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#EDEEEE',
+            background: '#F5F6F7',
             padding: '24px',
           }}
         >

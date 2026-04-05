@@ -94,20 +94,20 @@ export default function ServerContent() {
       {/* ── CASE CATEGORIES ───────────────────────────────── */}
       <section
         style={{
-          background: '#EDEEEE',
+          background: '#F5F6F7',
           borderTop: '1px solid #D5D8DC',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ marginBottom: '48px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Case types
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#00172E', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
               84 Federal Case Types Covered
             </h2>
-            <p style={{ fontSize: '19px', color: '#212529', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               Research win rates, settlement ranges, and timelines for any federal case type across all 94 districts.
             </p>
           </div>
@@ -171,15 +171,13 @@ export default function ServerContent() {
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ marginBottom: '48px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               What you get
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#00172E', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
               What You Get in Every Report
             </h2>
-            <p style={{ fontSize: '19px', color: '#212529', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
-            </p>
           </div>
 
           <div
@@ -203,6 +201,7 @@ export default function ServerContent() {
                   style={{
                     background: '#FAFBFC',
                     border: '1px solid #D5D8DC',
+                    borderTop: '3px solid #E8171F',
                     borderRadius: '4px',
                     padding: '24px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -214,7 +213,7 @@ export default function ServerContent() {
                       fontFamily: 'var(--font-display)',
                       fontSize: '16px',
                       fontWeight: 700,
-                      color: '#212529',
+                      color: '#00172E',
                       margin: '0 0 8px 0',
                     }}
                   >
@@ -224,7 +223,7 @@ export default function ServerContent() {
                     style={{
                       fontFamily: 'var(--font-body)',
                       fontSize: '14px',
-                      color: '#212529',
+                      color: '#455A64',
                       lineHeight: 1.6,
                       margin: 0,
                       fontWeight: 300,
@@ -261,23 +260,17 @@ export default function ServerContent() {
         `}</style>
 
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <div
-              style={{
-                height: '3px',
-                background: '#E8171F',
-                width: '48px',
-                margin: '0 auto 16px auto',
-              }}
-            />
+          <div style={{ marginBottom: '48px' }}>
             <h2
               style={{
                 fontSize: '32px',
                 fontWeight: 600,
-                color: '#212529',
+                color: '#00172E',
                 fontFamily: 'var(--font-display)',
                 marginBottom: '12px',
                 letterSpacing: '-0.01em',
+                borderLeft: '3px solid #E8171F',
+                paddingLeft: '20px',
               }}
             >
               Explore Popular Case Types
@@ -446,14 +439,14 @@ export default function ServerContent() {
       {/* ── WHO IS MYCASEVALUE FOR? ────────────────────────────── */}
       <section id="who" data-section style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ marginBottom: '48px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Who is it for?
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
               Built for everyone in the legal process
             </h2>
-            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               MyCaseValue+ is designed for all segments of the legal community, with features and pricing that fit unique needs.
             </p>
           </div>
@@ -467,7 +460,7 @@ export default function ServerContent() {
               { title: 'Legal Researchers & Academics', desc: 'Access comprehensive federal court statistics spanning 50+ years. Perfect for empirical legal studies and policy analysis.', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
             ].map((item, i) => (
               <div key={i} className="who-card" style={{ padding: '28px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
-                <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '4px', background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
@@ -479,15 +472,15 @@ export default function ServerContent() {
       </section>
 
       {/* ── AWARDS & RECOGNITION ───────────────────────────────── */}
-      <section id="awards" data-section style={{ background: '#EDEEEE', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
-        <div style={{ maxWidth: '1140px', margin: '0 auto', textAlign: 'center' }}>
+      <section id="awards" data-section style={{ background: '#F5F6F7', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
             Recognition
           </p>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
             Trusted by thousands of case researchers
           </h2>
-          <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto 48px', lineHeight: 1.6, fontWeight: 300 }}>
+          <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '640px', marginBottom: '48px', lineHeight: 1.6, fontWeight: 300 }}>
             MyCaseValue+ is built on verified public court records and has been recognized for making federal case data accessible to everyone.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }} className="awards-grid">
@@ -516,14 +509,14 @@ export default function ServerContent() {
         }}
       >
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ marginBottom: '48px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               How we compare
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#00172E', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
               Built for plaintiffs, not law firms
             </h2>
-            <p style={{ fontSize: '19px', color: '#212529', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               MyCaseValue is the only federal court data platform designed from the ground up for individuals and small firms.
             </p>
           </div>
@@ -580,20 +573,20 @@ export default function ServerContent() {
       {/* ── PLAIN ENGLISH ────────────────────────────────── */}
       <section
         style={{
-          background: '#EDEEEE',
+          background: '#F5F6F7',
           borderTop: '1px solid #D5D8DC',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '768px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <div style={{ marginBottom: '40px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               In plain English
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#00172E', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
               What this data actually tells you
             </h2>
-            <p style={{ fontSize: '19px', color: '#212529', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               We take millions of public federal court records and turn them into clear, actionable insights.
               Here&apos;s what the numbers mean for you.
             </p>
@@ -736,14 +729,14 @@ export default function ServerContent() {
         }}
       >
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ marginBottom: '48px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Pricing
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#00172E', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
               Simple, Transparent Pricing
             </h2>
-            <p style={{ fontSize: '19px', color: '#212529', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
+            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
               Start free. Upgrade when you need deeper data.
             </p>
           </div>
@@ -892,21 +885,19 @@ export default function ServerContent() {
         id="faq"
         data-section
         style={{
-          background: '#EDEEEE',
+          background: '#F5F6F7',
           borderTop: '1px solid #D5D8DC',
           padding: '80px 24px',
         }}
       >
         <div style={{ maxWidth: '768px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ marginBottom: '48px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               FAQ
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#00172E', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
               Frequently Asked Questions
             </h2>
-            <p style={{ fontSize: '19px', color: '#212529', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300 }}>
-            </p>
           </div>
 
           <FaqAccordion items={FAQ_ITEMS} />
@@ -916,7 +907,7 @@ export default function ServerContent() {
       {/* ── RELATED SOLUTIONS ──────────────────────────────── */}
       <section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '24px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '24px', borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
             Related Solutions
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }} className="related-grid">
@@ -1044,9 +1035,10 @@ export default function ServerContent() {
       {/* ── CTA ────────────────────────────────────────────── */}
       <section
         style={{
-          background: 'linear-gradient(135deg, #00172E 0%, #0A2847 100%)',
-          padding: '120px 24px',
+          background: '#00172E',
+          padding: '100px 24px',
           textAlign: 'center',
+          borderBottom: '3px solid #E8171F',
         }}
       >
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>

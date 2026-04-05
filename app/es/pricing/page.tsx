@@ -74,7 +74,7 @@ const pricingFaqs = [
 
 export default function SpanishPricingPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -155,7 +155,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '4px', background: '#EDEEEE', color: '#455A64', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '4px', background: '#F5F6F7', color: '#455A64', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>

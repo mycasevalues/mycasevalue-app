@@ -131,7 +131,7 @@ export default function CalculatorPage() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <style>{slideUpFadeIn}</style>
       <style>{selectStyles}</style>
       <script
@@ -433,7 +433,7 @@ export default function CalculatorPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   position: 'relative',
-                  background: `conic-gradient(#E8171F 0% ${results.winRate * 100}%, #EDEEEE ${results.winRate * 100}% 100%)`,
+                  background: `conic-gradient(#E8171F 0% ${results.winRate * 100}%, #F5F6F7 ${results.winRate * 100}% 100%)`,
                 }}>
                   <div style={{
                     width: '108px',

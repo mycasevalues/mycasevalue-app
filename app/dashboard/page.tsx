@@ -166,7 +166,7 @@ export default async function DashboardPage() {
       style={{
         display: 'flex',
         minHeight: '100vh',
-        background: '#EDEEEE',
+        background: '#F5F6F7',
         fontFamily: 'var(--font-body)',
       }}
     >

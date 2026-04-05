@@ -95,7 +95,7 @@ export default function BulkAnalysisPage() {
   const p = result?.portfolio;
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7', fontFamily: 'var(--font-body)' }}>
       <style>{`
         input:focus, select:focus { border-color: #E8171F !important; outline: none; box-shadow: 0 0 0 2px rgba(232,23,31,0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }

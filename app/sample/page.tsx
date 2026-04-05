@@ -69,7 +69,7 @@ export default function SampleReportPage() {
 
       <div
         style={{
-          backgroundColor: '#EDEEEE',
+          backgroundColor: '#F5F6F7',
           color: '#212529',
           minHeight: '100vh',
         }}
@@ -646,7 +646,7 @@ export default function SampleReportPage() {
                 <thead>
                   <tr
                     style={{
-                      backgroundColor: '#EDEEEE',
+                      backgroundColor: '#F5F6F7',
                       borderBottom: '1px solid #D5D8DC',
                     }}
                   >
@@ -1022,7 +1022,7 @@ export default function SampleReportPage() {
                 <thead>
                   <tr
                     style={{
-                      backgroundColor: '#EDEEEE',
+                      backgroundColor: '#F5F6F7',
                       borderBottom: '1px solid #D5D8DC',
                     }}
                   >

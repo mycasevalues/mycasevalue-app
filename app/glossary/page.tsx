@@ -189,7 +189,7 @@ export default function GlossaryPage() {
   const groupedTerms = groupTermsByLetter(glossaryTerms);
 
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       {/* Header */}
       <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">

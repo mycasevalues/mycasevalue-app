@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function SpanishPage() {
   return (
-    <div style={{ background: '#EDEEEE', minHeight: '100vh' }}>
+    <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
       {/* Breadcrumb Navigation Header */}
       <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC', padding: '12px 24px' }}>
         <div className="max-w-7xl mx-auto px-6">

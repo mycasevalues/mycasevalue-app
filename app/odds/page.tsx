@@ -85,7 +85,7 @@ export default function OddsPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       <style>{`
         .ln-select {
           height: 48px;
@@ -414,7 +414,7 @@ export default function OddsPage() {
                         style={{
                           height: '12px',
                           borderRadius: '4px',
-                          background: '#EDEEEE',
+                          background: '#F5F6F7',
                           overflow: 'hidden',
                         }}
                       >
@@ -498,7 +498,7 @@ export default function OddsPage() {
             {/* Legal Disclaimer */}
             <div
               style={{
-                background: '#EDEEEE',
+                background: '#F5F6F7',
                 color: '#455A64',
                 padding: '40px 24px',
                 borderRadius: '4px',

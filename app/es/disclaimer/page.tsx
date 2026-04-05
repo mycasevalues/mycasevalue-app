@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function SpanishDisclaimerPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#EDEEEE' }}>
+    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
       {/* Header */}
       <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">

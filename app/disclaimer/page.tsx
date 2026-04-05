@@ -24,7 +24,7 @@ const jsonLd = {
 
 export default function DisclaimerPage() {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#EDEEEE' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7' }}>
       <style>{`
         a[data-link-type="teal"] {
           color: #006997;
@@ -90,7 +90,7 @@ export default function DisclaimerPage() {
       </div>
 
       {/* Breadcrumb */}
-      <div style={{ borderBottom: '1px solid #D5D8DC', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#EDEEEE' }}>
+      <div style={{ borderBottom: '1px solid #D5D8DC', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#F5F6F7' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
             <a href="/" data-link-type="teal" style={{ color: '#006997' }}>

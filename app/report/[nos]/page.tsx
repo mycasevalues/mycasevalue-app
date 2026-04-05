@@ -118,7 +118,7 @@ export default async function ReportPage({
 
   if (!data && !dbStats) {
     return (
-      <div style={{ minHeight: '100vh', background: '#EDEEEE', padding: '64px 24px', textAlign: 'center' }}>
+      <div style={{ minHeight: '100vh', background: '#F5F6F7', padding: '64px 24px', textAlign: 'center' }}>
         <p style={{ fontSize: 18, color: '#111111', fontFamily: 'var(--font-display)', fontWeight: 600, marginBottom: 12 }}>
           No data found for this case type.
         </p>
@@ -220,7 +220,7 @@ export default async function ReportPage({
   const recapResults: any[] = recapDockets.status === 'fulfilled' ? recapDockets.value : [];
 
   return (
-    <div style={{ minHeight: '100vh', background: '#EDEEEE' }}>
+    <div style={{ minHeight: '100vh', background: '#F5F6F7' }}>
       <style>{`
         .report-breadcrumb-link { color: #FFFFFF; text-decoration: none; transition: opacity 0.2s ease; font-weight: 500; }
         .report-breadcrumb-link:hover { opacity: 0.8; }
@@ -243,7 +243,7 @@ export default async function ReportPage({
           }
 
           /* Clean background for print */
-          div[style*="background: #EDEEEE"] {
+          div[style*="background: #F5F6F7"] {
             background: white !important;
           }
 

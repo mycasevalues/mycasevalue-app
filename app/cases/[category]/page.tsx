@@ -367,7 +367,7 @@ async function CategoryPage({
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#EDEEEE' }}>
+    <div style={{ minHeight: '100vh', background: '#F5F6F7' }}>
       {/* Schema.org structured data */}
       <script
         type="application/ld+json"
