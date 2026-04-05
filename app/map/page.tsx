@@ -193,11 +193,13 @@ export default function DistrictHeatmapPage() {
       <div style={{ backgroundColor: '#EDEEEE', minHeight: '100vh' }}>
         {/* Header */}
         <header style={{ backgroundColor: '#00172E', borderBottom: '1px solid #D5D8DC' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '24px 16px' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '48px 24px' }}>
             {/* Breadcrumb */}
-            <p style={{ fontSize: '12px', color: '#FFFFFF', marginBottom: '16px', opacity: 0.8 }}>
-              Home &gt; Map
-            </p>
+            <nav style={{ fontSize: '14px', color: '#FFFFFF', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-body)' }}>
+              <a href="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Home</a>
+              <span> / </span>
+              <span>Map</span>
+            </nav>
 
             {/* Badge & Title */}
             <div style={{ marginBottom: '16px' }}>
@@ -207,10 +209,10 @@ export default function DistrictHeatmapPage() {
                   backgroundColor: '#E8171F',
                   color: '#FFFFFF',
                   padding: '6px 12px',
-                  borderRadius: '24px',
+                  borderRadius: '4px',
                   fontSize: '11px',
                   fontWeight: '600',
-                  letterSpacing: '0.5px',
+                  letterSpacing: '1px',
                   marginBottom: '12px',
                   fontFamily: 'var(--font-display)',
                 }}
