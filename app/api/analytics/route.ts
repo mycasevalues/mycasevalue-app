@@ -1,7 +1,9 @@
 export const dynamic = 'force-dynamic';
 
-import { NextRequest, NextResponse } from 'next/server';
-import { rateLimit, getClientIp } from '../../../lib/rate-limit';
+import { NextRequest } from 'next/server';
+import { apiHandler, OPTIONS } from '../../../lib/api-middleware';
+import { apiSuccess, apiBadRequest } from '../../../lib/api-response';
+import { getSupabaseAdmin } from '../../../lib/supabase';
 
 export type EventType = 'page_view' | 'report_generated' | 'payment_started' | 'share_clicked' | 'search_used' | 'error_caught';
 
@@ -15,11 +17,6 @@ export interface AnalyticsEventPayload {
 
 export interface AnalyticsResponse {
   ok: boolean;
-}
-
-export interface ErrorResponse {
-  error: string;
-  message?: string;
 }
 
 /**
@@ -40,89 +37,32 @@ export interface ErrorResponse {
  * Response: { ok: true }
  * Rate limit: 100 requests per minute per IP
  */
-export async function POST(
-  request: NextRequest
-): Promise<NextResponse<AnalyticsResponse | ErrorResponse>> {
-  // Rate limiting: 100 req/min per IP
-  const clientIp = getClientIp(request.headers);
-  const rateLimitResult = rateLimit(clientIp, {
-    windowMs: 60000,
-    maxRequests: 100,
-  });
-
-  if (!rateLimitResult.success) {
-    return NextResponse.json(
-      {
-        error: 'Too many requests',
-        message: 'Rate limit exceeded: 100 requests per minute',
-      },
-      {
-        status: 429,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'X-RateLimit-Remaining': '0',
-        },
-      }
-    );
-  }
-
-  try {
+export const POST = apiHandler(
+  {
+    rateLimit: { windowMs: 60000, maxRequests: 100 },
+    routeName: 'analytics',
+  },
+  async (request: NextRequest, { log, clientIp }) => {
     // Parse request body
     let payload: AnalyticsEventPayload;
 
     try {
       payload = await request.json();
     } catch {
-      return NextResponse.json(
-        {
-          error: 'Invalid JSON',
-          message: 'Request body must be valid JSON',
-        },
-        {
-          status: 400,
-          headers: { 'Access-Control-Allow-Origin': '*' },
-        }
-      );
+      return apiBadRequest('Request body must be valid JSON');
     }
 
     // Validate required fields
     if (!payload.event || typeof payload.event !== 'string') {
-      return NextResponse.json(
-        {
-          error: 'Missing required field',
-          message: 'Field "event" is required and must be a string',
-        },
-        {
-          status: 400,
-          headers: { 'Access-Control-Allow-Origin': '*' },
-        }
-      );
+      return apiBadRequest('Field "event" is required and must be a string');
     }
 
     if (!payload.sessionId || typeof payload.sessionId !== 'string') {
-      return NextResponse.json(
-        {
-          error: 'Missing required field',
-          message: 'Field "sessionId" is required and must be a string',
-        },
-        {
-          status: 400,
-          headers: { 'Access-Control-Allow-Origin': '*' },
-        }
-      );
+      return apiBadRequest('Field "sessionId" is required and must be a string');
     }
 
     if (typeof payload.timestamp !== 'number') {
-      return NextResponse.json(
-        {
-          error: 'Missing required field',
-          message: 'Field "timestamp" is required and must be a number',
-        },
-        {
-          status: 400,
-          headers: { 'Access-Control-Allow-Origin': '*' },
-        }
-      );
+      return apiBadRequest('Field "timestamp" is required and must be a number');
     }
 
     // Validate event type
@@ -136,21 +76,13 @@ export async function POST(
     ];
 
     if (!validEvents.includes(payload.event as EventType)) {
-      return NextResponse.json(
-        {
-          error: 'Invalid event type',
-          message: `Event must be one of: ${validEvents.join(', ')}`,
-        },
-        {
-          status: 400,
-          headers: { 'Access-Control-Allow-Origin': '*' },
-        }
+      return apiBadRequest(
+        `Event must be one of: ${validEvents.join(', ')}`
       );
     }
 
     // Store event in Supabase (fire-and-forget)
     try {
-      const { getSupabaseAdmin } = await import('../../../lib/supabase');
       const supabase = getSupabaseAdmin();
       await supabase.from('analytics_events').insert({
         event: payload.event,
@@ -162,47 +94,14 @@ export async function POST(
       });
     } catch (dbErr) {
       // Analytics storage failure should never block the response
-      console.warn('[api/analytics] DB insert failed:', dbErr instanceof Error ? dbErr.message : dbErr);
+      const message = dbErr instanceof Error ? dbErr.message : String(dbErr);
+      log.warn('DB insert failed', { error: message });
     }
 
-    // Return success response with CORS headers
-    return NextResponse.json(
-      { ok: true },
-      {
-        status: 200,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-          'X-RateLimit-Remaining': `${rateLimitResult.remaining}`,
-          'Cache-Control': 'no-cache, no-store',
-        },
-      }
-    );
-  } catch (error) {
-    return NextResponse.json(
-      {
-        error: 'Internal server error',
-        message: 'An unexpected error occurred while processing the event',
-      },
-      {
-        status: 500,
-        headers: { 'Access-Control-Allow-Origin': '*' },
-      }
-    );
+    // Return success response
+    return apiSuccess({ ok: true });
   }
-}
+);
 
-/**
- * OPTIONS handler for CORS preflight requests
- */
-export async function OPTIONS(request: NextRequest) {
-  return new NextResponse(null, {
-    status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
-}
+// Re-export OPTIONS handler from middleware
+export { OPTIONS };

@@ -3,41 +3,34 @@
  * Upserts email into the newsletter_subscribers table in Supabase.
  * Graceful fallback: if the table doesn't exist yet, logs and returns success.
  */
+export const dynamic = 'force-dynamic';
+
 import { NextRequest, NextResponse } from 'next/server';
-import { rateLimit, getClientIp } from '../../../lib/rate-limit';
+import { apiHandler } from '../../../lib/api-middleware';
+import { apiSuccess, apiBadRequest } from '../../../lib/api-response';
+import { getSupabaseAdmin } from '../../../lib/supabase';
 
-export async function POST(req: NextRequest) {
-  const clientIp = getClientIp(req.headers);
-  const rateLimitResult = rateLimit(clientIp, { windowMs: 60000, maxRequests: 10 });
-  if (!rateLimitResult.success) {
-    return NextResponse.json(
-      { error: 'Too many requests' },
-      { status: 429, headers: { 'Access-Control-Allow-Origin': '*' } }
-    );
-  }
+export const POST = apiHandler(
+  { rateLimit: { windowMs: 60000, maxRequests: 10 } },
+  async (request, { log }) => {
+    const { email } = await request.json();
 
-  try {
-    const { email } = await req.json();
-
+    // Validation: email is required
     if (!email || typeof email !== 'string') {
-      return NextResponse.json({ error: 'Email is required' }, { status: 400 });
+      return apiBadRequest('Email is required');
     }
 
-    // Basic email validation
+    // Validation: email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
+      return apiBadRequest('Invalid email address');
     }
 
     const normalized = email.toLowerCase().trim();
 
     // Try Supabase upsert
-    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-    if (url && key) {
-      const { createClient } = await import('@supabase/supabase-js');
-      const supabase = createClient(url, key);
+    try {
+      const supabase = getSupabaseAdmin();
 
       const { error } = await supabase
         .from('newsletter_subscribers')
@@ -47,13 +40,14 @@ export async function POST(req: NextRequest) {
         );
 
       if (error) {
-        console.error('[api/subscribe] Supabase upsert failed:', error.message);
+        log.error('Supabase upsert failed', { errorMessage: error.message });
       }
+    } catch (dbErr: unknown) {
+      const message = dbErr instanceof Error ? dbErr.message : String(dbErr);
+      log.error('Database operation failed', { error: message });
     }
 
-    return NextResponse.json({ success: true, message: 'Subscribed successfully' });
-  } catch (err: any) {
-    console.error('[api/subscribe] Error:', err.message || err);
-    return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
+    // Return success even if DB operation failed (graceful degradation)
+    return apiSuccess({ success: true, message: 'Subscribed successfully' });
   }
-}
+);

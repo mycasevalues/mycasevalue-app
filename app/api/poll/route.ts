@@ -1,5 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { rateLimit, getClientIp } from '../../../lib/rate-limit';
+export const dynamic = 'force-dynamic';
+
+import { NextRequest } from 'next/server';
+import { apiHandler } from '../../../lib/api-middleware';
+import { apiSuccess, apiBadRequest } from '../../../lib/api-response';
 import { getSupabaseAdmin } from '../../../lib/supabase';
 
 const VALID_VOTES = ['fair', 'low', 'high', 'unsure'];
@@ -7,32 +10,25 @@ const VALID_VOTES = ['fair', 'low', 'high', 'unsure'];
 /**
  * POST /api/poll
  * Records user poll votes with input validation.
+ * Rate limited to 50 requests per minute per IP.
  */
-export async function POST(request: NextRequest) {
-  // Rate limiting: 50 requests per minute per IP (high for polls)
-  const ip = getClientIp(request.headers);
-  const { success } = rateLimit(ip, { windowMs: 60000, maxRequests: 50 });
-  if (!success) {
-    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
-  }
-
-  try {
+export const POST = apiHandler(
+  {
+    rateLimit: { windowMs: 60000, maxRequests: 50 },
+  },
+  async (request: NextRequest, { log, clientIp }) => {
     const body = await request.json();
     const vote = typeof body.vote === 'string' ? body.vote.trim().toLowerCase().slice(0, 20) : '';
     const nos = typeof body.nos === 'string' ? body.nos.trim().slice(0, 10) : '';
 
+    // Validate vote
     if (!vote || !VALID_VOTES.includes(vote)) {
-      return NextResponse.json(
-        { success: false, error: 'Invalid vote. Must be one of: fair, low, high, unsure' },
-        { status: 400 }
-      );
+      return apiBadRequest('Invalid vote. Must be one of: fair, low, high, unsure');
     }
 
+    // Validate NOS code
     if (nos && !/^\d{1,4}$/.test(nos)) {
-      return NextResponse.json(
-        { success: false, error: 'Invalid NOS code' },
-        { status: 400 }
-      );
+      return apiBadRequest('Invalid NOS code');
     }
 
     // Persist vote to Supabase (fire-and-forget)
@@ -41,15 +37,14 @@ export async function POST(request: NextRequest) {
       await supabase.from('poll_votes').insert({
         vote,
         nos_code: nos || null,
-        ip: ip,
+        ip: clientIp,
         created_at: new Date().toISOString(),
       });
     } catch (dbErr) {
-      console.warn('[api/poll] DB insert failed:', dbErr instanceof Error ? dbErr.message : dbErr);
+      const message = dbErr instanceof Error ? dbErr.message : String(dbErr);
+      log.warn('Failed to insert poll vote', { error: message });
     }
 
-    return NextResponse.json({ success: true, vote, nos });
-  } catch {
-    return NextResponse.json({ success: false, error: 'Invalid request body' }, { status: 400 });
+    return apiSuccess({ success: true, vote, nos });
   }
-}
+);
