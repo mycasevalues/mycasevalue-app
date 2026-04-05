@@ -1145,3 +1145,79 @@ a[style*="background: #E8171F"]:active {
 @media (max-width: 480px) {
   .related-grid { grid-template-columns: 1fr !important; }
 }
+
+/* ============================================================
+   PRINT STYLES — Professional report printing
+   ============================================================ */
+@media print {
+  /* Hide non-content elements */
+  nav, footer, .back-to-top, .cookie-consent, .upgrade-banner-grid, .testimonial-card {
+    display: none !important;
+  }
+
+  /* Clean background and text for printing */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Remove all shadows and decorative effects */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure all text is readable in black */
+  h1, h2, h3, h4, h5, h6, p, span, a, div {
+    color: black !important;
+    background: white !important;
+  }
+
+  /* Show URLs after links */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+    word-break: break-word;
+  }
+
+  /* Skip internal links in print */
+  a[href="#"]::after,
+  a[href*="javascript"]::after {
+    content: "" !important;
+  }
+
+  /* Page breaks before major sections */
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 2em;
+  }
+
+  /* Prevent orphaned content */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  /* Optimize spacing for print */
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Print-friendly link styling */
+  a {
+    text-decoration: underline;
+    color: black !important;
+  }
+
+  /* Stat cards remain visible and inline */
+  .win-rate-grid {
+    page-break-inside: avoid;
+  }
+
+  /* Remove animations and transitions */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

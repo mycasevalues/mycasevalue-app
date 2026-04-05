@@ -8,6 +8,18 @@
    ============================================================ */
 
 :root {
+  /* ── CORE BRAND COLORS (LexisNexis Design System) ──────── */
+  --color-navy:             #00172E;  /* Primary brand color */
+  --color-red:              #E8171F;  /* Primary action color */
+  --color-red-dark:         #CC1019;  /* Red hover state */
+  --color-teal:             #006997;  /* Secondary brand color */
+  --color-text-primary:     #212529;  /* Primary text */
+  --color-text-secondary:   #455A64;  /* Secondary text */
+  --color-border:           #D5D8DC;  /* Default border */
+  --color-bg-light:         #EDEEEE;  /* Light background */
+  --color-bg-alt:           #F8F9FA;  /* Alternate background */
+  --color-white:            #FFFFFF;  /* Pure white */
+
   /* ── BACKGROUNDS ───────────────────────────────────────── */
   --bg-base:          #EDEEEE;  /* Light gray page background */
   --bg-elevated:      #FFFFFF;  /* White card surfaces */
@@ -95,6 +107,16 @@
   --sp-5: 20px;  --sp-6: 24px;
   --sp-10: 40px; --sp-12: 48px; --sp-14: 56px; --sp-16: 64px;
   --sp-32: 128px;
+
+  /* ── SPACING SCALE (Standardized) ──────────────────────── */
+  --space-xs:     4px;
+  --space-sm:     8px;
+  --space-md:     16px;
+  --space-lg:     24px;
+  --space-xl:     32px;
+  --space-2xl:    48px;
+  --space-3xl:    64px;
+
   /* Legacy aliases */
   --space-2: 8px;  --space-3: 12px;
   --space-4: 16px; --space-5: 20px; --space-6: 24px;
@@ -103,6 +125,10 @@
   /* ── BORDER RADIUS ─────────────────────────────────────── */
   --r-xs: 2px;   --r-sm: 3px;   --r-md: 4px;  --r-lg: 4px;
   --r-xl: 6px;   --r-2xl: 8px;  --r-full: 9999px;
+
+  /* ── BORDER RADIUS (Standardized) ──────────────────────── */
+  --radius:       4px;
+
   /* Legacy aliases */
   --radius-lg: 4px;
   --radius-xl: 8px; --radius-full: 9999px;
@@ -115,12 +141,23 @@
   --shadow-accent-lg: 0 4px 16px rgba(232,23,31,0.20);
   --shadow-glass:     0 2px 8px rgba(0,0,0,0.08);
 
+  /* ── SHADOWS (Standardized) ────────────────────────────── */
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:     0 4px 12px rgba(0,0,0,0.1);
+
   /* ── MOTION ────────────────────────────────────────────── */
   --duration-fast:    120ms;
   --duration-base:    200ms;
   --duration-slow:    300ms;
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── TRANSITIONS (Standardized) ────────────────────────── */
+  --transition-fast:      0.2s ease;
+  --transition-normal:    0.3s ease;
+
+  /* ── UI DIMENSIONS ─────────────────────────────────────── */
+  --input-height:     48px;
 
   /* ── Z-INDEX ───────────────────────────────────────────── */
   --z-raised:     10;

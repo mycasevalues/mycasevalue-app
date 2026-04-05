@@ -36,10 +36,13 @@ export async function generateMetadata(props: BlogPostPageProps): Promise<Metada
       description: post.description,
       type: 'article',
       url,
+      siteName: 'MyCaseValue',
       publishedTime: post.publishedAt.toISOString(),
       modifiedTime: post.updatedAt.toISOString(),
       authors: [post.author],
-      images: post.image ? [{ url: post.image, alt: post.title }] : [{ url: `${baseUrl}/og-image.jpg`, alt: 'MyCaseValue' }],
+      images: post.image
+        ? [{ url: post.image, alt: post.title }]
+        : [{ url: `${baseUrl}/og-image.jpg`, alt: 'MyCaseValue' }],
     },
     twitter: {
       card: 'summary_large_image',

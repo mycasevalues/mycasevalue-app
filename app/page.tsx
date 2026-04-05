@@ -11,6 +11,28 @@ export const metadata = {
   alternates: {
     canonical: 'https://www.mycasevalues.com',
   },
+  openGraph: {
+    title: 'MyCaseValue — What really happened in cases like yours',
+    description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
+    type: 'website',
+    siteName: 'MyCaseValue',
+    url: 'https://www.mycasevalues.com',
+    locale: 'en_US',
+    images: [
+      {
+        url: 'https://www.mycasevalues.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'MyCaseValue — Federal Court Outcome Data',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    title: 'MyCaseValue — Federal Court Outcome Data',
+    description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, recovery ranges. Free and private.',
+    images: ['https://www.mycasevalues.com/og-image.png'],
+  },
 };
 
 const jsonLd = {

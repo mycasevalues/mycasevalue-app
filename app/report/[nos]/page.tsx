@@ -45,10 +45,34 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { nos } = await params;
   const label = getNosLabel(nos);
+  const url = `https://www.mycasevalues.com/report/${nos}`;
+  const description = `Federal court outcome report for ${label} cases. See win rates, settlement data, case timelines, recovery ranges, and detailed case analytics from 5.1M+ federal court records.`;
+
   return {
     title: `${label} Report | MyCaseValue`,
-    description: `Federal court outcome report for ${label} cases. Win rates, settlement data, timelines, and more.`,
-    alternates: { canonical: `https://www.mycasevalues.com/report/${nos}` },
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${label} — Federal Court Case Report | MyCaseValue`,
+      description,
+      type: 'article',
+      siteName: 'MyCaseValue',
+      url,
+      images: [
+        {
+          url: 'https://www.mycasevalues.com/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${label} Report — MyCaseValue`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${label} — Federal Court Case Report`,
+      description,
+      images: ['https://www.mycasevalues.com/og-image.png'],
+    },
   };
 }
 
@@ -208,6 +232,115 @@ export default async function ReportPage({
           }
           h2 {
             font-size: 16px !important;
+          }
+        }
+
+        /* ═══ PRINT STYLES ═══ */
+        @media print {
+          /* Hide navigation, footer, and non-essential UI */
+          nav, footer, .back-to-top, .cookie-consent {
+            display: none !important;
+          }
+
+          /* Clean background for print */
+          div[style*="background: #EDEEEE"] {
+            background: white !important;
+          }
+
+          /* Ensure header prints cleanly */
+          div[style*="background: #00172E"] {
+            background: #F5F5F5 !important;
+            border: none !important;
+            color: black !important;
+          }
+
+          /* White subheader background */
+          div[style*="background: #FFFFFF"][style*="border-bottom"] {
+            background: white !important;
+            border: 1px solid #DDD !important;
+          }
+
+          /* Remove shadows and animations */
+          * {
+            box-shadow: none !important;
+            animation: none !important;
+            transition: none !important;
+          }
+
+          /* Force text colors to black for readability */
+          h1, h2, h3, h4, h5, h6, p, span, a, div, section, main {
+            color: black !important;
+            background: transparent !important;
+          }
+
+          /* Show URLs after links */
+          a[href]:not([href="#"]):not([href*="javascript"])::after {
+            content: " (" attr(href) ")";
+            font-size: 0.85em;
+            color: #666;
+            word-break: break-word;
+          }
+
+          /* Page breaks before major sections */
+          section {
+            page-break-inside: avoid;
+            margin-bottom: 2em;
+            border-color: #CCC !important;
+          }
+
+          /* Prevent heading orphans */
+          h2, h3 {
+            page-break-after: avoid;
+          }
+
+          /* Optimize spacing */
+          p, li {
+            orphans: 3;
+            widows: 3;
+          }
+
+          /* Stat cards remain compact and inline */
+          .win-rate-grid {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 12px !important;
+            page-break-inside: avoid;
+          }
+
+          .win-rate-grid > div {
+            display: inline-block !important;
+            flex: 1 1 calc(33.333% - 8px);
+            min-width: 150px;
+          }
+
+          /* Add MyCaseValue branding to printed header */
+          div[style*="background: #00172E"]::before {
+            content: "MyCaseValue.com";
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            color: #999;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+          }
+
+          /* Ensure all elements stay visible in print */
+          main {
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 20px !important;
+          }
+
+          /* Print-friendly link colors */
+          a {
+            text-decoration: underline;
+            color: black !important;
+          }
+
+          /* Remove interactive elements in print */
+          button, .report-cta-btn {
+            display: none !important;
           }
         }
       `}</style>
