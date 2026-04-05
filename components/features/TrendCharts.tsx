@@ -89,10 +89,11 @@ export default function TrendCharts() {
     <div className="space-y-10">
       {/* National Filing Trends - Area Chart */}
       <div
-        className="p-6 rounded-[4px] border"
+        className="p-6 border"
         style={{
           background: '#FFFFFF',
           borderColor: '#D5D8DC',
+          borderRadius: '4px',
         }}
       >
         <h3
@@ -134,10 +135,11 @@ export default function TrendCharts() {
 
       {/* Win Rate by Category - Multi-line Chart */}
       <div
-        className="p-6 rounded-[4px] border"
+        className="p-6 border"
         style={{
           background: '#FFFFFF',
           borderColor: '#D5D8DC',
+          borderRadius: '4px',
         }}
       >
         <h3
@@ -186,10 +188,11 @@ export default function TrendCharts() {
 
       {/* Top Case Types by Volume - Horizontal Bar Chart */}
       <div
-        className="p-6 rounded-[4px] border"
+        className="p-6 border"
         style={{
           background: '#FFFFFF',
           borderColor: '#D5D8DC',
+          borderRadius: '4px',
         }}
       >
         <h3

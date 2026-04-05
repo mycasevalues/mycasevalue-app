@@ -21,7 +21,7 @@ export function ComparisonBar({
   const hasCompare = data.some(d => d.compare !== undefined);
 
   return (
-    <div className="w-full p-6 rounded-[4px]" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC' }}>
+    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
       <ResponsiveContainer width="100%" height={260}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="25%">
           <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />

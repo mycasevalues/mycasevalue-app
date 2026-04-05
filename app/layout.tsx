@@ -1,13 +1,20 @@
 import './globals.css';
 import '../styles/fonts.css';
+import '../styles/performance.css';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 import SiteNav from '../components/layout/SiteNav';
 import SiteFooter from '../components/layout/SiteFooter';
 import dynamic from 'next/dynamic';
+import type { Metadata } from 'next';
 
-const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar'), { ssr: false });
+// Dynamic imports for client-side only components to improve initial page load
+// These components are non-critical and loaded after hydration
+const RouteLoadingBar = dynamic(() => import('../components/ui/RouteLoadingBar'), {
+  ssr: false,
+  loading: () => null, // No loading state needed for non-critical UI
+});
 const CookieConsent = dynamic(() => import('../components/ui/CookieConsent'), { ssr: false });
 const GlobalCommandPalette = dynamic(() => import('../components/ui/GlobalCommandPalette'), { ssr: false });
 const ScrollToTop = dynamic(() => import('../components/ui/ScrollToTop'), { ssr: false });
@@ -233,8 +240,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
         {/* Self-hosted fonts — no external CDN, GDPR compliant */}
+        {/* Resource hints for faster page loads */}
         {/* DNS prefetch & preconnect for third-party services */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+        {/* Supabase API endpoint */}
+        <link rel="dns-prefetch" href="https://your-project.supabase.co" />
+        <link rel="preconnect" href="https://your-project.supabase.co" crossOrigin="anonymous" />
+
+        {/* Preload critical static assets */}
+        <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+
+        {/* Manifest and meta */}
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/icon-192.png" />

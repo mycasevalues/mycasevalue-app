@@ -32,7 +32,7 @@ export default function SpanishTrendsPage() {
           </p>
         </div>
 
-        <div className="text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC' }}>
+        <div className="text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC', borderRadius: '4px' }}>
           <p style={{ color: '#666666' }}>
             Espera a que se carguen los gráficos interactivos...
           </p>

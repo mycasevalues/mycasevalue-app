@@ -39,10 +39,11 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
       {/* Top Case Types Bar Chart */}
       {topCaseTypesData.length > 0 && (
         <div
-          className="rounded-[4px] p-6 sm:p-8"
+          className="p-6 sm:p-8"
           style={{
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
+            borderRadius: '4px',
           }}
         >
           <h3
@@ -81,10 +82,11 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
       {/* Category Breakdown Pie Chart */}
       {categoryData.length > 0 && (
         <div
-          className="rounded-[4px] p-6 sm:p-8"
+          className="p-6 sm:p-8"
           style={{
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
+            borderRadius: '4px',
           }}
         >
           <h3

@@ -116,7 +116,7 @@ export default function HowItWorksPage() {
       {/* Header */}
       <div style={{ background: '#00172E' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
             style={{ background: 'rgba(232, 23, 31, 0.1)', color: '#E8171F', borderRadius: '4px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
               <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
@@ -241,7 +241,7 @@ export default function HowItWorksPage() {
                 description: 'Track how outcomes have changed over time to understand current judicial patterns and trends.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
                 {/* Red Icon */}
                 <div className="mb-4" style={{ width: '24px', height: '24px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5">
@@ -269,7 +269,7 @@ export default function HowItWorksPage() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
-              <div key={i} className="text-center p-4 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
+              <div key={i} className="text-center p-4 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
                 <div className="text-2xl font-display font-extrabold" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
                   {stat.value}
                 </div>
@@ -307,7 +307,7 @@ export default function HowItWorksPage() {
                 description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
               },
             ].map((source, i) => (
-              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
+              <div key={i} className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: '#212529' }}>
                   {source.title}
                 </h3>
@@ -359,7 +359,7 @@ export default function HowItWorksPage() {
                 description: 'No legal jargon. Results explained in language everyone can understand.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF',  }}>
+              <div key={i} className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: '#212529' }}>
                   {item.title}
                 </h3>
@@ -374,7 +374,7 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
-        <section className="text-center p-12 rounded border" style={{ borderColor: '#D5D8DC', background: '#FFF3F4', borderRadius: '4px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: '#D5D8DC', background: '#FFF3F4', borderRadius: '4px' }}>
           <h2 className="text-3xl font-display font-bold mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Ready to see your case data?
           </h2>
@@ -382,7 +382,7 @@ export default function HowItWorksPage() {
             Start your free research — no account required
           </p>
           <a href="/search"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded text-base font-semibold transition-all hover:shadow-lg"
+            className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold transition-all hover:shadow-lg"
             style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
             Start Free Research
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

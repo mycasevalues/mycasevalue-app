@@ -10,8 +10,8 @@ export default function NosCodeError({ error, reset }: { error: Error; reset: ()
         </p>
         <button type="button"
           onClick={reset}
-          className="px-6 py-2 rounded-lg text-sm font-medium text-white"
-          style={{ background: '#111111' }}
+          className="px-6 py-2 text-sm font-medium text-white"
+          style={{ background: '#111111', borderRadius: '4px' }}
         >
           Try again
         </button>

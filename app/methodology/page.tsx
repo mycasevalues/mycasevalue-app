@@ -102,8 +102,8 @@ export default function MethodologyPage() {
           </nav>
 
           {/* Badge and Title */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: '#E8171F' }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+            style={{ background: '#FFF3F4', color: '#E8171F', borderRadius: '9999px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
             METHODOLOGY
           </div>
@@ -187,7 +187,7 @@ export default function MethodologyPage() {
                 icon: 'building'
               },
             ].map((source, i) => (
-              <div key={i} className="source-card p-5 rounded-lg bg-white">
+              <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '4px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="text-2xl flex-shrink-0">
                     {source.icon === 'database' && '📊'}
@@ -198,7 +198,7 @@ export default function MethodologyPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-sm font-display font-semibold m-0 mb-1" style={{ color: '#212529' }}>{source.name}</h3>
-                    <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ background: source.color.replace('#', '#').substring(0, 7) + '1F', color: source.color }}>
+                    <span className="inline-block text-[10px] font-bold px-2 py-0.5" style={{ background: source.color.replace('#', '#').substring(0, 7) + '1F', color: source.color, borderRadius: '9999px' }}>
                       {source.badge}
                     </span>
                   </div>
@@ -261,8 +261,8 @@ export default function MethodologyPage() {
         <div className="text-center pt-12 border-t" style={{ borderColor: '#D5D8DC' }}>
           <p className="text-sm mb-6" style={{ color: '#666666' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalue.com"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all"
-            style={{ background: '#E8171F', color: '#FFFFFF', border: '1px solid #E8171F' }}>
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+            style={{ borderRadius: '4px', background: '#E8171F', color: '#FFFFFF', border: '1px solid #E8171F' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

@@ -34,8 +34,8 @@ export default function SpanishHowItWorksPage() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Volver a MyCaseValue
           </a>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E5EBF0', color: '#006997' }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+            style={{ background: '#E5EBF0', color: '#006997', borderRadius: '9999px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             CÓMO FUNCIONA
           </div>
@@ -56,7 +56,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#E8171F', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
                   <span className="text-lg font-bold">1</span>
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#E8171F', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
                   <span className="text-lg font-bold">2</span>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#E8171F', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
                   <span className="text-lg font-bold">3</span>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#E8171F', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
                   <span className="text-lg font-bold">4</span>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-full" style={{ background: '#E8171F', color: 'white' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
                   <span className="text-lg font-bold">5</span>
                 </div>
               </div>
@@ -155,8 +155,8 @@ export default function SpanishHowItWorksPage() {
             Principios Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC' }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: '#E5EBF0' }}>
+            <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC', borderRadius: '4px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#E5EBF0', borderRadius: '50%' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
@@ -169,8 +169,8 @@ export default function SpanishHowItWorksPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC' }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: '#E5EBF0' }}>
+            <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC', borderRadius: '4px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#E5EBF0', borderRadius: '50%' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6l4 2"/>
@@ -184,8 +184,8 @@ export default function SpanishHowItWorksPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC' }}>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ background: '#E5EBF0' }}>
+            <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC', borderRadius: '4px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#E5EBF0', borderRadius: '50%' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                   <path d="M9 12l2 2 4-4"/>
                   <circle cx="12" cy="12" r="10"/>
@@ -202,7 +202,7 @@ export default function SpanishHowItWorksPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC' }}>
+        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC', borderRadius: '4px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Listo para comenzar?
           </h2>
@@ -210,8 +210,8 @@ export default function SpanishHowItWorksPage() {
             Genera tu informe gratuito en 60 segundos. Sin registro requerido.
           </p>
           <a href="/odds"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#E8171F', color: '#FFFFFF' }}>
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+            style={{ borderRadius: '4px', background: '#E8171F', color: '#FFFFFF' }}>
             Consultar Mi Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

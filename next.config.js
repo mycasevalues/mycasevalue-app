@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    // Enable Image optimization for better performance and Core Web Vitals
+    // Serves responsive images with WebP and AVIF formats
+    formats: ['image/webp', 'image/avif'],
+    // Cache optimized images for 1 year (immutable)
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   // Security headers
   async headers() {

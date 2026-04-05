@@ -87,8 +87,8 @@ export default function SpanishPricingPage() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Volver a MyCaseValue
           </a>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E5EBF0', color: '#006997' }}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+            style={{ background: '#E5EBF0', color: '#006997', borderRadius: '9999px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             PRECIOS
           </div>
@@ -106,8 +106,9 @@ export default function SpanishPricingPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
 
           {/* Single Report Card */}
-          <div className="rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/20"
+          <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/20"
             style={{
+              borderRadius: '4px',
               borderColor: '#D5D8DC',
               background: '#FAFBFC',
             }}>
@@ -147,21 +148,22 @@ export default function SpanishPricingPage() {
 
             <button
               disabled={true}
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#EDEEEE', color: '#666666', opacity: 0.5, cursor: 'not-allowed' }}>
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+              style={{ borderRadius: '4px', background: '#EDEEEE', color: '#666666', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
 
           {/* Unlimited Reports Card */}
-          <div className="rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-lg md:scale-105 hover:shadow-amber-500/30"
+          <div className="border-2 p-8 transition-all duration-300 hover:shadow-lg md:scale-105 hover:shadow-amber-500/30"
             style={{
+              borderRadius: '4px',
               borderColor: '#E8171F',
               background: '#FAFBFC',
               border: '2px solid #E8171F',
             }}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: '#FCE7E8', color: '#E8171F' }}>
+            <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
+              style={{ borderRadius: '9999px', background: '#FCE7E8', color: '#E8171F' }}>
               MEJOR VALOR
             </div>
 
@@ -200,15 +202,16 @@ export default function SpanishPricingPage() {
 
             <button
               disabled={true}
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#E8171F', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+              style={{ borderRadius: '4px', background: '#E8171F', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
 
           {/* Attorney Mode Card */}
-          <div className="rounded-2xl border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+          <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
             style={{
+              borderRadius: '4px',
               borderColor: '#D5D8DC',
               background: '#FAFBFC',
             }}>
@@ -250,8 +253,8 @@ export default function SpanishPricingPage() {
 
             <button
               disabled={true}
-              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-              style={{ background: '#006997', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
+              className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+              style={{ borderRadius: '4px', background: '#006997', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -259,7 +262,7 @@ export default function SpanishPricingPage() {
         </div>
 
         {/* Plan Notes */}
-        <div className="text-center p-6 rounded-xl mb-12" style={{ background: '#FAFBFC', borderColor: '#D5D8DC', border: '1px solid #D5D8DC' }}>
+        <div className="text-center p-6 mb-12" style={{ background: '#FAFBFC', borderColor: '#D5D8DC', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
           <p className="text-sm" style={{ color: '#666666' }}>
             Todos los planes incluyen citas de fuentes, soporte bilingüe (inglés/español) y un aviso de "no es asesoramiento legal".
           </p>
@@ -274,8 +277,9 @@ export default function SpanishPricingPage() {
             {pricingFaqs.map((faq, idx) => (
               <details
                 key={idx}
-                className="group p-5 rounded-xl border transition-colors cursor-pointer"
+                className="group p-5 border transition-colors cursor-pointer"
                 style={{
+                  borderRadius: '4px',
                   borderColor: '#D5D8DC',
                   background: '#FAFBFC',
                 }}
@@ -308,7 +312,7 @@ export default function SpanishPricingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 rounded-xl border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC' }}>
+        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FAFBFC', borderRadius: '4px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
@@ -316,8 +320,8 @@ export default function SpanishPricingPage() {
             Genera tu informe básico gratuito instantáneamente, luego actualiza a características premium si deseas análisis más profundo.
           </p>
           <a href="/odds"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all"
-            style={{ background: '#E8171F', color: '#FFFFFF' }}>
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
+            style={{ borderRadius: '4px', background: '#E8171F', color: '#FFFFFF' }}>
             Consultar Mi Tipo de Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

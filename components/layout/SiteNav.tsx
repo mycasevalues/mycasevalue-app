@@ -11,6 +11,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
 
@@ -170,15 +171,16 @@ export default function SiteNav() {
           {/* Logo / Wordmark */}
           <Link
             href="/"
-            style={{
-              textDecoration: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-            }}
+            className="site-nav-logo-link"
             aria-label="MyCaseValue home"
           >
-            <img src="/logo.svg" alt="MyCaseValue" style={{ height: '30px', width: 'auto' }} />
+            <Image
+              src="/logo.svg"
+              alt="MyCaseValue"
+              width={120}
+              height={30}
+              priority
+            />
           </Link>
 
           {/* Right: Auth buttons (desktop) + Search + Hamburger (mobile) */}
@@ -828,6 +830,12 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
+        .site-nav-logo-link {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
         .site-nav-search-btn:hover { color: #212529 !important; }
         .site-nav-search-input:focus { border-color: #E8171F !important; }
         .site-nav-search-submit:hover { background: #CC1219 !important; }

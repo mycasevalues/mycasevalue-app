@@ -4,6 +4,7 @@
  */
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const FOOTER_COLUMNS = [
   {
@@ -75,8 +76,13 @@ export default function SiteFooter() {
         >
           {/* Brand column */}
           <div>
-            <div style={{ marginBottom: '16px' }}>
-              <img src="/logo.svg" alt="MyCaseValue" style={{ height: '28px', width: 'auto', filter: 'brightness(0) invert(1)', marginBottom: '12px' }} />
+            <div className="site-footer-logo">
+              <Image
+                src="/logo.svg"
+                alt="MyCaseValue"
+                width={112}
+                height={28}
+              />
             </div>
             <p style={{
               fontFamily: 'var(--font-body)',
@@ -302,6 +308,15 @@ export default function SiteFooter() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
+        .site-footer-logo {
+          margin-bottom: 16px;
+          display: inline-block;
+        }
+        .site-footer-logo img {
+          filter: brightness(0) invert(1);
+          margin-bottom: 12px;
+          display: block;
+        }
         .site-footer-link:hover {
           color: #FFFFFF !important;
           text-decoration: none;

@@ -99,10 +99,11 @@ export function CategoryIcon({ name, color, size = 28 }: { name: string; color?:
   const Icon = ICON_MAP[name];
   if (!Icon) return null;
   return (
-    <div className="flex items-center justify-center rounded-xl" style={{
+    <div className="flex items-center justify-center" style={{
       width: size + 16,
       height: size + 16,
       background: `${color}10`,
+      borderRadius: '4px',
     }}>
       <Icon color={color} size={size} />
     </div>

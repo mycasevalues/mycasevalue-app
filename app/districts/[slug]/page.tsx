@@ -76,8 +76,8 @@ export default async function DistrictPage({ params }: PageProps) {
           </p>
           <Link
             href="/districts"
-            className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: '#E8171F' }}
+            className="inline-block px-6 py-3 font-semibold text-white transition"
+            style={{ background: '#E8171F', borderRadius: '4px' }}
           >
             View All Districts
           </Link>
@@ -128,13 +128,92 @@ export default async function DistrictPage({ params }: PageProps) {
         ],
       },
       {
-        '@type': 'Dataset',
-        name: `${state.label} Federal Court Data`,
-        description: `Aggregate outcome data for federal court cases in ${state.label}. Includes win rates, case types, and settlement information.`,
+        '@type': 'GovernmentOrganization',
+        '@id': `https://mycasevalues.com/districts/${slug}`,
+        name: `${state.label} Federal District Court`,
+        alternateName: `United States District Court for the ${state.label}`,
+        areaServed: state.label,
+        description: `Federal court district serving ${state.label}. Jurisdiction for civil and criminal cases in the U.S. federal court system.`,
         url: `https://mycasevalues.com/districts/${slug}`,
-        creator: { '@type': 'Organization', name: 'Federal Judicial Center' },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'Customer Service',
+          name: `${state.label} District Court Information`,
+        },
+      },
+      {
+        '@type': 'Dataset',
+        '@id': `https://mycasevalues.com/districts/${slug}#dataset`,
+        name: `${state.label} Federal Court Data`,
+        description: `Aggregate outcome data for federal court cases in ${state.label}. Includes win rates, case types, and settlement information based on ${districtStats.totalCases.toLocaleString()} analyzed cases.`,
+        url: `https://mycasevalues.com/districts/${slug}`,
+        creator: {
+          '@type': 'Organization',
+          name: 'Federal Judicial Center',
+          url: 'https://www.fjc.gov',
+        },
         isAccessibleForFree: true,
         spatialCoverage: state.label,
+        temporalCoverage: '1999-..',
+        keywords: [
+          `${state.label} court statistics`,
+          'federal court win rates',
+          'case duration analysis',
+          'settlement data',
+          `${state.label} litigation outcomes`,
+        ],
+        distribution: {
+          '@type': 'DataDownload',
+          contentUrl: `https://mycasevalues.com/districts/${slug}`,
+          encodingFormat: 'application/json',
+          inLanguage: 'en-US',
+        },
+        variableMeasured: [
+          {
+            '@type': 'PropertyValue',
+            name: 'Plaintiff Win Rate',
+            value: `${districtStats.winRate}%`,
+          },
+          {
+            '@type': 'PropertyValue',
+            name: 'Median Case Duration',
+            value: `${districtStats.medianDuration} months`,
+          },
+          {
+            '@type': 'PropertyValue',
+            name: 'Total Cases Analyzed',
+            value: districtStats.totalCases.toLocaleString(),
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: `What is the win rate in ${state.label} federal court?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Based on analysis of ${districtStats.totalCases.toLocaleString()} cases, the plaintiff win rate in ${state.label} federal court is approximately ${districtStats.winRate}%. This includes both trial victories and favorable settlements.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `How long do cases take in ${state.label} federal court?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `The median duration for cases in ${state.label} federal court is approximately ${districtStats.medianDuration} months from filing to resolution. This varies based on case complexity and whether the case settles or goes to trial.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `What are the most common case types in ${state.label}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `The most common case type in ${state.label} federal court is ${districtStats.topCaseType}. Other frequent case types include employment discrimination, personal injury, and breach of contract cases.`,
+            },
+          },
+        ],
       },
     ],
   };
@@ -433,8 +512,9 @@ export default async function DistrictPage({ params }: PageProps) {
           {/* Stats Pills */}
           <div className="flex flex-wrap gap-4">
             <span
-              className="px-4 py-2 rounded-full text-sm font-semibold"
+              className="px-4 py-2 text-sm font-semibold"
               style={{
+                borderRadius: '9999px',
                 background: 'rgba(255, 255, 255, 0.12)',
                 color: '#D5D8DC',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
@@ -444,8 +524,9 @@ export default async function DistrictPage({ params }: PageProps) {
               {districtStats.totalCases.toLocaleString()} Cases
             </span>
             <span
-              className="px-4 py-2 rounded-full text-sm font-semibold"
+              className="px-4 py-2 text-sm font-semibold"
               style={{
+                borderRadius: '9999px',
                 background: 'rgba(232, 23, 31, 0.2)',
                 color: '#FFB3B8',
                 border: '1px solid rgba(232, 23, 31, 0.4)',
@@ -455,8 +536,9 @@ export default async function DistrictPage({ params }: PageProps) {
               {districtStats.winRate}% Win Rate
             </span>
             <span
-              className="px-4 py-2 rounded-full text-sm font-semibold"
+              className="px-4 py-2 text-sm font-semibold"
               style={{
+                borderRadius: '9999px',
                 background: 'rgba(255, 255, 255, 0.12)',
                 color: '#D5D8DC',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
@@ -590,8 +672,9 @@ export default async function DistrictPage({ params }: PageProps) {
             Case Type Breakdown in {state.label}
           </h2>
           <div
-            className="rounded-[4px] overflow-hidden"
+            className="overflow-hidden"
             style={{
+              borderRadius: '4px',
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -683,8 +766,9 @@ export default async function DistrictPage({ params }: PageProps) {
       <section className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-[960px] mx-auto">
           <div
-            className="rounded-[4px] p-8 sm:p-12 text-center"
+            className="p-8 sm:p-12 text-center"
             style={{
+              borderRadius: '4px',
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -721,8 +805,9 @@ export default async function DistrictPage({ params }: PageProps) {
       <section className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-[960px] mx-auto">
           <div
-            className="rounded-[4px] p-6 text-sm body-text"
+            className="p-6 text-sm body-text"
             style={{
+              borderRadius: '4px',
               background: '#F8F9FA',
               border: '1px solid #D5D8DC',
               color: '#455A64',

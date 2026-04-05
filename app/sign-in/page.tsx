@@ -3,6 +3,7 @@
 import { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
@@ -74,6 +75,10 @@ function SignInForm() {
         .auth-card {
           animation: fadeIn 0.4s ease-out;
         }
+        .auth-logo {
+          margin-bottom: 32px;
+          text-align: center;
+        }
         .auth-input:focus {
           border-color: #006997 !important;
           outline: none;
@@ -117,19 +122,13 @@ function SignInForm() {
         </div>
 
         {/* Logo */}
-        <div
-          style={{
-            marginBottom: '32px',
-            textAlign: 'center',
-          }}
-        >
-          <img
+        <div className="auth-logo">
+          <Image
             src="/logo.svg"
             alt="MyCaseValue"
-            style={{
-              height: '30px',
-              marginBottom: '32px',
-            }}
+            width={120}
+            height={30}
+            priority
           />
         </div>
 

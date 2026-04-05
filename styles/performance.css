@@ -1,0 +1,97 @@
+/**
+ * Performance Optimizations CSS Module
+ * Styles extracted from inline styles for better caching and reusability
+ */
+
+/* Logo Styling */
+.site-nav-logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 150ms ease-out;
+}
+
+.site-nav-logo-link:hover {
+  opacity: 0.85;
+}
+
+/* Footer Logo */
+.site-footer-logo {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.site-footer-logo img {
+  filter: brightness(0) invert(1);
+  margin-bottom: 12px;
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+/* Sign In Page Optimizations */
+.auth-logo {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.auth-logo img {
+  display: block;
+  height: auto;
+}
+
+/* Image Optimization Utilities */
+img {
+  /* Prevent layout shift during image load */
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Next.js Image Component Optimization */
+.next-image-wrapper {
+  position: relative;
+}
+
+/* Lazy Loading Support */
+img[loading="lazy"] {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Performance: Reduce repaints for frequently updated elements */
+.site-nav-top,
+.site-nav-sub {
+  will-change: auto;
+}
+
+/* Font optimization: Reduce layout shift */
+@font-face {
+  font-display: swap; /* Critical for performance */
+}
+
+/* Network status indicator (optional) */
+.connection-status-offline img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -95,8 +95,8 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
           <p className="mb-6" style={{ color: '#455A64' }}>NOS code {code} does not exist in our database.</p>
-          <Link href="/" className="inline-block px-6 py-3 rounded-xl font-semibold text-white transition"
-            style={{ background: '#E8171F' }}>
+          <Link href="/" className="inline-block px-6 py-3 font-semibold text-white transition"
+            style={{ background: '#E8171F', borderRadius: '4px' }}>
             Return to Home
           </Link>
         </div>
@@ -153,12 +153,60 @@ export default async function NOSPage({ params }: PageProps) {
       },
       {
         '@type': 'Dataset',
-        name: `${nosInfo.label} Federal Court Outcome Data`,
-        description: `Aggregate outcome data for ${nosInfo.label} (NOS ${code}) cases in U.S. federal courts.`,
+        '@id': `https://mycasevalues.com/nos/${code}#dataset`,
+        name: `${nosInfo.label} Federal Court Statistics`,
+        alternateName: `NOS ${code} - ${nosInfo.label} Case Data`,
+        description: `Comprehensive federal court statistics for ${nosInfo.label} (NOS ${code}) cases. Includes win rates, case duration, settlement data, and outcome distribution from U.S. federal court system.`,
         url: `https://mycasevalues.com/nos/${code}`,
-        creator: { '@type': 'Organization', name: 'Federal Judicial Center' },
+        creator: {
+          '@type': 'Organization',
+          name: 'Federal Judicial Center',
+          url: 'https://www.fjc.gov',
+        },
+        provider: {
+          '@type': 'Organization',
+          name: 'MyCaseValue',
+          url: 'https://mycasevalues.com',
+        },
         isAccessibleForFree: true,
         spatialCoverage: 'United States Federal Courts',
+        temporalCoverage: '1999-..',
+        keywords: [
+          `${nosInfo.label} statistics`,
+          `NOS code ${code}`,
+          'federal court outcomes',
+          'case settlement data',
+          'litigation timeline',
+          nosInfo.category,
+        ],
+        distribution: {
+          '@type': 'DataDownload',
+          contentUrl: `https://mycasevalues.com/nos/${code}`,
+          encodingFormat: 'application/json',
+          inLanguage: 'en-US',
+        },
+        variableMeasured: [
+          {
+            '@type': 'PropertyValue',
+            name: 'Win Rate',
+            value: `${winRate}%`,
+          },
+          {
+            '@type': 'PropertyValue',
+            name: 'Median Case Duration',
+            value: `${medianDuration} months`,
+          },
+          {
+            '@type': 'PropertyValue',
+            name: 'Settlement Rate',
+            value: `${settleRate}%`,
+          },
+          {
+            '@type': 'PropertyValue',
+            name: 'Total Cases Tracked',
+            value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+',
+          },
+        ],
       },
       {
         '@type': 'FAQPage',
@@ -166,7 +214,7 @@ export default async function NOSPage({ params }: PageProps) {
           {
             '@type': 'Question',
             name: `What is the win rate for ${nosInfo.label} cases?`,
-            acceptedAnswer: { '@type': 'Answer', text: `Based on historical federal court data, ${nosInfo.label} cases have an approximate win rate of ${winRate}%. This includes both trial victories and favorable settlements. Individual results vary significantly.` },
+            acceptedAnswer: { '@type': 'Answer', text: `Based on historical federal court data, ${nosInfo.label} cases have an approximate win rate of ${winRate}%. This includes both trial victories and favorable settlements. Individual results vary significantly based on case facts, jurisdiction, and representation.` },
           },
           {
             '@type': 'Question',
@@ -178,7 +226,24 @@ export default async function NOSPage({ params }: PageProps) {
             name: `What is NOS code ${code}?`,
             acceptedAnswer: { '@type': 'Answer', text: `NOS (Nature of Suit) code ${code} corresponds to ${nosInfo.label} cases in the federal court system. It falls under the ${nosInfo.category} category.` },
           },
+          {
+            '@type': 'Question',
+            name: `What are the possible outcomes in ${nosInfo.label} cases?`,
+            acceptedAnswer: { '@type': 'Answer', text: `${nosInfo.label} cases can result in several outcomes: settlement (${settleRate}% settlement rate), trial victory, trial loss, or dismissal. The distribution varies based on case-specific factors and jurisdiction.` },
+          },
         ],
+      },
+      {
+        '@type': 'CreativeWork',
+        name: `${nosInfo.label} Case Analysis & Research`,
+        author: {
+          '@type': 'Organization',
+          name: 'MyCaseValue',
+          url: 'https://mycasevalues.com',
+        },
+        datePublished: new Date().toISOString().split('T')[0],
+        description: `Research guide and statistics for ${nosInfo.label} cases (NOS ${code}). Contains federal court outcome data, settlement information, and timeline analysis.`,
+        inLanguage: 'en-US',
       },
     ],
   };

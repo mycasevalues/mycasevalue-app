@@ -233,18 +233,38 @@ export default async function JudgePage({ params }: PageProps) {
       },
       {
         '@type': 'Person',
+        '@id': `https://www.mycasevalues.com/judges/${slug}`,
         name: judge.name,
         jobTitle: 'Federal Judge',
         workLocation: {
           '@type': 'Place',
           name: judge.court,
         },
+        worksFor: {
+          '@type': 'GovernmentOrganization',
+          name: `United States District Court, ${judge.district}`,
+          url: `https://www.mycasevalues.com/districts/${judge.district.toLowerCase().replace(/\s+/g, '-')}`,
+        },
         affiliation: {
           '@type': 'Organization',
           name: `United States District Court, ${judge.district}`,
         },
         description: `Federal Judge ${judge.name} serves in the ${judge.district}. Appointed in ${judge.appointedYear}. ${judge.seniorStatus ? 'Senior Judge.' : ''} Based on analysis of ${judge.stats.totalCases}+ federal court cases.`,
+        honorificPrefix: 'Judge',
+        birthDate: undefined, // Not typically published for privacy
+        knowsAbout: judge.topCaseTypes.map(ct => ct.label),
         sameAs: [],
+      },
+      {
+        '@type': 'CreativeWork',
+        name: `${judge.name} - Judge Profile & Analytics`,
+        author: {
+          '@type': 'Organization',
+          name: 'MyCaseValue',
+        },
+        datePublished: new Date().toISOString().split('T')[0],
+        description: `Comprehensive profile and ruling analytics for Federal Judge ${judge.name}. Includes plaintiff win rates, motion grant rates, median case duration, settlement rates, and case type analysis from ${judge.stats.totalCases}+ federal court records.`,
+        text: `Judge ${judge.name} Profile. Plaintiff Win Rate: ${judge.stats.plaintiffWinRate}%. Motion Grant Rate: ${judge.stats.motionGrantRate}%. Median Case Duration: ${judge.stats.medianDurationMonths} months. Settlement Rate: ${judge.stats.settlementRate}%. Total Cases Analyzed: ${judge.stats.totalCases.toLocaleString()}.`,
       },
     ],
   };

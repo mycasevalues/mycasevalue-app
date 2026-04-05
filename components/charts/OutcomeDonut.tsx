@@ -16,7 +16,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
   const total = data.reduce((s, d) => s + d.value, 0);
 
   return (
-    <div className="relative p-6 rounded-[4px]" style={{ width: size + 48, height: size + 48, background: '#FFFFFF', border: '1px solid #D5D8DC' }}>
+    <div className="relative p-6" style={{ width: size + 48, height: size + 48, background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
       <div style={{ width: size, height: size }}>
         <ResponsiveContainer width="100%" height="100%">
         <PieChart>
