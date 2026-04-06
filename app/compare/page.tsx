@@ -382,7 +382,19 @@ export default function ComparePage() {
                               fontFamily: 'var(--font-mono)',
                               fontSize: 14,
                             }}>
-                              {formatted}
+                              <div>{formatted}</div>
+                              {/* Visual comparison bar for percentage metrics */}
+                              {v !== null && (row.key === 'winRate' || row.key === 'settlementRate' || row.key === 'dismissRate') && (
+                                <div style={{ marginTop: 6, height: 4, background: '#F0F3F5', borderRadius: 2, overflow: 'hidden' }}>
+                                  <div style={{
+                                    height: '100%',
+                                    width: `${Math.min(v, 100)}%`,
+                                    background: isBest ? '#006997' : row.key === 'dismissRate' ? '#E8171F' : '#D5D8DC',
+                                    borderRadius: 2,
+                                    transition: 'width 0.5s ease',
+                                  }} />
+                                </div>
+                              )}
                             </td>
                           );
                         })}
