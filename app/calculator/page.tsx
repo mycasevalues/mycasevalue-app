@@ -63,6 +63,19 @@ const TIMELINES: Record<string, string> = {
 };
 
 const ATTORNEY_BOOST = 1.23;
+const SEVERITY_MULT: Record<string, number> = {
+  minor: 0.6,
+  moderate: 1.0,
+  severe: 1.5,
+  catastrophic: 2.2,
+};
+const DURATION_MULT: Record<string, number> = {
+  under6: 0.8,
+  '6to12': 1.0,
+  '1to3yr': 1.3,
+  over3yr: 1.6,
+  permanent: 2.0,
+};
 
 /* ── Helpers ─────────────────────────────────────────────────────────── */
 function fmt(n: number): string {
@@ -78,6 +91,13 @@ interface Results {
   winRate: number;
   timeline: string;
   caseLabel: string;
+  breakdown: {
+    baseDamages: number;
+    severityMult: number;
+    durationMult: number;
+    attorneyMult: number;
+    categoryMult: { low: number; median: number; high: number };
+  };
 }
 
 /* ══════════════════════════════════════════════════════════════════════ */
@@ -86,6 +106,8 @@ export default function CalculatorPage() {
   const [district, setDistrict] = useState('');
   const [damages, setDamages] = useState('');
   const [represented, setRepresented] = useState('');
+  const [severity, setSeverity] = useState('');
+  const [duration, setDuration] = useState('');
   const [results, setResults] = useState<Results | null>(null);
 
   function resetForm() {
@@ -93,6 +115,8 @@ export default function CalculatorPage() {
     setDistrict('');
     setDamages('');
     setRepresented('');
+    setSeverity('');
+    setDuration('');
     setResults(null);
   }
 
@@ -103,16 +127,27 @@ export default function CalculatorPage() {
     const raw = Number(damages.replace(/[^0-9.]/g, ''));
     if (!caseType || !raw || raw <= 0) return;
 
-    const mult = DAMAGE_MULTIPLIERS[caseType] ?? { low: 0.15, median: 0.35, high: 0.75 };
-    const boost = represented === 'yes' ? ATTORNEY_BOOST : 1;
+    const catMult = DAMAGE_MULTIPLIERS[caseType] ?? { low: 0.15, median: 0.35, high: 0.75 };
+    const attMult = represented === 'yes' ? ATTORNEY_BOOST : 1;
+    const sevMult = severity ? (SEVERITY_MULT[severity] ?? 1) : 1;
+    const durMult = duration ? (DURATION_MULT[duration] ?? 1) : 1;
+
+    const combined = attMult * sevMult * durMult;
 
     setResults({
-      low: raw * mult.low * boost,
-      median: raw * mult.median * boost,
-      high: raw * mult.high * boost,
+      low: raw * catMult.low * combined,
+      median: raw * catMult.median * combined,
+      high: raw * catMult.high * combined,
       winRate: WIN_RATES[caseType] ?? 0.25,
       timeline: TIMELINES[caseType] ?? '10–20 months',
       caseLabel: SITS.find(s => s.id === caseType)?.label ?? caseType,
+      breakdown: {
+        baseDamages: raw,
+        severityMult: sevMult,
+        durationMult: durMult,
+        attorneyMult: attMult,
+        categoryMult: catMult,
+      },
     });
   }
 
@@ -306,6 +341,63 @@ export default function CalculatorPage() {
                 Represented plaintiffs statistically achieve higher settlements.
               </p>
             </div>
+
+            {/* Severity */}
+            <div>
+              <label htmlFor="calc-severity" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+                Injury / Harm Severity (optional)
+              </label>
+              <select
+                id="calc-severity"
+                value={severity}
+                onChange={(e) => { setSeverity(e.target.value); setResults(null); }}
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                style={{
+                  height: '48px', borderRadius: '2px',
+                  borderColor: severity === '' ? '#D5D8DC' : '#E8171F',
+                  background: '#FAFBFC', color: severity ? '#212529' : '#455A64',
+                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                }}
+              >
+                <option value="">Select severity...</option>
+                <option value="minor">Minor — temporary, minimal impact</option>
+                <option value="moderate">Moderate — significant but recoverable</option>
+                <option value="severe">Severe — lasting impact, major disruption</option>
+                <option value="catastrophic">Catastrophic — permanent disability or loss</option>
+              </select>
+              <p className="text-[11px] mt-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                Higher severity correlates with larger damages awards.
+              </p>
+            </div>
+
+            {/* Duration of Impact */}
+            <div>
+              <label htmlFor="calc-duration" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+                Duration of Impact (optional)
+              </label>
+              <select
+                id="calc-duration"
+                value={duration}
+                onChange={(e) => { setDuration(e.target.value); setResults(null); }}
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                style={{
+                  height: '48px', borderRadius: '2px',
+                  borderColor: duration === '' ? '#D5D8DC' : '#E8171F',
+                  background: '#FAFBFC', color: duration ? '#212529' : '#455A64',
+                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                }}
+              >
+                <option value="">Select duration...</option>
+                <option value="under6">Under 6 months</option>
+                <option value="6to12">6–12 months</option>
+                <option value="1to3yr">1–3 years</option>
+                <option value="over3yr">Over 3 years</option>
+                <option value="permanent">Permanent / ongoing</option>
+              </select>
+              <p className="text-[11px] mt-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                Longer-lasting impacts generally result in higher settlement values.
+              </p>
+            </div>
           </div>
 
           {/* Calculate & Reset Buttons */}
@@ -483,6 +575,47 @@ export default function CalculatorPage() {
                   <p className="text-[11px]" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>from filing to resolution</p>
                 </div>
               </div>
+            </div>
+
+            {/* Detailed Breakdown */}
+            <div className="mb-6 p-6" style={{ background: '#F8F9FA', border: '1px solid #E5EBF0', borderRadius: '2px' }}>
+              <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                Calculation Breakdown
+              </h3>
+              <table style={{ width: '100%', fontFamily: 'var(--font-body)', fontSize: '13px', borderCollapse: 'collapse' }}>
+                <tbody>
+                  <tr style={{ borderBottom: '1px solid #E5EBF0' }}>
+                    <td style={{ padding: '8px 0', color: '#455A64' }}>Base damages claimed</td>
+                    <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-mono)' }}>{fmt(results.breakdown.baseDamages)}</td>
+                  </tr>
+                  <tr style={{ borderBottom: '1px solid #E5EBF0' }}>
+                    <td style={{ padding: '8px 0', color: '#455A64' }}>Case type multiplier (median)</td>
+                    <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.categoryMult.median.toFixed(2)}</td>
+                  </tr>
+                  {results.breakdown.severityMult !== 1 && (
+                    <tr style={{ borderBottom: '1px solid #E5EBF0' }}>
+                      <td style={{ padding: '8px 0', color: '#455A64' }}>Severity adjustment</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.severityMult > 1 ? '#07874A' : '#CC1019', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.severityMult.toFixed(1)}</td>
+                    </tr>
+                  )}
+                  {results.breakdown.durationMult !== 1 && (
+                    <tr style={{ borderBottom: '1px solid #E5EBF0' }}>
+                      <td style={{ padding: '8px 0', color: '#455A64' }}>Duration adjustment</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.durationMult > 1 ? '#07874A' : '#CC1019', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.durationMult.toFixed(1)}</td>
+                    </tr>
+                  )}
+                  {results.breakdown.attorneyMult !== 1 && (
+                    <tr style={{ borderBottom: '1px solid #E5EBF0' }}>
+                      <td style={{ padding: '8px 0', color: '#455A64' }}>Attorney representation boost</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: '#07874A', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
+                    </tr>
+                  )}
+                  <tr>
+                    <td style={{ padding: '10px 0', color: '#212529', fontWeight: 700 }}>Estimated median settlement</td>
+                    <td style={{ padding: '10px 0', textAlign: 'right', fontWeight: 800, color: '#E8171F', fontFamily: 'var(--font-mono)', fontSize: '16px' }}>{fmt(results.median)}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             {/* Results disclaimer */}
