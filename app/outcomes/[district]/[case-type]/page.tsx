@@ -118,7 +118,7 @@ export default async function OutcomesPage({
             paddingRight: '24px',
             paddingTop: '12px',
             paddingBottom: '12px',
-            borderRadius: '2px',
+            borderRadius: '6px',
             fontWeight: 600,
             color: '#FFFFFF',
             background: '#7C3AED',
@@ -301,7 +301,7 @@ export default async function OutcomesPage({
               background: '#7C3AED',
               color: '#FFFFFF',
               padding: '6px 12px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontSize: '11px',
               fontWeight: 700,
               letterSpacing: '0.5px',
@@ -345,7 +345,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '20px',
             }}>
               <div style={{
@@ -367,7 +367,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '20px',
             }}>
               <div style={{
@@ -389,7 +389,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '20px',
             }}>
               <div style={{
@@ -411,7 +411,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '20px',
             }}>
               <div style={{
@@ -443,7 +443,7 @@ export default async function OutcomesPage({
           <div style={{
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '2px',
+            borderRadius: '6px',
             padding: 'clamp(20px, 4vw, 32px)',
           }}>
             <h2 style={{
@@ -485,7 +485,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     height: '12px',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     background: '#E5E7EB',
                     overflow: 'hidden',
                   }}>
@@ -539,7 +539,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#F7F8FA',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '20px',
             }}>
               <div style={{
@@ -599,7 +599,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: '#FFFFFF',
                 border: `1px solid ${getComparisonColor(winRateDiff)}`,
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -615,7 +615,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#F7F8FA',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '20px',
             }}>
               <div style={{
@@ -675,7 +675,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: '#FFFFFF',
                 border: `1px solid ${getComparisonColor(settleRateDiff)}`,
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -691,7 +691,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#F7F8FA',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '20px',
             }}>
               <div style={{
@@ -751,7 +751,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: '#FFFFFF',
                 border: `1px solid ${getComparisonColor(-durationDiff)}`,
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -796,7 +796,7 @@ export default async function OutcomesPage({
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   padding: '20px',
                   textDecoration: 'none',
                   display: 'block',
@@ -866,7 +866,7 @@ export default async function OutcomesPage({
                   background: '#6D28D9',
                   color: '#FFFFFF',
                   padding: '16px 20px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
                   fontSize: '14px',
                   fontWeight: 600,
@@ -909,7 +909,7 @@ export default async function OutcomesPage({
             <Link href={`/cases/${category.id}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '24px',
               textDecoration: 'none',
               display: 'block',
@@ -939,7 +939,7 @@ export default async function OutcomesPage({
             <Link href={`/nos/${option.nos}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '24px',
               textDecoration: 'none',
               display: 'block',

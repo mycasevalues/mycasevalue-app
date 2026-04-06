@@ -40,7 +40,7 @@ console.log(data.prediction.predictedWinRate);    // e.g. 67
 console.log(data.prediction.settlementRange);      // { low, median, high }`;
 
 const methodColors: Record<string, string> = {
-  GET: '#07874A',
+  GET: '#15803D',
   POST: '#6D28D9',
   PUT: '#B86E00',
   DELETE: '#7C3AED',
@@ -61,7 +61,7 @@ export default function ApiAccessPage() {
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, select:focus { border-color: #7C3AED !important; outline: none; box-shadow: 0 0 0 2px rgba(232,23,31,0.08); }
+        input:focus, select:focus { border-color: #7C3AED !important; outline: none; box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
@@ -72,7 +72,7 @@ export default function ApiAccessPage() {
           </Link>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '2px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '6px', background: 'rgba(124, 58, 237, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2">
                   <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" /><path d="M10 12l2 2 4-4" />
                 </svg>
@@ -81,7 +81,7 @@ export default function ApiAccessPage() {
                 <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>API Access</h1>
               </div>
             </div>
-            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '2px', border: '1px solid #7C3AED' }}>
+            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '6px', border: '1px solid #7C3AED' }}>
               <span className="font-display" style={{ fontSize: '12px', fontWeight: 700, color: '#7C3AED', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Developer Tools</span>
             </div>
           </div>
@@ -91,13 +91,13 @@ export default function ApiAccessPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 20px' }}>
         {/* API Key */}
-        <div style={{ background: '#FFFFFF', borderRadius: '2px', padding: '24px', border: '1px solid #E5E7EB', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: '6px', padding: '24px', border: '1px solid #E5E7EB', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
           <h2 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Your API Key</h2>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <div style={{ flex: 1, padding: '12px 14px', backgroundColor: '#F8F9FA', borderRadius: '2px', border: '1px solid #E5E7EB', fontFamily: 'var(--font-mono)', fontSize: '14px', color: '#212529', letterSpacing: '0.5px' }}>
+            <div style={{ flex: 1, padding: '12px 14px', backgroundColor: '#F8F9FA', borderRadius: '6px', border: '1px solid #E5E7EB', fontFamily: 'var(--font-mono)', fontSize: '14px', color: '#212529', letterSpacing: '0.5px' }}>
               {apiKey}
             </div>
-            <button onClick={copyKey} style={{ padding: '12px 20px', backgroundColor: copied ? '#07CA6B' : '#7C3AED', color: '#FFFFFF', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 700, cursor: 'pointer', transition: 'background-color 0.2s', minWidth: '80px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <button onClick={copyKey} style={{ padding: '12px 20px', backgroundColor: copied ? '#15803D' : '#7C3AED', color: '#FFFFFF', border: 'none', borderRadius: '6px', fontSize: '12px', fontWeight: 700, cursor: 'pointer', transition: 'background-color 0.2s', minWidth: '80px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               {copied ? 'Copied!' : 'Copy'}
             </button>
           </div>
@@ -111,7 +111,7 @@ export default function ApiAccessPage() {
             { label: 'This Month', value: '1,234', limit: '/ 50,000' },
             { label: 'Rate Limit', value: '60', limit: 'req/min' },
           ].map((s) => (
-            <div key={s.label} style={{ background: '#FFFFFF', borderRadius: '2px', padding: '20px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div key={s.label} style={{ background: '#FFFFFF', borderRadius: '6px', padding: '20px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <p style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
               <p style={{ margin: 0 }}>
                 <span className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: '#212529' }}>{s.value}</span>
@@ -122,14 +122,14 @@ export default function ApiAccessPage() {
         </div>
 
         {/* Endpoints */}
-        <div style={{ background: '#FFFFFF', borderRadius: '2px', border: '1px solid #E5E7EB', overflow: 'hidden', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: '6px', border: '1px solid #E5E7EB', overflow: 'hidden', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
           <div style={{ padding: '20px 24px', borderBottom: '1px solid #E5E7EB' }}>
             <h2 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: 0 }}>Available Endpoints</h2>
           </div>
           {API_ENDPOINTS.map((ep, i) => (
             <div key={i} style={{ padding: '14px 24px', borderBottom: i < API_ENDPOINTS.length - 1 ? '1px solid #E5E7EB' : 'none' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                <span className="font-mono" style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '2px', backgroundColor: `${methodColors[ep.method]}20`, color: methodColors[ep.method], minWidth: '42px', textAlign: 'center' }}>{ep.method}</span>
+                <span className="font-mono" style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '6px', backgroundColor: `${methodColors[ep.method]}20`, color: methodColors[ep.method], minWidth: '42px', textAlign: 'center' }}>{ep.method}</span>
                 <code style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: '#212529', wordBreak: 'break-all' }}>{ep.path}</code>
               </div>
               <p style={{ fontSize: '12px', color: '#4B5563', margin: '4px 0 0 54px' }}>{ep.desc}</p>
@@ -138,10 +138,10 @@ export default function ApiAccessPage() {
         </div>
 
         {/* Code Example */}
-        <div style={{ background: '#FFFFFF', borderRadius: '2px', border: '1px solid #E5E7EB', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: '6px', border: '1px solid #E5E7EB', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
           <div style={{ padding: '16px 24px', borderBottom: '1px solid #E5E7EB', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h2 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: 0 }}>Quick Start Example</h2>
-            <span style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, padding: '3px 10px', borderRadius: '2px', backgroundColor: '#F8F9FA' }}>JavaScript</span>
+            <span style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, padding: '3px 10px', borderRadius: '6px', backgroundColor: '#F8F9FA' }}>JavaScript</span>
           </div>
           <pre style={{ margin: 0, padding: '20px 24px', backgroundColor: 'rgba(0,0,0,0.40)', color: '#D4D4D4', fontSize: '13px', lineHeight: 1.6, fontFamily: 'var(--font-mono)', overflowX: 'auto' }}>
             {CODE_EXAMPLE}

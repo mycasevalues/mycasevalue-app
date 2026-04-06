@@ -113,7 +113,7 @@ export default function SignUpPage() {
             maxWidth: '440px',
             backgroundColor: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '2px',
+            borderRadius: '6px',
             padding: '32px',
             textAlign: 'center',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -123,7 +123,7 @@ export default function SignUpPage() {
             style={{
               width: '56px',
               height: '56px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               backgroundColor: 'rgba(0,105,151,0.08)',
               display: 'flex',
               alignItems: 'center',
@@ -164,7 +164,7 @@ export default function SignUpPage() {
               padding: '12px 24px',
               backgroundColor: '#7C3AED',
               color: '#FFFFFF',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
               fontWeight: 600,
@@ -208,7 +208,7 @@ export default function SignUpPage() {
           box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
         }
         .auth-btn:hover:not(:disabled) {
-          background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%) !important;
+          background: #6D28D9 !important;
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25) !important;
         }
@@ -216,7 +216,7 @@ export default function SignUpPage() {
           color: #6D28D9 !important;
         }
         .feature-card {
-          border-radius: 2px;
+          border-radius: 6px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
           padding: 20px;
@@ -232,7 +232,7 @@ export default function SignUpPage() {
           gap: 6px;
           padding: 8px 12px;
           background: #F7F8FA;
-          border-radius: 2px;
+          border-radius: 6px;
           border: 1px solid #E5E7EB;
           font-size: 12px;
           color: #4B5563;
@@ -243,7 +243,7 @@ export default function SignUpPage() {
       {/* Free Launch Banner */}
       <div
         style={{
-          backgroundColor: '#07874A',
+          backgroundColor: '#15803D',
           color: '#FFFFFF',
           padding: '12px 24px',
           textAlign: 'center',
@@ -347,7 +347,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
@@ -386,7 +386,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
@@ -422,7 +422,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
@@ -472,7 +472,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
@@ -522,7 +522,7 @@ export default function SignUpPage() {
                     height: '48px',
                     padding: '12px 16px',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
@@ -600,7 +600,7 @@ export default function SignUpPage() {
                     margin: '0 0 16px 0',
                     padding: '10px 12px',
                     backgroundColor: 'rgba(124, 58, 237, 0.06)',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     border: '1px solid rgba(124, 58, 237, 0.2)',
                   }}
                 >
@@ -617,7 +617,7 @@ export default function SignUpPage() {
                     margin: '0 0 16px 0',
                     padding: '10px 12px',
                     backgroundColor: 'rgba(124, 58, 237, 0.06)',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     border: '1px solid rgba(124, 58, 237, 0.2)',
                   }}
                 >
@@ -644,10 +644,10 @@ export default function SignUpPage() {
                   width: '100%',
                   height: '48px',
                   padding: '0',
-                  background: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
+                  background: '#7C3AED',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '15px',
                   fontWeight: 700,
@@ -723,7 +723,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(27, 58, 92, 0.08)',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -766,7 +766,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(124, 58, 237, 0.08)',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -808,15 +808,15 @@ export default function SignUpPage() {
                   style={{
                     width: '40px',
                     height: '40px',
-                    backgroundColor: 'rgba(7, 135, 74, 0.08)',
-                    borderRadius: '2px',
+                    backgroundColor: 'rgba(21, 128, 61, 0.08)',
+                    borderRadius: '6px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#07874A" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2">
                     <path d="M12 2v20m10-10H2" />
                     <circle cx="12" cy="12" r="10" />
                   </svg>
@@ -852,7 +852,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(217, 119, 6, 0.08)',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -895,7 +895,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(0, 110, 187, 0.08)',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -939,7 +939,7 @@ export default function SignUpPage() {
                     width: '40px',
                     height: '40px',
                     backgroundColor: 'rgba(124, 58, 237, 0.08)',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

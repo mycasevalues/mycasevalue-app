@@ -139,11 +139,11 @@ export default function TrendsPage() {
       <style>{`
         a.lex-link { color: #6D28D9; text-decoration: none; }
         a.lex-link:hover { text-decoration: underline; }
-        .lex-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 2px; }
+        .lex-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 6px; }
         .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .lex-btn-primary { background: #7C3AED; color: white; border: none; border-radius: 2px; font-weight: 600; cursor: pointer; }
-        .lex-btn-primary:hover { background: #C41219; }
-        .lex-badge { background: rgba(232,23,31,0.1); color: #7C3AED; border-radius: 2px; }
+        .lex-btn-primary { background: #7C3AED; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        .lex-btn-primary:hover { background: #6D28D9; }
+        .lex-badge { background: rgba(124, 58, 237, 0.1); color: #7C3AED; border-radius: 6px; }
         h1 { font-family: var(--font-display); }
         h2 { font-family: var(--font-display); }
       `}</style>
@@ -176,7 +176,7 @@ export default function TrendsPage() {
             style={{
               background: '#7C3AED',
               color: '#FFFFFF',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -283,7 +283,7 @@ export default function TrendsPage() {
                       <span>{t.months}mo avg</span>
                     </div>
                   </div>
-                  <div className="h-2 overflow-hidden" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <div className="h-2 overflow-hidden" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
                     <div
                       className="h-full"
                       style={{
@@ -325,7 +325,7 @@ export default function TrendsPage() {
                       {c.total.toLocaleString()} cases
                     </span>
                   </div>
-                  <div className="h-2 mb-2 overflow-hidden" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <div className="h-2 mb-2 overflow-hidden" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
                     <div className="h-full" style={{ width: `${pct}%`, background: c.color }} />
                   </div>
                   <div className="text-[11px]" style={{ color: '#4B5563' }}>
@@ -366,7 +366,7 @@ export default function TrendsPage() {
                           {circuit.avgWinRate}%
                         </span>
                       </div>
-                      <div className="h-2 mb-3 overflow-hidden" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                      <div className="h-2 mb-3 overflow-hidden" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
                         <div
                           className="h-full"
                           style={{
@@ -663,7 +663,7 @@ export default function TrendsPage() {
             return (
               <div className="space-y-3">
                 {categoryWinRates.map((c) => {
-                  let barColor = '#07874A';
+                  let barColor = '#15803D';
                   let bgColor = 'rgba(7,135,74,0.15)';
                   if (c.avgWr < 35) {
                     barColor = '#7C3AED';
@@ -689,7 +689,7 @@ export default function TrendsPage() {
                           {c.avgWr}%
                         </span>
                       </div>
-                      <div className="h-2 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '2px' }}>
+                      <div className="h-2 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '6px' }}>
                         <div
                           className="h-full"
                           style={{
@@ -729,14 +729,14 @@ export default function TrendsPage() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-semibold lex-link">{t.label}</span>
-                      <span className="text-sm font-bold" style={{ color: '#07874A' }}>{t.months}mo</span>
+                      <span className="text-sm font-bold" style={{ color: '#15803D' }}>{t.months}mo</span>
                     </div>
-                    <div className="h-1.5 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '2px' }}>
+                    <div className="h-1.5 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '6px' }}>
                       <div
                         className="h-full"
                         style={{
                           width: `${(t.months / 60) * 100}%`,
-                          background: '#07874A',
+                          background: '#15803D',
                         }}
                       />
                     </div>
@@ -760,7 +760,7 @@ export default function TrendsPage() {
                       <span className="text-sm font-semibold lex-link">{t.label}</span>
                       <span className="text-sm font-bold" style={{ color: '#7C3AED' }}>{t.months}mo</span>
                     </div>
-                    <div className="h-1.5 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '2px' }}>
+                    <div className="h-1.5 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '6px' }}>
                       <div
                         className="h-full"
                         style={{
@@ -818,7 +818,7 @@ export default function TrendsPage() {
                         {t.settlementPct}%
                       </span>
                     </div>
-                    <div className="h-1.5 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '2px' }}>
+                    <div className="h-1.5 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '6px' }}>
                       <div
                         className="h-full"
                         style={{
@@ -974,7 +974,7 @@ export default function TrendsPage() {
                 border: '1px solid #E5E7EB',
                 color: '#212529',
                 background: '#FFFFFF',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 textDecoration: 'none',
               }}
             >

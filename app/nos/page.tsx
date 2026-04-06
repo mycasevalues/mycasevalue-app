@@ -60,7 +60,7 @@ export default function NOSIndexPage() {
         .nos-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 24px;
           transition: all 0.2s ease;
           text-decoration: none;
@@ -158,7 +158,7 @@ export default function NOSIndexPage() {
                 background: '#7C3AED',
                 color: '#FFFFFF',
                 padding: '6px 12px',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 fontSize: '12px',
                 fontWeight: '600',
                 whiteSpace: 'nowrap',
@@ -274,7 +274,7 @@ export default function NOSIndexPage() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '32px',
           }}
           >

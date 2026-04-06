@@ -498,7 +498,7 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#FFFFFF',
               color: '#212529',
               border: '1px solid #E5E7EB'
@@ -530,7 +530,7 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#FFFFFF',
               color: '#212529',
               border: '1px solid #E5E7EB'

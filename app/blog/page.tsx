@@ -58,7 +58,7 @@ export default function BlogPage() {
         .blog-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           transition: all 0.3s ease;
           position: relative;
         }
@@ -71,7 +71,7 @@ export default function BlogPage() {
           right: 0;
           height: 0;
           background: #7C3AED;
-          border-radius: 2px 4px 0 0;
+          border-radius: 6px 4px 0 0;
           transition: height 0.3s ease;
         }
 
@@ -93,7 +93,7 @@ export default function BlogPage() {
         .featured-post {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
         }
 
         .featured-image-placeholder {
@@ -103,14 +103,14 @@ export default function BlogPage() {
           justify-content: center;
           color: #999;
           font-size: 14px;
-          border-radius: 2px;
+          border-radius: 6px;
         }
 
         .category-badge {
           background: #FFF3F4;
           color: #7C3AED;
           padding: 4px 10px;
-          border-radius: 2px;
+          border-radius: 6px;
           font-size: 12px;
           font-weight: 600;
           display: inline-block;
@@ -119,7 +119,7 @@ export default function BlogPage() {
         .sidebar-filter {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 24px;
         }
 
@@ -139,7 +139,7 @@ export default function BlogPage() {
         .featured-research-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 24px;
           transition: all 0.3s ease;
         }
@@ -173,7 +173,7 @@ export default function BlogPage() {
         .related-tools-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 24px;
           text-decoration: none;
           display: flex;
@@ -215,7 +215,7 @@ export default function BlogPage() {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
             <span style={{ color: '#FFFFFF' }}>Blog</span>
           </div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '2px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#7C3AED' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '6px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#7C3AED' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             BLOG
           </div>
@@ -266,7 +266,7 @@ export default function BlogPage() {
                     style={{
                       background: '#7C3AED',
                       color: '#FFFFFF',
-                      borderRadius: '2px',
+                      borderRadius: '6px',
                     }}
                   >
                     Read Article
@@ -494,7 +494,7 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <section className="text-center p-12 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Want deeper analysis? Try Attorney Mode
           </h2>
@@ -504,7 +504,7 @@ export default function BlogPage() {
           <a
             href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold transition-all"
-            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}
+            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '6px' }}
           >
             Explore Attorney Mode
             <ArrowRightIcon size={16} />

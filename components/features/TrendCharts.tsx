@@ -55,7 +55,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
         style={{
           background: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
           padding: '12px 16px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
@@ -100,7 +100,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
         }}
       >
         <h3
@@ -146,7 +146,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
         }}
       >
         <h3
@@ -199,7 +199,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
         }}
       >
         <h3
@@ -236,7 +236,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
         }}
       >
         <h3
@@ -282,7 +282,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
         }}
       >
         <h3
@@ -315,7 +315,7 @@ export default function TrendCharts() {
                       style={{
                         background: '#FFFFFF',
                         border: '1px solid #E5E7EB',
-                        borderRadius: '2px',
+                        borderRadius: '6px',
                         padding: '12px 16px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
@@ -350,7 +350,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
         }}
       >
         <h3
@@ -383,7 +383,7 @@ export default function TrendCharts() {
                       style={{
                         background: '#FFFFFF',
                         border: '1px solid #E5E7EB',
-                        borderRadius: '2px',
+                        borderRadius: '6px',
                         padding: '12px 16px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
@@ -415,7 +415,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
         }}
       >
         <h3

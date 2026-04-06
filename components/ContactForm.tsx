@@ -14,10 +14,10 @@ export default function ContactForm() {
     return (
       <div style={{
         padding: '48px 32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
-        borderRadius: '2px', textAlign: 'center',
+        borderRadius: '6px', textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#07874A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
@@ -34,7 +34,7 @@ export default function ContactForm() {
   const inputStyle = {
     width: '100%', padding: '12px 14px', fontSize: '14px',
     fontFamily: 'var(--font-body)', color: '#212529',
-    border: '1px solid #E5E7EB', borderRadius: '2px',
+    border: '1px solid #E5E7EB', borderRadius: '6px',
     background: '#FFFFFF', outline: 'none',
     transition: 'border-color 200ms',
     height: '48px',
@@ -54,7 +54,7 @@ export default function ContactForm() {
         .contact-submit {
           display: block; padding: 0 32px; height: 48px;
           background: #7C3AED; color: #FFFFFF; border: none;
-          border-radius: 2px; font-size: 15px; font-weight: 600;
+          border-radius: 6px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-body); width: 100%;
         }
@@ -62,7 +62,7 @@ export default function ContactForm() {
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
-        borderRadius: '2px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        borderRadius: '6px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex', flexDirection: 'column', gap: '20px',
       }}>
         <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>

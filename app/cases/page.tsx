@@ -81,7 +81,7 @@ function getTopWinRateCaseTypes(): Array<{ nos: string; label: string; wr: numbe
 
 // Get color for win rate
 function getWinRateColor(wr: number): string {
-  if (wr >= 50) return '#07874A';
+  if (wr >= 50) return '#15803D';
   if (wr >= 35) return '#D97706';
   return '#7C3AED';
 }
@@ -203,7 +203,7 @@ export default function CasesIndexPage() {
               padding: '12px 16px 12px 48px',
               fontSize: '15px',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#FFFFFF',
               color: '#212529',
               fontFamily: 'var(--font-body)',
@@ -213,7 +213,7 @@ export default function CasesIndexPage() {
             }}
             onFocus={(e) => {
               (e.target as HTMLInputElement).style.borderColor = '#7C3AED';
-              (e.target as HTMLInputElement).style.boxShadow = '0 0 0 3px rgba(232,23,31,0.08)';
+              (e.target as HTMLInputElement).style.boxShadow = '0 0 0 3px rgba(124, 58, 237, 0.08)';
             }}
             onBlur={(e) => {
               (e.target as HTMLInputElement).style.borderColor = '#E5E7EB';
@@ -226,7 +226,7 @@ export default function CasesIndexPage() {
           .cat-card {
             background: #FFFFFF;
             border: 1px solid #E5E7EB;
-            border-radius: 2px;
+            border-radius: 6px;
             padding: 32px;
             transition: all 0.3s ease;
             height: 100%;
@@ -258,7 +258,7 @@ export default function CasesIndexPage() {
           .stat-bar {
             background: #FFFFFF;
             border: 1px solid #E5E7EB;
-            border-radius: 2px;
+            border-radius: 6px;
             height: 8px;
             width: 100%;
             overflow: hidden;
@@ -272,7 +272,7 @@ export default function CasesIndexPage() {
           .quick-link-card {
             background: #FFFFFF;
             border: 1px solid #E5E7EB;
-            border-radius: 2px;
+            border-radius: 6px;
             padding: 20px;
             text-align: center;
             transition: all 0.2s ease;
@@ -335,7 +335,7 @@ export default function CasesIndexPage() {
                           <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Total Cases</div>
                         </div>
                         <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 700, color: catStats.avgWinRate >= 50 ? '#07874A' : '#7C3AED' }}>{catStats.avgWinRate}%</div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 700, color: catStats.avgWinRate >= 50 ? '#15803D' : '#7C3AED' }}>{catStats.avgWinRate}%</div>
                           <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Avg Win Rate</div>
                         </div>
                         <div>
@@ -369,7 +369,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gap: 12 }}>
               {topFiledCases.map((caseType, idx) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '2px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                  <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '6px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 700, color: '#1B3A5C' }}>
                       #{idx + 1}
                     </div>
@@ -403,7 +403,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
               {topWinRateCases.map((caseType) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '2px', padding: 20, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                  <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '6px', padding: 20, height: '100%', transition: 'all 0.2s ease', cursor: 'pointer' }}>
                     <div style={{ fontSize: 14, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px', fontWeight: 500 }}>
                       {caseType.categoryLabel}
                     </div>
@@ -446,7 +446,7 @@ export default function CasesIndexPage() {
 
               <Link href="/calculator" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#07874A" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"></rect>
                     <path d="M8 6h8M8 10h8M8 14h8M8 18h8"></path>
                   </svg>
@@ -499,7 +499,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: '#4B5563', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#7C3AED', color: '#FFFFFF', borderRadius: '6px', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
           </a>
@@ -507,7 +507,7 @@ export default function CasesIndexPage() {
       </div>
 
       {/* Footer */}
-      <div style={{ background: '#F5F5F5', color: '#4B5563', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid #E5E7EB' }}>
+      <div style={{ background: '#F7F8FA', color: '#4B5563', padding: '40px 20px', fontSize: 14, lineHeight: 1.6, borderTop: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: 0 }}>
             <strong>Legal Disclaimer:</strong> This data is for research purposes only and is not legal advice. MyCaseValue provides historical federal court outcome data from public records. This does not constitute a prediction of any case outcome. Consult a qualified attorney for legal advice. © {new Date().getFullYear()} MyCaseValue LLC.

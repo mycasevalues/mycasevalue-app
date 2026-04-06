@@ -162,7 +162,7 @@ export default function AboutPage() {
 
         .source-card {
           padding: 1.5rem;
-          border-radius: 2px;
+          border-radius: 6px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
           transition: all 0.2s ease;
@@ -177,12 +177,12 @@ export default function AboutPage() {
         .source-icon {
           width: 48px;
           height: 48px;
-          border-radius: 2px;
+          border-radius: 6px;
           display: flex;
           align-items: center;
           justify-content: center;
           margin-bottom: 1rem;
-          background: #F5F5F5;
+          background: #F7F8FA;
         }
 
         .source-title {
@@ -205,7 +205,7 @@ export default function AboutPage() {
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 1.5rem;
           padding: 2rem;
-          border-radius: 2px;
+          border-radius: 6px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
@@ -241,7 +241,7 @@ export default function AboutPage() {
 
         .team-box {
           padding: 2rem;
-          border-radius: 2px;
+          border-radius: 6px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
@@ -275,7 +275,7 @@ export default function AboutPage() {
         .cta-section {
           text-align: center;
           padding: 3rem 2rem;
-          border-radius: 2px;
+          border-radius: 6px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
@@ -305,7 +305,7 @@ export default function AboutPage() {
           gap: 0.5rem;
           height: 48px;
           padding: 0 2rem;
-          border-radius: 2px;
+          border-radius: 6px;
           font-family: var(--font-display);
           font-size: 0.875rem;
           font-weight: 700;
@@ -354,7 +354,7 @@ export default function AboutPage() {
 
         .number-stat-card {
           padding: 1.5rem;
-          border-radius: 2px;
+          border-radius: 6px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
           text-align: center;
@@ -393,7 +393,7 @@ export default function AboutPage() {
 
         .differentiator-card {
           padding: 1.5rem;
-          border-radius: 2px;
+          border-radius: 6px;
           border-top: 3px solid #7C3AED;
           border-left: 1px solid #E5E7EB;
           border-right: 1px solid #E5E7EB;
@@ -431,7 +431,7 @@ export default function AboutPage() {
 
         .tool-card {
           padding: 1.25rem;
-          border-radius: 2px;
+          border-radius: 6px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
           transition: all 0.2s ease;
@@ -480,7 +480,7 @@ export default function AboutPage() {
         .contact-section {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 2rem;
         }
 
@@ -692,7 +692,7 @@ export default function AboutPage() {
                   name: 'CourtListener',
                   description: 'Aggregates federal judicial opinions, oral arguments, and PACER filings for comprehensive case data.',
                   icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#07874A" strokeWidth="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2">
                       <path d="M3 12L9 6l6 6 6-6M3 12l6-6 6 6 6-6v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V12z"/>
                     </svg>
                   ),

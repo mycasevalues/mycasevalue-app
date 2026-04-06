@@ -15,7 +15,7 @@ const SkeletonResultCard = () => (
     marginBottom: '12px',
     background: '#FFFFFF',
     border: '1px solid #E5E7EB',
-    borderRadius: '2px',
+    borderRadius: '6px',
     animation: 'shimmer 2s infinite',
   }}>
     <div style={{
@@ -29,7 +29,7 @@ const SkeletonResultCard = () => (
         height: '20px',
         width: '60%',
         background: '#E8EAED',
-        borderRadius: '2px',
+        borderRadius: '6px',
         flex: '1 1 auto',
         minWidth: '150px',
       }} />
@@ -37,7 +37,7 @@ const SkeletonResultCard = () => (
         height: '20px',
         width: '20%',
         background: '#E8EAED',
-        borderRadius: '2px',
+        borderRadius: '6px',
         minWidth: '50px',
       }} />
     </div>
@@ -45,7 +45,7 @@ const SkeletonResultCard = () => (
       height: '14px',
       width: '40%',
       background: '#E8EAED',
-      borderRadius: '2px',
+      borderRadius: '6px',
     }} />
   </div>
 );
@@ -201,7 +201,7 @@ export default function SearchPage() {
       {/* Dark Navy Header Banner */}
       <div className="search-header" style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '2px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '6px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#7C3AED', flexShrink: 0 }}>
               <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
@@ -209,7 +209,7 @@ export default function SearchPage() {
               Search
             </span>
           </div>
-          <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 800, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+          <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
             What happened to you?
           </h1>
           <p className="search-header" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -240,7 +240,7 @@ export default function SearchPage() {
               display: 'block', width: '100%', textAlign: 'left',
               padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === null ? 700 : 400,
               color: selectedCategory === null ? '#7C3AED' : '#4B5563',
-              background: selectedCategory === null ? 'rgba(232,23,31,0.06)' : 'transparent',
+              background: selectedCategory === null ? 'rgba(124, 58, 237, 0.06)' : 'transparent',
               border: 'none', borderLeft: selectedCategory === null ? '3px solid #7C3AED' : '3px solid transparent',
               cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
               marginBottom: '2px',
@@ -257,14 +257,14 @@ export default function SearchPage() {
                 width: '100%', textAlign: 'left',
                 padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === cat.id ? 700 : 400,
                 color: selectedCategory === cat.id ? '#7C3AED' : '#4B5563',
-                background: selectedCategory === cat.id ? 'rgba(232,23,31,0.06)' : 'transparent',
+                background: selectedCategory === cat.id ? 'rgba(124, 58, 237, 0.06)' : 'transparent',
                 border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid #7C3AED' : '3px solid transparent',
                 cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
                 marginBottom: '2px',
               }}
             >
               <span>{cat.label}</span>
-              <span style={{ fontSize: '11px', color: '#999', fontFamily: 'var(--font-mono)' }}>{cat.count}</span>
+              <span style={{ fontSize: '11px', color: '#9CA3AF', fontFamily: 'var(--font-mono)' }}>{cat.count}</span>
             </button>
           ))}
         </aside>
@@ -290,7 +290,7 @@ export default function SearchPage() {
                   padding: '8px 16px',
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   fontSize: '13px',
                   color: '#6D28D9',
                   textDecoration: 'none',
@@ -336,7 +336,7 @@ export default function SearchPage() {
               paddingRight: '16px',
               fontSize: '16px',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#FFFFFF',
               color: '#212529',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -366,14 +366,14 @@ export default function SearchPage() {
             background: '#7C3AED',
             color: '#FFFFFF',
             border: 'none',
-            borderRadius: '2px',
+            borderRadius: '6px',
             cursor: 'pointer',
             fontFamily: 'var(--font-body)',
             transition: 'all 150ms ease-out',
             boxShadow: '0 2px 4px rgba(124, 58, 237, 0.2)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#C41119';
+            e.currentTarget.style.background = '#6D28D9';
             e.currentTarget.style.boxShadow = '0 4px 12px rgba(124, 58, 237, 0.25)';
             e.currentTarget.style.transform = 'translateY(-1px)';
           }}
@@ -389,7 +389,7 @@ export default function SearchPage() {
       </div>
 
       {/* Search Tips Section */}
-      <div style={{ marginBottom: '24px', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '2px', overflow: 'hidden' }}>
+      <div style={{ marginBottom: '24px', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '6px', overflow: 'hidden' }}>
         <button
           onClick={() => setTipsExpanded(!tipsExpanded)}
           style={{
@@ -477,7 +477,7 @@ export default function SearchPage() {
             marginBottom: '12px',
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '2px',
+            borderRadius: '6px',
             textDecoration: 'none',
             transition: 'all 150ms ease-out',
             cursor: 'pointer',
@@ -499,9 +499,9 @@ export default function SearchPage() {
               fontSize: '12px',
               fontWeight: '600',
               color: '#7C3AED',
-              background: '#FEE9EB',
+              background: 'rgba(124, 58, 237, 0.08)',
               padding: '4px 10px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               border: 'none',
               fontFamily: 'var(--font-body)',
               whiteSpace: 'nowrap',
@@ -520,7 +520,7 @@ export default function SearchPage() {
                 {rd.wr != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Win Rate </span>
-                    <strong style={{ color: rd.wr >= 50 ? '#07874A' : '#7C3AED' }}>{rd.wr}%</strong>
+                    <strong style={{ color: rd.wr >= 50 ? '#15803D' : '#7C3AED' }}>{rd.wr}%</strong>
                   </span>
                 )}
                 {rd.sp != null && (
@@ -567,7 +567,7 @@ export default function SearchPage() {
                     padding: '8px 16px',
                     background: '#FFFFFF',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     fontSize: '13px',
                     color: '#6D28D9',
                     cursor: 'pointer',
@@ -631,7 +631,7 @@ export default function SearchPage() {
                       <span style={{ fontSize: 14, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)' }}>{item.label}</span>
                     </div>
                     <div style={{ display: 'flex', gap: 16, fontSize: 12, fontFamily: 'var(--font-mono)', color: '#4B5563', flexShrink: 0 }}>
-                      <span style={{ color: item.wr >= 50 ? '#07874A' : item.wr >= 35 ? '#D97706' : '#7C3AED', fontWeight: 700 }}>{item.wr}%</span>
+                      <span style={{ color: item.wr >= 50 ? '#15803D' : item.wr >= 35 ? '#D97706' : '#7C3AED', fontWeight: 700 }}>{item.wr}%</span>
                       <span>{item.total.toLocaleString()}</span>
                       <span>{item.mo}mo</span>
                       {item.rngMd > 0 && <span style={{ color: '#7C3AED', fontWeight: 600 }}>${item.rngMd}K</span>}
@@ -677,11 +677,11 @@ export default function SearchPage() {
                     <div style={{ fontSize: 14, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>{cat.label}</div>
                     <div style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 8 }}>{cat.opts.length} case types</div>
                     <div style={{ display: 'flex', gap: 12, fontSize: 11, fontFamily: 'var(--font-mono)' }}>
-                      <span style={{ color: avgWr >= 50 ? '#07874A' : avgWr >= 35 ? '#D97706' : '#7C3AED', fontWeight: 700 }}>{avgWr}% win</span>
+                      <span style={{ color: avgWr >= 50 ? '#15803D' : avgWr >= 35 ? '#D97706' : '#7C3AED', fontWeight: 700 }}>{avgWr}% win</span>
                       <span style={{ color: '#4B5563' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
                     </div>
                     <div style={{ height: 3, background: '#F0F3F5', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
-                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#07874A' : avgWr >= 35 ? '#D97706' : '#7C3AED', borderRadius: 2 }} />
+                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#15803D' : avgWr >= 35 ? '#D97706' : '#7C3AED', borderRadius: 2 }} />
                     </div>
                   </Link>
                 );
@@ -724,7 +724,7 @@ export default function SearchPage() {
 
                 const highlights = [
                   { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#7C3AED' },
-                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#07874A' },
+                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#15803D' },
                   { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#0369A1' },
                   { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `$${highestRecovery.rngMd}K median` : 'N/A', color: '#7C3AED' },
                 ];
@@ -736,7 +736,7 @@ export default function SearchPage() {
                       padding: '16px',
                       background: '#FFFFFF',
                       border: '1px solid #E5E7EB',
-                      borderRadius: '2px',
+                      borderRadius: '6px',
                       transition: 'all 0.15s ease',
                     }}
                     onMouseEnter={(e) => {
@@ -795,7 +795,7 @@ export default function SearchPage() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = '#7C3AED';
                     e.currentTarget.style.color = '#7C3AED';
-                    e.currentTarget.style.background = '#FEE9EB';
+                    e.currentTarget.style.background = 'rgba(124, 58, 237, 0.08)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = '#E5E7EB';

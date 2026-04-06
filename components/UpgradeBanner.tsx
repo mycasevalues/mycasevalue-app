@@ -53,7 +53,7 @@ export default function UpgradeBanner() {
           height: 48px;
           background: #7C3AED;
           color: #FFFFFF;
-          border-radius: 2px;
+          border-radius: 6px;
           text-transform: uppercase;
           font-weight: 700;
           font-size: 13px;
@@ -77,7 +77,7 @@ export default function UpgradeBanner() {
           background: transparent;
           color: #FFFFFF;
           border: 1px solid rgba(255,255,255,0.3);
-          border-radius: 2px;
+          border-radius: 6px;
           text-transform: uppercase;
           font-weight: 600;
           font-size: 13px;
@@ -98,9 +98,9 @@ export default function UpgradeBanner() {
           <div>
             <div style={{
               display: 'inline-flex', alignItems: 'center',
-              background: 'rgba(232,23,31,0.2)', color: '#7C3AED',
+              background: 'rgba(124, 58, 237, 0.2)', color: '#7C3AED',
               fontSize: '11px', fontWeight: 700, textTransform: 'uppercase',
-              padding: '6px 12px', borderRadius: '2px', marginBottom: '16px',
+              padding: '6px 12px', borderRadius: '6px', marginBottom: '16px',
               letterSpacing: '0.08em',
             }}>
               NEW
@@ -150,7 +150,7 @@ export default function UpgradeBanner() {
           {/* Right Side — Prediction Card Mockup */}
           <div>
             <div style={{
-              background: '#FFFFFF', borderRadius: '2px', padding: '32px',
+              background: '#FFFFFF', borderRadius: '6px', padding: '32px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
             }}>
               <div style={{ fontSize: '14px', fontWeight: 700, color: '#212529', marginBottom: '20px', fontFamily: 'var(--font-display)' }}>

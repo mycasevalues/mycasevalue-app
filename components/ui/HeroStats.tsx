@@ -77,7 +77,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
     <div
       style={{
         padding: 'clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px)',
-        borderRadius: '2px',
+        borderRadius: '6px',
         background: '#FFFFFF',
         border: `2px solid ${stat.color}18`,
         position: 'relative',
@@ -101,7 +101,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         <div className="stat-glow" style={{
           fontFamily: "'PT Mono', 'Courier New', monospace",
           fontSize: 'clamp(24px, 4vw, 36px)',
-          fontWeight: 800,
+          fontWeight: 700,
           color: stat.color,
           lineHeight: 1.1,
           letterSpacing: '-0.01em',

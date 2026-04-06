@@ -85,8 +85,8 @@ export async function GET(request: Request) {
               right: 0,
               bottom: 0,
               backgroundImage: `
-                linear-gradient(rgba(232, 23, 31, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(232, 23, 31, 0.03) 1px, transparent 1px)
+                linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px)
               `,
               backgroundSize: '40px 40px',
               pointerEvents: 'none',
@@ -209,7 +209,7 @@ export async function GET(request: Request) {
               marginTop: '32px',
               position: 'relative',
               zIndex: 1,
-              borderRadius: '2px',
+              borderRadius: '6px',
             }}
           />
         </div>

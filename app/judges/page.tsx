@@ -148,7 +148,7 @@ export default function JudgesPage() {
           justify-content: space-between;
           align-items: center;
           padding: 10px 14px;
-          border-radius: 2px;
+          border-radius: 6px;
           font-size: 14px;
           color: #212529;
           text-decoration: none;

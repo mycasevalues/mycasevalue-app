@@ -49,7 +49,7 @@ function getCircuitForDistrict(district: string): string {
   return 'Other';
 }
 
-const wrColor = (wr: number) => wr >= 50 ? '#07874A' : wr >= 35 ? '#D97706' : '#7C3AED';
+const wrColor = (wr: number) => wr >= 50 ? '#15803D' : wr >= 35 ? '#D97706' : '#7C3AED';
 
 export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
   const [search, setSearch] = useState('');
@@ -332,7 +332,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                   </div>
                   <div style={{ display: 'flex', gap: 4 }}>
                     {judge.chiefJudge && (
-                      <span style={{ fontSize: 9, fontWeight: 700, padding: '2px 6px', borderRadius: 2, background: 'rgba(232,23,31,0.08)', color: '#7C3AED', textTransform: 'uppercase' }}>Chief</span>
+                      <span style={{ fontSize: 9, fontWeight: 700, padding: '2px 6px', borderRadius: 2, background: 'rgba(124, 58, 237, 0.08)', color: '#7C3AED', textTransform: 'uppercase' }}>Chief</span>
                     )}
                     {judge.seniorStatus && (
                       <span style={{ fontSize: 9, fontWeight: 700, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: '#B86E00', textTransform: 'uppercase' }}>Senior</span>

@@ -120,7 +120,7 @@ export default function HowItWorksPage() {
       <div style={{ background: '#1B3A5C' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(124, 58, 237, 0.1)', color: '#7C3AED', borderRadius: '2px' }}>
+            style={{ background: 'rgba(124, 58, 237, 0.1)', color: '#7C3AED', borderRadius: '6px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2">
               <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
               <polyline points="12 12 20 7.5"></polyline>
@@ -165,7 +165,7 @@ export default function HowItWorksPage() {
                   style={{
                     borderColor: '#E5E7EB',
                     background: '#FFFFFF',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     padding: '32px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                     animationDelay: `${idx * 100}ms`,
@@ -176,7 +176,7 @@ export default function HowItWorksPage() {
                     style={{
                       width: '40px',
                       height: '40px',
-                      borderRadius: '2px',
+                      borderRadius: '6px',
                       background: '#1B3A5C',
                       color: '#FFFFFF',
                       fontSize: '18px',
@@ -243,7 +243,7 @@ export default function HowItWorksPage() {
                 description: 'Track how outcomes have changed over time to understand current judicial patterns and trends.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
                 {/* Red Icon */}
                 <div className="mb-4" style={{ width: '24px', height: '24px' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5">
@@ -271,7 +271,7 @@ export default function HowItWorksPage() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {trustStats.map((stat, i) => (
-              <div key={i} className="text-center p-4 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              <div key={i} className="text-center p-4 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
                 <div className="text-2xl font-display font-extrabold" style={{ color: '#212529' }}>
                   {stat.value}
                 </div>
@@ -309,7 +309,7 @@ export default function HowItWorksPage() {
                 description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and case filings referenced in our data originate from PACER.',
               },
             ].map((source, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: '#212529' }}>
                   {source.title}
                 </h3>
@@ -382,7 +382,7 @@ export default function HowItWorksPage() {
                   padding: '24px',
                   border: '1px solid #E5E7EB',
                   background: '#FFFFFF',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'all 0.3s ease',
@@ -397,7 +397,7 @@ export default function HowItWorksPage() {
                   style={{
                     width: '40px',
                     height: '40px',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     backgroundColor: '#F7F8FA',
                     display: 'flex',
                     alignItems: 'center',
@@ -524,7 +524,7 @@ export default function HowItWorksPage() {
                   backgroundColor: '#7C3AED',
                   color: '#FFFFFF',
                   textDecoration: 'none',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   fontWeight: 600,
                   fontSize: '14px',
                   fontFamily: 'var(--font-display)',
@@ -594,7 +594,7 @@ export default function HowItWorksPage() {
                 description: 'No legal jargon. Results explained in language everyone can understand.',
               },
             ].map((item, i) => (
-              <div key={i} className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              <div key={i} className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
                 <h3 className="text-base font-semibold mb-2" style={{ color: '#212529' }}>
                   {item.title}
                 </h3>
@@ -609,7 +609,7 @@ export default function HowItWorksPage() {
 
       {/* CTA Section */}
       <div className="max-w-5xl mx-auto px-6 py-16">
-        <section className="text-center p-12 border" style={{ borderColor: '#E5E7EB', background: '#FFF3F4', borderRadius: '2px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: '#E5E7EB', background: '#FFF3F4', borderRadius: '6px' }}>
           <h2 className="text-3xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Ready to see your case data?
           </h2>
@@ -618,7 +618,7 @@ export default function HowItWorksPage() {
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold transition-all hover:shadow-lg"
-            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}>
+            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '6px' }}>
             Start Free Research
             <ArrowRightIcon size={16} />
           </a>

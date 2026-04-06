@@ -4,8 +4,8 @@ export default function CompareLoading() {
       {/* Header with title skeleton */}
       <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #7C3AED' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <div style={{ height: '14px', width: '80px', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', marginBottom: '16px' }} />
-          <div style={{ height: '42px', width: '65%', background: 'rgba(255,255,255,0.1)', borderRadius: '2px' }} />
+          <div style={{ height: '14px', width: '80px', background: 'rgba(255,255,255,0.1)', borderRadius: '6px', marginBottom: '16px' }} />
+          <div style={{ height: '42px', width: '65%', background: 'rgba(255,255,255,0.1)', borderRadius: '6px' }} />
         </div>
       </div>
 
@@ -20,20 +20,20 @@ export default function CompareLoading() {
             <div key={i} style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '32px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
             }}>
               {/* Card header */}
               <div style={{ marginBottom: '24px', paddingBottom: '24px', borderBottom: '1px solid #E5E7EB' }}>
-                <div style={{ height: '24px', width: '80%', background: '#E5E7EB', borderRadius: '2px' }} />
+                <div style={{ height: '24px', width: '80%', background: '#E5E7EB', borderRadius: '6px' }} />
               </div>
 
               {/* Card content rows */}
               {[1, 2, 3, 4, 5].map(j => (
                 <div key={j} style={{ marginBottom: j === 5 ? 0 : '16px' }}>
-                  <div style={{ height: '12px', width: '60%', background: '#F0F1F2', borderRadius: '2px', marginBottom: '6px' }} />
-                  <div style={{ height: '16px', width: '90%', background: '#E5E7EB', borderRadius: '2px' }} />
+                  <div style={{ height: '12px', width: '60%', background: '#F0F1F2', borderRadius: '6px', marginBottom: '6px' }} />
+                  <div style={{ height: '16px', width: '90%', background: '#E5E7EB', borderRadius: '6px' }} />
                 </div>
               ))}
             </div>

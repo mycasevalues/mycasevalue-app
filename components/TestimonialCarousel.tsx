@@ -107,7 +107,7 @@ export default function TestimonialCarousel() {
               height: '4px',
               background: '#7C3AED',
               margin: '0 auto 16px',
-              borderRadius: '2px',
+              borderRadius: '6px',
             }}
           />
           <h2
@@ -157,7 +157,7 @@ export default function TestimonialCarousel() {
               flexShrink: 0,
               width: '44px',
               height: '44px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               border: 'none',
               background: '#1B3A5C',
               color: '#FFFFFF',
@@ -202,7 +202,7 @@ export default function TestimonialCarousel() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '32px',
                 width: '100%',
                 animation: 'fadeIn 300ms ease-in-out',
@@ -289,7 +289,7 @@ export default function TestimonialCarousel() {
               flexShrink: 0,
               width: '44px',
               height: '44px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               border: 'none',
               background: '#1B3A5C',
               color: '#FFFFFF',

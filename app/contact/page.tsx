@@ -65,7 +65,7 @@ export default function ContactPage() {
                 fontWeight: 700,
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 fontFamily: 'var(--font-display)',
               }}>
                 CONTACT US
@@ -74,7 +74,7 @@ export default function ContactPage() {
             <h1
               style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
-                fontWeight: 800,
+                fontWeight: 700,
                 color: '#FFFFFF',
                 fontFamily: 'var(--font-display)',
                 letterSpacing: '-1px',
@@ -152,7 +152,7 @@ export default function ContactPage() {
                 href={link.href}
                 style={{
                   padding: 24,
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   border: '1px solid #E5E7EB',
                   background: '#FFFFFF',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -207,7 +207,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '2px',
+                borderRadius: '6px',
                 border: '1px solid #E5E7EB',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -260,7 +260,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '2px',
+                borderRadius: '6px',
                 border: '1px solid #E5E7EB',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -313,7 +313,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '2px',
+                borderRadius: '6px',
                 border: '1px solid #E5E7EB',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -377,7 +377,7 @@ export default function ContactPage() {
             padding: '24px',
             marginTop: 48,
             marginBottom: 24,
-            borderRadius: '2px',
+            borderRadius: '6px',
             border: '1px solid #E5E7EB',
             backgroundColor: 'rgba(0,105,151,0.05)',
             textAlign: 'center',

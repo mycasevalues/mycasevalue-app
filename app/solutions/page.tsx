@@ -95,7 +95,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: '2.5rem',
-              fontWeight: 800,
+              fontWeight: 700,
               lineHeight: 1.1,
               marginBottom: '20px',
             }}
@@ -133,7 +133,7 @@ export default function SolutionsPage() {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
-                  fontWeight: 800,
+                  fontWeight: 700,
                   color: '#6D28D9',
                   marginBottom: '4px',
                 }}
@@ -156,7 +156,7 @@ export default function SolutionsPage() {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
-                  fontWeight: 800,
+                  fontWeight: 700,
                   color: '#6D28D9',
                   marginBottom: '4px',
                 }}
@@ -179,7 +179,7 @@ export default function SolutionsPage() {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
-                  fontWeight: 800,
+                  fontWeight: 700,
                   color: '#6D28D9',
                   marginBottom: '4px',
                 }}
@@ -202,7 +202,7 @@ export default function SolutionsPage() {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
-                  fontWeight: 800,
+                  fontWeight: 700,
                   color: '#7C3AED',
                   marginBottom: '4px',
                 }}
@@ -270,7 +270,7 @@ export default function SolutionsPage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   padding: '32px 24px',
                   textDecoration: 'none',
                   display: 'block',
@@ -322,7 +322,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: '1.75rem',
-              fontWeight: 800,
+              fontWeight: 700,
               color: '#212529',
               marginBottom: '16px',
             }}
@@ -356,7 +356,7 @@ export default function SolutionsPage() {
                   '#7C3AED',
                 color: '#FAFBFC',
                 padding: '0.875rem 2rem',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 700,
@@ -374,7 +374,7 @@ export default function SolutionsPage() {
                 background: 'transparent',
                 color: '#212529',
                 padding: '0.875rem 2rem',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 border: '1.5px solid #E5E7EB',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',

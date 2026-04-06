@@ -556,7 +556,7 @@ export default function FAQPage() {
                     style={{
                       borderColor: '#E5E7EB',
                       background: '#FFFFFF',
-                      borderRadius: '2px',
+                      borderRadius: '6px',
                     }}
                   >
                     <summary className="flex items-start justify-between font-semibold select-none" style={{ color: '#212529' }}>
@@ -589,7 +589,7 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', borderLeftWidth: '4px', borderLeftColor: '#7C3AED' }}>
+        <div className="mt-16 p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px', borderLeftWidth: '4px', borderLeftColor: '#7C3AED' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Still Have Questions?
           </h2>
@@ -599,18 +599,18 @@ export default function FAQPage() {
           <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             <a href="mailto:support@mycasevalue.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-              style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '6px' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Contact Support
             </a>
             <Link href="/methodology"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-              style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#6D28D9', borderRadius: '2px' }}>
+              style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#6D28D9', borderRadius: '6px' }}>
               Methodology
             </Link>
             <Link href="/glossary"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-              style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#6D28D9', borderRadius: '2px' }}>
+              style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#6D28D9', borderRadius: '6px' }}>
               Glossary
             </Link>
           </div>
@@ -624,7 +624,7 @@ export default function FAQPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Link href="/calculator"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
               <div className="flex items-start justify-between mb-3">
                 <h3 className="font-semibold text-base transition-colors" style={{ color: '#1B3A5C' }}>Settlement Calculator</h3>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#7C3AED' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -636,7 +636,7 @@ export default function FAQPage() {
 
             <Link href="/compare"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
               <div className="flex items-start justify-between mb-3">
                 <h3 className="font-semibold text-base transition-colors" style={{ color: '#1B3A5C' }}>Compare Cases</h3>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#7C3AED' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -648,7 +648,7 @@ export default function FAQPage() {
 
             <Link href="/translate"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
               <div className="flex items-start justify-between mb-3">
                 <h3 className="font-semibold text-base transition-colors" style={{ color: '#1B3A5C' }}>Jargon Translator</h3>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#7C3AED' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -660,7 +660,7 @@ export default function FAQPage() {
 
             <Link href="/nos-explorer"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
               <div className="flex items-start justify-between mb-3">
                 <h3 className="font-semibold text-base transition-colors" style={{ color: '#1B3A5C' }}>NOS Explorer</h3>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#7C3AED' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>

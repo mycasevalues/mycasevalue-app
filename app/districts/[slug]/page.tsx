@@ -78,7 +78,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <Link
             href="/districts"
             className="inline-block px-6 py-3 font-semibold text-white transition"
-            style={{ background: '#7C3AED', borderRadius: '2px' }}
+            style={{ background: '#7C3AED', borderRadius: '6px' }}
           >
             View All Districts
           </Link>
@@ -260,7 +260,7 @@ export default async function DistrictPage({ params }: PageProps) {
           background: #7C3AED;
           color: #FFFFFF;
           padding: 6px 12px;
-          border-radius: 2px;
+          border-radius: 6px;
           font-size: 11px;
           font-weight: 600;
           text-transform: uppercase;
@@ -272,7 +272,7 @@ export default async function DistrictPage({ params }: PageProps) {
         .stat-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 24px;
           text-align: center;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -286,7 +286,7 @@ export default async function DistrictPage({ params }: PageProps) {
 
         .stat-number {
           font-size: 28px;
-          font-weight: 800;
+          font-weight: 700;
           color: #7C3AED;
           letter-spacing: -1px;
           margin-bottom: 6px;
@@ -305,7 +305,7 @@ export default async function DistrictPage({ params }: PageProps) {
         .card-container {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         }
 
@@ -380,7 +380,7 @@ export default async function DistrictPage({ params }: PageProps) {
           background: #7C3AED;
           color: #FFFFFF;
           padding: 16px 24px;
-          border-radius: 2px;
+          border-radius: 6px;
           text-decoration: none;
           font-weight: 600;
           font-size: 16px;
@@ -430,7 +430,7 @@ export default async function DistrictPage({ params }: PageProps) {
         .card-section {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 32px;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         }
@@ -475,8 +475,8 @@ export default async function DistrictPage({ params }: PageProps) {
           left: 0;
           right: 0;
           height: 3px;
-          background: linear-gradient(90deg, #07874A, #10B981);
-          border-radius: 2px 2px 0 0;
+          background: linear-gradient(90deg, #15803D, #10B981);
+          border-radius: 6px 2px 0 0;
         }
 
         .underperformers-box {
@@ -491,7 +491,7 @@ export default async function DistrictPage({ params }: PageProps) {
           right: 0;
           height: 3px;
           background: linear-gradient(90deg, #7C3AED, #F87171);
-          border-radius: 2px 2px 0 0;
+          border-radius: 6px 2px 0 0;
         }
 
         @media (max-width: 768px) {
@@ -631,7 +631,7 @@ export default async function DistrictPage({ params }: PageProps) {
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               padding: '20px 24px',
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
@@ -643,7 +643,7 @@ export default async function DistrictPage({ params }: PageProps) {
               <div style={{ fontSize: '11px', color: '#4B5563', textTransform: 'uppercase', fontWeight: 600, marginBottom: '6px', fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}>
                 Total Cases
               </div>
-              <div style={{ fontSize: '22px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#6D28D9' }}>
+              <div style={{ fontSize: '22px', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#6D28D9' }}>
                 {districtStats.totalCases.toLocaleString()}
               </div>
             </div>
@@ -651,7 +651,7 @@ export default async function DistrictPage({ params }: PageProps) {
               <div style={{ fontSize: '11px', color: '#4B5563', textTransform: 'uppercase', fontWeight: 600, marginBottom: '6px', fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}>
                 Avg Win Rate
               </div>
-              <div style={{ fontSize: '22px', fontWeight: 800, fontFamily: 'var(--font-display)', color: districtStats.winRate >= 50 ? '#07874A' : '#7C3AED' }}>
+              <div style={{ fontSize: '22px', fontWeight: 700, fontFamily: 'var(--font-display)', color: districtStats.winRate >= 50 ? '#15803D' : '#7C3AED' }}>
                 {districtStats.winRate}%
               </div>
             </div>
@@ -659,7 +659,7 @@ export default async function DistrictPage({ params }: PageProps) {
               <div style={{ fontSize: '11px', color: '#4B5563', textTransform: 'uppercase', fontWeight: 600, marginBottom: '6px', fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}>
                 Case Types
               </div>
-              <div style={{ fontSize: '22px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#1B3A5C' }}>
+              <div style={{ fontSize: '22px', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#1B3A5C' }}>
                 {topCaseTypes.length}
               </div>
             </div>
@@ -667,7 +667,7 @@ export default async function DistrictPage({ params }: PageProps) {
               <div style={{ fontSize: '11px', color: '#4B5563', textTransform: 'uppercase', fontWeight: 600, marginBottom: '6px', fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}>
                 Judges
               </div>
-              <div style={{ fontSize: '22px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#7C3AED' }}>
+              <div style={{ fontSize: '22px', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#7C3AED' }}>
                 {circuitDetail?.judges || 'N/A'}
               </div>
             </div>
@@ -726,7 +726,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   <div style={{ fontSize: '12px', color: '#4B5563', textTransform: 'uppercase', fontWeight: 600, marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                     Active Judges
                   </div>
-                  <div style={{ fontSize: '28px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#7C3AED' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#7C3AED' }}>
                     {circuitDetail.judges}
                   </div>
                 </div>
@@ -734,7 +734,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   <div style={{ fontSize: '12px', color: '#4B5563', textTransform: 'uppercase', fontWeight: 600, marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                     Annual Caseload
                   </div>
-                  <div style={{ fontSize: '28px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#7C3AED' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#7C3AED' }}>
                     {circuitDetail.caseload}
                   </div>
                 </div>
@@ -742,7 +742,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   <div style={{ fontSize: '12px', color: '#4B5563', textTransform: 'uppercase', fontWeight: 600, marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                     Median Duration
                   </div>
-                  <div style={{ fontSize: '28px', fontWeight: 800, fontFamily: 'var(--font-display)', color: '#7C3AED' }}>
+                  <div style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-display)', color: '#7C3AED' }}>
                     {circuitDetail.median_mo}mo
                   </div>
                 </div>
@@ -807,7 +807,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <div
             className="overflow-hidden"
             style={{
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -827,7 +827,7 @@ export default async function DistrictPage({ params }: PageProps) {
               </thead>
               <tbody>
                 {topCaseTypes.map((caseType, i) => {
-                  const winRateColor = caseType.winRate >= 50 ? '#07874A' : (caseType.winRate >= 35 ? '#D97706' : '#7C3AED');
+                  const winRateColor = caseType.winRate >= 50 ? '#15803D' : (caseType.winRate >= 35 ? '#D97706' : '#7C3AED');
                   return (
                     <tr key={i}>
                       <td style={{ fontWeight: 500, color: '#212529' }}>{caseType.name}</td>
@@ -896,7 +896,7 @@ export default async function DistrictPage({ params }: PageProps) {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '24px',
                 paddingTop: '28px',
                 boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -904,7 +904,7 @@ export default async function DistrictPage({ params }: PageProps) {
               }}
             >
               <h3 className="subsection-heading mb-4">
-                <span style={{ color: '#07874A' }}>* Top Performers</span>
+                <span style={{ color: '#15803D' }}>* Top Performers</span>
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {Array.from(new Set(topCaseTypes.sort((a, b) => b.winRate - a.winRate).slice(0, 3)))
@@ -914,7 +914,7 @@ export default async function DistrictPage({ params }: PageProps) {
                         <span style={{ fontWeight: 600, color: '#212529', fontSize: '14px' }}>
                           {caseType.name}
                         </span>
-                        <span style={{ fontWeight: 800, color: '#07874A', fontFamily: 'var(--font-display)', fontSize: '16px' }}>
+                        <span style={{ fontWeight: 700, color: '#15803D', fontFamily: 'var(--font-display)', fontSize: '16px' }}>
                           {caseType.winRate}%
                         </span>
                       </div>
@@ -932,7 +932,7 @@ export default async function DistrictPage({ params }: PageProps) {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '24px',
                 paddingTop: '28px',
                 boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -950,7 +950,7 @@ export default async function DistrictPage({ params }: PageProps) {
                         <span style={{ fontWeight: 600, color: '#212529', fontSize: '14px' }}>
                           {caseType.name}
                         </span>
-                        <span style={{ fontWeight: 800, color: '#7C3AED', fontFamily: 'var(--font-display)', fontSize: '16px' }}>
+                        <span style={{ fontWeight: 700, color: '#7C3AED', fontFamily: 'var(--font-display)', fontSize: '16px' }}>
                           {caseType.winRate}%
                         </span>
                       </div>
@@ -988,7 +988,7 @@ export default async function DistrictPage({ params }: PageProps) {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '24px',
                 boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
               }}
@@ -1007,7 +1007,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   padding: '12px 20px',
                   background: '#6D28D9',
                   color: '#FFFFFF',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
                   fontWeight: 600,
                   fontSize: '14px',
@@ -1024,7 +1024,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   padding: '24px',
                   boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
                 }}
@@ -1043,7 +1043,7 @@ export default async function DistrictPage({ params }: PageProps) {
                     padding: '12px 20px',
                     background: '#6D28D9',
                     color: '#FFFFFF',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     textDecoration: 'none',
                     fontWeight: 600,
                     fontSize: '14px',
@@ -1122,7 +1122,7 @@ export default async function DistrictPage({ params }: PageProps) {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   padding: '20px',
                   textDecoration: 'none',
                   boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -1152,7 +1152,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <div
             className="p-8 sm:p-12 text-center"
             style={{
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -1191,7 +1191,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <div
             className="p-6 text-sm body-text"
             style={{
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#F8F9FA',
               border: '1px solid #E5E7EB',
               color: '#4B5563',

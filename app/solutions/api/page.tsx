@@ -61,7 +61,7 @@ export default function ApiPage() {
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '2.5rem',
-            fontWeight: 800,
+            fontWeight: 700,
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
@@ -82,7 +82,7 @@ export default function ApiPage() {
               background: '#7C3AED',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
-              borderRadius: '2px',
+              borderRadius: '6px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 700,
@@ -97,7 +97,7 @@ export default function ApiPage() {
               background: 'transparent',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
-              borderRadius: '2px',
+              borderRadius: '6px',
               border: '1.5px solid rgba(255,255,255,0.5)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
@@ -119,7 +119,7 @@ export default function ApiPage() {
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '2rem',
-            fontWeight: 800,
+            fontWeight: 700,
             color: '#212529',
             textAlign: 'center',
             marginBottom: '48px',
@@ -131,7 +131,7 @@ export default function ApiPage() {
               <div key={f.title} style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '32px 24px',
               }}>
                 <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
@@ -165,7 +165,7 @@ export default function ApiPage() {
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '1.75rem',
-            fontWeight: 800,
+            fontWeight: 700,
             color: '#212529',
             marginBottom: '16px',
           }}>
@@ -185,7 +185,7 @@ export default function ApiPage() {
               background: '#7C3AED',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
-              borderRadius: '2px',
+              borderRadius: '6px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 700,
@@ -200,7 +200,7 @@ export default function ApiPage() {
               background: 'transparent',
               color: '#212529',
               padding: '0.875rem 2rem',
-              borderRadius: '2px',
+              borderRadius: '6px',
               border: '1.5px solid #E5E7EB',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
@@ -222,7 +222,7 @@ export default function ApiPage() {
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '1.75rem',
-            fontWeight: 800,
+            fontWeight: 700,
             color: '#212529',
             textAlign: 'center',
             marginBottom: '48px',
@@ -235,7 +235,7 @@ export default function ApiPage() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'block',
@@ -268,7 +268,7 @@ export default function ApiPage() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'block',
@@ -301,7 +301,7 @@ export default function ApiPage() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'block',

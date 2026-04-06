@@ -37,7 +37,7 @@ export default function DocumentIntelligencePage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
       <style>{`
-        input:focus { border-color: #7C3AED !important; outline: none; box-shadow: 0 0 0 2px rgba(232,23,31,0.08); }
+        input:focus { border-color: #7C3AED !important; outline: none; box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
@@ -50,7 +50,7 @@ export default function DocumentIntelligencePage() {
             Home &gt; Attorney Tools &gt; Document Intelligence
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '2px', background: 'rgba(232,23,31,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '6px', background: 'rgba(232,23,31,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
               </svg>
@@ -68,7 +68,7 @@ export default function DocumentIntelligencePage() {
           Upload a legal document — complaint, motion, or brief — to receive an AI-powered analysis including case type classification, key claims identified, relevant NOS codes, and comparable federal court outcomes.
         </p>
 
-        <div style={{ border: '2px dashed #E5E7EB', borderRadius: '2px', padding: '40px', textAlign: 'center', marginBottom: '24px', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ border: '2px dashed #E5E7EB', borderRadius: '6px', padding: '40px', textAlign: 'center', marginBottom: '24px', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           <input
             type="file"
             accept=".pdf,.txt,.doc,.docx"
@@ -79,17 +79,17 @@ export default function DocumentIntelligencePage() {
           <button
             onClick={handleUpload}
             disabled={!file || loading}
-            style={{ padding: '0 28px', height: '48px', background: !file || loading ? '#E5E7EB' : '#7C3AED', color: '#fff', border: 'none', borderRadius: '2px', fontWeight: 700, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
+            style={{ padding: '0 28px', height: '48px', background: !file || loading ? '#E5E7EB' : '#7C3AED', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 700, fontSize: '14px', cursor: file && !loading ? 'pointer' : 'not-allowed', textTransform: 'uppercase', letterSpacing: '0.04em' }}
           >
             {loading ? 'Analyzing...' : 'Analyze Document'}
           </button>
           <p style={{ fontSize: '11px', color: '#4B5563', marginTop: '12px' }}>Supported: PDF, TXT, DOC, DOCX · Max 10MB</p>
         </div>
 
-        {error && <div style={{ padding: '12px 16px', background: 'rgba(232,23,31,0.12)', border: '1px solid #E5E7EB', borderRadius: '2px', color: '#7C3AED', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
+        {error && <div style={{ padding: '12px 16px', background: 'rgba(124, 58, 237, 0.12)', border: '1px solid #E5E7EB', borderRadius: '6px', color: '#7C3AED', fontSize: '14px', marginBottom: '16px' }}>{error}</div>}
 
         {analysis && (
-          <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '2px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '6px', padding: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 700, marginBottom: '16px', color: '#212529', fontFamily: 'var(--font-display)' }}>Document Analysis</h2>
             <div style={{ fontSize: '14px', color: '#212529', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{analysis}</div>
           </div>

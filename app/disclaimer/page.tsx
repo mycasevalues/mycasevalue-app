@@ -59,7 +59,7 @@ export default function DisclaimerPage() {
               fontWeight: 700,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontFamily: 'var(--font-display)',
             }}>
               LEGAL
@@ -68,7 +68,7 @@ export default function DisclaimerPage() {
           <h1
             style={{
               fontSize: 'clamp(28px, 4vw, 40px)',
-              fontWeight: 800,
+              fontWeight: 700,
               color: '#FFFFFF',
               fontFamily: 'var(--font-display)',
               letterSpacing: '-1px',
@@ -455,7 +455,7 @@ export default function DisclaimerPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
             }}>
@@ -495,7 +495,7 @@ export default function DisclaimerPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
             }}>
@@ -511,7 +511,7 @@ export default function DisclaimerPage() {
           {/* Acknowledgment */}
           <section style={{
             padding: '32px',
-            borderRadius: '2px',
+            borderRadius: '6px',
             border: '2px solid #7C3AED',
             backgroundColor: '#FFF3F4',
           }}>

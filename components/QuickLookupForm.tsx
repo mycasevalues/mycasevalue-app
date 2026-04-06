@@ -58,7 +58,7 @@ export default function QuickLookupForm() {
             padding: '12px 16px',
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '2px',
+            borderRadius: '6px',
             fontFamily: 'var(--font-body)',
             fontSize: '15px',
             color: '#212529',
@@ -109,7 +109,7 @@ export default function QuickLookupForm() {
               padding: '12px 16px',
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
               color: '#212529',
@@ -142,7 +142,7 @@ export default function QuickLookupForm() {
           color: '#FFFFFF',
           fontWeight: 700,
           fontSize: '15px',
-          borderRadius: '2px',
+          borderRadius: '6px',
           border: 'none',
           cursor: 'pointer',
           fontFamily: 'var(--font-body)',
@@ -159,7 +159,7 @@ export default function QuickLookupForm() {
         const nos = OPT_TO_NOS[caseType];
         const rd = nos ? (REAL_DATA as any)[nos] : null;
         if (!rd) return null;
-        const wrColor = (rd.wr ?? 0) >= 50 ? '#07874A' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#7C3AED';
+        const wrColor = (rd.wr ?? 0) >= 50 ? '#15803D' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#7C3AED';
         return (
           <div style={{
             background: '#F8F9FA',

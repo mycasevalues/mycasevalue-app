@@ -541,7 +541,7 @@ export default function ComparePage() {
                     }}>
                       <div style={{
                         width: `${s.winRate}%`,
-                        background: '#07874A',
+                        background: '#15803D',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -607,7 +607,7 @@ export default function ComparePage() {
                         <div style={{
                           width: 12,
                           height: 12,
-                          background: '#07874A',
+                          background: '#15803D',
                           borderRadius: 2,
                           margin: '0 auto 4px',
                         }} />

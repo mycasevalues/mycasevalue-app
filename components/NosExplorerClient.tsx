@@ -20,7 +20,7 @@ interface NosRow {
 type SortField = 'nos' | 'label' | 'total' | 'wr' | 'sp' | 'mo' | 'rngMd';
 type SortDir = 'asc' | 'desc';
 
-const wrColor = (wr: number) => wr >= 50 ? '#07874A' : wr >= 35 ? '#D97706' : '#7C3AED';
+const wrColor = (wr: number) => wr >= 50 ? '#15803D' : wr >= 35 ? '#D97706' : '#7C3AED';
 
 const CATEGORY_COLORS: Record<string, string> = {
   work: '#212529', injury: '#7C3AED', consumer: '#6D28D9', rights: '#7C3AED',

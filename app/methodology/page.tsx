@@ -70,7 +70,7 @@ export default function MethodologyPage() {
         .stat-card {
           padding: 1.5rem;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           background: #FFFFFF;
           text-align: center;
           transition: all 0.3s ease;
@@ -83,13 +83,13 @@ export default function MethodologyPage() {
           border-left: 3px solid #F59E0B;
           background: #FFFBEB;
           padding: 1.5rem;
-          border-radius: 2px;
+          border-radius: 6px;
         }
         .public-domain-callout {
           border-left: 3px solid #6D28D9;
           background: #F0F9FF;
           padding: 1.5rem;
-          border-radius: 2px;
+          border-radius: 6px;
         }
         .at-a-glance-grid {
           display: grid;
@@ -110,7 +110,7 @@ export default function MethodologyPage() {
         .at-a-glance-card {
           padding: 1.25rem;
           border: 2px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           background: #FFFFFF;
           text-align: center;
         }
@@ -141,7 +141,7 @@ export default function MethodologyPage() {
         .confidence-tier {
           padding: 1.5rem;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           background: #FFFFFF;
           text-align: center;
         }
@@ -167,7 +167,7 @@ export default function MethodologyPage() {
           color: #4B5563;
           background: #F7F8FA;
           padding: 0.5rem;
-          border-radius: 2px;
+          border-radius: 6px;
         }
         .stats-table {
           width: 100%;
@@ -211,7 +211,7 @@ export default function MethodologyPage() {
         .related-card {
           padding: 1.5rem;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           background: #FFFFFF;
           text-align: center;
           text-decoration: none;
@@ -324,7 +324,7 @@ export default function MethodologyPage() {
                 name: 'CourtListener (Free Law Project)',
                 description: 'We query the CourtListener API and RECAP Archive in real time to surface related federal court opinions and docket records alongside our aggregate outcome data. CourtListener covers 471 jurisdictions with 10M+ opinions.',
                 badge: 'Supplementary',
-                color: '#07874A',
+                color: '#15803D',
                 url: 'https://www.courtlistener.com/',
                 icon: 'scale'
               },
@@ -353,7 +353,7 @@ export default function MethodologyPage() {
                 icon: 'building'
               },
             ].map((source, i) => (
-              <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '2px' }}>
+              <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '6px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="text-2xl flex-shrink-0">
                     {source.icon === 'database' && '-'}
@@ -422,7 +422,7 @@ export default function MethodologyPage() {
           <div className="coverage-grid">
             {[
               { v: '5.1M+', l: 'Federal Cases', c: '#212529' },
-              { v: '50+', l: 'Years of Data', c: '#07874A' },
+              { v: '50+', l: 'Years of Data', c: '#15803D' },
               { v: '20+', l: 'Case Categories', c: '#7C3AED' },
               { v: '94', l: 'Federal Districts', c: '#6D28D9' },
             ].map((stat, i) => (
@@ -527,7 +527,7 @@ export default function MethodologyPage() {
           <p className="text-sm mb-6" style={{ color: '#4B5563' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '2px', background: '#7C3AED', color: '#FFFFFF', border: '1px solid #7C3AED' }}>
+            style={{ borderRadius: '6px', background: '#7C3AED', color: '#FFFFFF', border: '1px solid #7C3AED' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

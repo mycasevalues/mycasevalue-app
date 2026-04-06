@@ -351,7 +351,7 @@ export default function SettingsPage() {
                 <div
                   className="px-3 py-1 rounded-sm text-sm font-semibold whitespace-nowrap ml-4"
                   style={{
-                    backgroundColor: '#07874A',
+                    backgroundColor: '#15803D',
                     color: 'white',
                   }}
                 >

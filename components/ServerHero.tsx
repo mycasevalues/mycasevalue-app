@@ -88,7 +88,7 @@ export default function ServerHero() {
 
           {/* Right: Quick lookup card */}
           <div style={{
-            background: '#FFFFFF', borderRadius: '2px', padding: '28px',
+            background: '#FFFFFF', borderRadius: '6px', padding: '28px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
             border: '1px solid #E5E7EB',
           }}>
@@ -101,7 +101,7 @@ export default function ServerHero() {
               </p>
             </div>
             <QuickLookupForm />
-            <p style={{ fontSize: '11px', color: '#999', textAlign: 'center', marginTop: '12px', fontFamily: 'var(--font-body)', marginBottom: 0 }}>
+            <p style={{ fontSize: '11px', color: '#9CA3AF', textAlign: 'center', marginTop: '12px', fontFamily: 'var(--font-body)', marginBottom: 0 }}>
               Data from FJC, PACER, CourtListener & BJS
             </p>
           </div>
@@ -422,7 +422,7 @@ export default function ServerHero() {
               'High-value analytics for settlements, timing, and outcomes',
               'Exclusive comparisons via judge and district analytics',
             ].map((text, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E5E7EB' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: '#F8F9FA', borderRadius: '6px', border: '1px solid #E5E7EB' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
@@ -471,14 +471,14 @@ export default function ServerHero() {
               <div key={i} style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '32px 24px',
                 transition: 'border-color 200ms',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                   <div style={{
-                    width: '44px', height: '44px', borderRadius: '2px',
-                    background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.15)',
+                    width: '44px', height: '44px', borderRadius: '6px',
+                    background: 'rgba(124, 58, 237, 0.08)', border: '1px solid rgba(232,23,31,0.15)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                   }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -601,7 +601,7 @@ export default function ServerHero() {
             ].map((award, i) => (
               <div key={i} style={{
                 padding: '20px 16px', background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)', borderRadius: '2px',
+                border: '1px solid rgba(255,255,255,0.08)', borderRadius: '6px',
               }}>
                 <p style={{ fontSize: '14px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-body)', margin: '0 0 4px' }}>{award.label}</p>
                 <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-body)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{award.sub}</p>
@@ -648,9 +648,9 @@ export default function ServerHero() {
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #E5E7EB', background: i % 2 === 0 ? '#FFFFFF' : '#F8F9FA' }}>
                     <td style={{ padding: '10px 16px', color: '#212529', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#07874A' : '#B91C1C', fontWeight: 700 }}>{row.mcv ? '[x]' : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#07874A' : '#999' }}>{row.pacer ? '[x]' : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#07874A' : '#999' }}>{row.premium ? '[x]' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#15803D' : '#B91C1C', fontWeight: 700 }}>{row.mcv ? '[x]' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#15803D' : '#999' }}>{row.pacer ? '[x]' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#15803D' : '#999' }}>{row.premium ? '[x]' : '—'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -722,7 +722,7 @@ export default function ServerHero() {
             ].map((s) => (
               <a key={s.href} href={s.href} style={{
                 padding: '10px 20px', fontSize: '13px', fontWeight: 600,
-                color: '#6D28D9', border: '1px solid #E5E7EB', borderRadius: '2px',
+                color: '#6D28D9', border: '1px solid #E5E7EB', borderRadius: '6px',
                 textDecoration: 'none', fontFamily: 'var(--font-body)',
                 textTransform: 'uppercase', letterSpacing: '0.04em',
                 transition: 'all 150ms',
@@ -747,7 +747,7 @@ export default function ServerHero() {
             <a href="/sign-up" className="hero-cta-primary" style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
               padding: '1rem 2rem', background: '#7C3AED',
-              color: '#FAFBFC', borderRadius: '2px', fontWeight: 700, fontSize: '0.875rem',
+              color: '#FAFBFC', borderRadius: '6px', fontWeight: 700, fontSize: '0.875rem',
               fontFamily: 'var(--font-body)', textDecoration: 'none', textTransform: 'uppercase',
               letterSpacing: '0.04em', transition: 'background 200ms',
             }}>
@@ -756,7 +756,7 @@ export default function ServerHero() {
             <a href="/pricing" style={{
               display: 'inline-flex', alignItems: 'center',
               padding: '1rem 2rem', background: 'transparent', color: '#FAFBFC',
-              border: '1.5px solid rgba(255,255,255,0.5)', borderRadius: '2px',
+              border: '1.5px solid rgba(255,255,255,0.5)', borderRadius: '6px',
               fontWeight: 700, fontSize: '0.875rem', fontFamily: 'var(--font-body)',
               textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.04em',
               transition: 'all 200ms',

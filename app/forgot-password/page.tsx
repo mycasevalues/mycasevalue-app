@@ -84,7 +84,7 @@ export default function ForgotPasswordPage() {
           maxWidth: '440px',
           backgroundColor: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           padding: '32px',
         }}
@@ -129,7 +129,7 @@ export default function ForgotPasswordPage() {
               style={{
                 width: '56px',
                 height: '56px',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 backgroundColor: 'rgba(0,105,151,0.08)',
                 display: 'flex',
                 alignItems: 'center',
@@ -214,7 +214,7 @@ export default function ForgotPasswordPage() {
                   padding: '12px 16px',
                   backgroundColor: 'rgba(124, 58, 237, 0.06)',
                   border: '1px solid rgba(204,16,25,0.20)',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   marginBottom: '20px',
                 }}
               >
@@ -261,7 +261,7 @@ export default function ForgotPasswordPage() {
                     height: '48px',
                     padding: '12px 14px',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
@@ -284,7 +284,7 @@ export default function ForgotPasswordPage() {
                   backgroundColor: '#7C3AED',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '15px',
                   fontWeight: 600,

@@ -35,7 +35,7 @@ function getAllNosEntries(): NosEntry[] {
   return entries.sort((a, b) => b.total - a.total);
 }
 
-const wrColor = (wr: number) => wr >= 50 ? '#07874A' : wr >= 35 ? '#D97706' : '#7C3AED';
+const wrColor = (wr: number) => wr >= 50 ? '#15803D' : wr >= 35 ? '#D97706' : '#7C3AED';
 
 export default function CaseTypeComparison() {
   const allEntries = useMemo(() => getAllNosEntries(), []);
@@ -146,11 +146,11 @@ export default function CaseTypeComparison() {
             return (
               <div key={m.label} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', padding: '12px 16px', borderTop: '1px solid #F0F0F0', background: i % 2 === 0 ? '#FFFFFF' : '#FAFAFA' }}>
                 <div style={{ fontSize: 12, fontWeight: 600, color: '#4B5563', fontFamily: 'var(--font-body)' }}>{m.label}</div>
-                <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 700, color: aWins ? '#07874A' : '#212529' }}>
-                  {m.a} {aWins && <span style={{ fontSize: 10, color: '#07874A' }}>●</span>}
+                <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 700, color: aWins ? '#15803D' : '#212529' }}>
+                  {m.a} {aWins && <span style={{ fontSize: 10, color: '#15803D' }}>●</span>}
                 </div>
-                <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 700, color: bWins ? '#07874A' : '#212529' }}>
-                  {m.b} {bWins && <span style={{ fontSize: 10, color: '#07874A' }}>●</span>}
+                <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 700, color: bWins ? '#15803D' : '#212529' }}>
+                  {m.b} {bWins && <span style={{ fontSize: 10, color: '#15803D' }}>●</span>}
                 </div>
               </div>
             );

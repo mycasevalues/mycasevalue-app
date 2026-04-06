@@ -162,7 +162,7 @@ export default function DistrictsExplorer({
         .circuit-card {
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 16px;
           cursor: pointer;
           transition: all 150ms;
@@ -231,7 +231,7 @@ export default function DistrictsExplorer({
         .stat-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 20px;
         }
         .stat-label {
@@ -263,7 +263,7 @@ export default function DistrictsExplorer({
         .control-select {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 10px 12px;
           font-size: 13px;
           font-family: var(--font-body);
@@ -372,7 +372,7 @@ export default function DistrictsExplorer({
                       ? '#7C3AED'
                       : rate !== null
                       ? rate >= 50
-                        ? '#07874A'
+                        ? '#15803D'
                         : rate >= 35
                         ? '#D97706'
                         : '#7C3AED'
@@ -393,7 +393,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Highest Win Rate</div>
           {stats.highestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: '#07874A' }}>
+              <div className="stat-value" style={{ color: '#15803D' }}>
                 {stats.highestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.highestWinRate.name}</div>
@@ -447,7 +447,7 @@ export default function DistrictsExplorer({
         }}
       >
         {filteredDistricts.map((d) => {
-          const wrColor = d.winRate >= 50 ? '#07874A' : d.winRate >= 35 ? '#D97706' : '#7C3AED';
+          const wrColor = d.winRate >= 50 ? '#15803D' : d.winRate >= 35 ? '#D97706' : '#7C3AED';
           return (
             <Link
               key={d.slug}
@@ -541,7 +541,7 @@ export default function DistrictsExplorer({
                 >
                   {d.caseType}
                 </span>
-                <span style={{ color: '#999', fontSize: 10 }}>
+                <span style={{ color: '#9CA3AF', fontSize: 10 }}>
                   {(d.casesFiled / 1000).toFixed(1)}K cases
                 </span>
               </div>

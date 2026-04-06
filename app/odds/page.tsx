@@ -69,7 +69,7 @@ export default function OddsPage() {
   };
 
   const winColor = results
-    ? results.winRate >= 50 ? '#07874A' : results.winRate >= 35 ? '#D97706' : '#7C3AED'
+    ? results.winRate >= 50 ? '#15803D' : results.winRate >= 35 ? '#D97706' : '#7C3AED'
     : '#212529';
 
   // Top circuits sorted by win rate
@@ -104,7 +104,7 @@ export default function OddsPage() {
           height: 48px;
           width: 100%;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 0 36px 0 16px;
           font-family: var(--font-body);
           font-size: 14px;
@@ -123,7 +123,7 @@ export default function OddsPage() {
           background: #7C3AED;
           color: #FFFFFF;
           border: none;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 14px 40px;
           font-size: 14px;
           font-weight: 700;
@@ -138,7 +138,7 @@ export default function OddsPage() {
         .odds-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         .odds-link { color: #6D28D9; text-decoration: none; transition: color 0.2s ease; }
@@ -170,7 +170,7 @@ export default function OddsPage() {
           padding: '16px';
           background: '#F8F9FA';
           border: '1px solid #E5E7EB';
-          border-radius: 2px;
+          border-radius: 6px;
           text-decoration: none;
           transition: all 0.2s ease;
           height: 100%;
@@ -392,7 +392,7 @@ export default function OddsPage() {
                   </h3>
                   <div style={{ display: 'grid', gap: 16 }}>
                     {[
-                      { label: 'Won at Trial', value: results.winRate, color: '#07874A' },
+                      { label: 'Won at Trial', value: results.winRate, color: '#15803D' },
                       { label: 'Settled', value: results.settlementRate, color: '#D97706' },
                       { label: 'Dismissed', value: results.dismissalRate, color: '#7C3AED' },
                     ].map(item => (
@@ -575,7 +575,7 @@ export default function OddsPage() {
                     gap: 12,
                   }}>
                     {topCircuits.map(({ circuit, rate }) => {
-                      const color = rate >= 50 ? '#07874A' : rate >= 35 ? '#D97706' : '#7C3AED';
+                      const color = rate >= 50 ? '#15803D' : rate >= 35 ? '#D97706' : '#7C3AED';
                       return (
                         <div key={circuit} style={{
                           background: '#F8F9FA',
@@ -657,14 +657,14 @@ export default function OddsPage() {
                       className="outcome-donut"
                       style={{
                         background: `conic-gradient(
-                          #07874A 0deg ${(results.winRate / 100) * 360}deg,
+                          #15803D 0deg ${(results.winRate / 100) * 360}deg,
                           #D97706 ${(results.winRate / 100) * 360}deg ${((results.winRate + results.settlementRate) / 100) * 360}deg,
                           #9CA3AF ${((results.winRate + results.settlementRate) / 100) * 360}deg 360deg
                         )`,
                       }}
                     >
                       <div className="outcome-donut-inner">
-                        <div style={{ fontSize: 24, fontWeight: 700, color: '#07874A', fontFamily: 'var(--font-mono)' }}>
+                        <div style={{ fontSize: 24, fontWeight: 700, color: '#15803D', fontFamily: 'var(--font-mono)' }}>
                           {favorablePercentage.toFixed(1)}%
                         </div>
                         <div style={{ fontSize: 11, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>
@@ -680,7 +680,7 @@ export default function OddsPage() {
                     gap: 24,
                   }}>
                     {[
-                      { label: 'Win', color: '#07874A', pct: results.winRate },
+                      { label: 'Win', color: '#15803D', pct: results.winRate },
                       { label: 'Settlement', color: '#D97706', pct: results.settlementRate },
                       { label: 'Dismissed/Other', color: '#9CA3AF', pct: results.dismissalRate },
                     ].map(item => (
@@ -764,7 +764,7 @@ export default function OddsPage() {
                           <span style={{
                             fontSize: 13,
                             fontWeight: 700,
-                            color: nationalAverageWinRate >= 50 ? '#07874A' : nationalAverageWinRate >= 35 ? '#D97706' : '#7C3AED',
+                            color: nationalAverageWinRate >= 50 ? '#15803D' : nationalAverageWinRate >= 35 ? '#D97706' : '#7C3AED',
                             fontFamily: 'var(--font-mono)',
                           }}>
                             {nationalAverageWinRate.toFixed(1)}%
@@ -774,7 +774,7 @@ export default function OddsPage() {
                           <div style={{
                             height: '100%',
                             width: `${Math.min(nationalAverageWinRate, 100)}%`,
-                            background: nationalAverageWinRate >= 50 ? '#07874A' : nationalAverageWinRate >= 35 ? '#D97706' : '#7C3AED',
+                            background: nationalAverageWinRate >= 50 ? '#15803D' : nationalAverageWinRate >= 35 ? '#D97706' : '#7C3AED',
                             borderRadius: 2,
                           }} />
                         </div>
@@ -1217,7 +1217,7 @@ export default function OddsPage() {
                       >
                         <span style={{ color: '#212529', fontWeight: 500 }}>{t?.label || rd.label}</span>
                         <span style={{
-                          color: (rd.wr ?? 0) >= 50 ? '#07874A' : '#7C3AED',
+                          color: (rd.wr ?? 0) >= 50 ? '#15803D' : '#7C3AED',
                           fontWeight: 700,
                           fontFamily: 'var(--font-mono)',
                           fontSize: 12,

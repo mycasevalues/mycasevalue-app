@@ -37,7 +37,7 @@ export default function SidebarNav() {
       gap: '8px',
       backgroundColor: '#1B3A5C',
       padding: '12px',
-      borderRadius: '2px',
+      borderRadius: '6px',
     }}>
       <style>{`
         .sidebar-nav-item {
@@ -45,7 +45,7 @@ export default function SidebarNav() {
           align-items: center;
           gap: 12px;
           padding: 12px 14px;
-          border-radius: 2px;
+          border-radius: 6px;
           font-size: 14px;
           font-weight: 400;
           color: #FFFFFF;

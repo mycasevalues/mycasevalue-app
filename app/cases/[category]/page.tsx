@@ -296,7 +296,7 @@ async function CategoryPage({
       <div style={{ padding: '40px 20px', textAlign: 'center' }}>
         <h1 className="text-2xl font-bold">Category not found</h1>
         <p className="mt-4" style={{ color: '#4B5563' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
-        <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: '#212529', borderRadius: '2px' }}>Browse all categories</a>
+        <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: '#212529', borderRadius: '6px' }}>Browse all categories</a>
       </div>
     );
   }
@@ -415,7 +415,7 @@ async function CategoryPage({
             gap: '8px',
             padding: '6px 14px',
             background: '#7C3AED',
-            borderRadius: '2px',
+            borderRadius: '6px',
             fontSize: '12px',
             fontWeight: 700,
             letterSpacing: '0.5px',
@@ -704,7 +704,7 @@ async function CategoryPage({
                   style={{
                     background: '#FFFFFF',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '2px',
+                    borderRadius: '6px',
                     padding: '20px',
                     fontFamily: 'var(--font-display)',
                     textDecoration: 'none',
@@ -742,7 +742,7 @@ async function CategoryPage({
                       </div>
                       {rd.wr != null && (
                         <div style={{ minWidth: 50 }}>
-                          <div style={{ fontSize: '16px', fontWeight: 700, color: rd.wr >= 50 ? '#07874A' : '#7C3AED', fontFamily: 'var(--font-mono)' }}>
+                          <div style={{ fontSize: '16px', fontWeight: 700, color: rd.wr >= 50 ? '#15803D' : '#7C3AED', fontFamily: 'var(--font-mono)' }}>
                             {rd.wr}%
                           </div>
                           <div style={{ fontSize: '10px', color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
@@ -770,7 +770,7 @@ async function CategoryPage({
                   {/* Win rate bar */}
                   {rd && rd.wr != null && (
                     <div style={{ height: 4, background: '#F0F3F5', borderRadius: 2, marginBottom: 12, overflow: 'hidden' }}>
-                      <div style={{ height: '100%', width: `${Math.min(rd.wr, 100)}%`, background: rd.wr >= 50 ? '#07874A' : '#7C3AED', borderRadius: 2 }} />
+                      <div style={{ height: '100%', width: `${Math.min(rd.wr, 100)}%`, background: rd.wr >= 50 ? '#15803D' : '#7C3AED', borderRadius: 2 }} />
                     </div>
                   )}
 
@@ -890,7 +890,7 @@ async function CategoryPage({
                         <div style={{
                           fontSize: '20px',
                           fontWeight: 700,
-                          color: item.wr >= 50 ? '#07874A' : '#7C3AED',
+                          color: item.wr >= 50 ? '#15803D' : '#7C3AED',
                           fontFamily: 'var(--font-mono)',
                         }}>
                           {item.wr}%
@@ -905,7 +905,7 @@ async function CategoryPage({
                         <div style={{
                           height: '100%',
                           width: `${Math.min(item.wr || 0, 100)}%`,
-                          background: item.wr >= 50 ? '#07874A' : '#7C3AED',
+                          background: item.wr >= 50 ? '#15803D' : '#7C3AED',
                           borderRadius: '4px',
                         }} />
                       </div>
@@ -959,7 +959,7 @@ async function CategoryPage({
                 {entries.map(([circuit, rate]) => {
                   const wr = rate as number;
                   const diff = wr - nationalAvg;
-                  const color = wr >= 50 ? '#07874A' : wr >= 35 ? '#D97706' : '#7C3AED';
+                  const color = wr >= 50 ? '#15803D' : wr >= 35 ? '#D97706' : '#7C3AED';
                   return (
                     <div key={circuit} style={{
                       padding: '16px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF',
@@ -971,7 +971,7 @@ async function CategoryPage({
                       <div style={{ height: 6, background: '#F0F3F5', borderRadius: 3, overflow: 'hidden', marginBottom: 6 }}>
                         <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 3 }} />
                       </div>
-                      <div style={{ fontSize: 11, color: diff >= 0 ? '#07874A' : '#7C3AED', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: 11, color: diff >= 0 ? '#15803D' : '#7C3AED', fontFamily: 'var(--font-mono)' }}>
                         {diff >= 0 ? '+' : ''}{diff.toFixed(1)}% vs avg
                       </div>
                     </div>
@@ -1044,7 +1044,7 @@ async function CategoryPage({
                       left: `${(item.lo / maxHi) * 100}%`,
                       width: `${((item.hi - item.lo) / maxHi) * 100}%`,
                       height: '100%',
-                      background: 'linear-gradient(90deg, rgba(0,105,151,0.15), rgba(0,105,151,0.3))',
+                      background: 'linear-gradient(90deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.25))',
                       borderRadius: 2,
                     }} />
                     {/* Median marker */}
@@ -1166,7 +1166,7 @@ async function CategoryPage({
                         left: `${(item.lo / maxHi) * 100}%`,
                         width: `${((item.hi - item.lo) / maxHi) * 100}%`,
                         height: '100%',
-                        background: 'linear-gradient(90deg, rgba(124, 58, 237, 0.2), rgba(232, 23, 31, 0.35))',
+                        background: 'linear-gradient(90deg, rgba(124, 58, 237, 0.2), rgba(124, 58, 237, 0.25))',
                         borderRadius: '3px',
                       }} />
                       <div style={{
@@ -1176,7 +1176,7 @@ async function CategoryPage({
                         width: '3px',
                         height: '100%',
                         background: '#7C3AED',
-                        borderRadius: '2px',
+                        borderRadius: '6px',
                         transform: 'translateX(-50%)',
                       }} />
                     </div>
@@ -1224,7 +1224,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontFamily: 'var(--font-display)',
             }}>
               <div style={{
@@ -1256,7 +1256,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontFamily: 'var(--font-display)',
             }}>
               <div style={{
@@ -1288,7 +1288,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontFamily: 'var(--font-display)',
             }}>
               <div style={{
@@ -1563,7 +1563,7 @@ async function CategoryPage({
               padding: '0 40px',
               background: '#7C3AED',
               color: '#FFFFFF',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontWeight: 700,
               fontSize: '14px',
               textDecoration: 'none',

@@ -95,7 +95,7 @@ function SignInForm() {
           box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
         }
         .auth-btn {
-          background: linear-gradient(to right, #7C3AED, #6D28D9);
+          background: #7C3AED;
         }
         .auth-btn:hover:not(:disabled) {
           opacity: 0.9;
@@ -138,7 +138,7 @@ function SignInForm() {
           flex-shrink: 0;
           width: 20px;
           height: 20px;
-          background: #07874A;
+          background: #15803D;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -166,7 +166,7 @@ function SignInForm() {
           font-family: var(--font-mono);
           font-size: 16px;
           font-weight: 700;
-          color: #07874A;
+          color: #15803D;
         }
         .trust-label {
           font-family: var(--font-body);
@@ -273,7 +273,7 @@ function SignInForm() {
           style={{
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '2px',
+            borderRadius: '6px',
             padding: '40px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
@@ -335,7 +335,7 @@ function SignInForm() {
                 height: '48px',
                 padding: '12px 14px',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 color: '#212529',
@@ -394,7 +394,7 @@ function SignInForm() {
                 height: '48px',
                 padding: '12px 14px',
                 border: '1px solid #E5E7EB',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 color: '#212529',
@@ -437,7 +437,7 @@ function SignInForm() {
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
                 backgroundColor: 'rgba(124, 58, 237, 0.06)',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 border: '1px solid rgba(124, 58, 237, 0.2)',
               }}
             >
@@ -457,7 +457,7 @@ function SignInForm() {
               backgroundColor: '#7C3AED',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
               fontWeight: 700,

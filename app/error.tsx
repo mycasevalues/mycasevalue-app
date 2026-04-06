@@ -45,7 +45,7 @@ export default function Error({
           textAlign: 'center',
           background: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
           padding: '48px 32px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}
@@ -55,7 +55,7 @@ export default function Error({
           style={{
             width: 72,
             height: 72,
-            borderRadius: '2px',
+            borderRadius: '6px',
             background: 'rgba(0,105,151,0.08)',
             display: 'inline-flex',
             alignItems: 'center',
@@ -122,7 +122,7 @@ export default function Error({
               background: '#7C3AED',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
@@ -152,10 +152,10 @@ export default function Error({
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: '#F5F5F5',
+              background: '#F7F8FA',
               color: '#212529',
               border: '1px solid #E5E7EB',
-              borderRadius: '2px',
+              borderRadius: '6px',
               fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',
@@ -167,7 +167,7 @@ export default function Error({
               (e.target as HTMLAnchorElement).style.borderColor = '#E5E7EB';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLAnchorElement).style.background = '#F5F5F5';
+              (e.target as HTMLAnchorElement).style.background = '#F7F8FA';
               (e.target as HTMLAnchorElement).style.borderColor = '#E5E7EB';
             }}
           >

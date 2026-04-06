@@ -28,7 +28,7 @@
   background: var(--color-navy);
   color: #FFFFFF;
   padding: 8px 16px;
-  border-radius: 2px;
+  border-radius: 6px;
   font-size: 14px;
   z-index: 9999;
 }
@@ -114,7 +114,7 @@ a:hover { text-decoration: underline; color: var(--color-accent-dark); }
     background: linear-gradient(90deg, #E5EBF0 25%, #F7F8FA 50%, #E5EBF0 75%);
     background-size: 400% 100%;
     animation: shimmer 1.8s infinite linear;
-    border-radius: 2px;
+    border-radius: 6px;
   }
 
   .font-display {
@@ -479,7 +479,7 @@ select option {
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
   outline: 2px solid #7C3AED;
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: 6px;
 }
 
 /* Smoother scroll behavior */
@@ -808,7 +808,7 @@ select:focus-visible,
 [role="button"]:focus-visible {
   outline: 2px solid #7C3AED;
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: 6px;
 }
 
 /* Uniform button press feedback */
@@ -876,7 +876,7 @@ button:disabled,
   background: linear-gradient(90deg, #E5EBF0 25%, #F7F8FA 50%, #E5EBF0 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s ease-in-out infinite;
-  border-radius: 2px;
+  border-radius: 6px;
 }
 
 /* Counter tick animation */

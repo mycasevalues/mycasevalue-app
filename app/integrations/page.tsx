@@ -131,7 +131,7 @@ export default function IntegrationsPage() {
         .integration-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 32px;
           transition: all 0.2s ease;
           position: relative;
@@ -149,7 +149,7 @@ export default function IntegrationsPage() {
           right: 0;
           height: 3px;
           background: #7C3AED;
-          border-radius: 2px 4px 0 0;
+          border-radius: 6px 4px 0 0;
         }
         .breadcrumb-link:hover {
           color: #FFFFFF !important;
@@ -160,7 +160,7 @@ export default function IntegrationsPage() {
         .feature-tag {
           background: #F8F9FA;
           border: 1px solid #E5E7EB;
-          border-radius: 2px;
+          border-radius: 6px;
           padding: 4px 10px;
           font-size: 12px;
           color: #4B5563;
@@ -199,7 +199,7 @@ export default function IntegrationsPage() {
             alignItems: 'center',
             gap: '8px',
             padding: '6px 12px',
-            borderRadius: '2px',
+            borderRadius: '6px',
             fontSize: '11px',
             fontWeight: 700,
             letterSpacing: '1.5px',
@@ -218,7 +218,7 @@ export default function IntegrationsPage() {
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(28px, 5vw, 42px)',
-            fontWeight: 800,
+            fontWeight: 700,
             color: '#FFFFFF',
             margin: '0 0 16px 0',
             letterSpacing: '-1.5px',
@@ -251,7 +251,7 @@ export default function IntegrationsPage() {
               <p style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: '24px',
-                fontWeight: 800,
+                fontWeight: 700,
                 color: '#7C3AED',
                 margin: '0 0 4px 0',
               }}>
@@ -290,7 +290,7 @@ export default function IntegrationsPage() {
                 <div style={{
                   width: '56px',
                   height: '56px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   background: '#F8F9FA',
                   border: '1px solid #E5E7EB',
                   display: 'flex',
@@ -305,7 +305,7 @@ export default function IntegrationsPage() {
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   background: integration.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
                   color: integration.status === 'Available' ? '#15803D' : '#7C3AED',
                   border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
@@ -365,7 +365,7 @@ export default function IntegrationsPage() {
                   padding: '10px 24px',
                   background: '#7C3AED',
                   color: '#FFFFFF',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   textDecoration: 'none',
                   fontSize: '13px',
                   fontWeight: 700,
@@ -391,7 +391,7 @@ export default function IntegrationsPage() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: '28px',
-              fontWeight: 800,
+              fontWeight: 700,
               color: '#212529',
               margin: 0,
             }}>
@@ -460,7 +460,7 @@ export default function IntegrationsPage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   padding: '24px',
                   transition: 'all 0.2s ease',
                   position: 'relative',
@@ -496,7 +496,7 @@ export default function IntegrationsPage() {
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   background: capability.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
                   color: capability.status === 'Available' ? '#15803D' : '#7C3AED',
                   border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
@@ -520,7 +520,7 @@ export default function IntegrationsPage() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: '28px',
-              fontWeight: 800,
+              fontWeight: 700,
               color: '#212529',
               margin: 0,
             }}>
@@ -578,7 +578,7 @@ export default function IntegrationsPage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   padding: '28px',
                   transition: 'all 0.2s ease',
                   display: 'flex',
@@ -618,7 +618,7 @@ export default function IntegrationsPage() {
         {/* API Quick Start */}
         <div style={{
           background: '#1B3A5C',
-          borderRadius: '2px',
+          borderRadius: '6px',
           padding: '48px',
           marginBottom: '48px',
         }}>
@@ -643,7 +643,7 @@ export default function IntegrationsPage() {
           {/* Code Block */}
           <div style={{
             background: 'rgba(0,0,0,0.3)',
-            borderRadius: '2px',
+            borderRadius: '6px',
             padding: '24px',
             fontFamily: 'var(--font-mono)',
             fontSize: '13px',
@@ -662,16 +662,16 @@ export default function IntegrationsPage() {
               <span style={{ color: '#E5E7EB' }}>(</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
-              <span style={{ color: '#07874A' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
+              <span style={{ color: '#15803D' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
               <span style={{ color: '#E5E7EB' }}>,</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
               <span style={{ color: '#E5E7EB' }}>{'{ '}</span>
               <span style={{ color: '#FFFFFF' }}>headers</span>
               <span style={{ color: '#E5E7EB' }}>{': { '}</span>
-              <span style={{ color: '#07874A' }}>{`'Authorization'`}</span>
+              <span style={{ color: '#15803D' }}>{`'Authorization'`}</span>
               <span style={{ color: '#E5E7EB' }}>{': '}</span>
-              <span style={{ color: '#07874A' }}>{`'Bearer YOUR_API_KEY'`}</span>
+              <span style={{ color: '#15803D' }}>{`'Bearer YOUR_API_KEY'`}</span>
               <span style={{ color: '#E5E7EB' }}>{' } }'}</span>
             </div>
             <div>
@@ -688,7 +688,7 @@ export default function IntegrationsPage() {
                 padding: '12px 28px',
                 background: '#7C3AED',
                 color: '#FFFFFF',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 textDecoration: 'none',
                 fontSize: '13px',
                 fontWeight: 700,
@@ -713,7 +713,7 @@ export default function IntegrationsPage() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: '28px',
-              fontWeight: 800,
+              fontWeight: 700,
               color: '#212529',
               margin: 0,
             }}>
@@ -749,7 +749,7 @@ export default function IntegrationsPage() {
               style={{
                 background: '#FFFFFF',
                 border: '2px solid #6D28D9',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'flex',
@@ -806,7 +806,7 @@ export default function IntegrationsPage() {
               style={{
                 background: '#FFFFFF',
                 border: '2px solid #7C3AED',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'flex',
@@ -863,7 +863,7 @@ export default function IntegrationsPage() {
         <div style={{
           background: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '2px',
+          borderRadius: '6px',
           padding: '48px',
           textAlign: 'center' as const,
         }}>
@@ -895,7 +895,7 @@ export default function IntegrationsPage() {
               padding: '14px 32px',
               background: '#7C3AED',
               color: '#FFFFFF',
-              borderRadius: '2px',
+              borderRadius: '6px',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: 700,

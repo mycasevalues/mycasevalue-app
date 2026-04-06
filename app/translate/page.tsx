@@ -107,7 +107,7 @@ export default function TranslatePage() {
           {/* Header Content */}
           <div className="pb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '6px' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               TRANSLATE
             </div>
@@ -124,10 +124,10 @@ export default function TranslatePage() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Translator Form */}
-        <div className="p-6 sm:p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
+        <div className="p-6 sm:p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '6px' }}>
           {/* Free Access Banner */}
-          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '2px' }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#07874A', flexShrink: 0 }} />
+          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '6px' }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#15803D', flexShrink: 0 }} />
             <p className="text-sm" style={{ color: '#6D28D9', fontFamily: 'var(--font-body)', margin: 0 }}>
               <strong>Unlimited translations</strong> — all features are free during launch
             </p>
@@ -148,7 +148,7 @@ export default function TranslatePage() {
               placeholder="Paste legal text here, e.g., 'The court hereby grants the motion for summary judgment...'"
               className="w-full px-4 py-4 border text-sm transition-all focus:outline-none focus:ring-2 resize-none"
               style={{
-                borderRadius: '2px',
+                borderRadius: '6px',
                 borderColor: '#E5E7EB',
                 background: '#F8F9FA',
                 color: '#212529',
@@ -163,7 +163,7 @@ export default function TranslatePage() {
 
           {/* Error Display */}
           {error && (
-            <div className="mb-6 p-4" style={{ background: 'rgba(232,23,31,0.06)', border: '1px solid #7C3AED', borderRadius: '2px' }}>
+            <div className="mb-6 p-4" style={{ background: 'rgba(124, 58, 237, 0.06)', border: '1px solid #7C3AED', borderRadius: '6px' }}>
               <p className="text-sm" style={{ color: '#7C3AED', fontFamily: 'var(--font-body)' }}>
                 {error}
               </p>
@@ -176,7 +176,7 @@ export default function TranslatePage() {
             disabled={!input.trim() || loading}
             className="w-full px-6 py-3 text-sm font-semibold transition-all hover:shadow-lg active:scale-[0.99]"
             style={{
-              borderRadius: '2px',
+              borderRadius: '6px',
               background:
                 !input.trim() || loading
                   ? '#E5E7EB'
@@ -212,7 +212,7 @@ export default function TranslatePage() {
 
         {/* Translation Result */}
         {translation && (
-          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#7C3AED', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #7C3AED', borderRadius: '2px' }}>
+          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#7C3AED', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #7C3AED', borderRadius: '6px' }}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Plain English Translation
             </h2>
@@ -242,7 +242,7 @@ export default function TranslatePage() {
                 onClick={() => handleExample(phrase)}
                 className="p-4 border text-left transition-all hover:border-2 hover:shadow-sm active:scale-[0.98]"
                 style={{
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   borderColor: '#E5E7EB',
                   background: '#FFFFFF',
                   color: '#212529',
@@ -269,7 +269,7 @@ export default function TranslatePage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   padding: '12px',
                 }}
               >
@@ -314,7 +314,7 @@ export default function TranslatePage() {
                     style={{
                       borderColor: '#E5E7EB',
                       background: '#FFFFFF',
-                      borderRadius: '2px',
+                      borderRadius: '6px',
                     }}
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -332,7 +332,7 @@ export default function TranslatePage() {
                         style={{
                           background: '#6D28D9',
                           color: '#FFFFFF',
-                          borderRadius: '2px',
+                          borderRadius: '6px',
                           border: 'none',
                           cursor: 'pointer',
                         }}
@@ -353,7 +353,7 @@ export default function TranslatePage() {
             href="/search"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '2px',
+              borderRadius: '6px',
               borderColor: '#E5E7EB',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -370,7 +370,7 @@ export default function TranslatePage() {
             href="/calculator"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '2px',
+              borderRadius: '6px',
               borderColor: '#E5E7EB',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -387,7 +387,7 @@ export default function TranslatePage() {
             href="/glossary"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '2px',
+              borderRadius: '6px',
               borderColor: '#E5E7EB',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -404,7 +404,7 @@ export default function TranslatePage() {
             href="/odds"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '2px',
+              borderRadius: '6px',
               borderColor: '#E5E7EB',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -420,7 +420,7 @@ export default function TranslatePage() {
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
+        <div className="mt-8 p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '6px' }}>
           <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Important Disclaimer
           </h2>

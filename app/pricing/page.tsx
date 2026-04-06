@@ -238,7 +238,7 @@ function PricingCard({
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
-        borderRadius: '2px',
+        borderRadius: '6px',
         border: '1px solid #E5E7EB',
         borderTop: f ? '4px solid #7C3AED' : '1px solid #E5E7EB',
         background: '#FFFFFF',
@@ -252,7 +252,7 @@ function PricingCard({
             top: '-13px',
             left: '50%',
             transform: 'translateX(-50%)',
-            borderRadius: '2px',
+            borderRadius: '6px',
             padding: '4px 16px',
             background: '#7C3AED',
             color: '#FFFFFF',
@@ -307,7 +307,7 @@ function PricingCard({
             style={{
               fontSize: '48px',
               lineHeight: '1',
-              fontWeight: 800,
+              fontWeight: 700,
               color: '#212529',
               fontFamily: 'var(--font-mono)',
             }}
@@ -537,7 +537,7 @@ export default function PricingPage() {
               gap: '8px',
               padding: '6px 14px',
               background: 'rgba(124, 58, 237, 0.1)',
-              borderRadius: '2px',
+              borderRadius: '6px',
               marginBottom: '16px',
             }}
           >
@@ -585,7 +585,7 @@ export default function PricingPage() {
           {/* Launch Banner */}
           <div style={{
             display: 'inline-block',
-            background: '#07874A',
+            background: '#15803D',
             color: '#FFFFFF',
             padding: '12px 32px',
             borderRadius: 2,
@@ -629,7 +629,7 @@ export default function PricingPage() {
       </div>
 
       {/* Free During Launch Banner */}
-      <div style={{ background: '#F0FFF4', borderLeft: '4px solid #07874A' }}>
+      <div style={{ background: '#F0FFF4', borderLeft: '4px solid #15803D' }}>
         <div
           style={{
             maxWidth: '1344px',
@@ -650,7 +650,7 @@ export default function PricingPage() {
               height="32"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#07874A"
+              stroke="#15803D"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -664,7 +664,7 @@ export default function PricingPage() {
                 fontSize: '24px',
                 fontWeight: '700',
                 marginBottom: '8px',
-                color: '#07874A',
+                color: '#15803D',
                 fontFamily: 'var(--font-display)',
               }}
             >
@@ -684,7 +684,7 @@ export default function PricingPage() {
             <p
               style={{
                 fontSize: '12px',
-                color: '#07874A',
+                color: '#15803D',
                 fontWeight: '600',
                 fontFamily: 'var(--font-body)',
               }}
@@ -741,7 +741,7 @@ export default function PricingPage() {
                 key={i}
                 style={{
                   padding: '20px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   border: '2px solid #E5E7EB',
                   background: '#FFFFFF',
                   display: 'flex',
@@ -755,7 +755,7 @@ export default function PricingPage() {
                     height="24"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#07874A"
+                    stroke="#15803D"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -820,7 +820,7 @@ export default function PricingPage() {
               position: 'relative',
               width: '56px',
               height: '32px',
-              borderRadius: '2px',
+              borderRadius: '6px',
               border: 'none',
               background: annual ? '#7C3AED' : '#E5E7EB',
               cursor: 'pointer',
@@ -836,7 +836,7 @@ export default function PricingPage() {
               style={{
                 width: '24px',
                 height: '24px',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 background: 'white',
                 transition: 'all 200ms ease',
               }}
@@ -859,7 +859,7 @@ export default function PricingPage() {
                 style={{
                   display: 'inline-block',
                   padding: '2px 8px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   background: '#FFF3F4',
                   color: '#7C3AED',
                   fontSize: '11px',
@@ -883,7 +883,7 @@ export default function PricingPage() {
               padding: '12px 16px',
               backgroundColor: '#FFF3F4',
               border: '1px solid #7C3AED',
-              borderRadius: '2px',
+              borderRadius: '6px',
               textAlign: 'center',
             }}
           >
@@ -966,7 +966,7 @@ export default function PricingPage() {
                 key={i}
                 style={{
                   padding: '24px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   border: '1px solid #E5E7EB',
                   background: '#FFFFFF',
                 }}
@@ -1003,7 +1003,7 @@ export default function PricingPage() {
           style={{
             marginBottom: '80px',
             padding: '40px 24px',
-            borderRadius: '2px',
+            borderRadius: '6px',
             border: '1px solid #E5E7EB',
             background: '#FFFFFF',
           }}
@@ -1163,7 +1163,7 @@ export default function PricingPage() {
                 textAlign: 'center',
                 padding: '24px',
                 width: '200px',
-                borderRadius: '2px',
+                borderRadius: '6px',
                 border: '1px solid #E5E7EB',
                 background: '#FFFFFF',
               }}
@@ -1236,7 +1236,7 @@ export default function PricingPage() {
                 key={idx}
                 style={{
                   padding: '20px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   border: '1px solid #E5E7EB',
                   background: '#FFFFFF',
                   cursor: 'pointer',
@@ -1352,7 +1352,7 @@ export default function PricingPage() {
                 href={tool.href}
                 style={{
                   padding: '28px 24px',
-                  borderRadius: '2px',
+                  borderRadius: '6px',
                   border: '1px solid #E5E7EB',
                   background: '#FFFFFF',
                   textDecoration: 'none',
@@ -1429,7 +1429,7 @@ export default function PricingPage() {
             textAlign: 'center',
             padding: '40px',
             marginBottom: '64px',
-            borderRadius: '2px',
+            borderRadius: '6px',
             border: '1px solid #E5E7EB',
             background: '#FFFFFF',
           }}
@@ -1456,7 +1456,7 @@ export default function PricingPage() {
               paddingBottom: '12px',
               fontSize: '14px',
               fontWeight: '600',
-              borderRadius: '2px',
+              borderRadius: '6px',
               border: 'none',
               background: '#7C3AED',
               color: '#FFFFFF',

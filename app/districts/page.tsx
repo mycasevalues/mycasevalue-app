@@ -290,7 +290,7 @@ export default function DistrictsPage() {
             letterSpacing: '-1.5px',
             fontSize: 'clamp(28px, 5vw, 48px)',
             lineHeight: 1.2,
-            fontWeight: 800,
+            fontWeight: 700,
             margin: '0 0 16px',
           }}>
             Federal Court Districts
@@ -324,7 +324,7 @@ export default function DistrictsPage() {
               <div key={i}>
                 <div style={{
                   fontSize: 24,
-                  fontWeight: 800,
+                  fontWeight: 700,
                   color: '#7C3AED',
                   fontFamily: 'var(--font-display)',
                 }}>
@@ -385,7 +385,7 @@ export default function DistrictsPage() {
           </p>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: 12, color: '#4B5563' }}>
             <span>
-              <strong style={{ color: '#07874A' }}>●</strong> Win rate ≥ 50%
+              <strong style={{ color: '#15803D' }}>●</strong> Win rate ≥ 50%
             </span>
             <span>
               <strong style={{ color: '#D97706' }}>●</strong> Win rate 35–49%
