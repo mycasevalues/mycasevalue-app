@@ -491,6 +491,140 @@ async function CategoryPage({
         </div>
       </div>
 
+      {/* Category Statistics Summary Bar */}
+      <div style={{
+        background: '#FFFFFF',
+        padding: '40px 20px',
+        borderBottom: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '24px',
+          }}>
+            {(() => {
+              const seen = new Set<string>();
+              let totalCases = 0;
+              for (const opt of categoryData.opts) {
+                if (seen.has(opt.nos)) continue;
+                seen.add(opt.nos);
+                const rd = REAL_DATA[opt.nos];
+                if (rd?.total) totalCases += rd.total;
+              }
+              return (
+                <>
+                  <div style={{
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '4px',
+                    padding: '20px',
+                    textAlign: 'center',
+                  }}>
+                    <div style={{
+                      fontSize: '28px',
+                      fontWeight: 700,
+                      color: '#E8171F',
+                      marginBottom: '8px',
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      {totalCases.toLocaleString()}
+                    </div>
+                    <div style={{
+                      fontSize: '13px',
+                      color: '#455A64',
+                      fontWeight: 500,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      Total Cases
+                    </div>
+                  </div>
+                  <div style={{
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '4px',
+                    padding: '20px',
+                    textAlign: 'center',
+                  }}>
+                    <div style={{
+                      fontSize: '28px',
+                      fontWeight: 700,
+                      color: '#E8171F',
+                      marginBottom: '8px',
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      {stats.avgWinRate}%
+                    </div>
+                    <div style={{
+                      fontSize: '13px',
+                      color: '#455A64',
+                      fontWeight: 500,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      Avg Win Rate
+                    </div>
+                  </div>
+                  <div style={{
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '4px',
+                    padding: '20px',
+                    textAlign: 'center',
+                  }}>
+                    <div style={{
+                      fontSize: '28px',
+                      fontWeight: 700,
+                      color: '#E8171F',
+                      marginBottom: '8px',
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      {stats.avgSettleRate}%
+                    </div>
+                    <div style={{
+                      fontSize: '13px',
+                      color: '#455A64',
+                      fontWeight: 500,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      Avg Settlement Rate
+                    </div>
+                  </div>
+                  <div style={{
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '4px',
+                    padding: '20px',
+                    textAlign: 'center',
+                  }}>
+                    <div style={{
+                      fontSize: '28px',
+                      fontWeight: 700,
+                      color: '#E8171F',
+                      marginBottom: '8px',
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      {stats.avgTimelineMonths}mo
+                    </div>
+                    <div style={{
+                      fontSize: '13px',
+                      color: '#455A64',
+                      fontWeight: 500,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      Avg Duration
+                    </div>
+                  </div>
+                </>
+              );
+            })()}
+          </div>
+        </div>
+      </div>
+
       {/* Description Section */}
       <div style={{
         background: '#FFFFFF',
@@ -661,6 +795,128 @@ async function CategoryPage({
         </div>
       </div>
 
+      {/* Top Performing Case Types */}
+      <div style={{
+        background: '#FFFFFF',
+        padding: '60px 20px',
+        borderTop: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: 600,
+            color: '#212529',
+            margin: '0 0 32px 0',
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '-0.3px',
+          }}>
+            Top Performing Case Types
+          </h2>
+          {(() => {
+            const allCaseTypes = getAllCaseTypeSEO();
+            const topCaseTypes: { label: string; wr: number; nos: string; slug?: string }[] = [];
+            const seen = new Set<string>();
+
+            for (const opt of categoryData.opts) {
+              if (seen.has(opt.nos)) continue;
+              seen.add(opt.nos);
+              const rd = REAL_DATA[opt.nos];
+              if (rd?.wr != null) {
+                const caseType = allCaseTypes.find(
+                  (ct) => ct.categorySlug === category && ct.nosCode === opt.nos
+                );
+                topCaseTypes.push({
+                  label: opt.label,
+                  wr: rd.wr,
+                  nos: opt.nos,
+                  slug: caseType?.slug,
+                });
+              }
+            }
+
+            topCaseTypes.sort((a, b) => (b.wr || 0) - (a.wr || 0));
+            const top3 = topCaseTypes.slice(0, 3);
+
+            if (top3.length === 0) return null;
+
+            return (
+              <div style={{ display: 'grid', gap: '20px' }}>
+                {top3.map((item, idx) => {
+                  const href = item.slug ? `/cases/${category}/${item.slug}` : `/report/${item.nos}`;
+                  return (
+                    <Link
+                      key={item.nos}
+                      href={href}
+                      style={{
+                        display: 'block',
+                        padding: '20px 24px',
+                        background: '#F5F6F7',
+                        border: '1px solid #D5D8DC',
+                        borderRadius: '4px',
+                        textDecoration: 'none',
+                        transition: 'all 0.2s ease',
+                      }}
+                    >
+                      <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        marginBottom: '12px',
+                      }}>
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '16px',
+                        }}>
+                          <div style={{
+                            fontSize: '16px',
+                            fontWeight: 700,
+                            color: '#E8171F',
+                            fontFamily: 'var(--font-mono)',
+                            minWidth: '24px',
+                          }}>
+                            #{idx + 1}
+                          </div>
+                          <div style={{
+                            fontSize: '16px',
+                            fontWeight: 600,
+                            color: '#212529',
+                            fontFamily: 'var(--font-display)',
+                          }}>
+                            {item.label}
+                          </div>
+                        </div>
+                        <div style={{
+                          fontSize: '20px',
+                          fontWeight: 700,
+                          color: item.wr >= 50 ? '#07874A' : '#E8171F',
+                          fontFamily: 'var(--font-mono)',
+                        }}>
+                          {item.wr}%
+                        </div>
+                      </div>
+                      <div style={{
+                        height: '8px',
+                        background: '#E0E3E6',
+                        borderRadius: '4px',
+                        overflow: 'hidden',
+                      }}>
+                        <div style={{
+                          height: '100%',
+                          width: `${Math.min(item.wr || 0, 100)}%`,
+                          background: item.wr >= 50 ? '#07874A' : '#E8171F',
+                          borderRadius: '4px',
+                        }} />
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            );
+          })()}
+        </div>
+      </div>
+
       {/* Circuit Win Rate Comparison */}
       <div style={{
         background: '#FFFFFF',
@@ -815,6 +1071,133 @@ async function CategoryPage({
         </div>
       </div>
 
+      {/* Settlement Range Comparison */}
+      <div style={{
+        background: '#FFFFFF',
+        padding: '60px 20px',
+        borderTop: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: 600,
+            color: '#212529',
+            margin: '0 0 12px 0',
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '-0.3px',
+          }}>
+            Settlement Range Comparison
+          </h2>
+          <p style={{
+            fontSize: '14px',
+            color: '#455A64',
+            margin: '0 0 32px 0',
+            fontFamily: 'var(--font-body)',
+            lineHeight: 1.6,
+          }}>
+            Settlement ranges (25th to 75th percentile) by case type, sorted by median settlement amount.
+          </p>
+          {(() => {
+            const seen = new Set<string>();
+            const items: { label: string; lo: number; md: number; hi: number; nos: string }[] = [];
+            for (const opt of categoryData.opts) {
+              if (seen.has(opt.nos)) continue;
+              seen.add(opt.nos);
+              const rd = REAL_DATA[opt.nos];
+              if (rd?.rng?.md && rd.rng.md > 0) {
+                items.push({ label: opt.label, lo: rd.rng.lo || 0, md: rd.rng.md, hi: rd.rng.hi || 0, nos: opt.nos });
+              }
+            }
+            items.sort((a, b) => b.md - a.md);
+            const maxHi = Math.max(...items.map(i => i.hi), 1);
+            const displayItems = items.slice(0, 6);
+
+            if (displayItems.length === 0) return null;
+
+            return (
+              <div style={{ display: 'grid', gap: '16px' }}>
+                {displayItems.map((item) => (
+                  <Link
+                    key={item.nos}
+                    href={`/report/${item.nos}`}
+                    style={{
+                      display: 'block',
+                      padding: '20px',
+                      background: '#F5F6F7',
+                      border: '1px solid #D5D8DC',
+                      borderRadius: '4px',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      marginBottom: '12px',
+                    }}>
+                      <span style={{
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        color: '#212529',
+                        fontFamily: 'var(--font-display)',
+                      }}>
+                        {item.label}
+                      </span>
+                      <span style={{
+                        fontSize: '14px',
+                        fontWeight: 700,
+                        color: '#E8171F',
+                        fontFamily: 'var(--font-mono)',
+                      }}>
+                        ${item.md}K
+                      </span>
+                    </div>
+                    <div style={{
+                      position: 'relative',
+                      height: '24px',
+                      background: '#E0E3E6',
+                      borderRadius: '3px',
+                      overflow: 'hidden',
+                    }}>
+                      <div style={{
+                        position: 'absolute',
+                        left: `${(item.lo / maxHi) * 100}%`,
+                        width: `${((item.hi - item.lo) / maxHi) * 100}%`,
+                        height: '100%',
+                        background: 'linear-gradient(90deg, rgba(232, 23, 31, 0.2), rgba(232, 23, 31, 0.35))',
+                        borderRadius: '3px',
+                      }} />
+                      <div style={{
+                        position: 'absolute',
+                        left: `${(item.md / maxHi) * 100}%`,
+                        top: '0',
+                        width: '3px',
+                        height: '100%',
+                        background: '#E8171F',
+                        borderRadius: '2px',
+                        transform: 'translateX(-50%)',
+                      }} />
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      fontSize: '11px',
+                      color: '#455A64',
+                      marginTop: '6px',
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      <span>${item.lo}K</span>
+                      <span>${item.hi}K</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            );
+          })()}
+        </div>
+      </div>
+
       {/* Stats Section */}
       <div style={{
         background: '#FFFFFF',
@@ -932,6 +1315,211 @@ async function CategoryPage({
                 Average percentage of cases resolving favorably through settlement.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Explore More Links */}
+      <div style={{
+        background: '#F5F6F7',
+        padding: '60px 20px',
+        borderTop: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: 600,
+            color: '#212529',
+            margin: '0 0 32px 0',
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '-0.3px',
+          }}>
+            Explore More
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '20px',
+          }}>
+            <Link
+              href="/compare"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                padding: '24px',
+                background: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                color: '#212529',
+              }}
+            >
+              <div style={{
+                fontSize: '18px',
+                fontWeight: 600,
+                color: '#212529',
+                marginBottom: '8px',
+                fontFamily: 'var(--font-display)',
+              }}>
+                Compare Cases
+              </div>
+              <p style={{
+                fontSize: '14px',
+                color: '#455A64',
+                margin: 0,
+                marginBottom: '16px',
+                lineHeight: '1.5',
+              }}>
+                Compare win rates, settlement amounts, and timelines across case types.
+              </p>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                color: '#006997',
+                fontWeight: 600,
+                fontSize: '13px',
+              }}>
+                Go to Compare <ArrowRightIcon size={12} />
+              </div>
+            </Link>
+
+            <Link
+              href="/calculator"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                padding: '24px',
+                background: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                color: '#212529',
+              }}
+            >
+              <div style={{
+                fontSize: '18px',
+                fontWeight: 600,
+                color: '#212529',
+                marginBottom: '8px',
+                fontFamily: 'var(--font-display)',
+              }}>
+                Case Calculator
+              </div>
+              <p style={{
+                fontSize: '14px',
+                color: '#455A64',
+                margin: 0,
+                marginBottom: '16px',
+                lineHeight: '1.5',
+              }}>
+                Estimate potential settlement or award value for your case.
+              </p>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                color: '#006997',
+                fontWeight: 600,
+                fontSize: '13px',
+              }}>
+                Calculate Now <ArrowRightIcon size={12} />
+              </div>
+            </Link>
+
+            <Link
+              href="/odds"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                padding: '24px',
+                background: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                color: '#212529',
+              }}
+            >
+              <div style={{
+                fontSize: '18px',
+                fontWeight: 600,
+                color: '#212529',
+                marginBottom: '8px',
+                fontFamily: 'var(--font-display)',
+              }}>
+                Win Rate Odds
+              </div>
+              <p style={{
+                fontSize: '14px',
+                color: '#455A64',
+                margin: 0,
+                marginBottom: '16px',
+                lineHeight: '1.5',
+              }}>
+                See your case's win rate probability based on real federal court data.
+              </p>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                color: '#006997',
+                fontWeight: 600,
+                fontSize: '13px',
+              }}>
+                View Odds <ArrowRightIcon size={12} />
+              </div>
+            </Link>
+
+            <Link
+              href="/trends"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                padding: '24px',
+                background: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                color: '#212529',
+              }}
+            >
+              <div style={{
+                fontSize: '18px',
+                fontWeight: 600,
+                color: '#212529',
+                marginBottom: '8px',
+                fontFamily: 'var(--font-display)',
+              }}>
+                Case Trends
+              </div>
+              <p style={{
+                fontSize: '14px',
+                color: '#455A64',
+                margin: 0,
+                marginBottom: '16px',
+                lineHeight: '1.5',
+              }}>
+                Track case outcome trends and statistics over time.
+              </p>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                color: '#006997',
+                fontWeight: 600,
+                fontSize: '13px',
+              }}>
+                Explore Trends <ArrowRightIcon size={12} />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

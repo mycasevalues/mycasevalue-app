@@ -47,7 +47,10 @@ const FOOTER_COLUMNS = [
       { label: 'Methodology', href: '/methodology' },
       { label: 'Blog', href: '/blog' },
       { label: 'FAQ', href: '/faq' },
-      { label: 'Translate', href: '/translate' },
+      { label: 'Legal glossary', href: '/glossary' },
+      { label: 'Jargon translator', href: '/translate' },
+      { label: 'Filing trends', href: '/trends' },
+      { label: 'Compare cases', href: '/compare' },
     ],
   },
   {
@@ -55,6 +58,9 @@ const FOOTER_COLUMNS = [
     links: [
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
+      { label: 'Disclaimer', href: '/disclaimer' },
+      { label: 'Privacy policy', href: '/privacy' },
+      { label: 'Terms of service', href: '/terms' },
       { label: 'Sign in', href: '/sign-in' },
       { label: 'Create account', href: '/sign-up' },
     ],

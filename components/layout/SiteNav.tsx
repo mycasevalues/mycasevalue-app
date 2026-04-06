@@ -24,7 +24,8 @@ const NAV_LINKS = [
   { href: '/solutions', label: 'Solutions', mega: true },
   { href: '/nos-explorer', label: 'NOS Codes' },
   { href: '/calculator', label: 'Calculator' },
-  { href: '/pricing', label: 'Pricing' },
+  { href: '/compare', label: 'Compare' },
+  { href: '/trends', label: 'Trends' },
   { href: '/attorney', label: 'Attorney Mode', mega: true },
 ];
 
