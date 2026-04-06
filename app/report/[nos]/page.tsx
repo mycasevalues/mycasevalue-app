@@ -538,6 +538,7 @@ export default async function ReportPage({
                       title={`${item.year}: ${item.count.toLocaleString()} cases`}
                     >
                       <div
+                        className="yoy-bar"
                         style={{
                           width: '100%',
                           height: `${heightPercent}%`,
@@ -546,14 +547,6 @@ export default async function ReportPage({
                           transition: 'all 0.3s ease',
                           cursor: 'pointer',
                           minHeight: '20px',
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.background = '#006997';
-                          e.currentTarget.style.opacity = '0.8';
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.background = '#00172E';
-                          e.currentTarget.style.opacity = '1';
                         }}
                       />
                       <div style={{ textAlign: 'center' }}>
@@ -570,6 +563,7 @@ export default async function ReportPage({
               </div>
             );
           })()}
+          <style>{`.yoy-bar { background: #00172E; } .yoy-bar:hover { background: #006997 !important; opacity: 0.8 !important; }`}</style>
           <p style={{ fontSize: '12px', color: '#455A64', marginTop: '16px', textAlign: 'center', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
             Deterministic projection based on historical case volume patterns
           </p>
@@ -1146,6 +1140,7 @@ export default async function ReportPage({
                   <Link
                     key={i}
                     href={`/report/${item.nos}`}
+                    className="similar-case-card"
                     style={{
                       padding: '16px',
                       background: '#F8F9FA',
@@ -1156,14 +1151,6 @@ export default async function ReportPage({
                       display: 'flex',
                       flexDirection: 'column',
                       gap: '12px',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#F0F3F5';
-                      e.currentTarget.style.borderColor = '#D5D8DC';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = '#F8F9FA';
-                      e.currentTarget.style.borderColor = '#E8E9EA';
                     }}
                   >
                     <div style={{ fontSize: '14px', fontWeight: 600, color: '#006997', fontFamily: 'var(--font-body)' }}>
@@ -1193,6 +1180,7 @@ export default async function ReportPage({
                   </Link>
                 ))}
               </div>
+              <style>{`.similar-case-card { background: #F8F9FA; border-color: #E8E9EA; } .similar-case-card:hover { background: #F0F3F5 !important; border-color: #D5D8DC !important; }`}</style>
             </section>
           );
         })()}

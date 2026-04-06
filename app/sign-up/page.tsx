@@ -9,6 +9,7 @@ export default function SignUpPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [role, setRole] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -184,10 +185,7 @@ export default function SignUpPage() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: '#00172E',
-        padding: '48px 24px',
+        background: '#F5F6F7',
       }}
     >
       <style>{`
@@ -210,458 +208,880 @@ export default function SignUpPage() {
           box-shadow: 0 0 0 3px rgba(0, 105, 151, 0.1) !important;
         }
         .auth-btn:hover:not(:disabled) {
-          background-color: #CC1019 !important;
+          background: linear-gradient(135deg, #E8171F 0%, #CC1019 100%) !important;
           transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.3) !important;
         }
         .auth-link:hover {
           color: #004d6d !important;
         }
+        .feature-card {
+          border-radius: 2px;
+          border: 1px solid #D5D8DC;
+          background: #FFFFFF;
+          padding: 20px;
+          transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .feature-card:hover {
+          box-shadow: 0 4px 16px rgba(0, 23, 46, 0.08);
+          transform: translateY(-2px);
+        }
+        .trust-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 8px 12px;
+          background: #F5F6F7;
+          border-radius: 2px;
+          border: 1px solid #D5D8DC;
+          font-size: 12px;
+          color: #455A64;
+          font-family: var(--font-body);
+        }
       `}</style>
+
+      {/* Free Launch Banner */}
       <div
-        className="auth-card"
         style={{
-          width: '100%',
-          maxWidth: '420px',
-          background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
-          borderRadius: '2px',
-          padding: '40px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+          backgroundColor: '#07874A',
+          color: '#FFFFFF',
+          padding: '12px 24px',
+          textAlign: 'center',
+          fontFamily: 'var(--font-body)',
+          fontSize: '14px',
+          fontWeight: 500,
+          letterSpacing: '0.3px',
         }}
       >
-        {/* Wordmark */}
+        All features available free during our launch period
+      </div>
+
+      {/* Navy Header Strip with Logo */}
+      <div
+        style={{
+          backgroundColor: '#00172E',
+          padding: '24px',
+          color: '#FFFFFF',
+          borderBottom: '1px solid #D5D8DC',
+        }}
+      >
         <div
           style={{
-            marginBottom: '32px',
-            textAlign: 'center',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '24px',
-              fontWeight: 900,
-              color: '#212529',
-              margin: 0,
-              letterSpacing: '-0.5px',
-            }}
-          >
-            MyCaseValue
-          </p>
-        </div>
-
-        {/* Heading */}
-        <h1
-          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
             fontFamily: 'var(--font-display)',
-            fontSize: '24px',
-            fontWeight: 700,
-            color: '#212529',
-            margin: '0 0 24px 0',
-            lineHeight: 1.2,
+            fontSize: '20px',
+            fontWeight: 900,
+            letterSpacing: '-0.5px',
           }}
         >
-          Create your MyCaseValue account
-        </h1>
-
-        {/* Form */}
-        <form onSubmit={handleSubmit} style={{ marginBottom: '24px' }}>
-          {/* Full Name Field */}
-          <div style={{ marginBottom: '16px' }}>
-            <label
-              htmlFor="name"
-              style={{
-                display: 'block',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                fontWeight: 500,
-                color: '#212529',
-                marginBottom: '8px',
-              }}
-            >
-              Full name
-            </label>
-            <input
-              id="name"
-              type="text"
-              placeholder="John Doe"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="auth-input"
-              style={{
-                width: '100%',
-                height: '48px',
-                padding: '12px 16px',
-                border: '1px solid #D5D8DC',
-                borderRadius: '2px',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                color: '#212529',
-                backgroundColor: '#FFFFFF',
-                boxSizing: 'border-box',
-                transition: 'border-color 0.2s, box-shadow 0.2s',
-              }}
-            />
-          </div>
-
-          {/* Email Field */}
-          <div style={{ marginBottom: '16px' }}>
-            <label
-              htmlFor="email"
-              style={{
-                display: 'block',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                fontWeight: 500,
-                color: '#212529',
-                marginBottom: '8px',
-              }}
-            >
-              Email address
-            </label>
-            <input
-              id="email"
-              type="email"
-              placeholder="you@example.com"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="auth-input"
-              style={{
-                width: '100%',
-                height: '48px',
-                padding: '12px 16px',
-                border: '1px solid #D5D8DC',
-                borderRadius: '2px',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                color: '#212529',
-                backgroundColor: '#FFFFFF',
-                boxSizing: 'border-box',
-                transition: 'border-color 0.2s, box-shadow 0.2s',
-              }}
-            />
-          </div>
-
-          {/* Password Field */}
-          <div style={{ marginBottom: '16px' }}>
-            <label
-              htmlFor="password"
-              style={{
-                display: 'block',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                fontWeight: 500,
-                color: '#212529',
-                marginBottom: '8px',
-              }}
-            >
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              placeholder="••••••••"
-              required
-              minLength={8}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="auth-input"
-              style={{
-                width: '100%',
-                height: '48px',
-                padding: '12px 16px',
-                border: '1px solid #D5D8DC',
-                borderRadius: '2px',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                color: '#212529',
-                backgroundColor: '#FFFFFF',
-                boxSizing: 'border-box',
-                transition: 'border-color 0.2s, box-shadow 0.2s',
-              }}
-            />
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '12px',
-                color: '#455A64',
-                margin: '6px 0 0 0',
-              }}
-            >
-              Minimum 8 characters
-            </p>
-          </div>
-
-          {/* Confirm Password Field */}
-          <div style={{ marginBottom: '16px' }}>
-            <label
-              htmlFor="confirm-password"
-              style={{
-                display: 'block',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                fontWeight: 500,
-                color: '#212529',
-                marginBottom: '8px',
-              }}
-            >
-              Confirm password
-            </label>
-            <input
-              id="confirm-password"
-              type="password"
-              placeholder="••••••••"
-              required
-              minLength={8}
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              className="auth-input"
-              style={{
-                width: '100%',
-                height: '48px',
-                padding: '12px 16px',
-                border: '1px solid #D5D8DC',
-                borderRadius: '2px',
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px',
-                color: '#212529',
-                backgroundColor: '#FFFFFF',
-                boxSizing: 'border-box',
-                transition: 'border-color 0.2s, box-shadow 0.2s',
-              }}
-            />
-          </div>
-
-          {/* Terms Checkbox */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              marginBottom: '20px',
-              gap: '10px',
-            }}
-          >
-            <input
-              id="terms"
-              type="checkbox"
-              required
-              style={{
-                width: '18px',
-                height: '18px',
-                minWidth: '18px',
-                marginTop: '2px',
-                cursor: 'pointer',
-                accentColor: '#006997',
-              }}
-            />
-            <label
-              htmlFor="terms"
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                color: '#212529',
-                lineHeight: 1.5,
-                cursor: 'pointer',
-              }}
-            >
-              I agree to the{' '}
-              <Link
-                href="/terms"
-                style={{
-                  color: '#006997',
-                  textDecoration: 'none',
-                }}
-                className="auth-link"
-              >
-                Terms of Service
-              </Link>
-              {' '}and{' '}
-              <Link
-                href="/privacy"
-                style={{
-                  color: '#006997',
-                  textDecoration: 'none',
-                }}
-                className="auth-link"
-              >
-                Privacy Policy
-              </Link>
-            </label>
-          </div>
-
-          {/* Error Message */}
-          {error && error !== 'already_registered' && (
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                color: '#E8171F',
-                margin: '0 0 16px 0',
-                padding: '10px 12px',
-                backgroundColor: 'rgba(204,16,25,0.06)',
-                borderRadius: '2px',
-                border: '1px solid rgba(255,107,107,0.30)',
-              }}
-            >
-              {error}
-            </p>
-          )}
-
-          {error === 'already_registered' && (
-            <p
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                color: '#E8171F',
-                margin: '0 0 16px 0',
-                padding: '10px 12px',
-                backgroundColor: 'rgba(204,16,25,0.06)',
-                borderRadius: '2px',
-                border: '1px solid rgba(255,107,107,0.30)',
-              }}
-            >
-              An account with this email already exists.{' '}
-              <Link
-                href="/sign-in"
-                style={{
-                  color: '#006997',
-                  textDecoration: 'none',
-                  fontWeight: 600,
-                }}
-              >
-                Sign in &rarr;
-              </Link>
-            </p>
-          )}
-
-          {/* Create Account Button */}
-          <button
-            type="submit"
-            disabled={loading}
-            className="auth-btn"
-            style={{
-              width: '100%',
-              height: '48px',
-              padding: '0',
-              backgroundColor: '#E8171F',
-              color: '#FFFFFF',
-              border: 'none',
-              borderRadius: '2px',
-              fontFamily: 'var(--font-body)',
-              fontSize: '15px',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              cursor: loading ? 'not-allowed' : 'pointer',
-              opacity: loading ? 0.7 : 1,
-              transition: 'background-color 0.2s, transform 0.1s',
-            }}
-          >
-            {loading ? 'Creating account...' : 'Create Account'}
-          </button>
-        </form>
-
-        {/* Divider */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '24px',
-          }}
-        >
-          <div
-            style={{
-              flex: 1,
-              height: '1px',
-              backgroundColor: '#D5D8DC',
-            }}
-          />
-          <span
-            style={{
-              padding: '0 12px',
-              fontFamily: 'var(--font-body)',
-              fontSize: '13px',
-              color: '#455A64',
-              fontWeight: 500,
-            }}
-          >
-            or
-          </span>
-          <div
-            style={{
-              flex: 1,
-              height: '1px',
-              backgroundColor: '#D5D8DC',
-            }}
-          />
-        </div>
-
-        {/* Sign In Link */}
-        <div
-          style={{
-            textAlign: 'center',
-          }}
-        >
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '14px',
-              color: '#212529',
-              margin: 0,
-            }}
-          >
-            Already have an account?{' '}
-            <Link
-              href="/sign-in"
-              style={{
-                color: '#006997',
-                textDecoration: 'none',
-                fontWeight: 600,
-              }}
-              className="auth-link"
-            >
-              Sign in &rarr;
-            </Link>
-          </p>
+          MyCaseValue
         </div>
       </div>
 
-      {/* Privacy/Terms Text Below Card */}
-      <p
+      {/* Main Content Area */}
+      <div
         style={{
-          marginTop: '24px',
-          textAlign: 'center',
-          fontFamily: 'var(--font-body)',
-          fontSize: '12px',
-          color: '#FFFFFF',
-          opacity: 0.8,
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '48px',
+          maxWidth: '1200px',
+          width: '100%',
+          margin: '0 auto',
+          padding: '48px 24px',
+          alignItems: 'start',
         }}
       >
-        Your privacy is important to us. Read our{' '}
-        <Link
-          href="/privacy"
+        {/* LEFT COLUMN: Form */}
+        <div>
+          <div
+            className="auth-card"
+            style={{
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              padding: '40px',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            }}
+          >
+            {/* Heading */}
+            <h1
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '24px',
+                fontWeight: 700,
+                color: '#212529',
+                margin: '0 0 24px 0',
+                lineHeight: 1.2,
+              }}
+            >
+              Create your account
+            </h1>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit} style={{ marginBottom: '24px' }}>
+              {/* Full Name Field */}
+              <div style={{ marginBottom: '16px' }}>
+                <label
+                  htmlFor="name"
+                  style={{
+                    display: 'block',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: '#212529',
+                    marginBottom: '8px',
+                  }}
+                >
+                  Full name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="John Doe"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="auth-input"
+                  style={{
+                    width: '100%',
+                    height: '48px',
+                    padding: '12px 16px',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '2px',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    color: '#212529',
+                    backgroundColor: '#FFFFFF',
+                    boxSizing: 'border-box',
+                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                  }}
+                />
+              </div>
+
+              {/* Email Field */}
+              <div style={{ marginBottom: '16px' }}>
+                <label
+                  htmlFor="email"
+                  style={{
+                    display: 'block',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: '#212529',
+                    marginBottom: '8px',
+                  }}
+                >
+                  Email address
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="auth-input"
+                  style={{
+                    width: '100%',
+                    height: '48px',
+                    padding: '12px 16px',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '2px',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    color: '#212529',
+                    backgroundColor: '#FFFFFF',
+                    boxSizing: 'border-box',
+                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                  }}
+                />
+              </div>
+
+              {/* Role/Profession Dropdown */}
+              <div style={{ marginBottom: '16px' }}>
+                <label
+                  htmlFor="role"
+                  style={{
+                    display: 'block',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: '#212529',
+                    marginBottom: '8px',
+                  }}
+                >
+                  Role/Profession
+                </label>
+                <select
+                  id="role"
+                  value={role}
+                  onChange={(e) => setRole(e.target.value)}
+                  className="auth-input"
+                  style={{
+                    width: '100%',
+                    height: '48px',
+                    padding: '12px 16px',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '2px',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    color: '#212529',
+                    backgroundColor: '#FFFFFF',
+                    boxSizing: 'border-box',
+                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <option value="">Select your profession</option>
+                  <option value="attorney">Attorney</option>
+                  <option value="paralegal">Paralegal</option>
+                  <option value="insurance">Insurance Professional</option>
+                  <option value="funder">Litigation Funder</option>
+                  <option value="academic">Academic</option>
+                  <option value="individual">Individual</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              {/* Password Field */}
+              <div style={{ marginBottom: '16px' }}>
+                <label
+                  htmlFor="password"
+                  style={{
+                    display: 'block',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: '#212529',
+                    marginBottom: '8px',
+                  }}
+                >
+                  Password
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="••••••••"
+                  required
+                  minLength={8}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="auth-input"
+                  style={{
+                    width: '100%',
+                    height: '48px',
+                    padding: '12px 16px',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '2px',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    color: '#212529',
+                    backgroundColor: '#FFFFFF',
+                    boxSizing: 'border-box',
+                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                  }}
+                />
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '12px',
+                    color: '#455A64',
+                    margin: '6px 0 0 0',
+                  }}
+                >
+                  Minimum 8 characters
+                </p>
+              </div>
+
+              {/* Confirm Password Field */}
+              <div style={{ marginBottom: '16px' }}>
+                <label
+                  htmlFor="confirm-password"
+                  style={{
+                    display: 'block',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: '#212529',
+                    marginBottom: '8px',
+                  }}
+                >
+                  Confirm password
+                </label>
+                <input
+                  id="confirm-password"
+                  type="password"
+                  placeholder="••••••••"
+                  required
+                  minLength={8}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  className="auth-input"
+                  style={{
+                    width: '100%',
+                    height: '48px',
+                    padding: '12px 16px',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '2px',
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    color: '#212529',
+                    backgroundColor: '#FFFFFF',
+                    boxSizing: 'border-box',
+                    transition: 'border-color 0.2s, box-shadow 0.2s',
+                  }}
+                />
+              </div>
+
+              {/* Terms Checkbox */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  marginBottom: '20px',
+                  gap: '10px',
+                }}
+              >
+                <input
+                  id="terms"
+                  type="checkbox"
+                  required
+                  style={{
+                    width: '18px',
+                    height: '18px',
+                    minWidth: '18px',
+                    marginTop: '2px',
+                    cursor: 'pointer',
+                    accentColor: '#006997',
+                  }}
+                />
+                <label
+                  htmlFor="terms"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#212529',
+                    lineHeight: 1.5,
+                    cursor: 'pointer',
+                  }}
+                >
+                  I agree to the{' '}
+                  <Link
+                    href="/terms"
+                    style={{
+                      color: '#006997',
+                      textDecoration: 'none',
+                    }}
+                    className="auth-link"
+                  >
+                    Terms of Service
+                  </Link>
+                  {' '}and{' '}
+                  <Link
+                    href="/privacy"
+                    style={{
+                      color: '#006997',
+                      textDecoration: 'none',
+                    }}
+                    className="auth-link"
+                  >
+                    Privacy Policy
+                  </Link>
+                </label>
+              </div>
+
+              {/* Error Message */}
+              {error && error !== 'already_registered' && (
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#E8171F',
+                    margin: '0 0 16px 0',
+                    padding: '10px 12px',
+                    backgroundColor: 'rgba(204,16,25,0.06)',
+                    borderRadius: '2px',
+                    border: '1px solid rgba(255,107,107,0.30)',
+                  }}
+                >
+                  {error}
+                </p>
+              )}
+
+              {error === 'already_registered' && (
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#E8171F',
+                    margin: '0 0 16px 0',
+                    padding: '10px 12px',
+                    backgroundColor: 'rgba(204,16,25,0.06)',
+                    borderRadius: '2px',
+                    border: '1px solid rgba(255,107,107,0.30)',
+                  }}
+                >
+                  An account with this email already exists.{' '}
+                  <Link
+                    href="/sign-in"
+                    style={{
+                      color: '#006997',
+                      textDecoration: 'none',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Sign in
+                  </Link>
+                </p>
+              )}
+
+              {/* Create Account Button */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="auth-btn"
+                style={{
+                  width: '100%',
+                  height: '48px',
+                  padding: '0',
+                  background: 'linear-gradient(135deg, #E8171F 0%, #D4141A 100%)',
+                  color: '#FFFFFF',
+                  border: 'none',
+                  borderRadius: '2px',
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '15px',
+                  fontWeight: 700,
+                  cursor: loading ? 'not-allowed' : 'pointer',
+                  opacity: loading ? 0.7 : 1,
+                  transition: 'background 0.2s, transform 0.1s, box-shadow 0.2s',
+                }}
+              >
+                {loading ? 'Creating account...' : 'Create Account'}
+              </button>
+            </form>
+
+            {/* Sign In Link */}
+            <div
+              style={{
+                textAlign: 'center',
+                paddingTop: '16px',
+                borderTop: '1px solid #D5D8DC',
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '14px',
+                  color: '#212529',
+                  margin: 0,
+                }}
+              >
+                Already have an account?{' '}
+                <Link
+                  href="/sign-in"
+                  style={{
+                    color: '#006997',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                  }}
+                  className="auth-link"
+                >
+                  Sign in
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN: Features & Trust */}
+        <div>
+          {/* What You'll Get Access To */}
+          <div style={{ marginBottom: '48px' }}>
+            <h2
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '20px',
+                fontWeight: 700,
+                color: '#00172E',
+                margin: '0 0 24px 0',
+              }}
+            >
+              What you'll get access to
+            </h2>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '16px',
+              }}
+            >
+              {/* Feature Card: Case Analytics */}
+              <div className="feature-card">
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    backgroundColor: 'rgba(0, 23, 46, 0.08)',
+                    borderRadius: '2px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '12px',
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00172E" strokeWidth="2">
+                    <path d="M3 3v18h18" />
+                    <path d="M18 17V9m-5 8V5m-5 12v-3" />
+                  </svg>
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    color: '#212529',
+                    margin: '0 0 8px 0',
+                  }}
+                >
+                  Case Analytics
+                </h3>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#455A64',
+                    margin: 0,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Deep insights into case outcomes and trends
+                </p>
+              </div>
+
+              {/* Feature Card: Judge Statistics */}
+              <div className="feature-card">
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    backgroundColor: 'rgba(232, 23, 31, 0.08)',
+                    borderRadius: '2px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '12px',
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    color: '#212529',
+                    margin: '0 0 8px 0',
+                  }}
+                >
+                  Judge Statistics
+                </h3>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#455A64',
+                    margin: 0,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Judicial tendencies and ruling patterns
+                </p>
+              </div>
+
+              {/* Feature Card: Settlement Data */}
+              <div className="feature-card">
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    backgroundColor: 'rgba(7, 135, 74, 0.08)',
+                    borderRadius: '2px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '12px',
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#07874A" strokeWidth="2">
+                    <path d="M12 2v20m10-10H2" />
+                    <circle cx="12" cy="12" r="10" />
+                  </svg>
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    color: '#212529',
+                    margin: '0 0 8px 0',
+                  }}
+                >
+                  Settlement Data
+                </h3>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#455A64',
+                    margin: 0,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Real settlement ranges and comparables
+                </p>
+              </div>
+
+              {/* Feature Card: Damage Calculator */}
+              <div className="feature-card">
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    backgroundColor: 'rgba(217, 119, 6, 0.08)',
+                    borderRadius: '2px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '12px',
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M7 7h10M7 17h10M7 12h10" />
+                  </svg>
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    color: '#212529',
+                    margin: '0 0 8px 0',
+                  }}
+                >
+                  Damage Calculator
+                </h3>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#455A64',
+                    margin: 0,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Estimate damages based on case data
+                </p>
+              </div>
+
+              {/* Feature Card: Case Comparison */}
+              <div className="feature-card">
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    backgroundColor: 'rgba(0, 110, 187, 0.08)',
+                    borderRadius: '2px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '12px',
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006EBB" strokeWidth="2">
+                    <line x1="7" y1="7" x2="7" y2="18" />
+                    <line x1="17" y1="3" x2="17" y2="18" />
+                    <line x1="3" y1="20" x2="21" y2="20" />
+                  </svg>
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    color: '#212529',
+                    margin: '0 0 8px 0',
+                  }}
+                >
+                  Case Comparison Tool
+                </h3>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#455A64',
+                    margin: 0,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Compare similar cases side-by-side
+                </p>
+              </div>
+
+              {/* Feature Card: Trend Reports */}
+              <div className="feature-card">
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    backgroundColor: 'rgba(232, 23, 31, 0.08)',
+                    borderRadius: '2px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '12px',
+                  }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                    <polyline points="17 6 23 6 23 12" />
+                  </svg>
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    color: '#212529',
+                    margin: '0 0 8px 0',
+                  }}
+                >
+                  Trend Reports
+                </h3>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#455A64',
+                    margin: 0,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Market trends and emerging patterns
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Trust Section */}
+          <div>
+            <h2
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '20px',
+                fontWeight: 700,
+                color: '#00172E',
+                margin: '0 0 24px 0',
+              }}
+            >
+              Trusted by attorneys nationwide
+            </h2>
+
+            <p
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '14px',
+                color: '#455A64',
+                margin: '0 0 16px 0',
+                lineHeight: 1.6,
+              }}
+            >
+              Our database includes federal court data from official PACER records, providing the most accurate litigation insights available.
+            </p>
+
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '12px',
+              }}
+            >
+              <div className="trust-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Official PACER Data
+              </div>
+              <div className="trust-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                100+ Courts
+              </div>
+              <div className="trust-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                1M+ Cases
+              </div>
+              <div className="trust-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                Real-Time Updates
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Privacy/Terms Text */}
+      <div
+        style={{
+          backgroundColor: '#FFFFFF',
+          borderTop: '1px solid #D5D8DC',
+          padding: '24px',
+          textAlign: 'center',
+          marginTop: 'auto',
+        }}
+      >
+        <p
           style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '12px',
             color: '#455A64',
-            textDecoration: 'underline',
+            margin: 0,
           }}
-          className="auth-link"
         >
-          Privacy Policy
-        </Link>
-        {' '}and{' '}
-        <Link
-          href="/terms"
-          style={{
-            color: '#455A64',
-            textDecoration: 'underline',
-          }}
-          className="auth-link"
-        >
-          Terms of Service
-        </Link>
-        .
-      </p>
+          Your privacy is important to us. Read our{' '}
+          <Link
+            href="/privacy"
+            style={{
+              color: '#006997',
+              textDecoration: 'none',
+            }}
+            className="auth-link"
+          >
+            Privacy Policy
+          </Link>
+          {' '}and{' '}
+          <Link
+            href="/terms"
+            style={{
+              color: '#006997',
+              textDecoration: 'none',
+            }}
+            className="auth-link"
+          >
+            Terms of Service
+          </Link>
+          .
+        </p>
+      </div>
     </div>
   );
 }

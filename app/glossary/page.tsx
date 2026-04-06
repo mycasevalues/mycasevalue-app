@@ -416,41 +416,49 @@ export default function GlossaryPage() {
 
       {/* Related Tools */}
       <div className="max-w-3xl mx-auto px-6 py-16">
+        <style>{`
+          .glossary-tool-card {
+            background: #FFFFFF;
+            border: 1px solid #D5D8DC;
+            border-radius: 2px;
+            text-decoration: none;
+            display: block;
+            transition: all 200ms ease;
+            padding: 20px;
+          }
+
+          .glossary-tool-card:hover {
+            border-color: #E8171F;
+            box-shadow: 0 2px 8px rgba(232, 23, 31, 0.12);
+          }
+        `}</style>
         <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#212529', marginBottom: '24px', fontFamily: 'var(--font-display)' }}>
           Related Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Link href="/translate">
-            <a className="group p-5" style={{ background: '#FFFFFF', border: `1px solid #D5D8DC`, borderRadius: '2px', textDecoration: 'none', display: 'block', transition: 'all 200ms ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.12)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <a className="glossary-tool-card group">
               <div style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>Case Translator</div>
               <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#455A64' }}>Convert between case types and legal citations.</div>
             </a>
           </Link>
 
           <Link href="/nos-explorer">
-            <a className="group p-5" style={{ background: '#FFFFFF', border: `1px solid #D5D8DC`, borderRadius: '2px', textDecoration: 'none', display: 'block', transition: 'all 200ms ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.12)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <a className="glossary-tool-card group">
               <div style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>NOS Explorer</div>
               <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#455A64' }}>Browse and explore Nature of Suit codes.</div>
             </a>
           </Link>
 
           <Link href="/search">
-            <a className="group p-5" style={{ background: '#FFFFFF', border: `1px solid #D5D8DC`, borderRadius: '2px', textDecoration: 'none', display: 'block', transition: 'all 200ms ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.12)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <a className="glossary-tool-card group">
               <div style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>Case Search</div>
               <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#455A64' }}>Search federal court cases by type and location.</div>
             </a>
           </Link>
 
           <Link href="/methodology">
-            <a className="group p-5" style={{ background: '#FFFFFF', border: `1px solid #D5D8DC`, borderRadius: '2px', textDecoration: 'none', display: 'block', transition: 'all 200ms ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.12)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <a className="glossary-tool-card group">
               <div style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>Our Methodology</div>
               <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#455A64' }}>Learn how we analyze federal court data.</div>
             </a>
