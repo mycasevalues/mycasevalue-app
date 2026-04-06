@@ -68,7 +68,7 @@ export default function ContactForm() {
         <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
           Send Us a Message
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+        <div className="contact-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <div>
             <label htmlFor="contact-name" style={labelStyle}>Full Name</label>
             <input id="contact-name" className="contact-input" style={inputStyle} type="text" placeholder="Your name" required

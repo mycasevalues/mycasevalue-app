@@ -358,6 +358,7 @@ const SettlementPreview: React.FC = () => (
       Settlement Distribution
     </h3>
     <div
+      className="tabbed-data-grid-5"
       style={{
         display: 'grid',
         gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr',
@@ -490,6 +491,7 @@ const DistrictComparisonPreview: React.FC = () => (
       }}
     >
       <div
+        className="tabbed-data-grid-3"
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr 1fr',
@@ -512,6 +514,7 @@ const DistrictComparisonPreview: React.FC = () => (
       ].map((item, idx) => (
         <div
           key={item.district}
+          className="tabbed-data-grid-3"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',

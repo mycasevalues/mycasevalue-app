@@ -1063,6 +1063,38 @@ button:disabled,
   }
 }
 
+/* Hero section responsive — stack to single column on mobile */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .hero-grid h1 {
+    font-size: 32px !important;
+  }
+}
+
+/* Contact form responsive — stack name/email fields on mobile */
+@media (max-width: 640px) {
+  .contact-form-row {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-page-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* TabbedFeatures data table responsive */
+@media (max-width: 640px) {
+  .tabbed-data-grid-5 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  .tabbed-data-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 /* Testimonial card hover */
 .testimonial-card {
   transition: transform 200ms ease, box-shadow 200ms ease;

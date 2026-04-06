@@ -110,7 +110,7 @@ export default function ContactPage() {
 
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 24px' }}>
 
-        <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
+        <div className="contact-page-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
           {/* Left Column: Contact Info Cards */}
           <div style={{ display: 'grid', gap: 24, gridColumn: '1' }}>
             {/* Support */}
