@@ -95,7 +95,7 @@ const faqs = [
       },
       {
         q: '¿Qué tan antiguos son los datos?',
-        a: 'Nuestro conjunto de datos incluye casos federales que se remontan a 50+ años (desde 1970), con actualizaciones trimestrales del Centro Judicial Federal. Las tendencias históricas son visibles en nuestros datos, pero recuerda: los resultados pasados no predicen resultados futuros.',
+        a: 'Nuestro conjunto de datos incluye casos federales que se remontan a 54 años (1970–2024), con actualizaciones trimestrales del Centro Judicial Federal. Las tendencias históricas son visibles en nuestros datos, pero recuerda: los resultados pasados no predicen resultados futuros.',
       },
       {
         q: '¿Con qué frecuencia se actualizan los datos?',

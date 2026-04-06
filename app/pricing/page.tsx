@@ -38,7 +38,7 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
       name: 'Free',
       tagline: 'For anyone researching a case',
       price: '$0',
-      period: 'forever',
+      period: 'during beta',
       description: 'Start your research with essential case data and win rate analysis.',
       sectionLabel: 'Includes:',
       features: [
@@ -628,7 +628,7 @@ export default function PricingPage() {
         </div>
       </div>
 
-      {/* Free During Launch Banner */}
+      {/* Free During Beta Banner */}
       <div style={{ background: '#F0FFF4', borderLeft: '4px solid #059669' }}>
         <div
           style={{
@@ -679,7 +679,7 @@ export default function PricingPage() {
                 fontFamily: 'var(--font-body)',
               }}
             >
-              During our launch period, every feature is completely free. No account required, no credit card needed. This includes judge analytics, circuit breakdowns, settlement calculator, and all comparison tools.
+              During our beta period, every feature is completely free. No account required, no credit card needed. This includes judge analytics, circuit breakdowns, settlement calculator, and all comparison tools.
             </p>
             <p
               style={{

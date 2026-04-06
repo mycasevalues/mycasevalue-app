@@ -44,7 +44,7 @@ export default function ServerHero() {
               marginBottom: '20px',
               letterSpacing: '-0.01em',
             }}>
-              Data-driven legal intelligence from 5.1M+ cases
+              What really happened in cases like yours.
             </h1>
 
             <p style={{
@@ -55,7 +55,7 @@ export default function ServerHero() {
               marginBottom: '28px',
               maxWidth: '480px',
             }}>
-              Win rates, settlement ranges, judge analytics, and case timelines — sourced from public federal court records. Research smarter.
+              Win rates, settlement ranges, judge analytics, and case timelines from 5.1 million public federal court records. Free during beta. No account required.
             </p>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
@@ -69,7 +69,7 @@ export default function ServerHero() {
                 Start Researching
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a href="/attorney" style={{
+              <a href="/cases" style={{
                 display: 'inline-flex', alignItems: 'center',
                 padding: '1rem 1.5rem', background: 'transparent', color: '#FAFBFC',
                 border: '2px solid rgba(255,255,255,0.4)', borderRadius: '0.25rem',
@@ -77,12 +77,12 @@ export default function ServerHero() {
                 textDecoration: 'none',
                 transition: 'all 200ms',
               }} className="hero-cta-secondary">
-                Attorney Tools
+                View Case Types
               </a>
             </div>
 
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-body)' }}>
-              No account required · Free basic reports · Instant results
+              No account required · Free during public beta · Instant results
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export default function ServerHero() {
           {[
             { value: '5.1M+', label: 'Federal cases analyzed' },
             { value: '94', label: 'Federal districts covered' },
-            { value: '50+', label: 'Years of historical data' },
+            { value: '54 years', label: 'Historical data (1970–2024)' },
             { value: '84', label: 'Case types tracked' },
           ].map((stat, i) => (
             <div key={stat.label} style={{
@@ -418,7 +418,7 @@ export default function ServerHero() {
           <div style={{ maxWidth: '720px', margin: '0 auto 48px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="feature-bullets-grid">
             {[
               'Enhanced coverage with data from 5.1M+ federal court cases',
-              'All 94 federal districts with 50+ years of historical data',
+              'All 94 federal districts with 54 years of historical data (1970–2024)',
               'High-value analytics for settlements, timing, and outcomes',
               'Exclusive comparisons via judge and district analytics',
             ].map((text, i) => (
@@ -596,7 +596,7 @@ export default function ServerHero() {
               { label: 'Bureau of Justice Stats', sub: 'DOJ data' },
               { label: '5.1M+ Cases', sub: 'Analyzed' },
               { label: '94 Districts', sub: 'Full coverage' },
-              { label: '50+ Years', sub: 'Historical data' },
+              { label: '54 Years', sub: 'Historical data (1970–2024)' },
               { label: 'Daily Updates', sub: 'Fresh data' },
             ].map((award, i) => (
               <div key={i} style={{
@@ -670,11 +670,11 @@ export default function ServerHero() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
             {[
               { q: 'Where does MyCaseValue get its data?', a: 'Our data comes from the Federal Judicial Center (FJC), PACER (Public Access to Court Electronic Records), CourtListener (Free Law Project), and the Bureau of Justice Statistics. All data is sourced from official public federal court records.' },
-              { q: 'How many cases are in the database?', a: 'Over 5.1 million federal court cases spanning 50+ years across all 94 federal judicial districts. We cover 84 case types including employment, personal injury, civil rights, contract disputes, and more.' },
+              { q: 'How many cases are in the database?', a: 'Over 5.1 million federal court cases spanning 54 years (1970–2024) across all 94 federal judicial districts. We cover 84 case types including employment, personal injury, civil rights, contract disputes, and more.' },
               { q: 'Is MyCaseValue free to use?', a: 'Yes, all features are currently free with no account required — including settlement ranges, judge analytics, circuit breakdowns, and attorney tools.' },
               { q: 'Can I use this data in court?', a: 'MyCaseValue is an informational tool. While the underlying data comes from official court records, our analytics are for research purposes. Consult with an attorney for legal strategy decisions.' },
               { q: 'What case types are covered?', a: 'We cover all 84 federal Nature of Suit (NOS) codes, including employment discrimination (Title VII, ADA, ADEA), personal injury, product liability, medical malpractice, civil rights, contract disputes, insurance, patent, trademark, and more.' },
-              { q: 'How current is the data?', a: 'Our database is updated regularly with new case dispositions. Most data reflects cases closed within the last several years, with historical data going back 50+ years for trend analysis.' },
+              { q: 'How current is the data?', a: 'Our database is updated regularly with new case dispositions. Most data reflects cases closed within the last several years, with historical data spanning 54 years (1970–2024) for trend analysis.' },
               { q: 'What is Attorney Mode?', a: 'Attorney Mode provides advanced analytics tools including case outcome prediction, judge intelligence reports, venue optimization, opposing counsel research, bulk analysis, and team workspace features.' },
               { q: 'Do you offer an API?', a: 'Yes. Our REST API provides programmatic access to case analytics data for integration into your own tools and workflows. Documentation and sandbox access are available on our API page.' },
               { q: 'How are win rates calculated?', a: 'Win rates are calculated from final case dispositions in federal court records. We categorize outcomes as plaintiff verdicts, defense verdicts, settlements, and dismissals based on FJC disposition codes.' },

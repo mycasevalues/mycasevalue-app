@@ -271,7 +271,7 @@ export default function MethodologyPage() {
               { stat: '84', label: 'NOS Case Types' },
               { stat: '94', label: 'Federal Districts' },
               { stat: '13', label: 'Circuit Courts' },
-              { stat: '50+', label: 'Years of Data' },
+              { stat: '54', label: 'Years of Data' },
               { stat: 'Quarterly', label: 'Update Frequency' },
             ].map((item, i) => (
               <div key={i} className="at-a-glance-card">
@@ -424,7 +424,7 @@ export default function MethodologyPage() {
           <div className="coverage-grid">
             {[
               { v: '5.1M+', l: 'Federal Cases', c: '#0f0f0f' },
-              { v: '50+', l: 'Years of Data', c: '#059669' },
+              { v: '54', l: 'Years of Data', c: '#059669' },
               { v: '20+', l: 'Case Categories', c: '#8B5CF6' },
               { v: '94', l: 'Federal Districts', c: '#6D28D9' },
             ].map((stat, i) => (

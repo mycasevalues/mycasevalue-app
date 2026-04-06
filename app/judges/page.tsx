@@ -184,28 +184,25 @@ export default function JudgesPage() {
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
-                letterSpacing: '1.5px', marginBottom: 16, background: '#8B5CF6',
-                color: '#FFFFFF', textTransform: 'uppercase',
+                letterSpacing: '1.5px', marginBottom: 16, background: 'rgba(139, 92, 246, 0.15)',
+                color: '#FFFFFF', textTransform: 'uppercase', border: '1px solid rgba(255,255,255,0.2)',
               }}
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-              Judge Intelligence
+              JUDGES
             </div>
 
             <h1 style={{
               fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 900, marginBottom: 16,
               color: '#FFFFFF', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
-              Federal Judge Analytics
+              Judge Analytics
             </h1>
 
             <p style={{
               fontSize: 'clamp(15px, 2vw, 17px)', lineHeight: 1.6, maxWidth: 640,
               color: '#C7D1D8', fontFamily: 'var(--font-body)',
             }}>
-              Research federal judges across all 13 circuits and 94 districts. Search, sort, and compare judges by win rate, motion grant rate, case duration, and settlement patterns.
+              Judicial behavior analysis, motion grant rates, ruling patterns, and case-specific tendencies across all 94 federal districts.
             </p>
 
             {/* Quick stats bar in header */}
@@ -293,25 +290,83 @@ export default function JudgesPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#1B3A5C', textAlign: 'center', marginBottom: 64 }}>
-          <h2 style={{ fontSize: 24, fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
-            All judge analytics are free during launch
+        {/* Beta Notice */}
+        <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#F7F8FA', marginBottom: 64 }}>
+          <h2 style={{ fontSize: 24, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
+            Judge profiles in active development
           </h2>
-          <p style={{ fontSize: 15, color: '#C7D1D8', fontFamily: 'var(--font-body)', maxWidth: 520, margin: '0 auto 28px', lineHeight: 1.6 }}>
-            Full judge profiles with motion grant rates, ruling patterns, and case duration benchmarks — free for all users.
+          <p style={{ fontSize: 15, color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: 680, margin: '0 0 28px', lineHeight: 1.6 }}>
+            Judge profiles and individual analytics are in active development. District-level statistics by judge are being prepared from PACER and FJC data. Enter your email to be notified when this feature launches.
           </p>
-          <Link
-            href="/search"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '12px 28px', borderRadius: 2, background: '#8B5CF6',
-              color: '#FFFFFF', fontSize: 16, fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)',
-            }}
-          >
-            Start Researching
-            <ArrowRightIcon size={16} />
-          </Link>
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-start', flexWrap: 'wrap' }}>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              style={{
+                padding: '12px 16px',
+                borderRadius: 2,
+                border: '1px solid #E5E7EB',
+                fontSize: 15,
+                fontFamily: 'var(--font-body)',
+                backgroundColor: '#FFFFFF',
+                minWidth: 240,
+              }}
+            />
+            <button
+              style={{
+                padding: '12px 28px',
+                borderRadius: 2,
+                background: '#8B5CF6',
+                color: '#FFFFFF',
+                fontSize: 16,
+                fontWeight: 600,
+                border: 'none',
+                cursor: 'pointer',
+                fontFamily: 'var(--font-display)',
+                transition: 'background-color 0.3s ease',
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#7C3AED'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B5CF6'}
+            >
+              Notify Me
+            </button>
+          </div>
+        </section>
+
+        {/* Available Statistics */}
+        <section style={{ marginBottom: 64 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 32 }}>
+            Circuit-Level Statistics Available Now
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
+            {[
+              {
+                title: 'Circuit Win Rates',
+                description: 'Plaintiff and defendant win rates aggregated by federal circuit. Understand baseline success rates by case type and circuit jurisdiction.'
+              },
+              {
+                title: 'Average Case Duration',
+                description: 'Median time from filing to resolution by circuit and case type. Plan realistic timelines for litigation and settlement negotiations.'
+              },
+              {
+                title: 'Motion Grant Analysis',
+                description: 'Circuit-level patterns for motion dispositions. Assess likelihood of summary judgment and other dispositive motions by circuit.'
+              },
+              {
+                title: 'Settlement Patterns',
+                description: 'Settlement frequency and timing benchmarks by circuit. Evaluate settlement probability and optimal negotiation windows.'
+              },
+            ].map((stat, idx) => (
+              <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
+                <h3 style={{ fontSize: 16, fontWeight: 500, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 12, margin: '0 0 12px 0' }}>
+                  {stat.title}
+                </h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
+                  {stat.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* Disclaimer */}

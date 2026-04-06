@@ -347,17 +347,17 @@ export default function HowItWorksPage() {
               {
                 title: 'Judge Analytics',
                 description: 'Research judges by district and analyze ruling patterns.',
-                href: '/attorney/judge-intelligence',
+                href: '/judges',
               },
               {
                 title: 'Compare',
                 description: 'Side-by-side comparison of case outcomes and statistics.',
-                href: '/search',
+                href: '/compare',
               },
               {
                 title: 'NOS Explorer',
                 description: 'Browse federal case categories and nature of suit classifications.',
-                href: '/search',
+                href: '/nos-explorer',
               },
               {
                 title: 'Translator',
@@ -367,7 +367,7 @@ export default function HowItWorksPage() {
               {
                 title: 'Trends',
                 description: 'Analyze how case outcomes have changed over time.',
-                href: '/how-it-works',
+                href: '/trends',
               },
               {
                 title: 'Glossary',
@@ -575,8 +575,8 @@ export default function HowItWorksPage() {
               },
               {
                 icon: '',
-                title: 'Free During Launch',
-                description: 'All features are free during our launch period. No account required, no credit card needed.',
+                title: 'Free During Beta',
+                description: 'All features are free during our beta period. No account required, no credit card needed.',
               },
               {
                 icon: '',

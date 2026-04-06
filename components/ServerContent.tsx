@@ -49,6 +49,156 @@ export default function ServerContent() {
       <ScrollReveal delay={0}>
         <TrustBadges />
       </ScrollReveal>
+      <section
+        style={{
+          background: '#F7F8FA',
+          borderTop: '1px solid #E5E7EB',
+          padding: '80px 24px',
+        }}
+      >
+        <div style={{ maxWidth: '768px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '40px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+              In plain English
+            </p>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#1B3A5C', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #8B5CF6', paddingLeft: '20px' }}>
+              What this data actually tells you
+            </h2>
+            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
+              We take millions of public federal court records and turn them into clear, actionable insights.
+              Here&apos;s what the numbers mean for you.
+            </p>
+          </div>
+
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '13px',
+              color: '#4B5563',
+              textAlign: 'center',
+              marginBottom: '12px',
+            }}
+          >
+            Example data — Employment Discrimination, S.D.N.Y.
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            {[
+              {
+                label: 'Win Rate',
+                example: '42%',
+                explanation: 'Of cases like yours that went to trial, 42% resulted in a plaintiff verdict. This tells you how often people in similar situations won their case.',
+              },
+              {
+                label: 'Settlement Range',
+                example: '$18K – $145K',
+                explanation: 'The middle 80% of settlements in your case type fell in this range. The median (50th percentile) is the most likely outcome if your case settles.',
+              },
+              {
+                label: 'Timeline',
+                example: '14 months',
+                explanation: 'From filing to resolution, similar cases in your district took about 14 months on average. Cases that settled resolved faster than those that went to trial.',
+              },
+              {
+                label: 'Attorney Impact',
+                example: '+23% win rate',
+                explanation: 'Plaintiffs with attorneys won 23% more often than those who represented themselves. This measures the statistical advantage of legal representation.',
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  display: 'flex',
+                  gap: '20px',
+                  alignItems: 'flex-start',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                }}
+              >
+                <div
+                  style={{
+                    flexShrink: 0,
+                    fontFamily: '"PT Mono", monospace',
+                    fontSize: '18px',
+                    fontWeight: 600,
+                    color: '#8B5CF6',
+                    background: 'rgba(139, 92, 246, 0.08)',
+                    padding: '8px 14px',
+                    borderRadius: '12px',
+                    minWidth: '90px',
+                    textAlign: 'center',
+                    border: '1px solid rgba(232,23,31,0.15)',
+                  }}
+                >
+                  {item.example}
+                </div>
+                <div>
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '15px',
+                      fontWeight: 600,
+                      color: '#0f0f0f',
+                      margin: '0 0 6px 0',
+                    }}
+                  >
+                    {item.label}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '14px',
+                      color: '#0f0f0f',
+                      lineHeight: 1.6,
+                      margin: 0,
+                      fontWeight: 300,
+                    }}
+                  >
+                    {item.explanation}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '12px',
+              color: '#4B5563',
+              textAlign: 'center',
+              marginTop: '12px',
+              fontStyle: 'italic',
+            }}
+          >
+            Sample figures only. Your results depend on your specific case type, district, and facts.
+          </p>
+
+          <div
+            style={{
+              marginTop: '24px',
+              textAlign: 'center',
+            }}
+          >
+            <a
+              href="/cases"
+              style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '13px',
+                fontWeight: 600,
+                color: '#6D28D9',
+                textDecoration: 'none',
+              }}
+            >
+              See real data for your case →
+            </a>
+          </div>
+        </div>
+      </section>
+
 
       {/* ── TRUSTED CASE INTELLIGENCE ──────────────────────────── */}
       <section id="features" style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #E5E7EB' }}>
@@ -62,7 +212,7 @@ export default function ServerContent() {
                 Built on the most authoritative federal court records
               </h2>
               <p style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.7, fontWeight: 300, marginBottom: '24px' }}>
-                MyCaseValue+ surfaces the most relevant case data fast — reducing time spent searching and increasing certainty in your case assessment.
+                MyCaseValue surfaces the most relevant case data fast — reducing time spent searching and increasing certainty in your case assessment.
               </p>
               <a href="/search" className="cta-btn-primary" style={{
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
@@ -449,7 +599,7 @@ export default function ServerContent() {
               Built for everyone in the legal process
             </h2>
             <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
-              MyCaseValue+ is designed for all segments of the legal community, with features and pricing that fit unique needs.
+              MyCaseValue is designed for all segments of the legal community, with features and pricing that fit unique needs.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="who-grid">
@@ -459,7 +609,7 @@ export default function ServerContent() {
               { title: 'Large Law Firms', desc: 'Enterprise analytics with bulk analysis, API access, team workspaces, and white-label PDF reports for client presentations.', icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z' },
               { title: 'Insurance Companies', desc: 'Evaluate claim values with real settlement data. Understand exposure across case types and jurisdictions with district-level analytics.', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
               { title: 'Legal Aid & Nonprofits', desc: 'Free tier designed for access to justice. Help underrepresented communities understand their legal options with real outcome data.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
-              { title: 'Legal Researchers & Academics', desc: 'Access comprehensive federal court statistics spanning 50+ years. Perfect for empirical legal studies and policy analysis.', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
+              { title: 'Legal Researchers & Academics', desc: 'Access comprehensive federal court statistics spanning 54 years (1970–2024). Perfect for empirical legal studies and policy analysis.', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
             ].map((item, i) => (
               <div key={i} className="who-card" style={{ padding: '28px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
                 <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(139, 92, 246, 0.08)', border: '1px solid rgba(139, 92, 246, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
@@ -472,36 +622,6 @@ export default function ServerContent() {
           </div>
         </div>
       </section>
-
-      {/* ── AWARDS & RECOGNITION ───────────────────────────────── */}
-      <section id="awards" data-section style={{ background: '#F7F8FA', padding: '80px 24px', borderBottom: '1px solid #E5E7EB' }}>
-        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <p style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
-            Recognition
-          </p>
-          <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '12px', borderLeft: '3px solid #8B5CF6', paddingLeft: '20px' }}>
-            Trusted by thousands of case researchers
-          </h2>
-          <p style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', marginBottom: '48px', lineHeight: 1.6, fontWeight: 300 }}>
-            MyCaseValue+ is built on verified public court records and has been recognized for making federal case data accessible to everyone.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }} className="awards-grid">
-            {[
-              { stat: '5.1M+', label: 'Federal cases analyzed', sub: 'From FJC, PACER & CourtListener' },
-              { stat: '94', label: 'Federal districts covered', sub: 'Complete national coverage' },
-              { stat: '94%', label: 'Data accuracy rate', sub: 'Verified outcome classifications' },
-              { stat: '50+', label: 'Years of court data', sub: 'Historical records since 1970' },
-            ].map((item, i) => (
-              <div key={i} className="stat-card" style={{ padding: '32px 20px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', transition: 'all 0.2s ease' }}>
-                <p style={{ fontSize: '36px', fontWeight: 600, color: '#8B5CF6', fontFamily: 'var(--font-mono)', marginBottom: '8px', lineHeight: 1 }}>{item.stat}</p>
-                <p style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-body)', marginBottom: '4px' }}>{item.label}</p>
-                <p style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>{item.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── HOW IT COMPARES ──────────────────────────────── */}
       <section
         style={{
@@ -536,189 +656,40 @@ export default function ServerContent() {
                 <tr style={{ borderBottom: '2px solid #E5E7EB' }}>
                   <th style={{ textAlign: 'left', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>Feature</th>
                   <th style={{ textAlign: 'center', padding: '12px 16px', color: '#0f0f0f', fontWeight: 600, background: 'rgba(139, 92, 246, 0.08)', borderRadius: '2px 2px 0 0' }}>MyCaseValue</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>Westlaw</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>LexisNexis</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>PACER</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>Westlaw Litigation Analytics</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>Lex Machina</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 600, fontSize: '13px' }}>PACER Direct</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { feature: 'Free access to outcome data', mcv: true, westlaw: false, lexis: false, pacer: false },
-                  { feature: 'Plain-English results', mcv: true, westlaw: false, lexis: false, pacer: false },
-                  { feature: 'Plaintiff-focused analytics', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Win rate analytics', mcv: true, westlaw: true, lexis: true, pacer: false },
                   { feature: 'Settlement range data', mcv: true, westlaw: true, lexis: true, pacer: false },
-                  { feature: 'Judge analytics', mcv: true, westlaw: true, lexis: true, pacer: false },
-                  { feature: 'No subscription required', mcv: true, westlaw: false, lexis: false, pacer: true },
-                  { feature: 'Bilingual (English/Spanish)', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Judge-level analytics', mcv: true, westlaw: true, lexis: true, pacer: false },
+                  { feature: 'District-by-district comparison', mcv: true, westlaw: false, lexis: 'partial', pacer: false },
+                  { feature: 'Plain-English results', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Plaintiff-focused interface', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Free tier available', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'No subscription required', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'API access', mcv: true, westlaw: true, lexis: true, pacer: true },
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #E5E7EB' }}>
                     <td style={{ padding: '12px 16px', color: '#0f0f0f', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(139, 92, 246, 0.08)', color: row.mcv ? '#059669' : '#4B5563', fontWeight: 600, fontSize: '16px' }}>{row.mcv ? '\u2713' : '\u2014'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#059669' : '#4B5563', fontSize: '16px' }}>{row.westlaw ? '\u2713' : '\u2014'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis ? '#059669' : '#4B5563', fontSize: '16px' }}>{row.lexis ? '\u2713' : '\u2014'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#059669' : '#4B5563', fontSize: '16px' }}>{row.pacer ? '\u2713' : '\u2014'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(139, 92, 246, 0.08)', color: row.mcv ? '#059669' : '#9ca3af', fontWeight: 600, fontSize: '16px' }}>{row.mcv ? 'Yes' : 'No'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#059669' : '#9ca3af', fontSize: '16px' }}>{row.westlaw ? 'Yes' : 'No'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis === 'partial' ? '#d97706' : (row.lexis ? '#059669' : '#9ca3af'), fontSize: '16px' }}>{row.lexis === 'partial' ? 'Partial' : (row.lexis ? 'Yes' : 'No')}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#059669' : '#9ca3af', fontSize: '16px' }}>{row.pacer ? 'Yes' : 'No'}</td>
                   </tr>
                 ))}
                 <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
                   <td style={{ padding: '12px 16px', color: '#0f0f0f', fontWeight: 500 }}>Starting price</td>
                   <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(139, 92, 246, 0.08)', color: '#0f0f0f', fontWeight: 600 }}>Free</td>
                   <td style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563' }}>$500+/mo</td>
-                  <td style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563' }}>$400+/mo</td>
+                  <td style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563' }}>$2,000+/mo</td>
                   <td style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563' }}>$0.10/page</td>
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PLAIN ENGLISH ────────────────────────────────── */}
-      <section
-        style={{
-          background: '#F7F8FA',
-          borderTop: '1px solid #E5E7EB',
-          padding: '80px 24px',
-        }}
-      >
-        <div style={{ maxWidth: '768px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '40px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
-              In plain English
-            </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#1B3A5C', fontFamily: 'Lato, var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #8B5CF6', paddingLeft: '20px' }}>
-              What this data actually tells you
-            </h2>
-            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
-              We take millions of public federal court records and turn them into clear, actionable insights.
-              Here&apos;s what the numbers mean for you.
-            </p>
-          </div>
-
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '13px',
-              color: '#4B5563',
-              textAlign: 'center',
-              marginBottom: '12px',
-            }}
-          >
-            Example data — Employment Discrimination, S.D.N.Y.
-          </p>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {[
-              {
-                label: 'Win Rate',
-                example: '42%',
-                explanation: 'Of cases like yours that went to trial, 42% resulted in a plaintiff verdict. This tells you how often people in similar situations won their case.',
-              },
-              {
-                label: 'Settlement Range',
-                example: '$18K – $145K',
-                explanation: 'The middle 80% of settlements in your case type fell in this range. The median (50th percentile) is the most likely outcome if your case settles.',
-              },
-              {
-                label: 'Timeline',
-                example: '14 months',
-                explanation: 'From filing to resolution, similar cases in your district took about 14 months on average. Cases that settled resolved faster than those that went to trial.',
-              },
-              {
-                label: 'Attorney Impact',
-                example: '+23% win rate',
-                explanation: 'Plaintiffs with attorneys won 23% more often than those who represented themselves. This measures the statistical advantage of legal representation.',
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
-                  borderRadius: '12px',
-                  padding: '24px',
-                  display: 'flex',
-                  gap: '20px',
-                  alignItems: 'flex-start',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                }}
-              >
-                <div
-                  style={{
-                    flexShrink: 0,
-                    fontFamily: '"PT Mono", monospace',
-                    fontSize: '18px',
-                    fontWeight: 600,
-                    color: '#8B5CF6',
-                    background: 'rgba(139, 92, 246, 0.08)',
-                    padding: '8px 14px',
-                    borderRadius: '12px',
-                    minWidth: '90px',
-                    textAlign: 'center',
-                    border: '1px solid rgba(232,23,31,0.15)',
-                  }}
-                >
-                  {item.example}
-                </div>
-                <div>
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: '15px',
-                      fontWeight: 600,
-                      color: '#0f0f0f',
-                      margin: '0 0 6px 0',
-                    }}
-                  >
-                    {item.label}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: '14px',
-                      color: '#0f0f0f',
-                      lineHeight: 1.6,
-                      margin: 0,
-                      fontWeight: 300,
-                    }}
-                  >
-                    {item.explanation}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: '12px',
-              color: '#4B5563',
-              textAlign: 'center',
-              marginTop: '12px',
-              fontStyle: 'italic',
-            }}
-          >
-            Sample figures only. Your results depend on your specific case type, district, and facts.
-          </p>
-
-          <div
-            style={{
-              marginTop: '24px',
-              textAlign: 'center',
-            }}
-          >
-            <a
-              href="/cases"
-              style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                fontWeight: 600,
-                color: '#6D28D9',
-                textDecoration: 'none',
-              }}
-            >
-              See real data for your case →
-            </a>
           </div>
         </div>
       </section>
@@ -945,96 +916,6 @@ export default function ServerContent() {
         </div>
       </section>
 
-      {/* ── FEDERAL COURT INSIGHTS NEWSLETTER ──────────────────────────────────────────── */}
-      <section
-        style={{
-          background: '#1B3A5C',
-          padding: '64px 24px',
-          textAlign: 'center',
-        }}
-      >
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{
-            fontSize: '28px',
-            fontWeight: 600,
-            color: '#FFFFFF',
-            fontFamily: 'var(--font-display)',
-            marginBottom: '16px',
-            lineHeight: 1.3,
-          }}>
-            Stay Ahead with Federal Court Insights
-          </h2>
-          <p style={{
-            fontSize: '16px',
-            color: '#E5E7EB',
-            fontFamily: 'var(--font-body)',
-            marginBottom: '32px',
-            lineHeight: 1.6,
-            fontWeight: 300,
-          }}>
-            Get weekly case statistics, trend reports, and legal research updates delivered to your inbox.
-          </p>
-
-          <div style={{
-            display: 'flex',
-            gap: '12px',
-            marginBottom: '16px',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-          }}>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              style={{
-                flex: '1 1 280px',
-                minWidth: '280px',
-                maxWidth: '400px',
-                height: '48px',
-                padding: '0 16px',
-                background: '#FFFFFF',
-                border: 'none',
-                borderRadius: '12px',
-                fontSize: '14px',
-                fontFamily: 'var(--font-body)',
-                color: '#0f0f0f',
-                outline: 'none',
-              }}
-            />
-            <button
-              style={{
-                height: '48px',
-                padding: '0 32px',
-                background: '#8B5CF6',
-                color: '#FFFFFF',
-                border: 'none',
-                borderRadius: '12px',
-                fontSize: '14px',
-                fontWeight: 600,
-                fontFamily: 'var(--font-display)',
-                cursor: 'pointer',
-                textTransform: 'uppercase',
-                letterSpacing: '0.04em',
-                transition: 'background-color 0.2s ease',
-              }}
-              className="newsletter-btn"
-            >
-              Subscribe
-            </button>
-          </div>
-
-          <p style={{
-            fontSize: '12px',
-            color: 'rgba(255,255,255,0.5)',
-            fontFamily: 'var(--font-body)',
-            margin: 0,
-            fontWeight: 300,
-          }}>
-            No spam. Unsubscribe anytime.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Tools & Resources ─────────────────────────────── */}
       <section style={{ padding: '80px 24px', background: '#FFFFFF', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ fontSize: '12px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-body)', textAlign: 'center' }}>

@@ -609,10 +609,10 @@ export default function CasePredictorPage() {
           </div>
         </div>
 
-        {/* Free-During-Launch Badge */}
+        {/* Free-During-Beta Badge */}
         <div style={{ marginTop: '32px', padding: '16px 20px', background: 'linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.04) 100%)', border: '1px solid rgba(21, 128, 61, 0.20)', borderRadius: '12px', textAlign: 'center' }}>
           <span style={{ fontSize: '12px', fontWeight: 600, color: '#059669', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-            Free During Launch
+            Free During Beta
           </span>
         </div>
       </div>

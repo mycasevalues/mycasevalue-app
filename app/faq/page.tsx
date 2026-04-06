@@ -131,7 +131,7 @@ const jsonLd = {
           name: 'How old is the data?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Our dataset includes federal cases going back 50+ years (since 1970), with quarterly updates from the Federal Judicial Center. Historical trends are visible in our data, but remember: past outcomes do not predict future results.',
+            text: 'Our dataset includes federal cases spanning 54 years (1970–2024), with quarterly updates from the Federal Judicial Center. Historical trends are visible in our data, but remember: past outcomes do not predict future results.',
           },
         },
         {
@@ -371,7 +371,7 @@ const faqs = [
       },
       {
         q: 'How old is the data?',
-        a: 'Our dataset includes federal cases going back 50+ years (since 1970), with quarterly updates from the Federal Judicial Center. Historical trends are visible in our data, but remember: past outcomes do not predict future results.',
+        a: 'Our dataset includes federal cases spanning 54 years (1970–2024), with quarterly updates from the Federal Judicial Center. Historical trends are visible in our data, but remember: past outcomes do not predict future results.',
       },
       {
         q: 'How often is the data updated?',
@@ -383,6 +383,10 @@ const faqs = [
     category: 'Technical & Methodology',
     questions: [
       {
+        q: 'What does NOS code mean?',
+        a: 'NOS stands for "Nature of Suit" — a three-digit classification assigned by the Administrative Office of the U.S. Courts to categorize federal civil cases. For example, NOS 442 is Employment Discrimination, NOS 360 is Personal Injury, and NOS 190 is Contract disputes. MyCaseValue covers 84 active NOS codes.',
+      },
+      {
         q: 'What is a NOS code?',
         a: 'NOS stands for Nature of Suit. It is a three-digit code assigned by the Administrative Office of the U.S. Courts to classify the type of federal civil case being filed. For example, NOS 442 is Employment Discrimination and NOS 350 is Motor Vehicle. MyCaseValue covers 84 NOS codes.',
       },
@@ -391,8 +395,16 @@ const faqs = [
         a: 'Settlement percentiles (P10, P50, P90) are calculated from the distribution of publicly reported monetary outcomes in the Federal Judicial Center database. P50 is the median settlement value. P10 and P90 represent the 10th and 90th percentiles respectively, giving you the range of typical outcomes.',
       },
       {
+        q: 'How is a plaintiff win defined?',
+        a: 'A plaintiff win is defined as a case resolved by plaintiff verdict — a judgment entered in favor of the plaintiff. This includes both jury verdicts and bench trial decisions. Win rates do not include settlements, dismissals, or transfers. For more details, see our <a href="/methodology" style={{ color: "#8B5CF6", textDecoration: "underline" }}>methodology page</a>.',
+      },
+      {
         q: 'Why are settlement amounts underreported?',
         a: 'Most settlement agreements are confidential. When parties settle, they typically file a stipulated dismissal without reporting the dollar amount. The settlement figures in federal data come from consent decrees, court-approved class action settlements, and judgments entered after settlement. This means the reported figures represent a subset of all settlements.',
+      },
+      {
+        q: 'What is the minimum sample size?',
+        a: 'We require a minimum of 30 cases in a category before publishing statistics. This ensures data reliability and prevents misleading conclusions from small datasets. For more details on our confidence methodology, see our <a href="/methodology" style={{ color: "#8B5CF6", textDecoration: "underline" }}>methodology page</a>.',
       },
       {
         q: 'What does "dismissal rate" mean?',
@@ -403,6 +415,10 @@ const faqs = [
   {
     category: 'Coverage & Scope',
     questions: [
+      {
+        q: 'Does MyCaseValue cover state courts?',
+        a: 'No. MyCaseValue covers federal civil courts only. Our database includes all 94 federal districts and 13 circuit courts, but does not include state or local court cases.',
+      },
       {
         q: 'What courts are covered?',
         a: 'MyCaseValue covers federal civil cases across all 94 federal district courts and appellate data. This includes federal district courts, circuit courts, and appeals. State and local courts are not included in our dataset.',
@@ -424,6 +440,10 @@ const faqs = [
   {
     category: 'Tools & Features',
     questions: [
+      {
+        q: 'What is Attorney Mode?',
+        a: 'Attorney Mode is our professional analytics suite designed for legal professionals. It includes advanced judge intelligence, AI outcome predictions, opposing counsel research, document intelligence, real-time PACER monitoring, bulk analysis, full API access, team workspaces, and white-label reporting.',
+      },
       {
         q: 'What is the Settlement Calculator?',
         a: 'Our free Settlement Calculator estimates a settlement range based on your case type, damages, severity, and other factors. It uses multipliers derived from federal court outcome data. Note: estimates are statistical approximations, not predictions.',
@@ -480,6 +500,10 @@ const faqs = [
         a: 'Individual reports can be exported as PDFs. We do not offer bulk data downloads. If you need bulk access to federal court data, you can access the raw Federal Judicial Center data directly at fjc.gov.',
       },
       {
+        q: 'Do you offer an API?',
+        a: 'Yes, during beta we offer API access for qualified users. <a href="/contact" style={{ color: "#8B5CF6", textDecoration: "underline" }}>Contact us</a> to learn about API availability and integration options.',
+      },
+      {
         q: 'Do you have an API?',
         a: 'Currently, MyCaseValue is available through our web platform only. We are exploring API access for research institutions and legal professionals. Contact us at support@mycasevalue.com if you are interested.',
       },
@@ -497,12 +521,20 @@ const faqs = [
         a: 'Yes. Our full privacy policy is available at ${SITE_URL}/privacy. It explains exactly what data we collect, how we use it, and your rights.',
       },
       {
+        q: 'Is my search activity private?',
+        a: 'Yes. Your searches are private and anonymous. We do not track, identify, or share your search activity. We do not sell your data to third parties.',
+      },
+      {
         q: 'Is my research private?',
         a: 'Yes. We do not identify or track individual users. Your searches are anonymous unless you create an account. We do not sell data to third parties.',
       },
       {
         q: 'Do you use cookies?',
         a: 'We use essential cookies for basic site functionality and optional analytics cookies to understand how our tool is used. You control cookie preferences in your browser settings.',
+      },
+      {
+        q: 'Is the data available in Spanish?',
+        a: 'Yes, bilingual support is available. MyCaseValue offers full English and Spanish language options for the platform interface, reports, and data labels.',
       },
     ],
   },

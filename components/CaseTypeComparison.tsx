@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import { REAL_DATA } from '../lib/realdata';
 import { SITS } from '../lib/data';
+import { fmtK } from '../lib/format';
 
 interface NosEntry {
   nos: string;
@@ -50,9 +51,9 @@ export default function CaseTypeComparison() {
     { label: 'Win Rate', a: `${entryA.wr}%`, b: `${entryB.wr}%`, aVal: entryA.wr, bVal: entryB.wr, higher: 'green' },
     { label: 'Settlement Rate', a: `${entryA.sp}%`, b: `${entryB.sp}%`, aVal: entryA.sp, bVal: entryB.sp, higher: 'green' },
     { label: 'Avg Duration', a: `${entryA.mo} months`, b: `${entryB.mo} months`, aVal: entryA.mo, bVal: entryB.mo, higher: 'red' },
-    { label: '25th %ile Recovery', a: `$${entryA.rngLo}K`, b: `$${entryB.rngLo}K`, aVal: entryA.rngLo, bVal: entryB.rngLo, higher: 'green' },
-    { label: 'Median Recovery', a: `$${entryA.rngMd}K`, b: `$${entryB.rngMd}K`, aVal: entryA.rngMd, bVal: entryB.rngMd, higher: 'green' },
-    { label: '75th %ile Recovery', a: `$${entryA.rngHi}K`, b: `$${entryB.rngHi}K`, aVal: entryA.rngHi, bVal: entryB.rngHi, higher: 'green' },
+    { label: '25th %ile Recovery', a: fmtK(entryA.rngLo), b: fmtK(entryB.rngLo), aVal: entryA.rngLo, bVal: entryB.rngLo, higher: 'green' },
+    { label: 'Median Recovery', a: fmtK(entryA.rngMd), b: fmtK(entryB.rngMd), aVal: entryA.rngMd, bVal: entryB.rngMd, higher: 'green' },
+    { label: '75th %ile Recovery', a: fmtK(entryA.rngHi), b: fmtK(entryB.rngHi), aVal: entryA.rngHi, bVal: entryB.rngHi, higher: 'green' },
   ] : [];
 
   return (

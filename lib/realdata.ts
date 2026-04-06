@@ -654,7 +654,7 @@ export const REAL_DATA: Record<string, any> = {
   "110": {
     "nos_code": "110",
     "label": "Insurance",
-    "category": "work",
+    "category": "money",
     "sub": "insurance bad faith",
     "total": 315499,
     "mo": 8,
@@ -1943,9 +1943,9 @@ export const REAL_DATA: Record<string, any> = {
   },
   "440": {
     "nos_code": "440",
-    "label": "TCPA/Telecom",
-    "category": "consumer",
-    "sub": "TCPA violation",
+    "label": "Civil Rights — Other",
+    "category": "rights",
+    "sub": "Civil rights other",
     "total": 531796,
     "mo": 8,
     "wr": 37.7,
@@ -2266,7 +2266,7 @@ export const REAL_DATA: Record<string, any> = {
   },
   "863": {
     "nos_code": "863",
-    "label": "Social Security",
+    "label": "Social Security — Disability (SSDI/SSI)",
     "category": "gov",
     "sub": "disability benefits",
     "total": 268353,
@@ -14632,7 +14632,7 @@ export const REAL_DATA: Record<string, any> = {
   },
   "423": {
     "nos_code": "423",
-    "label": "Withdrawal",
+    "label": "Withdrawal of Reference (NOS 423)",
     "category": "money",
     "sub": "bankruptcy withdrawal",
     "total": 3400,
@@ -24322,7 +24322,7 @@ export const REAL_DATA: Record<string, any> = {
   },
   "860": {
     "nos_code": "860",
-    "label": "Social Security",
+    "label": "Social Security — Other",
     "category": "gov",
     "sub": "social security benefits",
     "total": 89400,

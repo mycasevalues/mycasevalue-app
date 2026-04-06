@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { SITE_URL } from '../../../lib/site-config';
+import { fmtK } from '../../../lib/format';
 
 // Helper function to flatten SITS and map NOS codes to display names
 function getNOSMap(): Record<string, { label: string; category: string; description?: string }> {
@@ -760,6 +761,39 @@ export default async function NOSPage({ params }: PageProps) {
               </div>
             ))}
           </div>
+
+          {/* Conditional Footnotes */}
+          {code === '220' && (
+            <div style={{
+              marginTop: '24px',
+              padding: '14px 16px',
+              backgroundColor: '#FEF3C7',
+              borderLeft: '3px solid #D97706',
+              borderRadius: '6px',
+              fontSize: '12px',
+              color: '#78350F',
+              lineHeight: '1.5',
+              fontFamily: 'var(--font-body)'
+            }}>
+              <strong>Note:</strong> Foreclosure win rates primarily reflect lender (plaintiff) victories. Individual homeowners appear as defendants in most federal foreclosure actions.
+            </div>
+          )}
+
+          {code === '863' && (
+            <div style={{
+              marginTop: '24px',
+              padding: '14px 16px',
+              backgroundColor: '#FEF3C7',
+              borderLeft: '3px solid #D97706',
+              borderRadius: '6px',
+              fontSize: '12px',
+              color: '#78350F',
+              lineHeight: '1.5',
+              fontFamily: 'var(--font-body)'
+            }}>
+              <strong>Note:</strong> Federal court win rates for Social Security disability cases reflect appeals of initial administrative denials. The majority of successful SSDI/SSI claims are resolved at the administrative level prior to federal filing.
+            </div>
+          )}
         </div>
       </section>
 
@@ -896,15 +930,15 @@ export default async function NOSPage({ params }: PageProps) {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center', marginTop: '28px' }}>
                 <div>
                   <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P25</div>
-                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#6D28D9', fontFamily: 'var(--font-mono)' }}>${recoveryRange.lo}K</div>
+                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#6D28D9', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.lo)}</div>
                 </div>
                 <div>
                   <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P50 (Median)</div>
-                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#8B5CF6', fontFamily: 'var(--font-mono)' }}>${recoveryRange.md}K</div>
+                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#8B5CF6', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.md)}</div>
                 </div>
                 <div>
                   <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P75</div>
-                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#6D28D9', fontFamily: 'var(--font-mono)' }}>${recoveryRange.hi}K</div>
+                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#6D28D9', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.hi)}</div>
                 </div>
               </div>
             </div>

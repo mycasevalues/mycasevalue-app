@@ -443,13 +443,13 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        {/* Free During Launch Banner */}
+        {/* Free During Beta Banner */}
         <div style={{ padding: '0 40px', marginBottom: '0' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div className="free-banner">
               <div>
                 <p className="free-banner-text">
-                  CaseCheck is <span style={{ fontWeight: 600 }}>free during launch</span>. All features unlocked.
+                  CaseCheck is <span style={{ fontWeight: 600 }}>free during beta</span>. All features unlocked.
                 </p>
               </div>
               <div className="free-banner-badge">Free Access</div>

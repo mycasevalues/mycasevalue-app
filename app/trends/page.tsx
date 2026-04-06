@@ -5,6 +5,7 @@ import { REAL_DATA } from '../../lib/realdata';
 import { SITS } from '../../lib/data';
 import { SITE_URL } from '../../lib/site-config';
 import { getCircuitWinRates, getOutcomeBreakdown } from '../../lib/trends';
+import { fmtK } from '../../lib/format';
 import CaseTypeComparison from '../../components/CaseTypeComparison';
 
 const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'), {
@@ -528,7 +529,7 @@ export default function TrendsPage() {
                     {t.label.length > 25 ? t.label.slice(0, 25) + '…' : t.label}
                   </div>
                   <div style={{ fontSize: 20, fontWeight: 600, color: textColor, fontFamily: 'var(--font-mono)' }}>
-                    ${t.medianMd}K
+                    {fmtK(t.medianMd)}
                   </div>
                   <div style={{ fontSize: 10, color: textColor, opacity: 0.7, marginTop: 2 }}>
                     {t.winRate}% win · {t.months}mo
@@ -572,13 +573,13 @@ export default function TrendsPage() {
                       </a>
                     </td>
                     <td className="px-4 py-2.5 text-right lex-card" style={{ color: '#4B5563' }}>
-                      ${t.medianLo}K
+                      {fmtK(t.medianLo)}
                     </td>
                     <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#8B5CF6' }}>
-                      ${t.medianMd}K
+                      {fmtK(t.medianMd)}
                     </td>
                     <td className="px-4 py-2.5 text-right lex-card" style={{ color: '#4B5563' }}>
-                      ${t.medianHi}K
+                      {fmtK(t.medianHi)}
                     </td>
                     <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#6D28D9', borderRadius: '0 4px 4px 0' }}>
                       {t.winRate}%
@@ -649,7 +650,7 @@ export default function TrendsPage() {
             Win Rate by Category
           </h2>
           <p className="mb-8" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
-            Average win rates across all SITS categories, sorted by performance.
+            Average win rates across all case categories, sorted by performance.
           </p>
           {(() => {
             const allEntries = getTrendData();

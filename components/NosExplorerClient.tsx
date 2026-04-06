@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import { fmtK } from '../lib/format';
 
 interface NosRow {
   nos: string;
@@ -209,7 +210,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                     {row.mo}mo
                   </td>
                   <td style={{ padding: '10px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#8B5CF6' }}>
-                    {row.rngMd > 0 ? `$${row.rngMd}K` : '–'}
+                    {row.rngMd > 0 ? fmtK(row.rngMd) : '–'}
                   </td>
                 </tr>
                 {expandedNos === row.nos && (
@@ -220,7 +221,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                           <div>
                             <div style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', color: '#4B5563', marginBottom: 4 }}>Recovery Range</div>
                             <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: '#0f0f0f' }}>
-                              ${row.rngLo}K – ${row.rngMd}K – ${row.rngHi}K
+                              {fmtK(row.rngLo)} – {fmtK(row.rngMd)} – {fmtK(row.rngHi)}
                             </div>
                             <div style={{ fontSize: 10, color: '#4B5563', marginTop: 2 }}>25th / Median / 75th</div>
                           </div>

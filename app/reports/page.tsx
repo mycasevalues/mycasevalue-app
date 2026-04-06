@@ -101,7 +101,7 @@ export default function ReportsPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px' }}>
 
-        {/* "All Reports Free During Launch" Banner */}
+        {/* "All Reports Free During Beta" Banner */}
         <div style={{
           background: 'linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.04) 100%)',
           border: '1px solid #059669',
@@ -121,7 +121,7 @@ export default function ReportsPage() {
             color: '#059669',
             margin: 0,
           }}>
-            All Reports Free During Launch — Explore unlimited case research, settlement data, and judge analytics at no cost.
+            All Reports Free During Beta — Explore unlimited case research, settlement data, and judge analytics at no cost.
           </p>
         </div>
 

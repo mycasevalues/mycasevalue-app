@@ -595,8 +595,8 @@ export default function AboutPage() {
               { value: '84', label: 'Case Type Categories' },
               { value: '94', label: 'Districts Covered' },
               { value: '13', label: 'Circuit Courts' },
-              { value: '50+', label: 'Years of Historical Data' },
-              { value: '100%', label: 'Free During Launch' },
+              { value: '54 years', label: 'Historical Data (1970–2024)' },
+              { value: '100%', label: 'Free During Beta' },
             ].map((stat, i) => (
               <div key={i} className="number-stat-card">
                 <div className="number-stat-value">{stat.value}</div>
@@ -780,7 +780,7 @@ export default function AboutPage() {
                 { value: '5.1M+', label: 'Federal cases' },
                 { value: '84', label: 'Case types' },
                 { value: '94', label: 'Federal districts' },
-                { value: '50+ yrs', label: 'Historical data' },
+                { value: '54 yrs', label: 'Historical data (1970–2024)' },
               ].map((stat, i) => (
                 <div key={i} className="stat-item">
                   <div className="stat-value">{stat.value}</div>
@@ -795,7 +795,7 @@ export default function AboutPage() {
             <h2 className="section-heading">Team & Vision</h2>
             <div className="team-box">
               <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>
-                MyCaseValue is built by legal researchers, data engineers, and technologists who believe transparency drives better decisions.
+                MyCaseValue is built by MyCaseValue LLC, based in West Virginia. We are a team of legal researchers, data engineers, and technologists who believe transparency drives better decisions.
                 We are not a law firm. We do not provide legal advice. We are a data platform.
               </p>
               <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>

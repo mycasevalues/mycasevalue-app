@@ -10,11 +10,14 @@ export function formatSettlementAmount(
   valueInThousands: number,
   options?: { compact?: boolean }
 ): string {
+  if (valueInThousands === 0) return '< $1,000';
+
   const rawDollars = valueInThousands * 1000;
 
   if (options?.compact) {
     if (rawDollars >= 1_000_000) {
-      return `$${(rawDollars / 1_000_000).toFixed(1)}M`;
+      const m = rawDollars / 1_000_000;
+      return `$${m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)}M`;
     }
     if (rawDollars >= 1_000) {
       return `$${Math.round(rawDollars / 1_000)}K`;
@@ -27,6 +30,14 @@ export function formatSettlementAmount(
     currency: 'USD',
     maximumFractionDigits: 0,
   }).format(rawDollars);
+}
+
+/**
+ * Format a value-in-thousands as a compact dollar string.
+ * Convenience wrapper: formatSettlementAmount(v, { compact: true })
+ */
+export function fmtK(valueInThousands: number): string {
+  return formatSettlementAmount(valueInThousands, { compact: true });
 }
 
 /**

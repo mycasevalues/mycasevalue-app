@@ -66,7 +66,7 @@ export const metadata = {
   },
   description: 'See real outcomes from 5.1M+ federal court cases. Research win rates, settlement data, timelines, and recovery ranges for 84 case types. Free, private, and instant.',
   openGraph: {
-    title: 'MyCaseValue — What really happened in cases like yours',
+    title: 'MyCaseValue — Federal Court Analytics & Settlement Data',
     description: 'Real outcomes from 5.1M+ federal court cases. Win rates, timelines, settlement percentages, recovery ranges, and attorney impact data for 84 case types.',
     type: 'website',
     siteName: 'MyCaseValue',

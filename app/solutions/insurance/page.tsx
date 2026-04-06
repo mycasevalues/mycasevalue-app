@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'For Insurance Companies | MyCaseValue+',
+  title: 'For Insurance Companies | MyCaseValue',
   description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
   alternates: { canonical: `${SITE_URL}/solutions/insurance` },
 };

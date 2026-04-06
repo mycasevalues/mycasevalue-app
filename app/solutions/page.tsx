@@ -217,14 +217,14 @@ export default function SolutionsPage() {
                   margin: 0,
                 }}
               >
-                During Launch
+                During Beta
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Free During Launch Banner */}
+      {/* Free During Beta Banner */}
       <section
         style={{
           background: 'linear-gradient(135deg, #8B5CF6 0%, #8B5CF6 100%)',
@@ -244,7 +244,7 @@ export default function SolutionsPage() {
               margin: 0,
             }}
           >
-            Free During Launch — All features included for qualifying users
+            Free During Beta — All features included for qualifying users
           </p>
         </div>
       </section>

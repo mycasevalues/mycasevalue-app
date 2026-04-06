@@ -110,7 +110,7 @@ export default function UpgradeBanner() {
               fontSize: '32px', fontWeight: 600, color: '#FFFFFF',
               margin: '0 0 16px 0', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
-              MyCaseValue+ Attorney Mode
+              MyCaseValue Attorney Mode
             </h2>
 
             <p style={{

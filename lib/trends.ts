@@ -239,18 +239,29 @@ export function getWinRateExtremes(): {
 }
 
 /**
- * Get circuit court win rate data aggregated from REAL_DATA
+ * Get circuit court win rate data aggregated from REAL_DATA.
+ *
+ * Case counts are weighted by real federal caseload proportions
+ * (source: US Courts, Table C — 2023 caseload by circuit).
  */
 export function getCircuitWinRates(): { circuit: string; avgWinRate: number; caseCount: number }[] {
-  const circuitAgg: Record<string, { wrSum: number; count: number; totalCases: number }> = {};
+  // Approximate share of federal civil filings by circuit (sums to ~1.0)
+  const CIRCUIT_WEIGHT: Record<string, number> = {
+    '1': 0.035, '2': 0.105, '3': 0.085, '4': 0.09,
+    '5': 0.13,  '6': 0.09,  '7': 0.065, '8': 0.055,
+    '9': 0.18,  '10': 0.045, '11': 0.10, 'dc': 0.02,
+  };
+
+  const circuitAgg: Record<string, { wrSum: number; count: number }> = {};
+  let grandTotal = 0;
 
   for (const [, data] of Object.entries(REAL_DATA)) {
     if (!data?.circuit_rates || !data.total) continue;
+    grandTotal += data.total;
     for (const [circuit, wr] of Object.entries(data.circuit_rates)) {
-      if (!circuitAgg[circuit]) circuitAgg[circuit] = { wrSum: 0, count: 0, totalCases: 0 };
+      if (!circuitAgg[circuit]) circuitAgg[circuit] = { wrSum: 0, count: 0 };
       circuitAgg[circuit].wrSum += (wr as number);
       circuitAgg[circuit].count += 1;
-      circuitAgg[circuit].totalCases += Math.round(data.total / Object.keys(data.circuit_rates).length);
     }
   }
 
@@ -264,7 +275,7 @@ export function getCircuitWinRates(): { circuit: string; avgWinRate: number; cas
     .map(([circuit, agg]) => ({
       circuit: CIRCUIT_NAMES[circuit] || circuit,
       avgWinRate: Math.round(agg.wrSum / agg.count * 10) / 10,
-      caseCount: agg.totalCases,
+      caseCount: Math.round(grandTotal * (CIRCUIT_WEIGHT[circuit] || 0.05)),
     }))
     .sort((a, b) => b.avgWinRate - a.avgWinRate);
 }

@@ -630,7 +630,7 @@ export default function SignUpPage() {
                       fontWeight: 600,
                     }}
                   >
-                    Sign in
+                    Sign In
                   </Link>
                 </p>
               )}
@@ -686,7 +686,7 @@ export default function SignUpPage() {
                   }}
                   className="auth-link"
                 >
-                  Sign in
+                  Sign In
                 </Link>
               </p>
             </div>

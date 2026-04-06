@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'For Enterprise Legal Teams | MyCaseValue+',
+  title: 'For Enterprise Legal Teams | MyCaseValue',
   description: 'API access, custom dashboards, and dedicated support for large law firms and corporate legal departments.',
   alternates: { canonical: `${SITE_URL}/solutions/enterprise` },
 };
@@ -12,7 +12,7 @@ const FEATURES = [
   {
     iconPath: 'M16 18l6-6-6-6M8 6l-6 6 6 6',
     title: 'REST API & Webhooks',
-    desc: 'Integrate MyCaseValue+ directly into your internal systems with our comprehensive REST API and real-time webhook support.',
+    desc: 'Integrate MyCaseValue directly into your internal systems with our comprehensive REST API and real-time webhook support.',
   },
   {
     iconPath: 'M3 3v18h18M9 21V9M15 21V3',

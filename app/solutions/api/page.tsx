@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'API & Integrations | MyCaseValue+',
-  description: 'REST API, webhooks, SDKs, and integrations for developers building with MyCaseValue+ data.',
+  title: 'API & Integrations | MyCaseValue',
+  description: 'REST API, webhooks, SDKs, and integrations for developers building with MyCaseValue data.',
   alternates: { canonical: `${SITE_URL}/solutions/api` },
 };
 

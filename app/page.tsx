@@ -38,15 +38,26 @@ export const metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'MyCaseValue',
-  url: SITE_URL,
-  description: 'Research real outcomes from 5.1M+ federal court cases across 94 districts.',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${SITE_URL}/search?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
+  '@graph': [
+    {
+      '@type': 'Organization',
+      name: 'MyCaseValue LLC',
+      url: SITE_URL,
+      description: 'Federal court analytics platform providing win rates, settlement data, and judge analytics from 5.1 million public federal court records.',
+      foundingLocation: 'West Virginia, USA',
+    },
+    {
+      '@type': 'WebSite',
+      name: 'MyCaseValue',
+      url: SITE_URL,
+      description: 'Research real outcomes from 5.1M+ federal court cases across 94 districts.',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${SITE_URL}/search?q={search_term_string}`,
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ],
 };
 
 export default function Page() {

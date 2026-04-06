@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { SITS, STATES } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
+import { fmtK } from '../../lib/format';
 
 const allTypes = SITS.flatMap(cat =>
   cat.opts.map(opt => ({ label: opt.label, nos: opt.nos, category: cat.label }))
@@ -481,19 +482,19 @@ export default function OddsPage() {
                         <div>
                           <p style={{ fontSize: 11, color: '#4B5563', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>25th %ile</p>
                           <p style={{ fontSize: 24, fontWeight: 600, color: '#4B5563', margin: 0, fontFamily: 'var(--font-mono)' }}>
-                            ${results.recoveryLow !== null ? results.recoveryLow.toLocaleString() : '–'}K
+                            {results.recoveryLow !== null ? fmtK(results.recoveryLow) : '–'}
                           </p>
                         </div>
                         <div style={{ background: '#F0F9FF', borderRadius: 2, padding: '8px 0' }}>
                           <p style={{ fontSize: 11, color: '#6D28D9', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>Median</p>
                           <p style={{ fontSize: 28, fontWeight: 600, color: '#6D28D9', margin: 0, fontFamily: 'var(--font-mono)' }}>
-                            ${results.recoveryMedian.toLocaleString()}K
+                            {fmtK(results.recoveryMedian)}
                           </p>
                         </div>
                         <div>
                           <p style={{ fontSize: 11, color: '#4B5563', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>75th %ile</p>
                           <p style={{ fontSize: 24, fontWeight: 600, color: '#4B5563', margin: 0, fontFamily: 'var(--font-mono)' }}>
-                            ${results.recoveryHigh !== null ? results.recoveryHigh.toLocaleString() : '–'}K
+                            {results.recoveryHigh !== null ? fmtK(results.recoveryHigh) : '–'}
                           </p>
                         </div>
                       </div>
@@ -621,7 +622,7 @@ export default function OddsPage() {
                   However, <strong style={{ color: '#D97706' }}>{results.settlementRate.toFixed(1)}%</strong> of
                   cases settle before trial
                   {results.recoveryMedian !== null && (
-                    <>, with a median recovery of <strong style={{ color: '#6D28D9' }}>${results.recoveryMedian.toLocaleString()}K</strong></>
+                    <>, with a median recovery of <strong style={{ color: '#6D28D9' }}>{fmtK(results.recoveryMedian)}</strong></>
                   )}.
                   Cases typically resolve in <strong>{results.medianDuration} months</strong>.
                   These figures represent historical aggregate data and do not predict the outcome of your specific case.

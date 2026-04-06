@@ -110,7 +110,7 @@ const FeatureCard = ({
   icon: React.ReactNode;
   title: string;
   description: string;
-  badge: 'available';
+  badge: 'available' | 'in-development';
   href?: string;
 }) => {
   const content = (
@@ -136,8 +136,8 @@ const FeatureCard = ({
         <h3
           style={{
             margin: '0 0 8px 0',
-            fontSize: '18px',
-            fontWeight: '600',
+            fontSize: '16px',
+            fontWeight: '500',
             fontFamily: 'var(--font-display)',
             color: '#0f0f0f',
           }}
@@ -167,7 +167,7 @@ const FeatureCard = ({
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
             backgroundColor:
-              badge === 'available' ? '#8B5CF6' : '#FAFBFC',
+              badge === 'available' ? '#10B981' : '#FAFBFC',
             color: badge === 'available' ? '#ffffff' : '#6D28D9',
             border:
               badge === 'available'
@@ -176,7 +176,7 @@ const FeatureCard = ({
             transition: 'all 0.3s ease',
           }}
         >
-          {badge === 'available' ? 'Available' : 'Expected Q3 2026'}
+          {badge === 'available' ? 'Available' : 'In Development'}
         </span>
         {href && (
           <span style={{ fontSize: '13px', color: '#6D28D9', fontWeight: 600, transition: 'color 0.3s ease' }}>
@@ -352,9 +352,8 @@ export default function AttorneyPage() {
             </span>
           </div>
 
-          {/* Red Accent Badge */}
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#8B5CF6', width: 'fit-content' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          {/* Section Label Badge */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: '600', letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#FFFFFF', width: 'fit-content' }}>
             ATTORNEY MODE
           </div>
 
@@ -369,7 +368,7 @@ export default function AttorneyPage() {
               color: '#FFFFFF',
             }}
           >
-            Professional Legal Intelligence Suite
+            Attorney Mode — Professional Legal Analytics
           </h1>
 
           {/* Subtitle */}
@@ -379,14 +378,12 @@ export default function AttorneyPage() {
               fontSize: 'clamp(16px, 2vw, 20px)',
               color: 'rgba(255,255,255,0.7)',
               lineHeight: '1.6',
-              maxWidth: '600px',
+              maxWidth: '700px',
               marginLeft: 'auto',
               marginRight: 'auto',
             }}
           >
-            Advanced AI-powered tools designed for legal professionals. Predict case outcomes,
-            analyze documents, research opposing counsel, and manage your entire practice with
-            confidence.
+            Advanced analytics tools for legal professionals. AI-powered predictions, judge intelligence, venue optimization, and bulk analysis. Free during the public beta.
           </p>
         </div>
       </section>
@@ -938,94 +935,6 @@ export default function AttorneyPage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section
-        style={{
-          padding: '60px 20px',
-          backgroundColor: '#FFFFFF',
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '600px',
-            margin: '0 auto',
-            textAlign: 'center',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '24px',
-          }}
-        >
-          <div>
-            <h2
-              style={{
-                margin: 0,
-                fontSize: 'clamp(32px, 4vw, 48px)',
-                fontWeight: '600',
-                fontFamily: 'var(--font-display)',
-                color: '#0f0f0f',
-              }}
-            >
-              <span style={{ color: '#8B5CF6' }}>$29.99</span>
-              <span style={{ fontSize: '0.5em', color: '#4B5563' }}>
-                {' '}
-                / month
-              </span>
-            </h2>
-            <p
-              style={{
-                margin: '16px 0 0 0',
-                fontSize: '16px',
-                color: '#4B5563',
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              Save 16% with annual billing
-            </p>
-          </div>
-
-          {/* Beta Banner */}
-          <div style={{ padding: '12px 20px', backgroundColor: 'rgba(0,105,151,0.08)', borderRadius: '12px', border: '1px solid #E5E7EB' }}>
-            <p style={{ margin: 0, fontSize: '14px', color: '#6D28D9', fontWeight: 600 }}>
-              Beta Access — All attorney features are currently free during our preview period.
-            </p>
-          </div>
-
-          {/* CTA Button */}
-          <Link
-            href="/dashboard"
-            style={{
-              display: 'inline-block',
-              padding: '16px 40px',
-              backgroundColor: '#8B5CF6',
-              color: '#FFFFFF',
-              textDecoration: 'none',
-              borderRadius: '12px',
-              fontWeight: '600',
-              fontSize: '16px',
-              fontFamily: 'var(--font-display)',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-            }}
-            className="attorney-cta-link"
-          >
-            Go to Dashboard →
-          </Link>
-
-          <p
-            style={{
-              margin: '8px 0 0 0',
-              fontSize: '12px',
-              color: '#4B5563',
-              fontFamily: 'var(--font-body)',
-            }}
-          >
-            No credit card required during beta.
-          </p>
         </div>
       </section>
 

@@ -340,7 +340,7 @@ export default function CalculatorPage() {
                 ))}
               </select>
               <p className="text-[11px] mt-2" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-                District selection helps contextualize results but does not change the estimate.
+                Estimates reflect national averages. District-specific data is available in individual Case Reports.
               </p>
             </div>
 

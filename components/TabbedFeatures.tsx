@@ -314,7 +314,7 @@ const WinRatePreview: React.FC = () => (
       {[
         { label: 'Contract Disputes', rate: 68 },
         { label: 'Patent Litigation', rate: 52 },
-        { label: 'Employment Claims', rate: 45 },
+        { label: 'Employment Claims', rate: 52 },
         { label: 'Securities Cases', rate: 61 },
       ].map((item) => (
         <div key={item.label}>

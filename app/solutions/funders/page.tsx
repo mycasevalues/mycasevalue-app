@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'For Litigation Funders | MyCaseValue+',
+  title: 'For Litigation Funders | MyCaseValue',
   description: 'Portfolio analytics, case evaluation, and ROI projections for litigation finance companies and alternative funders.',
   alternates: { canonical: `${SITE_URL}/solutions/funders` },
 };

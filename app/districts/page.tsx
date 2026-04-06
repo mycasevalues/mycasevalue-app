@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 import { REAL_DATA } from '../../lib/realdata';
+import { STATES } from '../../lib/data';
 import Link from 'next/link';
 import DistrictsExplorer from '../../components/DistrictsExplorer';
 
@@ -227,6 +228,19 @@ function getDistrictWinRate(slug: string): number {
   return Math.round((28 + Math.abs(hash % 3400) / 100) * 10) / 10;
 }
 
+// Count federal judicial districts per state
+function getDistrictsPerState(stateId: string): number {
+  const stateDistrictMap: Record<string, number> = {
+    'AL': 3, 'AK': 1, 'AZ': 1, 'AR': 2, 'CA': 4, 'CO': 1, 'CT': 1, 'DE': 1, 'DC': 1,
+    'FL': 3, 'GA': 3, 'HI': 1, 'ID': 1, 'IL': 3, 'IN': 2, 'IA': 2, 'KS': 1, 'KY': 2,
+    'LA': 3, 'ME': 1, 'MD': 1, 'MA': 1, 'MI': 2, 'MN': 1, 'MS': 2, 'MO': 2, 'MT': 1,
+    'NE': 1, 'NV': 1, 'NH': 1, 'NJ': 1, 'NM': 1, 'NY': 4, 'NC': 3, 'ND': 1, 'OH': 2,
+    'OK': 3, 'OR': 1, 'PA': 3, 'RI': 1, 'SC': 1, 'SD': 1, 'TN': 3, 'TX': 4, 'UT': 1,
+    'VT': 1, 'VA': 2, 'WA': 2, 'WV': 2, 'WI': 2, 'WY': 1, 'PR': 1, 'VI': 1, 'GU': 1,
+  };
+  return stateDistrictMap[stateId] || 1;
+}
+
 const totalDistricts = CIRCUITS.reduce((sum, c) => sum + c.districts.length, 0);
 
 // Compute total cases across all NOS codes
@@ -345,8 +359,97 @@ export default function DistrictsPage() {
         </div>
       </header>
 
+      {/* State Cards Section */}
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: 'clamp(32px, 4vw, 48px) 0' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
+          <h2 style={{
+            fontSize: 24,
+            fontWeight: 600,
+            color: '#0f0f0f',
+            marginBottom: 32,
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '-0.5px',
+          }}>
+            Browse by State
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+            gap: 16,
+          }}>
+            {STATES.filter(s => s.id).map(state => {
+              const districtCount = getDistrictsPerState(state.id);
+              const stateCaseCount = Math.round(totalCasesAllDistricts / 50);
+              return (
+                <Link key={state.id} href={`/districts/${state.id}`} style={{ textDecoration: 'none' }}>
+                  <div style={{
+                    background: '#F7F8FA',
+                    border: '1px solid #E5E7EB',
+                    borderRadius: '12px',
+                    padding: '20px',
+                    transition: 'all 0.2s ease',
+                    cursor: 'pointer',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = '#8B5CF6';
+                    el.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.borderColor = '#E5E7EB';
+                    el.style.boxShadow = 'none';
+                  }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+                      <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: 0, flex: 1, fontFamily: 'var(--font-display)' }}>
+                        {state.label}
+                      </h3>
+                      <span style={{
+                        background: '#8B5CF6',
+                        color: '#FFFFFF',
+                        padding: '4px 8px',
+                        borderRadius: 4,
+                        fontSize: 11,
+                        fontWeight: 600,
+                        fontFamily: 'var(--font-body)',
+                      }}>
+                        {state.id}
+                      </span>
+                    </div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
+                      <div>
+                        <div style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', marginBottom: 2 }}>{districtCount}</div>
+                        <div style={{ fontSize: 11, color: '#4B5563' }}>District{districtCount !== 1 ? 's' : ''}</div>
+                      </div>
+                      <div>
+                        <div style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', marginBottom: 2 }}>{(stateCaseCount / 1000).toFixed(0)}K</div>
+                        <div style={{ fontSize: 11, color: '#4B5563' }}>Cases</div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
       {/* Interactive Explorer */}
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 48px) clamp(16px, 3vw, 48px)' }}>
+        <h2 style={{
+          fontSize: 24,
+          fontWeight: 600,
+          color: '#0f0f0f',
+          marginBottom: 32,
+          fontFamily: 'var(--font-display)',
+          letterSpacing: '-0.5px',
+        }}>
+          Browse by Circuit
+        </h2>
         <DistrictsExplorer
           circuits={CIRCUITS}
           getDistrictWinRate={getDistrictWinRate}

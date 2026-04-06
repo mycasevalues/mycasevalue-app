@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'For Legal Aid Organizations | MyCaseValue+',
+  title: 'For Legal Aid Organizations | MyCaseValue',
   description: 'Free case research, outcome analysis, and grant reporting tools for non-profits and pro-bono legal services.',
   alternates: { canonical: `${SITE_URL}/solutions/legal-aid` },
 };

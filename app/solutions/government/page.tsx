@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'For Government Agencies | MyCaseValue+',
+  title: 'For Government Agencies | MyCaseValue',
   description: 'Court performance data, policy analysis, and transparency reporting tools for federal and state agencies.',
   alternates: { canonical: `${SITE_URL}/solutions/government` },
 };

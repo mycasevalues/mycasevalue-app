@@ -1,7 +1,7 @@
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { getAllCaseTypeSEO } from '../../../lib/case-type-seo';
-import { formatSettlementAmount } from '../../../lib/format';
+import { formatSettlementAmount, fmtK } from '../../../lib/format';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRightIcon } from '../../../components/ui/Icons';
@@ -1034,7 +1034,7 @@ async function CategoryPage({
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
                     <span style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>{item.label}</span>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: '#8B5CF6', fontFamily: 'var(--font-mono)' }}>${item.md}K median</span>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: '#8B5CF6', fontFamily: 'var(--font-mono)' }}>{fmtK(item.md)} median</span>
                   </div>
                   {/* Range bar visualization */}
                   <div style={{ position: 'relative', height: 28, background: '#F7F8FA', borderRadius: 2, overflow: 'hidden' }}>
@@ -1059,10 +1059,10 @@ async function CategoryPage({
                     }} />
                     {/* Labels */}
                     <div style={{ position: 'absolute', left: `${(item.lo / maxHi) * 100}%`, bottom: 2, fontSize: 10, color: '#4B5563', fontFamily: 'var(--font-mono)', transform: 'translateX(-50%)' }}>
-                      ${item.lo}K
+                      {fmtK(item.lo)}
                     </div>
                     <div style={{ position: 'absolute', left: `${(item.hi / maxHi) * 100}%`, bottom: 2, fontSize: 10, color: '#4B5563', fontFamily: 'var(--font-mono)', transform: 'translateX(-50%)' }}>
-                      ${item.hi}K
+                      {fmtK(item.hi)}
                     </div>
                   </div>
                 </Link>
@@ -1151,7 +1151,7 @@ async function CategoryPage({
                         color: '#8B5CF6',
                         fontFamily: 'var(--font-mono)',
                       }}>
-                        ${item.md}K
+                        {fmtK(item.md)}
                       </span>
                     </div>
                     <div style={{
@@ -1188,8 +1188,8 @@ async function CategoryPage({
                       marginTop: '6px',
                       fontFamily: 'var(--font-mono)',
                     }}>
-                      <span>${item.lo}K</span>
-                      <span>${item.hi}K</span>
+                      <span>{fmtK(item.lo)}</span>
+                      <span>{fmtK(item.hi)}</span>
                     </div>
                   </Link>
                 ))}

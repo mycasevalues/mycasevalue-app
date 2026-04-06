@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { SITE_URL, SITE_NAME } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'For Academic Researchers | MyCaseValue+',
+  title: 'For Academic Researchers | MyCaseValue',
   description: 'Research datasets, longitudinal analysis, and citation-ready data for law school faculty and research institutions.',
   alternates: { canonical: `${SITE_URL}/solutions/academic` },
 };

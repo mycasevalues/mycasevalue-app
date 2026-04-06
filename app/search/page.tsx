@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
-import { formatSettlementAmount } from '../../lib/format';
+import { formatSettlementAmount, fmtK } from '../../lib/format';
 import { SearchIcon } from '../../components/ui/Icons';
 
 // Loading skeleton component
@@ -210,7 +210,7 @@ export default function SearchPage() {
             </span>
           </div>
           <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
-            What happened to you?
+            Search federal court outcomes
           </h1>
           <p className="search-header" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
             Search across all 84 federal case types to find real outcome data for your situation.
@@ -634,7 +634,7 @@ export default function SearchPage() {
                       <span style={{ color: item.wr >= 50 ? '#059669' : item.wr >= 35 ? '#D97706' : '#8B5CF6', fontWeight: 600 }}>{item.wr}%</span>
                       <span>{item.total.toLocaleString()}</span>
                       <span>{item.mo}mo</span>
-                      {item.rngMd > 0 && <span style={{ color: '#8B5CF6', fontWeight: 600 }}>${item.rngMd}K</span>}
+                      {item.rngMd > 0 && <span style={{ color: '#8B5CF6', fontWeight: 600 }}>{fmtK(item.rngMd)}</span>}
                     </div>
                   </Link>
                 ));
@@ -726,7 +726,7 @@ export default function SearchPage() {
                   { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#8B5CF6' },
                   { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#059669' },
                   { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#0369A1' },
-                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `$${highestRecovery.rngMd}K median` : 'N/A', color: '#8B5CF6' },
+                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `${fmtK(highestRecovery.rngMd)} median` : 'N/A', color: '#8B5CF6' },
                 ];
 
                 return highlights.map((h, i) => (

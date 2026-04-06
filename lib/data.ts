@@ -6,7 +6,7 @@ import { REAL_DATA, TOTAL_REAL_CASES, REAL_OUTCOME_DATA } from './realdata';
 export const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "";
 
 export const SITS = [
-  { id: "work", label: "Workplace", sub: "Fired, harassed, underpaid, discrimination", color: "#4338CA", icon: "briefcase", q: "What happened at work?", dm: "mid", opts: [
+  { id: "work", label: "Employment & Workplace", sub: "Fired, harassed, underpaid, discrimination", color: "#4338CA", icon: "briefcase", q: "What happened at work?", dm: "mid", opts: [
     { label: "Wrongful termination", nos: "442", d: "wrongful termination" },
     { label: "Employment discrimination", nos: "442", d: "employment discrimination" },
     { label: "Sexual harassment", nos: "442", d: "sexual harassment" },
@@ -26,7 +26,7 @@ export const SITS = [
     { label: "Religious discrimination", nos: "442", d: "religious discrimination" },
     { label: "Workers' compensation retaliation", nos: "710", d: "workers comp retaliation" },
   ]},
-  { id: "injury", label: "Injury", sub: "Accident, medical, product, wrongful death", color: "#8B5CF6", icon: "heart", q: "How were you hurt?", dm: "large", opts: [
+  { id: "injury", label: "Personal Injury", sub: "Accident, medical, product, wrongful death", color: "#8B5CF6", icon: "heart", q: "How were you hurt?", dm: "large", opts: [
     { label: "Vehicle / car accident", nos: "350", d: "vehicle accident" },
     { label: "Truck / commercial vehicle accident", nos: "350", d: "truck accident" },
     { label: "Motorcycle accident", nos: "350", d: "motorcycle accident" },
@@ -46,11 +46,11 @@ export const SITS = [
     { label: "Toxic exposure / environmental", nos: "365", d: "toxic exposure" },
     { label: "Birth injury", nos: "362", d: "birth injury" },
   ]},
-  { id: "consumer", label: "Consumer", sub: "Debt, fraud, scam, data breach, robocalls", color: "#2563EB", icon: "shield", q: "What happened?", dm: "mid", opts: [
+  { id: "consumer", label: "Consumer Protection", sub: "Debt, fraud, scam, data breach, robocalls", color: "#2563EB", icon: "shield", q: "What happened?", dm: "mid", opts: [
     { label: "Debt collector harassment (FDCPA)", nos: "870", d: "debt collection" },
     { label: "Identity theft / fraud", nos: "370", d: "identity theft" },
     { label: "Data breach / privacy violation", nos: "370", d: "data breach" },
-    { label: "Robocalls / spam texts (TCPA)", nos: "440", d: "TCPA violation" },
+    { label: "Civil Rights — Other", nos: "440", d: "civil rights other" },
     { label: "Credit reporting error", nos: "370", d: "credit reporting error" },
     { label: "Lemon law / defective vehicle", nos: "365", d: "lemon law" },
     { label: "Predatory lending", nos: "370", d: "predatory lending" },
@@ -127,13 +127,13 @@ export const SITS = [
     { label: "Immigration / visa / deportation", nos: "899", d: "immigration" },
     { label: "Social Security dispute", nos: "863", d: "social security" },
     { label: "Government contract dispute", nos: "190", d: "government contract" },
-    { label: "Freedom of Information (FOIA)", nos: "440", d: "FOIA request" },
-    { label: "Due process violation", nos: "440", d: "due process" },
+    { label: "Freedom of Information (FOIA)", nos: "895", d: "FOIA request" },
+    { label: "Due Process / Civil Rights (NOS 440)", nos: "440", d: "due process" },
     { label: "Environmental regulation violation", nos: "893", d: "environmental violation" },
   ]},
   { id: "education", label: "Education", sub: "Student rights, Title IX, special education", color: "#0891B2", icon: "building", q: "What happened?", dm: "mid", opts: [
     { label: "Title IX / campus sexual assault", nos: "442", d: "Title IX violation" },
-    { label: "Special education dispute (IDEA)", nos: "440", d: "special education" },
+    { label: "Special education dispute (IDEA)", nos: "443", d: "special education" },
     { label: "Student expulsion / discipline", nos: "440", d: "student discipline" },
     { label: "Student loan servicing", nos: "370", d: "student loan servicing" },
     { label: "School bullying / negligence", nos: "360", d: "school negligence" },
@@ -277,7 +277,7 @@ export const FEE_INFO: Record<string, string> = {
   "365": "Contingency (33-40%) is standard for product liability.",
   "350": "Contingency (33-40%) is standard for auto accidents.",
   "362": "Contingency (33-40%) is standard for medical malpractice.",
-  "440": "Contingency + statutory fees. TCPA provides $500-$1,500 per violation.",
+  "440": "Civil rights cases under NOS 440 cover a broad range of claims including police misconduct, discrimination, and constitutional violations.",
   "445": "Contingency (33-40%). ADA provides fee-shifting to prevailing plaintiff.",
   "443": "Contingency or hourly. Fair Housing Act provides fee-shifting.",
   "220": "Hourly ($200-400/hr) or contingency depending on circumstances.",

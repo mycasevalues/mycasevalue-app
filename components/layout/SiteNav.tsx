@@ -1,10 +1,8 @@
 /**
- * SiteNav.tsx — Two-tier navigation with white top bar and dark navy sub-nav.
+ * SiteNav.tsx — Single universal NavBar per Section 4 of the Master Overhaul.
  *
- * Tier 1 (White, 64px): MyCaseValue logo left, auth buttons right
- * Tier 2 (Dark navy #1B3A5C, 48px): "MyCaseValue+" text left, FREE TRIAL button, nav links right
- *
- * Both sticky; sub-nav hides on mobile (<768px) and shows hamburger menu instead.
+ * One sticky white navbar with logo left, nav items + dropdowns center-left,
+ * Sign In + CTA right. Mobile hamburger slides drawer in from the left.
  */
 
 'use client';
@@ -14,47 +12,152 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
-import { SearchIcon } from '../ui/Icons';
 
-const NAV_LINKS = [
-  { href: '/search', label: 'Search' },
-  { href: '/cases', label: 'Case Types', mega: true },
-  { href: '/districts', label: 'Districts', mega: true },
-  { href: '/judges', label: 'Judges' },
-  { href: '/solutions', label: 'Solutions', mega: true },
-  { href: '/nos-explorer', label: 'NOS Codes' },
-  { href: '/calculator', label: 'Calculator' },
-  { href: '/compare', label: 'Compare' },
-  { href: '/trends', label: 'Trends' },
-  { href: '/attorney', label: 'Attorney Mode', mega: true },
+/* ── Dropdown definitions (Section 4.4–4.6) ─────────────────────── */
+
+interface DropdownItem {
+  label: string;
+  href: string;
+  divider?: boolean;
+}
+
+const CASE_TYPES: DropdownItem[] = [
+  { label: 'Employment & Workplace', href: '/cases/employment-workplace' },
+  { label: 'Personal Injury', href: '/cases/personal-injury' },
+  { label: 'Consumer Protection', href: '/cases/consumer-protection' },
+  { label: 'Civil Rights', href: '/cases/civil-rights' },
+  { label: 'Money & Business', href: '/cases/money-business' },
+  { label: 'Housing & Property', href: '/cases/housing-property' },
+  { label: 'Healthcare & Benefits', href: '/cases/healthcare-benefits' },
+  { label: 'Family Law', href: '/cases/family-law' },
+  { label: 'Government', href: '/cases/government' },
+  { label: 'Education', href: '/cases/education' },
+  { label: '', href: '', divider: true },
+  { label: 'View all 84 case types', href: '/cases' },
 ];
+
+const DISTRICTS: DropdownItem[] = [
+  { label: 'Interactive map', href: '/map' },
+  { label: '', href: '', divider: true },
+  { label: '1st Circuit', href: '/districts?circuit=1' },
+  { label: '2nd Circuit', href: '/districts?circuit=2' },
+  { label: '3rd Circuit', href: '/districts?circuit=3' },
+  { label: '4th Circuit', href: '/districts?circuit=4' },
+  { label: '5th Circuit', href: '/districts?circuit=5' },
+  { label: '6th Circuit', href: '/districts?circuit=6' },
+  { label: '7th Circuit', href: '/districts?circuit=7' },
+  { label: '8th Circuit', href: '/districts?circuit=8' },
+  { label: '9th Circuit', href: '/districts?circuit=9' },
+  { label: '10th Circuit', href: '/districts?circuit=10' },
+  { label: '11th Circuit', href: '/districts?circuit=11' },
+  { label: 'D.C. Circuit', href: '/districts?circuit=dc' },
+  { label: '', href: '', divider: true },
+  { label: 'View all 94 districts', href: '/districts' },
+];
+
+const TOOLS: DropdownItem[] = [
+  { label: 'Settlement calculator', href: '/calculator' },
+  { label: 'Case comparison', href: '/compare' },
+  { label: 'Filing trends', href: '/trends' },
+  { label: 'NOS code explorer', href: '/nos-explorer' },
+  { label: 'Odds analyzer', href: '/odds' },
+  { label: 'Jargon translator', href: '/translate' },
+  { label: 'Legal glossary', href: '/glossary' },
+];
+
+/* ── Nav item config ─────────────────────────────────────────────── */
+
+interface NavItem {
+  label: string;
+  href: string;
+  dropdown?: DropdownItem[];
+  attorney?: boolean;           // purple accent styling
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { label: 'Search', href: '/search' },
+  { label: 'Case Types', href: '/cases', dropdown: CASE_TYPES },
+  { label: 'Districts', href: '/districts', dropdown: DISTRICTS },
+  { label: 'Judges', href: '/judges' },
+  { label: 'Tools', href: '/calculator', dropdown: TOOLS },
+  { label: 'Attorney Mode', href: '/attorney', attorney: true },
+];
+
+/* ── Chevron SVG ─────────────────────────────────────────────────── */
+
+const ChevronDown = () => (
+  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" style={{ marginLeft: 2 }}>
+    <path d="M2.5 4L5 6.5L7.5 4" />
+  </svg>
+);
+
+/* ── Dropdown component ──────────────────────────────────────────── */
+
+function NavDropdown({ items, open }: { items: DropdownItem[]; open: boolean }) {
+  if (!open) return null;
+  return (
+    <div className="navbar-dropdown" style={{
+      position: 'absolute',
+      top: '100%',
+      left: 0,
+      minWidth: '240px',
+      background: '#FFFFFF',
+      border: '1px solid #e5e7eb',
+      borderRadius: '8px',
+      padding: '8px 0',
+      boxShadow: '0 8px 24px rgba(0,0,0,0.10)',
+      zIndex: 300,
+    }}>
+      {items.map((item, i) =>
+        item.divider ? (
+          <div key={`div-${i}`} style={{ height: 1, background: '#e5e7eb', margin: '6px 12px' }} />
+        ) : (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="navbar-dropdown-item"
+            style={{
+              display: 'block',
+              padding: '10px 16px',
+              fontSize: '14px',
+              fontFamily: 'var(--font-body)',
+              fontWeight: 400,
+              color: '#0f0f0f',
+              textDecoration: 'none',
+              transition: 'background 120ms',
+            }}
+          >
+            {item.label}
+          </Link>
+        )
+      )}
+    </div>
+  );
+}
+
+/* ── Main NavBar ─────────────────────────────────────────────────── */
 
 export default function SiteNav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [userEmail, setUserEmail] = useState<string | null>(null);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const pathname = usePathname();
   const router = useRouter();
   const hamburgerRef = useRef<HTMLButtonElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
-  const searchInputRef = useRef<HTMLInputElement>(null);
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Check auth state
+  /* Auth */
   useEffect(() => {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     if (!url || !key) return;
-
     const supabase = createBrowserClient(url, key);
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setUserEmail(user?.email ?? null);
-    });
-
+    supabase.auth.getUser().then(({ data: { user } }) => setUserEmail(user?.email ?? null));
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUserEmail(session?.user?.email ?? null);
     });
-
     return () => subscription.unsubscribe();
   }, []);
 
@@ -62,7 +165,6 @@ export default function SiteNav() {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     if (!url || !key) return;
-
     const supabase = createBrowserClient(url, key);
     await supabase.auth.signOut();
     setUserEmail(null);
@@ -70,837 +172,359 @@ export default function SiteNav() {
     router.refresh();
   };
 
-  // Close on Escape key
+  /* Escape key */
   useEffect(() => {
-    if (!mobileOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        setMobileOpen(false);
-        hamburgerRef.current?.focus();
+        if (mobileOpen) { setMobileOpen(false); hamburgerRef.current?.focus(); }
+        setOpenDropdown(null);
       }
     };
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
   }, [mobileOpen]);
 
-  // Focus trap inside mobile drawer
+  /* Focus trap in mobile drawer */
   useEffect(() => {
     if (!mobileOpen || !drawerRef.current) return;
     const drawer = drawerRef.current;
-    const focusable = drawer.querySelectorAll<HTMLElement>(
-      'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
+    const focusable = drawer.querySelectorAll<HTMLElement>('a[href], button, [tabindex]:not([tabindex="-1"])');
     if (focusable.length === 0) return;
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
-
-    const trapFocus = (e: KeyboardEvent) => {
+    const trap = (e: KeyboardEvent) => {
       if (e.key !== 'Tab') return;
-      if (e.shiftKey) {
-        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
-      } else {
-        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
-      }
+      if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+      else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
     };
-    drawer.addEventListener('keydown', trapFocus);
+    drawer.addEventListener('keydown', trap);
     first.focus();
-    return () => drawer.removeEventListener('keydown', trapFocus);
+    return () => drawer.removeEventListener('keydown', trap);
   }, [mobileOpen]);
 
-  // Close drawer on route change
-  useEffect(() => { setMobileOpen(false); }, [pathname]);
-
-  // Focus search input when overlay opens
-  useEffect(() => {
-    if (searchOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-  }, [searchOpen]);
-
-  // Close search overlay on Escape key
-  useEffect(() => {
-    if (!searchOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setSearchOpen(false);
-      }
-    };
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [searchOpen]);
-
-  const handleSearchSubmit = () => {
-    if (searchQuery.trim()) {
-      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
-      setSearchOpen(false);
-      setSearchQuery('');
-    }
-  };
+  /* Close on route change */
+  useEffect(() => { setMobileOpen(false); setOpenDropdown(null); }, [pathname]);
 
   const isActive = useCallback((href: string) => {
     if (href === '/') return pathname === '/';
-    return pathname.startsWith(href);
+    return pathname === href || pathname.startsWith(href + '/');
   }, [pathname]);
+
+  /* Hover handlers with debounce for dropdown */
+  const handleMouseEnter = (label: string) => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setOpenDropdown(label);
+  };
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
+  };
 
   return (
     <>
-      {/* TIER 1: WHITE TOP NAV (64px) */}
       <nav
-        className="site-nav-top"
+        className="site-navbar"
         style={{
           position: 'sticky',
           top: 0,
           zIndex: 200,
           height: '64px',
           background: '#FFFFFF',
-          backdropFilter: undefined,
-          WebkitBackdropFilter: undefined,
           borderBottom: '1px solid #E5E7EB',
         }}
         role="navigation"
         aria-label="Main navigation"
       >
-        <div
-          style={{
-            maxWidth: '1280px',
-            margin: '0 auto',
-            padding: '0 24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: '100%',
-          }}
-        >
-          {/* Logo / Wordmark */}
-          <Link
-            href="/"
-            className="site-nav-logo-link"
-            aria-label="MyCaseValue home"
-          >
-            <Image
-              src="/logo.svg"
-              alt="MyCaseValue"
-              width={120}
-              height={30}
-              priority
-              style={{ display: 'block' }}
-            />
-          </Link>
-
-          {/* Right: Auth buttons (desktop) + Search + Hamburger (mobile) */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {/* Search icon button */}
-            <button
-              onClick={() => setSearchOpen(!searchOpen)}
-              className="site-nav-search-btn"
-              aria-label="Open search"
-              style={{
-                background: 'none',
-                border: 'none',
-                padding: '8px 12px',
-                cursor: 'pointer',
-                color: '#4B5563',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minHeight: '44px',
-                minWidth: '44px',
-                transition: 'color 150ms',
-              }}
-            >
-              <SearchIcon size={20} />
-            </button>
-
-            <div
-              className="site-nav-auth"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-            >
-              {userEmail ? (
-                <>
-                  <Link
-                    href="/dashboard"
-                    className="site-nav-link"
-                    style={{
-                      padding: '8px 16px',
-                      fontSize: '14px',
-                      fontWeight: 500,
-                      color: '#4B5563',
-                      textDecoration: 'none',
-                      fontFamily: 'var(--font-body)',
-                      borderRadius: '12px',
-                      border: '1px solid #E5E7EB',
-                      transition: 'all 150ms ease',
-                    }}
-                  >
-                    Dashboard
-                  </Link>
-                  <button
-                    onClick={handleSignOut}
-                    className="site-nav-link"
-                    style={{
-                      padding: '8px 20px',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      color: '#FFFFFF',
-                      background: '#8B5CF6',
-                      borderRadius: '12px',
-                      fontFamily: 'var(--font-body)',
-                      border: 'none',
-                      cursor: 'pointer',
-                      transition: 'all 150ms ease',
-                    }}
-                  >
-                    Sign Out
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/sign-in"
-                    className="site-nav-link"
-                    style={{
-                      padding: '8px 16px',
-                      fontSize: '14px',
-                      fontWeight: 500,
-                      color: '#4B5563',
-                      textDecoration: 'none',
-                      fontFamily: 'var(--font-body)',
-                      borderRadius: '12px',
-                      border: '1px solid #E5E7EB',
-                      transition: 'all 150ms',
-                    }}
-                  >
-                    Sign in
-                  </Link>
-                  <Link
-                    href="/sign-up"
-                    style={{
-                      padding: '0.75rem 1.5rem',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      color: '#FAFBFC',
-                      background: '#8B5CF6',
-                      borderRadius: '0.25rem',
-                      textDecoration: 'none',
-                      fontFamily: 'var(--font-display)',
-                      transition: 'all 150ms',
-                    }}
-                  >
-                    Start Researching
-                  </Link>
-                </>
-              )}
-            </div>
-
-            {/* Mobile hamburger button */}
-            <button
-              ref={hamburgerRef}
-              className="site-nav-hamburger"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              aria-expanded={mobileOpen}
-              style={{
-                display: 'none',
-                background: 'none',
-                border: 'none',
-                padding: '10px',
-                cursor: 'pointer',
-                color: '#0f0f0f',
-                minHeight: '44px',
-                minWidth: '44px',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                {mobileOpen ? (
-                  <>
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </>
-                ) : (
-                  <>
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                  </>
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* TIER 2: DARK NAVY SUB-NAV (48px) */}
-      <nav
-        className="site-nav-sub"
-        style={{
-          position: 'sticky',
-          top: '64px',
-          zIndex: 199,
-          height: '48px',
-          background: '#1B3A5C',
-          borderBottom: 'none',
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 24px',
           display: 'flex',
           alignItems: 'center',
-        }}
-        role="navigation"
-        aria-label="Secondary navigation"
-      >
-        <div
-          style={{
-            maxWidth: '1280px',
-            width: '100%',
-            margin: '0 auto',
-            padding: '0 24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: '100%',
-            gap: '24px',
-          }}
-        >
-          {/* Left: MyCaseValue+ brand text */}
-          <div style={{
-            fontSize: '18px',
-            fontWeight: 600,
-            color: '#FFFFFF',
-            fontFamily: 'var(--font-display)',
-            whiteSpace: 'nowrap',
-            flexShrink: 0,
-            letterSpacing: '-0.01em',
-          }}>
-            MyCaseValue
-          </div>
+          height: '100%',
+          gap: '4px',
+        }}>
+          {/* Logo */}
+          <Link href="/" aria-label="MyCaseValue home" style={{ display: 'flex', alignItems: 'center', marginRight: '24px', flexShrink: 0 }}>
+            <Image src="/logo.svg" alt="MyCaseValue" width={120} height={30} priority style={{ display: 'block' }} />
+          </Link>
 
-          {/* Center-Left: FREE TRIAL button */}
-          <button
-            style={{
-              background: '#8B5CF6',
-              color: '#FAFBFC',
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '0.04em',
-              padding: '8px 20px',
-              borderRadius: '0.25rem',
-              border: 'none',
-              cursor: 'pointer',
-              textTransform: 'uppercase',
-              whiteSpace: 'nowrap',
-              flexShrink: 0,
-              transition: 'all 150ms',
-              fontFamily: 'var(--font-body)',
-            }}
-            onClick={() => router.push('/search')}
-          >
-            Start researching
-          </button>
+          {/* Desktop nav items */}
+          <div className="navbar-desktop-items" style={{ display: 'flex', alignItems: 'center', height: '100%', gap: '0', flex: 1 }}>
+            {NAV_ITEMS.map((item) => {
+              const active = isActive(item.href) || (item.dropdown?.some(d => !d.divider && isActive(d.href)) ?? false);
 
-          {/* Right: Nav links */}
-          <div
-            className="site-nav-sub-links"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0px',
-              marginLeft: 'auto',
-              flexGrow: 1,
-              justifyContent: 'flex-end',
-            }}
-          >
-            {NAV_LINKS.map((link) => {
-              if (!link.mega) {
+              if (item.dropdown) {
                 return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="site-nav-sub-link"
-                    style={{
-                      padding: '0 16px',
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      color: isActive(link.href) ? '#FFFFFF' : '#E6E6E6',
-                      textDecoration: 'none',
-                      fontFamily: 'var(--font-body)',
-                      height: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      borderBottom: isActive(link.href) ? '2px solid #8B5CF6' : '2px solid transparent',
-                      transition: 'all 150ms',
-                      position: 'relative',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
-                    }}
-                    aria-current={isActive(link.href) ? 'page' : undefined}
+                  <div
+                    key={item.label}
+                    className="navbar-dropdown-parent"
+                    style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}
+                    onMouseEnter={() => handleMouseEnter(item.label)}
+                    onMouseLeave={handleMouseLeave}
                   >
-                    {link.label}
-                  </Link>
-                );
-              }
-
-              /* Mega-menu content per section */
-              let megaClass = 'nav-mega';
-              let megaContent = null;
-
-              if (link.label === 'Case Types') {
-                megaClass = 'nav-mega nav-mega--wide';
-                megaContent = (
-                  <div className="nav-mega-grid nav-mega-grid--3col">
-                    <div>
-                      <div className="nav-mega-heading">Employment</div>
-                      <a href="/report/442">Employment Discrimination</a>
-                      <a href="/report/445">Americans with Disabilities</a>
-                      <a href="/report/710">Fair Labor Standards</a>
-                      <a href="/report/720">Labor/Management Relations</a>
-                    </div>
-                    <div>
-                      <div className="nav-mega-heading">Torts &amp; Injury</div>
-                      <a href="/report/360">Personal Injury</a>
-                      <a href="/report/350">Motor Vehicle</a>
-                      <a href="/report/365">Product Liability</a>
-                      <a href="/report/368">Medical Malpractice</a>
-                    </div>
-                    <div>
-                      <div className="nav-mega-heading">Civil Rights &amp; Contract</div>
-                      <a href="/report/440">Civil Rights — Other</a>
-                      <a href="/report/443">Housing/Accommodations</a>
-                      <a href="/report/190">Contract — Other</a>
-                      <a href="/report/110">Insurance</a>
-                    </div>
-                    <div className="nav-mega-footer-row">
-                      <a href="/cases" className="nav-mega-footer-link">View All Case Types →</a>
-                    </div>
-                  </div>
-                );
-              } else if (link.label === 'Districts') {
-                megaClass = 'nav-mega nav-mega--wide';
-                megaContent = (
-                  <div className="nav-mega-grid nav-mega-grid--4col">
-                    <div>
-                      <div className="nav-mega-heading">Eastern Circuits</div>
-                      <a href="/districts?circuit=1">1st Circuit</a>
-                      <a href="/districts?circuit=2">2nd Circuit</a>
-                      <a href="/districts?circuit=3">3rd Circuit</a>
-                      <a href="/districts?circuit=4">4th Circuit</a>
-                    </div>
-                    <div>
-                      <div className="nav-mega-heading">Central Circuits</div>
-                      <a href="/districts?circuit=5">5th Circuit</a>
-                      <a href="/districts?circuit=6">6th Circuit</a>
-                      <a href="/districts?circuit=7">7th Circuit</a>
-                      <a href="/districts?circuit=8">8th Circuit</a>
-                    </div>
-                    <div>
-                      <div className="nav-mega-heading">Western Circuits</div>
-                      <a href="/districts?circuit=9">9th Circuit</a>
-                      <a href="/districts?circuit=10">10th Circuit</a>
-                      <a href="/districts?circuit=11">11th Circuit</a>
-                      <a href="/districts?circuit=dc">D.C. Circuit</a>
-                    </div>
-                    <div>
-                      <div className="nav-mega-heading">Quick Links</div>
-                      <a href="/districts/california-central">C.D. California</a>
-                      <a href="/districts/new-york-southern">S.D. New York</a>
-                      <a href="/districts/texas-southern">S.D. Texas</a>
-                      <a href="/map">Interactive Map</a>
-                    </div>
-                    <div className="nav-mega-footer-row">
-                      <a href="/districts" className="nav-mega-footer-link">View All 94 Districts →</a>
-                    </div>
-                  </div>
-                );
-              } else if (link.label === 'Solutions') {
-                megaClass = 'nav-mega nav-mega--wide';
-                megaContent = (
-                  <div className="nav-mega-grid nav-mega-grid--3col">
-                    <div>
-                      <div className="nav-mega-heading">For Legal Professionals</div>
-                      <a href="/solutions/individuals">Individuals</a>
-                      <a href="/solutions/small-firms">Small Law Firms</a>
-                      <a href="/solutions/enterprise">Enterprise Legal</a>
-                    </div>
-                    <div>
-                      <div className="nav-mega-heading">For Organizations</div>
-                      <a href="/solutions/insurance">Insurance Companies</a>
-                      <a href="/solutions/legal-aid">Legal Aid</a>
-                      <a href="/solutions/government">Government Agencies</a>
-                    </div>
-                    <div>
-                      <div className="nav-mega-heading">Data &amp; Research</div>
-                      <a href="/solutions/funders">Litigation Funders</a>
-                      <a href="/solutions/academic">Academic Research</a>
-                      <a href="/solutions/api">API &amp; Integrations</a>
-                    </div>
-                    <div className="nav-mega-footer-row">
-                      <a href="/solutions" className="nav-mega-footer-link">View All Solutions →</a>
-                    </div>
-                  </div>
-                );
-              } else if (link.label === 'Attorney Mode') {
-                megaContent = (
-                  <div className="nav-mega-grid nav-mega-grid--2col">
-                    <div>
-                      <div className="nav-mega-heading">Analysis Tools</div>
-                      <a href="/attorney/case-predictor">Case Predictor</a>
-                      <a href="/attorney/judge-intelligence">Judge Intelligence</a>
-                      <a href="/attorney/venue-optimizer">Venue Optimizer</a>
-                      <a href="/attorney/opposing-counsel">Opposing Counsel</a>
-                    </div>
-                    <div>
-                      <div className="nav-mega-heading">Workflow</div>
-                      <a href="/attorney/bulk-analysis">Bulk Analysis</a>
-                      <a href="/attorney/document-intelligence">Document Intelligence</a>
-                      <a href="/attorney/team-workspace">Team Workspace</a>
-                      <a href="/attorney/api-access">API Access</a>
-                    </div>
-                    <div className="nav-mega-footer-row">
-                      <a href="/attorney" className="nav-mega-footer-link">View All Attorney Tools →</a>
-                    </div>
+                    <Link
+                      href={item.href}
+                      className="navbar-item"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: '100%',
+                        padding: '0 14px',
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        color: active ? '#8B5CF6' : '#1a1a1a',
+                        textDecoration: 'none',
+                        borderBottom: active ? '2px solid #8B5CF6' : '2px solid transparent',
+                        transition: 'color 150ms',
+                        whiteSpace: 'nowrap',
+                      }}
+                      aria-current={active ? 'page' : undefined}
+                    >
+                      {item.label}
+                      <ChevronDown />
+                    </Link>
+                    <NavDropdown items={item.dropdown} open={openDropdown === item.label} />
                   </div>
                 );
               }
 
               return (
-                <div
-                  key={link.href}
-                  className="nav-mega-parent"
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="navbar-item"
                   style={{
-                    position: 'relative',
-                    height: '100%',
                     display: 'flex',
                     alignItems: 'center',
+                    height: '100%',
+                    padding: '0 14px',
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: active ? '#8B5CF6' : '#1a1a1a',
+                    textDecoration: 'none',
+                    borderBottom: active ? '2px solid #8B5CF6' : '2px solid transparent',
+                    transition: 'color 150ms',
+                    whiteSpace: 'nowrap',
+                    ...(item.attorney ? { borderLeft: '2px solid #8B5CF6', marginLeft: '8px', paddingLeft: '14px' } : {}),
                   }}
+                  aria-current={active ? 'page' : undefined}
                 >
-                  <Link
-                    href={link.href}
-                    className="site-nav-sub-link nav-mega-trigger"
-                    style={{
-                      padding: '0 16px',
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      color: isActive(link.href) ? '#FFFFFF' : '#E6E6E6',
-                      textDecoration: 'none',
-                      fontFamily: 'var(--font-body)',
-                      height: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                      borderBottom: isActive(link.href) ? '2px solid #8B5CF6' : '2px solid transparent',
-                      transition: 'all 150ms',
-                      position: 'relative',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
-                    }}
-                    aria-current={isActive(link.href) ? 'page' : undefined}
-                  >
-                    {link.label}
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ marginTop: '1px' }}>
-                      <path d="M2.5 4L5 6.5L7.5 4" />
-                    </svg>
-                  </Link>
-                  <div className={megaClass}>
-                    {megaContent}
-                  </div>
-                </div>
+                  {item.label}
+                </Link>
               );
             })}
           </div>
+
+          {/* Right side */}
+          <div className="navbar-right" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginLeft: 'auto', flexShrink: 0 }}>
+            {userEmail ? (
+              <>
+                <Link href="/dashboard" className="navbar-item" style={{
+                  fontSize: '14px', fontWeight: 500, color: '#4B5563', textDecoration: 'none',
+                  fontFamily: 'var(--font-display)', padding: '8px 16px',
+                  borderRadius: '8px', border: '1px solid #E5E7EB', transition: 'all 150ms',
+                }}>
+                  Dashboard
+                </Link>
+                <button onClick={handleSignOut} style={{
+                  fontSize: '14px', fontWeight: 600, color: '#FFFFFF', background: '#8B5CF6',
+                  padding: '8px 20px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                  fontFamily: 'var(--font-display)', transition: 'all 150ms',
+                }}>
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/sign-in" className="navbar-signin" style={{
+                  fontSize: '14px', fontWeight: 500, color: '#4B5563', textDecoration: 'none',
+                  fontFamily: 'var(--font-display)', transition: 'color 150ms',
+                }}>
+                  Sign In
+                </Link>
+                <Link href="/search" className="navbar-cta" style={{
+                  fontSize: '14px', fontWeight: 600, color: '#FFFFFF', background: '#8B5CF6',
+                  padding: '10px 20px', borderRadius: '8px', textDecoration: 'none',
+                  fontFamily: 'var(--font-display)', transition: 'background 150ms',
+                  whiteSpace: 'nowrap',
+                }}>
+                  Start Researching
+                </Link>
+              </>
+            )}
+          </div>
+
+          {/* Hamburger (mobile only) */}
+          <button
+            ref={hamburgerRef}
+            className="navbar-hamburger"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileOpen}
+            style={{
+              display: 'none',
+              background: 'none',
+              border: 'none',
+              padding: '10px',
+              cursor: 'pointer',
+              color: '#1a1a1a',
+              minHeight: '44px',
+              minWidth: '44px',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginLeft: 'auto',
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              {mobileOpen ? (
+                <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></>
+              ) : (
+                <><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></>
+              )}
+            </svg>
+          </button>
         </div>
       </nav>
 
-      {/* Search overlay */}
-      {searchOpen && (
-        <div
-          className="site-nav-search-overlay"
-          style={{
-            position: 'fixed',
-            inset: 0,
-            top: '64px',
-            zIndex: 197,
-            background: 'rgba(0,0,0,0.30)',
-            backdropFilter: undefined,
-            WebkitBackdropFilter: undefined,
-          }}
-          onClick={() => setSearchOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Search panel — slides down from nav */}
-      <div
-        className="site-nav-search-panel"
-        style={{
-          position: 'fixed',
-          top: '64px',
-          left: 0,
-          right: 0,
-          zIndex: 198,
-          background: '#1B3A5C',
-          borderBottom: '1px solid #E5E7EB',
-          padding: '32px 24px',
-          maxHeight: searchOpen ? '400px' : '0',
-          overflow: 'hidden',
-          transition: 'max-height 300ms ease, padding 300ms ease',
-          display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-        }}
-      >
-        <div
-          style={{
-            width: '100%',
-            maxWidth: '1280px',
-            display: 'flex',
-            gap: '12px',
-            alignItems: 'center',
-          }}
-        >
-          {/* Search input */}
-          <input
-            ref={searchInputRef}
-            type="text"
-            placeholder="Search case types, districts, judges..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleSearchSubmit();
-              }
-            }}
-            className="site-nav-search-input"
-            style={{
-              flex: 1,
-              height: '48px',
-              padding: '12px 16px',
-              fontSize: '16px',
-              fontFamily: 'var(--font-body)',
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
-              borderRadius: '12px',
-              transition: 'border-color 150ms',
-              outline: 'none',
-            }}
-          />
-
-          {/* Search button */}
-          <button
-            onClick={handleSearchSubmit}
-            className="site-nav-search-submit"
-            style={{
-              height: '48px',
-              padding: '0 24px',
-              background: '#8B5CF6',
-              color: '#FFFFFF',
-              fontSize: '14px',
-              fontWeight: 600,
-              fontFamily: 'var(--font-body)',
-              border: 'none',
-              borderRadius: '12px',
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-              transition: 'all 150ms',
-            }}
-          >
-            Search
-          </button>
-
-          {/* Close button */}
-          <button
-            onClick={() => setSearchOpen(false)}
-            className="site-nav-search-close"
-            aria-label="Close search"
-            style={{
-              height: '48px',
-              width: '48px',
-              padding: '0',
-              background: 'transparent',
-              color: '#FFFFFF',
-              fontSize: '24px',
-              fontWeight: 300,
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'color 150ms',
-            }}
-          >
-            ×
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile drawer overlay */}
+      {/* Mobile overlay */}
       {mobileOpen && (
         <div
-          className="site-nav-mobile-overlay"
           style={{
-            position: 'fixed',
-            inset: 0,
-            top: '64px',
-            zIndex: 198,
-            background: 'rgba(0,23,46,0.40)',
-            backdropFilter: undefined,
-            WebkitBackdropFilter: undefined,
+            position: 'fixed', inset: 0, top: '64px', zIndex: 198,
+            background: 'rgba(0,0,0,0.3)',
           }}
           onClick={() => { setMobileOpen(false); hamburgerRef.current?.focus(); }}
           aria-hidden="true"
         />
       )}
 
-      {/* Mobile drawer — frosted glass */}
+      {/* Mobile drawer — slides from left */}
       <div
         ref={drawerRef}
-        className="site-nav-mobile-drawer"
+        className="navbar-mobile-drawer"
         style={{
           position: 'fixed',
           top: '64px',
-          right: 0,
+          left: 0,
           bottom: 0,
-          width: '280px',
+          width: '300px',
           zIndex: 199,
-          background: '#1B3A5C',
-          backdropFilter: undefined,
-          WebkitBackdropFilter: undefined,
-          borderLeft: '1px solid #E5E7EB',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
-          transform: mobileOpen ? 'translateX(0)' : 'translateX(100%)',
+          background: '#FFFFFF',
+          borderRight: '1px solid #E5E7EB',
+          boxShadow: '4px 0 16px rgba(0,0,0,0.08)',
+          transform: mobileOpen ? 'translateX(0)' : 'translateX(-100%)',
           transition: 'transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
-          padding: '24px',
+          padding: '16px 0',
           display: 'none',
           flexDirection: 'column',
-          gap: '16px',
           overflowY: 'auto',
         }}
         role="dialog"
         aria-label="Mobile navigation"
         aria-modal={mobileOpen ? true : undefined}
       >
-        {NAV_LINKS.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => setMobileOpen(false)}
-            style={{
-              display: 'block',
-              padding: '12px 16px',
-              borderRadius: '12px',
-              fontSize: '16px',
-              fontWeight: isActive(link.href) ? 600 : 500,
-              color: '#FFFFFF',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
-              minHeight: '44px',
-              background: isActive(link.href) ? '#8B5CF6' : 'transparent',
-              transition: 'all 150ms ease',
-            }}
-            className="site-nav-mobile-link"
-            aria-current={isActive(link.href) ? 'page' : undefined}
-          >
-            {link.label}
-          </Link>
+        {NAV_ITEMS.map((item) => (
+          <div key={item.label}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Link
+                href={item.href}
+                onClick={() => { if (!item.dropdown) setMobileOpen(false); }}
+                style={{
+                  display: 'block',
+                  flex: 1,
+                  padding: '14px 24px',
+                  fontSize: '15px',
+                  fontWeight: isActive(item.href) ? 600 : 500,
+                  color: isActive(item.href) ? '#8B5CF6' : '#1a1a1a',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-display)',
+                  minHeight: '44px',
+                  borderLeft: item.attorney ? '3px solid #8B5CF6' : '3px solid transparent',
+                  background: isActive(item.href) ? 'rgba(139,92,246,0.06)' : 'transparent',
+                }}
+              >
+                {item.label}
+              </Link>
+              {item.dropdown && (
+                <button
+                  onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
+                  aria-label={`Expand ${item.label}`}
+                  style={{
+                    background: 'none', border: 'none', padding: '14px 20px',
+                    cursor: 'pointer', color: '#4B5563', minHeight: '44px', minWidth: '44px',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}
+                >
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2"
+                    style={{ transform: mobileExpanded === item.label ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 200ms' }}>
+                    <path d="M3 4.5L6 7.5L9 4.5" />
+                  </svg>
+                </button>
+              )}
+            </div>
+            {/* Expanded dropdown items in mobile */}
+            {item.dropdown && mobileExpanded === item.label && (
+              <div style={{ background: '#f9fafb', borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb' }}>
+                {item.dropdown.filter(d => !d.divider).map(d => (
+                  <Link
+                    key={d.href}
+                    href={d.href}
+                    onClick={() => setMobileOpen(false)}
+                    style={{
+                      display: 'block',
+                      padding: '12px 24px 12px 40px',
+                      fontSize: '14px',
+                      fontFamily: 'var(--font-body)',
+                      color: '#4B5563',
+                      textDecoration: 'none',
+                      minHeight: '44px',
+                      transition: 'background 120ms',
+                    }}
+                    className="navbar-mobile-subitem"
+                  >
+                    {d.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
 
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.12)', margin: '12px 0', padding: '12px 0' }}>
+        {/* Auth section */}
+        <div style={{ borderTop: '1px solid #e5e7eb', margin: '12px 0 0', padding: '16px 24px' }}>
           {userEmail ? (
             <>
-              <Link
-                href="/dashboard"
-                onClick={() => setMobileOpen(false)}
-                style={{
-                  display: 'block',
-                  padding: '12px 16px',
-                  borderRadius: '12px',
-                  fontSize: '16px',
-                  fontWeight: 500,
-                  color: '#FFFFFF',
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
-                  minHeight: '44px',
-                  transition: 'all 150ms ease',
-                }}
-                className="site-nav-mobile-link"
-              >
+              <Link href="/dashboard" onClick={() => setMobileOpen(false)} style={{
+                display: 'block', padding: '12px 0', fontSize: '15px', fontWeight: 500,
+                color: '#1a1a1a', textDecoration: 'none', fontFamily: 'var(--font-display)', minHeight: '44px',
+              }}>
                 Dashboard
               </Link>
-              <button
-                onClick={() => { setMobileOpen(false); handleSignOut(); }}
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  padding: '12px 16px',
-                  borderRadius: '12px',
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  color: '#FFFFFF',
-                  background: '#8B5CF6',
-                  fontFamily: 'var(--font-body)',
-                  textAlign: 'center',
-                  minHeight: '44px',
-                  marginTop: '8px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 150ms ease',
-                }}
-              >
+              <button onClick={() => { setMobileOpen(false); handleSignOut(); }} style={{
+                display: 'block', width: '100%', padding: '12px', borderRadius: '8px',
+                fontSize: '15px', fontWeight: 600, color: '#FFFFFF', background: '#8B5CF6',
+                fontFamily: 'var(--font-display)', textAlign: 'center', minHeight: '44px',
+                marginTop: '8px', border: 'none', cursor: 'pointer',
+              }}>
                 Sign Out
               </button>
             </>
           ) : (
             <>
-              <Link
-                href="/sign-in"
-                onClick={() => setMobileOpen(false)}
-                style={{
-                  display: 'block',
-                  padding: '12px 16px',
-                  borderRadius: '12px',
-                  fontSize: '16px',
-                  fontWeight: 500,
-                  color: '#FFFFFF',
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
-                  minHeight: '44px',
-                  transition: 'all 150ms ease',
-                }}
-                className="site-nav-mobile-link"
-              >
+              <Link href="/sign-in" onClick={() => setMobileOpen(false)} style={{
+                display: 'block', padding: '12px 0', fontSize: '15px', fontWeight: 500,
+                color: '#1a1a1a', textDecoration: 'none', fontFamily: 'var(--font-display)', minHeight: '44px',
+              }}>
                 Sign In
               </Link>
-              <Link
-                href="/search"
-                onClick={() => setMobileOpen(false)}
-                style={{
-                  display: 'block',
-                  padding: '12px 16px',
-                  borderRadius: '12px',
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  color: '#FFFFFF',
-                  background: '#8B5CF6',
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-body)',
-                  textAlign: 'center',
-                  minHeight: '44px',
-                  marginTop: '8px',
-                  transition: 'all 150ms ease',
-                }}
-              >
-                Search Cases
+              <Link href="/search" onClick={() => setMobileOpen(false)} style={{
+                display: 'block', padding: '12px', borderRadius: '8px', marginTop: '8px',
+                fontSize: '15px', fontWeight: 600, color: '#FFFFFF', background: '#8B5CF6',
+                textDecoration: 'none', fontFamily: 'var(--font-display)', textAlign: 'center', minHeight: '44px',
+              }}>
+                Start Researching
               </Link>
             </>
           )}
@@ -908,109 +532,17 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .site-nav-logo-link {
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-        }
-        .site-nav-search-btn:hover { color: #0f0f0f !important; }
-        .site-nav-search-input:focus { border-color: #8B5CF6 !important; }
-        .site-nav-search-submit:hover { background: #6D28D9 !important; }
-        .site-nav-search-close:hover { color: #8B5CF6 !important; }
-        .site-nav-link:hover { color: #0f0f0f !important; }
-        .site-nav-sub-link:hover { color: #FFFFFF !important; }
-        .site-nav-mobile-link:hover { background: rgba(124,58,237,0.15) !important; }
+        .navbar-item:hover { color: #8B5CF6 !important; }
+        .navbar-signin:hover { color: #8B5CF6 !important; }
+        .navbar-cta:hover { background: #6D28D9 !important; }
+        .navbar-dropdown-item:hover { background: #f9fafb !important; color: #8B5CF6 !important; }
+        .navbar-mobile-subitem:hover { background: #f3f4f6 !important; }
 
-        /* ── MEGA-MENU ─────────────────────────────────────── */
-        .nav-mega {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          min-width: 280px;
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
-          border-top: 3px solid #8B5CF6;
-          border-radius: 0 0 2px 2px;
-          box-shadow: 0 12px 32px rgba(0,0,0,0.14);
-          padding: 24px 0 16px;
-          z-index: 300;
-        }
-        .nav-mega--wide {
-          min-width: 560px;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        .nav-mega-parent:hover .nav-mega {
-          display: block;
-        }
-        .nav-mega-grid {
-          display: grid;
-          gap: 0 32px;
-          padding: 0 24px;
-        }
-        .nav-mega-grid--2col { grid-template-columns: 1fr 1fr; }
-        .nav-mega-grid--3col { grid-template-columns: 1fr 1fr 1fr; }
-        .nav-mega-grid--4col { grid-template-columns: 1fr 1fr 1fr 1fr; }
-        .nav-mega-heading {
-          font-size: 11px;
-          font-weight: 600;
-          color: #4B5563;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          font-family: var(--font-body);
-          padding-bottom: 10px;
-          margin-bottom: 4px;
-          border-bottom: 1px solid #E5E7EB;
-        }
-        .nav-mega a {
-          display: block;
-          padding: 6px 0;
-          font-size: 13px;
-          color: #4B5563;
-          text-decoration: none;
-          font-family: var(--font-body);
-          transition: color 120ms;
-        }
-        .nav-mega a:hover { color: #8B5CF6; }
-        .nav-mega-footer-row {
-          grid-column: 1 / -1;
-          border-top: 1px solid #E5E7EB;
-          margin-top: 12px;
-          padding-top: 12px;
-        }
-        .nav-mega-footer-link {
-          font-size: 13px !important;
-          font-weight: 600 !important;
-          color: #8B5CF6 !important;
-        }
-        .nav-mega-footer-link:hover {
-          color: #6D28D9 !important;
-        }
-        .nav-mega-trigger svg {
-          opacity: 0.6;
-          transition: transform 150ms;
-        }
-        .nav-mega-parent:hover .nav-mega-trigger svg {
-          transform: rotate(180deg);
-          opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-          .site-nav-sub { display: none !important; }
-          .site-nav-auth { display: none !important; }
-          .site-nav-hamburger { display: flex !important; }
-          .site-nav-mobile-drawer { display: flex !important; }
-          .nav-mega { display: none !important; }
-        }
-        @media (max-width: 1100px) {
-          .nav-mega--wide {
-            min-width: 400px !important;
-          }
-          .nav-mega-grid--4col {
-            grid-template-columns: 1fr 1fr !important;
-          }
+        @media (max-width: 1024px) {
+          .navbar-desktop-items { display: none !important; }
+          .navbar-right { display: none !important; }
+          .navbar-hamburger { display: flex !important; }
+          .navbar-mobile-drawer { display: flex !important; }
         }
       `}} />
     </>
