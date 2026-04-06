@@ -393,10 +393,13 @@ export default async function DashboardPage() {
                 {[
                   { label: 'AI Case Predictor', href: '/attorney/case-predictor', desc: 'Predict outcomes', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> },
                   { label: 'Judge Intelligence', href: '/attorney/judge-intelligence', desc: 'Research judges', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M6 10h12M6 14h12"/></svg> },
-                  { label: 'Venue Optimizer', href: '/attorney/venue-optimizer', desc: 'Find best districts', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg> },
+                  { label: 'Venue Optimizer', href: '/attorney/venue-optimizer', desc: 'Find best districts', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> },
                   { label: 'Opposing Counsel', href: '/attorney/opposing-counsel', desc: 'Research counsel', icon: <SearchIcon size={20} /> },
-                  { label: 'Bulk Analysis', href: '/attorney/bulk-analysis', desc: 'Portfolio analysis', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> },
-                  { label: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Case alerts', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m0 8.48l-4.24 4.24M19.78 4.22l-4.24 4.24m0 8.48l4.24 4.24"/></svg> },
+                  { label: 'Bulk Analysis', href: '/attorney/bulk-analysis', desc: 'Portfolio analysis', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> },
+                  { label: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Case alerts', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg> },
+                  { label: 'Document Intel', href: '/attorney/document-intelligence', desc: 'Analyze documents', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> },
+                  { label: 'Team Workspace', href: '/attorney/team-workspace', desc: 'Collaborate', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg> },
+                  { label: 'API Access', href: '/attorney/api-access', desc: 'Developer tools', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> },
                 ].map((tool) => (
                   <Link
                     key={tool.href}
@@ -415,6 +418,47 @@ export default async function DashboardPage() {
               </div>
             </div>
           )}
+
+          {/* Quick Research Links */}
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 20px' }}>
+              Quick Research
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
+              {[
+                { label: 'Search Cases', href: '/search', color: '#E8171F' },
+                { label: 'Browse Districts', href: '/districts', color: '#006997' },
+                { label: 'View Judges', href: '/judges', color: '#00172E' },
+                { label: 'Case Calculator', href: '/calculator', color: '#07874A' },
+                { label: 'Trends & Data', href: '/trends', color: '#B86E00' },
+              ].map((link) => (
+                <Link key={link.href} href={link.href} style={{ display: 'block', padding: '16px', borderRadius: '2px', border: '1px solid #D5D8DC', textDecoration: 'none', textAlign: 'center', transition: 'all 0.2s ease', background: '#FAFBFC' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 600, color: link.color, fontFamily: 'var(--font-body)' }}>{link.label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Platform Stats */}
+          <div style={{ backgroundColor: '#00172E', borderRadius: '2px', padding: '32px', marginBottom: '24px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 20px' }}>
+              Platform Data Coverage
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px' }}>
+              {[
+                { label: 'Federal Cases', value: '4.1M+' },
+                { label: 'Case Types', value: '84' },
+                { label: 'Federal Districts', value: '94' },
+                { label: 'Federal Judges', value: '91' },
+                { label: 'Years of Data', value: '25+' },
+              ].map((stat) => (
+                <div key={stat.label} style={{ textAlign: 'center' }}>
+                  <p className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: '#E8171F', margin: '0 0 4px' }}>{stat.value}</p>
+                  <p style={{ fontSize: '11px', color: '#B0B8C0', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: 0 }}>{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Search History — Unlimited+ only */}
           {isUnlimitedPlus && !isExpired && searchHistory.length > 0 && (

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
+import { getAllJudges } from '../../lib/judges';
 
 export const revalidate = 0;
 
@@ -136,6 +137,19 @@ const CIRCUITS: {
 ];
 
 export default function JudgesPage() {
+  const allJudges = getAllJudges();
+  // Featured: top judges by total cases
+  const featuredJudges = [...allJudges]
+    .sort((a, b) => b.stats.totalCases - a.stats.totalCases)
+    .slice(0, 12);
+
+  // Aggregate stats
+  const totalJudges = allJudges.length;
+  const avgWinRate = Math.round(allJudges.reduce((s, j) => s + j.stats.plaintiffWinRate, 0) / totalJudges);
+  const avgDuration = Math.round(allJudges.reduce((s, j) => s + j.stats.medianDurationMonths, 0) / totalJudges);
+  const totalCasesHandled = allJudges.reduce((s, j) => s + j.stats.totalCases, 0);
+  const uniqueDistricts = new Set(allJudges.map(j => j.district)).size;
+
   return (
     <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
       <style>{`
@@ -222,8 +236,88 @@ export default function JudgesPage() {
         </div>
       </div>
 
+      {/* Aggregate Stats Bar */}
+      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '24px', display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
+          {[
+            { label: 'Federal Judges', value: String(totalJudges) },
+            { label: 'Districts Covered', value: String(uniqueDistricts) },
+            { label: 'Avg Win Rate', value: `${avgWinRate}%` },
+            { label: 'Avg Duration', value: `${avgDuration}mo` },
+            { label: 'Cases Tracked', value: `${(totalCasesHandled / 1000).toFixed(0)}K+` },
+          ].map((s) => (
+            <div key={s.label} style={{ textAlign: 'center' }}>
+              <p className="font-mono" style={{ fontSize: '22px', fontWeight: 700, color: '#E8171F', margin: '0 0 2px' }}>{s.value}</p>
+              <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: 0, fontFamily: 'var(--font-body)' }}>{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Main Content */}
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '48px 24px' }}>
+        {/* Featured Judges */}
+        <section style={{ marginBottom: 64 }}>
+          <h2 style={{ fontSize: 24, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 24 }}>
+            Featured Judges
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
+            {featuredJudges.map((judge) => (
+              <Link
+                key={judge.slug}
+                href={`/judges/${judge.slug}`}
+                style={{
+                  display: 'block', padding: '20px', borderRadius: '2px', border: '1px solid #D5D8DC',
+                  background: '#FFFFFF', textDecoration: 'none', transition: 'all 0.2s ease',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                  <div>
+                    <p style={{ fontSize: '15px', fontWeight: 700, color: '#212529', margin: '0 0 4px', fontFamily: 'var(--font-display)' }}>
+                      {judge.name}
+                    </p>
+                    <p style={{ fontSize: '12px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+                      {judge.district}
+                    </p>
+                  </div>
+                  {judge.chiefJudge && (
+                    <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '2px', backgroundColor: 'rgba(232,23,31,0.08)', color: '#E8171F', textTransform: 'uppercase' }}>Chief</span>
+                  )}
+                  {judge.seniorStatus && (
+                    <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '2px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00', textTransform: 'uppercase' }}>Senior</span>
+                  )}
+                </div>
+                <div style={{ display: 'flex', gap: '16px' }}>
+                  <div style={{ textAlign: 'center' }}>
+                    <p className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: judge.stats.plaintiffWinRate >= 50 ? '#07874A' : '#E8171F', margin: '0 0 2px' }}>
+                      {judge.stats.plaintiffWinRate}%
+                    </p>
+                    <p style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase', margin: 0 }}>Win Rate</p>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <p className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#006997', margin: '0 0 2px' }}>
+                      {judge.stats.settlementRate}%
+                    </p>
+                    <p style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase', margin: 0 }}>Settlement</p>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <p className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 2px' }}>
+                      {judge.stats.medianDurationMonths}mo
+                    </p>
+                    <p style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase', margin: 0 }}>Duration</p>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <p className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 2px' }}>
+                      {(judge.stats.totalCases / 1000).toFixed(1)}K
+                    </p>
+                    <p style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase', margin: 0 }}>Cases</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* What Judge Profiles Include */}
         <section style={{ marginBottom: 64 }}>
           <h2
