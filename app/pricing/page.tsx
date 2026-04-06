@@ -597,8 +597,23 @@ export default function PricingPage() {
               fontFamily: 'var(--font-body)',
             }}
           >
-            Start free. Buy one report. Or go unlimited.
+            All features are currently free — no account required.
           </p>
+
+          {/* Launch Banner */}
+          <div style={{
+            display: 'inline-block',
+            background: '#07874A',
+            color: '#FFFFFF',
+            padding: '12px 32px',
+            borderRadius: 2,
+            fontSize: 16,
+            fontWeight: 700,
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '0.02em',
+          }}>
+            🎉 LAUNCH SPECIAL — Everything is free. No limits.
+          </div>
         </div>
       </div>
 

@@ -16,24 +16,12 @@ export default function TranslatePage() {
   const [translation, setTranslation] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [remaining, setRemaining] = useState(3);
-
-  useEffect(() => {
-    // Load remaining translations from localStorage
-    const saved = localStorage.getItem('translate-remaining');
-    if (saved) {
-      setRemaining(parseInt(saved, 10));
-    }
-  }, []);
+  // All translations free during launch
+  const remaining = 999;
 
   const handleTranslate = async () => {
     if (!input.trim()) {
       setError('Please enter some legal text to translate.');
-      return;
-    }
-
-    if (remaining <= 0) {
-      setError('You\'ve used all 3 free translations for today. Come back tomorrow!');
       return;
     }
 
@@ -57,9 +45,6 @@ export default function TranslatePage() {
       }
 
       setTranslation(data.translation);
-      const newRemaining = data.remaining;
-      setRemaining(newRemaining);
-      localStorage.setItem('translate-remaining', String(newRemaining));
     } catch (err: unknown) {
       setError('An error occurred. Please try again.');
     } finally {
@@ -106,28 +91,12 @@ export default function TranslatePage() {
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Translator Form */}
         <div className="p-6 sm:p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
-          {/* Daily Limit Counter */}
-          <div className="mb-8 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ background: '#F8F9FA', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.8px]" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
-                Free Translations Today
-              </p>
-              <p className="text-sm mt-1" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
-                {remaining} remaining
-              </p>
-            </div>
-            <div className="flex gap-2">
-              {Array.from({ length: 3 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="w-3 h-3 transition-colors"
-                  style={{
-                    borderRadius: '50%',
-                    background: i < remaining ? '#E8171F' : '#D5D8DC',
-                  }}
-                />
-              ))}
-            </div>
+          {/* Free Access Banner */}
+          <div className="mb-8 p-4 flex items-center gap-3" style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '2px' }}>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#07874A', flexShrink: 0 }} />
+            <p className="text-sm" style={{ color: '#006997', fontFamily: 'var(--font-body)', margin: 0 }}>
+              <strong>Unlimited translations</strong> — all features are free during launch
+            </p>
           </div>
 
           {/* Text Area */}
@@ -170,25 +139,25 @@ export default function TranslatePage() {
           {/* Translate Button */}
           <button
             onClick={handleTranslate}
-            disabled={!input.trim() || loading || remaining <= 0}
+            disabled={!input.trim() || loading}
             className="w-full px-6 py-3 text-sm font-semibold transition-all hover:shadow-lg active:scale-[0.99]"
             style={{
               borderRadius: '2px',
               background:
-                !input.trim() || loading || remaining <= 0
+                !input.trim() || loading
                   ? '#D5D8DC'
                   : '#E8171F',
               color:
-                !input.trim() || loading || remaining <= 0
+                !input.trim() || loading
                   ? '#455A64'
                   : '#FFFFFF',
               fontFamily: 'var(--font-body)',
               cursor:
-                !input.trim() || loading || remaining <= 0
+                !input.trim() || loading
                   ? 'not-allowed'
                   : 'pointer',
               opacity:
-                !input.trim() || loading || remaining <= 0
+                !input.trim() || loading
                   ? 0.7
                   : 1,
             }}
@@ -222,7 +191,7 @@ export default function TranslatePage() {
               <p className="whitespace-pre-wrap">{translation}</p>
             </div>
             <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: '#455A64', fontFamily: 'var(--font-body)', borderColor: '#D5D8DC' }}>
-              Have more legal text to translate? You have {remaining - 1} free translations left today.
+              Unlimited translations available. Paste more legal text above to translate.
             </p>
           </div>
         )}
