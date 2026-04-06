@@ -740,6 +740,75 @@ export default function OddsPage() {
                   })}
                 </div>
               </div>
+
+              {/* Related Actions */}
+              {results && (
+              <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
+                <h3 style={{
+                  fontSize: 14, fontWeight: 700, color: '#212529', margin: '0 0 16px',
+                  textTransform: 'uppercase', letterSpacing: '0.3px', fontFamily: 'var(--font-display)',
+                }}>
+                  Next Steps
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12 }}>
+                  <Link
+                    href={`/report/${results.nos}`}
+                    style={{
+                      display: 'block', padding: '16px', background: '#00172E', borderRadius: 2,
+                      textDecoration: 'none', transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div style={{ fontSize: 13, fontWeight: 700, color: '#FFFFFF', marginBottom: 4 }}>Full Report</div>
+                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)' }}>Detailed analysis with PDF download</div>
+                  </Link>
+                  <Link
+                    href="/calculator"
+                    style={{
+                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #D5D8DC',
+                      borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 4 }}>Settlement Calculator</div>
+                    <div style={{ fontSize: 11, color: '#455A64' }}>Estimate your potential recovery</div>
+                  </Link>
+                  <Link
+                    href="/judges"
+                    style={{
+                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #D5D8DC',
+                      borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 4 }}>Judge Analytics</div>
+                    <div style={{ fontSize: 11, color: '#455A64' }}>Research judges in your district</div>
+                  </Link>
+                  <Link
+                    href="/trends"
+                    style={{
+                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #D5D8DC',
+                      borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 4 }}>Compare Case Types</div>
+                    <div style={{ fontSize: 11, color: '#455A64' }}>Side-by-side comparison tool</div>
+                  </Link>
+                </div>
+              </div>
+              )}
+            </div>
+          )}
+
+          {/* No-query state: show quick info */}
+          {!showResults && (
+            <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="1.5" style={{ margin: '0 auto 16px', display: 'block' }}>
+                <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+              <p style={{ fontSize: 16, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
+                Select a case type to see your odds
+              </p>
+              <p style={{ fontSize: 14, color: '#455A64', maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>
+                Choose from 84 federal case types above and click &ldquo;Check Odds&rdquo; to see real win rates, settlement data, recovery ranges, and circuit-level comparisons from 4.1M+ cases.
+              </p>
             </div>
           )}
         </div>
