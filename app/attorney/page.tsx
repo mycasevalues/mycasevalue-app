@@ -363,7 +363,7 @@ export default function AttorneyPage() {
             style={{
               margin: 0,
               fontSize: 'clamp(32px, 5vw, 56px)',
-              fontWeight: '800',
+              fontWeight: '700',
               fontFamily: 'var(--font-display)',
               lineHeight: '1.2',
               color: '#FFFFFF',
@@ -734,7 +734,7 @@ export default function AttorneyPage() {
                 <div
                   style={{
                     fontSize: 'clamp(32px, 5vw, 48px)',
-                    fontWeight: '800',
+                    fontWeight: '700',
                     fontFamily: 'var(--font-display)',
                     color: '#7C3AED',
                     marginBottom: '12px',
@@ -963,7 +963,7 @@ export default function AttorneyPage() {
               style={{
                 margin: 0,
                 fontSize: 'clamp(32px, 4vw, 48px)',
-                fontWeight: '800',
+                fontWeight: '700',
                 fontFamily: 'var(--font-display)',
                 color: '#212529',
               }}

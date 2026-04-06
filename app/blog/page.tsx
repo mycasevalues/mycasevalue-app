@@ -463,10 +463,10 @@ export default function BlogPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
           {[
-            { name: 'Trends Explorer', href: '/trends', icon: '-' },
-            { name: 'Judge Comparison', href: '/judges', icon: '-' },
-            { name: 'Case Comparison', href: '/compare', icon: '-' },
-            { name: 'NOS Explorer', href: '/nos-explorer', icon: '-' },
+            { name: 'Trends Explorer', href: '/trends', iconPath: 'M3 3v18h18M3 9h18M3 15h18' },
+            { name: 'Judge Comparison', href: '/judges', iconPath: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75' },
+            { name: 'Case Comparison', href: '/compare', iconPath: 'M9 3H5a2 2 0 0 0-2 2v4m0 0H3m4 0V3m0 4v4a2 2 0 0 0 2 2h4m0 0h4a2 2 0 0 0 2-2v-4m0 0h4m-4 0v-4a2 2 0 0 0-2-2h-4m0 0H9m0 4v4' },
+            { name: 'NOS Explorer', href: '/nos-explorer', iconPath: 'M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm3 7h6M7 9h6M7 13h6' },
           ].map((tool) => (
             <Link
               key={tool.href}
@@ -475,7 +475,7 @@ export default function BlogPage() {
             >
               <div>
                 <div style={{ fontSize: '32px', marginBottom: '12px' }}>
-                  {tool.icon}
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg>
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
                   {tool.name}

@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M12 6.253v13m0-13C6.5 6.253 2 10.058 2 15s4.5 8.747 10 8.747m0-13c5.5 0 10 4.058 10 9s-4.5 8.747-10 8.747M9 9h.01M15 9h.01M9 15h.01M15 15h.01',
     title: 'Research Datasets',
     desc: 'Access comprehensive, cleaned datasets covering millions of cases with detailed metadata suitable for academic analysis and publication.',
   },
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M18 17V9m-5 8V5m-5 12v-3',
     title: 'Research Tools',
     desc: 'Use built-in analysis tools for statistical modeling, trend analysis, and comparative research across case types and jurisdictions.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 6.253v13m0-13C6.5 6.253 2 10.058 2 15s4.5 8.747 10 8.747m0-13c5.5 0 10 4.058 10 9s-4.5 8.747-10 8.747',
     title: 'Citation-Ready Data',
     desc: 'Generate properly sourced, citable datasets with full documentation for peer-reviewed publications and academic presentations.',
   },
   {
-    icon: '-',
+    iconPath: 'M13 2H3v20h10m0-18h8v18h-8M6 9h.01M6 13h.01M6 17h.01',
     title: 'Longitudinal Analysis',
     desc: 'Track cases across years and decades to study long-term trends, settlement evolution, and systemic changes in the legal system.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 10v6m4-6v6m4-6v6M3 16V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v9a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z',
     title: 'Custom Data Exports',
     desc: 'Export filtered datasets in standard formats (CSV, JSON, Parquet) for integration with R, Python, and other research platforms.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 6.253v13m0-13C6.5 6.253 2 10.058 2 15s4.5 8.747 10 8.747m0-13c5.5 0 10 4.058 10 9s-4.5 8.747-10 8.747M12 2l3 5-3 5-3-5 3-5z',
     title: 'Institutional Licensing',
     desc: 'Provide unlimited access across your institution with site licenses supporting research, teaching, and student projects.',
   },
@@ -134,7 +134,7 @@ export default function AcademicPage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

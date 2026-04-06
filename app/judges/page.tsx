@@ -237,15 +237,15 @@ export default function JudgesPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             {[
-              { icon: '-', title: 'Motion Grant Rates', desc: 'How often a judge grants motions to dismiss, summary judgment, and other dispositive motions.' },
-              { icon: '-', title: 'Case Duration', desc: 'Median time from filing to resolution, broken down by case type and disposition.' },
-              { icon: '-', title: 'Plaintiff Win Rates', desc: 'Trial and overall win rates for plaintiffs appearing before this judge.' },
-              { icon: '-', title: 'Settlement Patterns', desc: 'Settlement frequency and timing relative to the judge\'s typical case lifecycle.' },
-              { icon: '-', title: 'Comparison Analytics', desc: 'How the judge compares to the district and circuit average on key metrics.' },
-              { icon: '-', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
+              { iconPath: 'M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M9 9h6v6H9z', title: 'Motion Grant Rates', desc: 'How often a judge grants motions to dismiss, summary judgment, and other dispositive motions.' },
+              { iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z', title: 'Case Duration', desc: 'Median time from filing to resolution, broken down by case type and disposition.' },
+              { iconPath: 'M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z', title: 'Plaintiff Win Rates', desc: 'Trial and overall win rates for plaintiffs appearing before this judge.' },
+              { iconPath: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', title: 'Settlement Patterns', desc: 'Settlement frequency and timing relative to the judge\'s typical case lifecycle.' },
+              { iconPath: 'M21 21H3V3h9V1H3a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2v-9h-2v9z', title: 'Comparison Analytics', desc: 'How the judge compares to the district and circuit average on key metrics.' },
+              { iconPath: 'M3 3h8v8H3z M13 3h8v8h-8z M3 13h8v8H3z M13 13h8v8h-8z', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
             ].map((item, idx) => (
               <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-                <div style={{ fontSize: 20, marginBottom: 8 }}>{item.icon}</div>
+                <div style={{ fontSize: 20, marginBottom: 8 }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg></div>
                 <h3 style={{ fontSize: 15, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
                   {item.title}
                 </h3>

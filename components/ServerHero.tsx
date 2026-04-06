@@ -109,7 +109,7 @@ export default function ServerHero() {
 
         {/* Hover styles */}
         <style>{`
-          .hero-cta-primary:hover { background: linear-gradient(to right, #6D28D9 0%, #7C3AED 100%) !important; }
+          .hero-cta-primary:hover { background: #6D28D9 !important; }
           .hero-cta-secondary:hover {
             background: rgba(255,255,255,0.08) !important;
             border-color: rgba(255,255,255,0.5) !important;
@@ -522,19 +522,19 @@ export default function ServerHero() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="who-grid">
             {[
-              { icon: '-', title: 'Individuals', desc: 'Research your own case value with real settlement data and win rates from cases like yours.', href: '/solutions/individuals' },
-              { icon: '-', title: 'Small Law Firms', desc: 'Case research, judge analytics, and opposing counsel intelligence for solo and boutique practices.', href: '/solutions/small-firms' },
-              { icon: '-', title: 'Enterprise Legal', desc: 'API access, custom dashboards, SSO, and bulk exports for large legal departments.', href: '/solutions/enterprise' },
-              { icon: '-', title: 'Insurance Companies', desc: 'Settlement benchmarking, claim valuation, and risk scoring for claims teams and defense counsel.', href: '/solutions/insurance' },
-              { icon: '-', title: 'Litigation Funders', desc: 'Portfolio analytics, case evaluation, and due diligence data for litigation finance decisions.', href: '/solutions/funders' },
-              { icon: '-', title: 'Academic Researchers', desc: 'Datasets, analysis tools, and institutional licensing for law school faculty and research institutions.', href: '/solutions/academic' },
+              { title: 'Individuals', desc: 'Research your own case value with real settlement data and win rates from cases like yours.', href: '/solutions/individuals', iconPath: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' },
+              { title: 'Small Law Firms', desc: 'Case research, judge analytics, and opposing counsel intelligence for solo and boutique practices.', href: '/solutions/small-firms', iconPath: 'M3 21h18M3 7v14M21 7v14M6 21V10M10 21V10M14 21V10M18 21V10M3 7l9-4 9 4' },
+              { title: 'Enterprise Legal', desc: 'API access, custom dashboards, SSO, and bulk exports for large legal departments.', href: '/solutions/enterprise', iconPath: 'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 1-4 4v14a3 3 0 0 0 3-3h7z' },
+              { title: 'Insurance Companies', desc: 'Settlement benchmarking, claim valuation, and risk scoring for claims teams and defense counsel.', href: '/solutions/insurance', iconPath: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+              { title: 'Litigation Funders', desc: 'Portfolio analytics, case evaluation, and due diligence data for litigation finance decisions.', href: '/solutions/funders', iconPath: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+              { title: 'Academic Researchers', desc: 'Datasets, analysis tools, and institutional licensing for law school faculty and research institutions.', href: '/solutions/academic', iconPath: 'M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c0 2 3 4 6 4s6-2 6-4v-5' },
             ].map((seg) => (
               <a key={seg.title} href={seg.href} style={{
                 display: 'block', background: '#FFFFFF', border: '1px solid #E5E7EB',
                 padding: '28px 24px', textDecoration: 'none',
                 transition: 'box-shadow 200ms, border-color 200ms',
               }} className="who-card">
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{seg.icon}</div>
+                <div style={{ marginBottom: '12px' }}><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={seg.iconPath}/></svg></div>
                 <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{seg.title}</h3>
                 <p style={{ fontSize: '13px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{seg.desc}</p>
               </a>
@@ -648,9 +648,9 @@ export default function ServerHero() {
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #E5E7EB', background: i % 2 === 0 ? '#FFFFFF' : '#F8F9FA' }}>
                     <td style={{ padding: '10px 16px', color: '#212529', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#15803D' : '#B91C1C', fontWeight: 700 }}>{row.mcv ? '[x]' : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#15803D' : '#999' }}>{row.pacer ? '[x]' : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#15803D' : '#999' }}>{row.premium ? '[x]' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#15803D' : '#B91C1C', fontWeight: 700 }}>{row.mcv ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#15803D' : '#9CA3AF' }}>{row.pacer ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#15803D' : '#9CA3AF' }}>{row.premium ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{display:'inline'}}><path d="M20 6L9 17l-5-5"/></svg> : '—'}</td>
                   </tr>
                 ))}
               </tbody>

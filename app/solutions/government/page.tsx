@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M18 17V9m-5 8V5m-5 12v-3',
     title: 'Court Performance Data',
     desc: 'Benchmark court performance metrics including case disposition time, settlement rates, verdict distributions, and caseload analysis.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z',
     title: 'Policy Analysis',
     desc: 'Evaluate policy impacts on case outcomes, judicial efficiency, and system performance with comprehensive statistical analysis.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.209 0-4 1.791-4 4v2h8v-2c0-2.209-1.791-4-4-4zm6-6h4m-2 2v4',
     title: 'Resource Allocation',
     desc: 'Optimize court resources and judge assignments using data on caseload, complexity distribution, and efficiency metrics.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4m7 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
     title: 'Transparency Reporting',
     desc: 'Generate public-facing reports on court operations, judge statistics, and case outcomes supporting judicial transparency initiatives.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-1.946 3.42 3.42 0 01.946 1.946m4.438 0a3.42 3.42 0 001.946-1.946 3.42 3.42 0 01.946 1.946M15.355 8.647a3.42 3.42 0 001.946-1.946 3.42 3.42 0 01.946 1.946m-4.438 0a3.42 3.42 0 001.946-1.946 3.42 3.42 0 01.946 1.946m4.438 0a3.42 3.42 0 001.946-1.946 3.42 3.42 0 01.946 1.946M4.929 4.697a3.42 3.42 0 001.946-1.946A3.42 3.42 0 017.821 4.697m0 0a3.42 3.42 0 001.946-1.946 3.42 3.42 0 01.946 1.946',
     title: 'Compliance Tools',
     desc: 'Track compliance with performance standards, access benchmarks, and generate compliance documentation for oversight bodies.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 10v6m4-6v6m4-6v6M3 16V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v9a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z',
     title: 'Bulk Data Access',
     desc: 'Authorized government agencies access comprehensive case data in bulk formats for research, analysis, and archival purposes.',
   },
@@ -134,7 +134,7 @@ export default function GovernmentPage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

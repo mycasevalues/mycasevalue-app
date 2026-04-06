@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z',
     title: 'Case Value Research',
     desc: 'Build sophisticated case evaluation frameworks using our comprehensive settlement and verdict database across all practice areas.',
   },
   {
-    icon: '-',
+    iconPath: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
     title: 'Opposing Counsel Intel',
     desc: 'Research opposing attorney track records, settlement patterns, and litigation history to inform strategy and negotiation approach.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
     title: 'Judge Analytics',
     desc: 'Access detailed judge profiles including rulings, verdict data, and procedural tendencies specific to your jurisdiction and case type.',
   },
   {
-    icon: '-',
+    iconPath: 'M17.657 16.657L13.414 20.9a2 2 0 0 1-2.828 0l-4.243-4.243a2 2 0 0 1 2.828-2.828L9.172 15l2.657-2.657a2 2 0 0 1 2.828 0l4.243 4.243a2 2 0 0 1-2.828 2.828L15 17.172l2.657 2.657z',
     title: 'Venue Selection',
     desc: 'Make data-driven venue decisions using comparative jury verdict analysis, judge statistics, and case outcome benchmarks.',
   },
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M18 17V9m-5 8V5m-5 12v-3',
     title: 'Bulk Analysis Tools',
     desc: 'Analyze multiple cases in parallel with portfolio-level analytics and comparative benchmarking across your case inventory.',
   },
   {
-    icon: '-',
+    iconPath: 'M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 0 0-4.898-4.142M9 20H4v-2a3 3 0 0 1 5.356-1.857m0 0A5.002 5.002 0 0 1 13.75 12',
     title: 'Team Workspace',
     desc: 'Collaborate securely with team members, share research findings, and maintain client confidentiality across your firm.',
   },
@@ -134,7 +134,7 @@ export default function SmallFirmsPage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

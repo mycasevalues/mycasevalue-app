@@ -503,17 +503,17 @@ export default function HowItWorksPage() {
               {
                 label: 'Search Cases',
                 href: '/search',
-                icon: '-',
+                iconPath: 'M21 21l-4.35-4.35M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16z',
               },
               {
                 label: 'Check Odds',
                 href: '/calculator',
-                icon: '-',
+                iconPath: 'M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM9 7v10M15 7v10M9 9h6M9 13h6',
               },
               {
                 label: 'Calculate Settlement',
                 href: '/calculator',
-                icon: '-',
+                iconPath: 'M12 2v20M2 12h20M8.5 8.5a2 2 0 1 1 4 0 2 2 0 0 1-4 0zM8.5 15.5a2 2 0 1 1 4 0 2 2 0 0 1-4 0z',
               },
             ].map((btn, i) => (
               <Link
@@ -539,7 +539,7 @@ export default function HowItWorksPage() {
                 }}
                 className="start-exploring-btn"
               >
-                <span>{btn.icon}</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={btn.iconPath}/></svg>
                 {btn.label}
               </Link>
             ))}

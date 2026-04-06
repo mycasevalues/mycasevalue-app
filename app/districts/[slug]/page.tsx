@@ -1094,25 +1094,25 @@ export default async function DistrictPage({ params }: PageProps) {
                 title: 'Case Value Calculator',
                 description: `Estimate your case value using ${state.label} data`,
                 href: '/calculator',
-                icon: '-',
+                iconPath: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6',
               },
               {
                 title: 'Compare Districts',
                 description: 'Compare outcomes across multiple districts',
                 href: '/compare',
-                icon: '-',
+                iconPath: 'M3 3v18h18M18 17V9m-5 8V5m-5 12v-3',
               },
               {
                 title: 'Court Map',
                 description: 'Visualize all federal court districts',
                 href: '/map',
-                icon: '-',
+                iconPath: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z',
               },
               {
                 title: 'Trend Analysis',
                 description: 'See how outcomes have changed over time',
                 href: '/trends',
-                icon: '-',
+                iconPath: 'M23 6l-9.5 9.5-5-5L1 18',
               },
             ].map((tool, i) => (
               <Link
@@ -1131,9 +1131,9 @@ export default async function DistrictPage({ params }: PageProps) {
                   gap: '8px',
                 }}
               >
-                <div style={{ fontSize: '24px', marginBottom: '4px' }}>
-                  {tool.icon}
-                </div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '4px' }}>
+                  <path d={tool.iconPath}/>
+                </svg>
                 <div style={{ fontWeight: 600, color: '#212529', fontSize: '16px', fontFamily: 'var(--font-display)' }}>
                   {tool.title}
                 </div>

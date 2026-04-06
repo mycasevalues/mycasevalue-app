@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M16 18l6-6-6-6M8 6l-6 6 6 6',
     title: 'REST API',
     desc: 'Comprehensive REST API with full case analytics, settlement data, and judge intelligence accessible via standard HTTP endpoints.',
   },
   {
-    icon: '-',
+    iconPath: 'M15 17H3v-2a6 6 0 0 1 12 0v2zM9 9a3 3 0 1 0 6 0 3 3 0 0 0-6 0z',
     title: 'Webhooks & Events',
     desc: 'Real-time webhooks for case updates, settlement notifications, and custom event triggers integrated directly into your applications.',
   },
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M9 3v18M3 9h18M3 15h18',
     title: 'Bulk Endpoints',
     desc: 'High-performance bulk data import/export endpoints for processing large datasets and batch operations at scale.',
   },
   {
-    icon: '-',
+    iconPath: 'M16 18l6-6-6-6M8 6l-6 6 6 6',
     title: 'SDK Libraries',
     desc: 'Official SDKs for JavaScript, Python, Go, and Java with full type definitions, error handling, and helper utilities.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 6.253v13m0-13C6.5 6.253 2 10.058 2 15s4.5 8.747 10 8.747m0-13c5.5 0 10 4.058 10 9s-4.5 8.747-10 8.747M9 9h.01M15 9h.01M9 15h.01M15 15h.01',
     title: 'API Documentation',
     desc: 'Comprehensive, interactive API documentation with code examples, Swagger/OpenAPI specs, and migration guides.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4m7 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
     title: 'Sandbox Environment',
     desc: 'Risk-free development sandbox with full API functionality, realistic test data, and isolated from production systems.',
   },
@@ -134,7 +134,7 @@ export default function ApiPage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

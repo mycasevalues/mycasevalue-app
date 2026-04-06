@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M18 17V9m-5 8V5m-5 12v-3',
     title: 'Portfolio Analytics',
     desc: 'Monitor case-level metrics across your entire portfolio with real-time dashboards tracking probability of success and projected ROI.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
     title: 'Case Evaluation',
     desc: 'Evaluate incoming opportunities against historical data to assess litigation risk, settlement probability, and expected recovery.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 9v2m0 4v2m0 0v2M7 9h.01M17 9h.01M7 13h.01M17 13h.01M7 17h.01M17 17h.01',
     title: 'Risk Assessment',
     desc: 'Score litigation risk across judge tendencies, opposing counsel tactics, and case-type complexity using predictive modeling.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6',
     title: 'ROI Projections',
     desc: 'Model expected returns with multiple settlement scenarios, trial outcomes, and litigation cost forecasts for underwriting decisions.',
   },
   {
-    icon: '-',
+    iconPath: 'M13 2H3v20h10m0-12h8m-8 6h8',
     title: 'Market Intelligence',
     desc: 'Track settlement trends, verdict patterns, and market conditions to identify emerging opportunities and avoid deteriorating positions.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 6v6m0 0v6M9 9h6M9 15h6',
     title: 'Due Diligence Data',
     desc: 'Generate comprehensive due diligence reports with comparative analytics and benchmark data for investor presentations and reporting.',
   },
@@ -134,7 +134,7 @@ export default function FundersPage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

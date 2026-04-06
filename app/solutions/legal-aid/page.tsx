@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.209 0-4 1.791-4 4v2h8v-2c0-2.209-1.791-4-4-4z',
     title: 'Free Access Programs',
     desc: 'Qualifying legal aid organizations receive complimentary full access to {SITE_NAME} to serve low-income clients without restrictions.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4m-8 4a9 9 0 1 1 18 0 9 9 0 0 1-18 0z',
     title: 'Case Outcome Research',
     desc: 'Research historical outcomes for similar cases to set realistic expectations and develop stronger case strategies for clients.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.209 0-4 1.791-4 4v2h8v-2c0-2.209-1.791-4-4-4z',
     title: 'Resource Allocation',
     desc: 'Identify high-impact cases using data-driven metrics to maximize limited resources and prioritize cases most likely to succeed.',
   },
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M18 17V9m-5 8V5m-5 12v-3',
     title: 'Impact Measurement',
     desc: 'Quantify client outcomes and demonstrate organizational impact with comprehensive case analytics and success metrics.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 6v6m0 0v6M9 9h6M9 15h6',
     title: 'Grant Reporting Data',
     desc: 'Generate citation-ready reports and outcome summaries for grant proposals, donor communications, and impact assessments.',
   },
   {
-    icon: '-',
+    iconPath: 'M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 0 0-4.898-4.142M9 20H4v-2a3 3 0 0 1 5.356-1.857m0 0A5.002 5.002 0 0 1 13.75 12',
     title: 'Pro-Bono Collaboration',
     desc: 'Connect with pro-bono counsel networks and access comparative attorney performance data to match cases with best advocates.',
   },
@@ -134,7 +134,7 @@ export default function LegalAidPage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

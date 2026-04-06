@@ -555,22 +555,22 @@ export default function IntegrationsPage() {
               {
                 name: 'Federal Judicial Center IDB',
                 description: 'Civil and criminal case data from federal district courts (1970–present). 5.1M+ cases.',
-                icon: '-',
+                iconPath: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z',
               },
               {
                 name: 'CourtListener',
                 description: 'Full-text opinions and court documents from U.S. Courts of Appeals and District Courts.',
-                icon: '-',
+                iconPath: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4.5a2.5 2.5 0 0 1 2.5-2.5h12a2.5 2.5 0 0 1 0 5H6.5A2.5 2.5 0 0 1 4 4.5z',
               },
               {
                 name: 'PACER',
                 description: 'Public Access to Court Electronic Records. Real-time updates on federal case dockets.',
-                icon: '-',
+                iconPath: 'M9 12h6M9 16h6M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z',
               },
               {
                 name: 'Bureau of Justice Statistics',
                 description: 'Official statistics on federal case outcomes, sentencing, and litigation metrics.',
-                icon: '-',
+                iconPath: 'M3 3v18h18M3 15.5h18M3 11h18M8 7h8M8 3v4M16 3v4',
               },
             ].map((source) => (
               <div
@@ -589,7 +589,7 @@ export default function IntegrationsPage() {
                   fontSize: '32px',
                   lineHeight: 1,
                 }}>
-                  {source.icon}
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={source.iconPath}/></svg>
                 </div>
                 <div>
                   <h3 style={{

@@ -988,32 +988,32 @@ export default function CalculatorPage() {
               {
                 title: 'Evidence Quality',
                 description: 'Strong documentation, witness testimony, and clear liability dramatically increase case value.',
-                icon: '-',
+                iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
               },
               {
                 title: 'Attorney Representation',
                 description: 'Cases with attorney representation settle for 23% more on average in federal court.',
-                icon: '-',
+                iconPath: 'M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.209 0-4 1.791-4 4v2h8v-2c0-2.209-1.791-4-4-4z',
               },
               {
                 title: 'Case Type',
                 description: 'Different case categories have vastly different outcome patterns and typical recovery ranges.',
-                icon: '-',
+                iconPath: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8',
               },
               {
                 title: 'Injury Severity',
                 description: 'Catastrophic injuries with permanent effects command the highest multipliers.',
-                icon: '-',
+                iconPath: 'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z',
               },
               {
                 title: 'Jurisdiction',
                 description: 'Federal district and circuit can significantly impact outcomes and timelines.',
-                icon: '-',
+                iconPath: '3 21h18M3 7v14M21 7v14M6 21V10M10 21V10M14 21V10M18 21V10',
               },
               {
                 title: 'Prior Offers',
                 description: 'Existing settlement offers establish a baseline and can strengthen your negotiating position.',
-                icon: '-',
+                iconPath: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6',
               },
             ].map((item, idx) => (
               <div
@@ -1025,9 +1025,9 @@ export default function CalculatorPage() {
                   padding: '24px',
                 }}
               >
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>
-                  {item.icon}
-                </div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}>
+                  <path d={item.iconPath}/>
+                </svg>
                 <h3 className="font-bold mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)', fontSize: '14px' }}>
                   {item.title}
                 </h3>

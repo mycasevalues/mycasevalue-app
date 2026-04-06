@@ -393,12 +393,14 @@ export default function MethodologyPage() {
 
           <div className="confidence-tiers">
             {[
-              { icon: '+', label: 'High Confidence', desc: 'Robust sample', threshold: '1,000+ cases' },
-              { icon: '~', label: 'Medium Confidence', desc: 'Adequate sample', threshold: '100–999 cases' },
-              { icon: '-', label: 'Low Confidence', desc: 'Limited sample', threshold: '< 100 cases' },
+              { iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', label: 'High Confidence', desc: 'Robust sample', threshold: '1,000+ cases' },
+              { iconPath: 'M12 9v2m0 4v2m0 0v2M7 9h.01M17 9h.01M7 13h.01M17 13h.01M7 17h.01M17 17h.01', label: 'Medium Confidence', desc: 'Adequate sample', threshold: '100–999 cases' },
+              { iconPath: 'M15 19l-7-7 7-7', label: 'Low Confidence', desc: 'Limited sample', threshold: '< 100 cases' },
             ].map((tier, i) => (
               <div key={i} className="confidence-tier">
-                <div className="confidence-icon">{tier.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="confidence-icon">
+                  <path d={tier.iconPath}/>
+                </svg>
                 <div className="confidence-label">{tier.label}</div>
                 <div className="confidence-desc">{tier.desc}</div>
                 <div className="confidence-threshold">{tier.threshold}</div>
@@ -507,14 +509,16 @@ export default function MethodologyPage() {
           <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Related Pages</h2>
           <div className="related-grid">
             {[
-              { href: '/faq', icon: '-', title: 'FAQ' },
-              { href: '/glossary', icon: '-', title: 'Glossary' },
-              { href: '/about', icon: '-', title: 'About Us' },
-              { href: '/nos-explorer', icon: '-', title: 'NOS Explorer' },
+              { href: '/faq', iconPath: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', title: 'FAQ' },
+              { href: '/glossary', iconPath: 'M12 6.253v13m0-13C6.5 6.253 2 10.058 2 15s4.5 8.747 10 8.747m0-13c5.5 0 10 4.058 10 9s-4.5 8.747-10 8.747M9 9h.01M15 9h.01M9 15h.01M15 15h.01', title: 'Glossary' },
+              { href: '/about', iconPath: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', title: 'About Us' },
+              { href: '/nos-explorer', iconPath: 'M12 6.253v13m0-13C6.5 6.253 2 10.058 2 15s4.5 8.747 10 8.747m0-13c5.5 0 10 4.058 10 9s-4.5 8.747-10 8.747M12 2l3 5-3 5-3-5 3-5z', title: 'NOS Explorer' },
             ].map((link, i) => (
               <Link key={i} href={link.href}>
                 <div className="related-card">
-                  <div className="related-icon">{link.icon}</div>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="related-icon">
+                    <path d={link.iconPath}/>
+                  </svg>
                   <div className="related-title">{link.title}</div>
                 </div>
               </Link>

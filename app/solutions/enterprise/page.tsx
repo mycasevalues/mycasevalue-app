@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M16 18l6-6-6-6M8 6l-6 6 6 6',
     title: 'REST API & Webhooks',
     desc: 'Integrate MyCaseValue+ directly into your internal systems with our comprehensive REST API and real-time webhook support.',
   },
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M9 21V9M15 21V3',
     title: 'Custom Dashboards',
     desc: 'Build tailored analytics dashboards reflecting your firm\'s unique practice areas, KPIs, and reporting requirements.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
     title: 'Enterprise SSO',
     desc: 'Deploy with SAML 2.0 and OAuth 2.0 integration for seamless user management and enhanced security controls.',
   },
   {
-    icon: '-',
+    iconPath: 'M3 7v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V7M3 7V5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2m-9 4v2m0 4v2',
     title: 'Bulk Data Exports',
     desc: 'Export unlimited datasets in multiple formats for further analysis, reporting, and integration with your data infrastructure.',
   },
   {
-    icon: '-',
+    iconPath: 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM3 20a6 6 0 0 1 12 0v1H3v-1z',
     title: 'Dedicated Support',
     desc: 'Access a dedicated success manager and priority support team committed to your firm\'s strategic initiatives.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4m7 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z',
     title: 'SLA Guarantees',
     desc: 'Benefit from 99.9% uptime guarantee, priority incident response, and contractual performance commitments.',
   },
@@ -134,7 +134,7 @@ export default function EnterprisePage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z',
     title: 'Case Value Lookup',
     desc: 'Instantly discover settlement ranges and verdict data for cases similar to yours across all 50 states.',
   },
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M18 17V9m-5 8V5m-5 12v-3',
     title: 'Settlement Benchmarks',
     desc: 'Compare your claim against thousands of settled cases to understand realistic compensation expectations.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 8v4m0 4v4M8 12h4m4 0h4',
     title: 'Judge Statistics',
     desc: 'Review individual judge track records, award trends, and historical verdicts in your jurisdiction.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 8v4m0 4v4M8 12h4m4 0h4',
     title: 'Timeline Estimates',
     desc: 'Get data-driven projections for case resolution time based on injury type, venue, and complexity.',
   },
   {
-    icon: '-',
+    iconPath: 'M3 21h18M3 7v14M21 7v14M6 21V10M10 21V10M14 21V10M18 21V10',
     title: 'District Comparisons',
     desc: 'Understand how different courts and jurisdictions handle similar claims in your case category.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.209 0-4 1.791-4 4v2h8v-2c0-2.209-1.791-4-4-4z',
     title: 'Free Tier Access',
     desc: 'Start exploring case data immediately with our free plan. No credit card required to get started.',
   },
@@ -134,7 +134,7 @@ export default function IndividualsPage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

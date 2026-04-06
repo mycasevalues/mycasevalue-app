@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '-',
+    iconPath: 'M3 3v18h18M18 17V9m-5 8V5m-5 12v-3',
     title: 'Settlement Benchmarking',
     desc: 'Compare claims against industry benchmarks and historical settlement patterns to validate valuations and identify outliers.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6',
     title: 'Claim Valuation Models',
     desc: 'Deploy data-driven valuation frameworks that account for injury severity, jurisdiction, defense profile, and litigation costs.',
   },
   {
-    icon: '-',
+    iconPath: 'M12 9v2m0 4v2m0 0v2M7 9h.01M17 9h.01M7 13h.01M17 13h.01M7 17h.01M17 17h.01',
     title: 'Risk Scoring',
     desc: 'Automatically score litigation risk based on case characteristics, judge history, and settlement probability modeling.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4M7 12a5 5 0 1 0 10 0 5 5 0 0 0-10 0z',
     title: 'Reserve Setting',
     desc: 'Generate defensible reserve recommendations backed by settlement data and actuarial analysis for claims management.',
   },
   {
-    icon: '-',
+    iconPath: 'M13 10V3L4 14h7v7l9-11h-7z',
     title: 'Litigation Cost Forecasting',
     desc: 'Project defense costs, trial expenses, and likely awards to optimize settlement negotiation and budget allocation.',
   },
   {
-    icon: '-',
+    iconPath: 'M9 12l2 2 4-4m-7 3h6m-6 2h6',
     title: 'Defense Strategy Intelligence',
     desc: 'Research defense counsel capabilities, settlement rates, and trial success metrics to select optimal legal representation.',
   },
@@ -134,7 +134,7 @@ export default function InsurancePage() {
                 borderRadius: '6px',
                 padding: '32px 24px',
               }}>
-                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',

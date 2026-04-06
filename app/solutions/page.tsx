@@ -13,55 +13,55 @@ const SEGMENTS = [
   {
     slug: 'individuals',
     label: 'Individuals',
-    icon: '-',
+    iconPath: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',
     blurb: 'Research your case value with real federal court outcome data.',
   },
   {
     slug: 'small-firms',
     label: 'Small Law Firms',
-    icon: '-',
+    iconPath: 'M3 21h18M3 7v14M21 7v14M6 21V10M10 21V10M14 21V10M18 21V10M3 7l9-4 9 4',
     blurb: 'Case analytics built for solo practitioners and boutique practices.',
   },
   {
     slug: 'enterprise',
     label: 'Enterprise Legal',
-    icon: '-',
+    iconPath: 'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 1-4 4v14a3 3 0 0 0 3-3h7z',
     blurb: 'API access, custom dashboards, and SSO for large legal teams.',
   },
   {
     slug: 'insurance',
     label: 'Insurance Companies',
-    icon: '-',
+    iconPath: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
     blurb: 'Settlement benchmarking and risk scoring for claims teams.',
   },
   {
     slug: 'legal-aid',
     label: 'Legal Aid',
-    icon: '-',
+    iconPath: 'M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z',
     blurb: 'Free access programs for non-profits and pro-bono attorneys.',
   },
   {
     slug: 'funders',
     label: 'Litigation Funders',
-    icon: '-',
+    iconPath: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6',
     blurb: 'Portfolio analytics and due diligence for litigation finance.',
   },
   {
     slug: 'academic',
     label: 'Academic Research',
-    icon: '-',
+    iconPath: 'M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c0 2 3 4 6 4s6-2 6-4v-5',
     blurb: 'Datasets, analysis tools, and institutional licensing for scholars.',
   },
   {
     slug: 'api',
     label: 'API & Integrations',
-    icon: '-',
+    iconPath: 'M16 18l6-6-6-6M8 6l-6 6 6 6',
     blurb: 'REST API, webhooks, SDKs, and sandbox for developers.',
   },
   {
     slug: 'government',
     label: 'Government Agencies',
-    icon: '-',
+    iconPath: 'M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3',
     blurb: 'Court performance data and policy analysis for public institutions.',
   },
 ];
@@ -278,8 +278,8 @@ export default function SolutionsPage() {
                 }}
                 className="solutions-card"
               >
-                <div style={{ fontSize: '32px', marginBottom: '12px' }}>
-                  {s.icon}
+                <div style={{ marginBottom: '12px' }}>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
                 </div>
                 <h2
                   style={{

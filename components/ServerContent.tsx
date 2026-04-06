@@ -1045,24 +1045,24 @@ export default function ServerContent() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
             {[
-              { href: '/search', title: 'Case Search', desc: 'Search all 84 federal case types by keyword', icon: '-' },
-              { href: '/nos-explorer', title: 'NOS Code Explorer', desc: 'Browse and compare all NOS codes with data', icon: '-' },
-              { href: '/calculator', title: 'Settlement Calculator', desc: 'Estimate your potential case value', icon: '-' },
-              { href: '/translate', title: 'Jargon Translator', desc: 'Convert legal language to plain English', icon: '-' },
-              { href: '/odds', title: 'Case Odds Checker', desc: 'See win rates and outcome probabilities', icon: '-' },
-              { href: '/judges', title: 'Judge Intelligence', desc: 'Research federal judges across all circuits', icon: '-' },
-              { href: '/trends', title: 'Filing Trends', desc: 'Track case outcome trends over time', icon: '-' },
-              { href: '/glossary', title: 'Legal Glossary', desc: 'Plain-English definitions of court terms', icon: '-' },
+              { href: '/search', title: 'Case Search', desc: 'Search all 84 federal case types by keyword', iconPath: 'M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z' },
+              { href: '/nos-explorer', title: 'NOS Code Explorer', desc: 'Browse and compare all NOS codes with data', iconPath: 'M4 6h16M4 10h16M4 14h16M4 18h16' },
+              { href: '/calculator', title: 'Settlement Calculator', desc: 'Estimate your potential case value', iconPath: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+              { href: '/translate', title: 'Jargon Translator', desc: 'Convert legal language to plain English', iconPath: 'M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 0 1 6.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129' },
+              { href: '/odds', title: 'Case Odds Checker', desc: 'See win rates and outcome probabilities', iconPath: 'M16 8v8M12 11v5M8 14v2M3 3v18h18' },
+              { href: '/judges', title: 'Judge Intelligence', desc: 'Research federal judges across all circuits', iconPath: 'M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75' },
+              { href: '/trends', title: 'Filing Trends', desc: 'Track case outcome trends over time', iconPath: 'M23 6l-9.5 9.5-5-5L1 18' },
+              { href: '/glossary', title: 'Legal Glossary', desc: 'Plain-English definitions of court terms', iconPath: 'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 1-4 4v14a3 3 0 0 0 3-3h7z' },
             ].map((tool) => (
               <a
                 key={tool.href}
                 href={tool.href}
                 style={{
                   display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid #E5E7EB',
-                  borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
+                  borderRadius: 6, textDecoration: 'none', transition: 'all 0.2s ease',
                 }}
               >
-                <div style={{ fontSize: 24, marginBottom: 8 }}>{tool.icon}</div>
+                <div style={{ marginBottom: 8 }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg></div>
                 <h3 style={{ fontSize: 15, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>
                   {tool.title}
                 </h3>
@@ -1098,14 +1098,14 @@ export default function ServerContent() {
             justifyContent: 'center',
           }}>
             {[
-              { name: 'Federal Judicial Center', icon: '-' },
-              { name: 'CourtListener', icon: '-' },
-              { name: 'PACER', icon: '-' },
-              { name: 'Bureau of Justice Statistics', icon: '-' },
+              { name: 'Federal Judicial Center' },
+              { name: 'CourtListener' },
+              { name: 'PACER' },
+              { name: 'Bureau of Justice Statistics' },
             ].map((source, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <span style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
-                  <span style={{ fontSize: '14px', marginRight: '4px' }}>{source.icon}</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2" style={{display:'inline', verticalAlign:'middle', marginRight: '6px'}}><path d="M20 6L9 17l-5-5"/></svg>
                   {source.name}
                 </span>
                 {i < 3 && <span style={{ fontSize: '12px', color: '#E5E7EB', marginLeft: '20px' }}>•</span>}

@@ -896,25 +896,25 @@ export default function TrendsPage() {
                 href: '/compare',
                 title: 'Compare Cases',
                 description: 'Head-to-head analysis of any two case types',
-                icon: '-',
+                iconPath: 'M9 3H5a2 2 0 0 0-2 2v4m0 0H3m4 0V3m0 4v4a2 2 0 0 0 2 2h4m0 0h4a2 2 0 0 0 2-2v-4m0 0h4m-4 0v-4a2 2 0 0 0-2-2h-4m0 0H9m0 4v4',
               },
               {
                 href: '/calculator',
                 title: 'Settlement Calculator',
                 description: 'Estimate recovery value for your case',
-                icon: '-',
+                iconPath: 'M12 2v20M2 12h20M7 7h10v10H7z',
               },
               {
                 href: '/map',
                 title: 'District Analysis',
                 description: 'Performance data by federal district',
-                icon: '-',
+                iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z',
               },
               {
                 href: '/judges',
                 title: 'Judge Statistics',
                 description: 'Outcomes by individual federal judges',
-                icon: '-',
+                iconPath: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',
               },
             ].map((item) => (
               <Link
@@ -928,7 +928,7 @@ export default function TrendsPage() {
                 }}
               >
                 <div style={{ fontSize: '2rem', marginBottom: '12px' }}>
-                  {item.icon}
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
                 </div>
                 <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#212529' }}>
                   {item.title}
