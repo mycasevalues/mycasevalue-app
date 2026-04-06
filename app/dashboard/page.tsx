@@ -6,6 +6,7 @@ import { createServerClient } from '@supabase/ssr';
 import { getSupabaseAdmin } from '../../lib/supabase';
 import { getNosLabel } from '../../lib/data';
 import SidebarNav from '../../components/SidebarNav';
+import { SearchIcon } from '../../components/ui/Icons';
 
 export const metadata: Metadata = {
   title: 'Dashboard | MyCaseValue',
@@ -393,7 +394,7 @@ export default async function DashboardPage() {
                   { label: 'AI Case Predictor', href: '/attorney/case-predictor', desc: 'Predict outcomes', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> },
                   { label: 'Judge Intelligence', href: '/attorney/judge-intelligence', desc: 'Research judges', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M6 10h12M6 14h12"/></svg> },
                   { label: 'Venue Optimizer', href: '/attorney/venue-optimizer', desc: 'Find best districts', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg> },
-                  { label: 'Opposing Counsel', href: '/attorney/opposing-counsel', desc: 'Research counsel', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> },
+                  { label: 'Opposing Counsel', href: '/attorney/opposing-counsel', desc: 'Research counsel', icon: <SearchIcon size={20} /> },
                   { label: 'Bulk Analysis', href: '/attorney/bulk-analysis', desc: 'Portfolio analysis', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> },
                   { label: 'PACER Monitor', href: '/attorney/pacer-monitor', desc: 'Case alerts', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m0 8.48l-4.24 4.24M19.78 4.22l-4.24 4.24m0 8.48l4.24 4.24"/></svg> },
                 ].map((tool) => (
@@ -454,10 +455,9 @@ export default async function DashboardPage() {
               </div>
             ) : (
               <div style={{ textAlign: 'center', padding: '40px 0' }}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="1.5" style={{ marginBottom: '16px' }}>
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.35-4.35" />
-                </svg>
+                <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
+                  <SearchIcon size={40} color="#455A64" />
+                </div>
                 <p style={{ fontSize: '15px', fontWeight: 600, color: '#212529', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                   No reports yet. <Link href="/search" style={{ color: '#006997', textDecoration: 'none' }}>Start researching →</Link>
                 </p>

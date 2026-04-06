@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { getJudgeBySlug, getAllJudges } from '@/lib/judges';
+import { ArrowRightIcon } from '@/components/ui/Icons';
 
 // Dynamic import for client component
 const JudgeCharts = dynamic(() => import('@/components/features/JudgeCharts'), {
@@ -96,9 +97,7 @@ export default async function JudgePage({ params }: PageProps) {
                   textDecoration: 'none',
                 }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M19 12H5M12 19l-7-7 7-7" />
-                </svg>
+                <ArrowRightIcon size={16} />
                 Back to Judges
               </Link>
             </div>
@@ -182,9 +181,7 @@ export default async function JudgePage({ params }: PageProps) {
             }}
           >
             Browse all judges
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
+            <ArrowRightIcon size={16} />
           </Link>
 
           <p

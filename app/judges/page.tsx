@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowRightIcon } from '../../components/ui/Icons';
 
 export const revalidate = 0;
 
@@ -400,9 +401,7 @@ export default function JudgesPage() {
             }}
           >
             View Pricing
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
+            <ArrowRightIcon size={16} />
           </Link>
         </section>
       </div>

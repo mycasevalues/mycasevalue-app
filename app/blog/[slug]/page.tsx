@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts, getRelatedPosts } from '../../../lib/blog';
+import { ArrowRightIcon } from '../../../components/ui/Icons';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -560,7 +561,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
             className="cta-button"
           >
             Research Your Case
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <ArrowRightIcon size={18} />
           </a>
         </div>
       </div>

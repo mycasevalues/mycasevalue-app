@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getAllPosts } from '../../lib/blog';
+import { ArrowRightIcon } from '../../components/ui/Icons';
 
 export const metadata: Metadata = {
   title: 'Blog — MyCaseValue | Federal Court Data & Legal Insights',
@@ -215,7 +216,7 @@ export default function BlogPage() {
                     }}
                   >
                     Read Article
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <ArrowRightIcon size={14} />
                   </a>
                 </div>
               </div>
@@ -305,7 +306,7 @@ export default function BlogPage() {
                       }}
                     >
                       Read More
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                      <ArrowRightIcon size={12} />
                     </a>
                   </div>
                 </article>
@@ -330,7 +331,7 @@ export default function BlogPage() {
             style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}
           >
             Explore Attorney Mode
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <ArrowRightIcon size={16} />
           </a>
         </section>
       </div>

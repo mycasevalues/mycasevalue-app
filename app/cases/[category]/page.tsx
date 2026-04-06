@@ -3,6 +3,7 @@ import { REAL_DATA } from '../../../lib/realdata';
 import { getAllCaseTypeSEO } from '../../../lib/case-type-seo';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowRightIcon } from '../../../components/ui/Icons';
 
 export const revalidate = 0;
 
@@ -385,7 +386,7 @@ async function CategoryPage({
           margin: '0 auto',
           fontSize: '14px',
           color: '#455A64',
-          fontFamily: 'Outfit, system-ui, sans-serif',
+          fontFamily: 'var(--font-display)',
         }}>
           <Link href="/" style={{ color: '#212529', textDecoration: 'none' }}>
             Home
@@ -413,7 +414,7 @@ async function CategoryPage({
             fontSize: '44px',
             fontWeight: 700,
             margin: '0 0 16px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
             letterSpacing: '-0.5px',
           }}>
             {categoryData.label} Cases
@@ -421,7 +422,7 @@ async function CategoryPage({
           <p style={{
             fontSize: '18px',
             margin: '0 0 24px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
             opacity: 0.95,
             maxWidth: '600px',
             lineHeight: '1.6',
@@ -433,7 +434,7 @@ async function CategoryPage({
             gap: '24px',
             flexWrap: 'wrap',
             fontSize: '16px',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
           }}>
             <div>
               <div style={{ fontWeight: 600, fontSize: '24px' }}>
@@ -469,7 +470,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: '#212529',
             margin: '0 0 24px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
             letterSpacing: '-0.3px',
           }}>
             What We Cover
@@ -480,7 +481,7 @@ async function CategoryPage({
             lineHeight: '1.7',
             maxWidth: '800px',
             margin: 0,
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
           }}>
             {categoryLongDescriptions[category]}
           </p>
@@ -509,7 +510,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: '#212529',
             margin: '0 0 32px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
             letterSpacing: '-0.3px',
           }}>
             {categoryData.opts.length} Case Types Covered
@@ -536,7 +537,7 @@ async function CategoryPage({
                     border: '1px solid #D5D8DC',
                     borderRadius: '4px',
                     padding: '20px',
-                    fontFamily: 'Outfit, system-ui, sans-serif',
+                    fontFamily: 'var(--font-display)',
                     textDecoration: 'none',
                     color: 'inherit',
                     display: 'block',
@@ -586,7 +587,7 @@ async function CategoryPage({
             fontWeight: 600,
             color: '#212529',
             margin: '0 0 32px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
             letterSpacing: '-0.3px',
           }}>
             Key Statistics
@@ -600,7 +601,7 @@ async function CategoryPage({
               background: '#FFFFFF',
               padding: '24px',
               borderRadius: '4px',
-              fontFamily: 'Outfit, system-ui, sans-serif',
+              fontFamily: 'var(--font-display)',
             }}>
               <div style={{
                 fontSize: '28px',
@@ -632,7 +633,7 @@ async function CategoryPage({
               background: '#FFFFFF',
               padding: '24px',
               borderRadius: '4px',
-              fontFamily: 'Outfit, system-ui, sans-serif',
+              fontFamily: 'var(--font-display)',
             }}>
               <div style={{
                 fontSize: '28px',
@@ -664,7 +665,7 @@ async function CategoryPage({
               background: '#FFFFFF',
               padding: '24px',
               borderRadius: '4px',
-              fontFamily: 'Outfit, system-ui, sans-serif',
+              fontFamily: 'var(--font-display)',
             }}>
               <div style={{
                 fontSize: '28px',
@@ -707,7 +708,7 @@ async function CategoryPage({
             fontSize: '32px',
             fontWeight: 700,
             margin: '0 0 16px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
             letterSpacing: '-0.3px',
           }}>
             Research Your Case
@@ -715,7 +716,7 @@ async function CategoryPage({
           <p style={{
             fontSize: '18px',
             margin: '0 0 32px 0',
-            fontFamily: 'Outfit, system-ui, sans-serif',
+            fontFamily: 'var(--font-display)',
             opacity: 0.95,
             lineHeight: '1.6',
           }}>
@@ -746,7 +747,7 @@ async function CategoryPage({
             }}
           >
             Start Researching
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <ArrowRightIcon size={14} />
           </a>
         </div>
       </div>

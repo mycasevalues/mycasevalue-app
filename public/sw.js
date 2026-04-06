@@ -1,5 +1,5 @@
-const CACHE_NAME = 'mcv-v10';
-const STATIC_CACHE = 'mcv-static-v10';
+const CACHE_NAME = 'mcv-v11';
+const STATIC_CACHE = 'mcv-static-v11';
 const API_CACHE = 'mcv-api-v8';
 
 const STATIC_ASSETS = [
@@ -8,8 +8,7 @@ const STATIC_ASSETS = [
   '/icon-192.png',
   '/icon-512.png',
   '/manifest.json',
-  '/fonts/outfit-700.woff2',
-  '/fonts/jetbrains-mono-500.woff2',
+  // Fonts are now auto-hosted by next/font and cached via Next.js static assets
 ];
 
 // Install: cache static assets and activate immediately

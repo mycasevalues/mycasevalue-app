@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
+import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -52,26 +53,20 @@ export default function CasesIndexPage() {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '60px 20px' }}>
         {/* Search Input */}
         <div style={{ position: 'relative', width: '100%', maxWidth: '480px', marginBottom: '32px' }}>
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#455A64"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          <div
             style={{
               position: 'absolute',
               left: '16px',
               top: '50%',
               transform: 'translateY(-50%)',
               pointerEvents: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
+            <SearchIcon size={20} color="#455A64" />
+          </div>
           <input
             type="text"
             placeholder="Search case types... (e.g. wrongful termination, medical malpractice)"
@@ -195,7 +190,7 @@ export default function CasesIndexPage() {
           </p>
           <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
             Start Researching
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <ArrowRightIcon size={14} />
           </a>
         </div>
       </div>

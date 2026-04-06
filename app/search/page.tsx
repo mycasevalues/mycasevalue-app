@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
+import { SearchIcon } from '../../components/ui/Icons';
 
 // Loading skeleton component
 const SkeletonResultCard = () => (
@@ -257,9 +258,9 @@ export default function SearchPage() {
 
       <div style={{ display: 'flex', gap: '12px', marginBottom: 24, flexWrap: 'wrap' }}>
         <div style={{ position: 'relative', flex: '1 1 auto', minWidth: '200px' }}>
-          <svg style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', width: '20px', height: '20px', color: '#455A64', pointerEvents: 'none' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+          <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <SearchIcon size={20} color="#455A64" />
+          </div>
           <input
             type="text"
             placeholder="e.g. wrongful termination, car accident, debt collection..."

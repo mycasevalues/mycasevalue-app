@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { ArrowRightIcon } from '../../components/ui/Icons';
 
 export const revalidate = 0;
 
@@ -399,17 +400,7 @@ export default function DistrictsPage() {
                           {d.abbr}
                         </p>
                       </div>
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#E8171F"
-                        strokeWidth="2.5"
-                        className="opacity-0 group-hover:opacity-100 transition-opacity"
-                      >
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
+                      <ArrowRightIcon size={16} color="#E8171F" className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                   </a>
                 ))}

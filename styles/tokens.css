@@ -3,46 +3,19 @@
    ============================================================
    Corporate legal-tech aesthetic. Deep navy hero (#00172E).
    LexisNexis red primary (#E8171F), teal secondary (#006997).
-   Lato / JetBrains Mono typography.
+   Lato / JetBrains Mono typography (self-hosted via next/font).
    Light backgrounds, white cards, sharp corners, uppercase CTAs.
    ============================================================ */
 
 :root {
-  /* ── CORE BRAND COLORS (LexisNexis Design System) ──────── */
-  --color-navy:             #00172E;  /* Primary brand color */
-  --color-red:              #E8171F;  /* Primary action color */
-  --color-red-dark:         #CC1019;  /* Red hover state */
-  --color-teal:             #006997;  /* Secondary brand color */
-  --color-text-primary:     #212529;  /* Primary text */
-  --color-text-secondary:   #455A64;  /* Secondary text */
-  --color-border:           #D5D8DC;  /* Default border */
-  --color-bg-light:         #F5F6F7;  /* Light background */
-  --color-bg-alt:           #F8F9FA;  /* Alternate background */
-  --color-white:            #FFFFFF;  /* Pure white */
-
   /* ── BACKGROUNDS ───────────────────────────────────────── */
   --bg-base:          #F5F6F7;  /* Light gray page background */
   --bg-elevated:      #FFFFFF;  /* White card surfaces */
   --bg-input:         #FFFFFF;  /* Input background */
-  --bg-skeleton:      #E5EBF0;
   --bg-hover:         #F5F6F7;
   --bg-selection:     rgba(0,105,151,0.15);
   --bg-dark:          #00172E;  /* Deep navy for hero/dark sections */
-  --bg-dark-alt:      #001A35;
   --bg-alt:           #FAFBFC;  /* Alternate section background */
-
-  /* ── SURFACES ──────────────────────────────────────────── */
-  --glass-light:      #FFFFFF;
-  --glass-medium:     #FAFBFC;
-  --glass-heavy:      #F5F6F7;
-  --glass-border:     #D5D8DC;
-  --glass-border-light: #E5EBF0;
-  --glass-border-focus: rgba(0,105,151,0.50);
-
-  /* ── BLUR VALUES (removed — no glass blur in LexisNexis style) */
-  --blur-light:       none;
-  --blur-medium:      none;
-  --blur-heavy:       none;
 
   /* ── FOREGROUNDS ───────────────────────────────────────── */
   --fg-primary:       #212529;  /* Primary text — near-black */
@@ -50,26 +23,18 @@
   --fg-subtle:        #666666;  /* Muted text */
   --fg-link:          #006997;  /* Teal link color */
   --fg-on-dark:       #FAFBFC;  /* Text on dark backgrounds */
-  --fg-on-dark-secondary: rgba(250,251,252,0.70);
-  --fg-on-dark-subtle:    rgba(250,251,252,0.45);
 
   /* ── PRIMARY ACCENT (LexisNexis Red) ───────────────────── */
   --accent-primary:         #E8171F;
   --accent-primary-hover:   #E8171F;
   --accent-primary-subtle:  rgba(232,23,31,0.08);
   --accent-primary-border:  rgba(232,23,31,0.30);
-  --accent-primary-glow:    rgba(232,23,31,0.15);
-  --accent-light:           rgba(232,23,31,0.06);
 
   /* ── SECONDARY ACCENT (Teal Blue) ──────────────────────── */
   --accent-secondary:       #006997;
   --accent-secondary-hover: #005A82;
   --accent-secondary-subtle: rgba(0,105,151,0.08);
   --accent-secondary-border: rgba(0,105,151,0.30);
-
-  /* ── TERTIARY ACCENT (Purple) ──────────────────────────── */
-  --accent-tertiary:        #7549CF;
-  --accent-tertiary-subtle: rgba(117,73,207,0.08);
 
   /* ── SEMANTIC — OUTCOMES ───────────────────────────────── */
   --outcome-win:          #07874A;
@@ -91,85 +56,30 @@
   --border-subtle:    #E5EBF0;
   --border-focus:     #006997;
 
-  /* ── TYPOGRAPHY SCALE ──────────────────────────────────── */
-  --text-2xs:  0.6875rem; /* 11px */
-  --text-xs:   0.75rem;   /* 12px */
-  --text-sm:   0.8125rem; /* 13px */
-  --text-base: 1rem;      /* 16px */
-
-  /* ── FONT FAMILIES ─────────────────────────────────────── */
-  --font-display: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body:    'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono:    'JetBrains Mono', 'Menlo', monospace;
-
-  /* ── SPACING (4px grid) ────────────────────────────────── */
-  --sp-1: 4px;   --sp-2: 8px;
-  --sp-5: 20px;  --sp-6: 24px;
-  --sp-10: 40px; --sp-12: 48px; --sp-14: 56px; --sp-16: 64px;
-  --sp-32: 128px;
-
-  /* ── SPACING SCALE (Standardized) ──────────────────────── */
-  --space-xs:     4px;
-  --space-sm:     8px;
-  --space-md:     16px;
-  --space-lg:     24px;
-  --space-xl:     32px;
-  --space-2xl:    48px;
-  --space-3xl:    64px;
-
-  /* Legacy aliases */
-  --space-2: 8px;  --space-3: 12px;
-  --space-4: 16px; --space-5: 20px; --space-6: 24px;
-  --space-12: 48px;
+  /* ── FONT FAMILIES (powered by next/font — auto-hosted, no CDN) ── */
+  --font-display: var(--font-lato), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    var(--font-lato), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono:    var(--font-jetbrains), 'Menlo', monospace;
 
   /* ── BORDER RADIUS ─────────────────────────────────────── */
-  --r-xs: 2px;   --r-sm: 3px;   --r-md: 4px;  --r-lg: 4px;
-  --r-xl: 6px;   --r-2xl: 8px;  --r-full: 9999px;
-
-  /* ── BORDER RADIUS (Standardized) ──────────────────────── */
-  --radius:       4px;
-
-  /* Legacy aliases */
-  --radius-lg: 4px;
-  --radius-xl: 8px; --radius-full: 9999px;
+  --r-sm: 3px;   --r-md: 4px;
   --r-card: 4px;
 
   /* ── SHADOWS (Clean corporate) ─────────────────────────── */
-  --shadow-xs:     0 1px 2px rgba(0,0,0,0.06);
-  --shadow-lg:     0 4px 16px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-xs:        0 1px 2px rgba(0,0,0,0.06);
+  --shadow-lg:        0 4px 16px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
   --shadow-accent:    0 2px 8px rgba(232,23,31,0.15);
   --shadow-accent-lg: 0 4px 16px rgba(232,23,31,0.20);
-  --shadow-glass:     0 2px 8px rgba(0,0,0,0.08);
-
-  /* ── SHADOWS (Standardized) ────────────────────────────── */
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md:     0 4px 12px rgba(0,0,0,0.1);
 
   /* ── MOTION ────────────────────────────────────────────── */
   --duration-fast:    120ms;
   --duration-base:    200ms;
   --duration-slow:    300ms;
-  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* ── TRANSITIONS (Standardized) ────────────────────────── */
-  --transition-fast:      0.2s ease;
-  --transition-normal:    0.3s ease;
-
-  /* ── UI DIMENSIONS ─────────────────────────────────────── */
-  --input-height:     48px;
 
   /* ── Z-INDEX ───────────────────────────────────────────── */
-  --z-raised:     10;
-  --z-dropdown:   40;
-  --z-modal:      300;
   --z-critical:   9999;
 
-  /* ── BREAKPOINTS (reference) ───────────────────────────── */
-  --bp-md: 768px; --bp-2xl: 1536px;
-
   /* ── GRADIENT BACKGROUNDS ──────────────────────────────── */
-  --gradient-page: #F5F6F7;
   --gradient-hero: linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%);
   --gradient-accent: linear-gradient(135deg, #E8171F 0%, #E8171F 100%);
 }

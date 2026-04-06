@@ -14,6 +14,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
+import { SearchIcon } from '../ui/Icons';
 
 const NAV_LINKS = [
   { href: '/search', label: 'Search' },
@@ -205,20 +206,7 @@ export default function SiteNav() {
                 transition: 'color 150ms',
               }}
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <circle cx="11" cy="11" r="8" />
-                <path d="m21 21-4.35-4.35" />
-              </svg>
+              <SearchIcon size={20} />
             </button>
 
             <div

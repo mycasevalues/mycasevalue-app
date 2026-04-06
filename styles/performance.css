@@ -49,11 +49,6 @@ img {
   height: auto;
 }
 
-/* Next.js Image Component Optimization */
-.next-image-wrapper {
-  position: relative;
-}
-
 /* Lazy Loading Support */
 img[loading="lazy"] {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
@@ -76,22 +71,6 @@ img[loading="lazy"] {
   will-change: auto;
 }
 
-/* Font optimization: Reduce layout shift */
-@font-face {
-  font-display: swap; /* Critical for performance */
-}
+/* Font optimization: handled by next/font in app/layout.tsx */
 
-/* Network status indicator (optional) */
-.connection-status-offline img {
-  filter: grayscale(100%);
-  opacity: 0.6;
-}
-
-/* Reduce motion for users who prefer it */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+/* Reduce motion: see tokens.css for the canonical rule */

@@ -105,14 +105,7 @@ a:hover { text-decoration: underline; color: var(--accent-secondary-hover); }
   .auth-btn { min-height: 48px; }
 }
 
-/* Global reduced-motion override — MANDATORY for all animations */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+/* Reduced-motion: canonical rule is in tokens.css */
 
 /* ============================================================
    TAILWIND LAYER UTILITIES
@@ -126,36 +119,13 @@ a:hover { text-decoration: underline; color: var(--accent-secondary-hover); }
   }
 
   .font-display {
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-display);
   }
 
   .font-mono {
-    font-family: 'JetBrains Mono', 'Menlo', monospace;
+    font-family: var(--font-mono);
   }
 
-  /* Surface utility classes — LexisNexis style */
-  .glass-light {
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-subtle);
-  }
-
-  .glass-medium {
-    background: var(--bg-alt);
-    border: 1px solid var(--border-default);
-  }
-
-  .glass-heavy {
-    background: var(--glass-heavy);
-    border: 1px solid var(--border-default);
-  }
-
-  /* Text gradient utility — red accent */
-  .text-gradient-accent {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
 }
 
 /* ============================================================

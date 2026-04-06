@@ -1,5 +1,4 @@
 import './globals.css';
-import '../styles/fonts.css';
 import '../styles/performance.css';
 import ErrorBoundary from '../components/ErrorBoundary';
 import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
@@ -9,6 +8,31 @@ import SiteFooter from '../components/layout/SiteFooter';
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
+import localFont from 'next/font/local';
+
+// Self-hosted fonts via next/font/local — zero external requests,
+// GDPR compliant, built-in font-display: swap, and optimal preloading.
+const lato = localFont({
+  src: [
+    { path: '../public/fonts/lato-300.woff2', weight: '300', style: 'normal' },
+    { path: '../public/fonts/lato-400.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/lato-700.woff2', weight: '700', style: 'normal' },
+    { path: '../public/fonts/lato-900.woff2', weight: '900', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-lato',
+});
+
+const jetbrainsMono = localFont({
+  src: [
+    { path: '../public/fonts/jetbrains-mono-400.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/jetbrains-mono-500.woff2', weight: '500', style: 'normal' },
+    { path: '../public/fonts/jetbrains-mono-600.woff2', weight: '600', style: 'normal' },
+    { path: '../public/fonts/jetbrains-mono-700.woff2', weight: '700', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-jetbrains',
+});
 
 // Dynamic imports for client-side only components to improve initial page load
 // These components are non-critical and loaded after hydration
@@ -237,12 +261,11 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }}>
+    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${lato.variable} ${jetbrainsMono.variable}`}>
       <head>
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
-        {/* Self-hosted fonts — no external CDN, GDPR compliant */}
-        {/* Resource hints for faster page loads */}
+        {/* Fonts: self-hosted via next/font (see layout imports) — no CDN, GDPR compliant */}
         {/* DNS prefetch & preconnect for third-party services */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
