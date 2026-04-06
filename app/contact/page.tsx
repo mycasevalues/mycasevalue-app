@@ -111,6 +111,95 @@ export default function ContactPage() {
 
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 24px' }}>
 
+        {/* Quick Links Section */}
+        <div style={{ marginBottom: '64px' }}>
+          <h2
+            style={{
+              fontSize: 24,
+              fontWeight: 700,
+              color: '#212529',
+              fontFamily: 'var(--font-display)',
+              marginBottom: 24,
+            }}
+          >
+            Quick Links
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
+            {[
+              {
+                title: 'FAQ',
+                href: '/faq',
+                description: 'Answers to common questions about MyCaseValue.',
+              },
+              {
+                title: 'Methodology',
+                href: '/methodology',
+                description: 'Learn how we analyze and calculate case data.',
+              },
+              {
+                title: 'Glossary',
+                href: '/glossary',
+                description: 'Legal terms explained in plain English.',
+              },
+              {
+                title: 'About',
+                href: '/about',
+                description: 'Our mission and story.',
+              },
+            ].map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                style={{
+                  padding: 24,
+                  borderRadius: '2px',
+                  border: '1px solid #D5D8DC',
+                  background: '#FFFFFF',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'all 0.3s ease',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 8,
+                }}
+                className="contact-quick-link"
+              >
+                <h3
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 600,
+                    color: '#212529',
+                    fontFamily: 'var(--font-display)',
+                    margin: 0,
+                  }}
+                >
+                  {link.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: '#455A64',
+                    fontFamily: 'var(--font-body)',
+                    lineHeight: 1.5,
+                    margin: 0,
+                  }}
+                >
+                  {link.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <style>{`
+          .contact-quick-link:hover {
+            border-color: #006997 !important;
+            box-shadow: 0 8px 24px rgba(0, 23, 46, 0.12) !important;
+            transform: translateY(-4px);
+          }
+        `}</style>
+
         <div className="contact-page-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
           {/* Left Column: Contact Info Cards */}
           <div style={{ display: 'grid', gap: 24, gridColumn: '1' }}>
@@ -282,17 +371,51 @@ export default function ContactPage() {
           </div>
         </div>
 
+        {/* Response Time Info Box */}
+        <div
+          style={{
+            padding: '24px',
+            marginTop: 48,
+            marginBottom: 24,
+            borderRadius: '2px',
+            border: '1px solid #D5D8DC',
+            backgroundColor: 'rgba(0,105,151,0.05)',
+            textAlign: 'center',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '8px' }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span style={{ fontSize: '14px', fontWeight: 600, color: '#006997', fontFamily: 'var(--font-display)' }}>
+              Response Time
+            </span>
+          </div>
+          <p
+            style={{
+              fontSize: 14,
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+              margin: 0,
+              lineHeight: 1.6,
+            }}
+          >
+            We typically respond within 24-48 hours. For urgent account issues, include your account email in your message.
+          </p>
+        </div>
+
         <p
           style={{
             fontSize: 13,
             color: '#455A64',
             fontFamily: 'var(--font-body)',
             textAlign: 'center',
-            marginTop: 48,
+            marginTop: 24,
             lineHeight: 1.6,
           }}
         >
-          We typically respond within 1 business day. For urgent account issues, include your account email in your message.
+          You can also reach out via email at <a href="mailto:support@mycasevalue.com" style={{ color: '#E8171F', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalue.com</a> or <a href="mailto:enterprise@mycasevalue.com" style={{ color: '#E8171F', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalue.com</a>
         </p>
         </div>
       </div>

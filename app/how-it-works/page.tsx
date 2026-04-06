@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
@@ -320,6 +321,239 @@ export default function HowItWorksPage() {
           </div>
         </section>
       </div>
+
+      {/* Platform Features Showcase Section */}
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        <section>
+          <h2 className="text-2xl font-display font-bold mb-3 text-center" style={{ color: '#212529' }}>
+            Platform Features
+          </h2>
+          <p className="text-center text-base leading-relaxed max-w-2xl mx-auto mb-12" style={{ color: '#455A64' }}>
+            A complete suite of tools designed for legal professionals, researchers, and case evaluation.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: 'Search',
+                description: 'Find matching cases across 5.1M+ federal court records.',
+                href: '/search',
+              },
+              {
+                title: 'Calculator',
+                description: 'Estimate case value with data-backed settlement projections.',
+                href: '/calculator',
+              },
+              {
+                title: 'Judge Analytics',
+                description: 'Research judges by district and analyze ruling patterns.',
+                href: '/attorney/judge-intelligence',
+              },
+              {
+                title: 'Compare',
+                description: 'Side-by-side comparison of case outcomes and statistics.',
+                href: '/search',
+              },
+              {
+                title: 'NOS Explorer',
+                description: 'Browse federal case categories and nature of suit classifications.',
+                href: '/search',
+              },
+              {
+                title: 'Translator',
+                description: 'Convert legal terms to plain English explanations.',
+                href: '/glossary',
+              },
+              {
+                title: 'Trends',
+                description: 'Analyze how case outcomes have changed over time.',
+                href: '/how-it-works',
+              },
+              {
+                title: 'Glossary',
+                description: 'Complete reference for legal terms and case type definitions.',
+                href: '/glossary',
+              },
+            ].map((feature, i) => (
+              <Link
+                key={i}
+                href={feature.href}
+                style={{
+                  padding: '24px',
+                  border: '1px solid #D5D8DC',
+                  background: '#FFFFFF',
+                  borderRadius: '2px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 8,
+                }}
+                className="feature-card"
+              >
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '2px',
+                    backgroundColor: '#F5F6F7',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5">
+                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                    <polyline points="13 2 13 9 20 9" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold" style={{ color: '#212529', fontSize: '15px', fontWeight: '700', margin: 0 }}>
+                  {feature.title}
+                </h3>
+                <p className="leading-relaxed" style={{ color: '#455A64', fontSize: '13px', margin: 0 }}>
+                  {feature.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <style>{`
+        .feature-card:hover {
+          border-color: #006997 !important;
+          box-shadow: 0 8px 24px rgba(0, 23, 46, 0.12) !important;
+          transform: translateY(-4px);
+        }
+      `}</style>
+
+      {/* Data Pipeline Section */}
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        <section>
+          <h2 className="text-2xl font-display font-bold mb-12 text-center" style={{ color: '#212529' }}>
+            Data Pipeline
+          </h2>
+
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: 0 }}>
+            {[
+              { label: 'FJC IDB', description: '54 years of data' },
+              { label: 'Data Ingestion', description: 'Parse & normalize' },
+              { label: 'Classification', description: 'Tag & categorize' },
+              { label: 'Aggregation', description: 'Calculate stats' },
+              { label: 'Your Report', description: 'Real-time insights' },
+            ].map((step, idx, arr) => (
+              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+                  <div
+                    style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '50%',
+                      backgroundColor: idx % 2 === 0 ? '#E8171F' : '#006997',
+                      color: '#FFFFFF',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontWeight: 700,
+                      fontSize: '24px',
+                      flexShrink: 0,
+                    }}
+                  >
+                    {idx + 1}
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontSize: '13px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)' }}>
+                      {step.label}
+                    </div>
+                    <div style={{ fontSize: '11px', color: '#455A64', fontFamily: 'var(--font-body)', marginTop: 4 }}>
+                      {step.description}
+                    </div>
+                  </div>
+                </div>
+                {idx < arr.length - 1 && (
+                  <div
+                    style={{
+                      width: '40px',
+                      height: '2px',
+                      backgroundColor: '#D5D8DC',
+                      margin: '0 24px',
+                      flexShrink: 0,
+                    }}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* Start Exploring CTA Section */}
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        <section style={{ textAlign: 'center' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+            Start Exploring
+          </h2>
+          <p className="mb-8 max-w-2xl mx-auto text-base" style={{ color: '#455A64' }}>
+            Choose your starting point — no account required
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, maxWidth: 600, margin: '0 auto' }}>
+            {[
+              {
+                label: 'Search Cases',
+                href: '/search',
+                icon: '🔍',
+              },
+              {
+                label: 'Check Odds',
+                href: '/calculator',
+                icon: '📊',
+              },
+              {
+                label: 'Calculate Settlement',
+                href: '/calculator',
+                icon: '💰',
+              },
+            ].map((btn, i) => (
+              <Link
+                key={i}
+                href={btn.href}
+                style={{
+                  padding: '16px 24px',
+                  backgroundColor: '#E8171F',
+                  color: '#FFFFFF',
+                  textDecoration: 'none',
+                  borderRadius: '2px',
+                  fontWeight: 600,
+                  fontSize: '14px',
+                  fontFamily: 'var(--font-display)',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+                className="start-exploring-btn"
+              >
+                <span>{btn.icon}</span>
+                {btn.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <style>{`
+        .start-exploring-btn:hover {
+          background-color: #00172E !important;
+          box-shadow: 0 8px 24px rgba(0, 23, 46, 0.12) !important;
+          transform: translateY(-2px);
+        }
+      `}</style>
 
       {/* Why Choose Section */}
       <div className="max-w-5xl mx-auto px-6 py-12">

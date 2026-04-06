@@ -391,10 +391,379 @@ export default function AttorneyPage() {
         </div>
       </section>
 
+      {/* Attorney Toolkit Section */}
+      <section
+        style={{
+          padding: '60px 20px',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '48px',
+          }}
+        >
+          {/* Section Title */}
+          <div>
+            <h2
+              style={{
+                margin: '0 0 12px 0',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontWeight: '700',
+                fontFamily: 'var(--font-display)',
+                color: '#212529',
+              }}
+            >
+              Attorney Toolkit
+            </h2>
+            <p
+              style={{
+                margin: '12px 0 0 0',
+                fontSize: '16px',
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              Essential tools to evaluate cases, prepare negotiations, and gain competitive intelligence.
+            </p>
+          </div>
+
+          {/* Toolkit Features */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '24px',
+            }}
+          >
+            {[
+              {
+                icon: <ChartIcon />,
+                title: 'Case Evaluation Data',
+                description: 'Rapid assessment of case strength with win rates, settlement patterns, and comparable outcomes.',
+                href: '/search',
+              },
+              {
+                icon: <ScalesIcon />,
+                title: 'Settlement Benchmarking',
+                description: 'Evidence-based settlement ranges and historical patterns to inform negotiation strategy.',
+                href: '/calculator',
+              },
+              {
+                icon: <GavelIcon />,
+                title: 'Judge Intelligence',
+                description: 'Research judges by district — ruling patterns, settlement tendencies, and case statistics.',
+                href: '/attorney/judge-intelligence',
+              },
+              {
+                icon: <PeopleIcon />,
+                title: 'Client Counseling Support',
+                description: 'Data-backed insights to educate clients on realistic outcomes and set proper expectations.',
+                href: '/search',
+              },
+              {
+                icon: <SearchIcon />,
+                title: 'Opposing Counsel Research',
+                description: 'Track opposing counsel track records, strategies, and settlement negotiation patterns.',
+                href: '/attorney/opposing-counsel',
+              },
+              {
+                icon: <TargetIcon />,
+                title: 'Case Timeline Projections',
+                description: 'Historical duration data by case type and district to forecast case resolution timelines.',
+                href: '/search',
+              },
+            ].map((item, index) => (
+              <Link key={index} href={item.href} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '2px',
+                    padding: '24px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '16px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    cursor: 'pointer',
+                    boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                    height: '100%',
+                  }}
+                  className="attorney-feature-card"
+                >
+                  <div style={{ fontSize: '32px', color: '#006997', transition: 'color 0.3s ease' }}>{item.icon}</div>
+                  <div>
+                    <h3
+                      style={{
+                        margin: '0 0 8px 0',
+                        fontSize: '18px',
+                        fontWeight: '600',
+                        fontFamily: 'var(--font-display)',
+                        color: '#212529',
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: '14px',
+                        color: '#455A64',
+                        lineHeight: '1.5',
+                        fontFamily: 'var(--font-body)',
+                      }}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                  <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <span style={{ fontSize: '13px', color: '#006997', fontWeight: 600, transition: 'color 0.3s ease' }}>
+                      Explore →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How Attorneys Use MyCaseValue Section */}
+      <section
+        style={{
+          padding: '60px 20px',
+          backgroundColor: '#FFFFFF',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '48px',
+          }}
+        >
+          {/* Section Title */}
+          <div style={{ textAlign: 'center' }}>
+            <h2
+              style={{
+                margin: '0 0 12px 0',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontWeight: '700',
+                fontFamily: 'var(--font-display)',
+                color: '#212529',
+              }}
+            >
+              How Attorneys Use MyCaseValue
+            </h2>
+            <p
+              style={{
+                margin: '12px 0 0 0',
+                fontSize: '16px',
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+                maxWidth: '600px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
+            >
+              Real-world applications for case evaluation, settlement preparation, and client management.
+            </p>
+          </div>
+
+          {/* Use Cases */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '24px',
+            }}
+          >
+            {[
+              {
+                title: 'Pre-litigation Evaluation',
+                description: 'Before accepting a case, assess its viability and potential value using real federal court data. Compare case type outcomes across districts to determine whether to take the matter.',
+              },
+              {
+                title: 'Settlement Negotiation Preparation',
+                description: 'Enter settlement discussions armed with comparable case data, win rates, and historical settlement ranges. Make data-backed offers supported by federal court precedent.',
+              },
+              {
+                title: 'Client Expectation Management',
+                description: 'Educate clients on realistic outcomes with actual federal court statistics. Reduce surprises and disputes by setting expectations grounded in verified judicial data.',
+              },
+            ].map((useCase, index) => (
+              <div
+                key={index}
+                style={{
+                  backgroundColor: '#F5F6F7',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '32px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '28px',
+                      height: '28px',
+                      backgroundColor: '#E8171F',
+                      color: '#FFFFFF',
+                      borderRadius: '2px',
+                      fontSize: '16px',
+                      fontWeight: '700',
+                    }}
+                  >
+                    {index + 1}
+                  </div>
+                  <h3
+                    style={{
+                      margin: 0,
+                      fontSize: '18px',
+                      fontWeight: '600',
+                      fontFamily: 'var(--font-display)',
+                      color: '#212529',
+                    }}
+                  >
+                    {useCase.title}
+                  </h3>
+                </div>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: '14px',
+                    color: '#455A64',
+                    lineHeight: '1.6',
+                    fontFamily: 'var(--font-body)',
+                  }}
+                >
+                  {useCase.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Data-Driven Advantage Stats Section */}
+      <section
+        style={{
+          padding: '60px 20px',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '48px',
+          }}
+        >
+          {/* Section Title */}
+          <div style={{ textAlign: 'center' }}>
+            <h2
+              style={{
+                margin: '0 0 12px 0',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontWeight: '700',
+                fontFamily: 'var(--font-display)',
+                color: '#212529',
+              }}
+            >
+              Data-Driven Advantage
+            </h2>
+            <p
+              style={{
+                margin: '12px 0 0 0',
+                fontSize: '16px',
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+                maxWidth: '600px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
+            >
+              Leverage verified federal court data for competitive intelligence and client confidence.
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '24px',
+            }}
+          >
+            {[
+              {
+                stat: '23%',
+                label: 'Higher settlements with data-backed negotiations',
+              },
+              {
+                stat: '5.1M+',
+                label: 'Federal cases analyzed',
+              },
+              {
+                stat: '84',
+                label: 'Case types supported',
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '32px',
+                  textAlign: 'center',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 'clamp(32px, 5vw, 48px)',
+                    fontWeight: '800',
+                    fontFamily: 'var(--font-display)',
+                    color: '#E8171F',
+                    marginBottom: '12px',
+                  }}
+                >
+                  {item.stat}
+                </div>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: '14px',
+                    color: '#455A64',
+                    lineHeight: '1.6',
+                    fontFamily: 'var(--font-body)',
+                  }}
+                >
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Everything In Unlimited Plus Section */}
       <section
         style={{
           padding: '60px 20px',
+          backgroundColor: '#FFFFFF',
         }}
       >
         <div
@@ -449,6 +818,124 @@ export default function AttorneyPage() {
           >
             {features.map((feature, index) => (
               <FeatureCard key={index} icon={feature.icon} title={feature.title} description={feature.description} badge={feature.badge} href={feature.href} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Get Started CTA Section */}
+      <section
+        style={{
+          padding: '60px 20px',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '48px',
+          }}
+        >
+          {/* Section Title */}
+          <div style={{ textAlign: 'center' }}>
+            <h2
+              style={{
+                margin: '0 0 12px 0',
+                fontSize: 'clamp(28px, 4vw, 42px)',
+                fontWeight: '700',
+                fontFamily: 'var(--font-display)',
+                color: '#212529',
+              }}
+            >
+              Get Started
+            </h2>
+            <p
+              style={{
+                margin: '12px 0 0 0',
+                fontSize: '16px',
+                color: '#455A64',
+                fontFamily: 'var(--font-body)',
+                maxWidth: '600px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
+            >
+              Access powerful attorney tools to elevate your legal practice. Start free today.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '24px',
+              maxWidth: '800px',
+              margin: '0 auto',
+              width: '100%',
+            }}
+          >
+            {[
+              {
+                href: '/search',
+                label: 'Search Cases',
+                description: 'Research case outcomes and settlement data.',
+              },
+              {
+                href: '/calculator',
+                label: 'Calculate Settlement',
+                description: 'Estimate case value with data-backed projections.',
+              },
+              {
+                href: '/attorney/judge-intelligence',
+                label: 'Judge Intelligence',
+                description: 'Research federal judges and ruling patterns.',
+              },
+            ].map((cta, index) => (
+              <Link
+                key={index}
+                href={cta.href}
+                style={{
+                  padding: '24px',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  textAlign: 'center',
+                }}
+                className="attorney-feature-card"
+              >
+                <h3
+                  style={{
+                    margin: 0,
+                    fontSize: '18px',
+                    fontWeight: '600',
+                    fontFamily: 'var(--font-display)',
+                    color: '#212529',
+                  }}
+                >
+                  {cta.label}
+                </h3>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: '13px',
+                    color: '#455A64',
+                    lineHeight: '1.5',
+                    fontFamily: 'var(--font-body)',
+                  }}
+                >
+                  {cta.description}
+                </p>
+              </Link>
             ))}
           </div>
         </div>
