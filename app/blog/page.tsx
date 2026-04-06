@@ -94,7 +94,7 @@ export default function BlogPage() {
         }
 
         .featured-image-placeholder {
-          background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+          background: #F0F1F2;
           display: flex;
           align-items: center;
           justify-content: center;

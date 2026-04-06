@@ -2,7 +2,7 @@ export default function UpgradeBanner() {
   return (
     <section
       style={{
-        background: 'linear-gradient(135deg, #00172E 0%, #001A35 50%, #002040 100%)',
+        background: '#00172E',
         padding: '64px 24px',
         borderBottom: '1px solid #D5D8DC',
       }}

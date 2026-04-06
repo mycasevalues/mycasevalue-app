@@ -274,7 +274,7 @@ export default function AboutPage() {
           padding: 3rem 2rem;
           border-radius: 4px;
           border: 1px solid #D5D8DC;
-          background: linear-gradient(135deg, #FFFFFF 0%, #F9F9F9 100%);
+          background: #FFFFFF;
         }
 
         .cta-heading {

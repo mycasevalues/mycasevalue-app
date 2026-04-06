@@ -62,7 +62,7 @@ export default function ResultsPage() {
               background: '#E8171F',
               color: '#FFFFFF',
               padding: '6px 12px',
-              borderRadius: '20px',
+              borderRadius: '4px',
               fontSize: '11px',
               fontWeight: '700',
               fontFamily: 'var(--font-display)',

@@ -401,7 +401,7 @@ async function CategoryPage({
 
       {/* Hero Section */}
       <div style={{
-        background: `linear-gradient(135deg, ${categoryColors[category]} 0%, ${categoryColors[category]}dd 100%)`,
+        background: categoryColors[category],
         padding: '60px 20px',
         color: 'white',
       }}>
@@ -697,7 +697,7 @@ async function CategoryPage({
 
       {/* CTA Section */}
       <div style={{
-        background: `linear-gradient(135deg, ${categoryColors[category]} 0%, ${categoryColors[category]}dd 100%)`,
+        background: categoryColors[category],
         padding: '60px 20px',
         textAlign: 'center',
         color: 'white',

@@ -88,13 +88,12 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         backdropFilter: 'blur(10px)',
       }}
     >
-      {/* Enhanced gradient glow behind */}
+      {/* Subtle color accent */}
       <div style={{
         position: 'absolute', top: '-30px', right: '-30px',
         width: '100px', height: '100px', borderRadius: '50%',
-        background: `linear-gradient(135deg, ${stat.color}20, ${stat.color}08)`,
+        background: `${stat.color}12`,
         filter: 'blur(30px)',
-        animation: 'pulse-glow 3s ease-in-out infinite',
       }} />
 
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
