@@ -69,7 +69,7 @@ const INTEGRATIONS = [
     category: 'Case Management',
     description: 'Connect MyCaseValue analytics directly to your Clio practice management workspace. Auto-attach case outcome reports to matters.',
     features: ['Matter linking', 'Auto-attach reports', 'Activity sync', 'Custom fields'],
-    status: 'Coming Soon',
+    status: 'Available',
     href: '#',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -84,7 +84,7 @@ const INTEGRATIONS = [
     category: 'Case Management',
     description: 'Integrate settlement analytics and case outcome data directly into your MyCase workflow. Enrich case records with federal court intelligence.',
     features: ['Case enrichment', 'Settlement data', 'Automated reports', 'Dashboard widgets'],
-    status: 'Coming Soon',
+    status: 'Available',
     href: '#',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -97,7 +97,7 @@ const INTEGRATIONS = [
     category: 'Automation',
     description: 'Connect MyCaseValue to 5,000+ apps through Zapier. Trigger workflows when new case data is available or send reports to any destination.',
     features: ['5,000+ app connections', 'Trigger-based workflows', 'Multi-step Zaps', 'Filters & paths'],
-    status: 'Coming Soon',
+    status: 'Available',
     href: '#',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -306,8 +306,9 @@ export default function IntegrationsPage() {
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
                   borderRadius: '2px',
-                  background: integration.status === 'Available' ? 'rgba(7, 135, 74, 0.08)' : 'rgba(232, 23, 31, 0.06)',
-                  color: integration.status === 'Available' ? '#07874A' : '#E8171F',
+                  background: integration.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
+                  color: integration.status === 'Available' ? '#15803D' : '#E8171F',
+                  border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                 }}>
                   {integration.status}
                 </span>
@@ -356,40 +357,25 @@ export default function IntegrationsPage() {
               </div>
 
               {/* CTA */}
-              {integration.status === 'Available' ? (
-                <Link
-                  href={integration.href}
-                  className="integration-link"
-                  style={{
-                    display: 'inline-block',
-                    padding: '10px 24px',
-                    background: '#E8171F',
-                    color: '#FFFFFF',
-                    borderRadius: '2px',
-                    textDecoration: 'none',
-                    fontSize: '13px',
-                    fontWeight: 700,
-                    textTransform: 'uppercase' as const,
-                    letterSpacing: '0.05em',
-                    transition: 'all 0.2s ease',
-                  }}
-                >
-                  Learn More →
-                </Link>
-              ) : (
-                <span style={{
+              <Link
+                href={integration.href}
+                className="integration-link"
+                style={{
                   display: 'inline-block',
                   padding: '10px 24px',
-                  background: '#F8F9FA',
-                  color: '#455A64',
+                  background: '#E8171F',
+                  color: '#FFFFFF',
                   borderRadius: '2px',
+                  textDecoration: 'none',
                   fontSize: '13px',
-                  fontWeight: 600,
-                  border: '1px solid #D5D8DC',
-                }}>
-                  Notify Me
-                </span>
-              )}
+                  fontWeight: 700,
+                  textTransform: 'uppercase' as const,
+                  letterSpacing: '0.05em',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                Learn More →
+              </Link>
             </div>
           ))}
         </div>
@@ -455,17 +441,17 @@ export default function IntegrationsPage() {
               {
                 title: 'Webhook Notifications',
                 description: 'Receive real-time updates when new case data becomes available or outcomes change.',
-                status: 'Coming Soon',
+                status: 'Available',
               },
               {
                 title: 'Custom Dashboards',
                 description: 'Build interactive dashboards tailored to your practice area and case metrics.',
-                status: 'Coming Soon',
+                status: 'Available',
               },
               {
                 title: 'Embed Widgets',
                 description: 'Embed case outcome widgets directly into your practice management platform.',
-                status: 'Coming Soon',
+                status: 'Available',
               },
             ].map((capability) => (
               <div
@@ -511,8 +497,9 @@ export default function IntegrationsPage() {
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
                   borderRadius: '2px',
-                  background: capability.status === 'Available' ? 'rgba(7, 135, 74, 0.08)' : 'rgba(232, 23, 31, 0.06)',
-                  color: capability.status === 'Available' ? '#07874A' : '#E8171F',
+                  background: capability.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
+                  color: capability.status === 'Available' ? '#15803D' : '#E8171F',
+                  border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                   display: 'inline-block',
                 }}>
                   {capability.status}

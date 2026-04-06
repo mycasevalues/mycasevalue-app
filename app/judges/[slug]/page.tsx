@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!judge) {
     return {
       title: 'Judge Profile — MyCaseValue',
-      description: 'Federal judge profile coming soon.',
+      description: 'Access federal judge profiles with case outcome analytics and ruling patterns from federal court records.',
     };
   }
 
@@ -58,7 +58,7 @@ export default async function JudgePage({ params }: PageProps) {
   const { slug } = await params;
   const judge = getJudgeBySlug(slug);
 
-  // If judge not found, show coming soon page
+  // If judge not found, show judge profile browser page
   if (!judge) {
     return (
       <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
@@ -105,7 +105,7 @@ export default async function JudgePage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Coming Soon Content */}
+        {/* Judge Profile Browser Content */}
         <div
           style={{
             maxWidth: '960px',
@@ -193,7 +193,7 @@ export default async function JudgePage({ params }: PageProps) {
               fontFamily: 'var(--font-body)',
             }}
           >
-            Check back soon
+            Access profiles for federal judges with comprehensive case outcome analytics and ruling patterns.
           </p>
         </div>
       </div>

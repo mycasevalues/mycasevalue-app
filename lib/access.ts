@@ -195,8 +195,7 @@ export async function canAccessAsync(
   email: string | null,
   feature: FeatureKey
 ): Promise<boolean> {
-  const tier = await getUserTier(email);
-  return canAccess(tier, feature);
+  return true; // BETA: gate disabled — re-enable when Stripe is live
 }
 
 // ─── Synchronous Access Check (for client-side UX) ───────────────
@@ -206,9 +205,7 @@ export async function canAccessAsync(
  * Higher tiers inherit all features from lower tiers.
  */
 export function canAccess(userTier: Tier, feature: FeatureKey): boolean {
-  const requiredTier = FEATURE_MIN_TIER[feature];
-  if (!requiredTier) return false;
-  return TIER_ORDER[userTier] >= TIER_ORDER[requiredTier];
+  return true; // BETA: gate disabled — re-enable when Stripe is live
 }
 
 /**

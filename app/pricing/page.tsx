@@ -80,8 +80,9 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
         { text: 'Judge intelligence profiles', included: false },
         { text: 'Attorney Mode features', included: false },
       ],
-      ctaText: 'Buy a Report',
+      ctaText: 'Get full report',
       ctaSubtext: 'Save and revisit for 90 days · No subscription',
+      ctaHref: '/search',
     },
     {
       id: 'unlimited',
@@ -113,8 +114,9 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
         { text: 'Opposing counsel research', included: false },
         { text: 'Attorney Mode features', included: false },
       ],
-      ctaText: 'Start Unlimited',
+      ctaText: 'Start free',
       ctaSubtext: 'Cancel anytime',
+      ctaHref: '/sign-up',
     },
     {
       id: 'attorney',
@@ -147,8 +149,9 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
         { text: 'Daily data refresh (vs. weekly on Unlimited)', included: true },
         { text: 'Priority support — 24-hour response', included: true },
       ],
-      ctaText: 'Start Attorney Mode',
+      ctaText: 'Try attorney mode',
       ctaSubtext: 'Cancel anytime · Team seats included',
+      ctaHref: '/attorney',
     },
     {
       id: 'enterprise',
@@ -172,8 +175,9 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
         { text: 'Training and onboarding', included: true },
         { text: 'Priority phone support', included: true },
       ],
-      ctaText: 'Contact Sales',
+      ctaText: 'Contact us',
       ctaSubtext: 'Custom pricing · Tailored onboarding',
+      ctaHref: '/contact',
     },
   ];
 }
@@ -207,6 +211,7 @@ interface PlanCard {
   features: FeatureItem[];
   ctaText: string;
   ctaSubtext: string;
+  ctaHref?: string;
   badge?: string;
   featured?: boolean;
   stripePlan?: 'single' | 'unlimited' | 'attorney';
@@ -347,63 +352,34 @@ function PricingCard({
         </p>
 
         {/* CTA Button */}
-        {plan.stripePlan ? (
-          <button
-            onClick={() => onCheckout(plan.stripePlan!)}
-            disabled={loadingPlan === plan.stripePlan}
-            style={{
-              width: '100%',
-              height: '48px',
-              fontSize: '14px',
-              fontWeight: 700,
-              borderRadius: '2px',
-              border: 'none',
-              background: f ? 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)' : '#E8171F',
-              color: '#FFFFFF',
-              textAlign: 'center',
-              fontFamily: 'var(--font-display)',
-              transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-              display: 'inline-block',
-              marginBottom: '8px',
-              cursor: 'pointer',
-              opacity: 1,
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
-            }}
-            className="pricing-cta-link"
-          >
-            {loadingPlan === plan.stripePlan ? 'Loading...' : plan.ctaText}
-          </button>
-        ) : (
-          <Link
-            href={plan.id === 'enterprise' ? '/contact' : '/search'}
-            style={{
-              width: '100%',
-              height: '48px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '14px',
-              fontWeight: 700,
-              borderRadius: '2px',
-              border: plan.id === 'enterprise' ? '1.5px solid #D5D8DC' : 'none',
-              background: plan.id === 'enterprise' ? 'transparent' : (f ? 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)' : '#E8171F'),
-              color: plan.id === 'enterprise' ? '#212529' : '#FFFFFF',
-              textDecoration: 'none',
-              textAlign: 'center',
-              fontFamily: 'var(--font-display)',
-              transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-              marginBottom: '8px',
-              cursor: 'pointer',
-              opacity: 1,
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
-            }}
-            className={plan.id === 'enterprise' ? 'pricing-enterprise-link' : 'pricing-cta-link'}
-          >
-            {plan.ctaText}
-          </Link>
-        )}
+        <Link
+          href={plan.ctaHref || '/search'}
+          style={{
+            width: '100%',
+            height: '48px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '14px',
+            fontWeight: 700,
+            borderRadius: '4px',
+            border: 'none',
+            background: '#7C3AED',
+            color: '#FFFFFF',
+            textDecoration: 'none',
+            textAlign: 'center',
+            fontFamily: 'var(--font-display)',
+            transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+            marginBottom: '8px',
+            cursor: 'pointer',
+            opacity: 1,
+            textTransform: 'none',
+            letterSpacing: '0.04em',
+          }}
+          className="pricing-cta-link"
+        >
+          {plan.ctaText}
+        </Link>
 
         <p
           style={{
@@ -416,6 +392,12 @@ function PricingCard({
         >
           {plan.ctaSubtext}
         </p>
+
+        {(plan.id === 'single_report' || plan.id === 'unlimited' || plan.id === 'attorney') && (
+          <p style={{ fontSize: '0.8125rem', color: '#15803D', marginBottom: '24px', marginTop: '-16px', fontWeight: 500, textAlign: 'center' }}>
+            Free during beta -- no payment required
+          </p>
+        )}
 
         <div
           style={{

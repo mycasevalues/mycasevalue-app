@@ -110,30 +110,7 @@ export async function requireTier(
   email: string,
   minimumTier: Tier,
 ): Promise<TierResult> {
-  const tier = await getUserTier(email);
+  const currentTier = await getUserTier(email);
 
-  if (TIER_ORDER[tier] < TIER_ORDER[minimumTier]) {
-    const tierLabels: Record<Tier, string> = {
-      free: 'Free',
-      single_report: 'Single Report',
-      unlimited: 'Unlimited Reports',
-      attorney: 'Attorney Mode',
-    };
-
-    return {
-      tier: null,
-      error: NextResponse.json(
-        {
-          error: 'Insufficient permissions',
-          message: `This feature requires ${tierLabels[minimumTier]} ($${minimumTier === 'attorney' ? '29.99/mo' : minimumTier === 'unlimited' ? '9.99' : '5.99'}).`,
-          required_tier: minimumTier,
-          current_tier: tier,
-          upgrade_url: '/pricing',
-        },
-        { status: 403, headers: CORS_HEADERS }
-      ),
-    };
-  }
-
-  return { tier, error: null };
+  return { tier: currentTier, error: null }; // BETA: gate disabled — re-enable when Stripe is live
 }
