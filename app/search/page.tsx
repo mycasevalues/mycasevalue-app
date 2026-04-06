@@ -409,6 +409,21 @@ export default function SearchPage() {
         </div>
       )}
 
+      {/* Result count */}
+      {query.length > 1 && !isLoading && results.length > 0 && (
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+          <p style={{ fontSize: '13px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+            <strong style={{ color: '#212529' }}>{results.length}</strong> result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;
+            {selectedCategory && <span> in <strong style={{ color: '#E8171F' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
+          </p>
+          {selectedCategory && (
+            <button onClick={() => setSelectedCategory(null)} style={{ fontSize: '12px', color: '#006997', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+              Clear filter
+            </button>
+          )}
+        </div>
+      )}
+
       {!isLoading && results.map((r, i) => (
         <Link
           key={i}
@@ -482,6 +497,12 @@ export default function SearchPage() {
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
                     <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Duration </span>
                     <strong>{rd.mo}mo</strong>
+                  </span>
+                )}
+                {rd.rng?.md != null && rd.rng.md > 0 && (
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Median </span>
+                    <strong style={{ color: '#E8171F' }}>${rd.rng.md}K</strong>
                   </span>
                 )}
               </div>
