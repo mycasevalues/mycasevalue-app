@@ -122,7 +122,7 @@ export default function SignUpPage() {
             style={{
               width: '56px',
               height: '56px',
-              borderRadius: '50%',
+              borderRadius: '4px',
               backgroundColor: 'rgba(0,105,151,0.08)',
               display: 'flex',
               alignItems: 'center',
