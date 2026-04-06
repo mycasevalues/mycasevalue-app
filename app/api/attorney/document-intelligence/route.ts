@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
-import { getUserTier } from '../../../../lib/access';
+// Beta: auth removed — all features open
 
 export async function POST(req: Request) {
   // Check for API key availability
@@ -17,12 +17,9 @@ export async function POST(req: Request) {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       { cookies: { get: (n: string) => cookieStore.get(n)?.value, set: () => {}, remove: () => {} } }
     );
+    // Beta: all features open — no auth required
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user?.email) return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
-
-    const tier = await getUserTier(user.email);
-    // DEV MODE: All features unlocked — Stripe integration pending
-    // if (tier !== 'attorney') return NextResponse.json({ error: 'Attorney Mode subscription required' }, { status: 403 });
+    const userEmail = user?.email ?? 'anonymous@beta';
 
     const formData = await req.formData();
     const file = formData.get('file') as File;

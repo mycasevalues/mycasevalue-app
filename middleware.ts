@@ -9,7 +9,7 @@ import { locales, defaultLocale, type Locale } from './lib/i18n-config';
  * 2. Auth protection for /dashboard routes
  */
 
-const PROTECTED_PREFIXES = ['/dashboard', '/account', '/settings', '/billing', '/reports', '/attorney'];
+const PROTECTED_PREFIXES = ['/dashboard', '/account', '/settings', '/billing', '/reports'];
 
 function isProtectedRoute(pathname: string): boolean {
   return PROTECTED_PREFIXES.some(
