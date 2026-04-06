@@ -43,20 +43,27 @@ const PLAN_DETAILS: Record<string, { name: string; price: string; features: stri
 export default function BillingPage() {
   const [planInfo, setPlanInfo] = useState<PlanInfo | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     async function load() {
-      const { data: { user } } = await getSupabase().auth.getUser();
-      if (user?.email) {
-        try {
+      try {
+        const { data: { user } } = await getSupabase().auth.getUser();
+        if (user?.email) {
           const res = await fetch(`/api/premium/status?email=${encodeURIComponent(user.email)}`);
           if (res.ok) {
             const data = await res.json();
             setPlanInfo({ plan: data.plan || 'free', grantedAt: data.grantedAt, expiresAt: data.expiresAt });
+          } else {
+            setError('Unable to load plan information. Showing default plan.');
+            setPlanInfo({ plan: 'free', grantedAt: null, expiresAt: null });
           }
-        } catch {
+        } else {
           setPlanInfo({ plan: 'free', grantedAt: null, expiresAt: null });
         }
+      } catch {
+        setError('Unable to connect. Please check your connection and try again.');
+        setPlanInfo({ plan: 'free', grantedAt: null, expiresAt: null });
       }
       setLoading(false);
     }
@@ -113,6 +120,12 @@ export default function BillingPage() {
       {/* Main Content */}
       <div style={{ padding: '40px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          {/* Error Banner */}
+          {error && (
+            <div style={{ padding: '14px 18px', marginBottom: '24px', borderRadius: '2px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)' }}>
+              <p style={{ fontSize: '13px', color: '#E89558', margin: 0 }}>{error}</p>
+            </div>
+          )}
           {/* Current Plan Card */}
           <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #D5D8DC', marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>

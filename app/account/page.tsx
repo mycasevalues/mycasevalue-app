@@ -51,6 +51,8 @@ export default function AccountPage() {
               grantedAt: data.grantedAt || null,
               expiresAt: data.expiresAt || null,
             });
+          } else {
+            setPlanInfo({ plan: 'free', grantedAt: null, expiresAt: null });
           }
         } catch {
           setPlanInfo({ plan: 'free', grantedAt: null, expiresAt: null });
