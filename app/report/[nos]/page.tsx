@@ -9,6 +9,7 @@ import { getSupabaseAdmin, CaseStats } from '../../../lib/supabase';
 import { getOpinionsByType, getRECAPByType } from '../../../lib/courtlistener';
 import { checkFreeRateLimit } from '../../../lib/rateLimit';
 import { SITE_URL } from '../../../lib/site-config';
+import { formatSettlementAmount } from '../../../lib/format';
 import ReportPDFButton from './ReportPDFButton';
 import ShareButtons from '../../../components/ui/ShareButtons';
 import ShareToolbar from './ShareToolbar';
@@ -629,7 +630,7 @@ export default async function ReportPage({
                       25th Percentile
                     </p>
                     <p style={{ fontSize: '32px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
-                      ${settlementRange.lo}K
+                      {formatSettlementAmount(settlementRange.lo, { compact: true })}
                     </p>
                     <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Conservative</p>
                   </div>
@@ -638,7 +639,7 @@ export default async function ReportPage({
                       Median
                     </p>
                     <p style={{ fontSize: '32px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
-                      ${settlementRange.md}K
+                      {formatSettlementAmount(settlementRange.md, { compact: true })}
                     </p>
                     <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Typical</p>
                   </div>
@@ -647,7 +648,7 @@ export default async function ReportPage({
                       75th Percentile
                     </p>
                     <p style={{ fontSize: '32px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
-                      ${(settlementRange.hi >= 1000 ? (settlementRange.hi / 1000).toFixed(1) + 'M' : settlementRange.hi + 'K')}
+                      {formatSettlementAmount(settlementRange.hi, { compact: true })}
                     </p>
                     <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Favorable</p>
                   </div>
@@ -809,9 +810,9 @@ export default async function ReportPage({
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {(real.ends as any[]).slice(0, 8).map((end: any, i: number) => {
-                    const totalEnds = (real.ends as any[]).reduce((s: number, e: any) => s + (e.count || e.c || 0), 0);
-                    const count = end.count || end.c || 0;
-                    const pct = totalEnds > 0 ? ((count / totalEnds) * 100) : 0;
+                    const totalEnds = (real.ends as any[]).reduce((s: number, e: any) => s + (e.n || 0), 0);
+                    const count = end.n || 0;
+                    const pct = end.p || (totalEnds > 0 ? ((count / totalEnds) * 100) : 0);
                     return (
                       <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                         <span style={{ fontSize: '13px', color: '#212529', fontWeight: 500, width: '180px', fontFamily: 'var(--font-body)', flexShrink: 0 }}>
@@ -821,7 +822,7 @@ export default async function ReportPage({
                           <div style={{
                             height: '100%',
                             width: `${Math.min(pct, 100)}%`,
-                            background: end.color || '#006997',
+                            background: end.c || '#6B7280',
                             borderRadius: '2px',
                             transition: 'width 0.5s ease',
                           }} />
@@ -1114,7 +1115,7 @@ export default async function ReportPage({
               return {
                 label: opt.label,
                 nos: opt.nos,
-                winRate: optData?.outcome?.trial_win ?? OUTCOME_DATA._default?.trial_win ?? 45,
+                winRate: optData?.real?.wr ?? 45,
                 totalCases: optData?.real?.total || 1000,
               };
             }) || [];

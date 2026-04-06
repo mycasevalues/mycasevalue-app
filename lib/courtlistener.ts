@@ -20,6 +20,7 @@ export async function searchOpinions(
   query: string,
   court?: string,
   limit = 5,
+  federalOnly = false,
 ) {
   try {
     const params = new URLSearchParams({
@@ -30,6 +31,10 @@ export async function searchOpinions(
       format: 'json',
     });
     if (court) params.set('court', court);
+    // Filter to federal courts only when requested
+    if (federalOnly && !court) {
+      params.set('court_type', 'FD');
+    }
 
     const res = await fetch(`${CL_BASE}/search/?${params}`, {
       headers: HEADERS,
@@ -53,7 +58,7 @@ export async function searchOpinions(
 // ─── RECAP Docket Search ─────────────────────────────────────────────
 
 /** Search RECAP dockets (free PACER mirrors) by free-text query. */
-export async function searchRECAPDockets(query: string, limit = 5) {
+export async function searchRECAPDockets(query: string, limit = 5, federalOnly = false) {
   try {
     const params = new URLSearchParams({
       q: query,
@@ -61,6 +66,9 @@ export async function searchRECAPDockets(query: string, limit = 5) {
       order_by: 'score desc',
       format: 'json',
     });
+    if (federalOnly) {
+      params.set('court_type', 'FD');
+    }
 
     const res = await fetch(`${CL_BASE}/search/?${params}`, {
       headers: HEADERS,
@@ -129,12 +137,12 @@ export async function searchByJudge(
 
 // ─── Convenience Wrappers ────────────────────────────────────────────
 
-/** Opinions related to a NOS description (e.g. "employment discrimination"). */
+/** Opinions related to a NOS description (e.g. "employment discrimination"). Federal courts only. */
 export async function getOpinionsByType(nosDescription: string, limit = 3) {
-  return searchOpinions(nosDescription, undefined, limit);
+  return searchOpinions(nosDescription, undefined, limit, true);
 }
 
-/** RECAP dockets related to a NOS description. */
+/** RECAP dockets related to a NOS description. Federal courts only. */
 export async function getRECAPByType(nosDescription: string, limit = 3) {
-  return searchRECAPDockets(nosDescription, limit);
+  return searchRECAPDockets(nosDescription, limit, true);
 }

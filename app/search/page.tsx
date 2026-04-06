@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
+import { formatSettlementAmount } from '../../lib/format';
 import { SearchIcon } from '../../components/ui/Icons';
 
 // Loading skeleton component
@@ -543,7 +544,7 @@ export default function SearchPage() {
                 {rd.rng?.md != null && rd.rng.md > 0 && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
                     <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Median </span>
-                    <strong style={{ color: '#E8171F' }}>${rd.rng.md}K</strong>
+                    <strong style={{ color: '#E8171F' }}>{formatSettlementAmount(rd.rng.md, { compact: true })}</strong>
                   </span>
                 )}
               </div>

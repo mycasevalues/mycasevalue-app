@@ -1,6 +1,7 @@
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { getAllCaseTypeSEO } from '../../../lib/case-type-seo';
+import { formatSettlementAmount } from '../../../lib/format';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRightIcon } from '../../../components/ui/Icons';
@@ -785,7 +786,7 @@ async function CategoryPage({
                   }}>
                     <span>NOS Code: {opt.nos}</span>
                     {rd?.rng?.md && (
-                      <span style={{ fontWeight: 600, color: '#006997' }}>Median: ${rd.rng.md}K</span>
+                      <span style={{ fontWeight: 600, color: '#006997' }}>Median: {formatSettlementAmount(rd.rng.md, { compact: true })}</span>
                     )}
                   </div>
                 </Link>

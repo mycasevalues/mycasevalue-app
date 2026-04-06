@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 import { SITS, STATES } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { SITE_URL } from '../../lib/site-config';
+import { formatSettlementAmount } from '../../lib/format';
 
 // Note: Metadata cannot be exported from client components.
 // For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
@@ -901,7 +902,7 @@ export default function CalculatorPage() {
                     {realCtx.rng && (
                       <div>
                         <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: '#455A64' }}>Median Recovery</p>
-                        <p className="text-xl font-bold" style={{ color: '#212529', fontFamily: 'var(--font-mono)' }}>${realCtx.rng.md}K</p>
+                        <p className="text-xl font-bold" style={{ color: '#212529', fontFamily: 'var(--font-mono)' }}>{formatSettlementAmount(realCtx.rng.md, { compact: true })}</p>
                       </div>
                     )}
                   </div>

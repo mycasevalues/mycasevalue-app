@@ -593,6 +593,13 @@ export function formatRecoveryValue(val: number): string {
 
 /** Resolve a NOS code to a human-readable case-type label. */
 export function getNosLabel(nos: string): string {
+  // Check REAL_DATA first for authoritative label
+  if (REAL_DATA[nos]) {
+    const rd = REAL_DATA[nos];
+    if (rd.sub) return rd.sub.charAt(0).toUpperCase() + rd.sub.slice(1);
+    if (rd.label) return rd.label;
+  }
+  // Fall back to SITS opts
   for (const cat of SITS) {
     for (const opt of cat.opts) {
       if (opt.nos === nos) return opt.label;
