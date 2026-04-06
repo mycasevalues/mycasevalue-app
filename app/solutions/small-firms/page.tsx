@@ -91,7 +91,7 @@ export default function SmallFirmsPage() {
               letterSpacing: '0.04em',
               display: 'inline-block',
             }}>
-              Start Free Trial
+              Start Researching
             </Link>
             <Link href="/contact" style={{
               background: 'transparent',
@@ -193,7 +193,7 @@ export default function SmallFirmsPage() {
             letterSpacing: '0.04em',
             display: 'inline-block',
           }}>
-            Start Free Trial
+            Start Researching
           </Link>
         </div>
       </section>

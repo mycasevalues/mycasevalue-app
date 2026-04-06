@@ -207,7 +207,7 @@ export default function SolutionsPage() {
               lineHeight: 1.6,
             }}
           >
-            Start with a free trial — no credit card required — and explore the
+            Start researching — no account required — and explore the
             full platform before choosing a plan.
           </p>
           <div
@@ -235,7 +235,7 @@ export default function SolutionsPage() {
                 display: 'inline-block',
               }}
             >
-              Start Free Trial
+              Start Researching
             </Link>
             <Link
               href="/pricing"

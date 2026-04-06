@@ -188,7 +188,7 @@ export default function SiteFooter() {
             transition: 'background 150ms ease-out',
             display: 'inline-block',
           }} className="site-footer-cta-button">
-            Start Free Trial
+            Start Researching
           </Link>
         </div>
 

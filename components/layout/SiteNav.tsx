@@ -288,7 +288,7 @@ export default function SiteNav() {
                       transition: 'all 150ms',
                     }}
                   >
-                    Start Free Trial
+                    Start Researching
                   </Link>
                 </>
               )}

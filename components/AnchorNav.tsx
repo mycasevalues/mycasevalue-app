@@ -14,7 +14,7 @@ const AnchorNav = () => {
     { label: 'Testimonials', href: '#testimonials', id: 'testimonials' },
     { label: 'Awards', href: '#awards', id: 'awards' },
     { label: 'FAQ', href: '#faq', id: 'faq' },
-    { label: 'Start free trial', href: '/search', id: 'trial', isExternal: true },
+    { label: 'Start Researching', href: '/search', id: 'trial', isExternal: true },
   ];
 
   useEffect(() => {

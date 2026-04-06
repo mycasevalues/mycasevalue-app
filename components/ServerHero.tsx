@@ -66,7 +66,7 @@ export default function ServerHero() {
                 fontFamily: 'var(--font-display)', textDecoration: 'none',
                 transition: 'background 200ms',
               }}>
-                Start free trial
+                Start Researching
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
               <a href="/attorney" style={{
@@ -77,7 +77,7 @@ export default function ServerHero() {
                 textDecoration: 'none',
                 transition: 'all 200ms',
               }} className="hero-cta-secondary">
-                Upgrade to Attorney Mode
+                Attorney Tools
               </a>
             </div>
 
@@ -280,7 +280,7 @@ export default function ServerHero() {
             fontWeight: 600, fontSize: '1.25rem', textDecoration: 'none',
             fontFamily: 'var(--font-display)', transition: 'background 200ms',
           }}>
-            Start free trial
+            Start Researching
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -671,7 +671,7 @@ export default function ServerHero() {
             {[
               { q: 'Where does MyCaseValue get its data?', a: 'Our data comes from the Federal Judicial Center (FJC), PACER (Public Access to Court Electronic Records), CourtListener (Free Law Project), and the Bureau of Justice Statistics. All data is sourced from official public federal court records.' },
               { q: 'How many cases are in the database?', a: 'Over 5.1 million federal court cases spanning 50+ years across all 94 federal judicial districts. We cover 84 case types including employment, personal injury, civil rights, contract disputes, and more.' },
-              { q: 'Is MyCaseValue free to use?', a: 'Yes, basic case reports are free with no account required. Premium features including detailed settlement ranges, judge analytics, and attorney tools are available with a subscription.' },
+              { q: 'Is MyCaseValue free to use?', a: 'Yes, all features are currently free with no account required — including settlement ranges, judge analytics, circuit breakdowns, and attorney tools.' },
               { q: 'Can I use this data in court?', a: 'MyCaseValue is an informational tool. While the underlying data comes from official court records, our analytics are for research purposes. Consult with an attorney for legal strategy decisions.' },
               { q: 'What case types are covered?', a: 'We cover all 84 federal Nature of Suit (NOS) codes, including employment discrimination (Title VII, ADA, ADEA), personal injury, product liability, medical malpractice, civil rights, contract disputes, insurance, patent, trademark, and more.' },
               { q: 'How current is the data?', a: 'Our database is updated regularly with new case dispositions. Most data reflects cases closed within the last several years, with historical data going back 50+ years for trend analysis.' },
@@ -680,7 +680,7 @@ export default function ServerHero() {
               { q: 'How are win rates calculated?', a: 'Win rates are calculated from final case dispositions in federal court records. We categorize outcomes as plaintiff verdicts, defense verdicts, settlements, and dismissals based on FJC disposition codes.' },
               { q: 'Can I compare districts?', a: 'Yes. Our district comparison tool lets you view win rates, settlement ranges, and case timelines side by side across any of the 94 federal judicial districts.' },
               { q: 'Is there an institutional or academic license?', a: 'Yes. We offer institutional licensing for law schools, research institutions, and government agencies with special pricing and bulk data access. Contact us for details.' },
-              { q: 'How do I contact support?', a: 'Visit our contact page or email support directly. We offer email support for all users and priority support for premium subscribers.' },
+              { q: 'How do I contact support?', a: 'Visit our contact page or email support directly. We offer email support for all users.' },
             ].map((faq, i) => (
               <details key={i} style={{
                 borderTop: i === 0 ? '1px solid #D5D8DC' : 'none',
@@ -751,7 +751,7 @@ export default function ServerHero() {
               fontFamily: 'var(--font-body)', textDecoration: 'none', textTransform: 'uppercase',
               letterSpacing: '0.04em', transition: 'background 200ms',
             }}>
-              Start Free Trial
+              Start Researching
             </a>
             <a href="/pricing" style={{
               display: 'inline-flex', alignItems: 'center',
