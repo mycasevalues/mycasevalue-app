@@ -150,6 +150,31 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
       ctaText: 'Start Attorney Mode',
       ctaSubtext: 'Cancel anytime · Team seats included',
     },
+    {
+      id: 'enterprise',
+      name: 'Enterprise',
+      tagline: 'For legal departments & organizations',
+      price: 'Custom',
+      period: 'contact for pricing',
+      description: 'Tailored solutions for large legal teams, insurance companies, litigation funders, and government agencies.',
+      sectionLabel: 'Everything in Attorney Mode, plus:',
+      features: [
+        { text: 'Unlimited team seats', included: true },
+        { text: 'SSO / SAML integration', included: true },
+        { text: 'Custom API rate limits', included: true },
+        { text: 'Bulk data exports (CSV, JSON, XML)', included: true },
+        { text: 'Custom dashboards and reporting', included: true },
+        { text: 'Dedicated account manager', included: true },
+        { text: 'SLA guarantee (99.9% uptime)', included: true },
+        { text: 'White-label deployments', included: true },
+        { text: 'Custom data integrations', included: true },
+        { text: 'On-premises deployment option', included: true },
+        { text: 'Training and onboarding', included: true },
+        { text: 'Priority phone support', included: true },
+      ],
+      ctaText: 'Contact Sales',
+      ctaSubtext: 'Custom pricing · Tailored onboarding',
+    },
   ];
 }
 
@@ -333,7 +358,7 @@ function PricingCard({
               fontWeight: 700,
               borderRadius: '2px',
               border: 'none',
-              background: '#E8171F',
+              background: f ? 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)' : '#E8171F',
               color: '#FFFFFF',
               textAlign: 'center',
               fontFamily: 'var(--font-display)',
@@ -351,7 +376,7 @@ function PricingCard({
           </button>
         ) : (
           <Link
-            href="/search"
+            href={plan.id === 'enterprise' ? '/contact' : '/search'}
             style={{
               width: '100%',
               height: '48px',
@@ -361,9 +386,9 @@ function PricingCard({
               fontSize: '14px',
               fontWeight: 700,
               borderRadius: '2px',
-              border: 'none',
-              background: '#E8171F',
-              color: '#FFFFFF',
+              border: plan.id === 'enterprise' ? '1.5px solid #D5D8DC' : 'none',
+              background: plan.id === 'enterprise' ? 'transparent' : (f ? 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)' : '#E8171F'),
+              color: plan.id === 'enterprise' ? '#212529' : '#FFFFFF',
               textDecoration: 'none',
               textAlign: 'center',
               fontFamily: 'var(--font-display)',
@@ -374,7 +399,7 @@ function PricingCard({
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
             }}
-            className="pricing-cta-link"
+            className={plan.id === 'enterprise' ? 'pricing-enterprise-link' : 'pricing-cta-link'}
           >
             {plan.ctaText}
           </Link>
