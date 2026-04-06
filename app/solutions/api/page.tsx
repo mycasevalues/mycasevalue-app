@@ -78,7 +78,7 @@ export default function ApiPage() {
             Build powerful case analytics applications with our developer-friendly REST API, webhooks, SDKs, and comprehensive documentation.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/docs/api" style={{
+            <Link href="/solutions/api" style={{
               background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
@@ -181,7 +181,7 @@ export default function ApiPage() {
             Get started in minutes with our comprehensive API documentation, sandbox environment, and developer support team.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/docs/api" style={{
+            <Link href="/solutions/api" style={{
               background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',

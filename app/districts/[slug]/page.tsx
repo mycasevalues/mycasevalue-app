@@ -1036,7 +1036,7 @@ export default async function DistrictPage({ params }: PageProps) {
                   Compare outcomes across related districts
                 </p>
                 <Link
-                  href={`/circuits/${circuit?.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/districts?circuit=${encodeURIComponent(circuit || '')}`}
                   className="performance-link"
                   style={{
                     display: 'inline-block',

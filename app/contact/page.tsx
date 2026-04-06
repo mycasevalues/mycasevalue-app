@@ -148,7 +148,7 @@ export default function ContactPage() {
               },
             ].map((link, index) => (
               <Link
-                key={index}
+                key={link.href}
                 href={link.href}
                 style={{
                   padding: 24,

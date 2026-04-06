@@ -248,7 +248,7 @@ export default function SettingsPage() {
               </p>
               <div className="space-y-3">
                 <a
-                  href="/privacy-policy"
+                  href="/privacy"
                   className="settings-link-button block px-4 py-3 rounded-sm text-sm font-medium transition-colors"
                   style={{
                     color: '#006EBB',

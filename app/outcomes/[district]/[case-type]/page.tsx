@@ -112,7 +112,7 @@ export default async function OutcomesPage({
             fontFamily: 'var(--font-body)',
             lineHeight: '1.6',
           }}>This case type and district combination does not exist in our database.</p>
-          <Link href="/outcomes" style={{
+          <Link href="/districts" style={{
             display: 'inline-block',
             paddingLeft: '24px',
             paddingRight: '24px',
@@ -273,7 +273,7 @@ export default async function OutcomesPage({
               Home
             </Link>
             <span style={{ margin: '0 8px' }}>›</span>
-            <Link href="/outcomes" style={{ color: '#D5D8DC', textDecoration: 'none' }}>
+            <Link href="/districts" style={{ color: '#D5D8DC', textDecoration: 'none' }}>
               Districts
             </Link>
             <span style={{ margin: '0 8px' }}>›</span>
