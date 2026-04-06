@@ -646,6 +646,73 @@ export default function PricingPage() {
         </div>
       </div>
 
+      {/* Free During Launch Banner */}
+      <div style={{ background: '#F0FFF4', borderLeft: '4px solid #07874A' }}>
+        <div
+          style={{
+            maxWidth: '1344px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            paddingTop: '32px',
+            paddingBottom: '32px',
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '24px',
+          }}
+        >
+          <div style={{ flexShrink: 0, marginTop: '4px' }}>
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#07874A"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+          </div>
+          <div style={{ flex: 1 }}>
+            <h2
+              style={{
+                fontSize: '24px',
+                fontWeight: '700',
+                marginBottom: '8px',
+                color: '#07874A',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              All Premium Features Free
+            </h2>
+            <p
+              style={{
+                fontSize: '15px',
+                lineHeight: '1.6',
+                color: '#455A64',
+                marginBottom: '8px',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              During our launch period, every feature is completely free. No account required, no credit card needed. This includes judge analytics, circuit breakdowns, settlement calculator, and all comparison tools.
+            </p>
+            <p
+              style={{
+                fontSize: '12px',
+                color: '#07874A',
+                fontWeight: '600',
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              Limited time offer
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div
         style={{
           maxWidth: '1344px',
@@ -656,6 +723,93 @@ export default function PricingPage() {
           paddingTop: '64px',
         }}
       >
+        {/* What's Included Free Feature Grid */}
+        <div style={{ marginBottom: '64px' }}>
+          <h2
+            style={{
+              fontSize: '28px',
+              fontWeight: '700',
+              textAlign: 'center',
+              marginBottom: '48px',
+              color: '#212529',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            What's Included Free
+          </h2>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '20px',
+            }}
+          >
+            {[
+              { title: 'Unlimited Searches', desc: 'Search any case type across all 94 districts' },
+              { title: 'Full Reports', desc: 'Detailed reports with circuit and judge breakdowns' },
+              { title: 'Settlement Calculator', desc: 'Estimate ranges with 9 input factors' },
+              { title: 'Judge Analytics', desc: 'Win rates, motion grants, and case profiles for 90+ judges' },
+              { title: 'Case Comparison', desc: 'Compare up to 3 case types side by side' },
+              { title: 'Jargon Translator', desc: 'Convert legal text to plain English instantly' },
+              { title: 'NOS Explorer', desc: 'Browse and filter all 84 federal case type codes' },
+              { title: 'Trend Analysis', desc: 'Year-over-year filing and outcome trends' },
+            ].map((feature, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: '20px',
+                  borderRadius: '2px',
+                  border: '2px solid #D5D8DC',
+                  background: '#FFFFFF',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#07874A"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
+                </div>
+                <h3
+                  style={{
+                    fontSize: '14px',
+                    fontWeight: '700',
+                    color: '#212529',
+                    fontFamily: 'var(--font-display)',
+                    margin: 0,
+                    textAlign: 'center',
+                  }}
+                >
+                  {feature.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: '12px',
+                    color: '#455A64',
+                    fontFamily: 'var(--font-body)',
+                    margin: 0,
+                    textAlign: 'center',
+                    lineHeight: '1.4',
+                  }}
+                >
+                  {feature.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Billing Toggle */}
         <div
           style={{
@@ -781,6 +935,85 @@ export default function PricingPage() {
               onCheckout={handleCheckout}
             />
           ))}
+        </div>
+
+        {/* Launch FAQ Mini-Section */}
+        <div style={{ marginBottom: '80px' }}>
+          <h2
+            style={{
+              fontSize: '24px',
+              fontWeight: '700',
+              textAlign: 'center',
+              marginBottom: '40px',
+              color: '#212529',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            Frequently Asked
+          </h2>
+
+          <div
+            style={{
+              maxWidth: '800px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '16px',
+            }}
+          >
+            {[
+              {
+                q: 'Is it really free?',
+                a: 'Yes, all features are free during launch. No hidden fees, no limits, and no credit card required. We\'ll announce any pricing changes well in advance.',
+              },
+              {
+                q: 'Do I need an account?',
+                a: 'No account required for most features. You can start searching and generating reports immediately. Sign up to save reports and set up alerts.',
+              },
+              {
+                q: 'Will prices change?',
+                a: 'We\'ll give you plenty of notice before any pricing changes. Your free access during launch is guaranteed, and early users will have special grandfathering options.',
+              },
+              {
+                q: 'Is my data private?',
+                a: 'We collect minimal analytics and never sell your search data. Your research stays private and secure. Read our full privacy policy for details.',
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: '24px',
+                  borderRadius: '2px',
+                  border: '1px solid #D5D8DC',
+                  background: '#FFFFFF',
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: '14px',
+                    fontWeight: '700',
+                    marginBottom: '12px',
+                    color: '#212529',
+                    fontFamily: 'var(--font-display)',
+                  }}
+                >
+                  {item.q}
+                </h3>
+                <p
+                  style={{
+                    fontSize: '13px',
+                    lineHeight: '1.6',
+                    color: '#455A64',
+                    fontFamily: 'var(--font-body)',
+                    margin: 0,
+                  }}
+                >
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Compare All Features Section */}
@@ -1084,6 +1317,126 @@ export default function PricingPage() {
                   </p>
                 </div>
               </details>
+            ))}
+          </div>
+        </div>
+
+        {/* Explore Our Tools CTA Section */}
+        <div style={{ marginBottom: '80px' }}>
+          <h2
+            style={{
+              fontSize: '28px',
+              fontWeight: '700',
+              textAlign: 'center',
+              marginBottom: '48px',
+              color: '#212529',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            Explore Our Tools
+          </h2>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '20px',
+            }}
+          >
+            {[
+              {
+                title: 'Settlement Calculator',
+                desc: 'Estimate settlement ranges with 9 input factors based on federal court data.',
+                href: '/calculator',
+              },
+              {
+                title: 'Case Search',
+                desc: 'Search outcomes across all 94 federal districts and 84 case types.',
+                href: '/search',
+              },
+              {
+                title: 'Judge Analytics',
+                desc: 'Review win rates, motion grants, and detailed profiles for 90+ judges.',
+                href: '/judges',
+              },
+              {
+                title: 'Case Comparison',
+                desc: 'Compare up to 3 case types side-by-side to understand outcome differences.',
+                href: '/compare',
+              },
+            ].map((tool, i) => (
+              <Link
+                key={i}
+                href={tool.href}
+                style={{
+                  padding: '28px 24px',
+                  borderRadius: '2px',
+                  border: '1px solid #D5D8DC',
+                  background: '#FFFFFF',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  transition: 'all 200ms ease',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)';
+                  e.currentTarget.style.borderColor = '#006997';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+                  e.currentTarget.style.borderColor = '#D5D8DC';
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: '16px',
+                    fontWeight: '700',
+                    color: '#006997',
+                    fontFamily: 'var(--font-display)',
+                    margin: 0,
+                  }}
+                >
+                  {tool.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: '13px',
+                    lineHeight: '1.5',
+                    color: '#455A64',
+                    fontFamily: 'var(--font-body)',
+                    margin: 0,
+                    flexGrow: 1,
+                  }}
+                >
+                  {tool.desc}
+                </p>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '12px',
+                    fontWeight: '600',
+                    color: '#006997',
+                    fontFamily: 'var(--font-body)',
+                    marginTop: '8px',
+                  }}
+                >
+                  Explore
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
