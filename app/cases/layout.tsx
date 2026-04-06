@@ -4,10 +4,10 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Federal Case Categories — 84 Case Types | MyCaseValue',
+  title: 'Federal Case Categories — 84 Case Types',
   description: 'Browse 84 federal case types across 10 categories. Win rates, settlement ranges, timelines, and judge analytics for employment, personal injury, civil rights, and more.',
   openGraph: {
-    title: 'Federal Case Categories — 84 Case Types | MyCaseValue',
+    title: 'Federal Case Categories — 84 Case Types',
     description: 'Browse 84 federal case types across 10 categories. Win rates, settlement ranges, timelines, and judge analytics.',
     url: `${SITE_URL}/cases`,
   },

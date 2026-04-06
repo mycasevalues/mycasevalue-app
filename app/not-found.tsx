@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { SearchIcon } from '../components/ui/Icons';
 
 export const metadata: Metadata = {
-  title: '404 — Page Not Found | MyCaseValue',
+  title: '404 — Page Not Found',
   description: 'The page you are looking for does not exist. Return to MyCaseValue to research federal court outcome data.',
 };
 

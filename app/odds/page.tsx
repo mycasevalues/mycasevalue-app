@@ -7,7 +7,7 @@ import { SITS, STATES } from '../../lib/data';
 // Note: Metadata cannot be exported from client components
 // For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
 // Metadata content for this page:
-// title: "Predict Your Case Outcome — Real Win Rates | MyCaseValue"
+// title: "Predict Your Case Outcome — Real Win Rates"
 // description: "Check your case odds with real federal court data. See win rates, settlement statistics, and case outcome distributions for your case type and district."
 
 interface QuickStatsResponse {

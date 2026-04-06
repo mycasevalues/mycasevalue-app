@@ -4,7 +4,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Legal Glossary — Federal Court Terms & Definitions | MyCaseValue',
+  title: 'Legal Glossary — Federal Court Terms & Definitions',
   description: 'Plain-English definitions of federal court terms including NOS codes, PACER, settlements, win rates, and more.',
   alternates: { canonical: `${SITE_URL}/glossary` },
   openGraph: {

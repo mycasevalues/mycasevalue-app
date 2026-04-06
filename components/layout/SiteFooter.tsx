@@ -14,7 +14,7 @@ const FOOTER_COLUMNS = [
       { label: 'Case types', href: '/cases' },
       { label: 'Districts', href: '/districts' },
       { label: 'Judge statistics', href: '/judges' },
-      { label: 'Settlement data', href: '/settlements' },
+      { label: 'Settlement data', href: '/cases' },
     ],
   },
   {
@@ -165,19 +165,17 @@ export default function SiteFooter() {
           }}>
             Ready to research your case?
           </p>
-          <Link href="/search" style={{
-            background: '#E8171F',
-            color: '#FFFFFF',
-            padding: '11px 28px',
-            borderRadius: '2px',
+          <Link href="/sign-up" style={{
+            background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+            color: '#FAFBFC',
+            padding: '0.75rem 1.5rem',
+            borderRadius: '0.25rem',
             textDecoration: 'none',
             fontFamily: 'var(--font-body)',
             fontWeight: 600,
-            fontSize: '13px',
+            fontSize: '1rem',
             transition: 'background 150ms ease-out',
             display: 'inline-block',
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em',
           }} className="site-footer-cta-button">
             Start Free Trial
           </Link>
@@ -333,8 +331,7 @@ export default function SiteFooter() {
           background: rgba(255, 255, 255, 0.1) !important;
         }
         .site-footer-cta-button:hover {
-          background: #CC1019 !important;
-          transform: translateY(-1px);
+          background: linear-gradient(to right, #dd2c00 0%, #d91b5a 100%) !important;
         }
         @media (max-width: 768px) {
           .site-footer-grid {

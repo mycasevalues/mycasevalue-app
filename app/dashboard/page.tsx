@@ -9,7 +9,7 @@ import SidebarNav from '../../components/SidebarNav';
 import { SearchIcon } from '../../components/ui/Icons';
 
 export const metadata: Metadata = {
-  title: 'Dashboard | MyCaseValue',
+  title: 'Dashboard',
   description: 'Your MyCaseValue dashboard with case reports, research activity, and subscription information.',
   robots: { index: false, follow: false },
 };

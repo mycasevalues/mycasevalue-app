@@ -50,11 +50,11 @@ export async function generateMetadata({
   const description = `Federal court outcome report for ${label} cases. See win rates, settlement data, case timelines, recovery ranges, and detailed case analytics from 5.1M+ federal court records.`;
 
   return {
-    title: `${label} Report | MyCaseValue`,
+    title: `${label} Report`,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${label} — Federal Court Case Report | MyCaseValue`,
+      title: `${label} — Federal Court Case Report`,
       description,
       type: 'article',
       siteName: 'MyCaseValue',
@@ -388,7 +388,7 @@ export default async function ReportPage({
 
           <ShareButtons
             url={`https://www.mycasevalues.com/report/${nos}`}
-            title={`${label} — Federal Court Outcome Data | MyCaseValue`}
+            title={`${label} — Federal Court Outcome Data`}
           />
 
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 16 }}>

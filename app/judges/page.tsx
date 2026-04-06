@@ -6,11 +6,11 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Federal Judge Intelligence | MyCaseValue',
+  title: 'Federal Judge Intelligence',
   description: 'Research federal judges across all 13 circuits and 94 districts. Motion grant rates, case duration, plaintiff win rates, and ruling pattern analytics.',
   alternates: { canonical: `${SITE_URL}/judges` },
   openGraph: {
-    title: 'Federal Judge Intelligence | MyCaseValue',
+    title: 'Federal Judge Intelligence',
     description: 'Research federal judges across all 13 circuits and 94 districts. Motion grant rates, case duration, and ruling analytics.',
     type: 'website',
     url: `${SITE_URL}/judges`,

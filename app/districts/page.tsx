@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'All 94 federal judicial districts across 13 circuits. Explore case outcomes, win rates, and settlement data by district.',
   alternates: { canonical: `${SITE_URL}/districts` },
   openGraph: {
-    title: 'Federal Court Districts | MyCaseValue',
+    title: 'Federal Court Districts',
     description: 'All 94 federal judicial districts across 13 circuits.',
     type: 'website',
     url: `${SITE_URL}/districts`,

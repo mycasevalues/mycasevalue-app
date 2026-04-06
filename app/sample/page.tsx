@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Employment Discrimination Sample Report — S.D.N.Y. | MyCaseValue',
+  title: 'Employment Discrimination Sample Report — S.D.N.Y.',
   description:
     'Explore sample analytics for employment discrimination cases in the Southern District of New York. Win rates, settlement ranges, judge analytics, and more.',
   openGraph: {
-    title: 'Employment Discrimination Sample Report — S.D.N.Y. | MyCaseValue',
+    title: 'Employment Discrimination Sample Report — S.D.N.Y.',
     description:
       'Explore sample analytics for employment discrimination cases in the Southern District of New York.',
     url: 'https://www.mycasevalues.com/sample',

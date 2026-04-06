@@ -61,24 +61,23 @@ export default function ServerHero() {
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <a href="/search" className="hero-cta-primary" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '14px 32px', background: '#E8171F', color: '#FFFFFF',
-                borderRadius: '2px', fontWeight: 700, fontSize: '14px',
+                padding: '1rem 1.5rem', background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)', color: '#FAFBFC',
+                borderRadius: '0.25rem', fontWeight: 600, fontSize: '1.25rem',
                 fontFamily: 'var(--font-display)', textDecoration: 'none',
-                textTransform: 'uppercase', letterSpacing: '0.04em',
                 transition: 'background 200ms',
               }}>
-                Search Cases
+                Start free trial
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a href="/pricing" style={{
+              <a href="/attorney" style={{
                 display: 'inline-flex', alignItems: 'center',
-                padding: '14px 28px', background: 'transparent', color: '#FFFFFF',
-                border: '1px solid rgba(255,255,255,0.3)', borderRadius: '2px',
-                fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)',
-                textDecoration: 'none', letterSpacing: '0.02em',
+                padding: '1rem 1.5rem', background: 'transparent', color: '#FAFBFC',
+                border: '2px solid rgba(255,255,255,0.4)', borderRadius: '0.25rem',
+                fontWeight: 600, fontSize: '1rem', fontFamily: 'var(--font-display)',
+                textDecoration: 'none',
                 transition: 'all 200ms',
               }} className="hero-cta-secondary">
-                View Plans
+                Upgrade to Attorney Mode
               </a>
             </div>
 
@@ -110,7 +109,7 @@ export default function ServerHero() {
 
         {/* Hover styles */}
         <style>{`
-          .hero-cta-primary:hover { background: #CC1019 !important; }
+          .hero-cta-primary:hover { background: linear-gradient(to right, #dd2c00 0%, #d91b5a 100%) !important; }
           .hero-cta-secondary:hover {
             background: rgba(255,255,255,0.08) !important;
             border-color: rgba(255,255,255,0.5) !important;
@@ -275,13 +274,13 @@ export default function ServerHero() {
           <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto 28px', lineHeight: 1.7 }}>
             Everything case research touches, connected in one place. Explore outcomes, develop strategy, and make informed decisions.
           </p>
-          <a href="/search" style={{
+          <a href="/search" className="hero-cta-primary" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
-            padding: '14px 32px', background: '#E8171F', color: '#FFFFFF', borderRadius: '2px',
-            fontWeight: 700, fontSize: '14px', textDecoration: 'none', textTransform: 'uppercase',
-            letterSpacing: '0.04em', fontFamily: 'var(--font-display)', transition: 'background 200ms',
+            padding: '1rem 1.5rem', background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)', color: '#FAFBFC', borderRadius: '0.25rem',
+            fontWeight: 600, fontSize: '1.25rem', textDecoration: 'none',
+            fontFamily: 'var(--font-display)', transition: 'background 200ms',
           }}>
-            Start Researching
+            Start free trial
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>

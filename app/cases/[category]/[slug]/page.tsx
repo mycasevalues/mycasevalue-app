@@ -39,7 +39,7 @@ export async function generateMetadata({
     };
   }
 
-  const title = `${caseType.label} — Federal Court Outcomes & Win Rates | MyCaseValue`;
+  const title = `${caseType.label} — Federal Court Outcomes & Win Rates`;
   const description = caseType.description.substring(0, 160) + '...';
   const canonical = `https://mycasevalues.com/cases/${category}/${slug}`;
 

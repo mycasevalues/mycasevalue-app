@@ -36,7 +36,7 @@ export async function generateMetadata(
     };
   }
 
-  const title = `${state.label} Federal Court Data — Win Rates & Settlement Ranges | MyCaseValue`;
+  const title = `${state.label} Federal Court Data — Win Rates & Settlement Ranges`;
   const description = `Research federal court outcomes in ${state.label}. See win rates, median case duration, settlement percentages, and case statistics from public court records.`;
   const canonical = `${SITE_URL}/districts/${slug}`;
 
@@ -45,7 +45,7 @@ export async function generateMetadata(
     description,
     alternates: { canonical },
     openGraph: {
-      title: `${state.label} Federal Court Statistics | MyCaseValue`,
+      title: `${state.label} Federal Court Statistics`,
       description,
       url: canonical,
       type: 'website',

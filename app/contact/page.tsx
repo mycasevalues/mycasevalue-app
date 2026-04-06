@@ -6,7 +6,7 @@ import { SITE_URL } from '../../lib/site-config';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Contact Us | MyCaseValue',
+  title: 'Contact Us',
   description: 'Get in touch with the MyCaseValue team for support, enterprise inquiries, or data methodology questions.',
   alternates: { canonical: `${SITE_URL}/contact` },
 };

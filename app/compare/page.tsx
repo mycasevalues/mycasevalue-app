@@ -9,7 +9,7 @@ import { REAL_DATA } from '../../lib/realdata';
 // Note: Metadata cannot be exported from client components.
 // For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
 // Metadata content for this page:
-// title: "Compare Case Types — Federal Court Outcomes | MyCaseValue"
+// title: "Compare Case Types — Federal Court Outcomes"
 // description: "Compare win rates, settlement rates, and outcomes across different federal case types. Analyze up to 3 case types side by side using real federal court data."
 
 const allTypes = SITS.flatMap(cat =>

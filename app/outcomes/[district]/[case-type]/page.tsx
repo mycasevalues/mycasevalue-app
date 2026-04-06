@@ -61,7 +61,7 @@ export async function generateMetadata({
   }
 
   const caseTypeName = option.label;
-  const title = `${caseTypeName} Cases in ${stateName} — Win Rates & Outcomes | MyCaseValue`;
+  const title = `${caseTypeName} Cases in ${stateName} — Win Rates & Outcomes`;
   const description = `Research ${caseTypeName} outcomes in ${stateName} federal courts. See real win rates, settlement data, case timelines, and recovery ranges from public court records.`;
   const canonical = `${SITE_URL}/outcomes/${district}/${caseTypeSlug}`;
 

@@ -9,7 +9,7 @@ import { SITE_URL } from '../../lib/site-config';
 // Note: Metadata cannot be exported from client components.
 // For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
 // Metadata content for this page:
-// title: "Settlement Calculator — Estimate Case Value | MyCaseValue"
+// title: "Settlement Calculator — Estimate Case Value"
 // description: "Use our free federal court settlement calculator to estimate your case value based on federal judicial data, case type, and district. Get instant estimates."
 
 const slideUpFadeIn = `

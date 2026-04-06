@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Document Intelligence | MyCaseValue',
+  title: 'Document Intelligence',
   description: 'AI-powered legal document analysis tool',
   robots: { index: false },
   openGraph: {
-    title: 'Document Intelligence | MyCaseValue',
+    title: 'Document Intelligence',
     description: 'AI-powered legal document analysis tool',
     url: 'https://www.mycasevalues.com/attorney/document-intelligence',
   },

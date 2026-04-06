@@ -1053,7 +1053,7 @@ export default function ServerContent() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '24px' }}>
             <a
-              href="/free-trial"
+              href="/search"
               className="cta-btn-primary"
               style={{
                 display: 'inline-flex',
@@ -1078,7 +1078,7 @@ export default function ServerContent() {
               Start Free Trial
             </a>
             <a
-              href="/signin"
+              href="/sign-in"
               className="cta-btn-secondary"
               style={{
                 display: 'inline-flex',

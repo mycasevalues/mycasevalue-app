@@ -215,7 +215,7 @@ export default function SpanishPricingPage() {
           </div>
 
           {/* Attorney Mode Card */}
-          <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+          <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/20"
             style={{
               borderRadius: '2px',
               borderColor: '#D5D8DC',

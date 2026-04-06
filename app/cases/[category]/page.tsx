@@ -176,7 +176,7 @@ export async function generateMetadata({
     ],
   };
 
-  const title = `${categoryNames[category]} | Federal Court Case Data & Win Rates | MyCaseValue`;
+  const title = `${categoryNames[category]} | Federal Court Case Data & Win Rates`;
   const description = categoryDescriptions[category];
 
   return {

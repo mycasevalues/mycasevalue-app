@@ -275,22 +275,20 @@ export default function SiteNav() {
                     Sign in
                   </Link>
                   <Link
-                    href="/search"
+                    href="/sign-up"
                     style={{
-                      padding: '8px 20px',
+                      padding: '0.75rem 1.5rem',
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: '#FFFFFF',
-                      background: '#E8171F',
-                      borderRadius: '2px',
+                      color: '#FAFBFC',
+                      background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+                      borderRadius: '0.25rem',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-display)',
                       transition: 'all 150ms',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
                     }}
                   >
-                    Sign Up
+                    Start Free Trial
                   </Link>
                 </>
               )}
@@ -390,13 +388,13 @@ export default function SiteNav() {
           {/* Center-Left: FREE TRIAL button */}
           <button
             style={{
-              background: '#E8171F',
-              color: '#FFFFFF',
+              background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+              color: '#FAFBFC',
               fontSize: '12px',
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: '0.04em',
               padding: '8px 20px',
-              borderRadius: '2px',
+              borderRadius: '0.25rem',
               border: 'none',
               cursor: 'pointer',
               textTransform: 'uppercase',

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `Judge ${judge.name} — ${judge.district} | MyCaseValue`;
+  const title = `Judge ${judge.name} — ${judge.district}`;
   const description = `Research Judge ${judge.name}'s ruling patterns, motion grant rates, and case outcomes. Appointed ${judge.appointedYear}. ${judge.stats.totalCases}+ cases analyzed from federal court records.`;
   const canonical = `${SITE_URL}/judges/${slug}`;
 

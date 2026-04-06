@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Case Results | MyCaseValue',
+  title: 'Case Results',
   description: 'View detailed case results and outcomes from the MyCaseValue database.',
   alternates: { canonical: `${SITE_URL}/results` },
   openGraph: {
-    title: 'Case Results | MyCaseValue',
+    title: 'Case Results',
     description: 'View detailed case results and outcomes from the MyCaseValue database.',
     type: 'website',
     url: `${SITE_URL}/results`,

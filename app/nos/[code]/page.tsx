@@ -53,7 +53,7 @@ export async function generateMetadata(
     };
   }
 
-  const title = `${nosInfo.label} (NOS ${code}) — Win Rates, Timelines & Outcomes | MyCaseValue`;
+  const title = `${nosInfo.label} (NOS ${code}) — Win Rates, Timelines & Outcomes`;
   const description = `Research ${nosInfo.label} federal court outcomes. See win rates, median case duration, settlement percentages, and recovery data from real court records. NOS code ${code}.`;
   const canonical = `${SITE_URL}/nos/${code}`;
 
@@ -62,7 +62,7 @@ export async function generateMetadata(
     description,
     alternates: { canonical },
     openGraph: {
-      title: `${nosInfo.label} — Federal Court Statistics | MyCaseValue`,
+      title: `${nosInfo.label} — Federal Court Statistics`,
       description,
       url: canonical,
       type: 'website',

@@ -77,9 +77,17 @@
   /* ── Z-INDEX ───────────────────────────────────────────── */
   --z-critical:   9999;
 
+  /* ── LINK COLOR (Lexis+ body link blue) ─────────────────── */
+  --color-link:           #006EBB;
+  --color-link-hover:     #E8171F;
+
+  /* ── CTA GRADIENT (Lexis+ exact) ───────────────────────── */
+  --gradient-cta:         linear-gradient(to right, #d91b5a 0%, #dd2c00 100%);
+  --gradient-cta-hover:   linear-gradient(to right, #dd2c00 0%, #d91b5a 100%);
+
   /* ── GRADIENT BACKGROUNDS ──────────────────────────────── */
   --gradient-hero: linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%);
-  --gradient-accent: linear-gradient(135deg, #E8171F 0%, #E8171F 100%);
+  --gradient-accent: linear-gradient(to right, #d91b5a 0%, #dd2c00 100%);
 }
 
 /* ═══════════════════════════════════════════════════════════

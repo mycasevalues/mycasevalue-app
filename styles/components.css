@@ -56,11 +56,11 @@
 
 /* Variants — LexisNexis Corporate */
 .mcv-btn--primary {
-  background: var(--accent-primary);
-  color: #FFFFFF;
+  background: var(--gradient-cta);
+  color: #FAFBFC;
 }
 .mcv-btn--primary:hover:not(:disabled) {
-  background: #CC1019;
+  background: var(--gradient-cta-hover);
 }
 
 .mcv-btn--secondary {
@@ -82,11 +82,11 @@
 }
 
 .mcv-btn--accent {
-  background: var(--gradient-accent);
-  color: #FFFFFF;
+  background: var(--gradient-cta);
+  color: #FAFBFC;
 }
 .mcv-btn--accent:hover:not(:disabled) {
-  background: #CC1019;
+  background: var(--gradient-cta-hover);
 }
 
 .mcv-btn--danger {

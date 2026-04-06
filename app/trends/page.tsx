@@ -13,10 +13,10 @@ const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'
 });
 
 export const metadata: Metadata = {
-  title: 'Case Trends | MyCaseValue',
+  title: 'Case Trends',
   description: 'Track federal court case outcome trends over time',
   openGraph: {
-    title: 'Case Trends | MyCaseValue',
+    title: 'Case Trends',
     description: 'Track federal court case outcome trends over time',
     url: `${SITE_URL}/trends`,
   },
