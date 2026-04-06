@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
+import { REAL_DATA } from '../../../lib/realdata';
 import { SITE_URL } from '../../../lib/site-config';
 
 // Helper function to flatten SITS and map NOS codes to display names
@@ -106,27 +107,43 @@ export default async function NOSPage({ params }: PageProps) {
   }
 
   const outcomeData = OUTCOME_DATA[code] || OUTCOME_DATA._default;
-  const totalOutcomes = (outcomeData.trial_win || 0) + (outcomeData.trial_loss || 0) + (outcomeData.dismiss || 0) + (outcomeData.fav_set || 0);
-  const winRate = totalOutcomes > 0
-    ? Math.round(((outcomeData.trial_win || 0) + (outcomeData.fav_set || 0)) / totalOutcomes * 100)
-    : 42;
-  const medianDuration = outcomeData.set_mo || 6;
-  const settleRate = totalOutcomes > 0
-    ? Math.round((outcomeData.fav_set || 0) / totalOutcomes * 100)
-    : 30;
+  const real = REAL_DATA[code];
 
-  // Outcome bars for visual chart (CSS-based)
-  const outcomes = [
-    { label: 'Settled', value: outcomeData.fav_set || 30, color: '#10B981' },
-    { label: 'Dismissed', value: outcomeData.dismiss || 53, color: '#455A64' },
-    { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#006997' },
-    { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: '#EF4444' },
-  ];
-  const totalOutcomesPercentage = outcomes.reduce((sum, o) => sum + o.value, 0);
-  const outcomePercentages = outcomes.map(o => ({
-    ...o,
-    percentage: totalOutcomesPercentage > 0 ? Math.round((o.value / totalOutcomesPercentage) * 100) : 0
-  }));
+  // Prefer REAL_DATA for stats when available
+  const totalCases = real?.total || 0;
+  const winRate = real?.wr != null ? Math.round(real.wr) : 42;
+  const medianDuration = real?.mo || outcomeData.set_mo || 6;
+  const settleRate = real?.sp != null ? Math.round(real.sp) : 30;
+
+  // Outcome bars: prefer REAL_DATA ends, fall back to OUTCOME_DATA
+  const outcomePercentages = real?.ends
+    ? real.ends.map((e: any) => ({
+        label: e.l,
+        value: e.p,
+        percentage: Math.round(e.p),
+        color: e.c,
+        count: e.n,
+      }))
+    : [
+        { label: 'Settled', value: outcomeData.fav_set || 30, color: '#10B981' },
+        { label: 'Dismissed', value: outcomeData.dismiss || 53, color: '#455A64' },
+        { label: 'Trial Win', value: outcomeData.trial_win || 10, color: '#006997' },
+        { label: 'Trial Loss', value: outcomeData.trial_loss || 7, color: '#EF4444' },
+      ].map(o => {
+        const total = [outcomeData.fav_set || 30, outcomeData.dismiss || 53, outcomeData.trial_win || 10, outcomeData.trial_loss || 7].reduce((s, v) => s + v, 0);
+        return { ...o, percentage: total > 0 ? Math.round((o.value / total) * 100) : 0 };
+      });
+
+  // Recovery range from REAL_DATA
+  const recoveryRange = real?.rng;
+
+  // Circuit court rates from REAL_DATA
+  const circuitRates = real?.circuit_rates;
+  const CIRCUIT_NAMES: Record<string, string> = {
+    '1': '1st', '2': '2nd', '3': '3rd', '4': '4th', '5': '5th',
+    '6': '6th', '7': '7th', '8': '8th', '9': '9th', '10': '10th',
+    '11': '11th', 'dc': 'D.C.',
+  };
 
   // Related NOS codes in same category
   const relatedCodes: { code: string; label: string; category?: string }[] = [];
@@ -205,7 +222,7 @@ export default async function NOSPage({ params }: PageProps) {
           {
             '@type': 'PropertyValue',
             name: 'Total Cases Tracked',
-            value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+',
+            value: totalCases > 0 ? totalCases.toLocaleString() : '500+',
           },
         ],
       },
@@ -513,7 +530,7 @@ export default async function NOSPage({ params }: PageProps) {
               { label: 'Win Rate', value: `${winRate}%`, color: '#E8171F' },
               { label: 'Median Duration', value: `${medianDuration} mo`, color: '#00172E' },
               { label: 'Settlement Rate', value: `${settleRate}%`, color: '#10B981' },
-              { label: 'Cases Tracked', value: totalOutcomes > 0 ? totalOutcomes.toLocaleString() : '500+', color: '#006997' },
+              { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: '#006997' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="stat-value" style={{ color: stat.color }}>
@@ -565,19 +582,122 @@ export default async function NOSPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Recovery Range */}
+      {recoveryRange && recoveryRange.md > 0 && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="content-box">
+              <h2 className="section-title">Recovery Range</h2>
+              <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
+                Typical monetary recovery for {nosInfo.label} cases (in thousands)
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+                {/* Visual range bar */}
+                <div style={{ flex: 1, position: 'relative', height: '40px' }}>
+                  <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: '#F0F3F5', borderRadius: '4px' }} />
+                  <div style={{
+                    position: 'absolute',
+                    top: '16px',
+                    left: `${Math.min((recoveryRange.lo / recoveryRange.hi) * 100, 95)}%`,
+                    right: `${Math.max(100 - 100, 0)}%`,
+                    height: '8px',
+                    background: 'linear-gradient(90deg, #006997, #E8171F)',
+                    borderRadius: '4px',
+                  }} />
+                </div>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center' }}>
+                <div>
+                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>25th Percentile</div>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#006997', fontFamily: 'var(--font-mono)' }}>${recoveryRange.lo}K</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>Median</div>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)' }}>${recoveryRange.md}K</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>75th Percentile</div>
+                  <div style={{ fontSize: '24px', fontWeight: 700, color: '#006997', fontFamily: 'var(--font-mono)' }}>${recoveryRange.hi}K</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Circuit Court Win Rates */}
+      {circuitRates && Object.keys(circuitRates).length > 0 && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="content-box">
+              <h2 className="section-title">Win Rate by Circuit</h2>
+              <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
+                Plaintiff win rates for {nosInfo.label} cases across federal circuits
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '12px' }}>
+                {Object.entries(circuitRates)
+                  .sort(([, a], [, b]) => (b as number) - (a as number))
+                  .map(([circuit, rate]) => {
+                    const wr = rate as number;
+                    return (
+                      <div key={circuit} style={{
+                        padding: '12px 16px',
+                        background: '#FAFBFC',
+                        border: '1px solid #E5EBF0',
+                        borderRadius: '2px',
+                      }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                          <span style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>
+                            {CIRCUIT_NAMES[circuit] || circuit} Circuit
+                          </span>
+                          <span style={{
+                            fontSize: '14px',
+                            fontWeight: 700,
+                            color: wr >= winRate ? '#07874A' : '#E8171F',
+                            fontFamily: 'var(--font-mono)',
+                          }}>
+                            {wr}%
+                          </span>
+                        </div>
+                        <div style={{ height: '4px', background: '#E5EBF0', borderRadius: '2px', overflow: 'hidden' }}>
+                          <div style={{
+                            height: '100%',
+                            width: `${Math.min(wr, 100)}%`,
+                            background: wr >= winRate ? '#07874A' : '#E8171F',
+                            borderRadius: '2px',
+                          }} />
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Related Case Types */}
       {relatedCodes.length > 0 && (
         <section className="px-4 sm:px-6 lg:px-8 pb-12">
           <div className="max-w-6xl mx-auto">
             <h2 className="section-title">Similar Case Types</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {relatedCodes.map((rel) => (
-                <Link key={rel.code} href={`/nos/${rel.code}`} className="related-card">
-                  <div className="related-card-code">NOS {rel.code}</div>
-                  <div className="related-card-name">{rel.label}</div>
-                  {rel.category && <div className="related-card-category">{rel.category}</div>}
-                </Link>
-              ))}
+              {relatedCodes.map((rel) => {
+                const relData = REAL_DATA[rel.code];
+                return (
+                  <Link key={rel.code} href={`/nos/${rel.code}`} className="related-card">
+                    <div className="related-card-code">NOS {rel.code}</div>
+                    <div className="related-card-name">{rel.label}</div>
+                    {relData && relData.total > 0 && (
+                      <div style={{ display: 'flex', gap: '12px', marginTop: '8px', fontSize: '12px', color: '#455A64' }}>
+                        <span style={{ fontWeight: 600, color: relData.wr >= 50 ? '#07874A' : '#E8171F' }}>{relData.wr}% win</span>
+                        <span>{relData.sp}% settle</span>
+                        <span>{relData.total.toLocaleString()} cases</span>
+                      </div>
+                    )}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>
