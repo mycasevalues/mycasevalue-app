@@ -81,6 +81,7 @@ export default function SearchPage() {
   const [query, setQuery] = useState('');
   const [recentItems, setRecentItems] = useState<RecentItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   useEffect(() => {
     try {
@@ -115,37 +116,46 @@ export default function SearchPage() {
     ? (() => {
         const q = query.toLowerCase().trim();
         const words = q.split(/\s+/).filter(w => w.length > 0);
-        const scored = allTypes.map(t => {
-          let score = 0;
-          const label = t.label.toLowerCase();
-          const cat = t.categoryName.toLowerCase();
-          const desc = t.desc.toLowerCase();
+        const scored = allTypes
+          .filter(t => !selectedCategory || t.category === selectedCategory)
+          .map(t => {
+            let score = 0;
+            const label = t.label.toLowerCase();
+            const cat = t.categoryName.toLowerCase();
+            const desc = t.desc.toLowerCase();
 
-          // Exact NOS code match = highest priority
-          if (t.nos === q || t.nos === q.replace(/^0+/, '')) score += 100;
+            // Exact NOS code match = highest priority
+            if (t.nos === q || t.nos === q.replace(/^0+/, '')) score += 100;
 
-          // Full query substring matches
-          if (label.includes(q)) score += 30;
-          if (cat.includes(q)) score += 15;
-          if (desc.includes(q)) score += 10;
+            // Full query substring matches
+            if (label.includes(q)) score += 30;
+            if (cat.includes(q)) score += 15;
+            if (desc.includes(q)) score += 10;
 
-          // Individual word matches (fuzzy multi-word)
-          for (const word of words) {
-            if (label.includes(word)) score += 8;
-            if (cat.includes(word)) score += 4;
-            if (desc.includes(word)) score += 2;
-            // Word-start bonus (e.g., "wrong" matching "Wrongful")
-            if (label.split(/\s+/).some(w => w.startsWith(word))) score += 5;
-          }
+            // Individual word matches (fuzzy multi-word)
+            for (const word of words) {
+              if (label.includes(word)) score += 8;
+              if (cat.includes(word)) score += 4;
+              if (desc.includes(word)) score += 2;
+              // Word-start bonus (e.g., "wrong" matching "Wrongful")
+              if (label.split(/\s+/).some(w => w.startsWith(word))) score += 5;
+            }
 
-          return { ...t, score };
-        })
+            return { ...t, score };
+          })
           .filter(t => t.score > 0)
           .sort((a, b) => b.score - a.score)
           .slice(0, 20);
         return scored;
       })()
     : [];
+
+  // Category counts for sidebar
+  const categories = SITS.map(cat => ({
+    id: cat.id,
+    label: cat.label,
+    count: cat.opts.length,
+  }));
 
   return (
     <main style={{ fontFamily: 'var(--font-body)', background: '#F5F6F7', minHeight: '100vh' }}>
@@ -174,8 +184,12 @@ export default function SearchPage() {
           .search-header p {
             font-size: 16px !important;
           }
-          .search-container {
-            padding: 32px 20px !important;
+          .search-layout {
+            grid-template-columns: 1fr !important;
+            padding: 24px 20px !important;
+          }
+          .search-sidebar {
+            display: none !important;
           }
         }
       `}</style>
@@ -208,8 +222,50 @@ export default function SearchPage() {
         </div>
       </div>
 
-      {/* Content area below header */}
-      <div className="search-container" style={{ maxWidth: '720px', margin: '0 auto', padding: '64px 24px', fontFamily: 'var(--font-body)' }}>
+      {/* Content area below header — sidebar + main */}
+      <div className="search-layout" style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px', display: 'grid', gridTemplateColumns: '220px 1fr', gap: '32px', fontFamily: 'var(--font-body)' }}>
+        {/* Left sidebar — category filters */}
+        <aside className="search-sidebar" style={{ position: 'sticky', top: '128px', alignSelf: 'start' }}>
+          <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            Filter by Category
+          </p>
+          <button
+            onClick={() => setSelectedCategory(null)}
+            style={{
+              display: 'block', width: '100%', textAlign: 'left',
+              padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === null ? 700 : 400,
+              color: selectedCategory === null ? '#E8171F' : '#455A64',
+              background: selectedCategory === null ? 'rgba(232,23,31,0.06)' : 'transparent',
+              border: 'none', borderLeft: selectedCategory === null ? '3px solid #E8171F' : '3px solid transparent',
+              cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
+              marginBottom: '2px',
+            }}
+          >
+            All Categories
+          </button>
+          {categories.map(cat => (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id === selectedCategory ? null : cat.id)}
+              style={{
+                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                width: '100%', textAlign: 'left',
+                padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === cat.id ? 700 : 400,
+                color: selectedCategory === cat.id ? '#E8171F' : '#455A64',
+                background: selectedCategory === cat.id ? 'rgba(232,23,31,0.06)' : 'transparent',
+                border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid #E8171F' : '3px solid transparent',
+                cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
+                marginBottom: '2px',
+              }}
+            >
+              <span>{cat.label}</span>
+              <span style={{ fontSize: '11px', color: '#999', fontFamily: 'var(--font-mono)' }}>{cat.count}</span>
+            </button>
+          ))}
+        </aside>
+
+        {/* Main content */}
+        <div className="search-main">
         {/* Recently viewed */}
       {query.length === 0 && recentItems.length > 0 && (
         <div style={{ marginBottom: '24px' }}>
@@ -437,6 +493,7 @@ export default function SearchPage() {
           </div>
         </div>
       )}
+      </div>
       </div>
     </main>
   );
