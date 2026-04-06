@@ -20,7 +20,7 @@ const HomeIcon = () => (
   >
     <path
       d="M1 7V12.5C1 12.7761 1.22386 13 1.5 13H5V9H9V13H12.5C12.7761 13 13 12.7761 13 12.5V7M1 7L7 1.5L13 7M1 7H2.5M11.5 7V3.5"
-      stroke="#006997"
+      stroke="#6D28D9"
       strokeWidth="1.2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -52,7 +52,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         className="breadcrumbs-container"
         aria-label="Breadcrumb"
         style={{
-          padding: '12px 0',
+          padding: '0.75rem 0 0.5rem 0',
           display: 'flex',
           alignItems: 'center',
           flexWrap: 'wrap',
@@ -82,7 +82,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                         display: 'inline-flex',
                         alignItems: 'center',
                         textDecoration: 'none',
-                        color: '#006997',
+                        color: '#6D28D9',
                         fontFamily: 'var(--font-body)',
                       }}
                       title={item.label}
@@ -109,14 +109,14 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                 <span
                   className="breadcrumbs-separator"
                   style={{
-                    color: '#455A64',
+                    color: '#9CA3AF',
                     margin: '0 8px',
                     fontSize: '13px',
                     fontFamily: 'var(--font-body)',
                   }}
                   aria-hidden="true"
                 >
-                  ›
+                  /
                 </span>
               )}
 
@@ -125,7 +125,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   className="breadcrumbs-current"
                   style={{
                     fontSize: '13px',
-                    color: '#455A64',
+                    color: '#111827',
                     fontWeight: '500',
                     fontFamily: 'var(--font-body)',
                   }}
@@ -139,7 +139,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   className="breadcrumbs-link"
                   style={{
                     fontSize: '13px',
-                    color: '#006997',
+                    color: '#6D28D9',
                     textDecoration: 'none',
                     fontFamily: 'var(--font-body)',
                   }}

@@ -73,7 +73,7 @@ export default function SiteFooter() {
       className="site-footer"
       role="contentinfo"
       style={{
-        background: '#00172E',
+        background: '#1B3A5C',
         backdropFilter: undefined,
         WebkitBackdropFilter: undefined,
         borderTop: 'none',
@@ -184,7 +184,7 @@ export default function SiteFooter() {
             Ready to research your case?
           </p>
           <Link href="/sign-up" style={{
-            background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+            background: '#7C3AED',
             color: '#FAFBFC',
             padding: '0.75rem 1.5rem',
             borderRadius: '0.25rem',
@@ -367,7 +367,7 @@ export default function SiteFooter() {
           background: rgba(255, 255, 255, 0.1) !important;
         }
         .site-footer-cta-button:hover {
-          background: linear-gradient(to right, #dd2c00 0%, #d91b5a 100%) !important;
+          background: #6D28D9 !important;
         }
         @media (max-width: 768px) {
           .site-footer-grid {
