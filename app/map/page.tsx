@@ -452,77 +452,90 @@ export default function DistrictHeatmapPage() {
                 marginBottom: '48px',
               }}
             >
-              {filteredStates.map((state) => (
-                <div
-                  key={state.code}
-                  className="state-card"
-                  style={{
-                    padding: '16px',
-                    borderRadius: '2px',
-                    border: '1px solid #D5D8DC',
-                    backgroundColor: '#FFFFFF',
-                    boxSizing: 'border-box',
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <div>
+              {filteredStates.map((state) => {
+                const barColor = state.winRate >= 55 ? '#07874A' : state.winRate < 45 ? '#E8171F' : '#006997';
+                const districtSlug = state.code.toLowerCase();
+                return (
+                  <a
+                    key={state.code}
+                    href={`/districts/${districtSlug}`}
+                    className="state-card"
+                    style={{
+                      padding: '16px',
+                      borderRadius: '2px',
+                      border: '1px solid #D5D8DC',
+                      backgroundColor: '#FFFFFF',
+                      boxSizing: 'border-box',
+                      textDecoration: 'none',
+                      display: 'block',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                      <div>
+                        <p
+                          style={{
+                            fontSize: '16px',
+                            fontWeight: '600',
+                            color: '#212529',
+                            margin: 0,
+                            marginBottom: '4px',
+                            fontFamily: 'var(--font-body)',
+                          }}
+                        >
+                          {state.name}
+                        </p>
+                        <p
+                          style={{
+                            fontSize: '11px',
+                            color: '#455A64',
+                            margin: 0,
+                            fontFamily: 'var(--font-mono)',
+                          }}
+                        >
+                          {state.code}
+                        </p>
+                      </div>
                       <p
                         style={{
-                          fontSize: '16px',
-                          fontWeight: '600',
-                          color: '#212529',
-                          margin: 0,
-                          marginBottom: '4px',
-                          fontFamily: 'var(--font-body)',
-                        }}
-                      >
-                        {state.name}
-                      </p>
-                      <p
-                        style={{
-                          fontSize: '11px',
-                          color: '#455A64',
+                          fontSize: '24px',
+                          fontWeight: '700',
+                          color: barColor,
                           margin: 0,
                           fontFamily: 'var(--font-mono)',
                         }}
                       >
-                        {state.code}
+                        {state.winRate.toFixed(1)}%
                       </p>
                     </div>
-                    <p
-                      style={{
-                        fontSize: '24px',
-                        fontWeight: '700',
-                        color: '#212529',
-                        margin: 0,
-                        fontFamily: 'var(--font-display)',
-                      }}
-                    >
-                      {state.winRate.toFixed(1)}%
-                    </p>
-                  </div>
 
-                  <div style={{ width: '100%', backgroundColor: '#E8E8E8', borderRadius: '2px', height: '8px', overflow: 'hidden', marginBottom: '8px' }}>
-                    <div
-                      style={{
-                        height: '100%',
-                        width: `${state.winRate}%`,
-                        backgroundColor: '#E8171F',
-                        borderRadius: '2px',
-                        transition: 'width 0.3s ease',
-                      }}
-                    />
-                  </div>
+                    <div style={{ width: '100%', backgroundColor: '#F0F3F5', borderRadius: '2px', height: '6px', overflow: 'hidden', marginBottom: '8px' }}>
+                      <div
+                        style={{
+                          height: '100%',
+                          width: `${state.winRate}%`,
+                          backgroundColor: barColor,
+                          borderRadius: '2px',
+                          transition: 'width 0.3s ease',
+                        }}
+                      />
+                    </div>
 
-                  <p style={{ fontSize: '11px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
-                    {state.winRate < 45
-                      ? 'Below average'
-                      : state.winRate <= 52
-                        ? 'Near average'
-                        : 'Above average'}
-                  </p>
-                </div>
-              ))}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <p style={{ fontSize: '11px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+                        {state.winRate < 45
+                          ? 'Below average'
+                          : state.winRate <= 52
+                            ? 'Near average'
+                            : 'Above average'}
+                      </p>
+                      <span style={{ fontSize: '11px', color: '#006997', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+                        View details →
+                      </span>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           ) : (
             <div style={{ textAlign: 'center', padding: '48px 16px' }}>
