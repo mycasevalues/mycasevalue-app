@@ -1,11 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { REAL_DATA } from '../../../../lib/realdata';
-import { validateNOSCode, validateState, validateEnum } from '../../../../lib/sanitize';
+import { validateNOSCode, validateState, validateEnum, sanitizeForPrompt } from '../../../../lib/sanitize';
 
 /**
  * AI Case Outcome Predictor API
  * Uses real federal court statistics to generate predictions
+ * Optionally enhanced with Claude AI analysis
  */
+
+export const dynamic = 'force-dynamic';
 
 type PredictionInput = {
   caseType: string;     // NOS code
@@ -150,6 +153,67 @@ function calculatePrediction(input: PredictionInput) {
   };
 }
 
+/**
+ * Get AI-generated strategic insights for the case prediction
+ */
+async function getAIInsights(prediction: any, input: PredictionInput): Promise<string> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    return '';
+  }
+
+  try {
+    const nosData = REAL_DATA[input.caseType];
+    const context = `
+Case Type: ${prediction.caseType}
+Win Rate: ${prediction.predictedWinRate}%
+Settlement Rate: ${prediction.predictedSettlementRate}%
+Predicted Duration: ${prediction.predictedDurationMonths} months
+Settlement Range: $${prediction.settlementRange.low}K - $${prediction.settlementRange.high}K
+Represented: ${input.hasAttorney ? 'Yes' : 'Pro Se'}
+Case Strength: ${input.caseStrength}
+Sample Size: ${prediction.sampleSize.toLocaleString()} cases
+Win Rate in Category: ${nosData?.wr ?? 55}%
+Settlement Rate in Category: ${nosData?.sp ?? 42}%
+`.trim();
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      signal: controller.signal,
+      headers: {
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 300,
+        system: `You are an expert litigation strategist. Provide 2-3 key strategic insights based on the case prediction data. Focus on actionable advice for the attorney about settlement strategy, risk factors, and next steps. Keep insights concise and practical.`,
+        messages: [
+          {
+            role: 'user',
+            content: `Based on this case prediction data, provide strategic insights:\n${context}`,
+          },
+        ],
+      }),
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      return '';
+    }
+
+    const data = await response.json();
+    return data.content?.[0]?.text || '';
+  } catch {
+    return '';
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -207,9 +271,23 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Get AI-generated strategic insights
+    const aiInsights = await getAIInsights(prediction, {
+      caseType: validatedCaseType,
+      state: validatedState,
+      hasAttorney: !!hasAttorney,
+      damageAmount: validatedDamageAmount,
+      caseStrength: validatedCaseStrength,
+      priorOffers: !!priorOffers,
+      documentedEvidence: !!documentedEvidence,
+    });
+
     return NextResponse.json({
-      prediction,
-      disclaimer: 'This prediction is based on statistical analysis of historical federal court data and should not be considered legal advice. Actual outcomes depend on many case-specific factors not captured here.',
+      prediction: {
+        ...prediction,
+        aiInsights: aiInsights || null,
+      },
+      disclaimer: 'This prediction is based on statistical analysis of historical federal court data and should not be considered legal advice. Actual outcomes depend on many case-specific factors not captured here. AI insights are generated analysis and should be reviewed by the attorney.',
     });
   } catch {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });

@@ -16,20 +16,20 @@ const EXAMPLE_PHRASES = [
   'The parties stipulate to a continuance pending mediation.',
 ];
 
-// Common legal terms quick reference
+// Common legal terms quick reference with phonetic pronunciation and related terms
 const LEGAL_TERMS = [
-  { term: 'Pro Se', definition: 'Self-represented (no attorney)' },
-  { term: 'Summary Judgment', definition: 'Case decided without trial' },
-  { term: 'Deposition', definition: 'Sworn out-of-court testimony' },
-  { term: 'Discovery', definition: 'Pre-trial evidence exchange' },
-  { term: 'Injunction', definition: 'Court order to act or stop' },
-  { term: 'Arbitration', definition: 'Private dispute resolution' },
-  { term: 'Statute of Limitations', definition: 'Deadline to file lawsuit' },
-  { term: 'Class Action', definition: 'Group lawsuit with many plaintiffs' },
-  { term: 'Settlement', definition: 'Agreement to resolve without trial' },
-  { term: 'Verdict', definition: 'Jury or judge\'s final decision' },
-  { term: 'Damages', definition: 'Money awarded for harm/loss' },
-  { term: 'Tort', definition: 'Civil wrong causing injury' },
+  { term: 'Pro Se', definition: 'Self-represented (no attorney)', pronunciation: 'proh say', related: ['Pro Bono', 'Representation', 'Self-Represented Litigant'] },
+  { term: 'Summary Judgment', definition: 'Case decided without trial', pronunciation: 'SUM-uh-rer-ee JUJ-muhnt', related: ['Motion', 'Dismissal', 'Trial'] },
+  { term: 'Deposition', definition: 'Sworn out-of-court testimony', pronunciation: 'dep-uh-ZISH-uhn', related: ['Testimony', 'Discovery', 'Interrogatory'] },
+  { term: 'Discovery', definition: 'Pre-trial evidence exchange', pronunciation: 'dis-KUV-uh-ree', related: ['Deposition', 'Interrogatory', 'Subpoena'] },
+  { term: 'Injunction', definition: 'Court order to act or stop', pronunciation: 'in-JUNGK-shuhn', related: ['Restraining Order', 'Temporary', 'Preliminary'] },
+  { term: 'Arbitration', definition: 'Private dispute resolution', pronunciation: 'ar-buh-TRAY-shuhn', related: ['Mediation', 'Settlement', 'Negotiation'] },
+  { term: 'Statute of Limitations', definition: 'Deadline to file lawsuit', pronunciation: 'STAT-oot uv lim-uh-TAY-shunz', related: ['Filing Deadline', 'Time Barred', 'Claim'] },
+  { term: 'Class Action', definition: 'Group lawsuit with many plaintiffs', pronunciation: 'klas AK-shuhn', related: ['Plaintiff', 'Defendant', 'Certification'] },
+  { term: 'Settlement', definition: 'Agreement to resolve without trial', pronunciation: 'SET-ul-muhnt', related: ['Compromise', 'Agreement', 'Release'] },
+  { term: 'Verdict', definition: 'Jury or judge\'s final decision', pronunciation: 'VER-dikt', related: ['Judgment', 'Ruling', 'Decision'] },
+  { term: 'Damages', definition: 'Money awarded for harm/loss', pronunciation: 'DAM-ij-iz', related: ['Compensation', 'Relief', 'Award'] },
+  { term: 'Tort', definition: 'Civil wrong causing injury', pronunciation: 'tort', related: ['Negligence', 'Liability', 'Civil'] },
 ];
 
 export default function TranslatePage() {
@@ -212,22 +212,74 @@ export default function TranslatePage() {
 
         {/* Translation Result */}
         {translation && (
-          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#8B5CF6', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #8B5CF6', borderRadius: '12px' }}>
-            <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>
-              Plain English Translation
-            </h2>
-            <div className="prose prose-sm max-w-none"
-              style={{
-                color: '#0f0f0f',
-                fontFamily: 'var(--font-body)',
-                lineHeight: '1.6',
-              }}>
-              <p className="whitespace-pre-wrap">{translation}</p>
+          <>
+            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#8B5CF6', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #8B5CF6', borderRadius: '12px' }}>
+              <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>
+                Plain English Translation
+              </h2>
+              <div className="prose prose-sm max-w-none"
+                style={{
+                  color: '#0f0f0f',
+                  fontFamily: 'var(--font-body)',
+                  lineHeight: '1.6',
+                }}>
+                <p className="whitespace-pre-wrap">{translation}</p>
+              </div>
+              <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', borderColor: '#E5E7EB' }}>
+                Unlimited translations available. Paste more legal text above to translate.
+              </p>
             </div>
-            <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', borderColor: '#E5E7EB' }}>
-              Unlimited translations available. Paste more legal text above to translate.
-            </p>
-          </div>
+
+            {/* Related Terms - Show related concepts from the input */}
+            {(() => {
+              const relatedTerms = new Set<string>();
+              const inputLower = input.toLowerCase();
+              for (const term of LEGAL_TERMS) {
+                if (inputLower.includes(term.term.toLowerCase())) {
+                  if (term.related) {
+                    term.related.forEach(r => relatedTerms.add(r));
+                  }
+                }
+              }
+              return relatedTerms.size > 0 ? (
+                <div className="mt-8 p-6 sm:p-8 border" style={{ borderColor: '#BAE6FD', background: '#F0F9FF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '12px' }}>
+                  <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#0369A1', fontFamily: 'var(--font-display)' }}>
+                    Related Legal Concepts
+                  </h2>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px' }}>
+                    {Array.from(relatedTerms).map((term, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setInput(term)}
+                        style={{
+                          padding: '8px 12px',
+                          background: '#FFFFFF',
+                          border: '1px solid #BAE6FD',
+                          borderRadius: '8px',
+                          fontSize: '12px',
+                          color: '#0369A1',
+                          cursor: 'pointer',
+                          transition: 'all 150ms',
+                          fontFamily: 'var(--font-body)',
+                          fontWeight: '500',
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.background = '#E0F2FE';
+                          e.currentTarget.style.borderColor = '#0369A1';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.background = '#FFFFFF';
+                          e.currentTarget.style.borderColor = '#BAE6FD';
+                        }}
+                      >
+                        {term}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : null;
+            })()}
+          </>
         )}
 
         {/* Example Phrases Section */}
@@ -262,7 +314,7 @@ export default function TranslatePage() {
           <h2 className="text-sm font-semibold mb-4" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>
             Common Legal Terms Quick Reference
           </h2>
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {LEGAL_TERMS.map((item, i) => (
               <div
                 key={i}
@@ -270,15 +322,54 @@ export default function TranslatePage() {
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
                   borderRadius: '12px',
-                  padding: '12px',
+                  padding: '16px',
+                  cursor: 'pointer',
+                  transition: 'all 150ms',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#8B5CF6';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(139, 92, 246, 0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = '#E5E7EB';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
-                <p className="font-bold text-[13px] mb-2" style={{ color: '#0f0f0f' }}>
+                <p className="font-bold text-[13px] mb-1" style={{ color: '#0f0f0f' }}>
                   {item.term}
                 </p>
-                <p className="text-[11px]" style={{ color: '#4B5563', lineHeight: '1.4' }}>
+                {item.pronunciation && (
+                  <p className="text-[11px] mb-2" style={{ color: '#8B5CF6', fontFamily: 'var(--font-mono)', fontStyle: 'italic' }}>
+                    {item.pronunciation}
+                  </p>
+                )}
+                <p className="text-[11px] mb-3" style={{ color: '#4B5563', lineHeight: '1.4' }}>
                   {item.definition}
                 </p>
+                {item.related && (
+                  <div style={{ paddingTop: '8px', borderTop: '1px solid #E5E7EB' }}>
+                    <p className="text-[10px] font-semibold mb-2" style={{ color: '#6D28D9', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '8px 0 4px' }}>
+                      Related Terms:
+                    </p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                      {item.related.map((rel, j) => (
+                        <span
+                          key={j}
+                          style={{
+                            fontSize: '10px',
+                            padding: '2px 6px',
+                            background: '#F0E7FF',
+                            color: '#6D28D9',
+                            borderRadius: '4px',
+                            fontFamily: 'var(--font-body)',
+                          }}
+                        >
+                          {rel}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>

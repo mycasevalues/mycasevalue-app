@@ -4,6 +4,9 @@ import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { SITE_URL } from '../../../lib/site-config';
 import { fmtK } from '../../../lib/format';
+import DataFreshness from '../../../components/DataFreshness';
+import SampleSizeIndicator from '../../../components/SampleSizeIndicator';
+import UpdatedBadge from '../../../components/UpdatedBadge';
 
 // Helper function to flatten SITS and map NOS codes to display names
 function getNOSMap(): Record<string, { label: string; category: string; description?: string }> {
@@ -746,20 +749,26 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: 'Win Rate', value: `${winRate}%`, color: '#8B5CF6' },
-              { label: 'Median Duration', value: `${medianDuration} mo`, color: '#1B3A5C' },
-              { label: 'Settlement Rate', value: `${settleRate}%`, color: '#10B981' },
-              { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: '#6D28D9' },
+              { label: 'Win Rate', value: `${winRate}%`, color: '#8B5CF6', showSample: true },
+              { label: 'Median Duration', value: `${medianDuration} mo`, color: '#1B3A5C', showSample: false },
+              { label: 'Settlement Rate', value: `${settleRate}%`, color: '#10B981', showSample: false },
+              { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: '#6D28D9', showSample: false },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="stat-value" style={{ color: stat.color }}>
                   {stat.value}
+                  {stat.showSample && totalCases > 0 && <SampleSizeIndicator count={totalCases} />}
                 </div>
                 <div className="stat-label">
                   {stat.label}
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Updated Badge */}
+          <div style={{ marginTop: '20px', display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'center' }}>
+            <UpdatedBadge />
           </div>
 
           {/* Conditional Footnotes */}
@@ -1092,6 +1101,9 @@ export default async function NOSPage({ params }: PageProps) {
               as the sole basis for legal decisions. Actual case outcomes depend on specific facts, jurisdiction,
               and representation. Please consult with a qualified attorney to discuss your individual case.
             </p>
+            <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E5E7EB' }}>
+              <DataFreshness />
+            </div>
           </div>
         </div>
       </section>

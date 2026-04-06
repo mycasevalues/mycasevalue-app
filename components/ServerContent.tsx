@@ -13,6 +13,7 @@ import TrustBadges from './TrustBadges';
 import ScrollReveal from './ScrollReveal';
 import Link from 'next/link';
 import { REAL_DATA } from '../lib/realdata';
+import CaseFilingTicker from './CaseFilingTicker';
 
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
@@ -49,6 +50,10 @@ export default function ServerContent() {
       <ScrollReveal delay={0}>
         <TrustBadges />
       </ScrollReveal>
+
+      {/* ── CASE FILING TICKER ──────────────────────────── */}
+      <CaseFilingTicker />
+
       <section
         style={{
           background: '#F7F8FA',

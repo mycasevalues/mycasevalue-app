@@ -6,6 +6,8 @@ import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { formatSettlementAmount, fmtK } from '../../lib/format';
 import { SearchIcon } from '../../components/ui/Icons';
+import DataFreshness from '../../components/DataFreshness';
+import SampleSizeIndicator from '../../components/SampleSizeIndicator';
 
 // Loading skeleton component
 const SkeletonResultCard = () => (
@@ -87,6 +89,12 @@ export default function SearchPage() {
   const [tipsExpanded, setTipsExpanded] = useState(false);
   const [recentlyViewedItems, setRecentlyViewedItems] = useState<RecentItem[]>([]);
 
+  // AI Search state
+  const [aiQuery, setAiQuery] = useState('');
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResult, setAiResult] = useState<any>(null);
+  const [aiError, setAiError] = useState('');
+
   useEffect(() => {
     try {
       const stored = JSON.parse(localStorage.getItem('mcv_recent') || '[]');
@@ -161,6 +169,47 @@ export default function SearchPage() {
     label: cat.label,
     count: cat.opts.length,
   }));
+
+  // AI Search handler
+  const handleAISearch = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!aiQuery.trim()) {
+      setAiError('Please enter a search query');
+      return;
+    }
+
+    setAiLoading(true);
+    setAiError('');
+    setAiResult(null);
+
+    try {
+      const response = await fetch('/api/ai/search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: aiQuery }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setAiError(data.error || 'Failed to process search query');
+        return;
+      }
+
+      setAiResult(data);
+      // If NOS code was extracted, automatically search for it
+      if (data.parameters?.nosCode) {
+        setQuery('');
+        setTimeout(() => {
+          setQuery(data.parameters.nosCode);
+        }, 100);
+      }
+    } catch {
+      setAiError('Network error. Please try again.');
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   return (
     <main style={{ fontFamily: 'var(--font-body)', background: '#F7F8FA', minHeight: '100vh' }}>
@@ -316,6 +365,156 @@ export default function SearchPage() {
           </div>
         </div>
       )}
+
+      {/* AI-Powered Search Section */}
+      <div style={{ marginBottom: '32px', padding: '24px', background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', border: '1px solid #D8BFFF', borderRadius: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#8B5CF6', flexShrink: 0 }}>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+          </svg>
+          <label style={{ fontSize: '13px', fontWeight: '600', color: '#6D28D9', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0' }}>
+            AI-Powered Search (Beta)
+          </label>
+        </div>
+        <p style={{ fontSize: '13px', color: '#5B21B6', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+          Describe your case in natural language. AI will extract key details and find matching case types.
+        </p>
+        <form onSubmit={handleAISearch} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <input
+            type="text"
+            placeholder="Search with natural language, e.g. 'wrongful termination cases settled over $100K in New York'"
+            value={aiQuery}
+            onChange={(e) => {
+              setAiQuery(e.target.value);
+              setAiError('');
+            }}
+            style={{
+              flex: '1 1 auto',
+              minWidth: '250px',
+              height: '44px',
+              padding: '0 14px',
+              fontSize: '14px',
+              border: '1px solid #D8BFFF',
+              borderRadius: '8px',
+              background: '#FFFFFF',
+              color: '#0f0f0f',
+              fontFamily: 'var(--font-body)',
+              outline: 'none',
+              transition: 'all 150ms',
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.borderColor = '#8B5CF6';
+              e.currentTarget.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)';
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.borderColor = '#D8BFFF';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          />
+          <button
+            type="submit"
+            disabled={aiLoading || !aiQuery.trim()}
+            style={{
+              height: '44px',
+              padding: '0 20px',
+              fontSize: '14px',
+              fontWeight: '600',
+              background: aiLoading || !aiQuery.trim() ? '#D8BFFF' : '#8B5CF6',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: aiLoading || !aiQuery.trim() ? 'not-allowed' : 'pointer',
+              fontFamily: 'var(--font-body)',
+              transition: 'all 150ms',
+              opacity: aiLoading || !aiQuery.trim() ? 0.7 : 1,
+            }}
+            onMouseEnter={(e) => {
+              if (!aiLoading && aiQuery.trim()) {
+                e.currentTarget.style.background = '#6D28D9';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(139, 92, 246, 0.25)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#8B5CF6';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+          >
+            {aiLoading ? (
+              <>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="inline animate-spin mr-2" style={{ marginBottom: '2px', marginRight: '6px', animation: 'spin 1s linear infinite' }}><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 2.2"/></svg>
+                Analyzing...
+              </>
+            ) : (
+              'Analyze with AI'
+            )}
+          </button>
+        </form>
+
+        {/* AI Error */}
+        {aiError && (
+          <div style={{ marginTop: '12px', padding: '12px', background: 'rgba(139, 92, 246, 0.1)', border: '1px solid #D8BFFF', borderRadius: '8px' }}>
+            <p style={{ fontSize: '13px', color: '#6D28D9', margin: '0', fontFamily: 'var(--font-body)' }}>
+              {aiError}
+            </p>
+          </div>
+        )}
+
+        {/* AI Result */}
+        {aiResult && (
+          <div style={{ marginTop: '16px', padding: '16px', background: '#FFFFFF', border: '1px solid #D8BFFF', borderRadius: '8px' }}>
+            <p style={{ fontSize: '12px', fontWeight: '600', color: '#5B21B6', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', marginTop: '0' }}>
+              AI Interpretation
+            </p>
+            <p style={{ fontSize: '13px', color: '#0f0f0f', marginBottom: '12px', lineHeight: '1.6', fontFamily: 'var(--font-body)' }}>
+              {aiResult.interpretation}
+            </p>
+
+            {aiResult.parameters && (
+              <div style={{ paddingTop: '12px', borderTop: '1px solid #E5E7EB' }}>
+                <p style={{ fontSize: '12px', fontWeight: '600', color: '#4B5563', margin: '8px 0', fontFamily: 'var(--font-body)' }}>
+                  Extracted Parameters:
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+                  {aiResult.parameters.caseType && (
+                    <div style={{ padding: '8px 12px', background: '#F0F6FB', border: '1px solid #BAE6FD', borderRadius: '6px' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#1E40AF', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                        Case Type: <strong>{aiResult.parameters.caseType}</strong>
+                      </p>
+                    </div>
+                  )}
+                  {aiResult.parameters.nosCode && (
+                    <div style={{ padding: '8px 12px', background: '#FEF3C7', border: '1px solid #FCD34D', borderRadius: '6px' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#92400E', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                        NOS Code: <strong>{aiResult.parameters.nosCode}</strong>
+                      </p>
+                    </div>
+                  )}
+                  {aiResult.parameters.settlementMinimum && (
+                    <div style={{ padding: '8px 12px', background: '#DCFCE7', border: '1px solid #86EFAC', borderRadius: '6px' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#166534', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                        Settlement Min: <strong>${aiResult.parameters.settlementMinimum.toLocaleString()}</strong>
+                      </p>
+                    </div>
+                  )}
+                  {aiResult.parameters.district && (
+                    <div style={{ padding: '8px 12px', background: '#F5E6FF', border: '1px solid #D8B4FE', borderRadius: '6px' }}>
+                      <p style={{ fontSize: '11px', fontWeight: '500', color: '#6B21A8', margin: '0', fontFamily: 'var(--font-mono)' }}>
+                        District: <strong>{aiResult.parameters.district}</strong>
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            <p style={{ fontSize: '10px', color: '#4B5563', marginTop: '12px', marginBottom: '0', fontFamily: 'var(--font-body)' }}>
+              {aiResult.disclosure}
+            </p>
+          </div>
+        )}
+      </div>
 
       <div style={{ display: 'flex', gap: '12px', marginBottom: 24, flexWrap: 'wrap' }}>
         <div style={{ position: 'relative', flex: '1 1 auto', minWidth: '200px' }}>
@@ -761,6 +960,11 @@ export default function SearchPage() {
                 ));
               })()}
             </div>
+          </div>
+
+          {/* Data Freshness Indicator */}
+          <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid #E5E7EB', fontSize: '12px', color: '#9ca3af', fontFamily: 'var(--font-body)' }}>
+            <DataFreshness />
           </div>
 
           {/* Quick Actions Bar */}

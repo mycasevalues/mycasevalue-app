@@ -9,6 +9,7 @@ import HeroStats from './ui/HeroStats';
 import AnchorNav from './AnchorNav';
 import TabbedFeatures from './TabbedFeatures';
 import TrustBar from './TrustBar';
+import AnimatedDataViz from './AnimatedDataViz';
 
 export default function ServerHero() {
   return (
@@ -85,6 +86,9 @@ export default function ServerHero() {
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-body)' }}>
               No account required · Free during public beta · Instant results
             </p>
+
+            {/* Animated data visualization */}
+            <AnimatedDataViz />
           </div>
 
           {/* Right: Quick lookup card */}

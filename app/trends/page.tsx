@@ -7,6 +7,8 @@ import { SITE_URL } from '../../lib/site-config';
 import { getCircuitWinRates, getOutcomeBreakdown } from '../../lib/trends';
 import { fmtK } from '../../lib/format';
 import CaseTypeComparison from '../../components/CaseTypeComparison';
+import DataFreshness from '../../components/DataFreshness';
+import UpdatedBadge from '../../components/UpdatedBadge';
 
 const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'), {
   ssr: false,
@@ -225,6 +227,10 @@ export default function TrendsPage() {
                 </div>
               </div>
             ))}
+          </div>
+          {/* Updated Badge */}
+          <div style={{ marginTop: '16px', display: 'flex', gap: '12px', justifyContent: 'center' }}>
+            <UpdatedBadge />
           </div>
         </div>
       </section>
@@ -985,11 +991,14 @@ export default function TrendsPage() {
         </section>
 
         {/* Data Source Note */}
-        <section className="text-center">
-          <p className="leading-relaxed" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
+        <section className="text-center pb-8">
+          <p className="leading-relaxed mb-6" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
             All data sourced from the Federal Judicial Center Integrated Database (FJC IDB), PACER, and CourtListener.
             Statistics represent aggregate historical outcomes from 2000–2024 and do not predict future case results.
           </p>
+          <div style={{ paddingTop: '12px', borderTop: '1px solid #E5E7EB' }}>
+            <DataFreshness />
+          </div>
         </section>
       </div>
 
