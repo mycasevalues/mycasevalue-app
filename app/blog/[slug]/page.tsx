@@ -145,9 +145,9 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           display: inline-flex;
           align-items: center;
           padding: 8px 16px;
-          background: #7C3AED;
+          background: #8B5CF6;
           color: white;
-          border-radius: 6px;
+          border-radius: 12px;
           font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.5px;
@@ -157,7 +157,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         .article-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 40px;
           margin: -40px 0 0 0;
           position: relative;
@@ -165,7 +165,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         @media (max-width: 640px) {
           .article-card {
-            border-radius: 6px;
+            border-radius: 12px;
             padding: 32px 20px;
             margin: -32px 0 0 0;
           }
@@ -178,7 +178,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           width: 48px;
           height: 48px;
           border-radius: 50%;
-          background: #7C3AED;
+          background: #8B5CF6;
           color: white;
           font-weight: 600;
           font-size: 18px;
@@ -192,7 +192,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           gap: 16px;
           padding: 24px;
           background: #FFFFFF;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           margin-bottom: 32px;
           transition: all 0.3s ease;
@@ -210,7 +210,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           display: block;
           font-size: 15px;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
           margin-bottom: 4px;
           font-family: var(--font-display);
         }
@@ -236,7 +236,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         .article-body h2 {
           font-size: 24px;
-          font-weight: 700;
+          font-weight: 600;
           color: #1B3A5C;
           margin-top: 2.5rem;
           margin-bottom: 1rem;
@@ -253,14 +253,14 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         }
 
         .article-body blockquote {
-          border-left: 4px solid #7C3AED;
+          border-left: 4px solid #8B5CF6;
           padding-left: 20px;
           margin: 2rem 0;
           font-style: italic;
           color: #4B5563;
           background: #F8F9FA;
           padding: 20px 20px 20px 20px;
-          border-radius: 6px;
+          border-radius: 12px;
         }
 
         .article-body ul,
@@ -281,10 +281,10 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           padding: 8px 14px;
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           font-size: 13px;
           font-weight: 500;
-          color: #7C3AED;
+          color: #8B5CF6;
           text-decoration: none;
           transition: all 0.2s ease;
           font-family: var(--font-body);
@@ -294,12 +294,12 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         .tag-pill:hover {
           background: #FFF3F4;
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
           transform: translateY(-2px);
         }
 
         .related-card {
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
           padding: 32px;
@@ -313,17 +313,17 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         .related-card:hover {
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
           transform: translateY(-4px);
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
         }
 
         .related-card h3 {
           transition: color 0.3s ease;
-          color: #212529;
+          color: #0f0f0f;
           font-family: var(--font-display);
         }
 
         .related-card:hover h3 {
-          color: #7C3AED;
+          color: #8B5CF6;
         }
 
         .share-button {
@@ -332,19 +332,19 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           justify-content: center;
           width: 44px;
           height: 44px;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
-          color: #212529;
+          color: #0f0f0f;
           cursor: pointer;
           transition: all 0.2s ease;
           text-decoration: none;
         }
 
         .share-button:hover {
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
           background: #FFF3F4;
-          color: #7C3AED;
+          color: #8B5CF6;
         }
 
         .article-section {
@@ -355,7 +355,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         .cta-section {
           background: #FFFFFF;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           padding: 48px;
           text-align: center;
@@ -373,9 +373,9 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           align-items: center;
           gap: 8px;
           padding: 12px 24px;
-          background: #7C3AED;
+          background: #8B5CF6;
           color: #FFFFFF;
-          border-radius: 6px;
+          border-radius: 12px;
           font-size: 15px;
           font-weight: 600;
           text-decoration: none;
@@ -386,12 +386,12 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         .cta-button:hover {
           background: #CC121A;
           transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+          box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
         }
 
         .related-section {
           background: #FFFFFF;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           padding: 48px;
           margin-top: 48px;
@@ -405,7 +405,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         .section-title {
           font-size: 24px;
-          font-weight: 700;
+          font-weight: 600;
           color: #1B3A5C;
           margin-bottom: 32px;
           font-family: var(--font-display);
@@ -506,7 +506,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
           {/* Social Sharing Section */}
           <div className="article-section">
-            <p className="text-sm font-semibold mb-6" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+            <p className="text-sm font-semibold mb-6" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>
               Share this article
             </p>
             <div className="flex gap-3">
@@ -586,13 +586,13 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                       className="inline-flex items-center w-fit px-3 py-1.5 rounded text-xs font-semibold"
                       style={{
                         background: '#FFF3F4',
-                        color: '#7C3AED',
+                        color: '#8B5CF6',
                         fontFamily: 'var(--font-body)',
                       }}
                     >
                       {relatedPost.category}
                     </span>
-                    <h3 className="text-lg font-display font-bold leading-tight" style={{ color: '#212529' }}>
+                    <h3 className="text-lg font-display font-bold leading-tight" style={{ color: '#0f0f0f' }}>
                       {relatedPost.title}
                     </h3>
                     <p className="text-sm leading-relaxed flex-1" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>

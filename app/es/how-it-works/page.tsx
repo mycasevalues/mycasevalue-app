@@ -43,7 +43,7 @@ export default function SpanishHowItWorksPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '6px' }}>
+            style={{ background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px' }}>
             PROCESO
           </div>
 
@@ -64,12 +64,12 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '6px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">1</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#0f0f0f' }}>
                   Describe Tu Caso
                 </h2>
                 <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
@@ -83,12 +83,12 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '6px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">2</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#0f0f0f' }}>
                   Aceptas la Divulgación
                 </h2>
                 <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
@@ -102,12 +102,12 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '6px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">3</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#0f0f0f' }}>
                   Obtenemos Datos
                 </h2>
                 <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
@@ -121,12 +121,12 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '6px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">4</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#0f0f0f' }}>
                   Analizamos Resultados
                 </h2>
                 <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
@@ -140,12 +140,12 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '6px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">5</span>
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+                <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#0f0f0f' }}>
                   Tu Informe
                 </h2>
                 <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
@@ -159,17 +159,17 @@ export default function SpanishHowItWorksPage() {
 
         {/* Key principles */}
         <section className="mt-16">
-          <h2 className="text-3xl font-display font-bold mb-8" style={{ color: '#212529' }}>
+          <h2 className="text-3xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>
             Principios Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
+            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
+              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#0f0f0f' }}>
                 Privacidad Extrema
               </h3>
               <p style={{ color: '#4B5563' }}>
@@ -177,14 +177,14 @@ export default function SpanishHowItWorksPage() {
               </p>
             </div>
 
-            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
+            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6l4 2"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
+              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#0f0f0f' }}>
                 Instantáneo
               </h3>
               <p style={{ color: '#4B5563' }}>
@@ -192,14 +192,14 @@ export default function SpanishHowItWorksPage() {
               </p>
             </div>
 
-            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
+            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                   <path d="M9 12l2 2 4-4"/>
                   <circle cx="12" cy="12" r="10"/>
                 </svg>
               </div>
-              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
+              <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#0f0f0f' }}>
                 Basado en Hechos
               </h3>
               <p style={{ color: '#4B5563' }}>
@@ -210,8 +210,8 @@ export default function SpanishHowItWorksPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#0f0f0f' }}>
             Listo para comenzar?
           </h2>
           <p className="mb-6" style={{ color: '#4B5563' }}>
@@ -219,7 +219,7 @@ export default function SpanishHowItWorksPage() {
           </p>
           <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '6px', background: '#7C3AED', color: '#FFFFFF' }}>
+            style={{ borderRadius: '12px', background: '#8B5CF6', color: '#FFFFFF' }}>
             Consultar Mi Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -230,57 +230,57 @@ export default function SpanishHowItWorksPage() {
       {/* Available Tools Section */}
       <div style={{ background: '#FFFFFF', borderTop: '1px solid #E5E7EB', padding: '48px 24px' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
+          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#0f0f0f' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link href="/search">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: '#212529' }}>Buscar Casos</h3>
+                <h3 className="font-semibold text-sm" style={{ color: '#0f0f0f' }}>Buscar Casos</h3>
               </div>
             </Link>
 
             <Link href="/calculator">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: '#212529' }}>Calculadora</h3>
+                <h3 className="font-semibold text-sm" style={{ color: '#0f0f0f' }}>Calculadora</h3>
               </div>
             </Link>
 
             <Link href="/compare">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: '#212529' }}>Comparar Tipos</h3>
+                <h3 className="font-semibold text-sm" style={{ color: '#0f0f0f' }}>Comparar Tipos</h3>
               </div>
             </Link>
 
             <Link href="/nos-explorer">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
-                <h3 className="font-semibold text-sm" style={{ color: '#212529' }}>Explorador NOS</h3>
+                <h3 className="font-semibold text-sm" style={{ color: '#0f0f0f' }}>Explorador NOS</h3>
               </div>
             </Link>
           </div>
 
           {/* Language Switcher */}
-          <div className="mt-12 p-6 text-center" style={{ background: '#F7F8FA', borderRadius: '6px' }}>
+          <div className="mt-12 p-6 text-center" style={{ background: '#F7F8FA', borderRadius: '12px' }}>
             <p className="text-sm" style={{ color: '#4B5563' }}>
               This page is also available in <Link href="/how-it-works" style={{ color: '#6D28D9', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>

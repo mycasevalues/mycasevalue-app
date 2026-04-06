@@ -251,7 +251,7 @@ export default function DistrictsPage() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <Link href="/" className="lex-link" style={{ fontWeight: 500 }}>Home</Link>
           <span style={{ color: '#E5E7EB', margin: '0 8px' }}>›</span>
-          <span style={{ color: '#212529', fontWeight: 600 }}>Districts</span>
+          <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Districts</span>
         </div>
       </nav>
 
@@ -266,12 +266,12 @@ export default function DistrictsPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 6,
-            background: '#7C3AED',
+            background: '#8B5CF6',
             color: '#FFFFFF',
             padding: '4px 12px',
             borderRadius: 2,
             fontSize: 11,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: '0.5px',
             textTransform: 'uppercase',
             marginBottom: 16,
@@ -290,7 +290,7 @@ export default function DistrictsPage() {
             letterSpacing: '-1.5px',
             fontSize: 'clamp(28px, 5vw, 48px)',
             lineHeight: 1.2,
-            fontWeight: 700,
+            fontWeight: 600,
             margin: '0 0 16px',
           }}>
             Federal Court Districts
@@ -324,8 +324,8 @@ export default function DistrictsPage() {
               <div key={i}>
                 <div style={{
                   fontSize: 24,
-                  fontWeight: 700,
-                  color: '#7C3AED',
+                  fontWeight: 600,
+                  color: '#8B5CF6',
                   fontFamily: 'var(--font-display)',
                 }}>
                   {stat.v}
@@ -363,8 +363,8 @@ export default function DistrictsPage() {
         }}>
           <h3 style={{
             fontSize: 14,
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             margin: '0 0 12px',
             textTransform: 'uppercase',
             letterSpacing: '0.3px',
@@ -385,13 +385,13 @@ export default function DistrictsPage() {
           </p>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: 12, color: '#4B5563' }}>
             <span>
-              <strong style={{ color: '#15803D' }}>●</strong> Win rate ≥ 50%
+              <strong style={{ color: '#059669' }}>●</strong> Win rate ≥ 50%
             </span>
             <span>
               <strong style={{ color: '#D97706' }}>●</strong> Win rate 35–49%
             </span>
             <span>
-              <strong style={{ color: '#7C3AED' }}>●</strong> Win rate {'<'} 35%
+              <strong style={{ color: '#8B5CF6' }}>●</strong> Win rate {'<'} 35%
             </span>
           </div>
         </section>

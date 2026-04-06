@@ -92,10 +92,10 @@ function SignInForm() {
         .auth-input:focus {
           border-color: #6D28D9 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
+          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15) !important;
         }
         .auth-btn {
-          background: #7C3AED;
+          background: #8B5CF6;
         }
         .auth-btn:hover:not(:disabled) {
           opacity: 0.9;
@@ -113,7 +113,7 @@ function SignInForm() {
         .checkbox-input {
           width: 18px;
           height: 18px;
-          accent-color: #7C3AED;
+          accent-color: #8B5CF6;
           cursor: pointer;
         }
         .benefits-section {
@@ -123,7 +123,7 @@ function SignInForm() {
         .benefits-title {
           font-family: var(--font-display);
           font-size: 20px;
-          font-weight: 700;
+          font-weight: 600;
           color: #FFFFFF;
           margin: 0 0 24px 0;
           line-height: 1.3;
@@ -138,13 +138,13 @@ function SignInForm() {
           flex-shrink: 0;
           width: 20px;
           height: 20px;
-          background: #15803D;
+          background: #059669;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 12px;
-          font-weight: 700;
+          font-weight: 600;
         }
         .benefit-text {
           font-family: var(--font-body);
@@ -165,8 +165,8 @@ function SignInForm() {
         .trust-number {
           font-family: var(--font-mono);
           font-size: 16px;
-          font-weight: 700;
-          color: #15803D;
+          font-weight: 600;
+          color: #059669;
         }
         .trust-label {
           font-family: var(--font-body);
@@ -204,7 +204,7 @@ function SignInForm() {
           style={{
             fontFamily: 'var(--font-display)',
             fontSize: '16px',
-            fontWeight: 700,
+            fontWeight: 600,
             color: '#FFFFFF',
             textDecoration: 'none',
           }}
@@ -273,7 +273,7 @@ function SignInForm() {
           style={{
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '6px',
+            borderRadius: '12px',
             padding: '40px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
@@ -296,8 +296,8 @@ function SignInForm() {
           style={{
             fontFamily: 'var(--font-display)',
             fontSize: '24px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             margin: '0 0 24px 0',
             lineHeight: 1.2,
           }}
@@ -316,7 +316,7 @@ function SignInForm() {
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
                 fontWeight: 500,
-                color: '#212529',
+                color: '#0f0f0f',
                 marginBottom: '8px',
               }}
             >
@@ -335,10 +335,10 @@ function SignInForm() {
                 height: '48px',
                 padding: '12px 14px',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#212529',
+                color: '#0f0f0f',
                 backgroundColor: '#FFFFFF',
                 boxSizing: 'border-box' as const,
                 transition: 'border-color 0.2s, box-shadow 0.2s',
@@ -362,7 +362,7 @@ function SignInForm() {
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
                   fontWeight: 500,
-                  color: '#212529',
+                  color: '#0f0f0f',
                 }}
               >
                 Password
@@ -394,10 +394,10 @@ function SignInForm() {
                 height: '48px',
                 padding: '12px 14px',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#212529',
+                color: '#0f0f0f',
                 backgroundColor: '#FFFFFF',
                 boxSizing: 'border-box' as const,
                 transition: 'border-color 0.2s, box-shadow 0.2s',
@@ -433,12 +433,12 @@ function SignInForm() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#7C3AED',
+                color: '#8B5CF6',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
-                backgroundColor: 'rgba(124, 58, 237, 0.06)',
-                borderRadius: '6px',
-                border: '1px solid rgba(124, 58, 237, 0.2)',
+                backgroundColor: 'rgba(139, 92, 246, 0.06)',
+                borderRadius: '12px',
+                border: '1px solid rgba(139, 92, 246, 0.2)',
               }}
             >
               {error}
@@ -454,13 +454,13 @@ function SignInForm() {
               width: '100%',
               height: '48px',
               padding: '0 16px',
-              backgroundColor: '#7C3AED',
+              backgroundColor: '#8B5CF6',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
-              fontWeight: 700,
+              fontWeight: 600,
               textTransform: 'uppercase',
               cursor: loading ? 'not-allowed' : 'pointer',
               opacity: loading ? 0.7 : 1,
@@ -517,7 +517,7 @@ function SignInForm() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#212529',
+              color: '#0f0f0f',
               margin: 0,
             }}
           >

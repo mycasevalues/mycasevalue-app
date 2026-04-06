@@ -61,19 +61,19 @@ export default function AboutPage() {
           padding: 0.375rem 0.75rem;
           border-radius: 9999px;
           font-size: 0.6875rem;
-          font-weight: 700;
+          font-weight: 600;
           letter-spacing: 1.5px;
           text-transform: uppercase;
           background: #FFF3F4;
-          color: #7C3AED;
+          color: #8B5CF6;
         }
 
         .mission-hero h1 {
           font-family: var(--font-display);
           font-size: clamp(2rem, 4vw, 3rem);
-          font-weight: 700;
+          font-weight: 600;
           letter-spacing: -1.5px;
-          color: #212529;
+          color: #0f0f0f;
           line-height: 1.2;
         }
 
@@ -123,13 +123,13 @@ export default function AboutPage() {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: #7C3AED;
+          background: #8B5CF6;
           color: #FFFFFF;
           font-family: var(--font-display);
-          font-weight: 700;
+          font-weight: 600;
           font-size: 1rem;
           margin: 0 auto 1rem;
-          box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
+          box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
           flex-shrink: 0;
         }
 
@@ -137,7 +137,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 1rem;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
           margin-bottom: 0.5rem;
         }
 
@@ -162,22 +162,22 @@ export default function AboutPage() {
 
         .source-card {
           padding: 1.5rem;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
           transition: all 0.2s ease;
         }
 
         .source-card:hover {
-          border-color: #7C3AED;
-          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+          border-color: #8B5CF6;
+          box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
           transform: translateY(-2px);
         }
 
         .source-icon {
           width: 48px;
           height: 48px;
-          border-radius: 6px;
+          border-radius: 12px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -189,7 +189,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 0.9375rem;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
           margin-bottom: 0.5rem;
         }
 
@@ -205,7 +205,7 @@ export default function AboutPage() {
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 1.5rem;
           padding: 2rem;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
@@ -224,8 +224,8 @@ export default function AboutPage() {
         .stat-value {
           font-family: var(--font-display);
           font-size: 2rem;
-          font-weight: 700;
-          color: #7C3AED;
+          font-weight: 600;
+          color: #8B5CF6;
           line-height: 1.2;
         }
 
@@ -241,7 +241,7 @@ export default function AboutPage() {
 
         .team-box {
           padding: 2rem;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
@@ -250,7 +250,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 0.9375rem;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
         }
 
         .team-box ul {
@@ -268,14 +268,14 @@ export default function AboutPage() {
         }
 
         .team-box strong {
-          color: #212529;
+          color: #0f0f0f;
           font-weight: 600;
         }
 
         .cta-section {
           text-align: center;
           padding: 3rem 2rem;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
@@ -283,8 +283,8 @@ export default function AboutPage() {
         .cta-heading {
           font-family: var(--font-display);
           font-size: clamp(1.5rem, 3vw, 2rem);
-          font-weight: 700;
-          color: #212529;
+          font-weight: 600;
+          color: #0f0f0f;
           margin-bottom: 1rem;
         }
 
@@ -305,11 +305,11 @@ export default function AboutPage() {
           gap: 0.5rem;
           height: 48px;
           padding: 0 2rem;
-          border-radius: 6px;
+          border-radius: 12px;
           font-family: var(--font-display);
           font-size: 0.875rem;
-          font-weight: 700;
-          background: #7C3AED;
+          font-weight: 600;
+          background: #8B5CF6;
           color: #FFFFFF;
           text-decoration: none;
           transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -320,14 +320,14 @@ export default function AboutPage() {
         .cta-button:hover {
           background: #B91C1C;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
+          box-shadow: 0 8px 24px rgba(139, 92, 246, 0.25);
         }
 
         .section-heading {
           font-family: var(--font-display);
           font-size: 1.5rem;
-          font-weight: 700;
-          color: #212529;
+          font-weight: 600;
+          color: #0f0f0f;
           margin-bottom: 1.5rem;
         }
 
@@ -354,7 +354,7 @@ export default function AboutPage() {
 
         .number-stat-card {
           padding: 1.5rem;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
           text-align: center;
@@ -363,8 +363,8 @@ export default function AboutPage() {
         .number-stat-value {
           font-family: var(--font-display);
           font-size: 2.5rem;
-          font-weight: 700;
-          color: #7C3AED;
+          font-weight: 600;
+          color: #8B5CF6;
           line-height: 1;
           margin-bottom: 0.5rem;
         }
@@ -393,8 +393,8 @@ export default function AboutPage() {
 
         .differentiator-card {
           padding: 1.5rem;
-          border-radius: 6px;
-          border-top: 3px solid #7C3AED;
+          border-radius: 12px;
+          border-top: 3px solid #8B5CF6;
           border-left: 1px solid #E5E7EB;
           border-right: 1px solid #E5E7EB;
           border-bottom: 1px solid #E5E7EB;
@@ -405,7 +405,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 1rem;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
           margin-bottom: 0.75rem;
         }
 
@@ -431,7 +431,7 @@ export default function AboutPage() {
 
         .tool-card {
           padding: 1.25rem;
-          border-radius: 6px;
+          border-radius: 12px;
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
           transition: all 0.2s ease;
@@ -441,8 +441,8 @@ export default function AboutPage() {
         }
 
         .tool-card:hover {
-          border-color: #7C3AED;
-          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+          border-color: #8B5CF6;
+          box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
           transform: translateY(-2px);
         }
 
@@ -450,7 +450,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 0.9375rem;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
         }
 
         .tool-description {
@@ -474,13 +474,13 @@ export default function AboutPage() {
         }
 
         .tool-link:hover {
-          color: #7C3AED;
+          color: #8B5CF6;
         }
 
         .contact-section {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 2rem;
         }
 
@@ -494,7 +494,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 1rem;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
           margin-bottom: 1rem;
         }
 
@@ -520,7 +520,7 @@ export default function AboutPage() {
         }
 
         .contact-link:hover {
-          color: #7C3AED;
+          color: #8B5CF6;
         }
 
         @media (max-width: 640px) {
@@ -563,7 +563,7 @@ export default function AboutPage() {
             <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', fontFamily: 'var(--font-body)' }}>About</span>
           </div>
           <div className="about-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
             ABOUT US
@@ -575,7 +575,7 @@ export default function AboutPage() {
       <div className="border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.08)', background: '#FFFFFF' }}>
         <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
           <div className="mission-hero">
-            <h1 style={{ color: '#212529' }}>Democratizing Access to Federal Court Data</h1>
+            <h1 style={{ color: '#0f0f0f' }}>Democratizing Access to Federal Court Data</h1>
             <p style={{ color: '#4B5563' }}>
               Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys.
               MyCaseValue makes outcome data—win rates, settlement ranges, timelines, and recovery patterns—accessible to everyone making
@@ -683,7 +683,7 @@ export default function AboutPage() {
                   name: 'Federal Judicial Center',
                   description: 'The official source for federal civil case statistics since 1970. Covers case type, disposition, and duration.',
                   icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#212529" strokeWidth="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f0f0f" strokeWidth="2">
                       <path d="M12 3v18M3 12h18M3 6h18M3 18h18M6 3v18M18 3v18"/>
                     </svg>
                   ),
@@ -692,7 +692,7 @@ export default function AboutPage() {
                   name: 'CourtListener',
                   description: 'Aggregates federal judicial opinions, oral arguments, and PACER filings for comprehensive case data.',
                   icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2">
                       <path d="M3 12L9 6l6 6 6-6M3 12l6-6 6 6 6-6v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V12z"/>
                     </svg>
                   ),

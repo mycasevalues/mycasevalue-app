@@ -58,7 +58,7 @@ export default function BlogPage() {
         .blog-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           transition: all 0.3s ease;
           position: relative;
         }
@@ -70,15 +70,15 @@ export default function BlogPage() {
           left: 0;
           right: 0;
           height: 0;
-          background: #7C3AED;
-          border-radius: 6px 4px 0 0;
+          background: #8B5CF6;
+          border-radius: 12px 4px 0 0;
           transition: height 0.3s ease;
         }
 
         .blog-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
         }
 
         .blog-card:hover::before {
@@ -93,7 +93,7 @@ export default function BlogPage() {
         .featured-post {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
         }
 
         .featured-image-placeholder {
@@ -103,14 +103,14 @@ export default function BlogPage() {
           justify-content: center;
           color: #999;
           font-size: 14px;
-          border-radius: 6px;
+          border-radius: 12px;
         }
 
         .category-badge {
           background: #FFF3F4;
-          color: #7C3AED;
+          color: #8B5CF6;
           padding: 4px 10px;
-          border-radius: 6px;
+          border-radius: 12px;
           font-size: 12px;
           font-weight: 600;
           display: inline-block;
@@ -119,7 +119,7 @@ export default function BlogPage() {
         .sidebar-filter {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 24px;
         }
 
@@ -133,13 +133,13 @@ export default function BlogPage() {
         }
 
         .filter-item:hover {
-          color: #7C3AED;
+          color: #8B5CF6;
         }
 
         .featured-research-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 24px;
           transition: all 0.3s ease;
         }
@@ -147,7 +147,7 @@ export default function BlogPage() {
         .featured-research-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
         }
 
         .topic-pill {
@@ -165,15 +165,15 @@ export default function BlogPage() {
         }
 
         .topic-pill:hover {
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
           background: #FFF3F4;
-          color: #7C3AED;
+          color: #8B5CF6;
         }
 
         .related-tools-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 24px;
           text-decoration: none;
           display: flex;
@@ -215,7 +215,7 @@ export default function BlogPage() {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
             <span style={{ color: '#FFFFFF' }}>Blog</span>
           </div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '6px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#7C3AED' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#8B5CF6' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             BLOG
           </div>
@@ -241,7 +241,7 @@ export default function BlogPage() {
                   </div>
                   <h2
                     className="font-display font-bold mb-4 transition-colors"
-                    style={{ fontSize: '28px', lineHeight: '1.3', color: '#212529', fontWeight: 600 }}
+                    style={{ fontSize: '28px', lineHeight: '1.3', color: '#0f0f0f', fontWeight: 600 }}
                   >
                     {featuredPost.title}
                   </h2>
@@ -264,9 +264,9 @@ export default function BlogPage() {
                     href={`/blog/${featuredPost.slug}`}
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
                     style={{
-                      background: '#7C3AED',
+                      background: '#8B5CF6',
                       color: '#FFFFFF',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                     }}
                   >
                     Read Article
@@ -297,7 +297,7 @@ export default function BlogPage() {
           {/* Sidebar: Filters */}
           <aside className="md:col-span-1">
             <div className="sidebar-filter sticky top-6">
-              <h3 className="font-display font-bold mb-6" style={{ fontSize: '14px', color: '#212529' }}>
+              <h3 className="font-display font-bold mb-6" style={{ fontSize: '14px', color: '#0f0f0f' }}>
                 CATEGORIES
               </h3>
               <div>
@@ -332,7 +332,7 @@ export default function BlogPage() {
                     >
                       <h3
                         className="font-display font-semibold mb-3 transition-colors"
-                        style={{ fontSize: '18px', color: '#212529', lineHeight: '1.4' }}
+                        style={{ fontSize: '18px', color: '#0f0f0f', lineHeight: '1.4' }}
                       >
                         {post.title}
                       </h3>
@@ -356,7 +356,7 @@ export default function BlogPage() {
                       className="inline-flex items-center gap-1 mt-4 px-3 py-2 rounded text-xs font-semibold transition-all"
                       style={{
                         background: '#FFF3F4',
-                        color: '#7C3AED',
+                        color: '#8B5CF6',
                       }}
                     >
                       Read More
@@ -373,7 +373,7 @@ export default function BlogPage() {
       {/* Featured Research Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#0f0f0f' }}>
             Featured Research
           </h2>
           <p style={{ fontSize: '16px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -405,7 +405,7 @@ export default function BlogPage() {
               href="#"
               className="featured-research-card"
             >
-              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-display)' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-display)' }}>
                 {research.title}
               </h3>
               <p style={{ fontSize: '14px', color: '#4B5563', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -422,7 +422,7 @@ export default function BlogPage() {
       {/* Browse by Topic Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#0f0f0f' }}>
             Browse by Topic
           </h2>
           <p style={{ fontSize: '16px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -453,7 +453,7 @@ export default function BlogPage() {
       {/* Related Tools Section */}
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div style={{ marginBottom: '32px' }}>
-          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#0f0f0f' }}>
             Related Tools
           </h2>
           <p style={{ fontSize: '16px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -475,9 +475,9 @@ export default function BlogPage() {
             >
               <div>
                 <div style={{ fontSize: '32px', marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={tool.iconPath}/></svg>
                 </div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
                   {tool.name}
                 </h3>
                 <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -494,8 +494,8 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <section className="text-center p-12 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '6px' }}>
-          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
+        <section className="text-center p-12 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
+          <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#0f0f0f' }}>
             Want deeper analysis? Try Attorney Mode
           </h2>
           <p className="mb-8 max-w-2xl mx-auto" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', fontSize: '16px' }}>
@@ -504,7 +504,7 @@ export default function BlogPage() {
           <a
             href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold transition-all"
-            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '6px' }}
+            style={{ background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px' }}
           >
             Explore Attorney Mode
             <ArrowRightIcon size={16} />

@@ -49,7 +49,7 @@ function getCircuitForDistrict(district: string): string {
   return 'Other';
 }
 
-const wrColor = (wr: number) => wr >= 50 ? '#15803D' : wr >= 35 ? '#D97706' : '#7C3AED';
+const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#8B5CF6';
 
 export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
   const [search, setSearch] = useState('');
@@ -167,14 +167,14 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
       {/* Filtered Aggregate Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, marginBottom: 24 }}>
         {[
-          { label: 'Judges', value: String(filtered.length), color: '#212529' },
+          { label: 'Judges', value: String(filtered.length), color: '#0f0f0f' },
           { label: 'Avg Win Rate', value: `${avgWR}%`, color: wrColor(avgWR) },
           { label: 'Avg Motion Grant', value: `${avgMGR}%`, color: '#6D28D9' },
           { label: 'Avg Settlement', value: `${avgSettle}%`, color: '#6D28D9' },
-          { label: 'Avg Duration', value: `${avgDur}mo`, color: '#212529' },
+          { label: 'Avg Duration', value: `${avgDur}mo`, color: '#0f0f0f' },
         ].map(s => (
           <div key={s.label} style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, padding: '16px 12px', textAlign: 'center' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: s.color }}>{s.value}</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 600, color: s.color }}>{s.value}</div>
             <div style={{ fontSize: 10, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginTop: 2 }}>{s.label}</div>
           </div>
         ))}
@@ -196,7 +196,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
             style={{
               width: '100%', height: 40, paddingLeft: 36, paddingRight: 12,
               border: '1px solid #E5E7EB', borderRadius: 2, fontFamily: 'var(--font-body)',
-              fontSize: 14, color: '#212529', background: '#FFFFFF',
+              fontSize: 14, color: '#0f0f0f', background: '#FFFFFF',
             }}
           />
         </div>
@@ -208,7 +208,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid #E5E7EB', borderRadius: 2,
-            fontFamily: 'var(--font-body)', fontSize: 13, color: '#212529', background: '#FFFFFF',
+            fontFamily: 'var(--font-body)', fontSize: 13, color: '#0f0f0f', background: '#FFFFFF',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -224,7 +224,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid #E5E7EB', borderRadius: 2,
-            fontFamily: 'var(--font-body)', fontSize: 13, color: '#212529', background: '#FFFFFF',
+            fontFamily: 'var(--font-body)', fontSize: 13, color: '#0f0f0f', background: '#FFFFFF',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -240,7 +240,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           className="je-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid #E5E7EB', borderRadius: 2,
-            fontFamily: 'var(--font-body)', fontSize: 13, color: '#212529', background: '#FFFFFF',
+            fontFamily: 'var(--font-body)', fontSize: 13, color: '#0f0f0f', background: '#FFFFFF',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -280,7 +280,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
               onClick={() => toggleSort(field)}
               style={{
                 border: 'none', background: sortField === field ? '#1B3A5C' : '#F7F8FA',
-                color: sortField === field ? '#FFFFFF' : '#212529',
+                color: sortField === field ? '#FFFFFF' : '#0f0f0f',
                 padding: '4px 10px', borderRadius: 2, fontSize: 12, fontWeight: 600,
                 cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 0.15s',
               }}
@@ -300,7 +300,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           <p style={{ fontSize: 15, color: '#4B5563', fontFamily: 'var(--font-body)' }}>No judges match your filters.</p>
           <button
             onClick={() => { setSearch(''); setCircuitFilter(''); setDistrictFilter(''); setStatusFilter('all'); setPage(1); }}
-            style={{ marginTop: 12, border: 'none', background: '#7C3AED', color: '#FFFFFF', padding: '8px 20px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+            style={{ marginTop: 12, border: 'none', background: '#8B5CF6', color: '#FFFFFF', padding: '8px 20px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
           >
             Clear Filters
           </button>
@@ -323,7 +323,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 {/* Name + badges */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 10 }}>
                   <div style={{ flex: 1 }}>
-                    <p style={{ fontSize: 15, fontWeight: 700, color: '#212529', margin: '0 0 2px', fontFamily: 'var(--font-display)' }}>
+                    <p style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', margin: '0 0 2px', fontFamily: 'var(--font-display)' }}>
                       {judge.name}
                     </p>
                     <p style={{ fontSize: 12, color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
@@ -332,10 +332,10 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                   </div>
                   <div style={{ display: 'flex', gap: 4 }}>
                     {judge.chiefJudge && (
-                      <span style={{ fontSize: 9, fontWeight: 700, padding: '2px 6px', borderRadius: 2, background: 'rgba(124, 58, 237, 0.08)', color: '#7C3AED', textTransform: 'uppercase' }}>Chief</span>
+                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(139, 92, 246, 0.08)', color: '#8B5CF6', textTransform: 'uppercase' }}>Chief</span>
                     )}
                     {judge.seniorStatus && (
-                      <span style={{ fontSize: 9, fontWeight: 700, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: '#B86E00', textTransform: 'uppercase' }}>Senior</span>
+                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: '#B86E00', textTransform: 'uppercase' }}>Senior</span>
                     )}
                   </div>
                 </div>
@@ -348,31 +348,31 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                 {/* Stats grid */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: 4, textAlign: 'center' }}>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 700, color: wrColor(judge.stats.plaintiffWinRate) }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: wrColor(judge.stats.plaintiffWinRate) }}>
                       {judge.stats.plaintiffWinRate}%
                     </div>
                     <div style={{ fontSize: 9, color: '#4B5563', textTransform: 'uppercase', marginTop: 1 }}>Win</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 700, color: '#6D28D9' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#6D28D9' }}>
                       {judge.stats.motionGrantRate}%
                     </div>
                     <div style={{ fontSize: 9, color: '#4B5563', textTransform: 'uppercase', marginTop: 1 }}>MTD</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 700, color: '#6D28D9' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#6D28D9' }}>
                       {judge.stats.settlementRate}%
                     </div>
                     <div style={{ fontSize: 9, color: '#4B5563', textTransform: 'uppercase', marginTop: 1 }}>Settle</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 700, color: '#212529' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#0f0f0f' }}>
                       {judge.stats.medianDurationMonths}mo
                     </div>
                     <div style={{ fontSize: 9, color: '#4B5563', textTransform: 'uppercase', marginTop: 1 }}>Dur.</div>
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 700, color: '#212529' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#0f0f0f' }}>
                       {judge.stats.totalCases >= 1000 ? `${(judge.stats.totalCases / 1000).toFixed(1)}K` : judge.stats.totalCases}
                     </div>
                     <div style={{ fontSize: 9, color: '#4B5563', textTransform: 'uppercase', marginTop: 1 }}>Cases</div>
@@ -427,24 +427,24 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                       {judge.name}
                     </Link>
                     <div style={{ display: 'flex', gap: 4, marginTop: 2 }}>
-                      {judge.chiefJudge && <span style={{ fontSize: 9, fontWeight: 700, color: '#7C3AED' }}>CHIEF</span>}
-                      {judge.seniorStatus && <span style={{ fontSize: 9, fontWeight: 700, color: '#B86E00' }}>SENIOR</span>}
+                      {judge.chiefJudge && <span style={{ fontSize: 9, fontWeight: 600, color: '#8B5CF6' }}>CHIEF</span>}
+                      {judge.seniorStatus && <span style={{ fontSize: 9, fontWeight: 600, color: '#B86E00' }}>SENIOR</span>}
                     </div>
                   </td>
                   <td style={{ padding: '10px 8px', color: '#4B5563', fontSize: 12 }}>{judge.district}</td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 700, color: wrColor(judge.stats.plaintiffWinRate) }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: wrColor(judge.stats.plaintiffWinRate) }}>
                     {judge.stats.plaintiffWinRate}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#212529' }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {judge.stats.motionGrantRate}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#212529' }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {judge.stats.settlementRate}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#212529' }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {judge.stats.medianDurationMonths}mo
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#212529' }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {judge.stats.totalCases >= 1000 ? `${(judge.stats.totalCases / 1000).toFixed(1)}K` : judge.stats.totalCases}
                   </td>
                   <td style={{ padding: '10px 8px', textAlign: 'center', fontSize: 12, color: '#4B5563' }}>

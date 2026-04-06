@@ -2,11 +2,11 @@ export default function JudgesLoading() {
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
       {/* Navy header with title skeleton */}
-      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #7C3AED' }}>
+      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #8B5CF6' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <div style={{ height: '14px', width: '100px', background: 'rgba(255,255,255,0.1)', borderRadius: '6px', marginBottom: '16px' }} />
-          <div style={{ height: '42px', width: '50%', background: 'rgba(255,255,255,0.1)', borderRadius: '6px', marginBottom: '12px' }} />
-          <div style={{ height: '14px', width: '70%', background: 'rgba(255,255,255,0.08)', borderRadius: '6px' }} />
+          <div style={{ height: '14px', width: '100px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '16px' }} />
+          <div style={{ height: '42px', width: '50%', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '12px' }} />
+          <div style={{ height: '14px', width: '70%', background: 'rgba(255,255,255,0.08)', borderRadius: '12px' }} />
         </div>
       </div>
 
@@ -21,22 +21,22 @@ export default function JudgesLoading() {
             <div key={i} style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '24px',
               minHeight: '180px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
             }}>
               {/* Judge name/avatar skeleton */}
-              <div style={{ height: '20px', width: '75%', background: '#E5E7EB', borderRadius: '6px', marginBottom: '16px' }} />
+              <div style={{ height: '20px', width: '75%', background: '#E5E7EB', borderRadius: '12px', marginBottom: '16px' }} />
 
               {/* Judge details */}
-              <div style={{ height: '12px', width: '100%', background: '#F0F1F2', borderRadius: '6px', marginBottom: '8px' }} />
-              <div style={{ height: '12px', width: '90%', background: '#F0F1F2', borderRadius: '6px', marginBottom: '8px' }} />
+              <div style={{ height: '12px', width: '100%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '8px' }} />
+              <div style={{ height: '12px', width: '90%', background: '#F0F1F2', borderRadius: '12px', marginBottom: '8px' }} />
 
               {/* Statistics */}
               <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E5E7EB' }}>
-                <div style={{ height: '12px', width: '60%', background: '#E5E7EB', borderRadius: '6px', marginBottom: '6px' }} />
-                <div style={{ height: '12px', width: '50%', background: '#F0F1F2', borderRadius: '6px' }} />
+                <div style={{ height: '12px', width: '60%', background: '#E5E7EB', borderRadius: '12px', marginBottom: '6px' }} />
+                <div style={{ height: '12px', width: '50%', background: '#F0F1F2', borderRadius: '12px' }} />
               </div>
             </div>
           ))}

@@ -64,7 +64,7 @@ export default function ReportsPage() {
   if (loading) {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#7C3AED', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#8B5CF6', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -78,10 +78,10 @@ export default function ReportsPage() {
       <div style={{ backgroundColor: '#1B3A5C', padding: '40px 20px', marginBottom: '32px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>
+            <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 600, color: '#FFFFFF', margin: 0 }}>
               My Reports
             </h1>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#7C3AED', color: '#FFFFFF', padding: '4px 12px', borderRadius: '6px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#8B5CF6', color: '#FFFFFF', padding: '4px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, textTransform: 'uppercase' }}>
               Reports
             </div>
           </div>
@@ -104,21 +104,21 @@ export default function ReportsPage() {
         {/* "All Reports Free During Launch" Banner */}
         <div style={{
           background: 'linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(21, 128, 61, 0.04) 100%)',
-          border: '1px solid #15803D',
-          borderRadius: '6px',
+          border: '1px solid #059669',
+          borderRadius: '12px',
           padding: '20px 24px',
           marginBottom: '32px',
           display: 'flex',
           alignItems: 'center',
           gap: '12px',
         }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="20 6 9 17 4 12" />
           </svg>
           <p style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#15803D',
+            color: '#059669',
             margin: 0,
           }}>
             All Reports Free During Launch — Explore unlimited case research, settlement data, and judge analytics at no cost.
@@ -129,8 +129,8 @@ export default function ReportsPage() {
         <div style={{ marginBottom: '48px' }}>
           <h2 style={{
             fontSize: '24px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             marginBottom: '24px',
             fontFamily: 'var(--font-display)',
           }}>
@@ -156,7 +156,7 @@ export default function ReportsPage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '24px',
                   textAlign: 'center' as const,
                   transition: 'all 0.2s ease',
@@ -173,7 +173,7 @@ export default function ReportsPage() {
                   width: '40px',
                   height: '40px',
                   background: 'rgba(0, 105, 151, 0.08)',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -187,7 +187,7 @@ export default function ReportsPage() {
                 <p style={{
                   fontSize: '14px',
                   fontWeight: 600,
-                  color: '#212529',
+                  color: '#0f0f0f',
                   margin: 0,
                   lineHeight: 1.4,
                 }}>
@@ -202,8 +202,8 @@ export default function ReportsPage() {
         <div style={{ marginBottom: '48px' }}>
           <h2 style={{
             fontSize: '24px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             marginBottom: '24px',
             fontFamily: 'var(--font-display)',
           }}>
@@ -226,7 +226,7 @@ export default function ReportsPage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '24px',
                   textDecoration: 'none',
                   transition: 'all 0.2s ease',
@@ -235,7 +235,7 @@ export default function ReportsPage() {
               >
                 <style>{`
                   .report-link:hover {
-                    border-color: #7C3AED;
+                    border-color: #8B5CF6;
                     box-shadow: 0 8px 24px rgba(232, 23, 31, 0.12);
                     transform: translateY(-2px);
                   }
@@ -249,7 +249,7 @@ export default function ReportsPage() {
                     <h3 style={{
                       fontSize: '16px',
                       fontWeight: 600,
-                      color: '#212529',
+                      color: '#0f0f0f',
                       margin: '0 0 8px 0',
                       fontFamily: 'var(--font-display)',
                     }}>
@@ -274,8 +274,8 @@ export default function ReportsPage() {
 
         {!hasData ? (
           /* Empty State */
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '6px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', textAlign: 'center' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '6px', background: 'rgba(0,105,151,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', textAlign: 'center' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'rgba(0,105,151,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                 <polyline points="14 2 14 8 20 8" />
@@ -283,13 +283,13 @@ export default function ReportsPage() {
                 <line x1="9" y1="14" x2="15" y2="14" />
               </svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px 0' }}>
+            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 12px 0' }}>
               No reports yet
             </h2>
             <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
               Your saved case research reports and search history will appear here. Start by running a case lookup.
             </p>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: '#7C3AED', color: '#FFFFFF', borderRadius: '6px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: '#8B5CF6', color: '#FFFFFF', borderRadius: '12px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
               Start a Case Lookup
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
@@ -297,7 +297,7 @@ export default function ReportsPage() {
         ) : (
           <>
             {/* Tabs */}
-            <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', backgroundColor: '#FFFFFF', borderRadius: '6px', padding: '4px', border: '1px solid #E5E7EB' }}>
+            <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '4px', border: '1px solid #E5E7EB' }}>
               {(['reports', 'history'] as const).map((t) => (
                 <button
                   key={t}
@@ -305,12 +305,12 @@ export default function ReportsPage() {
                   style={{
                     flex: 1,
                     padding: '10px 16px',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     border: 'none',
                     fontSize: '14px',
                     fontWeight: 600,
                     cursor: 'pointer',
-                    backgroundColor: tab === t ? '#7C3AED' : 'transparent',
+                    backgroundColor: tab === t ? '#8B5CF6' : 'transparent',
                     color: tab === t ? '#FFFFFF' : '#4B5563',
                     transition: 'all 0.2s',
                   }}
@@ -328,12 +328,12 @@ export default function ReportsPage() {
                     transition: all 0.2s;
                   }
                   .report-card:hover {
-                    border-left: 4px solid #7C3AED;
+                    border-left: 4px solid #8B5CF6;
                     box-shadow: 0 4px 12px rgba(232, 23, 31, 0.12);
                   }
                 `}</style>
                 {reports.length === 0 ? (
-                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '6px', padding: '40px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '40px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                     <p style={{ fontSize: '14px', color: '#4B5563' }}>No saved reports yet. Reports are saved automatically when you view case data.</p>
                   </div>
                 ) : (
@@ -342,11 +342,11 @@ export default function ReportsPage() {
                       key={r.id}
                       href={`/cases/${encodeURIComponent(r.category)}${r.district ? `?district=${encodeURIComponent(r.district)}` : ''}`}
                       className="report-card"
-                      style={{ display: 'block', backgroundColor: '#FFFFFF', borderRadius: '6px', padding: '20px 24px', border: '1px solid #E5E7EB', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ display: 'block', backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '20px 24px', border: '1px solid #E5E7EB', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                          <div style={{ fontSize: '15px', fontWeight: 600, color: '#212529', marginBottom: '4px' }}>
+                          <div style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', marginBottom: '4px' }}>
                             {r.category}
                           </div>
                           {r.district && (
@@ -373,12 +373,12 @@ export default function ReportsPage() {
                     transition: all 0.2s;
                   }
                   .history-card:hover {
-                    border-left: 4px solid #7C3AED;
+                    border-left: 4px solid #8B5CF6;
                     box-shadow: 0 4px 12px rgba(232, 23, 31, 0.12);
                   }
                 `}</style>
                 {searches.length === 0 ? (
-                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '6px', padding: '40px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '40px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                     <p style={{ fontSize: '14px', color: '#4B5563' }}>No search history yet.</p>
                   </div>
                 ) : (
@@ -386,11 +386,11 @@ export default function ReportsPage() {
                     <div
                       key={s.id}
                       className="history-card"
-                      style={{ backgroundColor: '#FFFFFF', borderRadius: '6px', padding: '16px 24px', border: '1px solid #E5E7EB', borderLeft: '4px solid transparent', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '16px 24px', border: '1px solid #E5E7EB', borderLeft: '4px solid transparent', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
-                          <div style={{ fontSize: '14px', fontWeight: 500, color: '#212529' }}>
+                          <div style={{ fontSize: '14px', fontWeight: 500, color: '#0f0f0f' }}>
                             {s.query}
                           </div>
                           {s.category && (

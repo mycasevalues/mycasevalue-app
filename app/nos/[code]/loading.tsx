@@ -32,7 +32,7 @@ export default function Loading() {
                       width: '60px',
                       height: '14px',
                       background: '#1a3a5a',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -49,7 +49,7 @@ export default function Loading() {
                     height: 'clamp(24px, 5vw, 32px)',
                     width: '60%',
                     background: '#1a3a5a',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     marginBottom: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -58,8 +58,8 @@ export default function Loading() {
                   style={{
                     height: '28px',
                     width: '140px',
-                    background: '#7C3AED',
-                    borderRadius: '6px',
+                    background: '#8B5CF6',
+                    borderRadius: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />
@@ -79,7 +79,7 @@ export default function Loading() {
                   width: '85%',
                   background: '#E5E7EB',
                   marginBottom: '8px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -88,7 +88,7 @@ export default function Loading() {
                   height: '14px',
                   width: '70%',
                   background: '#E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -103,7 +103,7 @@ export default function Loading() {
                     width: '100px',
                     height: '36px',
                     background: '#E5E7EB',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />
@@ -119,7 +119,7 @@ export default function Loading() {
                     width: '150px',
                     height: '28px',
                     background: '#E5E7EB',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     border: '1px solid #E5E7EB',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -136,7 +136,7 @@ export default function Loading() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -149,7 +149,7 @@ export default function Loading() {
                   width: '30%',
                   background: '#E5E7EB',
                   marginBottom: '8px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -158,7 +158,7 @@ export default function Loading() {
                   height: '14px',
                   width: '50%',
                   background: '#E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -173,7 +173,7 @@ export default function Loading() {
                     textAlign: 'center',
                     padding: '28px 20px',
                     background: '#F8F9FA',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     border: '1px solid #E5E7EB',
                   }}
                 >
@@ -183,7 +183,7 @@ export default function Loading() {
                       width: '70%',
                       background: '#E5E7EB',
                       margin: '0 auto 12px',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -193,7 +193,7 @@ export default function Loading() {
                       width: '80%',
                       background: '#E5E7EB',
                       margin: '0 auto 8px',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -203,7 +203,7 @@ export default function Loading() {
                       width: '70%',
                       background: '#E5E7EB',
                       margin: '0 auto',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -218,7 +218,7 @@ export default function Loading() {
                 width: '50%',
                 background: '#E5E7EB',
                 margin: '20px auto 0',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 animation: 'pulse-skeleton 2s ease-in-out infinite',
               }}
             />
@@ -229,7 +229,7 @@ export default function Loading() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -242,7 +242,7 @@ export default function Loading() {
                   width: '28%',
                   background: '#E5E7EB',
                   marginBottom: '8px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -251,7 +251,7 @@ export default function Loading() {
                   height: '14px',
                   width: '50%',
                   background: '#E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -265,7 +265,7 @@ export default function Loading() {
                   style={{
                     padding: '20px',
                     background: '#F8F9FA',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     border: '1px solid #E5E7EB',
                   }}
                 >
@@ -275,7 +275,7 @@ export default function Loading() {
                       width: '40%',
                       background: '#E5E7EB',
                       marginBottom: '8px',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -284,7 +284,7 @@ export default function Loading() {
                       height: '12px',
                       width: '60%',
                       background: '#E5E7EB',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -298,7 +298,7 @@ export default function Loading() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -311,7 +311,7 @@ export default function Loading() {
                   width: '30%',
                   background: '#E5E7EB',
                   marginBottom: '8px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -320,7 +320,7 @@ export default function Loading() {
                   height: '14px',
                   width: '50%',
                   background: '#E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -335,7 +335,7 @@ export default function Loading() {
                     height: '16px',
                     width: i === 4 ? '30%' : '100%',
                     background: '#E5E7EB',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />
@@ -348,7 +348,7 @@ export default function Loading() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '32px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
@@ -360,7 +360,7 @@ export default function Loading() {
                   width: '25%',
                   background: '#E5E7EB',
                   marginBottom: '8px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -374,7 +374,7 @@ export default function Loading() {
                   style={{
                     padding: '16px',
                     background: '#F8F9FA',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     border: '1px solid #E5E7EB',
                   }}
                 >
@@ -384,7 +384,7 @@ export default function Loading() {
                       width: '70%',
                       background: '#E5E7EB',
                       marginBottom: '8px',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -393,7 +393,7 @@ export default function Loading() {
                       height: '12px',
                       width: '50%',
                       background: '#E5E7EB',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />

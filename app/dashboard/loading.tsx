@@ -2,10 +2,10 @@ export default function DashboardLoading() {
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
       {/* Header skeleton */}
-      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #7C3AED' }}>
+      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #8B5CF6' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-          <div style={{ height: '32px', width: '200px', background: 'rgba(255,255,255,0.1)', borderRadius: '6px', marginBottom: '8px' }} />
-          <div style={{ height: '16px', width: '300px', background: 'rgba(255,255,255,0.08)', borderRadius: '6px' }} />
+          <div style={{ height: '32px', width: '200px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '8px' }} />
+          <div style={{ height: '16px', width: '300px', background: 'rgba(255,255,255,0.08)', borderRadius: '12px' }} />
         </div>
       </div>
       {/* Dashboard grid skeleton */}
@@ -14,18 +14,18 @@ export default function DashboardLoading() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
           {[1, 2, 3, 4].map(i => (
             <div key={i} style={{
-              background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '6px', padding: '24px',
+              background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '24px',
             }}>
-              <div style={{ height: '14px', width: '60%', background: '#E5E7EB', borderRadius: '6px', marginBottom: '12px' }} />
-              <div style={{ height: '28px', width: '40%', background: '#F0F1F2', borderRadius: '6px' }} />
+              <div style={{ height: '14px', width: '60%', background: '#E5E7EB', borderRadius: '12px', marginBottom: '12px' }} />
+              <div style={{ height: '28px', width: '40%', background: '#F0F1F2', borderRadius: '12px' }} />
             </div>
           ))}
         </div>
         {/* Content area */}
-        <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '6px', padding: '32px', height: '400px' }}>
-          <div style={{ height: '20px', width: '30%', background: '#E5E7EB', borderRadius: '6px', marginBottom: '24px' }} />
+        <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '32px', height: '400px' }}>
+          <div style={{ height: '20px', width: '30%', background: '#E5E7EB', borderRadius: '12px', marginBottom: '24px' }} />
           {[1, 2, 3].map(i => (
-            <div key={i} style={{ height: '60px', background: '#FAFBFC', borderRadius: '6px', marginBottom: '12px' }} />
+            <div key={i} style={{ height: '60px', background: '#FAFBFC', borderRadius: '12px', marginBottom: '12px' }} />
           ))}
         </div>
       </div>

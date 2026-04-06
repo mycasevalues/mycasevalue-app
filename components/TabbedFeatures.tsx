@@ -102,7 +102,7 @@ const TabbedFeatures: React.FC = () => {
           <p
             style={{
               fontSize: '11px',
-              color: '#7C3AED',
+              color: '#8B5CF6',
               textTransform: 'uppercase',
               fontWeight: 600,
               letterSpacing: '0.08em',
@@ -115,7 +115,7 @@ const TabbedFeatures: React.FC = () => {
             style={{
               fontSize: '32px',
               fontWeight: 600,
-              color: '#212529',
+              color: '#0f0f0f',
               margin: 0,
               fontFamily: 'var(--font-display, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
             }}
@@ -176,7 +176,7 @@ const TabbedFeatures: React.FC = () => {
                   style={{
                     fontSize: '15px',
                     fontWeight: 600,
-                    color: activeTab === index ? '#7C3AED' : '#4B5563',
+                    color: activeTab === index ? '#8B5CF6' : '#4B5563',
                     margin: '0 0 8px 0',
                     fontFamily: 'var(--font-display, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
                     transition: 'color 0.2s ease',
@@ -206,7 +206,7 @@ const TabbedFeatures: React.FC = () => {
                     left: 0,
                     right: 0,
                     height: activeTab === index ? '3px' : '0px',
-                    backgroundColor: '#7C3AED',
+                    backgroundColor: '#8B5CF6',
                     transition: 'height 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
                   }}
                 />
@@ -229,7 +229,7 @@ const TabbedFeatures: React.FC = () => {
                 width: '100%',
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '40px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
                 animation: 'fadeInContent 0.4s ease-in 0.05s both',
@@ -272,12 +272,12 @@ const TabbedFeatures: React.FC = () => {
         }
 
         .tabbed-features-grid button:focus-visible {
-          outline: 2px solid #7C3AED;
+          outline: 2px solid #8B5CF6;
           outline-offset: -2px;
         }
 
         .tabbed-features-grid button:first-child {
-          border-radius: 6px 4px 0 0;
+          border-radius: 12px 4px 0 0;
         }
 
         .tabbed-features-grid button:last-child {
@@ -291,7 +291,7 @@ const TabbedFeatures: React.FC = () => {
           }
 
           .tabbed-features-grid button {
-            border-radius: 6px !important;
+            border-radius: 12px !important;
             margin-bottom: 8px;
           }
 
@@ -307,7 +307,7 @@ const TabbedFeatures: React.FC = () => {
 // Preview Components
 const WinRatePreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', margin: '0 0 24px 0' }}>
+    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px 0' }}>
       Win Rate by Case Type
     </h3>
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -326,23 +326,23 @@ const WinRatePreview: React.FC = () => (
               fontSize: '13px',
             }}
           >
-            <span style={{ color: '#212529', fontWeight: 500 }}>{item.label}</span>
-            <span style={{ color: '#7C3AED', fontWeight: 600 }}>{item.rate}%</span>
+            <span style={{ color: '#0f0f0f', fontWeight: 500 }}>{item.label}</span>
+            <span style={{ color: '#8B5CF6', fontWeight: 600 }}>{item.rate}%</span>
           </div>
           <div
             style={{
               height: '8px',
               backgroundColor: '#F7F8FA',
-              borderRadius: '6px',
+              borderRadius: '12px',
               overflow: 'hidden',
             }}
           >
             <div
               style={{
                 height: '100%',
-                backgroundColor: '#7C3AED',
+                backgroundColor: '#8B5CF6',
                 width: `${item.rate}%`,
-                borderRadius: '6px',
+                borderRadius: '12px',
               }}
             />
           </div>
@@ -354,7 +354,7 @@ const WinRatePreview: React.FC = () => (
 
 const SettlementPreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', margin: '0 0 24px 0' }}>
+    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px 0' }}>
       Settlement Distribution
     </h3>
     <div
@@ -377,8 +377,8 @@ const SettlementPreview: React.FC = () => (
           style={{
             padding: '16px',
             backgroundColor: item.label === 'Median' ? '#F0F0F0' : '#FFFFFF',
-            border: item.label === 'Median' ? '2px solid #7C3AED' : '1px solid #E5E7EB',
-            borderRadius: '6px',
+            border: item.label === 'Median' ? '2px solid #8B5CF6' : '1px solid #E5E7EB',
+            borderRadius: '12px',
             textAlign: 'center',
           }}
         >
@@ -386,8 +386,8 @@ const SettlementPreview: React.FC = () => (
           <div
             style={{
               fontSize: '14px',
-              fontWeight: 700,
-              color: '#212529',
+              fontWeight: 600,
+              color: '#0f0f0f',
             }}
           >
             {item.amount}
@@ -400,7 +400,7 @@ const SettlementPreview: React.FC = () => (
 
 const JudgeAnalyticsPreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', margin: '0 0 8px 0' }}>
+    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px 0' }}>
       Judge Profile
     </h3>
     <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 20px 0' }}>
@@ -420,11 +420,11 @@ const JudgeAnalyticsPreview: React.FC = () => (
             justifyContent: 'space-between',
             padding: '12px',
             backgroundColor: '#F9F9F9',
-            borderRadius: '6px',
+            borderRadius: '12px',
           }}
         >
           <span style={{ fontSize: '13px', color: '#4B5563' }}>{item.label}</span>
-          <span style={{ fontSize: '13px', fontWeight: 600, color: '#212529' }}>{item.value}</span>
+          <span style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f' }}>{item.value}</span>
         </div>
       ))}
     </div>
@@ -433,7 +433,7 @@ const JudgeAnalyticsPreview: React.FC = () => (
 
 const TimelinePreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', margin: '0 0 24px 0' }}>
+    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px 0' }}>
       Median Disposition Time
     </h3>
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -452,14 +452,14 @@ const TimelinePreview: React.FC = () => (
               fontSize: '13px',
             }}
           >
-            <span style={{ color: '#212529', fontWeight: 500 }}>{item.label}</span>
-            <span style={{ color: '#212529', fontWeight: 600 }}>{item.months}mo</span>
+            <span style={{ color: '#0f0f0f', fontWeight: 500 }}>{item.label}</span>
+            <span style={{ color: '#0f0f0f', fontWeight: 600 }}>{item.months}mo</span>
           </div>
           <div
             style={{
               height: '6px',
               backgroundColor: '#F7F8FA',
-              borderRadius: '6px',
+              borderRadius: '12px',
               overflow: 'hidden',
             }}
           >
@@ -468,7 +468,7 @@ const TimelinePreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: '#4B5563',
                 width: `${(item.months / 30) * 100}%`,
-                borderRadius: '6px',
+                borderRadius: '12px',
               }}
             />
           </div>
@@ -480,7 +480,7 @@ const TimelinePreview: React.FC = () => (
 
 const DistrictComparisonPreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', margin: '0 0 20px 0' }}>
+    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 20px 0' }}>
       Top Federal Districts
     </h3>
     <div
@@ -499,7 +499,7 @@ const DistrictComparisonPreview: React.FC = () => (
           borderBottom: '2px solid #E5E7EB',
           padding: '12px 0',
           fontWeight: 600,
-          color: '#212529',
+          color: '#0f0f0f',
         }}
       >
         <div>District</div>
@@ -524,9 +524,9 @@ const DistrictComparisonPreview: React.FC = () => (
             color: '#4B5563',
           }}
         >
-          <div style={{ fontWeight: 500, color: '#212529' }}>{item.district}</div>
+          <div style={{ fontWeight: 500, color: '#0f0f0f' }}>{item.district}</div>
           <div>{item.cases.toLocaleString()}</div>
-          <div style={{ color: '#7C3AED', fontWeight: 600 }}>{item.rate}</div>
+          <div style={{ color: '#8B5CF6', fontWeight: 600 }}>{item.rate}</div>
         </div>
       ))}
     </div>
@@ -535,14 +535,14 @@ const DistrictComparisonPreview: React.FC = () => (
 
 const AIPredictionsPreview: React.FC = () => (
   <div>
-    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', margin: '0 0 24px 0' }}>
+    <h3 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px 0' }}>
       Predicted Outcome
     </h3>
     <div
       style={{
         padding: '20px',
         backgroundColor: '#F0F0F0',
-        borderRadius: '6px',
+        borderRadius: '12px',
         marginBottom: '20px',
       }}
     >
@@ -552,14 +552,14 @@ const AIPredictionsPreview: React.FC = () => (
       <div
         style={{
           fontSize: '28px',
-          fontWeight: 700,
-          color: '#7C3AED',
+          fontWeight: 600,
+          color: '#8B5CF6',
           marginBottom: '8px',
         }}
       >
         68% Favorable
       </div>
-      <div style={{ fontSize: '12px', color: '#212529' }}>
+      <div style={{ fontSize: '12px', color: '#0f0f0f' }}>
         Confidence Score: 82%
       </div>
     </div>
@@ -582,22 +582,22 @@ const AIPredictionsPreview: React.FC = () => (
             }}
           >
             <span>{item.label}</span>
-            <span style={{ fontWeight: 600, color: '#212529' }}>{item.prob}%</span>
+            <span style={{ fontWeight: 600, color: '#0f0f0f' }}>{item.prob}%</span>
           </div>
           <div
             style={{
               height: '6px',
               backgroundColor: '#F7F8FA',
-              borderRadius: '6px',
+              borderRadius: '12px',
               overflow: 'hidden',
             }}
           >
             <div
               style={{
                 height: '100%',
-                backgroundColor: item.prob > 50 ? '#7C3AED' : item.prob > 25 ? '#4B5563' : '#B0BEC5',
+                backgroundColor: item.prob > 50 ? '#8B5CF6' : item.prob > 25 ? '#4B5563' : '#B0BEC5',
                 width: `${item.prob}%`,
-                borderRadius: '6px',
+                borderRadius: '12px',
               }}
             />
           </div>

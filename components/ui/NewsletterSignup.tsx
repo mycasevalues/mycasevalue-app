@@ -39,7 +39,7 @@ export default function NewsletterSignup() {
       style={{
         background: '#FFFFFF',
         border: '1px solid #E5E7EB',
-        borderRadius: '6px',
+        borderRadius: '12px',
         padding: '32px',
       }}
     >
@@ -48,7 +48,7 @@ export default function NewsletterSignup() {
         style={{
           fontSize: '11px',
           fontWeight: 600,
-          color: '#7C3AED',
+          color: '#8B5CF6',
           textTransform: 'uppercase',
           letterSpacing: '0.08em',
           marginBottom: '8px',
@@ -62,8 +62,8 @@ export default function NewsletterSignup() {
         style={{
           fontFamily: 'var(--font-display)',
           fontSize: '20px',
-          fontWeight: 700,
-          color: '#212529',
+          fontWeight: 600,
+          color: '#0f0f0f',
           margin: '0 0 8px',
           lineHeight: 1.3,
         }}
@@ -92,7 +92,7 @@ export default function NewsletterSignup() {
             alignItems: 'center',
             gap: '12px',
             padding: '16px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             background: 'rgba(22, 163, 74, 0.08)',
             border: '1px solid rgba(22, 163, 74, 0.2)',
           }}
@@ -146,12 +146,12 @@ export default function NewsletterSignup() {
               minWidth: '200px',
               height: '48px',
               padding: '12px 16px',
-              borderRadius: '6px',
-              border: `4px solid ${status === 'error' ? '#7C3AED' : '#E5E7EB'}`,
+              borderRadius: '12px',
+              border: `4px solid ${status === 'error' ? '#8B5CF6' : '#E5E7EB'}`,
               background: '#FFFFFF',
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#212529',
+              color: '#0f0f0f',
               outline: 'none',
               transition: 'border-color 200ms',
               boxSizing: 'border-box',
@@ -166,18 +166,18 @@ export default function NewsletterSignup() {
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#7C3AED';
+              e.currentTarget.style.background = '#8B5CF6';
             }}
             style={{
               height: '48px',
               padding: '0 24px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               border: 'none',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              fontWeight: 700,
+              fontWeight: 600,
               textTransform: 'uppercase',
               cursor: status === 'loading' ? 'wait' : 'pointer',
               opacity: status === 'loading' ? 0.7 : 1,
@@ -196,7 +196,7 @@ export default function NewsletterSignup() {
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            color: '#7C3AED',
+            color: '#8B5CF6',
             margin: '12px 0 0',
           }}
         >

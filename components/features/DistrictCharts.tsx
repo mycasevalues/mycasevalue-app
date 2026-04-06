@@ -18,7 +18,7 @@ interface DistrictChartsProps {
   stats: DistrictStats;
 }
 
-const CHART_PALETTE = ['#7C3AED', '#1B3A5C', '#6D28D9', '#4B5563', '#E5E7EB', '#0080B8', '#00A4D9', '#1AA8D1', '#004D6D', '#003A52', '#002838'];
+const CHART_PALETTE = ['#8B5CF6', '#1B3A5C', '#6D28D9', '#4B5563', '#E5E7EB', '#0080B8', '#00A4D9', '#1AA8D1', '#004D6D', '#003A52', '#002838'];
 
 export default function DistrictCharts({ stats }: DistrictChartsProps) {
   // Prepare data for top case types chart (take top 8)
@@ -43,13 +43,13 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           style={{
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '6px',
+            borderRadius: '12px',
           }}
         >
           <h3
             className="text-lg font-bold mb-6"
             style={{
-              color: '#212529',
+              color: '#0f0f0f',
               fontFamily: 'var(--font-display)',
             }}
           >
@@ -67,8 +67,8 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 contentStyle={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
-                  color: '#212529',
+                  borderRadius: '12px',
+                  color: '#0f0f0f',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',
                 }}
@@ -86,13 +86,13 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           style={{
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '6px',
+            borderRadius: '12px',
           }}
         >
           <h3
             className="text-lg font-bold mb-6"
             style={{
-              color: '#212529',
+              color: '#0f0f0f',
               fontFamily: 'var(--font-display)',
             }}
           >
@@ -117,8 +117,8 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 contentStyle={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
-                  color: '#212529',
+                  borderRadius: '12px',
+                  color: '#0f0f0f',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',
                 }}

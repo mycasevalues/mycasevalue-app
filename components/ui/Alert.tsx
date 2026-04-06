@@ -21,9 +21,9 @@ const variantStyles = {
     iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z',
   },
   success: {
-    borderColor: '#15803D',
+    borderColor: '#059669',
     background: 'rgba(7,135,74,0.05)',
-    iconColor: '#15803D',
+    iconColor: '#059669',
     iconPath: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
   },
   warning: {
@@ -33,9 +33,9 @@ const variantStyles = {
     iconPath: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
   },
   danger: {
-    borderColor: '#7C3AED',
+    borderColor: '#8B5CF6',
     background: 'rgba(232,23,31,0.05)',
-    iconColor: '#7C3AED',
+    iconColor: '#8B5CF6',
     iconPath: 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z',
   },
 };
@@ -51,7 +51,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
         borderLeft: `4px solid ${styles.borderColor}`,
         background: styles.background,
         padding: '16px 20px',
-        borderRadius: '6px',
+        borderRadius: '12px',
         display: 'flex',
         gap: '12px',
         alignItems: 'flex-start',
@@ -78,7 +78,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
               fontWeight: 600,
-              color: '#212529',
+              color: '#0f0f0f',
               margin: '0 0 4px 0',
             }}
           >

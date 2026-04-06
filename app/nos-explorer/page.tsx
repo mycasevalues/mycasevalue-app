@@ -85,8 +85,8 @@ export default function NosExplorerPage() {
           <div style={{ paddingTop: 40, paddingBottom: 48 }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 700,
-              letterSpacing: '1.5px', marginBottom: 16, background: '#7C3AED',
+              padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
+              letterSpacing: '1.5px', marginBottom: 16, background: '#8B5CF6',
               color: '#FFFFFF', textTransform: 'uppercase',
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -116,7 +116,7 @@ export default function NosExplorerPage() {
                 { label: 'Data Span', value: '2000–2024' },
               ].map(s => (
                 <div key={s.label}>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 700, color: '#FFFFFF' }}>{s.value}</div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: '#FFFFFF' }}>{s.value}</div>
                   <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
                 </div>
               ))}
@@ -131,7 +131,7 @@ export default function NosExplorerPage() {
 
         {/* What are NOS Codes? */}
         <div style={{ marginTop: 48, padding: 32, background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2 }}>
-          <h2 style={{ fontSize: 20, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
             What Are NOS Codes?
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>

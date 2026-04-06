@@ -40,7 +40,7 @@ export default function NotFound() {
           maxWidth: 480,
           background: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
           padding: '48px 32px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}
@@ -50,7 +50,7 @@ export default function NotFound() {
           style={{
             fontFamily: '"PT Mono", monospace',
             fontSize: '96px',
-            fontWeight: 700,
+            fontWeight: 600,
             color: '#4B5563',
             lineHeight: 1,
             marginBottom: '16px',
@@ -64,7 +64,7 @@ export default function NotFound() {
           style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
             margin: '0 0 12px',
             letterSpacing: '-0.01em',
           }}
@@ -88,7 +88,7 @@ export default function NotFound() {
 
         <style>{`
           .notfound-link-primary:hover {
-            background: #7C3AED;
+            background: #8B5CF6;
             box-shadow: none;
           }
           .notfound-link-secondary:hover {
@@ -105,10 +105,10 @@ export default function NotFound() {
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',
@@ -132,9 +132,9 @@ export default function NotFound() {
               gap: 8,
               padding: '12px 24px',
               background: '#F7F8FA',
-              color: '#212529',
+              color: '#0f0f0f',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',

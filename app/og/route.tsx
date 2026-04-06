@@ -79,7 +79,7 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 fontSize: '32px',
-                fontWeight: '700',
+                fontWeight: '600',
                 letterSpacing: '-0.5px',
                 color: '#ffffff',
               }}
@@ -135,8 +135,8 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 flex: 1,
-                background: 'rgba(124, 58, 237, 0.1)',
-                border: '1px solid rgba(124, 58, 237, 0.25)',
+                background: 'rgba(139, 92, 246, 0.1)',
+                border: '1px solid rgba(139, 92, 246, 0.25)',
                 borderRadius: '12px',
                 padding: '20px',
                 display: 'flex',
@@ -157,8 +157,8 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '48px',
-                  fontWeight: '700',
-                  color: '#7C3AED',
+                  fontWeight: '600',
+                  color: '#8B5CF6',
                 }}
               >
                 {winRate}%
@@ -169,8 +169,8 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 flex: 1,
-                background: 'rgba(124, 58, 237, 0.1)',
-                border: '1px solid rgba(124, 58, 237, 0.25)',
+                background: 'rgba(139, 92, 246, 0.1)',
+                border: '1px solid rgba(139, 92, 246, 0.25)',
                 borderRadius: '12px',
                 padding: '20px',
                 display: 'flex',
@@ -191,8 +191,8 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '48px',
-                  fontWeight: '700',
-                  color: '#7C3AED',
+                  fontWeight: '600',
+                  color: '#8B5CF6',
                 }}
               >
                 {parseInt(cases as string).toLocaleString('en-US')}
@@ -203,8 +203,8 @@ export async function GET(request: NextRequest) {
             <div
               style={{
                 flex: 1,
-                background: 'rgba(124, 58, 237, 0.1)',
-                border: '1px solid rgba(124, 58, 237, 0.25)',
+                background: 'rgba(139, 92, 246, 0.1)',
+                border: '1px solid rgba(139, 92, 246, 0.25)',
                 borderRadius: '12px',
                 padding: '20px',
                 display: 'flex',
@@ -225,8 +225,8 @@ export async function GET(request: NextRequest) {
               <div
                 style={{
                   fontSize: '48px',
-                  fontWeight: '700',
-                  color: '#7C3AED',
+                  fontWeight: '600',
+                  color: '#8B5CF6',
                 }}
               >
                 {decodeURIComponent(recovery as string)}

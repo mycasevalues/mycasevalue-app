@@ -79,7 +79,7 @@ export default function PrivacyPage() {
         .legal-section-heading {
           font-size: 20px;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
           margin-bottom: 16px;
           margin-top: 48px;
           padding-bottom: 16px;
@@ -170,16 +170,16 @@ export default function PrivacyPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: '#FFF3F4',
-            color: '#7C3AED'
+            color: '#8B5CF6'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
             PRIVACY
           </div>
           <h1 style={{
             fontSize: '32px',
-            fontWeight: '700',
+            fontWeight: '600',
             marginBottom: '16px',
             color: 'white',
             letterSpacing: '-1.5px',
@@ -258,7 +258,7 @@ export default function PrivacyPage() {
             <h2 className="legal-section-heading">2. Information We Collect</h2>
 
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#212529', marginTop: '24px', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0f0f0f', marginTop: '24px', marginBottom: '12px' }}>
                 2.1 Information You Provide Directly
               </h3>
               <p className="legal-body">
@@ -274,7 +274,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#212529', marginTop: '24px', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0f0f0f', marginTop: '24px', marginBottom: '12px' }}>
                 2.2 Information Collected Automatically
               </h3>
               <p className="legal-body">
@@ -290,7 +290,7 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#212529', marginTop: '24px', marginBottom: '12px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#0f0f0f', marginTop: '24px', marginBottom: '12px' }}>
                 2.3 Information We Do NOT Collect or Store
               </h3>
               <p className="legal-body">
@@ -315,7 +315,7 @@ export default function PrivacyPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Types of Cookies We Use:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Types of Cookies We Use:</h4>
               <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}><strong>Essential/Functional Cookies:</strong> Necessary for site functionality, session management, authentication, security, and fraud prevention. These are required for the Service to function properly.</li>
                 <li style={{ marginBottom: '8px' }}><strong>Analytics Cookies:</strong> Collect aggregated data about how you use our Service (pages visited, features used, time on site) to understand user behavior and improve user experience. We use this data to identify trends and optimize content.</li>
@@ -361,14 +361,14 @@ export default function PrivacyPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>When We Share Information:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>When We Share Information:</h4>
               <p className="legal-body">
                 We may share information with trusted service providers and partners who assist us in operating, maintaining, and improving our Service. All service providers are bound by confidentiality agreements and data processing agreements that limit their use of your information to providing the specific services we've contracted.
               </p>
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Service Providers We Work With:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Service Providers We Work With:</h4>
               <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}><strong>Stripe:</strong> PCI-DSS compliant payment processor; receives only payment information necessary to process transactions</li>
                 <li style={{ marginBottom: '8px' }}><strong>Cloud Infrastructure Providers:</strong> AWS or other providers for data storage, hosting, and infrastructure; bound by data processing agreements</li>
@@ -378,7 +378,7 @@ export default function PrivacyPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Disclosures Required by Law:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Disclosures Required by Law:</h4>
               <p className="legal-body">
                 We may be required to disclose your information when:
               </p>
@@ -456,7 +456,7 @@ export default function PrivacyPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>European Union and European Economic Area Users:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>European Union and European Economic Area Users:</h4>
               <p className="legal-body">
                 If you are located in the EU/EEA, we process your personal data based on:
               </p>
@@ -472,7 +472,7 @@ export default function PrivacyPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>California Residents:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>California Residents:</h4>
               <p className="legal-body">
                 If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know, delete, opt-out of sales, and understand how your data is used. Contact us at <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a> to exercise these rights. We will respond within 45 days.
               </p>
@@ -498,9 +498,9 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               background: '#FFFFFF',
-              color: '#212529',
+              color: '#0f0f0f',
               border: '1px solid #E5E7EB'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
@@ -530,9 +530,9 @@ export default function PrivacyPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               background: '#FFFFFF',
-              color: '#212529',
+              color: '#0f0f0f',
               border: '1px solid #E5E7EB'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>

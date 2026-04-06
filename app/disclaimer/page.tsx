@@ -53,13 +53,13 @@ export default function DisclaimerPage() {
             <span style={{
               display: 'inline-block',
               padding: '6px 12px',
-              backgroundColor: '#7C3AED',
+              backgroundColor: '#8B5CF6',
               color: '#FFFFFF',
               fontSize: '11px',
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontFamily: 'var(--font-display)',
             }}>
               LEGAL
@@ -68,7 +68,7 @@ export default function DisclaimerPage() {
           <h1
             style={{
               fontSize: 'clamp(28px, 4vw, 40px)',
-              fontWeight: 700,
+              fontWeight: 600,
               color: '#FFFFFF',
               fontFamily: 'var(--font-display)',
               letterSpacing: '-1px',
@@ -122,10 +122,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Not Legal Advice
             </h2>
@@ -145,10 +145,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               No Attorney-Client Relationship
             </h2>
@@ -168,10 +168,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Data Sources and Public Records
             </h2>
@@ -214,10 +214,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Historical Data, Not Predictions
             </h2>
@@ -237,10 +237,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Data Limitations and Accuracy
             </h2>
@@ -289,10 +289,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               No Guarantees About Outcomes
             </h2>
@@ -341,10 +341,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Always Consult a Licensed Attorney
             </h2>
@@ -364,10 +364,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Liability Limitations
             </h2>
@@ -387,10 +387,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Privacy & Data Handling
             </h2>
@@ -410,10 +410,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Changes to This Disclaimer
             </h2>
@@ -433,10 +433,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Questions About This Disclaimer?
             </h2>
@@ -455,7 +455,7 @@ export default function DisclaimerPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
             }}>
@@ -473,10 +473,10 @@ export default function DisclaimerPage() {
             <h2 style={{
               fontSize: '1.875rem',
               fontFamily: 'var(--font-display)',
-              fontWeight: '700',
+              fontWeight: '600',
               marginBottom: '1rem',
               marginTop: 0,
-              color: '#212529',
+              color: '#0f0f0f',
             }}>
               Related Legal Pages
             </h2>
@@ -495,7 +495,7 @@ export default function DisclaimerPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
             }}>
@@ -511,15 +511,15 @@ export default function DisclaimerPage() {
           {/* Acknowledgment */}
           <section style={{
             padding: '32px',
-            borderRadius: '6px',
-            border: '2px solid #7C3AED',
+            borderRadius: '12px',
+            border: '2px solid #8B5CF6',
             backgroundColor: '#FFF3F4',
           }}>
             <p style={{
               fontSize: '1rem',
               lineHeight: '1.5',
               margin: 0,
-              color: '#212529',
+              color: '#0f0f0f',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
             }}>
@@ -528,7 +528,7 @@ export default function DisclaimerPage() {
             <ul style={{
               fontSize: '1rem',
               lineHeight: '1.5',
-              color: '#212529',
+              color: '#0f0f0f',
               fontFamily: 'var(--font-body)',
               marginTop: 12,
               paddingLeft: '24px',
@@ -545,7 +545,7 @@ export default function DisclaimerPage() {
               fontSize: '1rem',
               lineHeight: '1.5',
               margin: '12px 0 0 0',
-              color: '#212529',
+              color: '#0f0f0f',
               fontFamily: 'var(--font-body)',
             }}>
               If you do not agree with this disclaimer, you should not use MyCaseValue.

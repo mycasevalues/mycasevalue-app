@@ -14,14 +14,14 @@ export default function ContactForm() {
     return (
       <div style={{
         padding: '48px 32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
-        borderRadius: '6px', textAlign: 'center',
+        borderRadius: '12px', textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#15803D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
           <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
           <polyline points="22 4 12 14.01 9 11.01" />
         </svg>
-        <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+        <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
           Message Sent
         </h3>
         <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
@@ -33,8 +33,8 @@ export default function ContactForm() {
 
   const inputStyle = {
     width: '100%', padding: '12px 14px', fontSize: '14px',
-    fontFamily: 'var(--font-body)', color: '#212529',
-    border: '1px solid #E5E7EB', borderRadius: '6px',
+    fontFamily: 'var(--font-body)', color: '#0f0f0f',
+    border: '1px solid #E5E7EB', borderRadius: '12px',
     background: '#FFFFFF', outline: 'none',
     transition: 'border-color 200ms',
     height: '48px',
@@ -43,7 +43,7 @@ export default function ContactForm() {
 
   const labelStyle = {
     display: 'block', fontSize: '14px', fontWeight: 600,
-    color: '#212529', fontFamily: 'var(--font-body)',
+    color: '#0f0f0f', fontFamily: 'var(--font-body)',
     marginBottom: '8px',
   } as React.CSSProperties;
 
@@ -53,8 +53,8 @@ export default function ContactForm() {
         .contact-input:focus { border-color: #6D28D9 !important; outline: none; }
         .contact-submit {
           display: block; padding: 0 32px; height: 48px;
-          background: #7C3AED; color: #FFFFFF; border: none;
-          border-radius: 6px; font-size: 15px; font-weight: 600;
+          background: #8B5CF6; color: #FFFFFF; border: none;
+          border-radius: 12px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-body); width: 100%;
         }
@@ -62,10 +62,10 @@ export default function ContactForm() {
       `}</style>
       <form onSubmit={handleSubmit} style={{
         padding: '32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
-        borderRadius: '6px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+        borderRadius: '12px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex', flexDirection: 'column', gap: '20px',
       }}>
-        <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
+        <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
           Send Us a Message
         </h2>
         <div className="contact-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>

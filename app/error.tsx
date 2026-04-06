@@ -45,7 +45,7 @@ export default function Error({
           textAlign: 'center',
           background: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
           padding: '48px 32px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
         }}
@@ -55,7 +55,7 @@ export default function Error({
           style={{
             width: 72,
             height: 72,
-            borderRadius: '6px',
+            borderRadius: '12px',
             background: 'rgba(0,105,151,0.08)',
             display: 'inline-flex',
             alignItems: 'center',
@@ -74,7 +74,7 @@ export default function Error({
           style={{
             fontSize: '24px',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
             margin: '0 0 8px',
             letterSpacing: '-0.01em',
           }}
@@ -119,10 +119,10 @@ export default function Error({
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontSize: '14px',
               fontWeight: 600,
               cursor: 'pointer',
@@ -130,11 +130,11 @@ export default function Error({
               boxShadow: 'none',
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLButtonElement).style.background = '#7C3AED';
+              (e.target as HTMLButtonElement).style.background = '#8B5CF6';
               (e.target as HTMLButtonElement).style.boxShadow = 'none';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLButtonElement).style.background = '#7C3AED';
+              (e.target as HTMLButtonElement).style.background = '#8B5CF6';
               (e.target as HTMLButtonElement).style.boxShadow = 'none';
             }}
           >
@@ -153,9 +153,9 @@ export default function Error({
               gap: 8,
               padding: '12px 24px',
               background: '#F7F8FA',
-              color: '#212529',
+              color: '#0f0f0f',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontSize: '14px',
               fontWeight: 600,
               textDecoration: 'none',

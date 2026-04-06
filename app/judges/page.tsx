@@ -148,9 +148,9 @@ export default function JudgesPage() {
           justify-content: space-between;
           align-items: center;
           padding: 10px 14px;
-          border-radius: 6px;
+          border-radius: 12px;
           font-size: 14px;
-          color: #212529;
+          color: #0f0f0f;
           text-decoration: none;
           font-family: var(--font-body);
           background: #FFFFFF;
@@ -183,8 +183,8 @@ export default function JudgesPage() {
             <div
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 700,
-                letterSpacing: '1.5px', marginBottom: 16, background: '#7C3AED',
+                padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
+                letterSpacing: '1.5px', marginBottom: 16, background: '#8B5CF6',
                 color: '#FFFFFF', textTransform: 'uppercase',
               }}
             >
@@ -216,7 +216,7 @@ export default function JudgesPage() {
                 { label: 'Total Cases', value: `${(allJudges.reduce((s, j) => s + j.stats.totalCases, 0) / 1000).toFixed(0)}K+` },
               ].map(s => (
                 <div key={s.label}>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 700, color: '#FFFFFF' }}>{s.value}</div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: '#FFFFFF' }}>{s.value}</div>
                   <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
                 </div>
               ))}
@@ -232,7 +232,7 @@ export default function JudgesPage() {
 
         {/* What Judge Profiles Include */}
         <section style={{ marginTop: 64, marginBottom: 64 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 24 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 24 }}>
             What Judge Profiles Include
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
@@ -245,8 +245,8 @@ export default function JudgesPage() {
               { iconPath: 'M3 3h8v8H3z M13 3h8v8h-8z M3 13h8v8H3z M13 13h8v8h-8z', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
             ].map((item, idx) => (
               <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-                <div style={{ fontSize: 20, marginBottom: 8 }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg></div>
-                <h3 style={{ fontSize: 15, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
+                <div style={{ fontSize: 20, marginBottom: 8 }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg></div>
+                <h3 style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
                   {item.title}
                 </h3>
                 <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
@@ -259,7 +259,7 @@ export default function JudgesPage() {
 
         {/* Browse by Circuit */}
         <section style={{ marginBottom: 64 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 32 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 32 }}>
             Browse Judges by Circuit
           </h2>
 
@@ -272,7 +272,7 @@ export default function JudgesPage() {
               return (
                 <div key={circuit.name} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid #E5E7EB' }}>
-                    <h3 style={{ fontSize: 17, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', margin: 0 }}>
+                    <h3 style={{ fontSize: 17, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', margin: 0 }}>
                       {circuit.name}
                     </h3>
                     <span style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
@@ -295,7 +295,7 @@ export default function JudgesPage() {
 
         {/* CTA */}
         <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#1B3A5C', textAlign: 'center', marginBottom: 64 }}>
-          <h2 style={{ fontSize: 24, fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
+          <h2 style={{ fontSize: 24, fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
             All judge analytics are free during launch
           </h2>
           <p style={{ fontSize: 15, color: '#C7D1D8', fontFamily: 'var(--font-body)', maxWidth: 520, margin: '0 auto 28px', lineHeight: 1.6 }}>
@@ -305,7 +305,7 @@ export default function JudgesPage() {
             href="/search"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '12px 28px', borderRadius: 2, background: '#7C3AED',
+              padding: '12px 28px', borderRadius: 2, background: '#8B5CF6',
               color: '#FFFFFF', fontSize: 16, fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)',
             }}
           >
@@ -316,7 +316,7 @@ export default function JudgesPage() {
 
         {/* Disclaimer */}
         <div style={{ padding: 24, border: '1px solid #E5E7EB', borderRadius: 2, background: '#FFFFFF' }}>
-          <h3 style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px', color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
+          <h3 style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.8px', color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
             Data Methodology
           </h3>
           <p style={{ fontSize: 12, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>

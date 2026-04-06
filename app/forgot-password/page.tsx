@@ -67,7 +67,7 @@ export default function ForgotPasswordPage() {
         .auth-input:focus {
           border-color: #6D28D9 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
+          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
         }
         .auth-btn:hover:not(:disabled) {
           background-color: #B91C1C !important;
@@ -84,7 +84,7 @@ export default function ForgotPasswordPage() {
           maxWidth: '440px',
           backgroundColor: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           padding: '32px',
         }}
@@ -113,7 +113,7 @@ export default function ForgotPasswordPage() {
               fontFamily: 'var(--font-display)',
               fontSize: '24px',
               fontWeight: 900,
-              color: '#212529',
+              color: '#0f0f0f',
               margin: 0,
               letterSpacing: '-0.5px',
             }}
@@ -129,7 +129,7 @@ export default function ForgotPasswordPage() {
               style={{
                 width: '56px',
                 height: '56px',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 backgroundColor: 'rgba(0,105,151,0.08)',
                 display: 'flex',
                 alignItems: 'center',
@@ -145,8 +145,8 @@ export default function ForgotPasswordPage() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: '24px',
-                fontWeight: 700,
-                color: '#212529',
+                fontWeight: 600,
+                color: '#0f0f0f',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
               }}
@@ -162,7 +162,7 @@ export default function ForgotPasswordPage() {
                 lineHeight: 1.5,
               }}
             >
-              We sent a password reset link to <strong style={{ color: '#212529' }}>{email}</strong>. Click the link in the email to reset your password.
+              We sent a password reset link to <strong style={{ color: '#0f0f0f' }}>{email}</strong>. Click the link in the email to reset your password.
             </p>
             <Link
               href="/sign-in"
@@ -185,8 +185,8 @@ export default function ForgotPasswordPage() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: '24px',
-                fontWeight: 700,
-                color: '#212529',
+                fontWeight: 600,
+                color: '#0f0f0f',
                 margin: '0 0 12px 0',
                 lineHeight: 1.2,
               }}
@@ -212,9 +212,9 @@ export default function ForgotPasswordPage() {
               <div
                 style={{
                   padding: '12px 16px',
-                  backgroundColor: 'rgba(124, 58, 237, 0.06)',
+                  backgroundColor: 'rgba(139, 92, 246, 0.06)',
                   border: '1px solid rgba(204,16,25,0.20)',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   marginBottom: '20px',
                 }}
               >
@@ -222,7 +222,7 @@ export default function ForgotPasswordPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#7C3AED',
+                    color: '#8B5CF6',
                     margin: 0,
                   }}
                 >
@@ -242,7 +242,7 @@ export default function ForgotPasswordPage() {
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: '#212529',
+                    color: '#0f0f0f',
                     marginBottom: '8px',
                   }}
                 >
@@ -261,10 +261,10 @@ export default function ForgotPasswordPage() {
                     height: '48px',
                     padding: '12px 14px',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
-                    color: '#212529',
+                    color: '#0f0f0f',
                     backgroundColor: '#FFFFFF',
                     boxSizing: 'border-box',
                     transition: 'border-color 0.2s, box-shadow 0.2s',
@@ -281,10 +281,10 @@ export default function ForgotPasswordPage() {
                   width: '100%',
                   height: '48px',
                   padding: '0 16px',
-                  backgroundColor: '#7C3AED',
+                  backgroundColor: '#8B5CF6',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '15px',
                   fontWeight: 600,

@@ -49,7 +49,7 @@ export default function ResultsPage() {
               Home
             </Link>
             <span style={{ margin: '0 8px', color: '#A8ACB1' }}>&gt;</span>
-            <span style={{ color: '#212529', fontWeight: '600' }}>Case Results</span>
+            <span style={{ color: '#0f0f0f', fontWeight: '600' }}>Case Results</span>
           </nav>
         </div>
       </div>
@@ -60,12 +60,12 @@ export default function ResultsPage() {
           <div style={{ marginBottom: '16px' }}>
             <span style={{
               display: 'inline-block',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               padding: '6px 12px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontSize: '11px',
-              fontWeight: '700',
+              fontWeight: '600',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',
               textTransform: 'uppercase'
@@ -75,7 +75,7 @@ export default function ResultsPage() {
           </div>
           <h1 style={{
             fontSize: '40px',
-            fontWeight: '700',
+            fontWeight: '600',
             color: '#FFFFFF',
             margin: '0 0 12px 0',
             lineHeight: '1.2',
@@ -101,7 +101,7 @@ export default function ResultsPage() {
         {/* Empty State Card */}
         <div style={{
           padding: '32px',
-          borderRadius: '6px',
+          borderRadius: '12px',
           border: '1px solid #E5E7EB',
           background: '#FFFFFF',
           textAlign: 'center'
@@ -109,7 +109,7 @@ export default function ResultsPage() {
           <h2 style={{
             fontSize: '18px',
             fontWeight: '600',
-            color: '#212529',
+            color: '#0f0f0f',
             margin: '0 0 12px 0',
             fontFamily: 'var(--font-display)'
           }}>
@@ -135,10 +135,10 @@ export default function ResultsPage() {
                 paddingLeft: '24px',
                 paddingRight: '24px',
                 height: '48px',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: '600',
-                background: '#7C3AED',
+                background: '#8B5CF6',
                 color: '#FFFFFF',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
@@ -158,11 +158,11 @@ export default function ResultsPage() {
                 paddingLeft: '24px',
                 paddingRight: '24px',
                 height: '48px',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: '600',
                 background: '#FFFFFF',
-                color: '#212529',
+                color: '#0f0f0f',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
                 border: '1px solid #E5E7EB',
@@ -178,14 +178,14 @@ export default function ResultsPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '32px' }}>
           <div className="info-card" style={{
             padding: '20px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             border: '1px solid #E5E7EB',
             background: '#FFFFFF'
           }}>
             <h3 style={{
               fontSize: '11px',
-              fontWeight: '700',
-              color: '#212529',
+              fontWeight: '600',
+              color: '#0f0f0f',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',
@@ -205,14 +205,14 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '20px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             border: '1px solid #E5E7EB',
             background: '#FFFFFF'
           }}>
             <h3 style={{
               fontSize: '11px',
-              fontWeight: '700',
-              color: '#212529',
+              fontWeight: '600',
+              color: '#0f0f0f',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',
@@ -232,14 +232,14 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '20px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             border: '1px solid #E5E7EB',
             background: '#FFFFFF'
           }}>
             <h3 style={{
               fontSize: '11px',
-              fontWeight: '700',
-              color: '#212529',
+              fontWeight: '600',
+              color: '#0f0f0f',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',
@@ -259,14 +259,14 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '20px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             border: '1px solid #E5E7EB',
             background: '#FFFFFF'
           }}>
             <h3 style={{
               fontSize: '11px',
-              fontWeight: '700',
-              color: '#212529',
+              fontWeight: '600',
+              color: '#0f0f0f',
               margin: '0 0 8px 0',
               fontFamily: 'var(--font-display)',
               letterSpacing: '0.08em',

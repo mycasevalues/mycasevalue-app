@@ -131,7 +131,7 @@ export default function IntegrationsPage() {
         .integration-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 32px;
           transition: all 0.2s ease;
           position: relative;
@@ -139,7 +139,7 @@ export default function IntegrationsPage() {
         .integration-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
         }
         .integration-card:hover::before {
           content: '';
@@ -148,8 +148,8 @@ export default function IntegrationsPage() {
           left: 0;
           right: 0;
           height: 3px;
-          background: #7C3AED;
-          border-radius: 6px 4px 0 0;
+          background: #8B5CF6;
+          border-radius: 12px 4px 0 0;
         }
         .breadcrumb-link:hover {
           color: #FFFFFF !important;
@@ -160,7 +160,7 @@ export default function IntegrationsPage() {
         .feature-tag {
           background: #F8F9FA;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 4px 10px;
           font-size: 12px;
           color: #4B5563;
@@ -199,14 +199,14 @@ export default function IntegrationsPage() {
             alignItems: 'center',
             gap: '8px',
             padding: '6px 12px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             fontSize: '11px',
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: '1.5px',
             textTransform: 'uppercase' as const,
             marginBottom: '16px',
             background: 'rgba(255,255,255,0.1)',
-            color: '#7C3AED',
+            color: '#8B5CF6',
           }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <polyline points="16 18 22 12 16 6" />
@@ -218,7 +218,7 @@ export default function IntegrationsPage() {
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(28px, 5vw, 42px)',
-            fontWeight: 700,
+            fontWeight: 600,
             color: '#FFFFFF',
             margin: '0 0 16px 0',
             letterSpacing: '-1.5px',
@@ -251,8 +251,8 @@ export default function IntegrationsPage() {
               <p style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: '24px',
-                fontWeight: 700,
-                color: '#7C3AED',
+                fontWeight: 600,
+                color: '#8B5CF6',
                 margin: '0 0 4px 0',
               }}>
                 {stat.value}
@@ -290,7 +290,7 @@ export default function IntegrationsPage() {
                 <div style={{
                   width: '56px',
                   height: '56px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   background: '#F8F9FA',
                   border: '1px solid #E5E7EB',
                   display: 'flex',
@@ -301,13 +301,13 @@ export default function IntegrationsPage() {
                 </div>
                 <span style={{
                   fontSize: '11px',
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   background: integration.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
-                  color: integration.status === 'Available' ? '#15803D' : '#7C3AED',
+                  color: integration.status === 'Available' ? '#059669' : '#8B5CF6',
                   border: integration.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                 }}>
                   {integration.status}
@@ -317,7 +317,7 @@ export default function IntegrationsPage() {
               {/* Category */}
               <p style={{
                 fontSize: '11px',
-                fontWeight: 700,
+                fontWeight: 600,
                 color: '#6D28D9',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.08em',
@@ -330,8 +330,8 @@ export default function IntegrationsPage() {
               <h3 style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: '20px',
-                fontWeight: 700,
-                color: '#212529',
+                fontWeight: 600,
+                color: '#0f0f0f',
                 margin: '0 0 12px 0',
               }}>
                 {integration.name}
@@ -363,12 +363,12 @@ export default function IntegrationsPage() {
                 style={{
                   display: 'inline-block',
                   padding: '10px 24px',
-                  background: '#7C3AED',
+                  background: '#8B5CF6',
                   color: '#FFFFFF',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   textDecoration: 'none',
                   fontSize: '13px',
-                  fontWeight: 700,
+                  fontWeight: 600,
                   textTransform: 'uppercase' as const,
                   letterSpacing: '0.05em',
                   transition: 'all 0.2s ease',
@@ -391,8 +391,8 @@ export default function IntegrationsPage() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: '28px',
-              fontWeight: 700,
-              color: '#212529',
+              fontWeight: 600,
+              color: '#0f0f0f',
               margin: 0,
             }}>
               Platform Capabilities
@@ -401,7 +401,7 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               borderRadius: '50%',
             }} />
           </div>
@@ -460,7 +460,7 @@ export default function IntegrationsPage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '24px',
                   transition: 'all 0.2s ease',
                   position: 'relative',
@@ -476,8 +476,8 @@ export default function IntegrationsPage() {
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '16px',
-                  fontWeight: 700,
-                  color: '#212529',
+                  fontWeight: 600,
+                  color: '#0f0f0f',
                   margin: '0 0 12px 0',
                 }}>
                   {capability.title}
@@ -492,13 +492,13 @@ export default function IntegrationsPage() {
                 </p>
                 <span style={{
                   fontSize: '11px',
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   background: capability.status === 'Available' ? '#F0FDF4' : 'rgba(232, 23, 31, 0.06)',
-                  color: capability.status === 'Available' ? '#15803D' : '#7C3AED',
+                  color: capability.status === 'Available' ? '#059669' : '#8B5CF6',
                   border: capability.status === 'Available' ? '1px solid #BBF7D0' : 'none',
                   display: 'inline-block',
                 }}>
@@ -520,8 +520,8 @@ export default function IntegrationsPage() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: '28px',
-              fontWeight: 700,
-              color: '#212529',
+              fontWeight: 600,
+              color: '#0f0f0f',
               margin: 0,
             }}>
               Data Sources We Connect
@@ -530,7 +530,7 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               borderRadius: '50%',
             }} />
           </div>
@@ -578,7 +578,7 @@ export default function IntegrationsPage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '28px',
                   transition: 'all 0.2s ease',
                   display: 'flex',
@@ -589,14 +589,14 @@ export default function IntegrationsPage() {
                   fontSize: '32px',
                   lineHeight: 1,
                 }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={source.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={source.iconPath}/></svg>
                 </div>
                 <div>
                   <h3 style={{
                     fontFamily: 'var(--font-display)',
                     fontSize: '16px',
-                    fontWeight: 700,
-                    color: '#212529',
+                    fontWeight: 600,
+                    color: '#0f0f0f',
                     margin: '0 0 8px 0',
                   }}>
                     {source.name}
@@ -618,14 +618,14 @@ export default function IntegrationsPage() {
         {/* API Quick Start */}
         <div style={{
           background: '#1B3A5C',
-          borderRadius: '6px',
+          borderRadius: '12px',
           padding: '48px',
           marginBottom: '48px',
         }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '24px',
-            fontWeight: 700,
+            fontWeight: 600,
             color: '#FFFFFF',
             margin: '0 0 12px 0',
           }}>
@@ -643,7 +643,7 @@ export default function IntegrationsPage() {
           {/* Code Block */}
           <div style={{
             background: 'rgba(0,0,0,0.3)',
-            borderRadius: '6px',
+            borderRadius: '12px',
             padding: '24px',
             fontFamily: 'var(--font-mono)',
             fontSize: '13px',
@@ -654,24 +654,24 @@ export default function IntegrationsPage() {
           }}>
             <div style={{ color: '#4B5563', marginBottom: '8px' }}>{'// Fetch case outcome data'}</div>
             <div>
-              <span style={{ color: '#7C3AED' }}>const</span>{' '}
+              <span style={{ color: '#8B5CF6' }}>const</span>{' '}
               <span style={{ color: '#FFFFFF' }}>response</span>{' '}
               <span style={{ color: '#4B5563' }}>=</span>{' '}
-              <span style={{ color: '#7C3AED' }}>await</span>{' '}
+              <span style={{ color: '#8B5CF6' }}>await</span>{' '}
               <span style={{ color: '#6D28D9' }}>fetch</span>
               <span style={{ color: '#E5E7EB' }}>(</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
-              <span style={{ color: '#15803D' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
+              <span style={{ color: '#059669' }}>{`'https://api.mycasevalues.com/v1/outcomes?nos=442&state=CA'`}</span>
               <span style={{ color: '#E5E7EB' }}>,</span>
             </div>
             <div style={{ paddingLeft: '16px' }}>
               <span style={{ color: '#E5E7EB' }}>{'{ '}</span>
               <span style={{ color: '#FFFFFF' }}>headers</span>
               <span style={{ color: '#E5E7EB' }}>{': { '}</span>
-              <span style={{ color: '#15803D' }}>{`'Authorization'`}</span>
+              <span style={{ color: '#059669' }}>{`'Authorization'`}</span>
               <span style={{ color: '#E5E7EB' }}>{': '}</span>
-              <span style={{ color: '#15803D' }}>{`'Bearer YOUR_API_KEY'`}</span>
+              <span style={{ color: '#059669' }}>{`'Bearer YOUR_API_KEY'`}</span>
               <span style={{ color: '#E5E7EB' }}>{' } }'}</span>
             </div>
             <div>
@@ -686,12 +686,12 @@ export default function IntegrationsPage() {
               style={{
                 display: 'inline-block',
                 padding: '12px 28px',
-                background: '#7C3AED',
+                background: '#8B5CF6',
                 color: '#FFFFFF',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 textDecoration: 'none',
                 fontSize: '13px',
-                fontWeight: 700,
+                fontWeight: 600,
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.05em',
                 transition: 'all 0.2s ease',
@@ -713,8 +713,8 @@ export default function IntegrationsPage() {
             <h2 style={{
               fontFamily: 'var(--font-display)',
               fontSize: '28px',
-              fontWeight: 700,
-              color: '#212529',
+              fontWeight: 600,
+              color: '#0f0f0f',
               margin: 0,
             }}>
               Get Started
@@ -723,7 +723,7 @@ export default function IntegrationsPage() {
               display: 'inline-block',
               width: '4px',
               height: '4px',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               borderRadius: '50%',
             }} />
           </div>
@@ -749,7 +749,7 @@ export default function IntegrationsPage() {
               style={{
                 background: '#FFFFFF',
                 border: '2px solid #6D28D9',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'flex',
@@ -774,8 +774,8 @@ export default function IntegrationsPage() {
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '18px',
-                  fontWeight: 700,
-                  color: '#212529',
+                  fontWeight: 600,
+                  color: '#0f0f0f',
                   margin: '0 0 12px 0',
                 }}>
                   API Documentation
@@ -791,7 +791,7 @@ export default function IntegrationsPage() {
               </div>
               <span style={{
                 fontSize: '13px',
-                fontWeight: 700,
+                fontWeight: 600,
                 color: '#6D28D9',
                 marginTop: '24px',
                 textTransform: 'uppercase' as const,
@@ -805,8 +805,8 @@ export default function IntegrationsPage() {
               href="/contact"
               style={{
                 background: '#FFFFFF',
-                border: '2px solid #7C3AED',
-                borderRadius: '6px',
+                border: '2px solid #8B5CF6',
+                borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'flex',
@@ -824,14 +824,14 @@ export default function IntegrationsPage() {
                 }
               `}</style>
               <div>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '18px',
-                  fontWeight: 700,
-                  color: '#212529',
+                  fontWeight: 600,
+                  color: '#0f0f0f',
                   margin: '0 0 12px 0',
                 }}>
                   Contact Our Team
@@ -847,8 +847,8 @@ export default function IntegrationsPage() {
               </div>
               <span style={{
                 fontSize: '13px',
-                fontWeight: 700,
-                color: '#7C3AED',
+                fontWeight: 600,
+                color: '#8B5CF6',
                 marginTop: '24px',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.05em',
@@ -863,15 +863,15 @@ export default function IntegrationsPage() {
         <div style={{
           background: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
           padding: '48px',
           textAlign: 'center' as const,
         }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '24px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             margin: '0 0 12px 0',
           }}>
             Need a Custom Integration?
@@ -893,12 +893,12 @@ export default function IntegrationsPage() {
             style={{
               display: 'inline-block',
               padding: '14px 32px',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FFFFFF',
-              borderRadius: '6px',
+              borderRadius: '12px',
               textDecoration: 'none',
               fontSize: '14px',
-              fontWeight: 700,
+              fontWeight: 600,
               textTransform: 'uppercase' as const,
               letterSpacing: '0.05em',
               transition: 'all 0.2s ease',

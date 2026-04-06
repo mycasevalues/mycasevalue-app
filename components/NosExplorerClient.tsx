@@ -20,10 +20,10 @@ interface NosRow {
 type SortField = 'nos' | 'label' | 'total' | 'wr' | 'sp' | 'mo' | 'rngMd';
 type SortDir = 'asc' | 'desc';
 
-const wrColor = (wr: number) => wr >= 50 ? '#15803D' : wr >= 35 ? '#D97706' : '#7C3AED';
+const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#8B5CF6';
 
 const CATEGORY_COLORS: Record<string, string> = {
-  work: '#212529', injury: '#7C3AED', consumer: '#6D28D9', rights: '#7C3AED',
+  work: '#0f0f0f', injury: '#8B5CF6', consumer: '#6D28D9', rights: '#8B5CF6',
   money: '#D97706', housing: '#059669', medical: '#DB2777', family: '#EC4899',
   gov: '#4B5563', education: '#0891B2', ip: '#10B981', other: '#4B5563',
 };
@@ -95,12 +95,12 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
       {/* Summary stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12, marginBottom: 20 }}>
         {[
-          { label: 'NOS Codes', value: String(filtered.length), color: '#212529' },
+          { label: 'NOS Codes', value: String(filtered.length), color: '#0f0f0f' },
           { label: 'Total Cases', value: totalFiltered >= 1000000 ? `${(totalFiltered / 1000000).toFixed(1)}M` : `${(totalFiltered / 1000).toFixed(0)}K`, color: '#6D28D9' },
           { label: 'Avg Win Rate', value: `${avgWR}%`, color: wrColor(avgWR) },
         ].map(s => (
           <div key={s.label} style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, padding: '16px 12px', textAlign: 'center' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 700, color: s.color }}>{s.value}</div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 22, fontWeight: 600, color: s.color }}>{s.value}</div>
             <div style={{ fontSize: 10, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginTop: 2 }}>{s.label}</div>
           </div>
         ))}
@@ -120,7 +120,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
             style={{
               width: '100%', height: 40, paddingLeft: 36, paddingRight: 12,
               border: '1px solid #E5E7EB', borderRadius: 2, fontFamily: 'var(--font-body)',
-              fontSize: 14, color: '#212529', background: '#FFFFFF',
+              fontSize: 14, color: '#0f0f0f', background: '#FFFFFF',
             }}
           />
         </div>
@@ -130,7 +130,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
           className="nos-select"
           style={{
             height: 40, padding: '0 32px 0 12px', border: '1px solid #E5E7EB', borderRadius: 2,
-            fontFamily: 'var(--font-body)', fontSize: 13, color: '#212529', background: '#FFFFFF',
+            fontFamily: 'var(--font-body)', fontSize: 13, color: '#0f0f0f', background: '#FFFFFF',
             appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
             backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
           }}
@@ -180,15 +180,15 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                   onClick={() => setExpandedNos(expandedNos === row.nos ? null : row.nos)}
                   style={{ borderBottom: '1px solid #F0F0F0', background: i % 2 === 0 ? '#FFFFFF' : '#FAFAFA', cursor: 'pointer' }}
                 >
-                  <td style={{ padding: '10px 16px', fontFamily: 'var(--font-mono)', fontWeight: 700, color: '#6D28D9', fontSize: 13 }}>
+                  <td style={{ padding: '10px 16px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#6D28D9', fontSize: 13 }}>
                     {row.nos}
                   </td>
-                  <td style={{ padding: '10px 8px', fontWeight: 600, color: '#212529' }}>
+                  <td style={{ padding: '10px 8px', fontWeight: 600, color: '#0f0f0f' }}>
                     {row.label}
                   </td>
                   <td style={{ padding: '10px 8px' }}>
                     <span style={{
-                      fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 2,
+                      fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 2,
                       background: `${CATEGORY_COLORS[row.category] || '#4B5563'}15`,
                       color: CATEGORY_COLORS[row.category] || '#4B5563',
                       textTransform: 'uppercase',
@@ -196,19 +196,19 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                       {row.categoryLabel}
                     </span>
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#212529' }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {row.total.toLocaleString()}
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 700, color: wrColor(row.wr) }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: wrColor(row.wr) }}>
                     {row.wr}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#212529' }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {row.sp}%
                   </td>
-                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#212529' }}>
+                  <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {row.mo}mo
                   </td>
-                  <td style={{ padding: '10px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 700, color: '#7C3AED' }}>
+                  <td style={{ padding: '10px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#8B5CF6' }}>
                     {row.rngMd > 0 ? `$${row.rngMd}K` : '–'}
                   </td>
                 </tr>
@@ -219,7 +219,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16 }}>
                           <div>
                             <div style={{ fontSize: 10, fontWeight: 600, textTransform: 'uppercase', color: '#4B5563', marginBottom: 4 }}>Recovery Range</div>
-                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: '#212529' }}>
+                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 14, color: '#0f0f0f' }}>
                               ${row.rngLo}K – ${row.rngMd}K – ${row.rngHi}K
                             </div>
                             <div style={{ fontSize: 10, color: '#4B5563', marginTop: 2 }}>25th / Median / 75th</div>
@@ -241,7 +241,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                               href={`/report/${row.nos}`}
                               style={{
                                 display: 'inline-flex', alignItems: 'center', gap: 6,
-                                padding: '8px 16px', background: '#7C3AED', color: '#FFFFFF',
+                                padding: '8px 16px', background: '#8B5CF6', color: '#FFFFFF',
                                 borderRadius: 2, fontSize: 12, fontWeight: 600, textDecoration: 'none',
                                 fontFamily: 'var(--font-body)',
                               }}

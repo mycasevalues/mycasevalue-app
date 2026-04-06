@@ -92,11 +92,11 @@ const AnchorNav = () => {
                   padding: '14px 20px',
                   fontSize: '13px',
                   fontWeight: 500,
-                  color: isTrialButton ? '#7C3AED' : isActive ? '#212529' : '#4B5563',
+                  color: isTrialButton ? '#8B5CF6' : isActive ? '#0f0f0f' : '#4B5563',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   whiteSpace: 'nowrap',
-                  borderBottom: isActive && !isTrialButton ? '2px solid #7C3AED' : '2px solid transparent',
+                  borderBottom: isActive && !isTrialButton ? '2px solid #8B5CF6' : '2px solid transparent',
                   transition: 'all 150ms',
                   cursor: 'pointer',
                 }}
@@ -110,7 +110,7 @@ const AnchorNav = () => {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .anchor-nav-link:hover { color: #212529 !important; border-bottom-color: #7C3AED !important; }
+        .anchor-nav-link:hover { color: #0f0f0f !important; border-bottom-color: #8B5CF6 !important; }
         @media (max-width: 768px) {
           .anchor-nav { display: none !important; }
         }

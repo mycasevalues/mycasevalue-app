@@ -22,12 +22,12 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
   const chartStyle = {
     fontFamily: 'var(--font-body)',
     fontSize: '12px',
-    fill: '#212529',
+    fill: '#0f0f0f',
   };
 
   const cardStyle = {
     background: '#FFFFFF',
-    borderRadius: '6px',
+    borderRadius: '12px',
     border: '1px solid #E5E7EB',
     padding: '32px',
     marginBottom: '24px',
@@ -40,8 +40,8 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
         <h3
           style={{
             fontSize: '16px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             marginBottom: '20px',
             marginTop: 0,
             fontFamily: 'var(--font-display)',
@@ -71,9 +71,9 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               contentStyle={{
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                color: '#212529',
+                color: '#0f0f0f',
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
               }}
@@ -97,8 +97,8 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
         <h3
           style={{
             fontSize: '16px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             marginBottom: '20px',
             marginTop: 0,
             fontFamily: 'var(--font-display)',
@@ -132,9 +132,9 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               contentStyle={{
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                color: '#212529',
+                color: '#0f0f0f',
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
               }}

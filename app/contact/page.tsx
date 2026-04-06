@@ -59,13 +59,13 @@ export default function ContactPage() {
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#7C3AED',
+                backgroundColor: '#8B5CF6',
                 color: '#FFFFFF',
                 fontSize: '11px',
-                fontWeight: 700,
+                fontWeight: 600,
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 fontFamily: 'var(--font-display)',
               }}>
                 CONTACT US
@@ -74,7 +74,7 @@ export default function ContactPage() {
             <h1
               style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
-                fontWeight: 700,
+                fontWeight: 600,
                 color: '#FFFFFF',
                 fontFamily: 'var(--font-display)',
                 letterSpacing: '-1px',
@@ -116,8 +116,8 @@ export default function ContactPage() {
           <h2
             style={{
               fontSize: 24,
-              fontWeight: 700,
-              color: '#212529',
+              fontWeight: 600,
+              color: '#0f0f0f',
               fontFamily: 'var(--font-display)',
               marginBottom: 24,
             }}
@@ -152,7 +152,7 @@ export default function ContactPage() {
                 href={link.href}
                 style={{
                   padding: 24,
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   border: '1px solid #E5E7EB',
                   background: '#FFFFFF',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -169,7 +169,7 @@ export default function ContactPage() {
                   style={{
                     fontSize: 16,
                     fontWeight: 600,
-                    color: '#212529',
+                    color: '#0f0f0f',
                     fontFamily: 'var(--font-display)',
                     margin: 0,
                   }}
@@ -207,7 +207,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '12px',
                 border: '1px solid #E5E7EB',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -217,7 +217,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#212529',
+                  color: '#0f0f0f',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 8,
                 }}
@@ -243,7 +243,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#7C3AED',
+                  color: '#8B5CF6',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -260,7 +260,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '12px',
                 border: '1px solid #E5E7EB',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -270,7 +270,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#212529',
+                  color: '#0f0f0f',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 8,
                 }}
@@ -296,7 +296,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#7C3AED',
+                  color: '#8B5CF6',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -313,7 +313,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '6px',
+                borderRadius: '12px',
                 border: '1px solid #E5E7EB',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -323,7 +323,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#212529',
+                  color: '#0f0f0f',
                   fontFamily: 'var(--font-display)',
                   marginBottom: 8,
                 }}
@@ -349,7 +349,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#7C3AED',
+                  color: '#8B5CF6',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -377,7 +377,7 @@ export default function ContactPage() {
             padding: '24px',
             marginTop: 48,
             marginBottom: 24,
-            borderRadius: '6px',
+            borderRadius: '12px',
             border: '1px solid #E5E7EB',
             backgroundColor: 'rgba(0,105,151,0.05)',
             textAlign: 'center',
@@ -415,7 +415,7 @@ export default function ContactPage() {
             lineHeight: 1.6,
           }}
         >
-          You can also reach out via email at <a href="mailto:support@mycasevalue.com" style={{ color: '#7C3AED', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalue.com</a> or <a href="mailto:enterprise@mycasevalue.com" style={{ color: '#7C3AED', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalue.com</a>
+          You can also reach out via email at <a href="mailto:support@mycasevalue.com" style={{ color: '#8B5CF6', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalue.com</a> or <a href="mailto:enterprise@mycasevalue.com" style={{ color: '#8B5CF6', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalue.com</a>
         </p>
         </div>
       </div>

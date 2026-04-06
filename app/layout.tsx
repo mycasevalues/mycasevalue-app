@@ -4,6 +4,7 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import { AnalyticsProvider } from '../components/analytics/AnalyticsProvider';
 import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 import SiteNav from '../components/layout/SiteNav';
+import BetaBanner from '../components/BetaBanner';
 import SiteFooter from '../components/layout/SiteFooter';
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
@@ -333,7 +334,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}</style>
       </head>
-      <body style={{ background: '#F7F8FA', color: '#111827', minHeight: '100vh' }} suppressHydrationWarning>
+      <body style={{ background: '#ffffff', color: '#0f0f0f', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
         <a href="#main-content" className="skip-link" style={{
           position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px',
@@ -341,6 +342,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }}>Skip to main content</a>
         <ErrorBoundary>
           <AnalyticsProvider>
+            <BetaBanner />
             <SiteNav />
             <main id="main-content" role="main">
               {children}

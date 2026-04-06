@@ -162,7 +162,7 @@ export default function DistrictsExplorer({
         .circuit-card {
           border: 1px solid #E5E7EB;
           background: #FFFFFF;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 16px;
           cursor: pointer;
           transition: all 150ms;
@@ -186,12 +186,12 @@ export default function DistrictsExplorer({
           color: rgba(255,255,255,0.7);
         }
         .circuit-card.active .circuit-card-rate {
-          color: #7C3AED;
+          color: #8B5CF6;
         }
         .circuit-card-name {
           font-size: 12px;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
           margin-bottom: 8px;
         }
         .circuit-card-count {
@@ -201,7 +201,7 @@ export default function DistrictsExplorer({
         }
         .circuit-card-rate {
           font-size: 14px;
-          font-weight: 700;
+          font-weight: 600;
           color: #6D28D9;
           font-family: var(--font-mono);
         }
@@ -231,12 +231,12 @@ export default function DistrictsExplorer({
         .stat-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 20px;
         }
         .stat-label {
           font-size: 11px;
-          font-weight: 700;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.3px;
           color: #4B5563;
@@ -244,8 +244,8 @@ export default function DistrictsExplorer({
         }
         .stat-value {
           font-size: 16px;
-          font-weight: 700;
-          color: #212529;
+          font-weight: 600;
+          color: #0f0f0f;
           font-family: var(--font-mono);
           margin-bottom: 4px;
         }
@@ -263,11 +263,11 @@ export default function DistrictsExplorer({
         .control-select {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 10px 12px;
           font-size: 13px;
           font-family: var(--font-body);
-          color: #212529;
+          color: #0f0f0f;
         }
         .control-input::placeholder {
           color: #999;
@@ -320,7 +320,7 @@ export default function DistrictsExplorer({
         <h3
           style={{
             fontSize: 12,
-            fontWeight: 700,
+            fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.3px',
             color: '#4B5563',
@@ -337,10 +337,10 @@ export default function DistrictsExplorer({
             style={{
               background: selectedCircuit === null ? '#1B3A5C' : '#FFFFFF',
               borderColor: selectedCircuit === null ? '#1B3A5C' : '#E5E7EB',
-              color: selectedCircuit === null ? '#FFFFFF' : '#212529',
+              color: selectedCircuit === null ? '#FFFFFF' : '#0f0f0f',
             }}
           >
-            <div className="circuit-card-name" style={{ color: selectedCircuit === null ? '#FFFFFF' : '#212529' }}>
+            <div className="circuit-card-name" style={{ color: selectedCircuit === null ? '#FFFFFF' : '#0f0f0f' }}>
               All Circuits
             </div>
             <div className="circuit-card-count" style={{ color: selectedCircuit === null ? 'rgba(255,255,255,0.7)' : '#4B5563' }}>
@@ -348,7 +348,7 @@ export default function DistrictsExplorer({
             </div>
             <div
               className="circuit-card-rate"
-              style={{ color: selectedCircuit === null ? '#7C3AED' : '#6D28D9' }}
+              style={{ color: selectedCircuit === null ? '#8B5CF6' : '#6D28D9' }}
             >
               {stats.avgWinRate}%
             </div>
@@ -369,13 +369,13 @@ export default function DistrictsExplorer({
                   className="circuit-card-rate"
                   style={{
                     color: isActive
-                      ? '#7C3AED'
+                      ? '#8B5CF6'
                       : rate !== null
                       ? rate >= 50
-                        ? '#15803D'
+                        ? '#059669'
                         : rate >= 35
                         ? '#D97706'
-                        : '#7C3AED'
+                        : '#8B5CF6'
                       : '#999',
                   }}
                 >
@@ -393,7 +393,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Highest Win Rate</div>
           {stats.highestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: '#15803D' }}>
+              <div className="stat-value" style={{ color: '#059669' }}>
                 {stats.highestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.highestWinRate.name}</div>
@@ -407,7 +407,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Lowest Win Rate</div>
           {stats.lowestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: '#7C3AED' }}>
+              <div className="stat-value" style={{ color: '#8B5CF6' }}>
                 {stats.lowestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.lowestWinRate.name}</div>
@@ -447,7 +447,7 @@ export default function DistrictsExplorer({
         }}
       >
         {filteredDistricts.map((d) => {
-          const wrColor = d.winRate >= 50 ? '#15803D' : d.winRate >= 35 ? '#D97706' : '#7C3AED';
+          const wrColor = d.winRate >= 50 ? '#059669' : d.winRate >= 35 ? '#D97706' : '#8B5CF6';
           return (
             <Link
               key={d.slug}
@@ -465,7 +465,7 @@ export default function DistrictsExplorer({
                     style={{
                       fontSize: 14,
                       fontWeight: 600,
-                      color: '#212529',
+                      color: '#0f0f0f',
                       fontFamily: 'var(--font-body)',
                       marginBottom: 4,
                     }}
@@ -486,7 +486,7 @@ export default function DistrictsExplorer({
                   <div
                     style={{
                       fontSize: 16,
-                      fontWeight: 700,
+                      fontWeight: 600,
                       color: wrColor,
                       fontFamily: 'var(--font-mono)',
                       lineHeight: 1,
@@ -577,8 +577,8 @@ export default function DistrictsExplorer({
         <h3
           style={{
             fontSize: 14,
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             margin: '0 0 16px',
             textTransform: 'uppercase',
             letterSpacing: '0.3px',

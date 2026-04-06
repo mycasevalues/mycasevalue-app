@@ -82,7 +82,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              fontWeight: 700,
+              fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
               color: '#6D28D9',
@@ -95,7 +95,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: '2.5rem',
-              fontWeight: 700,
+              fontWeight: 600,
               lineHeight: 1.1,
               marginBottom: '20px',
             }}
@@ -133,7 +133,7 @@ export default function SolutionsPage() {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: '#6D28D9',
                   marginBottom: '4px',
                 }}
@@ -156,7 +156,7 @@ export default function SolutionsPage() {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: '#6D28D9',
                   marginBottom: '4px',
                 }}
@@ -179,7 +179,7 @@ export default function SolutionsPage() {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: '#6D28D9',
                   marginBottom: '4px',
                 }}
@@ -202,8 +202,8 @@ export default function SolutionsPage() {
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
-                  fontWeight: 700,
-                  color: '#7C3AED',
+                  fontWeight: 600,
+                  color: '#8B5CF6',
                   marginBottom: '4px',
                 }}
               >
@@ -227,7 +227,7 @@ export default function SolutionsPage() {
       {/* Free During Launch Banner */}
       <section
         style={{
-          background: 'linear-gradient(135deg, #7C3AED 0%, #7C3AED 100%)',
+          background: 'linear-gradient(135deg, #8B5CF6 0%, #8B5CF6 100%)',
           color: '#FAFBFC',
           padding: '24px',
           textAlign: 'center',
@@ -238,7 +238,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '0.875rem',
-              fontWeight: 700,
+              fontWeight: 600,
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
               margin: 0,
@@ -270,7 +270,7 @@ export default function SolutionsPage() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '32px 24px',
                   textDecoration: 'none',
                   display: 'block',
@@ -279,14 +279,14 @@ export default function SolutionsPage() {
                 className="solutions-card"
               >
                 <div style={{ marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
                 </div>
                 <h2
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '1.125rem',
-                    fontWeight: 700,
-                    color: '#212529',
+                    fontWeight: 600,
+                    color: '#0f0f0f',
                     marginBottom: '8px',
                   }}
                 >
@@ -322,8 +322,8 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: '1.75rem',
-              fontWeight: 700,
-              color: '#212529',
+              fontWeight: 600,
+              color: '#0f0f0f',
               marginBottom: '16px',
             }}
           >
@@ -353,13 +353,13 @@ export default function SolutionsPage() {
               href="/search"
               style={{
                 background:
-                  '#7C3AED',
+                  '#8B5CF6',
                 color: '#FAFBFC',
                 padding: '0.875rem 2rem',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: '0.875rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.04em',
@@ -372,13 +372,13 @@ export default function SolutionsPage() {
               href="/pricing"
               style={{
                 background: 'transparent',
-                color: '#212529',
+                color: '#0f0f0f',
                 padding: '0.875rem 2rem',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 border: '1.5px solid #E5E7EB',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: '0.875rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.04em',

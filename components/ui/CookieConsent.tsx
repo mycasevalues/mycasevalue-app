@@ -107,10 +107,10 @@ export default function CookieConsent() {
             onClick={handleAccept}
             style={{
               padding: '0.625rem 1.25rem',
-              backgroundColor: '#7C3AED',
+              backgroundColor: '#8B5CF6',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontSize: '0.9375rem',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
@@ -131,7 +131,7 @@ export default function CookieConsent() {
               backgroundColor: 'transparent',
               color: '#FFFFFF',
               border: '1.5px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontSize: '0.9375rem',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,

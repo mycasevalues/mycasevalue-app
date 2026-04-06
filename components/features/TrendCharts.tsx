@@ -29,7 +29,7 @@ import {
 
 // LexisNexis color palette for categories
 const CATEGORY_CHART_COLORS: Record<string, string> = {
-  Financial: '#7C3AED',
+  Financial: '#8B5CF6',
   Employment: '#1B3A5C',
   Injury: '#6D28D9',
   Consumer: '#4B5563',
@@ -55,12 +55,12 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
         style={{
           background: '#FFFFFF',
           border: '1px solid #E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
           padding: '12px 16px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
       >
-        <p style={{ color: '#212529', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+        <p style={{ color: '#0f0f0f', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
           {label}
         </p>
         {payload.map((entry, index) => (
@@ -100,7 +100,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
         }}
       >
         <h3
@@ -108,7 +108,7 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
           }}
         >
           Federal Filing Trends (2015–2024)
@@ -146,7 +146,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
         }}
       >
         <h3
@@ -154,7 +154,7 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
           }}
         >
           Win Rate Trends by Category (2018–2024)
@@ -176,7 +176,7 @@ export default function TrendCharts() {
                 dataKey={cat.categoryLabel}
                 stroke={
                   [
-                    '#7C3AED',
+                    '#8B5CF6',
                     '#1B3A5C',
                     '#6D28D9',
                     '#4B5563',
@@ -199,7 +199,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
         }}
       >
         <h3
@@ -207,7 +207,7 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
           }}
         >
           Top 15 Case Types by Filing Volume
@@ -236,7 +236,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
         }}
       >
         <h3
@@ -244,7 +244,7 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
           }}
         >
           Settlement Rate Trends (2015–2024)
@@ -282,7 +282,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
         }}
       >
         <h3
@@ -290,7 +290,7 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
           }}
         >
           Circuit Court Win Rates
@@ -315,12 +315,12 @@ export default function TrendCharts() {
                       style={{
                         background: '#FFFFFF',
                         border: '1px solid #E5E7EB',
-                        borderRadius: '6px',
+                        borderRadius: '12px',
                         padding: '12px 16px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
                     >
-                      <p style={{ color: '#212529', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: '#0f0f0f', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
                         {payload[0].payload.circuit}
                       </p>
                       <p style={{ color: '#6D28D9', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
@@ -337,7 +337,7 @@ export default function TrendCharts() {
             />
             <Bar dataKey="avgWinRate" radius={[0, 8, 8, 0]}>
               {circuitWinRates.map((entry, index) => (
-                <Cell key={index} fill={entry.avgWinRate > 55 ? '#10B981' : entry.avgWinRate < 45 ? '#7C3AED' : '#6D28D9'} />
+                <Cell key={index} fill={entry.avgWinRate > 55 ? '#10B981' : entry.avgWinRate < 45 ? '#8B5CF6' : '#6D28D9'} />
               ))}
             </Bar>
           </BarChart>
@@ -350,7 +350,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
         }}
       >
         <h3
@@ -358,7 +358,7 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
           }}
         >
           How Cases End
@@ -383,12 +383,12 @@ export default function TrendCharts() {
                       style={{
                         background: '#FFFFFF',
                         border: '1px solid #E5E7EB',
-                        borderRadius: '6px',
+                        borderRadius: '12px',
                         padding: '12px 16px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                       }}
                     >
-                      <p style={{ color: '#212529', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: '#0f0f0f', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
                         {payload[0].payload.outcome}
                       </p>
                       <p style={{ color: payload[0].payload.color, fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
@@ -415,7 +415,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#E5E7EB',
-          borderRadius: '6px',
+          borderRadius: '12px',
         }}
       >
         <h3
@@ -423,7 +423,7 @@ export default function TrendCharts() {
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
           }}
         >
           Settlement vs. Trial Duration by Category
@@ -443,7 +443,7 @@ export default function TrendCharts() {
             <Tooltip content={<CustomTooltip />} />
             <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#4B5563' }} />
             <Bar dataKey="settlementMonths" fill="#10B981" radius={[0, 4, 4, 0]} />
-            <Bar dataKey="trialMonths" fill="#7C3AED" radius={[0, 4, 4, 0]} />
+            <Bar dataKey="trialMonths" fill="#8B5CF6" radius={[0, 4, 4, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

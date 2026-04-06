@@ -37,7 +37,7 @@ export default function BackToTop() {
         backgroundColor: '#1B3A5C',
         color: '#FFFFFF',
         border: '2px solid #FFFFFF',
-        borderRadius: '6px',
+        borderRadius: '12px',
         cursor: 'pointer',
         zIndex: 100,
         display: 'flex',

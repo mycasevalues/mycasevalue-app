@@ -20,7 +20,7 @@ interface TrendChartProps {
 const lightModeColors = {
   bg: '#FFFFFF',
   border: 'rgba(255,255,255,0.10)',
-  text: '#212529',
+  text: '#0f0f0f',
   muted: '#4B5563',
   accent: '#F0F2F5',
 };
@@ -210,7 +210,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
         height: `${height}px`,
         backgroundColor: lightModeColors.bg,
         border: `1px solid ${lightModeColors.border}`,
-        borderRadius: '6px',
+        borderRadius: '12px',
         padding: '20px',
         boxSizing: 'border-box',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
@@ -343,7 +343,7 @@ const TrendChart: React.FC<TrendChartProps> = ({
             top: `${((tooltipPos.y + padding.top) / height) * 100}%`,
             backgroundColor: lightModeColors.border,
             border: `1px solid ${lightModeColors.accent}`,
-            borderRadius: '6px',
+            borderRadius: '12px',
             padding: '8px 12px',
             fontSize: '12px',
             color: lightModeColors.text,

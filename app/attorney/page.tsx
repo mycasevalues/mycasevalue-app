@@ -110,7 +110,7 @@ const FeatureCard = ({
   icon: React.ReactNode;
   title: string;
   description: string;
-  badge: 'coming-soon' | 'available';
+  badge: 'available';
   href?: string;
 }) => {
   const content = (
@@ -118,7 +118,7 @@ const FeatureCard = ({
       style={{
         backgroundColor: '#FFFFFF',
         border: '1px solid #E5E7EB',
-        borderRadius: '6px',
+        borderRadius: '12px',
         padding: '24px',
         display: 'flex',
         flexDirection: 'column',
@@ -139,7 +139,7 @@ const FeatureCard = ({
             fontSize: '18px',
             fontWeight: '600',
             fontFamily: 'var(--font-display)',
-            color: '#212529',
+            color: '#0f0f0f',
           }}
         >
           {title}
@@ -161,13 +161,13 @@ const FeatureCard = ({
           style={{
             display: 'inline-block',
             padding: '6px 12px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             fontSize: '12px',
             fontWeight: '600',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
             backgroundColor:
-              badge === 'available' ? '#7C3AED' : '#FAFBFC',
+              badge === 'available' ? '#8B5CF6' : '#FAFBFC',
             color: badge === 'available' ? '#ffffff' : '#6D28D9',
             border:
               badge === 'available'
@@ -192,7 +192,7 @@ const FeatureCard = ({
   return content;
 };
 
-const features: { icon: React.ReactNode; title: string; description: string; badge: 'coming-soon' | 'available'; href?: string }[] = [
+const features: { icon: React.ReactNode; title: string; description: string; badge: 'available'; href?: string }[] = [
   {
     icon: <AIIcon />,
     title: 'AI Case Predictor',
@@ -271,7 +271,7 @@ export default function AttorneyPage() {
   return (
     <div
       style={{
-        color: '#212529',
+        color: '#0f0f0f',
         fontFamily: 'var(--font-body)',
         minHeight: '100vh',
         backgroundColor: '#F7F8FA',
@@ -293,7 +293,7 @@ export default function AttorneyPage() {
           color: #6D28D9 !important;
         }
         .attorney-cta-link:hover {
-          background-color: #7C3AED !important;
+          background-color: #8B5CF6 !important;
           box-shadow: 0 8px 24px rgba(232, 23, 31, 0.24) !important;
           transform: translateY(-2px);
         }
@@ -337,11 +337,11 @@ export default function AttorneyPage() {
               style={{
                 display: 'inline-block',
                 padding: '8px 16px',
-                backgroundColor: 'rgba(124, 58, 237, 0.15)',
+                backgroundColor: 'rgba(139, 92, 246, 0.15)',
                 color: '#FFFFFF',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 fontSize: '12px',
-                fontWeight: '700',
+                fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
                 fontFamily: 'var(--font-mono)',
@@ -353,7 +353,7 @@ export default function AttorneyPage() {
           </div>
 
           {/* Red Accent Badge */}
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '6px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#7C3AED', width: 'fit-content' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#8B5CF6', width: 'fit-content' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             ATTORNEY MODE
           </div>
@@ -363,7 +363,7 @@ export default function AttorneyPage() {
             style={{
               margin: 0,
               fontSize: 'clamp(32px, 5vw, 56px)',
-              fontWeight: '700',
+              fontWeight: '600',
               fontFamily: 'var(--font-display)',
               lineHeight: '1.2',
               color: '#FFFFFF',
@@ -412,9 +412,9 @@ export default function AttorneyPage() {
               style={{
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
-                fontWeight: '700',
+                fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#212529',
+                color: '#0f0f0f',
               }}
             >
               Attorney Toolkit
@@ -482,7 +482,7 @@ export default function AttorneyPage() {
                   style={{
                     backgroundColor: '#FFFFFF',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     padding: '24px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -502,7 +502,7 @@ export default function AttorneyPage() {
                         fontSize: '18px',
                         fontWeight: '600',
                         fontFamily: 'var(--font-display)',
-                        color: '#212529',
+                        color: '#0f0f0f',
                       }}
                     >
                       {item.title}
@@ -553,9 +553,9 @@ export default function AttorneyPage() {
               style={{
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
-                fontWeight: '700',
+                fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#212529',
+                color: '#0f0f0f',
               }}
             >
               How Attorneys Use MyCaseValue
@@ -602,7 +602,7 @@ export default function AttorneyPage() {
                 style={{
                   backgroundColor: '#F7F8FA',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '32px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -617,11 +617,11 @@ export default function AttorneyPage() {
                       justifyContent: 'center',
                       width: '28px',
                       height: '28px',
-                      backgroundColor: '#7C3AED',
+                      backgroundColor: '#8B5CF6',
                       color: '#FFFFFF',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       fontSize: '16px',
-                      fontWeight: '700',
+                      fontWeight: '600',
                     }}
                   >
                     {index + 1}
@@ -632,7 +632,7 @@ export default function AttorneyPage() {
                       fontSize: '18px',
                       fontWeight: '600',
                       fontFamily: 'var(--font-display)',
-                      color: '#212529',
+                      color: '#0f0f0f',
                     }}
                   >
                     {useCase.title}
@@ -676,9 +676,9 @@ export default function AttorneyPage() {
               style={{
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
-                fontWeight: '700',
+                fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#212529',
+                color: '#0f0f0f',
               }}
             >
               Data-Driven Advantage
@@ -725,7 +725,7 @@ export default function AttorneyPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '32px',
                   textAlign: 'center',
                   boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -734,9 +734,9 @@ export default function AttorneyPage() {
                 <div
                   style={{
                     fontSize: 'clamp(32px, 5vw, 48px)',
-                    fontWeight: '700',
+                    fontWeight: '600',
                     fontFamily: 'var(--font-display)',
-                    color: '#7C3AED',
+                    color: '#8B5CF6',
                     marginBottom: '12px',
                   }}
                 >
@@ -781,16 +781,16 @@ export default function AttorneyPage() {
               style={{
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
-                fontWeight: '700',
+                fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#212529',
+                color: '#0f0f0f',
               }}
             >
               Everything in Unlimited,
               <span
                 style={{
                   display: 'block',
-                  color: '#7C3AED',
+                  color: '#8B5CF6',
                 }}
               >
                 plus:
@@ -844,9 +844,9 @@ export default function AttorneyPage() {
               style={{
                 margin: '0 0 12px 0',
                 fontSize: 'clamp(28px, 4vw, 42px)',
-                fontWeight: '700',
+                fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#212529',
+                color: '#0f0f0f',
               }}
             >
               Get Started
@@ -901,7 +901,7 @@ export default function AttorneyPage() {
                   padding: '24px',
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'all 0.3s ease',
@@ -919,7 +919,7 @@ export default function AttorneyPage() {
                     fontSize: '18px',
                     fontWeight: '600',
                     fontFamily: 'var(--font-display)',
-                    color: '#212529',
+                    color: '#0f0f0f',
                   }}
                 >
                   {cta.label}
@@ -963,12 +963,12 @@ export default function AttorneyPage() {
               style={{
                 margin: 0,
                 fontSize: 'clamp(32px, 4vw, 48px)',
-                fontWeight: '700',
+                fontWeight: '600',
                 fontFamily: 'var(--font-display)',
-                color: '#212529',
+                color: '#0f0f0f',
               }}
             >
-              <span style={{ color: '#7C3AED' }}>$29.99</span>
+              <span style={{ color: '#8B5CF6' }}>$29.99</span>
               <span style={{ fontSize: '0.5em', color: '#4B5563' }}>
                 {' '}
                 / month
@@ -987,7 +987,7 @@ export default function AttorneyPage() {
           </div>
 
           {/* Beta Banner */}
-          <div style={{ padding: '12px 20px', backgroundColor: 'rgba(0,105,151,0.08)', borderRadius: '6px', border: '1px solid #E5E7EB' }}>
+          <div style={{ padding: '12px 20px', backgroundColor: 'rgba(0,105,151,0.08)', borderRadius: '12px', border: '1px solid #E5E7EB' }}>
             <p style={{ margin: 0, fontSize: '14px', color: '#6D28D9', fontWeight: 600 }}>
               Beta Access — All attorney features are currently free during our preview period.
             </p>
@@ -999,11 +999,11 @@ export default function AttorneyPage() {
             style={{
               display: 'inline-block',
               padding: '16px 40px',
-              backgroundColor: '#7C3AED',
+              backgroundColor: '#8B5CF6',
               color: '#FFFFFF',
               textDecoration: 'none',
-              borderRadius: '6px',
-              fontWeight: '700',
+              borderRadius: '12px',
+              fontWeight: '600',
               fontSize: '16px',
               fontFamily: 'var(--font-display)',
               border: 'none',

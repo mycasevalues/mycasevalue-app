@@ -118,7 +118,7 @@ export async function sendWelcomeEmail(
               .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
               .body-content ul { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
               .body-content a { color: #6D28D9; text-decoration: none; }
-              .cta-button { background-color: #7C3AED; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .cta-button { background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
               .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
               .footer p { margin: 8px 0; }
             </style>
@@ -170,7 +170,7 @@ export async function sendWelcomeEmail(
             .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
             .body-content ul { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
             .body-content a { color: #6D28D9; text-decoration: none; }
-            .cta-button { background-color: #7C3AED; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .cta-button { background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
             .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
             .footer p { margin: 8px 0; }
           </style>
@@ -235,7 +235,7 @@ export async function sendReportEmail(
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
               .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
               .body-content a { color: #6D28D9; text-decoration: none; }
-              .cta-button { background-color: #7C3AED; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .cta-button { background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
               .report-table { border-collapse: collapse; width: 100%; margin: 20px 0; }
               .report-table td { border: 1px solid #ddd; padding: 12px; color: #4B5563; font-size: 15px; }
               .report-table strong { color: #212529; }
@@ -297,7 +297,7 @@ export async function sendReportEmail(
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
             .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
             .body-content a { color: #6D28D9; text-decoration: none; }
-            .cta-button { background-color: #7C3AED; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .cta-button { background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
             .report-table { border-collapse: collapse; width: 100%; margin: 20px 0; }
             .report-table td { border: 1px solid #ddd; padding: 12px; color: #4B5563; font-size: 15px; }
             .report-table strong { color: #212529; }
@@ -371,7 +371,7 @@ export async function sendPasswordResetEmail(
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
               .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
               .body-content a { color: #6D28D9; text-decoration: none; }
-              .cta-button { background-color: #7C3AED; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .cta-button { background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
               .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
               .footer p { margin: 8px 0; }
             </style>
@@ -417,7 +417,7 @@ export async function sendPasswordResetEmail(
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
             .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
             .body-content a { color: #6D28D9; text-decoration: none; }
-            .cta-button { background-color: #7C3AED; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .cta-button { background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
             .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
             .footer p { margin: 8px 0; }
           </style>
@@ -478,7 +478,7 @@ export async function sendReportReadyEmail(
               .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
               .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
               .body-content a { color: #6D28D9; text-decoration: none; }
-              .cta-button { background-color: #7C3AED; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+              .cta-button { background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
               .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
               .footer p { margin: 8px 0; }
             </style>
@@ -521,7 +521,7 @@ export async function sendReportReadyEmail(
             .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
             .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
             .body-content a { color: #6D28D9; text-decoration: none; }
-            .cta-button { background-color: #7C3AED; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
+            .cta-button { background-color: #8B5CF6; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; }
             .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
             .footer p { margin: 8px 0; }
           </style>

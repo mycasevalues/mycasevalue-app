@@ -96,8 +96,8 @@ export default function TrustBadges() {
               <div
                 style={{
                   fontSize: '30px',
-                  fontWeight: 700,
-                  color: '#212529',
+                  fontWeight: 600,
+                  color: '#0f0f0f',
                   fontFamily: 'var(--font-display)',
                   lineHeight: 1.2,
                   marginBottom: '8px',

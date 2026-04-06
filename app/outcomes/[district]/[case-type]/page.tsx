@@ -96,14 +96,14 @@ export default async function OutcomesPage({
 
   if (!option || !category) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F7F8FA', color: '#212529' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F7F8FA', color: '#0f0f0f' }}>
         <div className="text-center">
           <h1 style={{
             fontSize: '32px',
-            fontWeight: 700,
+            fontWeight: 600,
             marginBottom: '16px',
             fontFamily: 'var(--font-display)',
-            color: '#212529',
+            color: '#0f0f0f',
           }}>Case outcomes not found</h1>
           <p style={{
             marginBottom: '32px',
@@ -118,10 +118,10 @@ export default async function OutcomesPage({
             paddingRight: '24px',
             paddingTop: '12px',
             paddingBottom: '12px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             fontWeight: 600,
             color: '#FFFFFF',
-            background: '#7C3AED',
+            background: '#8B5CF6',
             textDecoration: 'none',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
@@ -230,7 +230,7 @@ export default async function OutcomesPage({
       <style>{`
         .outcome-card-link:hover {
           border-color: #6D28D9;
-          box-shadow: 0 2px 8px rgba(124, 58, 237, 0.1);
+          box-shadow: 0 2px 8px rgba(139, 92, 246, 0.1);
           transform: translateY(-2px);
         }
 
@@ -288,7 +288,7 @@ export default async function OutcomesPage({
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', marginBottom: '8px', flexWrap: 'wrap' }}>
             <h1 style={{
               fontSize: 'clamp(28px, 6vw, 42px)',
-              fontWeight: 700,
+              fontWeight: 600,
               margin: 0,
               fontFamily: 'var(--font-display)',
               color: '#FFFFFF',
@@ -298,12 +298,12 @@ export default async function OutcomesPage({
               {option.label} Cases in {stateName}
             </h1>
             <div style={{
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               padding: '6px 12px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontSize: '11px',
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: '0.5px',
               textTransform: 'uppercase',
               whiteSpace: 'nowrap',
@@ -345,14 +345,14 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '20px',
             }}>
               <div style={{
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: '36px',
                 marginBottom: '8px',
-                color: '#212529',
+                color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
                 {Math.round(districtWinRate)}%
@@ -367,14 +367,14 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '20px',
             }}>
               <div style={{
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: '36px',
                 marginBottom: '8px',
-                color: '#212529',
+                color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
                 {districtDuration} mo
@@ -389,14 +389,14 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '20px',
             }}>
               <div style={{
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: '36px',
                 marginBottom: '8px',
-                color: '#212529',
+                color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
                 {Math.round(districtSettleRate)}%
@@ -411,14 +411,14 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '20px',
             }}>
               <div style={{
-                fontWeight: 700,
+                fontWeight: 600,
                 fontSize: '36px',
                 marginBottom: '8px',
-                color: '#212529',
+                color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
                 {totalOutcomes.toLocaleString()}+
@@ -443,13 +443,13 @@ export default async function OutcomesPage({
           <div style={{
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '6px',
+            borderRadius: '12px',
             padding: 'clamp(20px, 4vw, 32px)',
           }}>
             <h2 style={{
               fontSize: '22px',
-              fontWeight: 700,
-              color: '#212529',
+              fontWeight: 600,
+              color: '#0f0f0f',
               margin: '0 0 28px 0',
               fontFamily: 'var(--font-display)',
             }}>
@@ -476,7 +476,7 @@ export default async function OutcomesPage({
                     </span>
                     <span style={{
                       fontSize: '16px',
-                      fontWeight: 700,
+                      fontWeight: 600,
                       color: outcome.color,
                       fontFamily: "'PT Mono', monospace",
                     }}>
@@ -485,7 +485,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     height: '12px',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     background: '#E5E7EB',
                     overflow: 'hidden',
                   }}>
@@ -512,8 +512,8 @@ export default async function OutcomesPage({
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '22px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             margin: '0 0 28px 0',
             fontFamily: 'var(--font-display)',
           }}>
@@ -539,7 +539,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#F7F8FA',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '20px',
             }}>
               <div style={{
@@ -547,7 +547,7 @@ export default async function OutcomesPage({
                 color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontWeight: 700,
+                fontWeight: 600,
                 marginBottom: '12px',
                 fontFamily: 'var(--font-body)',
               }}>
@@ -570,7 +570,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     fontSize: '28px',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: '#1B3A5C',
                     fontFamily: 'var(--font-display)',
                   }}>
@@ -588,7 +588,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     fontSize: '28px',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: '#4B5563',
                     fontFamily: 'var(--font-display)',
                   }}>
@@ -599,7 +599,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: '#FFFFFF',
                 border: `1px solid ${getComparisonColor(winRateDiff)}`,
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -615,7 +615,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#F7F8FA',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '20px',
             }}>
               <div style={{
@@ -623,7 +623,7 @@ export default async function OutcomesPage({
                 color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontWeight: 700,
+                fontWeight: 600,
                 marginBottom: '12px',
                 fontFamily: 'var(--font-body)',
               }}>
@@ -646,7 +646,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     fontSize: '28px',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: '#6D28D9',
                     fontFamily: 'var(--font-display)',
                   }}>
@@ -664,7 +664,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     fontSize: '28px',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: '#4B5563',
                     fontFamily: 'var(--font-display)',
                   }}>
@@ -675,7 +675,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: '#FFFFFF',
                 border: `1px solid ${getComparisonColor(settleRateDiff)}`,
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -691,7 +691,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#F7F8FA',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '20px',
             }}>
               <div style={{
@@ -699,7 +699,7 @@ export default async function OutcomesPage({
                 color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontWeight: 700,
+                fontWeight: 600,
                 marginBottom: '12px',
                 fontFamily: 'var(--font-body)',
               }}>
@@ -722,7 +722,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     fontSize: '28px',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: '#1B3A5C',
                     fontFamily: 'var(--font-display)',
                   }}>
@@ -740,7 +740,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     fontSize: '28px',
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: '#4B5563',
                     fontFamily: 'var(--font-display)',
                   }}>
@@ -751,7 +751,7 @@ export default async function OutcomesPage({
               <div style={{
                 background: '#FFFFFF',
                 border: `1px solid ${getComparisonColor(-durationDiff)}`,
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '8px 12px',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -775,8 +775,8 @@ export default async function OutcomesPage({
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '22px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             margin: '0 0 28px 0',
             fontFamily: 'var(--font-display)',
           }}>
@@ -796,7 +796,7 @@ export default async function OutcomesPage({
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   padding: '20px',
                   textDecoration: 'none',
                   display: 'block',
@@ -808,7 +808,7 @@ export default async function OutcomesPage({
                   color: '#4B5563',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
-                  fontWeight: 700,
+                  fontWeight: 600,
                   marginBottom: '8px',
                   fontFamily: 'var(--font-body)',
                 }}>
@@ -845,8 +845,8 @@ export default async function OutcomesPage({
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '22px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             margin: '0 0 28px 0',
             fontFamily: 'var(--font-display)',
           }}>
@@ -866,7 +866,7 @@ export default async function OutcomesPage({
                   background: '#6D28D9',
                   color: '#FFFFFF',
                   padding: '16px 20px',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   textDecoration: 'none',
                   fontSize: '14px',
                   fontWeight: 600,
@@ -893,8 +893,8 @@ export default async function OutcomesPage({
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '22px',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             margin: '0 0 28px 0',
             fontFamily: 'var(--font-display)',
           }}>
@@ -909,7 +909,7 @@ export default async function OutcomesPage({
             <Link href={`/cases/${category.id}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '24px',
               textDecoration: 'none',
               display: 'block',
@@ -920,7 +920,7 @@ export default async function OutcomesPage({
                 color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontWeight: 700,
+                fontWeight: 600,
                 marginBottom: '12px',
                 fontFamily: 'var(--font-body)',
               }}>
@@ -929,7 +929,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#212529',
+                color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
                 All {categoryLabel} Cases
@@ -939,7 +939,7 @@ export default async function OutcomesPage({
             <Link href={`/nos/${option.nos}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '24px',
               textDecoration: 'none',
               display: 'block',
@@ -950,7 +950,7 @@ export default async function OutcomesPage({
                 color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                fontWeight: 700,
+                fontWeight: 600,
                 marginBottom: '12px',
                 fontFamily: 'var(--font-body)',
               }}>
@@ -959,7 +959,7 @@ export default async function OutcomesPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#212529',
+                color: '#0f0f0f',
                 fontFamily: 'var(--font-display)',
               }}>
                 {option.label} (NOS {option.nos})
@@ -981,10 +981,10 @@ export default async function OutcomesPage({
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <p style={{ margin: '0 0 16px 0', color: '#4B5563' }}>
-            <strong style={{ color: '#212529' }}>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
+            <strong style={{ color: '#0f0f0f' }}>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
           </p>
           <p style={{ margin: 0, color: '#4B5563' }}>
-            <strong style={{ color: '#212529' }}>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
+            <strong style={{ color: '#0f0f0f' }}>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
           </p>
         </div>
       </div>

@@ -79,7 +79,7 @@ export default function TermsPage() {
         .legal-section-heading {
           font-size: 20px;
           font-weight: 600;
-          color: #212529;
+          color: #0f0f0f;
           margin-bottom: 16px;
           margin-top: 48px;
           padding-bottom: 16px;
@@ -170,16 +170,16 @@ export default function TermsPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: '#FFF3F4',
-            color: '#7C3AED'
+            color: '#8B5CF6'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5">
               <path d="M7 7h10v10H7z M7 7v3 M7 10h10 M7 13h10 M7 16h10 M17 7v10" />
             </svg>
             TERMS
           </div>
           <h1 style={{
             fontSize: '32px',
-            fontWeight: '700',
+            fontWeight: '600',
             marginBottom: '16px',
             color: 'white',
             letterSpacing: '-1.5px',
@@ -248,13 +248,13 @@ export default function TermsPage() {
             paddingRight: '16px',
             paddingTop: '16px',
             paddingBottom: '16px',
-            borderRadius: '6px',
+            borderRadius: '12px',
             borderLeft: '4px solid #D97706',
             background: '#FFF3F4',
-            color: '#212529',
+            color: '#0f0f0f',
             marginBottom: '32px'
           }}>
-            <p style={{ margin: 0, fontWeight: '600', color: '#7C3AED', fontSize: '15px', lineHeight: 1.7 }}>
+            <p style={{ margin: 0, fontWeight: '600', color: '#8B5CF6', fontSize: '15px', lineHeight: 1.7 }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.
             </p>
@@ -271,7 +271,7 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Modifications to Terms</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Modifications to Terms</h4>
               <p className="legal-body">
                 We may modify these Terms at any time, in our sole discretion, including but not limited to changes to Service features, pricing, or policies. All modifications are effective immediately upon posting to this page. Your continued use of MyCaseValue after any modification constitutes your acceptance of the updated Terms. We encourage you to review this page periodically for changes. If you do not accept any modification, your exclusive remedy is to cease using the Service.
               </p>
@@ -290,7 +290,7 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Service Scope and Limitations</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Service Scope and Limitations</h4>
               <p className="legal-body">
                 The Service is provided "AS-IS" for informational, research, and due diligence purposes only. It is NOT:
               </p>
@@ -311,14 +311,14 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>No Attorney-Client Relationship</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>No Attorney-Client Relationship</h4>
               <p className="legal-body">
                 Use of MyCaseValue does not create, establish, or imply an attorney-client relationship, professional relationship, or duty of care between you and MyCaseValue, any of its employees, operators, or affiliates. We are not your lawyer and cannot provide legal advice specific to your situation.
               </p>
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>What MyCaseValue Data Does NOT Do:</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>What MyCaseValue Data Does NOT Do:</h4>
               <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}><strong>Predict case outcomes:</strong> Aggregate historical win rates do not predict what will happen in your specific case. Every case is unique with different facts, law, judge, and representation.</li>
                 <li style={{ marginBottom: '8px' }}><strong>Evaluate your case:</strong> We cannot assess the strength, merit, likelihood of success, or settlement value of your specific case.</li>
@@ -341,7 +341,7 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Disclaimer of Warranties</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Disclaimer of Warranties</h4>
               <p className="legal-body">
                 MyCaseValue is provided on an "AS-IS" and "AS-AVAILABLE" basis. We disclaim all warranties, express, implied, statutory, or otherwise, including but not limited to:
               </p>
@@ -354,7 +354,7 @@ export default function TermsPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Limitation of Liability</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Limitation of Liability</h4>
               <p className="legal-body">
                 <strong>In no event shall MyCaseValue be liable for:</strong>
               </p>
@@ -399,7 +399,7 @@ export default function TermsPage() {
             </p>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Permitted Uses</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Permitted Uses</h4>
               <ul style={{ paddingLeft: '24px', color: '#4B5563' }} className="legal-body">
                 <li style={{ marginBottom: '8px' }}>Use the Service only for lawful, legitimate research, due diligence, and informational purposes</li>
                 <li style={{ marginBottom: '8px' }}>Use the Service in compliance with all applicable federal, state, and local laws</li>
@@ -409,7 +409,7 @@ export default function TermsPage() {
             </div>
 
             <div style={{ marginTop: '16px' }}>
-              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Prohibited Activities</h4>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>Prohibited Activities</h4>
               <p className="legal-body">
                 You agree NOT to:
               </p>
@@ -525,9 +525,9 @@ export default function TermsPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               background: '#FFFFFF',
-              color: '#212529',
+              color: '#0f0f0f',
               border: '1px solid #E5E7EB'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
@@ -557,9 +557,9 @@ export default function TermsPage() {
               paddingRight: '16px',
               paddingTop: '16px',
               paddingBottom: '16px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               background: '#FFFFFF',
-              color: '#212529',
+              color: '#0f0f0f',
               border: '1px solid #E5E7EB'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>

@@ -43,7 +43,7 @@ export default function QuickLookupForm() {
           style={{
             fontSize: '14px',
             fontWeight: 600,
-            color: '#212529',
+            color: '#0f0f0f',
             fontFamily: 'var(--font-body)',
           }}
         >
@@ -58,10 +58,10 @@ export default function QuickLookupForm() {
             padding: '12px 16px',
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '6px',
+            borderRadius: '12px',
             fontFamily: 'var(--font-body)',
             fontSize: '15px',
-            color: '#212529',
+            color: '#0f0f0f',
             width: '100%',
             appearance: 'none',
             backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
@@ -94,7 +94,7 @@ export default function QuickLookupForm() {
             style={{
               fontSize: '14px',
               fontWeight: 600,
-              color: '#212529',
+              color: '#0f0f0f',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -109,10 +109,10 @@ export default function QuickLookupForm() {
               padding: '12px 16px',
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
-              color: '#212529',
+              color: '#0f0f0f',
               width: '100%',
               appearance: 'none',
               backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
@@ -138,11 +138,11 @@ export default function QuickLookupForm() {
         type="submit"
         style={{
           height: '48px',
-          background: '#7C3AED',
+          background: '#8B5CF6',
           color: '#FFFFFF',
-          fontWeight: 700,
+          fontWeight: 600,
           fontSize: '15px',
-          borderRadius: '6px',
+          borderRadius: '12px',
           border: 'none',
           cursor: 'pointer',
           fontFamily: 'var(--font-body)',
@@ -159,7 +159,7 @@ export default function QuickLookupForm() {
         const nos = OPT_TO_NOS[caseType];
         const rd = nos ? (REAL_DATA as any)[nos] : null;
         if (!rd) return null;
-        const wrColor = (rd.wr ?? 0) >= 50 ? '#15803D' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#7C3AED';
+        const wrColor = (rd.wr ?? 0) >= 50 ? '#059669' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#8B5CF6';
         return (
           <div style={{
             background: '#F8F9FA',
@@ -173,19 +173,19 @@ export default function QuickLookupForm() {
             marginTop: 4,
           }}>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: wrColor, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+              <div style={{ fontSize: 18, fontWeight: 600, color: wrColor, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {(rd.wr ?? 0).toFixed(1)}%
               </div>
               <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: '#6D28D9', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+              <div style={{ fontSize: 18, fontWeight: 600, color: '#6D28D9', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.mo ?? '–'}mo
               </div>
               <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+              <div style={{ fontSize: 18, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.total ? (rd.total >= 1000 ? `${(rd.total / 1000).toFixed(0)}K` : rd.total.toLocaleString()) : '–'}
               </div>
               <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Cases</div>
@@ -210,11 +210,11 @@ export default function QuickLookupForm() {
       <style dangerouslySetInnerHTML={{ __html: `
         .quick-lookup-select:focus {
           border-color: #6D28D9 !important;
-          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
+          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1) !important;
           outline: none;
         }
         .quick-lookup-select:invalid {
-          border-color: #7C3AED !important;
+          border-color: #8B5CF6 !important;
         }
         .quick-lookup-submit:hover {
           background: #B91C1C !important;

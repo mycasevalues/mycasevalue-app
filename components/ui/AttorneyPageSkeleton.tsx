@@ -29,7 +29,7 @@ export default function AttorneyPageSkeleton({
           {/* Breadcrumb */}
           <div className="skel-pulse" style={{ height: 12, width: 180, background: 'rgba(255,255,255,0.1)', borderRadius: 2, marginBottom: 20 }} />
           {/* Badge */}
-          <div className="skel-pulse" style={{ height: 26, width: 120, background: '#7C3AED', borderRadius: 2, marginBottom: 16, opacity: 0.5 }} />
+          <div className="skel-pulse" style={{ height: 26, width: 120, background: '#8B5CF6', borderRadius: 2, marginBottom: 16, opacity: 0.5 }} />
           {/* Title */}
           <div className="skel-pulse" style={{ height: 36, width: '45%', background: 'rgba(255,255,255,0.12)', borderRadius: 2, marginBottom: 12 }} />
           {/* Description */}
@@ -52,7 +52,7 @@ export default function AttorneyPageSkeleton({
                   height: 40,
                   width: 100,
                   background: i === 1 ? '#FFFFFF' : '#F8F9FA',
-                  borderTop: i === 1 ? '2px solid #7C3AED' : '2px solid transparent',
+                  borderTop: i === 1 ? '2px solid #8B5CF6' : '2px solid transparent',
                   borderLeft: '1px solid #E5E7EB',
                   borderRight: '1px solid #E5E7EB',
                   padding: '10px 16px',

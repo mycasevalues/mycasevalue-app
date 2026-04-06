@@ -80,7 +80,7 @@ export default function CookieConsent() {
               margin: 0,
               fontSize: '14px',
               lineHeight: '1.5',
-              color: '#212529',
+              color: '#0f0f0f',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -111,7 +111,7 @@ export default function CookieConsent() {
             onClick={() => setCookie('rejected')}
             style={{
               padding: '10px 20px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               fontWeight: 600,
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
@@ -130,12 +130,12 @@ export default function CookieConsent() {
             onClick={() => setCookie('accepted')}
             style={{
               padding: '10px 20px',
-              borderRadius: '6px',
-              fontWeight: 700,
+              borderRadius: '12px',
+              fontWeight: 600,
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
               border: 'none',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FFFFFF',
               cursor: 'pointer',
               transition: 'all 200ms',

@@ -25,7 +25,7 @@ export default function MethodologyPage() {
           border: 1px solid #E5E7EB;
         }
         .source-card:hover {
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
           box-shadow: 0 4px 12px rgba(232, 23, 31, 0.08);
         }
         .timeline-item {
@@ -47,12 +47,12 @@ export default function MethodologyPage() {
           width: 2rem;
           height: 2rem;
           border-radius: 50%;
-          background-color: #7C3AED;
+          background-color: #8B5CF6;
           color: white;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-weight: 700;
+          font-weight: 600;
           font-size: 0.875rem;
           flex-shrink: 0;
           margin-top: 0.25rem;
@@ -70,7 +70,7 @@ export default function MethodologyPage() {
         .stat-card {
           padding: 1.5rem;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           background: #FFFFFF;
           text-align: center;
           transition: all 0.3s ease;
@@ -83,13 +83,13 @@ export default function MethodologyPage() {
           border-left: 3px solid #F59E0B;
           background: #FFFBEB;
           padding: 1.5rem;
-          border-radius: 6px;
+          border-radius: 12px;
         }
         .public-domain-callout {
           border-left: 3px solid #6D28D9;
           background: #F0F9FF;
           padding: 1.5rem;
-          border-radius: 6px;
+          border-radius: 12px;
         }
         .at-a-glance-grid {
           display: grid;
@@ -110,14 +110,14 @@ export default function MethodologyPage() {
         .at-a-glance-card {
           padding: 1.25rem;
           border: 2px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           background: #FFFFFF;
           text-align: center;
         }
         .at-a-glance-stat {
           font-size: 1.5rem;
           font-weight: 900;
-          color: #7C3AED;
+          color: #8B5CF6;
           margin-bottom: 0.5rem;
           font-family: var(--font-display, 'system-ui');
         }
@@ -141,7 +141,7 @@ export default function MethodologyPage() {
         .confidence-tier {
           padding: 1.5rem;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           background: #FFFFFF;
           text-align: center;
         }
@@ -151,9 +151,9 @@ export default function MethodologyPage() {
         }
         .confidence-label {
           font-size: 0.875rem;
-          font-weight: 700;
+          font-weight: 600;
           margin-bottom: 0.5rem;
-          color: #212529;
+          color: #0f0f0f;
         }
         .confidence-desc {
           font-size: 0.75rem;
@@ -167,7 +167,7 @@ export default function MethodologyPage() {
           color: #4B5563;
           background: #F7F8FA;
           padding: 0.5rem;
-          border-radius: 6px;
+          border-radius: 12px;
         }
         .stats-table {
           width: 100%;
@@ -175,12 +175,12 @@ export default function MethodologyPage() {
           margin-top: 1.5rem;
         }
         .stats-table th {
-          border-bottom: 2px solid #7C3AED;
+          border-bottom: 2px solid #8B5CF6;
           padding: 1rem;
           text-align: left;
-          font-weight: 700;
+          font-weight: 600;
           font-size: 0.875rem;
-          color: #212529;
+          color: #0f0f0f;
           font-family: var(--font-display, 'system-ui');
         }
         .stats-table td {
@@ -193,8 +193,8 @@ export default function MethodologyPage() {
           background: #F7F8FA;
         }
         .stats-stat-name {
-          font-weight: 700;
-          color: #212529;
+          font-weight: 600;
+          color: #0f0f0f;
           font-family: var(--font-display, 'system-ui');
         }
         .related-grid {
@@ -211,7 +211,7 @@ export default function MethodologyPage() {
         .related-card {
           padding: 1.5rem;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           background: #FFFFFF;
           text-align: center;
           text-decoration: none;
@@ -219,7 +219,7 @@ export default function MethodologyPage() {
           transition: all 0.3s ease;
         }
         .related-card:hover {
-          border-color: #7C3AED;
+          border-color: #8B5CF6;
           box-shadow: 0 4px 12px rgba(232, 23, 31, 0.08);
           transform: translateY(-2px);
         }
@@ -228,7 +228,7 @@ export default function MethodologyPage() {
           margin-bottom: 0.75rem;
         }
         .related-title {
-          font-weight: 700;
+          font-weight: 600;
           font-size: 0.875rem;
           color: #6D28D9;
           font-family: var(--font-display, 'system-ui');
@@ -247,8 +247,8 @@ export default function MethodologyPage() {
 
           {/* Badge and Title */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: '#7C3AED', borderRadius: '9999px' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+            style={{ background: '#FFF3F4', color: '#8B5CF6', borderRadius: '9999px' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
             METHODOLOGY
           </div>
 
@@ -264,7 +264,7 @@ export default function MethodologyPage() {
       {/* Data Coverage at a Glance */}
       <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#F7F8FA' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-          <h2 className="text-lg font-display font-bold mb-6" style={{ color: '#212529' }}>Data Coverage at a Glance</h2>
+          <h2 className="text-lg font-display font-bold mb-6" style={{ color: '#0f0f0f' }}>Data Coverage at a Glance</h2>
           <div className="at-a-glance-grid">
             {[
               { stat: '5.1M+', label: 'Federal Cases' },
@@ -287,7 +287,7 @@ export default function MethodologyPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         {/* Section 1: Processing Pipeline */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>How We Process Data</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>How We Process Data</h2>
           <div>
             {[
               { step: '1', title: 'Ingestion', desc: 'Raw data is pulled from the FJC IDB (updated quarterly) and CourtListener API. Each record is validated for completeness and coded by Nature of Suit (NOS) classification.' },
@@ -299,7 +299,7 @@ export default function MethodologyPage() {
               <div key={i} className="timeline-item">
                 <div className="timeline-number">{s.step}</div>
                 <div className="pt-0.5">
-                  <h3 className="text-base font-display font-semibold mb-2" style={{ color: '#212529' }}>{s.title}</h3>
+                  <h3 className="text-base font-display font-semibold mb-2" style={{ color: '#0f0f0f' }}>{s.title}</h3>
                   <p className="text-sm leading-relaxed m-0" style={{ color: '#4B5563' }}>{s.desc}</p>
                 </div>
               </div>
@@ -309,14 +309,14 @@ export default function MethodologyPage() {
 
         {/* Section 2: Data Sources */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Data Sources</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Data Sources</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               {
                 name: 'Federal Judicial Center — Integrated Database (IDB)',
                 description: 'The IDB contains case-level data for every federal civil case filed since 1970, maintained by the Federal Judicial Center as a public statistical resource. It includes case type (Nature of Suit code), final disposition, procedural progress, jurisdiction basis, and case duration. Currently contains 5.1M+ cases.',
                 badge: 'Primary Source',
-                color: '#212529',
+                color: '#0f0f0f',
                 url: 'https://www.fjc.gov/research/idb',
                 icon: 'database'
               },
@@ -324,7 +324,7 @@ export default function MethodologyPage() {
                 name: 'CourtListener (Free Law Project)',
                 description: 'We query the CourtListener API and RECAP Archive in real time to surface related federal court opinions and docket records alongside our aggregate outcome data. CourtListener covers 471 jurisdictions with 10M+ opinions.',
                 badge: 'Supplementary',
-                color: '#15803D',
+                color: '#059669',
                 url: 'https://www.courtlistener.com/',
                 icon: 'scale'
               },
@@ -340,7 +340,7 @@ export default function MethodologyPage() {
                 name: 'Bureau of Justice Statistics (BJS)',
                 description: 'The BJS publishes benchmark civil trial statistics including verdict and settlement distributions, trial rates, and case processing times for federal and state courts.',
                 badge: 'Benchmark',
-                color: '#7C3AED',
+                color: '#8B5CF6',
                 url: 'https://bjs.ojp.gov/library/publications/civil-bench-and-jury-trials-state-courts-2005',
                 icon: 'chart'
               },
@@ -353,7 +353,7 @@ export default function MethodologyPage() {
                 icon: 'building'
               },
             ].map((source, i) => (
-              <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '6px' }}>
+              <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '12px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="text-2xl flex-shrink-0">
                     {source.icon === 'database' && '-'}
@@ -363,7 +363,7 @@ export default function MethodologyPage() {
                     {source.icon === 'building' && '-'}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-sm font-display font-semibold m-0 mb-1" style={{ color: '#212529' }}>{source.name}</h3>
+                    <h3 className="text-sm font-display font-semibold m-0 mb-1" style={{ color: '#0f0f0f' }}>{source.name}</h3>
                     <span className="inline-block text-[10px] font-bold px-2 py-0.5" style={{ background: source.color.replace('#', '#').substring(0, 7) + '1F', color: source.color, borderRadius: '9999px' }}>
                       {source.badge}
                     </span>
@@ -383,7 +383,7 @@ export default function MethodologyPage() {
 
         {/* Section 3: Data Accuracy & Confidence */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Data Accuracy & Confidence</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Data Accuracy & Confidence</h2>
 
           <div className="mb-8">
             <p className="text-sm leading-relaxed mb-6" style={{ color: '#4B5563' }}>
@@ -398,7 +398,7 @@ export default function MethodologyPage() {
               { iconPath: 'M15 19l-7-7 7-7', label: 'Low Confidence', desc: 'Limited sample', threshold: '< 100 cases' },
             ].map((tier, i) => (
               <div key={i} className="confidence-tier">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="confidence-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="confidence-icon">
                   <path d={tier.iconPath}/>
                 </svg>
                 <div className="confidence-label">{tier.label}</div>
@@ -420,12 +420,12 @@ export default function MethodologyPage() {
 
         {/* Section 4: Dataset Coverage */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Dataset Coverage</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Dataset Coverage</h2>
           <div className="coverage-grid">
             {[
-              { v: '5.1M+', l: 'Federal Cases', c: '#212529' },
-              { v: '50+', l: 'Years of Data', c: '#15803D' },
-              { v: '20+', l: 'Case Categories', c: '#7C3AED' },
+              { v: '5.1M+', l: 'Federal Cases', c: '#0f0f0f' },
+              { v: '50+', l: 'Years of Data', c: '#059669' },
+              { v: '20+', l: 'Case Categories', c: '#8B5CF6' },
               { v: '94', l: 'Federal Districts', c: '#6D28D9' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
@@ -438,7 +438,7 @@ export default function MethodologyPage() {
 
         {/* Section 5: Frequently Cited Statistics */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Frequently Cited Statistics</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Frequently Cited Statistics</h2>
           <p className="text-sm leading-relaxed mb-6" style={{ color: '#4B5563' }}>
             These five metrics are the most commonly referenced on MyCaseValue. Each has a specific calculation method rooted in federal court records and administrative classifications.
           </p>
@@ -482,21 +482,21 @@ export default function MethodologyPage() {
 
         {/* Section 6: Limitations */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>Important Limitations</h2>
+          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#0f0f0f' }}>Important Limitations</h2>
           <div className="limitation-callout">
             <ul className="space-y-3 text-sm leading-relaxed m-0 pl-4" style={{ color: '#4B5563' }}>
-              <li>MyCaseValue displays <strong style={{ color: '#212529' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
-              <li>Win rates reflect <strong style={{ color: '#212529' }}>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
+              <li>MyCaseValue displays <strong style={{ color: '#0f0f0f' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
+              <li>Win rates reflect <strong style={{ color: '#0f0f0f' }}>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
               <li>Settlement amounts are not systematically reported in federal court records. Recovery ranges are derived from cases where monetary awards were documented.</li>
               <li>Past outcomes do not predict future results. Every case has unique facts, parties, and circumstances.</li>
-              <li>This tool is <strong style={{ color: '#212529' }}>not legal advice</strong>. It does not create an attorney-client relationship. Always consult a licensed attorney.</li>
+              <li>This tool is <strong style={{ color: '#0f0f0f' }}>not legal advice</strong>. It does not create an attorney-client relationship. Always consult a licensed attorney.</li>
             </ul>
           </div>
         </section>
 
         {/* Section 7: Public Domain */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>Public Domain Status</h2>
+          <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#0f0f0f' }}>Public Domain Status</h2>
           <div className="public-domain-callout">
             <p className="text-sm leading-relaxed m-0" style={{ color: '#003d5c' }}>
               All source data used by MyCaseValue is public domain under 17 U.S.C. § 105 (works of the United States government) or made freely available by the Free Law Project under open-access principles. MyCaseValue's proprietary contribution is in the aggregation, categorization, and presentation of this data — not in the underlying records themselves.
@@ -506,7 +506,7 @@ export default function MethodologyPage() {
 
         {/* Section 8: Related Pages */}
         <section className="mb-16">
-          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Related Pages</h2>
+          <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#0f0f0f' }}>Related Pages</h2>
           <div className="related-grid">
             {[
               { href: '/faq', iconPath: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z', title: 'FAQ' },
@@ -516,7 +516,7 @@ export default function MethodologyPage() {
             ].map((link, i) => (
               <Link key={i} href={link.href}>
                 <div className="related-card">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="related-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="related-icon">
                     <path d={link.iconPath}/>
                   </svg>
                   <div className="related-title">{link.title}</div>
@@ -531,7 +531,7 @@ export default function MethodologyPage() {
           <p className="text-sm mb-6" style={{ color: '#4B5563' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '6px', background: '#7C3AED', color: '#FFFFFF', border: '1px solid #7C3AED' }}>
+            style={{ borderRadius: '12px', background: '#8B5CF6', color: '#FFFFFF', border: '1px solid #8B5CF6' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

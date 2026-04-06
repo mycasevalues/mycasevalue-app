@@ -25,7 +25,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
           aria-hidden="true"
         >
           {/* Rounded square — generous radius matching official brand */}
-          <rect x="0" y="0" width="120" height="120" rx="28" fill="#212529" />
+          <rect x="0" y="0" width="120" height="120" rx="28" fill="#0f0f0f" />
 
           {/* White dot — upper-left quadrant */}
           <circle cx="39" cy="36" r="13" fill="white" />
@@ -50,7 +50,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
             style={{
               fontSize,
               letterSpacing: '-0.5px',
-              color: '#212529',
+              color: '#0f0f0f',
             }}
           >
             MyCase
@@ -60,7 +60,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
             style={{
               fontSize,
               letterSpacing: '-0.5px',
-              color: '#7C3AED',
+              color: '#8B5CF6',
             }}
           >
             Value

@@ -15,7 +15,7 @@ const SkeletonResultCard = () => (
     marginBottom: '12px',
     background: '#FFFFFF',
     border: '1px solid #E5E7EB',
-    borderRadius: '6px',
+    borderRadius: '12px',
     animation: 'shimmer 2s infinite',
   }}>
     <div style={{
@@ -29,7 +29,7 @@ const SkeletonResultCard = () => (
         height: '20px',
         width: '60%',
         background: '#E8EAED',
-        borderRadius: '6px',
+        borderRadius: '12px',
         flex: '1 1 auto',
         minWidth: '150px',
       }} />
@@ -37,7 +37,7 @@ const SkeletonResultCard = () => (
         height: '20px',
         width: '20%',
         background: '#E8EAED',
-        borderRadius: '6px',
+        borderRadius: '12px',
         minWidth: '50px',
       }} />
     </div>
@@ -45,7 +45,7 @@ const SkeletonResultCard = () => (
       height: '14px',
       width: '40%',
       background: '#E8EAED',
-      borderRadius: '6px',
+      borderRadius: '12px',
     }} />
   </div>
 );
@@ -175,7 +175,7 @@ export default function SearchPage() {
         }
 
         input:focus {
-          border-color: #7C3AED !important;
+          border-color: #8B5CF6 !important;
           box-shadow: 0 0 0 3px rgba(232, 23, 31, 0.08) !important;
         }
 
@@ -201,15 +201,15 @@ export default function SearchPage() {
       {/* Dark Navy Header Banner */}
       <div className="search-header" style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '6px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#7C3AED', flexShrink: 0 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#8B5CF6', flexShrink: 0 }}>
               <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#7C3AED', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Search
             </span>
           </div>
-          <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+          <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
             What happened to you?
           </h1>
           <p className="search-header" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
@@ -231,7 +231,7 @@ export default function SearchPage() {
       <div className="search-layout" style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px', display: 'grid', gridTemplateColumns: '220px 1fr', gap: '32px', fontFamily: 'var(--font-body)' }}>
         {/* Left sidebar — category filters */}
         <aside className="search-sidebar" style={{ position: 'sticky', top: '128px', alignSelf: 'start' }}>
-          <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
             Filter by Category
           </p>
           <button
@@ -239,9 +239,9 @@ export default function SearchPage() {
             style={{
               display: 'block', width: '100%', textAlign: 'left',
               padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === null ? 700 : 400,
-              color: selectedCategory === null ? '#7C3AED' : '#4B5563',
-              background: selectedCategory === null ? 'rgba(124, 58, 237, 0.06)' : 'transparent',
-              border: 'none', borderLeft: selectedCategory === null ? '3px solid #7C3AED' : '3px solid transparent',
+              color: selectedCategory === null ? '#8B5CF6' : '#4B5563',
+              background: selectedCategory === null ? 'rgba(139, 92, 246, 0.06)' : 'transparent',
+              border: 'none', borderLeft: selectedCategory === null ? '3px solid #8B5CF6' : '3px solid transparent',
               cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
               marginBottom: '2px',
             }}
@@ -256,9 +256,9 @@ export default function SearchPage() {
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 width: '100%', textAlign: 'left',
                 padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === cat.id ? 700 : 400,
-                color: selectedCategory === cat.id ? '#7C3AED' : '#4B5563',
-                background: selectedCategory === cat.id ? 'rgba(124, 58, 237, 0.06)' : 'transparent',
-                border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid #7C3AED' : '3px solid transparent',
+                color: selectedCategory === cat.id ? '#8B5CF6' : '#4B5563',
+                background: selectedCategory === cat.id ? 'rgba(139, 92, 246, 0.06)' : 'transparent',
+                border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid #8B5CF6' : '3px solid transparent',
                 cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
                 marginBottom: '2px',
               }}
@@ -290,7 +290,7 @@ export default function SearchPage() {
                   padding: '8px 16px',
                   background: '#FFFFFF',
                   border: '1px solid #E5E7EB',
-                  borderRadius: '6px',
+                  borderRadius: '12px',
                   fontSize: '13px',
                   color: '#6D28D9',
                   textDecoration: 'none',
@@ -336,9 +336,9 @@ export default function SearchPage() {
               paddingRight: '16px',
               fontSize: '16px',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               background: '#FFFFFF',
-              color: '#212529',
+              color: '#0f0f0f',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
               outline: 'none',
               boxSizing: 'border-box' as const,
@@ -363,23 +363,23 @@ export default function SearchPage() {
             paddingRight: '24px',
             fontSize: '15px',
             fontWeight: '600',
-            background: '#7C3AED',
+            background: '#8B5CF6',
             color: '#FFFFFF',
             border: 'none',
-            borderRadius: '6px',
+            borderRadius: '12px',
             cursor: 'pointer',
             fontFamily: 'var(--font-body)',
             transition: 'all 150ms ease-out',
-            boxShadow: '0 2px 4px rgba(124, 58, 237, 0.2)',
+            boxShadow: '0 2px 4px rgba(139, 92, 246, 0.2)',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.background = '#6D28D9';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(124, 58, 237, 0.25)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(139, 92, 246, 0.25)';
             e.currentTarget.style.transform = 'translateY(-1px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#7C3AED';
-            e.currentTarget.style.boxShadow = '0 2px 4px rgba(124, 58, 237, 0.2)';
+            e.currentTarget.style.background = '#8B5CF6';
+            e.currentTarget.style.boxShadow = '0 2px 4px rgba(139, 92, 246, 0.2)';
             e.currentTarget.style.transform = 'translateY(0)';
           }}
           aria-label="Search"
@@ -389,7 +389,7 @@ export default function SearchPage() {
       </div>
 
       {/* Search Tips Section */}
-      <div style={{ marginBottom: '24px', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '6px', overflow: 'hidden' }}>
+      <div style={{ marginBottom: '24px', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '12px', overflow: 'hidden' }}>
         <button
           onClick={() => setTipsExpanded(!tipsExpanded)}
           style={{
@@ -455,8 +455,8 @@ export default function SearchPage() {
       {query.length > 1 && !isLoading && results.length > 0 && (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
           <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
-            <strong style={{ color: '#212529' }}>{results.length}</strong> result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;
-            {selectedCategory && <span> in <strong style={{ color: '#7C3AED' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
+            <strong style={{ color: '#0f0f0f' }}>{results.length}</strong> result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;
+            {selectedCategory && <span> in <strong style={{ color: '#8B5CF6' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
           </p>
           {selectedCategory && (
             <button onClick={() => setSelectedCategory(null)} style={{ fontSize: '12px', color: '#6D28D9', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
@@ -477,7 +477,7 @@ export default function SearchPage() {
             marginBottom: '12px',
             background: '#FFFFFF',
             border: '1px solid #E5E7EB',
-            borderRadius: '6px',
+            borderRadius: '12px',
             textDecoration: 'none',
             transition: 'all 150ms ease-out',
             cursor: 'pointer',
@@ -485,7 +485,7 @@ export default function SearchPage() {
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';
             e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
-            e.currentTarget.style.borderColor = '#7C3AED';
+            e.currentTarget.style.borderColor = '#8B5CF6';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
@@ -494,14 +494,14 @@ export default function SearchPage() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
-            <h3 style={{ fontSize: '15px', fontWeight: '600', color: '#212529', margin: '0', fontFamily: 'var(--font-display)', flex: '1 1 auto' }}>{r.label}</h3>
+            <h3 style={{ fontSize: '15px', fontWeight: '600', color: '#0f0f0f', margin: '0', fontFamily: 'var(--font-display)', flex: '1 1 auto' }}>{r.label}</h3>
             <span style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: '#7C3AED',
-              background: 'rgba(124, 58, 237, 0.08)',
+              color: '#8B5CF6',
+              background: 'rgba(139, 92, 246, 0.08)',
               padding: '4px 10px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               border: 'none',
               fontFamily: 'var(--font-body)',
               whiteSpace: 'nowrap',
@@ -518,33 +518,33 @@ export default function SearchPage() {
             return (
               <div style={{ display: 'flex', gap: '16px', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid #F0F3F5' }}>
                 {rd.wr != null && (
-                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Win Rate </span>
-                    <strong style={{ color: rd.wr >= 50 ? '#15803D' : '#7C3AED' }}>{rd.wr}%</strong>
+                    <strong style={{ color: rd.wr >= 50 ? '#059669' : '#8B5CF6' }}>{rd.wr}%</strong>
                   </span>
                 )}
                 {rd.sp != null && (
-                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Settlement </span>
                     <strong style={{ color: '#6D28D9' }}>{rd.sp}%</strong>
                   </span>
                 )}
                 {rd.total != null && (
-                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Cases </span>
                     <strong>{rd.total.toLocaleString()}</strong>
                   </span>
                 )}
                 {rd.mo != null && (
-                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Duration </span>
                     <strong>{rd.mo}mo</strong>
                   </span>
                 )}
                 {rd.rng?.md != null && rd.rng.md > 0 && (
-                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Median </span>
-                    <strong style={{ color: '#7C3AED' }}>{formatSettlementAmount(rd.rng.md, { compact: true })}</strong>
+                    <strong style={{ color: '#8B5CF6' }}>{formatSettlementAmount(rd.rng.md, { compact: true })}</strong>
                   </span>
                 )}
               </div>
@@ -567,7 +567,7 @@ export default function SearchPage() {
                     padding: '8px 16px',
                     background: '#FFFFFF',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '6px',
+                    borderRadius: '12px',
                     fontSize: '13px',
                     color: '#6D28D9',
                     cursor: 'pointer',
@@ -594,7 +594,7 @@ export default function SearchPage() {
 
           {/* Top Case Types by Volume */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Most Common Federal Case Types
             </p>
             <div style={{ display: 'grid', gap: 8 }}>
@@ -624,17 +624,17 @@ export default function SearchPage() {
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#6D28D9'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
-                    <span style={{ width: 24, height: 24, borderRadius: 2, background: '#7C3AED', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0 }}>
+                    <span style={{ width: 24, height: 24, borderRadius: 2, background: '#8B5CF6', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 600, flexShrink: 0 }}>
                       {i + 1}
                     </span>
                     <div style={{ flex: 1 }}>
-                      <span style={{ fontSize: 14, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)' }}>{item.label}</span>
+                      <span style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>{item.label}</span>
                     </div>
                     <div style={{ display: 'flex', gap: 16, fontSize: 12, fontFamily: 'var(--font-mono)', color: '#4B5563', flexShrink: 0 }}>
-                      <span style={{ color: item.wr >= 50 ? '#15803D' : item.wr >= 35 ? '#D97706' : '#7C3AED', fontWeight: 700 }}>{item.wr}%</span>
+                      <span style={{ color: item.wr >= 50 ? '#059669' : item.wr >= 35 ? '#D97706' : '#8B5CF6', fontWeight: 600 }}>{item.wr}%</span>
                       <span>{item.total.toLocaleString()}</span>
                       <span>{item.mo}mo</span>
-                      {item.rngMd > 0 && <span style={{ color: '#7C3AED', fontWeight: 600 }}>${item.rngMd}K</span>}
+                      {item.rngMd > 0 && <span style={{ color: '#8B5CF6', fontWeight: 600 }}>${item.rngMd}K</span>}
                     </div>
                   </Link>
                 ));
@@ -644,7 +644,7 @@ export default function SearchPage() {
 
           {/* Browse by Category Grid */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Browse by Category
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
@@ -671,17 +671,17 @@ export default function SearchPage() {
                       padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB',
                       borderRadius: 2, textDecoration: 'none', transition: 'all 0.15s ease',
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#7C3AED'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#8B5CF6'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
-                    <div style={{ fontSize: 14, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>{cat.label}</div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 4 }}>{cat.label}</div>
                     <div style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 8 }}>{cat.opts.length} case types</div>
                     <div style={{ display: 'flex', gap: 12, fontSize: 11, fontFamily: 'var(--font-mono)' }}>
-                      <span style={{ color: avgWr >= 50 ? '#15803D' : avgWr >= 35 ? '#D97706' : '#7C3AED', fontWeight: 700 }}>{avgWr}% win</span>
+                      <span style={{ color: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : '#8B5CF6', fontWeight: 600 }}>{avgWr}% win</span>
                       <span style={{ color: '#4B5563' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
                     </div>
                     <div style={{ height: 3, background: '#F0F3F5', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
-                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#15803D' : avgWr >= 35 ? '#D97706' : '#7C3AED', borderRadius: 2 }} />
+                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : '#8B5CF6', borderRadius: 2 }} />
                     </div>
                   </Link>
                 );
@@ -691,7 +691,7 @@ export default function SearchPage() {
 
           {/* Data Highlights Section */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Data Highlights
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
@@ -723,10 +723,10 @@ export default function SearchPage() {
                 const highestRecovery = allNos.filter(x => x.rngMd > 0).reduce((a, b) => b.rngMd > a.rngMd ? b : a, allNos.filter(x => x.rngMd > 0)[0]);
 
                 const highlights = [
-                  { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#7C3AED' },
-                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#15803D' },
+                  { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#8B5CF6' },
+                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#059669' },
                   { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#0369A1' },
-                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `$${highestRecovery.rngMd}K median` : 'N/A', color: '#7C3AED' },
+                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `$${highestRecovery.rngMd}K median` : 'N/A', color: '#8B5CF6' },
                 ];
 
                 return highlights.map((h, i) => (
@@ -736,7 +736,7 @@ export default function SearchPage() {
                       padding: '16px',
                       background: '#FFFFFF',
                       border: '1px solid #E5E7EB',
-                      borderRadius: '6px',
+                      borderRadius: '12px',
                       transition: 'all 0.15s ease',
                     }}
                     onMouseEnter={(e) => {
@@ -748,13 +748,13 @@ export default function SearchPage() {
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+                    <div style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                       {h.title}
                     </div>
-                    <div style={{ fontSize: '13px', fontWeight: '600', color: '#212529', marginBottom: '6px', fontFamily: 'var(--font-display)', lineHeight: '1.4' }}>
+                    <div style={{ fontSize: '13px', fontWeight: '600', color: '#0f0f0f', marginBottom: '6px', fontFamily: 'var(--font-display)', lineHeight: '1.4' }}>
                       {h.value}
                     </div>
-                    <div style={{ fontSize: '14px', fontWeight: '700', color: h.color, fontFamily: 'var(--font-mono)' }}>
+                    <div style={{ fontSize: '14px', fontWeight: '600', color: h.color, fontFamily: 'var(--font-mono)' }}>
                       {h.display}
                     </div>
                   </div>
@@ -765,7 +765,7 @@ export default function SearchPage() {
 
           {/* Quick Actions Bar */}
           <div style={{ marginTop: '32px', padding: '24px 0', borderTop: '1px solid #E5E7EB' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Quick Actions
             </p>
             <div style={{ display: 'inline-flex', flexWrap: 'wrap', gap: '12px' }}>
@@ -793,9 +793,9 @@ export default function SearchPage() {
                     cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#7C3AED';
-                    e.currentTarget.style.color = '#7C3AED';
-                    e.currentTarget.style.background = 'rgba(124, 58, 237, 0.08)';
+                    e.currentTarget.style.borderColor = '#8B5CF6';
+                    e.currentTarget.style.color = '#8B5CF6';
+                    e.currentTarget.style.background = 'rgba(139, 92, 246, 0.08)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = '#E5E7EB';

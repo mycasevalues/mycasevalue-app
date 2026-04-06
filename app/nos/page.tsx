@@ -55,12 +55,12 @@ export default function NOSIndexPage() {
   const categories = Object.keys(byCategory).sort();
 
   return (
-    <div style={{ minHeight: '100vh', color: '#212529', background: '#F7F8FA' }}>
+    <div style={{ minHeight: '100vh', color: '#0f0f0f', background: '#F7F8FA' }}>
       <style>{`
         .nos-card {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-radius: 6px;
+          border-radius: 12px;
           padding: 24px;
           transition: all 0.2s ease;
           text-decoration: none;
@@ -68,21 +68,21 @@ export default function NOSIndexPage() {
           cursor: pointer;
         }
         .nos-card:hover {
-          border-left: 3px solid #7C3AED;
+          border-left: 3px solid #8B5CF6;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         .nos-card h3 {
           font-weight: 600;
           font-size: 18px;
-          color: #212529;
+          color: #0f0f0f;
           margin: 0 0 8px 0;
           transition: color 0.2s ease;
         }
         .nos-card:hover h3 {
-          color: #7C3AED;
+          color: #8B5CF6;
         }
         .nos-card-arrow {
-          color: #7C3AED;
+          color: #8B5CF6;
           font-size: 20px;
           transition: transform 0.2s ease;
         }
@@ -90,7 +90,7 @@ export default function NOSIndexPage() {
           transform: translateX(4px);
         }
         .nos-back-link {
-          color: #7C3AED;
+          color: #8B5CF6;
           text-decoration: none;
           font-size: 14px;
           display: inline-block;
@@ -155,10 +155,10 @@ export default function NOSIndexPage() {
             </h1>
             <span
               style={{
-                background: '#7C3AED',
+                background: '#8B5CF6',
                 color: '#FFFFFF',
                 padding: '6px 12px',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 fontSize: '12px',
                 fontWeight: '600',
                 whiteSpace: 'nowrap',
@@ -212,9 +212,9 @@ export default function NOSIndexPage() {
                 fontSize: '24px',
                 fontWeight: 'bold',
                 marginBottom: '24px',
-                color: '#212529',
+                color: '#0f0f0f',
                 paddingLeft: '16px',
-                borderLeft: '3px solid #7C3AED',
+                borderLeft: '3px solid #8B5CF6',
                 fontFamily: 'var(--font-display)',
               }}
             >
@@ -274,7 +274,7 @@ export default function NOSIndexPage() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #E5E7EB',
-              borderRadius: '6px',
+              borderRadius: '12px',
               padding: '32px',
           }}
           >
@@ -283,7 +283,7 @@ export default function NOSIndexPage() {
                 fontSize: '24px',
                 fontWeight: 'bold',
                 marginBottom: '16px',
-                color: '#212529',
+                color: '#0f0f0f',
                 margin: '0 0 16px 0',
                 fontFamily: 'var(--font-display)',
               }}

@@ -105,16 +105,16 @@ export default function TestimonialCarousel() {
             style={{
               width: '60px',
               height: '4px',
-              background: '#7C3AED',
+              background: '#8B5CF6',
               margin: '0 auto 16px',
-              borderRadius: '6px',
+              borderRadius: '12px',
             }}
           />
           <h2
             style={{
               fontSize: '32px',
               fontWeight: 600,
-              color: '#212529',
+              color: '#0f0f0f',
               fontFamily: 'var(--font-display)',
               margin: '0 0 12px 0',
             }}
@@ -157,7 +157,7 @@ export default function TestimonialCarousel() {
               flexShrink: 0,
               width: '44px',
               height: '44px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               border: 'none',
               background: '#1B3A5C',
               color: '#FFFFFF',
@@ -168,7 +168,7 @@ export default function TestimonialCarousel() {
               transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#7C3AED';
+              e.currentTarget.style.background = '#8B5CF6';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = '#1B3A5C';
@@ -202,7 +202,7 @@ export default function TestimonialCarousel() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '32px',
                 width: '100%',
                 animation: 'fadeIn 300ms ease-in-out',
@@ -217,7 +217,7 @@ export default function TestimonialCarousel() {
                     width="16"
                     height="16"
                     viewBox="0 0 24 24"
-                    fill="#7C3AED"
+                    fill="#8B5CF6"
                     stroke="none"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -245,8 +245,8 @@ export default function TestimonialCarousel() {
                 <p
                   style={{
                     fontSize: '16px',
-                    fontWeight: 700,
-                    color: '#212529',
+                    fontWeight: 600,
+                    color: '#0f0f0f',
                     fontFamily: 'var(--font-display)',
                     margin: '0 0 2px 0',
                   }}
@@ -289,7 +289,7 @@ export default function TestimonialCarousel() {
               flexShrink: 0,
               width: '44px',
               height: '44px',
-              borderRadius: '6px',
+              borderRadius: '12px',
               border: 'none',
               background: '#1B3A5C',
               color: '#FFFFFF',
@@ -300,7 +300,7 @@ export default function TestimonialCarousel() {
               transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#7C3AED';
+              e.currentTarget.style.background = '#8B5CF6';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = '#1B3A5C';
@@ -339,14 +339,14 @@ export default function TestimonialCarousel() {
                 height: '10px',
                 borderRadius: '50%',
                 border: index === currentIndex ? 'none' : '1px solid #E5E7EB',
-                background: index === currentIndex ? '#7C3AED' : 'transparent',
+                background: index === currentIndex ? '#8B5CF6' : 'transparent',
                 cursor: 'pointer',
                 transition: 'all 200ms',
                 padding: 0,
               }}
               onMouseEnter={(e) => {
                 if (index !== currentIndex) {
-                  e.currentTarget.style.borderColor = '#7C3AED';
+                  e.currentTarget.style.borderColor = '#8B5CF6';
                 }
               }}
               onMouseLeave={(e) => {

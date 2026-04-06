@@ -50,7 +50,7 @@ export default function FundersPage() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            fontWeight: 700,
+            fontWeight: 600,
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
             color: '#6D28D9',
@@ -61,7 +61,7 @@ export default function FundersPage() {
           <h1 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '2.5rem',
-            fontWeight: 700,
+            fontWeight: 600,
             lineHeight: 1.1,
             marginBottom: '20px',
           }}>
@@ -79,13 +79,13 @@ export default function FundersPage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '12px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
-              fontWeight: 700,
+              fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
@@ -97,11 +97,11 @@ export default function FundersPage() {
               background: 'transparent',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '12px',
               border: '1.5px solid rgba(255,255,255,0.5)',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
-              fontWeight: 700,
+              fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
@@ -119,8 +119,8 @@ export default function FundersPage() {
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '2rem',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -131,15 +131,15 @@ export default function FundersPage() {
               <div key={f.title} style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '32px 24px',
               }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',
-                  fontWeight: 700,
-                  color: '#212529',
+                  fontWeight: 600,
+                  color: '#0f0f0f',
                   marginBottom: '8px',
                 }}>
                   {f.title}
@@ -165,8 +165,8 @@ export default function FundersPage() {
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '1.75rem',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             marginBottom: '16px',
           }}>
             Optimize funding decisions with litigation intelligence
@@ -182,13 +182,13 @@ export default function FundersPage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
-              background: '#7C3AED',
+              background: '#8B5CF6',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '12px',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
-              fontWeight: 700,
+              fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
@@ -198,13 +198,13 @@ export default function FundersPage() {
             </Link>
             <Link href="/calculator" style={{
               background: 'transparent',
-              color: '#212529',
+              color: '#0f0f0f',
               padding: '0.875rem 2rem',
-              borderRadius: '6px',
+              borderRadius: '12px',
               border: '1.5px solid #E5E7EB',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
-              fontWeight: 700,
+              fontWeight: 600,
               fontSize: '0.875rem',
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
@@ -222,8 +222,8 @@ export default function FundersPage() {
           <h2 style={{
             fontFamily: 'var(--font-display)',
             fontSize: '1.75rem',
-            fontWeight: 700,
-            color: '#212529',
+            fontWeight: 600,
+            color: '#0f0f0f',
             textAlign: 'center',
             marginBottom: '48px',
           }}>
@@ -235,7 +235,7 @@ export default function FundersPage() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'block',
@@ -247,8 +247,8 @@ export default function FundersPage() {
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
-                fontWeight: 700,
-                color: '#212529',
+                fontWeight: 600,
+                color: '#0f0f0f',
                 marginBottom: '8px',
               }}>
                 Insurance
@@ -268,7 +268,7 @@ export default function FundersPage() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'block',
@@ -280,8 +280,8 @@ export default function FundersPage() {
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
-                fontWeight: 700,
-                color: '#212529',
+                fontWeight: 600,
+                color: '#0f0f0f',
                 marginBottom: '8px',
               }}>
                 Enterprise Legal
@@ -301,7 +301,7 @@ export default function FundersPage() {
               style={{
                 background: '#FFFFFF',
                 border: '1px solid #E5E7EB',
-                borderRadius: '6px',
+                borderRadius: '12px',
                 padding: '32px 24px',
                 textDecoration: 'none',
                 display: 'block',
@@ -313,8 +313,8 @@ export default function FundersPage() {
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
-                fontWeight: 700,
-                color: '#212529',
+                fontWeight: 600,
+                color: '#0f0f0f',
                 marginBottom: '8px',
               }}>
                 Academic Research

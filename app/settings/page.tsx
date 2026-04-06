@@ -195,7 +195,7 @@ export default function SettingsPage() {
                           className="mr-3 rounded-sm"
                           defaultChecked={caseType === 'Patent'}
                           style={{
-                            accentColor: '#7C3AED',
+                            accentColor: '#8B5CF6',
                           }}
                         />
                         <span style={{ color: '#4B5563' }}>{caseType}</span>
@@ -220,7 +220,7 @@ export default function SettingsPage() {
                           className="mr-3 rounded-sm"
                           defaultChecked={pref.checked}
                           style={{
-                            accentColor: '#7C3AED',
+                            accentColor: '#8B5CF6',
                           }}
                         />
                         <span style={{ color: '#4B5563' }}>{pref.label}</span>
@@ -311,7 +311,7 @@ export default function SettingsPage() {
                         defaultChecked={option.value === 'comfortable'}
                         className="mr-3"
                         style={{
-                          accentColor: '#7C3AED',
+                          accentColor: '#8B5CF6',
                         }}
                       />
                       <span style={{ color: '#4B5563' }}>{option.label}</span>
@@ -345,13 +345,13 @@ export default function SettingsPage() {
                     CaseCheck Free Launch
                   </h3>
                   <p className="text-sm" style={{ color: '#4B5563' }}>
-                    Free access during public launch period. Premium features coming soon.
+                    Free access during public launch period. Premium features available during beta.
                   </p>
                 </div>
                 <div
                   className="px-3 py-1 rounded-sm text-sm font-semibold whitespace-nowrap ml-4"
                   style={{
-                    backgroundColor: '#15803D',
+                    backgroundColor: '#059669',
                     color: 'white',
                   }}
                 >

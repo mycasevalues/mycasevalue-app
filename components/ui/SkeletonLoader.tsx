@@ -50,7 +50,7 @@ export function SkeletonChart({ height = '200px', className = '' }: { height?: s
       <div style={{
         position: 'absolute', inset: 0,
         background: 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, #FFFFFF 100%)',
-        borderRadius: '6px',
+        borderRadius: '12px',
       }}>
         <div style={{ display: 'flex', alignItems: 'flex-end', height: '100%', padding: '20px', gap: '8px' }}>
           {[40, 65, 50, 80, 55, 70, 45, 75, 60, 85, 50, 65].map((h, i) => (
@@ -73,7 +73,7 @@ export function SkeletonCard({ className = '' }: { className?: string }) {
   return (
     <div className={className} style={{
       padding: '24px',
-      borderRadius: '6px',
+      borderRadius: '12px',
       background: '#FFFFFF',
       border: '1px solid rgba(255,255,255,0.10)',
     }}>
@@ -111,7 +111,7 @@ export function SkeletonStatRow({ count = 4, className = '' }: { count?: number;
       {Array.from({ length: count }).map((_, i) => (
         <div key={i} style={{
           padding: '16px',
-          borderRadius: '6px',
+          borderRadius: '12px',
           background: '#FFFFFF',
           border: '1px solid rgba(255,255,255,0.10)',
           textAlign: 'center',

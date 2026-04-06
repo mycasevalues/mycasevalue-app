@@ -125,7 +125,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                   className="breadcrumbs-current"
                   style={{
                     fontSize: '13px',
-                    color: '#111827',
+                    color: '#0f0f0f',
                     fontWeight: '500',
                     fontFamily: 'var(--font-body)',
                   }}
