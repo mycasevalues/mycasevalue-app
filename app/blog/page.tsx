@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { getAllPosts } from '../../lib/blog';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
@@ -133,6 +134,58 @@ export default function BlogPage() {
 
         .filter-item:hover {
           color: #E8171F;
+        }
+
+        .featured-research-card {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 2px;
+          padding: 24px;
+          transition: all 0.3s ease;
+        }
+
+        .featured-research-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+          border-color: #E8171F;
+        }
+
+        .topic-pill {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 24px;
+          padding: 8px 16px;
+          font-size: 13px;
+          color: #455A64;
+          font-weight: 500;
+          display: inline-block;
+          transition: all 0.2s ease;
+          cursor: pointer;
+          font-family: var(--font-body);
+        }
+
+        .topic-pill:hover {
+          border-color: #E8171F;
+          background: #FFF3F4;
+          color: #E8171F;
+        }
+
+        .related-tools-card {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 2px;
+          padding: 24px;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          transition: all 0.3s ease;
+        }
+
+        .related-tools-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+          border-color: #006997;
         }
 
         @media (max-width: 768px) {
@@ -314,6 +367,128 @@ export default function BlogPage() {
               ))}
             </div>
           </main>
+        </div>
+      </div>
+
+      {/* Featured Research Section */}
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div style={{ marginBottom: '32px' }}>
+          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+            Featured Research
+          </h2>
+          <p style={{ fontSize: '16px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+            Explore our latest in-depth analyses on federal litigation trends, settlement patterns, and case outcomes.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }}>
+          {[
+            {
+              title: 'Employment Discrimination Trends 2020-2024',
+              description: 'Analyze settlement patterns and win rates in employment discrimination cases across federal districts.',
+            },
+            {
+              title: 'Settlement Rates Across Federal Circuits',
+              description: 'Compare how settlement likelihood varies by circuit, judge, and case category.',
+            },
+            {
+              title: 'Pro Se Litigation: Success Rates in Federal Court',
+              description: 'Examine outcomes for self-represented litigants and factors affecting their success.',
+            },
+            {
+              title: 'How Judge Assignment Affects Case Outcomes',
+              description: 'Explore the correlation between judge assignment and case duration, settlement, and verdicts.',
+            },
+          ].map((research, idx) => (
+            <a
+              key={idx}
+              href="#"
+              className="featured-research-card"
+            >
+              <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-display)' }}>
+                {research.title}
+              </h3>
+              <p style={{ fontSize: '14px', color: '#455A64', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+                {research.description}
+              </p>
+              <span style={{ fontSize: '13px', fontWeight: 600, color: '#006997', textDecoration: 'none' }}>
+                Read more →
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Browse by Topic Section */}
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div style={{ marginBottom: '32px' }}>
+          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+            Browse by Topic
+          </h2>
+          <p style={{ fontSize: '16px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+            Filter articles by practice area and research focus.
+          </p>
+        </div>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: '12px' }}>
+          {[
+            'Employment',
+            'Civil Rights',
+            'Personal Injury',
+            'Consumer',
+            'Settlement Data',
+            'Judge Analytics',
+          ].map((topic) => (
+            <a
+              key={topic}
+              href="#"
+              className="topic-pill"
+            >
+              {topic}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Related Tools Section */}
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div style={{ marginBottom: '32px' }}>
+          <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
+            Related Tools
+          </h2>
+          <p style={{ fontSize: '16px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+            Use these interactive tools to explore the data discussed in our research.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+          {[
+            { name: 'Trends Explorer', href: '/trends', icon: '📊' },
+            { name: 'Judge Comparison', href: '/judges', icon: '⚖️' },
+            { name: 'Case Comparison', href: '/compare', icon: '🔍' },
+            { name: 'NOS Explorer', href: '/nos-explorer', icon: '📋' },
+          ].map((tool) => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              className="related-tools-card"
+            >
+              <div>
+                <div style={{ fontSize: '32px', marginBottom: '12px' }}>
+                  {tool.icon}
+                </div>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
+                  {tool.name}
+                </h3>
+                <p style={{ fontSize: '13px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+                  Explore federal case data interactively.
+                </p>
+              </div>
+              <span style={{ fontSize: '13px', fontWeight: 600, color: '#006997', marginTop: '16px', textDecoration: 'none' }}>
+                Explore →
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
 

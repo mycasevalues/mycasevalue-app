@@ -101,6 +101,177 @@ export default function ReportsPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 20px' }}>
 
+        {/* "All Reports Free During Launch" Banner */}
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(7, 135, 74, 0.08) 0%, rgba(7, 135, 74, 0.04) 100%)',
+          border: '1px solid #07874A',
+          borderRadius: '2px',
+          padding: '20px 24px',
+          marginBottom: '32px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+        }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#07874A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <p style={{
+            fontSize: '14px',
+            fontWeight: 600,
+            color: '#07874A',
+            margin: 0,
+          }}>
+            All Reports Free During Launch — Explore unlimited case research, settlement data, and judge analytics at no cost.
+          </p>
+        </div>
+
+        {/* What's In a Report Section */}
+        <div style={{ marginBottom: '48px' }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: 700,
+            color: '#212529',
+            marginBottom: '24px',
+            fontFamily: 'var(--font-display)',
+          }}>
+            What's In a Report
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '20px',
+          }}>
+            {[
+              'Win Rate Analysis',
+              'Settlement Range',
+              'Case Duration',
+              'Circuit Breakdown',
+              'Judge Data',
+              'Key Factors',
+              'Historical Trends',
+              'Outcome Distribution',
+            ].map((feature) => (
+              <div
+                key={feature}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '24px',
+                  textAlign: 'center' as const,
+                  transition: 'all 0.2s ease',
+                }}
+                className="feature-card"
+              >
+                <style>{`
+                  .feature-card:hover {
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                    border-color: #006997;
+                  }
+                `}</style>
+                <div style={{
+                  width: '40px',
+                  height: '40px',
+                  background: 'rgba(0, 105, 151, 0.08)',
+                  borderRadius: '2px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 12px',
+                }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                </div>
+                <p style={{
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  color: '#212529',
+                  margin: 0,
+                  lineHeight: 1.4,
+                }}>
+                  {feature}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Sample Reports Section */}
+        <div style={{ marginBottom: '48px' }}>
+          <h2 style={{
+            fontSize: '24px',
+            fontWeight: 700,
+            color: '#212529',
+            marginBottom: '24px',
+            fontFamily: 'var(--font-display)',
+          }}>
+            Popular Reports
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '20px',
+          }}>
+            {[
+              { name: 'Employment Discrimination', nos: '442' },
+              { name: 'Personal Injury', nos: '360' },
+              { name: 'Breach of Contract', nos: '190' },
+              { name: 'Civil Rights', nos: '440' },
+            ].map((report) => (
+              <Link
+                key={report.nos}
+                href={`/cases/${encodeURIComponent(report.name)}`}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '24px',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                }}
+                className="report-link"
+              >
+                <style>{`
+                  .report-link:hover {
+                    border-color: #E8171F;
+                    box-shadow: 0 8px 24px rgba(232, 23, 31, 0.12);
+                    transform: translateY(-2px);
+                  }
+                `}</style>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start',
+                }}>
+                  <div>
+                    <h3 style={{
+                      fontSize: '16px',
+                      fontWeight: 600,
+                      color: '#212529',
+                      margin: '0 0 8px 0',
+                      fontFamily: 'var(--font-display)',
+                    }}>
+                      {report.name}
+                    </h3>
+                    <p style={{
+                      fontSize: '13px',
+                      color: '#455A64',
+                      margin: 0,
+                    }}>
+                      Nature of Suit: {report.nos}
+                    </p>
+                  </div>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {!hasData ? (
           /* Empty State */
           <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #D5D8DC', textAlign: 'center' }}>

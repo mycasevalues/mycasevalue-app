@@ -394,6 +394,240 @@ export default function IntegrationsPage() {
           ))}
         </div>
 
+        {/* Platform Capabilities */}
+        <div style={{ marginBottom: '64px' }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            marginBottom: '32px',
+          }}>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '28px',
+              fontWeight: 800,
+              color: '#212529',
+              margin: 0,
+            }}>
+              Platform Capabilities
+            </h2>
+            <span style={{
+              display: 'inline-block',
+              width: '4px',
+              height: '4px',
+              background: '#E8171F',
+              borderRadius: '50%',
+            }} />
+          </div>
+          <p style={{
+            fontSize: '16px',
+            color: '#455A64',
+            maxWidth: '600px',
+            lineHeight: 1.6,
+            marginBottom: '32px',
+          }}>
+            Explore what you can do with MyCaseValue integrations. From API access to custom dashboards, we've built the tools legal teams need.
+          </p>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '24px',
+            }}
+          >
+            {[
+              {
+                title: 'API Access',
+                description: 'Full programmatic access to case data, settlement ranges, and judge statistics via REST endpoints.',
+                status: 'Available',
+              },
+              {
+                title: 'Bulk Data Export',
+                description: 'Download large datasets as CSV or Excel for offline analysis, pivot tables, and custom reporting.',
+                status: 'Available',
+              },
+              {
+                title: 'PDF Reports',
+                description: 'Generate branded PDF reports for client presentations, court filings, and discovery packages.',
+                status: 'Available',
+              },
+              {
+                title: 'Webhook Notifications',
+                description: 'Receive real-time updates when new case data becomes available or outcomes change.',
+                status: 'Coming Soon',
+              },
+              {
+                title: 'Custom Dashboards',
+                description: 'Build interactive dashboards tailored to your practice area and case metrics.',
+                status: 'Coming Soon',
+              },
+              {
+                title: 'Embed Widgets',
+                description: 'Embed case outcome widgets directly into your practice management platform.',
+                status: 'Coming Soon',
+              },
+            ].map((capability) => (
+              <div
+                key={capability.title}
+                className="capability-card"
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '24px',
+                  transition: 'all 0.2s ease',
+                  position: 'relative',
+                }}
+              >
+                <style>{`
+                  .capability-card:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                    border-color: #006997;
+                  }
+                `}</style>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '16px',
+                  fontWeight: 700,
+                  color: '#212529',
+                  margin: '0 0 12px 0',
+                }}>
+                  {capability.title}
+                </h3>
+                <p style={{
+                  fontSize: '14px',
+                  color: '#455A64',
+                  lineHeight: 1.6,
+                  margin: '0 0 16px 0',
+                }}>
+                  {capability.description}
+                </p>
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase' as const,
+                  padding: '4px 10px',
+                  borderRadius: '2px',
+                  background: capability.status === 'Available' ? 'rgba(7, 135, 74, 0.08)' : 'rgba(232, 23, 31, 0.06)',
+                  color: capability.status === 'Available' ? '#07874A' : '#E8171F',
+                  display: 'inline-block',
+                }}>
+                  {capability.status}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Data Sources We Connect */}
+        <div style={{ marginBottom: '64px' }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            marginBottom: '32px',
+          }}>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '28px',
+              fontWeight: 800,
+              color: '#212529',
+              margin: 0,
+            }}>
+              Data Sources We Connect
+            </h2>
+            <span style={{
+              display: 'inline-block',
+              width: '4px',
+              height: '4px',
+              background: '#E8171F',
+              borderRadius: '50%',
+            }} />
+          </div>
+          <p style={{
+            fontSize: '16px',
+            color: '#455A64',
+            maxWidth: '600px',
+            lineHeight: 1.6,
+            marginBottom: '32px',
+          }}>
+            We integrate with authoritative federal court data sources. Your integrations pull from verified, comprehensive datasets.
+          </p>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '24px',
+            }}
+          >
+            {[
+              {
+                name: 'Federal Judicial Center IDB',
+                description: 'Civil and criminal case data from federal district courts (1970–present). 5.1M+ cases.',
+                icon: '📊',
+              },
+              {
+                name: 'CourtListener',
+                description: 'Full-text opinions and court documents from U.S. Courts of Appeals and District Courts.',
+                icon: '⚖️',
+              },
+              {
+                name: 'PACER',
+                description: 'Public Access to Court Electronic Records. Real-time updates on federal case dockets.',
+                icon: '🔗',
+              },
+              {
+                name: 'Bureau of Justice Statistics',
+                description: 'Official statistics on federal case outcomes, sentencing, and litigation metrics.',
+                icon: '📈',
+              },
+            ].map((source) => (
+              <div
+                key={source.name}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '28px',
+                  transition: 'all 0.2s ease',
+                  display: 'flex',
+                  gap: '16px',
+                }}
+              >
+                <div style={{
+                  fontSize: '32px',
+                  lineHeight: 1,
+                }}>
+                  {source.icon}
+                </div>
+                <div>
+                  <h3 style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '16px',
+                    fontWeight: 700,
+                    color: '#212529',
+                    margin: '0 0 8px 0',
+                  }}>
+                    {source.name}
+                  </h3>
+                  <p style={{
+                    fontSize: '14px',
+                    color: '#455A64',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}>
+                    {source.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* API Quick Start */}
         <div style={{
           background: '#00172E',
@@ -477,6 +711,163 @@ export default function IntegrationsPage() {
               }}
             >
               View API Documentation →
+            </Link>
+          </div>
+        </div>
+
+        {/* Get Started Section */}
+        <div style={{ marginBottom: '64px' }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            marginBottom: '32px',
+          }}>
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '28px',
+              fontWeight: 800,
+              color: '#212529',
+              margin: 0,
+            }}>
+              Get Started
+            </h2>
+            <span style={{
+              display: 'inline-block',
+              width: '4px',
+              height: '4px',
+              background: '#E8171F',
+              borderRadius: '50%',
+            }} />
+          </div>
+          <p style={{
+            fontSize: '16px',
+            color: '#455A64',
+            maxWidth: '600px',
+            lineHeight: 1.6,
+            marginBottom: '32px',
+          }}>
+            Ready to integrate? Explore our API documentation or reach out to our team for custom solutions.
+          </p>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '24px',
+            }}
+          >
+            <Link
+              href="/solutions/api"
+              style={{
+                background: '#FFFFFF',
+                border: '2px solid #006997',
+                borderRadius: '2px',
+                padding: '32px 24px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.2s ease',
+                position: 'relative',
+              }}
+              className="get-started-link"
+            >
+              <style>{`
+                .get-started-link:hover {
+                  transform: translateY(-2px);
+                  box-shadow: 0 8px 20px rgba(0, 105, 151, 0.15);
+                }
+              `}</style>
+              <div>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  color: '#212529',
+                  margin: '0 0 12px 0',
+                }}>
+                  API Documentation
+                </h3>
+                <p style={{
+                  fontSize: '14px',
+                  color: '#455A64',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
+                  Explore our REST API with endpoints, code samples, and interactive documentation.
+                </p>
+              </div>
+              <span style={{
+                fontSize: '13px',
+                fontWeight: 700,
+                color: '#006997',
+                marginTop: '24px',
+                textTransform: 'uppercase' as const,
+                letterSpacing: '0.05em',
+              }}>
+                View Docs →
+              </span>
+            </Link>
+
+            <Link
+              href="/contact"
+              style={{
+                background: '#FFFFFF',
+                border: '2px solid #E8171F',
+                borderRadius: '2px',
+                padding: '32px 24px',
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                transition: 'all 0.2s ease',
+                position: 'relative',
+              }}
+              className="get-started-link-contact"
+            >
+              <style>{`
+                .get-started-link-contact:hover {
+                  transform: translateY(-2px);
+                  box-shadow: 0 8px 20px rgba(232, 23, 31, 0.15);
+                }
+              `}</style>
+              <div>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}>
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  color: '#212529',
+                  margin: '0 0 12px 0',
+                }}>
+                  Contact Our Team
+                </h3>
+                <p style={{
+                  fontSize: '14px',
+                  color: '#455A64',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
+                  Discuss custom integrations, enterprise solutions, and integration support.
+                </p>
+              </div>
+              <span style={{
+                fontSize: '13px',
+                fontWeight: 700,
+                color: '#E8171F',
+                marginTop: '24px',
+                textTransform: 'uppercase' as const,
+                letterSpacing: '0.05em',
+              }}>
+                Get in Touch →
+              </span>
             </Link>
           </div>
         </div>
