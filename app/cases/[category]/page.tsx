@@ -661,6 +661,160 @@ async function CategoryPage({
         </div>
       </div>
 
+      {/* Circuit Win Rate Comparison */}
+      <div style={{
+        background: '#FFFFFF',
+        padding: '60px 20px',
+        borderTop: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: 600,
+            color: '#212529',
+            margin: '0 0 12px 0',
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '-0.3px',
+          }}>
+            Win Rates by Circuit
+          </h2>
+          <p style={{
+            fontSize: '14px',
+            color: '#455A64',
+            margin: '0 0 32px 0',
+            fontFamily: 'var(--font-body)',
+            lineHeight: 1.6,
+          }}>
+            How {categoryData.label.toLowerCase()} case outcomes vary across federal circuits based on aggregate data from the primary NOS codes in this category.
+          </p>
+          {(() => {
+            // Get circuit rates from the first NOS code with circuit_rates data
+            const primaryNos = categoryData.opts[0]?.nos;
+            const rd = primaryNos ? REAL_DATA[primaryNos] : null;
+            const circuitRates = rd?.circuit_rates || {};
+            const entries = Object.entries(circuitRates).sort((a, b) => (b[1] as number) - (a[1] as number));
+            const nationalAvg = entries.length > 0 ? Math.round(entries.reduce((s, e) => s + (e[1] as number), 0) / entries.length) : 0;
+
+            if (entries.length === 0) return null;
+
+            return (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
+                {entries.map(([circuit, rate]) => {
+                  const wr = rate as number;
+                  const diff = wr - nationalAvg;
+                  const color = wr >= 50 ? '#07874A' : wr >= 35 ? '#D97706' : '#E8171F';
+                  return (
+                    <div key={circuit} style={{
+                      padding: '16px', borderRadius: 2, border: '1px solid #D5D8DC', background: '#FFFFFF',
+                    }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                        <span style={{ fontSize: 13, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)' }}>{circuit}</span>
+                        <span style={{ fontSize: 15, fontWeight: 700, color, fontFamily: 'var(--font-mono)' }}>{wr}%</span>
+                      </div>
+                      <div style={{ height: 6, background: '#F0F3F5', borderRadius: 3, overflow: 'hidden', marginBottom: 6 }}>
+                        <div style={{ width: `${Math.min(wr, 100)}%`, height: '100%', background: color, borderRadius: 3 }} />
+                      </div>
+                      <div style={{ fontSize: 11, color: diff >= 0 ? '#07874A' : '#E8171F', fontFamily: 'var(--font-mono)' }}>
+                        {diff >= 0 ? '+' : ''}{diff.toFixed(1)}% vs avg
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
+        </div>
+      </div>
+
+      {/* Recovery Range Comparison */}
+      <div style={{
+        padding: '60px 20px',
+        borderTop: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: 600,
+            color: '#212529',
+            margin: '0 0 12px 0',
+            fontFamily: 'var(--font-display)',
+            letterSpacing: '-0.3px',
+          }}>
+            Recovery Ranges
+          </h2>
+          <p style={{
+            fontSize: '14px',
+            color: '#455A64',
+            margin: '0 0 32px 0',
+            fontFamily: 'var(--font-body)',
+            lineHeight: 1.6,
+          }}>
+            Typical monetary recovery ranges for case types in this category. Ranges show 25th percentile, median, and 75th percentile.
+          </p>
+          <div style={{ display: 'grid', gap: 12 }}>
+            {(() => {
+              const seen = new Set<string>();
+              const items: { label: string; lo: number; md: number; hi: number; nos: string }[] = [];
+              for (const opt of categoryData.opts) {
+                if (seen.has(opt.nos)) continue;
+                seen.add(opt.nos);
+                const rd = REAL_DATA[opt.nos];
+                if (rd?.rng?.md && rd.rng.md > 0) {
+                  items.push({ label: opt.label, lo: rd.rng.lo || 0, md: rd.rng.md, hi: rd.rng.hi || 0, nos: opt.nos });
+                }
+              }
+              items.sort((a, b) => b.md - a.md);
+              const maxHi = Math.max(...items.map(i => i.hi), 1);
+
+              return items.slice(0, 10).map((item) => (
+                <Link
+                  key={item.nos}
+                  href={`/report/${item.nos}`}
+                  style={{
+                    display: 'block', padding: '16px 20px', background: '#FFFFFF', border: '1px solid #D5D8DC',
+                    borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)' }}>{item.label}</span>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)' }}>${item.md}K median</span>
+                  </div>
+                  {/* Range bar visualization */}
+                  <div style={{ position: 'relative', height: 28, background: '#F5F6F7', borderRadius: 2, overflow: 'hidden' }}>
+                    {/* Low to high range */}
+                    <div style={{
+                      position: 'absolute',
+                      left: `${(item.lo / maxHi) * 100}%`,
+                      width: `${((item.hi - item.lo) / maxHi) * 100}%`,
+                      height: '100%',
+                      background: 'linear-gradient(90deg, rgba(0,105,151,0.15), rgba(0,105,151,0.3))',
+                      borderRadius: 2,
+                    }} />
+                    {/* Median marker */}
+                    <div style={{
+                      position: 'absolute',
+                      left: `${(item.md / maxHi) * 100}%`,
+                      top: 0,
+                      width: 3,
+                      height: '100%',
+                      background: '#E8171F',
+                      borderRadius: 1,
+                    }} />
+                    {/* Labels */}
+                    <div style={{ position: 'absolute', left: `${(item.lo / maxHi) * 100}%`, bottom: 2, fontSize: 10, color: '#455A64', fontFamily: 'var(--font-mono)', transform: 'translateX(-50%)' }}>
+                      ${item.lo}K
+                    </div>
+                    <div style={{ position: 'absolute', left: `${(item.hi / maxHi) * 100}%`, bottom: 2, fontSize: 10, color: '#455A64', fontFamily: 'var(--font-mono)', transform: 'translateX(-50%)' }}>
+                      ${item.hi}K
+                    </div>
+                  </div>
+                </Link>
+              ));
+            })()}
+          </div>
+        </div>
+      </div>
+
       {/* Stats Section */}
       <div style={{
         background: '#FFFFFF',

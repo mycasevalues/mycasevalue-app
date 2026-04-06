@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
 import { getAllJudges } from '../../lib/judges';
+import JudgesExplorer from '../../components/JudgesExplorer';
 
 export const revalidate = 0;
 
@@ -138,17 +139,6 @@ const CIRCUITS: {
 
 export default function JudgesPage() {
   const allJudges = getAllJudges();
-  // Featured: top judges by total cases
-  const featuredJudges = [...allJudges]
-    .sort((a, b) => b.stats.totalCases - a.stats.totalCases)
-    .slice(0, 12);
-
-  // Aggregate stats
-  const totalJudges = allJudges.length;
-  const avgWinRate = Math.round(allJudges.reduce((s, j) => s + j.stats.plaintiffWinRate, 0) / totalJudges);
-  const avgDuration = Math.round(allJudges.reduce((s, j) => s + j.stats.medianDurationMonths, 0) / totalJudges);
-  const totalCasesHandled = allJudges.reduce((s, j) => s + j.stats.totalCases, 0);
-  const uniqueDistricts = new Set(allJudges.map(j => j.district)).size;
 
   return (
     <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
@@ -180,201 +170,86 @@ export default function JudgesPage() {
       `}</style>
 
       {/* Header */}
-      <div
-        style={{
-          borderBottom: '1px solid #D5D8DC',
-          background: '#00172E',
-        }}
-      >
+      <div style={{ borderBottom: '1px solid #D5D8DC', background: '#00172E' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ paddingTop: 64, paddingBottom: 64 }}>
+          {/* Breadcrumb */}
+          <div style={{ paddingTop: 24, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
+            <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Home</Link>
+            <span style={{ color: 'rgba(255,255,255,0.4)' }}>/</span>
+            <span style={{ color: '#FFFFFF' }}>Judges</span>
+          </div>
+
+          <div style={{ paddingTop: 40, paddingBottom: 48 }}>
             <div
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 8,
-                padding: '6px 12px',
-                borderRadius: 4,
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: '1.5px',
-                marginBottom: 16,
-                background: '#E8171F',
-                color: '#FFFFFF',
-                textTransform: 'uppercase',
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 700,
+                letterSpacing: '1.5px', marginBottom: 16, background: '#E8171F',
+                color: '#FFFFFF', textTransform: 'uppercase',
               }}
             >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
               Judge Intelligence
             </div>
 
-            <h1
-              style={{
-                fontSize: 'clamp(28px, 5vw, 44px)',
-                fontWeight: 900,
-                marginBottom: 16,
-                color: '#FFFFFF',
-                letterSpacing: '-1.5px',
-                fontFamily: 'var(--font-display)',
-                lineHeight: 1.2,
-              }}
-            >
-              Federal Judge Intelligence
+            <h1 style={{
+              fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 900, marginBottom: 16,
+              color: '#FFFFFF', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
+            }}>
+              Federal Judge Analytics
             </h1>
 
-            <p
-              style={{
-                fontSize: 'clamp(15px, 2vw, 17px)',
-                lineHeight: 1.6,
-                maxWidth: 640,
-                color: '#C7D1D8',
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              Research federal judges across all 13 circuits and 94 districts. Judge profiles include motion grant rates, average case duration, plaintiff win rates, and ruling pattern analytics drawn from public court records.
+            <p style={{
+              fontSize: 'clamp(15px, 2vw, 17px)', lineHeight: 1.6, maxWidth: 640,
+              color: '#C7D1D8', fontFamily: 'var(--font-body)',
+            }}>
+              Research federal judges across all 13 circuits and 94 districts. Search, sort, and compare judges by win rate, motion grant rate, case duration, and settlement patterns.
             </p>
-          </div>
-        </div>
-      </div>
 
-      {/* Aggregate Stats Bar */}
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '24px', display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
-          {[
-            { label: 'Federal Judges', value: String(totalJudges) },
-            { label: 'Districts Covered', value: String(uniqueDistricts) },
-            { label: 'Avg Win Rate', value: `${avgWinRate}%` },
-            { label: 'Avg Duration', value: `${avgDuration}mo` },
-            { label: 'Cases Tracked', value: `${(totalCasesHandled / 1000).toFixed(0)}K+` },
-          ].map((s) => (
-            <div key={s.label} style={{ textAlign: 'center' }}>
-              <p className="font-mono" style={{ fontSize: '22px', fontWeight: 700, color: '#E8171F', margin: '0 0 2px' }}>{s.value}</p>
-              <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', margin: 0, fontFamily: 'var(--font-body)' }}>{s.label}</p>
+            {/* Quick stats bar in header */}
+            <div style={{ display: 'flex', gap: 32, marginTop: 24, flexWrap: 'wrap' }}>
+              {[
+                { label: 'Judges Tracked', value: String(allJudges.length) },
+                { label: 'Districts', value: String(new Set(allJudges.map(j => j.district)).size) },
+                { label: 'Total Cases', value: `${(allJudges.reduce((s, j) => s + j.stats.totalCases, 0) / 1000).toFixed(0)}K+` },
+              ].map(s => (
+                <div key={s.label}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 700, color: '#FFFFFF' }}>{s.value}</div>
+                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '48px 24px' }}>
-        {/* Featured Judges */}
-        <section style={{ marginBottom: 64 }}>
-          <h2 style={{ fontSize: 24, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 24 }}>
-            Featured Judges
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
-            {featuredJudges.map((judge) => (
-              <Link
-                key={judge.slug}
-                href={`/judges/${judge.slug}`}
-                style={{
-                  display: 'block', padding: '20px', borderRadius: '2px', border: '1px solid #D5D8DC',
-                  background: '#FFFFFF', textDecoration: 'none', transition: 'all 0.2s ease',
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                  <div>
-                    <p style={{ fontSize: '15px', fontWeight: 700, color: '#212529', margin: '0 0 4px', fontFamily: 'var(--font-display)' }}>
-                      {judge.name}
-                    </p>
-                    <p style={{ fontSize: '12px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
-                      {judge.district}
-                    </p>
-                  </div>
-                  {judge.chiefJudge && (
-                    <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '2px', backgroundColor: 'rgba(232,23,31,0.08)', color: '#E8171F', textTransform: 'uppercase' }}>Chief</span>
-                  )}
-                  {judge.seniorStatus && (
-                    <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '2px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00', textTransform: 'uppercase' }}>Senior</span>
-                  )}
-                </div>
-                <div style={{ display: 'flex', gap: '16px' }}>
-                  <div style={{ textAlign: 'center' }}>
-                    <p className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: judge.stats.plaintiffWinRate >= 50 ? '#07874A' : '#E8171F', margin: '0 0 2px' }}>
-                      {judge.stats.plaintiffWinRate}%
-                    </p>
-                    <p style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase', margin: 0 }}>Win Rate</p>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <p className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#006997', margin: '0 0 2px' }}>
-                      {judge.stats.settlementRate}%
-                    </p>
-                    <p style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase', margin: 0 }}>Settlement</p>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <p className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 2px' }}>
-                      {judge.stats.medianDurationMonths}mo
-                    </p>
-                    <p style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase', margin: 0 }}>Duration</p>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <p className="font-mono" style={{ fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 2px' }}>
-                      {(judge.stats.totalCases / 1000).toFixed(1)}K
-                    </p>
-                    <p style={{ fontSize: '10px', color: '#455A64', textTransform: 'uppercase', margin: 0 }}>Cases</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 24px 48px' }}>
+        {/* Interactive Explorer */}
+        <JudgesExplorer judges={allJudges} />
 
         {/* What Judge Profiles Include */}
-        <section style={{ marginBottom: 64 }}>
-          <h2
-            style={{
-              fontSize: 24,
-              fontWeight: 700,
-              color: '#212529',
-              fontFamily: 'var(--font-display)',
-              marginBottom: 24,
-            }}
-          >
+        <section style={{ marginTop: 64, marginBottom: 64 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 24 }}>
             What Judge Profiles Include
           </h2>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: 16,
-            }}
-          >
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             {[
-              { title: 'Motion Grant Rates', desc: 'How often a judge grants motions to dismiss, summary judgment, and other dispositive motions.' },
-              { title: 'Case Duration', desc: 'Median time from filing to resolution, broken down by case type and disposition.' },
-              { title: 'Plaintiff Win Rates', desc: 'Trial and overall win rates for plaintiffs appearing before this judge.' },
-              { title: 'Settlement Patterns', desc: 'Settlement frequency and timing relative to the judge\'s typical case lifecycle.' },
-              { title: 'Comparison Analytics', desc: 'How the judge compares to the district and circuit average on key metrics.' },
-              { title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
+              { icon: '⚖️', title: 'Motion Grant Rates', desc: 'How often a judge grants motions to dismiss, summary judgment, and other dispositive motions.' },
+              { icon: '⏱', title: 'Case Duration', desc: 'Median time from filing to resolution, broken down by case type and disposition.' },
+              { icon: '📊', title: 'Plaintiff Win Rates', desc: 'Trial and overall win rates for plaintiffs appearing before this judge.' },
+              { icon: '🤝', title: 'Settlement Patterns', desc: 'Settlement frequency and timing relative to the judge\'s typical case lifecycle.' },
+              { icon: '📈', title: 'Comparison Analytics', desc: 'How the judge compares to the district and circuit average on key metrics.' },
+              { icon: '📋', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
             ].map((item, idx) => (
-              <div
-                key={idx}
-                style={{
-                  padding: 24,
-                  borderRadius: 4,
-                  border: '1px solid #D5D8DC',
-                  background: '#FFFFFF',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 600,
-                    color: '#212529',
-                    fontFamily: 'var(--font-display)',
-                    marginBottom: 8,
-                  }}
-                >
+              <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #D5D8DC', background: '#FFFFFF' }}>
+                <div style={{ fontSize: 20, marginBottom: 8 }}>{item.icon}</div>
+                <h3 style={{ fontSize: 15, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
                   {item.title}
                 </h3>
-                <p
-                  style={{
-                    fontSize: 13,
-                    lineHeight: 1.6,
-                    color: '#455A64',
-                    fontFamily: 'var(--font-body)',
-                    margin: 0,
-                  }}
-                >
+                <p style={{ fontSize: 13, lineHeight: 1.6, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
@@ -384,121 +259,70 @@ export default function JudgesPage() {
 
         {/* Browse by Circuit */}
         <section style={{ marginBottom: 64 }}>
-          <h2
-            style={{
-              fontSize: 24,
-              fontWeight: 700,
-              color: '#212529',
-              fontFamily: 'var(--font-display)',
-              marginBottom: 32,
-            }}
-          >
+          <h2 style={{ fontSize: 22, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 32 }}>
             Browse Judges by Circuit
           </h2>
 
           <div style={{ display: 'grid', gap: 20 }}>
-            {CIRCUITS.map((circuit) => (
-              <div
-                key={circuit.name}
-                style={{
-                  padding: 24,
-                  borderRadius: 4,
-                  border: '1px solid #D5D8DC',
-                  background: '#FFFFFF',
-                }}
-              >
-                <h3
-                  style={{
-                    fontSize: 17,
-                    fontWeight: 700,
-                    color: '#212529',
-                    fontFamily: 'var(--font-display)',
-                    marginBottom: 16,
-                    paddingBottom: 12,
-                    borderBottom: '1px solid #D5D8DC',
-                  }}
-                >
-                  {circuit.name}
-                </h3>
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-                    gap: 10,
-                  }}
-                >
-                  {circuit.districts.map((d) => (
-                    <Link
-                      key={d.code}
-                      href={`/judges/${d.code.toLowerCase()}`}
-                      className="judge-district-link"
-                    >
-                      <span>{d.label}</span>
-                      <span className="arrow">
-                        View judges &rarr;
-                      </span>
-                    </Link>
-                  ))}
+            {CIRCUITS.map((circuit) => {
+              const circuitJudges = allJudges.filter(j => {
+                const d = circuit.districts.map(dd => dd.label);
+                return d.some(dl => j.court.includes(dl.replace('District of ', '')));
+              });
+              return (
+                <div key={circuit.name} style={{ padding: 24, borderRadius: 2, border: '1px solid #D5D8DC', background: '#FFFFFF' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid #D5D8DC' }}>
+                    <h3 style={{ fontSize: 17, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', margin: 0 }}>
+                      {circuit.name}
+                    </h3>
+                    <span style={{ fontSize: 12, color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                      {circuit.districts.length} district{circuit.districts.length !== 1 ? 's' : ''}
+                    </span>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 10 }}>
+                    {circuit.districts.map((d) => (
+                      <Link key={d.code} href={`/judges/${d.code.toLowerCase()}`} className="judge-district-link">
+                        <span>{d.label}</span>
+                        <span className="arrow">View judges &rarr;</span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
         {/* CTA */}
-        <section
-          style={{
-            padding: '48px 32px',
-            borderRadius: 4,
-            border: '1px solid #D5D8DC',
-            background: '#00172E',
-            textAlign: 'center',
-            marginBottom: 64,
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 24,
-              fontWeight: 700,
-              color: '#FFFFFF',
-              fontFamily: 'var(--font-display)',
-              marginBottom: 12,
-            }}
-          >
+        <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #D5D8DC', background: '#00172E', textAlign: 'center', marginBottom: 64 }}>
+          <h2 style={{ fontSize: 24, fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
             All judge analytics are free during launch
           </h2>
-          <p
-            style={{
-              fontSize: 15,
-              color: '#C7D1D8',
-              fontFamily: 'var(--font-body)',
-              maxWidth: 520,
-              margin: '0 auto 28px',
-              lineHeight: 1.6,
-            }}
-          >
+          <p style={{ fontSize: 15, color: '#C7D1D8', fontFamily: 'var(--font-body)', maxWidth: 520, margin: '0 auto 28px', lineHeight: 1.6 }}>
             Full judge profiles with motion grant rates, ruling patterns, and case duration benchmarks — free for all users.
           </p>
           <Link
             href="/search"
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '12px 28px',
-              borderRadius: 4,
-              background: '#E8171F',
-              color: '#FFFFFF',
-              fontSize: 16,
-              fontWeight: 600,
-              textDecoration: 'none',
-              fontFamily: 'var(--font-body)',
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              padding: '12px 28px', borderRadius: 2, background: '#E8171F',
+              color: '#FFFFFF', fontSize: 16, fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)',
             }}
           >
             Start Researching
             <ArrowRightIcon size={16} />
           </Link>
         </section>
+
+        {/* Disclaimer */}
+        <div style={{ padding: 24, border: '1px solid #D5D8DC', borderRadius: 2, background: '#FFFFFF' }}>
+          <h3 style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px', color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
+            Data Methodology
+          </h3>
+          <p style={{ fontSize: 12, lineHeight: 1.6, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
+            Judge analytics are derived from publicly available federal court records and PACER data. Metrics include motion grant rates, case duration, plaintiff win rates, and settlement patterns. Data is updated periodically and covers active Article III judges in the 94 federal judicial districts. MyCaseValue LLC is not a law firm and does not provide legal advice.
+          </p>
+        </div>
       </div>
     </div>
   );

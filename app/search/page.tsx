@@ -512,41 +512,165 @@ export default function SearchPage() {
       ))}
 
       {query.length === 0 && (
-        <div style={{ marginTop: '24px' }}>
-          <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Popular searches</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-            {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall'].map(s => (
-              <button
-                key={s}
-                onClick={() => setQuery(s)}
+        <>
+          {/* Popular Searches */}
+          <div style={{ marginTop: '24px', marginBottom: '32px' }}>
+            <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Popular searches</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall', 'Breach of contract', 'Insurance bad faith', 'Product liability', 'Sexual harassment', 'ADA violation', 'Wage theft'].map(s => (
+                <button
+                  key={s}
+                  onClick={() => setQuery(s)}
+                  style={{
+                    padding: '8px 16px',
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '2px',
+                    fontSize: '13px',
+                    color: '#006997',
+                    cursor: 'pointer',
+                    fontFamily: 'var(--font-body)',
+                    transition: 'all 150ms ease-out',
+                    fontWeight: '500',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = '#F0F6FB';
+                    e.currentTarget.style.borderColor = '#006997';
+                    e.currentTarget.style.color = '#004D7A';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = '#FFFFFF';
+                    e.currentTarget.style.borderColor = '#D5D8DC';
+                    e.currentTarget.style.color = '#006997';
+                  }}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Top Case Types by Volume */}
+          <div style={{ marginBottom: '32px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+              Most Common Federal Case Types
+            </p>
+            <div style={{ display: 'grid', gap: 8 }}>
+              {(() => {
+                const seen = new Set<string>();
+                const topNos: { nos: string; label: string; total: number; wr: number; mo: number; rngMd: number }[] = [];
+                for (const cat of SITS) {
+                  for (const opt of cat.opts) {
+                    if (seen.has(opt.nos)) continue;
+                    seen.add(opt.nos);
+                    const rd = REAL_DATA[opt.nos];
+                    if (rd && rd.total) {
+                      topNos.push({ nos: opt.nos, label: opt.label, total: rd.total, wr: rd.wr || 0, mo: rd.mo || 0, rngMd: rd.rng?.md || 0 });
+                    }
+                  }
+                }
+                topNos.sort((a, b) => b.total - a.total);
+                return topNos.slice(0, 8).map((item, i) => (
+                  <Link
+                    key={item.nos}
+                    href={`/report/${item.nos}`}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px',
+                      background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2,
+                      textDecoration: 'none', transition: 'all 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#006997'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}
+                  >
+                    <span style={{ width: 24, height: 24, borderRadius: 2, background: '#E8171F', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0 }}>
+                      {i + 1}
+                    </span>
+                    <div style={{ flex: 1 }}>
+                      <span style={{ fontSize: 14, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)' }}>{item.label}</span>
+                    </div>
+                    <div style={{ display: 'flex', gap: 16, fontSize: 12, fontFamily: 'var(--font-mono)', color: '#455A64', flexShrink: 0 }}>
+                      <span style={{ color: item.wr >= 50 ? '#07874A' : item.wr >= 35 ? '#D97706' : '#E8171F', fontWeight: 700 }}>{item.wr}%</span>
+                      <span>{item.total.toLocaleString()}</span>
+                      <span>{item.mo}mo</span>
+                      {item.rngMd > 0 && <span style={{ color: '#E8171F', fontWeight: 600 }}>${item.rngMd}K</span>}
+                    </div>
+                  </Link>
+                ));
+              })()}
+            </div>
+          </div>
+
+          {/* Browse by Category Grid */}
+          <div>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+              Browse by Category
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
+              {SITS.map(cat => {
+                const seen = new Set<string>();
+                let totalCases = 0;
+                let wrSum = 0;
+                let wrCount = 0;
+                for (const opt of cat.opts) {
+                  if (seen.has(opt.nos)) continue;
+                  seen.add(opt.nos);
+                  const rd = REAL_DATA[opt.nos];
+                  if (rd?.total) {
+                    totalCases += rd.total;
+                    if (rd.wr) { wrSum += rd.wr; wrCount++; }
+                  }
+                }
+                const avgWr = wrCount > 0 ? Math.round(wrSum / wrCount) : 0;
+                return (
+                  <Link
+                    key={cat.id}
+                    href={`/cases/${cat.id}`}
+                    style={{
+                      padding: '16px', background: '#FFFFFF', border: '1px solid #D5D8DC',
+                      borderRadius: 2, textDecoration: 'none', transition: 'all 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}
+                  >
+                    <div style={{ fontSize: 14, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>{cat.label}</div>
+                    <div style={{ fontSize: 12, color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: 8 }}>{cat.opts.length} case types</div>
+                    <div style={{ display: 'flex', gap: 12, fontSize: 11, fontFamily: 'var(--font-mono)' }}>
+                      <span style={{ color: avgWr >= 50 ? '#07874A' : avgWr >= 35 ? '#D97706' : '#E8171F', fontWeight: 700 }}>{avgWr}% win</span>
+                      <span style={{ color: '#455A64' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
+                    </div>
+                    <div style={{ height: 3, background: '#F0F3F5', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
+                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#07874A' : avgWr >= 35 ? '#D97706' : '#E8171F', borderRadius: 2 }} />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Quick links row */}
+          <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
+            {[
+              { label: 'NOS Code Explorer', href: '/nos-explorer' },
+              { label: 'Case Trends', href: '/trends' },
+              { label: 'Jargon Translator', href: '/translate' },
+              { label: 'Settlement Calculator', href: '/calculator' },
+            ].map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
                 style={{
-                  padding: '8px 16px',
-                  background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
-                  borderRadius: '2px',
-                  fontSize: '13px',
-                  color: '#006997',
-                  cursor: 'pointer',
-                  fontFamily: 'var(--font-body)',
-                  transition: 'all 150ms ease-out',
-                  fontWeight: '500',
+                  padding: '10px 16px', background: '#00172E', color: '#FFFFFF', borderRadius: 2,
+                  fontSize: 12, fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)',
+                  transition: 'all 0.15s ease',
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#F0F6FB';
-                  e.currentTarget.style.borderColor = '#006997';
-                  e.currentTarget.style.color = '#004D7A';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#FFFFFF';
-                  e.currentTarget.style.borderColor = '#D5D8DC';
-                  e.currentTarget.style.color = '#006997';
-                }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = '#001D3A'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = '#00172E'; }}
               >
-                {s}
-              </button>
+                {link.label} →
+              </Link>
             ))}
           </div>
-        </div>
+        </>
       )}
       </div>
       </div>

@@ -22,6 +22,7 @@ const NAV_LINKS = [
   { href: '/districts', label: 'Districts', mega: true },
   { href: '/judges', label: 'Judges' },
   { href: '/solutions', label: 'Solutions', mega: true },
+  { href: '/nos-explorer', label: 'NOS Codes' },
   { href: '/calculator', label: 'Calculator' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/attorney', label: 'Attorney Mode', mega: true },

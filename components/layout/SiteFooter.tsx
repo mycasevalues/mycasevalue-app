@@ -15,6 +15,7 @@ const FOOTER_COLUMNS = [
       { label: 'Districts', href: '/districts' },
       { label: 'Judge statistics', href: '/judges' },
       { label: 'Settlement data', href: '/cases' },
+      { label: 'NOS code explorer', href: '/nos-explorer' },
       { label: 'Calculator', href: '/calculator' },
     ],
   },

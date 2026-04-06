@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { REAL_DATA } from '../../lib/realdata';
 import { SITE_URL } from '../../lib/site-config';
 import { getCircuitWinRates, getOutcomeBreakdown } from '../../lib/trends';
+import CaseTypeComparison from '../../components/CaseTypeComparison';
 
 const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'), {
   ssr: false,
@@ -486,6 +487,61 @@ export default function TrendsPage() {
           </div>
         </section>
 
+        {/* Case Type Comparison Tool */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            Compare Case Types
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Select any two federal case types for a head-to-head comparison of win rates, durations, and recovery values.
+          </p>
+          <CaseTypeComparison />
+        </section>
+
+        {/* Settlement Value Heatmap */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            Settlement Value Heatmap
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Median recovery values across the most common federal case types. Darker shading indicates higher recovery.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {trends.filter(t => t.medianMd > 0).slice(0, 20).map((t) => {
+              const maxMd = Math.max(...trends.filter(x => x.medianMd > 0).slice(0, 20).map(x => x.medianMd));
+              const intensity = t.medianMd / maxMd;
+              const bgColor = `rgba(0, 23, 46, ${0.05 + intensity * 0.85})`;
+              const textColor = intensity > 0.5 ? '#FFFFFF' : '#212529';
+              return (
+                <a
+                  key={t.nos}
+                  href={`/nos/${t.nos}`}
+                  className="p-4 transition-all hover:scale-[1.02]"
+                  style={{
+                    background: bgColor, borderRadius: 2, textDecoration: 'none',
+                    border: '1px solid rgba(213,216,220,0.3)',
+                  }}
+                >
+                  <div style={{ fontSize: 11, color: textColor, opacity: 0.8, fontFamily: 'var(--font-body)', marginBottom: 4, lineHeight: 1.3 }}>
+                    {t.label.length > 25 ? t.label.slice(0, 25) + '…' : t.label}
+                  </div>
+                  <div style={{ fontSize: 20, fontWeight: 700, color: textColor, fontFamily: 'var(--font-mono)' }}>
+                    ${t.medianMd}K
+                  </div>
+                  <div style={{ fontSize: 10, color: textColor, opacity: 0.7, marginTop: 2 }}>
+                    {t.winRate}% win · {t.months}mo
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+          <div className="flex items-center gap-2 mt-4">
+            <span style={{ fontSize: 11, color: '#455A64' }}>Low</span>
+            <div style={{ flex: 1, height: 8, borderRadius: 4, background: 'linear-gradient(90deg, rgba(0,23,46,0.05), rgba(0,23,46,0.9))' }} />
+            <span style={{ fontSize: 11, color: '#455A64' }}>High</span>
+          </div>
+        </section>
+
         {/* Recovery Ranges */}
         <section>
           <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
@@ -609,7 +665,7 @@ export default function TrendsPage() {
               </svg>
             </a>
             <a
-              href="/pricing"
+              href="/search"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
               style={{
                 border: '1px solid #D5D8DC',
@@ -619,7 +675,7 @@ export default function TrendsPage() {
                 textDecoration: 'none',
               }}
             >
-              View Pricing
+              Search Cases
             </a>
           </div>
         </section>
