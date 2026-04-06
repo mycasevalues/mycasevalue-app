@@ -20,6 +20,12 @@ const DEMO_ALERTS: Alert[] = [
   { id: '4', caseNumber: '5:24-cv-00321', caseName: 'Williams v. City of Chicago', court: 'N.D. Ill.', event: 'Amended complaint filed', date: '2026-04-01', priority: 'low' },
   { id: '5', caseNumber: '2:23-cv-04567', caseName: 'Davis v. Amazon Logistics', court: 'W.D. Wash.', event: 'Jury trial date set for September 8, 2026', date: '2026-03-31', priority: 'high' },
   { id: '6', caseNumber: '1:24-cv-07890', caseName: 'Brown v. Metro Hospital', court: 'E.D. Pa.', event: 'Expert witness report deadline — 14 days remaining', date: '2026-03-30', priority: 'medium' },
+  { id: '7', caseNumber: '4:25-cv-00089', caseName: 'Thompson v. United Airlines', court: 'D. Colo.', event: 'Deposition of plaintiff completed', date: '2026-03-29', priority: 'low' },
+  { id: '8', caseNumber: '1:25-cv-00456', caseName: 'Rodriguez v. JP Morgan Chase', court: 'S.D.N.Y.', event: 'Motion to Compel Discovery granted — 30 days to comply', date: '2026-03-28', priority: 'high' },
+  { id: '9', caseNumber: '3:24-cv-02345', caseName: 'Patel v. Kaiser Permanente', court: 'N.D. Cal.', event: 'Class certification motion filed', date: '2026-03-27', priority: 'high' },
+  { id: '10', caseNumber: '2:25-cv-00567', caseName: 'Lee v. Target Corporation', court: 'D.N.J.', event: 'Mediation ordered for May 12', date: '2026-03-26', priority: 'medium' },
+  { id: '11', caseNumber: '1:24-cv-03456', caseName: 'Garcia v. FedEx Ground', court: 'S.D. Fla.', event: 'Defendant answer filed — denying all claims', date: '2026-03-25', priority: 'low' },
+  { id: '12', caseNumber: '5:23-cv-01890', caseName: 'Wilson v. County of Cook', court: 'N.D. Ill.', event: 'Partial summary judgment granted for plaintiff on liability', date: '2026-03-24', priority: 'high' },
 ];
 
 const priorityColors = {
@@ -82,8 +88,8 @@ export default function PacerMonitorPage() {
           {/* Alerts Feed */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-              <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>Recent Alerts</h2>
-              <div style={{ display: 'flex', gap: '4px', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px' }}>
+              <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#212529', margin: 0 }}>Recent Alerts</h2>
+              <div style={{ display: 'flex', gap: '4px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #D5D8DC', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
                   <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '2px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#E8171F' : 'transparent', color: filter === f ? '#FFFFFF' : '#455A64', textTransform: 'capitalize' as const }}>
                     {f}
@@ -96,7 +102,7 @@ export default function PacerMonitorPage() {
               {filtered.map((alert) => {
                 const pc = priorityColors[alert.priority];
                 return (
-                  <div key={alert.id} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', padding: '16px 20px', border: '1px solid rgba(255,255,255,0.10)', borderLeft: `4px solid ${pc.dot}` }}>
+                  <div key={alert.id} style={{ background: '#FFFFFF', borderRadius: '2px', padding: '16px 20px', border: '1px solid #D5D8DC', borderLeft: `4px solid ${pc.dot}` }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                       <div>
                         <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#006997' }}>{alert.caseNumber}</span>
@@ -104,7 +110,7 @@ export default function PacerMonitorPage() {
                       </div>
                       <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '2px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
                     </div>
-                    <p style={{ fontSize: '14px', fontWeight: 600, color: '#F0F2F5', margin: '0 0 4px' }}>{alert.caseName}</p>
+                    <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', margin: '0 0 4px' }}>{alert.caseName}</p>
                     <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 6px', lineHeight: 1.4 }}>{alert.event}</p>
                     <p style={{ fontSize: '11px', color: '#AAAAAA', margin: 0 }}>{new Date(alert.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                   </div>
@@ -124,7 +130,7 @@ export default function PacerMonitorPage() {
                   value={watchCase}
                   onChange={(e) => setWatchCase(e.target.value)}
                   placeholder="Case number..."
-                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '2px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'rgba(255,255,255,0.04)', color: '#F0F2F5', outline: 'none' }}
+                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid #D5D8DC', borderRadius: '2px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: '#FAFBFC', color: '#212529', outline: 'none' }}
                   onFocus={(e) => e.target.style.borderColor = '#E8171F'}
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.10)'}
                 />
@@ -132,8 +138,8 @@ export default function PacerMonitorPage() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {watchList.map((c) => (
-                  <div key={c} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', backgroundColor: 'rgba(255,255,255,0.04)', borderRadius: '6px' }}>
-                    <span className="font-mono" style={{ fontSize: '12px', color: '#F0F2F5' }}>{c}</span>
+                  <div key={c} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 10px', backgroundColor: '#FAFBFC', borderRadius: '6px' }}>
+                    <span className="font-mono" style={{ fontSize: '12px', color: '#212529' }}>{c}</span>
                     <button onClick={() => setWatchList(watchList.filter((w) => w !== c))} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#AAAAAA', fontSize: '14px' }}>&times;</button>
                   </div>
                 ))}
@@ -148,9 +154,9 @@ export default function PacerMonitorPage() {
                 { label: 'Alerts (7 days)', value: String(alerts.length) },
                 { label: 'High Priority', value: String(alerts.filter((a) => a.priority === 'high').length) },
               ].map((s) => (
-                <div key={s.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+                <div key={s.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #E5EBF0' }}>
                   <span style={{ fontSize: '13px', color: '#455A64' }}>{s.label}</span>
-                  <span className="font-mono" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5' }}>{s.value}</span>
+                  <span className="font-mono" style={{ fontSize: '13px', fontWeight: 700, color: '#212529' }}>{s.value}</span>
                 </div>
               ))}
             </div>
