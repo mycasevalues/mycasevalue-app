@@ -223,28 +223,28 @@ function SignInForm() {
 
           {/* Benefit Items */}
           <div className="benefit-item">
-            <div className="benefit-icon">✓</div>
+            <div className="benefit-icon">[x]</div>
             <div className="benefit-text">
               Search and analyze cases from all 94 federal districts
             </div>
           </div>
 
           <div className="benefit-item">
-            <div className="benefit-icon">✓</div>
+            <div className="benefit-icon">[x]</div>
             <div className="benefit-text">
               Track judge histories, ruling patterns, and docket trends
             </div>
           </div>
 
           <div className="benefit-item">
-            <div className="benefit-icon">✓</div>
+            <div className="benefit-icon">[x]</div>
             <div className="benefit-text">
               Real-time alerts for case updates and statute changes
             </div>
           </div>
 
           <div className="benefit-item">
-            <div className="benefit-icon">✓</div>
+            <div className="benefit-icon">[x]</div>
             <div className="benefit-text">
               Export reports in multiple formats for filings and strategy
             </div>

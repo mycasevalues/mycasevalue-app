@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '🔌',
+    icon: '-',
     title: 'REST API',
     desc: 'Comprehensive REST API with full case analytics, settlement data, and judge intelligence accessible via standard HTTP endpoints.',
   },
   {
-    icon: '🔔',
+    icon: '-',
     title: 'Webhooks & Events',
     desc: 'Real-time webhooks for case updates, settlement notifications, and custom event triggers integrated directly into your applications.',
   },
   {
-    icon: '📦',
+    icon: '-',
     title: 'Bulk Endpoints',
     desc: 'High-performance bulk data import/export endpoints for processing large datasets and batch operations at scale.',
   },
   {
-    icon: '📚',
+    icon: '-',
     title: 'SDK Libraries',
     desc: 'Official SDKs for JavaScript, Python, Go, and Java with full type definitions, error handling, and helper utilities.',
   },
   {
-    icon: '📖',
+    icon: '-',
     title: 'API Documentation',
     desc: 'Comprehensive, interactive API documentation with code examples, Swagger/OpenAPI specs, and migration guides.',
   },
   {
-    icon: '🧪',
+    icon: '-',
     title: 'Sandbox Environment',
     desc: 'Risk-free development sandbox with full API functionality, realistic test data, and isolated from production systems.',
   },
@@ -243,7 +243,7 @@ export default function ApiPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏢</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function ApiPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🎓</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function ApiPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏛️</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

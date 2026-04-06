@@ -503,17 +503,17 @@ export default function HowItWorksPage() {
               {
                 label: 'Search Cases',
                 href: '/search',
-                icon: '🔍',
+                icon: '-',
               },
               {
                 label: 'Check Odds',
                 href: '/calculator',
-                icon: '📊',
+                icon: '-',
               },
               {
                 label: 'Calculate Settlement',
                 href: '/calculator',
-                icon: '💰',
+                icon: '-',
               },
             ].map((btn, i) => (
               <Link

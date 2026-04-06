@@ -1,13 +1,14 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Employment Discrimination Sample Report — S.D.N.Y.',
+  title: 'Sample Case Analysis Report — Employment Discrimination (NOS 442)',
   description:
-    'Explore sample analytics for employment discrimination cases in the Southern District of New York. Win rates, settlement ranges, judge analytics, and more.',
+    'Explore a complete sample case analysis report for federal employment discrimination cases. View win rates, settlement distributions, recovery ranges, and key outcome factors.',
   openGraph: {
-    title: 'Employment Discrimination Sample Report — S.D.N.Y.',
+    title: 'Sample Case Analysis Report — Employment Discrimination (NOS 442)',
     description:
-      'Explore sample analytics for employment discrimination cases in the Southern District of New York.',
+      'Complete sample analytics for federal employment discrimination cases with outcome distributions and recovery analysis.',
     url: 'https://www.mycasevalues.com/sample',
     type: 'website',
   },
@@ -74,45 +75,44 @@ export default function SampleReportPage() {
           minHeight: '100vh',
         }}
       >
-        {/* Persistent Banner */}
+        {/* Navy Header */}
         <div
           style={{
             backgroundColor: '#00172E',
             borderBottom: '1px solid #00172E',
-            padding: '16px 24px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            padding: '40px 24px',
             position: 'sticky',
             top: 0,
             zIndex: 50,
           }}
         >
-          <span
+          <div
             style={{
-              fontSize: '14px',
-              fontWeight: 600,
-              color: '#FFFFFF',
+              maxWidth: '960px',
+              margin: '0 auto',
             }}
           >
-            Sample report — illustrative data only
-          </span>
-          <a
-            href="/cases"
-            style={{
-              fontSize: '14px',
-              fontWeight: 600,
-              color: '#FFFFFF',
-              backgroundColor: '#E8171F',
-              padding: '8px 16px',
-              borderRadius: '2px',
-              textDecoration: 'none',
-              transition: 'background-color 0.2s',
-            }}
-            className="sample-banner-cta"
-          >
-            Get your real report →
-          </a>
+            <h1
+              style={{
+                fontSize: '32px',
+                fontWeight: 700,
+                fontFamily: 'var(--font-display)',
+                margin: '0 0 8px 0',
+                color: '#FFFFFF',
+              }}
+            >
+              Sample Case Analysis Report
+            </h1>
+            <p
+              style={{
+                fontSize: '14px',
+                color: 'rgba(255, 255, 255, 0.8)',
+                margin: 0,
+              }}
+            >
+              Employment Discrimination (NOS 442) — Illustrative data for demonstration
+            </p>
+          </div>
         </div>
 
         {/* Main Content */}
@@ -133,7 +133,7 @@ export default function SampleReportPage() {
               color: '#455A64',
             }}
           >
-            <a
+            <Link
               href="/"
               style={{
                 color: '#455A64',
@@ -142,35 +142,141 @@ export default function SampleReportPage() {
               className="sample-breadcrumb-link"
             >
               Home
-            </a>
-            <span>→</span>
+            </Link>
+            <span>{'>'}</span>
+            <Link
+              href="/search"
+              style={{
+                color: '#455A64',
+                textDecoration: 'none',
+              }}
+              className="sample-breadcrumb-link"
+            >
+              Search
+            </Link>
+            <span>{'>'}</span>
             <span style={{ color: '#212529' }}>Sample Report</span>
           </nav>
 
-          {/* Page Header */}
-          <header style={{ marginBottom: '56px' }}>
-            <h1
+          {/* Metadata Section */}
+          <section style={{ marginBottom: '48px' }}>
+            <div
               style={{
-                fontSize: '40px',
-                fontWeight: 700,
-                fontFamily: 'var(--font-display)',
-                margin: '0 0 12px 0',
-                lineHeight: 1.2,
+                backgroundColor: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '2px',
+                padding: '24px',
               }}
             >
-              Employment Discrimination — S.D.N.Y.
-            </h1>
-            <p
-              style={{
-                fontSize: '18px',
-                color: '#455A64',
-                margin: 0,
-                fontFamily: 'var(--font-body)',
-              }}
-            >
-              Sample report based on 2,847 federal cases
-            </p>
-          </header>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+                  gap: '20px',
+                }}
+              >
+                <div>
+                  <p
+                    style={{
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      color: '#455A64',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      margin: '0 0 6px 0',
+                    }}
+                  >
+                    Case Type
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '14px',
+                      color: '#212529',
+                      margin: 0,
+                      fontWeight: 500,
+                    }}
+                  >
+                    Employment Discrimination
+                  </p>
+                </div>
+                <div>
+                  <p
+                    style={{
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      color: '#455A64',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      margin: '0 0 6px 0',
+                    }}
+                  >
+                    NOS Code
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '14px',
+                      color: '#212529',
+                      margin: 0,
+                      fontWeight: 500,
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    442
+                  </p>
+                </div>
+                <div>
+                  <p
+                    style={{
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      color: '#455A64',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      margin: '0 0 6px 0',
+                    }}
+                  >
+                    Sample Size
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '14px',
+                      color: '#212529',
+                      margin: 0,
+                      fontWeight: 500,
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    2,847 cases
+                  </p>
+                </div>
+                <div>
+                  <p
+                    style={{
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      color: '#455A64',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      margin: '0 0 6px 0',
+                    }}
+                  >
+                    Report Date
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '14px',
+                      color: '#212529',
+                      margin: 0,
+                      fontWeight: 500,
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    April 2026
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Section A: Win Rate Analysis */}
           <section style={{ paddingTop: '48px' }}>

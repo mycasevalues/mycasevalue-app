@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '📚',
+    icon: '-',
     title: 'Research Datasets',
     desc: 'Access comprehensive, cleaned datasets covering millions of cases with detailed metadata suitable for academic analysis and publication.',
   },
   {
-    icon: '🔬',
+    icon: '-',
     title: 'Research Tools',
     desc: 'Use built-in analysis tools for statistical modeling, trend analysis, and comparative research across case types and jurisdictions.',
   },
   {
-    icon: '📖',
+    icon: '-',
     title: 'Citation-Ready Data',
     desc: 'Generate properly sourced, citable datasets with full documentation for peer-reviewed publications and academic presentations.',
   },
   {
-    icon: '📊',
+    icon: '-',
     title: 'Longitudinal Analysis',
     desc: 'Track cases across years and decades to study long-term trends, settlement evolution, and systemic changes in the legal system.',
   },
   {
-    icon: '⬇️',
+    icon: '-',
     title: 'Custom Data Exports',
     desc: 'Export filtered datasets in standard formats (CSV, JSON, Parquet) for integration with R, Python, and other research platforms.',
   },
   {
-    icon: '🏫',
+    icon: '-',
     title: 'Institutional Licensing',
     desc: 'Provide unlimited access across your institution with site licenses supporting research, teaching, and student projects.',
   },
@@ -243,7 +243,7 @@ export default function AcademicPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏛️</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function AcademicPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🔌</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function AcademicPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🤝</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

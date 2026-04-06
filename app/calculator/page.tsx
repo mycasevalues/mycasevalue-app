@@ -988,32 +988,32 @@ export default function CalculatorPage() {
               {
                 title: 'Evidence Quality',
                 description: 'Strong documentation, witness testimony, and clear liability dramatically increase case value.',
-                icon: '📋',
+                icon: '-',
               },
               {
                 title: 'Attorney Representation',
                 description: 'Cases with attorney representation settle for 23% more on average in federal court.',
-                icon: '⚖️',
+                icon: '-',
               },
               {
                 title: 'Case Type',
                 description: 'Different case categories have vastly different outcome patterns and typical recovery ranges.',
-                icon: '📊',
+                icon: '-',
               },
               {
                 title: 'Injury Severity',
                 description: 'Catastrophic injuries with permanent effects command the highest multipliers.',
-                icon: '🏥',
+                icon: '-',
               },
               {
                 title: 'Jurisdiction',
                 description: 'Federal district and circuit can significantly impact outcomes and timelines.',
-                icon: '🏛️',
+                icon: '-',
               },
               {
                 title: 'Prior Offers',
                 description: 'Existing settlement offers establish a baseline and can strengthen your negotiating position.',
-                icon: '💼',
+                icon: '-',
               },
             ].map((item, idx) => (
               <div

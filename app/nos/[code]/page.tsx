@@ -1031,16 +1031,16 @@ export default async function NOSPage({ params }: PageProps) {
             </p>
             <div className="quick-actions-bar">
               <Link href={`/report/${code}`} className="quick-action-card">
-                📊 View Report
+                - View Report
               </Link>
               <Link href="/calculator" className="quick-action-card">
-                🧮 Calculator
+                - Calculator
               </Link>
               <Link href="/compare" className="quick-action-card">
-                ⚖️ Compare Cases
+                - Compare Cases
               </Link>
               <Link href="/odds" className="quick-action-card">
-                📈 Odds Finder
+                - Odds Finder
               </Link>
             </div>
           </div>

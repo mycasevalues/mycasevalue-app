@@ -555,22 +555,22 @@ export default function IntegrationsPage() {
               {
                 name: 'Federal Judicial Center IDB',
                 description: 'Civil and criminal case data from federal district courts (1970–present). 5.1M+ cases.',
-                icon: '📊',
+                icon: '-',
               },
               {
                 name: 'CourtListener',
                 description: 'Full-text opinions and court documents from U.S. Courts of Appeals and District Courts.',
-                icon: '⚖️',
+                icon: '-',
               },
               {
                 name: 'PACER',
                 description: 'Public Access to Court Electronic Records. Real-time updates on federal case dockets.',
-                icon: '🔗',
+                icon: '-',
               },
               {
                 name: 'Bureau of Justice Statistics',
                 description: 'Official statistics on federal case outcomes, sentencing, and litigation metrics.',
-                icon: '📈',
+                icon: '-',
               },
             ].map((source) => (
               <div

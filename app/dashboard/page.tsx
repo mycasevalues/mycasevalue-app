@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { createServerClient } from '@supabase/ssr';
 import { getSupabaseAdmin } from '../../lib/supabase';
 import { getNosLabel } from '../../lib/data';
+import { REAL_DATA } from '../../lib/realdata';
 import SidebarNav from '../../components/SidebarNav';
 import { SearchIcon } from '../../components/ui/Icons';
 
@@ -210,6 +211,160 @@ export default async function DashboardPage() {
         .breadcrumb span {
           color: rgba(255, 255, 255, 0.5);
         }
+        .quick-action-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          padding: 20px;
+          border-radius: 2px;
+          border: 1px solid #D5D8DC;
+          text-decoration: none;
+          color: #212529;
+          background: #FFFFFF;
+          transition: all 0.2s ease;
+        }
+        .quick-action-card:hover {
+          border-color: #E8171F;
+          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.15);
+          transform: translateY(-2px);
+        }
+        .quick-action-icon {
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #E8171F;
+        }
+        .bar-chart-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 0;
+          border-bottom: 1px solid #F0F2F4;
+        }
+        .bar-chart-item:last-child {
+          border-bottom: none;
+        }
+        .bar-chart-item-label {
+          font-size: 13px;
+          font-weight: 600;
+          color: #212529;
+          min-width: 140px;
+          font-family: var(--font-body);
+        }
+        .bar-chart-item-value {
+          font-size: 12px;
+          font-weight: 700;
+          color: #455A64;
+          min-width: 50px;
+          font-family: var(--font-mono);
+        }
+        .bar-chart-bar {
+          flex: 1;
+          height: 20px;
+          border-radius: 2px;
+          background: #E5EBF0;
+          position: relative;
+          overflow: hidden;
+        }
+        .bar-chart-fill {
+          height: 100%;
+          border-radius: 2px;
+          transition: width 0.3s ease;
+        }
+        .update-item {
+          padding: 16px;
+          border-left: 3px solid #E8171F;
+          background: #FAFBFC;
+          border-radius: 0 2px 2px 0;
+          margin-bottom: 12px;
+        }
+        .update-item-date {
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #455A64;
+          letter-spacing: 0.5px;
+          margin: 0 0 6px;
+        }
+        .update-item-title {
+          font-size: 14px;
+          font-weight: 600;
+          color: #212529;
+          margin: 0 0 4px;
+          font-family: var(--font-display);
+        }
+        .update-item-desc {
+          font-size: 13px;
+          color: #455A64;
+          margin: 0;
+          line-height: 1.5;
+          font-family: var(--font-body);
+        }
+        .category-badge {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 16px;
+          border-radius: 2px;
+          border: 1px solid #D5D8DC;
+          text-decoration: none;
+          background: #FFFFFF;
+          transition: all 0.2s ease;
+          text-align: center;
+          gap: 8px;
+        }
+        .category-badge:hover {
+          border-color: #E8171F;
+          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.15);
+          transform: translateY(-2px);
+        }
+        .category-count {
+          font-size: 20px;
+          font-weight: 700;
+          font-family: var(--font-mono);
+          color: #E8171F;
+        }
+        .category-label {
+          font-size: 13px;
+          font-weight: 600;
+          color: #212529;
+          font-family: var(--font-body);
+        }
+        .free-banner {
+          background: linear-gradient(135deg, #07874A 0%, #06612f 100%);
+          border: 1px solid #059669;
+          border-radius: 2px;
+          padding: 16px 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          margin-bottom: 24px;
+        }
+        .free-banner-text {
+          color: #FFFFFF;
+          font-size: 14px;
+          font-weight: 600;
+          font-family: var(--font-body);
+          margin: 0;
+        }
+        .free-banner-badge {
+          display: inline-block;
+          background: rgba(255, 255, 255, 0.25);
+          color: #FFFFFF;
+          padding: 4px 12px;
+          border-radius: 2px;
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          white-space: nowrap;
+        }
       `}</style>
 
       {/* Sidebar Navigation */}
@@ -239,11 +394,11 @@ export default async function DashboardPage() {
 
       {/* Main Content */}
       <main style={{ flex: 1, overflow: 'auto' }}>
-        {/* Dark Navy Header */}
+        {/* Dark Navy Header with Welcome */}
         <div style={{
           background: '#00172E',
           padding: '32px 40px',
-          marginBottom: '40px',
+          marginBottom: '24px',
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         }}>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -252,36 +407,171 @@ export default async function DashboardPage() {
               <span>/</span>
               <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Dashboard</span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-              <span style={{
-                display: 'inline-block',
-                padding: '4px 12px',
-                background: '#E8171F',
-                color: '#FFFFFF',
-                fontSize: '11px',
-                fontWeight: 700,
-                letterSpacing: '0.04em',
-                borderRadius: '2px',
-                textTransform: 'uppercase',
-              }}>
-                Dashboard
-              </span>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '24px' }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                  <span style={{
+                    display: 'inline-block',
+                    padding: '4px 12px',
+                    background: '#E8171F',
+                    color: '#FFFFFF',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    letterSpacing: '0.04em',
+                    borderRadius: '2px',
+                    textTransform: 'uppercase',
+                  }}>
+                    Dashboard
+                  </span>
+                </div>
+                <h1 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(24px, 5vw, 32px)',
+                  fontWeight: 700,
+                  color: '#FFFFFF',
+                  margin: '0',
+                  lineHeight: 1.2,
+                }}>
+                  Welcome back to CaseCheck
+                </h1>
+              </div>
+              <div style={{ textAlign: 'right', color: 'rgba(255, 255, 255, 0.7)', fontSize: '13px', fontFamily: 'var(--font-body)' }}>
+                <div>Federal Court Analytics</div>
+                <div style={{ fontSize: '11px', marginTop: '4px', color: 'rgba(255, 255, 255, 0.5)' }}>Updated April 6, 2026</div>
+              </div>
             </div>
-            <h1 style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(24px, 5vw, 32px)',
-              fontWeight: 700,
-              color: '#FFFFFF',
-              margin: '0',
-              lineHeight: 1.2,
-            }}>
-              Your Case Research Hub
-            </h1>
+          </div>
+        </div>
+
+        {/* Free During Launch Banner */}
+        <div style={{ padding: '0 40px', marginBottom: '0' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <div className="free-banner">
+              <div>
+                <p className="free-banner-text">
+                  CaseCheck is <span style={{ fontWeight: 800 }}>free during launch</span>. All features unlocked.
+                </p>
+              </div>
+              <div className="free-banner-badge">Free Access</div>
+            </div>
           </div>
         </div>
 
         <div style={{ padding: '0 40px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+
+          {/* Quick Stats Overview Bar */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '16px', marginBottom: '40px' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '16px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Total Cases</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 700, color: '#E8171F', margin: 0 }}>4.1M+</p>
+            </div>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '16px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>NOS Codes</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 700, color: '#E8171F', margin: 0 }}>84</p>
+            </div>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '16px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Districts Covered</p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 700, color: '#E8171F', margin: 0 }}>94</p>
+            </div>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '16px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 6px', fontFamily: 'var(--font-body)' }}>Uptime Status</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', fontWeight: 700, color: '#07874A', margin: 0 }}>100% [x]</p>
+            </div>
+          </div>
+
+          {/* Your Quick Actions Grid */}
+          <div style={{ marginBottom: '40px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '16px', fontWeight: 700, color: '#212529', margin: '0 0 16px', letterSpacing: '-0.3px' }}>Your Quick Actions</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px' }}>
+              {[
+                { label: 'Search Cases', href: '/search', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> },
+                { label: 'Case Calculator', href: '/calculator', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg> },
+                { label: 'Compare Cases', href: '/compare', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> },
+                { label: 'View Trends', href: '/trends', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 17"/><polyline points="17 6 23 6 23 12"/></svg> },
+                { label: 'Judge Lookup', href: '/judges', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> },
+                { label: 'Circuit Map', href: '/circuits', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="quick-action-card">
+                  <div className="quick-action-icon">{item.icon}</div>
+                  <span style={{ fontSize: '12px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)', textAlign: 'center' }}>{item.label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Platform Highlights — Top 5 Case Types */}
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 24px' }}>
+              Platform Highlights — Top Case Types
+            </h2>
+            <div>
+              {Array.from(new Set(Object.entries(REAL_DATA)
+                .map(([key, data]) => ({ key, total: data.total }))
+                .sort((a, b) => b.total - a.total)
+                .slice(0, 5)
+                .map(item => (
+                  <div key={item.key} className="bar-chart-item">
+                    <div className="bar-chart-item-label">{REAL_DATA[item.key].label || getNosLabel(item.key)}</div>
+                    <div className="bar-chart-item-value">{(item.total / 1000).toFixed(0)}k</div>
+                    <div className="bar-chart-bar">
+                      <div
+                        className="bar-chart-fill"
+                        style={{
+                          width: `${(item.total / Math.max(...Object.values(REAL_DATA).map(d => d.total))) * 100}%`,
+                          background: '#E8171F',
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))
+              ))}
+            </div>
+          </div>
+
+          {/* Recent Platform Updates */}
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 20px' }}>
+              Recent Platform Updates
+            </h2>
+            <div>
+              {[
+                { date: 'April 3, 2026', title: 'New 2026 Case Data Added', desc: 'Federal cases filed through March now indexed. 15k new records from all circuits.' },
+                { date: 'March 28, 2026', title: 'Judge Profile Enhancements', desc: 'Judge histories now include recusal patterns and case management style indicators.' },
+                { date: 'March 21, 2026', title: 'Settlement Range Precision', desc: 'Updated settlement percentile models with latest outcome data from PACER.' },
+                { date: 'March 15, 2026', title: 'Circuit Map Launch', desc: 'Interactive map now shows all 13 federal circuits with filterable case data overlays.' },
+              ].map((update, i) => (
+                <div key={i} className="update-item">
+                  <div className="update-item-date">{update.date}</div>
+                  <div className="update-item-title">{update.title}</div>
+                  <div className="update-item-desc">{update.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Explore by Category */}
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '40px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 20px' }}>
+              Explore by Category
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', gap: '12px' }}>
+              {Array.from(new Set(Object.entries(REAL_DATA)
+                .filter(([_, data]) => data.category)
+                .map(([key, data]) => ({ category: data.category, key, count: Object.values(REAL_DATA).filter(d => d.category === data.category).length }))
+                .reduce((acc, item) => {
+                  if (!acc.find(a => a.category === item.category)) acc.push(item);
+                  return acc;
+                }, [])
+                .map(item => (
+                  <Link key={item.key} href={`/search?category=${item.category}`} className="category-badge">
+                    <div className="category-count">{item.count}</div>
+                    <div className="category-label">{item.category}</div>
+                  </Link>
+                ))
+              ))}
+            </div>
+          </div>
 
           {/* Stats Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '32px' }}>

@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '🆓',
+    icon: '-',
     title: 'Free Access Programs',
     desc: 'Qualifying legal aid organizations receive complimentary full access to {SITE_NAME} to serve low-income clients without restrictions.',
   },
   {
-    icon: '📈',
+    icon: '-',
     title: 'Case Outcome Research',
     desc: 'Research historical outcomes for similar cases to set realistic expectations and develop stronger case strategies for clients.',
   },
   {
-    icon: '🎯',
+    icon: '-',
     title: 'Resource Allocation',
     desc: 'Identify high-impact cases using data-driven metrics to maximize limited resources and prioritize cases most likely to succeed.',
   },
   {
-    icon: '📊',
+    icon: '-',
     title: 'Impact Measurement',
     desc: 'Quantify client outcomes and demonstrate organizational impact with comprehensive case analytics and success metrics.',
   },
   {
-    icon: '📋',
+    icon: '-',
     title: 'Grant Reporting Data',
     desc: 'Generate citation-ready reports and outcome summaries for grant proposals, donor communications, and impact assessments.',
   },
   {
-    icon: '🤝',
+    icon: '-',
     title: 'Pro-Bono Collaboration',
     desc: 'Connect with pro-bono counsel networks and access comparative attorney performance data to match cases with best advocates.',
   },
@@ -243,7 +243,7 @@ export default function LegalAidPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>👤</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function LegalAidPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🎓</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function LegalAidPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚖️</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

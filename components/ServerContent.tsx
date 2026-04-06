@@ -1045,14 +1045,14 @@ export default function ServerContent() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
             {[
-              { href: '/search', title: 'Case Search', desc: 'Search all 84 federal case types by keyword', icon: '🔍' },
-              { href: '/nos-explorer', title: 'NOS Code Explorer', desc: 'Browse and compare all NOS codes with data', icon: '📊' },
-              { href: '/calculator', title: 'Settlement Calculator', desc: 'Estimate your potential case value', icon: '🧮' },
-              { href: '/translate', title: 'Jargon Translator', desc: 'Convert legal language to plain English', icon: '💬' },
-              { href: '/odds', title: 'Case Odds Checker', desc: 'See win rates and outcome probabilities', icon: '🎯' },
-              { href: '/judges', title: 'Judge Intelligence', desc: 'Research federal judges across all circuits', icon: '⚖️' },
-              { href: '/trends', title: 'Filing Trends', desc: 'Track case outcome trends over time', icon: '📈' },
-              { href: '/glossary', title: 'Legal Glossary', desc: 'Plain-English definitions of court terms', icon: '📖' },
+              { href: '/search', title: 'Case Search', desc: 'Search all 84 federal case types by keyword', icon: '-' },
+              { href: '/nos-explorer', title: 'NOS Code Explorer', desc: 'Browse and compare all NOS codes with data', icon: '-' },
+              { href: '/calculator', title: 'Settlement Calculator', desc: 'Estimate your potential case value', icon: '-' },
+              { href: '/translate', title: 'Jargon Translator', desc: 'Convert legal language to plain English', icon: '-' },
+              { href: '/odds', title: 'Case Odds Checker', desc: 'See win rates and outcome probabilities', icon: '-' },
+              { href: '/judges', title: 'Judge Intelligence', desc: 'Research federal judges across all circuits', icon: '-' },
+              { href: '/trends', title: 'Filing Trends', desc: 'Track case outcome trends over time', icon: '-' },
+              { href: '/glossary', title: 'Legal Glossary', desc: 'Plain-English definitions of court terms', icon: '-' },
             ].map((tool) => (
               <a
                 key={tool.href}
@@ -1098,10 +1098,10 @@ export default function ServerContent() {
             justifyContent: 'center',
           }}>
             {[
-              { name: 'Federal Judicial Center', icon: '🗄️' },
-              { name: 'CourtListener', icon: '⚖️' },
-              { name: 'PACER', icon: '📄' },
-              { name: 'Bureau of Justice Statistics', icon: '📊' },
+              { name: 'Federal Judicial Center', icon: '-' },
+              { name: 'CourtListener', icon: '-' },
+              { name: 'PACER', icon: '-' },
+              { name: 'Bureau of Justice Statistics', icon: '-' },
             ].map((source, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <span style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', fontWeight: 500 }}>

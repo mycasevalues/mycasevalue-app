@@ -129,19 +129,19 @@ export default function UpgradeBanner() {
 
             <div className="feature-list">
               <div className="feature-item">
-                <div className="feature-checkmark">✓</div>
+                <div className="feature-checkmark">[x]</div>
                 <span>AI-powered case outcome predictions</span>
               </div>
               <div className="feature-item">
-                <div className="feature-checkmark">✓</div>
+                <div className="feature-checkmark">[x]</div>
                 <span>Judge and venue intelligence</span>
               </div>
               <div className="feature-item">
-                <div className="feature-checkmark">✓</div>
+                <div className="feature-checkmark">[x]</div>
                 <span>Bulk case analysis tools</span>
               </div>
               <div className="feature-item">
-                <div className="feature-checkmark">✓</div>
+                <div className="feature-checkmark">[x]</div>
                 <span>Professional legal insights</span>
               </div>
             </div>

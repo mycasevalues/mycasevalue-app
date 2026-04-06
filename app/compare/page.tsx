@@ -655,7 +655,7 @@ export default function ComparePage() {
                   marginTop: 2,
                   flexShrink: 0,
                 }}>
-                  💡
+                  -
                 </div>
                 <div>
                   <h3 style={{

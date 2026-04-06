@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '⚙️',
+    icon: '-',
     title: 'Court Performance Data',
     desc: 'Benchmark court performance metrics including case disposition time, settlement rates, verdict distributions, and caseload analysis.',
   },
   {
-    icon: '📋',
+    icon: '-',
     title: 'Policy Analysis',
     desc: 'Evaluate policy impacts on case outcomes, judicial efficiency, and system performance with comprehensive statistical analysis.',
   },
   {
-    icon: '🎯',
+    icon: '-',
     title: 'Resource Allocation',
     desc: 'Optimize court resources and judge assignments using data on caseload, complexity distribution, and efficiency metrics.',
   },
   {
-    icon: '🔍',
+    icon: '-',
     title: 'Transparency Reporting',
     desc: 'Generate public-facing reports on court operations, judge statistics, and case outcomes supporting judicial transparency initiatives.',
   },
   {
-    icon: '✅',
+    icon: '-',
     title: 'Compliance Tools',
     desc: 'Track compliance with performance standards, access benchmarks, and generate compliance documentation for oversight bodies.',
   },
   {
-    icon: '📊',
+    icon: '-',
     title: 'Bulk Data Access',
     desc: 'Authorized government agencies access comprehensive case data in bulk formats for research, analysis, and archival purposes.',
   },
@@ -243,7 +243,7 @@ export default function GovernmentPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🎓</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function GovernmentPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🔌</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function GovernmentPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏢</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

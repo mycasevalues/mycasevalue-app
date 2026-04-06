@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '🔍',
+    icon: '-',
     title: 'Case Value Research',
     desc: 'Build sophisticated case evaluation frameworks using our comprehensive settlement and verdict database across all practice areas.',
   },
   {
-    icon: '🕵️',
+    icon: '-',
     title: 'Opposing Counsel Intel',
     desc: 'Research opposing attorney track records, settlement patterns, and litigation history to inform strategy and negotiation approach.',
   },
   {
-    icon: '⚖️',
+    icon: '-',
     title: 'Judge Analytics',
     desc: 'Access detailed judge profiles including rulings, verdict data, and procedural tendencies specific to your jurisdiction and case type.',
   },
   {
-    icon: '🎯',
+    icon: '-',
     title: 'Venue Selection',
     desc: 'Make data-driven venue decisions using comparative jury verdict analysis, judge statistics, and case outcome benchmarks.',
   },
   {
-    icon: '📈',
+    icon: '-',
     title: 'Bulk Analysis Tools',
     desc: 'Analyze multiple cases in parallel with portfolio-level analytics and comparative benchmarking across your case inventory.',
   },
   {
-    icon: '👥',
+    icon: '-',
     title: 'Team Workspace',
     desc: 'Collaborate securely with team members, share research findings, and maintain client confidentiality across your firm.',
   },
@@ -243,7 +243,7 @@ export default function SmallFirmsPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>👤</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function SmallFirmsPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏢</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function SmallFirmsPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>📊</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

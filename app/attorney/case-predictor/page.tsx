@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { SITS, STATES } from '../../../lib/data';
+import { REAL_DATA } from '../../../lib/realdata';
 
 type Prediction = {
   caseType: string;
@@ -185,6 +186,87 @@ export default function CasePredictorPage() {
       </div>
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '32px 20px' }}>
+        {/* How It Works Section */}
+        <div style={{ background: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '32px' }}>
+          <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 700, color: '#00172E', margin: '0 0 24px' }}>
+            How It Works
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '28px' }}>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#E8171F', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 700, fontSize: '18px' }}>
+                1
+              </div>
+              <div>
+                <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#212529', margin: '0 0 8px' }}>
+                  Enter Case Details
+                </h3>
+                <p style={{ fontSize: '14px', color: '#455A64', lineHeight: 1.6, margin: 0 }}>
+                  Select your case type, jurisdiction, damages amount, and case strength to provide context.
+                </p>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#E8171F', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 700, fontSize: '18px' }}>
+                2
+              </div>
+              <div>
+                <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#212529', margin: '0 0 8px' }}>
+                  AI Analysis
+                </h3>
+                <p style={{ fontSize: '14px', color: '#455A64', lineHeight: 1.6, margin: 0 }}>
+                  Our system analyzes 4M+ historical federal cases to predict outcomes with confidence scoring.
+                </p>
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: '16px' }}>
+              <div style={{ minWidth: '48px', height: '48px', borderRadius: '50%', background: '#E8171F', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF', fontWeight: 700, fontSize: '18px' }}>
+                3
+              </div>
+              <div>
+                <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#212529', margin: '0 0 8px' }}>
+                  Get Insights
+                </h3>
+                <p style={{ fontSize: '14px', color: '#455A64', lineHeight: 1.6, margin: 0 }}>
+                  Receive win rate, settlement range, duration forecast, and key factors influencing your case.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Data-Driven Insights */}
+        <div style={{ background: 'linear-gradient(135deg, #00172E 0%, #003366 100%)', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', marginBottom: '32px', color: '#FFFFFF' }}>
+          <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 24px' }}>
+            Federal Court Data at Your Fingertips
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '2px', padding: '20px', border: '1px solid rgba(255,255,255,0.10)' }}>
+              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 8px' }}>
+                4.1M+
+              </div>
+              <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Federal cases analyzed</div>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '2px', padding: '20px', border: '1px solid rgba(255,255,255,0.10)' }}>
+              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 8px' }}>
+                84
+              </div>
+              <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Nature of suit codes</div>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '2px', padding: '20px', border: '1px solid rgba(255,255,255,0.10)' }}>
+              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 8px' }}>
+                All 50
+              </div>
+              <div style={{ fontSize: '13px', color: '#B0B5BA' }}>States covered</div>
+            </div>
+            <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '2px', padding: '20px', border: '1px solid rgba(255,255,255,0.10)' }}>
+              <div className="font-mono" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 8px' }}>
+                AI-Powered
+              </div>
+              <div style={{ fontSize: '13px', color: '#B0B5BA' }}>Predictions & analysis</div>
+            </div>
+          </div>
+        </div>
+
         <div style={{ display: 'grid', gridTemplateColumns: p ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
           <div style={{ background: '#FFFFFF', borderRadius: '2px', padding: '28px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
@@ -484,6 +566,54 @@ export default function CasePredictorPage() {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Related Attorney Tools Section */}
+        <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '2px solid #E5EBF0' }}>
+          <h2 className="font-display" style={{ fontSize: '20px', fontWeight: 700, color: '#00172E', margin: '0 0 24px' }}>
+            Related Attorney Tools
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
+            <Link href="/attorney/judge-intelligence" style={{ textDecoration: 'none' }}>
+              <div style={{ background: '#FFFFFF', borderRadius: '2px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#E8171F'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = '#D5D8DC'; }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '2px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
+                    <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
+                  </svg>
+                </div>
+                <h3 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: '0 0 8px' }}>
+                  Judge Intelligence
+                </h3>
+                <p style={{ fontSize: '13px', color: '#455A64', margin: 0, lineHeight: 1.5 }}>
+                  Research federal judges' ruling patterns, settlement tendencies, and historical outcomes.
+                </p>
+              </div>
+            </Link>
+            <Link href="/attorney/venue-optimizer" style={{ textDecoration: 'none' }}>
+              <div style={{ background: '#FFFFFF', borderRadius: '2px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.12)'; e.currentTarget.style.borderColor = '#E8171F'; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = '#D5D8DC'; }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '2px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                </div>
+                <h3 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: '0 0 8px' }}>
+                  Venue Optimizer
+                </h3>
+                <p style={{ fontSize: '13px', color: '#455A64', margin: 0, lineHeight: 1.5 }}>
+                  Find the optimal filing district by case type, win rates, and settlement data.
+                </p>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Free-During-Launch Badge */}
+        <div style={{ marginTop: '32px', padding: '16px 20px', background: 'linear-gradient(135deg, rgba(7,135,74,0.08) 0%, rgba(7,135,74,0.04) 100%)', border: '1px solid rgba(7,135,74,0.20)', borderRadius: '2px', textAlign: 'center' }}>
+          <span style={{ fontSize: '12px', fontWeight: 700, color: '#07874A', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            Free During Launch
+          </span>
         </div>
       </div>
     </div>

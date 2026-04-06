@@ -237,12 +237,12 @@ export default function JudgesPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             {[
-              { icon: '⚖️', title: 'Motion Grant Rates', desc: 'How often a judge grants motions to dismiss, summary judgment, and other dispositive motions.' },
-              { icon: '⏱', title: 'Case Duration', desc: 'Median time from filing to resolution, broken down by case type and disposition.' },
-              { icon: '📊', title: 'Plaintiff Win Rates', desc: 'Trial and overall win rates for plaintiffs appearing before this judge.' },
-              { icon: '🤝', title: 'Settlement Patterns', desc: 'Settlement frequency and timing relative to the judge\'s typical case lifecycle.' },
-              { icon: '📈', title: 'Comparison Analytics', desc: 'How the judge compares to the district and circuit average on key metrics.' },
-              { icon: '📋', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
+              { icon: '-', title: 'Motion Grant Rates', desc: 'How often a judge grants motions to dismiss, summary judgment, and other dispositive motions.' },
+              { icon: '-', title: 'Case Duration', desc: 'Median time from filing to resolution, broken down by case type and disposition.' },
+              { icon: '-', title: 'Plaintiff Win Rates', desc: 'Trial and overall win rates for plaintiffs appearing before this judge.' },
+              { icon: '-', title: 'Settlement Patterns', desc: 'Settlement frequency and timing relative to the judge\'s typical case lifecycle.' },
+              { icon: '-', title: 'Comparison Analytics', desc: 'How the judge compares to the district and circuit average on key metrics.' },
+              { icon: '-', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
             ].map((item, idx) => (
               <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #D5D8DC', background: '#FFFFFF' }}>
                 <div style={{ fontSize: 20, marginBottom: 8 }}>{item.icon}</div>

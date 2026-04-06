@@ -896,25 +896,25 @@ export default function TrendsPage() {
                 href: '/compare',
                 title: 'Compare Cases',
                 description: 'Head-to-head analysis of any two case types',
-                icon: '⚖️',
+                icon: '-',
               },
               {
                 href: '/calculator',
                 title: 'Settlement Calculator',
                 description: 'Estimate recovery value for your case',
-                icon: '💰',
+                icon: '-',
               },
               {
                 href: '/map',
                 title: 'District Analysis',
                 description: 'Performance data by federal district',
-                icon: '🗺️',
+                icon: '-',
               },
               {
                 href: '/judges',
                 title: 'Judge Statistics',
                 description: 'Outcomes by individual federal judges',
-                icon: '⚔️',
+                icon: '-',
               },
             ].map((item) => (
               <Link

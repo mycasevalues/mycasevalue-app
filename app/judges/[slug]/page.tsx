@@ -848,7 +848,7 @@ export default async function JudgePage({ params }: PageProps) {
                     fontSize: '12px',
                   }}
                 >
-                  ✓
+                  [x]
                 </span>
                 {caseType.label} ({caseType.count} cases, {caseType.winRate}% win rate)
               </li>

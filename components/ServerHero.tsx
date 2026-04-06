@@ -522,12 +522,12 @@ export default function ServerHero() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="who-grid">
             {[
-              { icon: '👤', title: 'Individuals', desc: 'Research your own case value with real settlement data and win rates from cases like yours.', href: '/solutions/individuals' },
-              { icon: '⚖️', title: 'Small Law Firms', desc: 'Case research, judge analytics, and opposing counsel intelligence for solo and boutique practices.', href: '/solutions/small-firms' },
-              { icon: '🏢', title: 'Enterprise Legal', desc: 'API access, custom dashboards, SSO, and bulk exports for large legal departments.', href: '/solutions/enterprise' },
-              { icon: '🛡️', title: 'Insurance Companies', desc: 'Settlement benchmarking, claim valuation, and risk scoring for claims teams and defense counsel.', href: '/solutions/insurance' },
-              { icon: '📊', title: 'Litigation Funders', desc: 'Portfolio analytics, case evaluation, and due diligence data for litigation finance decisions.', href: '/solutions/funders' },
-              { icon: '🎓', title: 'Academic Researchers', desc: 'Datasets, analysis tools, and institutional licensing for law school faculty and research institutions.', href: '/solutions/academic' },
+              { icon: '-', title: 'Individuals', desc: 'Research your own case value with real settlement data and win rates from cases like yours.', href: '/solutions/individuals' },
+              { icon: '-', title: 'Small Law Firms', desc: 'Case research, judge analytics, and opposing counsel intelligence for solo and boutique practices.', href: '/solutions/small-firms' },
+              { icon: '-', title: 'Enterprise Legal', desc: 'API access, custom dashboards, SSO, and bulk exports for large legal departments.', href: '/solutions/enterprise' },
+              { icon: '-', title: 'Insurance Companies', desc: 'Settlement benchmarking, claim valuation, and risk scoring for claims teams and defense counsel.', href: '/solutions/insurance' },
+              { icon: '-', title: 'Litigation Funders', desc: 'Portfolio analytics, case evaluation, and due diligence data for litigation finance decisions.', href: '/solutions/funders' },
+              { icon: '-', title: 'Academic Researchers', desc: 'Datasets, analysis tools, and institutional licensing for law school faculty and research institutions.', href: '/solutions/academic' },
             ].map((seg) => (
               <a key={seg.title} href={seg.href} style={{
                 display: 'block', background: '#FFFFFF', border: '1px solid #D5D8DC',
@@ -648,9 +648,9 @@ export default function ServerHero() {
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #E5EBF0', background: i % 2 === 0 ? '#FFFFFF' : '#F8F9FA' }}>
                     <td style={{ padding: '10px 16px', color: '#212529', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#07874A' : '#CC1019', fontWeight: 700 }}>{row.mcv ? '✓' : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#07874A' : '#999' }}>{row.pacer ? '✓' : '—'}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#07874A' : '#999' }}>{row.premium ? '✓' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#07874A' : '#CC1019', fontWeight: 700 }}>{row.mcv ? '[x]' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#07874A' : '#999' }}>{row.pacer ? '[x]' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#07874A' : '#999' }}>{row.premium ? '[x]' : '—'}</td>
                   </tr>
                 ))}
               </tbody>

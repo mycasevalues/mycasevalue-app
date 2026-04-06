@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { REAL_DATA } from '../../../lib/realdata';
 
 type JudgeData = {
   name: string;

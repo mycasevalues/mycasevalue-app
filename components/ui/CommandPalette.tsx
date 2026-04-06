@@ -76,35 +76,35 @@ export default function CommandPalette({
         label: lang === 'es' ? 'Buscar casos' : 'Search Cases',
         description: lang === 'es' ? 'Explorar resultados de casos' : 'Browse case outcomes',
         category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
-        icon: '🔍',
+        icon: '-',
       },
       {
         id: 'quick-calculator',
         label: lang === 'es' ? 'Calculadora' : 'Calculator',
         description: lang === 'es' ? 'Calcular costos y recuperaciones' : 'Calculate recovery and costs',
         category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
-        icon: '🧮',
+        icon: '-',
       },
       {
         id: 'quick-pricing',
         label: lang === 'es' ? 'Precios' : 'Pricing',
         description: lang === 'es' ? 'Ver planes y opciones' : 'View our pricing plans',
         category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
-        icon: '💰',
+        icon: '-',
       },
       {
         id: 'quick-dashboard',
         label: lang === 'es' ? 'Panel' : 'Dashboard',
         description: lang === 'es' ? 'Ver tus reportes guardados' : 'View your saved reports',
         category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
-        icon: '📊',
+        icon: '-',
       },
       {
         id: 'quick-compare',
         label: lang === 'es' ? 'Comparar casos' : 'Compare Cases',
         description: lang === 'es' ? 'Comparar múltiples casos' : 'Compare case outcomes',
         category: lang === 'es' ? 'Enlaces rápidos' : 'Quick Links',
-        icon: '⚖️',
+        icon: '-',
       },
     ];
 
@@ -118,15 +118,15 @@ export default function CommandPalette({
 
     // Case categories (from SITS data)
     const caseCategories = [
-      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '👔', color: '#006997' },
-      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '⚠️', color: '#006997' },
-      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '🛍️', color: '#006997' },
-      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '⚖️', color: '#006997' },
-      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '💵', color: '#006997' },
-      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '🏠', color: '#006997' },
-      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '⚕️', color: '#006997' },
-      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '👨‍👩‍👧', color: '#006997' },
-      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '🏛️', color: '#006997' },
+      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '-', color: '#006997' },
+      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '-', color: '#006997' },
+      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '-', color: '#006997' },
+      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '-', color: '#006997' },
+      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '-', color: '#006997' },
+      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '-', color: '#006997' },
+      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '-', color: '#006997' },
+      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '-', color: '#006997' },
+      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '-', color: '#006997' },
     ];
 
     caseCategories.forEach((cat) => {
@@ -165,42 +165,42 @@ export default function CommandPalette({
         label: lang === 'es' ? 'Inicio' : 'Home',
         description: lang === 'es' ? 'Volver al inicio' : 'Go to homepage',
         category: lang === 'es' ? 'Páginas' : 'Pages',
-        icon: '🏠',
+        icon: '-',
       },
       {
         id: 'page-blog',
         label: lang === 'es' ? 'Blog' : 'Blog',
         description: lang === 'es' ? 'Artículos y análisis' : 'Articles and insights',
         category: lang === 'es' ? 'Páginas' : 'Pages',
-        icon: '📰',
+        icon: '-',
       },
       {
         id: 'page-about',
         label: lang === 'es' ? 'Acerca de' : 'About',
         description: lang === 'es' ? 'Quiénes somos' : 'About our team',
         category: lang === 'es' ? 'Páginas' : 'Pages',
-        icon: 'ℹ️',
+        icon: '-',
       },
       {
         id: 'page-how-it-works',
         label: lang === 'es' ? 'Cómo funciona' : 'How It Works',
         description: lang === 'es' ? 'Guía paso a paso' : 'Step-by-step guide',
         category: lang === 'es' ? 'Páginas' : 'Pages',
-        icon: '🔧',
+        icon: '-',
       },
       {
         id: 'page-methodology',
         label: lang === 'es' ? 'Metodología' : 'Methodology',
         description: lang === 'es' ? 'Cómo funciona nuestro sistema' : 'How our data works',
         category: lang === 'es' ? 'Páginas' : 'Pages',
-        icon: '📊',
+        icon: '-',
       },
       {
         id: 'page-glossary',
         label: lang === 'es' ? 'Glosario' : 'Glossary',
         description: lang === 'es' ? 'Términos legales explicados' : 'Legal terms explained',
         category: lang === 'es' ? 'Páginas' : 'Pages',
-        icon: '📚',
+        icon: '-',
       },
     ];
 
@@ -215,7 +215,7 @@ export default function CommandPalette({
         label: lang === 'es' ? 'English' : 'Español',
         description: lang === 'es' ? 'Cambiar idioma' : 'Switch language',
         category: lang === 'es' ? 'Acciones' : 'Actions',
-        icon: '🌐',
+        icon: '-',
       },
     ];
 

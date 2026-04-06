@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '📈',
+    icon: '-',
     title: 'Portfolio Analytics',
     desc: 'Monitor case-level metrics across your entire portfolio with real-time dashboards tracking probability of success and projected ROI.',
   },
   {
-    icon: '🔬',
+    icon: '-',
     title: 'Case Evaluation',
     desc: 'Evaluate incoming opportunities against historical data to assess litigation risk, settlement probability, and expected recovery.',
   },
   {
-    icon: '⚖️',
+    icon: '-',
     title: 'Risk Assessment',
     desc: 'Score litigation risk across judge tendencies, opposing counsel tactics, and case-type complexity using predictive modeling.',
   },
   {
-    icon: '💹',
+    icon: '-',
     title: 'ROI Projections',
     desc: 'Model expected returns with multiple settlement scenarios, trial outcomes, and litigation cost forecasts for underwriting decisions.',
   },
   {
-    icon: '🔍',
+    icon: '-',
     title: 'Market Intelligence',
     desc: 'Track settlement trends, verdict patterns, and market conditions to identify emerging opportunities and avoid deteriorating positions.',
   },
   {
-    icon: '📋',
+    icon: '-',
     title: 'Due Diligence Data',
     desc: 'Generate comprehensive due diligence reports with comparative analytics and benchmark data for investor presentations and reporting.',
   },
@@ -243,7 +243,7 @@ export default function FundersPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🛡️</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function FundersPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏢</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function FundersPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🎓</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

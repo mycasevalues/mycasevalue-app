@@ -356,11 +356,11 @@ export default function MethodologyPage() {
               <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '2px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="text-2xl flex-shrink-0">
-                    {source.icon === 'database' && '📊'}
-                    {source.icon === 'scale' && '⚖️'}
-                    {source.icon === 'files' && '📁'}
-                    {source.icon === 'chart' && '📈'}
-                    {source.icon === 'building' && '🏛️'}
+                    {source.icon === 'database' && '-'}
+                    {source.icon === 'scale' && '-'}
+                    {source.icon === 'files' && '-'}
+                    {source.icon === 'chart' && '-'}
+                    {source.icon === 'building' && '-'}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-sm font-display font-semibold m-0 mb-1" style={{ color: '#212529' }}>{source.name}</h3>
@@ -393,9 +393,9 @@ export default function MethodologyPage() {
 
           <div className="confidence-tiers">
             {[
-              { icon: '🟢', label: 'High Confidence', desc: 'Robust sample', threshold: '1,000+ cases' },
-              { icon: '🟡', label: 'Medium Confidence', desc: 'Adequate sample', threshold: '100–999 cases' },
-              { icon: '🔴', label: 'Low Confidence', desc: 'Limited sample', threshold: '< 100 cases' },
+              { icon: '+', label: 'High Confidence', desc: 'Robust sample', threshold: '1,000+ cases' },
+              { icon: '~', label: 'Medium Confidence', desc: 'Adequate sample', threshold: '100–999 cases' },
+              { icon: '-', label: 'Low Confidence', desc: 'Limited sample', threshold: '< 100 cases' },
             ].map((tier, i) => (
               <div key={i} className="confidence-tier">
                 <div className="confidence-icon">{tier.icon}</div>
@@ -507,10 +507,10 @@ export default function MethodologyPage() {
           <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Related Pages</h2>
           <div className="related-grid">
             {[
-              { href: '/faq', icon: '❓', title: 'FAQ' },
-              { href: '/glossary', icon: '📖', title: 'Glossary' },
-              { href: '/about', icon: 'ℹ️', title: 'About Us' },
-              { href: '/nos-explorer', icon: '🔍', title: 'NOS Explorer' },
+              { href: '/faq', icon: '-', title: 'FAQ' },
+              { href: '/glossary', icon: '-', title: 'Glossary' },
+              { href: '/about', icon: '-', title: 'About Us' },
+              { href: '/nos-explorer', icon: '-', title: 'NOS Explorer' },
             ].map((link, i) => (
               <Link key={i} href={link.href}>
                 <div className="related-card">

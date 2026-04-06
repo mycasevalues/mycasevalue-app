@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '📊',
+    icon: '-',
     title: 'Settlement Benchmarking',
     desc: 'Compare claims against industry benchmarks and historical settlement patterns to validate valuations and identify outliers.',
   },
   {
-    icon: '💰',
+    icon: '-',
     title: 'Claim Valuation Models',
     desc: 'Deploy data-driven valuation frameworks that account for injury severity, jurisdiction, defense profile, and litigation costs.',
   },
   {
-    icon: '⚠️',
+    icon: '-',
     title: 'Risk Scoring',
     desc: 'Automatically score litigation risk based on case characteristics, judge history, and settlement probability modeling.',
   },
   {
-    icon: '🏦',
+    icon: '-',
     title: 'Reserve Setting',
     desc: 'Generate defensible reserve recommendations backed by settlement data and actuarial analysis for claims management.',
   },
   {
-    icon: '💸',
+    icon: '-',
     title: 'Litigation Cost Forecasting',
     desc: 'Project defense costs, trial expenses, and likely awards to optimize settlement negotiation and budget allocation.',
   },
   {
-    icon: '🎯',
+    icon: '-',
     title: 'Defense Strategy Intelligence',
     desc: 'Research defense counsel capabilities, settlement rates, and trial success metrics to select optimal legal representation.',
   },
@@ -243,7 +243,7 @@ export default function InsurancePage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>📊</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function InsurancePage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏢</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function InsurancePage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>👤</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

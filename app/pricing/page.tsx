@@ -450,7 +450,7 @@ function PricingCard({
                   fontWeight: feat.included ? 700 : 400,
                 }}
               >
-                {feat.included ? '✓' : '—'}
+                {feat.included ? '[x]' : '—'}
               </span>
               <span
                 style={{
@@ -594,7 +594,7 @@ export default function PricingPage() {
             fontFamily: 'var(--font-display)',
             letterSpacing: '0.02em',
           }}>
-            🎉 LAUNCH SPECIAL — Everything is free. No limits.
+            LAUNCH SPECIAL — Everything is free. No limits.
           </div>
         </div>
       </div>
@@ -1101,7 +1101,7 @@ export default function PricingPage() {
                               fontWeight: planFeature.included ? '700' : '400',
                             }}
                           >
-                            {planFeature.included ? '✓' : '—'}
+                            {planFeature.included ? '[x]' : '—'}
                           </span>
                         </td>
                       );

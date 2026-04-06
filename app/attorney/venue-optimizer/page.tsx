@@ -32,7 +32,7 @@ type VenueResponse = {
   disclaimer: string;
 };
 
-const medals = ['🥇', '🥈', '🥉'];
+const medals = ['#1', '#2', '#3'];
 
 export default function VenueOptimizerPage() {
   // Inline styles for focus states

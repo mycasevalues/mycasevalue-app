@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '💰',
+    icon: '-',
     title: 'Case Value Lookup',
     desc: 'Instantly discover settlement ranges and verdict data for cases similar to yours across all 50 states.',
   },
   {
-    icon: '📊',
+    icon: '-',
     title: 'Settlement Benchmarks',
     desc: 'Compare your claim against thousands of settled cases to understand realistic compensation expectations.',
   },
   {
-    icon: '⚖️',
+    icon: '-',
     title: 'Judge Statistics',
     desc: 'Review individual judge track records, award trends, and historical verdicts in your jurisdiction.',
   },
   {
-    icon: '⏱️',
+    icon: '-',
     title: 'Timeline Estimates',
     desc: 'Get data-driven projections for case resolution time based on injury type, venue, and complexity.',
   },
   {
-    icon: '🗺️',
+    icon: '-',
     title: 'District Comparisons',
     desc: 'Understand how different courts and jurisdictions handle similar claims in your case category.',
   },
   {
-    icon: '🔓',
+    icon: '-',
     title: 'Free Tier Access',
     desc: 'Start exploring case data immediately with our free plan. No credit card required to get started.',
   },
@@ -243,7 +243,7 @@ export default function IndividualsPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚖️</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function IndividualsPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🤝</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function IndividualsPage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🛡️</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

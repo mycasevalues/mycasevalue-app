@@ -463,10 +463,10 @@ export default function BlogPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
           {[
-            { name: 'Trends Explorer', href: '/trends', icon: '📊' },
-            { name: 'Judge Comparison', href: '/judges', icon: '⚖️' },
-            { name: 'Case Comparison', href: '/compare', icon: '🔍' },
-            { name: 'NOS Explorer', href: '/nos-explorer', icon: '📋' },
+            { name: 'Trends Explorer', href: '/trends', icon: '-' },
+            { name: 'Judge Comparison', href: '/judges', icon: '-' },
+            { name: 'Case Comparison', href: '/compare', icon: '-' },
+            { name: 'NOS Explorer', href: '/nos-explorer', icon: '-' },
           ].map((tool) => (
             <Link
               key={tool.href}

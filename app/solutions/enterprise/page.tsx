@@ -10,32 +10,32 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    icon: '🔌',
+    icon: '-',
     title: 'REST API & Webhooks',
     desc: 'Integrate MyCaseValue+ directly into your internal systems with our comprehensive REST API and real-time webhook support.',
   },
   {
-    icon: '📊',
+    icon: '-',
     title: 'Custom Dashboards',
     desc: 'Build tailored analytics dashboards reflecting your firm\'s unique practice areas, KPIs, and reporting requirements.',
   },
   {
-    icon: '🔐',
+    icon: '-',
     title: 'Enterprise SSO',
     desc: 'Deploy with SAML 2.0 and OAuth 2.0 integration for seamless user management and enhanced security controls.',
   },
   {
-    icon: '💼',
+    icon: '-',
     title: 'Bulk Data Exports',
     desc: 'Export unlimited datasets in multiple formats for further analysis, reporting, and integration with your data infrastructure.',
   },
   {
-    icon: '👨‍💼',
+    icon: '-',
     title: 'Dedicated Support',
     desc: 'Access a dedicated success manager and priority support team committed to your firm\'s strategic initiatives.',
   },
   {
-    icon: '📋',
+    icon: '-',
     title: 'SLA Guarantees',
     desc: 'Benefit from 99.9% uptime guarantee, priority incident response, and contractual performance commitments.',
   },
@@ -243,7 +243,7 @@ export default function EnterprisePage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🔌</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -276,7 +276,7 @@ export default function EnterprisePage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚖️</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',
@@ -309,7 +309,7 @@ export default function EnterprisePage() {
               }}
               className="related-solutions-card"
             >
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🛡️</div>
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>-</div>
               <h3 style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '1.125rem',

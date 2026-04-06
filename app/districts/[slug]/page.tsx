@@ -904,7 +904,7 @@ export default async function DistrictPage({ params }: PageProps) {
               }}
             >
               <h3 className="subsection-heading mb-4">
-                <span style={{ color: '#07874A' }}>★ Top Performers</span>
+                <span style={{ color: '#07874A' }}>* Top Performers</span>
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {Array.from(new Set(topCaseTypes.sort((a, b) => b.winRate - a.winRate).slice(0, 3)))
@@ -940,7 +940,7 @@ export default async function DistrictPage({ params }: PageProps) {
               }}
             >
               <h3 className="subsection-heading mb-4">
-                <span style={{ color: '#E8171F' }}>⚠ Underperformers</span>
+                <span style={{ color: '#E8171F' }}>! Underperformers</span>
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {Array.from(new Set(topCaseTypes.sort((a, b) => a.winRate - b.winRate).slice(0, 3)))
@@ -1094,25 +1094,25 @@ export default async function DistrictPage({ params }: PageProps) {
                 title: 'Case Value Calculator',
                 description: `Estimate your case value using ${state.label} data`,
                 href: '/calculator',
-                icon: '📊',
+                icon: '-',
               },
               {
                 title: 'Compare Districts',
                 description: 'Compare outcomes across multiple districts',
                 href: '/compare',
-                icon: '⚖️',
+                icon: '-',
               },
               {
                 title: 'Court Map',
                 description: 'Visualize all federal court districts',
                 href: '/map',
-                icon: '🗺️',
+                icon: '-',
               },
               {
                 title: 'Trend Analysis',
                 description: 'See how outcomes have changed over time',
                 href: '/trends',
-                icon: '📈',
+                icon: '-',
               },
             ].map((tool, i) => (
               <Link
