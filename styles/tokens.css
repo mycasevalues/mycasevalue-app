@@ -1,132 +1,185 @@
 /* ============================================================
-   LEXISNEXIS-INSPIRED DESIGN SYSTEM
+   MYCASEVALUE DESIGN SYSTEM — Professional Legal Data Platform
    ============================================================
-   Corporate legal-tech aesthetic. Deep navy hero (#00172E).
-   LexisNexis red primary (#E8171F), teal secondary (#006997).
-   Lato / JetBrains Mono typography (self-hosted via next/font).
-   Light backgrounds, white cards, sharp corners, uppercase CTAs.
+   Montserrat (headings) / Roboto (body) / PT Mono (data).
+   Navy primary (#1B3A5C). Purple accent (#7C3AED).
+   Professional, institutional aesthetic.
    ============================================================ */
 
 :root {
-  /* ── BACKGROUNDS ───────────────────────────────────────── */
-  --bg-base:          #F5F6F7;  /* Light gray page background */
-  --bg-elevated:      #FFFFFF;  /* White card surfaces */
-  --bg-input:         #FFFFFF;  /* Input background */
-  --bg-hover:         #F5F6F7;
-  --bg-selection:     rgba(0,105,151,0.15);
-  --bg-dark:          #00172E;  /* Deep navy for hero/dark sections */
-  --bg-alt:           #FAFBFC;  /* Alternate section background */
+  /* Brand */
+  --color-navy:        #1B3A5C;
+  --color-navy-dark:   #122840;
+  --color-navy-light:  #2A5080;
 
-  /* ── FOREGROUNDS ───────────────────────────────────────── */
-  --fg-primary:       #212529;  /* Primary text — near-black */
-  --fg-secondary:     #455A64;  /* Secondary text — blue-gray */
-  --fg-subtle:        #666666;  /* Muted text */
-  --fg-link:          #006997;  /* Teal link color */
-  --fg-on-dark:       #FAFBFC;  /* Text on dark backgrounds */
+  /* Accent */
+  --color-accent:      #7C3AED;
+  --color-accent-dark: #6D28D9;
+  --color-accent-light:#EDE9FE;
 
-  /* ── PRIMARY ACCENT (LexisNexis Red) ───────────────────── */
-  --accent-primary:         #E8171F;
-  --accent-primary-hover:   #E8171F;
-  --accent-primary-subtle:  rgba(232,23,31,0.08);
-  --accent-primary-border:  rgba(232,23,31,0.30);
+  /* Surfaces */
+  --color-surface-0:   #FFFFFF;
+  --color-surface-1:   #F7F8FA;
+  --color-surface-2:   #EEF0F4;
+  --color-surface-nav: #1B3A5C;
 
-  /* ── SECONDARY ACCENT (Teal Blue) ──────────────────────── */
-  --accent-secondary:       #006997;
-  --accent-secondary-hover: #005A82;
-  --accent-secondary-subtle: rgba(0,105,151,0.08);
-  --accent-secondary-border: rgba(0,105,151,0.30);
+  /* Text */
+  --color-text-primary:   #111827;
+  --color-text-secondary: #4B5563;
+  --color-text-muted:     #9CA3AF;
+  --color-text-inverse:   #FFFFFF;
+  --color-text-accent:    #6D28D9;
 
-  /* ── SEMANTIC — OUTCOMES ───────────────────────────────── */
-  --outcome-win:          #07874A;
-  --outcome-settle:       #B86E00;
-  --outcome-loss:         #E8171F;
+  /* Borders */
+  --color-border-light:   #E5E7EB;
+  --color-border-medium:  #D1D5DB;
+  --color-border-dark:    #9CA3AF;
+  --color-border-navy:    rgba(255,255,255,0.12);
 
-  /* ── UI SEMANTIC (STATUS COLORS) ───────────────────────── */
-  --success:              #07874A;
-  --success-subtle:       rgba(7,135,74,0.08);
-  --warning:              #B86E00;
-  --warning-subtle:       rgba(184,110,0,0.08);
-  --danger:               #E8171F;
-  --danger-subtle:        rgba(204,16,25,0.08);
-  --info:                 #006997;
-  --info-subtle:          rgba(0,105,151,0.08);
+  /* Data / Semantic */
+  --color-data-positive: #15803D;
+  --color-data-negative: #B91C1C;
+  --color-data-neutral:  #B45309;
+  --color-data-bg-pos:   #F0FDF4;
+  --color-data-bg-neg:   #FEF2F2;
+  --color-data-bg-neu:   #FFFBEB;
 
-  /* ── BORDERS ───────────────────────────────────────────── */
-  --border-default:   #D5D8DC;
-  --border-subtle:    #E5EBF0;
-  --border-focus:     #006997;
+  /* Status badges */
+  --color-badge-federal:    #1E3A5F;
+  --color-badge-bg-federal: #EFF6FF;
 
-  /* ── FONT FAMILIES (powered by next/font — auto-hosted, no CDN) ── */
-  --font-display: var(--font-lato), 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body:    var(--font-lato), 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono:    var(--font-jetbrains), 'Menlo', monospace;
+  /* ── LEGACY COMPAT (mapped to new tokens) ── */
+  --bg-base:          var(--color-surface-1);
+  --bg-elevated:      var(--color-surface-0);
+  --bg-input:         var(--color-surface-0);
+  --bg-hover:         var(--color-surface-1);
+  --bg-selection:     rgba(124,58,237,0.15);
+  --bg-dark:          var(--color-navy);
+  --bg-alt:           var(--color-surface-1);
 
-  /* ── BORDER RADIUS ─────────────────────────────────────── */
-  --r-sm: 2px;   --r-md: 2px;
-  --r-card: 2px;
+  --fg-primary:       var(--color-text-primary);
+  --fg-secondary:     var(--color-text-secondary);
+  --fg-subtle:        var(--color-text-muted);
+  --fg-link:          var(--color-text-accent);
+  --fg-on-dark:       var(--color-text-inverse);
 
-  /* ── SHADOWS (Clean corporate — flat buttons, subtle cards) */
+  --accent-primary:         var(--color-accent);
+  --accent-primary-hover:   var(--color-accent-dark);
+  --accent-primary-subtle:  var(--color-accent-light);
+  --accent-primary-border:  rgba(124,58,237,0.30);
+
+  --accent-secondary:       var(--color-navy);
+  --accent-secondary-hover: var(--color-navy-dark);
+  --accent-secondary-subtle: rgba(27,58,92,0.08);
+  --accent-secondary-border: rgba(27,58,92,0.30);
+
+  --outcome-win:          var(--color-data-positive);
+  --outcome-settle:       var(--color-data-neutral);
+  --outcome-loss:         var(--color-data-negative);
+
+  --success:              var(--color-data-positive);
+  --success-subtle:       var(--color-data-bg-pos);
+  --warning:              var(--color-data-neutral);
+  --warning-subtle:       var(--color-data-bg-neu);
+  --danger:               var(--color-data-negative);
+  --danger-subtle:        var(--color-data-bg-neg);
+  --info:                 var(--color-navy);
+  --info-subtle:          rgba(27,58,92,0.08);
+
+  --border-default:   var(--color-border-light);
+  --border-subtle:    var(--color-border-light);
+  --border-focus:     var(--color-accent);
+
+  /* ── TYPOGRAPHY ── */
+  --font-display: var(--font-montserrat), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    var(--font-roboto), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono:    var(--font-pt-mono), 'Menlo', monospace;
+
+  /* Heading Scale — Montserrat */
+  --text-h1: 2rem;
+  --text-h2: 1.5rem;
+  --text-h3: 1.125rem;
+  --text-h4: 0.9375rem;
+
+  /* Body Scale — Roboto */
+  --text-body-lg: 1rem;
+  --text-body:    0.9375rem;
+  --text-body-sm: 0.875rem;
+  --text-caption: 0.8125rem;
+
+  /* Data Scale — PT Mono */
+  --text-data-lg: 1.5rem;
+  --text-data:    0.9375rem;
+  --text-data-sm: 0.8125rem;
+
+  /* Spacing */
+  --space-section: 5rem;
+  --space-block:   2.5rem;
+  --space-element: 1.25rem;
+  --space-tight:   0.75rem;
+
+  --container-max: 1280px;
+  --container-wide: 1440px;
+  --container-narrow: 960px;
+
+  /* Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+
+  /* Legacy radius compat */
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-card: 6px;
+
+  /* Shadows */
   --shadow-xs:        0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm:        0 1px 3px rgba(0,0,0,0.08);
   --shadow-lg:        0 2px 8px rgba(0,0,0,0.08);
 
-  /* ── MOTION ────────────────────────────────────────────── */
+  /* Motion */
   --duration-fast:    120ms;
   --duration-base:    200ms;
   --duration-slow:    300ms;
 
-  /* ── Z-INDEX ───────────────────────────────────────────── */
+  /* Z-Index */
   --z-critical:   9999;
 
-  /* ── LINK COLOR (Lexis+ body link blue) ─────────────────── */
-  --color-link:           #006EBB;
-  --color-link-hover:     #E8171F;
+  /* Links */
+  --color-link:           var(--color-text-accent);
+  --color-link-hover:     var(--color-accent-dark);
 
-  /* ── CTA GRADIENT (Lexis+ exact) ───────────────────────── */
-  --gradient-cta:         linear-gradient(to right, #d91b5a 0%, #dd2c00 100%);
-  --gradient-cta-hover:   linear-gradient(to right, #dd2c00 0%, #d91b5a 100%);
-
-  /* ── GRADIENT BACKGROUNDS ──────────────────────────────── */
-  --gradient-hero: linear-gradient(160deg, #00172E 0%, #001A35 50%, #00172E 100%);
-  --gradient-accent: linear-gradient(to right, #d91b5a 0%, #dd2c00 100%);
+  /* CTA */
+  --gradient-cta:         var(--color-accent);
+  --gradient-cta-hover:   var(--color-accent-dark);
+  --gradient-hero: linear-gradient(160deg, #1B3A5C 0%, #122840 50%, #1B3A5C 100%);
+  --gradient-accent: linear-gradient(to right, #7C3AED 0%, #6D28D9 100%);
 }
 
-/* ═══════════════════════════════════════════════════════════
-   HIGH CONTRAST MODE
-   ═══════════════════════════════════════════════════════════ */
+/* High Contrast Mode */
 @media (prefers-contrast: high) {
   :root {
-    --fg-secondary:  #333333;
-    --border-default: #455A64;
-    --border-focus:  #004466;
-    --outcome-win:   #056B3B;
-    --outcome-settle: #8B5500;
-    --outcome-loss:  #990C13;
+    --color-text-secondary: #333333;
+    --color-border-light: #9CA3AF;
+    --color-border-medium: #6B7280;
+    --border-focus: #4C1D95;
+    --color-data-positive: #166534;
+    --color-data-neutral: #92400E;
+    --color-data-negative: #991B1B;
   }
 }
 
-/* ═══════════════════════════════════════════════════════════
-   ACCESSIBILITY — GLOBAL RULES
-   ═══════════════════════════════════════════════════════════ */
-
-/* Minimum tap targets on touch devices */
+/* Accessibility */
 @media (pointer: coarse) {
-  button,
-  [role="button"],
-  a,
-  input[type="checkbox"],
-  input[type="radio"],
-  select,
-  summary {
+  button, [role="button"], a, input[type="checkbox"], input[type="radio"], select, summary {
     min-height: 44px;
     min-width: 44px;
   }
 }
 
-/* Honor reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -134,45 +187,30 @@
   }
 }
 
-/* iOS zoom prevention — 16px minimum font on inputs */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  select,
-  textarea,
-  input[type="text"],
-  input[type="email"],
-  input[type="number"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="search"] {
+  select, textarea, input[type="text"], input[type="email"], input[type="number"],
+  input[type="tel"], input[type="url"], input[type="search"] {
     font-size: max(16px, 1em);
   }
 }
 
-/* Consistent focus ring */
 :focus-visible {
-  outline: 2px solid var(--border-focus);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* Text selection color */
 ::selection {
   background: var(--bg-selection);
-  color: #212529;
+  color: var(--color-text-primary);
 }
 
-/* Skip to content */
 .skip-to-content {
-  position: absolute;
-  top: -100%;
-  left: 0;
+  position: absolute; top: -100%; left: 0;
   z-index: var(--z-critical);
   padding: 8px 16px;
-  background: var(--accent-secondary);
-  color: #fff;
-  font-weight: 700;
+  background: var(--color-accent);
+  color: #fff; font-weight: 700;
   text-decoration: none;
-  border-radius: 0 0 var(--r-md) 0;
+  border-radius: 0 0 var(--radius-md) 0;
 }
-.skip-to-content:focus {
-  top: 0;
-}
+.skip-to-content:focus { top: 0; }

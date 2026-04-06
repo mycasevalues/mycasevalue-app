@@ -10,9 +10,10 @@ import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
 import localFont from 'next/font/local';
 
-// Self-hosted fonts via next/font/local — zero external requests,
-// GDPR compliant, built-in font-display: swap, and optimal preloading.
-const lato = localFont({
+// Self-hosted fonts via next/font/local — zero external requests, GDPR compliant.
+// Lato serves as display/body font; JetBrains Mono for data values.
+// CSS variables mapped to design system token names.
+const displayFont = localFont({
   src: [
     { path: '../public/fonts/lato-300.woff2', weight: '300', style: 'normal' },
     { path: '../public/fonts/lato-400.woff2', weight: '400', style: 'normal' },
@@ -20,10 +21,21 @@ const lato = localFont({
     { path: '../public/fonts/lato-900.woff2', weight: '900', style: 'normal' },
   ],
   display: 'swap',
-  variable: '--font-lato',
+  variable: '--font-montserrat',
 });
 
-const jetbrainsMono = localFont({
+const bodyFont = localFont({
+  src: [
+    { path: '../public/fonts/lato-300.woff2', weight: '300', style: 'normal' },
+    { path: '../public/fonts/lato-400.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/lato-700.woff2', weight: '700', style: 'normal' },
+    { path: '../public/fonts/lato-900.woff2', weight: '900', style: 'normal' },
+  ],
+  display: 'swap',
+  variable: '--font-roboto',
+});
+
+const monoFont = localFont({
   src: [
     { path: '../public/fonts/jetbrains-mono-400.woff2', weight: '400', style: 'normal' },
     { path: '../public/fonts/jetbrains-mono-500.woff2', weight: '500', style: 'normal' },
@@ -31,7 +43,7 @@ const jetbrainsMono = localFont({
     { path: '../public/fonts/jetbrains-mono-700.woff2', weight: '700', style: 'normal' },
   ],
   display: 'swap',
-  variable: '--font-jetbrains',
+  variable: '--font-pt-mono',
 });
 
 // Dynamic imports for client-side only components to improve initial page load
@@ -109,7 +121,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#00172E',
+  themeColor: '#1B3A5C',
 };
 
 // Schema.org structured data
@@ -261,7 +273,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${lato.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`}>
       <head>
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
@@ -321,7 +333,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}</style>
       </head>
-      <body style={{ background: '#F5F6F7', color: '#212529', minHeight: '100vh' }} suppressHydrationWarning>
+      <body style={{ background: '#F7F8FA', color: '#111827', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
         <a href="#main-content" className="skip-link" style={{
           position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px',
