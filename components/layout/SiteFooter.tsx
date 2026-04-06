@@ -15,33 +15,44 @@ const FOOTER_COLUMNS = [
       { label: 'Districts', href: '/districts' },
       { label: 'Judge statistics', href: '/judges' },
       { label: 'Settlement data', href: '/cases' },
+      { label: 'Calculator', href: '/calculator' },
+    ],
+  },
+  {
+    heading: 'Solutions',
+    links: [
+      { label: 'For individuals', href: '/solutions/individuals' },
+      { label: 'For small firms', href: '/solutions/small-firms' },
+      { label: 'For enterprise', href: '/solutions/enterprise' },
+      { label: 'For insurance', href: '/solutions/insurance' },
+      { label: 'For litigation funders', href: '/solutions/funders' },
+      { label: 'All solutions', href: '/solutions' },
+    ],
+  },
+  {
+    heading: 'Attorney Tools',
+    links: [
+      { label: 'Attorney mode', href: '/attorney' },
+      { label: 'Case predictor', href: '/attorney/case-predictor' },
+      { label: 'Judge intelligence', href: '/attorney/judge-intelligence' },
+      { label: 'API access', href: '/solutions/api' },
+      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
     heading: 'Resources',
     links: [
       { label: 'How it works', href: '/how-it-works' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Documentation', href: '/methodology' },
+      { label: 'Methodology', href: '/methodology' },
       { label: 'Blog', href: '/blog' },
-      { label: 'Calculator', href: '/calculator' },
-    ],
-  },
-  {
-    heading: 'Legal Tools',
-    links: [
-      { label: 'Attorney mode', href: '/attorney' },
-      { label: 'API access', href: '/attorney/api-access' },
-      { label: 'Integrations', href: '/integrations' },
+      { label: 'FAQ', href: '/faq' },
       { label: 'Translate', href: '/translate' },
-      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
     heading: 'Company',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Methodology', href: '/methodology' },
       { label: 'Contact', href: '/contact' },
       { label: 'Sign in', href: '/sign-in' },
       { label: 'Create account', href: '/sign-up' },
@@ -69,7 +80,7 @@ export default function SiteFooter() {
           className="site-footer-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr',
+            gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr 1fr',
             gap: '56px',
             marginBottom: '56px',
           }}
@@ -302,6 +313,24 @@ export default function SiteFooter() {
             fontWeight: 400,
           }}>
             For informational purposes only. Not legal advice.
+          </p>
+        </div>
+
+        {/* Legal disclaimer */}
+        <div style={{
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          paddingTop: '20px',
+          marginTop: '20px',
+        }}>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '11px',
+            color: 'rgba(213, 216, 220, 0.35)',
+            lineHeight: 1.6,
+            margin: 0,
+            maxWidth: '800px',
+          }}>
+            MyCaseValue provides federal court data for informational and research purposes only. Nothing on this platform constitutes legal advice or creates an attorney-client relationship. Data sourced from the Federal Judicial Center, PACER, CourtListener, and Bureau of Justice Statistics. Past case outcomes do not guarantee future results. Always consult a licensed attorney for legal advice.
           </p>
         </div>
       </div>
