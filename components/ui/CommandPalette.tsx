@@ -684,15 +684,15 @@ export default function CommandPalette({
           }}
         >
           <span>
-            <kbd style={{ fontSize: '10px', fontFamily: 'monospace', marginRight: '4px' }}>↑↓</kbd>
+            <kbd style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>↑↓</kbd>
             {lang === 'es' ? 'navegar' : 'navigate'}
           </span>
           <span>
-            <kbd style={{ fontSize: '10px', fontFamily: 'monospace', marginRight: '4px' }}>↵</kbd>
+            <kbd style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>↵</kbd>
             {lang === 'es' ? 'seleccionar' : 'select'}
           </span>
           <span>
-            <kbd style={{ fontSize: '10px', fontFamily: 'monospace', marginRight: '4px' }}>esc</kbd>
+            <kbd style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', marginRight: '4px' }}>esc</kbd>
             {lang === 'es' ? 'cerrar' : 'close'}
           </span>
         </div>

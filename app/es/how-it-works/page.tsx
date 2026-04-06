@@ -63,7 +63,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '4px' }}>
                   <span className="text-lg font-bold">1</span>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '4px' }}>
                   <span className="text-lg font-bold">2</span>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '4px' }}>
                   <span className="text-lg font-bold">3</span>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '4px' }}>
                   <span className="text-lg font-bold">4</span>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#E8171F', color: 'white', borderRadius: '50%' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '4px' }}>
                   <span className="text-lg font-bold">5</span>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function SpanishHowItWorksPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#E5EBF0', borderRadius: '50%' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F5F6F7', borderRadius: '4px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
@@ -177,7 +177,7 @@ export default function SpanishHowItWorksPage() {
             </div>
 
             <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#E5EBF0', borderRadius: '50%' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F5F6F7', borderRadius: '4px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6l4 2"/>
@@ -192,7 +192,7 @@ export default function SpanishHowItWorksPage() {
             </div>
 
             <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#E5EBF0', borderRadius: '50%' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F5F6F7', borderRadius: '4px' }}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
                   <path d="M9 12l2 2 4-4"/>
                   <circle cx="12" cy="12" r="10"/>

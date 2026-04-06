@@ -85,7 +85,7 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
   money: { label: 'Financial', color: '#F59E0B' },
   work: { label: 'Employment', color: '#212529' },
   injury: { label: 'Injury', color: '#EF4444' },
-  consumer: { label: 'Consumer', color: '#0D9488' },
+  consumer: { label: 'Consumer', color: '#006997' },
   rights: { label: 'Civil Rights', color: '#E8171F' },
   housing: { label: 'Housing', color: '#06B6D4' },
   medical: { label: 'Medical', color: '#EC4899' },

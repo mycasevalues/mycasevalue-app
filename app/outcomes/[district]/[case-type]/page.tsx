@@ -155,7 +155,7 @@ export default async function OutcomesPage({
 
   // Outcome distribution
   const outcomes = [
-    { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: '#0D9488' },
+    { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: '#006997' },
     { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: '#455A64' },
     { label: 'Trial Win', value: Math.round(districtWinRate * 0.6), color: '#333333' },
     { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: '#EF4444' },

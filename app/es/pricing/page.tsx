@@ -143,7 +143,7 @@ export default function SpanishPricingPage() {
                 'Citas de fuentes',
               ].map((feature, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" strokeWidth="2.5" className="flex-shrink-0 mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
                   <span className="text-sm" style={{ color: '#455A64' }}>
@@ -169,7 +169,7 @@ export default function SpanishPricingPage() {
               background: '#FFFFFF',
             }}>
             <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ borderRadius: '4px', background: '#FCE7E8', color: '#E8171F' }}>
+              style={{ borderRadius: '4px', background: 'rgba(232,23,31,0.08)', color: '#E8171F' }}>
               MEJOR VALOR
             </div>
 

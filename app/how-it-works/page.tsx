@@ -175,8 +175,8 @@ export default function HowItWorksPage() {
                     style={{
                       width: '40px',
                       height: '40px',
-                      borderRadius: '50%',
-                      background: '#E8171F',
+                      borderRadius: '4px',
+                      background: '#00172E',
                       color: '#FFFFFF',
                       fontSize: '18px',
                     }}>
