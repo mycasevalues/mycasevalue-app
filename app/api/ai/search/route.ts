@@ -16,7 +16,13 @@ type AISearchResponse = {
 async function extractParametersWithAI(query: string): Promise<AISearchResponse> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
-    throw new Error('ANTHROPIC_API_KEY not configured');
+    // Return fallback response instead of throwing - allows graceful degradation
+    console.warn('[api/ai/search] ANTHROPIC_API_KEY not configured, using fallback');
+    return {
+      caseType: query,
+      interpretation: 'Natural language search for: ' + query,
+      rawQuery: query,
+    };
   }
 
   const sanitizedQuery = sanitizeForPrompt(query, 500);
@@ -120,10 +126,36 @@ export async function POST(req: NextRequest) {
       interpretation: result.interpretation,
       disclosure: 'AI-generated interpretation - please verify parameters match your search intent',
     });
-  } catch (err) {
-    console.error('API error:', err);
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    console.error('[api/ai/search] error:', errorMessage);
+
+    if (err instanceof SyntaxError) {
+      return NextResponse.json(
+        {
+          error: 'Invalid JSON',
+          message: 'Request body must be valid JSON with a query field'
+        },
+        { status: 400 }
+      );
+    }
+
+    // Check for specific error messages and return appropriate status
+    if (errorMessage.includes('timeout') || errorMessage.includes('aborted')) {
+      return NextResponse.json(
+        {
+          error: 'Request timeout',
+          message: 'AI processing took too long. Please try again with a shorter query.'
+        },
+        { status: 504 }
+      );
+    }
+
     return NextResponse.json(
-      { error: 'Failed to process search query. Please try again.' },
+      {
+        error: 'Search processing failed',
+        message: 'An unexpected error occurred while processing your search. Please try again.'
+      },
       { status: 500 }
     );
   }

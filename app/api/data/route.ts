@@ -175,7 +175,8 @@ export async function GET(request: NextRequest) {
           source: circuits && circuits.length > 0 ? 'live' : 'static',
           data: circuits || []
         }, {
-          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
+          // Circuit stats are stable, cache for longer period
+          headers: { 'Cache-Control': 'public, s-maxage=7200, stale-while-revalidate=86400' }
         })
       }
 
@@ -189,7 +190,8 @@ export async function GET(request: NextRequest) {
           source: states && states.length > 0 ? 'live' : 'static',
           data: states || []
         }, {
-          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
+          // State stats are stable, cache for longer period
+          headers: { 'Cache-Control': 'public, s-maxage=7200, stale-while-revalidate=86400' }
         })
       }
 
@@ -204,7 +206,8 @@ export async function GET(request: NextRequest) {
           source: trending && trending.length > 0 ? 'live' : 'static',
           data: trending || []
         }, {
-          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
+          // Trending data is relatively static, cache for longer period
+          headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400' }
         })
       }
 
@@ -242,7 +245,8 @@ export async function GET(request: NextRequest) {
           source: judges && judges.length > 0 ? 'live' : 'static',
           data: judges || []
         }, {
-          headers: { 'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120' }
+          // Judge stats update infrequently, cache longer
+          headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400' }
         })
       }
 

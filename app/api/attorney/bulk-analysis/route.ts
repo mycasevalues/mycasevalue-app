@@ -109,7 +109,27 @@ export async function POST(req: NextRequest) {
       insights,
       disclaimer: 'Analysis based on aggregate federal court statistics. Individual case outcomes depend on specific facts and circumstances.',
     });
-  } catch {
-    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    console.error('[api/attorney/bulk-analysis] error:', errorMessage);
+
+    // Distinguish between JSON parsing errors and other errors
+    if (err instanceof SyntaxError) {
+      return NextResponse.json(
+        {
+          error: 'Invalid JSON',
+          message: 'Request body must be valid JSON with a nosCodes array'
+        },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json(
+      {
+        error: 'Analysis failed',
+        message: 'An unexpected error occurred while processing your analysis. Please try again.'
+      },
+      { status: 500 }
+    );
   }
 }

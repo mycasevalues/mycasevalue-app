@@ -289,7 +289,26 @@ export async function POST(req: NextRequest) {
       },
       disclaimer: 'This prediction is based on statistical analysis of historical federal court data and should not be considered legal advice. Actual outcomes depend on many case-specific factors not captured here. AI insights are generated analysis and should be reviewed by the attorney.',
     });
-  } catch {
-    return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    console.error('[api/attorney/case-predictor] error:', errorMessage);
+
+    if (err instanceof SyntaxError) {
+      return NextResponse.json(
+        {
+          error: 'Invalid JSON',
+          message: 'Request body must be valid JSON'
+        },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json(
+      {
+        error: 'Prediction failed',
+        message: 'An unexpected error occurred while generating the prediction. Please try again.'
+      },
+      { status: 500 }
+    );
   }
 }

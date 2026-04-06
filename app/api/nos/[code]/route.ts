@@ -33,13 +33,22 @@ export async function GET(
 
   try {
     const res = await fetch(`${origin}/api/data?type=case&nos=${encodeURIComponent(nos)}`);
+    if (!res.ok) {
+      return NextResponse.json(
+        { error: 'Failed to fetch case data', status: res.status },
+        { status: res.status, headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600' } }
+      );
+    }
     const data = await res.json();
     return NextResponse.json(data, {
       headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200' }
     });
-  } catch (fetchError) {
-    console.error('[api/nos] internal data fetch failed:', fetchError instanceof Error ? fetchError.message : fetchError);
-    return NextResponse.json({ source: 'static', data: null }, {
+  } catch (fetchError: unknown) {
+    const errorMessage = fetchError instanceof Error ? fetchError.message : 'Unknown error';
+    console.error('[api/nos] internal data fetch failed:', errorMessage);
+    // Return cached/static data as fallback on error
+    return NextResponse.json({ source: 'static', data: null, error: 'Temporarily unable to fetch live data' }, {
+      status: 503,
       headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200' }
     });
   }

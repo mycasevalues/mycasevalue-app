@@ -109,42 +109,54 @@ function generateJudgeStats(stateId: string) {
 }
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const state = searchParams.get('state') || '';
+  try {
+    const { searchParams } = new URL(req.url);
+    const state = searchParams.get('state') || '';
 
-  if (!state) {
-    // Return available states that have judge data
-    const available = Object.keys(JUDGE_POOL).map((id) => {
-      const s = STATES.find((st) => st.id === id);
-      return { id, label: s?.label || id };
+    if (!state) {
+      // Return available states that have judge data
+      const available = Object.keys(JUDGE_POOL).map((id) => {
+        const s = STATES.find((st) => st.id === id);
+        return { id, label: s?.label || id };
+      });
+      return NextResponse.json({ states: available });
+    }
+
+    // Validate state parameter to prevent prototype pollution
+    const validatedState = validateState(state);
+    if (!validatedState) {
+      return NextResponse.json(
+        { error: 'Invalid state code. Provide a valid 2-letter US state code.' },
+        { status: 400 }
+      );
+    }
+
+    const judges = generateJudgeStats(validatedState);
+
+    if (judges.length === 0) {
+      return NextResponse.json(
+        { error: `No judge data available for ${validatedState}. Try CA, NY, TX, FL, IL, or PA.` },
+        { status: 404 }
+      );
+    }
+
+    const stateLabel = STATES.find((s) => s.id === validatedState)?.label || validatedState;
+
+    return NextResponse.json({
+      state: validatedState,
+      stateLabel,
+      judges,
+      disclaimer: 'Statistics are derived from public federal court records (FJC IDB). Individual judge metrics are approximations based on district-level data and may not reflect exact judicial records.',
     });
-    return NextResponse.json({ states: available });
-  }
-
-  // Validate state parameter to prevent prototype pollution
-  const validatedState = validateState(state);
-  if (!validatedState) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('[api/attorney/judge-intelligence] error:', errorMessage);
     return NextResponse.json(
-      { error: 'Invalid state code. Provide a valid 2-letter US state code.' },
-      { status: 400 }
+      {
+        error: 'Judge data retrieval failed',
+        message: 'An unexpected error occurred while retrieving judge information.'
+      },
+      { status: 500 }
     );
   }
-
-  const judges = generateJudgeStats(validatedState);
-
-  if (judges.length === 0) {
-    return NextResponse.json(
-      { error: `No judge data available for ${validatedState}. Try CA, NY, TX, FL, IL, or PA.` },
-      { status: 404 }
-    );
-  }
-
-  const stateLabel = STATES.find((s) => s.id === validatedState)?.label || validatedState;
-
-  return NextResponse.json({
-    state: validatedState,
-    stateLabel,
-    judges,
-    disclaimer: 'Statistics are derived from public federal court records (FJC IDB). Individual judge metrics are approximations based on district-level data and may not reflect exact judicial records.',
-  });
 }

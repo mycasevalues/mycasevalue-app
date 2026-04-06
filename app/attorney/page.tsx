@@ -5,9 +5,30 @@ import React from 'react';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Attorney Mode - Professional Legal Intelligence Suite',
-  description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, and more.',
+  title: 'Attorney Mode — Professional Legal Intelligence Suite | MyCaseValue',
+  description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, PACER monitoring, and bulk analysis.',
   alternates: { canonical: 'https://www.mycasevalues.com/attorney' },
+  openGraph: {
+    title: 'Attorney Mode — Professional Legal Intelligence Suite',
+    description: 'Advanced AI-powered tools for legal professionals. Case prediction, document analysis, opposing counsel research, and more.',
+    url: 'https://www.mycasevalues.com/attorney',
+    type: 'website',
+    siteName: 'MyCaseValue',
+    images: [
+      {
+        url: 'https://www.mycasevalues.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Attorney Mode',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Attorney Mode',
+    description: 'Advanced AI-powered legal intelligence for attorneys.',
+    images: ['https://www.mycasevalues.com/og-image.png'],
+  },
   keywords: [
     'legal intelligence',
     'case prediction',
@@ -16,6 +37,8 @@ export const metadata: Metadata = {
     'PACER monitoring',
     'attorney software',
     'legal tech',
+    'AI legal tools',
+    'litigation intelligence',
   ],
 };
 

@@ -188,8 +188,24 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('[api/translate] error:', errorMessage);
+
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        {
+          error: 'Invalid JSON',
+          message: 'Request body must be valid JSON with a text field'
+        },
+        { status: 400 }
+      );
+    }
+
     return NextResponse.json(
-      { error: 'An error occurred while translating. Please try again.' },
+      {
+        error: 'Translation failed',
+        message: 'An unexpected error occurred while translating your text. Please try again.'
+      },
       { status: 500 }
     );
   }

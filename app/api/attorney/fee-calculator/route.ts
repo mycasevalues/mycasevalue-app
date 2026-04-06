@@ -166,9 +166,13 @@ export async function POST(req: NextRequest) {
       ...comparison,
     });
   } catch (err) {
-    console.error('API error:', err);
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    console.error('[api/attorney/fee-calculator] calculation error:', errorMessage);
     return NextResponse.json(
-      { error: 'Failed to calculate fees. Please try again.' },
+      {
+        error: 'Failed to calculate fees',
+        message: 'An unexpected error occurred while processing your request. Please try again.'
+      },
       { status: 500 }
     );
   }

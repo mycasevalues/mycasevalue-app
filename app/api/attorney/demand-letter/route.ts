@@ -140,10 +140,46 @@ export async function POST(req: NextRequest) {
       totalDamands: (economicDamages || 0) + (painSuffering || 0) + (lostWages || 0),
       disclaimer: 'This is an AI-generated template. It must be reviewed, customized, and approved by a licensed attorney before use. This template should not be sent to opposing counsel without legal review.',
     });
-  } catch (err) {
-    console.error('API error:', err);
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+    console.error('[api/attorney/demand-letter] error:', errorMessage);
+
+    if (err instanceof SyntaxError) {
+      return NextResponse.json(
+        {
+          error: 'Invalid JSON',
+          message: 'Request body must be valid JSON'
+        },
+        { status: 400 }
+      );
+    }
+
+    // Check for specific error conditions
+    if (errorMessage.includes('not configured')) {
+      return NextResponse.json(
+        {
+          error: 'Service temporarily unavailable',
+          message: 'The demand letter generation service is not available. Please try again later.'
+        },
+        { status: 503 }
+      );
+    }
+
+    if (errorMessage.includes('timeout') || errorMessage.includes('aborted')) {
+      return NextResponse.json(
+        {
+          error: 'Request timeout',
+          message: 'The request took too long. Please try again with less complex facts.'
+        },
+        { status: 504 }
+      );
+    }
+
     return NextResponse.json(
-      { error: 'Failed to generate demand letter. Please try again.' },
+      {
+        error: 'Generation failed',
+        message: 'An unexpected error occurred while generating the demand letter. Please try again.'
+      },
       { status: 500 }
     );
   }

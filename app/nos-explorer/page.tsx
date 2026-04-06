@@ -8,14 +8,29 @@ import NosExplorerClient from '../../components/NosExplorerClient';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'NOS Code Explorer — All Federal Civil Case Types',
+  title: 'NOS Code Explorer — All 84 Federal Case Types | MyCaseValue',
   description: 'Explore all 84 Nature of Suit (NOS) codes used in federal civil litigation. Search, filter, and compare win rates, settlement data, duration, and recovery ranges.',
   alternates: { canonical: `${SITE_URL}/nos-explorer` },
   openGraph: {
-    title: 'NOS Code Explorer — Federal Court Case Types',
-    description: 'Interactive explorer for all 84 federal NOS codes with win rates, settlement data, and recovery ranges.',
+    title: 'NOS Code Explorer — All 84 Federal Case Types',
+    description: 'Interactive explorer for all 84 federal NOS codes with win rates, settlement data, timelines, and recovery ranges.',
     url: `${SITE_URL}/nos-explorer`,
     type: 'website',
+    siteName: 'MyCaseValue',
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'NOS Code Explorer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NOS Code Explorer',
+    description: 'Explore all 84 federal NOS codes with case outcome data.',
+    images: [`${SITE_URL}/og-image.png`],
   },
 };
 
