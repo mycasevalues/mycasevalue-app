@@ -265,6 +265,78 @@ const features: { icon: React.ReactNode; title: string; description: string; bad
     badge: 'available' as const,
     href: '/attorney/api-access',
   },
+  {
+    icon: <ScalesIcon />,
+    title: 'Motion Success Rates',
+    description:
+      'Federal motion grant rates and success metrics by case type. Compare motion strategies across jurisdictions.',
+    badge: 'available' as const,
+    href: '/attorney/motion-analytics',
+  },
+  {
+    icon: <CheckIcon />,
+    title: 'Expert Witness Intelligence',
+    description:
+      'Expert categories, fee ranges, retention timing, and Daubert challenge success rates by case type.',
+    badge: 'available' as const,
+    href: '/attorney/expert-witness',
+  },
+  {
+    icon: <DocumentIcon />,
+    title: 'Demand Letter Generator',
+    description:
+      'AI-powered demand letter drafting with data-backed settlement figures and legal citations.',
+    badge: 'available' as const,
+    href: '/attorney/demand-letter',
+  },
+  {
+    icon: <TargetIcon />,
+    title: 'Statute of Limitations Calculator',
+    description:
+      'Calculate filing deadlines by case type and jurisdiction with tolling rules and EEOC timelines.',
+    badge: 'available' as const,
+    href: '/attorney/sol-calculator',
+  },
+  {
+    icon: <ChartIcon />,
+    title: 'Litigation Deadline Calculator',
+    description:
+      'Auto-calculate federal litigation deadlines from filing date with FRCP defaults and calendar export.',
+    badge: 'available' as const,
+    href: '/attorney/deadline-calculator',
+  },
+  {
+    icon: <SearchIcon />,
+    title: 'Client Intake Form Generator',
+    description:
+      'Generate case-type-specific intake questionnaires with conflict check fields and HTML export.',
+    badge: 'available' as const,
+    href: '/attorney/intake-forms',
+  },
+  {
+    icon: <ScalesIcon />,
+    title: 'Fee Schedule Calculator',
+    description:
+      'Compare contingency, hourly, hybrid, and lodestar fee arrangements with data-backed estimates.',
+    badge: 'available' as const,
+    href: '/attorney/fee-calculator',
+  },
+  {
+    icon: <GavelIcon />,
+    title: 'Case Timeline Generator',
+    description:
+      'Visual litigation timeline with auto-populated milestones and statistical resolution context.',
+    badge: 'available' as const,
+    href: '/attorney/case-timeline',
+  },
+  {
+    icon: <AIIcon />,
+    title: 'Local Court Rules Reference',
+    description:
+      'Quick-reference guide for local rules across all 94 federal districts, organized by circuit.',
+    badge: 'available' as const,
+    href: '/attorney/court-rules',
+  },
 ];
 
 export default function AttorneyPage() {
@@ -471,7 +543,7 @@ export default function AttorneyPage() {
                 icon: <TargetIcon />,
                 title: 'Case Timeline Projections',
                 description: 'Historical duration data by case type and district to forecast case resolution timelines.',
-                href: '/search',
+                href: '/attorney/case-timeline',
               },
             ].map((item, index) => (
               <Link key={index} href={item.href} style={{ textDecoration: 'none', color: 'inherit' }}>
