@@ -194,7 +194,15 @@ export default function TermsPage() {
             color: 'rgba(255,255,255,0.7)',
             margin: 0
           }}>
-            Last updated: January 2025
+            Last updated: April 2026
+          </p>
+          <p style={{
+            fontSize: '13px',
+            lineHeight: '1.5',
+            color: 'rgba(255,255,255,0.6)',
+            marginTop: '8px'
+          }}>
+            This page is print-friendly. Use your browser's print function (Ctrl+P / Cmd+P) for a formatted PDF.
           </p>
         </div>
       </div>
@@ -228,6 +236,7 @@ export default function TermsPage() {
             <a href="#governing-law" className="legal-toc-link">12. Governing Law</a>
             <a href="#privacy" className="legal-toc-link">13. Privacy</a>
             <a href="#contact" className="legal-toc-link">14. Contact Us</a>
+            <a href="#related-legal" className="legal-toc-link">Related Legal Pages</a>
           </div>
         </nav>
 
@@ -254,65 +263,115 @@ export default function TermsPage() {
           <section id="acceptance">
             <h2 className="legal-section-heading">1. Acceptance of Terms</h2>
             <p className="legal-body">
-              These Terms of Service ("Terms") govern your access to and use of MyCaseValue (the "Service").
-              By accessing, browsing, or using MyCaseValue, you accept and agree to be bound by these Terms.
-              If you do not agree, do not use the Service.
+              These Terms of Service ("Terms," "Agreement") govern your access to and use of MyCaseValue, including our website at https://mycasevalues.com, mobile applications, APIs, and all related services (collectively, the "Service").
+              By accessing, browsing, using, or registering for an account on MyCaseValue, you acknowledge that you have read, understand, and agree to be bound by these Terms in their entirety.
             </p>
             <p className="legal-body">
-              We may modify these Terms at any time. Changes are effective immediately upon posting.
-              Your continued use constitutes acceptance of the updated Terms.
+              If you do not agree to these Terms or any part thereof, you must immediately cease use of the Service and contact us at <a href="mailto:support@mycasevalue.com" className="legal-contact-email">support@mycasevalue.com</a> if you have questions.
             </p>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Modifications to Terms</h4>
+              <p className="legal-body">
+                We may modify these Terms at any time, in our sole discretion, including but not limited to changes to Service features, pricing, or policies. All modifications are effective immediately upon posting to this page. Your continued use of MyCaseValue after any modification constitutes your acceptance of the updated Terms. We encourage you to review this page periodically for changes. If you do not accept any modification, your exclusive remedy is to cease using the Service.
+              </p>
+            </div>
           </section>
 
           <section id="description">
             <h2 className="legal-section-heading">2. Description of Service</h2>
             <p className="legal-body">
-              MyCaseValue is a research tool that aggregates and displays historical outcome data from 5.1M+ federal civil court cases.
-              The Service provides aggregate statistics on case outcomes, win rates, settlement percentages, timelines, and recovery ranges
-              by case type, circuit, and jurisdiction.
+              MyCaseValue is a federal court data analytics and research tool that aggregates, categorizes, and displays historical outcome data from 5.1+ million federal civil court cases spanning multiple decades.
+              The Service provides aggregate statistics on case outcomes, win/loss rates, settlement percentages, case timelines, recovery ranges, judge analytics, and trends analyzed by case type, federal circuit, judicial district, judge, and other filters.
             </p>
-            <p className="legal-body">
-              The Service is provided "as-is" for informational and research purposes only. It is not a legal service, does not provide legal advice,
-              and does not replace consultation with a licensed attorney.
+
+            <p className="legal-body" style={{ marginTop: '16px' }}>
+              <strong>Data sources:</strong> We aggregate publicly available federal court data from the Federal Judicial Center Integrated Database (FJC IDB), Public Access to Court Electronic Records (PACER), CourtListener, and other official federal court databases. The underlying court data is in the public domain.
             </p>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Service Scope and Limitations</h4>
+              <p className="legal-body">
+                The Service is provided "AS-IS" for informational, research, and due diligence purposes only. It is NOT:
+              </p>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}>A legal service, legal advice, or legal counsel of any kind</li>
+                <li style={{ marginBottom: '8px' }}>A substitute for consultation with a qualified, licensed attorney</li>
+                <li style={{ marginBottom: '8px' }}>Predictive of any individual case outcome</li>
+                <li style={{ marginBottom: '8px' }}>An endorsement of any specific attorney, firm, or legal strategy</li>
+                <li>A comprehensive source of all federal court data (data is aggregated from public records)</li>
+              </ul>
+            </div>
           </section>
 
           <section id="not-legal-advice">
-            <h2 className="legal-section-heading">3. NOT Legal Advice — Disclaimer</h2>
+            <h2 className="legal-section-heading">3. NOT Legal Advice — Critical Disclaimer</h2>
             <p className="legal-body">
-              <strong>MyCaseValue is not a law firm. We do not provide legal advice, legal opinions, or legal analysis of individual cases.</strong>
+              <strong>IMPORTANT: MyCaseValue is not a law firm, and nothing on this Service constitutes legal advice, legal counsel, a legal opinion, or legal analysis of any kind.</strong> We do not provide legal advice to any person or entity under any circumstances.
             </p>
-            <p className="legal-body">
-              Specifically:
-            </p>
-            <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-              <li style={{ marginBottom: '8px' }}>No attorney-client relationship is created by using MyCaseValue</li>
-              <li style={{ marginBottom: '8px' }}>Aggregate data cannot evaluate your specific case</li>
-              <li style={{ marginBottom: '8px' }}>Historical outcomes do not predict your case outcome</li>
-              <li style={{ marginBottom: '8px' }}>We do not evaluate case strength, liability, or damages</li>
-              <li style={{ marginBottom: '8px' }}>Past win rates do not guarantee future results</li>
-              <li>Settlement ranges are historical averages, not valuations</li>
-            </ul>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>No Attorney-Client Relationship</h4>
+              <p className="legal-body">
+                Use of MyCaseValue does not create, establish, or imply an attorney-client relationship, professional relationship, or duty of care between you and MyCaseValue, any of its employees, operators, or affiliates. We are not your lawyer and cannot provide legal advice specific to your situation.
+              </p>
+            </div>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>What MyCaseValue Data Does NOT Do:</h4>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}><strong>Predict case outcomes:</strong> Aggregate historical win rates do not predict what will happen in your specific case. Every case is unique with different facts, law, judge, and representation.</li>
+                <li style={{ marginBottom: '8px' }}><strong>Evaluate your case:</strong> We cannot assess the strength, merit, likelihood of success, or settlement value of your specific case.</li>
+                <li style={{ marginBottom: '8px' }}><strong>Provide valuations:</strong> Settlement ranges shown are historical averages from past cases, not valuations of your claim. They are not reliable predictors of what your case might settle for.</li>
+                <li style={{ marginBottom: '8px' }}><strong>Advise on strategy:</strong> We do not recommend litigation strategies, settlement decisions, or legal approaches.</li>
+                <li style={{ marginBottom: '8px' }}><strong>Guarantee results:</strong> Past win rates, settlement ranges, or trial outcomes do not guarantee any particular result for your case.</li>
+                <li><strong>Replace attorney consultation:</strong> You must consult with a licensed attorney before taking any legal action, making settlement decisions, or relying on any information from this Service.</li>
+              </ul>
+            </div>
+
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              <strong>You are solely responsible for consulting with a licensed attorney before taking legal action.</strong>
+              <strong>You are solely and exclusively responsible for obtaining independent legal advice from a qualified, licensed attorney in your jurisdiction before taking any legal action or making any decisions based on information from MyCaseValue.</strong>
             </p>
           </section>
 
           <section id="limitations">
-            <h2 className="legal-section-heading">4. Limitations of Liability</h2>
+            <h2 className="legal-section-heading">4. Limitations of Liability and Disclaimers</h2>
             <p className="legal-body">
-              <strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</strong>
+              <strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:</strong>
             </p>
-            <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-              <li style={{ marginBottom: '8px' }}>MyCaseValue is provided "AS-IS" without warranties of any kind</li>
-              <li style={{ marginBottom: '8px' }}>We disclaim all implied warranties (merchantability, fitness for purpose)</li>
-              <li style={{ marginBottom: '8px' }}>We are not liable for errors, omissions, or inaccuracies in data</li>
-              <li style={{ marginBottom: '8px' }}>We are not liable for decisions made based on our data</li>
-              <li style={{ marginBottom: '8px' }}>In no event shall MyCaseValue be liable for indirect, incidental, or consequential damages</li>
-              <li>Our total liability is limited to the amount you paid us (if any)</li>
-            </ul>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Disclaimer of Warranties</h4>
+              <p className="legal-body">
+                MyCaseValue is provided on an "AS-IS" and "AS-AVAILABLE" basis. We disclaim all warranties, express, implied, statutory, or otherwise, including but not limited to:
+              </p>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}>Implied warranties of merchantability, fitness for a particular purpose, and non-infringement</li>
+                <li style={{ marginBottom: '8px' }}>Warranties regarding accuracy, completeness, timeliness, or reliability of data</li>
+                <li style={{ marginBottom: '8px' }}>Warranties that the Service will be uninterrupted, error-free, or secure</li>
+                <li style={{ marginBottom: '8px' }}>Warranties that any defects or errors will be corrected</li>
+              </ul>
+            </div>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Limitation of Liability</h4>
+              <p className="legal-body">
+                <strong>In no event shall MyCaseValue be liable for:</strong>
+              </p>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}>Any errors, omissions, inaccuracies, or gaps in data or analysis</li>
+                <li style={{ marginBottom: '8px' }}>Any decisions you make or actions you take based on information from the Service</li>
+                <li style={{ marginBottom: '8px' }}>Any losses, damages, or costs resulting from reliance on our data or statistics</li>
+                <li style={{ marginBottom: '8px' }}>Indirect, incidental, consequential, special, or punitive damages</li>
+                <li style={{ marginBottom: '8px' }}>Lost profits, lost revenue, lost data, or business interruption</li>
+              </ul>
+              <p className="legal-body" style={{ marginTop: '12px' }}>
+                <strong>Cap on liability:</strong> To the extent permitted by law, MyCaseValue's total liability for any claim arising out of or relating to these Terms, the Service, or your use thereof shall not exceed the lesser of: (i) the amount you paid MyCaseValue in the 12 months preceding the claim, or (ii) $100 USD. This limitation applies regardless of the theory of liability (contract, tort, negligence, strict liability, or otherwise).
+              </p>
+            </div>
+
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              You use MyCaseValue entirely at your own risk.
+              <strong>You acknowledge and accept that you use MyCaseValue entirely at your own risk.</strong> If you are dissatisfied with the Service or these Terms, your exclusive remedy is to cease using the Service.
             </p>
           </section>
 
@@ -334,19 +393,38 @@ export default function TermsPage() {
           </section>
 
           <section id="user-responsibilities">
-            <h2 className="legal-section-heading">6. User Responsibilities</h2>
+            <h2 className="legal-section-heading">6. Acceptable Use and User Responsibilities</h2>
             <p className="legal-body">
-              By using MyCaseValue, you agree to:
+              By using MyCaseValue, you agree to comply with all applicable laws and these Terms. You are responsible for your use of the Service. You specifically agree to:
             </p>
-            <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-              <li style={{ marginBottom: '8px' }}>Use the Service only for lawful purposes</li>
-              <li style={{ marginBottom: '8px' }}>Not engage in harassment, abuse, or illegal activity</li>
-              <li style={{ marginBottom: '8px' }}>Not attempt to disrupt or hack the Service</li>
-              <li style={{ marginBottom: '8px' }}>Not scrape or bulk-download data without permission</li>
-              <li style={{ marginBottom: '8px' }}>Not reverse-engineer or copy our software</li>
-              <li style={{ marginBottom: '8px' }}>Not use the Service for automated data collection</li>
-              <li>Comply with all applicable laws and regulations</li>
-            </ul>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Permitted Uses</h4>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}>Use the Service only for lawful, legitimate research, due diligence, and informational purposes</li>
+                <li style={{ marginBottom: '8px' }}>Use the Service in compliance with all applicable federal, state, and local laws</li>
+                <li style={{ marginBottom: '8px' }}>Respect the intellectual property rights of MyCaseValue and third parties</li>
+                <li>Report any security vulnerabilities to us at <a href="mailto:security@mycasevalue.com" className="legal-contact-email">security@mycasevalue.com</a></li>
+              </ul>
+            </div>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Prohibited Activities</h4>
+              <p className="legal-body">
+                You agree NOT to:
+              </p>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}>Engage in any illegal activity or violate any laws or regulations</li>
+                <li style={{ marginBottom: '8px' }}>Harass, abuse, defame, threaten, or intimidate other users or MyCaseValue personnel</li>
+                <li style={{ marginBottom: '8px' }}>Disrupt, overload, or attack the Service or MyCaseValue's infrastructure</li>
+                <li style={{ marginBottom: '8px' }}>Attempt to hack, reverse-engineer, or gain unauthorized access to the Service or systems</li>
+                <li style={{ marginBottom: '8px' }}>Scrape, bulk-download, systematically extract, or make unauthorized copies of data without written permission</li>
+                <li style={{ marginBottom: '8px' }}>Automate data collection beyond what is needed for your individual use</li>
+                <li style={{ marginBottom: '8px' }}>Create derivative products or competing services based on MyCaseValue data or methodology</li>
+                <li style={{ marginBottom: '8px' }}>Distribute, sell, or redistribute MyCaseValue data or reports</li>
+                <li style={{ marginBottom: '8px' }}>Use the Service to provide legal advice or represent yourself as providing such</li>
+              </ul>
+            </div>
           </section>
 
           <section id="intellectual-property">
@@ -439,7 +517,7 @@ export default function TermsPage() {
           <section id="contact">
             <h2 className="legal-section-heading">14. Contact Us</h2>
             <p className="legal-body">
-              For questions about these Terms, contact us:
+              If you have questions about these Terms of Service, dispute resolution matters, or other inquiries, please contact us:
             </p>
             <div style={{
               marginTop: '16px',
@@ -453,10 +531,42 @@ export default function TermsPage() {
               border: '1px solid #D5D8DC'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Email:</strong> <a href="mailto:support@mycasevalue.com" className="legal-contact-email">support@mycasevalue.com</a>
+                <strong>General Support:</strong> <a href="mailto:support@mycasevalue.com" className="legal-contact-email">support@mycasevalue.com</a>
+              </p>
+              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Legal Inquiries:</strong> <a href="mailto:legal@mycasevalue.com" className="legal-contact-email">legal@mycasevalue.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
                 <strong>Website:</strong> <a href="https://mycasevalues.com" className="legal-contact-email">https://mycasevalues.com</a>
+              </p>
+            </div>
+
+            <p className="legal-body" style={{ marginTop: '16px' }}>
+              We will acknowledge your inquiry within 24 hours and provide a substantive response within 30 days, unless otherwise required by law.
+            </p>
+          </section>
+
+          <section id="related-legal">
+            <h2 className="legal-section-heading">Related Legal Pages</h2>
+            <p className="legal-body">
+              These Terms are part of MyCaseValue's complete legal framework. We recommend reviewing our other legal documents to fully understand your rights and responsibilities:
+            </p>
+            <div style={{
+              marginTop: '16px',
+              paddingLeft: '16px',
+              paddingRight: '16px',
+              paddingTop: '16px',
+              paddingBottom: '16px',
+              borderRadius: '2px',
+              background: '#FFFFFF',
+              color: '#212529',
+              border: '1px solid #D5D8DC'
+            }}>
+              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Privacy Policy:</strong> Review our <a href="/privacy" className="legal-contact-email">Privacy Policy</a> to understand how we collect, use, and protect your data.
+              </p>
+              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Disclaimer:</strong> Read our <a href="/disclaimer" className="legal-contact-email">Disclaimer</a> for important information about the limitations and proper use of MyCaseValue data.
               </p>
             </div>
           </section>

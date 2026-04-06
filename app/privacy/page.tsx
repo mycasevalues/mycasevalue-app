@@ -194,7 +194,15 @@ export default function PrivacyPage() {
             color: 'rgba(255,255,255,0.7)',
             margin: 0
           }}>
-            Last updated: January 2025
+            Last updated: April 2026
+          </p>
+          <p style={{
+            fontSize: '13px',
+            lineHeight: '1.5',
+            color: 'rgba(255,255,255,0.6)',
+            marginTop: '8px'
+          }}>
+            This page is print-friendly. Use your browser's print function (Ctrl+P / Cmd+P) for a formatted PDF.
           </p>
         </div>
       </div>
@@ -226,6 +234,7 @@ export default function PrivacyPage() {
             <a href="#international-users" className="legal-toc-link">10. International Users</a>
             <a href="#updates" className="legal-toc-link">11. Updates to This Policy</a>
             <a href="#contact" className="legal-toc-link">12. Contact Us</a>
+            <a href="#related-legal" className="legal-toc-link">Related Legal Pages</a>
           </div>
         </nav>
 
@@ -234,11 +243,14 @@ export default function PrivacyPage() {
           <section id="introduction">
             <h2 className="legal-section-heading">1. Introduction</h2>
             <p className="legal-body">
-              MyCaseValue ("we," "us," or "our") operates the website https://mycasevalues.com and associated tools (the "Service").
-              This Privacy Policy explains how we collect, use, disclose, and otherwise handle your information when you use our Service.
+              MyCaseValue ("we," "us," "our," or the "Company") operates the website https://mycasevalues.com, related mobile applications, and associated tools (collectively, the "Service").
+              This Privacy Policy ("Policy") explains how we collect, use, disclose, and otherwise handle your information when you use our Service, including the types of information we gather, how we use it, and your rights regarding that information.
             </p>
             <p className="legal-body">
-              We are committed to protecting your privacy. We collect minimal data and do not sell, rent, or share your personal information with third parties for marketing purposes.
+              We are committed to protecting your privacy and maintaining transparency about our data practices. We collect minimal personal information necessary to provide our Service and comply with applicable laws. We do not sell, rent, or share your personal information with third parties for their marketing purposes.
+            </p>
+            <p className="legal-body">
+              This Policy applies to all visitors and users of MyCaseValue, regardless of how you access the Service. By using MyCaseValue, you consent to our privacy practices described in this Policy.
             </p>
           </section>
 
@@ -253,10 +265,11 @@ export default function PrivacyPage() {
                 When you use MyCaseValue, you may voluntarily provide information such as:
               </p>
               <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-                <li style={{ marginBottom: '8px' }}>Account information (name, email) if you create an account</li>
-                <li style={{ marginBottom: '8px' }}>Case type searches and research queries</li>
-                <li style={{ marginBottom: '8px' }}>Payment information (processed securely through Stripe; we do not store card details)</li>
-                <li>Communication with our support team</li>
+                <li style={{ marginBottom: '8px' }}><strong>Account information:</strong> Name, email address, and professional affiliation if you create an account or subscribe to services</li>
+                <li style={{ marginBottom: '8px' }}><strong>Search and usage data:</strong> Case type searches, jurisdictional filters, research queries, report requests, and features you access</li>
+                <li style={{ marginBottom: '8px' }}><strong>Payment information:</strong> Processed securely through Stripe (PCI-DSS compliant); we do not store full credit card numbers or sensitive payment card data</li>
+                <li style={{ marginBottom: '8px' }}><strong>Communication data:</strong> Messages, emails, feedback, and inquiries sent to our support team</li>
+                <li style={{ marginBottom: '8px' }}><strong>Voluntary submissions:</strong> Any information you choose to provide in surveys, feedback forms, or user research participation</li>
               </ul>
             </div>
 
@@ -265,81 +278,121 @@ export default function PrivacyPage() {
                 2.2 Information Collected Automatically
               </h3>
               <p className="legal-body">
-                When you visit our Service, we automatically collect certain information:
+                When you visit or use our Service, we automatically collect certain information about your interaction with us:
               </p>
               <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-                <li style={{ marginBottom: '8px' }}>Usage data: pages visited, case types searched, time spent on Service, referrer</li>
-                <li style={{ marginBottom: '8px' }}>Device information: browser type, operating system, device type</li>
-                <li style={{ marginBottom: '8px' }}>IP address (not personally identified; used for analytics and fraud prevention)</li>
-                <li>Cookies and similar tracking technologies (see Section 3)</li>
+                <li style={{ marginBottom: '8px' }}><strong>Usage data:</strong> Pages visited, case types searched, reports generated, features used, time spent on Service, search queries, referral source, and click patterns</li>
+                <li style={{ marginBottom: '8px' }}><strong>Device and browser information:</strong> Browser type and version, operating system, device type, unique device identifiers, and mobile network information</li>
+                <li style={{ marginBottom: '8px' }}><strong>IP address:</strong> Used for geographic analytics, fraud detection, and security purposes; not personally identified or linked to your name without additional data</li>
+                <li style={{ marginBottom: '8px' }}><strong>Cookies and tracking:</strong> Session cookies, authentication tokens, and analytics tracking (see Section 3 for details)</li>
+                <li style={{ marginBottom: '8px' }}><strong>Federal court data sourcing:</strong> We track which PACER/FJC databases are accessed to maintain data quality; individual query data is not stored after processing</li>
               </ul>
             </div>
 
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: '600', color: '#212529', marginTop: '24px', marginBottom: '12px' }}>
-                2.3 Information We Do NOT Collect
+                2.3 Information We Do NOT Collect or Store
               </h3>
               <p className="legal-body">
-                We do not collect or store:
+                We are committed to minimizing data collection. We deliberately do not collect or store:
               </p>
               <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-                <li style={{ marginBottom: '8px' }}>Full credit card numbers (payments handled securely by Stripe)</li>
-                <li style={{ marginBottom: '8px' }}>Social Security numbers or government IDs</li>
-                <li style={{ marginBottom: '8px' }}>Detailed location data (IP-based location is approximate only)</li>
-                <li style={{ marginBottom: '8px' }}>Biometric data or health information</li>
-                <li>Your actual legal case details or personal case information</li>
+                <li style={{ marginBottom: '8px' }}>Full credit card numbers or payment card data (all payments processed securely by Stripe; PCI-DSS compliant)</li>
+                <li style={{ marginBottom: '8px' }}>Social Security numbers, government IDs, passport numbers, or other sensitive identification</li>
+                <li style={{ marginBottom: '8px' }}>Precise geolocation data (we collect IP address for analytics only; geo-targeting is approximate by region)</li>
+                <li style={{ marginBottom: '8px' }}>Biometric data, genetic information, or health information</li>
+                <li style={{ marginBottom: '8px' }}>Your personal legal case details, client matter information, or attorney-client privileged communications</li>
+                <li style={{ marginBottom: '8px' }}>Browsing history of other websites</li>
+                <li style={{ marginBottom: '8px' }}>Video or audio recordings without your explicit consent</li>
               </ul>
             </div>
           </section>
 
           <section id="cookies-tracking">
-            <h2 className="legal-section-heading">3. Cookies and Tracking</h2>
+            <h2 className="legal-section-heading">3. Cookies and Tracking Technologies</h2>
             <p className="legal-body">
-              MyCaseValue uses cookies and similar technologies for:
+              MyCaseValue uses cookies and similar tracking technologies to provide, secure, and improve our Service. Cookies are small files stored on your device that help us recognize you and store information about your preferences and activity.
             </p>
-            <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-              <li style={{ marginBottom: '8px' }}><strong>Essential cookies:</strong> Necessary for site functionality, session management, and security</li>
-              <li style={{ marginBottom: '8px' }}><strong>Analytics cookies:</strong> To understand how you use our Service and improve user experience</li>
-              <li><strong>Preference cookies:</strong> To remember your settings and preferences</li>
-            </ul>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Types of Cookies We Use:</h4>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}><strong>Essential/Functional Cookies:</strong> Necessary for site functionality, session management, authentication, security, and fraud prevention. These are required for the Service to function properly.</li>
+                <li style={{ marginBottom: '8px' }}><strong>Analytics Cookies:</strong> Collect aggregated data about how you use our Service (pages visited, features used, time on site) to understand user behavior and improve user experience. We use this data to identify trends and optimize content.</li>
+                <li style={{ marginBottom: '8px' }}><strong>Preference Cookies:</strong> Remember your settings, preferences, and choices (e.g., display preferences, accessibility settings) across visits.</li>
+                <li><strong>Performance Cookies:</strong> Monitor Service performance, load times, and technical stability.</li>
+              </ul>
+            </div>
+
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              Most browsers allow you to control cookies through browser settings. Disabling essential cookies may limit functionality.
-              We do not use cookies to track you across other websites.
+              <strong>Cookie Management:</strong> Most browsers allow you to control cookies through browser settings. You can set your browser to reject all cookies, notify you when a cookie is sent, or delete cookies. However, disabling essential cookies may limit Service functionality and prevent you from using certain features.
+            </p>
+
+            <p className="legal-body" style={{ marginTop: '16px' }}>
+              We do not use cookies to track you across other websites or create cross-site user profiles. We only use cookies within the MyCaseValue domain for the purposes described above.
             </p>
           </section>
 
           <section id="how-use-information">
             <h2 className="legal-section-heading">4. How We Use Your Information</h2>
             <p className="legal-body">
-              We use the information we collect to:
+              We use the information we collect for the following purposes:
             </p>
             <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-              <li style={{ marginBottom: '8px' }}>Provide, maintain, and improve the Service</li>
-              <li style={{ marginBottom: '8px' }}>Process purchases and send confirmations</li>
-              <li style={{ marginBottom: '8px' }}>Send transactional emails (account confirmations, receipts, support responses)</li>
-              <li style={{ marginBottom: '8px' }}>Understand user behavior and analyze Service usage (analytics only)</li>
-              <li style={{ marginBottom: '8px' }}>Detect and prevent fraud, abuse, and technical issues</li>
-              <li>Comply with legal obligations</li>
+              <li style={{ marginBottom: '8px' }}><strong>Provide and maintain the Service:</strong> Create and manage your account, process your requests, deliver reports, and ensure Service stability and security</li>
+              <li style={{ marginBottom: '8px' }}><strong>Payment processing:</strong> Process purchases, subscriptions, billing inquiries, and send transaction confirmations and invoices</li>
+              <li style={{ marginBottom: '8px' }}><strong>Customer communications:</strong> Send transactional emails (account confirmations, password resets, receipts, subscription updates, support responses)</li>
+              <li style={{ marginBottom: '8px' }}><strong>Service improvement:</strong> Analyze usage patterns and feature adoption to understand user behavior, identify opportunities to enhance the Service, and prioritize feature development</li>
+              <li style={{ marginBottom: '8px' }}><strong>Technical support:</strong> Respond to your inquiries, troubleshoot technical issues, and provide customer service</li>
+              <li style={{ marginBottom: '8px' }}><strong>Security and fraud prevention:</strong> Detect, prevent, and address fraud, abuse, security incidents, and other malicious or unintended use of the Service</li>
+              <li style={{ marginBottom: '8px' }}><strong>Legal compliance:</strong> Comply with applicable laws, regulations, court orders, and legal process</li>
+              <li><strong>Aggregated analytics:</strong> Create anonymized, aggregated reports on Service usage that do not identify individual users</li>
             </ul>
+
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              <strong>We do not use your information to:</strong> Send unsolicited marketing emails, sell your data to third parties, or build profiles for targeted advertising.
+              <strong>What we do NOT do with your information:</strong> We do not send unsolicited promotional emails or marketing communications without your consent. We do not sell, rent, lease, or share your personal information with third parties for their marketing purposes. We do not build individual behavioral profiles for targeted advertising. We do not use your case research data or search queries for any purpose other than providing the Service and improving our analytics.
             </p>
           </section>
 
           <section id="third-parties">
             <h2 className="legal-section-heading">5. Third Parties and Data Sharing</h2>
             <p className="legal-body">
-              We do not sell, rent, or share your personal information with third parties for their marketing purposes.
+              We do not sell, rent, lease, or share your personal information with third parties for their marketing purposes or to build data sets for resale.
             </p>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>When We Share Information:</h4>
+              <p className="legal-body">
+                We may share information with trusted service providers and partners who assist us in operating, maintaining, and improving our Service. All service providers are bound by confidentiality agreements and data processing agreements that limit their use of your information to providing the specific services we've contracted.
+              </p>
+            </div>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Service Providers We Work With:</h4>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}><strong>Stripe:</strong> PCI-DSS compliant payment processor; receives only payment information necessary to process transactions</li>
+                <li style={{ marginBottom: '8px' }}><strong>Cloud Infrastructure Providers:</strong> AWS or other providers for data storage, hosting, and infrastructure; bound by data processing agreements</li>
+                <li style={{ marginBottom: '8px' }}><strong>Analytics Services:</strong> Aggregated, anonymized usage data only; individual-level data is not shared</li>
+                <li style={{ marginBottom: '8px' }}><strong>PACER/Federal Judicial Center:</strong> We access public federal court records to populate our database; data sourced is already public</li>
+              </ul>
+            </div>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>Disclosures Required by Law:</h4>
+              <p className="legal-body">
+                We may be required to disclose your information when:
+              </p>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}>Required by subpoena, court order, or other legal process</li>
+                <li style={{ marginBottom: '8px' }}>Necessary to protect the safety, rights, or property of MyCaseValue, our users, or the public</li>
+                <li style={{ marginBottom: '8px' }}>Required by law enforcement or government agencies</li>
+                <li style={{ marginBottom: '8px' }}>Needed to enforce our Terms of Service or other agreements</li>
+              </ul>
+            </div>
+
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              We may share information with trusted service providers who assist us in operating our Service, subject to confidentiality agreements:
+              <strong>Business Transfer:</strong> If MyCaseValue is acquired, merged, or its assets are sold, your information may be transferred as part of that transaction. We will notify you of any such change and any choices you may have regarding your information.
             </p>
-            <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
-              <li style={{ marginBottom: '8px' }}><strong>Stripe:</strong> Payment processing (PCI-DSS compliant)</li>
-              <li style={{ marginBottom: '8px' }}><strong>Cloud hosting providers:</strong> Data storage and infrastructure</li>
-              <li style={{ marginBottom: '8px' }}><strong>Analytics services:</strong> Aggregated usage data only</li>
-              <li><strong>Legal/law enforcement:</strong> When required by law or to protect rights</li>
-            </ul>
           </section>
 
           <section id="data-retention">
@@ -393,15 +446,37 @@ export default function PrivacyPage() {
           </section>
 
           <section id="international-users">
-            <h2 className="legal-section-heading">10. International Users</h2>
+            <h2 className="legal-section-heading">10. International Users and Data Transfers</h2>
             <p className="legal-body">
-              MyCaseValue is operated from the United States. If you are located outside the U.S., your information may be transferred to, stored in, and processed in the United States.
-              By using MyCaseValue, you consent to this transfer.
+              MyCaseValue is operated from the United States and the federal court data we aggregate is from U.S. federal courts only. If you are located outside the United States, your information may be transferred to, stored in, and processed in the United States.
             </p>
+
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              <strong>EU users:</strong> If you are in the EU/EEA, our legal basis for processing is your consent or our legitimate interest in providing the Service.
-              You have rights under GDPR (see Section 7). Contact us if you wish to exercise GDPR rights.
+              <strong>Cross-border data transfers:</strong> The United States may not provide the same level of data protection as your home country. By using MyCaseValue, you expressly consent to the transfer of your information to the United States and to processing of your data according to the laws and practices of the United States, including this Privacy Policy.
             </p>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>European Union and European Economic Area Users:</h4>
+              <p className="legal-body">
+                If you are located in the EU/EEA, we process your personal data based on:
+              </p>
+              <ul style={{ paddingLeft: '24px', color: '#455A64' }} className="legal-body">
+                <li style={{ marginBottom: '8px' }}>Your explicit consent to our use of your information (e.g., when you create an account)</li>
+                <li style={{ marginBottom: '8px' }}>Our legitimate interests in providing, maintaining, and improving the Service</li>
+                <li><strong>GDPR rights:</strong> You have the right to access, rectification, erasure, data portability, and objection (see Section 7). These rights may be limited by applicable law.</li>
+              </ul>
+
+              <p className="legal-body" style={{ marginTop: '12px' }}>
+                <strong>Data Protection Officer:</strong> If you are an EU resident with concerns about data processing, you have the right to file a complaint with your local data protection authority. Contact us at <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a> to discuss your rights or exercise GDPR requests.
+              </p>
+            </div>
+
+            <div style={{ marginTop: '16px' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#212529', marginBottom: '12px' }}>California Residents:</h4>
+              <p className="legal-body">
+                If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know, delete, opt-out of sales, and understand how your data is used. Contact us at <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a> to exercise these rights. We will respond within 45 days.
+              </p>
+            </div>
           </section>
 
           <section id="updates">
@@ -415,7 +490,7 @@ export default function PrivacyPage() {
           <section id="contact">
             <h2 className="legal-section-heading">12. Contact Us</h2>
             <p className="legal-body">
-              If you have questions about this Privacy Policy, your data, or wish to exercise your rights, contact us:
+              If you have questions about this Privacy Policy, our data practices, or wish to exercise your privacy rights (access, correction, deletion, data portability), please contact us:
             </p>
             <div style={{
               marginTop: '16px',
@@ -429,10 +504,42 @@ export default function PrivacyPage() {
               border: '1px solid #D5D8DC'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Email:</strong> <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a>
+                <strong>Privacy Requests:</strong> <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a>
+              </p>
+              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Support & General Inquiries:</strong> <a href="mailto:support@mycasevalue.com" className="legal-contact-email">support@mycasevalue.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
                 <strong>Website:</strong> <a href="https://mycasevalues.com" className="legal-contact-email">https://mycasevalues.com</a>
+              </p>
+            </div>
+
+            <p className="legal-body" style={{ marginTop: '16px' }}>
+              <strong>Response time:</strong> We will acknowledge your request within 24 hours and provide a substantive response within 30 days. If we need additional information or your request is complex, we may request an extension up to 60 days.
+            </p>
+          </section>
+
+          <section id="related-legal">
+            <h2 className="legal-section-heading">Related Legal Pages</h2>
+            <p className="legal-body">
+              This Privacy Policy is part of our comprehensive legal framework. We recommend reviewing our other legal documents:
+            </p>
+            <div style={{
+              marginTop: '16px',
+              paddingLeft: '16px',
+              paddingRight: '16px',
+              paddingTop: '16px',
+              paddingBottom: '16px',
+              borderRadius: '2px',
+              background: '#FFFFFF',
+              color: '#212529',
+              border: '1px solid #D5D8DC'
+            }}>
+              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Terms of Service:</strong> Read our <a href="/terms" className="legal-contact-email">Terms of Service</a> to understand the rules governing your use of MyCaseValue and our limitations of liability.
+              </p>
+              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Disclaimer:</strong> Review our <a href="/disclaimer" className="legal-contact-email">Disclaimer</a> to understand that MyCaseValue provides informational data only and is not legal advice.
               </p>
             </div>
           </section>

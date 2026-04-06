@@ -85,7 +85,18 @@ export default function DisclaimerPage() {
               lineHeight: 1.7,
             }}
           >
-            Please read this disclaimer carefully. By using MyCaseValue, you agree to the terms outlined below.
+            Please read this disclaimer carefully before using MyCaseValue. This document explains important limitations on how our service should be used and what it cannot provide. By using MyCaseValue, you acknowledge and agree to all terms outlined below.
+          </p>
+          <p
+            style={{
+              fontSize: 13,
+              color: 'rgba(255,255,255,0.6)',
+              fontFamily: 'var(--font-body)',
+              marginTop: 12,
+              lineHeight: 1.5,
+            }}
+          >
+            Last updated: April 2026. This page is print-friendly. Use your browser's print function (Ctrl+P / Cmd+P).
           </p>
         </div>
       </div>
@@ -162,7 +173,7 @@ export default function DisclaimerPage() {
               marginTop: 0,
               color: '#212529',
             }}>
-              Data Sources
+              Data Sources and Public Records
             </h2>
             <p style={{
               fontSize: '1rem',
@@ -171,7 +182,30 @@ export default function DisclaimerPage() {
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
-              All data presented on MyCaseValue is sourced from publicly available federal court records, including the Federal Judicial Center Integrated Database (FJC IDB), Public Access to Court Electronic Records (PACER), and CourtListener. These sources provide historical case outcome data collected from actual federal civil litigation. We do not create, modify, or invent data—we aggregate and analyze what is publicly available.
+              All data presented on MyCaseValue is sourced from publicly available federal court records and databases, including:
+            </p>
+            <ul style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+              marginTop: 12,
+              paddingLeft: '24px',
+            }}>
+              <li style={{ marginBottom: '8px' }}><strong>Federal Judicial Center Integrated Database (FJC IDB):</strong> Comprehensive federal civil case outcome data</li>
+              <li style={{ marginBottom: '8px' }}><strong>Public Access to Court Electronic Records (PACER):</strong> Official federal court case documents and docket information</li>
+              <li style={{ marginBottom: '8px' }}><strong>CourtListener:</strong> Open-source federal court data and research platform</li>
+              <li><strong>Other official federal court databases:</strong> Additional public records from federal courts</li>
+            </ul>
+            <p style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+              margin: 0,
+              marginTop: 12,
+            }}>
+              The underlying federal court data is in the public domain under 17 U.S.C. § 105. We do not create, modify, or invent data—we aggregate, categorize, analyze, and present publicly available information. MyCaseValue's value-add is in our aggregation methodology, categorization scheme, and analytical presentation, not in the creation of the underlying data.
             </p>
           </section>
 
@@ -217,7 +251,36 @@ export default function DisclaimerPage() {
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
-              While we strive for accuracy, we make no representation or warranty regarding the completeness, accuracy, timeliness, or reliability of any data on MyCaseValue. Federal court data can be incomplete, contain clerical errors, or reflect classification issues. Some cases may not be properly categorized. Historical data may not reflect current legal standards, judge assignments, or procedural changes. You acknowledge and accept that all data is provided on an "as-is" basis.
+              While we strive for accuracy and employ quality control measures, we make no representation or warranty regarding the completeness, accuracy, timeliness, or reliability of any data on MyCaseValue. You should be aware of the following limitations:
+            </p>
+
+            <ul style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+              marginTop: 12,
+              paddingLeft: '24px',
+            }}>
+              <li style={{ marginBottom: '8px' }}><strong>Incomplete data:</strong> Not all federal cases are fully documented in public databases. Some records may be incomplete, redacted, or unavailable.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Clerical and classification errors:</strong> Federal court records may contain data entry errors, clerical mistakes, or misclassifications by court staff.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Case categorization challenges:</strong> Complex cases may not be perfectly categorized. Cases with multiple claims may be classified under only one primary claim type.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Partial victories and settlements:</strong> Outcome coding simplifies complex results. A case marked "plaintiff win" may have resulted in a partial victory, settlement, or favorable judgment on limited claims.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Hidden settlement data:</strong> Most settlement amounts are confidential and not reported in court records, so settlement ranges are based on incomplete data.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Procedural changes:</strong> Federal civil procedure, judicial practices, and sentencing guidelines have changed significantly over decades. Historical data may not reflect current legal standards or procedural requirements.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Judge reassignments:</strong> Judge identities and assignments may have changed over time, affecting historical trend analysis.</li>
+              <li><strong>Data delays:</strong> There may be significant delays between case disposition and publication in federal databases.</li>
+            </ul>
+
+            <p style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+              margin: 0,
+              marginTop: 12,
+            }}>
+              You acknowledge and accept that all data is provided on an "AS-IS" basis without warranties. Always verify critical information independently from original federal court documents and consult with a licensed attorney.
             </p>
           </section>
 
@@ -240,7 +303,36 @@ export default function DisclaimerPage() {
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
-              MyCaseValue provides no guarantees, warranties, or assurances regarding the outcome of any case. The fact that historical cases in a category achieved a certain win rate does not mean your case will achieve the same outcome. Court decisions are made by judges and, in some cases, juries, and depend on countless factors specific to your case that are not captured in historical aggregate data.
+              <strong>MyCaseValue provides no guarantees, warranties, or assurances regarding the outcome of any case.</strong> Historical aggregate data cannot and should not be used to predict individual case outcomes. The fact that cases in a specific category achieved a 60% win rate does not mean your case will result in a win. Many unique factors affect each case's outcome:
+            </p>
+
+            <ul style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+              marginTop: 12,
+              paddingLeft: '24px',
+            }}>
+              <li style={{ marginBottom: '8px' }}><strong>Specific facts:</strong> Your case's unique facts differ from others, making historical patterns non-predictive.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Legal arguments:</strong> The specific legal theories raised in your case may differ from previous cases.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Applicable law:</strong> Controlling precedent, statutory law, and regulations may have changed since historical cases were decided.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Jurisdiction:</strong> Different judges, courts, and circuits apply law differently based on their interpretation and precedent.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Judge assignments:</strong> Your assigned judge may have different ruling patterns, biases, or experience than historical averages.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Quality of representation:</strong> The skill and experience of your attorney and opposing counsel will significantly impact outcome.</li>
+              <li style={{ marginBottom: '8px' }}><strong>Procedural posture:</strong> Whether your case is decided on a motion, summary judgment, trial, or appeal changes likely outcomes.</li>
+              <li><strong>Settlement dynamics:</strong> Settlement negotiation skill, risk tolerance, and timing differ case-by-case.</li>
+            </ul>
+
+            <p style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+              margin: 0,
+              marginTop: 12,
+            }}>
+              <strong>Past win rates do not guarantee future results for your case. Settlement ranges are historical averages, not valuations of your claim.</strong>
             </p>
           </section>
 
@@ -346,7 +438,7 @@ export default function DisclaimerPage() {
               marginTop: 0,
               color: '#212529',
             }}>
-              Questions?
+              Questions About This Disclaimer?
             </h2>
             <p style={{
               fontSize: '1rem',
@@ -355,25 +447,108 @@ export default function DisclaimerPage() {
               fontFamily: 'var(--font-body)',
               margin: 0,
             }}>
-              If you have questions about this disclaimer or how MyCaseValue works, please contact us at <a href="mailto:support@mycasevalue.com" data-link-type="teal" style={{ color: '#006997', textDecoration: 'none' }}>support@mycasevalue.com</a>.
+              If you have questions about this disclaimer, how MyCaseValue works, or need clarification about our data limitations, please contact us:
             </p>
+            <div style={{
+              marginTop: 16,
+              paddingLeft: '16px',
+              paddingRight: '16px',
+              paddingTop: '16px',
+              paddingBottom: '16px',
+              borderRadius: '2px',
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+            }}>
+              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Email:</strong> <a href="mailto:support@mycasevalue.com" data-link-type="teal" style={{ color: '#006997', textDecoration: 'none' }}>support@mycasevalue.com</a>
+              </p>
+              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Website:</strong> <a href="https://mycasevalues.com" data-link-type="teal" style={{ color: '#006997', textDecoration: 'none' }}>https://mycasevalues.com</a>
+              </p>
+            </div>
+          </section>
+
+          {/* Related Legal Pages */}
+          <section>
+            <h2 style={{
+              fontSize: '1.875rem',
+              fontFamily: 'var(--font-display)',
+              fontWeight: '700',
+              marginBottom: '1rem',
+              marginTop: 0,
+              color: '#212529',
+            }}>
+              Related Legal Pages
+            </h2>
+            <p style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              color: '#455A64',
+              fontFamily: 'var(--font-body)',
+              margin: 0,
+            }}>
+              This disclaimer is part of MyCaseValue's complete legal framework. Please review our other legal documents to fully understand your rights and our obligations:
+            </p>
+            <div style={{
+              marginTop: 16,
+              paddingLeft: '16px',
+              paddingRight: '16px',
+              paddingTop: '16px',
+              paddingBottom: '16px',
+              borderRadius: '2px',
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+            }}>
+              <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Terms of Service:</strong> <a href="/terms" data-link-type="teal" style={{ color: '#006997', textDecoration: 'none' }}>Read our Terms of Service</a> for rules governing use of MyCaseValue and our limitations of liability.
+              </p>
+              <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
+                <strong>Privacy Policy:</strong> <a href="/privacy" data-link-type="teal" style={{ color: '#006997', textDecoration: 'none' }}>Review our Privacy Policy</a> to understand how we collect, use, and protect your data.
+              </p>
+            </div>
           </section>
 
           {/* Acknowledgment */}
           <section style={{
             padding: '32px',
             borderRadius: '2px',
-            border: '1px solid #D5D8DC',
-            backgroundColor: '#FFFFFF',
+            border: '2px solid #E8171F',
+            backgroundColor: '#FFF3F4',
           }}>
             <p style={{
-              fontSize: '0.875rem',
+              fontSize: '1rem',
               lineHeight: '1.5',
               margin: 0,
-              color: '#455A64',
+              color: '#212529',
+              fontFamily: 'var(--font-body)',
+              fontWeight: 600,
+            }}>
+              <strong>Your Acknowledgment:</strong> By using MyCaseValue, you acknowledge that you have carefully read and understood this disclaimer in its entirety. You understand and accept:
+            </p>
+            <ul style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              color: '#212529',
+              fontFamily: 'var(--font-body)',
+              marginTop: 12,
+              paddingLeft: '24px',
+              margin: '12px 0 0 0',
+            }}>
+              <li style={{ marginBottom: '8px' }}>MyCaseValue is not legal advice and does not create an attorney-client relationship</li>
+              <li style={{ marginBottom: '8px' }}>You will consult with a licensed attorney before taking any legal action</li>
+              <li style={{ marginBottom: '8px' }}>Historical case data cannot predict your specific case outcome</li>
+              <li style={{ marginBottom: '8px' }}>MyCaseValue data has limitations and may contain errors or incomplete information</li>
+              <li style={{ marginBottom: '8px' }}>You use MyCaseValue entirely at your own risk</li>
+              <li>MyCaseValue is not liable for any decisions or actions you take based on our data</li>
+            </ul>
+            <p style={{
+              fontSize: '1rem',
+              lineHeight: '1.5',
+              margin: '12px 0 0 0',
+              color: '#212529',
               fontFamily: 'var(--font-body)',
             }}>
-              By using MyCaseValue, you acknowledge that you have read this disclaimer, understand it, and agree to be bound by it. If you do not agree with any part of this disclaimer, you should not use MyCaseValue.
+              If you do not agree with this disclaimer, you should not use MyCaseValue.
             </p>
           </section>
         </div>
