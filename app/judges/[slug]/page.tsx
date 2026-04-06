@@ -3,6 +3,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { getJudgeBySlug, getAllJudges } from '@/lib/judges';
 import { ArrowRightIcon } from '@/components/ui/Icons';
+import { SITE_URL } from '@/lib/site-config';
 
 // Dynamic import for client component
 const JudgeCharts = dynamic(() => import('@/components/features/JudgeCharts'), {
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title = `Judge ${judge.name} — ${judge.district} | MyCaseValue`;
   const description = `Research Judge ${judge.name}'s ruling patterns, motion grant rates, and case outcomes. Appointed ${judge.appointedYear}. ${judge.stats.totalCases}+ cases analyzed from federal court records.`;
-  const canonical = `https://www.mycasevalues.com/judges/${slug}`;
+  const canonical = `${SITE_URL}/judges/${slug}`;
 
   return {
     title,
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: canonical,
       type: 'website',
       siteName: 'MyCaseValue',
-      images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',

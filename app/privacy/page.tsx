@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — MyCaseValue',
   description: 'MyCaseValue privacy policy. Learn how we collect, use, and protect your data when researching federal court outcomes.',
-  alternates: { canonical: 'https://www.mycasevalues.com/privacy' },
+  alternates: { canonical: `${SITE_URL}/privacy` },
   robots: {
     index: true,
     follow: true,
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Privacy Policy — MyCaseValue',
     description: 'Learn how MyCaseValue collects, uses, and protects your data.',
-    url: 'https://www.mycasevalues.com/privacy',
+    url: `${SITE_URL}/privacy`,
     type: 'website',
   },
 };
@@ -22,8 +23,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Privacy', item: 'https://www.mycasevalues.com/privacy' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Privacy', item: `${SITE_URL}/privacy` },
       ],
     },
   ],

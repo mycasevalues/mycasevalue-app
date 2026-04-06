@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { SITS, STATES } from '../../lib/data';
+import { SITE_URL } from '../../lib/site-config';
 
 // Note: Metadata cannot be exported from client components.
 // For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
@@ -119,7 +120,7 @@ export default function CalculatorPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'Case Value Calculator',
-    url: 'https://www.mycasevalues.com/calculator',
+    url: `${SITE_URL}/calculator`,
     applicationCategory: 'Legal',
     description: 'Estimate your case value with damage multipliers based on federal court data.',
     offers: {

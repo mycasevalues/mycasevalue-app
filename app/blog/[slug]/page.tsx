@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts, getRelatedPosts } from '../../../lib/blog';
 import { ArrowRightIcon } from '../../../components/ui/Icons';
+import { SITE_URL } from '../../../lib/site-config';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -25,8 +26,8 @@ export async function generateMetadata(props: BlogPostPageProps): Promise<Metada
     };
   }
 
-  const url = `https://mycasevalues.com/blog/${post.slug}`;
-  const baseUrl = new URL(url).origin;
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  const baseUrl = SITE_URL;
 
   return {
     title: `${post.title} — MyCaseValue`,

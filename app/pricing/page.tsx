@@ -5,14 +5,16 @@ export const dynamic = 'force-dynamic';
 import { useState } from 'react';
 import Link from 'next/link';
 
+import { SITE_URL } from '../../lib/site-config';
+
 const getJsonLd = () => ({
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://www.mycasevalues.com/pricing' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Pricing', item: `${SITE_URL}/pricing` },
       ],
     },
     {
@@ -20,10 +22,10 @@ const getJsonLd = () => ({
       name: 'MyCaseValue Pricing Plans',
       description: 'Federal court outcome data with transparent pricing tiers.',
       offers: [
-        { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'USD', url: 'https://www.mycasevalues.com/pricing', availability: 'https://schema.org/InStock', description: 'Basic court outcome report with essential case data.' },
-        { '@type': 'Offer', name: 'Single Report', price: '5.99', priceCurrency: 'USD', url: 'https://www.mycasevalues.com/pricing', availability: 'https://schema.org/InStock', description: 'One premium report with judge data and detailed analysis.' },
-        { '@type': 'Offer', name: 'Unlimited Reports', price: '9.99', priceCurrency: 'USD', url: 'https://www.mycasevalues.com/pricing', availability: 'https://schema.org/InStock', description: 'Unlimited reports for all case types and districts.' },
-        { '@type': 'Offer', name: 'Attorney Mode', price: '29.99', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' }, url: 'https://www.mycasevalues.com/pricing', availability: 'https://schema.org/InStock', description: 'Professional attorney tools with bulk analysis and API access.' },
+        { '@type': 'Offer', name: 'Free', price: '0', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Basic court outcome report with essential case data.' },
+        { '@type': 'Offer', name: 'Single Report', price: '5.99', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'One premium report with judge data and detailed analysis.' },
+        { '@type': 'Offer', name: 'Unlimited Reports', price: '9.99', priceCurrency: 'USD', url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Unlimited reports for all case types and districts.' },
+        { '@type': 'Offer', name: 'Attorney Mode', price: '29.99', priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M' }, url: `${SITE_URL}/pricing`, availability: 'https://schema.org/InStock', description: 'Professional attorney tools with bulk analysis and API access.' },
       ],
     },
   ],

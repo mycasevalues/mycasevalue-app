@@ -1,24 +1,25 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
+import { SITE_URL } from '../../lib/site-config';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Contact Us | MyCaseValue',
   description: 'Get in touch with the MyCaseValue team for support, enterprise inquiries, or data methodology questions.',
-  alternates: { canonical: 'https://www.mycasevalues.com/contact' },
+  alternates: { canonical: `${SITE_URL}/contact` },
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Contact MyCaseValue',
-  url: 'https://www.mycasevalues.com/contact',
+  url: `${SITE_URL}/contact`,
   mainEntity: {
     '@type': 'Organization',
     name: 'MyCaseValue',
-    url: 'https://www.mycasevalues.com',
+    url: SITE_URL,
     contactPoint: [
       {
         '@type': 'ContactPoint',

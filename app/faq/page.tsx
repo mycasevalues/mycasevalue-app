@@ -1,16 +1,17 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'FAQ — MyCaseValue | Federal Court Data Questions Answered',
   description: 'Comprehensive FAQ about MyCaseValue: How it works, data sources, whether it\'s legal advice, accuracy, pricing, privacy, and how to use court outcome data.',
-  alternates: { canonical: 'https://www.mycasevalues.com/faq' },
+  alternates: { canonical: `${SITE_URL}/faq` },
   openGraph: {
     title: 'FAQ — MyCaseValue',
     description: 'Get answers to common questions about federal court data, win rates, settlement ranges, and how MyCaseValue works.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/faq',
+    url: `${SITE_URL}/faq`,
   },
   keywords: 'federal court data FAQ, MyCaseValue questions, legal data FAQ, court outcome questions, case statistics',
 };
@@ -21,8 +22,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://www.mycasevalues.com/faq' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'FAQ', item: `${SITE_URL}/faq` },
       ],
     },
     {
@@ -97,7 +98,7 @@ const jsonLd = {
           name: 'Do you have a privacy policy?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. Our full privacy policy is available at https://mycasevalues.com/privacy. It explains exactly what data we collect, how we use it, and your rights.',
+            text: 'Yes. Our full privacy policy is available at ${SITE_URL}/privacy. It explains exactly what data we collect, how we use it, and your rights.',
           },
         },
         {
@@ -249,7 +250,7 @@ const jsonLd = {
           name: 'Can I compare different case types?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. MyCaseValue offers a Compare Cases tool that lets you view side-by-side outcome data for up to three federal case types. You can compare win rates, settlement rates, dismissal rates, and median duration. Visit mycasevalues.com/compare to use this feature.',
+            text: 'Yes. MyCaseValue offers a Compare Cases tool that lets you view side-by-side outcome data for up to three federal case types. You can compare win rates, settlement rates, dismissal rates, and median duration. Visit ${SITE_URL}/compare to use this feature.',
           },
         },
       ],
@@ -393,7 +394,7 @@ const faqs = [
       },
       {
         q: 'Do you have a privacy policy?',
-        a: 'Yes. Our full privacy policy is available at https://mycasevalues.com/privacy. It explains exactly what data we collect, how we use it, and your rights.',
+        a: 'Yes. Our full privacy policy is available at ${SITE_URL}/privacy. It explains exactly what data we collect, how we use it, and your rights.',
       },
       {
         q: 'Is my research private?',

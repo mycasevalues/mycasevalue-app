@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITS, STATES, OUTCOME_DATA } from '../../../../lib/data';
+import { SITE_URL } from '../../../../lib/site-config';
 
 // Helper to get category and NOS info from case type slug
 function getCaseTypeInfo(caseTypeSlug: string) {
@@ -62,7 +63,7 @@ export async function generateMetadata({
   const caseTypeName = option.label;
   const title = `${caseTypeName} Cases in ${stateName} — Win Rates & Outcomes | MyCaseValue`;
   const description = `Research ${caseTypeName} outcomes in ${stateName} federal courts. See real win rates, settlement data, case timelines, and recovery ranges from public court records.`;
-  const canonical = `https://www.mycasevalues.com/outcomes/${district}/${caseTypeSlug}`;
+  const canonical = `${SITE_URL}/outcomes/${district}/${caseTypeSlug}`;
 
   return {
     title,
@@ -74,7 +75,7 @@ export async function generateMetadata({
       url: canonical,
       type: 'website',
       siteName: 'MyCaseValue',
-      images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',

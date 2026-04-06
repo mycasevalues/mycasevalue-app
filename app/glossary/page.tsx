@@ -1,15 +1,16 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Legal Glossary — Federal Court Terms & Definitions | MyCaseValue',
   description: 'Plain-English definitions of federal court terms including NOS codes, PACER, settlements, win rates, and more.',
-  alternates: { canonical: 'https://www.mycasevalues.com/glossary' },
+  alternates: { canonical: `${SITE_URL}/glossary` },
   openGraph: {
     title: 'Legal Glossary — Federal Court Terms & Definitions',
     description: 'Plain-English definitions of federal court terms including NOS codes, PACER, settlements, win rates, and more.',
-    url: 'https://www.mycasevalues.com/glossary',
+    url: `${SITE_URL}/glossary`,
     type: 'website',
   },
 };
@@ -313,7 +314,7 @@ export default function GlossaryPage() {
             '@type': 'DefinedTermSet',
             name: 'Legal & Data Glossary',
             description: 'Plain-English definitions of federal court terms, data concepts, and legal statutes',
-            url: 'https://www.mycasevalues.com/glossary',
+            url: `${SITE_URL}/glossary`,
             hasDefinedTerm: glossaryTerms.map(term => ({
               '@type': 'DefinedTerm',
               name: term.term,

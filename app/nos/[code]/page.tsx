@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
+import { SITE_URL } from '../../../lib/site-config';
 
 // Helper function to flatten SITS and map NOS codes to display names
 function getNOSMap(): Record<string, { label: string; category: string; description?: string }> {
@@ -54,7 +55,7 @@ export async function generateMetadata(
 
   const title = `${nosInfo.label} (NOS ${code}) — Win Rates, Timelines & Outcomes | MyCaseValue`;
   const description = `Research ${nosInfo.label} federal court outcomes. See win rates, median case duration, settlement percentages, and recovery data from real court records. NOS code ${code}.`;
-  const canonical = `https://mycasevalues.com/nos/${code}`;
+  const canonical = `${SITE_URL}/nos/${code}`;
 
   return {
     title,
@@ -68,7 +69,7 @@ export async function generateMetadata(
       siteName: 'MyCaseValue',
       images: [
         {
-          url: 'https://www.mycasevalues.com/og-image.png',
+          url: `${SITE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: `${nosInfo.label} Federal Court Statistics`,

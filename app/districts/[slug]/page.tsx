@@ -3,6 +3,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { STATES, CIRCUIT_MAP, CIRCUIT_WIN_RATES, CIRCUIT_DETAIL } from '../../../lib/data';
 import { getDistrictStats } from '../../../lib/districts';
+import { SITE_URL } from '../../../lib/site-config';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -37,7 +38,7 @@ export async function generateMetadata(
 
   const title = `${state.label} Federal Court Data — Win Rates & Settlement Ranges | MyCaseValue`;
   const description = `Research federal court outcomes in ${state.label}. See win rates, median case duration, settlement percentages, and case statistics from public court records.`;
-  const canonical = `https://mycasevalues.com/districts/${slug}`;
+  const canonical = `${SITE_URL}/districts/${slug}`;
 
   return {
     title,
@@ -49,7 +50,7 @@ export async function generateMetadata(
       url: canonical,
       type: 'website',
       siteName: 'MyCaseValue',
-      images: [{ url: 'https://www.mycasevalues.com/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',

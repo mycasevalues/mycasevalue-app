@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Pricing | MyCaseValue',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pricing | MyCaseValue',
     description: 'Simple, transparent pricing for federal court case data reports',
-    url: 'https://www.mycasevalues.com/pricing',
+    url: `${SITE_URL}/pricing`,
   },
 };
 

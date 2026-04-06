@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { REAL_DATA } from '../../lib/realdata';
+import { SITE_URL } from '../../lib/site-config';
 
 const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'), {
   ssr: false,
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Case Trends | MyCaseValue',
     description: 'Track federal court case outcome trends over time',
-    url: 'https://www.mycasevalues.com/trends',
+    url: `${SITE_URL}/trends`,
   },
 };
 
@@ -27,8 +28,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Trends', item: 'https://www.mycasevalues.com/trends' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Trends', item: `${SITE_URL}/trends` },
       ],
     },
     {
@@ -39,7 +40,7 @@ const jsonLd = {
       distribution: {
         '@type': 'DataDownload',
         encodingFormat: 'application/json',
-        contentUrl: 'https://www.mycasevalues.com/api/quick-stats',
+        contentUrl: `${SITE_URL}/api/quick-stats`,
       },
     },
   ],

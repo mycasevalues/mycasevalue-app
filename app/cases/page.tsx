@@ -4,18 +4,19 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
 import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
+import { SITE_URL } from '../../lib/site-config';
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Federal Court Case Categories',
   description: 'Browse federal court outcome data across 10 major case types.',
-  url: 'https://www.mycasevalues.com/cases',
+  url: `${SITE_URL}/cases`,
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-      { '@type': 'ListItem', position: 2, name: 'Case Categories', item: 'https://www.mycasevalues.com/cases' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Case Categories', item: `${SITE_URL}/cases` },
     ],
   },
 };

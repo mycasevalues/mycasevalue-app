@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const revalidate = 0;
 
@@ -8,10 +9,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Federal Case Categories — 84 Case Types | MyCaseValue',
     description: 'Browse 84 federal case types across 10 categories. Win rates, settlement ranges, timelines, and judge analytics.',
-    url: 'https://www.mycasevalues.com/cases',
+    url: `${SITE_URL}/cases`,
   },
   alternates: {
-    canonical: 'https://www.mycasevalues.com/cases',
+    canonical: `${SITE_URL}/cases`,
   },
 };
 

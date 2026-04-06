@@ -26,7 +26,7 @@ export const SITS = [
     { label: "Religious discrimination", nos: "442", d: "religious discrimination" },
     { label: "Workers' compensation retaliation", nos: "710", d: "workers comp retaliation" },
   ]},
-  { id: "injury", label: "Injury", sub: "Accident, medical, product, wrongful death", color: "#DC2626", icon: "heart", q: "How were you hurt?", dm: "large", opts: [
+  { id: "injury", label: "Injury", sub: "Accident, medical, product, wrongful death", color: "#E8171F", icon: "heart", q: "How were you hurt?", dm: "large", opts: [
     { label: "Vehicle / car accident", nos: "350", d: "vehicle accident" },
     { label: "Truck / commercial vehicle accident", nos: "350", d: "truck accident" },
     { label: "Motorcycle accident", nos: "350", d: "motorcycle accident" },

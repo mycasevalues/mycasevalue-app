@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Settlement Calculator — Estimate Case Value | MyCaseValue',
@@ -6,10 +7,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Settlement Calculator — Estimate Case Value | MyCaseValue',
     description: 'Free federal court settlement calculator. Estimate your case value based on 5.1M+ real outcomes, case type, district, and damage amount.',
-    url: 'https://www.mycasevalues.com/calculator',
+    url: `${SITE_URL}/calculator`,
   },
   alternates: {
-    canonical: 'https://www.mycasevalues.com/calculator',
+    canonical: `${SITE_URL}/calculator`,
   },
 };
 

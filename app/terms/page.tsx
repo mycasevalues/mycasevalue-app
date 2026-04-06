@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Terms of Service — MyCaseValue',
   description: 'MyCaseValue Terms of Service. Read our service agreement, disclaimers, and user responsibilities.',
-  alternates: { canonical: 'https://www.mycasevalues.com/terms' },
+  alternates: { canonical: `${SITE_URL}/terms` },
   robots: {
     index: true,
     follow: true,
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Terms of Service — MyCaseValue',
     description: 'Read MyCaseValue Terms of Service, including our service agreement and user responsibilities.',
-    url: 'https://www.mycasevalues.com/terms',
+    url: `${SITE_URL}/terms`,
     type: 'website',
   },
 };
@@ -22,8 +23,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Terms', item: 'https://www.mycasevalues.com/terms' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Terms', item: `${SITE_URL}/terms` },
       ],
     },
   ],

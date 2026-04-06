@@ -8,6 +8,7 @@ import { getUserTier } from '../../../lib/access';
 import { getSupabaseAdmin, CaseStats } from '../../../lib/supabase';
 import { getOpinionsByType, getRECAPByType } from '../../../lib/courtlistener';
 import { checkFreeRateLimit } from '../../../lib/rateLimit';
+import { SITE_URL } from '../../../lib/site-config';
 import ReportPDFButton from './ReportPDFButton';
 import ShareButtons from '../../../components/ui/ShareButtons';
 
@@ -45,7 +46,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { nos } = await params;
   const label = getNosLabel(nos);
-  const url = `https://www.mycasevalues.com/report/${nos}`;
+  const url = `${SITE_URL}/report/${nos}`;
   const description = `Federal court outcome report for ${label} cases. See win rates, settlement data, case timelines, recovery ranges, and detailed case analytics from 5.1M+ federal court records.`;
 
   return {
@@ -60,7 +61,7 @@ export async function generateMetadata({
       url,
       images: [
         {
-          url: 'https://www.mycasevalues.com/og-image.png',
+          url: `${SITE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: `${label} Report — MyCaseValue`,
@@ -71,7 +72,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${label} — Federal Court Case Report`,
       description,
-      images: ['https://www.mycasevalues.com/og-image.png'],
+      images: [`${SITE_URL}/og-image.png`],
     },
   };
 }

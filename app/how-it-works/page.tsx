@@ -1,17 +1,18 @@
 import { Metadata } from 'next';
 import { ArrowRightIcon } from '../../components/ui/Icons';
+import { SITE_URL } from '../../lib/site-config';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'How It Works — MyCaseValue | 3 Simple Steps',
   description: 'Tell us your situation → We search 5.1M+ federal court cases → Get your personalized report with real outcomes, win rates, and timelines.',
-  alternates: { canonical: 'https://www.mycasevalues.com/how-it-works' },
+  alternates: { canonical: `${SITE_URL}/how-it-works` },
   openGraph: {
     title: 'How It Works — MyCaseValue',
     description: 'Three simple steps to research real federal court outcomes. Select your case type, we analyze 5.1M+ cases, you get a personalized report.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/how-it-works',
+    url: `${SITE_URL}/how-it-works`,
   },
 };
 
@@ -21,8 +22,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'How It Works', item: 'https://www.mycasevalues.com/how-it-works' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'How It Works', item: `${SITE_URL}/how-it-works` },
       ],
     },
     {
@@ -35,21 +36,21 @@ const jsonLd = {
           position: 1,
           name: 'Tell us your situation',
           text: 'Select your case type and federal district. No legal jargon needed — we use plain English labels.',
-          image: 'https://www.mycasevalues.com/step-1-icon.svg',
+          image: `${SITE_URL}/step-1-icon.svg`,
         },
         {
           '@type': 'HowToStep',
           position: 2,
           name: 'We search 54 years of data',
           text: 'Our system analyzes 5.1M+ federal court cases from the FJC Integrated Database, PACER, and CourtListener to find cases matching your situation.',
-          image: 'https://www.mycasevalues.com/step-2-icon.svg',
+          image: `${SITE_URL}/step-2-icon.svg`,
         },
         {
           '@type': 'HowToStep',
           position: 3,
           name: 'Get your personalized report',
           text: 'See real outcomes: win rates, settlement ranges, timelines, judge analytics, and plain-English explanations. All from verified public records.',
-          image: 'https://www.mycasevalues.com/step-3-icon.svg',
+          image: `${SITE_URL}/step-3-icon.svg`,
         },
       ],
     },

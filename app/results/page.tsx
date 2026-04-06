@@ -1,15 +1,16 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Case Results | MyCaseValue',
   description: 'View detailed case results and outcomes from the MyCaseValue database.',
-  alternates: { canonical: 'https://www.mycasevalues.com/results' },
+  alternates: { canonical: `${SITE_URL}/results` },
   openGraph: {
     title: 'Case Results | MyCaseValue',
     description: 'View detailed case results and outcomes from the MyCaseValue database.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/results',
+    url: `${SITE_URL}/results`,
   },
 };
 

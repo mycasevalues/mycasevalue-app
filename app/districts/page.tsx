@@ -1,17 +1,18 @@
 import { Metadata } from 'next';
 import { ArrowRightIcon } from '../../components/ui/Icons';
+import { SITE_URL } from '../../lib/site-config';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Federal Court Districts',
   description: 'All 94 federal judicial districts across 13 circuits. Explore case outcomes, win rates, and settlement data by district.',
-  alternates: { canonical: 'https://www.mycasevalues.com/districts' },
+  alternates: { canonical: `${SITE_URL}/districts` },
   openGraph: {
     title: 'Federal Court Districts | MyCaseValue',
     description: 'All 94 federal judicial districts across 13 circuits.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/districts',
+    url: `${SITE_URL}/districts`,
   },
 };
 

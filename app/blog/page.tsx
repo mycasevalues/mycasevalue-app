@@ -1,16 +1,17 @@
 import { Metadata } from 'next';
 import { getAllPosts } from '../../lib/blog';
 import { ArrowRightIcon } from '../../components/ui/Icons';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Blog — MyCaseValue | Federal Court Data & Legal Insights',
   description: 'Research-backed articles about federal court outcomes, case statistics, settlement data, win rates, and litigation strategy based on 5.1M+ cases.',
-  alternates: { canonical: 'https://www.mycasevalues.com/blog' },
+  alternates: { canonical: `${SITE_URL}/blog` },
   openGraph: {
     title: 'Blog — MyCaseValue',
     description: 'Federal court insights, case data analysis, and litigation strategy based on 54 years of real case outcomes.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/blog',
+    url: `${SITE_URL}/blog`,
   },
   keywords: 'federal court data, case outcomes, litigation strategy, win rates, settlement data, legal insights',
 };
@@ -21,15 +22,15 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.mycasevalues.com' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.mycasevalues.com/blog' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
       ],
     },
     {
       '@type': 'Blog',
       name: 'MyCaseValue Blog',
       description: 'Research-backed articles about federal court outcomes and litigation strategy',
-      url: 'https://www.mycasevalues.com/blog',
+      url: `${SITE_URL}/blog`,
     },
   ],
 };
