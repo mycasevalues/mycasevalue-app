@@ -920,6 +920,67 @@ export default async function ReportPage({
           </section>
         )}
 
+        {/* ═══ Key Factors Affecting Outcome ═══ */}
+        {real?.factors && real.factors.length > 0 && (
+          <section style={{
+            background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px',
+            padding: '32px', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginTop: '24px',
+          }}>
+            <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+              Key factors affecting outcome
+            </h2>
+            <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '20px', lineHeight: 1.5 }}>
+              Common factors that influence case outcomes based on historical data
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 12 }}>
+              {real.factors.map((factor: string, i: number) => (
+                <div key={i} style={{
+                  padding: '12px 16px', background: '#F8F9FA', borderRadius: 2, border: '1px solid #F0F3F5',
+                  display: 'flex', alignItems: 'center', gap: 10,
+                }}>
+                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#E8171F', flexShrink: 0 }} />
+                  <span style={{ fontSize: 13, color: '#212529', fontFamily: 'var(--font-body)' }}>{factor}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ═══ Quick Actions ═══ */}
+        <section style={{
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12,
+          marginTop: 24, marginBottom: 24,
+        }}>
+          <Link href="/calculator" style={{
+            padding: '16px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2,
+            textDecoration: 'none', transition: 'all 0.2s',
+          }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>Settlement Calculator</div>
+            <div style={{ fontSize: 11, color: '#455A64', fontFamily: 'var(--font-body)' }}>Estimate your potential recovery</div>
+          </Link>
+          <Link href="/judges" style={{
+            padding: '16px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2,
+            textDecoration: 'none', transition: 'all 0.2s',
+          }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>Judge Analytics</div>
+            <div style={{ fontSize: 11, color: '#455A64', fontFamily: 'var(--font-body)' }}>Research judges in your district</div>
+          </Link>
+          <Link href="/translate" style={{
+            padding: '16px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2,
+            textDecoration: 'none', transition: 'all 0.2s',
+          }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>Jargon Translator</div>
+            <div style={{ fontSize: 11, color: '#455A64', fontFamily: 'var(--font-body)' }}>Decode legal language</div>
+          </Link>
+          <Link href="/nos-explorer" style={{
+            padding: '16px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2,
+            textDecoration: 'none', transition: 'all 0.2s',
+          }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>NOS Explorer</div>
+            <div style={{ fontSize: 11, color: '#455A64', fontFamily: 'var(--font-body)' }}>Compare all case types</div>
+          </Link>
+        </section>
+
         {/* ═══ Related Case Types ═══ */}
         {(() => {
           const parentCat = SITS.find(cat => cat.opts.some(opt => opt.nos === nos)) || SITS.find(cat => cat.id === nos);
