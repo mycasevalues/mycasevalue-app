@@ -5,6 +5,7 @@ import {
   Line,
   BarChart,
   Bar,
+  Cell,
   XAxis,
   YAxis,
   Tooltip,
@@ -18,6 +19,9 @@ import {
   getNationalTrends,
   getCategoryTrends,
   getTopCaseTypesByVolume,
+  getCircuitWinRates,
+  getOutcomeBreakdown,
+  getSettlementDurations,
   type YearlyTrend,
   type CategoryTrend,
   type TopCaseType,
@@ -74,6 +78,9 @@ export default function TrendCharts() {
   const nationalTrends = getNationalTrends();
   const categoryTrends = getCategoryTrends();
   const topCaseTypes = getTopCaseTypesByVolume(15);
+  const circuitWinRates = getCircuitWinRates();
+  const outcomeBreakdown = getOutcomeBreakdown();
+  const settlementDurations = getSettlementDurations();
 
   // Transform top case types for horizontal bar chart
   const caseTypeChartData = topCaseTypes
@@ -219,6 +226,224 @@ export default function TrendCharts() {
             <YAxis dataKey="label" type="category" stroke="#455A64" width={300} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="count" fill="#006997" radius={[0, 8, 8, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Settlement Rate Trends - Area Chart */}
+      <div
+        className="p-6 border"
+        style={{
+          background: '#FFFFFF',
+          borderColor: '#D5D8DC',
+          borderRadius: '2px',
+        }}
+      >
+        <h3
+          className="text-lg font-semibold mb-6"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 600,
+            color: '#212529',
+          }}
+        >
+          Settlement Rate Trends (2015–2024)
+        </h3>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+          Percentage of federal civil cases resolved through settlement over time
+        </p>
+        <ResponsiveContainer width="100%" height={300}>
+          <AreaChart data={nationalTrends}>
+            <defs>
+              <linearGradient id="colorSettlement" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#10B981" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#10B981" stopOpacity={0.1} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid strokeDasharray="3 3" stroke="#F5F6F7" />
+            <XAxis dataKey="year" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <YAxis stroke="#455A64" domain={[0, 100]} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <Tooltip content={<CustomTooltip />} />
+            <Area
+              type="monotone"
+              dataKey="avgSettlementRate"
+              stroke="#10B981"
+              strokeWidth={2}
+              fillOpacity={1}
+              fill="url(#colorSettlement)"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Circuit Court Win Rates - Horizontal Bar Chart */}
+      <div
+        className="p-6 border"
+        style={{
+          background: '#FFFFFF',
+          borderColor: '#D5D8DC',
+          borderRadius: '2px',
+        }}
+      >
+        <h3
+          className="text-lg font-semibold mb-6"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 600,
+            color: '#212529',
+          }}
+        >
+          Circuit Court Win Rates
+        </h3>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+          Average plaintiff win rate by federal circuit
+        </p>
+        <ResponsiveContainer width="100%" height={350}>
+          <BarChart
+            data={circuitWinRates}
+            layout="vertical"
+            margin={{ top: 5, right: 30, left: 120, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" stroke="#F5F6F7" />
+            <XAxis type="number" domain={[0, 100]} stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <YAxis dataKey="circuit" type="category" stroke="#455A64" width={120} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <Tooltip
+              content={({ active, payload }) => {
+                if (active && payload && payload.length) {
+                  return (
+                    <div
+                      style={{
+                        background: '#FFFFFF',
+                        border: '1px solid #D5D8DC',
+                        borderRadius: '2px',
+                        padding: '12px 16px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                      }}
+                    >
+                      <p style={{ color: '#212529', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                        {payload[0].payload.circuit}
+                      </p>
+                      <p style={{ color: '#006997', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
+                        Win Rate: {payload[0].value}%
+                      </p>
+                      <p style={{ color: '#455A64', fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
+                        Cases: {payload[0].payload.caseCount.toLocaleString()}
+                      </p>
+                    </div>
+                  );
+                }
+                return null;
+              }}
+            />
+            <Bar dataKey="avgWinRate" radius={[0, 8, 8, 0]}>
+              {circuitWinRates.map((entry, index) => (
+                <Cell key={index} fill={entry.avgWinRate > 55 ? '#10B981' : entry.avgWinRate < 45 ? '#E8171F' : '#006997'} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Case Outcome Distribution - Horizontal Bar Chart */}
+      <div
+        className="p-6 border"
+        style={{
+          background: '#FFFFFF',
+          borderColor: '#D5D8DC',
+          borderRadius: '2px',
+        }}
+      >
+        <h3
+          className="text-lg font-semibold mb-6"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 600,
+            color: '#212529',
+          }}
+        >
+          How Cases End
+        </h3>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+          Distribution of case outcomes across all federal civil cases
+        </p>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart
+            data={outcomeBreakdown}
+            layout="vertical"
+            margin={{ top: 5, right: 30, left: 150, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" stroke="#F5F6F7" />
+            <XAxis type="number" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <YAxis dataKey="outcome" type="category" stroke="#455A64" width={150} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <Tooltip
+              content={({ active, payload }) => {
+                if (active && payload && payload.length) {
+                  return (
+                    <div
+                      style={{
+                        background: '#FFFFFF',
+                        border: '1px solid #D5D8DC',
+                        borderRadius: '2px',
+                        padding: '12px 16px',
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                      }}
+                    >
+                      <p style={{ color: '#212529', fontSize: '13px', fontWeight: 600, margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+                        {payload[0].payload.outcome}
+                      </p>
+                      <p style={{ color: payload[0].payload.color, fontSize: '12px', margin: '4px 0', fontFamily: 'var(--font-body)' }}>
+                        {payload[0].value}%
+                      </p>
+                    </div>
+                  );
+                }
+                return null;
+              }}
+            />
+            <Bar dataKey="percentage" radius={[0, 8, 8, 0]}>
+              {outcomeBreakdown.map((entry, index) => (
+                <Cell key={index} fill={entry.color} />
+              ))}
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Duration by Category - Grouped Bar Chart */}
+      <div
+        className="p-6 border"
+        style={{
+          background: '#FFFFFF',
+          borderColor: '#D5D8DC',
+          borderRadius: '2px',
+        }}
+      >
+        <h3
+          className="text-lg font-semibold mb-6"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 600,
+            color: '#212529',
+          }}
+        >
+          Settlement vs. Trial Duration by Category
+        </h3>
+        <p style={{ color: '#455A64', fontSize: '13px', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+          Average case duration for settlement versus trial across case categories
+        </p>
+        <ResponsiveContainer width="100%" height={350}>
+          <BarChart
+            data={settlementDurations}
+            layout="vertical"
+            margin={{ top: 5, right: 30, left: 120, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" stroke="#F5F6F7" />
+            <XAxis type="number" stroke="#455A64" tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <YAxis dataKey="category" type="category" stroke="#455A64" width={120} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+            <Tooltip content={<CustomTooltip />} />
+            <Legend wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#455A64' }} />
+            <Bar dataKey="settlementMonths" fill="#10B981" radius={[0, 4, 4, 0]} />
+            <Bar dataKey="trialMonths" fill="#E8171F" radius={[0, 4, 4, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

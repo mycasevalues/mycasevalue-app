@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { REAL_DATA } from '../../lib/realdata';
 import { SITE_URL } from '../../lib/site-config';
+import { getCircuitWinRates, getOutcomeBreakdown } from '../../lib/trends';
 
 const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'), {
   ssr: false,
@@ -333,6 +334,58 @@ export default function TrendsPage() {
           </div>
         </section>
 
+        {/* Circuit Court Performance */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            Circuit Court Performance
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Average plaintiff win rates by federal circuit court with comparison to national average.
+          </p>
+          {(() => {
+            const circuitData = getCircuitWinRates();
+            const nationalAvg = circuitData.reduce((sum, c) => sum + c.avgWinRate, 0) / circuitData.length;
+            return (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {circuitData.map((circuit) => {
+                  const isAboveAvg = circuit.avgWinRate > nationalAvg;
+                  const indicatorColor = circuit.avgWinRate > 55 ? '#10B981' : circuit.avgWinRate < 45 ? '#E8171F' : '#006997';
+                  return (
+                    <div
+                      key={circuit.circuit}
+                      className="p-4 lex-card"
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm font-semibold" style={{ color: '#212529' }}>
+                          {circuit.circuit}
+                        </span>
+                        <span className="text-sm font-bold" style={{ color: indicatorColor }}>
+                          {circuit.avgWinRate}%
+                        </span>
+                      </div>
+                      <div className="h-2 mb-3 overflow-hidden" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
+                        <div
+                          className="h-full"
+                          style={{
+                            width: `${Math.min(circuit.avgWinRate, 100)}%`,
+                            background: indicatorColor,
+                          }}
+                        />
+                      </div>
+                      <div className="flex items-center justify-between text-[11px]" style={{ color: '#455A64' }}>
+                        <span>{circuit.caseCount.toLocaleString()} cases</span>
+                        <span style={{ color: isAboveAvg ? '#10B981' : '#E8171F' }}>
+                          {isAboveAvg ? '+' : ''}{(circuit.avgWinRate - nationalAvg).toFixed(1)}%
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
+        </section>
+
         {/* Win Rate Extremes */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
@@ -477,6 +530,59 @@ export default function TrendsPage() {
               </tbody>
             </table>
           </div>
+        </section>
+
+        {/* How Cases End */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            How Cases End
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Distribution of federal civil case outcomes across all case types.
+          </p>
+          {(() => {
+            const outcomes = getOutcomeBreakdown();
+            const totalPercentage = outcomes.reduce((sum, o) => sum + o.percentage, 0);
+            return (
+              <div className="space-y-6">
+                {/* Stacked Bar */}
+                <div className="p-6 lex-card">
+                  <div className="flex rounded overflow-hidden" style={{ height: '48px' }}>
+                    {outcomes.map((outcome) => (
+                      <div
+                        key={outcome.outcome}
+                        style={{
+                          width: `${(outcome.percentage / totalPercentage) * 100}%`,
+                          background: outcome.color,
+                          position: 'relative',
+                        }}
+                        title={`${outcome.outcome}: ${outcome.percentage}%`}
+                      />
+                    ))}
+                  </div>
+                </div>
+                {/* Legend */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {outcomes.map((outcome) => (
+                    <div
+                      key={outcome.outcome}
+                      className="p-4 lex-card"
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-3 h-3 rounded" style={{ background: outcome.color }} />
+                        <span className="text-sm font-semibold" style={{ color: '#212529' }}>
+                          {outcome.outcome}
+                        </span>
+                      </div>
+                      <div className="text-2xl font-bold font-mono" style={{ color: outcome.color, fontFamily: 'var(--font-mono)' }}>
+                        {outcome.percentage}%
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </section>
 
         {/* CTA */}
