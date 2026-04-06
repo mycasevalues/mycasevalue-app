@@ -69,7 +69,7 @@ export default function MethodologyPage() {
         .stat-card {
           padding: 1.5rem;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           background: #FFFFFF;
           text-align: center;
           transition: all 0.3s ease;
@@ -82,13 +82,13 @@ export default function MethodologyPage() {
           border-left: 3px solid #F59E0B;
           background: #FFFBEB;
           padding: 1.5rem;
-          border-radius: 4px;
+          border-radius: 2px;
         }
         .public-domain-callout {
           border-left: 3px solid #006997;
           background: #F0F9FF;
           padding: 1.5rem;
-          border-radius: 4px;
+          border-radius: 2px;
         }
       `}</style>
 
@@ -188,7 +188,7 @@ export default function MethodologyPage() {
                 icon: 'building'
               },
             ].map((source, i) => (
-              <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '4px' }}>
+              <div key={i} className="source-card p-5 bg-white" style={{ borderRadius: '2px' }}>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="text-2xl flex-shrink-0">
                     {source.icon === 'database' && '📊'}
@@ -263,7 +263,7 @@ export default function MethodologyPage() {
           <p className="text-sm mb-6" style={{ color: '#455A64' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '4px', background: '#E8171F', color: '#FFFFFF', border: '1px solid #E8171F' }}>
+            style={{ borderRadius: '2px', background: '#E8171F', color: '#FFFFFF', border: '1px solid #E8171F' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

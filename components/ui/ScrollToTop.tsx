@@ -24,7 +24,7 @@ export default function ScrollToTop() {
         background: '#E8171F',
         color: '#FFFFFF',
         border: 'none',
-        borderRadius: '4px',
+        borderRadius: '2px',
         fontSize: '18px',
         cursor: 'pointer',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',

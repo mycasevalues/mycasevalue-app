@@ -174,7 +174,7 @@ export function CategoryIcon({ name, color, size = 28 }: { name: string; color?:
       width: size + 16,
       height: size + 16,
       background: `${color}10`,
-      borderRadius: '4px',
+      borderRadius: '2px',
     }}>
       <Icon color={color} size={size} />
     </div>

@@ -39,7 +39,7 @@ export default function NewsletterSignup() {
       style={{
         background: '#FFFFFF',
         border: '1px solid #D5D8DC',
-        borderRadius: '4px',
+        borderRadius: '2px',
         padding: '32px',
       }}
     >
@@ -92,7 +92,7 @@ export default function NewsletterSignup() {
             alignItems: 'center',
             gap: '12px',
             padding: '16px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             background: 'rgba(22, 163, 74, 0.08)',
             border: '1px solid rgba(22, 163, 74, 0.2)',
           }}
@@ -146,7 +146,7 @@ export default function NewsletterSignup() {
               minWidth: '200px',
               height: '48px',
               padding: '12px 16px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               border: `4px solid ${status === 'error' ? '#E8171F' : '#D5D8DC'}`,
               background: '#FFFFFF',
               fontFamily: 'var(--font-body)',
@@ -171,7 +171,7 @@ export default function NewsletterSignup() {
             style={{
               height: '48px',
               padding: '0 24px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               border: 'none',
               background: '#E8171F',
               color: '#FFFFFF',

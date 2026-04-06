@@ -229,7 +229,7 @@ const TabbedFeatures: React.FC = () => {
                 width: '100%',
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '40px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
                 animation: 'fadeInContent 0.4s ease-in 0.05s both',
@@ -277,7 +277,7 @@ const TabbedFeatures: React.FC = () => {
         }
 
         .tabbed-features-grid button:first-child {
-          border-radius: 4px 4px 0 0;
+          border-radius: 2px 4px 0 0;
         }
 
         .tabbed-features-grid button:last-child {
@@ -291,7 +291,7 @@ const TabbedFeatures: React.FC = () => {
           }
 
           .tabbed-features-grid button {
-            border-radius: 4px !important;
+            border-radius: 2px !important;
             margin-bottom: 8px;
           }
 
@@ -333,7 +333,7 @@ const WinRatePreview: React.FC = () => (
             style={{
               height: '8px',
               backgroundColor: '#F5F6F7',
-              borderRadius: '4px',
+              borderRadius: '2px',
               overflow: 'hidden',
             }}
           >
@@ -342,7 +342,7 @@ const WinRatePreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: '#E8171F',
                 width: `${item.rate}%`,
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}
             />
           </div>
@@ -378,7 +378,7 @@ const SettlementPreview: React.FC = () => (
             padding: '16px',
             backgroundColor: item.label === 'Median' ? '#F0F0F0' : '#FFFFFF',
             border: item.label === 'Median' ? '2px solid #E8171F' : '1px solid #D5D8DC',
-            borderRadius: '4px',
+            borderRadius: '2px',
             textAlign: 'center',
           }}
         >
@@ -420,7 +420,7 @@ const JudgeAnalyticsPreview: React.FC = () => (
             justifyContent: 'space-between',
             padding: '12px',
             backgroundColor: '#F9F9F9',
-            borderRadius: '4px',
+            borderRadius: '2px',
           }}
         >
           <span style={{ fontSize: '13px', color: '#455A64' }}>{item.label}</span>
@@ -459,7 +459,7 @@ const TimelinePreview: React.FC = () => (
             style={{
               height: '6px',
               backgroundColor: '#F5F6F7',
-              borderRadius: '4px',
+              borderRadius: '2px',
               overflow: 'hidden',
             }}
           >
@@ -468,7 +468,7 @@ const TimelinePreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: '#455A64',
                 width: `${(item.months / 30) * 100}%`,
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}
             />
           </div>
@@ -542,7 +542,7 @@ const AIPredictionsPreview: React.FC = () => (
       style={{
         padding: '20px',
         backgroundColor: '#F0F0F0',
-        borderRadius: '4px',
+        borderRadius: '2px',
         marginBottom: '20px',
       }}
     >
@@ -588,7 +588,7 @@ const AIPredictionsPreview: React.FC = () => (
             style={{
               height: '6px',
               backgroundColor: '#F5F6F7',
-              borderRadius: '4px',
+              borderRadius: '2px',
               overflow: 'hidden',
             }}
           >
@@ -597,7 +597,7 @@ const AIPredictionsPreview: React.FC = () => (
                 height: '100%',
                 backgroundColor: item.prob > 50 ? '#E8171F' : item.prob > 25 ? '#455A64' : '#B0BEC5',
                 width: `${item.prob}%`,
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}
             />
           </div>

@@ -118,7 +118,7 @@ const FeatureCard = ({
       style={{
         backgroundColor: '#FFFFFF',
         border: '1px solid #D5D8DC',
-        borderRadius: '4px',
+        borderRadius: '2px',
         padding: '24px',
         display: 'flex',
         flexDirection: 'column',
@@ -161,7 +161,7 @@ const FeatureCard = ({
           style={{
             display: 'inline-block',
             padding: '6px 12px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             fontSize: '12px',
             fontWeight: '600',
             textTransform: 'uppercase',
@@ -339,7 +339,7 @@ export default function AttorneyPage() {
                 padding: '8px 16px',
                 backgroundColor: 'rgba(0,105,151,0.15)',
                 color: '#FFFFFF',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '12px',
                 fontWeight: '700',
                 textTransform: 'uppercase',
@@ -353,7 +353,7 @@ export default function AttorneyPage() {
           </div>
 
           {/* Red Accent Badge */}
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#E8171F', width: 'fit-content' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '2px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', color: '#E8171F', width: 'fit-content' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             ATTORNEY MODE
           </div>
@@ -500,7 +500,7 @@ export default function AttorneyPage() {
           </div>
 
           {/* Beta Banner */}
-          <div style={{ padding: '12px 20px', backgroundColor: 'rgba(0,105,151,0.08)', borderRadius: '4px', border: '1px solid #D5D8DC' }}>
+          <div style={{ padding: '12px 20px', backgroundColor: 'rgba(0,105,151,0.08)', borderRadius: '2px', border: '1px solid #D5D8DC' }}>
             <p style={{ margin: 0, fontSize: '14px', color: '#006997', fontWeight: 600 }}>
               Beta Access — All attorney features are currently free during our preview period.
             </p>
@@ -515,7 +515,7 @@ export default function AttorneyPage() {
               backgroundColor: '#E8171F',
               color: '#FFFFFF',
               textDecoration: 'none',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontWeight: '700',
               fontSize: '16px',
               fontFamily: 'var(--font-display)',

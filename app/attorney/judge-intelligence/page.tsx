@@ -129,7 +129,7 @@ export default function JudgeIntelligencePage() {
             Home &gt; Attorney Tools &gt; Judge Intelligence
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-            <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '40px', height: '40px', borderRadius: '2px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
                 <line x1="12" y1="10" x2="12" y2="18" />
@@ -162,7 +162,7 @@ export default function JudgeIntelligencePage() {
                 padding: '12px 14px',
                 height: '48px',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 color: '#212529',
                 background: '#FFFFFF',
@@ -183,7 +183,7 @@ export default function JudgeIntelligencePage() {
               <label style={{ display: 'block', fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: '6px' }}>
                 Sort By
               </label>
-              <div style={{ display: 'flex', gap: '4px', background: '#FFFFFF', borderRadius: '4px', border: '1px solid #D5D8DC', padding: '3px' }}>
+              <div style={{ display: 'flex', gap: '4px', background: '#FFFFFF', borderRadius: '2px', border: '1px solid #D5D8DC', padding: '3px' }}>
                 {([
                   { key: 'winRate', label: 'Win Rate' },
                   { key: 'settlementRate', label: 'Settlement' },
@@ -195,7 +195,7 @@ export default function JudgeIntelligencePage() {
                     onClick={() => setSortBy(opt.key)}
                     style={{
                       padding: '6px 12px',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       border: 'none',
                       fontSize: '12px',
                       fontWeight: 700,
@@ -226,15 +226,15 @@ export default function JudgeIntelligencePage() {
 
         {/* Error */}
         {error && (
-          <div style={{ backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '20px 24px', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #D5D8DC', borderRadius: '2px', padding: '20px 24px', marginBottom: '24px' }}>
             <p style={{ fontSize: '14px', color: '#E8171F', margin: 0 }}>{error}</p>
           </div>
         )}
 
         {/* Empty state */}
         {!selectedState && !loading && (
-          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '2px', background: 'rgba(0,105,151,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                 <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" />
               </svg>
@@ -250,7 +250,7 @@ export default function JudgeIntelligencePage() {
                 <button
                   key={s.id}
                   onClick={() => handleStateChange(s.id)}
-                  style={{ padding: '8px 16px', border: '1px solid #D5D8DC', borderRadius: '4px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: '#FAFBFC', color: '#E8171F', transition: 'border-color 0.2s' }}
+                  style={{ padding: '8px 16px', border: '1px solid #D5D8DC', borderRadius: '2px', fontSize: '13px', fontWeight: 500, cursor: 'pointer', background: '#FAFBFC', color: '#E8171F', transition: 'border-color 0.2s' }}
                 >
                   {s.label}
                 </button>
@@ -276,7 +276,7 @@ export default function JudgeIntelligencePage() {
                     key={judge.name}
                     style={{
                       background: '#FFFFFF',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       border: isExpanded ? '2px solid #E8171F' : '1px solid #D5D8DC',
                       overflow: 'hidden',
                       transition: 'border-color 0.2s, box-shadow 0.2s',
@@ -305,7 +305,7 @@ export default function JudgeIntelligencePage() {
                             {judge.name}
                           </span>
                           {judge.senior && (
-                            <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '4px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00' }}>
+                            <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.5px', padding: '2px 8px', borderRadius: '2px', backgroundColor: 'rgba(184,110,0,0.08)', color: '#B86E00' }}>
                               Senior
                             </span>
                           )}
@@ -389,7 +389,7 @@ export default function JudgeIntelligencePage() {
             </div>
 
             {/* Disclaimer */}
-            <div style={{ marginTop: '24px', padding: '16px 20px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+            <div style={{ marginTop: '24px', padding: '16px 20px', backgroundColor: 'rgba(184,110,0,0.08)', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
               <p style={{ fontSize: '12px', color: '#B86E00', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>

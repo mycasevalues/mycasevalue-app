@@ -78,7 +78,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <Link
             href="/districts"
             className="inline-block px-6 py-3 font-semibold text-white transition"
-            style={{ background: '#E8171F', borderRadius: '4px' }}
+            style={{ background: '#E8171F', borderRadius: '2px' }}
           >
             View All Districts
           </Link>
@@ -255,7 +255,7 @@ export default async function DistrictPage({ params }: PageProps) {
           background: #E8171F;
           color: #FFFFFF;
           padding: 6px 12px;
-          border-radius: 4px;
+          border-radius: 2px;
           font-size: 11px;
           font-weight: 600;
           text-transform: uppercase;
@@ -267,7 +267,7 @@ export default async function DistrictPage({ params }: PageProps) {
         .stat-card {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 24px;
           text-align: center;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -300,7 +300,7 @@ export default async function DistrictPage({ params }: PageProps) {
         .card-container {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         }
 
@@ -375,7 +375,7 @@ export default async function DistrictPage({ params }: PageProps) {
           background: #E8171F;
           color: #FFFFFF;
           padding: 16px 24px;
-          border-radius: 4px;
+          border-radius: 2px;
           text-decoration: none;
           font-weight: 600;
           font-size: 16px;
@@ -425,7 +425,7 @@ export default async function DistrictPage({ params }: PageProps) {
         .card-section {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 32px;
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
         }
@@ -675,7 +675,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <div
             className="overflow-hidden"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -769,7 +769,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <div
             className="p-8 sm:p-12 text-center"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
               boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
@@ -808,7 +808,7 @@ export default async function DistrictPage({ params }: PageProps) {
           <div
             className="p-6 text-sm body-text"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               background: '#F8F9FA',
               border: '1px solid #D5D8DC',
               color: '#455A64',

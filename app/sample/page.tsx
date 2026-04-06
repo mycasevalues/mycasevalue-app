@@ -105,7 +105,7 @@ export default function SampleReportPage() {
               color: '#FFFFFF',
               backgroundColor: '#E8171F',
               padding: '8px 16px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               textDecoration: 'none',
               transition: 'background-color 0.2s',
             }}
@@ -197,7 +197,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -240,7 +240,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -282,7 +282,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -360,7 +360,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '32px 24px',
                 marginBottom: '16px',
               }}
@@ -371,7 +371,7 @@ export default function SampleReportPage() {
                   style={{
                     height: '8px',
                     backgroundColor: '#e5e7eb',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     overflow: 'hidden',
                     marginBottom: '16px',
                     position: 'relative',
@@ -479,7 +479,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -521,7 +521,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -563,7 +563,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -631,7 +631,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 overflow: 'hidden',
                 marginBottom: '24px',
               }}
@@ -855,7 +855,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -897,7 +897,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -939,7 +939,7 @@ export default function SampleReportPage() {
                 style={{
                   backgroundColor: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                 }}
               >
@@ -1007,7 +1007,7 @@ export default function SampleReportPage() {
               style={{
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 overflow: 'hidden',
                 marginBottom: '24px',
               }}
@@ -1210,7 +1210,7 @@ export default function SampleReportPage() {
                   backgroundColor: '#E8171F',
                   color: '#fff',
                   padding: '16px 32px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontSize: '16px',
                   fontWeight: 600,
                   textDecoration: 'none',

@@ -36,7 +36,7 @@ export default function SpanishDisclaimerPage() {
 
           {/* Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
             IMPORTANTE
           </div>
 
@@ -55,7 +55,7 @@ export default function SpanishDisclaimerPage() {
 
         <div className="space-y-6">
           {/* Disclaimer content with styled cards */}
-          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '24px' }}>
+          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', padding: '24px' }}>
             <section className="mb-8">
               <h2 className="text-2xl font-display font-semibold mb-4" style={{ color: '#212529' }}>
                 Declaración General

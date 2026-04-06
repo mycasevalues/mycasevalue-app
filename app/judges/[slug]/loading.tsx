@@ -32,7 +32,7 @@ export default function Loading() {
                       width: '60px',
                       height: '14px',
                       background: '#1a3a5a',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -49,7 +49,7 @@ export default function Loading() {
                     height: 'clamp(24px, 5vw, 36px)',
                     width: '55%',
                     background: '#1a3a5a',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     marginBottom: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -59,7 +59,7 @@ export default function Loading() {
                     height: '14px',
                     width: '40%',
                     background: '#1a3a5a',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />
@@ -79,7 +79,7 @@ export default function Loading() {
                   width: '85%',
                   background: '#D5D8DC',
                   marginBottom: '8px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -88,7 +88,7 @@ export default function Loading() {
                   height: '14px',
                   width: '70%',
                   background: '#D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -103,7 +103,7 @@ export default function Loading() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -116,7 +116,7 @@ export default function Loading() {
                   width: '30%',
                   background: '#D5D8DC',
                   marginBottom: '8px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -125,7 +125,7 @@ export default function Loading() {
                   height: '14px',
                   width: '50%',
                   background: '#D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -140,7 +140,7 @@ export default function Loading() {
                     textAlign: 'center',
                     padding: '24px 16px',
                     background: '#F8F9FA',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     border: '1px solid #D5D8DC',
                   }}
                 >
@@ -150,7 +150,7 @@ export default function Loading() {
                       width: '65%',
                       background: '#D5D8DC',
                       margin: '0 auto 12px',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -160,7 +160,7 @@ export default function Loading() {
                       width: '75%',
                       background: '#D5D8DC',
                       margin: '0 auto 8px',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -170,7 +170,7 @@ export default function Loading() {
                       width: '60%',
                       background: '#D5D8DC',
                       margin: '0 auto',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -184,7 +184,7 @@ export default function Loading() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -197,7 +197,7 @@ export default function Loading() {
                   width: '25%',
                   background: '#D5D8DC',
                   marginBottom: '8px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -209,7 +209,7 @@ export default function Loading() {
                 height: '300px',
                 width: '100%',
                 background: '#F8F9FA',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 animation: 'pulse-skeleton 2s ease-in-out infinite',
               }}
@@ -221,7 +221,7 @@ export default function Loading() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '32px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
@@ -233,7 +233,7 @@ export default function Loading() {
                   width: '25%',
                   background: '#D5D8DC',
                   marginBottom: '8px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
               />
@@ -248,7 +248,7 @@ export default function Loading() {
                     height: '14px',
                     width: i === 4 ? '40%' : '100%',
                     background: '#D5D8DC',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />

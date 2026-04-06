@@ -13,7 +13,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
   const maxPct = Math.max(...data.map(d => d.pct));
 
   return (
-    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="20%">
           <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
@@ -34,7 +34,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
             contentStyle={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',

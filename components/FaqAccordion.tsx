@@ -62,7 +62,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
         }
       `}</style>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '4px', border: '1px solid #D5D8DC', overflow: 'hidden' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '2px', border: '1px solid #D5D8DC', overflow: 'hidden' }}>
         {items.map((item, index) => {
           const isOpen = openIndex === index;
           const isLast = index === items.length - 1;

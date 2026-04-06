@@ -13,7 +13,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
   return (
     <div className="w-full" role="img" aria-label={lang === 'es' ? 'Línea de tiempo del caso' : 'Case timeline'}>
       {/* Visual timeline bar */}
-      <div className="flex gap-[2px] h-8 overflow-hidden mb-4" style={{ borderRadius: '4px' }}>
+      <div className="flex gap-[2px] h-8 overflow-hidden mb-4" style={{ borderRadius: '2px' }}>
         {stages.map((stage, i) => (
           <div
             key={i}
@@ -26,7 +26,7 @@ export function TimelineRange({ stages, totalLabel, totalDuration, lang = 'en' }
           >
             {/* Tooltip on hover */}
             <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 text-[11px] font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10"
-              style={{ background: '#FFFFFF', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', borderRadius: '4px' }}>
+              style={{ background: '#FFFFFF', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', borderRadius: '2px' }}>
               {stage.label}: {stage.duration}
             </div>
           </div>

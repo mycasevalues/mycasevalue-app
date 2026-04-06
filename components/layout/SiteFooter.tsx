@@ -147,7 +147,7 @@ export default function SiteFooter() {
         <div style={{
           background: 'rgba(255,255,255,0.05)',
           border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: '4px',
+          borderRadius: '2px',
           padding: '32px 28px',
           marginBottom: '48px',
           display: 'flex',
@@ -169,7 +169,7 @@ export default function SiteFooter() {
             background: '#E8171F',
             color: '#FFFFFF',
             padding: '11px 28px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             textDecoration: 'none',
             fontFamily: 'var(--font-body)',
             fontWeight: 600,
@@ -209,7 +209,7 @@ export default function SiteFooter() {
               justifyContent: 'center',
               transition: 'all 150ms ease-out',
               padding: '8px',
-              borderRadius: '4px',
+              borderRadius: '2px',
             }} title="Twitter/X">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-1 7-1"></path>
@@ -222,7 +222,7 @@ export default function SiteFooter() {
               justifyContent: 'center',
               transition: 'all 150ms ease-out',
               padding: '8px',
-              borderRadius: '4px',
+              borderRadius: '2px',
             }} title="LinkedIn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
@@ -236,7 +236,7 @@ export default function SiteFooter() {
               justifyContent: 'center',
               transition: 'all 150ms ease-out',
               padding: '8px',
-              borderRadius: '4px',
+              borderRadius: '2px',
             }} title="Facebook">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z"></path>

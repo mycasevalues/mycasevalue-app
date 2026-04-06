@@ -4,7 +4,7 @@ export default function ReportSkeleton() {
       width: w,
       height: h,
       background: '#D5D8DC',
-      borderRadius: '4px',
+      borderRadius: '2px',
       animation: 'pulse-skeleton 2s ease-in-out infinite',
     }} />
   );
@@ -42,7 +42,7 @@ export default function ReportSkeleton() {
                       width: '60px',
                       height: '14px',
                       background: '#1a3a5a',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -59,7 +59,7 @@ export default function ReportSkeleton() {
                     height: 'clamp(24px, 5vw, 32px)',
                     width: '60%',
                     background: '#1a3a5a',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     marginBottom: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -69,7 +69,7 @@ export default function ReportSkeleton() {
                     height: '28px',
                     width: '140px',
                     background: '#E8171F',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />
@@ -98,7 +98,7 @@ export default function ReportSkeleton() {
                     width: '100px',
                     height: '36px',
                     background: '#D5D8DC',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />
@@ -114,7 +114,7 @@ export default function ReportSkeleton() {
                     width: '150px',
                     height: '28px',
                     background: '#D5D8DC',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     border: '1px solid #D5D8DC',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
@@ -131,7 +131,7 @@ export default function ReportSkeleton() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -153,7 +153,7 @@ export default function ReportSkeleton() {
                     textAlign: 'center',
                     padding: '28px 20px',
                     background: '#F8F9FA',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     border: '1px solid #D5D8DC',
                   }}
                 >
@@ -163,7 +163,7 @@ export default function ReportSkeleton() {
                       width: '70%',
                       background: '#D5D8DC',
                       margin: '0 auto 12px',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -173,7 +173,7 @@ export default function ReportSkeleton() {
                       width: '80%',
                       background: '#D5D8DC',
                       margin: '0 auto 8px',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -183,7 +183,7 @@ export default function ReportSkeleton() {
                       width: '70%',
                       background: '#D5D8DC',
                       margin: '0 auto',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -198,7 +198,7 @@ export default function ReportSkeleton() {
                 width: '50%',
                 background: '#D5D8DC',
                 margin: '20px auto 0',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 animation: 'pulse-skeleton 2s ease-in-out infinite',
               }}
             />
@@ -209,7 +209,7 @@ export default function ReportSkeleton() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -230,7 +230,7 @@ export default function ReportSkeleton() {
                   style={{
                     padding: '20px',
                     background: '#F8F9FA',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     border: '1px solid #D5D8DC',
                   }}
                 >
@@ -240,7 +240,7 @@ export default function ReportSkeleton() {
                       width: '40%',
                       background: '#D5D8DC',
                       marginBottom: '8px',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -249,7 +249,7 @@ export default function ReportSkeleton() {
                       height: '12px',
                       width: '60%',
                       background: '#D5D8DC',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
                     }}
                   />
@@ -263,7 +263,7 @@ export default function ReportSkeleton() {
             style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '32px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
@@ -284,7 +284,7 @@ export default function ReportSkeleton() {
                     height: '16px',
                     width: i === 4 ? '30%' : '100%',
                     background: '#D5D8DC',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}
                 />

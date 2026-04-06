@@ -59,7 +59,7 @@ export default function PacerMonitorPage() {
           </Link>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '2px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                   <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8" /><line x1="12" y1="10" x2="12" y2="18" />
                 </svg>
@@ -68,7 +68,7 @@ export default function PacerMonitorPage() {
                 <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>PACER Monitoring</h1>
               </div>
             </div>
-            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '4px', border: '1px solid #E8171F' }}>
+            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '2px', border: '1px solid #E8171F' }}>
               <span className="font-display" style={{ fontSize: '12px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Court Monitoring</span>
             </div>
           </div>
@@ -83,9 +83,9 @@ export default function PacerMonitorPage() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
               <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>Recent Alerts</h2>
-              <div style={{ display: 'flex', gap: '4px', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px' }}>
+              <div style={{ display: 'flex', gap: '4px', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', border: '1px solid rgba(255,255,255,0.10)', padding: '3px' }}>
                 {(['all', 'high', 'medium', 'low'] as const).map((f) => (
-                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '4px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#E8171F' : 'transparent', color: filter === f ? '#FFFFFF' : '#455A64', textTransform: 'capitalize' as const }}>
+                  <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 10px', borderRadius: '2px', border: 'none', fontSize: '11px', fontWeight: 600, cursor: 'pointer', backgroundColor: filter === f ? '#E8171F' : 'transparent', color: filter === f ? '#FFFFFF' : '#455A64', textTransform: 'capitalize' as const }}>
                     {f}
                   </button>
                 ))}
@@ -96,13 +96,13 @@ export default function PacerMonitorPage() {
               {filtered.map((alert) => {
                 const pc = priorityColors[alert.priority];
                 return (
-                  <div key={alert.id} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '16px 20px', border: '1px solid rgba(255,255,255,0.10)', borderLeft: `4px solid ${pc.dot}` }}>
+                  <div key={alert.id} style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', padding: '16px 20px', border: '1px solid rgba(255,255,255,0.10)', borderLeft: `4px solid ${pc.dot}` }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
                       <div>
                         <span className="font-mono" style={{ fontSize: '12px', fontWeight: 600, color: '#006997' }}>{alert.caseNumber}</span>
                         <span style={{ fontSize: '12px', color: '#455A64', marginLeft: '8px' }}>{alert.court}</span>
                       </div>
-                      <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '4px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
+                      <span style={{ fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '2px', backgroundColor: pc.bg, color: pc.text, textTransform: 'uppercase' as const }}>{alert.priority}</span>
                     </div>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: '#F0F2F5', margin: '0 0 4px' }}>{alert.caseName}</p>
                     <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 6px', lineHeight: 1.4 }}>{alert.event}</p>
@@ -116,7 +116,7 @@ export default function PacerMonitorPage() {
           {/* Sidebar */}
           <div>
             {/* Add to Watch List */}
-            <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '20px', border: '1px solid #D5D8DC', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', padding: '20px', border: '1px solid #D5D8DC', marginBottom: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Watch List</h3>
               <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }}>
                 <input
@@ -124,11 +124,11 @@ export default function PacerMonitorPage() {
                   value={watchCase}
                   onChange={(e) => setWatchCase(e.target.value)}
                   placeholder="Case number..."
-                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '4px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'rgba(255,255,255,0.04)', color: '#F0F2F5', outline: 'none' }}
+                  style={{ flex: 1, padding: '12px 14px', height: '48px', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '2px', fontSize: '13px', fontFamily: 'var(--font-mono)', backgroundColor: 'rgba(255,255,255,0.04)', color: '#F0F2F5', outline: 'none' }}
                   onFocus={(e) => e.target.style.borderColor = '#E8171F'}
                   onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.10)'}
                 />
-                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: '#E8171F', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 700, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
+                <button onClick={addWatch} style={{ padding: '12px 20px', height: '48px', backgroundColor: '#E8171F', color: '#FFFFFF', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 700, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.5px' }}>+</button>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {watchList.map((c) => (
@@ -141,7 +141,7 @@ export default function PacerMonitorPage() {
             </div>
 
             {/* Stats */}
-            <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '20px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', padding: '20px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <h3 className="font-display" style={{ fontSize: '15px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Monitor Stats</h3>
               {[
                 { label: 'Watched Cases', value: String(watchList.length) },

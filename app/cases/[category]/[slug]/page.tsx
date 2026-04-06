@@ -103,7 +103,7 @@ function StatsCard({
     <div
       style={{
         padding: '20px',
-        borderRadius: '4px',
+        borderRadius: '2px',
         background: '#FFFFFF',
         border: '1px solid #D5D8DC',
         textAlign: 'center',
@@ -159,7 +159,7 @@ export default async function CaseTypeDetailPage({
             style={{
               display: 'inline-block',
               padding: '12px 32px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               background: '#E8171F',
               color: 'white',
               textDecoration: 'none',
@@ -295,7 +295,7 @@ export default async function CaseTypeDetailPage({
               style={{
                 display: 'inline-block',
                 padding: '8px 16px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 background: '#E8171F',
                 fontSize: '12px',
                 fontWeight: '700',
@@ -335,7 +335,7 @@ export default async function CaseTypeDetailPage({
           style={{
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
-            borderRadius: '4px',
+            borderRadius: '2px',
             padding: '32px',
             marginBottom: '40px',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
@@ -378,7 +378,7 @@ export default async function CaseTypeDetailPage({
             style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
             }}
@@ -411,7 +411,7 @@ export default async function CaseTypeDetailPage({
             style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '24px',
               boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08)',
             }}
@@ -466,7 +466,7 @@ export default async function CaseTypeDetailPage({
           .cta-button {
             display: inline-block;
             padding: 14px 36px;
-            border-radius: 4px;
+            border-radius: 2px;
             background: #E8171F;
             color: white;
             text-decoration: none;
@@ -494,7 +494,7 @@ export default async function CaseTypeDetailPage({
           style={{
             background: '#00172E',
             color: '#FFFFFF',
-            borderRadius: '4px',
+            borderRadius: '2px',
             padding: '48px 40px',
             textAlign: 'center',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -534,7 +534,7 @@ export default async function CaseTypeDetailPage({
           <style>{`
             .related-case-card {
               padding: 16px;
-              border-radius: 4px;
+              border-radius: 2px;
               background: #FFFFFF;
               border: 1px solid #D5D8DC;
               text-decoration: none;

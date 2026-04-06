@@ -89,8 +89,9 @@ export default function ServerHero() {
 
           {/* Right: Quick lookup card */}
           <div style={{
-            background: '#FFFFFF', borderRadius: '4px', padding: '28px',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.25)',
+            background: '#FFFFFF', borderRadius: '2px', padding: '28px',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+            border: '1px solid #D5D8DC',
           }}>
             <div style={{ marginBottom: '20px' }}>
               <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
@@ -287,7 +288,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 8: PRODUCTIVITY FEATURES ────────────────── */}
-      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderTop: '3px solid #E8171F', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <div style={{ borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
@@ -400,7 +401,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 6: FEATURE HIGHLIGHTS (LexisNexis-style) ── */}
-      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderTop: '3px solid #E8171F', borderBottom: '1px solid #D5D8DC' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
@@ -422,7 +423,7 @@ export default function ServerHero() {
               'High-value analytics for settlements, timing, and outcomes',
               'Exclusive comparisons via judge and district analytics',
             ].map((text, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E5EBF0' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E5EBF0' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
@@ -471,14 +472,13 @@ export default function ServerHero() {
               <div key={i} style={{
                 background: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '32px 24px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-                transition: 'box-shadow 200ms',
+                transition: 'border-color 200ms',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                   <div style={{
-                    width: '44px', height: '44px', borderRadius: '4px',
+                    width: '44px', height: '44px', borderRadius: '2px',
                     background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.15)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                   }}>

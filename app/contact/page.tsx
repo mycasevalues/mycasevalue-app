@@ -65,7 +65,7 @@ export default function ContactPage() {
                 fontWeight: 700,
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontFamily: 'var(--font-display)',
               }}>
                 CONTACT US
@@ -118,7 +118,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -171,7 +171,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -224,7 +224,7 @@ export default function ContactPage() {
             <div
               style={{
                 padding: 32,
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 background: '#FFFFFF',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',

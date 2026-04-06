@@ -51,7 +51,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
         style={{
           background: '#FFFFFF',
           border: '1px solid #D5D8DC',
-          borderRadius: '4px',
+          borderRadius: '2px',
           padding: '12px 16px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
         }}
@@ -93,7 +93,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#D5D8DC',
-          borderRadius: '4px',
+          borderRadius: '2px',
         }}
       >
         <h3
@@ -139,7 +139,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#D5D8DC',
-          borderRadius: '4px',
+          borderRadius: '2px',
         }}
       >
         <h3
@@ -192,7 +192,7 @@ export default function TrendCharts() {
         style={{
           background: '#FFFFFF',
           borderColor: '#D5D8DC',
-          borderRadius: '4px',
+          borderRadius: '2px',
         }}
       >
         <h3

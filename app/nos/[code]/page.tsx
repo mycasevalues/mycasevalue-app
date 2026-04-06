@@ -97,7 +97,7 @@ export default async function NOSPage({ params }: PageProps) {
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
           <p className="mb-6" style={{ color: '#455A64' }}>NOS code {code} does not exist in our database.</p>
           <Link href="/" className="inline-block px-6 py-3 font-semibold text-white transition"
-            style={{ background: '#E8171F', borderRadius: '4px' }}>
+            style={{ background: '#E8171F', borderRadius: '2px' }}>
             Return to Home
           </Link>
         </div>
@@ -283,7 +283,7 @@ export default async function NOSPage({ params }: PageProps) {
           padding: 8px 14px;
           background: #E8171F;
           color: #FFFFFF;
-          border-radius: 4px;
+          border-radius: 2px;
           font-size: 12px;
           font-weight: 700;
           border: none;
@@ -294,7 +294,7 @@ export default async function NOSPage({ params }: PageProps) {
         .stat-card {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 20px;
           text-align: center;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -326,7 +326,7 @@ export default async function NOSPage({ params }: PageProps) {
         .outcome-bar {
           display: flex;
           height: 32px;
-          border-radius: 4px;
+          border-radius: 2px;
           overflow: hidden;
           background: #F5F6F7;
           margin-bottom: 16px;
@@ -370,7 +370,7 @@ export default async function NOSPage({ params }: PageProps) {
         .related-card {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 16px;
           text-decoration: none;
           color: inherit;
@@ -411,7 +411,7 @@ export default async function NOSPage({ params }: PageProps) {
         .disclaimer-box {
           background: #FEF3C7;
           border: 1px solid #FCD34D;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 16px;
         }
 
@@ -435,7 +435,7 @@ export default async function NOSPage({ params }: PageProps) {
           background: #E8171F;
           color: #FFFFFF;
           padding: 14px 28px;
-          border-radius: 4px;
+          border-radius: 2px;
           text-decoration: none;
           display: inline-block;
           font-size: 14px;
@@ -474,7 +474,7 @@ export default async function NOSPage({ params }: PageProps) {
         .content-box {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 24px;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
         }

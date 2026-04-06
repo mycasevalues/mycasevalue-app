@@ -63,7 +63,7 @@ export default function ResultsPage() {
               background: '#E8171F',
               color: '#FFFFFF',
               padding: '6px 12px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontSize: '11px',
               fontWeight: '700',
               fontFamily: 'var(--font-display)',
@@ -101,7 +101,7 @@ export default function ResultsPage() {
         {/* Empty State Card */}
         <div style={{
           padding: '32px',
-          borderRadius: '4px',
+          borderRadius: '2px',
           border: '1px solid #D5D8DC',
           background: '#FFFFFF',
           textAlign: 'center'
@@ -135,7 +135,7 @@ export default function ResultsPage() {
                 paddingLeft: '24px',
                 paddingRight: '24px',
                 height: '48px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 fontWeight: '600',
                 background: '#E8171F',
@@ -158,7 +158,7 @@ export default function ResultsPage() {
                 paddingLeft: '24px',
                 paddingRight: '24px',
                 height: '48px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 fontWeight: '600',
                 background: '#FFFFFF',
@@ -178,7 +178,7 @@ export default function ResultsPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '32px' }}>
           <div className="info-card" style={{
             padding: '20px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             border: '1px solid #D5D8DC',
             background: '#FFFFFF'
           }}>
@@ -205,7 +205,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '20px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             border: '1px solid #D5D8DC',
             background: '#FFFFFF'
           }}>
@@ -232,7 +232,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '20px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             border: '1px solid #D5D8DC',
             background: '#FFFFFF'
           }}>
@@ -259,7 +259,7 @@ export default function ResultsPage() {
           </div>
           <div className="info-card" style={{
             padding: '20px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             border: '1px solid #D5D8DC',
             background: '#FFFFFF'
           }}>

@@ -12,8 +12,8 @@ const SkeletonResultCard = () => (
     padding: '16px',
     marginBottom: '12px',
     background: '#FFFFFF',
-    border: '4px solid #D5D8DC',
-    borderRadius: '4px',
+    border: '1px solid #D5D8DC',
+    borderRadius: '2px',
     animation: 'shimmer 2s infinite',
   }}>
     <div style={{
@@ -27,7 +27,7 @@ const SkeletonResultCard = () => (
         height: '20px',
         width: '60%',
         background: '#E8EAED',
-        borderRadius: '4px',
+        borderRadius: '2px',
         flex: '1 1 auto',
         minWidth: '150px',
       }} />
@@ -35,7 +35,7 @@ const SkeletonResultCard = () => (
         height: '20px',
         width: '20%',
         background: '#E8EAED',
-        borderRadius: '4px',
+        borderRadius: '2px',
         minWidth: '50px',
       }} />
     </div>
@@ -43,7 +43,7 @@ const SkeletonResultCard = () => (
       height: '14px',
       width: '40%',
       background: '#E8EAED',
-      borderRadius: '4px',
+      borderRadius: '2px',
     }} />
   </div>
 );
@@ -228,8 +228,8 @@ export default function SearchPage() {
                 style={{
                   padding: '8px 16px',
                   background: '#FFFFFF',
-                  border: '4px solid #D5D8DC',
-                  borderRadius: '4px',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
                   fontSize: '13px',
                   color: '#006997',
                   textDecoration: 'none',
@@ -274,8 +274,8 @@ export default function SearchPage() {
               paddingLeft: '44px',
               paddingRight: '16px',
               fontSize: '16px',
-              border: '4px solid #D5D8DC',
-              borderRadius: '4px',
+              border: '1px solid #D5D8DC',
+              borderRadius: '2px',
               background: '#FFFFFF',
               color: '#212529',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -305,7 +305,7 @@ export default function SearchPage() {
             background: '#E8171F',
             color: '#FFFFFF',
             border: 'none',
-            borderRadius: '4px',
+            borderRadius: '2px',
             cursor: 'pointer',
             fontFamily: 'var(--font-body)',
             transition: 'all 150ms ease-out',
@@ -362,8 +362,8 @@ export default function SearchPage() {
             padding: '16px',
             marginBottom: '12px',
             background: '#FFFFFF',
-            border: '4px solid #D5D8DC',
-            borderRadius: '4px',
+            border: '1px solid #D5D8DC',
+            borderRadius: '2px',
             textDecoration: 'none',
             transition: 'all 150ms ease-out',
             cursor: 'pointer',
@@ -387,7 +387,7 @@ export default function SearchPage() {
               color: '#E8171F',
               background: '#FEE9EB',
               padding: '4px 10px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               border: 'none',
               fontFamily: 'var(--font-body)',
               whiteSpace: 'nowrap',
@@ -411,8 +411,8 @@ export default function SearchPage() {
                 style={{
                   padding: '8px 16px',
                   background: '#FFFFFF',
-                  border: '4px solid #D5D8DC',
-                  borderRadius: '4px',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
                   fontSize: '13px',
                   color: '#006997',
                   cursor: 'pointer',

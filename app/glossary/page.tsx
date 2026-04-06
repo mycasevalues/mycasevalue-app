@@ -202,7 +202,7 @@ export default function GlossaryPage() {
           </nav>
 
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5"><path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z"/></svg>
             REFERENCE
           </div>
@@ -217,7 +217,7 @@ export default function GlossaryPage() {
 
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <div style={{ background: '#FFFFFF', borderRadius: '4px', border: `1px solid #D5D8DC`, padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+        <div style={{ background: '#FFFFFF', borderRadius: '2px', border: `1px solid #D5D8DC`, padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           {/* Letter-grouped terms */}
           {Array.from(groupedTerms.entries()).map(([letter, terms]) => (
             <div key={letter} className="mb-12">
@@ -298,7 +298,7 @@ export default function GlossaryPage() {
           <p className="text-sm mb-4" style={{ color: '#455A64' }}>Have a term you think should be in this glossary?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529', borderRadius: '4px' }}>
+            style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#212529', borderRadius: '2px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Suggest a Term
           </a>

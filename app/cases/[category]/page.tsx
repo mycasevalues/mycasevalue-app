@@ -295,7 +295,7 @@ async function CategoryPage({
       <div style={{ padding: '40px 20px', textAlign: 'center' }}>
         <h1 className="text-2xl font-bold">Category not found</h1>
         <p className="mt-4" style={{ color: '#455A64' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
-        <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: '#212529', borderRadius: '4px' }}>Browse all categories</a>
+        <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: '#212529', borderRadius: '2px' }}>Browse all categories</a>
       </div>
     );
   }
@@ -500,7 +500,7 @@ async function CategoryPage({
           }
           .cta-btn-category:hover {
             background: #CC1019;
-            box-shadow: 0 8px 24px rgba(232,23,31,0.3);
+            box-shadow: none;
             transform: translateY(-2px);
           }
         `}</style>
@@ -535,7 +535,7 @@ async function CategoryPage({
                   style={{
                     background: '#FFFFFF',
                     border: '1px solid #D5D8DC',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     padding: '20px',
                     fontFamily: 'var(--font-display)',
                     textDecoration: 'none',
@@ -600,7 +600,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontFamily: 'var(--font-display)',
             }}>
               <div style={{
@@ -632,7 +632,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontFamily: 'var(--font-display)',
             }}>
               <div style={{
@@ -664,7 +664,7 @@ async function CategoryPage({
             <div style={{
               background: '#FFFFFF',
               padding: '24px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontFamily: 'var(--font-display)',
             }}>
               <div style={{
@@ -734,7 +734,7 @@ async function CategoryPage({
               padding: '0 40px',
               background: '#E8171F',
               color: '#FFFFFF',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontWeight: 700,
               fontSize: '14px',
               textDecoration: 'none',

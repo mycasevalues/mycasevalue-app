@@ -59,7 +59,7 @@ export default function DisclaimerPage() {
               fontWeight: 700,
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontFamily: 'var(--font-display)',
             }}>
               LEGAL
@@ -362,7 +362,7 @@ export default function DisclaimerPage() {
           {/* Acknowledgment */}
           <section style={{
             padding: '32px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             border: '1px solid #D5D8DC',
             backgroundColor: '#FFFFFF',
           }}>

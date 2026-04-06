@@ -118,7 +118,7 @@ export default async function OutcomesPage({
             paddingRight: '24px',
             paddingTop: '12px',
             paddingBottom: '12px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             fontWeight: 600,
             color: '#FFFFFF',
             background: '#E8171F',
@@ -266,7 +266,7 @@ export default async function OutcomesPage({
               background: '#E8171F',
               color: '#FFFFFF',
               padding: '6px 12px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontSize: '11px',
               fontWeight: 700,
               letterSpacing: '0.5px',
@@ -310,7 +310,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '20px',
             }}>
               <div style={{
@@ -332,7 +332,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '20px',
             }}>
               <div style={{
@@ -354,7 +354,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '20px',
             }}>
               <div style={{
@@ -376,7 +376,7 @@ export default async function OutcomesPage({
             <div style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '20px',
             }}>
               <div style={{
@@ -408,7 +408,7 @@ export default async function OutcomesPage({
           <div style={{
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
-            borderRadius: '4px',
+            borderRadius: '2px',
             padding: 'clamp(20px, 4vw, 32px)',
           }}>
             <h2 style={{
@@ -450,7 +450,7 @@ export default async function OutcomesPage({
                   </div>
                   <div style={{
                     height: '12px',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     background: '#D5D8DC',
                     overflow: 'hidden',
                   }}>
@@ -492,7 +492,7 @@ export default async function OutcomesPage({
             <Link href={`/cases/${category.id}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '24px',
               textDecoration: 'none',
               display: 'block',
@@ -522,7 +522,7 @@ export default async function OutcomesPage({
             <Link href={`/nos/${option.nos}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '24px',
               textDecoration: 'none',
               display: 'block',

@@ -209,7 +209,7 @@ export default function DistrictHeatmapPage() {
                   backgroundColor: '#E8171F',
                   color: '#FFFFFF',
                   padding: '6px 12px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontSize: '11px',
                   fontWeight: '600',
                   letterSpacing: '1px',
@@ -261,7 +261,7 @@ export default function DistrictHeatmapPage() {
             <div
               style={{
                 padding: '16px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 backgroundColor: '#FFFFFF',
               }}
@@ -284,7 +284,7 @@ export default function DistrictHeatmapPage() {
             <div
               style={{
                 padding: '16px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 backgroundColor: '#FFFFFF',
               }}
@@ -307,7 +307,7 @@ export default function DistrictHeatmapPage() {
             <div
               style={{
                 padding: '16px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 backgroundColor: '#FFFFFF',
               }}
@@ -333,7 +333,7 @@ export default function DistrictHeatmapPage() {
             <div
               style={{
                 padding: '16px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 backgroundColor: '#FFFFFF',
               }}
@@ -383,7 +383,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   width: '100%',
                   padding: '12px 16px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   border: '1px solid #D5D8DC',
                   backgroundColor: '#FFFFFF',
                   color: '#212529',
@@ -420,7 +420,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   width: '100%',
                   padding: '12px 16px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   border: '1px solid #D5D8DC',
                   backgroundColor: '#FFFFFF',
                   color: '#212529',
@@ -458,7 +458,7 @@ export default function DistrictHeatmapPage() {
                   className="state-card"
                   style={{
                     padding: '16px',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     border: '1px solid #D5D8DC',
                     backgroundColor: '#FFFFFF',
                     boxSizing: 'border-box',
@@ -502,13 +502,13 @@ export default function DistrictHeatmapPage() {
                     </p>
                   </div>
 
-                  <div style={{ width: '100%', backgroundColor: '#E8E8E8', borderRadius: '4px', height: '8px', overflow: 'hidden', marginBottom: '8px' }}>
+                  <div style={{ width: '100%', backgroundColor: '#E8E8E8', borderRadius: '2px', height: '8px', overflow: 'hidden', marginBottom: '8px' }}>
                     <div
                       style={{
                         height: '100%',
                         width: `${state.winRate}%`,
                         backgroundColor: '#E8171F',
-                        borderRadius: '4px',
+                        borderRadius: '2px',
                         transition: 'width 0.3s ease',
                       }}
                     />
@@ -535,7 +535,7 @@ export default function DistrictHeatmapPage() {
           {/* CTA Section */}
           <div
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               border: '1px solid #D5D8DC',
               padding: '32px',
               textAlign: 'center',
@@ -571,7 +571,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 display: 'inline-block',
                 padding: '12px 32px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontWeight: '600',
                 color: '#FFFFFF',
                 backgroundColor: '#E8171F',

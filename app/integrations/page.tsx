@@ -131,7 +131,7 @@ export default function IntegrationsPage() {
         .integration-card {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 32px;
           transition: all 0.2s ease;
           position: relative;
@@ -149,7 +149,7 @@ export default function IntegrationsPage() {
           right: 0;
           height: 3px;
           background: #E8171F;
-          border-radius: 4px 4px 0 0;
+          border-radius: 2px 4px 0 0;
         }
         .breadcrumb-link:hover {
           color: #FFFFFF !important;
@@ -160,7 +160,7 @@ export default function IntegrationsPage() {
         .feature-tag {
           background: #F8F9FA;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 4px 10px;
           font-size: 12px;
           color: #455A64;
@@ -199,7 +199,7 @@ export default function IntegrationsPage() {
             alignItems: 'center',
             gap: '8px',
             padding: '6px 12px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             fontSize: '11px',
             fontWeight: 700,
             letterSpacing: '1.5px',
@@ -290,7 +290,7 @@ export default function IntegrationsPage() {
                 <div style={{
                   width: '56px',
                   height: '56px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   background: '#F8F9FA',
                   border: '1px solid #D5D8DC',
                   display: 'flex',
@@ -305,7 +305,7 @@ export default function IntegrationsPage() {
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase' as const,
                   padding: '4px 10px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   background: integration.status === 'Available' ? 'rgba(7, 135, 74, 0.08)' : 'rgba(232, 23, 31, 0.06)',
                   color: integration.status === 'Available' ? '#07874A' : '#E8171F',
                 }}>
@@ -365,7 +365,7 @@ export default function IntegrationsPage() {
                     padding: '10px 24px',
                     background: '#E8171F',
                     color: '#FFFFFF',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     textDecoration: 'none',
                     fontSize: '13px',
                     fontWeight: 700,
@@ -382,7 +382,7 @@ export default function IntegrationsPage() {
                   padding: '10px 24px',
                   background: '#F8F9FA',
                   color: '#455A64',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontSize: '13px',
                   fontWeight: 600,
                   border: '1px solid #D5D8DC',
@@ -397,7 +397,7 @@ export default function IntegrationsPage() {
         {/* API Quick Start */}
         <div style={{
           background: '#00172E',
-          borderRadius: '4px',
+          borderRadius: '2px',
           padding: '48px',
           marginBottom: '48px',
         }}>
@@ -422,7 +422,7 @@ export default function IntegrationsPage() {
           {/* Code Block */}
           <div style={{
             background: 'rgba(0,0,0,0.3)',
-            borderRadius: '4px',
+            borderRadius: '2px',
             padding: '24px',
             fontFamily: 'var(--font-mono)',
             fontSize: '13px',
@@ -467,7 +467,7 @@ export default function IntegrationsPage() {
                 padding: '12px 28px',
                 background: '#E8171F',
                 color: '#FFFFFF',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 textDecoration: 'none',
                 fontSize: '13px',
                 fontWeight: 700,
@@ -485,7 +485,7 @@ export default function IntegrationsPage() {
         <div style={{
           background: '#FFFFFF',
           border: '1px solid #D5D8DC',
-          borderRadius: '4px',
+          borderRadius: '2px',
           padding: '48px',
           textAlign: 'center' as const,
         }}>
@@ -517,7 +517,7 @@ export default function IntegrationsPage() {
               padding: '14px 32px',
               background: '#E8171F',
               color: '#FFFFFF',
-              borderRadius: '4px',
+              borderRadius: '2px',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: 700,

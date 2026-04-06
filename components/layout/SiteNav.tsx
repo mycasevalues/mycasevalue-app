@@ -229,7 +229,7 @@ export default function SiteNav() {
                       color: '#455A64',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       border: '1px solid #D5D8DC',
                       transition: 'all 150ms ease',
                     }}
@@ -245,7 +245,7 @@ export default function SiteNav() {
                       fontWeight: 600,
                       color: '#FFFFFF',
                       background: '#E8171F',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       fontFamily: 'var(--font-body)',
                       border: 'none',
                       cursor: 'pointer',
@@ -267,7 +267,7 @@ export default function SiteNav() {
                       color: '#455A64',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       border: '1px solid #D5D8DC',
                       transition: 'all 150ms',
                     }}
@@ -282,11 +282,12 @@ export default function SiteNav() {
                       fontWeight: 600,
                       color: '#FFFFFF',
                       background: '#E8171F',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-display)',
                       transition: 'all 150ms',
-                      boxShadow: '0 2px 8px rgba(232,23,31,0.20)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
                     }}
                   >
                     Sign Up
@@ -376,12 +377,12 @@ export default function SiteNav() {
           {/* Left: MyCaseValue+ brand text */}
           <div style={{
             fontSize: '18px',
-            fontWeight: 600,
+            fontWeight: 700,
             color: '#FFFFFF',
-            fontStyle: 'italic',
             fontFamily: 'var(--font-display)',
             whiteSpace: 'nowrap',
             flexShrink: 0,
+            letterSpacing: '-0.01em',
           }}>
             MyCaseValue+<sup style={{ fontSize: '12px' }}>®</sup>
           </div>
@@ -395,7 +396,7 @@ export default function SiteNav() {
               fontWeight: 700,
               letterSpacing: '0.04em',
               padding: '8px 20px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               border: 'none',
               cursor: 'pointer',
               textTransform: 'uppercase',
@@ -433,8 +434,8 @@ export default function SiteNav() {
                     className="site-nav-sub-link"
                     style={{
                       padding: '0 16px',
-                      fontSize: '14px',
-                      fontWeight: 400,
+                      fontSize: '13px',
+                      fontWeight: 600,
                       color: isActive(link.href) ? '#FFFFFF' : '#E6E6E6',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
@@ -444,6 +445,8 @@ export default function SiteNav() {
                       borderBottom: isActive(link.href) ? '2px solid #E8171F' : '2px solid transparent',
                       transition: 'all 150ms',
                       position: 'relative',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
                     }}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                   >
@@ -507,8 +510,8 @@ export default function SiteNav() {
                     className="site-nav-sub-link"
                     style={{
                       padding: '0 16px',
-                      fontSize: '14px',
-                      fontWeight: 400,
+                      fontSize: '13px',
+                      fontWeight: 600,
                       color: isActive(link.href) ? '#FFFFFF' : '#E6E6E6',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
@@ -518,6 +521,8 @@ export default function SiteNav() {
                       borderBottom: isActive(link.href) ? '2px solid #E8171F' : '2px solid transparent',
                       transition: 'all 150ms',
                       position: 'relative',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
                     }}
                     aria-current={isActive(link.href) ? 'page' : undefined}
                   >
@@ -600,8 +605,8 @@ export default function SiteNav() {
               fontSize: '16px',
               fontFamily: 'var(--font-body)',
               background: '#FFFFFF',
-              border: '4px solid #D5D8DC',
-              borderRadius: '4px',
+              border: '1px solid #D5D8DC',
+              borderRadius: '2px',
               transition: 'border-color 150ms',
               outline: 'none',
             }}
@@ -620,7 +625,7 @@ export default function SiteNav() {
               fontWeight: 600,
               fontFamily: 'var(--font-body)',
               border: 'none',
-              borderRadius: '4px',
+              borderRadius: '2px',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               transition: 'all 150ms',
@@ -709,7 +714,7 @@ export default function SiteNav() {
             style={{
               display: 'block',
               padding: '12px 16px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontSize: '16px',
               fontWeight: isActive(link.href) ? 600 : 500,
               color: '#FFFFFF',
@@ -735,7 +740,7 @@ export default function SiteNav() {
                 style={{
                   display: 'block',
                   padding: '12px 16px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontSize: '16px',
                   fontWeight: 500,
                   color: '#FFFFFF',
@@ -754,7 +759,7 @@ export default function SiteNav() {
                   display: 'block',
                   width: '100%',
                   padding: '12px 16px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontSize: '16px',
                   fontWeight: 600,
                   color: '#FFFFFF',
@@ -779,7 +784,7 @@ export default function SiteNav() {
                 style={{
                   display: 'block',
                   padding: '12px 16px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontSize: '16px',
                   fontWeight: 500,
                   color: '#FFFFFF',
@@ -798,7 +803,7 @@ export default function SiteNav() {
                 style={{
                   display: 'block',
                   padding: '12px 16px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontSize: '16px',
                   fontWeight: 600,
                   color: '#FFFFFF',
@@ -842,7 +847,7 @@ export default function SiteNav() {
           min-width: 240px;
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 0 0 4px 4px;
+          border-radius: 0 0 2px 2px;
           box-shadow: 0 8px 24px rgba(0,0,0,0.12);
           padding: 16px 0;
           z-index: 300;

@@ -155,7 +155,7 @@ export default function CalculatorPage() {
       {/* Header */}
       <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E', padding: '64px 24px' }}>
         <div className="max-w-3xl mx-auto">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#E8171F' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '2px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#E8171F' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
             CALCULATOR
           </div>
@@ -176,7 +176,7 @@ export default function CalculatorPage() {
             borderColor: '#D5D8DC',
             background: '#FFFFFF',
             padding: '32px',
-            borderRadius: '4px',
+            borderRadius: '2px',
           }}
           onSubmit={(e) => { e.preventDefault(); calculate(); }}
         >
@@ -193,7 +193,7 @@ export default function CalculatorPage() {
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   borderColor: caseType === '' ? '#D5D8DC' : '#E8171F',
                   background: '#FAFBFC',
                   color: caseType ? '#212529' : '#455A64',
@@ -223,7 +223,7 @@ export default function CalculatorPage() {
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   borderColor: district === '' ? '#D5D8DC' : '#E8171F',
                   background: '#FAFBFC',
                   color: district ? '#212529' : '#455A64',
@@ -263,7 +263,7 @@ export default function CalculatorPage() {
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   borderColor: damages === '' ? '#D5D8DC' : '#E8171F',
                   background: '#FAFBFC',
                   color: '#212529',
@@ -289,7 +289,7 @@ export default function CalculatorPage() {
                 className="w-full px-4 border text-sm transition-all focus:outline-none"
                 style={{
                   height: '48px',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   borderColor: represented === '' ? '#D5D8DC' : '#E8171F',
                   background: '#FAFBFC',
                   color: represented ? '#212529' : '#455A64',
@@ -322,7 +322,7 @@ export default function CalculatorPage() {
                 cursor: canCalculate ? 'pointer' : 'not-allowed',
                 opacity: canCalculate ? 1 : 0.7,
                 textTransform: 'uppercase',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 letterSpacing: '0.5px',
               }}
@@ -340,7 +340,7 @@ export default function CalculatorPage() {
                 fontFamily: 'var(--font-display)',
                 cursor: 'pointer',
                 borderColor: '#D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 letterSpacing: '0.5px',
                 textTransform: 'uppercase',
@@ -356,7 +356,7 @@ export default function CalculatorPage() {
           <div className="mt-8 border" style={{
             borderColor: '#D5D8DC',
             background: '#FFFFFF',
-            borderRadius: '4px',
+            borderRadius: '2px',
             padding: '32px',
             animation: 'slideUpFadeIn 0.4s ease-out',
           }}>
@@ -374,7 +374,7 @@ export default function CalculatorPage() {
               <div className="p-6 text-center" style={{
                 background: '#FAFBFC',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}>
                 <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
                   Conservative
@@ -388,7 +388,7 @@ export default function CalculatorPage() {
               <div className="p-6 text-center transform scale-105" style={{
                 background: '#FFF3F4',
                 border: '1px solid #E8171F',
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}>
                 <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#E8171F', fontFamily: 'var(--font-body)' }}>
                   Median
@@ -402,7 +402,7 @@ export default function CalculatorPage() {
               <div className="p-6 text-center" style={{
                 background: '#FAFBFC',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}>
                 <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
                   Favorable
@@ -420,7 +420,7 @@ export default function CalculatorPage() {
               <div className="p-6 flex flex-col items-center justify-center" style={{
                 background: '#FAFBFC',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 minHeight: '200px',
               }}>
                 <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
@@ -458,7 +458,7 @@ export default function CalculatorPage() {
               <div className="p-6 flex flex-col items-center justify-center" style={{
                 background: '#FAFBFC',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 minHeight: '200px',
               }}>
                 <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
@@ -504,7 +504,7 @@ export default function CalculatorPage() {
         <div className="mt-8 border" style={{
           borderColor: '#D5D8DC',
           background: '#FFFFFF',
-          borderRadius: '4px',
+          borderRadius: '2px',
           padding: '32px',
           borderLeft: '3px solid #F59E0B',
         }}>

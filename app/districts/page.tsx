@@ -214,7 +214,7 @@ export default function DistrictsPage() {
           font-weight: 700;
           text-transform: uppercase;
           padding: 6px 12px;
-          border-radius: 4px;
+          border-radius: 2px;
           margin-bottom: 12px;
           letter-spacing: 0.08em;
           font-family: var(--font-body);
@@ -248,7 +248,7 @@ export default function DistrictsPage() {
             style={{
               background: '#E8171F',
               color: '#FFFFFF',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -278,7 +278,7 @@ export default function DistrictsPage() {
               style={{
                 background: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}
             >
               <div
@@ -299,7 +299,7 @@ export default function DistrictsPage() {
               style={{
                 background: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}
             >
               <div
@@ -320,7 +320,7 @@ export default function DistrictsPage() {
               style={{
                 background: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '4px',
+                borderRadius: '2px',
               }}
             >
               <div
@@ -389,7 +389,7 @@ export default function DistrictsPage() {
                     className="district-card group p-4 border"
                     style={{
                       background: '#FFFFFF',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                     }}
                   >
                     <div className="flex items-center justify-between">

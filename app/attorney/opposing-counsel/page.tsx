@@ -87,7 +87,7 @@ export default function OpposingCounselPage() {
             Home &gt; Attorney Tools &gt; Opposing Counsel
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{ width: '48px', height: '48px', borderRadius: '4px', background: 'rgba(232,23,31,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '48px', height: '48px', borderRadius: '2px', background: 'rgba(232,23,31,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                 <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
               </svg>
@@ -113,17 +113,17 @@ export default function OpposingCounselPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search by attorney name or firm (e.g. Smith, Johnson, Williams)..."
-                style={{ width: '100%', padding: '12px 12px 12px 42px', height: '48px', border: '1px solid #D5D8DC', borderRadius: '4px', fontSize: '14px', color: '#212529', background: '#FFFFFF', fontFamily: 'var(--font-body)' }}
+                style={{ width: '100%', padding: '12px 12px 12px 42px', height: '48px', border: '1px solid #D5D8DC', borderRadius: '2px', fontSize: '14px', color: '#212529', background: '#FFFFFF', fontFamily: 'var(--font-body)' }}
               />
             </div>
-            <button type="submit" disabled={loading} style={{ padding: '0 24px', height: '48px', backgroundColor: '#E8171F', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 700, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            <button type="submit" disabled={loading} style={{ padding: '0 24px', height: '48px', backgroundColor: '#E8171F', color: '#FFFFFF', border: 'none', borderRadius: '2px', fontSize: '14px', fontWeight: 700, cursor: 'pointer', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
               {loading ? 'Searching...' : 'Search'}
             </button>
           </div>
         </form>
 
         {error && (
-          <div style={{ padding: '12px 16px', borderRadius: '4px', backgroundColor: 'rgba(232,23,31,0.12)', border: '1px solid #D5D8DC', marginBottom: '24px' }}>
+          <div style={{ padding: '12px 16px', borderRadius: '2px', backgroundColor: 'rgba(232,23,31,0.12)', border: '1px solid #D5D8DC', marginBottom: '24px' }}>
             <p style={{ fontSize: '13px', color: '#E8171F', margin: 0 }}>{error}</p>
           </div>
         )}
@@ -139,7 +139,7 @@ export default function OpposingCounselPage() {
               {result.profiles.map((p, i) => {
                 const isExpanded = expandedIndex === i;
                 return (
-                  <div key={i} style={{ background: '#FFFFFF', borderRadius: '4px', border: isExpanded ? '2px solid #E8171F' : '1px solid #D5D8DC', overflow: 'hidden', boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)' }}>
+                  <div key={i} style={{ background: '#FFFFFF', borderRadius: '2px', border: isExpanded ? '2px solid #E8171F' : '1px solid #D5D8DC', overflow: 'hidden', boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)' }}>
                     <button onClick={() => setExpandedIndex(isExpanded ? null : i)} style={{ width: '100%', padding: '20px 24px', border: 'none', background: 'none', cursor: 'pointer', textAlign: 'left' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
@@ -179,7 +179,7 @@ export default function OpposingCounselPage() {
                                 { label: 'Mid', value: p.settlementPatterns.mid, color: '#B86E00' },
                                 { label: 'Late', value: p.settlementPatterns.late, color: '#E8171F' },
                               ].map((s) => (
-                                <div key={s.label} style={{ flex: s.value, padding: '8px', borderRadius: '4px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
+                                <div key={s.label} style={{ flex: s.value, padding: '8px', borderRadius: '2px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
                                   <div className="font-mono" style={{ fontSize: '14px', fontWeight: 700, color: s.color }}>{s.value}%</div>
                                   <div style={{ fontSize: '10px', color: '#455A64' }}>{s.label}</div>
                                 </div>
@@ -208,14 +208,14 @@ export default function OpposingCounselPage() {
                             <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 700, color: '#212529', margin: '16px 0 10px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Practice Areas</h4>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                               {p.practiceAreas.map((pa) => (
-                                <span key={pa} style={{ padding: '4px 10px', borderRadius: '4px', backgroundColor: 'rgba(232,23,31,0.08)', color: '#E8171F', fontSize: '11px', fontWeight: 600 }}>{pa}</span>
+                                <span key={pa} style={{ padding: '4px 10px', borderRadius: '2px', backgroundColor: 'rgba(232,23,31,0.08)', color: '#E8171F', fontSize: '11px', fontWeight: 600 }}>{pa}</span>
                               ))}
                             </div>
                           </div>
                         </div>
 
                         {/* Tendencies */}
-                        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#F5F5F5', borderRadius: '4px' }}>
+                        <div style={{ marginTop: '20px', padding: '16px', backgroundColor: '#F5F5F5', borderRadius: '2px' }}>
                           <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '13px', fontWeight: 700, color: '#212529', margin: '0 0 12px', textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>Strategy Tendencies</h4>
                           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                             {p.tendencies.map((t, ti) => (
@@ -233,7 +233,7 @@ export default function OpposingCounselPage() {
               })}
             </div>
 
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
               <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}><strong>Disclaimer:</strong> {result.disclaimer}</p>
             </div>
           </>
@@ -241,8 +241,8 @@ export default function OpposingCounselPage() {
 
         {/* Empty state */}
         {!result && !loading && (
-          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '4px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '2px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
             </div>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Research Opposing Counsel</h2>

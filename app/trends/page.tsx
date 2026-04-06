@@ -134,11 +134,11 @@ export default function TrendsPage() {
       <style>{`
         a.lex-link { color: #006997; text-decoration: none; }
         a.lex-link:hover { text-decoration: underline; }
-        .lex-card { background: #FFFFFF; border: 1px solid #D5D8DC; border-radius: 4px; }
+        .lex-card { background: #FFFFFF; border: 1px solid #D5D8DC; border-radius: 2px; }
         .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .lex-btn-primary { background: #E8171F; color: white; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; }
+        .lex-btn-primary { background: #E8171F; color: white; border: none; border-radius: 2px; font-weight: 600; cursor: pointer; }
         .lex-btn-primary:hover { background: #C41219; }
-        .lex-badge { background: rgba(232,23,31,0.1); color: #E8171F; border-radius: 4px; }
+        .lex-badge { background: rgba(232,23,31,0.1); color: #E8171F; border-radius: 2px; }
         h1 { font-family: var(--font-display); }
         h2 { font-family: var(--font-display); }
       `}</style>
@@ -171,7 +171,7 @@ export default function TrendsPage() {
             style={{
               background: '#E8171F',
               color: '#FFFFFF',
-              borderRadius: '4px',
+              borderRadius: '2px',
               fontFamily: 'var(--font-body)',
             }}
           >
@@ -278,7 +278,7 @@ export default function TrendsPage() {
                       <span>{t.months}mo avg</span>
                     </div>
                   </div>
-                  <div className="h-2 overflow-hidden" style={{ background: '#F5F6F7', borderRadius: '4px' }}>
+                  <div className="h-2 overflow-hidden" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
                     <div
                       className="h-full"
                       style={{
@@ -320,7 +320,7 @@ export default function TrendsPage() {
                       {c.total.toLocaleString()} cases
                     </span>
                   </div>
-                  <div className="h-2 mb-2 overflow-hidden" style={{ background: '#F5F6F7', borderRadius: '4px' }}>
+                  <div className="h-2 mb-2 overflow-hidden" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
                     <div className="h-full" style={{ width: `${pct}%`, background: c.color }} />
                   </div>
                   <div className="text-[11px]" style={{ color: '#455A64' }}>
@@ -508,7 +508,7 @@ export default function TrendsPage() {
                 border: '1px solid #D5D8DC',
                 color: '#212529',
                 background: '#FFFFFF',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 textDecoration: 'none',
               }}
             >

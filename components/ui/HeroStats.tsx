@@ -77,7 +77,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
     <div
       style={{
         padding: 'clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px)',
-        borderRadius: '4px',
+        borderRadius: '2px',
         background: '#FFFFFF',
         border: `2px solid ${stat.color}18`,
         position: 'relative',

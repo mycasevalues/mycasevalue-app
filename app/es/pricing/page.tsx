@@ -95,7 +95,7 @@ export default function SpanishPricingPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
             OPCIONES DE PAGO
           </div>
 
@@ -115,7 +115,7 @@ export default function SpanishPricingPage() {
           {/* Single Report Card */}
           <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/20"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               borderColor: '#D5D8DC',
               background: '#FFFFFF',
             }}>
@@ -156,7 +156,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '4px', background: '#F5F6F7', color: '#455A64', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '2px', background: '#F5F6F7', color: '#455A64', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -164,12 +164,12 @@ export default function SpanishPricingPage() {
           {/* Unlimited Reports Card */}
           <div className="border-2 p-8 transition-all duration-300 hover:shadow-lg md:scale-105 hover:shadow-amber-500/30"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               borderColor: '#E8171F',
               background: '#FFFFFF',
             }}>
             <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ borderRadius: '4px', background: 'rgba(232,23,31,0.08)', color: '#E8171F' }}>
+              style={{ borderRadius: '2px', background: 'rgba(232,23,31,0.08)', color: '#E8171F' }}>
               MEJOR VALOR
             </div>
 
@@ -209,7 +209,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '4px', background: '#E8171F', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '2px', background: '#E8171F', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -217,7 +217,7 @@ export default function SpanishPricingPage() {
           {/* Attorney Mode Card */}
           <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               borderColor: '#D5D8DC',
               background: '#FFFFFF',
             }}>
@@ -260,7 +260,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '4px', background: '#006997', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '2px', background: '#006997', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -268,7 +268,7 @@ export default function SpanishPricingPage() {
         </div>
 
         {/* Plan Notes */}
-        <div className="text-center p-6 mb-12" style={{ background: '#FFFFFF', borderColor: '#D5D8DC', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+        <div className="text-center p-6 mb-12" style={{ background: '#FFFFFF', borderColor: '#D5D8DC', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
           <p className="text-sm" style={{ color: '#455A64' }}>
             Todos los planes incluyen citas de fuentes, soporte bilingüe (inglés/español) y un aviso de "no es asesoramiento legal".
           </p>
@@ -285,7 +285,7 @@ export default function SpanishPricingPage() {
                 key={idx}
                 className="group p-5 border transition-colors cursor-pointer"
                 style={{
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   borderColor: '#D5D8DC',
                   background: '#FFFFFF',
                 }}
@@ -318,7 +318,7 @@ export default function SpanishPricingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
+        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
@@ -327,7 +327,7 @@ export default function SpanishPricingPage() {
           </p>
           <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '4px', background: '#E8171F', color: '#FFFFFF' }}>
+            style={{ borderRadius: '2px', background: '#E8171F', color: '#FFFFFF' }}>
             Consultar Mi Tipo de Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

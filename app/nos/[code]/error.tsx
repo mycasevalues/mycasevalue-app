@@ -11,7 +11,7 @@ export default function NosCodeError({ error, reset }: { error: Error; reset: ()
         <button type="button"
           onClick={reset}
           className="px-6 py-2 text-sm font-medium text-white"
-          style={{ background: '#212529', borderRadius: '4px' }}
+          style={{ background: '#212529', borderRadius: '2px' }}
         >
           Try again
         </button>

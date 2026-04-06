@@ -154,7 +154,7 @@ export default function ResetPasswordPage() {
           maxWidth: '440px',
           backgroundColor: '#FFFFFF',
           border: '1px solid #D5D8DC',
-          borderRadius: '4px',
+          borderRadius: '2px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           padding: '32px',
         }}
@@ -199,7 +199,7 @@ export default function ResetPasswordPage() {
               style={{
                 width: '56px',
                 height: '56px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 backgroundColor: 'rgba(0,105,151,0.08)',
                 display: 'flex',
                 alignItems: 'center',
@@ -270,7 +270,7 @@ export default function ResetPasswordPage() {
                   padding: '12px 16px',
                   backgroundColor: 'rgba(204,16,25,0.06)',
                   border: '1px solid rgba(204,16,25,0.20)',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   marginBottom: '20px',
                 }}
               >
@@ -318,7 +318,7 @@ export default function ResetPasswordPage() {
                     height: '48px',
                     padding: '12px 14px',
                     border: '1px solid #D5D8DC',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
@@ -358,7 +358,7 @@ export default function ResetPasswordPage() {
                     height: '48px',
                     padding: '12px 14px',
                     border: '1px solid #D5D8DC',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
                     color: '#212529',
@@ -381,7 +381,7 @@ export default function ResetPasswordPage() {
                   backgroundColor: '#E8171F',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   fontFamily: 'var(--font-body)',
                   fontSize: '15px',
                   fontWeight: 600,

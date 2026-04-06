@@ -90,7 +90,7 @@ export default function OddsPage() {
         .ln-select {
           height: 48px;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 0 16px;
           font-family: var(--font-body);
           color: #212529;
@@ -107,7 +107,7 @@ export default function OddsPage() {
           background: #E8171F;
           color: #FFFFFF;
           border: none;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 16px 32px;
           font-size: 14px;
           font-weight: 600;
@@ -126,7 +126,7 @@ export default function OddsPage() {
         .ln-card {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           font-family: var(--font-body);
         }
         .ln-link {
@@ -161,7 +161,7 @@ export default function OddsPage() {
                 background: '#E8171F',
                 color: '#FFFFFF',
                 padding: '6px 12px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '11px',
                 fontWeight: '600',
                 letterSpacing: '1px',
@@ -333,7 +333,7 @@ export default function OddsPage() {
         {results && (
           <div style={{ display: 'grid', gap: '32px' }}>
             {/* Win Rate Card */}
-            <div className="ln-card" style={{ padding: '40px', textAlign: 'center', borderRadius: '4px' }}>
+            <div className="ln-card" style={{ padding: '40px', textAlign: 'center', borderRadius: '2px' }}>
               <p
                 style={{
                   fontSize: '12px',
@@ -365,7 +365,7 @@ export default function OddsPage() {
             </div>
 
             {/* Outcomes Bar Chart */}
-            <div className="ln-card" style={{ padding: '40px', borderRadius: '4px' }}>
+            <div className="ln-card" style={{ padding: '40px', borderRadius: '2px' }}>
               <p
                 style={{
                   fontSize: '14px',
@@ -413,7 +413,7 @@ export default function OddsPage() {
                       <div
                         style={{
                           height: '12px',
-                          borderRadius: '4px',
+                          borderRadius: '2px',
                           background: '#F5F6F7',
                           overflow: 'hidden',
                         }}
@@ -424,7 +424,7 @@ export default function OddsPage() {
                             background: outcome.color,
                             width: `${percentage}%`,
                             transition: 'width 500ms ease',
-                            borderRadius: '4px',
+                            borderRadius: '2px',
                           }}
                         />
                       </div>
@@ -435,7 +435,7 @@ export default function OddsPage() {
             </div>
 
             {/* Narrative */}
-            <div className="ln-card" style={{ padding: '40px', borderRadius: '4px' }}>
+            <div className="ln-card" style={{ padding: '40px', borderRadius: '2px' }}>
               <p
                 style={{
                   color: '#455A64',
@@ -466,7 +466,7 @@ export default function OddsPage() {
             </div>
 
             {/* CTA */}
-            <div className="ln-card" style={{ padding: '40px', textAlign: 'center', borderRadius: '4px' }}>
+            <div className="ln-card" style={{ padding: '40px', textAlign: 'center', borderRadius: '2px' }}>
               <p
                 style={{
                   fontSize: '14px',
@@ -501,7 +501,7 @@ export default function OddsPage() {
                 background: '#F5F6F7',
                 color: '#455A64',
                 padding: '40px 24px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 lineHeight: '1.6',
                 fontFamily: 'var(--font-body)',

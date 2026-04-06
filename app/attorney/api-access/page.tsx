@@ -69,7 +69,7 @@ export default function ApiAccessPage() {
           </Link>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '40px', height: '40px', borderRadius: '4px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '2px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                   <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" /><path d="M10 12l2 2 4-4" />
                 </svg>
@@ -78,7 +78,7 @@ export default function ApiAccessPage() {
                 <h1 className="font-display" style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>API Access</h1>
               </div>
             </div>
-            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '4px', border: '1px solid #E8171F' }}>
+            <div style={{ background: 'rgba(232,23,31,0.15)', padding: '6px 14px', borderRadius: '2px', border: '1px solid #E8171F' }}>
               <span className="font-display" style={{ fontSize: '12px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Developer Tools</span>
             </div>
           </div>
@@ -88,13 +88,13 @@ export default function ApiAccessPage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 20px' }}>
         {/* API Key */}
-        <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+        <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', padding: '24px', border: '1px solid #D5D8DC', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
           <h2 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>Your API Key</h2>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <div style={{ flex: 1, padding: '12px 14px', backgroundColor: '#F8F9FA', borderRadius: '4px', border: '1px solid #D5D8DC', fontFamily: 'var(--font-mono)', fontSize: '14px', color: '#212529', letterSpacing: '0.5px' }}>
+            <div style={{ flex: 1, padding: '12px 14px', backgroundColor: '#F8F9FA', borderRadius: '2px', border: '1px solid #D5D8DC', fontFamily: 'var(--font-mono)', fontSize: '14px', color: '#212529', letterSpacing: '0.5px' }}>
               {apiKey}
             </div>
-            <button onClick={copyKey} style={{ padding: '12px 20px', backgroundColor: copied ? '#07CA6B' : '#E8171F', color: '#FFFFFF', border: 'none', borderRadius: '4px', fontSize: '12px', fontWeight: 700, cursor: 'pointer', transition: 'background-color 0.2s', minWidth: '80px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <button onClick={copyKey} style={{ padding: '12px 20px', backgroundColor: copied ? '#07CA6B' : '#E8171F', color: '#FFFFFF', border: 'none', borderRadius: '2px', fontSize: '12px', fontWeight: 700, cursor: 'pointer', transition: 'background-color 0.2s', minWidth: '80px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               {copied ? 'Copied!' : 'Copy'}
             </button>
           </div>
@@ -108,7 +108,7 @@ export default function ApiAccessPage() {
             { label: 'This Month', value: '1,234', limit: '/ 50,000' },
             { label: 'Rate Limit', value: '60', limit: 'req/min' },
           ].map((s) => (
-            <div key={s.label} style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', padding: '20px', border: '1px solid #D5D8DC', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div key={s.label} style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', padding: '20px', border: '1px solid #D5D8DC', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
               <p style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 6px' }}>{s.label}</p>
               <p style={{ margin: 0 }}>
                 <span className="font-mono" style={{ fontSize: '24px', fontWeight: 700, color: '#212529' }}>{s.value}</span>
@@ -119,14 +119,14 @@ export default function ApiAccessPage() {
         </div>
 
         {/* Endpoints */}
-        <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', border: '1px solid #D5D8DC', overflow: 'hidden', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+        <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', border: '1px solid #D5D8DC', overflow: 'hidden', marginBottom: '24px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
           <div style={{ padding: '20px 24px', borderBottom: '1px solid #E8EAE D' }}>
             <h2 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: 0 }}>Available Endpoints</h2>
           </div>
           {API_ENDPOINTS.map((ep, i) => (
             <div key={i} style={{ padding: '14px 24px', borderBottom: i < API_ENDPOINTS.length - 1 ? '1px solid #E8EAE D' : 'none' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                <span className="font-mono" style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '4px', backgroundColor: `${methodColors[ep.method]}20`, color: methodColors[ep.method], minWidth: '42px', textAlign: 'center' }}>{ep.method}</span>
+                <span className="font-mono" style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '2px', backgroundColor: `${methodColors[ep.method]}20`, color: methodColors[ep.method], minWidth: '42px', textAlign: 'center' }}>{ep.method}</span>
                 <code style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: '#212529', wordBreak: 'break-all' }}>{ep.path}</code>
               </div>
               <p style={{ fontSize: '12px', color: '#455A64', margin: '4px 0 0 54px' }}>{ep.desc}</p>
@@ -135,10 +135,10 @@ export default function ApiAccessPage() {
         </div>
 
         {/* Code Example */}
-        <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '4px', border: '1px solid #D5D8DC', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+        <div style={{ background: '#FFFFFF', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderRadius: '2px', border: '1px solid #D5D8DC', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
           <div style={{ padding: '16px 24px', borderBottom: '1px solid #E8EAE D', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h2 className="font-display" style={{ fontSize: '16px', fontWeight: 700, color: '#212529', margin: 0 }}>Quick Start Example</h2>
-            <span style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, padding: '3px 10px', borderRadius: '4px', backgroundColor: '#F8F9FA' }}>JavaScript</span>
+            <span style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, padding: '3px 10px', borderRadius: '2px', backgroundColor: '#F8F9FA' }}>JavaScript</span>
           </div>
           <pre style={{ margin: 0, padding: '20px 24px', backgroundColor: 'rgba(0,0,0,0.40)', color: '#D4D4D4', fontSize: '13px', lineHeight: 1.6, fontFamily: 'var(--font-mono)', overflowX: 'auto' }}>
             {CODE_EXAMPLE}

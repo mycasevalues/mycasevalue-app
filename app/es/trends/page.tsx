@@ -37,7 +37,7 @@ export default function SpanishTrendsPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
             ANÁLISIS
           </div>
 
@@ -52,7 +52,7 @@ export default function SpanishTrendsPage() {
 
       {/* Content */}
       <div className="max-w-5xl mx-auto px-6 py-16">
-        <div className="text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
+        <div className="text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
           <p style={{ color: '#455A64' }}>
             Espera a que se carguen los gráficos interactivos...
           </p>

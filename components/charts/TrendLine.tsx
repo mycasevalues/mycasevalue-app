@@ -17,7 +17,7 @@ export function TrendLine({
   label, unit = '', lang = 'en',
 }: TrendLineProps) {
   return (
-    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
       {label && (
         <div className="text-[13px] font-bold tracking-[0.5px] text-[#455A64] mb-4" style={{ fontFamily: 'var(--font-display)' }}>{label}</div>
       )}
@@ -46,7 +46,7 @@ export function TrendLine({
             contentStyle={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',
               fontFamily: 'var(--font-body)',

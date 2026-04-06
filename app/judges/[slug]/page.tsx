@@ -121,7 +121,7 @@ export default async function JudgePage({ params }: PageProps) {
               justifyContent: 'center',
               width: '64px',
               height: '64px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               background: '#FCE5E6',
               margin: '0 auto 32px',
             }}
@@ -173,7 +173,7 @@ export default async function JudgePage({ params }: PageProps) {
               alignItems: 'center',
               gap: '8px',
               padding: '12px 28px',
-              borderRadius: '4px',
+              borderRadius: '2px',
               background: '#E8171F',
               color: '#FFFFFF',
               fontSize: '16px',
@@ -368,7 +368,7 @@ export default async function JudgePage({ params }: PageProps) {
               style={{
                 display: 'inline-block',
                 padding: '8px 16px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '12px',
                 fontWeight: '700',
                 letterSpacing: '0.5px',
@@ -423,7 +423,7 @@ export default async function JudgePage({ params }: PageProps) {
               key={idx}
               style={{
                 padding: '20px',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 border: '1px solid #D5D8DC',
                 background: '#FFFFFF',
               }}
@@ -460,7 +460,7 @@ export default async function JudgePage({ params }: PageProps) {
         <div
           style={{
             padding: '24px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             border: '1px solid #D5D8DC',
             background: '#FFFFFF',
             marginBottom: '48px',
@@ -580,7 +580,7 @@ export default async function JudgePage({ params }: PageProps) {
         <div
           style={{
             padding: '24px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             border: '1px solid #D5D8DC',
             background: '#FFFFFF',
             marginBottom: '48px',
@@ -636,7 +636,7 @@ export default async function JudgePage({ params }: PageProps) {
                     justifyContent: 'center',
                     width: '20px',
                     height: '20px',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     background: '#E8171F',
                     color: '#FFFFFF',
                     fontWeight: '700',
@@ -655,7 +655,7 @@ export default async function JudgePage({ params }: PageProps) {
         <div
           style={{
             padding: '16px 20px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             background: '#FCE5E6',
             border: '1px solid #E8171F',
             marginBottom: '48px',
@@ -678,7 +678,7 @@ export default async function JudgePage({ params }: PageProps) {
         <div
           style={{
             padding: '24px',
-            borderRadius: '4px',
+            borderRadius: '2px',
             border: '1px solid #D5D8DC',
             background: '#FFFFFF',
           }}

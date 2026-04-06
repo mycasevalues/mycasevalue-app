@@ -64,7 +64,7 @@ export default function ServerContent() {
               </p>
               <a href="/search" className="cta-btn-primary" style={{
                 display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                height: '48px', padding: '0 32px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px',
+                height: '48px', padding: '0 32px', background: '#E8171F', color: '#FFFFFF', borderRadius: '2px',
                 fontWeight: 700, fontSize: '14px', textDecoration: 'none', textTransform: 'uppercase',
                 letterSpacing: '0.04em', fontFamily: 'var(--font-display)',
               }}>
@@ -81,7 +81,7 @@ export default function ServerContent() {
                 { title: 'Analyze settlement trends', desc: 'Access full settlement distributions from P10 to P90, with median values and trend data over time.' },
                 { title: 'Act with confidence', desc: 'From data-driven settlement estimates to judge-specific insights, get the intelligence that drives better decisions.' },
               ].map((item, i) => (
-                <div key={i} style={{ padding: '16px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E5EBF0' }}>
+                <div key={i} style={{ padding: '16px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E5EBF0' }}>
                   <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '6px' }}>{item.title}</h3>
                   <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
                 </div>
@@ -124,7 +124,7 @@ export default function ServerContent() {
                 <div className="category-card" style={{
                   background: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                   transition: 'all 0.2s ease',
                   cursor: 'pointer',
@@ -141,7 +141,7 @@ export default function ServerContent() {
                       padding: '3px 8px',
                       background: 'rgba(232,23,31,0.08)',
                       color: '#E8171F',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       fontFamily: 'var(--font-body)',
                       flexShrink: 0,
                       marginLeft: '8px',
@@ -202,7 +202,7 @@ export default function ServerContent() {
                     background: '#FAFBFC',
                     border: '1px solid #D5D8DC',
                     borderTop: '3px solid #E8171F',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     padding: '24px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
                     transition: 'all 0.2s ease',
@@ -363,7 +363,7 @@ export default function ServerContent() {
                     style={{
                       background: '#FFFFFF',
                       border: '1px solid #D5D8DC',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       padding: '28px 24px',
                       height: '100%',
                       display: 'flex',
@@ -459,8 +459,8 @@ export default function ServerContent() {
               { title: 'Legal Aid & Nonprofits', desc: 'Free tier designed for access to justice. Help underrepresented communities understand their legal options with real outcome data.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
               { title: 'Legal Researchers & Academics', desc: 'Access comprehensive federal court statistics spanning 50+ years. Perfect for empirical legal studies and policy analysis.', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
             ].map((item, i) => (
-              <div key={i} className="who-card" style={{ padding: '28px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
-                <div style={{ width: '44px', height: '44px', borderRadius: '4px', background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+              <div key={i} className="who-card" style={{ padding: '28px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', transition: 'all 0.2s ease' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '2px', background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.icon} /></svg>
                 </div>
                 <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
@@ -490,7 +490,7 @@ export default function ServerContent() {
               { stat: '94%', label: 'Data accuracy rate', sub: 'Verified outcome classifications' },
               { stat: '50+', label: 'Years of court data', sub: 'Historical records since 1970' },
             ].map((item, i) => (
-              <div key={i} className="stat-card" style={{ padding: '32px 20px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '4px', transition: 'all 0.2s ease' }}>
+              <div key={i} className="stat-card" style={{ padding: '32px 20px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', transition: 'all 0.2s ease' }}>
                 <p style={{ fontSize: '36px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', marginBottom: '8px', lineHeight: 1 }}>{item.stat}</p>
                 <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)', marginBottom: '4px' }}>{item.label}</p>
                 <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>{item.sub}</p>
@@ -533,7 +533,7 @@ export default function ServerContent() {
               <thead>
                 <tr style={{ borderBottom: '2px solid #D5D8DC' }}>
                   <th style={{ textAlign: 'left', padding: '12px 16px', color: '#455A64', fontWeight: 600, fontSize: '13px' }}>Feature</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#212529', fontWeight: 700, background: 'rgba(232,23,31,0.08)', borderRadius: '4px 4px 0 0' }}>MyCaseValue</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#212529', fontWeight: 700, background: 'rgba(232,23,31,0.08)', borderRadius: '2px 2px 0 0' }}>MyCaseValue</th>
                   <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 600, fontSize: '13px' }}>Westlaw</th>
                   <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 600, fontSize: '13px' }}>LexisNexis</th>
                   <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 600, fontSize: '13px' }}>PACER</th>
@@ -632,7 +632,7 @@ export default function ServerContent() {
                 style={{
                   background: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                   display: 'flex',
                   gap: '20px',
@@ -649,7 +649,7 @@ export default function ServerContent() {
                     color: '#E8171F',
                     background: 'rgba(232,23,31,0.08)',
                     padding: '8px 14px',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     minWidth: '90px',
                     textAlign: 'center',
                     border: '1px solid rgba(232,23,31,0.15)',
@@ -761,12 +761,12 @@ export default function ServerContent() {
                 style={{
                   background: '#FFFFFF',
                   border: plan.featured ? '2px solid #E8171F' : '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   padding: '24px',
                   display: 'flex',
                   flexDirection: 'column',
                   position: 'relative',
-                  boxShadow: plan.featured ? '0 4px 12px rgba(232,23,31,0.15)' : '0 1px 3px rgba(0,0,0,0.08)',
+                  boxShadow: plan.featured ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
                 }}
               >
                 {plan.featured && (
@@ -784,7 +784,7 @@ export default function ServerContent() {
                       background: '#E8171F',
                       color: '#FFFFFF',
                       padding: '4px 12px',
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       whiteSpace: 'nowrap',
                     }}
                   >
@@ -843,7 +843,7 @@ export default function ServerContent() {
                     display: 'block',
                     textAlign: 'center',
                     padding: '10px 16px',
-                    borderRadius: '4px',
+                    borderRadius: '2px',
                     fontFamily: 'var(--font-display)',
                     fontSize: '14px',
                     fontWeight: 600,
@@ -851,7 +851,7 @@ export default function ServerContent() {
                     background: plan.featured ? '#E8171F' : 'transparent',
                     color: plan.featured ? '#FFFFFF' : '#212529',
                     border: plan.featured ? 'none' : '1px solid #D5D8DC',
-                    boxShadow: plan.featured ? '0 2px 8px rgba(232,23,31,0.12)' : 'none',
+                    boxShadow: 'none',
                     textTransform: 'uppercase',
                   }}
                 >
@@ -919,7 +919,7 @@ export default function ServerContent() {
             ].map((item, i) => (
               <a key={i} href={item.href} style={{
                 display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid #D5D8DC',
-                borderRadius: '4px', textDecoration: 'none', transition: 'all 200ms',
+                borderRadius: '2px', textDecoration: 'none', transition: 'all 200ms',
               }} className="related-card">
                 <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
                 <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
@@ -991,7 +991,7 @@ export default function ServerContent() {
                 padding: '0 16px',
                 background: '#FFFFFF',
                 border: 'none',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 fontFamily: 'var(--font-body)',
                 color: '#212529',
@@ -1005,7 +1005,7 @@ export default function ServerContent() {
                 background: '#E8171F',
                 color: '#FFFFFF',
                 border: 'none',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontSize: '14px',
                 fontWeight: 700,
                 fontFamily: 'var(--font-display)',
@@ -1063,12 +1063,12 @@ export default function ServerContent() {
                 padding: '0 40px',
                 background: '#E8171F',
                 color: '#FFFFFF',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontFamily: 'var(--font-display)',
                 fontSize: '16px',
                 fontWeight: 700,
                 textDecoration: 'none',
-                boxShadow: '0 4px 12px rgba(232,23,31,0.3)',
+                boxShadow: 'none',
                 textTransform: 'uppercase',
                 border: 'none',
                 letterSpacing: '0.04em',
@@ -1088,7 +1088,7 @@ export default function ServerContent() {
                 padding: '0 40px',
                 background: 'rgba(255,255,255,0.1)',
                 color: '#FFFFFF',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 fontFamily: 'var(--font-display)',
                 fontSize: '16px',
                 fontWeight: 700,
@@ -1132,7 +1132,7 @@ export default function ServerContent() {
 
         .cta-btn-primary:hover {
           background: #CC1019 !important;
-          box-shadow: 0 8px 24px rgba(232,23,31,0.4) !important;
+          box-shadow: none !important;
           transform: translateY(-2px) !important;
         }
 

@@ -60,8 +60,7 @@
   color: #FFFFFF;
 }
 .mcv-btn--primary:hover:not(:disabled) {
-  background: var(--accent-primary-hover);
-  box-shadow: var(--shadow-accent);
+  background: #CC1019;
 }
 
 .mcv-btn--secondary {
@@ -70,7 +69,6 @@
 }
 .mcv-btn--secondary:hover:not(:disabled) {
   background: var(--accent-secondary-hover);
-  box-shadow: 0 2px 8px rgba(0,105,151,0.20);
 }
 
 .mcv-btn--ghost {
@@ -88,7 +86,7 @@
   color: #FFFFFF;
 }
 .mcv-btn--accent:hover:not(:disabled) {
-  box-shadow: var(--shadow-accent-lg);
+  background: #CC1019;
 }
 
 .mcv-btn--danger {
@@ -175,7 +173,6 @@
 
 .mcv-card--accent {
   border: 2px solid var(--accent-primary);
-  box-shadow: var(--shadow-accent);
 }
 
 .mcv-card__header {
@@ -404,8 +401,7 @@
   transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 .auth-btn:hover {
-  background-color: var(--accent-primary-hover) !important;
-  box-shadow: var(--shadow-accent);
+  background-color: #CC1019 !important;
 }
 .auth-btn:active {
   transform: scale(0.98);

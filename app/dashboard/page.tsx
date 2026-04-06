@@ -177,7 +177,7 @@ export default async function DashboardPage() {
           align-items: center;
           gap: 12px;
           padding: 14px 16px;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           text-decoration: none;
           transition: all 0.2s ease;
@@ -225,7 +225,7 @@ export default async function DashboardPage() {
       >
         {/* Logo */}
         <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '32px', padding: '0 8px' }}>
-          <div style={{ width: '28px', height: '28px', background: '#E8171F', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: '28px', height: '28px', background: '#E8171F', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
               <path d="M12 2v20M2 10h20M4 10l3 8h10l3-8"/>
             </svg>
@@ -261,7 +261,7 @@ export default async function DashboardPage() {
                 fontSize: '11px',
                 fontWeight: 700,
                 letterSpacing: '0.04em',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 textTransform: 'uppercase',
               }}>
                 Dashboard
@@ -286,7 +286,7 @@ export default async function DashboardPage() {
           {/* Stats Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '32px' }}>
             {/* Current Plan */}
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
               <p style={{ fontSize: '12px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Current Plan
               </p>
@@ -296,7 +296,7 @@ export default async function DashboardPage() {
             </div>
 
             {/* Plan Status */}
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
               <p style={{ fontSize: '12px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Plan Status
               </p>
@@ -306,7 +306,7 @@ export default async function DashboardPage() {
             </div>
 
             {/* Member Since */}
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', transition: 'all 0.2s ease' }}>
               <p style={{ fontSize: '12px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 8px', fontFamily: 'var(--font-body)' }}>
                 Member Since
               </p>
@@ -316,18 +316,18 @@ export default async function DashboardPage() {
             </div>
 
             {/* Quick Action */}
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '24px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <p style={{ fontSize: '12px', color: '#455A64', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', margin: '0 0 12px', fontFamily: 'var(--font-body)' }}>
                 Quick Action
               </p>
-              <Link href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: '#E8171F', color: '#fff', borderRadius: '4px', textDecoration: 'none', fontSize: '14px', fontWeight: 700, textAlign: 'center', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: 'var(--font-body)' }}>
+              <Link href="/cases" style={{ display: 'inline-block', padding: '10px 20px', background: '#E8171F', color: '#fff', borderRadius: '2px', textDecoration: 'none', fontSize: '14px', fontWeight: 700, textAlign: 'center', textTransform: 'uppercase', letterSpacing: '0.04em', fontFamily: 'var(--font-body)' }}>
                 Browse Cases →
               </Link>
             </div>
           </div>
 
           {/* Your Plan Section */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 20px' }}>
               Your Plan Includes
             </h2>
@@ -347,7 +347,7 @@ export default async function DashboardPage() {
           {!isPaid && (
             <div style={{
               backgroundColor: '#FFFFFF',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '32px',
               border: '2px solid rgba(232,23,31,0.10)',
               textAlign: 'center',
@@ -365,7 +365,7 @@ export default async function DashboardPage() {
                 padding: '12px 32px',
                 background: '#E8171F',
                 color: '#fff',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 textDecoration: 'none',
                 fontSize: '15px',
                 fontWeight: 700,
@@ -380,7 +380,7 @@ export default async function DashboardPage() {
 
           {/* Attorney Tools — Attorney tier */}
           {isAttorney && (
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                 <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: 0 }}>
                   Attorney Tools
@@ -418,7 +418,7 @@ export default async function DashboardPage() {
 
           {/* Search History — Unlimited+ only */}
           {isUnlimitedPlus && !isExpired && searchHistory.length > 0 && (
-            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
+            <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 24px' }}>
                 Search History
               </h2>
@@ -437,7 +437,7 @@ export default async function DashboardPage() {
           )}
 
           {/* Recent Activity */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '4px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', border: '1px solid #D5D8DC', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 24px' }}>
               Recent Activity
             </h2>

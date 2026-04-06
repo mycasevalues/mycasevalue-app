@@ -43,7 +43,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           style={{
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
-            borderRadius: '4px',
+            borderRadius: '2px',
           }}
         >
           <h3
@@ -67,7 +67,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 contentStyle={{
                   background: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   color: '#212529',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',
@@ -86,7 +86,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           style={{
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
-            borderRadius: '4px',
+            borderRadius: '2px',
           }}
         >
           <h3
@@ -117,7 +117,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 contentStyle={{
                   background: '#FFFFFF',
                   border: '1px solid #D5D8DC',
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   color: '#212529',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',

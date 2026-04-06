@@ -27,7 +27,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
 
   const cardStyle = {
     background: '#FFFFFF',
-    borderRadius: '4px',
+    borderRadius: '2px',
     border: '1px solid #D5D8DC',
     padding: '32px',
     marginBottom: '24px',
@@ -71,7 +71,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               contentStyle={{
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 color: '#212529',
                 fontFamily: 'var(--font-body)',
@@ -132,7 +132,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
               contentStyle={{
                 backgroundColor: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                 color: '#212529',
                 fontFamily: 'var(--font-body)',

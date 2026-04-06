@@ -80,7 +80,7 @@ export default function CasesIndexPage() {
               padding: '12px 16px 12px 48px',
               fontSize: '15px',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               background: '#FFFFFF',
               color: '#212529',
               fontFamily: 'var(--font-body)',
@@ -103,7 +103,7 @@ export default function CasesIndexPage() {
           .cat-card {
             background: #FFFFFF;
             border: 1px solid #D5D8DC;
-            border-radius: 4px;
+            border-radius: 2px;
             padding: 32px;
             transition: all 0.3s ease;
             height: 100%;
@@ -129,7 +129,7 @@ export default function CasesIndexPage() {
           }
           .cta-link:hover {
             background: #CC1019;
-            box-shadow: 0 8px 24px rgba(232,23,31,0.3);
+            box-shadow: none;
             transform: translateY(-2px);
           }
         `}} />
@@ -189,7 +189,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: '#455A64', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#E8171F', color: '#FFFFFF', borderRadius: '4px', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#E8171F', color: '#FFFFFF', borderRadius: '2px', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
           </a>

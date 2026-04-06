@@ -88,7 +88,7 @@ export default function TranslatePage() {
           {/* Header Content */}
           <div className="pb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+              style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               TRANSLATE
             </div>
@@ -105,9 +105,9 @@ export default function TranslatePage() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Translator Form */}
-        <div className="p-6 sm:p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
+        <div className="p-6 sm:p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
           {/* Daily Limit Counter */}
-          <div className="mb-8 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ background: '#F8F9FA', border: '1px solid #D5D8DC', borderRadius: '4px' }}>
+          <div className="mb-8 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ background: '#F8F9FA', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.8px]" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
                 Free Translations Today
@@ -145,7 +145,7 @@ export default function TranslatePage() {
               placeholder="Paste legal text here, e.g., 'The court hereby grants the motion for summary judgment...'"
               className="w-full px-4 py-4 border text-sm transition-all focus:outline-none focus:ring-2 resize-none"
               style={{
-                borderRadius: '4px',
+                borderRadius: '2px',
                 borderColor: '#D5D8DC',
                 background: '#F8F9FA',
                 color: '#212529',
@@ -160,7 +160,7 @@ export default function TranslatePage() {
 
           {/* Error Display */}
           {error && (
-            <div className="mb-6 p-4" style={{ background: 'rgba(232,23,31,0.06)', border: '1px solid #E8171F', borderRadius: '4px' }}>
+            <div className="mb-6 p-4" style={{ background: 'rgba(232,23,31,0.06)', border: '1px solid #E8171F', borderRadius: '2px' }}>
               <p className="text-sm" style={{ color: '#E8171F', fontFamily: 'var(--font-body)' }}>
                 {error}
               </p>
@@ -173,7 +173,7 @@ export default function TranslatePage() {
             disabled={!input.trim() || loading || remaining <= 0}
             className="w-full px-6 py-3 text-sm font-semibold transition-all hover:shadow-lg active:scale-[0.99]"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               background:
                 !input.trim() || loading || remaining <= 0
                   ? '#D5D8DC'
@@ -209,7 +209,7 @@ export default function TranslatePage() {
 
         {/* Translation Result */}
         {translation && (
-          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#E8171F', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #E8171F', borderRadius: '4px' }}>
+          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#E8171F', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #E8171F', borderRadius: '2px' }}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Plain English Translation
             </h2>
@@ -239,7 +239,7 @@ export default function TranslatePage() {
                 onClick={() => handleExample(phrase)}
                 className="p-4 border text-left transition-all hover:border-2 hover:shadow-sm active:scale-[0.98]"
                 style={{
-                  borderRadius: '4px',
+                  borderRadius: '2px',
                   borderColor: '#D5D8DC',
                   background: '#FFFFFF',
                   color: '#212529',
@@ -260,7 +260,7 @@ export default function TranslatePage() {
             href="/search"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               borderColor: '#D5D8DC',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -277,7 +277,7 @@ export default function TranslatePage() {
             href="/calculator"
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
-              borderRadius: '4px',
+              borderRadius: '2px',
               borderColor: '#D5D8DC',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -293,7 +293,7 @@ export default function TranslatePage() {
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '4px' }}>
+        <div className="mt-8 p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
           <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Important Disclaimer
           </h2>

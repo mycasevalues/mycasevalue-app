@@ -147,7 +147,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           padding: 8px 16px;
           background: #E8171F;
           color: white;
-          border-radius: 4px;
+          border-radius: 2px;
           font-size: 12px;
           font-weight: 600;
           letter-spacing: 0.5px;
@@ -157,7 +157,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         .article-card {
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 40px;
           margin: -40px 0 0 0;
           position: relative;
@@ -165,7 +165,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         @media (max-width: 640px) {
           .article-card {
-            border-radius: 4px;
+            border-radius: 2px;
             padding: 32px 20px;
             margin: -32px 0 0 0;
           }
@@ -192,7 +192,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           gap: 16px;
           padding: 24px;
           background: #FFFFFF;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           margin-bottom: 32px;
           transition: all 0.3s ease;
@@ -260,7 +260,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           color: #455A64;
           background: #F8F9FA;
           padding: 20px 20px 20px 20px;
-          border-radius: 4px;
+          border-radius: 2px;
         }
 
         .article-body ul,
@@ -281,7 +281,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           padding: 8px 14px;
           background: #FFFFFF;
           border: 1px solid #D5D8DC;
-          border-radius: 4px;
+          border-radius: 2px;
           font-size: 13px;
           font-weight: 500;
           color: #E8171F;
@@ -299,7 +299,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         }
 
         .related-card {
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
           padding: 32px;
@@ -332,7 +332,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           justify-content: center;
           width: 44px;
           height: 44px;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
           color: #212529;
@@ -355,7 +355,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         .cta-section {
           background: #FFFFFF;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           padding: 48px;
           text-align: center;
@@ -375,7 +375,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
           padding: 12px 24px;
           background: #E8171F;
           color: #FFFFFF;
-          border-radius: 4px;
+          border-radius: 2px;
           font-size: 15px;
           font-weight: 600;
           text-decoration: none;
@@ -391,7 +391,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         .related-section {
           background: #FFFFFF;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           padding: 48px;
           margin-top: 48px;

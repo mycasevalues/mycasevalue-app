@@ -185,7 +185,7 @@ export default function SpanishFAQPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '4px' }}>
+            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
             AYUDA
           </div>
 
@@ -212,7 +212,7 @@ export default function SpanishFAQPage() {
                     key={qIdx}
                     className="group p-5 border transition-colors cursor-pointer"
                     style={{
-                      borderRadius: '4px',
+                      borderRadius: '2px',
                       borderColor: '#D5D8DC',
                       background: '#FFFFFF',
                     }}
@@ -247,7 +247,7 @@ export default function SpanishFAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '4px' }}>
+        <div className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             ¿Aún tienes preguntas?
           </h2>
@@ -256,7 +256,7 @@ export default function SpanishFAQPage() {
           </p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-            style={{ borderRadius: '4px', background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#006997' }}>
+            style={{ borderRadius: '2px', background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#006997' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contactar Soporte
           </a>

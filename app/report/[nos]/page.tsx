@@ -171,7 +171,7 @@ export default async function ReportPage({
           <main style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
             <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: '#212529' }}>Daily limit reached</h1>
             <p style={{ color: '#455A64', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
-            <a href="/pricing" style={{ padding: '12px 28px', background: '#E8171F', color: '#fff', borderRadius: '4px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
+            <a href="/pricing" style={{ padding: '12px 28px', background: '#E8171F', color: '#fff', borderRadius: '2px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
             <p style={{ fontSize: '12px', color: '#455A64', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
           </main>
         );
@@ -225,7 +225,7 @@ export default async function ReportPage({
       <style>{`
         .report-breadcrumb-link { color: #FFFFFF; text-decoration: none; transition: opacity 0.2s ease; font-weight: 500; }
         .report-breadcrumb-link:hover { opacity: 0.8; }
-        .report-nos-badge { display: inline-block; padding: 6px 12px; background: #E8171F; color: #FFFFFF; border-radius: 4px; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-body); margin-top: 8px; }
+        .report-nos-badge { display: inline-block; padding: 6px 12px; background: #E8171F; color: #FFFFFF; border-radius: 2px; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-body); margin-top: 8px; }
 
         @media (max-width: 768px) {
           h1 {
@@ -410,7 +410,7 @@ export default async function ReportPage({
         <section style={{
           background: '#FFFFFF',
           border: '1px solid #D5D8DC',
-          borderRadius: '4px',
+          borderRadius: '2px',
           padding: '32px',
           marginBottom: '24px',
           boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -425,14 +425,14 @@ export default async function ReportPage({
             <style>{`
               .win-rate-grid { grid-template-columns: repeat(3, 1fr); }
               @media (max-width: 768px) { .win-rate-grid { grid-template-columns: 1fr; gap: 16px; } }
-              .report-cta-btn { display: inline-block; padding: 14px 36px; background: #E8171F; color: #fff; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 16px; font-family: var(--font-display); transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(232,23,31,0.2); }
-              .report-cta-btn:hover { background: #C51118; box-shadow: 0 4px 12px rgba(232,23,31,0.3); }
+              .report-cta-btn { display: inline-block; padding: 14px 36px; background: #E8171F; color: #fff; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 16px; font-family: var(--font-display); transition: all 0.2s ease; box-shadow: none; }
+              .report-cta-btn:hover { background: #C51118; box-shadow: none; }
               .report-red-link { font-size: 14px; font-weight: 500; color: #E8171F; text-decoration: none; font-family: var(--font-body); transition: color 0.2s ease; }
               .report-red-link:hover { color: #C51118; }
               .report-related-case { text-decoration: none; color: #E8171F; transition: all 0.2s ease; display: block; }
               .report-related-case:hover { color: #C51118; padding-left: 4px; }
             `}</style>
-            <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+            <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: '40px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {winRate}%
               </p>
@@ -443,7 +443,7 @@ export default async function ReportPage({
                 Trial outcomes
               </p>
             </div>
-            <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+            <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: '40px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {settlementRate}%
               </p>
@@ -454,7 +454,7 @@ export default async function ReportPage({
                 Pre-trial resolutions
               </p>
             </div>
-            <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+            <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: '40px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {dismissRate}%
               </p>
@@ -475,7 +475,7 @@ export default async function ReportPage({
         <section style={{
           background: '#FFFFFF',
           border: '1px solid #D5D8DC',
-          borderRadius: '4px',
+          borderRadius: '2px',
           padding: '32px',
           marginBottom: '24px',
           boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -488,14 +488,14 @@ export default async function ReportPage({
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }} className="timeline-grid">
             <style>{`.timeline-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .timeline-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
-            <div style={{ textAlign: 'center', padding: '24px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+            <div style={{ textAlign: 'center', padding: '24px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: 36, fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
                 {medianDuration}
               </p>
               <p style={{ fontSize: 12, fontWeight: 500, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0, marginBottom: 4 }}>months</p>
               <p style={{ fontSize: 13, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Median time from filing to resolution</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '24px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+            <div style={{ textAlign: 'center', padding: '24px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
               <p style={{ fontSize: 36, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
                 {trialMedian}
               </p>
@@ -513,7 +513,7 @@ export default async function ReportPage({
               <section style={{
                 background: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '32px',
                 marginBottom: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -526,7 +526,7 @@ export default async function ReportPage({
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="settlement-grid">
                   <style>{`.settlement-grid { grid-template-columns: repeat(3, 1fr); } @media (max-width: 768px) { .settlement-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', margin: '0 0 10px' }}>
                       25th Percentile
                     </p>
@@ -535,7 +535,7 @@ export default async function ReportPage({
                     </p>
                     <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Conservative</p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', margin: '0 0 10px' }}>
                       Median
                     </p>
@@ -544,7 +544,7 @@ export default async function ReportPage({
                     </p>
                     <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Typical</p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', margin: '0 0 10px' }}>
                       75th Percentile
                     </p>
@@ -566,7 +566,7 @@ export default async function ReportPage({
               <section style={{
                 background: '#FFFFFF',
                 border: '1px solid #D5D8DC',
-                borderRadius: '4px',
+                borderRadius: '2px',
                 padding: '32px',
                 marginBottom: '24px',
                 boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -579,7 +579,7 @@ export default async function ReportPage({
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '20px' }} className="representation-grid">
                   <style>{`.representation-grid { grid-template-columns: repeat(2, 1fr); } @media (max-width: 768px) { .representation-grid { grid-template-columns: 1fr; gap: 16px; } }`}</style>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', margin: '0 0 10px' }}>
                       Self-Represented (Pro Se)
                     </p>
@@ -590,7 +590,7 @@ export default async function ReportPage({
                       win rate{real?.ps?.total ? ` · ${real.ps.total.toLocaleString()} cases` : ''}
                     </p>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
+                  <div style={{ textAlign: 'center', padding: '28px 20px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E8E9EA' }}>
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', margin: '0 0 10px' }}>
                       Attorney Represented
                     </p>
@@ -625,7 +625,7 @@ export default async function ReportPage({
           <section style={{
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
-            borderRadius: '4px',
+            borderRadius: '2px',
             padding: '48px 32px',
             textAlign: 'center',
             marginTop: 24,
@@ -678,7 +678,7 @@ export default async function ReportPage({
           <section style={{
             background: '#FFFFFF',
             border: '1px solid #D5D8DC',
-            borderRadius: '4px',
+            borderRadius: '2px',
             padding: '32px',
             marginBottom: '24px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -773,7 +773,7 @@ export default async function ReportPage({
             <section style={{
               background: '#FFFFFF',
               border: '1px solid #D5D8DC',
-              borderRadius: '4px',
+              borderRadius: '2px',
               padding: '32px',
               marginBottom: '24px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',

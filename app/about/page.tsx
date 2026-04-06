@@ -161,7 +161,7 @@ export default function AboutPage() {
 
         .source-card {
           padding: 1.5rem;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
           transition: all 0.2s ease;
@@ -176,7 +176,7 @@ export default function AboutPage() {
         .source-icon {
           width: 48px;
           height: 48px;
-          border-radius: 4px;
+          border-radius: 2px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -204,7 +204,7 @@ export default function AboutPage() {
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 1.5rem;
           padding: 2rem;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
         }
@@ -240,7 +240,7 @@ export default function AboutPage() {
 
         .team-box {
           padding: 2rem;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
         }
@@ -274,7 +274,7 @@ export default function AboutPage() {
         .cta-section {
           text-align: center;
           padding: 3rem 2rem;
-          border-radius: 4px;
+          border-radius: 2px;
           border: 1px solid #D5D8DC;
           background: #FFFFFF;
         }
@@ -304,7 +304,7 @@ export default function AboutPage() {
           gap: 0.5rem;
           height: 48px;
           padding: 0 2rem;
-          border-radius: 4px;
+          border-radius: 2px;
           font-family: var(--font-display);
           font-size: 0.875rem;
           font-weight: 700;
