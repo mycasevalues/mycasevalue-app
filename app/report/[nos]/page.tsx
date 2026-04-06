@@ -672,6 +672,98 @@ export default async function ReportPage({
               </section>
             )}
 
+            {/* Circuit Win Rates */}
+            {real?.circuit_rates && Object.keys(real.circuit_rates).length > 0 && (
+              <section style={{
+                background: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '2px',
+                padding: '32px',
+                marginBottom: '24px',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              }}>
+                <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+                  Win Rates by Circuit
+                </h2>
+                <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
+                  How plaintiff win rates vary across federal circuit courts
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  {Object.entries(real.circuit_rates as Record<string, number>)
+                    .sort(([, a], [, b]) => (b as number) - (a as number))
+                    .map(([circuit, wr]) => {
+                      const circuitWr = wr as number;
+                      const natAvg = real.wr ?? winRate;
+                      const diff = Math.round((circuitWr - natAvg) * 10) / 10;
+                      const barColor = circuitWr >= natAvg ? '#07874A' : '#E8171F';
+                      return (
+                        <div key={circuit} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #F0F3F5' }}>
+                          <span style={{ fontSize: '13px', fontWeight: 600, color: '#212529', width: '80px', fontFamily: 'var(--font-body)' }}>{circuit}</span>
+                          <div style={{ flex: 1, height: '8px', background: '#F0F3F5', borderRadius: '2px', overflow: 'hidden' }}>
+                            <div style={{ height: '100%', width: `${Math.min(100, circuitWr)}%`, background: barColor, borderRadius: '2px', transition: 'width 0.5s ease' }} />
+                          </div>
+                          <span style={{ fontSize: '13px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(circuitWr)}%</span>
+                          <span style={{ fontSize: '11px', fontWeight: 600, color: diff > 0 ? '#07874A' : diff < 0 ? '#E8171F' : '#455A64', fontFamily: 'var(--font-mono)', width: '52px', textAlign: 'right' }}>
+                            {diff > 0 ? '+' : ''}{diff}%
+                          </span>
+                        </div>
+                      );
+                    })}
+                </div>
+                <p style={{ fontSize: '11px', color: '#455A64', marginTop: '16px', fontFamily: 'var(--font-body)' }}>
+                  National average: {Math.round(real.wr ?? winRate)}%. Green indicates above average, red below.
+                </p>
+              </section>
+            )}
+
+            {/* Detailed Outcome Breakdown */}
+            {real?.ends && real.ends.length > 0 && (
+              <section style={{
+                background: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '2px',
+                padding: '32px',
+                marginBottom: '24px',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              }}>
+                <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+                  How Cases End
+                </h2>
+                <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
+                  Detailed disposition breakdown
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {(real.ends as any[]).slice(0, 8).map((end: any, i: number) => {
+                    const totalEnds = (real.ends as any[]).reduce((s: number, e: any) => s + (e.count || e.c || 0), 0);
+                    const count = end.count || end.c || 0;
+                    const pct = totalEnds > 0 ? ((count / totalEnds) * 100) : 0;
+                    return (
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        <span style={{ fontSize: '13px', color: '#212529', fontWeight: 500, width: '180px', fontFamily: 'var(--font-body)', flexShrink: 0 }}>
+                          {end.label || end.l || `Outcome ${i + 1}`}
+                        </span>
+                        <div style={{ flex: 1, height: '8px', background: '#F0F3F5', borderRadius: '2px', overflow: 'hidden' }}>
+                          <div style={{
+                            height: '100%',
+                            width: `${Math.min(pct, 100)}%`,
+                            background: end.color || '#006997',
+                            borderRadius: '2px',
+                            transition: 'width 0.5s ease',
+                          }} />
+                        </div>
+                        <span style={{ fontSize: '12px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>
+                          {pct.toFixed(1)}%
+                        </span>
+                        <span style={{ fontSize: '11px', color: '#455A64', fontFamily: 'var(--font-mono)', width: '60px', textAlign: 'right' }}>
+                          {count.toLocaleString()}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
             {/* PDF Download Button — premium only */}
             <div style={{ textAlign: 'center', marginTop: 32, marginBottom: 0 }}>
               <ReportPDFButton
