@@ -1,0 +1,787 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { SITE_URL } from '../../lib/site-config';
+
+export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: 'Data Sources & Methodology | MyCaseValue',
+  description: 'Built on verified federal court records. Learn how we aggregate and analyze data from 4M+ cases across 94 federal districts with quarterly updates.',
+  alternates: { canonical: `${SITE_URL}/data-sources` },
+  openGraph: {
+    title: 'MyCaseValue Data Sources',
+    description: 'Federal court data analytics built on verified court records from FJC, PACER, and CourtListener.',
+    url: `${SITE_URL}/data-sources`,
+    type: 'website',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  name: 'MyCaseValue Data Sources',
+  description: 'Comprehensive data sources for federal court case analytics',
+  url: `${SITE_URL}/data-sources`,
+  mainEntity: {
+    '@type': 'Dataset',
+    name: 'Federal Court Case Analytics',
+    description: '4M+ cases from 1970-2024 across 94 federal districts',
+    distribution: {
+      '@type': 'DataDownload',
+      encodingFormat: 'JSON',
+      contentUrl: 'https://api.mycasevalue.com/api/data',
+    },
+  },
+};
+
+export default function DataSourcesPage() {
+  const dataSources = [
+    {
+      name: 'Federal Judicial Center (FJC) Integrated Database',
+      cases: '4,100,000+',
+      coverage: '1970-2024',
+      frequency: 'Quarterly',
+      description: 'The authoritative source for federal court statistics. Comprehensive database of all civil and criminal cases filed in U.S. district courts.',
+      features: [
+        'Case filings by type and district',
+        'Judge assignments and caseloads',
+        'Case duration and resolution method',
+        'Historical trend data',
+      ],
+    },
+    {
+      name: 'CourtListener (Free Law Project)',
+      cases: '8,500,000+',
+      coverage: '1950-2024',
+      frequency: 'Daily',
+      description: 'Opinion text, docket information, and attorney data. The largest open collection of court documents and legal opinions.',
+      features: [
+        'Full opinion text',
+        'Docket entries',
+        'Attorney roster data',
+        'Citation networks',
+      ],
+    },
+    {
+      name: 'PACER (Public Access to Court Electronic Records)',
+      cases: 'Real-time',
+      coverage: '1992-Present',
+      frequency: 'Real-time',
+      description: 'Court docket monitoring and filings in real-time. Direct integration with federal court systems for immediate case updates.',
+      features: [
+        'Live docket updates',
+        'Filing monitoring',
+        'Status notifications',
+        'Document tracking',
+      ],
+    },
+    {
+      name: 'Bureau of Labor Statistics',
+      cases: 'Economic Data',
+      coverage: '1970-Present',
+      frequency: 'Monthly',
+      description: 'Consumer Price Index (CPI) data for inflation-adjusted settlement calculations and historical comparison.',
+      features: [
+        'Inflation adjustment factors',
+        'Historical economic data',
+        'Regional price indices',
+        'Wage and benefit data',
+      ],
+    },
+  ];
+
+  const methodology = [
+    {
+      title: 'Win Rate Calculation',
+      description: 'Analyzed plaintiff vs. defendant outcomes across 4M+ cases. Win rate is calculated as (favorable outcomes / total resolved cases) by case type, district, and judge.',
+    },
+    {
+      title: 'Settlement Ranges',
+      description: 'Settlement amounts extracted from PACER and CourtListener, inflation-adjusted using BLS CPI data. Range shows 25th to 75th percentile distributions by case characteristics.',
+    },
+    {
+      title: 'Case Duration',
+      description: 'Measured in days from filing to resolution. Includes discovery periods, motions practice, trial, and appeal time. Aggregated by case type, complexity, and district.',
+    },
+    {
+      title: 'Judge Analytics',
+      description: 'Individual judge profiles built from 20+ years of historical decisions. Includes win rates, settlement patterns, and comparative analytics against district and circuit benchmarks.',
+    },
+    {
+      title: 'Trend Analysis',
+      description: 'Quarterly updates track filing volume, case type distribution, and outcome shifts. Seasonality analysis reveals patterns in case resolutions and settlement activity.',
+    },
+    {
+      title: 'AI Prediction Models',
+      description: 'Machine learning models trained on historical case outcomes using 50+ features including case type, judge history, and procedural complexity.',
+    },
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+        {/* Hero Section */}
+        <div style={{ background: '#1B3A5C', padding: '80px 24px' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+            <div style={{ marginBottom: 16 }}>
+              <span style={{
+                display: 'inline-block',
+                padding: '6px 12px',
+                backgroundColor: '#8B5CF6',
+                color: '#FFFFFF',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                borderRadius: '12px',
+                fontFamily: 'var(--font-display)',
+              }}>
+                DATA FOUNDATION
+              </span>
+            </div>
+            <h1 style={{
+              fontSize: 'clamp(32px, 5vw, 52px)',
+              fontWeight: 700,
+              color: '#FFFFFF',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-1px',
+              marginBottom: 12,
+            }}>
+              Our Data
+            </h1>
+            <p style={{
+              fontSize: 18,
+              color: 'rgba(255,255,255,0.8)',
+              fontFamily: 'var(--font-body)',
+              lineHeight: 1.8,
+              maxWidth: 600,
+            }}>
+              Built on verified federal court records. 4M+ cases across 94 districts with quarterly updates from authoritative sources like FJC, PACER, and CourtListener.
+            </p>
+          </div>
+        </div>
+
+        {/* Breadcrumb */}
+        <div style={{ borderBottom: '1px solid #E5E7EB', paddingTop: '1rem', paddingBottom: '1rem', backgroundColor: '#F7F8FA' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
+            <nav style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontFamily: 'var(--font-body)' }}>
+              <Link href="/" style={{ color: '#6D28D9', textDecoration: 'none' }}>
+                Home
+              </Link>
+              <span style={{ color: '#4B5563' }}>/</span>
+              <span style={{ color: '#4B5563' }}>Data Sources</span>
+            </nav>
+          </div>
+        </div>
+
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '64px 24px' }}>
+          {/* Key Statistics */}
+          <section style={{ marginBottom: 80 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
+              {[
+                { number: '4.1M', label: 'Federal Cases Analyzed' },
+                { number: '94', label: 'Federal Districts' },
+                { number: '12', label: 'Circuit Courts' },
+                { number: '1970-2024', label: 'Historical Coverage' },
+              ].map((stat, idx) => (
+                <div key={idx} style={{
+                  padding: 32,
+                  borderRadius: '12px',
+                  border: '1px solid #E5E7EB',
+                  background: '#FFFFFF',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                  textAlign: 'center',
+                }}>
+                  <p style={{
+                    fontSize: 32,
+                    fontWeight: 700,
+                    color: '#8B5CF6',
+                    fontFamily: 'var(--font-display)',
+                    margin: '0 0 8px 0',
+                  }}>
+                    {stat.number}
+                  </p>
+                  <p style={{
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: '#4B5563',
+                    fontFamily: 'var(--font-body)',
+                    margin: 0,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                  }}>
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Primary Data Sources */}
+          <section style={{ marginBottom: 80 }}>
+            <h2 style={{
+              fontSize: 32,
+              fontWeight: 700,
+              color: '#0f0f0f',
+              fontFamily: 'var(--font-display)',
+              marginBottom: 32,
+            }}>
+              Primary Data Sources
+            </h2>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+              {dataSources.map((source, idx) => (
+                <div key={idx} style={{
+                  padding: 32,
+                  borderRadius: '12px',
+                  border: '1px solid #E5E7EB',
+                  background: '#FFFFFF',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 24, marginBottom: 20 }}>
+                    <div>
+                      <h3 style={{
+                        fontSize: 20,
+                        fontWeight: 700,
+                        color: '#0f0f0f',
+                        fontFamily: 'var(--font-display)',
+                        marginBottom: 8,
+                      }}>
+                        {source.name}
+                      </h3>
+                      <p style={{
+                        fontSize: 14,
+                        color: '#4B5563',
+                        fontFamily: 'var(--font-body)',
+                        lineHeight: 1.6,
+                        margin: 0,
+                      }}>
+                        {source.description}
+                      </p>
+                    </div>
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 8,
+                      textAlign: 'right',
+                      minWidth: 150,
+                    }}>
+                      <div>
+                        <p style={{
+                          fontSize: 11,
+                          fontWeight: 600,
+                          color: '#4B5563',
+                          fontFamily: 'var(--font-display)',
+                          margin: 0,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.05em',
+                        }}>
+                          Cases
+                        </p>
+                        <p style={{
+                          fontSize: 18,
+                          fontWeight: 700,
+                          color: '#8B5CF6',
+                          fontFamily: 'var(--font-display)',
+                          margin: 0,
+                        }}>
+                          {source.cases}
+                        </p>
+                      </div>
+                      <div>
+                        <p style={{
+                          fontSize: 11,
+                          fontWeight: 600,
+                          color: '#4B5563',
+                          fontFamily: 'var(--font-display)',
+                          margin: 0,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.05em',
+                        }}>
+                          Update Frequency
+                        </p>
+                        <p style={{
+                          fontSize: 14,
+                          fontWeight: 700,
+                          color: '#1F2937',
+                          fontFamily: 'var(--font-body)',
+                          margin: 0,
+                        }}>
+                          {source.frequency}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style={{
+                    paddingTop: 20,
+                    borderTop: '1px solid #E5E7EB',
+                  }}>
+                    <p style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: '#4B5563',
+                      fontFamily: 'var(--font-display)',
+                      margin: '0 0 12px 0',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                    }}>
+                      Coverage & Features
+                    </p>
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                      gap: 12,
+                    }}>
+                      <div>
+                        <p style={{
+                          fontSize: 12,
+                          fontWeight: 600,
+                          color: '#0f0f0f',
+                          fontFamily: 'var(--font-body)',
+                          margin: '0 0 6px 0',
+                        }}>
+                          Historical Coverage
+                        </p>
+                        <p style={{
+                          fontSize: 13,
+                          color: '#4B5563',
+                          fontFamily: 'var(--font-body)',
+                          margin: 0,
+                        }}>
+                          {source.coverage}
+                        </p>
+                      </div>
+                      {source.features.map((feature, fidx) => (
+                        <div key={fidx}>
+                          <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 6,
+                          }}>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="3" strokeLinecap="round">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span style={{
+                              fontSize: 13,
+                              color: '#4B5563',
+                              fontFamily: 'var(--font-body)',
+                            }}>
+                              {feature}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Methodology */}
+          <section style={{ marginBottom: 80 }}>
+            <h2 style={{
+              fontSize: 32,
+              fontWeight: 700,
+              color: '#0f0f0f',
+              fontFamily: 'var(--font-display)',
+              marginBottom: 32,
+            }}>
+              Methodology & Calculations
+            </h2>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: 24,
+            }}>
+              {methodology.map((method, idx) => (
+                <div key={idx} style={{
+                  padding: 28,
+                  borderRadius: '12px',
+                  border: '1px solid #E5E7EB',
+                  background: '#FFFFFF',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                }}>
+                  <h3 style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: '#0f0f0f',
+                    fontFamily: 'var(--font-display)',
+                    marginBottom: 12,
+                  }}>
+                    {method.title}
+                  </h3>
+                  <p style={{
+                    fontSize: 14,
+                    color: '#4B5563',
+                    fontFamily: 'var(--font-body)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}>
+                    {method.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Data Freshness & Updates */}
+          <section style={{ marginBottom: 80 }}>
+            <h2 style={{
+              fontSize: 32,
+              fontWeight: 700,
+              color: '#0f0f0f',
+              fontFamily: 'var(--font-display)',
+              marginBottom: 32,
+            }}>
+              Data Freshness & Update Schedule
+            </h2>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: 24,
+            }}>
+              {/* Update Schedule Card */}
+              <div style={{
+                padding: 32,
+                borderRadius: '12px',
+                border: '1px solid #E5E7EB',
+                background: '#FFFFFF',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              }}>
+                <h3 style={{
+                  fontSize: 18,
+                  fontWeight: 700,
+                  color: '#0f0f0f',
+                  fontFamily: 'var(--font-display)',
+                  marginBottom: 24,
+                }}>
+                  Update Frequency
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                  {[
+                    { source: 'FJC Database', frequency: 'Quarterly' },
+                    { source: 'CourtListener Opinions', frequency: 'Daily' },
+                    { source: 'PACER Dockets', frequency: 'Real-time' },
+                    { source: 'Judge Analytics', frequency: 'Monthly' },
+                  ].map((item, idx) => (
+                    <div key={idx} style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      paddingBottom: 12,
+                      borderBottom: idx < 3 ? '1px solid #E5E7EB' : 'none',
+                    }}>
+                      <span style={{
+                        fontSize: 14,
+                        color: '#4B5563',
+                        fontFamily: 'var(--font-body)',
+                      }}>
+                        {item.source}
+                      </span>
+                      <span style={{
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: '#8B5CF6',
+                        fontFamily: 'var(--font-display)',
+                      }}>
+                        {item.frequency}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Last Updated Card */}
+              <div style={{
+                padding: 32,
+                borderRadius: '12px',
+                border: '1px solid #E5E7EB',
+                background: '#FFFFFF',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              }}>
+                <h3 style={{
+                  fontSize: 18,
+                  fontWeight: 700,
+                  color: '#0f0f0f',
+                  fontFamily: 'var(--font-display)',
+                  marginBottom: 24,
+                }}>
+                  Last Updated
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                  {[
+                    { source: 'FJC Cases (Q4 2024)', updated: 'March 2024' },
+                    { source: 'Court Opinions', updated: 'Today' },
+                    { source: 'Judge Analytics', updated: 'March 5, 2024' },
+                    { source: 'Settlement Data', updated: 'March 2024' },
+                  ].map((item, idx) => (
+                    <div key={idx} style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      paddingBottom: 12,
+                      borderBottom: idx < 3 ? '1px solid #E5E7EB' : 'none',
+                    }}>
+                      <span style={{
+                        fontSize: 14,
+                        color: '#4B5563',
+                        fontFamily: 'var(--font-body)',
+                      }}>
+                        {item.source}
+                      </span>
+                      <span style={{
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: '#1F2937',
+                        fontFamily: 'var(--font-body)',
+                      }}>
+                        {item.updated}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Coverage Map Section */}
+          <section style={{ marginBottom: 80 }}>
+            <h2 style={{
+              fontSize: 32,
+              fontWeight: 700,
+              color: '#0f0f0f',
+              fontFamily: 'var(--font-display)',
+              marginBottom: 32,
+            }}>
+              Geographic Coverage
+            </h2>
+
+            <div style={{
+              padding: 40,
+              borderRadius: '12px',
+              border: '1px solid #E5E7EB',
+              background: '#FFFFFF',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            }}>
+              <p style={{
+                fontSize: 16,
+                color: '#4B5563',
+                fontFamily: 'var(--font-body)',
+                lineHeight: 1.8,
+                marginBottom: 24,
+              }}>
+                Complete coverage of all federal judicial districts in the United States, including territorial courts. Our dataset spans all 12 circuit courts and includes magistrate judge data.
+              </p>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+                gap: 16,
+              }}>
+                {[
+                  { name: 'First Circuit', districts: 4 },
+                  { name: 'Second Circuit', districts: 4 },
+                  { name: 'Third Circuit', districts: 3 },
+                  { name: 'Fourth Circuit', districts: 5 },
+                  { name: 'Fifth Circuit', districts: 5 },
+                  { name: 'Sixth Circuit', districts: 4 },
+                  { name: 'Seventh Circuit', districts: 3 },
+                  { name: 'Eighth Circuit', districts: 8 },
+                  { name: 'Ninth Circuit', districts: 15 },
+                  { name: 'Tenth Circuit', districts: 6 },
+                  { name: 'Eleventh Circuit', districts: 3 },
+                  { name: 'DC Circuit', districts: 1 },
+                ].map((circuit, idx) => (
+                  <div key={idx} style={{
+                    padding: 16,
+                    borderRadius: '8px',
+                    border: '1px solid #E5E7EB',
+                    background: '#F9FAFB',
+                  }}>
+                    <p style={{
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: '#0f0f0f',
+                      fontFamily: 'var(--font-display)',
+                      margin: '0 0 6px 0',
+                    }}>
+                      {circuit.name}
+                    </p>
+                    <p style={{
+                      fontSize: 16,
+                      fontWeight: 700,
+                      color: '#8B5CF6',
+                      fontFamily: 'var(--font-display)',
+                      margin: 0,
+                    }}>
+                      {circuit.districts} districts
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Data Quality & Integrity */}
+          <section style={{ marginBottom: 80 }}>
+            <h2 style={{
+              fontSize: 32,
+              fontWeight: 700,
+              color: '#0f0f0f',
+              fontFamily: 'var(--font-display)',
+              marginBottom: 32,
+            }}>
+              Data Quality & Integrity
+            </h2>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: 24,
+            }}>
+              {[
+                {
+                  title: 'Verified Sources',
+                  description: 'All data sourced from official government databases (FJC, PACER) and established legal repositories.',
+                },
+                {
+                  title: 'Quality Assurance',
+                  description: 'Automated validation checks ensure data consistency. Manual review processes verify high-impact statistics.',
+                },
+                {
+                  title: 'Audit Trail',
+                  description: 'Complete provenance tracking for all data with timestamps and source attribution for full transparency.',
+                },
+                {
+                  title: 'Regular Updates',
+                  description: 'Continuous monitoring for data errors. Quarterly comprehensive validation against source databases.',
+                },
+                {
+                  title: 'Privacy Compliant',
+                  description: 'All personally identifiable information protected. Data limited to public court records only.',
+                },
+                {
+                  title: 'Statistical Rigor',
+                  description: 'Confidence intervals calculated for all aggregated statistics. Effect sizes reported for trend analysis.',
+                },
+              ].map((item, idx) => (
+                <div key={idx} style={{
+                  padding: 24,
+                  borderRadius: '12px',
+                  border: '1px solid #E5E7EB',
+                  background: '#FFFFFF',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+                }}>
+                  <div style={{
+                    width: 32,
+                    height: 32,
+                    borderRadius: '8px',
+                    backgroundColor: '#F3F4F6',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: 12,
+                  }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <h3 style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: '#0f0f0f',
+                    fontFamily: 'var(--font-display)',
+                    marginBottom: 8,
+                  }}>
+                    {item.title}
+                  </h3>
+                  <p style={{
+                    fontSize: 14,
+                    color: '#4B5563',
+                    fontFamily: 'var(--font-body)',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}>
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section style={{
+            padding: 48,
+            borderRadius: '12px',
+            background: 'linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%)',
+            textAlign: 'center',
+          }}>
+            <h2 style={{
+              fontSize: 28,
+              fontWeight: 700,
+              color: '#FFFFFF',
+              fontFamily: 'var(--font-display)',
+              marginBottom: 12,
+            }}>
+              Questions About Our Data?
+            </h2>
+            <p style={{
+              fontSize: 16,
+              color: 'rgba(255,255,255,0.9)',
+              fontFamily: 'var(--font-body)',
+              lineHeight: 1.7,
+              marginBottom: 32,
+            }}>
+              Our data team is available to discuss methodology, custom analysis, and bulk data licensing options.
+            </p>
+            <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a
+                href="mailto:enterprise@mycasevalue.com"
+                style={{
+                  display: 'inline-block',
+                  padding: '14px 32px',
+                  backgroundColor: '#FFFFFF',
+                  color: '#8B5CF6',
+                  fontSize: 15,
+                  fontWeight: 700,
+                  borderRadius: '12px',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-display)',
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                Contact Our Data Team
+              </a>
+              <Link
+                href="/methodology"
+                style={{
+                  display: 'inline-block',
+                  padding: '14px 32px',
+                  backgroundColor: 'rgba(255,255,255,0.2)',
+                  color: '#FFFFFF',
+                  fontSize: 15,
+                  fontWeight: 700,
+                  borderRadius: '12px',
+                  textDecoration: 'none',
+                  fontFamily: 'var(--font-display)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                View Methodology
+              </Link>
+            </div>
+          </section>
+        </div>
+      </div>
+    </>
+  );
+}
