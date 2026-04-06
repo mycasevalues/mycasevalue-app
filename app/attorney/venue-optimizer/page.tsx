@@ -207,9 +207,9 @@ export default function VenueOptimizerPage() {
             </div>
 
             {/* Venue Rankings Table */}
-            <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '2px', overflow: 'hidden' }}>
-              <div style={{ padding: '20px 24px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#F0F2F5', margin: 0 }}>
+            <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+              <div style={{ padding: '20px 24px', borderBottom: '1px solid #E5EBF0' }}>
+                <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#212529', margin: 0 }}>
                   Venue Rankings — {data.caseType}
                 </h2>
                 <p style={{ fontSize: '13px', color: '#455A64', margin: '4px 0 0' }}>
@@ -218,7 +218,7 @@ export default function VenueOptimizerPage() {
               </div>
 
               {/* Table Header */}
-              <div style={{ display: 'grid', gridTemplateColumns: '50px 1fr 90px 90px 80px 80px 70px', gap: '8px', padding: '12px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', backgroundColor: 'rgba(255,255,255,0.04)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '50px 1fr 90px 90px 80px 80px 70px', gap: '8px', padding: '12px 24px', borderBottom: '1px solid #E5EBF0', backgroundColor: '#F8F9FA' }}>
                 <span style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase' as const }}>Rank</span>
                 <span style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase' as const }}>District</span>
                 <span style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase' as const, textAlign: 'right' }}>Win Rate</span>
@@ -237,24 +237,24 @@ export default function VenueOptimizerPage() {
                     gridTemplateColumns: '50px 1fr 90px 90px 80px 80px 70px',
                     gap: '8px',
                     padding: '14px 24px',
-                    borderBottom: '1px solid rgba(255,255,255,0.06)',
+                    borderBottom: '1px solid #E5EBF0',
                     alignItems: 'center',
-                    backgroundColor: v.rank <= 3 ? 'rgba(255,255,255,0.04)' : 'transparent',
+                    backgroundColor: v.rank <= 3 ? '#FAFBFC' : 'transparent',
                   }}
                 >
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: v.rank <= 3 ? '#F0F2F5' : '#455A64' }}>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: v.rank <= 3 ? '#212529' : '#455A64' }}>
                     {v.rank <= 3 ? medals[v.rank - 1] : `#${v.rank}`}
                   </span>
-                  <span style={{ fontSize: '14px', fontWeight: v.rank <= 3 ? 700 : 500, color: '#F0F2F5' }}>
+                  <span style={{ fontSize: '14px', fontWeight: v.rank <= 3 ? 700 : 500, color: '#212529' }}>
                     {v.stateLabel}
                   </span>
                   <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: v.winRate >= data.nationalStats.winRate ? '#07CA6B' : '#E8171F', textAlign: 'right' }}>
                     {v.winRate}%
                   </span>
-                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 500, color: '#F0F2F5', textAlign: 'right' }}>
+                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 500, color: '#212529', textAlign: 'right' }}>
                     {v.settlementRate}%
                   </span>
-                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 500, color: '#F0F2F5', textAlign: 'right' }}>
+                  <span className="font-mono" style={{ fontSize: '14px', fontWeight: 500, color: '#212529', textAlign: 'right' }}>
                     {v.medianDurationMonths}mo
                   </span>
                   <span className="font-mono" style={{
@@ -267,10 +267,10 @@ export default function VenueOptimizerPage() {
                   </span>
                   <div style={{ textAlign: 'right' }}>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                      <div style={{ width: '32px', height: '6px', background: 'rgba(255,255,255,0.06)', borderRadius: '3px', overflow: 'hidden' }}>
+                      <div style={{ width: '32px', height: '6px', background: '#E5EBF0', borderRadius: '3px', overflow: 'hidden' }}>
                         <div style={{ height: '100%', width: `${v.score}%`, background: v.score >= 70 ? '#07CA6B' : v.score >= 50 ? '#E89558' : '#E8171F', borderRadius: '3px' }} />
                       </div>
-                      <span className="font-mono" style={{ fontSize: '13px', fontWeight: 700, color: '#F0F2F5' }}>{v.score}</span>
+                      <span className="font-mono" style={{ fontSize: '13px', fontWeight: 700, color: '#212529' }}>{v.score}</span>
                     </div>
                   </div>
                 </div>
@@ -281,7 +281,7 @@ export default function VenueOptimizerPage() {
                 <div style={{ padding: '16px 24px', textAlign: 'center' }}>
                   <button
                     onClick={() => setShowAll(true)}
-                    style={{ padding: '8px 20px', border: '1px solid rgba(232,23,31,0.30)', borderRadius: '2px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer', background: 'rgba(232,23,31,0.08)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', color: '#E8171F', transition: 'all 0.2s' }}
+                    style={{ padding: '8px 20px', border: '1px solid rgba(232,23,31,0.30)', borderRadius: '2px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', cursor: 'pointer', background: 'rgba(232,23,31,0.08)', color: '#E8171F', transition: 'all 0.2s' }}
                   >
                     Show all {data.venues.length} districts
                   </button>
@@ -300,7 +300,7 @@ export default function VenueOptimizerPage() {
 
         {/* Empty state */}
         {!selectedNos && !loading && (
-          <div style={{ background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '2px', padding: '64px 32px', textAlign: 'center' }}>
+          <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', padding: '64px 32px', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '2px', background: 'rgba(232,23,31,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
@@ -308,7 +308,7 @@ export default function VenueOptimizerPage() {
                 <circle cx="12" cy="12" r="2" />
               </svg>
             </div>
-            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#F0F2F5', margin: '0 0 12px' }}>
+            <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px' }}>
               Find Your Optimal Venue
             </h2>
             <p style={{ fontSize: '15px', color: '#455A64', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
