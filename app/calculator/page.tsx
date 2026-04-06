@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { SITS, STATES } from '../../lib/data';
+import { REAL_DATA } from '../../lib/realdata';
 import { SITE_URL } from '../../lib/site-config';
 
 // Note: Metadata cannot be exported from client components.
@@ -76,6 +77,28 @@ const DURATION_MULT: Record<string, number> = {
   over3yr: 1.6,
   permanent: 2.0,
 };
+
+/* ── Category-to-NOS mapping for REAL_DATA lookup ────────────────────── */
+const CATEGORY_PRIMARY_NOS: Record<string, string> = {
+  work: '442', injury: '360', consumer: '870', rights: '440',
+  money: '190', housing: '220', medical: '791', family: '400',
+  gov: '950', education: '442',
+};
+
+function getRealDataForCategory(catId: string): { nos: string; wr: number; sp: number; mo: number; rng: { lo: number; md: number; hi: number } | null; total: number } | null {
+  const nos = CATEGORY_PRIMARY_NOS[catId];
+  if (!nos) return null;
+  const rd = REAL_DATA[nos] as any;
+  if (!rd) return null;
+  return {
+    nos,
+    wr: rd.wr ?? 0,
+    sp: rd.sp ?? 0,
+    mo: rd.mo ?? 0,
+    rng: rd.rng ?? null,
+    total: rd.total ?? 0,
+  };
+}
 
 /* ── Helpers ─────────────────────────────────────────────────────────── */
 function fmt(n: number): string {
@@ -617,6 +640,79 @@ export default function CalculatorPage() {
                 </tbody>
               </table>
             </div>
+
+            {/* Federal Data Context */}
+            {(() => {
+              const realCtx = getRealDataForCategory(caseType);
+              if (!realCtx) return null;
+              return (
+                <div className="mb-6 p-6" style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '2px' }}>
+                  <h3 className="text-[12px] font-bold uppercase tracking-[0.8px] mb-4" style={{ color: '#006997', fontFamily: 'var(--font-body)' }}>
+                    How This Compares to Federal Data
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: '#455A64' }}>Actual Win Rate</p>
+                      <p className="text-xl font-bold" style={{
+                        color: realCtx.wr >= 50 ? '#07874A' : '#E8171F',
+                        fontFamily: 'var(--font-mono)',
+                      }}>{realCtx.wr.toFixed(1)}%</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: '#455A64' }}>Settlement Rate</p>
+                      <p className="text-xl font-bold" style={{ color: '#D97706', fontFamily: 'var(--font-mono)' }}>{realCtx.sp.toFixed(1)}%</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: '#455A64' }}>Median Duration</p>
+                      <p className="text-xl font-bold" style={{ color: '#006997', fontFamily: 'var(--font-mono)' }}>{realCtx.mo} mo</p>
+                    </div>
+                    {realCtx.rng && (
+                      <div>
+                        <p className="text-[10px] uppercase tracking-wider mb-1" style={{ color: '#455A64' }}>Median Recovery</p>
+                        <p className="text-xl font-bold" style={{ color: '#212529', fontFamily: 'var(--font-mono)' }}>${realCtx.rng.md}K</p>
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-[11px] mt-3" style={{ color: '#455A64', lineHeight: 1.5 }}>
+                    Based on {realCtx.total.toLocaleString()} federal cases · NOS {realCtx.nos} · FJC IDB 2000–2024
+                  </p>
+                </div>
+              );
+            })()}
+
+            {/* CTA to full report */}
+            {(() => {
+              const nos = CATEGORY_PRIMARY_NOS[caseType];
+              if (!nos) return null;
+              return (
+                <div className="mb-6 text-center p-6" style={{ background: '#00172E', borderRadius: '2px' }}>
+                  <p className="text-sm mb-3" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
+                    See circuit breakdowns, judge data, and detailed outcomes
+                  </p>
+                  <Link
+                    href={`/report/${nos}`}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 8,
+                      background: '#E8171F',
+                      color: '#FFFFFF',
+                      padding: '12px 28px',
+                      borderRadius: '2px',
+                      fontSize: 14,
+                      fontWeight: 700,
+                      textDecoration: 'none',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      fontFamily: 'var(--font-display)',
+                    }}
+                  >
+                    View Full Report
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </Link>
+                </div>
+              );
+            })()}
 
             {/* Results disclaimer */}
             <div className="p-4 rounded" style={{
