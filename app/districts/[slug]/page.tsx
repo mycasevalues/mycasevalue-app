@@ -541,6 +541,20 @@ export default async function DistrictPage({ params }: PageProps) {
             >
               {districtStats.winRate}% Win Rate
             </span>
+            {libDistrictStats?.settlementRate != null && (
+              <span
+                className="px-4 py-2 text-sm font-semibold"
+                style={{
+                  borderRadius: '9999px',
+                  background: 'rgba(16, 185, 129, 0.15)',
+                  color: '#6EE7B7',
+                  border: '1px solid rgba(16, 185, 129, 0.3)',
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                {Math.round(libDistrictStats.settlementRate)}% Settlement
+              </span>
+            )}
             <span
               className="px-4 py-2 text-sm font-semibold"
               style={{
@@ -559,27 +573,36 @@ export default async function DistrictPage({ params }: PageProps) {
 
       {/* Key Stats Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-[960px] mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="max-w-[960px] mx-auto grid grid-cols-2 sm:grid-cols-5 gap-4">
           {[
             {
-              label: 'Total Cases Analyzed',
+              label: 'Cases Analyzed',
               value: `${(districtStats.totalCases / 1000).toFixed(1)}k+`,
+              color: '#006997',
             },
             {
-              label: 'Top Case Type',
-              value: districtStats.topCaseType.split(' ')[0],
-            },
-            {
-              label: 'Plaintiff Win Rate',
+              label: 'Win Rate',
               value: `${districtStats.winRate}%`,
+              color: '#E8171F',
+            },
+            {
+              label: 'Settlement Rate',
+              value: `${libDistrictStats ? Math.round(libDistrictStats.settlementRate) : 35}%`,
+              color: '#10B981',
             },
             {
               label: 'Median Duration',
               value: `${districtStats.medianDuration}mo`,
+              color: '#00172E',
+            },
+            {
+              label: 'Top Case Type',
+              value: districtStats.topCaseType.split(' ')[0],
+              color: '#455A64',
             },
           ].map((stat, i) => (
             <div key={i} className="stat-card">
-              <div className="stat-number">{stat.value}</div>
+              <div className="stat-number" style={{ color: stat.color }}>{stat.value}</div>
               <div className="stat-label">{stat.label}</div>
             </div>
           ))}
