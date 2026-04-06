@@ -402,28 +402,43 @@ async function CategoryPage({
 
       {/* Hero Section */}
       <div style={{
-        background: categoryColors[category],
-        padding: '60px 20px',
+        background: '#00172E',
+        padding: '40px 20px',
         color: 'white',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ fontSize: '48px', marginBottom: '16px' }}>
-            {categoryIcons[category]}
+          {/* Badge */}
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '6px 14px',
+            background: '#E8171F',
+            borderRadius: '2px',
+            fontSize: '12px',
+            fontWeight: 700,
+            letterSpacing: '0.5px',
+            textTransform: 'uppercase' as const,
+            color: '#FFFFFF',
+            marginBottom: '16px',
+          }}>
+            {categoryData.label.toUpperCase()}
           </div>
           <h1 style={{
-            fontSize: '44px',
+            fontSize: '36px',
             fontWeight: 700,
-            margin: '0 0 16px 0',
+            margin: '0 0 12px 0',
             fontFamily: 'var(--font-display)',
             letterSpacing: '-0.5px',
+            color: '#FFFFFF',
           }}>
             {categoryData.label} Cases
           </h1>
           <p style={{
-            fontSize: '18px',
+            fontSize: '15px',
             margin: '0 0 24px 0',
-            fontFamily: 'var(--font-display)',
-            opacity: 0.95,
+            fontFamily: 'var(--font-body)',
+            color: 'rgba(255,255,255,0.75)',
             maxWidth: '600px',
             lineHeight: '1.6',
           }}>
@@ -431,28 +446,46 @@ async function CategoryPage({
           </p>
           <div style={{
             display: 'flex',
-            gap: '24px',
+            gap: '32px',
             flexWrap: 'wrap',
-            fontSize: '16px',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-body)',
           }}>
+            {(() => {
+              // Compute total cases in this category
+              const seen = new Set<string>();
+              let totalCases = 0;
+              for (const opt of categoryData.opts) {
+                if (seen.has(opt.nos)) continue;
+                seen.add(opt.nos);
+                const rd = REAL_DATA[opt.nos];
+                if (rd?.total) totalCases += rd.total;
+              }
+              return totalCases > 0 ? (
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: '22px', color: '#FFFFFF', fontFamily: 'var(--font-mono)' }}>
+                    {totalCases.toLocaleString()}
+                  </div>
+                  <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '12px', fontWeight: 500 }}>Total Cases</div>
+                </div>
+              ) : null;
+            })()}
             <div>
-              <div style={{ fontWeight: 600, fontSize: '24px' }}>
+              <div style={{ fontWeight: 700, fontSize: '22px', color: '#FFFFFF', fontFamily: 'var(--font-mono)' }}>
                 {stats.avgWinRate}%
               </div>
-              <div style={{ opacity: 0.9, fontSize: '14px' }}>Avg. Trial Win Rate</div>
+              <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '12px', fontWeight: 500 }}>Avg Win Rate</div>
             </div>
             <div>
-              <div style={{ fontWeight: 600, fontSize: '24px' }}>
-                {stats.avgTimelineMonths} mo
+              <div style={{ fontWeight: 700, fontSize: '22px', color: '#FFFFFF', fontFamily: 'var(--font-mono)' }}>
+                {stats.avgTimelineMonths}mo
               </div>
-              <div style={{ opacity: 0.9, fontSize: '14px' }}>Avg. Case Timeline</div>
+              <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '12px', fontWeight: 500 }}>Avg Duration</div>
             </div>
             <div>
-              <div style={{ fontWeight: 600, fontSize: '24px' }}>
+              <div style={{ fontWeight: 700, fontSize: '22px', color: '#FFFFFF', fontFamily: 'var(--font-mono)' }}>
                 {stats.avgSettleRate}%
               </div>
-              <div style={{ opacity: 0.9, fontSize: '14px' }}>Favorable Settlements</div>
+              <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '12px', fontWeight: 500 }}>Settlement Rate</div>
             </div>
           </div>
         </div>
@@ -526,6 +559,7 @@ async function CategoryPage({
                 (ct) => ct.categorySlug === category && ct.nosCode === opt.nos
               );
               const href = caseType ? `/cases/${category}/${caseType.slug}` : `#`;
+              const rd = REAL_DATA[opt.nos];
 
               return (
                 <Link
@@ -540,7 +574,8 @@ async function CategoryPage({
                     fontFamily: 'var(--font-display)',
                     textDecoration: 'none',
                     color: 'inherit',
-                    display: 'block',
+                    display: 'flex',
+                    flexDirection: 'column',
                     transition: 'all 0.2s ease',
                   }}
                 >
@@ -560,13 +595,64 @@ async function CategoryPage({
                   }}>
                     {opt.d}
                   </p>
+
+                  {/* Real data stats */}
+                  {rd && rd.total > 0 && (
+                    <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: 12 }}>
+                      <div style={{ minWidth: 60 }}>
+                        <div style={{ fontSize: '16px', fontWeight: 700, color: '#006997', fontFamily: 'var(--font-mono)' }}>
+                          {rd.total.toLocaleString()}
+                        </div>
+                        <div style={{ fontSize: '10px', color: '#455A64', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Cases</div>
+                      </div>
+                      {rd.wr != null && (
+                        <div style={{ minWidth: 50 }}>
+                          <div style={{ fontSize: '16px', fontWeight: 700, color: rd.wr >= 50 ? '#07874A' : '#E8171F', fontFamily: 'var(--font-mono)' }}>
+                            {rd.wr}%
+                          </div>
+                          <div style={{ fontSize: '10px', color: '#455A64', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
+                        </div>
+                      )}
+                      {rd.sp != null && (
+                        <div style={{ minWidth: 50 }}>
+                          <div style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)' }}>
+                            {rd.sp}%
+                          </div>
+                          <div style={{ fontSize: '10px', color: '#455A64', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Settlement</div>
+                        </div>
+                      )}
+                      {rd.mo != null && (
+                        <div style={{ minWidth: 50 }}>
+                          <div style={{ fontSize: '16px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)' }}>
+                            {rd.mo}mo
+                          </div>
+                          <div style={{ fontSize: '10px', color: '#455A64', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Duration</div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Win rate bar */}
+                  {rd && rd.wr != null && (
+                    <div style={{ height: 4, background: '#F0F3F5', borderRadius: 2, marginBottom: 12, overflow: 'hidden' }}>
+                      <div style={{ height: '100%', width: `${Math.min(rd.wr, 100)}%`, background: rd.wr >= 50 ? '#07874A' : '#E8171F', borderRadius: 2 }} />
+                    </div>
+                  )}
+
                   <div style={{
                     fontSize: '12px',
                     color: '#455A64',
                     paddingTop: '12px',
                     borderTop: '1px solid #D5D8DC',
+                    marginTop: 'auto',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
                   }}>
-                    NOS Code: {opt.nos}
+                    <span>NOS Code: {opt.nos}</span>
+                    {rd?.rng?.md && (
+                      <span style={{ fontWeight: 600, color: '#006997' }}>Median: ${rd.rng.md}K</span>
+                    )}
                   </div>
                 </Link>
               );
@@ -698,7 +784,7 @@ async function CategoryPage({
 
       {/* CTA Section */}
       <div style={{
-        background: categoryColors[category],
+        background: '#00172E',
         padding: '60px 20px',
         textAlign: 'center',
         color: 'white',

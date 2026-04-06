@@ -3,8 +3,32 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
+import { REAL_DATA } from '../../lib/realdata';
 import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
+
+// Pre-compute aggregate stats for each category
+function getCategoryStats(categoryId: string, opts: { nos: string }[]): { totalCases: number; avgWinRate: number; avgSettlement: number; avgDuration: number } {
+  let total = 0, wrSum = 0, spSum = 0, moSum = 0, count = 0;
+  const seen = new Set<string>();
+  for (const opt of opts) {
+    if (seen.has(opt.nos)) continue;
+    seen.add(opt.nos);
+    const rd = REAL_DATA[opt.nos];
+    if (!rd || !rd.total) continue;
+    total += rd.total;
+    wrSum += rd.wr || 0;
+    spSum += rd.sp || 0;
+    moSum += rd.mo || 0;
+    count++;
+  }
+  return {
+    totalCases: total,
+    avgWinRate: count > 0 ? Math.round(wrSum / count) : 0,
+    avgSettlement: count > 0 ? Math.round(spSum / count) : 0,
+    avgDuration: count > 0 ? Math.round(moSum / count) : 0,
+  };
+}
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -162,20 +186,46 @@ export default function CasesIndexPage() {
           </div>
         ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
-            {filtered.map((category) => (
-              <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
-                <div className="cat-card">
-                  <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#212529', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
-                    {category.label}
-                  </h2>
-                  <p style={{ fontSize: 14, color: '#455A64', margin: 0, lineHeight: 1.5, marginBottom: 'auto' }}>{category.sub}</p>
-                  <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid #D5D8DC', fontSize: 13, color: '#455A64', fontWeight: 500, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <span>{category.opts.length} types covered</span>
-                    <span className="cat-card-arrow">→</span>
+            {filtered.map((category) => {
+              const catStats = getCategoryStats(category.id, category.opts);
+              return (
+                <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
+                  <div className="cat-card">
+                    <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#212529', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
+                      {category.label}
+                    </h2>
+                    <p style={{ fontSize: 14, color: '#455A64', margin: 0, lineHeight: 1.5, marginBottom: 16 }}>{category.sub}</p>
+
+                    {/* Inline Stats */}
+                    {catStats.totalCases > 0 && (
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px', marginBottom: 'auto', padding: '12px 0' }}>
+                        <div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 700, color: '#006997' }}>{catStats.totalCases.toLocaleString()}</div>
+                          <div style={{ fontSize: 11, color: '#455A64', fontWeight: 500 }}>Total Cases</div>
+                        </div>
+                        <div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 700, color: catStats.avgWinRate >= 50 ? '#07874A' : '#E8171F' }}>{catStats.avgWinRate}%</div>
+                          <div style={{ fontSize: 11, color: '#455A64', fontWeight: 500 }}>Avg Win Rate</div>
+                        </div>
+                        <div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 700, color: '#212529' }}>{catStats.avgSettlement}%</div>
+                          <div style={{ fontSize: 11, color: '#455A64', fontWeight: 500 }}>Settlement Rate</div>
+                        </div>
+                        <div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 700, color: '#212529' }}>{catStats.avgDuration}mo</div>
+                          <div style={{ fontSize: 11, color: '#455A64', fontWeight: 500 }}>Avg Duration</div>
+                        </div>
+                      </div>
+                    )}
+
+                    <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid #D5D8DC', fontSize: 13, color: '#455A64', fontWeight: 500, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span>{category.opts.length} types covered</span>
+                      <span className="cat-card-arrow">→</span>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>
