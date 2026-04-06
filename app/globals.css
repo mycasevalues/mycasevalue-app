@@ -28,7 +28,7 @@
   background: #00172E;
   color: #FFFFFF;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 2px;
   font-size: 14px;
   z-index: 9999;
 }
@@ -115,7 +115,7 @@ a:hover { text-decoration: underline; color: var(--accent-secondary-hover); }
     background: linear-gradient(90deg, #E5EBF0 25%, #F5F6F7 50%, #E5EBF0 75%);
     background-size: 400% 100%;
     animation: shimmer 1.8s infinite linear;
-    border-radius: 4px;
+    border-radius: 2px;
   }
 
   .font-display {
@@ -877,7 +877,7 @@ button:disabled,
   background: linear-gradient(90deg, #E5EBF0 25%, #F5F6F7 50%, #E5EBF0 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.5s ease-in-out infinite;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /* Counter tick animation */
