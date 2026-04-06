@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Legal Translator | MyCaseValue',
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Legal Translator | MyCaseValue',
     description: 'Translate complex legal terminology into plain English',
-    url: 'https://www.mycasevalues.com/translate',
+    url: `${SITE_URL}/translate`,
   },
 };
 

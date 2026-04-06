@@ -65,10 +65,11 @@ export async function POST(request: NextRequest) {
       results,
       timestamp: new Date().toISOString()
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
     return NextResponse.json({
       status: 'failed',
-      error: error.message
+      error: errorMessage
     }, { status: 500 })
   }
 }
@@ -92,10 +93,11 @@ export async function GET(request: NextRequest) {
       results,
       timestamp: new Date().toISOString()
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
     return NextResponse.json({
       status: 'failed',
-      error: error.message
+      error: errorMessage
     }, { status: 500 })
   }
 }

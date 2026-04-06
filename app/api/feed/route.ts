@@ -82,7 +82,7 @@ export async function GET(request: NextRequest) {
           controller.enqueue(encoder.encode(': timeout\n\n'));
           controller.close();
         }
-      } catch (error: any) {
+      } catch (error: unknown) {
         try {
           controller.close();
         } catch {

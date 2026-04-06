@@ -71,8 +71,9 @@ export async function GET(req: NextRequest) {
       total_polls,
       timestamp: new Date().toISOString(),
     });
-  } catch (err: any) {
-    console.error('[api/admin/stats] Error:', err.message || err);
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    console.error('[api/admin/stats] Error:', errorMessage);
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }
 }

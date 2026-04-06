@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 /**
  * Spanish (es) root layout
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     locale: 'es_ES',
   },
   alternates: {
-    canonical: 'https://www.mycasevalues.com/es',
+    canonical: `${SITE_URL}/es`,
   },
 };
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Sign In | MyCaseValue',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sign In | MyCaseValue',
     description: 'Sign in to your MyCaseValue account',
-    url: 'https://www.mycasevalues.com/sign-in',
+    url: `${SITE_URL}/sign-in`,
   },
 };
 

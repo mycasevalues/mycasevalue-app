@@ -4,22 +4,23 @@
  */
 
 import { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Preguntas Frecuentes — MyCaseValue',
   description: 'Preguntas frecuentes sobre MyCaseValue: Cómo funciona, fuentes de datos, si es asesoramiento legal, precisión, precios, privacidad y cómo usar datos de resultados judiciales.',
   alternates: {
-    canonical: 'https://www.mycasevalues.com/es/faq',
+    canonical: `${SITE_URL}/es/faq`,
     languages: {
-      en: 'https://www.mycasevalues.com/faq',
-      es: 'https://www.mycasevalues.com/es/faq',
+      en: `${SITE_URL}/faq`,
+      es: `${SITE_URL}/es/faq`,
     },
   },
   openGraph: {
     title: 'Preguntas Frecuentes — MyCaseValue',
     description: 'Obtén respuestas a preguntas frecuentes sobre datos judiciales federales, tasas de victoria, rangos de acuerdos y cómo funciona MyCaseValue.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/es/faq',
+    url: `${SITE_URL}/es/faq`,
     locale: 'es_ES',
   },
 };
@@ -30,8 +31,8 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://www.mycasevalues.com/es' },
-        { '@type': 'ListItem', position: 2, name: 'Preguntas Frecuentes', item: 'https://www.mycasevalues.com/es/faq' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE_URL}/es` },
+        { '@type': 'ListItem', position: 2, name: 'Preguntas Frecuentes', item: `${SITE_URL}/es/faq` },
       ],
     },
   ],

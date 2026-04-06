@@ -28,9 +28,10 @@ export async function GET(request: NextRequest) {
       signal: AbortSignal.timeout(10000),
     });
     results.google = googleRes.ok ? 'ok' : `HTTP ${googleRes.status}`;
-  } catch (err: any) {
-    results.google = `error: ${err.message}`;
-    log.warn('Google sitemap ping failed', { error: err.message });
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    results.google = `error: ${errorMessage}`;
+    log.warn('Google sitemap ping failed', { error: errorMessage });
   }
 
   // Ping Bing
@@ -39,9 +40,10 @@ export async function GET(request: NextRequest) {
       signal: AbortSignal.timeout(10000),
     });
     results.bing = bingRes.ok ? 'ok' : `HTTP ${bingRes.status}`;
-  } catch (err: any) {
-    results.bing = `error: ${err.message}`;
-    log.warn('Bing sitemap ping failed', { error: err.message });
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    results.bing = `error: ${errorMessage}`;
+    log.warn('Bing sitemap ping failed', { error: errorMessage });
   }
 
   log.info('Reindex completed', results);

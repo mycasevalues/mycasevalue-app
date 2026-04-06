@@ -106,7 +106,7 @@ export async function DELETE(req: NextRequest) {
       },
       { status: 200 }
     );
-  } catch (err: any) {
+  } catch (err: unknown) {
     return NextResponse.json(
       { error: 'Failed to remove subscription' },
       { status: 500 }

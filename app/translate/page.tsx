@@ -60,7 +60,7 @@ export default function TranslatePage() {
       const newRemaining = data.remaining;
       setRemaining(newRemaining);
       localStorage.setItem('translate-remaining', String(newRemaining));
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError('An error occurred. Please try again.');
     } finally {
       setLoading(false);

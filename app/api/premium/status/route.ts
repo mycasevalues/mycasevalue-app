@@ -47,8 +47,9 @@ export async function GET(req: NextRequest) {
       grantedAt: premiumSession.grantedAt,
       expiresAt: premiumSession.expiresAt,
     });
-  } catch (err: any) {
-    console.error('[api/premium/status] premium check failed:', err instanceof Error ? err.message : err);
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    console.error('[api/premium/status] premium check failed:', errorMessage);
     return NextResponse.json(
       { error: 'Failed to check premium status' },
       { status: 500 }

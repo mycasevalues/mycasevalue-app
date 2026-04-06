@@ -4,22 +4,23 @@
  */
 
 import { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Cómo Funciona — MyCaseValue',
   description: 'Cómo MyCaseValue analiza 5.1M+ casos federales para mostrar tasas de victoria, acuerdos, cronogramas y análisis de jueces.',
   alternates: {
-    canonical: 'https://www.mycasevalues.com/es/how-it-works',
+    canonical: `${SITE_URL}/es/how-it-works`,
     languages: {
-      en: 'https://www.mycasevalues.com/how-it-works',
-      es: 'https://www.mycasevalues.com/es/how-it-works',
+      en: `${SITE_URL}/how-it-works`,
+      es: `${SITE_URL}/es/how-it-works`,
     },
   },
   openGraph: {
     title: 'Cómo Funciona — MyCaseValue',
     description: 'Cómo MyCaseValue analiza datos de casos federales para revelarte información real sobre resultados legales.',
     type: 'website',
-    url: 'https://www.mycasevalues.com/es/how-it-works',
+    url: `${SITE_URL}/es/how-it-works`,
     locale: 'es_ES',
   },
 };

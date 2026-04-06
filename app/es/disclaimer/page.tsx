@@ -3,14 +3,15 @@
  */
 
 import { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Descargo de Responsabilidad — MyCaseValue',
   alternates: {
-    canonical: 'https://www.mycasevalues.com/es/disclaimer',
+    canonical: `${SITE_URL}/es/disclaimer`,
     languages: {
-      en: 'https://www.mycasevalues.com/disclaimer',
-      es: 'https://www.mycasevalues.com/es/disclaimer',
+      en: `${SITE_URL}/disclaimer`,
+      es: `${SITE_URL}/es/disclaimer`,
     },
   },
   openGraph: {

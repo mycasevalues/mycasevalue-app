@@ -187,7 +187,7 @@ export async function POST(request: NextRequest) {
       },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     return NextResponse.json(
       { error: 'An error occurred while translating. Please try again.' },
       { status: 500 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Forgot Password | MyCaseValue',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Forgot Password | MyCaseValue',
     description: 'Reset your MyCaseValue account password',
-    url: 'https://www.mycasevalues.com/forgot-password',
+    url: `${SITE_URL}/forgot-password`,
   },
 };
 

@@ -286,11 +286,12 @@ export async function GET(request: NextRequest) {
       default:
         return NextResponse.json({ error: `Unknown type: ${type}` }, { status: 400 })
     }
-  } catch (error: any) {
-    console.error('[api/data] query execution failed:', error instanceof Error ? error.message : error);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('[api/data] query execution failed:', errorMessage);
     return NextResponse.json({
       source: 'static',
-      error: error.message,
+      error: errorMessage,
       data: null
     }, { status: 500 })
   }

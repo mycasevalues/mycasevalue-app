@@ -3,15 +3,16 @@
  */
 
 import { Metadata } from 'next';
+import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Tendencias — MyCaseValue',
   description: 'Tendencias en demandas federales año tras año. Análisis de qué tipos de casos están aumentando en los tribunales federales.',
   alternates: {
-    canonical: 'https://www.mycasevalues.com/es/trends',
+    canonical: `${SITE_URL}/es/trends`,
     languages: {
-      en: 'https://www.mycasevalues.com/trends',
-      es: 'https://www.mycasevalues.com/es/trends',
+      en: `${SITE_URL}/trends`,
+      es: `${SITE_URL}/es/trends`,
     },
   },
   openGraph: {

@@ -83,8 +83,9 @@ export async function POST(req: NextRequest) {
       message: `Email sent to ${to}`,
       type,
     });
-  } catch (err: any) {
-    console.error('[api/email] email send failed:', err instanceof Error ? err.message : err);
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : String(err);
+    console.error('[api/email] email send failed:', errorMessage);
     return NextResponse.json(
       { error: 'Failed to send email' },
       { status: 500 }
