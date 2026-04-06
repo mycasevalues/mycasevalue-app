@@ -18,13 +18,13 @@ import { SearchIcon } from '../ui/Icons';
 
 const NAV_LINKS = [
   { href: '/search', label: 'Search' },
-  { href: '/cases', label: 'Cases' },
-  { href: '/districts', label: 'Districts' },
-  { href: '/how-it-works', label: 'How It Works' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/cases', label: 'Case Types', mega: true },
+  { href: '/districts', label: 'Districts', mega: true },
+  { href: '/judges', label: 'Judges' },
+  { href: '/solutions', label: 'Solutions', mega: true },
   { href: '/calculator', label: 'Calculator' },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/attorney', label: 'Attorney Mode' },
+  { href: '/attorney', label: 'Attorney Mode', mega: true },
 ];
 
 export default function SiteNav() {
@@ -421,10 +421,7 @@ export default function SiteNav() {
             }}
           >
             {NAV_LINKS.map((link) => {
-              // Determine if this link should have a dropdown
-              const hasDropdown = ['Cases', 'Districts', 'Attorney Mode'].includes(link.label);
-
-              if (!hasDropdown) {
+              if (!link.mega) {
                 return (
                   <Link
                     key={link.href}
@@ -453,49 +450,132 @@ export default function SiteNav() {
                 );
               }
 
-              // Render dropdown for Cases, Districts, Attorney Mode
-              let dropdownContent = null;
-              if (link.label === 'Cases') {
-                dropdownContent = (
-                  <>
-                    <div className="nav-dropdown-heading">Browse by Category</div>
-                    <a href="/report/442">Employment</a>
-                    <a href="/report/360">Personal Injury</a>
-                    <a href="/report/440">Civil Rights</a>
-                    <a href="/report/190">Contract</a>
-                    <a href="/report/350">Tort</a>
-                    <div className="nav-dropdown-divider" />
-                    <a href="/cases" className="nav-dropdown-footer">View All Case Types →</a>
-                  </>
+              /* Mega-menu content per section */
+              let megaClass = 'nav-mega';
+              let megaContent = null;
+
+              if (link.label === 'Case Types') {
+                megaClass = 'nav-mega nav-mega--wide';
+                megaContent = (
+                  <div className="nav-mega-grid nav-mega-grid--3col">
+                    <div>
+                      <div className="nav-mega-heading">Employment</div>
+                      <a href="/report/442">Employment Discrimination</a>
+                      <a href="/report/445">Americans with Disabilities</a>
+                      <a href="/report/710">Fair Labor Standards</a>
+                      <a href="/report/720">Labor/Management Relations</a>
+                    </div>
+                    <div>
+                      <div className="nav-mega-heading">Torts &amp; Injury</div>
+                      <a href="/report/360">Personal Injury</a>
+                      <a href="/report/350">Motor Vehicle</a>
+                      <a href="/report/365">Product Liability</a>
+                      <a href="/report/368">Medical Malpractice</a>
+                    </div>
+                    <div>
+                      <div className="nav-mega-heading">Civil Rights &amp; Contract</div>
+                      <a href="/report/440">Civil Rights — Other</a>
+                      <a href="/report/443">Housing/Accommodations</a>
+                      <a href="/report/190">Contract — Other</a>
+                      <a href="/report/110">Insurance</a>
+                    </div>
+                    <div className="nav-mega-footer-row">
+                      <a href="/cases" className="nav-mega-footer-link">View All Case Types →</a>
+                    </div>
+                  </div>
                 );
               } else if (link.label === 'Districts') {
-                dropdownContent = (
-                  <>
-                    <div className="nav-dropdown-heading">Browse by Circuit</div>
-                    <a href="/districts/1st">1st Circuit</a>
-                    <a href="/districts/2nd">2nd Circuit</a>
-                    <a href="/districts/3rd">3rd Circuit</a>
-                    <div className="nav-dropdown-divider" />
-                    <a href="/districts" className="nav-dropdown-footer">View All 94 Districts →</a>
-                  </>
+                megaClass = 'nav-mega nav-mega--wide';
+                megaContent = (
+                  <div className="nav-mega-grid nav-mega-grid--4col">
+                    <div>
+                      <div className="nav-mega-heading">Eastern Circuits</div>
+                      <a href="/districts?circuit=1">1st Circuit</a>
+                      <a href="/districts?circuit=2">2nd Circuit</a>
+                      <a href="/districts?circuit=3">3rd Circuit</a>
+                      <a href="/districts?circuit=4">4th Circuit</a>
+                    </div>
+                    <div>
+                      <div className="nav-mega-heading">Central Circuits</div>
+                      <a href="/districts?circuit=5">5th Circuit</a>
+                      <a href="/districts?circuit=6">6th Circuit</a>
+                      <a href="/districts?circuit=7">7th Circuit</a>
+                      <a href="/districts?circuit=8">8th Circuit</a>
+                    </div>
+                    <div>
+                      <div className="nav-mega-heading">Western Circuits</div>
+                      <a href="/districts?circuit=9">9th Circuit</a>
+                      <a href="/districts?circuit=10">10th Circuit</a>
+                      <a href="/districts?circuit=11">11th Circuit</a>
+                      <a href="/districts?circuit=dc">D.C. Circuit</a>
+                    </div>
+                    <div>
+                      <div className="nav-mega-heading">Quick Links</div>
+                      <a href="/districts/california-central">C.D. California</a>
+                      <a href="/districts/new-york-southern">S.D. New York</a>
+                      <a href="/districts/texas-southern">S.D. Texas</a>
+                      <a href="/map">Interactive Map</a>
+                    </div>
+                    <div className="nav-mega-footer-row">
+                      <a href="/districts" className="nav-mega-footer-link">View All 94 Districts →</a>
+                    </div>
+                  </div>
+                );
+              } else if (link.label === 'Solutions') {
+                megaClass = 'nav-mega nav-mega--wide';
+                megaContent = (
+                  <div className="nav-mega-grid nav-mega-grid--3col">
+                    <div>
+                      <div className="nav-mega-heading">For Legal Professionals</div>
+                      <a href="/solutions/individuals">Individuals</a>
+                      <a href="/solutions/small-firms">Small Law Firms</a>
+                      <a href="/solutions/enterprise">Enterprise Legal</a>
+                    </div>
+                    <div>
+                      <div className="nav-mega-heading">For Organizations</div>
+                      <a href="/solutions/insurance">Insurance Companies</a>
+                      <a href="/solutions/legal-aid">Legal Aid</a>
+                      <a href="/solutions/government">Government Agencies</a>
+                    </div>
+                    <div>
+                      <div className="nav-mega-heading">Data &amp; Research</div>
+                      <a href="/solutions/funders">Litigation Funders</a>
+                      <a href="/solutions/academic">Academic Research</a>
+                      <a href="/solutions/api">API &amp; Integrations</a>
+                    </div>
+                    <div className="nav-mega-footer-row">
+                      <a href="/solutions" className="nav-mega-footer-link">View All Solutions →</a>
+                    </div>
+                  </div>
                 );
               } else if (link.label === 'Attorney Mode') {
-                dropdownContent = (
-                  <>
-                    <div className="nav-dropdown-heading">Attorney Tools</div>
-                    <a href="/attorney/case-predictor">Case Predictor</a>
-                    <a href="/attorney/judge-intelligence">Judge Intelligence</a>
-                    <a href="/attorney/venue-optimizer">Venue Optimizer</a>
-                    <div className="nav-dropdown-divider" />
-                    <a href="/attorney" className="nav-dropdown-footer">View All Tools →</a>
-                  </>
+                megaContent = (
+                  <div className="nav-mega-grid nav-mega-grid--2col">
+                    <div>
+                      <div className="nav-mega-heading">Analysis Tools</div>
+                      <a href="/attorney/case-predictor">Case Predictor</a>
+                      <a href="/attorney/judge-intelligence">Judge Intelligence</a>
+                      <a href="/attorney/venue-optimizer">Venue Optimizer</a>
+                      <a href="/attorney/opposing-counsel">Opposing Counsel</a>
+                    </div>
+                    <div>
+                      <div className="nav-mega-heading">Workflow</div>
+                      <a href="/attorney/bulk-analysis">Bulk Analysis</a>
+                      <a href="/attorney/document-intelligence">Document Intelligence</a>
+                      <a href="/attorney/team-workspace">Team Workspace</a>
+                      <a href="/attorney/api-access">API Access</a>
+                    </div>
+                    <div className="nav-mega-footer-row">
+                      <a href="/attorney" className="nav-mega-footer-link">View All Attorney Tools →</a>
+                    </div>
+                  </div>
                 );
               }
 
               return (
                 <div
                   key={link.href}
-                  className="nav-dropdown-parent"
+                  className="nav-mega-parent"
                   style={{
                     position: 'relative',
                     height: '100%',
@@ -505,7 +585,7 @@ export default function SiteNav() {
                 >
                   <Link
                     href={link.href}
-                    className="site-nav-sub-link"
+                    className="site-nav-sub-link nav-mega-trigger"
                     style={{
                       padding: '0 16px',
                       fontSize: '13px',
@@ -516,6 +596,7 @@ export default function SiteNav() {
                       height: '100%',
                       display: 'flex',
                       alignItems: 'center',
+                      gap: '4px',
                       borderBottom: isActive(link.href) ? '2px solid #E8171F' : '2px solid transparent',
                       transition: 'all 150ms',
                       position: 'relative',
@@ -525,9 +606,12 @@ export default function SiteNav() {
                     aria-current={isActive(link.href) ? 'page' : undefined}
                   >
                     {link.label}
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ marginTop: '1px' }}>
+                      <path d="M2.5 4L5 6.5L7.5 4" />
+                    </svg>
                   </Link>
-                  <div className="nav-dropdown">
-                    {dropdownContent}
+                  <div className={megaClass}>
+                    {megaContent}
                   </div>
                 </div>
               );
@@ -836,50 +920,79 @@ export default function SiteNav() {
         .site-nav-sub-link:hover { color: #FFFFFF !important; }
         .site-nav-mobile-link:hover { background: rgba(232,23,31,0.15) !important; }
 
-        /* CSS-only dropdown menus */
-        .nav-dropdown {
+        /* ── MEGA-MENU ─────────────────────────────────────── */
+        .nav-mega {
           display: none;
           position: absolute;
           top: 100%;
           left: 0;
-          min-width: 240px;
+          min-width: 280px;
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5EBF0;
+          border-top: 3px solid #E8171F;
           border-radius: 0 0 2px 2px;
-          box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-          padding: 16px 0;
+          box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+          padding: 24px 0 16px;
           z-index: 300;
         }
-        .nav-dropdown-parent:hover .nav-dropdown { display: block; }
-        .nav-dropdown a {
-          display: block;
-          padding: 8px 20px;
-          font-size: 14px;
-          color: #455A64;
-          text-decoration: none;
-          font-family: var(--font-body);
-          transition: all 150ms;
+        .nav-mega--wide {
+          min-width: 560px;
+          left: 50%;
+          transform: translateX(-50%);
         }
-        .nav-dropdown a:hover { background: #F8F9FA; color: #212529; }
-        .nav-dropdown-heading {
-          padding: 4px 20px 12px;
+        .nav-mega-parent:hover .nav-mega {
+          display: block;
+        }
+        .nav-mega-grid {
+          display: grid;
+          gap: 0 32px;
+          padding: 0 24px;
+        }
+        .nav-mega-grid--2col { grid-template-columns: 1fr 1fr; }
+        .nav-mega-grid--3col { grid-template-columns: 1fr 1fr 1fr; }
+        .nav-mega-grid--4col { grid-template-columns: 1fr 1fr 1fr 1fr; }
+        .nav-mega-heading {
           font-size: 11px;
           font-weight: 700;
           color: #455A64;
           text-transform: uppercase;
           letter-spacing: 0.08em;
           font-family: var(--font-body);
+          padding-bottom: 10px;
+          margin-bottom: 4px;
+          border-bottom: 1px solid #E5EBF0;
         }
-        .nav-dropdown-divider {
-          height: 1px;
-          background: #D5D8DC;
-          margin: 8px 0;
-        }
-        .nav-dropdown-footer {
-          padding: 12px 20px 4px;
+        .nav-mega a {
+          display: block;
+          padding: 6px 0;
           font-size: 13px;
-          font-weight: 600;
+          color: #455A64;
+          text-decoration: none;
+          font-family: var(--font-body);
+          transition: color 120ms;
+        }
+        .nav-mega a:hover { color: #E8171F; }
+        .nav-mega-footer-row {
+          grid-column: 1 / -1;
+          border-top: 1px solid #E5EBF0;
+          margin-top: 12px;
+          padding-top: 12px;
+        }
+        .nav-mega-footer-link {
+          font-size: 13px !important;
+          font-weight: 600 !important;
           color: #E8171F !important;
+        }
+        .nav-mega-footer-link:hover {
+          color: #CC1019 !important;
+        }
+        .nav-mega-trigger svg {
+          opacity: 0.6;
+          transition: transform 150ms;
+        }
+        .nav-mega-parent:hover .nav-mega-trigger svg {
+          transform: rotate(180deg);
+          opacity: 1;
         }
 
         @media (max-width: 768px) {
@@ -887,7 +1000,15 @@ export default function SiteNav() {
           .site-nav-auth { display: none !important; }
           .site-nav-hamburger { display: flex !important; }
           .site-nav-mobile-drawer { display: flex !important; }
-          .nav-dropdown { display: none !important; }
+          .nav-mega { display: none !important; }
+        }
+        @media (max-width: 1100px) {
+          .nav-mega--wide {
+            min-width: 400px !important;
+          }
+          .nav-mega-grid--4col {
+            grid-template-columns: 1fr 1fr !important;
+          }
         }
       `}} />
     </>
