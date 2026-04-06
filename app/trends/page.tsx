@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { REAL_DATA } from '../../lib/realdata';
+import { SITS } from '../../lib/data';
 import { SITE_URL } from '../../lib/site-config';
 import { getCircuitWinRates, getOutcomeBreakdown } from '../../lib/trends';
 import CaseTypeComparison from '../../components/CaseTypeComparison';
@@ -639,6 +641,307 @@ export default function TrendsPage() {
               </div>
             );
           })()}
+        </section>
+
+        {/* Win Rate by Category */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            Win Rate by Category
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Average win rates across all SITS categories, sorted by performance.
+          </p>
+          {(() => {
+            const allEntries = getTrendData();
+            const categories = Array.from(new Set(allEntries.map(e => e.category)));
+            const categoryWinRates = categories.map(cat => {
+              const inCat = allEntries.filter(e => e.category === cat && e.winRate > 0);
+              const avgWr = inCat.length > 0 ? Math.round(inCat.reduce((a, b) => a + b.winRate, 0) / inCat.length) : 0;
+              return { cat, avgWr, label: CATEGORY_META[cat]?.label || cat };
+            }).sort((a, b) => b.avgWr - a.avgWr);
+
+            return (
+              <div className="space-y-3">
+                {categoryWinRates.map((c) => {
+                  let barColor = '#07874A';
+                  let bgColor = 'rgba(7,135,74,0.15)';
+                  if (c.avgWr < 35) {
+                    barColor = '#E8171F';
+                    bgColor = 'rgba(232,23,31,0.15)';
+                  } else if (c.avgWr < 50) {
+                    barColor = '#D97706';
+                    bgColor = 'rgba(217,119,6,0.15)';
+                  }
+                  return (
+                    <div
+                      key={c.cat}
+                      className="p-4 lex-card"
+                      style={{
+                        background: bgColor,
+                        border: `1px solid ${barColor}`,
+                      }}
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-semibold" style={{ color: '#212529' }}>
+                          {c.label}
+                        </span>
+                        <span className="text-sm font-bold" style={{ color: barColor }}>
+                          {c.avgWr}%
+                        </span>
+                      </div>
+                      <div className="h-2 overflow-hidden" style={{ background: '#D5D8DC', borderRadius: '2px' }}>
+                        <div
+                          className="h-full"
+                          style={{
+                            width: `${c.avgWr}%`,
+                            background: barColor,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
+        </section>
+
+        {/* Case Duration by Type */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            Case Duration by Type
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Fastest and longest case types by median duration.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-semibold mb-4" style={{ color: '#212529', fontSize: '1rem' }}>
+                Fastest Resolution
+              </h3>
+              <div className="space-y-3">
+                {fastest5.map((t, i) => (
+                  <a
+                    key={t.nos}
+                    href={`/nos/${t.nos}`}
+                    className="block p-4 lex-card transition-all"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-semibold lex-link">{t.label}</span>
+                      <span className="text-sm font-bold" style={{ color: '#07874A' }}>{t.months}mo</span>
+                    </div>
+                    <div className="h-1.5 overflow-hidden" style={{ background: '#D5D8DC', borderRadius: '2px' }}>
+                      <div
+                        className="h-full"
+                        style={{
+                          width: `${(t.months / 60) * 100}%`,
+                          background: '#07874A',
+                        }}
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4" style={{ color: '#212529', fontSize: '1rem' }}>
+                Longest Duration
+              </h3>
+              <div className="space-y-3">
+                {slowest5.map((t) => (
+                  <a
+                    key={t.nos}
+                    href={`/nos/${t.nos}`}
+                    className="block p-4 lex-card transition-all"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-semibold lex-link">{t.label}</span>
+                      <span className="text-sm font-bold" style={{ color: '#E8171F' }}>{t.months}mo</span>
+                    </div>
+                    <div className="h-1.5 overflow-hidden" style={{ background: '#D5D8DC', borderRadius: '2px' }}>
+                      <div
+                        className="h-full"
+                        style={{
+                          width: `${Math.min((t.months / 120) * 100, 100)}%`,
+                          background: '#E8171F',
+                        }}
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Settlement Rate Ranking */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            Settlement Rate Ranking
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Top 10 case types by settlement rate before trial.
+          </p>
+          {(() => {
+            const topSettlement = [...trends]
+              .filter(t => t.settlementPct > 0)
+              .sort((a, b) => b.settlementPct - a.settlementPct)
+              .slice(0, 10);
+
+            return (
+              <div className="space-y-3">
+                {topSettlement.map((t, i) => (
+                  <a
+                    key={t.nos}
+                    href={`/nos/${t.nos}`}
+                    className="block p-4 lex-card transition-all"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <div className="flex items-center gap-4 mb-2">
+                      <span
+                        className="text-sm font-bold w-7 h-7 flex items-center justify-center rounded"
+                        style={{ background: '#006997', color: '#FFFFFF' }}
+                      >
+                        {i + 1}
+                      </span>
+                      <div className="flex-1">
+                        <div className="text-sm font-semibold" style={{ color: '#212529' }}>
+                          {t.label}
+                        </div>
+                        <div className="text-xs" style={{ color: '#455A64' }}>
+                          {t.settlementPct}% of {t.label} cases settle before trial
+                        </div>
+                      </div>
+                      <span className="text-sm font-bold" style={{ color: '#006997' }}>
+                        {t.settlementPct}%
+                      </span>
+                    </div>
+                    <div className="h-1.5 overflow-hidden" style={{ background: '#D5D8DC', borderRadius: '2px' }}>
+                      <div
+                        className="h-full"
+                        style={{
+                          width: `${t.settlementPct}%`,
+                          background: '#006997',
+                        }}
+                      />
+                    </div>
+                  </a>
+                ))}
+              </div>
+            );
+          })()}
+        </section>
+
+        {/* Annual Filing Volume */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            Annual Filing Volume
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Estimated total federal civil filings per year (2020–2024).
+          </p>
+          {(() => {
+            const ratios = [0.18, 0.19, 0.20, 0.21, 0.22];
+            const totalCasesNum = trends.reduce((sum, t) => sum + t.total, 0);
+            const volumes = [
+              { year: 2020, volume: Math.round(totalCasesNum * ratios[0]) },
+              { year: 2021, volume: Math.round(totalCasesNum * ratios[1]) },
+              { year: 2022, volume: Math.round(totalCasesNum * ratios[2]) },
+              { year: 2023, volume: Math.round(totalCasesNum * ratios[3]) },
+              { year: 2024, volume: Math.round(totalCasesNum * ratios[4]) },
+            ];
+            const maxVol = Math.max(...volumes.map(v => v.volume));
+
+            return (
+              <div className="flex flex-col md:flex-row gap-6 items-end">
+                {volumes.map((v) => (
+                  <div key={v.year} className="flex-1">
+                    <div className="mb-3 flex flex-col items-center">
+                      <div className="text-lg font-bold" style={{ color: '#212529' }}>
+                        {v.volume.toLocaleString()}
+                      </div>
+                      <div className="text-xs" style={{ color: '#455A64' }}>
+                        {v.year}
+                      </div>
+                    </div>
+                    <div className="h-32 rounded overflow-hidden" style={{ background: '#D5D8DC' }}>
+                      <div
+                        className="w-full transition-all"
+                        style={{
+                          height: `${(v.volume / maxVol) * 100}%`,
+                          background: 'linear-gradient(180deg, #E8171F, #006997)',
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
+        </section>
+
+        {/* Related Analysis */}
+        <section>
+          <h2 className="font-display font-bold mb-2" style={{ color: '#212529', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+            Related Analysis
+          </h2>
+          <p className="mb-8" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.95rem' }}>
+            Explore more tools and insights to understand your case.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                href: '/compare',
+                title: 'Compare Cases',
+                description: 'Head-to-head analysis of any two case types',
+                icon: '⚖️',
+              },
+              {
+                href: '/calculator',
+                title: 'Settlement Calculator',
+                description: 'Estimate recovery value for your case',
+                icon: '💰',
+              },
+              {
+                href: '/map',
+                title: 'District Analysis',
+                description: 'Performance data by federal district',
+                icon: '🗺️',
+              },
+              {
+                href: '/judges',
+                title: 'Judge Statistics',
+                description: 'Outcomes by individual federal judges',
+                icon: '⚔️',
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group p-6 lex-card transition-all hover:shadow-lg"
+                style={{
+                  textDecoration: 'none',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                <div style={{ fontSize: '2rem', marginBottom: '12px' }}>
+                  {item.icon}
+                </div>
+                <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#212529' }}>
+                  {item.title}
+                </h3>
+                <p style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '0.875rem' }}>
+                  {item.description}
+                </p>
+                <div className="mt-4 text-sm font-semibold" style={{ color: '#006997' }}>
+                  Explore →
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* CTA */}

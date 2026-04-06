@@ -80,6 +80,23 @@ export default function OddsPage() {
         .slice(0, 6)
     : [];
 
+  // Calculate national average win rate
+  const nationalAverageWinRate = results
+    ? Object.values(REAL_DATA).reduce((sum, rd) => sum + ((rd.wr ?? 0) * (rd.total ?? 0)), 0) /
+      Object.values(REAL_DATA).reduce((sum, rd) => sum + (rd.total ?? 0), 0)
+    : 0;
+
+  // Get rank by volume
+  const caseTypeRank = results
+    ? Object.entries(REAL_DATA)
+        .map(([_, rd]) => rd.total ?? 0)
+        .sort((a, b) => b - a)
+        .findIndex(total => total === results.totalCases) + 1
+    : 0;
+
+  // Calculate favorable percentage (win + settlement)
+  const favorablePercentage = results ? results.winRate + results.settlementRate : 0;
+
   return (
     <>
       <style>{`
@@ -126,10 +143,47 @@ export default function OddsPage() {
         }
         .odds-link { color: #006997; text-decoration: none; transition: color 0.2s ease; }
         .odds-link:hover { color: #004a6d; text-decoration: underline; }
+        .outcome-donut {
+          width: 160px;
+          height: 160px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 16px;
+          position: relative;
+        }
+        .outcome-donut-inner {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          background: #FFFFFF;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .explore-card {
+          display: flex;
+          flex-direction: column;
+          padding: '16px';
+          background: '#F8F9FA';
+          border: '1px solid #D5D8DC';
+          border-radius: 2px;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          height: 100%;
+        }
+        .explore-card:hover {
+          background: '#F0F3F5';
+          border-color: '#006997';
+        }
         @media (max-width: 768px) {
           .odds-grid-3 { grid-template-columns: 1fr !important; }
           .odds-grid-2 { grid-template-columns: 1fr !important; }
           .odds-hero h1 { font-size: 28px !important; }
+          .explore-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
 
@@ -584,6 +638,321 @@ export default function OddsPage() {
                 </p>
               </div>
 
+              {/* ENHANCEMENT 1: Outcome Breakdown (Donut Visualization) */}
+              {results && (
+                <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)', textAlign: 'center' }}>
+                  <h3 style={{
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: '#212529',
+                    margin: '0 0 24px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.3px',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    Outcome Breakdown
+                  </h3>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
+                    <div
+                      className="outcome-donut"
+                      style={{
+                        background: `conic-gradient(
+                          #07874A 0deg ${(results.winRate / 100) * 360}deg,
+                          #D97706 ${(results.winRate / 100) * 360}deg ${((results.winRate + results.settlementRate) / 100) * 360}deg,
+                          #9CA3AF ${((results.winRate + results.settlementRate) / 100) * 360}deg 360deg
+                        )`,
+                      }}
+                    >
+                      <div className="outcome-donut-inner">
+                        <div style={{ fontSize: 24, fontWeight: 700, color: '#07874A', fontFamily: 'var(--font-mono)' }}>
+                          {favorablePercentage.toFixed(1)}%
+                        </div>
+                        <div style={{ fontSize: 11, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>
+                          Favorable
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexWrap: 'wrap',
+                    gap: 24,
+                  }}>
+                    {[
+                      { label: 'Win', color: '#07874A', pct: results.winRate },
+                      { label: 'Settlement', color: '#D97706', pct: results.settlementRate },
+                      { label: 'Dismissed/Other', color: '#9CA3AF', pct: results.dismissalRate },
+                    ].map(item => (
+                      <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                        <div style={{ width: 12, height: 12, borderRadius: '50%', background: item.color }} />
+                        <div style={{ fontSize: 13, color: '#212529' }}>
+                          <strong>{item.label}</strong> {item.pct.toFixed(1)}%
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* ENHANCEMENT 2: How Your Odds Compare */}
+              {results && (
+                <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
+                  <h3 style={{
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: '#212529',
+                    margin: '0 0 24px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.3px',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    How Your Odds Compare
+                  </h3>
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: 24,
+                  }}>
+                    <div>
+                      <p style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: '#455A64',
+                        margin: '0 0 12px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.3px',
+                      }}>
+                        {results.label}
+                      </p>
+                      <div style={{ marginBottom: 8 }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                          <span style={{ fontSize: 13, color: '#212529', fontWeight: 500 }}>Win Rate</span>
+                          <span style={{
+                            fontSize: 13,
+                            fontWeight: 700,
+                            color: winColor,
+                            fontFamily: 'var(--font-mono)',
+                          }}>
+                            {results.winRate.toFixed(1)}%
+                          </span>
+                        </div>
+                        <div style={{ height: 8, background: '#F0F3F5', borderRadius: 2, overflow: 'hidden' }}>
+                          <div style={{
+                            height: '100%',
+                            width: `${Math.min(results.winRate, 100)}%`,
+                            background: winColor,
+                            borderRadius: 2,
+                          }} />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: '#455A64',
+                        margin: '0 0 12px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.3px',
+                      }}>
+                        National Average
+                      </p>
+                      <div style={{ marginBottom: 8 }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                          <span style={{ fontSize: 13, color: '#212529', fontWeight: 500 }}>Win Rate</span>
+                          <span style={{
+                            fontSize: 13,
+                            fontWeight: 700,
+                            color: nationalAverageWinRate >= 50 ? '#07874A' : nationalAverageWinRate >= 35 ? '#D97706' : '#E8171F',
+                            fontFamily: 'var(--font-mono)',
+                          }}>
+                            {nationalAverageWinRate.toFixed(1)}%
+                          </span>
+                        </div>
+                        <div style={{ height: 8, background: '#F0F3F5', borderRadius: 2, overflow: 'hidden' }}>
+                          <div style={{
+                            height: '100%',
+                            width: `${Math.min(nationalAverageWinRate, 100)}%`,
+                            background: nationalAverageWinRate >= 50 ? '#07874A' : nationalAverageWinRate >= 35 ? '#D97706' : '#E8171F',
+                            borderRadius: 2,
+                          }} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p style={{
+                    fontSize: 12,
+                    color: '#455A64',
+                    margin: '16px 0 0',
+                    paddingTop: 16,
+                    borderTop: '1px solid #F0F3F5',
+                  }}>
+                    {results.winRate > nationalAverageWinRate
+                      ? `This case type has a ${(results.winRate - nationalAverageWinRate).toFixed(1)}% higher win rate than the federal court average.`
+                      : `This case type has a ${(nationalAverageWinRate - results.winRate).toFixed(1)}% lower win rate than the federal court average.`}
+                  </p>
+                </div>
+              )}
+
+              {/* ENHANCEMENT 3: Key Factors That Affect Odds */}
+              {results && (
+                <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
+                  <h3 style={{
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: '#212529',
+                    margin: '0 0 24px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.3px',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    Key Factors That Affect Odds
+                  </h3>
+                  {(() => {
+                    const rd = REAL_DATA[results.nos] as any;
+                    const factors = rd?.factors ?? [];
+                    if (factors.length === 0) {
+                      return (
+                        <p style={{
+                          fontSize: 14,
+                          color: '#455A64',
+                          margin: 0,
+                          textAlign: 'center',
+                          padding: '24px 0',
+                        }}>
+                          No specific factors listed for this case type.
+                        </p>
+                      );
+                    }
+                    return (
+                      <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+                        gap: 16,
+                      }}>
+                        {factors.map((factor, i) => (
+                          <div key={i} style={{ display: 'flex', gap: 12 }}>
+                            <div style={{
+                              width: 8,
+                              height: 8,
+                              borderRadius: '50%',
+                              background: factor.severity === 'high' ? '#E8171F' : '#D97706',
+                              flexShrink: 0,
+                              marginTop: 6,
+                            }} />
+                            <div>
+                              <p style={{ fontSize: 13, color: '#212529', fontWeight: 500, margin: '0 0 4px' }}>
+                                {factor.label || factor.name}
+                              </p>
+                              {factor.description && (
+                                <p style={{ fontSize: 12, color: '#455A64', margin: 0 }}>
+                                  {factor.description}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })()}
+                </div>
+              )}
+
+              {/* ENHANCEMENT 4: Historical Context */}
+              {results && (
+                <div className="odds-grid-3" style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: 16,
+                }}>
+                  <div className="odds-card" style={{ padding: 'clamp(20px, 3vw, 28px)', textAlign: 'center' }}>
+                    <p style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: '#455A64',
+                      margin: '0 0 8px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      Total Cases
+                    </p>
+                    <p style={{
+                      fontSize: 28,
+                      fontWeight: 700,
+                      color: '#006997',
+                      margin: 0,
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      {(results.totalCases / 1000).toFixed(1)}K
+                    </p>
+                    <p style={{
+                      fontSize: 12,
+                      color: '#455A64',
+                      margin: '8px 0 0',
+                    }}>
+                      in database
+                    </p>
+                  </div>
+                  <div className="odds-card" style={{ padding: 'clamp(20px, 3vw, 28px)', textAlign: 'center' }}>
+                    <p style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: '#455A64',
+                      margin: '0 0 8px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      Rank by Volume
+                    </p>
+                    <p style={{
+                      fontSize: 28,
+                      fontWeight: 700,
+                      color: '#006997',
+                      margin: 0,
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      #{caseTypeRank}
+                    </p>
+                    <p style={{
+                      fontSize: 12,
+                      color: '#455A64',
+                      margin: '8px 0 0',
+                    }}>
+                      of 84 NOS codes
+                    </p>
+                  </div>
+                  <div className="odds-card" style={{ padding: 'clamp(20px, 3vw, 28px)', textAlign: 'center' }}>
+                    <p style={{
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: '#455A64',
+                      margin: '0 0 8px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      Settlement Context
+                    </p>
+                    <p style={{
+                      fontSize: 28,
+                      fontWeight: 700,
+                      color: '#D97706',
+                      margin: 0,
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      {Math.round(results.settlementRate)}
+                    </p>
+                    <p style={{
+                      fontSize: 12,
+                      color: '#455A64',
+                      margin: '8px 0 0',
+                    }}>
+                      per 100 cases
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* CTA */}
               <div style={{
                 background: '#00172E',
@@ -619,6 +988,126 @@ export default function OddsPage() {
                   </svg>
                 </Link>
               </div>
+
+              {/* ENHANCEMENT 5: Explore More Links */}
+              {results && (
+                <div>
+                  <h3 style={{
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: '#212529',
+                    margin: '0 0 16px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.3px',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    Explore More
+                  </h3>
+                  <div className="explore-grid" style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(4, 1fr)',
+                    gap: 16,
+                    marginBottom: 24,
+                  }}>
+                    <Link
+                      href="/calculator"
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        padding: '20px',
+                        background: '#F8F9FA',
+                        border: '1px solid #D5D8DC',
+                        borderRadius: 2,
+                        textDecoration: 'none',
+                        transition: 'all 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#006997';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F8F9FA';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#D5D8DC';
+                      }}
+                    >
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Settlement Calculator</div>
+                      <div style={{ fontSize: 12, color: '#455A64' }}>Estimate your potential recovery</div>
+                    </Link>
+                    <Link
+                      href="/compare"
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        padding: '20px',
+                        background: '#F8F9FA',
+                        border: '1px solid #D5D8DC',
+                        borderRadius: 2,
+                        textDecoration: 'none',
+                        transition: 'all 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#006997';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F8F9FA';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#D5D8DC';
+                      }}
+                    >
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Compare Case Types</div>
+                      <div style={{ fontSize: 12, color: '#455A64' }}>Side-by-side analysis tool</div>
+                    </Link>
+                    <Link
+                      href="/trends"
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        padding: '20px',
+                        background: '#F8F9FA',
+                        border: '1px solid #D5D8DC',
+                        borderRadius: 2,
+                        textDecoration: 'none',
+                        transition: 'all 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#006997';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F8F9FA';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#D5D8DC';
+                      }}
+                    >
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Case Type Trends</div>
+                      <div style={{ fontSize: 12, color: '#455A64' }}>Historical trends and patterns</div>
+                    </Link>
+                    <Link
+                      href="/glossary"
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        padding: '20px',
+                        background: '#F8F9FA',
+                        border: '1px solid #D5D8DC',
+                        borderRadius: 2,
+                        textDecoration: 'none',
+                        transition: 'all 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#006997';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F8F9FA';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#D5D8DC';
+                      }}
+                    >
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Glossary</div>
+                      <div style={{ fontSize: 12, color: '#455A64' }}>Legal terms explained</div>
+                    </Link>
+                  </div>
+                </div>
+              )}
 
               {/* Disclaimer */}
               <section style={{
