@@ -67,7 +67,7 @@ const saveToRecent = (item: { label: string; nos: string; category: string }) =>
   } catch {
     // localStorage unavailable
   }
-  // Also save to server for Unlimited+ users (fire-and-forget)
+  // Also save to server for Unlimited users (fire-and-forget)
   try {
     fetch('/api/user/history', {
       method: 'POST',

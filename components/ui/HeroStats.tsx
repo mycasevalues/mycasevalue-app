@@ -106,7 +106,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
           lineHeight: 1.1,
           letterSpacing: '-0.01em',
         }}>
-          {stat.prefix}{isVisible ? (stat.value % 1 !== 0 ? count.toFixed(1) : count) : 0}{stat.suffix}
+          {stat.prefix}{isVisible ? (stat.value % 1 !== 0 ? count.toFixed(1) : count) : (stat.value % 1 !== 0 ? stat.value.toFixed(1) : stat.value)}{stat.suffix}
         </div>
         <div style={{
           fontSize: 'clamp(12px, 1.5vw, 14px)',

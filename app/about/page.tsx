@@ -795,8 +795,16 @@ export default function AboutPage() {
             <h2 className="section-heading">Team & Vision</h2>
             <div className="team-box">
               <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>
-                MyCaseValue is built by MyCaseValue LLC, based in West Virginia. We are a team of legal researchers, data engineers, and technologists who believe transparency drives better decisions.
-                We are not a law firm. We do not provide legal advice. We are a data platform.
+                <strong>The Opportunity:</strong> Federal court data reveals how cases actually resolve in American civil litigation. Yet this critical public information remains trapped in government databases designed for attorneys and court clerks, inaccessible to litigants, small law firms, and informed citizens evaluating their legal options. This creates a massive information asymmetry: sophisticated parties with data teams make better decisions, while everyone else relies on guesswork, inflated expectations, or expensive expert consultations.
+              </p>
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>
+                <strong>Our Mission:</strong> MyCaseValue democratizes access to verified federal court outcome data. We aggregate 5.1M+ cases from official sources—the Federal Judicial Center, PACER, and CourtListener—and transform raw court records into actionable intelligence for case evaluation, settlement negotiation, and strategic planning. By making outcome data transparent and accessible, we level the playing field and help people make genuinely informed decisions about their legal situations.
+              </p>
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>
+                <strong>Our Approach:</strong> MyCaseValue is built as a B2C platform with embedded legal intelligence for attorneys. We serve individual case researchers, solo practitioners, and law firms with tools that combine outcome analytics, judge intelligence, and predictive modeling. Our business model—free basic access with premium tiers for professionals—ensures both broad reach and sustainable revenue. We are not a law firm. We do not provide legal advice. We are a data platform, and we operate with institutional standards around privacy, accuracy, and transparency.
+              </p>
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>
+                MyCaseValue is built by MyCaseValue LLC, based in West Virginia. We are a team of legal researchers, data engineers, and technologists who believe transparency drives better decisions and empowers people to advocate for themselves effectively.
               </p>
               <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>
                 Our team is committed to:

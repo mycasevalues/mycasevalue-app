@@ -666,11 +666,13 @@ export default function ServerContent() {
                   { feature: 'Win rate analytics', mcv: true, westlaw: true, lexis: true, pacer: false },
                   { feature: 'Settlement range data', mcv: true, westlaw: true, lexis: true, pacer: false },
                   { feature: 'Judge-level analytics', mcv: true, westlaw: true, lexis: true, pacer: false },
-                  { feature: 'District-by-district comparison', mcv: true, westlaw: false, lexis: 'partial', pacer: false },
+                  { feature: 'District comparison', mcv: true, westlaw: false, lexis: 'partial', pacer: false },
+                  { feature: 'Natural language search', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'AI outcome prediction', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'Plain-English results', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'Plaintiff-focused interface', mcv: true, westlaw: false, lexis: false, pacer: false },
-                  { feature: 'Free tier available', mcv: true, westlaw: false, lexis: false, pacer: false },
-                  { feature: 'No subscription required', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Paralegal workflow tools', mcv: true, westlaw: false, lexis: false, pacer: false },
+                  { feature: 'Free tier', mcv: true, westlaw: false, lexis: false, pacer: false },
                   { feature: 'API access', mcv: true, westlaw: true, lexis: true, pacer: true },
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #E5E7EB' }}>
@@ -1016,7 +1018,7 @@ export default function ServerContent() {
               { stat: '5.1M+', label: 'Federal Cases Analyzed' },
               { stat: '84', label: 'Case Type Categories' },
               { stat: '94', label: 'Federal Districts Covered' },
-              { stat: '90+', label: 'Judge Profiles Available' },
+              { stat: '5', label: 'Data Sources Integrated' },
             ].map((item, i) => (
               <div key={i} style={{
                 background: 'transparent',

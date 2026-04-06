@@ -371,7 +371,7 @@ export default function SampleReportPage() {
                     margin: '0 0 8px 0',
                   }}
                 >
-                  52%
+                  47.8%
                 </div>
                 <p
                   style={{

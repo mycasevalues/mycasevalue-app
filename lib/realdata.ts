@@ -331,7 +331,7 @@ export const REAL_DATA: Record<string, any> = {
   "350": {
     "nos_code": "350",
     "label": "Motor Vehicle",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "vehicle accident",
     "total": 167420,
     "mo": 10,
@@ -977,7 +977,7 @@ export const REAL_DATA: Record<string, any> = {
   "790": {
     "nos_code": "790",
     "label": "ERISA",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "ERISA",
     "total": 48011,
     "mo": 9,
@@ -1299,7 +1299,7 @@ export const REAL_DATA: Record<string, any> = {
   "360": {
     "nos_code": "360",
     "label": "Personal Injury",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "slip and fall",
     "total": 308416,
     "mo": 9,
@@ -1622,7 +1622,7 @@ export const REAL_DATA: Record<string, any> = {
   "365": {
     "nos_code": "365",
     "label": "Product Liability",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "product liability",
     "total": 878932,
     "mo": 11,
@@ -1944,7 +1944,7 @@ export const REAL_DATA: Record<string, any> = {
   "440": {
     "nos_code": "440",
     "label": "Civil Rights — Other",
-    "category": "rights",
+    "category": "civil-rights",
     "sub": "Civil rights other",
     "total": 531796,
     "mo": 8,
@@ -2267,7 +2267,7 @@ export const REAL_DATA: Record<string, any> = {
   "863": {
     "nos_code": "863",
     "label": "Social Security — Disability (SSDI/SSI)",
-    "category": "gov",
+    "category": "government",
     "sub": "disability benefits",
     "total": 268353,
     "mo": 11,
@@ -2588,7 +2588,7 @@ export const REAL_DATA: Record<string, any> = {
   "220": {
     "nos_code": "220",
     "label": "Foreclosure",
-    "category": "housing",
+    "category": "housing-property",
     "sub": "foreclosure",
     "total": 168632,
     "mo": 5,
@@ -2910,7 +2910,7 @@ export const REAL_DATA: Record<string, any> = {
   "442": {
     "nos_code": "442",
     "label": "Employment",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "employment discrimination",
     "total": 525264,
     "mo": 11,
@@ -3233,7 +3233,7 @@ export const REAL_DATA: Record<string, any> = {
   "370": {
     "nos_code": "370",
     "label": "Fraud/Truth in Lending",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "fraud",
     "total": 64755,
     "mo": 8,
@@ -3555,7 +3555,7 @@ export const REAL_DATA: Record<string, any> = {
   "195": {
     "nos_code": "195",
     "label": "Construction",
-    "category": "housing",
+    "category": "housing-property",
     "sub": "construction defect",
     "total": 12227,
     "mo": 10,
@@ -3876,7 +3876,7 @@ export const REAL_DATA: Record<string, any> = {
   "230": {
     "nos_code": "230",
     "label": "Rent/Lease",
-    "category": "housing",
+    "category": "housing-property",
     "sub": "landlord dispute",
     "total": 14493,
     "mo": 2,
@@ -4196,7 +4196,7 @@ export const REAL_DATA: Record<string, any> = {
   "710": {
     "nos_code": "710",
     "label": "FLSA",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "unpaid wages",
     "total": 148241,
     "mo": 8,
@@ -4519,7 +4519,7 @@ export const REAL_DATA: Record<string, any> = {
   "870": {
     "nos_code": "870",
     "label": "FDCPA",
-    "category": "consumer",
+    "category": "consumer-protection",
     "sub": "debt collection",
     "total": 49662,
     "mo": 8,
@@ -4842,7 +4842,7 @@ export const REAL_DATA: Record<string, any> = {
   "362": {
     "nos_code": "362",
     "label": "Medical Malpractice",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "medical malpractice",
     "total": 45814,
     "mo": 12,
@@ -5165,7 +5165,7 @@ export const REAL_DATA: Record<string, any> = {
   "443": {
     "nos_code": "443",
     "label": "Housing/Accommodations",
-    "category": "rights",
+    "category": "civil-rights",
     "sub": "housing discrimination",
     "total": 27116,
     "mo": 7,
@@ -5486,7 +5486,7 @@ export const REAL_DATA: Record<string, any> = {
   "950": {
     "nos_code": "950",
     "label": "Constitutional",
-    "category": "gov",
+    "category": "government",
     "sub": "constitutional violation",
     "total": 11200,
     "mo": 7,
@@ -5808,7 +5808,7 @@ export const REAL_DATA: Record<string, any> = {
   "400": {
     "nos_code": "400",
     "label": "Civil Rights - State",
-    "category": "rights",
+    "category": "civil-rights",
     "sub": "civil rights",
     "total": 246,
     "mo": 6,
@@ -5973,7 +5973,7 @@ export const REAL_DATA: Record<string, any> = {
   "445": {
     "nos_code": "445",
     "label": "ADA Employment",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "disability discrimination",
     "total": 30228,
     "mo": 10,
@@ -9142,7 +9142,7 @@ export const REAL_DATA: Record<string, any> = {
   "210": {
     "nos_code": "210",
     "label": "Land Condemnation",
-    "category": "housing",
+    "category": "housing-property",
     "sub": "eminent domain/condemnation",
     "total": 3800,
     "mo": 12,
@@ -9465,7 +9465,7 @@ export const REAL_DATA: Record<string, any> = {
   "240": {
     "nos_code": "240",
     "label": "Torts to Land",
-    "category": "housing",
+    "category": "housing-property",
     "sub": "property torts/nuisance",
     "total": 8600,
     "mo": 9,
@@ -9788,7 +9788,7 @@ export const REAL_DATA: Record<string, any> = {
   "245": {
     "nos_code": "245",
     "label": "Tort Product Liability",
-    "category": "housing",
+    "category": "housing-property",
     "sub": "property product liability",
     "total": 4200,
     "mo": 15,
@@ -10111,7 +10111,7 @@ export const REAL_DATA: Record<string, any> = {
   "290": {
     "nos_code": "290",
     "label": "All Other Real Property",
-    "category": "housing",
+    "category": "housing-property",
     "sub": "other property dispute",
     "total": 15800,
     "mo": 10,
@@ -10434,7 +10434,7 @@ export const REAL_DATA: Record<string, any> = {
   "310": {
     "nos_code": "310",
     "label": "Airplane",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "airplane injury",
     "total": 3200,
     "mo": 18,
@@ -10757,7 +10757,7 @@ export const REAL_DATA: Record<string, any> = {
   "315": {
     "nos_code": "315",
     "label": "Airplane Product",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "airplane product liability",
     "total": 1840,
     "mo": 22,
@@ -11080,7 +11080,7 @@ export const REAL_DATA: Record<string, any> = {
   "320": {
     "nos_code": "320",
     "label": "Assault/Libel/Slander",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "assault/libel/slander",
     "total": 8500,
     "mo": 11,
@@ -11403,7 +11403,7 @@ export const REAL_DATA: Record<string, any> = {
   "330": {
     "nos_code": "330",
     "label": "FELA",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "federal employers liability",
     "total": 4100,
     "mo": 15,
@@ -11726,7 +11726,7 @@ export const REAL_DATA: Record<string, any> = {
   "340": {
     "nos_code": "340",
     "label": "Marine",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "marine personal injury",
     "total": 2400,
     "mo": 16,
@@ -12049,7 +12049,7 @@ export const REAL_DATA: Record<string, any> = {
   "345": {
     "nos_code": "345",
     "label": "Marine Product",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "marine product liability",
     "total": 1200,
     "mo": 18,
@@ -12372,7 +12372,7 @@ export const REAL_DATA: Record<string, any> = {
   "355": {
     "nos_code": "355",
     "label": "Motor Vehicle Product",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "vehicle product liability",
     "total": 45200,
     "mo": 16,
@@ -12695,7 +12695,7 @@ export const REAL_DATA: Record<string, any> = {
   "367": {
     "nos_code": "367",
     "label": "Healthcare/Pharma",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "healthcare/pharma liability",
     "total": 28600,
     "mo": 19,
@@ -13018,7 +13018,7 @@ export const REAL_DATA: Record<string, any> = {
   "368": {
     "nos_code": "368",
     "label": "Asbestos",
-    "category": "injury",
+    "category": "personal-injury",
     "sub": "asbestos litigation",
     "total": 18400,
     "mo": 24,
@@ -15279,7 +15279,7 @@ export const REAL_DATA: Record<string, any> = {
   "441": {
     "nos_code": "441",
     "label": "Voting",
-    "category": "rights",
+    "category": "civil-rights",
     "sub": "voting rights violation",
     "total": 3400,
     "mo": 9,
@@ -15602,7 +15602,7 @@ export const REAL_DATA: Record<string, any> = {
   "444": {
     "nos_code": "444",
     "label": "Welfare",
-    "category": "gov",
+    "category": "government",
     "sub": "welfare benefits dispute",
     "total": 8900,
     "mo": 6,
@@ -15925,7 +15925,7 @@ export const REAL_DATA: Record<string, any> = {
   "446": {
     "nos_code": "446",
     "label": "ADA - Other",
-    "category": "rights",
+    "category": "civil-rights",
     "sub": "ADA other",
     "total": 12800,
     "mo": 10,
@@ -16248,7 +16248,7 @@ export const REAL_DATA: Record<string, any> = {
   "448": {
     "nos_code": "448",
     "label": "ADEA",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "age discrimination",
     "total": 25600,
     "mo": 14,
@@ -16894,7 +16894,7 @@ export const REAL_DATA: Record<string, any> = {
   "460": {
     "nos_code": "460",
     "label": "Deportation (Other)",
-    "category": "gov",
+    "category": "government",
     "sub": "deportation related",
     "total": 5600,
     "mo": 13,
@@ -17217,7 +17217,7 @@ export const REAL_DATA: Record<string, any> = {
   "462": {
     "nos_code": "462",
     "label": "Deportation",
-    "category": "gov",
+    "category": "government",
     "sub": "deportation",
     "total": 42800,
     "mo": 14,
@@ -17540,7 +17540,7 @@ export const REAL_DATA: Record<string, any> = {
   "463": {
     "nos_code": "463",
     "label": "Habeas Corpus - Alien Detainee",
-    "category": "gov",
+    "category": "government",
     "sub": "alien detainee habeas",
     "total": 8200,
     "mo": 10,
@@ -17863,7 +17863,7 @@ export const REAL_DATA: Record<string, any> = {
   "465": {
     "nos_code": "465",
     "label": "Other Immigration",
-    "category": "gov",
+    "category": "government",
     "sub": "other immigration matter",
     "total": 12600,
     "mo": 11,
@@ -18509,7 +18509,7 @@ export const REAL_DATA: Record<string, any> = {
   "480": {
     "nos_code": "480",
     "label": "Consumer Credit",
-    "category": "consumer",
+    "category": "consumer-protection",
     "sub": "consumer credit dispute",
     "total": 35800,
     "mo": 8,
@@ -18832,7 +18832,7 @@ export const REAL_DATA: Record<string, any> = {
   "485": {
     "nos_code": "485",
     "label": "Telephone Consumer",
-    "category": "consumer",
+    "category": "consumer-protection",
     "sub": "TCPA violation",
     "total": 67400,
     "mo": 7,
@@ -19155,7 +19155,7 @@ export const REAL_DATA: Record<string, any> = {
   "490": {
     "nos_code": "490",
     "label": "Cable/Satellite TV",
-    "category": "consumer",
+    "category": "consumer-protection",
     "sub": "cable/satellite dispute",
     "total": 2600,
     "mo": 8,
@@ -19478,7 +19478,7 @@ export const REAL_DATA: Record<string, any> = {
   "510": {
     "nos_code": "510",
     "label": "Motions to Vacate",
-    "category": "gov",
+    "category": "government",
     "sub": "habeas corpus petition",
     "total": 28400,
     "mo": 8,
@@ -19801,7 +19801,7 @@ export const REAL_DATA: Record<string, any> = {
   "530": {
     "nos_code": "530",
     "label": "Habeas Corpus - General",
-    "category": "gov",
+    "category": "government",
     "sub": "habeas corpus general",
     "total": 54200,
     "mo": 9,
@@ -20124,7 +20124,7 @@ export const REAL_DATA: Record<string, any> = {
   "535": {
     "nos_code": "535",
     "label": "Habeas Corpus - Death Penalty",
-    "category": "gov",
+    "category": "government",
     "sub": "death penalty habeas",
     "total": 8200,
     "mo": 18,
@@ -20447,7 +20447,7 @@ export const REAL_DATA: Record<string, any> = {
   "540": {
     "nos_code": "540",
     "label": "Mandamus/Other",
-    "category": "gov",
+    "category": "government",
     "sub": "mandamus petition",
     "total": 12400,
     "mo": 7,
@@ -20770,7 +20770,7 @@ export const REAL_DATA: Record<string, any> = {
   "550": {
     "nos_code": "550",
     "label": "Civil Rights",
-    "category": "rights",
+    "category": "civil-rights",
     "sub": "prison conditions",
     "total": 18600,
     "mo": 10,
@@ -21093,7 +21093,7 @@ export const REAL_DATA: Record<string, any> = {
   "555": {
     "nos_code": "555",
     "label": "Prison Condition",
-    "category": "rights",
+    "category": "civil-rights",
     "sub": "prison conditions",
     "total": 21200,
     "mo": 11,
@@ -21416,7 +21416,7 @@ export const REAL_DATA: Record<string, any> = {
   "720": {
     "nos_code": "720",
     "label": "Labor/Management Relations",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "labor union dispute",
     "total": 5400,
     "mo": 11,
@@ -21739,7 +21739,7 @@ export const REAL_DATA: Record<string, any> = {
   "740": {
     "nos_code": "740",
     "label": "Railway Labor Act",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "railway labor dispute",
     "total": 1600,
     "mo": 12,
@@ -22062,7 +22062,7 @@ export const REAL_DATA: Record<string, any> = {
   "751": {
     "nos_code": "751",
     "label": "Family Medical Leave Act",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "FMLA violation",
     "total": 8900,
     "mo": 12,
@@ -22385,7 +22385,7 @@ export const REAL_DATA: Record<string, any> = {
   "791": {
     "nos_code": "791",
     "label": "ERISA",
-    "category": "work",
+    "category": "employment-workplace",
     "sub": "ERISA benefits denial",
     "total": 23400,
     "mo": 10,
@@ -22708,7 +22708,7 @@ export const REAL_DATA: Record<string, any> = {
   "810": {
     "nos_code": "810",
     "label": "Social Security ID",
-    "category": "gov",
+    "category": "government",
     "sub": "social security dispute",
     "total": 6200,
     "mo": 8,
@@ -24323,7 +24323,7 @@ export const REAL_DATA: Record<string, any> = {
   "860": {
     "nos_code": "860",
     "label": "Social Security — Other",
-    "category": "gov",
+    "category": "government",
     "sub": "social security benefits",
     "total": 89400,
     "mo": 11,
@@ -24646,7 +24646,7 @@ export const REAL_DATA: Record<string, any> = {
   "871": {
     "nos_code": "871",
     "label": "IRS Taxes",
-    "category": "gov",
+    "category": "government",
     "sub": "tax dispute",
     "total": 12200,
     "mo": 20,
@@ -25615,7 +25615,7 @@ export const REAL_DATA: Record<string, any> = {
   "893": {
     "nos_code": "893",
     "label": "Environmental Matters",
-    "category": "gov",
+    "category": "government",
     "sub": "environmental violation",
     "total": 8200,
     "mo": 14,
@@ -25938,7 +25938,7 @@ export const REAL_DATA: Record<string, any> = {
   "895": {
     "nos_code": "895",
     "label": "Freedom of Information",
-    "category": "gov",
+    "category": "government",
     "sub": "FOIA request",
     "total": 3600,
     "mo": 8,
@@ -26584,7 +26584,7 @@ export const REAL_DATA: Record<string, any> = {
   "899": {
     "nos_code": "899",
     "label": "Administrative Procedure Act",
-    "category": "gov",
+    "category": "government",
     "sub": "administrative appeal",
     "total": 18900,
     "mo": 10,

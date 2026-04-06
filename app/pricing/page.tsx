@@ -53,7 +53,7 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
         { text: 'Judge profiles', included: false },
         { text: 'PDF export', included: false },
       ],
-      ctaText: 'Get Started Free',
+      ctaText: 'Access Free During Beta',
       ctaSubtext: 'No account required',
     },
     {
@@ -80,7 +80,7 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
         { text: 'Judge intelligence profiles', included: false },
         { text: 'Attorney Mode features', included: false },
       ],
-      ctaText: 'Get full report',
+      ctaText: 'Access Free During Beta',
       ctaSubtext: 'Save and revisit for 90 days · No subscription',
       ctaHref: '/search',
     },
@@ -114,7 +114,7 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
         { text: 'Opposing counsel research', included: false },
         { text: 'Attorney Mode features', included: false },
       ],
-      ctaText: 'Start free',
+      ctaText: 'Access Free During Beta',
       ctaSubtext: 'Cancel anytime',
       ctaHref: '/sign-up',
     },
@@ -149,7 +149,7 @@ function getPlansByBillingPeriod(annual: boolean): PlanCard[] {
         { text: 'Daily data refresh (vs. weekly on Unlimited)', included: true },
         { text: 'Priority support — 24-hour response', included: true },
       ],
-      ctaText: 'Try attorney mode',
+      ctaText: 'Access Free During Beta',
       ctaSubtext: 'Cancel anytime · Team seats included',
       ctaHref: '/attorney',
     },
@@ -446,11 +446,11 @@ function PricingCard({
                   textAlign: 'center',
                   fontSize: '14px',
                   lineHeight: '1',
-                  color: feat.included ? '#8B5CF6' : '#C0C4C8',
+                  color: feat.included ? '#059669' : '#C0C4C8',
                   fontWeight: feat.included ? 700 : 400,
                 }}
               >
-                {feat.included ? '[x]' : '—'}
+                {feat.included ? '✓' : '—'}
               </span>
               <span
                 style={{

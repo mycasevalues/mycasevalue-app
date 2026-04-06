@@ -489,7 +489,7 @@ const faqs = [
     questions: [
       {
         q: 'How much does MyCaseValue cost?',
-        a: 'All features are currently free with no account required — including detailed analytics, circuit and judge breakdowns, comparison tools, and attorney features.',
+        a: 'All tiers are free during the public beta period. Once beta ends, we offer tiered pricing starting at $0 for basic access up to $29.99/month for Attorney Mode with advanced features.',
       },
       {
         q: 'Do I need to create an account?',

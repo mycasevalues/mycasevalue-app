@@ -47,16 +47,17 @@ export default function ServerHero() {
               What really happened in cases like yours.
             </h1>
 
-            <p style={{
+            <h2 style={{
               fontSize: '17px',
               color: 'rgba(255,255,255,0.75)',
               fontFamily: 'var(--font-body)',
               lineHeight: 1.7,
               marginBottom: '28px',
               maxWidth: '480px',
+              fontWeight: 400,
             }}>
               Win rates, settlement ranges, judge analytics, and case timelines from 5.1 million public federal court records. Free during beta. No account required.
-            </p>
+            </h2>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <a href="/search" className="hero-cta-primary" style={{

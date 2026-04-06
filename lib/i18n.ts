@@ -23,7 +23,7 @@ const EN = {
   hero_title_3: 'Now you have it too.',
   hero_sub_pre: 'Research real outcomes from',
   hero_sub_post: 'federal court cases across 94 districts. Win rates, settlement ranges, timelines, and judge analytics \u2014 sourced from public court records.',
-  hero_cta: 'Check my case type',
+  hero_cta: 'View Outcome Data',
   hero_demo: 'View a sample report',
 
   // Category selector
@@ -233,7 +233,7 @@ const ES: typeof EN = {
   hero_title_3: 'Ahora t\u00FA tambi\u00E9n.',
   hero_sub_pre: 'Investiga resultados reales de',
   hero_sub_post: 'casos judiciales federales en 94 distritos. Tasas de \u00E9xito, rangos de acuerdos, plazos y an\u00E1lisis de jueces \u2014 de registros p\u00FAblicos.',
-  hero_cta: 'Consultar mi tipo de caso',
+  hero_cta: 'Ver datos de resultados',
   hero_demo: 'Ver informe de ejemplo',
 
   // Category selector

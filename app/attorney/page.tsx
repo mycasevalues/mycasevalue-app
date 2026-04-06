@@ -383,7 +383,7 @@ export default function AttorneyPage() {
               marginRight: 'auto',
             }}
           >
-            Advanced analytics tools for legal professionals. AI-powered predictions, judge intelligence, venue optimization, and bulk analysis. Free during the public beta.
+            Advanced analytics tools for legal professionals. AI-powered predictions, judge intelligence, venue optimization, and bulk analysis. Free during public beta.
           </p>
         </div>
       </section>

@@ -29,33 +29,33 @@ export async function generateMetadata({
   }
 
   const categoryNames: Record<string, string> = {
-    work: 'Workplace & Employment',
-    injury: 'Personal Injury & Medical',
-    consumer: 'Consumer Protection',
-    rights: 'Civil Rights',
-    money: 'Money & Business',
-    housing: 'Housing & Property',
-    medical: 'Healthcare & Benefits',
-    family: 'Family Law',
-    gov: 'Government & Benefits',
+    'employment-workplace': 'Workplace & Employment',
+    'personal-injury': 'Personal Injury & Medical',
+    'consumer-protection': 'Consumer Protection',
+    'civil-rights': 'Civil Rights',
+    'money-business': 'Money & Business',
+    'housing-property': 'Housing & Property',
+    'healthcare-benefits': 'Healthcare & Benefits',
+    'family-law': 'Family Law',
+    'government': 'Government & Benefits',
     education: 'Education & Student Rights',
   };
 
   const categoryDescriptions: Record<string, string> = {
-    work: 'Research real federal court outcomes for employment discrimination, wrongful termination, harassment, wage disputes, and other workplace cases. Explore win rates, settlement data, and timelines.',
-    injury: 'Explore personal injury case outcomes including medical malpractice, product liability, auto accidents, and wrongful death. See real settlement data and trial results.',
-    consumer: 'Research consumer protection cases including debt collection, identity theft, data breaches, robocalls, and credit reporting. Understand FDCPA and TCPA case outcomes.',
-    rights: 'Investigate civil rights outcomes including police misconduct, discrimination, voting rights, and free speech violations. See Section 1983 case data.',
-    money: 'Research business litigation outcomes for contract disputes, insurance bad faith, fraud, partnerships, and intellectual property. Explore settlement and trial data.',
-    housing: 'Explore housing law cases including landlord disputes, foreclosures, property damage, construction defects, and HOA disputes. See real outcome data.',
-    medical: 'Research healthcare and benefits cases including insurance denials, disability benefits, ERISA disputes, and Medicare claims. Understand appeal success rates.',
-    family: 'Explore family law outcomes for divorce, custody, child support, and domestic violence cases. See real settlement and award data.',
-    gov: 'Research government benefits and constitutional law cases including Social Security, immigration, tax disputes, and due process violations.',
+    'employment-workplace': 'Research real federal court outcomes for employment discrimination, wrongful termination, harassment, wage disputes, and other workplace cases. Explore win rates, settlement data, and timelines.',
+    'personal-injury': 'Explore personal injury case outcomes including medical malpractice, product liability, auto accidents, and wrongful death. See real settlement data and trial results.',
+    'consumer-protection': 'Research consumer protection cases including debt collection, identity theft, data breaches, robocalls, and credit reporting. Understand FDCPA and TCPA case outcomes.',
+    'civil-rights': 'Investigate civil rights outcomes including police misconduct, discrimination, voting rights, and free speech violations. See Section 1983 case data.',
+    'money-business': 'Research business litigation outcomes for contract disputes, insurance bad faith, fraud, partnerships, and intellectual property. Explore settlement and trial data.',
+    'housing-property': 'Explore housing law cases including landlord disputes, foreclosures, property damage, construction defects, and HOA disputes. See real outcome data.',
+    'healthcare-benefits': 'Research healthcare and benefits cases including insurance denials, disability benefits, ERISA disputes, and Medicare claims. Understand appeal success rates.',
+    'family-law': 'Explore family law outcomes for divorce, custody, child support, and domestic violence cases. See real settlement and award data.',
+    government: 'Research government benefits and constitutional law cases including Social Security, immigration, tax disputes, and due process violations.',
     education: 'Investigate education law outcomes for Title IX violations, special education disputes, student discipline, and school negligence cases.',
   };
 
   const longTailKeywords: Record<string, string[]> = {
-    work: [
+    'employment-workplace': [
       'wrongful termination federal court win rate',
       'employment discrimination settlement data',
       'age discrimination case outcomes',
@@ -67,7 +67,7 @@ export async function generateMetadata({
       'EEOC federal court outcomes',
       'employment litigation win rates',
     ],
-    injury: [
+    'personal-injury': [
       'personal injury settlement federal court',
       'medical malpractice win rate',
       'product liability case outcomes',
@@ -79,7 +79,7 @@ export async function generateMetadata({
       'negligence case win rates',
       'tort recovery statistics',
     ],
-    consumer: [
+    'consumer-protection': [
       'debt collection federal court outcomes',
       'FDCPA violation settlement amounts',
       'data breach lawsuit settlement',
@@ -91,7 +91,7 @@ export async function generateMetadata({
       'consumer protection case statistics',
       'TILA violation outcomes',
     ],
-    rights: [
+    'civil-rights': [
       'police misconduct federal court win rate',
       'civil rights settlement federal court',
       'Section 1983 case outcomes',
@@ -103,7 +103,7 @@ export async function generateMetadata({
       'excessive force federal court',
       'civil rights litigation statistics',
     ],
-    money: [
+    'money-business': [
       'breach of contract federal court',
       'business dispute settlement data',
       'insurance bad faith win rate',
@@ -115,7 +115,7 @@ export async function generateMetadata({
       'trade secret misappropriation cases',
       'business litigation win rates',
     ],
-    housing: [
+    'housing-property': [
       'landlord tenant federal court',
       'wrongful eviction settlement',
       'foreclosure federal court outcomes',
@@ -127,7 +127,7 @@ export async function generateMetadata({
       'real estate litigation timeline',
       'property law case statistics',
     ],
-    medical: [
+    'healthcare-benefits': [
       'insurance denial federal court win rate',
       'ERISA benefits denial cases',
       'disability benefits appeal success',
@@ -139,7 +139,7 @@ export async function generateMetadata({
       'healthcare litigation outcomes',
       'benefits denial settlement data',
     ],
-    family: [
+    'family-law': [
       'divorce settlement federal court',
       'child custody outcomes statistics',
       'child support federal court cases',
@@ -151,7 +151,7 @@ export async function generateMetadata({
       'family court statistics',
       'child support award amounts',
     ],
-    gov: [
+    government: [
       'Social Security appeal federal court',
       'tax dispute IRS federal court',
       'government benefits denial cases',

@@ -145,7 +145,7 @@ export default async function DashboardPage() {
     }
   }
 
-  // ── Fetch search history for Unlimited+ users ─────────────────
+  // ── Fetch search history for Unlimited users ─────────────────
   let searchHistory: { query: string; category: string | null; searched_at: string }[] = [];
   const isUnlimitedPlus = ['unlimited', 'attorney'].includes(userPlan) || true; // Beta: unlocked
   if (userEmail && isUnlimitedPlus && !isExpired) {
@@ -750,7 +750,7 @@ export default async function DashboardPage() {
             </div>
           </div>
 
-          {/* Search History — Unlimited+ only */}
+          {/* Search History — Unlimited only */}
           {isUnlimitedPlus && !isExpired && searchHistory.length > 0 && (
             <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', marginBottom: '24px', transition: 'all 0.2s ease' }}>
               <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px' }}>

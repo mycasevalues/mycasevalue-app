@@ -6,7 +6,7 @@ import { REAL_DATA, TOTAL_REAL_CASES, REAL_OUTCOME_DATA } from './realdata';
 export const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "";
 
 export const SITS = [
-  { id: "work", label: "Employment & Workplace", sub: "Fired, harassed, underpaid, discrimination", color: "#4338CA", icon: "briefcase", q: "What happened at work?", dm: "mid", opts: [
+  { id: "employment-workplace", label: "Employment & Workplace", sub: "Fired, harassed, underpaid, discrimination", color: "#4338CA", icon: "briefcase", q: "What happened at work?", dm: "mid", opts: [
     { label: "Wrongful termination", nos: "442", d: "wrongful termination" },
     { label: "Employment discrimination", nos: "442", d: "employment discrimination" },
     { label: "Sexual harassment", nos: "442", d: "sexual harassment" },
@@ -20,13 +20,13 @@ export const SITS = [
     { label: "Hostile work environment", nos: "442", d: "hostile work environment" },
     { label: "Wage theft", nos: "710", d: "wage theft" },
     { label: "Wrongful demotion", nos: "442", d: "wrongful demotion" },
-    { label: "Non-compete violation", nos: "190", d: "non-compete dispute" },
+    { label: "Contract — Other (NOS 190)", nos: "190", d: "non-compete dispute" },
     { label: "Workplace safety (OSHA)", nos: "710", d: "workplace safety violation" },
     { label: "Pregnancy discrimination", nos: "442", d: "pregnancy discrimination" },
     { label: "Religious discrimination", nos: "442", d: "religious discrimination" },
     { label: "Workers' compensation retaliation", nos: "710", d: "workers comp retaliation" },
   ]},
-  { id: "injury", label: "Personal Injury", sub: "Accident, medical, product, wrongful death", color: "#8B5CF6", icon: "heart", q: "How were you hurt?", dm: "large", opts: [
+  { id: "personal-injury", label: "Personal Injury", sub: "Accident, medical, product, wrongful death", color: "#8B5CF6", icon: "heart", q: "How were you hurt?", dm: "large", opts: [
     { label: "Vehicle / car accident", nos: "350", d: "vehicle accident" },
     { label: "Truck / commercial vehicle accident", nos: "350", d: "truck accident" },
     { label: "Motorcycle accident", nos: "350", d: "motorcycle accident" },
@@ -36,7 +36,7 @@ export const SITS = [
     { label: "Defective product", nos: "365", d: "product liability" },
     { label: "Defective drug / medication", nos: "365", d: "defective drug" },
     { label: "Defective medical device", nos: "365", d: "defective medical device" },
-    { label: "Slip and fall", nos: "360", d: "slip and fall" },
+    { label: "Personal Injury — Other (NOS 360)", nos: "360", d: "slip and fall" },
     { label: "Dog bite / animal attack", nos: "360", d: "animal attack" },
     { label: "Wrongful death", nos: "370", d: "wrongful death" },
     { label: "Nursing home neglect / abuse", nos: "362", d: "nursing home abuse" },
@@ -46,7 +46,7 @@ export const SITS = [
     { label: "Toxic exposure / environmental", nos: "365", d: "toxic exposure" },
     { label: "Birth injury", nos: "362", d: "birth injury" },
   ]},
-  { id: "consumer", label: "Consumer Protection", sub: "Debt, fraud, scam, data breach, robocalls", color: "#2563EB", icon: "shield", q: "What happened?", dm: "mid", opts: [
+  { id: "consumer-protection", label: "Consumer Protection", sub: "Debt, fraud, scam, data breach, robocalls", color: "#2563EB", icon: "shield", q: "What happened?", dm: "mid", opts: [
     { label: "Debt collector harassment (FDCPA)", nos: "870", d: "debt collection" },
     { label: "Identity theft / fraud", nos: "370", d: "identity theft" },
     { label: "Data breach / privacy violation", nos: "370", d: "data breach" },
@@ -59,7 +59,7 @@ export const SITS = [
     { label: "Student loan dispute", nos: "370", d: "student loan dispute" },
     { label: "Unfair business practices", nos: "370", d: "unfair business practices" },
   ]},
-  { id: "rights", label: "Civil Rights", sub: "Police, discrimination, voting, free speech", color: "#8B5CF6", icon: "scale", q: "What happened?", dm: "large", opts: [
+  { id: "civil-rights", label: "Civil Rights", sub: "Police, discrimination, voting, free speech", color: "#8B5CF6", icon: "scale", q: "What happened?", dm: "large", opts: [
     { label: "Police excessive force", nos: "440", d: "police misconduct" },
     { label: "Racial discrimination", nos: "440", d: "racial discrimination" },
     { label: "Housing discrimination", nos: "443", d: "housing discrimination" },
@@ -72,7 +72,7 @@ export const SITS = [
     { label: "LGBTQ+ discrimination", nos: "442", d: "LGBTQ discrimination" },
     { label: "Government misconduct / abuse of power", nos: "440", d: "government misconduct" },
   ]},
-  { id: "money", label: "Money & Business", sub: "Contracts, insurance, fraud, partnership", color: "#D97706", icon: "dollar", q: "What is the issue?", dm: "mid", opts: [
+  { id: "money-business", label: "Money & Business", sub: "Contracts, insurance, fraud, partnership", color: "#D97706", icon: "dollar", q: "What is the issue?", dm: "mid", opts: [
     { label: "Insurance bad faith / denial", nos: "110", d: "insurance bad faith" },
     { label: "Breach of contract", nos: "190", d: "breach of contract" },
     { label: "Fraud / scam", nos: "370", d: "fraud" },
@@ -87,7 +87,7 @@ export const SITS = [
     { label: "Unfair competition", nos: "370", d: "unfair competition" },
     { label: "Unjust enrichment", nos: "190", d: "unjust enrichment" },
   ]},
-  { id: "housing", label: "Housing & Property", sub: "Landlord, foreclosure, neighbor, HOA", color: "#059669", icon: "home", q: "What happened?", dm: "large", opts: [
+  { id: "housing-property", label: "Housing & Property", sub: "Landlord, foreclosure, neighbor, HOA", color: "#059669", icon: "home", q: "What happened?", dm: "large", opts: [
     { label: "Security deposit dispute", nos: "230", d: "security deposit" },
     { label: "Wrongful eviction", nos: "230", d: "wrongful eviction" },
     { label: "Foreclosure", nos: "220", d: "foreclosure" },
@@ -101,7 +101,7 @@ export const SITS = [
     { label: "Mold / toxic conditions", nos: "360", d: "mold exposure" },
     { label: "Contractor dispute", nos: "190", d: "contractor dispute" },
   ]},
-  { id: "medical", label: "Healthcare & Benefits", sub: "Claims denied, billing, disability, ERISA", color: "#DB2777", icon: "medical", q: "What happened?", dm: "large", opts: [
+  { id: "healthcare-benefits", label: "Healthcare & Benefits", sub: "Claims denied, billing, disability, ERISA", color: "#DB2777", icon: "medical", q: "What happened?", dm: "large", opts: [
     { label: "Health insurance denied", nos: "110", d: "insurance denial" },
     { label: "Disability benefits denied (SSDI/SSI)", nos: "863", d: "disability benefits" },
     { label: "ERISA / employee benefits denied", nos: "791", d: "ERISA violation" },
@@ -112,7 +112,7 @@ export const SITS = [
     { label: "Medical billing dispute", nos: "190", d: "medical billing" },
     { label: "Pharmacy error", nos: "362", d: "pharmacy error" },
   ]},
-  { id: "family", label: "Family", sub: "Divorce, custody, support, domestic violence", color: "#EC4899", icon: "heart", q: "What is the issue?", dm: "mid", opts: [
+  { id: "family-law", label: "Family", sub: "Divorce, custody, support, domestic violence", color: "#EC4899", icon: "heart", q: "What is the issue?", dm: "mid", opts: [
     { label: "Divorce / marital property", nos: "370", d: "divorce" },
     { label: "Child custody / visitation", nos: "370", d: "child custody" },
     { label: "Child support enforcement", nos: "370", d: "child support" },
@@ -120,7 +120,7 @@ export const SITS = [
     { label: "Adoption dispute", nos: "370", d: "adoption" },
     { label: "Parental rights termination", nos: "370", d: "parental rights" },
   ]},
-  { id: "gov", label: "Government", sub: "Benefits, taxes, immigration, constitutional", color: "#475569", icon: "building", q: "What happened?", dm: "mid", opts: [
+  { id: "government", label: "Government", sub: "Benefits, taxes, immigration, constitutional", color: "#475569", icon: "building", q: "What happened?", dm: "mid", opts: [
     { label: "Government benefits denied", nos: "863", d: "benefits denial" },
     { label: "Constitutional violation", nos: "950", d: "constitutional violation" },
     { label: "Tax dispute (IRS)", nos: "152", d: "tax dispute" },
@@ -307,7 +307,7 @@ export const LEGAL_AID: Record<string, string> = {
 };
 
 export const TRENDING = [
-  { label: "Robocalls (TCPA)", change: "+340%", since: "2020" },
+  { label: "Civil Rights — Other (NOS 440)", change: "+340%", since: "2020" },
   { label: "Employment discrimination", change: "+18%", since: "2020" },
   { label: "Debt collection", change: "+45%", since: "2021" },
   { label: "Data breach / privacy", change: "+210%", since: "2019" },

@@ -151,7 +151,7 @@ export default function QuickLookupForm() {
         }}
         className="quick-lookup-submit"
       >
-        Check my case type
+        View Outcome Data
       </button>
 
       {/* Instant Preview */}
