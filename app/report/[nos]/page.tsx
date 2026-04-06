@@ -119,7 +119,7 @@ export default async function ReportPage({
   if (!data && !dbStats) {
     return (
       <div style={{ minHeight: '100vh', background: '#F5F6F7', padding: '64px 24px', textAlign: 'center' }}>
-        <p style={{ fontSize: 18, color: '#111111', fontFamily: 'var(--font-display)', fontWeight: 600, marginBottom: 12 }}>
+        <p style={{ fontSize: 18, color: '#212529', fontFamily: 'var(--font-display)', fontWeight: 600, marginBottom: 12 }}>
           No data found for this case type.
         </p>
         <p style={{ fontSize: 14, color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: 24 }}>
@@ -168,7 +168,7 @@ export default async function ReportPage({
       if (!allowed) {
         return (
           <main style={{ maxWidth: '600px', margin: '0 auto', padding: '64px 24px', textAlign: 'center', fontFamily: 'var(--font-body)' }}>
-            <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: '#111111' }}>Daily limit reached</h1>
+            <h1 style={{ fontSize: '24px', fontWeight: 700, marginBottom: '12px', color: '#212529' }}>Daily limit reached</h1>
             <p style={{ color: '#455A64', marginBottom: '24px' }}>You&apos;ve used your 3 free lookups for today. Upgrade for unlimited access.</p>
             <a href="/pricing" style={{ padding: '12px 28px', background: '#E8171F', color: '#fff', borderRadius: '4px', textDecoration: 'none', fontWeight: 600 }}>See pricing →</a>
             <p style={{ fontSize: '12px', color: '#455A64', marginTop: '16px' }}>Resets at midnight. Or sign up for free to track your lookups.</p>
@@ -435,7 +435,7 @@ export default async function ReportPage({
               <p style={{ fontSize: '40px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {winRate}%
               </p>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-body)', marginBottom: '6px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)', marginBottom: '6px' }}>
                 Plaintiff win rate
               </p>
               <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
@@ -446,7 +446,7 @@ export default async function ReportPage({
               <p style={{ fontSize: '40px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {settlementRate}%
               </p>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-body)', marginBottom: '6px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)', marginBottom: '6px' }}>
                 Settlement rate
               </p>
               <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
@@ -457,7 +457,7 @@ export default async function ReportPage({
               <p style={{ fontSize: '40px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)', lineHeight: 1, marginBottom: '8px' }}>
                 {dismissRate}%
               </p>
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-body)', marginBottom: '6px' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)', marginBottom: '6px' }}>
                 Dismissal rate
               </p>
               <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
@@ -495,7 +495,7 @@ export default async function ReportPage({
               <p style={{ fontSize: 13, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Median time from filing to resolution</p>
             </div>
             <div style={{ textAlign: 'center', padding: '24px', background: '#F8F9FA', borderRadius: '4px', border: '1px solid #E8E9EA' }}>
-              <p style={{ fontSize: 36, fontWeight: 700, color: '#111111', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
+              <p style={{ fontSize: 36, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', margin: '0 0 8px', lineHeight: 1 }}>
                 {trialMedian}
               </p>
               <p style={{ fontSize: 12, fontWeight: 500, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0, marginBottom: 4 }}>award</p>
@@ -529,7 +529,7 @@ export default async function ReportPage({
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', margin: '0 0 10px' }}>
                       25th Percentile
                     </p>
-                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#111111', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
+                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
                       ${settlementRange.lo}K
                     </p>
                     <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Conservative</p>
@@ -547,7 +547,7 @@ export default async function ReportPage({
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', margin: '0 0 10px' }}>
                       75th Percentile
                     </p>
-                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#111111', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
+                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
                       ${(settlementRange.hi >= 1000 ? (settlementRange.hi / 1000).toFixed(1) + 'M' : settlementRange.hi + 'K')}
                     </p>
                     <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>Favorable</p>
@@ -582,7 +582,7 @@ export default async function ReportPage({
                     <p style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', margin: '0 0 10px' }}>
                       Self-Represented (Pro Se)
                     </p>
-                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#111111', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
+                    <p style={{ fontSize: '32px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', lineHeight: 1, margin: '0 0 8px' }}>
                       {proSeWinRate}%
                     </p>
                     <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>

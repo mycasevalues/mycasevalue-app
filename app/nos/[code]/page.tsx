@@ -91,7 +91,7 @@ export default async function NOSPage({ params }: PageProps) {
 
   if (!nosInfo) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F5F6F7', color: '#111111' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F5F6F7', color: '#212529' }}>
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case type not found</h1>
           <p className="mb-6" style={{ color: '#455A64' }}>NOS code {code} does not exist in our database.</p>
@@ -347,7 +347,7 @@ export default async function NOSPage({ params }: PageProps) {
           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: 16px;
           padding-top: 16px;
-          border-top: 1px solid #E5E7EB;
+          border-top: 1px solid #D5D8DC;
         }
 
         .legend-item {

@@ -450,7 +450,7 @@ export default async function OutcomesPage({
                   <div style={{
                     height: '12px',
                     borderRadius: '4px',
-                    background: '#E5E7EB',
+                    background: '#D5D8DC',
                     overflow: 'hidden',
                   }}>
                     <div style={{

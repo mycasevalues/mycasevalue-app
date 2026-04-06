@@ -624,7 +624,7 @@ export default async function DistrictPage({ params }: PageProps) {
                     {circuitDetail.types.map((type, i) => (
                       <div key={i}>
                         <div className="flex justify-between mb-2">
-                          <span style={{ fontSize: '14px', fontWeight: 600, color: '#111111', fontFamily: 'var(--font-body)' }}>
+                          <span style={{ fontSize: '14px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)' }}>
                             {type.type}
                           </span>
                           <span

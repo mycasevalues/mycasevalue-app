@@ -294,7 +294,7 @@ async function CategoryPage({
       <div style={{ padding: '40px 20px', textAlign: 'center' }}>
         <h1 className="text-2xl font-bold">Category not found</h1>
         <p className="mt-4" style={{ color: '#455A64' }}>The case type you&apos;re looking for doesn&apos;t exist.</p>
-        <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: '#111111', borderRadius: '4px' }}>Browse all categories</a>
+        <a href="/cases" className="inline-block mt-6 px-6 py-3 font-semibold text-white" style={{ background: '#212529', borderRadius: '4px' }}>Browse all categories</a>
       </div>
     );
   }
@@ -387,15 +387,15 @@ async function CategoryPage({
           color: '#455A64',
           fontFamily: 'Outfit, system-ui, sans-serif',
         }}>
-          <Link href="/" style={{ color: '#111111', textDecoration: 'none' }}>
+          <Link href="/" style={{ color: '#212529', textDecoration: 'none' }}>
             Home
           </Link>
           {' / '}
-          <Link href="/cases" style={{ color: '#111111', textDecoration: 'none' }}>
+          <Link href="/cases" style={{ color: '#212529', textDecoration: 'none' }}>
             Cases
           </Link>
           {' / '}
-          <span style={{ color: '#111111', fontWeight: 500 }}>{categoryData.label}</span>
+          <span style={{ color: '#212529', fontWeight: 500 }}>{categoryData.label}</span>
         </div>
       </div>
 
@@ -461,13 +461,13 @@ async function CategoryPage({
       <div style={{
         background: '#FFFFFF',
         padding: '60px 20px',
-        borderBottom: '1px solid #E5E7EB',
+        borderBottom: '1px solid #D5D8DC',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: '#111111',
+            color: '#212529',
             margin: '0 0 24px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -507,7 +507,7 @@ async function CategoryPage({
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: '#111111',
+            color: '#212529',
             margin: '0 0 32px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -546,7 +546,7 @@ async function CategoryPage({
                   <h3 style={{
                     fontSize: '16px',
                     fontWeight: 600,
-                    color: '#111111',
+                    color: '#212529',
                     margin: '0 0 8px 0',
                   }}>
                     {opt.label}
@@ -584,7 +584,7 @@ async function CategoryPage({
           <h2 style={{
             fontSize: '28px',
             fontWeight: 600,
-            color: '#111111',
+            color: '#212529',
             margin: '0 0 32px 0',
             fontFamily: 'Outfit, system-ui, sans-serif',
             letterSpacing: '-0.3px',
@@ -613,7 +613,7 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#111111',
+                color: '#212529',
                 marginBottom: '8px',
               }}>
                 Trial Win Rate
@@ -645,7 +645,7 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#111111',
+                color: '#212529',
                 marginBottom: '8px',
               }}>
                 Average Case Duration
@@ -677,7 +677,7 @@ async function CategoryPage({
               <div style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: '#111111',
+                color: '#212529',
                 marginBottom: '8px',
               }}>
                 Favorable Settlement Rate

@@ -40,7 +40,7 @@ export default function ReportPDFButton(props: ReportPDFButtonProps) {
         alignItems: 'center',
         gap: '8px',
         padding: '12px 28px',
-        background: '#111111',
+        background: '#212529',
         color: '#FFFFFF',
         border: 'none',
         borderRadius: '4px',
