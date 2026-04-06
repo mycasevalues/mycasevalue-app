@@ -159,7 +159,7 @@ export default function InsurancePage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Get Started CTA */}
       <section style={{ padding: '64px 24px', background: '#FFFFFF', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
@@ -180,26 +180,165 @@ export default function InsurancePage() {
           }}>
             Insurance carriers and defense counsel use {SITE_NAME} to make faster, more accurate claim valuations and reduce unnecessary payouts.
           </p>
-          <Link href="/contact" style={{
-            background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
-            color: '#FAFBFC',
-            padding: '0.875rem 2rem',
-            borderRadius: '2px',
-            textDecoration: 'none',
-            fontFamily: 'var(--font-body)',
-            fontWeight: 700,
-            fontSize: '0.875rem',
-            textTransform: 'uppercase',
-            letterSpacing: '0.04em',
-            display: 'inline-block',
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/search" style={{
+              background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+              color: '#FAFBFC',
+              padding: '0.875rem 2rem',
+              borderRadius: '2px',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              fontWeight: 700,
+              fontSize: '0.875rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+              display: 'inline-block',
+            }}>
+              Research Cases
+            </Link>
+            <Link href="/calculator" style={{
+              background: 'transparent',
+              color: '#212529',
+              padding: '0.875rem 2rem',
+              borderRadius: '2px',
+              border: '1.5px solid #D5D8DC',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              fontWeight: 700,
+              fontSize: '0.875rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+              display: 'inline-block',
+            }}>
+              Try Calculator
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Solutions */}
+      <section style={{ padding: '64px 24px', background: '#F5F6F7' }}>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '1.75rem',
+            fontWeight: 800,
+            color: '#212529',
+            textAlign: 'center',
+            marginBottom: '48px',
           }}>
-            Request Demo
-          </Link>
+            Related Solutions
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            <Link
+              href="/solutions/funders"
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid #E5EBF0',
+                borderRadius: '2px',
+                padding: '32px 24px',
+                textDecoration: 'none',
+                display: 'block',
+                transition: 'box-shadow 200ms ease, border-color 200ms ease',
+              }}
+              className="related-solutions-card"
+            >
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>📊</div>
+              <h3 style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '1.125rem',
+                fontWeight: 700,
+                color: '#212529',
+                marginBottom: '8px',
+              }}>
+                Litigation Funders
+              </h3>
+              <p style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.875rem',
+                color: '#455A64',
+                lineHeight: 1.6,
+                margin: 0,
+              }}>
+                Portfolio analytics and ROI projections.
+              </p>
+            </Link>
+            <Link
+              href="/solutions/enterprise"
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid #E5EBF0',
+                borderRadius: '2px',
+                padding: '32px 24px',
+                textDecoration: 'none',
+                display: 'block',
+                transition: 'box-shadow 200ms ease, border-color 200ms ease',
+              }}
+              className="related-solutions-card"
+            >
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏢</div>
+              <h3 style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '1.125rem',
+                fontWeight: 700,
+                color: '#212529',
+                marginBottom: '8px',
+              }}>
+                Enterprise Legal
+              </h3>
+              <p style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.875rem',
+                color: '#455A64',
+                lineHeight: 1.6,
+                margin: 0,
+              }}>
+                Custom dashboards and API integration.
+              </p>
+            </Link>
+            <Link
+              href="/solutions/individuals"
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid #E5EBF0',
+                borderRadius: '2px',
+                padding: '32px 24px',
+                textDecoration: 'none',
+                display: 'block',
+                transition: 'box-shadow 200ms ease, border-color 200ms ease',
+              }}
+              className="related-solutions-card"
+            >
+              <div style={{ fontSize: '32px', marginBottom: '12px' }}>👤</div>
+              <h3 style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '1.125rem',
+                fontWeight: 700,
+                color: '#212529',
+                marginBottom: '8px',
+              }}>
+                Individuals
+              </h3>
+              <p style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.875rem',
+                color: '#455A64',
+                lineHeight: 1.6,
+                margin: 0,
+              }}>
+                Settlement research for plaintiffs.
+              </p>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Responsive grid style */}
       <style dangerouslySetInnerHTML={{ __html: `
+        .related-solutions-card:hover {
+          box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+          border-color: rgba(0,105,151,0.30) !important;
+        }
         @media (max-width: 768px) {
           section div[style*="grid-template-columns: repeat(3"] {
             grid-template-columns: 1fr !important;

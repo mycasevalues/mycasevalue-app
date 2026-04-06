@@ -108,12 +108,143 @@ export default function SolutionsPage() {
               fontSize: '1.125rem',
               color: 'rgba(255,255,255,0.7)',
               maxWidth: '640px',
-              margin: '0 auto',
+              margin: '0 auto 32px',
               lineHeight: 1.6,
             }}
           >
             From individual plaintiffs to enterprise legal departments, MyCaseValue
             delivers data-driven insights tailored to your workflow.
+          </p>
+
+          {/* Hero Stats Bar */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '48px',
+              flexWrap: 'wrap',
+              marginTop: '40px',
+              paddingTop: '40px',
+              borderTop: '1px solid rgba(255,255,255,0.2)',
+            }}
+          >
+            <div style={{ textAlign: 'center' }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.5rem',
+                  fontWeight: 800,
+                  color: '#006997',
+                  marginBottom: '4px',
+                }}
+              >
+                5.1M+
+              </div>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.875rem',
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: 0,
+                }}
+              >
+                Cases Analyzed
+              </p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.5rem',
+                  fontWeight: 800,
+                  color: '#006997',
+                  marginBottom: '4px',
+                }}
+              >
+                84
+              </div>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.875rem',
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: 0,
+                }}
+              >
+                Case Types
+              </p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.5rem',
+                  fontWeight: 800,
+                  color: '#006997',
+                  marginBottom: '4px',
+                }}
+              >
+                94
+              </div>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.875rem',
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: 0,
+                }}
+              >
+                Federal Districts
+              </p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.5rem',
+                  fontWeight: 800,
+                  color: '#E8171F',
+                  marginBottom: '4px',
+                }}
+              >
+                Free
+              </div>
+              <p
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.875rem',
+                  color: 'rgba(255,255,255,0.6)',
+                  margin: 0,
+                }}
+              >
+                During Launch
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Free During Launch Banner */}
+      <section
+        style={{
+          background: 'linear-gradient(135deg, #E8171F 0%, #d91b5a 100%)',
+          color: '#FAFBFC',
+          padding: '24px',
+          textAlign: 'center',
+        }}
+      >
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <p
+            style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.875rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+              margin: 0,
+            }}
+          >
+            Free During Launch — All features included for qualifying users
           </p>
         </div>
       </section>
@@ -219,7 +350,7 @@ export default function SolutionsPage() {
             }}
           >
             <Link
-              href="/sign-up"
+              href="/search"
               style={{
                 background:
                   'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
@@ -235,7 +366,7 @@ export default function SolutionsPage() {
                 display: 'inline-block',
               }}
             >
-              Start Researching
+              Start Now
             </Link>
             <Link
               href="/pricing"

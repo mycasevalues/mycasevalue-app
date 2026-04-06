@@ -134,8 +134,18 @@ export default async function NOSPage({ params }: PageProps) {
         return { ...o, percentage: total > 0 ? Math.round((o.value / total) * 100) : 0 };
       });
 
+  // Outcome distribution for horizontal stacked bar (Win/Settlement/Other)
+  const outcomeDist = {
+    win: real?.wr || winRate,
+    settlement: real?.sp || settleRate,
+    other: Math.max(0, 100 - (real?.wr || winRate) - (real?.sp || settleRate))
+  };
+
   // Recovery range from REAL_DATA
   const recoveryRange = real?.rng;
+
+  // Key factors from REAL_DATA
+  const keyFactors = real?.factors;
 
   // Circuit court rates from REAL_DATA
   const circuitRates = real?.circuit_rates;
@@ -155,6 +165,18 @@ export default async function NOSPage({ params }: PageProps) {
         }
       });
     }
+  });
+
+  // Get 3-4 related case types with their data
+  const relatedCaseTypes = relatedCodes.slice(0, 4).map((rel) => {
+    const relData = REAL_DATA[rel.code] || { wr: 42, sp: 30, total: 500 };
+    return {
+      code: rel.code,
+      label: rel.label,
+      wr: relData.wr || 42,
+      sp: relData.sp || 30,
+      total: relData.total || 500,
+    };
   });
 
   // JSON-LD structured data
@@ -495,6 +517,202 @@ export default async function NOSPage({ params }: PageProps) {
           padding: 24px;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
         }
+
+        .outcome-dist-bar {
+          display: flex;
+          height: 20px;
+          border-radius: 2px;
+          overflow: hidden;
+          background: #F5F6F7;
+          margin-bottom: 20px;
+        }
+
+        .outcome-dist-segment {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #FFFFFF;
+          font-size: 10px;
+          font-weight: 600;
+          font-family: var(--font-display);
+        }
+
+        .outcome-dist-labels {
+          display: flex;
+          gap: 16px;
+          margin-top: 12px;
+          font-size: 12px;
+          color: #455A64;
+          font-family: var(--font-body);
+        }
+
+        .outcome-dist-label {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .outcome-dist-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 2px;
+          flex-shrink: 0;
+        }
+
+        .recovery-range-bar {
+          position: relative;
+          height: 40px;
+          margin-bottom: 20px;
+        }
+
+        .recovery-track {
+          position: absolute;
+          top: 16px;
+          left: 0;
+          right: 0;
+          height: 8px;
+          background: #E5E7EB;
+          border-radius: 4px;
+        }
+
+        .recovery-gradient {
+          position: absolute;
+          top: 16px;
+          height: 8px;
+          background: linear-gradient(90deg, #B3D9E8 0%, #006997 50%, #00172E 100%);
+          border-radius: 4px;
+        }
+
+        .recovery-marker {
+          position: absolute;
+          top: 12px;
+          width: 16px;
+          height: 16px;
+          background: #FFFFFF;
+          border: 2px solid #E8171F;
+          border-radius: 50%;
+          transform: translateX(-50%);
+          z-index: 10;
+        }
+
+        .key-factors-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 16px;
+          margin-top: 16px;
+        }
+
+        .factor-item {
+          padding: 12px;
+          background: #FAFBFC;
+          border: 1px solid #E5EBF0;
+          border-radius: 2px;
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .factor-dot {
+          width: 8px;
+          height: 8px;
+          background: #006997;
+          border-radius: 50%;
+          margin-top: 4px;
+          flex-shrink: 0;
+        }
+
+        .factor-text {
+          font-size: 13px;
+          color: #455A64;
+          font-family: var(--font-body);
+          line-height: 1.5;
+        }
+
+        .related-types-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+          gap: 16px;
+          margin-top: 16px;
+        }
+
+        .related-type-card {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 2px;
+          padding: 16px;
+          text-decoration: none;
+          color: inherit;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+          display: block;
+        }
+
+        .related-type-card:hover {
+          border-color: #006997;
+          box-shadow: 0 2px 8px rgba(0, 105, 151, 0.1);
+          transform: translateY(-1px);
+        }
+
+        .related-type-label {
+          font-size: 13px;
+          font-weight: 600;
+          color: #006997;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-family: var(--font-body);
+          margin-bottom: 8px;
+        }
+
+        .related-type-name {
+          font-size: 14px;
+          font-weight: 600;
+          color: #212529;
+          margin-bottom: 10px;
+          font-family: var(--font-display);
+        }
+
+        .related-type-stats {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          font-size: 12px;
+          color: #455A64;
+        }
+
+        .related-type-stat {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .quick-actions-bar {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+          gap: 12px;
+          margin-top: 16px;
+        }
+
+        .quick-action-card {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 2px;
+          padding: 16px;
+          text-decoration: none;
+          color: #006997;
+          text-align: center;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          font-weight: 600;
+          font-size: 13px;
+          font-family: var(--font-display);
+        }
+
+        .quick-action-card:hover {
+          border-color: #006997;
+          background: #F0F7FC;
+          box-shadow: 0 2px 8px rgba(0, 105, 151, 0.1);
+        }
       `}</style>
 
       {/* Dark Navy Header */}
@@ -545,6 +763,72 @@ export default async function NOSPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Outcome Distribution - Stacked Horizontal Bar (Win/Settlement/Other) */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="content-box">
+            <h2 className="section-title">Case Resolution Summary</h2>
+            <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+              How {nosInfo.label} cases are resolved
+            </p>
+
+            <div className="outcome-dist-bar">
+              {outcomeDist.win > 0 && (
+                <div
+                  className="outcome-dist-segment"
+                  style={{
+                    background: '#07874A',
+                    width: `${outcomeDist.win}%`,
+                  }}
+                  title={`Win: ${Math.round(outcomeDist.win)}%`}
+                >
+                  {outcomeDist.win > 12 && `${Math.round(outcomeDist.win)}%`}
+                </div>
+              )}
+              {outcomeDist.settlement > 0 && (
+                <div
+                  className="outcome-dist-segment"
+                  style={{
+                    background: '#D97706',
+                    width: `${outcomeDist.settlement}%`,
+                  }}
+                  title={`Settlement: ${Math.round(outcomeDist.settlement)}%`}
+                >
+                  {outcomeDist.settlement > 12 && `${Math.round(outcomeDist.settlement)}%`}
+                </div>
+              )}
+              {outcomeDist.other > 0 && (
+                <div
+                  className="outcome-dist-segment"
+                  style={{
+                    background: '#9CA3AF',
+                    width: `${outcomeDist.other}%`,
+                  }}
+                  title={`Other: ${Math.round(outcomeDist.other)}%`}
+                >
+                  {outcomeDist.other > 12 && `${Math.round(outcomeDist.other)}%`}
+                </div>
+              )}
+            </div>
+
+            <div className="outcome-dist-labels">
+              <div className="outcome-dist-label">
+                <div className="outcome-dist-dot" style={{ background: '#07874A' }}></div>
+                <span>Win: <strong style={{ color: '#00172E' }}>{Math.round(outcomeDist.win)}%</strong></span>
+              </div>
+              <div className="outcome-dist-label">
+                <div className="outcome-dist-dot" style={{ background: '#D97706' }}></div>
+                <span>Settlement: <strong style={{ color: '#00172E' }}>{Math.round(outcomeDist.settlement)}%</strong></span>
+              </div>
+              <div className="outcome-dist-label">
+                <div className="outcome-dist-dot" style={{ background: '#9CA3AF' }}></div>
+                <span>Other: <strong style={{ color: '#00172E' }}>{Math.round(outcomeDist.other)}%</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Outcome Distribution - CSS-based Chart */}
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-6xl mx-auto">
@@ -582,41 +866,44 @@ export default async function NOSPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Recovery Range */}
+      {/* Recovery Range Visualization */}
       {recoveryRange && recoveryRange.md > 0 && (
         <section className="px-4 sm:px-6 lg:px-8 pb-12">
           <div className="max-w-6xl mx-auto">
             <div className="content-box">
-              <h2 className="section-title">Recovery Range</h2>
+              <h2 className="section-title">Recovery Range Visualization</h2>
               <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
                 Typical monetary recovery for {nosInfo.label} cases (in thousands)
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
-                {/* Visual range bar */}
-                <div style={{ flex: 1, position: 'relative', height: '40px' }}>
-                  <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: '#F0F3F5', borderRadius: '4px' }} />
-                  <div style={{
-                    position: 'absolute',
-                    top: '16px',
-                    left: `${Math.min((recoveryRange.lo / recoveryRange.hi) * 100, 95)}%`,
-                    right: `${Math.max(100 - 100, 0)}%`,
-                    height: '8px',
-                    background: 'linear-gradient(90deg, #006997, #E8171F)',
-                    borderRadius: '4px',
-                  }} />
-                </div>
+
+              <div className="recovery-range-bar">
+                <div className="recovery-track"></div>
+                <div
+                  className="recovery-gradient"
+                  style={{
+                    left: `${Math.max(0, (recoveryRange.lo / recoveryRange.hi) * 100)}%`,
+                    right: `${Math.max(0, 100 - (recoveryRange.hi / recoveryRange.hi) * 100)}%`,
+                  }}
+                ></div>
+                <div
+                  className="recovery-marker"
+                  style={{
+                    left: `${(recoveryRange.md / recoveryRange.hi) * 100}%`,
+                  }}
+                ></div>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center' }}>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center', marginTop: '28px' }}>
                 <div>
-                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>25th Percentile</div>
+                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P25</div>
                   <div style={{ fontSize: '24px', fontWeight: 700, color: '#006997', fontFamily: 'var(--font-mono)' }}>${recoveryRange.lo}K</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>Median</div>
+                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P50 (Median)</div>
                   <div style={{ fontSize: '24px', fontWeight: 700, color: '#E8171F', fontFamily: 'var(--font-mono)' }}>${recoveryRange.md}K</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>75th Percentile</div>
+                  <div style={{ fontSize: '11px', color: '#455A64', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P75</div>
                   <div style={{ fontSize: '24px', fontWeight: 700, color: '#006997', fontFamily: 'var(--font-mono)' }}>${recoveryRange.hi}K</div>
                 </div>
               </div>
@@ -676,32 +963,89 @@ export default async function NOSPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* Related Case Types */}
-      {relatedCodes.length > 0 && (
+      {/* Key Factors */}
+      {keyFactors && keyFactors.length > 0 && (
         <section className="px-4 sm:px-6 lg:px-8 pb-12">
           <div className="max-w-6xl mx-auto">
-            <h2 className="section-title">Similar Case Types</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {relatedCodes.map((rel) => {
-                const relData = REAL_DATA[rel.code];
-                return (
-                  <Link key={rel.code} href={`/nos/${rel.code}`} className="related-card">
-                    <div className="related-card-code">NOS {rel.code}</div>
-                    <div className="related-card-name">{rel.label}</div>
-                    {relData && relData.total > 0 && (
-                      <div style={{ display: 'flex', gap: '12px', marginTop: '8px', fontSize: '12px', color: '#455A64' }}>
-                        <span style={{ fontWeight: 600, color: relData.wr >= 50 ? '#07874A' : '#E8171F' }}>{relData.wr}% win</span>
-                        <span>{relData.sp}% settle</span>
-                        <span>{relData.total.toLocaleString()} cases</span>
-                      </div>
-                    )}
-                  </Link>
-                );
-              })}
+            <div className="content-box">
+              <h2 className="section-title">Key Factors</h2>
+              <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+                Important factors that influence outcomes in {nosInfo.label} cases
+              </p>
+              <div className="key-factors-grid">
+                {keyFactors.map((factor: any, idx: number) => (
+                  <div key={idx} className="factor-item">
+                    <div className="factor-dot"></div>
+                    <div className="factor-text">{typeof factor === 'string' ? factor : factor.label || factor}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
+
+      {/* Related Case Types */}
+      {relatedCaseTypes.length > 0 && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="content-box">
+              <h2 className="section-title">Related Case Types</h2>
+              <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+                Other case types in the {nosInfo.category} category
+              </p>
+              <div className="related-types-grid">
+                {relatedCaseTypes.map((caseType) => (
+                  <Link key={caseType.code} href={`/nos/${caseType.code}`} className="related-type-card">
+                    <div className="related-type-label">NOS {caseType.code}</div>
+                    <div className="related-type-name">{caseType.label}</div>
+                    <div className="related-type-stats">
+                      <div className="related-type-stat">
+                        <span>Win Rate:</span>
+                        <strong style={{ color: caseType.wr >= 50 ? '#07874A' : '#E8171F' }}>{caseType.wr}%</strong>
+                      </div>
+                      <div className="related-type-stat">
+                        <span>Settlement:</span>
+                        <strong style={{ color: '#006997' }}>{caseType.sp}%</strong>
+                      </div>
+                      <div className="related-type-stat">
+                        <span>Cases:</span>
+                        <strong style={{ color: '#455A64' }}>{caseType.total.toLocaleString()}</strong>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Quick Actions */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="content-box">
+            <h2 className="section-title">Quick Actions</h2>
+            <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+              Next steps for your research
+            </p>
+            <div className="quick-actions-bar">
+              <Link href={`/report/${code}`} className="quick-action-card">
+                📊 View Report
+              </Link>
+              <Link href="/calculator" className="quick-action-card">
+                🧮 Calculator
+              </Link>
+              <Link href="/compare" className="quick-action-card">
+                ⚖️ Compare Cases
+              </Link>
+              <Link href="/odds" className="quick-action-card">
+                📈 Odds Finder
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Legal Disclaimer */}
       <section className="px-4 sm:px-6 lg:px-8 pb-12">
