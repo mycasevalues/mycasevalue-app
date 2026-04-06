@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
 
@@ -338,6 +339,190 @@ export default function AboutPage() {
           line-height: 1.6;
         }
 
+        .by-numbers-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .by-numbers-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+          }
+        }
+
+        .number-stat-card {
+          padding: 1.5rem;
+          border-radius: 2px;
+          border: 1px solid #D5D8DC;
+          background: #FFFFFF;
+          text-align: center;
+        }
+
+        .number-stat-value {
+          font-family: var(--font-display);
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #E8171F;
+          line-height: 1;
+          margin-bottom: 0.5rem;
+        }
+
+        .number-stat-label {
+          font-family: var(--font-body);
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          color: #455A64;
+        }
+
+        .differentiators-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .differentiators-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+          }
+        }
+
+        .differentiator-card {
+          padding: 1.5rem;
+          border-radius: 2px;
+          border-top: 3px solid #E8171F;
+          border-left: 1px solid #D5D8DC;
+          border-right: 1px solid #D5D8DC;
+          border-bottom: 1px solid #D5D8DC;
+          background: #FFFFFF;
+        }
+
+        .differentiator-title {
+          font-family: var(--font-display);
+          font-size: 1rem;
+          font-weight: 600;
+          color: #212529;
+          margin-bottom: 0.75rem;
+        }
+
+        .differentiator-description {
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          color: #455A64;
+          line-height: 1.6;
+        }
+
+        .tools-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+          .tools-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+          }
+        }
+
+        .tool-card {
+          padding: 1.25rem;
+          border-radius: 2px;
+          border: 1px solid #D5D8DC;
+          background: #FFFFFF;
+          transition: all 0.2s ease;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+
+        .tool-card:hover {
+          border-color: #E8171F;
+          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.1);
+          transform: translateY(-2px);
+        }
+
+        .tool-name {
+          font-family: var(--font-display);
+          font-size: 0.9375rem;
+          font-weight: 600;
+          color: #212529;
+        }
+
+        .tool-description {
+          font-family: var(--font-body);
+          font-size: 0.75rem;
+          color: #455A64;
+          line-height: 1.5;
+          flex: 1;
+        }
+
+        .tool-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #006997;
+          text-decoration: none;
+          font-family: var(--font-body);
+          font-size: 0.75rem;
+          font-weight: 600;
+          transition: color 0.2s ease;
+        }
+
+        .tool-link:hover {
+          color: #E8171F;
+        }
+
+        .contact-section {
+          background: #FFFFFF;
+          border: 1px solid #D5D8DC;
+          border-radius: 2px;
+          padding: 2rem;
+        }
+
+        .contact-content {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2rem;
+        }
+
+        .contact-block h3 {
+          font-family: var(--font-display);
+          font-size: 1rem;
+          font-weight: 600;
+          color: #212529;
+          margin-bottom: 1rem;
+        }
+
+        .contact-block p {
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          color: #455A64;
+          line-height: 1.6;
+          margin-bottom: 0.75rem;
+        }
+
+        .contact-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #006997;
+          text-decoration: none;
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          font-weight: 600;
+          transition: color 0.2s ease;
+          margin-bottom: 0.5rem;
+        }
+
+        .contact-link:hover {
+          color: #E8171F;
+        }
+
         @media (max-width: 640px) {
           .mission-hero h1 {
             font-size: 1.75rem;
@@ -400,6 +585,28 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* By the Numbers Section */}
+      <div style={{ background: '#F5F6F7', borderBottom: '1px solid rgba(0, 0, 0, 0.08)' }}>
+        <div className="max-w-4xl mx-auto px-6 py-16">
+          <h2 className="section-heading">By the Numbers</h2>
+          <div className="by-numbers-grid">
+            {[
+              { value: '5.1M+', label: 'Federal Cases in Database' },
+              { value: '84', label: 'Case Type Categories' },
+              { value: '94', label: 'Districts Covered' },
+              { value: '13', label: 'Circuit Courts' },
+              { value: '50+', label: 'Years of Historical Data' },
+              { value: '100%', label: 'Free During Launch' },
+            ].map((stat, i) => (
+              <div key={i} className="number-stat-card">
+                <div className="number-stat-value">{stat.value}</div>
+                <div className="number-stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-16" style={{ background: '#F5F6F7' }}>
         <div className="space-y-20">
@@ -429,6 +636,36 @@ export default function AboutPage() {
                   <div className="step-number">{item.step}</div>
                   <h3 className="step-title">{item.title}</h3>
                   <p className="step-description">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* What Makes Us Different Section */}
+          <section>
+            <h2 className="section-heading">What Makes Us Different</h2>
+            <div className="differentiators-grid">
+              {[
+                {
+                  title: 'Real Federal Data',
+                  description: 'Not estimates or guesses. Every statistic comes directly from official federal court records maintained by the FJC.',
+                },
+                {
+                  title: 'Complete Transparency',
+                  description: 'We show our methodology, data sources, confidence levels, and limitations. No black boxes.',
+                },
+                {
+                  title: 'Free Access',
+                  description: 'During our launch period, every feature is free with no account required. We believe court data should be accessible to everyone.',
+                },
+                {
+                  title: 'Purpose-Built Analytics',
+                  description: 'Unlike generic legal databases, we\'re built specifically for case outcome analysis with tools tailored to that purpose.',
+                },
+              ].map((diff, i) => (
+                <div key={i} className="differentiator-card">
+                  <h3 className="differentiator-title">{diff.title}</h3>
+                  <p className="differentiator-description">{diff.description}</p>
                 </div>
               ))}
             </div>
@@ -480,6 +717,61 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* Our Tools Section */}
+          <section>
+            <h2 className="section-heading">Our Tools</h2>
+            <p className="section-description">
+              A complete suite of tools designed specifically for federal court outcome analysis and legal research.
+            </p>
+            <div className="tools-grid">
+              {[
+                {
+                  name: 'Case Search',
+                  description: 'Search 5.1M+ federal cases by type, district, judge, and outcome.',
+                },
+                {
+                  name: 'Settlement Calculator',
+                  description: 'Estimate settlement ranges based on historical federal case data.',
+                },
+                {
+                  name: 'Judge Analytics',
+                  description: 'Analyze individual judge tendencies and case outcome patterns.',
+                },
+                {
+                  name: 'Case Comparison',
+                  description: 'Compare your case to similar federal cases with detailed metrics.',
+                },
+                {
+                  name: 'NOS Explorer',
+                  description: 'Browse case types and explore federal classification systems.',
+                },
+                {
+                  name: 'Jargon Translator',
+                  description: 'Decode legal terms and understand federal court terminology.',
+                },
+                {
+                  name: 'Filing Trends',
+                  description: 'Track patterns in federal case filings over time.',
+                },
+                {
+                  name: 'Legal Glossary',
+                  description: 'Complete reference for federal court and legal definitions.',
+                },
+              ].map((tool, i) => (
+                <div key={i} className="tool-card">
+                  <div className="tool-name">{tool.name}</div>
+                  <div className="tool-description">{tool.description}</div>
+                  <Link href="/search" className="tool-link">
+                    Explore
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Coverage Stats */}
           <section>
             <h2 className="section-heading">What We Cover</h2>
@@ -515,6 +807,45 @@ export default function AboutPage() {
                 <li><strong>Privacy:</strong> We never sell data or track individual research behavior.</li>
                 <li><strong>Accessibility:</strong> Federal court data belongs to the public; we make it accessible.</li>
               </ul>
+            </div>
+          </section>
+
+          {/* Contact & Connect Section */}
+          <section>
+            <h2 className="section-heading">Contact & Connect</h2>
+            <div className="contact-section">
+              <div className="contact-content">
+                <div className="contact-block">
+                  <h3>Email Support</h3>
+                  <p>Have questions about our data, tools, or platform?</p>
+                  <a href="mailto:support@mycasevalue.com" className="contact-link">
+                    support@mycasevalue.com
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+                <div className="contact-block">
+                  <h3>Community & Feedback</h3>
+                  <p>Help us improve. Share feedback and feature requests.</p>
+                  <a href="mailto:feedback@mycasevalue.com" className="contact-link">
+                    feedback@mycasevalue.com
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+                <div className="contact-block">
+                  <h3>Follow Us</h3>
+                  <p>Stay updated on platform improvements and new features.</p>
+                  <a href="https://twitter.com/mycasevalue" target="_blank" rel="noopener noreferrer" className="contact-link">
+                    Twitter
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </section>
 

@@ -11,6 +11,8 @@ import FaqAccordion from './FaqAccordion';
 import TestimonialCarousel from './TestimonialCarousel';
 import TrustBadges from './TrustBadges';
 import ScrollReveal from './ScrollReveal';
+import Link from 'next/link';
+import { REAL_DATA } from '../lib/realdata';
 
 const FAQ_ITEMS = [
   { q: 'What is MyCaseValue?', a: 'MyCaseValue is a research tool that displays aggregate historical outcome data from over 5.1 million public federal court records. It helps individuals and attorneys research win rates, settlement ranges, timelines, and judge analytics. It is not legal advice.' },
@@ -1073,6 +1075,274 @@ export default function ServerContent() {
         </div>
       </section>
 
+      {/* ── TRUSTED DATA SOURCES ──────────────────────────────── */}
+      <section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '40px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+              Trusted Data Sources
+            </h2>
+            <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
+              All data sourced from official federal court record systems
+            </p>
+          </div>
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: '24px',
+            background: '#FFFFFF',
+            padding: '28px 32px',
+            border: '1px solid #D5D8DC',
+            borderRadius: '2px',
+            justifyContent: 'center',
+          }}>
+            {[
+              { name: 'Federal Judicial Center', icon: '🗄️' },
+              { name: 'CourtListener', icon: '⚖️' },
+              { name: 'PACER', icon: '📄' },
+              { name: 'Bureau of Justice Statistics', icon: '📊' },
+            ].map((source, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <span style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
+                  <span style={{ fontSize: '14px', marginRight: '4px' }}>{source.icon}</span>
+                  {source.name}
+                </span>
+                {i < 3 && <span style={{ fontSize: '12px', color: '#D5D8DC', marginLeft: '20px' }}>•</span>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PLATFORM STATISTICS ──────────────────────────────── */}
+      <section style={{ background: '#00172E', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '40px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+              Platform at a Glance
+            </h2>
+            <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', margin: 0 }}>
+              The scale of our federal court data repository
+            </p>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '16px',
+          }}>
+            {[
+              { stat: '5.1M+', label: 'Federal Cases Analyzed' },
+              { stat: '84', label: 'Case Type Categories' },
+              { stat: '94', label: 'Federal Districts Covered' },
+              { stat: '90+', label: 'Judge Profiles Available' },
+            ].map((item, i) => (
+              <div key={i} style={{
+                background: 'transparent',
+                border: '2px solid #E8171F',
+                borderRadius: '2px',
+                padding: '28px 20px',
+                textAlign: 'center',
+              }}>
+                <p style={{
+                  fontSize: '36px',
+                  fontWeight: 700,
+                  color: '#E8171F',
+                  fontFamily: 'var(--font-display)',
+                  margin: '0 0 8px 0',
+                  lineHeight: 1,
+                }}>
+                  {item.stat}
+                </p>
+                <p style={{
+                  fontSize: '13px',
+                  color: '#FFFFFF',
+                  fontFamily: 'var(--font-body)',
+                  margin: 0,
+                  fontWeight: 500,
+                }}>
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ──────────────────────────────── */}
+      <section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '48px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+              How It Works
+            </h2>
+            <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
+              Three simple steps to make informed legal decisions
+            </p>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '32px',
+          }}>
+            {[
+              {
+                step: 1,
+                title: 'Select Your Case Type',
+                desc: 'Choose from 84 federal case categories or search by keyword',
+              },
+              {
+                step: 2,
+                title: 'View Real Outcomes',
+                desc: 'See win rates, settlement ranges, timelines, and judge data from actual federal cases',
+              },
+              {
+                step: 3,
+                title: 'Make Informed Decisions',
+                desc: 'Use data-driven insights for research, case evaluation, or settlement negotiation',
+              },
+            ].map((item, i) => (
+              <div key={i} style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  background: '#E8171F',
+                  color: '#FFFFFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  margin: '0 auto 16px',
+                  fontFamily: 'var(--font-display)',
+                }}>
+                  {item.step}
+                </div>
+                <h3 style={{
+                  fontSize: '15px',
+                  fontWeight: 700,
+                  color: '#00172E',
+                  fontFamily: 'var(--font-display)',
+                  marginBottom: '8px',
+                }}>
+                  {item.title}
+                </h3>
+                <p style={{
+                  fontSize: '13px',
+                  color: '#455A64',
+                  fontFamily: 'var(--font-body)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED CASE TYPES BY VOLUME ──────────────────────────────── */}
+      <section style={{ background: '#F5F6F7', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '48px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 600, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+              Most Common Federal Case Types
+            </h2>
+            <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
+              Explore the case types with the most federal court data available
+            </p>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '20px',
+          }}>
+            {Object.entries(REAL_DATA)
+              .sort(([, a]: any, [, b]: any) => (b.total || 0) - (a.total || 0))
+              .slice(0, 6)
+              .map(([nos, data]: any, i) => {
+                const winRate = data.wr || 0;
+                const winRateColor = winRate > 60 ? '#07CA6B' : winRate > 40 ? '#F59E0B' : '#EF4444';
+                return (
+                  <Link key={i} href={`/report/${nos}`} style={{ textDecoration: 'none' }}>
+                    <div style={{
+                      background: '#FFFFFF',
+                      border: '1px solid #D5D8DC',
+                      borderRadius: '2px',
+                      padding: '24px',
+                      transition: 'all 0.2s ease',
+                      cursor: 'pointer',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                    }} className="featured-type-card">
+                      <div style={{ marginBottom: '12px' }}>
+                        <h3 style={{
+                          fontSize: '15px',
+                          fontWeight: 600,
+                          color: '#212529',
+                          fontFamily: 'var(--font-display)',
+                          margin: '0 0 4px 0',
+                        }}>
+                          {data.label || `NOS ${nos}`}
+                        </h3>
+                        <p style={{
+                          fontSize: '12px',
+                          color: '#455A64',
+                          fontFamily: 'var(--font-body)',
+                          margin: '0 0 8px 0',
+                        }}>
+                          Code: {nos}
+                        </p>
+                      </div>
+
+                      <div style={{ marginBottom: '12px' }}>
+                        <p style={{
+                          fontSize: '12px',
+                          color: '#455A64',
+                          fontFamily: 'var(--font-body)',
+                          margin: '0 0 4px 0',
+                        }}>
+                          {(data.total || 0).toLocaleString()} cases
+                        </p>
+                      </div>
+
+                      <div style={{
+                        padding: '8px 12px',
+                        background: 'rgba(232,23,31,0.08)',
+                        borderRadius: '2px',
+                        marginBottom: '12px',
+                      }}>
+                        <p style={{
+                          fontSize: '12px',
+                          color: winRateColor,
+                          fontFamily: 'var(--font-display)',
+                          fontWeight: 700,
+                          margin: 0,
+                        }}>
+                          {winRate.toFixed(1)}% Win Rate
+                        </p>
+                      </div>
+
+                      <p style={{
+                        fontSize: '12px',
+                        color: '#006997',
+                        fontFamily: 'var(--font-body)',
+                        fontWeight: 500,
+                        margin: 0,
+                      }}>
+                        View Details →
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ────────────────────────────────────────────── */}
       <section
         style={{
@@ -1155,7 +1425,8 @@ export default function ServerContent() {
         .feature-card:hover,
         .who-card:hover,
         .stat-card:hover,
-        .related-card:hover {
+        .related-card:hover,
+        .featured-type-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
           border-left: 3px solid #E8171F !important;

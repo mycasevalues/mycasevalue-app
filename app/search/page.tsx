@@ -83,11 +83,14 @@ export default function SearchPage() {
   const [recentItems, setRecentItems] = useState<RecentItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [tipsExpanded, setTipsExpanded] = useState(false);
+  const [recentlyViewedItems, setRecentlyViewedItems] = useState<RecentItem[]>([]);
 
   useEffect(() => {
     try {
       const stored = JSON.parse(localStorage.getItem('mcv_recent') || '[]');
       setRecentItems(stored);
+      setRecentlyViewedItems(stored.slice(0, 3));
     } catch {
       // ignore
     }
@@ -384,6 +387,44 @@ export default function SearchPage() {
         </button>
       </div>
 
+      {/* Search Tips Section */}
+      <div style={{ marginBottom: '24px', background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '2px', overflow: 'hidden' }}>
+        <button
+          onClick={() => setTipsExpanded(!tipsExpanded)}
+          style={{
+            width: '100%',
+            padding: '12px 16px',
+            background: '#F0F9FF',
+            border: 'none',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            fontFamily: 'var(--font-body)',
+            transition: 'background 150ms',
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.background = '#E0F2FE'}
+          onMouseLeave={(e) => e.currentTarget.style.background = '#F0F9FF'}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#0369A1', flexShrink: 0 }}>
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 16v-4m0-4h.01" />
+          </svg>
+          <span style={{ fontSize: '13px', fontWeight: '600', color: '#0369A1', margin: 0, flex: 1, textAlign: 'left' }}>Search Tips</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0369A1', transform: tipsExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 150ms' }}>
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        {tipsExpanded && (
+          <div style={{ padding: '12px 16px', borderTop: '1px solid #BAE6FD', fontSize: '13px', color: '#0C4A6E', lineHeight: '1.6', fontFamily: 'var(--font-body)' }}>
+            <div style={{ marginBottom: '8px' }}>• Search by case type name (e.g., 'employment discrimination')</div>
+            <div style={{ marginBottom: '8px' }}>• Search by NOS code (e.g., '442')</div>
+            <div style={{ marginBottom: '8px' }}>• Search by category (e.g., 'consumer' or 'civil rights')</div>
+            <div>• Use keywords from your situation (e.g., 'wrongful termination')</div>
+          </div>
+        )}
+      </div>
+
       {/* Loading skeleton */}
       {query.length > 1 && isLoading && (
         <>
@@ -601,7 +642,7 @@ export default function SearchPage() {
           </div>
 
           {/* Browse by Category Grid */}
-          <div>
+          <div style={{ marginBottom: '32px' }}>
             <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Browse by Category
             </p>
@@ -647,28 +688,124 @@ export default function SearchPage() {
             </div>
           </div>
 
-          {/* Quick links row */}
-          <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
-            {[
-              { label: 'NOS Code Explorer', href: '/nos-explorer' },
-              { label: 'Case Trends', href: '/trends' },
-              { label: 'Jargon Translator', href: '/translate' },
-              { label: 'Settlement Calculator', href: '/calculator' },
-            ].map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                style={{
-                  padding: '10px 16px', background: '#00172E', color: '#FFFFFF', borderRadius: 2,
-                  fontSize: 12, fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)',
-                  transition: 'all 0.15s ease',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = '#001D3A'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = '#00172E'; }}
-              >
-                {link.label} →
-              </Link>
-            ))}
+          {/* Data Highlights Section */}
+          <div style={{ marginBottom: '32px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+              Data Highlights
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
+              {(() => {
+                const seen = new Set<string>();
+                const allNos: { nos: string; label: string; total: number; wr: number; mo: number; rngMd: number }[] = [];
+                for (const cat of SITS) {
+                  for (const opt of cat.opts) {
+                    if (seen.has(opt.nos)) continue;
+                    seen.add(opt.nos);
+                    const rd = REAL_DATA[opt.nos];
+                    if (rd) {
+                      allNos.push({
+                        nos: opt.nos,
+                        label: opt.label,
+                        total: rd.total || 0,
+                        wr: rd.wr || 0,
+                        mo: rd.mo || 0,
+                        rngMd: rd.rng?.md || 0,
+                      });
+                    }
+                  }
+                }
+
+                // Calculate highlights
+                const mostFiled = allNos.reduce((a, b) => b.total > a.total ? b : a, allNos[0]);
+                const highestWr = allNos.reduce((a, b) => b.wr > a.wr ? b : a, allNos[0]);
+                const fastestResolution = allNos.filter(x => x.mo > 0).reduce((a, b) => b.mo < a.mo ? b : a, allNos.filter(x => x.mo > 0)[0]);
+                const highestRecovery = allNos.filter(x => x.rngMd > 0).reduce((a, b) => b.rngMd > a.rngMd ? b : a, allNos.filter(x => x.rngMd > 0)[0]);
+
+                const highlights = [
+                  { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#E8171F' },
+                  { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#07874A' },
+                  { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#0369A1' },
+                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `$${highestRecovery.rngMd}K median` : 'N/A', color: '#E8171F' },
+                ];
+
+                return highlights.map((h, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      padding: '16px',
+                      background: '#FFFFFF',
+                      border: '1px solid #D5D8DC',
+                      borderRadius: '2px',
+                      transition: 'all 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = h.color;
+                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#D5D8DC';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+                      {h.title}
+                    </div>
+                    <div style={{ fontSize: '13px', fontWeight: '600', color: '#212529', marginBottom: '6px', fontFamily: 'var(--font-display)', lineHeight: '1.4' }}>
+                      {h.value}
+                    </div>
+                    <div style={{ fontSize: '14px', fontWeight: '700', color: h.color, fontFamily: 'var(--font-mono)' }}>
+                      {h.display}
+                    </div>
+                  </div>
+                ));
+              })()}
+            </div>
+          </div>
+
+          {/* Quick Actions Bar */}
+          <div style={{ marginTop: '32px', padding: '24px 0', borderTop: '1px solid #D5D8DC' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+              Quick Actions
+            </p>
+            <div style={{ display: 'inline-flex', flexWrap: 'wrap', gap: '12px' }}>
+              {[
+                { label: 'Calculator', href: '/calculator' },
+                { label: 'Compare', href: '/compare' },
+                { label: 'Odds Checker', href: '/odds' },
+                { label: 'Judge Analytics', href: '/judges' },
+                { label: 'Trends', href: '/trends' },
+              ].map(link => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  style={{
+                    padding: '12px 20px',
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: '20px',
+                    fontSize: '12px',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    color: '#455A64',
+                    fontFamily: 'var(--font-body)',
+                    transition: 'all 0.15s ease',
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#E8171F';
+                    e.currentTarget.style.color = '#E8171F';
+                    e.currentTarget.style.background = '#FEE9EB';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#D5D8DC';
+                    e.currentTarget.style.color = '#455A64';
+                    e.currentTarget.style.background = '#FFFFFF';
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </>
       )}
