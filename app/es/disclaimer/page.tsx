@@ -6,7 +6,8 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Descargo de Responsabilidad — MyCaseValue',
+  title: 'Descargo de Responsabilidad',
+  description: 'Descargo de responsabilidad legal de MyCaseValue. Esta plataforma es solo para fines informativos y no constituye asesoramiento legal.',
   alternates: {
     canonical: `${SITE_URL}/es/disclaimer`,
     languages: {
