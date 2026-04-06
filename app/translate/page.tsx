@@ -9,6 +9,27 @@ const EXAMPLE_PHRASES = [
   'The plaintiff seeks an injunction to compel discovery of evidence.',
   'The statute of limitations has expired for filing this claim.',
   'Arbitration is the agreed-upon mechanism for dispute resolution.',
+  'The plaintiff\'s motion for class certification is denied without prejudice.',
+  'Respondeat superior liability attaches to the employer for the agent\'s tortious conduct.',
+  'The court grants the motion in limine to exclude the expert testimony.',
+  'A writ of mandamus is issued compelling the agency to produce the records.',
+  'The parties stipulate to a continuance pending mediation.',
+];
+
+// Common legal terms quick reference
+const LEGAL_TERMS = [
+  { term: 'Pro Se', definition: 'Self-represented (no attorney)' },
+  { term: 'Summary Judgment', definition: 'Case decided without trial' },
+  { term: 'Deposition', definition: 'Sworn out-of-court testimony' },
+  { term: 'Discovery', definition: 'Pre-trial evidence exchange' },
+  { term: 'Injunction', definition: 'Court order to act or stop' },
+  { term: 'Arbitration', definition: 'Private dispute resolution' },
+  { term: 'Statute of Limitations', definition: 'Deadline to file lawsuit' },
+  { term: 'Class Action', definition: 'Group lawsuit with many plaintiffs' },
+  { term: 'Settlement', definition: 'Agreement to resolve without trial' },
+  { term: 'Verdict', definition: 'Jury or judge\'s final decision' },
+  { term: 'Damages', definition: 'Money awarded for harm/loss' },
+  { term: 'Tort', definition: 'Civil wrong causing injury' },
 ];
 
 export default function TranslatePage() {
@@ -16,6 +37,8 @@ export default function TranslatePage() {
   const [translation, setTranslation] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [history, setHistory] = useState<Array<{ input: string; output: string; timestamp: Date }>>([]);
+  const [historyExpanded, setHistoryExpanded] = useState(false);
   // All translations free during launch
   const remaining = 999;
 
@@ -45,6 +68,11 @@ export default function TranslatePage() {
       }
 
       setTranslation(data.translation);
+      // Add to history, keeping last 5
+      setHistory(prev => [
+        { input, output: data.translation, timestamp: new Date() },
+        ...prev
+      ].slice(0, 5));
     } catch (err: unknown) {
       setError('An error occurred. Please try again.');
     } finally {
@@ -55,6 +83,12 @@ export default function TranslatePage() {
   const handleExample = (phrase: string) => {
     setInput(phrase);
     setTranslation('');
+    setError('');
+  };
+
+  const loadFromHistory = (item: { input: string; output: string; timestamp: Date }) => {
+    setInput(item.input);
+    setTranslation(item.output);
     setError('');
   };
 
@@ -223,6 +257,96 @@ export default function TranslatePage() {
           </div>
         </div>
 
+        {/* Common Legal Terms Quick Reference */}
+        <div className="mt-12">
+          <h2 className="text-sm font-semibold mb-4" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+            Common Legal Terms Quick Reference
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {LEGAL_TERMS.map((item, i) => (
+              <div
+                key={i}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '12px',
+                }}
+              >
+                <p className="font-bold text-[13px] mb-2" style={{ color: '#212529' }}>
+                  {item.term}
+                </p>
+                <p className="text-[11px]" style={{ color: '#455A64', lineHeight: '1.4' }}>
+                  {item.definition}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Translation History */}
+        {history.length > 0 && (
+          <div className="mt-12">
+            <button
+              onClick={() => setHistoryExpanded(!historyExpanded)}
+              className="flex items-center gap-2 text-sm font-semibold mb-4 transition-opacity hover:opacity-70"
+              style={{ color: '#212529', fontFamily: 'var(--font-display)' }}
+            >
+              <span>Recent Translations</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                style={{ transform: historyExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            {historyExpanded && (
+              <div className="grid gap-3">
+                {history.map((item, i) => (
+                  <div
+                    key={i}
+                    className="p-4 border"
+                    style={{
+                      borderColor: '#D5D8DC',
+                      background: '#FFFFFF',
+                      borderRadius: '2px',
+                    }}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <p className="text-[13px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-body)' }}>
+                          {item.input.substring(0, 80)}{item.input.length > 80 ? '...' : ''}
+                        </p>
+                        <p className="text-[11px]" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                          {item.timestamp.toLocaleTimeString()}
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => loadFromHistory(item)}
+                        className="px-3 py-2 text-[11px] font-semibold whitespace-nowrap transition-all hover:shadow-sm active:scale-[0.98]"
+                        style={{
+                          background: '#006997',
+                          color: '#FFFFFF',
+                          borderRadius: '2px',
+                          border: 'none',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        Load
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Navigation Links */}
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
           <Link
@@ -257,6 +381,40 @@ export default function TranslatePage() {
             </p>
             <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
               Estimate settlement ranges based on case data.
+            </p>
+          </Link>
+          <Link
+            href="/glossary"
+            className="p-6 border transition-all hover:shadow-md hover:border-2"
+            style={{
+              borderRadius: '2px',
+              borderColor: '#D5D8DC',
+              background: '#FFFFFF',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            }}
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+              Legal Glossary
+            </p>
+            <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+              Browse all federal court term definitions.
+            </p>
+          </Link>
+          <Link
+            href="/odds"
+            className="p-6 border transition-all hover:shadow-md hover:border-2"
+            style={{
+              borderRadius: '2px',
+              borderColor: '#D5D8DC',
+              background: '#FFFFFF',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+            }}
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
+              Odds Checker
+            </p>
+            <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+              Check your case type win probability.
             </p>
           </Link>
         </div>

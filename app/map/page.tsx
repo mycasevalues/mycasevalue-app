@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Metadata } from 'next';
 
 // Note: Metadata cannot be exported from client components
@@ -87,6 +88,42 @@ interface StateData {
   winRate: number;
 }
 
+// Helper function to get color based on win rate
+function getWinRateColor(winRate: number): string {
+  if (winRate >= 50) return '#07874A'; // green
+  if (winRate >= 35) return '#FF9D00'; // amber
+  return '#E8171F'; // red
+}
+
+// Helper function to get top/bottom states
+function getTopAndBottomStates(states: StateData[], count: number = 5) {
+  const sorted = [...states].sort((a, b) => b.winRate - a.winRate);
+  return {
+    top: sorted.slice(0, count),
+    bottom: sorted.slice(-count).reverse(),
+  };
+}
+
+// Helper function to calculate histogram distribution
+function getWinRateDistribution(states: StateData[]) {
+  const bins = [
+    { min: 30, max: 35, label: '30-35%', count: 0 },
+    { min: 35, max: 40, label: '35-40%', count: 0 },
+    { min: 40, max: 45, label: '40-45%', count: 0 },
+    { min: 45, max: 50, label: '45-50%', count: 0 },
+    { min: 50, max: 55, label: '50-55%', count: 0 },
+    { min: 55, max: 60, label: '55-60%', count: 0 },
+    { min: 60, max: 65, label: '60-65%', count: 0 },
+  ];
+
+  states.forEach((state) => {
+    const bin = bins.find((b) => state.winRate >= b.min && state.winRate < b.max);
+    if (bin) bin.count++;
+  });
+
+  return bins;
+}
+
 export default function DistrictHeatmapPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('name');
@@ -138,6 +175,13 @@ export default function DistrictHeatmapPage() {
   const lowestRate = Math.min(...allStates.map((s) => s.winRate));
   const highestState = allStates.find((s) => s.winRate === highestRate);
   const lowestState = allStates.find((s) => s.winRate === lowestRate);
+
+  // Compute top/bottom 5 states
+  const { top: topStates, bottom: bottomStates } = getTopAndBottomStates(allStates, 5);
+
+  // Compute histogram distribution
+  const distribution = getWinRateDistribution(allStates);
+  const maxBinCount = Math.max(...distribution.map((b) => b.count));
 
   const schemaData = {
     '@context': 'https://schema.org',
@@ -358,6 +402,88 @@ export default function DistrictHeatmapPage() {
             </div>
           </div>
 
+          {/* Win Rate Distribution Histogram */}
+          <div
+            style={{
+              padding: '24px',
+              borderRadius: '2px',
+              border: '1px solid #D5D8DC',
+              backgroundColor: '#FFFFFF',
+              marginBottom: '32px',
+            }}
+          >
+            <h2
+              style={{
+                fontSize: '18px',
+                fontWeight: '700',
+                color: '#212529',
+                margin: '0 0 20px 0',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Win Rate Distribution
+            </h2>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'flex-end',
+                justifyContent: 'space-around',
+                gap: '12px',
+                height: '200px',
+              }}
+            >
+              {distribution.map((bin, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    flex: 1,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '100%',
+                      height: `${(bin.count / maxBinCount) * 160}px`,
+                      backgroundColor: '#006997',
+                      borderRadius: '2px',
+                      transition: 'background-color 0.2s ease',
+                      cursor: 'pointer',
+                      minHeight: bin.count > 0 ? '4px' : '0px',
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#004B7A')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#006997')}
+                    title={`${bin.label}: ${bin.count} states`}
+                  />
+                  <p
+                    style={{
+                      fontSize: '12px',
+                      color: '#455A64',
+                      marginTop: '8px',
+                      margin: '8px 0 0 0',
+                      fontFamily: 'var(--font-body)',
+                      textAlign: 'center',
+                    }}
+                  >
+                    {bin.label}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      color: '#212529',
+                      margin: '4px 0 0 0',
+                      fontFamily: 'var(--font-body)',
+                    }}
+                  >
+                    {bin.count}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Controls */}
           <div style={{ marginBottom: '32px' }}>
             <div style={{ marginBottom: '16px' }}>
@@ -545,6 +671,218 @@ export default function DistrictHeatmapPage() {
             </div>
           )}
 
+          {/* Top & Bottom 5 States */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '24px',
+              marginBottom: '48px',
+            }}
+          >
+            {/* Top 5 States */}
+            <div
+              style={{
+                padding: '24px',
+                borderRadius: '2px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: '18px',
+                  fontWeight: '700',
+                  color: '#212529',
+                  margin: '0 0 20px 0',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                Top 5 Win Rates
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {topStates.map((state, idx) => (
+                  <div
+                    key={state.code}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '12px',
+                      borderRadius: '2px',
+                      backgroundColor: '#F5F6F7',
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: '14px',
+                        fontWeight: '700',
+                        color: '#455A64',
+                        minWidth: '24px',
+                        fontFamily: 'var(--font-body)',
+                      }}
+                    >
+                      #{idx + 1}
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <p
+                        style={{
+                          fontSize: '14px',
+                          fontWeight: '600',
+                          color: '#212529',
+                          margin: 0,
+                          fontFamily: 'var(--font-body)',
+                        }}
+                      >
+                        {state.name}
+                      </p>
+                    </div>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: '40px',
+                          height: '4px',
+                          backgroundColor: '#F0F3F5',
+                          borderRadius: '2px',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        <div
+                          style={{
+                            height: '100%',
+                            width: `${state.winRate}%`,
+                            backgroundColor: getWinRateColor(state.winRate),
+                            borderRadius: '2px',
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: '700',
+                          color: getWinRateColor(state.winRate),
+                          margin: 0,
+                          minWidth: '38px',
+                          textAlign: 'right',
+                          fontFamily: 'var(--font-mono)',
+                        }}
+                      >
+                        {state.winRate.toFixed(1)}%
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom 5 States */}
+            <div
+              style={{
+                padding: '24px',
+                borderRadius: '2px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: '18px',
+                  fontWeight: '700',
+                  color: '#212529',
+                  margin: '0 0 20px 0',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                Bottom 5 Win Rates
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {bottomStates.map((state, idx) => (
+                  <div
+                    key={state.code}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '12px',
+                      borderRadius: '2px',
+                      backgroundColor: '#F5F6F7',
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: '14px',
+                        fontWeight: '700',
+                        color: '#455A64',
+                        minWidth: '24px',
+                        fontFamily: 'var(--font-body)',
+                      }}
+                    >
+                      #{idx + 1}
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <p
+                        style={{
+                          fontSize: '14px',
+                          fontWeight: '600',
+                          color: '#212529',
+                          margin: 0,
+                          fontFamily: 'var(--font-body)',
+                        }}
+                      >
+                        {state.name}
+                      </p>
+                    </div>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: '40px',
+                          height: '4px',
+                          backgroundColor: '#F0F3F5',
+                          borderRadius: '2px',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        <div
+                          style={{
+                            height: '100%',
+                            width: `${state.winRate}%`,
+                            backgroundColor: getWinRateColor(state.winRate),
+                            borderRadius: '2px',
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: '700',
+                          color: getWinRateColor(state.winRate),
+                          margin: 0,
+                          minWidth: '38px',
+                          textAlign: 'right',
+                          fontFamily: 'var(--font-mono)',
+                        }}
+                      >
+                        {state.winRate.toFixed(1)}%
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* CTA Section */}
           <div
             style={{
@@ -601,6 +939,204 @@ export default function DistrictHeatmapPage() {
             </a>
           </div>
         </main>
+
+        {/* Related Pages */}
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px', backgroundColor: '#F5F6F7' }}>
+          <h2
+            style={{
+              fontSize: '20px',
+              fontWeight: '700',
+              color: '#212529',
+              margin: '0 0 24px 0',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            Explore More
+          </h2>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '16px',
+            }}
+          >
+            <Link
+              href="/districts"
+              style={{
+                padding: '20px',
+                borderRadius: '2px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+                textDecoration: 'none',
+                display: 'block',
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#E8171F';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#D5D8DC';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: '#00172E',
+                  margin: '0 0 8px 0',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                Judicial Districts
+              </h3>
+              <p
+                style={{
+                  fontSize: '13px',
+                  color: '#455A64',
+                  margin: 0,
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                Dive deep into specific judicial districts and their case outcomes.
+              </p>
+            </Link>
+
+            <Link
+              href="/judges"
+              style={{
+                padding: '20px',
+                borderRadius: '2px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+                textDecoration: 'none',
+                display: 'block',
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#E8171F';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#D5D8DC';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: '#00172E',
+                  margin: '0 0 8px 0',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                Judges
+              </h3>
+              <p
+                style={{
+                  fontSize: '13px',
+                  color: '#455A64',
+                  margin: 0,
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                See individual judge performance and their case win rates.
+              </p>
+            </Link>
+
+            <Link
+              href="/trends"
+              style={{
+                padding: '20px',
+                borderRadius: '2px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+                textDecoration: 'none',
+                display: 'block',
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#E8171F';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#D5D8DC';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: '#00172E',
+                  margin: '0 0 8px 0',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                Trends
+              </h3>
+              <p
+                style={{
+                  fontSize: '13px',
+                  color: '#455A64',
+                  margin: 0,
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                Track trends in case outcomes over time and across jurisdictions.
+              </p>
+            </Link>
+
+            <Link
+              href="/compare"
+              style={{
+                padding: '20px',
+                borderRadius: '2px',
+                border: '1px solid #D5D8DC',
+                backgroundColor: '#FFFFFF',
+                textDecoration: 'none',
+                display: 'block',
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#E8171F';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#D5D8DC';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: '#00172E',
+                  margin: '0 0 8px 0',
+                  fontFamily: 'var(--font-display)',
+                }}
+              >
+                Compare
+              </h3>
+              <p
+                style={{
+                  fontSize: '13px',
+                  color: '#455A64',
+                  margin: 0,
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                Compare case outcomes and statistics between different regions.
+              </p>
+            </Link>
+          </div>
+        </div>
 
         {/* Footer Disclaimer */}
         <footer

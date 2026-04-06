@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { SITE_URL } from '../../lib/site-config';
 
 export const revalidate = 0;
@@ -36,6 +37,22 @@ const glossaryTerms: GlossaryTerm[] = [
     definition: 'Administrative Office disposition codes used by federal courts to classify case outcomes (e.g., judgment for plaintiff, judgment for defendant, settlement, dismissed). These codes form the basis of federal case outcome statistics.',
   },
   {
+    term: 'Bench Trial',
+    definition: 'A trial decided by a judge without a jury. In a bench trial, the judge acts as the finder of fact and determines both the facts and legal issues in the case. Bench trials are more common in federal civil litigation than jury trials.',
+  },
+  {
+    term: 'Brief',
+    definition: 'A written legal argument submitted to a court presenting the facts, law, and reasoning supporting a party\'s position. Briefs are filed before oral arguments, particularly on appeal, and serve as the primary vehicle for legal advocacy.',
+  },
+  {
+    term: 'Burden of Proof',
+    definition: 'The obligation to prove the claims or allegations presented in a case. In civil cases, the burden is "preponderance of the evidence" (more likely than not), while in criminal cases it is "beyond a reasonable doubt" (much higher standard).',
+  },
+  {
+    term: 'Certiorari',
+    definition: 'A petition to a higher court (typically the Supreme Court) requesting review of a lower court\'s decision. "Writ of Certiorari" is the formal order granting such review. The Supreme Court receives thousands of petitions annually but grants certiorari in only a small percentage of cases.',
+  },
+  {
     term: 'Circuit Court',
     definition: 'One of the 13 federal appellate courts (12 regional circuits plus the Federal Circuit) that hear appeals from district courts and federal agencies. Each circuit covers a specific geographic region or subject matter area.',
   },
@@ -50,8 +67,20 @@ const glossaryTerms: GlossaryTerm[] = [
     definition: 'A statistical measure of the precision and reliability of aggregate outcome data. It indicates a range within which the true outcome rate likely falls. Larger sample sizes produce narrower, more reliable confidence intervals.',
   },
   {
+    term: 'Continuance',
+    definition: 'A postponement or adjournment of a scheduled court proceeding. Continuances are commonly granted to allow parties more time to prepare, obtain evidence, or address other matters before trial or hearing.',
+  },
+  {
+    term: 'Counterclaim',
+    definition: 'A claim filed by the defendant against the plaintiff in response to the plaintiff\'s complaint. Counterclaims assert that the plaintiff has caused injury or loss to the defendant and seek relief from the original plaintiff.',
+  },
+  {
     term: 'CourtListener',
     definition: 'A free online legal research platform operated by the Free Law Project that aggregates 10M+ federal and state court opinions and docket records. MyCaseValue uses CourtListener data to supplement federal outcome statistics.',
+  },
+  {
+    term: 'Damages',
+    definition: 'Monetary compensation awarded by a court to compensate a plaintiff for harm, loss, or injury caused by the defendant. Damages may be compensatory (reimbursement for actual losses) or punitive (intended to punish and deter wrongdoing).',
   },
   {
     term: 'Default Judgment',
@@ -60,6 +89,10 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Defendant',
     definition: 'The party being sued or the person/entity accused of a crime. In civil litigation, the defendant is the respondent to the plaintiff\'s claims and bears the burden of defending against them.',
+  },
+  {
+    term: 'Deposition',
+    definition: 'A sworn out-of-court testimony given by a witness or party during the discovery phase, recorded by a court reporter. Depositions allow attorneys to question the other party and gather evidence before trial.',
   },
   {
     term: 'Discovery',
@@ -74,6 +107,10 @@ const glossaryTerms: GlossaryTerm[] = [
     definition: 'The final outcome or resolution of a case, including verdicts, settlements, dismissals, transfers, or other terminal events. Disposition codes are the primary way federal courts classify how cases end.',
   },
   {
+    term: 'Docket',
+    definition: 'The court\'s official record of all filings, pleadings, orders, and events in a particular case. The docket is maintained by the court clerk and provides a chronological history of case activity and is publicly accessible through PACER.',
+  },
+  {
     term: 'ERISA (Employee Retirement Income Security Act)',
     definition: 'Federal law regulating employee benefit plans, including pensions and health insurance. ERISA claims involve disputes over employee benefits and plan administration and represent a distinct category of federal civil litigation.',
   },
@@ -82,14 +119,30 @@ const glossaryTerms: GlossaryTerm[] = [
     definition: 'Federal statute prohibiting abusive, unfair, or deceptive practices by debt collectors. FDCPA violations are a major source of consumer litigation in federal courts, often handled as class actions.',
   },
   {
+    term: 'FJC IDB (Federal Judicial Center Integrated Database)',
+    definition: 'The official federal government database of all federal civil cases filed since 1970, containing 5.1M+ case records maintained by the Federal Judicial Center. It is the primary data source for MyCaseValue outcome statistics.',
+  },
+  {
     term: 'Federal District',
     definition: 'One of 94 federal districts organized geographically across the United States. Each district has at least one federal courthouse and district court, and together they handle all federal civil and criminal cases.',
     relatedLink: '/districts',
     relatedLabel: 'Explore All Districts',
   },
   {
-    term: 'FJC IDB (Federal Judicial Center Integrated Database)',
-    definition: 'The official federal government database of all federal civil cases filed since 1970, containing 5.1M+ case records maintained by the Federal Judicial Center. It is the primary data source for MyCaseValue outcome statistics.',
+    term: 'Injunction',
+    definition: 'A court order requiring a party to do something or to refrain from doing something. Injunctions are equitable remedies (not monetary damages) used to prevent irreparable harm or enforce legal duties.',
+  },
+  {
+    term: 'Interrogatories',
+    definition: 'Written questions that one party sends to another party during discovery, requiring written answers under oath. Interrogatories are a common discovery tool for obtaining factual information and admissions.',
+  },
+  {
+    term: 'Judgment',
+    definition: 'The court\'s final determination of the parties\' rights and liabilities in a case. A judgment resolves the claims presented and may award damages, grant an injunction, or determine other relief as requested.',
+  },
+  {
+    term: 'Jurisdiction',
+    definition: 'The legal authority of a court to hear and decide a particular case. Federal courts have jurisdiction over cases involving federal questions, diversity of citizenship, or other matters within the scope of federal authority.',
   },
   {
     term: 'Jury Trial',
@@ -98,6 +151,10 @@ const glossaryTerms: GlossaryTerm[] = [
   {
     term: 'Median Recovery',
     definition: 'The middle value in a distribution of settlement or judgment amounts—the amount above which 50% of recoveries fall and below which 50% fall. Median recovery is often more representative than averages of typical case outcomes.',
+  },
+  {
+    term: 'Mediation',
+    definition: 'A voluntary alternative dispute resolution process in which a neutral third party (mediator) assists the parties in negotiating a settlement. Mediation is often less costly and faster than litigation.',
   },
   {
     term: 'Motion to Dismiss',
@@ -130,6 +187,10 @@ const glossaryTerms: GlossaryTerm[] = [
     definition: 'A free, crowdsourced archive of PACER documents operated by the Free Law Project. RECAP users contribute court filings they\'ve purchased on PACER, making them freely accessible and reducing public PACER fees.',
   },
   {
+    term: 'Remand',
+    definition: 'The action of an appellate court sending a case back to a lower court for further proceedings or a new trial. A remand typically occurs when the appellate court determines the lower court made an error requiring correction.',
+  },
+  {
     term: 'Sample Size',
     definition: 'The number of cases included in a statistical aggregate or analysis. Larger sample sizes increase statistical reliability and narrow confidence intervals. MyCaseValue flags aggregates with fewer than 100 cases as having reduced confidence.',
   },
@@ -146,6 +207,10 @@ const glossaryTerms: GlossaryTerm[] = [
     definition: 'A legal deadline for filing a lawsuit, varying by case type and jurisdiction. Once the deadline passes, a claimant loses the right to sue. Statutes of limitations are a critical factor in timing case filings.',
   },
   {
+    term: 'Subpoena',
+    definition: 'A court order requiring a witness to testify at a deposition or trial, or requiring the production of documents or other evidence. Subpoenas are a fundamental tool for compelling participation in litigation.',
+  },
+  {
     term: 'Summary Judgment',
     definition: 'A court ruling that grants judgment to one party without trial, typically when no genuine dispute of material fact exists and one party is entitled to judgment as a matter of law. Summary judgment is a common pretrial disposition.',
   },
@@ -158,12 +223,20 @@ const glossaryTerms: GlossaryTerm[] = [
     definition: 'The primary federal employment discrimination statute (Title VII of the Civil Rights Act of 1964) prohibiting discrimination based on race, color, religion, sex, or national origin. Title VII claims are among the largest categories of federal civil cases.',
   },
   {
+    term: 'Tort',
+    definition: 'A civil wrong (other than breach of contract) that causes injury or loss to another and creates legal liability. Torts are the basis for personal injury lawsuits and include negligence, intentional torts, and strict liability.',
+  },
+  {
     term: 'Trial Verdict',
     definition: 'A final decision by a judge or jury resolving the disputed facts and legal issues in a case. Verdicts can be for the plaintiff (liability) or defendant (no liability) and represent roughly 1-2% of federal civil case outcomes.',
   },
   {
     term: 'Venue',
     definition: 'The geographic location where a lawsuit should be filed or heard. Federal venue rules determine which district court has proper jurisdiction over a case based on where events occurred or where parties reside.',
+  },
+  {
+    term: 'Voir Dire',
+    definition: 'The jury selection process in which attorneys question potential jurors to assess their impartiality and suitability to serve. Voir dire allows attorneys to identify biases and select a fair and impartial jury.',
   },
   {
     term: 'Win Rate',
@@ -188,6 +261,8 @@ function groupTermsByLetter(terms: GlossaryTerm[]): Map<string, GlossaryTerm[]> 
 
 export default function GlossaryPage() {
   const groupedTerms = groupTermsByLetter(glossaryTerms);
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const lettersWithTerms = new Set(Array.from(groupedTerms.keys()));
 
   return (
     <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
@@ -212,6 +287,40 @@ export default function GlossaryPage() {
           <p style={{ fontSize: '18px', lineHeight: 1.6, color: '#FFFFFF', maxWidth: '600px', fontFamily: 'var(--font-body)' }}>
             Plain-English definitions of federal court terms, data concepts, and legal statutes used throughout MyCaseValue.
           </p>
+          <div className="mt-6 inline-block px-3 py-1.5 text-[13px] font-semibold" style={{ background: 'rgba(255, 255, 255, 0.1)', color: '#FFFFFF', borderRadius: '2px' }}>
+            {glossaryTerms.length} terms defined
+          </div>
+        </div>
+      </div>
+
+      {/* Alphabet Navigation */}
+      <div style={{ background: '#FFFFFF', borderBottom: `1px solid #D5D8DC` }}>
+        <div className="max-w-3xl mx-auto px-6 py-6">
+          <div className="flex flex-wrap gap-2">
+            {alphabet.map(letter => (
+              <a
+                key={letter}
+                href={`#letter-${letter}`}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '32px',
+                  height: '32px',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  borderRadius: '2px',
+                  textDecoration: 'none',
+                  transition: 'all 200ms ease',
+                  color: lettersWithTerms.has(letter) ? '#E8171F' : '#A9AEB3',
+                  background: lettersWithTerms.has(letter) ? 'transparent' : '#F5F6F7',
+                  cursor: lettersWithTerms.has(letter) ? 'pointer' : 'default',
+                }}
+              >
+                {letter}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -220,7 +329,7 @@ export default function GlossaryPage() {
         <div style={{ background: '#FFFFFF', borderRadius: '2px', border: `1px solid #D5D8DC`, padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
           {/* Letter-grouped terms */}
           {Array.from(groupedTerms.entries()).map(([letter, terms]) => (
-            <div key={letter} className="mb-12">
+            <div key={letter} className="mb-12" id={`letter-${letter}`}>
               {/* Letter header */}
               <div style={{
                 fontSize: '18px',
@@ -302,6 +411,50 @@ export default function GlossaryPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Suggest a Term
           </a>
+        </div>
+      </div>
+
+      {/* Related Tools */}
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#212529', marginBottom: '24px', fontFamily: 'var(--font-display)' }}>
+          Related Tools
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link href="/translate">
+            <a className="group p-5" style={{ background: '#FFFFFF', border: `1px solid #D5D8DC`, borderRadius: '2px', textDecoration: 'none', display: 'block', transition: 'all 200ms ease' }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.12)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <div style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>Case Translator</div>
+              <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#455A64' }}>Convert between case types and legal citations.</div>
+            </a>
+          </Link>
+
+          <Link href="/nos-explorer">
+            <a className="group p-5" style={{ background: '#FFFFFF', border: `1px solid #D5D8DC`, borderRadius: '2px', textDecoration: 'none', display: 'block', transition: 'all 200ms ease' }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.12)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <div style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>NOS Explorer</div>
+              <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#455A64' }}>Browse and explore Nature of Suit codes.</div>
+            </a>
+          </Link>
+
+          <Link href="/search">
+            <a className="group p-5" style={{ background: '#FFFFFF', border: `1px solid #D5D8DC`, borderRadius: '2px', textDecoration: 'none', display: 'block', transition: 'all 200ms ease' }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.12)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <div style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>Case Search</div>
+              <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#455A64' }}>Search federal court cases by type and location.</div>
+            </a>
+          </Link>
+
+          <Link href="/methodology">
+            <a className="group p-5" style={{ background: '#FFFFFF', border: `1px solid #D5D8DC`, borderRadius: '2px', textDecoration: 'none', display: 'block', transition: 'all 200ms ease' }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(232, 23, 31, 0.12)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}>
+              <div style={{ fontSize: '16px', fontWeight: 600, color: '#212529', marginBottom: '8px', fontFamily: 'var(--font-display)' }}>Our Methodology</div>
+              <div style={{ fontSize: '13px', lineHeight: 1.5, color: '#455A64' }}>Learn how we analyze federal court data.</div>
+            </a>
+          </Link>
         </div>
       </div>
 
