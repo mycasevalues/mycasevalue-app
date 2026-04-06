@@ -45,7 +45,7 @@ export default function EnterprisePage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ background: '#00172E', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: '#1B3A5C', color: '#FAFBFC', padding: '80px 24px 64px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -53,7 +53,7 @@ export default function EnterprisePage() {
             fontWeight: 700,
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
-            color: '#006997',
+            color: '#6D28D9',
             marginBottom: '16px',
           }}>
             SOLUTIONS
@@ -79,7 +79,7 @@ export default function EnterprisePage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{
-              background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+              background: '#7C3AED',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '2px',
@@ -114,7 +114,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Features Grid */}
-      <section style={{ padding: '80px 24px', background: '#F5F6F7' }}>
+      <section style={{ padding: '80px 24px', background: '#F7F8FA' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -130,7 +130,7 @@ export default function EnterprisePage() {
             {FEATURES.map(f => (
               <div key={f.title} style={{
                 background: '#FFFFFF',
-                border: '1px solid #E5EBF0',
+                border: '1px solid #E5E7EB',
                 borderRadius: '2px',
                 padding: '32px 24px',
               }}>
@@ -147,7 +147,7 @@ export default function EnterprisePage() {
                 <p style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '0.875rem',
-                  color: '#455A64',
+                  color: '#4B5563',
                   lineHeight: 1.6,
                   margin: 0,
                 }}>
@@ -174,7 +174,7 @@ export default function EnterprisePage() {
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '1rem',
-            color: '#455A64',
+            color: '#4B5563',
             marginBottom: '32px',
             lineHeight: 1.6,
           }}>
@@ -182,7 +182,7 @@ export default function EnterprisePage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
-              background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+              background: '#7C3AED',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '2px',
@@ -201,7 +201,7 @@ export default function EnterprisePage() {
               color: '#212529',
               padding: '0.875rem 2rem',
               borderRadius: '2px',
-              border: '1.5px solid #D5D8DC',
+              border: '1.5px solid #E5E7EB',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               fontWeight: 700,
@@ -217,7 +217,7 @@ export default function EnterprisePage() {
       </section>
 
       {/* Related Solutions */}
-      <section style={{ padding: '64px 24px', background: '#F5F6F7' }}>
+      <section style={{ padding: '64px 24px', background: '#F7F8FA' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -234,7 +234,7 @@ export default function EnterprisePage() {
               href="/solutions/api"
               style={{
                 background: '#FFFFFF',
-                border: '1px solid #E5EBF0',
+                border: '1px solid #E5E7EB',
                 borderRadius: '2px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -256,7 +256,7 @@ export default function EnterprisePage() {
               <p style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.875rem',
-                color: '#455A64',
+                color: '#4B5563',
                 lineHeight: 1.6,
                 margin: 0,
               }}>
@@ -267,7 +267,7 @@ export default function EnterprisePage() {
               href="/solutions/small-firms"
               style={{
                 background: '#FFFFFF',
-                border: '1px solid #E5EBF0',
+                border: '1px solid #E5E7EB',
                 borderRadius: '2px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -289,7 +289,7 @@ export default function EnterprisePage() {
               <p style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.875rem',
-                color: '#455A64',
+                color: '#4B5563',
                 lineHeight: 1.6,
                 margin: 0,
               }}>
@@ -300,7 +300,7 @@ export default function EnterprisePage() {
               href="/solutions/insurance"
               style={{
                 background: '#FFFFFF',
-                border: '1px solid #E5EBF0',
+                border: '1px solid #E5E7EB',
                 borderRadius: '2px',
                 padding: '32px 24px',
                 textDecoration: 'none',
@@ -322,7 +322,7 @@ export default function EnterprisePage() {
               <p style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.875rem',
-                color: '#455A64',
+                color: '#4B5563',
                 lineHeight: 1.6,
                 margin: 0,
               }}>

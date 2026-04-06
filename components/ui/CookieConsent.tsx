@@ -41,7 +41,7 @@ export default function CookieConsent() {
         right: 0,
         zIndex: 300,
         padding: '1.5rem 1rem',
-        background: '#00172E',
+        background: '#1B3A5C',
         borderTop: '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: '0 -4px 12px rgba(0, 23, 46, 0.15)',
         animation: 'slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -107,7 +107,7 @@ export default function CookieConsent() {
             onClick={handleAccept}
             style={{
               padding: '0.625rem 1.25rem',
-              backgroundColor: '#E8171F',
+              backgroundColor: '#7C3AED',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '2px',

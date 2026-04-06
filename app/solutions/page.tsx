@@ -72,7 +72,7 @@ export default function SolutionsPage() {
       {/* Hero */}
       <section
         style={{
-          background: '#00172E',
+          background: '#1B3A5C',
           color: '#FAFBFC',
           padding: '80px 24px 64px',
         }}
@@ -85,7 +85,7 @@ export default function SolutionsPage() {
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.08em',
-              color: '#006997',
+              color: '#6D28D9',
               marginBottom: '16px',
             }}
           >
@@ -134,7 +134,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 800,
-                  color: '#006997',
+                  color: '#6D28D9',
                   marginBottom: '4px',
                 }}
               >
@@ -157,7 +157,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 800,
-                  color: '#006997',
+                  color: '#6D28D9',
                   marginBottom: '4px',
                 }}
               >
@@ -180,7 +180,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 800,
-                  color: '#006997',
+                  color: '#6D28D9',
                   marginBottom: '4px',
                 }}
               >
@@ -203,7 +203,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 800,
-                  color: '#E8171F',
+                  color: '#7C3AED',
                   marginBottom: '4px',
                 }}
               >
@@ -227,7 +227,7 @@ export default function SolutionsPage() {
       {/* Free During Launch Banner */}
       <section
         style={{
-          background: 'linear-gradient(135deg, #E8171F 0%, #d91b5a 100%)',
+          background: 'linear-gradient(135deg, #7C3AED 0%, #7C3AED 100%)',
           color: '#FAFBFC',
           padding: '24px',
           textAlign: 'center',
@@ -250,7 +250,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Grid */}
-      <section style={{ padding: '80px 24px', background: '#F5F6F7' }}>
+      <section style={{ padding: '80px 24px', background: '#F7F8FA' }}>
         <div
           className="solutions-grid-wrap"
           style={{ maxWidth: '1120px', margin: '0 auto' }}
@@ -269,7 +269,7 @@ export default function SolutionsPage() {
                 href={`/solutions/${s.slug}`}
                 style={{
                   background: '#FFFFFF',
-                  border: '1px solid #E5EBF0',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '2px',
                   padding: '32px 24px',
                   textDecoration: 'none',
@@ -296,7 +296,7 @@ export default function SolutionsPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '0.875rem',
-                    color: '#455A64',
+                    color: '#4B5563',
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -333,7 +333,7 @@ export default function SolutionsPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '1rem',
-              color: '#455A64',
+              color: '#4B5563',
               marginBottom: '32px',
               lineHeight: 1.6,
             }}
@@ -353,7 +353,7 @@ export default function SolutionsPage() {
               href="/search"
               style={{
                 background:
-                  'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+                  '#7C3AED',
                 color: '#FAFBFC',
                 padding: '0.875rem 2rem',
                 borderRadius: '2px',
@@ -375,7 +375,7 @@ export default function SolutionsPage() {
                 color: '#212529',
                 padding: '0.875rem 2rem',
                 borderRadius: '2px',
-                border: '1.5px solid #D5D8DC',
+                border: '1.5px solid #E5E7EB',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 700,

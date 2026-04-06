@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 
 export default function SpanishHowItWorksPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC' }}>
+      <div className="border-b" style={{ background: '#1B3A5C', borderColor: '#E5E7EB' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">
@@ -43,7 +43,7 @@ export default function SpanishHowItWorksPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
+            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}>
             PROCESO
           </div>
 
@@ -64,7 +64,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '2px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '2px' }}>
                   <span className="text-lg font-bold">1</span>
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function SpanishHowItWorksPage() {
                 <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
                   Describe Tu Caso
                 </h2>
-                <p style={{ color: '#455A64' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
                   Responde preguntas sencillas sobre tu situación: tipo de caso, estado, cuándo sucedió, y si otros están afectados. No se requiere información detallada ni personal.
                 </p>
               </div>
@@ -83,7 +83,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '2px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '2px' }}>
                   <span className="text-lg font-bold">2</span>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function SpanishHowItWorksPage() {
                 <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
                   Aceptas la Divulgación
                 </h2>
-                <p style={{ color: '#455A64' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
                   Confirmas que entiendes que MyCaseValue muestra datos históricos de casos similares, NO una predicción de tu caso específico. No es asesoramiento legal. No hay relación abogado-cliente.
                 </p>
               </div>
@@ -102,7 +102,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '2px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '2px' }}>
                   <span className="text-lg font-bold">3</span>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function SpanishHowItWorksPage() {
                 <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
                   Obtenemos Datos
                 </h2>
-                <p style={{ color: '#455A64' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
                   Nuestro sistema busca en 5.1M+ casos federales del Centro Judicial Federal, CourtListener y PACER para encontrar casos similares al tuyo.
                 </p>
               </div>
@@ -121,7 +121,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '2px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '2px' }}>
                   <span className="text-lg font-bold">4</span>
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function SpanishHowItWorksPage() {
                 <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
                   Analizamos Resultados
                 </h2>
-                <p style={{ color: '#455A64' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
                   Analizamos cómo terminaron esos casos: tasas de victoria, acuerdos, desestimaciones, cronogramas típicos y factores que los tribunales consideran.
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#00172E', color: 'white', borderRadius: '2px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '2px' }}>
                   <span className="text-lg font-bold">5</span>
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function SpanishHowItWorksPage() {
                 <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
                   Tu Informe
                 </h2>
-                <p style={{ color: '#455A64' }} className="text-lg leading-relaxed">
+                <p style={{ color: '#4B5563' }} className="text-lg leading-relaxed">
                   Recibe un informe gratuito que muestra lo que sucedió en casos como el tuyo: números, tasas, cronogramas. Premium desbloqueará análisis de jueces y datos de circuitos.
                 </p>
               </div>
@@ -163,23 +163,23 @@ export default function SpanishHowItWorksPage() {
             Principios Clave
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </div>
               <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
                 Privacidad Extrema
               </h3>
-              <p style={{ color: '#455A64' }}>
+              <p style={{ color: '#4B5563' }}>
                 Cero datos almacenados. Tus búsquedas son anónimas. Encriptado de extremo a extremo.
               </p>
             </div>
 
-            <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6l4 2"/>
                 </svg>
@@ -187,14 +187,14 @@ export default function SpanishHowItWorksPage() {
               <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
                 Instantáneo
               </h3>
-              <p style={{ color: '#455A64' }}>
+              <p style={{ color: '#4B5563' }}>
                 Tu informe se genera en 60 segundos. Sin espera. Sin formularios largos.
               </p>
             </div>
 
-            <div className="p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
-              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+            <div className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
+              <div className="w-12 h-12 flex items-center justify-center mb-4" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                   <path d="M9 12l2 2 4-4"/>
                   <circle cx="12" cy="12" r="10"/>
                 </svg>
@@ -202,7 +202,7 @@ export default function SpanishHowItWorksPage() {
               <h3 className="text-lg font-display font-semibold mb-2" style={{ color: '#212529' }}>
                 Basado en Hechos
               </h3>
-              <p style={{ color: '#455A64' }}>
+              <p style={{ color: '#4B5563' }}>
                 Todos los datos provienen de registros judiciales federales públicos, no opiniones.
               </p>
             </div>
@@ -210,16 +210,16 @@ export default function SpanishHowItWorksPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
+        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Listo para comenzar?
           </h2>
-          <p className="mb-6" style={{ color: '#455A64' }}>
+          <p className="mb-6" style={{ color: '#4B5563' }}>
             Genera tu informe gratuito en 60 segundos. Sin registro requerido.
           </p>
           <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '2px', background: '#E8171F', color: '#FFFFFF' }}>
+            style={{ borderRadius: '2px', background: '#7C3AED', color: '#FFFFFF' }}>
             Consultar Mi Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -228,16 +228,16 @@ export default function SpanishHowItWorksPage() {
       </div>
 
       {/* Available Tools Section */}
-      <div style={{ background: '#FFFFFF', borderTop: '1px solid #D5D8DC', padding: '48px 24px' }}>
+      <div style={{ background: '#FFFFFF', borderTop: '1px solid #E5E7EB', padding: '48px 24px' }}>
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link href="/search">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
@@ -246,9 +246,9 @@ export default function SpanishHowItWorksPage() {
             </Link>
 
             <Link href="/calculator">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
@@ -257,9 +257,9 @@ export default function SpanishHowItWorksPage() {
             </Link>
 
             <Link href="/compare">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
@@ -268,9 +268,9 @@ export default function SpanishHowItWorksPage() {
             </Link>
 
             <Link href="/nos-explorer">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
@@ -280,17 +280,17 @@ export default function SpanishHowItWorksPage() {
           </div>
 
           {/* Language Switcher */}
-          <div className="mt-12 p-6 text-center" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-            <p className="text-sm" style={{ color: '#455A64' }}>
-              This page is also available in <Link href="/how-it-works" style={{ color: '#006997', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
+          <div className="mt-12 p-6 text-center" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+            <p className="text-sm" style={{ color: '#4B5563' }}>
+              This page is also available in <Link href="/how-it-works" style={{ color: '#6D28D9', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>
         </div>
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#D5D8DC' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#455A64' }}>
+      <div className="border-t py-6 text-center" style={{ borderColor: '#E5E7EB' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#4B5563' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente.
           No somos un bufete de abogados. Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

@@ -19,9 +19,9 @@ export default function Loading() {
         }
       `}</style>
 
-      <div style={{ minHeight: '100vh', background: '#F5F6F7' }}>
+      <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
         {/* Dark Navy Header Skeleton */}
-        <div style={{ background: '#00172E', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
+        <div style={{ background: '#1B3A5C', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px' }}>
             {/* Breadcrumb skeleton */}
             <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
@@ -69,7 +69,7 @@ export default function Loading() {
         </div>
 
         {/* White Subheader Section Skeleton */}
-        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(16px, 3vw, 28px) 24px' }}>
             {/* Description line skeleton */}
             <div style={{ marginBottom: '20px' }}>
@@ -77,7 +77,7 @@ export default function Loading() {
                 style={{
                   height: '14px',
                   width: '85%',
-                  background: '#D5D8DC',
+                  background: '#E5E7EB',
                   marginBottom: '8px',
                   borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -87,7 +87,7 @@ export default function Loading() {
                 style={{
                   height: '14px',
                   width: '70%',
-                  background: '#D5D8DC',
+                  background: '#E5E7EB',
                   borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
@@ -102,7 +102,7 @@ export default function Loading() {
           <section
             style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '32px',
               marginBottom: '24px',
@@ -114,7 +114,7 @@ export default function Loading() {
                 style={{
                   height: '18px',
                   width: '30%',
-                  background: '#D5D8DC',
+                  background: '#E5E7EB',
                   marginBottom: '8px',
                   borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -124,7 +124,7 @@ export default function Loading() {
                 style={{
                   height: '14px',
                   width: '50%',
-                  background: '#D5D8DC',
+                  background: '#E5E7EB',
                   borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
                 }}
@@ -141,14 +141,14 @@ export default function Loading() {
                     padding: '24px 16px',
                     background: '#F8F9FA',
                     borderRadius: '2px',
-                    border: '1px solid #D5D8DC',
+                    border: '1px solid #E5E7EB',
                   }}
                 >
                   <div
                     style={{
                       height: '36px',
                       width: '65%',
-                      background: '#D5D8DC',
+                      background: '#E5E7EB',
                       margin: '0 auto 12px',
                       borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -158,7 +158,7 @@ export default function Loading() {
                     style={{
                       height: '12px',
                       width: '75%',
-                      background: '#D5D8DC',
+                      background: '#E5E7EB',
                       margin: '0 auto 8px',
                       borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -168,7 +168,7 @@ export default function Loading() {
                     style={{
                       height: '11px',
                       width: '60%',
-                      background: '#D5D8DC',
+                      background: '#E5E7EB',
                       margin: '0 auto',
                       borderRadius: '2px',
                       animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -183,7 +183,7 @@ export default function Loading() {
           <section
             style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '32px',
               marginBottom: '24px',
@@ -195,7 +195,7 @@ export default function Loading() {
                 style={{
                   height: '18px',
                   width: '25%',
-                  background: '#D5D8DC',
+                  background: '#E5E7EB',
                   marginBottom: '8px',
                   borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -210,7 +210,7 @@ export default function Loading() {
                 width: '100%',
                 background: '#F8F9FA',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 animation: 'pulse-skeleton 2s ease-in-out infinite',
               }}
             />
@@ -220,7 +220,7 @@ export default function Loading() {
           <section
             style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '32px',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
@@ -231,7 +231,7 @@ export default function Loading() {
                 style={{
                   height: '18px',
                   width: '25%',
-                  background: '#D5D8DC',
+                  background: '#E5E7EB',
                   marginBottom: '8px',
                   borderRadius: '2px',
                   animation: 'pulse-skeleton 2s ease-in-out infinite',
@@ -247,7 +247,7 @@ export default function Loading() {
                   style={{
                     height: '14px',
                     width: i === 4 ? '40%' : '100%',
-                    background: '#D5D8DC',
+                    background: '#E5E7EB',
                     borderRadius: '2px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}

@@ -62,7 +62,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
         }
       `}</style>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '2px', border: '1px solid #D5D8DC', overflow: 'hidden' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', borderRadius: '2px', border: '1px solid #E5E7EB', overflow: 'hidden' }}>
         {items.map((item, index) => {
           const isOpen = openIndex === index;
           const isLast = index === items.length - 1;
@@ -72,7 +72,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
               key={index}
               className={`faq-item ${isOpen ? 'active' : ''}`}
               style={{
-                borderBottom: isLast ? 'none' : '1px solid #D5D8DC',
+                borderBottom: isLast ? 'none' : '1px solid #E5E7EB',
                 backgroundColor: isOpen ? 'rgba(232, 23, 31, 0.02)' : '#FFFFFF',
                 overflow: 'hidden',
               }}
@@ -98,7 +98,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   fontWeight: 600,
                   color: '#212529',
                   transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
-                  borderLeft: isOpen ? '4px solid #E8171F' : '4px solid transparent',
+                  borderLeft: isOpen ? '4px solid #7C3AED' : '4px solid transparent',
                   paddingLeft: '16px',
                 }}
                 onMouseEnter={(e) => {
@@ -143,11 +143,11 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   style={{
                     padding: '0 20px 20px 20px',
                     paddingLeft: '20px',
-                    borderTop: '1px solid #D5D8DC',
+                    borderTop: '1px solid #E5E7EB',
                     fontFamily: 'var(--font-body)',
                     fontSize: '16px',
                     fontWeight: 400,
-                    color: '#455A64',
+                    color: '#4B5563',
                     lineHeight: '1.6',
                   }}
                 >

@@ -17,7 +17,7 @@ export default function NotFound() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '0',
-        background: '#F5F6F7',
+        background: '#F7F8FA',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         textAlign: 'center',
         position: 'relative',
@@ -31,7 +31,7 @@ export default function NotFound() {
           left: 0,
           right: 0,
           height: '8px',
-          background: '#00172E',
+          background: '#1B3A5C',
         }}
       />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -39,7 +39,7 @@ export default function NotFound() {
         style={{
           maxWidth: 480,
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: '2px',
           padding: '48px 32px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -51,7 +51,7 @@ export default function NotFound() {
             fontFamily: '"PT Mono", monospace',
             fontSize: '96px',
             fontWeight: 700,
-            color: '#455A64',
+            color: '#4B5563',
             lineHeight: 1,
             marginBottom: '16px',
             letterSpacing: '-0.02em',
@@ -75,7 +75,7 @@ export default function NotFound() {
         <p
           style={{
             fontSize: '15px',
-            color: '#455A64',
+            color: '#4B5563',
             maxWidth: '420px',
             lineHeight: 1.6,
             margin: '0 0 32px',
@@ -88,12 +88,12 @@ export default function NotFound() {
 
         <style>{`
           .notfound-link-primary:hover {
-            background: #E8171F;
+            background: #7C3AED;
             box-shadow: none;
           }
           .notfound-link-secondary:hover {
             background: #EEEEEE;
-            border-color: #D5D8DC;
+            border-color: #E5E7EB;
           }
         `}</style>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -105,7 +105,7 @@ export default function NotFound() {
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: '#E8171F',
+              background: '#7C3AED',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '2px',
@@ -133,7 +133,7 @@ export default function NotFound() {
               padding: '12px 24px',
               background: '#F5F5F5',
               color: '#212529',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               fontSize: '14px',
               fontWeight: 600,

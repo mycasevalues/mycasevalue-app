@@ -42,7 +42,7 @@ export default function CookieConsent() {
         right: 0,
         zIndex: 9999,
         background: '#FFFFFF',
-        borderTop: '1px solid #D5D8DC',
+        borderTop: '1px solid #E5E7EB',
         boxShadow: '0 -1px 8px rgba(0,0,0,0.06)',
         fontFamily: 'var(--font-body)',
         animation: 'slideUp 400ms cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -66,7 +66,7 @@ export default function CookieConsent() {
             height="18"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#455A64"
+            stroke="#4B5563"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -88,7 +88,7 @@ export default function CookieConsent() {
             <Link
               href="/privacy"
               style={{
-                color: '#006997',
+                color: '#6D28D9',
                 textDecoration: 'underline',
                 textUnderlineOffset: '2px',
                 fontWeight: 500,
@@ -115,9 +115,9 @@ export default function CookieConsent() {
               fontWeight: 600,
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               background: 'transparent',
-              color: '#455A64',
+              color: '#4B5563',
               cursor: 'pointer',
               transition: 'all 200ms',
               whiteSpace: 'nowrap',
@@ -135,7 +135,7 @@ export default function CookieConsent() {
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
               border: 'none',
-              background: '#E8171F',
+              background: '#7C3AED',
               color: '#FFFFFF',
               cursor: 'pointer',
               transition: 'all 200ms',

@@ -22,10 +22,10 @@ export default function MethodologyPage() {
       <style>{`
         .source-card {
           transition: all 0.3s ease;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
         }
         .source-card:hover {
-          border-color: #E8171F;
+          border-color: #7C3AED;
           box-shadow: 0 4px 12px rgba(232, 23, 31, 0.08);
         }
         .timeline-item {
@@ -41,13 +41,13 @@ export default function MethodologyPage() {
           top: 3.5rem;
           width: 2px;
           height: calc(100% - 2rem);
-          background-color: #D5D8DC;
+          background-color: #E5E7EB;
         }
         .timeline-number {
           width: 2rem;
           height: 2rem;
           border-radius: 50%;
-          background-color: #E8171F;
+          background-color: #7C3AED;
           color: white;
           display: flex;
           align-items: center;
@@ -69,14 +69,14 @@ export default function MethodologyPage() {
         }
         .stat-card {
           padding: 1.5rem;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           background: #FFFFFF;
           text-align: center;
           transition: all 0.3s ease;
         }
         .stat-card:hover {
-          border-color: #455A64;
+          border-color: #4B5563;
           transform: translateY(-2px);
         }
         .limitation-callout {
@@ -86,7 +86,7 @@ export default function MethodologyPage() {
           border-radius: 2px;
         }
         .public-domain-callout {
-          border-left: 3px solid #006997;
+          border-left: 3px solid #6D28D9;
           background: #F0F9FF;
           padding: 1.5rem;
           border-radius: 2px;
@@ -109,7 +109,7 @@ export default function MethodologyPage() {
         }
         .at-a-glance-card {
           padding: 1.25rem;
-          border: 2px solid #D5D8DC;
+          border: 2px solid #E5E7EB;
           border-radius: 2px;
           background: #FFFFFF;
           text-align: center;
@@ -117,7 +117,7 @@ export default function MethodologyPage() {
         .at-a-glance-stat {
           font-size: 1.5rem;
           font-weight: 900;
-          color: #E8171F;
+          color: #7C3AED;
           margin-bottom: 0.5rem;
           font-family: var(--font-display, 'system-ui');
         }
@@ -140,7 +140,7 @@ export default function MethodologyPage() {
         }
         .confidence-tier {
           padding: 1.5rem;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           background: #FFFFFF;
           text-align: center;
@@ -164,8 +164,8 @@ export default function MethodologyPage() {
           font-size: 0.7rem;
           font-weight: 600;
           font-family: var(--font-mono, 'monospace');
-          color: #455A64;
-          background: #F5F6F7;
+          color: #4B5563;
+          background: #F7F8FA;
           padding: 0.5rem;
           border-radius: 2px;
         }
@@ -175,7 +175,7 @@ export default function MethodologyPage() {
           margin-top: 1.5rem;
         }
         .stats-table th {
-          border-bottom: 2px solid #E8171F;
+          border-bottom: 2px solid #7C3AED;
           padding: 1rem;
           text-align: left;
           font-weight: 700;
@@ -184,13 +184,13 @@ export default function MethodologyPage() {
           font-family: var(--font-display, 'system-ui');
         }
         .stats-table td {
-          border-bottom: 1px solid #D5D8DC;
+          border-bottom: 1px solid #E5E7EB;
           padding: 1rem;
           font-size: 0.875rem;
-          color: #455A64;
+          color: #4B5563;
         }
         .stats-table tr:hover {
-          background: #F5F6F7;
+          background: #F7F8FA;
         }
         .stats-stat-name {
           font-weight: 700;
@@ -210,7 +210,7 @@ export default function MethodologyPage() {
         }
         .related-card {
           padding: 1.5rem;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           background: #FFFFFF;
           text-align: center;
@@ -219,7 +219,7 @@ export default function MethodologyPage() {
           transition: all 0.3s ease;
         }
         .related-card:hover {
-          border-color: #E8171F;
+          border-color: #7C3AED;
           box-shadow: 0 4px 12px rgba(232, 23, 31, 0.08);
           transform: translateY(-2px);
         }
@@ -230,13 +230,13 @@ export default function MethodologyPage() {
         .related-title {
           font-weight: 700;
           font-size: 0.875rem;
-          color: #006997;
+          color: #6D28D9;
           font-family: var(--font-display, 'system-ui');
         }
       `}</style>
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-6 text-[11px]" style={{ color: '#CCCCCC' }}>
@@ -247,8 +247,8 @@ export default function MethodologyPage() {
 
           {/* Badge and Title */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#FFF3F4', color: '#E8171F', borderRadius: '9999px' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+            style={{ background: '#FFF3F4', color: '#7C3AED', borderRadius: '9999px' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
             METHODOLOGY
           </div>
 
@@ -262,7 +262,7 @@ export default function MethodologyPage() {
       </div>
 
       {/* Data Coverage at a Glance */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#F5F6F7' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#F7F8FA' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
           <h2 className="text-lg font-display font-bold mb-6" style={{ color: '#212529' }}>Data Coverage at a Glance</h2>
           <div className="at-a-glance-grid">
@@ -300,7 +300,7 @@ export default function MethodologyPage() {
                 <div className="timeline-number">{s.step}</div>
                 <div className="pt-0.5">
                   <h3 className="text-base font-display font-semibold mb-2" style={{ color: '#212529' }}>{s.title}</h3>
-                  <p className="text-sm leading-relaxed m-0" style={{ color: '#455A64' }}>{s.desc}</p>
+                  <p className="text-sm leading-relaxed m-0" style={{ color: '#4B5563' }}>{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -340,7 +340,7 @@ export default function MethodologyPage() {
                 name: 'Bureau of Justice Statistics (BJS)',
                 description: 'The BJS publishes benchmark civil trial statistics including verdict and settlement distributions, trial rates, and case processing times for federal and state courts.',
                 badge: 'Benchmark',
-                color: '#E8171F',
+                color: '#7C3AED',
                 url: 'https://bjs.ojp.gov/library/publications/civil-bench-and-jury-trials-state-courts-2005',
                 icon: 'chart'
               },
@@ -369,7 +369,7 @@ export default function MethodologyPage() {
                     </span>
                   </div>
                 </div>
-                <p className="text-xs leading-relaxed m-0 mb-3" style={{ color: '#455A64' }}>{source.description}</p>
+                <p className="text-xs leading-relaxed m-0 mb-3" style={{ color: '#4B5563' }}>{source.description}</p>
                 {source.url && (
                   <a href={source.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[11px] font-semibold transition-opacity hover:opacity-70" style={{ color: source.color }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -386,7 +386,7 @@ export default function MethodologyPage() {
           <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Data Accuracy & Confidence</h2>
 
           <div className="mb-8">
-            <p className="text-sm leading-relaxed mb-6" style={{ color: '#455A64' }}>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: '#4B5563' }}>
               We assign confidence levels to our statistics based on sample size. A larger dataset provides more reliable and stable estimates of outcomes. Confidence levels indicate how much we trust the statistical measures for a particular case type, jurisdiction, or aggregation level.
             </p>
           </div>
@@ -407,8 +407,8 @@ export default function MethodologyPage() {
           </div>
 
           <div className="limitation-callout mt-8">
-            <p className="text-sm font-semibold mb-3" style={{ color: '#455A64' }}>Known Limitations:</p>
-            <ul className="space-y-2 text-sm m-0 pl-4" style={{ color: '#455A64' }}>
+            <p className="text-sm font-semibold mb-3" style={{ color: '#4B5563' }}>Known Limitations:</p>
+            <ul className="space-y-2 text-sm m-0 pl-4" style={{ color: '#4B5563' }}>
               <li><strong>Sealed settlements</strong> are not captured in public court records.</li>
               <li><strong>Pro se case outcomes</strong> may be underrepresented in aggregate statistics.</li>
               <li><strong>Multi-district litigation</strong> is counted per district, which may inflate case counts for coordinated actions.</li>
@@ -423,12 +423,12 @@ export default function MethodologyPage() {
             {[
               { v: '5.1M+', l: 'Federal Cases', c: '#212529' },
               { v: '50+', l: 'Years of Data', c: '#07874A' },
-              { v: '20+', l: 'Case Categories', c: '#E8171F' },
-              { v: '94', l: 'Federal Districts', c: '#006997' },
+              { v: '20+', l: 'Case Categories', c: '#7C3AED' },
+              { v: '94', l: 'Federal Districts', c: '#6D28D9' },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
                 <div className="text-3xl sm:text-4xl font-display font-extrabold mb-2" style={{ color: stat.c }}>{stat.v}</div>
-                <div className="text-sm font-semibold" style={{ color: '#455A64' }}>{stat.l}</div>
+                <div className="text-sm font-semibold" style={{ color: '#4B5563' }}>{stat.l}</div>
               </div>
             ))}
           </div>
@@ -437,7 +437,7 @@ export default function MethodologyPage() {
         {/* Section 5: Frequently Cited Statistics */}
         <section className="mb-16">
           <h2 className="text-2xl font-display font-bold mb-8" style={{ color: '#212529' }}>Frequently Cited Statistics</h2>
-          <p className="text-sm leading-relaxed mb-6" style={{ color: '#455A64' }}>
+          <p className="text-sm leading-relaxed mb-6" style={{ color: '#4B5563' }}>
             These five metrics are the most commonly referenced on MyCaseValue. Each has a specific calculation method rooted in federal court records and administrative classifications.
           </p>
           <table className="stats-table">
@@ -482,7 +482,7 @@ export default function MethodologyPage() {
         <section className="mb-16">
           <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>Important Limitations</h2>
           <div className="limitation-callout">
-            <ul className="space-y-3 text-sm leading-relaxed m-0 pl-4" style={{ color: '#455A64' }}>
+            <ul className="space-y-3 text-sm leading-relaxed m-0 pl-4" style={{ color: '#4B5563' }}>
               <li>MyCaseValue displays <strong style={{ color: '#212529' }}>aggregate historical data</strong> from public records. It does not evaluate, predict, or assess individual cases.</li>
               <li>Win rates reflect <strong style={{ color: '#212529' }}>final dispositions coded by AO classifications</strong>, which may not capture the full complexity of case outcomes (e.g., partial victories, consent decrees).</li>
               <li>Settlement amounts are not systematically reported in federal court records. Recovery ranges are derived from cases where monetary awards were documented.</li>
@@ -523,11 +523,11 @@ export default function MethodologyPage() {
         </section>
 
         {/* CTA */}
-        <div className="text-center pt-12 border-t" style={{ borderColor: '#D5D8DC' }}>
-          <p className="text-sm mb-6" style={{ color: '#455A64' }}>Questions about our methodology?</p>
+        <div className="text-center pt-12 border-t" style={{ borderColor: '#E5E7EB' }}>
+          <p className="text-sm mb-6" style={{ color: '#4B5563' }}>Questions about our methodology?</p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '2px', background: '#E8171F', color: '#FFFFFF', border: '1px solid #E8171F' }}>
+            style={{ borderRadius: '2px', background: '#7C3AED', color: '#FFFFFF', border: '1px solid #7C3AED' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contact Support
           </a>

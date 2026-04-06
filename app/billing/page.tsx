@@ -72,8 +72,8 @@ export default function BillingPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ width: 32, height: 32, border: '3px solid #D5D8DC', borderTopColor: '#E8171F', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+      <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#7C3AED', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -83,9 +83,9 @@ export default function BillingPage() {
   const details = PLAN_DETAILS[currentPlan] || PLAN_DETAILS.free;
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: '#00172E', color: '#FFFFFF', padding: '32px 20px' }}>
+      <div style={{ backgroundColor: '#1B3A5C', color: '#FFFFFF', padding: '32px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '20px' }}>
@@ -102,7 +102,7 @@ export default function BillingPage() {
 
           {/* Badge and Title */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
-            <span style={{ padding: '6px 14px', backgroundColor: '#E8171F', color: '#FFFFFF', borderRadius: '2px', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <span style={{ padding: '6px 14px', backgroundColor: '#7C3AED', color: '#FFFFFF', borderRadius: '2px', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               BILLING
             </span>
           </div>
@@ -127,17 +127,17 @@ export default function BillingPage() {
             </div>
           )}
           {/* Current Plan Card */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #D5D8DC', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
               <div>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 8px 0' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase' as const, letterSpacing: '0.5px', margin: '0 0 8px 0' }}>
                   Current Plan
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <span className="font-display" style={{ fontSize: '24px', fontWeight: 700, color: '#212529' }}>
                     {details.name}
                   </span>
-                  <span style={{ padding: '4px 12px', borderRadius: '2px', fontSize: '12px', fontWeight: 700, backgroundColor: 'rgba(0,105,151,0.06)', color: '#006997' }}>
+                  <span style={{ padding: '4px 12px', borderRadius: '2px', fontSize: '12px', fontWeight: 700, backgroundColor: 'rgba(0,105,151,0.06)', color: '#6D28D9' }}>
                     Active
                   </span>
                 </div>
@@ -147,25 +147,25 @@ export default function BillingPage() {
                   {details.price}
                 </span>
                 {currentPlan === 'attorney' && (
-                  <p style={{ fontSize: '12px', color: '#455A64', margin: '4px 0 0 0' }}>per month</p>
+                  <p style={{ fontSize: '12px', color: '#4B5563', margin: '4px 0 0 0' }}>per month</p>
                 )}
               </div>
             </div>
 
             {planInfo?.grantedAt && (
-              <p style={{ fontSize: '13px', color: '#455A64', margin: '16px 0 0 0' }}>
+              <p style={{ fontSize: '13px', color: '#4B5563', margin: '16px 0 0 0' }}>
                 Active since {new Date(planInfo.grantedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
             {planInfo?.expiresAt && (
-              <p style={{ fontSize: '13px', color: '#455A64', margin: '4px 0 0 0' }}>
+              <p style={{ fontSize: '13px', color: '#4B5563', margin: '4px 0 0 0' }}>
                 Next billing date: {new Date(planInfo.expiresAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
               </p>
             )}
           </div>
 
           {/* Plan Features */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #D5D8DC', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 20px 0' }}>
               Your Plan Includes
             </h2>
@@ -180,23 +180,23 @@ export default function BillingPage() {
               ))}
             </div>
 
-            <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #E5EBF0' }}>
-              <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#E8171F', color: '#FFFFFF', borderRadius: '2px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+            <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #E5E7EB' }}>
+              <Link href="/pricing" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#7C3AED', color: '#FFFFFF', borderRadius: '2px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
                 {currentPlan === 'free' ? 'Upgrade Plan' : 'Change Plan'}
               </Link>
             </div>
           </div>
 
           {/* Payment Method (placeholder for future Stripe) */}
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #D5D8DC', marginBottom: '24px' }}>
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
             <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 700, color: '#212529', margin: '0 0 16px 0' }}>
               Payment Method
             </h2>
-            <div style={{ backgroundColor: '#FAFBFC', borderRadius: '2px', padding: '24px', border: '2px dashed #D5D8DC', textAlign: 'center' }}>
-              <p style={{ fontSize: '14px', color: '#455A64', margin: '0 0 4px 0' }}>
+            <div style={{ backgroundColor: '#FAFBFC', borderRadius: '2px', padding: '24px', border: '2px dashed #E5E7EB', textAlign: 'center' }}>
+              <p style={{ fontSize: '14px', color: '#4B5563', margin: '0 0 4px 0' }}>
                 No payment method on file
               </p>
-              <p style={{ fontSize: '12px', color: '#455A64', margin: 0 }}>
+              <p style={{ fontSize: '12px', color: '#4B5563', margin: 0 }}>
                 All features are currently free during our beta period
               </p>
             </div>
@@ -204,7 +204,7 @@ export default function BillingPage() {
 
           {/* Back link */}
           <div style={{ textAlign: 'center' }}>
-            <Link href="/account" style={{ fontSize: '14px', color: '#006997', textDecoration: 'none' }}>
+            <Link href="/account" style={{ fontSize: '14px', color: '#6D28D9', textDecoration: 'none' }}>
               Back to Account Settings
             </Link>
           </div>

@@ -92,7 +92,7 @@ export default function ResetPasswordPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#00172E',
+          background: '#1B3A5C',
         }}
       >
         <p
@@ -116,7 +116,7 @@ export default function ResetPasswordPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#00172E',
+        background: '#1B3A5C',
         padding: '20px',
       }}
     >
@@ -135,12 +135,12 @@ export default function ResetPasswordPage() {
           animation: fadeIn 0.4s ease-out;
         }
         .auth-input:focus {
-          border-color: #006997 !important;
+          border-color: #6D28D9 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(0, 105, 151, 0.1) !important;
+          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
         }
         .auth-btn:hover:not(:disabled) {
-          background-color: #CC1019 !important;
+          background-color: #B91C1C !important;
           transform: translateY(-1px);
         }
         .auth-link:hover {
@@ -153,7 +153,7 @@ export default function ResetPasswordPage() {
           width: '100%',
           maxWidth: '440px',
           backgroundColor: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: '2px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           padding: '32px',
@@ -166,7 +166,7 @@ export default function ResetPasswordPage() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
-              color: '#006997',
+              color: '#6D28D9',
               textDecoration: 'none',
               fontWeight: 500,
             }}
@@ -207,7 +207,7 @@ export default function ResetPasswordPage() {
                 margin: '0 auto 20px',
               }}
             >
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
@@ -227,7 +227,7 @@ export default function ResetPasswordPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#455A64',
+                color: '#4B5563',
                 margin: 0,
                 lineHeight: 1.5,
               }}
@@ -255,7 +255,7 @@ export default function ResetPasswordPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
-                color: '#455A64',
+                color: '#4B5563',
                 margin: '0 0 28px 0',
                 lineHeight: 1.5,
               }}
@@ -268,7 +268,7 @@ export default function ResetPasswordPage() {
               <div
                 style={{
                   padding: '12px 16px',
-                  backgroundColor: 'rgba(204,16,25,0.06)',
+                  backgroundColor: 'rgba(124, 58, 237, 0.06)',
                   border: '1px solid rgba(204,16,25,0.20)',
                   borderRadius: '2px',
                   marginBottom: '20px',
@@ -278,7 +278,7 @@ export default function ResetPasswordPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#E8171F',
+                    color: '#7C3AED',
                     margin: 0,
                   }}
                 >
@@ -317,7 +317,7 @@ export default function ResetPasswordPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 14px',
-                    border: '1px solid #D5D8DC',
+                    border: '1px solid #E5E7EB',
                     borderRadius: '2px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
@@ -357,7 +357,7 @@ export default function ResetPasswordPage() {
                     width: '100%',
                     height: '48px',
                     padding: '12px 14px',
-                    border: '1px solid #D5D8DC',
+                    border: '1px solid #E5E7EB',
                     borderRadius: '2px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '14px',
@@ -378,7 +378,7 @@ export default function ResetPasswordPage() {
                   width: '100%',
                   height: '48px',
                   padding: '0 16px',
-                  backgroundColor: '#E8171F',
+                  backgroundColor: '#7C3AED',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '2px',
@@ -401,7 +401,7 @@ export default function ResetPasswordPage() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#006997',
+                  color: '#6D28D9',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}

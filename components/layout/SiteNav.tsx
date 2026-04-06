@@ -2,7 +2,7 @@
  * SiteNav.tsx — Two-tier navigation with white top bar and dark navy sub-nav.
  *
  * Tier 1 (White, 64px): MyCaseValue logo left, auth buttons right
- * Tier 2 (Dark navy #00172E, 48px): "MyCaseValue+" text left, FREE TRIAL button, nav links right
+ * Tier 2 (Dark navy #1B3A5C, 48px): "MyCaseValue+" text left, FREE TRIAL button, nav links right
  *
  * Both sticky; sub-nav hides on mobile (<768px) and shows hamburger menu instead.
  */
@@ -155,7 +155,7 @@ export default function SiteNav() {
           background: '#FFFFFF',
           backdropFilter: undefined,
           WebkitBackdropFilter: undefined,
-          borderBottom: '1px solid #E5EBF0',
+          borderBottom: '1px solid #E5E7EB',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -199,7 +199,7 @@ export default function SiteNav() {
                 border: 'none',
                 padding: '8px 12px',
                 cursor: 'pointer',
-                color: '#455A64',
+                color: '#4B5563',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -228,11 +228,11 @@ export default function SiteNav() {
                       padding: '8px 16px',
                       fontSize: '14px',
                       fontWeight: 500,
-                      color: '#455A64',
+                      color: '#4B5563',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       borderRadius: '2px',
-                      border: '1px solid #D5D8DC',
+                      border: '1px solid #E5E7EB',
                       transition: 'all 150ms ease',
                     }}
                   >
@@ -266,11 +266,11 @@ export default function SiteNav() {
                       padding: '8px 16px',
                       fontSize: '14px',
                       fontWeight: 500,
-                      color: '#455A64',
+                      color: '#4B5563',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       borderRadius: '2px',
-                      border: '1px solid #D5D8DC',
+                      border: '1px solid #E5E7EB',
                       transition: 'all 150ms',
                     }}
                   >
@@ -650,7 +650,7 @@ export default function SiteNav() {
           right: 0,
           zIndex: 198,
           background: '#1B3A5C',
-          borderBottom: '1px solid #D5D8DC',
+          borderBottom: '1px solid #E5E7EB',
           padding: '32px 24px',
           maxHeight: searchOpen ? '400px' : '0',
           overflow: 'hidden',
@@ -689,7 +689,7 @@ export default function SiteNav() {
               fontSize: '16px',
               fontFamily: 'var(--font-body)',
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               transition: 'border-color 150ms',
               outline: 'none',
@@ -776,7 +776,7 @@ export default function SiteNav() {
           background: '#1B3A5C',
           backdropFilter: undefined,
           WebkitBackdropFilter: undefined,
-          borderLeft: '1px solid #E5EBF0',
+          borderLeft: '1px solid #E5E7EB',
           boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
           transform: mobileOpen ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
@@ -805,7 +805,7 @@ export default function SiteNav() {
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
               minHeight: '44px',
-              background: isActive(link.href) ? '#E8171F' : 'transparent',
+              background: isActive(link.href) ? '#7C3AED' : 'transparent',
               transition: 'all 150ms ease',
             }}
             className="site-nav-mobile-link"
@@ -930,7 +930,7 @@ export default function SiteNav() {
           left: 0;
           min-width: 280px;
           background: #FFFFFF;
-          border: 1px solid #E5EBF0;
+          border: 1px solid #E5E7EB;
           border-top: 3px solid #7C3AED;
           border-radius: 0 0 2px 2px;
           box-shadow: 0 12px 32px rgba(0,0,0,0.14);
@@ -956,19 +956,19 @@ export default function SiteNav() {
         .nav-mega-heading {
           font-size: 11px;
           font-weight: 700;
-          color: #455A64;
+          color: #4B5563;
           text-transform: uppercase;
           letter-spacing: 0.08em;
           font-family: var(--font-body);
           padding-bottom: 10px;
           margin-bottom: 4px;
-          border-bottom: 1px solid #E5EBF0;
+          border-bottom: 1px solid #E5E7EB;
         }
         .nav-mega a {
           display: block;
           padding: 6px 0;
           font-size: 13px;
-          color: #455A64;
+          color: #4B5563;
           text-decoration: none;
           font-family: var(--font-body);
           transition: color 120ms;
@@ -976,7 +976,7 @@ export default function SiteNav() {
         .nav-mega a:hover { color: #7C3AED; }
         .nav-mega-footer-row {
           grid-column: 1 / -1;
-          border-top: 1px solid #E5EBF0;
+          border-top: 1px solid #E5E7EB;
           margin-top: 12px;
           padding-top: 12px;
         }

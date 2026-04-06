@@ -50,14 +50,14 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <style>{`
         .blog-breadcrumb-link:hover {
           color: #FFFFFF !important;
         }
         .blog-card {
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           transition: all 0.3s ease;
           position: relative;
@@ -70,7 +70,7 @@ export default function BlogPage() {
           left: 0;
           right: 0;
           height: 0;
-          background: #E8171F;
+          background: #7C3AED;
           border-radius: 2px 4px 0 0;
           transition: height 0.3s ease;
         }
@@ -78,7 +78,7 @@ export default function BlogPage() {
         .blog-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-          border-color: #E8171F;
+          border-color: #7C3AED;
         }
 
         .blog-card:hover::before {
@@ -92,7 +92,7 @@ export default function BlogPage() {
 
         .featured-post {
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
         }
 
@@ -108,7 +108,7 @@ export default function BlogPage() {
 
         .category-badge {
           background: #FFF3F4;
-          color: #E8171F;
+          color: #7C3AED;
           padding: 4px 10px;
           border-radius: 2px;
           font-size: 12px;
@@ -118,7 +118,7 @@ export default function BlogPage() {
 
         .sidebar-filter {
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           padding: 24px;
         }
@@ -126,19 +126,19 @@ export default function BlogPage() {
         .filter-item {
           padding: 10px 0;
           font-size: 14px;
-          color: #455A64;
+          color: #4B5563;
           cursor: pointer;
           transition: color 0.2s ease;
           font-family: var(--font-body);
         }
 
         .filter-item:hover {
-          color: #E8171F;
+          color: #7C3AED;
         }
 
         .featured-research-card {
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           padding: 24px;
           transition: all 0.3s ease;
@@ -147,16 +147,16 @@ export default function BlogPage() {
         .featured-research-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          border-color: #E8171F;
+          border-color: #7C3AED;
         }
 
         .topic-pill {
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 24px;
           padding: 8px 16px;
           font-size: 13px;
-          color: #455A64;
+          color: #4B5563;
           font-weight: 500;
           display: inline-block;
           transition: all 0.2s ease;
@@ -165,14 +165,14 @@ export default function BlogPage() {
         }
 
         .topic-pill:hover {
-          border-color: #E8171F;
+          border-color: #7C3AED;
           background: #FFF3F4;
-          color: #E8171F;
+          color: #7C3AED;
         }
 
         .related-tools-card {
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           padding: 24px;
           text-decoration: none;
@@ -185,7 +185,7 @@ export default function BlogPage() {
         .related-tools-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          border-color: #006997;
+          border-color: #6D28D9;
         }
 
         @media (max-width: 768px) {
@@ -207,7 +207,7 @@ export default function BlogPage() {
       />
 
       {/* Header */}
-      <div style={{ background: '#00172E', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#1B3A5C', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb Navigation */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
@@ -215,7 +215,7 @@ export default function BlogPage() {
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>/</span>
             <span style={{ color: '#FFFFFF' }}>Blog</span>
           </div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '2px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#E8171F' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '2px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#7C3AED' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             BLOG
           </div>
@@ -247,13 +247,13 @@ export default function BlogPage() {
                   </h2>
                   <p
                     className="mb-8 leading-relaxed"
-                    style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)' }}
+                    style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)' }}
                   >
                     {featuredPost.description}
                   </p>
                 </div>
                 <div>
-                  <div style={{ fontSize: '12px', color: '#455A64', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+                  <div style={{ fontSize: '12px', color: '#4B5563', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
                     <span className="font-medium">{featuredPost.author}</span>
                     <span className="mx-2">•</span>
                     <time>{featuredPost.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
@@ -264,7 +264,7 @@ export default function BlogPage() {
                     href={`/blog/${featuredPost.slug}`}
                     className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
                     style={{
-                      background: '#E8171F',
+                      background: '#7C3AED',
                       color: '#FFFFFF',
                       borderRadius: '2px',
                     }}
@@ -340,12 +340,12 @@ export default function BlogPage() {
 
                     <p
                       className="mb-6 line-clamp-3"
-                      style={{ fontSize: '14px', color: '#455A64', lineHeight: '1.5', fontFamily: 'var(--font-body)', minHeight: '63px' }}
+                      style={{ fontSize: '14px', color: '#4B5563', lineHeight: '1.5', fontFamily: 'var(--font-body)', minHeight: '63px' }}
                     >
                       {post.description}
                     </p>
 
-                    <div style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                    <div style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)' }}>
                       <span className="font-medium">{post.author}</span>
                       <span className="mx-1.5">•</span>
                       <time>{post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
@@ -356,7 +356,7 @@ export default function BlogPage() {
                       className="inline-flex items-center gap-1 mt-4 px-3 py-2 rounded text-xs font-semibold transition-all"
                       style={{
                         background: '#FFF3F4',
-                        color: '#E8171F',
+                        color: '#7C3AED',
                       }}
                     >
                       Read More
@@ -376,7 +376,7 @@ export default function BlogPage() {
           <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
             Featured Research
           </h2>
-          <p style={{ fontSize: '16px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '16px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
             Explore our latest in-depth analyses on federal litigation trends, settlement patterns, and case outcomes.
           </p>
         </div>
@@ -408,10 +408,10 @@ export default function BlogPage() {
               <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', margin: '0 0 12px 0', lineHeight: 1.4, fontFamily: 'var(--font-display)' }}>
                 {research.title}
               </h3>
-              <p style={{ fontSize: '14px', color: '#455A64', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '14px', color: '#4B5563', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                 {research.description}
               </p>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: '#006997', textDecoration: 'none' }}>
+              <span style={{ fontSize: '13px', fontWeight: 600, color: '#6D28D9', textDecoration: 'none' }}>
                 Read more →
               </span>
             </a>
@@ -425,7 +425,7 @@ export default function BlogPage() {
           <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
             Browse by Topic
           </h2>
-          <p style={{ fontSize: '16px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '16px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
             Filter articles by practice area and research focus.
           </p>
         </div>
@@ -456,7 +456,7 @@ export default function BlogPage() {
           <h2 className="text-3xl font-display font-bold mb-2" style={{ color: '#212529' }}>
             Related Tools
           </h2>
-          <p style={{ fontSize: '16px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '16px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
             Use these interactive tools to explore the data discussed in our research.
           </p>
         </div>
@@ -480,11 +480,11 @@ export default function BlogPage() {
                 <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#212529', margin: '0 0 8px 0', fontFamily: 'var(--font-display)' }}>
                   {tool.name}
                 </h3>
-                <p style={{ fontSize: '13px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+                <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
                   Explore federal case data interactively.
                 </p>
               </div>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: '#006997', marginTop: '16px', textDecoration: 'none' }}>
+              <span style={{ fontSize: '13px', fontWeight: 600, color: '#6D28D9', marginTop: '16px', textDecoration: 'none' }}>
                 Explore →
               </span>
             </Link>
@@ -494,17 +494,17 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <section className="text-center p-12 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
+        <section className="text-center p-12 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Want deeper analysis? Try Attorney Mode
           </h2>
-          <p className="mb-8 max-w-2xl mx-auto" style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '16px' }}>
+          <p className="mb-8 max-w-2xl mx-auto" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', fontSize: '16px' }}>
             Access advanced case analytics, predictive insights, and strategic recommendations powered by 5.1M+ federal court cases.
           </p>
           <a
             href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-sm font-semibold transition-all"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}
+            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}
           >
             Explore Attorney Mode
             <ArrowRightIcon size={16} />

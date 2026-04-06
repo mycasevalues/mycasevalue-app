@@ -60,7 +60,7 @@ export function Logo({ size = 'lg', showText = true, darkMode = false }: LogoPro
             style={{
               fontSize,
               letterSpacing: '-0.5px',
-              color: '#E8171F',
+              color: '#7C3AED',
             }}
           >
             Value

@@ -70,7 +70,7 @@ export async function GET(request: Request) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#00172E',
+            background: '#1B3A5C',
             fontFamily: 'system-ui, -apple-system, sans-serif',
             position: 'relative',
             overflow: 'hidden',
@@ -112,14 +112,14 @@ export async function GET(request: Request) {
               xmlns="http://www.w3.org/2000/svg"
             >
               {/* Dot */}
-              <circle cx="8" cy="14" r="4.5" fill="#E8171F" />
+              <circle cx="8" cy="14" r="4.5" fill="#7C3AED" />
               {/* Slash */}
               <line
                 x1="18"
                 y1="6"
                 x2="10"
                 y2="22"
-                stroke="#E8171F"
+                stroke="#7C3AED"
                 strokeWidth="3"
                 strokeLinecap="round"
               />
@@ -185,17 +185,17 @@ export async function GET(request: Request) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#E8171F', fontWeight: '700' }}>5.1M+</span>
+              <span style={{ color: '#7C3AED', fontWeight: '700' }}>5.1M+</span>
               <span style={{ color: '#a0a9d4' }}>Cases</span>
             </div>
-            <div style={{ color: '#E8171F' }}>•</div>
+            <div style={{ color: '#7C3AED' }}>•</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#E8171F', fontWeight: '700' }}>84</span>
+              <span style={{ color: '#7C3AED', fontWeight: '700' }}>84</span>
               <span style={{ color: '#a0a9d4' }}>Types</span>
             </div>
-            <div style={{ color: '#E8171F' }}>•</div>
+            <div style={{ color: '#7C3AED' }}>•</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#E8171F', fontWeight: '700' }}>94</span>
+              <span style={{ color: '#7C3AED', fontWeight: '700' }}>94</span>
               <span style={{ color: '#a0a9d4' }}>Districts</span>
             </div>
           </div>
@@ -205,7 +205,7 @@ export async function GET(request: Request) {
             style={{
               width: '100px',
               height: '3px',
-              background: 'linear-gradient(90deg, #E8171F 0%, transparent 100%)',
+              background: 'linear-gradient(90deg, #7C3AED 0%, transparent 100%)',
               marginTop: '32px',
               position: 'relative',
               zIndex: 1,

@@ -141,7 +141,7 @@ export default function JudgesPage() {
   const allJudges = getAllJudges();
 
   return (
-    <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
+    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       <style>{`
         .judge-district-link {
           display: flex;
@@ -154,23 +154,23 @@ export default function JudgesPage() {
           text-decoration: none;
           font-family: var(--font-body);
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           transition: all 0.15s ease;
         }
         .judge-district-link:hover {
-          background: #F5F6F7;
-          border-color: #006997;
-          color: #006997;
+          background: #F7F8FA;
+          border-color: #6D28D9;
+          color: #6D28D9;
         }
         .judge-district-link .arrow {
           font-size: 12px;
-          color: #006997;
+          color: #6D28D9;
           font-weight: 500;
         }
       `}</style>
 
       {/* Header */}
-      <div style={{ borderBottom: '1px solid #D5D8DC', background: '#00172E' }}>
+      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#1B3A5C' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <div style={{ paddingTop: 24, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
@@ -184,7 +184,7 @@ export default function JudgesPage() {
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 700,
-                letterSpacing: '1.5px', marginBottom: 16, background: '#E8171F',
+                letterSpacing: '1.5px', marginBottom: 16, background: '#7C3AED',
                 color: '#FFFFFF', textTransform: 'uppercase',
               }}
             >
@@ -244,12 +244,12 @@ export default function JudgesPage() {
               { icon: '-', title: 'Comparison Analytics', desc: 'How the judge compares to the district and circuit average on key metrics.' },
               { icon: '-', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
             ].map((item, idx) => (
-              <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #D5D8DC', background: '#FFFFFF' }}>
+              <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
                 <div style={{ fontSize: 20, marginBottom: 8 }}>{item.icon}</div>
                 <h3 style={{ fontSize: 15, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: 13, lineHeight: 1.6, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
+                <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
                   {item.desc}
                 </p>
               </div>
@@ -270,12 +270,12 @@ export default function JudgesPage() {
                 return d.some(dl => j.court.includes(dl.replace('District of ', '')));
               });
               return (
-                <div key={circuit.name} style={{ padding: 24, borderRadius: 2, border: '1px solid #D5D8DC', background: '#FFFFFF' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid #D5D8DC' }}>
+                <div key={circuit.name} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid #E5E7EB' }}>
                     <h3 style={{ fontSize: 17, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', margin: 0 }}>
                       {circuit.name}
                     </h3>
-                    <span style={{ fontSize: 12, color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                    <span style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
                       {circuit.districts.length} district{circuit.districts.length !== 1 ? 's' : ''}
                     </span>
                   </div>
@@ -294,7 +294,7 @@ export default function JudgesPage() {
         </section>
 
         {/* CTA */}
-        <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #D5D8DC', background: '#00172E', textAlign: 'center', marginBottom: 64 }}>
+        <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#1B3A5C', textAlign: 'center', marginBottom: 64 }}>
           <h2 style={{ fontSize: 24, fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
             All judge analytics are free during launch
           </h2>
@@ -305,7 +305,7 @@ export default function JudgesPage() {
             href="/search"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              padding: '12px 28px', borderRadius: 2, background: '#E8171F',
+              padding: '12px 28px', borderRadius: 2, background: '#7C3AED',
               color: '#FFFFFF', fontSize: 16, fontWeight: 600, textDecoration: 'none', fontFamily: 'var(--font-body)',
             }}
           >
@@ -315,11 +315,11 @@ export default function JudgesPage() {
         </section>
 
         {/* Disclaimer */}
-        <div style={{ padding: 24, border: '1px solid #D5D8DC', borderRadius: 2, background: '#FFFFFF' }}>
+        <div style={{ padding: 24, border: '1px solid #E5E7EB', borderRadius: 2, background: '#FFFFFF' }}>
           <h3 style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px', color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
             Data Methodology
           </h3>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
+          <p style={{ fontSize: 12, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
             Judge analytics are derived from publicly available federal court records and PACER data. Metrics include motion grant rates, case duration, plaintiff win rates, and settlement patterns. Data is updated periodically and covers active Article III judges in the 94 federal judicial districts. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>

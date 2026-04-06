@@ -38,7 +38,7 @@ export default function NewsletterSignup() {
     <div
       style={{
         background: '#FFFFFF',
-        border: '1px solid #D5D8DC',
+        border: '1px solid #E5E7EB',
         borderRadius: '2px',
         padding: '32px',
       }}
@@ -48,7 +48,7 @@ export default function NewsletterSignup() {
         style={{
           fontSize: '11px',
           fontWeight: 600,
-          color: '#E8171F',
+          color: '#7C3AED',
           textTransform: 'uppercase',
           letterSpacing: '0.08em',
           marginBottom: '8px',
@@ -76,7 +76,7 @@ export default function NewsletterSignup() {
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '14px',
-          color: '#455A64',
+          color: '#4B5563',
           margin: '0 0 24px',
           lineHeight: 1.6,
         }}
@@ -147,7 +147,7 @@ export default function NewsletterSignup() {
               height: '48px',
               padding: '12px 16px',
               borderRadius: '2px',
-              border: `4px solid ${status === 'error' ? '#E8171F' : '#D5D8DC'}`,
+              border: `4px solid ${status === 'error' ? '#7C3AED' : '#E5E7EB'}`,
               background: '#FFFFFF',
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
@@ -162,18 +162,18 @@ export default function NewsletterSignup() {
             disabled={status === 'loading'}
             onMouseEnter={(e) => {
               if (status !== 'loading') {
-                e.currentTarget.style.background = '#CC1019';
+                e.currentTarget.style.background = '#B91C1C';
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#E8171F';
+              e.currentTarget.style.background = '#7C3AED';
             }}
             style={{
               height: '48px',
               padding: '0 24px',
               borderRadius: '2px',
               border: 'none',
-              background: '#E8171F',
+              background: '#7C3AED',
               color: '#FFFFFF',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
@@ -196,7 +196,7 @@ export default function NewsletterSignup() {
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            color: '#E8171F',
+            color: '#7C3AED',
             margin: '12px 0 0',
           }}
         >
@@ -209,7 +209,7 @@ export default function NewsletterSignup() {
         style={{
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
-          color: '#455A64',
+          color: '#4B5563',
           margin: '16px 0 0',
           lineHeight: 1.5,
         }}

@@ -234,31 +234,31 @@ const totalCasesAllDistricts = Object.values(REAL_DATA).reduce((sum, d: any) => 
 
 export default function DistrictsPage() {
   return (
-    <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
+    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       <style>{`
-        a.lex-link { color: #006997; text-decoration: none; }
+        a.lex-link { color: #6D28D9; text-decoration: none; }
         a.lex-link:hover { text-decoration: underline; }
       `}</style>
 
       {/* Breadcrumb */}
       <nav style={{
         background: '#FFFFFF',
-        borderBottom: '1px solid #D5D8DC',
+        borderBottom: '1px solid #E5E7EB',
         padding: '12px 0',
         fontSize: 13,
         fontFamily: 'var(--font-body)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <Link href="/" className="lex-link" style={{ fontWeight: 500 }}>Home</Link>
-          <span style={{ color: '#D5D8DC', margin: '0 8px' }}>›</span>
+          <span style={{ color: '#E5E7EB', margin: '0 8px' }}>›</span>
           <span style={{ color: '#212529', fontWeight: 600 }}>Districts</span>
         </div>
       </nav>
 
       {/* Hero */}
       <header style={{
-        background: '#00172E',
-        borderBottom: '1px solid #D5D8DC',
+        background: '#1B3A5C',
+        borderBottom: '1px solid #E5E7EB',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
@@ -266,7 +266,7 @@ export default function DistrictsPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 6,
-            background: '#E8171F',
+            background: '#7C3AED',
             color: '#FFFFFF',
             padding: '4px 12px',
             borderRadius: 2,
@@ -325,7 +325,7 @@ export default function DistrictsPage() {
                 <div style={{
                   fontSize: 24,
                   fontWeight: 800,
-                  color: '#E8171F',
+                  color: '#7C3AED',
                   fontFamily: 'var(--font-display)',
                 }}>
                   {stat.v}
@@ -358,7 +358,7 @@ export default function DistrictsPage() {
           marginTop: 48,
           padding: 'clamp(24px, 4vw, 32px)',
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: 2,
         }}>
           <h3 style={{
@@ -374,7 +374,7 @@ export default function DistrictsPage() {
           </h3>
           <p style={{
             fontSize: 13,
-            color: '#455A64',
+            color: '#4B5563',
             lineHeight: 1.6,
             margin: '0 0 16px',
             maxWidth: 800,
@@ -383,7 +383,7 @@ export default function DistrictsPage() {
             the Federal Judicial Center Integrated Database covering {(totalCasesAllDistricts / 1_000_000).toFixed(1)}M+ federal civil cases
             filed between 2000 and 2024. Individual case type outcomes may vary significantly from district averages.
           </p>
-          <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: 12, color: '#455A64' }}>
+          <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: 12, color: '#4B5563' }}>
             <span>
               <strong style={{ color: '#07874A' }}>●</strong> Win rate ≥ 50%
             </span>
@@ -391,7 +391,7 @@ export default function DistrictsPage() {
               <strong style={{ color: '#D97706' }}>●</strong> Win rate 35–49%
             </span>
             <span>
-              <strong style={{ color: '#E8171F' }}>●</strong> Win rate {'<'} 35%
+              <strong style={{ color: '#7C3AED' }}>●</strong> Win rate {'<'} 35%
             </span>
           </div>
         </section>
@@ -401,12 +401,12 @@ export default function DistrictsPage() {
           marginTop: 24,
           padding: 'clamp(16px, 4vw, 24px)',
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: 2,
         }}>
           <p style={{
             fontSize: 13,
-            color: '#455A64',
+            color: '#4B5563',
             margin: 0,
             lineHeight: 1.6,
           }}>

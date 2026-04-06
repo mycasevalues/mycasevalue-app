@@ -95,7 +95,7 @@ export default function TranslatePage() {
   return (
     <div className="min-h-screen" style={{ background: '#F8F9FA' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
         <div className="max-w-4xl mx-auto px-6 py-4">
           {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-2 mb-12 text-sm" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
@@ -107,7 +107,7 @@ export default function TranslatePage() {
           {/* Header Content */}
           <div className="pb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               TRANSLATE
             </div>
@@ -124,11 +124,11 @@ export default function TranslatePage() {
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Translator Form */}
-        <div className="p-6 sm:p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
+        <div className="p-6 sm:p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
           {/* Free Access Banner */}
           <div className="mb-8 p-4 flex items-center gap-3" style={{ background: '#F0F9FF', border: '1px solid #BAE6FD', borderRadius: '2px' }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#07874A', flexShrink: 0 }} />
-            <p className="text-sm" style={{ color: '#006997', fontFamily: 'var(--font-body)', margin: 0 }}>
+            <p className="text-sm" style={{ color: '#6D28D9', fontFamily: 'var(--font-body)', margin: 0 }}>
               <strong>Unlimited translations</strong> — all features are free during launch
             </p>
           </div>
@@ -149,22 +149,22 @@ export default function TranslatePage() {
               className="w-full px-4 py-4 border text-sm transition-all focus:outline-none focus:ring-2 resize-none"
               style={{
                 borderRadius: '2px',
-                borderColor: '#D5D8DC',
+                borderColor: '#E5E7EB',
                 background: '#F8F9FA',
                 color: '#212529',
                 fontFamily: 'var(--font-body)',
                 minHeight: '140px',
               }}
             />
-            <p className="text-[11px] mt-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <p className="text-[11px] mt-2" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
               Minimum 10 characters, maximum 3,000 characters.
             </p>
           </div>
 
           {/* Error Display */}
           {error && (
-            <div className="mb-6 p-4" style={{ background: 'rgba(232,23,31,0.06)', border: '1px solid #E8171F', borderRadius: '2px' }}>
-              <p className="text-sm" style={{ color: '#E8171F', fontFamily: 'var(--font-body)' }}>
+            <div className="mb-6 p-4" style={{ background: 'rgba(232,23,31,0.06)', border: '1px solid #7C3AED', borderRadius: '2px' }}>
+              <p className="text-sm" style={{ color: '#7C3AED', fontFamily: 'var(--font-body)' }}>
                 {error}
               </p>
             </div>
@@ -179,11 +179,11 @@ export default function TranslatePage() {
               borderRadius: '2px',
               background:
                 !input.trim() || loading
-                  ? '#D5D8DC'
-                  : '#E8171F',
+                  ? '#E5E7EB'
+                  : '#7C3AED',
               color:
                 !input.trim() || loading
-                  ? '#455A64'
+                  ? '#4B5563'
                   : '#FFFFFF',
               fontFamily: 'var(--font-body)',
               cursor:
@@ -212,7 +212,7 @@ export default function TranslatePage() {
 
         {/* Translation Result */}
         {translation && (
-          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#E8171F', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #E8171F', borderRadius: '2px' }}>
+          <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#7C3AED', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #7C3AED', borderRadius: '2px' }}>
             <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Plain English Translation
             </h2>
@@ -224,7 +224,7 @@ export default function TranslatePage() {
               }}>
               <p className="whitespace-pre-wrap">{translation}</p>
             </div>
-            <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: '#455A64', fontFamily: 'var(--font-body)', borderColor: '#D5D8DC' }}>
+            <p className="text-[11px] mt-6 pt-6 border-t" style={{ color: '#4B5563', fontFamily: 'var(--font-body)', borderColor: '#E5E7EB' }}>
               Unlimited translations available. Paste more legal text above to translate.
             </p>
           </div>
@@ -243,7 +243,7 @@ export default function TranslatePage() {
                 className="p-4 border text-left transition-all hover:border-2 hover:shadow-sm active:scale-[0.98]"
                 style={{
                   borderRadius: '2px',
-                  borderColor: '#D5D8DC',
+                  borderColor: '#E5E7EB',
                   background: '#FFFFFF',
                   color: '#212529',
                   fontFamily: 'var(--font-body)',
@@ -268,7 +268,7 @@ export default function TranslatePage() {
                 key={i}
                 style={{
                   background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '2px',
                   padding: '12px',
                 }}
@@ -276,7 +276,7 @@ export default function TranslatePage() {
                 <p className="font-bold text-[13px] mb-2" style={{ color: '#212529' }}>
                   {item.term}
                 </p>
-                <p className="text-[11px]" style={{ color: '#455A64', lineHeight: '1.4' }}>
+                <p className="text-[11px]" style={{ color: '#4B5563', lineHeight: '1.4' }}>
                   {item.definition}
                 </p>
               </div>
@@ -312,7 +312,7 @@ export default function TranslatePage() {
                     key={i}
                     className="p-4 border"
                     style={{
-                      borderColor: '#D5D8DC',
+                      borderColor: '#E5E7EB',
                       background: '#FFFFFF',
                       borderRadius: '2px',
                     }}
@@ -322,7 +322,7 @@ export default function TranslatePage() {
                         <p className="text-[13px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-body)' }}>
                           {item.input.substring(0, 80)}{item.input.length > 80 ? '...' : ''}
                         </p>
-                        <p className="text-[11px]" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                        <p className="text-[11px]" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
                           {item.timestamp.toLocaleTimeString()}
                         </p>
                       </div>
@@ -330,7 +330,7 @@ export default function TranslatePage() {
                         onClick={() => loadFromHistory(item)}
                         className="px-3 py-2 text-[11px] font-semibold whitespace-nowrap transition-all hover:shadow-sm active:scale-[0.98]"
                         style={{
-                          background: '#006997',
+                          background: '#6D28D9',
                           color: '#FFFFFF',
                           borderRadius: '2px',
                           border: 'none',
@@ -354,7 +354,7 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '2px',
-              borderColor: '#D5D8DC',
+              borderColor: '#E5E7EB',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
@@ -362,7 +362,7 @@ export default function TranslatePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Case Search
             </p>
-            <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
               Search federal court cases by nature of suit or keyword.
             </p>
           </Link>
@@ -371,7 +371,7 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '2px',
-              borderColor: '#D5D8DC',
+              borderColor: '#E5E7EB',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
@@ -379,7 +379,7 @@ export default function TranslatePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Settlement Calculator
             </p>
-            <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
               Estimate settlement ranges based on case data.
             </p>
           </Link>
@@ -388,7 +388,7 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '2px',
-              borderColor: '#D5D8DC',
+              borderColor: '#E5E7EB',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
@@ -396,7 +396,7 @@ export default function TranslatePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Legal Glossary
             </p>
-            <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
               Browse all federal court term definitions.
             </p>
           </Link>
@@ -405,7 +405,7 @@ export default function TranslatePage() {
             className="p-6 border transition-all hover:shadow-md hover:border-2"
             style={{
               borderRadius: '2px',
-              borderColor: '#D5D8DC',
+              borderColor: '#E5E7EB',
               background: '#FFFFFF',
               boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
             }}
@@ -413,18 +413,18 @@ export default function TranslatePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.8px] mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
               Odds Checker
             </p>
-            <p className="text-sm" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+            <p className="text-sm" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
               Check your case type win probability.
             </p>
           </Link>
         </div>
 
         {/* Disclaimer */}
-        <div className="mt-8 p-6 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
+        <div className="mt-8 p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderRadius: '2px' }}>
           <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-3" style={{ color: '#212529', fontFamily: 'var(--font-display)' }}>
             Important Disclaimer
           </h2>
-          <p className="text-[11px] leading-relaxed" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+          <p className="text-[11px] leading-relaxed" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
             This translator provides informal explanations of legal terminology and should not be considered legal advice. Legal language can have nuanced meanings depending on context, jurisdiction, and specific case facts. Always consult with a qualified attorney for authoritative interpretations of legal documents. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
         </div>

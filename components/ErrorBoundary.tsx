@@ -72,7 +72,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#F5F6F7',
+          background: '#F7F8FA',
           fontFamily: 'var(--font-body)',
           padding: 24,
         }}>
@@ -80,14 +80,14 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
             maxWidth: 440,
             textAlign: 'center',
             background: '#FFFFFF',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
             borderRadius: 4,
             padding: '48px 32px',
             boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
           }}>
             <div style={{
               width: 64, height: 64, borderRadius: '50%',
-              background: '#E8171F',
+              background: '#7C3AED',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               margin: '0 auto 20px',
             }}>
@@ -96,7 +96,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
               </svg>
             </div>
             <h2 style={{ fontSize: 22, fontWeight: 700, color: '#212529', marginBottom: 8, fontFamily: 'var(--font-display)' }}>Something went wrong</h2>
-            <p style={{ fontSize: 14, color: '#455A64', lineHeight: 1.6, marginBottom: 24 }}>
+            <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.6, marginBottom: 24 }}>
               We encountered an unexpected error. Your data is safe — please try refreshing the page.
             </p>
             <button type="button"
@@ -104,7 +104,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
               style={{
                 padding: '0 32px',
                 height: '48px',
-                background: '#E8171F',
+                background: '#7C3AED',
                 color: 'white',
                 border: 'none',
                 borderRadius: 4,
@@ -115,7 +115,7 @@ export default class ErrorBoundary extends React.Component<{ children: React.Rea
             >
               Refresh page
             </button>
-            <p style={{ fontSize: 11, color: '#455A64', marginTop: 16 }}>
+            <p style={{ fontSize: 11, color: '#4B5563', marginTop: 16 }}>
               If this persists, contact support@mycasevalue.com
             </p>
           </div>

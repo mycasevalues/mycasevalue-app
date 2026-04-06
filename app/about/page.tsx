@@ -52,7 +52,7 @@ const jsonLd = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <style>{`
         .about-badge {
           display: inline-flex;
@@ -65,7 +65,7 @@ export default function AboutPage() {
           letter-spacing: 1.5px;
           text-transform: uppercase;
           background: #FFF3F4;
-          color: #E8171F;
+          color: #7C3AED;
         }
 
         .mission-hero h1 {
@@ -80,7 +80,7 @@ export default function AboutPage() {
         .mission-hero p {
           font-family: var(--font-body);
           font-size: 1.125rem;
-          color: #455A64;
+          color: #4B5563;
           line-height: 1.8;
         }
 
@@ -105,7 +105,7 @@ export default function AboutPage() {
             left: 0;
             right: 0;
             height: 2px;
-            background: #D5D8DC;
+            background: #E5E7EB;
             z-index: 0;
           }
         }
@@ -123,13 +123,13 @@ export default function AboutPage() {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: #E8171F;
+          background: #7C3AED;
           color: #FFFFFF;
           font-family: var(--font-display);
           font-weight: 700;
           font-size: 1rem;
           margin: 0 auto 1rem;
-          box-shadow: 0 2px 8px rgba(232, 23, 31, 0.2);
+          box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
           flex-shrink: 0;
         }
 
@@ -144,7 +144,7 @@ export default function AboutPage() {
         .step-description {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #455A64;
+          color: #4B5563;
           line-height: 1.6;
         }
 
@@ -163,14 +163,14 @@ export default function AboutPage() {
         .source-card {
           padding: 1.5rem;
           border-radius: 2px;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           background: #FFFFFF;
           transition: all 0.2s ease;
         }
 
         .source-card:hover {
-          border-color: #E8171F;
-          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.1);
+          border-color: #7C3AED;
+          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
           transform: translateY(-2px);
         }
 
@@ -196,7 +196,7 @@ export default function AboutPage() {
         .source-description {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #455A64;
+          color: #4B5563;
           line-height: 1.6;
         }
 
@@ -206,7 +206,7 @@ export default function AboutPage() {
           gap: 1.5rem;
           padding: 2rem;
           border-radius: 2px;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
 
@@ -225,7 +225,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 2rem;
           font-weight: 700;
-          color: #E8171F;
+          color: #7C3AED;
           line-height: 1.2;
         }
 
@@ -235,14 +235,14 @@ export default function AboutPage() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
-          color: #455A64;
+          color: #4B5563;
           margin-top: 0.75rem;
         }
 
         .team-box {
           padding: 2rem;
           border-radius: 2px;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
 
@@ -262,7 +262,7 @@ export default function AboutPage() {
         .team-box li {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #455A64;
+          color: #4B5563;
           line-height: 1.8;
           margin-bottom: 0.75rem;
         }
@@ -276,7 +276,7 @@ export default function AboutPage() {
           text-align: center;
           padding: 3rem 2rem;
           border-radius: 2px;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
 
@@ -291,7 +291,7 @@ export default function AboutPage() {
         .cta-text {
           font-family: var(--font-body);
           font-size: 1rem;
-          color: #455A64;
+          color: #4B5563;
           margin-bottom: 1.5rem;
           max-width: 28rem;
           margin-left: auto;
@@ -309,7 +309,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 0.875rem;
           font-weight: 700;
-          background: #E8171F;
+          background: #7C3AED;
           color: #FFFFFF;
           text-decoration: none;
           transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -318,9 +318,9 @@ export default function AboutPage() {
         }
 
         .cta-button:hover {
-          background: #CC1019;
+          background: #B91C1C;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(232, 23, 31, 0.3);
+          box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
         }
 
         .section-heading {
@@ -334,7 +334,7 @@ export default function AboutPage() {
         .section-description {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #455A64;
+          color: #4B5563;
           margin-bottom: 1.5rem;
           line-height: 1.6;
         }
@@ -355,7 +355,7 @@ export default function AboutPage() {
         .number-stat-card {
           padding: 1.5rem;
           border-radius: 2px;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           background: #FFFFFF;
           text-align: center;
         }
@@ -364,7 +364,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 2.5rem;
           font-weight: 700;
-          color: #E8171F;
+          color: #7C3AED;
           line-height: 1;
           margin-bottom: 0.5rem;
         }
@@ -375,7 +375,7 @@ export default function AboutPage() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
-          color: #455A64;
+          color: #4B5563;
         }
 
         .differentiators-grid {
@@ -394,10 +394,10 @@ export default function AboutPage() {
         .differentiator-card {
           padding: 1.5rem;
           border-radius: 2px;
-          border-top: 3px solid #E8171F;
-          border-left: 1px solid #D5D8DC;
-          border-right: 1px solid #D5D8DC;
-          border-bottom: 1px solid #D5D8DC;
+          border-top: 3px solid #7C3AED;
+          border-left: 1px solid #E5E7EB;
+          border-right: 1px solid #E5E7EB;
+          border-bottom: 1px solid #E5E7EB;
           background: #FFFFFF;
         }
 
@@ -412,7 +412,7 @@ export default function AboutPage() {
         .differentiator-description {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #455A64;
+          color: #4B5563;
           line-height: 1.6;
         }
 
@@ -432,7 +432,7 @@ export default function AboutPage() {
         .tool-card {
           padding: 1.25rem;
           border-radius: 2px;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           background: #FFFFFF;
           transition: all 0.2s ease;
           display: flex;
@@ -441,8 +441,8 @@ export default function AboutPage() {
         }
 
         .tool-card:hover {
-          border-color: #E8171F;
-          box-shadow: 0 4px 12px rgba(232, 23, 31, 0.1);
+          border-color: #7C3AED;
+          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
           transform: translateY(-2px);
         }
 
@@ -456,7 +456,7 @@ export default function AboutPage() {
         .tool-description {
           font-family: var(--font-body);
           font-size: 0.75rem;
-          color: #455A64;
+          color: #4B5563;
           line-height: 1.5;
           flex: 1;
         }
@@ -465,7 +465,7 @@ export default function AboutPage() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: #006997;
+          color: #6D28D9;
           text-decoration: none;
           font-family: var(--font-body);
           font-size: 0.75rem;
@@ -474,12 +474,12 @@ export default function AboutPage() {
         }
 
         .tool-link:hover {
-          color: #E8171F;
+          color: #7C3AED;
         }
 
         .contact-section {
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           padding: 2rem;
         }
@@ -501,7 +501,7 @@ export default function AboutPage() {
         .contact-block p {
           font-family: var(--font-body);
           font-size: 0.875rem;
-          color: #455A64;
+          color: #4B5563;
           line-height: 1.6;
           margin-bottom: 0.75rem;
         }
@@ -510,7 +510,7 @@ export default function AboutPage() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: #006997;
+          color: #6D28D9;
           text-decoration: none;
           font-family: var(--font-body);
           font-size: 0.875rem;
@@ -520,7 +520,7 @@ export default function AboutPage() {
         }
 
         .contact-link:hover {
-          color: #E8171F;
+          color: #7C3AED;
         }
 
         @media (max-width: 640px) {
@@ -553,7 +553,7 @@ export default function AboutPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.08)', background: '#00172E' }}>
+      <div className="border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.08)', background: '#1B3A5C' }}>
         <div className="max-w-4xl mx-auto px-6 py-12 sm:py-16">
           <div style={{ marginBottom: '12px' }}>
             <a href="/" style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontFamily: 'var(--font-body)', transition: 'color 0.2s ease' }}>
@@ -563,7 +563,7 @@ export default function AboutPage() {
             <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', fontFamily: 'var(--font-body)' }}>About</span>
           </div>
           <div className="about-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
             ABOUT US
@@ -576,7 +576,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24">
           <div className="mission-hero">
             <h1 style={{ color: '#212529' }}>Democratizing Access to Federal Court Data</h1>
-            <p style={{ color: '#455A64' }}>
+            <p style={{ color: '#4B5563' }}>
               Federal court data exists in the public domain, yet it remains locked away in systems designed for clerks and attorneys.
               MyCaseValue makes outcome data—win rates, settlement ranges, timelines, and recovery patterns—accessible to everyone making
               informed decisions about their legal situation.
@@ -586,7 +586,7 @@ export default function AboutPage() {
       </div>
 
       {/* By the Numbers Section */}
-      <div style={{ background: '#F5F6F7', borderBottom: '1px solid rgba(0, 0, 0, 0.08)' }}>
+      <div style={{ background: '#F7F8FA', borderBottom: '1px solid rgba(0, 0, 0, 0.08)' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
           <h2 className="section-heading">By the Numbers</h2>
           <div className="by-numbers-grid">
@@ -608,7 +608,7 @@ export default function AboutPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-16" style={{ background: '#F5F6F7' }}>
+      <div className="max-w-4xl mx-auto px-6 py-16" style={{ background: '#F7F8FA' }}>
         <div className="space-y-20">
 
           {/* How It Works Section - Timeline */}
@@ -701,7 +701,7 @@ export default function AboutPage() {
                   name: 'PACER',
                   description: 'The Federal Judiciary\'s official electronic records system. All docket sheets and filings are sourced from PACER.',
                   icon: (
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2">
                       <path d="M20 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"/>
                       <path d="M8 9h8M8 13h8"/>
                     </svg>
@@ -794,11 +794,11 @@ export default function AboutPage() {
           <section>
             <h2 className="section-heading">Team & Vision</h2>
             <div className="team-box">
-              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#455A64', margin: '0 0 1rem 0' }}>
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>
                 MyCaseValue is built by legal researchers, data engineers, and technologists who believe transparency drives better decisions.
                 We are not a law firm. We do not provide legal advice. We are a data platform.
               </p>
-              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#455A64', margin: '0 0 1rem 0' }}>
+              <p style={{ fontSize: '1rem', lineHeight: '1.8', color: '#4B5563', margin: '0 0 1rem 0' }}>
                 Our team is committed to:
               </p>
               <ul>

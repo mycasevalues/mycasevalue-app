@@ -18,7 +18,7 @@ interface DistrictChartsProps {
   stats: DistrictStats;
 }
 
-const CHART_PALETTE = ['#E8171F', '#00172E', '#006997', '#455A64', '#D5D8DC', '#0080B8', '#00A4D9', '#1AA8D1', '#004D6D', '#003A52', '#002838'];
+const CHART_PALETTE = ['#7C3AED', '#1B3A5C', '#6D28D9', '#4B5563', '#E5E7EB', '#0080B8', '#00A4D9', '#1AA8D1', '#004D6D', '#003A52', '#002838'];
 
 export default function DistrictCharts({ stats }: DistrictChartsProps) {
   // Prepare data for top case types chart (take top 8)
@@ -42,7 +42,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           className="p-6 sm:p-8"
           style={{
             background: '#FFFFFF',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
             borderRadius: '2px',
           }}
         >
@@ -61,19 +61,19 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               layout="vertical"
               margin={{ top: 5, right: 30, left: 200, bottom: 5 }}
             >
-              <XAxis type="number" stroke="#455A64" />
-              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }} />
+              <XAxis type="number" stroke="#4B5563" />
+              <YAxis dataKey="label" type="category" width={200} tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }} />
               <Tooltip
                 contentStyle={{
                   background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '2px',
                   color: '#212529',
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',
                 }}
               />
-              <Bar dataKey="count" fill="#006997" radius={[0, 8, 8, 0]} />
+              <Bar dataKey="count" fill="#6D28D9" radius={[0, 8, 8, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -85,7 +85,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
           className="p-6 sm:p-8"
           style={{
             background: '#FFFFFF',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
             borderRadius: '2px',
           }}
         >
@@ -116,7 +116,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               <Tooltip
                 contentStyle={{
                   background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '2px',
                   color: '#212529',
                   fontFamily: 'var(--font-body)',
@@ -127,7 +127,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
               <Legend
                 verticalAlign="bottom"
                 height={36}
-                wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#455A64' }}
+                wrapperStyle={{ fontSize: '13px', fontFamily: 'var(--font-body)', color: '#4B5563' }}
                 formatter={(value) => value}
               />
             </PieChart>

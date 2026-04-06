@@ -92,7 +92,7 @@ interface StateData {
 function getWinRateColor(winRate: number): string {
   if (winRate >= 50) return '#07874A'; // green
   if (winRate >= 35) return '#FF9D00'; // amber
-  return '#E8171F'; // red
+  return '#7C3AED'; // red
 }
 
 // Helper function to get top/bottom states
@@ -225,7 +225,7 @@ export default function DistrictHeatmapPage() {
         }
         .state-card:hover {
           box-shadow: 0 2px 8px rgba(0, 23, 46, 0.1);
-          border-color: #E8171F;
+          border-color: #7C3AED;
         }
       `}</style>
 
@@ -234,9 +234,9 @@ export default function DistrictHeatmapPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      <div style={{ backgroundColor: '#F5F6F7', minHeight: '100vh' }}>
+      <div style={{ backgroundColor: '#F7F8FA', minHeight: '100vh' }}>
         {/* Header */}
-        <header style={{ backgroundColor: '#00172E', borderBottom: '1px solid #D5D8DC' }}>
+        <header style={{ backgroundColor: '#1B3A5C', borderBottom: '1px solid #E5E7EB' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '48px 24px' }}>
             {/* Breadcrumb */}
             <nav style={{ fontSize: '14px', color: '#FFFFFF', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-body)' }}>
@@ -250,7 +250,7 @@ export default function DistrictHeatmapPage() {
               <span
                 style={{
                   display: 'inline-block',
-                  backgroundColor: '#E8171F',
+                  backgroundColor: '#7C3AED',
                   color: '#FFFFFF',
                   padding: '6px 12px',
                   borderRadius: '2px',
@@ -306,11 +306,11 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '16px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
               }}
             >
-              <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
                 Total States & Territories
               </p>
               <p
@@ -329,11 +329,11 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '16px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
               }}
             >
-              <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
                 National Average
               </p>
               <p
@@ -352,11 +352,11 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '16px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
               }}
             >
-              <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
                 Highest Rate
               </p>
               <p
@@ -370,7 +370,7 @@ export default function DistrictHeatmapPage() {
               >
                 {highestRate.toFixed(1)}%
               </p>
-              <p style={{ fontSize: '11px', color: '#455A64', margin: '4px 0 0 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '11px', color: '#4B5563', margin: '4px 0 0 0', fontFamily: 'var(--font-body)' }}>
                 {highestState?.name}
               </p>
             </div>
@@ -378,11 +378,11 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '16px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
               }}
             >
-              <p style={{ fontSize: '13px', color: '#455A64', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 8px 0', fontFamily: 'var(--font-body)' }}>
                 Lowest Rate
               </p>
               <p
@@ -396,7 +396,7 @@ export default function DistrictHeatmapPage() {
               >
                 {lowestRate.toFixed(1)}%
               </p>
-              <p style={{ fontSize: '11px', color: '#455A64', margin: '4px 0 0 0', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '11px', color: '#4B5563', margin: '4px 0 0 0', fontFamily: 'var(--font-body)' }}>
                 {lowestState?.name}
               </p>
             </div>
@@ -407,7 +407,7 @@ export default function DistrictHeatmapPage() {
             style={{
               padding: '24px',
               borderRadius: '2px',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               backgroundColor: '#FFFFFF',
               marginBottom: '32px',
             }}
@@ -446,20 +446,20 @@ export default function DistrictHeatmapPage() {
                     style={{
                       width: '100%',
                       height: `${(bin.count / maxBinCount) * 160}px`,
-                      backgroundColor: '#006997',
+                      backgroundColor: '#6D28D9',
                       borderRadius: '2px',
                       transition: 'background-color 0.2s ease',
                       cursor: 'pointer',
                       minHeight: bin.count > 0 ? '4px' : '0px',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#004B7A')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#006997')}
+                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#6D28D9')}
                     title={`${bin.label}: ${bin.count} states`}
                   />
                   <p
                     style={{
                       fontSize: '12px',
-                      color: '#455A64',
+                      color: '#4B5563',
                       marginTop: '8px',
                       margin: '8px 0 0 0',
                       fontFamily: 'var(--font-body)',
@@ -510,7 +510,7 @@ export default function DistrictHeatmapPage() {
                   width: '100%',
                   padding: '12px 16px',
                   borderRadius: '2px',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   backgroundColor: '#FFFFFF',
                   color: '#212529',
                   height: '48px',
@@ -520,8 +520,8 @@ export default function DistrictHeatmapPage() {
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s ease',
                 }}
-                onFocus={(e) => (e.target.style.borderColor = '#E8171F')}
-                onBlur={(e) => (e.target.style.borderColor = '#D5D8DC')}
+                onFocus={(e) => (e.target.style.borderColor = '#7C3AED')}
+                onBlur={(e) => (e.target.style.borderColor = '#E5E7EB')}
               />
             </div>
 
@@ -547,7 +547,7 @@ export default function DistrictHeatmapPage() {
                   width: '100%',
                   padding: '12px 16px',
                   borderRadius: '2px',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   backgroundColor: '#FFFFFF',
                   color: '#212529',
                   height: '48px',
@@ -558,8 +558,8 @@ export default function DistrictHeatmapPage() {
                   transition: 'border-color 0.2s ease',
                   cursor: 'pointer',
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = '#E8171F')}
-                onBlur={(e) => (e.currentTarget.style.borderColor = '#D5D8DC')}
+                onFocus={(e) => (e.currentTarget.style.borderColor = '#7C3AED')}
+                onBlur={(e) => (e.currentTarget.style.borderColor = '#E5E7EB')}
               >
                 <option value="name">Name (A-Z)</option>
                 <option value="win-rate-high">Win Rate (Highest First)</option>
@@ -579,7 +579,7 @@ export default function DistrictHeatmapPage() {
               }}
             >
               {filteredStates.map((state) => {
-                const barColor = state.winRate >= 55 ? '#07874A' : state.winRate < 45 ? '#E8171F' : '#006997';
+                const barColor = state.winRate >= 55 ? '#07874A' : state.winRate < 45 ? '#7C3AED' : '#6D28D9';
                 const districtSlug = state.code.toLowerCase();
                 return (
                   <a
@@ -589,7 +589,7 @@ export default function DistrictHeatmapPage() {
                     style={{
                       padding: '16px',
                       borderRadius: '2px',
-                      border: '1px solid #D5D8DC',
+                      border: '1px solid #E5E7EB',
                       backgroundColor: '#FFFFFF',
                       boxSizing: 'border-box',
                       textDecoration: 'none',
@@ -614,7 +614,7 @@ export default function DistrictHeatmapPage() {
                         <p
                           style={{
                             fontSize: '11px',
-                            color: '#455A64',
+                            color: '#4B5563',
                             margin: 0,
                             fontFamily: 'var(--font-mono)',
                           }}
@@ -648,14 +648,14 @@ export default function DistrictHeatmapPage() {
                     </div>
 
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <p style={{ fontSize: '11px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+                      <p style={{ fontSize: '11px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
                         {state.winRate < 45
                           ? 'Below average'
                           : state.winRate <= 52
                             ? 'Near average'
                             : 'Above average'}
                       </p>
-                      <span style={{ fontSize: '11px', color: '#006997', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+                      <span style={{ fontSize: '11px', color: '#6D28D9', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                         View details →
                       </span>
                     </div>
@@ -665,7 +665,7 @@ export default function DistrictHeatmapPage() {
             </div>
           ) : (
             <div style={{ textAlign: 'center', padding: '48px 16px' }}>
-              <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)' }}>
+              <p style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)' }}>
                 No states found matching "{searchQuery}". Try a different search.
               </p>
             </div>
@@ -685,7 +685,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '24px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
               }}
             >
@@ -710,14 +710,14 @@ export default function DistrictHeatmapPage() {
                       gap: '12px',
                       padding: '12px',
                       borderRadius: '2px',
-                      backgroundColor: '#F5F6F7',
+                      backgroundColor: '#F7F8FA',
                     }}
                   >
                     <div
                       style={{
                         fontSize: '14px',
                         fontWeight: '700',
-                        color: '#455A64',
+                        color: '#4B5563',
                         minWidth: '24px',
                         fontFamily: 'var(--font-body)',
                       }}
@@ -786,7 +786,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '24px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
               }}
             >
@@ -811,14 +811,14 @@ export default function DistrictHeatmapPage() {
                       gap: '12px',
                       padding: '12px',
                       borderRadius: '2px',
-                      backgroundColor: '#F5F6F7',
+                      backgroundColor: '#F7F8FA',
                     }}
                   >
                     <div
                       style={{
                         fontSize: '14px',
                         fontWeight: '700',
-                        color: '#455A64',
+                        color: '#4B5563',
                         minWidth: '24px',
                         fontFamily: 'var(--font-body)',
                       }}
@@ -887,11 +887,11 @@ export default function DistrictHeatmapPage() {
           <div
             style={{
               borderRadius: '2px',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               padding: '32px',
               textAlign: 'center',
               marginBottom: '48px',
-              backgroundColor: '#00172E',
+              backgroundColor: '#1B3A5C',
             }}
           >
             <h2
@@ -925,7 +925,7 @@ export default function DistrictHeatmapPage() {
                 borderRadius: '2px',
                 fontWeight: '600',
                 color: '#FFFFFF',
-                backgroundColor: '#E8171F',
+                backgroundColor: '#7C3AED',
                 textDecoration: 'none',
                 fontSize: '14px',
                 fontFamily: 'var(--font-body)',
@@ -933,7 +933,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#D01419')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#E8171F')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#7C3AED')}
             >
               Go to Case Calculator
             </a>
@@ -941,7 +941,7 @@ export default function DistrictHeatmapPage() {
         </main>
 
         {/* Related Pages */}
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px', backgroundColor: '#F5F6F7' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '32px 16px', backgroundColor: '#F7F8FA' }}>
           <h2
             style={{
               fontSize: '20px',
@@ -965,7 +965,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '20px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
                 textDecoration: 'none',
                 display: 'block',
@@ -973,11 +973,11 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#E8171F';
+                e.currentTarget.style.borderColor = '#7C3AED';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#D5D8DC';
+                e.currentTarget.style.borderColor = '#E5E7EB';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
@@ -985,7 +985,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '700',
-                  color: '#00172E',
+                  color: '#1B3A5C',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -995,7 +995,7 @@ export default function DistrictHeatmapPage() {
               <p
                 style={{
                   fontSize: '13px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   margin: 0,
                   fontFamily: 'var(--font-body)',
                 }}
@@ -1009,7 +1009,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '20px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
                 textDecoration: 'none',
                 display: 'block',
@@ -1017,11 +1017,11 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#E8171F';
+                e.currentTarget.style.borderColor = '#7C3AED';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#D5D8DC';
+                e.currentTarget.style.borderColor = '#E5E7EB';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
@@ -1029,7 +1029,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '700',
-                  color: '#00172E',
+                  color: '#1B3A5C',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1039,7 +1039,7 @@ export default function DistrictHeatmapPage() {
               <p
                 style={{
                   fontSize: '13px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   margin: 0,
                   fontFamily: 'var(--font-body)',
                 }}
@@ -1053,7 +1053,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '20px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
                 textDecoration: 'none',
                 display: 'block',
@@ -1061,11 +1061,11 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#E8171F';
+                e.currentTarget.style.borderColor = '#7C3AED';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#D5D8DC';
+                e.currentTarget.style.borderColor = '#E5E7EB';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
@@ -1073,7 +1073,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '700',
-                  color: '#00172E',
+                  color: '#1B3A5C',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1083,7 +1083,7 @@ export default function DistrictHeatmapPage() {
               <p
                 style={{
                   fontSize: '13px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   margin: 0,
                   fontFamily: 'var(--font-body)',
                 }}
@@ -1097,7 +1097,7 @@ export default function DistrictHeatmapPage() {
               style={{
                 padding: '20px',
                 borderRadius: '2px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 backgroundColor: '#FFFFFF',
                 textDecoration: 'none',
                 display: 'block',
@@ -1105,11 +1105,11 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#E8171F';
+                e.currentTarget.style.borderColor = '#7C3AED';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#D5D8DC';
+                e.currentTarget.style.borderColor = '#E5E7EB';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
@@ -1117,7 +1117,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '700',
-                  color: '#00172E',
+                  color: '#1B3A5C',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1127,7 +1127,7 @@ export default function DistrictHeatmapPage() {
               <p
                 style={{
                   fontSize: '13px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   margin: 0,
                   fontFamily: 'var(--font-body)',
                 }}
@@ -1141,13 +1141,13 @@ export default function DistrictHeatmapPage() {
         {/* Footer Disclaimer */}
         <footer
           style={{
-            borderTop: '1px solid #D5D8DC',
+            borderTop: '1px solid #E5E7EB',
             padding: '24px 16px',
             backgroundColor: '#FFFFFF',
           }}
         >
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <p style={{ fontSize: '11px', color: '#455A64', textAlign: 'center', margin: 0, fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', color: '#4B5563', textAlign: 'center', margin: 0, fontFamily: 'var(--font-body)' }}>
               Disclaimer: The win rate data presented on this page is based on historical federal
               court records and is provided for informational purposes only. This information does
               not constitute legal advice. Actual case outcomes depend on many factors including

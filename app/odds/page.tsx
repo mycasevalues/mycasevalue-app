@@ -69,7 +69,7 @@ export default function OddsPage() {
   };
 
   const winColor = results
-    ? results.winRate >= 50 ? '#07874A' : results.winRate >= 35 ? '#D97706' : '#E8171F'
+    ? results.winRate >= 50 ? '#07874A' : results.winRate >= 35 ? '#D97706' : '#7C3AED'
     : '#212529';
 
   // Top circuits sorted by win rate
@@ -103,7 +103,7 @@ export default function OddsPage() {
         .odds-select {
           height: 48px;
           width: 100%;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           padding: 0 36px 0 16px;
           font-family: var(--font-body);
@@ -117,10 +117,10 @@ export default function OddsPage() {
           cursor: pointer;
           transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        .odds-select:hover { border-color: #006997; }
-        .odds-select:focus { outline: none; border-color: #006997; box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
+        .odds-select:hover { border-color: #6D28D9; }
+        .odds-select:focus { outline: none; border-color: #6D28D9; box-shadow: 0 0 0 2px rgba(0,105,151,0.1); }
         .odds-btn {
-          background: #E8171F;
+          background: #7C3AED;
           color: #FFFFFF;
           border: none;
           border-radius: 2px;
@@ -134,14 +134,14 @@ export default function OddsPage() {
           transition: background 0.2s ease;
         }
         .odds-btn:hover:not(:disabled) { background: #C41419; }
-        .odds-btn:disabled { background: #D5D8DC; color: #455A64; cursor: not-allowed; }
+        .odds-btn:disabled { background: #E5E7EB; color: #4B5563; cursor: not-allowed; }
         .odds-card {
           background: #FFFFFF;
-          border: 1px solid #D5D8DC;
+          border: 1px solid #E5E7EB;
           border-radius: 2px;
           box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
-        .odds-link { color: #006997; text-decoration: none; transition: color 0.2s ease; }
+        .odds-link { color: #6D28D9; text-decoration: none; transition: color 0.2s ease; }
         .odds-link:hover { color: #004a6d; text-decoration: underline; }
         .outcome-donut {
           width: 160px;
@@ -169,7 +169,7 @@ export default function OddsPage() {
           flex-direction: column;
           padding: '16px';
           background: '#F8F9FA';
-          border: '1px solid #D5D8DC';
+          border: '1px solid #E5E7EB';
           border-radius: 2px;
           text-decoration: none;
           transition: all 0.2s ease;
@@ -177,7 +177,7 @@ export default function OddsPage() {
         }
         .explore-card:hover {
           background: '#F0F3F5';
-          border-color: '#006997';
+          border-color: '#6D28D9';
         }
         @media (max-width: 768px) {
           .odds-grid-3 { grid-template-columns: 1fr !important; }
@@ -189,13 +189,13 @@ export default function OddsPage() {
 
       {/* Hero Header */}
       <header style={{
-        background: '#00172E',
+        background: '#1B3A5C',
         padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{
             display: 'inline-block',
-            background: '#E8171F',
+            background: '#7C3AED',
             color: '#FFFFFF',
             padding: '4px 12px',
             borderRadius: 2,
@@ -236,20 +236,20 @@ export default function OddsPage() {
       <nav style={{
         background: '#FFFFFF',
         padding: '12px 0',
-        borderBottom: '1px solid #D5D8DC',
+        borderBottom: '1px solid #E5E7EB',
         fontSize: 13,
         fontFamily: 'var(--font-body)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
           <Link href="/" className="odds-link">Home</Link>
-          <span style={{ color: '#455A64', margin: '0 8px' }}>/</span>
+          <span style={{ color: '#4B5563', margin: '0 8px' }}>/</span>
           <span style={{ color: '#212529', fontWeight: 600 }}>Check My Odds</span>
         </div>
       </nav>
 
       {/* Main Content */}
       <main style={{
-        background: '#F5F6F7',
+        background: '#F7F8FA',
         minHeight: 'calc(100vh - 280px)',
         padding: 'clamp(24px, 5vw, 48px)',
         fontFamily: 'var(--font-body)',
@@ -278,7 +278,7 @@ export default function OddsPage() {
                   display: 'block',
                   fontSize: 12,
                   fontWeight: 600,
-                  color: '#455A64',
+                  color: '#4B5563',
                   marginBottom: 8,
                   textTransform: 'uppercase',
                   letterSpacing: '0.3px',
@@ -327,7 +327,7 @@ export default function OddsPage() {
                 <p style={{
                   fontSize: 12,
                   fontWeight: 600,
-                  color: '#455A64',
+                  color: '#4B5563',
                   margin: '0 0 8px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
@@ -344,7 +344,7 @@ export default function OddsPage() {
                 }}>
                   {results.winRate.toFixed(1)}%
                 </div>
-                <p style={{ fontSize: 14, color: '#455A64', margin: '0 0 16px' }}>
+                <p style={{ fontSize: 14, color: '#4B5563', margin: '0 0 16px' }}>
                   Based on <strong style={{ color: '#212529', fontFamily: 'var(--font-mono)' }}>
                     {results.totalCases.toLocaleString()}
                   </strong> {results.label} cases in federal court
@@ -352,24 +352,24 @@ export default function OddsPage() {
                 <div style={{
                   display: 'inline-flex',
                   gap: 24,
-                  background: '#F5F6F7',
+                  background: '#F7F8FA',
                   padding: '12px 24px',
                   borderRadius: 2,
                   fontSize: 13,
                 }}>
                   <span>
-                    <span style={{ color: '#455A64' }}>Settlement: </span>
+                    <span style={{ color: '#4B5563' }}>Settlement: </span>
                     <strong style={{ color: '#D97706', fontFamily: 'var(--font-mono)' }}>{results.settlementRate.toFixed(1)}%</strong>
                   </span>
-                  <span style={{ color: '#D5D8DC' }}>|</span>
+                  <span style={{ color: '#E5E7EB' }}>|</span>
                   <span>
-                    <span style={{ color: '#455A64' }}>Dismissal: </span>
-                    <strong style={{ color: '#E8171F', fontFamily: 'var(--font-mono)' }}>{results.dismissalRate.toFixed(1)}%</strong>
+                    <span style={{ color: '#4B5563' }}>Dismissal: </span>
+                    <strong style={{ color: '#7C3AED', fontFamily: 'var(--font-mono)' }}>{results.dismissalRate.toFixed(1)}%</strong>
                   </span>
-                  <span style={{ color: '#D5D8DC' }}>|</span>
+                  <span style={{ color: '#E5E7EB' }}>|</span>
                   <span>
-                    <span style={{ color: '#455A64' }}>Duration: </span>
-                    <strong style={{ color: '#006997', fontFamily: 'var(--font-mono)' }}>{results.medianDuration} mo</strong>
+                    <span style={{ color: '#4B5563' }}>Duration: </span>
+                    <strong style={{ color: '#6D28D9', fontFamily: 'var(--font-mono)' }}>{results.medianDuration} mo</strong>
                   </span>
                 </div>
               </div>
@@ -394,7 +394,7 @@ export default function OddsPage() {
                     {[
                       { label: 'Won at Trial', value: results.winRate, color: '#07874A' },
                       { label: 'Settled', value: results.settlementRate, color: '#D97706' },
-                      { label: 'Dismissed', value: results.dismissalRate, color: '#E8171F' },
+                      { label: 'Dismissed', value: results.dismissalRate, color: '#7C3AED' },
                     ].map(item => (
                       <div key={item.label}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
@@ -427,7 +427,7 @@ export default function OddsPage() {
                       <p style={{
                         fontSize: 11,
                         fontWeight: 600,
-                        color: '#455A64',
+                        color: '#4B5563',
                         margin: '0 0 12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.3px',
@@ -442,7 +442,7 @@ export default function OddsPage() {
                           borderBottom: i < Math.min(results.ends.length, 6) - 1 ? '1px solid #F8F9FA' : 'none',
                           fontSize: 12,
                         }}>
-                          <span style={{ color: '#455A64' }}>{end.label}</span>
+                          <span style={{ color: '#4B5563' }}>{end.label}</span>
                           <span style={{
                             color: end.color || '#212529',
                             fontWeight: 600,
@@ -479,20 +479,20 @@ export default function OddsPage() {
                         textAlign: 'center',
                       }}>
                         <div>
-                          <p style={{ fontSize: 11, color: '#455A64', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>25th %ile</p>
-                          <p style={{ fontSize: 24, fontWeight: 700, color: '#455A64', margin: 0, fontFamily: 'var(--font-mono)' }}>
+                          <p style={{ fontSize: 11, color: '#4B5563', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>25th %ile</p>
+                          <p style={{ fontSize: 24, fontWeight: 700, color: '#4B5563', margin: 0, fontFamily: 'var(--font-mono)' }}>
                             ${results.recoveryLow !== null ? results.recoveryLow.toLocaleString() : '–'}K
                           </p>
                         </div>
                         <div style={{ background: '#F0F9FF', borderRadius: 2, padding: '8px 0' }}>
-                          <p style={{ fontSize: 11, color: '#006997', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>Median</p>
-                          <p style={{ fontSize: 28, fontWeight: 700, color: '#006997', margin: 0, fontFamily: 'var(--font-mono)' }}>
+                          <p style={{ fontSize: 11, color: '#6D28D9', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>Median</p>
+                          <p style={{ fontSize: 28, fontWeight: 700, color: '#6D28D9', margin: 0, fontFamily: 'var(--font-mono)' }}>
                             ${results.recoveryMedian.toLocaleString()}K
                           </p>
                         </div>
                         <div>
-                          <p style={{ fontSize: 11, color: '#455A64', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>75th %ile</p>
-                          <p style={{ fontSize: 24, fontWeight: 700, color: '#455A64', margin: 0, fontFamily: 'var(--font-mono)' }}>
+                          <p style={{ fontSize: 11, color: '#4B5563', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>75th %ile</p>
+                          <p style={{ fontSize: 24, fontWeight: 700, color: '#4B5563', margin: 0, fontFamily: 'var(--font-mono)' }}>
                             ${results.recoveryHigh !== null ? results.recoveryHigh.toLocaleString() : '–'}K
                           </p>
                         </div>
@@ -503,11 +503,11 @@ export default function OddsPage() {
                         <div style={{
                           width: '100%',
                           height: '100%',
-                          background: 'linear-gradient(to right, #D5D8DC 0%, #006997 50%, #00172E 100%)',
+                          background: 'linear-gradient(to right, #E5E7EB 0%, #6D28D9 50%, #1B3A5C 100%)',
                           borderRadius: 2,
                         }} />
                       </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#455A64' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#4B5563' }}>
                         <span>Lower</span>
                         <span>Higher</span>
                       </div>
@@ -516,7 +516,7 @@ export default function OddsPage() {
                     <div style={{
                       padding: 32,
                       textAlign: 'center',
-                      color: '#455A64',
+                      color: '#4B5563',
                       fontSize: 14,
                     }}>
                       Recovery range data not available for this case type.
@@ -532,7 +532,7 @@ export default function OddsPage() {
                     <p style={{
                       fontSize: 11,
                       fontWeight: 600,
-                      color: '#455A64',
+                      color: '#4B5563',
                       margin: '0 0 8px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
@@ -543,13 +543,13 @@ export default function OddsPage() {
                       <span style={{
                         fontSize: 32,
                         fontWeight: 700,
-                        color: '#006997',
+                        color: '#6D28D9',
                         fontFamily: 'var(--font-mono)',
                         lineHeight: 1,
                       }}>
                         {results.medianDuration}
                       </span>
-                      <span style={{ fontSize: 14, color: '#455A64' }}>months (median)</span>
+                      <span style={{ fontSize: 14, color: '#4B5563' }}>months (median)</span>
                     </div>
                   </div>
                 </div>
@@ -575,7 +575,7 @@ export default function OddsPage() {
                     gap: 12,
                   }}>
                     {topCircuits.map(({ circuit, rate }) => {
-                      const color = rate >= 50 ? '#07874A' : rate >= 35 ? '#D97706' : '#E8171F';
+                      const color = rate >= 50 ? '#07874A' : rate >= 35 ? '#D97706' : '#7C3AED';
                       return (
                         <div key={circuit} style={{
                           background: '#F8F9FA',
@@ -599,7 +599,7 @@ export default function OddsPage() {
                     })}
                   </div>
                   {Object.keys(results.circuitRates).length > 6 && (
-                    <p style={{ fontSize: 12, color: '#455A64', margin: '12px 0 0', textAlign: 'right' }}>
+                    <p style={{ fontSize: 12, color: '#4B5563', margin: '12px 0 0', textAlign: 'right' }}>
                       <Link href={`/nos/${results.nos}`} className="odds-link">
                         View all circuits →
                       </Link>
@@ -621,14 +621,14 @@ export default function OddsPage() {
                   However, <strong style={{ color: '#D97706' }}>{results.settlementRate.toFixed(1)}%</strong> of
                   cases settle before trial
                   {results.recoveryMedian !== null && (
-                    <>, with a median recovery of <strong style={{ color: '#006997' }}>${results.recoveryMedian.toLocaleString()}K</strong></>
+                    <>, with a median recovery of <strong style={{ color: '#6D28D9' }}>${results.recoveryMedian.toLocaleString()}K</strong></>
                   )}.
                   Cases typically resolve in <strong>{results.medianDuration} months</strong>.
                   These figures represent historical aggregate data and do not predict the outcome of your specific case.
                 </p>
                 <p style={{
                   fontSize: 12,
-                  color: '#455A64',
+                  color: '#4B5563',
                   margin: 0,
                   textTransform: 'uppercase',
                   letterSpacing: '0.3px',
@@ -667,7 +667,7 @@ export default function OddsPage() {
                         <div style={{ fontSize: 24, fontWeight: 700, color: '#07874A', fontFamily: 'var(--font-mono)' }}>
                           {favorablePercentage.toFixed(1)}%
                         </div>
-                        <div style={{ fontSize: 11, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>
+                        <div style={{ fontSize: 11, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 }}>
                           Favorable
                         </div>
                       </div>
@@ -718,7 +718,7 @@ export default function OddsPage() {
                       <p style={{
                         fontSize: 12,
                         fontWeight: 600,
-                        color: '#455A64',
+                        color: '#4B5563',
                         margin: '0 0 12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.3px',
@@ -751,7 +751,7 @@ export default function OddsPage() {
                       <p style={{
                         fontSize: 12,
                         fontWeight: 600,
-                        color: '#455A64',
+                        color: '#4B5563',
                         margin: '0 0 12px',
                         textTransform: 'uppercase',
                         letterSpacing: '0.3px',
@@ -764,7 +764,7 @@ export default function OddsPage() {
                           <span style={{
                             fontSize: 13,
                             fontWeight: 700,
-                            color: nationalAverageWinRate >= 50 ? '#07874A' : nationalAverageWinRate >= 35 ? '#D97706' : '#E8171F',
+                            color: nationalAverageWinRate >= 50 ? '#07874A' : nationalAverageWinRate >= 35 ? '#D97706' : '#7C3AED',
                             fontFamily: 'var(--font-mono)',
                           }}>
                             {nationalAverageWinRate.toFixed(1)}%
@@ -774,7 +774,7 @@ export default function OddsPage() {
                           <div style={{
                             height: '100%',
                             width: `${Math.min(nationalAverageWinRate, 100)}%`,
-                            background: nationalAverageWinRate >= 50 ? '#07874A' : nationalAverageWinRate >= 35 ? '#D97706' : '#E8171F',
+                            background: nationalAverageWinRate >= 50 ? '#07874A' : nationalAverageWinRate >= 35 ? '#D97706' : '#7C3AED',
                             borderRadius: 2,
                           }} />
                         </div>
@@ -783,7 +783,7 @@ export default function OddsPage() {
                   </div>
                   <p style={{
                     fontSize: 12,
-                    color: '#455A64',
+                    color: '#4B5563',
                     margin: '16px 0 0',
                     paddingTop: 16,
                     borderTop: '1px solid #F0F3F5',
@@ -816,7 +816,7 @@ export default function OddsPage() {
                       return (
                         <p style={{
                           fontSize: 14,
-                          color: '#455A64',
+                          color: '#4B5563',
                           margin: 0,
                           textAlign: 'center',
                           padding: '24px 0',
@@ -837,7 +837,7 @@ export default function OddsPage() {
                               width: 8,
                               height: 8,
                               borderRadius: '50%',
-                              background: factor.severity === 'high' ? '#E8171F' : '#D97706',
+                              background: factor.severity === 'high' ? '#7C3AED' : '#D97706',
                               flexShrink: 0,
                               marginTop: 6,
                             }} />
@@ -846,7 +846,7 @@ export default function OddsPage() {
                                 {factor.label || factor.name}
                               </p>
                               {factor.description && (
-                                <p style={{ fontSize: 12, color: '#455A64', margin: 0 }}>
+                                <p style={{ fontSize: 12, color: '#4B5563', margin: 0 }}>
                                   {factor.description}
                                 </p>
                               )}
@@ -870,7 +870,7 @@ export default function OddsPage() {
                     <p style={{
                       fontSize: 11,
                       fontWeight: 600,
-                      color: '#455A64',
+                      color: '#4B5563',
                       margin: '0 0 8px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
@@ -880,7 +880,7 @@ export default function OddsPage() {
                     <p style={{
                       fontSize: 28,
                       fontWeight: 700,
-                      color: '#006997',
+                      color: '#6D28D9',
                       margin: 0,
                       fontFamily: 'var(--font-mono)',
                     }}>
@@ -888,7 +888,7 @@ export default function OddsPage() {
                     </p>
                     <p style={{
                       fontSize: 12,
-                      color: '#455A64',
+                      color: '#4B5563',
                       margin: '8px 0 0',
                     }}>
                       in database
@@ -898,7 +898,7 @@ export default function OddsPage() {
                     <p style={{
                       fontSize: 11,
                       fontWeight: 600,
-                      color: '#455A64',
+                      color: '#4B5563',
                       margin: '0 0 8px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
@@ -908,7 +908,7 @@ export default function OddsPage() {
                     <p style={{
                       fontSize: 28,
                       fontWeight: 700,
-                      color: '#006997',
+                      color: '#6D28D9',
                       margin: 0,
                       fontFamily: 'var(--font-mono)',
                     }}>
@@ -916,7 +916,7 @@ export default function OddsPage() {
                     </p>
                     <p style={{
                       fontSize: 12,
-                      color: '#455A64',
+                      color: '#4B5563',
                       margin: '8px 0 0',
                     }}>
                       of 84 NOS codes
@@ -926,7 +926,7 @@ export default function OddsPage() {
                     <p style={{
                       fontSize: 11,
                       fontWeight: 600,
-                      color: '#455A64',
+                      color: '#4B5563',
                       margin: '0 0 8px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
@@ -944,7 +944,7 @@ export default function OddsPage() {
                     </p>
                     <p style={{
                       fontSize: 12,
-                      color: '#455A64',
+                      color: '#4B5563',
                       margin: '8px 0 0',
                     }}>
                       per 100 cases
@@ -955,7 +955,7 @@ export default function OddsPage() {
 
               {/* CTA */}
               <div style={{
-                background: '#00172E',
+                background: '#1B3A5C',
                 borderRadius: 2,
                 padding: 'clamp(24px, 5vw, 40px)',
                 textAlign: 'center',
@@ -969,7 +969,7 @@ export default function OddsPage() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 8,
-                    background: '#E8171F',
+                    background: '#7C3AED',
                     color: '#FFFFFF',
                     padding: '14px 32px',
                     borderRadius: 2,
@@ -1016,22 +1016,22 @@ export default function OddsPage() {
                         flexDirection: 'column',
                         padding: '20px',
                         background: '#F8F9FA',
-                        border: '1px solid #D5D8DC',
+                        border: '1px solid #E5E7EB',
                         borderRadius: 2,
                         textDecoration: 'none',
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
                         (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
-                        (e.currentTarget as HTMLElement).style.borderColor = '#006997';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#6D28D9';
                       }}
                       onMouseLeave={(e) => {
                         (e.currentTarget as HTMLElement).style.background = '#F8F9FA';
-                        (e.currentTarget as HTMLElement).style.borderColor = '#D5D8DC';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#E5E7EB';
                       }}
                     >
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Settlement Calculator</div>
-                      <div style={{ fontSize: 12, color: '#455A64' }}>Estimate your potential recovery</div>
+                      <div style={{ fontSize: 12, color: '#4B5563' }}>Estimate your potential recovery</div>
                     </Link>
                     <Link
                       href="/compare"
@@ -1040,22 +1040,22 @@ export default function OddsPage() {
                         flexDirection: 'column',
                         padding: '20px',
                         background: '#F8F9FA',
-                        border: '1px solid #D5D8DC',
+                        border: '1px solid #E5E7EB',
                         borderRadius: 2,
                         textDecoration: 'none',
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
                         (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
-                        (e.currentTarget as HTMLElement).style.borderColor = '#006997';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#6D28D9';
                       }}
                       onMouseLeave={(e) => {
                         (e.currentTarget as HTMLElement).style.background = '#F8F9FA';
-                        (e.currentTarget as HTMLElement).style.borderColor = '#D5D8DC';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#E5E7EB';
                       }}
                     >
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Compare Case Types</div>
-                      <div style={{ fontSize: 12, color: '#455A64' }}>Side-by-side analysis tool</div>
+                      <div style={{ fontSize: 12, color: '#4B5563' }}>Side-by-side analysis tool</div>
                     </Link>
                     <Link
                       href="/trends"
@@ -1064,22 +1064,22 @@ export default function OddsPage() {
                         flexDirection: 'column',
                         padding: '20px',
                         background: '#F8F9FA',
-                        border: '1px solid #D5D8DC',
+                        border: '1px solid #E5E7EB',
                         borderRadius: 2,
                         textDecoration: 'none',
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
                         (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
-                        (e.currentTarget as HTMLElement).style.borderColor = '#006997';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#6D28D9';
                       }}
                       onMouseLeave={(e) => {
                         (e.currentTarget as HTMLElement).style.background = '#F8F9FA';
-                        (e.currentTarget as HTMLElement).style.borderColor = '#D5D8DC';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#E5E7EB';
                       }}
                     >
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Case Type Trends</div>
-                      <div style={{ fontSize: 12, color: '#455A64' }}>Historical trends and patterns</div>
+                      <div style={{ fontSize: 12, color: '#4B5563' }}>Historical trends and patterns</div>
                     </Link>
                     <Link
                       href="/glossary"
@@ -1088,22 +1088,22 @@ export default function OddsPage() {
                         flexDirection: 'column',
                         padding: '20px',
                         background: '#F8F9FA',
-                        border: '1px solid #D5D8DC',
+                        border: '1px solid #E5E7EB',
                         borderRadius: 2,
                         textDecoration: 'none',
                         transition: 'all 0.2s ease',
                       }}
                       onMouseEnter={(e) => {
                         (e.currentTarget as HTMLElement).style.background = '#F0F3F5';
-                        (e.currentTarget as HTMLElement).style.borderColor = '#006997';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#6D28D9';
                       }}
                       onMouseLeave={(e) => {
                         (e.currentTarget as HTMLElement).style.background = '#F8F9FA';
-                        (e.currentTarget as HTMLElement).style.borderColor = '#D5D8DC';
+                        (e.currentTarget as HTMLElement).style.borderColor = '#E5E7EB';
                       }}
                     >
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 8 }}>Glossary</div>
-                      <div style={{ fontSize: 12, color: '#455A64' }}>Legal terms explained</div>
+                      <div style={{ fontSize: 12, color: '#4B5563' }}>Legal terms explained</div>
                     </Link>
                   </div>
                 </div>
@@ -1113,13 +1113,13 @@ export default function OddsPage() {
               <section style={{
                 padding: 'clamp(16px, 4vw, 32px)',
                 background: '#FFFFFF',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 borderRadius: 2,
               }}>
-                <p style={{ fontSize: 13, color: '#455A64', margin: '0 0 12px', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 13, color: '#4B5563', margin: '0 0 12px', lineHeight: 1.6 }}>
                   <strong>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and are not predictions of your case outcome.
                 </p>
-                <p style={{ fontSize: 13, color: '#455A64', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: 13, color: '#4B5563', margin: 0, lineHeight: 1.6 }}>
                   <strong>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction.{' '}
                   <Link href="/methodology" className="odds-link">Learn about our methodology</Link>
                 </p>
@@ -1132,7 +1132,7 @@ export default function OddsPage() {
             <div style={{
               marginTop: 48,
               paddingTop: 32,
-              borderTop: '1px solid #D5D8DC',
+              borderTop: '1px solid #E5E7EB',
             }}>
               <div style={{
                 display: 'grid',
@@ -1158,7 +1158,7 @@ export default function OddsPage() {
                     <div style={{
                       fontSize: 12,
                       marginTop: 8,
-                      color: '#455A64',
+                      color: '#4B5563',
                       textTransform: 'uppercase',
                       letterSpacing: '0.3px',
                     }}>
@@ -1173,7 +1173,7 @@ export default function OddsPage() {
                 marginTop: 40,
                 padding: 'clamp(24px, 4vw, 32px)',
                 background: '#FFFFFF',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 borderRadius: 2,
               }}>
                 <h3 style={{
@@ -1206,7 +1206,7 @@ export default function OddsPage() {
                           alignItems: 'center',
                           padding: '10px 14px',
                           background: selectedNOS === nos ? '#F0F9FF' : '#F8F9FA',
-                          border: selectedNOS === nos ? '1px solid #006997' : '1px solid transparent',
+                          border: selectedNOS === nos ? '1px solid #6D28D9' : '1px solid transparent',
                           borderRadius: 2,
                           cursor: 'pointer',
                           fontSize: 13,
@@ -1217,7 +1217,7 @@ export default function OddsPage() {
                       >
                         <span style={{ color: '#212529', fontWeight: 500 }}>{t?.label || rd.label}</span>
                         <span style={{
-                          color: (rd.wr ?? 0) >= 50 ? '#07874A' : '#E8171F',
+                          color: (rd.wr ?? 0) >= 50 ? '#07874A' : '#7C3AED',
                           fontWeight: 700,
                           fontFamily: 'var(--font-mono)',
                           fontSize: 12,
@@ -1243,7 +1243,7 @@ export default function OddsPage() {
                   <Link
                     href={`/report/${results.nos}`}
                     style={{
-                      display: 'block', padding: '16px', background: '#00172E', borderRadius: 2,
+                      display: 'block', padding: '16px', background: '#1B3A5C', borderRadius: 2,
                       textDecoration: 'none', transition: 'all 0.2s ease',
                     }}
                   >
@@ -1253,32 +1253,32 @@ export default function OddsPage() {
                   <Link
                     href="/calculator"
                     style={{
-                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #D5D8DC',
+                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #E5E7EB',
                       borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
                     }}
                   >
                     <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 4 }}>Settlement Calculator</div>
-                    <div style={{ fontSize: 11, color: '#455A64' }}>Estimate your potential recovery</div>
+                    <div style={{ fontSize: 11, color: '#4B5563' }}>Estimate your potential recovery</div>
                   </Link>
                   <Link
                     href="/judges"
                     style={{
-                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #D5D8DC',
+                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #E5E7EB',
                       borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
                     }}
                   >
                     <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 4 }}>Judge Analytics</div>
-                    <div style={{ fontSize: 11, color: '#455A64' }}>Research judges in your district</div>
+                    <div style={{ fontSize: 11, color: '#4B5563' }}>Research judges in your district</div>
                   </Link>
                   <Link
                     href="/trends"
                     style={{
-                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #D5D8DC',
+                      display: 'block', padding: '16px', background: '#F8F9FA', border: '1px solid #E5E7EB',
                       borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
                     }}
                   >
                     <div style={{ fontSize: 13, fontWeight: 700, color: '#212529', marginBottom: 4 }}>Compare Case Types</div>
-                    <div style={{ fontSize: 11, color: '#455A64' }}>Side-by-side comparison tool</div>
+                    <div style={{ fontSize: 11, color: '#4B5563' }}>Side-by-side comparison tool</div>
                   </Link>
                 </div>
               </div>
@@ -1289,13 +1289,13 @@ export default function OddsPage() {
           {/* No-query state: show quick info */}
           {!showResults && (
             <div className="odds-card" style={{ padding: 'clamp(24px, 4vw, 40px)', textAlign: 'center' }}>
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="1.5" style={{ margin: '0 auto 16px', display: 'block' }}>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="1.5" style={{ margin: '0 auto 16px', display: 'block' }}>
                 <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
               </svg>
               <p style={{ fontSize: 16, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
                 Select a case type to see your odds
               </p>
-              <p style={{ fontSize: 14, color: '#455A64', maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>
+              <p style={{ fontSize: 14, color: '#4B5563', maxWidth: 480, margin: '0 auto', lineHeight: 1.6 }}>
                 Choose from 84 federal case types above and click &ldquo;Check Odds&rdquo; to see real win rates, settlement data, recovery ranges, and circuit-level comparisons from 4.1M+ cases.
               </p>
             </div>

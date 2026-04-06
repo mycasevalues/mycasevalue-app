@@ -96,7 +96,7 @@ export default async function OutcomesPage({
 
   if (!option || !category) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F5F6F7', color: '#212529' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#F7F8FA', color: '#212529' }}>
         <div className="text-center">
           <h1 style={{
             fontSize: '32px',
@@ -107,7 +107,7 @@ export default async function OutcomesPage({
           }}>Case outcomes not found</h1>
           <p style={{
             marginBottom: '32px',
-            color: '#455A64',
+            color: '#4B5563',
             fontSize: '16px',
             fontFamily: 'var(--font-body)',
             lineHeight: '1.6',
@@ -121,7 +121,7 @@ export default async function OutcomesPage({
             borderRadius: '2px',
             fontWeight: 600,
             color: '#FFFFFF',
-            background: '#E8171F',
+            background: '#7C3AED',
             textDecoration: 'none',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
@@ -190,8 +190,8 @@ export default async function OutcomesPage({
 
   // Outcome distribution
   const outcomes = [
-    { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: '#006997' },
-    { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: '#455A64' },
+    { label: 'Settled Favorably', value: Math.round(districtSettleRate), color: '#6D28D9' },
+    { label: 'Dismissed', value: Math.round(Math.max(10, 53 - districtSettleRate - districtWinRate * 0.6)), color: '#4B5563' },
     { label: 'Trial Win', value: Math.round(districtWinRate * 0.6), color: '#333333' },
     { label: 'Trial Loss', value: Math.round(districtWinRate * 0.4), color: '#EF4444' },
   ];
@@ -222,15 +222,15 @@ export default async function OutcomesPage({
   };
 
   return (
-    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       {/* Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Design system styles */}
       <style>{`
         .outcome-card-link:hover {
-          border-color: #006997;
-          box-shadow: 0 2px 8px rgba(0, 105, 151, 0.1);
+          border-color: #6D28D9;
+          box-shadow: 0 2px 8px rgba(124, 58, 237, 0.1);
           transform: translateY(-2px);
         }
 
@@ -252,7 +252,7 @@ export default async function OutcomesPage({
 
       {/* Header Section - Dark Navy */}
       <div style={{
-        background: '#00172E',
+        background: '#1B3A5C',
         padding: 'clamp(20px, 4vw, 32px) 20px',
         borderBottom: '1px solid #1a2a3a',
       }}>
@@ -260,7 +260,7 @@ export default async function OutcomesPage({
           {/* Breadcrumb */}
           <div style={{
             fontSize: '13px',
-            color: '#D5D8DC',
+            color: '#E5E7EB',
             fontFamily: 'var(--font-body)',
             marginBottom: '16px',
             letterSpacing: '0.3px',
@@ -269,15 +269,15 @@ export default async function OutcomesPage({
             gap: '8px',
             alignItems: 'center',
           }}>
-            <Link href="/" style={{ color: '#D5D8DC', textDecoration: 'none' }}>
+            <Link href="/" style={{ color: '#E5E7EB', textDecoration: 'none' }}>
               Home
             </Link>
             <span style={{ margin: '0 8px' }}>›</span>
-            <Link href="/districts" style={{ color: '#D5D8DC', textDecoration: 'none' }}>
+            <Link href="/districts" style={{ color: '#E5E7EB', textDecoration: 'none' }}>
               Districts
             </Link>
             <span style={{ margin: '0 8px' }}>›</span>
-            <Link href={`/outcomes/${district}`} style={{ color: '#D5D8DC', textDecoration: 'none' }}>
+            <Link href={`/outcomes/${district}`} style={{ color: '#E5E7EB', textDecoration: 'none' }}>
               {stateName}
             </Link>
             <span style={{ margin: '0 8px' }}>›</span>
@@ -298,7 +298,7 @@ export default async function OutcomesPage({
               {option.label} Cases in {stateName}
             </h1>
             <div style={{
-              background: '#E8171F',
+              background: '#7C3AED',
               color: '#FFFFFF',
               padding: '6px 12px',
               borderRadius: '2px',
@@ -318,7 +318,7 @@ export default async function OutcomesPage({
             fontSize: '16px',
             margin: '12px 0 0 0',
             fontFamily: 'var(--font-body)',
-            color: '#D5D8DC',
+            color: '#E5E7EB',
             lineHeight: '1.6',
             maxWidth: '700px',
           }}>
@@ -332,7 +332,7 @@ export default async function OutcomesPage({
       <div style={{
         background: '#FFFFFF',
         padding: 'clamp(20px, 4vw, 32px) 20px',
-        borderBottom: '1px solid #D5D8DC',
+        borderBottom: '1px solid #E5E7EB',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{
@@ -344,7 +344,7 @@ export default async function OutcomesPage({
           >
             <div style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '20px',
             }}>
@@ -359,14 +359,14 @@ export default async function OutcomesPage({
               </div>
               <div style={{
                 fontSize: '13px',
-                color: '#455A64',
+                color: '#4B5563',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 500,
               }}>Win + Settlement Rate</div>
             </div>
             <div style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '20px',
             }}>
@@ -381,14 +381,14 @@ export default async function OutcomesPage({
               </div>
               <div style={{
                 fontSize: '13px',
-                color: '#455A64',
+                color: '#4B5563',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 500,
               }}>Median Duration</div>
             </div>
             <div style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '20px',
             }}>
@@ -403,14 +403,14 @@ export default async function OutcomesPage({
               </div>
               <div style={{
                 fontSize: '13px',
-                color: '#455A64',
+                color: '#4B5563',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 500,
               }}>Settlement Rate</div>
             </div>
             <div style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '20px',
             }}>
@@ -425,7 +425,7 @@ export default async function OutcomesPage({
               </div>
               <div style={{
                 fontSize: '13px',
-                color: '#455A64',
+                color: '#4B5563',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 500,
               }}>Cases Tracked</div>
@@ -437,12 +437,12 @@ export default async function OutcomesPage({
       {/* Outcome Distribution */}
       <div style={{
         padding: 'clamp(20px, 4vw, 40px) 20px',
-        background: '#F5F6F7',
+        background: '#F7F8FA',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{
             background: '#FFFFFF',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
             borderRadius: '2px',
             padding: 'clamp(20px, 4vw, 32px)',
           }}>
@@ -469,7 +469,7 @@ export default async function OutcomesPage({
                     <span style={{
                       fontSize: '13px',
                       fontWeight: 600,
-                      color: '#455A64',
+                      color: '#4B5563',
                       fontFamily: 'var(--font-body)',
                     }}>
                       {outcome.label}
@@ -486,7 +486,7 @@ export default async function OutcomesPage({
                   <div style={{
                     height: '12px',
                     borderRadius: '2px',
-                    background: '#D5D8DC',
+                    background: '#E5E7EB',
                     overflow: 'hidden',
                   }}>
                     <div style={{
@@ -507,7 +507,7 @@ export default async function OutcomesPage({
       <div style={{
         padding: 'clamp(20px, 4vw, 40px) 20px',
         background: '#FFFFFF',
-        borderBottom: '1px solid #D5D8DC',
+        borderBottom: '1px solid #E5E7EB',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
@@ -522,7 +522,7 @@ export default async function OutcomesPage({
 
           <p style={{
             fontSize: '14px',
-            color: '#455A64',
+            color: '#4B5563',
             margin: '0 0 24px 0',
             fontFamily: 'var(--font-body)',
             lineHeight: '1.6',
@@ -537,14 +537,14 @@ export default async function OutcomesPage({
           }}>
             {/* Win Rate Comparison */}
             <div style={{
-              background: '#F5F6F7',
-              border: '1px solid #D5D8DC',
+              background: '#F7F8FA',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '20px',
             }}>
               <div style={{
                 fontSize: '11px',
-                color: '#455A64',
+                color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 700,
@@ -562,7 +562,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '13px',
-                    color: '#455A64',
+                    color: '#4B5563',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-body)',
                   }}>
@@ -571,7 +571,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 700,
-                    color: '#00172E',
+                    color: '#1B3A5C',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(districtWinRate)}%
@@ -580,7 +580,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '13px',
-                    color: '#455A64',
+                    color: '#4B5563',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-body)',
                   }}>
@@ -589,7 +589,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 700,
-                    color: '#455A64',
+                    color: '#4B5563',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(nationalWinRate)}%
@@ -613,14 +613,14 @@ export default async function OutcomesPage({
 
             {/* Settlement Rate Comparison */}
             <div style={{
-              background: '#F5F6F7',
-              border: '1px solid #D5D8DC',
+              background: '#F7F8FA',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '20px',
             }}>
               <div style={{
                 fontSize: '11px',
-                color: '#455A64',
+                color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 700,
@@ -638,7 +638,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '13px',
-                    color: '#455A64',
+                    color: '#4B5563',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-body)',
                   }}>
@@ -647,7 +647,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 700,
-                    color: '#006997',
+                    color: '#6D28D9',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(districtSettleRate)}%
@@ -656,7 +656,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '13px',
-                    color: '#455A64',
+                    color: '#4B5563',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-body)',
                   }}>
@@ -665,7 +665,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 700,
-                    color: '#455A64',
+                    color: '#4B5563',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(nationalSettleRate)}%
@@ -689,14 +689,14 @@ export default async function OutcomesPage({
 
             {/* Duration Comparison */}
             <div style={{
-              background: '#F5F6F7',
-              border: '1px solid #D5D8DC',
+              background: '#F7F8FA',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '20px',
             }}>
               <div style={{
                 fontSize: '11px',
-                color: '#455A64',
+                color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 700,
@@ -714,7 +714,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '13px',
-                    color: '#455A64',
+                    color: '#4B5563',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-body)',
                   }}>
@@ -723,7 +723,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 700,
-                    color: '#00172E',
+                    color: '#1B3A5C',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(districtDuration)}mo
@@ -732,7 +732,7 @@ export default async function OutcomesPage({
                 <div>
                   <div style={{
                     fontSize: '13px',
-                    color: '#455A64',
+                    color: '#4B5563',
                     marginBottom: '4px',
                     fontFamily: 'var(--font-body)',
                   }}>
@@ -741,7 +741,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 700,
-                    color: '#455A64',
+                    color: '#4B5563',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(nationalDuration)}mo
@@ -769,8 +769,8 @@ export default async function OutcomesPage({
       {/* Related Outcomes Section */}
       <div style={{
         padding: 'clamp(20px, 4vw, 40px) 20px',
-        background: '#F5F6F7',
-        borderBottom: '1px solid #D5D8DC',
+        background: '#F7F8FA',
+        borderBottom: '1px solid #E5E7EB',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
@@ -795,7 +795,7 @@ export default async function OutcomesPage({
                 className="outcome-card-link"
                 style={{
                   background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '2px',
                   padding: '20px',
                   textDecoration: 'none',
@@ -805,7 +805,7 @@ export default async function OutcomesPage({
               >
                 <div style={{
                   fontSize: '11px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                   fontWeight: 700,
@@ -817,7 +817,7 @@ export default async function OutcomesPage({
                 <div style={{
                   fontSize: '15px',
                   fontWeight: 600,
-                  color: '#006997',
+                  color: '#6D28D9',
                   fontFamily: 'var(--font-display)',
                   marginBottom: '12px',
                 }}>
@@ -825,7 +825,7 @@ export default async function OutcomesPage({
                 </div>
                 <div style={{
                   fontSize: '12px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   fontFamily: 'var(--font-body)',
                 }}>
                   Explore outcomes →
@@ -840,7 +840,7 @@ export default async function OutcomesPage({
       <div style={{
         padding: 'clamp(20px, 4vw, 40px) 20px',
         background: '#FFFFFF',
-        borderBottom: '1px solid #D5D8DC',
+        borderBottom: '1px solid #E5E7EB',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{
@@ -863,7 +863,7 @@ export default async function OutcomesPage({
                 key={i}
                 href={action.path}
                 style={{
-                  background: '#006997',
+                  background: '#6D28D9',
                   color: '#FFFFFF',
                   padding: '16px 20px',
                   borderRadius: '2px',
@@ -874,7 +874,7 @@ export default async function OutcomesPage({
                   textAlign: 'center',
                   transition: 'all 0.3s ease',
                   display: 'block',
-                  border: '1px solid #006997',
+                  border: '1px solid #6D28D9',
                 }}
 
               >
@@ -887,7 +887,7 @@ export default async function OutcomesPage({
 
       {/* Related Links Section */}
       <div style={{
-        background: '#F5F6F7',
+        background: '#F7F8FA',
         padding: 'clamp(20px, 4vw, 40px) 20px',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -908,7 +908,7 @@ export default async function OutcomesPage({
           }}>
             <Link href={`/cases/${category.id}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '24px',
               textDecoration: 'none',
@@ -917,7 +917,7 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontSize: '11px',
-                color: '#455A64',
+                color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 700,
@@ -938,7 +938,7 @@ export default async function OutcomesPage({
 
             <Link href={`/nos/${option.nos}`} className="outcome-card-link" style={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '24px',
               textDecoration: 'none',
@@ -947,7 +947,7 @@ export default async function OutcomesPage({
             }}>
               <div style={{
                 fontSize: '11px',
-                color: '#455A64',
+                color: '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontWeight: 700,
@@ -972,18 +972,18 @@ export default async function OutcomesPage({
       {/* Disclaimer */}
       <div style={{
         background: '#FFFFFF',
-        color: '#455A64',
+        color: '#4B5563',
         padding: 'clamp(20px, 4vw, 40px) 20px',
         fontSize: '13px',
         fontFamily: 'var(--font-body)',
         lineHeight: '1.7',
-        borderTop: '1px solid #D5D8DC',
+        borderTop: '1px solid #E5E7EB',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ margin: '0 0 16px 0', color: '#455A64' }}>
+          <p style={{ margin: '0 0 16px 0', color: '#4B5563' }}>
             <strong style={{ color: '#212529' }}>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and CourtListener and are not predictions of your case outcome. Case outcomes vary significantly based on specific facts, law applicable to your jurisdiction, quality of legal representation, and numerous other factors.
           </p>
-          <p style={{ margin: 0, color: '#455A64' }}>
+          <p style={{ margin: 0, color: '#4B5563' }}>
             <strong style={{ color: '#212529' }}>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction for advice specific to your situation.
           </p>
         </div>

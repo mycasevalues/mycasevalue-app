@@ -82,7 +82,7 @@ export default async function Image({
             display: 'flex',
             width: '100%',
             height: '100%',
-            background: '#00172E',
+            background: '#1B3A5C',
             color: '#ffffff',
             fontFamily: 'system-ui, sans-serif',
             alignItems: 'center',
@@ -109,7 +109,7 @@ export default async function Image({
           flexDirection: 'column',
           width: '100%',
           height: '100%',
-          background: '#00172E',
+          background: '#1B3A5C',
           color: '#ffffff',
           fontFamily: '"Outfit", system-ui, sans-serif',
           padding: '60px',
@@ -199,8 +199,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(232, 23, 31, 0.1)',
-              border: '1px solid rgba(232, 23, 31, 0.3)',
+              background: 'rgba(124, 58, 237, 0.1)',
+              border: '1px solid rgba(124, 58, 237, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -222,7 +222,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '700',
-                color: '#E8171F',
+                color: '#7C3AED',
               }}
             >
               {stats.avgWinRate}%
@@ -233,8 +233,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(232, 23, 31, 0.1)',
-              border: '1px solid rgba(232, 23, 31, 0.3)',
+              background: 'rgba(124, 58, 237, 0.1)',
+              border: '1px solid rgba(124, 58, 237, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -256,7 +256,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '700',
-                color: '#E8171F',
+                color: '#7C3AED',
               }}
             >
               {caseCount}
@@ -267,8 +267,8 @@ export default async function Image({
           <div
             style={{
               flex: 1,
-              background: 'rgba(232, 23, 31, 0.1)',
-              border: '1px solid rgba(232, 23, 31, 0.3)',
+              background: 'rgba(124, 58, 237, 0.1)',
+              border: '1px solid rgba(124, 58, 237, 0.25)',
               borderRadius: '12px',
               padding: '18px',
               display: 'flex',
@@ -290,7 +290,7 @@ export default async function Image({
               style={{
                 fontSize: '42px',
                 fontWeight: '700',
-                color: '#E8171F',
+                color: '#7C3AED',
               }}
             >
               {stats.caseTypeCount}

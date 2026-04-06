@@ -76,14 +76,14 @@ const pricingFaqs = [
 
 export default function SpanishPricingPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC' }}>
+      <div className="border-b" style={{ background: '#1B3A5C', borderColor: '#E5E7EB' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">
@@ -96,7 +96,7 @@ export default function SpanishPricingPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
+            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}>
             OPCIONES DE PAGO
           </div>
 
@@ -117,7 +117,7 @@ export default function SpanishPricingPage() {
           <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/20"
             style={{
               borderRadius: '2px',
-              borderColor: '#D5D8DC',
+              borderColor: '#E5E7EB',
               background: '#FFFFFF',
             }}>
             <div className="mb-6">
@@ -128,7 +128,7 @@ export default function SpanishPricingPage() {
                 <span className="text-4xl font-extrabold" style={{ color: '#212529', fontFamily: 'PT Mono' }}>
                   $5.99
                 </span>
-                <span className="text-sm" style={{ color: '#455A64' }}>
+                <span className="text-sm" style={{ color: '#4B5563' }}>
                   de una sola vez
                 </span>
               </div>
@@ -144,10 +144,10 @@ export default function SpanishPricingPage() {
                 'Citas de fuentes',
               ].map((feature, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5" className="flex-shrink-0 mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: '#455A64' }}>
+                  <span className="text-sm" style={{ color: '#4B5563' }}>
                     {feature}
                   </span>
                 </li>
@@ -157,7 +157,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '2px', background: '#F5F6F7', color: '#455A64', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '2px', background: '#F7F8FA', color: '#4B5563', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -166,11 +166,11 @@ export default function SpanishPricingPage() {
           <div className="border-2 p-8 transition-all duration-300 hover:shadow-lg md:scale-105 hover:shadow-amber-500/30"
             style={{
               borderRadius: '2px',
-              borderColor: '#E8171F',
+              borderColor: '#7C3AED',
               background: '#FFFFFF',
             }}>
             <div className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ borderRadius: '2px', background: 'rgba(232,23,31,0.08)', color: '#E8171F' }}>
+              style={{ borderRadius: '2px', background: 'rgba(232,23,31,0.08)', color: '#7C3AED' }}>
               MEJOR VALOR
             </div>
 
@@ -179,10 +179,10 @@ export default function SpanishPricingPage() {
                 Informes Ilimitados
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: '#E8171F', fontFamily: 'PT Mono' }}>
+                <span className="text-4xl font-extrabold" style={{ color: '#7C3AED', fontFamily: 'PT Mono' }}>
                   $9.99
                 </span>
-                <span className="text-sm" style={{ color: '#455A64' }}>
+                <span className="text-sm" style={{ color: '#4B5563' }}>
                   de una sola vez
                 </span>
               </div>
@@ -197,10 +197,10 @@ export default function SpanishPricingPage() {
                 'Soporte prioritario',
               ].map((feature, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5" className="flex-shrink-0 mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: '#455A64' }}>
+                  <span className="text-sm" style={{ color: '#4B5563' }}>
                     {feature}
                   </span>
                 </li>
@@ -210,7 +210,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '2px', background: '#E8171F', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '2px', background: '#7C3AED', color: '#FFFFFF', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -219,7 +219,7 @@ export default function SpanishPricingPage() {
           <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/20"
             style={{
               borderRadius: '2px',
-              borderColor: '#D5D8DC',
+              borderColor: '#E5E7EB',
               background: '#FFFFFF',
             }}>
             <div className="mb-6">
@@ -227,10 +227,10 @@ export default function SpanishPricingPage() {
                 Modo Abogado
               </h3>
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold" style={{ color: '#006997', fontFamily: 'PT Mono' }}>
+                <span className="text-4xl font-extrabold" style={{ color: '#6D28D9', fontFamily: 'PT Mono' }}>
                   $29.99
                 </span>
-                <span className="text-sm" style={{ color: '#455A64' }}>
+                <span className="text-sm" style={{ color: '#4B5563' }}>
                   /mes
                 </span>
               </div>
@@ -248,10 +248,10 @@ export default function SpanishPricingPage() {
                 'Opciones de etiqueta blanca',
               ].map((feature, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2.5" className="flex-shrink-0 mt-1">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2.5" className="flex-shrink-0 mt-1">
                     <path d="M20 6L9 17l-5-5"/>
                   </svg>
-                  <span className="text-sm" style={{ color: '#455A64' }}>
+                  <span className="text-sm" style={{ color: '#4B5563' }}>
                     {feature}
                   </span>
                 </li>
@@ -261,7 +261,7 @@ export default function SpanishPricingPage() {
             <button
               disabled={true}
               className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-              style={{ borderRadius: '2px', background: '#006997', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
+              style={{ borderRadius: '2px', background: '#6D28D9', color: 'white', opacity: 0.5, cursor: 'not-allowed' }}>
               Próximamente
             </button>
           </div>
@@ -269,8 +269,8 @@ export default function SpanishPricingPage() {
         </div>
 
         {/* Plan Notes */}
-        <div className="text-center p-6 mb-12" style={{ background: '#FFFFFF', borderColor: '#D5D8DC', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
-          <p className="text-sm" style={{ color: '#455A64' }}>
+        <div className="text-center p-6 mb-12" style={{ background: '#FFFFFF', borderColor: '#E5E7EB', border: '1px solid #E5E7EB', borderRadius: '2px' }}>
+          <p className="text-sm" style={{ color: '#4B5563' }}>
             Todos los planes incluyen citas de fuentes, soporte bilingüe (inglés/español) y un aviso de "no es asesoramiento legal".
           </p>
         </div>
@@ -287,7 +287,7 @@ export default function SpanishPricingPage() {
                 className="group p-5 border transition-colors cursor-pointer"
                 style={{
                   borderRadius: '2px',
-                  borderColor: '#D5D8DC',
+                  borderColor: '#E5E7EB',
                   background: '#FFFFFF',
                 }}
               >
@@ -308,8 +308,8 @@ export default function SpanishPricingPage() {
                     <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                   </svg>
                 </summary>
-                <div className="pt-4 mt-4 border-t" style={{ borderColor: '#D5D8DC' }}>
-                  <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
+                <div className="pt-4 mt-4 border-t" style={{ borderColor: '#E5E7EB' }}>
+                  <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
                     {faq.a}
                   </p>
                 </div>
@@ -319,16 +319,16 @@ export default function SpanishPricingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
+        <section className="mt-16 text-center p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             ¿Listo para ver tus probabilidades de caso?
           </h2>
-          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#455A64' }}>
+          <p className="mb-6 max-w-xl mx-auto" style={{ color: '#4B5563' }}>
             Genera tu informe básico gratuito instantáneamente, luego actualiza a características premium si deseas análisis más profundo.
           </p>
           <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '2px', background: '#E8171F', color: '#FFFFFF' }}>
+            style={{ borderRadius: '2px', background: '#7C3AED', color: '#FFFFFF' }}>
             Consultar Mi Tipo de Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -337,16 +337,16 @@ export default function SpanishPricingPage() {
       </div>
 
       {/* Available Tools Section */}
-      <div style={{ background: '#FFFFFF', borderTop: '1px solid #D5D8DC', padding: '48px 24px' }}>
+      <div style={{ background: '#FFFFFF', borderTop: '1px solid #E5E7EB', padding: '48px 24px' }}>
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link href="/search">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
@@ -355,9 +355,9 @@ export default function SpanishPricingPage() {
             </Link>
 
             <Link href="/calculator">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
@@ -366,9 +366,9 @@ export default function SpanishPricingPage() {
             </Link>
 
             <Link href="/compare">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
@@ -377,9 +377,9 @@ export default function SpanishPricingPage() {
             </Link>
 
             <Link href="/nos-explorer">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
@@ -389,17 +389,17 @@ export default function SpanishPricingPage() {
           </div>
 
           {/* Language Switcher */}
-          <div className="mt-12 p-6 text-center" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-            <p className="text-sm" style={{ color: '#455A64' }}>
-              This page is also available in <Link href="/pricing" style={{ color: '#006997', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
+          <div className="mt-12 p-6 text-center" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+            <p className="text-sm" style={{ color: '#4B5563' }}>
+              This page is also available in <Link href="/pricing" style={{ color: '#6D28D9', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>
         </div>
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#D5D8DC' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#455A64' }}>
+      <div className="border-t py-6 text-center" style={{ borderColor: '#E5E7EB' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#4B5563' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente.
           No somos un bufete de abogados. Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

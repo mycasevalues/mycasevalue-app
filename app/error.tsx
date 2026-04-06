@@ -21,7 +21,7 @@ export default function Error({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#F5F6F7',
+        background: '#F7F8FA',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
         padding: '0',
         position: 'relative',
@@ -35,7 +35,7 @@ export default function Error({
           left: 0,
           right: 0,
           height: '8px',
-          background: '#00172E',
+          background: '#1B3A5C',
         }}
       />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -44,7 +44,7 @@ export default function Error({
           maxWidth: 480,
           textAlign: 'center',
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: '2px',
           padding: '48px 32px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -63,7 +63,7 @@ export default function Error({
             marginBottom: 24,
           }}
         >
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="10" />
             <line x1="12" y1="8" x2="12" y2="12" />
             <line x1="12" y1="16" x2="12.01" y2="16" />
@@ -85,7 +85,7 @@ export default function Error({
         <p
           style={{
             fontSize: '15px',
-            color: '#455A64',
+            color: '#4B5563',
             lineHeight: 1.6,
             margin: '0 0 24px',
             maxWidth: 400,
@@ -101,7 +101,7 @@ export default function Error({
             style={{
               fontFamily: '"PT Mono", monospace',
               fontSize: '12px',
-              color: '#455A64',
+              color: '#4B5563',
               margin: '0 0 24px',
               wordBreak: 'break-all',
             }}
@@ -119,7 +119,7 @@ export default function Error({
               alignItems: 'center',
               gap: 8,
               padding: '12px 24px',
-              background: '#E8171F',
+              background: '#7C3AED',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '2px',
@@ -130,11 +130,11 @@ export default function Error({
               boxShadow: 'none',
             }}
             onMouseEnter={(e) => {
-              (e.target as HTMLButtonElement).style.background = '#E8171F';
+              (e.target as HTMLButtonElement).style.background = '#7C3AED';
               (e.target as HTMLButtonElement).style.boxShadow = 'none';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLButtonElement).style.background = '#E8171F';
+              (e.target as HTMLButtonElement).style.background = '#7C3AED';
               (e.target as HTMLButtonElement).style.boxShadow = 'none';
             }}
           >
@@ -154,7 +154,7 @@ export default function Error({
               padding: '12px 24px',
               background: '#F5F5F5',
               color: '#212529',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               fontSize: '14px',
               fontWeight: 600,
@@ -164,11 +164,11 @@ export default function Error({
             }}
             onMouseEnter={(e) => {
               (e.target as HTMLAnchorElement).style.background = '#EEEEEE';
-              (e.target as HTMLAnchorElement).style.borderColor = '#D5D8DC';
+              (e.target as HTMLAnchorElement).style.borderColor = '#E5E7EB';
             }}
             onMouseLeave={(e) => {
               (e.target as HTMLAnchorElement).style.background = '#F5F5F5';
-              (e.target as HTMLAnchorElement).style.borderColor = '#D5D8DC';
+              (e.target as HTMLAnchorElement).style.borderColor = '#E5E7EB';
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

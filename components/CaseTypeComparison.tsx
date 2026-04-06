@@ -35,7 +35,7 @@ function getAllNosEntries(): NosEntry[] {
   return entries.sort((a, b) => b.total - a.total);
 }
 
-const wrColor = (wr: number) => wr >= 50 ? '#07874A' : wr >= 35 ? '#D97706' : '#E8171F';
+const wrColor = (wr: number) => wr >= 50 ? '#07874A' : wr >= 35 ? '#D97706' : '#7C3AED';
 
 export default function CaseTypeComparison() {
   const allEntries = useMemo(() => getAllNosEntries(), []);
@@ -58,7 +58,7 @@ export default function CaseTypeComparison() {
   return (
     <div>
       <style>{`
-        .cmp-select:focus { border-color: #006997 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
+        .cmp-select:focus { border-color: #6D28D9 !important; box-shadow: 0 0 0 3px rgba(0,105,151,0.1) !important; outline: none; }
       `}</style>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: 16, alignItems: 'center', marginBottom: 24 }}>
@@ -72,7 +72,7 @@ export default function CaseTypeComparison() {
             onChange={e => setNosA(e.target.value)}
             className="cmp-select"
             style={{
-              width: '100%', height: 44, padding: '0 32px 0 12px', border: '1px solid #D5D8DC', borderRadius: 2,
+              width: '100%', height: 44, padding: '0 32px 0 12px', border: '1px solid #E5E7EB', borderRadius: 2,
               fontFamily: 'var(--font-body)', fontSize: 13, color: '#212529', background: '#FFFFFF',
               appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
               backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
@@ -93,7 +93,7 @@ export default function CaseTypeComparison() {
         {/* VS badge */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: 20 }}>
           <div style={{
-            width: 40, height: 40, borderRadius: '50%', background: '#00172E', color: '#FFFFFF',
+            width: 40, height: 40, borderRadius: '50%', background: '#1B3A5C', color: '#FFFFFF',
             display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700,
             fontFamily: 'var(--font-display)',
           }}>
@@ -111,7 +111,7 @@ export default function CaseTypeComparison() {
             onChange={e => setNosB(e.target.value)}
             className="cmp-select"
             style={{
-              width: '100%', height: 44, padding: '0 32px 0 12px', border: '1px solid #D5D8DC', borderRadius: 2,
+              width: '100%', height: 44, padding: '0 32px 0 12px', border: '1px solid #E5E7EB', borderRadius: 2,
               fontFamily: 'var(--font-body)', fontSize: 13, color: '#212529', background: '#FFFFFF',
               appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23455A64' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e")`,
               backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center', backgroundSize: '16px',
@@ -132,9 +132,9 @@ export default function CaseTypeComparison() {
 
       {/* Comparison Table */}
       {entryA && entryB ? (
-        <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2, overflow: 'hidden' }}>
+        <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, overflow: 'hidden' }}>
           {/* Header row */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', background: '#00172E', padding: '12px 16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', background: '#1B3A5C', padding: '12px 16px' }}>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#C7D1D8' }}>Metric</div>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#FFFFFF', textAlign: 'center' }}>{entryA.label}</div>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#FFFFFF', textAlign: 'center' }}>{entryB.label}</div>
@@ -145,7 +145,7 @@ export default function CaseTypeComparison() {
             const bWins = m.higher === 'green' ? m.bVal > m.aVal : m.higher === 'red' ? m.bVal < m.aVal : false;
             return (
               <div key={m.label} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 2fr', padding: '12px 16px', borderTop: '1px solid #F0F0F0', background: i % 2 === 0 ? '#FFFFFF' : '#FAFAFA' }}>
-                <div style={{ fontSize: 12, fontWeight: 600, color: '#455A64', fontFamily: 'var(--font-body)' }}>{m.label}</div>
+                <div style={{ fontSize: 12, fontWeight: 600, color: '#4B5563', fontFamily: 'var(--font-body)' }}>{m.label}</div>
                 <div style={{ textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: 14, fontWeight: 700, color: aWins ? '#07874A' : '#212529' }}>
                   {m.a} {aWins && <span style={{ fontSize: 10, color: '#07874A' }}>●</span>}
                 </div>
@@ -156,11 +156,11 @@ export default function CaseTypeComparison() {
             );
           })}
           {/* Visual comparison bars */}
-          <div style={{ padding: '16px', borderTop: '1px solid #D5D8DC', background: '#F8F9FA' }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#455A64', marginBottom: 12 }}>Win Rate Comparison</div>
+          <div style={{ padding: '16px', borderTop: '1px solid #E5E7EB', background: '#F8F9FA' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#4B5563', marginBottom: 12 }}>Win Rate Comparison</div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div>
-                <div style={{ fontSize: 11, color: '#455A64', marginBottom: 4 }}>{entryA.label}</div>
+                <div style={{ fontSize: 11, color: '#4B5563', marginBottom: 4 }}>{entryA.label}</div>
                 <div style={{ height: 24, background: '#F0F0F0', borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
                   <div style={{ width: `${entryA.wr}%`, height: '100%', background: wrColor(entryA.wr), borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 6 }}>
                     <span style={{ fontSize: 11, fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-mono)' }}>{entryA.wr}%</span>
@@ -168,7 +168,7 @@ export default function CaseTypeComparison() {
                 </div>
               </div>
               <div>
-                <div style={{ fontSize: 11, color: '#455A64', marginBottom: 4 }}>{entryB.label}</div>
+                <div style={{ fontSize: 11, color: '#4B5563', marginBottom: 4 }}>{entryB.label}</div>
                 <div style={{ height: 24, background: '#F0F0F0', borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
                   <div style={{ width: `${entryB.wr}%`, height: '100%', background: wrColor(entryB.wr), borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 6 }}>
                     <span style={{ fontSize: 11, fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-mono)' }}>{entryB.wr}%</span>
@@ -179,11 +179,11 @@ export default function CaseTypeComparison() {
           </div>
         </div>
       ) : (
-        <div style={{ textAlign: 'center', padding: '48px 24px', background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2 }}>
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="1.5" style={{ margin: '0 auto 16px' }}>
+        <div style={{ textAlign: 'center', padding: '48px 24px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2 }}>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="1.5" style={{ margin: '0 auto 16px' }}>
             <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
           </svg>
-          <p style={{ fontSize: 14, color: '#455A64', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: 14, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
             Select two case types above to see a side-by-side comparison of win rates, settlement rates, duration, and recovery ranges.
           </p>
         </div>

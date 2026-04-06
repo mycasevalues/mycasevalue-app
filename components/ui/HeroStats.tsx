@@ -31,14 +31,14 @@ interface ApiStatsResponse {
 const STATS_EN: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Federal Cases', sublabel: 'Analyzed', icon: '', color: '#F0F2F5' },
   { value: 94, suffix: '', label: 'Federal Districts', sublabel: 'All US courts', icon: '', color: '#F0F2F5' },
-  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: '#006997' },
+  { value: 84, suffix: '', label: 'Case Categories', sublabel: 'Tracked', icon: '', color: '#6D28D9' },
   { value: 50, suffix: '+', label: 'Years of Data', sublabel: '1970–2026', icon: '', color: '#F0F2F5' },
 ];
 
 const STATS_ES: StatItem[] = [
   { value: 5.1, suffix: 'M+', label: 'Casos Federales', sublabel: 'Analizados', icon: '', color: '#F0F2F5' },
   { value: 94, suffix: '', label: 'Distritos Federales', sublabel: 'Todos los tribunales', icon: '', color: '#F0F2F5' },
-  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: '#006997' },
+  { value: 84, suffix: '', label: 'Categorías', sublabel: 'Rastreadas', icon: '', color: '#6D28D9' },
   { value: 50, suffix: '+', label: 'Años de Datos', sublabel: '1970–2026', icon: '', color: '#F0F2F5' },
 ];
 
@@ -121,7 +121,7 @@ function StatCard({ stat, index, isVisible }: { stat: StatItem; index: number; i
         {stat.sublabel && (
           <div style={{
             fontSize: 'clamp(10px, 1.2vw, 12px)',
-            color: '#455A64',
+            color: '#4B5563',
             marginTop: '4px',
             fontWeight: 500,
           }}>

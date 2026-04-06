@@ -21,7 +21,7 @@ const lightModeColors = {
   bg: '#FFFFFF',
   border: 'rgba(255,255,255,0.10)',
   text: '#212529',
-  muted: '#455A64',
+  muted: '#4B5563',
   accent: '#F0F2F5',
 };
 

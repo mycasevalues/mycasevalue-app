@@ -5,7 +5,7 @@ import { useState } from 'react';
 const btnStyle: React.CSSProperties = {
   padding: '6px 14px',
   background: '#FFFFFF',
-  border: '1px solid #D5D8DC',
+  border: '1px solid #E5E7EB',
   borderRadius: '2px',
   fontSize: '13px',
   color: '#F0F2F5',

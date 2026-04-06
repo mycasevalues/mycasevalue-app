@@ -14,7 +14,7 @@ const SkeletonResultCard = () => (
     padding: '16px',
     marginBottom: '12px',
     background: '#FFFFFF',
-    border: '1px solid #D5D8DC',
+    border: '1px solid #E5E7EB',
     borderRadius: '2px',
     animation: 'shimmer 2s infinite',
   }}>
@@ -163,7 +163,7 @@ export default function SearchPage() {
   }));
 
   return (
-    <main style={{ fontFamily: 'var(--font-body)', background: '#F5F6F7', minHeight: '100vh' }}>
+    <main style={{ fontFamily: 'var(--font-body)', background: '#F7F8FA', minHeight: '100vh' }}>
       <style>{`
         @keyframes shimmer {
           0% {
@@ -175,7 +175,7 @@ export default function SearchPage() {
         }
 
         input:focus {
-          border-color: #E8171F !important;
+          border-color: #7C3AED !important;
           box-shadow: 0 0 0 3px rgba(232, 23, 31, 0.08) !important;
         }
 
@@ -199,13 +199,13 @@ export default function SearchPage() {
         }
       `}</style>
       {/* Dark Navy Header Banner */}
-      <div className="search-header" style={{ background: '#00172E', borderBottom: '1px solid #D5D8DC', padding: '64px 24px' }}>
+      <div className="search-header" style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '2px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#E8171F', flexShrink: 0 }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#7C3AED', flexShrink: 0 }}>
               <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#7C3AED', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Search
             </span>
           </div>
@@ -231,7 +231,7 @@ export default function SearchPage() {
       <div className="search-layout" style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px', display: 'grid', gridTemplateColumns: '220px 1fr', gap: '32px', fontFamily: 'var(--font-body)' }}>
         {/* Left sidebar — category filters */}
         <aside className="search-sidebar" style={{ position: 'sticky', top: '128px', alignSelf: 'start' }}>
-          <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
             Filter by Category
           </p>
           <button
@@ -239,9 +239,9 @@ export default function SearchPage() {
             style={{
               display: 'block', width: '100%', textAlign: 'left',
               padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === null ? 700 : 400,
-              color: selectedCategory === null ? '#E8171F' : '#455A64',
+              color: selectedCategory === null ? '#7C3AED' : '#4B5563',
               background: selectedCategory === null ? 'rgba(232,23,31,0.06)' : 'transparent',
-              border: 'none', borderLeft: selectedCategory === null ? '3px solid #E8171F' : '3px solid transparent',
+              border: 'none', borderLeft: selectedCategory === null ? '3px solid #7C3AED' : '3px solid transparent',
               cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
               marginBottom: '2px',
             }}
@@ -256,9 +256,9 @@ export default function SearchPage() {
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 width: '100%', textAlign: 'left',
                 padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === cat.id ? 700 : 400,
-                color: selectedCategory === cat.id ? '#E8171F' : '#455A64',
+                color: selectedCategory === cat.id ? '#7C3AED' : '#4B5563',
                 background: selectedCategory === cat.id ? 'rgba(232,23,31,0.06)' : 'transparent',
-                border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid #E8171F' : '3px solid transparent',
+                border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid #7C3AED' : '3px solid transparent',
                 cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
                 marginBottom: '2px',
               }}
@@ -275,11 +275,11 @@ export default function SearchPage() {
       {query.length === 0 && recentItems.length > 0 && (
         <div style={{ marginBottom: '24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#455A64', flexShrink: 0 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#4B5563', flexShrink: 0 }}>
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <p style={{ fontSize: '13px', color: '#455A64', margin: '0', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Recently viewed</p>
+            <p style={{ fontSize: '13px', color: '#4B5563', margin: '0', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Recently viewed</p>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             {recentItems.map((item, i) => (
@@ -289,10 +289,10 @@ export default function SearchPage() {
                 style={{
                   padding: '8px 16px',
                   background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '2px',
                   fontSize: '13px',
-                  color: '#006997',
+                  color: '#6D28D9',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   transition: 'all 150ms ease-out',
@@ -301,13 +301,13 @@ export default function SearchPage() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = '#F0F6FB';
-                  e.currentTarget.style.borderColor = '#006997';
+                  e.currentTarget.style.borderColor = '#6D28D9';
                   e.currentTarget.style.color = '#004D7A';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = '#FFFFFF';
-                  e.currentTarget.style.borderColor = '#D5D8DC';
-                  e.currentTarget.style.color = '#006997';
+                  e.currentTarget.style.borderColor = '#E5E7EB';
+                  e.currentTarget.style.color = '#6D28D9';
                 }}
               >
                 {item.label}
@@ -320,7 +320,7 @@ export default function SearchPage() {
       <div style={{ display: 'flex', gap: '12px', marginBottom: 24, flexWrap: 'wrap' }}>
         <div style={{ position: 'relative', flex: '1 1 auto', minWidth: '200px' }}>
           <div style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <SearchIcon size={20} color="#455A64" />
+            <SearchIcon size={20} color="#4B5563" />
           </div>
           <input
             type="text"
@@ -335,7 +335,7 @@ export default function SearchPage() {
               paddingLeft: '44px',
               paddingRight: '16px',
               fontSize: '16px',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               background: '#FFFFFF',
               color: '#212529',
@@ -363,23 +363,23 @@ export default function SearchPage() {
             paddingRight: '24px',
             fontSize: '15px',
             fontWeight: '600',
-            background: '#E8171F',
+            background: '#7C3AED',
             color: '#FFFFFF',
             border: 'none',
             borderRadius: '2px',
             cursor: 'pointer',
             fontFamily: 'var(--font-body)',
             transition: 'all 150ms ease-out',
-            boxShadow: '0 2px 4px rgba(232, 23, 31, 0.2)',
+            boxShadow: '0 2px 4px rgba(124, 58, 237, 0.2)',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.background = '#C41119';
-            e.currentTarget.style.boxShadow = '0 4px 12px rgba(232, 23, 31, 0.3)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(124, 58, 237, 0.25)';
             e.currentTarget.style.transform = 'translateY(-1px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#E8171F';
-            e.currentTarget.style.boxShadow = '0 2px 4px rgba(232, 23, 31, 0.2)';
+            e.currentTarget.style.background = '#7C3AED';
+            e.currentTarget.style.boxShadow = '0 2px 4px rgba(124, 58, 237, 0.2)';
             e.currentTarget.style.transform = 'translateY(0)';
           }}
           aria-label="Search"
@@ -438,28 +438,28 @@ export default function SearchPage() {
       {/* Empty state */}
       {query.length > 1 && results.length === 0 && !isLoading && (
         <div style={{ textAlign: 'center', padding: '40px 24px' }}>
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: '#D5D8DC', margin: '0 auto 16px', display: 'block' }}>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: '#E5E7EB', margin: '0 auto 16px', display: 'block' }}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
-          <p style={{ color: '#455A64', fontSize: 16, margin: 0, marginBottom: 8, fontFamily: 'var(--font-body)' }}>
+          <p style={{ color: '#4B5563', fontSize: 16, margin: 0, marginBottom: 8, fontFamily: 'var(--font-body)' }}>
             No case types match your search
           </p>
           <p style={{ color: '#AAAAAA', fontSize: 14, margin: 0, marginBottom: 16, fontFamily: 'var(--font-body)' }}>
             for &ldquo;{query}&rdquo;
           </p>
-          <Link href="/cases" style={{ color: '#006997', textDecoration: 'none', fontSize: 14 }}>Browse all categories &rarr;</Link>
+          <Link href="/cases" style={{ color: '#6D28D9', textDecoration: 'none', fontSize: 14 }}>Browse all categories &rarr;</Link>
         </div>
       )}
 
       {/* Result count */}
       {query.length > 1 && !isLoading && results.length > 0 && (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-          <p style={{ fontSize: '13px', color: '#455A64', margin: 0, fontFamily: 'var(--font-body)' }}>
+          <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
             <strong style={{ color: '#212529' }}>{results.length}</strong> result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;
-            {selectedCategory && <span> in <strong style={{ color: '#E8171F' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
+            {selectedCategory && <span> in <strong style={{ color: '#7C3AED' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
           </p>
           {selectedCategory && (
-            <button onClick={() => setSelectedCategory(null)} style={{ fontSize: '12px', color: '#006997', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
+            <button onClick={() => setSelectedCategory(null)} style={{ fontSize: '12px', color: '#6D28D9', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
               Clear filter
             </button>
           )}
@@ -476,7 +476,7 @@ export default function SearchPage() {
             padding: '16px',
             marginBottom: '12px',
             background: '#FFFFFF',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
             borderRadius: '2px',
             textDecoration: 'none',
             transition: 'all 150ms ease-out',
@@ -485,12 +485,12 @@ export default function SearchPage() {
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';
             e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
-            e.currentTarget.style.borderColor = '#E8171F';
+            e.currentTarget.style.borderColor = '#7C3AED';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
             e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
-            e.currentTarget.style.borderColor = '#D5D8DC';
+            e.currentTarget.style.borderColor = '#E5E7EB';
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
@@ -498,7 +498,7 @@ export default function SearchPage() {
             <span style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: '#E8171F',
+              color: '#7C3AED',
               background: '#FEE9EB',
               padding: '4px 10px',
               borderRadius: '2px',
@@ -509,8 +509,8 @@ export default function SearchPage() {
               {r.nos}
             </span>
           </div>
-          <p style={{ fontSize: '13px', color: '#455A64', margin: '0', fontFamily: 'var(--font-body)', lineHeight: '1.5' }}>{r.categoryName}</p>
-          {r.desc && <p style={{ fontSize: '13px', color: '#455A64', margin: '8px 0 0 0', fontFamily: 'var(--font-body)', lineHeight: '1.4' }}>{r.desc}</p>}
+          <p style={{ fontSize: '13px', color: '#4B5563', margin: '0', fontFamily: 'var(--font-body)', lineHeight: '1.5' }}>{r.categoryName}</p>
+          {r.desc && <p style={{ fontSize: '13px', color: '#4B5563', margin: '8px 0 0 0', fontFamily: 'var(--font-body)', lineHeight: '1.4' }}>{r.desc}</p>}
           {/* Inline data preview */}
           {(() => {
             const rd = REAL_DATA[r.nos];
@@ -519,32 +519,32 @@ export default function SearchPage() {
               <div style={{ display: 'flex', gap: '16px', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid #F0F3F5' }}>
                 {rd.wr != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
-                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Win Rate </span>
-                    <strong style={{ color: rd.wr >= 50 ? '#07874A' : '#E8171F' }}>{rd.wr}%</strong>
+                    <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Win Rate </span>
+                    <strong style={{ color: rd.wr >= 50 ? '#07874A' : '#7C3AED' }}>{rd.wr}%</strong>
                   </span>
                 )}
                 {rd.sp != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
-                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Settlement </span>
-                    <strong style={{ color: '#006997' }}>{rd.sp}%</strong>
+                    <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Settlement </span>
+                    <strong style={{ color: '#6D28D9' }}>{rd.sp}%</strong>
                   </span>
                 )}
                 {rd.total != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
-                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Cases </span>
+                    <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Cases </span>
                     <strong>{rd.total.toLocaleString()}</strong>
                   </span>
                 )}
                 {rd.mo != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
-                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Duration </span>
+                    <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Duration </span>
                     <strong>{rd.mo}mo</strong>
                   </span>
                 )}
                 {rd.rng?.md != null && rd.rng.md > 0 && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
-                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Median </span>
-                    <strong style={{ color: '#E8171F' }}>{formatSettlementAmount(rd.rng.md, { compact: true })}</strong>
+                    <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Median </span>
+                    <strong style={{ color: '#7C3AED' }}>{formatSettlementAmount(rd.rng.md, { compact: true })}</strong>
                   </span>
                 )}
               </div>
@@ -557,7 +557,7 @@ export default function SearchPage() {
         <>
           {/* Popular Searches */}
           <div style={{ marginTop: '24px', marginBottom: '32px' }}>
-            <p style={{ fontSize: '13px', color: '#455A64', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Popular searches</p>
+            <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '12px', fontWeight: '500', fontFamily: 'var(--font-body)' }}>Popular searches</p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {['Wrongful termination', 'Car accident', 'Medical malpractice', 'Debt collection', 'Discrimination', 'Slip and fall', 'Breach of contract', 'Insurance bad faith', 'Product liability', 'Sexual harassment', 'ADA violation', 'Wage theft'].map(s => (
                 <button
@@ -566,10 +566,10 @@ export default function SearchPage() {
                   style={{
                     padding: '8px 16px',
                     background: '#FFFFFF',
-                    border: '1px solid #D5D8DC',
+                    border: '1px solid #E5E7EB',
                     borderRadius: '2px',
                     fontSize: '13px',
-                    color: '#006997',
+                    color: '#6D28D9',
                     cursor: 'pointer',
                     fontFamily: 'var(--font-body)',
                     transition: 'all 150ms ease-out',
@@ -577,13 +577,13 @@ export default function SearchPage() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = '#F0F6FB';
-                    e.currentTarget.style.borderColor = '#006997';
+                    e.currentTarget.style.borderColor = '#6D28D9';
                     e.currentTarget.style.color = '#004D7A';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = '#FFFFFF';
-                    e.currentTarget.style.borderColor = '#D5D8DC';
-                    e.currentTarget.style.color = '#006997';
+                    e.currentTarget.style.borderColor = '#E5E7EB';
+                    e.currentTarget.style.color = '#6D28D9';
                   }}
                 >
                   {s}
@@ -594,7 +594,7 @@ export default function SearchPage() {
 
           {/* Top Case Types by Volume */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Most Common Federal Case Types
             </p>
             <div style={{ display: 'grid', gap: 8 }}>
@@ -618,23 +618,23 @@ export default function SearchPage() {
                     href={`/report/${item.nos}`}
                     style={{
                       display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px',
-                      background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2,
+                      background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2,
                       textDecoration: 'none', transition: 'all 0.15s ease',
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#006997'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#6D28D9'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
-                    <span style={{ width: 24, height: 24, borderRadius: 2, background: '#E8171F', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0 }}>
+                    <span style={{ width: 24, height: 24, borderRadius: 2, background: '#7C3AED', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0 }}>
                       {i + 1}
                     </span>
                     <div style={{ flex: 1 }}>
                       <span style={{ fontSize: 14, fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)' }}>{item.label}</span>
                     </div>
-                    <div style={{ display: 'flex', gap: 16, fontSize: 12, fontFamily: 'var(--font-mono)', color: '#455A64', flexShrink: 0 }}>
-                      <span style={{ color: item.wr >= 50 ? '#07874A' : item.wr >= 35 ? '#D97706' : '#E8171F', fontWeight: 700 }}>{item.wr}%</span>
+                    <div style={{ display: 'flex', gap: 16, fontSize: 12, fontFamily: 'var(--font-mono)', color: '#4B5563', flexShrink: 0 }}>
+                      <span style={{ color: item.wr >= 50 ? '#07874A' : item.wr >= 35 ? '#D97706' : '#7C3AED', fontWeight: 700 }}>{item.wr}%</span>
                       <span>{item.total.toLocaleString()}</span>
                       <span>{item.mo}mo</span>
-                      {item.rngMd > 0 && <span style={{ color: '#E8171F', fontWeight: 600 }}>${item.rngMd}K</span>}
+                      {item.rngMd > 0 && <span style={{ color: '#7C3AED', fontWeight: 600 }}>${item.rngMd}K</span>}
                     </div>
                   </Link>
                 ));
@@ -644,7 +644,7 @@ export default function SearchPage() {
 
           {/* Browse by Category Grid */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Browse by Category
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
@@ -668,20 +668,20 @@ export default function SearchPage() {
                     key={cat.id}
                     href={`/cases/${cat.id}`}
                     style={{
-                      padding: '16px', background: '#FFFFFF', border: '1px solid #D5D8DC',
+                      padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB',
                       borderRadius: 2, textDecoration: 'none', transition: 'all 0.15s ease',
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#E8171F'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D5D8DC'; e.currentTarget.style.boxShadow = 'none'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#7C3AED'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
                     <div style={{ fontSize: 14, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>{cat.label}</div>
-                    <div style={{ fontSize: 12, color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: 8 }}>{cat.opts.length} case types</div>
+                    <div style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 8 }}>{cat.opts.length} case types</div>
                     <div style={{ display: 'flex', gap: 12, fontSize: 11, fontFamily: 'var(--font-mono)' }}>
-                      <span style={{ color: avgWr >= 50 ? '#07874A' : avgWr >= 35 ? '#D97706' : '#E8171F', fontWeight: 700 }}>{avgWr}% win</span>
-                      <span style={{ color: '#455A64' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
+                      <span style={{ color: avgWr >= 50 ? '#07874A' : avgWr >= 35 ? '#D97706' : '#7C3AED', fontWeight: 700 }}>{avgWr}% win</span>
+                      <span style={{ color: '#4B5563' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
                     </div>
                     <div style={{ height: 3, background: '#F0F3F5', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
-                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#07874A' : avgWr >= 35 ? '#D97706' : '#E8171F', borderRadius: 2 }} />
+                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#07874A' : avgWr >= 35 ? '#D97706' : '#7C3AED', borderRadius: 2 }} />
                     </div>
                   </Link>
                 );
@@ -691,7 +691,7 @@ export default function SearchPage() {
 
           {/* Data Highlights Section */}
           <div style={{ marginBottom: '32px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Data Highlights
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
@@ -723,10 +723,10 @@ export default function SearchPage() {
                 const highestRecovery = allNos.filter(x => x.rngMd > 0).reduce((a, b) => b.rngMd > a.rngMd ? b : a, allNos.filter(x => x.rngMd > 0)[0]);
 
                 const highlights = [
-                  { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#E8171F' },
+                  { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#7C3AED' },
                   { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#07874A' },
                   { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#0369A1' },
-                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `$${highestRecovery.rngMd}K median` : 'N/A', color: '#E8171F' },
+                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `$${highestRecovery.rngMd}K median` : 'N/A', color: '#7C3AED' },
                 ];
 
                 return highlights.map((h, i) => (
@@ -735,7 +735,7 @@ export default function SearchPage() {
                     style={{
                       padding: '16px',
                       background: '#FFFFFF',
-                      border: '1px solid #D5D8DC',
+                      border: '1px solid #E5E7EB',
                       borderRadius: '2px',
                       transition: 'all 0.15s ease',
                     }}
@@ -744,11 +744,11 @@ export default function SearchPage() {
                       e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = '#D5D8DC';
+                      e.currentTarget.style.borderColor = '#E5E7EB';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   >
-                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+                    <div style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
                       {h.title}
                     </div>
                     <div style={{ fontSize: '13px', fontWeight: '600', color: '#212529', marginBottom: '6px', fontFamily: 'var(--font-display)', lineHeight: '1.4' }}>
@@ -764,8 +764,8 @@ export default function SearchPage() {
           </div>
 
           {/* Quick Actions Bar */}
-          <div style={{ marginTop: '32px', padding: '24px 0', borderTop: '1px solid #D5D8DC' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
+          <div style={{ marginTop: '32px', padding: '24px 0', borderTop: '1px solid #E5E7EB' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '12px', fontFamily: 'var(--font-body)' }}>
               Quick Actions
             </p>
             <div style={{ display: 'inline-flex', flexWrap: 'wrap', gap: '12px' }}>
@@ -782,24 +782,24 @@ export default function SearchPage() {
                   style={{
                     padding: '12px 20px',
                     background: '#FFFFFF',
-                    border: '1px solid #D5D8DC',
+                    border: '1px solid #E5E7EB',
                     borderRadius: '20px',
                     fontSize: '12px',
                     fontWeight: '600',
                     textDecoration: 'none',
-                    color: '#455A64',
+                    color: '#4B5563',
                     fontFamily: 'var(--font-body)',
                     transition: 'all 0.15s ease',
                     cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#E8171F';
-                    e.currentTarget.style.color = '#E8171F';
+                    e.currentTarget.style.borderColor = '#7C3AED';
+                    e.currentTarget.style.color = '#7C3AED';
                     e.currentTarget.style.background = '#FEE9EB';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#D5D8DC';
-                    e.currentTarget.style.color = '#455A64';
+                    e.currentTarget.style.borderColor = '#E5E7EB';
+                    e.currentTarget.style.color = '#4B5563';
                     e.currentTarget.style.background = '#FFFFFF';
                   }}
                 >

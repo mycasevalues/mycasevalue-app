@@ -106,7 +106,7 @@ export default function SiteFooter() {
             <p style={{
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#D5D8DC',
+              color: '#E5E7EB',
               lineHeight: 1.7,
               marginBottom: '12px',
             }}>
@@ -146,7 +146,7 @@ export default function SiteFooter() {
                     className="site-footer-link"
                     style={{
                       fontSize: '13px',
-                      color: '#D5D8DC',
+                      color: '#E5E7EB',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       fontWeight: 400,
@@ -219,7 +219,7 @@ export default function SiteFooter() {
           </h4>
           <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
             {/* Twitter/X Icon */}
-            <Link href="https://twitter.com/mycasevalue" className="site-footer-social-icon" style={{
+            <Link href="https://twitter.com/mycasevalue" target="_blank" rel="noopener noreferrer" className="site-footer-social-icon" style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -227,12 +227,12 @@ export default function SiteFooter() {
               padding: '8px',
               borderRadius: '2px',
             }} title="Twitter/X">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-1 7-1"></path>
               </svg>
             </Link>
             {/* LinkedIn Icon */}
-            <Link href="https://linkedin.com/company/mycasevalue" className="site-footer-social-icon" style={{
+            <Link href="https://linkedin.com/company/mycasevalue" target="_blank" rel="noopener noreferrer" className="site-footer-social-icon" style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -240,13 +240,13 @@ export default function SiteFooter() {
               padding: '8px',
               borderRadius: '2px',
             }} title="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
                 <circle cx="4" cy="4" r="2"></circle>
               </svg>
             </Link>
             {/* Facebook Icon */}
-            <Link href="https://facebook.com/mycasevalue" className="site-footer-social-icon" style={{
+            <Link href="https://facebook.com/company/mycasevalue" target="_blank" rel="noopener noreferrer" className="site-footer-social-icon" style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -254,7 +254,7 @@ export default function SiteFooter() {
               padding: '8px',
               borderRadius: '2px',
             }} title="Facebook">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D5D8DC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5E7EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z"></path>
               </svg>
             </Link>
@@ -290,7 +290,7 @@ export default function SiteFooter() {
               <Link href="/privacy" style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '12px',
-                color: '#D5D8DC',
+                color: '#E5E7EB',
                 textDecoration: 'none',
                 transition: 'color 150ms ease-out',
               }} className="site-footer-legal-link">
@@ -304,7 +304,7 @@ export default function SiteFooter() {
               <Link href="/terms" style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '12px',
-                color: '#D5D8DC',
+                color: '#E5E7EB',
                 textDecoration: 'none',
                 transition: 'color 150ms ease-out',
               }} className="site-footer-legal-link">

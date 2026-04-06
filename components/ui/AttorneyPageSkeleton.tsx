@@ -14,7 +14,7 @@ export default function AttorneyPageSkeleton({
   showTabs?: boolean;
 }) {
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
       <style>{`
         @keyframes skeletonPulse {
           0%, 100% { opacity: 1; }
@@ -24,12 +24,12 @@ export default function AttorneyPageSkeleton({
       `}</style>
 
       {/* Navy header skeleton */}
-      <div style={{ backgroundColor: '#00172E', color: '#FFFFFF', padding: '32px 20px' }}>
+      <div style={{ backgroundColor: '#1B3A5C', color: '#FFFFFF', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div className="skel-pulse" style={{ height: 12, width: 180, background: 'rgba(255,255,255,0.1)', borderRadius: 2, marginBottom: 20 }} />
           {/* Badge */}
-          <div className="skel-pulse" style={{ height: 26, width: 120, background: '#E8171F', borderRadius: 2, marginBottom: 16, opacity: 0.5 }} />
+          <div className="skel-pulse" style={{ height: 26, width: 120, background: '#7C3AED', borderRadius: 2, marginBottom: 16, opacity: 0.5 }} />
           {/* Title */}
           <div className="skel-pulse" style={{ height: 36, width: '45%', background: 'rgba(255,255,255,0.12)', borderRadius: 2, marginBottom: 12 }} />
           {/* Description */}
@@ -43,7 +43,7 @@ export default function AttorneyPageSkeleton({
       <div style={{ maxWidth: '1140px', margin: '0 auto', padding: '32px 20px' }}>
         {/* Optional tabs */}
         {showTabs && (
-          <div style={{ display: 'flex', gap: 0, marginBottom: 24, borderBottom: '1px solid #D5D8DC' }}>
+          <div style={{ display: 'flex', gap: 0, marginBottom: 24, borderBottom: '1px solid #E5E7EB' }}>
             {[1, 2, 3].map(i => (
               <div
                 key={i}
@@ -52,9 +52,9 @@ export default function AttorneyPageSkeleton({
                   height: 40,
                   width: 100,
                   background: i === 1 ? '#FFFFFF' : '#F8F9FA',
-                  borderTop: i === 1 ? '2px solid #E8171F' : '2px solid transparent',
-                  borderLeft: '1px solid #D5D8DC',
-                  borderRight: '1px solid #D5D8DC',
+                  borderTop: i === 1 ? '2px solid #7C3AED' : '2px solid transparent',
+                  borderLeft: '1px solid #E5E7EB',
+                  borderRight: '1px solid #E5E7EB',
                   padding: '10px 16px',
                 }}
               />
@@ -74,7 +74,7 @@ export default function AttorneyPageSkeleton({
               className="skel-pulse"
               style={{
                 background: '#FFFFFF',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 borderRadius: 2,
                 padding: 24,
                 animationDelay: `${i * 150}ms`,
@@ -82,16 +82,16 @@ export default function AttorneyPageSkeleton({
             >
               {/* Card header */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-                <div style={{ height: 18, width: '50%', background: '#E5EBF0', borderRadius: 2 }} />
+                <div style={{ height: 18, width: '50%', background: '#E5E7EB', borderRadius: 2 }} />
                 <div style={{ height: 24, width: 60, background: '#F0F3F5', borderRadius: 2 }} />
               </div>
               {/* Card body lines */}
               <div style={{ height: 14, width: '90%', background: '#F0F1F2', borderRadius: 2, marginBottom: 10 }} />
               <div style={{ height: 14, width: '75%', background: '#F0F1F2', borderRadius: 2, marginBottom: 10 }} />
-              <div style={{ height: 14, width: '60%', background: '#F5F6F7', borderRadius: 2, marginBottom: 16 }} />
+              <div style={{ height: 14, width: '60%', background: '#F7F8FA', borderRadius: 2, marginBottom: 16 }} />
               {/* Card footer bar */}
-              <div style={{ height: 8, width: '100%', background: '#F5F6F7', borderRadius: 2 }}>
-                <div style={{ height: '100%', width: `${30 + (i * 15) % 50}%`, background: '#E5EBF0', borderRadius: 2 }} />
+              <div style={{ height: 8, width: '100%', background: '#F7F8FA', borderRadius: 2 }}>
+                <div style={{ height: '100%', width: `${30 + (i * 15) % 50}%`, background: '#E5E7EB', borderRadius: 2 }} />
               </div>
             </div>
           ))}

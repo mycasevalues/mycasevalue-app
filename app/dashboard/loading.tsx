@@ -1,8 +1,8 @@
 export default function DashboardLoading() {
   return (
-    <div style={{ minHeight: '100vh', background: '#F5F6F7' }}>
+    <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
       {/* Header skeleton */}
-      <div style={{ background: '#00172E', padding: '48px 24px', borderBottom: '3px solid #E8171F' }}>
+      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #7C3AED' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ height: '32px', width: '200px', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', marginBottom: '8px' }} />
           <div style={{ height: '16px', width: '300px', background: 'rgba(255,255,255,0.08)', borderRadius: '2px' }} />
@@ -14,16 +14,16 @@ export default function DashboardLoading() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
           {[1, 2, 3, 4].map(i => (
             <div key={i} style={{
-              background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', padding: '24px',
+              background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '2px', padding: '24px',
             }}>
-              <div style={{ height: '14px', width: '60%', background: '#E5EBF0', borderRadius: '2px', marginBottom: '12px' }} />
+              <div style={{ height: '14px', width: '60%', background: '#E5E7EB', borderRadius: '2px', marginBottom: '12px' }} />
               <div style={{ height: '28px', width: '40%', background: '#F0F1F2', borderRadius: '2px' }} />
             </div>
           ))}
         </div>
         {/* Content area */}
-        <div style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px', padding: '32px', height: '400px' }}>
-          <div style={{ height: '20px', width: '30%', background: '#E5EBF0', borderRadius: '2px', marginBottom: '24px' }} />
+        <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '2px', padding: '32px', height: '400px' }}>
+          <div style={{ height: '20px', width: '30%', background: '#E5E7EB', borderRadius: '2px', marginBottom: '24px' }} />
           {[1, 2, 3].map(i => (
             <div key={i} style={{ height: '60px', background: '#FAFBFC', borderRadius: '2px', marginBottom: '12px' }} />
           ))}

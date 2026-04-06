@@ -16,7 +16,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
   const total = data.reduce((s, d) => s + d.value, 0);
 
   return (
-    <div className="relative p-6" style={{ width: size + 48, height: size + 48, background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
+    <div className="relative p-6" style={{ width: size + 48, height: size + 48, background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '2px' }}>
       <div style={{ width: size, height: size }}>
         <ResponsiveContainer width="100%" height="100%">
         <PieChart>
@@ -41,7 +41,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
             formatter={(value: number, name: string) => [`${((value / total) * 100).toFixed(1)}%`, name]}
             contentStyle={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',
@@ -61,7 +61,7 @@ export function OutcomeDonut({ data, centerLabel, centerValue, size = 240 }: Out
             </div>
           )}
           {centerLabel && (
-            <div className="text-[11px] font-semibold text-[#455A64] mt-0.5">{centerLabel}</div>
+            <div className="text-[11px] font-semibold text-[#4B5563] mt-0.5">{centerLabel}</div>
           )}
         </div>
       )}

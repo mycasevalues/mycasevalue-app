@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
  *
  * Design specifications:
  * - Height: 3px
- * - Background: #E8171F (red)
+ * - Background: #7C3AED (red)
  * - Position: fixed, top: 0, left: 0
  * - z-index: 9999
  * - Smooth width transition with CSS animation
@@ -59,7 +59,7 @@ export default function NavigationProgress() {
           top: 0;
           left: 0;
           height: 3px;
-          background-color: #E8171F;
+          background-color: #7C3AED;
           z-index: 9999;
           pointer-events: none;
         }

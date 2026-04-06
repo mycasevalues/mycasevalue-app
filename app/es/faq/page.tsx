@@ -166,14 +166,14 @@ const faqs = [
 
 export default function SpanishFAQPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: '#00172E', borderColor: '#D5D8DC' }}>
+      <div className="border-b" style={{ background: '#1B3A5C', borderColor: '#E5E7EB' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">
@@ -186,7 +186,7 @@ export default function SpanishFAQPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
+            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}>
             AYUDA
           </div>
 
@@ -214,7 +214,7 @@ export default function SpanishFAQPage() {
                     className="group p-5 border transition-colors cursor-pointer"
                     style={{
                       borderRadius: '2px',
-                      borderColor: '#D5D8DC',
+                      borderColor: '#E5E7EB',
                       background: '#FFFFFF',
                     }}
                   >
@@ -235,8 +235,8 @@ export default function SpanishFAQPage() {
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
-                    <div className="pt-4 mt-4 border-t" style={{ borderColor: '#D5D8DC' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
+                    <div className="pt-4 mt-4 border-t" style={{ borderColor: '#E5E7EB' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -248,16 +248,16 @@ export default function SpanishFAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 text-center p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
+        <div className="mt-16 text-center p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             ¿Aún tienes preguntas?
           </h2>
-          <p className="mb-6" style={{ color: '#455A64' }}>
+          <p className="mb-6" style={{ color: '#4B5563' }}>
             Ponte en contacto con nuestro equipo de soporte.
           </p>
           <a href="mailto:support@mycasevalue.com"
             className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-            style={{ borderRadius: '2px', background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#006997' }}>
+            style={{ borderRadius: '2px', background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#6D28D9' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Contactar Soporte
           </a>
@@ -265,16 +265,16 @@ export default function SpanishFAQPage() {
       </div>
 
       {/* Available Tools Section */}
-      <div style={{ background: '#FFFFFF', borderTop: '1px solid #D5D8DC', padding: '48px 24px' }}>
+      <div style={{ background: '#FFFFFF', borderTop: '1px solid #E5E7EB', padding: '48px 24px' }}>
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-6" style={{ color: '#212529' }}>
             Herramientas Disponibles
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <Link href="/search">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
                   </svg>
                 </div>
@@ -283,9 +283,9 @@ export default function SpanishFAQPage() {
             </Link>
 
             <Link href="/calculator">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h4"/>
                   </svg>
                 </div>
@@ -294,9 +294,9 @@ export default function SpanishFAQPage() {
             </Link>
 
             <Link href="/compare">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <path d="M12 3v18M3 12h18"/><path d="M9 7h2v10H9zM13 14h2v3h-2z"/>
                   </svg>
                 </div>
@@ -305,9 +305,9 @@ export default function SpanishFAQPage() {
             </Link>
 
             <Link href="/nos-explorer">
-              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
-                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2">
+              <div className="p-4 border transition-all hover:shadow-lg" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', cursor: 'pointer' }}>
+                <div className="w-10 h-10 flex items-center justify-center mb-3" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2">
                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/>
                   </svg>
                 </div>
@@ -317,17 +317,17 @@ export default function SpanishFAQPage() {
           </div>
 
           {/* Language Switcher */}
-          <div className="mt-12 p-6 text-center" style={{ background: '#F5F6F7', borderRadius: '2px' }}>
-            <p className="text-sm" style={{ color: '#455A64' }}>
-              This page is also available in <Link href="/faq" style={{ color: '#006997', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
+          <div className="mt-12 p-6 text-center" style={{ background: '#F7F8FA', borderRadius: '2px' }}>
+            <p className="text-sm" style={{ color: '#4B5563' }}>
+              This page is also available in <Link href="/faq" style={{ color: '#6D28D9', fontWeight: '500', textDecoration: 'none' }} className="hover:underline">English</Link>
             </p>
           </div>
         </div>
       </div>
 
       {/* Footer disclaimer */}
-      <div className="border-t py-6 text-center" style={{ borderColor: '#D5D8DC' }}>
-        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#455A64' }}>
+      <div className="border-t py-6 text-center" style={{ borderColor: '#E5E7EB' }}>
+        <p className="text-[11px] max-w-xl mx-auto px-6" style={{ color: '#4B5563' }}>
           MyCaseValue proporciona datos históricos agregados de registros judiciales federales públicos únicamente para fines informativos y de investigación.
           Esto no es asesoramiento legal. No se crea relación abogado-cliente al usar esta herramienta.
           © {new Date().getFullYear()} MyCaseValue LLC.

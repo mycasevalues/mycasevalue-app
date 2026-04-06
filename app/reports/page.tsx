@@ -63,8 +63,8 @@ export default function ReportsPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ width: 32, height: 32, border: '3px solid #D5D8DC', borderTopColor: '#E8171F', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+      <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: 32, height: 32, border: '3px solid #E5E7EB', borderTopColor: '#7C3AED', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
       </div>
     );
@@ -73,15 +73,15 @@ export default function ReportsPage() {
   const hasData = reports.length > 0 || searches.length > 0;
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#F5F6F7' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
       {/* Dark Navy Header */}
-      <div style={{ backgroundColor: '#00172E', padding: '40px 20px', marginBottom: '32px' }}>
+      <div style={{ backgroundColor: '#1B3A5C', padding: '40px 20px', marginBottom: '32px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <h1 className="font-display" style={{ fontSize: '32px', fontWeight: 700, color: '#FFFFFF', margin: 0 }}>
               My Reports
             </h1>
-            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#E8171F', color: '#FFFFFF', padding: '4px 12px', borderRadius: '2px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#7C3AED', color: '#FFFFFF', padding: '4px 12px', borderRadius: '2px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' }}>
               Reports
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function ReportsPage() {
                 key={feature}
                 style={{
                   background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '2px',
                   padding: '24px',
                   textAlign: 'center' as const,
@@ -166,7 +166,7 @@ export default function ReportsPage() {
                 <style>{`
                   .feature-card:hover {
                     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                    border-color: #006997;
+                    border-color: #6D28D9;
                   }
                 `}</style>
                 <div style={{
@@ -179,7 +179,7 @@ export default function ReportsPage() {
                   justifyContent: 'center',
                   margin: '0 auto 12px',
                 }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
@@ -225,7 +225,7 @@ export default function ReportsPage() {
                 href={`/cases/${encodeURIComponent(report.name)}`}
                 style={{
                   background: '#FFFFFF',
-                  border: '1px solid #D5D8DC',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '2px',
                   padding: '24px',
                   textDecoration: 'none',
@@ -235,7 +235,7 @@ export default function ReportsPage() {
               >
                 <style>{`
                   .report-link:hover {
-                    border-color: #E8171F;
+                    border-color: #7C3AED;
                     box-shadow: 0 8px 24px rgba(232, 23, 31, 0.12);
                     transform: translateY(-2px);
                   }
@@ -257,13 +257,13 @@ export default function ReportsPage() {
                     </h3>
                     <p style={{
                       fontSize: '13px',
-                      color: '#455A64',
+                      color: '#4B5563',
                       margin: 0,
                     }}>
                       Nature of Suit: {report.nos}
                     </p>
                   </div>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </div>
@@ -274,9 +274,9 @@ export default function ReportsPage() {
 
         {!hasData ? (
           /* Empty State */
-          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #D5D8DC', textAlign: 'center' }}>
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '64px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', textAlign: 'center' }}>
             <div style={{ width: '64px', height: '64px', borderRadius: '2px', background: 'rgba(0,105,151,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                 <polyline points="14 2 14 8 20 8" />
                 <line x1="12" y1="11" x2="12" y2="17" />
@@ -286,10 +286,10 @@ export default function ReportsPage() {
             <h2 className="font-display" style={{ fontSize: '22px', fontWeight: 700, color: '#212529', margin: '0 0 12px 0' }}>
               No reports yet
             </h2>
-            <p style={{ fontSize: '15px', color: '#455A64', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
+            <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.6, margin: '0 0 32px 0', maxWidth: '400px', marginLeft: 'auto', marginRight: 'auto' }}>
               Your saved case research reports and search history will appear here. Start by running a case lookup.
             </p>
-            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: '#E8171F', color: '#FFFFFF', borderRadius: '2px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
+            <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '12px 24px', background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px', fontSize: '14px', fontWeight: 600, textDecoration: 'none', textTransform: 'uppercase' }}>
               Start a Case Lookup
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
             </Link>
@@ -297,7 +297,7 @@ export default function ReportsPage() {
         ) : (
           <>
             {/* Tabs */}
-            <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '4px', border: '1px solid #D5D8DC' }}>
+            <div style={{ display: 'flex', gap: '4px', marginBottom: '24px', backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '4px', border: '1px solid #E5E7EB' }}>
               {(['reports', 'history'] as const).map((t) => (
                 <button
                   key={t}
@@ -310,8 +310,8 @@ export default function ReportsPage() {
                     fontSize: '14px',
                     fontWeight: 600,
                     cursor: 'pointer',
-                    backgroundColor: tab === t ? '#E8171F' : 'transparent',
-                    color: tab === t ? '#FFFFFF' : '#455A64',
+                    backgroundColor: tab === t ? '#7C3AED' : 'transparent',
+                    color: tab === t ? '#FFFFFF' : '#4B5563',
                     transition: 'all 0.2s',
                   }}
                 >
@@ -328,13 +328,13 @@ export default function ReportsPage() {
                     transition: all 0.2s;
                   }
                   .report-card:hover {
-                    border-left: 4px solid #E8171F;
+                    border-left: 4px solid #7C3AED;
                     box-shadow: 0 4px 12px rgba(232, 23, 31, 0.12);
                   }
                 `}</style>
                 {reports.length === 0 ? (
-                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '40px', border: '1px solid #D5D8DC', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                    <p style={{ fontSize: '14px', color: '#455A64' }}>No saved reports yet. Reports are saved automatically when you view case data.</p>
+                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '40px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                    <p style={{ fontSize: '14px', color: '#4B5563' }}>No saved reports yet. Reports are saved automatically when you view case data.</p>
                   </div>
                 ) : (
                   reports.map((r) => (
@@ -342,7 +342,7 @@ export default function ReportsPage() {
                       key={r.id}
                       href={`/cases/${encodeURIComponent(r.category)}${r.district ? `?district=${encodeURIComponent(r.district)}` : ''}`}
                       className="report-card"
-                      style={{ display: 'block', backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '20px 24px', border: '1px solid #D5D8DC', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ display: 'block', backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '20px 24px', border: '1px solid #E5E7EB', borderLeft: '4px solid transparent', textDecoration: 'none', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
@@ -350,12 +350,12 @@ export default function ReportsPage() {
                             {r.category}
                           </div>
                           {r.district && (
-                            <div style={{ fontSize: '13px', color: '#455A64' }}>
+                            <div style={{ fontSize: '13px', color: '#4B5563' }}>
                               District: {r.district}
                             </div>
                           )}
                         </div>
-                        <div className="font-mono" style={{ fontSize: '12px', color: '#455A64' }}>
+                        <div className="font-mono" style={{ fontSize: '12px', color: '#4B5563' }}>
                           {new Date(r.viewed_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </div>
                       </div>
@@ -373,20 +373,20 @@ export default function ReportsPage() {
                     transition: all 0.2s;
                   }
                   .history-card:hover {
-                    border-left: 4px solid #E8171F;
+                    border-left: 4px solid #7C3AED;
                     box-shadow: 0 4px 12px rgba(232, 23, 31, 0.12);
                   }
                 `}</style>
                 {searches.length === 0 ? (
-                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '40px', border: '1px solid #D5D8DC', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-                    <p style={{ fontSize: '14px', color: '#455A64' }}>No search history yet.</p>
+                  <div style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '40px', border: '1px solid #E5E7EB', textAlign: 'center', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+                    <p style={{ fontSize: '14px', color: '#4B5563' }}>No search history yet.</p>
                   </div>
                 ) : (
                   searches.map((s) => (
                     <div
                       key={s.id}
                       className="history-card"
-                      style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '16px 24px', border: '1px solid #D5D8DC', borderLeft: '4px solid transparent', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
+                      style={{ backgroundColor: '#FFFFFF', borderRadius: '2px', padding: '16px 24px', border: '1px solid #E5E7EB', borderLeft: '4px solid transparent', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
@@ -394,12 +394,12 @@ export default function ReportsPage() {
                             {s.query}
                           </div>
                           {s.category && (
-                            <div style={{ fontSize: '12px', color: '#455A64', marginTop: '2px' }}>
+                            <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '2px' }}>
                               {s.category}
                             </div>
                           )}
                         </div>
-                        <div className="font-mono" style={{ fontSize: '12px', color: '#455A64' }}>
+                        <div className="font-mono" style={{ fontSize: '12px', color: '#4B5563' }}>
                           {new Date(s.searched_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                         </div>
                       </div>

@@ -71,9 +71,9 @@ export default function NosExplorerPage() {
   const totalCases = nosData.reduce((s, r) => s + r.total, 0);
 
   return (
-    <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
+    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       {/* Header */}
-      <div style={{ borderBottom: '1px solid #D5D8DC', background: '#00172E' }}>
+      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#1B3A5C' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <div style={{ paddingTop: 24, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
@@ -86,7 +86,7 @@ export default function NosExplorerPage() {
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 700,
-              letterSpacing: '1.5px', marginBottom: 16, background: '#E8171F',
+              letterSpacing: '1.5px', marginBottom: 16, background: '#7C3AED',
               color: '#FFFFFF', textTransform: 'uppercase',
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -130,17 +130,17 @@ export default function NosExplorerPage() {
         <NosExplorerClient data={nosData} />
 
         {/* What are NOS Codes? */}
-        <div style={{ marginTop: 48, padding: 32, background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: 2 }}>
+        <div style={{ marginTop: 48, padding: 32, background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
             What Are NOS Codes?
           </h2>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: '#455A64', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
+          <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
             Nature of Suit (NOS) codes are a classification system used by federal courts to categorize civil cases by their legal subject matter. Assigned at filing, these three-digit codes enable statistical analysis of court activity and help identify trends across case types.
           </p>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: '#455A64', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
+          <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', fontFamily: 'var(--font-body)', margin: '0 0 12px' }}>
             The coding system is maintained by the Administrative Office of the United States Courts and covers everything from contract disputes (NOS 110–199) to civil rights cases (NOS 440–449) to intellectual property (NOS 820–840).
           </p>
-          <p style={{ fontSize: 12, lineHeight: 1.6, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
+          <p style={{ fontSize: 12, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
             Data sourced from the Federal Judicial Center Integrated Database (FJC IDB) and public court records. MyCaseValue LLC is not a law firm.
           </p>
         </div>

@@ -15,9 +15,9 @@ export interface AlertProps {
 
 const variantStyles = {
   info: {
-    borderColor: '#006997',
+    borderColor: '#6D28D9',
     background: 'rgba(0,105,151,0.05)',
-    iconColor: '#006997',
+    iconColor: '#6D28D9',
     iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z',
   },
   success: {
@@ -33,9 +33,9 @@ const variantStyles = {
     iconPath: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
   },
   danger: {
-    borderColor: '#E8171F',
+    borderColor: '#7C3AED',
     background: 'rgba(232,23,31,0.05)',
-    iconColor: '#E8171F',
+    iconColor: '#7C3AED',
     iconPath: 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z',
   },
 };
@@ -89,7 +89,7 @@ export function Alert({ variant = 'info', title, children, className }: AlertPro
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            color: '#455A64',
+            color: '#4B5563',
             lineHeight: 1.6,
           }}
         >

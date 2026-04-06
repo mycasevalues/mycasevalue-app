@@ -15,8 +15,8 @@ export default function ServerHero() {
     <section className="server-hero-content" aria-label="Hero section">
       {/* ── VISUAL 1: HERO — Clean LexisNexis-style ────────── */}
       <div style={{
-        background: '#00172E',
-        borderBottom: '3px solid #E8171F',
+        background: '#1B3A5C',
+        borderBottom: '3px solid #7C3AED',
         padding: '64px 24px 56px',
         position: 'relative',
       }}>
@@ -26,7 +26,7 @@ export default function ServerHero() {
             <p style={{
               fontSize: '12px',
               fontWeight: 700,
-              color: '#E8171F',
+              color: '#7C3AED',
               fontFamily: 'var(--font-body)',
               marginBottom: '16px',
               textTransform: 'uppercase',
@@ -61,7 +61,7 @@ export default function ServerHero() {
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <a href="/search" className="hero-cta-primary" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '1rem 1.5rem', background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)', color: '#FAFBFC',
+                padding: '1rem 1.5rem', background: '#7C3AED', color: '#FAFBFC',
                 borderRadius: '0.25rem', fontWeight: 600, fontSize: '1.25rem',
                 fontFamily: 'var(--font-display)', textDecoration: 'none',
                 transition: 'background 200ms',
@@ -90,13 +90,13 @@ export default function ServerHero() {
           <div style={{
             background: '#FFFFFF', borderRadius: '2px', padding: '28px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
           }}>
             <div style={{ marginBottom: '20px' }}>
               <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '4px' }}>
                 Quick Case Lookup
               </h2>
-              <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>
+              <p style={{ fontSize: '13px', color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
                 Select a case type and district to see real outcome data.
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function ServerHero() {
 
         {/* Hover styles */}
         <style>{`
-          .hero-cta-primary:hover { background: linear-gradient(to right, #dd2c00 0%, #d91b5a 100%) !important; }
+          .hero-cta-primary:hover { background: linear-gradient(to right, #6D28D9 0%, #7C3AED 100%) !important; }
           .hero-cta-secondary:hover {
             background: rgba(255,255,255,0.08) !important;
             border-color: rgba(255,255,255,0.5) !important;
@@ -131,18 +131,18 @@ export default function ServerHero() {
       <AnchorNav />
 
       {/* ── VISUAL 1.6: WHAT IS MYCASEVALUE? ───────────────── */}
-      <div id="what-is" data-section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div id="what-is" data-section style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-          <div style={{ borderLeft: '3px solid #E8171F', paddingLeft: '20px', marginBottom: '32px' }}>
-            <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '0', lineHeight: 1.3 }}>
+          <div style={{ borderLeft: '3px solid #7C3AED', paddingLeft: '20px', marginBottom: '32px' }}>
+            <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '0', lineHeight: 1.3 }}>
               What is MyCaseValue?
             </h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }} className="about-grid">
-            <p style={{ fontSize: '17px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.75, margin: 0 }}>
+            <p style={{ fontSize: '17px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.75, margin: 0 }}>
               MyCaseValue is a federal court analytics platform that gives plaintiffs, attorneys, and researchers instant access to real outcome data from over 5.1 million federal court cases. We combine data from the Federal Judicial Center, PACER, and CourtListener to deliver win rates, settlement ranges, timelines, and judge analytics — all in plain English.
             </p>
-            <p style={{ fontSize: '17px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.75, margin: 0 }}>
+            <p style={{ fontSize: '17px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.75, margin: 0 }}>
               Whether you're evaluating a potential case, preparing for settlement negotiations, or researching judicial behavior, MyCaseValue delivers the data-driven insights that were previously only available to large law firms with expensive analytics subscriptions.
             </p>
           </div>
@@ -155,15 +155,15 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 1.7: PRODUCT TOOLS SHOWCASE ─────────────── */}
-      <div id="overview" data-section style={{ background: '#F5F6F7', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div id="overview" data-section style={{ background: '#F7F8FA', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid #E8171F', paddingLeft: '20px', marginBottom: '8px' }}>
-              <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', margin: 0 }}>
+            <div style={{ borderLeft: '3px solid #7C3AED', paddingLeft: '20px', marginBottom: '8px' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', margin: 0 }}>
                 Analytics Tools
               </h2>
             </div>
-            <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '23px' }}>
+            <p style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '560px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '23px' }}>
               Everything you need to research federal court outcomes in one platform.
             </p>
           </div>
@@ -176,13 +176,13 @@ export default function ServerHero() {
               { title: 'Case Predictor', desc: 'Data-driven outcome predictions based on historical federal case data', href: '/attorney' },
             ].map((tool, i) => (
               <a key={i} href={tool.href} style={{
-                display: 'block', background: '#FFFFFF', borderTop: '3px solid #E8171F',
-                border: '1px solid #D5D8DC', borderTopColor: '#E8171F', borderTopWidth: '3px',
+                display: 'block', background: '#FFFFFF', borderTop: '3px solid #7C3AED',
+                border: '1px solid #E5E7EB', borderTopColor: '#7C3AED', borderTopWidth: '3px',
                 padding: '24px 20px', textDecoration: 'none',
                 transition: 'box-shadow 200ms',
               }} className="tool-card">
-                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{tool.title}</h3>
-                <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{tool.desc}</p>
+                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{tool.title}</h3>
+                <p style={{ fontSize: '13px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{tool.desc}</p>
               </a>
             ))}
           </div>
@@ -197,11 +197,11 @@ export default function ServerHero() {
       {/* ── VISUAL 2: DATA SOURCE ATTRIBUTION BAR ─────────── */}
       <div style={{
         background: '#FFFFFF',
-        borderBottom: '1px solid #D5D8DC',
+        borderBottom: '1px solid #E5E7EB',
         padding: '14px 24px',
       }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
+          <span style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)' }}>Data sourced from:</span>
           {[
             { name: 'Federal Judicial Center', url: 'https://www.fjc.gov' },
             { name: 'PACER', url: 'https://pacer.uscourts.gov' },
@@ -209,10 +209,10 @@ export default function ServerHero() {
             { name: 'Bureau of Justice Statistics', url: 'https://bjs.ojp.gov' },
           ].map((source, i) => (
             <span key={source.name} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              {i > 0 && <span style={{ color: '#455A64' }}>·</span>}
+              {i > 0 && <span style={{ color: '#4B5563' }}>·</span>}
               <a href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`Data sourced from ${source.name} (opens in new window)`} style={{
                 fontSize: '12px',
-                color: '#006997',
+                color: '#6D28D9',
                 fontFamily: 'var(--font-body)',
                 fontWeight: 500,
                 textDecoration: 'none',
@@ -226,7 +226,7 @@ export default function ServerHero() {
       <TrustBar />
 
       {/* ── VISUAL 3: STATS BAR — Corporate style ────────────── */}
-      <div style={{ background: '#00172E', borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '0' }}>
+      <div style={{ background: '#1B3A5C', borderBottom: '1px solid rgba(255,255,255,0.1)', padding: '0' }}>
         <div style={{
           maxWidth: '1280px',
           margin: '0 auto',
@@ -266,7 +266,7 @@ export default function ServerHero() {
       {/* Quick Lookup is now embedded in the hero card above */}
 
       {/* ── VISUAL 7: INTEGRATED CASE RESEARCH ─────────────── */}
-      <div style={{ background: '#00172E', padding: '64px 24px', borderBottom: '3px solid #E8171F' }}>
+      <div style={{ background: '#1B3A5C', padding: '64px 24px', borderBottom: '3px solid #7C3AED' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>
             From research to action — without friction
@@ -276,7 +276,7 @@ export default function ServerHero() {
           </p>
           <a href="/search" className="hero-cta-primary" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
-            padding: '1rem 1.5rem', background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)', color: '#FAFBFC', borderRadius: '0.25rem',
+            padding: '1rem 1.5rem', background: '#7C3AED', color: '#FAFBFC', borderRadius: '0.25rem',
             fontWeight: 600, fontSize: '1.25rem', textDecoration: 'none',
             fontFamily: 'var(--font-display)', transition: 'background 200ms',
           }}>
@@ -287,11 +287,11 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 8: PRODUCTIVITY FEATURES ────────────────── */}
-      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderTop: '3px solid #E8171F', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderTop: '3px solid #7C3AED', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid #E8171F', paddingLeft: '20px' }}>
-              <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', margin: 0 }}>
+            <div style={{ borderLeft: '3px solid #7C3AED', paddingLeft: '20px' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', margin: 0 }}>
                 Work Faster With Smart Analytics
               </h2>
             </div>
@@ -306,11 +306,11 @@ export default function ServerHero() {
               { title: 'Export and share', desc: 'Generate PDF reports with full analytics for client presentations, settlement negotiations, or case evaluation meetings.' },
             ].map((item, i) => (
               <div key={i} style={{
-                padding: '24px', background: '#F5F6F7', border: '1px solid #D5D8DC',
-                borderTop: '2px solid #00172E',
+                padding: '24px', background: '#F7F8FA', border: '1px solid #E5E7EB',
+                borderTop: '2px solid #1B3A5C',
               }}>
-                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
-                <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -318,15 +318,15 @@ export default function ServerHero() {
       </div>
 
       {/* ── HOW IT WORKS ── */}
-      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <div style={{ borderLeft: '3px solid #E8171F', paddingLeft: '20px', marginBottom: '8px' }}>
-              <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', margin: 0 }}>
+            <div style={{ borderLeft: '3px solid #7C3AED', paddingLeft: '20px', marginBottom: '8px' }}>
+              <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', margin: 0 }}>
                 How It Works
               </h2>
             </div>
-            <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '500px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '23px' }}>
+            <p style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '500px', lineHeight: 1.6, marginTop: '12px', paddingLeft: '23px' }}>
               Get reliable federal court outcome data in under 60 seconds.
             </p>
           </div>
@@ -359,8 +359,8 @@ export default function ServerHero() {
               <div
                 key={i}
                 style={{
-                  background: '#F5F6F7',
-                  border: '1px solid #D5D8DC',
+                  background: '#F7F8FA',
+                  border: '1px solid #E5E7EB',
                   padding: '28px',
                 }}
               >
@@ -369,7 +369,7 @@ export default function ServerHero() {
                     fontFamily: 'var(--font-mono)',
                     fontSize: '28px',
                     fontWeight: 700,
-                    color: '#00172E',
+                    color: '#1B3A5C',
                     lineHeight: 1,
                   }}>
                     {item.step}
@@ -387,7 +387,7 @@ export default function ServerHero() {
                 <p style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   lineHeight: 1.6,
                   margin: 0,
                 }}>
@@ -400,16 +400,16 @@ export default function ServerHero() {
       </div>
 
       {/* ── VISUAL 6: FEATURE HIGHLIGHTS (LexisNexis-style) ── */}
-      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderTop: '3px solid #E8171F', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderTop: '3px solid #7C3AED', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 600, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 600, color: '#7C3AED', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Analytics platform
             </p>
             <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
               More Data, Better Outcomes
             </h2>
-            <p style={{ fontSize: '19px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '650px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300, fontStyle: 'italic' }}>
+            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '650px', margin: '0 auto', lineHeight: 1.6, fontWeight: 300, fontStyle: 'italic' }}>
               Broader coverage and greater depth than any other plaintiff-focused platform.
             </p>
           </div>
@@ -422,8 +422,8 @@ export default function ServerHero() {
               'High-value analytics for settlements, timing, and outcomes',
               'Exclusive comparisons via judge and district analytics',
             ].map((text, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E5EBF0' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
+              <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '12px 16px', background: '#F8F9FA', borderRadius: '2px', border: '1px solid #E5E7EB' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <span style={{ fontSize: '14px', color: '#212529', fontFamily: 'var(--font-body)', lineHeight: 1.5 }}>{text}</span>
@@ -470,7 +470,7 @@ export default function ServerHero() {
             ].map((card, i) => (
               <div key={i} style={{
                 background: '#FFFFFF',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 borderRadius: '2px',
                 padding: '32px 24px',
                 transition: 'border-color 200ms',
@@ -481,7 +481,7 @@ export default function ServerHero() {
                     background: 'rgba(232,23,31,0.08)', border: '1px solid rgba(232,23,31,0.15)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                   }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d={card.icon} />
                     </svg>
                   </div>
@@ -489,14 +489,14 @@ export default function ServerHero() {
                     {card.title}
                   </h3>
                 </div>
-                <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#455A64', lineHeight: 1.6, marginBottom: '16px' }}>
+                <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#4B5563', lineHeight: 1.6, marginBottom: '16px' }}>
                   {card.desc}
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {card.details.map((detail, j) => (
-                    <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 0', borderTop: j === 0 ? '1px solid #E5EBF0' : 'none' }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                      <span style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)' }}>{detail}</span>
+                    <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 0', borderTop: j === 0 ? '1px solid #E5E7EB' : 'none' }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+                      <span style={{ fontSize: '13px', color: '#4B5563', fontFamily: 'var(--font-body)' }}>{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -507,16 +507,16 @@ export default function ServerHero() {
       </div>
 
       {/* ── WHO IS IT FOR — Segment Grid ────────────────── */}
-      <div id="who" data-section style={{ background: '#F5F6F7', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div id="who" data-section style={{ background: '#F7F8FA', padding: '80px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#7C3AED', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Solutions
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
               Who Is MyCaseValue For?
             </h2>
-            <p style={{ fontSize: '17px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '17px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
               Trusted by individuals, attorneys, and organizations who need data-driven federal court insights.
             </p>
           </div>
@@ -530,13 +530,13 @@ export default function ServerHero() {
               { icon: '-', title: 'Academic Researchers', desc: 'Datasets, analysis tools, and institutional licensing for law school faculty and research institutions.', href: '/solutions/academic' },
             ].map((seg) => (
               <a key={seg.title} href={seg.href} style={{
-                display: 'block', background: '#FFFFFF', border: '1px solid #D5D8DC',
+                display: 'block', background: '#FFFFFF', border: '1px solid #E5E7EB',
                 padding: '28px 24px', textDecoration: 'none',
                 transition: 'box-shadow 200ms, border-color 200ms',
               }} className="who-card">
                 <div style={{ fontSize: '28px', marginBottom: '12px' }}>{seg.icon}</div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{seg.title}</h3>
-                <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{seg.desc}</p>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{seg.title}</h3>
+                <p style={{ fontSize: '13px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{seg.desc}</p>
               </a>
             ))}
           </div>
@@ -544,13 +544,13 @@ export default function ServerHero() {
       </div>
 
       {/* ── TESTIMONIALS ─────────────────────────────────── */}
-      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <p style={{ fontSize: '11px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#7C3AED', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
               Testimonials
             </p>
-            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
               What Legal Professionals Say
             </h2>
           </div>
@@ -566,15 +566,15 @@ export default function ServerHero() {
               { quote: 'As a litigation funder, the portfolio analytics help us make better investment decisions with objective data.', name: 'Victoria S.', role: 'Managing Director, Lit Finance' },
             ].map((t, i) => (
               <div key={i} style={{
-                background: '#F8F9FA', border: '1px solid #E5EBF0',
-                padding: '28px', borderLeft: '3px solid #006997',
+                background: '#F8F9FA', border: '1px solid #E5E7EB',
+                padding: '28px', borderLeft: '3px solid #6D28D9',
               }}>
                 <p style={{ fontSize: '15px', color: '#212529', fontFamily: 'var(--font-body)', lineHeight: 1.7, marginBottom: '16px', fontStyle: 'italic' }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
-                  <p style={{ fontSize: '14px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-body)', margin: 0 }}>{t.name}</p>
-                  <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>{t.role}</p>
+                  <p style={{ fontSize: '14px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-body)', margin: 0 }}>{t.name}</p>
+                  <p style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>{t.role}</p>
                 </div>
               </div>
             ))}
@@ -583,7 +583,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── AWARDS / TRUST BADGES GRID ───────────────────── */}
-      <div style={{ background: '#00172E', padding: '64px 24px', borderBottom: '3px solid #E8171F' }}>
+      <div style={{ background: '#1B3A5C', padding: '64px 24px', borderBottom: '3px solid #7C3AED' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '40px' }}>
             Trusted Data Sources &amp; Standards
@@ -612,13 +612,13 @@ export default function ServerHero() {
       </div>
 
       {/* ── COMPARISON TABLE — MyCaseValue vs. Others ──── */}
-      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
               How MyCaseValue Compares
             </h2>
-            <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+            <p style={{ fontSize: '16px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
               The most comprehensive plaintiff-focused federal court analytics available.
             </p>
           </div>
@@ -628,11 +628,11 @@ export default function ServerHero() {
               fontFamily: 'var(--font-body)', fontSize: '14px',
             }}>
               <thead>
-                <tr style={{ borderBottom: '2px solid #00172E' }}>
-                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#00172E', fontWeight: 700, fontSize: '13px' }}>Feature</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#FFFFFF', fontWeight: 700, fontSize: '13px', background: '#E8171F' }}>MyCaseValue</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 700, fontSize: '13px' }}>PACER Alone</th>
-                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 700, fontSize: '13px' }}>Premium Platforms</th>
+                <tr style={{ borderBottom: '2px solid #1B3A5C' }}>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#1B3A5C', fontWeight: 700, fontSize: '13px' }}>Feature</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#FFFFFF', fontWeight: 700, fontSize: '13px', background: '#7C3AED' }}>MyCaseValue</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 700, fontSize: '13px' }}>PACER Alone</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#4B5563', fontWeight: 700, fontSize: '13px' }}>Premium Platforms</th>
                 </tr>
               </thead>
               <tbody>
@@ -646,9 +646,9 @@ export default function ServerHero() {
                   { feature: 'No training required', mcv: true, pacer: false, premium: false },
                   { feature: 'API access', mcv: true, pacer: true, premium: true },
                 ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #E5EBF0', background: i % 2 === 0 ? '#FFFFFF' : '#F8F9FA' }}>
+                  <tr key={i} style={{ borderBottom: '1px solid #E5E7EB', background: i % 2 === 0 ? '#FFFFFF' : '#F8F9FA' }}>
                     <td style={{ padding: '10px 16px', color: '#212529', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#07874A' : '#CC1019', fontWeight: 700 }}>{row.mcv ? '[x]' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#07874A' : '#B91C1C', fontWeight: 700 }}>{row.mcv ? '[x]' : '—'}</td>
                     <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#07874A' : '#999' }}>{row.pacer ? '[x]' : '—'}</td>
                     <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#07874A' : '#999' }}>{row.premium ? '[x]' : '—'}</td>
                   </tr>
@@ -660,10 +660,10 @@ export default function ServerHero() {
       </div>
 
       {/* ── FAQ ACCORDION ────────────────────────────────── */}
-      <div id="faq" data-section style={{ background: '#F5F6F7', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div id="faq" data-section style={{ background: '#F7F8FA', padding: '80px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+            <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
               Frequently Asked Questions
             </h2>
           </div>
@@ -683,8 +683,8 @@ export default function ServerHero() {
               { q: 'How do I contact support?', a: 'Visit our contact page or email support directly. We offer email support for all users.' },
             ].map((faq, i) => (
               <details key={i} style={{
-                borderTop: i === 0 ? '1px solid #D5D8DC' : 'none',
-                borderBottom: '1px solid #D5D8DC',
+                borderTop: i === 0 ? '1px solid #E5E7EB' : 'none',
+                borderBottom: '1px solid #E5E7EB',
                 background: '#FFFFFF',
               }}>
                 <summary style={{
@@ -693,12 +693,12 @@ export default function ServerHero() {
                   listStyle: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 }}>
                   {faq.q}
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" style={{ flexShrink: 0, marginLeft: '16px', transition: 'transform 200ms' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2" style={{ flexShrink: 0, marginLeft: '16px', transition: 'transform 200ms' }}>
                     <path d="M6 9l6 6 6-6" />
                   </svg>
                 </summary>
                 <div style={{ padding: '0 20px 16px' }}>
-                  <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
+                  <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
                 </div>
               </details>
             ))}
@@ -707,9 +707,9 @@ export default function ServerHero() {
       </div>
 
       {/* ── RELATED SOLUTIONS ────────────────────────────── */}
-      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '32px' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '32px' }}>
             Explore Solutions
           </h2>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -722,7 +722,7 @@ export default function ServerHero() {
             ].map((s) => (
               <a key={s.href} href={s.href} style={{
                 padding: '10px 20px', fontSize: '13px', fontWeight: 600,
-                color: '#006997', border: '1px solid #D5D8DC', borderRadius: '2px',
+                color: '#6D28D9', border: '1px solid #E5E7EB', borderRadius: '2px',
                 textDecoration: 'none', fontFamily: 'var(--font-body)',
                 textTransform: 'uppercase', letterSpacing: '0.04em',
                 transition: 'all 150ms',
@@ -735,7 +735,7 @@ export default function ServerHero() {
       </div>
 
       {/* ── BOTTOM CTA — Start Free Trial ────────────────── */}
-      <div style={{ background: '#00172E', padding: '80px 24px' }}>
+      <div style={{ background: '#1B3A5C', padding: '80px 24px' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>
             Start Researching Today
@@ -746,7 +746,7 @@ export default function ServerHero() {
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="/sign-up" className="hero-cta-primary" style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
-              padding: '1rem 2rem', background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+              padding: '1rem 2rem', background: '#7C3AED',
               color: '#FAFBFC', borderRadius: '2px', fontWeight: 700, fontSize: '0.875rem',
               fontFamily: 'var(--font-body)', textDecoration: 'none', textTransform: 'uppercase',
               letterSpacing: '0.04em', transition: 'background 200ms',
@@ -769,10 +769,10 @@ export default function ServerHero() {
 
       {/* Responsive overrides */}
       <style dangerouslySetInnerHTML={{ __html: `
-        .anchor-nav-link:hover { color: #212529 !important; border-bottom-color: #E8171F !important; }
+        .anchor-nav-link:hover { color: #212529 !important; border-bottom-color: #7C3AED !important; }
         .tool-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important; transform: translateY(-2px); }
         .who-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important; border-color: rgba(0,105,151,0.30) !important; }
-        .solution-pill:hover { background: #006997 !important; color: #FFFFFF !important; border-color: #006997 !important; }
+        .solution-pill:hover { background: #6D28D9 !important; color: #FFFFFF !important; border-color: #6D28D9 !important; }
         .productivity-grid { gap: 24px; }
         details summary::-webkit-details-marker { display: none; }
         details[open] summary svg { transform: rotate(180deg); }

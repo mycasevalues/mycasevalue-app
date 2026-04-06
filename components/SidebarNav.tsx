@@ -35,7 +35,7 @@ export default function SidebarNav() {
       display: 'flex',
       flexDirection: 'column',
       gap: '8px',
-      backgroundColor: '#00172E',
+      backgroundColor: '#1B3A5C',
       padding: '12px',
       borderRadius: '2px',
     }}>
@@ -58,12 +58,12 @@ export default function SidebarNav() {
         .sidebar-nav-item.active {
           font-weight: 600;
           background: rgba(232, 23, 31, 0.12);
-          border-left-color: #E8171F;
+          border-left-color: #7C3AED;
           color: #FFFFFF;
         }
         .sidebar-nav-item:hover:not(.active) {
           background: rgba(255, 255, 255, 0.08);
-          color: #D5D8DC;
+          color: #E5E7EB;
         }
         .sidebar-nav-icon {
           display: flex;
@@ -71,11 +71,11 @@ export default function SidebarNav() {
           justify-content: center;
           width: 20px;
           height: 20px;
-          color: #D5D8DC;
+          color: #E5E7EB;
           flex-shrink: 0;
         }
         .sidebar-nav-item.active .sidebar-nav-icon {
-          color: #E8171F;
+          color: #7C3AED;
         }
       `}</style>
       {navItems.map((item, idx) => {

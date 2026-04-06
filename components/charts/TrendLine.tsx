@@ -13,13 +13,13 @@ interface TrendLineProps {
 }
 
 export function TrendLine({
-  data, color = '#006997', gradientId = 'trendGrad',
+  data, color = '#6D28D9', gradientId = 'trendGrad',
   label, unit = '', lang = 'en',
 }: TrendLineProps) {
   return (
-    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
+    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '2px' }}>
       {label && (
-        <div className="text-[13px] font-bold tracking-[0.5px] text-[#455A64] mb-4" style={{ fontFamily: 'var(--font-display)' }}>{label}</div>
+        <div className="text-[13px] font-bold tracking-[0.5px] text-[#4B5563] mb-4" style={{ fontFamily: 'var(--font-display)' }}>{label}</div>
       )}
       <ResponsiveContainer width="100%" height={200}>
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }}>
@@ -32,12 +32,12 @@ export function TrendLine({
           <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
           <XAxis
             dataKey="year"
-            tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }}
-            axisLine={{ stroke: '#D5D8DC' }}
+            tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }}
+            axisLine={{ stroke: '#E5E7EB' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 12, fill: '#455A64' }}
+            tick={{ fontSize: 12, fill: '#4B5563' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}
@@ -45,7 +45,7 @@ export function TrendLine({
           <Tooltip
             contentStyle={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',

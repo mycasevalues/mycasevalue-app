@@ -510,14 +510,14 @@ const faqs = [
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen" style={{ background: '#F5F6F7' }}>
+    <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#D5D8DC', background: '#00172E' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
         <div className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
           {/* Breadcrumb */}
           <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: '#FFFFFF' }}>
@@ -527,7 +527,7 @@ export default function FAQPage() {
           </nav>
 
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '9999px' }}>
+            style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '9999px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             FAQ
           </div>
@@ -544,7 +544,7 @@ export default function FAQPage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <div className="space-y-12">
           {faqs.map((section, sectionIdx) => (
-            <section key={sectionIdx} style={{ borderLeftWidth: '4px', borderLeftColor: '#E8171F', paddingLeft: '24px' }}>
+            <section key={sectionIdx} style={{ borderLeftWidth: '4px', borderLeftColor: '#7C3AED', paddingLeft: '24px' }}>
               <h2 className="text-xl font-display font-bold mb-6" style={{ color: '#212529' }}>
                 {section.category}
               </h2>
@@ -554,7 +554,7 @@ export default function FAQPage() {
                     key={qIdx}
                     className="group p-5 border transition-colors cursor-pointer"
                     style={{
-                      borderColor: '#D5D8DC',
+                      borderColor: '#E5E7EB',
                       background: '#FFFFFF',
                       borderRadius: '2px',
                     }}
@@ -576,8 +576,8 @@ export default function FAQPage() {
                         <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </summary>
-                    <div className="pt-4 mt-4 border-t" style={{ borderColor: '#D5D8DC' }}>
-                      <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
+                    <div className="pt-4 mt-4 border-t" style={{ borderColor: '#E5E7EB' }}>
+                      <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
                         {faq.a}
                       </p>
                     </div>
@@ -589,28 +589,28 @@ export default function FAQPage() {
         </div>
 
         {/* Still have questions */}
-        <div className="mt-16 p-8 border" style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px', borderLeftWidth: '4px', borderLeftColor: '#E8171F' }}>
+        <div className="mt-16 p-8 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px', borderLeftWidth: '4px', borderLeftColor: '#7C3AED' }}>
           <h2 className="text-2xl font-display font-bold mb-3" style={{ color: '#212529' }}>
             Still Have Questions?
           </h2>
-          <p className="mb-6" style={{ color: '#455A64' }}>
+          <p className="mb-6" style={{ color: '#4B5563' }}>
             Check our detailed methodology, explore our glossary of legal terms, or get in touch with our support team.
           </p>
           <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
             <a href="mailto:support@mycasevalue.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-              style={{ background: '#E8171F', color: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ background: '#7C3AED', color: '#FFFFFF', borderRadius: '2px' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Contact Support
             </a>
             <Link href="/methodology"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-              style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#006997', borderRadius: '2px' }}>
+              style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#6D28D9', borderRadius: '2px' }}>
               Methodology
             </Link>
             <Link href="/glossary"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition-colors"
-              style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', color: '#006997', borderRadius: '2px' }}>
+              style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', color: '#6D28D9', borderRadius: '2px' }}>
               Glossary
             </Link>
           </div>
@@ -624,48 +624,48 @@ export default function FAQPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Link href="/calculator"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: '#00172E' }}>Settlement Calculator</h3>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#E8171F' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: '#1B3A5C' }}>Settlement Calculator</h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#7C3AED' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
                 Estimate settlement ranges based on case type, damages, and severity using federal court data.
               </p>
             </Link>
 
             <Link href="/compare"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: '#00172E' }}>Compare Cases</h3>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#E8171F' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: '#1B3A5C' }}>Compare Cases</h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#7C3AED' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
                 Compare up to 3 case types side-by-side to see win rates, settlement ranges, and timelines.
               </p>
             </Link>
 
             <Link href="/translate"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: '#00172E' }}>Jargon Translator</h3>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#E8171F' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: '#1B3A5C' }}>Jargon Translator</h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#7C3AED' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
                 Convert complex legal language from court documents into plain English explanations.
               </p>
             </Link>
 
             <Link href="/nos-explorer"
               className="group p-6 border transition-all hover:shadow-md"
-              style={{ borderColor: '#D5D8DC', background: '#FFFFFF', borderRadius: '2px' }}>
+              style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '2px' }}>
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-semibold text-base transition-colors" style={{ color: '#00172E' }}>NOS Explorer</h3>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#E8171F' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <h3 className="font-semibold text-base transition-colors" style={{ color: '#1B3A5C' }}>NOS Explorer</h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 transition-transform group-hover:translate-x-1" style={{ color: '#7C3AED' }}><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: '#455A64' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
                 Browse all 84 federal Nature of Suit codes and explore case types with detailed breakdowns.
               </p>
             </Link>

@@ -13,18 +13,18 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
   const maxPct = Math.max(...data.map(d => d.pct));
 
   return (
-    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
+    <div className="w-full p-6" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '2px' }}>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} margin={{ top: 8, right: 8, left: -10, bottom: 0 }} barCategoryGap="20%">
           <CartesianGrid strokeDasharray="3 3" stroke="#EDEEEE" vertical={false} />
           <XAxis
             dataKey="range"
-            tick={{ fontSize: 12, fill: '#455A64', fontFamily: 'var(--font-body)' }}
-            axisLine={{ stroke: '#D5D8DC' }}
+            tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-body)' }}
+            axisLine={{ stroke: '#E5E7EB' }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 12, fill: '#455A64' }}
+            tick={{ fontSize: 12, fill: '#4B5563' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}%`}
@@ -33,7 +33,7 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
             cursor={{ fill: 'rgba(17,17,17,0.04)' }}
             contentStyle={{
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
               fontSize: '13px',
@@ -48,9 +48,9 @@ export function SettlementDistribution({ data, highlightIndex, lang = 'en' }: Se
               <Cell
                 key={index}
                 fill={index === highlightIndex
-                  ? '#006997'
+                  ? '#6D28D9'
                   : entry.pct === maxPct
-                    ? '#006997'
+                    ? '#6D28D9'
                     : 'rgba(0,105,151,0.15)'
                 }
               />

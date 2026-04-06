@@ -52,13 +52,13 @@ const CATEGORY_COLORS: Record<string, string> = {
   work: '#111111',
   injury: '#EF4444',
   consumer: '#0D9488',
-  rights: '#E8171F',
+  rights: '#7C3AED',
   housing: '#06B6D4',
   medical: '#EC4899',
   family: '#F97316',
   gov: '#64748B',
   ip: '#10B981',
-  other: '#455A64',
+  other: '#4B5563',
 };
 
 /**

@@ -89,8 +89,8 @@ export default function TestimonialCarousel() {
     <section
       style={{
         background: '#FFFFFF',
-        borderTop: '1px solid #D5D8DC',
-        borderBottom: '1px solid #D5D8DC',
+        borderTop: '1px solid #E5E7EB',
+        borderBottom: '1px solid #E5E7EB',
         padding: '80px 24px',
       }}
       onMouseEnter={handleMouseEnter}
@@ -105,7 +105,7 @@ export default function TestimonialCarousel() {
             style={{
               width: '60px',
               height: '4px',
-              background: '#E8171F',
+              background: '#7C3AED',
               margin: '0 auto 16px',
               borderRadius: '2px',
             }}
@@ -124,7 +124,7 @@ export default function TestimonialCarousel() {
           <p
             style={{
               fontSize: '16px',
-              color: '#455A64',
+              color: '#4B5563',
               fontFamily: 'var(--font-body)',
               margin: '0',
               fontWeight: 300,
@@ -159,7 +159,7 @@ export default function TestimonialCarousel() {
               height: '44px',
               borderRadius: '2px',
               border: 'none',
-              background: '#00172E',
+              background: '#1B3A5C',
               color: '#FFFFFF',
               cursor: 'pointer',
               display: 'flex',
@@ -168,10 +168,10 @@ export default function TestimonialCarousel() {
               transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#E8171F';
+              e.currentTarget.style.background = '#7C3AED';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#00172E';
+              e.currentTarget.style.background = '#1B3A5C';
             }}
           >
             <svg
@@ -201,7 +201,7 @@ export default function TestimonialCarousel() {
               key={currentIndex}
               style={{
                 background: '#FFFFFF',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 borderRadius: '2px',
                 padding: '32px',
                 width: '100%',
@@ -217,7 +217,7 @@ export default function TestimonialCarousel() {
                     width="16"
                     height="16"
                     viewBox="0 0 24 24"
-                    fill="#E8171F"
+                    fill="#7C3AED"
                     stroke="none"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -229,7 +229,7 @@ export default function TestimonialCarousel() {
               <blockquote
                 style={{
                   fontSize: '16px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   fontFamily: 'var(--font-body)',
                   fontStyle: 'italic',
                   margin: '0 0 24px 0',
@@ -256,7 +256,7 @@ export default function TestimonialCarousel() {
                 <p
                   style={{
                     fontSize: '14px',
-                    color: '#455A64',
+                    color: '#4B5563',
                     fontFamily: 'var(--font-body)',
                     margin: '0 0 4px 0',
                     fontWeight: 500,
@@ -267,7 +267,7 @@ export default function TestimonialCarousel() {
                 <p
                   style={{
                     fontSize: '13px',
-                    color: '#455A64',
+                    color: '#4B5563',
                     fontFamily: 'var(--font-body)',
                     margin: 0,
                     fontWeight: 300,
@@ -291,7 +291,7 @@ export default function TestimonialCarousel() {
               height: '44px',
               borderRadius: '2px',
               border: 'none',
-              background: '#00172E',
+              background: '#1B3A5C',
               color: '#FFFFFF',
               cursor: 'pointer',
               display: 'flex',
@@ -300,10 +300,10 @@ export default function TestimonialCarousel() {
               transition: 'background-color 200ms',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#E8171F';
+              e.currentTarget.style.background = '#7C3AED';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#00172E';
+              e.currentTarget.style.background = '#1B3A5C';
             }}
           >
             <svg
@@ -338,20 +338,20 @@ export default function TestimonialCarousel() {
                 width: '10px',
                 height: '10px',
                 borderRadius: '50%',
-                border: index === currentIndex ? 'none' : '1px solid #D5D8DC',
-                background: index === currentIndex ? '#E8171F' : 'transparent',
+                border: index === currentIndex ? 'none' : '1px solid #E5E7EB',
+                background: index === currentIndex ? '#7C3AED' : 'transparent',
                 cursor: 'pointer',
                 transition: 'all 200ms',
                 padding: 0,
               }}
               onMouseEnter={(e) => {
                 if (index !== currentIndex) {
-                  e.currentTarget.style.borderColor = '#E8171F';
+                  e.currentTarget.style.borderColor = '#7C3AED';
                 }
               }}
               onMouseLeave={(e) => {
                 if (index !== currentIndex) {
-                  e.currentTarget.style.borderColor = '#D5D8DC';
+                  e.currentTarget.style.borderColor = '#E5E7EB';
                 }
               }}
             />

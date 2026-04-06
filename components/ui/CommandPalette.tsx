@@ -111,22 +111,22 @@ export default function CommandPalette({
     quickLinks.forEach((link) => {
       items.push({
         ...link,
-        categoryColor: '#006997',
+        categoryColor: '#6D28D9',
         type: 'quick-link' as const,
       });
     });
 
     // Case categories (from SITS data)
     const caseCategories = [
-      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '-', color: '#006997' },
-      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '-', color: '#006997' },
-      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '-', color: '#006997' },
-      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '-', color: '#006997' },
-      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '-', color: '#006997' },
-      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '-', color: '#006997' },
-      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '-', color: '#006997' },
-      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '-', color: '#006997' },
-      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '-', color: '#006997' },
+      { id: 'cat-work', label: lang === 'es' ? 'Trabajo' : 'Work', description: lang === 'es' ? 'Casos de empleo y derechos laborales' : 'Employment & workplace', icon: '-', color: '#6D28D9' },
+      { id: 'cat-injury', label: lang === 'es' ? 'Lesiones' : 'Injury', description: lang === 'es' ? 'Lesiones personales y responsabilidad' : 'Personal injury & liability', icon: '-', color: '#6D28D9' },
+      { id: 'cat-consumer', label: lang === 'es' ? 'Consumidor' : 'Consumer', description: lang === 'es' ? 'Derechos del consumidor' : 'Consumer protection', icon: '-', color: '#6D28D9' },
+      { id: 'cat-rights', label: lang === 'es' ? 'Derechos' : 'Rights', description: lang === 'es' ? 'Derechos civiles y constitucionales' : 'Civil rights & liberties', icon: '-', color: '#6D28D9' },
+      { id: 'cat-money', label: lang === 'es' ? 'Dinero' : 'Money', description: lang === 'es' ? 'Disputas financieras y deudas' : 'Financial disputes & debt', icon: '-', color: '#6D28D9' },
+      { id: 'cat-housing', label: lang === 'es' ? 'Vivienda' : 'Housing', description: lang === 'es' ? 'Vivienda y litigios de bienes raíces' : 'Housing & real estate', icon: '-', color: '#6D28D9' },
+      { id: 'cat-medical', label: lang === 'es' ? 'Médico' : 'Medical', description: lang === 'es' ? 'Negligencia médica y mala praxis' : 'Medical malpractice', icon: '-', color: '#6D28D9' },
+      { id: 'cat-family', label: lang === 'es' ? 'Familia' : 'Family', description: lang === 'es' ? 'Derecho familiar y custodia' : 'Family law & custody', icon: '-', color: '#6D28D9' },
+      { id: 'cat-gov', label: lang === 'es' ? 'Gobierno' : 'Government', description: lang === 'es' ? 'Acceso a la información y FOIA' : 'Government & access', icon: '-', color: '#6D28D9' },
     ];
 
     caseCategories.forEach((cat) => {
@@ -150,7 +150,7 @@ export default function CommandPalette({
             label: opt.label,
             description: opt.d,
             category: cat.label,
-            categoryColor: cat.color || '#455A64',
+            categoryColor: cat.color || '#4B5563',
             nos: opt.nos,
             type: 'case',
           });
@@ -205,7 +205,7 @@ export default function CommandPalette({
     ];
 
     pages.forEach((p) => {
-      items.push({ ...p, categoryColor: '#455A64', type: 'page' as const });
+      items.push({ ...p, categoryColor: '#4B5563', type: 'page' as const });
     });
 
     // Quick actions
@@ -393,7 +393,7 @@ export default function CommandPalette({
         }
       }
       [data-command-palette-animation] ~ * input:focus {
-        outline: 2px solid #006997;
+        outline: 2px solid #6D28D9;
         outline-offset: 0;
       }
     `;
@@ -439,7 +439,7 @@ export default function CommandPalette({
           width: 'min(95vw, 560px)',
           maxHeight: '60vh',
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: '2px',
           boxShadow: '0 10px 20px rgba(0, 23, 46, 0.15)',
           overflow: 'hidden',
@@ -456,12 +456,12 @@ export default function CommandPalette({
             gap: '12px',
             padding: '0 16px',
             height: '48px',
-            borderBottom: '1px solid #D5D8DC',
+            borderBottom: '1px solid #E5E7EB',
             background: '#FFFFFF',
           }}
         >
           {/* Search icon */}
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
             <circle cx="11" cy="11" r="8" />
             <path d="M21 21l-4.35-4.35" />
           </svg>
@@ -480,7 +480,7 @@ export default function CommandPalette({
               outline: 'none',
               fontSize: '15px',
               color: '#212529',
-              caretColor: '#006997',
+              caretColor: '#6D28D9',
               fontFamily: 'var(--font-body)',
               height: '100%',
             }}
@@ -491,9 +491,9 @@ export default function CommandPalette({
           <kbd
             style={{
               fontSize: '11px',
-              color: '#455A64',
+              color: '#4B5563',
               background: '#F8F9FA',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               padding: '4px 8px',
               lineHeight: 1.4,
@@ -520,7 +520,7 @@ export default function CommandPalette({
               style={{
                 padding: '24px',
                 textAlign: 'center',
-                color: '#455A64',
+                color: '#4B5563',
                 fontSize: '13px',
               }}
             >
@@ -560,7 +560,7 @@ export default function CommandPalette({
                         gap: '12px',
                         padding: '11px 12px',
                         borderRadius: '2px',
-                        borderLeft: isSelected ? '3px solid #E8171F' : '3px solid transparent',
+                        borderLeft: isSelected ? '3px solid #7C3AED' : '3px solid transparent',
                         cursor: 'pointer',
                         background: isSelected ? '#F8F9FA' : 'transparent',
                         color: isSelected ? '#212529' : '#212529',
@@ -577,17 +577,17 @@ export default function CommandPalette({
                             <polyline points="14 2 14 8 20 8" />
                           </svg>
                         ) : item.type === 'page' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
                         ) : item.type === 'quick-link' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                             <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                           </svg>
                         ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006997" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6D28D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                           </svg>
                         )}
@@ -612,7 +612,7 @@ export default function CommandPalette({
                           <div
                             style={{
                               fontSize: '11px',
-                              color: '#455A64',
+                              color: '#4B5563',
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
@@ -647,9 +647,9 @@ export default function CommandPalette({
                         <kbd
                           style={{
                             fontSize: '11px',
-                            color: '#006997',
+                            color: '#6D28D9',
                             background: 'transparent',
-                            border: '2px solid #006997',
+                            border: '2px solid #6D28D9',
                             borderRadius: '2px',
                             padding: '4px 8px',
                             lineHeight: 1.4,
@@ -676,9 +676,9 @@ export default function CommandPalette({
             justifyContent: 'center',
             gap: '20px',
             padding: '10px 16px',
-            borderTop: '1px solid #D5D8DC',
+            borderTop: '1px solid #E5E7EB',
             fontSize: '10px',
-            color: '#455A64',
+            color: '#4B5563',
             background: '#F8F9FA',
             fontFamily: 'var(--font-body)',
           }}

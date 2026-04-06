@@ -57,7 +57,7 @@ export default function QuickLookupForm() {
             height: '48px',
             padding: '12px 16px',
             background: '#FFFFFF',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
             borderRadius: '2px',
             fontFamily: 'var(--font-body)',
             fontSize: '15px',
@@ -108,7 +108,7 @@ export default function QuickLookupForm() {
               height: '48px',
               padding: '12px 16px',
               background: '#FFFFFF',
-              border: '1px solid #D5D8DC',
+              border: '1px solid #E5E7EB',
               borderRadius: '2px',
               fontFamily: 'var(--font-body)',
               fontSize: '15px',
@@ -138,7 +138,7 @@ export default function QuickLookupForm() {
         type="submit"
         style={{
           height: '48px',
-          background: '#E8171F',
+          background: '#7C3AED',
           color: '#FFFFFF',
           fontWeight: 700,
           fontSize: '15px',
@@ -159,11 +159,11 @@ export default function QuickLookupForm() {
         const nos = OPT_TO_NOS[caseType];
         const rd = nos ? (REAL_DATA as any)[nos] : null;
         if (!rd) return null;
-        const wrColor = (rd.wr ?? 0) >= 50 ? '#07874A' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#E8171F';
+        const wrColor = (rd.wr ?? 0) >= 50 ? '#07874A' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#7C3AED';
         return (
           <div style={{
             background: '#F8F9FA',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
             borderRadius: 2,
             padding: '12px 16px',
             display: 'grid',
@@ -176,19 +176,19 @@ export default function QuickLookupForm() {
               <div style={{ fontSize: 18, fontWeight: 700, color: wrColor, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {(rd.wr ?? 0).toFixed(1)}%
               </div>
-              <div style={{ fontSize: 10, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
+              <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
             </div>
             <div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: '#006997', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+              <div style={{ fontSize: 18, fontWeight: 700, color: '#6D28D9', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.mo ?? '–'}mo
               </div>
-              <div style={{ fontSize: 10, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
+              <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
             </div>
             <div>
               <div style={{ fontSize: 18, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
                 {rd.total ? (rd.total >= 1000 ? `${(rd.total / 1000).toFixed(0)}K` : rd.total.toLocaleString()) : '–'}
               </div>
-              <div style={{ fontSize: 10, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Cases</div>
+              <div style={{ fontSize: 10, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Cases</div>
             </div>
           </div>
         );
@@ -198,7 +198,7 @@ export default function QuickLookupForm() {
       <div
         style={{
           fontSize: '12px',
-          color: '#455A64',
+          color: '#4B5563',
           textAlign: 'center',
           marginTop: '8px',
         }}
@@ -209,15 +209,15 @@ export default function QuickLookupForm() {
       {/* Styles */}
       <style dangerouslySetInnerHTML={{ __html: `
         .quick-lookup-select:focus {
-          border-color: #006997 !important;
-          box-shadow: 0 0 0 3px rgba(0, 105, 151, 0.1) !important;
+          border-color: #6D28D9 !important;
+          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1) !important;
           outline: none;
         }
         .quick-lookup-select:invalid {
-          border-color: #E8171F !important;
+          border-color: #7C3AED !important;
         }
         .quick-lookup-submit:hover {
-          background: #CC1019 !important;
+          background: #B91C1C !important;
         }
         .quick-lookup-submit:active {
           transform: scale(0.98);

@@ -8,7 +8,7 @@ import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#00172E' }} />}>
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#1B3A5C' }} />}>
       <SignInForm />
     </Suspense>
   );
@@ -58,7 +58,7 @@ function SignInForm() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        background: '#F5F6F7',
+        background: '#F7F8FA',
       }}
     >
       <style>{`
@@ -90,19 +90,19 @@ function SignInForm() {
           text-align: center;
         }
         .auth-input:focus {
-          border-color: #006997 !important;
+          border-color: #6D28D9 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(0, 105, 151, 0.1) !important;
+          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
         }
         .auth-btn {
-          background: linear-gradient(to right, #d91b5a, #dd2c00);
+          background: linear-gradient(to right, #7C3AED, #6D28D9);
         }
         .auth-btn:hover:not(:disabled) {
           opacity: 0.9;
           transform: translateY(-1px);
         }
         .auth-link:hover {
-          color: #004d6d !important;
+          color: #6D28D9 !important;
         }
         .checkbox-wrapper {
           display: flex;
@@ -113,7 +113,7 @@ function SignInForm() {
         .checkbox-input {
           width: 18px;
           height: 18px;
-          accent-color: #E8171F;
+          accent-color: #7C3AED;
           cursor: pointer;
         }
         .benefits-section {
@@ -191,7 +191,7 @@ function SignInForm() {
       {/* Navy Header Strip */}
       <div
         style={{
-          background: '#00172E',
+          background: '#1B3A5C',
           height: '60px',
           display: 'flex',
           alignItems: 'center',
@@ -272,7 +272,7 @@ function SignInForm() {
           className="auth-card"
           style={{
             background: '#FFFFFF',
-            border: '1px solid #D5D8DC',
+            border: '1px solid #E5E7EB',
             borderRadius: '2px',
             padding: '40px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
@@ -334,7 +334,7 @@ function SignInForm() {
                 width: '100%',
                 height: '48px',
                 padding: '12px 14px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 borderRadius: '2px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
@@ -372,7 +372,7 @@ function SignInForm() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#006997',
+                  color: '#6D28D9',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}
@@ -393,7 +393,7 @@ function SignInForm() {
                 width: '100%',
                 height: '48px',
                 padding: '12px 14px',
-                border: '1px solid #D5D8DC',
+                border: '1px solid #E5E7EB',
                 borderRadius: '2px',
                 fontFamily: 'var(--font-body)',
                 fontSize: '14px',
@@ -418,7 +418,7 @@ function SignInForm() {
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '14px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   userSelect: 'none',
                 }}
               >
@@ -433,12 +433,12 @@ function SignInForm() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#E8171F',
+                color: '#7C3AED',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
-                backgroundColor: 'rgba(204,16,25,0.06)',
+                backgroundColor: 'rgba(124, 58, 237, 0.06)',
                 borderRadius: '2px',
-                border: '1px solid rgba(204,16,25,0.20)',
+                border: '1px solid rgba(124, 58, 237, 0.2)',
               }}
             >
               {error}
@@ -454,7 +454,7 @@ function SignInForm() {
               width: '100%',
               height: '48px',
               padding: '0 16px',
-              backgroundColor: '#E8171F',
+              backgroundColor: '#7C3AED',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '2px',
@@ -483,7 +483,7 @@ function SignInForm() {
             style={{
               flex: 1,
               height: '1px',
-              backgroundColor: '#D5D8DC',
+              backgroundColor: '#E5E7EB',
             }}
           />
           <span
@@ -491,7 +491,7 @@ function SignInForm() {
               padding: '0 12px',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
-              color: '#455A64',
+              color: '#4B5563',
               fontWeight: 500,
             }}
           >
@@ -501,7 +501,7 @@ function SignInForm() {
             style={{
               flex: 1,
               height: '1px',
-              backgroundColor: '#D5D8DC',
+              backgroundColor: '#E5E7EB',
             }}
           />
         </div>
@@ -525,7 +525,7 @@ function SignInForm() {
             <Link
               href="/sign-up"
               style={{
-                color: '#006997',
+                color: '#6D28D9',
                 textDecoration: 'none',
                 fontWeight: 600,
               }}
@@ -541,7 +541,7 @@ function SignInForm() {
             style={{
               fontFamily: 'var(--font-body)',
               fontSize: '12px',
-              color: '#455A64',
+              color: '#4B5563',
               margin: 0,
               textAlign: 'center',
               lineHeight: 1.5,
@@ -551,7 +551,7 @@ function SignInForm() {
             <Link
               href="/terms"
               style={{
-                color: '#006997',
+                color: '#6D28D9',
                 textDecoration: 'none',
               }}
               className="auth-link"
@@ -562,7 +562,7 @@ function SignInForm() {
             <Link
               href="/privacy"
               style={{
-                color: '#006997',
+                color: '#6D28D9',
                 textDecoration: 'none',
               }}
               className="auth-link"

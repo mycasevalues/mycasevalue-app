@@ -1,8 +1,8 @@
 export default function BlogPostLoading() {
   return (
-    <div style={{ minHeight: '100vh', background: '#F5F6F7', fontFamily: 'var(--font-body)' }}>
+    <div style={{ minHeight: '100vh', background: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
       {/* Navy header with title and date skeleton */}
-      <div style={{ background: '#00172E', padding: '48px 24px', borderBottom: '3px solid #E8171F' }}>
+      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #7C3AED' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ height: '14px', width: '120px', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', marginBottom: '16px' }} />
           <div style={{ height: '42px', width: '85%', background: 'rgba(255,255,255,0.1)', borderRadius: '2px', marginBottom: '16px' }} />
@@ -14,7 +14,7 @@ export default function BlogPostLoading() {
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 24px' }}>
         <div style={{
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: '2px',
           padding: '32px',
           boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
@@ -22,9 +22,9 @@ export default function BlogPostLoading() {
           {/* Paragraph skeletons */}
           {[1, 2, 3, 4, 5].map(i => (
             <div key={i} style={{ marginBottom: i === 5 ? 0 : '24px' }}>
-              <div style={{ height: '14px', width: '100%', background: '#E5EBF0', borderRadius: '2px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '100%', background: '#E5EBF0', borderRadius: '2px', marginBottom: '8px' }} />
-              <div style={{ height: '14px', width: '95%', background: '#E5EBF0', borderRadius: '2px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '100%', background: '#E5E7EB', borderRadius: '2px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '100%', background: '#E5E7EB', borderRadius: '2px', marginBottom: '8px' }} />
+              <div style={{ height: '14px', width: '95%', background: '#E5E7EB', borderRadius: '2px', marginBottom: '8px' }} />
               <div style={{ height: '14px', width: '85%', background: '#F0F1F2', borderRadius: '2px' }} />
             </div>
           ))}

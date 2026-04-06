@@ -31,8 +31,8 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
   return (
     <div
       style={{
-        background: '#F5F6F7',
-        border: '1px solid #D5D8DC',
+        background: '#F7F8FA',
+        border: '1px solid #E5E7EB',
         borderRadius: '2px',
         padding: '16px 20px',
         marginBottom: '24px',
@@ -47,7 +47,7 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         style={{
           fontSize: '12px',
           fontWeight: 600,
-          color: '#455A64',
+          color: '#4B5563',
           textTransform: 'uppercase',
           letterSpacing: '0.5px',
           margin: '0',
@@ -64,7 +64,7 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         style={{
           padding: '8px 16px',
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: '2px',
           fontSize: '13px',
           fontWeight: 500,
@@ -78,11 +78,11 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.background = '#F8F9FA';
-          e.currentTarget.style.borderColor = '#455A64';
+          e.currentTarget.style.borderColor = '#4B5563';
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.background = '#FFFFFF';
-          e.currentTarget.style.borderColor = '#D5D8DC';
+          e.currentTarget.style.borderColor = '#E5E7EB';
         }}
       >
         <svg
@@ -107,7 +107,7 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         style={{
           padding: '8px 16px',
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: '2px',
           fontSize: '13px',
           fontWeight: 500,
@@ -121,11 +121,11 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.background = '#F8F9FA';
-          e.currentTarget.style.borderColor = '#455A64';
+          e.currentTarget.style.borderColor = '#4B5563';
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.background = '#FFFFFF';
-          e.currentTarget.style.borderColor = '#D5D8DC';
+          e.currentTarget.style.borderColor = '#E5E7EB';
         }}
       >
         <svg
@@ -149,7 +149,7 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         style={{
           padding: '8px 16px',
           background: '#FFFFFF',
-          border: '1px solid #D5D8DC',
+          border: '1px solid #E5E7EB',
           borderRadius: '2px',
           fontSize: '13px',
           fontWeight: 500,
@@ -163,11 +163,11 @@ export default function ShareToolbar({ nos }: ShareToolbarProps) {
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.background = '#F8F9FA';
-          e.currentTarget.style.borderColor = '#455A64';
+          e.currentTarget.style.borderColor = '#4B5563';
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.background = '#FFFFFF';
-          e.currentTarget.style.borderColor = '#D5D8DC';
+          e.currentTarget.style.borderColor = '#E5E7EB';
         }}
       >
         <svg

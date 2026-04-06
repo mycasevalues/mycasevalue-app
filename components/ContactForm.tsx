@@ -13,7 +13,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div style={{
-        padding: '48px 32px', background: '#FFFFFF', border: '1px solid #D5D8DC',
+        padding: '48px 32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
         borderRadius: '2px', textAlign: 'center',
         boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
       }}>
@@ -24,7 +24,7 @@ export default function ContactForm() {
         <h3 style={{ fontSize: '20px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
           Message Sent
         </h3>
-        <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
+        <p style={{ fontSize: '14px', color: '#4B5563', fontFamily: 'var(--font-body)', lineHeight: 1.6 }}>
           Thank you for reaching out. We typically respond within 1 business day.
         </p>
       </div>
@@ -34,7 +34,7 @@ export default function ContactForm() {
   const inputStyle = {
     width: '100%', padding: '12px 14px', fontSize: '14px',
     fontFamily: 'var(--font-body)', color: '#212529',
-    border: '1px solid #D5D8DC', borderRadius: '2px',
+    border: '1px solid #E5E7EB', borderRadius: '2px',
     background: '#FFFFFF', outline: 'none',
     transition: 'border-color 200ms',
     height: '48px',
@@ -50,10 +50,10 @@ export default function ContactForm() {
   return (
     <>
       <style>{`
-        .contact-input:focus { border-color: #006997 !important; outline: none; }
+        .contact-input:focus { border-color: #6D28D9 !important; outline: none; }
         .contact-submit {
           display: block; padding: 0 32px; height: 48px;
-          background: #E8171F; color: #FFFFFF; border: none;
+          background: #7C3AED; color: #FFFFFF; border: none;
           border-radius: 2px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-body); width: 100%;
@@ -61,7 +61,7 @@ export default function ContactForm() {
         .contact-submit:hover { background: #D61219; }
       `}</style>
       <form onSubmit={handleSubmit} style={{
-        padding: '32px', background: '#FFFFFF', border: '1px solid #D5D8DC',
+        padding: '32px', background: '#FFFFFF', border: '1px solid #E5E7EB',
         borderRadius: '2px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
         display: 'flex', flexDirection: 'column', gap: '20px',
       }}>

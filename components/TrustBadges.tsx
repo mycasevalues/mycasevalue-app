@@ -61,9 +61,9 @@ export default function TrustBadges() {
   return (
     <section
       style={{
-        background: '#F5F6F7',
+        background: '#F7F8FA',
         padding: '48px 24px',
-        borderBottom: '1px solid #D5D8DC',
+        borderBottom: '1px solid #E5E7EB',
       }}
     >
       <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
@@ -85,11 +85,11 @@ export default function TrustBadges() {
                 alignItems: 'center',
                 textAlign: 'center',
                 paddingRight: idx < badges.length - 1 ? '32px' : '0',
-                borderRight: idx < badges.length - 1 ? '1px solid #D5D8DC' : 'none',
+                borderRight: idx < badges.length - 1 ? '1px solid #E5E7EB' : 'none',
               }}
             >
               {/* Icon */}
-              <div style={{ marginBottom: '12px', color: '#006997' }}>
+              <div style={{ marginBottom: '12px', color: '#6D28D9' }}>
                 {badge.icon}
               </div>
               {/* Stat number */}
@@ -109,7 +109,7 @@ export default function TrustBadges() {
               <div
                 style={{
                   fontSize: '13px',
-                  color: '#455A64',
+                  color: '#4B5563',
                   fontFamily: 'var(--font-body)',
                   fontWeight: 500,
                   lineHeight: 1.4,
@@ -137,13 +137,13 @@ export default function TrustBadges() {
           }
 
           .trust-badges-grid > div:nth-child(odd) {
-            border-right: 1px solid #D5D8DC;
+            border-right: 1px solid #E5E7EB;
             padding-right: 24px;
           }
 
           .trust-badges-grid > div:nth-child(1),
           .trust-badges-grid > div:nth-child(2) {
-            border-bottom: 1px solid #D5D8DC;
+            border-bottom: 1px solid #E5E7EB;
             padding-bottom: 24px;
           }
         }
