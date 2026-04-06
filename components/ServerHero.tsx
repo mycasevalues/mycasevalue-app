@@ -506,11 +506,276 @@ export default function ServerHero() {
         </div>
       </div>
 
+      {/* ── WHO IS IT FOR — Segment Grid ────────────────── */}
+      <div id="who" data-section style={{ background: '#F5F6F7', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+              Solutions
+            </p>
+            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+              Who Is MyCaseValue For?
+            </h2>
+            <p style={{ fontSize: '17px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
+              Trusted by individuals, attorneys, and organizations who need data-driven federal court insights.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="who-grid">
+            {[
+              { icon: '👤', title: 'Individuals', desc: 'Research your own case value with real settlement data and win rates from cases like yours.', href: '/solutions/individuals' },
+              { icon: '⚖️', title: 'Small Law Firms', desc: 'Case research, judge analytics, and opposing counsel intelligence for solo and boutique practices.', href: '/solutions/small-firms' },
+              { icon: '🏢', title: 'Enterprise Legal', desc: 'API access, custom dashboards, SSO, and bulk exports for large legal departments.', href: '/solutions/enterprise' },
+              { icon: '🛡️', title: 'Insurance Companies', desc: 'Settlement benchmarking, claim valuation, and risk scoring for claims teams and defense counsel.', href: '/solutions/insurance' },
+              { icon: '📊', title: 'Litigation Funders', desc: 'Portfolio analytics, case evaluation, and due diligence data for litigation finance decisions.', href: '/solutions/funders' },
+              { icon: '🎓', title: 'Academic Researchers', desc: 'Datasets, analysis tools, and institutional licensing for law school faculty and research institutions.', href: '/solutions/academic' },
+            ].map((seg) => (
+              <a key={seg.title} href={seg.href} style={{
+                display: 'block', background: '#FFFFFF', border: '1px solid #D5D8DC',
+                padding: '28px 24px', textDecoration: 'none',
+                transition: 'box-shadow 200ms, border-color 200ms',
+              }} className="who-card">
+                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{seg.icon}</div>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>{seg.title}</h3>
+                <p style={{ fontSize: '13px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.6, margin: 0 }}>{seg.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── TESTIMONIALS ─────────────────────────────────── */}
+      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+              Testimonials
+            </p>
+            <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+              What Legal Professionals Say
+            </h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px' }} className="testimonials-grid">
+            {[
+              { quote: 'MyCaseValue gave me the settlement data I needed to negotiate a fair offer. My attorney was impressed with the research.', name: 'Sarah M.', role: 'Plaintiff, Employment Case' },
+              { quote: 'I use it before every initial client consultation. The win rates and judge analytics save me hours of research.', name: 'David K.', role: 'Trial Attorney, Chicago' },
+              { quote: 'The district comparison tool helped us identify the strongest venue for our product liability case.', name: 'Jennifer L.', role: 'Partner, Boutique Firm' },
+              { quote: 'Finally, a platform that makes federal court data accessible without a five-figure analytics subscription.', name: 'Marcus T.', role: 'Solo Practitioner, Miami' },
+              { quote: 'Our claims team uses MyCaseValue daily for settlement benchmarking. It has improved our reserve accuracy significantly.', name: 'Rachel W.', role: 'Claims Director, Insurance Co.' },
+              { quote: 'The academic license gives our students real-world data to work with. Invaluable for our civil procedure course.', name: 'Prof. Alan B.', role: 'Law School Faculty' },
+              { quote: 'We integrated the API into our case management system. The data quality and coverage are exceptional.', name: 'Chris N.', role: 'Legal Tech Developer' },
+              { quote: 'As a litigation funder, the portfolio analytics help us make better investment decisions with objective data.', name: 'Victoria S.', role: 'Managing Director, Lit Finance' },
+            ].map((t, i) => (
+              <div key={i} style={{
+                background: '#F8F9FA', border: '1px solid #E5EBF0',
+                padding: '28px', borderLeft: '3px solid #006997',
+              }}>
+                <p style={{ fontSize: '15px', color: '#212529', fontFamily: 'var(--font-body)', lineHeight: 1.7, marginBottom: '16px', fontStyle: 'italic' }}>
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div>
+                  <p style={{ fontSize: '14px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-body)', margin: 0 }}>{t.name}</p>
+                  <p style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)', margin: 0 }}>{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── AWARDS / TRUST BADGES GRID ───────────────────── */}
+      <div style={{ background: '#00172E', padding: '64px 24px', borderBottom: '3px solid #E8171F' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '40px' }}>
+            Trusted Data Sources &amp; Standards
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }} className="awards-grid">
+            {[
+              { label: 'Federal Judicial Center', sub: 'Official statistics' },
+              { label: 'PACER', sub: 'Court records access' },
+              { label: 'CourtListener', sub: 'Free Law Project' },
+              { label: 'Bureau of Justice Stats', sub: 'DOJ data' },
+              { label: '5.1M+ Cases', sub: 'Analyzed' },
+              { label: '94 Districts', sub: 'Full coverage' },
+              { label: '50+ Years', sub: 'Historical data' },
+              { label: 'Daily Updates', sub: 'Fresh data' },
+            ].map((award, i) => (
+              <div key={i} style={{
+                padding: '20px 16px', background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.08)', borderRadius: '2px',
+              }}>
+                <p style={{ fontSize: '14px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-body)', margin: '0 0 4px' }}>{award.label}</p>
+                <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--font-body)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{award.sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── COMPARISON TABLE — MyCaseValue vs. Others ──── */}
+      <div style={{ background: '#FFFFFF', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+              How MyCaseValue Compares
+            </h2>
+            <p style={{ fontSize: '16px', color: '#455A64', fontFamily: 'var(--font-body)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+              The most comprehensive plaintiff-focused federal court analytics available.
+            </p>
+          </div>
+          <div style={{ overflow: 'auto' }}>
+            <table style={{
+              width: '100%', borderCollapse: 'collapse',
+              fontFamily: 'var(--font-body)', fontSize: '14px',
+            }}>
+              <thead>
+                <tr style={{ borderBottom: '2px solid #00172E' }}>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#00172E', fontWeight: 700, fontSize: '13px' }}>Feature</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#FFFFFF', fontWeight: 700, fontSize: '13px', background: '#E8171F' }}>MyCaseValue</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 700, fontSize: '13px' }}>PACER Alone</th>
+                  <th style={{ textAlign: 'center', padding: '12px 16px', color: '#455A64', fontWeight: 700, fontSize: '13px' }}>Premium Platforms</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feature: 'Win rate analytics', mcv: true, pacer: false, premium: true },
+                  { feature: 'Settlement range data', mcv: true, pacer: false, premium: true },
+                  { feature: 'Judge-level analytics', mcv: true, pacer: false, premium: true },
+                  { feature: 'District comparisons', mcv: true, pacer: false, premium: false },
+                  { feature: 'Plain English reports', mcv: true, pacer: false, premium: false },
+                  { feature: 'Free tier available', mcv: true, pacer: true, premium: false },
+                  { feature: 'No training required', mcv: true, pacer: false, premium: false },
+                  { feature: 'API access', mcv: true, pacer: true, premium: true },
+                ].map((row, i) => (
+                  <tr key={i} style={{ borderBottom: '1px solid #E5EBF0', background: i % 2 === 0 ? '#FFFFFF' : '#F8F9FA' }}>
+                    <td style={{ padding: '10px 16px', color: '#212529', fontWeight: 500 }}>{row.feature}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.mcv ? '#07874A' : '#CC1019', fontWeight: 700 }}>{row.mcv ? '✓' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.pacer ? '#07874A' : '#999' }}>{row.pacer ? '✓' : '—'}</td>
+                    <td style={{ padding: '10px 16px', textAlign: 'center', color: row.premium ? '#07874A' : '#999' }}>{row.premium ? '✓' : '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      {/* ── FAQ ACCORDION ────────────────────────────────── */}
+      <div id="faq" data-section style={{ background: '#F5F6F7', padding: '80px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{ fontSize: '28px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '12px' }}>
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+            {[
+              { q: 'Where does MyCaseValue get its data?', a: 'Our data comes from the Federal Judicial Center (FJC), PACER (Public Access to Court Electronic Records), CourtListener (Free Law Project), and the Bureau of Justice Statistics. All data is sourced from official public federal court records.' },
+              { q: 'How many cases are in the database?', a: 'Over 5.1 million federal court cases spanning 50+ years across all 94 federal judicial districts. We cover 84 case types including employment, personal injury, civil rights, contract disputes, and more.' },
+              { q: 'Is MyCaseValue free to use?', a: 'Yes, basic case reports are free with no account required. Premium features including detailed settlement ranges, judge analytics, and attorney tools are available with a subscription.' },
+              { q: 'Can I use this data in court?', a: 'MyCaseValue is an informational tool. While the underlying data comes from official court records, our analytics are for research purposes. Consult with an attorney for legal strategy decisions.' },
+              { q: 'What case types are covered?', a: 'We cover all 84 federal Nature of Suit (NOS) codes, including employment discrimination (Title VII, ADA, ADEA), personal injury, product liability, medical malpractice, civil rights, contract disputes, insurance, patent, trademark, and more.' },
+              { q: 'How current is the data?', a: 'Our database is updated regularly with new case dispositions. Most data reflects cases closed within the last several years, with historical data going back 50+ years for trend analysis.' },
+              { q: 'What is Attorney Mode?', a: 'Attorney Mode provides advanced analytics tools including case outcome prediction, judge intelligence reports, venue optimization, opposing counsel research, bulk analysis, and team workspace features.' },
+              { q: 'Do you offer an API?', a: 'Yes. Our REST API provides programmatic access to case analytics data for integration into your own tools and workflows. Documentation and sandbox access are available on our API page.' },
+              { q: 'How are win rates calculated?', a: 'Win rates are calculated from final case dispositions in federal court records. We categorize outcomes as plaintiff verdicts, defense verdicts, settlements, and dismissals based on FJC disposition codes.' },
+              { q: 'Can I compare districts?', a: 'Yes. Our district comparison tool lets you view win rates, settlement ranges, and case timelines side by side across any of the 94 federal judicial districts.' },
+              { q: 'Is there an institutional or academic license?', a: 'Yes. We offer institutional licensing for law schools, research institutions, and government agencies with special pricing and bulk data access. Contact us for details.' },
+              { q: 'How do I contact support?', a: 'Visit our contact page or email support directly. We offer email support for all users and priority support for premium subscribers.' },
+            ].map((faq, i) => (
+              <details key={i} style={{
+                borderTop: i === 0 ? '1px solid #D5D8DC' : 'none',
+                borderBottom: '1px solid #D5D8DC',
+                background: '#FFFFFF',
+              }}>
+                <summary style={{
+                  padding: '16px 20px', cursor: 'pointer', fontSize: '15px',
+                  fontWeight: 600, color: '#212529', fontFamily: 'var(--font-body)',
+                  listStyle: 'none', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                }}>
+                  {faq.q}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#455A64" strokeWidth="2" style={{ flexShrink: 0, marginLeft: '16px', transition: 'transform 200ms' }}>
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </summary>
+                <div style={{ padding: '0 20px 16px' }}>
+                  <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── RELATED SOLUTIONS ────────────────────────────── */}
+      <div style={{ background: '#FFFFFF', padding: '64px 24px', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#00172E', fontFamily: 'var(--font-display)', marginBottom: '32px' }}>
+            Explore Solutions
+          </h2>
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            {[
+              { label: 'For Individuals', href: '/solutions/individuals' },
+              { label: 'For Small Firms', href: '/solutions/small-firms' },
+              { label: 'For Enterprise', href: '/solutions/enterprise' },
+              { label: 'API Access', href: '/solutions/api' },
+              { label: 'View All Solutions', href: '/solutions' },
+            ].map((s) => (
+              <a key={s.href} href={s.href} style={{
+                padding: '10px 20px', fontSize: '13px', fontWeight: 600,
+                color: '#006997', border: '1px solid #D5D8DC', borderRadius: '2px',
+                textDecoration: 'none', fontFamily: 'var(--font-body)',
+                textTransform: 'uppercase', letterSpacing: '0.04em',
+                transition: 'all 150ms',
+              }} className="solution-pill">
+                {s.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── BOTTOM CTA — Start Free Trial ────────────────── */}
+      <div style={{ background: '#00172E', padding: '80px 24px' }}>
+        <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: 700, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '16px' }}>
+            Start Researching Today
+          </h2>
+          <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)', maxWidth: '480px', margin: '0 auto 32px', lineHeight: 1.7 }}>
+            Free basic reports. No account required. See real federal court outcome data in under 60 seconds.
+          </p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="/sign-up" className="hero-cta-primary" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              padding: '1rem 2rem', background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+              color: '#FAFBFC', borderRadius: '2px', fontWeight: 700, fontSize: '0.875rem',
+              fontFamily: 'var(--font-body)', textDecoration: 'none', textTransform: 'uppercase',
+              letterSpacing: '0.04em', transition: 'background 200ms',
+            }}>
+              Start Free Trial
+            </a>
+            <a href="/pricing" style={{
+              display: 'inline-flex', alignItems: 'center',
+              padding: '1rem 2rem', background: 'transparent', color: '#FAFBFC',
+              border: '1.5px solid rgba(255,255,255,0.5)', borderRadius: '2px',
+              fontWeight: 700, fontSize: '0.875rem', fontFamily: 'var(--font-body)',
+              textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.04em',
+              transition: 'all 200ms',
+            }} className="hero-cta-secondary">
+              View Pricing
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Responsive overrides */}
       <style dangerouslySetInnerHTML={{ __html: `
         .anchor-nav-link:hover { color: #212529 !important; border-bottom-color: #E8171F !important; }
         .tool-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important; transform: translateY(-2px); }
+        .who-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important; border-color: rgba(0,105,151,0.30) !important; }
+        .solution-pill:hover { background: #006997 !important; color: #FFFFFF !important; border-color: #006997 !important; }
         .productivity-grid { gap: 24px; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary svg { transform: rotate(180deg); }
         @media (max-width: 1024px) { .tools-grid { grid-template-columns: repeat(3, 1fr) !important; } }
         @media (max-width: 768px) {
           .tools-grid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -519,6 +784,9 @@ export default function ServerHero() {
           .feature-bullets-grid { grid-template-columns: 1fr !important; }
           .feature-cards-grid { grid-template-columns: 1fr !important; }
           .productivity-grid { grid-template-columns: 1fr !important; }
+          .who-grid { grid-template-columns: 1fr !important; }
+          .testimonials-grid { grid-template-columns: 1fr !important; }
+          .awards-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 480px) { .tools-grid { grid-template-columns: 1fr !important; } }
       `}} />
