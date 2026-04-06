@@ -137,21 +137,56 @@ export default async function OutcomesPage({
   // Get outcome data
   const outcomeData = OUTCOME_DATA[option.nos] || OUTCOME_DATA._default;
   const totalOutcomes = (outcomeData.trial_win || 0) + (outcomeData.trial_loss || 0) + (outcomeData.dismiss || 0) + (outcomeData.fav_set || 0);
-  
+
   const winRate = totalOutcomes > 0
     ? Math.round(((outcomeData.trial_win || 0) + (outcomeData.fav_set || 0)) / totalOutcomes * 100)
     : 42;
-  
+
   const settleRate = totalOutcomes > 0
     ? Math.round((outcomeData.fav_set || 0) / totalOutcomes * 100)
     : 30;
-  
+
   const medianDuration = outcomeData.set_mo || 6;
 
   // Simulated district-specific variation (in production, this would come from real data)
   const districtWinRate = Math.max(15, Math.min(65, winRate + (Math.random() > 0.5 ? 3 : -2)));
   const districtSettleRate = Math.max(10, Math.min(50, settleRate + (Math.random() > 0.5 ? 2 : -1)));
   const districtDuration = Math.max(4, medianDuration + (Math.random() > 0.5 ? 1 : -1));
+
+  // National averages for comparison
+  const nationalWinRate = winRate;
+  const nationalSettleRate = settleRate;
+  const nationalDuration = medianDuration;
+
+  // Calculate differentials with color coding
+  const winRateDiff = districtWinRate - nationalWinRate;
+  const settleRateDiff = districtSettleRate - nationalSettleRate;
+  const durationDiff = districtDuration - nationalDuration;
+
+  const getComparisonColor = (diff: number) => {
+    if (diff > 2) return '#10B981'; // green
+    if (diff > -2) return '#F59E0B'; // amber
+    return '#EF4444'; // red
+  };
+
+  const getComparisonLabel = (diff: number) => {
+    if (diff > 2) return 'Above Average';
+    if (diff > -2) return 'Average';
+    return 'Below Average';
+  };
+
+  // Related case types in same district
+  const relatedCaseTypes = SITS.flatMap((cat) =>
+    cat.opts.filter(opt => opt.label !== option.label).slice(0, 2)
+  ).slice(0, 3);
+
+  // Sample quick action routes
+  const quickActions = [
+    { label: 'File a Report', path: `/report/${option.nos}` },
+    { label: 'Settlement Calculator', path: '/calculator' },
+    { label: 'View Judges', path: '/judges' },
+    { label: 'Compare Districts', path: '/compare' },
+  ];
 
   // Outcome distribution
   const outcomes = [
@@ -464,6 +499,388 @@ export default async function OutcomesPage({
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* How This Compares Section */}
+      <div style={{
+        padding: 'clamp(20px, 4vw, 40px) 20px',
+        background: '#FFFFFF',
+        borderBottom: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '22px',
+            fontWeight: 700,
+            color: '#212529',
+            margin: '0 0 28px 0',
+            fontFamily: 'var(--font-display)',
+          }}>
+            How This Compares
+          </h2>
+
+          <p style={{
+            fontSize: '14px',
+            color: '#455A64',
+            margin: '0 0 24px 0',
+            fontFamily: 'var(--font-body)',
+            lineHeight: '1.6',
+          }}>
+            {stateName} outcomes for {option.label} cases vs. national average
+          </p>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '24px',
+          }}>
+            {/* Win Rate Comparison */}
+            <div style={{
+              background: '#F5F6F7',
+              border: '1px solid #D5D8DC',
+              borderRadius: '2px',
+              padding: '20px',
+            }}>
+              <div style={{
+                fontSize: '11px',
+                color: '#455A64',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                fontWeight: 700,
+                marginBottom: '12px',
+                fontFamily: 'var(--font-body)',
+              }}>
+                Win Rate (Trials + Settlements)
+              </div>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '16px',
+                marginBottom: '12px',
+              }}>
+                <div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#455A64',
+                    marginBottom: '4px',
+                    fontFamily: 'var(--font-body)',
+                  }}>
+                    {stateName}
+                  </div>
+                  <div style={{
+                    fontSize: '28px',
+                    fontWeight: 700,
+                    color: '#00172E',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    {Math.round(districtWinRate)}%
+                  </div>
+                </div>
+                <div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#455A64',
+                    marginBottom: '4px',
+                    fontFamily: 'var(--font-body)',
+                  }}>
+                    National Avg
+                  </div>
+                  <div style={{
+                    fontSize: '28px',
+                    fontWeight: 700,
+                    color: '#455A64',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    {Math.round(nationalWinRate)}%
+                  </div>
+                </div>
+              </div>
+              <div style={{
+                background: '#FFFFFF',
+                border: `1px solid ${getComparisonColor(winRateDiff)}`,
+                borderRadius: '2px',
+                padding: '8px 12px',
+                fontSize: '12px',
+                fontWeight: 600,
+                color: getComparisonColor(winRateDiff),
+                fontFamily: 'var(--font-body)',
+                textAlign: 'center',
+              }}>
+                {getComparisonLabel(winRateDiff)} {winRateDiff > 0 ? '+' : ''}{winRateDiff.toFixed(1)}%
+              </div>
+            </div>
+
+            {/* Settlement Rate Comparison */}
+            <div style={{
+              background: '#F5F6F7',
+              border: '1px solid #D5D8DC',
+              borderRadius: '2px',
+              padding: '20px',
+            }}>
+              <div style={{
+                fontSize: '11px',
+                color: '#455A64',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                fontWeight: 700,
+                marginBottom: '12px',
+                fontFamily: 'var(--font-body)',
+              }}>
+                Settlement Rate
+              </div>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '16px',
+                marginBottom: '12px',
+              }}>
+                <div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#455A64',
+                    marginBottom: '4px',
+                    fontFamily: 'var(--font-body)',
+                  }}>
+                    {stateName}
+                  </div>
+                  <div style={{
+                    fontSize: '28px',
+                    fontWeight: 700,
+                    color: '#006997',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    {Math.round(districtSettleRate)}%
+                  </div>
+                </div>
+                <div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#455A64',
+                    marginBottom: '4px',
+                    fontFamily: 'var(--font-body)',
+                  }}>
+                    National Avg
+                  </div>
+                  <div style={{
+                    fontSize: '28px',
+                    fontWeight: 700,
+                    color: '#455A64',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    {Math.round(nationalSettleRate)}%
+                  </div>
+                </div>
+              </div>
+              <div style={{
+                background: '#FFFFFF',
+                border: `1px solid ${getComparisonColor(settleRateDiff)}`,
+                borderRadius: '2px',
+                padding: '8px 12px',
+                fontSize: '12px',
+                fontWeight: 600,
+                color: getComparisonColor(settleRateDiff),
+                fontFamily: 'var(--font-body)',
+                textAlign: 'center',
+              }}>
+                {getComparisonLabel(settleRateDiff)} {settleRateDiff > 0 ? '+' : ''}{settleRateDiff.toFixed(1)}%
+              </div>
+            </div>
+
+            {/* Duration Comparison */}
+            <div style={{
+              background: '#F5F6F7',
+              border: '1px solid #D5D8DC',
+              borderRadius: '2px',
+              padding: '20px',
+            }}>
+              <div style={{
+                fontSize: '11px',
+                color: '#455A64',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                fontWeight: 700,
+                marginBottom: '12px',
+                fontFamily: 'var(--font-body)',
+              }}>
+                Median Duration
+              </div>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '16px',
+                marginBottom: '12px',
+              }}>
+                <div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#455A64',
+                    marginBottom: '4px',
+                    fontFamily: 'var(--font-body)',
+                  }}>
+                    {stateName}
+                  </div>
+                  <div style={{
+                    fontSize: '28px',
+                    fontWeight: 700,
+                    color: '#00172E',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    {Math.round(districtDuration)}mo
+                  </div>
+                </div>
+                <div>
+                  <div style={{
+                    fontSize: '13px',
+                    color: '#455A64',
+                    marginBottom: '4px',
+                    fontFamily: 'var(--font-body)',
+                  }}>
+                    National Avg
+                  </div>
+                  <div style={{
+                    fontSize: '28px',
+                    fontWeight: 700,
+                    color: '#455A64',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    {Math.round(nationalDuration)}mo
+                  </div>
+                </div>
+              </div>
+              <div style={{
+                background: '#FFFFFF',
+                border: `1px solid ${getComparisonColor(-durationDiff)}`,
+                borderRadius: '2px',
+                padding: '8px 12px',
+                fontSize: '12px',
+                fontWeight: 600,
+                color: getComparisonColor(-durationDiff),
+                fontFamily: 'var(--font-body)',
+                textAlign: 'center',
+              }}>
+                {getComparisonLabel(-durationDiff)} {durationDiff > 0 ? '+' : ''}{durationDiff.toFixed(1)} mo
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Outcomes Section */}
+      <div style={{
+        padding: 'clamp(20px, 4vw, 40px) 20px',
+        background: '#F5F6F7',
+        borderBottom: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '22px',
+            fontWeight: 700,
+            color: '#212529',
+            margin: '0 0 28px 0',
+            fontFamily: 'var(--font-display)',
+          }}>
+            Related Case Types in {stateName}
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '20px',
+          }}>
+            {relatedCaseTypes.map((relatedType, i) => (
+              <Link
+                key={i}
+                href={`/outcomes/${district}/${relatedType.label.toLowerCase().replace(/\s+/g, '-')}`}
+                className="outcome-card-link"
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '20px',
+                  textDecoration: 'none',
+                  display: 'block',
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                <div style={{
+                  fontSize: '11px',
+                  color: '#455A64',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  fontWeight: 700,
+                  marginBottom: '8px',
+                  fontFamily: 'var(--font-body)',
+                }}>
+                  Case Type
+                </div>
+                <div style={{
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  color: '#006997',
+                  fontFamily: 'var(--font-display)',
+                  marginBottom: '12px',
+                }}>
+                  {relatedType.label}
+                </div>
+                <div style={{
+                  fontSize: '12px',
+                  color: '#455A64',
+                  fontFamily: 'var(--font-body)',
+                }}>
+                  Explore outcomes →
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Actions Section */}
+      <div style={{
+        padding: 'clamp(20px, 4vw, 40px) 20px',
+        background: '#FFFFFF',
+        borderBottom: '1px solid #D5D8DC',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '22px',
+            fontWeight: 700,
+            color: '#212529',
+            margin: '0 0 28px 0',
+            fontFamily: 'var(--font-display)',
+          }}>
+            Quick Actions
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '16px',
+          }}>
+            {quickActions.map((action, i) => (
+              <Link
+                key={i}
+                href={action.path}
+                style={{
+                  background: '#006997',
+                  color: '#FFFFFF',
+                  padding: '16px 20px',
+                  borderRadius: '2px',
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  fontFamily: 'var(--font-body)',
+                  textAlign: 'center',
+                  transition: 'all 0.3s ease',
+                  display: 'block',
+                  border: '1px solid #006997',
+                }}
+
+              >
+                {action.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

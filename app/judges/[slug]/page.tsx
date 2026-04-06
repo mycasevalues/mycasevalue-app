@@ -565,6 +565,206 @@ export default async function JudgePage({ params }: PageProps) {
           </div>
         </div>
 
+        {/* Outcome Breakdown */}
+        <div
+          style={{
+            padding: '24px',
+            borderRadius: '2px',
+            border: '1px solid #D5D8DC',
+            background: '#FFFFFF',
+            marginBottom: '48px',
+          }}
+        >
+          <h3
+            style={{
+              fontSize: '16px',
+              fontWeight: '700',
+              color: '#212529',
+              marginBottom: '20px',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            Outcome Breakdown
+          </h3>
+          {(() => {
+            const winRate = judge.stats.plaintiffWinRate;
+            const settlementRate = judge.stats.settlementRate;
+            const dismissalRate = 100 - winRate - settlementRate;
+
+            return (
+              <div>
+                <div
+                  style={{
+                    display: 'flex',
+                    height: '32px',
+                    borderRadius: '2px',
+                    overflow: 'hidden',
+                    marginBottom: '16px',
+                    border: '1px solid #D5D8DC',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: `${winRate}%`,
+                      background: '#07874A',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      fontSize: '12px',
+                      fontWeight: '700',
+                    }}
+                  >
+                    {winRate > 5 && `${winRate}%`}
+                  </div>
+                  <div
+                    style={{
+                      width: `${settlementRate}%`,
+                      background: '#D97706',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      fontSize: '12px',
+                      fontWeight: '700',
+                    }}
+                  >
+                    {settlementRate > 5 && `${settlementRate}%`}
+                  </div>
+                  <div
+                    style={{
+                      width: `${dismissalRate}%`,
+                      background: '#E8171F',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      fontSize: '12px',
+                      fontWeight: '700',
+                    }}
+                  >
+                    {dismissalRate > 5 && `${dismissalRate}%`}
+                  </div>
+                </div>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+                    gap: '12px',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#212529', fontFamily: 'var(--font-body)' }}>
+                    <span style={{ width: '12px', height: '12px', borderRadius: '2px', background: '#07874A' }}></span>
+                    Plaintiff Win: {winRate}%
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#212529', fontFamily: 'var(--font-body)' }}>
+                    <span style={{ width: '12px', height: '12px', borderRadius: '2px', background: '#D97706' }}></span>
+                    Settlement: {settlementRate}%
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#212529', fontFamily: 'var(--font-body)' }}>
+                    <span style={{ width: '12px', height: '12px', borderRadius: '2px', background: '#E8171F' }}></span>
+                    Other/Dismissal: {dismissalRate}%
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+
+        {/* How This Judge Compares */}
+        <div
+          style={{
+            padding: '24px',
+            borderRadius: '2px',
+            border: '1px solid #D5D8DC',
+            background: '#FFFFFF',
+            marginBottom: '48px',
+          }}
+        >
+          <h3
+            style={{
+              fontSize: '16px',
+              fontWeight: '700',
+              color: '#212529',
+              marginBottom: '20px',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            How This Judge Compares
+          </h3>
+          {(() => {
+            const nationalAvgWinRate = 50;
+            const nationalAvgMotionGrantRate = 65;
+            const nationalAvgDuration = 24;
+
+            const comparisons = [
+              {
+                label: 'Plaintiff Win Rate',
+                judgeValue: judge.stats.plaintiffWinRate,
+                avgValue: nationalAvgWinRate,
+                unit: '%',
+              },
+              {
+                label: 'Motion Grant Rate',
+                judgeValue: judge.stats.motionGrantRate,
+                avgValue: nationalAvgMotionGrantRate,
+                unit: '%',
+              },
+              {
+                label: 'Median Duration',
+                judgeValue: judge.stats.medianDurationMonths,
+                avgValue: nationalAvgDuration,
+                unit: 'mo',
+                isLowerBetter: true,
+              },
+            ];
+
+            return (
+              <div style={{ display: 'grid', gap: '16px' }}>
+                {comparisons.map((comp, idx) => {
+                  const diff = comp.judgeValue - comp.avgValue;
+                  const isPositive = comp.isLowerBetter ? diff < 0 : diff > 0;
+                  const badge = (
+                    <span
+                      style={{
+                        display: 'inline-block',
+                        padding: '4px 8px',
+                        borderRadius: '2px',
+                        fontSize: '12px',
+                        fontWeight: '700',
+                        background: isPositive ? '#DCF7E5' : '#FDE5E6',
+                        color: isPositive ? '#07874A' : '#E8171F',
+                        fontFamily: 'var(--font-mono)',
+                      }}
+                    >
+                      {isPositive ? '+' : ''}{diff.toFixed(1)}{comp.unit}
+                    </span>
+                  );
+
+                  return (
+                    <div key={idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', borderBottom: '1px solid #D5D8DC' }}>
+                      <div>
+                        <div style={{ fontSize: '13px', fontWeight: '600', color: '#212529', marginBottom: '4px', fontFamily: 'var(--font-body)' }}>
+                          {comp.label}
+                        </div>
+                        <div style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                          National avg: {comp.avgValue}{comp.unit}
+                        </div>
+                      </div>
+                      <div style={{ textAlign: 'right' }}>
+                        <div style={{ fontSize: '16px', fontWeight: '700', color: '#212529', marginBottom: '4px', fontFamily: 'var(--font-mono)' }}>
+                          {comp.judgeValue}{comp.unit}
+                        </div>
+                        {badge}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
+        </div>
+
         {/* Judge Analytics Charts */}
         <div style={{ marginBottom: '48px' }}>
           <h3
@@ -656,6 +856,142 @@ export default async function JudgePage({ params }: PageProps) {
           </ul>
         </div>
 
+        {/* Case Load by Type Mini Chart */}
+        {judge.topCaseTypes && judge.topCaseTypes.length > 0 && (
+          <div
+            style={{
+              padding: '24px',
+              borderRadius: '2px',
+              border: '1px solid #D5D8DC',
+              background: '#FFFFFF',
+              marginBottom: '48px',
+            }}
+          >
+            <h3
+              style={{
+                fontSize: '16px',
+                fontWeight: '700',
+                color: '#212529',
+                marginBottom: '20px',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Case Load by Type
+            </h3>
+            {(() => {
+              const sortedTypes = [...judge.topCaseTypes].sort((a, b) => b.count - a.count);
+              const totalCases = sortedTypes.reduce((sum, ct) => sum + ct.count, 0);
+
+              return (
+                <div style={{ display: 'grid', gap: '12px' }}>
+                  {sortedTypes.map((caseType, idx) => {
+                    const percentage = Math.round((caseType.count / totalCases) * 100);
+                    return (
+                      <div key={idx}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+                          <span style={{ fontSize: '13px', fontWeight: '600', color: '#212529', fontFamily: 'var(--font-body)' }}>
+                            {caseType.label}
+                          </span>
+                          <span style={{ fontSize: '13px', fontWeight: '700', color: '#006997', fontFamily: 'var(--font-mono)' }}>
+                            {percentage}% ({caseType.count} cases)
+                          </span>
+                        </div>
+                        <div style={{ display: 'flex', height: '8px', borderRadius: '2px', background: '#E5EBF0', overflow: 'hidden' }}>
+                          <div
+                            style={{
+                              width: `${percentage}%`,
+                              background: '#006997',
+                              borderRadius: '2px',
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })()}
+          </div>
+        )}
+
+        {/* Yearly Trend Mini Chart */}
+        {judge.yearlyTrend && judge.yearlyTrend.length > 0 && (
+          <div
+            style={{
+              padding: '24px',
+              borderRadius: '2px',
+              border: '1px solid #D5D8DC',
+              background: '#FFFFFF',
+              marginBottom: '48px',
+            }}
+          >
+            <h3
+              style={{
+                fontSize: '16px',
+                fontWeight: '700',
+                color: '#212529',
+                marginBottom: '20px',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Case Volume by Year
+            </h3>
+            {(() => {
+              const maxCases = Math.max(...judge.yearlyTrend.map(yt => yt.cases));
+              return (
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(60px, 1fr))', gap: '8px' }}>
+                  {judge.yearlyTrend.map((trend, idx) => {
+                    const heightPercentage = (trend.cases / maxCases) * 100;
+                    return (
+                      <div key={idx} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                        <div
+                          style={{
+                            width: '100%',
+                            height: '80px',
+                            background: '#E5EBF0',
+                            borderRadius: '2px',
+                            display: 'flex',
+                            alignItems: 'flex-end',
+                            justifyContent: 'center',
+                            padding: '4px 0',
+                            position: 'relative',
+                          }}
+                        >
+                          <div
+                            style={{
+                              width: '70%',
+                              height: `${heightPercentage}%`,
+                              background: '#00172E',
+                              borderRadius: '2px 2px 0 0',
+                            }}
+                          ></div>
+                          {heightPercentage > 20 && (
+                            <span
+                              style={{
+                                position: 'absolute',
+                                fontSize: '11px',
+                                fontWeight: '700',
+                                color: '#FFFFFF',
+                                bottom: '4px',
+                                fontFamily: 'var(--font-mono)',
+                              }}
+                            >
+                              {trend.cases}
+                            </span>
+                          )}
+                        </div>
+                        <span style={{ fontSize: '11px', fontWeight: '600', color: '#212529', fontFamily: 'var(--font-body)' }}>
+                          {trend.year}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })()}
+          </div>
+        )}
+
         {/* Sample Size Note */}
         <div
           style={{
@@ -714,6 +1050,68 @@ export default async function JudgePage({ params }: PageProps) {
             </div>
           );
         })()}
+
+        {/* Related Resources */}
+        <div style={{ marginBottom: '48px' }}>
+          <h3
+            style={{
+              fontSize: '16px',
+              fontWeight: '700',
+              color: '#212529',
+              marginBottom: '20px',
+              fontFamily: 'var(--font-display)',
+            }}
+          >
+            Related Resources
+          </h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+            {[
+              {
+                href: '/judges',
+                label: 'All Judges',
+                description: 'Browse profiles of federal judges nationwide',
+              },
+              {
+                href: '/districts',
+                label: 'Districts',
+                description: 'Explore federal court districts and their judges',
+              },
+              {
+                href: '/calculator',
+                label: 'Calculator',
+                description: 'Calculate case values and estimate outcomes',
+              },
+              {
+                href: '/compare',
+                label: 'Compare Cases',
+                description: 'Compare judges and case statistics side-by-side',
+              },
+            ].map((resource, idx) => (
+              <Link
+                key={idx}
+                href={resource.href}
+                style={{
+                  display: 'block',
+                  padding: '20px',
+                  borderRadius: '2px',
+                  border: '1px solid #D5D8DC',
+                  background: '#FFFFFF',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                  cursor: 'pointer',
+                }}
+
+              >
+                <div style={{ fontSize: '14px', fontWeight: '700', color: '#006997', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+                  {resource.label}
+                </div>
+                <div style={{ fontSize: '13px', color: '#455A64', lineHeight: '1.5', fontFamily: 'var(--font-body)' }}>
+                  {resource.description}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
 
         {/* Disclaimer */}
         <div
