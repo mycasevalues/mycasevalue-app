@@ -406,6 +406,335 @@ export default function ComparePage() {
             </div>
           )}
 
+          {/* Visual Comparison Chart */}
+          {comparing && stats.length >= 2 && (
+            <section style={{
+              marginTop: 48,
+              padding: 'clamp(24px, 5vw, 32px)',
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              borderRadius: 4,
+              boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+            }}>
+              <h3 style={{
+                fontSize: 18,
+                fontWeight: 700,
+                color: '#00172E',
+                margin: '0 0 24px 0',
+                fontFamily: 'var(--font-display)',
+              }}>
+                Visual Comparison
+              </h3>
+              {[
+                { label: 'Win Rate (%)', key: 'winRate' },
+                { label: 'Settlement Rate (%)', key: 'settlementRate' },
+                { label: 'Median Duration (months)', key: 'medianDuration' },
+              ].map(metric => {
+                const metricStats = stats.map(s => ({
+                  label: s.label,
+                  value: s[metric.key as keyof CaseStats] as number,
+                }));
+                const maxValue = Math.max(...metricStats.map(m => m.value));
+                const colors = ['#E8171F', '#006997', '#00172E'];
+
+                return (
+                  <div key={metric.key} style={{ marginBottom: 24 }}>
+                    <h4 style={{
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: '#455A64',
+                      margin: '0 0 12px 0',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                    }}>
+                      {metric.label}
+                    </h4>
+                    {metricStats.map((m, idx) => (
+                      <div key={m.label} style={{ marginBottom: 12, display: 'flex', alignItems: 'center', gap: 12 }}>
+                        <div style={{ width: 120, fontSize: 13, fontWeight: 600, color: '#212529' }}>
+                          {m.label}
+                        </div>
+                        <div style={{
+                          flex: 1,
+                          height: 28,
+                          background: '#F0F3F5',
+                          borderRadius: 2,
+                          overflow: 'hidden',
+                          position: 'relative',
+                        }}>
+                          <div style={{
+                            height: '100%',
+                            width: `${Math.max((m.value / maxValue) * 100, 2)}%`,
+                            background: colors[idx % colors.length],
+                            borderRadius: 2,
+                            transition: 'width 0.5s ease',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'flex-end',
+                            paddingRight: 8,
+                            minWidth: 40,
+                          }}>
+                            <span style={{
+                              color: '#ffffff',
+                              fontSize: 12,
+                              fontWeight: 600,
+                              fontFamily: 'var(--font-mono)',
+                            }}>
+                              {m.value.toFixed(1)}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
+            </section>
+          )}
+
+          {/* Outcome Distribution */}
+          {comparing && stats.length >= 2 && (
+            <section style={{
+              marginTop: 48,
+              padding: 'clamp(24px, 5vw, 32px)',
+              background: '#FFFFFF',
+              border: '1px solid #D5D8DC',
+              borderRadius: 4,
+              boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+            }}>
+              <h3 style={{
+                fontSize: 18,
+                fontWeight: 700,
+                color: '#00172E',
+                margin: '0 0 24px 0',
+                fontFamily: 'var(--font-display)',
+              }}>
+                Outcome Distribution
+              </h3>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: 24,
+              }}>
+                {stats.map(s => (
+                  <div key={s.nos} style={{
+                    padding: 16,
+                    background: '#F8F9FA',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: 4,
+                  }}>
+                    <h4 style={{
+                      fontSize: 14,
+                      fontWeight: 600,
+                      color: '#212529',
+                      margin: '0 0 12px 0',
+                    }}>
+                      {s.label}
+                    </h4>
+                    <div style={{
+                      display: 'flex',
+                      height: 24,
+                      borderRadius: 2,
+                      overflow: 'hidden',
+                      marginBottom: 12,
+                      boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
+                    }}>
+                      <div style={{
+                        width: `${s.winRate}%`,
+                        background: '#07874A',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        minWidth: s.winRate > 5 ? 'auto' : 0,
+                      }}>
+                        {s.winRate > 5 && (
+                          <span style={{
+                            fontSize: 11,
+                            fontWeight: 600,
+                            color: '#ffffff',
+                            fontFamily: 'var(--font-mono)',
+                          }}>
+                            {s.winRate.toFixed(0)}%
+                          </span>
+                        )}
+                      </div>
+                      <div style={{
+                        width: `${s.settlementRate}%`,
+                        background: '#D97706',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        minWidth: s.settlementRate > 5 ? 'auto' : 0,
+                      }}>
+                        {s.settlementRate > 5 && (
+                          <span style={{
+                            fontSize: 11,
+                            fontWeight: 600,
+                            color: '#ffffff',
+                            fontFamily: 'var(--font-mono)',
+                          }}>
+                            {s.settlementRate.toFixed(0)}%
+                          </span>
+                        )}
+                      </div>
+                      <div style={{
+                        width: `${s.dismissRate}%`,
+                        background: '#E8171F',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        minWidth: s.dismissRate > 5 ? 'auto' : 0,
+                      }}>
+                        {s.dismissRate > 5 && (
+                          <span style={{
+                            fontSize: 11,
+                            fontWeight: 600,
+                            color: '#ffffff',
+                            fontFamily: 'var(--font-mono)',
+                          }}>
+                            {s.dismissRate.toFixed(0)}%
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: '1fr 1fr 1fr',
+                      gap: 8,
+                      fontSize: 12,
+                    }}>
+                      <div style={{ textAlign: 'center' }}>
+                        <div style={{
+                          width: 12,
+                          height: 12,
+                          background: '#07874A',
+                          borderRadius: 2,
+                          margin: '0 auto 4px',
+                        }} />
+                        <div style={{ color: '#455A64', fontWeight: 500 }}>Win</div>
+                      </div>
+                      <div style={{ textAlign: 'center' }}>
+                        <div style={{
+                          width: 12,
+                          height: 12,
+                          background: '#D97706',
+                          borderRadius: 2,
+                          margin: '0 auto 4px',
+                        }} />
+                        <div style={{ color: '#455A64', fontWeight: 500 }}>Settlement</div>
+                      </div>
+                      <div style={{ textAlign: 'center' }}>
+                        <div style={{
+                          width: 12,
+                          height: 12,
+                          background: '#E8171F',
+                          borderRadius: 2,
+                          margin: '0 auto 4px',
+                        }} />
+                        <div style={{ color: '#455A64', fontWeight: 500 }}>Dismiss</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Quick Insights */}
+          {comparing && stats.length >= 2 && (
+            <section style={{
+              marginTop: 48,
+              padding: 'clamp(24px, 5vw, 32px)',
+              background: '#F0F9FF',
+              border: '1px solid #BAE6FD',
+              borderRadius: 4,
+            }}>
+              <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                <div style={{
+                  fontSize: 20,
+                  marginTop: 2,
+                  flexShrink: 0,
+                }}>
+                  💡
+                </div>
+                <div>
+                  <h3 style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: '#00172E',
+                    margin: '0 0 12px 0',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    Quick Insights
+                  </h3>
+                  <ul style={{
+                    margin: 0,
+                    padding: 0,
+                    listStyle: 'none',
+                    fontSize: 14,
+                    color: '#212529',
+                    lineHeight: 1.6,
+                  }}>
+                    {(() => {
+                      const insights: string[] = [];
+
+                      // Highest win rate
+                      let maxWinIdx = 0;
+                      for (let i = 1; i < stats.length; i++) {
+                        if (stats[i].winRate > stats[maxWinIdx].winRate) {
+                          maxWinIdx = i;
+                        }
+                      }
+                      insights.push(`${stats[maxWinIdx].label} has the highest win rate at ${stats[maxWinIdx].winRate.toFixed(1)}%`);
+
+                      // Shortest duration
+                      let minDurIdx = 0;
+                      for (let i = 1; i < stats.length; i++) {
+                        if (stats[i].medianDuration < stats[minDurIdx].medianDuration) {
+                          minDurIdx = i;
+                        }
+                      }
+                      insights.push(`${stats[minDurIdx].label} has the shortest median duration at ${stats[minDurIdx].medianDuration} months`);
+
+                      // Highest recovery (if available)
+                      const statsWithRecovery = stats.filter(s => s.medianRecovery !== null);
+                      if (statsWithRecovery.length >= 2) {
+                        let maxRecIdx = 0;
+                        for (let i = 1; i < statsWithRecovery.length; i++) {
+                          if ((statsWithRecovery[i].medianRecovery ?? 0) > (statsWithRecovery[maxRecIdx].medianRecovery ?? 0)) {
+                            maxRecIdx = i;
+                          }
+                        }
+                        insights.push(`${statsWithRecovery[maxRecIdx].label} has the highest median recovery at $${(statsWithRecovery[maxRecIdx].medianRecovery ?? 0).toLocaleString()}k`);
+                      }
+
+                      // Settlement comparison
+                      if (stats.length >= 2) {
+                        let maxSettIdx = 0;
+                        for (let i = 1; i < stats.length; i++) {
+                          if (stats[i].settlementRate > stats[maxSettIdx].settlementRate) {
+                            maxSettIdx = i;
+                          }
+                        }
+                        const minSettIdx = stats.findIndex((s, i) => i !== maxSettIdx);
+                        if (minSettIdx !== -1) {
+                          const diff = ((stats[maxSettIdx].settlementRate - stats[minSettIdx].settlementRate) / stats[minSettIdx].settlementRate * 100).toFixed(0);
+                          insights.push(`${stats[maxSettIdx].label} has ${diff}% more settlements than ${stats[minSettIdx].label}`);
+                        }
+                      }
+
+                      return insights.map((insight, idx) => (
+                        <li key={idx} style={{ marginBottom: idx < insights.length - 1 ? 8 : 0 }}>
+                          • {insight}
+                        </li>
+                      ));
+                    })()}
+                  </ul>
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* Disclaimer */}
           <section style={{
             marginTop: 48,
@@ -428,6 +757,172 @@ export default function ComparePage() {
                 Learn about our methodology
               </Link>
             </p>
+          </section>
+
+          {/* Popular Comparisons */}
+          <section style={{
+            marginTop: 48,
+          }}>
+            <h3 style={{
+              fontSize: 18,
+              fontWeight: 700,
+              color: '#00172E',
+              margin: '0 0 24px 0',
+              fontFamily: 'var(--font-display)',
+            }}>
+              Popular Comparisons
+            </h3>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: 16,
+            }}>
+              {[
+                { name1: 'Employment Discrimination', nos1: '442', name2: 'Wrongful Termination', nos2: '445' },
+                { name1: 'Personal Injury', nos1: '360', name2: 'Medical Malpractice', nos2: '362' },
+                { name1: 'Breach of Contract', nos1: '190', name2: 'Fraud', nos2: '195' },
+                { name1: 'Civil Rights', nos1: '440', name2: 'Voting Rights', nos2: '441' },
+                { name1: 'Insurance', nos1: '870', name2: 'Product Liability', nos2: '365' },
+                { name1: 'FLSA', nos1: '710', name2: 'ADA', nos2: '445' },
+              ].map((comp, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setSelected([comp.nos1, comp.nos2, '']);
+                    setComparing(true);
+                  }}
+                  style={{
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: 2,
+                    padding: 16,
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    transition: 'all 0.2s ease',
+                    fontFamily: 'var(--font-body)',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLButtonElement).style.borderColor = '#006997';
+                    (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 2px 4px rgba(0, 105, 151, 0.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLButtonElement).style.borderColor = '#D5D8DC';
+                    (e.currentTarget as HTMLButtonElement).style.boxShadow = 'none';
+                  }}
+                >
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    marginBottom: 4,
+                  }}>
+                    <span style={{
+                      flex: 1,
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: '#212529',
+                    }}>
+                      {comp.name1}
+                    </span>
+                    <span style={{
+                      fontSize: 11,
+                      fontWeight: 700,
+                      color: '#E8171F',
+                      background: '#FFE5E5',
+                      padding: '2px 8px',
+                      borderRadius: 2,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.2px',
+                    }}>
+                      vs
+                    </span>
+                    <span style={{
+                      flex: 1,
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: '#212529',
+                      textAlign: 'right',
+                    }}>
+                      {comp.name2}
+                    </span>
+                  </div>
+                  <div style={{
+                    fontSize: 12,
+                    color: '#455A64',
+                    textAlign: 'center',
+                  }}>
+                    NOS {comp.nos1} vs {comp.nos2}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section style={{
+            marginTop: 48,
+            marginBottom: 48,
+          }}>
+            <h3 style={{
+              fontSize: 18,
+              fontWeight: 700,
+              color: '#00172E',
+              margin: '0 0 24px 0',
+              fontFamily: 'var(--font-display)',
+            }}>
+              Related Tools
+            </h3>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: 16,
+            }}>
+              {[
+                { name: 'Recovery Calculator', href: '/calculator', desc: 'Estimate potential damages' },
+                { name: 'Odds Analyzer', href: '/odds', desc: 'Analyze case outcome probabilities' },
+                { name: 'Trends Dashboard', href: '/trends', desc: 'Track federal court trends' },
+                { name: 'NOS Explorer', href: '/nos-explorer', desc: 'Browse all case types' },
+              ].map((tool, idx) => (
+                <Link
+                  key={idx}
+                  href={tool.href}
+                  style={{
+                    display: 'block',
+                    padding: 16,
+                    background: '#FFFFFF',
+                    border: '1px solid #D5D8DC',
+                    borderRadius: 4,
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = '#006997';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 2px 4px rgba(0, 105, 151, 0.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = '#D5D8DC';
+                    (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none';
+                  }}
+                >
+                  <h4 style={{
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: '#006997',
+                    margin: '0 0 4px 0',
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    {tool.name}
+                  </h4>
+                  <p style={{
+                    fontSize: 13,
+                    color: '#455A64',
+                    margin: 0,
+                  }}>
+                    {tool.desc}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </section>
         </div>
       </main>

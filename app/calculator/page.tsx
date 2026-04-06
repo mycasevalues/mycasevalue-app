@@ -77,6 +77,23 @@ const DURATION_MULT: Record<string, number> = {
   over3yr: 1.6,
   permanent: 2.0,
 };
+const EVIDENCE_MULT: Record<string, number> = {
+  weak: 0.7,
+  moderate: 1.0,
+  strong: 1.3,
+  overwhelming: 1.6,
+};
+const PRIOR_SETTLEMENT_MULT: Record<string, number> = {
+  none: 1.0,
+  below: 0.85,
+  near: 1.1,
+  above: 1.25,
+};
+const DEFENDANTS_MULT: Record<string, number> = {
+  single: 1.0,
+  multi: 1.15,
+  complex: 1.3,
+};
 
 /* ── Category-to-NOS mapping for REAL_DATA lookup ────────────────────── */
 const CATEGORY_PRIMARY_NOS: Record<string, string> = {
@@ -119,8 +136,19 @@ interface Results {
     severityMult: number;
     durationMult: number;
     attorneyMult: number;
+    evidenceMult: number;
+    settlementMult: number;
+    defendantsMult: number;
     categoryMult: { low: number; median: number; high: number };
   };
+}
+
+interface SavedScenario {
+  id: string;
+  label: string;
+  median: number;
+  winRate: number;
+  summary: string;
 }
 
 /* ══════════════════════════════════════════════════════════════════════ */
@@ -131,7 +159,11 @@ export default function CalculatorPage() {
   const [represented, setRepresented] = useState('');
   const [severity, setSeverity] = useState('');
   const [duration, setDuration] = useState('');
+  const [evidence, setEvidence] = useState('');
+  const [priorSettlement, setPriorSettlement] = useState('');
+  const [defendants, setDefendants] = useState('');
   const [results, setResults] = useState<Results | null>(null);
+  const [scenarios, setScenarios] = useState<SavedScenario[]>([]);
 
   function resetForm() {
     setCaseType('');
@@ -140,6 +172,9 @@ export default function CalculatorPage() {
     setRepresented('');
     setSeverity('');
     setDuration('');
+    setEvidence('');
+    setPriorSettlement('');
+    setDefendants('');
     setResults(null);
   }
 
@@ -154,8 +189,11 @@ export default function CalculatorPage() {
     const attMult = represented === 'yes' ? ATTORNEY_BOOST : 1;
     const sevMult = severity ? (SEVERITY_MULT[severity] ?? 1) : 1;
     const durMult = duration ? (DURATION_MULT[duration] ?? 1) : 1;
+    const evMult = evidence ? (EVIDENCE_MULT[evidence] ?? 1) : 1;
+    const settleMult = priorSettlement ? (PRIOR_SETTLEMENT_MULT[priorSettlement] ?? 1) : 1;
+    const defMult = defendants ? (DEFENDANTS_MULT[defendants] ?? 1) : 1;
 
-    const combined = attMult * sevMult * durMult;
+    const combined = attMult * sevMult * durMult * evMult * settleMult * defMult;
 
     setResults({
       low: raw * catMult.low * combined,
@@ -169,6 +207,9 @@ export default function CalculatorPage() {
         severityMult: sevMult,
         durationMult: durMult,
         attorneyMult: attMult,
+        evidenceMult: evMult,
+        settlementMult: settleMult,
+        defendantsMult: defMult,
         categoryMult: catMult,
       },
     });
@@ -421,6 +462,89 @@ export default function CalculatorPage() {
                 Longer-lasting impacts generally result in higher settlement values.
               </p>
             </div>
+
+            {/* Evidence Strength */}
+            <div>
+              <label htmlFor="calc-evidence" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+                Evidence Strength (optional)
+              </label>
+              <select
+                id="calc-evidence"
+                value={evidence}
+                onChange={(e) => { setEvidence(e.target.value); setResults(null); }}
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                style={{
+                  height: '48px', borderRadius: '2px',
+                  borderColor: evidence === '' ? '#D5D8DC' : '#E8171F',
+                  background: '#FAFBFC', color: evidence ? '#212529' : '#455A64',
+                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                }}
+              >
+                <option value="">Select evidence strength...</option>
+                <option value="weak">Weak — limited documentation</option>
+                <option value="moderate">Moderate — some supporting evidence</option>
+                <option value="strong">Strong — well-documented with witnesses/records</option>
+                <option value="overwhelming">Overwhelming — clear liability, extensive documentation</option>
+              </select>
+              <p className="text-[11px] mt-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                Strong documentation and witness testimony increase case value significantly.
+              </p>
+            </div>
+
+            {/* Prior Settlements */}
+            <div>
+              <label htmlFor="calc-prior-settlement" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+                Prior Settlements? (optional)
+              </label>
+              <select
+                id="calc-prior-settlement"
+                value={priorSettlement}
+                onChange={(e) => { setPriorSettlement(e.target.value); setResults(null); }}
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                style={{
+                  height: '48px', borderRadius: '2px',
+                  borderColor: priorSettlement === '' ? '#D5D8DC' : '#E8171F',
+                  background: '#FAFBFC', color: priorSettlement ? '#212529' : '#455A64',
+                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                }}
+              >
+                <option value="">Select...</option>
+                <option value="none">No prior settlement offers</option>
+                <option value="below">Yes — below my estimate</option>
+                <option value="near">Yes — near my estimate</option>
+                <option value="above">Yes — above my estimate</option>
+              </select>
+              <p className="text-[11px] mt-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                Existing offers establish a baseline for negotiations.
+              </p>
+            </div>
+
+            {/* Number of Defendants */}
+            <div>
+              <label htmlFor="calc-defendants" className="block mb-3" style={{ color: '#212529', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
+                Number of Defendants (optional)
+              </label>
+              <select
+                id="calc-defendants"
+                value={defendants}
+                onChange={(e) => { setDefendants(e.target.value); setResults(null); }}
+                className="w-full px-4 border text-sm transition-all focus:outline-none"
+                style={{
+                  height: '48px', borderRadius: '2px',
+                  borderColor: defendants === '' ? '#D5D8DC' : '#E8171F',
+                  background: '#FAFBFC', color: defendants ? '#212529' : '#455A64',
+                  fontFamily: 'var(--font-body)', borderWidth: '1px', fontSize: '14px',
+                }}
+              >
+                <option value="">Select...</option>
+                <option value="single">Single defendant</option>
+                <option value="multi">2–3 defendants</option>
+                <option value="complex">4+ defendants (complex)</option>
+              </select>
+              <p className="text-[11px] mt-2" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                Multiple defendants can increase complexity and settlement amounts.
+              </p>
+            </div>
           </div>
 
           {/* Calculate & Reset Buttons */}
@@ -633,12 +757,120 @@ export default function CalculatorPage() {
                       <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: '#07874A', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.attorneyMult.toFixed(2)}</td>
                     </tr>
                   )}
+                  {results.breakdown.evidenceMult !== 1 && (
+                    <tr style={{ borderBottom: '1px solid #E5EBF0' }}>
+                      <td style={{ padding: '8px 0', color: '#455A64' }}>Evidence strength adjustment</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.evidenceMult > 1 ? '#07874A' : '#CC1019', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.evidenceMult.toFixed(1)}</td>
+                    </tr>
+                  )}
+                  {results.breakdown.settlementMult !== 1 && (
+                    <tr style={{ borderBottom: '1px solid #E5EBF0' }}>
+                      <td style={{ padding: '8px 0', color: '#455A64' }}>Prior settlement adjustment</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.settlementMult > 1 ? '#07874A' : '#CC1019', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.settlementMult.toFixed(2)}</td>
+                    </tr>
+                  )}
+                  {results.breakdown.defendantsMult !== 1 && (
+                    <tr style={{ borderBottom: '1px solid #E5EBF0' }}>
+                      <td style={{ padding: '8px 0', color: '#455A64' }}>Multiple defendants adjustment</td>
+                      <td style={{ padding: '8px 0', textAlign: 'right', fontWeight: 600, color: results.breakdown.defendantsMult > 1 ? '#07874A' : '#CC1019', fontFamily: 'var(--font-mono)' }}>×{results.breakdown.defendantsMult.toFixed(2)}</td>
+                    </tr>
+                  )}
                   <tr>
                     <td style={{ padding: '10px 0', color: '#212529', fontWeight: 700 }}>Estimated median settlement</td>
                     <td style={{ padding: '10px 0', textAlign: 'right', fontWeight: 800, color: '#E8171F', fontFamily: 'var(--font-mono)', fontSize: '16px' }}>{fmt(results.median)}</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+
+            {/* Scenario Comparison */}
+            <div className="mb-6 p-6" style={{ background: '#F0F4F8', border: '1px solid #D5D8DC', borderRadius: '2px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                <h3 className="text-[12px] font-bold uppercase tracking-[0.8px]" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
+                  Scenario Comparison
+                </h3>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (scenarios.length < 3) {
+                        const newScenario: SavedScenario = {
+                          id: `scenario-${Date.now()}`,
+                          label: `Scenario ${scenarios.length + 1}`,
+                          median: results.median,
+                          winRate: results.winRate,
+                          summary: `${results.caseLabel} • ${fmt(results.breakdown.baseDamages)} damages`,
+                        };
+                        setScenarios([...scenarios, newScenario]);
+                      }
+                    }}
+                    disabled={scenarios.length >= 3}
+                    style={{
+                      padding: '8px 12px',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      background: scenarios.length >= 3 ? '#D5D8DC' : '#E8171F',
+                      color: '#FFFFFF',
+                      border: 'none',
+                      borderRadius: '2px',
+                      cursor: scenarios.length >= 3 ? 'not-allowed' : 'pointer',
+                      fontFamily: 'var(--font-body)',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Save Scenario
+                  </button>
+                  {scenarios.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => setScenarios([])}
+                      style={{
+                        padding: '8px 12px',
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        background: '#FFFFFF',
+                        color: '#212529',
+                        border: '1px solid #D5D8DC',
+                        borderRadius: '2px',
+                        cursor: 'pointer',
+                        fontFamily: 'var(--font-body)',
+                        textTransform: 'uppercase',
+                      }}
+                    >
+                      Clear All
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              {scenarios.length > 0 ? (
+                <div style={{ overflowX: 'auto' }}>
+                  <table style={{ width: '100%', fontFamily: 'var(--font-body)', fontSize: '12px', borderCollapse: 'collapse' }}>
+                    <thead>
+                      <tr style={{ borderBottom: '2px solid #D5D8DC', background: '#FFFFFF' }}>
+                        <th style={{ padding: '12px', textAlign: 'left', fontWeight: 600, color: '#455A64' }}>Label</th>
+                        <th style={{ padding: '12px', textAlign: 'right', fontWeight: 600, color: '#455A64' }}>Median Estimate</th>
+                        <th style={{ padding: '12px', textAlign: 'right', fontWeight: 600, color: '#455A64' }}>Win Rate</th>
+                        <th style={{ padding: '12px', textAlign: 'left', fontWeight: 600, color: '#455A64' }}>Summary</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {scenarios.map((scenario) => (
+                        <tr key={scenario.id} style={{ borderBottom: '1px solid #E5EBF0', background: '#FFFFFF' }}>
+                          <td style={{ padding: '12px', color: '#212529', fontWeight: 500 }}>{scenario.label}</td>
+                          <td style={{ padding: '12px', textAlign: 'right', color: '#E8171F', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{fmt(scenario.median)}</td>
+                          <td style={{ padding: '12px', textAlign: 'right', color: '#455A64', fontFamily: 'var(--font-mono)' }}>{(scenario.winRate * 100).toFixed(0)}%</td>
+                          <td style={{ padding: '12px', color: '#455A64', fontSize: '11px' }}>{scenario.summary}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <p style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '12px', textAlign: 'center', padding: '12px' }}>
+                  Save up to 3 scenarios to compare side by side
+                </p>
+              )}
             </div>
 
             {/* Federal Data Context */}
@@ -743,6 +975,118 @@ export default function CalculatorPage() {
           <p className="text-[12px] leading-relaxed" style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>
             The Settlement Calculator provides estimates based on historical aggregate data from federal court records. These are statistical approximations and not predictions. Actual settlement amounts vary significantly based on case facts, legal representation, evidence quality, and many other factors. This calculator is not legal advice. Do not rely on these estimates as a substitute for consulting with a qualified attorney. MyCaseValue LLC is not a law firm and does not provide legal advice.
           </p>
+        </div>
+
+        {/* What Affects Your Case Value */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-black mb-6" style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
+            What Affects Your Case Value
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Evidence Quality',
+                description: 'Strong documentation, witness testimony, and clear liability dramatically increase case value.',
+                icon: '📋',
+              },
+              {
+                title: 'Attorney Representation',
+                description: 'Cases with attorney representation settle for 23% more on average in federal court.',
+                icon: '⚖️',
+              },
+              {
+                title: 'Case Type',
+                description: 'Different case categories have vastly different outcome patterns and typical recovery ranges.',
+                icon: '📊',
+              },
+              {
+                title: 'Injury Severity',
+                description: 'Catastrophic injuries with permanent effects command the highest multipliers.',
+                icon: '🏥',
+              },
+              {
+                title: 'Jurisdiction',
+                description: 'Federal district and circuit can significantly impact outcomes and timelines.',
+                icon: '🏛️',
+              },
+              {
+                title: 'Prior Offers',
+                description: 'Existing settlement offers establish a baseline and can strengthen your negotiating position.',
+                icon: '💼',
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '24px',
+                }}
+              >
+                <div style={{ fontSize: '28px', marginBottom: '12px' }}>
+                  {item.icon}
+                </div>
+                <h3 className="font-bold mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)', fontSize: '14px' }}>
+                  {item.title}
+                </h3>
+                <p style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '12px', lineHeight: 1.5 }}>
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Related Tools */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-black mb-6" style={{ color: '#212529', fontFamily: 'var(--font-display)', letterSpacing: '-1px' }}>
+            Related Tools
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { href: '/compare', title: 'Settlement Comparison', description: 'Compare case values across similar cases' },
+              { href: '/odds', title: 'Win Odds Calculator', description: 'Estimate your likelihood of success' },
+              { href: '/report/360', title: 'Detailed Case Report', description: 'Deep dive into injury case data' },
+              { href: '/judges', title: 'Judge Analytics', description: 'See how judges rule in your district' },
+            ].map((tool, idx) => (
+              <Link
+                key={idx}
+                href={tool.href}
+                style={{
+                  display: 'block',
+                  background: '#FFFFFF',
+                  border: '1px solid #D5D8DC',
+                  borderRadius: '2px',
+                  padding: '24px',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#E8171F';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = '#D5D8DC';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <div>
+                    <h3 className="font-bold mb-2" style={{ color: '#212529', fontFamily: 'var(--font-display)', fontSize: '14px' }}>
+                      {tool.title}
+                    </h3>
+                    <p style={{ color: '#455A64', fontFamily: 'var(--font-body)', fontSize: '12px', lineHeight: 1.5 }}>
+                      {tool.description}
+                    </p>
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8171F" strokeWidth="2" style={{ marginLeft: '8px', flexShrink: 0 }}>
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

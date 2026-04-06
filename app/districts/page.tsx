@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 import { REAL_DATA } from '../../lib/realdata';
 import Link from 'next/link';
+import DistrictsExplorer from '../../components/DistrictsExplorer';
 
 export const revalidate = 0;
 
@@ -235,35 +236,8 @@ export default function DistrictsPage() {
   return (
     <div style={{ background: '#F5F6F7', minHeight: '100vh' }}>
       <style>{`
-        .district-card {
-          border: 1px solid #D5D8DC;
-          transition: border-color 150ms, transform 150ms, box-shadow 150ms;
-          text-decoration: none;
-          display: block;
-        }
-        .district-card:hover {
-          border-color: #006997;
-          transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .circuit-header {
-          position: relative;
-        }
-        .circuit-header::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 40px;
-          height: 2px;
-          background: #E8171F;
-        }
         a.lex-link { color: #006997; text-decoration: none; }
         a.lex-link:hover { text-decoration: underline; }
-        @media (max-width: 768px) {
-          .district-grid { grid-template-columns: 1fr !important; }
-          .circuit-stats-grid { grid-template-columns: 1fr 1fr !important; }
-        }
       `}</style>
 
       {/* Breadcrumb */}
@@ -371,127 +345,13 @@ export default function DistrictsPage() {
         </div>
       </header>
 
-      {/* Circuits */}
+      {/* Interactive Explorer */}
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 48px) clamp(16px, 3vw, 48px)' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
-          {CIRCUITS.map((circuit) => {
-            const circuitWinRate = getCircuitAvgWinRate(circuit.name);
-            return (
-              <section key={circuit.name}>
-                {/* Circuit Header */}
-                <div className="circuit-header" style={{ paddingBottom: 12, marginBottom: 20 }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
-                    <h2 style={{
-                      color: '#212529',
-                      fontFamily: 'var(--font-display)',
-                      fontSize: 'clamp(18px, 3vw, 22px)',
-                      fontWeight: 700,
-                      margin: 0,
-                    }}>
-                      {circuit.name}
-                    </h2>
-                    <div style={{ display: 'flex', gap: 16, fontSize: 12, color: '#455A64' }}>
-                      <span>
-                        <strong style={{ color: '#212529', fontFamily: 'var(--font-mono)' }}>{circuit.districts.length}</strong> districts
-                      </span>
-                      {circuitWinRate !== null && (
-                        <span>
-                          Avg win rate:{' '}
-                          <strong style={{
-                            color: circuitWinRate >= 50 ? '#07874A' : circuitWinRate >= 35 ? '#D97706' : '#E8171F',
-                            fontFamily: 'var(--font-mono)',
-                          }}>
-                            {circuitWinRate}%
-                          </strong>
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* District Cards Grid */}
-                <div className="district-grid" style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-                  gap: 12,
-                }}>
-                  {circuit.districts.map((d) => {
-                    const wr = getDistrictWinRate(d.slug);
-                    const wrColor = wr >= 50 ? '#07874A' : wr >= 35 ? '#D97706' : '#E8171F';
-                    return (
-                      <Link
-                        key={d.slug}
-                        href={`/districts/${d.slug}`}
-                        className="district-card"
-                        style={{
-                          background: '#FFFFFF',
-                          borderRadius: 2,
-                          padding: '14px 16px',
-                        }}
-                      >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                          <div>
-                            <div style={{
-                              fontSize: 14,
-                              fontWeight: 600,
-                              color: '#212529',
-                              fontFamily: 'var(--font-body)',
-                              marginBottom: 4,
-                            }}>
-                              {d.name}
-                            </div>
-                            <div style={{
-                              fontSize: 11,
-                              color: '#455A64',
-                              fontFamily: 'var(--font-body)',
-                            }}>
-                              {d.abbr}
-                            </div>
-                          </div>
-                          <div style={{ textAlign: 'right' }}>
-                            <div style={{
-                              fontSize: 16,
-                              fontWeight: 700,
-                              color: wrColor,
-                              fontFamily: 'var(--font-mono)',
-                              lineHeight: 1,
-                            }}>
-                              {wr}%
-                            </div>
-                            <div style={{
-                              fontSize: 10,
-                              color: '#455A64',
-                              textTransform: 'uppercase',
-                              letterSpacing: '0.3px',
-                              marginTop: 2,
-                            }}>
-                              Win Rate
-                            </div>
-                          </div>
-                        </div>
-                        {/* Mini progress bar */}
-                        <div style={{
-                          marginTop: 10,
-                          height: 3,
-                          background: '#F0F3F5',
-                          borderRadius: 2,
-                          overflow: 'hidden',
-                        }}>
-                          <div style={{
-                            height: '100%',
-                            width: `${Math.min(wr, 100)}%`,
-                            background: wrColor,
-                            borderRadius: 2,
-                          }} />
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </section>
-            );
-          })}
-        </div>
+        <DistrictsExplorer
+          circuits={CIRCUITS}
+          getDistrictWinRate={getDistrictWinRate}
+          getCircuitAvgWinRate={getCircuitAvgWinRate}
+        />
 
         {/* Data Coverage Section */}
         <section style={{
