@@ -341,8 +341,8 @@ export default function HowItWorksPage() {
               },
               {
                 icon: '',
-                title: 'Affordable',
-                description: 'Start free, or upgrade to premium features for $5.99–$29.99. No surprise fees.',
+                title: 'Free During Launch',
+                description: 'All features are free during our launch period. No account required, no credit card needed.',
               },
               {
                 icon: '',

@@ -1032,6 +1032,47 @@ export default function ServerContent() {
         </div>
       </section>
 
+      {/* ── Tools & Resources ─────────────────────────────── */}
+      <section style={{ padding: '80px 24px', background: '#FFFFFF', borderBottom: '1px solid #D5D8DC' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <p style={{ fontSize: '12px', fontWeight: 700, color: '#E8171F', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '16px', fontFamily: 'var(--font-body)', textAlign: 'center' }}>
+            Research Tools
+          </p>
+          <h2 style={{ fontSize: '36px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '48px', textAlign: 'center', letterSpacing: '-0.01em' }}>
+            Free Tools for Case Research
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 20 }}>
+            {[
+              { href: '/search', title: 'Case Search', desc: 'Search all 84 federal case types by keyword', icon: '🔍' },
+              { href: '/nos-explorer', title: 'NOS Code Explorer', desc: 'Browse and compare all NOS codes with data', icon: '📊' },
+              { href: '/calculator', title: 'Settlement Calculator', desc: 'Estimate your potential case value', icon: '🧮' },
+              { href: '/translate', title: 'Jargon Translator', desc: 'Convert legal language to plain English', icon: '💬' },
+              { href: '/odds', title: 'Case Odds Checker', desc: 'See win rates and outcome probabilities', icon: '🎯' },
+              { href: '/judges', title: 'Judge Intelligence', desc: 'Research federal judges across all circuits', icon: '⚖️' },
+              { href: '/trends', title: 'Filing Trends', desc: 'Track case outcome trends over time', icon: '📈' },
+              { href: '/glossary', title: 'Legal Glossary', desc: 'Plain-English definitions of court terms', icon: '📖' },
+            ].map((tool) => (
+              <a
+                key={tool.href}
+                href={tool.href}
+                style={{
+                  display: 'block', padding: '24px', background: '#F8F9FA', border: '1px solid #D5D8DC',
+                  borderRadius: 2, textDecoration: 'none', transition: 'all 0.2s ease',
+                }}
+              >
+                <div style={{ fontSize: 24, marginBottom: 8 }}>{tool.icon}</div>
+                <h3 style={{ fontSize: 15, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: 4 }}>
+                  {tool.title}
+                </h3>
+                <p style={{ fontSize: 13, color: '#455A64', fontFamily: 'var(--font-body)', margin: 0, lineHeight: 1.5 }}>
+                  {tool.desc}
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ────────────────────────────────────────────── */}
       <section
         style={{
