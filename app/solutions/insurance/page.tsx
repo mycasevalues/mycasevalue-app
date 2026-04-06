@@ -1,0 +1,216 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { SITE_URL, SITE_NAME } from '@/lib/site-config';
+
+export const metadata: Metadata = {
+  title: 'For Insurance Companies | MyCaseValue+',
+  description: 'Settlement benchmarking, claim valuation, and litigation cost forecasting for insurers and defense counsel.',
+  alternates: { canonical: `${SITE_URL}/solutions/insurance` },
+};
+
+const FEATURES = [
+  {
+    icon: '📊',
+    title: 'Settlement Benchmarking',
+    desc: 'Compare claims against industry benchmarks and historical settlement patterns to validate valuations and identify outliers.',
+  },
+  {
+    icon: '💰',
+    title: 'Claim Valuation Models',
+    desc: 'Deploy data-driven valuation frameworks that account for injury severity, jurisdiction, defense profile, and litigation costs.',
+  },
+  {
+    icon: '⚠️',
+    title: 'Risk Scoring',
+    desc: 'Automatically score litigation risk based on case characteristics, judge history, and settlement probability modeling.',
+  },
+  {
+    icon: '🏦',
+    title: 'Reserve Setting',
+    desc: 'Generate defensible reserve recommendations backed by settlement data and actuarial analysis for claims management.',
+  },
+  {
+    icon: '💸',
+    title: 'Litigation Cost Forecasting',
+    desc: 'Project defense costs, trial expenses, and likely awards to optimize settlement negotiation and budget allocation.',
+  },
+  {
+    icon: '🎯',
+    title: 'Defense Strategy Intelligence',
+    desc: 'Research defense counsel capabilities, settlement rates, and trial success metrics to select optimal legal representation.',
+  },
+];
+
+export default function InsurancePage() {
+  return (
+    <main>
+      {/* Hero */}
+      <section style={{ background: '#00172E', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '13px',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: '0.08em',
+            color: '#006997',
+            marginBottom: '16px',
+          }}>
+            SOLUTIONS
+          </p>
+          <h1 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '2.5rem',
+            fontWeight: 800,
+            lineHeight: 1.1,
+            marginBottom: '20px',
+          }}>
+            Intelligent Claims Management
+          </h1>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1.125rem',
+            color: 'rgba(255,255,255,0.7)',
+            maxWidth: '640px',
+            margin: '0 auto 32px',
+            lineHeight: 1.6,
+          }}>
+            Reduce claims payouts and litigation costs with data-driven valuation, risk scoring, and settlement intelligence tailored for insurance carriers and defense teams.
+          </p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/contact" style={{
+              background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+              color: '#FAFBFC',
+              padding: '0.875rem 2rem',
+              borderRadius: '2px',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              fontWeight: 700,
+              fontSize: '0.875rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+              display: 'inline-block',
+            }}>
+              Request Demo
+            </Link>
+            <Link href="/contact?type=consultation" style={{
+              background: 'transparent',
+              color: '#FAFBFC',
+              padding: '0.875rem 2rem',
+              borderRadius: '2px',
+              border: '1.5px solid rgba(255,255,255,0.5)',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              fontWeight: 700,
+              fontSize: '0.875rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+              display: 'inline-block',
+            }}>
+              Speak with Expert
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section style={{ padding: '80px 24px', background: '#F5F6F7' }}>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '2rem',
+            fontWeight: 800,
+            color: '#212529',
+            textAlign: 'center',
+            marginBottom: '48px',
+          }}>
+            Key Capabilities
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            {FEATURES.map(f => (
+              <div key={f.title} style={{
+                background: '#FFFFFF',
+                border: '1px solid #E5EBF0',
+                borderRadius: '2px',
+                padding: '32px 24px',
+              }}>
+                <div style={{ fontSize: '28px', marginBottom: '12px' }}>{f.icon}</div>
+                <h3 style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '1rem',
+                  fontWeight: 700,
+                  color: '#212529',
+                  marginBottom: '8px',
+                }}>
+                  {f.title}
+                </h3>
+                <p style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '0.875rem',
+                  color: '#455A64',
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section style={{ padding: '64px 24px', background: '#FFFFFF', textAlign: 'center' }}>
+        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '1.75rem',
+            fontWeight: 800,
+            color: '#212529',
+            marginBottom: '16px',
+          }}>
+            Optimize claim outcomes with better data
+          </h2>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1rem',
+            color: '#455A64',
+            marginBottom: '32px',
+            lineHeight: 1.6,
+          }}>
+            Insurance carriers and defense counsel use {SITE_NAME} to make faster, more accurate claim valuations and reduce unnecessary payouts.
+          </p>
+          <Link href="/contact" style={{
+            background: 'linear-gradient(to right, #d91b5a 0%, #dd2c00 100%)',
+            color: '#FAFBFC',
+            padding: '0.875rem 2rem',
+            borderRadius: '2px',
+            textDecoration: 'none',
+            fontFamily: 'var(--font-body)',
+            fontWeight: 700,
+            fontSize: '0.875rem',
+            textTransform: 'uppercase',
+            letterSpacing: '0.04em',
+            display: 'inline-block',
+          }}>
+            Request Demo
+          </Link>
+        </div>
+      </section>
+
+      {/* Responsive grid style */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 768px) {
+          section div[style*="grid-template-columns: repeat(3"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+          section div[style*="grid-template-columns: repeat(3"] {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+      `}} />
+    </main>
+  );
+}
