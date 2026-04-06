@@ -18,7 +18,7 @@ interface DistrictChartsProps {
   stats: DistrictStats;
 }
 
-const PURPLE_PALETTE = ['#E8171F', '#00172E', '#006997', '#455A64', '#D5D8DC', '#0080B8', '#00A4D9', '#1AA8D1', '#004D6D', '#003A52', '#002838'];
+const CHART_PALETTE = ['#E8171F', '#00172E', '#006997', '#455A64', '#D5D8DC', '#0080B8', '#00A4D9', '#1AA8D1', '#004D6D', '#003A52', '#002838'];
 
 export default function DistrictCharts({ stats }: DistrictChartsProps) {
   // Prepare data for top case types chart (take top 8)
@@ -110,7 +110,7 @@ export default function DistrictCharts({ stats }: DistrictChartsProps) {
                 dataKey="value"
               >
                 {categoryData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={PURPLE_PALETTE[index % PURPLE_PALETTE.length]} />
+                  <Cell key={`cell-${index}`} fill={CHART_PALETTE[index % CHART_PALETTE.length]} />
                 ))}
               </Pie>
               <Tooltip

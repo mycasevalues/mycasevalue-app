@@ -113,7 +113,7 @@ export default function SpanishPricingPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
 
           {/* Single Report Card */}
-          <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/20"
+          <div className="border p-8 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/20"
             style={{
               borderRadius: '2px',
               borderColor: '#D5D8DC',

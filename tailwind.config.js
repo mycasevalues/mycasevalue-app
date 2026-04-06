@@ -86,9 +86,9 @@ module.exports = {
         'accent-lg': '0 4px 16px rgba(232,23,31,0.20)',
       },
       borderRadius: {
-        card: '4px',
-        'card-sm': '3px',
-        badge: '3px',
+        card: '2px',
+        'card-sm': '2px',
+        badge: '2px',
         pill: '9999px',
       },
       animation: {
