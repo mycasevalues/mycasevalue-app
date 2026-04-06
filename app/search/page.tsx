@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../lib/data';
+import { REAL_DATA } from '../../lib/realdata';
 import { SearchIcon } from '../../components/ui/Icons';
 
 // Loading skeleton component
@@ -453,6 +454,39 @@ export default function SearchPage() {
           </div>
           <p style={{ fontSize: '13px', color: '#455A64', margin: '0', fontFamily: 'var(--font-body)', lineHeight: '1.5' }}>{r.categoryName}</p>
           {r.desc && <p style={{ fontSize: '13px', color: '#455A64', margin: '8px 0 0 0', fontFamily: 'var(--font-body)', lineHeight: '1.4' }}>{r.desc}</p>}
+          {/* Inline data preview */}
+          {(() => {
+            const rd = REAL_DATA[r.nos];
+            if (!rd) return null;
+            return (
+              <div style={{ display: 'flex', gap: '16px', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid #F0F3F5' }}>
+                {rd.wr != null && (
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Win Rate </span>
+                    <strong style={{ color: rd.wr >= 50 ? '#07874A' : '#E8171F' }}>{rd.wr}%</strong>
+                  </span>
+                )}
+                {rd.sp != null && (
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Settlement </span>
+                    <strong style={{ color: '#006997' }}>{rd.sp}%</strong>
+                  </span>
+                )}
+                {rd.total != null && (
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Cases </span>
+                    <strong>{rd.total.toLocaleString()}</strong>
+                  </span>
+                )}
+                {rd.mo != null && (
+                  <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#212529' }}>
+                    <span style={{ color: '#455A64', fontFamily: 'var(--font-body)' }}>Duration </span>
+                    <strong>{rd.mo}mo</strong>
+                  </span>
+                )}
+              </div>
+            );
+          })()}
         </Link>
       ))}
 

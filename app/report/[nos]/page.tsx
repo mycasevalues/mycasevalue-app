@@ -466,7 +466,30 @@ export default async function ReportPage({
               </p>
             </div>
           </div>
-          <p style={{ fontSize: '12px', color: '#455A64', marginTop: '20px', textAlign: 'center', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
+          {/* Visual outcome bar */}
+          <div style={{ marginTop: '24px' }}>
+            <p style={{ fontSize: '12px', fontWeight: 600, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', fontFamily: 'var(--font-body)' }}>
+              Outcome Distribution
+            </p>
+            <div style={{ display: 'flex', height: '12px', borderRadius: '2px', overflow: 'hidden', gap: '2px' }}>
+              <div style={{ width: `${winRate}%`, background: '#07874A', transition: 'width 0.5s ease' }} title={`Win: ${winRate}%`} />
+              <div style={{ width: `${settlementRate}%`, background: '#006997', transition: 'width 0.5s ease' }} title={`Settlement: ${settlementRate}%`} />
+              <div style={{ width: `${dismissRate}%`, background: '#E8171F', transition: 'width 0.5s ease' }} title={`Dismissed: ${dismissRate}%`} />
+            </div>
+            <div style={{ display: 'flex', gap: '16px', marginTop: '8px', justifyContent: 'center' }}>
+              {[
+                { label: 'Plaintiff Win', value: winRate, color: '#07874A' },
+                { label: 'Settlement', value: settlementRate, color: '#006997' },
+                { label: 'Dismissed', value: dismissRate, color: '#E8171F' },
+              ].map((item) => (
+                <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div style={{ width: '8px', height: '8px', borderRadius: '2px', background: item.color }} />
+                  <span style={{ fontSize: '12px', color: '#455A64', fontFamily: 'var(--font-body)' }}>{item.label} ({item.value}%)</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p style={{ fontSize: '12px', color: '#455A64', marginTop: '16px', textAlign: 'center', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
             Based on {totalCases ? totalCases.toLocaleString() : 'thousands of'} federal cases
           </p>
         </section>
@@ -602,6 +625,50 @@ export default async function ReportPage({
                     </p>
                   </div>
                 </div>
+              </section>
+            )}
+
+            {/* State-Level Breakdown */}
+            {real?.state_rates && Object.keys(real.state_rates).length > 3 && (
+              <section style={{
+                background: '#FFFFFF',
+                border: '1px solid #D5D8DC',
+                borderRadius: '2px',
+                padding: '32px',
+                marginBottom: '24px',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
+              }}>
+                <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#212529', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.3px' }}>
+                  Win Rates by State
+                </h2>
+                <p style={{ fontSize: '14px', color: '#455A64', fontFamily: 'var(--font-body)', marginBottom: '24px', lineHeight: 1.5 }}>
+                  How plaintiff win rates vary across federal districts
+                </p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  {Object.entries(real.state_rates as Record<string, number>)
+                    .sort(([, a], [, b]) => (b as number) - (a as number))
+                    .slice(0, 10)
+                    .map(([stateId, wr]) => {
+                      const stateWr = wr as number;
+                      const natAvg = real.wr ?? winRate;
+                      const diff = Math.round((stateWr - natAvg) * 10) / 10;
+                      return (
+                        <div key={stateId} style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 0', borderBottom: '1px solid #F0F3F5' }}>
+                          <span style={{ fontSize: '13px', fontWeight: 600, color: '#212529', width: '36px', fontFamily: 'var(--font-mono)' }}>{stateId}</span>
+                          <div style={{ flex: 1, height: '8px', background: '#F0F3F5', borderRadius: '2px', overflow: 'hidden' }}>
+                            <div style={{ height: '100%', width: `${Math.min(100, stateWr)}%`, background: stateWr >= natAvg ? '#07874A' : '#E8171F', borderRadius: '2px', transition: 'width 0.5s ease' }} />
+                          </div>
+                          <span style={{ fontSize: '13px', fontWeight: 600, color: '#212529', fontFamily: 'var(--font-mono)', width: '48px', textAlign: 'right' }}>{Math.round(stateWr)}%</span>
+                          <span style={{ fontSize: '11px', fontWeight: 600, color: diff > 0 ? '#07874A' : diff < 0 ? '#E8171F' : '#455A64', fontFamily: 'var(--font-mono)', width: '52px', textAlign: 'right' }}>
+                            {diff > 0 ? '+' : ''}{diff}%
+                          </span>
+                        </div>
+                      );
+                    })}
+                </div>
+                <p style={{ fontSize: '11px', color: '#455A64', marginTop: '16px', fontFamily: 'var(--font-body)' }}>
+                  Showing top 10 states by win rate. National average: {Math.round(real.wr ?? winRate)}%. Green indicates above average, red below.
+                </p>
               </section>
             )}
 
