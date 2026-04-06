@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { SITS, STATES } from '../lib/data';
+import { REAL_DATA } from '../lib/realdata';
 
 // Build a lookup: option "d" value → NOS code for direct report routing
 const OPT_TO_NOS: Record<string, string> = {};
@@ -152,6 +153,46 @@ export default function QuickLookupForm() {
       >
         Check my case type
       </button>
+
+      {/* Instant Preview */}
+      {(() => {
+        const nos = OPT_TO_NOS[caseType];
+        const rd = nos ? (REAL_DATA as any)[nos] : null;
+        if (!rd) return null;
+        const wrColor = (rd.wr ?? 0) >= 50 ? '#07874A' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#E8171F';
+        return (
+          <div style={{
+            background: '#F8F9FA',
+            border: '1px solid #D5D8DC',
+            borderRadius: 2,
+            padding: '12px 16px',
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            gap: 8,
+            textAlign: 'center',
+            marginTop: 4,
+          }}>
+            <div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: wrColor, fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+                {(rd.wr ?? 0).toFixed(1)}%
+              </div>
+              <div style={{ fontSize: 10, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Win Rate</div>
+            </div>
+            <div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: '#006997', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+                {rd.mo ?? '–'}mo
+              </div>
+              <div style={{ fontSize: 10, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Duration</div>
+            </div>
+            <div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: '#212529', fontFamily: 'var(--font-mono)', lineHeight: 1 }}>
+                {rd.total ? (rd.total >= 1000 ? `${(rd.total / 1000).toFixed(0)}K` : rd.total.toLocaleString()) : '–'}
+              </div>
+              <div style={{ fontSize: 10, color: '#455A64', textTransform: 'uppercase', letterSpacing: '0.3px', marginTop: 2 }}>Cases</div>
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Helper Text */}
       <div

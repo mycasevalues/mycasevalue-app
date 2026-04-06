@@ -465,7 +465,7 @@ export default function JudgesPage() {
               marginBottom: 12,
             }}
           >
-            Judge analytics included in Unlimited Reports and Attorney Mode
+            All judge analytics are free during launch
           </h2>
           <p
             style={{
@@ -477,10 +477,10 @@ export default function JudgesPage() {
               lineHeight: 1.6,
             }}
           >
-            Unlock full judge profiles with motion grant rates, ruling patterns, and case duration benchmarks for every federal judge.
+            Full judge profiles with motion grant rates, ruling patterns, and case duration benchmarks — free for all users.
           </p>
           <Link
-            href="/pricing"
+            href="/search"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -495,7 +495,7 @@ export default function JudgesPage() {
               fontFamily: 'var(--font-body)',
             }}
           >
-            View Pricing
+            Start Researching
             <ArrowRightIcon size={16} />
           </Link>
         </section>
