@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { getJudgeBySlug, getAllJudges } from '@/lib/judges';
+import { getJudgeBySlug, getAllJudges, getJudgesByDistrict } from '@/lib/judges';
 import { ArrowRightIcon } from '@/components/ui/Icons';
 import { SITE_URL } from '@/lib/site-config';
 
@@ -401,22 +401,27 @@ export default async function JudgePage({ params }: PageProps) {
             {
               label: 'Plaintiff Win Rate',
               value: `${judge.stats.plaintiffWinRate}%`,
+              color: judge.stats.plaintiffWinRate >= 50 ? '#07874A' : '#E8171F',
             },
             {
               label: 'Motion Grant Rate',
               value: `${judge.stats.motionGrantRate}%`,
+              color: '#006997',
             },
             {
-              label: 'Median Case Duration',
+              label: 'Median Duration',
               value: `${judge.stats.medianDurationMonths} mo`,
+              color: '#00172E',
             },
             {
               label: 'Settlement Rate',
               value: `${judge.stats.settlementRate}%`,
+              color: '#10B981',
             },
             {
-              label: 'Total Cases Analyzed',
+              label: 'Cases Analyzed',
               value: judge.stats.totalCases.toLocaleString(),
+              color: '#212529',
             },
           ].map((stat, idx) => (
             <div
@@ -445,8 +450,8 @@ export default async function JudgePage({ params }: PageProps) {
                 style={{
                   fontSize: '28px',
                   fontWeight: '900',
-                  color: '#212529',
-                  fontFamily: "monospace, 'Courier New'",
+                  color: stat.color,
+                  fontFamily: 'var(--font-mono)',
                   letterSpacing: '-0.5px',
                 }}
               >
@@ -673,6 +678,42 @@ export default async function JudgePage({ params }: PageProps) {
             <strong>Data Source:</strong> Based on {judge.stats.totalCases.toLocaleString()} federal cases from public court records, FJC statistics, and CourtListener databases. This profile reflects historical patterns and is intended for research purposes.
           </p>
         </div>
+
+        {/* Comparable Judges in Same District */}
+        {(() => {
+          const districtJudges = getJudgesByDistrict(judge.district).filter(j => j.slug !== judge.slug).slice(0, 4);
+          if (districtJudges.length === 0) return null;
+          return (
+            <div style={{ padding: '24px', borderRadius: '2px', border: '1px solid #D5D8DC', background: '#FFFFFF', marginBottom: '48px' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#212529', marginBottom: '16px', fontFamily: 'var(--font-display)' }}>
+                Other Judges in {judge.district}
+              </h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
+                {districtJudges.map((j) => (
+                  <Link
+                    key={j.slug}
+                    href={`/judges/${j.slug}`}
+                    style={{
+                      display: 'block',
+                      padding: '16px',
+                      background: '#FAFBFC',
+                      border: '1px solid #E5EBF0',
+                      borderRadius: '2px',
+                      textDecoration: 'none',
+                      transition: 'border-color 0.2s',
+                    }}
+                  >
+                    <div style={{ fontSize: '14px', fontWeight: 600, color: '#212529', marginBottom: '8px' }}>{j.name}</div>
+                    <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: '#455A64' }}>
+                      <span style={{ fontWeight: 600, color: j.stats.plaintiffWinRate >= 50 ? '#07874A' : '#E8171F' }}>{j.stats.plaintiffWinRate}% win</span>
+                      <span>{j.stats.totalCases.toLocaleString()} cases</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Disclaimer */}
         <div
