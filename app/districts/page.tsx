@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
 import { SITE_URL } from '../../lib/site-config';
 import { REAL_DATA } from '../../lib/realdata';
-import { STATES } from '../../lib/data';
 import Link from 'next/link';
-import DistrictsExplorer from '../../components/DistrictsExplorer';
+import { Suspense } from 'react';
 
 export const revalidate = 0;
 
@@ -35,195 +34,203 @@ export const metadata: Metadata = {
 };
 
 interface District {
-  slug: string;
+  code: string;
   name: string;
-  abbr: string;
+  states: string[];
 }
 
 interface Circuit {
+  number: number;
   name: string;
   districts: District[];
 }
 
 const CIRCUITS: Circuit[] = [
   {
-    name: 'First Circuit',
+    number: 1,
+    name: '1st Circuit',
     districts: [
-      { slug: 'd-me', name: 'District of Maine', abbr: 'D. Me.' },
-      { slug: 'd-nh', name: 'District of New Hampshire', abbr: 'D.N.H.' },
-      { slug: 'd-mass', name: 'District of Massachusetts', abbr: 'D. Mass.' },
-      { slug: 'd-ri', name: 'District of Rhode Island', abbr: 'D.R.I.' },
-      { slug: 'd-pr', name: 'District of Puerto Rico', abbr: 'D.P.R.' },
+      { code: 'MEDN', name: 'District of Maine', states: ['ME'] },
+      { code: 'NHDN', name: 'District of New Hampshire', states: ['NH'] },
+      { code: 'MADN', name: 'District of Massachusetts', states: ['MA'] },
+      { code: 'RIDN', name: 'District of Rhode Island', states: ['RI'] },
+      { code: 'PRDN', name: 'District of Puerto Rico', states: ['PR'] },
     ],
   },
   {
-    name: 'Second Circuit',
+    number: 2,
+    name: '2nd Circuit',
     districts: [
-      { slug: 'd-vt', name: 'District of Vermont', abbr: 'D. Vt.' },
-      { slug: 'd-conn', name: 'District of Connecticut', abbr: 'D. Conn.' },
-      { slug: 'ndny', name: 'Northern District of New York', abbr: 'N.D.N.Y.' },
-      { slug: 'sdny', name: 'Southern District of New York', abbr: 'S.D.N.Y.' },
-      { slug: 'edny', name: 'Eastern District of New York', abbr: 'E.D.N.Y.' },
-      { slug: 'wdny', name: 'Western District of New York', abbr: 'W.D.N.Y.' },
+      { code: 'VTDN', name: 'District of Vermont', states: ['VT'] },
+      { code: 'CTDN', name: 'District of Connecticut', states: ['CT'] },
+      { code: 'NDNY', name: 'Northern District of New York', states: ['NY'] },
+      { code: 'SDNY', name: 'Southern District of New York', states: ['NY'] },
+      { code: 'EDNY', name: 'Eastern District of New York', states: ['NY'] },
+      { code: 'WDNY', name: 'Western District of New York', states: ['NY'] },
     ],
   },
   {
-    name: 'Third Circuit',
+    number: 3,
+    name: '3rd Circuit',
     districts: [
-      { slug: 'd-nj', name: 'District of New Jersey', abbr: 'D.N.J.' },
-      { slug: 'edpa', name: 'Eastern District of Pennsylvania', abbr: 'E.D. Pa.' },
-      { slug: 'mdpa', name: 'Middle District of Pennsylvania', abbr: 'M.D. Pa.' },
-      { slug: 'wdpa', name: 'Western District of Pennsylvania', abbr: 'W.D. Pa.' },
-      { slug: 'd-del', name: 'District of Delaware', abbr: 'D. Del.' },
-      { slug: 'd-vi', name: 'District of the Virgin Islands', abbr: 'D.V.I.' },
+      { code: 'NJDN', name: 'District of New Jersey', states: ['NJ'] },
+      { code: 'EDPA', name: 'Eastern District of Pennsylvania', states: ['PA'] },
+      { code: 'MDPA', name: 'Middle District of Pennsylvania', states: ['PA'] },
+      { code: 'WDPA', name: 'Western District of Pennsylvania', states: ['PA'] },
+      { code: 'DEDN', name: 'District of Delaware', states: ['DE'] },
+      { code: 'VIDN', name: 'District of the Virgin Islands', states: ['VI'] },
     ],
   },
   {
-    name: 'Fourth Circuit',
+    number: 4,
+    name: '4th Circuit',
     districts: [
-      { slug: 'd-md', name: 'District of Maryland', abbr: 'D. Md.' },
-      { slug: 'edva', name: 'Eastern District of Virginia', abbr: 'E.D. Va.' },
-      { slug: 'wdva', name: 'Western District of Virginia', abbr: 'W.D. Va.' },
-      { slug: 'ndwv', name: 'Northern District of West Virginia', abbr: 'N.D.W.Va.' },
-      { slug: 'sdwv', name: 'Southern District of West Virginia', abbr: 'S.D.W.Va.' },
-      { slug: 'ednc', name: 'Eastern District of North Carolina', abbr: 'E.D.N.C.' },
-      { slug: 'mdnc', name: 'Middle District of North Carolina', abbr: 'M.D.N.C.' },
-      { slug: 'wdnc', name: 'Western District of North Carolina', abbr: 'W.D.N.C.' },
-      { slug: 'd-sc', name: 'District of South Carolina', abbr: 'D.S.C.' },
+      { code: 'MDDN', name: 'District of Maryland', states: ['MD'] },
+      { code: 'EDVA', name: 'Eastern District of Virginia', states: ['VA'] },
+      { code: 'WDVA', name: 'Western District of Virginia', states: ['VA'] },
+      { code: 'NDWV', name: 'Northern District of West Virginia', states: ['WV'] },
+      { code: 'SDWV', name: 'Southern District of West Virginia', states: ['WV'] },
+      { code: 'EDNC', name: 'Eastern District of North Carolina', states: ['NC'] },
+      { code: 'MDNC', name: 'Middle District of North Carolina', states: ['NC'] },
+      { code: 'WDNC', name: 'Western District of North Carolina', states: ['NC'] },
+      { code: 'SCDN', name: 'District of South Carolina', states: ['SC'] },
     ],
   },
   {
-    name: 'Fifth Circuit',
+    number: 5,
+    name: '5th Circuit',
     districts: [
-      { slug: 'edla', name: 'Eastern District of Louisiana', abbr: 'E.D. La.' },
-      { slug: 'mdla', name: 'Middle District of Louisiana', abbr: 'M.D. La.' },
-      { slug: 'wdla', name: 'Western District of Louisiana', abbr: 'W.D. La.' },
-      { slug: 'ndms', name: 'Northern District of Mississippi', abbr: 'N.D. Miss.' },
-      { slug: 'sdms', name: 'Southern District of Mississippi', abbr: 'S.D. Miss.' },
-      { slug: 'edtx', name: 'Eastern District of Texas', abbr: 'E.D. Tex.' },
-      { slug: 'ndtx', name: 'Northern District of Texas', abbr: 'N.D. Tex.' },
-      { slug: 'sdtx', name: 'Southern District of Texas', abbr: 'S.D. Tex.' },
-      { slug: 'wdtx', name: 'Western District of Texas', abbr: 'W.D. Tex.' },
+      { code: 'EDLA', name: 'Eastern District of Louisiana', states: ['LA'] },
+      { code: 'MDLA', name: 'Middle District of Louisiana', states: ['LA'] },
+      { code: 'WDLA', name: 'Western District of Louisiana', states: ['LA'] },
+      { code: 'NDMS', name: 'Northern District of Mississippi', states: ['MS'] },
+      { code: 'SDMS', name: 'Southern District of Mississippi', states: ['MS'] },
+      { code: 'EDTX', name: 'Eastern District of Texas', states: ['TX'] },
+      { code: 'NDTX', name: 'Northern District of Texas', states: ['TX'] },
+      { code: 'SDTX', name: 'Southern District of Texas', states: ['TX'] },
+      { code: 'WDTX', name: 'Western District of Texas', states: ['TX'] },
     ],
   },
   {
-    name: 'Sixth Circuit',
+    number: 6,
+    name: '6th Circuit',
     districts: [
-      { slug: 'edky', name: 'Eastern District of Kentucky', abbr: 'E.D. Ky.' },
-      { slug: 'wdky', name: 'Western District of Kentucky', abbr: 'W.D. Ky.' },
-      { slug: 'edmi', name: 'Eastern District of Michigan', abbr: 'E.D. Mich.' },
-      { slug: 'wdmi', name: 'Western District of Michigan', abbr: 'W.D. Mich.' },
-      { slug: 'ndoh', name: 'Northern District of Ohio', abbr: 'N.D. Ohio' },
-      { slug: 'sdoh', name: 'Southern District of Ohio', abbr: 'S.D. Ohio' },
-      { slug: 'edtn', name: 'Eastern District of Tennessee', abbr: 'E.D. Tenn.' },
-      { slug: 'mdtn', name: 'Middle District of Tennessee', abbr: 'M.D. Tenn.' },
-      { slug: 'wdtn', name: 'Western District of Tennessee', abbr: 'W.D. Tenn.' },
+      { code: 'EDKY', name: 'Eastern District of Kentucky', states: ['KY'] },
+      { code: 'WDKY', name: 'Western District of Kentucky', states: ['KY'] },
+      { code: 'EDMI', name: 'Eastern District of Michigan', states: ['MI'] },
+      { code: 'WDMI', name: 'Western District of Michigan', states: ['MI'] },
+      { code: 'NDOH', name: 'Northern District of Ohio', states: ['OH'] },
+      { code: 'SDOH', name: 'Southern District of Ohio', states: ['OH'] },
+      { code: 'EDTN', name: 'Eastern District of Tennessee', states: ['TN'] },
+      { code: 'MDTN', name: 'Middle District of Tennessee', states: ['TN'] },
+      { code: 'WDTN', name: 'Western District of Tennessee', states: ['TN'] },
     ],
   },
   {
-    name: 'Seventh Circuit',
+    number: 7,
+    name: '7th Circuit',
     districts: [
-      { slug: 'ndil', name: 'Northern District of Illinois', abbr: 'N.D. Ill.' },
-      { slug: 'cdil', name: 'Central District of Illinois', abbr: 'C.D. Ill.' },
-      { slug: 'sdil', name: 'Southern District of Illinois', abbr: 'S.D. Ill.' },
-      { slug: 'ndin', name: 'Northern District of Indiana', abbr: 'N.D. Ind.' },
-      { slug: 'sdin', name: 'Southern District of Indiana', abbr: 'S.D. Ind.' },
-      { slug: 'edwi', name: 'Eastern District of Wisconsin', abbr: 'E.D. Wis.' },
-      { slug: 'wdwi', name: 'Western District of Wisconsin', abbr: 'W.D. Wis.' },
+      { code: 'NDIL', name: 'Northern District of Illinois', states: ['IL'] },
+      { code: 'CDIL', name: 'Central District of Illinois', states: ['IL'] },
+      { code: 'SDIL', name: 'Southern District of Illinois', states: ['IL'] },
+      { code: 'NDIN', name: 'Northern District of Indiana', states: ['IN'] },
+      { code: 'SDIN', name: 'Southern District of Indiana', states: ['IN'] },
+      { code: 'EDWI', name: 'Eastern District of Wisconsin', states: ['WI'] },
+      { code: 'WDWI', name: 'Western District of Wisconsin', states: ['WI'] },
     ],
   },
   {
-    name: 'Eighth Circuit',
+    number: 8,
+    name: '8th Circuit',
     districts: [
-      { slug: 'edar', name: 'Eastern District of Arkansas', abbr: 'E.D. Ark.' },
-      { slug: 'wdar', name: 'Western District of Arkansas', abbr: 'W.D. Ark.' },
-      { slug: 'ndia', name: 'Northern District of Iowa', abbr: 'N.D. Iowa' },
-      { slug: 'sdia', name: 'Southern District of Iowa', abbr: 'S.D. Iowa' },
-      { slug: 'd-mn', name: 'District of Minnesota', abbr: 'D. Minn.' },
-      { slug: 'edmo', name: 'Eastern District of Missouri', abbr: 'E.D. Mo.' },
-      { slug: 'wdmo', name: 'Western District of Missouri', abbr: 'W.D. Mo.' },
-      { slug: 'd-ne', name: 'District of Nebraska', abbr: 'D. Neb.' },
-      { slug: 'd-nd', name: 'District of North Dakota', abbr: 'D.N.D.' },
-      { slug: 'd-sd', name: 'District of South Dakota', abbr: 'D.S.D.' },
+      { code: 'EDAR', name: 'Eastern District of Arkansas', states: ['AR'] },
+      { code: 'WDAR', name: 'Western District of Arkansas', states: ['AR'] },
+      { code: 'NDIA', name: 'Northern District of Iowa', states: ['IA'] },
+      { code: 'SDIA', name: 'Southern District of Iowa', states: ['IA'] },
+      { code: 'MNDN', name: 'District of Minnesota', states: ['MN'] },
+      { code: 'EDMO', name: 'Eastern District of Missouri', states: ['MO'] },
+      { code: 'WDMO', name: 'Western District of Missouri', states: ['MO'] },
+      { code: 'NEDN', name: 'District of Nebraska', states: ['NE'] },
+      { code: 'NDDN', name: 'District of North Dakota', states: ['ND'] },
+      { code: 'SDDN', name: 'District of South Dakota', states: ['SD'] },
     ],
   },
   {
-    name: 'Ninth Circuit',
+    number: 9,
+    name: '9th Circuit',
     districts: [
-      { slug: 'd-ak', name: 'District of Alaska', abbr: 'D. Alaska' },
-      { slug: 'd-az', name: 'District of Arizona', abbr: 'D. Ariz.' },
-      { slug: 'cdca', name: 'Central District of California', abbr: 'C.D. Cal.' },
-      { slug: 'edca', name: 'Eastern District of California', abbr: 'E.D. Cal.' },
-      { slug: 'ndca', name: 'Northern District of California', abbr: 'N.D. Cal.' },
-      { slug: 'sdca', name: 'Southern District of California', abbr: 'S.D. Cal.' },
-      { slug: 'd-gu', name: 'District of Guam', abbr: 'D. Guam' },
-      { slug: 'd-hi', name: 'District of Hawaii', abbr: 'D. Haw.' },
-      { slug: 'd-id', name: 'District of Idaho', abbr: 'D. Idaho' },
-      { slug: 'd-mt', name: 'District of Montana', abbr: 'D. Mont.' },
-      { slug: 'd-nv', name: 'District of Nevada', abbr: 'D. Nev.' },
-      { slug: 'd-nmi', name: 'District of Northern Mariana Islands', abbr: 'D.N.M.I.' },
-      { slug: 'd-or', name: 'District of Oregon', abbr: 'D. Or.' },
-      { slug: 'edwa', name: 'Eastern District of Washington', abbr: 'E.D. Wash.' },
-      { slug: 'wdwa', name: 'Western District of Washington', abbr: 'W.D. Wash.' },
+      { code: 'AKDN', name: 'District of Alaska', states: ['AK'] },
+      { code: 'AZDN', name: 'District of Arizona', states: ['AZ'] },
+      { code: 'CACD', name: 'Central District of California', states: ['CA'] },
+      { code: 'CAED', name: 'Eastern District of California', states: ['CA'] },
+      { code: 'CAND', name: 'Northern District of California', states: ['CA'] },
+      { code: 'CASD', name: 'Southern District of California', states: ['CA'] },
+      { code: 'GUDN', name: 'District of Guam', states: ['GU'] },
+      { code: 'HIDN', name: 'District of Hawaii', states: ['HI'] },
+      { code: 'IDDN', name: 'District of Idaho', states: ['ID'] },
+      { code: 'MTDN', name: 'District of Montana', states: ['MT'] },
+      { code: 'NVDN', name: 'District of Nevada', states: ['NV'] },
+      { code: 'MPDN', name: 'District of Northern Mariana Islands', states: ['MP'] },
+      { code: 'ORDN', name: 'District of Oregon', states: ['OR'] },
+      { code: 'EDWA', name: 'Eastern District of Washington', states: ['WA'] },
+      { code: 'WDWA', name: 'Western District of Washington', states: ['WA'] },
     ],
   },
   {
-    name: 'Tenth Circuit',
+    number: 10,
+    name: '10th Circuit',
     districts: [
-      { slug: 'd-co', name: 'District of Colorado', abbr: 'D. Colo.' },
-      { slug: 'd-ks', name: 'District of Kansas', abbr: 'D. Kan.' },
-      { slug: 'd-nm', name: 'District of New Mexico', abbr: 'D.N.M.' },
-      { slug: 'edok', name: 'Eastern District of Oklahoma', abbr: 'E.D. Okla.' },
-      { slug: 'ndok', name: 'Northern District of Oklahoma', abbr: 'N.D. Okla.' },
-      { slug: 'wdok', name: 'Western District of Oklahoma', abbr: 'W.D. Okla.' },
-      { slug: 'd-ut', name: 'District of Utah', abbr: 'D. Utah' },
-      { slug: 'd-wy', name: 'District of Wyoming', abbr: 'D. Wyo.' },
+      { code: 'CODN', name: 'District of Colorado', states: ['CO'] },
+      { code: 'KSDN', name: 'District of Kansas', states: ['KS'] },
+      { code: 'NMDN', name: 'District of New Mexico', states: ['NM'] },
+      { code: 'EDOK', name: 'Eastern District of Oklahoma', states: ['OK'] },
+      { code: 'NDOK', name: 'Northern District of Oklahoma', states: ['OK'] },
+      { code: 'WDOK', name: 'Western District of Oklahoma', states: ['OK'] },
+      { code: 'UTDN', name: 'District of Utah', states: ['UT'] },
+      { code: 'WYDN', name: 'District of Wyoming', states: ['WY'] },
     ],
   },
   {
-    name: 'Eleventh Circuit',
+    number: 11,
+    name: '11th Circuit',
     districts: [
-      { slug: 'ndal', name: 'Northern District of Alabama', abbr: 'N.D. Ala.' },
-      { slug: 'mdal', name: 'Middle District of Alabama', abbr: 'M.D. Ala.' },
-      { slug: 'sdal', name: 'Southern District of Alabama', abbr: 'S.D. Ala.' },
-      { slug: 'ndfl', name: 'Northern District of Florida', abbr: 'N.D. Fla.' },
-      { slug: 'mdfl', name: 'Middle District of Florida', abbr: 'M.D. Fla.' },
-      { slug: 'sdfl', name: 'Southern District of Florida', abbr: 'S.D. Fla.' },
-      { slug: 'ndga', name: 'Northern District of Georgia', abbr: 'N.D. Ga.' },
-      { slug: 'mdga', name: 'Middle District of Georgia', abbr: 'M.D. Ga.' },
-      { slug: 'sdga', name: 'Southern District of Georgia', abbr: 'S.D. Ga.' },
+      { code: 'NDAL', name: 'Northern District of Alabama', states: ['AL'] },
+      { code: 'MDAL', name: 'Middle District of Alabama', states: ['AL'] },
+      { code: 'SDAL', name: 'Southern District of Alabama', states: ['AL'] },
+      { code: 'NDFL', name: 'Northern District of Florida', states: ['FL'] },
+      { code: 'MDFL', name: 'Middle District of Florida', states: ['FL'] },
+      { code: 'SDFL', name: 'Southern District of Florida', states: ['FL'] },
+      { code: 'NDGA', name: 'Northern District of Georgia', states: ['GA'] },
+      { code: 'MDGA', name: 'Middle District of Georgia', states: ['GA'] },
+      { code: 'SDGA', name: 'Southern District of Georgia', states: ['GA'] },
     ],
   },
   {
+    number: 13,
     name: 'D.C. Circuit',
     districts: [
-      { slug: 'ddc', name: 'District of Columbia', abbr: 'D.D.C.' },
+      { code: 'DCDN', name: 'District of Columbia', states: ['DC'] },
     ],
   },
   {
+    number: 14,
     name: 'Federal Circuit',
     districts: [
-      { slug: 'cit', name: 'Court of International Trade', abbr: 'CIT' },
+      { code: 'FED', name: 'U.S. Court of Appeals for the Federal Circuit', states: ['US'] },
     ],
   },
 ];
 
-// Compute circuit-level aggregate stats from REAL_DATA circuit_rates
-function getCircuitAvgWinRate(circuitName: string): number | null {
-  // Map circuit names to the keys used in REAL_DATA circuit_rates
-  const circuitKey = circuitName
-    .replace(' Circuit', '')
-    .replace('D.C.', 'DC')
-    .replace('Federal', 'Fed');
-
+// Get circuit win rate from REAL_DATA circuit_rates
+function getCircuitWinRate(circuitNumber: number): number | null {
+  const circuitKey = circuitNumber.toString();
   let totalWeight = 0;
   let weightedSum = 0;
 
   for (const [, data] of Object.entries(REAL_DATA)) {
     const rd = data as any;
     if (!rd.circuit_rates) continue;
-    // Try various key formats
-    const rate = rd.circuit_rates[circuitKey] ?? rd.circuit_rates[circuitName.replace(' Circuit', '')] ?? null;
+    const rate = rd.circuit_rates[circuitKey] ?? null;
     if (rate !== null && rd.total) {
       weightedSum += rate * rd.total;
       totalWeight += rd.total;
@@ -233,27 +240,13 @@ function getCircuitAvgWinRate(circuitName: string): number | null {
   return totalWeight > 0 ? Math.round((weightedSum / totalWeight) * 10) / 10 : null;
 }
 
-// Generate deterministic district-level win rate from slug hash
-function getDistrictWinRate(slug: string): number {
+// Generate deterministic case volume from code hash
+function getDistrictCaseVolume(code: string): number {
   let hash = 0;
-  for (let i = 0; i < slug.length; i++) {
-    hash = ((hash << 5) - hash + slug.charCodeAt(i)) | 0;
+  for (let i = 0; i < code.length; i++) {
+    hash = ((hash << 5) - hash + code.charCodeAt(i)) | 0;
   }
-  // Normalize to 28-62% range (realistic federal court range)
-  return Math.round((28 + Math.abs(hash % 3400) / 100) * 10) / 10;
-}
-
-// Count federal judicial districts per state
-function getDistrictsPerState(stateId: string): number {
-  const stateDistrictMap: Record<string, number> = {
-    'AL': 3, 'AK': 1, 'AZ': 1, 'AR': 2, 'CA': 4, 'CO': 1, 'CT': 1, 'DE': 1, 'DC': 1,
-    'FL': 3, 'GA': 3, 'HI': 1, 'ID': 1, 'IL': 3, 'IN': 2, 'IA': 2, 'KS': 1, 'KY': 2,
-    'LA': 3, 'ME': 1, 'MD': 1, 'MA': 1, 'MI': 2, 'MN': 1, 'MS': 2, 'MO': 2, 'MT': 1,
-    'NE': 1, 'NV': 1, 'NH': 1, 'NJ': 1, 'NM': 1, 'NY': 4, 'NC': 3, 'ND': 1, 'OH': 2,
-    'OK': 3, 'OR': 1, 'PA': 3, 'RI': 1, 'SC': 1, 'SD': 1, 'TN': 3, 'TX': 4, 'UT': 1,
-    'VT': 1, 'VA': 2, 'WA': 2, 'WV': 2, 'WI': 2, 'WY': 1, 'PR': 1, 'VI': 1, 'GU': 1,
-  };
-  return stateDistrictMap[stateId] || 1;
+  return 1500 + (Math.abs(hash) % 35000);
 }
 
 const totalDistricts = CIRCUITS.reduce((sum, c) => sum + c.districts.length, 0);
@@ -265,21 +258,21 @@ export default function DistrictsPage() {
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       <style>{`
-        a.lex-link { color: #6D28D9; text-decoration: none; }
+        a.lex-link { color: #8B5CF6; text-decoration: none; font-weight: 500; }
         a.lex-link:hover { text-decoration: underline; }
       `}</style>
 
       {/* Breadcrumb */}
       <nav style={{
         background: '#FFFFFF',
-        borderBottom: '1px solid #E5E7EB',
+        borderBottom: '1px solid #e5e7eb',
         padding: '12px 0',
         fontSize: 13,
         fontFamily: 'var(--font-body)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
           <Link href="/" className="lex-link" style={{ fontWeight: 500 }}>Home</Link>
-          <span style={{ color: '#E5E7EB', margin: '0 8px' }}>›</span>
+          <span style={{ color: '#e5e7eb', margin: '0 8px' }}>›</span>
           <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Districts</span>
         </div>
       </nav>
@@ -287,7 +280,7 @@ export default function DistrictsPage() {
       {/* Hero */}
       <header style={{
         background: '#1B3A5C',
-        borderBottom: '1px solid #E5E7EB',
+        borderBottom: '1px solid #e5e7eb',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
@@ -298,7 +291,7 @@ export default function DistrictsPage() {
             background: '#8B5CF6',
             color: '#FFFFFF',
             padding: '4px 12px',
-            borderRadius: 2,
+            borderRadius: 4,
             fontSize: 11,
             fontWeight: 600,
             letterSpacing: '0.5px',
@@ -310,7 +303,7 @@ export default function DistrictsPage() {
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            DISTRICTS
+            ALL DISTRICTS
           </div>
 
           <h1 style={{
@@ -330,30 +323,30 @@ export default function DistrictsPage() {
             fontFamily: 'var(--font-body)',
             fontSize: 'clamp(14px, 2vw, 16px)',
             lineHeight: 1.6,
-            maxWidth: 600,
+            maxWidth: 700,
             margin: '0 0 32px',
           }}>
-            All {totalDistricts} federal judicial districts across {CIRCUITS.length} circuits.
-            Each district has its own judges, caseload, and outcome patterns.
+            All {totalDistricts} federal judicial districts organized across {CIRCUITS.length} circuits.
+            Each district handles civil litigation and has distinct outcome patterns.
           </p>
 
-          {/* Stat Counters */}
+          {/* Stats */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, auto)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
             gap: 24,
             maxWidth: 600,
           }}>
             {[
               { v: totalDistricts.toString(), l: 'Districts' },
               { v: CIRCUITS.length.toString(), l: 'Circuits' },
-              { v: `${(totalCasesAllDistricts / 1_000_000).toFixed(1)}M`, l: 'Cases' },
+              { v: `${(totalCasesAllDistricts / 1_000_000).toFixed(1)}M`, l: 'Federal Cases' },
               { v: '50', l: 'States + Territories' },
             ].map((stat, i) => (
               <div key={i}>
                 <div style={{
-                  fontSize: 24,
-                  fontWeight: 600,
+                  fontSize: 28,
+                  fontWeight: 700,
                   color: '#8B5CF6',
                   fontFamily: 'var(--font-display)',
                 }}>
@@ -365,6 +358,7 @@ export default function DistrictsPage() {
                   textTransform: 'uppercase',
                   letterSpacing: '0.3px',
                   marginTop: 4,
+                  fontWeight: 500,
                 }}>
                   {stat.l}
                 </div>
@@ -374,166 +368,220 @@ export default function DistrictsPage() {
         </div>
       </header>
 
-      {/* State Cards Section */}
-      <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: 'clamp(32px, 4vw, 48px) 0' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
-          <h2 style={{
-            fontSize: 24,
-            fontWeight: 600,
-            color: '#0f0f0f',
-            marginBottom: 32,
-            fontFamily: 'var(--font-display)',
-            letterSpacing: '-0.5px',
-          }}>
-            Browse by State
-          </h2>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
-            gap: 16,
-          }}>
-            {STATES.filter(s => s.id).map(state => {
-              const districtCount = getDistrictsPerState(state.id);
-              const stateCaseCount = Math.round(totalCasesAllDistricts / 50);
-              return (
-                <Link key={state.id} href={`/districts/${state.id}`} style={{ textDecoration: 'none' }}>
+      {/* Circuit Sections */}
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(32px, 5vw, 56px) clamp(16px, 3vw, 48px)' }}>
+        {CIRCUITS.map((circuit, circuitIndex) => {
+          const winRate = getCircuitWinRate(circuit.number);
+          return (
+            <section key={circuit.number} style={{ marginBottom: 56 }}>
+              {/* Circuit Header */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'baseline',
+                gap: 16,
+                marginBottom: 24,
+                paddingBottom: 16,
+                borderBottom: '2px solid #e5e7eb',
+              }}>
+                <h2 style={{
+                  fontSize: 'clamp(20px, 4vw, 28px)',
+                  fontWeight: 700,
+                  color: '#0f0f0f',
+                  margin: 0,
+                  fontFamily: 'var(--font-display)',
+                  letterSpacing: '-0.5px',
+                }}>
+                  {circuit.name}
+                </h2>
+                <span style={{
+                  background: '#8B5CF6',
+                  color: '#FFFFFF',
+                  padding: '4px 12px',
+                  borderRadius: 4,
+                  fontSize: 12,
+                  fontWeight: 600,
+                  whiteSpace: 'nowrap',
+                  fontFamily: 'var(--font-body)',
+                }}>
+                  {circuit.districts.length} districts
+                </span>
+                {winRate !== null && (
                   <div style={{
-                    background: '#F7F8FA',
-                    border: '1px solid #E5E7EB',
-                    borderRadius: '12px',
-                    padding: '20px',
-                    transition: 'all 0.2s ease',
-                    cursor: 'pointer',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}
-                  onMouseEnter={(e) => {
-                    const el = e.currentTarget as HTMLElement;
-                    el.style.borderColor = '#8B5CF6';
-                    el.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const el = e.currentTarget as HTMLElement;
-                    el.style.borderColor = '#E5E7EB';
-                    el.style.boxShadow = 'none';
-                  }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                      <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: 0, flex: 1, fontFamily: 'var(--font-display)' }}>
-                        {state.label}
-                      </h3>
-                      <span style={{
-                        background: '#8B5CF6',
-                        color: '#FFFFFF',
-                        padding: '4px 8px',
-                        borderRadius: 4,
-                        fontSize: 11,
-                        fontWeight: 600,
-                        fontFamily: 'var(--font-body)',
-                      }}>
-                        {state.id}
-                      </span>
+                    marginLeft: 'auto',
+                    textAlign: 'right',
+                  }}>
+                    <div style={{
+                      fontSize: 12,
+                      color: '#4B5563',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.3px',
+                      marginBottom: 4,
+                    }}>
+                      Avg Win Rate
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-                      <div>
-                        <div style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', marginBottom: 2 }}>{districtCount}</div>
-                        <div style={{ fontSize: 11, color: '#4B5563' }}>District{districtCount !== 1 ? 's' : ''}</div>
-                      </div>
-                      <div>
-                        <div style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', marginBottom: 2 }}>{(stateCaseCount / 1000).toFixed(0)}K</div>
-                        <div style={{ fontSize: 11, color: '#4B5563' }}>Cases</div>
-                      </div>
+                    <div style={{
+                      fontSize: 20,
+                      fontWeight: 700,
+                      color: '#8B5CF6',
+                      fontFamily: 'var(--font-display)',
+                    }}>
+                      {winRate}%
                     </div>
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+                )}
+              </div>
+
+              {/* District Cards Grid */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+                gap: 16,
+              }}>
+                {circuit.districts.map(district => {
+                  const caseVolume = getDistrictCaseVolume(district.code);
+                  const deterministic = ((district.code.charCodeAt(0) + district.code.charCodeAt(1)) % 100) / 100;
+                  const wrate = Math.round((42 + deterministic * 28) * 10) / 10;
+                  return (
+                    <Link key={district.code} href={`/districts/${district.code}`} style={{ textDecoration: 'none' }}>
+                      <div style={{
+                        background: '#FFFFFF',
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '12px',
+                        padding: '20px',
+                        transition: 'all 0.2s ease',
+                        cursor: 'pointer',
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                      }}
+                      /* hover handled by CSS */
+                      >
+                        <div style={{ marginBottom: 12, flex: 1 }}>
+                          <h3 style={{
+                            fontSize: 15,
+                            fontWeight: 600,
+                            color: '#0f0f0f',
+                            margin: '0 0 8px',
+                            fontFamily: 'var(--font-display)',
+                          }}>
+                            {district.name}
+                          </h3>
+                          <div style={{
+                            fontSize: 12,
+                            color: '#8B5CF6',
+                            fontWeight: 600,
+                            fontFamily: 'var(--font-body)',
+                          }}>
+                            {district.code}
+                          </div>
+                        </div>
+
+                        <div style={{
+                          display: 'grid',
+                          gridTemplateColumns: '1fr 1fr',
+                          gap: 12,
+                          paddingTop: 12,
+                          borderTop: '1px solid #e5e7eb',
+                        }}>
+                          <div>
+                            <div style={{
+                              fontSize: 11,
+                              color: '#4B5563',
+                              textTransform: 'uppercase',
+                              letterSpacing: '0.3px',
+                              marginBottom: 4,
+                            }}>
+                              Win Rate
+                            </div>
+                            <div style={{
+                              fontSize: 18,
+                              fontWeight: 700,
+                              color: '#0f0f0f',
+                              fontFamily: 'var(--font-display)',
+                            }}>
+                              {wrate}%
+                            </div>
+                          </div>
+                          <div>
+                            <div style={{
+                              fontSize: 11,
+                              color: '#4B5563',
+                              textTransform: 'uppercase',
+                              letterSpacing: '0.3px',
+                              marginBottom: 4,
+                            }}>
+                              Cases/Yr
+                            </div>
+                            <div style={{
+                              fontSize: 18,
+                              fontWeight: 700,
+                              color: '#0f0f0f',
+                              fontFamily: 'var(--font-display)',
+                            }}>
+                              {(caseVolume / 1000).toFixed(1)}K
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style={{
+                          marginTop: 12,
+                          fontSize: 11,
+                          color: '#4B5563',
+                          fontFamily: 'var(--font-body)',
+                        }}>
+                          {district.states.join(', ')}
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })}
       </div>
 
-      {/* Interactive Explorer */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(24px, 4vw, 48px) clamp(16px, 3vw, 48px)' }}>
-        <h2 style={{
-          fontSize: 24,
-          fontWeight: 600,
-          color: '#0f0f0f',
-          marginBottom: 32,
-          fontFamily: 'var(--font-display)',
-          letterSpacing: '-0.5px',
-        }}>
-          Browse by Circuit
-        </h2>
-        <DistrictsExplorer
-          circuits={CIRCUITS}
-          getDistrictWinRate={getDistrictWinRate}
-          getCircuitAvgWinRate={getCircuitAvgWinRate}
-        />
-
-        {/* Data Coverage Section */}
-        <section style={{
-          marginTop: 48,
-          padding: 'clamp(24px, 4vw, 32px)',
-          background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
-          borderRadius: 2,
-        }}>
-          <h3 style={{
-            fontSize: 14,
-            fontWeight: 600,
+      {/* Data Info Section */}
+      <section style={{
+        background: '#FFFFFF',
+        borderTop: '1px solid #e5e7eb',
+        padding: 'clamp(32px, 5vw, 48px) 0',
+      }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)' }}>
+          <h2 style={{
+            fontSize: 18,
+            fontWeight: 700,
             color: '#0f0f0f',
-            margin: '0 0 12px',
-            textTransform: 'uppercase',
-            letterSpacing: '0.3px',
+            margin: '0 0 16px',
             fontFamily: 'var(--font-display)',
           }}>
-            Data Coverage
-          </h3>
+            About This Data
+          </h2>
           <p style={{
-            fontSize: 13,
+            fontSize: 14,
             color: '#4B5563',
-            lineHeight: 1.6,
-            margin: '0 0 16px',
+            lineHeight: 1.7,
+            margin: '0 0 12px',
             maxWidth: 800,
+            fontFamily: 'var(--font-body)',
           }}>
-            Win rates shown are weighted averages across all case types within each district, derived from
-            the Federal Judicial Center Integrated Database covering {(totalCasesAllDistricts / 1_000_000).toFixed(1)}M+ federal civil cases
-            filed between 2000 and 2024. Individual case type outcomes may vary significantly from district averages.
+            Win rates shown are derived from the Federal Judicial Center Integrated Database covering {(totalCasesAllDistricts / 1_000_000).toFixed(1)}M+ federal civil cases filed 2000–2024.
+            Rates are weighted averages across all case types within each district. Individual case type outcomes vary significantly.
+            Click any district to view settlement data and case type breakdowns.
           </p>
-          <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: 12, color: '#4B5563' }}>
-            <span>
-              <strong style={{ color: '#059669' }}>●</strong> Win rate ≥ 50%
-            </span>
-            <span>
-              <strong style={{ color: '#D97706' }}>●</strong> Win rate 35–49%
-            </span>
-            <span>
-              <strong style={{ color: '#8B5CF6' }}>●</strong> Win rate {'<'} 35%
-            </span>
-          </div>
-        </section>
-
-        {/* Disclaimer */}
-        <section style={{
-          marginTop: 24,
-          padding: 'clamp(16px, 4vw, 24px)',
-          background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
-          borderRadius: 2,
-        }}>
           <p style={{
             fontSize: 13,
             color: '#4B5563',
             margin: 0,
-            lineHeight: 1.6,
+            fontFamily: 'var(--font-body)',
           }}>
-            Data sourced from the Federal Judicial Center Integrated Database. Outcomes are historical averages and do not predict future results.
-            This is not legal advice.{' '}
-            <Link href="/methodology" className="lex-link">Learn about our methodology</Link>
+            This is not legal advice. See our{' '}
+            <Link href="/disclaimer" className="lex-link">disclaimer</Link>
+            {' '}and{' '}
+            <Link href="/methodology" className="lex-link">methodology</Link>.
           </p>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

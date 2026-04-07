@@ -1,8 +1,65 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllPosts } from '../../lib/blog';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
+
+// Blog post data with 6 sample articles
+const blogArticles = [
+  {
+    slug: 'federal-court-filing-trends-2024',
+    title: 'Federal Court Filing Trends: What Changed in 2024',
+    description: 'An analysis of recent trends in federal court filings, including case type distribution, filing volumes, and what they mean for litigation strategy.',
+    category: 'Trends',
+    date: new Date('2025-01-15'),
+    readTime: 6,
+    author: 'MyCaseValue Research Team',
+  },
+  {
+    slug: 'personal-injury-settlement-values-by-district',
+    title: 'Personal Injury Settlement Values by District',
+    description: 'Comprehensive analysis of settlement patterns across federal districts, comparing median values, percentiles, and regional variations in personal injury cases.',
+    category: 'Settlement Data',
+    date: new Date('2024-12-08'),
+    readTime: 7,
+    author: 'MyCaseValue Analytics Team',
+  },
+  {
+    slug: 'employment-discrimination-10-year-analysis',
+    title: 'Employment Discrimination: A 10-Year Analysis',
+    description: 'A decade-long look at employment discrimination claims in federal court, including verdict rates, settlement trends, and the impact of legal representation.',
+    category: 'Trends',
+    date: new Date('2024-11-22'),
+    readTime: 8,
+    author: 'MyCaseValue Research Team',
+  },
+  {
+    slug: 'data-driven-litigation-strategy',
+    title: 'How to Use Data-Driven Litigation Strategy',
+    description: 'Learn how to leverage federal court analytics and outcome data to develop more effective litigation strategies and manage client expectations.',
+    category: 'Attorney Insights',
+    date: new Date('2024-10-15'),
+    readTime: 5,
+    author: 'Legal Strategy Expert',
+  },
+  {
+    slug: 'district-court-comparison-east-vs-west',
+    title: 'District Court Comparison: East vs West',
+    description: 'A comparative analysis of federal district courts in Eastern and Western regions, examining docket composition, case timelines, and verdict patterns.',
+    category: 'District Analysis',
+    date: new Date('2024-09-30'),
+    readTime: 6,
+    author: 'MyCaseValue Research Team',
+  },
+  {
+    slug: 'settlement-negotiations-what-data-shows',
+    title: 'Settlement Negotiations: What the Data Shows',
+    description: 'Examine settlement negotiation patterns and strategies based on analysis of thousands of federal court cases and settlement outcomes.',
+    category: 'Settlement Data',
+    date: new Date('2024-09-05'),
+    readTime: 7,
+    author: 'MyCaseValue Analytics Team',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Blog — MyCaseValue | Federal Court Data & Legal Insights',
@@ -37,17 +94,9 @@ const jsonLd = {
 };
 
 export default function BlogPage() {
-  const posts = getAllPosts();
-  const featuredPost = posts[0];
-  const remainingPosts = posts.slice(1);
-
-  const categories = [
-    'All',
-    'Employment Law',
-    'Personal Injury',
-    'Federal Courts',
-    'Data Analysis',
-  ];
+  const featuredPost = blogArticles[0];
+  const remainingPosts = blogArticles.slice(1);
+  const categories = ['All', 'Trends', 'Settlement Data', 'District Analysis', 'Attorney Insights'];
 
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
@@ -61,6 +110,9 @@ export default function BlogPage() {
           border-radius: 12px;
           transition: all 0.3s ease;
           position: relative;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
         }
 
         .blog-card::before {
@@ -71,7 +123,7 @@ export default function BlogPage() {
           right: 0;
           height: 0;
           background: #8B5CF6;
-          border-radius: 12px 4px 0 0;
+          border-radius: 12px 12px 0 0;
           transition: height 0.3s ease;
         }
 
@@ -88,6 +140,9 @@ export default function BlogPage() {
         .blog-card-content {
           position: relative;
           z-index: 1;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
         }
 
         .featured-post {
@@ -114,6 +169,7 @@ export default function BlogPage() {
           font-size: 12px;
           font-weight: 600;
           display: inline-block;
+          width: fit-content;
         }
 
         .sidebar-filter {
@@ -142,6 +198,7 @@ export default function BlogPage() {
           border-radius: 12px;
           padding: 24px;
           transition: all 0.3s ease;
+          text-decoration: none;
         }
 
         .featured-research-card:hover {
@@ -162,6 +219,7 @@ export default function BlogPage() {
           transition: all 0.2s ease;
           cursor: pointer;
           font-family: var(--font-body);
+          text-decoration: none;
         }
 
         .topic-pill:hover {
@@ -185,7 +243,7 @@ export default function BlogPage() {
         .related-tools-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-          border-color: #6D28D9;
+          border-color: #8B5CF6;
         }
 
         @media (max-width: 768px) {
@@ -220,7 +278,7 @@ export default function BlogPage() {
             BLOG
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-extrabold mb-4" style={{ color: '#FFFFFF', letterSpacing: '-1.5px' }}>
-            Federal Court Data & Litigation Insights
+            Federal Court Data {'\u0026'} Litigation Insights
           </h1>
           <p className="text-lg leading-relaxed max-w-2xl" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
             Research-backed articles analyzing real outcomes from 5.1M+ federal cases. Understand win rates, settlement data, timelines, and what affects your case.
@@ -256,7 +314,7 @@ export default function BlogPage() {
                   <div style={{ fontSize: '12px', color: '#4B5563', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
                     <span className="font-medium">{featuredPost.author}</span>
                     <span className="mx-2">•</span>
-                    <time>{featuredPost.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                    <time>{featuredPost.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
                     <span className="mx-2">•</span>
                     <span>{featuredPost.readTime} min read</span>
                   </div>
@@ -345,15 +403,15 @@ export default function BlogPage() {
                       {post.description}
                     </p>
 
-                    <div style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)' }}>
+                    <div style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: '12px', flex: 1 }}>
                       <span className="font-medium">{post.author}</span>
                       <span className="mx-1.5">•</span>
-                      <time>{post.publishedAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+                      <time>{post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
                     </div>
 
                     <a
                       href={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-1 mt-4 px-3 py-2 rounded text-xs font-semibold transition-all"
+                      className="inline-flex items-center gap-1 px-3 py-2 rounded text-xs font-semibold transition-all"
                       style={{
                         background: '#FFF3F4',
                         color: '#8B5CF6',
@@ -411,8 +469,8 @@ export default function BlogPage() {
               <p style={{ fontSize: '14px', color: '#4B5563', margin: '0 0 16px 0', lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
                 {research.description}
               </p>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: '#6D28D9', textDecoration: 'none' }}>
-                Read more →
+              <span style={{ fontSize: '13px', fontWeight: 600, color: '#8B5CF6', textDecoration: 'none' }}>
+                Read more {'>'}
               </span>
             </a>
           ))}
@@ -484,8 +542,8 @@ export default function BlogPage() {
                   Explore federal case data interactively.
                 </p>
               </div>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: '#6D28D9', marginTop: '16px', textDecoration: 'none' }}>
-                Explore →
+              <span style={{ fontSize: '13px', fontWeight: 600, color: '#8B5CF6', marginTop: '16px', textDecoration: 'none' }}>
+                Explore {'>'}
               </span>
             </Link>
           ))}
