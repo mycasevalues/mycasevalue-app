@@ -7,3 +7,4 @@ export { Badge } from './Badge';
 export { StatCard } from './StatCard';
 export { SectionBadge } from './SectionBadge';
 export { default as SkeletonLoader, SkeletonText, SkeletonChart, SkeletonCard, SkeletonStatRow } from './SkeletonLoader';
+export { ScrollableTable } from './ScrollableTable';
