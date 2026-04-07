@@ -1,180 +1,199 @@
-/**
- * CaseFilingTicker.tsx
- * Horizontal scrolling ticker showing recent federal case type filings
- * Built from REAL_DATA, uses CSS animations for smooth scrolling
- */
-
 'use client';
 
-import { REAL_DATA } from '../lib/realdata';
+import React, { useMemo, useState, useEffect } from 'react';
+import type { RecentFiling } from '../lib/courtlistener';
 
-interface TickerItem {
-  label: string;
-  district: string;
+/**
+ * Format time since filing (e.g., "2 hours ago", "1 day ago")
+ */
+function getRelativeTime(dateString: string): string {
+  const date = new Date(dateString);
+  const now = new Date();
+  const secondsAgo = Math.floor((now.getTime() - date.getTime()) / 1000);
+
+  if (secondsAgo < 60) return 'just now';
+  if (secondsAgo < 3600) {
+    const mins = Math.floor(secondsAgo / 60);
+    return `${mins} minute${mins !== 1 ? 's' : ''} ago`;
+  }
+  if (secondsAgo < 86400) {
+    const hrs = Math.floor(secondsAgo / 3600);
+    return `${hrs} hour${hrs !== 1 ? 's' : ''} ago`;
+  }
+  if (secondsAgo < 604800) {
+    const days = Math.floor(secondsAgo / 86400);
+    return `${days} day${days !== 1 ? 's' : ''} ago`;
+  }
+  return date.toLocaleDateString();
 }
 
-function getRecentFilingTypes(): TickerItem[] {
-  // Get most common filing types from REAL_DATA with realistic district pairings
-  const filings: Array<{ label: string; nos: string; count: number; paired?: boolean }> = [];
-
-  for (const [nos, data] of Object.entries(REAL_DATA)) {
-    if (data && data.label && data.total) {
-      filings.push({
-        label: data.label,
-        nos,
-        count: data.total,
-        paired: false,
-      });
-    }
-  }
-
-  // Sort by filing count descending, take top ones
-  const topFilings = filings
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 4);
-
-  // Pair with realistic districts
-  const districts = [
-    'S.D.N.Y.',
-    'C.D. Cal.',
-    'N.D. Ill.',
-    'S.D. Tex.',
-    'D.N.J.',
-    'E.D.N.Y.',
-    'N.D. Ga.',
-  ];
-
-  return topFilings.map((filing, idx) => ({
-    label: filing.label,
-    district: districts[idx % districts.length],
-  }));
+/**
+ * Truncate long case names for the ticker
+ */
+function truncateCaseName(name: string, maxLength = 60): string {
+  if (name.length <= maxLength) return name;
+  return name.substring(0, maxLength) + '...';
 }
 
 export default function CaseFilingTicker() {
-  const filings = getRecentFilingTypes();
+  const [filings, setFilings] = useState<RecentFiling[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Duplicate for seamless infinite scroll
-  const displayFilings = [...filings, ...filings];
+  useEffect(() => {
+    fetch('/api/courtlistener/recent-filings?limit=20')
+      .then((res) => res.json())
+      .then((data) => {
+        setFilings(data.filings || []);
+      })
+      .catch((error) => {
+        console.error('Error fetching recent filings:', error);
+        setFilings([]);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
+  // If fewer than 5 items, duplicate them to ensure smooth scrolling
+  const displayFilings = useMemo(() => {
+    const minCount = 5;
+    if (filings.length === 0) return [];
+    if (filings.length >= minCount) return filings;
+    // Duplicate filings to reach minimum count
+    const duplicated: RecentFiling[] = [];
+    while (duplicated.length < minCount) {
+      duplicated.push(...filings);
+    }
+    return duplicated.slice(0, minCount);
+  }, [filings]);
+
+  if (displayFilings.length === 0) {
+    return null;
+  }
 
   return (
-    <div
+    <section
       style={{
-        background: '#f9fafb',
-        padding: '24px',
-        borderTop: '1px solid #E5E7EB',
-        borderBottom: '1px solid #E5E7EB',
+        background: '#ffffff',
+        borderTop: '1px solid #E0DDD8',
+        borderBottom: '1px solid #E0DDD8',
+        padding: '24px 20px',
         overflow: 'hidden',
       }}
     >
-      <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
-        <p
+      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        {/* Label */}
+        <div
           style={{
-            fontSize: '11px',
-            fontWeight: 600,
-            color: '#0A66C2',
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
-            marginBottom: '12px',
+            fontSize: '12px',
+            color: '#999999',
             fontFamily: 'var(--font-body)',
+            marginBottom: '16px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em',
           }}
         >
-          Recent Federal Filings
-        </p>
+          Recent federal filings via CourtListener RECAP
+        </div>
 
+        {/* Ticker Container */}
         <div
           style={{
             position: 'relative',
             overflow: 'hidden',
-            width: '100%',
+            height: '32px',
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              gap: '32px',
-              animation: 'scroll 30s linear infinite',
-              whiteSpace: 'nowrap',
-              paddingRight: '32px',
-            }}
-          >
-            {displayFilings.map((filing, idx) => (
-              <div
-                key={idx}
-                style={{
-                  display: 'flex',
-                  gap: '8px',
-                  alignItems: 'center',
-                  flexShrink: 0,
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: '13px',
-                    color: '#4b5563',
-                    fontFamily: 'var(--font-body)',
-                    fontWeight: 500,
-                  }}
+          <style>{`
+            @keyframes ticker-scroll {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+
+            .ticker-content {
+              display: flex;
+              gap: 32px;
+              animation: ticker-scroll ${displayFilings.length * 15}s linear infinite;
+              will-change: transform;
+            }
+
+            .ticker-content:hover {
+              animation-play-state: paused;
+              cursor: pointer;
+            }
+
+            .ticker-item {
+              flex-shrink: 0;
+              display: flex;
+              align-items: center;
+              white-space: nowrap;
+              gap: 8px;
+            }
+
+            .ticker-link {
+              color: #0A66C2;
+              text-decoration: none;
+              font-family: var(--font-body);
+              font-size: 14px;
+              font-weight: 500;
+              transition: color 0.2s ease;
+            }
+
+            .ticker-link:hover {
+              color: #004182;
+              text-decoration: underline;
+            }
+
+            .ticker-separator {
+              color: #D0D0D0;
+              margin: 0 4px;
+            }
+
+            .ticker-metadata {
+              color: #666666;
+              font-size: 13px;
+              font-family: var(--font-body);
+              margin-left: 4px;
+            }
+
+            .ticker-court {
+              color: #999999;
+              font-size: 12px;
+              font-family: var(--font-mono);
+            }
+          `}</style>
+
+          <div className="ticker-content">
+            {/* Render each filing twice for seamless looping */}
+            {Array.from(new Set([...displayFilings, ...displayFilings])).map((filing, idx) => (
+              <div key={`${filing.id}-${idx}`} className="ticker-item">
+                <a
+                  href={filing.docketUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ticker-link"
                 >
-                  {filing.label}
-                </span>
-                <span
-                  style={{
-                    fontSize: '13px',
-                    color: '#4b5563',
-                    fontFamily: 'var(--font-body)',
-                  }}
-                >
-                  —
-                </span>
-                <span
-                  style={{
-                    fontSize: '13px',
-                    color: '#4b5563',
-                    fontFamily: 'var(--font-body)',
-                    fontWeight: 500,
-                  }}
-                >
-                  {filing.district}
-                </span>
-                {idx < displayFilings.length - 1 && (
-                  <span
-                    style={{
-                      fontSize: '13px',
-                      color: '#d1d5db',
-                      fontFamily: 'var(--font-body)',
-                      marginLeft: '16px',
-                    }}
-                  >
-                    ·
-                  </span>
+                  {truncateCaseName(filing.caseName)}
+                </a>
+                <span className="ticker-separator">·</span>
+                {filing.nosCategory && (
+                  <>
+                    <span className="ticker-metadata">{filing.nosCategory}</span>
+                    <span className="ticker-separator">·</span>
+                  </>
                 )}
+                <span className="ticker-court">{filing.courtName}</span>
+                <span className="ticker-separator">·</span>
+                <span className="ticker-metadata">{getRelativeTime(filing.dateFiled)}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @media (max-width: 768px) {
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-        }
-      `}</style>
-    </div>
+    </section>
   );
 }

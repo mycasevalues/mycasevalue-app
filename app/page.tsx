@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AnimatedCounter from '../components/AnimatedCounter';
 import DataFreshness from '../components/DataFreshness';
+import CaseFilingTicker from '../components/CaseFilingTicker';
 import { HeroEntrance, StaggerGrid, StaggerItem, FadeIn } from '../components/motion';
 
 const ACCENT_COLOR = '#0A66C2';
@@ -312,6 +313,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Live Case Filing Ticker */}
+      <CaseFilingTicker />
 
       {/* What This Data Actually Tells You — S.D.N.Y. Example */}
       <section style={{ borderTop: '1px solid #E0DDD8', padding: '80px 20px' }}>
