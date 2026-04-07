@@ -9,6 +9,8 @@ import SampleSizeIndicator from '../../../components/SampleSizeIndicator';
 import UpdatedBadge from '../../../components/UpdatedBadge';
 import { NOS_STATUTE_MAP } from '../../../lib/statutes';
 import RelevantOpinions from '../../../components/RelevantOpinions';
+import { ATTORNEY_IMPACT } from '../../../lib/attorney-impact';
+import { getWinRateColor } from '../../../lib/color-scale';
 
 // Top 10 NOS codes that show the Relevant Opinions section
 const OPINIONS_ENABLED_NOS = new Set(['442', '365', '190', '110', '360', '710', '445', '870', '440', '863']);
@@ -158,6 +160,9 @@ export default async function NOSPage({ params }: PageProps) {
 
   // Governing statute from NOS_STATUTE_MAP
   const statute = NOS_STATUTE_MAP[parseInt(code, 10)];
+
+  // Attorney impact data (represented vs pro se)
+  const attyImpact = ATTORNEY_IMPACT[code];
 
   // Circuit court rates from REAL_DATA
   const circuitRates = real?.circuit_rates;
@@ -1076,6 +1081,106 @@ export default async function NOSPage({ params }: PageProps) {
                     <div className="factor-text">{typeof factor === 'string' ? factor : factor.label || factor}</div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Attorney Impact */}
+      {attyImpact && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="content-box">
+              <h2 className="section-title">Attorney Impact</h2>
+              <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
+                How legal representation affects outcomes in {nosInfo.label} cases
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+                {/* Represented */}
+                <div style={{
+                  padding: '20px',
+                  background: getWinRateColor(attyImpact.rwr).bg,
+                  border: `1px solid ${getWinRateColor(attyImpact.rwr).border}`,
+                  borderRadius: '12px',
+                }}>
+                  <div style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                    With Attorney
+                  </div>
+                  <div style={{
+                    fontSize: '36px',
+                    fontWeight: 600,
+                    color: getWinRateColor(attyImpact.rwr).text,
+                    fontFamily: 'var(--font-mono)',
+                    lineHeight: 1.1,
+                  }}>
+                    {attyImpact.rwr}%
+                  </div>
+                  <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '6px' }}>
+                    win rate · {attyImpact.rn.toLocaleString()} cases
+                  </div>
+                </div>
+
+                {/* Pro Se */}
+                <div style={{
+                  padding: '20px',
+                  background: '#FEF0EF',
+                  border: '1px solid #CC1016',
+                  borderRadius: '12px',
+                }}>
+                  <div style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                    Pro Se (No Attorney)
+                  </div>
+                  <div style={{
+                    fontSize: '36px',
+                    fontWeight: 600,
+                    color: '#CC1016',
+                    fontFamily: 'var(--font-mono)',
+                    lineHeight: 1.1,
+                  }}>
+                    {attyImpact.pwr}%
+                  </div>
+                  <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '6px' }}>
+                    win rate · {attyImpact.pn.toLocaleString()} cases
+                  </div>
+                </div>
+
+                {/* Difference */}
+                <div style={{
+                  padding: '20px',
+                  background: '#EDF3FB',
+                  border: '1px solid #0A66C2',
+                  borderRadius: '12px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                }}>
+                  <div style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
+                    Representation Effect
+                  </div>
+                  <div style={{
+                    fontSize: '36px',
+                    fontWeight: 600,
+                    color: '#004182',
+                    fontFamily: 'var(--font-mono)',
+                    lineHeight: 1.1,
+                  }}>
+                    +{attyImpact.rwr - attyImpact.pwr}%
+                  </div>
+                  <div style={{ fontSize: '12px', color: '#4B5563', marginTop: '6px' }}>
+                    higher win rate with counsel
+                  </div>
+                </div>
+              </div>
+
+              <div style={{
+                marginTop: '16px',
+                fontSize: '11px',
+                color: '#9CA3AF',
+                fontFamily: 'var(--font-body)',
+              }}>
+                Based on {(attyImpact.rn + attyImpact.pn).toLocaleString()} cases in this category. Source: FJC Integrated Database.
               </div>
             </div>
           </div>
