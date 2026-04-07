@@ -1950,7 +1950,7 @@ export const REAL_DATA: Record<string, any> = {
     "mo": 8,
     "wr": 37.7,
     "sp": 35.1,
-    "sol": "4 years (TCPA)",
+    "sol": "Varies by state (§1983 uses state personal injury SOL)",
     "af": "Varies",
     "rng": {
       "lo": 9,
