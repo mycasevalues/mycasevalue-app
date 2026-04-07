@@ -38,7 +38,7 @@ const FEATURES: Feature[] = [
   },
   {
     title: 'AI-Powered Search',
-    description: 'Natural language search across 4.1M+ cases with advanced filtering capabilities.',
+    description: 'Natural language search across 5.1M+ cases with advanced filtering capabilities.',
     href: '/search',
     icon: '🔍',
   },
@@ -233,7 +233,7 @@ export default function HomePage() {
                   marginBottom: '8px',
                 }}
               >
-                <AnimatedCounter end={4100000} suffix="+" />
+                <AnimatedCounter end={5.1} suffix="M+" decimals={1} />
               </div>
               <p style={{ fontSize: '14px', color: '#666666', margin: '0' }}>Federal Cases</p>
             </div>
@@ -300,7 +300,7 @@ export default function HomePage() {
           >
             <div>
               <div style={{ fontSize: '28px', fontWeight: 600, marginBottom: '8px' }}>
-                4,100,000+
+                5,100,000+
               </div>
               <p style={{ fontSize: '14px', margin: '0', opacity: 0.8 }}>Federal Cases Indexed</p>
             </div>
@@ -563,7 +563,7 @@ export default function HomePage() {
               lineHeight: '1.6',
             }}
           >
-            Start exploring 4.1M+ cases with advanced analytics and AI-powered insights. No account required.
+            Start exploring 5.1M+ cases with advanced analytics and AI-powered insights. No account required.
           </p>
           <div
             style={{
