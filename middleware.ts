@@ -61,6 +61,23 @@ export async function middleware(request: NextRequest) {
   });
   response.headers.set('x-lang', locale);
 
+  // ── Add security headers to response ────────────────────────────────
+  response.headers.set('X-Frame-Options', 'DENY');
+  response.headers.set('X-Content-Type-Options', 'nosniff');
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+
+  // ── Geo-based state detection for US visitors ──────────────────────
+  const country = request.geo?.country;
+  const region = request.geo?.region;
+
+  if (country === 'US' && region) {
+    response.cookies.set('user-state', region, {
+      maxAge: 31536000, // 1 year
+      path: '/',
+    });
+  }
+
   // ── Auth protection ─────────────────────────────────────────────────
   if (isProtectedRoute(pathname_without_locale)) {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;

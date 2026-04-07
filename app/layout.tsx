@@ -6,6 +6,8 @@ import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 import SiteNav from '../components/layout/SiteNav';
 import BetaBanner from '../components/BetaBanner';
 import SiteFooter from '../components/layout/SiteFooter';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
@@ -355,6 +357,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieConsent />
         <WebVitalsReporter />
         <GlobalCommandPalette />
+        <Analytics />
+        <SpeedInsights />
         <script dangerouslySetInnerHTML={{ __html: `
           window.mcvAnalytics = {
             track: function(event, props) {
