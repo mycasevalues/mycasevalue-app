@@ -62,7 +62,7 @@ const FOOTER_COLUMNS = [
       { label: 'Privacy policy', href: '/privacy' },
       { label: 'Terms of service', href: '/terms' },
       { label: 'Sign In', href: '/sign-in' },
-      { label: 'Create account', href: '/sign-up' },
+      { label: 'Create Account', href: '/sign-up' },
     ],
   },
 ];

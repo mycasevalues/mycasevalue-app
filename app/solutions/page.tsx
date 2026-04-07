@@ -338,7 +338,7 @@ export default function SolutionsPage() {
               lineHeight: 1.6,
             }}
           >
-            Start researching — no account required — and explore the
+            Start Researching — no account required — and explore the
             full platform before choosing a plan.
           </p>
           <div

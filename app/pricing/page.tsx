@@ -731,7 +731,7 @@ export default function PricingPage() {
               { title: 'Unlimited Searches', desc: 'Search any case type across all 94 districts' },
               { title: 'Full Reports', desc: 'Detailed reports with circuit and judge breakdowns' },
               { title: 'Settlement Calculator', desc: 'Estimate ranges with 9 input factors' },
-              { title: 'Judge Analytics', desc: 'Win rates, motion grants, and case profiles for 90+ judges' },
+              { title: 'Judge Analytics', desc: 'Win rates, motion grants, and case profiles across 94 federal districts' },
               { title: 'Case Comparison', desc: 'Compare up to 3 case types side by side' },
               { title: 'Jargon Translator', desc: 'Convert legal text to plain English instantly' },
               { title: 'NOS Explorer', desc: 'Browse and filter all 84 federal case type codes' },
@@ -1338,7 +1338,7 @@ export default function PricingPage() {
               },
               {
                 title: 'Judge Analytics',
-                desc: 'Review win rates, motion grants, and detailed profiles for 90+ judges.',
+                desc: 'Review win rates, motion grants, and detailed profiles across 94 federal districts.',
                 href: '/judges',
               },
               {

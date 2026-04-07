@@ -407,7 +407,7 @@ export default function ResetPasswordPage() {
                 }}
                 className="auth-link"
               >
-                Back to sign in
+                Back to Sign In
               </Link>
             </div>
           </>

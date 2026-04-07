@@ -175,7 +175,7 @@ export default function ForgotPasswordPage() {
               }}
               className="auth-link"
             >
-              Back to sign in
+              Back to Sign In
             </Link>
           </div>
         ) : (
@@ -310,7 +310,7 @@ export default function ForgotPasswordPage() {
                 }}
                 className="auth-link"
               >
-                Back to sign in
+                Back to Sign In
               </Link>
             </div>
           </>
