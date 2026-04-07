@@ -279,7 +279,7 @@ export default function SiteFooter() {
               margin: 0,
               fontWeight: 400,
             }}>
-              &copy; 2026 MyCaseValue LLC
+              &copy; 2026 MyCaseValue LLC. All rights reserved.
             </p>
             <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
               <span style={{
