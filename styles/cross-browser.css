@@ -1,0 +1,56 @@
+/* Cross-Browser Compatibility Fixes */
+
+/* Safari flexbox gap fallback */
+@supports not (gap: 1px) {
+  .flex-gap > * + * { margin-left: 8px; }
+  .flex-gap-col > * + * { margin-top: 8px; }
+}
+
+/* Safari date input styling */
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+}
+
+/* Firefox animation smoothing */
+@-moz-document url-prefix() {
+  * { -moz-osx-font-smoothing: grayscale; }
+  @keyframes settlement-bar { from { width: 0; } }
+}
+
+/* Safari SVG rendering */
+svg { shape-rendering: geometricPrecision; }
+svg text { -webkit-font-smoothing: antialiased; }
+
+/* Windows font rendering for Inter */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+}
+
+/* Edge-specific fixes */
+@supports (-ms-ime-align: auto) {
+  input, select, textarea { font-family: inherit; }
+}
+
+/* Safari backdrop-filter fallback */
+@supports not (backdrop-filter: blur(8px)) {
+  .backdrop-blur { background: rgba(255, 255, 255, 0.95); }
+}
+
+/* Firefox scrollbar styling */
+* { scrollbar-width: thin; scrollbar-color: #c1c1c1 transparent; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #999; }
+
+/* Normalize form elements across browsers */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Safari input zoom prevention */
+@media screen and (max-width: 768px) {
+  input, select, textarea { font-size: 16px; }
+}
