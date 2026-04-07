@@ -1,7 +1,10 @@
 /**
  * CourtListener Judge Data Ingestion Pipeline
- * Queries CourtListener API for active federal district court judges
+ * Queries CourtListener Positions API for active federal district court judges
  * and upserts records to the judges table.
+ *
+ * Uses /api/rest/v4/positions/ endpoint which returns nested person + court objects,
+ * unlike /api/rest/v4/people/ which only returns position URLs in v4.
  *
  * Can be deployed as a Supabase Edge Function or called from an API route.
  * Scheduled to run monthly via pg_cron.
@@ -10,38 +13,42 @@
 import { createClient } from '@supabase/supabase-js';
 
 const COURTLISTENER_BASE = 'https://www.courtlistener.com/api/rest/v4';
-const COURTLISTENER_JUDGES_URL = `${COURTLISTENER_BASE}/people/`;
+const COURTLISTENER_POSITIONS_URL = `${COURTLISTENER_BASE}/positions/`;
 const PAGE_SIZE = 20;
-const RATE_LIMIT_DELAY = 1500; // CourtListener allows 5000 req/hr for authenticated users
 
-interface CourtListenerJudge {
-  resource_uri: string;
+// V4 Positions API response types
+interface CLPositionResult {
   id: number;
-  date_created: string;
-  date_modified: string;
+  position_type: string;
+  date_start: string | null;
+  date_termination: string | null;
+  how_selected: string;
+  appointer: CLAppointer | null;
+  court: CLCourt;
+  person: CLPerson;
+}
+
+interface CLCourt {
+  id: string;
+  resource_uri: string;
+  full_name?: string;
+  short_name?: string;
+}
+
+interface CLPerson {
+  id: number;
+  resource_uri: string;
   name_first: string;
   name_middle: string;
   name_last: string;
   name_suffix: string;
   date_dob: string | null;
-  date_granularity_dob: string;
-  date_dod: string | null;
-  date_granularity_dod: string;
-  dob_city: string;
-  dob_state: string;
   gender: string;
   race: string[];
-  positions: CourtListenerPosition[];
 }
 
-interface CourtListenerPosition {
-  court: string; // URL to court resource
-  court_full_name: string;
-  date_start: string | null;
-  date_termination: string | null;
-  appointer?: { person: string }; // URL to person resource
-  how_selected: string;
-  position_type: string;
+interface CLAppointer {
+  person: CLPerson;
 }
 
 // Map CourtListener court IDs to our district IDs
@@ -189,12 +196,6 @@ const PRESIDENT_PARTIES: Record<string, string> = {
   'Biden': 'Democratic',
 };
 
-function extractCourtId(courtUrl: string): string | null {
-  // Extract court ID from URL like /api/rest/v4/courts/nysd/
-  const match = courtUrl.match(/\/courts\/([^/]+)\/?$/);
-  return match ? match[1] : null;
-}
-
 function generateJudgeId(name: string, courtId: string): string {
   const slug = name.toLowerCase()
     .replace(/[^a-z0-9\s]/g, '')
@@ -211,9 +212,50 @@ export interface IngestionResult {
 }
 
 /**
- * Single-page ingestion — fetches ONE page of judges from CourtListener and upserts to Supabase.
+ * Build the initial positions URL with filters for federal district judges.
+ * Uses the positions endpoint which returns nested person + court objects.
+ */
+function buildPositionsUrl(): string {
+  return `${COURTLISTENER_POSITIONS_URL}?position_type=jud&court__jurisdiction=FD&page_size=${PAGE_SIZE}&format=json`;
+}
+
+/**
+ * Process a single position result into a judge record for upsert.
+ */
+function positionToJudgeRecord(pos: CLPositionResult) {
+  const courtId = pos.court?.id;
+  if (!courtId || !COURT_ID_MAP[courtId]) return null;
+
+  const person = pos.person;
+  if (!person) return null;
+
+  const fullName = [person.name_first, person.name_middle, person.name_last]
+    .filter(Boolean).join(' ');
+  const judgeId = generateJudgeId(fullName, courtId);
+
+  return {
+    id: judgeId,
+    courtlistener_id: person.id,
+    full_name: fullName,
+    first_name: person.name_first || null,
+    last_name: person.name_last || null,
+    district_id: COURT_ID_MAP[courtId] || null,
+    circuit: COURT_CIRCUIT_MAP[courtId] || null,
+    appointment_date: pos.date_start || null,
+    appointing_president: null as string | null,
+    party_of_appointing_president: null as string | null,
+    termination_date: pos.date_termination || null,
+    is_active: !pos.date_termination,
+    position: pos.position_type === 'jud' ? 'District Judge' : pos.position_type,
+    courtlistener_url: `https://www.courtlistener.com/person/${person.id}/`,
+    updated_at: new Date().toISOString(),
+  };
+}
+
+/**
+ * Single-page ingestion — fetches ONE page of positions from CourtListener and upserts to Supabase.
  * Returns a cursor for the next page so the caller can loop externally.
- * Designed to fit within Vercel Hobby's 10s function timeout.
+ * Designed to fit within Vercel's function timeout.
  */
 export async function ingestJudgesPage(
   supabaseUrl: string,
@@ -226,7 +268,7 @@ export async function ingestJudgesPage(
   const errors: string[] = [];
   let processed = 0;
 
-  const pageUrl = cursor || `${COURTLISTENER_JUDGES_URL}?positions__position_type=jud&positions__court__jurisdiction=FD&page_size=${PAGE_SIZE}`;
+  const pageUrl = cursor || buildPositionsUrl();
 
   const token = courtlistenerToken || process.env.COURTLISTENER_API_TOKEN;
   const headers: Record<string, string> = { 'Accept': 'application/json' };
@@ -242,46 +284,21 @@ export async function ingestJudgesPage(
     }
 
     const data = await response.json();
-    const judges: CourtListenerJudge[] = data.results || [];
+    const positions: CLPositionResult[] = data.results || [];
 
-    for (const clJudge of judges) {
+    for (const pos of positions) {
       try {
-        const position = clJudge.positions?.find(
-          (p: CourtListenerPosition) => p.position_type === 'jud' && !p.date_termination
-        );
-        if (!position) continue;
-
-        const courtId = extractCourtId(position.court);
-        if (!courtId || !COURT_ID_MAP[courtId]) continue;
-
-        const fullName = [clJudge.name_first, clJudge.name_middle, clJudge.name_last]
-          .filter(Boolean).join(' ');
-        const judgeId = generateJudgeId(fullName, courtId);
-
-        const judgeRecord = {
-          id: judgeId,
-          courtlistener_id: clJudge.id,
-          full_name: fullName,
-          first_name: clJudge.name_first || null,
-          last_name: clJudge.name_last || null,
-          district_id: COURT_ID_MAP[courtId] || null,
-          circuit: COURT_CIRCUIT_MAP[courtId] || null,
-          appointment_date: position.date_start || null,
-          appointing_president: null as string | null,
-          party_of_appointing_president: null as string | null,
-          termination_date: position.date_termination || null,
-          is_active: !position.date_termination,
-          position: position.position_type === 'jud' ? 'District Judge' : position.position_type,
-          courtlistener_url: `https://www.courtlistener.com/person/${clJudge.id}/`,
-          updated_at: new Date().toISOString(),
-        };
+        // Skip terminated positions (inactive judges)
+        // We still ingest them but mark is_active=false
+        const judgeRecord = positionToJudgeRecord(pos);
+        if (!judgeRecord) continue;
 
         const { error } = await supabase
           .from('judges')
           .upsert(judgeRecord, { onConflict: 'courtlistener_id' });
 
         if (error) {
-          errors.push(`Upsert error for ${fullName}: ${error.message}`);
+          errors.push(`Upsert error for ${judgeRecord.full_name}: ${error.message}`);
         } else {
           processed++;
         }
@@ -303,8 +320,8 @@ export async function ingestJudgesPage(
 }
 
 /**
- * Full ingestion function — fetches ALL judges from CourtListener and upserts to Supabase.
- * WARNING: Will timeout on Vercel Hobby plan. Use ingestJudgesPage for serverless.
+ * Full ingestion function — fetches ALL judge positions from CourtListener and upserts to Supabase.
+ * Uses the positions endpoint for efficient single-request data retrieval.
  */
 export async function ingestJudges(supabaseUrl: string, supabaseServiceKey: string, courtlistenerToken?: string): Promise<IngestionResult> {
   const startTime = Date.now();
@@ -320,7 +337,7 @@ export async function ingestJudges(supabaseUrl: string, supabaseServiceKey: stri
     .single();
 
   try {
-    let nextUrl: string | null = `${COURTLISTENER_JUDGES_URL}?positions__position_type=jud&positions__court__jurisdiction=FD&page_size=${PAGE_SIZE}`;
+    let nextUrl: string | null = buildPositionsUrl();
 
     const token = courtlistenerToken || process.env.COURTLISTENER_API_TOKEN;
     const headers: Record<string, string> = {
@@ -331,9 +348,6 @@ export async function ingestJudges(supabaseUrl: string, supabaseServiceKey: stri
     }
 
     while (nextUrl) {
-      // Rate limit
-      await new Promise(resolve => setTimeout(resolve, RATE_LIMIT_DELAY));
-
       const response = await fetch(nextUrl, { headers });
       if (!response.ok) {
         errors.push(`CourtListener API error: ${response.status} ${response.statusText}`);
@@ -341,49 +355,19 @@ export async function ingestJudges(supabaseUrl: string, supabaseServiceKey: stri
       }
 
       const data = await response.json();
-      const judges: CourtListenerJudge[] = data.results || [];
+      const positions: CLPositionResult[] = data.results || [];
 
-      // Process judges sequentially to respect rate limits and maintain order
-      for (let i = 0; i < judges.length; i++) {
-        const clJudge = judges[i];
+      for (const pos of positions) {
         try {
-          // Find active federal district court position
-          const position = clJudge.positions?.find(
-            (p: CourtListenerPosition) => p.position_type === 'jud' && !p.date_termination
-          );
-          if (!position) continue;
-
-          const courtId = extractCourtId(position.court);
-          if (!courtId || !COURT_ID_MAP[courtId]) continue;
-
-          const fullName = [clJudge.name_first, clJudge.name_middle, clJudge.name_last]
-            .filter(Boolean).join(' ');
-          const judgeId = generateJudgeId(fullName, courtId);
-
-          const judgeRecord = {
-            id: judgeId,
-            courtlistener_id: clJudge.id,
-            full_name: fullName,
-            first_name: clJudge.name_first || null,
-            last_name: clJudge.name_last || null,
-            district_id: COURT_ID_MAP[courtId] || null,
-            circuit: COURT_CIRCUIT_MAP[courtId] || null,
-            appointment_date: position.date_start || null,
-            appointing_president: null as string | null,
-            party_of_appointing_president: null as string | null,
-            termination_date: position.date_termination || null,
-            is_active: !position.date_termination,
-            position: position.position_type === 'jud' ? 'District Judge' : position.position_type,
-            courtlistener_url: `https://www.courtlistener.com/person/${clJudge.id}/`,
-            updated_at: new Date().toISOString(),
-          };
+          const judgeRecord = positionToJudgeRecord(pos);
+          if (!judgeRecord) continue;
 
           const { error } = await supabase
             .from('judges')
             .upsert(judgeRecord, { onConflict: 'courtlistener_id' });
 
           if (error) {
-            errors.push(`Upsert error for ${fullName}: ${error.message}`);
+            errors.push(`Upsert error for ${judgeRecord.full_name}: ${error.message}`);
           } else {
             processed++;
           }
