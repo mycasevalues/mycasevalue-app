@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
+import { NOS_TRENDS } from '../../../data/nos-trends';
 import { SITE_URL } from '../../../lib/site-config';
 import { fmtK } from '../../../lib/format';
 import DataFreshness from '../../../components/DataFreshness';
@@ -20,6 +21,7 @@ import DemoNOSPage from '../../../components/DemoNOSPage';
 import dynamic from 'next/dynamic';
 
 const SettlementViolin = dynamic(() => import('../../../components/charts/SettlementViolin'), { ssr: false });
+const WinRateTrend = dynamic(() => import('../../../components/charts/WinRateTrend'), { ssr: false });
 
 // ISR: revalidate every 90 days (matches FJC quarterly update cycle)
 export const revalidate = 7776000;
@@ -870,6 +872,23 @@ export default async function NOSPage({ params }: PageProps) {
               <strong>Note:</strong> Federal court win rates for Social Security disability cases reflect appeals of initial administrative denials. The majority of successful SSDI/SSI claims are resolved at the administrative level prior to federal filing.
             </div>
           )}
+        </div>
+      </section>
+
+      {/* 10-Year Win Rate Trend */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="content-box">
+            <h2 className="section-title">10-Year Win Rate Trend</h2>
+            <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
+              Historical win rate patterns over the past decade (2015-2024)
+            </p>
+            <WinRateTrend
+              data={NOS_TRENDS[code] || []}
+              nosCode={code}
+              height={150}
+            />
+          </div>
         </div>
       </section>
 
