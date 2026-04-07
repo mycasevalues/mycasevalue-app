@@ -5,6 +5,9 @@ import { REAL_DATA } from '../../../lib/realdata';
 import localRulesData from '../../../data/local-rules.json';
 import legalAidData from '../../../data/legal-aid.json';
 
+// ISR: revalidate every 90 days (matches FJC quarterly update cycle)
+export const revalidate = 7776000;
+
 interface PageProps {
   params: Promise<{ code: string }>;
 }
@@ -107,6 +110,10 @@ const DISTRICTS_MAP: Record<string, { name: string; fullName: string; circuit: n
   'DCDN': { name: 'D.D.C.', fullName: 'District of Columbia', circuit: 13, states: ['DC'] },
   'FED': { name: 'Fed. Cir.', fullName: 'Court of Appeals for the Federal Circuit', circuit: 14, states: ['US'] },
 };
+
+export async function generateStaticParams() {
+  return Object.keys(DISTRICTS_MAP).map((code) => ({ code: code.toLowerCase() }));
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { code } = await params;

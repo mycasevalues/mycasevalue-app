@@ -12,6 +12,9 @@ import RelevantOpinions from '../../../components/RelevantOpinions';
 import { ATTORNEY_IMPACT } from '../../../lib/attorney-impact';
 import { getWinRateColor } from '../../../lib/color-scale';
 
+// ISR: revalidate every 90 days (matches FJC quarterly update cycle)
+export const revalidate = 7776000;
+
 // Top 10 NOS codes that show the Relevant Opinions section
 const OPINIONS_ENABLED_NOS = new Set(['442', '365', '190', '110', '360', '710', '445', '870', '440', '863']);
 
