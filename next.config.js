@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 
+// next-intl configuration wrapper
+const withNextIntl = require('next-intl/plugin')('./i18n.ts');
+
 // Sentry configuration wrapper
 let plugins = [];
 if (process.env.NODE_ENV === 'production' && process.env.SENTRY_DSN) {
@@ -183,4 +186,5 @@ for (const plugin of plugins) {
   exportedConfig = plugin(exportedConfig);
 }
 
-module.exports = exportedConfig;
+// Apply next-intl plugin
+module.exports = withNextIntl(exportedConfig);

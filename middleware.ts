@@ -1,3 +1,4 @@
+import createMiddleware from 'next-intl/middleware';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
@@ -5,9 +6,17 @@ import { locales, defaultLocale, type Locale } from './lib/i18n-config';
 
 /**
  * Middleware for MyCaseValue
- * 1. i18n locale routing (English/Spanish)
+ * 1. i18n locale routing via next-intl (English/Spanish)
  * 2. Auth protection for /dashboard routes
+ * 3. Security headers and geo-based detection
  */
+
+// next-intl middleware handles locale detection and URL rewriting
+const handleI18nRouting = createMiddleware({
+  locales,
+  defaultLocale,
+  localePrefix: 'as-needed', // English URLs don't get /en prefix
+});
 
 const PROTECTED_PREFIXES = ['/dashboard', '/account', '/settings', '/billing', '/reports'];
 
@@ -15,6 +24,15 @@ function isProtectedRoute(pathname: string): boolean {
   return PROTECTED_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
   );
+}
+
+function extractPathWithoutLocale(pathname: string): string {
+  for (const locale of locales) {
+    if (pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)) {
+      return pathname.replace(`/${locale}`, '') || '/';
+    }
+  }
+  return pathname;
 }
 
 export async function middleware(request: NextRequest) {
@@ -30,28 +48,16 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // ── i18n locale detection ───────────────────────────────────────────
-  let locale: Locale = defaultLocale;
-  let pathname_without_locale = pathname;
+  // ── Apply i18n routing ───────────────────────────────────────────────
+  let response = handleI18nRouting(request);
 
+  // Extract locale and path for use in auth check
+  let locale: Locale = defaultLocale;
   for (const l of locales) {
     if (pathname.startsWith(`/${l}/`) || pathname === `/${l}`) {
       locale = l;
-      pathname_without_locale = pathname.replace(`/${l}`, '') || '/';
       break;
     }
-  }
-
-  // Build the base response (rewrite for non-default locale, next() otherwise)
-  let response: NextResponse;
-
-  if (locale !== defaultLocale) {
-    response = NextResponse.rewrite(
-      new URL(`${pathname_without_locale}${request.nextUrl.search}`, request.url),
-      { request }
-    );
-  } else {
-    response = NextResponse.next();
   }
 
   // Set lang cookie and header for server components to read
@@ -79,7 +85,8 @@ export async function middleware(request: NextRequest) {
   }
 
   // ── Auth protection ─────────────────────────────────────────────────
-  if (isProtectedRoute(pathname_without_locale)) {
+  const pathWithoutLocale = extractPathWithoutLocale(pathname);
+  if (isProtectedRoute(pathWithoutLocale)) {
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
@@ -121,8 +128,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    // Include all paths except _next, api, static assets
-    '/((?!_next|api|static|.*\\..*|.well-known).*)',
-  ],
+  matcher: ['/((?!api|_next|.*\\..*).*)'],
 };
