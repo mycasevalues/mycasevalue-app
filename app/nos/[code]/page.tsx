@@ -89,10 +89,17 @@ export async function generateMetadata(
   const description = `Research ${nosInfo.label} federal court outcomes. See win rates, median case duration, settlement percentages, and recovery data from real court records. NOS code ${code}.`;
   const canonical = `${SITE_URL}/nos/${code}`;
 
+  // Get win rate from REAL_DATA for dynamic favicon
+  const real = REAL_DATA[code];
+  const winRate = real?.wr != null ? Math.round(real.wr) : 42;
+
   return {
     title,
     description,
     alternates: { canonical },
+    icons: {
+      icon: `${SITE_URL}/api/favicon?rate=${winRate}`,
+    },
     openGraph: {
       title: `${nosInfo.label} — Federal Court Statistics`,
       description,
