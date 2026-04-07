@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Metadata } from 'next';
 import CostMonitor from '@/components/admin/CostMonitor';
 import APIUsagePanel from '@/components/admin/APIUsagePanel';
+import WidgetImpressionPanel from '@/components/admin/WidgetImpressionPanel';
 
 /**
  * Admin Panel
@@ -16,7 +17,7 @@ import APIUsagePanel from '@/components/admin/APIUsagePanel';
  * TODO: Add proper error handling and loading states for all API calls
  */
 
-type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email' | 'costs' | 'api';
+type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email' | 'costs' | 'api' | 'widgets';
 
 const COLORS = {
   primary: '#0A66C2',
@@ -150,6 +151,7 @@ export default function AdminPage() {
     { id: 'users', label: 'User Management', icon: 'Users' },
     { id: 'email', label: 'Email Manager', icon: 'Mail' },
     { id: 'api', label: 'API Usage', icon: 'Code' },
+    { id: 'widgets', label: 'Widget Impressions', icon: 'BarChart' },
     { id: 'costs', label: 'Cost Monitoring', icon: 'DollarSign' },
   ] as const;
 
@@ -1002,6 +1004,13 @@ export default function AdminPage() {
           </div>
         )}
 
+        {/* Widget Impressions Section */}
+        {activeSection === 'widgets' && (
+          <div>
+            <WidgetImpressionPanel />
+          </div>
+        )}
+
         {/* Cost Monitoring Section */}
         {activeSection === 'costs' && (
           <div>
@@ -1026,6 +1035,7 @@ function getSectionTitle(section: SectionType): string {
     users: 'User Management',
     email: 'Email Manager',
     api: 'API Usage & Metrics',
+    widgets: 'Widget Impressions & Embeds',
     costs: 'Cost Monitoring',
   };
   return titles[section];
@@ -1040,6 +1050,7 @@ function getSectionDescription(section: SectionType): string {
     users: 'Manage user accounts and permissions',
     email: 'Monitor emails and manage subscriber communications',
     api: 'Monitor API key usage, request volume, and rate limit violations',
+    widgets: 'Track widget embeddings, impressions, and embedding domain analytics',
     costs: 'Track service costs and monthly spending across all platforms',
   };
   return descriptions[section];

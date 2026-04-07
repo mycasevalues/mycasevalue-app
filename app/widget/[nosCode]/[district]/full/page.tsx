@@ -214,6 +214,23 @@ export default function FullWidgetPage({ params }: FullWidgetPageProps) {
           </div>
         </div>
       </div>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              const nosCode = "${nosCode}";
+              const district = "${district}";
+              const widgetType = "full";
+
+              fetch('/api/widget/impression', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nos_code: nosCode, district, widget_type: widgetType })
+              }).catch(err => console.error('Widget impression tracking failed:', err));
+            })();
+          `,
+        }}
+      />
     </div>
   );
 }

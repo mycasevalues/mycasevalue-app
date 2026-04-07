@@ -216,6 +216,67 @@ export default function IndividualsPage() {
         </div>
       </section>
 
+      {/* Share This Research Section */}
+      <section style={{ padding: '64px 24px', background: '#F7F8FA' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '1.75rem',
+            fontWeight: 600,
+            color: '#0f0f0f',
+            marginBottom: '24px',
+          }}>
+            Share this research
+          </h2>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1rem',
+            color: '#4B5563',
+            lineHeight: 1.6,
+            marginBottom: '32px',
+          }}>
+            Found helpful case data? Share widget links with your attorney to support settlement negotiations. Embed real-time case value data on shared documents and give your legal team the context they need to evaluate your claim objectively.
+          </p>
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid #E5E7EB',
+            borderRadius: '12px',
+            padding: '24px',
+            marginBottom: '24px',
+          }}>
+            <div style={{
+              fontSize: '14px',
+              color: '#374151',
+              fontWeight: 500,
+              marginBottom: '12px',
+            }}>
+              Example: Share widget link with your attorney
+            </div>
+            <code style={{
+              display: 'block',
+              background: '#F9FAFB',
+              padding: '12px',
+              borderRadius: '6px',
+              fontSize: '12px',
+              color: '#0A66C2',
+              fontFamily: '"Courier New", monospace',
+              overflowX: 'auto',
+              wordBreak: 'break-all',
+            }}>
+              {'https://mycasevalue.com/widget/3001/all'}
+            </code>
+            <p style={{
+              fontSize: '12px',
+              color: '#6B7280',
+              marginTop: '12px',
+              margin: '12px 0 0 0',
+            }}>
+              Share this link in emails, documents, or messages to embed live case data
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Related Solutions */}
       <section style={{ padding: '64px 24px', background: '#F7F8FA' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>

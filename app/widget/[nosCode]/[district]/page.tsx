@@ -140,6 +140,23 @@ export default function WidgetPage({ params }: WidgetPageProps) {
       >
         View full data →
       </a>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              const nosCode = "${nosCode}";
+              const district = "${district}";
+              const widgetType = "compact";
+
+              fetch('/api/widget/impression', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nos_code: nosCode, district, widget_type: widgetType })
+              }).catch(err => console.error('Widget impression tracking failed:', err));
+            })();
+          `,
+        }}
+      />
     </div>
   );
 }

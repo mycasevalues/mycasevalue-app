@@ -216,6 +216,108 @@ export default function SmallFirmsPage() {
         </div>
       </section>
 
+      {/* Widget Embed Section */}
+      <section style={{ padding: '64px 24px', background: '#FFFFFF' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '1.75rem',
+            fontWeight: 600,
+            color: '#0f0f0f',
+            marginBottom: '24px',
+          }}>
+            Embed your practice area data
+          </h2>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '1rem',
+            color: '#4B5563',
+            lineHeight: 1.6,
+            marginBottom: '32px',
+          }}>
+            Share real-time case value data on your website with our embeddable widgets. Display settlement ranges, win rates, and verdict data for your practice areas. Widgets automatically update with the latest data from our database.
+          </p>
+          <div style={{
+            background: '#F7F8FA',
+            border: '1px solid #E5E7EB',
+            borderRadius: '12px',
+            padding: '32px 24px',
+            marginBottom: '32px',
+          }}>
+            <div style={{
+              background: '#FFFFFF',
+              border: '1px solid #E5E7EB',
+              borderRadius: '8px',
+              padding: '24px',
+              textAlign: 'center',
+              marginBottom: '24px',
+            }}>
+              <div style={{
+                fontSize: '12px',
+                color: '#0A66C2',
+                fontWeight: 500,
+                marginBottom: '8px',
+              }}>
+                Powered by MyCaseValue
+              </div>
+              <div style={{
+                fontSize: '14px',
+                fontWeight: 600,
+                color: '#1f2937',
+                marginBottom: '8px',
+              }}>
+                Personal Injury
+              </div>
+              <div style={{
+                fontSize: '24px',
+                fontWeight: 700,
+                color: '#22c55e',
+                marginBottom: '4px',
+              }}>
+                72%
+              </div>
+              <div style={{ fontSize: '11px', color: '#6b7280', marginBottom: '12px' }}>
+                plaintiff win rate
+              </div>
+              <div style={{
+                fontFamily: '"Courier New", monospace',
+                fontSize: '13px',
+                fontWeight: 500,
+                color: '#374151',
+              }}>
+                $285K median
+              </div>
+            </div>
+            <p style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.875rem',
+              color: '#6B7280',
+              textAlign: 'center',
+              margin: 0,
+            }}>
+              Example of a compact widget showing case value data for a practice area
+            </p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Link href="/solutions/api/widget" style={{
+              background: '#0A66C2',
+              color: '#FAFBFC',
+              padding: '0.875rem 2rem',
+              borderRadius: '12px',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-body)',
+              fontWeight: 600,
+              fontSize: '0.875rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+              display: 'inline-block',
+            }}>
+              Create Your Widget
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Related Solutions */}
       <section style={{ padding: '64px 24px', background: '#F7F8FA' }}>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
