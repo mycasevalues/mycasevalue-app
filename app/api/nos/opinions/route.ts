@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { generateText } from 'ai';
+import { anthropic } from '@ai-sdk/anthropic';
 import { getTopOpinionsByNos } from '../../../../lib/courtlistener';
 
 export const revalidate = 86400; // Cache for 24 hours
+export const maxDuration = 30;
 
 // Top 10 NOS codes that get the Relevant Opinions feature
 const ENABLED_NOS = new Set([442, 365, 190, 110, 360, 710, 445, 870, 440, 863]);
@@ -81,7 +84,6 @@ export async function GET(req: NextRequest) {
   }
 
   // Step 3: Generate AI summaries via Anthropic Claude
-  const anthropicKey = process.env.ANTHROPIC_API_KEY;
   const results: CachedOpinion[] = [];
 
   for (const op of opinions) {
@@ -89,28 +91,19 @@ export async function GET(req: NextRequest) {
     let summary = '';
 
     // Try to generate AI summary
-    if (anthropicKey && op.snippet) {
+    if (process.env.ANTHROPIC_API_KEY && op.snippet) {
       try {
-        const aiRes = await fetch('https://api.anthropic.com/v1/messages', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': anthropicKey,
-            'anthropic-version': '2023-06-01',
-          },
-          body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 100,
-            messages: [{
-              role: 'user',
-              content: `Summarize this court opinion in exactly one sentence (max 30 words). Case: ${op.caseName}. Court: ${op.court}. Excerpt: ${op.snippet.substring(0, 500)}`,
-            }],
-          }),
+        const result = await generateText({
+          model: anthropic('claude-sonnet-4-20250514'),
+          maxOutputTokens: 100,
+          messages: [{
+            role: 'user',
+            content: `Summarize this court opinion in exactly one sentence (max 30 words). Case: ${op.caseName}. Court: ${op.court}. Excerpt: ${op.snippet.substring(0, 500)}`,
+          }],
         });
 
-        if (aiRes.ok) {
-          const aiData = await aiRes.json();
-          summary = aiData.content?.[0]?.text || '';
+        if (result) {
+          summary = result.text || '';
         }
       } catch {
         // No summary available

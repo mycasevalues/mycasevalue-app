@@ -1,19 +1,22 @@
 /**
  * POST /api/translate
- * Translates legal jargon to plain English
+ * Translates legal jargon to plain English using Vercel AI SDK streaming.
  *
  * Request body:
  * { text: string }
  *
  * Response:
- * { translation: string, remaining: number }
+ * Streaming text response (word-by-word) or JSON error
  *
  * Rate limit: 3 translations per day per IP
  */
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
 
 import { NextRequest, NextResponse } from 'next/server';
+import { streamText } from 'ai';
+import { anthropic } from '@ai-sdk/anthropic';
 import { rateLimit, getClientIp } from '../../../lib/rate-limit';
 import { sanitizeForPrompt } from '../../../lib/sanitize';
 
@@ -44,18 +47,16 @@ function generateFallbackTranslation(text: string): string {
   const lowerText = text.toLowerCase();
   const foundPhrases: Array<{ phrase: string; definition: string }> = [];
 
-  // Find all matching legal phrases in the text
-  for (const [phrase, definition] of Object.entries(LEGAL_PHRASES)) {
+  Object.entries(LEGAL_PHRASES).forEach(([phrase, definition]) => {
     if (lowerText.includes(phrase)) {
       foundPhrases.push({ phrase, definition });
     }
-  }
+  });
 
   if (foundPhrases.length === 0) {
     return 'This text contains legal language that I cannot fully explain without using the translation service. Try copying a specific legal phrase or motion from the document, such as "motion for summary judgment" or "dismissed without prejudice".';
   }
 
-  // Build explanation from found phrases
   let explanation = 'Based on the legal terms found in your text:\n\n';
   foundPhrases.forEach(({ phrase, definition }, index) => {
     explanation += `"${phrase}" — ${definition}`;
@@ -66,65 +67,6 @@ function generateFallbackTranslation(text: string): string {
   explanation += '\n\nFor a complete translation of your full text, please sign up for unlimited translations.';
 
   return explanation;
-}
-
-/**
- * Call Claude API for translation
- */
-async function translateWithClaude(text: string): Promise<string> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    throw new Error('ANTHROPIC_API_KEY not configured');
-  }
-
-  // Sanitize text before embedding in prompt to prevent prompt injection
-  const sanitizedText = sanitizeForPrompt(text, 3000);
-
-  // 15-second timeout to prevent hanging requests
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 15000);
-
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    signal: controller.signal,
-    headers: {
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1024,
-      system: `You are an expert legal translator. Your job is to explain legal jargon and complex legal language in simple, plain English that a layperson can understand.
-
-When translating legal text:
-- Use simple, everyday words instead of jargon
-- Explain what the legal action or concept means in practical terms
-- Keep explanations concise (2-3 sentences max per concept)
-- Focus on what it means for the person reading the document
-- Do not give legal advice, just explain what the language means
-- If the text contains multiple concepts, explain each one clearly
-
-Your response should be a clear, friendly explanation that helps someone understand what the legal language means.`,
-      messages: [
-        {
-          role: 'user',
-          content: `Please translate this legal text to plain English:\n\n${sanitizedText}`,
-        },
-      ],
-    }),
-  });
-
-  clearTimeout(timeoutId);
-
-  if (!response.ok) {
-    const error = await response.json();
-    throw new Error(`Claude API error: ${error.error?.message || 'Unknown error'}`);
-  }
-
-  const data = await response.json();
-  const translation = data.content[0]?.text || '';
-  return translation;
 }
 
 export async function POST(request: NextRequest) {
@@ -171,22 +113,34 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    let translation: string;
-
-    // Try to use Claude API, fall back to pattern matching if no API key
-    try {
-      translation = await translateWithClaude(text);
-    } catch (apiError) {
-      translation = generateFallbackTranslation(text);
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+      // Fallback to pattern matching
+      const translation = generateFallbackTranslation(text);
+      return NextResponse.json({ translation, remaining: rateLimitResult.remaining });
     }
 
-    return NextResponse.json(
-      {
-        translation,
-        remaining: rateLimitResult.remaining,
-      },
-      { status: 200 }
-    );
+    const sanitizedText = sanitizeForPrompt(text, 3000);
+
+    const result = streamText({
+      model: anthropic('claude-sonnet-4-20250514'),
+      system: `You are an expert legal translator. Your job is to explain legal jargon and complex legal language in simple, plain English that a layperson can understand.
+
+When translating legal text:
+- Use simple, everyday words instead of jargon
+- Explain what the legal action or concept means in practical terms
+- Keep explanations concise (2-3 sentences max per concept)
+- Focus on what it means for the person reading the document
+- Do not give legal advice, just explain what the language means
+- If the text contains multiple concepts, explain each one clearly
+
+Your response should be a clear, friendly explanation that helps someone understand what the legal language means.`,
+      prompt: `Please translate this legal text to plain English:\n\n${sanitizedText}`,
+      maxOutputTokens: 1024,
+      temperature: 0.3,
+    });
+
+    return result.toTextStreamResponse();
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('[api/translate] error:', errorMessage);

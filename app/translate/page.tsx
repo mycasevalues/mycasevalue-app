@@ -59,18 +59,31 @@ export default function TranslatePage() {
         body: JSON.stringify({ text: input }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
+        const data = await response.json();
         setError(data.error || 'Translation failed. Please try again.');
         setLoading(false);
         return;
       }
 
-      setTranslation(data.translation);
+      // Stream the response word by word
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
+      let fullText = '';
+
+      if (reader) {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const chunk = decoder.decode(value, { stream: true });
+          fullText += chunk;
+          setTranslation(fullText);
+        }
+      }
+
       // Add to history, keeping last 5
       setHistory(prev => [
-        { input, output: data.translation, timestamp: new Date() },
+        { input, output: fullText, timestamp: new Date() },
         ...prev
       ].slice(0, 5));
     } catch (err: unknown) {

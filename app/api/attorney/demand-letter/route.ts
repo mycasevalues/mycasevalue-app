@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { streamText } from 'ai';
+import { anthropic } from '@ai-sdk/anthropic';
 import { REAL_DATA } from '../../../../lib/realdata';
 import { sanitizeForPrompt } from '../../../../lib/sanitize';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
 
 export async function POST(req: NextRequest) {
   try {
@@ -30,8 +33,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
+    if (!process.env.ANTHROPIC_API_KEY) {
       return NextResponse.json(
         { error: 'Service temporarily unavailable' },
         { status: 503 }
@@ -45,18 +47,10 @@ export async function POST(req: NextRequest) {
     const totalDamages = eco + pain + wages;
     const sanitizedFacts = sanitizeForPrompt(briefFacts, 1000);
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 2000,
-        stream: true,
-        system: `You are an expert legal professional specializing in drafting settlement demand letters. Generate a professional, concise demand letter template based on the case details provided.
+    const result = await streamText({
+      model: anthropic('claude-sonnet-4-20250514'),
+      maxOutputTokens: 2000,
+      system: `You are an expert legal professional specializing in drafting settlement demand letters. Generate a professional, concise demand letter template based on the case details provided.
 
 The letter should:
 1. Include standard legal greeting and case reference
@@ -69,10 +63,10 @@ The letter should:
 8. Be comprehensive but not excessive (2-3 pages worth)
 
 Format as a professional letter template that can be customized by the attorney.`,
-        messages: [
-          {
-            role: 'user',
-            content: `Generate a settlement demand letter for the following case:
+      messages: [
+        {
+          role: 'user',
+          content: `Generate a settlement demand letter for the following case:
 
 Case Type: ${caseType}
 District: ${district || 'Not specified'}
@@ -94,68 +88,11 @@ Case Category Stats (Historical Data):
 - Sample size: ${(nosData?.total || 1000).toLocaleString()} cases
 
 Please generate a professional demand letter template incorporating these facts and the historical settlement data to support the demand amount.`,
-          },
-        ],
-      }),
+        },
+      ],
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Anthropic API error:', errorText);
-      return NextResponse.json({ error: 'Failed to generate letter' }, { status: 500 });
-    }
-
-    // Stream the response
-    const encoder = new TextEncoder();
-    const readable = new ReadableStream({
-      async start(controller) {
-        const reader = response.body?.getReader();
-        if (!reader) {
-          controller.close();
-          return;
-        }
-        const decoder = new TextDecoder();
-        let buffer = '';
-
-        try {
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split('\n');
-            buffer = lines.pop() || '';
-
-            for (const line of lines) {
-              if (line.startsWith('data: ')) {
-                const jsonStr = line.slice(6).trim();
-                if (jsonStr === '[DONE]') continue;
-                try {
-                  const event = JSON.parse(jsonStr);
-                  if (event.type === 'content_block_delta' && event.delta?.text) {
-                    controller.enqueue(encoder.encode(event.delta.text));
-                  }
-                } catch {
-                  // skip malformed JSON
-                }
-              }
-            }
-          }
-        } catch (err) {
-          console.error('Stream error:', err);
-        } finally {
-          controller.close();
-        }
-      },
-    });
-
-    return new Response(readable, {
-      headers: {
-        'Content-Type': 'text/plain; charset=utf-8',
-        'Transfer-Encoding': 'chunked',
-        'Cache-Control': 'no-cache',
-      },
-    });
+    return result.toTextStreamResponse();
   } catch (err: unknown) {
     const errorMessage = err instanceof Error ? err.message : 'Unknown error';
     console.error('[api/attorney/demand-letter] error:', errorMessage);

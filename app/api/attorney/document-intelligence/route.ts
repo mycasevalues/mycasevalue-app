@@ -1,8 +1,12 @@
 // Requires ANTHROPIC_API_KEY in Vercel environment variables
 import { NextResponse } from 'next/server';
+import { generateText } from 'ai';
+import { anthropic } from '@ai-sdk/anthropic';
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 // Beta: auth removed — all features open
+
+export const maxDuration = 30;
 
 export async function POST(req: Request) {
   // Check for API key availability
@@ -29,19 +33,12 @@ export async function POST(req: Request) {
     const text = await file.text();
     const truncated = text.slice(0, 8000);
 
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1500,
-        messages: [{
-          role: 'user',
-          content: `You are a legal document analyst specializing in federal civil litigation. Analyze this legal document and provide:
+    const result = await generateText({
+      model: anthropic('claude-sonnet-4-20250514'),
+      maxOutputTokens: 1500,
+      messages: [{
+        role: 'user',
+        content: `You are a legal document analyst specializing in federal civil litigation. Analyze this legal document and provide:
 
 1. DOCUMENT TYPE: What kind of document is this (complaint, motion, brief, etc.)?
 2. CASE TYPE: What federal case type(s) does this involve? Include the relevant NOS (Nature of Suit) code(s).
@@ -57,12 +54,10 @@ DOCUMENT:
 ${truncated}
 
 ${text.length > 8000 ? '\n[Document truncated for analysis — showing first 8,000 characters]' : ''}`,
-        }],
-      }),
+      }],
     });
 
-    const data = await response.json();
-    const analysis = data.content?.[0]?.text || 'Analysis unavailable';
+    const analysis = result.text || 'Analysis unavailable';
 
     return NextResponse.json({ analysis });
   } catch (e) {

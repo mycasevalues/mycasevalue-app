@@ -9,6 +9,7 @@ import { validateNOSCode, validateState, validateEnum, sanitizeForPrompt } from 
  */
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
 
 type PredictionInput = {
   caseType: string;     // NOS code
@@ -157,12 +158,14 @@ function calculatePrediction(input: PredictionInput) {
  * Get AI-generated strategic insights for the case prediction
  */
 async function getAIInsights(prediction: any, input: PredictionInput): Promise<string> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
+  if (!process.env.ANTHROPIC_API_KEY) {
     return '';
   }
 
   try {
+    const { generateText } = await import('ai');
+    const { anthropic } = await import('@ai-sdk/anthropic');
+
     const nosData = REAL_DATA[input.caseType];
     const context = `
 Case Type: ${prediction.caseType}
@@ -177,38 +180,19 @@ Win Rate in Category: ${nosData?.wr ?? 55}%
 Settlement Rate in Category: ${nosData?.sp ?? 42}%
 `.trim();
 
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
-
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      signal: controller.signal,
-      headers: {
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 300,
-        system: `You are an expert litigation strategist. Provide 2-3 key strategic insights based on the case prediction data. Focus on actionable advice for the attorney about settlement strategy, risk factors, and next steps. Keep insights concise and practical.`,
-        messages: [
-          {
-            role: 'user',
-            content: `Based on this case prediction data, provide strategic insights:\n${context}`,
-          },
-        ],
-      }),
+    const result = await generateText({
+      model: anthropic('claude-sonnet-4-20250514'),
+      maxOutputTokens: 300,
+      system: `You are an expert litigation strategist. Provide 2-3 key strategic insights based on the case prediction data. Focus on actionable advice for the attorney about settlement strategy, risk factors, and next steps. Keep insights concise and practical.`,
+      messages: [
+        {
+          role: 'user',
+          content: `Based on this case prediction data, provide strategic insights:\n${context}`,
+        },
+      ],
     });
 
-    clearTimeout(timeoutId);
-
-    if (!response.ok) {
-      return '';
-    }
-
-    const data = await response.json();
-    return data.content?.[0]?.text || '';
+    return result.text || '';
   } catch {
     return '';
   }

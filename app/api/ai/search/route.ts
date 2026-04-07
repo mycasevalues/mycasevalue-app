@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { generateText } from 'ai';
+import { anthropic } from '@ai-sdk/anthropic';
 import { sanitizeForPrompt } from '../../../../lib/sanitize';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
 
 type AISearchResponse = {
   caseType?: string;
@@ -14,8 +17,7 @@ type AISearchResponse = {
 };
 
 async function extractParametersWithAI(query: string): Promise<AISearchResponse> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
+  if (!process.env.ANTHROPIC_API_KEY) {
     // Return fallback response instead of throwing - allows graceful degradation
     console.warn('[api/ai/search] ANTHROPIC_API_KEY not configured, using fallback');
     return {
@@ -27,22 +29,11 @@ async function extractParametersWithAI(query: string): Promise<AISearchResponse>
 
   const sanitizedQuery = sanitizeForPrompt(query, 500);
 
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 15000);
-
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      signal: controller.signal,
-      headers: {
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 500,
-        system: `You are an expert legal case analyzer. Your job is to extract search parameters from natural language case descriptions.
+    const result = await generateText({
+      model: anthropic('claude-sonnet-4-20250514'),
+      maxOutputTokens: 500,
+      system: `You are an expert legal case analyzer. Your job is to extract search parameters from natural language case descriptions.
 
 Extract and return ONLY a JSON object with these exact fields (omit fields that cannot be determined):
 - caseType: The type of case in plain English (e.g., "wrongful termination", "medical malpractice", "car accident")
@@ -53,25 +44,15 @@ Extract and return ONLY a JSON object with these exact fields (omit fields that 
 - interpretation: Brief 1-2 sentence plain English summary of what the user is looking for
 
 Return ONLY valid JSON, no markdown formatting, no backticks.`,
-        messages: [
-          {
-            role: 'user',
-            content: `Extract search parameters from this query: "${sanitizedQuery}"`,
-          },
-        ],
-      }),
+      messages: [
+        {
+          role: 'user',
+          content: `Extract search parameters from this query: "${sanitizedQuery}"`,
+        },
+      ],
     });
 
-    clearTimeout(timeoutId);
-
-    if (!response.ok) {
-      const error = await response.text();
-      console.error('Anthropic API error:', error);
-      throw new Error('Failed to call Anthropic API');
-    }
-
-    const data = await response.json();
-    const content = data.content?.[0]?.text || '';
+    const content = result.text || '';
 
     try {
       const parsed = JSON.parse(content);
