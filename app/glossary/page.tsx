@@ -6,11 +6,11 @@ export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Legal Glossary — Federal Court Terms & Definitions',
-  description: 'Plain-English definitions of federal court terms including NOS codes, PACER, settlements, win rates, and more.',
+  description: 'Plain-English definitions of 50+ federal court terms. NOS codes, PACER, settlement percentiles, win rates, summary judgment, and more legal jargon explained.',
   alternates: { canonical: `${SITE_URL}/glossary` },
   openGraph: {
     title: 'Legal Glossary — Federal Court Terms & Definitions',
-    description: 'Plain-English definitions of federal court terms including NOS codes, PACER, settlements, win rates, and more.',
+    description: 'Plain-English definitions of 50+ federal court terms. NOS codes, PACER, settlement percentiles, win rates, summary judgment, and more legal jargon explained.',
     url: `${SITE_URL}/glossary`,
     type: 'website',
   },

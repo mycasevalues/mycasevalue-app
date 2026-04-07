@@ -7,7 +7,7 @@ export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'About MyCaseValue — Democratizing Federal Court Data',
-  description: 'MyCaseValue democratizes federal court outcome data. Explore aggregate results from 5.1M+ cases for informed legal research.',
+  description: 'MyCaseValue democratizes federal court outcome data. Free access to win rates, settlement ranges, and timelines from 5.1M+ public federal civil cases.',
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: 'About MyCaseValue — Democratizing Federal Court Data',

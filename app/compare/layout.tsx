@@ -3,7 +3,7 @@ import { SITE_URL } from '../../lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Compare Federal Case Types — Win Rates & Outcomes | MyCaseValue',
-  description: 'Compare win rates, settlement rates, and dismissal rates across federal case types. Analyze case outcomes side by side.',
+  description: 'Compare up to 3 federal case types side by side. Analyze win rates, settlement rates, dismissal rates, and median duration from 5.1M+ real court outcomes.',
   alternates: {
     canonical: `${SITE_URL}/compare`,
   },
