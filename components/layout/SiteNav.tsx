@@ -102,15 +102,15 @@ function NavDropdown({ items, open }: { items: DropdownItem[]; open: boolean }) 
       left: 0,
       minWidth: '240px',
       background: '#FFFFFF',
-      border: '1px solid #e5e7eb',
-      borderRadius: '20px',
+      border: '1px solid #E0DDD8',
+      borderRadius: '8px',
       padding: '8px 0',
-      boxShadow: '0 8px 24px rgba(0,0,0,0.10)',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
       zIndex: 300,
     }}>
       {items.map((item, i) =>
         item.divider ? (
-          <div key={`div-${i}`} style={{ height: 1, background: '#e5e7eb', margin: '6px 12px' }} />
+          <div key={`div-${i}`} style={{ height: 1, background: '#E0DDD8', margin: '6px 12px' }} />
         ) : (
           <Link
             key={item.href}
@@ -227,9 +227,9 @@ export default function SiteNav() {
           position: 'sticky',
           top: 0,
           zIndex: 200,
-          height: '64px',
+          height: '52px',
           background: '#FFFFFF',
-          borderBottom: '1px solid #E5E7EB',
+          borderBottom: '1px solid #E0DDD8',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -273,10 +273,11 @@ export default function SiteNav() {
                         fontFamily: 'var(--font-display)',
                         fontSize: '14px',
                         fontWeight: 500,
-                        color: active ? '#0A66C2' : '#1a1a1a',
+                        color: active ? '#0A66C2' : '#666666',
                         textDecoration: 'none',
                         borderBottom: active ? '2px solid #0A66C2' : '2px solid transparent',
-                        transition: 'color 150ms',
+                        borderRadius: '4px',
+                        transition: 'color 150ms, background 150ms',
                         whiteSpace: 'nowrap',
                       }}
                       aria-current={active ? 'page' : undefined}
@@ -302,10 +303,11 @@ export default function SiteNav() {
                     fontFamily: 'var(--font-display)',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: active ? '#0A66C2' : '#1a1a1a',
+                    color: active ? '#0A66C2' : '#666666',
                     textDecoration: 'none',
                     borderBottom: active ? '2px solid #0A66C2' : '2px solid transparent',
-                    transition: 'color 150ms',
+                    borderRadius: '4px',
+                    transition: 'color 150ms, background 150ms',
                     whiteSpace: 'nowrap',
                     ...(item.attorney ? { borderLeft: '2px solid #0A66C2', marginLeft: '8px', paddingLeft: '14px' } : {}),
                   }}
@@ -392,7 +394,7 @@ export default function SiteNav() {
       {mobileOpen && (
         <div
           style={{
-            position: 'fixed', inset: 0, top: '64px', zIndex: 198,
+            position: 'fixed', inset: 0, top: '52px', zIndex: 198,
             background: 'rgba(0,0,0,0.3)',
           }}
           onClick={() => { setMobileOpen(false); hamburgerRef.current?.focus(); }}
@@ -406,13 +408,13 @@ export default function SiteNav() {
         className="navbar-mobile-drawer"
         style={{
           position: 'fixed',
-          top: '64px',
+          top: '52px',
           left: 0,
           bottom: 0,
           width: '300px',
           zIndex: 199,
           background: '#FFFFFF',
-          borderRight: '1px solid #E5E7EB',
+          borderRight: '1px solid #E0DDD8',
           boxShadow: '4px 0 16px rgba(0,0,0,0.08)',
           transform: mobileOpen ? 'translateX(0)' : 'translateX(-100%)',
           transition: 'transform 250ms cubic-bezier(0.4, 0, 0.2, 1)',
@@ -532,11 +534,11 @@ export default function SiteNav() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        .navbar-item:hover { color: #0A66C2 !important; }
-        .navbar-signin:hover { color: #0A66C2 !important; }
+        .navbar-item:hover { color: #191919 !important; background: #F3F2EF !important; }
+        .navbar-signin:hover { color: #191919 !important; }
         .navbar-cta:hover { background: #004182 !important; }
-        .navbar-dropdown-item:hover { background: #f9fafb !important; color: #0A66C2 !important; }
-        .navbar-mobile-subitem:hover { background: #f3f4f6 !important; }
+        .navbar-dropdown-item:hover { background: #F3F2EF !important; color: #191919 !important; }
+        .navbar-mobile-subitem:hover { background: #F3F2EF !important; }
 
         @media (max-width: 1024px) {
           .navbar-desktop-items { display: none !important; }
