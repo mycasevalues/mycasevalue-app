@@ -159,8 +159,124 @@ export default function ApiPage() {
         </div>
       </section>
 
+      {/* What the API Provides */}
+      <section style={{ padding: '80px 24px', background: '#FFFFFF' }}>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '2rem',
+            fontWeight: 600,
+            color: '#0f0f0f',
+            textAlign: 'center',
+            marginBottom: '48px',
+          }}>
+            What the API Provides
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '32px' }}>
+            <div style={{ padding: '24px', background: '#F7F8FA', borderRadius: '8px', border: '1px solid #E5E7EB' }}>
+              <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Case Statistics</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.6, margin: 0 }}>
+                Win rates, settlement data, and outcome predictions for 84 case types and 94 districts
+              </p>
+            </div>
+            <div style={{ padding: '24px', background: '#F7F8FA', borderRadius: '8px', border: '1px solid #E5E7EB' }}>
+              <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Judge Intelligence</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.6, margin: 0 }}>
+                Judge profiles, historical case outcomes, and plaintiff/defendant statistics
+              </p>
+            </div>
+            <div style={{ padding: '24px', background: '#F7F8FA', borderRadius: '8px', border: '1px solid #E5E7EB' }}>
+              <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Trend Analysis</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.6, margin: 0 }}>
+                10-year historical trends showing how case outcomes have evolved over time
+              </p>
+            </div>
+            <div style={{ padding: '24px', background: '#F7F8FA', borderRadius: '8px', border: '1px solid #E5E7EB' }}>
+              <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>AI Predictions</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.6, margin: 0 }}>
+                Machine learning-powered outcome predictions based on case characteristics and historical patterns
+              </p>
+            </div>
+            <div style={{ padding: '24px', background: '#F7F8FA', borderRadius: '8px', border: '1px solid #E5E7EB' }}>
+              <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>District Data</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.6, margin: 0 }}>
+                Geographic breakdowns with jurisdiction-specific case statistics and trends
+              </p>
+            </div>
+            <div style={{ padding: '24px', background: '#F7F8FA', borderRadius: '8px', border: '1px solid #E5E7EB' }}>
+              <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Real-Time Updates</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.6, margin: 0 }}>
+                Latest data from CourtListener and FJC Integrated Database with automatic daily updates
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Tiers */}
+      <section style={{ padding: '80px 24px', background: '#F7F8FA' }}>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '2rem',
+            fontWeight: 600,
+            color: '#0f0f0f',
+            textAlign: 'center',
+            marginBottom: '48px',
+          }}>
+            Pricing Tiers
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+            <div style={{ padding: '32px', background: '#FFFFFF', borderRadius: '12px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Starter</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0A66C2', margin: '0 0 16px 0' }}>$99<span style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', margin: '16px 0', lineHeight: 1.6 }}>
+                Perfect for individual attorneys and small practices
+              </p>
+              <ul style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.8, listStyle: 'none', padding: 0, margin: '16px 0' }}>
+                <li>10 requests/min rate limit</li>
+                <li>100K requests/month</li>
+                <li>Access to 7 core endpoints</li>
+                <li>Standard support</li>
+              </ul>
+            </div>
+
+            <div style={{ padding: '32px', background: '#FFFFFF', borderRadius: '12px', border: '2px solid #0A66C2', boxShadow: '0 4px 16px rgba(10, 102, 194, 0.15)', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: '#0A66C2', color: '#FAFBFC', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Most Popular
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: '#0f0f0f', marginTop: '16px', marginBottom: '8px' }}>Professional</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0A66C2', margin: '0 0 16px 0' }}>$399<span style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', margin: '16px 0', lineHeight: 1.6 }}>
+                Ideal for law firms and legal tech platforms
+              </p>
+              <ul style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.8, listStyle: 'none', padding: 0, margin: '16px 0' }}>
+                <li>30 requests/min rate limit</li>
+                <li>1M requests/month</li>
+                <li>All endpoints including AI prediction</li>
+                <li>Priority support</li>
+              </ul>
+            </div>
+
+            <div style={{ padding: '32px', background: '#FFFFFF', borderRadius: '12px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Enterprise</h3>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0A66C2', margin: '0 0 16px 0' }}>Custom</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', margin: '16px 0', lineHeight: 1.6 }}>
+                For mission-critical integrations at scale
+              </p>
+              <ul style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', lineHeight: 1.8, listStyle: 'none', padding: 0, margin: '16px 0' }}>
+                <li>Unlimited rate limits</li>
+                <li>Unlimited requests</li>
+                <li>Custom endpoints & webhooks</li>
+                <li>Dedicated support & SLA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Get Started CTA */}
-      <section style={{ padding: '64px 24px', background: '#FFFFFF', textAlign: 'center' }}>
+      <section style={{ padding: '80px 24px', background: '#FFFFFF', textAlign: 'center' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
@@ -169,7 +285,7 @@ export default function ApiPage() {
             color: '#0f0f0f',
             marginBottom: '16px',
           }}>
-            Start building with {SITE_NAME} APIs
+            Ready to get started?
           </h2>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -178,10 +294,10 @@ export default function ApiPage() {
             marginBottom: '32px',
             lineHeight: 1.6,
           }}>
-            Get started in minutes with our comprehensive API documentation, sandbox environment, and developer support team.
+            View our complete developer documentation and request access to start building with the {SITE_NAME} API today.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/solutions/api" style={{
+            <Link href="/developers" style={{
               background: '#0A66C2',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
@@ -194,9 +310,9 @@ export default function ApiPage() {
               letterSpacing: '0.04em',
               display: 'inline-block',
             }}>
-              View API Docs
+              View Full Documentation
             </Link>
-            <Link href="/calculator" style={{
+            <Link href="/solutions/enterprise" style={{
               background: 'transparent',
               color: '#0f0f0f',
               padding: '0.875rem 2rem',
@@ -210,7 +326,7 @@ export default function ApiPage() {
               letterSpacing: '0.04em',
               display: 'inline-block',
             }}>
-              Try Calculator
+              Request API Access
             </Link>
           </div>
         </div>

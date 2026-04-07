@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Metadata } from 'next';
 import CostMonitor from '@/components/admin/CostMonitor';
+import APIUsagePanel from '@/components/admin/APIUsagePanel';
 
 /**
  * Admin Panel
@@ -15,7 +16,7 @@ import CostMonitor from '@/components/admin/CostMonitor';
  * TODO: Add proper error handling and loading states for all API calls
  */
 
-type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email' | 'costs';
+type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email' | 'costs' | 'api';
 
 const COLORS = {
   primary: '#0A66C2',
@@ -148,6 +149,7 @@ export default function AdminPage() {
     { id: 'rules', label: 'Local Rules Editor', icon: 'Settings' },
     { id: 'users', label: 'User Management', icon: 'Users' },
     { id: 'email', label: 'Email Manager', icon: 'Mail' },
+    { id: 'api', label: 'API Usage', icon: 'Code' },
     { id: 'costs', label: 'Cost Monitoring', icon: 'DollarSign' },
   ] as const;
 
@@ -993,6 +995,13 @@ export default function AdminPage() {
           </div>
         )}
 
+        {/* API Usage Section */}
+        {activeSection === 'api' && (
+          <div>
+            <APIUsagePanel mockMode={true} />
+          </div>
+        )}
+
         {/* Cost Monitoring Section */}
         {activeSection === 'costs' && (
           <div>
@@ -1016,6 +1025,7 @@ function getSectionTitle(section: SectionType): string {
     rules: 'Local Rules Editor',
     users: 'User Management',
     email: 'Email Manager',
+    api: 'API Usage & Metrics',
     costs: 'Cost Monitoring',
   };
   return titles[section];
@@ -1029,6 +1039,7 @@ function getSectionDescription(section: SectionType): string {
     rules: 'Edit and manage local rules configuration',
     users: 'Manage user accounts and permissions',
     email: 'Monitor emails and manage subscriber communications',
+    api: 'Monitor API key usage, request volume, and rate limit violations',
     costs: 'Track service costs and monthly spending across all platforms',
   };
   return descriptions[section];
