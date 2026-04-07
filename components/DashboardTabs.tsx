@@ -2,11 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import ReferralDashboard from './ReferralDashboard';
 
 type Tab = 'overview' | 'history' | 'saved' | 'alerts' | 'account';
 
 interface DashboardTabsProps {
   userEmail: string;
+  userId?: string;
   memberSince: string;
   planLabel: string;
   reportsCount: number;
@@ -26,7 +28,7 @@ const TABS: { key: Tab; label: string; icon: string }[] = [
 ];
 
 export default function DashboardTabs({
-  userEmail, memberSince, planLabel, reportsCount, savedCount, alertsCount,
+  userEmail, userId, memberSince, planLabel, reportsCount, savedCount, alertsCount,
   recentActivity, searchHistory, savedReports,
 }: DashboardTabsProps) {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
@@ -316,20 +318,8 @@ export default function DashboardTabs({
             </button>
           </div>
 
-          {/* Referral */}
-          <div style={cardStyle}>
-            <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>Referral Program</h3>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', background: '#FAFBFC', borderRadius: 8, border: '1px solid #E5E7EB', marginBottom: 10 }}>
-              <code style={{ flex: 1, fontSize: '12px', color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{referralLink}</code>
-              <button
-                onClick={() => { navigator.clipboard.writeText(referralLink); }}
-                style={{ padding: '6px 12px', background: '#0A66C2', color: '#FFF', border: 'none', borderRadius: 8, fontSize: '11px', fontWeight: 600, cursor: 'pointer' }}
-              >
-                Share
-              </button>
-            </div>
-            <p style={{ fontSize: '12px', color: '#4B5563', margin: 0 }}>Referrals: 0 · Share your link to earn free premium days.</p>
-          </div>
+          {/* Referral Program */}
+          {userId && <ReferralDashboard userId={userId} userEmail={userEmail} />}
 
           {/* Danger Zone */}
           <div style={{ ...cardStyle, borderColor: '#FECACA' }}>

@@ -57,6 +57,7 @@ export default async function DashboardPage() {
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   let userEmail = '';
+  let userId = '';
   let userCreatedAt = '';
   let userPlan = 'free';
   let planStatus = 'Free tier';
@@ -79,6 +80,7 @@ export default async function DashboardPage() {
       redirect('/sign-in');
     }
 
+    userId = user.id ?? '';
     userEmail = user.email ?? '';
     userCreatedAt = user.created_at ?? '';
 
@@ -893,6 +895,7 @@ export default async function DashboardPage() {
         <div style={{ marginTop: 32 }}>
           <DashboardTabs
             userEmail={userEmail}
+            userId={userId}
             memberSince={memberSince}
             planLabel={planLabel[tierKey] || 'Free'}
             reportsCount={recentReports.length}
