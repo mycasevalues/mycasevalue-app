@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Metadata } from 'next';
+import CostMonitor from '@/components/admin/CostMonitor';
 
 /**
  * Admin Panel
@@ -14,7 +15,7 @@ import { Metadata } from 'next';
  * TODO: Add proper error handling and loading states for all API calls
  */
 
-type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email';
+type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email' | 'costs';
 
 const COLORS = {
   primary: '#0A66C2',
@@ -147,6 +148,7 @@ export default function AdminPage() {
     { id: 'rules', label: 'Local Rules Editor', icon: 'Settings' },
     { id: 'users', label: 'User Management', icon: 'Users' },
     { id: 'email', label: 'Email Manager', icon: 'Mail' },
+    { id: 'costs', label: 'Cost Monitoring', icon: 'DollarSign' },
   ] as const;
 
   return (
@@ -990,6 +992,13 @@ export default function AdminPage() {
             </div>
           </div>
         )}
+
+        {/* Cost Monitoring Section */}
+        {activeSection === 'costs' && (
+          <div>
+            <CostMonitor />
+          </div>
+        )}
       </main>
     </div>
   );
@@ -1007,6 +1016,7 @@ function getSectionTitle(section: SectionType): string {
     rules: 'Local Rules Editor',
     users: 'User Management',
     email: 'Email Manager',
+    costs: 'Cost Monitoring',
   };
   return titles[section];
 }
@@ -1019,6 +1029,7 @@ function getSectionDescription(section: SectionType): string {
     rules: 'Edit and manage local rules configuration',
     users: 'Manage user accounts and permissions',
     email: 'Monitor emails and manage subscriber communications',
+    costs: 'Track service costs and monthly spending across all platforms',
   };
   return descriptions[section];
 }
