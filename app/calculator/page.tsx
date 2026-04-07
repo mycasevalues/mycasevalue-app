@@ -148,7 +148,7 @@ interface SavedScenario {
 /* ══════════════════════════════════════════════════════════════════════ */
 export default function CalculatorPage() {
   const [caseType, setCaseType] = useState('');
-  const [district, setDistrict] = useState('');
+  // District input removed — estimates reflect national averages
   const [damages, setDamages] = useState('');
   const [represented, setRepresented] = useState('');
   const [severity, setSeverity] = useState('');
@@ -161,7 +161,7 @@ export default function CalculatorPage() {
 
   function resetForm() {
     setCaseType('');
-    setDistrict('');
+    // district input removed
     setDamages('');
     setRepresented('');
     setSeverity('');
@@ -172,7 +172,7 @@ export default function CalculatorPage() {
     setResults(null);
   }
 
-  const stateOptions = STATES.filter(s => s.id !== '');
+  // stateOptions removed — district input no longer shown
   const canCalculate = caseType !== '' && damages !== '' && Number(damages.replace(/[^0-9.]/g, '')) > 0;
 
   function calculate() {
@@ -256,7 +256,7 @@ export default function CalculatorPage() {
             Settlement Calculator
           </h1>
           <p className="text-base leading-relaxed max-w-2xl sm:text-lg" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
-            Estimate your settlement range based on federal court outcomes, your district, and case type. Our calculator uses data from 5.1M+ real federal cases to provide realistic estimates.
+            Estimate your settlement range based on federal court outcomes and case type. Our calculator uses data from 5.1M+ real federal cases to provide realistic national estimates.
           </p>
         </div>
       </div>
@@ -304,36 +304,10 @@ export default function CalculatorPage() {
               </select>
             </div>
 
-            {/* Federal District */}
-            <div>
-              <label htmlFor="calc-district" className="block mb-3" style={{ color: '#0f0f0f', fontFamily: 'var(--font-body)', fontSize: '13px', fontWeight: 600 }}>
-                Federal District
-              </label>
-              <select
-                id="calc-district"
-                value={district}
-                onChange={(e) => { setDistrict(e.target.value); setResults(null); }}
-                className="w-full px-4 border text-sm transition-all focus:outline-none"
-                style={{
-                  height: '48px',
-                  borderRadius: '12px',
-                  borderColor: district === '' ? '#E5E7EB' : '#8B5CF6',
-                  background: '#FAFBFC',
-                  color: district ? '#0f0f0f' : '#4B5563',
-                  fontFamily: 'var(--font-body)',
-                  borderWidth: '1px',
-                  fontSize: '14px',
-                }}
-              >
-                <option value="">Select your district (optional)...</option>
-                {stateOptions.map(state => (
-                  <option key={state.id} value={state.id}>
-                    {state.label}
-                  </option>
-                ))}
-              </select>
-              <p className="text-[11px] mt-2" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-                Estimates reflect national averages. District-specific data is available in Case Reports.
+            {/* District Note */}
+            <div style={{ padding: '12px 16px', borderRadius: '12px', background: '#F7F8FA', border: '1px solid #E5E7EB' }}>
+              <p style={{ color: '#4B5563', fontFamily: 'var(--font-body)', fontSize: '13px', margin: 0, lineHeight: 1.5 }}>
+                Estimates reflect national averages. District-specific data is available in <a href="/cases" style={{ color: '#8B5CF6', textDecoration: 'none', fontWeight: 600 }}>Case Reports</a>.
               </p>
             </div>
 
