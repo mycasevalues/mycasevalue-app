@@ -13,6 +13,7 @@ import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
 import localFont from 'next/font/local';
+import { jakarta, plexMono } from '../lib/fonts';
 // Inter — LinkedIn-style typography. Self-hosted to avoid Google Fonts network failures at build time.
 const inter = localFont({
   src: [
@@ -271,7 +272,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${inter.variable} ${monoFont.variable}`}>
+    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${inter.variable} ${monoFont.variable} ${jakarta.variable} ${plexMono.variable}`}>
       <head>
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
