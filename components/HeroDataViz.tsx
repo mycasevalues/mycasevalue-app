@@ -309,7 +309,10 @@ export default function HeroDataViz({ bars = DEFAULT_BARS, cards = DEFAULT_CARDS
   }, []);
 
   return (
-    <div style={{ width: '100%', paddingTop: '40px', paddingBottom: '40px' }}>
+    <div
+      data-component="hero-data-viz"
+      style={{ width: '100%', paddingTop: '40px', paddingBottom: '40px' }}
+    >
       <div
         style={{
           fontSize: '11px',

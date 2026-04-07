@@ -147,6 +147,26 @@
     -webkit-overflow-scrolling: touch;
   }
 
+  /* Scroll indicator for tables with >4 columns */
+  .table-scroll-indicator::after {
+    content: 'Scroll →';
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: #999;
+    padding: 4px 8px;
+  }
+
+  /* ============================================================
+     SETTLEMENT RANGE RESPONSIVE
+     ============================================================ */
+  /* Stack settlement range labels vertically on small screens */
+  [data-component="settlement-range"] .labels,
+  .settlement-labels {
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
   /* ============================================================
      GRID & FLEXBOX RESPONSIVE
      ============================================================ */
@@ -194,6 +214,13 @@
   main {
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  /* ============================================================
+     HERO DATA VIZ — Hide on mobile
+     ============================================================ */
+  [data-component="hero-data-viz"] {
+    display: none !important;
   }
 
   /* ============================================================
@@ -296,6 +323,15 @@
     display: flex !important;
     flex-direction: column;
     gap: 16px;
+  }
+
+  /* ============================================================
+     PRIMARY METRICS — 2x2 grid on mobile
+     ============================================================ */
+  [data-component="metrics-row"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
   }
 
   /* ============================================================
@@ -615,6 +651,15 @@
   input::placeholder,
   textarea::placeholder {
     color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* ============================================================
+   NOS DISTRICT COMPARISON — Show top 5 on mobile
+   ============================================================ */
+@media (max-width: 480px) {
+  [data-component="district-bars"] > *:nth-child(n+6) {
+    display: none !important;
   }
 }
 
