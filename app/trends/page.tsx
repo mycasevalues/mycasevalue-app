@@ -8,6 +8,8 @@ import { getCircuitWinRates, getOutcomeBreakdown } from '../../lib/trends';
 import { fmtK } from '../../lib/format';
 import CaseTypeComparison from '../../components/CaseTypeComparison';
 import DataFreshness from '../../components/DataFreshness';
+
+const OutcomeSankey = dynamic(() => import('../../components/charts/OutcomeSankey'), { ssr: false });
 import UpdatedBadge from '../../components/UpdatedBadge';
 
 const TrendCharts = dynamic(() => import('../../components/features/TrendCharts'), {
@@ -648,6 +650,14 @@ export default function TrendsPage() {
               </div>
             );
           })()}
+
+          {/* Sankey Diagram */}
+          <div className="lex-card p-6 mt-8">
+            <h3 className="font-display font-semibold mb-4" style={{ color: '#0f0f0f', fontSize: '1.1rem' }}>
+              Case Flow: Filing to Disposition
+            </h3>
+            <OutcomeSankey />
+          </div>
         </section>
 
         {/* Win Rate by Category */}
