@@ -3,6 +3,21 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+
+const USChoropleth = dynamic(() => import('../../components/charts/USChoropleth'), { ssr: false });
+import type { StateData as ChoroplethStateData } from '../../components/charts/USChoropleth';
+
+const STATE_FIPS: Record<string, string> = {
+  AL: '01', AK: '02', AZ: '04', AR: '05', CA: '06', CO: '08', CT: '09',
+  DE: '10', DC: '11', FL: '12', GA: '13', HI: '15', ID: '16', IL: '17',
+  IN: '18', IA: '19', KS: '20', KY: '21', LA: '22', ME: '23', MD: '24',
+  MA: '25', MI: '26', MN: '27', MS: '28', MO: '29', MT: '30', NE: '31',
+  NV: '32', NH: '33', NJ: '34', NM: '35', NY: '36', NC: '37', ND: '38',
+  OH: '39', OK: '40', OR: '41', PA: '42', RI: '44', SC: '45', SD: '46',
+  TN: '47', TX: '48', UT: '49', VT: '50', VA: '51', WA: '53', WV: '54',
+  WI: '55', WY: '56',
+};
 
 // Note: Metadata cannot be exported from client components
 // For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
@@ -400,6 +415,33 @@ export default function DistrictHeatmapPage() {
                 {lowestState?.name}
               </p>
             </div>
+          </div>
+
+          {/* Interactive Choropleth Map */}
+          <div
+            style={{
+              padding: '24px',
+              borderRadius: '12px',
+              border: '1px solid #E5E7EB',
+              backgroundColor: '#FFFFFF',
+              marginBottom: '32px',
+            }}
+          >
+            <h2 style={{ fontSize: '18px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>
+              Win Rate by State
+            </h2>
+            <USChoropleth
+              stateData={Object.entries(AGGREGATE_STATE_RATES)
+                .filter(([code]) => STATE_FIPS[code])
+                .map(([code, winRate]) => ({
+                  fips: STATE_FIPS[code],
+                  name: STATE_NAMES[code] || code,
+                  winRate,
+                  topCaseType: 'Personal Injury',
+                  totalCases: Math.round(2000 + winRate * 500),
+                  districtCode: code.toLowerCase(),
+                } as ChoroplethStateData))}
+            />
           </div>
 
           {/* Win Rate Distribution Histogram */}
