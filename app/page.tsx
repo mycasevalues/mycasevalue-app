@@ -8,6 +8,7 @@ import CaseFilingTicker from '../components/CaseFilingTicker';
 import HeroDataViz from '../components/HeroDataViz';
 import DemoHomepage from '../components/DemoHomepage';
 import { HeroEntrance, StaggerGrid, StaggerItem, FadeIn } from '../components/motion';
+import { SITS } from '../lib/data';
 
 const ACCENT_COLOR = '#0A66C2';
 const TEXT_COLOR = '#0f0f0f';
@@ -341,6 +342,58 @@ export default function HomePage() {
 
       {/* Live Case Filing Ticker */}
       <CaseFilingTicker />
+
+      {/* NOS Case Type Selector */}
+      <section style={{ padding: '60px 20px', borderTop: '1px solid #E0DDD8' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <p className="mcv-section-label">Browse by case type</p>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em' }}>
+              84 Federal Case Types
+            </h2>
+            <p style={{ fontSize: '16px', color: '#4B5563', maxWidth: '640px', margin: '0 auto', lineHeight: 1.6 }}>
+              Select a category to explore win rates, settlements, and outcome data for every federal case type.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
+            {SITS.map((cat) => (
+              <div
+                key={cat.id}
+                className="nos-category-card"
+                style={{ borderRadius: '12px', border: '1px solid #E5E7EB', padding: '20px', backgroundColor: '#FFFFFF', transition: 'all 0.2s' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: cat.color, flexShrink: 0 }} />
+                  <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', margin: 0 }}>{cat.label}</h3>
+                </div>
+                <p style={{ fontSize: '12px', color: '#4B5563', margin: '0 0 12px 0', lineHeight: 1.4 }}>{cat.sub}</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  {cat.opts.slice(0, 4).map((opt) => (
+                    <Link
+                      key={`${cat.id}-${opt.nos}-${opt.label}`}
+                      href={`/nos/${opt.nos}`}
+                      style={{ fontSize: '11px', padding: '3px 8px', borderRadius: '6px', backgroundColor: '#F3F4F6', color: '#004182', textDecoration: 'none', fontWeight: 500, transition: 'background-color 0.2s' }}
+                    >
+                      {opt.label}
+                    </Link>
+                  ))}
+                  {cat.opts.length > 4 && (
+                    <span style={{ fontSize: '11px', padding: '3px 8px', color: '#4B5563' }}>
+                      +{cat.opts.length - 4} more
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <style>{`
+            .nos-category-card:hover {
+              border-color: #0A66C2;
+              box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
+            }
+          `}</style>
+        </div>
+      </section>
 
       {/* What This Data Actually Tells You — S.D.N.Y. Example */}
       <section style={{ borderTop: '1px solid #E0DDD8', padding: '80px 20px' }}>

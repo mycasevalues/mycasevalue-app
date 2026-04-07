@@ -309,5 +309,58 @@
     "logos": "Logotipos",
     "screenshots": "Capturas de Pantalla",
     "executiveBios": "Biografías Ejecutivas"
+  },
+  "account": {
+    "settings": "Configuración de la Cuenta",
+    "profile": "Perfil",
+    "password": "Contraseña",
+    "changePassword": "Cambiar Contraseña",
+    "subscription": "Suscripción",
+    "apiKeys": "Claves API",
+    "generateKey": "Generar Nueva Clave API",
+    "revokeKey": "Revocar Clave",
+    "signOut": "Cerrar Sesión",
+    "deleteAccount": "Eliminar Cuenta",
+    "dangerZone": "Zona de Peligro",
+    "savingChanges": "Guardando Cambios...",
+    "profileUpdated": "Perfil actualizado correctamente",
+    "passwordUpdated": "Contraseña actualizada correctamente"
+  },
+  "referral": {
+    "title": "Programa de Referidos",
+    "shareLink": "Compartir Enlace",
+    "copyLink": "Copiar Enlace",
+    "copied": "Copiado",
+    "generateCode": "Generar Código de Referido",
+    "howItWorks": "Cómo Funciona",
+    "rewardTiers": "Niveles de Recompensa",
+    "milestone": "Meta",
+    "reward": "Recompensa"
+  },
+  "pricing": {
+    "title": "Planes y Precios",
+    "free": "Gratis",
+    "singleReport": "Informe Único",
+    "unlimited": "Ilimitado",
+    "attorneyMode": "Modo Abogado",
+    "enterprise": "Empresa",
+    "perMonth": "por mes",
+    "perYear": "por año",
+    "currentPlan": "Plan Actual",
+    "upgrade": "Mejorar Plan",
+    "features": "Características",
+    "mostPopular": "Más Popular"
+  },
+  "judges": {
+    "directory": "Directorio de Jueces",
+    "profile": "Perfil del Juez",
+    "search": "Buscar Juez",
+    "compare": "Comparar Jueces",
+    "winRate": "Tasa de Éxito",
+    "casesHandled": "Casos Manejados",
+    "avgDuration": "Duración Promedio",
+    "recentOpinions": "Opiniones Recientes",
+    "aiAnalysis": "Análisis de Comportamiento",
+    "findByCase": "Buscar Juez por Tipo de Caso"
   }
 }
