@@ -11,6 +11,7 @@ import { NOS_STATUTE_MAP } from '../../../lib/statutes';
 import RelevantOpinions from '../../../components/RelevantOpinions';
 import { ATTORNEY_IMPACT } from '../../../lib/attorney-impact';
 import { getWinRateColor } from '../../../lib/color-scale';
+import { AnimatedRangeBar, MetricsStagger, MetricsStaggerItem } from '../../../components/motion/NosAnimations';
 
 // ISR: revalidate every 90 days (matches FJC quarterly update cycle)
 export const revalidate = 7776000;
@@ -765,14 +766,14 @@ export default async function NOSPage({ params }: PageProps) {
           <div style={{ marginBottom: '24px', textAlign: 'center' }}>
             <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: '#EDF3FB', color: '#0A66C2', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2024</Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <MetricsStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { label: 'Win Rate', value: `${winRate}%`, color: '#0A66C2', showSample: true, showDot: true },
               { label: 'Median Duration', value: `${medianDuration} mo`, color: '#0A66C2', showSample: false, showDot: false },
               { label: 'Settlement Rate', value: `${settleRate}%`, color: '#057642', showSample: false, showDot: false },
               { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: '#0A66C2', showSample: false, showDot: false },
             ].map((stat, i) => (
-              <div key={i} className="stat-card">
+              <MetricsStaggerItem key={i} className="stat-card">
                 <div className="stat-value" style={{ color: stat.color, display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
                   {stat.value}
                   {stat.showDot && totalCases > 0 && (
@@ -783,9 +784,9 @@ export default async function NOSPage({ params }: PageProps) {
                 <div className="stat-label">
                   {stat.label}
                 </div>
-              </div>
+              </MetricsStaggerItem>
             ))}
-          </div>
+          </MetricsStagger>
 
           {/* Updated Badge */}
           <div style={{ marginTop: '20px', display: 'flex', gap: '12px', alignItems: 'center', justifyContent: 'center' }}>
@@ -940,7 +941,7 @@ export default async function NOSPage({ params }: PageProps) {
                 Typical monetary recovery for {nosInfo.label} cases (in thousands)
               </p>
 
-              <div className="recovery-range-bar">
+              <AnimatedRangeBar className="recovery-range-bar">
                 <div className="recovery-track"></div>
                 <div
                   className="recovery-gradient"
@@ -955,7 +956,7 @@ export default async function NOSPage({ params }: PageProps) {
                     left: `${(recoveryRange.md / recoveryRange.hi) * 100}%`,
                   }}
                 ></div>
-              </div>
+              </AnimatedRangeBar>
 
               <div className="recovery-percentiles" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center', marginTop: '28px' }}>
                 <div>

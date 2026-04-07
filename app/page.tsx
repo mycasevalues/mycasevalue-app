@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AnimatedCounter from '../components/AnimatedCounter';
 import DataFreshness from '../components/DataFreshness';
+import { HeroEntrance, StaggerGrid, StaggerItem, FadeIn } from '../components/motion';
 
 const ACCENT_COLOR = '#0A66C2';
 const TEXT_COLOR = '#0f0f0f';
@@ -91,32 +92,36 @@ export default function HomePage() {
         }}
       >
         <div style={{ maxWidth: '1280px', margin: '0 auto', paddingLeft: '20px', paddingRight: '20px' }}>
-          <h1
-            style={{
-              fontSize: '56px',
-              fontWeight: 600,
-              color: TEXT_COLOR,
-              marginTop: '0',
-              marginBottom: '20px',
-              lineHeight: '1.2',
-            }}
-          >
-            What really happened in cases like yours.
-          </h1>
+          <HeroEntrance delay={0} y={12}>
+            <h1
+              style={{
+                fontSize: '56px',
+                fontWeight: 600,
+                color: TEXT_COLOR,
+                marginTop: '0',
+                marginBottom: '20px',
+                lineHeight: '1.2',
+              }}
+            >
+              What really happened in cases like yours.
+            </h1>
+          </HeroEntrance>
 
-          <p
-            style={{
-              fontSize: '20px',
-              color: '#666666',
-              marginTop: '0',
-              marginBottom: '40px',
-              maxWidth: '800px',
-              margin: '0 auto 40px',
-              lineHeight: '1.6',
-            }}
-          >
-            Win rates, settlement ranges, judge analytics, and case timelines from 5.1 million public federal court records. Free during beta. No account required.
-          </p>
+          <HeroEntrance delay={0.1} y={12}>
+            <p
+              style={{
+                fontSize: '20px',
+                color: '#666666',
+                marginTop: '0',
+                marginBottom: '40px',
+                maxWidth: '800px',
+                margin: '0 auto 40px',
+                lineHeight: '1.6',
+              }}
+            >
+              Win rates, settlement ranges, judge analytics, and case timelines from 5.1 million public federal court records. Free during beta. No account required.
+            </p>
+          </HeroEntrance>
 
           {/* Search Input */}
           <div style={{ marginBottom: '60px' }}>
@@ -167,6 +172,7 @@ export default function HomePage() {
           </div>
 
           {/* CTA Buttons */}
+          <HeroEntrance delay={0.3} y={12}>
           <div
             style={{
               display: 'flex',
@@ -211,6 +217,7 @@ export default function HomePage() {
               View Case Types
             </Link>
           </div>
+          </HeroEntrance>
 
           {/* Trust Line */}
           <p style={{ fontSize: '14px', color: '#999999', margin: '20px 0 0', letterSpacing: '0.02em' }}>
@@ -384,7 +391,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div
+          <StaggerGrid
             className="features-grid"
             style={{
               display: 'grid',
@@ -393,8 +400,8 @@ export default function HomePage() {
             }}
           >
             {FEATURES.map((feature) => (
+              <StaggerItem key={feature.title}>
               <Link
-                key={feature.title}
                 href={feature.href}
                 style={{
                   textDecoration: 'none',
@@ -467,8 +474,9 @@ export default function HomePage() {
                   </div>
                 </div>
               </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGrid>
         </div>
       </section>
 

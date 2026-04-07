@@ -6,6 +6,7 @@ import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
 import DataFreshness from '../../components/DataFreshness';
+import { StaggerGrid, StaggerItem } from '../../components/motion';
 import { SITE_URL } from '../../lib/site-config';
 import ConfidenceDot from '../../components/ConfidenceDot';
 
@@ -340,11 +341,12 @@ export default function CasesIndexPage() {
             </button>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
+          <StaggerGrid style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24 }}>
             {filtered.map((category) => {
               const catStats = getCategoryStats(category.id, category.opts);
               return (
-                <Link key={category.id} href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
+                <StaggerItem key={category.id}>
+                <Link href={`/cases/${category.id}`} style={{ textDecoration: 'none', display: 'block' }}>
                   <div className="cat-card">
                     <h2 className="font-display" style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px', letterSpacing: '-0.3px' }}>
                       {category.label}
@@ -388,9 +390,10 @@ export default function CasesIndexPage() {
                     </div>
                   </div>
                 </Link>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerGrid>
         )}
 
         {/* Most-Filed Case Types Section */}
