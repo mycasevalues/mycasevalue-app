@@ -12,6 +12,9 @@ import RelevantOpinions from '../../../components/RelevantOpinions';
 import { ATTORNEY_IMPACT } from '../../../lib/attorney-impact';
 import { getWinRateColor } from '../../../lib/color-scale';
 import { AnimatedRangeBar, MetricsStagger, MetricsStaggerItem } from '../../../components/motion/NosAnimations';
+import dynamic from 'next/dynamic';
+
+const SettlementViolin = dynamic(() => import('../../../components/charts/SettlementViolin'), { ssr: false });
 
 // ISR: revalidate every 90 days (matches FJC quarterly update cycle)
 export const revalidate = 7776000;
@@ -972,6 +975,21 @@ export default async function NOSPage({ params }: PageProps) {
                   <div style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.hi)}</div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Settlement Distribution Violin Plot — for high-data NOS codes */}
+      {recoveryRange && recoveryRange.md > 0 && ['442', '362', '365', '830'].includes(code) && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="content-box">
+              <h2 className="section-title">Settlement Distribution</h2>
+              <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '16px', fontFamily: 'var(--font-body)' }}>
+                Full distribution shape of monetary recoveries — reveals patterns beyond simple percentiles.
+              </p>
+              <SettlementViolin nosCode={code} height={140} />
             </div>
           </div>
         </section>
