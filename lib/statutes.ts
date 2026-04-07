@@ -256,4 +256,368 @@ export const NOS_STATUTE_MAP: Record<
       "IRS third-party summons enforcement and tax administration disputes under federal tax law",
     url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title26/html/USCODE-2023-title26-subtitleF-chap78-subchapA-sec7609.htm",
   },
+  120: {
+    title: "Marine",
+    usc: "28 U.S.C. § 1333",
+    description:
+      "Federal maritime jurisdiction over marine and shipping contract disputes under diversity jurisdiction",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1333.htm",
+  },
+  130: {
+    title: "Miller Act",
+    usc: "40 U.S.C. § 3131",
+    description:
+      "Federal jurisdiction over payment bonds for federal construction contracts under the Miller Act",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title40/html/USCODE-2023-title40-subtitleI-chap31-subchapV-sec3131.htm",
+  },
+  140: {
+    title: "Negotiable Instrument",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for disputes involving negotiable instruments and commercial paper",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  150: {
+    title: "Recovery of Overpayment",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for recovery of overpayment and unjust enrichment claims",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  151: {
+    title: "Medicare Act",
+    usc: "42 U.S.C. § 1395",
+    description:
+      "Federal jurisdiction over disputes arising under the Medicare Act and federal health insurance programs",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap7-subchapXVIII-sec1395.htm",
+  },
+  152: {
+    title: "Recovery of Student Loans",
+    usc: "20 U.S.C. § 1091",
+    description:
+      "Federal jurisdiction over disputes concerning federal student loan repayment and recovery",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title20/html/USCODE-2023-title20-chap28-subchapIV-partC-sec1091.htm",
+  },
+  153: {
+    title: "Recovery of Overpayment of Veteran's Benefits",
+    usc: "38 U.S.C. § 5101",
+    description:
+      "Federal jurisdiction over disputes regarding overpayment and recovery of veteran's benefits",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title38/html/USCODE-2023-title38-partIII-chap51-sec5101.htm",
+  },
+  160: {
+    title: "Stockholders' Suits",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for stockholder derivative and direct action suits against corporations",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  195: {
+    title: "Contract Product Liability",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for product liability claims arising from breach of contract and warranty",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  196: {
+    title: "Franchise",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for disputes between franchisors and franchisees involving contract and tort claims",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  210: {
+    title: "Land Condemnation",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Federal jurisdiction for eminent domain and land condemnation proceedings under diversity jurisdiction",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  230: {
+    title: "Rent, Lease & Ejectment",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for ejectment, eviction, and disputes over rent and lease obligations",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  245: {
+    title: "Tort Product Liability",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for tort-based product liability claims involving design and manufacturing defects",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  315: {
+    title: "Airplane Product Liability",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for product liability claims arising from aircraft and aviation products",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  330: {
+    title: "Federal Employers' Liability",
+    usc: "45 U.S.C. § 51",
+    description:
+      "Federal question jurisdiction over railroad employee injury claims under the Federal Employers' Liability Act",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title45/html/USCODE-2023-title45-chap2-sec51.htm",
+  },
+  345: {
+    title: "Marine Product Liability",
+    usc: "28 U.S.C. § 1333",
+    description:
+      "Federal maritime jurisdiction for product liability claims involving marine vessels and equipment",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1333.htm",
+  },
+  355: {
+    title: "Motor Vehicle Product Liability",
+    usc: "28 U.S.C. § 1332",
+    description:
+      "Diversity jurisdiction for product liability claims arising from motor vehicles and automotive products",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1332.htm",
+  },
+  375: {
+    title: "False Claims Act",
+    usc: "31 U.S.C. § 3729",
+    description:
+      "Federal question jurisdiction for civil False Claims Act cases involving fraud against the government",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title31/html/USCODE-2023-title31-subtitleIII-chap37-subchapIII-sec3729.htm",
+  },
+  376: {
+    title: "Qui Tam",
+    usc: "31 U.S.C. § 3730",
+    description:
+      "Federal question jurisdiction for qui tam actions brought under the False Claims Act by private whistleblowers",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title31/html/USCODE-2023-title31-subtitleIII-chap37-subchapIII-sec3730.htm",
+  },
+  465: {
+    title: "Other Immigration Actions",
+    usc: "8 U.S.C. § 1101",
+    description:
+      "Federal question jurisdiction for immigration matters not covered by specific removal or naturalization statutes",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title8/html/USCODE-2023-title8-chap12-subchapI-sec1101.htm",
+  },
+  485: {
+    title: "Telephone Consumer Protection Act",
+    usc: "47 U.S.C. § 227",
+    description:
+      "Federal question jurisdiction for TCPA claims involving telemarketing calls, faxes, and text messages",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title47/html/USCODE-2023-title47-chap5-subchapII-partI-sec227.htm",
+  },
+  555: {
+    title: "Prison Conditions",
+    usc: "42 U.S.C. § 1983",
+    description:
+      "Federal question jurisdiction for prisoner civil rights claims regarding conditions of confinement under Section 1983",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap21-subchapI-sec1983.htm",
+  },
+  400: {
+    title: "State Reapportionment",
+    usc: "28 U.S.C. § 1342",
+    description:
+      "Federal jurisdiction over constitutional challenges to state legislative reapportionment and redistricting",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1342.htm",
+  },
+  410: {
+    title: "Antitrust",
+    usc: "15 U.S.C. § 1",
+    description:
+      "Federal question jurisdiction for Sherman Act and antitrust violations involving restraint of trade and monopolies",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title15/html/USCODE-2023-title15-chap1-sec1.htm",
+  },
+  422: {
+    title: "Bankruptcy Appeal",
+    usc: "28 U.S.C. § 1334",
+    description:
+      "Federal jurisdiction over appeals from bankruptcy court decisions and bankruptcy proceedings",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1334.htm",
+  },
+  423: {
+    title: "Withdrawal of Reference",
+    usc: "28 U.S.C. § 157",
+    description:
+      "Federal jurisdiction over withdrawal of bankruptcy proceedings from bankruptcy court to district court",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partI-chap8-sec157.htm",
+  },
+  430: {
+    title: "Banks and Banking",
+    usc: "12 U.S.C. § 24",
+    description:
+      "Federal regulation and jurisdiction over national bank operations, powers, and banking activities",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title12/html/USCODE-2023-title12-chap2-sec24.htm",
+  },
+  444: {
+    title: "Welfare",
+    usc: "42 U.S.C. § 601",
+    description:
+      "Federal question jurisdiction for welfare and public assistance benefit disputes and denials",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap7-subchapIV-sec601.htm",
+  },
+  450: {
+    title: "Commerce/Interstate",
+    usc: "28 U.S.C. § 1337",
+    description:
+      "Federal jurisdiction over actions arising under federal interstate commerce and regulatory statutes",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1337.htm",
+  },
+  460: {
+    title: "Deportation",
+    usc: "8 U.S.C. § 1227",
+    description:
+      "Federal jurisdiction over deportation and removal proceedings for aliens from the United States",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title8/html/USCODE-2023-title8-chap12-subchapII-partIV-sec1227.htm",
+  },
+  462: {
+    title: "Naturalization",
+    usc: "8 U.S.C. § 1422",
+    description:
+      "Federal jurisdiction over naturalization proceedings and citizenship application cases",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title8/html/USCODE-2023-title8-chap12-subchapIII-partI-sec1422.htm",
+  },
+  463: {
+    title: "Habeas Corpus - Alien Detainee",
+    usc: "28 U.S.C. § 2241",
+    description:
+      "Federal jurisdiction for habeas corpus petitions by alien detainees challenging unlawful detention",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partII-chap153-sec2241.htm",
+  },
+  470: {
+    title: "RICO",
+    usc: "18 U.S.C. § 1961",
+    description:
+      "Federal question jurisdiction for Racketeer Influenced and Corrupt Organizations Act claims involving patterns of racketeering",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title18/html/USCODE-2023-title18-partI-chap96-sec1961.htm",
+  },
+  480: {
+    title: "Consumer Credit",
+    usc: "15 U.S.C. § 1601",
+    description:
+      "Federal question jurisdiction for consumer credit protection and lending law claims",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title15/html/USCODE-2023-title15-chap41-subchapI-sec1601.htm",
+  },
+  490: {
+    title: "Cable/Satellite TV",
+    usc: "47 U.S.C. § 521",
+    description:
+      "Federal jurisdiction over cable television and satellite television regulation and rate disputes",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title47/html/USCODE-2023-title47-chap5-subchapV-partI-sec521.htm",
+  },
+  510: {
+    title: "Prisoner Petition - Motions to Vacate",
+    usc: "28 U.S.C. § 2255",
+    description:
+      "Federal jurisdiction for prisoner motions to vacate sentence and challenge unlawful convictions",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partII-chap154-sec2255.htm",
+  },
+  530: {
+    title: "Habeas Corpus - General",
+    usc: "28 U.S.C. § 2241",
+    description:
+      "Federal jurisdiction for general habeas corpus petitions challenging unlawful detention",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partII-chap153-sec2241.htm",
+  },
+  535: {
+    title: "Habeas Corpus - Death Penalty",
+    usc: "28 U.S.C. § 2254",
+    description:
+      "Federal jurisdiction for death penalty habeas corpus petitions from state prisoners challenging constitutional violations",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partII-chap153-sec2254.htm",
+  },
+  540: {
+    title: "Mandamus & Other",
+    usc: "28 U.S.C. § 1361",
+    description:
+      "Federal jurisdiction for mandamus petitions and other remedies against federal officers for non-discretionary duties",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1361.htm",
+  },
+  550: {
+    title: "Civil Rights (prisoner)",
+    usc: "42 U.S.C. § 1983",
+    description:
+      "Federal question jurisdiction for prisoner civil rights claims under Section 1983 for deprivation of constitutional rights",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap21-subchapI-sec1983.htm",
+  },
+  751: {
+    title: "Family and Medical Leave Act",
+    usc: "29 U.S.C. § 2601",
+    description:
+      "Federal question jurisdiction for FMLA claims involving unpaid job-protected leave for family and medical purposes",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title29/html/USCODE-2023-title29-chap28-sec2601.htm",
+  },
+  790: {
+    title: "Other Labor Litigation",
+    usc: "29 U.S.C. § 1",
+    description:
+      "Federal question jurisdiction for miscellaneous labor law disputes not covered by specific statutes",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title29/html/USCODE-2023-title29-chap1-sec1.htm",
+  },
+  810: {
+    title: "Selective Service",
+    usc: "50 U.S.C. § 3801",
+    description:
+      "Federal jurisdiction over selective service and military draft registration disputes and challenges",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title50/html/USCODE-2023-title50-chap49-sec3801.htm",
+  },
+  862: {
+    title: "Social Security - Black Lung",
+    usc: "30 U.S.C. § 901",
+    description:
+      "Federal jurisdiction for Black Lung Benefits Act claims for coal miners with occupational lung disease",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title30/html/USCODE-2023-title30-chap22-sec901.htm",
+  },
+  865: {
+    title: "Social Security - RSI",
+    usc: "42 U.S.C. § 401",
+    description:
+      "Federal jurisdiction for Retirement and Survivors Insurance claims under Social Security",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap7-subchapII-sec401.htm",
+  },
+  890: {
+    title: "Other Statutory Actions",
+    usc: "28 U.S.C. § 1331",
+    description:
+      "Federal question jurisdiction for civil actions arising under federal statutes not otherwise classified",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1331.htm",
+  },
+  891: {
+    title: "Agricultural Acts",
+    usc: "7 U.S.C. § 1281",
+    description:
+      "Federal question jurisdiction for agricultural law disputes involving farming, crop insurance, and agricultural regulations",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title7/html/USCODE-2023-title7-chap33-sec1281.htm",
+  },
+  893: {
+    title: "Environmental Matters",
+    usc: "42 U.S.C. § 4321",
+    description:
+      "Federal question jurisdiction for environmental law claims under NEPA and other environmental statutes",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title42/html/USCODE-2023-title42-chap55-sec4321.htm",
+  },
+  895: {
+    title: "Freedom of Information Act",
+    usc: "5 U.S.C. § 552",
+    description:
+      "Federal question jurisdiction for FOIA requests and disputes regarding public access to government records",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title5/html/USCODE-2023-title5-partI-chap5-subchapII-sec552.htm",
+  },
+  896: {
+    title: "Arbitration",
+    usc: "9 U.S.C. § 1",
+    description:
+      "Federal Arbitration Act jurisdiction for enforcement of arbitration agreements and arbitration disputes",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title9/html/USCODE-2023-title9-chap1-sec1.htm",
+  },
+  899: {
+    title: "Admin Procedure Act/Review",
+    usc: "5 U.S.C. § 702",
+    description:
+      "Federal question jurisdiction for judicial review of federal agency actions and administrative decisions",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title5/html/USCODE-2023-title5-partI-chap7-sec702.htm",
+  },
+  950: {
+    title: "Constitutionality of State Statutes",
+    usc: "28 U.S.C. § 1331",
+    description:
+      "Federal question jurisdiction for constitutional challenges to state statutes and laws",
+    url: "https://www.govinfo.gov/content/pkg/USCODE-2023-title28/html/USCODE-2023-title28-partIV-chap85-sec1331.htm",
+  },
 };
