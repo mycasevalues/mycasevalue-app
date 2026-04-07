@@ -8,6 +8,7 @@ import { getNosLabel } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import SidebarNav from '../../components/SidebarNav';
 import { SearchIcon } from '../../components/ui/Icons';
+import DashboardTabs from '../../components/DashboardTabs';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -886,6 +887,25 @@ export default async function DashboardPage() {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Full Tabbed Dashboard */}
+        <div style={{ marginTop: 32 }}>
+          <DashboardTabs
+            userEmail={userEmail}
+            memberSince={memberSince}
+            planLabel={planLabel[tierKey] || 'Free'}
+            reportsCount={recentReports.length}
+            savedCount={recentReports.length}
+            alertsCount={0}
+            recentActivity={recentReports.slice(0, 5).map(r => ({
+              label: `Viewed ${getNosLabel(r.category) || r.category}${r.district ? ` in ${r.district}` : ''}`,
+              time: new Date(r.viewed_at).toLocaleDateString(),
+              link: `/nos/${r.category}`,
+            }))}
+            searchHistory={searchHistory}
+            savedReports={recentReports}
+          />
         </div>
         </div>
       </main>
