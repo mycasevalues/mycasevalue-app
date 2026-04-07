@@ -55,7 +55,7 @@ async function tryResendEmail(
  * Send email using configured provider
  * Falls back to console logging if no provider is configured
  */
-async function sendEmail(options: EmailOptions): Promise<{ success: boolean; error?: string }> {
+export async function sendEmail(options: EmailOptions): Promise<{ success: boolean; error?: string }> {
   const resendApiKey = process.env.RESEND_API_KEY;
 
   // If Resend is configured, try to use it
