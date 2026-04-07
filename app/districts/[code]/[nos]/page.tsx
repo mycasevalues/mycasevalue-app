@@ -11,7 +11,7 @@ import JudgeSectionLoader from '../../../../components/JudgeSectionLoader';
 export const revalidate = 7776000;
 
 interface PageProps {
-  params: Promise<{ district: string; nos: string }>;
+  params: Promise<{ code: string; nos: string }>;
 }
 
 // District metadata mapping (top 20 districts by filing volume)
@@ -113,12 +113,12 @@ function getDistrictNOSData(districtCode: string, nosCode: string) {
 
 export async function generateStaticParams() {
   // Generate 400 combinations: top 20 districts × top 20 NOS codes
-  const params: Array<{ district: string; nos: string }> = [];
+  const params: Array<{ code: string; nos: string }> = [];
 
   TOP_DISTRICTS.forEach((district) => {
     TOP_NOS_CODES.forEach((nosCode) => {
       params.push({
-        district: district.code.toLowerCase(),
+        code: district.code.toLowerCase(),
         nos: nosCode,
       });
     });
@@ -128,7 +128,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { district, nos } = await params;
+  const { code: district, nos } = await params;
 
   const districtInfo = getDistrictInfo(district);
   const nosInfo = getNOSInfo(nos);
@@ -166,7 +166,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function DistrictNOSPage({ params }: PageProps) {
-  const { district, nos } = await params;
+  const { code: district, nos } = await params;
 
   const districtInfo = getDistrictInfo(district);
   const nosInfo = getNOSInfo(nos);
