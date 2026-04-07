@@ -258,8 +258,8 @@ export default function SearchPage() {
               Search
             </span>
           </div>
-          <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', marginBottom: '8px', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
-            Search federal court outcomes
+          <h1 className="search-header" style={{ fontSize: '40px', fontWeight: 600, color: '#FFFFFF', fontFamily: 'var(--font-display)', letterSpacing: '-0.02em', margin: '0 0 8px 0' }}>
+            Federal Court Case Outcome Search
           </h1>
           <p className="search-header" style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', marginBottom: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
             Search across all 84 federal case types to find real outcome data for your situation.
