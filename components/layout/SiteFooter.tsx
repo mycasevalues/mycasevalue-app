@@ -58,6 +58,7 @@ const FOOTER_COLUMNS = [
     heading: 'Company',
     links: [
       { label: 'About', href: '/about' },
+      { label: 'Platform Overview', href: '/platform' },
       { label: 'Contact', href: '/contact' },
       { label: 'Press Kit', href: '/press' },
       { label: 'Disclaimer', href: '/disclaimer' },

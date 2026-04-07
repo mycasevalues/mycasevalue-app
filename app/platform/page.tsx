@@ -25,6 +25,128 @@ export const metadata: Metadata = {
   ].join(', '),
 };
 
+const DATA_SOURCES = [
+  {
+    name: 'Federal Judicial Center (FJC)',
+    url: 'https://www.fjc.gov',
+    description: 'Official case-level statistics and civil case outcome data',
+    updateFrequency: 'Quarterly',
+  },
+  {
+    name: 'PACER via CourtListener RECAP',
+    url: 'https://www.courtlistener.com',
+    description: 'Real-time docket data and case documents from active cases',
+    updateFrequency: 'Daily',
+  },
+  {
+    name: 'Bureau of Labor Statistics',
+    url: 'https://www.bls.gov',
+    description: 'CPI inflation data for damages adjustment and economic context',
+    updateFrequency: 'Monthly',
+  },
+  {
+    name: 'EEOC',
+    url: 'https://www.eeoc.gov',
+    description: 'Employment discrimination charges and outcomes data',
+    updateFrequency: 'Annually',
+  },
+  {
+    name: 'OSHA',
+    url: 'https://www.osha.gov',
+    description: 'Workplace enforcement actions and safety case data',
+    updateFrequency: 'Annually',
+  },
+];
+
+const AI_CAPABILITIES = [
+  {
+    title: 'Natural Language Search',
+    description: 'Describe your legal situation in plain English and find matching case types and outcomes instantly.',
+    icon: '◆',
+  },
+  {
+    title: 'Document Intelligence',
+    description: 'Extract key data from legal documents and automatically match against historical precedents.',
+    icon: '📄',
+  },
+  {
+    title: 'Outcome Prediction',
+    description: 'Predict case outcomes based on historical patterns, judge tendencies, and case characteristics.',
+    icon: '🎯',
+  },
+  {
+    title: 'Judge Analysis',
+    description: 'Compare individual judge profiles to district averages and identify patterns in their rulings.',
+    icon: '⚖️',
+  },
+];
+
+const TOOLS_BY_CATEGORY = [
+  {
+    category: 'Research Tools',
+    tools: [
+      'Case Lookup',
+      'District Explorer',
+      'Win Rate Maps',
+      'Glossary',
+    ],
+  },
+  {
+    category: 'Attorney Mode Tools',
+    tools: [
+      'Opposing Counsel Research',
+      'Demand Package Generator',
+      'Timeline Generator',
+      'API Access',
+    ],
+  },
+  {
+    category: 'Paralegal Tools',
+    tools: [
+      'Intake Forms',
+      'Case Strength Assessment',
+      'Expert Witness Explorer',
+      'Document Automation',
+    ],
+  },
+  {
+    category: 'Calculator Tools',
+    tools: [
+      'Case Value Calculator',
+      'Lien Calculator',
+      'Statute of Limitations',
+      'Fee Calculator',
+    ],
+  },
+];
+
+const AUDIENCES = [
+  {
+    segment: 'Personal Injury Attorneys',
+    usecase: 'Evaluate settlement ranges and judge tendencies before accepting cases.',
+  },
+  {
+    segment: 'Employment Lawyers',
+    usecase: 'Research EEOC discrimination patterns and calculate damages for class actions.',
+  },
+  {
+    segment: 'Insurance Adjusters',
+    usecase: 'Benchmark settlement expectations against comparable claims in the database.',
+  },
+  {
+    segment: 'Legal Researchers',
+    usecase: 'Access 5.1M+ cases with powerful filtering and statistical analysis tools.',
+  },
+  {
+    segment: 'Law Students',
+    usecase: 'Learn judicial decision-making patterns and legal outcomes from real data.',
+  },
+  {
+    segment: 'Pro Se Litigants',
+    usecase: 'Represent themselves with data-driven insights and judge analytics.',
+  },
+];
+
 export default function PlatformPage() {
   return (
     <>
@@ -874,6 +996,362 @@ export default function PlatformPage() {
                   <li>Multi-language global support</li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* The Problem Section */}
+        <div style={{ padding: '80px 24px', background: '#FFFFFF' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+            <div style={{ marginBottom: 60 }}>
+              <h2 style={{
+                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontWeight: 700,
+                color: '#1B3A5C',
+                marginBottom: 12,
+              }}>
+                The Problem We're Solving
+              </h2>
+              <p style={{
+                fontSize: 16,
+                color: '#6B7280',
+                maxWidth: 600,
+              }}>
+                Legal data costs $500–$2,000 per month at Westlaw and Lex Machina. That same public federal court data is freely available but buried in government databases. MyCaseValue surfaces it.
+              </p>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: 24,
+            }}>
+              {[
+                { number: '$500–$2,000', label: 'Monthly cost at Westlaw or Lex Machina' },
+                { number: '94 Districts', label: 'Federal court coverage nationwide' },
+                { number: '5.1M+ Cases', label: 'Complete historical database available' },
+                { number: 'Free', label: 'MyCaseValue base access with premium tiers' },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: 24,
+                    background: '#F7F8FA',
+                    borderRadius: 12,
+                    border: '1px solid #E5E7EB',
+                  }}
+                >
+                  <div style={{
+                    fontSize: 'clamp(20px, 3vw, 28px)',
+                    fontWeight: 700,
+                    color: '#0A66C2',
+                    marginBottom: 8,
+                    fontFamily: 'var(--font-mono)',
+                  }}>
+                    {item.number}
+                  </div>
+                  <div style={{
+                    fontSize: 14,
+                    color: '#6B7280',
+                  }}>
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* The Data Section */}
+        <div style={{ padding: '80px 24px', background: '#F7F8FA' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+            <div style={{ marginBottom: 60 }}>
+              <h2 style={{
+                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontWeight: 700,
+                color: '#1B3A5C',
+                marginBottom: 12,
+              }}>
+                The Data: 5.1M+ Cases from 5 Official Sources
+              </h2>
+              <p style={{
+                fontSize: 16,
+                color: '#6B7280',
+                maxWidth: 600,
+              }}>
+                Comprehensive federal court data spanning 54 years across all 94 federal districts and 84 case types.
+              </p>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: 24,
+            }}>
+              {DATA_SOURCES.map((source) => (
+                <div
+                  key={source.name}
+                  style={{
+                    padding: 28,
+                    background: '#FFFFFF',
+                    borderRadius: 12,
+                    border: '1px solid #E5E7EB',
+                    transition: 'all 0.3s ease',
+                  }}
+                  className="data-source-card"
+                >
+                  <h4 style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: '#1F2937',
+                    marginBottom: 8,
+                    margin: 0,
+                  }}>
+                    {source.name}
+                  </h4>
+                  <p style={{
+                    fontSize: 14,
+                    color: '#6B7280',
+                    marginBottom: 12,
+                    margin: '8px 0 12px 0',
+                    lineHeight: 1.6,
+                  }}>
+                    {source.description}
+                  </p>
+                  <div style={{
+                    display: 'flex',
+                    gap: 16,
+                    alignItems: 'center',
+                    marginBottom: 12,
+                  }}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: 13,
+                        color: '#0A66C2',
+                        textDecoration: 'none',
+                        fontWeight: 500,
+                      }}
+                    >
+                      Visit Source →
+                    </a>
+                  </div>
+                  <div style={{
+                    fontSize: 12,
+                    color: '#9CA3AF',
+                    fontWeight: 500,
+                  }}>
+                    Updates: {source.updateFrequency}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* AI Layer Section */}
+        <div style={{ padding: '80px 24px', background: '#FFFFFF' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+            <div style={{ marginBottom: 60 }}>
+              <h2 style={{
+                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontWeight: 700,
+                color: '#1B3A5C',
+                marginBottom: 12,
+              }}>
+                The AI Layer: Four Core Capabilities
+              </h2>
+              <p style={{
+                fontSize: 16,
+                color: '#6B7280',
+                maxWidth: 600,
+              }}>
+                Powered by Anthropic Claude API and trained on 54 years of federal court data.
+              </p>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: 24,
+            }}>
+              {AI_CAPABILITIES.map((cap) => (
+                <div
+                  key={cap.title}
+                  style={{
+                    padding: 28,
+                    background: '#F7F8FA',
+                    borderRadius: 12,
+                    border: '1px solid #E5E7EB',
+                  }}
+                >
+                  <div style={{
+                    fontSize: 32,
+                    marginBottom: 16,
+                  }}>
+                    {cap.icon}
+                  </div>
+                  <h4 style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: '#1F2937',
+                    marginBottom: 8,
+                    margin: 0,
+                  }}>
+                    {cap.title}
+                  </h4>
+                  <p style={{
+                    fontSize: 14,
+                    color: '#6B7280',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}>
+                    {cap.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Tools Section */}
+        <div style={{ padding: '80px 24px', background: '#F7F8FA' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+            <div style={{ marginBottom: 60 }}>
+              <h2 style={{
+                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontWeight: 700,
+                color: '#1B3A5C',
+                marginBottom: 12,
+              }}>
+                The Tools: Organized by Role
+              </h2>
+              <p style={{
+                fontSize: 16,
+                color: '#6B7280',
+                maxWidth: 600,
+              }}>
+                Specialized toolsets for researchers, attorneys, paralegals, and calculators.
+              </p>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: 24,
+            }}>
+              {TOOLS_BY_CATEGORY.map((group) => (
+                <div
+                  key={group.category}
+                  style={{
+                    padding: 28,
+                    background: '#FFFFFF',
+                    borderRadius: 12,
+                    border: '1px solid #E5E7EB',
+                  }}
+                >
+                  <h4 style={{
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color: '#0A66C2',
+                    marginBottom: 16,
+                    margin: 0,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                  }}>
+                    {group.category}
+                  </h4>
+                  <ul style={{
+                    listStyle: 'none',
+                    margin: 0,
+                    padding: 0,
+                  }}>
+                    {group.tools.map((tool) => (
+                      <li
+                        key={tool}
+                        style={{
+                          padding: '10px 0',
+                          fontSize: 14,
+                          color: '#4B5563',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 8,
+                        }}
+                      >
+                        <span style={{
+                          display: 'inline-block',
+                          width: 6,
+                          height: 6,
+                          background: '#0A66C2',
+                          borderRadius: '50%',
+                        }} />
+                        {tool}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Audiences Section */}
+        <div style={{ padding: '80px 24px', background: '#FFFFFF' }}>
+          <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+            <div style={{ marginBottom: 60 }}>
+              <h2 style={{
+                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontWeight: 700,
+                color: '#1B3A5C',
+                marginBottom: 12,
+              }}>
+                Six Key Audiences
+              </h2>
+              <p style={{
+                fontSize: 16,
+                color: '#6B7280',
+                maxWidth: 600,
+              }}>
+                From solo practitioners to law students, MyCaseValue serves the entire legal ecosystem.
+              </p>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: 24,
+            }}>
+              {AUDIENCES.map((audience) => (
+                <div
+                  key={audience.segment}
+                  style={{
+                    padding: 28,
+                    background: '#F7F8FA',
+                    borderRadius: 12,
+                    border: '1px solid #E5E7EB',
+                  }}
+                >
+                  <h4 style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: '#1F2937',
+                    marginBottom: 12,
+                    margin: 0,
+                  }}>
+                    {audience.segment}
+                  </h4>
+                  <p style={{
+                    fontSize: 14,
+                    color: '#6B7280',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}>
+                    {audience.usecase}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
