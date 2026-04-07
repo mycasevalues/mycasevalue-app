@@ -293,10 +293,10 @@ export default function JudgesPage() {
         {/* Beta Notice */}
         <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#F7F8FA', marginBottom: 64 }}>
           <h2 style={{ fontSize: 24, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
-            Judge profiles in active development
+            Judge Analytics — In Development
           </h2>
           <p style={{ fontSize: 15, color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: 680, margin: '0 0 28px', lineHeight: 1.6 }}>
-            Judge profiles and individual analytics are in active development. District-level statistics by judge are being prepared from PACER and FJC data. Enter your email to be notified when this feature launches.
+            Individual judge profiles are being built from PACER and FJC records. Enter your email to be notified at launch.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-start', flexWrap: 'wrap' }}>
             <input
@@ -323,10 +323,7 @@ export default function JudgesPage() {
                 border: 'none',
                 cursor: 'pointer',
                 fontFamily: 'var(--font-display)',
-                transition: 'background-color 0.3s ease',
               }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#7C3AED'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#8B5CF6'}
             >
               Notify Me
             </button>
