@@ -101,7 +101,7 @@ export async function generateMetadata(
       siteName: 'MyCaseValue',
       images: [
         {
-          url: `${SITE_URL}/og-image.png`,
+          url: `${SITE_URL}/api/og?type=nos&code=${code}`,
           width: 1200,
           height: 630,
           alt: `${nosInfo.label} Federal Court Statistics`,
@@ -112,7 +112,7 @@ export async function generateMetadata(
       card: 'summary_large_image',
       title: `${nosInfo.label} — Federal Court Statistics`,
       description,
-      images: ['https://www.mycasevalues.com/og-image.png'],
+      images: [`${SITE_URL}/api/og?type=nos&code=${code}`],
     },
   };
 }

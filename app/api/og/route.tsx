@@ -1,241 +1,495 @@
-import { ImageResponse } from 'next/og';
-import { rateLimit, getClientIp } from '../../../lib/rate-limit';
+import { ImageResponse } from '@vercel/og';
+import { REAL_DATA } from '../../../lib/realdata';
+import { SITS } from '../../../lib/data';
 
-export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
-// Sanitization utility
-function sanitizeInput(input: string | null, maxLength: number = 100): string {
-  if (!input) return '';
-
-  // Strip HTML tags, limit length, and escape special chars
-  let sanitized = input
-    .substring(0, maxLength)
-    .replace(/<[^>]*>/g, '') // Remove HTML tags
-    .replace(/[&<>"']/g, (char) => {
-      const entities: { [key: string]: string } = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#x27;'
-      };
-      return entities[char] || char;
+// Helper function to get NOS label
+function getNOSLabel(code: string): string {
+  let label = 'Case Type';
+  SITS.forEach((category) => {
+    category.opts.forEach((option) => {
+      if (option.nos === code) {
+        label = option.label;
+      }
     });
-
-  return sanitized;
+  });
+  return label;
 }
 
-// Whitelist of allowed category values
-const ALLOWED_CATEGORIES = new Set([
-  'court outcomes',
-  'federal courts',
-  'case statistics',
-  'litigation data',
-  'judicial analytics',
-  'case outcomes',
-  'court cases',
-  'legal analytics'
-]);
+// Helper to format numbers with K, M notation
+function formatNumber(num: number): string {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1) + 'M';
+  }
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1) + 'K';
+  }
+  return num.toString();
+}
 
-export async function GET(request: Request) {
-  try {
-    const headers = {
-      get: (name: string) => request.headers.get(name)
-    } as any;
-    const clientIp = getClientIp(headers);
+// Get top 3 case types for a district
+function getTopCaseTypes(districtCode?: string) {
+  interface CaseTypeData {
+    nos: string;
+    label: string;
+    total: number;
+    wr: number;
+  }
 
-    // Apply rate limiting: 30 req/min
-    const rateLimitResult = rateLimit(clientIp, { windowMs: 60000, maxRequests: 30 });
-    if (!rateLimitResult.success) {
-      return new Response('Too many requests', { status: 429 });
+  const caseTypes: CaseTypeData[] = [];
+
+  Object.entries(REAL_DATA).forEach(([nosCode, data]) => {
+    if (data && data.label && data.total) {
+      caseTypes.push({
+        nos: nosCode,
+        label: data.label,
+        total: data.total,
+        wr: data.wr || 0,
+      });
     }
+  });
 
-    const { searchParams } = new URL(request.url);
-    let title = sanitizeInput(searchParams.get('title'), 100) || 'Federal Court Outcome Data';
-    let category = sanitizeInput(searchParams.get('category'), 100) || 'court outcomes';
+  // Sort by total and take top 3
+  return caseTypes.sort((a, b) => b.total - a.total).slice(0, 3);
+}
 
-    // Validate category against whitelist
-    if (!ALLOWED_CATEGORIES.has(category.toLowerCase())) {
-      category = 'court outcomes'; // Default to safe value
-    }
+// NOS page image
+function renderNOSImage(code: string): React.ReactElement {
+  const data = REAL_DATA[code];
 
-    return new ImageResponse(
-      (
+  if (!data) {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          height: '100%',
+          backgroundColor: '#FFFFFF',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '32px',
+          fontWeight: 'bold',
+          color: '#000000',
+        }}
+      >
+        Case type not found
+      </div>
+    );
+  }
+
+  const label = getNOSLabel(code);
+  const winRate = data.wr || 0;
+  const settlementRate = data.sp || 0;
+  const caseCount = data.total || 0;
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#FFFFFF',
+        backgroundImage: 'linear-gradient(135deg, rgba(10, 102, 194, 0.1) 0%, transparent 50%)',
+        padding: '60px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+      }}
+    >
+      {/* Header */}
+      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '40px' }}>
         <div
           style={{
-            width: '100%',
-            height: '100%',
+            fontSize: '40px',
+            fontWeight: '700',
+            color: '#000000',
+            marginBottom: '20px',
+          }}
+        >
+          {label}
+        </div>
+        <div
+          style={{
+            fontSize: '16px',
+            color: '#666666',
+          }}
+        >
+          {formatNumber(caseCount)} federal cases analyzed
+        </div>
+      </div>
+
+      {/* Win Rate - Large Number */}
+      <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '50px' }}>
+        <div
+          style={{
+            fontSize: '96px',
+            fontWeight: '800',
+            color: '#0A66C2',
+            lineHeight: '1',
+          }}
+        >
+          {winRate.toFixed(0)}%
+        </div>
+        <div
+          style={{
+            fontSize: '24px',
+            color: '#666666',
+            marginLeft: '20px',
+          }}
+        >
+          plaintiff win rate
+        </div>
+      </div>
+
+      {/* Settlement Range Bar */}
+      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '50px' }}>
+        <div
+          style={{
+            fontSize: '14px',
+            color: '#666666',
+            marginBottom: '12px',
+          }}
+        >
+          Settlement Range
+        </div>
+        <div
+          style={{
             display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
-            background: '#1B3A5C',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            position: 'relative',
+            height: '12px',
+            backgroundColor: '#E5E7EB',
+            borderRadius: '6px',
             overflow: 'hidden',
           }}
         >
-          {/* Grid Pattern Overlay */}
           <div
             style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundImage: `
-                linear-gradient(rgba(10, 102, 194, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(10, 102, 194, 0.03) 1px, transparent 1px)
-              `,
-              backgroundSize: '40px 40px',
-              pointerEvents: 'none',
-            }}
-          />
-
-          {/* Logo Section */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              marginBottom: '32px',
-              position: 'relative',
-              zIndex: 1,
-            }}
-          >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* Dot */}
-              <circle cx="8" cy="14" r="4.5" fill="#0A66C2" />
-              {/* Slash */}
-              <line
-                x1="18"
-                y1="6"
-                x2="10"
-                y2="22"
-                stroke="#0A66C2"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-            </svg>
-            <span
-              style={{
-                fontSize: '18px',
-                fontWeight: '600',
-                color: '#ffffff',
-                letterSpacing: '-0.5px',
-              }}
-            >
-              MyCaseValue
-            </span>
-          </div>
-
-          {/* Main Headline */}
-          <h1
-            style={{
-              fontSize: '56px',
-              fontWeight: '600',
-              color: '#ffffff',
-              margin: '0 0 24px 0',
-              textAlign: 'center',
-              maxWidth: '90%',
-              lineHeight: '1.2',
-              letterSpacing: '-1px',
-              position: 'relative',
-              zIndex: 1,
-            }}
-          >
-            {title}
-          </h1>
-
-          {/* Category Subtitle */}
-          {category && (
-            <div
-              style={{
-                fontSize: '16px',
-                color: '#a0a9d4',
-                marginBottom: '32px',
-                fontWeight: '400',
-                position: 'relative',
-                zIndex: 1,
-              }}
-            >
-              {category}
-            </div>
-          )}
-
-          {/* Stats Line */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '32px',
-              fontSize: '18px',
-              fontWeight: '500',
-              color: '#ffffff',
-              marginTop: '16px',
-              position: 'relative',
-              zIndex: 1,
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#0A66C2', fontWeight: '600' }}>5.1M+</span>
-              <span style={{ color: '#a0a9d4' }}>Cases</span>
-            </div>
-            <div style={{ color: '#0A66C2' }}>•</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#0A66C2', fontWeight: '600' }}>84</span>
-              <span style={{ color: '#a0a9d4' }}>Types</span>
-            </div>
-            <div style={{ color: '#0A66C2' }}>•</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ color: '#0A66C2', fontWeight: '600' }}>94</span>
-              <span style={{ color: '#a0a9d4' }}>Districts</span>
-            </div>
-          </div>
-
-          {/* Accent Line */}
-          <div
-            style={{
-              width: '100px',
-              height: '3px',
-              background: 'linear-gradient(90deg, #0A66C2 0%, transparent 100%)',
-              marginTop: '32px',
-              position: 'relative',
-              zIndex: 1,
-              borderRadius: '12px',
+              height: '100%',
+              width: `${settlementRate}%`,
+              backgroundColor: '#0A66C2',
             }}
           />
         </div>
-      ),
-      {
-        width: 1200,
-        height: 630,
-      },
+        <div
+          style={{
+            fontSize: '14px',
+            color: '#999999',
+            marginTop: '8px',
+          }}
+        >
+          {settlementRate.toFixed(0)}% settle before trial
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+          marginTop: 'auto',
+        }}
+      >
+        <div style={{ fontSize: '14px', color: '#999999' }}>Based on federal court records</div>
+        <div
+          style={{
+            fontSize: '16px',
+            fontWeight: '600',
+            color: '#0A66C2',
+          }}
+        >
+          MyCaseValue
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// District page image
+function renderDistrictImage(districtCode: string): React.ReactElement {
+  // Get district name from code
+  const districtMap: Record<string, { name: string; circuit: number }> = {
+    SDNY: { name: 'S.D.N.Y.', circuit: 2 },
+    EDNY: { name: 'E.D.N.Y.', circuit: 2 },
+    NDNY: { name: 'N.D.N.Y.', circuit: 2 },
+    WDNY: { name: 'W.D.N.Y.', circuit: 2 },
+    EDPA: { name: 'E.D. Pa.', circuit: 3 },
+    NDCA: { name: 'N.D. Cal.', circuit: 9 },
+    SDCA: { name: 'S.D. Cal.', circuit: 9 },
+    CDCA: { name: 'C.D. Cal.', circuit: 9 },
+    EDCA: { name: 'E.D. Cal.', circuit: 9 },
+    CDIL: { name: 'C.D. Ill.', circuit: 7 },
+    NDIL: { name: 'N.D. Ill.', circuit: 7 },
+    SDIL: { name: 'S.D. Ill.', circuit: 7 },
+    EDTX: { name: 'E.D. Tex.', circuit: 5 },
+    NDTX: { name: 'N.D. Tex.', circuit: 5 },
+    SDTX: { name: 'S.D. Tex.', circuit: 5 },
+    WDTX: { name: 'W.D. Tex.', circuit: 5 },
+  };
+
+  const district = districtMap[districtCode];
+  if (!district) {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          height: '100%',
+          backgroundColor: '#FFFFFF',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '32px',
+          fontWeight: 'bold',
+          color: '#000000',
+        }}
+      >
+        District not found
+      </div>
     );
+  }
+
+  // Calculate aggregated win rate from top cases
+  const topCases = getTopCaseTypes(districtCode);
+  const avgWinRate =
+    topCases.length > 0
+      ? topCases.reduce((sum, c) => sum + c.wr, 0) / topCases.length
+      : 50;
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#FFFFFF',
+        backgroundImage: 'linear-gradient(135deg, rgba(10, 102, 194, 0.1) 0%, transparent 50%)',
+        padding: '60px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+      }}
+    >
+      {/* Header */}
+      <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '40px' }}>
+        <div
+          style={{
+            fontSize: '48px',
+            fontWeight: '700',
+            color: '#000000',
+            marginBottom: '10px',
+          }}
+        >
+          {district.name}
+        </div>
+        <div
+          style={{
+            fontSize: '18px',
+            color: '#666666',
+          }}
+        >
+          United States Court of Appeals, Circuit {district.circuit}
+        </div>
+      </div>
+
+      {/* Win Rate */}
+      <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '50px' }}>
+        <div
+          style={{
+            fontSize: '72px',
+            fontWeight: '800',
+            color: '#0A66C2',
+            lineHeight: '1',
+          }}
+        >
+          {avgWinRate.toFixed(0)}%
+        </div>
+        <div
+          style={{
+            fontSize: '20px',
+            color: '#666666',
+            marginLeft: '20px',
+          }}
+        >
+          average win rate
+        </div>
+      </div>
+
+      {/* Top Case Types */}
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div
+          style={{
+            fontSize: '14px',
+            color: '#666666',
+            marginBottom: '16px',
+            textTransform: 'uppercase',
+            fontWeight: '600',
+          }}
+        >
+          Top Case Types by Volume
+        </div>
+
+        {topCases.map((caseType, index) => (
+          <div
+            key={caseType.nos}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: index < topCases.length - 1 ? '16px' : '0px',
+            }}
+          >
+            <div
+              style={{
+                width: '180px',
+                fontSize: '14px',
+                color: '#333333',
+                fontWeight: '500',
+              }}
+            >
+              {caseType.label}
+            </div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                flex: '1',
+              }}
+            >
+              <div
+                style={{
+                  height: '8px',
+                  backgroundColor: '#0A66C2',
+                  borderRadius: '4px',
+                  width: `${(caseType.total / (topCases[0]?.total || 1)) * 200}px`,
+                  marginRight: '12px',
+                }}
+              />
+              <div
+                style={{
+                  fontSize: '13px',
+                  color: '#666666',
+                }}
+              >
+                {formatNumber(caseType.total)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          marginTop: 'auto',
+        }}
+      >
+        <div
+          style={{
+            fontSize: '16px',
+            fontWeight: '600',
+            color: '#0A66C2',
+          }}
+        >
+          MyCaseValue
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Homepage image
+function renderHomeImage(): React.ReactElement {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#FFFFFF',
+        backgroundImage: 'linear-gradient(135deg, rgba(10, 102, 194, 0.15) 0%, rgba(0, 65, 130, 0.1) 100%)',
+        padding: '80px',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+        }}
+      >
+        {/* Main Headline */}
+        <div
+          style={{
+            fontSize: '64px',
+            fontWeight: '800',
+            color: '#000000',
+            lineHeight: '1.2',
+            marginBottom: '20px',
+            maxWidth: '800px',
+          }}
+        >
+          5.1M federal cases.
+          <br />
+          <span style={{ color: '#0A66C2' }}>What really happened.</span>
+        </div>
+
+        {/* Subheading */}
+        <div
+          style={{
+            fontSize: '24px',
+            color: '#666666',
+            marginBottom: '40px',
+            maxWidth: '700px',
+          }}
+        >
+          Research real outcomes from federal court records. Get win rates, settlement ranges, timelines, and judge analytics.
+        </div>
+
+        {/* CTA */}
+        <div
+          style={{
+            fontSize: '18px',
+            fontWeight: '600',
+            color: '#0A66C2',
+            textDecoration: 'underline',
+          }}
+        >
+          www.mycasevalues.com
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const type = searchParams.get('type') || 'home';
+  const code = searchParams.get('code') || '';
+  const district = searchParams.get('district') || '';
+
+  try {
+    let imageElement: React.ReactElement;
+
+    if (type === 'nos' && code) {
+      imageElement = renderNOSImage(code);
+    } else if (type === 'district' && district) {
+      imageElement = renderDistrictImage(district);
+    } else {
+      imageElement = renderHomeImage();
+    }
+
+    return new ImageResponse(imageElement, {
+      width: 1200,
+      height: 630,
+    });
   } catch (error) {
     return new Response('Failed to generate OG image', { status: 500 });
   }
 }
-
-/**
- * Task 1 Security Fixes Applied:
- * 1. Sanitized title and category parameters:
- *    - Strip HTML tags to prevent XSS
- *    - Limit to 100 characters max
- *    - Escape special characters (&, <, >, ", ')
- * 2. Category whitelist validation:
- *    - Only allow predefined safe category values
- *    - Default to 'court outcomes' if invalid
- * 3. Rate limiting:
- *    - Added 30 req/min limit to prevent abuse
- *    - Uses client IP for tracking
- * 4. Response size control:
- *    - Fixed dimensions (1200x630) prevent oversized responses
- */
