@@ -27,6 +27,7 @@ type PredictionResponse = {
 };
 
 const formatMoney = (k: number) => {
+  if (k === 0) return '< $1,000';
   if (k >= 1000) return `$${(k / 1000).toFixed(1)}M`;
   return `$${k}K`;
 };

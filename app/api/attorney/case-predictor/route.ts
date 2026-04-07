@@ -169,7 +169,7 @@ Case Type: ${prediction.caseType}
 Win Rate: ${prediction.predictedWinRate}%
 Settlement Rate: ${prediction.predictedSettlementRate}%
 Predicted Duration: ${prediction.predictedDurationMonths} months
-Settlement Range: $${prediction.settlementRange.low}K - $${prediction.settlementRange.high}K
+Settlement Range: ${prediction.settlementRange.low >= 1000 ? `$${(prediction.settlementRange.low / 1000).toFixed(1)}M` : `$${prediction.settlementRange.low}K`} - ${prediction.settlementRange.high >= 1000 ? `$${(prediction.settlementRange.high / 1000).toFixed(1)}M` : `$${prediction.settlementRange.high}K`}
 Represented: ${input.hasAttorney ? 'Yes' : 'Pro Se'}
 Case Strength: ${input.caseStrength}
 Sample Size: ${prediction.sampleSize.toLocaleString()} cases
