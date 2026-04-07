@@ -355,11 +355,16 @@ export default function DashboardTabs({
           </div>
 
           {/* Sign Out */}
-          <Link href="/sign-out" style={{ textDecoration: 'none' }}>
-            <button style={{ width: '100%', padding: '12px', background: '#FFF', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', fontWeight: 600, color: '#4B5563', cursor: 'pointer' }}>
-              Sign Out
-            </button>
-          </Link>
+          <button
+            onClick={async () => {
+              const { getSupabase } = await import('../lib/supabase');
+              await getSupabase().auth.signOut();
+              window.location.href = '/';
+            }}
+            style={{ width: '100%', padding: '12px', background: '#FFF', border: '1px solid #E5E7EB', borderRadius: '12px', fontSize: '14px', fontWeight: 600, color: '#4B5563', cursor: 'pointer' }}
+          >
+            Sign Out
+          </button>
         </div>
       )}
     </div>
