@@ -7,6 +7,7 @@ import { REAL_DATA } from '../../lib/realdata';
 import { SITE_URL } from '../../lib/site-config';
 import { formatSettlementAmount } from '../../lib/format';
 import { ATTORNEY_IMPACT } from '../../lib/attorney-impact';
+import DemoCalculator from '../../components/DemoCalculator';
 
 const slideUpFadeIn = `
   @keyframes slideUpFadeIn {
@@ -250,6 +251,7 @@ export default function CalculatorPage() {
 
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
+      <DemoCalculator />
       <style>{slideUpFadeIn}</style>
       <style>{selectStyles}</style>
       <script

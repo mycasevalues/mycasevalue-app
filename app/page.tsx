@@ -6,6 +6,7 @@ import AnimatedCounter from '../components/AnimatedCounter';
 import DataFreshness from '../components/DataFreshness';
 import CaseFilingTicker from '../components/CaseFilingTicker';
 import HeroDataViz from '../components/HeroDataViz';
+import DemoHomepage from '../components/DemoHomepage';
 import { HeroEntrance, StaggerGrid, StaggerItem, FadeIn } from '../components/motion';
 
 const ACCENT_COLOR = '#0A66C2';
@@ -84,6 +85,7 @@ export default function HomePage() {
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
+      <DemoHomepage />
       {/* Hero Section */}
       <section
         style={{
@@ -217,6 +219,23 @@ export default function HomePage() {
               }}
             >
               View Case Types
+            </Link>
+            <Link
+              href="/?demo=true"
+              style={{
+                padding: '14px 32px',
+                backgroundColor: '#f3f4f6',
+                color: ACCENT_COLOR,
+                textDecoration: 'none',
+                fontWeight: 600,
+                borderRadius: '20px',
+                fontSize: '16px',
+                border: `2px solid #e5e7eb`,
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+              }}
+            >
+              View Demo
             </Link>
           </div>
           </HeroEntrance>

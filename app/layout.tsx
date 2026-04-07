@@ -51,6 +51,7 @@ const GlobalCommandPalette = dynamic(() => import('../components/ui/GlobalComman
 const ScrollToTop = dynamic(() => import('../components/ui/ScrollToTop'), { ssr: false });
 const BackToTop = dynamic(() => import('../components/BackToTop'), { ssr: false });
 const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVitalsReporter'), { ssr: false });
+const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
 
 export const metadata = {
   title: {
@@ -349,6 +350,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieConsent />
         <WebVitalsReporter />
         <GlobalCommandPalette />
+        <DemoMode />
         <Analytics />
         <SpeedInsights />
         <script dangerouslySetInnerHTML={{ __html: `

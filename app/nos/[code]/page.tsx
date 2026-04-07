@@ -16,6 +16,7 @@ import { ATTORNEY_IMPACT } from '../../../lib/attorney-impact';
 import { getWinRateColor } from '../../../lib/color-scale';
 import { AnimatedRangeBar, MetricsStagger, MetricsStaggerItem } from '../../../components/motion/NosAnimations';
 import NOSRecoveryRangeClient from '../../../components/NOSRecoveryRangeClient';
+import DemoNOSPage from '../../../components/DemoNOSPage';
 import dynamic from 'next/dynamic';
 
 const SettlementViolin = dynamic(() => import('../../../components/charts/SettlementViolin'), { ssr: false });
@@ -334,6 +335,7 @@ export default async function NOSPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen" style={{ fontFamily: 'var(--font-body)', background: '#F7F8FA', color: '#4B5563' }}>
+      <DemoNOSPage />
       <style>{`
         .nos-header {
           background: #1B3A5C;
