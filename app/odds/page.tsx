@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { SITS, STATES } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { fmtK } from '../../lib/format';
+import { ATTORNEY_IMPACT } from '../../lib/attorney-impact';
+import { getWinRateColor } from '../../lib/color-scale';
 
 const allTypes = SITS.flatMap(cat =>
   cat.opts.map(opt => ({ label: opt.label, nos: opt.nos, category: cat.label }))
@@ -59,6 +61,8 @@ function computeOdds(nos: string): OddsResult | null {
 
 export default function OddsPage() {
   const [selectedNOS, setSelectedNOS] = useState('');
+  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [represented, setRepresented] = useState('yes');
   const [results, setResults] = useState<OddsResult | null>(null);
   const [showResults, setShowResults] = useState(false);
 
@@ -69,9 +73,11 @@ export default function OddsPage() {
     setShowResults(true);
   };
 
-  const winColor = results
-    ? results.winRate >= 50 ? '#059669' : results.winRate >= 35 ? '#D97706' : '#0A66C2'
-    : '#0f0f0f';
+  const wrColors = results ? getWinRateColor(results.winRate) : null;
+  const winColor = wrColors?.text || '#0f0f0f';
+
+  // Attorney impact data
+  const attyData = results ? ATTORNEY_IMPACT[results.nos] : null;
 
   // Top circuits sorted by win rate
   const topCircuits = results
@@ -268,22 +274,9 @@ export default function OddsPage() {
             }}>
               Select Your Case Type
             </h2>
-            <div className="odds-grid-2" style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr auto',
-              gap: 16,
-              alignItems: 'end',
-            }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }} className="odds-grid-2">
               <div>
-                <label style={{
-                  display: 'block',
-                  fontSize: 12,
-                  fontWeight: 600,
-                  color: '#4B5563',
-                  marginBottom: 8,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.3px',
-                }}>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
                   Case Type *
                 </label>
                 <select
@@ -305,6 +298,64 @@ export default function OddsPage() {
                   ))}
                 </select>
               </div>
+              <div>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+                  Federal District (optional)
+                </label>
+                <select
+                  value={selectedDistrict}
+                  onChange={e => { setSelectedDistrict(e.target.value); setShowResults(false); }}
+                  className="odds-select"
+                >
+                  <option value="">All districts (national)</option>
+                  {STATES.filter(st => st.id).map(st => (
+                    <option key={st.id} value={st.id}>{st.label}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'end', gap: 16, flexWrap: 'wrap' }}>
+              <div>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#4B5563', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+                  Attorney Representation
+                </label>
+                <div style={{ display: 'flex', gap: 0, borderRadius: '12px', overflow: 'hidden', border: '1px solid #E5E7EB' }}>
+                  <button
+                    type="button"
+                    onClick={() => { setRepresented('yes'); setShowResults(false); }}
+                    style={{
+                      padding: '12px 20px',
+                      fontSize: 13,
+                      fontWeight: 600,
+                      background: represented === 'yes' ? '#0A66C2' : '#FFFFFF',
+                      color: represented === 'yes' ? '#FFFFFF' : '#4B5563',
+                      border: 'none',
+                      cursor: 'pointer',
+                      fontFamily: 'var(--font-body)',
+                    }}
+                  >
+                    With Attorney
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { setRepresented('no'); setShowResults(false); }}
+                    style={{
+                      padding: '12px 20px',
+                      fontSize: 13,
+                      fontWeight: 600,
+                      background: represented === 'no' ? '#0A66C2' : '#FFFFFF',
+                      color: represented === 'no' ? '#FFFFFF' : '#4B5563',
+                      border: 'none',
+                      borderLeft: '1px solid #E5E7EB',
+                      cursor: 'pointer',
+                      fontFamily: 'var(--font-body)',
+                    }}
+                  >
+                    Pro Se
+                  </button>
+                </div>
+              </div>
               <button
                 onClick={handleCheck}
                 disabled={!selectedNOS}
@@ -323,18 +374,22 @@ export default function OddsPage() {
               <div className="odds-card" style={{
                 padding: 'clamp(32px, 5vw, 48px)',
                 textAlign: 'center',
+                background: wrColors?.bg || '#FFFFFF',
                 borderTop: `4px solid ${winColor}`,
               }}>
                 <p style={{
                   fontSize: 12,
                   fontWeight: 600,
                   color: '#4B5563',
-                  margin: '0 0 8px',
+                  margin: '0 0 4px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                 }}>
-                  Plaintiff Win Rate
+                  Plaintiff Favorable Outcome
                 </p>
+                <div style={{ fontSize: 11, color: wrColors?.text || '#4B5563', fontWeight: 600, marginBottom: 8 }}>
+                  {wrColors?.label || ''}
+                </div>
                 <div style={{
                   fontSize: 'clamp(56px, 12vw, 80px)',
                   fontWeight: 600,
@@ -343,7 +398,7 @@ export default function OddsPage() {
                   lineHeight: 1,
                   margin: '0 0 8px',
                 }}>
-                  {results.winRate.toFixed(1)}%
+                  {favorablePercentage.toFixed(1)}%
                 </div>
                 <p style={{ fontSize: 14, color: '#4B5563', margin: '0 0 16px' }}>
                   Based on <strong style={{ color: '#0f0f0f', fontFamily: 'var(--font-mono)' }}>
@@ -1111,18 +1166,87 @@ export default function OddsPage() {
               )}
 
               {/* Disclaimer */}
+              {/* Attorney Representation Comparison */}
+              {attyData && (
+                <section className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: '0 0 16px', fontFamily: 'var(--font-display)' }}>
+                    Attorney Representation Impact
+                  </h3>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
+                    <div style={{ padding: 16, background: '#E8F3EB', border: '1px solid #057642', borderRadius: 8, textAlign: 'center' }}>
+                      <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>With Attorney</div>
+                      <div style={{ fontSize: 28, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{attyData.rwr}%</div>
+                      <div style={{ fontSize: 11, color: '#4B5563' }}>{attyData.rn.toLocaleString()} cases</div>
+                    </div>
+                    <div style={{ padding: 16, background: '#FEF0EF', border: '1px solid #CC1016', borderRadius: 8, textAlign: 'center' }}>
+                      <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Pro Se</div>
+                      <div style={{ fontSize: 28, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{attyData.pwr}%</div>
+                      <div style={{ fontSize: 11, color: '#4B5563' }}>{attyData.pn.toLocaleString()} cases</div>
+                    </div>
+                    <div style={{ padding: 16, background: '#EDF3FB', border: '1px solid #0A66C2', borderRadius: 8, textAlign: 'center' }}>
+                      <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Advantage</div>
+                      <div style={{ fontSize: 28, fontWeight: 700, color: '#004182', fontFamily: 'var(--font-mono)' }}>+{attyData.rwr - attyData.pwr}%</div>
+                      <div style={{ fontSize: 11, color: '#4B5563' }}>with representation</div>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* AI-Generated Next Steps */}
+              <section className="odds-card" style={{ padding: 'clamp(24px, 4vw, 32px)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+                  <span style={{ padding: '2px 8px', background: '#F3F2EF', borderRadius: 4, fontSize: 10, fontWeight: 600, color: '#666', letterSpacing: '0.3px' }}>AI</span>
+                  <h3 style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-display)' }}>
+                    Recommended Next Steps
+                  </h3>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: '#EDF3FB', color: '#0A66C2', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>1</span>
+                    <p style={{ fontSize: 13, color: '#0f0f0f', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+                      {results.winRate >= 40
+                        ? `With a ${results.winRate.toFixed(0)}% win rate, ${results.label} cases have favorable odds. Document all evidence thoroughly and consider consulting with an attorney experienced in this area of law.`
+                        : `${results.label} cases have a ${results.winRate.toFixed(0)}% win rate, making strong evidence and legal representation particularly important. Gather all relevant documentation before filing.`
+                      }
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: '#EDF3FB', color: '#0A66C2', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>2</span>
+                    <p style={{ fontSize: 13, color: '#0f0f0f', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+                      {results.settlementRate >= 30
+                        ? `Settlement occurs in ${results.settlementRate.toFixed(0)}% of cases — explore early settlement discussions as a strategic option to reduce costs and timeline.`
+                        : `With a ${results.settlementRate.toFixed(0)}% settlement rate, many ${results.label} cases proceed through litigation. Prepare for a timeline of ${results.medianDuration} months to resolution.`
+                      }
+                    </p>
+                  </div>
+                  <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: '50%', background: '#EDF3FB', color: '#0A66C2', fontSize: 12, fontWeight: 700, flexShrink: 0 }}>3</span>
+                    <p style={{ fontSize: 13, color: '#0f0f0f', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+                      {attyData
+                        ? `Attorneys achieve a ${attyData.rwr}% win rate vs ${attyData.pwr}% for pro se litigants in this case type — a +${attyData.rwr - attyData.pwr}% advantage. Research attorneys with specific ${results.label} experience in your district.`
+                        : `Legal representation significantly improves outcomes in federal court. Research attorneys with specific ${results.label} experience in your jurisdiction.`
+                      }
+                    </p>
+                  </div>
+                </div>
+                <p style={{ fontSize: 10, color: '#9CA3AF', marginTop: 12, marginBottom: 0 }}>
+                  AI-generated guidance — for research purposes only.
+                </p>
+              </section>
+
+              {/* Disclaimer */}
               <section style={{
                 padding: 'clamp(16px, 4vw, 32px)',
-                background: '#FFFFFF',
-                border: '1px solid #E5E7EB',
-                borderRadius: 2,
+                background: '#FEF3C7',
+                border: '1px solid #FCD34D',
+                borderRadius: 8,
               }}>
-                <p style={{ fontSize: 13, color: '#4B5563', margin: '0 0 12px', lineHeight: 1.6 }}>
-                  <strong>Research Data Disclaimer:</strong> This page provides research information based on publicly available federal court outcome data. The statistics displayed represent historical aggregate data from the Federal Judicial Center Integrated Database and are not predictions of your case outcome.
+                <p style={{ fontSize: 13, color: '#78350F', margin: '0 0 8px', lineHeight: 1.6, fontWeight: 600 }}>
+                  Statistical estimate based on historical data — not a prediction of your case outcome.
                 </p>
-                <p style={{ fontSize: 13, color: '#4B5563', margin: 0, lineHeight: 1.6 }}>
-                  <strong>Not Legal Advice:</strong> This is not legal advice and does not create an attorney-client relationship. Always consult with a qualified attorney licensed in your jurisdiction.{' '}
-                  <Link href="/methodology" className="odds-link">Learn about our methodology</Link>
+                <p style={{ fontSize: 12, color: '#78350F', margin: 0, lineHeight: 1.6 }}>
+                  Data sourced from the Federal Judicial Center Integrated Database (2000–2024). Individual outcomes vary based on case facts, jurisdiction, and representation. This is not legal advice.{' '}
+                  <Link href="/methodology" className="odds-link" style={{ color: '#92400E' }}>Learn about our methodology</Link>
                 </p>
               </section>
             </div>
