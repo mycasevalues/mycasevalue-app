@@ -575,7 +575,7 @@ export default async function NOSPage({ params }: PageProps) {
           left: 0;
           right: 0;
           height: 8px;
-          background: #E5E7EB;
+          background: #EDF3FB;
           border-radius: 4px;
         }
 
@@ -583,18 +583,16 @@ export default async function NOSPage({ params }: PageProps) {
           position: absolute;
           top: 16px;
           height: 8px;
-          background: linear-gradient(90deg, #B3D9E8 0%, #004182 50%, #1B3A5C 100%);
+          background: #70B5F9;
           border-radius: 4px;
         }
 
         .recovery-marker {
           position: absolute;
-          top: 12px;
-          width: 16px;
-          height: 16px;
-          background: #FFFFFF;
-          border: 2px solid #0A66C2;
-          border-radius: 50%;
+          top: 10px;
+          width: 2px;
+          height: 20px;
+          background: #0A66C2;
           transform: translateX(-50%);
           z-index: 10;
         }
