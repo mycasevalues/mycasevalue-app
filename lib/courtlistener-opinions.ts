@@ -186,7 +186,7 @@ export async function generateOpinionSummary(
 // ─── Ingestion Functions ──────────────────────────────────────────────
 
 /**
- * Ingest opinions for a single judge
+ * Ingest opinions for a single judge — fetches from CourtListener and upserts to Supabase
  */
 export async function ingestOpinionsForJudge(
   judgeId: string,
@@ -207,81 +207,53 @@ export async function ingestOpinionsForJudge(
       return { stored: 0, summariesGenerated: 0, errors };
     }
 
-    // Process each opinion
-    opinions.forEach((opinion) => {
+    // Process and upsert each opinion to judge_opinions table
+    for (const opinion of opinions) {
       try {
-        const opinionId = opinion.id || Math.random();
+        const opinionId = opinion.id;
+        if (!opinionId) continue;
+
         const caseName = opinion.case_name || opinion.caseName || 'Unknown Case';
         const court = opinion.court || opinion.court_id || 'Unknown Court';
         const dateFiled = opinion.date_filed || opinion.dateFiled || new Date().toISOString();
         const year = new Date(dateFiled).getFullYear();
-        const citation = (opinion.citation?.[0] || opinion.citations?.[0]) || '';
-        const snippet = opinion.snippet || '';
+        const citeCount = opinion.cite_count || opinion.citeCount || 0;
         const absoluteUrl = opinion.absolute_url || '';
 
-        const storedOpinion: StoredOpinion = {
-          id: `${judgeId}-${opinionId}`,
+        // Map to judge_opinions table schema
+        const record: Record<string, any> = {
           judge_id: judgeId,
           courtlistener_opinion_id: opinionId,
           case_name: caseName,
           court: court,
-          date_filed: dateFiled,
-          citation: citation,
-          snippet: snippet,
-          opinion_url: absoluteUrl ? `https://www.courtlistener.com${absoluteUrl}` : '',
-          created_at: new Date().toISOString(),
-          updated_at: new Date().toISOString(),
+          year: year,
+          citation_count: citeCount,
+          courtlistener_url: absoluteUrl ? `https://www.courtlistener.com${absoluteUrl}` : null,
         };
 
-        // Store for later upsert
-        const { data: existing } = supabase
+        // Upsert to Supabase (unique on judge_id + courtlistener_opinion_id)
+        const { error: upsertError } = await supabase
           .from('judge_opinions')
-          .select('id, ai_summary')
-          .eq('judge_id', judgeId)
-          .eq('courtlistener_opinion_id', opinionId)
-          .maybeSingle();
+          .upsert(record, {
+            onConflict: 'judge_id,courtlistener_opinion_id',
+            ignoreDuplicates: false,
+          });
 
-        // Don't re-generate summary if already exists
-        if (existing?.ai_summary) {
-          storedOpinion.ai_summary = existing.ai_summary;
+        if (upsertError) {
+          // If unique constraint doesn't exist, try insert with conflict handling
+          const { error: insertError } = await supabase
+            .from('judge_opinions')
+            .insert(record);
+
+          if (insertError && !insertError.message?.includes('duplicate')) {
+            errors.push(`Upsert error for opinion ${opinionId}: ${insertError.message}`);
+            continue;
+          }
         }
 
         stored++;
       } catch (err: any) {
         errors.push(`Opinion processing error: ${err.message}`);
-      }
-    });
-
-    // Generate summaries for opinions without them (async, non-blocking)
-    if (anthropicApiKey && opinions.length > 0) {
-      for (let i = 0; i < Math.min(opinions.length, 5); i++) {
-        const opinion = opinions[i];
-        const caseName = opinion.case_name || opinion.caseName || 'Unknown';
-        const court = opinion.court || opinion.court_id || '';
-        const year = opinion.date_filed
-          ? new Date(opinion.date_filed).getFullYear()
-          : new Date().getFullYear();
-
-        try {
-          const summary = await generateOpinionSummary(
-            caseName,
-            court,
-            year,
-            opinion.plain_text || opinion.html || opinion.opinion_text,
-            anthropicApiKey,
-          );
-
-          if (summary) {
-            summariesGenerated++;
-          }
-
-          // Rate limit between API calls
-          if (i < Math.min(opinions.length, 5) - 1) {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-          }
-        } catch (err: any) {
-          errors.push(`Summary generation error: ${err.message}`);
-        }
       }
     }
 
@@ -293,14 +265,18 @@ export async function ingestOpinionsForJudge(
 }
 
 /**
- * Main ingestion function — processes all active judges or resumes from last checkpoint
+ * Main ingestion function — processes a batch of active judges with pagination support
+ * @param offset - Starting offset for judge batch (default 0)
+ * @param batchSize - Number of judges to process per call (default 5)
  */
 export async function ingestJudgeOpinions(
   supabaseUrl: string,
   supabaseServiceKey: string,
   courtlistenerToken?: string,
   anthropicApiKey?: string,
-): Promise<IngestionResult> {
+  offset: number = 0,
+  batchSize: number = 5,
+): Promise<IngestionResult & { next_offset?: number | null; total_judges?: number }> {
   const startTime = Date.now();
   const supabase = createClient(supabaseUrl, supabaseServiceKey);
   const errors: string[] = [];
@@ -310,38 +286,51 @@ export async function ingestJudgeOpinions(
   let lastProcessedJudgeId: string | undefined;
 
   try {
-    // Get list of active judges from database
-    let judges: any[] = [];
-    try {
-      const { data, error: queryError } = await supabase
-        .from('judges')
-        .select('id, courtlistener_id, full_name')
-        .eq('is_active', true)
-        .limit(100);
+    // Get batch of active judges with courtlistener_id from database
+    const { data: judges, count, error: queryError } = await supabase
+      .from('judges')
+      .select('id, courtlistener_id, full_name', { count: 'exact' })
+      .eq('is_active', true)
+      .not('courtlistener_id', 'is', null)
+      .gt('courtlistener_id', 0)
+      .order('id')
+      .range(offset, offset + batchSize - 1);
 
-      if (queryError) {
-        console.warn('Could not fetch judges from Supabase, using mock data:', queryError);
-        judges = MOCK_JUDGES;
-      } else {
-        judges = data || MOCK_JUDGES;
-      }
-    } catch (err) {
-      console.warn('Supabase error, using mock judges:', err);
-      judges = MOCK_JUDGES;
+    if (queryError) {
+      errors.push(`Query error: ${queryError.message}`);
+      return {
+        processed: 0,
+        opinions_stored: 0,
+        summaries_generated: 0,
+        errors,
+        duration_ms: Date.now() - startTime,
+        next_offset: null,
+        total_judges: 0,
+      };
     }
 
-    // Process each judge with rate limiting
-    for (let i = 0; i < judges.length; i++) {
-      const judge = judges[i];
+    const totalJudges = count || 0;
+    const judgeList = judges || [];
+
+    if (judgeList.length === 0) {
+      return {
+        processed: 0,
+        opinions_stored: 0,
+        summaries_generated: 0,
+        errors,
+        duration_ms: Date.now() - startTime,
+        next_offset: null,
+        total_judges: totalJudges,
+      };
+    }
+
+    // Process each judge in the batch
+    for (let i = 0; i < judgeList.length; i++) {
+      const judge = judgeList[i];
 
       try {
-        // Rate limit between judge requests
-        if (i > 0) {
-          await new Promise((resolve) => setTimeout(resolve, RATE_LIMIT_DELAY));
-        }
-
         const judgeId = judge.id;
-        const clJudgeId = judge.courtlistener_id || 0;
+        const clJudgeId = judge.courtlistener_id;
 
         if (!clJudgeId || clJudgeId === 0) {
           continue;
@@ -352,46 +341,46 @@ export async function ingestJudgeOpinions(
           clJudgeId,
           supabase,
           courtlistenerToken,
-          anthropicApiKey,
         );
 
         opinionsStored += result.stored;
         summariesGenerated += result.summariesGenerated;
-        errors.push(...result.errors);
+        if (result.errors.length > 0) errors.push(...result.errors);
         processed++;
         lastProcessedJudgeId = judgeId;
 
-        // Log progress every 5 judges
-        if (processed % 5 === 0) {
-          console.log(`Processed ${processed} judges, stored ${opinionsStored} opinions`);
+        // Rate limit between CourtListener requests
+        if (i < judgeList.length - 1) {
+          await new Promise((resolve) => setTimeout(resolve, RATE_LIMIT_DELAY));
         }
       } catch (err: any) {
-        errors.push(`Judge ${judge.id} ingestion failed: ${err.message}`);
+        errors.push(`Judge ${judge.id} failed: ${err.message}`);
       }
     }
 
-    // Log completion
-    try {
-      await supabase.from('ingestion_logs').insert({
-        job_name: 'ingest-opinions',
-        status: errors.length > 0 ? 'completed_with_errors' : 'completed',
-        records_processed: processed,
-        errors: errors,
-        completed_at: new Date().toISOString(),
-      });
-    } catch (err) {
-      console.warn('Could not log to ingestion_logs:', err);
-    }
+    // Determine if there are more judges to process
+    const nextOffset = offset + batchSize < totalJudges ? offset + batchSize : null;
+
+    return {
+      processed,
+      opinions_stored: opinionsStored,
+      summaries_generated: summariesGenerated,
+      errors,
+      duration_ms: Date.now() - startTime,
+      last_processed_judge_id: lastProcessedJudgeId,
+      next_offset: nextOffset,
+      total_judges: totalJudges,
+    };
   } catch (err: any) {
     errors.push(`Fatal ingestion error: ${err.message}`);
+    return {
+      processed: 0,
+      opinions_stored: 0,
+      summaries_generated: 0,
+      errors,
+      duration_ms: Date.now() - startTime,
+      next_offset: null,
+      total_judges: 0,
+    };
   }
-
-  return {
-    processed,
-    opinions_stored: opinionsStored,
-    summaries_generated: summariesGenerated,
-    errors,
-    duration_ms: Date.now() - startTime,
-    last_processed_judge_id: lastProcessedJudgeId,
-  };
 }

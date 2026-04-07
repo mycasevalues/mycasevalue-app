@@ -24,11 +24,12 @@ import { ingestJudgeOpinions, ingestOpinionsForJudge } from '../../../../lib/cou
 import { createClient } from '@supabase/supabase-js';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 300;
 
 export async function POST(req: NextRequest) {
   // Strict rate limiting to prevent brute-force attacks on admin secret
   const ip = getClientIp(req.headers);
-  const { success: rateLimitOk } = rateLimit(ip, { windowMs: 60000, maxRequests: 5 });
+  const { success: rateLimitOk } = rateLimit(ip, { windowMs: 60000, maxRequests: 60 });
   if (!rateLimitOk) {
     return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
   }
@@ -62,13 +63,15 @@ export async function POST(req: NextRequest) {
 
     // Parse request body
     let judgeId: string | undefined;
-    let resumeFrom: string | undefined;
+    let offset: number = 0;
+    let batchSize: number = 5;
     let bodyToken: string | undefined;
 
     try {
       const body = await req.json();
       judgeId = body?.judge_id;
-      resumeFrom = body?.resume_from;
+      offset = body?.offset || 0;
+      batchSize = body?.batch_size || 5;
       bodyToken = body?.courtlistener_token;
     } catch {
       // Body might be empty, that's fine
@@ -134,8 +137,15 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Otherwise run full ingestion (optionally resuming from checkpoint)
-    const result = await ingestJudgeOpinions(supabaseUrl, supabaseServiceKey, token, anthropicApiKey);
+    // Otherwise run paginated batch ingestion
+    const result = await ingestJudgeOpinions(
+      supabaseUrl,
+      supabaseServiceKey,
+      token,
+      anthropicApiKey,
+      offset,
+      batchSize,
+    );
 
     return NextResponse.json(result);
   } catch (err: unknown) {
