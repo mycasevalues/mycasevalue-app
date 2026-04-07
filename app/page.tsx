@@ -273,6 +273,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* What This Data Actually Tells You — S.D.N.Y. Example */}
+      <section style={{ borderTop: '1px solid #E0DDD8', padding: '80px 20px' }}>
+        <div style={{ maxWidth: '768px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '40px' }}>
+            <p className="mcv-section-label">In plain English</p>
+            <h2 style={{ fontSize: '32px', fontWeight: 600, color: '#1B3A5C', fontFamily: 'var(--font-display)', marginBottom: '12px', letterSpacing: '-0.01em', borderLeft: '3px solid #0A66C2', paddingLeft: '20px' }}>
+              What this data actually tells you
+            </h2>
+            <p style={{ fontSize: '19px', color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: '640px', lineHeight: 1.6, fontWeight: 300 }}>
+              We take millions of public federal court records and turn them into clear, actionable insights.
+            </p>
+          </div>
+
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#4B5563', textAlign: 'center', marginBottom: '12px' }}>
+            Example data — Employment Discrimination, S.D.N.Y.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+            {/* Win Rate Card */}
+            <div style={{ background: '#E8F3EB', border: '1px solid #057642', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 600, color: '#057642', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Win Rate</div>
+              <div style={{ fontSize: '28px', fontWeight: 600, color: '#057642', fontFamily: 'var(--font-mono)', marginBottom: '8px' }}>42%</div>
+              <p style={{ fontSize: '13px', color: '#0f0f0f', lineHeight: 1.5, margin: 0 }}>Of cases that went to trial, 42% resulted in a plaintiff verdict.</p>
+            </div>
+            {/* Settlement Range Card */}
+            <div style={{ background: '#EDF3FB', border: '1px solid #0A66C2', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Settlement Range</div>
+              <div style={{ fontSize: '28px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)', marginBottom: '8px' }}>$18K–$145K</div>
+              <p style={{ fontSize: '13px', color: '#0f0f0f', lineHeight: 1.5, margin: 0 }}>The middle 80% of settlements fell in this range.</p>
+            </div>
+            {/* Timeline Card */}
+            <div style={{ background: '#FEF0EF', border: '1px solid #CC1016', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 600, color: '#CC1016', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Timeline</div>
+              <div style={{ fontSize: '28px', fontWeight: 600, color: '#CC1016', fontFamily: 'var(--font-mono)', marginBottom: '8px' }}>14 mo</div>
+              <p style={{ fontSize: '13px', color: '#0f0f0f', lineHeight: 1.5, margin: 0 }}>Average filing-to-resolution for similar cases in this district.</p>
+            </div>
+            {/* Attorney Impact Card */}
+            <div style={{ background: '#EDF3FB', border: '1px solid #0A66C2', borderRadius: '8px', padding: '20px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Attorney Impact</div>
+              <div style={{ fontSize: '28px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)', marginBottom: '8px' }}>+23%</div>
+              <p style={{ fontSize: '13px', color: '#0f0f0f', lineHeight: 1.5, margin: 0 }}>Plaintiffs with attorneys won 23% more often than pro se litigants.</p>
+            </div>
+          </div>
+
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: '#4B5563', textAlign: 'center', marginTop: '12px', fontStyle: 'italic' }}>
+            Sample figures only. Your results depend on your specific case type, district, and facts.
+          </p>
+        </div>
+      </section>
+
       {/* Features Grid */}
       <section style={{ padding: '80px 20px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
