@@ -133,11 +133,12 @@ const jsonLd = {
       },
     },
     {
-      '@type': 'WebApplication',
+      '@type': 'SoftwareApplication',
       name: 'MyCaseValue',
       url: 'https://www.mycasevalues.com',
       applicationCategory: 'ReferenceApplication',
       operatingSystem: 'All',
+      applicationSubCategory: 'Legal Research Tool',
       offers: [
         { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Free basic case outcome report' },
         { '@type': 'Offer', price: '5.99', priceCurrency: 'USD', description: 'Single Report (one-time)' },
