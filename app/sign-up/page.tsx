@@ -135,7 +135,7 @@ export default function SignUpPage() {
               <path d="M20 6L9 17l-5-5" />
             </svg>
           </div>
-          <h1
+          <h2
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: '22px',
@@ -145,7 +145,7 @@ export default function SignUpPage() {
             }}
           >
             Check your email
-          </h1>
+          </h2>
           <p
             style={{
               fontFamily: 'var(--font-body)',
