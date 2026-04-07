@@ -26,10 +26,10 @@ type TimelineData = {
 };
 
 const phaseColors = {
-  pleading: '#3B82F6',
-  discovery: '#F59E0B',
+  pleading: '#70B5F9',
+  discovery: '#C37D16',
   dispositive: '#0A66C2',
-  trial: '#EF4444',
+  trial: '#CC1016',
 };
 
 const phaseLabels = {
@@ -438,7 +438,7 @@ export default function CaseTimelinePage() {
                             {milestone.name}
                           </h4>
                           {milestone.completed && (
-                            <span style={{ fontSize: '11px', fontWeight: 600, color: '#10B981', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-body)' }}>
+                            <span style={{ fontSize: '11px', fontWeight: 600, color: '#057642', textTransform: 'uppercase', letterSpacing: '0.5px', fontFamily: 'var(--font-body)' }}>
                               Completed
                             </span>
                           )}

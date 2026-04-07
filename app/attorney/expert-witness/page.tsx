@@ -254,7 +254,7 @@ export default function ExpertWitnessPage() {
                   <div style={{ paddingTop: '12px', borderTop: '1px solid #E5E7EB' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                       <span style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase' as const }}>Daubert Survives</span>
-                      <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: expert.daubertChallengeSuccessRate >= 70 ? '#10B981' : expert.daubertChallengeSuccessRate >= 50 ? '#E89558' : '#0A66C2' }}>
+                      <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: expert.daubertChallengeSuccessRate >= 70 ? '#057642' : expert.daubertChallengeSuccessRate >= 50 ? '#C37D16' : '#0A66C2' }}>
                         {expert.daubertChallengeSuccessRate}%
                       </span>
                     </div>
@@ -263,7 +263,7 @@ export default function ExpertWitnessPage() {
                         style={{
                           height: '100%',
                           width: `${Math.min(expert.daubertChallengeSuccessRate, 100)}%`,
-                          background: expert.daubertChallengeSuccessRate >= 70 ? '#10B981' : expert.daubertChallengeSuccessRate >= 50 ? '#E89558' : '#0A66C2',
+                          background: expert.daubertChallengeSuccessRate >= 70 ? '#057642' : expert.daubertChallengeSuccessRate >= 50 ? '#C37D16' : '#0A66C2',
                           borderRadius: '3px',
                         }}
                       />
@@ -278,7 +278,7 @@ export default function ExpertWitnessPage() {
 
             {/* Disclaimer */}
             <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '12px' }}>
-              <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
             </div>

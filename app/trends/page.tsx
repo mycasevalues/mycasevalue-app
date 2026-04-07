@@ -90,16 +90,16 @@ function getTrendData(): TrendEntry[] {
 
 // Category labels and colors
 const CATEGORY_META: Record<string, { label: string; color: string }> = {
-  money: { label: 'Financial', color: '#F59E0B' },
+  money: { label: 'Financial', color: '#C37D16' },
   work: { label: 'Employment', color: '#0f0f0f' },
-  injury: { label: 'Injury', color: '#EF4444' },
-  consumer: { label: 'Consumer', color: '#004182' },
+  injury: { label: 'Injury', color: '#CC1016' },
+  consumer: { label: 'Consumer', color: '#70B5F9' },
   rights: { label: 'Civil Rights', color: '#0A66C2' },
-  housing: { label: 'Housing', color: '#06B6D4' },
-  medical: { label: 'Medical', color: '#EC4899' },
-  family: { label: 'Family', color: '#F97316' },
-  gov: { label: 'Government', color: '#64748B' },
-  ip: { label: 'Intellectual Property', color: '#10B981' },
+  housing: { label: 'Housing', color: '#70B5F9' },
+  medical: { label: 'Medical', color: '#CC1016' },
+  family: { label: 'Family', color: '#C37D16' },
+  gov: { label: 'Government', color: '#666666' },
+  ip: { label: 'Intellectual Property', color: '#057642' },
   other: { label: 'Other', color: '#4B5563' },
 };
 
@@ -359,7 +359,7 @@ export default function TrendsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {circuitData.map((circuit) => {
                   const isAboveAvg = circuit.avgWinRate > nationalAvg;
-                  const indicatorColor = circuit.avgWinRate > 55 ? '#10B981' : circuit.avgWinRate < 45 ? '#0A66C2' : '#004182';
+                  const indicatorColor = circuit.avgWinRate > 55 ? '#057642' : circuit.avgWinRate < 45 ? '#0A66C2' : '#70B5F9';
                   return (
                     <div
                       key={circuit.circuit}
@@ -384,7 +384,7 @@ export default function TrendsPage() {
                       </div>
                       <div className="flex items-center justify-between text-[11px]" style={{ color: '#4B5563' }}>
                         <span>{circuit.caseCount.toLocaleString()} cases</span>
-                        <span style={{ color: isAboveAvg ? '#10B981' : '#0A66C2' }}>
+                        <span style={{ color: isAboveAvg ? '#057642' : '#0A66C2' }}>
                           {isAboveAvg ? '+' : ''}{(circuit.avgWinRate - nationalAvg).toFixed(1)}%
                         </span>
                       </div>

@@ -682,10 +682,10 @@ export default function ServerContent() {
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #E5E7EB' }}>
                     <td style={{ padding: '12px 16px', color: '#0f0f0f', fontWeight: 500 }}>{row.feature}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(10, 102, 194, 0.08)', color: row.mcv ? '#059669' : '#9ca3af', fontWeight: 600, fontSize: '16px' }}>{row.mcv ? 'Yes' : 'No'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#059669' : '#9ca3af', fontSize: '16px' }}>{row.westlaw ? 'Yes' : 'No'}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis === 'partial' ? '#d97706' : (row.lexis ? '#059669' : '#9ca3af'), fontSize: '16px' }}>{row.lexis === 'partial' ? 'Partial' : (row.lexis ? 'Yes' : 'No')}</td>
-                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#059669' : '#9ca3af', fontSize: '16px' }}>{row.pacer ? 'Yes' : 'No'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', background: 'rgba(10, 102, 194, 0.08)', color: row.mcv ? '#057642' : '#9ca3af', fontWeight: 600, fontSize: '16px' }}>{row.mcv ? 'Yes' : 'No'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.westlaw ? '#057642' : '#9ca3af', fontSize: '16px' }}>{row.westlaw ? 'Yes' : 'No'}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.lexis === 'partial' ? '#C37D16' : (row.lexis ? '#057642' : '#9ca3af'), fontSize: '16px' }}>{row.lexis === 'partial' ? 'Partial' : (row.lexis ? 'Yes' : 'No')}</td>
+                    <td style={{ textAlign: 'center', padding: '12px 16px', color: row.pacer ? '#057642' : '#9ca3af', fontSize: '16px' }}>{row.pacer ? 'Yes' : 'No'}</td>
                   </tr>
                 ))}
                 <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
@@ -993,7 +993,7 @@ export default function ServerContent() {
             ].map((source, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <span style={{ fontSize: '12px', color: '#4B5563', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2" style={{display:'inline', verticalAlign:'middle', marginRight: '6px'}}><path d="M20 6L9 17l-5-5"/></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#057642" strokeWidth="2" style={{display:'inline', verticalAlign:'middle', marginRight: '6px'}}><path d="M20 6L9 17l-5-5"/></svg>
                   {source.name}
                 </span>
                 {i < 3 && <span style={{ fontSize: '12px', color: '#E5E7EB', marginLeft: '20px' }}>•</span>}
@@ -1152,7 +1152,7 @@ export default function ServerContent() {
               .slice(0, 6)
               .map(([nos, data]: any, i) => {
                 const winRate = data.wr || 0;
-                const winRateColor = winRate > 60 ? '#059669' : winRate > 40 ? '#F59E0B' : '#EF4444';
+                const winRateColor = winRate > 60 ? '#057642' : winRate > 40 ? '#C37D16' : '#CC1016';
                 return (
                   <Link key={i} href={`/report/${nos}`} style={{ textDecoration: 'none' }}>
                     <div style={{

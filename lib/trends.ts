@@ -48,16 +48,16 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  money: '#F59E0B',
+  money: '#C37D16',
   work: '#111111',
-  injury: '#EF4444',
-  consumer: '#0D9488',
+  injury: '#CC1016',
+  consumer: '#70B5F9',
   rights: '#0A66C2',
-  housing: '#06B6D4',
-  medical: '#EC4899',
-  family: '#F97316',
-  gov: '#64748B',
-  ip: '#10B981',
+  housing: '#70B5F9',
+  medical: '#CC1016',
+  family: '#C37D16',
+  gov: '#666666',
+  ip: '#057642',
   other: '#4B5563',
 };
 

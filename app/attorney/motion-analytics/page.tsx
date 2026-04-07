@@ -240,8 +240,8 @@ export default function MotionAnalyticsPage() {
                       style={{
                         padding: '4px 10px',
                         borderRadius: '6px',
-                        backgroundColor: motion.successColor === 'green' ? 'rgba(16, 185, 129, 0.12)' : motion.successColor === 'amber' ? 'rgba(232, 149, 88, 0.12)' : 'rgba(10, 102, 194, 0.12)',
-                        color: motion.successColor === 'green' ? '#10B981' : motion.successColor === 'amber' ? '#E89558' : '#0A66C2',
+                        backgroundColor: motion.successColor === 'green' ? 'rgba(5, 118, 66, 0.12)' : motion.successColor === 'amber' ? 'rgba(195, 125, 22, 0.12)' : 'rgba(10, 102, 194, 0.12)',
+                        color: motion.successColor === 'green' ? '#057642' : motion.successColor === 'amber' ? '#C37D16' : '#0A66C2',
                         fontSize: '11px',
                         fontWeight: 600,
                         textTransform: 'uppercase' as const,
@@ -295,7 +295,7 @@ export default function MotionAnalyticsPage() {
 
             {/* Disclaimer */}
             <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '12px' }}>
-              <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> {data.disclaimer}
               </p>
             </div>
@@ -354,7 +354,7 @@ export default function MotionAnalyticsPage() {
 
               {/* Right case */}
               <div>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid #10B981' }}>
+                <h3 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', marginBottom: '16px', paddingBottom: '12px', borderBottom: '2px solid #057642' }}>
                   {data2.caseType}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -370,7 +370,7 @@ export default function MotionAnalyticsPage() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                         <span style={{ fontSize: '12px', fontWeight: 600, color: '#0f0f0f' }}>{motion.motionType}</span>
-                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: '#10B981' }}>
+                        <span className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: '#057642' }}>
                           {motion.grantRate}%
                         </span>
                       </div>
@@ -379,7 +379,7 @@ export default function MotionAnalyticsPage() {
                           style={{
                             height: '100%',
                             width: `${Math.min(motion.grantRate, 100)}%`,
-                            background: '#10B981',
+                            background: '#057642',
                             borderRadius: '2px',
                           }}
                         />
@@ -392,7 +392,7 @@ export default function MotionAnalyticsPage() {
 
             {/* Disclaimer */}
             <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: 'rgba(232,149,88,0.12)', border: '1px solid rgba(232,149,88,0.30)', borderRadius: '12px' }}>
-              <p style={{ fontSize: '11px', color: '#E89558', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '11px', color: '#C37D16', margin: 0, lineHeight: 1.5 }}>
                 <strong>Disclaimer:</strong> Motion success rates are derived from public federal court statistics (FJC IDB). Actual outcomes depend on jurisdiction, judge, opposing counsel, and case-specific factors.
               </p>
             </div>
