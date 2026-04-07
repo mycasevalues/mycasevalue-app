@@ -59,8 +59,6 @@ export async function POST(request: Request) {
       } catch (supabaseErr) {
         console.error('Supabase connection error:', supabaseErr);
       }
-    } else {
-      console.log('Demo request (development mode):', leadData);
     }
 
     try {

@@ -32,7 +32,7 @@ const jsonLd = {
       ],
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'support@mycasevalue.com',
+        email: 'support@mycasevalues.com',
         contactType: 'customer support',
       },
       address: {
@@ -826,8 +826,8 @@ export default function AboutPage() {
                 <div className="contact-block">
                   <h3>Email Support</h3>
                   <p>Have questions about our data, tools, or platform?</p>
-                  <a href="mailto:support@mycasevalue.com" className="contact-link">
-                    support@mycasevalue.com
+                  <a href="mailto:support@mycasevalues.com" className="contact-link">
+                    support@mycasevalues.com
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>

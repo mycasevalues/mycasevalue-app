@@ -24,7 +24,7 @@ const jsonLd = {
       {
         '@type': 'ContactPoint',
         contactType: 'Customer Support',
-        email: 'support@mycasevalue.com',
+        email: 'support@mycasevalues.com',
       },
       {
         '@type': 'ContactPoint',
@@ -236,7 +236,7 @@ export default function ContactPage() {
                 Account issues, billing questions, bug reports, or feature requests.
               </p>
               <a
-                href="mailto:support@mycasevalue.com"
+                href="mailto:support@mycasevalues.com"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -252,7 +252,7 @@ export default function ContactPage() {
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="M22 7l-10 7L2 7" />
                 </svg>
-                support@mycasevalue.com
+                support@mycasevalues.com
               </a>
             </div>
 
@@ -415,7 +415,7 @@ export default function ContactPage() {
             lineHeight: 1.6,
           }}
         >
-          You can also reach out via email at <a href="mailto:support@mycasevalue.com" style={{ color: '#0A66C2', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalue.com</a> or <a href="mailto:enterprise@mycasevalue.com" style={{ color: '#0A66C2', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalue.com</a>
+          You can also reach out via email at <a href="mailto:support@mycasevalues.com" style={{ color: '#0A66C2', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalues.com</a> or <a href="mailto:enterprise@mycasevalues.com" style={{ color: '#0A66C2', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalues.com</a>
         </p>
         </div>
       </div>

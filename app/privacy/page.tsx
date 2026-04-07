@@ -421,7 +421,7 @@ export default function PrivacyPage() {
               <li><strong>Data portability:</strong> Receive your data in a portable format</li>
             </ul>
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              To exercise these rights, contact us at <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a> with details of your request.
+              To exercise these rights, contact us at <a href="mailto:privacy@mycasevalues.com" className="legal-contact-email">privacy@mycasevalues.com</a> with details of your request.
               We will respond within 30 days.
             </p>
           </section>
@@ -467,14 +467,14 @@ export default function PrivacyPage() {
               </ul>
 
               <p className="legal-body" style={{ marginTop: '12px' }}>
-                <strong>Data Protection Officer:</strong> If you are an EU resident with concerns about data processing, you have the right to file a complaint with your local data protection authority. Contact us at <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a> to discuss your rights or exercise GDPR requests.
+                <strong>Data Protection Officer:</strong> If you are an EU resident with concerns about data processing, you have the right to file a complaint with your local data protection authority. Contact us at <a href="mailto:privacy@mycasevalues.com" className="legal-contact-email">privacy@mycasevalues.com</a> to discuss your rights or exercise GDPR requests.
               </p>
             </div>
 
             <div style={{ marginTop: '16px' }}>
               <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0f0f0f', marginBottom: '12px' }}>California Residents:</h4>
               <p className="legal-body">
-                If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know, delete, opt-out of sales, and understand how your data is used. Contact us at <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a> to exercise these rights. We will respond within 45 days.
+                If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know, delete, opt-out of sales, and understand how your data is used. Contact us at <a href="mailto:privacy@mycasevalues.com" className="legal-contact-email">privacy@mycasevalues.com</a> to exercise these rights. We will respond within 45 days.
               </p>
             </div>
           </section>
@@ -504,10 +504,10 @@ export default function PrivacyPage() {
               border: '1px solid #E5E7EB'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Privacy Requests:</strong> <a href="mailto:privacy@mycasevalue.com" className="legal-contact-email">privacy@mycasevalue.com</a>
+                <strong>Privacy Requests:</strong> <a href="mailto:privacy@mycasevalues.com" className="legal-contact-email">privacy@mycasevalues.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Support & General Inquiries:</strong> <a href="mailto:support@mycasevalue.com" className="legal-contact-email">support@mycasevalue.com</a>
+                <strong>Support & General Inquiries:</strong> <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
                 <strong>Website:</strong> <a href="https://mycasevalues.com" className="legal-contact-email">https://mycasevalues.com</a>

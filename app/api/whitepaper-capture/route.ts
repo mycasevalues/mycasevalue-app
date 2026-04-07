@@ -33,13 +33,6 @@ export async function POST(request: NextRequest) {
     // 2. Store lead information in database (Supabase)
     // 3. Log analytics event
 
-    console.log('Whitepaper capture request received:', {
-      email: body.email,
-      fullName: body.fullName,
-      organization: body.organization,
-      timestamp: new Date().toISOString(),
-    });
-
     // For now, just acknowledge receipt
     return NextResponse.json(
       {

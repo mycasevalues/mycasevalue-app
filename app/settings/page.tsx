@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Settings | CaseCheck',
-  description: 'Manage your CaseCheck account settings and preferences.',
+  title: 'Settings | MyCaseValue',
+  description: 'Manage your MyCaseValue account settings and preferences.',
   robots: { index: false, follow: false },
 };
 
@@ -342,7 +342,7 @@ export default function SettingsPage() {
               >
                 <div>
                   <h3 className="font-semibold mb-1" style={{ color: '#1B3A5C' }}>
-                    CaseCheck Free Launch
+                    MyCaseValue Free Launch
                   </h3>
                   <p className="text-sm" style={{ color: '#4B5563' }}>
                     Free access during public launch period. Premium features available during beta.

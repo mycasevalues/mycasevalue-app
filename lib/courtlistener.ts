@@ -38,7 +38,7 @@ export interface Judge {
 // ─── Headers ─────────────────────────────────────────────────────────
 
 const HEADERS: Record<string, string> = {
-  'User-Agent': 'MyCaseValue/1.0 (support@mycasevalue.com)',
+  'User-Agent': 'MyCaseValue/1.0 (support@mycasevalues.com)',
   Accept: 'application/json',
   ...(process.env.COURTLISTENER_API_TOKEN
     ? { Authorization: `Token ${process.env.COURTLISTENER_API_TOKEN}` }

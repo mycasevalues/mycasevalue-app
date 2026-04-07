@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
+export const dynamic = 'force-dynamic';
+
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
@@ -43,15 +45,6 @@ export async function POST(request: NextRequest) {
         console.error('Error inserting widget impression:', error);
         return NextResponse.json({ error: 'Failed to log impression' }, { status: 500 });
       }
-    } else {
-      // Log to console in dev
-      console.log('Widget Impression:', {
-        nos_code,
-        district,
-        referer_domain,
-        widget_type,
-        timestamp: new Date().toISOString(),
-      });
     }
 
     return NextResponse.json({}, { status: 204 });

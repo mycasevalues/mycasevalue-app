@@ -67,6 +67,46 @@ function generateDispositionForCode(nosCode: string): DispositionBreakdown {
       summaryJudgment: 8,
       other: 7,
     },
+    '150': { // Fixed to avoid rounding issues
+      settled: 40,
+      plaintiffVerdict: 9.4,
+      defenseVerdict: 17.1,
+      dismissed: 22.1,
+      summaryJudgment: 11.4,
+      other: 0,
+    },
+    '151': { // Fixed to avoid rounding issues
+      settled: 40,
+      plaintiffVerdict: 6.8,
+      defenseVerdict: 15.8,
+      dismissed: 25.2,
+      summaryJudgment: 12.2,
+      other: 0,
+    },
+    '290': { // Fixed to avoid rounding issues
+      settled: 40,
+      plaintiffVerdict: 7.2,
+      defenseVerdict: 12.8,
+      dismissed: 29.9,
+      summaryJudgment: 10.1,
+      other: 0,
+    },
+    '340': { // Fixed to avoid rounding issues
+      settled: 40,
+      plaintiffVerdict: 14,
+      defenseVerdict: 9.9,
+      dismissed: 26.7,
+      summaryJudgment: 9.4,
+      other: 0,
+    },
+    '460': { // Fixed to avoid rounding issues
+      settled: 40,
+      plaintiffVerdict: 10.8,
+      defenseVerdict: 15,
+      dismissed: 22.7,
+      summaryJudgment: 11.5,
+      other: 0,
+    },
   };
 
   if (guidelines[nosCode]) {

@@ -435,7 +435,7 @@ export default async function DashboardPage() {
                   margin: '0',
                   lineHeight: 1.2,
                 }}>
-                  Welcome back to CaseCheck
+                  Welcome back to MyCaseValue
                 </h1>
               </div>
               <div style={{ textAlign: 'right', color: 'rgba(255, 255, 255, 0.7)', fontSize: '13px', fontFamily: 'var(--font-body)' }}>
@@ -487,7 +487,7 @@ export default async function DashboardPage() {
             <div className="free-banner">
               <div>
                 <p className="free-banner-text">
-                  CaseCheck is <span style={{ fontWeight: 600 }}>free during beta</span>. All features unlocked.
+                  MyCaseValue is <span style={{ fontWeight: 600 }}>free during beta</span>. All features unlocked.
                 </p>
               </div>
               <div className="free-banner-badge">Free Access</div>

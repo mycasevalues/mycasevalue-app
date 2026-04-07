@@ -93,7 +93,7 @@ const PLATFORM_SECTIONS: PlatformSection[] = [
     eyebrow: 'Research Intelligence',
     title:   'Case Outcome Analytics',
     body:    '5.1M+ indexed federal outcomes — settlement percentiles, win rates, and durations across every case type and district.',
-    href:    '/analyze',
+    href:    '/search',
     cta:     'Explore analytics',
   },
   {
@@ -107,8 +107,8 @@ const PLATFORM_SECTIONS: PlatformSection[] = [
     eyebrow: 'AI-Powered · Beta',
     title:   'Research Assistant',
     body:    'Ask in plain language. Get case-specific intelligence grounded in real PACER docket data with full source citations.',
-    href:    '/ai-research',
-    cta:     'Try AI Research',
+    href:    '/attorney',
+    cta:     'Explore Attorney Tools',
   },
 ]
 
@@ -151,22 +151,26 @@ function HeroLeft() {
         that billion-dollar litigation firms pay thousands for — indexed across 5.1 million real federal cases.
       </p>
 
-      {/* Search — wire to your existing search endpoint */}
-      <div className="flex bg-white border-[1.5px] border-brand-rule rounded-[8px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,.05)] mb-2.5 max-w-[460px]">
+      {/* Search form */}
+      <form
+        action="/search"
+        method="GET"
+        className="flex bg-white border-[1.5px] border-brand-rule rounded-[8px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,.05)] mb-2.5 max-w-[460px]"
+      >
         <div className="flex flex-1 items-center gap-2 px-3.5 py-2.5">
           <svg className="w-3.5 h-3.5 text-brand-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
             <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
           </svg>
-          {/* TODO: Replace with a form/controlled input wired to your search API */}
           <input
+            name="q"
             placeholder="Case type, judge name, or federal district…"
             className="flex-1 border-none outline-none font-inter text-[13px] text-brand-ink-2 bg-transparent placeholder:text-brand-muted"
           />
         </div>
-        <button className="bg-brand-blue text-white font-inter font-semibold text-[13px] px-5 flex-shrink-0 hover:bg-brand-blue-mid transition-colors">
+        <button type="submit" className="bg-brand-blue text-white font-inter font-semibold text-[13px] px-5 flex-shrink-0 hover:bg-brand-blue-mid transition-colors">
           Search
         </button>
-      </div>
+      </form>
 
       {/* Suggested searches */}
       <div className="flex items-center gap-2 mb-5 flex-wrap">
@@ -174,12 +178,13 @@ function HeroLeft() {
           Try
         </span>
         {['Employment · SDNY', 'Judge Torres', 'FLSA · D. Mass', 'Civil Rights'].map((s) => (
-          <button
+          <Link
             key={s}
+            href={`/search?q=${encodeURIComponent(s)}`}
             className="font-inter font-semibold text-[11px] text-brand-blue bg-brand-blue-pale border border-[#C4D8F0] rounded px-2.5 py-1 hover:bg-[#deeaf9] transition-colors"
           >
             {s}
-          </button>
+          </Link>
         ))}
       </div>
 
@@ -192,7 +197,7 @@ function HeroLeft() {
           Analyze your case
         </Link>
         <Link
-          href="/sample-report"  // ← Update to your sample report route
+          href="/sample"
           className="font-inter font-medium text-[13px] text-brand-slate hover:text-brand-ink-2 transition-colors"
         >
           View sample report →
@@ -220,7 +225,6 @@ function HeroLeft() {
         </div>
         <p className="font-inter text-[12px] text-brand-muted">
           Trusted by{' '}
-          {/* TODO: Replace 5,000 with live count from Supabase */}
           <strong className="font-semibold text-brand-ink-2">5,000+ plaintiffs</strong>{' '}
           across all 94 federal districts
         </p>
@@ -284,9 +288,6 @@ function HeroRight() {
         </div>
 
         {/* Placeholder for the actual analytics UI */}
-        {/* TODO: Replace this with your real <CaseAnalyticsMockup /> component */}
-        {/* This is a simplified representation — the full implementation */}
-        {/* should pull real data from your Supabase/PACER/CourtListener APIs */}
         <div className="bg-brand-surface p-5 min-h-[280px] flex items-center justify-center">
           <div className="text-center">
             <p className="font-jakarta font-bold text-brand-ink-2 text-lg mb-1">

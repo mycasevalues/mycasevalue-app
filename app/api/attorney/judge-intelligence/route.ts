@@ -3,6 +3,8 @@ import { REAL_DATA } from '../../../../lib/realdata';
 import { STATES } from '../../../../lib/data';
 import { validateState } from '../../../../lib/sanitize';
 
+export const dynamic = 'force-dynamic';
+
 // Realistic federal judge names by state (subset for demo — based on public records)
 const JUDGE_POOL: Record<string, { name: string; appointed: number; appointedBy: string; senior: boolean }[]> = {
   CA: [

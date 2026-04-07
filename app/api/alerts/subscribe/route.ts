@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 interface AlertSubscription {
   email: string;
   caseType: string;
@@ -79,16 +81,6 @@ export async function POST(request: NextRequest) {
       };
 
       subscriptions.push(subscription);
-
-      // Log subscription for debugging/monitoring
-      console.log('[ALERT_SUBSCRIPTION]', {
-        email,
-        caseType,
-        nosCode,
-        threshold,
-        timestamp: new Date().toISOString(),
-        totalSubscriptions: subscriptions.length,
-      });
     }
 
     return NextResponse.json(

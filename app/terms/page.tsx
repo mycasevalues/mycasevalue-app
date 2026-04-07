@@ -267,7 +267,7 @@ export default function TermsPage() {
               By accessing, browsing, using, or registering for an account on MyCaseValue, you acknowledge that you have read, understand, and agree to be bound by these Terms in their entirety.
             </p>
             <p className="legal-body">
-              If you do not agree to these Terms or any part thereof, you must immediately cease use of the Service and contact us at <a href="mailto:support@mycasevalue.com" className="legal-contact-email">support@mycasevalue.com</a> if you have questions.
+              If you do not agree to these Terms or any part thereof, you must immediately cease use of the Service and contact us at <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a> if you have questions.
             </p>
 
             <div style={{ marginTop: '16px' }}>
@@ -404,7 +404,7 @@ export default function TermsPage() {
                 <li style={{ marginBottom: '8px' }}>Use the Service only for lawful, legitimate research, due diligence, and informational purposes</li>
                 <li style={{ marginBottom: '8px' }}>Use the Service in compliance with all applicable federal, state, and local laws</li>
                 <li style={{ marginBottom: '8px' }}>Respect the intellectual property rights of MyCaseValue and third parties</li>
-                <li>Report any security vulnerabilities to us at <a href="mailto:security@mycasevalue.com" className="legal-contact-email">security@mycasevalue.com</a></li>
+                <li>Report any security vulnerabilities to us at <a href="mailto:security@mycasevalues.com" className="legal-contact-email">security@mycasevalues.com</a></li>
               </ul>
             </div>
 
@@ -502,7 +502,7 @@ export default function TermsPage() {
               Any disputes shall be subject to exclusive jurisdiction of the federal and state courts located in the United States.
             </p>
             <p className="legal-body" style={{ marginTop: '16px' }}>
-              Before litigation, we encourage good-faith negotiation. Contact us at <a href="mailto:support@mycasevalue.com" className="legal-contact-email">support@mycasevalue.com</a> to resolve disputes.
+              Before litigation, we encourage good-faith negotiation. Contact us at <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a> to resolve disputes.
             </p>
           </section>
 
@@ -531,10 +531,10 @@ export default function TermsPage() {
               border: '1px solid #E5E7EB'
             }}>
               <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>General Support:</strong> <a href="mailto:support@mycasevalue.com" className="legal-contact-email">support@mycasevalue.com</a>
+                <strong>General Support:</strong> <a href="mailto:support@mycasevalues.com" className="legal-contact-email">support@mycasevalues.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
-                <strong>Legal Inquiries:</strong> <a href="mailto:legal@mycasevalue.com" className="legal-contact-email">legal@mycasevalue.com</a>
+                <strong>Legal Inquiries:</strong> <a href="mailto:legal@mycasevalues.com" className="legal-contact-email">legal@mycasevalues.com</a>
               </p>
               <p style={{ margin: '12px 0 0 0', fontSize: '15px', lineHeight: 1.7 }}>
                 <strong>Website:</strong> <a href="https://mycasevalues.com" className="legal-contact-email">https://mycasevalues.com</a>

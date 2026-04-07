@@ -7,6 +7,8 @@
 import { getJudges, getTopJudgesForNOS, getDistrictJudges } from '@/lib/judge-data-service';
 import { JudgeWithStats } from '@/lib/supabase-judges';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);

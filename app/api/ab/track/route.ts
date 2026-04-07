@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { rateLimit, RateLimitConfig } from '../../../../lib/rate-limit';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * Request body type for A/B test conversion tracking
  */

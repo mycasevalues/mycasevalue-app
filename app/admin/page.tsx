@@ -139,7 +139,6 @@ export default function AdminPage() {
     handleValidateRules();
     if (rulesValidation.valid) {
       // TODO: Persist localRulesJson to Supabase or backend
-      console.log('Saving rules:', localRulesJson);
     }
   };
 
@@ -171,7 +170,7 @@ export default function AdminPage() {
         }}
       >
         <div style={{ padding: '0 20px', marginBottom: '32px' }}>
-          <h1 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 8px 0' }}>CaseCheck</h1>
+          <h1 style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 8px 0' }}>MyCaseValue</h1>
           <p style={{ fontSize: '12px', opacity: 0.7, margin: 0 }}>Admin Panel</p>
         </div>
 

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * POST /api/notify/subscribe
  * Subscribe to notifications for a specific case type or state.

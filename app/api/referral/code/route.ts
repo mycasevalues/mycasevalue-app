@@ -7,6 +7,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createReferralCode } from '@/lib/referral';
 import { getSupabaseAdmin } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * Get the current user's referral code
  * Requires authentication (user ID should be passed in request)

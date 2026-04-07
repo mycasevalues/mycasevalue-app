@@ -13,6 +13,8 @@ import { apiUnauthorized, apiForbidden, apiSuccess } from '../../../../lib/api-r
 import { runDataQualityCheck, summarizeCheckResults } from '../../../../lib/data-quality';
 import { logger } from '../../../../lib/logger';
 
+export const dynamic = 'force-dynamic';
+
 // ─── Admin Auth Check ──────────────────────────────────────
 
 /**
