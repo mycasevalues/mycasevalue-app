@@ -7,11 +7,11 @@ import JudgeRadarPreview from '../../components/JudgeRadarPreview';
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Federal Judge Directory | MyCaseValue',
-  description: 'Browse 94 federal judicial districts with detailed judge analytics. Motion grant rates, case duration, plaintiff win rates, and ruling pattern analytics.',
+  title: 'Federal Judge Directory — Statistics & Analytics | MyCaseValue',
+  description: 'Research federal judges across 94 districts with comprehensive statistics. Compare plaintiff win rates, motion grant rates, settlement patterns, and case duration for 5.1M+ cases.',
   alternates: { canonical: `${SITE_URL}/judges` },
   openGraph: {
-    title: 'Federal Judge Directory',
+    title: 'Federal Judge Directory — Statistics & Analytics',
     description: 'Research federal judges across all 13 circuits and 94 districts with comprehensive analytics.',
     type: 'website',
     url: `${SITE_URL}/judges`,

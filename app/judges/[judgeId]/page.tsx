@@ -7,6 +7,7 @@ import { getWinRateColor } from '@/lib/color-scale';
 import { aggregateJudgeStats, getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
 import JudgeProfileClient from '@/components/JudgeProfileClient';
 import JudgeAlertButton from '@/components/JudgeAlertButton';
+import { SITE_URL } from '@/lib/site-config';
 
 interface PageProps {
   params: Promise<{ judgeId: string }>;
@@ -31,20 +32,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
-  const title = `Judge ${judge.full_name} — ${judge.district_id || 'Federal Court'}`;
-  const description = `Research Judge ${judge.full_name}'s ruling patterns, motion grant rates, and case outcomes. ${
-    judge.statistics && judge.statistics.length > 0
-      ? `${judge.total_cases_handled} cases analyzed from federal court records.`
-      : ''
-  }`;
+  const statistics = await getJudgeStatistics(judgeId);
+  const aggregated = aggregateJudgeStats(statistics);
+
+  const title = `Judge ${judge.full_name} — Federal Court Statistics | MyCaseValue`;
+  const description = `Research Judge ${judge.full_name}'s ruling patterns and statistics. Plaintiff win rate: ${(aggregated.plaintiffWinRate || 0).toFixed(1)}%. ${judge.district_id} District, ${judge.circuit} Circuit. ${aggregated.totalCases} cases analyzed.`;
+
+  const ogImageUrl = new URL('/api/og', SITE_URL);
+  ogImageUrl.searchParams.set('title', `Judge ${judge.full_name}`);
+  ogImageUrl.searchParams.set('judge', judgeId);
 
   return {
     title,
     description,
+    alternates: { canonical: `${SITE_URL}/judges/${judgeId}` },
     openGraph: {
       title,
       description,
       type: 'website',
+      url: `${SITE_URL}/judges/${judgeId}`,
+      images: [
+        {
+          url: ogImageUrl.toString(),
+          width: 1200,
+          height: 630,
+          alt: `Judge ${judge.full_name} Profile`,
+        },
+      ],
     },
   };
 }
@@ -80,8 +94,35 @@ export default async function JudgeProfilePage({ params }: PageProps) {
   const partyColor = getPartyColor(judge.party_of_appointing_president);
   const partyLabel = getPartyLabel(judge.party_of_appointing_president);
 
+  // Build JSON-LD structured data
+  const jsonLdData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: judge.full_name,
+    givenName: judge.first_name || undefined,
+    familyName: judge.last_name || undefined,
+    jobTitle: judge.position || 'United States District Judge',
+    description: `Federal judge in the ${judge.district_id} District, ${judge.circuit} Circuit`,
+    ...(judge.appointment_date && {
+      dateOfAppointment: judge.appointment_date,
+    }),
+    ...(judge.appointing_president && {
+      appointedBy: judge.appointing_president,
+    }),
+    workLocation: {
+      '@type': 'Place',
+      name: `${judge.district_id} District Court`,
+    },
+  };
+
   return (
-    <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
+    <>
+      {/* JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+      />
+      <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       {/* Header with breadcrumb */}
       <div style={{ borderBottom: '1px solid #E5E7EB', background: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
@@ -233,6 +274,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
           aiAnalysis={aiAnalysis}
         />
       </div>
-    </div>
+      </div>
+    </>
   );
 }

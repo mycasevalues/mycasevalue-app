@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '../lib/blog';
 import { SITE_URL } from '../lib/site-config';
+import { mockJudgesData } from '../data/mock-judges';
 
 const CATEGORY_IDS = ['work', 'injury', 'consumer', 'rights', 'money', 'housing', 'medical', 'family', 'gov', 'education'];
 
@@ -137,6 +138,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // ── Judge profile pages ────────────────────────────────
+  const judgeUrls: MetadataRoute.Sitemap = mockJudgesData.judges.map((judge) => ({
+    url: `${baseUrl}/judges/${judge.id}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.65,
+  }));
+
   return [
     ...staticPages,
     ...spanishPages,
@@ -146,5 +155,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...outcomesUrls,
     ...districtNosUrls,
     ...blogUrls,
+    ...judgeUrls,
   ];
 }
