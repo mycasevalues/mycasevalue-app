@@ -84,6 +84,7 @@ const SECONDARY_NAV: SecondaryNavItem[] = [
 ];
 
 const PRODUCT_ROUTES = [
+  '/',
   '/search',
   '/judges',
   '/districts',
@@ -636,15 +637,14 @@ export default function SiteNav() {
         .navbar-mobile-subitem:hover { background: #F3F2EF !important; }
         .secondary-navbar a:hover { color: #0A66C2 !important; }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
           .navbar-desktop-items { display: none !important; }
           .navbar-right { display: none !important; }
           .navbar-hamburger { display: flex !important; }
           .navbar-mobile-drawer { display: flex !important; }
-          .secondary-navbar { display: flex !important; }
         }
 
-        @media (min-width: 1025px) {
+        @media (min-width: 769px) {
           .secondary-navbar { display: flex !important; }
         }
       `}} />
