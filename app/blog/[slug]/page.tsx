@@ -362,7 +362,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                       style={{
                         padding: '8px 12px',
                         border: '1px solid #E5E7EB',
-                        borderRadius: '8px',
+                        borderRadius: '20px',
                         fontSize: '12px',
                         color: '#4B5563',
                         textDecoration: 'none',
@@ -430,7 +430,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   background: '#0A66C2',
                   color: '#FFFFFF',
                   padding: '10px 16px',
-                  borderRadius: '8px',
+                  borderRadius: '20px',
                   fontSize: '12px',
                   fontWeight: '600',
                   textDecoration: 'none',

@@ -602,7 +602,7 @@ export default function DataSourcesPage() {
                 ].map((circuit, idx) => (
                   <div key={idx} style={{
                     padding: 16,
-                    borderRadius: '8px',
+                    borderRadius: '20px',
                     border: '1px solid #E5E7EB',
                     background: '#F9FAFB',
                   }}>
@@ -683,7 +683,7 @@ export default function DataSourcesPage() {
                   <div style={{
                     width: 32,
                     height: 32,
-                    borderRadius: '8px',
+                    borderRadius: '20px',
                     backgroundColor: '#F3F4F6',
                     display: 'flex',
                     alignItems: 'center',

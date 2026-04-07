@@ -291,7 +291,7 @@ export default function AnalyticsPage() {
                   contentStyle={{
                     background: '#FFFFFF',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '8px',
+                    borderRadius: '20px',
                     padding: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '12px',
@@ -324,7 +324,7 @@ export default function AnalyticsPage() {
                   contentStyle={{
                     background: '#FFFFFF',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '8px',
+                    borderRadius: '20px',
                     padding: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '12px',
@@ -360,7 +360,7 @@ export default function AnalyticsPage() {
                   contentStyle={{
                     background: '#FFFFFF',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '8px',
+                    borderRadius: '20px',
                     padding: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '12px',
@@ -395,7 +395,7 @@ export default function AnalyticsPage() {
                   contentStyle={{
                     background: '#FFFFFF',
                     border: '1px solid #E5E7EB',
-                    borderRadius: '8px',
+                    borderRadius: '20px',
                     padding: '12px',
                     fontFamily: 'var(--font-body)',
                     fontSize: '12px',
@@ -423,7 +423,7 @@ export default function AnalyticsPage() {
               padding: '10px 20px',
               background: '#0A66C2',
               color: '#FFFFFF',
-              borderRadius: '8px',
+              borderRadius: '20px',
               textDecoration: 'none',
               fontSize: '14px',
               fontWeight: '600',

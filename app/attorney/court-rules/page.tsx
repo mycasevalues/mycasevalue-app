@@ -263,7 +263,7 @@ export default function CourtRulesPage() {
                   </p>
                 </div>
 
-                <div style={{ background: '#F7F8FA', padding: '12px', borderRadius: '8px' }}>
+                <div style={{ background: '#F7F8FA', padding: '12px', borderRadius: '20px' }}>
                   <p style={{ fontSize: '11px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                     Judge-Specific Practices
                   </p>
@@ -275,10 +275,10 @@ export default function CourtRulesPage() {
 
               {/* Links */}
               <div style={{ display: 'flex', gap: '8px', flexDirection: 'column', marginTop: '8px' }}>
-                <a href={district.ecfUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '8px 12px', background: 'rgba(10, 102, 194, 0.08)', color: '#0A66C2', border: '1px solid rgba(10, 102, 194, 0.2)', borderRadius: '8px', fontSize: '12px', fontWeight: 600, textDecoration: 'none', textAlign: 'center', fontFamily: 'var(--font-body)', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.12)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)'; }}>
+                <a href={district.ecfUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '8px 12px', background: 'rgba(10, 102, 194, 0.08)', color: '#0A66C2', border: '1px solid rgba(10, 102, 194, 0.2)', borderRadius: '20px', fontSize: '12px', fontWeight: 600, textDecoration: 'none', textAlign: 'center', fontFamily: 'var(--font-body)', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.12)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)'; }}>
                   ECF Portal
                 </a>
-                <a href={district.rulesUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '8px 12px', background: 'rgba(10, 102, 194, 0.08)', color: '#0A66C2', border: '1px solid rgba(10, 102, 194, 0.2)', borderRadius: '8px', fontSize: '12px', fontWeight: 600, textDecoration: 'none', textAlign: 'center', fontFamily: 'var(--font-body)', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.12)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)'; }}>
+                <a href={district.rulesUrl} target="_blank" rel="noopener noreferrer" style={{ padding: '8px 12px', background: 'rgba(10, 102, 194, 0.08)', color: '#0A66C2', border: '1px solid rgba(10, 102, 194, 0.2)', borderRadius: '20px', fontSize: '12px', fontWeight: 600, textDecoration: 'none', textAlign: 'center', fontFamily: 'var(--font-body)', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.12)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)'; }}>
                   Local Rules
                 </a>
               </div>

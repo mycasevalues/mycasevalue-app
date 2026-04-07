@@ -395,7 +395,7 @@ export default function SearchPage() {
               padding: '0 14px',
               fontSize: '14px',
               border: '1px solid #D8BFFF',
-              borderRadius: '8px',
+              borderRadius: '20px',
               background: '#FFFFFF',
               color: '#0f0f0f',
               fontFamily: 'var(--font-body)',
@@ -422,7 +422,7 @@ export default function SearchPage() {
               background: aiLoading || !aiQuery.trim() ? '#D8BFFF' : '#0A66C2',
               color: '#FFFFFF',
               border: 'none',
-              borderRadius: '8px',
+              borderRadius: '20px',
               cursor: aiLoading || !aiQuery.trim() ? 'not-allowed' : 'pointer',
               fontFamily: 'var(--font-body)',
               transition: 'all 150ms',
@@ -454,7 +454,7 @@ export default function SearchPage() {
 
         {/* AI Error */}
         {aiError && (
-          <div style={{ marginTop: '12px', padding: '12px', background: 'rgba(10, 102, 194, 0.1)', border: '1px solid #D8BFFF', borderRadius: '8px' }}>
+          <div style={{ marginTop: '12px', padding: '12px', background: 'rgba(10, 102, 194, 0.1)', border: '1px solid #D8BFFF', borderRadius: '20px' }}>
             <p style={{ fontSize: '13px', color: '#004182', margin: '0', fontFamily: 'var(--font-body)' }}>
               {aiError}
             </p>
@@ -463,7 +463,7 @@ export default function SearchPage() {
 
         {/* AI Result */}
         {aiResult && (
-          <div style={{ marginTop: '16px', padding: '16px', background: '#FFFFFF', border: '1px solid #D8BFFF', borderRadius: '8px' }}>
+          <div style={{ marginTop: '16px', padding: '16px', background: '#FFFFFF', border: '1px solid #D8BFFF', borderRadius: '20px' }}>
             <p style={{ fontSize: '12px', fontWeight: '600', color: '#5B21B6', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px', marginTop: '0' }}>
               AI Interpretation
             </p>

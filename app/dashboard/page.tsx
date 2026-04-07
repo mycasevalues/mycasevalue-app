@@ -876,7 +876,7 @@ export default async function DashboardPage() {
                 { name: 'Anthropic AI', status: 'Connected', icon: '●' },
                 { name: 'Supabase', status: 'Connected', icon: '●' },
               ].map((item, i) => (
-                <div key={i} style={{ padding: '16px', borderRadius: '8px', border: '1px solid #E5E7EB', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: '#F9FAFB' }}>
+                <div key={i} style={{ padding: '16px', borderRadius: '20px', border: '1px solid #E5E7EB', display: 'flex', alignItems: 'center', gap: '12px', backgroundColor: '#F9FAFB' }}>
                   <div style={{ fontSize: '16px', color: '#059669' }}>{item.icon}</div>
                   <div style={{ flex: 1 }}>
                     <p style={{ fontSize: '13px', fontWeight: 600, color: '#666', margin: 0, textTransform: 'uppercase', letterSpacing: '0.03em' }}>{item.name}</p>

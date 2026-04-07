@@ -103,7 +103,7 @@ function NavDropdown({ items, open }: { items: DropdownItem[]; open: boolean }) 
       minWidth: '240px',
       background: '#FFFFFF',
       border: '1px solid #e5e7eb',
-      borderRadius: '8px',
+      borderRadius: '20px',
       padding: '8px 0',
       boxShadow: '0 8px 24px rgba(0,0,0,0.10)',
       zIndex: 300,
@@ -324,13 +324,13 @@ export default function SiteNav() {
                 <Link href="/dashboard" className="navbar-item" style={{
                   fontSize: '14px', fontWeight: 500, color: '#4B5563', textDecoration: 'none',
                   fontFamily: 'var(--font-display)', padding: '8px 16px',
-                  borderRadius: '8px', border: '1px solid #E5E7EB', transition: 'all 150ms',
+                  borderRadius: '20px', border: '1px solid #E5E7EB', transition: 'all 150ms',
                 }}>
                   Dashboard
                 </Link>
                 <button onClick={handleSignOut} style={{
                   fontSize: '14px', fontWeight: 600, color: '#FFFFFF', background: '#0A66C2',
-                  padding: '8px 20px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                  padding: '8px 20px', borderRadius: '20px', border: 'none', cursor: 'pointer',
                   fontFamily: 'var(--font-display)', transition: 'all 150ms',
                 }}>
                   Sign Out
@@ -346,7 +346,7 @@ export default function SiteNav() {
                 </Link>
                 <Link href="/search" className="navbar-cta" style={{
                   fontSize: '14px', fontWeight: 600, color: '#FFFFFF', background: '#0A66C2',
-                  padding: '10px 20px', borderRadius: '8px', textDecoration: 'none',
+                  padding: '10px 20px', borderRadius: '20px', textDecoration: 'none',
                   fontFamily: 'var(--font-display)', transition: 'background 150ms',
                   whiteSpace: 'nowrap',
                 }}>
@@ -503,7 +503,7 @@ export default function SiteNav() {
                 Dashboard
               </Link>
               <button onClick={() => { setMobileOpen(false); handleSignOut(); }} style={{
-                display: 'block', width: '100%', padding: '12px', borderRadius: '8px',
+                display: 'block', width: '100%', padding: '12px', borderRadius: '20px',
                 fontSize: '15px', fontWeight: 600, color: '#FFFFFF', background: '#0A66C2',
                 fontFamily: 'var(--font-display)', textAlign: 'center', minHeight: '44px',
                 marginTop: '8px', border: 'none', cursor: 'pointer',
@@ -520,7 +520,7 @@ export default function SiteNav() {
                 Sign In
               </Link>
               <Link href="/search" onClick={() => setMobileOpen(false)} style={{
-                display: 'block', padding: '12px', borderRadius: '8px', marginTop: '8px',
+                display: 'block', padding: '12px', borderRadius: '20px', marginTop: '8px',
                 fontSize: '15px', fontWeight: 600, color: '#FFFFFF', background: '#0A66C2',
                 textDecoration: 'none', fontFamily: 'var(--font-display)', textAlign: 'center', minHeight: '44px',
               }}>

@@ -255,7 +255,7 @@ export default function TranslatePage() {
                           padding: '8px 12px',
                           background: '#FFFFFF',
                           border: '1px solid #BAE6FD',
-                          borderRadius: '8px',
+                          borderRadius: '20px',
                           fontSize: '12px',
                           color: '#0369A1',
                           cursor: 'pointer',

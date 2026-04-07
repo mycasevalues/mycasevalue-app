@@ -4,24 +4,30 @@
    All colors via CSS custom properties from tokens.css
    ============================================================ */
 
-/* ── BUTTON ──────────────────────────────────────────────── */
+/* ── BUTTON — LinkedIn-Style Pill System ──────────────────── */
 .mcv-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 15px;
+  height: 36px;
+  padding: 0 16px;
   border: none;
+  border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  text-transform: none;
+  letter-spacing: normal;
   transition:
     background-color var(--duration-fast) ease,
     transform var(--duration-fast) ease,
     box-shadow var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    color var(--duration-fast) ease,
     opacity var(--duration-fast) ease;
 }
 
@@ -37,14 +43,14 @@
 }
 
 .mcv-btn:active:not(:disabled) {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 /* Sizes — all meet 44px minimum touch target on coarse pointers */
-.mcv-btn--xs { height: 28px; padding: 0 10px; font-size: 11px; border-radius: 0; }
-.mcv-btn--sm { height: 34px; padding: 0 14px; font-size: 12px; border-radius: 0; }
-.mcv-btn--md { height: 42px; padding: 0 20px; font-size: 14px; border-radius: 0; }
-.mcv-btn--lg { height: 50px; padding: 0 28px; font-size: 14px; border-radius: 0; }
+.mcv-btn--xs { height: 28px; padding: 0 10px; font-size: 12px; }
+.mcv-btn--sm { height: 32px; padding: 0 12px; font-size: 13px; }
+.mcv-btn--md { height: 36px; padding: 0 16px; font-size: 15px; }
+.mcv-btn--lg { height: 44px; padding: 0 24px; font-size: 15px; }
 
 @media (pointer: coarse) {
   .mcv-btn--xs { min-height: 44px; }
@@ -54,41 +60,50 @@
 
 .mcv-btn--full { width: 100%; }
 
-/* Variants — LexisNexis Corporate */
+/* Primary — LinkedIn blue pill */
 .mcv-btn--primary {
-  background: var(--gradient-cta);
-  color: #FAFBFC;
-}
-.mcv-btn--primary:hover:not(:disabled) {
-  background: var(--gradient-cta-hover);
-}
-
-.mcv-btn--secondary {
-  background: var(--accent-secondary);
+  background: #0A66C2;
   color: #FFFFFF;
 }
-.mcv-btn--secondary:hover:not(:disabled) {
-  background: var(--accent-secondary-hover);
+.mcv-btn--primary:hover:not(:disabled) {
+  background: #004182;
 }
 
+/* Secondary — ghost outline pill */
+.mcv-btn--secondary {
+  background: transparent;
+  color: #0A66C2;
+  border: 1.5px solid #0A66C2;
+}
+.mcv-btn--secondary:hover:not(:disabled) {
+  background: #EDF3FB;
+}
+
+/* Ghost — borderless */
 .mcv-btn--ghost {
   background: transparent;
-  color: var(--fg-secondary);
-  border: 1px solid var(--border-default);
+  color: #666666;
+  font-weight: 500;
+  font-size: 14px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 4px;
 }
 .mcv-btn--ghost:hover:not(:disabled) {
-  background: var(--bg-hover);
-  color: var(--fg-primary);
+  background: #F3F2EF;
+  color: #191919;
 }
 
+/* Accent — same as primary (backwards compat) */
 .mcv-btn--accent {
-  background: var(--gradient-cta);
-  color: #FAFBFC;
+  background: #0A66C2;
+  color: #FFFFFF;
 }
 .mcv-btn--accent:hover:not(:disabled) {
-  background: var(--gradient-cta-hover);
+  background: #004182;
 }
 
+/* Danger */
 .mcv-btn--danger {
   background: var(--danger);
   color: #FFFFFF;

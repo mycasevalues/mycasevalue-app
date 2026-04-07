@@ -246,7 +246,7 @@ export default function CaseTimelinePage() {
                   backgroundColor: !caseType || !filingDate ? '#E5E7EB' : '#0A66C2',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '8px',
+                  borderRadius: '20px',
                   fontSize: '15px',
                   fontWeight: 600,
                   fontFamily: 'var(--font-display)',
@@ -315,7 +315,7 @@ export default function CaseTimelinePage() {
                       backgroundColor: !newMilestoneName.trim() || !newMilestoneMonths ? '#E5E7EB' : '#F0F4F8',
                       color: !newMilestoneName.trim() || !newMilestoneMonths ? '#9CA3AF' : '#0A66C2',
                       border: '1px solid #E5E7EB',
-                      borderRadius: '8px',
+                      borderRadius: '20px',
                       fontSize: '13px',
                       fontWeight: 600,
                       fontFamily: 'var(--font-body)',
@@ -329,7 +329,7 @@ export default function CaseTimelinePage() {
                   {customMilestones.length > 0 && (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '8px' }}>
                       {customMilestones.map((m) => (
-                        <div key={m.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 12px', background: '#F7F8FA', borderRadius: '8px', fontSize: '12px', color: '#4B5563' }}>
+                        <div key={m.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 12px', background: '#F7F8FA', borderRadius: '20px', fontSize: '12px', color: '#4B5563' }}>
                           <span>{m.name} ({m.plannedMonthsFromFiling}mo)</span>
                           <button
                             type="button"
@@ -398,7 +398,7 @@ export default function CaseTimelinePage() {
                     </div>
                   </div>
 
-                  <div style={{ background: '#F0F9FF', padding: '12px', borderRadius: '8px', border: '1px solid #BFDBFE' }}>
+                  <div style={{ background: '#F0F9FF', padding: '12px', borderRadius: '20px', border: '1px solid #BFDBFE' }}>
                     <p style={{ fontSize: '12px', color: '#1E40AF', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
                       {timeline.statisticalContext}
                     </p>
@@ -432,7 +432,7 @@ export default function CaseTimelinePage() {
                       }} />
 
                       {/* Card */}
-                      <div style={{ padding: '12px', borderLeft: `3px solid ${phaseColors[milestone.phase]}`, background: milestone.completed ? '#F0FDF4' : '#FAFBFC', borderRadius: '8px' }}>
+                      <div style={{ padding: '12px', borderLeft: `3px solid ${phaseColors[milestone.phase]}`, background: milestone.completed ? '#F0FDF4' : '#FAFBFC', borderRadius: '20px' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', marginBottom: '4px' }}>
                           <h4 style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-body)' }}>
                             {milestone.name}

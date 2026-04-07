@@ -187,7 +187,7 @@ export default function SiteFooter() {
             background: '#0A66C2',
             color: '#FAFBFC',
             padding: '0.75rem 1.5rem',
-            borderRadius: '0.25rem',
+            borderRadius: '20px',
             textDecoration: 'none',
             fontFamily: 'var(--font-body)',
             fontWeight: 600,
