@@ -105,11 +105,15 @@ const MOCK_OPINIONS = [
 // ─── Opinion Fetching ─────────────────────────────────────────────────
 
 /**
- * Fetch opinions authored by a specific judge from CourtListener
+ * Fetch opinions for a judge using CL v4 search endpoint.
+ * The search endpoint returns cluster-level data (case_name, court, date_filed, etc.)
+ * which the /opinions/ endpoint does not include.
+ * Uses judge last name + court to match opinions.
  */
 export async function fetchJudgeOpinions(
   clJudgeId: number,
   courtlistenerToken?: string,
+  judgeName?: string,
 ): Promise<CourtListenerOpinion[]> {
   try {
     const headers: Record<string, string> = {
@@ -120,10 +124,47 @@ export async function fetchJudgeOpinions(
       headers['Authorization'] = `Token ${courtlistenerToken}`;
     }
 
-    // Query opinions authored by this judge, sorted by citation count descending
+    // Strategy 1: Use search endpoint with judge name (returns cluster-level data)
+    if (judgeName) {
+      // Extract last name for search
+      const nameParts = judgeName.trim().split(/\s+/);
+      const lastName = nameParts[nameParts.length - 1];
+
+      const searchParams = new URLSearchParams({
+        type: 'o',
+        judge: lastName,
+        court_jurisdiction: 'FD', // Federal District courts
+        page_size: TOP_OPINIONS_LIMIT.toString(),
+        format: 'json',
+      });
+
+      const searchUrl = `${CL_BASE}/search/?${searchParams}`;
+      const searchRes = await fetch(searchUrl, { headers });
+
+      if (searchRes.ok) {
+        const searchData = await searchRes.json();
+        const results = searchData.results || [];
+
+        // Map search results to our CourtListenerOpinion interface
+        return results.map((r: any) => ({
+          id: r.cluster_id || r.id,
+          case_name: r.caseName || r.case_name || 'Unknown Case',
+          court: r.court || '',
+          court_id: r.court_id || '',
+          date_filed: r.dateFiled || r.date_filed || '',
+          snippet: r.opinions?.[0]?.snippet || '',
+          absolute_url: r.absolute_url || '',
+          cite_count: r.citeCount || 0,
+          judges: r.judge ? [r.judge] : [],
+          author: r.opinions?.[0]?.author_id?.toString() || '',
+        }));
+      }
+    }
+
+    // Strategy 2: Fallback to REST opinions endpoint with author filter
     const params = new URLSearchParams({
-      author_id: clJudgeId.toString(),
-      order_by: '-cite_count',
+      author: clJudgeId.toString(),
+      order_by: '-date_created',
       page_size: TOP_OPINIONS_LIMIT.toString(),
       format: 'json',
     });
@@ -194,14 +235,15 @@ export async function ingestOpinionsForJudge(
   supabase: any,
   courtlistenerToken?: string,
   anthropicApiKey?: string,
+  judgeName?: string,
 ): Promise<{ stored: number; summariesGenerated: number; errors: string[] }> {
   const errors: string[] = [];
   let stored = 0;
   let summariesGenerated = 0;
 
   try {
-    // Fetch opinions from CourtListener
-    const opinions = await fetchJudgeOpinions(clJudgeId, courtlistenerToken);
+    // Fetch opinions from CourtListener (using search endpoint with judge name)
+    const opinions = await fetchJudgeOpinions(clJudgeId, courtlistenerToken, judgeName);
 
     if (opinions.length === 0) {
       return { stored: 0, summariesGenerated: 0, errors };
@@ -341,6 +383,8 @@ export async function ingestJudgeOpinions(
           clJudgeId,
           supabase,
           courtlistenerToken,
+          undefined, // anthropicApiKey not needed for batch
+          judge.full_name,
         );
 
         opinionsStored += result.stored;

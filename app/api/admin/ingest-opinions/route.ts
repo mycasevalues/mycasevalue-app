@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
       try {
         const { data: judge, error: judgeError } = await supabase
           .from('judges')
-          .select('id, courtlistener_id')
+          .select('id, courtlistener_id, full_name')
           .eq('id', judgeId)
           .single();
 
@@ -111,6 +111,7 @@ export async function POST(req: NextRequest) {
           supabase,
           token,
           anthropicApiKey,
+          (judge as any).full_name,
         );
 
         return NextResponse.json({
