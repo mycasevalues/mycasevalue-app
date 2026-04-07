@@ -8,6 +8,7 @@ import { formatSettlementAmount, fmtK } from '../../lib/format';
 import { SearchIcon } from '../../components/ui/Icons';
 import DataFreshness from '../../components/DataFreshness';
 import SampleSizeIndicator from '../../components/SampleSizeIndicator';
+import { useResearchStore } from '../../store/research';
 
 // Loading skeleton component
 const SkeletonResultCard = () => (
@@ -82,10 +83,11 @@ const saveToRecent = (item: { label: string; nos: string; category: string }) =>
 };
 
 export default function SearchPage() {
+  const { currentCaseType, setCaseType, addRecentSearch } = useResearchStore();
   const [query, setQuery] = useState('');
   const [recentItems, setRecentItems] = useState<RecentItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(currentCaseType);
   const [tipsExpanded, setTipsExpanded] = useState(false);
   const [recentlyViewedItems, setRecentlyViewedItems] = useState<RecentItem[]>([]);
 
@@ -94,6 +96,11 @@ export default function SearchPage() {
   const [aiLoading, setAiLoading] = useState(false);
   const [aiResult, setAiResult] = useState<any>(null);
   const [aiError, setAiError] = useState('');
+
+  // Sync category selection to Zustand store
+  useEffect(() => {
+    setCaseType(selectedCategory);
+  }, [selectedCategory, setCaseType]);
 
   useEffect(() => {
     try {
@@ -669,7 +676,7 @@ export default function SearchPage() {
         <Link
           key={i}
           href={`/report/${r.nos}`}
-          onClick={() => saveToRecent({ label: r.label, nos: r.nos, category: r.category })}
+          onClick={() => { saveToRecent({ label: r.label, nos: r.nos, category: r.category }); addRecentSearch({ query: r.label, nosCode: r.nos }); }}
           style={{
             display: 'block',
             padding: '16px',
