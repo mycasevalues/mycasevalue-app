@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
+import { ATTORNEY_IMPACT } from '../../lib/attorney-impact';
+import { getWinRateColor } from '../../lib/color-scale';
 
 // Note: Metadata cannot be exported from client components.
 // For this page to have SEO metadata, wrap it with server-side metadata in layout.tsx or create a separate server component.
@@ -25,6 +27,11 @@ interface CaseStats {
   medianDuration: number;
   medianRecovery: number | null;
   totalCases: number | null;
+  rngLo: number | null;
+  rngHi: number | null;
+  attorneyWR: number | null;
+  proSeWR: number | null;
+  topDistricts: string[];
 }
 
 function getStats(nos: string): CaseStats | null {
@@ -35,6 +42,25 @@ function getStats(nos: string): CaseStats | null {
   const winRate = real.wr ?? 0;
   const settlementRate = real.sp ?? 0;
   const dismissRate = Math.max(0, 100 - winRate - settlementRate);
+  const attyData = ATTORNEY_IMPACT[nos];
+
+  // Derive top 3 districts from circuit_rates
+  const topDistricts: string[] = [];
+  if (real.circuit_rates) {
+    const sorted = Object.entries(real.circuit_rates)
+      .sort(([, a], [, b]) => (b as number) - (a as number))
+      .slice(0, 3);
+    const CIRCUIT_DISTRICTS: Record<string, string> = {
+      '1': 'D. Mass.', '2': 'S.D.N.Y.', '3': 'D.N.J.', '4': 'E.D. Va.',
+      '5': 'S.D. Tex.', '6': 'E.D. Mich.', '7': 'N.D. Ill.', '8': 'D. Minn.',
+      '9': 'C.D. Cal.', '10': 'D. Colo.', '11': 'N.D. Ga.', 'dc': 'D.D.C.',
+    };
+    sorted.forEach(([c]) => {
+      const d = CIRCUIT_DISTRICTS[c];
+      if (d) topDistricts.push(d);
+    });
+  }
+
   return {
     label: type.label,
     nos,
@@ -44,6 +70,11 @@ function getStats(nos: string): CaseStats | null {
     medianDuration: real.mo ?? 0,
     medianRecovery: real.rng?.md ?? null,
     totalCases: real.total ?? null,
+    rngLo: real.rng?.lo ?? null,
+    rngHi: real.rng?.hi ?? null,
+    attorneyWR: attyData?.rwr ?? null,
+    proSeWR: attyData?.pwr ?? null,
+    topDistricts,
   };
 }
 
@@ -404,6 +435,118 @@ export default function ComparePage() {
                 </tbody>
               </table>
             </div>
+          )}
+
+          {/* Attorney Impact & Settlement Range */}
+          {comparing && stats.length >= 2 && (
+            <section style={{
+              marginTop: 32,
+              padding: 'clamp(24px, 5vw, 32px)',
+              background: '#FFFFFF',
+              border: '1px solid #E5E7EB',
+              borderRadius: 4,
+            }}>
+              <h3 style={{ fontSize: 16, fontWeight: 600, color: '#1B3A5C', margin: '0 0 20px 0', fontFamily: 'var(--font-display)' }}>
+                Attorney Impact & Settlement Range
+              </h3>
+              <div style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: '16px' }}>
+                {stats.map((s) => {
+                  const wrColor = getWinRateColor(s.winRate);
+                  return (
+                    <div key={s.nos} style={{ padding: '16px', background: '#FAFBFC', border: '1px solid #E5E7EB', borderRadius: '8px' }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: '#0f0f0f', marginBottom: 12, fontFamily: 'var(--font-display)' }}>
+                        {s.label}
+                      </div>
+
+                      {/* Win Rate Badge */}
+                      <div style={{ display: 'inline-block', padding: '2px 10px', background: wrColor.bg, border: `1px solid ${wrColor.border}`, borderRadius: '12px', fontSize: 12, fontWeight: 600, color: wrColor.text, marginBottom: 12 }}>
+                        {s.winRate.toFixed(1)}% win rate · {wrColor.label}
+                      </div>
+
+                      {/* Settlement Range Bar */}
+                      {s.rngLo !== null && s.rngHi !== null && s.medianRecovery !== null && (
+                        <div style={{ marginBottom: 12 }}>
+                          <div style={{ fontSize: 11, color: '#4B5563', marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Settlement Range (P25–P75)</div>
+                          <div style={{ position: 'relative', height: 24 }}>
+                            <div style={{ position: 'absolute', top: 8, left: 0, right: 0, height: 8, background: '#EDF3FB', borderRadius: 4 }} />
+                            <div style={{
+                              position: 'absolute', top: 8, height: 8,
+                              left: `${Math.min(90, (s.rngLo / s.rngHi) * 100)}%`,
+                              right: '0%',
+                              background: 'linear-gradient(90deg, #70B5F9, #0A66C2)',
+                              borderRadius: 4,
+                            }} />
+                            <div style={{ position: 'absolute', top: 4, width: 2, height: 16, background: '#004182', left: `${(s.medianRecovery / s.rngHi) * 100}%`, transform: 'translateX(-50%)' }} />
+                          </div>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: '#4B5563', marginTop: 4, fontFamily: 'var(--font-mono)' }}>
+                            <span>${s.rngLo}K</span>
+                            <span>${s.medianRecovery}K</span>
+                            <span>${s.rngHi}K</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Attorney Impact */}
+                      {s.attorneyWR !== null && s.proSeWR !== null && (
+                        <div style={{ display: 'flex', gap: 8 }}>
+                          <div style={{ flex: 1, padding: '8px', background: '#E8F3EB', borderRadius: 6, textAlign: 'center' }}>
+                            <div style={{ fontSize: 16, fontWeight: 700, color: '#057642', fontFamily: 'var(--font-mono)' }}>{s.attorneyWR}%</div>
+                            <div style={{ fontSize: 10, color: '#4B5563' }}>w/ attorney</div>
+                          </div>
+                          <div style={{ flex: 1, padding: '8px', background: '#FEF0EF', borderRadius: 6, textAlign: 'center' }}>
+                            <div style={{ fontSize: 16, fontWeight: 700, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{s.proSeWR}%</div>
+                            <div style={{ fontSize: 10, color: '#4B5563' }}>pro se</div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Confidence + Sample Size */}
+                      {s.totalCases !== null && (
+                        <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: '#4B5563' }}>
+                          <span style={{
+                            display: 'inline-block', width: 6, height: 6, borderRadius: '50%',
+                            backgroundColor: s.totalCases >= 10000 ? '#057642' : s.totalCases >= 1000 ? '#C37D16' : s.totalCases >= 100 ? '#CC1016' : '#999999',
+                          }} />
+                          n={s.totalCases.toLocaleString()} cases
+                        </div>
+                      )}
+
+                      {/* Top Districts */}
+                      {s.topDistricts.length > 0 && (
+                        <div style={{ marginTop: 10, fontSize: 11, color: '#4B5563' }}>
+                          <span style={{ fontWeight: 600 }}>Top districts: </span>
+                          {s.topDistricts.join(', ')}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* AI Comparison Narrative */}
+              <div style={{
+                marginTop: 20,
+                padding: '16px',
+                background: '#F3F2EF',
+                borderRadius: '8px',
+                border: '1px solid #E0DDD8',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 8 }}>
+                  <span style={{ display: 'inline-block', padding: '1px 6px', background: '#E5E7EB', borderRadius: 3, fontSize: 10, fontWeight: 600, color: '#666', letterSpacing: '0.3px' }}>AI</span>
+                  <span style={{ fontSize: 11, fontWeight: 600, color: '#4B5563' }}>Comparison Summary</span>
+                </div>
+                <p style={{ fontSize: 13, color: '#0f0f0f', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-body)' }}>
+                  {stats[0].label} cases show a {stats[0].winRate > stats[1].winRate ? 'higher' : 'lower'} win rate ({stats[0].winRate.toFixed(1)}%) compared to {stats[1].label} ({stats[1].winRate.toFixed(1)}%), with {Math.abs(stats[0].medianDuration - stats[1].medianDuration).toFixed(0)} months difference in median case duration.{' '}
+                  {stats[0].medianRecovery !== null && stats[1].medianRecovery !== null
+                    ? `Median recovery for ${stats[0].label} ($${stats[0].medianRecovery}K) is ${stats[0].medianRecovery > stats[1].medianRecovery ? 'higher' : 'lower'} than ${stats[1].label} ($${stats[1].medianRecovery}K).`
+                    : ''}{' '}
+                  Attorney representation provides a {stats[0].attorneyWR !== null && stats[0].proSeWR !== null ? `+${stats[0].attorneyWR - stats[0].proSeWR}%` : 'significant'} advantage in {stats[0].label} and {stats[1].attorneyWR !== null && stats[1].proSeWR !== null ? `+${stats[1].attorneyWR - stats[1].proSeWR}%` : 'significant'} in {stats[1].label} cases.
+                </p>
+                <p style={{ fontSize: 10, color: '#9CA3AF', marginTop: 8, marginBottom: 0 }}>
+                  AI-generated comparison — for research purposes only.
+                </p>
+              </div>
+            </section>
           )}
 
           {/* Visual Comparison Chart */}
