@@ -63,6 +63,8 @@ const FOOTER_COLUMNS = [
       { label: 'Disclaimer', href: '/disclaimer' },
       { label: 'Privacy policy', href: '/privacy' },
       { label: 'Terms of service', href: '/terms' },
+      { label: 'Acceptable Use Policy', href: '/legal/aup' },
+      { label: 'Cookie Policy', href: '/legal/cookies' },
       { label: 'Sign In', href: '/sign-in' },
       { label: 'Create Account', href: '/sign-up' },
     ],

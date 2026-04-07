@@ -16,15 +16,18 @@ export default function CookieConsent() {
     }
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem('mcv-cookie-consent', 'accepted');
+  const handleAcceptAll = () => {
+    localStorage.setItem('mcv-cookie-consent', 'all');
     setIsVisible(false);
   };
 
-  const handleDecline = () => {
-    localStorage.setItem('mcv-cookie-consent', 'declined');
+  const handleEssentialOnly = () => {
+    localStorage.setItem('mcv-cookie-consent', 'essential');
     setIsVisible(false);
   };
+
+  // TODO: Add geolocation detection for EU/CA specific consent requirements
+  // This would require Edge Middleware to detect user location and adjust banner accordingly
 
   // Don't render until mounted to prevent hydration mismatch
   if (!isMounted || !isVisible) {
@@ -58,6 +61,37 @@ export default function CookieConsent() {
             opacity: 1;
           }
         }
+        .cookie-banner-button {
+          padding: 0.625rem 1.25rem;
+          border-radius: 12px;
+          fontSize: 0.9375rem;
+          font-family: var(--font-body);
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          letter-spacing: 0.2px;
+          border: none;
+          white-space: nowrap;
+        }
+        .cookie-banner-button:hover {
+          transform: translateY(-1px);
+        }
+        .cookie-banner-accept {
+          background-color: #0A66C2;
+          color: #FFFFFF;
+        }
+        .cookie-banner-accept:hover {
+          background-color: #004182;
+        }
+        .cookie-banner-essential {
+          background-color: transparent;
+          color: #FFFFFF;
+          border: 1.5px solid rgba(255, 255, 255, 0.3);
+        }
+        .cookie-banner-essential:hover {
+          border-color: rgba(255, 255, 255, 0.6);
+          background-color: rgba(255, 255, 255, 0.05);
+        }
       `}</style>
 
       <div
@@ -80,9 +114,9 @@ export default function CookieConsent() {
             letterSpacing: '0.3px',
           }}
         >
-          We use cookies to improve your experience. By continuing to use this site, you agree to our{' '}
+          We use cookies to improve your experience. Essential cookies are always active. Analytics cookies help us understand how you use the platform.{' '}
           <Link
-            href="/privacy"
+            href="/legal/cookies"
             style={{
               color: '#E8F0F5',
               textDecoration: 'underline',
@@ -90,9 +124,8 @@ export default function CookieConsent() {
               transition: 'color 0.2s ease',
             }}
           >
-            cookie policy
+            Learn more
           </Link>
-          .
         </p>
 
         <div
@@ -104,52 +137,35 @@ export default function CookieConsent() {
           }}
         >
           <button
-            onClick={handleAccept}
-            style={{
-              padding: '0.625rem 1.25rem',
-              backgroundColor: '#0A66C2',
-              color: '#FFFFFF',
-              border: 'none',
-              borderRadius: '12px',
-              fontSize: '0.9375rem',
-              fontFamily: 'var(--font-body)',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              letterSpacing: '0.2px',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
-            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            onClick={handleAcceptAll}
+            className="cookie-banner-button cookie-banner-accept"
           >
-            Accept
+            Accept All
           </button>
 
           <button
-            onClick={handleDecline}
+            onClick={handleEssentialOnly}
+            className="cookie-banner-button cookie-banner-essential"
+          >
+            Essential Only
+          </button>
+
+          <Link
+            href="/legal/cookies"
             style={{
               padding: '0.625rem 1.25rem',
-              backgroundColor: 'transparent',
               color: '#FFFFFF',
-              border: '1.5px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '12px',
+              textDecoration: 'none',
               fontSize: '0.9375rem',
               fontFamily: 'var(--font-body)',
               fontWeight: 600,
+              transition: 'color 0.2s ease',
               cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              letterSpacing: '0.2px',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.6)';
-              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-              e.currentTarget.style.backgroundColor = 'transparent';
+              borderBottom: '2px solid rgba(255, 255, 255, 0.3)',
             }}
           >
-            Decline
-          </button>
+            Manage Preferences
+          </Link>
         </div>
       </div>
     </div>
