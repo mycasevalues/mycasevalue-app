@@ -1,7 +1,20 @@
 /** @type {import('next').NextConfig} */
 
-// Conditional bundle analyzer
+// Sentry configuration wrapper
 let plugins = [];
+if (process.env.NODE_ENV === 'production' && process.env.SENTRY_DSN) {
+  const { withSentryConfig } = require('@sentry/nextjs');
+  plugins.push((config) =>
+    withSentryConfig(config, {
+      org: process.env.SENTRY_ORG,
+      project: process.env.SENTRY_PROJECT,
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      silent: true,
+    })
+  );
+}
+
+// Conditional bundle analyzer
 if (process.env.ANALYZE === 'true') {
   const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
