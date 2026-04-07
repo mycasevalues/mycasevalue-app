@@ -3,6 +3,7 @@ import { SITE_URL } from '../../../lib/site-config';
 import Link from 'next/link';
 import { REAL_DATA } from '../../../lib/realdata';
 import localRulesData from '../../../data/local-rules.json';
+import legalAidData from '../../../data/legal-aid.json';
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -568,6 +569,111 @@ export default async function DistrictPage({ params }: PageProps) {
                       )}
                     </div>
                   </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        );
+      })()}
+
+      {/* Legal Aid (top 20 districts only) */}
+      {(legalAidData as Record<string, any>)[upperCode] && (() => {
+        const aid = (legalAidData as Record<string, any>)[upperCode];
+        return (
+          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)', marginTop: 40 }}>
+            <section>
+              <div style={{
+                background: '#FFFFFF',
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: 'clamp(24px, 4vw, 32px)',
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}>
+                  <h2 style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: '#0f0f0f',
+                    margin: 0,
+                    fontFamily: 'var(--font-display)',
+                  }}>
+                    Legal Aid Resources
+                  </h2>
+                  {aid.selfRepresentedUrl && (
+                    <a
+                      href={aid.selfRepresentedUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: 12,
+                        color: '#0A66C2',
+                        textDecoration: 'none',
+                        fontWeight: 600,
+                        padding: '4px 12px',
+                        border: '1px solid #0A66C2',
+                        borderRadius: '20px',
+                      }}
+                    >
+                      Court Self-Help Resources →
+                    </a>
+                  )}
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
+                  {(aid.organizations || []).map((org: any, idx: number) => (
+                    <div key={idx} style={{
+                      padding: '16px',
+                      background: '#FAFBFC',
+                      border: '1px solid #E5E7EB',
+                      borderRadius: '8px',
+                    }}>
+                      <a
+                        href={org.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: 14,
+                          fontWeight: 600,
+                          color: '#0A66C2',
+                          textDecoration: 'none',
+                          fontFamily: 'var(--font-display)',
+                        }}
+                      >
+                        {org.name}
+                      </a>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: '8px', fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
+                        {org.phone && <div>{org.phone}</div>}
+                        {org.serviceArea && <div>Service area: {org.serviceArea}</div>}
+                        {org.caseTypes && org.caseTypes.length > 0 && (
+                          <div style={{ marginTop: '4px', display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                            {org.caseTypes.map((ct: string, i: number) => (
+                              <span key={i} style={{
+                                fontSize: 10,
+                                padding: '2px 8px',
+                                background: '#EDF3FB',
+                                color: '#004182',
+                                borderRadius: '4px',
+                                fontWeight: 500,
+                              }}>{ct}</span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{
+                  marginTop: '16px',
+                  padding: '12px 16px',
+                  background: '#FEF3C7',
+                  borderLeft: '3px solid #D97706',
+                  borderRadius: '6px',
+                  fontSize: 12,
+                  color: '#78350F',
+                  lineHeight: 1.5,
+                  fontFamily: 'var(--font-body)',
+                }}>
+                  Many legal aid organizations have income eligibility requirements. Contact the organization directly to confirm eligibility.
                 </div>
               </div>
             </section>

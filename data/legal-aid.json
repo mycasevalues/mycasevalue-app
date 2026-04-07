@@ -1,0 +1,162 @@
+{
+  "SDNY": {
+    "selfRepresentedUrl": "https://www.nysd.uscourts.gov/prose",
+    "organizations": [
+      { "name": "Legal Aid Society", "website": "https://www.legalaidnyc.org", "phone": "(212) 577-3300", "serviceArea": "New York City", "caseTypes": ["Housing", "Employment", "Immigration", "Family", "Consumer"] },
+      { "name": "Legal Services NYC", "website": "https://www.legalservicesnyc.org", "phone": "(646) 442-3100", "serviceArea": "New York City (5 boroughs)", "caseTypes": ["Housing", "Public Benefits", "Family", "Immigration"] },
+      { "name": "New York Legal Assistance Group", "website": "https://www.nylag.org", "phone": "(212) 613-5000", "serviceArea": "New York City", "caseTypes": ["Consumer", "Disability", "Immigration", "Public Benefits"] }
+    ]
+  },
+  "CACD": {
+    "selfRepresentedUrl": "https://www.cacd.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Legal Aid Foundation of Los Angeles", "website": "https://www.lafla.org", "phone": "(800) 399-4529", "serviceArea": "Los Angeles County", "caseTypes": ["Housing", "Family", "Consumer", "Employment"] },
+      { "name": "Bet Tzedek Legal Services", "website": "https://www.bettzedek.org", "phone": "(323) 939-0506", "serviceArea": "Los Angeles County", "caseTypes": ["Employment", "Elder Law", "Housing", "Public Benefits"] },
+      { "name": "Neighborhood Legal Services of LA County", "website": "https://www.nlsla.org", "phone": "(800) 433-6251", "serviceArea": "Los Angeles County", "caseTypes": ["Housing", "Public Benefits", "Health", "Consumer"] }
+    ]
+  },
+  "NDIL": {
+    "selfRepresentedUrl": "https://www.ilnd.uscourts.gov/Pages.aspx?page=ProSe",
+    "organizations": [
+      { "name": "Legal Aid Chicago", "website": "https://www.legalaidchicago.org", "phone": "(312) 341-1070", "serviceArea": "Cook County", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Prairie State Legal Services", "website": "https://www.pslegal.org", "phone": "(815) 965-2902", "serviceArea": "Northern Illinois", "caseTypes": ["Housing", "Consumer", "Family", "Employment"] },
+      { "name": "Cabrini Green Legal Aid", "website": "https://www.cgla.net", "phone": "(312) 738-2452", "serviceArea": "Chicago", "caseTypes": ["Criminal Records", "Housing", "Immigration"] }
+    ]
+  },
+  "SDTX": {
+    "selfRepresentedUrl": "https://www.txs.uscourts.gov/page/self-represented-litigants",
+    "organizations": [
+      { "name": "Lone Star Legal Aid", "website": "https://www.lonestarlegal.org", "phone": "(800) 733-8394", "serviceArea": "Southeast Texas", "caseTypes": ["Housing", "Family", "Consumer", "Employment"] },
+      { "name": "Houston Volunteer Lawyers", "website": "https://www.makejusticehappen.org", "phone": "(713) 228-0732", "serviceArea": "Harris County", "caseTypes": ["Family", "Consumer", "Immigration", "Public Benefits"] },
+      { "name": "Texas RioGrande Legal Aid", "website": "https://www.trla.org", "phone": "(888) 988-9996", "serviceArea": "South Texas", "caseTypes": ["Housing", "Employment", "Consumer", "Immigration"] }
+    ]
+  },
+  "NJDN": {
+    "selfRepresentedUrl": "https://www.njd.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Legal Services of New Jersey", "website": "https://www.lsnj.org", "phone": "(888) 576-5529", "serviceArea": "Statewide", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Northeast New Jersey Legal Services", "website": "https://www.northeastnjlegalservices.org", "phone": "(201) 487-2166", "serviceArea": "Bergen, Hudson, Passaic Counties", "caseTypes": ["Housing", "Immigration", "Consumer"] },
+      { "name": "Volunteer Lawyers for Justice", "website": "https://www.vljnj.org", "phone": "(973) 645-1955", "serviceArea": "Essex, Hudson, Union Counties", "caseTypes": ["Consumer", "Family", "Employment", "Housing"] }
+    ]
+  },
+  "EDNY": {
+    "selfRepresentedUrl": "https://www.nyed.uscourts.gov/pro-se-resources",
+    "organizations": [
+      { "name": "Legal Aid Society", "website": "https://www.legalaidnyc.org", "phone": "(212) 577-3300", "serviceArea": "New York City", "caseTypes": ["Housing", "Employment", "Immigration", "Family"] },
+      { "name": "Legal Services NYC", "website": "https://www.legalservicesnyc.org", "phone": "(646) 442-3100", "serviceArea": "Brooklyn, Queens, Staten Island", "caseTypes": ["Housing", "Public Benefits", "Family"] },
+      { "name": "Brooklyn Legal Services", "website": "https://www.legalservicesnyc.org/our-program/brooklyn", "phone": "(718) 237-5500", "serviceArea": "Brooklyn", "caseTypes": ["Housing", "Consumer", "Public Benefits"] }
+    ]
+  },
+  "CAND": {
+    "selfRepresentedUrl": "https://www.cand.uscourts.gov/pro-se-litigants/",
+    "organizations": [
+      { "name": "Bay Area Legal Aid", "website": "https://www.baylegal.org", "phone": "(510) 250-5270", "serviceArea": "San Francisco Bay Area", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Legal Aid at Work", "website": "https://www.legalaidatwork.org", "phone": "(415) 864-8848", "serviceArea": "Northern California", "caseTypes": ["Employment", "Workers' Rights"] },
+      { "name": "Asian Law Caucus", "website": "https://www.asianlawcaucus.org", "phone": "(415) 896-1701", "serviceArea": "Bay Area", "caseTypes": ["Immigration", "Housing", "Workers' Rights", "Civil Rights"] }
+    ]
+  },
+  "SDFL": {
+    "selfRepresentedUrl": "https://www.flsd.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Legal Services of Greater Miami", "website": "https://www.lsgmi.org", "phone": "(305) 576-0080", "serviceArea": "Miami-Dade County", "caseTypes": ["Housing", "Family", "Immigration", "Consumer"] },
+      { "name": "Coast to Coast Legal Aid of South Florida", "website": "https://www.coasttocoastlegalaid.org", "phone": "(561) 655-8944", "serviceArea": "Palm Beach, Broward Counties", "caseTypes": ["Housing", "Family", "Consumer"] },
+      { "name": "Americans for Immigrant Justice", "website": "https://aijustice.org", "phone": "(305) 573-1106", "serviceArea": "South Florida", "caseTypes": ["Immigration", "Human Trafficking", "Children's Rights"] }
+    ]
+  },
+  "NDTX": {
+    "selfRepresentedUrl": "https://www.txnd.uscourts.gov/page/pro-se-litigants",
+    "organizations": [
+      { "name": "Legal Aid of NorthWest Texas", "website": "https://www.lanwt.org", "phone": "(800) 955-3959", "serviceArea": "North Texas", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Dallas Volunteer Attorney Program", "website": "https://www.dallasvolunteerattorneyprogram.org", "phone": "(214) 748-1234", "serviceArea": "Dallas County", "caseTypes": ["Family", "Consumer", "Housing"] },
+      { "name": "Texas RioGrande Legal Aid", "website": "https://www.trla.org", "phone": "(888) 988-9996", "serviceArea": "North Texas", "caseTypes": ["Housing", "Employment", "Consumer", "Immigration"] }
+    ]
+  },
+  "MADN": {
+    "selfRepresentedUrl": "https://www.mad.uscourts.gov/representing-yourself/",
+    "organizations": [
+      { "name": "Greater Boston Legal Services", "website": "https://www.gbls.org", "phone": "(617) 371-1234", "serviceArea": "Greater Boston", "caseTypes": ["Housing", "Employment", "Immigration", "Public Benefits"] },
+      { "name": "MetroWest Legal Services", "website": "https://www.mwlegal.org", "phone": "(508) 620-1830", "serviceArea": "MetroWest Massachusetts", "caseTypes": ["Housing", "Family", "Consumer"] },
+      { "name": "Volunteer Lawyers Project", "website": "https://www.vlpnet.org", "phone": "(617) 423-0648", "serviceArea": "Massachusetts (statewide)", "caseTypes": ["Family", "Housing", "Immigration", "Consumer"] }
+    ]
+  },
+  "EDPA": {
+    "selfRepresentedUrl": "https://www.paed.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Philadelphia Legal Assistance", "website": "https://www.philalegal.org", "phone": "(215) 981-3800", "serviceArea": "Philadelphia County", "caseTypes": ["Housing", "Employment", "Consumer", "Public Benefits"] },
+      { "name": "Community Legal Services", "website": "https://www.clsphila.org", "phone": "(215) 981-3700", "serviceArea": "Philadelphia", "caseTypes": ["Housing", "Public Benefits", "Employment", "Consumer"] },
+      { "name": "Philadelphia VIP", "website": "https://www.phillyvip.org", "phone": "(215) 523-9550", "serviceArea": "Philadelphia", "caseTypes": ["Family", "Consumer", "Housing", "Immigration"] }
+    ]
+  },
+  "WDWA": {
+    "selfRepresentedUrl": "https://www.wawd.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Northwest Justice Project", "website": "https://www.nwjustice.org", "phone": "(888) 201-1014", "serviceArea": "Washington (statewide)", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Columbia Legal Services", "website": "https://www.columbialegal.org", "phone": "(206) 464-5911", "serviceArea": "Washington (statewide)", "caseTypes": ["Employment", "Housing", "Civil Rights", "Immigration"] },
+      { "name": "King County Bar Pro Bono Services", "website": "https://www.kcba.org/pro-bono", "phone": "(206) 267-7010", "serviceArea": "King County", "caseTypes": ["Housing", "Family", "Consumer"] }
+    ]
+  },
+  "MDDN": {
+    "selfRepresentedUrl": "https://www.mdd.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Maryland Legal Aid", "website": "https://www.mdlab.org", "phone": "(410) 539-5340", "serviceArea": "Maryland (statewide)", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Pro Bono Resource Center of Maryland", "website": "https://www.probonomd.org", "phone": "(410) 837-9379", "serviceArea": "Maryland (statewide)", "caseTypes": ["Family", "Consumer", "Housing"] },
+      { "name": "CASA de Maryland", "website": "https://wearecasa.org", "phone": "(301) 431-4185", "serviceArea": "Maryland", "caseTypes": ["Immigration", "Workers' Rights", "Housing"] }
+    ]
+  },
+  "EDVA": {
+    "selfRepresentedUrl": "https://www.vaed.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Legal Aid Justice Center", "website": "https://www.justice4all.org", "phone": "(434) 977-0553", "serviceArea": "Virginia", "caseTypes": ["Housing", "Immigration", "Civil Rights", "Consumer"] },
+      { "name": "Legal Services of Northern Virginia", "website": "https://www.lsnv.org", "phone": "(703) 778-6800", "serviceArea": "Northern Virginia", "caseTypes": ["Housing", "Family", "Consumer", "Immigration"] },
+      { "name": "Virginia Poverty Law Center", "website": "https://www.vplc.org", "phone": "(804) 782-9430", "serviceArea": "Virginia (statewide)", "caseTypes": ["Housing", "Consumer", "Healthcare", "Public Benefits"] }
+    ]
+  },
+  "NDGA": {
+    "selfRepresentedUrl": "https://www.gand.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Atlanta Legal Aid Society", "website": "https://www.atlantalegalaid.org", "phone": "(404) 524-5811", "serviceArea": "Metro Atlanta", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Georgia Legal Services Program", "website": "https://www.glsp.org", "phone": "(800) 498-9469", "serviceArea": "Georgia (outside Metro Atlanta)", "caseTypes": ["Housing", "Family", "Consumer", "Employment"] },
+      { "name": "Latin American Association", "website": "https://www.thelaa.org", "phone": "(404) 638-1800", "serviceArea": "Metro Atlanta", "caseTypes": ["Immigration", "Education", "Employment"] }
+    ]
+  },
+  "MNDN": {
+    "selfRepresentedUrl": "https://www.mnd.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Legal Aid State Support (LASS)", "website": "https://www.mnlegalservices.org", "phone": "(612) 334-5970", "serviceArea": "Minnesota (statewide)", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Mid-Minnesota Legal Aid", "website": "https://www.mylegalaid.org", "phone": "(612) 334-5970", "serviceArea": "Central Minnesota", "caseTypes": ["Housing", "Family", "Consumer", "Employment"] },
+      { "name": "Volunteer Lawyers Network", "website": "https://www.vlnmn.org", "phone": "(612) 752-6677", "serviceArea": "Hennepin County", "caseTypes": ["Housing", "Family", "Consumer", "Immigration"] }
+    ]
+  },
+  "WDTX": {
+    "selfRepresentedUrl": "https://www.txwd.uscourts.gov/representing-yourself/",
+    "organizations": [
+      { "name": "Texas RioGrande Legal Aid", "website": "https://www.trla.org", "phone": "(888) 988-9996", "serviceArea": "Central & West Texas", "caseTypes": ["Housing", "Employment", "Consumer", "Immigration"] },
+      { "name": "Volunteer Legal Services of Central Texas", "website": "https://www.vlsoct.org", "phone": "(512) 476-5550", "serviceArea": "Travis County", "caseTypes": ["Family", "Consumer", "Housing"] },
+      { "name": "Texas Advocacy Project", "website": "https://www.texasadvocacyproject.org", "phone": "(800) 374-4673", "serviceArea": "Texas (statewide)", "caseTypes": ["Family Violence", "Sexual Assault", "Stalking"] }
+    ]
+  },
+  "CTDN": {
+    "selfRepresentedUrl": "https://www.ctd.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Connecticut Legal Services", "website": "https://www.connlegalservices.org", "phone": "(860) 344-0380", "serviceArea": "Connecticut (statewide)", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Greater Hartford Legal Aid", "website": "https://www.ghla.org", "phone": "(860) 541-5000", "serviceArea": "Greater Hartford", "caseTypes": ["Housing", "Family", "Consumer"] },
+      { "name": "New Haven Legal Assistance Association", "website": "https://www.nhlegal.org", "phone": "(203) 946-4811", "serviceArea": "New Haven area", "caseTypes": ["Housing", "Public Benefits", "Consumer", "Education"] }
+    ]
+  },
+  "CASD": {
+    "selfRepresentedUrl": "https://www.casd.uscourts.gov/representing-yourself",
+    "organizations": [
+      { "name": "Legal Aid Society of San Diego", "website": "https://www.lassd.org", "phone": "(877) 534-2524", "serviceArea": "San Diego County", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "San Diego Volunteer Lawyer Program", "website": "https://www.sdvlp.org", "phone": "(619) 235-5656", "serviceArea": "San Diego County", "caseTypes": ["Family", "Housing", "Consumer", "Immigration"] },
+      { "name": "Casa Cornelia Law Center", "website": "https://www.casacornelia.org", "phone": "(619) 231-7788", "serviceArea": "San Diego County", "caseTypes": ["Immigration", "Human Rights"] }
+    ]
+  },
+  "NDOH": {
+    "selfRepresentedUrl": "https://www.ohnd.uscourts.gov/self-represented-litigants",
+    "organizations": [
+      { "name": "Legal Aid of Western Ohio", "website": "https://www.lawolaw.org", "phone": "(888) 534-1432", "serviceArea": "Western Ohio", "caseTypes": ["Housing", "Family", "Consumer", "Public Benefits"] },
+      { "name": "Legal Aid Society of Cleveland", "website": "https://www.lasclev.org", "phone": "(216) 687-1900", "serviceArea": "Greater Cleveland", "caseTypes": ["Housing", "Consumer", "Family", "Employment"] },
+      { "name": "Advocates for Basic Legal Equality", "website": "https://www.ablelaw.org", "phone": "(800) 837-0814", "serviceArea": "Northwest Ohio", "caseTypes": ["Housing", "Employment", "Consumer", "Immigration"] }
+    ]
+  }
+}
