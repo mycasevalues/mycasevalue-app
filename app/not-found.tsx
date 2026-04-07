@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { SearchIcon } from '../components/ui/Icons';
 
 export const metadata: Metadata = {
   title: '404 — Page Not Found',
@@ -35,117 +34,255 @@ export default function NotFound() {
         }}
       />
       <div style={{ padding: '48px 24px', width: '100%', display: 'flex', justifyContent: 'center' }}>
-      <div
-        style={{
-          maxWidth: 480,
-          background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
-          borderRadius: '12px',
-          padding: '48px 32px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-        }}
-      >
-        {/* 404 Number */}
         <div
           style={{
-            fontFamily: '"PT Mono", monospace',
-            fontSize: '96px',
-            fontWeight: 600,
-            color: '#4B5563',
-            lineHeight: 1,
-            marginBottom: '16px',
-            letterSpacing: '-0.02em',
+            maxWidth: 560,
+            background: '#FFFFFF',
+            border: '1px solid #E5E7EB',
+            borderRadius: '12px',
+            padding: '48px 32px',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
           }}
         >
-          404
-        </div>
-
-        <h1
-          style={{
-            fontSize: '24px',
-            fontWeight: 600,
-            color: '#0f0f0f',
-            margin: '0 0 12px',
-            letterSpacing: '-0.01em',
-          }}
-        >
-          Page not found
-        </h1>
-
-        <p
-          style={{
-            fontSize: '15px',
-            color: '#4B5563',
-            maxWidth: '420px',
-            lineHeight: 1.6,
-            margin: '0 0 32px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
-          The page you&apos;re looking for doesn&apos;t exist or has been moved. Let&apos;s get you back to researching case data.
-        </p>
-
-        <style>{`
-          .notfound-link-primary:hover {
-            background: #8B5CF6;
-            box-shadow: none;
-          }
-          .notfound-link-secondary:hover {
-            background: #EEEEEE;
-            border-color: #E5E7EB;
-          }
-        `}</style>
-        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <Link
-            href="/"
-            className="notfound-link-primary"
+          {/* 404 Number */}
+          <div
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '12px 24px',
-              background: '#8B5CF6',
-              color: '#FFFFFF',
-              border: 'none',
-              borderRadius: '12px',
-              fontSize: '14px',
+              fontFamily: '"PT Mono", monospace',
+              fontSize: '96px',
               fontWeight: 600,
-              textDecoration: 'none',
-              transition: 'all 200ms',
-              boxShadow: 'none',
+              color: '#4B5563',
+              lineHeight: 1,
+              marginBottom: '16px',
+              letterSpacing: '-0.02em',
             }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
-            Go home
-          </Link>
+            404
+          </div>
 
-          <Link
-            href="/search"
-            className="notfound-link-secondary"
+          <h1
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '12px 24px',
-              background: '#F7F8FA',
+              fontSize: '24px',
+              fontWeight: 600,
               color: '#0f0f0f',
-              border: '1px solid #E5E7EB',
-              borderRadius: '12px',
-              fontSize: '14px',
-              fontWeight: 600,
-              textDecoration: 'none',
-              transition: 'all 200ms',
+              margin: '0 0 12px',
+              letterSpacing: '-0.01em',
             }}
           >
-            <SearchIcon size={16} />
-            Search cases
-          </Link>
+            Page not found
+          </h1>
+
+          <p
+            style={{
+              fontSize: '15px',
+              color: '#4B5563',
+              maxWidth: '460px',
+              lineHeight: 1.6,
+              margin: '0 0 32px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
+            The page you&apos;re looking for doesn&apos;t exist or has been moved. Let&apos;s get you back to researching federal court data.
+          </p>
+
+          <style>{`
+            .notfound-link-primary {
+              transition: all 200ms ease;
+            }
+            .notfound-link-primary:hover {
+              background: #7C3AED !important;
+              box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            }
+            .notfound-link-secondary {
+              transition: all 200ms ease;
+            }
+            .notfound-link-secondary:hover {
+              background: #EEEEEE !important;
+              border-color: #D1D5DB !important;
+            }
+            .notfound-link-tertiary {
+              transition: all 200ms ease;
+            }
+            .notfound-link-tertiary:hover {
+              background: #F3F4F6 !important;
+              border-color: #D1D5DB !important;
+            }
+          `}</style>
+
+          {/* Primary actions */}
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '24px' }}>
+            <Link
+              href="/"
+              className="notfound-link-primary"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '12px 24px',
+                background: '#8B5CF6',
+                color: '#FFFFFF',
+                border: 'none',
+                borderRadius: '12px',
+                fontSize: '14px',
+                fontWeight: 600,
+                textDecoration: 'none',
+                boxShadow: 'none',
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              Go home
+            </Link>
+
+            <Link
+              href="/cases"
+              className="notfound-link-secondary"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '12px 24px',
+                background: '#F7F8FA',
+                color: '#0f0f0f',
+                border: '1px solid #E5E7EB',
+                borderRadius: '12px',
+                fontSize: '14px',
+                fontWeight: 600,
+                textDecoration: 'none',
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+              Browse cases
+            </Link>
+          </div>
+
+          {/* Suggested links */}
+          <div
+            style={{
+              paddingTop: '24px',
+              borderTop: '1px solid #E5E7EB',
+            }}
+          >
+            <p
+              style={{
+                fontSize: '12px',
+                fontWeight: 600,
+                color: '#4B5563',
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em',
+                margin: '0 0 16px',
+              }}
+            >
+              Popular pages
+            </p>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+                gap: '8px',
+              }}
+            >
+              <Link
+                href="/cases"
+                className="notfound-link-tertiary"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 6,
+                  padding: '10px 12px',
+                  background: '#F9FAFB',
+                  color: '#374151',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '8px',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+                Search cases
+              </Link>
+              <Link
+                href="/districts"
+                className="notfound-link-tertiary"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 6,
+                  padding: '10px 12px',
+                  background: '#F9FAFB',
+                  color: '#374151',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '8px',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" />
+                </svg>
+                Districts
+              </Link>
+              <Link
+                href="/pricing"
+                className="notfound-link-tertiary"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 6,
+                  padding: '10px 12px',
+                  background: '#F9FAFB',
+                  color: '#374151',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '8px',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <line x1="12" y1="1" x2="12" y2="23" />
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                Pricing
+              </Link>
+              <Link
+                href="/attorney"
+                className="notfound-link-tertiary"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 6,
+                  padding: '10px 12px',
+                  background: '#F9FAFB',
+                  color: '#374151',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '8px',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                For attorneys
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
+
+// Conditional bundle analyzer
+let plugins = [];
+if (process.env.ANALYZE === 'true') {
+  const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true',
+  });
+  plugins.push(withBundleAnalyzer);
+}
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -107,10 +117,57 @@ const nextConfig = {
   poweredByHeader: false,
   // Performance: enable SWC minification (default in Next 14+)
   swcMinify: true,
+  // Webpack optimization for production
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        runtimeChunk: 'single',
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            // Next.js framework
+            framework: {
+              chunks: 'all',
+              name: 'framework',
+              test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|next)[\\/]/,
+              priority: 40,
+              reuseExistingChunk: true,
+              enforce: true,
+            },
+            // Common used packages
+            common: {
+              minChunks: 2,
+              priority: 20,
+              reuseExistingChunk: true,
+              name: 'common',
+            },
+            // UI libraries
+            ui: {
+              chunks: 'all',
+              test: /[\\/]node_modules[\\/](framer-motion|@radix-ui|clsx|tailwindcss)[\\/]/,
+              name: 'ui',
+              priority: 35,
+              reuseExistingChunk: true,
+            },
+          },
+        },
+      };
+    }
+    return config;
+  },
   // Redirect non-www to www
   redirects: async () => [
     { source: '/:path*', has: [{ type: 'host', value: 'mycasevalues.com' }], destination: 'https://www.mycasevalues.com/:path*', permanent: true }
   ],
 };
 
-module.exports = nextConfig;
+// Apply bundle analyzer if enabled
+let exportedConfig = nextConfig;
+for (const plugin of plugins) {
+  exportedConfig = plugin(exportedConfig);
+}
+
+module.exports = exportedConfig;
