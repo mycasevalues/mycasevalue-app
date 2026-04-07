@@ -43,6 +43,24 @@ export default function DispositionBar({ data }: DispositionBarProps) {
 
   return (
     <div style={{ width: '100%' }}>
+      {/* Visually hidden table for screen readers */}
+      <table className="sr-only" aria-label="Disposition breakdown data">
+        <thead>
+          <tr>
+            <th>Disposition Type</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          {visibleSegments.map((segment) => (
+            <tr key={segment.key}>
+              <td>{segment.label}</td>
+              <td>{segment.percentage.toFixed(1)}%</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       {/* Horizontal Stacked Bar */}
       <div
         style={{
@@ -54,6 +72,8 @@ export default function DispositionBar({ data }: DispositionBarProps) {
           marginBottom: '24px',
           boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
         }}
+        role="img"
+        aria-label={`Disposition breakdown: ${visibleSegments.map((s) => `${s.label} ${s.percentage.toFixed(1)}%`).join(', ')}`}
       >
         {visibleSegments.map((segment) => (
           <div

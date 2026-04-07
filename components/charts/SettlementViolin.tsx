@@ -174,6 +174,34 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
 
   return (
     <div ref={containerRef} style={{ width: '100%' }}>
+      {/* Visually hidden table for screen readers */}
+      <table className="sr-only" aria-label="Settlement distribution data">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {REAL_DATA[nosCode as keyof typeof REAL_DATA] && (
+            <>
+              <tr>
+                <td>25th Percentile</td>
+                <td>${(REAL_DATA[nosCode as keyof typeof REAL_DATA]?.rng?.lo || 0)}K</td>
+              </tr>
+              <tr>
+                <td>Median (50th Percentile)</td>
+                <td>${(REAL_DATA[nosCode as keyof typeof REAL_DATA]?.rng?.md || 0)}K</td>
+              </tr>
+              <tr>
+                <td>75th Percentile</td>
+                <td>${(REAL_DATA[nosCode as keyof typeof REAL_DATA]?.rng?.hi || 0)}K</td>
+              </tr>
+            </>
+          )}
+        </tbody>
+      </table>
+
       <svg
         ref={svgRef}
         width={width}

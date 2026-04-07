@@ -215,6 +215,24 @@ export default function WinRateTrend({
 
   return (
     <div ref={containerRef} style={{ width: '100%', position: 'relative' }}>
+      {/* Visually hidden table for screen readers */}
+      <table className="sr-only" aria-label="Win rate trend data">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Win Rate (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <tr key={item.year}>
+              <td>{item.year}</td>
+              <td>{item.winRate}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       <svg
         ref={svgRef}
         width={width}

@@ -221,6 +221,24 @@ export default function FilingVolumeTrend({
 
   return (
     <div ref={containerRef} style={{ width: '100%', position: 'relative' }}>
+      {/* Visually hidden table for screen readers */}
+      <table className="sr-only" aria-label="Filing volume trend data">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Filings</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <tr key={item.year}>
+              <td>{item.year}</td>
+              <td>{item.filings.toLocaleString()}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
       <svg
         ref={svgRef}
         width={width}
