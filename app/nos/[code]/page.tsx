@@ -12,6 +12,7 @@ import RelevantOpinions from '../../../components/RelevantOpinions';
 import { ATTORNEY_IMPACT } from '../../../lib/attorney-impact';
 import { getWinRateColor } from '../../../lib/color-scale';
 import { AnimatedRangeBar, MetricsStagger, MetricsStaggerItem } from '../../../components/motion/NosAnimations';
+import NOSRecoveryRangeClient from '../../../components/NOSRecoveryRangeClient';
 import dynamic from 'next/dynamic';
 
 const SettlementViolin = dynamic(() => import('../../../components/charts/SettlementViolin'), { ssr: false });
@@ -934,50 +935,13 @@ export default async function NOSPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Recovery Range Visualization */}
+      {/* Recovery Range Visualization with Inflation Toggle */}
       {recoveryRange && recoveryRange.md > 0 && (
-        <section className="px-4 sm:px-6 lg:px-8 pb-12">
-          <div className="max-w-6xl mx-auto">
-            <div className="content-box">
-              <h2 className="section-title">Recovery Range Visualization</h2>
-              <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
-                Typical monetary recovery for {nosInfo.label} cases (in thousands)
-              </p>
-
-              <AnimatedRangeBar className="recovery-range-bar">
-                <div className="recovery-track"></div>
-                <div
-                  className="recovery-gradient"
-                  style={{
-                    left: `${Math.max(0, (recoveryRange.lo / recoveryRange.hi) * 100)}%`,
-                    right: `${Math.max(0, 100 - (recoveryRange.hi / recoveryRange.hi) * 100)}%`,
-                  }}
-                ></div>
-                <div
-                  className="recovery-marker"
-                  style={{
-                    left: `${(recoveryRange.md / recoveryRange.hi) * 100}%`,
-                  }}
-                ></div>
-              </AnimatedRangeBar>
-
-              <div className="recovery-percentiles" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center', marginTop: '28px' }}>
-                <div>
-                  <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P25</div>
-                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.lo)}</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P50 (Median)</div>
-                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.md)}</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P75</div>
-                  <div style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.hi)}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <NOSRecoveryRangeClient
+          recoveryRange={recoveryRange}
+          nosLabel={nosInfo.label}
+          sourceYear={2021}
+        />
       )}
 
       {/* Settlement Distribution Violin Plot — for high-data NOS codes */}

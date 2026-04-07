@@ -1,6 +1,12 @@
-// BLS API integration for CPI inflation adjustment
+/**
+ * BLS API integration for CPI inflation adjustment.
+ * Fetches annual CPI-U (All Items, All Urban Consumers) data for inflation calculations.
+ * Features 30-day in-memory cache (future: migrate to Supabase for distributed caching).
+ */
+
 const BLS_BASE = 'https://api.bls.gov/publicAPI/v2/timeseries/data/';
-const CPI_SERIES = 'CUUR0000SA0'; // CPI-U All Urban Consumers
+const CPI_SERIES = 'CUUR0000SA0'; // CPI-U All Items, All Urban Consumers
+const CACHE_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days in milliseconds
 
 interface CPIData {
   year: string;
@@ -9,7 +15,15 @@ interface CPIData {
   periodName: string;
 }
 
-// Fallback CPI values (annual averages) if API is unavailable
+interface CacheEntry {
+  data: Record<string, number>;
+  timestamp: number;
+}
+
+// In-memory cache (module-level). Future: migrate to Supabase for distributed caching.
+const cpiCache = new Map<string, CacheEntry>();
+
+// Hardcoded fallback CPI-U values (annual averages) for years 2010-2024
 const CPI_FALLBACK: Record<string, number> = {
   '2024': 314.2, '2023': 304.7, '2022': 292.7, '2021': 270.97,
   '2020': 258.81, '2019': 255.66, '2018': 251.1, '2017': 245.12,
@@ -22,18 +36,33 @@ const CPI_FALLBACK: Record<string, number> = {
   '1992': 140.31, '1991': 136.17, '1990': 130.66,
 };
 
-export async function getCPIForYear(year: number): Promise<number> {
-  const yearStr = String(year);
-  if (CPI_FALLBACK[yearStr]) return CPI_FALLBACK[yearStr];
+/**
+ * Retrieve CPI data, using cache when available and falling back to hardcoded values.
+ * The cache is keyed by a simple string "cpi" and stores all CPI data.
+ * @param year - The year to fetch CPI for
+ * @returns The CPI-U value for that year
+ */
+export async function getCPIData(): Promise<Record<string, number>> {
+  const cacheKey = 'cpi';
+  const cached = cpiCache.get(cacheKey);
+
+  // Return cached data if available and not expired
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+    return cached.data;
+  }
 
   try {
     const apiKey = process.env.BLS_API_KEY;
     const url = apiKey
-      ? `${BLS_BASE}${CPI_SERIES}?registrationkey=${apiKey}&startyear=${year}&endyear=${year}`
-      : `${BLS_BASE}${CPI_SERIES}?startyear=${year}&endyear=${year}`;
+      ? `${BLS_BASE}${CPI_SERIES}?registrationkey=${apiKey}&startyear=2010&endyear=2024`
+      : `${BLS_BASE}${CPI_SERIES}?startyear=2010&endyear=2024`;
 
     const res = await fetch(url, { next: { revalidate: 86400 } } as unknown as RequestInit);
-    if (!res.ok) return CPI_FALLBACK[yearStr] || 314.2;
+    if (!res.ok) {
+      // Return fallback on API failure
+      cpiCache.set(cacheKey, { data: CPI_FALLBACK, timestamp: Date.now() });
+      return CPI_FALLBACK;
+    }
 
     const data = await res.json() as Record<string, unknown>;
     const resultsData = data.Results as Record<string, unknown> | undefined;
@@ -41,27 +70,41 @@ export async function getCPIForYear(year: number): Promise<number> {
 
     if (data.status === 'REQUEST_SUCCEEDED' && series[0]?.data) {
       const dataArray = (series[0].data as Array<CPIData>) || [];
-      const annualData = dataArray.filter((d: CPIData) => d.period === 'M13');
-      if (annualData.length > 0) return parseFloat(annualData[0].value);
-      if (dataArray.length > 0) return parseFloat(dataArray[0].value);
+      const cpiData: Record<string, number> = { ...CPI_FALLBACK };
+
+      // Extract annual data (period M13 indicates annual average)
+      dataArray.forEach((d: CPIData) => {
+        if (d.period === 'M13') {
+          cpiData[d.year] = parseFloat(d.value);
+        }
+      });
+
+      cpiCache.set(cacheKey, { data: cpiData, timestamp: Date.now() });
+      return cpiData;
     }
   } catch (e) {
-    console.warn(`[BLS] Failed to fetch CPI for ${year}:`, e);
+    console.warn('[BLS] Failed to fetch CPI data:', e);
   }
 
-  return CPI_FALLBACK[yearStr] || 314.2;
+  // Return fallback on any error
+  cpiCache.set(cacheKey, { data: CPI_FALLBACK, timestamp: Date.now() });
+  return CPI_FALLBACK;
 }
 
-export function adjustForInflation(amount: number, fromYear: number, toYear: number = 2024): number {
-  const fromCPI = CPI_FALLBACK[String(fromYear)];
-  const toCPI = CPI_FALLBACK[String(toYear)];
-  if (!fromCPI || !toCPI) return amount;
-  return Math.round(amount * (toCPI / fromCPI));
-}
+/**
+ * Adjust a settlement amount for inflation.
+ * @param amount - The settlement amount in thousands (as stored in REAL_DATA)
+ * @param sourceYear - The year the amount was measured in
+ * @param targetYear - The year to adjust to (default: 2024)
+ * @returns The inflation-adjusted amount in thousands
+ */
+export function adjustForInflation(amount: number, sourceYear: number, targetYear: number = 2024): number {
+  const fromCPI = CPI_FALLBACK[String(sourceYear)];
+  const toCPI = CPI_FALLBACK[String(targetYear)];
 
-export function getInflationRate(fromYear: number, toYear: number): number {
-  const fromCPI = CPI_FALLBACK[String(fromYear)];
-  const toCPI = CPI_FALLBACK[String(toYear)];
-  if (!fromCPI || !toCPI) return 0;
-  return ((toCPI - fromCPI) / fromCPI) * 100;
+  if (!fromCPI || !toCPI) {
+    return amount;
+  }
+
+  return Math.round(amount * (toCPI / fromCPI) * 100) / 100;
 }
