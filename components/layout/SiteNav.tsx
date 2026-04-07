@@ -285,10 +285,26 @@ export default function SiteNav() {
           height: '100%',
           gap: '4px',
         }}>
-          {/* Logo */}
+          {/* Logo — inline SVG for reliable rendering */}
           <Link href="/" aria-label="MyCaseValue home" style={{ display: 'flex', alignItems: 'center', marginRight: '24px', flexShrink: 0 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="MyCaseValue" width={120} height={30} style={{ display: 'block' }} />
+            <svg viewBox="0 0 160 34" width="120" height="30" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
+              <defs>
+                <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style={{ stopColor: '#E8171F', stopOpacity: 1 }} />
+                  <stop offset="100%" style={{ stopColor: '#C41218', stopOpacity: 1 }} />
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="30" height="30" rx="4" ry="4" fill="url(#navLogoGrad)" />
+              <rect x="10.5" y="13.5" width="11" height="1.5" fill="white" rx="0.75" ry="0.75" />
+              <polygon points="17,13.5 15.5,11.5 18.5,11.5" fill="white" />
+              <rect x="7" y="17" width="4" height="2.5" fill="white" rx="0.5" ry="0.5" />
+              <rect x="21" y="17" width="4" height="2.5" fill="white" rx="0.5" ry="0.5" />
+              <line x1="9" y1="17" x2="10" y2="14.5" stroke="white" strokeWidth="0.8" strokeLinecap="round" />
+              <line x1="11" y1="17" x2="10.5" y2="14.5" stroke="white" strokeWidth="0.8" strokeLinecap="round" />
+              <line x1="23" y1="17" x2="24" y2="14.5" stroke="white" strokeWidth="0.8" strokeLinecap="round" />
+              <line x1="25" y1="17" x2="24.5" y2="14.5" stroke="white" strokeWidth="0.8" strokeLinecap="round" />
+              <text x="38" y="23" fontFamily="Inter, -apple-system, BlinkMacSystemFont, sans-serif" fontSize="18" fontWeight="700" fill="#1C3A5E" letterSpacing="0.2">MyCaseValue</text>
+            </svg>
           </Link>
 
           {/* Desktop nav items */}
