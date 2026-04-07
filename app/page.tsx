@@ -273,46 +273,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Key Metrics Bar */}
-      <section
-        style={{
-          backgroundColor: TEXT_COLOR,
-          color: '#ffffff',
-          padding: '40px 20px',
-          borderBottom: `1px solid ${BORDER_COLOR}`,
-        }}
-      >
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '32px',
-              textAlign: 'center',
-            }}
-          >
-            <div>
-              <div style={{ fontSize: '28px', fontWeight: 600, marginBottom: '8px' }}>
-                5,100,000+
-              </div>
-              <p style={{ fontSize: '14px', margin: '0', opacity: 0.8 }}>Federal Cases Indexed</p>
-            </div>
-            <div>
-              <div style={{ fontSize: '28px', fontWeight: 600, marginBottom: '8px' }}>84</div>
-              <p style={{ fontSize: '14px', margin: '0', opacity: 0.8 }}>Case Types Covered</p>
-            </div>
-            <div>
-              <div style={{ fontSize: '28px', fontWeight: 600, marginBottom: '8px' }}>94</div>
-              <p style={{ fontSize: '14px', margin: '0', opacity: 0.8 }}>Federal Districts</p>
-            </div>
-            <div>
-              <div style={{ fontSize: '28px', fontWeight: 600, marginBottom: '8px' }}>54 years</div>
-              <p style={{ fontSize: '14px', margin: '0', opacity: 0.8 }}>of Court Records (1970-2024)</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Features Grid */}
       <section style={{ padding: '80px 20px' }}>
         <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
@@ -557,7 +517,7 @@ export default function HomePage() {
               lineHeight: '1.6',
             }}
           >
-            Start exploring 5.1M+ cases with advanced analytics and AI-powered insights. No account required.
+            Start exploring 5.1M+ cases with advanced analytics and AI-powered insights.
           </p>
           <div
             style={{
