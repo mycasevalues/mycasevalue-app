@@ -8,6 +8,10 @@ import DataFreshness from '../../../components/DataFreshness';
 import SampleSizeIndicator from '../../../components/SampleSizeIndicator';
 import UpdatedBadge from '../../../components/UpdatedBadge';
 import { NOS_STATUTE_MAP } from '../../../lib/statutes';
+import RelevantOpinions from '../../../components/RelevantOpinions';
+
+// Top 10 NOS codes that show the Relevant Opinions section
+const OPINIONS_ENABLED_NOS = new Set(['442', '365', '190', '110', '360', '710', '445', '870', '440', '863']);
 
 // Helper function to flatten SITS and map NOS codes to display names
 function getNOSMap(): Record<string, { label: string; category: string; description?: string }> {
@@ -998,6 +1002,11 @@ export default async function NOSPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+      )}
+
+      {/* Relevant Opinions (top 10 NOS codes only) */}
+      {OPINIONS_ENABLED_NOS.has(code) && (
+        <RelevantOpinions nosCode={code} nosLabel={nosInfo.label} />
       )}
 
       {/* Circuit Court Win Rates */}

@@ -455,3 +455,21 @@ CREATE TABLE IF NOT EXISTS report_logs (
 );
 
 CREATE INDEX IF NOT EXISTS idx_report_logs_email ON report_logs(email, created_at DESC);
+
+-- ============================================================
+-- AI-GENERATED OPINION SUMMARIES (cached permanently)
+-- ============================================================
+CREATE TABLE IF NOT EXISTS opinion_summaries (
+  opinion_id INTEGER NOT NULL,
+  nos_code INTEGER NOT NULL,
+  case_name TEXT NOT NULL,
+  court TEXT,
+  year TEXT,
+  citation TEXT,
+  url TEXT,
+  summary TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  PRIMARY KEY (opinion_id, nos_code)
+);
+
+CREATE INDEX IF NOT EXISTS idx_opinion_summaries_nos ON opinion_summaries(nos_code);
