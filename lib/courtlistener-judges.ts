@@ -12,7 +12,7 @@ import { createClient } from '@supabase/supabase-js';
 const COURTLISTENER_BASE = 'https://www.courtlistener.com/api/rest/v4';
 const COURTLISTENER_JUDGES_URL = `${COURTLISTENER_BASE}/people/`;
 const PAGE_SIZE = 20;
-const RATE_LIMIT_DELAY = 6000; // 10 requests per minute = 6s between requests
+const RATE_LIMIT_DELAY = 1500; // CourtListener allows 5000 req/hr for authenticated users
 
 interface CourtListenerJudge {
   resource_uri: string;

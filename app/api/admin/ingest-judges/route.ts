@@ -17,6 +17,7 @@ import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
 import { ingestJudges } from '../../../../lib/courtlistener-judges';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 60; // Allow up to 60s for judge ingestion
 
 export async function POST(req: NextRequest) {
   // Strict rate limiting to prevent brute-force attacks on admin secret
