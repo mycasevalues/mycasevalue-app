@@ -1,0 +1,119 @@
+{
+  "years": [
+    {
+      "year": 2019,
+      "totalInspections": 32428,
+      "totalCitations": 50234,
+      "totalPenalties": 167845000,
+      "averagePenalty": 3342,
+      "seriousViolations": 28567,
+      "willfulViolations": 1234,
+      "repeatViolations": 2456,
+      "otherViolations": 17977,
+      "topStates": [
+        { "state": "California", "inspections": 3845, "citations": 6234, "averagePenalty": 4128 },
+        { "state": "Texas", "inspections": 2156, "citations": 3845, "averagePenalty": 3856 },
+        { "state": "Florida", "inspections": 1987, "citations": 3456, "averagePenalty": 3542 },
+        { "state": "New York", "inspections": 1876, "citations": 3234, "averagePenalty": 3789 },
+        { "state": "Pennsylvania", "inspections": 1654, "citations": 2876, "averagePenalty": 3421 },
+        { "state": "Illinois", "inspections": 1543, "citations": 2654, "averagePenalty": 3123 },
+        { "state": "Ohio", "inspections": 1432, "citations": 2456, "averagePenalty": 3012 },
+        { "state": "Georgia", "inspections": 1321, "citations": 2234, "averagePenalty": 2956 },
+        { "state": "North Carolina", "inspections": 1245, "citations": 2123, "averagePenalty": 2834 },
+        { "state": "Michigan", "inspections": 1087, "citations": 1876, "averagePenalty": 2742 }
+      ]
+    },
+    {
+      "year": 2020,
+      "totalInspections": 28934,
+      "totalCitations": 45123,
+      "totalPenalties": 154230000,
+      "averagePenalty": 3417,
+      "seriousViolations": 25634,
+      "willfulViolations": 1098,
+      "repeatViolations": 2187,
+      "otherViolations": 16204,
+      "topStates": [
+        { "state": "California", "inspections": 3456, "citations": 5678, "averagePenalty": 4245 },
+        { "state": "Texas", "inspections": 1987, "citations": 3456, "averagePenalty": 3945 },
+        { "state": "Florida", "inspections": 1765, "citations": 3123, "averagePenalty": 3658 },
+        { "state": "New York", "inspections": 1654, "citations": 2987, "averagePenalty": 3876 },
+        { "state": "Pennsylvania", "inspections": 1543, "citations": 2654, "averagePenalty": 3534 },
+        { "state": "Illinois", "inspections": 1432, "citations": 2456, "averagePenalty": 3234 },
+        { "state": "Ohio", "inspections": 1321, "citations": 2234, "averagePenalty": 3098 },
+        { "state": "Georgia", "inspections": 1210, "citations": 2087, "averagePenalty": 3045 },
+        { "state": "North Carolina", "inspections": 1098, "citations": 1987, "averagePenalty": 2923 },
+        { "state": "Michigan", "inspections": 987, "citations": 1765, "averagePenalty": 2834 }
+      ]
+    },
+    {
+      "year": 2021,
+      "totalInspections": 30567,
+      "totalCitations": 48876,
+      "totalPenalties": 162450000,
+      "averagePenalty": 3325,
+      "seriousViolations": 27234,
+      "willfulViolations": 1145,
+      "repeatViolations": 2298,
+      "otherViolations": 18199,
+      "topStates": [
+        { "state": "California", "inspections": 3678, "citations": 5987, "averagePenalty": 4089 },
+        { "state": "Texas", "inspections": 2098, "citations": 3765, "averagePenalty": 3834 },
+        { "state": "Florida", "inspections": 1876, "citations": 3234, "averagePenalty": 3512 },
+        { "state": "New York", "inspections": 1765, "citations": 3098, "averagePenalty": 3723 },
+        { "state": "Pennsylvania", "inspections": 1654, "citations": 2876, "averagePenalty": 3398 },
+        { "state": "Illinois", "inspections": 1543, "citations": 2654, "averagePenalty": 3145 },
+        { "state": "Ohio", "inspections": 1432, "citations": 2456, "averagePenalty": 3012 },
+        { "state": "Georgia", "inspections": 1321, "citations": 2234, "averagePenalty": 2956 },
+        { "state": "North Carolina", "inspections": 1210, "citations": 2087, "averagePenalty": 2834 },
+        { "state": "Michigan", "inspections": 1098, "citations": 1876, "averagePenalty": 2723 }
+      ]
+    },
+    {
+      "year": 2022,
+      "totalInspections": 31245,
+      "totalCitations": 50567,
+      "totalPenalties": 169876000,
+      "averagePenalty": 3358,
+      "seriousViolations": 28234,
+      "willfulViolations": 1267,
+      "repeatViolations": 2345,
+      "otherViolations": 18721,
+      "topStates": [
+        { "state": "California", "inspections": 3756, "citations": 6123, "averagePenalty": 4167 },
+        { "state": "Texas", "inspections": 2145, "citations": 3876, "averagePenalty": 3923 },
+        { "state": "Florida", "inspections": 1945, "citations": 3345, "averagePenalty": 3634 },
+        { "state": "New York", "inspections": 1834, "citations": 3156, "averagePenalty": 3812 },
+        { "state": "Pennsylvania", "inspections": 1723, "citations": 2945, "averagePenalty": 3467 },
+        { "state": "Illinois", "inspections": 1612, "citations": 2723, "averagePenalty": 3234 },
+        { "state": "Ohio", "inspections": 1501, "citations": 2534, "averagePenalty": 3098 },
+        { "state": "Georgia", "inspections": 1390, "citations": 2345, "averagePenalty": 3012 },
+        { "state": "North Carolina", "inspections": 1279, "citations": 2156, "averagePenalty": 2923 },
+        { "state": "Michigan", "inspections": 1167, "citations": 1945, "averagePenalty": 2812 }
+      ]
+    },
+    {
+      "year": 2023,
+      "totalInspections": 32145,
+      "totalCitations": 52134,
+      "totalPenalties": 178290000,
+      "averagePenalty": 3417,
+      "seriousViolations": 29234,
+      "willfulViolations": 1389,
+      "repeatViolations": 2456,
+      "otherViolations": 19055,
+      "topStates": [
+        { "state": "California", "inspections": 3845, "citations": 6345, "averagePenalty": 4234 },
+        { "state": "Texas", "inspections": 2187, "citations": 3987, "averagePenalty": 3998 },
+        { "state": "Florida", "inspections": 2001, "citations": 3456, "averagePenalty": 3712 },
+        { "state": "New York", "inspections": 1890, "citations": 3234, "averagePenalty": 3891 },
+        { "state": "Pennsylvania", "inspections": 1779, "citations": 3012, "averagePenalty": 3534 },
+        { "state": "Illinois", "inspections": 1668, "citations": 2834, "averagePenalty": 3312 },
+        { "state": "Ohio", "inspections": 1557, "citations": 2645, "averagePenalty": 3167 },
+        { "state": "Georgia", "inspections": 1446, "citations": 2456, "averagePenalty": 3089 },
+        { "state": "North Carolina", "inspections": 1335, "citations": 2267, "averagePenalty": 2998 },
+        { "state": "Michigan", "inspections": 1224, "citations": 2078, "averagePenalty": 2867 }
+      ]
+    }
+  ]
+}

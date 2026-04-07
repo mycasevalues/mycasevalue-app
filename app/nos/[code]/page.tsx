@@ -11,6 +11,7 @@ import { NOS_STATUTE_MAP } from '../../../lib/statutes';
 import RelevantOpinions from '../../../components/RelevantOpinions';
 import EEOCPipeline from '../../../components/EEOCPipeline';
 import NLRBContext from '../../../components/NLRBContext';
+import OSHAContext from '../../../components/OSHAContext';
 import { ATTORNEY_IMPACT } from '../../../lib/attorney-impact';
 import { getWinRateColor } from '../../../lib/color-scale';
 import { AnimatedRangeBar, MetricsStagger, MetricsStaggerItem } from '../../../components/motion/NosAnimations';
@@ -30,6 +31,9 @@ const EEOC_ENABLED_NOS = new Set(['442', '445', '710']);
 
 // Labor/Management Relations NOS codes that show NLRB data
 const NLRB_ENABLED_NOS = new Set(['720']);
+
+// Workplace safety NOS codes that show OSHA data
+const OSHA_ENABLED_NOS = new Set(['710']);
 
 // Helper function to flatten SITS and map NOS codes to display names
 function getNOSMap(): Record<string, { label: string; category: string; description?: string }> {
@@ -1036,6 +1040,11 @@ export default async function NOSPage({ params }: PageProps) {
       {/* NLRB Case Context (labor/management relations NOS codes only) */}
       {NLRB_ENABLED_NOS.has(code) && (
         <NLRBContext />
+      )}
+
+      {/* OSHA Regulatory Context (workplace safety NOS codes only) */}
+      {OSHA_ENABLED_NOS.has(code) && (
+        <OSHAContext />
       )}
 
       {/* Relevant Opinions (top 10 NOS codes only) */}
