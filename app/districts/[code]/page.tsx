@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { REAL_DATA } from '../../../lib/realdata';
 import localRulesData from '../../../data/local-rules.json';
 import legalAidData from '../../../data/legal-aid.json';
+import FilingVolumeTrend from '../../../components/charts/FilingVolumeTrend';
+import { DISTRICT_FILING_TRENDS } from '../../../data/district-trends';
 
 // ISR: revalidate every 90 days (matches FJC quarterly update cycle)
 export const revalidate = 7776000;
@@ -468,6 +470,41 @@ export default async function DistrictPage({ params }: PageProps) {
               </div>
               </Link>
             ))}
+          </div>
+        </section>
+
+        {/* 10-Year Filing Volume Trend */}
+        <section style={{ marginTop: 56 }}>
+          <div style={{
+            background: '#FFFFFF',
+            border: '1px solid #e5e7eb',
+            borderRadius: '12px',
+            padding: 'clamp(24px, 4vw, 32px)',
+          }}>
+            <h2 style={{
+              fontSize: 16,
+              fontWeight: 700,
+              color: '#0f0f0f',
+              margin: '0 0 24px',
+              fontFamily: 'var(--font-display)',
+            }}>
+              10-Year Filing Volume
+            </h2>
+            <div style={{ minHeight: 200 }}>
+              <FilingVolumeTrend
+                data={DISTRICT_FILING_TRENDS[upperCode] || []}
+                districtCode={upperCode}
+              />
+            </div>
+            <p style={{
+              fontSize: 12,
+              color: '#4B5563',
+              marginTop: 16,
+              margin: '16px 0 0',
+              fontFamily: 'var(--font-body)',
+            }}>
+              Federal civil case filings in {districtMeta.fullName} from 2015 to 2024. Trends reflect overall volume of civil litigation in the district.
+            </p>
           </div>
         </section>
 
