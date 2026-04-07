@@ -7,6 +7,7 @@ import { fmtK } from '../../../lib/format';
 import DataFreshness from '../../../components/DataFreshness';
 import SampleSizeIndicator from '../../../components/SampleSizeIndicator';
 import UpdatedBadge from '../../../components/UpdatedBadge';
+import { NOS_STATUTE_MAP } from '../../../lib/statutes';
 
 // Helper function to flatten SITS and map NOS codes to display names
 function getNOSMap(): Record<string, { label: string; category: string; description?: string }> {
@@ -150,6 +151,9 @@ export default async function NOSPage({ params }: PageProps) {
 
   // Key factors from REAL_DATA
   const keyFactors = real?.factors;
+
+  // Governing statute from NOS_STATUTE_MAP
+  const statute = NOS_STATUTE_MAP[parseInt(code, 10)];
 
   // Circuit court rates from REAL_DATA
   const circuitRates = real?.circuit_rates;
@@ -953,6 +957,42 @@ export default async function NOSPage({ params }: PageProps) {
                 <div>
                   <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P75</div>
                   <div style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.hi)}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Governing Statute Reference */}
+      {statute && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="content-box">
+              <h2 className="section-title">Governing Statute</h2>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', flexWrap: 'wrap' }}>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: '6px 14px',
+                  background: '#EDF3FB',
+                  borderRadius: '8px',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  color: '#004182',
+                  fontFamily: 'var(--font-mono)',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
+                }}>
+                  {statute.usc}
+                </div>
+                <div style={{ flex: 1, minWidth: '200px' }}>
+                  <div style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px', fontFamily: 'var(--font-display)' }}>
+                    {statute.title}
+                  </div>
+                  <p style={{ fontSize: '13px', color: '#4B5563', lineHeight: 1.6, margin: 0, fontFamily: 'var(--font-body)' }}>
+                    {statute.description}
+                  </p>
                 </div>
               </div>
             </div>
