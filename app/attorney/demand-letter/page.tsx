@@ -1,14 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { SITS } from '../../../lib/data';
-
-type DemandLetterResult = {
-  letter: string;
-  totalDamands: number;
-  disclaimer: string;
-};
 
 export default function DemandLetterPage() {
   const [caseType, setCaseType] = useState('');
@@ -21,8 +15,10 @@ export default function DemandLetterPage() {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [result, setResult] = useState<DemandLetterResult | null>(null);
+  const [letterText, setLetterText] = useState('');
   const [copied, setCopied] = useState(false);
+  const [exporting, setExporting] = useState(false);
+  const letterRef = useRef<HTMLDivElement>(null);
 
   const allCaseTypes = SITS.flatMap(cat =>
     cat.opts.map(opt => ({
@@ -42,7 +38,7 @@ export default function DemandLetterPage() {
 
     setLoading(true);
     setError('');
-    setResult(null);
+    setLetterText('');
 
     try {
       const response = await fetch('/api/attorney/demand-letter', {
@@ -59,14 +55,31 @@ export default function DemandLetterPage() {
         }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
+        const data = await response.json();
         setError(data.error || 'Failed to generate demand letter');
+        setLoading(false);
         return;
       }
 
-      setResult(data);
+      // Stream the response
+      const reader = response.body?.getReader();
+      if (!reader) {
+        setError('Streaming not supported');
+        setLoading(false);
+        return;
+      }
+
+      const decoder = new TextDecoder();
+      let accumulated = '';
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        accumulated += chunk;
+        setLetterText(accumulated);
+      }
     } catch {
       setError('Network error. Please try again.');
     } finally {
@@ -75,12 +88,56 @@ export default function DemandLetterPage() {
   };
 
   const copyToClipboard = () => {
-    if (result?.letter) {
-      navigator.clipboard.writeText(result.letter);
+    if (letterText) {
+      navigator.clipboard.writeText(letterText);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     }
   };
+
+  const exportAsDocx = async () => {
+    if (!letterText) return;
+    setExporting(true);
+    try {
+      const { Document, Packer, Paragraph, TextRun } = await import('docx');
+
+      const paragraphs = letterText.split('\n').map(line =>
+        new Paragraph({
+          children: [
+            new TextRun({
+              text: line,
+              font: 'Times New Roman',
+              size: 24,
+            }),
+          ],
+          spacing: { after: 120 },
+        })
+      );
+
+      const doc = new Document({
+        sections: [{
+          properties: {},
+          children: paragraphs,
+        }],
+      });
+
+      const blob = await Packer.toBlob(doc);
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'demand-letter.docx';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch {
+      setError('Failed to export document. Please try again.');
+    } finally {
+      setExporting(false);
+    }
+  };
+
+  const totalDemand = (parseInt(economicDamages) || 0) + (parseInt(painSuffering) || 0) + (parseInt(lostWages) || 0);
 
   const labelStyle: React.CSSProperties = {
     display: 'block',
@@ -108,6 +165,10 @@ export default function DemandLetterPage() {
 
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
+      <style>{`
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: #0A66C2; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+      `}</style>
       {/* Header */}
       <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
@@ -130,7 +191,7 @@ export default function DemandLetterPage() {
 
       {/* Main Content */}
       <div style={{ maxWidth: '1080px', margin: '0 auto', padding: '40px 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: result ? '1fr 1fr' : '1fr', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: letterText ? '1fr 1fr' : '1fr', gap: '24px' }}>
           {/* Input Form */}
           <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <h2 style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 24px', fontFamily: 'var(--font-display)' }}>
@@ -327,66 +388,90 @@ export default function DemandLetterPage() {
           </div>
 
           {/* Generated Letter */}
-          {result && (
+          {letterText && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '28px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', position: 'relative' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: 8 }}>
                   <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-display)' }}>
                     Generated Demand Letter
+                    {loading && <span style={{ fontSize: 12, color: '#0A66C2', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
-                  <button
-                    onClick={copyToClipboard}
-                    style={{
-                      padding: '8px 12px',
-                      background: copied ? '#059669' : '#0A66C2',
-                      color: '#FFFFFF',
-                      border: 'none',
-                      borderRadius: '20px',
-                      fontSize: '12px',
-                      fontWeight: '600',
-                      cursor: 'pointer',
-                      transition: 'background 0.3s',
-                      fontFamily: 'var(--font-body)',
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!copied) e.currentTarget.style.background = '#004182';
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!copied) e.currentTarget.style.background = '#0A66C2';
-                    }}
-                  >
-                    {copied ? 'Copied!' : 'Copy to Clipboard'}
-                  </button>
+                  <div style={{ display: 'flex', gap: 8 }}>
+                    <button
+                      onClick={copyToClipboard}
+                      disabled={loading}
+                      style={{
+                        padding: '8px 12px',
+                        background: copied ? '#059669' : '#0A66C2',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        borderRadius: '20px',
+                        fontSize: '12px',
+                        fontWeight: '600',
+                        cursor: loading ? 'not-allowed' : 'pointer',
+                        transition: 'background 0.3s',
+                        fontFamily: 'var(--font-body)',
+                        opacity: loading ? 0.5 : 1,
+                      }}
+                    >
+                      {copied ? 'Copied!' : 'Copy to Clipboard'}
+                    </button>
+                    <button
+                      onClick={exportAsDocx}
+                      disabled={loading || exporting}
+                      style={{
+                        padding: '8px 12px',
+                        background: '#004182',
+                        color: '#FFFFFF',
+                        border: 'none',
+                        borderRadius: '20px',
+                        fontSize: '12px',
+                        fontWeight: '600',
+                        cursor: loading || exporting ? 'not-allowed' : 'pointer',
+                        transition: 'background 0.3s',
+                        fontFamily: 'var(--font-body)',
+                        opacity: loading || exporting ? 0.5 : 1,
+                      }}
+                    >
+                      {exporting ? 'Exporting...' : 'Export as Word'}
+                    </button>
+                  </div>
                 </div>
 
-                <div style={{
-                  maxHeight: '600px',
-                  overflowY: 'auto',
-                  padding: '16px',
-                  background: '#FAFBFC',
-                  borderRadius: '20px',
-                  border: '1px solid #E5E7EB',
-                  fontSize: '13px',
-                  color: '#0f0f0f',
-                  lineHeight: '1.7',
-                  fontFamily: 'var(--font-body)',
-                  whiteSpace: 'pre-wrap',
-                  wordWrap: 'break-word',
-                }}>
-                  {result.letter}
+                <div
+                  ref={letterRef}
+                  style={{
+                    maxHeight: '600px',
+                    overflowY: 'auto',
+                    padding: '16px',
+                    background: '#FAFBFC',
+                    borderRadius: '12px',
+                    border: '1px solid #E5E7EB',
+                    fontSize: '13px',
+                    color: '#0f0f0f',
+                    lineHeight: '1.7',
+                    fontFamily: 'var(--font-body)',
+                    whiteSpace: 'pre-wrap',
+                    wordWrap: 'break-word',
+                  }}
+                >
+                  {letterText}
+                  {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: '#0A66C2', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                 </div>
 
                 {/* Total Demand Display */}
-                <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E5E7EB' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '13px', fontWeight: '600', color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-                      Total Demand Amount:
-                    </span>
-                    <span style={{ fontSize: '20px', fontWeight: '700', color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
-                      ${result.totalDamands.toLocaleString()}
-                    </span>
+                {totalDemand > 0 && (
+                  <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid #E5E7EB' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '13px', fontWeight: '600', color: '#4B5563', fontFamily: 'var(--font-body)' }}>
+                        Total Demand Amount:
+                      </span>
+                      <span style={{ fontSize: '20px', fontWeight: '700', color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                        ${totalDemand.toLocaleString()}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Disclaimer */}
@@ -402,7 +487,7 @@ export default function DemandLetterPage() {
                       Important Disclaimer
                     </p>
                     <p style={{ fontSize: '12px', color: '#92400E', margin: 0, lineHeight: 1.5, fontFamily: 'var(--font-body)' }}>
-                      {result.disclaimer}
+                      AI-generated template — must be reviewed and modified by a licensed attorney before use.
                     </p>
                   </div>
                 </div>
@@ -412,7 +497,7 @@ export default function DemandLetterPage() {
         </div>
 
         {/* Info Section */}
-        {!result && (
+        {!letterText && (
           <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '20px', border: '1px solid #E5E7EB' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2" style={{ marginBottom: '12px' }}>
