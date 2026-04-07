@@ -99,7 +99,7 @@ export default function HomePage() {
               lineHeight: '1.2',
             }}
           >
-            Federal Court Intelligence Platform
+            What really happened in cases like yours.
           </h1>
 
           <p
@@ -113,7 +113,7 @@ export default function HomePage() {
               lineHeight: '1.6',
             }}
           >
-            Access intelligence from 4.1M+ federal court cases spanning 84 case types across 94 districts, covering 54 years of precedent data (1970-2024).
+            Win rates, settlement ranges, judge analytics, and case timelines from 5.1 million public federal court records. Free during beta. No account required.
           </p>
 
           {/* Search Input */}
@@ -192,7 +192,7 @@ export default function HomePage() {
               Explore Data
             </Link>
             <Link
-              href="/attorney"
+              href="/cases"
               style={{
                 padding: '14px 32px',
                 backgroundColor: '#ffffff',
@@ -206,9 +206,14 @@ export default function HomePage() {
                 cursor: 'pointer',
               }}
             >
-              Attorney Tools
+              View Case Types
             </Link>
           </div>
+
+          {/* Trust Line */}
+          <p style={{ fontSize: '14px', color: '#999999', margin: '20px 0 0', letterSpacing: '0.02em' }}>
+            No account required · Free during public beta · Instant results
+          </p>
 
           {/* Animated Stats Counters */}
           <div
