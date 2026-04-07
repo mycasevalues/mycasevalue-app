@@ -31,7 +31,7 @@ export default function ReportSkeleton() {
 
       <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
         {/* Dark Navy Header Skeleton */}
-        <div style={{ background: '#1B3A5C', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
+        <div style={{ background: '#1C3A5E', borderBottom: '1px solid rgba(0,0,0,0.2)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: 'clamp(20px, 4vw, 32px) 24px' }}>
             {/* Breadcrumb skeleton */}
             <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
@@ -68,7 +68,7 @@ export default function ReportSkeleton() {
                   style={{
                     height: '28px',
                     width: '140px',
-                    background: '#0A66C2',
+                    background: '#0966C3',
                     borderRadius: '12px',
                     animation: 'pulse-skeleton 2s ease-in-out infinite',
                   }}

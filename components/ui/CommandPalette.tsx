@@ -567,7 +567,7 @@ export default function CommandPalette({
                         gap: '12px',
                         padding: '11px 12px',
                         borderRadius: '12px',
-                        borderLeft: isSelected ? '3px solid #0A66C2' : '3px solid transparent',
+                        borderLeft: isSelected ? '3px solid #0966C3' : '3px solid transparent',
                         cursor: 'pointer',
                         background: isSelected ? '#F8F9FA' : 'transparent',
                         color: isSelected ? '#0f0f0f' : '#0f0f0f',

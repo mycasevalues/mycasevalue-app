@@ -60,7 +60,7 @@ export default function MethodologyCapture() {
 
     // Define fonts and colors
     const colors = {
-      primary: [10, 102, 194], // #0A66C2
+      primary: [10, 102, 194], // #0966C3
       darkBlue: [0, 65, 130], // #004182
       black: [15, 15, 15], // #0f0f0f
       darkGray: [75, 85, 99], // #4B5563
@@ -472,7 +472,7 @@ export default function MethodologyCapture() {
         }
         .form-input:focus {
           outline: none;
-          border-color: #0A66C2;
+          border-color: #0966C3;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
         .form-input.error {
@@ -481,7 +481,7 @@ export default function MethodologyCapture() {
         .form-button {
           width: 100%;
           padding: 12px 24px;
-          background-color: #0A66C2;
+          background-color: #0966C3;
           color: white;
           border: none;
           border-radius: 8px;

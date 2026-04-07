@@ -231,7 +231,7 @@ export default function NaturalLanguageSearch() {
             gap: '8px',
             padding: '8px 12px',
             background: '#E8F4FD',
-            border: '1px solid #0A66C2',
+            border: '1px solid #0966C3',
             borderRadius: '6px',
             fontSize: '14px',
             color: '#0f0f0f',
@@ -251,7 +251,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               cursor: 'pointer',
               fontSize: '16px',
-              color: '#0A66C2',
+              color: '#0966C3',
               padding: '0',
               display: 'flex',
               alignItems: 'center',
@@ -274,7 +274,7 @@ export default function NaturalLanguageSearch() {
             gap: '8px',
             padding: '8px 12px',
             background: '#E8F4FD',
-            border: '1px solid #0A66C2',
+            border: '1px solid #0966C3',
             borderRadius: '6px',
             fontSize: '14px',
             color: '#0f0f0f',
@@ -294,7 +294,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               cursor: 'pointer',
               fontSize: '16px',
-              color: '#0A66C2',
+              color: '#0966C3',
               padding: '0',
               display: 'flex',
               alignItems: 'center',
@@ -317,7 +317,7 @@ export default function NaturalLanguageSearch() {
             gap: '8px',
             padding: '8px 12px',
             background: '#E8F4FD',
-            border: '1px solid #0A66C2',
+            border: '1px solid #0966C3',
             borderRadius: '6px',
             fontSize: '14px',
             color: '#0f0f0f',
@@ -337,7 +337,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               cursor: 'pointer',
               fontSize: '16px',
-              color: '#0A66C2',
+              color: '#0966C3',
               padding: '0',
               display: 'flex',
               alignItems: 'center',
@@ -360,7 +360,7 @@ export default function NaturalLanguageSearch() {
             gap: '8px',
             padding: '8px 12px',
             background: '#E8F4FD',
-            border: '1px solid #0A66C2',
+            border: '1px solid #0966C3',
             borderRadius: '6px',
             fontSize: '14px',
             color: '#0f0f0f',
@@ -380,7 +380,7 @@ export default function NaturalLanguageSearch() {
               border: 'none',
               cursor: 'pointer',
               fontSize: '16px',
-              color: '#0A66C2',
+              color: '#0966C3',
               padding: '0',
               display: 'flex',
               alignItems: 'center',
@@ -402,7 +402,7 @@ export default function NaturalLanguageSearch() {
         display: 'block',
         padding: '24px',
         background: '#FFFFFF',
-        border: '2px solid #0A66C2',
+        border: '2px solid #0966C3',
         borderRadius: '12px',
         marginBottom: '24px',
       }}
@@ -450,7 +450,7 @@ export default function NaturalLanguageSearch() {
               transition: 'border-color 0.2s',
               boxSizing: 'border-box',
             }}
-            onFocus={(e) => (e.currentTarget.style.borderColor = '#0A66C2')}
+            onFocus={(e) => (e.currentTarget.style.borderColor = '#0966C3')}
             onBlur={(e) => (e.currentTarget.style.borderColor = '#D1D5DB')}
           />
           <button
@@ -458,7 +458,7 @@ export default function NaturalLanguageSearch() {
             disabled={isLoading || !query.trim()}
             style={{
               padding: '12px 24px',
-              background: isLoading || !query.trim() ? '#CCCCCC' : '#0A66C2',
+              background: isLoading || !query.trim() ? '#CCCCCC' : '#0966C3',
               color: '#FFFFFF',
               fontSize: '14px',
               fontWeight: '600',
@@ -475,7 +475,7 @@ export default function NaturalLanguageSearch() {
             }}
             onMouseLeave={(e) => {
               if (!isLoading && query.trim()) {
-                e.currentTarget.style.background = '#0A66C2';
+                e.currentTarget.style.background = '#0966C3';
               }
             }}
           >

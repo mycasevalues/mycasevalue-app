@@ -135,7 +135,7 @@ export default function CaseFilingTicker() {
             }
 
             .ticker-link {
-              color: #0A66C2;
+              color: #0966C3;
               text-decoration: none;
               font-family: var(--font-body);
               font-size: 14px;

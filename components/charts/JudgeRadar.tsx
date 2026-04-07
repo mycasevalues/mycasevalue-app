@@ -10,7 +10,7 @@
  *   5. Motion to Dismiss Grant Rate (inverted — lower is better for plaintiff)
  *
  * Each axis is normalized 0–1 relative to the district average.
- * Two overlapping polygons: judge (#0A66C2, 20% fill) and district avg (#E0DDD8, no fill).
+ * Two overlapping polygons: judge (#0966C3, 20% fill) and district avg (#E0DDD8, no fill).
  */
 
 import { useRef, useEffect, useState } from 'react';
@@ -175,7 +175,7 @@ export default function JudgeRadar({
       .datum(judgePoints)
       .attr('d', avgLine)
       .attr('fill', 'rgba(10, 102, 194, 0.2)')
-      .attr('stroke', '#0A66C2')
+      .attr('stroke', '#0966C3')
       .attr('stroke-width', 2);
 
     // Judge data points
@@ -184,7 +184,7 @@ export default function JudgeRadar({
         .attr('cx', px)
         .attr('cy', py)
         .attr('r', 4)
-        .attr('fill', '#0A66C2')
+        .attr('fill', '#0966C3')
         .attr('stroke', '#FFFFFF')
         .attr('stroke-width', 1.5);
     });
@@ -203,7 +203,7 @@ export default function JudgeRadar({
       />
       <div style={{ display: 'flex', justifyContent: 'center', gap: 24, marginTop: 8 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-body)', color: '#4B5563' }}>
-          <span style={{ width: 12, height: 3, background: '#0A66C2', borderRadius: 1, display: 'inline-block' }} />
+          <span style={{ width: 12, height: 3, background: '#0966C3', borderRadius: 1, display: 'inline-block' }} />
           Judge Profile
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontFamily: 'var(--font-body)', color: '#4B5563' }}>

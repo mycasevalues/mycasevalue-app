@@ -53,7 +53,7 @@ export default function DashboardTabs({
 
   const tabStyle = (key: Tab): React.CSSProperties => ({
     padding: '10px 18px', borderRadius: '10px', border: 'none',
-    background: activeTab === key ? '#0A66C2' : 'transparent',
+    background: activeTab === key ? '#0966C3' : 'transparent',
     color: activeTab === key ? '#FFF' : '#4B5563',
     fontSize: '13px', fontWeight: 600, cursor: 'pointer',
     fontFamily: 'var(--font-body)', transition: 'all 0.2s',
@@ -80,7 +80,7 @@ export default function DashboardTabs({
       {activeTab === 'overview' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
           {/* Welcome */}
-          <div style={{ ...cardStyle, background: 'linear-gradient(135deg, #1B3A5C 0%, #003366 100%)', color: '#FFF', border: 'none' }}>
+          <div style={{ ...cardStyle, background: 'linear-gradient(135deg, #1C3A5E 0%, #003366 100%)', color: '#FFF', border: 'none' }}>
             <h2 style={{ fontSize: '24px', fontWeight: 600, margin: '0 0 4px', fontFamily: 'var(--font-display)' }}>
               Welcome back, {userName}
             </h2>
@@ -92,7 +92,7 @@ export default function DashboardTabs({
           {/* Quick Stats */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
             {[
-              { label: 'Reports Generated', value: reportsCount, color: '#0A66C2' },
+              { label: 'Reports Generated', value: reportsCount, color: '#0966C3' },
               { label: 'Saved Reports', value: savedCount, color: '#057642' },
               { label: 'Active Alerts', value: alertsCount, color: '#D97706' },
             ].map(stat => (
@@ -127,7 +127,7 @@ export default function DashboardTabs({
               <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
                 {recentActivity.slice(0, 5).map((a, i) => (
                   <div key={i} style={{ padding: '10px 0', borderBottom: i < Math.min(recentActivity.length, 5) - 1 ? '1px solid #E5E7EB' : 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Link href={a.link} style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500 }}>{a.label}</Link>
+                    <Link href={a.link} style={{ fontSize: '13px', color: '#0966C3', textDecoration: 'none', fontWeight: 500 }}>{a.label}</Link>
                     <span style={{ fontSize: '11px', color: '#4B5563', fontFamily: 'var(--font-mono)' }}>{a.time}</span>
                   </div>
                 ))}
@@ -165,7 +165,7 @@ export default function DashboardTabs({
                     <span style={{ fontSize: '11px', color: '#4B5563', fontFamily: 'var(--font-mono)' }}>
                       {new Date(h.searched_at).toLocaleDateString()}
                     </span>
-                    <Link href={`/search?q=${encodeURIComponent(h.query)}`} style={{ fontSize: '12px', color: '#0A66C2', textDecoration: 'none', fontWeight: 600, padding: '4px 10px', background: '#EDF3FB', borderRadius: 6 }}>
+                    <Link href={`/search?q=${encodeURIComponent(h.query)}`} style={{ fontSize: '12px', color: '#0966C3', textDecoration: 'none', fontWeight: 600, padding: '4px 10px', background: '#EDF3FB', borderRadius: 6 }}>
                       Search Again
                     </Link>
                   </div>
@@ -174,7 +174,7 @@ export default function DashboardTabs({
               {historyPages > 1 && (
                 <div style={{ display: 'flex', gap: 8, justifyContent: 'center', marginTop: 16 }}>
                   {Array.from({ length: historyPages }).map((_, p) => (
-                    <button key={p} onClick={() => setHistoryPage(p)} style={{ width: 32, height: 32, borderRadius: '50%', border: 'none', background: historyPage === p ? '#0A66C2' : '#E5E7EB', color: historyPage === p ? '#FFF' : '#4B5563', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>
+                    <button key={p} onClick={() => setHistoryPage(p)} style={{ width: 32, height: 32, borderRadius: '50%', border: 'none', background: historyPage === p ? '#0966C3' : '#E5E7EB', color: historyPage === p ? '#FFF' : '#4B5563', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>
                       {p + 1}
                     </button>
                   ))}
@@ -204,7 +204,7 @@ export default function DashboardTabs({
                       Saved {new Date(r.viewed_at).toLocaleDateString()}
                     </div>
                     <div style={{ display: 'flex', gap: 8 }}>
-                      <Link href={`/nos/${r.category}`} style={{ fontSize: '12px', color: '#FFF', background: '#0A66C2', padding: '4px 12px', borderRadius: 6, textDecoration: 'none', fontWeight: 600 }}>View</Link>
+                      <Link href={`/nos/${r.category}`} style={{ fontSize: '12px', color: '#FFF', background: '#0966C3', padding: '4px 12px', borderRadius: 6, textDecoration: 'none', fontWeight: 600 }}>View</Link>
                     </div>
                   </div>
                 ))}
@@ -234,7 +234,7 @@ export default function DashboardTabs({
                   placeholder="Enter case number, e.g. 1:24-cv-01234"
                   style={{ width: '100%', padding: '10px 14px', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: '13px', marginBottom: 8, boxSizing: 'border-box' as const }}
                 />
-                <button style={{ width: '100%', padding: '10px', background: '#0A66C2', color: '#FFF', border: 'none', borderRadius: 8, fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                <button style={{ width: '100%', padding: '10px', background: '#0966C3', color: '#FFF', border: 'none', borderRadius: 8, fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                   Create Alert
                 </button>
               </div>
@@ -262,7 +262,7 @@ export default function DashboardTabs({
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #E5E7EB' }}>
                 <span style={{ fontSize: '13px', color: '#4B5563' }}>Plan</span>
-                <span style={{ fontSize: '13px', fontWeight: 600, color: '#0A66C2' }}>{planLabel}</span>
+                <span style={{ fontSize: '13px', fontWeight: 600, color: '#0966C3' }}>{planLabel}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0' }}>
                 <span style={{ fontSize: '13px', color: '#4B5563' }}>Member Since</span>
@@ -277,7 +277,7 @@ export default function DashboardTabs({
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid #E5E7EB' }}>
               <span style={{ fontSize: '13px', color: '#0f0f0f' }}>Language</span>
               <div style={{ display: 'flex', gap: 6 }}>
-                <button style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid #0A66C2', background: '#EDF3FB', color: '#004182', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>English</button>
+                <button style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid #0966C3', background: '#EDF3FB', color: '#004182', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>English</button>
                 <button style={{ padding: '6px 12px', borderRadius: 8, border: '1px solid #E5E7EB', background: '#FFF', color: '#4B5563', fontSize: '12px', fontWeight: 600, cursor: 'pointer' }}>Español</button>
               </div>
             </div>
@@ -287,7 +287,7 @@ export default function DashboardTabs({
                 onClick={() => setWeeklyDigest(!weeklyDigest)}
                 style={{
                   width: 44, height: 24, borderRadius: 12, border: 'none',
-                  background: weeklyDigest ? '#0A66C2' : '#E5E7EB',
+                  background: weeklyDigest ? '#0966C3' : '#E5E7EB',
                   position: 'relative', cursor: 'pointer', transition: 'background 0.2s',
                 }}
               >
@@ -308,7 +308,7 @@ export default function DashboardTabs({
               <code style={{ flex: 1, fontSize: '13px', color: '#0f0f0f', fontFamily: 'var(--font-mono)' }}>{apiKey}</code>
               <button
                 onClick={() => { navigator.clipboard.writeText(apiKey); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
-                style={{ padding: '6px 12px', background: copied ? '#057642' : '#0A66C2', color: '#FFF', border: 'none', borderRadius: 8, fontSize: '11px', fontWeight: 600, cursor: 'pointer' }}
+                style={{ padding: '6px 12px', background: copied ? '#057642' : '#0966C3', color: '#FFF', border: 'none', borderRadius: 8, fontSize: '11px', fontWeight: 600, cursor: 'pointer' }}
               >
                 {copied ? 'Copied!' : 'Copy'}
               </button>

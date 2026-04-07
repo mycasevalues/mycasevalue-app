@@ -135,18 +135,18 @@ export default function DiscoveryGeneratorPage() {
     <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        select:focus, input:focus, textarea:focus { outline: none; border-color: #0A66C2; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: #0966C3; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C', padding: '64px 24px' }}>
+      <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">
               <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
               <rect x="9" y="3" width="6" height="4" rx="2" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Discovery Requests
             </span>
           </div>
@@ -196,9 +196,9 @@ export default function DiscoveryGeneratorPage() {
                       onClick={() => setPartyRole(role)}
                       style={{
                         flex: 1, padding: '10px', borderRadius: '12px',
-                        border: `1px solid ${partyRole === role ? '#0A66C2' : '#E5E7EB'}`,
+                        border: `1px solid ${partyRole === role ? '#0966C3' : '#E5E7EB'}`,
                         backgroundColor: partyRole === role ? 'rgba(10,102,194,0.08)' : '#FAFBFC',
-                        color: partyRole === role ? '#0A66C2' : '#4B5563',
+                        color: partyRole === role ? '#0966C3' : '#4B5563',
                         fontSize: '13px', fontWeight: 600, cursor: 'pointer',
                         textTransform: 'capitalize',
                       }}
@@ -235,7 +235,7 @@ export default function DiscoveryGeneratorPage() {
                 disabled={loading || !caseType}
                 style={{
                   width: '100%', padding: '14px',
-                  backgroundColor: loading || !caseType ? '#E5E7EB' : '#0A66C2',
+                  backgroundColor: loading || !caseType ? '#E5E7EB' : '#0966C3',
                   color: '#FFF', border: 'none', borderRadius: '12px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
@@ -261,7 +261,7 @@ export default function DiscoveryGeneratorPage() {
                     }}
                     style={{
                       flex: 1, padding: '10px 12px', borderRadius: '10px', border: 'none',
-                      background: activeTab === tab.key ? '#0A66C2' : 'transparent',
+                      background: activeTab === tab.key ? '#0966C3' : 'transparent',
                       color: activeTab === tab.key ? '#FFF' : '#4B5563',
                       fontSize: '12px', fontWeight: 600, cursor: 'pointer',
                       fontFamily: 'var(--font-body)', transition: 'all 0.2s',
@@ -283,14 +283,14 @@ export default function DiscoveryGeneratorPage() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: 8 }}>
                   <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-display)' }}>
                     {TABS.find(t => t.key === activeTab)?.label}
-                    {loading && activeTab && <span style={{ fontSize: 12, color: '#0A66C2', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
+                    {loading && activeTab && <span style={{ fontSize: 12, color: '#0966C3', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
                     <button
                       onClick={copyToClipboard}
                       disabled={loading || !currentText}
                       style={{
-                        padding: '8px 12px', background: copied ? '#059669' : '#0A66C2',
+                        padding: '8px 12px', background: copied ? '#059669' : '#0966C3',
                         color: '#FFF', border: 'none', borderRadius: '20px',
                         fontSize: '12px', fontWeight: 600,
                         cursor: loading || !currentText ? 'not-allowed' : 'pointer',
@@ -326,7 +326,7 @@ export default function DiscoveryGeneratorPage() {
                     }}
                   >
                     {currentText}
-                    {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: '#0A66C2', marginLeft: 2, animation: 'blink 1s infinite' }} />}
+                    {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: '#0966C3', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                   </div>
                 ) : (
                   <div style={{ padding: '40px', textAlign: 'center', color: '#4B5563', fontSize: '13px' }}>

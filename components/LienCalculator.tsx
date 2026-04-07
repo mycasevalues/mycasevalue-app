@@ -221,7 +221,7 @@ export default function LienCalculator() {
                 outline: 'none',
                 transition: 'border-color 0.2s',
               }}
-              onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
+              onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
               onBlur={(e) => (e.target.style.borderColor = errors.grossSettlement ? '#EF4444' : '#E5E7EB')}
             />
             {errors.grossSettlement && <div style={{ fontSize: 12, color: '#EF4444', fontFamily: 'var(--font-body)' }}>{errors.grossSettlement}</div>}
@@ -248,7 +248,7 @@ export default function LienCalculator() {
                 cursor: 'pointer',
                 transition: 'border-color 0.2s',
               }}
-              onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
+              onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
               onBlur={(e) => (e.target.style.borderColor = '#E5E7EB')}
             >
               {CASE_TYPES.map(caseType => (
@@ -295,7 +295,7 @@ export default function LienCalculator() {
                     outline: 'none',
                     transition: 'border-color 0.2s',
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
+                  onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
                   onBlur={(e) => (e.target.style.borderColor = errors.medicareAmount ? '#EF4444' : '#D1E0F8')}
                 />
                 {errors.medicareAmount && <div style={{ fontSize: 11, color: '#EF4444', fontFamily: 'var(--font-body)' }}>{errors.medicareAmount}</div>}
@@ -339,7 +339,7 @@ export default function LienCalculator() {
                     outline: 'none',
                     transition: 'border-color 0.2s',
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
+                  onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
                   onBlur={(e) => (e.target.style.borderColor = errors.medicaidAmount ? '#EF4444' : '#D1E0F8')}
                 />
                 {errors.medicaidAmount && <div style={{ fontSize: 11, color: '#EF4444', fontFamily: 'var(--font-body)' }}>{errors.medicaidAmount}</div>}
@@ -383,7 +383,7 @@ export default function LienCalculator() {
                     outline: 'none',
                     transition: 'border-color 0.2s',
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
+                  onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
                   onBlur={(e) => (e.target.style.borderColor = errors.workersCompAmount ? '#EF4444' : '#D1E0F8')}
                 />
                 {errors.workersCompAmount && <div style={{ fontSize: 11, color: '#EF4444', fontFamily: 'var(--font-body)' }}>{errors.workersCompAmount}</div>}
@@ -416,7 +416,7 @@ export default function LienCalculator() {
                 outline: 'none',
                 transition: 'border-color 0.2s',
               }}
-              onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
+              onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
               onBlur={(e) => (e.target.style.borderColor = errors.attorneyFeePercent ? '#EF4444' : '#E5E7EB')}
             />
             {errors.attorneyFeePercent && <div style={{ fontSize: 12, color: '#EF4444', fontFamily: 'var(--font-body)' }}>{errors.attorneyFeePercent}</div>}
@@ -444,7 +444,7 @@ export default function LienCalculator() {
                 outline: 'none',
                 transition: 'border-color 0.2s',
               }}
-              onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
+              onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
               onBlur={(e) => (e.target.style.borderColor = '#E5E7EB')}
             />
           </div>
@@ -454,7 +454,7 @@ export default function LienCalculator() {
             type="submit"
             style={{
               padding: '14px 24px',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFF',
               border: 'none',
               borderRadius: 8,
@@ -466,7 +466,7 @@ export default function LienCalculator() {
               marginTop: 8,
             }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#004182')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0A66C2')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0966C3')}
           >
             Calculate Liens
           </button>
@@ -487,7 +487,7 @@ export default function LienCalculator() {
               <div style={{ fontSize: 14, fontWeight: 500, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
                 Gross Settlement Amount
               </div>
-              <div style={{ fontSize: 16, fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ fontSize: 16, fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                 {formatCurrency(result.grossSettlement)}
               </div>
             </div>
@@ -615,7 +615,7 @@ export default function LienCalculator() {
               <div style={{ fontSize: 13, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
                 Low estimate:
               </div>
-              <div style={{ fontSize: 20, fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ fontSize: 20, fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                 {formatCurrency(result.totalLiensLow)}
               </div>
             </div>
@@ -648,7 +648,7 @@ export default function LienCalculator() {
                 <div style={{ fontSize: 14, color: '#0f0f0f', fontFamily: 'var(--font-body)' }}>
                   High estimate (with negotiated reductions):
                 </div>
-                <div style={{ fontSize: 20, fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                <div style={{ fontSize: 20, fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                   {formatCurrency(result.netRecoveryHigh)}
                 </div>
               </div>
@@ -682,7 +682,7 @@ export default function LienCalculator() {
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F7F8FA')}
             >
               <span>CMS Medicare Secondary Payer (MSP) Resources</span>
-              <span style={{ marginLeft: 'auto', color: '#0A66C2', fontWeight: 600, fontSize: 12 }}>
+              <span style={{ marginLeft: 'auto', color: '#0966C3', fontWeight: 600, fontSize: 12 }}>
                 cms.gov
               </span>
             </a>

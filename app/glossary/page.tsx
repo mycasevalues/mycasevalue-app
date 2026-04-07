@@ -38,7 +38,7 @@ export default function GlossaryPage() {
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1C3A5E' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb */}
           <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: '#FFFFFF' }}>
@@ -51,7 +51,7 @@ export default function GlossaryPage() {
 
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}
+            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}
           >
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5">
               <path d="M12 2L2 7V12C2 16.5 6.48 20.68 12 22C17.52 20.68 22 16.5 22 12V7L12 2Z" />
@@ -147,7 +147,7 @@ export default function GlossaryPage() {
             }
 
             .glossary-tool-card:hover {
-              border-color: #0A66C2;
+              border-color: #0966C3;
               box-shadow: 0 2px 8px rgba(232, 23, 31, 0.12);
             }
           `}

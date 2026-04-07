@@ -40,8 +40,8 @@ export default function PressPage() {
   ];
 
   const brandColors = [
-    { name: 'Navy', hex: '#1B3A5C' },
-    { name: 'Primary Blue', hex: '#0A66C2' },
+    { name: 'Navy', hex: '#1C3A5E' },
+    { name: 'Primary Blue', hex: '#0966C3' },
     { name: 'Secondary Blue', hex: '#004182' },
     { name: 'Background', hex: '#F7F8FA' },
     { name: 'Text', hex: '#0f0f0f' },
@@ -111,14 +111,14 @@ export default function PressPage() {
 
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Header Banner */}
-        <div style={{ background: '#1B3A5C', padding: '64px 24px' }}>
+        <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span
                 style={{
                   display: 'inline-block',
                   padding: '6px 12px',
-                  backgroundColor: '#0A66C2',
+                  backgroundColor: '#0966C3',
                   color: '#FFFFFF',
                   fontSize: '11px',
                   fontWeight: 600,
@@ -282,7 +282,7 @@ export default function PressPage() {
                       fontFamily: 'var(--font-mono)',
                       fontSize: 28,
                       fontWeight: 700,
-                      color: '#0A66C2',
+                      color: '#0966C3',
                       marginBottom: 12,
                     }}
                   >
@@ -364,7 +364,7 @@ export default function PressPage() {
                         marginBottom: 12,
                         borderRadius: '8px',
                         background: logo.label.includes('Dark')
-                          ? '#1B3A5C'
+                          ? '#1C3A5E'
                           : '#F7F8FA',
                       }}
                     >
@@ -628,7 +628,7 @@ export default function PressPage() {
                     border: '1px solid #E5E7EB',
                     background: '#FFFFFF',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.08)',
-                    borderLeft: '4px solid #0A66C2',
+                    borderLeft: '4px solid #0966C3',
                   }}
                 >
                   <p
@@ -736,7 +736,7 @@ export default function PressPage() {
                   gap: 12,
                   fontSize: 18,
                   fontWeight: 600,
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                   marginBottom: 24,
@@ -775,7 +775,7 @@ export default function PressPage() {
 
       <style>{`
         .press-logo-download:hover {
-          border-color: #0A66C2 !important;
+          border-color: #0966C3 !important;
           box-shadow: 0 8px 24px rgba(10, 102, 194, 0.12) !important;
           transform: translateY(-2px);
         }

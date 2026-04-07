@@ -12,7 +12,7 @@ export default function CookiePolicyPage() {
         {/* Header */}
         <section
           style={{
-            background: 'linear-gradient(135deg, #004182 0%, #0A66C2 100%)',
+            background: 'linear-gradient(135deg, #004182 0%, #0966C3 100%)',
             color: '#FFFFFF',
             padding: '3rem 1.5rem',
             marginBottom: '3rem',
@@ -66,7 +66,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -88,7 +88,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -148,7 +148,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -205,7 +205,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -262,7 +262,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -319,7 +319,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -359,7 +359,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -418,7 +418,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -439,7 +439,7 @@ export default function CookiePolicyPage() {
                 }}
               >
                 <thead>
-                  <tr style={{ background: '#F0F4F8', borderBottom: '2px solid #0A66C2' }}>
+                  <tr style={{ background: '#F0F4F8', borderBottom: '2px solid #0966C3' }}>
                     <th style={{ textAlign: 'left', padding: '1rem', fontWeight: 600, color: '#004182' }}>
                       Cookie Type
                     </th>
@@ -510,7 +510,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -532,7 +532,7 @@ export default function CookiePolicyPage() {
                 fontWeight: 600,
                 color: '#004182',
                 marginBottom: '1rem',
-                borderBottom: '2px solid #0A66C2',
+                borderBottom: '2px solid #0966C3',
                 paddingBottom: '0.75rem',
               }}
             >
@@ -545,7 +545,7 @@ export default function CookiePolicyPage() {
               style={{
                 fontSize: '1.0625rem',
                 fontWeight: 500,
-                color: '#0A66C2',
+                color: '#0966C3',
                 marginBottom: '0.5rem',
               }}
             >

@@ -201,7 +201,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
             }
           }}
           style={{
-            backgroundColor: '#0A66C2',
+            backgroundColor: '#0966C3',
             color: 'white',
             padding: '8px 16px',
             border: 'none',
@@ -230,7 +230,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           </h3>
           {hasBetaPioneerBadge && (
             <span style={{
-              backgroundColor: '#0A66C2',
+              backgroundColor: '#0966C3',
               color: 'white',
               padding: '4px 8px',
               borderRadius: '4px',
@@ -272,7 +272,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
           <button
             onClick={handleCopyLink}
             style={{
-              backgroundColor: copied ? '#057642' : '#0A66C2',
+              backgroundColor: copied ? '#057642' : '#0966C3',
               color: 'white',
               padding: '6px 12px',
               border: 'none',
@@ -312,7 +312,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
                 style={{
                   fontSize: '24px',
                   fontWeight: '700',
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   marginBottom: '4px',
                   fontFamily: 'var(--font-mono)',
                 }}
@@ -392,7 +392,7 @@ export default function ReferralDashboard({ userId, userEmail }: ReferralDashboa
         <button
           onClick={handleCopyLinkedInMessage}
           style={{
-            backgroundColor: linkedInCopied ? '#057642' : '#0A66C2',
+            backgroundColor: linkedInCopied ? '#057642' : '#0966C3',
             color: 'white',
             padding: '8px 16px',
             border: 'none',

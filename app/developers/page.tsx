@@ -309,7 +309,7 @@ const ENDPOINTS: Endpoint[] = [
 
 const methodColors: Record<string, string> = {
   GET: '#059669',
-  POST: '#0A66C2',
+  POST: '#0966C3',
   PUT: '#B86E00',
   DELETE: '#DC2626',
 };
@@ -351,21 +351,21 @@ export default function DevelopersPage() {
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, select:focus, textarea:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, select:focus, textarea:focus { border-color: #0966C3 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
         code { font-family: var(--font-mono); }
         pre { font-family: var(--font-mono); }
       `}</style>
 
       {/* Hero Section */}
-      <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
+      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div
             style={{
               background: 'rgba(10, 102, 194, 0.15)',
               padding: '6px 14px',
               borderRadius: '12px',
-              border: '1px solid #0A66C2',
+              border: '1px solid #0966C3',
               display: 'inline-block',
               marginBottom: '16px',
             }}
@@ -374,7 +374,7 @@ export default function DevelopersPage() {
               style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: '#0A66C2',
+                color: '#0966C3',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
                 fontFamily: 'var(--font-heading)',
@@ -576,7 +576,7 @@ export default function DevelopersPage() {
                             style={{
                               fontFamily: 'var(--font-mono)',
                               fontSize: '12px',
-                              color: '#0A66C2',
+                              color: '#0966C3',
                               fontWeight: 600,
                             }}
                           >
@@ -885,7 +885,7 @@ export default function DevelopersPage() {
           </h2>
           <div
             style={{
-              background: 'linear-gradient(135deg, #0A66C2 0%, #004182 100%)',
+              background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)',
               borderRadius: '12px',
               padding: '32px',
               textAlign: 'center',
@@ -911,7 +911,7 @@ export default function DevelopersPage() {
               style={{
                 display: 'inline-block',
                 backgroundColor: '#FFFFFF',
-                color: '#0A66C2',
+                color: '#0966C3',
                 padding: '12px 32px',
                 borderRadius: '8px',
                 textDecoration: 'none',

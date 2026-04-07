@@ -45,7 +45,7 @@ export default function InsurancePage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ background: '#1B3A5C', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: '#1C3A5E', color: '#FAFBFC', padding: '80px 24px 64px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -79,7 +79,7 @@ export default function InsurancePage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
@@ -134,7 +134,7 @@ export default function InsurancePage() {
                 borderRadius: '12px',
                 padding: '32px 24px',
               }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',
@@ -182,7 +182,7 @@ export default function InsurancePage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/search" style={{
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',

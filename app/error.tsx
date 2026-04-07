@@ -80,7 +80,7 @@ export default function Error({
           left: 0,
           right: 0,
           height: '8px',
-          background: '#1B3A5C',
+          background: '#1C3A5E',
         }}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
@@ -187,7 +187,7 @@ export default function Error({
                   alignItems: 'center',
                   gap: 8,
                   padding: '12px 24px',
-                  background: '#0A66C2',
+                  background: '#0966C3',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '12px',

@@ -88,7 +88,7 @@ export default function SemanticCaseSearch() {
         display: 'block',
         padding: '24px',
         background: '#FFFFFF',
-        border: '2px solid #0A66C2',
+        border: '2px solid #0966C3',
         borderRadius: '12px',
         marginBottom: '24px',
       }}
@@ -139,7 +139,7 @@ export default function SemanticCaseSearch() {
               resize: 'vertical',
             }}
             onFocus={(e) => {
-              e.currentTarget.style.borderColor = isOverLimit ? '#CC1016' : '#0A66C2';
+              e.currentTarget.style.borderColor = isOverLimit ? '#CC1016' : '#0966C3';
             }}
             onBlur={(e) => {
               e.currentTarget.style.borderColor = isOverLimit ? '#CC1016' : '#D1D5DB';
@@ -166,7 +166,7 @@ export default function SemanticCaseSearch() {
           disabled={isLoading || !description.trim() || isOverLimit}
           style={{
             padding: '12px 24px',
-            background: isLoading || !description.trim() || isOverLimit ? '#CCCCCC' : '#0A66C2',
+            background: isLoading || !description.trim() || isOverLimit ? '#CCCCCC' : '#0966C3',
             color: '#FFFFFF',
             fontSize: '14px',
             fontWeight: '600',
@@ -183,7 +183,7 @@ export default function SemanticCaseSearch() {
           }}
           onMouseLeave={(e) => {
             if (!isLoading && description.trim() && !isOverLimit) {
-              e.currentTarget.style.background = '#0A66C2';
+              e.currentTarget.style.background = '#0966C3';
             }
           }}
         >
@@ -277,7 +277,7 @@ export default function SemanticCaseSearch() {
                         display: 'inline-block',
                         padding: '4px 12px',
                         background: '#EDF3FB',
-                        border: '1px solid #0A66C2',
+                        border: '1px solid #0966C3',
                         borderRadius: '6px',
                         fontSize: '12px',
                         fontWeight: '600',
@@ -359,7 +359,7 @@ export default function SemanticCaseSearch() {
                         style={{
                           padding: '8px 12px',
                           background: '#EDF3FB',
-                          border: '1px solid #0A66C2',
+                          border: '1px solid #0966C3',
                           borderRadius: '6px',
                           fontSize: '12px',
                           fontFamily: 'var(--font-mono)',
@@ -410,7 +410,7 @@ export default function SemanticCaseSearch() {
                       display: 'inline-block',
                       fontSize: '13px',
                       fontWeight: '600',
-                      color: '#0A66C2',
+                      color: '#0966C3',
                       textDecoration: 'none',
                       fontFamily: 'var(--font-body)',
                       padding: '4px 0',
@@ -418,7 +418,7 @@ export default function SemanticCaseSearch() {
                       cursor: 'pointer',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#004182')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#0A66C2')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#0966C3')}
                   >
                     View full report →
                   </Link>

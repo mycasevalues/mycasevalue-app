@@ -157,7 +157,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
             }
           }}
           style={{
-            backgroundColor: '#0A66C2',
+            backgroundColor: '#0966C3',
             color: 'white',
             padding: '8px 16px',
             border: 'none',
@@ -215,7 +215,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
         <button
           onClick={handleCopyClick}
           style={{
-            backgroundColor: copied ? '#22C55E' : '#0A66C2',
+            backgroundColor: copied ? '#22C55E' : '#0966C3',
             color: 'white',
             padding: '8px 12px',
             border: 'none',
@@ -253,7 +253,7 @@ export default function ReferralWidget({ userId, userEmail }: ReferralWidgetProp
               style={{
                 fontSize: '24px',
                 fontWeight: '700',
-                color: '#0A66C2',
+                color: '#0966C3',
                 marginBottom: '4px',
               }}
             >

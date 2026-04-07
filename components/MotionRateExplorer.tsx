@@ -206,7 +206,7 @@ export default function MotionRateExplorer() {
     cursor: 'pointer',
     padding: '4px 8px',
     fontSize: '14px',
-    color: '#0A66C2',
+    color: '#0966C3',
     fontWeight: 600,
     transition: 'color 0.2s',
   };

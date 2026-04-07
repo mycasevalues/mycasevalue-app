@@ -103,7 +103,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                     <div style={{
                       height: '100%',
                       width: `${width}%`,
-                      background: '#0A66C2',
+                      background: '#0966C3',
                       borderRadius: '6px',
                       transition: 'width 150ms ease',
                     }} />
@@ -182,7 +182,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
             padding: '0.75rem',
             background: '#EDF3FB',
             borderRadius: '8px',
-            borderLeft: '4px solid #0A66C2',
+            borderLeft: '4px solid #0966C3',
           }}>
             <p style={{
               fontSize: '0.8125rem',

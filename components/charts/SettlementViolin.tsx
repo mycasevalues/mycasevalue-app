@@ -127,7 +127,7 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
       .datum(density)
       .attr('d', area)
       .attr('fill', 'rgba(10, 102, 194, 0.3)')
-      .attr('stroke', '#0A66C2')
+      .attr('stroke', '#0966C3')
       .attr('stroke-width', 1.5);
 
     // Median marker

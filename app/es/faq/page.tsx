@@ -173,7 +173,7 @@ export default function SpanishFAQPage() {
       />
 
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: '#1B3A5C', borderColor: '#E5E7EB' }}>
+      <div className="border-b" style={{ background: '#1C3A5E', borderColor: '#E5E7EB' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">
@@ -186,7 +186,7 @@ export default function SpanishFAQPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}>
             AYUDA
           </div>
 

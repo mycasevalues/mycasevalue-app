@@ -66,7 +66,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                 display: 'inline-block',
                 width: '16px',
                 height: '16px',
-                border: '2px solid #0A66C2',
+                border: '2px solid #0966C3',
                 borderTopColor: 'transparent',
                 borderRadius: '50%',
                 animation: 'spin 0.8s linear infinite',
@@ -126,7 +126,7 @@ export default function RelevantOpinions({ nosCode, nosLabel }: RelevantOpinions
                       style={{
                         fontSize: '14px',
                         fontWeight: 600,
-                        color: '#0A66C2',
+                        color: '#0966C3',
                         textDecoration: 'none',
                         fontFamily: 'var(--font-display)',
                         lineHeight: 1.3,

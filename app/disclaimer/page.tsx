@@ -44,7 +44,7 @@ export default function DisclaimerPage() {
       {/* Header */}
       <div
         style={{
-          backgroundColor: '#1B3A5C',
+          backgroundColor: '#1C3A5E',
           padding: '64px 24px',
         }}
       >
@@ -53,7 +53,7 @@ export default function DisclaimerPage() {
             <span style={{
               display: 'inline-block',
               padding: '6px 12px',
-              backgroundColor: '#0A66C2',
+              backgroundColor: '#0966C3',
               color: '#FFFFFF',
               fontSize: '11px',
               fontWeight: 600,
@@ -512,7 +512,7 @@ export default function DisclaimerPage() {
           <section style={{
             padding: '32px',
             borderRadius: '12px',
-            border: '2px solid #0A66C2',
+            border: '2px solid #0966C3',
             backgroundColor: '#FFF3F4',
           }}>
             <p style={{

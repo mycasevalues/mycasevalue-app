@@ -96,7 +96,7 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
   work: { label: 'Employment', color: '#0f0f0f' },
   injury: { label: 'Injury', color: '#CC1016' },
   consumer: { label: 'Consumer', color: '#70B5F9' },
-  rights: { label: 'Civil Rights', color: '#0A66C2' },
+  rights: { label: 'Civil Rights', color: '#0966C3' },
   housing: { label: 'Housing', color: '#70B5F9' },
   medical: { label: 'Medical', color: '#CC1016' },
   family: { label: 'Family', color: '#C37D16' },
@@ -146,9 +146,9 @@ export default function TrendsPage() {
         a.lex-link:hover { text-decoration: underline; }
         .lex-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; }
         .lex-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .lex-btn-primary { background: #0A66C2; color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; }
+        .lex-btn-primary { background: #0966C3; color: white; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; }
         .lex-btn-primary:hover { background: #004182; }
-        .lex-badge { background: rgba(10, 102, 194, 0.1); color: #0A66C2; border-radius: 12px; }
+        .lex-badge { background: rgba(10, 102, 194, 0.1); color: #0966C3; border-radius: 12px; }
         h1 { font-family: var(--font-display); }
         h2 { font-family: var(--font-display); }
       `}</style>
@@ -172,14 +172,14 @@ export default function TrendsPage() {
       <div
         style={{
           borderBottom: '1px solid #E5E7EB',
-          background: '#1B3A5C',
+          background: '#1C3A5E',
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 sm:py-24">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
             style={{
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               borderRadius: '12px',
               fontFamily: 'var(--font-body)',
@@ -273,7 +273,7 @@ export default function TrendsPage() {
                     <div className="flex items-center gap-3">
                       <span
                         className="text-xs font-bold w-6 h-6 flex items-center justify-center rounded"
-                        style={{ background: '#0A66C2', color: '#FFFFFF' }}
+                        style={{ background: '#0966C3', color: '#FFFFFF' }}
                       >
                         {i + 1}
                       </span>
@@ -297,7 +297,7 @@ export default function TrendsPage() {
                       className="h-full"
                       style={{
                         width: `${pct}%`,
-                        background: 'linear-gradient(90deg, #0A66C2, #004182)',
+                        background: 'linear-gradient(90deg, #0966C3, #004182)',
                       }}
                     />
                   </div>
@@ -361,7 +361,7 @@ export default function TrendsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {circuitData.map((circuit) => {
                   const isAboveAvg = circuit.avgWinRate > nationalAvg;
-                  const indicatorColor = circuit.avgWinRate > 55 ? '#057642' : circuit.avgWinRate < 45 ? '#0A66C2' : '#70B5F9';
+                  const indicatorColor = circuit.avgWinRate > 55 ? '#057642' : circuit.avgWinRate < 45 ? '#0966C3' : '#70B5F9';
                   return (
                     <div
                       key={circuit.circuit}
@@ -386,7 +386,7 @@ export default function TrendsPage() {
                       </div>
                       <div className="flex items-center justify-between text-[11px]" style={{ color: '#4B5563' }}>
                         <span>{circuit.caseCount.toLocaleString()} cases</span>
-                        <span style={{ color: isAboveAvg ? '#057642' : '#0A66C2' }}>
+                        <span style={{ color: isAboveAvg ? '#057642' : '#0966C3' }}>
                           {isAboveAvg ? '+' : ''}{(circuit.avgWinRate - nationalAvg).toFixed(1)}%
                         </span>
                       </div>
@@ -441,7 +441,7 @@ export default function TrendsPage() {
                   }}
                 >
                   <span className="text-sm lex-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#0A66C2' }}>{t.winRate}%</span>
+                  <span className="text-sm font-bold" style={{ color: '#0966C3' }}>{t.winRate}%</span>
                 </a>
               ))}
             </div>
@@ -491,7 +491,7 @@ export default function TrendsPage() {
                   }}
                 >
                   <span className="text-sm lex-link">{t.label}</span>
-                  <span className="text-sm font-bold" style={{ color: '#0A66C2' }}>{t.months} months</span>
+                  <span className="text-sm font-bold" style={{ color: '#0966C3' }}>{t.months} months</span>
                 </a>
               ))}
             </div>
@@ -583,7 +583,7 @@ export default function TrendsPage() {
                     <td className="px-4 py-2.5 text-right lex-card" style={{ color: '#4B5563' }}>
                       {fmtK(t.medianLo)}
                     </td>
-                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#0A66C2' }}>
+                    <td className="px-4 py-2.5 text-right font-semibold lex-card" style={{ color: '#0966C3' }}>
                       {fmtK(t.medianMd)}
                     </td>
                     <td className="px-4 py-2.5 text-right lex-card" style={{ color: '#4B5563' }}>
@@ -683,7 +683,7 @@ export default function TrendsPage() {
                   let barColor = '#059669';
                   let bgColor = 'rgba(7,135,74,0.15)';
                   if (c.avgWr < 35) {
-                    barColor = '#0A66C2';
+                    barColor = '#0966C3';
                     bgColor = 'rgba(232,23,31,0.15)';
                   } else if (c.avgWr < 50) {
                     barColor = '#D97706';
@@ -775,14 +775,14 @@ export default function TrendsPage() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-semibold lex-link">{t.label}</span>
-                      <span className="text-sm font-bold" style={{ color: '#0A66C2' }}>{t.months}mo</span>
+                      <span className="text-sm font-bold" style={{ color: '#0966C3' }}>{t.months}mo</span>
                     </div>
                     <div className="h-1.5 overflow-hidden" style={{ background: '#E5E7EB', borderRadius: '12px' }}>
                       <div
                         className="h-full"
                         style={{
                           width: `${Math.min((t.months / 120) * 100, 100)}%`,
-                          background: '#0A66C2',
+                          background: '#0966C3',
                         }}
                       />
                     </div>
@@ -888,7 +888,7 @@ export default function TrendsPage() {
                         className="w-full transition-all"
                         style={{
                           height: `${(v.volume / maxVol) * 100}%`,
-                          background: 'linear-gradient(180deg, #0A66C2, #004182)',
+                          background: 'linear-gradient(180deg, #0966C3, #004182)',
                         }}
                       />
                     </div>
@@ -945,7 +945,7 @@ export default function TrendsPage() {
                 }}
               >
                 <div style={{ fontSize: '2rem', marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg>
                 </div>
                 <h3 className="font-semibold mb-2 group-hover:text-blue-600 transition-colors" style={{ color: '#0f0f0f' }}>
                   {item.title}
@@ -965,7 +965,7 @@ export default function TrendsPage() {
         <section
           className="text-center p-8 lex-card"
           style={{
-            background: '#1B3A5C',
+            background: '#1C3A5E',
           }}
         >
           <h2 className="font-display font-bold mb-3" style={{ color: '#FFFFFF', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>

@@ -301,20 +301,20 @@ export default function ApiAccessPage() {
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, select:focus, textarea:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, select:focus, textarea:focus { border-color: #0966C3 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
         code { font-family: var(--font-mono); }
         pre { font-family: var(--font-mono); }
       `}</style>
 
       {/* Hero Section */}
-      <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
+      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <Link
             href="/attorney"
             style={{
               fontSize: '13px',
-              color: '#0A66C2',
+              color: '#0966C3',
               textDecoration: 'none',
               fontWeight: 500,
               display: 'inline-flex',
@@ -341,7 +341,7 @@ export default function ApiAccessPage() {
                   justifyContent: 'center',
                 }}
               >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
                   <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
                   <path d="M10 12l2 2 4-4" />
                 </svg>
@@ -365,14 +365,14 @@ export default function ApiAccessPage() {
                 background: 'rgba(10, 102, 194, 0.15)',
                 padding: '6px 14px',
                 borderRadius: '12px',
-                border: '1px solid #0A66C2',
+                border: '1px solid #0966C3',
               }}
             >
               <span
                 style={{
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                   fontFamily: 'var(--font-heading)',
@@ -596,7 +596,7 @@ export default function ApiAccessPage() {
                             style={{
                               fontFamily: 'var(--font-mono)',
                               fontSize: '12px',
-                              color: '#0A66C2',
+                              color: '#0966C3',
                               fontWeight: 600,
                             }}
                           >

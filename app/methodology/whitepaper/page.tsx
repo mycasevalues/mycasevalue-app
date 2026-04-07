@@ -21,14 +21,14 @@ export default function WhitepaperPage() {
   return (
     <div style={{ background: '#F8F9FA', minHeight: '100vh' }}>
       {/* Header Banner */}
-      <div style={{ background: '#1B3A5C', padding: '64px 24px' }}>
+      <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div style={{ marginBottom: 16 }}>
             <span
               style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 600,
@@ -147,7 +147,7 @@ export default function WhitepaperPage() {
                 style={{
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   margin: 0,
                   fontFamily: 'var(--font-body)',
                   textDecoration: 'none',
@@ -169,7 +169,7 @@ export default function WhitepaperPage() {
               gap: 8,
               fontSize: 15,
               fontWeight: 600,
-              color: '#0A66C2',
+              color: '#0966C3',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',
             }}

@@ -24,12 +24,12 @@ export default function AttorneyPageSkeleton({
       `}</style>
 
       {/* Navy header skeleton */}
-      <div style={{ backgroundColor: '#1B3A5C', color: '#FFFFFF', padding: '32px 20px' }}>
+      <div style={{ backgroundColor: '#1C3A5E', color: '#FFFFFF', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div className="skel-pulse" style={{ height: 12, width: 180, background: 'rgba(255,255,255,0.1)', borderRadius: 2, marginBottom: 20 }} />
           {/* Badge */}
-          <div className="skel-pulse" style={{ height: 26, width: 120, background: '#0A66C2', borderRadius: 2, marginBottom: 16, opacity: 0.5 }} />
+          <div className="skel-pulse" style={{ height: 26, width: 120, background: '#0966C3', borderRadius: 2, marginBottom: 16, opacity: 0.5 }} />
           {/* Title */}
           <div className="skel-pulse" style={{ height: 36, width: '45%', background: 'rgba(255,255,255,0.12)', borderRadius: 2, marginBottom: 12 }} />
           {/* Description */}
@@ -52,7 +52,7 @@ export default function AttorneyPageSkeleton({
                   height: 40,
                   width: 100,
                   background: i === 1 ? '#FFFFFF' : '#F8F9FA',
-                  borderTop: i === 1 ? '2px solid #0A66C2' : '2px solid transparent',
+                  borderTop: i === 1 ? '2px solid #0966C3' : '2px solid transparent',
                   borderLeft: '1px solid #E5E7EB',
                   borderRight: '1px solid #E5E7EB',
                   padding: '10px 16px',

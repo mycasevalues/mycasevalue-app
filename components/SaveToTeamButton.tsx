@@ -74,7 +74,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
         onClick={() => setShowModal(true)}
         style={{
           padding: '8px 14px',
-          backgroundColor: '#0A66C2',
+          backgroundColor: '#0966C3',
           color: '#FFFFFF',
           border: 'none',
           borderRadius: '8px',
@@ -214,7 +214,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 }}
                 disabled={isSaving}
                 onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#0A66C2';
+                  e.currentTarget.style.borderColor = '#0966C3';
                   e.currentTarget.style.boxShadow = '0 0 0 2px rgba(10, 102, 194, 0.08)';
                 }}
                 onBlur={(e) => {
@@ -253,7 +253,7 @@ export default function SaveToTeamButton({ itemTitle = 'Current Item', itemType 
                 disabled={isSaving}
                 style={{
                   padding: '10px 16px',
-                  backgroundColor: '#0A66C2',
+                  backgroundColor: '#0966C3',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '8px',

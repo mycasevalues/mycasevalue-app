@@ -35,7 +35,7 @@ interface CompareSlot {
   radarData: JudgeRadarData | null;
 }
 
-const JUDGES_COLORS = ['#0A66C2', '#DC2626', '#059669'];
+const JUDGES_COLORS = ['#0966C3', '#DC2626', '#059669'];
 
 export default function JudgeCompareClient({ preselectedJudgeId }: { preselectedJudgeId?: string }) {
   const [slots, setSlots] = useState<CompareSlot[]>([
@@ -639,7 +639,7 @@ export default function JudgeCompareClient({ preselectedJudgeId }: { preselected
                 onClick={exportPDF}
                 style={{
                   padding: '12px 24px',
-                  background: '#0A66C2',
+                  background: '#0966C3',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: 4,

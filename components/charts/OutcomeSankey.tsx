@@ -38,7 +38,7 @@ const LINKS: SankeyLink[] = [
   { source: 0, target: 3, value: 15.7, color: '#B0C4DE' },   // Other
   { source: 0, target: 4, value: 9.7,  color: '#004182' },   // Summary Judgment
   { source: 0, target: 5, value: 3.0,  color: '#5A9BD5' },   // Default Judgment
-  { source: 0, target: 6, value: 2.1,  color: '#0A66C2' },   // Trial
+  { source: 0, target: 6, value: 2.1,  color: '#0966C3' },   // Trial
   { source: 0, target: 7, value: 1.0,  color: '#A3D4FF' },   // Consent
 ];
 
@@ -108,7 +108,7 @@ export default function OutcomeSankey() {
       .attr('y', (d: any) => d.y0)
       .attr('width', (d: any) => d.x1 - d.x0)
       .attr('height', (d: any) => Math.max(1, d.y1 - d.y0))
-      .attr('fill', (d: any) => d.id === 0 ? '#1B3A5C' : '#0A66C2')
+      .attr('fill', (d: any) => d.id === 0 ? '#1C3A5E' : '#0966C3')
       .attr('rx', 3);
 
     // Labels

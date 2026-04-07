@@ -62,7 +62,7 @@ export default function OSHAContext() {
               padding: '1rem',
               background: '#EDF3FB',
               borderRadius: '8px',
-              borderLeft: '4px solid #0A66C2',
+              borderLeft: '4px solid #0966C3',
             }}>
               <div style={{
                 fontSize: '0.75rem',
@@ -89,7 +89,7 @@ export default function OSHAContext() {
               padding: '1rem',
               background: '#EDF3FB',
               borderRadius: '8px',
-              borderLeft: '4px solid #0A66C2',
+              borderLeft: '4px solid #0966C3',
             }}>
               <div style={{
                 fontSize: '0.75rem',
@@ -119,7 +119,7 @@ export default function OSHAContext() {
             background: '#EDF3FB',
             borderRadius: '8px',
             marginBottom: '1.5rem',
-            borderLeft: '4px solid #0A66C2',
+            borderLeft: '4px solid #0966C3',
           }}>
             <div style={{
               fontSize: '0.75rem',
@@ -254,7 +254,7 @@ export default function OSHAContext() {
                   <div style={{
                     height: '100%',
                     width: `${(state.inspections / oshaData.topStates[0].inspections) * 100}%`,
-                    background: '#0A66C2',
+                    background: '#0966C3',
                     borderRadius: '6px',
                     transition: 'width 150ms ease',
                   }} />
@@ -280,7 +280,7 @@ export default function OSHAContext() {
             padding: '0.75rem',
             background: '#EDF3FB',
             borderRadius: '8px',
-            borderLeft: '4px solid #0A66C2',
+            borderLeft: '4px solid #0966C3',
           }}>
             <p style={{
               fontSize: '0.8125rem',

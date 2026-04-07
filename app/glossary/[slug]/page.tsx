@@ -9,7 +9,7 @@ const styles = `
   }
   .glossary-nos-link:hover {
     background-color: #E6F1FF !important;
-    border-color: #0A66C2 !important;
+    border-color: #0966C3 !important;
   }
 
   .glossary-related-term {
@@ -17,7 +17,7 @@ const styles = `
   }
   .glossary-related-term:hover {
     background-color: #E6F1FF !important;
-    border-color: #0A66C2 !important;
+    border-color: #0966C3 !important;
   }
 
   .glossary-case-type-link {
@@ -31,7 +31,7 @@ const styles = `
     transition: all 200ms ease;
   }
   .glossary-back-link:hover {
-    border-color: #0A66C2 !important;
+    border-color: #0966C3 !important;
   }
 `;
 
@@ -92,7 +92,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               display: 'inline-block',
               marginTop: '24px',
               padding: '10px 16px',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               borderRadius: '8px',
               textDecoration: 'none',
@@ -115,7 +115,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       <style>{styles}</style>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1C3A5E' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb */}
           <nav className="mb-6 flex items-center gap-2 text-sm" style={{ color: '#FFFFFF' }}>
@@ -178,7 +178,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                 fontSize: '18px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                color: '#0A66C2',
+                color: '#0966C3',
                 marginBottom: '12px',
               }}
             >
@@ -196,7 +196,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                 fontSize: '18px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                color: '#0A66C2',
+                color: '#0966C3',
                 marginBottom: '12px',
               }}
             >
@@ -214,7 +214,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                 fontSize: '18px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                color: '#0A66C2',
+                color: '#0966C3',
                 marginBottom: '12px',
               }}
             >
@@ -243,7 +243,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                         borderRadius: '16px',
                         fontSize: '13px',
                         fontWeight: 600,
-                        color: '#0A66C2',
+                        color: '#0966C3',
                         textDecoration: 'none',
                         transition: 'all 200ms ease',
                       }}
@@ -264,7 +264,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                   fontSize: '18px',
                   fontWeight: 600,
                   fontFamily: 'var(--font-display)',
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   marginBottom: '12px',
                 }}
               >
@@ -284,7 +284,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                       borderRadius: '8px',
                       fontSize: '14px',
                       fontWeight: 600,
-                      color: '#0A66C2',
+                      color: '#0966C3',
                       textDecoration: 'none',
                       transition: 'all 200ms ease',
                     }}
@@ -304,7 +304,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                   fontSize: '18px',
                   fontWeight: 600,
                   fontFamily: 'var(--font-display)',
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   marginBottom: '12px',
                 }}
               >
@@ -320,7 +320,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                       display: 'inline-flex',
                       alignItems: 'center',
                       padding: '8px 14px',
-                      background: '#0A66C2',
+                      background: '#0966C3',
                       color: '#FFFFFF',
                       borderRadius: '16px',
                       fontSize: '13px',

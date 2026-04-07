@@ -234,7 +234,7 @@ const roleColors: Record<string, string> = {
 };
 
 const statusColors: Record<string, string> = {
-  Researching: '#0A66C2',
+  Researching: '#0966C3',
   Active: '#059669',
   Settled: '#B86E00',
   Closed: '#6B7280',
@@ -303,19 +303,19 @@ export default function TeamWorkspace() {
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
-        input:focus, textarea:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
-        select:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, textarea:focus { border-color: #0966C3 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        select:focus { border-color: #0966C3 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
+      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link
             href="/attorney"
             style={{
               fontSize: '13px',
-              color: '#0A66C2',
+              color: '#0966C3',
               textDecoration: 'none',
               fontWeight: 500,
               display: 'inline-flex',
@@ -349,7 +349,7 @@ export default function TeamWorkspace() {
                   justifyContent: 'center',
                 }}
               >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                   <circle cx="9" cy="7" r="4" />
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -370,7 +370,7 @@ export default function TeamWorkspace() {
                 background: 'rgba(10, 102, 194, 0.15)',
                 padding: '6px 14px',
                 borderRadius: '12px',
-                border: '1px solid #0A66C2',
+                border: '1px solid #0966C3',
               }}
             >
               <span
@@ -378,7 +378,7 @@ export default function TeamWorkspace() {
                 style={{
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   textTransform: 'uppercase',
                   letterSpacing: '0.5px',
                 }}
@@ -426,7 +426,7 @@ export default function TeamWorkspace() {
                 fontSize: '14px',
                 fontWeight: 600,
                 cursor: 'pointer',
-                backgroundColor: activeTab === tab ? '#0A66C2' : 'transparent',
+                backgroundColor: activeTab === tab ? '#0966C3' : 'transparent',
                 color: activeTab === tab ? '#FFFFFF' : '#4B5563',
                 textTransform: 'uppercase',
                 letterSpacing: '0.5px',
@@ -484,7 +484,7 @@ export default function TeamWorkspace() {
                           padding: '2px 8px',
                           borderRadius: '12px',
                           backgroundColor: 'rgba(10, 102, 194, 0.12)',
-                          color: '#0A66C2',
+                          color: '#0966C3',
                           fontSize: '11px',
                           fontWeight: 600,
                         }}
@@ -593,7 +593,7 @@ export default function TeamWorkspace() {
                   disabled={!newNoteText.trim() || !newNoteNOS.trim()}
                   style={{
                     padding: '10px 16px',
-                    backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? '#0A66C2' : '#CCCCCC',
+                    backgroundColor: newNoteText.trim() && newNoteNOS.trim() ? '#0966C3' : '#CCCCCC',
                     color: '#FFFFFF',
                     border: 'none',
                     borderRadius: '8px',
@@ -643,7 +643,7 @@ export default function TeamWorkspace() {
                           padding: '2px 8px',
                           borderRadius: '12px',
                           backgroundColor: 'rgba(10, 102, 194, 0.12)',
-                          color: '#0A66C2',
+                          color: '#0966C3',
                           fontSize: '11px',
                           fontWeight: 600,
                         }}
@@ -825,7 +825,7 @@ export default function TeamWorkspace() {
                   marginTop: '12px',
                   padding: '10px 16px',
                   backgroundColor:
-                    newCaseName.trim() && newCaseType && newCaseDistrict ? '#0A66C2' : '#CCCCCC',
+                    newCaseName.trim() && newCaseType && newCaseDistrict ? '#0966C3' : '#CCCCCC',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '8px',
@@ -903,7 +903,7 @@ export default function TeamWorkspace() {
                             {caseItem.relatedNOS ? (
                               <Link
                                 href={`/nos/${caseItem.relatedNOS}`}
-                                style={{ color: '#0A66C2', textDecoration: 'none' }}
+                                style={{ color: '#0966C3', textDecoration: 'none' }}
                               >
                                 {caseItem.name}
                               </Link>
@@ -985,7 +985,7 @@ export default function TeamWorkspace() {
                       activity.icon === 'share'
                         ? '#004182'
                         : activity.icon === 'comment'
-                        ? '#0A66C2'
+                        ? '#0966C3'
                         : activity.icon === 'predict'
                         ? '#059669'
                         : activity.icon === 'note'
@@ -1083,7 +1083,7 @@ export default function TeamWorkspace() {
                     padding: '2px 8px',
                     borderRadius: '12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.12)',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     fontSize: '10px',
                     fontWeight: 600,
                     marginTop: '4px',
@@ -1128,7 +1128,7 @@ export default function TeamWorkspace() {
               disabled={!inviteEmail.trim()}
               style={{
                 padding: '10px 16px',
-                backgroundColor: inviteEmail.trim() ? '#0A66C2' : '#CCCCCC',
+                backgroundColor: inviteEmail.trim() ? '#0966C3' : '#CCCCCC',
                 color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '8px',
@@ -1192,7 +1192,7 @@ export default function TeamWorkspace() {
                     justifyContent: 'center',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     marginBottom: '8px',
                   }}
                 >

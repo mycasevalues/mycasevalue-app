@@ -52,7 +52,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   work: '#111111',
   injury: '#CC1016',
   consumer: '#70B5F9',
-  rights: '#0A66C2',
+  rights: '#0966C3',
   housing: '#70B5F9',
   medical: '#CC1016',
   family: '#C37D16',

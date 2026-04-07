@@ -43,7 +43,7 @@ export default function AnnualReportCapture() {
 
     const addHeader = (text: string) => {
       doc.setFontSize(14);
-      doc.setTextColor(10, 102, 194); // #0A66C2
+      doc.setTextColor(10, 102, 194); // #0966C3
       doc.text(text, margin, yPosition);
       yPosition += 10;
     };
@@ -492,7 +492,7 @@ export default function AnnualReportCapture() {
           onClick={() => setSubmitted(false)}
           style={{
             padding: '10px 24px',
-            background: '#0A66C2',
+            background: '#0966C3',
             color: '#FFFFFF',
             border: 'none',
             borderRadius: '8px',
@@ -518,7 +518,7 @@ export default function AnnualReportCapture() {
           display: block;
           padding: 0 32px;
           height: 48px;
-          background: #0A66C2;
+          background: #0966C3;
           color: #FFFFFF;
           border: none;
           border-radius: 12px;
@@ -665,7 +665,7 @@ export default function AnnualReportCapture() {
               <div style={{
                 fontSize: '12px',
                 fontWeight: 600,
-                color: '#0A66C2',
+                color: '#0966C3',
                 letterSpacing: '0.5px',
                 marginBottom: '8px',
               }}>

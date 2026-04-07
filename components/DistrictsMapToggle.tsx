@@ -84,10 +84,10 @@ export default function DistrictsMapToggle({ children }: Props) {
           onClick={() => setView('map')}
           style={{
             ...btnBase,
-            background: view === 'map' ? '#0A66C2' : '#FFFFFF',
+            background: view === 'map' ? '#0966C3' : '#FFFFFF',
             color: view === 'map' ? '#FFFFFF' : '#4B5563',
             borderRadius: '8px 0 0 8px',
-            borderRight: view === 'map' ? '1px solid #0A66C2' : undefined,
+            borderRight: view === 'map' ? '1px solid #0966C3' : undefined,
           }}
         >
           View as Map
@@ -96,10 +96,10 @@ export default function DistrictsMapToggle({ children }: Props) {
           onClick={() => setView('list')}
           style={{
             ...btnBase,
-            background: view === 'list' ? '#0A66C2' : '#FFFFFF',
+            background: view === 'list' ? '#0966C3' : '#FFFFFF',
             color: view === 'list' ? '#FFFFFF' : '#4B5563',
             borderRadius: '0 8px 8px 0',
-            borderLeft: view === 'list' ? '1px solid #0A66C2' : undefined,
+            borderLeft: view === 'list' ? '1px solid #0966C3' : undefined,
           }}
         >
           View as List

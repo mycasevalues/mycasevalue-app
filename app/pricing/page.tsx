@@ -240,7 +240,7 @@ function PricingCard({
         height: '100%',
         borderRadius: '12px',
         border: '1px solid #E5E7EB',
-        borderTop: f ? '4px solid #0A66C2' : '1px solid #E5E7EB',
+        borderTop: f ? '4px solid #0966C3' : '1px solid #E5E7EB',
         background: '#FFFFFF',
         boxShadow: f ? '0 1px 3px rgba(0,0,0,0.08)' : '0 1px 3px rgba(0,0,0,0.08)',
       }}
@@ -254,7 +254,7 @@ function PricingCard({
             transform: 'translateX(-50%)',
             borderRadius: '12px',
             padding: '4px 16px',
-            background: '#0A66C2',
+            background: '#0966C3',
             color: '#FFFFFF',
             fontSize: '11px',
             fontWeight: 600,
@@ -364,7 +364,7 @@ function PricingCard({
             fontWeight: 600,
             borderRadius: '4px',
             border: 'none',
-            background: '#0A66C2',
+            background: '#0966C3',
             color: '#FFFFFF',
             textDecoration: 'none',
             textAlign: 'center',
@@ -515,7 +515,7 @@ export default function PricingPage() {
       {/* Header */}
       <div
         style={{
-          background: '#1B3A5C',
+          background: '#1C3A5E',
         }}
       >
         <div
@@ -545,7 +545,7 @@ export default function PricingPage() {
               style={{
                 fontSize: '11px',
                 fontWeight: 600,
-                color: '#0A66C2',
+                color: '#0966C3',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
                 fontFamily: 'var(--font-body)',
@@ -822,7 +822,7 @@ export default function PricingPage() {
               height: '32px',
               borderRadius: '12px',
               border: 'none',
-              background: annual ? '#0A66C2' : '#E5E7EB',
+              background: annual ? '#0966C3' : '#E5E7EB',
               cursor: 'pointer',
               padding: '2px',
               transition: 'background 200ms ease',
@@ -861,7 +861,7 @@ export default function PricingPage() {
                   padding: '2px 8px',
                   borderRadius: '12px',
                   background: '#FFF3F4',
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   fontSize: '11px',
                   fontWeight: '600',
                   fontFamily: 'var(--font-body)',
@@ -882,7 +882,7 @@ export default function PricingPage() {
               margin: '0 auto 24px',
               padding: '12px 16px',
               backgroundColor: '#FFF3F4',
-              border: '1px solid #0A66C2',
+              border: '1px solid #0966C3',
               borderRadius: '12px',
               textAlign: 'center',
             }}
@@ -891,7 +891,7 @@ export default function PricingPage() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#0A66C2',
+                color: '#0966C3',
                 margin: 0,
               }}
             >
@@ -1097,7 +1097,7 @@ export default function PricingPage() {
                           <span
                             style={{
                               fontSize: '14px',
-                              color: planFeature.included ? '#0A66C2' : '#C0C4C8',
+                              color: planFeature.included ? '#0966C3' : '#C0C4C8',
                               fontWeight: planFeature.included ? '700' : '400',
                             }}
                           >
@@ -1174,7 +1174,7 @@ export default function PricingPage() {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#0A66C2"
+                  stroke="#0966C3"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -1458,7 +1458,7 @@ export default function PricingPage() {
               fontWeight: '600',
               borderRadius: '12px',
               border: 'none',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               textDecoration: 'none',
               fontFamily: 'var(--font-body)',

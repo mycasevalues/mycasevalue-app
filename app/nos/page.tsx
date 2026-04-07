@@ -68,7 +68,7 @@ export default function NOSIndexPage() {
           cursor: pointer;
         }
         .nos-card:hover {
-          border-left: 3px solid #0A66C2;
+          border-left: 3px solid #0966C3;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         .nos-card h3 {
@@ -79,10 +79,10 @@ export default function NOSIndexPage() {
           transition: color 0.2s ease;
         }
         .nos-card:hover h3 {
-          color: #0A66C2;
+          color: #0966C3;
         }
         .nos-card-arrow {
-          color: #0A66C2;
+          color: #0966C3;
           font-size: 20px;
           transition: transform 0.2s ease;
         }
@@ -90,7 +90,7 @@ export default function NOSIndexPage() {
           transform: translateX(4px);
         }
         .nos-back-link {
-          color: #0A66C2;
+          color: #0966C3;
           text-decoration: none;
           font-size: 14px;
           display: inline-block;
@@ -127,7 +127,7 @@ export default function NOSIndexPage() {
       {/* Header */}
       <header
         style={{
-          background: '#1B3A5C',
+          background: '#1C3A5E',
           padding: 'clamp(24px, 5vw, 48px) 24px',
           borderBottom: '1px solid #E5E7EB',
         }}
@@ -155,7 +155,7 @@ export default function NOSIndexPage() {
             </h1>
             <span
               style={{
-                background: '#0A66C2',
+                background: '#0966C3',
                 color: '#FFFFFF',
                 padding: '6px 12px',
                 borderRadius: '12px',
@@ -214,7 +214,7 @@ export default function NOSIndexPage() {
                 marginBottom: '24px',
                 color: '#0f0f0f',
                 paddingLeft: '16px',
-                borderLeft: '3px solid #0A66C2',
+                borderLeft: '3px solid #0966C3',
                 fontFamily: 'var(--font-display)',
               }}
             >

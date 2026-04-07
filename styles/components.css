@@ -62,7 +62,7 @@
 
 /* Primary — LinkedIn blue pill */
 .mcv-btn--primary {
-  background: #0A66C2;
+  background: #0966C3;
   color: #FFFFFF;
 }
 .mcv-btn--primary:hover:not(:disabled) {
@@ -72,8 +72,8 @@
 /* Secondary — ghost outline pill */
 .mcv-btn--secondary {
   background: transparent;
-  color: #0A66C2;
-  border: 1.5px solid #0A66C2;
+  color: #0966C3;
+  border: 1.5px solid #0966C3;
 }
 .mcv-btn--secondary:hover:not(:disabled) {
   background: #EDF3FB;
@@ -96,7 +96,7 @@
 
 /* Accent — same as primary (backwards compat) */
 .mcv-btn--accent {
-  background: #0A66C2;
+  background: #0966C3;
   color: #FFFFFF;
 }
 .mcv-btn--accent:hover:not(:disabled) {
@@ -178,8 +178,8 @@
   box-shadow: none;
 }
 .mcv-card--outlined:hover {
-  border-color: #0A66C2;
-  box-shadow: 0 0 0 1px #0A66C2;
+  border-color: #0966C3;
+  box-shadow: 0 0 0 1px #0966C3;
 }
 
 /* Interactive card — clickable with hover state */
@@ -189,8 +189,8 @@
   cursor: pointer;
 }
 .mcv-card--interactive:hover {
-  border-color: #0A66C2;
-  box-shadow: 0 0 0 1px #0A66C2;
+  border-color: #0966C3;
+  box-shadow: 0 0 0 1px #0966C3;
 }
 .mcv-card--interactive:active {
   transform: scale(0.99);
@@ -198,7 +198,7 @@
 
 /* Featured card — highlighted with accent border */
 .mcv-card--accent {
-  border: 2px solid #0A66C2;
+  border: 2px solid #0966C3;
 }
 
 .mcv-card__header {
@@ -223,7 +223,7 @@
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
-  color: #0A66C2;
+  color: #0966C3;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   background: none;

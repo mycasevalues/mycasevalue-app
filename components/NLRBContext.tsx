@@ -19,7 +19,7 @@ export default function NLRBContext() {
     { label: 'Settled', value: nlrbData.settledCases, percentage: Number(((nlrbData.settledCases / totalOutcomes) * 100).toFixed(1)), color: '#057642' },
     { label: 'Withdrawn', value: nlrbData.withdrawnCases, percentage: Number(((nlrbData.withdrawnCases / totalOutcomes) * 100).toFixed(1)), color: '#4B5563' },
     { label: 'Dismissed', value: nlrbData.dismissedCases, percentage: Number(((nlrbData.dismissedCases / totalOutcomes) * 100).toFixed(1)), color: '#DC3545' },
-    { label: 'Complaint Issued', value: nlrbData.complaintIssued, percentage: Number(((nlrbData.complaintIssued / totalOutcomes) * 100).toFixed(1)), color: '#0A66C2' },
+    { label: 'Complaint Issued', value: nlrbData.complaintIssued, percentage: Number(((nlrbData.complaintIssued / totalOutcomes) * 100).toFixed(1)), color: '#0966C3' },
   ];
 
   return (
@@ -60,7 +60,7 @@ export default function NLRBContext() {
             background: '#EDF3FB',
             borderRadius: '8px',
             marginBottom: '1rem',
-            borderLeft: '4px solid #0A66C2',
+            borderLeft: '4px solid #0966C3',
           }}>
             <div style={{
               fontSize: '0.75rem',
@@ -129,7 +129,7 @@ export default function NLRBContext() {
                 <div style={{
                   height: '100%',
                   width: `${ulpPercentage}%`,
-                  background: '#0A66C2',
+                  background: '#0966C3',
                   borderRadius: '6px',
                   transition: 'width 150ms ease',
                 }} />
@@ -312,7 +312,7 @@ export default function NLRBContext() {
             padding: '0.75rem',
             background: '#EDF3FB',
             borderRadius: '8px',
-            borderLeft: '4px solid #0A66C2',
+            borderLeft: '4px solid #0966C3',
           }}>
             <p style={{
               fontSize: '0.8125rem',

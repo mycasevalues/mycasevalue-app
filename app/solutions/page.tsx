@@ -72,7 +72,7 @@ export default function SolutionsPage() {
       {/* Hero */}
       <section
         style={{
-          background: '#1B3A5C',
+          background: '#1C3A5E',
           color: '#FAFBFC',
           padding: '80px 24px 64px',
         }}
@@ -203,7 +203,7 @@ export default function SolutionsPage() {
                   fontFamily: 'var(--font-display)',
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   marginBottom: '4px',
                 }}
               >
@@ -227,7 +227,7 @@ export default function SolutionsPage() {
       {/* Free During Beta Banner */}
       <section
         style={{
-          background: 'linear-gradient(135deg, #0A66C2 0%, #0A66C2 100%)',
+          background: 'linear-gradient(135deg, #0966C3 0%, #0966C3 100%)',
           color: '#FAFBFC',
           padding: '24px',
           textAlign: 'center',
@@ -279,7 +279,7 @@ export default function SolutionsPage() {
                 className="solutions-card"
               >
                 <div style={{ marginBottom: '12px' }}>
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={s.iconPath}/></svg>
                 </div>
                 <h2
                   style={{
@@ -353,7 +353,7 @@ export default function SolutionsPage() {
               href="/search"
               style={{
                 background:
-                  '#0A66C2',
+                  '#0966C3',
                 color: '#FAFBFC',
                 padding: '0.875rem 2rem',
                 borderRadius: '12px',

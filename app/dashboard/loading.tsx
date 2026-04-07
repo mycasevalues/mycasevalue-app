@@ -2,7 +2,7 @@ export default function DashboardLoading() {
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
       {/* Header skeleton */}
-      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #0A66C2' }}>
+      <div style={{ background: '#1C3A5E', padding: '48px 24px', borderBottom: '3px solid #0966C3' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ height: '32px', width: '200px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '8px' }} />
           <div style={{ height: '16px', width: '300px', background: 'rgba(255,255,255,0.08)', borderRadius: '12px' }} />

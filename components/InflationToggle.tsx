@@ -20,7 +20,7 @@ export default function InflationToggle() {
             alignItems: 'center',
             gap: '8px',
             padding: '8px 14px',
-            backgroundColor: inflationEnabled ? '#0A66C2' : '#E5E7EB',
+            backgroundColor: inflationEnabled ? '#0966C3' : '#E5E7EB',
             color: inflationEnabled ? '#FFFFFF' : '#4B5563',
             border: 'none',
             borderRadius: '8px',
@@ -47,7 +47,7 @@ export default function InflationToggle() {
                 position: 'absolute',
                 left: '2px',
                 top: '0px',
-                color: '#0A66C2',
+                color: '#0966C3',
                 fontSize: '12px',
                 fontWeight: 'bold',
               }}>
@@ -69,7 +69,7 @@ export default function InflationToggle() {
           backgroundColor: '#F0F4F8',
           padding: '10px 12px',
           borderRadius: '6px',
-          borderLeft: '3px solid #0A66C2',
+          borderLeft: '3px solid #0966C3',
           lineHeight: 1.5,
         }}>
           Inflation-adjusted to 2024 dollars using BLS CPI-U data.

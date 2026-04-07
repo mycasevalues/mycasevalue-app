@@ -45,7 +45,7 @@ export default function ApiPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ background: '#1B3A5C', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: '#1C3A5E', color: '#FAFBFC', padding: '80px 24px 64px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -79,7 +79,7 @@ export default function ApiPage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/solutions/api" style={{
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',
@@ -134,7 +134,7 @@ export default function ApiPage() {
                 borderRadius: '12px',
                 padding: '32px 24px',
               }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',
@@ -229,7 +229,7 @@ export default function ApiPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
             <div style={{ padding: '32px', background: '#FFFFFF', borderRadius: '12px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Starter</h3>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0A66C2', margin: '0 0 16px 0' }}>$99<span style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0966C3', margin: '0 0 16px 0' }}>$99<span style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 400 }}>/month</span></p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', margin: '16px 0', lineHeight: 1.6 }}>
                 Perfect for individual attorneys and small practices
               </p>
@@ -241,12 +241,12 @@ export default function ApiPage() {
               </ul>
             </div>
 
-            <div style={{ padding: '32px', background: '#FFFFFF', borderRadius: '12px', border: '2px solid #0A66C2', boxShadow: '0 4px 16px rgba(10, 102, 194, 0.15)', position: 'relative' }}>
-              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: '#0A66C2', color: '#FAFBFC', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <div style={{ padding: '32px', background: '#FFFFFF', borderRadius: '12px', border: '2px solid #0966C3', boxShadow: '0 4px 16px rgba(10, 102, 194, 0.15)', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '-12px', left: '24px', background: '#0966C3', color: '#FAFBFC', padding: '4px 12px', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Most Popular
               </div>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: '#0f0f0f', marginTop: '16px', marginBottom: '8px' }}>Professional</h3>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0A66C2', margin: '0 0 16px 0' }}>$399<span style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 400 }}>/month</span></p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0966C3', margin: '0 0 16px 0' }}>$399<span style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 400 }}>/month</span></p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', margin: '16px 0', lineHeight: 1.6 }}>
                 Ideal for law firms and legal tech platforms
               </p>
@@ -260,7 +260,7 @@ export default function ApiPage() {
 
             <div style={{ padding: '32px', background: '#FFFFFF', borderRadius: '12px', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
               <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 600, color: '#0f0f0f', marginTop: 0, marginBottom: '8px' }}>Enterprise</h3>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0A66C2', margin: '0 0 16px 0' }}>Custom</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '2rem', fontWeight: 600, color: '#0966C3', margin: '0 0 16px 0' }}>Custom</p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.875rem', color: '#4B5563', margin: '16px 0', lineHeight: 1.6 }}>
                 For mission-critical integrations at scale
               </p>
@@ -298,7 +298,7 @@ export default function ApiPage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/developers" style={{
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FAFBFC',
               padding: '0.875rem 2rem',
               borderRadius: '12px',

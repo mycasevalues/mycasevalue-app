@@ -284,10 +284,10 @@ export default function JudgeDirectoryClient() {
             fontSize: 14,
             fontWeight: 600,
             fontFamily: 'var(--font-body)',
-            color: activeTab === 'directory' ? '#0A66C2' : '#666666',
+            color: activeTab === 'directory' ? '#0966C3' : '#666666',
             background: activeTab === 'directory' ? '#FFFFFF' : '#F7F8FA',
             border: 'none',
-            borderBottom: activeTab === 'directory' ? '3px solid #0A66C2' : '3px solid transparent',
+            borderBottom: activeTab === 'directory' ? '3px solid #0966C3' : '3px solid transparent',
             cursor: 'pointer',
             transition: 'all 0.2s ease',
           }}
@@ -305,10 +305,10 @@ export default function JudgeDirectoryClient() {
             fontSize: 14,
             fontWeight: 600,
             fontFamily: 'var(--font-body)',
-            color: activeTab === 'by-case-type' ? '#0A66C2' : '#666666',
+            color: activeTab === 'by-case-type' ? '#0966C3' : '#666666',
             background: activeTab === 'by-case-type' ? '#FFFFFF' : '#F7F8FA',
             border: 'none',
-            borderBottom: activeTab === 'by-case-type' ? '3px solid #0A66C2' : '3px solid transparent',
+            borderBottom: activeTab === 'by-case-type' ? '3px solid #0966C3' : '3px solid transparent',
             cursor: 'pointer',
             transition: 'all 0.2s ease',
           }}
@@ -565,7 +565,7 @@ export default function JudgeDirectoryClient() {
               }}
               onMouseEnter={(e) => {
                 const elem = e.currentTarget;
-                elem.style.borderColor = '#0A66C2';
+                elem.style.borderColor = '#0966C3';
                 elem.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.15)';
               }}
               onMouseLeave={(e) => {
@@ -667,8 +667,8 @@ export default function JudgeDirectoryClient() {
                   padding: '12px 16px',
                   textAlign: 'center',
                   borderRadius: 2,
-                  border: '1px solid #0A66C2',
-                  color: '#0A66C2',
+                  border: '1px solid #0966C3',
+                  color: '#0966C3',
                   textDecoration: 'none',
                   fontSize: 14,
                   fontWeight: 600,
@@ -679,13 +679,13 @@ export default function JudgeDirectoryClient() {
                 }}
                 onMouseEnter={(e) => {
                   const elem = e.currentTarget as HTMLAnchorElement;
-                  elem.style.background = '#0A66C2';
+                  elem.style.background = '#0966C3';
                   elem.style.color = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
                   const elem = e.currentTarget as HTMLAnchorElement;
                   elem.style.background = '#FFFFFF';
-                  elem.style.color = '#0A66C2';
+                  elem.style.color = '#0966C3';
                 }}
                 >
                   View Profile
@@ -747,7 +747,7 @@ export default function JudgeDirectoryClient() {
                   padding: '10px 14px',
                   borderRadius: 2,
                   border: '1px solid #E5E7EB',
-                  background: isCurrentPage ? '#0A66C2' : '#FFFFFF',
+                  background: isCurrentPage ? '#0966C3' : '#FFFFFF',
                   color: isCurrentPage ? '#FFFFFF' : '#0f0f0f',
                   cursor: 'pointer',
                   fontSize: 14,
@@ -975,7 +975,7 @@ export default function JudgeDirectoryClient() {
                   }}
                   onMouseEnter={(e) => {
                     const elem = e.currentTarget;
-                    elem.style.borderColor = '#0A66C2';
+                    elem.style.borderColor = '#0966C3';
                     elem.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.15)';
                   }}
                   onMouseLeave={(e) => {
@@ -988,7 +988,7 @@ export default function JudgeDirectoryClient() {
                   <div style={{
                     fontSize: 16,
                     fontWeight: 700,
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     fontFamily: 'var(--font-mono)',
                   }}>
                     #{idx + 1}
@@ -1106,8 +1106,8 @@ export default function JudgeDirectoryClient() {
                     padding: '10px 16px',
                     textAlign: 'center',
                     borderRadius: 2,
-                    border: '1px solid #0A66C2',
-                    color: '#0A66C2',
+                    border: '1px solid #0966C3',
+                    color: '#0966C3',
                     textDecoration: 'none',
                     fontSize: 13,
                     fontWeight: 600,
@@ -1119,13 +1119,13 @@ export default function JudgeDirectoryClient() {
                   }}
                   onMouseEnter={(e) => {
                     const elem = e.currentTarget as HTMLAnchorElement;
-                    elem.style.background = '#0A66C2';
+                    elem.style.background = '#0966C3';
                     elem.style.color = '#FFFFFF';
                   }}
                   onMouseLeave={(e) => {
                     const elem = e.currentTarget as HTMLAnchorElement;
                     elem.style.background = '#FFFFFF';
-                    elem.style.color = '#0A66C2';
+                    elem.style.color = '#0966C3';
                   }}
                   >
                     View Profile

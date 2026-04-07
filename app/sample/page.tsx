@@ -78,8 +78,8 @@ export default function SampleReportPage() {
         {/* Navy Header */}
         <div
           style={{
-            backgroundColor: '#1B3A5C',
-            borderBottom: '1px solid #1B3A5C',
+            backgroundColor: '#1C3A5E',
+            borderBottom: '1px solid #1C3A5E',
             padding: '40px 24px',
             position: 'sticky',
             top: 0,
@@ -488,7 +488,7 @@ export default function SampleReportPage() {
                     style={{
                       height: '100%',
                       background:
-                        'linear-gradient(90deg, #004182 0%, #0A66C2 100%)',
+                        'linear-gradient(90deg, #004182 0%, #0966C3 100%)',
                     }}
                   />
                 </div>
@@ -1066,7 +1066,7 @@ export default function SampleReportPage() {
                     fontSize: '36px',
                     fontWeight: 600,
                     fontFamily: 'var(--font-mono)',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     margin: '0 0 4px 0',
                   }}
                 >
@@ -1313,7 +1313,7 @@ export default function SampleReportPage() {
                 href="/cases?category=work"
                 style={{
                   display: 'inline-block',
-                  backgroundColor: '#0A66C2',
+                  backgroundColor: '#0966C3',
                   color: '#fff',
                   padding: '16px 32px',
                   borderRadius: '12px',

@@ -528,7 +528,7 @@ export default function DecisionTree() {
             style={{
               height: '100%',
               width: `${(currentStep / 4) * 100}%`,
-              backgroundColor: '#0A66C2',
+              backgroundColor: '#0966C3',
               transition: 'width 0.3s ease-in-out',
             }}
           />
@@ -583,7 +583,7 @@ export default function DecisionTree() {
                   gap: '0.75rem',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#0A66C2';
+                  e.currentTarget.style.borderColor = '#0966C3';
                   e.currentTarget.style.boxShadow =
                     '0 4px 12px rgba(10, 102, 194, 0.1)';
                 }}
@@ -599,7 +599,7 @@ export default function DecisionTree() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                   }}
                 >
                   {category.icon}
@@ -683,7 +683,7 @@ export default function DecisionTree() {
                             width: '18px',
                             height: '18px',
                             cursor: 'pointer',
-                            accentColor: '#0A66C2',
+                            accentColor: '#0966C3',
                           }}
                         />
                         <span style={{ color: '#0f0f0f', fontSize: '0.95rem' }}>
@@ -896,7 +896,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     margin: '0',
                   }}
                 >
@@ -919,7 +919,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     margin: '0',
                   }}
                 >
@@ -942,7 +942,7 @@ export default function DecisionTree() {
                   style={{
                     fontSize: '1.75rem',
                     fontWeight: '700',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     margin: '0',
                   }}
                 >
@@ -979,7 +979,7 @@ export default function DecisionTree() {
               style={{
                 display: 'inline-block',
                 padding: '0.75rem 1.5rem',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#ffffff',
                 textDecoration: 'none',
                 borderRadius: '6px',
@@ -991,7 +991,7 @@ export default function DecisionTree() {
                 e.currentTarget.style.backgroundColor = '#004182';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#0A66C2';
+                e.currentTarget.style.backgroundColor = '#0966C3';
               }}
             >
               View Full Case Type Report
@@ -1174,7 +1174,7 @@ export default function DecisionTree() {
                 backgroundColor:
                   currentStep === 2 && !isStep2Complete
                     ? '#d1d5db'
-                    : '#0A66C2',
+                    : '#0966C3',
                 color: '#ffffff',
                 border: 'none',
                 borderRadius: '6px',
@@ -1193,7 +1193,7 @@ export default function DecisionTree() {
               }}
               onMouseLeave={(e) => {
                 if (currentStep !== 2 || isStep2Complete) {
-                  e.currentTarget.style.backgroundColor = '#0A66C2';
+                  e.currentTarget.style.backgroundColor = '#0966C3';
                 }
               }}
             >

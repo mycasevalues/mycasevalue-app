@@ -205,7 +205,7 @@ export default function RecentlyResearched() {
             onMouseEnter={(e) => {
               const el = e.currentTarget;
               el.style.backgroundColor = '#EDF3FB';
-              el.style.borderColor = '#0A66C2';
+              el.style.borderColor = '#0966C3';
             }}
             onMouseLeave={(e) => {
               const el = e.currentTarget;
@@ -217,7 +217,7 @@ export default function RecentlyResearched() {
               style={{
                 fontSize: '12px',
                 fontWeight: 500,
-                color: '#0A66C2',
+                color: '#0966C3',
                 margin: 0,
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',

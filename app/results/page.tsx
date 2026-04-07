@@ -55,12 +55,12 @@ export default function ResultsPage() {
       </div>
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C', paddingTop: '48px', paddingBottom: '48px', borderBottom: '1px solid #E5E7EB' }}>
+      <div style={{ background: '#1C3A5E', paddingTop: '48px', paddingBottom: '48px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px' }}>
           <div style={{ marginBottom: '16px' }}>
             <span style={{
               display: 'inline-block',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               padding: '6px 12px',
               borderRadius: '12px',
@@ -138,7 +138,7 @@ export default function ResultsPage() {
                 borderRadius: '12px',
                 fontSize: '14px',
                 fontWeight: '600',
-                background: '#0A66C2',
+                background: '#0966C3',
                 color: '#FFFFFF',
                 textDecoration: 'none',
                 fontFamily: 'var(--font-body)',

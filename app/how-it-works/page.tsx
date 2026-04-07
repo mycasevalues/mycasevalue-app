@@ -64,7 +64,7 @@ const steps = [
     title: 'Select Your Case Type',
     description: 'Choose from 84 federal case categories. No legal jargon needed — we use plain English labels to describe every case type.',
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
       </svg>
@@ -117,11 +117,11 @@ export default function HowItWorksPage() {
       />
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C' }}>
+      <div style={{ background: '#1C3A5E' }}>
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-24">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-            style={{ background: 'rgba(10, 102, 194, 0.1)', color: '#0A66C2', borderRadius: '12px' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
+            style={{ background: 'rgba(10, 102, 194, 0.1)', color: '#0966C3', borderRadius: '12px' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
               <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
               <polyline points="12 12 20 7.5"></polyline>
               <polyline points="12 12 12 21"></polyline>
@@ -177,7 +177,7 @@ export default function HowItWorksPage() {
                       width: '40px',
                       height: '40px',
                       borderRadius: '12px',
-                      background: '#1B3A5C',
+                      background: '#1C3A5E',
                       color: '#FFFFFF',
                       fontSize: '18px',
                     }}>
@@ -246,7 +246,7 @@ export default function HowItWorksPage() {
               <div key={i} className="p-6 border" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
                 {/* Red Icon */}
                 <div className="mb-4" style={{ width: '24px', height: '24px' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5">
                     <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
                     <path d="M9 12l2 2 4-4"/>
                   </svg>
@@ -451,7 +451,7 @@ export default function HowItWorksPage() {
                       width: '60px',
                       height: '60px',
                       borderRadius: '50%',
-                      backgroundColor: idx % 2 === 0 ? '#0A66C2' : '#004182',
+                      backgroundColor: idx % 2 === 0 ? '#0966C3' : '#004182',
                       color: '#FFFFFF',
                       display: 'flex',
                       alignItems: 'center',
@@ -521,7 +521,7 @@ export default function HowItWorksPage() {
                 href={btn.href}
                 style={{
                   padding: '16px 24px',
-                  backgroundColor: '#0A66C2',
+                  backgroundColor: '#0966C3',
                   color: '#FFFFFF',
                   textDecoration: 'none',
                   borderRadius: '12px',
@@ -549,7 +549,7 @@ export default function HowItWorksPage() {
 
       <style>{`
         .start-exploring-btn:hover {
-          background-color: #1B3A5C !important;
+          background-color: #1C3A5E !important;
           box-shadow: 0 8px 24px rgba(27, 58, 92, 0.12) !important;
           transform: translateY(-2px);
         }
@@ -618,7 +618,7 @@ export default function HowItWorksPage() {
           </p>
           <a href="/search"
             className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold transition-all hover:shadow-lg"
-            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}>
             Start Free Research
             <ArrowRightIcon size={16} />
           </a>

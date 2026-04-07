@@ -47,7 +47,7 @@ export default function DemandPackageGenerator() {
     const contentWidth = pageWidth - 2 * margin;
     let yPos = margin;
 
-    const primaryColor = '#0A66C2';
+    const primaryColor = '#0966C3';
     const textColor = '#0f0f0f';
 
     const caseData = REAL_DATA[selectedCaseType.nos];
@@ -308,7 +308,7 @@ export default function DemandPackageGenerator() {
           <button
             onClick={handleGeneratePackage}
             style={{
-              backgroundColor: '#0A66C2',
+              backgroundColor: '#0966C3',
               color: 'white',
               padding: '12px 24px',
               borderRadius: '6px',
@@ -405,8 +405,8 @@ function PreviewContent({
 
   return (
     <div style={{ fontFamily: 'system-ui, -apple-system, sans-serif', color: '#0f0f0f', lineHeight: '1.6' }}>
-      <div style={{ borderBottom: '2px solid #0A66C2', paddingBottom: '16px', marginBottom: '16px' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: '#0A66C2', margin: '0 0 8px 0' }}>
+      <div style={{ borderBottom: '2px solid #0966C3', paddingBottom: '16px', marginBottom: '16px' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: '#0966C3', margin: '0 0 8px 0' }}>
           MyCaseValue Research Data Package
         </h1>
         <p style={{ margin: '0', color: '#666', fontSize: '14px' }}>
@@ -490,7 +490,7 @@ function PreviewContent({
             <p style={{ margin: '4px 0' }}>
               <strong>Pro Se Win Rate:</strong> {attorneyData.pwr}%
             </p>
-            <p style={{ margin: '4px 0', fontWeight: '600', color: '#0A66C2' }}>
+            <p style={{ margin: '4px 0', fontWeight: '600', color: '#0966C3' }}>
               Representation Impact: +{attorneyData.rwr - attorneyData.pwr} percentage points
             </p>
             <p style={{ margin: '8px 0 4px 0', color: '#666', fontSize: '13px' }}>

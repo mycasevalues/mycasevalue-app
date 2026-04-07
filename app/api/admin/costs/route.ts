@@ -60,7 +60,7 @@ export async function GET(request: NextRequest): Promise<NextResponse<CostRespon
       {
         name: 'Anthropic',
         icon: '🤖',
-        color: '#0A66C2',
+        color: '#0966C3',
         currentSpend: 45.75,
         monthlyBudget: 100,
         usagePercentage: 45.75,

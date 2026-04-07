@@ -234,7 +234,7 @@ export default function SearchPage() {
         }
 
         input:focus {
-          border-color: #0A66C2 !important;
+          border-color: #0966C3 !important;
           box-shadow: 0 0 0 3px rgba(232, 23, 31, 0.08) !important;
         }
 
@@ -258,13 +258,13 @@ export default function SearchPage() {
         }
       `}</style>
       {/* Dark Navy Header Banner */}
-      <div className="search-header" style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div className="search-header" style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0A66C2', flexShrink: 0 }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
               <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Search
             </span>
           </div>
@@ -298,9 +298,9 @@ export default function SearchPage() {
             style={{
               display: 'block', width: '100%', textAlign: 'left',
               padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === null ? 700 : 400,
-              color: selectedCategory === null ? '#0A66C2' : '#4B5563',
+              color: selectedCategory === null ? '#0966C3' : '#4B5563',
               background: selectedCategory === null ? 'rgba(10, 102, 194, 0.06)' : 'transparent',
-              border: 'none', borderLeft: selectedCategory === null ? '3px solid #0A66C2' : '3px solid transparent',
+              border: 'none', borderLeft: selectedCategory === null ? '3px solid #0966C3' : '3px solid transparent',
               cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
               marginBottom: '2px',
             }}
@@ -315,9 +315,9 @@ export default function SearchPage() {
                 display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 width: '100%', textAlign: 'left',
                 padding: '8px 12px', fontSize: '13px', fontWeight: selectedCategory === cat.id ? 700 : 400,
-                color: selectedCategory === cat.id ? '#0A66C2' : '#4B5563',
+                color: selectedCategory === cat.id ? '#0966C3' : '#4B5563',
                 background: selectedCategory === cat.id ? 'rgba(10, 102, 194, 0.06)' : 'transparent',
-                border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid #0A66C2' : '3px solid transparent',
+                border: 'none', borderLeft: selectedCategory === cat.id ? '3px solid #0966C3' : '3px solid transparent',
                 cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 120ms',
                 marginBottom: '2px',
               }}
@@ -382,7 +382,7 @@ export default function SearchPage() {
       {/* AI-Powered Search Section */}
       <div style={{ marginBottom: '32px', padding: '24px', background: 'linear-gradient(135deg, #F0E7FF 0%, #E8D5FF 100%)', border: '1px solid #D8BFFF', borderRadius: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0A66C2', flexShrink: 0 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
           </svg>
           <label style={{ fontSize: '13px', fontWeight: '600', color: '#004182', textTransform: 'uppercase', letterSpacing: '0.5px', margin: '0' }}>
@@ -416,7 +416,7 @@ export default function SearchPage() {
               transition: 'all 150ms',
             }}
             onFocus={(e) => {
-              e.currentTarget.style.borderColor = '#0A66C2';
+              e.currentTarget.style.borderColor = '#0966C3';
               e.currentTarget.style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.1)';
             }}
             onBlur={(e) => {
@@ -432,7 +432,7 @@ export default function SearchPage() {
               padding: '0 20px',
               fontSize: '14px',
               fontWeight: '600',
-              background: aiLoading || !aiQuery.trim() ? '#D8BFFF' : '#0A66C2',
+              background: aiLoading || !aiQuery.trim() ? '#D8BFFF' : '#0966C3',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '20px',
@@ -449,7 +449,7 @@ export default function SearchPage() {
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#0A66C2';
+              e.currentTarget.style.background = '#0966C3';
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = 'none';
             }}
@@ -575,7 +575,7 @@ export default function SearchPage() {
             paddingRight: '24px',
             fontSize: '15px',
             fontWeight: '600',
-            background: '#0A66C2',
+            background: '#0966C3',
             color: '#FFFFFF',
             border: 'none',
             borderRadius: '12px',
@@ -590,7 +590,7 @@ export default function SearchPage() {
             e.currentTarget.style.transform = 'translateY(-1px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#0A66C2';
+            e.currentTarget.style.background = '#0966C3';
             e.currentTarget.style.boxShadow = '0 2px 4px rgba(10, 102, 194, 0.2)';
             e.currentTarget.style.transform = 'translateY(0)';
           }}
@@ -668,7 +668,7 @@ export default function SearchPage() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
           <p style={{ fontSize: '13px', color: '#4B5563', margin: 0, fontFamily: 'var(--font-body)' }}>
             <strong style={{ color: '#0f0f0f' }}>{results.length}</strong> result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;
-            {selectedCategory && <span> in <strong style={{ color: '#0A66C2' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
+            {selectedCategory && <span> in <strong style={{ color: '#0966C3' }}>{categories.find(c => c.id === selectedCategory)?.label}</strong></span>}
           </p>
           {selectedCategory && (
             <button onClick={() => setSelectedCategory(null)} style={{ fontSize: '12px', color: '#004182', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
@@ -697,7 +697,7 @@ export default function SearchPage() {
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';
             e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
-            e.currentTarget.style.borderColor = '#0A66C2';
+            e.currentTarget.style.borderColor = '#0966C3';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
@@ -710,7 +710,7 @@ export default function SearchPage() {
             <span style={{
               fontSize: '12px',
               fontWeight: '600',
-              color: '#0A66C2',
+              color: '#0966C3',
               background: 'rgba(10, 102, 194, 0.08)',
               padding: '4px 10px',
               borderRadius: '12px',
@@ -733,7 +733,7 @@ export default function SearchPage() {
                 {rd.wr != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Win Rate </span>
-                    <strong style={{ color: rd.wr >= 50 ? '#059669' : '#0A66C2' }}>{rd.wr}%</strong>
+                    <strong style={{ color: rd.wr >= 50 ? '#059669' : '#0966C3' }}>{rd.wr}%</strong>
                   </span>
                 )}
                 {rd.sp != null && (
@@ -757,7 +757,7 @@ export default function SearchPage() {
                 {rd.rng?.md != null && rd.rng.md > 0 && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Median </span>
-                    <strong style={{ color: '#0A66C2' }}>{formatSettlementAmount(rd.rng.md, { compact: true })}</strong>
+                    <strong style={{ color: '#0966C3' }}>{formatSettlementAmount(rd.rng.md, { compact: true })}</strong>
                   </span>
                 )}
               </div>
@@ -840,17 +840,17 @@ export default function SearchPage() {
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#004182'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
-                    <span style={{ width: 24, height: 24, borderRadius: 2, background: '#0A66C2', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 600, flexShrink: 0 }}>
+                    <span style={{ width: 24, height: 24, borderRadius: 2, background: '#0966C3', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 600, flexShrink: 0 }}>
                       {i + 1}
                     </span>
                     <div style={{ flex: 1 }}>
                       <span style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>{item.label}</span>
                     </div>
                     <div style={{ display: 'flex', gap: 16, fontSize: 12, fontFamily: 'var(--font-mono)', color: '#4B5563', flexShrink: 0 }}>
-                      <span style={{ color: item.wr >= 50 ? '#059669' : item.wr >= 35 ? '#D97706' : '#0A66C2', fontWeight: 600 }}>{item.wr}%</span>
+                      <span style={{ color: item.wr >= 50 ? '#059669' : item.wr >= 35 ? '#D97706' : '#0966C3', fontWeight: 600 }}>{item.wr}%</span>
                       <span>{item.total.toLocaleString()}</span>
                       <span>{item.mo}mo</span>
-                      {item.rngMd > 0 && <span style={{ color: '#0A66C2', fontWeight: 600 }}>{fmtK(item.rngMd)}</span>}
+                      {item.rngMd > 0 && <span style={{ color: '#0966C3', fontWeight: 600 }}>{fmtK(item.rngMd)}</span>}
                     </div>
                   </Link>
                 ));
@@ -887,17 +887,17 @@ export default function SearchPage() {
                       padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB',
                       borderRadius: 2, textDecoration: 'none', transition: 'all 0.15s ease',
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0A66C2'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0966C3'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
                     <div style={{ fontSize: 14, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 4 }}>{cat.label}</div>
                     <div style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 8 }}>{cat.opts.length} case types</div>
                     <div style={{ display: 'flex', gap: 12, fontSize: 11, fontFamily: 'var(--font-mono)' }}>
-                      <span style={{ color: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : '#0A66C2', fontWeight: 600 }}>{avgWr}% win</span>
+                      <span style={{ color: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : '#0966C3', fontWeight: 600 }}>{avgWr}% win</span>
                       <span style={{ color: '#4B5563' }}>{totalCases >= 1000 ? `${(totalCases / 1000).toFixed(0)}K cases` : `${totalCases} cases`}</span>
                     </div>
                     <div style={{ height: 3, background: '#F0F3F5', borderRadius: 2, marginTop: 8, overflow: 'hidden' }}>
-                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : '#0A66C2', borderRadius: 2 }} />
+                      <div style={{ width: `${avgWr}%`, height: '100%', background: avgWr >= 50 ? '#059669' : avgWr >= 35 ? '#D97706' : '#0966C3', borderRadius: 2 }} />
                     </div>
                   </Link>
                 );
@@ -939,10 +939,10 @@ export default function SearchPage() {
                 const highestRecovery = allNos.filter(x => x.rngMd > 0).reduce((a, b) => b.rngMd > a.rngMd ? b : a, allNos.filter(x => x.rngMd > 0)[0]);
 
                 const highlights = [
-                  { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#0A66C2' },
+                  { title: 'Most Filed Case Type', value: mostFiled.label, display: `${mostFiled.total.toLocaleString()} cases`, color: '#0966C3' },
                   { title: 'Highest Win Rate', value: highestWr.label, display: `${highestWr.wr}%`, color: '#059669' },
                   { title: 'Fastest Resolution', value: fastestResolution?.label || 'N/A', display: fastestResolution ? `${fastestResolution.mo} months` : 'N/A', color: '#0369A1' },
-                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `${fmtK(highestRecovery.rngMd)} median` : 'N/A', color: '#0A66C2' },
+                  { title: 'Highest Recovery', value: highestRecovery?.label || 'N/A', display: highestRecovery ? `${fmtK(highestRecovery.rngMd)} median` : 'N/A', color: '#0966C3' },
                 ];
 
                 return highlights.map((h, i) => (
@@ -1014,8 +1014,8 @@ export default function SearchPage() {
                     cursor: 'pointer',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#0A66C2';
-                    e.currentTarget.style.color = '#0A66C2';
+                    e.currentTarget.style.borderColor = '#0966C3';
+                    e.currentTarget.style.color = '#0966C3';
                     e.currentTarget.style.background = 'rgba(10, 102, 194, 0.08)';
                   }}
                   onMouseLeave={(e) => {

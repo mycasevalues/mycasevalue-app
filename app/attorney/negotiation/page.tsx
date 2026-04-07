@@ -119,13 +119,13 @@ export default function NegotiationPage() {
 
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
-      <style>{`select:focus, input:focus { outline: none; border-color: #0A66C2; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
+      <style>{`select:focus, input:focus { outline: none; border-color: #0966C3; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
 
-      <div style={{ background: '#1B3A5C', padding: '64px 24px' }}>
+      <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" /></svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Negotiation Intelligence</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5"><circle cx="12" cy="12" r="10" /><path d="M8 14s1.5 2 4 2 4-2 4-2" /><line x1="9" y1="9" x2="9.01" y2="9" /><line x1="15" y1="9" x2="15.01" y2="9" /></svg>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Negotiation Intelligence</span>
           </div>
           <h1 style={{ fontSize: '40px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-display)', margin: '0 0 8px' }}>Settlement Negotiation Prep</h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
@@ -175,7 +175,7 @@ export default function NegotiationPage() {
                 <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px' }}>Representation</label>
                 <div style={{ display: 'flex', gap: '8px' }}>
                   {[{ val: true, label: 'Attorney' }, { val: false, label: 'Pro Se' }].map(opt => (
-                    <button key={String(opt.val)} type="button" onClick={() => setRepresented(opt.val)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${represented === opt.val ? '#0A66C2' : '#E5E7EB'}`, backgroundColor: represented === opt.val ? 'rgba(10,102,194,0.08)' : '#FAFBFC', color: represented === opt.val ? '#0A66C2' : '#4B5563', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                    <button key={String(opt.val)} type="button" onClick={() => setRepresented(opt.val)} style={{ flex: 1, padding: '10px', borderRadius: '12px', border: `1px solid ${represented === opt.val ? '#0966C3' : '#E5E7EB'}`, backgroundColor: represented === opt.val ? 'rgba(10,102,194,0.08)' : '#FAFBFC', color: represented === opt.val ? '#0966C3' : '#4B5563', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
                       {opt.label}
                     </button>
                   ))}
@@ -191,7 +191,7 @@ export default function NegotiationPage() {
                   ))}
                 </div>
               </div>
-              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '14px', backgroundColor: !caseType || !currentOffer ? '#E5E7EB' : '#0A66C2', color: '#FFF', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
+              <button type="submit" disabled={!caseType || !currentOffer} style={{ width: '100%', padding: '14px', backgroundColor: !caseType || !currentOffer ? '#E5E7EB' : '#0966C3', color: '#FFF', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)', textTransform: 'uppercase', letterSpacing: '0.04em', cursor: !caseType || !currentOffer ? 'not-allowed' : 'pointer' }}>
                 Analyze Negotiation Position
               </button>
             </form>
@@ -237,9 +237,9 @@ export default function NegotiationPage() {
                     <div style={{ fontSize: '10px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Floor</div>
                     <div style={{ fontSize: '20px', fontWeight: 600, color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.floor)}</div>
                   </div>
-                  <div style={{ textAlign: 'center', padding: '16px', background: '#EDF3FB', borderRadius: 10, border: '2px solid #0A66C2' }}>
+                  <div style={{ textAlign: 'center', padding: '16px', background: '#EDF3FB', borderRadius: 10, border: '2px solid #0966C3' }}>
                     <div style={{ fontSize: '10px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Target</div>
-                    <div style={{ fontSize: '20px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
+                    <div style={{ fontSize: '20px', fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>{formatMoney(r.negotiationRange.target)}</div>
                   </div>
                   <div style={{ textAlign: 'center', padding: '16px', background: '#E8F3EB', borderRadius: 10 }}>
                     <div style={{ fontSize: '10px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', marginBottom: 4 }}>Ceiling</div>
@@ -260,7 +260,7 @@ export default function NegotiationPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {r.talkingPoints.map((pt, i) => (
                     <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: '#0A66C2', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, marginTop: 2 }}>{i + 1}</div>
+                      <div style={{ minWidth: 24, height: 24, borderRadius: '50%', background: '#0966C3', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 600, marginTop: 2 }}>{i + 1}</div>
                       <p style={{ fontSize: '13px', color: '#0f0f0f', margin: 0, lineHeight: 1.6 }}>{pt}</p>
                     </div>
                   ))}

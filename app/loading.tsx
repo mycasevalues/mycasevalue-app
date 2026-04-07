@@ -20,7 +20,7 @@ export default function Loading() {
           left: 0,
           right: 0,
           height: '4px',
-          background: '#1B3A5C',
+          background: '#1C3A5E',
         }}
       />
       <style>{`

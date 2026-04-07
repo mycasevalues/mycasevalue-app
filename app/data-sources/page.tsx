@@ -125,13 +125,13 @@ export default function DataSourcesPage() {
       />
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Hero Section */}
-        <div style={{ background: '#1B3A5C', padding: '80px 24px' }}>
+        <div style={{ background: '#1C3A5E', padding: '80px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 600,
@@ -199,7 +199,7 @@ export default function DataSourcesPage() {
                   <p style={{
                     fontSize: 32,
                     fontWeight: 700,
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     fontFamily: 'var(--font-display)',
                     margin: '0 0 8px 0',
                   }}>
@@ -285,7 +285,7 @@ export default function DataSourcesPage() {
                         <p style={{
                           fontSize: 18,
                           fontWeight: 700,
-                          color: '#0A66C2',
+                          color: '#0966C3',
                           fontFamily: 'var(--font-display)',
                           margin: 0,
                         }}>
@@ -363,7 +363,7 @@ export default function DataSourcesPage() {
                             alignItems: 'center',
                             gap: 6,
                           }}>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="3" strokeLinecap="round">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="3" strokeLinecap="round">
                               <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <span style={{
@@ -489,7 +489,7 @@ export default function DataSourcesPage() {
                       <span style={{
                         fontSize: 13,
                         fontWeight: 600,
-                        color: '#0A66C2',
+                        color: '#0966C3',
                         fontFamily: 'var(--font-display)',
                       }}>
                         {item.frequency}
@@ -618,7 +618,7 @@ export default function DataSourcesPage() {
                     <p style={{
                       fontSize: 16,
                       fontWeight: 700,
-                      color: '#0A66C2',
+                      color: '#0966C3',
                       fontFamily: 'var(--font-display)',
                       margin: 0,
                     }}>
@@ -690,7 +690,7 @@ export default function DataSourcesPage() {
                     justifyContent: 'center',
                     marginBottom: 12,
                   }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                     </svg>
                   </div>
@@ -721,7 +721,7 @@ export default function DataSourcesPage() {
           <section style={{
             padding: 48,
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, #0A66C2 0%, #004182 100%)',
+            background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)',
             textAlign: 'center',
           }}>
             <h2 style={{
@@ -749,7 +749,7 @@ export default function DataSourcesPage() {
                   display: 'inline-block',
                   padding: '14px 32px',
                   backgroundColor: '#FFFFFF',
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   fontSize: 15,
                   fontWeight: 700,
                   borderRadius: '12px',

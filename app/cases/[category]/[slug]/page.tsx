@@ -121,7 +121,7 @@ function StatsCard({
         style={{
           fontSize: '28px',
           fontWeight: 'bold',
-          color: '#0A66C2',
+          color: '#0966C3',
           margin: '0',
           fontFamily: 'var(--font-data)',
           display: 'flex',
@@ -171,7 +171,7 @@ export default async function CaseTypeDetailPage({
               display: 'inline-block',
               padding: '12px 32px',
               borderRadius: '12px',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: 'white',
               textDecoration: 'none',
               fontWeight: '600',
@@ -246,7 +246,7 @@ export default async function CaseTypeDetailPage({
       {/* Dark Navy Header Section */}
       <header
         style={{
-          background: '#1B3A5C',
+          background: '#1C3A5E',
           padding: 'clamp(20px, 4vw, 40px) 24px',
           marginBottom: 'clamp(20px, 4vw, 40px)',
         }}
@@ -307,7 +307,7 @@ export default async function CaseTypeDetailPage({
                 display: 'inline-block',
                 padding: '8px 16px',
                 borderRadius: '12px',
-                background: '#0A66C2',
+                background: '#0966C3',
                 fontSize: '12px',
                 fontWeight: '600',
                 color: '#FFFFFF',
@@ -460,7 +460,7 @@ export default async function CaseTypeDetailPage({
                     style={{
                       position: 'absolute',
                       left: '0',
-                      color: '#0A66C2',
+                      color: '#0966C3',
                     }}
                   >
                     •
@@ -478,7 +478,7 @@ export default async function CaseTypeDetailPage({
             display: inline-block;
             padding: 14px 36px;
             border-radius: 12px;
-            background: #0A66C2;
+            background: #0966C3;
             color: white;
             text-decoration: none;
             font-weight: 600;
@@ -503,7 +503,7 @@ export default async function CaseTypeDetailPage({
         `}</style>
         <div
           style={{
-            background: '#1B3A5C',
+            background: '#1C3A5E',
             color: '#FFFFFF',
             borderRadius: '12px',
             padding: '48px 40px',
@@ -554,7 +554,7 @@ export default async function CaseTypeDetailPage({
               box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             }
             .related-case-card:hover {
-              border-color: #0A66C2;
+              border-color: #0966C3;
               background: #FFFFFF;
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
               transform: translateY(-1px);

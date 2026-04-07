@@ -205,7 +205,7 @@ function HeroLeft() {
       <div className="flex items-center gap-2.5 mb-4">
         <div className="flex">
           {[
-            { initials: 'JM', bg: '#0A66C2' },
+            { initials: 'JM', bg: '#0966C3' },
             { initials: 'SR', bg: '#004182' },
             { initials: 'TK', bg: '#057642' },
             { initials: 'AL', bg: '#060d1a' },

@@ -69,7 +69,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
         onClick={() => setIsOpen(true)}
         style={{
           padding: '10px 20px',
-          background: '#0A66C2',
+          background: '#0966C3',
           color: '#FFFFFF',
           border: 'none',
           borderRadius: '8px',
@@ -88,7 +88,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
           e.currentTarget.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.25)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.background = '#0A66C2';
+          e.currentTarget.style.background = '#0966C3';
           e.currentTarget.style.transform = 'translateY(0)';
           e.currentTarget.style.boxShadow = 'none';
         }}
@@ -210,7 +210,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     }}
                     onFocus={(e) => {
                       if (!error) {
-                        e.currentTarget.style.borderColor = '#0A66C2';
+                        e.currentTarget.style.borderColor = '#0966C3';
                         e.currentTarget.style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.1)';
                       }
                     }}
@@ -256,7 +256,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                     style={{
                       flex: 1,
                       padding: '10px 16px',
-                      background: loading || !email.trim() ? '#D1D5DB' : '#0A66C2',
+                      background: loading || !email.trim() ? '#D1D5DB' : '#0966C3',
                       color: '#FFFFFF',
                       border: 'none',
                       borderRadius: '8px',
@@ -274,7 +274,7 @@ export default function JudgeAlertButton({ judgeId, judgeName }: JudgeAlertButto
                       }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = '#0A66C2';
+                      e.currentTarget.style.background = '#0966C3';
                       e.currentTarget.style.transform = 'translateY(0)';
                     }}
                   >

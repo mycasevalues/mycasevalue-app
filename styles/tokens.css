@@ -2,18 +2,18 @@
    MYCASEVALUE DESIGN SYSTEM — Professional Legal Data Platform
    ============================================================
    Inter (headings + body) / PT Mono (data).
-   Navy primary (#1B3A5C). LinkedIn blue accent (#0A66C2).
+   Navy primary (#1C3A5E). LinkedIn blue accent (#0966C3).
    Professional, institutional aesthetic.
    ============================================================ */
 
 :root {
   /* Brand */
-  --color-navy:        #1B3A5C;
+  --color-navy:        #1C3A5E;
   --color-navy-dark:   #122840;
   --color-navy-light:  #2A5080;
 
   /* Accent */
-  --color-accent:      #0A66C2;
+  --color-accent:      #0966C3;
   --color-accent-dark: #004182;
   --color-accent-light:#E8F4FD;
 
@@ -21,7 +21,7 @@
   --color-surface-0:   #FFFFFF;
   --color-surface-1:   #F7F8FA;
   --color-surface-2:   #EEF0F4;
-  --color-surface-nav: #1B3A5C;
+  --color-surface-nav: #1C3A5E;
 
   /* Text */
   --color-text-primary:   #0f0f0f;
@@ -157,8 +157,8 @@
   /* CTA */
   --gradient-cta:         var(--color-accent);
   --gradient-cta-hover:   var(--color-accent-dark);
-  --gradient-hero: linear-gradient(160deg, #1B3A5C 0%, #122840 50%, #1B3A5C 100%);
-  --gradient-accent: linear-gradient(to right, #0A66C2 0%, #004182 100%);
+  --gradient-hero: linear-gradient(160deg, #1C3A5E 0%, #122840 50%, #1C3A5E 100%);
+  --gradient-accent: linear-gradient(to right, #0966C3 0%, #004182 100%);
 }
 
 /* High Contrast Mode */

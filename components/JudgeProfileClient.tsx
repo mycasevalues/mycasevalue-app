@@ -388,7 +388,7 @@ export default function JudgeProfileClient({
             style={{
               padding: '12px 16px',
               background: '#EDF3FB',
-              border: '1px solid #0A66C2',
+              border: '1px solid #0966C3',
               borderRadius: '6px',
               marginBottom: '24px',
             }}
@@ -434,7 +434,7 @@ export default function JudgeProfileClient({
                             fontSize: '14px',
                             fontFamily: 'var(--font-heading)',
                             fontWeight: '700',
-                            color: '#0A66C2',
+                            color: '#0966C3',
                             textDecoration: 'none',
                             display: 'block',
                             marginBottom: '8px',
@@ -480,7 +480,7 @@ export default function JudgeProfileClient({
                                 display: 'inline-block',
                                 padding: '2px 8px',
                                 background: '#EDF3FB',
-                                border: '1px solid #0A66C2',
+                                border: '1px solid #0966C3',
                                 borderRadius: '3px',
                                 color: '#004182',
                                 fontSize: '11px',
@@ -558,7 +558,7 @@ export default function JudgeProfileClient({
       {/* Section 7: CTA / Next Steps */}
       <div
         style={{
-          background: 'linear-gradient(135deg, #0A66C2 0%, #004182 100%)',
+          background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)',
           padding: '40px',
           borderRadius: '8px',
           color: '#FFFFFF',
@@ -585,7 +585,7 @@ export default function JudgeProfileClient({
               display: 'inline-block',
               padding: '12px 24px',
               background: '#FFFFFF',
-              color: '#0A66C2',
+              color: '#0966C3',
               textDecoration: 'none',
               borderRadius: '6px',
               fontFamily: 'var(--font-body)',

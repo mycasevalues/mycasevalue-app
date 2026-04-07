@@ -122,9 +122,9 @@ export default function DeadlinesCalculatorPage() {
       `}</style>
 
       {/* Header */}
-      <header style={{ background: '#1B3A5C', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
+      <header style={{ background: '#1C3A5E', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#0A66C2', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
+          <div style={{ display: 'inline-block', background: '#0966C3', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
             FREE TOOL
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
@@ -139,9 +139,9 @@ export default function DeadlinesCalculatorPage() {
       {/* Breadcrumb */}
       <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid #E5E7EB', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
-          <Link href="/" style={{ color: '#0A66C2', textDecoration: 'none' }}>Home</Link>
+          <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
-          <Link href="/calculator" style={{ color: '#0A66C2', textDecoration: 'none' }}>Calculator</Link>
+          <Link href="/calculator" style={{ color: '#0966C3', textDecoration: 'none' }}>Calculator</Link>
           <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
           <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Court Deadlines</span>
         </div>
@@ -206,13 +206,13 @@ export default function DeadlinesCalculatorPage() {
                 {/* Horizontal Timeline */}
                 <div style={{ position: 'relative', padding: '20px 0 0' }}>
                   {/* Timeline line */}
-                  <div style={{ position: 'absolute', top: 28, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #0A66C2, #004182)', borderRadius: 2 }} />
+                  <div style={{ position: 'absolute', top: 28, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #0966C3, #004182)', borderRadius: 2 }} />
 
                   {/* Event markers */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', position: 'relative', minHeight: 80 }}>
                     {/* Start marker */}
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 0, position: 'relative' }}>
-                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: '#0A66C2', border: '3px solid #FFF', boxShadow: '0 0 0 2px #0A66C2', zIndex: 2 }} />
+                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: '#0966C3', border: '3px solid #FFF', boxShadow: '0 0 0 2px #0966C3', zIndex: 2 }} />
                       <div style={{ fontSize: 10, color: '#4B5563', marginTop: 8, whiteSpace: 'nowrap', fontWeight: 600, fontFamily: 'var(--font-body)' }}>
                         Day 0
                       </div>
@@ -266,7 +266,7 @@ export default function DeadlinesCalculatorPage() {
                     style={{
                       background: '#FFF',
                       border: `1px solid ${past ? '#FECACA' : '#E5E7EB'}`,
-                      borderLeft: `4px solid ${past ? '#CC1016' : daysFromNow !== null && daysFromNow <= 14 ? '#D97706' : '#0A66C2'}`,
+                      borderLeft: `4px solid ${past ? '#CC1016' : daysFromNow !== null && daysFromNow <= 14 ? '#D97706' : '#0966C3'}`,
                       borderRadius: 12,
                       padding: 'clamp(16px, 3vw, 24px)',
                       animation: `slideUp 0.4s ease-out ${i * 0.08}s both`,

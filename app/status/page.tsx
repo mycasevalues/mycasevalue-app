@@ -360,7 +360,7 @@ export default function StatusPage() {
             <a
               href="mailto:status@mycasevalue.com"
               style={{
-                color: '#0A66C2',
+                color: '#0966C3',
                 textDecoration: 'none',
               }}
             >

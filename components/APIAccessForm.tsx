@@ -272,7 +272,7 @@ export default function APIAccessForm() {
           disabled={formState.loading}
           style={{
             padding: '12px 20px',
-            backgroundColor: formState.loading ? '#A5A5A5' : '#0A66C2',
+            backgroundColor: formState.loading ? '#A5A5A5' : '#0966C3',
             color: '#FFFFFF',
             border: 'none',
             borderRadius: '8px',

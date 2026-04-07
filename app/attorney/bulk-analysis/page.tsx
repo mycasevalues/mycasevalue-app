@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 export default function BulkAnalysisPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
-      <div style={{ background: '#1B3A5C', padding: '32px 20px' }}>
+      <div style={{ background: '#1C3A5E', padding: '32px 20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <Link
             href="/attorney"
             style={{
               fontSize: '13px',
-              color: '#0A66C2',
+              color: '#0966C3',
               textDecoration: 'none',
               fontWeight: 500,
               display: 'inline-flex',
@@ -54,7 +54,7 @@ export default function BulkAnalysisPage() {
                 height="24"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#0A66C2"
+                stroke="#0966C3"
                 strokeWidth="2"
               >
                 <line x1="12" y1="20" x2="12" y2="10" />

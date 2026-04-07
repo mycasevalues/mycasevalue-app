@@ -88,7 +88,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
         .attr('stroke-width', 1)
         .attr('cursor', 'pointer')
         .on('mouseenter', function (event: MouseEvent, d: any) {
-          d3.select(this).attr('stroke', '#0A66C2').attr('stroke-width', 2);
+          d3.select(this).attr('stroke', '#0966C3').attr('stroke-width', 2);
           const fips = String(d.id).padStart(2, '0');
           const sd = stateMap.get(fips);
           if (sd) {
@@ -151,7 +151,7 @@ export default function USChoropleth({ stateData }: USChoroplethProps) {
             left: tooltip.x,
             top: tooltip.y,
             transform: 'translate(-50%, -100%)',
-            background: '#1B3A5C',
+            background: '#1C3A5E',
             color: '#FFFFFF',
             padding: '12px 16px',
             borderRadius: '8px',

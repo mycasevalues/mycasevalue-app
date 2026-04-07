@@ -98,7 +98,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
               fontFamily: 'var(--font-display)',
               fontSize: '1.75rem',
               fontWeight: 600,
-              color: '#0A66C2',
+              color: '#0966C3',
               margin: 0,
             }}
           >
@@ -122,7 +122,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
               fontFamily: 'var(--font-display)',
               fontSize: '1.75rem',
               fontWeight: 600,
-              color: '#0A66C2',
+              color: '#0966C3',
               margin: 0,
             }}
           >
@@ -216,7 +216,7 @@ export default function APIUsagePanel({ mockMode = true }: APIUsagePanelProps) {
                     style={{
                       height: '100%',
                       width: `${endpoint.percentage}%`,
-                      background: '#0A66C2',
+                      background: '#0966C3',
                       transition: 'width 200ms ease',
                     }}
                   />

@@ -164,20 +164,20 @@ export default function DeadlineCalculatorPage() {
     <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       <style>{`
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
-        input:focus, select:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus, select:focus { border-color: #0966C3 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         @media (max-width: 640px) { h1 { font-size: clamp(28px, 5vw, 40px); } }
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '40px 24px' }}>
+      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '40px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
-          <Link href="/attorney" style={{ fontSize: '13px', color: '#0A66C2', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
+          <Link href="/attorney" style={{ fontSize: '13px', color: '#0966C3', textDecoration: 'none', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px', marginBottom: '16px' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
             Back to Attorney Tools
           </Link>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
             <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'rgba(10, 102, 194, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
               </svg>
             </div>
@@ -191,7 +191,7 @@ export default function DeadlineCalculatorPage() {
             Calculate all critical civil litigation deadlines using Federal Rules of Civil Procedure defaults
           </p>
           <div style={{ marginTop: '12px', display: 'inline-block', background: 'rgba(10, 102, 194, 0.1)', padding: '6px 12px', borderRadius: '12px', border: '1px solid rgba(10, 102, 194, 0.3)' }}>
-            <span style={{ fontSize: '12px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
               Free during public beta
             </span>
           </div>
@@ -230,7 +230,7 @@ export default function DeadlineCalculatorPage() {
               disabled={allDeadlines.length === 0 || !caseFiledDate}
               style={{
                 padding: '8px 16px',
-                backgroundColor: caseFiledDate ? '#0A66C2' : '#D1D5DB',
+                backgroundColor: caseFiledDate ? '#0966C3' : '#D1D5DB',
                 color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '20px',
@@ -283,7 +283,7 @@ export default function DeadlineCalculatorPage() {
               style={{
                 padding: '12px 20px',
                 height: '42px',
-                backgroundColor: newEventName.trim() && newEventDays ? '#0A66C2' : '#D1D5DB',
+                backgroundColor: newEventName.trim() && newEventDays ? '#0966C3' : '#D1D5DB',
                 color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '20px',
@@ -360,7 +360,7 @@ export default function DeadlineCalculatorPage() {
                             {deadline.event}
                           </h3>
                           {deadline.id.startsWith('custom-') && (
-                            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', background: 'rgba(10, 102, 194, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
+                            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', background: 'rgba(10, 102, 194, 0.1)', padding: '2px 8px', borderRadius: '12px' }}>
                               Custom
                             </span>
                           )}
@@ -425,7 +425,7 @@ export default function DeadlineCalculatorPage() {
                   { rule: 'FRCP 65', title: 'Temporary Relief', content: 'Preliminary injunctions and restraining orders governed by specific timing rules' },
                 ].map((ref, i) => (
                   <div key={i} style={{ padding: '16px', background: '#F9FAFB', borderRadius: '20px', border: '1px solid #E5E7EB' }}>
-                    <h3 style={{ fontSize: '12px', fontWeight: 600, color: '#0A66C2', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    <h3 style={{ fontSize: '12px', fontWeight: 600, color: '#0966C3', margin: '0 0 6px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                       {ref.rule}
                     </h3>
                     <p style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 6px' }}>
@@ -438,7 +438,7 @@ export default function DeadlineCalculatorPage() {
                 ))}
               </div>
 
-              <div style={{ marginTop: '20px', padding: '14px', background: '#F3F4F6', borderRadius: '20px', borderLeft: '4px solid #0A66C2' }}>
+              <div style={{ marginTop: '20px', padding: '14px', background: '#F3F4F6', borderRadius: '20px', borderLeft: '4px solid #0966C3' }}>
                 <p style={{ fontSize: '12px', color: '#374151', margin: 0, lineHeight: 1.5 }}>
                   <strong>Disclaimer:</strong> These are default Federal Rules of Civil Procedure deadlines. Individual judges may modify deadlines through scheduling orders, and state courts have different rules. Always check the scheduling order entered in your case and local rules of court. Missing a deadline can result in sanctions, dismissal, or default judgment.
                 </p>

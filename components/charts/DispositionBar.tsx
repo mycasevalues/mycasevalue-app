@@ -13,7 +13,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
   const [dimensions, setDimensions] = useState({ width: 600, height: 60 });
 
   const colors: Record<string, string> = {
-    settled: '#0A66C2',
+    settled: '#0966C3',
     plaintiffVerdict: '#057642',
     defenseVerdict: '#CC1016',
     dismissed: '#999999',
@@ -190,7 +190,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
               }}
             />
             <span>
-              {labels[segment.key]}: <strong style={{ color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{segment.percentage.toFixed(1)}%</strong>
+              {labels[segment.key]}: <strong style={{ color: '#0966C3', fontFamily: 'var(--font-mono)' }}>{segment.percentage.toFixed(1)}%</strong>
             </span>
           </div>
         ))}

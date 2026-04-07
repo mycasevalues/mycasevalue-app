@@ -108,7 +108,7 @@ const container: React.CSSProperties = {
 };
 
 const header: React.CSSProperties = {
-  backgroundColor: '#1B3A5C',
+  backgroundColor: '#1C3A5E',
   padding: '32px 40px',
 };
 
@@ -162,7 +162,7 @@ const toolLink: React.CSSProperties = {
 };
 
 const toolTitle: React.CSSProperties = {
-  color: '#0A66C2',
+  color: '#0966C3',
   fontSize: '15px',
   fontWeight: 600,
   margin: '0 0 4px',
@@ -196,7 +196,7 @@ const ctaSection: React.CSSProperties = {
 
 const ctaButton: React.CSSProperties = {
   display: 'inline-block',
-  backgroundColor: '#0A66C2',
+  backgroundColor: '#0966C3',
   color: '#FFFFFF',
   padding: '14px 32px',
   borderRadius: '8px',

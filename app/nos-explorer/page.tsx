@@ -88,7 +88,7 @@ export default function NosExplorerPage() {
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       {/* Header */}
-      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#1B3A5C' }}>
+      <div style={{ borderBottom: '1px solid #E5E7EB', background: '#1C3A5E' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
           {/* Breadcrumb */}
           <div style={{ paddingTop: 24, display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, fontFamily: 'var(--font-body)' }}>
@@ -101,7 +101,7 @@ export default function NosExplorerPage() {
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               padding: '6px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600,
-              letterSpacing: '1.5px', marginBottom: 16, background: '#0A66C2',
+              letterSpacing: '1.5px', marginBottom: 16, background: '#0966C3',
               color: '#FFFFFF', textTransform: 'uppercase',
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

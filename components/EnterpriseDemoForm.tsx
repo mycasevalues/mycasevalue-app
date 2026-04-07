@@ -164,17 +164,17 @@ export default function EnterpriseDemoForm() {
     <>
       <style>{`
         .enterprise-input:focus {
-          border-color: #0A66C2 !important;
+          border-color: #0966C3 !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
         .enterprise-select:focus {
-          border-color: #0A66C2 !important;
+          border-color: #0966C3 !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
         .enterprise-textarea:focus {
-          border-color: #0A66C2 !important;
+          border-color: #0966C3 !important;
           outline: none;
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
         }
@@ -183,7 +183,7 @@ export default function EnterpriseDemoForm() {
           width: 100%;
           padding: 0 32px;
           height: 48px;
-          background: #0A66C2;
+          background: #0966C3;
           color: #FFFFFF;
           border: none;
           border-radius: 12px;

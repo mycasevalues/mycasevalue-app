@@ -144,7 +144,7 @@ export default function ParalegalHandbookCapture() {
 
       const addHeader = (text: string) => {
         doc.setFontSize(14);
-        doc.setTextColor(10, 102, 194); // #0A66C2
+        doc.setTextColor(10, 102, 194); // #0966C3
         doc.setFont('helvetica', 'bold');
         doc.text(text, margin, yPosition);
         yPosition += 10;

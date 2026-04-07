@@ -13,7 +13,7 @@ interface FeatureCardProps {
   accentColor?: string;
 }
 
-export default function FeatureCard({ title, description, icon, href, delay = 0, accentColor = '#0A66C2' }: FeatureCardProps) {
+export default function FeatureCard({ title, description, icon, href, delay = 0, accentColor = '#0966C3' }: FeatureCardProps) {
   return (
     <Link href={href} style={{ textDecoration: 'none' }}>
       <motion.div

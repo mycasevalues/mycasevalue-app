@@ -82,9 +82,9 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             <Line
               type="monotone"
               dataKey="winRate"
-              stroke="#0A66C2"
+              stroke="#0966C3"
               strokeWidth={3}
-              dot={{ fill: '#0A66C2', r: 5 }}
+              dot={{ fill: '#0966C3', r: 5 }}
               activeDot={{ r: 7 }}
               isAnimationActive={true}
             />
@@ -142,7 +142,7 @@ export default function JudgeCharts({ yearlyTrend, topCaseTypes }: JudgeChartsPr
             />
             <Bar
               dataKey="count"
-              fill="#0A66C2"
+              fill="#0966C3"
               radius={[0, 8, 8, 0]}
               isAnimationActive={true}
             />

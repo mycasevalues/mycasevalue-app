@@ -148,13 +148,13 @@ export default function ApiDocsPage() {
       />
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Hero Section */}
-        <div style={{ background: '#1B3A5C', padding: '80px 24px' }}>
+        <div style={{ background: '#1C3A5E', padding: '80px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 600,
@@ -295,7 +295,7 @@ export default function ApiDocsPage() {
                     </p>
                     <p style={{
                       fontSize: 14,
-                      color: '#0A66C2',
+                      color: '#0966C3',
                       fontFamily: 'var(--font-display)',
                       fontWeight: 600,
                       margin: 0,
@@ -315,7 +315,7 @@ export default function ApiDocsPage() {
                     </p>
                     <p style={{
                       fontSize: 14,
-                      color: '#0A66C2',
+                      color: '#0966C3',
                       fontFamily: 'var(--font-display)',
                       fontWeight: 600,
                       margin: 0,
@@ -685,7 +685,7 @@ r = requests.get(
           <section style={{
             padding: 48,
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, #0A66C2 0%, #004182 100%)',
+            background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)',
             textAlign: 'center',
             marginBottom: 64,
           }}>
@@ -713,7 +713,7 @@ r = requests.get(
                 display: 'inline-block',
                 padding: '14px 32px',
                 backgroundColor: '#FFFFFF',
-                color: '#0A66C2',
+                color: '#0966C3',
                 fontSize: 15,
                 fontWeight: 700,
                 borderRadius: '12px',

@@ -41,8 +41,8 @@ const userTypeData = [
   { name: 'Students', value: 1600, percentage: 12 },
 ];
 
-const COLORS = ['#0A66C2', '#004182', '#004182', '#5B21B6', '#4C1D95', '#D4D4D8'];
-const USER_COLORS = ['#0A66C2', '#A78BFA', '#C4B5FD', '#DDD6FE'];
+const COLORS = ['#0966C3', '#004182', '#004182', '#5B21B6', '#4C1D95', '#D4D4D8'];
+const USER_COLORS = ['#0966C3', '#A78BFA', '#C4B5FD', '#DDD6FE'];
 
 export default function AnalyticsPage() {
   return (
@@ -95,7 +95,7 @@ export default function AnalyticsPage() {
         }
 
         .header {
-          background: #1B3A5C;
+          background: #1C3A5E;
           color: #FFFFFF;
           padding: 48px 24px;
           border-bottom: 1px solid #E5E7EB;
@@ -208,7 +208,7 @@ export default function AnalyticsPage() {
         .info-banner {
           background: #FFFFFF;
           border: 1px solid #E5E7EB;
-          border-left: 4px solid #0A66C2;
+          border-left: 4px solid #0966C3;
           border-radius: 12px;
           padding: 20px;
           margin-bottom: 40px;
@@ -303,7 +303,7 @@ export default function AnalyticsPage() {
                 <Line
                   type="monotone"
                   dataKey="searches"
-                  stroke="#0A66C2"
+                  stroke="#0966C3"
                   strokeWidth={2}
                   dot={false}
                   isAnimationActive={true}
@@ -332,7 +332,7 @@ export default function AnalyticsPage() {
                   }}
                   formatter={(value) => value.toLocaleString()}
                 />
-                <Bar dataKey="value" fill="#0A66C2" radius={[0, 12, 12, 0]} />
+                <Bar dataKey="value" fill="#0966C3" radius={[0, 12, 12, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -349,7 +349,7 @@ export default function AnalyticsPage() {
                   labelLine={false}
                   label={(entry) => `${entry.name} (${Math.round((entry.percent || 0) * 100)}%)`}
                   outerRadius={100}
-                  fill="#0A66C2"
+                  fill="#0966C3"
                   dataKey="value"
                 >
                   {Array.from({ length: userTypeData.length }, (_, i) => (
@@ -384,7 +384,7 @@ export default function AnalyticsPage() {
                   labelLine={false}
                   label={(entry) => `${entry.name} (${Math.round((entry.percent || 0) * 100)}%)`}
                   outerRadius={100}
-                  fill="#0A66C2"
+                  fill="#0966C3"
                   dataKey="value"
                 >
                   {Array.from({ length: caseTypeData.length }, (_, i) => (
@@ -421,7 +421,7 @@ export default function AnalyticsPage() {
             style={{
               display: 'inline-block',
               padding: '10px 20px',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               borderRadius: '20px',
               textDecoration: 'none',

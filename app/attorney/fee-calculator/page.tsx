@@ -133,13 +133,13 @@ export default function FeeCalculatorPage() {
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       {/* Header */}
-      <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0A66C2', flexShrink: 0 }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Fee Calculation Tool
             </span>
           </div>
@@ -221,9 +221,9 @@ export default function FeeCalculatorPage() {
                       style={{
                         padding: '12px 14px',
                         borderRadius: '12px',
-                        border: `1px solid ${feeArrangement === opt.val ? '#0A66C2' : '#E5E7EB'}`,
+                        border: `1px solid ${feeArrangement === opt.val ? '#0966C3' : '#E5E7EB'}`,
                         backgroundColor: feeArrangement === opt.val ? 'rgba(10, 102, 194, 0.08)' : '#FAFBFC',
-                        color: feeArrangement === opt.val ? '#0A66C2' : '#4B5563',
+                        color: feeArrangement === opt.val ? '#0966C3' : '#4B5563',
                         fontSize: '13px',
                         fontWeight: 600,
                         cursor: 'pointer',
@@ -232,7 +232,7 @@ export default function FeeCalculatorPage() {
                         textAlign: 'left',
                       }}
                     >
-                      <div style={{ fontWeight: 600, color: feeArrangement === opt.val ? '#0A66C2' : '#0f0f0f' }}>
+                      <div style={{ fontWeight: 600, color: feeArrangement === opt.val ? '#0966C3' : '#0f0f0f' }}>
                         {opt.label}
                       </div>
                       <div style={{ fontSize: '11px', fontWeight: 400, marginTop: '2px' }}>
@@ -253,7 +253,7 @@ export default function FeeCalculatorPage() {
               {/* Error */}
               {error && (
                 <div style={{ padding: '12px 14px', borderRadius: '12px', backgroundColor: 'rgba(204,16,25,0.08)', border: '1px solid #E5E7EB' }}>
-                  <p style={{ fontSize: '13px', color: '#0A66C2', margin: 0, fontFamily: 'var(--font-body)' }}>{error}</p>
+                  <p style={{ fontSize: '13px', color: '#0966C3', margin: 0, fontFamily: 'var(--font-body)' }}>{error}</p>
                 </div>
               )}
 
@@ -264,7 +264,7 @@ export default function FeeCalculatorPage() {
                 style={{
                   width: '100%',
                   padding: '14px',
-                  backgroundColor: loading || !caseType || !caseValue ? '#E5E7EB' : '#0A66C2',
+                  backgroundColor: loading || !caseType || !caseValue ? '#E5E7EB' : '#0966C3',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '20px',
@@ -287,8 +287,8 @@ export default function FeeCalculatorPage() {
                     width: '100%',
                     padding: '12px',
                     backgroundColor: '#FFFFFF',
-                    color: '#0A66C2',
-                    border: '1px solid #0A66C2',
+                    color: '#0966C3',
+                    border: '1px solid #0966C3',
                     borderRadius: '20px',
                     fontSize: '13px',
                     fontWeight: 600,
@@ -323,7 +323,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: '#0369A1', fontWeight: 600, marginBottom: '4px' }}>
                         25% Contingency
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency25.toLocaleString()}
                       </div>
                     </div>
@@ -331,7 +331,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: '#0369A1', fontWeight: 600, marginBottom: '4px' }}>
                         33% Contingency (Typical)
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency33.toLocaleString()}
                       </div>
                     </div>
@@ -339,7 +339,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: '#0369A1', fontWeight: 600, marginBottom: '4px' }}>
                         40% Contingency (Higher Risk)
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.contingency40.toLocaleString()}
                       </div>
                     </div>
@@ -385,7 +385,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: '#0369A1', fontWeight: 600, marginBottom: '4px' }}>
                         Estimated Hours (Case Phases)
                       </div>
-                      <div style={{ fontSize: '16px', fontWeight: 700, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '16px', fontWeight: 700, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                         {feeData.hourly.estimatedHours} hours
                       </div>
                     </div>
@@ -396,7 +396,7 @@ export default function FeeCalculatorPage() {
                         <div style={{ fontSize: '13px', color: '#0369A1', marginTop: '4px' }}>
                           ${feeData.hourly.lowRate}/hr
                         </div>
-                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#0A66C2', marginTop: '6px' }}>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#0966C3', marginTop: '6px' }}>
                           ${feeData.hourly.totalLow.toLocaleString()}
                         </div>
                       </div>
@@ -405,7 +405,7 @@ export default function FeeCalculatorPage() {
                         <div style={{ fontSize: '13px', color: '#0369A1', marginTop: '4px' }}>
                           ${feeData.hourly.highRate}/hr
                         </div>
-                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#0A66C2', marginTop: '6px' }}>
+                        <div style={{ fontSize: '14px', fontWeight: 700, color: '#0966C3', marginTop: '6px' }}>
                           ${feeData.hourly.totalHigh.toLocaleString()}
                         </div>
                       </div>
@@ -425,7 +425,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: '#0369A1', fontWeight: 600, marginBottom: '4px' }}>
                         Upfront Retainer
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.retainer.toLocaleString()}
                       </div>
                     </div>
@@ -433,7 +433,7 @@ export default function FeeCalculatorPage() {
                       <div style={{ fontSize: '12px', color: '#0369A1', fontWeight: 600, marginBottom: '4px' }}>
                         Ongoing Hourly Rate
                       </div>
-                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                      <div style={{ fontSize: '18px', fontWeight: 700, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                         ${feeData.hybrid.hourlyRate}/hr
                       </div>
                     </div>
@@ -624,7 +624,7 @@ export default function FeeCalculatorPage() {
         {!feeData && (
           <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z" />
               </svg>
               <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>
@@ -636,7 +636,7 @@ export default function FeeCalculatorPage() {
             </div>
 
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <polyline points="3 6 9 12 3 18" />
               </svg>
@@ -649,7 +649,7 @@ export default function FeeCalculatorPage() {
             </div>
 
             <div style={cardStyle}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2" style={{ marginBottom: '12px' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2" style={{ marginBottom: '12px' }}>
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M9 9h6v6H9z" />
               </svg>
@@ -666,7 +666,7 @@ export default function FeeCalculatorPage() {
         {/* Navigation */}
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid #E5E7EB', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
           <Link href="/attorney/intake-forms" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0A66C2'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0966C3'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Intake Forms
               </p>
@@ -676,7 +676,7 @@ export default function FeeCalculatorPage() {
             </div>
           </Link>
           <Link href="/attorney/demand-letter" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0A66C2'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0966C3'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Demand Letter
               </p>
@@ -686,7 +686,7 @@ export default function FeeCalculatorPage() {
             </div>
           </Link>
           <Link href="/attorney/case-predictor" style={{ textDecoration: 'none' }}>
-            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0A66C2'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
+            <div style={{ padding: '16px', background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', cursor: 'pointer', transition: 'all 0.2s' }} onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#0966C3'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               <p style={{ fontSize: '13px', fontWeight: '600', color: '#0f0f0f', margin: '0 0 4px', fontFamily: 'var(--font-body)' }}>
                 Case Predictor
               </p>

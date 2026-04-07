@@ -175,7 +175,7 @@ export default function PACERMonitor() {
             onClick={handleAddCase}
             style={{
               padding: '10px 16px',
-              backgroundColor: '#0A66C2',
+              backgroundColor: '#0966C3',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '6px',
@@ -188,7 +188,7 @@ export default function PACERMonitor() {
               (e.target as HTMLButtonElement).style.backgroundColor = '#004182';
             }}
             onMouseLeave={(e) => {
-              (e.target as HTMLButtonElement).style.backgroundColor = '#0A66C2';
+              (e.target as HTMLButtonElement).style.backgroundColor = '#0966C3';
             }}
           >
             Add

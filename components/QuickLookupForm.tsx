@@ -138,7 +138,7 @@ export default function QuickLookupForm() {
         type="submit"
         style={{
           height: '48px',
-          background: '#0A66C2',
+          background: '#0966C3',
           color: '#FFFFFF',
           fontWeight: 600,
           fontSize: '15px',
@@ -159,7 +159,7 @@ export default function QuickLookupForm() {
         const nos = OPT_TO_NOS[caseType];
         const rd = nos ? (REAL_DATA as any)[nos] : null;
         if (!rd) return null;
-        const wrColor = (rd.wr ?? 0) >= 50 ? '#059669' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#0A66C2';
+        const wrColor = (rd.wr ?? 0) >= 50 ? '#059669' : (rd.wr ?? 0) >= 35 ? '#D97706' : '#0966C3';
         return (
           <div style={{
             background: '#F8F9FA',
@@ -214,7 +214,7 @@ export default function QuickLookupForm() {
           outline: none;
         }
         .quick-lookup-select:invalid {
-          border-color: #0A66C2 !important;
+          border-color: #0966C3 !important;
         }
         .quick-lookup-submit:hover {
           background: #B91C1C !important;

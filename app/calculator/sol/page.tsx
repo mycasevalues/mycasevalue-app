@@ -79,9 +79,9 @@ export default function SOLCalculatorPage() {
       `}</style>
 
       {/* Header */}
-      <header style={{ background: '#1B3A5C', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
+      <header style={{ background: '#1C3A5E', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#0A66C2', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
+          <div style={{ display: 'inline-block', background: '#0966C3', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
             FREE TOOL
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
@@ -96,9 +96,9 @@ export default function SOLCalculatorPage() {
       {/* Breadcrumb */}
       <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid #E5E7EB', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
-          <Link href="/" style={{ color: '#0A66C2', textDecoration: 'none' }}>Home</Link>
+          <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
-          <Link href="/calculator" style={{ color: '#0A66C2', textDecoration: 'none' }}>Calculator</Link>
+          <Link href="/calculator" style={{ color: '#0966C3', textDecoration: 'none' }}>Calculator</Link>
           <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
           <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Statute of Limitations</span>
         </div>
@@ -160,7 +160,7 @@ export default function SOLCalculatorPage() {
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>
                   Federal Statute of Limitations
                 </div>
-                <div style={{ fontSize: 'clamp(48px, 10vw, 64px)', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-display)', lineHeight: 1 }}>
+                <div style={{ fontSize: 'clamp(48px, 10vw, 64px)', fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-display)', lineHeight: 1 }}>
                   {formatPeriod(rule.years)}
                 </div>
                 <div style={{ marginTop: 12, display: 'inline-block', padding: '6px 14px', background: '#EDF3FB', borderRadius: 8, fontSize: 14, fontWeight: 600, color: '#004182', fontFamily: 'var(--font-mono)' }}>

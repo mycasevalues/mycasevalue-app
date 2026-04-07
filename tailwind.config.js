@@ -8,69 +8,68 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: { DEFAULT: '#1B3A5C', dark: '#122840', light: '#2A5080' },
-        accent: { DEFAULT: '#7C3AED', dark: '#6D28D9', light: '#EDE9FE' },
-        surface: { 0: '#FFFFFF', 1: '#F7F8FA', 2: '#EEF0F4', nav: '#1B3A5C' },
+        brand: {
+          navy:        '#1C3A5E',   // page bg / dark section bg
+          panel:       '#274464',   // raised card on dark
+          border:      '#284565',   // panel edge on dark
+          blue:        '#0966C3',   // primary CTA
+          'blue-dark': '#004182',   // button hover
+          'blue-mid':  '#1577D5',   // borders / focus rings
+          'blue-pale': '#E8F4FD',   // tints / selected states
+          white:       '#FFFFFF',   // section headers
+          link:        '#E5E7EB',   // nav links / body on dark
+          muted:       'rgba(213,216,220,0.6)',   // secondary / copyright
+          dim:         'rgba(213,216,220,0.35)',   // disclaimer / fine print
+          sep:         'rgba(213,216,220,0.4)',    // | separator
+          // Light surface (for non-dark sections)
+          surface:     '#F7F8FA',
+          'surface-2': '#EEF0F4',
+          ink:         '#1C3A5E',   // heading text on white
+          'ink-2':     '#122840',   // body text on white
+          gray:        '#4B5563',
+          'text-secondary': '#4B5563',
+          'text-muted': '#9CA3AF',
+        },
+        // Data / status colors
+        data: {
+          positive:    '#15803D',
+          negative:    '#B91C1C',
+          neutral:     '#B45309',
+          'bg-pos':    '#F0FDF4',
+          'bg-neg':    '#FEF2F2',
+          'bg-neu':    '#FFFBEB',
+        },
+        // Legacy compat — kept for existing components
+        navy: { DEFAULT: '#1C3A5E', dark: '#122840', light: '#2A5080' },
+        accent: { DEFAULT: '#0966C3', dark: '#004182', light: '#E8F4FD' },
+        surface: { 0: '#FFFFFF', 1: '#F7F8FA', 2: '#EEF0F4', nav: '#1C3A5E' },
         'text-color': {
           primary: '#111827',
           secondary: '#4B5563',
           muted: '#9CA3AF',
           inverse: '#FFFFFF',
-          accent: '#6D28D9',
+          accent: '#0966C3',
         },
         border: {
           light: '#E5E7EB',
           medium: '#D1D5DB',
           dark: '#9CA3AF',
         },
-        data: {
-          positive: '#15803D',
-          negative: '#B91C1C',
-          neutral: '#B45309',
-          'bg-pos': '#F0FDF4',
-          'bg-neg': '#FEF2F2',
-          'bg-neu': '#FFFBEB',
-        },
         badge: {
-          federal: '#1E3A5F',
+          federal: '#1C3A5E',
           'bg-federal': '#EFF6FF',
         },
-        // Legacy compat
-        midnight: { DEFAULT: '#1B3A5C', 50: '#2A5080', 100: '#1B3A5C', 200: '#122840', 800: '#F7F8FA', 900: '#FFFFFF' },
+        midnight: { DEFAULT: '#1C3A5E', 50: '#2A5080', 100: '#1C3A5E', 200: '#122840', 800: '#F7F8FA', 900: '#FFFFFF' },
         cream: { DEFAULT: '#F7F8FA', 100: '#F7F8FA', 200: '#FFFFFF' },
         gold: { DEFAULT: '#B45309', light: '#FFFBEB', dark: '#92400E' },
         emerald: { DEFAULT: '#15803D', light: '#F0FDF4', dark: '#166534' },
         coral: { DEFAULT: '#B91C1C', light: '#FEF2F2', dark: '#991B1B' },
         steel: { DEFAULT: '#9CA3AF', light: '#E5E7EB', dark: '#4B5563' },
-        brand: {
-          navy: '#1B3A5C',
-          'navy-light': '#2A5080',
-          'navy-dark': '#122840',
-          red: '#B91C1C',
-          'red-light': '#FEF2F2',
-          'red-dark': '#991B1B',
-          teal: '#6D28D9',
-          'teal-light': '#EDE9FE',
-          'teal-dark': '#4C1D95',
-          blue: '#0A66C2',
-          'blue-deep': '#004182',
-          'blue-sky': '#378ADD',
-          'blue-pale': '#E6F1FB',
-          'blue-mid': '#185FA5',
-          ink: '#060d1a',
-          'ink-2': '#0f1729',
-          slate: '#374151',
-          gray: '#6b7280',
-          muted: '#9ca3af',
-          rule: '#e5e7eb',
-          surface: '#f9fafb',
-          white: '#ffffff',
-        },
         mcv: {
-          blue: '#0A66C2',
-          pale: '#E6F1FB',
-          ink: '#0f1729',
-          surface: '#f9fafb',
+          blue: '#0966C3',
+          pale: '#E8F4FD',
+          ink: '#1C3A5E',
+          surface: '#F7F8FA',
         },
         outcome: {
           win: '#15803D',
@@ -91,16 +90,17 @@ module.exports = {
           secondary: '#4B5563',
           muted: '#9CA3AF',
           inverse: '#FFFFFF',
-          link: '#6D28D9',
+          link: '#0966C3',
         },
       },
       fontFamily: {
-        display: ['Montserrat', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-        body: ['Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-        data: ['PT Mono', 'Menlo', 'monospace'],
+        sans: ['var(--font-inter)', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        body: ['var(--font-inter)', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['var(--font-inter)', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         mono: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
-        jakarta: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'sans-serif'],
+        data: ['var(--font-plex-mono)', 'IBM Plex Mono', 'monospace'],
         inter: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        jakarta: ['var(--font-jakarta)', 'Plus Jakarta Sans', 'sans-serif'],
       },
       fontSize: {
         'display-2xl': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
@@ -136,14 +136,16 @@ module.exports = {
         'brand-btn-lg': '0 4px 18px rgba(10,102,194,.28)',
       },
       borderRadius: {
-        card: '6px',
-        'card-sm': '4px',
+        'btn': '20px',    // pill — all primary buttons
+        'card': '12px',   // cards, panels, CTA box
+        'icon': '36%',    // cube mark tile only
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '20px',
+        full: '9999px',
         badge: '2px',
         pill: '9999px',
-        'brand-chip': '4px',
-        'brand-btn': '8px',
-        'brand-card': '10px',
-        'brand-modal': '20px',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease forwards',

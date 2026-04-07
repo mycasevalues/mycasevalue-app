@@ -25,7 +25,7 @@ export default function SpanishTrendsPage() {
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: '#1B3A5C', borderColor: '#E5E7EB' }}>
+      <div className="border-b" style={{ background: '#1C3A5E', borderColor: '#E5E7EB' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">
@@ -38,7 +38,7 @@ export default function SpanishTrendsPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}>
             ANÁLISIS
           </div>
 
@@ -66,7 +66,7 @@ export default function SpanishTrendsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 border text-center" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
-              <div className="text-3xl font-bold mb-2" style={{ color: '#0A66C2' }}>5.1M+</div>
+              <div className="text-3xl font-bold mb-2" style={{ color: '#0966C3' }}>5.1M+</div>
               <p className="text-sm" style={{ color: '#4B5563' }}>Casos federales analizados</p>
             </div>
 
@@ -76,7 +76,7 @@ export default function SpanishTrendsPage() {
             </div>
 
             <div className="p-6 border text-center" style={{ borderColor: '#E5E7EB', background: '#FFFFFF', borderRadius: '12px' }}>
-              <div className="text-3xl font-bold mb-2" style={{ color: '#0A66C2' }}>94</div>
+              <div className="text-3xl font-bold mb-2" style={{ color: '#0966C3' }}>94</div>
               <p className="text-sm" style={{ color: '#4B5563' }}>Distritos federales</p>
             </div>
 

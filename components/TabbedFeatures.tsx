@@ -102,7 +102,7 @@ const TabbedFeatures: React.FC = () => {
           <p
             style={{
               fontSize: '11px',
-              color: '#0A66C2',
+              color: '#0966C3',
               textTransform: 'uppercase',
               fontWeight: 600,
               letterSpacing: '0.08em',
@@ -176,7 +176,7 @@ const TabbedFeatures: React.FC = () => {
                   style={{
                     fontSize: '15px',
                     fontWeight: 600,
-                    color: activeTab === index ? '#0A66C2' : '#4B5563',
+                    color: activeTab === index ? '#0966C3' : '#4B5563',
                     margin: '0 0 8px 0',
                     fontFamily: 'var(--font-display, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)',
                     transition: 'color 0.2s ease',
@@ -206,7 +206,7 @@ const TabbedFeatures: React.FC = () => {
                     left: 0,
                     right: 0,
                     height: activeTab === index ? '3px' : '0px',
-                    backgroundColor: '#0A66C2',
+                    backgroundColor: '#0966C3',
                     transition: 'height 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
                   }}
                 />
@@ -272,7 +272,7 @@ const TabbedFeatures: React.FC = () => {
         }
 
         .tabbed-features-grid button:focus-visible {
-          outline: 2px solid #0A66C2;
+          outline: 2px solid #0966C3;
           outline-offset: -2px;
         }
 
@@ -327,7 +327,7 @@ const WinRatePreview: React.FC = () => (
             }}
           >
             <span style={{ color: '#0f0f0f', fontWeight: 500 }}>{item.label}</span>
-            <span style={{ color: '#0A66C2', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{item.rate}%</span>
+            <span style={{ color: '#0966C3', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{item.rate}%</span>
           </div>
           <div
             style={{
@@ -340,7 +340,7 @@ const WinRatePreview: React.FC = () => (
             <div
               style={{
                 height: '100%',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 width: `${item.rate}%`,
                 borderRadius: '12px',
               }}
@@ -377,7 +377,7 @@ const SettlementPreview: React.FC = () => (
           style={{
             padding: '16px',
             backgroundColor: item.label === 'Median' ? '#F0F0F0' : '#FFFFFF',
-            border: item.label === 'Median' ? '2px solid #0A66C2' : '1px solid #E5E7EB',
+            border: item.label === 'Median' ? '2px solid #0966C3' : '1px solid #E5E7EB',
             borderRadius: '12px',
             textAlign: 'center',
           }}
@@ -526,7 +526,7 @@ const DistrictComparisonPreview: React.FC = () => (
         >
           <div style={{ fontWeight: 500, color: '#0f0f0f' }}>{item.district}</div>
           <div>{item.cases.toLocaleString()}</div>
-          <div style={{ color: '#0A66C2', fontWeight: 600 }}>{item.rate}</div>
+          <div style={{ color: '#0966C3', fontWeight: 600 }}>{item.rate}</div>
         </div>
       ))}
     </div>
@@ -553,7 +553,7 @@ const AIPredictionsPreview: React.FC = () => (
         style={{
           fontSize: '28px',
           fontWeight: 600,
-          color: '#0A66C2',
+          color: '#0966C3',
           marginBottom: '8px',
         }}
       >
@@ -595,7 +595,7 @@ const AIPredictionsPreview: React.FC = () => (
             <div
               style={{
                 height: '100%',
-                backgroundColor: item.prob > 50 ? '#0A66C2' : item.prob > 25 ? '#4B5563' : '#B0BEC5',
+                backgroundColor: item.prob > 50 ? '#0966C3' : item.prob > 25 ? '#4B5563' : '#B0BEC5',
                 width: `${item.prob}%`,
                 borderRadius: '12px',
               }}

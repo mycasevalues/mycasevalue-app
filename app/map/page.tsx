@@ -107,7 +107,7 @@ interface StateData {
 function getWinRateColor(winRate: number): string {
   if (winRate >= 50) return '#059669'; // green
   if (winRate >= 35) return '#FF9D00'; // amber
-  return '#0A66C2'; // red
+  return '#0966C3'; // red
 }
 
 // Helper function to get top/bottom states
@@ -240,7 +240,7 @@ export default function DistrictHeatmapPage() {
         }
         .state-card:hover {
           box-shadow: 0 2px 8px rgba(0, 23, 46, 0.1);
-          border-color: #0A66C2;
+          border-color: #0966C3;
         }
       `}</style>
 
@@ -251,7 +251,7 @@ export default function DistrictHeatmapPage() {
 
       <div style={{ backgroundColor: '#F7F8FA', minHeight: '100vh' }}>
         {/* Header */}
-        <header style={{ backgroundColor: '#1B3A5C', borderBottom: '1px solid #E5E7EB' }}>
+        <header style={{ backgroundColor: '#1C3A5E', borderBottom: '1px solid #E5E7EB' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '48px 24px' }}>
             {/* Breadcrumb */}
             <nav style={{ fontSize: '14px', color: '#FFFFFF', marginBottom: '16px', opacity: 0.85, fontFamily: 'var(--font-body)' }}>
@@ -265,7 +265,7 @@ export default function DistrictHeatmapPage() {
               <span
                 style={{
                   display: 'inline-block',
-                  backgroundColor: '#0A66C2',
+                  backgroundColor: '#0966C3',
                   color: '#FFFFFF',
                   padding: '6px 12px',
                   borderRadius: '12px',
@@ -562,7 +562,7 @@ export default function DistrictHeatmapPage() {
                   boxSizing: 'border-box',
                   transition: 'border-color 0.2s ease',
                 }}
-                onFocus={(e) => (e.target.style.borderColor = '#0A66C2')}
+                onFocus={(e) => (e.target.style.borderColor = '#0966C3')}
                 onBlur={(e) => (e.target.style.borderColor = '#E5E7EB')}
               />
             </div>
@@ -600,7 +600,7 @@ export default function DistrictHeatmapPage() {
                   transition: 'border-color 0.2s ease',
                   cursor: 'pointer',
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = '#0A66C2')}
+                onFocus={(e) => (e.currentTarget.style.borderColor = '#0966C3')}
                 onBlur={(e) => (e.currentTarget.style.borderColor = '#E5E7EB')}
               >
                 <option value="name">Name (A-Z)</option>
@@ -621,7 +621,7 @@ export default function DistrictHeatmapPage() {
               }}
             >
               {filteredStates.map((state) => {
-                const barColor = state.winRate >= 55 ? '#059669' : state.winRate < 45 ? '#0A66C2' : '#004182';
+                const barColor = state.winRate >= 55 ? '#059669' : state.winRate < 45 ? '#0966C3' : '#004182';
                 const districtSlug = state.code.toLowerCase();
                 return (
                   <a
@@ -933,7 +933,7 @@ export default function DistrictHeatmapPage() {
               padding: '32px',
               textAlign: 'center',
               marginBottom: '48px',
-              backgroundColor: '#1B3A5C',
+              backgroundColor: '#1C3A5E',
             }}
           >
             <h2
@@ -967,7 +967,7 @@ export default function DistrictHeatmapPage() {
                 borderRadius: '12px',
                 fontWeight: '600',
                 color: '#FFFFFF',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 textDecoration: 'none',
                 fontSize: '14px',
                 fontFamily: 'var(--font-body)',
@@ -975,7 +975,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#D01419')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0A66C2')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0966C3')}
             >
               Go to Case Calculator
             </a>
@@ -1015,7 +1015,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#0A66C2';
+                e.currentTarget.style.borderColor = '#0966C3';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
@@ -1027,7 +1027,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: '#1B3A5C',
+                  color: '#1C3A5E',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1059,7 +1059,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#0A66C2';
+                e.currentTarget.style.borderColor = '#0966C3';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
@@ -1071,7 +1071,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: '#1B3A5C',
+                  color: '#1C3A5E',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1103,7 +1103,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#0A66C2';
+                e.currentTarget.style.borderColor = '#0966C3';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
@@ -1115,7 +1115,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: '#1B3A5C',
+                  color: '#1C3A5E',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}
@@ -1147,7 +1147,7 @@ export default function DistrictHeatmapPage() {
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#0A66C2';
+                e.currentTarget.style.borderColor = '#0966C3';
                 e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 23, 46, 0.1)';
               }}
               onMouseLeave={(e) => {
@@ -1159,7 +1159,7 @@ export default function DistrictHeatmapPage() {
                 style={{
                   fontSize: '16px',
                   fontWeight: '600',
-                  color: '#1B3A5C',
+                  color: '#1C3A5E',
                   margin: '0 0 8px 0',
                   fontFamily: 'var(--font-display)',
                 }}

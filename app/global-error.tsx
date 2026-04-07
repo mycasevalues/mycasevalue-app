@@ -19,7 +19,7 @@ export default function GlobalError({
         <title>Error — MyCaseValue</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1B3A5C" />
+        <meta name="theme-color" content="#1C3A5E" />
         <style>{`
           body {
             margin: 0;
@@ -120,7 +120,7 @@ export default function GlobalError({
                   alignItems: 'center',
                   gap: 8,
                   padding: '12px 24px',
-                  background: '#0A66C2',
+                  background: '#0966C3',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '12px',
@@ -131,11 +131,11 @@ export default function GlobalError({
                   boxShadow: 'none',
                 }}
                 onMouseEnter={(e) => {
-                  (e.target as HTMLButtonElement).style.background = '#0A66C2';
+                  (e.target as HTMLButtonElement).style.background = '#0966C3';
                   (e.target as HTMLButtonElement).style.boxShadow = 'none';
                 }}
                 onMouseLeave={(e) => {
-                  (e.target as HTMLButtonElement).style.background = '#0A66C2';
+                  (e.target as HTMLButtonElement).style.background = '#0966C3';
                   (e.target as HTMLButtonElement).style.boxShadow = 'none';
                 }}
               >

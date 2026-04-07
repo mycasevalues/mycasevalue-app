@@ -65,7 +65,7 @@ export default function AboutPage() {
           letter-spacing: 1.5px;
           text-transform: uppercase;
           background: #FFF3F4;
-          color: #0A66C2;
+          color: #0966C3;
         }
 
         .mission-hero h1 {
@@ -123,7 +123,7 @@ export default function AboutPage() {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: #0A66C2;
+          background: #0966C3;
           color: #FFFFFF;
           font-family: var(--font-display);
           font-weight: 600;
@@ -169,7 +169,7 @@ export default function AboutPage() {
         }
 
         .source-card:hover {
-          border-color: #0A66C2;
+          border-color: #0966C3;
           box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
@@ -225,7 +225,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 2rem;
           font-weight: 600;
-          color: #0A66C2;
+          color: #0966C3;
           line-height: 1.2;
         }
 
@@ -309,7 +309,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 0.875rem;
           font-weight: 600;
-          background: #0A66C2;
+          background: #0966C3;
           color: #FFFFFF;
           text-decoration: none;
           transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -364,7 +364,7 @@ export default function AboutPage() {
           font-family: var(--font-display);
           font-size: 2.5rem;
           font-weight: 600;
-          color: #0A66C2;
+          color: #0966C3;
           line-height: 1;
           margin-bottom: 0.5rem;
         }
@@ -394,7 +394,7 @@ export default function AboutPage() {
         .differentiator-card {
           padding: 1.5rem;
           border-radius: 12px;
-          border-top: 3px solid #0A66C2;
+          border-top: 3px solid #0966C3;
           border-left: 1px solid #E5E7EB;
           border-right: 1px solid #E5E7EB;
           border-bottom: 1px solid #E5E7EB;
@@ -441,7 +441,7 @@ export default function AboutPage() {
         }
 
         .tool-card:hover {
-          border-color: #0A66C2;
+          border-color: #0966C3;
           box-shadow: 0 4px 12px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
@@ -474,7 +474,7 @@ export default function AboutPage() {
         }
 
         .tool-link:hover {
-          color: #0A66C2;
+          color: #0966C3;
         }
 
         .contact-section {
@@ -520,7 +520,7 @@ export default function AboutPage() {
         }
 
         .contact-link:hover {
-          color: #0A66C2;
+          color: #0966C3;
         }
 
         @media (max-width: 640px) {
@@ -553,7 +553,7 @@ export default function AboutPage() {
       />
 
       {/* Header */}
-      <div className="border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.08)', background: '#1B3A5C' }}>
+      <div className="border-b" style={{ borderColor: 'rgba(0, 0, 0, 0.08)', background: '#1C3A5E' }}>
         <div className="max-w-4xl mx-auto px-6 py-12 sm:py-16">
           <div style={{ marginBottom: '12px' }}>
             <a href="/" style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', fontFamily: 'var(--font-body)', transition: 'color 0.2s ease' }}>
@@ -563,7 +563,7 @@ export default function AboutPage() {
             <span style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', fontFamily: 'var(--font-body)' }}>About</span>
           </div>
           <div className="about-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
             ABOUT US

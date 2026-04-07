@@ -135,7 +135,7 @@ export default function CookieConsent() {
               fontSize: '12px',
               fontFamily: 'var(--font-body)',
               border: 'none',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               cursor: 'pointer',
               transition: 'all 200ms',

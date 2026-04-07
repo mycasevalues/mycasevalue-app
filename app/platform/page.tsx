@@ -223,13 +223,13 @@ export default function PlatformPage() {
         }
 
         .comparison-table th {
-          background: #1B3A5C;
+          background: #1C3A5E;
           color: white;
           padding: 16px;
           text-align: left;
           font-weight: 600;
           font-size: 14px;
-          border-bottom: 2px solid #0A66C2;
+          border-bottom: 2px solid #0966C3;
         }
 
         .comparison-table td {
@@ -260,7 +260,7 @@ export default function PlatformPage() {
 
         .comparison-table .price {
           font-weight: 600;
-          color: #0A66C2;
+          color: #0966C3;
         }
 
         .features-grid {
@@ -279,7 +279,7 @@ export default function PlatformPage() {
         }
 
         .feature-card:hover {
-          border-color: #0A66C2;
+          border-color: #0966C3;
           box-shadow: 0 10px 25px rgba(10, 102, 194, 0.1);
           transform: translateY(-2px);
         }
@@ -287,7 +287,7 @@ export default function PlatformPage() {
         .feature-icon {
           width: 48px;
           height: 48px;
-          background: linear-gradient(135deg, #0A66C2 0%, #A78BFA 100%);
+          background: linear-gradient(135deg, #0966C3 0%, #A78BFA 100%);
           border-radius: 12px;
           display: flex;
           align-items: center;
@@ -316,7 +316,7 @@ export default function PlatformPage() {
           gap: 24px;
           margin: 40px 0;
           padding: 32px;
-          background: linear-gradient(135deg, #1B3A5C 0%, #2D5A8C 100%);
+          background: linear-gradient(135deg, #1C3A5E 0%, #2D5A8C 100%);
           border-radius: 12px;
         }
 
@@ -328,7 +328,7 @@ export default function PlatformPage() {
         .stat-number {
           font-size: clamp(24px, 4vw, 36px);
           font-weight: 700;
-          color: #0A66C2;
+          color: #0966C3;
           margin-bottom: 8px;
           font-family: var(--font-mono);
         }
@@ -348,7 +348,7 @@ export default function PlatformPage() {
 
         .roadmap-phase {
           background: white;
-          border: 2px solid #0A66C2;
+          border: 2px solid #0966C3;
           border-radius: 12px;
           padding: 32px;
           position: relative;
@@ -362,7 +362,7 @@ export default function PlatformPage() {
           position: absolute;
           top: -12px;
           left: 24px;
-          background: #0A66C2;
+          background: #0966C3;
           color: white;
           padding: 4px 12px;
           border-radius: 20px;
@@ -398,7 +398,7 @@ export default function PlatformPage() {
           content: '';
           width: 6px;
           height: 6px;
-          background: #0A66C2;
+          background: #0966C3;
           border-radius: 50%;
           flex-shrink: 0;
           margin-top: 2px;
@@ -412,7 +412,7 @@ export default function PlatformPage() {
         }
 
         .market-card {
-          background: linear-gradient(135deg, #0A66C2 0%, #A78BFA 100%);
+          background: linear-gradient(135deg, #0966C3 0%, #A78BFA 100%);
           padding: 28px;
           border-radius: 12px;
           color: white;
@@ -488,13 +488,13 @@ export default function PlatformPage() {
 
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Hero Section */}
-        <div style={{ background: '#1B3A5C', padding: '80px 24px' }}>
+        <div style={{ background: '#1C3A5E', padding: '80px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 600,
@@ -560,7 +560,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 Modern Technology Stack
@@ -655,7 +655,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 Data Pipeline Architecture
@@ -714,7 +714,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 Market Position
@@ -807,7 +807,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 Platform Features
@@ -860,7 +860,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 Market Opportunity
@@ -943,7 +943,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 Product Roadmap
@@ -1007,7 +1007,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 The Problem We're Solving
@@ -1044,7 +1044,7 @@ export default function PlatformPage() {
                   <div style={{
                     fontSize: 'clamp(20px, 3vw, 28px)',
                     fontWeight: 700,
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     marginBottom: 8,
                     fontFamily: 'var(--font-mono)',
                   }}>
@@ -1069,7 +1069,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 The Data: 5.1M+ Cases from 5 Official Sources
@@ -1130,7 +1130,7 @@ export default function PlatformPage() {
                       rel="noopener noreferrer"
                       style={{
                         fontSize: 13,
-                        color: '#0A66C2',
+                        color: '#0966C3',
                         textDecoration: 'none',
                         fontWeight: 500,
                       }}
@@ -1158,7 +1158,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 The AI Layer: Four Core Capabilities
@@ -1223,7 +1223,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 The Tools: Organized by Role
@@ -1255,7 +1255,7 @@ export default function PlatformPage() {
                   <h4 style={{
                     fontSize: 13,
                     fontWeight: 700,
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     marginBottom: 16,
                     margin: 0,
                     textTransform: 'uppercase',
@@ -1284,7 +1284,7 @@ export default function PlatformPage() {
                           display: 'inline-block',
                           width: 6,
                           height: 6,
-                          background: '#0A66C2',
+                          background: '#0966C3',
                           borderRadius: '50%',
                         }} />
                         {tool}
@@ -1304,7 +1304,7 @@ export default function PlatformPage() {
               <h2 style={{
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 marginBottom: 12,
               }}>
                 Six Key Audiences
@@ -1357,7 +1357,7 @@ export default function PlatformPage() {
         </div>
 
         {/* CTA Section */}
-        <div style={{ padding: '80px 24px', background: '#1B3A5C' }}>
+        <div style={{ padding: '80px 24px', background: '#1C3A5E' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto', textAlign: 'center' }}>
             <h2 style={{
               fontSize: 'clamp(28px, 4vw, 40px)',
@@ -1381,7 +1381,7 @@ export default function PlatformPage() {
               <a href="/sign-up" style={{
                 display: 'inline-block',
                 padding: '12px 32px',
-                background: '#0A66C2',
+                background: '#0966C3',
                 color: '#FFFFFF',
                 textDecoration: 'none',
                 borderRadius: '12px',
@@ -1396,8 +1396,8 @@ export default function PlatformPage() {
                 display: 'inline-block',
                 padding: '12px 32px',
                 background: 'transparent',
-                color: '#0A66C2',
-                border: '2px solid #0A66C2',
+                color: '#0966C3',
+                border: '2px solid #0966C3',
                 textDecoration: 'none',
                 borderRadius: '12px',
                 fontWeight: 600,

@@ -48,7 +48,7 @@ export default function NewsletterSignup() {
         style={{
           fontSize: '11px',
           fontWeight: 600,
-          color: '#0A66C2',
+          color: '#0966C3',
           textTransform: 'uppercase',
           letterSpacing: '0.08em',
           marginBottom: '8px',
@@ -147,7 +147,7 @@ export default function NewsletterSignup() {
               height: '48px',
               padding: '12px 16px',
               borderRadius: '12px',
-              border: `4px solid ${status === 'error' ? '#0A66C2' : '#E5E7EB'}`,
+              border: `4px solid ${status === 'error' ? '#0966C3' : '#E5E7EB'}`,
               background: '#FFFFFF',
               fontFamily: 'var(--font-body)',
               fontSize: '14px',
@@ -166,14 +166,14 @@ export default function NewsletterSignup() {
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#0A66C2';
+              e.currentTarget.style.background = '#0966C3';
             }}
             style={{
               height: '48px',
               padding: '0 24px',
               borderRadius: '12px',
               border: 'none',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               fontFamily: 'var(--font-body)',
               fontSize: '13px',
@@ -196,7 +196,7 @@ export default function NewsletterSignup() {
           style={{
             fontFamily: 'var(--font-body)',
             fontSize: '13px',
-            color: '#0A66C2',
+            color: '#0966C3',
             margin: '12px 0 0',
           }}
         >

@@ -86,7 +86,7 @@ function getTopWinRateCaseTypes(): Array<{ nos: string; label: string; wr: numbe
 // Get color for win rate — matches lib/color-scale.ts palette
 function getWinRateColor(wr: number): string {
   if (wr >= 65) return '#057642';
-  if (wr >= 50) return '#0A66C2';
+  if (wr >= 50) return '#0966C3';
   if (wr >= 35) return '#C37D16';
   if (wr >= 20) return '#CC1016';
   return '#8C1515';
@@ -142,9 +142,9 @@ export default function CasesIndexPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#0A66C2' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '9999px', fontSize: '11px', fontWeight: 600, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '16px', background: 'rgba(255,255,255,0.1)', color: '#0966C3' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
             CASE TYPES
           </div>
@@ -165,7 +165,7 @@ export default function CasesIndexPage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#1B3A5C', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#1C3A5E', marginBottom: 4 }}>
               {platformStats.totalCases.toLocaleString()}
             </div>
             <div style={{ fontSize: 12, color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -181,7 +181,7 @@ export default function CasesIndexPage() {
             </div>
           </div>
           <div>
-            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#1B3A5C', marginBottom: 4 }}>
+            <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#1C3A5E', marginBottom: 4 }}>
               {platformStats.totalCategories}
             </div>
             <div style={{ fontSize: 12, color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -239,7 +239,7 @@ export default function CasesIndexPage() {
               outline: 'none',
             }}
             onFocus={(e) => {
-              (e.target as HTMLInputElement).style.borderColor = '#0A66C2';
+              (e.target as HTMLInputElement).style.borderColor = '#0966C3';
               (e.target as HTMLInputElement).style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.08)';
             }}
             onBlur={(e) => {
@@ -261,11 +261,11 @@ export default function CasesIndexPage() {
             flex-direction: column;
           }
           .cat-card:hover {
-            border-color: #0A66C2;
-            box-shadow: 0 0 0 1px #0A66C2;
+            border-color: #0966C3;
+            box-shadow: 0 0 0 1px #0966C3;
           }
           .cat-card-arrow {
-            color: #0A66C2;
+            color: #0966C3;
             transition: transform 0.2s ease;
             margin-left: auto;
           }
@@ -310,7 +310,7 @@ export default function CasesIndexPage() {
             gap: 12px;
           }
           .quick-link-card:hover {
-            border-color: #0A66C2;
+            border-color: #0966C3;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
           }
         `}} />
@@ -407,7 +407,7 @@ export default function CasesIndexPage() {
               {topFiledCases.map((caseType, idx) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
                   <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
-                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#1B3A5C' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#1C3A5E' }}>
                       #{idx + 1}
                     </div>
                     <div>
@@ -498,7 +498,7 @@ export default function CasesIndexPage() {
 
               <Link href="/compare" style={{ textDecoration: 'none' }}>
                 <div className="quick-link-card">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
                     <path d="M12 3v18M3 9h6M15 9h6M3 15h6M15 15h6"></path>
                   </svg>
                   <div style={{ fontWeight: 600, color: '#0f0f0f' }}>Compare Cases</div>
@@ -540,7 +540,7 @@ export default function CasesIndexPage() {
           <p style={{ fontSize: 18, color: '#4B5563', margin: '0 0 32px', lineHeight: 1.6 }}>
             Start with our interactive research tool to find real outcome data for cases like yours.
           </p>
-          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
+          <a href="/cases" className="cta-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: '48px', padding: '0 40px', background: '#0966C3', color: '#FFFFFF', borderRadius: '12px', fontWeight: 600, fontSize: '14px', fontFamily: 'var(--font-display)', textDecoration: 'none', transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)', textTransform: 'uppercase', letterSpacing: '0.04em', gap: '8px' }}>
             Start Researching
             <ArrowRightIcon size={14} />
           </a>

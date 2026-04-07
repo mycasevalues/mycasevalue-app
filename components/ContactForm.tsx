@@ -53,7 +53,7 @@ export default function ContactForm() {
         .contact-input:focus { border-color: #004182 !important; outline: none; }
         .contact-submit {
           display: block; padding: 0 32px; height: 48px;
-          background: #0A66C2; color: #FFFFFF; border: none;
+          background: #0966C3; color: #FFFFFF; border: none;
           border-radius: 12px; font-size: 15px; font-weight: 600;
           cursor: pointer; transition: background 200ms;
           font-family: var(--font-body); width: 100%;

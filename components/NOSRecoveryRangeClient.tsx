@@ -80,7 +80,7 @@ export default function NOSRecoveryRangeClient({
               <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                 P25
               </div>
-              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                 {fmtK(adjustedRange.lo)}
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function NOSRecoveryRangeClient({
               <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                 P50 (Median)
               </div>
-              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                 {fmtK(adjustedRange.md)}
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function NOSRecoveryRangeClient({
               <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>
                 P75
               </div>
-              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+              <div className="font-mono" style={{ fontSize: '24px', fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                 {fmtK(adjustedRange.hi)}
               </div>
             </div>

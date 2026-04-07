@@ -38,7 +38,7 @@ export default function TrustBar() {
       }}>
         {indicators.map((item, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d={item.icon} />
             </svg>
             <span style={{ fontSize: '13px', fontWeight: 500, color: '#4B5563', fontFamily: 'var(--font-body)' }}>

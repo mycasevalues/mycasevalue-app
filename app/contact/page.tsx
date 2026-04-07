@@ -53,13 +53,13 @@ export default function ContactPage() {
       />
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Header Banner */}
-        <div style={{ background: '#1B3A5C', padding: '64px 24px' }}>
+        <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div style={{ marginBottom: 16 }}>
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 600,
@@ -243,7 +243,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -296,7 +296,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -349,7 +349,7 @@ export default function ContactPage() {
                   gap: 8,
                   fontSize: 15,
                   fontWeight: 600,
-                  color: '#0A66C2',
+                  color: '#0966C3',
                   textDecoration: 'none',
                   fontFamily: 'var(--font-body)',
                 }}
@@ -415,7 +415,7 @@ export default function ContactPage() {
             lineHeight: 1.6,
           }}
         >
-          You can also reach out via email at <a href="mailto:support@mycasevalues.com" style={{ color: '#0A66C2', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalues.com</a> or <a href="mailto:enterprise@mycasevalues.com" style={{ color: '#0A66C2', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalues.com</a>
+          You can also reach out via email at <a href="mailto:support@mycasevalues.com" style={{ color: '#0966C3', textDecoration: 'none', fontWeight: 600 }}>support@mycasevalues.com</a> or <a href="mailto:enterprise@mycasevalues.com" style={{ color: '#0966C3', textDecoration: 'none', fontWeight: 600 }}>enterprise@mycasevalues.com</a>
         </p>
         </div>
       </div>

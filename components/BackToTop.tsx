@@ -34,7 +34,7 @@ export default function BackToTop() {
         right: '24px',
         width: '44px',
         height: '44px',
-        backgroundColor: '#1B3A5C',
+        backgroundColor: '#1C3A5E',
         color: '#FFFFFF',
         border: '2px solid #FFFFFF',
         borderRadius: '12px',

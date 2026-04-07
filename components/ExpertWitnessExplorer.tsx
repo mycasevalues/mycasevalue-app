@@ -72,7 +72,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                     width: '18px',
                     height: '18px',
                     cursor: 'pointer',
-                    accentColor: '#0A66C2',
+                    accentColor: '#0966C3',
                   }}
                 />
                 <span style={{ fontSize: '14px', color: '#0f0f0f' }}>
@@ -150,9 +150,9 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               padding: '8px 14px',
               fontSize: '13px',
               fontWeight: 500,
-              color: '#0A66C2',
+              color: '#0966C3',
               background: 'transparent',
-              border: '1px solid #0A66C2',
+              border: '1px solid #0966C3',
               borderRadius: '6px',
               cursor: 'pointer',
               transition: 'all 0.2s',
@@ -226,7 +226,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                   <span style={{
                     fontSize: '16px',
                     fontWeight: 600,
-                    color: successRate >= 85 ? '#057642' : successRate >= 75 ? '#0A66C2' : '#C37D16',
+                    color: successRate >= 85 ? '#057642' : successRate >= 75 ? '#0966C3' : '#C37D16',
                   }}>
                     {successRate}%
                   </span>
@@ -236,7 +236,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                     style={{
                       height: '100%',
                       width: `${Math.min(successRate, 100)}%`,
-                      background: successRate >= 85 ? '#057642' : successRate >= 75 ? '#0A66C2' : '#C37D16',
+                      background: successRate >= 85 ? '#057642' : successRate >= 75 ? '#0966C3' : '#C37D16',
                       borderRadius: '4px',
                       transition: 'width 0.3s ease',
                     }}
@@ -309,7 +309,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                           style={{
                             fontSize: '13px',
                             fontWeight: 500,
-                            color: '#0A66C2',
+                            color: '#0966C3',
                             textDecoration: 'none',
                             wordBreak: 'break-word',
                           }}
@@ -352,7 +352,7 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
                     padding: '10px 12px',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     background: 'transparent',
                     border: '1px solid #E5E7EB',
                     borderRadius: '6px',
@@ -432,9 +432,9 @@ export default function ExpertWitnessExplorer({ experts }: ExpertWitnessExplorer
               padding: '10px 16px',
               fontSize: '14px',
               fontWeight: 600,
-              color: '#0A66C2',
+              color: '#0966C3',
               background: 'transparent',
-              border: '1px solid #0A66C2',
+              border: '1px solid #0966C3',
               borderRadius: '6px',
               cursor: 'pointer',
               transition: 'all 0.2s',

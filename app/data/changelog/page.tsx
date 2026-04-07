@@ -81,7 +81,7 @@ export default async function ChangelogPage() {
         }
         .changelog-link-pill:hover {
           background-color: #D5E3F2;
-          color: #0A66C2;
+          color: #0966C3;
           text-decoration: none;
         }
         .changelog-date-pill {
@@ -117,7 +117,7 @@ export default async function ChangelogPage() {
 
       <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
         {/* Dark Navy Hero Header */}
-        <div style={{ background: '#1B3A5C', padding: '64px 24px' }}>
+        <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             {/* Breadcrumb */}
             <div style={{ marginBottom: 24, display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -140,7 +140,7 @@ export default async function ChangelogPage() {
               <span style={{
                 display: 'inline-block',
                 padding: '6px 12px',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#FFFFFF',
                 fontSize: '11px',
                 fontWeight: 600,
@@ -318,7 +318,7 @@ export default async function ChangelogPage() {
 
             {/* Subscribe Section */}
             <div style={{
-              background: 'linear-gradient(135deg, #0A66C2 0%, #004182 100%)',
+              background: 'linear-gradient(135deg, #0966C3 0%, #004182 100%)',
               borderRadius: 12,
               padding: '48px 32px',
               color: '#FFFFFF',
@@ -370,7 +370,7 @@ export default async function ChangelogPage() {
                     borderRadius: 8,
                     border: 'none',
                     background: '#FFFFFF',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     fontWeight: 600,
                     fontSize: 14,
                     fontFamily: 'var(--font-body)',

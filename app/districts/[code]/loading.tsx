@@ -41,7 +41,7 @@ export default function Loading() {
 
       {/* Hero skeleton */}
       <header style={{
-        background: '#1B3A5C',
+        background: '#1C3A5E',
         borderBottom: '1px solid #e5e7eb',
         padding: 'clamp(32px, 6vw, 56px) 0',
       }}>

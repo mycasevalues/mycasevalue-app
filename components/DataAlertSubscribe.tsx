@@ -103,7 +103,7 @@ export default function DataAlertSubscribe({
             style={{
               width: '100%',
               padding: '12px 16px',
-              backgroundColor: '#0A66C2',
+              backgroundColor: '#0966C3',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '6px',
@@ -121,7 +121,7 @@ export default function DataAlertSubscribe({
             }}
             onMouseLeave={(e) => {
               (e.target as HTMLButtonElement).style.backgroundColor =
-                '#0A66C2';
+                '#0966C3';
             }}
           >
             <span>Get notified when data changes</span>
@@ -275,7 +275,7 @@ export default function DataAlertSubscribe({
                   disabled={isLoading}
                   style={{
                     padding: '8px 14px',
-                    backgroundColor: isLoading ? '#B0D0F5' : '#0A66C2',
+                    backgroundColor: isLoading ? '#B0D0F5' : '#0966C3',
                     color: '#FFFFFF',
                     border: 'none',
                     borderRadius: '4px',
@@ -293,7 +293,7 @@ export default function DataAlertSubscribe({
                   onMouseLeave={(e) => {
                     if (!isLoading) {
                       (e.target as HTMLButtonElement).style.backgroundColor =
-                        '#0A66C2';
+                        '#0966C3';
                     }
                   }}
                 >

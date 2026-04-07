@@ -128,17 +128,17 @@ export default function ResearchMemoPage() {
     <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
       <style>{`
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        select:focus, input:focus, textarea:focus { outline: none; border-color: #0A66C2; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: #0966C3; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C', padding: '64px 24px' }}>
+      <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Legal Research
             </span>
           </div>
@@ -212,7 +212,7 @@ export default function ResearchMemoPage() {
                 disabled={loading || !legalQuestion.trim()}
                 style={{
                   width: '100%', padding: '14px',
-                  backgroundColor: loading || !legalQuestion.trim() ? '#E5E7EB' : '#0A66C2',
+                  backgroundColor: loading || !legalQuestion.trim() ? '#E5E7EB' : '#0966C3',
                   color: '#FFF', border: 'none', borderRadius: '12px',
                   fontSize: '15px', fontWeight: 600, fontFamily: 'var(--font-display)',
                   textTransform: 'uppercase', letterSpacing: '0.04em',
@@ -231,10 +231,10 @@ export default function ResearchMemoPage() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', flexWrap: 'wrap', gap: 8 }}>
                   <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-display)' }}>
                     Research Memorandum
-                    {loading && <span style={{ fontSize: 12, color: '#0A66C2', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
+                    {loading && <span style={{ fontSize: 12, color: '#0966C3', marginLeft: 8, fontWeight: 400 }}>streaming...</span>}
                   </h2>
                   <div style={{ display: 'flex', gap: 8 }}>
-                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? '#059669' : '#0A66C2', color: '#FFF', border: 'none', borderRadius: '20px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
+                    <button onClick={copyToClipboard} disabled={loading} style={{ padding: '8px 12px', background: copied ? '#059669' : '#0966C3', color: '#FFF', border: 'none', borderRadius: '20px', fontSize: '12px', fontWeight: 600, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.5 : 1 }}>
                       {copied ? 'Copied!' : 'Copy'}
                     </button>
                     <button onClick={exportAsDocx} disabled={loading || exporting} style={{ padding: '8px 12px', background: '#004182', color: '#FFF', border: 'none', borderRadius: '20px', fontSize: '12px', fontWeight: 600, cursor: loading || exporting ? 'not-allowed' : 'pointer', opacity: loading || exporting ? 0.5 : 1 }}>
@@ -245,7 +245,7 @@ export default function ResearchMemoPage() {
 
                 <div ref={outputRef} style={{ maxHeight: '650px', overflowY: 'auto', padding: '16px', background: '#FAFBFC', borderRadius: '12px', border: '1px solid #E5E7EB', fontSize: '13px', color: '#0f0f0f', lineHeight: '1.7', fontFamily: 'var(--font-body)', whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
                   {memoText}
-                  {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: '#0A66C2', marginLeft: 2, animation: 'blink 1s infinite' }} />}
+                  {loading && <span style={{ display: 'inline-block', width: 6, height: 16, background: '#0966C3', marginLeft: 2, animation: 'blink 1s infinite' }} />}
                 </div>
               </div>
 

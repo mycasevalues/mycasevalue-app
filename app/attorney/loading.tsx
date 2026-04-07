@@ -2,7 +2,7 @@ export default function AttorneyLoading() {
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
       {/* Header skeleton */}
-      <div style={{ background: '#1B3A5C', padding: '64px 24px', borderBottom: '3px solid #0A66C2' }}>
+      <div style={{ background: '#1C3A5E', padding: '64px 24px', borderBottom: '3px solid #0966C3' }}>
         <div style={{ maxWidth: '1140px', margin: '0 auto' }}>
           <div style={{ height: '14px', width: '140px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '16px' }} />
           <div style={{ height: '40px', width: '50%', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '12px' }} />
@@ -14,7 +14,7 @@ export default function AttorneyLoading() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
           {[1, 2, 3, 4, 5, 6].map(i => (
             <div key={i} style={{
-              background: '#FFFFFF', border: '1px solid #E5E7EB', borderTop: '3px solid #0A66C2',
+              background: '#FFFFFF', border: '1px solid #E5E7EB', borderTop: '3px solid #0966C3',
               borderRadius: '12px', padding: '28px', height: '180px',
             }}>
               <div style={{ height: '18px', width: '60%', background: '#E5E7EB', borderRadius: '12px', marginBottom: '12px' }} />

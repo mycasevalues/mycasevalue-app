@@ -86,7 +86,7 @@ const DistrictBarChart = ({ districts }: DistrictBarChartProps) => {
               style={{
                 height: '100%',
                 width: `${(district.caseCount / maxCases) * 100}%`,
-                background: '#0A66C2',
+                background: '#0966C3',
                 borderRadius: '2px',
               }}
             />
@@ -107,7 +107,7 @@ const CaseList = ({ cases }: CaseListProps) => (
       const outcomeColors: Record<string, string> = {
         trial_win: '#059669',
         trial_loss: '#DC2626',
-        settlement: '#0A66C2',
+        settlement: '#0966C3',
         dismissal: '#6B7280',
         other: '#8B5CF6',
       };
@@ -132,7 +132,7 @@ const CaseList = ({ cases }: CaseListProps) => (
               style={{
                 fontSize: '13px',
                 fontWeight: 500,
-                color: '#0A66C2',
+                color: '#0966C3',
                 textDecoration: 'none',
                 display: 'block',
                 marginBottom: '4px',
@@ -190,7 +190,7 @@ const CaseTypeTable = ({ breakdown }: CaseTypeTableProps) => (
           <div style={{ fontSize: '10px', color: '#4B5563' }}>cases</div>
         </div>
         <div style={{ textAlign: 'center' }}>
-          <div className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#0A66C2' }}>
+          <div className="font-mono" style={{ fontSize: '13px', fontWeight: 600, color: '#0966C3' }}>
             {item.winRate}%
           </div>
           <div style={{ fontSize: '10px', color: '#4B5563' }}>win</div>
@@ -211,7 +211,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
     style={{
       background: '#FFFFFF',
       borderRadius: '12px',
-      border: isExpanded ? '2px solid #0A66C2' : '1px solid #E5E7EB',
+      border: isExpanded ? '2px solid #0966C3' : '1px solid #E5E7EB',
       overflow: 'hidden',
       boxShadow: isExpanded ? '0 4px 12px rgba(0,0,0,0.12)' : '0 1px 3px rgba(0,0,0,0.08)',
       transition: 'all 0.2s',
@@ -242,7 +242,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
         {/* Quick Stats */}
         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
-            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: '#0A66C2' }}>
+            <div className="font-mono" style={{ fontSize: '20px', fontWeight: 600, color: '#0966C3' }}>
               {attorney.winRate}%
             </div>
             <div style={{ fontSize: '10px', color: '#4B5563', textTransform: 'uppercase' }}>Win Rate</div>
@@ -279,7 +279,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
             >
               Litigation Profile
             </h4>
-            <MeterBar value={attorney.winRate} max={100} color="#0A66C2" label="Win Rate" />
+            <MeterBar value={attorney.winRate} max={100} color="#0966C3" label="Win Rate" />
             <MeterBar value={attorney.settlementRate} max={100} color="#1B7C7D" label="Settlement Rate" />
             <MeterBar value={attorney.trialVsSettlement.trialRate} max={100} color="#004D80" label="Trial Rate" />
 
@@ -300,7 +300,7 @@ const AttorneyCard = ({ attorney, isExpanded, onToggle }: AttorneyCardProps) => 
               {[
                 { label: 'Early', value: attorney.trialVsSettlement.earlySettlementRate, color: '#059669' },
                 { label: 'Standard', value: attorney.trialVsSettlement.settlementRate - attorney.trialVsSettlement.earlySettlementRate, color: '#B86E00' },
-                { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: '#0A66C2' },
+                { label: 'Late', value: 100 - attorney.trialVsSettlement.settlementRate, color: '#0966C3' },
               ].map((s) => (
                 <div key={s.label} style={{ flex: 1, padding: '8px', borderRadius: '12px', backgroundColor: `${s.color}15`, textAlign: 'center' }}>
                   <div className="font-mono" style={{ fontSize: '14px', fontWeight: 600, color: s.color }}>
@@ -440,20 +440,20 @@ export default function OpposingCounselSearch() {
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA', fontFamily: 'var(--font-body)' }}>
       <style>{`
-        input:focus { border-color: #0A66C2 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
+        input:focus { border-color: #0966C3 !important; outline: none; box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08); }
         button:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
         a:hover { text-decoration: underline; }
         @media (max-width: 640px) { h1 { font-size: clamp(24px, 5vw, 28px); } }
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C', padding: '32px 20px' }}>
+      <div style={{ background: '#1C3A5E', padding: '32px 20px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <Link
             href="/"
             style={{
               fontSize: '13px',
-              color: '#0A66C2',
+              color: '#0966C3',
               textDecoration: 'none',
               fontWeight: 500,
               display: 'inline-flex',
@@ -475,7 +475,7 @@ export default function OpposingCounselSearch() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#0A66C2',
+                color: '#0966C3',
               }}
             >
               <SearchIcon />
@@ -533,7 +533,7 @@ export default function OpposingCounselSearch() {
               style={{
                 padding: '0 24px',
                 height: '48px',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '12px',
@@ -621,7 +621,7 @@ export default function OpposingCounselSearch() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: '0 auto 24px',
-                color: '#0A66C2',
+                color: '#0966C3',
               }}
             >
               <SearchIcon />

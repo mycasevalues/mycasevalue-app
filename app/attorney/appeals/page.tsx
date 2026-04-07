@@ -57,13 +57,13 @@ export default function AppealsPage() {
 
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh', fontFamily: 'var(--font-body)' }}>
-      <style>{`select:focus, input:focus { outline: none; border-color: #0A66C2; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
+      <style>{`select:focus, input:focus { outline: none; border-color: #0966C3; box-shadow: 0 0 0 2px rgba(10,102,194,0.08); }`}</style>
 
-      <div style={{ background: '#1B3A5C', padding: '64px 24px' }}>
+      <div style={{ background: '#1C3A5E', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5"><path d="M18 15l-6-6-6 6" /></svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Appeal Analysis</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5"><path d="M18 15l-6-6-6 6" /></svg>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>Appeal Analysis</span>
           </div>
           <h1 style={{ fontSize: '40px', fontWeight: 600, color: '#FFF', fontFamily: 'var(--font-display)', margin: '0 0 8px' }}>Appeal Probability Scorer</h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.7)', margin: 0, lineHeight: 1.6 }}>
@@ -140,7 +140,7 @@ export default function AppealsPage() {
                 </div>
                 <div style={{ background: '#FFF', borderRadius: '12px', padding: '24px', border: '1px solid #E5E7EB', textAlign: 'center' }}>
                   <div style={{ fontSize: '10px', fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 }}>Average Appeal Duration</div>
-                  <div style={{ fontSize: '36px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ fontSize: '36px', fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                     {data.avgDuration}
                   </div>
                   <div style={{ fontSize: '11px', color: '#4B5563', marginTop: 4 }}>months to resolution</div>
@@ -163,7 +163,7 @@ export default function AppealsPage() {
               </div>
 
               {/* Filing Deadline Notice */}
-              <div style={{ background: '#EDF3FB', borderRadius: '12px', padding: '20px', border: '1px solid #0A66C2' }}>
+              <div style={{ background: '#EDF3FB', borderRadius: '12px', padding: '20px', border: '1px solid #0966C3' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#004182', margin: '0 0 8px', fontFamily: 'var(--font-display)' }}>Appeal Filing Deadline</h3>
                 <p style={{ fontSize: '13px', color: '#004182', margin: 0, lineHeight: 1.6 }}>
                   Under FRAP Rule 4(a)(1)(A), a notice of appeal must be filed within <strong>30 days</strong> after entry of judgment. If the United States is a party, the deadline extends to <strong>60 days</strong>. Post-trial motions (FRCP 50(b), 52(b), 59) toll this deadline until the motion is decided.

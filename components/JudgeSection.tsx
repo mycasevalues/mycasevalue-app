@@ -79,7 +79,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                   <Link
                     href={`/judges/${judge.id}`}
                     style={{
-                      color: '#0A66C2',
+                      color: '#0966C3',
                       textDecoration: 'none',
                       fontWeight: 600,
                       fontSize: 14,
@@ -149,7 +149,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                 <Link
                   href={`/judges/${judge.id}`}
                   style={{
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     textDecoration: 'none',
                     fontSize: 13,
                     fontWeight: 500,

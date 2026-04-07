@@ -191,7 +191,7 @@ const FeatureCard = ({
             letterSpacing: '0.5px',
             backgroundColor:
               badge === 'available' ? '#057642' : '#FAFBFC',
-            color: badge === 'available' ? '#ffffff' : '#0A66C2',
+            color: badge === 'available' ? '#ffffff' : '#0966C3',
             border:
               badge === 'available'
                 ? 'none'
@@ -202,7 +202,7 @@ const FeatureCard = ({
           {badge === 'available' ? 'Available' : 'In Development'}
         </span>
         {href && (
-          <span style={{ fontSize: '13px', color: '#0A66C2', fontWeight: 600, transition: 'color 0.3s ease' }}>
+          <span style={{ fontSize: '13px', color: '#0966C3', fontWeight: 600, transition: 'color 0.3s ease' }}>
             Try it →
           </span>
         )}
@@ -379,7 +379,7 @@ export default function AttorneyPage() {
           transform: translateY(-4px);
         }
         .attorney-feature-card:hover svg {
-          color: #1B3A5C !important;
+          color: #1C3A5E !important;
         }
         .attorney-feature-card:hover h3 {
           color: #004182 !important;
@@ -388,7 +388,7 @@ export default function AttorneyPage() {
           color: #004182 !important;
         }
         .attorney-cta-link:hover {
-          background-color: #0A66C2 !important;
+          background-color: #0966C3 !important;
           box-shadow: 0 8px 24px rgba(232, 23, 31, 0.24) !important;
           transform: translateY(-2px);
         }
@@ -399,7 +399,7 @@ export default function AttorneyPage() {
       {/* Header Section */}
       <section
         style={{
-          backgroundColor: '#1B3A5C',
+          backgroundColor: '#1C3A5E',
           border: 'none',
           padding: '48px 20px',
           textAlign: 'center',
@@ -612,7 +612,7 @@ export default function AttorneyPage() {
                     </p>
                   </div>
                   <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '13px', color: '#0A66C2', fontWeight: 600, transition: 'color 0.3s ease' }}>
+                    <span style={{ fontSize: '13px', color: '#0966C3', fontWeight: 600, transition: 'color 0.3s ease' }}>
                       Explore →
                     </span>
                   </div>
@@ -709,7 +709,7 @@ export default function AttorneyPage() {
                       justifyContent: 'center',
                       width: '28px',
                       height: '28px',
-                      backgroundColor: '#0A66C2',
+                      backgroundColor: '#0966C3',
                       color: '#FFFFFF',
                       borderRadius: '12px',
                       fontSize: '16px',
@@ -828,7 +828,7 @@ export default function AttorneyPage() {
                     fontSize: 'clamp(32px, 5vw, 48px)',
                     fontWeight: '600',
                     fontFamily: 'var(--font-display)',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     marginBottom: '12px',
                   }}
                 >
@@ -882,7 +882,7 @@ export default function AttorneyPage() {
               <span
                 style={{
                   display: 'block',
-                  color: '#0A66C2',
+                  color: '#0966C3',
                 }}
               >
                 plus:

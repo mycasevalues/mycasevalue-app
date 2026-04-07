@@ -121,7 +121,7 @@ export default async function OutcomesPage({
             borderRadius: '12px',
             fontWeight: 600,
             color: '#FFFFFF',
-            background: '#0A66C2',
+            background: '#0966C3',
             textDecoration: 'none',
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
@@ -252,7 +252,7 @@ export default async function OutcomesPage({
 
       {/* Header Section - Dark Navy */}
       <div style={{
-        background: '#1B3A5C',
+        background: '#1C3A5E',
         padding: 'clamp(20px, 4vw, 32px) 20px',
         borderBottom: '1px solid #1a2a3a',
       }}>
@@ -298,7 +298,7 @@ export default async function OutcomesPage({
               {option.label} Cases in {stateName}
             </h1>
             <div style={{
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               padding: '6px 12px',
               borderRadius: '12px',
@@ -571,7 +571,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: '#1B3A5C',
+                    color: '#1C3A5E',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(districtWinRate)}%
@@ -723,7 +723,7 @@ export default async function OutcomesPage({
                   <div style={{
                     fontSize: '28px',
                     fontWeight: 600,
-                    color: '#1B3A5C',
+                    color: '#1C3A5E',
                     fontFamily: 'var(--font-display)',
                   }}>
                     {Math.round(districtDuration)}mo

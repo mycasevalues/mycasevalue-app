@@ -8,7 +8,7 @@ import { createBrowserClient } from '@supabase/ssr';
 
 export default function SignInPage() {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#1B3A5C' }} />}>
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#1C3A5E' }} />}>
       <SignInForm />
     </Suspense>
   );
@@ -95,7 +95,7 @@ function SignInForm() {
           box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15) !important;
         }
         .auth-btn {
-          background: #0A66C2;
+          background: #0966C3;
         }
         .auth-btn:hover:not(:disabled) {
           opacity: 0.9;
@@ -113,7 +113,7 @@ function SignInForm() {
         .checkbox-input {
           width: 18px;
           height: 18px;
-          accent-color: #0A66C2;
+          accent-color: #0966C3;
           cursor: pointer;
         }
         .benefits-section {
@@ -191,7 +191,7 @@ function SignInForm() {
       {/* Navy Header Strip */}
       <div
         style={{
-          background: '#1B3A5C',
+          background: '#1C3A5E',
           height: '60px',
           display: 'flex',
           alignItems: 'center',
@@ -433,7 +433,7 @@ function SignInForm() {
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#0A66C2',
+                color: '#0966C3',
                 margin: '0 0 16px 0',
                 padding: '10px 12px',
                 backgroundColor: 'rgba(10, 102, 194, 0.06)',
@@ -454,7 +454,7 @@ function SignInForm() {
               width: '100%',
               height: '48px',
               padding: '0 16px',
-              backgroundColor: '#0A66C2',
+              backgroundColor: '#0966C3',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '12px',

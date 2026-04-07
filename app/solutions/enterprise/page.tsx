@@ -145,7 +145,7 @@ export default function EnterprisePage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ background: '#1B3A5C', color: '#FAFBFC', padding: '80px 24px 64px' }}>
+      <section style={{ background: '#1C3A5E', color: '#FAFBFC', padding: '80px 24px 64px' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{
             fontFamily: 'var(--font-body)',
@@ -201,7 +201,7 @@ export default function EnterprisePage() {
                 borderRadius: '12px',
                 padding: '32px 24px',
               }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '12px' }}><path d={f.iconPath}/></svg>
                 <h3 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '1rem',
@@ -306,7 +306,7 @@ export default function EnterprisePage() {
               border: '1px solid #E5E7EB',
             }}>
               <thead>
-                <tr style={{ background: '#1B3A5C', color: '#FAFBFC' }}>
+                <tr style={{ background: '#1C3A5E', color: '#FAFBFC' }}>
                   <th style={{ padding: '20px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>Feature</th>
                   {PRICING_TIERS.map(tier => (
                     <th key={tier.name} style={{ padding: '20px 24px', textAlign: 'left', fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '0.875rem' }}>
@@ -460,8 +460,8 @@ export default function EnterprisePage() {
 
       {/* Responsive grid style */}
       <style dangerouslySetInnerHTML={{ __html: `
-        summary::marker { color: #0A66C2; }
-        summary::-webkit-details-marker { color: #0A66C2; }
+        summary::marker { color: #0966C3; }
+        summary::-webkit-details-marker { color: #0966C3; }
         @media (max-width: 768px) {
           section div[style*="grid-template-columns: repeat(3"] {
             grid-template-columns: 1fr !important;

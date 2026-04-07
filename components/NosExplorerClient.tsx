@@ -21,10 +21,10 @@ interface NosRow {
 type SortField = 'nos' | 'label' | 'total' | 'wr' | 'sp' | 'mo' | 'rngMd';
 type SortDir = 'asc' | 'desc';
 
-const wrColor = (wr: number) => wr >= 50 ? '#057642' : wr >= 35 ? '#C37D16' : '#0A66C2';
+const wrColor = (wr: number) => wr >= 50 ? '#057642' : wr >= 35 ? '#C37D16' : '#0966C3';
 
 const CATEGORY_COLORS: Record<string, string> = {
-  work: '#0f0f0f', injury: '#0A66C2', consumer: '#70B5F9', rights: '#0A66C2',
+  work: '#0f0f0f', injury: '#0966C3', consumer: '#70B5F9', rights: '#0966C3',
   money: '#C37D16', housing: '#057642', medical: '#CC1016', family: '#C37D16',
   gov: '#4B5563', education: '#70B5F9', ip: '#057642', other: '#4B5563',
 };
@@ -145,7 +145,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
       <div className="nos-table-wrap" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, overflow: 'hidden' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 13 }}>
           <thead>
-            <tr style={{ background: '#1B3A5C' }}>
+            <tr style={{ background: '#1C3A5E' }}>
               <th className="nos-th" onClick={() => toggleSort('nos')} style={{ textAlign: 'left', padding: '12px 16px', color: '#FFFFFF', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px', width: 70 }}>
                 NOS<SortArrow field="nos" />
               </th>
@@ -209,7 +209,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                   <td style={{ padding: '10px 8px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0f0f0f' }}>
                     {row.mo}mo
                   </td>
-                  <td style={{ padding: '10px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0A66C2' }}>
+                  <td style={{ padding: '10px 16px', textAlign: 'right', fontFamily: 'var(--font-mono)', fontWeight: 600, color: '#0966C3' }}>
                     {row.rngMd > 0 ? fmtK(row.rngMd) : '–'}
                   </td>
                 </tr>
@@ -242,7 +242,7 @@ export default function NosExplorerClient({ data }: { data: NosRow[] }) {
                               href={`/report/${row.nos}`}
                               style={{
                                 display: 'inline-flex', alignItems: 'center', gap: 6,
-                                padding: '8px 16px', background: '#0A66C2', color: '#FFFFFF',
+                                padding: '8px 16px', background: '#0966C3', color: '#FFFFFF',
                                 borderRadius: 2, fontSize: 12, fontWeight: 600, textDecoration: 'none',
                                 fontFamily: 'var(--font-body)',
                               }}

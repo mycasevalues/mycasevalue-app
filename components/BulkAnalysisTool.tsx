@@ -43,7 +43,7 @@ interface AnalysisResult {
 
 const focusStyle = `
   input:focus, select:focus, textarea:focus {
-    border-color: #0A66C2 !important;
+    border-color: #0966C3 !important;
     outline: none;
     box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.08);
   }
@@ -366,7 +366,7 @@ export function BulkAnalysisTool() {
             style={{
               background: 'none',
               border: 'none',
-              color: '#0A66C2',
+              color: '#0966C3',
               textDecoration: 'underline',
               cursor: 'pointer',
               padding: 0,
@@ -407,7 +407,7 @@ export function BulkAnalysisTool() {
             style={{
               padding: '12px 28px',
               height: '48px',
-              backgroundColor: file && !loading ? '#0A66C2' : '#E5E7EB',
+              backgroundColor: file && !loading ? '#0966C3' : '#E5E7EB',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '12px',
@@ -436,7 +436,7 @@ export function BulkAnalysisTool() {
                 style={{
                   width: `${progress}%`,
                   height: '100%',
-                  backgroundColor: '#0A66C2',
+                  backgroundColor: '#0966C3',
                   transition: 'width 0.3s ease',
                 }}
               />
@@ -492,7 +492,7 @@ export function BulkAnalysisTool() {
               {
                 label: 'Settlement P25-P75',
                 value: `${formatMoney(result.summary.totalSettlementLo)}-${formatMoney(result.summary.totalSettlementHi)}`,
-                color: '#0A66C2',
+                color: '#0966C3',
               },
             ].map((stat) => (
               <div
@@ -587,7 +587,7 @@ export function BulkAnalysisTool() {
                       style={{
                         width: `${item.percentage}%`,
                         height: '100%',
-                        backgroundColor: '#0A66C2',
+                        backgroundColor: '#0966C3',
                       }}
                     />
                   </div>
@@ -789,7 +789,7 @@ export function BulkAnalysisTool() {
                         style={{
                           padding: '12px 16px',
                           textAlign: 'right',
-                          color: '#0A66C2',
+                          color: '#0966C3',
                           fontWeight: 500,
                         }}
                       >
@@ -837,7 +837,7 @@ export function BulkAnalysisTool() {
               style={{
                 padding: '12px 28px',
                 height: '48px',
-                backgroundColor: '#0A66C2',
+                backgroundColor: '#0966C3',
                 color: '#FFFFFF',
                 border: 'none',
                 borderRadius: '12px',
@@ -908,7 +908,7 @@ export function BulkAnalysisTool() {
               height="28"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#0A66C2"
+              stroke="#0966C3"
               strokeWidth="2"
             >
               <path d="M12 3v12m0 6v0M3 12h12m6 0h0" />

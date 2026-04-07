@@ -94,7 +94,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               transition: 'all 200ms ease',
             }}
             onFocus={(e) => {
-              e.currentTarget.style.borderColor = '#0A66C2';
+              e.currentTarget.style.borderColor = '#0966C3';
               e.currentTarget.style.boxShadow = '0 0 0 3px rgba(10, 102, 194, 0.1)';
             }}
             onBlur={(e) => {
@@ -116,7 +116,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               fontSize: '18px',
               fontWeight: 600,
               fontFamily: 'var(--font-display)',
-              color: '#0A66C2',
+              color: '#0966C3',
               marginBottom: '16px',
             }}
           >
@@ -145,7 +145,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                 }}
                 onMouseOver={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement;
-                  el.style.borderColor = '#0A66C2';
+                  el.style.borderColor = '#0966C3';
                   el.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.12)';
                 }}
                 onMouseOut={(e) => {
@@ -158,7 +158,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   style={{
                     fontSize: '15px',
                     fontWeight: 600,
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     marginBottom: '8px',
                     fontFamily: 'var(--font-display)',
                   }}
@@ -207,7 +207,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   borderRadius: '8px',
                   textDecoration: 'none',
                   transition: 'all 200ms ease',
-                  color: lettersWithTerms.has(letter) ? '#0A66C2' : '#A9AEB3',
+                  color: lettersWithTerms.has(letter) ? '#0966C3' : '#A9AEB3',
                   background: lettersWithTerms.has(letter) ? 'transparent' : '#F7F8FA',
                   cursor: lettersWithTerms.has(letter) ? 'pointer' : 'default',
                 }}
@@ -229,7 +229,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                 fontSize: '18px',
                 fontWeight: 600,
                 fontFamily: 'var(--font-display)',
-                color: '#0A66C2',
+                color: '#0966C3',
                 marginBottom: '16px',
                 paddingBottom: '8px',
                 borderBottom: '2px solid #E5E7EB',
@@ -255,7 +255,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
                   }}
                   onMouseOver={(e) => {
                     const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.borderColor = '#0A66C2';
+                    el.style.borderColor = '#0966C3';
                     el.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.12)';
                   }}
                   onMouseOut={(e) => {
@@ -313,7 +313,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
             onClick={() => setSearchQuery('')}
             style={{
               padding: '8px 16px',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '6px',
@@ -326,7 +326,7 @@ export default function GlossaryExplorer({ terms, featured }: GlossaryExplorerPr
               e.currentTarget.style.background = '#004182';
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.background = '#0A66C2';
+              e.currentTarget.style.background = '#0966C3';
             }}
           >
             Clear Search

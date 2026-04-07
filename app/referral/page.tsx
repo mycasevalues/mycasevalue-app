@@ -62,7 +62,7 @@ export default function ReferralPage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#F7F8FA' }}>
       {/* Header */}
-      <div style={{ backgroundColor: '#1B3A5C', padding: '24px 20px' }}>
+      <div style={{ backgroundColor: '#1C3A5E', padding: '24px 20px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', marginBottom: '16px' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Home</Link>
@@ -92,7 +92,7 @@ export default function ReferralPage() {
                 { step: '3', title: 'Earn Rewards', desc: 'Get free premium access for each successful referral.' },
               ].map((item) => (
                 <div key={item.step} style={{ textAlign: 'center' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#0A66C2', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', fontSize: '18px', fontWeight: 700 }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#0966C3', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', fontSize: '18px', fontWeight: 700 }}>
                     {item.step}
                   </div>
                   <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 6px 0' }}>{item.title}</h3>
@@ -119,7 +119,7 @@ export default function ReferralPage() {
 
             {loading ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#4B5563', fontSize: '14px' }}>
-                <div style={{ width: 20, height: 20, border: '2px solid #E5E7EB', borderTopColor: '#0A66C2', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
+                <div style={{ width: 20, height: 20, border: '2px solid #E5E7EB', borderTopColor: '#0966C3', borderRadius: '50%', animation: 'spin 0.6s linear infinite' }} />
                 Loading...
                 <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
               </div>
@@ -131,7 +131,7 @@ export default function ReferralPage() {
                   </code>
                   <button
                     onClick={handleCopy}
-                    style={{ padding: '12px 20px', backgroundColor: copied ? '#065F46' : '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background-color 0.2s' }}
+                    style={{ padding: '12px 20px', backgroundColor: copied ? '#065F46' : '#0966C3', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'background-color 0.2s' }}
                   >
                     {copied ? 'Copied!' : 'Copy Link'}
                   </button>
@@ -143,7 +143,7 @@ export default function ReferralPage() {
             ) : (
               <button
                 onClick={handleGenerate}
-                style={{ padding: '12px 24px', backgroundColor: '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' }}
+                style={{ padding: '12px 24px', backgroundColor: '#0966C3', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: 'pointer', textTransform: 'uppercase' }}
               >
                 Generate Referral Code
               </button>

@@ -147,7 +147,7 @@ export default function TermsPage() {
       />
 
       {/* Header */}
-      <div style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
+      <div style={{ borderColor: '#E5E7EB', background: '#1C3A5E' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', paddingLeft: '24px', paddingRight: '24px', paddingTop: '48px', paddingBottom: '48px' }}>
           {/* Breadcrumb Navigation */}
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontSize: '11px', color: '#CCCCCC' }}>
@@ -170,9 +170,9 @@ export default function TermsPage() {
             textTransform: 'uppercase',
             marginBottom: '16px',
             background: '#FFF3F4',
-            color: '#0A66C2'
+            color: '#0966C3'
           }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2.5">
               <path d="M7 7h10v10H7z M7 7v3 M7 10h10 M7 13h10 M7 16h10 M17 7v10" />
             </svg>
             TERMS
@@ -254,7 +254,7 @@ export default function TermsPage() {
             color: '#0f0f0f',
             marginBottom: '32px'
           }}>
-            <p style={{ margin: 0, fontWeight: '600', color: '#0A66C2', fontSize: '15px', lineHeight: 1.7 }}>
+            <p style={{ margin: 0, fontWeight: '600', color: '#0966C3', fontSize: '15px', lineHeight: 1.7 }}>
               IMPORTANT: By using MyCaseValue, you agree that this Service provides informational data only and is NOT legal advice.
               MyCaseValue does not create an attorney-client relationship. Always consult a licensed attorney for legal matters.
             </p>

@@ -49,7 +49,7 @@ function getCircuitForDistrict(district: string): string {
   return 'Other';
 }
 
-const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#0A66C2';
+const wrColor = (wr: number) => wr >= 50 ? '#059669' : wr >= 35 ? '#D97706' : '#0966C3';
 
 export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
   const [search, setSearch] = useState('');
@@ -153,10 +153,10 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
         .je-tr:hover { background: #F7F8FA !important; }
         .je-view-btn { border: 1px solid #E5E7EB; background: #FFFFFF; padding: 6px 12px; cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.15s; }
         .je-view-btn:hover { background: #F7F8FA; }
-        .je-view-btn.active { background: #1B3A5C; color: #FFFFFF; border-color: #1B3A5C; }
+        .je-view-btn.active { background: #1C3A5E; color: #FFFFFF; border-color: #1C3A5E; }
         .je-page-btn { border: 1px solid #E5E7EB; background: #FFFFFF; padding: 6px 12px; cursor: pointer; font-size: 13px; font-family: var(--font-mono); min-width: 36px; transition: all 0.15s; }
         .je-page-btn:hover { background: #F7F8FA; border-color: #004182; }
-        .je-page-btn.active { background: #1B3A5C; color: #FFFFFF; border-color: #1B3A5C; }
+        .je-page-btn.active { background: #1C3A5E; color: #FFFFFF; border-color: #1C3A5E; }
         .je-page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         @media (max-width: 768px) {
           .je-filters { flex-direction: column !important; }
@@ -279,7 +279,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
               key={field}
               onClick={() => toggleSort(field)}
               style={{
-                border: 'none', background: sortField === field ? '#1B3A5C' : '#F7F8FA',
+                border: 'none', background: sortField === field ? '#1C3A5E' : '#F7F8FA',
                 color: sortField === field ? '#FFFFFF' : '#0f0f0f',
                 padding: '4px 10px', borderRadius: 2, fontSize: 12, fontWeight: 600,
                 cursor: 'pointer', fontFamily: 'var(--font-body)', transition: 'all 0.15s',
@@ -300,7 +300,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
           <p style={{ fontSize: 15, color: '#4B5563', fontFamily: 'var(--font-body)' }}>No judges match your filters.</p>
           <button
             onClick={() => { setSearch(''); setCircuitFilter(''); setDistrictFilter(''); setStatusFilter('all'); setPage(1); }}
-            style={{ marginTop: 12, border: 'none', background: '#0A66C2', color: '#FFFFFF', padding: '8px 20px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
+            style={{ marginTop: 12, border: 'none', background: '#0966C3', color: '#FFFFFF', padding: '8px 20px', borderRadius: 2, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'var(--font-body)' }}
           >
             Clear Filters
           </button>
@@ -332,7 +332,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                   </div>
                   <div style={{ display: 'flex', gap: 4 }}>
                     {judge.chiefJudge && (
-                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(10, 102, 194, 0.08)', color: '#0A66C2', textTransform: 'uppercase' }}>Chief</span>
+                      <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(10, 102, 194, 0.08)', color: '#0966C3', textTransform: 'uppercase' }}>Chief</span>
                     )}
                     {judge.seniorStatus && (
                       <span style={{ fontSize: 9, fontWeight: 600, padding: '2px 6px', borderRadius: 2, background: 'rgba(184,110,0,0.08)', color: '#B86E00', textTransform: 'uppercase' }}>Senior</span>
@@ -392,7 +392,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
         <div className="je-table-wrap" style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: 2, overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: 'var(--font-body)', fontSize: 13 }}>
             <thead>
-              <tr style={{ background: '#1B3A5C' }}>
+              <tr style={{ background: '#1C3A5E' }}>
                 <th className="je-th" onClick={() => toggleSort('name')} style={{ textAlign: 'left', padding: '12px 16px', color: '#FFFFFF', fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                   Judge<SortArrow field="name" />
                 </th>
@@ -427,7 +427,7 @@ export default function JudgesExplorer({ judges }: { judges: JudgeProfile[] }) {
                       {judge.name}
                     </Link>
                     <div style={{ display: 'flex', gap: 4, marginTop: 2 }}>
-                      {judge.chiefJudge && <span style={{ fontSize: 9, fontWeight: 600, color: '#0A66C2' }}>CHIEF</span>}
+                      {judge.chiefJudge && <span style={{ fontSize: 9, fontWeight: 600, color: '#0966C3' }}>CHIEF</span>}
                       {judge.seniorStatus && <span style={{ fontSize: 9, fontWeight: 600, color: '#B86E00' }}>SENIOR</span>}
                     </div>
                   </td>

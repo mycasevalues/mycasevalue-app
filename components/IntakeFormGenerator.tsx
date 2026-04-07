@@ -641,7 +641,7 @@ export default function IntakeFormGenerator() {
             style={{
               width: '100%',
               padding: '14px',
-              backgroundColor: !selectedCaseType || loading ? '#E5E7EB' : '#0A66C2',
+              backgroundColor: !selectedCaseType || loading ? '#E5E7EB' : '#0966C3',
               color: '#FFFFFF',
               border: 'none',
               borderRadius: '20px',
@@ -664,8 +664,8 @@ export default function IntakeFormGenerator() {
                 width: '100%',
                 padding: '12px',
                 backgroundColor: '#FFFFFF',
-                color: '#0A66C2',
-                border: '1px solid #0A66C2',
+                color: '#0966C3',
+                border: '1px solid #0966C3',
                 borderRadius: '20px',
                 fontSize: '13px',
                 fontWeight: 600,
@@ -693,7 +693,7 @@ export default function IntakeFormGenerator() {
           </h2>
 
           <div style={{ maxHeight: '600px', overflowY: 'auto', padding: '16px', background: '#FAFBFC', borderRadius: '12px', border: '1px solid #E5E7EB' }}>
-            <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#1B3A5C', margin: '0 0 16px', borderBottom: '2px solid #0A66C2', paddingBottom: '8px' }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 600, color: '#1C3A5E', margin: '0 0 16px', borderBottom: '2px solid #0966C3', paddingBottom: '8px' }}>
               Form Sections:
             </h3>
             <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '13px', color: '#0f0f0f', lineHeight: '1.8', fontFamily: 'var(--font-body)' }}>

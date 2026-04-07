@@ -108,7 +108,7 @@ export default function TranslatePage() {
   return (
     <div className="min-h-screen" style={{ background: '#F8F9FA' }}>
       {/* Header */}
-      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
+      <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1C3A5E' }}>
         <div className="max-w-4xl mx-auto px-6 py-4">
           {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-2 mb-12 text-sm" style={{ color: 'rgba(255,255,255,0.7)', fontFamily: 'var(--font-body)' }}>
@@ -120,7 +120,7 @@ export default function TranslatePage() {
           {/* Header Content */}
           <div className="pb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-4"
-              style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
+              style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               TRANSLATE
             </div>
@@ -176,8 +176,8 @@ export default function TranslatePage() {
 
           {/* Error Display */}
           {error && (
-            <div className="mb-6 p-4" style={{ background: 'rgba(10, 102, 194, 0.06)', border: '1px solid #0A66C2', borderRadius: '12px' }}>
-              <p className="text-sm" style={{ color: '#0A66C2', fontFamily: 'var(--font-body)' }}>
+            <div className="mb-6 p-4" style={{ background: 'rgba(10, 102, 194, 0.06)', border: '1px solid #0966C3', borderRadius: '12px' }}>
+              <p className="text-sm" style={{ color: '#0966C3', fontFamily: 'var(--font-body)' }}>
                 {error}
               </p>
             </div>
@@ -193,7 +193,7 @@ export default function TranslatePage() {
               background:
                 !input.trim() || loading
                   ? '#E5E7EB'
-                  : '#0A66C2',
+                  : '#0966C3',
               color:
                 !input.trim() || loading
                   ? '#4B5563'
@@ -226,7 +226,7 @@ export default function TranslatePage() {
         {/* Translation Result */}
         {translation && (
           <>
-            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#0A66C2', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #0A66C2', borderRadius: '12px' }}>
+            <div className="mt-8 p-6 sm:p-8 border animate-in fade-in slide-in-from-bottom-4" style={{ borderColor: '#0966C3', background: '#FFFFFF', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', borderLeft: '4px solid #0966C3', borderRadius: '12px' }}>
               <h2 className="text-xs font-semibold uppercase tracking-[0.8px] mb-4" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)' }}>
                 Plain English Translation
               </h2>
@@ -340,7 +340,7 @@ export default function TranslatePage() {
                   transition: 'all 150ms',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#0A66C2';
+                  e.currentTarget.style.borderColor = '#0966C3';
                   e.currentTarget.style.boxShadow = '0 2px 8px rgba(10, 102, 194, 0.1)';
                 }}
                 onMouseLeave={(e) => {
@@ -352,7 +352,7 @@ export default function TranslatePage() {
                   {item.term}
                 </p>
                 {item.pronunciation && (
-                  <p className="text-[11px] mb-2" style={{ color: '#0A66C2', fontFamily: 'var(--font-mono)', fontStyle: 'italic' }}>
+                  <p className="text-[11px] mb-2" style={{ color: '#0966C3', fontFamily: 'var(--font-mono)', fontStyle: 'italic' }}>
                     {item.pronunciation}
                   </p>
                 )}

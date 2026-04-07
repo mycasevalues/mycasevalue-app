@@ -75,7 +75,7 @@ export default function SignUpPage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#1B3A5C',
+          background: '#1C3A5E',
           padding: '20px',
         }}
       >
@@ -162,7 +162,7 @@ export default function SignUpPage() {
             style={{
               display: 'inline-block',
               padding: '12px 24px',
-              backgroundColor: '#0A66C2',
+              backgroundColor: '#0966C3',
               color: '#FFFFFF',
               borderRadius: '12px',
               fontFamily: 'var(--font-body)',
@@ -259,7 +259,7 @@ export default function SignUpPage() {
       {/* Navy Header Strip with Logo */}
       <div
         style={{
-          backgroundColor: '#1B3A5C',
+          backgroundColor: '#1C3A5E',
           padding: '24px',
           color: '#FFFFFF',
           borderBottom: '1px solid #E5E7EB',
@@ -596,7 +596,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     margin: '0 0 16px 0',
                     padding: '10px 12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.06)',
@@ -613,7 +613,7 @@ export default function SignUpPage() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     fontSize: '13px',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     margin: '0 0 16px 0',
                     padding: '10px 12px',
                     backgroundColor: 'rgba(10, 102, 194, 0.06)',
@@ -644,7 +644,7 @@ export default function SignUpPage() {
                   width: '100%',
                   height: '48px',
                   padding: '0',
-                  background: '#0A66C2',
+                  background: '#0966C3',
                   color: '#FFFFFF',
                   border: 'none',
                   borderRadius: '12px',
@@ -702,7 +702,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '20px',
                 fontWeight: 600,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 margin: '0 0 24px 0',
               }}
             >
@@ -730,7 +730,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B3A5C" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C3A5E" strokeWidth="2">
                     <path d="M3 3v18h18" />
                     <path d="M18 17V9m-5 8V5m-5 12v-3" />
                   </svg>
@@ -773,7 +773,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                   </svg>
@@ -946,7 +946,7 @@ export default function SignUpPage() {
                     marginBottom: '12px',
                   }}
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="2">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0966C3" strokeWidth="2">
                     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                     <polyline points="17 6 23 6 23 12" />
                   </svg>
@@ -984,7 +984,7 @@ export default function SignUpPage() {
                 fontFamily: 'var(--font-display)',
                 fontSize: '20px',
                 fontWeight: 600,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 margin: '0 0 24px 0',
               }}
             >

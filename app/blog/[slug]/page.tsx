@@ -335,7 +335,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <p style={{ color: '#4B5563', marginBottom: '24px', fontFamily: 'var(--font-body)' }}>
             We could not find the article you are looking for.
           </p>
-          <Link href="/blog" style={{ color: '#0A66C2', fontWeight: '600', textDecoration: 'none' }}>
+          <Link href="/blog" style={{ color: '#0966C3', fontWeight: '600', textDecoration: 'none' }}>
             Return to Blog
           </Link>
         </div>
@@ -375,12 +375,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         .related-article-card:hover {
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-          border-color: #0A66C2;
+          border-color: #0966C3;
         }
 
         .category-badge {
           background: #FFF3F4;
-          color: #0A66C2;
+          color: #0966C3;
           padding: 4px 10px;
           border-radius: 12px;
           font-size: 12px;
@@ -398,7 +398,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       `}</style>
 
       {/* Header */}
-      <div style={{ background: '#1B3A5C', padding: '48px 24px' }}>
+      <div style={{ background: '#1C3A5E', padding: '48px 24px' }}>
         <div className="max-w-4xl mx-auto">
           <Link
             href="/blog"
@@ -516,7 +516,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
 
             {/* CTA Box */}
-            <div style={{ background: '#FFFFFF', border: '2px solid #0A66C2', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
+            <div style={{ background: '#FFFFFF', border: '2px solid #0966C3', borderRadius: '12px', padding: '24px', textAlign: 'center' }}>
               <h3 style={{ fontSize: '16px', fontWeight: 'bold', color: '#0f0f0f', marginBottom: '12px' }}>
                 Get More Insights
               </h3>
@@ -529,7 +529,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  background: '#0A66C2',
+                  background: '#0966C3',
                   color: '#FFFFFF',
                   padding: '10px 16px',
                   borderRadius: '20px',
@@ -563,7 +563,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              background: '#0A66C2',
+              background: '#0966C3',
               color: '#FFFFFF',
               padding: '12px 24px',
               borderRadius: '12px',

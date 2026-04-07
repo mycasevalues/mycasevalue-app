@@ -2,7 +2,7 @@ export default function CalculatorLoading() {
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
       {/* Header skeleton */}
-      <div style={{ background: '#1B3A5C', padding: '48px 24px', borderBottom: '3px solid #0A66C2' }}>
+      <div style={{ background: '#1C3A5E', padding: '48px 24px', borderBottom: '3px solid #0966C3' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ height: '14px', width: '120px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '16px' }} />
           <div style={{ height: '36px', width: '60%', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '12px' }} />
@@ -18,7 +18,7 @@ export default function CalculatorLoading() {
               <div style={{ height: '48px', background: '#FAFBFC', border: '1px solid #E5E7EB', borderRadius: '12px' }} />
             </div>
           ))}
-          <div style={{ height: '48px', background: '#0A66C2', borderRadius: '12px', opacity: 0.5 }} />
+          <div style={{ height: '48px', background: '#0966C3', borderRadius: '12px', opacity: 0.5 }} />
         </div>
       </div>
     </div>

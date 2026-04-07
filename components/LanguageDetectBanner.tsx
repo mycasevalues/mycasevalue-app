@@ -100,7 +100,7 @@ export default function LanguageDetectBanner() {
           style={{
             background: 'none',
             border: 'none',
-            color: '#0A66C2',
+            color: '#0966C3',
             fontWeight: 600,
             fontSize: '14px',
             fontFamily: 'var(--font-body)',
@@ -113,7 +113,7 @@ export default function LanguageDetectBanner() {
             (e.currentTarget as HTMLButtonElement).style.color = '#004182';
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.color = '#0A66C2';
+            (e.currentTarget as HTMLButtonElement).style.color = '#0966C3';
           }}
           aria-label="Change to Spanish"
         >

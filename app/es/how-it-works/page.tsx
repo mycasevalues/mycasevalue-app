@@ -30,7 +30,7 @@ export default function SpanishHowItWorksPage() {
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
       {/* Header with Dark Navy Background */}
-      <div className="border-b" style={{ background: '#1B3A5C', borderColor: '#E5E7EB' }}>
+      <div className="border-b" style={{ background: '#1C3A5E', borderColor: '#E5E7EB' }}>
         <div className="max-w-5xl mx-auto px-6 py-12 sm:py-16">
           {/* Breadcrumb Navigation */}
           <nav className="flex items-center gap-2 mb-8 text-sm">
@@ -43,7 +43,7 @@ export default function SpanishHowItWorksPage() {
 
           {/* Red Accent Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 text-[11px] font-bold tracking-[1.5px] uppercase mb-6"
-            style={{ background: '#0A66C2', color: '#FFFFFF', borderRadius: '12px' }}>
+            style={{ background: '#0966C3', color: '#FFFFFF', borderRadius: '12px' }}>
             PROCESO
           </div>
 
@@ -64,7 +64,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">1</span>
                 </div>
               </div>
@@ -83,7 +83,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">2</span>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">3</span>
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">4</span>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function SpanishHowItWorksPage() {
           <section>
             <div className="flex gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1B3A5C', color: 'white', borderRadius: '12px' }}>
+                <div className="flex items-center justify-center h-12 w-12" style={{ background: '#1C3A5E', color: 'white', borderRadius: '12px' }}>
                   <span className="text-lg font-bold">5</span>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function SpanishHowItWorksPage() {
           </p>
           <a href="/odds"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold transition-all"
-            style={{ borderRadius: '12px', background: '#0A66C2', color: '#FFFFFF' }}>
+            style={{ borderRadius: '12px', background: '#0966C3', color: '#FFFFFF' }}>
             Consultar Mi Caso
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>

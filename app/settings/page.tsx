@@ -20,7 +20,7 @@ export default function SettingsPage() {
         }
       `}</style>
       {/* Navy Header */}
-      <header style={{ backgroundColor: '#1B3A5C' }} className="text-white py-8">
+      <header style={{ backgroundColor: '#1C3A5E' }} className="text-white py-8">
         <div className="max-w-6xl mx-auto px-6">
           <h1 className="text-3xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
             Settings
@@ -72,7 +72,7 @@ export default function SettingsPage() {
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1B3A5C' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1C3A5E' }}>
                 Account Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -154,7 +154,7 @@ export default function SettingsPage() {
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1B3A5C' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1C3A5E' }}>
                 Preferences
               </h2>
               <div className="space-y-6">
@@ -195,7 +195,7 @@ export default function SettingsPage() {
                           className="mr-3 rounded-sm"
                           defaultChecked={caseType === 'Patent'}
                           style={{
-                            accentColor: '#0A66C2',
+                            accentColor: '#0966C3',
                           }}
                         />
                         <span style={{ color: '#4B5563' }}>{caseType}</span>
@@ -220,7 +220,7 @@ export default function SettingsPage() {
                           className="mr-3 rounded-sm"
                           defaultChecked={pref.checked}
                           style={{
-                            accentColor: '#0A66C2',
+                            accentColor: '#0966C3',
                           }}
                         />
                         <span style={{ color: '#4B5563' }}>{pref.label}</span>
@@ -240,7 +240,7 @@ export default function SettingsPage() {
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1B3A5C' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1C3A5E' }}>
                 Data & Privacy
               </h2>
               <p className="text-sm mb-6" style={{ color: '#4B5563' }}>
@@ -291,7 +291,7 @@ export default function SettingsPage() {
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1B3A5C' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1C3A5E' }}>
                 Appearance
               </h2>
               <div>
@@ -311,7 +311,7 @@ export default function SettingsPage() {
                         defaultChecked={option.value === 'comfortable'}
                         className="mr-3"
                         style={{
-                          accentColor: '#0A66C2',
+                          accentColor: '#0966C3',
                         }}
                       />
                       <span style={{ color: '#4B5563' }}>{option.label}</span>
@@ -330,7 +330,7 @@ export default function SettingsPage() {
                 backgroundColor: 'white',
               }}
             >
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1B3A5C' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1C3A5E' }}>
                 Subscription
               </h2>
               <div
@@ -341,7 +341,7 @@ export default function SettingsPage() {
                 }}
               >
                 <div>
-                  <h3 className="font-semibold mb-1" style={{ color: '#1B3A5C' }}>
+                  <h3 className="font-semibold mb-1" style={{ color: '#1C3A5E' }}>
                     MyCaseValue Free Launch
                   </h3>
                   <p className="text-sm" style={{ color: '#4B5563' }}>
@@ -362,7 +362,7 @@ export default function SettingsPage() {
 
             {/* Quick Links Section */}
             <section className="rounded-sm p-6" style={{ border: '1px solid #E5E7EB', backgroundColor: 'white' }}>
-              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1B3A5C' }}>
+              <h2 className="text-xl font-bold mb-6" style={{ fontFamily: 'var(--font-display)', color: '#1C3A5E' }}>
                 Quick Links
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

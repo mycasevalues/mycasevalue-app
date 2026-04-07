@@ -81,15 +81,15 @@ export async function POST(request: NextRequest) {
               <style>
                 body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
                 .email-container { max-width: 600px; margin: 0 auto; }
-                .header { background-color: #0A66C2; color: white; padding: 24px; text-align: center; }
+                .header { background-color: #0966C3; color: white; padding: 24px; text-align: center; }
                 .header-text { font-size: 24px; font-weight: bold; margin: 0; }
                 .body-content { background-color: white; padding: 32px 24px; }
                 .body-content h2 { color: #212529; font-size: 22px; margin: 0 0 16px 0; }
                 .body-content p { color: #4B5563; font-size: 15px; line-height: 1.6; margin: 0 0 16px 0; }
-                .cta-button { background-color: #0A66C2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; margin-top: 16px; }
+                .cta-button { background-color: #0966C3; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: 600; font-size: 15px; margin-top: 16px; }
                 .footer { background-color: #F8F9FA; color: #4B5563; padding: 24px; font-size: 13px; line-height: 1.6; text-align: center; border-top: 1px solid #e0e0e0; }
                 .footer p { margin: 8px 0; }
-                .highlight { background-color: #FFF3CD; padding: 12px; border-left: 4px solid #0A66C2; margin: 16px 0; }
+                .highlight { background-color: #FFF3CD; padding: 12px; border-left: 4px solid #0966C3; margin: 16px 0; }
               </style>
             </head>
             <body>

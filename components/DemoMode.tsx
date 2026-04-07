@@ -30,7 +30,7 @@ function DemoModeBadge() {
         top: '20px',
         right: '20px',
         zIndex: 9999,
-        backgroundColor: '#0A66C2',
+        backgroundColor: '#0966C3',
         color: '#ffffff',
         padding: '8px 16px',
         borderRadius: '20px',

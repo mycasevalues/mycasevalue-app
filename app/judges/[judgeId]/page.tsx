@@ -139,13 +139,13 @@ export default async function JudgeProfilePage({ params }: PageProps) {
           >
             <ol style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0, padding: 0, listStyle: 'none' }}>
               <li>
-                <Link href="/" style={{ color: '#0A66C2', textDecoration: 'none' }}>
+                <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>
                   Home
                 </Link>
               </li>
               <li style={{ color: '#B0B8C1' }}>›</li>
               <li>
-                <Link href="/judges" style={{ color: '#0A66C2', textDecoration: 'none' }}>
+                <Link href="/judges" style={{ color: '#0966C3', textDecoration: 'none' }}>
                   Judges
                 </Link>
               </li>
@@ -153,7 +153,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               {judge.circuit && (
                 <>
                   <li>
-                    <Link href={`/judges?circuit=${judge.circuit}`} style={{ color: '#0A66C2', textDecoration: 'none' }}>
+                    <Link href={`/judges?circuit=${judge.circuit}`} style={{ color: '#0966C3', textDecoration: 'none' }}>
                       {judge.circuit} Circuit
                     </Link>
                   </li>
@@ -163,7 +163,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               {judge.district_id && (
                 <>
                   <li>
-                    <Link href={`/judges?district=${judge.district_id}`} style={{ color: '#0A66C2', textDecoration: 'none' }}>
+                    <Link href={`/judges?district=${judge.district_id}`} style={{ color: '#0966C3', textDecoration: 'none' }}>
                       {judge.district_id}
                     </Link>
                   </li>
@@ -241,7 +241,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   gap: '6px',
                   padding: '4px 12px',
                   background: '#EDF3FB',
-                  border: '1px solid #0A66C2',
+                  border: '1px solid #0966C3',
                   borderRadius: '4px',
                   fontSize: '12px',
                   fontFamily: 'var(--font-body)',
@@ -250,7 +250,7 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   flexShrink: 0,
                 }}
               >
-                <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: '#0A66C2' }} />
+                <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: '#0966C3' }} />
                 Data as of {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
               </div>
 

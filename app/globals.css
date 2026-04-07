@@ -155,6 +155,42 @@ a:hover { text-decoration: underline; color: var(--color-accent-dark); }
 }
 
 /* ============================================================
+   BRAND IDENTITY SYSTEM — CSS Variables
+   ============================================================ */
+:root {
+  /* Dark surfaces */
+  --color-navy:          #1C3A5E;
+  --color-panel:         #274464;
+  --color-panel-border:  #284565;
+  --color-navy-dark:     #122840;
+  --color-navy-light:    #2A5080;
+
+  /* Brand blue */
+  --color-blue:          #0966C3;
+  --color-blue-dark:     #004182;
+  --color-blue-mid:      #1577D5;
+  --color-blue-pale:     #E8F4FD;
+
+  /* Text on dark */
+  --text-white:          #FFFFFF;
+  --text-link:           #E5E7EB;
+  --text-muted-dark:     rgba(213, 216, 220, 0.6);
+  --text-dim-dark:       rgba(213, 216, 220, 0.35);
+  --text-sep:            rgba(213, 216, 220, 0.4);
+
+  /* Borders on dark */
+  --border-dark:         rgba(255, 255, 255, 0.08);
+  --border-dark-subtle:  rgba(255, 255, 255, 0.06);
+
+  /* Card background on dark */
+  --surface-card-dark:   rgba(255, 255, 255, 0.05);
+
+  /* Light surfaces */
+  --color-surface-1:     #F7F8FA;
+  --color-surface-2:     #EEF0F4;
+}
+
+/* ============================================================
    LEXISNEXIS ALIASES — Map legacy variable names
    ============================================================ */
 :root {
@@ -261,12 +297,12 @@ html, body {
    ACCESSIBILITY — Focus states with red accent
    ============================================================ */
 *:focus-visible {
-  outline: 2px solid #0A66C2;
+  outline: 2px solid #0966C3;
   outline-offset: 2px;
 }
 
 button:focus-visible, a:focus-visible, input:focus-visible {
-  outline: 2px solid #0A66C2;
+  outline: 2px solid #0966C3;
   outline-offset: 2px;
 }
 
@@ -504,7 +540,7 @@ select option {
 
 /* Improved focus visibility for accessibility */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 2px solid #0A66C2;
+  outline: 2px solid #0966C3;
   outline-offset: 2px;
   border-radius: 12px;
 }
@@ -833,7 +869,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 [role="button"]:focus-visible {
-  outline: 2px solid #0A66C2;
+  outline: 2px solid #0966C3;
   outline-offset: 2px;
   border-radius: 12px;
 }
@@ -1111,7 +1147,7 @@ button:disabled,
   left: 50%;
   width: 0;
   height: 2px;
-  background: #0A66C2;
+  background: #0966C3;
   transition: all 200ms ease;
   transform: translateX(-50%);
 }
@@ -1121,7 +1157,7 @@ button:disabled,
 
 /* Button press effect */
 a[style*="background: rgb(232, 23, 31)"]:active,
-a[style*="background: #0A66C2"]:active {
+a[style*="background: #0966C3"]:active {
   transform: scale(0.98);
 }
 
@@ -1161,7 +1197,7 @@ a[style*="background: #0A66C2"]:active {
 
 /* Related cards hover */
 .related-card:hover {
-  border-color: #0A66C2 !important;
+  border-color: #0966C3 !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
 }

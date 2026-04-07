@@ -1,7 +1,7 @@
 export default function AboutLoading() {
   return (
     <div style={{ minHeight: '100vh', background: '#F7F8FA' }}>
-      <div style={{ background: '#1B3A5C', padding: '64px 24px', borderBottom: '3px solid #0A66C2' }}>
+      <div style={{ background: '#1C3A5E', padding: '64px 24px', borderBottom: '3px solid #0966C3' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ height: '40px', width: '50%', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', marginBottom: '16px' }} />
           <div style={{ height: '18px', width: '70%', background: 'rgba(255,255,255,0.08)', borderRadius: '12px' }} />

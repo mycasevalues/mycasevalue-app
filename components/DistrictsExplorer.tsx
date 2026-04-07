@@ -175,8 +175,8 @@ export default function DistrictsExplorer({
           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .circuit-card.active {
-          background: #1B3A5C;
-          border-color: #1B3A5C;
+          background: #1C3A5E;
+          border-color: #1C3A5E;
           color: #FFFFFF;
         }
         .circuit-card.active .circuit-card-name {
@@ -186,7 +186,7 @@ export default function DistrictsExplorer({
           color: rgba(255,255,255,0.7);
         }
         .circuit-card.active .circuit-card-rate {
-          color: #0A66C2;
+          color: #0966C3;
         }
         .circuit-card-name {
           font-size: 12px;
@@ -335,8 +335,8 @@ export default function DistrictsExplorer({
             onClick={() => setSelectedCircuit(null)}
             className="circuit-card"
             style={{
-              background: selectedCircuit === null ? '#1B3A5C' : '#FFFFFF',
-              borderColor: selectedCircuit === null ? '#1B3A5C' : '#E5E7EB',
+              background: selectedCircuit === null ? '#1C3A5E' : '#FFFFFF',
+              borderColor: selectedCircuit === null ? '#1C3A5E' : '#E5E7EB',
               color: selectedCircuit === null ? '#FFFFFF' : '#0f0f0f',
             }}
           >
@@ -348,7 +348,7 @@ export default function DistrictsExplorer({
             </div>
             <div
               className="circuit-card-rate"
-              style={{ color: selectedCircuit === null ? '#0A66C2' : '#004182' }}
+              style={{ color: selectedCircuit === null ? '#0966C3' : '#004182' }}
             >
               {stats.avgWinRate}%
             </div>
@@ -369,13 +369,13 @@ export default function DistrictsExplorer({
                   className="circuit-card-rate"
                   style={{
                     color: isActive
-                      ? '#0A66C2'
+                      ? '#0966C3'
                       : rate !== null
                       ? rate >= 50
                         ? '#059669'
                         : rate >= 35
                         ? '#D97706'
-                        : '#0A66C2'
+                        : '#0966C3'
                       : '#999',
                   }}
                 >
@@ -407,7 +407,7 @@ export default function DistrictsExplorer({
           <div className="stat-label">Lowest Win Rate</div>
           {stats.lowestWinRate ? (
             <>
-              <div className="stat-value" style={{ color: '#0A66C2' }}>
+              <div className="stat-value" style={{ color: '#0966C3' }}>
                 {stats.lowestWinRate.winRate}%
               </div>
               <div className="stat-meta">{stats.lowestWinRate.name}</div>
@@ -447,7 +447,7 @@ export default function DistrictsExplorer({
         }}
       >
         {filteredDistricts.map((d) => {
-          const wrColor = d.winRate >= 50 ? '#059669' : d.winRate >= 35 ? '#D97706' : '#0A66C2';
+          const wrColor = d.winRate >= 50 ? '#059669' : d.winRate >= 35 ? '#D97706' : '#0966C3';
           return (
             <Link
               key={d.slug}

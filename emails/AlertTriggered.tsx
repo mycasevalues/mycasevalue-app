@@ -91,7 +91,7 @@ const container: React.CSSProperties = {
   borderRadius: '12px', overflow: 'hidden',
 };
 
-const header: React.CSSProperties = { backgroundColor: '#1B3A5C', padding: '24px 40px' };
+const header: React.CSSProperties = { backgroundColor: '#1C3A5E', padding: '24px 40px' };
 const logo: React.CSSProperties = { color: '#FFF', fontSize: '20px', fontWeight: 600, margin: '0 0 4px' };
 const headerBadge: React.CSSProperties = { color: '#FCD34D', fontSize: '11px', fontWeight: 600, letterSpacing: '1px', margin: 0 };
 const content: React.CSSProperties = { padding: '32px 40px' };
@@ -113,9 +113,9 @@ const detailsBox: React.CSSProperties = {
 const detailRow: React.CSSProperties = { color: '#0f0f0f', fontSize: '13px', lineHeight: '1.8', margin: 0 };
 
 const ctaButton: React.CSSProperties = {
-  display: 'inline-block', backgroundColor: '#0A66C2', color: '#FFF',
+  display: 'inline-block', backgroundColor: '#0966C3', color: '#FFF',
   padding: '12px 28px', borderRadius: '8px', fontSize: '14px', fontWeight: 600, textDecoration: 'none',
 };
-const secondaryLink: React.CSSProperties = { color: '#0A66C2', fontSize: '13px', textDecoration: 'underline' };
+const secondaryLink: React.CSSProperties = { color: '#0966C3', fontSize: '13px', textDecoration: 'underline' };
 const footer: React.CSSProperties = { color: '#9CA3AF', fontSize: '11px', margin: 0 };
 const footerLink: React.CSSProperties = { color: '#9CA3AF', textDecoration: 'underline' };

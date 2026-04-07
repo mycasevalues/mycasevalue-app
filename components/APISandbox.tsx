@@ -373,7 +373,7 @@ export default function APISandbox() {
           fontSize: '14px',
           fontWeight: 600,
           color: '#FFFFFF',
-          backgroundColor: loading ? '#9CA3AF' : '#0A66C2',
+          backgroundColor: loading ? '#9CA3AF' : '#0966C3',
           border: 'none',
           borderRadius: '6px',
           cursor: loading ? 'not-allowed' : 'pointer',

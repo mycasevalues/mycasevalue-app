@@ -154,7 +154,7 @@ export default function ComparePage() {
 
       {/* Dark Navy Header */}
       <header style={{
-        background: '#1B3A5C',
+        background: '#1C3A5E',
         color: '#ffffff',
         padding: 'clamp(24px, 5vw, 48px)',
         marginBottom: 0,
@@ -168,7 +168,7 @@ export default function ComparePage() {
             marginBottom: 16,
             textTransform: 'uppercase',
             color: '#ffffff',
-            background: '#0A66C2',
+            background: '#0966C3',
             padding: '4px 12px',
             borderRadius: 4,
           }}>
@@ -284,7 +284,7 @@ export default function ComparePage() {
             className="lexis-btn"
             style={{
               padding: '12px 32px',
-              background: canCompare ? '#0A66C2' : '#E5E7EB',
+              background: canCompare ? '#0966C3' : '#E5E7EB',
               color: canCompare ? '#ffffff' : '#4B5563',
               border: 'none',
               borderRadius: 4,
@@ -420,7 +420,7 @@ export default function ComparePage() {
                                   <div style={{
                                     height: '100%',
                                     width: `${Math.min(v, 100)}%`,
-                                    background: isBest ? '#004182' : row.key === 'dismissRate' ? '#0A66C2' : '#E5E7EB',
+                                    background: isBest ? '#004182' : row.key === 'dismissRate' ? '#0966C3' : '#E5E7EB',
                                     borderRadius: 2,
                                     transition: 'width 0.5s ease',
                                   }} />
@@ -446,7 +446,7 @@ export default function ComparePage() {
               border: '1px solid #E5E7EB',
               borderRadius: 4,
             }}>
-              <h3 style={{ fontSize: 16, fontWeight: 600, color: '#1B3A5C', margin: '0 0 20px 0', fontFamily: 'var(--font-display)' }}>
+              <h3 style={{ fontSize: 16, fontWeight: 600, color: '#1C3A5E', margin: '0 0 20px 0', fontFamily: 'var(--font-display)' }}>
                 Attorney Impact & Settlement Range
               </h3>
               <div style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: '16px' }}>
@@ -473,7 +473,7 @@ export default function ComparePage() {
                               position: 'absolute', top: 8, height: 8,
                               left: `${Math.min(90, (s.rngLo / s.rngHi) * 100)}%`,
                               right: '0%',
-                              background: 'linear-gradient(90deg, #70B5F9, #0A66C2)',
+                              background: 'linear-gradient(90deg, #70B5F9, #0966C3)',
                               borderRadius: 4,
                             }} />
                             <div style={{ position: 'absolute', top: 4, width: 2, height: 16, background: '#004182', left: `${(s.medianRecovery / s.rngHi) * 100}%`, transform: 'translateX(-50%)' }} />
@@ -562,7 +562,7 @@ export default function ComparePage() {
               <h3 style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 margin: '0 0 24px 0',
                 fontFamily: 'var(--font-display)',
               }}>
@@ -578,7 +578,7 @@ export default function ComparePage() {
                   value: s[metric.key as keyof CaseStats] as number,
                 }));
                 const maxValue = Math.max(...metricStats.map(m => m.value));
-                const colors = ['#0A66C2', '#004182', '#1B3A5C'];
+                const colors = ['#0966C3', '#004182', '#1C3A5E'];
 
                 return (
                   <div key={metric.key} style={{ marginBottom: 24 }}>
@@ -648,7 +648,7 @@ export default function ComparePage() {
               <h3 style={{
                 fontSize: 18,
                 fontWeight: 600,
-                color: '#1B3A5C',
+                color: '#1C3A5E',
                 margin: '0 0 24px 0',
                 fontFamily: 'var(--font-display)',
               }}>
@@ -722,7 +722,7 @@ export default function ComparePage() {
                       </div>
                       <div style={{
                         width: `${s.dismissRate}%`,
-                        background: '#0A66C2',
+                        background: '#0966C3',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -770,7 +770,7 @@ export default function ComparePage() {
                         <div style={{
                           width: 12,
                           height: 12,
-                          background: '#0A66C2',
+                          background: '#0966C3',
                           borderRadius: 2,
                           margin: '0 auto 4px',
                         }} />
@@ -804,7 +804,7 @@ export default function ComparePage() {
                   <h3 style={{
                     fontSize: 16,
                     fontWeight: 600,
-                    color: '#1B3A5C',
+                    color: '#1C3A5E',
                     margin: '0 0 12px 0',
                     fontFamily: 'var(--font-display)',
                   }}>
@@ -909,7 +909,7 @@ export default function ComparePage() {
             <h3 style={{
               fontSize: 18,
               fontWeight: 600,
-              color: '#1B3A5C',
+              color: '#1C3A5E',
               margin: '0 0 24px 0',
               fontFamily: 'var(--font-display)',
             }}>
@@ -970,7 +970,7 @@ export default function ComparePage() {
                     <span style={{
                       fontSize: 11,
                       fontWeight: 600,
-                      color: '#0A66C2',
+                      color: '#0966C3',
                       background: '#FFE5E5',
                       padding: '2px 8px',
                       borderRadius: 2,
@@ -1009,7 +1009,7 @@ export default function ComparePage() {
             <h3 style={{
               fontSize: 18,
               fontWeight: 600,
-              color: '#1B3A5C',
+              color: '#1C3A5E',
               margin: '0 0 24px 0',
               fontFamily: 'var(--font-display)',
             }}>

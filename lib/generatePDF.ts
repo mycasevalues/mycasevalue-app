@@ -21,9 +21,9 @@ export async function generateReportPDF(data: ReportPDFData) {
     const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
     const w = doc.internal.pageSize.getWidth();
 
-    // Brand colors: #1B3A5C (navy), #004182 (red), #212529 (headings), #4B5563 (body)
+    // Brand colors: #1C3A5E (navy), #004182 (red), #212529 (headings), #4B5563 (body)
     // ─── Header bar ──────────────────────────────────────
-    doc.setFillColor(0, 23, 46); // #1B3A5C dark navy
+    doc.setFillColor(0, 23, 46); // #1C3A5E dark navy
     doc.rect(0, 0, w, 25, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(14);
@@ -87,7 +87,7 @@ export async function generateReportPDF(data: ReportPDFData) {
     doc.text(lines, 15, 270);
 
     // ─── Footer line ─────────────────────────────────────
-    doc.setDrawColor(0, 23, 46); // #1B3A5C
+    doc.setDrawColor(0, 23, 46); // #1C3A5E
     doc.line(15, 265, w - 15, 265);
     doc.setTextColor(232, 23, 31); // #004182
     doc.setFontSize(9);

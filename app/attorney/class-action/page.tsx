@@ -67,7 +67,7 @@ const DISTRICT_RANKINGS = [
 ];
 
 export default function ClassActionPage() {
-  const accentColor = '#0A66C2';
+  const accentColor = '#0966C3';
   const secondaryColor = '#004182';
   const textColor = '#0f0f0f';
   const bgColor = '#F7F8FA';

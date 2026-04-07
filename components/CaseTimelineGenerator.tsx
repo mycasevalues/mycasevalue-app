@@ -124,7 +124,7 @@ export default function CaseTimelineGenerator() {
   const buttonStyle: React.CSSProperties = {
     width: '100%',
     padding: '14px',
-    backgroundColor: input.caseType && input.filingDate ? '#0A66C2' : '#E5E7EB',
+    backgroundColor: input.caseType && input.filingDate ? '#0966C3' : '#E5E7EB',
     color: '#FFFFFF',
     border: 'none',
     borderRadius: '20px',
@@ -157,16 +157,16 @@ export default function CaseTimelineGenerator() {
         }
       `}</style>
 
-      <div style={{ background: '#1B3A5C', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
+      <div style={{ background: '#1C3A5E', borderBottom: '1px solid #E5E7EB', padding: '64px 24px' }}>
         <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', borderRadius: '12px', marginBottom: '16px', background: 'rgba(255,255,255,0.1)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0A66C2', flexShrink: 0 }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: '#0966C3', flexShrink: 0 }}>
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
               <line x1="8" y1="2" x2="8" y2="6" />
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
-            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0A66C2', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 600, color: '#0966C3', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
               Case Timeline
             </span>
           </div>
@@ -273,8 +273,8 @@ export default function CaseTimelineGenerator() {
 
                     return (
                       <g key={m.name}>
-                        <line x1={x} y1="50" x2={x} y2="70" stroke={m.isUpcoming ? '#0A66C2' : '#9CA3AF'} strokeWidth="2" />
-                        <circle cx={x} cy="60" r="6" fill={m.isUpcoming ? '#0A66C2' : '#9CA3AF'} />
+                        <line x1={x} y1="50" x2={x} y2="70" stroke={m.isUpcoming ? '#0966C3' : '#9CA3AF'} strokeWidth="2" />
+                        <circle cx={x} cy="60" r="6" fill={m.isUpcoming ? '#0966C3' : '#9CA3AF'} />
                         <text
                           x={x}
                           y={textY}
@@ -316,7 +316,7 @@ export default function CaseTimelineGenerator() {
                       padding: '16px',
                       backgroundColor: m.isUpcoming ? '#F0F9FF' : '#F7F8FA',
                       borderRadius: '12px',
-                      borderLeft: `4px solid ${m.isUpcoming ? '#0A66C2' : '#9CA3AF'}`,
+                      borderLeft: `4px solid ${m.isUpcoming ? '#0966C3' : '#9CA3AF'}`,
                     }}>
                       <div style={{ flex: 1 }}>
                         <p style={{ fontSize: '14px', fontWeight: 600, color: '#0f0f0f', margin: 0, fontFamily: 'var(--font-body)' }}>

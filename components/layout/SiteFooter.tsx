@@ -78,7 +78,7 @@ export default function SiteFooter() {
       className="site-footer"
       role="contentinfo"
       style={{
-        background: '#1B3A5C',
+        background: '#1C3A5E',
         backdropFilter: undefined,
         WebkitBackdropFilter: undefined,
         borderTop: 'none',
@@ -189,7 +189,7 @@ export default function SiteFooter() {
             Ready to research your case?
           </p>
           <Link href="/sign-up" style={{
-            background: '#0A66C2',
+            background: '#0966C3',
             color: '#FAFBFC',
             padding: '0.75rem 1.5rem',
             borderRadius: '20px',

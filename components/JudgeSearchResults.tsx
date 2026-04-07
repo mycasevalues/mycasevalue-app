@@ -131,7 +131,7 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
                 e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.1)';
-                e.currentTarget.style.borderColor = '#0A66C2';
+                e.currentTarget.style.borderColor = '#0966C3';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
@@ -177,11 +177,11 @@ export default function JudgeSearchResults({ query }: JudgeSearchResultsProps) {
                   style={{
                     padding: '6px 12px',
                     background: '#F0F6FB',
-                    border: '1px solid #0A66C2',
+                    border: '1px solid #0966C3',
                     borderRadius: '6px',
                     fontSize: '12px',
                     fontWeight: '600',
-                    color: '#0A66C2',
+                    color: '#0966C3',
                     fontFamily: 'var(--font-body)',
                     whiteSpace: 'nowrap',
                     flexShrink: 0,

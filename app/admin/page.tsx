@@ -20,7 +20,7 @@ import WidgetImpressionPanel from '@/components/admin/WidgetImpressionPanel';
 type SectionType = 'overview' | 'content' | 'data' | 'rules' | 'users' | 'email' | 'costs' | 'api' | 'widgets';
 
 const COLORS = {
-  primary: '#0A66C2',
+  primary: '#0966C3',
   dark: '#004182',
   black: '#0f0f0f',
 };

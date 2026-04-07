@@ -29,9 +29,9 @@ export default function FeesPage() {
   return (
     <>
       {/* Header */}
-      <header style={{ background: '#1B3A5C', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
+      <header style={{ background: '#1C3A5E', padding: 'clamp(32px, 6vw, 56px) clamp(16px, 4vw, 48px)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'inline-block', background: '#0A66C2', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
+          <div style={{ display: 'inline-block', background: '#0966C3', color: '#FFF', padding: '4px 12px', borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: '0.5px', textTransform: 'uppercase', marginBottom: 16, fontFamily: 'var(--font-display)' }}>
             REFERENCE
           </div>
           <h1 style={{ color: '#FFF', fontSize: 'clamp(28px, 7vw, 40px)', fontWeight: 600, margin: '0 0 12px', fontFamily: 'var(--font-display)', lineHeight: 1.2 }}>
@@ -46,9 +46,9 @@ export default function FeesPage() {
       {/* Breadcrumb */}
       <nav style={{ background: '#FFF', padding: '12px 0', borderBottom: '1px solid #E5E7EB', fontSize: 13, fontFamily: 'var(--font-body)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 4vw, 48px)' }}>
-          <Link href="/" style={{ color: '#0A66C2', textDecoration: 'none' }}>Home</Link>
+          <Link href="/" style={{ color: '#0966C3', textDecoration: 'none' }}>Home</Link>
           <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
-          <Link href="/calculator" style={{ color: '#0A66C2', textDecoration: 'none' }}>Calculator</Link>
+          <Link href="/calculator" style={{ color: '#0966C3', textDecoration: 'none' }}>Calculator</Link>
           <span style={{ color: '#E5E7EB', margin: '0 8px' }}>/</span>
           <span style={{ color: '#0f0f0f', fontWeight: 600 }}>Fee Schedule</span>
         </div>
@@ -73,11 +73,11 @@ export default function FeesPage() {
                     <div style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
                       {fee.note}
                     </div>
-                    <div style={{ fontSize: 11, color: '#0A66C2', fontFamily: 'var(--font-mono)', marginTop: 2 }}>
+                    <div style={{ fontSize: 11, color: '#0966C3', fontFamily: 'var(--font-mono)', marginTop: 2 }}>
                       {fee.rule}
                     </div>
                   </div>
-                  <div style={{ fontSize: 22, fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap' }}>
+                  <div style={{ fontSize: 22, fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap' }}>
                     {fee.amount}
                   </div>
                 </div>
@@ -85,7 +85,7 @@ export default function FeesPage() {
             </div>
             <div style={{ marginTop: 16, fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
               Source:{' '}
-              <a href="https://www.uscourts.gov/services-forms/fees/district-court-miscellaneous-fee-schedule" target="_blank" rel="noopener noreferrer" style={{ color: '#0A66C2', textDecoration: 'underline' }}>
+              <a href="https://www.uscourts.gov/services-forms/fees/district-court-miscellaneous-fee-schedule" target="_blank" rel="noopener noreferrer" style={{ color: '#0966C3', textDecoration: 'underline' }}>
                 U.S. Courts — District Court Fee Schedule
               </a>
             </div>
@@ -129,7 +129,7 @@ export default function FeesPage() {
                   <div style={{ fontSize: 13, fontWeight: 600, color: '#4B5563', fontFamily: 'var(--font-body)', marginBottom: 4 }}>
                     {d.district}
                   </div>
-                  <div style={{ fontSize: 20, fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ fontSize: 20, fontWeight: 600, color: '#0966C3', fontFamily: 'var(--font-mono)' }}>
                     {d.fee}
                   </div>
                 </div>
@@ -178,7 +178,7 @@ export default function FeesPage() {
                 <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'var(--font-display)' }}>
                   AO 239 — Application to Proceed Without Prepaying Fees
                 </span>
-                <span style={{ marginLeft: 'auto', fontSize: 12, color: '#0A66C2', fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap' }}>
+                <span style={{ marginLeft: 'auto', fontSize: 12, color: '#0966C3', fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap' }}>
                   uscourts.gov &rarr;
                 </span>
               </a>
@@ -195,7 +195,7 @@ export default function FeesPage() {
                 <span style={{ fontSize: 14, fontWeight: 600, fontFamily: 'var(--font-display)' }}>
                   AO 240 — Short Form (for cases under $10,000)
                 </span>
-                <span style={{ marginLeft: 'auto', fontSize: 12, color: '#0A66C2', fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap' }}>
+                <span style={{ marginLeft: 'auto', fontSize: 12, color: '#0966C3', fontFamily: 'var(--font-mono)', whiteSpace: 'nowrap' }}>
                   uscourts.gov &rarr;
                 </span>
               </a>
