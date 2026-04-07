@@ -7,6 +7,7 @@ import { REAL_DATA } from '../../lib/realdata';
 import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
 import DataFreshness from '../../components/DataFreshness';
 import { StaggerGrid, StaggerItem } from '../../components/motion';
+import TrendSparkline from '../../components/charts/TrendSparkline';
 import { SITE_URL } from '../../lib/site-config';
 import ConfidenceDot from '../../components/ConfidenceDot';
 
@@ -405,7 +406,7 @@ export default function CasesIndexPage() {
             <div style={{ display: 'grid', gap: 12 }}>
               {topFiledCases.map((caseType, idx) => (
                 <Link key={caseType.nos} href={`/cases/${caseType.categoryLabel.toLowerCase().replace(/\s+/g, '-')}`} style={{ textDecoration: 'none', display: 'block' }}>
-                  <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
+                  <div style={{ background: '#FFFFFF', border: '1px solid #E5E7EB', borderRadius: '12px', padding: '16px', display: 'grid', gridTemplateColumns: '40px 1fr 80px 120px', gap: 16, alignItems: 'center', transition: 'all 0.2s ease', cursor: 'pointer' }}>
                     <div style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 600, color: '#1B3A5C' }}>
                       #{idx + 1}
                     </div>
@@ -417,6 +418,7 @@ export default function CasesIndexPage() {
                         {caseType.categoryLabel}
                       </div>
                     </div>
+                    <TrendSparkline nosCode={caseType.nos} width={80} height={32} />
                     <div style={{ textAlign: 'right' }}>
                       <div className="font-mono" style={{ fontSize: 16, fontWeight: 600, color: '#004182' }}>
                         {caseType.total.toLocaleString()}
@@ -446,11 +448,14 @@ export default function CasesIndexPage() {
                     <div style={{ fontSize: 16, fontWeight: 600, color: '#0f0f0f', marginBottom: 16 }}>
                       {caseType.label}
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 12 }}>
-                      <div className="font-mono" style={{ fontSize: 32, fontWeight: 600, color: getWinRateColor(caseType.wr) }}>
-                        {caseType.wr}%
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                      <div>
+                        <div className="font-mono" style={{ fontSize: 32, fontWeight: 600, color: getWinRateColor(caseType.wr) }}>
+                          {caseType.wr}%
+                        </div>
+                        <div style={{ fontSize: 12, color: '#4B5563' }}>Win Rate</div>
                       </div>
-                      <div style={{ fontSize: 12, color: '#4B5563' }}>Win Rate</div>
+                      <TrendSparkline nosCode={caseType.nos} width={100} height={40} />
                     </div>
                     <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>
                       {caseType.total.toLocaleString()} cases analyzed

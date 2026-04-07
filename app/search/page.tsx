@@ -9,6 +9,7 @@ import { SearchIcon } from '../../components/ui/Icons';
 import DataFreshness from '../../components/DataFreshness';
 import SampleSizeIndicator from '../../components/SampleSizeIndicator';
 import { useResearchStore } from '../../store/research';
+import TrendSparkline from '../../components/charts/TrendSparkline';
 
 // Loading skeleton component
 const SkeletonResultCard = () => (
@@ -722,7 +723,8 @@ export default function SearchPage() {
             const rd = REAL_DATA[r.nos];
             if (!rd) return null;
             return (
-              <div style={{ display: 'flex', gap: '16px', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid #F0F3F5' }}>
+              <div style={{ display: 'flex', gap: '16px', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid #F0F3F5', alignItems: 'center' }}>
+                <TrendSparkline nosCode={r.nos} width={64} height={28} />
                 {rd.wr != null && (
                   <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
                     <span style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Win Rate </span>
