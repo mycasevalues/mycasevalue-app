@@ -79,11 +79,29 @@ function getTopWinRateCaseTypes(): Array<{ nos: string; label: string; wr: numbe
   return cases.sort((a, b) => b.wr - a.wr).slice(0, 10);
 }
 
-// Get color for win rate
+// Get color for win rate — matches lib/color-scale.ts palette
 function getWinRateColor(wr: number): string {
-  if (wr >= 50) return '#059669';
-  if (wr >= 35) return '#D97706';
-  return '#0A66C2';
+  if (wr >= 65) return '#057642';
+  if (wr >= 50) return '#0A66C2';
+  if (wr >= 35) return '#C37D16';
+  if (wr >= 20) return '#CC1016';
+  return '#8C1515';
+}
+
+function getWinRateBg(wr: number): string {
+  if (wr >= 65) return '#E8F3EB';
+  if (wr >= 50) return '#EDF3FB';
+  if (wr >= 35) return '#FDF4EC';
+  if (wr >= 20) return '#FEF0EF';
+  return '#FAEAE9';
+}
+
+function getWinRateLabel(wr: number): string {
+  if (wr >= 65) return 'Strong';
+  if (wr >= 50) return 'Favorable';
+  if (wr >= 35) return 'Moderate';
+  if (wr >= 20) return 'Challenging';
+  return 'Difficult';
 }
 
 const jsonLd = {
@@ -225,18 +243,17 @@ export default function CasesIndexPage() {
         <style dangerouslySetInnerHTML={{ __html: `
           .cat-card {
             background: #FFFFFF;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
+            border: 1px solid #E0DDD8;
+            border-radius: 8px;
             padding: 32px;
-            transition: all 0.3s ease;
+            transition: border-color 150ms ease, box-shadow 150ms ease;
             height: 100%;
             display: flex;
             flex-direction: column;
           }
           .cat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             border-color: #0A66C2;
+            box-shadow: 0 0 0 1px #0A66C2;
           }
           .cat-card-arrow {
             color: #0A66C2;
@@ -335,7 +352,7 @@ export default function CasesIndexPage() {
                           <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Total Cases</div>
                         </div>
                         <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: catStats.avgWinRate >= 50 ? '#059669' : '#0A66C2' }}>{catStats.avgWinRate}%</div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: getWinRateColor(catStats.avgWinRate) }}>{catStats.avgWinRate}%</div>
                           <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Avg Win Rate</div>
                         </div>
                         <div>
@@ -349,9 +366,15 @@ export default function CasesIndexPage() {
                       </div>
                     )}
 
-                    <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid #E5E7EB', fontSize: 13, color: '#4B5563', fontWeight: 500, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span>{category.opts.length} types covered</span>
-                      <span className="cat-card-arrow">→</span>
+                    <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid #E0DDD8', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      {catStats.avgWinRate > 0 && (
+                        <span style={{ fontSize: 11, fontWeight: 600, color: getWinRateColor(catStats.avgWinRate), background: getWinRateBg(catStats.avgWinRate), border: `1px solid ${getWinRateColor(catStats.avgWinRate)}`, borderRadius: '4px', padding: '2px 8px' }}>
+                          {catStats.avgWinRate}% · {getWinRateLabel(catStats.avgWinRate)}
+                        </span>
+                      )}
+                      <span style={{ fontSize: 12, fontFamily: 'var(--font-mono)', color: '#666666', marginLeft: 'auto' }}>
+                        {catStats.totalCases > 0 ? catStats.totalCases.toLocaleString() : ''} cases
+                      </span>
                     </div>
                   </div>
                 </Link>
