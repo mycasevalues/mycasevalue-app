@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Bulk Case Analysis | Attorney Mode',
-  description: 'Analyze portfolios of case types for pattern recognition, risk clustering, and outcome trends.',
+  title: 'Bulk Case Analysis | MyCaseValue',
+  description: 'Upload and analyze CSV files of multiple cases for portfolio risk assessment and outcome trends.',
   robots: { index: false, follow: false },
 };
 
