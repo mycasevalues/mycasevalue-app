@@ -5,6 +5,7 @@ import { SITS } from '../../../../lib/data';
 import { SITE_URL } from '../../../../lib/site-config';
 import { getWinRateColor, getConfidenceLevel } from '../../../../lib/color-scale';
 import { fmtK } from '../../../../lib/format';
+import JudgeSectionLoader from '../../../../components/JudgeSectionLoader';
 
 // ISR: revalidate every 90 days (matches FJC quarterly update cycle)
 export const revalidate = 7776000;
@@ -569,6 +570,9 @@ export default async function DistrictNOSPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        {/* Judges Section */}
+        <JudgeSectionLoader nosCode={nos} districtId={district.toUpperCase()} mode="district-nos" />
 
         {/* CTA Links */}
         <section style={{ marginBottom: 56 }}>

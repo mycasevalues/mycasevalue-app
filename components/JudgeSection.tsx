@@ -1,0 +1,171 @@
+'use client';
+
+import Link from 'next/link';
+import { getWinRateColor } from '@/lib/color-scale';
+
+export interface JudgeSectionProps {
+  title: string;
+  subtitle?: string;
+  judges: Array<{
+    id: string;
+    full_name: string;
+    district_id: string | null;
+    appointment_year?: number;
+    appointing_president?: string | null;
+    plaintiff_win_rate: number;
+    total_cases: number;
+  }>;
+  showDistrict?: boolean;
+}
+
+export default function JudgeSection({ title, subtitle, judges, showDistrict = false }: JudgeSectionProps) {
+  if (!judges || judges.length === 0) {
+    return null;
+  }
+
+  return (
+    <section style={{ marginTop: 56, marginBottom: 56 }}>
+      <div style={{
+        background: '#FFFFFF',
+        border: '1px solid #e5e7eb',
+        borderRadius: '12px',
+        padding: 'clamp(24px, 4vw, 32px)',
+      }}>
+        <h2 style={{
+          fontSize: 18,
+          fontWeight: 700,
+          color: '#0f0f0f',
+          margin: '0 0 8px',
+          fontFamily: 'var(--font-heading)',
+          letterSpacing: '-0.5px',
+        }}>
+          {title}
+        </h2>
+
+        {subtitle && (
+          <p style={{
+            fontSize: 14,
+            color: '#4B5563',
+            margin: '0 0 24px',
+            fontFamily: 'var(--font-body)',
+          }}>
+            {subtitle}
+          </p>
+        )}
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gap: 16,
+        }}>
+          {judges.map((judge) => {
+            const colorInfo = getWinRateColor(judge.plaintiff_win_rate);
+
+            return (
+              <div
+                key={judge.id}
+                style={{
+                  background: '#FAFBFC',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '10px',
+                  padding: '16px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12,
+                }}
+              >
+                {/* Judge Name and District */}
+                <div>
+                  <Link
+                    href={`/judges/${judge.id}`}
+                    style={{
+                      color: '#0A66C2',
+                      textDecoration: 'none',
+                      fontWeight: 600,
+                      fontSize: 14,
+                      fontFamily: 'var(--font-body)',
+                      display: 'inline-block',
+                      marginBottom: 4,
+                    }}
+                  >
+                    {judge.full_name}
+                  </Link>
+                  {showDistrict && judge.district_id && (
+                    <div style={{
+                      fontSize: 12,
+                      color: '#4B5563',
+                      fontFamily: 'var(--font-body)',
+                    }}>
+                      {judge.district_id}
+                    </div>
+                  )}
+                </div>
+
+                {/* Win Rate */}
+                <div>
+                  <div style={{
+                    fontSize: 11,
+                    color: '#4B5563',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.3px',
+                    marginBottom: 4,
+                    fontFamily: 'var(--font-body)',
+                  }}>
+                    Plaintiff Win Rate
+                  </div>
+                  <div style={{
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: colorInfo.text,
+                    fontFamily: 'var(--font-heading)',
+                  }}>
+                    {Math.round(judge.plaintiff_win_rate * 10) / 10}%
+                  </div>
+                </div>
+
+                {/* Total Cases */}
+                <div>
+                  <div style={{
+                    fontSize: 11,
+                    color: '#4B5563',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.3px',
+                    marginBottom: 4,
+                    fontFamily: 'var(--font-body)',
+                  }}>
+                    Total Cases
+                  </div>
+                  <div style={{
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: '#0f0f0f',
+                    fontFamily: 'monospace',
+                  }}>
+                    {judge.total_cases.toLocaleString()}
+                  </div>
+                </div>
+
+                {/* View Profile Link */}
+                <Link
+                  href={`/judges/${judge.id}`}
+                  style={{
+                    color: '#0A66C2',
+                    textDecoration: 'none',
+                    fontSize: 13,
+                    fontWeight: 500,
+                    fontFamily: 'var(--font-body)',
+                    marginTop: 'auto',
+                    paddingTop: 8,
+                    borderTop: '1px solid #e5e7eb',
+                  }}
+                >
+                  View Profile →
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

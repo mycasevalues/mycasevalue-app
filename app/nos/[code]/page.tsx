@@ -19,6 +19,7 @@ import { getWinRateColor } from '../../../lib/color-scale';
 import { AnimatedRangeBar, MetricsStagger, MetricsStaggerItem } from '../../../components/motion/NosAnimations';
 import NOSRecoveryRangeClient from '../../../components/NOSRecoveryRangeClient';
 import DemoNOSPage from '../../../components/DemoNOSPage';
+import JudgeSectionLoader from '../../../components/JudgeSectionLoader';
 import dynamic from 'next/dynamic';
 
 const SettlementViolin = dynamic(() => import('../../../components/charts/SettlementViolin'), { ssr: false });
@@ -1300,6 +1301,13 @@ export default async function NOSPage({ params }: PageProps) {
           </div>
         </section>
       )}
+
+      {/* Judges Section */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="max-w-6xl mx-auto">
+          <JudgeSectionLoader nosCode={code} mode="top-national" />
+        </div>
+      </section>
 
       {/* Related Case Types */}
       {relatedCaseTypes.length > 0 && (

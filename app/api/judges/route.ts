@@ -4,13 +4,14 @@
  * Also supports finding judges favorable to specific case types via nos_code parameter
  */
 
-import { getJudges, getTopJudgesForNOS } from '@/lib/judge-data-service';
+import { getJudges, getTopJudgesForNOS, getDistrictJudges } from '@/lib/judge-data-service';
 import { JudgeWithStats } from '@/lib/supabase-judges';
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
 
+    const mode = searchParams.get('mode') as string | null;
     const query = searchParams.get('q') || '';
     const circuit = searchParams.get('circuit') || '';
     const district = searchParams.get('district') || '';
@@ -18,11 +19,74 @@ export async function GET(request: Request) {
     const sortParam = searchParams.get('sort') || 'name';
     const page = parseInt(searchParams.get('page') || '1', 10);
     const limit = parseInt(searchParams.get('limit') || '24', 10);
-    const nosCode = searchParams.get('nos_code');
+    const nosCode = searchParams.get('nosCode') || searchParams.get('nos_code');
+    const districtId = searchParams.get('districtId');
     const minCases = parseInt(searchParams.get('min_cases') || '0', 10);
 
-    // Check if this is a "find judges by NOS code" query
-    if (nosCode) {
+    // Transform judge data to match frontend expectations
+    const transformJudges = (judges: JudgeWithStats[]) => {
+      return judges.map((judge) => ({
+        id: judge.id,
+        full_name: judge.full_name,
+        district_id: judge.district_id,
+        appointment_year: judge.appointment_date ? new Date(judge.appointment_date).getFullYear() : undefined,
+        appointing_president: judge.appointing_president,
+        plaintiff_win_rate: judge.overall_plaintiff_win_rate ?? 0,
+        total_cases: judge.total_cases_handled ?? 0,
+      }));
+    };
+
+    // Handle new mode-based queries
+    if (mode === 'top-national' && nosCode) {
+      const nosCodeNum = parseInt(nosCode, 10);
+      const judges = await getTopJudgesForNOS(
+        nosCodeNum,
+        undefined,
+        25, // Minimum 25 cases for national list
+        5 // Top 5 judges
+      );
+
+      return Response.json({
+        judges: transformJudges(judges),
+        total: judges.length,
+        page: 1,
+        limit: 5,
+      });
+    }
+
+    if (mode === 'district-all' && districtId) {
+      const judges = await getDistrictJudges(districtId);
+
+      // Sort by total cases descending
+      const sorted = [...judges].sort((a, b) => (b.total_cases_handled || 0) - (a.total_cases_handled || 0));
+
+      return Response.json({
+        judges: transformJudges(sorted),
+        total: sorted.length,
+        page: 1,
+        limit: sorted.length,
+      });
+    }
+
+    if (mode === 'district-nos' && nosCode && districtId) {
+      const nosCodeNum = parseInt(nosCode, 10);
+      const judges = await getTopJudgesForNOS(
+        nosCodeNum,
+        districtId,
+        10, // Minimum 10 cases in this district
+        100 // Return up to 100 judges
+      );
+
+      return Response.json({
+        judges: transformJudges(judges),
+        total: judges.length,
+        page: 1,
+        limit: judges.length,
+      });
+    }
+
+    // Check if this is a "find judges by NOS code" query (legacy)
+    if (nosCode && !mode) {
       const nosCodeNum = parseInt(nosCode, 10);
       const judges = await getTopJudgesForNOS(
         nosCodeNum,

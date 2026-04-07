@@ -6,6 +6,7 @@ import localRulesData from '../../../data/local-rules.json';
 import legalAidData from '../../../data/legal-aid.json';
 import FilingVolumeTrend from '../../../components/charts/FilingVolumeTrend';
 import { DISTRICT_FILING_TRENDS } from '../../../data/district-trends';
+import JudgeSectionLoader from '../../../components/JudgeSectionLoader';
 
 // ISR: revalidate every 90 days (matches FJC quarterly update cycle)
 export const revalidate = 7776000;
@@ -507,6 +508,9 @@ export default async function DistrictPage({ params }: PageProps) {
             </p>
           </div>
         </section>
+
+        {/* Judges Section */}
+        <JudgeSectionLoader districtId={upperCode} mode="district-all" />
 
         {/* Info Section */}
         <section style={{ marginTop: 56 }}>
