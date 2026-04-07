@@ -4,10 +4,9 @@ import WelcomeEmail from '../../../../emails/WelcomeEmail';
 
 export const dynamic = 'force-dynamic';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     // Verify webhook secret for Supabase database webhooks
     const authHeader = req.headers.get('authorization');
     const webhookSecret = process.env.SUPABASE_WEBHOOK_SECRET;

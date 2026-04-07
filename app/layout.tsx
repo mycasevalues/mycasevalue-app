@@ -12,13 +12,15 @@ import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
 import localFont from 'next/font/local';
-import { Inter } from 'next/font/google';
-
-// Inter — LinkedIn-style typography. next/font/google self-hosts at build time (GDPR compliant).
-// Replaces Lato for both headings and body. JetBrains Mono retained for data values.
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+// Inter — LinkedIn-style typography. Self-hosted to avoid Google Fonts network failures at build time.
+const inter = localFont({
+  src: [
+    { path: '../public/fonts/inter-300.woff2', weight: '300', style: 'normal' },
+    { path: '../public/fonts/inter-400.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/inter-500.woff2', weight: '500', style: 'normal' },
+    { path: '../public/fonts/inter-600.woff2', weight: '600', style: 'normal' },
+    { path: '../public/fonts/inter-700.woff2', weight: '700', style: 'normal' },
+  ],
   display: 'swap',
   variable: '--font-inter',
 });
