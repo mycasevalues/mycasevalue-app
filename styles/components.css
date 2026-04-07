@@ -137,57 +137,68 @@
 }
 
 
-/* ── CARD — Clean Corporate ────────────────────────────── */
+/* ── CARD — LinkedIn Visual Language ───────────────────── */
 .mcv-card {
-  background: var(--bg-elevated);
-  border-radius: var(--r-card);
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 16px;
   transition:
-    transform var(--duration-base) ease,
-    box-shadow var(--duration-base) ease,
-    border-color var(--duration-fast) ease;
+    border-color 150ms ease,
+    box-shadow 150ms ease;
 }
 
+/* Primary card — clean white with subtle border (LinkedIn style) */
 .mcv-card--default {
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-xs);
+  border: 1px solid #E0DDD8;
+  box-shadow: none;
 }
 .mcv-card--default:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: none;
 }
 
+/* Elevated card — for prominent content */
 .mcv-card--elevated {
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-lg);
+  border: 1px solid #E0DDD8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 .mcv-card--elevated:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 
+/* Surface card — for data displays */
+.mcv-card--surface {
+  background: #F3F2EF;
+  border: none;
+  box-shadow: none;
+}
+
+/* Outlined card — borderless variant (renamed from outlined) */
 .mcv-card--outlined {
-  border: 1.5px solid var(--border-default);
+  border: 1px solid #E0DDD8;
   box-shadow: none;
 }
 .mcv-card--outlined:hover {
-  border-color: var(--accent-secondary-border);
+  border-color: #0A66C2;
+  box-shadow: 0 0 0 1px #0A66C2;
 }
 
+/* Interactive card — clickable with hover state */
 .mcv-card--interactive {
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-xs);
+  border: 1px solid #E0DDD8;
+  box-shadow: none;
   cursor: pointer;
 }
 .mcv-card--interactive:hover {
-  border-color: var(--accent-secondary-border);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-1px);
+  border-color: #0A66C2;
+  box-shadow: 0 0 0 1px #0A66C2;
 }
 .mcv-card--interactive:active {
-  transform: translateY(0) scale(0.99);
+  transform: scale(0.99);
 }
 
+/* Featured card — highlighted with accent border */
 .mcv-card--accent {
-  border: 2px solid var(--accent-primary);
+  border: 2px solid #0A66C2;
 }
 
 .mcv-card__header {

@@ -320,27 +320,25 @@ export default function HomePage() {
                 <div
                   style={{
                     backgroundColor: '#ffffff',
-                    border: `1px solid ${BORDER_COLOR}`,
-                    borderRadius: '12px',
+                    border: '1px solid #E0DDD8',
+                    borderRadius: '8px',
                     padding: '32px',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
-                    transition: 'all 0.3s ease',
+                    transition: 'border-color 150ms ease, box-shadow 150ms ease',
                     cursor: 'pointer',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+                    boxShadow: 'none',
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLDivElement;
-                    el.style.boxShadow = '0 12px 32px rgba(10, 102, 194, 0.15)';
-                    el.style.borderColor = ACCENT_COLOR;
-                    el.style.transform = 'translateY(-4px)';
+                    el.style.boxShadow = '0 0 0 1px #0A66C2';
+                    el.style.borderColor = '#0A66C2';
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLDivElement;
-                    el.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
-                    el.style.borderColor = BORDER_COLOR;
-                    el.style.transform = 'translateY(0)';
+                    el.style.boxShadow = 'none';
+                    el.style.borderColor = '#E0DDD8';
                   }}
                 >
                   <div
@@ -437,12 +435,12 @@ export default function HomePage() {
                 key={idx}
                 style={{
                   backgroundColor: '#ffffff',
-                  border: `1px solid ${BORDER_COLOR}`,
-                  borderRadius: '12px',
+                  border: '1px solid #E0DDD8',
+                  borderRadius: '8px',
                   padding: '32px',
                   display: 'flex',
                   flexDirection: 'column',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
+                  boxShadow: 'none',
                 }}
               >
                 <p
