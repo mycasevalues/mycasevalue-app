@@ -747,14 +747,17 @@ export default async function NOSPage({ params }: PageProps) {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: 'Win Rate', value: `${winRate}%`, color: '#0A66C2', showSample: true },
-              { label: 'Median Duration', value: `${medianDuration} mo`, color: '#0A66C2', showSample: false },
-              { label: 'Settlement Rate', value: `${settleRate}%`, color: '#057642', showSample: false },
-              { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: '#0A66C2', showSample: false },
+              { label: 'Win Rate', value: `${winRate}%`, color: '#0A66C2', showSample: true, showDot: true },
+              { label: 'Median Duration', value: `${medianDuration} mo`, color: '#0A66C2', showSample: false, showDot: false },
+              { label: 'Settlement Rate', value: `${settleRate}%`, color: '#057642', showSample: false, showDot: false },
+              { label: 'Cases Analyzed', value: totalCases > 0 ? totalCases.toLocaleString() : '500+', color: '#0A66C2', showSample: false, showDot: false },
             ].map((stat, i) => (
               <div key={i} className="stat-card">
-                <div className="stat-value" style={{ color: stat.color }}>
+                <div className="stat-value" style={{ color: stat.color, display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
                   {stat.value}
+                  {stat.showDot && totalCases > 0 && (
+                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : '#999999' }} />
+                  )}
                   {stat.showSample && totalCases > 0 && <SampleSizeIndicator count={totalCases} />}
                 </div>
                 <div className="stat-label">
@@ -1043,7 +1046,10 @@ export default async function NOSPage({ params }: PageProps) {
                     <div className="related-type-stats">
                       <div className="related-type-stat">
                         <span>Win Rate:</span>
-                        <strong style={{ color: caseType.wr >= 50 ? '#057642' : '#0A66C2' }}>{caseType.wr}%</strong>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <strong style={{ color: caseType.wr >= 50 ? '#057642' : '#0A66C2' }}>{caseType.wr}%</strong>
+                          <span title={`Based on ${caseType.total.toLocaleString()} cases — ${caseType.total >= 10000 ? 'High' : caseType.total >= 1000 ? 'Medium' : caseType.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: caseType.total >= 10000 ? '#057642' : caseType.total >= 1000 ? '#C37D16' : caseType.total >= 100 ? '#CC1016' : '#999999' }} />
+                        </div>
                       </div>
                       <div className="related-type-stat">
                         <span>Settlement:</span>

@@ -94,11 +94,15 @@ function StatsCard({
   label,
   value,
   subtitle,
+  casesCount,
 }: {
   label: string;
   value: string | number;
   subtitle?: string;
+  casesCount?: number;
 }) {
+  const shouldShowDot = label === 'Win Rate' && casesCount && casesCount > 0;
+
   return (
     <div
       style={{
@@ -120,9 +124,16 @@ function StatsCard({
           color: '#0A66C2',
           margin: '0',
           fontFamily: 'var(--font-data)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
         }}
       >
         {value}
+        {shouldShowDot && (
+          <span title={`Based on ${casesCount.toLocaleString()} cases — ${casesCount >= 10000 ? 'High' : casesCount >= 1000 ? 'Medium' : casesCount >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: casesCount >= 10000 ? '#057642' : casesCount >= 1000 ? '#C37D16' : casesCount >= 100 ? '#CC1016' : '#999999' }} />
+        )}
       </p>
       {subtitle && (
         <p style={{ color: '#4B5563', fontSize: '12px', margin: '6px 0 0', fontFamily: 'var(--font-body)' }}>
@@ -323,7 +334,7 @@ export default async function CaseTypeDetailPage({
           }}
           className="stats-grid"
         >
-          <StatsCard label="Win Rate" value={`${winRate}%`} subtitle="Favorable outcomes" />
+          <StatsCard label="Win Rate" value={`${winRate}%`} subtitle="Favorable outcomes" casesCount={data?.total} />
           <StatsCard label="Settlement Rate" value={`${settlementRate}%`} subtitle="Resolved pre-trial" />
           <StatsCard label="Median Duration" value={`${medianMonths} mo`} subtitle="Time to resolution" />
           <StatsCard label="Median Recovery" value={medianRecovery} subtitle="Successful cases" />

@@ -385,8 +385,12 @@ export default async function DistrictPage({ params }: PageProps) {
                       fontWeight: 700,
                       color: '#0f0f0f',
                       fontFamily: 'var(--font-display)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
                     }}>
                       {Math.round(caseType.winRate * 10) / 10}%
+                      <span title={`Based on ${caseType.count.toLocaleString()} cases — ${caseType.count >= 10000 ? 'High' : caseType.count >= 1000 ? 'Medium' : caseType.count >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: caseType.count >= 10000 ? '#057642' : caseType.count >= 1000 ? '#C37D16' : caseType.count >= 100 ? '#CC1016' : '#999999' }} />
                     </div>
                   </div>
                   <div>

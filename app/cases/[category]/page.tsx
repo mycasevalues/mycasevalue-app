@@ -471,8 +471,21 @@ async function CategoryPage({
               ) : null;
             })()}
             <div>
-              <div style={{ fontWeight: 600, fontSize: '22px', color: '#FFFFFF', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ fontWeight: 600, fontSize: '22px', color: '#FFFFFF', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 {stats.avgWinRate}%
+                {(() => {
+                  const seen = new Set<string>();
+                  let totalCases = 0;
+                  for (const opt of categoryData.opts) {
+                    if (seen.has(opt.nos)) continue;
+                    seen.add(opt.nos);
+                    const rd = REAL_DATA[opt.nos];
+                    if (rd?.total) totalCases += rd.total;
+                  }
+                  return totalCases > 0 ? (
+                    <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : '#999999' }} />
+                  ) : null;
+                })()}
               </div>
               <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '12px', fontWeight: 500 }}>Avg Win Rate</div>
             </div>
@@ -554,8 +567,25 @@ async function CategoryPage({
                       color: '#0A66C2',
                       marginBottom: '8px',
                       fontFamily: 'var(--font-mono)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '8px',
                     }}>
                       {stats.avgWinRate}%
+                      {(() => {
+                        const seen = new Set<string>();
+                        let totalCases = 0;
+                        for (const opt of categoryData.opts) {
+                          if (seen.has(opt.nos)) continue;
+                          seen.add(opt.nos);
+                          const rd = REAL_DATA[opt.nos];
+                          if (rd?.total) totalCases += rd.total;
+                        }
+                        return totalCases > 0 ? (
+                          <span title={`Based on ${totalCases.toLocaleString()} cases — ${totalCases >= 10000 ? 'High' : totalCases >= 1000 ? 'Medium' : totalCases >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', backgroundColor: totalCases >= 10000 ? '#057642' : totalCases >= 1000 ? '#C37D16' : totalCases >= 100 ? '#CC1016' : '#999999' }} />
+                        ) : null;
+                      })()}
                     </div>
                     <div style={{
                       fontSize: '13px',
@@ -742,8 +772,9 @@ async function CategoryPage({
                       </div>
                       {rd.wr != null && (
                         <div style={{ minWidth: 50 }}>
-                          <div style={{ fontSize: '16px', fontWeight: 600, color: rd.wr >= 50 ? '#059669' : '#0A66C2', fontFamily: 'var(--font-mono)' }}>
+                          <div style={{ fontSize: '16px', fontWeight: 600, color: rd.wr >= 50 ? '#059669' : '#0A66C2', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                             {rd.wr}%
+                            <span title={`Based on ${rd.total.toLocaleString()} cases — ${rd.total >= 10000 ? 'High' : rd.total >= 1000 ? 'Medium' : rd.total >= 100 ? 'Low' : 'Insufficient'} confidence`} style={{ display: 'inline-block', width: 5, height: 5, borderRadius: '50%', backgroundColor: rd.total >= 10000 ? '#057642' : rd.total >= 1000 ? '#C37D16' : rd.total >= 100 ? '#CC1016' : '#999999' }} />
                           </div>
                           <div style={{ fontSize: '10px', color: '#4B5563', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.3px' }}>Win Rate</div>
                         </div>

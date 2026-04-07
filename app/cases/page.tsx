@@ -6,6 +6,7 @@ import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
+import ConfidenceDot from '../../components/ConfidenceDot';
 
 // Pre-compute aggregate stats for each category
 function getCategoryStats(categoryId: string, opts: { nos: string }[]): { totalCases: number; avgWinRate: number; avgSettlement: number; avgDuration: number } {
@@ -352,7 +353,10 @@ export default function CasesIndexPage() {
                           <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Total Cases</div>
                         </div>
                         <div>
-                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: getWinRateColor(catStats.avgWinRate) }}>{catStats.avgWinRate}%</div>
+                          <div className="font-mono" style={{ fontSize: 18, fontWeight: 600, color: getWinRateColor(catStats.avgWinRate), display: 'flex', alignItems: 'center', gap: '4px' }}>
+                            {catStats.avgWinRate}%
+                            <ConfidenceDot n={catStats.totalCases} />
+                          </div>
                           <div style={{ fontSize: 11, color: '#4B5563', fontWeight: 500 }}>Avg Win Rate</div>
                         </div>
                         <div>
