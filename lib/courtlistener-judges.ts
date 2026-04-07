@@ -206,10 +206,105 @@ export interface IngestionResult {
   processed: number;
   errors: string[];
   duration_ms: number;
+  next_cursor?: string | null;
+  total_processed?: number;
 }
 
 /**
- * Main ingestion function — fetches judges from CourtListener and upserts to Supabase
+ * Single-page ingestion — fetches ONE page of judges from CourtListener and upserts to Supabase.
+ * Returns a cursor for the next page so the caller can loop externally.
+ * Designed to fit within Vercel Hobby's 10s function timeout.
+ */
+export async function ingestJudgesPage(
+  supabaseUrl: string,
+  supabaseServiceKey: string,
+  cursor?: string | null,
+  courtlistenerToken?: string
+): Promise<IngestionResult> {
+  const startTime = Date.now();
+  const supabase = createClient(supabaseUrl, supabaseServiceKey);
+  const errors: string[] = [];
+  let processed = 0;
+
+  const pageUrl = cursor || `${COURTLISTENER_JUDGES_URL}?positions__position_type=jud&positions__court__jurisdiction=FD&page_size=${PAGE_SIZE}`;
+
+  const token = courtlistenerToken || process.env.COURTLISTENER_API_TOKEN;
+  const headers: Record<string, string> = { 'Accept': 'application/json' };
+  if (token) {
+    headers['Authorization'] = `Token ${token}`;
+  }
+
+  try {
+    const response = await fetch(pageUrl, { headers });
+    if (!response.ok) {
+      errors.push(`CourtListener API error: ${response.status} ${response.statusText}`);
+      return { processed, errors, duration_ms: Date.now() - startTime, next_cursor: null };
+    }
+
+    const data = await response.json();
+    const judges: CourtListenerJudge[] = data.results || [];
+
+    for (const clJudge of judges) {
+      try {
+        const position = clJudge.positions?.find(
+          (p: CourtListenerPosition) => p.position_type === 'jud' && !p.date_termination
+        );
+        if (!position) continue;
+
+        const courtId = extractCourtId(position.court);
+        if (!courtId || !COURT_ID_MAP[courtId]) continue;
+
+        const fullName = [clJudge.name_first, clJudge.name_middle, clJudge.name_last]
+          .filter(Boolean).join(' ');
+        const judgeId = generateJudgeId(fullName, courtId);
+
+        const judgeRecord = {
+          id: judgeId,
+          courtlistener_id: clJudge.id,
+          full_name: fullName,
+          first_name: clJudge.name_first || null,
+          last_name: clJudge.name_last || null,
+          district_id: COURT_ID_MAP[courtId] || null,
+          circuit: COURT_CIRCUIT_MAP[courtId] || null,
+          appointment_date: position.date_start || null,
+          appointing_president: null as string | null,
+          party_of_appointing_president: null as string | null,
+          termination_date: position.date_termination || null,
+          is_active: !position.date_termination,
+          position: position.position_type === 'jud' ? 'District Judge' : position.position_type,
+          courtlistener_url: `https://www.courtlistener.com/person/${clJudge.id}/`,
+          updated_at: new Date().toISOString(),
+        };
+
+        const { error } = await supabase
+          .from('judges')
+          .upsert(judgeRecord, { onConflict: 'courtlistener_id' });
+
+        if (error) {
+          errors.push(`Upsert error for ${fullName}: ${error.message}`);
+        } else {
+          processed++;
+        }
+      } catch (err: any) {
+        errors.push(`Processing error: ${err.message}`);
+      }
+    }
+
+    return {
+      processed,
+      errors,
+      duration_ms: Date.now() - startTime,
+      next_cursor: data.next || null,
+    };
+  } catch (err: any) {
+    errors.push(`Fatal error: ${err.message}`);
+    return { processed, errors, duration_ms: Date.now() - startTime, next_cursor: null };
+  }
+}
+
+/**
+ * Full ingestion function — fetches ALL judges from CourtListener and upserts to Supabase.
+ * WARNING: Will timeout on Vercel Hobby plan. Use ingestJudgesPage for serverless.
  */
 export async function ingestJudges(supabaseUrl: string, supabaseServiceKey: string, courtlistenerToken?: string): Promise<IngestionResult> {
   const startTime = Date.now();

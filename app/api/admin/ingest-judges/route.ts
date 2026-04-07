@@ -14,10 +14,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { secureCompare } from '../../../../lib/sanitize';
 import { rateLimit, getClientIp } from '../../../../lib/rate-limit';
-import { ingestJudges } from '../../../../lib/courtlistener-judges';
+import { ingestJudges, ingestJudgesPage } from '../../../../lib/courtlistener-judges';
 
 export const dynamic = 'force-dynamic';
-export const maxDuration = 60; // Allow up to 60s for judge ingestion
+export const maxDuration = 300; // Vercel Pro allows up to 300s
 
 export async function POST(req: NextRequest) {
   // Strict rate limiting to prevent brute-force attacks on admin secret
@@ -47,18 +47,27 @@ export async function POST(req: NextRequest) {
       }, { status: 500 });
     }
 
-    // Parse request body for optional CourtListener token
+    // Parse request body for optional CourtListener token and cursor
     let courtlistenerToken: string | undefined;
+    let cursor: string | undefined;
+    let mode: string = 'page'; // default to single-page mode for Hobby plan
     try {
       const body = await req.json();
       courtlistenerToken = body?.courtlistener_token;
+      cursor = body?.cursor;
+      if (body?.mode === 'full') mode = 'full';
     } catch {
       // Body might be empty, that's fine
     }
 
-    // Run ingestion
-    const result = await ingestJudges(supabaseUrl, supabaseServiceKey, courtlistenerToken);
+    if (mode === 'full') {
+      // Full ingestion — will timeout on Hobby plan
+      const result = await ingestJudges(supabaseUrl, supabaseServiceKey, courtlistenerToken);
+      return NextResponse.json(result);
+    }
 
+    // Single-page ingestion — fits within 10s timeout
+    const result = await ingestJudgesPage(supabaseUrl, supabaseServiceKey, cursor, courtlistenerToken);
     return NextResponse.json(result);
   } catch (err: unknown) {
     const errorMessage = err instanceof Error ? err.message : String(err);
