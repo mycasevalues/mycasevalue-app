@@ -3,6 +3,7 @@ import { SITE_URL } from '../../lib/site-config';
 import { REAL_DATA } from '../../lib/realdata';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import DistrictsMapToggle from '../../components/DistrictsMapToggle';
 
 export const revalidate = 0;
 
@@ -368,8 +369,10 @@ export default function DistrictsPage() {
         </div>
       </header>
 
-      {/* Circuit Sections */}
+      {/* Map + Circuit Sections */}
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(32px, 5vw, 56px) clamp(16px, 3vw, 48px)' }}>
+        <DistrictsMapToggle>
+        <div>
         {CIRCUITS.map((circuit, circuitIndex) => {
           const winRate = getCircuitWinRate(circuit.number);
           return (
@@ -539,6 +542,8 @@ export default function DistrictsPage() {
             </section>
           );
         })}
+        </div>
+        </DistrictsMapToggle>
       </div>
 
       {/* Data Info Section */}
