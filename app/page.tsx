@@ -14,7 +14,6 @@ interface Feature {
   title: string;
   description: string;
   href: string;
-  icon: string;
 }
 
 const FEATURES: Feature[] = [
@@ -22,37 +21,31 @@ const FEATURES: Feature[] = [
     title: 'Case Analytics',
     description: 'Detailed win rates, settlement ranges, and outcome trends across all federal cases.',
     href: '/calculator',
-    icon: '📊',
   },
   {
     title: 'District Intelligence',
     description: 'Case type analysis by district with jurisdiction-specific insights and benchmarks.',
     href: '/districts',
-    icon: '🗺️',
   },
   {
     title: 'Attorney Tools',
     description: 'Judge analytics, attorney performance metrics, and strategy recommendations.',
     href: '/attorney',
-    icon: '⚖️',
   },
   {
     title: 'AI-Powered Search',
     description: 'Natural language search across 5.1M+ cases with advanced filtering capabilities.',
     href: '/search',
-    icon: '🔍',
   },
   {
     title: 'Interactive Maps',
     description: 'Visualize case distribution, outcomes, and trends across all 94 federal districts.',
     href: '/map',
-    icon: '🌍',
   },
   {
     title: 'Trend Analysis',
     description: 'Historical case trends, settlement patterns, and emerging case type trajectories.',
     href: '/trends',
-    icon: '📈',
   },
 ];
 
@@ -392,12 +385,13 @@ export default function HomePage() {
                 >
                   <div
                     style={{
-                      fontSize: '36px',
+                      width: '40px',
+                      height: '4px',
+                      backgroundColor: ACCENT_COLOR,
+                      borderRadius: '2px',
                       marginBottom: '16px',
                     }}
-                  >
-                    {feature.icon}
-                  </div>
+                  />
                   <h3
                     style={{
                       fontSize: '18px',
