@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { SITE_URL } from '../../../lib/site-config';
 import Link from 'next/link';
 import { REAL_DATA } from '../../../lib/realdata';
+import localRulesData from '../../../data/local-rules.json';
 
 interface PageProps {
   params: Promise<{ code: string }>;
@@ -472,6 +473,107 @@ export default async function DistrictPage({ params }: PageProps) {
           </div>
         </section>
       </div>
+
+      {/* Local Rules (top 20 districts only) */}
+      {(localRulesData as Record<string, any>)[upperCode] && (() => {
+        const rules = (localRulesData as Record<string, any>)[upperCode];
+        return (
+          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 clamp(16px, 3vw, 48px)', marginTop: 40 }}>
+            <section>
+              <div style={{
+                background: '#FFFFFF',
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: 'clamp(24px, 4vw, 32px)',
+              }}>
+                <h2 style={{
+                  fontSize: 16,
+                  fontWeight: 700,
+                  color: '#0f0f0f',
+                  margin: '0 0 20px',
+                  fontFamily: 'var(--font-display)',
+                }}>
+                  Local Rules & Filing Info
+                </h2>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '20px' }}>
+                  {/* Page Limits */}
+                  <div style={{
+                    padding: '16px',
+                    background: '#FAFBFC',
+                    border: '1px solid #E5E7EB',
+                    borderRadius: '8px',
+                  }}>
+                    <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 10 }}>
+                      Brief Page Limits
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: 13, color: '#0f0f0f', fontFamily: 'var(--font-body)' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <span>Motion:</span>
+                        <strong>{rules.pageLimits?.motion || '—'} pages</strong>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <span>Response:</span>
+                        <strong>{rules.pageLimits?.response || '—'} pages</strong>
+                      </div>
+                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <span>Reply:</span>
+                        <strong>{rules.pageLimits?.reply || '—'} pages</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* E-Filing */}
+                  <div style={{
+                    padding: '16px',
+                    background: '#FAFBFC',
+                    border: '1px solid #E5E7EB',
+                    borderRadius: '8px',
+                  }}>
+                    <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 10 }}>
+                      Electronic Filing
+                    </div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-display)', marginBottom: '8px' }}>
+                      {rules.efilingSystem || 'CM/ECF'}
+                    </div>
+                    <a
+                      href={rules.localRulesUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: 12,
+                        color: '#0A66C2',
+                        textDecoration: 'none',
+                        fontWeight: 500,
+                      }}
+                    >
+                      View Official Local Rules →
+                    </a>
+                  </div>
+
+                  {/* Clerk Contact */}
+                  <div style={{
+                    padding: '16px',
+                    background: '#FAFBFC',
+                    border: '1px solid #E5E7EB',
+                    borderRadius: '8px',
+                  }}>
+                    <div style={{ fontSize: 11, fontWeight: 600, color: '#4B5563', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 10 }}>
+                      {"Clerk's Office"}
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: 13, color: '#0f0f0f', fontFamily: 'var(--font-body)' }}>
+                      {rules.clerkContact?.phone && <div>{rules.clerkContact.phone}</div>}
+                      {rules.clerkContact?.address && (
+                        <div style={{ fontSize: 12, color: '#4B5563', lineHeight: 1.4 }}>{rules.clerkContact.address}</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        );
+      })()}
 
       {/* Footer Navigation */}
       <div style={{

@@ -1,0 +1,302 @@
+{
+  "SDNY": {
+    "name": "Southern District of New York",
+    "localRulesUrl": "https://www.nysd.uscourts.gov/rules/local-rules-southern-district-new-york",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(212) 805-0136",
+      "address": "500 Pearl Street, New York, NY 10007",
+      "email": "nysd_ecf_helpdesk@nysd.uscourts.gov"
+    }
+  },
+  "CACD": {
+    "name": "Central District of California",
+    "localRulesUrl": "https://www.cacd.uscourts.gov/attorneys/local-rules",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 12
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(213) 894-1565",
+      "address": "350 W 1st Street, Los Angeles, CA 90012",
+      "email": "cacd_ecfhelp@cacd.uscourts.gov"
+    }
+  },
+  "NDIL": {
+    "name": "Northern District of Illinois",
+    "localRulesUrl": "https://www.ilnd.uscourts.gov/LocalRules.aspx",
+    "pageLimits": {
+      "motion": 15,
+      "response": 15,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(312) 435-5670",
+      "address": "219 S Dearborn Street, Chicago, IL 60604",
+      "email": "ilnd_ecf@ilnd.uscourts.gov"
+    }
+  },
+  "SDTX": {
+    "name": "Southern District of Texas",
+    "localRulesUrl": "https://www.txs.uscourts.gov/page/local-rules",
+    "pageLimits": {
+      "motion": 20,
+      "response": 20,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(713) 250-5500",
+      "address": "515 Rusk Avenue, Houston, TX 77002",
+      "email": "txs_ecf@txs.uscourts.gov"
+    }
+  },
+  "NJDN": {
+    "name": "District of New Jersey",
+    "localRulesUrl": "https://www.njd.uscourts.gov/local-rules",
+    "pageLimits": {
+      "motion": 30,
+      "response": 30,
+      "reply": 15
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(973) 645-3730",
+      "address": "50 Walnut Street, Newark, NJ 07101",
+      "email": "njd_ecf@njd.uscourts.gov"
+    }
+  },
+  "EDNY": {
+    "name": "Eastern District of New York",
+    "localRulesUrl": "https://www.nyed.uscourts.gov/local-rules-eastern-district-new-york",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(718) 613-2600",
+      "address": "225 Cadman Plaza East, Brooklyn, NY 11201",
+      "email": "ecf_helpdesk@nyed.uscourts.gov"
+    }
+  },
+  "CAND": {
+    "name": "Northern District of California",
+    "localRulesUrl": "https://www.cand.uscourts.gov/rules/local-rules/",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 15
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(415) 522-2000",
+      "address": "450 Golden Gate Avenue, San Francisco, CA 94102",
+      "email": "ecfhelpdesk@cand.uscourts.gov"
+    }
+  },
+  "SDFL": {
+    "name": "Southern District of Florida",
+    "localRulesUrl": "https://www.flsd.uscourts.gov/local-rules",
+    "pageLimits": {
+      "motion": 20,
+      "response": 20,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(305) 523-5100",
+      "address": "400 N Miami Avenue, Miami, FL 33128",
+      "email": "flsd_ecf@flsd.uscourts.gov"
+    }
+  },
+  "NDTX": {
+    "name": "Northern District of Texas",
+    "localRulesUrl": "https://www.txnd.uscourts.gov/local-rules-and-orders",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 15
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(214) 753-2200",
+      "address": "1100 Commerce Street, Dallas, TX 75242",
+      "email": "txnd_ecf@txnd.uscourts.gov"
+    }
+  },
+  "MADN": {
+    "name": "District of Massachusetts",
+    "localRulesUrl": "https://www.mad.uscourts.gov/resources/localrules.htm",
+    "pageLimits": {
+      "motion": 20,
+      "response": 20,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(617) 748-9152",
+      "address": "1 Courthouse Way, Boston, MA 02210",
+      "email": "mad_ecf@mad.uscourts.gov"
+    }
+  },
+  "EDPA": {
+    "name": "Eastern District of Pennsylvania",
+    "localRulesUrl": "https://www.paed.uscourts.gov/local-rules",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(267) 299-7011",
+      "address": "601 Market Street, Philadelphia, PA 19106",
+      "email": "ecfhelp@paed.uscourts.gov"
+    }
+  },
+  "WDWA": {
+    "name": "Western District of Washington",
+    "localRulesUrl": "https://www.wawd.uscourts.gov/local-rules-western-district-washington",
+    "pageLimits": {
+      "motion": 24,
+      "response": 24,
+      "reply": 12
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(206) 370-8400",
+      "address": "700 Stewart Street, Seattle, WA 98101",
+      "email": "wawd_ecf@wawd.uscourts.gov"
+    }
+  },
+  "MDDN": {
+    "name": "District of Maryland",
+    "localRulesUrl": "https://www.mdd.uscourts.gov/local-rules",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 15
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(410) 962-2600",
+      "address": "101 W Lombard Street, Baltimore, MD 21201",
+      "email": "mdd_ecf@mdd.uscourts.gov"
+    }
+  },
+  "EDVA": {
+    "name": "Eastern District of Virginia",
+    "localRulesUrl": "https://www.vaed.uscourts.gov/local-rules-and-internal-operating-procedures",
+    "pageLimits": {
+      "motion": 30,
+      "response": 30,
+      "reply": 15
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(703) 299-2100",
+      "address": "401 Courthouse Square, Alexandria, VA 22314",
+      "email": "vaed_ecf@vaed.uscourts.gov"
+    }
+  },
+  "NDGA": {
+    "name": "Northern District of Georgia",
+    "localRulesUrl": "https://www.gand.uscourts.gov/local-rules",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 15
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(404) 215-1655",
+      "address": "75 Ted Turner Drive SW, Atlanta, GA 30303",
+      "email": "gand_ecf@gand.uscourts.gov"
+    }
+  },
+  "MNDN": {
+    "name": "District of Minnesota",
+    "localRulesUrl": "https://www.mnd.uscourts.gov/local-rules",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(612) 664-5000",
+      "address": "300 S 4th Street, Minneapolis, MN 55415",
+      "email": "mnd_ecf@mnd.uscourts.gov"
+    }
+  },
+  "WDTX": {
+    "name": "Western District of Texas",
+    "localRulesUrl": "https://www.txwd.uscourts.gov/rules-standing-orders/local-rules/",
+    "pageLimits": {
+      "motion": 20,
+      "response": 20,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(512) 916-5896",
+      "address": "200 W 8th Street, Austin, TX 78701",
+      "email": "txwd_ecf@txwd.uscourts.gov"
+    }
+  },
+  "CTDN": {
+    "name": "District of Connecticut",
+    "localRulesUrl": "https://www.ctd.uscourts.gov/local-rules",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 10
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(203) 773-2140",
+      "address": "141 Church Street, New Haven, CT 06510",
+      "email": "ctd_ecf@ctd.uscourts.gov"
+    }
+  },
+  "CASD": {
+    "name": "Southern District of California",
+    "localRulesUrl": "https://www.casd.uscourts.gov/rules/local-rules",
+    "pageLimits": {
+      "motion": 25,
+      "response": 25,
+      "reply": 15
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(619) 557-5600",
+      "address": "333 W Broadway, San Diego, CA 92101",
+      "email": "casd_ecf@casd.uscourts.gov"
+    }
+  },
+  "NDOH": {
+    "name": "Northern District of Ohio",
+    "localRulesUrl": "https://www.ohnd.uscourts.gov/local-rules",
+    "pageLimits": {
+      "motion": 30,
+      "response": 30,
+      "reply": 15
+    },
+    "efilingSystem": "CM/ECF",
+    "clerkContact": {
+      "phone": "(216) 357-7000",
+      "address": "801 W Superior Avenue, Cleveland, OH 44113",
+      "email": "ohnd_ecf@ohnd.uscourts.gov"
+    }
+  }
+}
