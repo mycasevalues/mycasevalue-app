@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AnimatedCounter from '../components/AnimatedCounter';
 
@@ -69,6 +69,14 @@ const TESTIMONIALS = [
 
 export default function HomePage() {
   const [searchInput, setSearchInput] = useState('');
+  const [reportsCount, setReportsCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('/api/metrics')
+      .then(r => r.json())
+      .then(d => setReportsCount(d.reportsGenerated ?? 0))
+      .catch(() => setReportsCount(0));
+  }, []);
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
@@ -270,6 +278,27 @@ export default function HomePage() {
               <p style={{ fontSize: '14px', color: '#666666', margin: '0' }}>Data Coverage</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Live Platform Metrics Bar */}
+      <section style={{ background: '#F3F2EF', padding: '32px 20px', borderTop: '1px solid #E0DDD8' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', textAlign: 'center' }}>
+          {[
+            { value: '5,118,830', label: 'Cases Analyzed' },
+            { value: '94', label: 'Federal Districts' },
+            { value: '84', label: 'Case Types' },
+            { value: reportsCount !== null ? reportsCount.toLocaleString() : '—', label: 'Reports Generated' },
+          ].map((m) => (
+            <div key={m.label}>
+              <div style={{ fontSize: '28px', fontWeight: 600, color: '#191919', fontFamily: 'var(--font-mono)', letterSpacing: '-0.02em' }}>
+                {m.value}
+              </div>
+              <div style={{ fontSize: '13px', color: '#666666', fontFamily: 'var(--font-body)', marginTop: '4px' }}>
+                {m.label}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
