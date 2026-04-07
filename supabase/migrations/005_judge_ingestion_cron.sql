@@ -1,0 +1,60 @@
+-- Judge Ingestion pg_cron Scheduler
+-- DOCUMENTATION: This file documents the monthly judge ingestion scheduling setup.
+-- NOTE: This cannot be deployed from the CLI environment, but documents the steps for production.
+--
+-- In production Supabase, run these commands to schedule monthly judge ingestion:
+--
+-- 1. Enable pg_cron extension (if not already enabled):
+--    CREATE EXTENSION IF NOT EXISTS pg_cron;
+--
+-- 2. Create a stored procedure to call the judge ingestion webhook:
+--    CREATE OR REPLACE FUNCTION trigger_judge_ingestion()
+--    RETURNS void AS $$
+--    DECLARE
+--      response TEXT;
+--    BEGIN
+--      -- Call the HTTP endpoint with admin secret
+--      SELECT INTO response http_post(
+--        'https://your-deployment.vercel.app/api/admin/ingest-judges',
+--        '{"courtlistener_token": ""}',
+--        'application/json',
+--        ARRAY['Authorization: Bearer ' || current_setting('app.admin_secret')]
+--      );
+--    END;
+--    $$ LANGUAGE plpgsql SECURITY DEFINER;
+--
+-- 3. Schedule the function to run monthly on the 1st at 02:00 UTC:
+--    SELECT cron.schedule('ingest-judges-monthly', '0 2 1 * *', 'SELECT trigger_judge_ingestion()');
+--
+-- Alternative (simpler) approach using Supabase Functions:
+-- Deploy the ingestion logic as a Supabase Edge Function with the following invocation:
+--
+-- supabase functions deploy ingest-judges --project-id <PROJECT_ID>
+--
+-- Then schedule it using Supabase's REST API or the CLI:
+-- curl -X POST "https://<PROJECT_ID>.supabase.co/functions/v1/ingest-judges" \
+--   -H "Authorization: Bearer <SERVICE_ROLE_KEY>"
+--
+-- For this casecheck deployment, use the Next.js API route instead:
+-- POST /api/admin/ingest-judges
+-- Headers: x-admin-secret: <ADMIN_SECRET>
+--
+-- Schedule via external cron service (e.g., EasyCron, AWS EventBridge):
+-- - URL: https://your-deployment.vercel.app/api/admin/ingest-judges
+-- - Method: POST
+-- - Headers: x-admin-secret: <ADMIN_SECRET>
+-- - Frequency: Monthly on 1st day at 02:00 UTC
+-- - Body: {} or {"courtlistener_token": "<optional>"}
+--
+-- For local development/testing:
+-- curl -X POST http://localhost:3000/api/admin/ingest-judges \
+--   -H "x-admin-secret: <ADMIN_SECRET>" \
+--   -H "Content-Type: application/json" \
+--   -d '{"courtlistener_token": ""}'
+--
+-- Expected Response:
+-- {
+--   "processed": 1234,
+--   "errors": [],
+--   "duration_ms": 45000
+-- }
