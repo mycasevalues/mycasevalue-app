@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AnimatedCounter from '../components/AnimatedCounter';
+import DataFreshness from '../components/DataFreshness';
 
 const ACCENT_COLOR = '#0A66C2';
 const TEXT_COLOR = '#0f0f0f';
@@ -282,7 +283,10 @@ export default function HomePage() {
       </section>
 
       {/* Live Platform Metrics Bar */}
-      <section style={{ background: '#F3F2EF', padding: '32px 20px', borderTop: '1px solid #E0DDD8' }}>
+      <section style={{ background: '#F3F2EF', padding: '32px 20px', borderTop: '1px solid #E0DDD8', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: '12px', right: '24px' }}>
+          <DataFreshness />
+        </div>
         <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', textAlign: 'center' }}>
           {[
             { value: '5,118,830', label: 'Cases Analyzed' },

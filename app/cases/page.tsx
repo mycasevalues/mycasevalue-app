@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { SITS } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { ArrowRightIcon, SearchIcon } from '../../components/ui/Icons';
+import DataFreshness from '../../components/DataFreshness';
 import { SITE_URL } from '../../lib/site-config';
 import ConfidenceDot from '../../components/ConfidenceDot';
 
@@ -156,7 +157,11 @@ export default function CasesIndexPage() {
 
       {/* Platform Statistics Bar */}
       <div style={{ background: '#FFFFFF', borderBottom: '1px solid #E5E7EB', padding: '32px 24px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+            <DataFreshness />
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
           <div>
             <div className="font-mono" style={{ fontSize: 28, fontWeight: 600, color: '#1B3A5C', marginBottom: 4 }}>
               {platformStats.totalCases.toLocaleString()}
@@ -189,6 +194,7 @@ export default function CasesIndexPage() {
               Average Win Rate
             </div>
           </div>
+        </div>
         </div>
       </div>
 

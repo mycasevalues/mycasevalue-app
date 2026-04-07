@@ -745,6 +745,10 @@ export default async function NOSPage({ params }: PageProps) {
       {/* Key Stats Cards */}
       <section className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">
+          {/* Data Freshness Badge */}
+          <div style={{ marginBottom: '24px', textAlign: 'center' }}>
+            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: '#EDF3FB', color: '#0A66C2', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2024</Link>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { label: 'Win Rate', value: `${winRate}%`, color: '#0A66C2', showSample: true, showDot: true },

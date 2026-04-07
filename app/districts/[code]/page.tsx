@@ -329,16 +329,19 @@ export default async function DistrictPage({ params }: PageProps) {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(32px, 5vw, 56px) clamp(16px, 3vw, 48px)' }}>
         {/* Case Types Section */}
         <section>
-          <h2 style={{
-            fontSize: 22,
-            fontWeight: 700,
-            color: '#0f0f0f',
-            margin: '0 0 24px',
-            fontFamily: 'var(--font-display)',
-            letterSpacing: '-0.5px',
-          }}>
-            Top Case Types & Settlement Ranges
-          </h2>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
+            <h2 style={{
+              fontSize: 22,
+              fontWeight: 700,
+              color: '#0f0f0f',
+              margin: '0 0 24px',
+              fontFamily: 'var(--font-display)',
+              letterSpacing: '-0.5px',
+            }}>
+              Top Case Types & Settlement Ranges
+            </h2>
+            <Link href="/methodology" title="View data methodology and sources" style={{ display: 'inline-flex', alignItems: 'center', background: '#EDF3FB', color: '#0A66C2', fontSize: '11px', fontWeight: 500, fontFamily: 'var(--font-body)', padding: '2px 8px', borderRadius: '4px', textDecoration: 'none', whiteSpace: 'nowrap', lineHeight: '18px' }}>Updated Q4 2024</Link>
+          </div>
 
           <div style={{
             display: 'grid',
