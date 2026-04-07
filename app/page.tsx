@@ -287,7 +287,7 @@ export default function HomePage() {
         <div style={{ position: 'absolute', top: '12px', right: '24px' }}>
           <DataFreshness />
         </div>
-        <div style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', textAlign: 'center' }}>
+        <div className="metrics-grid-4" style={{ maxWidth: '960px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px', textAlign: 'center' }}>
           {[
             { value: '5,118,830', label: 'Cases Analyzed' },
             { value: '94', label: 'Federal Districts' },
@@ -385,6 +385,7 @@ export default function HomePage() {
           </div>
 
           <div
+            className="features-grid"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',

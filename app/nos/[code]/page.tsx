@@ -954,7 +954,7 @@ export default async function NOSPage({ params }: PageProps) {
                 ></div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center', marginTop: '28px' }}>
+              <div className="recovery-percentiles" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', textAlign: 'center', marginTop: '28px' }}>
                 <div>
                   <div style={{ fontSize: '11px', color: '#4B5563', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '8px' }}>P25</div>
                   <div style={{ fontSize: '24px', fontWeight: 600, color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{fmtK(recoveryRange.lo)}</div>

@@ -1148,6 +1148,16 @@ a[style*="background: #0A66C2"]:active {
 }
 
 /* ============================================================
+   MOBILE GRID OVERRIDES — 375px viewport fixes
+   ============================================================ */
+@media (max-width: 640px) {
+  .metrics-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+  .features-grid { grid-template-columns: 1fr !important; }
+  .recovery-percentiles { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
+  .recovery-percentiles > div > div:last-child { font-size: 18px !important; }
+}
+
+/* ============================================================
    PRINT STYLES — Professional report printing
    ============================================================ */
 @media print {
