@@ -3,8 +3,35 @@ import Link from 'next/link';
 import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
 
-// Blog post data with 6 sample articles
+// Blog post data
 const blogArticles = [
+  {
+    slug: 'employment-discrimination-2024-data',
+    title: 'What 5.1 Million Federal Cases Tell Us About Employment Discrimination in 2024',
+    description: 'The national 52.2% win rate, $79K median settlement, and what 10 years of data reveal about circuit-level patterns and the impact of legal representation.',
+    category: 'Research',
+    date: new Date('2025-02-10'),
+    readTime: 10,
+    author: 'MyCaseValue Research Team',
+  },
+  {
+    slug: 'plaintiff-friendly-districts',
+    title: 'The 10 Most Plaintiff-Friendly Federal Districts — And What Makes Them Different',
+    description: 'Real district win rate data reveals which federal courts are most favorable to plaintiffs and the factors that make them stand out.',
+    category: 'District Analysis',
+    date: new Date('2025-02-03'),
+    readTime: 9,
+    author: 'MyCaseValue Analytics Team',
+  },
+  {
+    slug: 'federal-lawsuit-duration-data',
+    title: 'How Long Does a Federal Lawsuit Actually Take? The Data Across 84 Case Types',
+    description: 'From 2-month rent disputes to 26-month qui tam cases — real duration data from the FJC database showing how case type, representation, and district affect timelines.',
+    category: 'Research',
+    date: new Date('2025-01-27'),
+    readTime: 8,
+    author: 'MyCaseValue Research Team',
+  },
   {
     slug: 'federal-court-filing-trends-2024',
     title: 'Federal Court Filing Trends: What Changed in 2024',
