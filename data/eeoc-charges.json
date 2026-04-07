@@ -1,0 +1,99 @@
+{
+  "years": [
+    {
+      "year": 2019,
+      "totalCharges": 72675,
+      "basisBreakdown": {
+        "race": 18627,
+        "sex": 10818,
+        "disability": 9159,
+        "retaliation": 7514,
+        "age": 6070,
+        "religion": 2193,
+        "national_origin": 5606,
+        "color": 2031,
+        "equal_pay": 219,
+        "genetic_info": 27
+      },
+      "meritResolutions": 11632,
+      "rightToSueIssued": 10900,
+      "percentFederalLawsuit": 2.4
+    },
+    {
+      "year": 2020,
+      "totalCharges": 67448,
+      "basisBreakdown": {
+        "race": 17357,
+        "sex": 10530,
+        "disability": 8639,
+        "retaliation": 7181,
+        "age": 5447,
+        "religion": 1987,
+        "national_origin": 5234,
+        "color": 1856,
+        "equal_pay": 199,
+        "genetic_info": 18
+      },
+      "meritResolutions": 10794,
+      "rightToSueIssued": 10136,
+      "percentFederalLawsuit": 2.3
+    },
+    {
+      "year": 2021,
+      "totalCharges": 71739,
+      "basisBreakdown": {
+        "race": 18426,
+        "sex": 11215,
+        "disability": 9287,
+        "retaliation": 7624,
+        "age": 5887,
+        "religion": 2156,
+        "national_origin": 5647,
+        "color": 2004,
+        "equal_pay": 237,
+        "genetic_info": 25
+      },
+      "meritResolutions": 11478,
+      "rightToSueIssued": 10761,
+      "percentFederalLawsuit": 2.5
+    },
+    {
+      "year": 2022,
+      "totalCharges": 73911,
+      "basisBreakdown": {
+        "race": 18978,
+        "sex": 11564,
+        "disability": 9612,
+        "retaliation": 7872,
+        "age": 6124,
+        "religion": 2245,
+        "national_origin": 5896,
+        "color": 2074,
+        "equal_pay": 251,
+        "genetic_info": 30
+      },
+      "meritResolutions": 11826,
+      "rightToSueIssued": 11087,
+      "percentFederalLawsuit": 2.6
+    },
+    {
+      "year": 2023,
+      "totalCharges": 73825,
+      "basisBreakdown": {
+        "race": 18956,
+        "sex": 11481,
+        "disability": 9588,
+        "retaliation": 7845,
+        "age": 6089,
+        "religion": 2201,
+        "national_origin": 5834,
+        "color": 2065,
+        "equal_pay": 248,
+        "genetic_info": 29
+      },
+      "meritResolutions": 11812,
+      "rightToSueIssued": 11074,
+      "percentFederalLawsuit": 2.5
+    }
+  ]
+}

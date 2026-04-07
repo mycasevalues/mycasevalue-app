@@ -9,6 +9,7 @@ import SampleSizeIndicator from '../../../components/SampleSizeIndicator';
 import UpdatedBadge from '../../../components/UpdatedBadge';
 import { NOS_STATUTE_MAP } from '../../../lib/statutes';
 import RelevantOpinions from '../../../components/RelevantOpinions';
+import EEOCPipeline from '../../../components/EEOCPipeline';
 import { ATTORNEY_IMPACT } from '../../../lib/attorney-impact';
 import { getWinRateColor } from '../../../lib/color-scale';
 import { AnimatedRangeBar, MetricsStagger, MetricsStaggerItem } from '../../../components/motion/NosAnimations';
@@ -22,6 +23,9 @@ export const revalidate = 7776000;
 
 // Top 10 NOS codes that show the Relevant Opinions section
 const OPINIONS_ENABLED_NOS = new Set(['442', '365', '190', '110', '360', '710', '445', '870', '440', '863']);
+
+// Employment discrimination NOS codes that show EEOC data
+const EEOC_ENABLED_NOS = new Set(['442', '445', '710']);
 
 // Helper function to flatten SITS and map NOS codes to display names
 function getNOSMap(): Record<string, { label: string; category: string; description?: string }> {
@@ -1018,6 +1022,11 @@ export default async function NOSPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+      )}
+
+      {/* EEOC Charge Pipeline (employment discrimination NOS codes only) */}
+      {EEOC_ENABLED_NOS.has(code) && (
+        <EEOCPipeline federalCaseWinRate={winRate} />
       )}
 
       {/* Relevant Opinions (top 10 NOS codes only) */}
