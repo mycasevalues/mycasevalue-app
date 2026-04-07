@@ -966,21 +966,46 @@ export default async function NOSPage({ params }: PageProps) {
             <div className="content-box">
               <h2 className="section-title">Governing Statute</h2>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', flexWrap: 'wrap' }}>
-                <div style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  padding: '6px 14px',
-                  background: '#EDF3FB',
-                  borderRadius: '8px',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: '#004182',
-                  fontFamily: 'var(--font-mono)',
-                  whiteSpace: 'nowrap',
-                  flexShrink: 0,
-                }}>
-                  {statute.usc}
-                </div>
+                {statute.url ? (
+                  <a
+                    href={statute.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      padding: '6px 14px',
+                      background: '#EDF3FB',
+                      borderRadius: '8px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      color: '#004182',
+                      fontFamily: 'var(--font-mono)',
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0,
+                      textDecoration: 'none',
+                      transition: 'background 150ms ease',
+                    }}
+                  >
+                    {statute.usc} ↗
+                  </a>
+                ) : (
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    padding: '6px 14px',
+                    background: '#EDF3FB',
+                    borderRadius: '8px',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    color: '#004182',
+                    fontFamily: 'var(--font-mono)',
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0,
+                  }}>
+                    {statute.usc}
+                  </div>
+                )}
                 <div style={{ flex: 1, minWidth: '200px' }}>
                   <div style={{ fontSize: '15px', fontWeight: 600, color: '#0f0f0f', marginBottom: '6px', fontFamily: 'var(--font-display)' }}>
                     {statute.title}
