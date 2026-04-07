@@ -5,6 +5,7 @@ import Link from 'next/link';
 import AnimatedCounter from '../components/AnimatedCounter';
 import DataFreshness from '../components/DataFreshness';
 import CaseFilingTicker from '../components/CaseFilingTicker';
+import HeroDataViz from '../components/HeroDataViz';
 import { HeroEntrance, StaggerGrid, StaggerItem, FadeIn } from '../components/motion';
 
 const ACCENT_COLOR = '#0A66C2';
@@ -224,6 +225,11 @@ export default function HomePage() {
           <p style={{ fontSize: '14px', color: '#999999', margin: '20px 0 0', letterSpacing: '0.02em' }}>
             No account required · Free during public beta · Instant results
           </p>
+
+          {/* Live Data Visualization */}
+          <div style={{ marginTop: '60px', maxWidth: '1100px', margin: '60px auto 0' }}>
+            <HeroDataViz />
+          </div>
 
           {/* Animated Stats Counters */}
           <div
