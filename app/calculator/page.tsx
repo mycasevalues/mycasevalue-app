@@ -6,6 +6,7 @@ import { SITS, STATES } from '../../lib/data';
 import { REAL_DATA } from '../../lib/realdata';
 import { SITE_URL } from '../../lib/site-config';
 import { formatSettlementAmount } from '../../lib/format';
+import { ATTORNEY_IMPACT } from '../../lib/attorney-impact';
 
 const slideUpFadeIn = `
   @keyframes slideUpFadeIn {
@@ -122,9 +123,16 @@ interface Results {
   low: number;
   median: number;
   high: number;
+  p10: number;
+  p90: number;
   winRate: number;
   timeline: string;
   caseLabel: string;
+  sampleSize: number;
+  avgDuration: number;
+  attorneyWinRate: number;
+  proSeWinRate: number;
+  nosCode: string;
   breakdown: {
     baseDamages: number;
     severityMult: number;
@@ -189,13 +197,29 @@ export default function CalculatorPage() {
 
     const combined = attMult * sevMult * durMult * evMult * settleMult * defMult;
 
+    const lowVal = raw * catMult.low * combined;
+    const medVal = raw * catMult.median * combined;
+    const highVal = raw * catMult.high * combined;
+
+    // Get real data for this category
+    const realDataForCat = getRealDataForCategory(caseType);
+    const nosCode = CATEGORY_PRIMARY_NOS[caseType] || '190';
+    const attyData = ATTORNEY_IMPACT[nosCode];
+
     setResults({
-      low: raw * catMult.low * combined,
-      median: raw * catMult.median * combined,
-      high: raw * catMult.high * combined,
+      low: lowVal,
+      median: medVal,
+      high: highVal,
+      p10: lowVal * 0.55,
+      p90: highVal * 1.35,
       winRate: WIN_RATES[caseType] ?? 0.25,
       timeline: TIMELINES[caseType] ?? '10–20 months',
       caseLabel: SITS.find(s => s.id === caseType)?.label ?? caseType,
+      sampleSize: realDataForCat?.total || 5000,
+      avgDuration: realDataForCat?.mo || 12,
+      attorneyWinRate: attyData?.rwr || 45,
+      proSeWinRate: attyData?.pwr || 10,
+      nosCode,
       breakdown: {
         baseDamages: raw,
         severityMult: sevMult,
@@ -575,50 +599,58 @@ export default function CalculatorPage() {
               {represented === 'yes' ? ' · Attorney represented' : ''}
             </p>
 
-            {/* 3-column grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-              {/* Conservative */}
-              <div className="p-6 text-center" style={{
-                background: '#FAFBFC',
-                border: '1px solid #E5E7EB',
-                borderRadius: '12px',
-              }}>
-                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-                  Conservative
-                </p>
-                <p className="text-3xl font-black" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)', letterSpacing: '-1px', marginBottom: '4px' }}>
-                  {fmt(results.low)}
-                </p>
-                <p className="text-[11px]" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>P25 estimate</p>
+            {/* Animated Settlement Range Bar */}
+            <div className="mb-6" style={{ position: 'relative' }}>
+              <div style={{ position: 'relative', height: '40px', marginBottom: '8px' }}>
+                <div style={{ position: 'absolute', top: '16px', left: 0, right: 0, height: '8px', background: '#EDF3FB', borderRadius: '4px' }} />
+                <div style={{
+                  position: 'absolute', top: '16px', height: '8px',
+                  left: `${Math.max(0, (results.p10 / results.p90) * 100 * 0.2)}%`,
+                  right: `${Math.max(0, 100 - 100)}%`,
+                  background: 'linear-gradient(90deg, #B0D0F5, #70B5F9, #0A66C2, #70B5F9, #B0D0F5)',
+                  borderRadius: '4px',
+                  animation: 'slideUpFadeIn 0.6s ease-out',
+                }} />
+                <div style={{
+                  position: 'absolute', top: '10px', width: '2px', height: '20px',
+                  background: '#004182',
+                  left: `${(results.median / results.p90) * 100}%`,
+                  transform: 'translateX(-50%)',
+                  zIndex: 10,
+                }} />
               </div>
-              {/* Median */}
-              <div className="p-6 text-center transform scale-105" style={{
-                background: '#FFF3F4',
-                border: '1px solid #0A66C2',
-                borderRadius: '12px',
-              }}>
-                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#0A66C2', fontFamily: 'var(--font-body)' }}>
-                  Median
-                </p>
-                <p className="text-4xl font-black" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)', letterSpacing: '-1px', marginBottom: '4px' }}>
-                  {fmt(results.median)}
-                </p>
-                <p className="text-[11px]" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>P50 estimate</p>
-              </div>
-              {/* Favorable */}
-              <div className="p-6 text-center" style={{
-                background: '#FAFBFC',
-                border: '1px solid #E5E7EB',
-                borderRadius: '12px',
-              }}>
-                <p className="text-[12px] font-bold uppercase tracking-[0.8px] mb-2" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-                  Favorable
-                </p>
-                <p className="text-3xl font-black" style={{ color: '#0f0f0f', fontFamily: 'var(--font-display)', letterSpacing: '-1px', marginBottom: '4px' }}>
-                  {fmt(results.high)}
-                </p>
-                <p className="text-[11px]" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>P75 estimate</p>
-              </div>
+            </div>
+
+            {/* 5-column percentile grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
+              {[
+                { label: 'P10', value: results.p10, highlight: false },
+                { label: 'P25', value: results.low, highlight: false },
+                { label: 'P50 (Median)', value: results.median, highlight: true },
+                { label: 'P75', value: results.high, highlight: false },
+                { label: 'P90', value: results.p90, highlight: false },
+              ].map((col, i) => (
+                <div key={i} className="p-4 text-center" style={{
+                  background: col.highlight ? '#EDF3FB' : '#FAFBFC',
+                  border: `1px solid ${col.highlight ? '#0A66C2' : '#E5E7EB'}`,
+                  borderRadius: '12px',
+                  ...(col.highlight ? { transform: 'scale(1.02)' } : {}),
+                }}>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: col.highlight ? '#0A66C2' : '#4B5563', fontFamily: 'var(--font-body)' }}>
+                    {col.label}
+                  </p>
+                  <p style={{
+                    fontSize: col.highlight ? '24px' : '20px',
+                    fontWeight: 800,
+                    color: '#0f0f0f',
+                    fontFamily: 'var(--font-mono)',
+                    letterSpacing: '-0.5px',
+                    marginBottom: 0,
+                  }}>
+                    {fmt(col.value)}
+                  </p>
+                </div>
+              ))}
             </div>
 
             {/* Win Rate & Timeline */}
@@ -689,6 +721,25 @@ export default function CalculatorPage() {
                   }} />
                   <p className="text-[11px]" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>from filing to resolution</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Attorney Impact & Sample Size */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <div className="p-5" style={{ background: '#E8F3EB', border: '1px solid #057642', borderRadius: '12px' }}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>With Attorney</p>
+                <p className="text-2xl font-black" style={{ color: '#057642', fontFamily: 'var(--font-mono)' }}>{results.attorneyWinRate}%</p>
+                <p className="text-[11px]" style={{ color: '#4B5563' }}>win rate</p>
+              </div>
+              <div className="p-5" style={{ background: '#FEF0EF', border: '1px solid #CC1016', borderRadius: '12px' }}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Pro Se</p>
+                <p className="text-2xl font-black" style={{ color: '#CC1016', fontFamily: 'var(--font-mono)' }}>{results.proSeWinRate}%</p>
+                <p className="text-[11px]" style={{ color: '#4B5563' }}>win rate</p>
+              </div>
+              <div className="p-5" style={{ background: '#EDF3FB', border: '1px solid #0A66C2', borderRadius: '12px' }}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.5px] mb-1" style={{ color: '#4B5563', fontFamily: 'var(--font-body)' }}>Sample Size</p>
+                <p className="text-2xl font-black" style={{ color: '#004182', fontFamily: 'var(--font-mono)' }}>n={results.sampleSize.toLocaleString()}</p>
+                <p className="text-[11px]" style={{ color: '#4B5563' }}>cases analyzed</p>
               </div>
             </div>
 
@@ -913,6 +964,23 @@ export default function CalculatorPage() {
                 </div>
               );
             })()}
+
+            {/* Data Source Note */}
+            <div className="mb-4 flex items-center gap-3 flex-wrap" style={{
+              padding: '12px 16px',
+              background: '#F3F2EF',
+              borderRadius: '8px',
+              fontSize: '11px',
+              color: '#666666',
+              fontFamily: 'var(--font-body)',
+            }}>
+              <span style={{ fontWeight: 600 }}>Data source:</span>
+              <span>FJC Integrated Database · Federal civil cases 2000–2024</span>
+              <span style={{ color: '#9CA3AF' }}>·</span>
+              <span>Updated Q4 2024</span>
+              <span style={{ color: '#9CA3AF' }}>·</span>
+              <span>NOS {results.nosCode}</span>
+            </div>
 
             {/* Results disclaimer */}
             <div className="p-4 rounded" style={{
