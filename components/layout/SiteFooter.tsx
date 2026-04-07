@@ -4,7 +4,7 @@
  */
 
 import Link from 'next/link';
-import Image from 'next/image';
+// Image import removed — logo uses plain <img> for SVG compatibility
 
 const FOOTER_COLUMNS = [
   {
@@ -100,7 +100,8 @@ export default function SiteFooter() {
           {/* Brand column */}
           <div>
             <div className="site-footer-logo">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/logo.svg"
                 alt="MyCaseValue"
                 width={112}

@@ -9,7 +9,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// Image import removed — logo uses plain <img> for SVG compatibility
 import { usePathname, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
 import LanguageToggle from '../LanguageToggle';
@@ -287,7 +287,8 @@ export default function SiteNav() {
         }}>
           {/* Logo */}
           <Link href="/" aria-label="MyCaseValue home" style={{ display: 'flex', alignItems: 'center', marginRight: '24px', flexShrink: 0 }}>
-            <Image src="/logo.svg" alt="MyCaseValue" width={120} height={30} priority style={{ display: 'block' }} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.svg" alt="MyCaseValue" width={120} height={30} style={{ display: 'block' }} />
           </Link>
 
           {/* Desktop nav items */}
