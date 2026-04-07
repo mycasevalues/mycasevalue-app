@@ -1,175 +1,26 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
-import { getAllJudges } from '../../lib/judges';
-import JudgesExplorer from '../../components/JudgesExplorer';
+import JudgeDirectoryClient from '../../components/JudgeDirectoryClient';
 import JudgeRadarPreview from '../../components/JudgeRadarPreview';
 
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-  title: 'Judge Analytics | MyCaseValue',
-  description: 'Research federal judges across all 13 circuits and 94 districts. Motion grant rates, case duration, plaintiff win rates, and ruling pattern analytics.',
+  title: 'Federal Judge Directory | MyCaseValue',
+  description: 'Browse 94 federal judicial districts with detailed judge analytics. Motion grant rates, case duration, plaintiff win rates, and ruling pattern analytics.',
   alternates: { canonical: `${SITE_URL}/judges` },
   openGraph: {
-    title: 'Federal Judge Intelligence',
-    description: 'Research federal judges across all 13 circuits and 94 districts. Motion grant rates, case duration, and ruling analytics.',
+    title: 'Federal Judge Directory',
+    description: 'Research federal judges across all 13 circuits and 94 districts with comprehensive analytics.',
     type: 'website',
     url: `${SITE_URL}/judges`,
   },
 };
 
-const CIRCUITS: {
-  name: string;
-  districts: { code: string; label: string }[];
-}[] = [
-  {
-    name: '1st Circuit',
-    districts: [
-      { code: 'MA', label: 'District of Massachusetts' },
-      { code: 'RI', label: 'District of Rhode Island' },
-      { code: 'ME', label: 'District of Maine' },
-      { code: 'NH', label: 'District of New Hampshire' },
-      { code: 'PR', label: 'District of Puerto Rico' },
-    ],
-  },
-  {
-    name: '2nd Circuit',
-    districts: [
-      { code: 'NY-S', label: 'Southern District of New York' },
-      { code: 'NY-E', label: 'Eastern District of New York' },
-      { code: 'CT', label: 'District of Connecticut' },
-      { code: 'VT', label: 'District of Vermont' },
-    ],
-  },
-  {
-    name: '3rd Circuit',
-    districts: [
-      { code: 'PA-E', label: 'Eastern District of Pennsylvania' },
-      { code: 'NJ', label: 'District of New Jersey' },
-      { code: 'DE', label: 'District of Delaware' },
-      { code: 'PA-W', label: 'Western District of Pennsylvania' },
-    ],
-  },
-  {
-    name: '4th Circuit',
-    districts: [
-      { code: 'MD', label: 'District of Maryland' },
-      { code: 'VA-E', label: 'Eastern District of Virginia' },
-      { code: 'NC-W', label: 'Western District of North Carolina' },
-      { code: 'SC', label: 'District of South Carolina' },
-    ],
-  },
-  {
-    name: '5th Circuit',
-    districts: [
-      { code: 'TX-S', label: 'Southern District of Texas' },
-      { code: 'TX-N', label: 'Northern District of Texas' },
-      { code: 'LA-E', label: 'Eastern District of Louisiana' },
-      { code: 'MS-S', label: 'Southern District of Mississippi' },
-    ],
-  },
-  {
-    name: '6th Circuit',
-    districts: [
-      { code: 'OH-N', label: 'Northern District of Ohio' },
-      { code: 'MI-E', label: 'Eastern District of Michigan' },
-      { code: 'TN-M', label: 'Middle District of Tennessee' },
-      { code: 'KY-W', label: 'Western District of Kentucky' },
-    ],
-  },
-  {
-    name: '7th Circuit',
-    districts: [
-      { code: 'IL-N', label: 'Northern District of Illinois' },
-      { code: 'WI-E', label: 'Eastern District of Wisconsin' },
-      { code: 'IN-S', label: 'Southern District of Indiana' },
-    ],
-  },
-  {
-    name: '8th Circuit',
-    districts: [
-      { code: 'MN', label: 'District of Minnesota' },
-      { code: 'MO-E', label: 'Eastern District of Missouri' },
-      { code: 'AR-E', label: 'Eastern District of Arkansas' },
-      { code: 'IA-S', label: 'Southern District of Iowa' },
-    ],
-  },
-  {
-    name: '9th Circuit',
-    districts: [
-      { code: 'CA-C', label: 'Central District of California' },
-      { code: 'CA-N', label: 'Northern District of California' },
-      { code: 'WA-W', label: 'Western District of Washington' },
-      { code: 'AZ', label: 'District of Arizona' },
-      { code: 'NV', label: 'District of Nevada' },
-    ],
-  },
-  {
-    name: '10th Circuit',
-    districts: [
-      { code: 'CO', label: 'District of Colorado' },
-      { code: 'UT', label: 'District of Utah' },
-      { code: 'OK-W', label: 'Western District of Oklahoma' },
-      { code: 'KS', label: 'District of Kansas' },
-    ],
-  },
-  {
-    name: '11th Circuit',
-    districts: [
-      { code: 'FL-S', label: 'Southern District of Florida' },
-      { code: 'FL-M', label: 'Middle District of Florida' },
-      { code: 'GA-N', label: 'Northern District of Georgia' },
-      { code: 'AL-N', label: 'Northern District of Alabama' },
-    ],
-  },
-  {
-    name: 'D.C. Circuit',
-    districts: [
-      { code: 'DC', label: 'District of Columbia' },
-    ],
-  },
-  {
-    name: 'Federal Circuit',
-    districts: [
-      { code: 'FED', label: 'U.S. Court of Federal Claims' },
-    ],
-  },
-];
-
 export default function JudgesPage() {
-  const allJudges = getAllJudges();
-
   return (
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
-      <style>{`
-        .judge-district-link {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px 14px;
-          border-radius: 12px;
-          font-size: 14px;
-          color: #0f0f0f;
-          text-decoration: none;
-          font-family: var(--font-body);
-          background: #FFFFFF;
-          border: 1px solid #E5E7EB;
-          transition: all 0.15s ease;
-        }
-        .judge-district-link:hover {
-          background: #F7F8FA;
-          border-color: #004182;
-          color: #004182;
-        }
-        .judge-district-link .arrow {
-          font-size: 12px;
-          color: #004182;
-          font-weight: 500;
-        }
-      `}</style>
-
       {/* Header */}
       <div style={{ borderBottom: '1px solid #E5E7EB', background: '#1B3A5C' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
@@ -189,185 +40,42 @@ export default function JudgesPage() {
                 color: '#FFFFFF', textTransform: 'uppercase', border: '1px solid rgba(255,255,255,0.2)',
               }}
             >
-              JUDGES
+              JUDGE ANALYTICS
             </div>
 
             <h1 style={{
               fontSize: 'clamp(28px, 5vw, 44px)', fontWeight: 900, marginBottom: 16,
               color: '#FFFFFF', letterSpacing: '-1.5px', fontFamily: 'var(--font-display)', lineHeight: 1.2,
             }}>
-              Judge Analytics
+              Federal Judge Directory
             </h1>
 
             <p style={{
               fontSize: 'clamp(15px, 2vw, 17px)', lineHeight: 1.6, maxWidth: 640,
               color: '#C7D1D8', fontFamily: 'var(--font-body)',
             }}>
-              Judicial behavior analysis, motion grant rates, ruling patterns, and case-specific tendencies across all 94 federal districts.
+              Explore 94 federal judicial districts with comprehensive data from the Federal Judicial Center and CourtListener. Motion grant rates, case duration, plaintiff win rates, and ruling patterns.
             </p>
-
-            {/* Quick stats bar in header */}
-            <div style={{ display: 'flex', gap: 32, marginTop: 24, flexWrap: 'wrap' }}>
-              {[
-                { label: 'Judges Tracked', value: String(allJudges.length) },
-                { label: 'Districts', value: String(new Set(allJudges.map(j => j.district)).size) },
-                { label: 'Total Cases', value: `${(allJudges.reduce((s, j) => s + j.stats.totalCases, 0) / 1000).toFixed(0)}K+` },
-              ].map(s => (
-                <div key={s.label}>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: 24, fontWeight: 600, color: '#FFFFFF' }}>{s.value}</div>
-                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 24px 48px' }}>
-        {/* Interactive Explorer */}
-        <JudgesExplorer judges={allJudges} />
+        {/* Judge Directory Client Component */}
+        <JudgeDirectoryClient />
 
-        {/* What Judge Profiles Include */}
-        <section style={{ marginTop: 64, marginBottom: 64 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 24 }}>
-            What Judge Profiles Include
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
-            {[
-              { iconPath: 'M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0M9 9h6v6H9z', title: 'Motion Grant Rates', desc: 'How often a judge grants motions to dismiss, summary judgment, and other dispositive motions.' },
-              { iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z', title: 'Case Duration', desc: 'Median time from filing to resolution, broken down by case type and disposition.' },
-              { iconPath: 'M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z', title: 'Plaintiff Win Rates', desc: 'Trial and overall win rates for plaintiffs appearing before this judge.' },
-              { iconPath: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z', title: 'Settlement Patterns', desc: 'Settlement frequency and timing relative to the judge\'s typical case lifecycle.' },
-              { iconPath: 'M21 21H3V3h9V1H3a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2v-9h-2v9z', title: 'Comparison Analytics', desc: 'How the judge compares to the district and circuit average on key metrics.' },
-              { iconPath: 'M3 3h8v8H3z M13 3h8v8h-8z M3 13h8v8H3z M13 13h8v8h-8z', title: 'Case Type Breakdown', desc: 'Performance metrics segmented by Nature of Suit code and case category.' },
-            ].map((item, idx) => (
-              <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-                <div style={{ fontSize: 20, marginBottom: 8 }}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A66C2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d={item.iconPath}/></svg></div>
-                <h3 style={{ fontSize: 15, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 8 }}>
-                  {item.title}
-                </h3>
-                <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Browse by Circuit */}
-        <section style={{ marginBottom: 64 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 32 }}>
-            Browse Judges by Circuit
-          </h2>
-
-          <div style={{ display: 'grid', gap: 20 }}>
-            {CIRCUITS.map((circuit) => {
-              const circuitJudges = allJudges.filter(j => {
-                const d = circuit.districts.map(dd => dd.label);
-                return d.some(dl => j.court.includes(dl.replace('District of ', '')));
-              });
-              return (
-                <div key={circuit.name} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid #E5E7EB' }}>
-                    <h3 style={{ fontSize: 17, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', margin: 0 }}>
-                      {circuit.name}
-                    </h3>
-                    <span style={{ fontSize: 12, color: '#4B5563', fontFamily: 'var(--font-body)' }}>
-                      {circuit.districts.length} district{circuit.districts.length !== 1 ? 's' : ''}
-                    </span>
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 10 }}>
-                    {circuit.districts.map((d) => (
-                      <Link key={d.code} href={`/judges/${d.code.toLowerCase()}`} className="judge-district-link">
-                        <span>{d.label}</span>
-                        <span className="arrow">View judges &rarr;</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Beta Notice */}
-        <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#F7F8FA', marginBottom: 64 }}>
+        {/* Beta Notice with Radar Preview */}
+        <section style={{ padding: '48px 32px', borderRadius: 2, border: '1px solid #E5E7EB', background: '#F7F8FA', marginBottom: 64, marginTop: 64 }}>
           <h2 style={{ fontSize: 24, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 12 }}>
-            Judge Analytics — In Development
+            Judge Analytics — Expanded Profile Features Coming Soon
           </h2>
           <p style={{ fontSize: 15, color: '#4B5563', fontFamily: 'var(--font-body)', maxWidth: 680, margin: '0 0 28px', lineHeight: 1.6 }}>
-            Individual judge profiles are being built from PACER and FJC records. Enter your email to be notified at launch.
+            Detailed judge profiles are being enhanced with additional metrics from PACER and FJC records. View the preview below to see what's coming.
           </p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-start', flexWrap: 'wrap' }}>
-            <input
-              type="email"
-              placeholder="your@email.com"
-              style={{
-                padding: '12px 16px',
-                borderRadius: 2,
-                border: '1px solid #E5E7EB',
-                fontSize: 15,
-                fontFamily: 'var(--font-body)',
-                backgroundColor: '#FFFFFF',
-                minWidth: 240,
-              }}
-            />
-            <button
-              style={{
-                padding: '12px 28px',
-                borderRadius: 2,
-                background: '#0A66C2',
-                color: '#FFFFFF',
-                fontSize: 16,
-                fontWeight: 600,
-                border: 'none',
-                cursor: 'pointer',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
-              Notify Me
-            </button>
-          </div>
 
           {/* Radar chart preview */}
           <JudgeRadarPreview />
-        </section>
-
-        {/* Available Statistics */}
-        <section style={{ marginBottom: 64 }}>
-          <h2 style={{ fontSize: 22, fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 32 }}>
-            Circuit-Level Statistics Available Now
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-            {[
-              {
-                title: 'Circuit Win Rates',
-                description: 'Plaintiff and defendant win rates aggregated by federal circuit. Understand baseline success rates by case type and circuit jurisdiction.'
-              },
-              {
-                title: 'Average Case Duration',
-                description: 'Median time from filing to resolution by circuit and case type. Plan realistic timelines for litigation and settlement negotiations.'
-              },
-              {
-                title: 'Motion Grant Analysis',
-                description: 'Circuit-level patterns for motion dispositions. Assess likelihood of summary judgment and other dispositive motions by circuit.'
-              },
-              {
-                title: 'Settlement Patterns',
-                description: 'Settlement frequency and timing benchmarks by circuit. Evaluate settlement probability and optimal negotiation windows.'
-              },
-            ].map((stat, idx) => (
-              <div key={idx} style={{ padding: 24, borderRadius: 2, border: '1px solid #E5E7EB', background: '#FFFFFF' }}>
-                <h3 style={{ fontSize: 16, fontWeight: 500, color: '#0f0f0f', fontFamily: 'var(--font-display)', marginBottom: 12, margin: '0 0 12px 0' }}>
-                  {stat.title}
-                </h3>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', fontFamily: 'var(--font-body)', margin: 0 }}>
-                  {stat.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </section>
 
         {/* Disclaimer */}

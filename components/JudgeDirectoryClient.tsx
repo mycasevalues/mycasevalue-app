@@ -1,0 +1,640 @@
+'use client';
+
+/**
+ * Judge Directory Client Component
+ * Interactive search, filtering, and pagination for the judge directory
+ */
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { JudgeWithStats } from '@/lib/supabase-judges';
+import { getWinRateColor } from '@/lib/color-scale';
+import { getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
+
+const CIRCUITS = [
+  { value: '', label: 'All Circuits' },
+  { value: '1st', label: '1st Circuit' },
+  { value: '2nd', label: '2nd Circuit' },
+  { value: '3rd', label: '3rd Circuit' },
+  { value: '4th', label: '4th Circuit' },
+  { value: '5th', label: '5th Circuit' },
+  { value: '6th', label: '6th Circuit' },
+  { value: '7th', label: '7th Circuit' },
+  { value: '8th', label: '8th Circuit' },
+  { value: '9th', label: '9th Circuit' },
+  { value: '10th', label: '10th Circuit' },
+  { value: '11th', label: '11th Circuit' },
+  { value: 'DC', label: 'D.C. Circuit' },
+];
+
+const PRESIDENTS = [
+  { value: '', label: 'All Presidents' },
+  { value: 'Ronald Reagan', label: 'Ronald Reagan' },
+  { value: 'George H.W. Bush', label: 'George H.W. Bush' },
+  { value: 'Bill Clinton', label: 'Bill Clinton' },
+  { value: 'George W. Bush', label: 'George W. Bush' },
+  { value: 'Barack Obama', label: 'Barack Obama' },
+  { value: 'Donald Trump', label: 'Donald Trump' },
+  { value: 'Joe Biden', label: 'Joe Biden' },
+];
+
+const DISTRICTS_BY_CIRCUIT: { [key: string]: { value: string; label: string }[] } = {
+  '1st': [
+    { value: 'D. Mass.', label: 'District of Massachusetts' },
+    { value: 'D. R.I.', label: 'District of Rhode Island' },
+    { value: 'D. Me.', label: 'District of Maine' },
+    { value: 'D. N.H.', label: 'District of New Hampshire' },
+  ],
+  '2nd': [
+    { value: 'S.D.N.Y.', label: 'Southern District of New York' },
+    { value: 'E.D.N.Y.', label: 'Eastern District of New York' },
+    { value: 'D. Conn.', label: 'District of Connecticut' },
+    { value: 'D. Vt.', label: 'District of Vermont' },
+  ],
+  '3rd': [
+    { value: 'E.D. Pa.', label: 'Eastern District of Pennsylvania' },
+    { value: 'D.N.J.', label: 'District of New Jersey' },
+    { value: 'D. Del.', label: 'District of Delaware' },
+  ],
+  '4th': [
+    { value: 'D. Md.', label: 'District of Maryland' },
+    { value: 'E.D. Va.', label: 'Eastern District of Virginia' },
+    { value: 'W.D. Va.', label: 'Western District of Virginia' },
+  ],
+  '5th': [
+    { value: 'S.D. Tex.', label: 'Southern District of Texas' },
+    { value: 'N.D. Tex.', label: 'Northern District of Texas' },
+    { value: 'E.D. La.', label: 'Eastern District of Louisiana' },
+  ],
+  '7th': [
+    { value: 'N.D. Ill.', label: 'Northern District of Illinois' },
+    { value: 'E.D. Wis.', label: 'Eastern District of Wisconsin' },
+    { value: 'S.D. Ind.', label: 'Southern District of Indiana' },
+  ],
+  '9th': [
+    { value: 'C.D. Cal.', label: 'Central District of California' },
+    { value: 'N.D. Cal.', label: 'Northern District of California' },
+    { value: 'D. Ariz.', label: 'District of Arizona' },
+    { value: 'D. Nev.', label: 'District of Nevada' },
+  ],
+  '11th': [
+    { value: 'S.D. Fla.', label: 'Southern District of Florida' },
+    { value: 'M.D. Fla.', label: 'Middle District of Florida' },
+    { value: 'N.D. Ga.', label: 'Northern District of Georgia' },
+  ],
+};
+
+const SORT_OPTIONS = [
+  { value: 'name', label: 'Judge Name' },
+  { value: 'cases_high', label: 'Cases Handled (Most)' },
+  { value: 'cases_low', label: 'Cases Handled (Least)' },
+  { value: 'winrate_high', label: 'Plaintiff Win Rate (Highest)' },
+  { value: 'winrate_low', label: 'Plaintiff Win Rate (Lowest)' },
+  { value: 'appointment_newest', label: 'Appointment Date (Newest)' },
+];
+
+interface JudgeDirectoryState {
+  judges: JudgeWithStats[];
+  total: number;
+  currentPage: number;
+  loading: boolean;
+  error: string | null;
+}
+
+const JUDGES_PER_PAGE = 24;
+
+export default function JudgeDirectoryClient() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCircuit, setSelectedCircuit] = useState('');
+  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [selectedPresident, setSelectedPresident] = useState('');
+  const [sortBy, setSortBy] = useState('name');
+  const [state, setState] = useState<JudgeDirectoryState>({
+    judges: [],
+    total: 0,
+    currentPage: 1,
+    loading: true,
+    error: null,
+  });
+
+  // Fetch judges from API
+  useEffect(() => {
+    const fetchJudges = async () => {
+      setState(prev => ({ ...prev, loading: true, error: null }));
+
+      try {
+        const params = new URLSearchParams();
+        if (searchQuery) params.append('q', searchQuery);
+        if (selectedCircuit) params.append('circuit', selectedCircuit);
+        if (selectedDistrict) params.append('district', selectedDistrict);
+        if (selectedPresident) params.append('president', selectedPresident);
+        params.append('sort', sortBy);
+        params.append('page', String(state.currentPage));
+        params.append('limit', String(JUDGES_PER_PAGE));
+
+        const response = await fetch(`/api/judges?${params.toString()}`);
+        if (!response.ok) throw new Error('Failed to fetch judges');
+
+        const data = await response.json();
+        setState(prev => ({
+          ...prev,
+          judges: data.judges,
+          total: data.total,
+          loading: false,
+        }));
+      } catch (err) {
+        setState(prev => ({
+          ...prev,
+          error: err instanceof Error ? err.message : 'Unknown error',
+          loading: false,
+        }));
+      }
+    };
+
+    fetchJudges();
+  }, [searchQuery, selectedCircuit, selectedDistrict, selectedPresident, sortBy, state.currentPage]);
+
+  // Handle circuit change
+  const handleCircuitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCircuit(e.target.value);
+    setSelectedDistrict('');
+    setState(prev => ({ ...prev, currentPage: 1 }));
+  };
+
+  // Handle district change
+  const handleDistrictChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedDistrict(e.target.value);
+    setState(prev => ({ ...prev, currentPage: 1 }));
+  };
+
+  // Get available districts for selected circuit
+  const availableDistricts = selectedCircuit && DISTRICTS_BY_CIRCUIT[selectedCircuit]
+    ? [{ value: '', label: 'All Districts' }, ...DISTRICTS_BY_CIRCUIT[selectedCircuit]]
+    : [{ value: '', label: 'All Districts' }];
+
+  const totalPages = Math.ceil(state.total / JUDGES_PER_PAGE);
+
+  return (
+    <div>
+      {/* Search and Filter Section */}
+      <div style={{
+        padding: '24px',
+        borderRadius: 2,
+        border: '1px solid #E5E7EB',
+        background: '#FFFFFF',
+        marginBottom: 32,
+      }}>
+        <div style={{ marginBottom: 20 }}>
+          <label style={{
+            display: 'block',
+            fontSize: 12,
+            fontWeight: 600,
+            color: '#0f0f0f',
+            marginBottom: 8,
+            textTransform: 'uppercase',
+            letterSpacing: '0.5px',
+            fontFamily: 'var(--font-body)',
+          }}>
+            Search Judge Name
+          </label>
+          <input
+            type="text"
+            placeholder="Enter judge name..."
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setState(prev => ({ ...prev, currentPage: 1 }));
+            }}
+            style={{
+              width: '100%',
+              padding: '12px 16px',
+              borderRadius: 2,
+              border: '1px solid #E5E7EB',
+              fontSize: 14,
+              fontFamily: 'var(--font-body)',
+              boxSizing: 'border-box',
+            }}
+          />
+        </div>
+
+        {/* Filter Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: 16,
+        }}>
+          <div>
+            <label style={{
+              display: 'block',
+              fontSize: 12,
+              fontWeight: 600,
+              color: '#0f0f0f',
+              marginBottom: 8,
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              fontFamily: 'var(--font-body)',
+            }}>
+              Circuit
+            </label>
+            <select
+              value={selectedCircuit}
+              onChange={handleCircuitChange}
+              style={{
+                width: '100%',
+                padding: '12px 16px',
+                borderRadius: 2,
+                border: '1px solid #E5E7EB',
+                fontSize: 14,
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              {CIRCUITS.map(circuit => (
+                <option key={circuit.value || 'all'} value={circuit.value}>{circuit.label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label style={{
+              display: 'block',
+              fontSize: 12,
+              fontWeight: 600,
+              color: '#0f0f0f',
+              marginBottom: 8,
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              fontFamily: 'var(--font-body)',
+            }}>
+              District
+            </label>
+            <select
+              value={selectedDistrict}
+              onChange={handleDistrictChange}
+              disabled={!selectedCircuit}
+              style={{
+                width: '100%',
+                padding: '12px 16px',
+                borderRadius: 2,
+                border: '1px solid #E5E7EB',
+                fontSize: 14,
+                fontFamily: 'var(--font-body)',
+                opacity: !selectedCircuit ? 0.5 : 1,
+                cursor: !selectedCircuit ? 'not-allowed' : 'pointer',
+              }}
+            >
+              {availableDistricts.map(district => (
+                <option key={district.value || 'all'} value={district.value}>{district.label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label style={{
+              display: 'block',
+              fontSize: 12,
+              fontWeight: 600,
+              color: '#0f0f0f',
+              marginBottom: 8,
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              fontFamily: 'var(--font-body)',
+            }}>
+              Appointing President
+            </label>
+            <select
+              value={selectedPresident}
+              onChange={(e) => {
+                setSelectedPresident(e.target.value);
+                setState(prev => ({ ...prev, currentPage: 1 }));
+              }}
+              style={{
+                width: '100%',
+                padding: '12px 16px',
+                borderRadius: 2,
+                border: '1px solid #E5E7EB',
+                fontSize: 14,
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              {PRESIDENTS.map(president => (
+                <option key={president.value || 'all'} value={president.value}>{president.label}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label style={{
+              display: 'block',
+              fontSize: 12,
+              fontWeight: 600,
+              color: '#0f0f0f',
+              marginBottom: 8,
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              fontFamily: 'var(--font-body)',
+            }}>
+              Sort By
+            </label>
+            <select
+              value={sortBy}
+              onChange={(e) => {
+                setSortBy(e.target.value);
+                setState(prev => ({ ...prev, currentPage: 1 }));
+              }}
+              style={{
+                width: '100%',
+                padding: '12px 16px',
+                borderRadius: 2,
+                border: '1px solid #E5E7EB',
+                fontSize: 14,
+                fontFamily: 'var(--font-body)',
+              }}
+            >
+              {SORT_OPTIONS.map(option => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {/* Results Header */}
+      <div style={{
+        fontSize: 14,
+        fontFamily: 'var(--font-body)',
+        color: '#4B5563',
+        marginBottom: 20,
+      }}>
+        Showing {state.judges.length > 0 ? (state.currentPage - 1) * JUDGES_PER_PAGE + 1 : 0} to{' '}
+        {Math.min(state.currentPage * JUDGES_PER_PAGE, state.total)} of {state.total} judges
+      </div>
+
+      {/* Loading State */}
+      {state.loading && (
+        <div style={{
+          padding: '48px 24px',
+          textAlign: 'center',
+          color: '#4B5563',
+          fontFamily: 'var(--font-body)',
+        }}>
+          Loading judges...
+        </div>
+      )}
+
+      {/* Error State */}
+      {state.error && (
+        <div style={{
+          padding: '24px',
+          borderRadius: 2,
+          border: '1px solid #CC1016',
+          background: '#FAEAE9',
+          color: '#8C1515',
+          fontFamily: 'var(--font-body)',
+          marginBottom: 24,
+        }}>
+          {state.error}
+        </div>
+      )}
+
+      {/* Judge Cards Grid */}
+      {!state.loading && state.judges.length > 0 && (
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+          gap: 20,
+          marginBottom: 32,
+        }}>
+          {state.judges.map(judge => {
+            const winRateColor = getWinRateColor(judge.overall_plaintiff_win_rate || 0);
+            const partyColor = getPartyColor(judge.party_of_appointing_president);
+            const appointmentYear = judge.appointment_date ? new Date(judge.appointment_date).getFullYear() : null;
+
+            return (
+              <div key={judge.id} style={{
+                padding: '20px',
+                borderRadius: 2,
+                border: '1px solid #E5E7EB',
+                background: '#FFFFFF',
+                transition: 'all 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+              onMouseEnter={(e) => {
+                const elem = e.currentTarget;
+                elem.style.borderColor = '#0A66C2';
+                elem.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.15)';
+              }}
+              onMouseLeave={(e) => {
+                const elem = e.currentTarget;
+                elem.style.borderColor = '#E5E7EB';
+                elem.style.boxShadow = 'none';
+              }}
+              >
+                {/* Judge Name */}
+                <h3 style={{
+                  fontSize: 16,
+                  fontWeight: 600,
+                  color: '#0f0f0f',
+                  margin: '0 0 8px 0',
+                  fontFamily: 'var(--font-display)',
+                  lineHeight: 1.3,
+                }}>
+                  {judge.full_name}
+                </h3>
+
+                {/* District and Circuit */}
+                <p style={{
+                  fontSize: 13,
+                  fontWeight: 400,
+                  color: '#666666',
+                  margin: '0 0 4px 0',
+                  fontFamily: 'var(--font-body)',
+                }}>
+                  {judge.district_id && judge.circuit ? `${judge.district_id} • ${judge.circuit} Circuit` : 'District not specified'}
+                </p>
+
+                {/* Appointment */}
+                <p style={{
+                  fontSize: 12,
+                  fontWeight: 400,
+                  color: '#999999',
+                  margin: '0 0 12px 0',
+                  fontFamily: 'var(--font-body)',
+                }}>
+                  {appointmentYear ? `Appointed ${appointmentYear}` : 'No appointment date'} {judge.appointing_president ? `by ${judge.appointing_president}` : ''}
+                </p>
+
+                {/* Party Indicator */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  marginBottom: 12,
+                  fontSize: 12,
+                  fontFamily: 'var(--font-body)',
+                  color: '#666666',
+                }}>
+                  <div style={{
+                    width: 10,
+                    height: 10,
+                    borderRadius: '50%',
+                    background: partyColor,
+                  }} />
+                  <span>Appointing party: {judge.party_of_appointing_president || 'Unknown'}</span>
+                </div>
+
+                {/* Win Rate Badge */}
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '8px 12px',
+                  borderRadius: 2,
+                  background: winRateColor.bg,
+                  border: `1px solid ${winRateColor.border}`,
+                  marginBottom: 12,
+                  fontSize: 13,
+                  fontWeight: 500,
+                  fontFamily: 'var(--font-body)',
+                  width: 'fit-content',
+                }}>
+                  <span style={{ color: winRateColor.text }}>
+                    {judge.overall_plaintiff_win_rate !== null ? `${judge.overall_plaintiff_win_rate.toFixed(1)}%` : 'N/A'}
+                  </span>
+                  <span style={{ color: winRateColor.text, fontSize: 11, opacity: 0.8 }}>
+                    {winRateColor.label}
+                  </span>
+                </div>
+
+                {/* Cases Handled */}
+                <p style={{
+                  fontSize: 13,
+                  fontWeight: 400,
+                  fontFamily: 'var(--font-mono)',
+                  color: '#4B5563',
+                  margin: '0 0 16px 0',
+                }}>
+                  {judge.total_cases_handled} cases handled
+                </p>
+
+                {/* View Profile Link */}
+                <Link href={`/judges/${judge.id}`} style={{
+                  marginTop: 'auto',
+                  padding: '12px 16px',
+                  textAlign: 'center',
+                  borderRadius: 2,
+                  border: '1px solid #0A66C2',
+                  color: '#0A66C2',
+                  textDecoration: 'none',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  fontFamily: 'var(--font-body)',
+                  transition: 'all 0.2s ease',
+                  background: '#FFFFFF',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  const elem = e.currentTarget as HTMLAnchorElement;
+                  elem.style.background = '#0A66C2';
+                  elem.style.color = '#FFFFFF';
+                }}
+                onMouseLeave={(e) => {
+                  const elem = e.currentTarget as HTMLAnchorElement;
+                  elem.style.background = '#FFFFFF';
+                  elem.style.color = '#0A66C2';
+                }}
+                >
+                  View Profile
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Empty State */}
+      {!state.loading && state.judges.length === 0 && !state.error && (
+        <div style={{
+          padding: '48px 24px',
+          textAlign: 'center',
+          color: '#4B5563',
+          fontFamily: 'var(--font-body)',
+        }}>
+          No judges found matching your criteria. Try adjusting your filters.
+        </div>
+      )}
+
+      {/* Pagination */}
+      {!state.loading && totalPages > 1 && (
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 12,
+          padding: '24px 0',
+          fontFamily: 'var(--font-body)',
+        }}>
+          <button
+            onClick={() => setState(prev => ({ ...prev, currentPage: Math.max(1, prev.currentPage - 1) }))}
+            disabled={state.currentPage === 1}
+            style={{
+              padding: '10px 16px',
+              borderRadius: 2,
+              border: '1px solid #E5E7EB',
+              background: state.currentPage === 1 ? '#F7F8FA' : '#FFFFFF',
+              color: state.currentPage === 1 ? '#999999' : '#0f0f0f',
+              cursor: state.currentPage === 1 ? 'not-allowed' : 'pointer',
+              fontSize: 14,
+              fontWeight: 600,
+              transition: 'all 0.2s ease',
+            }}
+          >
+            Previous
+          </button>
+
+          {Array.from({ length: totalPages }).map((_, idx) => {
+            const pageNum = idx + 1;
+            const isCurrentPage = pageNum === state.currentPage;
+            return (
+              <button
+                key={pageNum}
+                onClick={() => setState(prev => ({ ...prev, currentPage: pageNum }))}
+                style={{
+                  padding: '10px 14px',
+                  borderRadius: 2,
+                  border: '1px solid #E5E7EB',
+                  background: isCurrentPage ? '#0A66C2' : '#FFFFFF',
+                  color: isCurrentPage ? '#FFFFFF' : '#0f0f0f',
+                  cursor: 'pointer',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                {pageNum}
+              </button>
+            );
+          })}
+
+          <button
+            onClick={() => setState(prev => ({ ...prev, currentPage: Math.min(totalPages, prev.currentPage + 1) }))}
+            disabled={state.currentPage === totalPages}
+            style={{
+              padding: '10px 16px',
+              borderRadius: 2,
+              border: '1px solid #E5E7EB',
+              background: state.currentPage === totalPages ? '#F7F8FA' : '#FFFFFF',
+              color: state.currentPage === totalPages ? '#999999' : '#0f0f0f',
+              cursor: state.currentPage === totalPages ? 'not-allowed' : 'pointer',
+              fontSize: 14,
+              fontWeight: 600,
+              transition: 'all 0.2s ease',
+            }}
+          >
+            Next
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
