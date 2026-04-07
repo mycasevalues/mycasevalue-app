@@ -96,5 +96,68 @@
     "contact": "Contacto",
     "methodology": "Metodología",
     "disclaimer": "No es asesoramiento legal. Los resultados pasados no garantizan resultados futuros."
+  },
+  "pages": {
+    "home": {
+      "whatReallyHappened": "Qué sucedió realmente en casos como el tuyo.",
+      "winRatesSettlement": "Tasas de éxito, rangos de acuerdos, análisis de jueces y plazos de casos de 5.1 millones de registros de tribunales federales públicos. Gratis durante la fase beta. No se requiere cuenta.",
+      "searchPlaceholder": "Busca casos por demandante, juez o tipo de caso...",
+      "exploreData": "Explorar Datos",
+      "viewCaseTypes": "Ver Tipos de Casos",
+      "viewDemo": "Ver Demostración",
+      "trustLine": "Sin cuenta requerida · Gratis durante la fase beta pública · Resultados instantáneos",
+      "federalCases": "Casos Federales",
+      "caseTypes": "Tipos de Casos",
+      "federalDistricts": "Distritos Federales",
+      "dataCoverage": "Cobertura de Datos",
+      "casesAnalyzed": "Casos Analizados",
+      "reportsGenerated": "Informes Generados",
+      "winRateLabel": "Tasa de Éxito",
+      "settlementRangeLabel": "Rango de Acuerdo",
+      "timelineLabel": "Cronograma",
+      "attorneyImpactLabel": "Impacto del Abogado",
+      "whatDataTells": "Lo que estos datos realmente te dicen",
+      "exampleData": "Datos de ejemplo — Discriminación Laboral, S.D.N.Y.",
+      "inPlainEnglish": "En palabras simples",
+      "takeMillions": "Tomamos millones de registros públicos de tribunales federales y los convertimos en información clara y accionable.",
+      "plaintiffVerdict": "De los casos que fueron a juicio, el 42% resultó en un veredicto a favor del demandante.",
+      "middleSettlements": "El 80% medio de los acuerdos cayó en este rango.",
+      "filingToResolution": "Tiempo promedio de presentación a resolución para casos similares en este distrito.",
+      "attorneyBoost": "Los demandantes con abogados ganaron 23% más a menudo que los litigantes pro se.",
+      "sampleFigures": "Solo cifras de ejemplo. Tus resultados dependen de tu tipo de caso específico, distrito y hechos.",
+      "powerfulFeatures": "Características Poderosas para Inteligencia Legal",
+      "everythingYouNeed": "Todo lo que necesitas para tomar decisiones legales basadas en datos",
+      "learnMoreArrow": "Más Información >",
+      "trustedByLegal": "Confiado por Profesionales Legales Líderes",
+      "topLawFirms": "Los principales despachos de abogados y asesores generales confían en nuestros datos para decisiones críticas",
+      "readyToAccess": "¿Listo para Acceder a la Inteligencia de Tribunales Federales?",
+      "startExploringDesc": "Comienza a explorar 5.1M+ casos con análisis avanzado e información impulsada por IA.",
+      "startExploringBtn": "Comenzar a Explorar",
+      "viewAttorneyTools": "Ver Herramientas de Abogado"
+    },
+    "search": {
+      "searchCases": "Buscar Casos",
+      "enterQuery": "Ingresa tu consulta de búsqueda"
+    },
+    "calculator": {
+      "estimateCase": "Estima el valor de tu caso"
+    },
+    "cases": {
+      "allCaseTypes": "Todos los Tipos de Casos Federales",
+      "browseCases": "Explora todos los tipos de casos federales con estadísticas reales de tribunales"
+    },
+    "attorney": {
+      "attorneyTools": "Herramientas y Análisis de Abogado",
+      "judgeAnalytics": "Análisis de Jueces",
+      "attorneyPerformance": "Métricas de Desempeño de Abogados",
+      "caseTimeline": "Cronograma de Casos",
+      "venueOptimizer": "Optimizador de Jurisdicción",
+      "pacerMonitor": "Monitor PACER",
+      "teamWorkspace": "Espacio de Trabajo del Equipo"
+    },
+    "districts": {
+      "allDistricts": "Distritos de Tribunales Federales",
+      "allJudicial": "Los 94 distritos judiciales federales en 13 circuitos"
+    }
   }
 }

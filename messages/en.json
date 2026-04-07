@@ -96,5 +96,68 @@
     "contact": "Contact",
     "methodology": "Methodology",
     "disclaimer": "Not legal advice. Past results do not guarantee future outcomes."
+  },
+  "pages": {
+    "home": {
+      "whatReallyHappened": "What really happened in cases like yours.",
+      "winRatesSettlement": "Win rates, settlement ranges, judge analytics, and case timelines from 5.1 million public federal court records. Free during beta. No account required.",
+      "searchPlaceholder": "Search cases by party, judge, or case type...",
+      "exploreData": "Explore Data",
+      "viewCaseTypes": "View Case Types",
+      "viewDemo": "View Demo",
+      "trustLine": "No account required · Free during public beta · Instant results",
+      "federalCases": "Federal Cases",
+      "caseTypes": "Case Types",
+      "federalDistricts": "Federal Districts",
+      "dataCoverage": "Data Coverage",
+      "casesAnalyzed": "Cases Analyzed",
+      "reportsGenerated": "Reports Generated",
+      "winRateLabel": "Win Rate",
+      "settlementRangeLabel": "Settlement Range",
+      "timelineLabel": "Timeline",
+      "attorneyImpactLabel": "Attorney Impact",
+      "whatDataTells": "What this data actually tells you",
+      "exampleData": "Example data — Employment Discrimination, S.D.N.Y.",
+      "inPlainEnglish": "In plain English",
+      "takeMillions": "We take millions of public federal court records and turn them into clear, actionable insights.",
+      "plaintiffVerdict": "Of cases that went to trial, 42% resulted in a plaintiff verdict.",
+      "middleSettlements": "The middle 80% of settlements fell in this range.",
+      "filingToResolution": "Average filing-to-resolution for similar cases in this district.",
+      "attorneyBoost": "Plaintiffs with attorneys won 23% more often than pro se litigants.",
+      "sampleFigures": "Sample figures only. Your results depend on your specific case type, district, and facts.",
+      "powerfulFeatures": "Powerful Features for Legal Intelligence",
+      "everythingYouNeed": "Everything you need to make data-driven legal decisions",
+      "learnMoreArrow": "Learn More >",
+      "trustedByLegal": "Trusted by Leading Legal Professionals",
+      "topLawFirms": "Top law firms and general counsels rely on our data for critical decisions",
+      "readyToAccess": "Ready to Access Federal Court Intelligence?",
+      "startExploringDesc": "Start exploring 5.1M+ cases with advanced analytics and AI-powered insights.",
+      "startExploringBtn": "Start Exploring",
+      "viewAttorneyTools": "View Attorney Tools"
+    },
+    "search": {
+      "searchCases": "Search Cases",
+      "enterQuery": "Enter your search query"
+    },
+    "calculator": {
+      "estimateCase": "Estimate your case value"
+    },
+    "cases": {
+      "allCaseTypes": "All Federal Case Types",
+      "browseCases": "Browse all federal case types with real court statistics"
+    },
+    "attorney": {
+      "attorneyTools": "Attorney Tools & Analytics",
+      "judgeAnalytics": "Judge Analytics",
+      "attorneyPerformance": "Attorney Performance Metrics",
+      "caseTimeline": "Case Timeline",
+      "venueOptimizer": "Venue Optimizer",
+      "pacerMonitor": "PACER Monitor",
+      "teamWorkspace": "Team Workspace"
+    },
+    "districts": {
+      "allDistricts": "Federal Court Districts",
+      "allJudicial": "All 94 federal judicial districts across 13 circuits"
+    }
   }
 }
