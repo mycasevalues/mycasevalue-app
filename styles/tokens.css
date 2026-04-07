@@ -1,8 +1,8 @@
 /* ============================================================
    MYCASEVALUE DESIGN SYSTEM — Professional Legal Data Platform
    ============================================================
-   Montserrat (headings) / Roboto (body) / PT Mono (data).
-   Navy primary (#1B3A5C). Purple accent (#0A66C2).
+   Inter (headings + body) / PT Mono (data).
+   Navy primary (#1B3A5C). LinkedIn blue accent (#0A66C2).
    Professional, institutional aesthetic.
    ============================================================ */
 
@@ -15,7 +15,7 @@
   /* Accent */
   --color-accent:      #0A66C2;
   --color-accent-dark: #004182;
-  --color-accent-light:#EDE9FE;
+  --color-accent-light:#E8F4FD;
 
   /* Surfaces */
   --color-surface-0:   #FFFFFF;
@@ -53,7 +53,7 @@
   --bg-elevated:      var(--color-surface-0);
   --bg-input:         var(--color-surface-0);
   --bg-hover:         var(--color-surface-1);
-  --bg-selection:     rgba(124,58,237,0.15);
+  --bg-selection:     rgba(10,102,194,0.15);
   --bg-dark:          var(--color-navy);
   --bg-alt:           var(--color-surface-1);
 
@@ -66,7 +66,7 @@
   --accent-primary:         var(--color-accent);
   --accent-primary-hover:   var(--color-accent-dark);
   --accent-primary-subtle:  var(--color-accent-light);
-  --accent-primary-border:  rgba(124,58,237,0.30);
+  --accent-primary-border:  rgba(10,102,194,0.30);
 
   --accent-secondary:       var(--color-navy);
   --accent-secondary-hover: var(--color-navy-dark);
@@ -91,21 +91,25 @@
   --border-focus:     var(--color-accent);
 
   /* ── TYPOGRAPHY ── */
-  --font-display: var(--font-montserrat), 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body:    var(--font-roboto), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body:    var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono:    var(--font-pt-mono), 'Menlo', monospace;
 
-  /* Heading Scale — Montserrat */
-  --text-h1: 2rem;
-  --text-h2: 1.5rem;
-  --text-h3: 1.125rem;
-  --text-h4: 0.9375rem;
+  /* Legacy aliases — keep existing var(--font-montserrat) / var(--font-roboto) refs working */
+  --font-montserrat: var(--font-inter);
+  --font-roboto:     var(--font-inter);
 
-  /* Body Scale — Roboto */
-  --text-body-lg: 1rem;
-  --text-body:    0.9375rem;
-  --text-body-sm: 0.875rem;
-  --text-caption: 0.8125rem;
+  /* Heading Scale — Inter (LinkedIn proportions) */
+  --text-h1: 2rem;       /* 32px — Inter 700 */
+  --text-h2: 1.5rem;     /* 24px — Inter 600 */
+  --text-h3: 1.125rem;   /* 18px — Inter 600 */
+  --text-h4: 1rem;       /* 16px — Inter 500 */
+
+  /* Body Scale — Inter */
+  --text-body-lg: 1rem;       /* 16px */
+  --text-body:    0.9375rem;  /* 15px — Inter 400 */
+  --text-body-sm: 0.8125rem;  /* 13px — Inter 400 */
+  --text-caption: 0.75rem;    /* 12px */
 
   /* Data Scale — PT Mono */
   --text-data-lg: 1.5rem;

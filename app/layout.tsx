@@ -12,31 +12,20 @@ import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
 import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 
-// Self-hosted fonts via next/font/local — zero external requests, GDPR compliant.
-// Lato serves as display/body font; JetBrains Mono for data values.
-// CSS variables mapped to design system token names.
-const displayFont = localFont({
-  src: [
-    { path: '../public/fonts/lato-300.woff2', weight: '300', style: 'normal' },
-    { path: '../public/fonts/lato-400.woff2', weight: '400', style: 'normal' },
-    { path: '../public/fonts/lato-700.woff2', weight: '700', style: 'normal' },
-    { path: '../public/fonts/lato-900.woff2', weight: '900', style: 'normal' },
-  ],
+// Inter — LinkedIn-style typography. next/font/google self-hosts at build time (GDPR compliant).
+// Replaces Lato for both headings and body. JetBrains Mono retained for data values.
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-montserrat',
+  variable: '--font-inter',
 });
 
-const bodyFont = localFont({
-  src: [
-    { path: '../public/fonts/lato-300.woff2', weight: '300', style: 'normal' },
-    { path: '../public/fonts/lato-400.woff2', weight: '400', style: 'normal' },
-    { path: '../public/fonts/lato-700.woff2', weight: '700', style: 'normal' },
-    { path: '../public/fonts/lato-900.woff2', weight: '900', style: 'normal' },
-  ],
-  display: 'swap',
-  variable: '--font-roboto',
-});
+// Legacy CSS variable aliases so existing var(--font-montserrat) / var(--font-roboto) keep working
+const displayFont = { variable: '--font-montserrat' } as { variable: string };
+const bodyFont    = { variable: '--font-roboto' }    as { variable: string };
 
 const monoFont = localFont({
   src: [
@@ -276,7 +265,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`}>
+    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${inter.variable} ${monoFont.variable}`}>
       <head>
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
