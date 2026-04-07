@@ -225,13 +225,14 @@ export async function ingestJudges(supabaseUrl: string, supabaseServiceKey: stri
     .single();
 
   try {
-    let nextUrl: string | null = `${COURTLISTENER_JUDGES_URL}?type=judge&court_type=fd&is_alive=true&page_size=${PAGE_SIZE}`;
+    let nextUrl: string | null = `${COURTLISTENER_JUDGES_URL}?positions__position_type=jud&positions__court__jurisdiction=FD&page_size=${PAGE_SIZE}`;
 
+    const token = courtlistenerToken || process.env.COURTLISTENER_API_TOKEN;
     const headers: Record<string, string> = {
       'Accept': 'application/json',
     };
-    if (courtlistenerToken) {
-      headers['Authorization'] = `Token ${courtlistenerToken}`;
+    if (token) {
+      headers['Authorization'] = `Token ${token}`;
     }
 
     while (nextUrl) {
