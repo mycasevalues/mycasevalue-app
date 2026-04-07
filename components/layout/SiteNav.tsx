@@ -12,6 +12,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
+import LanguageToggle from '../LanguageToggle';
 
 /* ── Dropdown definitions (Section 4.4–4.6) ─────────────────────── */
 
@@ -321,6 +322,7 @@ export default function SiteNav() {
 
           {/* Right side */}
           <div className="navbar-right" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginLeft: 'auto', flexShrink: 0 }}>
+            <LanguageToggle />
             {userEmail ? (
               <>
                 <Link href="/dashboard" className="navbar-item" style={{

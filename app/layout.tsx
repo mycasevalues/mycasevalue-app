@@ -52,6 +52,7 @@ const ScrollToTop = dynamic(() => import('../components/ui/ScrollToTop'), { ssr:
 const BackToTop = dynamic(() => import('../components/BackToTop'), { ssr: false });
 const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVitalsReporter'), { ssr: false });
 const DemoMode = dynamic(() => import('../components/DemoMode'), { ssr: false });
+const LanguageDetectBanner = dynamic(() => import('../components/LanguageDetectBanner'), { ssr: false });
 
 export const metadata = {
   title: {
@@ -337,6 +338,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }}>Skip to main content</a>
         <ErrorBoundary>
           <AnalyticsProvider>
+            <LanguageDetectBanner />
             <BetaBanner />
             <SiteNav />
             <main id="main-content" role="main">
