@@ -248,14 +248,21 @@ export async function generateJudgeAnalysis(
     try {
       const { data: opinions, error: opinionsError } = await supabase
         .from('judge_opinions')
-        .select('ai_summary, case_name')
+        .select('ai_summary, case_name, court, year')
         .eq('judge_id', judgeId)
+        .order('year', { ascending: false })
         .limit(20);
 
       if (!opinionsError) {
         opinionSummaries = (opinions || [])
-          .filter((op: any) => op.ai_summary)
-          .map((op: any) => op.ai_summary || op.case_name || '');
+          .filter((op: any) => op.ai_summary || op.case_name)
+          .map((op: any) => {
+            if (op.ai_summary) return op.ai_summary;
+            const parts = [op.case_name];
+            if (op.court) parts.push(`(${op.court})`);
+            if (op.year) parts.push(`[${op.year}]`);
+            return parts.join(' ');
+          });
       }
     } catch (opinionsErr) {
       console.warn(`Could not fetch opinions for ${judgeId}:`, opinionsErr);
