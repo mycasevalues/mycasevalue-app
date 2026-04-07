@@ -6,6 +6,7 @@ import { mockJudgesData } from '@/data/mock-judges';
 import { getWinRateColor } from '@/lib/color-scale';
 import { aggregateJudgeStats, getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
 import JudgeProfileClient from '@/components/JudgeProfileClient';
+import JudgeAlertButton from '@/components/JudgeAlertButton';
 
 interface PageProps {
   params: Promise<{ judgeId: string }>;
@@ -159,13 +160,14 @@ export default async function JudgeProfilePage({ params }: PageProps) {
               {judge.position || 'United States District Judge'} · {judge.district_id || 'Federal Court'} · {judge.circuit || 'N/A'} Circuit
             </p>
 
-            {/* Appointment info row */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '12px' }}>
+            {/* Appointment info and action row */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '12px', flexWrap: 'wrap' }}>
               <div
                 style={{
                   fontSize: '13px',
                   fontFamily: 'var(--font-body)',
                   color: '#4B5563',
+                  flex: '1 1 auto',
                 }}
               >
                 Appointed {appointmentYear || 'N/A'} by President{' '}
@@ -204,10 +206,16 @@ export default async function JudgeProfilePage({ params }: PageProps) {
                   fontFamily: 'var(--font-body)',
                   color: '#004182',
                   fontWeight: '500',
+                  flexShrink: 0,
                 }}
               >
                 <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: '#0A66C2' }} />
                 Data as of {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+              </div>
+
+              {/* Judge Alert Button */}
+              <div style={{ flexShrink: 0 }}>
+                <JudgeAlertButton judgeId={judge.id} judgeName={judge.full_name} />
               </div>
             </div>
           </div>

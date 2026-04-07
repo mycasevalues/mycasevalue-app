@@ -11,6 +11,7 @@ import SampleSizeIndicator from '../../components/SampleSizeIndicator';
 import { useResearchStore } from '../../store/research';
 import TrendSparkline from '../../components/charts/TrendSparkline';
 import SearchTabs from '../../components/SearchTabs';
+import JudgeSearchResults from '../../components/JudgeSearchResults';
 
 // Loading skeleton component
 const SkeletonResultCard = () => (
@@ -764,6 +765,9 @@ export default function SearchPage() {
           })()}
         </Link>
       ))}
+
+      {/* Judge Search Results */}
+      {query.length > 1 && <JudgeSearchResults query={query} />}
 
       {query.length === 0 && (
         <>
