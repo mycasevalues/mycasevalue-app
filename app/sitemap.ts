@@ -23,6 +23,18 @@ const TOP_CASE_TYPES = ['employment-discrimination', 'breach-of-contract', 'pers
 // Top districts for outcomes cross-pages
 const TOP_DISTRICTS = ['CA', 'NY', 'TX', 'FL', 'IL', 'PA', 'OH', 'GA', 'NC', 'MI'];
 
+// Top 20 districts by filing volume (from /districts/[district]/[nos]/page.tsx)
+const TOP_DISTRICTS_DETAILED = [
+  'SDNY', 'CDCA', 'NDIL', 'NDTX', 'EDPA', 'SDFL', 'EDNY', 'NDCA', 'MDMD', 'EDMI',
+  'SDTX', 'EDVA', 'WDNC', 'SDCA', 'CACD', 'EDTX', 'MNDN', 'WDWA', 'DCDN', 'NJDN',
+];
+
+// Top 20 NOS codes by case volume (from /districts/[district]/[nos]/page.tsx)
+const TOP_NOS_CODES = [
+  '365', '190', '440', '442', '110', '360', '863', '220', '350', '710',
+  '860', '485', '370', '530', '870', '790', '362', '355', '462', '830',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
   const now = new Date().toISOString();
@@ -103,6 +115,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
+  // ── District × NOS code pages (400 combinations) ──────
+  const districtNosUrls: MetadataRoute.Sitemap = [];
+  TOP_DISTRICTS_DETAILED.forEach((district) => {
+    TOP_NOS_CODES.forEach((nos) => {
+      districtNosUrls.push({
+        url: `${baseUrl}/districts/${district}/${nos}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      });
+    });
+  });
+
   // ── Blog posts ────────────────────────────────────────
   const blogPosts = getAllPosts();
   const blogUrls: MetadataRoute.Sitemap = blogPosts.map((post) => ({
@@ -119,6 +144,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...nosUrls,
     ...districtUrls,
     ...outcomesUrls,
+    ...districtNosUrls,
     ...blogUrls,
   ];
 }
