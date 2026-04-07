@@ -298,7 +298,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
         <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-        <link rel="canonical" href="https://www.mycasevalues.com" />
+        {/* Canonical URL is handled per-page by Next.js metadata.alternates.canonical */}
         <link rel="alternate" hrefLang="en" href="https://www.mycasevalues.com" />
         <link rel="alternate" hrefLang="es" href="https://www.mycasevalues.com/es" />
         <link rel="alternate" hrefLang="x-default" href="https://www.mycasevalues.com" />

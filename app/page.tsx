@@ -143,6 +143,7 @@ export default function HomePage() {
               <input
                 type="text"
                 placeholder="Search cases by party, judge, or case type..."
+                aria-label="Search cases by party, judge, or case type"
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.target.value)}
                 style={{
