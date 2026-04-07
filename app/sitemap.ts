@@ -5,7 +5,7 @@ import { SITE_URL } from '../lib/site-config';
 const CATEGORY_IDS = ['work', 'injury', 'consumer', 'rights', 'money', 'housing', 'medical', 'family', 'gov', 'education'];
 
 // All unique NOS codes used in the app
-const NOS_CODES = ['110', '152', '190', '195', '240', '290', '310', '340', '350', '360', '362', '365', '368', '370', '371', '375', '440', '442', '443', '445', '530', '550', '710', '791', '820', '830', '840', '850', '864', '870', '890', '899', '900', '950'];
+const NOS_CODES = ['110', '120', '130', '140', '150', '151', '152', '153', '160', '190', '195', '196', '210', '220', '230', '240', '245', '290', '310', '315', '320', '330', '340', '345', '350', '355', '360', '362', '365', '367', '368', '370', '375', '376', '400', '410', '422', '423', '430', '440', '441', '442', '443', '444', '445', '446', '448', '450', '460', '462', '463', '465', '470', '480', '485', '490', '510', '530', '535', '540', '550', '555', '710', '720', '740', '751', '790', '791', '810', '820', '830', '840', '850', '860', '863', '870', '871', '890', '891', '893', '895', '896', '899', '950'];
 
 // All 51 state/territory district IDs
 const ALL_DISTRICTS = [
@@ -82,6 +82,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // ── District pages (all 54 state/territory districts) ──
+  const districtUrls: MetadataRoute.Sitemap = ALL_DISTRICTS.map((id) => ({
+    url: `${baseUrl}/districts/${id}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
   // ── Outcomes cross-pages (districts × case types) ─────
   const outcomesUrls: MetadataRoute.Sitemap = [];
   TOP_DISTRICTS.forEach((district) => {
@@ -109,6 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...spanishPages,
     ...categoryUrls,
     ...nosUrls,
+    ...districtUrls,
     ...outcomesUrls,
     ...blogUrls,
   ];
