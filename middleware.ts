@@ -1,4 +1,3 @@
-import createMiddleware from 'next-intl/middleware';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
@@ -6,17 +5,15 @@ import { locales, defaultLocale, type Locale } from './lib/i18n-config';
 
 /**
  * Middleware for MyCaseValue
- * 1. i18n locale routing via next-intl (English/Spanish)
+ * 1. Locale detection (cookie/header-based, no URL rewriting)
  * 2. Auth protection for /dashboard routes
  * 3. Security headers and geo-based detection
+ *
+ * NOTE: We do NOT use next-intl's createMiddleware because the app's
+ * pages live directly under app/ (not app/[locale]/). The next-intl
+ * middleware rewrites URLs internally to /en/... which causes 404s
+ * when there is no [locale] directory structure.
  */
-
-// next-intl middleware handles locale detection and URL rewriting
-const handleI18nRouting = createMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: 'as-needed', // English URLs don't get /en prefix
-});
 
 const PROTECTED_PREFIXES = ['/dashboard', '/account', '/settings', '/billing', '/reports'];
 
@@ -48,10 +45,10 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // ── Apply i18n routing ───────────────────────────────────────────────
-  let response = handleI18nRouting(request);
+  // ── Locale detection (no URL rewriting) ─────────────────────────────
+  let response = NextResponse.next();
 
-  // Extract locale and path for use in auth check
+  // Detect locale from URL prefix or default to English
   let locale: Locale = defaultLocale;
   for (const l of locales) {
     if (pathname.startsWith(`/${l}/`) || pathname === `/${l}`) {
