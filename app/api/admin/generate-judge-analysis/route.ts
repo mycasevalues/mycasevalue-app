@@ -83,23 +83,40 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // Batch mode: get active judges with pagination
+    // Batch mode: get judges that have opinions (via RPC or subquery)
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    const { data: judges, count: totalJudges, error: queryError } = await supabase
-      .from('judges')
-      .select('id', { count: 'exact' })
-      .eq('is_active', true)
-      .order('id')
-      .range(offset, offset + batchSize - 1);
+    // Get distinct judge_ids from judge_opinions, paginated
+    const { data: opinionJudges, error: queryError } = await supabase
+      .rpc('get_distinct_judge_ids_with_opinions', { p_offset: offset, p_limit: batchSize })
+      .select('*');
+
+    // Fallback: if RPC doesn't exist, query judge_opinions directly
+    let judges: { id: string }[] = [];
+    let totalJudges = 0;
 
     if (queryError) {
-      return NextResponse.json({
-        processed: 0, generated: 0, cached: 0,
-        errors: [queryError.message],
-        next_offset: null, total_judges: 0,
-        duration_ms: Date.now() - startTime,
-      }, { status: 500 });
+      // RPC not available, use direct query with dedup
+      const { data: rawRows, error: fallbackError } = await supabase
+        .from('judge_opinions')
+        .select('judge_id')
+        .order('judge_id');
+
+      if (fallbackError) {
+        return NextResponse.json({
+          processed: 0, generated: 0, cached: 0,
+          errors: [fallbackError.message],
+          next_offset: null, total_judges: 0,
+          duration_ms: Date.now() - startTime,
+        }, { status: 500 });
+      }
+
+      const uniqueIds = [...new Set((rawRows || []).map((r: any) => r.judge_id))];
+      totalJudges = uniqueIds.length;
+      judges = uniqueIds.slice(offset, offset + batchSize).map(id => ({ id }));
+    } else {
+      judges = (opinionJudges || []).map((r: any) => ({ id: r.judge_id }));
+      totalJudges = judges.length + offset; // Approximate
     }
 
     if (!judges || judges.length === 0) {
