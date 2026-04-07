@@ -16,7 +16,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Aceptación",
+    "es_definition": "Asentimiento inequívoco a los términos de una oferta; crea un contrato vinculante al comunicar la aceptación al oferente.",
+    "es_context": "En la ley federal, la aceptación debe ser inequívoca y conforme a los términos de la oferta; la aceptación condicionada constituye una contraoferta."
   },
   {
     "slug": "accord-and-satisfaction",
@@ -34,14 +37,17 @@
       "110"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Acuerdo y Satisfacción",
+    "es_definition": "Un acuerdo (acuerdo) y su cumplimiento (satisfacción) que resuelve un reclamo disputado, descargando la obligación original.",
+    "es_context": "Regido por la ley de contratos estatal; los tribunales federales reconocen el acuerdo y la satisfacción como defensa válida de contrato."
   },
   {
     "slug": "adea",
     "term": "Age Discrimination in Employment Act (ADEA)",
     "pronunciation": null,
     "definition": "Federal statute prohibiting age discrimination in employment for individuals 40 years of age and older; enforced by EEOC.",
-    "federalContext": "29 U.S.C. \u00a7 621 et seq.; private right of action; applies to employers with 20+ employees; damages available.",
+    "federalContext": "29 U.S.C. § 621 et seq.; private right of action; applies to employers with 20+ employees; damages available.",
     "dataContext": "Employment discrimination case type; federal question jurisdiction.",
     "relatedTerms": [
       "discrimination",
@@ -51,8 +57,11 @@
     "relatedNosCodes": [
       "410"
     ],
-    "source": "29 U.S.C. \u00a7 621 et seq.",
-    "featured": false
+    "source": "29 U.S.C. § 621 et seq.",
+    "featured": false,
+    "es_term": "Ley de Discriminación por Edad en el Empleo (ADEA)",
+    "es_definition": "Estatuto federal que prohíbe la discriminación por edad en el empleo para individuos de 40 años o más; ejecutado por la EEOC.",
+    "es_context": "29 U.S.C. § 621 y siguientes; derecho privado de acción; se aplica a empleadores con 20 o más empleados."
   },
   {
     "slug": "administrative-exhaustion",
@@ -71,7 +80,10 @@
       "443"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Agotamiento Administrativo",
+    "es_definition": "Requisito de que el demandante agote los recursos administrativos disponibles antes de presentar una demanda en tribunal federal.",
+    "es_context": "Requerido para reclamos de discriminación en el empleo antes de presentar una demanda; se requiere presentación de cargo ante la EEOC."
   },
   {
     "slug": "admissible",
@@ -90,7 +102,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Admisible",
+    "es_definition": "Prueba que es legalmente suficiente y relevante para ser presentada ante un jurado o juez en juicio.",
+    "es_context": "La Regla Federal de Evidencia 402 establece que la prueba relevante es generalmente admisible a menos que se excluya específicamente."
   },
   {
     "slug": "affidavit",
@@ -109,7 +124,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Declaración Jurada",
+    "es_definition": "Declaración escrita hecha bajo juramento ante un funcionario autorizado, utilizada en lugar del testimonio.",
+    "es_context": "La Regla Federal de Procedimiento Civil 56(c) permite declaraciones juradas en apoyo de mociones de sentencia sumaria; debe demostrar conocimiento personal."
   },
   {
     "slug": "affirmation",
@@ -128,7 +146,10 @@
       "620"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Afirmación",
+    "es_definition": "Declaración solemne hecha sin juramento pero bajo pena de perjurio, teniendo la misma fuerza legal que un juramento.",
+    "es_context": "Empleada como alternativa a un juramento formal cuando el individuo tiene objeciones religiosas o de conciencia al juramento."
   },
   {
     "slug": "affirmative-defense",
@@ -147,7 +168,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Defensa Afirmativa",
+    "es_definition": "Defensa que reconoce los hechos alegados por el demandante pero presenta otras circunstancias que evitan o mitigan la responsabilidad.",
+    "es_context": "Ejemplos incluyen prescripción, consentimiento, asunción de riesgo y defensa propia; debe alegarse en la respuesta."
   },
   {
     "slug": "agency-deference",
@@ -166,7 +190,10 @@
       "administrative-law"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Deferencia de Agencia",
+    "es_definition": "Principio por el cual los tribunales defieren a las interpretaciones de agencias federales de leyes que administran.",
+    "es_context": "Aplicado bajo estándares como la deferencia de Chevron en asuntos de regulación federal y cumplimiento normativo."
   },
   {
     "slug": "amicus-curiae",
@@ -185,14 +212,17 @@
       "120"
     ],
     "source": "Fed. R. App. P. 29",
-    "featured": false
+    "featured": false,
+    "es_term": "Amigo del Tribunal",
+    "es_definition": "Parte no litigante que presenta información para asistir al tribunal sobre un punto de ley o hecho relevante para el caso.",
+    "es_context": "Comúnmente utilizado en apelaciones; grupos de interés público, organizaciones comerciales y gobiernos presentan amicus briefs."
   },
   {
     "slug": "amount-in-controversy",
     "term": "Amount in Controversy",
     "pronunciation": null,
     "definition": "The monetary value of relief sought in diversity cases; must exceed $75,000 to establish federal diversity jurisdiction.",
-    "federalContext": "28 U.S.C. \u00a7 1332(a) requires amount in controversy; calculated by looking to plaintiff's complaint allegations.",
+    "federalContext": "28 U.S.C. § 1332(a) requires amount in controversy; calculated by looking to plaintiff's complaint allegations.",
     "dataContext": "Amount in controversy determines federal court jurisdictional eligibility.",
     "relatedTerms": [
       "diversity-jurisdiction",
@@ -204,7 +234,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Cantidad Controvertida",
+    "es_definition": "Cantidad de dinero en disputa en un caso, utilizada para determinar si existe jurisdicción federal de diversidad.",
+    "es_context": "Debe exceder $75,000 para la jurisdicción federal de diversidad bajo 28 U.S.C. § 1332."
   },
   {
     "slug": "answer",
@@ -223,14 +256,17 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Contestación",
+    "es_definition": "Respuesta pleiteada por el demandado a la demanda del demandante, admitiendo o negando cada alegación.",
+    "es_context": "Debe presentarse dentro de 21 días de ser notificado de la demanda bajo la Regla Federal de Procedimiento Civil 12(a)."
   },
   {
     "slug": "anticipatory-breach",
     "term": "Anticipatory Breach",
     "pronunciation": null,
     "definition": "A repudiation of contract obligations before the time for performance arrives, allowing the non-breaching party to immediately seek remedies.",
-    "federalContext": "Recognized in federal courts under applicable state law; Restatement (Second) of Contracts \u00a7 250.",
+    "federalContext": "Recognized in federal courts under applicable state law; Restatement (Second) of Contracts § 250.",
     "dataContext": "Allows immediate action in contract disputes without waiting for performance date.",
     "relatedTerms": [
       "breach-of-contract",
@@ -240,15 +276,18 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "Restatement (Second) of Contracts \u00a7 250",
-    "featured": false
+    "source": "Restatement (Second) of Contracts § 250",
+    "featured": false,
+    "es_term": "Incumplimiento Anticipado",
+    "es_definition": "Incumplimiento que ocurre cuando una de las partes indica antes del vencimiento que no cumplirá sus obligaciones contractuales.",
+    "es_context": "Permite a la otra parte rescindir el contrato y buscar remedios de inmediato sin esperar al incumplimiento real."
   },
   {
     "slug": "apa",
     "term": "APA",
     "pronunciation": null,
     "definition": "Administrative Procedure Act; federal statute governing administrative agency procedures, rulemaking, and judicial review.",
-    "federalContext": "5 U.S.C. \u00a7\u00a7 551-559 establish procedural requirements for federal agencies; \u00a7 706 provides judicial review standard.",
+    "federalContext": "5 U.S.C. §§ 551-559 establish procedural requirements for federal agencies; § 706 provides judicial review standard.",
     "dataContext": "APA governs federal agency litigation and administrative law cases.",
     "relatedNosCodes": [
       "890",
@@ -260,7 +299,10 @@
       "rulemaking"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "APA",
+    "es_definition": "Ley de Procedimiento Administrativo que establece requisitos procedimentales para agencias federales.",
+    "es_context": "5 U.S.C. § 551 et seq.; regula la creación de regulaciones, audiencias administrativas y revisión judicial de acciones de agencias."
   },
   {
     "slug": "appeal",
@@ -279,7 +321,10 @@
       "remand"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Apelación",
+    "es_definition": "Solicitud a un tribunal superior para revisar y posiblemente anular la decisión de un tribunal inferior.",
+    "es_context": "Las apelaciones federales se presentan ante los Tribunales de Apelaciones del Circuito Unido; limitadas a cuestiones de ley, no de hecho."
   },
   {
     "slug": "appellate-brief",
@@ -298,7 +343,10 @@
       "620"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Escrito de Apelación",
+    "es_definition": "Documento escrito presentado ante un tribunal de apelaciones exponiendo los argumentos legales de una de las partes.",
+    "es_context": "Debe cumplir con estrictos requisitos de formato y extensión bajo las Reglas de Procedimiento de Apelación del Circuito."
   },
   {
     "slug": "appellate-court",
@@ -317,14 +365,17 @@
       "appeal"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Tribunal de Apelaciones",
+    "es_definition": "Tribunal con autoridad para revisar decisiones de tribunales inferiores sobre cuestiones de ley.",
+    "es_context": "Los Tribunales de Apelaciones Federales Unido revisan decisiones de los Tribunales de Distrito Federal en el segundo nivel de revisión."
   },
   {
     "slug": "arbitrary-and-capricious",
     "term": "Arbitrary and Capricious",
     "pronunciation": null,
     "definition": "A standard of judicial review under the Administrative Procedure Act requiring that agency decisions be based on reasoned explanation and consideration of relevant factors.",
-    "federalContext": "Governed by 5 U.S.C. \u00a7 706(2)(A); applies to most informal agency actions; requires agency explanation.",
+    "federalContext": "Governed by 5 U.S.C. § 706(2)(A); applies to most informal agency actions; requires agency explanation.",
     "dataContext": "Administrative law standard of review.",
     "relatedTerms": [
       "apa",
@@ -334,15 +385,18 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "5 U.S.C. \u00a7 706(2)(A)",
-    "featured": false
+    "source": "5 U.S.C. § 706(2)(A)",
+    "featured": false,
+    "es_term": "Arbitrario y Caprichoso",
+    "es_definition": "Estándar de revisión judicial de acciones de agencias federales; la agencia debe explicar racionalmente su decisión.",
+    "es_context": "La Ley de Procedimiento Administrativo requiere que los tribunales anulen acciones de agencias que sean arbitrarias y caprichosas."
   },
   {
     "slug": "arbitration",
     "term": "Arbitration",
     "pronunciation": null,
     "definition": "Binding alternative dispute resolution where neutral arbitrator(s) hear evidence and issue final decision enforceable as judgment.",
-    "federalContext": "Enforced under FAA \u00a7 2; arbitrator decision final with limited appeal rights; excludes federal court review.",
+    "federalContext": "Enforced under FAA § 2; arbitrator decision final with limited appeal rights; excludes federal court review.",
     "dataContext": "Arbitration clauses eliminate federal court filings.",
     "relatedTerms": [
       "arbitration-clause",
@@ -354,14 +408,17 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": true
+    "featured": true,
+    "es_term": "Arbitraje",
+    "es_definition": "Proceso alternativo de resolución de disputas en el que un tercero neutral, un árbitro, escucha a ambas partes y dicta una decisión vinculante.",
+    "es_context": "Ampliamente utilizado en disputas contractuales y laborales; puede obligarse mediante cláusulas de arbitraje en acuerdos."
   },
   {
     "slug": "arbitration-clause",
     "term": "Arbitration Clause",
     "pronunciation": null,
     "definition": "A contract provision requiring parties to resolve disputes through arbitration rather than litigation.",
-    "federalContext": "Enforceable under FAA \u00a7 2; courts must enforce arbitration agreements; arbitration shields parties from federal court jurisdiction.",
+    "federalContext": "Enforceable under FAA § 2; courts must enforce arbitration agreements; arbitration shields parties from federal court jurisdiction.",
     "dataContext": "Arbitration clauses eliminate federal court cases; common in commercial and employment contexts.",
     "relatedTerms": [
       "arbitration",
@@ -373,7 +430,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Cláusula de Arbitraje",
+    "es_definition": "Disposición en un contrato que requiere que las partes resuelvan disputas mediante arbitraje en lugar de litigios.",
+    "es_context": "Generalmente ejecutable bajo la Ley de Arbitraje Federal (FAA), 9 U.S.C. § 1 et seq."
   },
   {
     "slug": "article-iii",
@@ -392,7 +452,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Artículo III",
+    "es_definition": "Sección de la Constitución de EE.UU. que establece la rama judicial federal y define el alcance del poder judicial federal.",
+    "es_context": "Establece la Corte Suprema, autoriza al Congreso a crear tribunales inferiores y delimita la jurisdicción federal."
   },
   {
     "slug": "article-iii-judge",
@@ -411,7 +474,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Juez del Artículo III",
+    "es_definition": "Juez federal cuyo cargo está protegido por el Artículo III de la Constitución, tenencia de por vida a buen comportamiento.",
+    "es_context": "Los Jueces de Distrito Federal y los Jueces de Circuito son Jueces del Artículo III; tienen mayor autoridad que los jueces administrativos."
   },
   {
     "slug": "assumption-of-risk",
@@ -430,7 +496,10 @@
       "315"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Asunción de Riesgo",
+    "es_definition": "Defensa que sostiene que el demandante conocía y voluntariamente asumió los riesgos que causaron su lesión.",
+    "es_context": "Defensa afirmativa comúnmente utilizada en casos de lesiones personales que implican actividades recreativas o riesgosas."
   },
   {
     "slug": "attorney-fees",
@@ -449,14 +518,17 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Honorarios de Abogado",
+    "es_definition": "Cargos cobrados por un abogado por sus servicios, que pueden ser pagados por el cliente o en algunos casos por la parte vencida.",
+    "es_context": "En algunos casos estatutarios y en procedimientos de valores, la parte vencida puede ser ordenada a pagar los honorarios del abogado del ganador."
   },
   {
     "slug": "attractive-nuisance",
     "term": "Attractive Nuisance",
     "pronunciation": null,
     "definition": "A property condition that poses a hidden risk to children who may be attracted to enter the property, making the property owner liable for injuries even though the children are technically trespassers.",
-    "federalContext": "Governed by Restatement (Second) of Torts \u00a7 339; federal courts apply state law on this doctrine.",
+    "federalContext": "Governed by Restatement (Second) of Torts § 339; federal courts apply state law on this doctrine.",
     "dataContext": "Product liability and premises liability cases tracked with NOS code 310.",
     "relatedTerms": [
       "premises-liability",
@@ -467,8 +539,11 @@
     "relatedNosCodes": [
       "310"
     ],
-    "source": "Restatement (Second) of Torts \u00a7 339",
-    "featured": false
+    "source": "Restatement (Second) of Torts § 339",
+    "featured": false,
+    "es_term": "Atracción Peligrosa",
+    "es_definition": "Doctrina que sostiene que un propietario es responsable por las lesiones a los intrusos si el propietario conocía el peligro y esperaba intrusión.",
+    "es_context": "Comúnmente aplicada cuando hay piscinas, equipos de construcción u otros peligros atractivos para los niños en la propiedad."
   },
   {
     "slug": "auer-deference",
@@ -486,7 +561,10 @@
       "110"
     ],
     "source": "Auer v. Robbins, 519 U.S. 452 (1997)",
-    "featured": false
+    "featured": false,
+    "es_term": "Deferencia Auer",
+    "es_definition": "Estándar de revisión judicial que requiere deferencia a las interpretaciones de una agencia de su propio reglamento.",
+    "es_context": "Establece que si un reglamento es ambiguo, las interpretaciones del regulador merecen respeto si son razonables."
   },
   {
     "slug": "authentication",
@@ -505,7 +583,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Autenticación",
+    "es_definition": "Proceso de establecer que la evidencia presentada en juicio es genuina y es lo que se afirma que es.",
+    "es_context": "Regla Federal de Evidencia 901 requiere que la evidencia esté identificada o autenticada suficientemente antes de su admisión."
   },
   {
     "slug": "base-rate",
@@ -523,7 +604,10 @@
       "410"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Tasa Base",
+    "es_definition": "La frecuencia general o probabilidad de un evento en toda una población, utilizada en evidencia estadística.",
+    "es_context": "Importante en casos que involucran análisis estadístico de discriminación o patrones de negligencia."
   },
   {
     "slug": "bench-trial",
@@ -542,7 +626,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Juicio ante el Tribunal",
+    "es_definition": "Juicio en el que el juez, en lugar de un jurado, decide los hechos y aplica la ley para dictar sentencia.",
+    "es_context": "Las partes pueden consentir en un juicio ante el tribunal en lugar de un juicio con jurado bajo la Regla Federal de Procedimiento Civil 52."
   },
   {
     "slug": "best-evidence-rule",
@@ -561,7 +648,10 @@
       "120"
     ],
     "source": "Fed. R. Evid. 1001-1008",
-    "featured": false
+    "featured": false,
+    "es_term": "Regla de Mejor Prueba",
+    "es_definition": "Regla de evidencia que requiere que el original de un documento sea presentado cuando su contenido está en cuestión.",
+    "es_context": "Regla Federal de Evidencia 1002; permite excepciones cuando el original se ha perdido o destruido sin negligencia."
   },
   {
     "slug": "bifurcation",
@@ -579,7 +669,10 @@
       "110"
     ],
     "source": "Fed. R. Civ. P. 42",
-    "featured": false
+    "featured": false,
+    "es_term": "Bifurcación",
+    "es_definition": "División de un juicio en fases separadas, típicamente separando responsabilidad y daños.",
+    "es_context": "Permite al tribunal resolver primero responsabilidad; si el demandante gana, luego se realiza un juicio separado sobre daños."
   },
   {
     "slug": "bill-of-costs",
@@ -597,7 +690,10 @@
       "110"
     ],
     "source": "Fed. R. Civ. P. 54(d)",
-    "featured": false
+    "featured": false,
+    "es_term": "Factura de Costos",
+    "es_definition": "Declaración presentada por la parte vencedora detallando los costos de la corte permitidos incurridos en litigio.",
+    "es_context": "Los costos permitidos incluyen cuotas de presentación y honorarios de testigos peritos; los honorarios de abogados generalmente se excluyen a menos que se otorgue estatutariamente."
   },
   {
     "slug": "binding-authority",
@@ -616,7 +712,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Autoridad Vinculante",
+    "es_definition": "Precedente legal que un tribunal debe seguir, típicamente decisiones de tribunales superiores en su jurisdicción.",
+    "es_context": "Las decisiones de la Corte Suprema son autoridad vinculante para todos los tribunales inferiores; las decisiones de circuito vinculan a los tribunales de distrito."
   },
   {
     "slug": "bivens-action",
@@ -634,7 +733,10 @@
       "442"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Acción Bivens",
+    "es_definition": "Acción federal contra funcionarios federales por violaciones de derechos constitucionales.",
+    "es_context": "Establecida en Bivens v. Six Unknown Federal Narcotics Agents; permite demandas por daños contra agentes federales por violaciones de derechos."
   },
   {
     "slug": "bona-fide-2",
@@ -652,14 +754,17 @@
       "110"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Buena Fe",
+    "es_definition": "Actuación honesta y de buena fe; el cumplimiento de las obligaciones legales de manera honesta.",
+    "es_context": "Defensa en casos de discriminación; un empleador puede discriminar si la característica es una calificación ocupacional de buena fe."
   },
   {
     "slug": "bona-fide-occupational-qualification",
     "term": "Bona Fide Occupational Qualification (BFOQ)",
     "pronunciation": null,
     "definition": "A genuine job-related requirement that permits otherwise prohibited discrimination when occupational qualification is essential.",
-    "federalContext": "Title VII exception at 42 U.S.C. \u00a7 2000e-2(e); rare; employer must prove qualification reasonably necessary to job performance.",
+    "federalContext": "Title VII exception at 42 U.S.C. § 2000e-2(e); rare; employer must prove qualification reasonably necessary to job performance.",
     "dataContext": "BFOQ defense rarely succeeds in discrimination litigation.",
     "relatedTerms": [
       "discrimination",
@@ -671,7 +776,10 @@
       "443"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Calificación Ocupacional de Buena Fe (BFOQ)",
+    "es_definition": "Excepción a las leyes de igualdad de oportunidades de empleo que permite discriminación basada en una característica protegida si es esencial para el trabajo.",
+    "es_context": "Ejemplo: género en roles de seguridad donde se requiere una búsqueda de cuerpo del mismo sexo."
   },
   {
     "slug": "breach",
@@ -690,7 +798,10 @@
       "315"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Incumplimiento",
+    "es_definition": "Violación de un derecho o deber legal, especialmente el incumplimiento de los términos de un contrato.",
+    "es_context": "El incumplimiento de un contrato es una causa de acción primaria; permite al demandante buscar daños o ejecución específica."
   },
   {
     "slug": "breach-of-contract",
@@ -709,7 +820,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": true
+    "featured": true,
+    "es_term": "Incumplimiento de Contrato",
+    "es_definition": "Acción legal que surge del incumplimiento no justificado de los términos de un acuerdo contractual.",
+    "es_context": "Requiere demostrar que existía un contrato válido, que el demandado incumplió y que el demandante sufrió daños."
   },
   {
     "slug": "burden-shifting",
@@ -728,7 +842,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Desplazamiento de Carga",
+    "es_definition": "Procedimiento legal en el cual el demandante presenta un caso de acción, luego la carga se desplaza al demandado para demostrar una defensa.",
+    "es_context": "Utilizado en casos de discriminación bajo la prueba de McDonnell Douglas; el demandante establece una presunción de discriminación."
   },
   {
     "slug": "business-records-exception",
@@ -747,7 +864,10 @@
       "120"
     ],
     "source": "Fed. R. Evid. 803(6)",
-    "featured": false
+    "featured": false,
+    "es_term": "Excepción de Registros Comerciales",
+    "es_definition": "Excepción a la regla de rumores que permite la admisión de registros comerciales mantenidos en el curso regular del negocio.",
+    "es_context": "Regla Federal de Evidencia 803(6); requiere que los registros se creen y mantengan en el curso regular del negocio."
   },
   {
     "slug": "case-management-order",
@@ -765,7 +885,10 @@
       "110"
     ],
     "source": "Fed. R. Civ. P. 16",
-    "featured": false
+    "featured": false,
+    "es_term": "Orden de Gestión de Caso",
+    "es_definition": "Orden emitida por el tribunal durante la conferencia de gestión que establece cronogramas y procedimientos para el litigio.",
+    "es_context": "Regla Federal de Procedimiento Civil 16; puede incluir plazos de descubrimiento, fechas de juicio y órdenes de confidencialidad."
   },
   {
     "slug": "causation",
@@ -784,14 +907,17 @@
       "315"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Causalidad",
+    "es_definition": "Conexión entre la conducta de un acusado y la lesión o daño sufrido por el demandante.",
+    "es_context": "En casos de negligencia, se requiere tanto causa 'pero por' como 'causa proximal'; vital en casos de lesiones corporales."
   },
   {
     "slug": "caveat-emptor",
     "term": "Caveat Emptor",
     "pronunciation": "KAV-ee-aht EMP-tor",
     "definition": "Latin for 'let the buyer beware'; a principle shifting risk to buyer for defects unless seller made express warranty.",
-    "federalContext": "Modified by warranties under UCC \u00a7 2-314 and consumer protection laws; limited application in modern law.",
+    "federalContext": "Modified by warranties under UCC § 2-314 and consumer protection laws; limited application in modern law.",
     "dataContext": "Sales law principle; product liability context.",
     "relatedTerms": [
       "warranty",
@@ -802,7 +928,10 @@
       "310"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Caveat Emptor",
+    "es_definition": "Principio legal que significa 'que el comprador tenga cuidado'; trasplanta el riesgo de calidad al comprador.",
+    "es_context": "Ampliamente modificado por estatutos de derechos de los consumidores y garantías implícitas en la venta de mercancías."
   },
   {
     "slug": "certiorari",
@@ -821,7 +950,10 @@
       "620"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Certiorari",
+    "es_definition": "Orden de una corte superior que requiere que una corte inferior certifique y presente registros de un caso para revisión judicial.",
+    "es_context": "La Corte Suprema otorga circa 70-80 peticiones de certiorari de aproximadamente 7,000 peticiones presentadas anualmente."
   },
   {
     "slug": "chain-of-custody",
@@ -840,7 +972,10 @@
       "120"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Cadena de Custodia",
+    "es_definition": "Documentación que demuestra que la evidencia física fue recopilada, manejada y almacenada de manera que previene alteración o contaminación.",
+    "es_context": "Crítica en litigios penales y civiles; debilidades pueden resultar en la exclusión de evidencia."
   },
   {
     "slug": "challenge-for-cause",
@@ -859,7 +994,10 @@
       "120"
     ],
     "source": "Fed. R. Civ. P. 47(c)",
-    "featured": false
+    "featured": false,
+    "es_term": "Desafío por Causa",
+    "es_definition": "Solicitud del abogado para que el tribunal remueva a un posible jurado que ha demostrado prejuicio o parcialidad.",
+    "es_context": "A diferencia de los desafíos perentorios, hay un número ilimitado de desafíos por causa si se demuestra causa suficiente."
   },
   {
     "slug": "character-evidence",
@@ -878,7 +1016,10 @@
       "120"
     ],
     "source": "Fed. R. Evid. 404-405",
-    "featured": false
+    "featured": false,
+    "es_term": "Prueba de Carácter",
+    "es_definition": "Evidencia de la propensión de una persona a actuar de cierta manera, utilizada para inferir conducta consistente.",
+    "es_context": "Generalmente inadmisible para demostrar conducta conformante excepto en circunstancias específicas bajo la Regla Federal de Evidencia 404."
   },
   {
     "slug": "chevron-deference",
@@ -897,7 +1038,10 @@
       "administrative-law"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Deferencia de Chevron",
+    "es_definition": "Estándar de revisión judicial de interpretaciones de agencias de estatutos que administran, requiriendo deferencia si la ley es ambigua.",
+    "es_context": "Establecido en Chevron U.S.A., Inc. v. NRDC; permite interpretación de agencia si no contradice clara intención legislativa."
   },
   {
     "slug": "circuit-court",
@@ -916,7 +1060,10 @@
       "panel"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Tribunal de Circuito",
+    "es_definition": "Tribunal de apelaciones federal; hay 13 Tribunales de Apelaciones del Circuito Unido que revisan decisiones de los tribunales de distrito.",
+    "es_context": "Cada circuito cubre múltiples estados; las apelaciones de los tribunales de distrito van al tribunal de circuito para la segunda revisión."
   },
   {
     "slug": "claim-construction",
@@ -934,7 +1081,10 @@
       "830"
     ],
     "source": "Black's Law Dictionary, 11th ed.",
-    "featured": false
+    "featured": false,
+    "es_term": "Construcción de Reclamo",
+    "es_definition": "En litigios de patentes, el proceso de interpretar el significado y alcance de las reclamaciones de patente.",
+    "es_context": "Decisión previa a la prueba en casos de patentes; determina el alcance de protección de la patente y es frecuentemente el tema de apelación."
   },
   {
     "slug": "class-action",
@@ -1184,7 +1334,7 @@
     "term": "Continuation",
     "pronunciation": null,
     "definition": "A patent application filed by an applicant claiming benefit of an earlier application, with same specification but different or broader claims.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 120; preserves original filing date; used to obtain additional claims or pursue different aspects.",
+    "federalContext": "Governed by 35 U.S.C. § 120; preserves original filing date; used to obtain additional claims or pursue different aspects.",
     "dataContext": "Patent prosecution strategy; claim scope expansion.",
     "relatedTerms": [
       "patent",
@@ -1194,7 +1344,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 120",
+    "source": "35 U.S.C. § 120",
     "featured": false
   },
   {
@@ -1275,7 +1425,7 @@
     "term": "Covered Business Method (CBM) Patent",
     "pronunciation": null,
     "definition": "A patent claiming a method or apparatus for performing data processing or other operations related to financial management, now subject to post-grant review under transitional rules.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 321-329; transitional proceeding; broader grounds than IPR; limited to 2011-2019.",
+    "federalContext": "Governed by 35 U.S.C. § 321-329; transitional proceeding; broader grounds than IPR; limited to 2011-2019.",
     "dataContext": "Software/business method patent validity challenges.",
     "relatedTerms": [
       "patent",
@@ -1285,7 +1435,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 321-329",
+    "source": "35 U.S.C. § 321-329",
     "featured": false
   },
   {
@@ -1420,7 +1570,7 @@
     "term": "Declaration",
     "pronunciation": null,
     "definition": "A written statement made under penalty of perjury, equivalent to an affidavit but not requiring a notary.",
-    "federalContext": "28 U.S.C. \u00a7 1746 permits declarations in federal court under penalty of perjury as alternative to affidavits.",
+    "federalContext": "28 U.S.C. § 1746 permits declarations in federal court under penalty of perjury as alternative to affidavits.",
     "dataContext": "Declarations are widely used in federal litigation for efficiency.",
     "relatedTerms": [
       "affidavit",
@@ -1439,7 +1589,7 @@
     "term": "Declaratory Judgment",
     "pronunciation": null,
     "definition": "A judgment by a court stating the legal rights of parties or the legal status of a matter without ordering specific relief.",
-    "federalContext": "Governed by 28 U.S.C. \u00a7 2201-2202 and Fed. R. Civ. P. 57; requires actual case or controversy; appropriate when plaintiff seeks clarification.",
+    "federalContext": "Governed by 28 U.S.C. § 2201-2202 and Fed. R. Civ. P. 57; requires actual case or controversy; appropriate when plaintiff seeks clarification.",
     "dataContext": "Distinct remedy form; clarifies legal status.",
     "relatedTerms": [
       "judgment",
@@ -1449,7 +1599,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "28 U.S.C. \u00a7 2201-2202",
+    "source": "28 U.S.C. § 2201-2202",
     "featured": false
   },
   {
@@ -1531,7 +1681,7 @@
     "term": "Design Patent",
     "pronunciation": null,
     "definition": "A patent protecting the ornamental design or appearance of an article of manufacture, separate from utility patents.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 171-173; 15-year term from grant date; infringement analyzed by ordinary observer test.",
+    "federalContext": "Governed by 35 U.S.C. § 171-173; 15-year term from grant date; infringement analyzed by ordinary observer test.",
     "dataContext": "Intellectual property protection; tracked in patent litigation.",
     "relatedTerms": [
       "utility-patent",
@@ -1541,7 +1691,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 171-173",
+    "source": "35 U.S.C. § 171-173",
     "featured": false
   },
   {
@@ -1587,7 +1737,7 @@
     "term": "Discrimination",
     "pronunciation": null,
     "definition": "Unequal or differential treatment of individuals or groups based on protected characteristics such as race, color, religion, or national origin.",
-    "federalContext": "Title VII (42 U.S.C. \u00a7 2000e) prohibits employment discrimination; civil rights laws provide private right of action for discrimination.",
+    "federalContext": "Title VII (42 U.S.C. § 2000e) prohibits employment discrimination; civil rights laws provide private right of action for discrimination.",
     "dataContext": "Discrimination claims appear in employment and civil rights NOS codes.",
     "relatedTerms": [
       "disparate-treatment",
@@ -1683,7 +1833,7 @@
     "term": "Diversity Jurisdiction",
     "pronunciation": null,
     "definition": "Federal court jurisdiction based on complete diversity of citizenship between parties and amount in controversy exceeding $75,000.",
-    "federalContext": "28 U.S.C. \u00a7 1332 grants diversity jurisdiction; requires complete diversity and exceeding amount in controversy threshold.",
+    "federalContext": "28 U.S.C. § 1332 grants diversity jurisdiction; requires complete diversity and exceeding amount in controversy threshold.",
     "dataContext": "Diversity cases form significant portion of federal docket.",
     "relatedTerms": [
       "jurisdiction",
@@ -1702,7 +1852,7 @@
     "term": "Divisional Patent Application",
     "pronunciation": null,
     "definition": "A patent application filed to claim benefit of an earlier application, dividing the claims to overcome an examiner's rejection based on lack of unity of invention.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 121; preserves original filing date; used when examiner objects to multiple inventions in one application.",
+    "federalContext": "Governed by 35 U.S.C. § 121; preserves original filing date; used when examiner objects to multiple inventions in one application.",
     "dataContext": "Patent prosecution strategy; addresses examiner objections.",
     "relatedTerms": [
       "patent",
@@ -1712,7 +1862,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 121",
+    "source": "35 U.S.C. § 121",
     "featured": false
   },
   {
@@ -1850,7 +2000,7 @@
     "term": "Equal Pay Act (EPA)",
     "pronunciation": null,
     "definition": "Federal statute prohibiting discrimination in compensation for men and women who perform substantially equal work, with four affirmative defenses.",
-    "federalContext": "29 U.S.C. \u00a7 206(d); enforced by EEOC; private right of action; damages include back pay and liquidated damages.",
+    "federalContext": "29 U.S.C. § 206(d); enforced by EEOC; private right of action; damages include back pay and liquidated damages.",
     "dataContext": "Employment compensation discrimination; federal question jurisdiction.",
     "relatedTerms": [
       "compensation",
@@ -1860,7 +2010,7 @@
     "relatedNosCodes": [
       "410"
     ],
-    "source": "29 U.S.C. \u00a7 206(d)",
+    "source": "29 U.S.C. § 206(d)",
     "featured": false
   },
   {
@@ -1961,7 +2111,7 @@
     "term": "Exhaustion of Administrative Remedies",
     "pronunciation": null,
     "definition": "A doctrine requiring parties to pursue all available administrative review procedures before seeking judicial review of an agency action.",
-    "federalContext": "Governed by 5 U.S.C. \u00a7 704 and common law; exceptions exist for futility, inadequacy, and ripeness; case-specific.",
+    "federalContext": "Governed by 5 U.S.C. § 704 and common law; exceptions exist for futility, inadequacy, and ripeness; case-specific.",
     "dataContext": "Procedural requirement in administrative appeals.",
     "relatedTerms": [
       "ripeness",
@@ -1971,7 +2121,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "5 U.S.C. \u00a7 704",
+    "source": "5 U.S.C. § 704",
     "featured": false
   },
   {
@@ -1998,7 +2148,7 @@
     "term": "Fair Use",
     "pronunciation": null,
     "definition": "A copyright exception permitting limited use of copyrighted material for purposes like criticism, commentary, news, or education.",
-    "federalContext": "17 U.S.C. \u00a7 107 permits fair use; four-factor test: purpose, nature, amount, and market effect; affirmative defense.",
+    "federalContext": "17 U.S.C. § 107 permits fair use; four-factor test: purpose, nature, amount, and market effect; affirmative defense.",
     "dataContext": "Fair use defenses appear in copyright litigation.",
     "relatedTerms": [
       "copyright",
@@ -2016,7 +2166,7 @@
     "term": "False Claims Act (FCA)",
     "pronunciation": null,
     "definition": "Federal statute imposing civil liability on persons who submit false claims for payment to the United States government, including treble damages and penalties.",
-    "federalContext": "31 U.S.C. \u00a7 3729 et seq.; enforced by Department of Justice and private relators; qui tam provisions.",
+    "federalContext": "31 U.S.C. § 3729 et seq.; enforced by Department of Justice and private relators; qui tam provisions.",
     "dataContext": "Government fraud case type; federal question jurisdiction.",
     "relatedTerms": [
       "qui-tam",
@@ -2026,7 +2176,7 @@
     "relatedNosCodes": [
       "410"
     ],
-    "source": "31 U.S.C. \u00a7 3729 et seq.",
+    "source": "31 U.S.C. § 3729 et seq.",
     "featured": false
   },
   {
@@ -2034,7 +2184,7 @@
     "term": "Federal Question Jurisdiction",
     "pronunciation": null,
     "definition": "Federal court jurisdiction based on claims arising under the Constitution, laws, or treaties of the United States.",
-    "federalContext": "28 U.S.C. \u00a7 1331 grants federal question jurisdiction over federal law claims; no minimum amount in controversy.",
+    "federalContext": "28 U.S.C. § 1331 grants federal question jurisdiction over federal law claims; no minimum amount in controversy.",
     "dataContext": "Federal question cases comprise majority of federal civil docket.",
     "relatedTerms": [
       "jurisdiction",
@@ -2053,7 +2203,7 @@
     "term": "Federal Rules of Civil Procedure",
     "pronunciation": null,
     "definition": "The procedural rules governing civil litigation in the United States federal courts, covering pleading, discovery, motion practice, trial, and appeals.",
-    "federalContext": "Adopted under 28 U.S.C. \u00a7 2072; apply in all federal district courts; supersede state rules in federal question cases.",
+    "federalContext": "Adopted under 28 U.S.C. § 2072; apply in all federal district courts; supersede state rules in federal question cases.",
     "dataContext": "Core procedural framework for federal civil litigation.",
     "relatedTerms": [
       "motion",
@@ -2063,7 +2213,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "28 U.S.C. \u00a7 2072",
+    "source": "28 U.S.C. § 2072",
     "featured": false
   },
   {
@@ -2071,7 +2221,7 @@
     "term": "Fee Shifting",
     "pronunciation": null,
     "definition": "A statutory provision making loser pay winner's attorney fees; shifts litigation costs between parties.",
-    "federalContext": "Available under specific statutes like Civil Rights Act \u00a7 1988, Equal Access to Justice Act, and others.",
+    "federalContext": "Available under specific statutes like Civil Rights Act § 1988, Equal Access to Justice Act, and others.",
     "dataContext": "Fee-shifting statutes increase litigation stakes.",
     "relatedTerms": [
       "attorney-fees",
@@ -2090,7 +2240,7 @@
     "term": "Final Agency Action",
     "pronunciation": null,
     "definition": "A decision by a federal agency that is binding, has operative effect, and is not subject to further review within the agency.",
-    "federalContext": "Governed by 5 U.S.C. \u00a7 704; prerequisite for federal judicial review under APA; establishes reviewability.",
+    "federalContext": "Governed by 5 U.S.C. § 704; prerequisite for federal judicial review under APA; establishes reviewability.",
     "dataContext": "Administrative law litigation; jurisdictional requirement.",
     "relatedTerms": [
       "apa",
@@ -2100,7 +2250,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "5 U.S.C. \u00a7 704",
+    "source": "5 U.S.C. § 704",
     "featured": false
   },
   {
@@ -2108,7 +2258,7 @@
     "term": "Final Judgment",
     "pronunciation": null,
     "definition": "A judgment resolving all claims on the merits; creates finality and preclusive effect under res judicata.",
-    "federalContext": "Appealable under 28 U.S.C. \u00a7 1291; creates res judicata and collateral estoppel effects.",
+    "federalContext": "Appealable under 28 U.S.C. § 1291; creates res judicata and collateral estoppel effects.",
     "dataContext": "Final judgments establish case outcomes.",
     "relatedTerms": [
       "judgment",
@@ -2145,7 +2295,7 @@
     "term": "Family and Medical Leave Act (FMLA)",
     "pronunciation": null,
     "definition": "Federal statute requiring covered employers to provide eligible employees up to 12 weeks of unpaid leave per year for qualifying family or medical reasons.",
-    "federalContext": "29 U.S.C. \u00a7 2601 et seq.; enforced by Department of Labor; private right of action; damages for lost wages and benefits.",
+    "federalContext": "29 U.S.C. § 2601 et seq.; enforced by Department of Labor; private right of action; damages for lost wages and benefits.",
     "dataContext": "Employment benefits case type; federal question jurisdiction.",
     "relatedTerms": [
       "employment",
@@ -2155,7 +2305,7 @@
     "relatedNosCodes": [
       "410"
     ],
-    "source": "29 U.S.C. \u00a7 2601 et seq.",
+    "source": "29 U.S.C. § 2601 et seq.",
     "featured": false
   },
   {
@@ -2163,7 +2313,7 @@
     "term": "FOIA",
     "pronunciation": null,
     "definition": "Freedom of Information Act; federal statute providing public access to federal agency records subject to exemptions.",
-    "federalContext": "5 U.S.C. \u00a7 552 governs FOIA; agencies must release requested documents unless exempt; judicial review available.",
+    "federalContext": "5 U.S.C. § 552 governs FOIA; agencies must release requested documents unless exempt; judicial review available.",
     "dataContext": "FOIA litigation appears in administrative docket.",
     "relatedNosCodes": [
       "890",
@@ -2220,7 +2370,7 @@
     "term": "Frustration of Purpose",
     "pronunciation": null,
     "definition": "A defense to breach of contract when a supervening event completely destroys the basic reason for the contract, making performance pointless, though performance remains physically possible.",
-    "federalContext": "Recognized in federal courts under applicable state law; Restatement (Second) of Contracts \u00a7 265; requires very high threshold.",
+    "federalContext": "Recognized in federal courts under applicable state law; Restatement (Second) of Contracts § 265; requires very high threshold.",
     "dataContext": "Narrower doctrine than impossibility; applies when purpose, not performance, is defeated.",
     "relatedTerms": [
       "impossibility",
@@ -2230,7 +2380,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "Restatement (Second) of Contracts \u00a7 265",
+    "source": "Restatement (Second) of Contracts § 265",
     "featured": false
   },
   {
@@ -2275,7 +2425,7 @@
     "term": "Habeas Corpus",
     "pronunciation": "HAY-bee-us KOR-pus",
     "definition": "A legal action through which a person can seek relief from unlawful detention or imprisonment.",
-    "federalContext": "28 U.S.C. \u00a7 2254 governs habeas corpus petitions by state prisoners; \u00a7 2255 applies to federal prisoners; challenges legality of imprisonment.",
+    "federalContext": "28 U.S.C. § 2254 governs habeas corpus petitions by state prisoners; § 2255 applies to federal prisoners; challenges legality of imprisonment.",
     "dataContext": "Habeas corpus cases appear under NOS codes 530, 535, and 510.",
     "relatedTerms": [
       "writ",
@@ -2425,7 +2575,7 @@
     "term": "Impossibility",
     "pronunciation": null,
     "definition": "A defense to breach of contract based on subsequent events that make contract performance objectively impossible, excusing performance and discharging the contract.",
-    "federalContext": "Recognized in federal courts under applicable state law; Restatement (Second) of Contracts \u00a7 262.",
+    "federalContext": "Recognized in federal courts under applicable state law; Restatement (Second) of Contracts § 262.",
     "dataContext": "Force majeure related doctrine; key in pandemic and disaster litigation.",
     "relatedTerms": [
       "force-majeure",
@@ -2435,7 +2585,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "Restatement (Second) of Contracts \u00a7 262",
+    "source": "Restatement (Second) of Contracts § 262",
     "featured": false
   },
   {
@@ -2570,7 +2720,7 @@
     "term": "Inter Partes Review (IPR)",
     "pronunciation": null,
     "definition": "A post-grant administrative proceeding before the USPTO Patent Trial and Appeal Board (PTAB) in which a third party challenges patent validity based on prior art.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 311-319 and 37 C.F.R. \u00a7 42; established by America Invents Act; alternative to district court litigation.",
+    "federalContext": "Governed by 35 U.S.C. § 311-319 and 37 C.F.R. § 42; established by America Invents Act; alternative to district court litigation.",
     "dataContext": "Patent validity challenges; key proceeding in patent disputes.",
     "relatedTerms": [
       "patent-infringement",
@@ -2580,15 +2730,15 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 311-319",
+    "source": "35 U.S.C. § 311-319",
     "featured": false
   },
   {
     "slug": "interlocutory-appeal",
     "term": "Interlocutory Appeal",
     "pronunciation": "in-tur-LOK-yuh-tor-ee",
-    "definition": "An appeal of a non-final order before final judgment; permitted in limited circumstances under 28 U.S.C. \u00a7 1292.",
-    "federalContext": "Available for orders granting/denying injunctions (\u00a7 1292(a)(1)), certain certified orders (\u00a7 1292(b)), and bankruptcy appeals.",
+    "definition": "An appeal of a non-final order before final judgment; permitted in limited circumstances under 28 U.S.C. § 1292.",
+    "federalContext": "Available for orders granting/denying injunctions (§ 1292(a)(1)), certain certified orders (§ 1292(b)), and bankruptcy appeals.",
     "dataContext": "Interlocutory appeals are rare and affect case timeline.",
     "relatedTerms": [
       "appeal",
@@ -2607,7 +2757,7 @@
     "term": "Interlocutory Appeal",
     "pronunciation": "in-tur-LOK-yuh-tor-ee uh-PEEL",
     "definition": "An appeal of an interlocutory order (an order that does not finally dispose of the case) before entry of a final judgment, available only in limited circumstances.",
-    "federalContext": "Governed by 28 U.S.C. \u00a7 1292; includes orders granting/denying preliminary injunctions and certified class actions.",
+    "federalContext": "Governed by 28 U.S.C. § 1292; includes orders granting/denying preliminary injunctions and certified class actions.",
     "dataContext": "Tracked separately from final appeals; limits appellate jurisdiction.",
     "relatedTerms": [
       "appeal",
@@ -2618,7 +2768,7 @@
       "110",
       "120"
     ],
-    "source": "28 U.S.C. \u00a7 1292",
+    "source": "28 U.S.C. § 1292",
     "featured": false
   },
   {
@@ -2626,7 +2776,7 @@
     "term": "Interpleader",
     "pronunciation": "in-tur-PLEED-er",
     "definition": "A civil action allowing a person holding property claimed by multiple parties to deposit the property with a court and have the claimants litigate their rights.",
-    "federalContext": "Governed by Fed. R. Civ. P. 22 and 28 U.S.C. \u00a7 1335; federal interpleader statute provides independent federal question jurisdiction.",
+    "federalContext": "Governed by Fed. R. Civ. P. 22 and 28 U.S.C. § 1335; federal interpleader statute provides independent federal question jurisdiction.",
     "dataContext": "Special case type in federal practice; common in insurance disputes.",
     "relatedTerms": [
       "joinder",
@@ -2829,7 +2979,7 @@
     "term": "Jurisdiction",
     "pronunciation": "joo-RIS-dik-shun",
     "definition": "A court's power to hear and decide a case and to enforce its judgment.",
-    "federalContext": "Federal courts have subject matter jurisdiction over federal questions (28 U.S.C. \u00a7 1331) and diversity cases (28 U.S.C. \u00a7 1332).",
+    "federalContext": "Federal courts have subject matter jurisdiction over federal questions (28 U.S.C. § 1331) and diversity cases (28 U.S.C. § 1332).",
     "dataContext": "Jurisdiction type (federal question vs. diversity) affects applicable law and appeal rates.",
     "relatedTerms": [
       "subject-matter-jurisdiction",
@@ -3017,7 +3167,7 @@
     "term": "Magistrate Judge",
     "pronunciation": null,
     "definition": "A federal judicial officer with limited jurisdiction over minor criminal offenses and civil matters up to specified monetary limits.",
-    "federalContext": "28 U.S.C. \u00a7 631 establishes magistrate judges; appointed by district courts; preside over misdemeanors and civil claims under $100,000.",
+    "federalContext": "28 U.S.C. § 631 establishes magistrate judges; appointed by district courts; preside over misdemeanors and civil claims under $100,000.",
     "dataContext": "Magistrate judge cases represent significant federal docket volume.",
     "relatedTerms": [
       "federal-judge",
@@ -3054,7 +3204,7 @@
     "term": "Mandamus",
     "pronunciation": "man-DAY-mus",
     "definition": "A writ compelling a court or government official to perform a legal duty they are refusing or neglecting to perform.",
-    "federalContext": "Governed by 28 U.S.C. \u00a7 1651; available in federal court to compel action by lower court judges or federal officials.",
+    "federalContext": "Governed by 28 U.S.C. § 1651; available in federal court to compel action by lower court judges or federal officials.",
     "dataContext": "Mandamus petitions appear under specific NOS codes tracking extraordinary relief.",
     "relatedTerms": [
       "writ",
@@ -3072,7 +3222,7 @@
     "term": "Mandamus",
     "pronunciation": "man-DAY-mus",
     "definition": "An extraordinary writ compelling a government official or court to perform a mandatory duty or correcting an abuse of discretion.",
-    "federalContext": "28 U.S.C. \u00a7 1361 provides federal question jurisdiction; Fed. R. App. P. 21 governs petitions; available only when no other remedy exists.",
+    "federalContext": "28 U.S.C. § 1361 provides federal question jurisdiction; Fed. R. App. P. 21 governs petitions; available only when no other remedy exists.",
     "dataContext": "Interlocutory remedy; separate appeal mechanism.",
     "relatedTerms": [
       "writ",
@@ -3082,7 +3232,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "28 U.S.C. \u00a7 1361",
+    "source": "28 U.S.C. § 1361",
     "featured": false
   },
   {
@@ -3143,8 +3293,8 @@
     "slug": "means-plus-function",
     "term": "Means-Plus-Function Claims",
     "pronunciation": null,
-    "definition": "Patent claims using functional language (e.g., 'means for') interpreted under 35 U.S.C. \u00a7 112(f) to cover only the structure disclosed in the specification.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 112(f) and Markman analysis; narrow interpretation; requires adequate structural disclosure.",
+    "definition": "Patent claims using functional language (e.g., 'means for') interpreted under 35 U.S.C. § 112(f) to cover only the structure disclosed in the specification.",
+    "federalContext": "Governed by 35 U.S.C. § 112(f) and Markman analysis; narrow interpretation; requires adequate structural disclosure.",
     "dataContext": "Claim interpretation issue in patent litigation.",
     "relatedTerms": [
       "claim-construction",
@@ -3154,7 +3304,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 112(f)",
+    "source": "35 U.S.C. § 112(f)",
     "featured": false
   },
   {
@@ -3349,7 +3499,7 @@
     "term": "Multidistrict Litigation (MDL)",
     "pronunciation": null,
     "definition": "A federal procedure consolidating related cases pending in multiple districts before a single judge for coordination and pre-trial.",
-    "federalContext": "28 U.S.C. \u00a7 1407 governs MDLs; established by Panel on Multidistrict Litigation when centralization will promote convenience and efficiency.",
+    "federalContext": "28 U.S.C. § 1407 governs MDLs; established by Panel on Multidistrict Litigation when centralization will promote convenience and efficiency.",
     "dataContext": "MDL designation dramatically increases case docket size and management complexity.",
     "relatedTerms": [
       "consolidation",
@@ -3462,7 +3612,7 @@
     "term": "Notice and Comment (Rulemaking)",
     "pronunciation": null,
     "definition": "A procedural requirement under the Administrative Procedure Act requiring agencies to publish proposed rules and allow public comment before finalizing regulations.",
-    "federalContext": "Governed by 5 U.S.C. \u00a7 553; required for most federal agency rulemaking; failure to comply can invalidate rules.",
+    "federalContext": "Governed by 5 U.S.C. § 553; required for most federal agency rulemaking; failure to comply can invalidate rules.",
     "dataContext": "Administrative law litigation; regulatory challenge basis.",
     "relatedTerms": [
       "rulemaking",
@@ -3472,7 +3622,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "5 U.S.C. \u00a7 553",
+    "source": "5 U.S.C. § 553",
     "featured": false
   },
   {
@@ -3667,7 +3817,7 @@
     "term": "Patent Infringement",
     "pronunciation": null,
     "definition": "Unauthorized making, using, selling, or offering for sale of patented invention during patent term.",
-    "federalContext": "35 U.S.C. \u00a7 271 defines infringement; federal question jurisdiction; damages include lost profits and reasonable royalty.",
+    "federalContext": "35 U.S.C. § 271 defines infringement; federal question jurisdiction; damages include lost profits and reasonable royalty.",
     "dataContext": "Patent cases involve specialized litigation and higher damages.",
     "relatedTerms": [
       "patent",
@@ -3832,7 +3982,7 @@
     "term": "Post-Conviction Relief",
     "pronunciation": null,
     "definition": "A legal proceeding challenging a conviction on grounds such as ineffective assistance of counsel or constitutional violations.",
-    "federalContext": "28 U.S.C. \u00a7 2255 provides federal post-conviction remedy for federal prisoners; \u00a7 2254 for state prisoners.",
+    "federalContext": "28 U.S.C. § 2255 provides federal post-conviction remedy for federal prisoners; § 2254 for state prisoners.",
     "dataContext": "Post-conviction cases appear in prisoner litigation docket.",
     "relatedTerms": [
       "habeas-corpus",
@@ -3851,7 +4001,7 @@
     "term": "Post-Grant Review (PGR)",
     "pronunciation": null,
     "definition": "An administrative proceeding before the USPTO PTAB in which any party can challenge patent validity on any statutory ground within nine months of grant.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 321-329; narrower time window than IPR; grounds include subject matter eligibility and written description.",
+    "federalContext": "Governed by 35 U.S.C. § 321-329; narrower time window than IPR; grounds include subject matter eligibility and written description.",
     "dataContext": "Patent validity challenges; early validity attack mechanism.",
     "relatedTerms": [
       "patent-infringement",
@@ -3861,7 +4011,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 321-329",
+    "source": "35 U.S.C. § 321-329",
     "featured": false
   },
   {
@@ -4036,7 +4186,7 @@
     "term": "Prior Art",
     "pronunciation": null,
     "definition": "Existing inventions, publications, or disclosures demonstrating that patent claims lack novelty or are obvious.",
-    "federalContext": "35 U.S.C. \u00a7 102 defines prior art; patent examiner considers prior art in patentability analysis.",
+    "federalContext": "35 U.S.C. § 102 defines prior art; patent examiner considers prior art in patentability analysis.",
     "dataContext": "Prior art references are central to patent prosecution and litigation.",
     "relatedTerms": [
       "novelty",
@@ -4181,7 +4331,7 @@
     "term": "Promissory Estoppel",
     "pronunciation": null,
     "definition": "An equitable doctrine preventing a party from denying the existence of a contract when another party reasonably relies on a promise and would suffer injustice if the promise is breached.",
-    "federalContext": "Applied by federal courts under applicable state law; Restatement (Second) of Contracts \u00a7 90 widely adopted.",
+    "federalContext": "Applied by federal courts under applicable state law; Restatement (Second) of Contracts § 90 widely adopted.",
     "dataContext": "Alternative theory of contract formation when consideration is lacking.",
     "relatedTerms": [
       "contract",
@@ -4191,7 +4341,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "Restatement (Second) of Contracts \u00a7 90",
+    "source": "Restatement (Second) of Contracts § 90",
     "featured": false
   },
   {
@@ -4255,7 +4405,7 @@
     "term": "Provisional Application",
     "pronunciation": null,
     "definition": "A filing with the USPTO establishing an early filing date for a patent application while allowing time to develop and test the invention before filing a regular application.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 111(b); one-year priority period; not examined; becomes abandoned if non-provisional not filed within one year.",
+    "federalContext": "Governed by 35 U.S.C. § 111(b); one-year priority period; not examined; becomes abandoned if non-provisional not filed within one year.",
     "dataContext": "Patent prosecution milestone; filing date important for prior art.",
     "relatedTerms": [
       "patent",
@@ -4265,7 +4415,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 111(b)",
+    "source": "35 U.S.C. § 111(b)",
     "featured": false
   },
   {
@@ -4330,7 +4480,7 @@
     "term": "Qualified Settlement Fund (QSF)",
     "pronunciation": null,
     "definition": "A trust or escrow account holding settlement proceeds and tax-deferred earnings to fund structured settlements, with favorable tax treatment.",
-    "federalContext": "Governed by IRC \u00a7 468B; allows tax deferral of settlement earnings; structured settlement vehicle; professional administration required.",
+    "federalContext": "Governed by IRC § 468B; allows tax deferral of settlement earnings; structured settlement vehicle; professional administration required.",
     "dataContext": "Settlement funding mechanism; tax-advantaged structure.",
     "relatedTerms": [
       "structured-settlement",
@@ -4340,7 +4490,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "IRC \u00a7 468B",
+    "source": "IRC § 468B",
     "featured": false
   },
   {
@@ -4366,7 +4516,7 @@
     "term": "Qui Tam",
     "pronunciation": "kee TAHM",
     "definition": "A legal action brought by a private citizen (relator) on behalf of the government under the False Claims Act, with relator entitled to portion of recovery.",
-    "federalContext": "31 U.S.C. \u00a7 3730; private parties sue on behalf of United States; relator receives percentage of recovery; sealed complaints.",
+    "federalContext": "31 U.S.C. § 3730; private parties sue on behalf of United States; relator receives percentage of recovery; sealed complaints.",
     "dataContext": "Whistleblower fraud case type; federal question jurisdiction.",
     "relatedTerms": [
       "false-claims-act",
@@ -4376,7 +4526,7 @@
     "relatedNosCodes": [
       "410"
     ],
-    "source": "31 U.S.C. \u00a7 3730",
+    "source": "31 U.S.C. § 3730",
     "featured": false
   },
   {
@@ -4384,7 +4534,7 @@
     "term": "Quo Warranto",
     "pronunciation": "kwo WAR-un-toe",
     "definition": "A legal action challenging the authority or qualification of a person or entity holding a public office or position.",
-    "federalContext": "Governed by common law principles; 28 U.S.C. \u00a7 1361; available in federal courts; addresses jurisdiction and qualifications.",
+    "federalContext": "Governed by common law principles; 28 U.S.C. § 1361; available in federal courts; addresses jurisdiction and qualifications.",
     "dataContext": "Administrative law remedy; government authority issues.",
     "relatedTerms": [
       "mandamus",
@@ -4402,7 +4552,7 @@
     "term": "Reasonable Accommodation",
     "pronunciation": null,
     "definition": "An employer's obligation to modify job duties or workplace to enable qualified disabled employee to perform essential functions.",
-    "federalContext": "ADA \u00a7 12111(9) requires reasonable accommodation unless causing undue hardship; examples include accessible facilities, assistive technology, modified schedules.",
+    "federalContext": "ADA § 12111(9) requires reasonable accommodation unless causing undue hardship; examples include accessible facilities, assistive technology, modified schedules.",
     "dataContext": "Reasonable accommodation disputes are common in disability discrimination cases.",
     "relatedTerms": [
       "undue-hardship",
@@ -4475,7 +4625,7 @@
     "term": "Reissue Patent",
     "pronunciation": null,
     "definition": "A procedure allowing a patentee to correct errors or defects in a patent by surrendering it and obtaining a new patent with corrected claims.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 251; must be filed during patent term; cannot expand scope materially or beyond two years of original grant.",
+    "federalContext": "Governed by 35 U.S.C. § 251; must be filed during patent term; cannot expand scope materially or beyond two years of original grant.",
     "dataContext": "Patent correction mechanism; limited scope expansion.",
     "relatedTerms": [
       "patent",
@@ -4485,7 +4635,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 251",
+    "source": "35 U.S.C. § 251",
     "featured": false
   },
   {
@@ -4531,7 +4681,7 @@
     "term": "Remand to State Court",
     "pronunciation": null,
     "definition": "An order returning a removed case to the state court from which it was removed.",
-    "federalContext": "28 U.S.C. \u00a7 1447 governs remand; remand is proper if federal court lacks subject matter jurisdiction.",
+    "federalContext": "28 U.S.C. § 1447 governs remand; remand is proper if federal court lacks subject matter jurisdiction.",
     "dataContext": "Remand rates indicate technical removal issues and jurisdictional challenges.",
     "relatedTerms": [
       "removal",
@@ -4550,7 +4700,7 @@
     "term": "Removal",
     "pronunciation": null,
     "definition": "The transfer of a case from state court to federal court, typically based on federal question or diversity jurisdiction.",
-    "federalContext": "28 U.S.C. \u00a7 1441 governs removal; must be filed within 30 days of service and cannot be removed after one year unless lack of federal jurisdiction was fraudulent.",
+    "federalContext": "28 U.S.C. § 1441 governs removal; must be filed within 30 days of service and cannot be removed after one year unless lack of federal jurisdiction was fraudulent.",
     "dataContext": "Removal rates indicate prevalence of diversity and federal question cases.",
     "relatedNosCodes": [
       "110",
@@ -4682,7 +4832,7 @@
     "term": "Right-to-Sue Letter",
     "pronunciation": null,
     "definition": "A notice from EEOC certifying that administrative remedies are exhausted and permitting filing of federal court civil rights lawsuit.",
-    "federalContext": "Required to file Title VII discrimination suit under 42 U.S.C. \u00a7 2000e-5(f); EEOC issues after investigation or 180 days of charge filing.",
+    "federalContext": "Required to file Title VII discrimination suit under 42 U.S.C. § 2000e-5(f); EEOC issues after investigation or 180 days of charge filing.",
     "dataContext": "Right-to-sue letters are mandatory predicate for employment discrimination litigation.",
     "relatedTerms": [
       "EEOC",
@@ -4738,7 +4888,7 @@
     "term": "Rulemaking",
     "pronunciation": null,
     "definition": "The federal agency process for promulgating regulations; includes notice-and-comment rulemaking under APA.",
-    "federalContext": "5 U.S.C. \u00a7 553 requires notice, opportunity for comment, and publication of final rule; subject to arbitrary-and-capricious review.",
+    "federalContext": "5 U.S.C. § 553 requires notice, opportunity for comment, and publication of final rule; subject to arbitrary-and-capricious review.",
     "dataContext": "Rulemaking petitions and disputes appear in administrative docket.",
     "relatedNosCodes": [
       "890",
@@ -4813,7 +4963,7 @@
     "term": "Section 1981 (Civil Rights Act of 1866)",
     "pronunciation": null,
     "definition": "Federal statute providing rights to make and enforce contracts regardless of race, creating basis for employment discrimination claims in federal court.",
-    "federalContext": "42 U.S.C. \u00a7 1981; applicable to all employment contexts; no employer size threshold; damages include compensatory and punitive damages.",
+    "federalContext": "42 U.S.C. § 1981; applicable to all employment contexts; no employer size threshold; damages include compensatory and punitive damages.",
     "dataContext": "Employment discrimination case type; federal question jurisdiction.",
     "relatedTerms": [
       "discrimination",
@@ -4823,7 +4973,7 @@
     "relatedNosCodes": [
       "410"
     ],
-    "source": "42 U.S.C. \u00a7 1981",
+    "source": "42 U.S.C. § 1981",
     "featured": false
   },
   {
@@ -4831,7 +4981,7 @@
     "term": "Section 1983",
     "pronunciation": null,
     "definition": "A federal civil rights statute providing remedy for deprivation of constitutional or federal statutory rights by persons acting under color of state law.",
-    "federalContext": "42 U.S.C. \u00a7 1983 permits suit against government officials; does not provide private right of action against private parties.",
+    "federalContext": "42 U.S.C. § 1983 permits suit against government officials; does not provide private right of action against private parties.",
     "dataContext": "Section 1983 cases are major federal docket component.",
     "relatedTerms": [
       "civil-rights",
@@ -4850,7 +5000,7 @@
     "term": "Section 468B (IRC - Qualified Settlement Funds)",
     "pronunciation": null,
     "definition": "Internal Revenue Code provision allowing settlement proceeds to be held in a qualified settlement fund with tax deferral for earnings.",
-    "federalContext": "Governed by IRC \u00a7 468B and related regulations; applies to structured settlements; enables tax-efficient settlement structuring.",
+    "federalContext": "Governed by IRC § 468B and related regulations; applies to structured settlements; enables tax-efficient settlement structuring.",
     "dataContext": "Tax law provision for settlement funding.",
     "relatedTerms": [
       "qualified-settlement-fund",
@@ -4860,7 +5010,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "IRC \u00a7 468B",
+    "source": "IRC § 468B",
     "featured": false
   },
   {
@@ -5181,7 +5331,7 @@
     "term": "Statute of Limitations",
     "pronunciation": null,
     "definition": "A law establishing the time period within which a claim must be brought, after which the right to sue is forfeited.",
-    "federalContext": "Federal courts apply state statute of limitations in diversity cases under 28 U.S.C. \u00a7 1652 (Erie doctrine); federal statutes of limitations apply in federal question cases.",
+    "federalContext": "Federal courts apply state statute of limitations in diversity cases under 28 U.S.C. § 1652 (Erie doctrine); federal statutes of limitations apply in federal question cases.",
     "dataContext": "Statute of limitations expiration results in dismissal of time-barred claims.",
     "relatedTerms": [
       "tolling",
@@ -5293,7 +5443,7 @@
     "term": "Structured Settlement",
     "pronunciation": null,
     "definition": "A settlement agreement in which damages are paid to the plaintiff through periodic installments rather than a lump sum.",
-    "federalContext": "Often funded through annuities; tax treatment favorable under IRC \u00a7 104; popular in personal injury cases.",
+    "federalContext": "Often funded through annuities; tax treatment favorable under IRC § 104; popular in personal injury cases.",
     "dataContext": "Settlement payment structure; damages distribution mechanism.",
     "relatedTerms": [
       "settlement",
@@ -5303,7 +5453,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "IRC \u00a7 104",
+    "source": "IRC § 104",
     "featured": false
   },
   {
@@ -5385,7 +5535,7 @@
     "term": "Substantial Evidence",
     "pronunciation": null,
     "definition": "A standard of judicial review requiring that agency action be supported by such relevant evidence as a reasonable person would accept as adequate to support a conclusion.",
-    "federalContext": "Governed by 5 U.S.C. \u00a7 706(2)(E); applies to formal agency proceedings; higher bar than arbitrary and capricious.",
+    "federalContext": "Governed by 5 U.S.C. § 706(2)(E); applies to formal agency proceedings; higher bar than arbitrary and capricious.",
     "dataContext": "Administrative law standard of review.",
     "relatedTerms": [
       "arbitrary-and-capricious",
@@ -5395,7 +5545,7 @@
     "relatedNosCodes": [
       "110"
     ],
-    "source": "5 U.S.C. \u00a7 706(2)(E)",
+    "source": "5 U.S.C. § 706(2)(E)",
     "featured": false
   },
   {
@@ -5477,7 +5627,7 @@
     "term": "Survival Action",
     "pronunciation": null,
     "definition": "A claim that allows a decedent's estate to recover damages for injuries or losses suffered by the decedent before death, including pain and suffering and lost wages.",
-    "federalContext": "Governed by state survival statutes; federal courts apply state law; matters of federal interest governed by 28 U.S.C. \u00a7 1404(a) and related provisions.",
+    "federalContext": "Governed by state survival statutes; federal courts apply state law; matters of federal interest governed by 28 U.S.C. § 1404(a) and related provisions.",
     "dataContext": "Tracked separately from wrongful death claims in litigation databases.",
     "relatedTerms": [
       "wrongful-death",
@@ -5568,7 +5718,7 @@
     "term": "Title VII of the Civil Rights Act of 1964",
     "pronunciation": null,
     "definition": "Federal statute prohibiting employment discrimination based on race, color, religion, sex, or national origin; creates right to sue in federal court.",
-    "federalContext": "42 U.S.C. \u00a7 2000e et seq.; enforced by EEOC; private right of action; damages available.",
+    "federalContext": "42 U.S.C. § 2000e et seq.; enforced by EEOC; private right of action; damages available.",
     "dataContext": "Employment discrimination case type; federal question jurisdiction.",
     "relatedTerms": [
       "discrimination",
@@ -5578,7 +5728,7 @@
     "relatedNosCodes": [
       "410"
     ],
-    "source": "42 U.S.C. \u00a7 2000e et seq.",
+    "source": "42 U.S.C. § 2000e et seq.",
     "featured": false
   },
   {
@@ -5605,7 +5755,7 @@
     "term": "Trade Dress",
     "pronunciation": null,
     "definition": "The distinctive appearance, design, or packaging of a product or service that identifies and distinguishes it from competitors, protectable as trademark.",
-    "federalContext": "Governed by 15 U.S.C. \u00a7 1127; requires distinctiveness and non-functionality; two types: inherent and acquired secondary meaning.",
+    "federalContext": "Governed by 15 U.S.C. § 1127; requires distinctiveness and non-functionality; two types: inherent and acquired secondary meaning.",
     "dataContext": "Intellectual property protection; tracked in trademark litigation.",
     "relatedTerms": [
       "trademark",
@@ -5615,7 +5765,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "15 U.S.C. \u00a7 1127",
+    "source": "15 U.S.C. § 1127",
     "featured": false
   },
   {
@@ -5623,7 +5773,7 @@
     "term": "Trade Secret",
     "pronunciation": null,
     "definition": "Valuable business information not generally known giving competitive advantage; protected from misappropriation under UTSA.",
-    "federalContext": "18 U.S.C. \u00a7 1836 provides federal remedy for trade secret misappropriation; UTSA adopted by most states.",
+    "federalContext": "18 U.S.C. § 1836 provides federal remedy for trade secret misappropriation; UTSA adopted by most states.",
     "dataContext": "Trade secret cases involve confidential business information.",
     "relatedTerms": [
       "misappropriation",
@@ -5641,7 +5791,7 @@
     "term": "Trademark",
     "pronunciation": null,
     "definition": "A mark, word, phrase, or symbol identifying goods or services and distinguishing them from competitors.",
-    "federalContext": "15 U.S.C. \u00a7 1127 defines trademark; Lanham Act provides federal registration and infringement protections; likelihood of confusion standard.",
+    "federalContext": "15 U.S.C. § 1127 defines trademark; Lanham Act provides federal registration and infringement protections; likelihood of confusion standard.",
     "dataContext": "Trademark cases involve brand protection and consumer confusion.",
     "relatedTerms": [
       "infringement",
@@ -5659,7 +5809,7 @@
     "term": "Treble Damages",
     "pronunciation": null,
     "definition": "Damages awarded at three times the amount of actual damages; statutory remedy in specific cases like antitrust and patent.",
-    "federalContext": "15 U.S.C. \u00a7 15 provides treble damages in antitrust cases; available in patent, copyright, and other federal statutes.",
+    "federalContext": "15 U.S.C. § 15 provides treble damages in antitrust cases; available in patent, copyright, and other federal statutes.",
     "dataContext": "Treble damages awards indicate willful violation findings.",
     "relatedTerms": [
       "damages",
@@ -5789,7 +5939,7 @@
     "term": "Utility Patent",
     "pronunciation": null,
     "definition": "A patent protecting an invention's function or utility, covering methods, compositions, and machines that satisfy novelty, non-obviousness, and utility requirements.",
-    "federalContext": "Governed by 35 U.S.C. \u00a7 101-103; primary patent type; 20-year term from filing; infringement litigated in federal court.",
+    "federalContext": "Governed by 35 U.S.C. § 101-103; primary patent type; 20-year term from filing; infringement litigated in federal court.",
     "dataContext": "Intellectual property protection; tracked in patent litigation.",
     "relatedTerms": [
       "patent-infringement",
@@ -5799,7 +5949,7 @@
     "relatedNosCodes": [
       "830"
     ],
-    "source": "35 U.S.C. \u00a7 101-103",
+    "source": "35 U.S.C. § 101-103",
     "featured": false
   },
   {
@@ -5825,7 +5975,7 @@
     "term": "Venue",
     "pronunciation": "VEN-yoo",
     "definition": "The geographic location or district in which a court has authority to hear and determine a case.",
-    "federalContext": "28 U.S.C. \u00a7 1391 establishes federal venue; generally proper in district where defendant resides, substantial events occurred, or property located.",
+    "federalContext": "28 U.S.C. § 1391 establishes federal venue; generally proper in district where defendant resides, substantial events occurred, or property located.",
     "dataContext": "Venue challenges affect case progression timing and location.",
     "relatedTerms": [
       "jurisdiction",
@@ -5919,7 +6069,7 @@
     "term": "Worker Adjustment and Retraining Notification (WARN) Act",
     "pronunciation": null,
     "definition": "Federal statute requiring employers with 100+ employees to provide 60 days' notice of plant closings or mass layoffs.",
-    "federalContext": "29 U.S.C. \u00a7 2101 et seq.; enforced by Department of Labor; private right of action; damages for lost wages and benefits.",
+    "federalContext": "29 U.S.C. § 2101 et seq.; enforced by Department of Labor; private right of action; damages for lost wages and benefits.",
     "dataContext": "Mass layoff dispute; federal question jurisdiction.",
     "relatedTerms": [
       "employment",
@@ -5929,7 +6079,7 @@
     "relatedNosCodes": [
       "410"
     ],
-    "source": "29 U.S.C. \u00a7 2101 et seq.",
+    "source": "29 U.S.C. § 2101 et seq.",
     "featured": false
   },
   {
