@@ -1,9 +1,40 @@
+import { Metadata } from 'next';
 import { SITS } from '@/lib/data';
 import { REAL_DATA } from '@/lib/realdata';
 import { formatSettlementAmount } from '@/lib/format';
 import { getWinRateColor } from '@/lib/color-scale';
+import { SITE_URL } from '@/lib/site-config';
 
 export const revalidate = 86400; // ISR: 24 hours
+
+export async function generateMetadata({ params }: WidgetPageProps): Promise<Metadata> {
+  const { nosCode } = params;
+
+  let caseTypeName = '';
+  SITS.forEach((category) => {
+    category.opts.forEach((option) => {
+      if (option.nos === nosCode && !caseTypeName) {
+        caseTypeName = option.label;
+      }
+    });
+  });
+
+  const title = `${caseTypeName} Widget | MyCaseValue`;
+  const description = `Embed ${caseTypeName} case statistics and settlement data on your website with MyCaseValue's embeddable widget.`;
+  const url = `${SITE_URL}/widget/${nosCode}/${params.district}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const params: Array<{ nosCode: string; district: string }> = [];
@@ -18,6 +49,10 @@ export async function generateStaticParams() {
   return params;
 }
 
+interface WidgetPageProps {
+  params: { nosCode: string; district: string };
+}
+
 function getNOSLabel(nosCode: string): string {
   let label = '';
   SITS.forEach((category) => {
@@ -28,10 +63,6 @@ function getNOSLabel(nosCode: string): string {
     });
   });
   return label || `Case Type ${nosCode}`;
-}
-
-interface WidgetPageProps {
-  params: { nosCode: string; district: string };
 }
 
 export default function WidgetPage({ params }: WidgetPageProps) {

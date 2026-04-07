@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   title: 'Widget Generator | MyCaseValue',
   description: 'Build and customize embeddable case settlement widgets for your website.',
   alternates: { canonical: `${SITE_URL}/solutions/api/widget` },
+  openGraph: {
+    title: 'Widget Generator',
+    description: 'Create embeddable widgets to display case settlement data on your website.',
+    type: 'website',
+    url: `${SITE_URL}/solutions/api/widget`,
+  },
 };
 
 export default function WidgetGeneratorPage() {

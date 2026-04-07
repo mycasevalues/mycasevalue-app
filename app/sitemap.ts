@@ -54,6 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/districts`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/judges`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/judges/compare`, lastModified: now, changeFrequency: 'weekly', priority: 0.75 },
     { url: `${baseUrl}/nos`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/nos-explorer`, lastModified: now, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${baseUrl}/glossary`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
@@ -64,6 +65,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/calculator`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/compare`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/developers`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/solutions/enterprise`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/solutions/api/widget`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/disclaimer`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
@@ -146,6 +150,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
+  // ── Widget pages (for top 10 NOS codes with major districts) ──
+  const widgetUrls: MetadataRoute.Sitemap = [];
+  const topNosCodesForWidgets = Array.from(new Set(['442', '110', '440', '365', '190', '360', '220', '350', '710', '860']));
+  const majorDistricts = ['new-york-southern', 'california-central', 'illinois-northern', 'texas-northern', 'florida-southern'];
+
+  topNosCodesForWidgets.forEach((nos) => {
+    majorDistricts.forEach((district) => {
+      widgetUrls.push({
+        url: `${baseUrl}/widget/${nos}/${district}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+      });
+    });
+  });
+
   return [
     ...staticPages,
     ...spanishPages,
@@ -156,5 +176,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...districtNosUrls,
     ...blogUrls,
     ...judgeUrls,
+    ...widgetUrls,
   ];
 }
