@@ -10,7 +10,7 @@ import DataFreshness from '../../components/DataFreshness';
 import SampleSizeIndicator from '../../components/SampleSizeIndicator';
 import { useResearchStore } from '../../store/research';
 import TrendSparkline from '../../components/charts/TrendSparkline';
-import NaturalLanguageSearch from '../../components/NaturalLanguageSearch';
+import SearchTabs from '../../components/SearchTabs';
 
 // Loading skeleton component
 const SkeletonResultCard = () => (
@@ -329,8 +329,8 @@ export default function SearchPage() {
 
         {/* Main content */}
         <div className="search-main">
-        {/* Natural Language Search Component */}
-        <NaturalLanguageSearch />
+        {/* Search Tabs - Semantic and Natural Language */}
+        <SearchTabs />
 
         {/* Recently viewed */}
       {query.length === 0 && recentItems.length > 0 && (
