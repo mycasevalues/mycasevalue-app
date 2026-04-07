@@ -73,7 +73,7 @@ export default function NLRBContext() {
             }}>
               Total Charges Filed
             </div>
-            <div style={{
+            <div className="font-mono" style={{
               fontSize: '1.75rem',
               fontWeight: 700,
               color: '#004182',
@@ -111,7 +111,7 @@ export default function NLRBContext() {
                 }}>
                   Unfair Labor Practice (ULP)
                 </span>
-                <span style={{
+                <span className="font-mono" style={{
                   fontSize: '0.8125rem',
                   fontWeight: 600,
                   color: '#004182',
@@ -134,7 +134,7 @@ export default function NLRBContext() {
                   transition: 'width 150ms ease',
                 }} />
               </div>
-              <div style={{
+              <div className="font-mono" style={{
                 fontSize: '0.75rem',
                 color: '#4B5563',
                 marginTop: '0.25rem',
@@ -160,7 +160,7 @@ export default function NLRBContext() {
                 }}>
                   Representation Petitions
                 </span>
-                <span style={{
+                <span className="font-mono" style={{
                   fontSize: '0.8125rem',
                   fontWeight: 600,
                   color: '#004182',
@@ -183,7 +183,7 @@ export default function NLRBContext() {
                   transition: 'width 150ms ease',
                 }} />
               </div>
-              <div style={{
+              <div className="font-mono" style={{
                 fontSize: '0.75rem',
                 color: '#4B5563',
                 marginTop: '0.25rem',
@@ -225,7 +225,7 @@ export default function NLRBContext() {
                   }}>
                     {outcome.label}
                   </span>
-                  <span style={{
+                  <span className="font-mono" style={{
                     fontSize: '0.8125rem',
                     fontWeight: 600,
                     color: outcome.color,
@@ -273,7 +273,7 @@ export default function NLRBContext() {
               }}>
                 Board Decisions
               </div>
-              <div style={{
+              <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 color: '#004182',
@@ -295,7 +295,7 @@ export default function NLRBContext() {
               }}>
                 Elections Conducted
               </div>
-              <div style={{
+              <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 color: '#004182',

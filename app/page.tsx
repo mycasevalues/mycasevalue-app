@@ -133,10 +133,7 @@ function HeroLeft() {
       </span>
 
       {/* H1 — Plus Jakarta Sans 800, 36px, -1.2px, LH 1.1 */}
-      <h1
-        className="font-jakarta font-extrabold text-brand-ink leading-[1.1] mb-3.5"
-        style={{ fontSize: 36, letterSpacing: '-1.2px' }}
-      >
+      <h1 className="font-jakarta font-extrabold text-[36px] tracking-[-1.2px] leading-[1.1] text-brand-ink mb-3.5">
         Know your case value<br />
         before{' '}
         <em className="not-italic text-brand-blue">they make the offer.</em>

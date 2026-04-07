@@ -147,7 +147,7 @@ export default function StateCourtContext({
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm text-gray-700">Win Rate</span>
-                <span className="text-sm font-semibold text-gray-900">{federalWinRate.toFixed(1)}%</span>
+                <span className="text-sm font-mono font-semibold text-gray-900">{federalWinRate.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
@@ -160,7 +160,7 @@ export default function StateCourtContext({
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm text-gray-700">Settlement Rate</span>
-                <span className="text-sm font-semibold text-gray-900">{federalSettlement.toFixed(1)}%</span>
+                <span className="text-sm font-mono font-semibold text-gray-900">{federalSettlement.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
@@ -173,11 +173,11 @@ export default function StateCourtContext({
             <div className="pt-2 border-t border-gray-200">
               <div className="flex justify-between text-sm mb-2">
                 <span className="text-gray-700">Median Award</span>
-                <span className="font-semibold text-gray-900">{federalMedianAward}</span>
+                <span className="font-mono font-semibold text-gray-900">{federalMedianAward}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-700">Median Duration</span>
-                <span className="font-semibold text-gray-900">{federalMedianDuration} months</span>
+                <span className="font-mono font-semibold text-gray-900">{federalMedianDuration} months</span>
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function StateCourtContext({
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm text-gray-700">Win Rate</span>
-                <span className="text-sm font-semibold text-gray-900">{stateData.winRate.toFixed(1)}%</span>
+                <span className="text-sm font-mono font-semibold text-gray-900">{stateData.winRate.toFixed(1)}%</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div
@@ -207,7 +207,7 @@ export default function StateCourtContext({
             <div>
               <div className="flex justify-between items-center mb-1">
                 <span className="text-sm text-gray-700">Settlement Rate</span>
-                <span className="text-sm font-semibold text-gray-900">
+                <span className="text-sm font-mono font-semibold text-gray-900">
                   {stateData.settlementRate.toFixed(1)}%
                 </span>
               </div>
@@ -222,11 +222,11 @@ export default function StateCourtContext({
             <div className="pt-2 border-t border-gray-200">
               <div className="flex justify-between text-sm mb-2">
                 <span className="text-gray-700">Median Award</span>
-                <span className="font-semibold text-gray-900">{stateData.medianAward}</span>
+                <span className="font-mono font-semibold text-gray-900">{stateData.medianAward}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-700">Median Duration</span>
-                <span className="font-semibold text-gray-900">{stateData.medianDuration} months</span>
+                <span className="font-mono font-semibold text-gray-900">{stateData.medianDuration} months</span>
               </div>
             </div>
           </div>

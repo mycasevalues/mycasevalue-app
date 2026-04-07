@@ -83,7 +83,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                     }}>
                       {stage.label}
                     </span>
-                    <span style={{
+                    <span className="font-mono" style={{
                       fontSize: '0.8125rem',
                       fontWeight: 600,
                       color: '#004182',
@@ -110,7 +110,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
                   </div>
 
                   {/* Count */}
-                  <div style={{
+                  <div className="font-mono" style={{
                     fontSize: '0.75rem',
                     color: '#4B5563',
                     marginTop: '0.25rem',
@@ -143,7 +143,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
               }}>
                 Merit Resolution Rate
               </div>
-              <div style={{
+              <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 color: '#004182',
@@ -165,7 +165,7 @@ export default function EEOCPipeline({ federalCaseWinRate = 62 }: EEOCPipelinePr
               }}>
                 Federal Lawsuit Rate
               </div>
-              <div style={{
+              <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 color: '#004182',

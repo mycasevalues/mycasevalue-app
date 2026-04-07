@@ -425,7 +425,7 @@ export default async function GuidePage({ params }: PageProps) {
                 lineHeight: 1.6,
                 fontFamily: 'var(--font-body)',
               }}>
-                <strong>25th percentile:</strong> ${fmtK(realData.rng.lo)}k | <strong>Median:</strong> ${fmtK(realData.rng.md)}k | <strong>75th percentile:</strong> ${fmtK(realData.rng.hi)}k
+                <strong>25th percentile:</strong> <span style={{ fontFamily: 'var(--font-mono)' }}>${fmtK(realData.rng.lo)}k</span> | <strong>Median:</strong> <span style={{ fontFamily: 'var(--font-mono)' }}>${fmtK(realData.rng.md)}k</span> | <strong>75th percentile:</strong> <span style={{ fontFamily: 'var(--font-mono)' }}>${fmtK(realData.rng.hi)}k</span>
               </p>
             </div>
           )}

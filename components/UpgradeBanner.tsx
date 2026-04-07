@@ -174,7 +174,7 @@ export default function UpgradeBanner() {
                     fontSize: '13px', fontFamily: 'var(--font-body)',
                   }}>
                     <span style={{ color: '#4B5563' }}>{m.label}</span>
-                    <span style={{ fontWeight: 600, color: '#0f0f0f' }}>{m.value}</span>
+                    <span style={{ fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-mono)' }}>{m.value}</span>
                   </div>
                 ))}
               </div>

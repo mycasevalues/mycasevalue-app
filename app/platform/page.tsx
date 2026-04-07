@@ -330,7 +330,7 @@ export default function PlatformPage() {
           font-weight: 700;
           color: #0A66C2;
           margin-bottom: 8px;
-          font-family: var(--font-pt-mono);
+          font-family: var(--font-mono);
         }
 
         .stat-label {

@@ -327,7 +327,7 @@ const WinRatePreview: React.FC = () => (
             }}
           >
             <span style={{ color: '#0f0f0f', fontWeight: 500 }}>{item.label}</span>
-            <span style={{ color: '#0A66C2', fontWeight: 600 }}>{item.rate}%</span>
+            <span style={{ color: '#0A66C2', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{item.rate}%</span>
           </div>
           <div
             style={{
@@ -424,7 +424,7 @@ const JudgeAnalyticsPreview: React.FC = () => (
           }}
         >
           <span style={{ fontSize: '13px', color: '#4B5563' }}>{item.label}</span>
-          <span style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f' }}>{item.value}</span>
+          <span style={{ fontSize: '13px', fontWeight: 600, color: '#0f0f0f', fontFamily: 'var(--font-mono)' }}>{item.value}</span>
         </div>
       ))}
     </div>
@@ -453,7 +453,7 @@ const TimelinePreview: React.FC = () => (
             }}
           >
             <span style={{ color: '#0f0f0f', fontWeight: 500 }}>{item.label}</span>
-            <span style={{ color: '#0f0f0f', fontWeight: 600 }}>{item.months}mo</span>
+            <span style={{ color: '#0f0f0f', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{item.months}mo</span>
           </div>
           <div
             style={{

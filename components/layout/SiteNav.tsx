@@ -66,6 +66,40 @@ const TOOLS: DropdownItem[] = [
   { label: 'Legal glossary', href: '/glossary' },
 ];
 
+/* ── Secondary nav config ────────────────────────────────────────── */
+
+interface SecondaryNavItem {
+  label: string;
+  href: string;
+}
+
+const SECONDARY_NAV: SecondaryNavItem[] = [
+  { label: 'Case Analytics', href: '/search' },
+  { label: 'Judge Intelligence', href: '/judges' },
+  { label: 'District Analysis', href: '/districts' },
+  { label: 'Settlement Explorer', href: '/calculator' },
+  { label: 'AI Research', href: '/attorney' },
+  { label: 'Docket Tracker', href: '/trends' },
+  { label: 'My Library', href: '/dashboard' },
+];
+
+const PRODUCT_ROUTES = [
+  '/search',
+  '/judges',
+  '/districts',
+  '/calculator',
+  '/attorney',
+  '/trends',
+  '/dashboard',
+  '/compare',
+  '/odds',
+  '/nos',
+  '/nos-explorer',
+  '/translate',
+  '/glossary',
+  '/map',
+];
+
 /* ── Nav item config ─────────────────────────────────────────────── */
 
 interface NavItem {
@@ -209,6 +243,12 @@ export default function SiteNav() {
   const isActive = useCallback((href: string) => {
     if (href === '/') return pathname === '/';
     return pathname === href || pathname.startsWith(href + '/');
+  }, [pathname]);
+
+  const shouldShowSecondaryNav = useCallback(() => {
+    return PRODUCT_ROUTES.some(route =>
+      pathname === route || pathname.startsWith(route + '/')
+    );
   }, [pathname]);
 
   /* Hover handlers with debounce for dropdown */
@@ -392,6 +432,59 @@ export default function SiteNav() {
         </div>
       </nav>
 
+      {/* Secondary product navigation bar */}
+      {shouldShowSecondaryNav() && (
+        <nav
+          className="secondary-navbar"
+          style={{
+            position: 'sticky',
+            top: '52px',
+            zIndex: 199,
+            background: '#F7F6F3',
+            borderBottom: '1px solid #D6D3CC',
+            display: 'none',
+          }}
+          role="navigation"
+          aria-label="Product navigation"
+        >
+          <div style={{
+            maxWidth: '1280px',
+            margin: '0 auto',
+            padding: '0 24px',
+            display: 'flex',
+            alignItems: 'center',
+            height: '32px',
+            gap: '24px',
+          }}>
+            {SECONDARY_NAV.map((item, index) => {
+              const active = isActive(item.href);
+              return (
+                <div key={item.href} style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+                  <Link
+                    href={item.href}
+                    style={{
+                      fontSize: '12px',
+                      fontFamily: 'var(--font-display)',
+                      fontWeight: 600,
+                      color: active ? '#0A66C2' : '#999999',
+                      textDecoration: 'none',
+                      whiteSpace: 'nowrap',
+                      transition: 'color 150ms',
+                    }}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                  {index < SECONDARY_NAV.length - 1 && (
+                    <span style={{ color: '#D6D3CC', fontSize: '12px' }}>·</span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </nav>
+      )}
+
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
@@ -541,12 +634,18 @@ export default function SiteNav() {
         .navbar-cta:hover { background: #004182 !important; }
         .navbar-dropdown-item:hover { background: #F3F2EF !important; color: #191919 !important; }
         .navbar-mobile-subitem:hover { background: #F3F2EF !important; }
+        .secondary-navbar a:hover { color: #0A66C2 !important; }
 
         @media (max-width: 1024px) {
           .navbar-desktop-items { display: none !important; }
           .navbar-right { display: none !important; }
           .navbar-hamburger { display: flex !important; }
           .navbar-mobile-drawer { display: flex !important; }
+          .secondary-navbar { display: flex !important; }
+        }
+
+        @media (min-width: 1025px) {
+          .secondary-navbar { display: flex !important; }
         }
       `}} />
     </>

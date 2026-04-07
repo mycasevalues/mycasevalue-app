@@ -419,7 +419,7 @@ export default async function NOSPage({ params }: PageProps) {
         .stat-value {
           font-size: 32px;
           font-weight: 600;
-          font-family: var(--font-display);
+          font-family: var(--font-mono);
           margin: 12px 0 8px;
           letter-spacing: -1px;
         }

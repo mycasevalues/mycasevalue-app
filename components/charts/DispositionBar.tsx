@@ -118,7 +118,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
       .attr('fill', '#FFFFFF')
       .attr('font-size', '12px')
       .attr('font-weight', '600')
-      .attr('font-family', 'var(--font-body)')
+      .attr('font-family', 'var(--font-mono)')
       .style('text-shadow', '0 1px 2px rgba(0,0,0,0.2)')
       .style('opacity', 0)
       .text((d) => `${Math.round(d.percentage)}%`)
@@ -190,7 +190,7 @@ export default function DispositionBar({ data }: DispositionBarProps) {
               }}
             />
             <span>
-              {labels[segment.key]}: <strong style={{ color: '#0A66C2' }}>{segment.percentage.toFixed(1)}%</strong>
+              {labels[segment.key]}: <strong style={{ color: '#0A66C2', fontFamily: 'var(--font-mono)' }}>{segment.percentage.toFixed(1)}%</strong>
             </span>
           </div>
         ))}

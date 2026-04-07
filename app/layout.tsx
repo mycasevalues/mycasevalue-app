@@ -12,35 +12,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { SITE_URL, SITE_NAME } from '../lib/site-config';
-import localFont from 'next/font/local';
-import { jakarta, plexMono } from '../lib/fonts';
-// Inter — LinkedIn-style typography. Self-hosted to avoid Google Fonts network failures at build time.
-const inter = localFont({
-  src: [
-    { path: '../public/fonts/inter-300.woff2', weight: '300', style: 'normal' },
-    { path: '../public/fonts/inter-400.woff2', weight: '400', style: 'normal' },
-    { path: '../public/fonts/inter-500.woff2', weight: '500', style: 'normal' },
-    { path: '../public/fonts/inter-600.woff2', weight: '600', style: 'normal' },
-    { path: '../public/fonts/inter-700.woff2', weight: '700', style: 'normal' },
-  ],
-  display: 'swap',
-  variable: '--font-inter',
-});
-
-// Legacy CSS variable aliases so existing var(--font-montserrat) / var(--font-roboto) keep working
-const displayFont = { variable: '--font-montserrat' } as { variable: string };
-const bodyFont    = { variable: '--font-roboto' }    as { variable: string };
-
-const monoFont = localFont({
-  src: [
-    { path: '../public/fonts/jetbrains-mono-400.woff2', weight: '400', style: 'normal' },
-    { path: '../public/fonts/jetbrains-mono-500.woff2', weight: '500', style: 'normal' },
-    { path: '../public/fonts/jetbrains-mono-600.woff2', weight: '600', style: 'normal' },
-    { path: '../public/fonts/jetbrains-mono-700.woff2', weight: '700', style: 'normal' },
-  ],
-  display: 'swap',
-  variable: '--font-pt-mono',
-});
+import { inter, jakarta, plexMono } from '../lib/fonts';
 
 // Dynamic imports for client-side only components to improve initial page load
 // These components are non-critical and loaded after hydration
@@ -134,7 +106,7 @@ const jsonLd = {
       description: 'Federal court outcome data for informed research.',
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'support@mycasevalue.com',
+        email: 'support@mycasevalues.com',
         contactType: 'customer support',
       },
     },
@@ -272,7 +244,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${inter.variable} ${monoFont.variable} ${jakarta.variable} ${plexMono.variable}`}>
+    <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }} className={`${inter.variable} ${jakarta.variable} ${plexMono.variable}`}>
       <head>
         {/* Google Analytics 4 */}
         <GoogleAnalytics />
@@ -332,7 +304,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         `}</style>
       </head>
-      <body style={{ background: '#ffffff', color: '#0f0f0f', minHeight: '100vh' }} suppressHydrationWarning>
+      <body className="font-inter" style={{ background: '#ffffff', color: '#0f0f0f', minHeight: '100vh' }} suppressHydrationWarning>
         <RouteLoadingBar />
         <a href="#main-content" className="skip-link" style={{
           position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px',

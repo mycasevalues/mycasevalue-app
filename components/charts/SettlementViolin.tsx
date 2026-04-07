@@ -164,7 +164,7 @@ export default function SettlementViolin({ nosCode, width: propWidth, height = 1
       )
       .selectAll('text')
       .attr('font-size', '10px')
-      .attr('font-family', 'var(--font-body)')
+      .attr('font-family', 'var(--font-mono)')
       .attr('fill', '#4B5563');
 
     g.selectAll('.domain').attr('stroke', '#e5e7eb');

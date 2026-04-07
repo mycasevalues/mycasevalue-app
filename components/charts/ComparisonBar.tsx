@@ -32,7 +32,7 @@ export function ComparisonBar({
             tickLine={false}
           />
           <YAxis
-            tick={{ fontSize: 12, fill: '#4B5563' }}
+            tick={{ fontSize: 12, fill: '#4B5563', fontFamily: 'var(--font-mono)' }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) => `${v}${unit}`}
@@ -45,7 +45,7 @@ export function ComparisonBar({
               borderRadius: '12px',
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
               fontSize: '13px',
-              fontFamily: 'var(--font-body)',
+              fontFamily: 'var(--font-mono)',
               padding: '8px 14px',
               color: '#0f0f0f',
             }}

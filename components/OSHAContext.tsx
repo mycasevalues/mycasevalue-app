@@ -75,7 +75,7 @@ export default function OSHAContext() {
               }}>
                 Total Inspections
               </div>
-              <div style={{
+              <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 color: '#004182',
@@ -102,7 +102,7 @@ export default function OSHAContext() {
               }}>
                 Total Citations
               </div>
-              <div style={{
+              <div className="font-mono" style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 color: '#004182',
@@ -132,7 +132,7 @@ export default function OSHAContext() {
             }}>
               Average Penalty
             </div>
-            <div style={{
+            <div className="font-mono" style={{
               fontSize: '1.75rem',
               fontWeight: 700,
               color: '#004182',
@@ -170,7 +170,7 @@ export default function OSHAContext() {
                   }}>
                     {violation.label}
                   </span>
-                  <span style={{
+                  <span className="font-mono" style={{
                     fontSize: '0.8125rem',
                     fontWeight: 600,
                     color: '#004182',
@@ -193,7 +193,7 @@ export default function OSHAContext() {
                     transition: 'width 150ms ease',
                   }} />
                 </div>
-                <div style={{
+                <div className="font-mono" style={{
                   fontSize: '0.75rem',
                   color: '#4B5563',
                   marginTop: '0.25rem',
@@ -236,7 +236,7 @@ export default function OSHAContext() {
                   }}>
                     {state.state}
                   </span>
-                  <span style={{
+                  <span className="font-mono" style={{
                     fontSize: '0.8125rem',
                     fontWeight: 600,
                     color: '#004182',

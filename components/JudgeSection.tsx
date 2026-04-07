@@ -117,7 +117,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                     fontSize: 18,
                     fontWeight: 700,
                     color: colorInfo.text,
-                    fontFamily: 'var(--font-heading)',
+                    fontFamily: 'var(--font-mono)',
                   }}>
                     {Math.round(judge.plaintiff_win_rate * 10) / 10}%
                   </div>
@@ -139,7 +139,7 @@ export default function JudgeSection({ title, subtitle, judges, showDistrict = f
                     fontSize: 14,
                     fontWeight: 600,
                     color: '#0f0f0f',
-                    fontFamily: 'monospace',
+                    fontFamily: 'var(--font-mono)',
                   }}>
                     {judge.total_cases.toLocaleString()}
                   </div>

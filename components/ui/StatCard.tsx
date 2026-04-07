@@ -33,13 +33,13 @@ export function StatCard({
         )}
         <span className="mcv-stat-card__label">{label}</span>
       </div>
-      <div className="mcv-stat-card__value" style={color ? { color } : undefined}>
+      <div className="mcv-stat-card__value font-mono" style={color ? { color } : undefined}>
         {value}
       </div>
       {(sublabel || trend) && (
         <div className="mcv-stat-card__footer">
           {trend && (
-            <span className="mcv-stat-card__trend" style={{ color: trendColor }}>
+            <span className="mcv-stat-card__trend font-mono" style={{ color: trendColor }}>
               {trendArrow} {Math.abs(trend.value)}% {trend.label}
             </span>
           )}

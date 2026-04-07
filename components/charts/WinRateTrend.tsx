@@ -159,7 +159,7 @@ export default function WinRateTrend({
         const tooltip = tooltipRef.current;
         if (tooltip) {
           tooltip.style.display = 'block';
-          tooltip.innerHTML = `<div style="font-weight: 600; color: #0A66C2; font-size: 13px; font-family: var(--font-mono)">${d.year}</div><div style="color: #4B5563; font-size: 12px; margin-top: 4px; font-family: var(--font-body)">Win Rate: <strong>${d.winRate}%</strong></div>`;
+          tooltip.innerHTML = `<div style="font-weight: 600; color: #0A66C2; font-size: 13px; font-family: var(--font-mono)">${d.year}</div><div style="color: #4B5563; font-size: 12px; margin-top: 4px; font-family: var(--font-body)">Win Rate: <strong style="font-family: var(--font-mono)">${d.winRate}%</strong></div>`;
           const rect = (this as SVGRectElement).getBoundingClientRect();
           const svgRect = svgRef.current?.getBoundingClientRect();
           if (svgRect) {
