@@ -51,6 +51,7 @@ const FOOTER_COLUMNS = [
       { label: 'Jargon translator', href: '/translate' },
       { label: 'Filing trends', href: '/trends' },
       { label: 'Compare cases', href: '/compare' },
+      { label: 'Data Changelog', href: '/data/changelog' },
     ],
   },
   {

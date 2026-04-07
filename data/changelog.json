@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "date": "2024-12-15",
+    "updateType": "launch",
+    "title": "MyCaseValue Platform Launch",
+    "description": "Initial release of MyCaseValue with 4.1M+ federal court cases across 84 NOS codes and 94 federal judicial districts. Data sourced from FJC Integrated Database through Q3 2024.",
+    "affectedNosCodes": [],
+    "affectedDistricts": []
+  },
+  {
+    "id": "2",
+    "date": "2025-01-10",
+    "updateType": "data_update",
+    "title": "Q4 2024 FJC Data Refresh",
+    "description": "Quarterly data update incorporating new case filings, dispositions, and settlements from the FJC Integrated Database. Win rates and settlement ranges recalculated across all NOS codes.",
+    "affectedNosCodes": ["442", "190", "360", "365", "710"],
+    "affectedDistricts": ["ny-s", "ca-c", "tx-s", "il-n", "fl-s"]
+  },
+  {
+    "id": "3",
+    "date": "2025-03-01",
+    "updateType": "feature",
+    "title": "AI Attorney Tools Suite Launch",
+    "description": "Released six AI-powered attorney tools: Research Memo Generator, Demand Letter Drafting, Case Predictor, Discovery Generator, Deposition Prep, and Document Intelligence.",
+    "affectedNosCodes": [],
+    "affectedDistricts": []
+  },
+  {
+    "id": "4",
+    "date": "2025-04-01",
+    "updateType": "data_update",
+    "title": "EEOC & NLRB Data Integration",
+    "description": "Added EEOC charge pipeline data for employment discrimination NOS codes and NLRB case activity data for labor relations pages.",
+    "affectedNosCodes": ["442", "445", "710", "720"],
+    "affectedDistricts": []
+  }
+]
