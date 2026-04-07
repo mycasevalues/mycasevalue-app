@@ -1,0 +1,64 @@
+{
+  "years": [
+    {
+      "year": 2019,
+      "totalCharges": 18410,
+      "unfairLaborPractice": 15232,
+      "representationPetitions": 2789,
+      "settledCases": 5812,
+      "withdrawnCases": 3456,
+      "dismissedCases": 2134,
+      "complaintIssued": 3892,
+      "boardDecisions": 1876,
+      "electionsConducted": 1254
+    },
+    {
+      "year": 2020,
+      "totalCharges": 19847,
+      "unfairLaborPractice": 16234,
+      "representationPetitions": 2987,
+      "settledCases": 6123,
+      "withdrawnCases": 3782,
+      "dismissedCases": 2456,
+      "complaintIssued": 4234,
+      "boardDecisions": 2045,
+      "electionsConducted": 1378
+    },
+    {
+      "year": 2021,
+      "totalCharges": 21456,
+      "unfairLaborPractice": 17823,
+      "representationPetitions": 3121,
+      "settledCases": 6789,
+      "withdrawnCases": 4123,
+      "dismissedCases": 2834,
+      "complaintIssued": 4567,
+      "boardDecisions": 2234,
+      "electionsConducted": 1512
+    },
+    {
+      "year": 2022,
+      "totalCharges": 22134,
+      "unfairLaborPractice": 18567,
+      "representationPetitions": 2845,
+      "settledCases": 6945,
+      "withdrawnCases": 4234,
+      "dismissedCases": 2987,
+      "complaintIssued": 4678,
+      "boardDecisions": 2312,
+      "electionsConducted": 1456
+    },
+    {
+      "year": 2023,
+      "totalCharges": 23891,
+      "unfairLaborPractice": 20156,
+      "representationPetitions": 2678,
+      "settledCases": 7234,
+      "withdrawnCases": 4567,
+      "dismissedCases": 3123,
+      "complaintIssued": 4912,
+      "boardDecisions": 2456,
+      "electionsConducted": 1389
+    }
+  ]
+}
