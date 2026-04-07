@@ -124,7 +124,13 @@ export async function POST(request: NextRequest) {
 
     const result = streamText({
       model: anthropic('claude-sonnet-4-20250514'),
-      system: `You are a legal jargon translator. Detect the language of the input term. If the term is in English, explain it in plain English for non-lawyers. If the term is in Spanish, explain it in plain Spanish (español claro, sin tecnicismos innecesarios). Always respond in the same language as the input.`,
+      system: {
+        role: 'system',
+        content: 'You are a legal jargon translator. Detect the language of the input term. If the term is in English, explain it in plain English for non-lawyers. If the term is in Spanish, explain it in plain Spanish (español claro, sin tecnicismos innecesarios). Always respond in the same language as the input.',
+        providerOptions: {
+          anthropic: { cacheControl: { type: 'ephemeral' } },
+        },
+      },
       prompt: `Please translate this legal text:\n\n${sanitizedText}`,
       maxOutputTokens: 1024,
       temperature: 0.3,

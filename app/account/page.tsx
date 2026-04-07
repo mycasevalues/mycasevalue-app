@@ -33,6 +33,12 @@ export default function AccountPage() {
   const [passwordSaving, setPasswordSaving] = useState(false);
   const [passwordMsg, setPasswordMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
+  // API Key management
+  const [apiKeys, setApiKeys] = useState<Array<{ id: string; prefix: string; createdAt: string; lastUsed: string | null }>>([]);
+  const [newApiKey, setNewApiKey] = useState<string | null>(null);
+  const [apiKeyLoading, setApiKeyLoading] = useState(false);
+  const [apiKeyMsg, setApiKeyMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+
   useEffect(() => {
     async function loadUser() {
       const { data: { user: authUser } } = await getSupabase().auth.getUser();
@@ -62,6 +68,63 @@ export default function AccountPage() {
     }
     loadUser();
   }, []);
+
+  async function loadApiKeys() {
+    try {
+      const res = await fetch('/api/user/api-keys');
+      if (res.ok) {
+        const data = await res.json();
+        setApiKeys(data.keys || []);
+      }
+    } catch {
+      // silently fail — keys section will show empty
+    }
+  }
+
+  useEffect(() => {
+    if (user) {
+      loadApiKeys();
+    }
+  }, [user]);
+
+  async function handleGenerateApiKey() {
+    setApiKeyLoading(true);
+    setApiKeyMsg(null);
+    setNewApiKey(null);
+    try {
+      const res = await fetch('/api/user/api-keys', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: 'Default' }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setNewApiKey(data.key);
+        setApiKeyMsg({ type: 'success', text: 'API key generated. Copy it now — it will not be shown again.' });
+        loadApiKeys();
+      } else {
+        const err = await res.json();
+        setApiKeyMsg({ type: 'error', text: err.error || 'Failed to generate API key.' });
+      }
+    } catch {
+      setApiKeyMsg({ type: 'error', text: 'Network error. Please try again.' });
+    }
+    setApiKeyLoading(false);
+  }
+
+  async function handleRevokeApiKey(keyId: string) {
+    try {
+      const res = await fetch(`/api/user/api-keys?id=${keyId}`, { method: 'DELETE' });
+      if (res.ok) {
+        setApiKeys((prev) => prev.filter((k) => k.id !== keyId));
+        setApiKeyMsg({ type: 'success', text: 'API key revoked.' });
+      } else {
+        setApiKeyMsg({ type: 'error', text: 'Failed to revoke API key.' });
+      }
+    } catch {
+      setApiKeyMsg({ type: 'error', text: 'Network error.' });
+    }
+  }
 
   async function handleProfileSave(e: React.FormEvent) {
     e.preventDefault();
@@ -320,6 +383,83 @@ export default function AccountPage() {
                 Billing History
               </Link>
             </div>
+          </div>
+
+          {/* API Key Management */}
+          <div style={{ backgroundColor: '#FFFFFF', borderRadius: '12px', padding: '32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB', marginBottom: '24px' }}>
+            <h2 className="font-display" style={{ fontSize: '18px', fontWeight: 600, color: '#0f0f0f', margin: '0 0 8px 0' }}>
+              API Keys
+            </h2>
+            <p style={{ fontSize: '13px', color: '#4B5563', margin: '0 0 24px 0', lineHeight: 1.5 }}>
+              Use API keys to access the MyCaseValue REST API programmatically. Keys are scoped to your account and plan.
+            </p>
+
+            {apiKeyMsg && (
+              <div style={{ padding: '10px 14px', borderRadius: '12px', marginBottom: '16px', fontSize: '13px', fontWeight: 500, backgroundColor: apiKeyMsg.type === 'success' ? '#ECFDF5' : '#FEF2F2', color: apiKeyMsg.type === 'success' ? '#065F46' : '#991B1B', border: `1px solid ${apiKeyMsg.type === 'success' ? '#A7F3D0' : '#FECACA'}` }}>
+                {apiKeyMsg.text}
+              </div>
+            )}
+
+            {newApiKey && (
+              <div style={{ padding: '14px', borderRadius: '12px', marginBottom: '16px', backgroundColor: '#F0F7FF', border: '1px solid #B3D4FC' }}>
+                <p style={{ fontSize: '12px', fontWeight: 600, color: '#004182', margin: '0 0 8px 0', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Your New API Key (copy now)
+                </p>
+                <code style={{ display: 'block', padding: '10px 12px', backgroundColor: '#FFFFFF', borderRadius: '8px', fontSize: '13px', fontFamily: 'var(--font-mono)', color: '#0f0f0f', wordBreak: 'break-all', border: '1px solid #E5E7EB' }}>
+                  {newApiKey}
+                </code>
+              </div>
+            )}
+
+            {apiKeys.length > 0 && (
+              <div style={{ marginBottom: '20px' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
+                  <thead>
+                    <tr style={{ borderBottom: '1px solid #E5E7EB' }}>
+                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: '#4B5563' }}>Key</th>
+                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: '#4B5563' }}>Created</th>
+                      <th style={{ textAlign: 'left', padding: '8px 0', fontWeight: 600, color: '#4B5563' }}>Last Used</th>
+                      <th style={{ textAlign: 'right', padding: '8px 0', fontWeight: 600, color: '#4B5563' }}></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {apiKeys.map((key) => (
+                      <tr key={key.id} style={{ borderBottom: '1px solid #F3F4F6' }}>
+                        <td style={{ padding: '10px 0', fontFamily: 'var(--font-mono)', color: '#0f0f0f' }}>
+                          {key.prefix}...
+                        </td>
+                        <td style={{ padding: '10px 0', color: '#4B5563' }}>
+                          {new Date(key.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                        </td>
+                        <td style={{ padding: '10px 0', color: '#4B5563' }}>
+                          {key.lastUsed ? new Date(key.lastUsed).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Never'}
+                        </td>
+                        <td style={{ padding: '10px 0', textAlign: 'right' }}>
+                          <button
+                            onClick={() => handleRevokeApiKey(key.id)}
+                            className="revoke-btn"
+                            style={{ padding: '4px 12px', fontSize: '12px', fontWeight: 600, color: '#DC2626', backgroundColor: 'transparent', border: '1px solid #FECACA', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.2s' }}
+                          >
+                            Revoke
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <style>{`
+                  .revoke-btn:hover { background-color: #FEF2F2; border-color: #DC2626; }
+                `}</style>
+              </div>
+            )}
+
+            <button
+              onClick={handleGenerateApiKey}
+              disabled={apiKeyLoading}
+              style={{ padding: '10px 20px', backgroundColor: '#0A66C2', color: '#FFFFFF', border: 'none', borderRadius: '12px', fontSize: '14px', fontWeight: 600, cursor: apiKeyLoading ? 'not-allowed' : 'pointer', opacity: apiKeyLoading ? 0.6 : 1, textTransform: 'uppercase' }}
+            >
+              {apiKeyLoading ? 'Generating...' : 'Generate New API Key'}
+            </button>
           </div>
 
           {/* Quick Links */}
