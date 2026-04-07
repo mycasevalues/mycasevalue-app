@@ -225,6 +225,13 @@ export default async function DistrictPage({ params }: PageProps) {
       <style>{`
         a.lex-link { color: #0A66C2; text-decoration: none; font-weight: 500; }
         a.lex-link:hover { text-decoration: underline; }
+        .district-case-card {
+          transition: all 0.2s ease;
+        }
+        .district-case-card:hover {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+          border-color: #0A66C2 !important;
+        }
       `}</style>
 
       {/* Breadcrumb */}
@@ -368,23 +375,13 @@ export default async function DistrictPage({ params }: PageProps) {
                 href={`/districts/${code.toUpperCase()}/${caseType.nosCode}`}
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
-                <div style={{
+                <div className="district-case-card" style={{
                   background: '#FFFFFF',
                   border: '1px solid #e5e7eb',
                   borderRadius: '12px',
                   padding: '20px',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
-                }}
-                onMouseEnter={(e) => {
-                  const target = e.currentTarget as HTMLElement;
-                  target.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-                  target.style.borderColor = '#0A66C2';
-                }}
-                onMouseLeave={(e) => {
-                  const target = e.currentTarget as HTMLElement;
-                  target.style.boxShadow = '';
-                  target.style.borderColor = '#e5e7eb';
                 }}
                 >
                 <h3 style={{

@@ -3,6 +3,38 @@ import Link from 'next/link';
 import { SITE_URL } from '../../../lib/site-config';
 import { getAllTerms, getTermBySlug } from '../../../lib/glossary';
 
+const styles = `
+  .glossary-nos-link {
+    transition: all 200ms ease;
+  }
+  .glossary-nos-link:hover {
+    background-color: #E6F1FF !important;
+    border-color: #0A66C2 !important;
+  }
+
+  .glossary-related-term {
+    transition: all 200ms ease;
+  }
+  .glossary-related-term:hover {
+    background-color: #E6F1FF !important;
+    border-color: #0A66C2 !important;
+  }
+
+  .glossary-case-type-link {
+    transition: all 200ms ease;
+  }
+  .glossary-case-type-link:hover {
+    background-color: #004182 !important;
+  }
+
+  .glossary-back-link {
+    transition: all 200ms ease;
+  }
+  .glossary-back-link:hover {
+    border-color: #0A66C2 !important;
+  }
+`;
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -81,6 +113,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen" style={{ background: '#F7F8FA' }}>
+      <style>{styles}</style>
       {/* Header */}
       <div className="border-b" style={{ borderColor: '#E5E7EB', background: '#1B3A5C' }}>
         <div className="max-w-3xl mx-auto px-6 py-12 sm:py-16">
@@ -200,6 +233,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                     <Link
                       key={code}
                       href={`/nos/${code}`}
+                      className="glossary-nos-link"
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -212,16 +246,6 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                         color: '#0A66C2',
                         textDecoration: 'none',
                         transition: 'all 200ms ease',
-                      }}
-                      onMouseOver={(e) => {
-                        const el = e.currentTarget as HTMLAnchorElement;
-                        el.style.background = '#E6F1FF';
-                        el.style.borderColor = '#0A66C2';
-                      }}
-                      onMouseOut={(e) => {
-                        const el = e.currentTarget as HTMLAnchorElement;
-                        el.style.background = '#F0F2F5';
-                        el.style.borderColor = '#E5E7EB';
                       }}
                     >
                       {code}
@@ -251,6 +275,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                   <Link
                     key={relatedTerm!.slug}
                     href={`/glossary/${relatedTerm!.slug}`}
+                    className="glossary-related-term"
                     style={{
                       display: 'block',
                       padding: '12px 14px',
@@ -262,16 +287,6 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                       color: '#0A66C2',
                       textDecoration: 'none',
                       transition: 'all 200ms ease',
-                    }}
-                    onMouseOver={(e) => {
-                      const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.background = '#E6F1FF';
-                      el.style.borderColor = '#0A66C2';
-                    }}
-                    onMouseOut={(e) => {
-                      const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.background = '#F7F8FA';
-                      el.style.borderColor = '#E5E7EB';
                     }}
                   >
                     {relatedTerm!.term}
@@ -300,6 +315,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                   <Link
                     key={code}
                     href={`/nos/${code}`}
+                    className="glossary-case-type-link"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -311,14 +327,6 @@ export default async function GlossaryTermPage({ params }: PageProps) {
                       fontWeight: 600,
                       textDecoration: 'none',
                       transition: 'all 200ms ease',
-                    }}
-                    onMouseOver={(e) => {
-                      const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.background = '#004182';
-                    }}
-                    onMouseOut={(e) => {
-                      const el = e.currentTarget as HTMLAnchorElement;
-                      el.style.background = '#0A66C2';
                     }}
                   >
                     View Case Type {code}
@@ -355,6 +363,7 @@ export default async function GlossaryTermPage({ params }: PageProps) {
         >
           <Link
             href="/glossary"
+            className="glossary-back-link"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -368,14 +377,6 @@ export default async function GlossaryTermPage({ params }: PageProps) {
               fontSize: '14px',
               fontWeight: 600,
               transition: 'all 200ms ease',
-            }}
-            onMouseOver={(e) => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.borderColor = '#0A66C2';
-            }}
-            onMouseOut={(e) => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.borderColor = '#E5E7EB';
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

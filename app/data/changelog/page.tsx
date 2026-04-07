@@ -94,6 +94,20 @@ export default async function ChangelogPage() {
           font-size: 12px;
           font-weight: 500;
         }
+        .changelog-email-input {
+          transition: all 150ms ease-out;
+        }
+        .changelog-email-input:focus {
+          background: rgba(255,255,255,0.15) !important;
+          border-color: rgba(255,255,255,0.3) !important;
+          outline: none;
+        }
+        .changelog-subscribe-btn {
+          transition: all 150ms ease-out;
+        }
+        .changelog-subscribe-btn:hover {
+          background: #EDF3FB !important;
+        }
       `}</style>
 
       <script
@@ -334,6 +348,7 @@ export default async function ChangelogPage() {
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  className="changelog-email-input"
                   required
                   style={{
                     flex: '1 1 250px',
@@ -345,18 +360,11 @@ export default async function ChangelogPage() {
                     fontFamily: 'var(--font-body)',
                     fontSize: 14,
                   }}
-                  onFocus={(e) => {
-                    e.target.style.background = 'rgba(255,255,255,0.15)';
-                    e.target.style.borderColor = 'rgba(255,255,255,0.3)';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.background = 'rgba(255,255,255,0.1)';
-                    e.target.style.borderColor = 'rgba(255,255,255,0.2)';
-                  }}
                 />
 
                 <button
                   type="submit"
+                  className="changelog-subscribe-btn"
                   style={{
                     padding: '12px 28px',
                     borderRadius: 8,
@@ -369,12 +377,6 @@ export default async function ChangelogPage() {
                     cursor: 'pointer',
                     transition: 'all 150ms ease-out',
                     minWidth: 140,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = '#EDF3FB';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#FFFFFF';
                   }}
                 >
                   Subscribe
