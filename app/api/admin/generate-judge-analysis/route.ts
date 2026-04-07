@@ -111,7 +111,7 @@ export async function POST(req: NextRequest) {
         }, { status: 500 });
       }
 
-      const uniqueIds = [...new Set((rawRows || []).map((r: any) => r.judge_id))];
+      const uniqueIds = Array.from(new Set((rawRows || []).map((r: any) => r.judge_id)));
       totalJudges = uniqueIds.length;
       judges = uniqueIds.slice(offset, offset + batchSize).map(id => ({ id }));
     } else {
