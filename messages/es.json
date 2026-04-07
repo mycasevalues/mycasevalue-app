@@ -159,5 +159,155 @@
       "allDistricts": "Distritos de Tribunales Federales",
       "allJudicial": "Los 94 distritos judiciales federales en 13 circuitos"
     }
+  },
+  "districts": {
+    "overview": "Descripción General del Distrito",
+    "topCaseTypes": "Principales Tipos de Casos",
+    "filingTrends": "Tendencias de Presentación",
+    "judicialPatterns": "Patrones Judiciales",
+    "caseDistribution": "Distribución de Casos por Tipo",
+    "averageResolutionTime": "Tiempo Promedio de Resolución",
+    "settledVsTrial": "Resultados: Acuerdo vs. Juicio",
+    "districtRanking": "Clasificación del Distrito",
+    "comparisonTools": "Comparar con Otros Distritos"
+  },
+  "compare": {
+    "title": "Comparar Tipos de Casos",
+    "selectCases": "Selecciona casos para comparar",
+    "sideBySide": "Comparación lado a lado",
+    "winRateComparison": "Comparación de Tasa de Éxito",
+    "settlementComparison": "Comparación de Acuerdos",
+    "durationComparison": "Comparación de Duración",
+    "addToComparison": "Agregar a Comparación",
+    "removeFromComparison": "Eliminar de Comparación",
+    "clearAll": "Limpiar Todo",
+    "exportComparison": "Exportar Comparación"
+  },
+  "trends": {
+    "title": "Tendencias de Presentación Federal",
+    "federalTrends": "Tendencias de Presentación Federal",
+    "yearOverYear": "Cambio Año a Año",
+    "historicalData": "Datos Históricos",
+    "trendAnalysis": "Análisis de Tendencias",
+    "caseTypeGrowth": "Tasas de Crecimiento por Tipo de Caso",
+    "districtComparison": "Comparación de Distritos",
+    "timeRange": "Rango de Tiempo",
+    "selectPeriod": "Seleccionar Período de Tiempo"
+  },
+  "odds": {
+    "title": "Analizador de Probabilidades",
+    "oddsAnalyzer": "Analizador de Probabilidades",
+    "yourOdds": "Tus Probabilidades",
+    "favorableFactors": "Factores Favorables",
+    "unfavorableFactors": "Factores Desfavorables",
+    "successProbability": "Probabilidad de Éxito",
+    "riskAssessment": "Evaluación de Riesgo",
+    "caseStrengthScore": "Puntuación de Fortaleza del Caso",
+    "comparisonToSimilarCases": "Comparación con Casos Similares"
+  },
+  "attorney": {
+    "attorneyMode": "Modo Abogado",
+    "demandPackage": "Paquete de Demanda",
+    "caseTimeline": "Cronograma del Caso",
+    "expertWitness": "Perito",
+    "intakeForms": "Formularios de Intake",
+    "opposingCounsel": "Base de Datos de Abogados Contrarios",
+    "apiAccess": "Acceso API",
+    "teamManagement": "Gestión del Equipo",
+    "documentLibrary": "Biblioteca de Documentos",
+    "caseAnalytics": "Análisis de Casos",
+    "courtMonitoring": "Monitoreo Judicial",
+    "billingIntegration": "Integración de Facturación"
+  },
+  "dashboard": {
+    "myDashboard": "Mi Panel de Control",
+    "savedCases": "Casos Guardados",
+    "recentSearches": "Búsquedas Recientes",
+    "accountSettings": "Configuración de Cuenta",
+    "preferences": "Preferencias",
+    "notifications": "Notificaciones",
+    "emailAlerts": "Alertas por Correo",
+    "activityLog": "Registro de Actividad",
+    "savedReports": "Informes Guardados",
+    "analytics": "Resumen de Análisis"
+  },
+  "legal": {
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "cookiePolicy": "Política de Cookies",
+    "acceptableUsePolicy": "Política de Uso Aceptable",
+    "disclaimers": "Renuncias",
+    "dataProtection": "Protección de Datos",
+    "intellectualProperty": "Propiedad Intelectual",
+    "limitations": "Limitaciones de Responsabilidad",
+    "userResponsibilities": "Responsabilidades del Usuario"
+  },
+  "charts": {
+    "winRate": "Tasa de Éxito",
+    "settlement": "Acuerdo Extrajudicial",
+    "duration": "Duración",
+    "cases": "Casos",
+    "median": "Mediana",
+    "average": "Promedio",
+    "total": "Total",
+    "districtAverage": "Promedio del Distrito",
+    "judgeProfile": "Perfil del Juez",
+    "percentile": "Percentil",
+    "dataVisualization": "Visualización de Datos",
+    "downloadChart": "Descargar Gráfico",
+    "shareChart": "Compartir Gráfico"
+  },
+  "tools": {
+    "shouldIFile": "¿Debo Presentar una Demanda?",
+    "caseStrengthAssessment": "Evaluación de Fortaleza del Caso",
+    "statuteOfLimitations": "Plazo de Prescripción",
+    "lienCalculator": "Calculadora de Gravamen",
+    "damagesCalculator": "Calculadora de Daños",
+    "settlementEstimator": "Estimador de Acuerdo",
+    "timelineEstimator": "Estimador de Cronograma",
+    "attorneyNeeded": "¿Necesito un Abogado?",
+    "costAnalysis": "Análisis de Costos"
+  },
+  "glossary": {
+    "legalGlossary": "Glosario Legal",
+    "searchTerms": "Términos de Búsqueda",
+    "relatedTerms": "Términos Relacionados",
+    "federalContext": "Contexto Federal",
+    "definitions": "Definiciones",
+    "abbreviations": "Abreviaturas",
+    "legalAcronyms": "Acrónimos Legales",
+    "courtTerminology": "Terminología Judicial"
+  },
+  "blog": {
+    "blog": "Blog",
+    "readMore": "Leer Más",
+    "published": "Publicado",
+    "author": "Autor",
+    "relatedPosts": "Artículos Relacionados",
+    "latestArticles": "Últimos Artículos",
+    "searchBlog": "Buscar en el Blog",
+    "categories": "Categorías",
+    "archives": "Archivos",
+    "shareArticle": "Compartir Artículo"
+  },
+  "platform": {
+    "about": "Acerca de",
+    "methodology": "Metodología",
+    "dataSource": "Fuente de Datos",
+    "updateFrequency": "Frecuencia de Actualización",
+    "coverage": "Cobertura",
+    "contactUs": "Contáctanos",
+    "support": "Soporte",
+    "faqs": "Preguntas Frecuentes"
+  },
+  "press": {
+    "pressKit": "Kit de Prensa",
+    "newsroom": "Sala de Prensa",
+    "mediaAssets": "Activos Multimedia",
+    "companyInfo": "Información de la Empresa",
+    "pressReleases": "Comunicados de Prensa",
+    "logos": "Logotipos",
+    "screenshots": "Capturas de Pantalla",
+    "executiveBios": "Biografías Ejecutivas"
   }
 }

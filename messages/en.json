@@ -159,5 +159,155 @@
       "allDistricts": "Federal Court Districts",
       "allJudicial": "All 94 federal judicial districts across 13 circuits"
     }
+  },
+  "districts": {
+    "overview": "District Overview",
+    "topCaseTypes": "Top Case Types",
+    "filingTrends": "Filing Trends",
+    "judicialPatterns": "Judicial Patterns",
+    "caseDistribution": "Case Distribution by Type",
+    "averageResolutionTime": "Average Resolution Time",
+    "settledVsTrial": "Settled vs. Trial Outcomes",
+    "districtRanking": "District Rankings",
+    "comparisonTools": "Compare with Other Districts"
+  },
+  "compare": {
+    "title": "Compare Case Types",
+    "selectCases": "Select cases to compare",
+    "sideBySide": "Side-by-side comparison",
+    "winRateComparison": "Win Rate Comparison",
+    "settlementComparison": "Settlement Comparison",
+    "durationComparison": "Duration Comparison",
+    "addToComparison": "Add to Comparison",
+    "removeFromComparison": "Remove from Comparison",
+    "clearAll": "Clear All",
+    "exportComparison": "Export Comparison"
+  },
+  "trends": {
+    "title": "Federal Filing Trends",
+    "federalTrends": "Federal Filing Trends",
+    "yearOverYear": "Year-over-Year Change",
+    "historicalData": "Historical Data",
+    "trendAnalysis": "Trend Analysis",
+    "caseTypeGrowth": "Case Type Growth Rates",
+    "districtComparison": "District Comparison",
+    "timeRange": "Time Range",
+    "selectPeriod": "Select Time Period"
+  },
+  "odds": {
+    "title": "Odds Analyzer",
+    "oddsAnalyzer": "Odds Analyzer",
+    "yourOdds": "Your Odds",
+    "favorableFactors": "Favorable Factors",
+    "unfavorableFactors": "Unfavorable Factors",
+    "successProbability": "Success Probability",
+    "riskAssessment": "Risk Assessment",
+    "caseStrengthScore": "Case Strength Score",
+    "comparisonToSimilarCases": "Comparison to Similar Cases"
+  },
+  "attorney": {
+    "attorneyMode": "Attorney Mode",
+    "demandPackage": "Demand Package",
+    "caseTimeline": "Case Timeline",
+    "expertWitness": "Expert Witness",
+    "intakeForms": "Intake Forms",
+    "opposingCounsel": "Opposing Counsel Database",
+    "apiAccess": "API Access",
+    "teamManagement": "Team Management",
+    "documentLibrary": "Document Library",
+    "caseAnalytics": "Case Analytics",
+    "courtMonitoring": "Court Monitoring",
+    "billingIntegration": "Billing Integration"
+  },
+  "dashboard": {
+    "myDashboard": "My Dashboard",
+    "savedCases": "Saved Cases",
+    "recentSearches": "Recent Searches",
+    "accountSettings": "Account Settings",
+    "preferences": "Preferences",
+    "notifications": "Notifications",
+    "emailAlerts": "Email Alerts",
+    "activityLog": "Activity Log",
+    "savedReports": "Saved Reports",
+    "analytics": "Analytics Overview"
+  },
+  "legal": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "acceptableUsePolicy": "Acceptable Use Policy",
+    "disclaimers": "Disclaimers",
+    "dataProtection": "Data Protection",
+    "intellectualProperty": "Intellectual Property",
+    "limitations": "Limitations of Liability",
+    "userResponsibilities": "User Responsibilities"
+  },
+  "charts": {
+    "winRate": "Win Rate",
+    "settlement": "Settlement",
+    "duration": "Duration",
+    "cases": "Cases",
+    "median": "Median",
+    "average": "Average",
+    "total": "Total",
+    "districtAverage": "District Average",
+    "judgeProfile": "Judge Profile",
+    "percentile": "Percentile",
+    "dataVisualization": "Data Visualization",
+    "downloadChart": "Download Chart",
+    "shareChart": "Share Chart"
+  },
+  "tools": {
+    "shouldIFile": "Should I File?",
+    "caseStrengthAssessment": "Case Strength Assessment",
+    "statuteOfLimitations": "Statute of Limitations",
+    "lienCalculator": "Lien Calculator",
+    "damagesCalculator": "Damages Calculator",
+    "settlementEstimator": "Settlement Estimator",
+    "timelineEstimator": "Timeline Estimator",
+    "attorneyNeeded": "Do I Need an Attorney?",
+    "costAnalysis": "Cost Analysis"
+  },
+  "glossary": {
+    "legalGlossary": "Legal Glossary",
+    "searchTerms": "Search Terms",
+    "relatedTerms": "Related Terms",
+    "federalContext": "Federal Context",
+    "definitions": "Definitions",
+    "abbreviations": "Abbreviations",
+    "legalAcronyms": "Legal Acronyms",
+    "courtTerminology": "Court Terminology"
+  },
+  "blog": {
+    "blog": "Blog",
+    "readMore": "Read More",
+    "published": "Published",
+    "author": "Author",
+    "relatedPosts": "Related Posts",
+    "latestArticles": "Latest Articles",
+    "searchBlog": "Search Blog",
+    "categories": "Categories",
+    "archives": "Archives",
+    "shareArticle": "Share Article"
+  },
+  "platform": {
+    "about": "About",
+    "methodology": "Methodology",
+    "dataSource": "Data Source",
+    "updateFrequency": "Update Frequency",
+    "coverage": "Coverage",
+    "contactUs": "Contact Us",
+    "support": "Support",
+    "faqs": "FAQs"
+  },
+  "press": {
+    "pressKit": "Press Kit",
+    "newsroom": "Newsroom",
+    "mediaAssets": "Media Assets",
+    "companyInfo": "Company Information",
+    "pressReleases": "Press Releases",
+    "logos": "Logos",
+    "screenshots": "Screenshots",
+    "executiveBios": "Executive Biographies"
   }
 }
