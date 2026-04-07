@@ -4,6 +4,7 @@ import { ArrowRightIcon } from '../../components/ui/Icons';
 import { SITE_URL } from '../../lib/site-config';
 import { getAllJudges } from '../../lib/judges';
 import JudgesExplorer from '../../components/JudgesExplorer';
+import JudgeRadarPreview from '../../components/JudgeRadarPreview';
 
 export const revalidate = 0;
 
@@ -328,6 +329,9 @@ export default function JudgesPage() {
               Notify Me
             </button>
           </div>
+
+          {/* Radar chart preview */}
+          <JudgeRadarPreview />
         </section>
 
         {/* Available Statistics */}
