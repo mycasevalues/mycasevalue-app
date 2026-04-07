@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SITS, OUTCOME_DATA } from '../../../lib/data';
 import { REAL_DATA } from '../../../lib/realdata';
 import { NOS_TRENDS } from '../../../data/nos-trends';
+import { DISPOSITION_DATA } from '../../../data/disposition-data';
 import { SITE_URL } from '../../../lib/site-config';
 import { fmtK } from '../../../lib/format';
 import DataFreshness from '../../../components/DataFreshness';
@@ -22,6 +23,7 @@ import dynamic from 'next/dynamic';
 
 const SettlementViolin = dynamic(() => import('../../../components/charts/SettlementViolin'), { ssr: false });
 const WinRateTrend = dynamic(() => import('../../../components/charts/WinRateTrend'), { ssr: false });
+const DispositionBar = dynamic(() => import('../../../components/charts/DispositionBar'), { ssr: false });
 
 // ISR: revalidate every 90 days (matches FJC quarterly update cycle)
 export const revalidate = 7776000;
@@ -994,6 +996,21 @@ export default async function NOSPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Case Disposition Breakdown */}
+      {DISPOSITION_DATA[code] && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="content-box">
+              <h2 className="section-title">Case Disposition Breakdown</h2>
+              <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
+                Detailed breakdown of case dispositions for {nosInfo.label} cases
+              </p>
+              <DispositionBar data={DISPOSITION_DATA[code]} />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Recovery Range Visualization with Inflation Toggle */}
       {recoveryRange && recoveryRange.md > 0 && (
