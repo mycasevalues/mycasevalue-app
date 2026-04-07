@@ -6,6 +6,7 @@ import GoogleAnalytics from '../components/analytics/GoogleAnalytics';
 import SiteNav from '../components/layout/SiteNav';
 import BetaBanner from '../components/BetaBanner';
 import SiteFooter from '../components/layout/SiteFooter';
+import ReferralCapture from '../components/ReferralCapture';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import dynamic from 'next/dynamic';
@@ -336,6 +337,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px',
           overflow: 'hidden', zIndex: 9999
         }}>Skip to main content</a>
+        <ReferralCapture />
         <ErrorBoundary>
           <AnalyticsProvider>
             <LanguageDetectBanner />
