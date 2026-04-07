@@ -77,15 +77,15 @@ export function getNationalTrends(): YearlyTrend[] {
   let recoverySum2024 = 0;
   let count = 0;
 
-  for (const [, data] of Object.entries(REAL_DATA)) {
-    if (!data || !data.total) continue;
+  Object.entries(REAL_DATA).forEach(([, data]) => {
+    if (!data || !data.total) return;
     totalFilings2024 += data.total || 0;
     winRateSum2024 += data.wr || 0;
     settlementSum2024 += data.sp || 0;
     durationSum2024 += data.mo || 0;
     recoverySum2024 += data.rng?.md || 0;
     count++;
-  }
+  });
 
   const avgWinRate2024 = Math.round(winRateSum2024 / count);
   const avgSettlement2024 = Math.round(settlementSum2024 / count);
@@ -123,21 +123,21 @@ export function getCategoryTrends(): CategoryTrend[] {
   const categoryData: Record<string, { yearly: Record<number, { count: number; wrSum: number; count_cases: number }> }> = {};
 
   // Initialize structure for each category
-  for (const cat of Object.keys(CATEGORY_LABELS)) {
+  Object.keys(CATEGORY_LABELS).forEach((cat) => {
     categoryData[cat] = { yearly: {} };
     for (let y = 2018; y <= 2024; y++) {
       categoryData[cat].yearly[y] = { count: 0, wrSum: 0, count_cases: 0 };
     }
-  }
+  });
 
   // Aggregate data from REAL_DATA yearly_trend
-  for (const [, data] of Object.entries(REAL_DATA)) {
-    if (!data || !data.category) continue;
+  Object.entries(REAL_DATA).forEach(([, data]) => {
+    if (!data || !data.category) return;
     const cat = data.category;
-    if (!categoryData[cat]) continue;
+    if (!categoryData[cat]) return;
 
     if (data.yearly_trend) {
-      for (const [yearStr, yearDataRaw] of Object.entries(data.yearly_trend)) {
+      Object.entries(data.yearly_trend).forEach(([yearStr, yearDataRaw]) => {
         const year = parseInt(yearStr);
         const yearData = yearDataRaw as { total?: number; wr?: number };
         if (year >= 2018 && year <= 2024) {
@@ -145,28 +145,28 @@ export function getCategoryTrends(): CategoryTrend[] {
           categoryData[cat].yearly[year].wrSum += (yearData.wr || 0) * (yearData.total || 1);
           categoryData[cat].yearly[year].count_cases += yearData.total || 0;
         }
-      }
+      });
     }
-  }
+  });
 
   // Build result, filter to top 6 categories by total volume
   const results: CategoryTrend[] = [];
   const categoryTotals: Record<string, number> = {};
 
-  for (const [cat, catData] of Object.entries(categoryData)) {
+  Object.entries(categoryData).forEach(([cat, catData]) => {
     let total = 0;
-    for (const year of Object.keys(catData.yearly)) {
+    Object.keys(catData.yearly).forEach((year) => {
       total += catData.yearly[parseInt(year)].count;
-    }
+    });
     categoryTotals[cat] = total;
-  }
+  });
 
   const topCategories = Object.entries(categoryTotals)
     .sort(([, a], [, b]) => b - a)
     .slice(0, 6)
     .map(([cat]) => cat);
 
-  for (const cat of topCategories) {
+  topCategories.forEach((cat) => {
     const catData = categoryData[cat];
     const years: { year: number; count: number; winRate: number }[] = [];
 
@@ -184,7 +184,7 @@ export function getCategoryTrends(): CategoryTrend[] {
       categoryLabel: CATEGORY_LABELS[cat] || cat,
       years,
     });
-  }
+  });
 
   return results;
 }
@@ -195,8 +195,8 @@ export function getCategoryTrends(): CategoryTrend[] {
 export function getTopCaseTypesByVolume(limit = 15): TopCaseType[] {
   const cases: TopCaseType[] = [];
 
-  for (const [nos, data] of Object.entries(REAL_DATA)) {
-    if (!data || !data.total) continue;
+  Object.entries(REAL_DATA).forEach(([nos, data]) => {
+    if (!data || !data.total) return;
     cases.push({
       nos,
       label: data.label || 'Unknown',
@@ -205,7 +205,7 @@ export function getTopCaseTypesByVolume(limit = 15): TopCaseType[] {
       settlementRate: data.sp || 0,
       medianRecovery: data.rng?.md || 0,
     });
-  }
+  });
 
   return cases.sort((a, b) => b.count - a.count).slice(0, limit);
 }
@@ -219,8 +219,8 @@ export function getWinRateExtremes(): {
 } {
   const cases: WinRateExtreme[] = [];
 
-  for (const [nos, data] of Object.entries(REAL_DATA)) {
-    if (!data || !data.total || data.total < 500) continue;
+  Object.entries(REAL_DATA).forEach(([nos, data]) => {
+    if (!data || !data.total || data.total < 500) return;
     cases.push({
       nos,
       label: data.label || 'Unknown',
@@ -228,7 +228,7 @@ export function getWinRateExtremes(): {
       winRate: data.wr || 0,
       count: data.total,
     });
-  }
+  });
 
   const sorted = cases.sort((a, b) => b.winRate - a.winRate);
 
@@ -252,18 +252,19 @@ export function getCircuitWinRates(): { circuit: string; avgWinRate: number; cas
     '9': 0.18,  '10': 0.045, '11': 0.10, 'dc': 0.02,
   };
 
-  const circuitAgg: Record<string, { wrSum: number; count: number }> = {};
+  const circuitAgg: Record<string, { wrSum: number; count: number; totalCases: number }> = {};
   let grandTotal = 0;
 
-  for (const [, data] of Object.entries(REAL_DATA)) {
-    if (!data?.circuit_rates || !data.total) continue;
+  Object.entries(REAL_DATA).forEach(([, data]) => {
+    if (!data?.circuit_rates || !data.total) return;
     grandTotal += data.total;
-    for (const [circuit, wr] of Object.entries(data.circuit_rates)) {
-      if (!circuitAgg[circuit]) circuitAgg[circuit] = { wrSum: 0, count: 0 };
+    Object.entries(data.circuit_rates).forEach(([circuit, wr]) => {
+      if (!circuitAgg[circuit]) circuitAgg[circuit] = { wrSum: 0, count: 0, totalCases: 0 };
       circuitAgg[circuit].wrSum += (wr as number);
       circuitAgg[circuit].count += 1;
-    }
-  }
+      circuitAgg[circuit].totalCases += data.total;
+    });
+  });
 
   const CIRCUIT_NAMES: Record<string, string> = {
     '1': '1st Circuit', '2': '2nd Circuit', '3': '3rd Circuit', '4': '4th Circuit',
@@ -275,7 +276,7 @@ export function getCircuitWinRates(): { circuit: string; avgWinRate: number; cas
     .map(([circuit, agg]) => ({
       circuit: CIRCUIT_NAMES[circuit] || circuit,
       avgWinRate: Math.round(agg.wrSum / agg.count * 10) / 10,
-      caseCount: Math.round(grandTotal * (CIRCUIT_WEIGHT[circuit] || 0.05)),
+      caseCount: Math.round(agg.totalCases * (CIRCUIT_WEIGHT[circuit] || 0.05)),
     }))
     .sort((a, b) => b.avgWinRate - a.avgWinRate);
 }
@@ -287,14 +288,14 @@ export function getOutcomeBreakdown(): { outcome: string; percentage: number; co
   let totalCases = 0;
   const outcomeAgg: Record<string, { total: number; color: string }> = {};
 
-  for (const [, data] of Object.entries(REAL_DATA)) {
-    if (!data?.ends || !data.total) continue;
-    for (const end of data.ends) {
+  Object.entries(REAL_DATA).forEach(([, data]) => {
+    if (!data?.ends || !data.total) return;
+    data.ends.forEach((end) => {
       if (!outcomeAgg[end.l]) outcomeAgg[end.l] = { total: 0, color: end.c };
       outcomeAgg[end.l].total += end.n || 0;
-    }
+    });
     totalCases += data.total;
-  }
+  });
 
   return Object.entries(outcomeAgg)
     .map(([outcome, agg]) => ({
@@ -312,14 +313,14 @@ export function getOutcomeBreakdown(): { outcome: string; percentage: number; co
 export function getSettlementDurations(): { category: string; settlementMonths: number; trialMonths: number; avgMonths: number }[] {
   const catDurations: Record<string, { moSum: number; count: number; spSum: number }> = {};
 
-  for (const [, data] of Object.entries(REAL_DATA)) {
-    if (!data?.category || !data.mo) continue;
+  Object.entries(REAL_DATA).forEach(([, data]) => {
+    if (!data?.category || !data.mo) return;
     const cat = CATEGORY_LABELS[data.category] || data.category;
     if (!catDurations[cat]) catDurations[cat] = { moSum: 0, count: 0, spSum: 0 };
     catDurations[cat].moSum += data.mo;
     catDurations[cat].count += 1;
     catDurations[cat].spSum += data.sp || 0;
-  }
+  });
 
   return Object.entries(catDurations)
     .map(([category, agg]) => {
