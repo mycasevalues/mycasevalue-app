@@ -1,0 +1,373 @@
+/**
+ * Print Stylesheet — MyCaseValue
+ * Optimized for PDF export and physical printing
+ * - Clean black/white layout
+ * - Hides interactive elements (nav, footer, buttons)
+ * - Shows essential content (metrics, tables, disclaimer)
+ * - Smart page breaks between major sections
+ */
+
+@media print {
+  /* Hide navigation and interactive elements */
+  nav,
+  header,
+  footer,
+  [class*='Navbar'],
+  [class*='SidebarNav'],
+  [class*='BetaBanner'],
+  [class*='CookieConsent'],
+  .skip-link,
+  .breadcrumbs,
+  button:not(.no-print),
+  a[href]:after,
+  [role='navigation'],
+  [aria-label*='navigation' i],
+  [aria-label*='menu' i],
+  .print-hide,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Page setup */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background: #FFFFFF;
+  }
+
+  body {
+    font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #0f0f0f;
+  }
+
+  /* Page breaks between major sections */
+  main > section,
+  main > [role='region'],
+  main > div[style*='padding'],
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  main > section:first-child,
+  main > [role='region']:first-child,
+  main > div[style*='padding']:first-child {
+    page-break-before: avoid;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  /* Keep elements together */
+  table,
+  .metric-card,
+  [class*='Card'],
+  [class*='Block'] {
+    page-break-inside: avoid;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    color: #0f0f0f;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    margin: 12pt 0 6pt 0;
+  }
+
+  h1 {
+    font-size: 24pt;
+    margin: 0 0 12pt 0;
+    border-bottom: 2px solid #0f0f0f;
+    padding-bottom: 6pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-top: 12pt;
+  }
+
+  h3 {
+    font-size: 13pt;
+  }
+
+  p {
+    margin: 6pt 0;
+  }
+
+  /* Links: show URL in parentheses */
+  a[href]:after {
+    content: ' (' attr(href) ')';
+    color: #6B7280;
+    font-size: 9pt;
+  }
+
+  /* Exclude certain links from URL display */
+  a[href='#']:after,
+  a[href^='#']:after,
+  a[class*='no-print']:after,
+  button a:after {
+    content: '';
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12pt 0;
+  }
+
+  thead {
+    display: table-header-group; /* Repeat header on each page */
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+
+  th {
+    background-color: #F3F4F6 !important;
+    color: #0f0f0f !important;
+    border: 1px solid #D1D5DB !important;
+    padding: 6pt 8pt !important;
+    text-align: left;
+    font-weight: 600;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  td {
+    border: 1px solid #D1D5DB !important;
+    padding: 6pt 8pt !important;
+    color: #0f0f0f !important;
+  }
+
+  /* Striped rows */
+  tbody tr:nth-child(odd) {
+    background-color: #F9FAFB !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Metric cards / status badges */
+  [style*='background: #0A66C2'],
+  [style*='backgroundColor: #0A66C2'],
+  [style*='background: #E8F3EB'],
+  [style*='backgroundColor: #E8F3EB'],
+  [style*='background: #EDF3FB'],
+  [style*='backgroundColor: #EDF3FB'],
+  [style*='background: #FDF4EC'],
+  [style*='backgroundColor: #FDF4EC'],
+  .badge,
+  .status-badge,
+  [class*='Badge'] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: inherit !important;
+  }
+
+  /* Remove backgrounds from interactive elements */
+  .interactive,
+  [role='button'],
+  [role='tab'],
+  [role='menuitem'],
+  input,
+  textarea,
+  select {
+    background-color: #FFFFFF !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Show form labels and values without inputs */
+  input[type='text'],
+  input[type='email'],
+  input[type='search'],
+  textarea,
+  select {
+    border: 1px solid #0f0f0f !important;
+    padding: 4pt 6pt !important;
+    font-size: 10pt !important;
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    margin-right: 4pt;
+  }
+
+  /* Disclaimer / legal text */
+  [class*='disclaimer'],
+  [class*='Disclaimer'],
+  .footnote,
+  .legal-notice,
+  [role='note'] {
+    font-size: 9pt;
+    color: #6B7280;
+    margin-top: 12pt;
+    padding-top: 12pt;
+    border-top: 1px solid #D1D5DB;
+    page-break-inside: avoid;
+  }
+
+  /* Settlement range visualization */
+  [class*='range'],
+  [class*='Range'],
+  [class*='settlement'],
+  [class*='Settlement'] {
+    page-break-inside: avoid;
+  }
+
+  /* Top districts section */
+  [class*='TopDistrict'],
+  [class*='district-list'],
+  [class*='districts-table'] {
+    page-break-inside: avoid;
+  }
+
+  /* Margins and spacing */
+  main,
+  article,
+  .container {
+    margin: 0;
+    padding: 0.5in;
+  }
+
+  /* Print-specific spacing */
+  section,
+  [role='region'],
+  .section {
+    margin-bottom: 12pt;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    margin: 6pt 0;
+    padding-left: 20pt;
+  }
+
+  li {
+    margin: 3pt 0;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 2pt solid #D1D5DB;
+    margin-left: 0;
+    padding-left: 12pt;
+    color: #6B7280;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+  }
+
+  /* Code blocks */
+  code,
+  pre {
+    font-family: var(--font-mono), 'Courier New', monospace;
+    font-size: 10pt;
+    background-color: #F3F4F6 !important;
+    color: #0f0f0f !important;
+    padding: 4pt 6pt;
+    border-radius: 2px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Avoid orphans and widows */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Shadows and effects removed */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* SVG optimization */
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Print footer with page numbers */
+  @page {
+    margin: 0.75in;
+    @bottom-center {
+      content: 'Page ' counter(page) ' of ' counter(pages);
+      font-size: 10pt;
+      color: #6B7280;
+    }
+    @bottom-right {
+      content: string(title);
+      font-size: 9pt;
+      color: #9CA3AF;
+    }
+  }
+
+  /* Accessibility in print */
+  .sr-only,
+  [aria-hidden='false'] {
+    display: block !important;
+  }
+
+  [aria-hidden='true'] {
+    display: none !important;
+  }
+}
+
+/* Print-specific utility classes */
+.print-show {
+  display: none;
+}
+
+.print-block {
+  display: none;
+}
+
+.print-inline {
+  display: none;
+}
+
+@media print {
+  .print-show,
+  .print-block {
+    display: block !important;
+  }
+
+  .print-inline {
+    display: inline !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
