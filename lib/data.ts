@@ -112,7 +112,7 @@ export const SITS = [
     { label: "Medical billing dispute", nos: "190", d: "medical billing" },
     { label: "Pharmacy error", nos: "362", d: "pharmacy error" },
   ]},
-  { id: "family-law", label: "Family", sub: "Divorce, custody, support, domestic violence", color: "#EC4899", icon: "heart", q: "What is the issue?", dm: "mid", opts: [
+  { id: "family-law", label: "Family Law", sub: "Divorce, custody, support, domestic violence", color: "#EC4899", icon: "heart", q: "What is the issue?", dm: "mid", opts: [
     { label: "Divorce / marital property", nos: "370", d: "divorce" },
     { label: "Child custody / visitation", nos: "370", d: "child custody" },
     { label: "Child support enforcement", nos: "370", d: "child support" },
