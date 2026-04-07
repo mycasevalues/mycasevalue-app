@@ -58,6 +58,7 @@ const FOOTER_COLUMNS = [
     links: [
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
+      { label: 'Press Kit', href: '/press' },
       { label: 'Disclaimer', href: '/disclaimer' },
       { label: 'Privacy policy', href: '/privacy' },
       { label: 'Terms of service', href: '/terms' },
