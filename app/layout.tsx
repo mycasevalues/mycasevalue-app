@@ -63,7 +63,7 @@ const WebVitalsReporter = dynamic(() => import('../components/analytics/WebVital
 
 export const metadata = {
   title: {
-    default: 'MyCaseValue — Federal Court Settlement Data & Win Rates',
+    default: 'MyCaseValue — Federal Court Analytics & Settlement Data',
     template: '%s | MyCaseValue',
   },
   description: 'See real outcomes from 5.1M+ federal court cases. Research win rates, settlement data, timelines, and recovery ranges for 84 case types. Free, private, and instant.',
