@@ -1,9 +1,10 @@
 /**
  * API route for judge directory queries
  * Handles filtering, sorting, and pagination for the judge directory client
+ * Also supports finding judges favorable to specific case types via nos_code parameter
  */
 
-import { getJudges } from '@/lib/judge-data-service';
+import { getJudges, getTopJudgesForNOS } from '@/lib/judge-data-service';
 import { JudgeWithStats } from '@/lib/supabase-judges';
 
 export async function GET(request: Request) {
@@ -17,7 +18,28 @@ export async function GET(request: Request) {
     const sortParam = searchParams.get('sort') || 'name';
     const page = parseInt(searchParams.get('page') || '1', 10);
     const limit = parseInt(searchParams.get('limit') || '24', 10);
+    const nosCode = searchParams.get('nos_code');
+    const minCases = parseInt(searchParams.get('min_cases') || '0', 10);
 
+    // Check if this is a "find judges by NOS code" query
+    if (nosCode) {
+      const nosCodeNum = parseInt(nosCode, 10);
+      const judges = await getTopJudgesForNOS(
+        nosCodeNum,
+        district || undefined,
+        minCases > 0 ? minCases : undefined,
+        100 // Return up to 100 judges for this query
+      );
+
+      return Response.json({
+        judges,
+        total: judges.length,
+        page: 1,
+        limit: 100,
+      });
+    }
+
+    // Standard directory query
     // Map sort parameter to service parameters
     let sortBy: 'name' | 'cases' | 'plaintiff_rate' = 'name';
     let sortOrder: 'asc' | 'desc' = 'asc';

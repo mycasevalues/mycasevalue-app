@@ -3,6 +3,7 @@
 /**
  * Judge Directory Client Component
  * Interactive search, filtering, and pagination for the judge directory
+ * Includes tabbed interface for judge directory and case type finder
  */
 
 import { useState, useEffect } from 'react';
@@ -10,6 +11,7 @@ import Link from 'next/link';
 import { JudgeWithStats } from '@/lib/supabase-judges';
 import { getWinRateColor } from '@/lib/color-scale';
 import { getPartyColor, getPartyLabel } from '@/lib/supabase-judges';
+import { SITS } from '@/lib/data';
 
 const CIRCUITS = [
   { value: '', label: 'All Circuits' },
@@ -101,9 +103,42 @@ interface JudgeDirectoryState {
   error: string | null;
 }
 
+interface FindByNOSState {
+  judges: JudgeWithStats[];
+  total: number;
+  loading: boolean;
+  error: string | null;
+}
+
 const JUDGES_PER_PAGE = 24;
 
+/**
+ * Extract all unique NOS codes from SITS data with labels
+ */
+function getNosCodes(): Array<{ code: string; label: string }> {
+  const nosMap = new Map<string, string>();
+
+  SITS.forEach((category) => {
+    category.opts.forEach((opt) => {
+      if (!nosMap.has(opt.nos)) {
+        nosMap.set(opt.nos, opt.label);
+      }
+    });
+  });
+
+  const result: Array<{ code: string; label: string }> = Array.from(nosMap).map(([code, label]) => ({
+    code,
+    label,
+  }));
+
+  result.sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
+  return result;
+}
+
 export default function JudgeDirectoryClient() {
+  const [activeTab, setActiveTab] = useState<'directory' | 'by-case-type'>('directory');
+
+  // Directory tab state
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCircuit, setSelectedCircuit] = useState('');
   const [selectedDistrict, setSelectedDistrict] = useState('');
@@ -117,7 +152,18 @@ export default function JudgeDirectoryClient() {
     error: null,
   });
 
-  // Fetch judges from API
+  // Find by case type state
+  const [selectedNOS, setSelectedNOS] = useState('');
+  const [selectedNOSDistrict, setSelectedNOSDistrict] = useState('');
+  const [minCasesFilter, setMinCasesFilter] = useState('10');
+  const [byNOSState, setByNOSState] = useState<FindByNOSState>({
+    judges: [],
+    total: 0,
+    loading: false,
+    error: null,
+  });
+
+  // Fetch judges from API (directory tab)
   useEffect(() => {
     const fetchJudges = async () => {
       setState(prev => ({ ...prev, loading: true, error: null }));
@@ -151,8 +197,50 @@ export default function JudgeDirectoryClient() {
       }
     };
 
-    fetchJudges();
-  }, [searchQuery, selectedCircuit, selectedDistrict, selectedPresident, sortBy, state.currentPage]);
+    if (activeTab === 'directory') {
+      fetchJudges();
+    }
+  }, [searchQuery, selectedCircuit, selectedDistrict, selectedPresident, sortBy, state.currentPage, activeTab]);
+
+  // Fetch judges by NOS code (find by case type tab)
+  useEffect(() => {
+    const fetchJudgesByNOS = async () => {
+      if (!selectedNOS) {
+        setByNOSState({ judges: [], total: 0, loading: false, error: null });
+        return;
+      }
+
+      setByNOSState(prev => ({ ...prev, loading: true, error: null }));
+
+      try {
+        const params = new URLSearchParams();
+        params.append('nos_code', selectedNOS);
+        if (selectedNOSDistrict) params.append('district', selectedNOSDistrict);
+        params.append('min_cases', minCasesFilter);
+
+        const response = await fetch(`/api/judges?${params.toString()}`);
+        if (!response.ok) throw new Error('Failed to fetch judges');
+
+        const data = await response.json();
+        setByNOSState(prev => ({
+          ...prev,
+          judges: data.judges,
+          total: data.total,
+          loading: false,
+        }));
+      } catch (err) {
+        setByNOSState(prev => ({
+          ...prev,
+          error: err instanceof Error ? err.message : 'Unknown error',
+          loading: false,
+        }));
+      }
+    };
+
+    if (activeTab === 'by-case-type') {
+      fetchJudgesByNOS();
+    }
+  }, [selectedNOS, selectedNOSDistrict, minCasesFilter, activeTab]);
 
   // Handle circuit change
   const handleCircuitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -168,14 +256,70 @@ export default function JudgeDirectoryClient() {
   };
 
   // Get available districts for selected circuit
-  const availableDistricts = selectedCircuit && DISTRICTS_BY_CIRCUIT[selectedCircuit]
-    ? [{ value: '', label: 'All Districts' }, ...DISTRICTS_BY_CIRCUIT[selectedCircuit]]
+  const availableDistricts = selectedCircuit && DISTRICTS_BY_CIRCUIT[selectedCircuit as keyof typeof DISTRICTS_BY_CIRCUIT]
+    ? [{ value: '', label: 'All Districts' }, ...DISTRICTS_BY_CIRCUIT[selectedCircuit as keyof typeof DISTRICTS_BY_CIRCUIT]]
     : [{ value: '', label: 'All Districts' }];
+
+  // Get all NOS codes with labels
+  const nosCodes = getNosCodes();
 
   const totalPages = Math.ceil(state.total / JUDGES_PER_PAGE);
 
   return (
     <div>
+      {/* Tabbed Interface */}
+      <div style={{
+        display: 'flex',
+        gap: 0,
+        borderBottom: '1px solid #E5E7EB',
+        marginBottom: 32,
+      }}>
+        <button
+          onClick={() => {
+            setActiveTab('directory');
+            setState(prev => ({ ...prev, currentPage: 1 }));
+          }}
+          style={{
+            padding: '16px 24px',
+            fontSize: 14,
+            fontWeight: 600,
+            fontFamily: 'var(--font-body)',
+            color: activeTab === 'directory' ? '#0A66C2' : '#666666',
+            background: activeTab === 'directory' ? '#FFFFFF' : '#F7F8FA',
+            border: 'none',
+            borderBottom: activeTab === 'directory' ? '3px solid #0A66C2' : '3px solid transparent',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+          }}
+        >
+          Judge Directory
+        </button>
+
+        <button
+          onClick={() => {
+            setActiveTab('by-case-type');
+            setSelectedNOS('');
+          }}
+          style={{
+            padding: '16px 24px',
+            fontSize: 14,
+            fontWeight: 600,
+            fontFamily: 'var(--font-body)',
+            color: activeTab === 'by-case-type' ? '#0A66C2' : '#666666',
+            background: activeTab === 'by-case-type' ? '#FFFFFF' : '#F7F8FA',
+            border: 'none',
+            borderBottom: activeTab === 'by-case-type' ? '3px solid #0A66C2' : '3px solid transparent',
+            cursor: 'pointer',
+            transition: 'all 0.2s ease',
+          }}
+        >
+          Find Judges by Case Type
+        </button>
+      </div>
+
+      {/* TAB 1: JUDGE DIRECTORY */}
+      {activeTab === 'directory' && (
+      <div>
       {/* Search and Filter Section */}
       <div style={{
         padding: '24px',
@@ -634,6 +778,397 @@ export default function JudgeDirectoryClient() {
             Next
           </button>
         </div>
+      )}
+      </div>
+      )}
+
+      {/* TAB 2: FIND JUDGES BY CASE TYPE */}
+      {activeTab === 'by-case-type' && (
+      <div>
+        {/* Case Type Filter Section */}
+        <div style={{
+          padding: '24px',
+          borderRadius: 2,
+          border: '1px solid #E5E7EB',
+          background: '#FFFFFF',
+          marginBottom: 32,
+        }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: 16,
+          }}>
+            {/* Case Type Dropdown */}
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: 12,
+                fontWeight: 600,
+                color: '#0f0f0f',
+                marginBottom: 8,
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                fontFamily: 'var(--font-body)',
+              }}>
+                Case Type
+              </label>
+              <select
+                value={selectedNOS}
+                onChange={(e) => {
+                  setSelectedNOS(e.target.value);
+                  setSelectedNOSDistrict('');
+                }}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  borderRadius: 2,
+                  border: '1px solid #E5E7EB',
+                  fontSize: 14,
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                <option value="">Select a case type...</option>
+                {nosCodes.map(nos => (
+                  <option key={nos.code} value={nos.code}>
+                    {nos.label} (NOS {nos.code})
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* District Filter */}
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: 12,
+                fontWeight: 600,
+                color: '#0f0f0f',
+                marginBottom: 8,
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                fontFamily: 'var(--font-body)',
+              }}>
+                District (Optional)
+              </label>
+              <select
+                value={selectedNOSDistrict}
+                onChange={(e) => setSelectedNOSDistrict(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  borderRadius: 2,
+                  border: '1px solid #E5E7EB',
+                  fontSize: 14,
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                <option value="">All districts</option>
+                {/* Simple list of all available districts from DISTRICTS_BY_CIRCUIT */}
+                {Object.entries(DISTRICTS_BY_CIRCUIT).map(([circuit, districts]) => (
+                  districts.map(district => (
+                    <option key={district.value} value={district.value}>
+                      {district.label}
+                    </option>
+                  ))
+                ))}
+              </select>
+            </div>
+
+            {/* Minimum Cases Filter */}
+            <div>
+              <label style={{
+                display: 'block',
+                fontSize: 12,
+                fontWeight: 600,
+                color: '#0f0f0f',
+                marginBottom: 8,
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                fontFamily: 'var(--font-body)',
+              }}>
+                Minimum Cases Handled
+              </label>
+              <select
+                value={minCasesFilter}
+                onChange={(e) => setMinCasesFilter(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  borderRadius: 2,
+                  border: '1px solid #E5E7EB',
+                  fontSize: 14,
+                  fontFamily: 'var(--font-body)',
+                }}
+              >
+                <option value="10">10+ cases</option>
+                <option value="25">25+ cases</option>
+                <option value="50">50+ cases</option>
+                <option value="100">100+ cases</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* Results Header */}
+        {selectedNOS && (
+          <div style={{
+            fontSize: 14,
+            fontFamily: 'var(--font-body)',
+            color: '#4B5563',
+            marginBottom: 20,
+          }}>
+            Showing {byNOSState.judges.length} judges
+          </div>
+        )}
+
+        {/* Loading State */}
+        {byNOSState.loading && (
+          <div style={{
+            padding: '48px 24px',
+            textAlign: 'center',
+            color: '#4B5563',
+            fontFamily: 'var(--font-body)',
+          }}>
+            Loading judges...
+          </div>
+        )}
+
+        {/* Error State */}
+        {byNOSState.error && (
+          <div style={{
+            padding: '24px',
+            borderRadius: 2,
+            border: '1px solid #CC1016',
+            background: '#FAEAE9',
+            color: '#8C1515',
+            fontFamily: 'var(--font-body)',
+            marginBottom: 24,
+          }}>
+            {byNOSState.error}
+          </div>
+        )}
+
+        {/* Results List */}
+        {!byNOSState.loading && selectedNOS && byNOSState.judges.length > 0 && (
+          <div style={{ marginBottom: 32 }}>
+            {byNOSState.judges.map((judge, idx) => {
+              const judgeStats = judge.statistics?.find(s => s.nos_code === parseInt(selectedNOS, 10));
+              const winRate = judgeStats?.plaintiff_win_rate ?? 0;
+              const winRateColor = getWinRateColor(winRate);
+              const totalCases = judgeStats?.total_cases ?? 0;
+              const avgDuration = judgeStats?.avg_duration_months ?? 0;
+
+              return (
+                <div
+                  key={judge.id}
+                  style={{
+                    padding: '20px',
+                    borderRadius: 2,
+                    border: '1px solid #E5E7EB',
+                    background: '#FFFFFF',
+                    marginBottom: 16,
+                    display: 'grid',
+                    gridTemplateColumns: 'auto 1fr auto auto auto auto auto auto',
+                    gap: 20,
+                    alignItems: 'center',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    const elem = e.currentTarget;
+                    elem.style.borderColor = '#0A66C2';
+                    elem.style.boxShadow = '0 4px 12px rgba(10, 102, 194, 0.15)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const elem = e.currentTarget;
+                    elem.style.borderColor = '#E5E7EB';
+                    elem.style.boxShadow = 'none';
+                  }}
+                >
+                  {/* Rank */}
+                  <div style={{
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: '#0A66C2',
+                    fontFamily: 'var(--font-mono)',
+                  }}>
+                    #{idx + 1}
+                  </div>
+
+                  {/* Judge Name and District */}
+                  <div>
+                    <h3 style={{
+                      fontSize: 15,
+                      fontWeight: 600,
+                      color: '#0f0f0f',
+                      margin: '0 0 4px 0',
+                      fontFamily: 'var(--font-display)',
+                    }}>
+                      {judge.full_name}
+                    </h3>
+                    <p style={{
+                      fontSize: 12,
+                      fontWeight: 400,
+                      color: '#666666',
+                      margin: 0,
+                      fontFamily: 'var(--font-body)',
+                    }}>
+                      {judge.district_id || 'District not specified'}
+                    </p>
+                  </div>
+
+                  {/* Win Rate */}
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 4,
+                  }}>
+                    <div style={{
+                      padding: '8px 12px',
+                      borderRadius: 2,
+                      background: winRateColor.bg,
+                      border: `1px solid ${winRateColor.border}`,
+                      textAlign: 'center',
+                    }}>
+                      <div style={{
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: winRateColor.text,
+                        fontFamily: 'var(--font-body)',
+                      }}>
+                        {winRate.toFixed(1)}%
+                      </div>
+                      <div style={{
+                        fontSize: 10,
+                        color: winRateColor.text,
+                        fontFamily: 'var(--font-body)',
+                        marginTop: 2,
+                      }}>
+                        {winRateColor.label}
+                      </div>
+                    </div>
+                    <div style={{
+                      fontSize: 10,
+                      color: '#999999',
+                      fontFamily: 'var(--font-body)',
+                      textAlign: 'center',
+                    }}>
+                      Plaintiff
+                    </div>
+                  </div>
+
+                  {/* Total Cases */}
+                  <div style={{
+                    textAlign: 'center',
+                  }}>
+                    <div style={{
+                      fontSize: 14,
+                      fontWeight: 600,
+                      color: '#0f0f0f',
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      {totalCases}
+                    </div>
+                    <div style={{
+                      fontSize: 10,
+                      color: '#999999',
+                      fontFamily: 'var(--font-body)',
+                      marginTop: 2,
+                    }}>
+                      Cases
+                    </div>
+                  </div>
+
+                  {/* Average Duration */}
+                  <div style={{
+                    textAlign: 'center',
+                  }}>
+                    <div style={{
+                      fontSize: 14,
+                      fontWeight: 600,
+                      color: '#0f0f0f',
+                      fontFamily: 'var(--font-mono)',
+                    }}>
+                      {avgDuration.toFixed(1)}
+                    </div>
+                    <div style={{
+                      fontSize: 10,
+                      color: '#999999',
+                      fontFamily: 'var(--font-body)',
+                      marginTop: 2,
+                    }}>
+                      months
+                    </div>
+                  </div>
+
+                  {/* View Profile Link */}
+                  <Link href={`/judges/${judge.id}`} style={{
+                    padding: '10px 16px',
+                    textAlign: 'center',
+                    borderRadius: 2,
+                    border: '1px solid #0A66C2',
+                    color: '#0A66C2',
+                    textDecoration: 'none',
+                    fontSize: 13,
+                    fontWeight: 600,
+                    fontFamily: 'var(--font-body)',
+                    background: '#FFFFFF',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    whiteSpace: 'nowrap',
+                  }}
+                  onMouseEnter={(e) => {
+                    const elem = e.currentTarget as HTMLAnchorElement;
+                    elem.style.background = '#0A66C2';
+                    elem.style.color = '#FFFFFF';
+                  }}
+                  onMouseLeave={(e) => {
+                    const elem = e.currentTarget as HTMLAnchorElement;
+                    elem.style.background = '#FFFFFF';
+                    elem.style.color = '#0A66C2';
+                  }}
+                  >
+                    View Profile
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Empty State */}
+        {!byNOSState.loading && selectedNOS && byNOSState.judges.length === 0 && !byNOSState.error && (
+          <div style={{
+            padding: '48px 24px',
+            textAlign: 'center',
+            color: '#4B5563',
+            fontFamily: 'var(--font-body)',
+          }}>
+            No judges found matching your criteria. Try adjusting your filters.
+          </div>
+        )}
+
+        {/* Disclaimer */}
+        {selectedNOS && (
+          <div style={{
+            padding: '24px',
+            borderRadius: 2,
+            border: '1px solid #E5E7EB',
+            background: '#F7F8FA',
+            marginTop: 32,
+          }}>
+            <p style={{
+              fontSize: 12,
+              lineHeight: 1.6,
+              color: '#4B5563',
+              fontFamily: 'var(--font-body)',
+              margin: 0,
+            }}>
+              Statistical data from public federal court records. This ranking does not predict future rulings and should not be used as the sole basis for any litigation decision. Always consult a licensed attorney.
+            </p>
+          </div>
+        )}
+      </div>
       )}
     </div>
   );
