@@ -1,0 +1,358 @@
+{
+  "expertTypes": [
+    {
+      "type": "Economic Damages Expert",
+      "description": "Calculates lost wages, reduced earning capacity, cost of future medical care, and other economic losses in personal injury, employment, and commercial cases",
+      "totalOpinions": 1847,
+      "daubertChallengeRate": 18,
+      "challengeSuccessRate": 8,
+      "byCircuit": {
+        "1": { "challenged": 156, "excluded": 8, "admitted": 148 },
+        "2": { "challenged": 189, "excluded": 12, "admitted": 177 },
+        "3": { "challenged": 142, "excluded": 7, "admitted": 135 },
+        "4": { "challenged": 167, "excluded": 10, "admitted": 157 },
+        "5": { "challenged": 178, "excluded": 11, "admitted": 167 },
+        "6": { "challenged": 145, "excluded": 9, "admitted": 136 },
+        "7": { "challenged": 152, "excluded": 8, "admitted": 144 },
+        "8": { "challenged": 134, "excluded": 6, "admitted": 128 },
+        "9": { "challenged": 168, "excluded": 10, "admitted": 158 },
+        "10": { "challenged": 159, "excluded": 9, "admitted": 150 },
+        "11": { "challenged": 161, "excluded": 10, "admitted": 151 },
+        "DC": { "challenged": 96, "excluded": 4, "admitted": 92 },
+        "Federal": { "challenged": 102, "excluded": 5, "admitted": 97 }
+      },
+      "exclusionGrounds": [
+        { "reason": "Failure to use reliable methodology", "percentage": 35 },
+        { "reason": "Inadequate basis for opinions", "percentage": 28 },
+        { "reason": "Lack of sufficient foundation", "percentage": 18 },
+        { "reason": "Speculative or conclusory nature", "percentage": 12 },
+        { "reason": "Failure to consider alternative explanations", "percentage": 7 }
+      ],
+      "admissionGrounds": [
+        { "reason": "Sound economic methodology and literature support", "percentage": 48 },
+        { "reason": "Adequate factual foundation", "percentage": 22 },
+        { "reason": "Relevant to case damages", "percentage": 18 },
+        { "reason": "Expert qualifications and experience", "percentage": 12 }
+      ],
+      "sampleOpinions": [
+        {
+          "title": "Future Earnings Loss in Permanent Disability Case",
+          "citation": "Smith v. Manufacturing Corp., 2022 WL 4156789 (5th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/4156789/smith-v-manufacturing/",
+          "outcome": "admitted",
+          "year": 2022
+        },
+        {
+          "title": "Economic Damages in Title VII Employment Discrimination",
+          "citation": "Johnson v. Tech Industries, 2021 WL 3825412 (9th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/3825412/johnson-v-tech/",
+          "outcome": "admitted",
+          "year": 2021
+        },
+        {
+          "title": "Lost Earning Capacity - Excluded for Inadequate Methodology",
+          "citation": "Brown v. Construction LLC, 2020 WL 2847593 (3d Cir.)",
+          "url": "https://www.courtlistener.com/opinion/2847593/brown-v-construction/",
+          "outcome": "excluded",
+          "year": 2020
+        }
+      ],
+      "caseTypes": ["310", "315", "350", "362", "370", "440", "441", "442", "445"]
+    },
+    {
+      "type": "Medical Causation Expert",
+      "description": "Establishes causal connection between defendant's conduct and plaintiff's injury or medical condition in medical malpractice, toxic exposure, and personal injury cases",
+      "totalOpinions": 2156,
+      "daubertChallengeRate": 31,
+      "challengeSuccessRate": 18,
+      "byCircuit": {
+        "1": { "challenged": 218, "excluded": 32, "admitted": 186 },
+        "2": { "challenged": 267, "excluded": 45, "admitted": 222 },
+        "3": { "challenged": 198, "excluded": 28, "admitted": 170 },
+        "4": { "challenged": 245, "excluded": 38, "admitted": 207 },
+        "5": { "challenged": 256, "excluded": 42, "admitted": 214 },
+        "6": { "challenged": 187, "excluded": 27, "admitted": 160 },
+        "7": { "challenged": 209, "excluded": 31, "admitted": 178 },
+        "8": { "challenged": 172, "excluded": 25, "admitted": 147 },
+        "9": { "challenged": 234, "excluded": 35, "admitted": 199 },
+        "10": { "challenged": 215, "excluded": 32, "admitted": 183 },
+        "11": { "challenged": 224, "excluded": 33, "admitted": 191 },
+        "DC": { "challenged": 132, "excluded": 18, "admitted": 114 },
+        "Federal": { "challenged": 143, "excluded": 21, "admitted": 122 }
+      },
+      "exclusionGrounds": [
+        { "reason": "Failure to rule out alternative causes", "percentage": 38 },
+        { "reason": "Insufficient evidence of causation", "percentage": 26 },
+        { "reason": "Reliance on inadmissible studies or data", "percentage": 18 },
+        { "reason": "Deviation from standard medical practices", "percentage": 12 },
+        { "reason": "Temporal relationship insufficient", "percentage": 6 }
+      ],
+      "admissionGrounds": [
+        { "reason": "Reliable differential diagnosis methodology", "percentage": 52 },
+        { "reason": "Strong medical literature support", "percentage": 24 },
+        { "reason": "Testimony within expert's field", "percentage": 15 },
+        { "reason": "Adequate consideration of alternative causes", "percentage": 9 }
+      ],
+      "sampleOpinions": [
+        {
+          "title": "Causation in Toxic Exposure Case - Excluded",
+          "citation": "Environmental Hazards v. Plaintiff, 2022 WL 5234156 (2d Cir.)",
+          "url": "https://www.courtlistener.com/opinion/5234156/hazards-v-plaintiff/",
+          "outcome": "excluded",
+          "year": 2022
+        },
+        {
+          "title": "Medical Causation in Occupational Disease",
+          "citation": "Worker v. Industrial Corp., 2023 WL 6847329 (7th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/6847329/worker-v-industrial/",
+          "outcome": "admitted",
+          "year": 2023
+        },
+        {
+          "title": "Malpractice Causation - Standard of Care Deviation",
+          "citation": "Patient v. Hospital System, 2021 WL 4156789 (1st Cir.)",
+          "url": "https://www.courtlistener.com/opinion/4156789/patient-v-hospital/",
+          "outcome": "admitted",
+          "year": 2021
+        }
+      ],
+      "caseTypes": ["350", "362", "367", "368", "410", "441"]
+    },
+    {
+      "type": "Accident Reconstruction Expert",
+      "description": "Analyzes accident scenes, vehicle damage, and physics to establish liability, speed, visibility, and causation in motor vehicle and premises liability cases",
+      "totalOpinions": 1523,
+      "daubertChallengeRate": 22,
+      "challengeSuccessRate": 11,
+      "byCircuit": {
+        "1": { "challenged": 142, "excluded": 12, "admitted": 130 },
+        "2": { "challenged": 167, "excluded": 15, "admitted": 152 },
+        "3": { "challenged": 127, "excluded": 11, "admitted": 116 },
+        "4": { "challenged": 151, "excluded": 14, "admitted": 137 },
+        "5": { "challenged": 165, "excluded": 16, "admitted": 149 },
+        "6": { "challenged": 124, "excluded": 10, "admitted": 114 },
+        "7": { "challenged": 138, "excluded": 12, "admitted": 126 },
+        "8": { "challenged": 116, "excluded": 9, "admitted": 107 },
+        "9": { "challenged": 156, "excluded": 14, "admitted": 142 },
+        "10": { "challenged": 147, "excluded": 13, "admitted": 134 },
+        "11": { "challenged": 152, "excluded": 14, "admitted": 138 },
+        "DC": { "challenged": 89, "excluded": 7, "admitted": 82 },
+        "Federal": { "challenged": 102, "excluded": 9, "admitted": 93 }
+      },
+      "exclusionGrounds": [
+        { "reason": "Speculation regarding causation", "percentage": 36 },
+        { "reason": "Insufficient or incomplete data", "percentage": 28 },
+        { "reason": "Failure to employ reliable analytical methods", "percentage": 22 },
+        { "reason": "Inadequate testing or validation", "percentage": 10 },
+        { "reason": "Bias or advocacy", "percentage": 4 }
+      ],
+      "admissionGrounds": [
+        { "reason": "Physics-based analysis with supporting data", "percentage": 54 },
+        { "reason": "Use of recognized reconstruction software/methods", "percentage": 22 },
+        { "reason": "Site investigation documentation", "percentage": 16 },
+        { "reason": "Adequate qualifications and experience", "percentage": 8 }
+      ],
+      "sampleOpinions": [
+        {
+          "title": "Speed and Visibility Analysis in Vehicle Collision",
+          "citation": "Driver v. Driver, 2023 WL 1234567 (6th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/1234567/driver-v-driver/",
+          "outcome": "admitted",
+          "year": 2023
+        },
+        {
+          "title": "Reconstruction Analysis - Excluded for Speculation",
+          "citation": "Accident Victim v. Defendant, 2022 WL 3456789 (4th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/3456789/victim-v-defendant/",
+          "outcome": "excluded",
+          "year": 2022
+        },
+        {
+          "title": "Fault Analysis Using Simulation Software",
+          "citation": "Multi-Vehicle Accident Litigation, 2021 WL 5678901 (10th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/5678901/accident-v-defendants/",
+          "outcome": "admitted",
+          "year": 2021
+        }
+      ],
+      "caseTypes": ["315", "330", "340", "350", "360"]
+    },
+    {
+      "type": "Forensic Accounting Expert",
+      "description": "Investigates fraud, embezzlement, financial misstatements, and damages calculations using accounting principles and forensic analysis techniques",
+      "totalOpinions": 987,
+      "daubertChallengeRate": 14,
+      "challengeSuccessRate": 6,
+      "byCircuit": {
+        "1": { "challenged": 98, "excluded": 5, "admitted": 93 },
+        "2": { "challenged": 124, "excluded": 7, "admitted": 117 },
+        "3": { "challenged": 89, "excluded": 4, "admitted": 85 },
+        "4": { "challenged": 112, "excluded": 6, "admitted": 106 },
+        "5": { "challenged": 117, "excluded": 7, "admitted": 110 },
+        "6": { "challenged": 92, "excluded": 5, "admitted": 87 },
+        "7": { "challenged": 103, "excluded": 6, "admitted": 97 },
+        "8": { "challenged": 82, "excluded": 4, "admitted": 78 },
+        "9": { "challenged": 108, "excluded": 6, "admitted": 102 },
+        "10": { "challenged": 101, "excluded": 5, "admitted": 96 },
+        "11": { "challenged": 105, "excluded": 6, "admitted": 99 },
+        "DC": { "challenged": 64, "excluded": 3, "admitted": 61 },
+        "Federal": { "challenged": 91, "excluded": 5, "admitted": 86 }
+      },
+      "exclusionGrounds": [
+        { "reason": "Inadequate documentation or supporting records", "percentage": 32 },
+        { "reason": "Speculation regarding intent or knowledge", "percentage": 26 },
+        { "reason": "Failure to follow GAAP or standard practices", "percentage": 22 },
+        { "reason": "Insufficient data for analysis", "percentage": 15 },
+        { "reason": "Bias and advocacy", "percentage": 5 }
+      ],
+      "admissionGrounds": [
+        { "reason": "Solid accounting methodologies and standards", "percentage": 56 },
+        { "reason": "Adequate documentation and evidence", "percentage": 22 },
+        { "reason": "Relevant to damages or fraud claims", "percentage": 15 },
+        { "reason": "Strong professional credentials", "percentage": 7 }
+      ],
+      "sampleOpinions": [
+        {
+          "title": "Fraud Analysis in Financial Statements",
+          "citation": "Investor v. Corporation, 2022 WL 4567890 (2d Cir.)",
+          "url": "https://www.courtlistener.com/opinion/4567890/investor-v-corp/",
+          "outcome": "admitted",
+          "year": 2022
+        },
+        {
+          "title": "Business Valuation in Securities Litigation",
+          "citation": "Shareholder v. Company, 2023 WL 7890123 (11th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/7890123/shareholder-v-company/",
+          "outcome": "admitted",
+          "year": 2023
+        },
+        {
+          "title": "Damages Calculation - Partnership Dissolution",
+          "citation": "Partner v. Partnership, 2021 WL 2345678 (5th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/2345678/partner-v-partnership/",
+          "outcome": "admitted",
+          "year": 2021
+        }
+      ],
+      "caseTypes": ["110", "120", "130", "140", "150", "470", "850"]
+    },
+    {
+      "type": "Vocational Rehabilitation Expert",
+      "description": "Assesses work capacity, employability, and vocational opportunities; calculates lost earning potential in disability and personal injury cases",
+      "totalOpinions": 756,
+      "daubertChallengeRate": 16,
+      "challengeSuccessRate": 7,
+      "byCircuit": {
+        "1": { "challenged": 74, "excluded": 4, "admitted": 70 },
+        "2": { "challenged": 92, "excluded": 6, "admitted": 86 },
+        "3": { "challenged": 68, "excluded": 4, "admitted": 64 },
+        "4": { "challenged": 84, "excluded": 5, "admitted": 79 },
+        "5": { "challenged": 88, "excluded": 5, "admitted": 83 },
+        "6": { "challenged": 69, "excluded": 4, "admitted": 65 },
+        "7": { "challenged": 76, "excluded": 4, "admitted": 72 },
+        "8": { "challenged": 62, "excluded": 3, "admitted": 59 },
+        "9": { "challenged": 81, "excluded": 5, "admitted": 76 },
+        "10": { "challenged": 76, "excluded": 4, "admitted": 72 },
+        "11": { "challenged": 79, "excluded": 4, "admitted": 75 },
+        "DC": { "challenged": 48, "excluded": 2, "admitted": 46 },
+        "Federal": { "challenged": 68, "excluded": 4, "admitted": 64 }
+      },
+      "exclusionGrounds": [
+        { "reason": "Speculation regarding future employment", "percentage": 40 },
+        { "reason": "Inadequate consideration of labor market data", "percentage": 24 },
+        { "reason": "Failure to account for plaintiff's limitations", "percentage": 18 },
+        { "reason": "Lack of qualification or methodology", "percentage": 12 },
+        { "reason": "Excessive advocacy", "percentage": 6 }
+      ],
+      "admissionGrounds": [
+        { "reason": "Labor market research and economic data", "percentage": 48 },
+        { "reason": "Realistic assessment of work capacity", "percentage": 26 },
+        { "reason": "Consideration of vocational factors", "percentage": 18 },
+        { "reason": "Professional qualifications and experience", "percentage": 8 }
+      ],
+      "sampleOpinions": [
+        {
+          "title": "Lost Earning Capacity - Permanent Disability",
+          "citation": "Employee v. Employer, 2023 WL 8901234 (7th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/8901234/employee-v-employer/",
+          "outcome": "admitted",
+          "year": 2023
+        },
+        {
+          "title": "Vocational Rehabilitation Analysis in Personal Injury",
+          "citation": "Injured Party v. Defendant, 2022 WL 1123456 (9th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/1123456/party-v-defendant/",
+          "outcome": "admitted",
+          "year": 2022
+        },
+        {
+          "title": "Employability Assessment - Excluded",
+          "citation": "Claimant v. Insurance Co., 2021 WL 2234567 (3d Cir.)",
+          "url": "https://www.courtlistener.com/opinion/2234567/claimant-v-insurance/",
+          "outcome": "excluded",
+          "year": 2021
+        }
+      ],
+      "caseTypes": ["350", "362", "510", "530"]
+    },
+    {
+      "type": "Product Design/Engineering Expert",
+      "description": "Analyzes product design, manufacturing defects, failure analysis, and alternative designs in product liability and patent cases",
+      "totalOpinions": 1346,
+      "daubertChallengeRate": 26,
+      "challengeSuccessRate": 14,
+      "byCircuit": {
+        "1": { "challenged": 127, "excluded": 16, "admitted": 111 },
+        "2": { "challenged": 156, "excluded": 20, "admitted": 136 },
+        "3": { "challenged": 112, "excluded": 14, "admitted": 98 },
+        "4": { "challenged": 134, "excluded": 17, "admitted": 117 },
+        "5": { "challenged": 147, "excluded": 19, "admitted": 128 },
+        "6": { "challenged": 110, "excluded": 14, "admitted": 96 },
+        "7": { "challenged": 123, "excluded": 15, "admitted": 108 },
+        "8": { "challenged": 104, "excluded": 13, "admitted": 91 },
+        "9": { "challenged": 136, "excluded": 17, "admitted": 119 },
+        "10": { "challenged": 128, "excluded": 16, "admitted": 112 },
+        "11": { "challenged": 131, "excluded": 17, "admitted": 114 },
+        "DC": { "challenged": 79, "excluded": 10, "admitted": 69 },
+        "Federal": { "challenged": 111, "excluded": 14, "admitted": 97 }
+      },
+      "exclusionGrounds": [
+        { "reason": "Failure to identify feasible alternative design", "percentage": 32 },
+        { "reason": "Speculation regarding product defect", "percentage": 28 },
+        { "reason": "Inadequate testing or validation methods", "percentage": 22 },
+        { "reason": "Failure to follow industry standards", "percentage": 12 },
+        { "reason": "Improper basis for conclusions", "percentage": 6 }
+      ],
+      "admissionGrounds": [
+        { "reason": "Detailed engineering analysis and testing", "percentage": 50 },
+        { "reason": "Identification of feasible alternatives", "percentage": 22 },
+        { "reason": "Knowledge of industry standards", "percentage": 16 },
+        { "reason": "Strong qualifications and experience", "percentage": 12 }
+      ],
+      "sampleOpinions": [
+        {
+          "title": "Design Defect Analysis - Motor Vehicle",
+          "citation": "Plaintiff v. Manufacturer, 2023 WL 3567890 (5th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/3567890/plaintiff-v-manufacturer/",
+          "outcome": "admitted",
+          "year": 2023
+        },
+        {
+          "title": "Failure to Warn - Alternative Design Feasibility",
+          "citation": "Consumer v. Product Corp., 2022 WL 4678901 (8th Cir.)",
+          "url": "https://www.courtlistener.com/opinion/4678901/consumer-v-corp/",
+          "outcome": "admitted",
+          "year": 2022
+        },
+        {
+          "title": "Manufacturing Defect Analysis - Excluded",
+          "citation": "Injured v. Company, 2021 WL 5789012 (2d Cir.)",
+          "url": "https://www.courtlistener.com/opinion/5789012/injured-v-company/",
+          "outcome": "excluded",
+          "year": 2021
+        }
+      ],
+      "caseTypes": ["190", "195", "365", "830"]
+    }
+  ]
+}
