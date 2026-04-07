@@ -4,9 +4,62 @@ import { SITS } from '../../../lib/data';
 
 export const runtime = 'edge';
 
+// Translations object
+type Locale = 'en' | 'es';
+const translations: Record<Locale, Record<string, string>> = {
+  en: {
+    'Plaintiff Win Rate': 'Plaintiff Win Rate',
+    'Median Settlement': 'Median Settlement',
+    'Cases': 'Cases',
+    'Federal Court Data': 'Federal Court Data',
+    'federal cases. What really happened.': 'federal cases. What really happened.',
+    'Top Case Types': 'Top Case Types',
+    'Case Type': 'Case Type',
+    'federal cases analyzed': 'federal cases analyzed',
+    'plaintiff win rate': 'plaintiff win rate',
+    'Settlement Range': 'Settlement Range',
+    'settle before trial': 'settle before trial',
+    'Based on federal court records': 'Based on federal court records',
+    'average win rate': 'average win rate',
+    'Top Case Types by Volume': 'Top Case Types by Volume',
+    'United States Court of Appeals, Circuit': 'United States Court of Appeals, Circuit',
+    'District not found': 'District not found',
+    'Case type not found': 'Case type not found',
+    'Research real outcomes from federal court records. Get win rates, settlement ranges, timelines, and judge analytics.':
+      'Research real outcomes from federal court records. Get win rates, settlement ranges, timelines, and judge analytics.',
+    'www.mycasevalues.com': 'www.mycasevalues.com',
+  },
+  es: {
+    'Plaintiff Win Rate': 'Tasa de Éxito del Demandante',
+    'Median Settlement': 'Acuerdo Mediano',
+    'Cases': 'Casos',
+    'Federal Court Data': 'Datos de Tribunales Federales',
+    'federal cases. What really happened.': 'casos federales. Lo que realmente pasó.',
+    'Top Case Types': 'Principales Tipos de Caso',
+    'Case Type': 'Tipo de Caso',
+    'federal cases analyzed': 'casos federales analizados',
+    'plaintiff win rate': 'tasa de éxito del demandante',
+    'Settlement Range': 'Rango de Acuerdo',
+    'settle before trial': 'se resuelven antes del juicio',
+    'Based on federal court records': 'Basado en registros de tribunales federales',
+    'average win rate': 'tasa de éxito promedio',
+    'Top Case Types by Volume': 'Principales Tipos de Caso por Volumen',
+    'United States Court of Appeals, Circuit': 'Corte de Apelaciones de Estados Unidos, Circuito',
+    'District not found': 'Distrito no encontrado',
+    'Case type not found': 'Tipo de caso no encontrado',
+    'Research real outcomes from federal court records. Get win rates, settlement ranges, timelines, and judge analytics.':
+      'Investigue los resultados reales de los registros de tribunales federales. Obtenga tasas de éxito, rangos de acuerdo, plazos y análisis de jueces.',
+    'www.mycasevalues.com': 'www.mycasevalues.com',
+  },
+};
+
+function t(key: string, locale: Locale): string {
+  return translations[locale]?.[key] || translations.en[key] || key;
+}
+
 // Helper function to get NOS label
-function getNOSLabel(code: string): string {
-  let label = 'Case Type';
+function getNOSLabel(code: string, locale: Locale = 'en'): string {
+  let label = t('Case Type', locale);
   SITS.forEach((category) => {
     category.opts.forEach((option) => {
       if (option.nos === code) {
@@ -55,7 +108,7 @@ function getTopCaseTypes(districtCode?: string) {
 }
 
 // NOS page image
-function renderNOSImage(code: string): React.ReactElement {
+function renderNOSImage(code: string, locale: Locale = 'en'): React.ReactElement {
   const data = REAL_DATA[code];
 
   if (!data) {
@@ -74,12 +127,12 @@ function renderNOSImage(code: string): React.ReactElement {
           color: '#000000',
         }}
       >
-        Case type not found
+        {t('Case type not found', locale)}
       </div>
     );
   }
 
-  const label = getNOSLabel(code);
+  const label = getNOSLabel(code, locale);
   const winRate = data.wr || 0;
   const settlementRate = data.sp || 0;
   const caseCount = data.total || 0;
@@ -115,7 +168,7 @@ function renderNOSImage(code: string): React.ReactElement {
             color: '#666666',
           }}
         >
-          {formatNumber(caseCount)} federal cases analyzed
+          {formatNumber(caseCount)} {t('federal cases analyzed', locale)}
         </div>
       </div>
 
@@ -138,7 +191,7 @@ function renderNOSImage(code: string): React.ReactElement {
             marginLeft: '20px',
           }}
         >
-          plaintiff win rate
+          {t('plaintiff win rate', locale)}
         </div>
       </div>
 
@@ -151,7 +204,7 @@ function renderNOSImage(code: string): React.ReactElement {
             marginBottom: '12px',
           }}
         >
-          Settlement Range
+          {t('Settlement Range', locale)}
         </div>
         <div
           style={{
@@ -178,7 +231,7 @@ function renderNOSImage(code: string): React.ReactElement {
             marginTop: '8px',
           }}
         >
-          {settlementRate.toFixed(0)}% settle before trial
+          {settlementRate.toFixed(0)}% {t('settle before trial', locale)}
         </div>
       </div>
 
@@ -191,7 +244,7 @@ function renderNOSImage(code: string): React.ReactElement {
           marginTop: 'auto',
         }}
       >
-        <div style={{ fontSize: '14px', color: '#999999' }}>Based on federal court records</div>
+        <div style={{ fontSize: '14px', color: '#999999' }}>{t('Based on federal court records', locale)}</div>
         <div
           style={{
             fontSize: '16px',
@@ -207,7 +260,7 @@ function renderNOSImage(code: string): React.ReactElement {
 }
 
 // District page image
-function renderDistrictImage(districtCode: string): React.ReactElement {
+function renderDistrictImage(districtCode: string, locale: Locale = 'en'): React.ReactElement {
   // Get district name from code
   const districtMap: Record<string, { name: string; circuit: number }> = {
     SDNY: { name: 'S.D.N.Y.', circuit: 2 },
@@ -245,7 +298,7 @@ function renderDistrictImage(districtCode: string): React.ReactElement {
           color: '#000000',
         }}
       >
-        District not found
+        {t('District not found', locale)}
       </div>
     );
   }
@@ -288,7 +341,7 @@ function renderDistrictImage(districtCode: string): React.ReactElement {
             color: '#666666',
           }}
         >
-          United States Court of Appeals, Circuit {district.circuit}
+          {t('United States Court of Appeals, Circuit', locale)} {district.circuit}
         </div>
       </div>
 
@@ -311,7 +364,7 @@ function renderDistrictImage(districtCode: string): React.ReactElement {
             marginLeft: '20px',
           }}
         >
-          average win rate
+          {t('average win rate', locale)}
         </div>
       </div>
 
@@ -326,7 +379,7 @@ function renderDistrictImage(districtCode: string): React.ReactElement {
             fontWeight: '600',
           }}
         >
-          Top Case Types by Volume
+          {t('Top Case Types by Volume', locale)}
         </div>
 
         {topCases.map((caseType, index) => (
@@ -400,7 +453,7 @@ function renderDistrictImage(districtCode: string): React.ReactElement {
 }
 
 // Homepage image
-function renderHomeImage(): React.ReactElement {
+function renderHomeImage(locale: Locale = 'en'): React.ReactElement {
   return (
     <div
       style={{
@@ -435,9 +488,9 @@ function renderHomeImage(): React.ReactElement {
             maxWidth: '800px',
           }}
         >
-          5.1M federal cases.
+          5.1M {t('federal cases. What really happened.', locale).split('.')[0]}.
           <br />
-          <span style={{ color: '#0A66C2' }}>What really happened.</span>
+          <span style={{ color: '#0A66C2' }}>{t('federal cases. What really happened.', locale).split('. ')[1]}</span>
         </div>
 
         {/* Subheading */}
@@ -449,7 +502,7 @@ function renderHomeImage(): React.ReactElement {
             maxWidth: '700px',
           }}
         >
-          Research real outcomes from federal court records. Get win rates, settlement ranges, timelines, and judge analytics.
+          {t('Research real outcomes from federal court records. Get win rates, settlement ranges, timelines, and judge analytics.', locale)}
         </div>
 
         {/* CTA */}
@@ -461,7 +514,7 @@ function renderHomeImage(): React.ReactElement {
             textDecoration: 'underline',
           }}
         >
-          www.mycasevalues.com
+          {t('www.mycasevalues.com', locale)}
         </div>
       </div>
     </div>
@@ -473,16 +526,18 @@ export async function GET(request: Request) {
   const type = searchParams.get('type') || 'home';
   const code = searchParams.get('code') || '';
   const district = searchParams.get('district') || '';
+  const localeParam = searchParams.get('locale') || 'en';
+  const locale = (localeParam === 'es' ? 'es' : 'en') as Locale;
 
   try {
     let imageElement: React.ReactElement;
 
     if (type === 'nos' && code) {
-      imageElement = renderNOSImage(code);
+      imageElement = renderNOSImage(code, locale);
     } else if (type === 'district' && district) {
-      imageElement = renderDistrictImage(district);
+      imageElement = renderDistrictImage(district, locale);
     } else {
-      imageElement = renderHomeImage();
+      imageElement = renderHomeImage(locale);
     }
 
     return new ImageResponse(imageElement, {
